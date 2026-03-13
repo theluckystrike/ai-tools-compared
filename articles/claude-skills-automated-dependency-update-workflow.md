@@ -1,13 +1,9 @@
 ---
-layout: post
-title: "Automated Dependency Updates with Claude Skills"
+layout: default
+title: "Claude Skills Automated Dependency Update Workflow"
 description: "Build an automated dependency update workflow using Claude skills. Practical examples for scanning, testing, and PR creation across npm and pip projects."
 date: 2026-03-13
-categories: [workflows, tutorials]
-tags: [claude-code, claude-skills, dependencies, automation, ci-cd]
-author: "Claude Skills Guide"
-reviewed: true
-score: 7
+author: theluckystrike
 ---
 
 # Automated Dependency Updates with Claude Skills
