@@ -2,6 +2,56 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ page.author | default: 'Claude Skills Guide' | escape }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Claude Skills Guide",
+    "url": "https://theluckystrike.github.io/claude-skills-guide/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://theluckystrike.github.io{{ page.url }}"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://theluckystrike.github.io/claude-skills-guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ page.categories[0] | capitalize | default: 'Articles' }}",
+      "item": "https://theluckystrike.github.io/claude-skills-guide/{{ page.categories[0] | default: 'articles' }}-hub/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ page.title | escape }}"
+    }
+  ]
+}
+</script>
+
 <article>
   <h1>{{ page.title }}</h1>
   {{ content }}
