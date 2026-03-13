@@ -1,9 +1,13 @@
 ---
-layout: default
-title: "Claude Skill .md Format: Complete Specification Guide"
-description: "A precise technical breakdown of how Claude skill Markdown files are structured, parsed, and executed — including every field, trigger type, and edge case."
+layout: post
+title: "Claude Skill .md File Format: Full Specification"
+description: "Everything you need to know about the Claude skill .md file format: structure, placement, invocation, and body content with working examples."
 date: 2026-03-13
-author: theluckystrike
+categories: [skills, reference, guides]
+tags: [claude-code, claude-skills, skill-format, markdown, reference]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Claude Skill .md Format: Complete Specification Guide

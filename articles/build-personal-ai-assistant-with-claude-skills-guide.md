@@ -1,9 +1,13 @@
 ---
-layout: default
-title: "Build Personal AI Assistant with Claude Skills Guide"
-description: "Step-by-step guide to building a personal AI assistant with Claude Code skills. Set up persistent memory, custom workflows, and specialized skills."
+layout: post
+title: "Build a Personal AI Assistant with Claude Skills"
+description: "Configure Claude Code as a personal assistant: /supermemory for persistent context, custom skills for daily tasks, and dotfiles for portability."
 date: 2026-03-13
-author: theluckystrike
+categories: [guides, workflows, claude-skills]
+tags: [claude-code, claude-skills, supermemory, personal-assistant, custom-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 # Build Personal AI Assistant with Claude Skills Guide

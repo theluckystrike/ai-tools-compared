@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code vs Gemini CLI for Developers 2026"
-description: "Claude Code vs Gemini CLI for developers in 2026. Compare features, pricing, workflow integration, and which AI coding tool fits your use case."
+description: "Claude Code vs Gemini CLI: agentic capabilities, skills ecosystem, context window, GCP integration, and which tool fits your workflow in 2026."
 date: 2026-03-13
-author: theluckystrike
+categories: [comparisons, tools, developer-tools]
+tags: [claude-code, gemini, developer-tools, comparison, ai-coding]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 # Claude Code vs Gemini CLI for Developers 2026
