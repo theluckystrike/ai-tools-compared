@@ -12,16 +12,24 @@ score: 8
 
 # Claude Code Skill Memory Limit Exceeded Process Killed Fix
 
+<<<<<<< Updated upstream
 Memory limit exceeded errors can abruptly terminate your Claude Code sessions, especially when running resource-intensive skills like pdf processing, algorithmic art generation, or working with large codebases. The [tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) and other code analysis skills are common triggers due to large codebase loading. This guide provides practical solutions for developers and power users facing these issues.
+=======
+Memory limit exceeded errors can abruptly terminate your Claude Code sessions, especially when working with resource-intensive tasks like PDF processing, large codebase analysis, or generating complex output. This guide provides practical solutions for developers and power users facing these issues.
+>>>>>>> Stashed changes
 
 ## Understanding the Error
 
-When Claude Code encounters a memory limit exceeded error, you typically see messages like "Process killed" or "Out of memory" in your terminal. This occurs when the system terminates the process to prevent a complete system freeze. The error is particularly common when:
+When Claude Code encounters a memory limit exceeded error, you typically see messages like "Process killed" or "Out of memory" in your terminal. This occurs when the operating system terminates the Node.js process that runs Claude Code to prevent a complete system freeze.
 
-- Processing large PDF documents with the pdf skill
-- Generating complex algorithmic art using algorithmic-art
-- Running extensive code analysis with tdd or code-review skills
-- Working with memory-intensive operations in canvas-design
+The error is particularly common when:
+
+- Processing large PDF documents with the `/pdf` skill
+- Running extensive code analysis with `/tdd` across a large codebase
+- Working with very large files in `/canvas-design`
+- Indexing many documents through the `/supermemory` skill
+
+Note: Claude Code skills do not have their own CLI syntax like `claude -s skill-name` or flags like `--max-memory`. Skills are plain Markdown files stored in `~/.claude/skills/` and are invoked interactively by typing `/skill-name` in a Claude Code session. Memory management happens at the OS and process level, not through skill configuration.
 
 ## Quick Fixes for Memory Issues
 
@@ -45,18 +53,20 @@ sudo nano /etc/security/limits.conf
 # username hard memlock unlimited
 ```
 
-### 2. Optimize Skill Execution
+### 2. Optimize Skill Task Scope
 
-When using the pdf skill for large documents, break processing into smaller chunks:
+When using the `/pdf` skill for large documents, break your request into smaller chunks within the conversation:
 
-```bash
-# Instead of processing entire document
-claude -s "process large-document.pdf"
-
-# Process in sections
-claude -s "extract pages 1-50 from large-document.pdf"
-claude -s "extract pages 51-100 from large-document.pdf"
 ```
+# Instead of asking Claude to process an entire large document at once,
+# guide it to work section by section:
+
+/pdf
+Please extract and summarize pages 1 through 50 of large-document.pdf only.
+Then stop and wait for my confirmation before continuing.
+```
+
+This keeps individual operations within memory bounds.
 
 ### 3. Use Swap Space Effectively
 
@@ -80,39 +90,47 @@ sudo swapon /swapfile
 
 ### PDF Processing
 
-The pdf skill is particularly memory-intensive when handling large documents. Use these optimizations:
+The `/pdf` skill is particularly memory-intensive when handling large documents. Guide it to work incrementally:
+
+Start a Claude Code session and invoke the skill, then ask it to process the document in stages:
+
+```
+/pdf
+I have a 300-page document. Please start by extracting and summarizing
+only the first 50 pages. I will ask you to continue from page 51 once
+you are done.
+```
+
+You can also pre-split the PDF using external tools before invoking the skill:
 
 ```bash
-# Limit memory by processing with explicit flags
-claude -s "pdf --max-memory=2GB process document.pdf"
-
-# Use the split option for large files
-claude -s "pdf split large-file.pdf --output-dir ./split"
+# Split using pdftk before your Claude session
+pdftk large.pdf cat 1-50 output part1.pdf
+pdftk large.pdf cat 51-100 output part2.pdf
 ```
 
-### Algorithmic Art Generation
-
-When using algorithmic-art for complex visualizations:
-
-```javascript
-// In your skill configuration, set memory bounds
-{
-  "max_iterations": 1000,
-  "canvas_size": "medium",  // Options: small, medium, large
-  "optimization": true
-}
-```
+Then process each part in a separate Claude Code conversation using `/pdf`.
 
 ### TDD and Code Analysis
 
-The tdd skill and other code analysis tools benefit from:
+The `/tdd` skill benefits from scoped requests. Rather than asking it to analyze an entire large codebase, direct it to specific directories or modules:
 
-```bash
-# Scope your analysis to specific directories
-claude -s "tdd analyze ./src --max-depth 3"
+```
+/tdd
+Generate unit tests for the authentication module only.
+Focus on ./src/auth/ — ignore other directories.
+```
 
-# Use incremental analysis
-claude -s "tdd --incremental analyze"
+Follow up with additional scoped requests for other modules once the first completes.
+
+### supermemory Indexing
+
+When the `/supermemory` skill is indexing a large collection of notes or documents, memory exhaustion can occur. Work in batches by asking it to index a subset at a time:
+
+```
+/supermemory
+Index only the files in ./notes/2026-q1/ for now.
+I will ask you to index additional folders after this completes.
 ```
 
 ## Monitoring and Prevention
@@ -126,38 +144,29 @@ Keep track of memory usage during skill execution:
 watch -n 1 free -h
 
 # Log memory usage over time
-while true; do 
+while true; do
   date >> memory.log
   free -h >> memory.log
   sleep 60
 done
 ```
 
-### Configure Claude Code Settings
+### Set Node.js Heap Size
 
-Create a configuration file to manage memory:
+Claude Code runs on Node.js. You can increase the V8 heap size via environment variable before launching:
 
-```json
-// ~/.claude/settings.json
-{
-  "memory": {
-    "max_heap_size": "4G",
-    "gc_enabled": true,
-    "monitoring": true
-  },
-  "skills": {
-    "pdf": { "max_memory": "2G" },
-    "algorithmic-art": { "max_canvas": "medium" },
-    "canvas-design": { "max_resolution": "1920x1080" }
-  }
-}
+```bash
+# Increase Node.js max heap to 8GB
+NODE_OPTIONS="--max-old-space-size=8192" claude
 ```
+
+This is the correct way to influence Claude Code's memory ceiling. Note that `~/.claude/settings.json` does not support `memory`, `max_heap_size`, `gc_enabled`, or per-skill memory fields — those are not valid configuration keys. The `NODE_OPTIONS` environment variable is the appropriate lever.
 
 ## Advanced Solutions
 
 ### Container-Based Isolation
 
-For truly memory-intensive operations, consider Docker containers:
+For truly memory-intensive operations, consider running Claude Code inside a Docker container with explicit memory limits:
 
 ```dockerfile
 # Dockerfile.claude
@@ -167,9 +176,11 @@ RUN apt-get update && apt-get install -y \
     npm \
     python3 \
     && rm -rf /var/lib/apt/lists/*
+```
 
+```bash
 # Run with memory limits
-docker run --memory=8g --memory-swap=12g claude-skill-image
+docker run --memory=8g --memory-swap=12g -it your-claude-image
 ```
 
 ### Profile Memory Usage
@@ -178,7 +189,7 @@ Identify which operations consume the most memory:
 
 ```bash
 # Use /usr/bin/time for memory profiling
-/usr/bin/time -v claude -s "your-skill-command"
+/usr/bin/time -v claude
 
 # Look for these fields in output:
 # Maximum resident set size (kbytes)
@@ -187,43 +198,45 @@ Identify which operations consume the most memory:
 
 ## Common Scenarios and Fixes
 
-### Scenario 1: pdf Skill Crashes on Large Files
+### Scenario 1: /pdf Skill Crashes on Large Files
 
-**Problem**: Processing a 500+ page PDF causes process killed error.
+**Problem**: Processing a 500+ page PDF causes a "process killed" error.
 
-**Solution**: 
+**Solution**:
 1. Split the PDF using external tools first: `pdftk large.pdf burst`
-2. Process chunks with the pdf skill
-3. Use `pdf extract-text --pages 1-50` format
+2. Process each chunk in a separate Claude Code session using `/pdf`
+3. Ask Claude to summarize one section at a time and combine the results
 
-### Scenario 2: algorithmic-art Runs Out of Memory
+### Scenario 2: /tdd Runs Out of Memory on Large Codebases
 
-**Problem**: Complex generative art patterns exceed available memory.
-
-**Solution**:
-1. Reduce iteration count in your config
-2. Use smaller canvas sizes
-3. Enable optimization mode in skill settings
-
-### Scenario 3: supermemory Indexing Fails
-
-**Problem**: Building knowledge base causes memory exhaustion.
+**Problem**: Generating tests for an entire repository exhausts available memory.
 
 **Solution**:
-1. Index in batches: `--batch-size 100`
-2. Use incremental indexing: `--incremental`
-3. Limit concurrent operations: `--concurrency 2`
+1. Scope the request to one module at a time
+2. Use `/tdd` on a single file or directory per session
+3. Close and reopen Claude Code between large modules to free heap memory
+
+### Scenario 3: /supermemory Indexing Fails
+
+**Problem**: Indexing a large knowledge base causes memory exhaustion.
+
+**Solution**:
+1. Ask `/supermemory` to index one folder at a time
+2. Start a fresh Claude Code session between large indexing batches
+3. Increase swap space to provide overflow capacity (see swap section above)
 
 ## Prevention Best Practices
 
 1. **Always monitor** memory usage before running intensive skills
-2. **Start small** when testing new skills with large datasets
-3. **Use incremental processing** when available (tdd, pdf skills)
-4. **Configure limits** in your Claude settings before production use
+2. **Start small** when testing skills with large datasets
+3. **Use incremental processing** — ask skills to work in sections, not all at once
+4. **Increase Node.js heap** via `NODE_OPTIONS` before launching for heavy workloads
 5. **Keep swap space** available as a safety net
+6. **Restart Claude Code** between very large operations to reclaim heap memory
 
-When memory errors persist despite these fixes, consider upgrading your system RAM or using remote compute resources for memory-intensive tasks. The combination of proper configuration, monitoring, and incremental processing resolves the majority of memory limit exceeded issues with Claude Code skills.
+When memory errors persist despite these fixes, consider upgrading your system RAM or using remote compute resources for memory-intensive tasks. The combination of proper environment configuration, monitoring, and incremental task scoping resolves the majority of memory limit exceeded issues with Claude Code skills.
 
+<<<<<<< Updated upstream
 ## Related Reading
 
 - [Claude Code Skill Timeout Error: How to Increase the Limit](/claude-skills-guide/articles/claude-code-skill-timeout-error-how-to-increase-the-limit/) — Pair memory limit fixes with timeout management for resource-intensive skill operations
@@ -232,3 +245,6 @@ When memory errors persist despite these fixes, consider upgrading your system R
 - [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill configuration patterns for managing resource usage effectively
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+=======
+Built by Claude Skills Guide — More at [zovo.one](https://zovo.one)
+>>>>>>> Stashed changes

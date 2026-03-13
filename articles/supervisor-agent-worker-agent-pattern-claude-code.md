@@ -4,6 +4,8 @@ title: "Supervisor Agent Worker Agent Pattern in Claude Code"
 description: "Learn how to implement the supervisor agent worker pattern in Claude Code for building robust AI agent systems."
 date: 2026-03-14
 author: "Claude Skills Guide"
+categories: [advanced]
+tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
 ---

@@ -3,9 +3,10 @@ layout: post
 title: "Claude Skill Dependency Injection Patterns"
 description: "Learn how to structure Claude skills with dependency injection patterns for reusable, modular AI workflows. Practical examples using pdf, xlsx, tdd, and more."
 date: 2026-03-14
-categories: [patterns]
+categories: [advanced]
 tags: [claude-skills, dependency-injection, automation, workflows]
 author: theluckystrike
+reviewed: true
 ---
 
 # Claude Skill Dependency Injection Patterns
