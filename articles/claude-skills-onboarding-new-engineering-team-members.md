@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 2
 ---
 
 # Claude Skills Onboarding for New Engineering Team Members
@@ -78,10 +78,10 @@ Implementing a skill-based onboarding workflow requires initial setup but pays d
 
 ```bash
 # Recommended first-day skill installation
-claude skill install supermemory
-claude skill install docx
-claude skill install tdd
-claude skill install codebase-qa
+cp skill.md ~/.claude/skills/ supermemory
+cp skill.md ~/.claude/skills/ docx
+cp skill.md ~/.claude/skills/ tdd
+cp skill.md ~/.claude/skills/ codebase-qa
 ```
 
 ## Measuring Onboarding Efficiency

@@ -126,17 +126,19 @@ def get_user_groups(email):
 
 The biggest risk in AI coding tools: accidentally giving Claude access to production credentials. Skills like the [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) need access to run tests, while the [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) reads documents — scope each appropriately. Claude might log them, include them in generated code, or surface them in responses.
 
-**Rule**: Secrets should be in environment variables or a secrets manager, never in files that `context_files` might include.
+**Rule**: Secrets should be in environment variables or a secrets manager, never in files that a skill's instructions might reference.
 
-```yaml
-# BAD: This skill might include .env contents
-context_files:
-  - .env  # NEVER DO THIS
+If a skill body tells Claude to read specific files, ensure those files contain only code structure — not secret values. For example:
 
-# GOOD: Reference only code files
-context_files:
-  - src/config/database.ts  # Contains config structure, not values
 ```
+# BAD skill instruction — could expose secrets
+Read .env to understand the environment configuration.
+
+# GOOD skill instruction — references code only
+Read src/config/database.ts to understand the database configuration schema.
+```
+
+Note: `context_files` is not a valid skill front matter field. Use prose instructions in the skill body to specify which files Claude should read.
 
 ### Vault Integration for Skill Tool Calls
 

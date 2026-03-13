@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 10
 ---
 
 # Claude Skill Dependency Injection Patterns: A Practical Guide
