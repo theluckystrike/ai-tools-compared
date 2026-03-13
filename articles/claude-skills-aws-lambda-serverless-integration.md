@@ -1,151 +1,268 @@
 ---
-layout: default
-title: "Claude Skills AWS Lambda Serverless Integration Guide"
-description: "Learn how to integrate Claude Code skills with AWS Lambda for serverless AI-powered workflows. Practical examples, code snippets, and deployment strategies."
+layout: post
+title: "Claude Skills + AWS Lambda: Serverless Guide"
+description: "Integrate Claude Code skills with AWS Lambda for serverless AI workflows. Practical patterns for document processing, test generation, and event-driven pipelines."
 date: 2026-03-13
-author: theluckystrike
+categories: [integrations, cloud]
+tags: [claude-code, claude-skills, aws, lambda, serverless, pdf, tdd]
+author: "Claude Skills Guide"
+reviewed: true
+score: 5
 ---
 
-# Claude Skills AWS Lambda Serverless Integration Guide
+# Claude Code Skills + AWS Lambda: Serverless Integration
 
-AWS Lambda and serverless architectures have transformed how developers deploy and scale applications. When combined with Claude Code skills, you can create powerful event-driven AI workflows that respond to HTTP requests, S3 uploads, database changes, and more. This guide shows you how to integrate Claude skills with AWS Lambda for production-ready serverless AI applications.
+Claude Code skills run locally in your terminal. AWS Lambda runs your code in the cloud. Connecting them means invoking Claude Code — including skill-augmented sessions — from within a Lambda function, then routing the output into your broader AWS infrastructure.
 
-## Understanding the Architecture
+This guide covers practical patterns for this integration: document processing, test generation triggers, and event-driven workflows.
 
-Claude Code skills operate within the Claude Code CLI environment, but you can expose their functionality through AWS Lambda by creating wrapper functions that invoke the skill system. The key is understanding how to structure your Lambda function to load skills, process requests, and return results efficiently within Lambda's execution environment.
+## How the Architecture Works
 
-The architecture works by having your Lambda function trigger Claude Code with specific skill invocations, then parsing the output and returning it as an API response. This approach lets you leverage skills like **pdf** for document processing, **tdd** for test generation, or **supermemory** for context management without running a dedicated server.
+Claude Code can run in print mode (`claude -p "..."`) which accepts a prompt, runs the session non-interactively, and returns output to stdout. A Lambda function can shell out to `claude -p` the same way any process can call a subprocess.
 
-## Setting Up Your Lambda Environment
+The setup requires bundling the Claude Code binary in your Lambda container image. Lambda's managed runtimes do not include Claude Code by default, so a custom Docker image is the practical path.
 
-Before deploying, ensure your Lambda runtime has access to the Claude Code CLI. You'll need to bundle the necessary dependencies or use a container image that includes Claude Code. Here's a practical example of a Lambda handler written in Python that invokes Claude skills:
+## Building the Container Image
+
+Create a `Dockerfile` that installs Claude Code alongside your runtime:
+
+```dockerfile
+FROM public.ecr.aws/lambda/python:3.12
+
+# Install Node.js (Claude Code requires it)
+RUN dnf install -y nodejs npm
+
+# Install Claude Code globally
+RUN npm install -g @anthropic-ai/claude-code
+
+# Copy your function code
+COPY handler.py ${LAMBDA_TASK_ROOT}/
+
+CMD ["handler.handler"]
+```
+
+Build and push to ECR:
+
+```bash
+aws ecr get-login-password --region us-east-1 | \
+  docker login --username AWS --password-stdin YOUR_ACCOUNT.dkr.ecr.us-east-1.amazonaws.com
+
+docker build -t claude-skills-lambda .
+docker tag claude-skills-lambda:latest YOUR_ACCOUNT.dkr.ecr.us-east-1.amazonaws.com/claude-skills-lambda:latest
+docker push YOUR_ACCOUNT.dkr.ecr.us-east-1.amazonaws.com/claude-skills-lambda:latest
+```
+
+## Writing the Lambda Handler
+
+The handler invokes Claude Code in print mode and returns the output:
 
 ```python
 import json
 import subprocess
 import os
 
+
 def handler(event, context):
-    skill_name = event.get('skill', 'general')
-    user_prompt = event.get('prompt', '')
-    parameters = event.get('parameters', {})
-    
-    # Construct the Claude Code command
-    cmd = [
-        'claude', '-p',  # Use prompt mode
-        f"Use the {skill_name} skill to: {user_prompt}"
-    ]
-    
-    # Add any skill-specific parameters
-    if parameters:
-        cmd.extend(['--param', json.dumps(parameters)])
-    
+    prompt = event.get("prompt", "")
+    if not prompt:
+        return {"statusCode": 400, "body": json.dumps({"error": "prompt is required"})}
+
+    # ANTHROPIC_API_KEY must be set via Lambda environment variables
+    # Store it in AWS Secrets Manager and inject at runtime
+    env = os.environ.copy()
+
     try:
         result = subprocess.run(
-            cmd,
+            ["claude", "-p", prompt],
             capture_output=True,
             text=True,
-            timeout=300
+            timeout=240,
+            env=env,
         )
+
+        if result.returncode != 0:
+            return {
+                "statusCode": 500,
+                "body": json.dumps({"error": result.stderr}),
+            }
+
         return {
-            'statusCode': 200,
-            'body': json.dumps({
-                'result': result.stdout,
-                'skill': skill_name
-            })
+            "statusCode": 200,
+            "body": json.dumps({"output": result.stdout.strip()}),
         }
-    except Exception as e:
-        return {
-            'statusCode': 500,
-            'body': json.dumps({'error': str(e)})
-        }
+    except subprocess.TimeoutExpired:
+        return {"statusCode": 504, "body": json.dumps({"error": "timeout"})}
+    except Exception as exc:
+        return {"statusCode": 500, "body": json.dumps({"error": str(exc)})}
 ```
 
-## Practical Integration Patterns
+## Practical Pattern 1: Document Processing with /pdf
 
-### Document Processing Pipeline
+Trigger this Lambda from an S3 `ObjectCreated` event. When a PDF lands in your uploads bucket, the function processes it using the `/pdf` skill:
 
-One powerful use case combines the **pdf** skill with S3 event triggers. When a user uploads a document to S3, Lambda processes it using the pdf skill and returns extracted content or generated summaries. This serverless approach scales automatically with upload volume.
+```python
+def handler(event, context):
+    # Extract S3 object key from the event
+    record = event["Records"][0]
+    bucket = record["s3"]["bucket"]["name"]
+    key = record["s3"]["object"]["key"]
+
+    # Download the file to /tmp (Lambda's writable directory)
+    import boto3
+    s3 = boto3.client("s3")
+    local_path = f"/tmp/{key.split('/')[-1]}"
+    s3.download_file(bucket, key, local_path)
+
+    prompt = f"/pdf Extract all tables and section headings from {local_path}"
+
+    result = subprocess.run(
+        ["claude", "-p", prompt],
+        capture_output=True,
+        text=True,
+        timeout=240,
+        env=os.environ.copy(),
+    )
+
+    output = result.stdout.strip()
+
+    # Store extracted content in DynamoDB
+    dynamo = boto3.resource("dynamodb")
+    table = dynamo.Table(os.environ["OUTPUT_TABLE"])
+    table.put_item(Item={"documentKey": key, "extractedContent": output})
+
+    return {"statusCode": 200, "body": json.dumps({"key": key, "chars": len(output)})}
+```
+
+SAM template for the trigger:
 
 ```yaml
-# SAM template snippet for document processing
 Resources:
   DocumentProcessor:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: index.handler
-      Runtime: python3.11
+      PackageType: Image
+      ImageUri: YOUR_ACCOUNT.dkr.ecr.us-east-1.amazonaws.com/claude-skills-lambda:latest
+      Timeout: 300
+      MemorySize: 1024
+      Environment:
+        Variables:
+          OUTPUT_TABLE: !Ref ExtractedContentTable
+          ANTHROPIC_API_KEY: !Sub "{{resolve:secretsmanager:claude-api-key}}"
       Events:
         S3Upload:
           Type: S3
           Properties:
             Bucket: !Ref UploadBucket
             Events: s3:ObjectCreated:*
+            Filter:
+              S3Key:
+                Rules:
+                  - Name: suffix
+                    Value: ".pdf"
 ```
 
-### Frontend Design Verification
+## Practical Pattern 2: Test Generation in CI/CD
 
-The **frontend-design** skill works well with API Gateway integrations. You can create an endpoint that accepts design specifications and returns code recommendations or visual analysis. This is particularly useful for teams building design systems who want automated feedback on component implementations.
+Trigger Claude's `/tdd` skill when a developer opens a pull request. A GitHub Actions webhook posts to API Gateway, which invokes Lambda:
 
-### Test-Driven Development Workflows
+```python
+def handler(event, context):
+    body = json.loads(event.get("body", "{}"))
+    repo_url = body.get("repository", {}).get("clone_url", "")
+    pr_branch = body.get("pull_request", {}).get("head", {}).get("ref", "")
 
-Deploying the **tdd** skill as a Lambda function enables automated test generation across your CI/CD pipeline. When developers push code to specific branches, Lambda triggers the tdd skill to generate unit tests before code review. This ensures test coverage requirements are met without manual intervention.
+    if not repo_url or not pr_branch:
+        return {"statusCode": 400, "body": "missing repository or branch"}
 
-## Managing State and Context
+    # Clone the PR branch into /tmp
+    clone_dir = "/tmp/repo"
+    subprocess.run(["git", "clone", "--branch", pr_branch, repo_url, clone_dir], check=True)
 
-The **supermemory** skill requires special consideration in serverless environments. Since Lambda functions are ephemeral, you need external storage for persistent context. Consider using DynamoDB or Redis to maintain conversation history and skill state between invocations:
+    prompt = f"/tdd Review the Python files in {clone_dir}/src/ and list missing test coverage for public functions"
+
+    result = subprocess.run(
+        ["claude", "-p", prompt],
+        capture_output=True,
+        text=True,
+        timeout=240,
+        env=os.environ.copy(),
+    )
+
+    # Post the analysis as a PR comment via GitHub API
+    import urllib.request
+    pr_number = body.get("pull_request", {}).get("number")
+    repo_full_name = body.get("repository", {}).get("full_name")
+    gh_token = os.environ["GITHUB_TOKEN"]
+
+    comment_url = f"https://api.github.com/repos/{repo_full_name}/issues/{pr_number}/comments"
+    comment_body = json.dumps({"body": f"**TDD Analysis**\n\n{result.stdout.strip()}"}).encode()
+
+    req = urllib.request.Request(
+        comment_url,
+        data=comment_body,
+        headers={"Authorization": f"Bearer {gh_token}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    urllib.request.urlopen(req)
+
+    return {"statusCode": 200, "body": "comment posted"}
+```
+
+## Managing State Across Invocations
+
+Lambda functions are ephemeral — each invocation starts fresh. The `/supermemory` skill stores context in `~/.claude/`, which does not persist between Lambda invocations by default.
+
+To persist memory, sync the skill's storage directory to S3 before and after each run:
 
 ```python
 import boto3
+import subprocess
+import os
 
-dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('skill-context')
+MEMORY_BUCKET = os.environ["MEMORY_BUCKET"]
+MEMORY_KEY = "supermemory-state.tar.gz"
+MEMORY_DIR = "/tmp/.claude"
 
-def save_context(session_id, context_data):
-    table.put_item(
-        Item={
-            'sessionId': session_id,
-            'context': context_data,
-            'timestamp': int(time.time())
-        }
+
+def restore_memory():
+    s3 = boto3.client("s3")
+    try:
+        s3.download_file(MEMORY_BUCKET, MEMORY_KEY, "/tmp/memory.tar.gz")
+        subprocess.run(["tar", "-xzf", "/tmp/memory.tar.gz", "-C", "/tmp"], check=True)
+    except s3.exceptions.NoSuchKey:
+        os.makedirs(MEMORY_DIR, exist_ok=True)
+
+
+def save_memory():
+    subprocess.run(
+        ["tar", "-czf", "/tmp/memory.tar.gz", "-C", "/tmp", ".claude"], check=True
     )
+    boto3.client("s3").upload_file("/tmp/memory.tar.gz", MEMORY_BUCKET, MEMORY_KEY)
 
-def load_context(session_id):
-    response = table.get_item(Key={'sessionId': session_id})
-    return response.get('Item', {}).get('context', {})
+
+def handler(event, context):
+    restore_memory()
+    # ... run Claude Code ...
+    save_memory()
 ```
 
 ## Deployment Best Practices
 
-When deploying Claude skills to AWS Lambda, follow these recommendations for production environments.
+**API key security**: Store your `ANTHROPIC_API_KEY` in AWS Secrets Manager. Reference it in your SAM/CloudFormation template with `{{resolve:secretsmanager:...}}`. Never hard-code it in environment variables directly in source control.
 
-**Package Size Management**: Lambda has a 250MB deployment limit for direct uploads. Use Lambda layers to separate skill dependencies from your function code. This approach also enables sharing skills across multiple functions.
+**Timeout configuration**: The `/pdf` skill on a large document can take 2-3 minutes. Set Lambda timeout to 300 seconds (5 minutes) for document-heavy workloads. For quick prompts, 60 seconds is sufficient.
 
-**Cold Start Optimization**: Initialize skill components outside the handler function when possible. Use provisioned concurrency for latency-sensitive applications where cold starts are unacceptable.
+**Cold start reduction**: Claude Code's Node.js runtime adds cold start latency. Use provisioned concurrency for latency-sensitive API Gateway integrations. For batch or async workflows triggered by SQS or S3, cold starts are acceptable.
 
-**Error Handling**: Implement proper retry logic with exponential backoff. Skills may produce unexpected output that requires parsing adjustments. Log extensively to CloudWatch for debugging production issues.
+**Error handling**: Always check `result.returncode` before using stdout. Log `result.stderr` to CloudWatch for debugging. Wrap the subprocess call in a try/except for `TimeoutExpired` and `OSError`.
 
-**Security**: Never expose skill credentials in environment variables. Use AWS Secrets Manager for API keys and sensitive parameters. Apply least-privilege IAM roles to your Lambda execution role.
-
-## Scaling Considerations
-
-Serverless architectures handle variable loads well, but skill execution times vary significantly. The **pdf** skill processing large documents will take longer than the **tdd** skill running on small code snippets. Configure appropriate timeout values based on your skill's typical execution time.
-
-For high-volume applications, implement request queuing with SQS. This prevents overwhelming your skill executions while maintaining throughput during traffic spikes. Use CloudWatch metrics to monitor skill performance and adjust provisioned concurrency accordingly.
-
-## Advanced: Multi-Skill Orchestration
-
-You can chain multiple skills together by sequencing Lambda invocations. For example, a document processing pipeline might use **pdf** to extract content, **tdd** to generate tests for extracted code samples, and **frontend-design** to suggest UI components based on extracted specifications.
-
-This orchestration approach lets you build sophisticated AI workflows while maintaining the simplicity and scalability of individual Lambda functions. Each skill remains independent and testable, but together they solve complex problems that require multiple specialized capabilities.
-
-The combination of Claude skills with AWS Lambda creates flexible, scalable AI-powered workflows that adapt to your application's needs. Whether you're processing documents, generating tests, or building design systems, serverless integration provides the infrastructure backbone for production AI applications.
+**Cost management**: Lambda charges per invocation and duration. Long-running Claude Code sessions (processing large PDFs, generating extensive tests) will cost more. Use SQS to queue requests and process them at a controlled rate rather than allowing unbounded concurrency.
 
 ---
 
 ## Related Reading
 
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Where mcp-builder fits in the developer stack
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Full developer skill stack
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — How Claude decides when to load skills
 - [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep API costs down as you scale
 

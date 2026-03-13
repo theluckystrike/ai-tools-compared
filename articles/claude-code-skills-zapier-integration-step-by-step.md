@@ -1,278 +1,179 @@
 ---
-layout: default
-title: "Claude Code Skills Zapier Integration Step by Step"
-description: "Learn how to integrate Claude Code skills with Zapier to automate workflows. A practical guide for developers and power users with code examples and real-world scenarios."
+layout: post
+title: "Claude Code Skills + Zapier: Step-by-Step"
+description: "Connect Claude Code skills to Zapier using webhooks. Practical guide with real examples for automating workflows triggered by skill output."
 date: 2026-03-13
-author: theluckystrike
+categories: [integrations, workflows]
+tags: [claude-code, claude-skills, zapier, webhooks, automation]
+author: "Claude Skills Guide"
+reviewed: true
+score: 6
 ---
 
-# Claude Code Skills Zapier Integration Step by Step
+# Claude Code Skills + Zapier: Step-by-Step Integration
 
-Automating workflows between Claude Code skills and external services opens up powerful possibilities for developers who want to extend their AI-assisted development environment beyond the terminal. Zapier serves as the bridge that connects Claude's capabilities with thousands of web applications, enabling you to trigger actions, sync data, and create sophisticated automation pipelines.
+Connecting Claude Code skills to Zapier lets you route skill output into thousands of external services — Slack, Google Sheets, Notion, GitHub, and more. The integration works through webhooks: your shell sends data to Zapier, and Zapier acts on it.
 
-This guide walks you through connecting Claude Code skills with Zapier, from initial setup to advanced integrations that streamline your development workflow.
+This guide covers the full setup from creating a Zapier webhook endpoint to triggering downstream actions from Claude skill output.
 
-## Prerequisites
+## How the Integration Works
 
-Before building your integration, ensure you have:
+Claude skills run locally inside Claude Code. They do not natively speak HTTP. The bridge is a shell script or small helper program that:
 
-- Claude Code installed with the skills you want to use
-- A Zapier account (free tier works for basic integrations)
-- API access to your target services
-- Basic understanding of webhooks and HTTP requests
+1. Runs a Claude Code session and captures output
+2. POSTs that output to a Zapier webhook URL
+3. Zapier processes the payload and triggers configured actions
 
-The integration relies on webhooks—both incoming triggers from Zapier to Claude and outgoing actions from Claude to Zapier. Understanding this bidirectional flow is essential for building robust automations.
+You never need a dedicated server. A simple `curl` call or Node.js script handles delivery.
 
-## Setting Up Your First Integration
+## Step 1: Create a Zapier Webhook Endpoint
 
-### Step 1: Create a Zapier Webhook Endpoint
+In Zapier, create a new Zap and set the trigger to **Webhooks by Zapier**:
 
-Zapier can receive data from external sources using Webhooks by Zapier. Start by creating a new Zap and selecting "Webhooks by Zapier" as the trigger:
+1. Click **Create Zap**
+2. Choose **Webhooks by Zapier** as the trigger app
+3. Select **Catch Hook** as the trigger event
+4. Copy the generated webhook URL — you will use this in your shell script
 
-1. In Zapier, create a new Zap
-2. Choose "Webhooks by Zapier" as the trigger app
-3. Select "Catch Raw Hook" as the trigger event
-4. Copy the generated webhook URL
+Keep this Zap in test mode until you have confirmed delivery.
 
-This URL becomes your endpoint for sending data from Claude to Zapier.
+## Step 2: Capture Claude Skill Output
 
-### Step 2: Configure Claude to Send Webhook Requests
+Run a Claude Code session and redirect output to a variable or file. Here is a shell script that invokes Claude Code in print mode, captures the output, and sends it to Zapier:
 
-Create a skill configuration that handles webhook delivery. The pdf skill can generate reports that trigger downstream actions:
+```bash
+#!/bin/bash
+# zapier-send.sh — run a Claude prompt and POST output to Zapier
 
-```javascript
-// claude-webhook-config.js
-const webhookUrl = 'YOUR_ZAPIER_WEBHOOK_URL';
+ZAPIER_WEBHOOK="https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/"
+PROMPT="$1"
 
-async function sendToZapier(payload) {
-  const response = await fetch(webhookUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload)
-  });
-  
-  return response.ok;
-}
+# Run Claude Code in print mode (-p) and capture stdout
+OUTPUT=$(claude -p "$PROMPT" 2>/dev/null)
 
-// Example payload structure
-const examplePayload = {
-  event: 'test_completed',
-  skill: 'tdd',
-  results: {
-    passed: 42,
-    failed: 0,
-    coverage: 87
-  },
-  timestamp: new Date().toISOString()
-};
+# Send to Zapier as JSON
+curl -s -X POST "$ZAPIER_WEBHOOK" \
+  -H "Content-Type: application/json" \
+  -d "{\"output\": $(echo "$OUTPUT" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))'), \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}"
 ```
 
-### Step 3: Set Up Zapier Actions
+Call it like:
 
-Now configure what happens when data reaches Zapier:
-
-1. In your Zap, add an action step
-2. Choose your target app (Slack, Gmail, Google Sheets, etc.)
-3. Map the incoming webhook data to action fields
-
-For example, when the tdd skill completes test generation, you might want to send a Slack notification:
-
-```javascript
-// Slack notification payload
-{
-  "channel": "#development",
-  "text": "TDD Analysis Complete",
-  "blocks": [
-    {
-      "type": "section",
-      "text": {
-        "type": "mrkdwn",
-        "text": "*Test Results*\n• Passed: 42\n• Coverage: 87%"
-      }
-    }
-  ]
-}
+```bash
+chmod +x zapier-send.sh
+./zapier-send.sh "Summarize the test results in /tmp/results.txt"
 ```
 
-## Practical Integration Examples
+## Step 3: Use Skill Output as the Payload
 
-### Example 1: Automated Documentation Generation
+Skills like `/pdf` and `/tdd` produce structured text output. You can include the skill invocation in your prompt and ship the result to Zapier.
 
-Combine the pdf skill with Zapier to automatically generate and distribute documentation:
+Example — generate a test summary with `/tdd` and post it to Zapier:
 
-```
-/pdf
-/generate API documentation for the /users endpoint and send to Zapier
-```
+```bash
+#!/bin/bash
+ZAPIER_WEBHOOK="https://hooks.zapier.com/hooks/catch/YOUR_ID/YOUR_KEY/"
 
-The pdf skill creates documentation, then your webhook configuration sends it to Zapier, which can:
+# Claude Code session with /tdd skill context
+OUTPUT=$(claude -p "/tdd Analyze src/auth/ and summarize test coverage gaps" 2>/dev/null)
 
-- Email the documentation to your team
-- Upload it to Google Drive
-- Post it to a documentation wiki
+PAYLOAD=$(python3 -c "
+import json, sys
+output = sys.argv[1]
+print(json.dumps({
+    'event': 'tdd_analysis',
+    'skill': 'tdd',
+    'summary': output,
+    'timestamp': '$(date -u +%Y-%m-%dT%H:%M:%SZ)'
+}))
+" "$OUTPUT")
 
-### Example 2: Frontend Design Handoff
-
-Use the frontend-design skill with Zapier to streamline design-to-code workflows:
-
-1. Receive design requirements via Zapier webhook
-2. Activate the frontend-design skill in Claude
-3. Generate component code and specifications
-4. Send the output back to Zapier for ticketing or storage
-
-```javascript
-// Zapier receives this from Claude
-{
-  "skill": "frontend-design",
-  "component": "UserCard",
-  "files": [
-    "src/components/UserCard.tsx",
-    "src/components/UserCard.css"
-  ],
-  "specifications": {
-    "props": ["name", "avatar", "status"],
-    "variants": ["default", "compact", "expanded"]
-  }
-}
+curl -s -X POST "$ZAPIER_WEBHOOK" \
+  -H "Content-Type: application/json" \
+  -d "$PAYLOAD"
 ```
 
-Zapier then creates a GitHub pull request, adds tasks to your project management tool, or notifies your design team.
+## Step 4: Configure Zapier Actions
 
-### Example 3: Test Results Pipeline
+In your Zap, add an action after the webhook trigger. Common patterns:
 
-The tdd skill generates comprehensive tests—connect this to Zapier for reporting:
+**Slack notification** — map `{{output.summary}}` to a Slack message body:
 
 ```
-/tdd
-/analyze src/auth/ and generate test suite
+Channel: #dev-alerts
+Message: TDD analysis complete — {{output.summary}}
 ```
 
-When tests complete, Zapier can:
+**Google Sheets logging** — append a row with timestamp and output:
 
-- Create JIRA tickets for failing tests
-- Post results to team channels
-- Update Google Sheets with coverage metrics
-
-## Advanced Configuration
-
-### Authentication Security
-
-For production integrations, secure your webhook communications:
-
-```javascript
-// Add signature verification
-const crypto = require('crypto');
-
-function verifyWebhookSignature(payload, signature, secret) {
-  const expectedSignature = crypto
-    .createHmac('sha256', secret)
-    .update(JSON.stringify(payload))
-    .digest('hex');
-  
-  return crypto.timingSafeEqual(
-    Buffer.from(signature),
-    Buffer.from(expectedSignature)
-  );
-}
+```
+Sheet: Coverage Log
+Row: {{output.timestamp}} | {{output.event}} | {{output.summary}}
 ```
 
-### Handling Rate Limits
+**GitHub issue creation** — open an issue when coverage gaps are found:
 
-Zapier has rate limits for premium features. Implement queuing in your Claude skill:
-
-```javascript
-class ZapierQueue {
-  constructor() {
-    this.queue = [];
-    this.processing = false;
-  }
-
-  async add(payload) {
-    this.queue.push(payload);
-    if (!this.processing) {
-      this.processQueue();
-    }
-  }
-
-  async processQueue() {
-    this.processing = true;
-    
-    while (this.queue.length > 0) {
-      const payload = this.queue.shift();
-      await this.sendToZapier(payload);
-      await this.delay(1000); // Respect rate limits
-    }
-    
-    this.processing = false;
-  }
-
-  delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-}
+```
+Title: Coverage gaps found — {{output.timestamp}}
+Body: {{output.summary}}
+Labels: testing, automated
 ```
 
-### Using supermemory for Context
+## Securing Your Webhook
 
-The supermemory skill maintains integration state across sessions:
+For production use, add a shared secret to your requests and verify it in Zapier's filter step:
+
+```bash
+# Add a secret header
+curl -s -X POST "$ZAPIER_WEBHOOK" \
+  -H "Content-Type: application/json" \
+  -H "X-Webhook-Secret: your-shared-secret" \
+  -d "$PAYLOAD"
+```
+
+In Zapier, add a **Filter** step: only continue if `X-Webhook-Secret` equals your expected value.
+
+## Keeping Context with /supermemory
+
+If you want Claude to remember your Zapier endpoint across sessions, store it using the `/supermemory` skill:
 
 ```
 /supermemory
-/remember my Zapier webhook URL is https://hooks.zapier.com/hooks/catch/123/abc
-/remember to include auth headers with all Zapier requests
+Remember that my Zapier webhook for test notifications is stored in $ZAPIER_WEBHOOK env var
+Remember to always include the event type and timestamp in webhook payloads
 ```
 
-This ensures your integrations maintain consistency without hardcoding sensitive values.
+On future sessions, `/supermemory` surfaces this context so you maintain consistent payload structure without re-explaining it each time.
 
-## Troubleshooting Common Issues
+## Practical Example: PDF Report → Zapier → Email
 
-### Webhook Delivery Failures
+When you generate a report with `/pdf`, send the output to Zapier, which emails it to stakeholders:
 
-If Zapier isn't receiving webhooks:
+```bash
+#!/bin/bash
+# Generate PDF report content and email via Zapier
 
-1. Verify the webhook URL is correct and accessible
-2. Check that your server sends proper JSON with correct headers
-3. Review Zapier's webhook logs for specific error messages
-4. Implement retry logic for transient failures
+REPORT=$(claude -p "/pdf Generate a deployment summary report from /tmp/deploy.log" 2>/dev/null)
 
-### Payload Formatting Issues
-
-Zapier expects specific data structures. Always validate your payload:
-
-```javascript
-function validatePayload(payload) {
-  const required = ['event', 'timestamp', 'skill'];
-  const missing = required.filter(field => !payload[field]);
-  
-  if (missing.length > 0) {
-    throw new Error(`Missing required fields: ${missing.join(', ')}`);
-  }
-  
-  return true;
-}
+curl -s -X POST "$ZAPIER_WEBHOOK" \
+  -H "Content-Type: application/json" \
+  -d "{
+    \"event\": \"report_ready\",
+    \"skill\": \"pdf\",
+    \"report\": $(echo "$REPORT" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))'),
+    \"timestamp\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"
+  }"
 ```
 
-### Integration Testing
+In Zapier, route this to Gmail or SendGrid with the report content in the email body.
 
-Test your integration in stages:
+## Troubleshooting
 
-1. Send test payloads manually using curl or Postman
-2. Verify Zapier receives and parses the data correctly
-3. Test the full action chain in Zapier with "Test" mode
-4. Deploy and monitor for issues
+**Zapier shows no data received**: Check that your curl command succeeds locally with `--verbose`. Ensure the webhook URL is not expired — Zapier test webhooks time out after a few minutes.
 
-## Extending Your Integration
+**JSON parse errors**: Use `python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))'` to safely encode any text output before embedding it in JSON.
 
-Once you have basic connectivity, explore these advanced patterns:
-
-- **Multi-step Zaps**: Chain multiple actions together based on Claude's output
-- **Filters**: Only trigger Zapier actions when specific conditions are met
-- **Paths**: Take different actions based on the skill or results
-- **Database integration**: Store Claude outputs in Airtable or Notion for later analysis
-
-The combination of Claude skills and Zapier creates a powerful automation ecosystem. The pdf skill generates reports, tdd produces tests, frontend-design creates components—all can feed into your broader workflow through webhook integrations.
+**Action not triggering**: Put the Zap into test mode and send a sample payload manually. Confirm field names match what Zapier expects.
 
 ---
 

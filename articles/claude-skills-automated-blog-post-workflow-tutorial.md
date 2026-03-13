@@ -1,247 +1,202 @@
 ---
-layout: default
-title: "Claude Skills Automated Blog Post Workflow Tutorial"
-description: "Build an automated blog post workflow using Claude skills. Learn how to streamline content creation, SEO optimization, and publishing with practical code examples."
+layout: post
+title: "Automated Blog Workflow with Claude Skills"
+description: "Build an automated blog post workflow using Claude skills. Step-by-step tutorial for content creation, formatting, and publishing with real examples."
 date: 2026-03-13
-author: theluckystrike
+categories: [workflows, content]
+tags: [claude-code, claude-skills, automation, blogging, docx, canvas-design]
+author: "Claude Skills Guide"
+reviewed: true
+score: 3
 ---
 
-# Claude Skills Automated Blog Post Workflow Tutorial
+# Automated Blog Post Workflow with Claude Skills
 
-Publishing consistent, high-quality blog content requires handling multiple stages: research, drafting, SEO optimization, image creation, and distribution. Manually managing this workflow consumes hours each week. Claude skills transform this process into an automated pipeline that handles repetitive tasks while you focus on creative direction.
+Publishing consistent blog content takes time because the work spans multiple tools: drafting, formatting, image creation, SEO checks, and Git commits. Claude skills let you handle each stage inside Claude Code, reducing context-switching and keeping your workflow in the terminal.
 
-This tutorial shows you how to build an automated blog post workflow using Claude skills. You'll learn to integrate content generation, optimization, and publishing tools into a cohesive system that scales.
+This tutorial builds a practical blog publishing pipeline using Claude's built-in skills.
 
-## Understanding the Workflow Components
+## The Skills Involved
 
-An automated blog post workflow breaks down into five distinct phases. Each phase benefits from specific Claude skills that reduce manual effort and improve consistency.
+Before getting into the workflow, here is what each relevant skill actually does:
 
-**Content Generation** involves drafting initial posts based on outlines or topics. The **docx** skill helps format and edit content, while **supermemory** maintains context across sessions, remembering your brand voice and previous posts.
+- `/docx` — Converts or generates `.docx` documents from content you describe
+- `/canvas-design` — Creates visual assets (images, diagrams) from text descriptions
+- `/supermemory` — Stores and retrieves persistent notes across Claude Code sessions
+- `/pdf` — Processes PDF documents, extracts text, creates PDF output
+- `/tdd` — Guides test-driven development; not directly useful for blog content but useful if you build tooling around the workflow
 
-**SEO Optimization** requires keyword research, meta descriptions, and structural improvements. The **seo-analysis** capability within various skills handles keyword density checks and readability scoring.
+Skills are plain Markdown files stored in `~/.claude/skills/`. You invoke them with a `/skill-name` slash command at the start of a message in Claude Code. There are no install commands — you place the `.md` file in the skills directory and the slash command becomes available.
 
-**Visual Asset Creation** includes generating featured images, infographics, and social media graphics. The **canvas-design** skill creates branded visuals, while **algorithmic-art** produces unique featured images for each post.
+## Phase 1: Research and Outline
 
-**Publishing** involves formatting for your CMS, adding tags, and scheduling. The **webhook** integration skills connect to platforms like WordPress, Ghost, or static site generators.
+Start a Claude Code session and use `/supermemory` to pull up context from previous posts:
 
-**Distribution** means sharing across social channels and newsletters. Skills like **slack-git-creator** (note: check exact skill name in registry) automate social posts.
+```
+/supermemory
+What topics have I covered in my last five blog posts? What gaps exist?
+```
 
-## Setting Up Your Core Skills
+If you are starting fresh, describe your blog's focus areas and ask Claude to help outline a post:
 
-Before building the workflow, install and configure these essential skills:
+```
+I write about developer productivity and AI tools. Outline a 1200-word post
+about using Claude Code for code review automation. Include an introduction,
+three main sections with H2 headers, and a conclusion.
+```
+
+Save the outline to a file:
 
 ```bash
-# Install core skills for blog automation
-claude install docx
-claude install canvas-design
-claude install supermemory
-claude install pdf
-claude install tdd
+# From your terminal, write the outline to a draft file
+claude -p "Outline a 1200-word post about Claude Code for code review automation.
+Include intro, three H2 sections, and conclusion." > drafts/code-review-outline.md
 ```
 
-The **docx** skill handles document creation and editing. It preserves formatting while allowing programmatic content manipulation. The **canvas-design** skill generates images directly from descriptions, eliminating the need for external design tools.
+## Phase 2: Draft the Post
 
-The **supermemory** skill provides persistent context. It remembers your blog's style guidelines, previous content themes, and audience preferences across sessions. This context improves output quality and consistency.
+Open Claude Code interactively and write section by section:
 
-## Building the Content Pipeline
-
-Create a master skill that orchestrates the entire workflow. This skill coordinates sub-skills and maintains state throughout the publishing process.
-
-```yaml
-# blog-pipeline.skill.md
-name: Blog Pipeline
-description: Automated blog post creation and publishing workflow
-
-triggers:
-  - "write a blog post about"
-  - "create article about"
-  - "publish new blog"
-
-actions:
-  - name: Research
-    skill: supermemory
-    query: "previous posts on {{topic}}"
-  
-  - name: Draft
-    skill: docx
-    template: "blog-post-template"
-  
-  - name: Optimize
-    skill: seo-analysis
-    keywords: "{{target_keyword}}"
-  
-  - name: Create Image
-    skill: canvas-design
-    prompt: "{{image_description}}"
-  
-  - name: Publish
-    skill: github
-    repo: "{{blog_repo}}"
+```
+I have an outline in drafts/code-review-outline.md. Write the introduction section
+(~200 words). Focus on the problem developers face doing code review manually.
+Avoid filler phrases.
 ```
 
-This YAML defines triggers that activate the workflow, then sequences the actions. Each action calls a specific skill optimized for that phase.
+Iterate section by section. Keep each prompt focused on one part of the post. This produces tighter output than asking for the full article at once.
 
-## Implementing SEO Optimization
+When the draft is complete, use `/docx` to get a formatted Word document for review:
 
-Search engine optimization requires systematic analysis and implementation. The workflow should include keyword integration, meta description generation, and structural improvements.
-
-```javascript
-// seo-optimizer.js
-const seoAnalyzer = {
-  analyze: function(content, targetKeyword) {
-    const wordCount = content.split(/\s+/).length;
-    const keywordCount = (content.match(new RegExp(targetKeyword, 'gi')) || []).length;
-    const density = (keywordCount / wordCount) * 100;
-    
-    return {
-      wordCount,
-      keywordCount,
-      density: density.toFixed(2),
-      score: this.calculateScore(density, wordCount),
-      recommendations: this.getRecommendations(density, wordCount)
-    };
-  },
-  
-  calculateScore: function(density, wordCount) {
-    let score = 0;
-    if (density >= 1 && density <= 3) score += 40;
-    if (wordCount >= 800) score += 30;
-    if (wordCount >= 1500) score += 20;
-    return Math.min(score, 100);
-  },
-  
-  getRecommendations: function(density, wordCount) {
-    const recs = [];
-    if (density < 1) recs.push("Increase keyword usage");
-    if (density > 3) recs.push("Reduce keyword stuffing");
-    if (wordCount < 800) recs.push("Expand content length");
-    return recs;
-  }
-};
+```
+/docx
+Convert my draft in drafts/code-review-post.md to a Word document with proper
+heading styles (H1 for title, H2 for sections) and save it as drafts/code-review-post.docx
 ```
 
-Integrate this analyzer into your workflow to automatically score posts and suggest improvements before publishing. Aim for 1-2% keyword density and minimum 800 words for better rankings.
+## Phase 3: SEO Front Matter
 
-## Automating Image Generation
+Every post needs accurate front matter. Ask Claude to generate it:
 
-Featured images significantly impact click-through rates. The **canvas-design** skill generates custom images matching your blog's aesthetic:
+```
+Generate Jekyll front matter for a post titled "Automating Code Review with Claude Code".
+- Keep the title under 60 characters
+- Write a meta description under 155 characters that includes "code review automation"
+- Suggest 4-6 relevant tags
+- Use today's date: 2026-03-13
+```
+
+Apply the front matter to your Markdown file manually or with a shell script:
 
 ```bash
-# Using canvas-design skill
-claude run canvas-design \
-  --prompt "modern tech blog featured image, {{topic}}, minimal design, blue and white color scheme" \
-  --output "images/{{slug}}-featured.png" \
-  --size 1200x630
+#!/bin/bash
+# prepend-front-matter.sh — prepend generated front matter to draft
+
+DRAFT="drafts/code-review-post.md"
+FRONT_MATTER="drafts/front-matter.yml"
+OUTPUT="articles/claude-code-review-automation.md"
+
+cat "$FRONT_MATTER" "$DRAFT" > "$OUTPUT"
+echo "Created $OUTPUT"
 ```
 
-For more artistic visuals, **algorithmic-art** creates unique generative artwork:
+## Phase 4: Featured Image with /canvas-design
+
+Generate a featured image that fits your blog's style:
+
+```
+/canvas-design
+Create a featured image for a blog post about AI code review. Style: clean, minimal,
+dark background with blue accents, 1200x630 pixels. Show a terminal window with
+highlighted diff output.
+```
+
+The `/canvas-design` skill generates the image and describes how to reproduce it or provides the file directly, depending on your setup. Save the output to your `assets/images/` directory.
+
+## Phase 5: Store Style Guidelines with /supermemory
+
+After finalizing a post, record what worked:
+
+```
+/supermemory
+Remember: my blog posts use second-person voice, avoid passive constructions,
+target 900-1200 words, and always include a code example in the first section.
+```
+
+On future sessions, retrieve this context at the start:
+
+```
+/supermemory
+What are my blog writing guidelines?
+```
+
+This keeps your voice consistent without pasting a style guide into every prompt.
+
+## Phase 6: Publish to Git
+
+Once the post is ready, publish it:
 
 ```bash
-claude run algorithmic-art \
-  --seed "{{date}}" \
-  --style "geometric flow" \
-  --palette "brand" \
-  --output "images/{{slug}}-art.png"
+#!/bin/bash
+# publish.sh — commit and push a new article
+
+ARTICLE="$1"
+TITLE=$(grep '^title:' "$ARTICLE" | sed 's/title: //' | tr -d '"')
+
+cd ~/blog
+
+cp "$ARTICLE" "_posts/$(date +%Y-%m-%d)-$(basename $ARTICLE)"
+
+git add "_posts/"
+git commit -m "Add post: $TITLE"
+git push origin main
+
+echo "Published: $TITLE"
 ```
 
-This ensures every post has a distinctive, professionally-styled image without manual design work.
+Run it with:
 
-## Publishing to Static Site Generators
-
-Most developer blogs use static site generators like Jekyll, Hugo, or Astro. Automate the publishing process:
-
-```yaml
-# publish-action.skill.md
-name: Publish to Static Site
-description: Commit and deploy blog post to static site
-
-steps:
-  - create: "articles/{{slug}}.md"
-    from: "templates/post.md"
-    with:
-      title: "{{title}}"
-      date: "{{date}}"
-      tags: "{{tags}}"
-  
-  - run: "jekyll build"
-  
-  - run: "git add articles/{{slug}}.md"
-  - run: "git commit -m 'Add blog post: {{title}}'"
-  - run: "git push origin main"
+```bash
+./publish.sh drafts/code-review-post.md
 ```
 
-This workflow creates the properly formatted Markdown file with front matter, builds the site, and commits changes. Connect to GitHub Actions for automatic deployment to GitHub Pages or Netlify.
+Your CI/CD pipeline (GitHub Actions, Netlify, Cloudflare Pages) picks up the push and deploys automatically.
 
-## Testing and Quality Assurance
+## Checking Quality Before Publishing
 
-Before publishing, validate your content using the **tdd** skill for automated testing:
+Before committing, run a quick self-check inside Claude Code:
 
-```javascript
-// blog-quality.test.js
-import { test, describe } from 'tdd';
+```
+Review drafts/code-review-post.md for:
+1. Does the title match the front matter title?
+2. Does the first paragraph contain the primary keyword?
+3. Are there any broken Markdown links (e.g., empty href)?
+4. Is the word count between 900 and 1400?
 
-describe('Blog Post Quality', () => {
-  test('word count meets minimum', (assert) => {
-    const content = readPost('draft.md');
-    assert.ok(content.split(/\s+/).length >= 800, 
-      'Post must be at least 800 words');
-  });
-  
-  test('has valid front matter', (assert) => {
-    const frontMatter = parseYaml(readPost('draft.md'));
-    assert.ok(frontMatter.title, 'Title is required');
-    assert.ok(frontMatter.date, 'Date is required');
-    assert.ok(frontMatter.description, 'Description is required');
-  });
-  
-  test('keyword appears in first paragraph', (assert) => {
-    const content = readPost('draft.md');
-    const firstPara = content.split('\n\n')[0];
-    assert.ok(firstPara.includes('{{keyword}}'),
-      'Keyword must appear in introduction');
-  });
-});
+Report each issue on its own line.
 ```
 
-Run these tests automatically before publishing to ensure every post meets quality standards.
+This catches common mistakes — mismatched titles, missing keywords, formatting errors — before they reach production.
 
-## Measuring and Iterating
+## Putting It Together
 
-Track workflow performance using **supermemory** to log metrics:
+The complete workflow looks like this:
 
-```javascript
-const metrics = {
-  postsPublished: 0,
-  avgWordCount: 0,
-  avgSeoScore: 0,
-  timeToPublish: 0
-};
+1. `/supermemory` — retrieve context from previous sessions
+2. Outline in Claude Code, save to draft file
+3. Draft section by section, iterate with Claude
+4. `/docx` — export to Word for offline review
+5. Generate front matter with Claude, apply to Markdown
+6. `/canvas-design` — create featured image
+7. Quality check prompt
+8. `publish.sh` — commit and push
 
-// Log after each publish
-async function logMetrics(postData) {
-  metrics.postsPublished++;
-  metrics.avgWordCount = (metrics.avgWordCount * (metrics.postsPublished - 1) + postData.wordCount) / metrics.postsPublished;
-  metrics.avgSeoScore = (metrics.avgSeoScore * (metrics.postsPublished - 1) + postData.seoScore) / metrics.postsPublished;
-  
-  await supermemory.store('blog-metrics', metrics);
-}
-```
-
-Review these metrics weekly to identify bottlenecks and optimize your workflow.
-
-## Conclusion
-
-Building an automated blog post workflow with Claude skills dramatically reduces publishing overhead while maintaining quality. Start with the core skills—**docx**, **canvas-design**, **supermemory**, and **tdd**—then expand with SEO tools and publishing integrations.
-
-The initial setup requires investment, but the time saved on recurring tasks quickly pays off. Aim for a workflow that handles 80% of the mechanical work, leaving you to focus on creative direction and strategic content decisions.
-
-Experiment with different skill combinations to match your specific publishing needs. Every blog has unique requirements, and Claude skills adapt well to custom workflows.
+Each step is a focused Claude Code interaction or a small shell script. Nothing requires external platforms or special installs beyond having Claude Code and the built-in skills available.
 
 ---
 
 ## Related Reading
 
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Full developer skill stack including tdd
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Full developer skill stack
 - [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — Automate deployments with Claude skills
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — How skills activate automatically
 
