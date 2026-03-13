@@ -7,7 +7,7 @@ categories: [monitoring, multi-agent]
 tags: [claude-code, monitoring, logging, multi-agent, observability]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 10
 ---
 
 # Monitoring and Logging in Claude Code Multi-Agent Systems
