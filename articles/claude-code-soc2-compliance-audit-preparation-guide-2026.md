@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code SOC 2 Compliance Audit Preparation Guide 2026"
 description: "A comprehensive guide to preparing for SOC 2 compliance audits using Claude Code. Learn practical strategies, automation techniques, and skill recommendations."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 # Claude Code SOC 2 Compliance Audit Preparation Guide 2026
