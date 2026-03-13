@@ -50,7 +50,7 @@ public class UserController {
 }
 ```
 
-## Leveraging Claude Skills for Java Development
+## Claude Skills for Java Development
 
 Several Claude skills directly improve your Java development workflow. The **tdd skill** guides you through test-driven development practices, helping you write meaningful unit tests before implementing business logic. This approach reduces bugs and improves code maintainability.
 

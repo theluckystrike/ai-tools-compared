@@ -5,7 +5,7 @@ description: "A practical guide to measuring and optimizing Claude Code skill ef
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, metrics, efficiency, tdd, pdf, xlsx, frontend-design, supermemory, skill-optimization]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

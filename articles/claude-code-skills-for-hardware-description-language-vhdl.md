@@ -5,9 +5,9 @@ description: "A practical guide to using Claude Code skills for VHDL development
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, vhdl, hardware-description-language, fpga, digital-design, development-tools]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
-score: 8
+score: 7
 ---
 
 # Claude Code Skills for Hardware Description Language VHDL

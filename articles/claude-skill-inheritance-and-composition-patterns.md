@@ -5,7 +5,7 @@ description: "Master Claude skill inheritance and composition patterns. Learn ho
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, skill-composition, skill-inheritance, automation, workflows]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

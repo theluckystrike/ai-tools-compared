@@ -5,7 +5,7 @@ description: "Measure and reduce token consumption in your Claude skills. Practi
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, token-optimization, performance]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

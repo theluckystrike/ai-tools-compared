@@ -5,7 +5,7 @@ description: "A practical roadmap for Claude Code skills in 2026. Discover upcom
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, 2026, roadmap, ai-coding, mcp]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

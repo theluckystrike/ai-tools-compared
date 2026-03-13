@@ -5,7 +5,7 @@ description: "A practical look at voice interface support for Claude Code skills
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, voice-interfaces, voice-input, 2026, workflow-automation]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---

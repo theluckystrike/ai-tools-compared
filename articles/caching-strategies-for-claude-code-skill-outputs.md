@@ -5,7 +5,7 @@ description: "Practical caching strategies to optimize Claude Code skill outputs
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, caching, performance, skills, pdf, tdd, xlsx, supermemory, frontend-design]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---
