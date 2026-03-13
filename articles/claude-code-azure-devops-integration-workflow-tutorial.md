@@ -83,7 +83,7 @@ Save this as `skills/trigger-azure-pipeline.md` and Claude will automatically in
 
 ## Automated Testing with Claude TDD Skill
 
-The Claude TDD skill complements Azure DevOps integration by generating comprehensive tests before code reaches your CI pipeline. This workflow ensures higher code quality and fewer pipeline failures.
+The [Claude TDD skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) complements Azure DevOps integration by generating comprehensive tests before code reaches your CI pipeline. This workflow ensures higher code quality and fewer pipeline failures.
 
 Configure your Azure Pipeline to run TDD-generated tests:
 
@@ -159,7 +159,7 @@ commands:
 
 ## Document Generation with PDF Skill
 
-Use the PDF skill to generate deployment reports directly from Azure DevOps pipeline outputs. This proves valuable for compliance documentation and audit trails.
+Use the [PDF skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) to generate deployment reports directly from Azure DevOps pipeline outputs. This proves valuable for compliance documentation and audit trails.
 
 ```yaml
 # Add to your Azure Pipeline
@@ -187,7 +187,7 @@ claude -p pdf "Create deployment report from deployment-history.json"
 
 ## Memory Integration with Supermemory
 
-For teams managing multiple Azure environments, the supermemory skill provides context retention across sessions. This proves essential when working across development, staging, and production environments.
+For teams managing multiple Azure environments, the [supermemory skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) provides context retention across sessions. This proves essential when working across development, staging, and production environments.
 
 Configure supermemory to track environment-specific variables:
 

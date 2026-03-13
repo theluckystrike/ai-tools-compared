@@ -63,7 +63,7 @@ final counterProvider = StateNotifierProvider<CounterNotifier, int>((ref) {
 });
 ```
 
-The **tdd** skill proves invaluable here. It guides you through test-driven development, ensuring your state management logic works correctly before building UI components. When implementing complex state flows, write tests first using the tdd workflow, then implement the code to pass those tests.
+The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) proves invaluable here. It guides you through test-driven development, ensuring your state management logic works correctly before building UI components. When implementing complex state flows, write tests first using the tdd workflow, then implement the code to pass those tests.
 
 ## Building UI Components with Claude
 
@@ -203,7 +203,7 @@ Flutter performance tuning involves several areas where Claude provides guidance
 - **ListView.builder**: For long lists, always use lazy loading
 - **Image caching**: Use `cached_network_image` for remote images
 
-Claude analyzes your code and suggests specific optimizations. The **supermemory** skill helps track performance metrics across builds, creating a historical record of app size, startup time, and frame rates.
+Claude analyzes your code and suggests specific optimizations. The [**supermemory** skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) helps track performance metrics across builds, creating a historical record of app size, startup time, and frame rates.
 
 ## Platform-Specific Features
 

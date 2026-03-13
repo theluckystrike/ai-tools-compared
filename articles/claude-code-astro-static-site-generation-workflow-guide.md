@@ -30,7 +30,7 @@ cd my-static-site
 npm install
 ```
 
-After scaffolding, activate the `/frontend-design` skill to help generate component patterns:
+After scaffolding, activate the [`/frontend-design` skill](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) to help generate component patterns:
 
 ```
 /frontend-design
@@ -72,7 +72,7 @@ export const collections = { blog };
 
 ### Testing with the TDD Skill
 
-Integrate the `/tdd` skill for component testing. While Astro produces static output, interactive components and client-side logic benefit from test coverage:
+Integrate the [`/tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) for component testing. While Astro produces static output, interactive components and client-side logic benefit from test coverage:
 
 ```
 /tdd
@@ -88,7 +88,7 @@ The tdd skill guides Claude to produce test files using your project's test fram
 
 ### Documentation and Memory
 
-The `/supermemory` skill maintains context across long sessions. When building a larger site, activate it early:
+The [`/supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) maintains context across long sessions. When building a larger site, activate it early:
 
 ```
 /supermemory

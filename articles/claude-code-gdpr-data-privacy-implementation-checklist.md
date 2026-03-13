@@ -126,4 +126,12 @@ Automate retention enforcement where possible—delete user data automatically a
 
 Building privacy into your development process from the start costs less than retrofitting compliance later. Claude Code skills provide practical assistance, but the discipline of systematic privacy implementation comes from your development practices.
 
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Enterprise-grade access controls, audit logging, and compliance framework patterns
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The tdd, pdf, and xlsx skills referenced throughout GDPR implementation workflows
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep compliance audit automation sessions cost-efficient
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
