@@ -123,11 +123,14 @@ The **frontend-design** skill complements this by suggesting UI components that 
 
 Use the **pdf** skill to generate project documentation automatically:
 
-```bash
-claude skill invoke pdf --format markdown --output docs/api-reference.md
+```
+/pdf
+Document these API routes for team reference:
+[paste route handlers]
+Include: endpoints, parameters, response formats, and error codes.
 ```
 
-This creates comprehensive API documentation that you can share with team members or include in pull requests. The skill parses your route handlers and generates documentation based on JSDoc comments and TypeScript types.
+This creates API documentation you can share with team members or include in pull requests.
 
 ## Managing State with Supermemory
 

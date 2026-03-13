@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "What Is the Best Claude Skill for Automated Code Review"
 description: "Discover the best Claude skills for automated code review: tdd, supermemory, code-audit, and how to build a complete review workflow in 2026."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "How Do I Rollback a Bad Claude Skill Update Safely"
 description: "Learn how to safely rollback problematic Claude Code skill updates using git-based restoration, backup strategies, and prevention best practices for developers."
 date: 2026-03-14
