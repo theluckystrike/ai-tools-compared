@@ -3,7 +3,7 @@ layout: post
 title: "Input Validation and Sanitization with Claude Code Guide"
 description: "Implement input validation and sanitization patterns in Claude Code skills for secure, robust AI agent development."
 date: 2026-03-13
-categories: [guides, security]
+categories: [guides]
 tags: [claude-code, claude-skills, validation, sanitization, security, patterns]
 author: "Claude Skills Guide"
 reviewed: true

@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code + LangChain Integration: Agent Workflow"
 description: "Integrate Claude Code with LangChain to build AI agent workflows for automation and development tasks."
 date: 2026-03-13
-categories: [integrations, guides]
+categories: [guides]
 tags: [claude-code, claude-skills, langchain, agents, automation, integration]
 author: "Claude Skills Guide"
 reviewed: true

@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code Skills for Terraform IaC: Complete Guide"
 description: "Use Claude Code skills for Terraform and IaC workflows. Covers shell-expert, tdd, and git-workflow skills with real Terraform examples."
 date: 2026-03-13
-categories: [tutorials, workflows]
+categories: [tutorials]
 tags: [claude-code, claude-skills, terraform, infrastructure-as-code]
 author: "Claude Skills Guide"
 reviewed: true
@@ -108,7 +108,7 @@ This becomes invaluable when returning to a project after several weeks or when 
 
 ### Generating Terraform Configuration
 
-When starting a new module, describe your requirements to Claude and leverage the combination of skills to generate appropriate configuration. For example, an S3 bucket module:
+When starting a new module, describe your requirements to Claude and use the combination of skills to generate appropriate configuration. For example, an S3 bucket module:
 
 ```hcl
 # modules/s3-static-site/main.tf

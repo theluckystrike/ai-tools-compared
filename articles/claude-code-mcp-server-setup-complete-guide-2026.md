@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code MCP Server Setup: Complete Guide 2026"
 description: "Set up MCP servers for Claude Code in 2026. Configure Model Context Protocol servers, build custom skills, and connect external APIs step by step."
 date: 2026-03-13
-categories: [tutorials, guides]
+categories: [guides]
 tags: [claude-code, claude-skills, mcp, model-context-protocol]
 author: "Claude Skills Guide"
 reviewed: true

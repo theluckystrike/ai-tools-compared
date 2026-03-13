@@ -3,7 +3,7 @@ layout: post
 title: "Skill MD File Format Explained With Examples Guide"
 description: "The skill.md file format for Claude Code: front matter fields, body structure, and practical examples for building effective skill definitions."
 date: 2026-03-13
-categories: [tutorials, guides]
+categories: [tutorials]
 tags: [claude-code, claude-skills, skill-md, skill-format, reference]
 author: "Claude Skills Guide"
 reviewed: true

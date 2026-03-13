@@ -3,7 +3,7 @@ layout: post
 title: "Automated GitHub Issue Triage with Claude Skills Guide"
 description: "Automate GitHub issue triage, labeling, and prioritization with Claude Code skills. Practical examples using gh CLI, GitHub Actions, and supermemory."
 date: 2026-03-13
-categories: [workflows, tutorials]
+categories: [workflows]
 tags: [claude-code, claude-skills, github, issue-triage, automation]
 author: "Claude Skills Guide"
 reviewed: true
@@ -27,7 +27,7 @@ Before implementing automation, identify the stages where Claude skills add valu
 3. **Priority assessment** — Issues are ranked by severity or impact
 4. **Routing** — Issues get assigned to appropriate team members or projects
 
-Each stage can leverage Claude skills to process the issue content intelligently.
+Each stage can use Claude skills to process the issue content intelligently.
 
 ## Extracting Issue Content with Claude Code
 

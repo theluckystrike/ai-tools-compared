@@ -133,7 +133,7 @@ Claude generates this pattern quickly and can adapt it for different screen size
 
 Most Flutter applications require local storage or backend communication. The **pdf** skill helps when generating reports or invoices from stored data, but for data persistence, Flutter works with several options.
 
-For local storage, SQLite via `sqflite` or `drift` provides robust solutions. For backend communication, Firebase remains popular, but Dio with custom interceptors works for any REST API.
+For local storage, SQLite via `sqflite` or `drift` provides reliable solutions. For backend communication, Firebase remains popular, but Dio with custom interceptors works for any REST API.
 
 Claude helps generate repository patterns that abstract data sources:
 

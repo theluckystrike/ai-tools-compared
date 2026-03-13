@@ -3,7 +3,7 @@ layout: post
 title: "Automated Code Documentation Workflow with Claude Skills"
 description: "Build automated code documentation using Claude skills: inline docs, README generation, and API reference with step-by-step examples."
 date: 2026-03-13
-categories: [workflows, documentation, claude-skills]
+categories: [workflows]
 tags: [claude-code, claude-skills, documentation, automation, pdf, supermemory]
 author: "Claude Skills Guide"
 reviewed: true

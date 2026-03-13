@@ -3,7 +3,7 @@ layout: post
 title: "How Claude Skills Auto Invocation Works"
 description: "Technical breakdown of Claude Code's auto-invocation system: trigger conditions, pattern matching, skill loading mechanics, and debugging strategies."
 date: 2026-03-13
-categories: [skills, guides]
+categories: [advanced]
 tags: [claude-code, claude-skills, auto-invocation, triggers]
 author: "Claude Skills Guide"
 reviewed: true

@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code Crashes When Loading Skill: Debug Guide"
 description: "Fix Claude Code skill loading crashes: YAML front matter errors, file permissions, skill directory structure, and systematic isolation techniques."
 date: 2026-03-13
-categories: [guides, tutorials]
+categories: [troubleshooting]
 tags: [claude-code, claude-skills, debugging, troubleshooting]
 author: "Claude Skills Guide"
 reviewed: true

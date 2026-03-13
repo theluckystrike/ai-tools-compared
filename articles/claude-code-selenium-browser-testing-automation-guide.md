@@ -4,7 +4,7 @@ title: "Claude Code Selenium Browser Testing Automation Guide"
 description: "Learn how to automate browser testing with Claude Code and Selenium. Practical examples, code snippets, and integration strategies for developers."
 date: 2026-03-13
 author: "Claude Skills Guide"
-categories: [guides, tutorials]
+categories: [tutorials]
 tags: [claude-code, claude-skills, selenium, testing, automation]
 reviewed: true
 score: 8

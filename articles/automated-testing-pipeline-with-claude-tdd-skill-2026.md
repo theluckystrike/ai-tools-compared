@@ -3,7 +3,7 @@ layout: post
 title: "Automated Testing Pipeline with Claude TDD Skill (2026)"
 description: "Build a real automated testing pipeline using Claude's /tdd skill. Practical examples, CI/CD integration, and workflow tips for 2026."
 date: 2026-03-13
-categories: [testing, workflows, guides]
+categories: [tutorials]
 tags: [claude-code, claude-skills, tdd, testing, ci-cd, automation]
 author: "Claude Skills Guide"
 reviewed: true

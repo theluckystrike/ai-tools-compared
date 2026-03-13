@@ -4,7 +4,7 @@ title: "Claude Code Skill Permission Scope Error: Fix Guide"
 description: "Understand and fix permission scope errors in Claude Code skills. Covers sandbox model, settings.json allow/deny rules, and skill-specific patterns."
 date: 2026-03-13
 author: "Claude Skills Guide"
-categories: [troubleshooting, guides]
+categories: [troubleshooting]
 tags: [claude-code, claude-skills, permissions, troubleshooting]
 reviewed: true
 score: 7

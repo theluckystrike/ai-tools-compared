@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Secret Scanning: Prevent Credential Leaks Guide
 
-Credential leaks represent one of the most dangerous security vulnerabilities in modern development workflows. When API keys, passwords, or tokens accidentally end up in code repositories, they can be exploited within minutes. Claude Code skills can help you implement robust secret scanning that catches these vulnerabilities before they become security incidents.
+Credential leaks represent one of the most dangerous security vulnerabilities in modern development workflows. When API keys, passwords, or tokens accidentally end up in code repositories, they can be exploited within minutes. Claude Code skills can help you implement reliable secret scanning that catches these vulnerabilities before they become security incidents.
 
 ## Understanding the Credential Leak Problem
 

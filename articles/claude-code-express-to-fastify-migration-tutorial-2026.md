@@ -3,7 +3,7 @@ layout: post
 title: "Express to Fastify Migration with Claude Code (2026)"
 description: "Migrate Express.js applications to Fastify using Claude Code. Step-by-step process, code conversion patterns, and automated migration workflows."
 date: 2026-03-13
-categories: [tutorials, migration, nodejs]
+categories: [tutorials]
 tags: [claude-code, claude-skills, express, fastify, migration, nodejs, javascript]
 author: "Claude Skills Guide"
 reviewed: true

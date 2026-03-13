@@ -3,7 +3,7 @@ layout: post
 title: "Advanced Claude Skills: Tool Use Patterns 2026"
 description: "Design Claude skills that use tools precisely. Patterns for reading files, running bash commands, MCP custom tools, and reliable tool chaining."
 date: 2026-03-13
-categories: [skills, advanced]
+categories: [advanced]
 tags: [claude-code, claude-skills, tool-use, mcp, advanced]
 author: "Claude Skills Guide"
 reviewed: true

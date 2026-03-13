@@ -3,7 +3,7 @@ layout: post
 title: "Best Claude Skills for Writing and Content Creation"
 description: "Top Claude skills for writing and content creation: docx, pdf, pptx, xlsx, and supermemory with real /skill-name invocation examples for writers."
 date: 2026-03-13
-categories: [skills, tutorials]
+categories: [best-of]
 tags: [claude-code, claude-skills, writing, content-creation, docx, pdf, pptx]
 author: "Claude Skills Guide"
 reviewed: true

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Claude Code GitLab CI Pipeline Docker Registry Tutorial"
+<<<<<<< Updated upstream
 description: "A practical guide to building CI/CD pipelines with GitLab and Docker Registry. Includes .gitlab-ci.yml examples, Docker configuration, and automation patte"
 date: 2026-03-14
 categories: [tutorials]
@@ -8,6 +9,13 @@ tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 reviewed: true
 score: 
+=======
+description: "A practical guide to building CI/CD pipelines with GitLab and Docker Registry. Includes .gitlab-ci.yml examples, Docker configuration, and automation pa..."
+date: 2026-03-14
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
+>>>>>>> Stashed changes
 ---
 
 # Claude Code GitLab CI Pipeline Docker Registry Tutorial

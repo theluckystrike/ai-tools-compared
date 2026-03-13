@@ -3,7 +3,7 @@ layout: post
 title: "Bundle Size Reduction: Webpack to Vite 2026 Guide"
 description: "Practical workflow for reducing JavaScript bundle sizes when migrating from Webpack to Vite, with optimization strategies."
 date: 2026-03-13
-categories: [guides, frontend, performance]
+categories: [workflows]
 tags: [claude-code, claude-skills, webpack, vite, bundle-size, performance, javascript]
 author: "Claude Skills Guide"
 reviewed: true

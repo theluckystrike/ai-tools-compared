@@ -3,7 +3,7 @@ layout: post
 title: "Claude Skills Email Drafting Automation Workflow"
 description: "Build an email drafting workflow using custom Claude skills: incident reports, API deprecation notices, and sprint updates with consistent structure."
 date: 2026-03-13
-categories: [workflows, claude-skills]
+categories: [workflows]
 tags: [claude-code, claude-skills, email, automation, productivity]
 author: "Claude Skills Guide"
 reviewed: true

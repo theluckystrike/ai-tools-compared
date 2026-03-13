@@ -6,7 +6,7 @@ date: 2026-03-13
 author: "Claude Skills Guide"
 reviewed: true
 score: 8
-categories: [guides, integrations]
+categories: [guides]
 tags: [claude-code, claude-skills, api, integration]
 ---
 

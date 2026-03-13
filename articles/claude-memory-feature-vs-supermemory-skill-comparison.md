@@ -3,7 +3,7 @@ layout: post
 title: "Claude Memory Feature vs SuperMemory Skill"
 description: "Claude's built-in session context vs the /supermemory skill: what each does, when to use each, and how they work together in Claude Code."
 date: 2026-03-13
-categories: [skills, guides]
+categories: [comparisons]
 tags: [claude-code, claude-skills, supermemory, memory, context]
 author: "Claude Skills Guide"
 reviewed: true

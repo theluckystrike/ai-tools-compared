@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code 2026: Skills and Hooks Feature Roundup"
 description: "Claude Code 2026 skills and hooks roundup: pdf, tdd, supermemory, webapp-testing, and hook system with real invocation examples and config patterns."
 date: 2026-03-13
-categories: [guides, tutorials]
+categories: [guides]
 tags: [claude-code, claude-skills, hooks, pdf, tdd, supermemory, webapp-testing]
 author: "Claude Skills Guide"
 reviewed: true

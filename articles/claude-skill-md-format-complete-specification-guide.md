@@ -3,7 +3,7 @@ layout: post
 title: "Claude Skill .md File Format: Full Specification Guide"
 description: "Everything you need to know about the Claude skill .md file format: structure, placement, invocation, and body content with working examples."
 date: 2026-03-13
-categories: [skills, reference, guides]
+categories: [guides]
 tags: [claude-code, claude-skills, skill-format, markdown, reference]
 author: "Claude Skills Guide"
 reviewed: true

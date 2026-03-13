@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code for Beginners: Getting Started 2026"
 description: "Step-by-step beginner guide to Claude Code: installation, first session, skills, CLAUDE.md setup, and practical tips for your first AI-assisted workflow."
 date: 2026-03-13
-categories: [getting-started, tutorials]
+categories: [tutorials]
 tags: [claude-code, claude-skills, beginners, tutorial, getting-started]
 author: "Claude Skills Guide"
 reviewed: true

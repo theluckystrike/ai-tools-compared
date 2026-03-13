@@ -3,7 +3,7 @@ layout: post
 title: "Best Claude Skills for Developers in 2026"
 description: "The most useful Claude AI skills for developers in 2026: PDF processing, TDD, spreadsheet automation, memory management, and web testing."
 date: 2026-03-13
-categories: [skills, guides]
+categories: [best-of]
 tags: [claude-code, claude-skills, developers, tdd, pdf]
 author: "Claude Skills Guide"
 reviewed: true

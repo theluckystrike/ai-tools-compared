@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code Skill Output Formatting: Fix Guide"
 description: "Fix broken output formatting in Claude Code skills: markdown rendering, code block issues, instruction mismatches, and terminal vs IDE display differences."
 date: 2026-03-13
-categories: [troubleshooting, claude-skills]
+categories: [troubleshooting]
 tags: [claude-code, claude-skills, output-formatting, debugging, troubleshooting]
 author: "Claude Skills Guide"
 reviewed: true

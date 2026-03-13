@@ -3,7 +3,7 @@ layout: post
 title: "Claude Skill Not Showing Up? Fix Guide"
 description: "Skill won't load in Claude Code? This guide covers the most common reasons skills fail to appear and how to resolve each issue quickly."
 date: 2026-03-13
-categories: [troubleshooting, guides]
+categories: [troubleshooting]
 tags: [claude-code, claude-skills, troubleshooting, debug]
 author: "Claude Skills Guide"
 reviewed: true

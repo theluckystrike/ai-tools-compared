@@ -3,7 +3,7 @@ layout: post
 title: "Best Claude Skills for DevOps and Deployment"
 description: "Top Claude Code skills for DevOps: shell scripting, Docker, Terraform, CI/CD pipelines, security scanning, and database migration workflows."
 date: 2026-03-13
-categories: [skills, guides]
+categories: [best-of]
 tags: [claude-code, claude-skills, devops, deployment, shell]
 author: "Claude Skills Guide"
 reviewed: true

@@ -3,7 +3,7 @@ layout: post
 title: "LLM Evaluation and Benchmarking with Claude Code 2026"
 description: "Build an LLM evaluation and benchmarking workflow with Claude Code. Automate testing, measure performance, and make data-driven model decisions."
 date: 2026-03-13
-categories: [guides, workflows]
+categories: [workflows]
 tags: [claude-code, claude-skills, llm-evaluation, benchmarking, ai-testing]
 author: "Claude Skills Guide"
 reviewed: true

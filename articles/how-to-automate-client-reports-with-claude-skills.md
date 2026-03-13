@@ -3,7 +3,7 @@ layout: post
 title: "How to Automate Client Reports with Claude Skills"
 description: "Automate client report workflows using Claude Code skills. Learn how /pdf, /tdd, and /supermemory work together in a practical reporting pipeline."
 date: 2026-03-13
-categories: [skills, guides]
+categories: [workflows]
 tags: [claude-code, claude-skills, automation, client-reports, pdf, tdd, supermemory]
 author: "Claude Skills Guide"
 reviewed: true

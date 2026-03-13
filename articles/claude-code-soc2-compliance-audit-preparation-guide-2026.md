@@ -95,7 +95,7 @@ Build these reviews into your recurring meetings using the documentation pattern
 
 ## Conclusion
 
-SOC 2 compliance audit preparation becomes significantly more manageable when you leverage Claude Code effectively. By automating evidence collection, maintaining organized documentation, and building compliance into your daily workflows, you create a sustainable approach that satisfies auditors while improving your overall security posture.
+SOC 2 compliance audit preparation becomes significantly more manageable when you use Claude Code effectively. By automating evidence collection, maintaining organized documentation, and building compliance into your daily workflows, you create a sustainable approach that satisfies auditors while improving your overall security posture.
 
 Remember that compliance is not a destination but an ongoing process. The skills and workflows you build for your first SOC 2 audit will serve as a foundation for subsequent audits and potentially other compliance frameworks like ISO 27001 or HIPAA.
 

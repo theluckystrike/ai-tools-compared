@@ -3,7 +3,7 @@ layout: post
 title: "Extended Thinking + Claude Skills: Integration Guide"
 description: "Combine Claude Code skills with extended thinking to tackle complex workflows. Practical patterns for /supermemory, /tdd, /pdf, and /xlsx in 2026."
 date: 2026-03-13
-categories: [guides, workflows, skills]
+categories: [guides]
 tags: [claude-code, claude-skills, extended-thinking, supermemory, tdd, workflows]
 author: "Claude Skills Guide"
 reviewed: true
