@@ -1,13 +1,9 @@
 ---
-layout: post
-title: "Daily Standup Automation with Claude Skills"
+layout: default
+title: "Claude Skills Daily Standup Automation Workflow"
 description: "Automate daily standup reports using Claude Code skills. Pull git activity, format updates, and deliver to Slack or Teams with minimal manual effort."
 date: 2026-03-13
-categories: [workflows, tutorials]
-tags: [claude-code, claude-skills, standup, automation, productivity]
-author: "Claude Skills Guide"
-reviewed: true
-score: 6
+author: theluckystrike
 ---
 
 # Daily Standup Automation with Claude Skills
