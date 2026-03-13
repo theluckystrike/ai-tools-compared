@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills Onboarding for New Engineering Team Members"
 description: "A practical guide for new engineering team members to get started with Claude skills. Learn which skills to install, how to set up your environment, and workflows that accelerate onboarding."
 date: 2026-03-14
