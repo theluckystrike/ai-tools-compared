@@ -4,7 +4,7 @@ title: "How Do I Limit What a Claude Skill Can Access on Disk"
 description: "A practical guide for developers and power users on restricting Claude skill file system access. Learn about permission scopes, directory isolation, and..."
 date: 2026-03-14
 author: "Claude Skills Guide"
-categories: [security, configuration]
+categories: [guides]
 tags: [claude-code, claude-skills, permissions, security, file-access]
 reviewed: true
 score: 9

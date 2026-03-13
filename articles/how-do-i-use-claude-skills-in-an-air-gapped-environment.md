@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on running Claude
 date: 2026-03-14
 author: "Claude Skills Guide"
 reviewed: true
-score: 6
+score: 7
 categories: [tutorials]
 tags: [claude-code, claude-skills]
 ---

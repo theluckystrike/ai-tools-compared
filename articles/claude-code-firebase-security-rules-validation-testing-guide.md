@@ -4,7 +4,7 @@ title: "Claude Code Firebase Security Rules Validation Testing Guide"
 description: "Learn how to validate and test Firebase security rules using Claude Code. Practical patterns for writing, testing, and debugging Firestore and Realtime ..."
 date: 2026-03-14
 author: "Claude Skills Guide"
-categories: [guides, tutorials]
+categories: [tutorials]
 tags: [claude-code, claude-skills, firebase, security-rules, testing, firestore]
 reviewed: true
 score: 8

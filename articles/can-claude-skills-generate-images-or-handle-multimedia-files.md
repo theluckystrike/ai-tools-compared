@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Can Claude Skills Generate Images or Handle Multimedia Fi..."
+title: "Can Claude Skills Generate Images or Handle Multimedia Files?"
 description: "Learn how Claude skills work with multimedia through tools, APIs, and specialized skills for images, audio, video, and documents."
 date: 2026-03-14
+categories: [guides]
+tags: [claude-code, claude-skills, multimedia, pdf, canvas-design]
 author: "Claude Skills Guide"
 reviewed: true
-score: 9
+score: 8
 ---
 
 # Can Claude Skills Generate Images or Handle Multimedia Files?

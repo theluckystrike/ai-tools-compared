@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, docker, devops, containers, multi-stage-builds]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Claude Code Dockerfile Generation: Multi-Stage Build Guide
