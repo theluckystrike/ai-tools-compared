@@ -226,5 +226,12 @@ The xlsx skill helps generate reports from these metrics for team reviews and st
 Automating security code review checklists with Claude Code skills transforms security from a periodic chore into a continuous process. By automating repetitive checks, your team catches vulnerabilities earlier, reviews PRs faster, and maintains consistent security standards across all code.
 
 Start with the checklist items that affect your project most, build incrementally, and refine based on real findings. The investment in automation pays dividends in reduced security incidents and more efficient development cycles.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Enterprise security patterns including SIEM audit logging and ACL enforcement
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Core developer skills that complement automated security review workflows
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep automated code review sessions affordable at scale
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

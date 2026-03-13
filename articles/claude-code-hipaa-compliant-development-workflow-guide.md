@@ -199,5 +199,12 @@ Conduct penetration testing quarterly and maintain documentation of all security
 Building HIPAA-compliant applications with Claude Code requires attention to detail and systematic approaches. Key practices include implementing robust access controls, maintaining comprehensive audit logs, encrypting data at rest and in transit, and regularly testing your security measures.
 
 Remember that HIPAA compliance is an ongoing process, not a one-time achievement. Stay updated with the latest security recommendations and regularly review your application's compliance status.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Audit logging, access controls, and compliance frameworks for regulated environments
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Developer skills that support compliance-driven test-first development
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep compliance audit and documentation sessions cost-efficient
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

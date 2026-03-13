@@ -232,5 +232,12 @@ jobs:
 Building a Claude Code OWASP Top 10 security scanning workflow transforms security from a periodic audit into continuous protection. The key lies in combining Claude's code analysis capabilities with specialized skills like **tdd** for security testing, **supermemory** for tracking findings, and **pdf** for compliance reporting.
 
 Start with the ten categories above, customize the scanning rules to your tech stack, and integrate checks into your development workflow. Security improves dramatically when scanning happens at every code change rather than waiting for dedicated audit phases.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Integrate OWASP scanning into enterprise-grade access control and audit pipelines
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Developer skills that pair with security scanning in the CI/CD pipeline
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Run regular security scans without runaway API costs
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

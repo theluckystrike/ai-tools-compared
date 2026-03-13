@@ -172,5 +172,12 @@ For teams using GitHub Actions or similar CI platforms, integrating secret scann
 Implementing secret scanning in your Claude Code workflows protects against credential leaks at multiple layers. Pattern-based scanning catches known secret formats in code, git hooks prevent new leaks from entering repositories, and environment validation ensures configuration security. Building these protections into your skills—whether you're using the tdd skill for test generation, the frontend-design skill for UI development, or custom automation—creates a security-conscious development environment.
 
 The investment in proper secret scanning pays dividends in reduced incident response costs, compliance posture, and developer confidence. Start with basic pattern matching, layer in git hooks, and expand to comprehensive monitoring as your workflows mature.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Enterprise secret management, vault integration, and compliance audit patterns
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — DevOps skills that include pre-push secret scanning hooks
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Automate secret scanning efficiently without excessive API usage
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

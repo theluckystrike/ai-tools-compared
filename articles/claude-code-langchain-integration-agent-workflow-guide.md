@@ -187,5 +187,12 @@ DebugLangChain agents by enabling verbose mode during development. This shows yo
 ## Conclusion
 
 Integrating Claude Code with LangChain unlocks sophisticated agent workflows. Start with simple tool definitions, add memory management as needed, and progressively build more complex chains. The combination gives you the best of CLI-driven development and flexible language model orchestration.
+---
+
+## Related Reading
+
+- [MCP Servers vs Claude Skills: What Is the Difference](/claude-skills-guide/articles/mcp-servers-vs-claude-skills-what-is-the-difference/) — Understand how MCP servers and skills compare for agent orchestration
+- [Multi-Agent Orchestration With Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Patterns for orchestrating multi-agent workflows with Claude Code
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Manage token consumption in LangChain agent loops
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

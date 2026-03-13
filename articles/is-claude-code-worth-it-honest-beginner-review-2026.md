@@ -35,7 +35,7 @@ This is where Claude Code shines. Tasks like "rename this function everywhere it
 
 ### Adding Tests to Existing Code
 
-Using the `tdd` skill, you can point Claude Code at a file that has no tests and ask it to write comprehensive test coverage. The output is usually good — better than what a junior developer would produce and faster than what a senior would bother doing for boring CRUD functions.
+Using the [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/), you can point Claude Code at a file that has no tests and ask it to write comprehensive test coverage. The output is usually good — better than what a junior developer would produce and faster than what a senior would bother doing for boring CRUD functions.
 
 ### Understanding Unfamiliar Code
 
@@ -43,7 +43,7 @@ When you're dropped into an existing codebase and don't know where to start, ask
 
 ### The `supermemory` Skill
 
-This skill alone is worth the setup time. Once configured, Claude remembers your project's context, decisions you've made, and your preferences across sessions. Without it, explaining your project background from scratch gets old fast.
+This [skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) alone is worth the setup time. Once configured, Claude remembers your project's context, decisions you've made, and your preferences across sessions. Without it, explaining your project background from scratch gets old fast.
 
 ## What's Frustrating
 
@@ -75,7 +75,7 @@ If you want suggestions as you type code, Claude Code doesn't do that. It's for 
 
 Most beginners don't engage with skills at first and miss one of Claude Code's biggest differentiators. Skills let you create specialized Claude modes for your workflow.
 
-The `pdf` skill for document generation, the `docx` skill for Word documents, the `frontend-design` skill that knows your design system, the `tdd` skill that enforces test-first development — these aren't just prompts you paste in. They're reusable configurations that make Claude automatically better at the specific things you do every day.
+The [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) for document generation, the `docx` skill for Word documents, the `frontend-design` skill that knows your design system, the `tdd` skill that enforces test-first development — these aren't just prompts you paste in. They're reusable configurations that make Claude automatically better at the specific things you do every day.
 
 Once you have three or four skills set up for your workflow, Claude Code stops feeling like a generic AI tool and starts feeling like something built for how you work.
 

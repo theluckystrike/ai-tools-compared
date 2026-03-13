@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude Code CSP Content Security Policy Generation Guide"
-description: "Learn how to generate and implement Content Security Policy headers using Claude Code. A practical workflow for securing your web applications against XSS and data injection attacks."
+description: "Generate and implement Content Security Policy headers with Claude Code. Secure your web apps against XSS and data injection attacks."
 date: 2026-03-13
 author: "Claude Skills Guide"
 categories: [guides]
@@ -182,5 +182,12 @@ Avoid these frequent mistakes when implementing CSP:
 Content Security Policy is essential for securing modern web applications. Using Claude Code to generate, test, and iterate on your CSP implementation makes the process significantly more manageable. Start with a report-only policy, gather data on actual resource usage, then progressively tighten your restrictions.
 
 Remember that CSP is not a one-time configuration—it requires ongoing maintenance as your application evolves. Regular audits using Claude Code's analysis capabilities help ensure your CSP remains effective against emerging threats.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Enterprise security framework patterns that complement CSP implementation
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Developer skills for building and testing security configurations
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Efficiently generate and iterate on security policy configurations
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

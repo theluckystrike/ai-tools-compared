@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Bundle Size Reduction: Webpack to Vite with Claude Code"
+title: "Bundle Size Reduction: Webpack to Vite 2026 Guide"
 description: "Practical workflow for reducing JavaScript bundle sizes when migrating from Webpack to Vite, with optimization strategies."
 date: 2026-03-13
 categories: [guides, frontend, performance]
@@ -198,5 +198,12 @@ This automation ensures team members stay informed about bundle size trends and 
 ## Conclusion
 
 Migrating from Webpack to Vite provides a strong foundation for bundle size reduction, but the real gains come from proper configuration and ongoing monitoring. Use dynamic imports strategically, split vendor code intelligently, and replace large dependencies with modular alternatives. The workflow combining Vite's built-in optimizations with Claude Code skills like **frontend-design**, **tdd**, and **supermemory** creates a repeatable process for maintaining lean bundles as your application evolves.
+---
+
+## Related Reading
+
+- [Best Claude Skills for Frontend and UI Development](/claude-skills-guide/articles/best-claude-skills-for-frontend-ui-development/) — Frontend skills for building optimized, lean production applications
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Core developer skills including supermemory for tracking bundle optimization sessions
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Apply token efficiency patterns to keep build optimization sessions affordable
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

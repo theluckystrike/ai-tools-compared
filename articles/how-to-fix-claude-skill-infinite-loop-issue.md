@@ -22,8 +22,8 @@ Common symptoms:
 
 - Claude calls `Bash` with the same command repeatedly (e.g., re-running a test that keeps failing)
 - Claude reads and rewrites the same file in cycles, each time reverting a previous change
-- A `tdd` or `frontend-design` workflow keeps generating new iterations without stopping
-- The `supermemory` skill writes a memory entry, reads it back, and re-writes it in a loop
+- A [`tdd`](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) or `frontend-design` workflow keeps generating new iterations without stopping
+- The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) writes a memory entry, reads it back, and re-writes it in a loop
 - Token usage spikes unusually fast for a simple task
 
 ## How to Stop an Active Loop

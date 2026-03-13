@@ -100,5 +100,12 @@ SOC 2 compliance audit preparation becomes significantly more manageable when yo
 Remember that compliance is not a destination but an ongoing process. The skills and workflows you build for your first SOC 2 audit will serve as a foundation for subsequent audits and potentially other compliance frameworks like ISO 27001 or HIPAA.
 
 Start your preparation early, automate where possible, and maintain thorough documentation. Your future self—and your auditor—will thank you.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Enterprise audit logging, access controls, and compliance framework implementation
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — pdf and xlsx skills for generating SOC 2 audit evidence packages
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Manage token usage during long compliance documentation sessions
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

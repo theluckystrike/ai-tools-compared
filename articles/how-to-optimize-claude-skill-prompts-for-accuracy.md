@@ -38,7 +38,7 @@ The strong version establishes seniority (implies best practices), technology co
 
 Tell the skill what input it should expect. Claude will then interpret ambiguous user messages through this lens.
 
-For a `tdd` skill:
+For a [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/):
 ```
 Input: You will receive either (a) a description of a feature to test, (b) an existing 
 function signature, or (c) a failing test to make pass. Identify which type of input 

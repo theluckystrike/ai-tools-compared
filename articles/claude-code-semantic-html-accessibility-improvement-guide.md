@@ -156,7 +156,12 @@ The key is making accessibility part of your development workflow rather than an
 Start by auditing your current codebase. Use Claude Code with the `frontend-design` skill to identify low-hanging fruit—missing landmarks, heading issues, button/link confusion. Fix these first, then establish patterns that prevent future issues.
 
 Accessibility isn't a destination but an ongoing commitment. With Claude Code assisting your workflow, maintaining semantic, accessible HTML becomes sustainable even on large projects.
-
 ---
+
+## Related Reading
+
+- [Best Claude Skills for Frontend and UI Development](/claude-skills-guide/articles/best-claude-skills-for-frontend-ui-development/) — Frontend skills for building accessible, semantic HTML structures
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Developer skills including tdd for writing accessibility tests
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Auto-trigger frontend and accessibility skills when working on HTML files
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

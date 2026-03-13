@@ -18,8 +18,8 @@ n8n is a self-hostable workflow automation tool with a visual node editor. Pairi
 
 Before getting into setup, here are realistic automation patterns that combine n8n with Claude intelligence:
 
-- Receive a GitHub webhook on PR open, send the diff to Claude for TDD review, post findings to Slack
-- Watch a Google Drive folder for new PDFs, extract content via Claude, store structured data in a database
+- Receive a GitHub webhook on PR open, send the diff to Claude for [TDD review](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/), post findings to Slack
+- Watch a Google Drive folder for new PDFs, extract content via [Claude's pdf skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/), store structured data in a database
 - Monitor RSS feeds, summarize articles with Claude, send a daily digest email
 - Capture form submissions, run through Claude for classification, route to the appropriate team
 
