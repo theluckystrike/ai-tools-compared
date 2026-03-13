@@ -30,7 +30,7 @@ This skill works particularly well with modern frameworks like React, Vue, and S
 The **canvas-design** skill creates visual assets directly within your project. Instead of switching to Figma or Photoshop, you can generate icons, illustrations, and graphics programmatically.
 
 ```javascript
-// The skill understands design principles and generates 
+// The skill understands design principles and generates
 // SVG or canvas-based visuals
 "Generate a set of social media icons in the brand color #3B82F6"
 ```
@@ -39,7 +39,7 @@ This skill is invaluable for prototyping and creating placeholder graphics durin
 
 ## pdf: Documentation Generation
 
-Frontend projects require documentation. The **pdf** skill generates professional PDFs from markdown, HTML, or structured data. Use it for API documentation, style guides, and user manuals.
+Frontend projects require documentation. The **pdf** skill generates professional PDFs from markdown, HTML, or structured data. Use it for API documentation, style guides, and user manuals. For a broader look at what the pdf skill can do across data workflows, see [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/).
 
 ```bash
 # Generate API documentation from JSDoc comments
@@ -58,7 +58,7 @@ The **tdd** skill enforces test-first development. It writes unit tests before i
 "Write tests for a pagination component that handles edge cases"
 ```
 
-Pair this skill with Vitest for JavaScript projects or Jest for React applications. The skill understands testing patterns specific to frontend development, including mocking DOM APIs and handling asynchronous operations.
+Pair this skill with Vitest for JavaScript projects or Jest for React applications. The skill understands testing patterns specific to frontend development, including mocking DOM APIs and handling asynchronous operations. For a full breakdown of tdd alongside other developer-focused skills, see [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/).
 
 ## supermemory: Knowledge Management
 
@@ -69,7 +69,7 @@ Pair this skill with Vitest for JavaScript projects or Jest for React applicatio
 "Where did we decide to use CSS modules over styled-components?"
 ```
 
-This skill connects with tools like Obsidian and Notion, creating a seamless knowledge management system. For large projects with multiple contributors, supermemory becomes essential for maintaining institutional knowledge.
+This skill connects with tools like Obsidian and Notion, creating a seamless knowledge management system. For large projects with multiple contributors, supermemory becomes essential for maintaining institutional knowledge. To make the most of supermemory without burning tokens, check out [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/).
 
 ## alg Design Patterns and Architecture
 
@@ -132,5 +132,11 @@ Start with the skills that address your immediate pain points, then expand as yo
 Invoke `/frontend-design` to scaffold components, `/tdd` to write tests before implementation, `/supermemory` to query your project knowledge, and `/pdf` or `/docx` to generate documentation. Start with the skill that addresses your most frequent bottleneck.
 
 ---
+
+## Related Reading
+
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — Extend your stack into CI/CD and infrastructure
+- [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — Data processing and reporting workflows
+- [Claude Skills vs Prompts: Which Is Better?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — Decide when skills beat plain prompts
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*

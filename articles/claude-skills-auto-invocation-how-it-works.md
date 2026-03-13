@@ -35,7 +35,7 @@ Here's how different triggers activate skills:
 
 ```
 User: "Can you help me extract text from this PDF?"
-→ System detects: "PDF" + "extract" 
+→ System detects: "PDF" + "extract"
 → Auto loads: pdf skill
 
 User: "Create a flow field visualization"
@@ -47,11 +47,13 @@ User: "Write tests for my authentication module"
 → Auto loads: tdd skill
 ```
 
+The skill definitions themselves are what Claude reads to understand when to activate. To understand how those definitions are structured, see [Skill MD File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/).
+
 ## Practical Examples
 
 ### Working with Documents
 
-When you ask Claude to work with documents, the system automatically loads relevant processing capabilities. For instance, requesting modifications to a `.docx` file invokes the docx skill, giving Claude awareness of paragraph styles, tracked changes, and document formatting. Similarly, spreadsheet operations with `.xlsx` files automatically engage the xlsx skill, providing formula support and data visualization capabilities.
+When you ask Claude to work with documents, the system automatically loads relevant processing capabilities. For instance, requesting modifications to a `.docx` file invokes the docx skill, giving Claude awareness of paragraph styles, tracked changes, and document formatting. Similarly, spreadsheet operations with `.xlsx` files automatically engage the xlsx skill, providing formula support and data visualization capabilities. For a full breakdown of document-processing skills in data workflows, see [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/).
 
 ### Development Workflows
 
@@ -77,7 +79,7 @@ Load the supermemory skill to search my notes.
 Activate the mcp-builder skill for server development.
 ```
 
-Explicit invocation proves useful when working across multiple skill domains in a single session or when automatic detection doesn't match your intent.
+Explicit invocation proves useful when working across multiple skill domains in a single session or when automatic detection doesn't match your intent. For a side-by-side look at when explicit skill invocation beats plain prompting, see [Claude Skills vs Prompts: Which Is Better?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/).
 
 ## Skill Categories and Triggers
 
@@ -118,6 +120,14 @@ When skills load, they initialize with relevant tooling and knowledge bases. The
 Sometimes auto invocation might not activate the skill you expect. This usually happens when request language remains too generic or when multiple skill domains compete for activation. In such cases, explicitly naming the skill resolves the ambiguity immediately. For example, saying "Use the pdf skill to extract tables from this document" guarantees the correct tool loads regardless of other contextual signals.
 
 Another common scenario involves compound requests spanning different domains. A single message asking to "analyze this data and create a presentation" might trigger only one skill initially. Breaking such requests into sequential steps or explicitly invoking both skills ensures comprehensive coverage.
+
+---
+
+## Related Reading
+
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — Understand how skill definitions control auto-invocation triggers
+- [Claude Skills vs Prompts: Which Is Better?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — Decide when auto-invoked skills beat crafting manual prompts
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The skills most likely to auto-trigger in developer sessions
 
 ---
 

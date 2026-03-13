@@ -30,7 +30,7 @@ def extract_spec_tables(pdf_path):
         yield tables
 ```
 
-This skill shines when processing API documentation, extracting code examples from PDF books, or converting technical specifications into usable data structures.
+This skill shines when processing API documentation, extracting code examples from PDF books, or converting technical specifications into usable data structures. For a complete guide to building data pipelines around the pdf skill, see [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/).
 
 ## Test-Driven Development with the TDD Skill
 
@@ -55,7 +55,7 @@ The skill analyzes your existing code and suggests meaningful test cases you mig
 
 ## Frontend Design with Canvas-Design and Theme-Factory
 
-Building visually appealing interfaces gets faster with **canvas-design** and **theme-factory**. These skills work together to generate pixel-perfect designs while maintaining consistency across your application.
+Building visually appealing interfaces gets faster with **canvas-design** and **theme-factory**. These skills work together to generate pixel-perfect designs while maintaining consistency across your application. For a deep dive into the full frontend skill stack, see [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/).
 
 The canvas-design skill produces exportable assets in PNG and PDF formats, while theme-factory applies cohesive styling to any artifact. This combination proves particularly valuable when creating design systems or maintaining brand consistency across multiple projects.
 
@@ -82,11 +82,11 @@ The **webapp-testing** skill leverages Playwright for comprehensive frontend ver
 # Automated visual regression testing
 def test_component_renders_correctly():
     page.goto('http://localhost:3000/dashboard')
-    
+
     # Capture screenshots for comparison
     dashboard = page.screenshot()
     compare_images(dashboard, 'expected-dashboard.png')
-    
+
     # Verify console has no errors
     assert not page.has_console_errors()
 ```
@@ -120,16 +120,24 @@ The **docx** and **pptx** skills enable programmatic generation of professional 
 
 ## The Skill-Creator Advantage
 
-Perhaps the most powerful skill in the ecosystem is **skill-creator**, which lets you build custom skills tailored to your specific workflows. When none of the existing skills fit your needs, this tool guides you through creating MCP (Model Context Protocol) servers that integrate external APIs and services.
+Perhaps the most powerful skill in the ecosystem is **skill-creator**, which lets you build custom skills tailored to your specific workflows. When none of the existing skills fit your needs, this tool guides you through creating MCP (Model Context Protocol) servers that integrate external APIs and services. Learn how to structure those skills properly in [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/).
 
 For example, you could create a skill that connects to your internal Jira instance, automates deployment scripts, or interfaces with proprietary APIs. The skill-creator ensures your custom additions maintain the same quality and integration standards as official skills.
 
 ## Choosing the Right Skills for Your Stack
 
-Selecting skills depends on your technology stack and project requirements. Frontend developers will benefit most from canvas-design and webapp-testing, while backend engineers might prioritize tdd and pdf skills. Full-stack developers should consider building a skill combination that covers their entire workflow.
+Selecting skills depends on your technology stack and project requirements. Frontend developers will benefit most from canvas-design and webapp-testing, while backend engineers might prioritize tdd and pdf skills. Full-stack developers should consider building a personalized skill combination that covers their entire workflow.
 
 Start with one or two skills that address your most frequent pain points. As you become proficient, gradually incorporate additional skills. The learning curve is minimal since each skill follows consistent patterns and integrates with your existing development environment.
 
 The skills mentioned here represent the most impactful additions to a developer's toolkit in 2026. By incorporating them into your workflow, you'll reduce manual effort, improve code quality, and focus more energy on solving actual problems rather than fighting with tooling.
+
+---
+
+## Related Reading
+
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — Extend skills into CI/CD and infrastructure automation
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep your skill usage cost-efficient at scale
+- [Official vs Community Claude Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — Know when to trust official vs community skills
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

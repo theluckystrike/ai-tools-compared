@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Skill MD File Format Explained With Examples"
-description: "The skill.md file format used by Claude AI skills: structure, metadata fields, and how to write effective skill definitions with examples."
+description: "Learn the skill.md file format for Claude AI skills. Covers structure, metadata fields, and practical examples to build effective skill definitions."
 date: 2026-03-13
 categories: [tutorials, guides]
 tags: [claude-code, claude-skills, skill-md]
@@ -18,13 +18,13 @@ The skill.md file serves as the core configuration and documentation format for 
 
 The skill.md format combines YAML front matter with Markdown content to define a skill's behavior. This hybrid approach provides structured metadata for machine parsing while maintaining human-readable documentation. The format emerged from the need to give Claude clear instructions about specialized capabilities without sacrificing readability.
 
-Every skill.md file contains two primary sections: the YAML front matter at the top (delimited by triple dashes) and the Markdown body below. The front matter stores configuration data like the skill name, description, and category. The body contains the actual skill guidance that Claude uses when executing tasks within that skill's domain.
+Every skill.md file contains two primary sections: the YAML front matter at the top (delimited by triple dashes) and the Markdown body below. The front matter stores configuration data like the skill name, description, and category. The body contains the actual skill guidance that Claude uses when executing tasks within that skill's domain. For a hands-on walkthrough of creating your first skill file from scratch, see [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/).
 
 ## Structure and Fields
 
 The front matter supports several standardized fields that Claude's skill loading mechanism recognizes. The most critical fields include `name`, which provides the skill's identifier; `description`, offering a brief summary of what the skill accomplishes; and optionally `category` or `tags`, helping with skill organization and discovery.
 
-The Markdown body follows a progressive disclosure model. At the first level, users see only the skill name and description. When you call `get_skill(skill_name)`, the full guidance loads, revealing detailed instructions, examples, and procedural knowledge. This design keeps the skill list clean while providing depth when needed.
+The Markdown body follows a progressive disclosure model. At the first level, users see only the skill name and description. When you call `get_skill(skill_name)`, the full guidance loads, revealing detailed instructions, examples, and procedural knowledge. This design keeps the skill list clean while providing depth when needed. For a detailed explanation of how this loading triggers automatically, see [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/).
 
 ## Practical Examples
 
@@ -83,11 +83,11 @@ processor.split_pages("document.pdf", output_dir="pages/")
 Always verify input PDF integrity before processing. Handle encrypted PDFs by checking the encryption status first. Use batch processing for large document sets to maintain efficiency.
 ```
 
-This example shows how skills like the pdf skill define clear usage scenarios, list key capabilities, and provide executable code snippets that Claude can reference when you request PDF operations.
+This example shows how skills like the pdf skill define clear usage scenarios, list key capabilities, and provide executable code snippets that Claude can reference when you request PDF operations. For practical applications of the pdf skill in data pipelines, see [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/).
 
 ## Advanced Patterns
 
-More sophisticated skills incorporate multiple tiers of guidance. The tdd skill, for instance, organizes content into test-driven development phases: setup, red phase (writing failing tests), green phase (making tests pass), and refactor phase. Each phase contains specific procedures, command examples, and validation criteria.
+More sophisticated skills incorporate multiple tiers of guidance. The tdd skill, for instance, organizes content into test-driven development phases: setup, red phase (writing failing tests), green phase (making tests pass), and refactor phase. Each phase contains specific procedures, command examples, and validation criteria. For a look at tdd and other advanced developer skills in production, see [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/).
 
 The supermemory skill demonstrates another pattern: combining API interactions with data management procedures. Its skill.md defines connection setup, memory storage operations, retrieval strategies, and cleanup procedures. When you work with memory-intensive workflows, this skill provides the procedural knowledge needed to manage persistent data effectively.
 
@@ -114,5 +114,13 @@ Consider edge cases and failure modes. A well-documented skill explains not just
 The skill.md format provides a flexible yet structured way to extend Claude's capabilities. By combining YAML metadata with Markdown documentation, skills become both machine-readable and human-friendly. Whether you're using existing skills like pdf for document processing, tdd for test-driven development workflows, or supermemory for data persistence, understanding this format helps you work more effectively with Claude's skill system.
 
 The pattern extends across dozens of specialized skills covering domains from presentation creation with pptx to document editing with docx and algorithmic art generation. Each skill follows the same fundamental format while tailoring its content to specific use cases.
+
+---
+
+## Related Reading
+
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — Step-by-step guide to creating your first skill file
+- [How to Contribute Claude Skills to Open Source](/claude-skills-guide/articles/how-to-contribute-claude-skills-to-open-source/) — Submit your skill to the community
+- [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — How the format you write drives automatic skill activation
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

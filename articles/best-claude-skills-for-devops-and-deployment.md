@@ -53,7 +53,7 @@ COPY --from=builder /app/main /app/
 ENTRYPOINT ["/app/main"]
 ```
 
-Claude skills help you understand multi-stage builds, security best practices, and optimization techniques that directly impact your deployment speed and security posture.
+Claude skills help you understand multi-stage builds, security best practices, and optimization techniques that directly impact your deployment speed and security posture. For a broader picture of how official and community security skills stack up, see [Official vs Community Claude Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/).
 
 ## Configuration Management and Infrastructure as Code
 
@@ -66,14 +66,14 @@ The **devops** skill provides specialized knowledge for infrastructure automatio
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.0.0"
-  
+
   name = "production-vpc"
   cidr = "10.0.0.0/16"
-  
+
   azs             = ["us-east-1a", "us-east-1b", "us-east-1c"]
   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-  
+
   enable_nat_gateway = true
   single_nat_gateway = false
 }
@@ -132,7 +132,7 @@ kubectl logs -l app=myapp --tail=100 --timestamps=true
 kubectl logs -f deployment/myapp --tail=50
 ```
 
-These capabilities accelerate incident response and help you identify root causes faster.
+These capabilities accelerate incident response and help you identify root causes faster. If your monitoring pipelines generate data reports, combine this with the skills in [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) for automated log summarization.
 
 ## Security Hardening for Deployments
 
@@ -174,5 +174,13 @@ ALTER TABLE users ADD COLUMN subscription_tier VARCHAR(20) DEFAULT 'free';
 This methodical approach prevents data loss and ensures smooth deployments.
 
 Start with the skills that address your most frequent pain points — shell scripting and CI/CD are good entry points for most teams. Add security scanning and database migration patterns as your pipeline matures.
+
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Core developer skills that complement DevOps workflows
+- [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) — Frontend skills for full-stack deployment pipelines
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep automation costs low as pipelines scale
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

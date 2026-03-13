@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Contribute Claude Skills to Open Source"
-description: "A practical guide for developers looking to contribute Claude Code skill files to open source projects: structure, quality checks, and PR workflow."
+description: "Step-by-step guide to contributing Claude AI skills to open source. Learn code structure, testing, PR best practices, and how to get your skill adopted."
 date: 2026-03-13
 categories: [guides, tutorials]
 tags: [claude-code, claude-skills, open-source, contribution]
@@ -16,7 +16,7 @@ Claude Code skills are `.md` files — plain Markdown with YAML front matter. Th
 
 ## Understanding Claude Skills Architecture
 
-A Claude skill is a single Markdown file. Claude reads it when you invoke `/skill-name` and follows the instructions inside. There's no build step, no compiled code, and no special runtime — just the `.md` file.
+A Claude skill is a single Markdown file. Claude reads it when you invoke `/skill-name` and follows the instructions inside. There's no build step, no compiled code, and no special runtime — just the `.md` file. The skill.md format is central to this—for a complete walkthrough of how it works, see [Skill MD File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/).
 
 ```markdown
 ---
@@ -52,6 +52,8 @@ Before submitting, do these checks:
 
 **Write a clear description**: The `description` field is what users see when browsing skills. Make it specific: "Add text watermarks to PDF documents" beats "PDF helper".
 
+For guidance on writing the actual skill.md file, see [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/).
+
 ## Choosing the Right Repository
 
 Research repositories before opening a PR. Look for:
@@ -78,6 +80,8 @@ Structure your skill's Markdown body to answer the questions users have:
 
 Keep instructions concrete. Instead of "handle errors appropriately," write "if the PDF is encrypted, Claude will prompt you for a password before proceeding."
 
+For a practical look at what the pdf skill can do that your contribution might build on, see [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/).
+
 ## Submitting Your Contribution
 
 Write a PR title that matches what the skill does:
@@ -93,6 +97,8 @@ In the PR description, include:
 
 Respond to reviewer feedback. Maintainers may ask for clearer wording, different examples, or adjustments to the front matter format.
 
+It also helps to understand the difference between official and community skill expectations before you submit—see [Official vs Community Claude Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) to calibrate the quality bar appropriately.
+
 ## Maintaining Your Contribution
 
 After merge, watch for issues. Users often find edge cases you didn't test. A skill that handles `.pdf` but not password-protected PDFs will get bug reports. Update the skill file to document known limitations if you can't fix them immediately.
@@ -100,5 +106,11 @@ After merge, watch for issues. Users often find edge cases you didn't test. A sk
 List your skill in community directories or forums. Skills gain adoption when people can find them.
 
 ---
+
+## Related Reading
+
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — The technical foundation for building any skill
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — Deep dive into the format your contribution must follow
+- [Official vs Community Claude Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — Understand the ecosystem you're contributing to
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*
