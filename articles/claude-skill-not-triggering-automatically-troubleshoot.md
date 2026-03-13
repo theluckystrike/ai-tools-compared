@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Claude Skill Not Triggering Automatically: Troubleshoot Guide"
-description: "Practical troubleshooting steps when your Claude Code skill is not triggering. Covers invocation syntax, file location, permissions, and YAML front matter issues."
+title: "Claude Skill Not Triggering: Troubleshoot Guide (2026)"
+description: "Troubleshoot Claude Code skill not triggering automatically. Fix invocation syntax, file location, permissions, and YAML front matter issues."
 date: 2026-03-13
 author: theluckystrike
 ---

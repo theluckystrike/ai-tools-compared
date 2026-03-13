@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Skills Competitive Analysis Automation Workflow"
+title: "Claude Skills: Competitive Analysis Automation Guide"
 description: "Automate competitive analysis using Claude Code skills for document processing, data extraction, memory management, and stakeholder reporting."
 date: 2026-03-13
 author: theluckystrike

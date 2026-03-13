@@ -186,4 +186,10 @@ Understanding the limits of the memory architecture prevents design mistakes:
 
 ---
 
+## Related Reading
+
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — The memory architecture described here directly affects token consumption; this article shows how to optimize each layer
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Covers supermemory and context-aware skills in practical terms, complementing this architectural overview
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Auto-invocation decisions are influenced by context architecture; understanding both helps you design more predictable workflows
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

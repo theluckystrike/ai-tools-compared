@@ -105,6 +105,8 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 | [Claude Skill Not Triggering? Troubleshooting Guide](/claude-skills-guide/articles/claude-skill-not-triggering-automatically-troubleshoot/) | Why workflow automation can fail and how to debug trigger issues |
 | [Automated Code Documentation Workflow with Claude Skills](/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/) | Generating code documentation automatically using Claude skills |
 | [Claude Skills with Slack Bot Integration Tutorial](/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/) | Building a Slack bot powered by Claude skills for team workflows |
+| [Claude Skills Email Drafting Automation Workflow](/claude-skills-guide/articles/claude-skills-email-drafting-automation-workflow/) | Automating email drafts with Claude skills for professional outreach |
+| [How to Optimize Claude Skill Prompts for Accuracy](/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/) | Writing precise skill prompts to get more accurate outputs |
 
 ---
 

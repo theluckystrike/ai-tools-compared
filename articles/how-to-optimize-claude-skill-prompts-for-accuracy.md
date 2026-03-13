@@ -203,4 +203,10 @@ Keep a test cases file alongside each skill:
 
 ---
 
+## Related Reading
+
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — The technical specification for every field in a skill file, including the body format that your optimized prompts go into
+- [How to Write a Skill .md File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — A complementary guide covering the full skill authoring process, from format to prompt structure to testing
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Optimizing your skill prompts for accuracy also tends to reduce token waste — this article explains how both goals align
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

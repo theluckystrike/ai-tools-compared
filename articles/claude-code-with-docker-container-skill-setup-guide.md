@@ -317,4 +317,12 @@ jobs:
 
 Running Claude Code with Docker container skill setup gives you portable, reproducible AI skill execution that works from development through production. The API container pattern is especially useful for teams that want to expose skills as services consumed by multiple applications. Start with the base Dockerfile and Compose setup, then move to the API container once you need programmatic access.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — Covers the deployment-oriented skills (tdd, pdf, supermemory) that benefit most from a containerized execution environment
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — A comprehensive list of skills worth containerizing, with guidance on which tasks each skill handles best
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — When running skills in containers at scale, token cost management becomes critical — this article covers the key techniques
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

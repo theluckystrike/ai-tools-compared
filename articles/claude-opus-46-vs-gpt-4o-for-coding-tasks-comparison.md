@@ -103,4 +103,10 @@ For pure coding quality on complex, multi-constraint tasks, **Claude Opus 4.6** 
 
 ---
 
+## Related Reading
+
+- [Anthropic Official Skills vs Community Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — The skills ecosystem is one of Claude Opus 4.6's key advantages over GPT-4o for developer workflows; this guide explains what's available
+- [Claude Skills vs Prompts: Which Is Better for Your Workflow?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — Understanding when skills outperform raw prompting helps you get the most from Claude Opus 4.6's superior instruction-following
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Claude Opus 4.6's larger context window is powerful but more expensive — these optimization techniques help you use it efficiently
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

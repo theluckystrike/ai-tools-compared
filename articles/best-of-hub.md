@@ -112,6 +112,7 @@ If you're just getting started with skills, these five deliver the highest value
 | [Claude Code vs OpenAI Codex CLI Comparison 2026](/claude-skills-guide/articles/claude-code-vs-openai-codex-cli-comparison-2026/) | 2026 head-to-head between Claude Code and OpenAI Codex CLI |
 | [Understanding Claude Code Hooks System: Complete Guide](/claude-skills-guide/articles/understanding-claude-code-hooks-system-complete-guide/) | Complete guide to Claude Code's hooks system in 2026 |
 | [Build Personal AI Assistant with Claude Skills Guide](/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/) | Step-by-step guide to building a personal AI assistant |
+| [Claude Code with Docker Container Skill Setup Guide](/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/) | Getting Claude Code working with Docker for containerized dev workflows |
 
 ---
 

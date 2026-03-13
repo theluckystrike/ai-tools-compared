@@ -144,6 +144,7 @@ Token efficiency matters when running multi-skill sessions. See [Claude Skills T
 | [Why Is My Claude Skill Not Showing Up? Fix Guide](/claude-skills-guide/articles/why-is-my-claude-skill-not-showing-up-fix-guide/) | Diagnosing skill visibility problems in Claude Code |
 | [Build Personal AI Assistant with Claude Skills Guide](/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/) | Building a customized personal AI assistant using Claude skills |
 | [Claude Skills with Slack Bot Integration Tutorial](/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/) | Integrating Claude skills with Slack for team automation |
+| [Claude Code with Docker Container Skill Setup Guide](/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/) | Setting up Claude Code to work with Docker containers using skills |
 
 ---
 
