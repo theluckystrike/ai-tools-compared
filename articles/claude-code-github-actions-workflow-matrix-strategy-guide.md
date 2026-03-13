@@ -138,7 +138,7 @@ Claude can help generate matrix configurations for complex scenarios. For instan
 claude --print -p "Analyze this package.json and suggest test matrix combinations for Node versions and major dependency versions. Output as YAML."
 ```
 
-The `tdd` skill proves particularly useful here—it can analyze test failures across matrix runs and suggest which combinations need attention. Similarly, the `pdf` skill can generate consolidated test reports from individual job results.
+The [tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) proves particularly useful here—it can analyze test failures across matrix runs and suggest which combinations need attention. Similarly, the `pdf` skill can generate consolidated test reports from individual job results.
 
 ## Matrix Strategies for Multi-Platform Projects
 
@@ -186,7 +186,7 @@ Matrix jobs can consume significant GitHub Actions minutes. Consider these optim
       ${{ runner.os }}-npm-
 ```
 
-**Leverage the `supermemory` skill** to track historical matrix runtimes and suggest optimizations based on past performance data.
+**Leverage the [supermemory skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/)** to track historical matrix runtimes and suggest optimizations based on past performance data.
 
 ## Generating Matrix Reports with Claude
 
@@ -230,6 +230,11 @@ GitHub Actions matrix strategies provide powerful parallelism for CI/CD pipeline
 
 For more advanced patterns, explore the `supermemory` skill for tracking matrix performance over time, or the `tdd` skill for deeper test analysis integration.
 
----
+## Related Reading
+
+- [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — Integrate Claude skills directly into GitHub Actions workflows beyond matrix strategy patterns.
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build continuous testing pipelines that feed results back into your matrix analysis workflows.
+- [How to Automate Pull Request Review with Claude Skills](/claude-skills-guide/articles/how-to-automate-pull-request-review-with-claude-skill/) — Extend your matrix CI pipeline with automated pull request review for every combination.
+- [Claude Skills Workflow Guide](/claude-skills-guide/workflows-hub/) — See how matrix workflows fit into larger multi-skill automation patterns.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

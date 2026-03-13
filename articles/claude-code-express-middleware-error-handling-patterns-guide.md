@@ -3,19 +3,11 @@ layout: post
 title: "Claude Code Express Middleware Error Handling Patterns Guide"
 description: "Master Express middleware error handling patterns with Claude Code. Learn async error handling, centralized error classes, and production-ready patterns."
 date: 2026-03-14
-<<<<<<< Updated upstream
 categories: [guides, express, error-handling]
 tags: [claude-code, express, middleware, nodejs, error-handling]
 author: "Claude Skills Guide"
-reviewed: true
-score: 
-=======
-author: "Claude Skills Guide"
-categories: [guides, express, error-handling]
-tags: [claude-code, express, middleware, nodejs, error-handling]
 reviewed: true
 score: 7
->>>>>>> Stashed changes
 ---
 
 # Claude Code Express Middleware Error Handling Patterns Guide
@@ -253,11 +245,11 @@ process.on('uncaughtException', (error) => {
 
 ## Integrating with Claude Code Workflows
 
-When building Express applications with Claude Code, these error handling patterns integrate naturally with your development workflow. The **tdd skill** helps you write tests for error scenarios before implementing handlers, ensuring your error paths work correctly.
+When building Express applications with Claude Code, these error handling patterns integrate naturally with your development workflow. The [**tdd skill**](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) helps you write tests for error scenarios before implementing handlers, ensuring your error paths work correctly.
 
 For API documentation, the **pdf skill** can generate API reference documents that include error response schemas. This helps teams understand possible error codes and messages.
 
-The **supermemory skill** preserves context about your error handling decisions across Claude Code sessions, making it easier to maintain consistent patterns across larger projects.
+The [**supermemory skill**](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) preserves context about your error handling decisions across Claude Code sessions, making it easier to maintain consistent patterns across larger projects.
 
 If you're building forms that submit to Express backends, combine these patterns with the **frontend-design skill** to create user-friendly error displays that match your validation logic.
 
@@ -273,6 +265,11 @@ Effective Express middleware error handling requires several interconnected patt
 
 These patterns scale from small APIs to enterprise applications. Implement them early in your project to avoid retrofitting error handling later.
 
----
+## Related Reading
+
+- [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) — Write tests for your Express error handlers before implementation to catch edge cases systematically.
+- [Claude Code Input Validation and Sanitization Patterns Guide](/claude-skills-guide/articles/claude-code-input-validation-sanitization-patterns-guide/) — Pair error handling with solid input validation to prevent the errors before they need handling.
+- [Express to Fastify Migration with Claude Code (2026)](/claude-skills-guide/articles/claude-code-express-to-fastify-migration-tutorial-2026/) — When your Express error handling outgrows the framework, migrate to Fastify with Claude Code assistance.
+- [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — Learn the foundational Claude skills that power Express and Node.js development workflows.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

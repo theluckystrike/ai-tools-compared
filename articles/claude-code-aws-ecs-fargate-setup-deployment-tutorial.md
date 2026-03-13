@@ -175,7 +175,7 @@ aws ecs describe-services \
 
 ## Automating Deployments with CI/CD
 
-Set up automated deployments using AWS CodePipeline or GitHub Actions. Here's a GitHub Actions workflow:
+Set up automated deployments using AWS CodePipeline or [GitHub Actions](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/). Here's a GitHub Actions workflow:
 
 ```yaml
 name: Deploy to ECS Fargate
@@ -245,7 +245,7 @@ Update your task definition to reference these secrets:
 ]
 ```
 
-The **supermemory** skill helps maintain documentation of your deployment configurations and environment setups across projects, making it easier to replicate infrastructure across environments.
+The [**supermemory** skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) helps maintain documentation of your deployment configurations and environment setups across projects, making it easier to replicate infrastructure across environments.
 
 ## Scaling and Monitoring
 
@@ -281,5 +281,12 @@ The **observability-skills** collection helps set up comprehensive monitoring, i
 Deploying to AWS ECS Fargate combines the simplicity of serverless with the control of container orchestration. By leveraging Claude Code skills like **shell-expert**, **docker-expert**, **terraform-expert**, and **ci-cd-pipeline**, you can build reliable, automated deployment pipelines that handle everything from infrastructure provisioning to production monitoring.
 
 Start with a simple deployment and incrementally add complexity—automated scaling, secrets management, and CI/CD pipelines—as your application requirements grow.
+
+## Related Reading
+
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — The full toolkit of DevOps skills including shell-expert, devops, and CI/CD optimization for production deployments.
+- [Claude Code Skills for Terraform IaC: Complete Guide](/claude-skills-guide/articles/claude-code-skills-for-infrastructure-as-code-terraform/) — Generate and manage your ECS infrastructure with Terraform using Claude Code skills.
+- [Claude Skills AWS Lambda Serverless Guide](/claude-skills-guide/articles/claude-skills-aws-lambda-serverless-integration/) — Compare Fargate container deployments with Lambda serverless patterns for the right AWS architecture.
+- [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — Deepen your GitHub Actions deployment pipeline with advanced Claude skill integrations.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
