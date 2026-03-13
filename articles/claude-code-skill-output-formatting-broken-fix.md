@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Skill Output Formatting Broken Fix"
-description: "Fix broken output formatting in Claude Code skills. Covers markdown rendering issues, code block problems, instruction mismatches, and terminal vs. IDE differences."
+description: "Fix broken output formatting in Claude Code skills. Covers markdown rendering, code block problems, instruction mismatches, and terminal vs. IDE display."
 date: 2026-03-13
 author: theluckystrike
 ---
