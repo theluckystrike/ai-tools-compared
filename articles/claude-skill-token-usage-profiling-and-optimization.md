@@ -214,4 +214,12 @@ Token optimization isn't about stripping valuable content—it's about removing 
 
 Start by measuring your current skills, then apply these strategies systematically. You'll likely find that 30-50% token reduction is achievable without any loss in output quality.
 
+
+## Related Reading
+
+- [Claude Skill Prompt Compression Techniques](/claude-skills-guide/articles/claude-skill-prompt-compression-techniques/) — Apply compression techniques directly to the skill bodies you profile for fastest results.
+- [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Extend token profiling results with broader API cost reduction strategies.
+- [Measuring Claude Code Skill Efficiency Metrics](/claude-skills-guide/articles/measuring-claude-code-skill-efficiency-metrics/) — Go beyond token counts to measure full skill efficiency including task completion rates and time to output.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Discover more advanced performance patterns for building production-quality skills.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

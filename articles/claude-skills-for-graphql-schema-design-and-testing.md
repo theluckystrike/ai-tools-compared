@@ -198,4 +198,12 @@ const mocks = {
 
 Replace mocks with real implementations once your data sources are ready. The tdd skill provides a smooth transition path.
 
+
+## Related Reading
+
+- [Claude Skills for WebSocket Realtime App Development](/claude-skills-guide/articles/claude-skills-for-websocket-realtime-app-development/) — Pair GraphQL schema design with WebSocket skills for real-time data subscriptions.
+- [Claude Code Express Middleware Error Handling Patterns Guide](/claude-skills-guide/articles/claude-code-express-middleware-error-handling-patterns-guide/) — Handle GraphQL resolver errors using the same Express middleware error patterns.
+- [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) — Apply test-driven development to GraphQL schema evolution and resolver testing.
+- [Claude Skills Use Cases](/claude-skills-guide/use-cases-hub/) — Explore more specialized use cases for Claude skills in API and backend development.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -246,3 +246,11 @@ Start with sequential execution when building new workflows, then identify oppor
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [Claude Opus Orchestrator-Sonnet-Worker Architecture](/claude-skills-guide/articles/claude-opus-orchestrator-sonnet-worker-architecture/) — Design multi-agent systems with specialized workers for complex automated pipelines
+- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Coordinate multiple Claude agents for parallel and sequential task execution
+- [Fan-Out Fan-In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Implement parallel workloads that converge on aggregated results
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced multi-agent patterns and orchestration techniques
+

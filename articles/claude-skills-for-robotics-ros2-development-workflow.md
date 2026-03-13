@@ -183,4 +183,12 @@ This integrated approach reduces context switching and maintains consistency acr
 
 Claude skills transform ROS2 development from manual scaffolding and scattered documentation into an organized, automated workflow. By incorporating skills like tdd, pdf, supermemory, frontend-design, and docx into your robotics projects, you accelerate development cycles while maintaining code quality and comprehensive documentation.
 
+
+## Related Reading
+
+- [Claude Code Skills for Kubernetes Operator Development](/claude-skills-guide/articles/claude-code-skills-for-kubernetes-operator-development/) — Apply similar domain-specific skill patterns to Kubernetes operator development workflows.
+- [Claude Code Skills for Hardware Description Language VHDL](/claude-skills-guide/articles/claude-code-skills-for-hardware-description-language-vhdl/) — Extend specialized hardware skills to VHDL and FPGA development alongside ROS2 work.
+- [Claude Skills for Computational Biology and Bioinformatics](/claude-skills-guide/articles/claude-skills-for-computational-biology-bioinformatics/) — Apply the same specialized skill workflow patterns to scientific computing and data processing.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Discover more advanced skill patterns for specialized technical development domains.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

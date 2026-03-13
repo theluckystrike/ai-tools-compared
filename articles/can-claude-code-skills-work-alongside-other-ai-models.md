@@ -185,4 +185,12 @@ Claude Code skills aren't replacements for other AI models—they're enhancers. 
 
 The composable nature of skills means your Claude setup grows with your needs. Start with skills like `pdf` for document processing or `tdd` for test-first development, then expand to community skills like `supermemory` for persistent context. The skills layer remains yours, portable and customizable, regardless of how your broader AI stack evolves.
 
+
+## Related Reading
+
+- [Claude Skills vs Emerging Agentic Frameworks in 2026](/claude-skills-guide/articles/claude-skills-vs-emerging-agentic-frameworks-2026/) — Compare Claude skills with full agentic frameworks when planning your multi-AI integration strategy.
+- [Claude Code vs Gemini CLI for Developers 2026](/claude-skills-guide/articles/claude-code-vs-gemini-cli-for-developers-2026/) — Compare Claude Code with Gemini to understand the strengths each brings to a multi-AI workflow.
+- [MCP Servers vs Claude Skills: What Is the Difference?](/claude-skills-guide/articles/mcp-servers-vs-claude-skills-what-is-the-difference/) — Understand how MCP enables Claude skills to connect to external services and other AI systems.
+- [Claude Skills Comparisons Hub](/claude-skills-guide/comparisons-hub/) — Explore more comparisons between Claude skills and other AI tools and platforms.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

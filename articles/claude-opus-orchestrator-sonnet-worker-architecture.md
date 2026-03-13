@@ -131,4 +131,11 @@ The orchestrator-sonnet-worker pattern provides a powerful framework for buildin
 
 Start by identifying distinct skill domains in your project, then assign each to a specialized worker. Let Opus handle the coordination and synthesis. This architecture scales well and produces more consistent results than asking a single model to handle everything.
 
+## Related Reading
+
+- [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) — Compare sequential and parallel execution models for multi-agent workflows
+- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Build coordinated multi-agent systems with specialized subagents
+- [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/articles/claude-code-multi-agent-subagent-communication-guide/) — Implement robust communication protocols between orchestrator and worker agents
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced orchestration patterns and multi-agent system design
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

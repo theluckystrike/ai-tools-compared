@@ -159,4 +159,12 @@ With these patterns in place, your Claude Code multi-agent systems become observ
 
 Remember: the time invested in monitoring pays dividends when debugging production issues or optimizing agent performance. Start simple, add complexity as needed, and always log with the debugger in mind.
 
+
+## Related Reading
+
+- [Claude Code Agent Swarm Coordination Strategies](/claude-skills-guide/articles/claude-code-agent-swarm-coordination-strategies/) — Implement coordination patterns for the multi-agent systems you monitor and log.
+- [Fan Out Fan In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Add monitoring to fan out fan in workflows to track parallel subagent execution.
+- [Measuring Claude Code Skill Efficiency Metrics](/claude-skills-guide/articles/measuring-claude-code-skill-efficiency-metrics/) — Combine monitoring data with efficiency metrics for comprehensive skill performance analysis.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Explore more advanced patterns for building production-ready multi-agent Claude systems.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

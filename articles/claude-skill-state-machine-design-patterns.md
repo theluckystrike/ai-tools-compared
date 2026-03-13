@@ -173,4 +173,11 @@ State machine design patterns transform Claude skills from simple instruction li
 
 The key is starting simple—model your skill's flow on paper first, then translate it into states and transitions. As your skills grow in complexity, you'll find the state machine approach scales naturally without becoming unmanageable.
 
+## Related Reading
+
+- [Claude Skill Inheritance and Composition Patterns](/claude-skills-guide/articles/claude-skill-inheritance-and-composition-patterns/) — Combine state machines with modular skill composition for scalable workflows
+- [How Do I Combine Two Claude Skills in One Workflow](/claude-skills-guide/articles/how-do-i-combine-two-claude-skills-in-one-workflow/) — Chain skills together across workflow stages
+- [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) — Apply state machine thinking to sequential and parallel pipeline design
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced skill design patterns for complex AI workflows
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

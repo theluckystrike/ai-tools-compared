@@ -192,4 +192,12 @@ Making Claude skills available organization-wide involves distributing skill fil
 
 Regardless of distribution method, invest time in documenting skill usage and testing changes before deployment. A well-organized skill library accelerates onboarding and ensures consistent development practices across your entire organization.
 
+
+## Related Reading
+
+- [How to Share Claude Skills with Your Team](/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/) — Start with team-level sharing before scaling to organization-wide distribution.
+- [How Do I Share Claude Skills Across Multiple Projects](/claude-skills-guide/articles/how-do-i-share-claude-skills-across-multiple-projects/) — Use cross-project sharing as the building block for organization-wide skill distribution.
+- [Claude Code Dotfiles Management and Skill Sync Workflow](/claude-skills-guide/articles/claude-code-dotfiles-management-and-skill-sync-workflow/) — Combine dotfiles management with organization distribution for fully automated skill provisioning.
+- [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — Ensure your team understands skill fundamentals before rolling out organization-wide.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

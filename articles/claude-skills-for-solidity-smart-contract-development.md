@@ -162,4 +162,12 @@ Using skills like /tdd ensures your contracts are battle-tested before they ever
 
 Claude skills significantly enhance Solidity development by providing specialized knowledge in testing, documentation, and security patterns. The `/tdd` skill alone can transform your development workflow by enforcing test-driven practices essential for secure smart contracts. Combined with documentation and context-management skills, you have a comprehensive toolkit for building production-ready Ethereum applications.
 
+
+## Related Reading
+
+- [Claude Code OWASP Top 10 Security Scanning Workflow](/claude-skills-guide/articles/claude-code-owasp-top-10-security-scanning-workflow/) — Apply security scanning patterns to smart contract vulnerability auditing.
+- [Claude Code Security Code Review Checklist Automation](/claude-skills-guide/articles/claude-code-security-code-review-checklist-automation/) — Automate security code reviews for Solidity smart contracts using the same checklist approach.
+- [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) — Build comprehensive test suites for smart contract logic using the tdd skill workflow.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Explore more advanced skill patterns for specialized technical development.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

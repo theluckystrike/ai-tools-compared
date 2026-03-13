@@ -14,7 +14,7 @@ score: 9
 
 When you build Claude skills, every token in your skill body affects response time and cost. Large skill files with verbose descriptions work, but they introduce latency and consume more API resources. Prompt compression lets you maintain quality while trimming the fat.
 
-This guide covers compression techniques that work in real skill development, tested across production skills like `frontend-design`, `pdf`, and `tdd`.
+This guide covers compression techniques that work in real skill development, tested across production skills like `frontend-design`, `pdf`, and `tdd`. For the complementary approach of profiling actual token consumption, see [Claude skill token usage profiling and optimization](/claude-skills-guide/articles/claude-skill-token-usage-profiling-and-optimization/).
 
 ## Why Compression Matters
 
@@ -83,7 +83,7 @@ Then in the body:
 Extract req from user input. Generate ui spec. Use ctx to resolve ambiguities.
 ```
 
-For the `supermemory` skill, which processes large amounts of context, abbreviations can reduce a 500-word body to under 300 tokens without losing functionality.
+For the [supermemory skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/), which processes large amounts of context, abbreviations can reduce a 500-word body to under 300 tokens without losing functionality.
 
 ## Technique 4: Leverage Conditional Blocks
 
@@ -196,5 +196,13 @@ The compressed version maintains every constraint while reducing token count by 
 Prompt compression for Claude skills follows the same principles as general prompt engineering: be precise, be direct, and trust the model to infer. Remove explanations it does not need, merge related instructions, use abbreviations for repeated terms, and test thoroughly after compression.
 
 Applied to skills like `pdf` for document processing, `frontend-design` for component generation, or `tdd` for test creation, these techniques reduce costs and latency while preserving the quality that makes the skill useful.
+
+
+## Related Reading
+
+- [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/articles/claude-skill-token-usage-profiling-and-optimization/) — Measure how much compression reduces your token spend with practical profiling techniques.
+- [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Combine prompt compression with broader token optimization strategies to minimize API costs.
+- [Claude Skill Metadata Header vs Full Body Loading Explained](/claude-skills-guide/articles/claude-skill-metadata-header-vs-full-body-loading/) — Choose the right loading strategy to complement your compressed skill prompts.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Explore more advanced skill optimization patterns for production performance.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

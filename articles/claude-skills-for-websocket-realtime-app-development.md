@@ -214,4 +214,12 @@ The combination of test-driven development, thoughtful UI implementation, and li
 
 ---
 
+
+## Related Reading
+
+- [Claude Skills for GraphQL Schema Design and Testing](/claude-skills-guide/articles/claude-skills-for-graphql-schema-design-and-testing/) — Combine WebSocket real-time subscriptions with GraphQL schema design for full-stack real-time APIs.
+- [Claude Code Skills for Kubernetes Operator Development](/claude-skills-guide/articles/claude-code-skills-for-kubernetes-operator-development/) — Scale your WebSocket application infrastructure using Kubernetes operator patterns.
+- [Rate Limit Management for Claude Code Skill Intensive Workflows](/claude-skills-guide/articles/rate-limit-management-claude-code-skill-intensive-workflows/) — Manage API rate limits when skill-generating high-frequency WebSocket message handlers.
+- [Claude Skills Use Cases](/claude-skills-guide/use-cases-hub/) — Explore more specialized use cases for Claude skills in real-time and event-driven architectures.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

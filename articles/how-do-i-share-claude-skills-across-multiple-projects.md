@@ -153,4 +153,12 @@ Sharing Claude skills across multiple projects transforms your development workf
 
 Start small with your most valuable skills, then expand as you identify more opportunities for reuse. The initial investment in setting up proper sharing infrastructure pays off quickly as your skill library grows and your team becomes more productive.
 
+
+## Related Reading
+
+- [How to Share Claude Skills with Your Team](/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/) — Extend project-level skill sharing to team-wide distribution with access controls and versioning.
+- [Claude Code Dotfiles Management and Skill Sync Workflow](/claude-skills-guide/articles/claude-code-dotfiles-management-and-skill-sync-workflow/) — Use dotfiles management to sync shared skills automatically across all developer machines.
+- [How to Contribute Claude Skills to Open Source](/claude-skills-guide/articles/how-to-contribute-claude-skills-to-open-source/) — Graduate from sharing skills across your projects to sharing them with the broader community.
+- [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — Learn the foundational skill concepts before setting up cross-project sharing infrastructure.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

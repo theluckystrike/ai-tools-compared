@@ -243,4 +243,12 @@ Begin with simple automations and expand incrementally:
 
 Claude skills handle the code generation heavy lifting. Your expertise in financial modeling directs the logic. The combination replaces Excel's manual workflows with sustainable, testable, automatable pipelines.
 
+
+## Related Reading
+
+- [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) — Complement financial modeling with data science workflows and Jupyter notebook integration.
+- [Caching Strategies for Claude Code Skill Outputs](/claude-skills-guide/articles/caching-strategies-for-claude-code-skill-outputs/) — Cache financial model outputs to avoid re-running expensive calculations on unchanged data.
+- [Claude Skills for Computational Biology and Bioinformatics](/claude-skills-guide/articles/claude-skills-for-computational-biology-bioinformatics/) — Apply similar code-based, testable data modeling patterns to bioinformatics workflows.
+- [Claude Skills Use Cases](/claude-skills-guide/use-cases-hub/) — Explore more domain-specific use cases where Claude skills replace manual spreadsheet workflows.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

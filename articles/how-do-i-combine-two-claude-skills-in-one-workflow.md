@@ -135,4 +135,12 @@ Experiment with different combinations. The workflow that solves your specific c
 
 ---
 
+
+## Related Reading
+
+- [Claude Skill Inheritance and Composition Patterns](/claude-skills-guide/articles/claude-skill-inheritance-and-composition-patterns/) — Learn the formal patterns behind skill composition that power the workflow chaining described here.
+- [Claude Code Multi Agent Orchestration Patterns Guide](/claude-skills-guide/articles/claude-code-multi-agent-orchestration-patterns-guide/) — Scale from combining two skills to orchestrating entire multi-agent pipelines.
+- [Fan Out Fan In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Apply parallel skill execution patterns using the fan out fan in architecture with subagents.
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Explore more workflow patterns that combine multiple skills for complex development tasks.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

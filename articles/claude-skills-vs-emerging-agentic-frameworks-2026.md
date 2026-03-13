@@ -121,4 +121,12 @@ The key is recognizing that these are complementary tools rather than direct com
 
 ---
 
+
+## Related Reading
+
+- [Claude Skills vs Langflow for AI Agents (2026)](/claude-skills-guide/articles/claude-skills-vs-langflow-for-building-ai-agents/) — Compare Claude skills with Langflow specifically, one of the emerging agentic frameworks discussed here.
+- [Claude Code Multi Agent Orchestration Patterns Guide](/claude-skills-guide/articles/claude-code-multi-agent-orchestration-patterns-guide/) — Build the multi-agent patterns that close the gap between Claude skills and dedicated agent frameworks.
+- [The Future of AI Agent Skills Beyond Claude Code in 2026](/claude-skills-guide/articles/future-of-ai-agent-skills-beyond-claude-code-2026/) — Understand the trajectory of AI agent skills as they grow to meet agentic framework capabilities.
+- [Claude Skills Comparisons Hub](/claude-skills-guide/comparisons-hub/) — Compare Claude skills with other tools and frameworks to make the right choice for your workflow.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

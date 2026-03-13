@@ -163,4 +163,12 @@ The goal is maintainable, reusable skills that serve specific purposes well whil
 
 ---
 
+
+## Related Reading
+
+- [Claude Skill Prompt Compression Techniques](/claude-skills-guide/articles/claude-skill-prompt-compression-techniques/) — Compress oversized skill files as an alternative to splitting when the content is still cohesive.
+- [Claude Skill Metadata Header vs Full Body Loading Explained](/claude-skills-guide/articles/claude-skill-metadata-header-vs-full-body-loading/) — Use metadata header loading to handle large skills without splitting by lazy-loading components.
+- [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/articles/claude-skill-token-usage-profiling-and-optimization/) — Profile token usage to determine when skill file size has actually become a performance problem.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Explore more advanced skill architecture patterns for modular, production-quality implementations.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
