@@ -1,108 +1,197 @@
 ---
-layout: post
-title: "Claude Code Skills: Context Window Exceeded Error Fix"
-description: "Fix context window exceeded errors in Claude Code skills. Practical strategies for pdf, tdd, and frontend-design workflows that hit token limits."
+layout: default
+title: "Claude Code Skills Context Window Exceeded Error Fix"
+description: "Fix the context window exceeded error when using Claude Code skills. Covers token budgeting, session management, and skill-specific strategies for tdd, pdf, and frontend-design."
 date: 2026-03-13
-categories: [guides, tutorials]
-tags: [claude-code, claude-skills, troubleshooting, context-window]
-author: "Claude Skills Guide"
-reviewed: true
-score: 5
+author: theluckystrike
 ---
 
 # Claude Code Skills Context Window Exceeded Error Fix
 
-The context window exceeded error appears when the total tokens in your conversation — prompts, file contents, skill definitions, and prior responses — exceed Claude's processing limit. This guide covers practical ways to prevent and recover from this error when using Claude Code skills.
+The **context window exceeded** error is a hard wall. When the total tokens in your session — conversation history, skill definitions, file contents, and tool outputs — exceed Claude's limit, the model cannot continue. This guide explains why it happens specifically when using Claude Code skills, and gives you practical, tested fixes.
 
-## Why Context Window Errors Happen
+## Why Skills Make Context Window Errors More Likely
 
-Every token in your conversation counts toward the limit: your instructions, any file content you paste in, Claude's previous responses, and the content of any skills Claude has loaded. Skills themselves are `.md` files in `~/.claude/skills/` — they are loaded into context when invoked with `/skill-name`, which consumes a portion of the available window.
+Skills are `.md` files loaded into your session context when you invoke them with `/skill-name`. A skill like `supermemory` or `tdd` might be 300-800 tokens on its own. If you invoke three or four skills in a long session, you are burning 1,000–3,000 tokens on skill definitions before you write a single line of productive prompt.
 
-A long conversation that invokes multiple skills and pastes in large files will exhaust the context faster than a focused, single-task session.
+Stack that on top of file reads, tool output, and prior conversation turns, and you hit the limit faster than you expect.
 
-## Immediate Fixes
+Common patterns that trigger the error:
 
-### 1. Start a Fresh Session
+- Running `/pdf` on a large document and asking for repeated extractions in the same session
+- Using `/tdd` across an entire feature — writing tests, implementation, and refactors all in one session
+- Invoking `/frontend-design` and pasting in your entire design token file for reference
+- Chaining `/supermemory` with `/docx` and `/pdf` in the same workflow
 
-The fastest fix is starting a new conversation. All accumulated history resets, giving you the full context window for the current task.
+## Immediate Fix: Save Context and Start Fresh
 
-If you are mid-project and cannot afford to lose continuity, ask Claude to summarize before you close the session:
+When you see the error mid-session, the fastest recovery is:
 
-```
-Summarize what we've done so far, including files modified,
-decisions made, and remaining tasks.
-```
-
-Paste that summary into the new session as your starting context.
-
-### 2. Reference Files Instead of Pasting Them
-
-Pasting hundreds of lines of code into a prompt is the fastest way to fill context. Instead, ask Claude to read the file directly:
+1. Ask Claude to summarize before the window fully closes:
 
 ```
-Read src/auth.py and find the authentication bypass
-in validate_token()
+Summarize what we have accomplished so far:
+- Files modified and what changed
+- Decisions made
+- Outstanding tasks
+Keep it under 200 words.
 ```
 
-Claude Code can open files from your working directory without you pasting the content. This keeps your prompt small.
+2. Copy that summary.
+3. Start a new Claude Code session.
+4. Open with: "Continuing from previous session: [paste summary]. Next task: ..."
 
-### 3. Split Large Tasks Into Sessions
+This is faster than trying to compress the existing session.
 
-When working with large documents, process them in focused chunks rather than all at once. For example, if you are using the `/pdf` skill on a long report, ask for one section at a time:
+## Fix 1: Never Paste File Content — Use Read Calls
+
+The single biggest context consumer is pasting file content into the prompt. Instead, reference the file by path:
+
+```
+# Don't do this:
+Here is my auth.ts: [1000 lines of code pasted here]
+
+# Do this instead:
+Read src/auth.ts and identify the token validation function
+```
+
+Claude Code can read files directly from your filesystem. Reserve pasting for small, targeted snippets only.
+
+## Fix 2: Scope Skill Invocations Per Session
+
+Each skill you invoke adds its definition to context. Invoke only what you need for the current task:
+
+```bash
+# Bad: loading three skills into one long session
+/supermemory
+/tdd
+/frontend-design
+# ... 2 hours of work ...
+```
+
+```bash
+# Better: one skill per focused session
+# Session 1: /tdd — write the test suite
+# Session 2: /frontend-design — build the UI components
+# Session 3: /supermemory — summarize and persist
+```
+
+## Fix 3: Trim Skill Definitions
+
+Verbose skill files use more tokens. Review your custom skills and cut boilerplate:
+
+```bash
+wc -w ~/.claude/skills/*.md
+```
+
+Anything over 500 words is likely longer than it needs to be. A good skill definition is 150–300 words. Remove examples, explanations, and redundant instructions — leave only what changes Claude's behavior.
+
+## Fix 4: Use `/compact` or Context Compression
+
+Claude Code has a `/compact` command that summarizes conversation history to reduce token usage without starting a new session:
+
+```
+/compact
+```
+
+This condenses prior turns into a shorter summary, freeing up context for continued work. Use it after completing a phase of work (e.g., after all tests are written, before starting implementation).
+
+## Fix 5: Process Large Files in Chunks
+
+The `pdf` and `docx` skills are prone to context overruns when used on large documents. Process one section at a time:
 
 ```
 /pdf
-Summarize only the Executive Summary section of report.pdf
+Summarize only pages 1-10 of report.pdf. Do not read beyond page 10.
 ```
 
-Then start a fresh session for the next section, bringing forward only the summary.
+Then start a new session for the next section, bringing forward only the summary.
 
-## Preventive Strategies
-
-### Limit Skill Invocations Per Session
-
-Each skill you invoke loads its `.md` definition into context. For complex sessions, invoke only the skills you actually need for that task rather than loading several speculatively.
-
-### Use Summarization Checkpoints
-
-For multi-session projects using `/tdd`, periodically ask Claude to produce a concise test-plan summary you can paste into the next session:
+For the `docx` skill, request specific sections by heading:
 
 ```
-Summarize the test cases we've written so far as a
-numbered list with one line each.
+/docx
+From contract.docx, extract only the "Liability" section.
 ```
 
-This carries forward the information without the full conversation history.
+## Fix 6: Configure supermemory Checkpointing
 
-### Break Frontend Work Into Phases
+The `supermemory` skill is designed to persist context across sessions — use it proactively to avoid losing work when a session gets long:
 
-When using `/frontend-design`, scope each session to one layer:
+```
+/supermemory
+Save checkpoint: [brief description of current state and progress]
+```
 
-- Session 1: Design tokens (colors, typography, spacing)
-- Session 2: Primitive components (Button, Input, Card)
-- Session 3: Composed layouts (HomePage, Dashboard)
+At the start of each new session:
 
-Each session starts with only the output from the previous one, keeping context tight.
+```
+/supermemory
+Restore latest checkpoint for this project.
+```
 
-## Recovery Checklist
+This way you never need to reconstruct context manually after a context window error.
 
-When you hit the error:
+## Fix 7: Reduce Tool Output Verbosity
 
-1. Stop the current operation
-2. Note which files were being processed
-3. Ask Claude to summarize before the session closes (if possible)
-4. Start a new session
-5. Paste only the summary and the next specific task
-6. Invoke only the skill you need for this session
+Tool outputs (Bash results, file reads, grep results) consume context. Ask Claude to summarize tool output rather than showing it raw:
 
-## Summary
+```
+Run the test suite and give me only the failure count and
+the names of failing tests. Do not show full stack traces.
+```
 
-Context window errors come from accumulated tokens across conversation history, pasted file content, and loaded skill definitions. The core fixes are: start fresh sessions for distinct tasks, reference files instead of pasting them, and use mid-session summaries to carry context forward without the full history.
+Stack traces are some of the worst context consumers. With the `tdd` skill, this alone can extend a session 30-50%.
+
+## Fix 8: Use `.claude/settings.json` to Limit Context
+
+You can configure context management settings in your project:
+
+```json
+{
+  "maxHistoryTokens": 50000,
+  "autoCompact": true,
+  "autoCompactThreshold": 0.8
+}
+```
+
+`autoCompact` triggers `/compact` automatically when your session reaches 80% of the context limit, before the error occurs.
+
+## Understanding Token Costs Per Skill
+
+Rough token costs to help you budget your sessions:
+
+| Skill | Approx. definition tokens |
+|---|---|
+| `tdd` | 200–400 |
+| `pdf` | 150–300 |
+| `docx` | 150–300 |
+| `supermemory` | 300–600 |
+| `frontend-design` | 400–800 |
+
+These are added once per session when the skill is invoked, not per use.
+
+## Session Architecture for Long Projects
+
+For projects that span multiple sessions, adopt this pattern with the `tdd` skill:
+
+```
+Session N: /tdd
+- Write tests for AuthService
+- Save test list: /supermemory checkpoint auth-tests
+
+Session N+1: /supermemory restore auth-tests
+- /tdd
+- Implement AuthService to pass tests
+- Save: /supermemory checkpoint auth-impl
+
+Session N+2: /supermemory restore auth-impl
+- /tdd
+- Refactor and fix edge cases
+```
+
+Each session starts small, uses one or two skills, and ends with a checkpoint.
 
 ---
 
-## Related Reading
-
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — Complete skill.md format reference
-- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — Step-by-step skill creation guide
-- [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — How skills activate automatically
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
