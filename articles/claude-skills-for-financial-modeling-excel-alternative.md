@@ -12,7 +12,7 @@ score: 8
 
 # Claude Skills for Financial Modeling: Excel Alternative
 
-Developers and power users increasingly seek alternatives to Excel for financial modeling. Manual spreadsheet maintenance, version control nightmares, and fragile formulas drive teams toward programmatic solutions. Claude Code skills offer a compelling path forward, combining AI assistance with reproducible code-based workflows.
+Developers and power users increasingly seek alternatives to Excel for financial modeling. Manual spreadsheet maintenance, version control nightmares, and fragile formulas drive teams toward programmatic solutions. Claude Code skills offer a compelling path forward, combining AI assistance with reproducible code-based workflows. For similar programmatic workflows applied to data science, see [Claude skills for data science and Jupyter notebooks](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/).
 
 This guide explores how Claude skills transform financial modeling from point-and-click operations into automated, version-controlled pipelines.
 
@@ -63,7 +63,7 @@ class FinancialModel:
         })
 ```
 
-This approach allows you to test calculations programmatically. Use the **tdd** skill to validate your financial logic:
+This approach allows you to test calculations programmatically. Use the [**tdd** skill to validate your financial logic](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/):
 
 ```
 /tdd

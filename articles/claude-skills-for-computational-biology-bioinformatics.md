@@ -101,7 +101,7 @@ Create R functions for DESeq2 differential expression analysis including normali
 
 ## Knowledge Management with supermemory Skill
 
-Bioinformatics projects accumulate substantial institutional knowledge: protocol notes, analysis decisions, troubleshooting logs, and results interpretations. The supermemory skill maintains persistent context across sessions, making this knowledge accessible conversationally.
+Bioinformatics projects accumulate substantial institutional knowledge: protocol notes, analysis decisions, troubleshooting logs, and results interpretations. The [supermemory skill maintains persistent context](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) across sessions, making this knowledge accessible conversationally.
 
 ```
 /supermemory
