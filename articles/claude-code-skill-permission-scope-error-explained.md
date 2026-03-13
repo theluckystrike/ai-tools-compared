@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Skill Permission Scope Error Explained"
-description: "Understand and fix the permission scope error in Claude Code skills. Covers the sandbox model, settings.json allow/deny rules, tool-level scope, and skill-specific permission patterns."
+description: "Understand and fix permission scope errors in Claude Code skills. Covers sandbox model, settings.json allow/deny rules, and skill-specific patterns."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [troubleshooting, guides]
+tags: [claude-code, claude-skills, permissions, troubleshooting]
+reviewed: true
+score: 7
 ---
 
 # Claude Code Skill Permission Scope Error Explained
@@ -142,8 +146,8 @@ The `supermemory` skill writes session state to a storage path. The default stor
 {
   "permissions": {
     "allow": [
-      "Write(~/.claude-memory/**)",
-      "Read(~/.claude-memory/**)"
+      "Write(~/.claude/memory/**)",
+      "Read(~/.claude/memory/**)"
     ]
   }
 }

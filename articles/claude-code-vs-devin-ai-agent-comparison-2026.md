@@ -1,9 +1,13 @@
 ---
-layout: default
-title: "Claude Code vs Devin AI Agent Comparison 2026"
-description: "A thorough comparison of Claude Code and Devin AI for developer teams in 2026 — covering autonomous coding capabilities, human-in-the-loop control, pricing, and which AI coding agent to use."
+layout: post
+title: "Claude Code vs Devin AI Agent: 2026 Comparison"
+description: "Compare Claude Code and Devin AI for developer teams in 2026 — autonomy, oversight, pricing, and which coding agent fits your workflow."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [comparisons]
+tags: [claude-code, claude-skills, devin, ai-coding, comparison]
+reviewed: true
+score: 8
 ---
 
 # Claude Code vs Devin AI Agent Comparison 2026
