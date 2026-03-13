@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Is Claude Code Worth It? An Honest Beginner Review 2026"
 description: "Honest beginner review of Claude Code: what works well, what's frustrating, the cost, and whether it's worth adding to your workflow in 2026."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Is Claude Code Worth It? An Honest Beginner Review 2026

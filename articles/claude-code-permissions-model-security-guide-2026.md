@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Permissions Model and Security Guide 2026"
 description: "A precise security guide to Claude Code's permissions model — how tool access, file system boundaries, skill scoping, and hooks work together to keep your codebase safe."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Code Permissions Model and Security Guide 2026

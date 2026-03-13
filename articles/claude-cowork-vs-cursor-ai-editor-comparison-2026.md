@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Code vs Cursor AI Editor Comparison 2026"
 description: "A practical comparison of Claude Code and Cursor AI for professional developers in 2026, examining IDE integration, agentic capabilities, skills and workflow systems, and which tool to use when."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Code vs Cursor AI Editor Comparison 2026

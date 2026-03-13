@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills Explained Simply for Non-Programmers"
 description: "A plain-English explanation of what Claude skills are, why they exist, and how to use them without any technical background — no coding required."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Skills Explained Simply for Non-Programmers

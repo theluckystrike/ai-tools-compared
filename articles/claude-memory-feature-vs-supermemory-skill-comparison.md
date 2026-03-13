@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Memory Feature vs SuperMemory Skill Comparison"
 description: "Claude built-in memory vs SuperMemory skill: which approach works best for your workflow and when to use persistent context in Claude Code."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Memory Feature vs SuperMemory Skill Comparison
