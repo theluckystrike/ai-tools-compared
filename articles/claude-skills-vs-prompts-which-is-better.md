@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills vs Prompts: Which Is Better?"
-description: "A practical comparison of Claude skills versus traditional prompts for developers and power users. Learn when to use each approach for maximum productivity."
+description: "A practical comparison of Claude skills versus traditional prompts for developers and power users. When to use each approach for maximum productivity."
 date: 2026-03-13
-author: theluckystrike
+categories: [comparisons, guides]
+tags: [claude-code, claude-skills, prompts]
+author: "Claude Skills Guide"
+reviewed: true
+score: 6
 ---
 
 # Claude Skills vs Prompts: Which Is Better?
@@ -46,7 +50,7 @@ In practice, the choice often comes down to context management. Prompts must inc
 
 For instance, working with the **docx** skill means Claude understands document manipulation patterns without you explaining them repeatedly. You get consistent results faster because the skill has already learned your preferences.
 
-Code quality often improves with skills too. A well-designed skill enforces best practices automatically. The **algorithmic-art** skill, for example, understands generative art patterns and can produce高质量 output without extensive prompting.
+Code quality often improves with skills too. A well-designed skill enforces best practices automatically. The **algorithmic-art** skill, for example, understands generative art patterns and can produce high-quality output without extensive prompting.
 
 ## Practical Examples
 

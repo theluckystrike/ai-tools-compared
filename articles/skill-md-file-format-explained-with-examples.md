@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Skill MD File Format Explained With Examples"
-description: "A comprehensive guide to the skill.md file format used by Claude AI skills. Learn the structure, metadata fields, and how to write effective skill definitions with practical examples."
+description: "The skill.md file format used by Claude AI skills: structure, metadata fields, and how to write effective skill definitions with examples."
 date: 2026-03-13
-author: theluckystrike
+categories: [tutorials, guides]
+tags: [claude-code, claude-skills, skill-md]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Skill MD File Format Explained With Examples

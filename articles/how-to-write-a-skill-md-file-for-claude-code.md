@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "How to Write a Skill MD File for Claude Code"
-description: "A practical guide to creating Claude skill files (.md) with proper structure, front matter, and code examples for developers."
+description: "Step-by-step guide to creating Claude Code skill files (.md) with proper structure, front matter, and real code examples."
 date: 2026-03-13
-author: theluckystrike
+categories: [tutorials, guides]
+tags: [claude-code, claude-skills, skill-md]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # How to Write a Skill MD File for Claude Code

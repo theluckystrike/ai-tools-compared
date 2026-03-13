@@ -1,14 +1,18 @@
 ---
-layout: default
+layout: post
 title: "Best Claude Code Skills for Frontend Development"
-description: "Discover the most useful Claude Code skills that accelerate frontend development workflows, from design implementation to testing and documentation."
+description: "The most useful Claude Code skills for frontend developers: UI generation, TDD, documentation, and data visualization — with invocation examples."
 date: 2026-03-13
-author: theluckystrike
+categories: [skills, guides]
+tags: [claude-code, claude-skills, frontend, tdd, canvas-design]
+author: "Claude Skills Guide"
+reviewed: true
+score: 6
 ---
 
 # Best Claude Code Skills for Frontend Development
 
-Frontend development moves fast, and Claude Code skills can significantly speed up your workflow. Whether you are building React components, generating documentation, or implementing test-driven development, the right skills transform how you work. This guide covers the most practical Claude skills for frontend developers.
+Claude Code has several skills that cut time on repetitive frontend tasks: generating components, writing tests first, producing documentation, and visualizing data. Invoke each with `/skill-name` directly in Claude Code. Here are the ones worth using.
 
 ## frontend-design: Rapid UI Implementation
 
@@ -125,9 +129,7 @@ Start with the skills that address your immediate pain points, then expand as yo
 
 ## Summary
 
-Claude Code skills transform frontend development by automating repetitive tasks and providing expert guidance on complex problems. The frontend-design skill accelerates UI implementation. The tdd skill ensures testable code from the start. Supermemory keeps your project knowledge accessible. Together, these skills form a powerful toolkit for modern frontend developers.
-
-Experiment with combinations that match your project requirements, and you will notice meaningful improvements in development speed and code quality.
+Invoke `/frontend-design` to scaffold components, `/tdd` to write tests before implementation, `/supermemory` to query your project knowledge, and `/pdf` or `/docx` to generate documentation. Start with the skill that addresses your most frequent bottleneck.
 
 ---
 

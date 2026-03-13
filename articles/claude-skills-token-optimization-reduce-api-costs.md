@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills Token Optimization: Reduce API Costs"
-description: "Learn practical strategies to optimize token usage in Claude Skills and reduce API costs without sacrificing productivity or code quality."
+description: "Practical strategies to optimize token usage in Claude Skills and reduce API costs without sacrificing productivity or code quality."
 date: 2026-03-13
-author: theluckystrike
+categories: [guides, tutorials]
+tags: [claude-code, claude-skills, token-optimization, api-costs]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Claude Skills Token Optimization: Reduce API Costs
@@ -65,7 +69,7 @@ A practical approach is to complete work in stages with explicit boundaries. Pro
 
 Tracking your consumption is essential for identifying optimization opportunities. Many developers find that a small number of conversations or specific prompt patterns consume disproportionate tokens.
 
-The **internal-comms** skill can help you maintain running logs of your token usage, making it easier to spot patterns. Review these logs weekly to identify:
+Maintain a simple log of token usage per session. Review weekly to identify:
 - Repeated explanations that could be stored as reference material
 - Skills that consistently require more context than expected
 - Prompt patterns that generate lengthy responses

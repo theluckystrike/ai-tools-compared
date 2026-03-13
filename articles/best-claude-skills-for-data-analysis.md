@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Best Claude Skills for Data Analysis"
-description: "Discover the top Claude skills for data analysis. Learn which skills streamline data processing, PDF extraction, spreadsheet automation, and more."
+description: "Top Claude skills for data analysis: spreadsheet automation, PDF extraction, report generation, and building reliable data processing pipelines."
 date: 2026-03-13
-author: theluckystrike
+categories: [skills, guides]
+tags: [claude-code, claude-skills, data-analysis, xlsx, pdf]
+author: "Claude Skills Guide"
+reviewed: true
+score: 5
 ---
 
 Data analysis workflows demand tools that handle diverse file formats, automate repetitive tasks, and transform raw information into actionable insights. Claude Code skills extend the AI assistant's capabilities beyond conversational queries, enabling programmatic manipulation of spreadsheets, documents, and datasets. This guide examines the most valuable Claude skills for data analysis workflows, focusing on practical applications developers and power users can implement immediately.
@@ -38,7 +42,7 @@ Extracting structured data from PDF documents represents a common pain point in 
 
 This skill proves invaluable when analyzing vendor contracts, extracting line items from invoices, or pulling data points from research papers. Rather than manually transcribing information or purchasing expensive OCR software, developers integrate the pdf skill into pipelines that process hundreds of documents automatically.
 
-The skill supports both text-based PDFs and scanned documents through optional OCR capabilities, making it versatile for processing various data sources.
+The skill supports both text-based PDFs and scanned documents through optional OCR capabilities, making it versatile across diverse document sources.
 
 ## Test-Driven Data Processing with tdd Skill
 
