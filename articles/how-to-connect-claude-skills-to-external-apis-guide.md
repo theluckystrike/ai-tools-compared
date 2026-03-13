@@ -359,4 +359,12 @@ const githubBreaker = new CircuitBreaker();
 
 Connecting Claude skills to external APIs transforms static prompts into dynamic workflows that operate on live data. The tool use loop in Step 2 is the foundation — everything else (auth, retries, caching, circuit breakers) makes it production-ready. Start by wiring one skill to one API, verify the tool use loop works correctly, then add resilience patterns as you scale.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Profiles the skills most commonly wired to external APIs (tdd, pdf, supermemory) with practical invocation patterns
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — Understanding the `tools` field in skill YAML is essential for giving skills access to the custom API tools you define
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — API response caching and sanitization are also key token cost reduction strategies worth pairing with external API integrations
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -104,4 +104,10 @@ If forced to choose one, ask yourself: do you want AI assistance in your editor 
 
 ---
 
+## Related Reading
+
+- [Anthropic Official Skills vs Community Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — Claude Code's skills ecosystem gives it a structural advantage over Cursor's prompt-based approach for repeatable workflows
+- [Claude Skills vs Prompts: Which Is Better for Your Workflow?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — This comparison directly maps to the Claude Code vs Cursor choice: structured skills vs inline prompting
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — One of Claude Code's key advantages over Cursor is skill auto-invocation; this explains the mechanism in detail
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

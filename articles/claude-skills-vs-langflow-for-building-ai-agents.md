@@ -127,4 +127,10 @@ Choose Claude skills if you are a developer automating your workflow. Choose Lan
 
 ---
 
+## Related Reading
+
+- [Anthropic Official Skills vs Community Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — An overview of the Claude skills ecosystem that helps contextualize what skills offer compared to visual agent builders like Langflow
+- [Claude Skills vs Prompts: Which Is Better for Your Workflow?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — Explores the trade-offs between structured reusable skills and ad-hoc prompting, relevant to the Langflow vs skills comparison
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Skills' automatic invocation capability has no direct equivalent in Langflow; understanding it highlights one of the key functional differences
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

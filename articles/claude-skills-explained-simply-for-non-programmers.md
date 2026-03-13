@@ -122,4 +122,10 @@ With `supermemory` active, Claude stores important things you tell it (your writ
 
 ---
 
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — A more technical look at the same skills described in plain terms here, for when you're ready to go deeper
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Explains in plain language how Claude decides when to use a skill automatically versus waiting for you to ask
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Once you understand what skills are, this guide helps you use them efficiently without running up unexpected costs
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

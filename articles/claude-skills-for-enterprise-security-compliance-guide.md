@@ -318,4 +318,10 @@ This ensures no single developer can quietly modify skill behavior or security h
 
 ---
 
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Understanding which skills are most powerful helps security teams prioritize which ones need the strictest enterprise controls
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — The `tools` field and YAML structure are the first things to audit when reviewing skills for enterprise compliance
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Enterprise deployments at scale need both security controls and cost management; these techniques address the latter
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

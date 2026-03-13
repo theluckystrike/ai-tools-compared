@@ -191,4 +191,10 @@ This is a reminder, not an automated save — Claude still needs to be given a s
 
 ---
 
+## Related Reading
+
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Persistent state in `supermemory` and `CLAUDE.md` reduces repeated context re-loading, directly lowering token costs across sessions
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Covers the supermemory skill in depth, including how it integrates with CLAUDE.md and project-scoped state management
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Understanding how skills load context at invocation time clarifies why manual state persistence is necessary between sessions
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

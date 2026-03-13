@@ -344,4 +344,12 @@ fullDeploymentPipeline().catch(console.error);
 
 Claude skills with Vercel deployment automation creates an intelligent deployment pipeline that catches issues before they reach production. The `tdd` skill acts as a quality gate, `frontend-design` validates the live result, `pdf` generates stakeholder-ready changelogs, and `supermemory` builds deployment history for incident response. The GitHub Actions integration in Step 5 is the practical starting point — add post-deployment checks once your gate is running reliably.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — The DevOps skills that integrate naturally with Vercel deployment workflows, including tdd, pdf, and supermemory
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — A comprehensive overview of the developer skills ecosystem that powers intelligent deployment pipelines
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Deployment pipelines run frequently; these techniques help keep per-deployment API costs predictable
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
