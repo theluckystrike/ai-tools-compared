@@ -12,11 +12,7 @@ score: 8
 
 # Claude Code Skill Memory Limit Exceeded Process Killed Fix
 
-<<<<<<< Updated upstream
 Memory limit exceeded errors can abruptly terminate your Claude Code sessions, especially when running resource-intensive skills like pdf processing, algorithmic art generation, or working with large codebases. The [tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) and other code analysis skills are common triggers due to large codebase loading. This guide provides practical solutions for developers and power users facing these issues.
-=======
-Memory limit exceeded errors can abruptly terminate your Claude Code sessions, especially when working with resource-intensive tasks like PDF processing, large codebase analysis, or generating complex output. This guide provides practical solutions for developers and power users facing these issues.
->>>>>>> Stashed changes
 
 ## Understanding the Error
 
@@ -236,7 +232,6 @@ Identify which operations consume the most memory:
 
 When memory errors persist despite these fixes, consider upgrading your system RAM or using remote compute resources for memory-intensive tasks. The combination of proper environment configuration, monitoring, and incremental task scoping resolves the majority of memory limit exceeded issues with Claude Code skills.
 
-<<<<<<< Updated upstream
 ## Related Reading
 
 - [Claude Code Skill Timeout Error: How to Increase the Limit](/claude-skills-guide/articles/claude-code-skill-timeout-error-how-to-increase-the-limit/) — Pair memory limit fixes with timeout management for resource-intensive skill operations
@@ -245,6 +240,3 @@ When memory errors persist despite these fixes, consider upgrading your system R
 - [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill configuration patterns for managing resource usage effectively
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-=======
-Built by Claude Skills Guide — More at [zovo.one](https://zovo.one)
->>>>>>> Stashed changes
