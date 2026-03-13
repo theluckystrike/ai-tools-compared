@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills Onboarding for New Engineering Team Members"
 description: "A practical guide to using Claude Code skills to accelerate onboarding for new engineering team members in 2026."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Claude Skills Onboarding for New Engineering Team Members

@@ -1,13 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Agent Swarm Coordination Strategies"
-description: "Learn how to coordinate multiple Claude Code agents working in parallel on complex projects. Practical patterns for multi-agent workflows, shared state, and coordinated task execution."
+description: "Learn how to coordinate multiple Claude Code agents working in parallel on complex projects. Practical patterns for multi-agent workflows, shared state, an"
 date: 2026-03-14
 categories: [advanced]
 tags: [claude-code, claude-skills, multi-agent, swarm, coordination, automation]
-author: theluckystrike
-reviewed: false
-score: 0
+author: "Claude Skills Guide"
+reviewed: true
+score: 10
 ---
 
 # Claude Code Agent Swarm Coordination Strategies

@@ -1,9 +1,13 @@
 ---
-layout: default
-title: "Claude Skill Dependency Injection Patterns: A Practical Guide"
+layout: post
+title: "Claude Skill Dependency Injection Patterns: A Practical Guid"
 description: "Learn how to implement dependency injection in Claude Code skills for cleaner, more maintainable, and testable AI agent workflows."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Claude Skill Dependency Injection Patterns: A Practical Guide
