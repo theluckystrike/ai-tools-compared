@@ -18,8 +18,21 @@ Before rolling back, confirm that the issue stems from the skill update itself. 
 - **Errors during invocation**: Failed executions or error messages where none existed
 - **Incompatibility with other skills**: Conflicts with skills like `tdd`, `pdf`, or `supermemory` that previously worked together
 - **Breaking changes**: New required parameters or altered syntax
+- **Performance degradation**: Noticeable slowdowns or increased resource usage
+- **Output format changes**: The skill generates responses in a different structure
 
-Check the skill's changelog or repository for recent updates. If the timing matches the issues you're experiencing, a rollback is warranted.
+Check the skill's changelog or repository for recent updates. If the timing matches the issues you're experiencing, a rollback is warranted. Document what changed so you can report it to the maintainer if needed.
+
+### Common Update Scenarios That Cause Issues
+
+Several types of updates commonly cause problems:
+
+1. **Dependency updates**: New versions of external tools or libraries may conflict with your environment
+2. **API changes**: Modifications to how the skill interacts with Claude Code
+3. **Prompt modifications**: Changes to the skill's instructions that alter its behavior
+4. **Configuration format changes**: YAML or JSON structure updates that break existing setups
+
+Understanding which scenario you're dealing with helps determine the best rollback approach.
 
 ## Method 1: Git-Based Rollback (Recommended)
 
@@ -95,6 +108,53 @@ git clone --branch v1.2.0 https://github.com/author/skill-name.git ~/.claude/ski
 **Step 3: Test the reinstalled version**
 Invoke the skill and verify correct behavior.
 
+### Using Git Tags for Version Control
+
+Git tags provide stable reference points for rollback:
+
+```bash
+# List all available tags
+git tag -l
+
+# Checkout a specific tag
+git checkout tags/v1.2.0 -b my-local-branch
+```
+
+Tags are particularly useful for skills that follow semantic versioning. If the skill uses tags like `v1.0.0`, `v1.1.0`, and `v1.2.0`, you can easily identify which version worked correctly.
+
+## Method 4: Using Skill Configuration Files
+
+Some skills support configuration files that can override problematic behaviors without rolling back the entire skill.
+
+**Check for config overrides:**
+```
+ls -la ~/.claude/skills/SKILL_NAME/
+```
+
+Look for files like `config.json`, `settings.yaml`, or `.env` that might allow you to modify behavior without updating the skill itself. This approach is useful when the issue is a specific feature rather than entire skill functionality.
+
+## Detailed Rollback Workflow
+
+A comprehensive rollback involves more than just restoring files:
+
+1. **Document the issue**: Record exactly what went wrong, including error messages and steps to reproduce
+2. **Create a snapshot**: Copy the problematic version to a separate location for debugging
+3. **Restore the backup**: Apply your chosen rollback method
+4. **Test thoroughly**: Verify all functionality works as expected
+5. **Report to maintainers**: Help improve the skill by sharing your findings
+
+### Testing Checklist After Rollback
+
+Run through this checklist to ensure the rollback was successful:
+
+- Invoke the skill with various inputs
+- Check integration with other skills like `frontend-design` and `tdd`
+- Verify file outputs are generated correctly
+- Test edge cases and error handling
+- Confirm performance is acceptable
+
+Only when all items pass should you consider the rollback complete.
+
 ## Preventing Future Update Issues
 
 Implement these practices to minimize rollback needs:
@@ -115,6 +175,54 @@ git checkout -b my-customizations
 
 **Test updates in isolation:**
 Create a test project and invoke the updated skill there before using it in production work.
+
+## Handling Skill Dependencies
+
+Many skills depend on external tools or libraries. When these dependencies change, the skill may break even if its own code hasn't changed.
+
+**Check for dependency requirements:**
+```bash
+cat ~/.claude/skills/SKILL_NAME/requirements.txt
+# or
+cat ~/.claude/skills/SKILL_NAME/package.json
+```
+
+**Verify dependency versions:**
+```bash
+pip list | grep -i dependency_name
+# or
+npm list dependency_name
+```
+
+If a dependency has updated, you may need to install a specific version:
+```bash
+pip install dependency_name==1.2.3
+# or
+npm install dependency_name@1.2.3
+```
+
+The `pdf` skill and other file-processing skills are particularly vulnerable to dependency issues, so pay extra attention when these skills update.
+
+## Advanced: Automated Backup System
+
+For power users managing multiple skills, consider setting up automated backups:
+
+```bash
+#!/bin/bash
+# backup-skills.sh
+
+BACKUP_DIR="$HOME/claude-skills-backups/$(date +%Y%m%d)"
+mkdir -p "$BACKUP_DIR"
+
+for skill in ~/.claude/skills/*/; do
+    skill_name=$(basename "$skill")
+    cp -r "$skill" "$BACKUP_DIR/$skill_name"
+done
+
+echo "Backed up $(ls $BACKUP_DIR | wc -l) skills"
+```
+
+Run this script regularly or before any skill update to maintain a rolling backup history.
 
 ## When to Seek Additional Help
 
