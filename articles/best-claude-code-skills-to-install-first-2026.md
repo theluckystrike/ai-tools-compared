@@ -7,7 +7,7 @@ categories: [skills, tutorials]
 tags: [claude-code, claude-skills, pdf, tdd, xlsx, supermemory, frontend-design]
 author: "Claude Skills Guide"
 reviewed: true
-score: 5
+score: 9
 ---
 
 # Best Claude Code Skills to Install First in 2026

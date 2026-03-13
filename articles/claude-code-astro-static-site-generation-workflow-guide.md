@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Astro Static Site Generation Workflow Guide"
 description: "A practical guide to building static sites with Claude Code and Astro. Learn workflow patterns, skill integration, and automation for 2026."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 # Claude Code Astro Static Site Generation Workflow Guide

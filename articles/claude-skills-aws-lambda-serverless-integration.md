@@ -7,7 +7,7 @@ categories: [integrations, cloud]
 tags: [claude-code, claude-skills, aws, lambda, serverless, pdf, tdd]
 author: "Claude Skills Guide"
 reviewed: true
-score: 5
+score: 9
 ---
 
 # Claude Code Skills + AWS Lambda: Serverless Integration

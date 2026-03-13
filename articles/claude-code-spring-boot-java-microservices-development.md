@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Spring Boot Java Microservices Development"
 description: "Master Spring Boot and Java microservices development with Claude Code skills. Learn practical workflows for building, testing, and deploying Java microservices with AI assistance."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 # Claude Code Spring Boot Java Microservices Development

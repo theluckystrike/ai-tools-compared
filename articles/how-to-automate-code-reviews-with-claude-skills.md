@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, claude-skills, code-review, tdd, frontend-design, automation]
 author: "Claude Skills Guide"
 reviewed: true
-score: 5
+score: 9
 ---
 
 # How to Automate Code Reviews with Claude Skills
