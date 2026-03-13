@@ -162,3 +162,10 @@ For best results with multimedia in Claude skills:
 Claude skills become genuinely powerful multimedia workstations when you combine the right skill templates with appropriate tool access. The key is understanding that Claude orchestrates — it generates the instructions, while the actual media processing happens through the tools it calls.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [Claude Code Batch Processing with Skills Guide](/claude-skills-guide/articles/claude-code-batch-processing-with-skills-guide/) — Apply batch processing patterns to multimedia workflows: process many images or documents in one automated run
+- [Claude Frontend Design Skill: Review and Tutorial](/claude-skills-guide/articles/claude-frontend-design-skill-review-and-tutorial/) — Go deeper on the frontend-design skill's code generation capabilities for visual layouts and components
+- [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — Discover how document and spreadsheet skills complement multimedia processing in data-heavy workflows
+- [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore the full ecosystem of Claude skills and how they extend Claude's native capabilities

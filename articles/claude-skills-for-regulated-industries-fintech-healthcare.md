@@ -257,3 +257,10 @@ Building for regulated industries doesn't mean abandoning developer productivity
 Start with the skills matching your primary compliance framework, then expand to cover additional requirements as your application grows.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+## Related Reading
+
+- [Claude Code HIPAA Compliant Development Workflow Guide](/claude-skills-guide/articles/claude-code-hipaa-compliant-development-workflow-guide/) — Comprehensive HIPAA implementation patterns referenced throughout this guide, with deeper PHI handling workflows
+- [Claude Code SOC 2 Compliance Audit Preparation Guide 2026](/claude-skills-guide/articles/claude-code-soc2-compliance-audit-preparation-guide-2026/) — Step-by-step SOC 2 preparation workflow for fintech teams using Claude skills for evidence generation
+- [Claude Code OWASP Top 10 Security Scanning Workflow](/claude-skills-guide/articles/claude-code-owasp-top-10-security-scanning-workflow/) — Automated security scanning workflows that complement compliance documentation requirements
+- [Claude Skills Use Cases Hub](/claude-skills-guide/use-cases-hub/) — Explore additional use-case skill guides for security, compliance, and regulated industry development

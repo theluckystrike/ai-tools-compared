@@ -12,7 +12,7 @@ score: 7
 
 # How to Create a Private Claude Skill Not on GitHub
 
-Private Claude skills let you build custom workflows that stay completely local. Whether you're working with proprietary code, sensitive business logic, or just want to experiment without sharing your work publicly, keeping skills off GitHub is straightforward. This guide walks you through creating private skills that Claude Code can still discover and use.
+Private Claude skills let you build custom workflows that stay completely local. Whether you're working with proprietary code, sensitive business logic, or just want to experiment without sharing your work publicly, keeping skills off GitHub is straightforward. This guide walks you through creating private skills that Claude Code can still discover and use. For best practices on the `.md` format these skills use, see the [Claude skill .md file format specification guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/).
 
 ## Understanding Private vs Public Skills
 

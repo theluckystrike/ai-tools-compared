@@ -252,4 +252,11 @@ Start with the basic server and client examples above, then extend based on your
 
 ---
 
+## Related Reading
+
+- [Claude Skills for WebSocket Real-Time App Development](/claude-skills-guide/articles/claude-skills-for-websocket-realtime-app-development/) — Build complete real-time applications using Claude skills for both client and server
+- [Can Claude Code Skills Call External APIs Automatically](/claude-skills-guide/articles/can-claude-code-skills-call-external-apis-automatically/) — Extend WebSocket patterns to REST and streaming API integrations
+- [Claude Code Skills for Scientific Python NumPy SciPy](/claude-skills-guide/articles/claude-code-skills-for-scientific-python-numpy-scipy/) — Process real-time data streams from WebSocket connections with numerical computing
+- [Claude Skills Hub](/claude-skills-guide/use-cases-hub/) — Explore real-time and event-driven application use cases for Claude Code
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -146,4 +146,11 @@ Claude Code skills enhance scientific Python workflows through automation of dat
 
 Experiment with combining these skills in your own workflows—the initial setup time pays dividends through improved reproducibility and reduced manual effort.
 
+## Related Reading
+
+- [Claude Skills for Computational Biology and Bioinformatics](/claude-skills-guide/articles/claude-skills-for-computational-biology-bioinformatics/) — Apply scientific Python skills to sequence analysis and genomics pipelines
+- [Claude Skills for Data Science and Jupyter Notebooks](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) — Combine NumPy/SciPy workflows with Jupyter notebook automation
+- [What Is the Best Claude Skill for Python Data Workflows](/claude-skills-guide/articles/what-is-the-best-claude-skill-for-python-data-workflows/) — Find the right Claude skill for your specific Python data processing needs
+- [Claude Skills Hub](/claude-skills-guide/use-cases-hub/) — Explore scientific computing and data analysis use cases for Claude Code
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

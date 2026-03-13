@@ -165,4 +165,11 @@ You'll find the skills in `~/.claude/skills/` on your system. Each skill is a Ma
 
 The key insight is that Claude skills and VS Code extensions solve similar problems differently. Skills work best when you want AI-assisted conversation. Extensions work best when you need tight editor integration. Combining them opens possibilities, but you need to choose your battles carefully based on latency tolerance and feature complexity.
 
+## Related Reading
+
+- [Claude Code GitPod Cloud IDE Integration Tutorial 2026](/claude-skills-guide/articles/claude-code-gitpod-cloud-ide-integration-tutorial-2026/) — Integrate Claude Code in cloud IDEs for team-wide development environments
+- [Claude Code Dev Containers: devcontainer.json Setup Guide](/claude-skills-guide/articles/claude-code-dev-containers-devcontainer-json-setup-guide/) — Configure repeatable environments that package Claude Code alongside your editor tooling
+- [Claude Code Skills Zapier Integration Step-by-Step](/claude-skills-guide/articles/claude-code-skills-zapier-integration-step-by-step/) — Trigger Claude skills from external tools and services with minimal code
+- [Claude Skills Hub](/claude-skills-guide/integrations-hub/) — Explore all Claude skill integration patterns across editors and tools
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

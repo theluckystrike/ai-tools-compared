@@ -236,4 +236,11 @@ For more advanced orchestration, integrate with tools like `supermemory` for per
 
 Building multi-agent workflows with Claude Code and tmux transforms your terminal into a command center for AI-assisted development. Start with simple parallel tasks, then expand to sophisticated coordination patterns as your workflows mature.
 
+## Related Reading
+
+- [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) — Design the execution model for agents you manage across tmux sessions
+- [Claude Opus Orchestrator-Sonnet-Worker Architecture](/claude-skills-guide/articles/claude-opus-orchestrator-sonnet-worker-architecture/) — Implement orchestrator-worker patterns inside tmux-managed agent sessions
+- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Coordinate Claude subagents in persistent multi-window workflows
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced multi-agent orchestration and terminal management patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

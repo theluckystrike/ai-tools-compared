@@ -208,4 +208,11 @@ Claude Code accelerates this process by understanding your project's structure a
 
 The goal isn't perfection—it's consistency. A flake that covers 80% of your environment beats hand-crafted setup every time, because that 80% works identically everywhere.
 
+## Related Reading
+
+- [Claude Code Dev Containers: devcontainer.json Setup Guide](/claude-skills-guide/articles/claude-code-dev-containers-devcontainer-json-setup-guide/) — Use dev containers as an alternative approach for reproducible environments
+- [Claude Code GitPod Cloud IDE Integration Tutorial 2026](/claude-skills-guide/articles/claude-code-gitpod-cloud-ide-integration-tutorial-2026/) — Run Claude Code in ephemeral cloud environments without local Nix setup
+- [Claude Code with Docker: Container Setup Guide](/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/) — Compare Docker-based isolation against Nix flake reproducibility
+- [Claude Skills Hub](/claude-skills-guide/integrations-hub/) — Explore all environment setup and toolchain integration patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
