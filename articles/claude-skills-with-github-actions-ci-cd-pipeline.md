@@ -1,47 +1,87 @@
 ---
 layout: post
 title: "Claude Skills with GitHub Actions CI/CD Pipeline"
-description: "Learn how to integrate Claude skills into your GitHub Actions CI/CD pipeline to automate code review, testing, and deployment workflows for developer teams."
+description: "Integrate Claude Code into GitHub Actions CI/CD to automate code review, TDD analysis, and report generation using the Anthropic API."
 date: 2026-03-13
+categories: [guides, devops]
+tags: [claude-code, claude-skills, github-actions, cicd, tdd, automation]
 author: "Claude Skills Guide"
-categories: [guides]
 reviewed: true
 score: 8
 ---
 
 # Claude Skills with GitHub Actions CI/CD Pipeline
 
-Integrating Claude skills with a GitHub Actions CI/CD pipeline gives development teams an automated assistant that participates directly in their build, test, and deployment workflows. This guide walks through practical patterns for wiring Claude Code skills into your existing pipelines — from triggering AI-powered code review on pull requests to running TDD-focused checks before merges.
+Integrating Claude Code with a GitHub Actions CI/CD pipeline gives development teams an automated assistant that participates directly in their build, test, and deployment workflows. This guide covers practical patterns for wiring Claude intelligence into your existing pipelines — from triggering AI-powered code review on pull requests to generating PDF reports from test results.
 
-## Why Combine Claude Skills with GitHub Actions
+## Why Combine Claude with GitHub Actions
 
-GitHub Actions handles orchestration. Claude handles intelligence. Together they let you run contextual, AI-powered steps at any point in your delivery pipeline without maintaining a separate AI service or polling loop.
+GitHub Actions handles orchestration. Claude handles intelligence. Together they let you run contextual, AI-powered steps at any point in your delivery pipeline without maintaining a separate AI service.
 
 Common use cases include:
 
-- Automated code review comments on PRs using the [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/)
-- PDF report generation from test results using the [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/)
-- Accessibility and design checks on front-end PRs using `frontend-design`
-- Persistent context across runs using `supermemory` to track regressions
+- Automated code review comments on PRs analyzing test coverage
+- PDF report generation from test results
+- Accessibility and design checks on front-end PRs
+- Security analysis of infrastructure diffs before deployment
 
 ## Prerequisites
 
 - A GitHub repository with Actions enabled
-- Claude API key (store as `CLAUDE_API_KEY` in repo secrets)
+- Claude API key (store as `ANTHROPIC_API_KEY` in repo secrets)
 - Node.js 20+ in your runner environment
-- Claude Code CLI installed (`npm install -g @anthropic-ai/claude-code`)
 
 ## Step 1: Store Your API Key
 
 In your GitHub repository, go to **Settings > Secrets and variables > Actions** and add:
 
 ```
-CLAUDE_API_KEY=your_api_key_here
+ANTHROPIC_API_KEY=your_api_key_here
 ```
 
 Never hardcode credentials in your workflow files.
 
-## Step 2: Create the Workflow File
+## Step 2: Call Claude via the Anthropic API
+
+The correct way to call Claude in CI is via the Anthropic API directly using `curl` or the Node.js SDK. Claude Code's interactive CLI (`claude`) is for interactive sessions, not headless CI automation.
+
+Create a review script at `scripts/claude-review.js`:
+
+```javascript
+const Anthropic = require('@anthropic-ai/sdk');
+
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
+async function reviewDiff(diff) {
+  const message = await client.messages.create({
+    model: 'claude-opus-4-6',
+    max_tokens: 2048,
+    system: `You are a TDD-focused code reviewer. Analyze the diff for:
+1. Functions or branches with no test coverage
+2. Potential regressions in existing tests
+3. Missing error handling
+4. Concrete test suggestions for uncovered paths
+
+Output a structured review with these sections.`,
+    messages: [{
+      role: 'user',
+      content: \`Review this diff for test coverage and quality:\n\n\${diff}\`
+    }]
+  });
+  return message.content[0].text;
+}
+
+async function main() {
+  const diff = require('fs').readFileSync('/tmp/pr_diff.txt', 'utf8');
+  const review = await reviewDiff(diff);
+  require('fs').writeFileSync('/tmp/review_summary.md', review);
+  console.log('Review written to /tmp/review_summary.md');
+}
+
+main().catch(err => { console.error(err); process.exit(1); });
+```
+
+## Step 3: Create the Workflow File
 
 Create `.github/workflows/claude-review.yml`:
 
@@ -70,25 +110,18 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Claude Code CLI
-        run: npm install -g @anthropic-ai/claude-code
+      - name: Install Anthropic SDK
+        run: npm install @anthropic-ai/sdk
 
-      - name: Run Claude TDD skill on changed files
-        env:
-          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-        run: |
-          git diff origin/main...HEAD --name-only --diff-filter=AM | \
-            grep -E '\.(ts|js|py)$' | \
-            xargs -I {} claude --skill tdd --prompt "Review this file for test coverage gaps and suggest missing unit tests" {}
-
-      - name: Generate review summary
-        env:
-          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+      - name: Get PR diff
         run: |
           git diff origin/main...HEAD > /tmp/pr_diff.txt
-          claude --skill tdd \
-            --prompt "Summarize this diff. Identify: 1) untested code paths, 2) potential regressions, 3) missing error handling" \
-            /tmp/pr_diff.txt > /tmp/review_summary.md
+          echo "Diff size: $(wc -c < /tmp/pr_diff.txt) bytes"
+
+      - name: Run Claude review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/claude-review.js
 
       - name: Post review comment
         uses: actions/github-script@v7
@@ -100,11 +133,11 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `## Claude AI Review\n\n${summary}`
+              body: \`## Claude AI Review\n\n\${summary}\`
             });
 ```
 
-## Step 3: Add a Deployment Gate
+## Step 4: Add a Deployment Gate
 
 Use Claude to validate infrastructure changes before deployment. Add this job after your test suite passes:
 
@@ -117,104 +150,124 @@ Use Claude to validate infrastructure changes before deployment. Add this job af
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Claude Code CLI
-        run: npm install -g @anthropic-ai/claude-code
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Anthropic SDK
+        run: npm install @anthropic-ai/sdk
 
       - name: Validate IaC changes
         env:
-          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           git diff HEAD~1 -- '*.tf' '*.yaml' 'docker-compose*' > /tmp/infra_diff.txt
           if [ -s /tmp/infra_diff.txt ]; then
-            claude --prompt "Review this infrastructure diff for security misconfigurations, overly permissive IAM policies, or exposed ports. Output PASS or FAIL with reasoning." \
-              /tmp/infra_diff.txt | tee /tmp/infra_result.txt
-            grep -q "^PASS" /tmp/infra_result.txt || exit 1
+            node -e "
+              const Anthropic = require('@anthropic-ai/sdk');
+              const fs = require('fs');
+              const client = new Anthropic();
+              async function check() {
+                const diff = fs.readFileSync('/tmp/infra_diff.txt', 'utf8');
+                const msg = await client.messages.create({
+                  model: 'claude-opus-4-6',
+                  max_tokens: 512,
+                  messages: [{ role: 'user', content: 'Review this infrastructure diff for security misconfigurations, overly permissive IAM policies, or exposed ports. Output PASS or FAIL with one-line reasoning.\n\n' + diff }]
+                });
+                const result = msg.content[0].text;
+                console.log(result);
+                fs.writeFileSync('/tmp/infra_result.txt', result);
+                if (!result.startsWith('PASS')) process.exit(1);
+              }
+              check().catch(e => { console.error(e); process.exit(1); });
+            "
           fi
-```
-
-## Step 4: Using Supermemory for Context Persistence
-
-The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) lets Claude retain context across pipeline runs — useful for tracking flaky tests, recurring review feedback, or build patterns over time.
-
-```yaml
-      - name: Check regression patterns with supermemory
-        env:
-          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-          SUPERMEMORY_API_KEY: ${{ secrets.SUPERMEMORY_API_KEY }}
-        run: |
-          claude --skill supermemory \
-            --prompt "Has this component had test failures in the last 5 runs? Current test output:" \
-            /tmp/test_output.txt
 ```
 
 ## Step 5: Generate PDF Reports for Stakeholders
 
-After a successful release, use the `pdf` skill to package a human-readable summary:
+After a successful release, use the Anthropic API to generate a release summary, then convert it to PDF:
 
 ```yaml
-      - name: Generate release PDF
+      - name: Generate release summary
         env:
-          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          claude --skill pdf \
-            --prompt "Generate a release notes document from this changelog and test summary" \
-            CHANGELOG.md /tmp/test_summary.txt \
-            --output release-notes-${{ github.run_number }}.pdf
+          node -e "
+            const Anthropic = require('@anthropic-ai/sdk');
+            const fs = require('fs');
+            const client = new Anthropic();
+            async function summarize() {
+              const changelog = fs.readFileSync('CHANGELOG.md', 'utf8');
+              const msg = await client.messages.create({
+                model: 'claude-opus-4-6',
+                max_tokens: 1024,
+                messages: [{ role: 'user', content: 'Write a stakeholder-friendly release summary from this changelog:\n\n' + changelog }]
+              });
+              fs.writeFileSync('/tmp/release_summary.md', msg.content[0].text);
+            }
+            summarize();
+          "
 
-      - name: Upload release PDF
+      - name: Upload release summary
         uses: actions/upload-artifact@v4
         with:
-          name: release-notes
-          path: release-notes-*.pdf
+          name: release-summary
+          path: /tmp/release_summary.md
 ```
 
-## Caching Claude CLI Between Runs
+## Caching Node Modules Between Runs
 
-Installing the CLI on every run adds latency. Cache it with:
+Cache the Anthropic SDK installation to reduce workflow time:
 
 ```yaml
-      - name: Cache Claude CLI
+      - name: Cache node modules
         uses: actions/cache@v4
         with:
-          path: ~/.npm-global
-          key: claude-cli-${{ runner.os }}-v1
+          path: node_modules
+          key: ${{ runner.os }}-anthropic-sdk-v1
 ```
 
 ## Handling Rate Limits
 
-Claude API calls in CI can hit rate limits if many PRs open simultaneously. Implement a simple retry wrapper:
+Claude API calls in CI can hit rate limits if many PRs open simultaneously. Implement retry logic in your Node.js scripts:
 
-```bash
-#!/bin/bash
-# scripts/claude-with-retry.sh
-MAX_RETRIES=3
-COUNT=0
-until claude "$@" || [ $COUNT -eq $MAX_RETRIES ]; do
-  COUNT=$((COUNT + 1))
-  echo "Retry $COUNT/$MAX_RETRIES after rate limit..."
-  sleep $((COUNT * 10))
-done
+```javascript
+async function callClaudeWithRetry(params, maxRetries = 3) {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await client.messages.create(params);
+    } catch (err) {
+      if (err.status === 429 && attempt < maxRetries) {
+        const delay = Math.pow(2, attempt) * 10000;
+        console.warn(`Rate limited. Waiting ${delay}ms...`);
+        await new Promise(r => setTimeout(r, delay));
+        continue;
+      }
+      throw err;
+    }
+  }
+}
 ```
-
-Then call `./scripts/claude-with-retry.sh --skill tdd ...` in your workflow steps.
 
 ## Security Considerations
 
-- Always use `CLAUDE_API_KEY` from GitHub Secrets, never from environment variables committed to the repo
-- Set `permissions` on jobs to the minimum required (prefer `pull-requests: write` over `write-all`)
-- Review AI-generated comments before enabling auto-merge gates on them
+- Always use `ANTHROPIC_API_KEY` from GitHub Secrets, never hardcoded
+- Set `permissions` on jobs to the minimum required
+- Review AI-generated comments before enabling auto-merge gates based on them
 - Use branch protection rules to require the `claude-review` job to pass before merging
 
 ## Conclusion
 
-Wiring Claude skills with GitHub Actions CI/CD pipeline bridges the gap between automated testing and intelligent code analysis. By combining skills like `tdd`, `supermemory`, and `pdf` at specific pipeline stages, you get context-aware AI participation without building a separate service. Start with the PR review workflow and expand to deployment gates once you trust the output quality.
+Wiring Claude intelligence into GitHub Actions CI/CD bridges the gap between automated testing and contextual code analysis. The key is calling the Anthropic API directly via the SDK in Node.js scripts rather than attempting to use Claude Code's interactive CLI in headless environments. Start with the PR review workflow and expand to deployment gates once you trust the output quality.
 
 ---
 
 ## Related Reading
 
-- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — A curated list of skills that integrate with CI/CD workflows, infrastructure tooling, and deployment automation
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Covers the full spectrum of developer skills including tdd, supermemory, and code review automation
-- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — How to structure CI/CD skill invocations to minimize API spend while keeping pipeline coverage thorough
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — Skills that integrate with CI/CD workflows
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Full developer skill stack
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep CI/CD API costs under control
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
