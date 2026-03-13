@@ -3,7 +3,7 @@ layout: post
 title: "Fan-Out Fan-In Pattern with Claude Code Subagents"
 description: "Learn how to implement the fan-out fan-in pattern using Claude Code subagents for parallel task execution and efficient result aggregation."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [advanced]
 tags: [claude-code, claude-skills]
 reviewed: true
@@ -18,7 +18,7 @@ The fan-out fan-in pattern is a powerful concurrency strategy that enables paral
 
 Fan-out refers to the process of spawning multiple subagents to handle independent tasks in parallel. Fan-in is the subsequent aggregation of results from these subagents into a coherent whole. This approach significantly reduces total execution time when tasks are independent and can run concurrently.
 
-Claude Code provides native support for subagent creation through the `claude` CLI tool and programmatic interfaces. By leveraging this capability, you can orchestrate complex workflows that distribute work across multiple AI agents while maintaining control over the aggregation logic.
+Claude Code provides native support for subagent creation through the `claude` CLI tool and programmatic interfaces. With this capability, you can orchestrate complex workflows that distribute work across multiple AI agents while maintaining control over the aggregation logic.
 
 ## Basic Implementation Structure
 
@@ -195,7 +195,7 @@ def safe_process(task):
 
 When implementing this pattern, consider these factors:
 
-**Worker Count Tuning**: Balance between parallelism and resource usage. Start with 3-5 workers and adjust based on your use case. The **algorithmic-art** skill, for example, may require fewer concurrent workers due to higher memory usage.
+**Worker Count Tuning**: Balance between parallelism and resource usage. Start with 3-5 workers and adjust based on your use case. Skills that perform heavy file I/O or complex generation may require fewer concurrent workers due to higher memory usage.
 
 **Token Budget Management**: Each subagent consumes tokens from your Claude API allocation. Monitor usage and implement budget controls for large-scale operations.
 
