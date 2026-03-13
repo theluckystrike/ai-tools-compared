@@ -53,32 +53,32 @@ Claude Code skills extend the AI assistant's capabilities for specific tasks. Se
 
 The [**tdd** skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) helps you practice test-driven development by generating test cases before implementation. When working on a new feature in your Codespace, invoke the skill to create a test file:
 
-```bash
-claude /tdd "Create test cases for a user authentication module with login, logout, and password reset functions"
+```
+/tdd Create test cases for a user authentication module with login, logout, and password reset functions
 ```
 
 This generates test files following TDD principles, which you can then run to verify your implementation.
 
 The **supermemory** skill maintains context across sessions. In a cloud environment where you might work across multiple Codespaces or need to resume work after a break, supermemory tracks your project understanding:
 
-```bash
-claude /supermemory "Remember that this project uses a microservices architecture with three main services: auth, billing, and notifications"
+```
+/supermemory Remember that this project uses a microservices architecture with three main services: auth, billing, and notifications
 ```
 
 Invoke this skill early in your workflow to build persistent context that Claude Code references across interactions.
 
 The **pdf** skill generates documentation directly in your Codespace. After completing a feature, create documentation without leaving your environment:
 
-```bash
-claude /pdf "Generate API documentation for the user service endpoints"
+```
+/pdf Generate API documentation for the user service endpoints
 ```
 
 This produces formatted PDF documentation that you can attach to pull requests or share with stakeholders.
 
 For frontend work within your Codespace, the **frontend-design** skill helps translate requirements into component code:
 
-```bash
-claude /frontend-design "Create a dashboard layout with sidebar navigation, header with user menu, and main content area with data visualization widgets"
+```
+/frontend-design Create a dashboard layout with sidebar navigation, header with user menu, and main content area with data visualization widgets
 ```
 
 The **docx** skill complements this by generating Word documents for formal specifications or technical design documents when required by your workflow process.
@@ -114,8 +114,8 @@ This approach streamlines your development cycle by automating the review and co
 
 For larger projects, you might work across multiple Codespaces. The **skill-creator** skill helps you build custom skills that automate context-switching between environments:
 
-```bash
-claude /skill-creator "Create a skill that switches between production and staging Codespaces, updating git remotes and deploying to the appropriate environment"
+```
+/skill-creator Create a skill that switches between production and staging Codespaces, updating git remotes and deploying to the appropriate environment
 ```
 
 Custom skills persist in your Claude Code configuration and work consistently across any Codespace you create from your repositories.
