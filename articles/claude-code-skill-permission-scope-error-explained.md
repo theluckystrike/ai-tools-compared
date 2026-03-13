@@ -105,7 +105,7 @@ If the skill declares `Bash` but the sandbox policy does not allow it, the skill
 
 ## The `tdd` Skill and Bash Scope
 
-The `tdd` skill needs to run test commands. If your `.claude/settings.json` does not include a `Bash` allow rule for your test runner, the skill will fail with a scope error when trying to run tests:
+The [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) needs to run test commands. If your `.claude/settings.json` does not include a `Bash` allow rule for your test runner, the skill will fail with a scope error when trying to run tests:
 
 ```json
 {
@@ -122,7 +122,7 @@ The `tdd` skill needs to run test commands. If your `.claude/settings.json` does
 
 ## The `pdf` and `docx` Skills and Path Scope
 
-The `pdf` and `docx` skills read files from your filesystem. If the files you want to process are outside the current project directory, you need to add allow rules:
+The [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) and `docx` skills read files from your filesystem. If the files you want to process are outside the current project directory, you need to add allow rules:
 
 ```json
 {
@@ -140,7 +140,7 @@ Without these rules, the `pdf` skill will produce a scope error when trying to r
 
 ## The `supermemory` Skill and Write Scope
 
-The `supermemory` skill writes session state to a storage path. The default storage path is outside most project directories, so it requires a write scope rule:
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) writes session state to a storage path. The default storage path is outside most project directories, so it requires a write scope rule:
 
 ```json
 {

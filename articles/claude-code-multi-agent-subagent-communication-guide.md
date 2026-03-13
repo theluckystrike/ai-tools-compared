@@ -276,7 +276,7 @@ run_subagent_with_retry() {
 
 ## Using /supermemory for Shared Context
 
-If subagents need to share learned context, use `/supermemory` to store context before spawning subagents, then retrieve it in each subagent's prompt:
+If subagents need to share learned context, use [`/supermemory`](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) to store context before spawning subagents, then retrieve it in each subagent's prompt:
 
 ```bash
 # Store shared context once

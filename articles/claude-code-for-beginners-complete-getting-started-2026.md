@@ -175,9 +175,9 @@ Claude will generate a draft. Review it and add:
 
 Once you are comfortable with the basics:
 
-1. **Use `/supermemory`** — persistent memory across sessions
-2. **Use `/tdd`** — add tests to existing code
-3. **Try `/frontend-design`** — builds UI components that match your design system
+1. **Use [`/supermemory`](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/)** — persistent memory across sessions
+2. **Use [`/tdd`](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/)** — add tests to existing code
+3. **Try [`/frontend-design`](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/)** — builds UI components that match your design system
 4. **Read the hooks guide** — learn to control what Claude can do via shell hooks in `.claude/settings.json`
 
 Claude Code's power grows as you learn to structure tasks well and customize it for your workflow. Start simple, then layer in more capabilities.
