@@ -141,7 +141,7 @@ The frontend-design skill becomes powerful when combined with other Claude skill
 
 ### Test-Driven Development with tdd
 
-Use the **tdd** skill alongside frontend-design:
+Use the [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) alongside frontend-design:
 
 1. Describe your component requirements to frontend-design
 2. Switch context to tdd and request test cases
@@ -156,7 +156,7 @@ focus trapping, and escape key dismissal."
 
 ### Documentation with pdf
 
-The **pdf** skill generates component documentation:
+The [**pdf** skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) generates component documentation:
 
 ```
 Create a PDF style guide from these component specifications including 

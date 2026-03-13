@@ -22,9 +22,9 @@ Before getting into the workflow, here is what each relevant skill actually does
 
 - `/docx` — Converts or generates `.docx` documents from content you describe
 - `/canvas-design` — Creates visual assets (images, diagrams) from text descriptions
-- `/supermemory` — Stores and retrieves persistent notes across Claude Code sessions
-- `/pdf` — Processes PDF documents, extracts text, creates PDF output
-- `/tdd` — Guides test-driven development; not directly useful for blog content but useful if you build tooling around the workflow
+- [supermemory skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) (`/supermemory`) — Stores and retrieves persistent notes across Claude Code sessions
+- [pdf skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) (`/pdf`) — Processes PDF documents, extracts text, creates PDF output
+- [tdd skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) (`/tdd`) — Guides test-driven development; not directly useful for blog content but useful if you build tooling around the workflow
 
 Skills are plain Markdown files stored in `~/.claude/skills/`. You invoke them with a `/skill-name` slash command at the start of a message in Claude Code. There are no install commands — you place the `.md` file in the skills directory and the slash command becomes available.
 

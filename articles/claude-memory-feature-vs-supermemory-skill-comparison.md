@@ -85,7 +85,7 @@ $ claude
 # Now understands your project's conventions without explanation
 ```
 
-You can combine SuperMemory with other skills seamlessly. For instance, when working with the **pdf** skill for documentation generation, SuperMemory can remember your preferred output format and template settings. Similarly, when using **frontend-design** for UI work, the skill retains your design system preferences across sessions.
+You can combine SuperMemory with other skills seamlessly. For instance, when working with the [**pdf** skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) for documentation generation, SuperMemory can remember your preferred output format and template settings. Similarly, when using **frontend-design** for UI work, the skill retains your design system preferences across sessions.
 
 ## When SuperMemory Outperforms Built-in Memory
 
@@ -95,7 +95,7 @@ Several scenarios make SuperMemory the clear choice:
 
 **Multi-project workflows**: If you switch between different projects regularly, SuperMemory maintains separate context for each. You don't carry irrelevant context from one project into another.
 
-**Knowledge accumulation**: Over time, you can build a personal knowledge base of solutions, patterns, and learnings. The **tdd** skill can work alongside SuperMemory to remember your preferred testing patterns across test-driven development workflows.
+**Knowledge accumulation**: Over time, you can build a personal knowledge base of solutions, patterns, and learnings. The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) can work alongside SuperMemory to remember your preferred testing patterns across test-driven development workflows.
 
 **Team collaboration**: When working with a team, you can store coding standards, review conventions, and project-specific patterns that ensure consistency regardless of who starts the Claude session.
 
