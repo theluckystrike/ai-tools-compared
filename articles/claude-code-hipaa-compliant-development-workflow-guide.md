@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude Code HIPAA Compliant Development Workflow Guide"
-description: "A practical guide to building HIPAA-compliant applications using Claude Code, with workflow patterns, code examples, and security best practices for healthcare software development."
+description: "Build HIPAA-compliant applications using Claude Code. Workflow patterns, code examples, and security best practices for healthcare development."
 date: 2026-03-13
 author: "Claude Skills Guide"
 categories: [guides]
