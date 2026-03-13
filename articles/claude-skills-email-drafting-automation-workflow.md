@@ -20,7 +20,7 @@ This guide covers building a practical email drafting workflow using Claude skil
 
 Claude skills are Markdown files in `~/.claude/skills/`. You invoke them with `/skill-name` inside a Claude Code session. For email drafting, you create one skill per email type — each skill encodes the format, tone, required fields, and any relevant conventions for that type of communication.
 
-The `supermemory` skill stores your personal context: your name, role, communication preferences, and frequently used boilerplate. Combining a typed email skill with your supermemory context produces drafts that read like you wrote them.
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) stores your personal context: your name, role, communication preferences, and frequently used boilerplate. Combining a typed email skill with your supermemory context produces drafts that read like you wrote them.
 
 ## Step 1: Set Up Your Communication Profile in Supermemory
 
@@ -197,7 +197,7 @@ For important communications that need a paper trail, combine your email draft w
 After drafting the email, use /pdf to create a formatted sprint summary document I can attach or archive.
 ```
 
-The `pdf` skill packages the content with proper formatting, date, and section headers. Store these in a `communications/` folder in your project for future reference.
+The [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) packages the content with proper formatting, date, and section headers. Store these in a `communications/` folder in your project for future reference.
 
 ## Step 6: Batch Email Generation
 

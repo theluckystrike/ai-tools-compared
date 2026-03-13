@@ -124,7 +124,7 @@ def get_user_groups(email):
 
 ### Never Let Claude See Secrets Directly
 
-The biggest risk in AI coding tools: accidentally giving Claude access to production credentials. Claude might log them, include them in generated code, or surface them in responses.
+The biggest risk in AI coding tools: accidentally giving Claude access to production credentials. Skills like the [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) need access to run tests, while the [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) reads documents — scope each appropriately. Claude might log them, include them in generated code, or surface them in responses.
 
 **Rule**: Secrets should be in environment variables or a secrets manager, never in files that `context_files` might include.
 

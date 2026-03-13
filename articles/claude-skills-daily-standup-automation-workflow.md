@@ -25,9 +25,9 @@ The real power comes from treating your development activity as structured data.
 
 Several Claude skills work together to make this workflow function:
 
-- **supermemory** — Maintains context about your projects, tasks, and ongoing work across sessions
-- **tdd** — Helps structure testable code and tracks development progress
-- **pdf** — Generates formatted standup documents when needed
+- [**supermemory**](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Maintains context about your projects, tasks, and ongoing work across sessions
+- [**tdd**](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Helps structure testable code and tracks development progress
+- [**pdf**](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — Generates formatted standup documents when needed
 
 Each skill plays a specific role in the pipeline, from data collection to final output.
 

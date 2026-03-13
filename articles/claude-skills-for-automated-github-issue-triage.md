@@ -152,7 +152,7 @@ def calculate_priority(issue_data):
 
 ## Using supermemory for Pattern Tracking
 
-The **supermemory** skill tracks historical patterns across triage sessions. Invoke it to record what you learn:
+The [**supermemory** skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) tracks historical patterns across triage sessions. Invoke it to record what you learn:
 
 ```
 /supermemory store: issues mentioning "authentication" are usually assigned to @sarah - she owns the auth module
@@ -184,7 +184,7 @@ Are any of these duplicates? If so, which one should we close as a duplicate of 
 
 ## Skills Worth Adding to Your Triage Workflow
 
-- **tdd** — When issues describe desired behavior, use `/tdd` to generate test cases that capture the expected functionality
+- [**tdd**](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — When issues describe desired behavior, use `/tdd` to generate test cases that capture the expected functionality
 - **webapp-testing** — For UI bug reports, use `/webapp-testing` to attempt reproducing the described behavior against a local dev server
 - **supermemory** — Maintains ongoing context about issue patterns, module owners, and historical resolution times
 

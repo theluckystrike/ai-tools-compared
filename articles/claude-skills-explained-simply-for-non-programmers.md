@@ -66,13 +66,13 @@ That's a skill. Anyone can write one. You don't need to code.
 
 Claude Code comes with several pre-built skills. Even without writing your own, these are immediately useful:
 
-**supermemory** — Gives Claude the ability to remember things between conversations. Without it, Claude forgets everything when you close the session. With it, Claude can remember your preferences, decisions you've made, and context about your project.
+[**supermemory**](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Gives Claude the ability to remember things between conversations. Without it, Claude forgets everything when you close the session. With it, Claude can remember your preferences, decisions you've made, and context about your project.
 
-**tdd** — Stands for "test-driven development." A skill for software developers that ensures Claude writes tests before writing code. If you're not a developer, this one's not for you.
+[**tdd**](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Stands for "test-driven development." A skill for software developers that ensures Claude writes tests before writing code. If you're not a developer, this one's not for you.
 
 **frontend-design** — Builds user interface components that match your visual design system. Again, developer-focused.
 
-**pdf** — Takes written content and formats it as a PDF document. Useful for anyone producing documents.
+[**pdf**](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — Takes written content and formats it as a PDF document. Useful for anyone producing documents.
 
 **docx** — Same idea but outputs a Word document (.docx format) instead of a PDF.
 
