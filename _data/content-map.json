@@ -1,38 +1,52 @@
 {
-  "generated": "2026-03-13 21:20",
-  "total": 79,
+  "generated": "2026-03-13 21:34",
+  "total": 101,
   "articles": [
     {
+      "filename": "advanced-claude-skills-with-tool-use-and-function-calling.md",
+      "title": "Advanced Claude Skills with Tool Use and Function Calling",
+      "url": "/claude-skills-guide/articles/advanced-claude-skills-with-tool-use-and-function-calling/",
+      "cluster": "best-of",
+      "linked": false
+    },
+    {
       "filename": "anthropic-model-context-protocol-updates-march-2026.md",
-      "title": "MCP Updates March 2026: Complete Developer Guide",
+      "title": "MCP Updates March 2026: What Developers Need to Know",
       "url": "/claude-skills-guide/articles/anthropic-model-context-protocol-updates-march-2026/",
       "cluster": "advanced",
       "linked": true
     },
     {
       "filename": "anthropic-official-skills-vs-community-skills-comparison.md",
-      "title": "Official vs Community Claude Skills: Which Should You Use?",
+      "title": "Official vs Community Claude Skills Guide (2026)",
       "url": "/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/",
       "cluster": "comparisons",
       "linked": true
     },
     {
       "filename": "antigravity-skills-vs-claude-native-skills.md",
-      "title": "Antigravity Skills vs Claude Native Skills: Key Differences",
+      "title": "Antigravity vs Claude Native Skills: Complete Guide (2026)",
       "url": "/claude-skills-guide/articles/antigravity-skills-vs-claude-native-skills/",
       "cluster": "comparisons",
       "linked": true
     },
     {
+      "filename": "automated-code-documentation-workflow-with-claude-skills.md",
+      "title": "Automated Code Documentation Workflow with Claude Skills",
+      "url": "/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
       "filename": "automated-testing-pipeline-with-claude-tdd-skill-2026.md",
-      "title": "Automated Testing Pipeline with Claude TDD Skill in 2026",
+      "title": "Automated Testing Pipeline with Claude TDD Skill (2026)",
       "url": "/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/",
       "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "best-claude-code-skills-for-frontend-development.md",
-      "title": "Best Claude Code Skills for Frontend Development (2026)",
+      "title": "Best Claude Code Skills for Frontend Development",
       "url": "/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/",
       "cluster": "use-cases",
       "linked": true
@@ -46,7 +60,7 @@
     },
     {
       "filename": "best-claude-skills-for-code-review-automation.md",
-      "title": "Best Claude Skills for Code Review Automation (2026)",
+      "title": "Best Claude Skills for Code Review Automation",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/",
       "cluster": "workflows",
       "linked": true
@@ -67,7 +81,7 @@
     },
     {
       "filename": "best-claude-skills-for-devops-and-deployment.md",
-      "title": "Best Claude Skills for DevOps and Deployment (2026)",
+      "title": "Best Claude Skills for DevOps and Deployment",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/",
       "cluster": "use-cases",
       "linked": true
@@ -87,6 +101,13 @@
       "linked": true
     },
     {
+      "filename": "build-personal-ai-assistant-with-claude-skills-guide.md",
+      "title": "Build a Personal AI Assistant with Claude Skills",
+      "url": "/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
       "filename": "building-production-ai-agents-with-claude-skills-2026.md",
       "title": "Building Production AI Agents with Claude Skills in 2026",
       "url": "/claude-skills-guide/articles/building-production-ai-agents-with-claude-skills-2026/",
@@ -94,15 +115,22 @@
       "linked": true
     },
     {
+      "filename": "building-stateful-agents-with-claude-skills-guide.md",
+      "title": "Building Stateful Agents with Claude Skills: Complete Guide",
+      "url": "/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/",
+      "cluster": "best-of",
+      "linked": false
+    },
+    {
       "filename": "claude-4-skills-improvements-and-new-features.md",
-      "title": "Claude 4 Skills: Improvements and New Features",
+      "title": "Claude 4 Skills: New Features and Improvements Guide",
       "url": "/claude-skills-guide/articles/claude-4-skills-improvements-and-new-features/",
       "cluster": "best-of",
       "linked": true
     },
     {
       "filename": "claude-agent-sandbox-skill-isolated-environments.md",
-      "title": "Claude Agent Sandbox Skill: Isolated Environments Explained",
+      "title": "Claude Agent Sandbox Skill: Complete Guide (2026)",
       "url": "/claude-skills-guide/articles/claude-agent-sandbox-skill-isolated-environments/",
       "cluster": "advanced",
       "linked": true
@@ -123,7 +151,7 @@
     },
     {
       "filename": "claude-code-extended-thinking-skills-integration-guide.md",
-      "title": "Claude Code Extended Thinking Skills Integration Guide",
+      "title": "Extended Thinking + Claude Skills: Integration Guide",
       "url": "/claude-skills-guide/articles/claude-code-extended-thinking-skills-integration-guide/",
       "cluster": "advanced",
       "linked": true
@@ -136,65 +164,100 @@
       "linked": true
     },
     {
+      "filename": "claude-code-multi-agent-subagent-communication-guide.md",
+      "title": "Claude Code Multi-Agent and Subagent Communication Guide",
+      "url": "/claude-skills-guide/articles/claude-code-multi-agent-subagent-communication-guide/",
+      "cluster": "advanced",
+      "linked": true
+    },
+    {
       "filename": "claude-code-permissions-model-security-guide-2026.md",
-      "title": "Claude Code Permissions Model Security Guide 2026",
+      "title": "Claude Code Permissions Model and Security Guide 2026",
       "url": "/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/",
       "cluster": "best-of",
       "linked": true
     },
     {
+      "filename": "claude-code-skill-output-formatting-broken-fix.md",
+      "title": "Claude Code Skill Output Formatting Broken Fix",
+      "url": "/claude-skills-guide/articles/claude-code-skill-output-formatting-broken-fix/",
+      "cluster": "getting-started",
+      "linked": true
+    },
+    {
       "filename": "claude-code-skill-permission-denied-error-fix-2026.md",
-      "title": "Claude Code Skill Permission Denied Error Fix",
+      "title": "Claude Code Skill Permission Denied Error Fix 2026",
       "url": "/claude-skills-guide/articles/claude-code-skill-permission-denied-error-fix-2026/",
       "cluster": "getting-started",
       "linked": true
     },
     {
+      "filename": "claude-code-skill-permission-scope-error-explained.md",
+      "title": "Claude Code Skill Permission Scope Error Explained",
+      "url": "/claude-skills-guide/articles/claude-code-skill-permission-scope-error-explained/",
+      "cluster": "getting-started",
+      "linked": false
+    },
+    {
       "filename": "claude-code-skill-tool-not-found-error-solution.md",
-      "title": "Claude Code Skill Tool Not Found Error: Solutions",
+      "title": "Fix Claude Code Skill Tool Not Found Error (2026)",
       "url": "/claude-skills-guide/articles/claude-code-skill-tool-not-found-error-solution/",
       "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-skills-context-window-exceeded-error-fix.md",
-      "title": "Claude Code Skills: Context Window Exceeded Error Fix",
+      "title": "Claude Code Skills Context Window Exceeded Error Fix",
       "url": "/claude-skills-guide/articles/claude-code-skills-context-window-exceeded-error-fix/",
       "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-skills-for-infrastructure-as-code-terraform.md",
-      "title": "Claude Code Skills for Terraform Infrastructure as Code",
+      "title": "Claude Code Skills for Terraform IaC: Complete Guide",
       "url": "/claude-skills-guide/articles/claude-code-skills-for-infrastructure-as-code-terraform/",
       "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-skills-vs-bolt-new-for-web-development.md",
-      "title": "Claude Code Skills vs Bolt.new for Web Development",
+      "title": "Claude Code Skills vs Bolt.new: 2026 Comparison Guide",
       "url": "/claude-skills-guide/articles/claude-code-skills-vs-bolt-new-for-web-development/",
       "cluster": "comparisons",
       "linked": true
     },
     {
       "filename": "claude-code-skills-zapier-integration-step-by-step.md",
-      "title": "Claude Code Skills Zapier Integration Step by Step",
+      "title": "Claude Code Skills + Zapier: Step-by-Step",
       "url": "/claude-skills-guide/articles/claude-code-skills-zapier-integration-step-by-step/",
       "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-vs-amazon-q-developer-comparison-2026.md",
-      "title": "Claude Code vs Amazon Q Developer: 2026 Comparison",
+      "title": "Claude Code vs Amazon Q Developer Comparison 2026",
       "url": "/claude-skills-guide/articles/claude-code-vs-amazon-q-developer-comparison-2026/",
+      "cluster": "comparisons",
+      "linked": false
+    },
+    {
+      "filename": "claude-code-vs-gemini-cli-for-developers-2026.md",
+      "title": "Claude Code vs Gemini CLI for Developers 2026",
+      "url": "/claude-skills-guide/articles/claude-code-vs-gemini-cli-for-developers-2026/",
       "cluster": "comparisons",
       "linked": true
     },
     {
       "filename": "claude-code-vs-github-copilot-workspace-2026.md",
-      "title": "Claude Code vs GitHub Copilot Workspace: 2026 Comparison",
+      "title": "Claude Code vs GitHub Copilot Workspace 2026",
       "url": "/claude-skills-guide/articles/claude-code-vs-github-copilot-workspace-2026/",
+      "cluster": "comparisons",
+      "linked": false
+    },
+    {
+      "filename": "claude-code-vs-openai-codex-cli-comparison-2026.md",
+      "title": "Claude Code vs OpenAI Codex CLI: 2026 Comparison",
+      "url": "/claude-skills-guide/articles/claude-code-vs-openai-codex-cli-comparison-2026/",
       "cluster": "comparisons",
       "linked": true
     },
@@ -213,11 +276,25 @@
       "linked": true
     },
     {
+      "filename": "claude-code-with-docker-container-skill-setup-guide.md",
+      "title": "Claude Code with Docker Container Skill Setup Guide",
+      "url": "/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/",
+      "cluster": "use-cases",
+      "linked": true
+    },
+    {
+      "filename": "claude-code-worktrees-and-skills-isolation-explained.md",
+      "title": "Claude Code Worktrees and Skills Isolation Explained",
+      "url": "/claude-skills-guide/articles/claude-code-worktrees-and-skills-isolation-explained/",
+      "cluster": "best-of",
+      "linked": false
+    },
+    {
       "filename": "claude-cowork-vs-cursor-ai-editor-comparison-2026.md",
       "title": "Claude Code vs Cursor AI Editor Comparison 2026",
       "url": "/claude-skills-guide/articles/claude-cowork-vs-cursor-ai-editor-comparison-2026/",
       "cluster": "comparisons",
-      "linked": true
+      "linked": false
     },
     {
       "filename": "claude-frontend-design-skill-review-and-tutorial.md",
@@ -235,9 +312,16 @@
     },
     {
       "filename": "claude-opus-46-vs-gpt-4o-for-coding-tasks-comparison.md",
-      "title": "Claude Opus 4.6 vs GPT-4o for Coding Tasks",
+      "title": "Claude Opus 4.6 vs GPT-4o for Coding Tasks: 2026 Comparison",
       "url": "/claude-skills-guide/articles/claude-opus-46-vs-gpt-4o-for-coding-tasks-comparison/",
       "cluster": "comparisons",
+      "linked": true
+    },
+    {
+      "filename": "claude-skill-md-format-complete-specification-guide.md",
+      "title": "Claude Skill .md File Format: Full Specification",
+      "url": "/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/",
+      "cluster": "best-of",
       "linked": true
     },
     {
@@ -245,11 +329,11 @@
       "title": "Claude Skill Not Saving State Between Sessions Fix",
       "url": "/claude-skills-guide/articles/claude-skill-not-saving-state-between-sessions-fix/",
       "cluster": "getting-started",
-      "linked": true
+      "linked": false
     },
     {
       "filename": "claude-skill-not-triggering-automatically-troubleshoot.md",
-      "title": "Claude Skill Not Triggering? Troubleshooting Guide",
+      "title": "Claude Skill Not Triggering: Troubleshoot Guide (2026)",
       "url": "/claude-skills-guide/articles/claude-skill-not-triggering-automatically-troubleshoot/",
       "cluster": "getting-started",
       "linked": true
@@ -270,35 +354,35 @@
     },
     {
       "filename": "claude-skills-automated-blog-post-workflow-tutorial.md",
-      "title": "Claude Skills Automated Blog Post Workflow Tutorial",
+      "title": "Automated Blog Workflow with Claude Skills",
       "url": "/claude-skills-guide/articles/claude-skills-automated-blog-post-workflow-tutorial/",
       "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-skills-automated-dependency-update-workflow.md",
-      "title": "Automated Dependency Updates with Claude Skills",
+      "title": "Claude Skills Automated Dependency Update Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-automated-dependency-update-workflow/",
       "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-skills-automated-social-media-content-workflow.md",
-      "title": "Automate Social Media Content with Claude Skills",
+      "title": "Claude Skills Automated Social Media Content Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-automated-social-media-content-workflow/",
       "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-skills-aws-lambda-serverless-integration.md",
-      "title": "Claude Skills AWS Lambda Serverless Integration Guide",
+      "title": "Claude Skills + AWS Lambda: Serverless Guide",
       "url": "/claude-skills-guide/articles/claude-skills-aws-lambda-serverless-integration/",
       "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-skills-competitive-analysis-automation-workflow.md",
-      "title": "Competitive Analysis Automation with Claude Skills",
+      "title": "Claude Skills: Competitive Analysis Automation Guide",
       "url": "/claude-skills-guide/articles/claude-skills-competitive-analysis-automation-workflow/",
       "cluster": "workflows",
       "linked": true
@@ -312,7 +396,7 @@
     },
     {
       "filename": "claude-skills-daily-standup-automation-workflow.md",
-      "title": "Daily Standup Automation with Claude Skills",
+      "title": "Claude Skills Daily Standup Automation Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-daily-standup-automation-workflow/",
       "cluster": "workflows",
       "linked": true
@@ -325,8 +409,15 @@
       "linked": true
     },
     {
+      "filename": "claude-skills-email-drafting-automation-workflow.md",
+      "title": "Claude Skills Email Drafting Automation Workflow",
+      "url": "/claude-skills-guide/articles/claude-skills-email-drafting-automation-workflow/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
       "filename": "claude-skills-explained-simply-for-non-programmers.md",
-      "title": "Claude Skills Explained Simply for Non-Programmers",
+      "title": "Claude Skills Explained for Non-Programmers",
       "url": "/claude-skills-guide/articles/claude-skills-explained-simply-for-non-programmers/",
       "cluster": "getting-started",
       "linked": true
@@ -347,7 +438,7 @@
     },
     {
       "filename": "claude-skills-for-seo-content-generation-workflow.md",
-      "title": "Claude Skills for SEO Content Generation Workflow",
+      "title": "Claude Skills for SEO Content Generation: 2026 Guide",
       "url": "/claude-skills-guide/articles/claude-skills-for-seo-content-generation-workflow/",
       "cluster": "workflows",
       "linked": true
@@ -374,6 +465,13 @@
       "linked": true
     },
     {
+      "filename": "claude-skills-slow-performance-speed-up-guide.md",
+      "title": "Claude Skills Slow Performance: Speed Up Guide",
+      "url": "/claude-skills-guide/articles/claude-skills-slow-performance-speed-up-guide/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
       "filename": "claude-skills-token-optimization-reduce-api-costs.md",
       "title": "Claude Skills Token Optimization: Reduce API Costs",
       "url": "/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/",
@@ -386,6 +484,13 @@
       "url": "/claude-skills-guide/articles/claude-skills-vs-custom-gpts-comparison-2026/",
       "cluster": "comparisons",
       "linked": true
+    },
+    {
+      "filename": "claude-skills-vs-langflow-for-building-ai-agents.md",
+      "title": "Claude Skills vs Langflow for Building AI Agents",
+      "url": "/claude-skills-guide/articles/claude-skills-vs-langflow-for-building-ai-agents/",
+      "cluster": "comparisons",
+      "linked": false
     },
     {
       "filename": "claude-skills-vs-openai-assistants-api-comparison.md",
@@ -416,11 +521,25 @@
       "linked": true
     },
     {
+      "filename": "claude-skills-with-slack-bot-integration-tutorial.md",
+      "title": "Claude Skills with Slack Bot Integration Tutorial",
+      "url": "/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
       "filename": "claude-skills-with-supabase-database-integration.md",
-      "title": "Claude Skills with Supabase Database Integration",
+      "title": "Claude Skills with Supabase: Practical Workflows",
       "url": "/claude-skills-guide/articles/claude-skills-with-supabase-database-integration/",
       "cluster": "use-cases",
       "linked": true
+    },
+    {
+      "filename": "claude-skills-with-vercel-deployment-automation.md",
+      "title": "Claude Skills with Vercel Deployment Automation",
+      "url": "/claude-skills-guide/articles/claude-skills-with-vercel-deployment-automation/",
+      "cluster": "use-cases",
+      "linked": false
     },
     {
       "filename": "claude-supermemory-skill-persistent-context-explained.md",
@@ -438,7 +557,7 @@
     },
     {
       "filename": "claude-xlsx-skill-spreadsheet-automation-tutorial.md",
-      "title": "Claude xlsx Skill Spreadsheet Automation Tutorial",
+      "title": "Claude /xlsx Skill: Spreadsheet Automation Guide",
       "url": "/claude-skills-guide/articles/claude-xlsx-skill-spreadsheet-automation-tutorial/",
       "cluster": "use-cases",
       "linked": true
@@ -452,14 +571,14 @@
     },
     {
       "filename": "how-claude-skills-auto-invocation-actually-works-deep-dive.md",
-      "title": "How Claude Skills Auto Invocation Actually Works \u2014 Deep Dive",
+      "title": "How Claude Skills Auto Invocation Works",
       "url": "/claude-skills-guide/articles/how-claude-skills-auto-invocation-actually-works-deep-dive/",
       "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-automate-client-reports-with-claude-skills.md",
-      "title": "How to Automate Client Reports with Claude Skills",
+      "title": "Automate Client Reports with Claude Skills",
       "url": "/claude-skills-guide/articles/how-to-automate-client-reports-with-claude-skills/",
       "cluster": "workflows",
       "linked": true
@@ -480,10 +599,17 @@
     },
     {
       "filename": "how-to-build-saas-mvp-with-claude-code-skills-guide.md",
-      "title": "How to Build a SaaS MVP with Claude Code Skills Guide",
+      "title": "Build a SaaS MVP with Claude Code Skills",
       "url": "/claude-skills-guide/articles/how-to-build-saas-mvp-with-claude-code-skills-guide/",
       "cluster": "use-cases",
       "linked": true
+    },
+    {
+      "filename": "how-to-connect-claude-skills-to-external-apis-guide.md",
+      "title": "How to Connect Claude Skills to External APIs Guide",
+      "url": "/claude-skills-guide/articles/how-to-connect-claude-skills-to-external-apis-guide/",
+      "cluster": "best-of",
+      "linked": false
     },
     {
       "filename": "how-to-contribute-claude-skills-to-open-source.md",
@@ -493,10 +619,24 @@
       "linked": true
     },
     {
+      "filename": "how-to-fix-claude-skill-infinite-loop-issue.md",
+      "title": "How to Fix Claude Skill Infinite Loop Issues",
+      "url": "/claude-skills-guide/articles/how-to-fix-claude-skill-infinite-loop-issue/",
+      "cluster": "getting-started",
+      "linked": true
+    },
+    {
       "filename": "how-to-integrate-claude-skills-with-notion-api-guide.md",
-      "title": "How to Integrate Claude Skills with Notion API Guide",
+      "title": "Integrate Claude Skills with Notion API",
       "url": "/claude-skills-guide/articles/how-to-integrate-claude-skills-with-notion-api-guide/",
       "cluster": "use-cases",
+      "linked": true
+    },
+    {
+      "filename": "how-to-optimize-claude-skill-prompts-for-accuracy.md",
+      "title": "How to Optimize Claude Skill Prompts for Accuracy",
+      "url": "/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/",
+      "cluster": "best-of",
       "linked": true
     },
     {
@@ -521,8 +661,15 @@
       "linked": true
     },
     {
+      "filename": "mcp-memory-server-persistent-storage-for-claude-agents.md",
+      "title": "MCP Memory Server: Persistent Storage for Claude Agents",
+      "url": "/claude-skills-guide/articles/mcp-memory-server-persistent-storage-for-claude-agents/",
+      "cluster": "advanced",
+      "linked": true
+    },
+    {
       "filename": "mcp-servers-vs-claude-skills-what-is-the-difference.md",
-      "title": "MCP Servers vs Claude Skills: What's the Difference?",
+      "title": "MCP Servers vs Claude Skills: What Is the Difference?",
       "url": "/claude-skills-guide/articles/mcp-servers-vs-claude-skills-what-is-the-difference/",
       "cluster": "comparisons",
       "linked": true
@@ -542,6 +689,13 @@
       "linked": true
     },
     {
+      "filename": "understanding-claude-code-hooks-system-complete-guide.md",
+      "title": "Understanding Claude Code Hooks System: Complete Guide",
+      "url": "/claude-skills-guide/articles/understanding-claude-code-hooks-system-complete-guide/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
       "filename": "what-is-claude-code-and-why-developers-love-it-2026.md",
       "title": "What Is Claude Code and Why Developers Love It in 2026",
       "url": "/claude-skills-guide/articles/what-is-claude-code-and-why-developers-love-it-2026/",
@@ -553,7 +707,7 @@
       "title": "Why Is My Claude Skill Not Showing Up? Fix Guide",
       "url": "/claude-skills-guide/articles/why-is-my-claude-skill-not-showing-up-fix-guide/",
       "cluster": "getting-started",
-      "linked": true
+      "linked": false
     }
   ]
 }
