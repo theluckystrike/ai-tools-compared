@@ -1,11 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills for Solidity Smart Contract Development"
-description: "A practical guide to using Claude skills for writing, testing, and deploying Solidity smart contracts. Learn which Claude skills accelerate Ethereum development."
+description: "A practical guide to using Claude skills for writing, testing, and deploying Solidity smart contracts. Learn which Claude skills accelerate Ethereum develo"
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, solidity, ethereum, smart-contracts, blockchain]
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Claude Skills for Solidity Smart Contract Development

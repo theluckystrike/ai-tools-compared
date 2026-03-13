@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, gitpod, cloud-ide, integration, ai-coding]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Claude Code GitPod Cloud IDE Integration Tutorial 2026

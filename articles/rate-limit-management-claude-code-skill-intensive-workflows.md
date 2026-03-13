@@ -1,160 +1,190 @@
 ---
 layout: post
-title: "Rate Limit Management for Claude Code Skill Intensive Wor..."
-description: "Practical strategies for managing rate limits when running multiple Claude Code skills. Learn how to optimize heavy workflows using pdf, tdd, frontend-d..."
+title: "Rate Limit Management for Skill-Intensive Claude Code Workflows"
+description: "Practical strategies for managing API rate limits when running multiple Claude Code skills. Tips for pacing /pdf, /tdd, /frontend-design workflows."
 date: 2026-03-14
+categories: [workflows]
+tags: [claude-code, claude-skills, rate-limits, optimization, automation]
 author: "Claude Skills Guide"
 reviewed: true
-score: 8
+score: 3
 ---
 
-# Rate Limit Management for Claude Code Skill Intensive Workflows
+# Rate Limit Management for Skill-Intensive Claude Code Workflows
 
-When you're running skill-intensive workflows with Claude Code, hitting rate limits becomes a real concern. Whether you're batch-processing documents with the **pdf** skill, generating test suites with **tdd**, or building multiple frontend components with **frontend-design**, each skill invocation consumes API resources. Understanding how to manage these limits effectively keeps your automation pipelines running smoothly.
+When running skill-intensive workflows with Claude Code, hitting rate limits is a real concern. Batch-processing documents with `/pdf`, generating test suites with `/tdd`, or building multiple frontend components with `/frontend-design` all consume API resources. This guide covers practical strategies for staying within rate limits.
 
-## Understanding Claude Code Rate Limits
+## Understanding Rate Limits in Claude Code
 
-Claude Code operates within Anthropic's API rate limiting framework. The exact limits depend on your tier, but the core principle remains: each message, function call, and skill invocation counts toward your quota. When running intensive workflows that chain multiple skills together, you need strategies to stay within those boundaries.
+Claude Code operates within Anthropic's API rate limiting framework. The exact limits depend on your plan tier. Key metrics:
 
-The key metrics to monitor are tokens per minute (TPM) and requests per minute (RPM). Heavy skill usage—particularly with skills that process large files or generate substantial output—can exhaust these quickly. For example, invoking **pdf** on a 500-page document or running **tdd** across an entire codebase will consume significantly more capacity than simple skill calls.
+- **Tokens per minute (TPM)**: Total tokens generated across all requests in a minute
+- **Requests per minute (RPM)**: Number of API calls made per minute
 
-## Practical Rate Limit Strategies
+Skill invocations that process large files or generate substantial output consume more tokens. Running `/pdf` on a 500-page document or `/tdd` across an entire codebase will hit limits faster than simple skill calls.
 
-### 1. Batch Processing with Delays
+## Strategy 1: Space Out Skill Invocations
 
-Instead of running all skill calls sequentially without pause, implement deliberate delays between invocations. This spreads your API usage across time, preventing burst-limit violations.
+The simplest approach is adding deliberate pauses between skill invocations. Claude Code is an interactive tool — you control when you invoke each skill. For automated workflows using Claude Code in non-interactive mode (via the CLI with `-p`), add sleeps in your orchestration scripts:
 
-```python
-import time
+```bash
+#!/bin/bash
+# Process multiple files with /pdf skill, spacing out calls
 
-def batch_skill_workflow(tasks, delay_seconds=2):
-    results = []
-    for task in tasks:
-        result = call_claude_skill(task)
-        results.append(result)
-        time.sleep(delay_seconds)  # Rate limit breathing room
-    return results
+FILES=(report1.pdf report2.pdf report3.pdf)
+
+for file in "${FILES[@]}"; do
+  echo "Processing $file..."
+  claude -p "/pdf Summarize this document" --context "$file"
+  sleep 3  # Wait 3 seconds between invocations
+done
 ```
 
-The optimal delay depends on your tier. For standard tiers, 2-3 seconds between heavy skill calls works well. For higher tiers, you can reduce this to 1 second or use concurrent processing more aggressively.
+For standard tiers, 2-3 seconds between heavy skill calls works well. For higher tiers, reduce to 1 second.
 
-### 2. Skill Selection Optimization
+## Strategy 2: Choose Lighter Skills for Context Gathering
 
-Not all skills consume resources equally. Understanding which skills are lightweight helps you design efficient workflows:
+Not all skills consume the same resources. Structure workflows to start with context-gathering before heavy generation:
 
-- **supermemory**: Lightweight query operations for knowledge retrieval
-- **xlsx**: Moderate resource usage for spreadsheet operations
-- **pdf**: Heavier due to document parsing and text extraction
-- **tdd**: Resource-intensive when generating comprehensive test suites
-- **frontend-design**: Can be heavy depending on component complexity
+**Lower consumption:**
+- `/supermemory` — keyword queries against stored memory are fast and lightweight
 
-Design your automation to use lightweight skills like **supermemory** for context gathering before invoking heavier skills. This reduces redundant processing and keeps overall consumption lower.
+**Higher consumption:**
+- `/pdf` — document parsing with large files
+- `/tdd` — generating test suites across large codebases
+- `/frontend-design` — complex component generation
 
-### 3. Token Budgeting Per Session
+Use `/supermemory` to retrieve relevant project context before invoking `/tdd` or `/pdf`. This avoids re-summarizing context that is already stored.
 
-Set explicit token budgets for each workflow phase. Claude Code allows you to estimate token usage, and planning around this prevents mid-process rate limiting:
+## Strategy 3: Break Large Tasks Into Smaller Chunks
 
-```yaml
-# Workflow token allocation example
-workflow:
-  phases:
-    - name: analysis
-      max_tokens: 4000
-      skills: [supermemory, document-analysis]
-    - name: generation
-      max_tokens: 8000
-      skills: [tdd, frontend-design]
-    - name: validation
-      max_tokens: 2000
-      skills: [code-review]
+Instead of one massive skill invocation that processes everything at once, split work into smaller chunks:
+
+**Instead of:**
+```
+/pdf Analyze all 50 contracts in this folder and extract all clauses
 ```
 
-### 4. Parallel Skill Execution with Rate Limiting
-
-When you need to run multiple independent skills simultaneously, use a semaphore-based approach:
-
-```python
-import asyncio
-from asyncio import Semaphore
-
-semaphore = Semaphore(3)  # Limit concurrent skills
-
-async def run_skill_with_limit(skill_name, task):
-    async with semaphore:
-        result = await invoke_claude_skill(skill_name, task)
-        await asyncio.sleep(1)  # Cooldown between invocations
-        return result
+**Do:**
+```
+/pdf Analyze contract-01.pdf and extract payment terms
+[wait]
+/pdf Analyze contract-02.pdf and extract payment terms
+[wait]
+...
 ```
 
-This pattern works well when processing multiple files with **pdf**, generating tests for different modules with **tdd**, or building separate components with **frontend-design**.
+This approach keeps individual invocations within token limits and prevents timeouts.
 
-### 5. Caching and Reuse
+## Strategy 4: Cache Results Between Sessions
 
-Many skill workflows repeat similar operations. Implement caching to avoid redundant API calls:
+Use `/supermemory` to store results from heavy skill operations so you don't repeat them:
 
-- Cache **supermemory** query results for repeated context lookups
-- Store **xlsx** template outputs that don't change between runs
-- Reuse **frontend-design** component patterns across projects
-
-```python
-cache = {}
-
-def cached_skill_call(skill, task, cache_key):
-    if cache_key in cache:
-        return cache[cache_key]
-    result = invoke_claude_skill(skill, task)
-    cache[cache_key] = result
-    return result
 ```
+/pdf Analyze project-spec.pdf and extract all requirements
+
+/supermemory store "project requirements: [paste the output above]"
+```
+
+In future sessions, retrieve with:
+```
+/supermemory recall project requirements
+```
+
+This avoids re-running expensive `/pdf` operations when the underlying document hasn't changed.
 
 ## Real-World Workflow Example
 
-Consider a comprehensive code review automation that uses multiple skills:
+A code review automation using multiple skills:
 
-1. **supermemory** queries relevant documentation (lightweight)
-2. **pdf** extracts requirements from specification documents (heavy)
-3. **tdd** generates test coverage for new features (heavy)
-4. **frontend-design** creates component specifications (moderate)
-5. **xlsx** outputs review metrics to spreadsheets (moderate)
+1. `/supermemory` recalls project coding standards (lightweight)
+2. `/pdf` extracts requirements from spec documents (heavy — add delay after)
+3. `/tdd` generates tests for new features (heavy — add delay after)
+4. `/frontend-design` creates component specs (moderate)
+5. `/xlsx` outputs review metrics (moderate)
 
-A naive implementation would invoke these sequentially, risking rate limits. Instead, structure the workflow with appropriate delays and parallelization where possible:
+Shell script orchestration:
+```bash
+#!/bin/bash
+# Code review workflow with rate limit management
 
-```python
-async def code_review_workflow(spec_files, source_files):
-    # Phase 1: Context gathering (can run in parallel)
-    docs = await asyncio.gather(
-        run_skill_with_limit("supermemory", "project standards"),
-        run_skill_with_limit("pdf", f"extract from {spec_files[0]}")
-    )
-    await asyncio.sleep(3)
-    
-    # Phase 2: Generation (run with longer delays)
-    tests = await run_skill_with_limit("tdd", f"generate tests for {source_files}")
-    await asyncio.sleep(4)
-    
-    components = await run_skill_with_limit("frontend-design", "review components")
-    await asyncio.sleep(2)
-    
-    # Phase 3: Output
-    metrics = await run_skill_with_limit("xlsx", "export review metrics")
-    return {"docs": docs, "tests": tests, "components": components, "metrics": metrics}
+# Step 1: Lightweight context
+claude -p "/supermemory recall project coding standards"
+sleep 1
+
+# Step 2: Heavy document processing
+claude -p "/pdf Extract requirements from spec.pdf"
+sleep 4  # Longer pause after heavy operation
+
+# Step 3: Test generation
+claude -p "/tdd Generate tests for the requirements above"
+sleep 4
+
+# Step 4: Component specs (moderate)
+claude -p "/frontend-design Generate component specs for the UI requirements"
+sleep 2
+
+# Step 5: Output
+claude -p "/xlsx Export review metrics to review-report.xlsx"
 ```
 
-## Monitoring and Alerts
+## Handling Rate Limit Errors
 
-Implement monitoring to catch rate limit issues before they break your workflows:
+When you hit a rate limit, Claude Code returns an error. Implement exponential backoff in orchestration scripts:
 
-- Track API usage percentage after each skill call
-- Set alerts at 80% capacity thresholds
-- Maintain fallback queues for when limits are approached
-- Log skill invocation patterns to identify optimization opportunities
+```bash
+#!/bin/bash
 
-Most CI/CD systems that run Claude Code workflows benefit from exponential backoff retry logic when rate limits occur. Implement this as a safety net for any automated pipeline.
+invoke_with_retry() {
+  local cmd="$1"
+  local max_attempts=5
+  local wait=10
 
-## Key Takeaways
+  for attempt in $(seq 1 $max_attempts); do
+    if eval "$cmd"; then
+      return 0
+    fi
+    echo "Attempt $attempt failed. Waiting ${wait}s before retry..."
+    sleep "$wait"
+    wait=$((wait * 2))  # Exponential backoff
+  done
+  echo "All attempts failed."
+  return 1
+}
 
-Managing rate limits for skill-intensive Claude Code workflows comes down to three principles: spreading your API consumption over time, choosing the right skills for each phase, and implementing caching where possible. The **pdf**, **tdd**, and **frontend-design** skills are the heaviest consumers, so allocate more breathing room around those invocations. Lightweight skills like **supermemory** can run more frequently without impact.
+invoke_with_retry "claude -p '/pdf Analyze large-document.pdf'"
+```
 
-Build these strategies into your automation from the start rather than retrofitting them after hitting limits. Your pipelines will be more reliable, predictable, and capable of handling larger workloads without interruption.
+## Monitoring Usage
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Track rate limit proximity by watching for warning messages in Claude Code's output. Most plans display usage percentage when you're approaching limits.
+
+Set up logging for automated workflows:
+
+```bash
+#!/bin/bash
+
+log_skill_call() {
+  local skill="$1"
+  local timestamp
+  timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  echo "$timestamp SKILL_CALL: $skill" >> ~/.claude/skill-usage.log
+}
+
+log_skill_call "/pdf"
+claude -p "/pdf Analyze document.pdf"
+```
+
+Review the log periodically to identify which skills consume the most calls and optimize accordingly.
+
+## Summary
+
+Managing rate limits in skill-intensive workflows:
+
+1. Add deliberate pauses (2-4 seconds) between heavy skill calls like `/pdf` and `/tdd`
+2. Start workflows with lightweight `/supermemory` calls before heavier operations
+3. Break large tasks into chunks rather than one massive invocation
+4. Cache results with `/supermemory` to avoid re-running expensive operations
+5. Implement exponential backoff retry logic in shell scripts that orchestrate Claude Code
+
+These strategies keep automated pipelines running reliably without interruption.
