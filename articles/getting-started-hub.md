@@ -156,6 +156,7 @@ Once you've got the basics down, here's where to go next:
 | [How to Fix Claude Skill Infinite Loop Issue](/claude-skills-guide/articles/how-to-fix-claude-skill-infinite-loop-issue/) | Identifying and resolving infinite loop bugs in Claude skills |
 | [How to Optimize Claude Skill Prompts for Accuracy](/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/) | Techniques to improve skill prompt precision and output quality |
 | [Claude Code Skill Output Formatting Broken Fix](/claude-skills-guide/articles/claude-code-skill-output-formatting-broken-fix/) | Diagnosing and fixing broken output formatting in Claude skills |
+| [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/articles/claude-code-skill-permission-scope-error-explained/) | Understanding and resolving permission scope errors in Claude Code |
 
 ---
 

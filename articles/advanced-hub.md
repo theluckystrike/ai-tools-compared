@@ -95,6 +95,8 @@ Advanced optimization isn't just about prompts. It's about workflow design:
 | [Advanced Claude Skills with Tool Use and Function Calling](/claude-skills-guide/articles/advanced-claude-skills-with-tool-use-and-function-calling/) | Using tool use and function calling in advanced Claude skill workflows |
 | [Claude Code Multi-Agent and Subagent Communication Guide](/claude-skills-guide/articles/claude-code-multi-agent-subagent-communication-guide/) | Patterns for multi-agent coordination and subagent communication |
 | [Claude Skills vs Langflow for Building AI Agents](/claude-skills-guide/articles/claude-skills-vs-langflow-for-building-ai-agents/) | When to use Claude skills vs Langflow for building production AI agents |
+| [Building Stateful Agents with Claude Skills: Complete Guide](/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/) | Architecture for building agents with persistent state using Claude skills |
+| [Claude Code Worktrees and Skills Isolation Explained](/claude-skills-guide/articles/claude-code-worktrees-and-skills-isolation-explained/) | Using git worktrees to isolate skill environments in Claude Code |
 
 ---
 

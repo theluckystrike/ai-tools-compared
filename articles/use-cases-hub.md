@@ -146,6 +146,7 @@ Token efficiency matters when running multi-skill sessions. See [Claude Skills T
 | [Claude Skills with Slack Bot Integration Tutorial](/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/) | Integrating Claude skills with Slack for team automation |
 | [Claude Code with Docker Container Skill Setup Guide](/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/) | Setting up Claude Code to work with Docker containers using skills |
 | [How to Connect Claude Skills to External APIs Guide](/claude-skills-guide/articles/how-to-connect-claude-skills-to-external-apis-guide/) | Connecting Claude skills to third-party APIs for extended capabilities |
+| [Claude Skills with Vercel Deployment Automation](/claude-skills-guide/articles/claude-skills-with-vercel-deployment-automation/) | Automating Vercel deployments with Claude skills |
 
 ---
 
