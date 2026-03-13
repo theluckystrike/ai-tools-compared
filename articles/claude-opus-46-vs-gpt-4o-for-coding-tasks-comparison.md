@@ -7,6 +7,7 @@ author: "Claude Skills Guide"
 categories: [guides]
 reviewed: true
 score: 8
+tags: [claude-code, claude-skills, gpt-4o, comparison, models]
 ---
 
 # Claude Opus 4.6 vs GPT-4o for Coding Tasks: 2026 Comparison

@@ -7,6 +7,7 @@ author: "Claude Skills Guide"
 categories: [guides]
 reviewed: true
 score: 8
+tags: [claude-code, claude-skills, troubleshooting, invocation]
 ---
 
 # Claude Skill Not Triggering Automatically: Troubleshoot Guide

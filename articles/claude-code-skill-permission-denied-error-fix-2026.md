@@ -3,8 +3,9 @@ layout: post
 title: "Claude Code Skill Permission Denied Error Fix 2026"
 description: "Fix the permission denied error in Claude Code skills. Step-by-step solutions for file permissions, sandbox settings, and skill configuration."
 date: 2026-03-13
+categories: [troubleshooting]
+tags: [claude-code, claude-skills, troubleshooting, permissions]
 author: "Claude Skills Guide"
-categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -141,22 +142,21 @@ If you are on a managed device, copy the file to your home directory first.
 
 ## Cause 8: supermemory Skill Writing to a Read-Only Volume
 
-The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) writes session state to disk. If Claude Code's working directory is on a read-only volume — a network share, mounted image, or CI filesystem — `supermemory` will throw permission denied when trying to persist memory.
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) writes session state to disk. If Claude Code's working directory is on a read-only volume — a network share, mounted image, or CI filesystem — the skill will throw permission denied when trying to persist memory.
 
-**Fix — set a writable memory path:**
-```json
-{
-  "skills": {
-    "supermemory": {
-      "storagePath": "/home/user/.claude-memory"
-    }
-  }
-}
+**Fix — instruct the skill explicitly with a writable path:**
+
+Tell the supermemory skill to write to a specific writable location:
+
+```
+/supermemory
+Save this context to ~/notes/project-context.md instead of the default location.
 ```
 
 Or set the environment variable before launching Claude Code:
 ```bash
 export CLAUDE_MEMORY_PATH="$HOME/.claude-memory"
+mkdir -p ~/.claude-memory
 claude
 ```
 
@@ -166,10 +166,9 @@ When permission denied hits and you are not sure which cause applies, work throu
 
 1. Run `ls -la` on every file the skill references
 2. Check `.claude/settings.json` for missing `allow` entries
-3. Run `claude --debug` and look for `sandbox reject` in the output
-4. Try the tool call manually in the Claude Code chat without invoking the skill
-5. Check `Console.app` (macOS) or `journalctl` (Linux) for OS-level denials
-6. Confirm Claude Code and Node.js are running as the same user
+3. Try the tool call manually in the Claude Code chat without invoking the skill
+4. Check `Console.app` (macOS) or `journalctl` (Linux) for OS-level denials
+5. Confirm Claude Code and Node.js are running as the same user
 
 ## Quick Diagnostic Script
 

@@ -7,6 +7,7 @@ author: "Claude Skills Guide"
 categories: [guides]
 reviewed: true
 score: 8
+tags: [claude-code, claude-skills, automation, competitive-analysis, workflow]
 ---
 
 # Competitive Analysis Automation with Claude Skills
@@ -118,7 +119,6 @@ Run this weekly or monthly depending on how quickly your market changes. The sup
 
 Automation handles data collection and formatting, but human judgment is essential for strategic interpretation. Use automated outputs as a starting point, then apply domain expertise to identify implications the system cannot assess—market positioning, brand perception, and emerging competitive threats require contextual understanding beyond data extraction.
 
-## 
 
 ---
 

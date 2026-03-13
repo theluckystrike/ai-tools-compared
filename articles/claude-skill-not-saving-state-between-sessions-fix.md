@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Claude Skill Not Saving State Between Sessions Fix"
-description: "Fix Claude Code skills losing state between sessions: supermemory setup, CLAUDE.md project context, file-based state persistence, pitfalls."
+description: "Fix Claude Code skills losing state between sessions. Covers supermemory setup, CLAUDE.md project context, file-based state persistence, and common pitfalls."
 date: 2026-03-13
+categories: [troubleshooting]
+tags: [claude-code, claude-skills, troubleshooting, supermemory, state]
 author: "Claude Skills Guide"
-categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -27,7 +28,7 @@ This is by design. Skills are instruction templates, not running services. They 
 
 ## Fix 1: Use `supermemory` for Cross-Session Notes
 
-The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) is the primary tool for cross-session persistence. It reads from and writes to a local file store on your machine.
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) is the primary tool for cross-session persistence. It reads from and writes to files on your local machine.
 
 **Saving state at end of session:**
 ```
@@ -45,24 +46,21 @@ Load all notes tagged [project:myapp]. Summarize current state.
 
 **Important: `supermemory` only works if you invoke it explicitly.** It does not auto-save. Build the habit of ending every significant session with a save command.
 
-### Configure the storage path
+### Ensure the storage path is writable
 
-By default `supermemory` writes to a path relative to your home directory. If that path ends up on a read-only or synced volume, saves will silently fail. Configure an explicit path in `.claude/settings.json`:
+By default `supermemory` writes to a path relative to your home directory. If that path ends up on a read-only or synced volume, saves will fail. Run this to verify:
 
-```json
-{
-  "skills": {
-    "supermemory": {
-      "storagePath": "/Users/yourname/.claude-memory"
-    }
-  }
-}
-```
-
-Verify the path exists and is writable:
 ```bash
+# Verify a writable location exists
 mkdir -p ~/.claude-memory
 touch ~/.claude-memory/.test && rm ~/.claude-memory/.test && echo "Writable"
+```
+
+If the test fails, direct supermemory to a specific path:
+
+```
+/supermemory
+Save this note to ~/notes/myapp-context.md
 ```
 
 ## Fix 2: Use `CLAUDE.md` for Project-Level Context
@@ -179,7 +177,7 @@ This is a reminder, not an automated save — Claude still needs to be given a s
 
 **Closing the session before saving.** If you close the terminal window or the session times out, any unsaved in-session context is gone permanently. Save early, save often.
 
-**`supermemory` writes failing silently.** Check the storage path is writable. On macOS, some directories need explicit permission grants in System Settings > Privacy & Security.
+**`supermemory` writes failing silently.** Verify the storage path is writable. On macOS, some directories need explicit permission grants in System Settings > Privacy & Security.
 
 **Outdated `CLAUDE.md` causing confusion.** If `CLAUDE.md` says "PR #142 is in review" but it merged months ago, Claude gets incorrect context. Keep the file current.
 
@@ -193,11 +191,5 @@ This is a reminder, not an automated save — Claude still needs to be given a s
 | All of the above | Combine all three |
 
 ---
-
-## Related Reading
-
-- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Persistent state in `supermemory` and `CLAUDE.md` reduces repeated context re-loading, directly lowering token costs across sessions
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Covers the supermemory skill in depth, including how it integrates with CLAUDE.md and project-scoped state management
-- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Understanding how skills load context at invocation time clarifies why manual state persistence is necessary between sessions
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

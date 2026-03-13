@@ -7,6 +7,7 @@ author: "Claude Skills Guide"
 categories: [guides]
 reviewed: true
 score: 8
+tags: [claude-code, claude-skills, cursor, comparison]
 ---
 
 # Claude Code vs Cursor AI Editor Comparison 2026

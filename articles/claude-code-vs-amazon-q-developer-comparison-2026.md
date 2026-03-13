@@ -7,6 +7,7 @@ author: "Claude Skills Guide"
 categories: [guides]
 reviewed: true
 score: 8
+tags: [claude-code, claude-skills, amazon-q, comparison]
 ---
 
 # Claude Code vs Amazon Q Developer Comparison 2026

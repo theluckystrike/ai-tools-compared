@@ -7,6 +7,7 @@ author: "Claude Skills Guide"
 categories: [guides]
 reviewed: true
 score: 8
+tags: [claude-code, claude-skills, bolt-new, comparison, web-development]
 ---
 
 # Claude Code Skills vs Bolt.new for Web Development

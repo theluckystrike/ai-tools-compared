@@ -3,8 +3,9 @@ layout: post
 title: "Claude Code Skills Context Window Exceeded Error Fix"
 description: "Fix context window exceeded errors in Claude Code skills. Token budgeting, session management, and strategies for tdd, pdf, and frontend-design."
 date: 2026-03-13
+categories: [troubleshooting]
+tags: [claude-code, claude-skills, troubleshooting, context-window, tokens]
 author: "Claude Skills Guide"
-categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -145,20 +146,6 @@ the names of failing tests. Do not show full stack traces.
 ```
 
 Stack traces are some of the worst context consumers. With the `tdd` skill, this alone can extend a session 30-50%.
-
-## Fix 8: Use `.claude/settings.json` to Limit Context
-
-You can configure context management settings in your project:
-
-```json
-{
-  "maxHistoryTokens": 50000,
-  "autoCompact": true,
-  "autoCompactThreshold": 0.8
-}
-```
-
-`autoCompact` triggers `/compact` automatically when your session reaches 80% of the context limit, before the error occurs.
 
 ## Understanding Token Costs Per Skill
 

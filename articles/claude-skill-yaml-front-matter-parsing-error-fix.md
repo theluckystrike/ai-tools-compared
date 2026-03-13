@@ -3,8 +3,9 @@ layout: post
 title: "Claude Skill YAML Front Matter Parsing Error Fix"
 description: "Fix YAML front matter parsing errors in Claude Code skill files. Covers indentation, special characters, missing closing delimiters, and validation tools."
 date: 2026-03-13
+categories: [troubleshooting]
+tags: [claude-code, claude-skills, troubleshooting, yaml, front-matter]
 author: "Claude Skills Guide"
-categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -114,7 +115,7 @@ description: Fix: handle edge cases in auth
 description: "Fix: handle edge cases in auth"
 ```
 
-This hits frequently with `description` fields in the [`tdd`](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) and `frontend-design` skills when people write descriptions like "Step 1: write test, Step 2: implement".
+This hits frequently with `description` fields in the `tdd` and `frontend-design` skills when people write descriptions like "Step 1: write test, Step 2: implement".
 
 ## Error 4: Unquoted Special Characters
 
@@ -251,27 +252,27 @@ description: "One sentence description of what this skill does"
 
 Add `tools` only if you need to declare tool access. A missing `tools` key does not cause a parse error — Claude uses its default tool access instead.
 
-## The `supermemory` and `pdf` Skills Specifically
+## Nested Keys: Get Indentation Right
 
-Both the [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) and `pdf` have configuration keys beyond `description` and `tools`. If you are customising these skills, the most common breaking change is adding a nested key without proper indentation:
+If you add nested keys to your skill front matter, indentation must be consistent:
 
 ```yaml
-# Broken
+# Broken — nested key not indented
 ---
 description: "Persistent memory across sessions"
-storage:
-path: ~/.claude-memory
+context_files:
+- docs/conventions.md
 ---
 
-# Fixed
+# Fixed — list items indented under parent key
 ---
 description: "Persistent memory across sessions"
-storage:
-  path: ~/.claude-memory
+context_files:
+  - docs/conventions.md
 ---
 ```
 
-Two spaces before `path` — the nested key under `storage` — are required.
+Two spaces before list items under a key are required.
 
 ---
 

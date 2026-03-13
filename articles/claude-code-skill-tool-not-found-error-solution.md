@@ -3,8 +3,9 @@ layout: post
 title: "Fix Claude Code Skill Tool Not Found Error (2026)"
 description: "Solve the tool not found error in Claude Code skills. Fix tool name mismatches, missing skill declarations, sandbox restrictions, and dependencies."
 date: 2026-03-13
+categories: [troubleshooting]
+tags: [claude-code, claude-skills, troubleshooting, tools]
 author: "Claude Skills Guide"
-categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -160,24 +161,19 @@ which pandoc || apt install pandoc
 
 When the external binary is missing, the skill loads but the tool call fails with a "command not found" error that surfaces as a tool error.
 
-## The `supermemory` Skill: Storage Tool Errors
+## The `supermemory` Skill: Storage Issues
 
-The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) uses a custom storage tool to persist session memory. If the storage path is on a read-only filesystem, you will get:
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) writes session memory to disk. If the storage path is on a read-only filesystem, writes fail. Fix this by explicitly directing the skill to a writable path:
 
 ```
-ToolError: supermemory storage write failed
+/supermemory
+Save memory to ~/notes/project-memory.md
 ```
 
-Fix by configuring a writable path:
-
-```json
-{
-  "skills": {
-    "supermemory": {
-      "storagePath": "/Users/yourname/.claude-memory"
-    }
-  }
-}
+Or set the environment variable:
+```bash
+export CLAUDE_MEMORY_PATH="$HOME/.claude-memory"
+mkdir -p ~/.claude-memory
 ```
 
 ## The `frontend-design` Skill: Missing Linter Tools
