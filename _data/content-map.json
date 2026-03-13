@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-13 22:33",
-  "total": 134,
+  "generated": "2026-03-13 22:44",
+  "total": 135,
   "articles": [
     {
       "filename": "advanced-claude-skills-with-tool-use-and-function-calling.md",
@@ -252,6 +252,13 @@
       "title": "Input Validation and Sanitization with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-input-validation-sanitization-patterns-guide/",
       "cluster": "getting-started",
+      "linked": true
+    },
+    {
+      "filename": "claude-code-jest-to-vitest-migration-workflow-tutorial.md",
+      "title": "Jest to Vitest Migration Workflow with Claude Code",
+      "url": "/claude-skills-guide/articles/claude-code-jest-to-vitest-migration-workflow-tutorial/",
+      "cluster": "workflows",
       "linked": true
     },
     {
