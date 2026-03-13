@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Skill Memory Limit Exceeded Process Killed Fix
 
-Memory limit exceeded errors can abruptly terminate your Claude Code sessions, especially when running resource-intensive skills like pdf processing, algorithmic art generation, or working with large codebases. This guide provides practical solutions for developers and power users facing these issues.
+Memory limit exceeded errors can abruptly terminate your Claude Code sessions, especially when running resource-intensive skills like pdf processing, algorithmic art generation, or working with large codebases. The [tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) and other code analysis skills are common triggers due to large codebase loading. This guide provides practical solutions for developers and power users facing these issues.
 
 ## Understanding the Error
 
@@ -223,5 +223,12 @@ Identify which operations consume the most memory:
 5. **Keep swap space** available as a safety net
 
 When memory errors persist despite these fixes, consider upgrading your system RAM or using remote compute resources for memory-intensive tasks. The combination of proper configuration, monitoring, and incremental processing resolves the majority of memory limit exceeded issues with Claude Code skills.
+
+## Related Reading
+
+- [Claude Code Skill Timeout Error: How to Increase the Limit](/claude-skills-guide/articles/claude-code-skill-timeout-error-how-to-increase-the-limit/) — Pair memory limit fixes with timeout management for resource-intensive skill operations
+- [Claude Code Skill Exceeded Maximum Output Length Error Fix](/claude-skills-guide/articles/claude-code-skill-exceeded-maximum-output-length-error-fix/) — Address the related output length error that often co-occurs with memory pressure in heavy skill runs
+- [Claude Skills Slow Performance: Speed Up Guide](/claude-skills-guide/articles/claude-skills-slow-performance-speed-up-guide/) — Optimize skill performance to reduce memory footprint and avoid memory limit triggers
+- [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill configuration patterns for managing resource usage effectively
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

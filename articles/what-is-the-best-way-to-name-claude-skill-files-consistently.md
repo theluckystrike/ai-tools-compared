@@ -16,7 +16,7 @@ Naming your Claude skill files consistently is one of those details that seems m
 
 ## Why Naming Conventions Matter
 
-Claude Code skills live in your `~/claude/skills/` directory as markdown files. The filename becomes part of the invocation command. If you have skills named `frontend-design.md`, `pdf.md`, `tdd.md`, and `Supermemory.md`, you end up with an inconsistent experience when typing `/frontend-design` versus `/pdf` versus `/Supermemory`. The inconsistency is not just aesthetic—it affects your muscle memory and makes it harder to remember which skills exist.
+Claude Code skills live in your `~/claude/skills/` directory as markdown files. The filename becomes part of the invocation command. If you have skills named `frontend-design.md`, `pdf.md`, [`tdd.md`](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/), and `Supermemory.md`, you end up with an inconsistent experience when typing `/frontend-design` versus `/pdf` versus `/Supermemory`. The inconsistency is not just aesthetic—it affects your muscle memory and makes it harder to remember which skills exist.
 
 A consistent naming convention also helps when sharing skills with others or browsing a team's skill collection. When everyone follows the same pattern, the library becomes predictable and navigable.
 
@@ -157,5 +157,12 @@ If you work on a team, share the convention early. Adding a naming guideline to 
 The best way to name Claude skill files consistently is to use kebab-case with descriptive, multi-word names that follow the `[domain]-[purpose]` pattern. This approach creates predictable invocation commands, groups related skills together alphabetically, and scales well as your library grows.
 
 Avoid single words, mixed case styles, underscores, and numbers. Keep the names human-readable and domain-specific. When in doubt, err on the side of being more descriptive—the extra characters in the filename pay off every time you invoke the skill.
+
+## Related Reading
+
+- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) — Master the full skill.md format — file naming conventions pair with proper format to create well-organized skills
+- [What Is the Best File Structure for a Complex Claude Skill](/claude-skills-guide/articles/what-is-the-best-file-structure-for-a-complex-claude-skill/) — Apply consistent naming within the recommended multi-directory file structure for complex skills
+- [What Is the Best Way to Organize Claude Skills in a Monorepo](/claude-skills-guide/articles/what-is-the-best-way-to-organize-claude-skills-in-a-monorepo/) — Use naming conventions alongside monorepo directory organization for scalable skill libraries
+- [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill authoring patterns and conventions across the full skills ecosystem
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
