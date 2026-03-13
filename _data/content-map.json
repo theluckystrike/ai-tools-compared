@@ -1,12 +1,12 @@
 {
-  "generated": "2026-03-13 22:28",
+  "generated": "2026-03-13 22:33",
   "total": 134,
   "articles": [
     {
       "filename": "advanced-claude-skills-with-tool-use-and-function-calling.md",
       "title": "Advanced Claude Skills: Tool Use Patterns 2026",
       "url": "/claude-skills-guide/articles/advanced-claude-skills-with-tool-use-and-function-calling/",
-      "cluster": "best-of",
+      "cluster": "advanced",
       "linked": true
     },
     {
@@ -34,7 +34,7 @@
       "filename": "automated-code-documentation-workflow-with-claude-skills.md",
       "title": "Automated Code Documentation Workflow with Claude Skills",
       "url": "/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -104,7 +104,7 @@
       "filename": "build-personal-ai-assistant-with-claude-skills-guide.md",
       "title": "Build a Personal AI Assistant with Claude Skills Guide",
       "url": "/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/",
-      "cluster": "best-of",
+      "cluster": "advanced",
       "linked": true
     },
     {
@@ -118,7 +118,7 @@
       "filename": "building-stateful-agents-with-claude-skills-guide.md",
       "title": "Building Stateful Agents with Claude Skills Guide",
       "url": "/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/",
-      "cluster": "best-of",
+      "cluster": "advanced",
       "linked": true
     },
     {
@@ -153,21 +153,21 @@
       "filename": "claude-code-astro-static-site-generation-workflow-guide.md",
       "title": "Claude Code Astro Static Site Generation Workflow Guide",
       "url": "/claude-skills-guide/articles/claude-code-astro-static-site-generation-workflow-guide/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-azure-devops-integration-workflow-tutorial.md",
       "title": "Claude Code Azure DevOps Integration Workflow Tutorial",
       "url": "/claude-skills-guide/articles/claude-code-azure-devops-integration-workflow-tutorial/",
-      "cluster": "use-cases",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-bundle-size-reduction-webpack-vite-workflow.md",
       "title": "Bundle Size Reduction: Webpack to Vite 2026 Guide",
       "url": "/claude-skills-guide/articles/claude-code-bundle-size-reduction-webpack-vite-workflow/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -188,21 +188,21 @@
       "filename": "claude-code-csp-content-security-policy-generation-guide.md",
       "title": "Claude Code CSP Content Security Policy Generation Guide",
       "url": "/claude-skills-guide/articles/claude-code-csp-content-security-policy-generation-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-dart-flutter-cross-platform-development-guide.md",
       "title": "Claude Code Dart Flutter Cross Platform Development Guide",
       "url": "/claude-skills-guide/articles/claude-code-dart-flutter-cross-platform-development-guide/",
-      "cluster": "best-of",
+      "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-express-to-fastify-migration-tutorial-2026.md",
       "title": "Express to Fastify Migration with Claude Code (2026)",
       "url": "/claude-skills-guide/articles/claude-code-express-to-fastify-migration-tutorial-2026/",
-      "cluster": "best-of",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -230,56 +230,56 @@
       "filename": "claude-code-gdpr-data-privacy-implementation-checklist.md",
       "title": "GDPR Data Privacy Implementation with Claude Code 2026",
       "url": "/claude-skills-guide/articles/claude-code-gdpr-data-privacy-implementation-checklist/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-git-bisect-automated-bug-finding-workflow.md",
       "title": "Git Bisect + Claude Code: Automated Bug Finding Guide",
       "url": "/claude-skills-guide/articles/claude-code-git-bisect-automated-bug-finding-workflow/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-hipaa-compliant-development-workflow-guide.md",
       "title": "Claude Code HIPAA Compliant Development Workflow Guide",
       "url": "/claude-skills-guide/articles/claude-code-hipaa-compliant-development-workflow-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-input-validation-sanitization-patterns-guide.md",
       "title": "Input Validation and Sanitization with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-input-validation-sanitization-patterns-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-kotlin-android-development-workflow-guide.md",
       "title": "Kotlin Android Development with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-kotlin-android-development-workflow-guide/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-langchain-integration-agent-workflow-guide.md",
       "title": "Claude Code + LangChain Integration: Agent Workflow",
       "url": "/claude-skills-guide/articles/claude-code-langchain-integration-agent-workflow-guide/",
-      "cluster": "best-of",
+      "cluster": "advanced",
       "linked": true
     },
     {
       "filename": "claude-code-lighthouse-score-improvement-automation-guide.md",
       "title": "Claude Code Lighthouse Score Improvement Automation Guide",
       "url": "/claude-skills-guide/articles/claude-code-lighthouse-score-improvement-automation-guide/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-llm-evaluation-and-benchmarking-workflow.md",
       "title": "LLM Evaluation and Benchmarking with Claude Code 2026",
       "url": "/claude-skills-guide/articles/claude-code-llm-evaluation-and-benchmarking-workflow/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -293,7 +293,7 @@
       "filename": "claude-code-mongodb-to-postgresql-migration-workflow.md",
       "title": "Claude Code MongoDB to PostgreSQL Migration Workflow",
       "url": "/claude-skills-guide/articles/claude-code-mongodb-to-postgresql-migration-workflow/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -314,28 +314,28 @@
       "filename": "claude-code-owasp-top-10-security-scanning-workflow.md",
       "title": "Claude Code OWASP Top 10 Security Scanning Workflow",
       "url": "/claude-skills-guide/articles/claude-code-owasp-top-10-security-scanning-workflow/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-permissions-model-security-guide-2026.md",
       "title": "Claude Code Permissions Model and Security Guide",
       "url": "/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-scala-functional-programming-workflow-tips.md",
       "title": "Claude Code Scala Functional Programming Workflow Tips",
       "url": "/claude-skills-guide/articles/claude-code-scala-functional-programming-workflow-tips/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-secret-scanning-prevent-credential-leaks-guide.md",
       "title": "Claude Code Secret Scanning: Prevent Credential Leaks Guide",
       "url": "/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -349,21 +349,21 @@
       "filename": "claude-code-segfault-core-dump-analysis-workflow-guide.md",
       "title": "Segfault and Core Dump Analysis with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-segfault-core-dump-analysis-workflow-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-selenium-browser-testing-automation-guide.md",
       "title": "Claude Code Selenium Browser Testing Automation Guide",
       "url": "/claude-skills-guide/articles/claude-code-selenium-browser-testing-automation-guide/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
       "filename": "claude-code-semantic-html-accessibility-improvement-guide.md",
       "title": "Semantic HTML Accessibility with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-semantic-html-accessibility-improvement-guide/",
-      "cluster": "best-of",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -426,21 +426,21 @@
       "filename": "claude-code-soc2-compliance-audit-preparation-guide-2026.md",
       "title": "Claude Code SOC 2 Compliance Audit Preparation Guide 2026",
       "url": "/claude-skills-guide/articles/claude-code-soc2-compliance-audit-preparation-guide-2026/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-spring-boot-java-microservices-development.md",
       "title": "Claude Code Spring Boot Java Microservices Guide 2026",
       "url": "/claude-skills-guide/articles/claude-code-spring-boot-java-microservices-development/",
-      "cluster": "best-of",
+      "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-vercel-deployment-nextjs-workflow-guide.md",
       "title": "Claude Code Vercel Deployment Next.js Workflow Guide",
       "url": "/claude-skills-guide/articles/claude-code-vercel-deployment-nextjs-workflow-guide/",
-      "cluster": "use-cases",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -503,7 +503,7 @@
       "filename": "claude-code-worktrees-and-skills-isolation-explained.md",
       "title": "Claude Code Worktrees and Skills Isolation Guide",
       "url": "/claude-skills-guide/articles/claude-code-worktrees-and-skills-isolation-explained/",
-      "cluster": "best-of",
+      "cluster": "advanced",
       "linked": true
     },
     {
@@ -538,7 +538,7 @@
       "filename": "claude-skill-md-format-complete-specification-guide.md",
       "title": "Claude Skill .md File Format: Full Specification Guide",
       "url": "/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -629,7 +629,7 @@
       "filename": "claude-skills-email-drafting-automation-workflow.md",
       "title": "Claude Skills Email Drafting Automation Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-email-drafting-automation-workflow/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -657,7 +657,7 @@
       "filename": "claude-skills-for-enterprise-security-compliance-guide.md",
       "title": "Claude Skills for Enterprise Security & Compliance Guide",
       "url": "/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -692,7 +692,7 @@
       "filename": "claude-skills-slow-performance-speed-up-guide.md",
       "title": "Claude Skills Slow Performance: Speed Up Guide",
       "url": "/claude-skills-guide/articles/claude-skills-slow-performance-speed-up-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -748,7 +748,7 @@
       "filename": "claude-skills-with-slack-bot-integration-tutorial.md",
       "title": "Claude Skills with Slack Bot Integration Tutorial",
       "url": "/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/",
-      "cluster": "best-of",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -860,7 +860,7 @@
       "filename": "how-to-optimize-claude-skill-prompts-for-accuracy.md",
       "title": "How to Optimize Claude Skill Prompts for Accuracy",
       "url": "/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/",
-      "cluster": "best-of",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -923,7 +923,7 @@
       "filename": "understanding-claude-code-hooks-system-complete-guide.md",
       "title": "Claude Code Hooks System: Complete Guide",
       "url": "/claude-skills-guide/articles/understanding-claude-code-hooks-system-complete-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
