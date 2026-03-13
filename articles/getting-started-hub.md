@@ -150,6 +150,8 @@ Once you've got the basics down, here's where to go next:
 | [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) | Understanding Claude Code's permission and security model |
 | [MCP Servers vs Claude Skills: What's the Difference?](/claude-skills-guide/articles/mcp-servers-vs-claude-skills-what-is-the-difference/) | How MCP servers relate to and differ from skills |
 | [How to Use Claude Skills with n8n Automation Workflows](/claude-skills-guide/articles/how-to-use-claude-skills-with-n8n-automation-workflows/) | Integrating Claude skills into n8n automation pipelines |
+| [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) | Full specification of every field and rule in the skill.md format |
+| [Understanding Claude Code Hooks System: Complete Guide](/claude-skills-guide/articles/understanding-claude-code-hooks-system-complete-guide/) | How the Claude Code hooks system works and how to use it |
 
 ---
 

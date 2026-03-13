@@ -103,6 +103,8 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 | [How to Share Claude Skills with Your Team](/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/) | Distributing and standardizing skills across an engineering team |
 | [How to Use Claude Skills with n8n Automation Workflows](/claude-skills-guide/articles/how-to-use-claude-skills-with-n8n-automation-workflows/) | Building end-to-end automation with n8n and Claude skills |
 | [Claude Skill Not Triggering? Troubleshooting Guide](/claude-skills-guide/articles/claude-skill-not-triggering-automatically-troubleshoot/) | Why workflow automation can fail and how to debug trigger issues |
+| [Automated Code Documentation Workflow with Claude Skills](/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/) | Generating code documentation automatically using Claude skills |
+| [Claude Skills with Slack Bot Integration Tutorial](/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/) | Building a Slack bot powered by Claude skills for team workflows |
 
 ---
 

@@ -142,6 +142,8 @@ Token efficiency matters when running multi-skill sessions. See [Claude Skills T
 | [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) | Understanding how permissions affect skill behavior in production |
 | [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) | Orchestrating multiple Claude subagents for complex tasks |
 | [Why Is My Claude Skill Not Showing Up? Fix Guide](/claude-skills-guide/articles/why-is-my-claude-skill-not-showing-up-fix-guide/) | Diagnosing skill visibility problems in Claude Code |
+| [Build Personal AI Assistant with Claude Skills Guide](/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/) | Building a customized personal AI assistant using Claude skills |
+| [Claude Skills with Slack Bot Integration Tutorial](/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/) | Integrating Claude skills with Slack for team automation |
 
 ---
 

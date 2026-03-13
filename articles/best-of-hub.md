@@ -108,6 +108,10 @@ If you're just getting started with skills, these five deliver the highest value
 | [Claude Code Skill Permission Denied Error Fix](/claude-skills-guide/articles/claude-code-skill-permission-denied-error-fix-2026/) | Resolving permission errors that block skill execution |
 | [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) | The 2026 guide to Claude Code security and permission scopes |
 | [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) | Complete 2026 setup walkthrough for MCP server integration |
+| [Claude Code vs Gemini CLI for Developers 2026](/claude-skills-guide/articles/claude-code-vs-gemini-cli-for-developers-2026/) | 2026 comparison of Claude Code and Google Gemini CLI |
+| [Claude Code vs OpenAI Codex CLI Comparison 2026](/claude-skills-guide/articles/claude-code-vs-openai-codex-cli-comparison-2026/) | 2026 head-to-head between Claude Code and OpenAI Codex CLI |
+| [Understanding Claude Code Hooks System: Complete Guide](/claude-skills-guide/articles/understanding-claude-code-hooks-system-complete-guide/) | Complete guide to Claude Code's hooks system in 2026 |
+| [Build Personal AI Assistant with Claude Skills Guide](/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/) | Step-by-step guide to building a personal AI assistant |
 
 ---
 

@@ -18,7 +18,7 @@ Skills are `.md` files in `~/.claude/skills/`, invoked with `/skill-name`. Hooks
 
 ## PDF Processing with the pdf Skill
 
-The `pdf` skill handles technical documentation, contracts, and data extraction. It now supports batch processing and encrypted documents:
+The [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) handles technical documentation, contracts, and data extraction. It now supports batch processing and encrypted documents:
 
 ```
 /pdf process all files in invoices/ and extract the vendor, amount, and date from each. Format as a markdown table.
@@ -54,7 +54,7 @@ The skill's Figma integration (paste spec, receive code) is the most-used new ca
 
 ## Test-Driven Development with the tdd Skill
 
-The `tdd` skill guides test-first development and generates meaningful test cases:
+The [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) guides test-first development and generates meaningful test cases:
 
 ```
 /tdd write Jest tests for UserService.authenticate() — include valid credential tests, invalid credential tests, and network timeout handling
@@ -72,7 +72,7 @@ Property-based testing support and fuzz input generation are new in 2026 — the
 
 ## Memory Management with the supermemory Skill
 
-The `supermemory` skill provides persistent context across sessions:
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) provides persistent context across sessions:
 
 ```
 /supermemory store: project-stack = Next.js 14, TypeScript, PostgreSQL, Prisma, Railway deployment

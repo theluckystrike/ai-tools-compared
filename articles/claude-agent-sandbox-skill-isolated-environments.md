@@ -110,7 +110,7 @@ With `shellAccess: false`, the agent cannot run arbitrary shell commands or use 
 
 ## Practical Use Case: Running Tests Safely
 
-The `tdd` skill generates tests that may include third-party dependencies. Running those tests in a sandboxed context prevents buggy or malicious packages from accessing your environment variables or SSH keys.
+The [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) generates tests that may include third-party dependencies. Running those tests in a sandboxed context prevents buggy or malicious packages from accessing your environment variables or SSH keys.
 
 ```
 /agent run the test suite in tests/ using the tdd skill — only read from tests/ and src/, write only to build/test-results/, no network access

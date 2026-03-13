@@ -91,6 +91,8 @@ When building custom skills, the path is: understand the [skill.md format](/clau
 | [Claude Skills vs Custom GPTs: 2026 Comparison](/claude-skills-guide/articles/claude-skills-vs-custom-gpts-comparison-2026/) | Claude skills vs OpenAI Custom GPTs for workflow automation |
 | [Claude Skills vs OpenAI Assistants API Comparison](/claude-skills-guide/articles/claude-skills-vs-openai-assistants-api-comparison/) | API-level comparison for developers building AI integrations |
 | [MCP Servers vs Claude Skills: What's the Difference?](/claude-skills-guide/articles/mcp-servers-vs-claude-skills-what-is-the-difference/) | Structural differences between MCP servers and Claude skills |
+| [Claude Code vs Gemini CLI for Developers 2026](/claude-skills-guide/articles/claude-code-vs-gemini-cli-for-developers-2026/) | Comparing Claude Code and Google Gemini CLI for developer workflows |
+| [Claude Code vs OpenAI Codex CLI Comparison 2026](/claude-skills-guide/articles/claude-code-vs-openai-codex-cli-comparison-2026/) | Head-to-head comparison of Claude Code and OpenAI Codex CLI |
 
 ---
 

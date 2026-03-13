@@ -18,7 +18,7 @@ Claude Code skills are `.md` files that extend Claude's behavior for specific ta
 
 ### TDD Skill for Quality Assurance
 
-The **tdd** skill guides Claude through red-green-refactor cycles. In an agent pipeline, invoke it on your agent's own test suite before deployment:
+The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) guides Claude through red-green-refactor cycles. In an agent pipeline, invoke it on your agent's own test suite before deployment:
 
 ```bash
 # Run TDD skill analysis on agent modules
@@ -31,7 +31,7 @@ This generates test cases based on your agent's actual implementation — state 
 
 ### PDF Skill for Document Processing
 
-Production agents frequently process PDF documents. Invoke the **pdf** skill when the agent receives a document:
+Production agents frequently process PDF documents. Invoke the [**pdf** skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) when the agent receives a document:
 
 ```python
 # Agent step: extract content from an incoming contract PDF
@@ -43,7 +43,7 @@ The skill handles complex layouts, form fields, and multi-column documents.
 
 ### Supermemory Skill for Context Management
 
-Long-running agents need persistent context between sessions. The **supermemory** skill provides retrieval of previously stored knowledge:
+Long-running agents need persistent context between sessions. The [**supermemory** skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) provides retrieval of previously stored knowledge:
 
 ```
 /supermemory store: Order #12345 processed for customer acme-corp, result: approved

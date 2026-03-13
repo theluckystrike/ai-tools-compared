@@ -90,6 +90,7 @@ Advanced optimization isn't just about prompts. It's about workflow design:
 | [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) | Permission model internals and security implications for power users |
 | [Claude Skills AWS Lambda Serverless Integration Guide](/claude-skills-guide/articles/claude-skills-aws-lambda-serverless-integration/) | Deploying Claude skill workflows at scale with serverless functions |
 | [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/articles/claude-code-vs-replit-agent-which-is-better-2026/) | Evaluating agentic capabilities across Claude Code and Replit |
+| [MCP Memory Server: Persistent Storage for Claude Agents](/claude-skills-guide/articles/mcp-memory-server-persistent-storage-for-claude-agents/) | Using MCP memory servers to give Claude agents persistent storage |
 
 ---
 

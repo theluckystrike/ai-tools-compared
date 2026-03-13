@@ -34,7 +34,7 @@ Writers working on collaborative documents use this skill to produce clean draft
 
 ## PDF Generation with the pdf Skill
 
-The `pdf` skill creates and processes PDFs — both generating new documents and extracting content from existing ones.
+The [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) creates and processes PDFs — both generating new documents and extracting content from existing ones.
 
 ```
 /pdf create a PDF from this content with a title page, page numbers, and a header showing "Confidential": [paste content]
@@ -88,7 +88,7 @@ Content teams tracking editorial calendars, performance metrics, or campaign bud
 
 ## Persistent Style Guides with the supermemory Skill
 
-The `supermemory` skill stores and recalls style guidelines, brand voice, and project-specific rules across sessions.
+The [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) stores and recalls style guidelines, brand voice, and project-specific rules across sessions.
 
 ```
 /supermemory store: acme-brand-voice = conversational, direct, no jargon, second person ("you"), Oxford comma, active voice, max sentence length 25 words
@@ -115,7 +115,7 @@ Writers managing multiple clients use this to switch between brand voices withou
 
 ## Design Documentation with the frontend-design Skill
 
-Technical writers documenting design systems use the `frontend-design` skill to verify accuracy between component specs and written documentation.
+Technical writers documenting design systems use the [`frontend-design` skill](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) to verify accuracy between component specs and written documentation.
 
 ```
 /frontend-design review this component documentation for accuracy — does the prop table match the implementation?: [paste docs, paste component code]
