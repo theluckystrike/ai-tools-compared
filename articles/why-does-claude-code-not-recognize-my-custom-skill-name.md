@@ -5,9 +5,9 @@ description: "Troubleshooting guide for custom skill registration issues in Clau
 date: 2026-03-14
 categories: [troubleshooting]
 tags: [claude-code, claude-skills, troubleshooting, skill-registration]
-author: theluckystrike
-reviewed: false
-score: 0
+author: "Claude Skills Guide"
+reviewed: true
+score: 9
 ---
 
 # Why Does Claude Code Not Recognize My Custom Skill Name?
