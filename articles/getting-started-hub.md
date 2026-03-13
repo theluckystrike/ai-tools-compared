@@ -39,7 +39,7 @@ Skills are defined in `.md` files using a combination of YAML front matter and M
 
 ## How Auto-Invocation Works
 
-Claude doesn't require you to manually load skills for every session. The auto-invocation system watches your messages for contextual signals—file extensions, action verbs, domain keywords—and loads the relevant skill automatically.
+Claude doesn't require you to manually load skills for every session. The [auto-invocation system](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) watches your messages for contextual signals—file extensions, action verbs, domain keywords—and loads the relevant skill automatically.
 
 For example:
 - Mentioning a `.xlsx` file triggers the xlsx skill
@@ -102,7 +102,7 @@ Skills are better for:
 - Tasks where context must persist across sessions
 - Domain areas where you want enforced best practices
 
-Most experienced Claude users use both: prompts for exploration, skills for production work.
+Most experienced Claude users use both: prompts for exploration, [skills for production work](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/).
 
 **Full guide:** [Claude Skills vs Prompts: Which Is Better?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/)
 
@@ -161,5 +161,12 @@ Once you've got the basics down, here's where to go next:
 | [Is Claude Code Worth It? An Honest Beginner Review 2026](/claude-skills-guide/articles/is-claude-code-worth-it-honest-beginner-review-2026/) | Honest assessment of Claude Code's value for developers just getting started |
 
 ---
+
+## Related Reading
+
+- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — Every field and pattern in the skill.md format with real examples you can copy and adapt.
+- [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Understand how Claude detects context and loads the right skill without manual prompting.
+- [Best Claude Code Skills to Install First in 2026](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) — The highest-value skills to start with once you understand the format.
+- [Claude Skills Workflow Guide](/claude-skills-guide/workflows-hub/) — Build repeatable, automated workflows once you have the basics down.
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*

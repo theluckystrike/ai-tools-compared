@@ -29,7 +29,7 @@ A mature Claude skill workflow has three phases:
 
 **1. Discovery** — Start with prompts to explore the problem space. Identify recurring patterns.
 
-**2. Codification** — When a pattern recurs, build a skill. Use the skill.md format to encode your preferences, conventions, and domain knowledge. See [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) for the step-by-step process.
+**2. Codification** — When a pattern recurs, build a skill. Use the [skill.md format](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) to encode your preferences, conventions, and domain knowledge. See [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) for the step-by-step process.
 
 **3. Automation** — Chain skills together so Claude can execute multi-step workflows with minimal prompting. Examples:
 - PR review workflow: code analysis → test generation with tdd → documentation update with docx
@@ -47,7 +47,7 @@ Once you've built a skill that solves a real problem, contributing it to open so
 3. **Submit** — Fork the target repository, create a feature branch, open a PR with a comprehensive description
 4. **Maintain** — Monitor issues, respond to feedback, update for compatibility
 
-Community skills that become widely adopted follow a pattern: clear use case, clean code, honest documentation about limitations, and an active maintainer.
+Community skills that become widely adopted follow a pattern: clear use case, clean code, honest documentation about limitations, and an [active maintainer](/claude-skills-guide/articles/how-to-contribute-claude-skills-to-open-source/).
 
 **Full guide:** [How to Contribute Claude Skills to Open Source](/claude-skills-guide/articles/how-to-contribute-claude-skills-to-open-source/)
 
@@ -119,5 +119,12 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 - [Claude Skills by Use Case](/claude-skills-guide/articles/use-cases-hub/) — Industry-specific workflow recommendations
 
 ---
+
+## Related Reading
+
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build a continuous testing pipeline driven by the TDD skill for reliable, repeatable results.
+- [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — Integrate Claude skills directly into GitHub Actions for fully automated deployment workflows.
+- [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/articles/how-to-automate-code-reviews-with-claude-skills/) — Set up automated code review as part of your CI pipeline with Claude skills.
+- [Claude Skills by Use Case](/claude-skills-guide/use-cases-hub/) — Find the right skills for your specific domain before building them into workflows.
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*

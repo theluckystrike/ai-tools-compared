@@ -49,7 +49,7 @@ The performance gap between skills and prompts widens as your workflow matures. 
 
 Anthropic ships a curated set of official skills with Claude Code: pdf, tdd, xlsx, pptx, docx, frontend-design, canvas-design, and others. These are security-audited, well-documented, and maintained across Claude versions.
 
-Community skills fill the gaps. They're often faster to innovate (supermemory, mcp-builder, algorithmic-art appeared in the community before Anthropic addressed those use cases officially), more specialized, and more flexible—but they come without the same stability guarantees.
+Community skills fill the gaps. They're often faster to innovate ([supermemory](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/), mcp-builder, algorithmic-art appeared in the community before Anthropic addressed those use cases officially), more specialized, and more flexible—but they come without the same stability guarantees.
 
 **The hybrid approach** most teams land on: official skills for core, production-critical tasks; community skills for niche integrations and experimental workflows.
 
@@ -104,5 +104,12 @@ When building custom skills, the path is: understand the [skill.md format](/clau
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The top skills worth choosing over prompts
 
 ---
+
+## Related Reading
+
+- [Official vs Community Claude Skills Guide (2026)](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — Deep dive into when to trust official skills vs community alternatives, with reliability and security trade-offs explained.
+- [MCP Servers vs Claude Skills: What Is the Difference?](/claude-skills-guide/articles/mcp-servers-vs-claude-skills-what-is-the-difference/) — Clarifies the structural differences so you can choose the right integration layer for your stack.
+- [Claude Skills vs Prompts: Which Is Better?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — Practical framework for deciding when a skill beats a one-off prompt for your workflow.
+- [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — Learn the foundations before diving into comparisons between tools and platforms.
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*

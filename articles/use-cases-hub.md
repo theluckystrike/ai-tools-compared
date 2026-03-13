@@ -26,7 +26,7 @@ Not every developer has the same workflow. This hub maps Claude skills to specif
 
 ## Frontend Development
 
-Frontend developers get outsized value from Claude skills because the domain is well-structured: components, tests, documentation, and visual assets follow predictable patterns that skills can encode once and reuse indefinitely.
+Frontend developers get outsized value from Claude skills because the domain is well-structured: components, tests, documentation, and visual assets follow [predictable patterns that skills can encode](/claude-skills-guide/articles/claude-frontend-design-skill-review-and-tutorial/) once and reuse indefinitely.
 
 **Top skills for frontend work:**
 
@@ -51,7 +51,7 @@ Frontend developers get outsized value from Claude skills because the domain is 
 
 ## Data Analysis
 
-Data workflows are rich territory for Claude skills. The combination of pdf (for extracting structured data from documents), xlsx (for analysis and reporting), and tdd (for reliable pipeline code) can automate workflows that previously took hours.
+Data workflows are rich territory for Claude skills. The combination of pdf (for extracting structured data from documents), xlsx (for analysis and reporting), and tdd (for reliable pipeline code) can automate [workflows that previously took hours](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/).
 
 **Top skills for data analysis:**
 
@@ -161,5 +161,12 @@ Token efficiency matters when running multi-skill sessions. See [Claude Skills T
 - [Getting Started with Claude Skills](/claude-skills-guide/articles/getting-started-hub/) — Learn skills fundamentals before specializing
 
 ---
+
+## Related Reading
+
+- [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) — Top skills for React, Vue, and Svelte development including frontend-design, tdd, and canvas-design.
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — Shell scripting, Terraform, and CI/CD pipeline automation with Claude skills.
+- [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) — Using Claude skills inside Jupyter notebooks for data science and analysis workflows.
+- [Claude Skills Workflow Guide](/claude-skills-guide/workflows-hub/) — Chain use-case skills together into automated multi-step pipelines.
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*
