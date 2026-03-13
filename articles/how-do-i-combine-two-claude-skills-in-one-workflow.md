@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "How Do I Combine Two Claude Skills in One Workflow"
 description: "Learn to chain and combine Claude skills for powerful multi-step workflows. Practical patterns for developers to leverage skill composition."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # How Do I Combine Two Claude Skills in One Workflow
