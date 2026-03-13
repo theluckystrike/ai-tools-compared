@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Claude Code Permissions Model Security Guide 2026"
-description: "A practical guide to understanding Claude Code's permissions model for developers and power users. Learn how to configure access controls, secure your AI workflows, and manage skill permissions safely."
+title: "Claude Code Permissions Model: Security Guide 2026"
+description: "Configure Claude Code permissions to secure AI workflows. Covers file access, shell commands, skill boundaries, and least-privilege best practices."
 date: 2026-03-13
 categories: [security, guides, permissions]
 tags: [claude-code, security, permissions, access-control, developer-tools]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
-score: 5
+score: 7
 ---
 
 # Claude Code Permissions Model Security Guide 2026

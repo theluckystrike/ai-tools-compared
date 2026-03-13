@@ -1,225 +1,190 @@
 ---
-layout: default
-title: "Claude Code Extended Thinking Skills Integration Guide"
-description: "A practical integration guide for combining Claude Code skills to enhance reasoning, memory, and complex problem-solving workflows. Real examples included."
+layout: post
+title: "Extended Thinking + Claude Skills: Integration Guide"
+description: "Combine Claude Code skills with extended thinking to tackle complex workflows. Practical patterns for /supermemory, /tdd, /pdf, and /xlsx in 2026."
 date: 2026-03-13
-author: theluckystrike
+categories: [guides, workflows, skills]
+tags: [claude-code, claude-skills, extended-thinking, supermemory, tdd, workflows]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
-# Claude Code Extended Thinking Skills Integration Guide
+# Extended Thinking + Claude Skills: Integration Guide
 
-Extended thinking represents Claude Code's most powerful capability for tackling complex, multi-step problems. By integrating specialized skills, you can dramatically improve reasoning depth, maintain context across sessions, and automate sophisticated analysis workflows. This guide shows you how to combine skills for maximum effectiveness.
+Claude Code's extended thinking mode lets the model reason through complex, multi-step problems using a longer internal chain of thought. Skills extend that capability by providing domain-specific context and workflows. This guide shows how to combine skills effectively for complex problem-solving.
 
-## Understanding Extended Thinking in Claude Code
+## What Extended Thinking Adds
 
-Claude Code's extended thinking mode allows the AI to reason through problems across thousands of tokens, breaking down complex tasks into manageable steps. However, native capabilities only scratch the surface. Skills extend this reasoning by providing domain-specific tools, persistent memory, and automated workflows that would otherwise require manual coordination.
+When you enable extended thinking in Claude Code, Claude spends more tokens reasoning before responding. This is most useful for:
 
-The key lies in understanding which skills complement each other and how to orchestrate them for complex problem-solving scenarios.
+- Architectural decisions with many trade-offs
+- Debugging complex multi-service issues
+- Analyzing large specifications for inconsistencies
 
-## Core Skills for Extended Reasoning
+Skills complement extended thinking by providing the domain context Claude needs to reason well—persistent memory, structured document data, and systematic workflows.
 
-### The Supermemory Skill for Persistent Context
+## Using /supermemory for Persistent Context
 
-The **supermemory** skill solves one of the biggest challenges in extended thinking: maintaining context across multiple sessions. Without it, Claude Code resets between conversations, forcing you to re-explain project context, architectural decisions, and accumulated insights.
+One limitation of extended thinking is that each session starts fresh. The `/supermemory` skill addresses this by giving Claude a way to store and retrieve project context across sessions.
 
-```bash
-# Installing the supermemory skill
-claude skill install supermemory
-```
-
-Once installed, you can store reasoning chains, design decisions, and project context:
+To activate the skill, type in Claude Code:
 
 ```
-# Store architectural decision for long-term reference
-@supermemory store key:project-architecture-2026 value: microservices with event-driven communication, using Kafka for async messaging, PostgreSQL for persistence
+/supermemory
 ```
 
-This skill becomes invaluable when working on multi-week projects where you need Claude to remember why certain decisions were made without re-explaining everything each session.
-
-### The TDD Skill for Systematic Problem Decomposition
-
-The **tdd** skill brings test-driven development principles to your reasoning process. When facing complex problems, this skill helps break them into testable hypotheses:
-
-```python
-# Using tdd skill to structure complex problem-solving
-from tdd import Hypothesis, test_case
-
-# Break down a complex feature into verifiable hypotheses
-hypothesis = Hypothesis("User authentication flow")
-hypothesis.add_test_case("Valid credentials return JWT token")
-hypothesis.add_test_case("Invalid credentials return 401")
-hypothesis.add_test_case("Expired tokens trigger refresh flow")
-```
-
-The tdd skill generates test cases automatically based on your problem description, ensuring your reasoning follows a systematic, verifiable path rather than relying on intuition alone.
-
-## Document Processing for Analysis Workflows
-
-### The PDF Skill for Technical Analysis
-
-When analyzing technical specifications, RFCs, or research papers, the **pdf** skill extracts structured data for deeper analysis:
-
-```python
-from pdf import PDFDocument, extract_tables, extract_figures
-
-spec = PDFDocument("api-specification-v2.pdf")
-endpoints = extract_tables(spec, "REST Endpoints")
-schemas = extract_tables(spec, "JSON Schemas")
-
-# Feed extracted data to extended thinking for analysis
-analyze_structure(endpoints, schemas)
-```
-
-Combine this with Claude Code's thinking capabilities to automatically identify inconsistencies, missing documentation, or architectural patterns in technical documents.
-
-### The XLSX Skill for Data-Driven Reasoning
-
-The **xlsx** skill enables analysis of spreadsheets during extended problem-solving:
-
-```python
-from xlsx import read_workbook, analyze_formulas
-
-workbook = read_workbook("project-metrics.xlsx")
-sheet = workbook.get_sheet("Budget 2026")
-
-# Extract financial data for strategic planning
-expenses = sheet.extract_column("Total Expenses")
-revenue = sheet.extract_column("Revenue")
-
-# Use in reasoning about budget optimization
-calculate_roi(expenses, revenue)
-```
-
-This integration proves particularly powerful when Claude needs to reason about business decisions backed by spreadsheet data.
-
-## Visual and Frontend Skills for Reasoning Support
-
-### The Frontend-Design Skill for UI/UX Analysis
-
-The **frontend-design** skill assists when extended reasoning involves user interface decisions:
-
-```bash
-# Analyze a design system for consistency
-@frontend-design analyze --path ./design-system --report consistency
-```
-
-For complex applications, this skill helps maintain design system coherence during architectural planning, ensuring your technical decisions align with user experience goals.
-
-### The Canvas-Design Skill for Visual Problem Structuring
-
-The **canvas-design** skill creates visual artifacts that support extended thinking:
+Then store an architectural decision:
 
 ```
-# Generate a flowchart for complex decision logic
-@canvas-design create flowchart --logic user-auth-flow.svg
+/supermemory
+Store this: project-architecture-2026 = microservices with event-driven communication, Kafka for async messaging, PostgreSQL for persistence. We chose this over a monolith for independent scaling of the analytics pipeline.
 ```
 
-Visual representations help when reasoning through multi-step processes, making abstract logic concrete and easier to validate.
-
-## Integrating Skills for Complete Workflows
-
-### Building a Research and Analysis Pipeline
-
-Combine multiple skills for comprehensive analysis workflows:
-
-```python
-# Complete research pipeline combining skills
-from pdf import extract_text
-from xlsx import read_workbook
-from supermemory import store, retrieve
-
-# Step 1: Extract source material
-spec = extract_text("technical-requirements.pdf")
-data = read_workbook("market-analysis.xlsx")
-
-# Step 2: Reason through extracted material
-analysis = analyze_requirements(spec, data)
-
-# Step 3: Store insights for future sessions
-store("analysis-2026-q1", analysis.insights)
-```
-
-This pipeline demonstrates how skills work together: pdf and xlsx provide data, supermemory preserves context, and Claude Code's reasoning connects everything.
-
-### Automated Code Review with TDD Integration
-
-For systematic code analysis, combine the tdd skill with document processing:
-
-```python
-from tdd import review, generate_tests
-from pdf import extract_code_snippets
-
-# Extract code examples from technical documentation
-doc = extract_code_snippets("architecture-documentation.pdf")
-
-# Generate comprehensive tests based on documented behavior
-tests = generate_tests(doc, language="python")
-
-# Run review against generated test cases
-review(tests, strict=True)
-```
-
-This approach ensures code reviews follow documented specifications precisely.
-
-## Best Practices for Skill Integration
-
-### Skill Loading Order
-
-The order in which skills are loaded affects performance. Load memory and data skills first:
+In a future session, you can retrieve it:
 
 ```
-1. supermemory - establishes context foundation
-2. pdf/xlsx - loads necessary data
-3. tdd - structures reasoning
-4. frontend-design/canvas-design - adds visual context
+/supermemory
+Recall project-architecture-2026
 ```
 
-### Avoiding Context Overload
+This is valuable on multi-week projects where re-explaining context each session would consume most of your context window before the actual reasoning begins.
 
-When combining skills, be mindful of token limits. Extract only necessary data from documents rather than loading entire files:
+## Using /tdd for Systematic Problem Decomposition
 
-```python
-# Good: Selective extraction
-endpoints = extract_tables(spec, "API Endpoints")[:10]
+The `/tdd` skill applies test-driven thinking to problem-solving. It guides Claude to break a complex feature into verifiable conditions before writing any implementation.
 
-# Avoid: Loading everything
-# full_spec = extract_text(spec)  # Too much context
-```
-
-### State Management Across Sessions
-
-Use supermemory to maintain state between sessions:
+Activate the skill, then describe your feature:
 
 ```
-# Store current reasoning state before ending session
-@supermemory store key:session-state reasoning:working on auth-refactor, next:test-rewrite
+/tdd
+I need to build a user authentication flow. It should handle valid credentials, invalid credentials, and expired token refresh.
 ```
 
-On subsequent sessions, retrieve this state immediately to continue where you stopped.
+Claude will respond with test cases structured as:
 
-## Advanced: Custom Skill Combinations
-
-For specialized workflows, consider creating custom skill combinations. The skill-md format allows defining auto-invocation triggers:
-
-```yaml
-name: research-pipeline
-trigger: "research analysis report"
-skills:
-  - supermemory
-  - pdf
-  - xlsx
-  - tdd
-actions:
-  - extract_data
-  - analyze
-  - generate_report
+```javascript
+describe('Authentication flow', () => {
+  it('returns a JWT on valid credentials', async () => { ... });
+  it('returns 401 on invalid credentials', async () => { ... });
+  it('refreshes expired tokens without re-authentication', async () => { ... });
+});
 ```
 
-This enables one-command execution of complex reasoning workflows.
+This systematic decomposition makes extended reasoning more tractable—each test case becomes a checkpoint Claude works toward.
+
+## Working with Documents Using /pdf and /xlsx
+
+### /pdf for Technical Specifications
+
+When you need Claude to reason about a PDF specification, the `/pdf` skill tells Claude how to request the document and what to do with it. Activate the skill, then reference your file:
+
+```
+/pdf
+Analyze api-specification-v2.pdf. Identify any endpoints that are documented without a corresponding error response definition.
+```
+
+Claude reads the document and applies extended thinking to surface inconsistencies, missing documentation, or architectural patterns that would be tedious to find manually.
+
+### /xlsx for Data-Driven Decisions
+
+The `/xlsx` skill works the same way with spreadsheets:
+
+```
+/xlsx
+Open project-metrics.xlsx, sheet "Budget 2026". Calculate whether Q1 expenses are on track relative to the annual budget, and flag any line items more than 15% over projection.
+```
+
+Claude processes the spreadsheet data and reasons about it—useful for business decisions that depend on tabular data without needing a separate analysis tool.
+
+## Using /frontend-design and /canvas-design
+
+### /frontend-design for UI Architecture
+
+When reasoning about UI decisions involves reviewing an existing design system, activate the skill:
+
+```
+/frontend-design
+Review the components in ./src/components/ and identify any that deviate from the spacing and color conventions defined in the design-system README.
+```
+
+This gives Claude a framework for consistent UI analysis during extended reasoning about a frontend refactor.
+
+### /canvas-design for Visual Artifacts
+
+The `/canvas-design` skill helps when reasoning through multi-step processes benefits from a visual structure:
+
+```
+/canvas-design
+Create a flowchart for the user authentication decision logic: check credentials → valid? → issue JWT → if expired → refresh flow → if refresh fails → re-authenticate.
+```
+
+Visual artifacts make abstract logic concrete and easier to validate before implementation.
+
+## Combining Skills in a Session
+
+You can activate multiple skills in a single session. A research and analysis workflow might look like this:
+
+```
+/supermemory
+Recall previous-quarter-analysis
+
+/pdf
+Analyze technical-requirements-q2.pdf for new API requirements
+
+/tdd
+Based on those requirements, write test cases for the three new endpoints
+```
+
+Each skill is invoked with its own slash command. Skills do not call each other programmatically—they shape Claude's behavior for each step of your workflow.
+
+## Skill Loading Order
+
+When combining multiple skills, activate them in an order that mirrors your workflow:
+
+1. `/supermemory` — load context so Claude knows the project background
+2. `/pdf` or `/xlsx` — load necessary data from documents
+3. `/tdd` — structure the reasoning or implementation task
+4. `/frontend-design` or `/canvas-design` — apply visual or UI context
+
+This sequence ensures each skill's output feeds naturally into the next step.
+
+## Avoiding Context Overload
+
+Extended thinking uses more tokens, and large documents make this worse. When using `/pdf` or `/xlsx`, ask Claude to extract only what you need rather than summarizing the entire document:
+
+```
+/pdf
+From api-specification-v2.pdf, extract only the definitions of the five endpoints in section 4. Ignore authentication and error appendices.
+```
+
+Focused extraction keeps the context window available for Claude's reasoning rather than raw document text.
+
+## Storing Reasoning State with /supermemory
+
+If a complex reasoning session spans multiple days, save your progress before ending:
+
+```
+/supermemory
+Store: auth-refactor-session-state = reviewed existing tests (passing), identified 3 breaking changes in token refresh logic, next step is rewriting refresh middleware
+```
+
+When you return, that stored state gets Claude oriented immediately without replaying the full session.
+
+## Creating Custom Skill Combinations
+
+Skills are Markdown files in `~/.claude/skills/`. You can write a custom skill that documents a specific multi-step workflow, giving Claude clear instructions for repeating a complex process. Use `/skill-creator` to scaffold a new skill:
+
+```
+/skill-creator
+Create a skill called research-pipeline that: 1) retrieves stored project context via supermemory, 2) analyzes a specified PDF for requirements, 3) generates TDD test cases for identified features
+```
+
+Claude generates a `research-pipeline.md` file you can save to `~/.claude/skills/` and invoke with `/research-pipeline`.
 
 ## Conclusion
 
-Extended thinking in Claude Code reaches its full potential through skill integration. The supermemory skill preserves context, pdf and xlsx skills provide data, tdd structures your reasoning, and visual skills add clarity. Start with the core skills, then expand based on your specific workflow needs. Each skill you add compounds the reasoning capabilities of the others.
+Extended thinking and Claude skills work best together when skills provide the context and structure that makes long reasoning chains tractable. Use `/supermemory` to persist context across sessions, `/tdd` to decompose problems systematically, `/pdf` and `/xlsx` to incorporate document data, and `/frontend-design` or `/canvas-design` for visual clarity. Each skill is invoked with a slash command and shapes how Claude reasons during that step of your workflow.
 
 ---
 
