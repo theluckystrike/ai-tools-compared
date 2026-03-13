@@ -3,7 +3,7 @@ layout: post
 title: "Claude Code AWS ECS Fargate Setup and Deployment Tutorial"
 description: "Set up and deploy containerized apps to AWS ECS Fargate using Claude Code. Covers task definitions, CI/CD, secrets management, and auto-scaling."
 date: 2026-03-14
-categories: [tutorials]
+categories: [guides, tutorials]
 tags: [claude-code, claude-skills, aws, ecs, fargate, deployment, containers]
 author: "Claude Skills Guide"
 reviewed: true
@@ -239,7 +239,13 @@ Update your task definition to reference these secrets:
 ]
 ```
 
-The [**supermemory** skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) helps maintain documentation of your deployment configurations and environment setups across projects, making it easier to replicate infrastructure across environments.
+The [`/supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) tracks deployment configuration across sessions:
+
+```
+/supermemory store: myapp ECS Fargate - us-east-1, cluster=myapp-cluster,
+task cpu=256/mem=512, secrets in Secrets Manager at myapp/*,
+auto-scaling min=2 max=10 target=70% CPU
+```
 
 ## Scaling and Monitoring
 
