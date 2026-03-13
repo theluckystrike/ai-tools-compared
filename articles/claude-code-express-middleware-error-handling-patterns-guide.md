@@ -1,21 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Express Middleware Error Handling Patterns Guide"
 description: "Master Express middleware error handling patterns with Claude Code. Learn async error handling, centralized error classes, and production-ready patterns."
 date: 2026-03-14
-<<<<<<< Updated upstream
 categories: [guides]
 tags: [claude-code, express, middleware, nodejs, error-handling]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
-=======
-author: "Claude Skills Guide"
-categories: [guides]
-tags: [claude-code, express, middleware, nodejs, error-handling]
-reviewed: true
-score: 7
->>>>>>> Stashed changes
+score: 8
 ---
 
 # Claude Code Express Middleware Error Handling Patterns Guide

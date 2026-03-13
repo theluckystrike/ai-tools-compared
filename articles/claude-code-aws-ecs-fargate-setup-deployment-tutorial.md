@@ -7,8 +7,7 @@ categories: [tutorials]
 tags: [claude-code, aws, ecs, fargate, deployment, containers]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
----
+score: 8---
 
 # Claude Code AWS ECS Fargate Setup Deployment Tutorial
 
