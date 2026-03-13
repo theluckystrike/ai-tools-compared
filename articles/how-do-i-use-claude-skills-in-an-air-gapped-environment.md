@@ -117,4 +117,11 @@ Using Claude skills in air-gapped environments is entirely feasible with proper 
 
 The initial setup requires effort, but the productivity gains for teams working in secure environments make this investment worthwhile. Start by transferring a few core skills, test your workflows, and expand from there based on your specific requirements.
 
+## Related Reading
+
+- [How to Create a Private Claude Skill Not on GitHub](/claude-skills-guide/articles/how-do-i-create-a-private-claude-skill-not-on-github/) — Keep skills local for air-gapped or sensitive environments
+- [Claude Code Dev Containers: devcontainer.json Setup Guide](/claude-skills-guide/articles/claude-code-dev-containers-devcontainer-json-setup-guide/) — Pre-install skills inside containers for offline-ready environments
+- [Claude Skills for Enterprise Security and Compliance Guide](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Deploy skills in regulated, security-hardened enterprise environments
+- [Claude Skills Hub](/claude-skills-guide/use-cases-hub/) — Explore secure and specialized deployment scenarios for Claude skills
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

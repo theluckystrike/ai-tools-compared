@@ -198,4 +198,11 @@ Batch processing with skills excels in several scenarios:
 
 Claude Code skills combined with shell scripting create powerful batch processing capabilities. Start with simple single-skill workflows, then combine multiple skills for complex transformations. The key is separating iteration logic (bash) from transformation expertise (skills)—this keeps your pipelines maintainable and scalable.
 
+## Related Reading
+
+- [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) — Understand when to run batch jobs sequentially versus in parallel for maximum throughput
+- [Rate Limit Management for Claude Code Skill-Intensive Workflows](/claude-skills-guide/articles/rate-limit-management-claude-code-skill-intensive-workflows/) — Avoid hitting API rate limits when running large batch processing jobs
+- [Fan-Out Fan-In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Distribute batch workloads across multiple subagents and collect results
+- [Claude Skills Hub](/claude-skills-guide/workflows-hub/) — Explore automation workflows and batch processing patterns with Claude Code
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

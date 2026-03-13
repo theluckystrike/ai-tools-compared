@@ -182,4 +182,11 @@ Claude Code loads all skills regardless of origin, and you use them together nat
 
 Building private skills keeps your custom workflows secure and under your control. Start with simple automations, then expand as you discover more opportunities for Claude Code to assist your development workflow.
 
+## Related Reading
+
+- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) — Master the full skill file format before creating your private skills
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — Learn the basics of authoring skill files before keeping them private
+- [How Do I Use Claude Skills in an Air-Gapped Environment](/claude-skills-guide/articles/how-do-i-use-claude-skills-in-an-air-gapped-environment/) — Extend private skill setups to fully offline secure environments
+- [Claude Skills Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill creation and distribution approaches
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

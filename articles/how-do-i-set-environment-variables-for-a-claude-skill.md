@@ -213,4 +213,11 @@ For most skills like pdf, tdd, frontend-design, and supermemory, you'll set vari
 
 With proper configuration, your Claude skills will have access to the APIs, paths, and settings they need to function effectively in your development workflow.
 
+## Related Reading
+
+- [How to Create a Private Claude Skill Not on GitHub](/claude-skills-guide/articles/how-do-i-create-a-private-claude-skill-not-on-github/) — Keep skills and their credentials local without GitHub exposure
+- [Claude Code Permissions Model and Security Guide 2026](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) — Understand security boundaries when exposing environment variables to skills
+- [Claude Code Secret Scanning: Prevent Credential Leaks Guide](/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/) — Ensure API keys and secrets in skills don't leak accidentally
+- [Claude Skills Hub](/claude-skills-guide/getting-started-hub/) — Explore essential skill configuration and setup patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

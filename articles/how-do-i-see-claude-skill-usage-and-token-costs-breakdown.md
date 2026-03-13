@@ -191,4 +191,11 @@ claude --max-tokens 4000 "/pdf summarize this document"
 
 Tracking Claude skill usage requires understanding the built-in token stats commands, logging over time for historical analysis, and being intentional about what you load into context. The `pdf`, `tdd`, `xlsx`, `supermemory`, and `frontend-design` skills each have distinct usage patterns based on their function. Use `--token-stats --breakdown` for detailed per-skill attribution, and log sessions for long-term trend analysis. With these tools, you can monitor costs, optimize workflows, and get maximum value from Claude Code skills.
 
+## Related Reading
+
+- [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/articles/claude-skill-token-usage-profiling-and-optimization/) — Measure and reduce token consumption systematically across your skills
+- [Claude Skill Prompt Compression Techniques](/claude-skills-guide/articles/claude-skill-prompt-compression-techniques/) — Cut skill body token counts by 30-60% without losing quality
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Broad strategies for reducing API costs across all Claude workflows
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced token management and cost optimization strategies
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
