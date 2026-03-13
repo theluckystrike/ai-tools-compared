@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills with GitHub Actions CI/CD Pipeline"
 description: "Learn how to integrate Claude skills into your GitHub Actions CI/CD pipeline to automate code review, testing, and deployment workflows for developer teams."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Skills with GitHub Actions CI/CD Pipeline

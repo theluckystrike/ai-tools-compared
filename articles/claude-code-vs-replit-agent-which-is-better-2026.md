@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Code vs Replit Agent: Which Is Better in 2026?"
 description: "Claude Code vs Replit Agent (2026): autonomous capabilities, deployment workflow, pricing, and which AI coding tool fits your team type."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Code vs Replit Agent: Which Is Better in 2026?

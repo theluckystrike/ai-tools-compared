@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "How to Use Claude Skills with n8n Automation Workflows"
 description: "A practical guide to connecting Claude Code skills with n8n automation workflows, enabling AI-powered nodes in your no-code and low-code pipelines."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # How to Use Claude Skills with n8n Automation Workflows

@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "What Is Claude Code and Why Developers Love It in 2026"
 description: "Claude Code is Anthropic's AI coding assistant in your terminal. Learn what it is, how it works, and why developers are switching to it in 2026."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [getting-started, guides]
+tags: [claude-code, claude-skills, ai-coding]
+reviewed: true
+score: 8
 ---
 
 # What Is Claude Code and Why Developers Love It in 2026

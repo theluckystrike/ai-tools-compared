@@ -1,9 +1,12 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Skills Context Window Exceeded Error Fix"
 description: "Fix context window exceeded errors in Claude Code skills. Token budgeting, session management, and strategies for tdd, pdf, and frontend-design."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+reviewed: true
+score: 8
 ---
 
 # Claude Code Skills Context Window Exceeded Error Fix
