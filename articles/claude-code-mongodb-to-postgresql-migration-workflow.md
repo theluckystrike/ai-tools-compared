@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code MongoDB to PostgreSQL Migration Workflow"
 description: "A practical developer guide for migrating from MongoDB to PostgreSQL using Claude Code with code examples and workflow patterns."
 date: 2026-03-13
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 # MongoDB to PostgreSQL Migration Workflow with Claude Code
