@@ -170,4 +170,10 @@ You can always bypass auto-invocation by prefixing your message with `/no-skill`
 
 ---
 
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — A guide to the skills worth configuring auto-invocation for, covering tdd, frontend-design, supermemory, and more
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — The practical guide to configuring and tuning auto-invocation triggers for your workflow
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — How auto-invocation affects token usage and strategies for keeping costs predictable across sessions
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

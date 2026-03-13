@@ -172,4 +172,12 @@ return [{ json: { retry: false, result: $input.first().json } }];
 
 Using Claude skills with n8n automation workflows puts AI decision-making inside any pipeline you can build visually. The HTTP Request node handles simple prompt calls, while the Execute Command node unlocks full skill execution for heavier workloads. Start with the PR review workflow above and layer in `supermemory` once you need state across workflow runs.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The full list of skills worth integrating into n8n pipelines, including tdd, supermemory, and pdf
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Understanding skill invocation mechanics helps you design n8n workflows that trigger the right skill at the right step
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Practical techniques for keeping n8n workflow API costs under control when running skills on large volumes of events
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

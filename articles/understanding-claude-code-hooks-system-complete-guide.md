@@ -266,4 +266,10 @@ This means you can have a global audit hook that logs everything, plus project-s
 
 ---
 
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Many of the skills that benefit most from hooks (tdd, pdf, frontend-design) are covered here with practical usage guidance
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — Understanding skill structure is a prerequisite for writing hooks that target specific skills correctly
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Auto-invocation and hooks interact closely; understanding both lets you build more precise pre-skill and post-skill logic
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

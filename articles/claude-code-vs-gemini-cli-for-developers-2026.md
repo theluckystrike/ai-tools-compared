@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code vs Gemini CLI for Developers 2026"
-description: "A practical comparison of Claude Code and Google Gemini CLI for developers in 2026, covering features, pricing, workflow integration, and which tool fits which use case."
+description: "Claude Code vs Gemini CLI for developers in 2026. Compare features, pricing, workflow integration, and which AI coding tool fits your use case."
 date: 2026-03-13
 author: theluckystrike
 ---

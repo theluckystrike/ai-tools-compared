@@ -272,4 +272,10 @@ Two spaces before `path` — the nested key under `storage` — are required.
 
 ---
 
+## Related Reading
+
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) — The canonical reference for valid YAML front matter fields, including all optional configuration keys
+- [How to Write a Skill .md File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — A walkthrough for writing skill files from scratch with properly structured YAML that avoids common parse errors
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — How `context_files` and other YAML-configured fields affect token consumption, helping you tune for cost efficiency
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -266,4 +266,12 @@ async function getRelatedContext(databaseId, searchText) {
 
 Integrating Claude skills with the Notion API creates a knowledge management pipeline where AI analysis flows directly into your team's documentation. The `pdf` skill populates databases with structured extracts, `tdd` generates code review docs, and `supermemory` reads existing pages to maintain project context. Build the pipeline incrementally — start with document-to-Notion, then add the two-way reading pattern.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — Covers the pdf and xlsx skills in depth, both of which feed directly into Notion database pipelines like the one described here
+- [How to Share Claude Skills With Your Team](/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/) — If your Notion integration serves a team, this guide covers distributing and standardizing the skills that power it
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Tips for batching and structuring document processing calls to keep API costs manageable at scale
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

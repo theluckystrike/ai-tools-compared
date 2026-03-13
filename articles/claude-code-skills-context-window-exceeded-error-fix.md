@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Skills Context Window Exceeded Error Fix"
-description: "Fix the context window exceeded error when using Claude Code skills. Covers token budgeting, session management, and skill-specific strategies for tdd, pdf, and frontend-design."
+description: "Fix context window exceeded errors in Claude Code skills. Token budgeting, session management, and strategies for tdd, pdf, and frontend-design."
 date: 2026-03-13
 author: theluckystrike
 ---
@@ -193,5 +193,11 @@ Session N+2: /supermemory restore auth-impl
 Each session starts small, uses one or two skills, and ends with a checkpoint.
 
 ---
+
+## Related Reading
+
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Strategies for reducing token consumption per skill invocation, directly addressing the root cause of context window errors
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Profiles the skills most prone to context overruns (tdd, pdf, supermemory) with practical usage guidance
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Auto-invocation can fire multiple skills unexpectedly; understanding the mechanism helps prevent unintended context growth
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

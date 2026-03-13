@@ -104,4 +104,10 @@ They are not really competing for the same developer. If you are reading this an
 
 ---
 
+## Related Reading
+
+- [Anthropic Official Skills vs Community Skills: Which Should You Use?](/claude-skills-guide/articles/anthropic-official-skills-vs-community-skills-comparison/) — Claude Code's skills ecosystem is a key differentiator; this guide explains what is available and how to evaluate options
+- [Claude Skills vs Prompts: Which Is Better for Your Workflow?](/claude-skills-guide/articles/claude-skills-vs-prompts-which-is-better/) — Compares Claude Code's structured skill model to simpler prompt-based approaches used by tools like Replit Agent
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — One of Claude Code's standout capabilities over Replit Agent is context-aware automatic skill firing — this explains how it works
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

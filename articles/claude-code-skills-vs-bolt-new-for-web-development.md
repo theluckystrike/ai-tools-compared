@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Claude Code Skills vs Bolt.new for Web Development"
-description: "Comparing Claude Code skills and Bolt.new for web development in 2026 — covering workflow, project scale, customization, and which tool professional web developers should choose."
+title: "Claude Code Skills vs Bolt.new: 2026 Comparison Guide"
+description: "Claude Code skills vs Bolt.new for web development: workflow, project scale, customization, and which tool professional developers should choose."
 date: 2026-03-13
 author: theluckystrike
 ---

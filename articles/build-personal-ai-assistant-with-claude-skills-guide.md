@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Build Personal AI Assistant with Claude Skills Guide"
-description: "A step-by-step guide to building a personal AI assistant using Claude Code skills. Configure persistent memory, custom workflows, and specialized skills that adapt to how you work."
+description: "Step-by-step guide to building a personal AI assistant with Claude Code skills. Set up persistent memory, custom workflows, and specialized skills."
 date: 2026-03-13
 author: theluckystrike
 ---

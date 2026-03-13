@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Automated Code Documentation Workflow with Claude Skills"
-description: "Learn how to build an automated code documentation workflow using Claude skills. Generate inline docs, README files, and API references from your codebase with step-by-step commands."
+title: "Automated Code Docs Workflow with Claude Skills (2026)"
+description: "Build automated code documentation with Claude skills. Generate inline docs, README files, and API references from your codebase with real commands."
 date: 2026-03-13
 author: theluckystrike
 ---

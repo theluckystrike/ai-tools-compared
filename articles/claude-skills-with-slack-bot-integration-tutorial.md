@@ -261,4 +261,12 @@ function toSlackMarkdown(text) {
 
 This Claude skills with Slack bot integration tutorial covers the full stack from app creation to multi-skill routing and production deployment. The pattern of mapping slash command arguments to skill system prompts is flexible — add new skills by adding entries to the `SKILLS` object. With `supermemory` thread history and `pdf` file handling, your team gets a genuinely useful AI assistant living inside Slack.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The full skills list to consider for Slack bot routing, including tdd, pdf, supermemory, and frontend-design
+- [How to Share Claude Skills With Your Team](/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/) — Guidance on distributing skills across a team, relevant to deploying a shared Slack bot backed by team-maintained skills
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Managing API costs is critical for Slack bots that handle high message volumes; these techniques apply directly
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

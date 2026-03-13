@@ -233,4 +233,12 @@ Follow these guidelines for effective memory management:
 
 The MCP memory server transforms Claude Code from a session-based tool into a persistent, collaborative AI assistant capable of maintaining context across time and sessions.
 
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Covers the supermemory skill and other memory-related capabilities that the MCP memory server extends and enhances
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Understanding how skills and MCP servers interact helps you design agents that retrieve memory at the right points automatically
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Persistent memory via MCP servers can dramatically reduce repeated context loading; this article explains the token savings strategies
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
