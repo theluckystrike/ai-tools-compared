@@ -78,7 +78,7 @@ Choosing between Claude Opus 4.6 and GPT-4o for coding work is a real decision w
 
 **Generating code for a niche Python library:** GPT-4o may have better coverage; worth testing both.
 
-**Agentic multi-step development workflow:** Claude Opus 4.6 via Claude Code with skills is the clear choice.
+**Agentic multi-step development workflow:** Claude Opus 4.6 via Claude Code with [skills](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) is the clear choice.
 
 ---
 
