@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Automate Pull Request Review with Claude Skills"
+title: "How to Automate Pull Request Review with Claude Skills"
 description: "Use Claude skills like /tdd, /supermemory, and /pdf to automate PR reviews and catch issues before human reviewers see the code."
 date: 2026-03-13
 categories: [guides, workflows]

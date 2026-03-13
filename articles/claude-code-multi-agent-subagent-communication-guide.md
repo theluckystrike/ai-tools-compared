@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Claude Code Multi-Agent Subagent Communication"
+title: "Claude Code Multi-Agent Subagent Communication Guide"
 description: "Design multi-agent workflows with Claude Code: spawn subagents, pass context between agents, and coordinate parallel work using print mode."
 date: 2026-03-13
 categories: [advanced, workflows]

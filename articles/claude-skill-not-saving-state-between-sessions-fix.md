@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude Skill Not Saving State Between Sessions Fix"
-description: "Fix Claude Code skills losing state between sessions. Covers supermemory setup, CLAUDE.md project context, file-based state persistence, and common pitfalls."
+description: "Fix Claude Code skills losing state between sessions. Covers supermemory, CLAUDE.md context, file-based persistence, and pitfalls."
 date: 2026-03-13
 categories: [troubleshooting]
 tags: [claude-code, claude-skills, troubleshooting, supermemory, state]

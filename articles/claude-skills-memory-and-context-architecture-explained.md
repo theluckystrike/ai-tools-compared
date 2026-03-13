@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Claude Skills Memory and Context Architecture Explained"
+title: "Claude Skills Memory and Context Architecture Guide"
 description: "How Claude skills manage context and memory across turns and sessions: context_files injection, the supermemory skill, and stateful session design."
 date: 2026-03-13
 categories: [advanced, guides]
