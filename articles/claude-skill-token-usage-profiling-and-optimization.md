@@ -12,7 +12,7 @@ score: 8
 
 # Claude Skill Token Usage Profiling and Optimization
 
-Every token your Claude skill sends to the model costs money and affects response latency. As you build more complex skills—whether you're working with the `pdf` skill for document processing, the `tdd` skill for test-driven development, or custom skills for your workflow—understanding token usage becomes essential for keeping costs down and responses fast.
+Every token your Claude skill sends to the model costs money and affects response latency. As you build more complex skills—whether you're working with the `pdf` skill for document processing, the `tdd` skill for test-driven development, or custom skills for your workflow—understanding token usage becomes essential for keeping costs down and responses fast. For techniques on actually shrinking your skill bodies, see [Claude skill prompt compression techniques](/claude-skills-guide/articles/claude-skill-prompt-compression-techniques/).
 
 This guide covers practical methods for profiling token consumption in your skills and implementing optimization strategies that actually work.
 
@@ -206,7 +206,7 @@ As you create new skills, keep token efficiency in mind from the start:
 3. **Reference over repeat**: Point to external docs rather than copying content
 4. **Test during development**: Measure tokens as you iterate
 
-Skills like `supermemory` for knowledge management or `mcp-builder` for creating MCP servers benefit from this approach from day one.
+Skills like [supermemory for knowledge management](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) or `mcp-builder` for creating MCP servers benefit from this approach from day one.
 
 ## Conclusion
 

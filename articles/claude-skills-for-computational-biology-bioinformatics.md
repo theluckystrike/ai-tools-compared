@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 ---
 
-Computational biology and bioinformatics workflows involve intensive data processing, statistical analysis, and visualization tasks that consume significant researcher time. Claude Code skills provide specialized automation for sequence analysis, genome annotation, protein structure prediction, and reproducible research pipelines. These skills work alongside your existing toolchain—Biopython, Bowtie, BLAST, R/Bioconductor—to accelerate common operations without replacing your core analysis tools.
+Computational biology and bioinformatics workflows involve intensive data processing, statistical analysis, and visualization tasks that consume significant researcher time. Claude Code skills provide specialized automation for sequence analysis, genome annotation, protein structure prediction, and reproducible research pipelines. These skills work alongside your existing toolchain—Biopython, Bowtie, BLAST, R/Bioconductor—to accelerate common operations without replacing your core analysis tools. For a broader look at how Claude skills support data-heavy workflows, the [Claude skills for data science and Jupyter guide](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) covers interactive analysis environments.
 
 Claude skills are Markdown files stored in `~/.claude/skills/` and invoked with `/skill-name` inside a Claude Code session. They provide standing instructions for specialized tasks without requiring Python imports or package installations.
 

@@ -12,7 +12,7 @@ score: 7
 
 # Claude Skills Ecosystem: Predictions for the Next 12 Months
 
-The Claude skills ecosystem has evolved rapidly over the past year, transforming from a collection of simple prompt templates into a sophisticated framework for building autonomous AI agents. As we look ahead to the next twelve months, several key trends are emerging that will shape how developers and power users interact with Claude Code. Here's what to expect.
+The Claude skills ecosystem has evolved rapidly over the past year, transforming from a collection of simple prompt templates into a sophisticated framework for building autonomous AI agents. As we look ahead to the next twelve months, several key trends are emerging that will shape how developers and power users interact with Claude Code. Here's what to expect. For the official development timeline, see the [Claude Code skills roadmap for 2026](/claude-skills-guide/articles/claude-code-skills-roadmap-2026-what-is-coming/).
 
 ## Standardization Through the Model Context Protocol
 
@@ -48,7 +48,7 @@ Expect to see more skills like:
 
 One of the most significant limitations of current skills is their isolation. The next twelve months will bring better mechanisms for skills to work together, passing context and results between each other automatically.
 
-Imagine a workflow where the **pdf** skill extracts data from an invoice, passes it to a spreadsheet skill for analysis, which then triggers a documentation skill to generate a report—all without manual intervention. This composition will be governed by explicit patterns rather than fragile prompts.
+Imagine a workflow where the **pdf** skill extracts data from an invoice, passes it to a spreadsheet skill for analysis, which then triggers a documentation skill to generate a report—all without manual intervention. This composition will be governed by explicit patterns rather than fragile prompts. Today, you can already explore [skill composition patterns](/claude-skills-guide/articles/claude-skill-inheritance-and-composition-patterns/) to build multi-skill workflows.
 
 ```yaml
 # Skill composition example (future capability)
