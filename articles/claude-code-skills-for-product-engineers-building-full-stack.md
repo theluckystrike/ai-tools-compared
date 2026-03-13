@@ -1,13 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Skills for Product Engineers Building Full Stack"
-description: "A practical guide to Claude Code skills that accelerate full-stack development for product engineers—covering frontend, backend, testing, and deployment workflows."
+description: "A practical guide to Claude Code skills that accelerate full-stack development for product engineers—covering frontend, backend, testing, and deployment..."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
 tags: [claude-code, claude-skills, full-stack, product-engineering, workflow]
-reviewed: false
-score: 0
+reviewed: true
+score: 9
 ---
 
 # Claude Code Skills for Product Engineers Building Full Stack
