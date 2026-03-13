@@ -1,13 +1,9 @@
 ---
-layout: post
-title: "Accessible Forms with Claude Code: Error Handling Guide"
-description: "Build accessible, WCAG-compliant forms with proper validation and error handling using Claude Code and frontend-design skill."
+layout: default
+title: "Accessible Forms: Validation Error Handling Guide 2026"
+description: "Build accessible forms with proper validation and error handling using Claude Code skills. Practical examples for developers and power users."
 date: 2026-03-13
-categories: [guides, accessibility]
-tags: [claude-code, claude-skills, accessibility, forms, validation, wcag]
-author: "Claude Skills Guide"
-reviewed: true
-score: 8
+author: theluckystrike
 ---
 
 # Claude Code Accessible Forms: Validation Error Handling Guide
@@ -108,7 +104,7 @@ This pattern updates both visual error display and ARIA attributes, ensuring scr
 
 ## Custom Error Announcements with ARIA
 
-For sophisticated error announcement strategies, go beyond simply setting `aria-live` on a persistent container. Rather than relying on a single live region, consider these approaches:
+The **alg** skill helps implement sophisticated error announcement strategies. Rather than relying solely on `aria-live`, consider these approaches:
 
 ```javascript
 const announceError = (message, containerId) => {
