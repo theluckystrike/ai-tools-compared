@@ -52,7 +52,7 @@ class DocumentProcessingSkill {
 }
 ```
 
-This pattern shines when combined with skills like the `/pdf` skill for document handling or the `/tdd` skill for writing tests alongside your implementation.
+This pattern shines when combined with skills like the `/pdf` skill for document handling or the [/tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) for writing tests alongside your implementation.
 
 ## Method Injection for Dynamic Dependencies
 
@@ -161,5 +161,12 @@ This composition approach works beautifully with the `/frontend-design` skill, w
 Name your injected services clearly and consistently. Use interfaces or documentation to specify what methods your services must implement. Keep constructors focused on dependency acquisition rather than business logic. Finally, consider using containers or factories for complex dependency graphs to keep your skill code clean.
 
 By applying these dependency injection patterns to your Claude Code skills, you create infrastructure that's easier to test, maintain, and extend as your AI agent workflows grow in complexity.
+
+## Related Reading
+
+- [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) — Use the tdd skill alongside dependency injection to write tests before implementing your injected services.
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — Apply clean DI patterns when building your own Claude skill files.
+- [Claude Code Multi Agent Orchestration Patterns Guide](/claude-skills-guide/articles/claude-code-multi-agent-orchestration-patterns-guide/) — Compose skills as injected services in multi-agent orchestration workflows.
+- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Advanced architecture patterns for modular, production-grade Claude skill systems.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
