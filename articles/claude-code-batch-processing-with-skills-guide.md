@@ -12,7 +12,7 @@ score: 9
 
 # Claude Code Batch Processing with Skills Guide
 
-Claude Code skills transform how developers handle repetitive tasks. Instead of processing files one at a time, you can chain skills together to handle batch operations across entire directories. This guide shows you how to build efficient batch processing workflows using Claude skills.
+Claude Code skills transform how developers handle repetitive tasks. Instead of processing files one at a time, you can chain skills together to handle batch operations across entire directories. This guide shows you how to build efficient batch processing workflows using Claude skills. For multi-agent approaches to parallel workloads, see [fan-out fan-in pattern with Claude Code subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/).
 
 ## How Batch Processing Works with Skills
 
@@ -140,7 +140,7 @@ This processes multiple component files and aggregates the documentation into a 
 
 ## Memory-Augmented Batch Processing
 
-The supermemory skill enhances batch processing by maintaining context across iterations. When processing related files, this prevents redundant work:
+The [supermemory skill enhances batch processing](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) by maintaining context across iterations. When processing related files, this prevents redundant work:
 
 ```
 /supermemory

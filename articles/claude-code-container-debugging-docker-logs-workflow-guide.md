@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Container Debugging: Docker Logs Workflow Guide
 
-Debugging containerized applications requires a systematic approach to log analysis, process inspection, and runtime investigation. This guide provides a practical workflow for debugging Docker containers using Claude Code, covering essential commands, automation patterns, and real-world scenarios that developers encounter daily.
+Debugging containerized applications requires a systematic approach to log analysis, process inspection, and runtime investigation. This guide provides a practical workflow for debugging Docker containers using Claude Code, covering essential commands, automation patterns, and real-world scenarios that developers encounter daily. For setting up Claude Code itself inside Docker containers, see the [Claude Code with Docker container setup guide](/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/).
 
 ## Understanding the Container Debugging Challenge
 
@@ -112,7 +112,7 @@ This approach lets you run network diagnostic tools against the target container
 
 Claude Code accelerates container debugging through natural language commands and skill-based automation. When debugging containers, you can use specific skills to enhance productivity.
 
-The `supermemory` skill maintains a running log of debugging steps, findings, and hypotheses. During complex debugging sessions spanning multiple terminals and time periods, this skill preserves context that would otherwise be lost:
+The [supermemory skill maintains a running log](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) of debugging steps, findings, and hypotheses. During complex debugging sessions spanning multiple terminals and time periods, this skill preserves context that would otherwise be lost:
 
 ```
 /supermemory
@@ -231,6 +231,13 @@ logging:
 
 Container debugging requires familiarity with Docker's inspection capabilities, log management, and runtime analysis. The workflow presented here provides a structured approach: collect logs, inspect container state, interactively debug when necessary, and automate repetitive tasks.
 
-Claude Code enhances this workflow through skills that maintain context, generate tests, and extract information efficiently. Combine these tools with solid logging practices and automation scripts to handle container issues confidently in production environments.
+Claude Code enhances this workflow through skills that maintain context, generate tests, and extract information efficiently. Combine these tools with solid logging practices and automation scripts to handle container issues confidently in production environments. For monitoring multi-container systems, see [monitoring and logging Claude Code multi-agent systems](/claude-skills-guide/articles/monitoring-and-logging-claude-code-multi-agent-systems/).
+
+## Related Reading
+
+- [Claude Code with Docker: Container Setup Guide](/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/) — Set up Claude Code to run inside Docker containers for consistent debugging environments
+- [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) — Preserve debugging findings and hypotheses across multi-session investigations
+- [Monitoring and Logging Claude Code Multi-Agent Systems](/claude-skills-guide/articles/monitoring-and-logging-claude-code-multi-agent-systems/) — Extend container logging to multi-agent orchestration scenarios
+- [Claude Code Segfault and Core Dump Analysis Workflow](/claude-skills-guide/articles/claude-code-segfault-core-dump-analysis-workflow-guide/) — Debug deeper container crashes with core dump analysis
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
