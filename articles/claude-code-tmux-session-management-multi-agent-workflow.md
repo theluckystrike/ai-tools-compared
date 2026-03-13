@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Tmux Session Management Multi Agent Workflow"
-description: "Master tmux session management for Claude Code multi-agent workflows. Learn to orchestrate parallel AI agents, manage terminal sessions, and automate complex development tasks."
+description: "Master tmux session management for Claude Code multi-agent workflows. Learn to orchestrate parallel AI agents, manage terminal sessions, and automate compl"
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Claude Code Tmux Session Management Multi Agent Workflow

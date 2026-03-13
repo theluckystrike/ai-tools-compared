@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Skills for Scientific Python: NumPy and SciPy"
 description: "Master scientific computing with Claude Code skills. Learn how to automate NumPy arrays, SciPy computations, and data visualization workflows."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 Scientific computing with Python relies heavily on NumPy and SciPy libraries for numerical computation, linear algebra, optimization, and statistical analysis. Claude Code skills can significantly accelerate development workflows involving these scientific libraries, from generating boilerplate code to automating complex mathematical computations and creating publication-ready visualizations.
