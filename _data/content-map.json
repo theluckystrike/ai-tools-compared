@@ -1,12 +1,12 @@
 {
-  "generated": "2026-03-13 23:14",
-  "total": 135,
+  "generated": "2026-03-14 06:23",
+  "total": 141,
   "articles": [
     {
       "filename": "advanced-claude-skills-with-tool-use-and-function-calling.md",
       "title": "Advanced Claude Skills: Tool Use Patterns 2026",
       "url": "/claude-skills-guide/articles/advanced-claude-skills-with-tool-use-and-function-calling/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -34,21 +34,21 @@
       "filename": "automated-code-documentation-workflow-with-claude-skills.md",
       "title": "Automated Code Documentation Workflow with Claude Skills",
       "url": "/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "automated-testing-pipeline-with-claude-tdd-skill-2026.md",
       "title": "Automated Testing Pipeline with Claude TDD Skill (2026)",
       "url": "/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "best-claude-code-skills-for-frontend-development.md",
       "title": "Best Claude Code Skills for Frontend Development",
       "url": "/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -62,84 +62,84 @@
       "filename": "best-claude-skills-for-code-review-automation.md",
       "title": "Best Claude Skills for Code Review Automation",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "best-claude-skills-for-data-analysis.md",
       "title": "Best Claude Skills for Data Analysis in 2026",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-data-analysis/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "best-claude-skills-for-developers-2026.md",
       "title": "Best Claude Skills for Developers in 2026",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-developers-2026/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "best-claude-skills-for-devops-and-deployment.md",
       "title": "Best Claude Skills for DevOps and Deployment",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "best-claude-skills-for-solo-developers-and-freelancers.md",
       "title": "Best Claude Skills for Solo Developers and Freelancers",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-solo-developers-and-freelancers/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "best-claude-skills-for-writing-and-content-creation.md",
       "title": "Best Claude Skills for Writing and Content Creation",
       "url": "/claude-skills-guide/articles/best-claude-skills-for-writing-and-content-creation/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "build-personal-ai-assistant-with-claude-skills-guide.md",
       "title": "Build a Personal AI Assistant with Claude Skills Guide",
       "url": "/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "building-production-ai-agents-with-claude-skills-2026.md",
       "title": "Building Production AI Agents with Claude Skills in 2026",
       "url": "/claude-skills-guide/articles/building-production-ai-agents-with-claude-skills-2026/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "building-stateful-agents-with-claude-skills-guide.md",
       "title": "Building Stateful Agents with Claude Skills Guide",
       "url": "/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-4-skills-improvements-and-new-features.md",
       "title": "Claude 4 Skills: New Features and Improvements Guide",
       "url": "/claude-skills-guide/articles/claude-4-skills-improvements-and-new-features/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-agent-sandbox-skill-isolated-environments.md",
       "title": "Claude Agent Sandbox Skill: Complete Guide (2026)",
       "url": "/claude-skills-guide/articles/claude-agent-sandbox-skill-isolated-environments/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-2026-new-features-skills-and-hooks-roundup.md",
       "title": "Claude Code 2026: Skills and Hooks Feature Roundup",
       "url": "/claude-skills-guide/articles/claude-code-2026-new-features-skills-and-hooks-roundup/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -153,22 +153,29 @@
       "filename": "claude-code-astro-static-site-generation-workflow-guide.md",
       "title": "Claude Code Astro Static Site Generation Workflow Guide",
       "url": "/claude-skills-guide/articles/claude-code-astro-static-site-generation-workflow-guide/",
-      "cluster": "workflows",
+      "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-azure-devops-integration-workflow-tutorial.md",
       "title": "Claude Code Azure DevOps Integration Workflow Tutorial",
       "url": "/claude-skills-guide/articles/claude-code-azure-devops-integration-workflow-tutorial/",
-      "cluster": "workflows",
+      "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-bundle-size-reduction-webpack-vite-workflow.md",
       "title": "Bundle Size Reduction: Webpack to Vite 2026 Guide",
       "url": "/claude-skills-guide/articles/claude-code-bundle-size-reduction-webpack-vite-workflow/",
-      "cluster": "workflows",
+      "cluster": "best-of",
       "linked": true
+    },
+    {
+      "filename": "claude-code-cloudformation-template-generation-workflow-guid.md",
+      "title": "Claude Code CloudFormation Template Generation Workflow Guid",
+      "url": "/claude-skills-guide/articles/claude-code-cloudformation-template-generation-workflow-guid/",
+      "cluster": "use-cases",
+      "linked": false
     },
     {
       "filename": "claude-code-color-contrast-accessibility-fix-workflow.md",
@@ -188,7 +195,7 @@
       "filename": "claude-code-csp-content-security-policy-generation-guide.md",
       "title": "Claude Code CSP Content Security Policy Generation Guide",
       "url": "/claude-skills-guide/articles/claude-code-csp-content-security-policy-generation-guide/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -199,17 +206,24 @@
       "linked": true
     },
     {
+      "filename": "claude-code-express-middleware-error-handling-patterns-guide.md",
+      "title": "Claude Code Express Middleware Error Handling Patterns Guide",
+      "url": "/claude-skills-guide/articles/claude-code-express-middleware-error-handling-patterns-guide/",
+      "cluster": "getting-started",
+      "linked": false
+    },
+    {
       "filename": "claude-code-express-to-fastify-migration-tutorial-2026.md",
       "title": "Express to Fastify Migration with Claude Code (2026)",
       "url": "/claude-skills-guide/articles/claude-code-express-to-fastify-migration-tutorial-2026/",
-      "cluster": "use-cases",
+      "cluster": "best-of",
       "linked": true
     },
     {
       "filename": "claude-code-extended-thinking-skills-integration-guide.md",
       "title": "Extended Thinking + Claude Skills: Integration Guide",
       "url": "/claude-skills-guide/articles/claude-code-extended-thinking-skills-integration-guide/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -230,7 +244,7 @@
       "filename": "claude-code-gdpr-data-privacy-implementation-checklist.md",
       "title": "GDPR Data Privacy Implementation with Claude Code 2026",
       "url": "/claude-skills-guide/articles/claude-code-gdpr-data-privacy-implementation-checklist/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -241,17 +255,24 @@
       "linked": true
     },
     {
+      "filename": "claude-code-gitlab-ci-pipeline-docker-registry-tutorial.md",
+      "title": "Claude Code GitLab CI Pipeline Docker Registry Tutorial",
+      "url": "/claude-skills-guide/articles/claude-code-gitlab-ci-pipeline-docker-registry-tutorial/",
+      "cluster": "integrations",
+      "linked": true
+    },
+    {
       "filename": "claude-code-hipaa-compliant-development-workflow-guide.md",
       "title": "Claude Code HIPAA Compliant Development Workflow Guide",
       "url": "/claude-skills-guide/articles/claude-code-hipaa-compliant-development-workflow-guide/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-input-validation-sanitization-patterns-guide.md",
       "title": "Input Validation and Sanitization with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-input-validation-sanitization-patterns-guide/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -265,7 +286,7 @@
       "filename": "claude-code-kotlin-android-development-workflow-guide.md",
       "title": "Kotlin Android Development with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-kotlin-android-development-workflow-guide/",
-      "cluster": "workflows",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -286,7 +307,7 @@
       "filename": "claude-code-llm-evaluation-and-benchmarking-workflow.md",
       "title": "LLM Evaluation and Benchmarking with Claude Code 2026",
       "url": "/claude-skills-guide/articles/claude-code-llm-evaluation-and-benchmarking-workflow/",
-      "cluster": "workflows",
+      "cluster": "best-of",
       "linked": true
     },
     {
@@ -300,7 +321,7 @@
       "filename": "claude-code-mongodb-to-postgresql-migration-workflow.md",
       "title": "Claude Code MongoDB to PostgreSQL Migration Workflow",
       "url": "/claude-skills-guide/articles/claude-code-mongodb-to-postgresql-migration-workflow/",
-      "cluster": "workflows",
+      "cluster": "best-of",
       "linked": true
     },
     {
@@ -321,7 +342,7 @@
       "filename": "claude-code-owasp-top-10-security-scanning-workflow.md",
       "title": "Claude Code OWASP Top 10 Security Scanning Workflow",
       "url": "/claude-skills-guide/articles/claude-code-owasp-top-10-security-scanning-workflow/",
-      "cluster": "getting-started",
+      "cluster": "best-of",
       "linked": true
     },
     {
@@ -332,17 +353,38 @@
       "linked": true
     },
     {
+      "filename": "claude-code-pytest-fixtures-parametrize-workflow-tutorial-20.md",
+      "title": "Claude Code Pytest Fixtures Parametrize Workflow Tutorial 20",
+      "url": "/claude-skills-guide/articles/claude-code-pytest-fixtures-parametrize-workflow-tutorial-20/",
+      "cluster": "getting-started",
+      "linked": false
+    },
+    {
+      "filename": "claude-code-qwik-resumability-lazy-loading-workflow-guide.md",
+      "title": "Claude Code Qwik Resumability Lazy Loading Workflow Guide",
+      "url": "/claude-skills-guide/articles/claude-code-qwik-resumability-lazy-loading-workflow-guide/",
+      "cluster": "use-cases",
+      "linked": false
+    },
+    {
+      "filename": "claude-code-remix-loader-action-data-fetching-tutorial.md",
+      "title": "Claude Code Remix Loader Action Data Fetching Tutorial",
+      "url": "/claude-skills-guide/articles/claude-code-remix-loader-action-data-fetching-tutorial/",
+      "cluster": "use-cases",
+      "linked": false
+    },
+    {
       "filename": "claude-code-scala-functional-programming-workflow-tips.md",
       "title": "Claude Code Scala Functional Programming Workflow Tips",
       "url": "/claude-skills-guide/articles/claude-code-scala-functional-programming-workflow-tips/",
-      "cluster": "workflows",
+      "cluster": "best-of",
       "linked": true
     },
     {
       "filename": "claude-code-secret-scanning-prevent-credential-leaks-guide.md",
       "title": "Claude Code Secret Scanning: Prevent Credential Leaks Guide",
       "url": "/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -356,7 +398,7 @@
       "filename": "claude-code-segfault-core-dump-analysis-workflow-guide.md",
       "title": "Segfault and Core Dump Analysis with Claude Code Guide",
       "url": "/claude-skills-guide/articles/claude-code-segfault-core-dump-analysis-workflow-guide/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -412,7 +454,7 @@
       "filename": "claude-code-skills-for-infrastructure-as-code-terraform.md",
       "title": "Claude Code Skills for Terraform IaC: Complete Guide",
       "url": "/claude-skills-guide/articles/claude-code-skills-for-infrastructure-as-code-terraform/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -426,28 +468,28 @@
       "filename": "claude-code-skills-zapier-integration-step-by-step.md",
       "title": "Claude Code Skills + Zapier: Step-by-Step",
       "url": "/claude-skills-guide/articles/claude-code-skills-zapier-integration-step-by-step/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-soc2-compliance-audit-preparation-guide-2026.md",
       "title": "Claude Code SOC 2 Compliance Audit Preparation Guide 2026",
       "url": "/claude-skills-guide/articles/claude-code-soc2-compliance-audit-preparation-guide-2026/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
       "filename": "claude-code-spring-boot-java-microservices-development.md",
       "title": "Claude Code Spring Boot Java Microservices Guide 2026",
       "url": "/claude-skills-guide/articles/claude-code-spring-boot-java-microservices-development/",
-      "cluster": "use-cases",
+      "cluster": "best-of",
       "linked": true
     },
     {
       "filename": "claude-code-vercel-deployment-nextjs-workflow-guide.md",
       "title": "Claude Code Vercel Deployment Next.js Workflow Guide",
       "url": "/claude-skills-guide/articles/claude-code-vercel-deployment-nextjs-workflow-guide/",
-      "cluster": "workflows",
+      "cluster": "use-cases",
       "linked": true
     },
     {
@@ -503,14 +545,14 @@
       "filename": "claude-code-with-docker-container-skill-setup-guide.md",
       "title": "Claude Code with Docker: Container Setup Guide",
       "url": "/claude-skills-guide/articles/claude-code-with-docker-container-skill-setup-guide/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-code-worktrees-and-skills-isolation-explained.md",
       "title": "Claude Code Worktrees and Skills Isolation Guide",
       "url": "/claude-skills-guide/articles/claude-code-worktrees-and-skills-isolation-explained/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -524,7 +566,7 @@
       "filename": "claude-frontend-design-skill-review-and-tutorial.md",
       "title": "Claude Frontend Design Skill Review and Tutorial",
       "url": "/claude-skills-guide/articles/claude-frontend-design-skill-review-and-tutorial/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -580,49 +622,49 @@
       "filename": "claude-skills-automated-blog-post-workflow-tutorial.md",
       "title": "Automated Blog Workflow with Claude Skills",
       "url": "/claude-skills-guide/articles/claude-skills-automated-blog-post-workflow-tutorial/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-automated-dependency-update-workflow.md",
       "title": "Claude Skills Automated Dependency Update Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-automated-dependency-update-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-automated-social-media-content-workflow.md",
       "title": "Claude Skills Automated Social Media Content Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-automated-social-media-content-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-aws-lambda-serverless-integration.md",
       "title": "Claude Skills + AWS Lambda: Serverless Guide",
       "url": "/claude-skills-guide/articles/claude-skills-aws-lambda-serverless-integration/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-competitive-analysis-automation-workflow.md",
       "title": "Claude Skills: Competitive Analysis Automation Guide",
       "url": "/claude-skills-guide/articles/claude-skills-competitive-analysis-automation-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-context-window-management-best-practices.md",
       "title": "Claude Skills Context Window Management Best Practices",
       "url": "/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-daily-standup-automation-workflow.md",
       "title": "Claude Skills Daily Standup Automation Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-daily-standup-automation-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -636,7 +678,7 @@
       "filename": "claude-skills-email-drafting-automation-workflow.md",
       "title": "Claude Skills Email Drafting Automation Workflow",
       "url": "/claude-skills-guide/articles/claude-skills-email-drafting-automation-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -650,14 +692,14 @@
       "filename": "claude-skills-for-automated-github-issue-triage.md",
       "title": "Automated GitHub Issue Triage with Claude Skills Guide",
       "url": "/claude-skills-guide/articles/claude-skills-for-automated-github-issue-triage/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-for-data-science-and-jupyter-notebooks.md",
       "title": "Claude Skills for Data Science and Jupyter: 2026 Guide",
       "url": "/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -671,28 +713,28 @@
       "filename": "claude-skills-for-seo-content-generation-workflow.md",
       "title": "Claude Skills for SEO Content Generation: 2026 Guide",
       "url": "/claude-skills-guide/articles/claude-skills-for-seo-content-generation-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-for-startup-founders-and-solopreneurs.md",
       "title": "Claude Skills for Startup Founders and Solopreneurs 2026",
       "url": "/claude-skills-guide/articles/claude-skills-for-startup-founders-and-solopreneurs/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-marketplace-skillsmp-guide-for-publishers.md",
       "title": "Claude Skills for Publishers: A Practical Guide",
       "url": "/claude-skills-guide/articles/claude-skills-marketplace-skillsmp-guide-for-publishers/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-memory-and-context-architecture-explained.md",
       "title": "Claude Skills Memory and Context Architecture Guide",
       "url": "/claude-skills-guide/articles/claude-skills-memory-and-context-architecture-explained/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -706,7 +748,7 @@
       "filename": "claude-skills-token-optimization-reduce-api-costs.md",
       "title": "Claude Skills Token Optimization: Reduce API Costs Guide",
       "url": "/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -741,63 +783,63 @@
       "filename": "claude-skills-with-github-actions-ci-cd-pipeline.md",
       "title": "Claude Skills with GitHub Actions CI/CD Pipeline 2026",
       "url": "/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-with-linear-project-management-tutorial.md",
       "title": "Claude Skills with Linear Project Management Tutorial",
       "url": "/claude-skills-guide/articles/claude-skills-with-linear-project-management-tutorial/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-with-slack-bot-integration-tutorial.md",
       "title": "Claude Skills with Slack Bot Integration Tutorial",
       "url": "/claude-skills-guide/articles/claude-skills-with-slack-bot-integration-tutorial/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-with-supabase-database-integration.md",
       "title": "Claude Skills with Supabase: Practical Workflows",
       "url": "/claude-skills-guide/articles/claude-skills-with-supabase-database-integration/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-skills-with-vercel-deployment-automation.md",
       "title": "Claude Skills + Vercel Deployment Automation Guide",
       "url": "/claude-skills-guide/articles/claude-skills-with-vercel-deployment-automation/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-supermemory-skill-persistent-context-explained.md",
       "title": "Claude SuperMemory Skill: Persistent Context Guide 2026",
       "url": "/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/",
-      "cluster": "advanced",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-tdd-skill-test-driven-development-workflow.md",
       "title": "Claude TDD Skill: Test-Driven Development Guide (2026)",
       "url": "/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "claude-xlsx-skill-spreadsheet-automation-tutorial.md",
       "title": "Claude /xlsx Skill: Spreadsheet Automation Guide",
       "url": "/claude-skills-guide/articles/claude-xlsx-skill-spreadsheet-automation-tutorial/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "full-stack-web-app-with-claude-skills-step-by-step.md",
       "title": "Full Stack Web App with Claude Skills Step-by-Step",
       "url": "/claude-skills-guide/articles/full-stack-web-app-with-claude-skills-step-by-step/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -811,42 +853,42 @@
       "filename": "how-to-automate-client-reports-with-claude-skills.md",
       "title": "How to Automate Client Reports with Claude Skills",
       "url": "/claude-skills-guide/articles/how-to-automate-client-reports-with-claude-skills/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-automate-code-reviews-with-claude-skills.md",
       "title": "How to Automate Code Reviews with Claude Skills",
       "url": "/claude-skills-guide/articles/how-to-automate-code-reviews-with-claude-skills/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-automate-pull-request-review-with-claude-skill.md",
       "title": "How to Automate Pull Request Review with Claude Skills",
       "url": "/claude-skills-guide/articles/how-to-automate-pull-request-review-with-claude-skill/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-build-saas-mvp-with-claude-code-skills-guide.md",
       "title": "How to Build a SaaS MVP with Claude Code Skills Guide",
       "url": "/claude-skills-guide/articles/how-to-build-saas-mvp-with-claude-code-skills-guide/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-connect-claude-skills-to-external-apis-guide.md",
       "title": "How to Connect Claude Skills to External APIs Guide",
       "url": "/claude-skills-guide/articles/how-to-connect-claude-skills-to-external-apis-guide/",
-      "cluster": "best-of",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-contribute-claude-skills-to-open-source.md",
       "title": "How to Contribute Claude Skills to Open Source",
       "url": "/claude-skills-guide/articles/how-to-contribute-claude-skills-to-open-source/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -860,28 +902,28 @@
       "filename": "how-to-integrate-claude-skills-with-notion-api-guide.md",
       "title": "How to Integrate Claude Skills with Notion API Guide",
       "url": "/claude-skills-guide/articles/how-to-integrate-claude-skills-with-notion-api-guide/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-optimize-claude-skill-prompts-for-accuracy.md",
       "title": "How to Optimize Claude Skill Prompts for Accuracy",
       "url": "/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/",
-      "cluster": "use-cases",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-share-claude-skills-with-your-team.md",
       "title": "How to Share Claude Skills with Your Team",
       "url": "/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
       "filename": "how-to-use-claude-skills-with-n8n-automation-workflows.md",
       "title": "How to Use Claude Skills with n8n Automation Workflows",
       "url": "/claude-skills-guide/articles/how-to-use-claude-skills-with-n8n-automation-workflows/",
-      "cluster": "workflows",
+      "cluster": "getting-started",
       "linked": true
     },
     {
@@ -895,7 +937,7 @@
       "filename": "is-claude-code-worth-it-honest-beginner-review-2026.md",
       "title": "Is Claude Code Worth It? An Honest Beginner Review 2026",
       "url": "/claude-skills-guide/articles/is-claude-code-worth-it-honest-beginner-review-2026/",
-      "cluster": "best-of",
+      "cluster": "workflows",
       "linked": true
     },
     {
@@ -930,7 +972,7 @@
       "filename": "understanding-claude-code-hooks-system-complete-guide.md",
       "title": "Claude Code Hooks System: Complete Guide",
       "url": "/claude-skills-guide/articles/understanding-claude-code-hooks-system-complete-guide/",
-      "cluster": "getting-started",
+      "cluster": "use-cases",
       "linked": true
     },
     {
