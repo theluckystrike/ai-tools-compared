@@ -1,13 +1,9 @@
 ---
-layout: post
+layout: default
 title: "Full Stack Web App with Claude Skills Step by Step"
 description: "A practical guide to building a full stack web application using Claude Code skills. From project setup to deployment, learn how to leverage specialized skills for each development phase."
 date: 2026-03-13
-categories: [skills, guides]
-tags: [claude-code, full-stack, web-development, tdd, frontend-design, backend]
 author: theluckystrike
-reviewed: true
-score: 8
 ---
 
 # Full Stack Web App with Claude Skills Step by Step
