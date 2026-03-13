@@ -203,4 +203,11 @@ Start with simple retry logic, add checkpointing for longer workflows, and progr
 
 ---
 
+## Related Reading
+
+- [Claude Opus Orchestrator-Sonnet-Worker Architecture](/claude-skills-guide/articles/claude-opus-orchestrator-sonnet-worker-architecture/) — Design fault-tolerant architectures with orchestrators that handle worker failures
+- [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) — Choose pipeline execution models that minimize cascading errors
+- [Monitoring and Logging Claude Code Multi-Agent Systems](/claude-skills-guide/articles/monitoring-and-logging-claude-code-multi-agent-systems/) — Detect and diagnose errors before they require manual recovery
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced multi-agent reliability and error handling patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

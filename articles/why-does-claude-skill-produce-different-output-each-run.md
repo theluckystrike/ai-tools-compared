@@ -111,4 +111,11 @@ Understanding why Claude skills produce different outputs each run puts you in c
 
 ---
 
+## Related Reading
+
+- [How to Optimize Claude Skill Prompts for Accuracy](/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/) — Structure skill prompts to reduce output variability and improve consistency
+- [Claude Skill Prompt Compression Techniques](/claude-skills-guide/articles/claude-skill-prompt-compression-techniques/) — Write tighter, more deterministic skill prompts
+- [Claude Skill State Machine Design Patterns](/claude-skills-guide/articles/claude-skill-state-machine-design-patterns/) — Use state machines to enforce consistent skill output across runs
+- [Claude Skills Hub](/claude-skills-guide/troubleshooting-hub/) — Find solutions to skill consistency and determinism issues
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

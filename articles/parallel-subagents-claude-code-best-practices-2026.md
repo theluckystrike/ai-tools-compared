@@ -182,4 +182,11 @@ Parallel subagents represent one of Claude Code's most powerful capabilities for
 
 The key is starting simple: identify truly parallel work in your current tasks, spawn subagents to handle it, and iteratively refine your approach as you gain experience.
 
+## Related Reading
+
+- [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) — Understand when to choose parallel versus sequential pipeline execution
+- [Fan-Out Fan-In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Implement the fan-out fan-in pattern for controlled parallel subagent workflows
+- [Claude Code Tmux Session Management Multi Agent Workflow](/claude-skills-guide/articles/claude-code-tmux-session-management-multi-agent-workflow/) — Manage parallel subagent sessions visually with tmux terminal multiplexing
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced parallel execution and subagent orchestration patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
