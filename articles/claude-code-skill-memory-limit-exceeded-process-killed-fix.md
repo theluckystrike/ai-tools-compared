@@ -7,7 +7,7 @@ categories: [troubleshooting]
 tags: [claude-code, claude-skills, memory, troubleshooting, process-killed]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Claude Code Skill Memory Limit Exceeded Process Killed Fix
