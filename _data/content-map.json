@@ -1,13 +1,13 @@
 {
-  "generated": "2026-03-13 21:44",
-  "total": 105,
+  "generated": "2026-03-13 21:58",
+  "total": 113,
   "articles": [
     {
       "filename": "advanced-claude-skills-with-tool-use-and-function-calling.md",
       "title": "Advanced Claude Skills: Tool Use Patterns",
       "url": "/claude-skills-guide/articles/advanced-claude-skills-with-tool-use-and-function-calling/",
       "cluster": "best-of",
-      "linked": false
+      "linked": true
     },
     {
       "filename": "anthropic-model-context-protocol-updates-march-2026.md",
@@ -143,11 +143,32 @@
       "linked": true
     },
     {
+      "filename": "claude-code-astro-static-site-generation-workflow-guide.md",
+      "title": "Claude Code Astro Static Site Generation Workflow Guide",
+      "url": "/claude-skills-guide/articles/claude-code-astro-static-site-generation-workflow-guide/",
+      "cluster": "best-of",
+      "linked": true
+    },
+    {
+      "filename": "claude-code-azure-devops-integration-workflow-tutorial.md",
+      "title": "Claude Code Azure DevOps Integration Workflow Tutorial",
+      "url": "/claude-skills-guide/articles/claude-code-azure-devops-integration-workflow-tutorial/",
+      "cluster": "use-cases",
+      "linked": false
+    },
+    {
       "filename": "claude-code-crashes-when-loading-skill-debug-steps.md",
       "title": "Claude Code Crashes When Loading Skill: Debug Steps",
       "url": "/claude-skills-guide/articles/claude-code-crashes-when-loading-skill-debug-steps/",
       "cluster": "getting-started",
       "linked": true
+    },
+    {
+      "filename": "claude-code-dart-flutter-cross-platform-development-guide.md",
+      "title": "Claude Code Dart Flutter Cross Platform Development Guide",
+      "url": "/claude-skills-guide/articles/claude-code-dart-flutter-cross-platform-development-guide/",
+      "cluster": "best-of",
+      "linked": false
     },
     {
       "filename": "claude-code-extended-thinking-skills-integration-guide.md",
@@ -161,6 +182,13 @@
       "title": "Claude Code for Beginners: Getting Started 2026",
       "url": "/claude-skills-guide/articles/claude-code-for-beginners-complete-getting-started-2026/",
       "cluster": "getting-started",
+      "linked": true
+    },
+    {
+      "filename": "claude-code-gcp-google-cloud-setup-and-deployment-guide.md",
+      "title": "Claude Code GCP Google Cloud Setup and Deployment Guide",
+      "url": "/claude-skills-guide/articles/claude-code-gcp-google-cloud-setup-and-deployment-guide/",
+      "cluster": "use-cases",
       "linked": false
     },
     {
@@ -179,10 +207,24 @@
     },
     {
       "filename": "claude-code-permissions-model-security-guide-2026.md",
-      "title": "Claude Code Permissions Model and Security Guide 2026",
+      "title": "Claude Code Permissions Model and Security Guide",
       "url": "/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/",
       "cluster": "best-of",
       "linked": true
+    },
+    {
+      "filename": "claude-code-scala-functional-programming-workflow-tips.md",
+      "title": "Claude Code Scala Functional Programming Workflow Tips",
+      "url": "/claude-skills-guide/articles/claude-code-scala-functional-programming-workflow-tips/",
+      "cluster": "best-of",
+      "linked": false
+    },
+    {
+      "filename": "claude-code-selenium-browser-testing-automation-guide.md",
+      "title": "Claude Code Selenium Browser Testing Automation Guide",
+      "url": "/claude-skills-guide/articles/claude-code-selenium-browser-testing-automation-guide/",
+      "cluster": "best-of",
+      "linked": false
     },
     {
       "filename": "claude-code-skill-output-formatting-broken-fix.md",
@@ -239,6 +281,20 @@
       "url": "/claude-skills-guide/articles/claude-code-skills-zapier-integration-step-by-step/",
       "cluster": "use-cases",
       "linked": true
+    },
+    {
+      "filename": "claude-code-spring-boot-java-microservices-development.md",
+      "title": "Claude Code Spring Boot Java Microservices Development",
+      "url": "/claude-skills-guide/articles/claude-code-spring-boot-java-microservices-development/",
+      "cluster": "best-of",
+      "linked": false
+    },
+    {
+      "filename": "claude-code-vercel-deployment-nextjs-workflow-guide.md",
+      "title": "Claude Code Vercel Deployment Next.js Workflow Guide",
+      "url": "/claude-skills-guide/articles/claude-code-vercel-deployment-nextjs-workflow-guide/",
+      "cluster": "use-cases",
+      "linked": false
     },
     {
       "filename": "claude-code-vs-amazon-q-developer-comparison-2026.md",
@@ -319,7 +375,7 @@
     },
     {
       "filename": "claude-memory-feature-vs-supermemory-skill-comparison.md",
-      "title": "Claude Memory Feature vs SuperMemory Skill Comparison",
+      "title": "Claude Memory Feature vs SuperMemory Skill",
       "url": "/claude-skills-guide/articles/claude-memory-feature-vs-supermemory-skill-comparison/",
       "cluster": "comparisons",
       "linked": true
@@ -343,7 +399,7 @@
       "title": "Claude Skill Not Saving State Between Sessions Fix",
       "url": "/claude-skills-guide/articles/claude-skill-not-saving-state-between-sessions-fix/",
       "cluster": "getting-started",
-      "linked": true
+      "linked": false
     },
     {
       "filename": "claude-skill-not-triggering-automatically-troubleshoot.md",
@@ -445,7 +501,7 @@
     },
     {
       "filename": "claude-skills-for-data-science-and-jupyter-notebooks.md",
-      "title": "Claude Skills for Data Science and Jupyter Notebooks",
+      "title": "Claude Skills for Data Science and Jupyter: 2026 Guide",
       "url": "/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/",
       "cluster": "use-cases",
       "linked": true
@@ -480,7 +536,7 @@
     },
     {
       "filename": "claude-skills-memory-and-context-architecture-explained.md",
-      "title": "Claude Skills Memory and Context Architecture Explained",
+      "title": "Claude Skills Memory and Context Architecture",
       "url": "/claude-skills-guide/articles/claude-skills-memory-and-context-architecture-explained/",
       "cluster": "advanced",
       "linked": true
@@ -690,7 +746,7 @@
     },
     {
       "filename": "mcp-memory-server-persistent-storage-for-claude-agents.md",
-      "title": "MCP Memory Server: Persistent Storage for Claude Agents (2026)",
+      "title": "MCP Memory Server: Persistent Storage for Claude",
       "url": "/claude-skills-guide/articles/mcp-memory-server-persistent-storage-for-claude-agents/",
       "cluster": "advanced",
       "linked": true
