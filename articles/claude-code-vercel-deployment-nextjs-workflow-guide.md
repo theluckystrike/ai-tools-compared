@@ -1,24 +1,26 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Vercel Deployment Next.js Workflow Guide"
 description: "Master Claude Code deployment to Vercel for Next.js: automated previews, production builds, environment management, and CI/CD pipelines with practical examples."
 date: 2026-03-13
-author: theluckystrike
+categories: [integrations, guides]
+tags: [claude-code, claude-skills, vercel, nextjs, deployment, devops]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 # Claude Code Vercel Deployment Next.js Workflow Guide
 
-Deploying Next.js applications to Vercel becomes remarkably powerful when combined with Claude Code's automation capabilities. This guide walks you through setting up a streamlined deployment workflow that handles everything from preview deployments to production releases, with intelligent checks at each stage using Claude skills like `tdd`, `frontend-design`, `pdf`, and `supermemory`.
+Deploying Next.js applications to Vercel becomes remarkably powerful when combined with Claude Code's automation capabilities. This guide walks you through setting up a streamlined deployment workflow that handles everything from preview deployments to production releases, with intelligent checks at each stage using Claude skills like `/tdd`, `/frontend-design`, `/pdf`, and `/supermemory`.
 
 ## Why Automate Vercel Deployments with Claude Code
 
 Vercel's platform already handles the heavy lifting of infrastructure, but the deployment workflow often involves manual steps: verifying builds, checking environment variables, validating configuration, and ensuring everything works before promoting to production. Claude Code fills these gaps by automating validation, generating deployment documentation, and maintaining a memory of deployment history for troubleshooting.
 
-The combination works particularly well for Next.js projects because both tools share a modern, developer-centric philosophy. Vercel's zero-config deployments align with Claude Code's ability to understand project context automatically.
-
 ## Setting Up Your Next.js Project for Claude-Assisted Deployment
 
-Before implementing the workflow, ensure your Next.js project has the necessary structure and Vercel configuration. Create a `vercel.json` file in your project root to define deployment behavior:
+Before implementing the workflow, ensure your Next.js project has the necessary structure and Vercel configuration. Create a `vercel.json` file in your project root:
 
 ```json
 {
@@ -29,47 +31,31 @@ Before implementing the workflow, ensure your Next.js project has the necessary 
 }
 ```
 
-Next, install the Vercel CLI globally if you haven't already:
+Install the Vercel CLI and link your project:
 
 ```bash
 npm install -g vercel
-```
-
-Link your local project to Vercel:
-
-```bash
 vercel link
 ```
 
-This creates a `.vercel` directory with project configuration that Claude Code can read and use for deployment automation.
-
 ## Creating the Deployment Automation Script
 
-The core of your Claude Code deployment workflow is a bash script that handles the entire deployment process. Create `deploy.sh` in your project:
+Create `deploy.sh` in your project root:
 
 ```bash
 #!/bin/bash
 set -e
 
-# Configuration
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VERCEL_TOKEN="${VERCEL_TOKEN}"
-DEPLOYMENT_ENV="${1:-preview}"  # preview, production, or staging
+DEPLOYMENT_ENV="${1:-preview}"
 
 cd "$PROJECT_DIR"
 
-echo "🚀 Starting $DEPLOYMENT_ENV deployment..."
-
-# Pre-deployment validation
-echo "📋 Running pre-deployment checks..."
-
-# Run type checking
+echo "Running pre-deployment checks..."
 npm run type-check
-
-# Run build to catch errors early
 npm run build
 
-# Deploy based on environment
 case "$DEPLOYMENT_ENV" in
   preview)
     vercel --yes --prebuilt
@@ -82,55 +68,37 @@ case "$DEPLOYMENT_ENV" in
     ;;
 esac
 
-echo "✅ Deployment complete"
+echo "Deployment complete"
 ```
 
-Make the script executable:
-
-```bash
-chmod +x deploy.sh
-```
+Make the script executable: `chmod +x deploy.sh`
 
 ## Integrating Claude Skills into Your Workflow
 
-The `tdd` skill adds significant value to your deployment pipeline by running tests before any deployment occurs. Modify your deployment script to include test execution:
+The `/tdd` skill adds value to your deployment pipeline by reviewing test coverage before deployment. In a Claude Code session before deploying:
 
-```bash
-# Run tests using tdd skill guidance
-echo "🧪 Running test suite..."
-npm test -- --coverage --passWithNoTests
+```
+/tdd
+Review the test suite and identify any untested code paths in the changed files.
 ```
 
-The `frontend-design` skill becomes useful for visual regression testing in Next.js projects with UI components. Add accessibility validation:
+The `/frontend-design` skill validates UI components before promoting to production:
 
-```bash
-# Validate accessibility with frontend-design skill
-echo "♿ Checking accessibility..."
-npx @axe-core/cli https://your-preview-url.com --html accessibility-report.html
+```
+/frontend-design
+Review the new components in this PR for accessibility issues and design system compliance.
 ```
 
-## Managing Environment Variables Securely
-
-Next.js deployments to Vercel require careful environment variable management. Create a `.env.example` file that documents required variables:
-
-```bash
-# .env.example
-# Copy this to .env.local and fill in values
-NEXT_PUBLIC_API_URL=
-NEXT_PUBLIC_APP_URL=
-DATABASE_URL=
-API_KEY=
-```
+## Managing Environment Variables
 
 Use Vercel's secrets management for production:
 
 ```bash
-# Add secrets to Vercel
 vercel secrets add next-public-api-url "your-production-url"
 vercel secrets add database-url "your-production-db-url"
 ```
 
-Reference these in your deployment script:
+Reference in deployments:
 
 ```bash
 vercel --yes --env=NEXT_PUBLIC_API_URL=@next-public-api-url
@@ -138,7 +106,7 @@ vercel --yes --env=NEXT_PUBLIC_API_URL=@next-public-api-url
 
 ## Setting Up Preview Deployment Automation
 
-Preview deployments are where Claude Code really shines. Every pull request should trigger a preview deployment that Claude validates. Create a GitHub Actions workflow:
+Create a GitHub Actions workflow for PR previews:
 
 ```yaml
 name: Vercel Preview
@@ -152,73 +120,54 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Run tests
-        run: npm test
-        
-      - name: Deploy to Vercel Preview
-        run: ./deploy.sh preview
+      - run: npm ci
+      - run: npm test
+      - run: ./deploy.sh preview
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 ```
 
-## Using Claude Code for Deployment Documentation
+## Using Claude Skills for Deployment Documentation
 
-The `pdf` skill can generate deployment reports automatically. After each deployment, create a summary document:
+After each deployment, use `/pdf` to generate a deployment summary:
 
-```bash
-# Generate deployment report
-echo "📄 Generating deployment report..."
-vercel inspect $(vercel ls --pretty | grep -m1 "" | awk '{print $1}') > deployment-details.json
-
-# Use pdf skill to create formatted report
-claude -p pdf "Generate a deployment summary from this JSON data"
+```
+/pdf
+Create a deployment summary document from:
+- Deployment: v1.2.3 to Vercel production
+- Date: 2026-03-13
+- Changes: [paste git log output]
+Save to docs/deployments/2026-03-13-v1.2.3.pdf
 ```
 
-For tracking deployment history, the `supermemory` skill stores metadata:
+Track deployment history across sessions with `/supermemory`:
 
-```bash
-# Store deployment info for future reference
-claude -p supermemory "Remember: Production deployment v1.2.3 deployed at $(date) with commit $(git rev-parse HEAD)"
+```
+/supermemory
+Store: Production deployment v1.2.3 deployed 2026-03-13.
+Commit abc123. All tests passing. Vercel URL: https://my-app.vercel.app
 ```
 
-## Production Deployment Best Practices
+## Production Best Practices
 
-When deploying to production, add additional safeguards. First, always run a preview deployment and verify it works:
+Always run a preview deployment and verify it works before promoting to production:
 
 ```bash
-# Deploy to preview first, then promote
 ./deploy.sh preview
 # Verify manually or with automated tests
 ./deploy.sh production
 ```
 
-Use Vercel's deployment protection features:
-
-```bash
-# Enable production deployment protection
-vercel --prod --protect
-```
-
-This adds password protection to production deployments, useful for staging before public release.
-
-## Troubleshooting Common Deployment Issues
-
-Build failures are the most common deployment problems. Check the build output:
+For troubleshooting build failures:
 
 ```bash
 vercel logs <deployment-url>
 ```
 
-For Next.js-specific issues, ensure your `next.config.js` is properly configured:
+Ensure `next.config.js` is properly configured for your environment variables:
 
 ```javascript
 /** @type {import('next').NextConfig} */
@@ -237,8 +186,8 @@ module.exports = nextConfig
 
 ## Wrapping Up
 
-This workflow transforms Vercel deployments from manual processes into automated, reliable operations. Claude Code acts as your intelligent deployment assistant, running tests, validating configurations, and maintaining deployment history through skills like `tdd`, `frontend-design`, `pdf`, and `supermemory`.
+This workflow transforms Vercel deployments from manual processes into automated, reliable operations. Claude Code acts as your intelligent deployment assistant, validating code before release and maintaining deployment history through `/tdd`, `/frontend-design`, `/pdf`, and `/supermemory`.
 
-Start with the preview deployment workflow, then gradually add production safeguards as your project matures. The initial investment in automation pays dividends through faster releases, fewer deployment errors, and better documentation.
+Start with the preview deployment workflow, then gradually add production safeguards as your project matures.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

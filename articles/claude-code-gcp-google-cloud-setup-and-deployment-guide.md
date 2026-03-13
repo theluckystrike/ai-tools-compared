@@ -1,11 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code GCP Google Cloud Setup and Deployment Guide"
-description: "Learn how to set up Claude Code for Google Cloud deployment workflows. Practical patterns for integrating with GCP services, Cloud Run, Cloud Functions, and automated deployment pipelines."
+description: "Set up Claude Code for Google Cloud deployment workflows. Practical patterns for Cloud Run, Cloud Functions, and automated deployment pipelines."
 date: 2026-03-13
-author: theluckystrike
-categories: [integrations, cloud, gcp]
+categories: [integrations, cloud]
 tags: [claude-code, claude-skills, gcp, google-cloud, cloud-run, deployment, devops]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 # Claude Code GCP Google Cloud Setup and Deployment Guide
@@ -37,7 +39,7 @@ The integration relies on Claude Code's ability to execute shell commands, which
 
 ## Deploying to Cloud Run with Claude Code
 
-Cloud Run is GCP's serverless container platform. Claude Code can generate Dockerfiles, build container images, and deploy directly to Cloud Run. Create a skill that streamlines this workflow using the `claude-tdd` skill for testing your containerized application before deployment.
+Cloud Run is GCP's serverless container platform. Claude Code can generate Dockerfiles, build container images, and deploy directly to Cloud Run. Use the `/tdd` skill for testing your containerized application before deployment.
 
 ### Automated Dockerfile Generation
 
@@ -61,24 +63,27 @@ gcloud run deploy my-service \
   --allow-unauthenticated
 ```
 
-Integrate this into your Claude Code workflow by creating a custom skill that combines build, push, and deploy steps:
+Create a custom skill at `~/.claude/skills/gcp-deploy.md` that combines build, push, and deploy steps:
 
-```yaml
-# gcp-cloud-run-deploy skill
-name: gcp-cloud-run-deploy
-description: Build and deploy to Google Cloud Run
-commands:
-  - name: build
-    description: Build Docker image and push to GCR
-    run: |
-      gcloud builds submit --tag gcr.io/$PROJECT_ID/$SERVICE_NAME
-  - name: deploy
-    description: Deploy to Cloud Run
-    run: |
-      gcloud run deploy $SERVICE_NAME \
-        --image gcr.io/$PROJECT_ID/$SERVICE_NAME \
-        --platform managed \
-        --region $REGION
+```markdown
+---
+description: "Build and deploy to Google Cloud Run"
+tools:
+  - Bash
+---
+
+# GCP Cloud Run Deploy Skill
+
+1. Run `gcloud builds submit --tag gcr.io/$PROJECT_ID/$SERVICE_NAME` to build and push
+2. Run `gcloud run deploy $SERVICE_NAME --image gcr.io/$PROJECT_ID/$SERVICE_NAME --platform managed --region $REGION`
+3. Report the deployed URL from the command output
+```
+
+Invoke it with:
+
+```
+/gcp-deploy
+Deploy the current project as SERVICE_NAME=my-api to region us-central1
 ```
 
 ## Cloud Functions Deployment Patterns
@@ -107,7 +112,7 @@ gcloud functions deploy my-function \
   --entry-point handle_upload
 ```
 
-Pair this with the `claude-pdf` skill if your function processes PDF documents, or use the `frontend-design` skill for generating static site deployment functions to Cloud Storage.
+Pair this with the `/pdf` skill if your function processes PDF documents, or use the `/frontend-design` skill for generating static site deployment functions to Cloud Storage.
 
 ## Using GCP Services with Claude Code Skills
 
@@ -126,17 +131,20 @@ gsutil setmeta -h "Cache-Control: public, max-age=31536000" \
   gs://my-bucket-name/**.{js,css,ico,png,jpg,jpeg,svg}
 ```
 
-Create a Claude skill that automates static site deployment:
+Create a skill at `~/.claude/skills/gcp-static-deploy.md`:
 
-```yaml
-name: gcp-static-deploy
-description: Deploy static site to Google Cloud Storage
-commands:
-  - name: deploy
-    run: |
-      gsutil rsync -R ./build gs://$BUCKET_NAME
-      gsutil setmeta -h "Cache-Control: public, max-age=0" \
-        gs://$BUCKET_NAME/**.{html,htm}
+```markdown
+---
+description: "Deploy static site to Google Cloud Storage"
+tools:
+  - Bash
+---
+
+# GCP Static Deploy Skill
+
+1. Run `gsutil rsync -R ./build gs://$BUCKET_NAME` to sync files
+2. Run `gsutil setmeta -h "Cache-Control: public, max-age=0" gs://$BUCKET_NAME/**.{html,htm}` for HTML files
+3. Report the public URL
 ```
 
 ### Secret Manager Integration
@@ -152,7 +160,7 @@ Claude Code can help generate code that retrieves secrets at runtime, ensuring y
 
 ## Automated CI/CD with GitHub Actions and GCP
 
-Combine Claude Code with GitHub Actions for continuous deployment to GCP. This pipeline builds your application, runs tests (using the `claude-tdd` skill for test generation), and deploys to Cloud Run on every push.
+Combine Claude Code with GitHub Actions for continuous deployment to GCP. This pipeline builds your application, runs tests (using the `/tdd` skill for test generation), and deploys to Cloud Run on every push.
 
 ```yaml
 name: Deploy to Cloud Run
@@ -165,12 +173,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Authenticate to GCP
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
-      
+
       - name: Deploy to Cloud Run
         run: |
           gcloud run deploy service-name \
@@ -179,17 +187,21 @@ jobs:
             --region us-central1
 ```
 
-## State Management with Cloud SQL and Memory
+## State Management with Cloud SQL
 
-For applications requiring persistent state, integrate Cloud SQL with your deployed services. The `claude-supermemory` skill helps manage context across deployments, though for production applications, external storage solutions like Cloud SQL or Firestore provide durability.
+For applications requiring persistent state, integrate Cloud SQL with your deployed services. Use `/supermemory` to track deployment context across sessions:
+
+```
+/supermemory
+Store: Production deployment 2026-03-13 — Cloud Run service my-api deployed to us-central1.
+Cloud SQL instance: myapp-db. Service account: deploy-sa@project.iam.gserviceaccount.com.
+```
 
 Query Cloud SQL from your local development environment:
 
 ```bash
 gcloud sql connect my-instance --user=root
 ```
-
-This enables database operations during local development while your production deployment connects automatically through the Cloud Run service account.
 
 ## Best Practices for GCP Deployments
 
@@ -201,7 +213,7 @@ Monitor your deployments with Cloud Logging and Cloud Monitoring. Claude Code ca
 
 ## Conclusion
 
-Claude Code transforms GCP deployment workflows from manual processes into automated, intelligent pipelines. Whether deploying containers to Cloud Run, functions to Cloud Functions, or static assets to Cloud Storage, Claude Code acts as your development partner—generating configs, debugging issues, and optimizing deployments.
+Claude Code transforms GCP deployment workflows from manual processes into automated, intelligent pipelines. Whether deploying containers to Cloud Run, functions to Cloud Functions, or static assets to Cloud Storage, Claude Code acts as your development partner — generating configs, debugging issues, and optimizing deployments.
 
 The key is treating Claude Code as a local development tool that interfaces with GCP through the `gcloud` CLI. This maintains security while unlocking significant automation potential. Start with simple deployments and incrementally add complexity as your workflow matures.
 
