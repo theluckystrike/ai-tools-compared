@@ -10,7 +10,7 @@ score: 9
 
 # Claude Code Firebase Security Rules Validation Testing Guide
 
-Firebase security rules are the gatekeepers of your backend data. Writing rules that are both secure and functional requires rigorous testing, yet many developers struggle with validating their rules effectively. This guide shows you how to leverage Claude Code to validate, test, and debug Firebase security rules efficiently.
+Firebase security rules are the gatekeepers of your backend data. Writing rules that are both secure and functional requires rigorous testing, yet many developers struggle with validating their rules effectively. This guide shows you how to use Claude Code to validate, test, and debug Firebase security rules efficiently.
 
 ## Understanding Firebase Rules Validation
 

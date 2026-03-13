@@ -1,11 +1,13 @@
 ---
-layout: default
+layout: post
 title: "How Do I Limit What a Claude Skill Can Access on Disk"
-description: "A practical guide for developers and power users on restricting Claude skill file system access. Learn about permission scopes, directory isolation, and security best practices."
+description: "A practical guide for developers and power users on restricting Claude skill file system access. Learn about permission scopes, directory isolation, and..."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [security, configuration]
 tags: [claude-code, claude-skills, permissions, security, file-access]
+reviewed: true
+score: 9
 ---
 
 # How Do I Limit What a Claude Skill Can Access on Disk

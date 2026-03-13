@@ -66,13 +66,7 @@ This file provides context to Claude Code for every session, improving the relev
 
 ## Development Workflow with Claude Skills
 
-Claude Code excels when you uses its skill system. Install relevant skills for your workflow:
-
-```bash
-cp skill.md ~/.claude/skills/ tdd
-cp skill.md ~/.claude/skills/ pdf
-cp skill.md ~/.claude/skills/ supermemory
-```
+Claude Code works well with its skill system. Built-in skills like `tdd`, `pdf`, and `supermemory` come pre-installed with Claude Code. You can also add custom skills by placing `.md` files in `~/.claude/skills/`.
 
 The [**tdd** skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) guides test-driven development practices. When working on new features, invoke it to generate test cases before implementation. The **pdf** skill helps generate documentation directly from your codebase. For maintaining project memory across sessions, **supermemory** stores context that Claude Code references in future sessions.
 
