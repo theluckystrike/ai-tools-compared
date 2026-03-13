@@ -3,7 +3,11 @@ layout: post
 title: "Why Does Claude Skill Produce Different Output Each Run"
 description: "Understanding why Claude Code skills generate varied results across runs. Practical examples and techniques for achieving consistent AI-assisted outputs."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Why Does Claude Skill Produce Different Output Each Run

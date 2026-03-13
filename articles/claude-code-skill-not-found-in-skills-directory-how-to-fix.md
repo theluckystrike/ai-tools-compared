@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Claude Code Skill Not Found in Skills Directory — How to Fix"
+title: "Claude Code Skill Not Found in Skills Directory — How to F"
 description: "Encountering 'skill not found' in Claude Code? This guide covers the exact steps to diagnose and resolve skill directory issues with practical solutions."
 date: 2026-03-14
-author: theluckystrike
 categories: [troubleshooting]
 tags: [claude-code, claude-skills, troubleshooting, error-fix]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Claude Code Skill Not Found in Skills Directory — How to Fix

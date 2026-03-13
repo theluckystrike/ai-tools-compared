@@ -1,9 +1,13 @@
 ---
 layout: post
 title: "Claude Code Multi-Agent Error Recovery Strategies"
-description: "Practical strategies for handling errors in Claude Code multi-agent workflows. Code examples, retry patterns, and skill integration for robust AI-assisted development."
+description: "Practical strategies for handling errors in Claude Code multi-agent workflows. Code examples, retry patterns, and skill integration for robust AI-assisted "
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 10
 ---
 
 # Claude Code Multi-Agent Error Recovery Strategies

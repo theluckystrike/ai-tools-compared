@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Parallel Subagents in Claude Code: Best Practices for 2026"
 description: "Master parallel subagent execution in Claude Code with practical examples, workflow patterns, and optimization strategies for developers and power users."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Parallel Subagents in Claude Code: Best Practices for 2026
