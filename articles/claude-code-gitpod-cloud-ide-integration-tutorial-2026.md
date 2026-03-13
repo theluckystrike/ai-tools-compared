@@ -1,11 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code GitPod Cloud IDE Integration Tutorial 2026"
-description: "Learn how to integrate Claude Code with GitPod for cloud-based AI-assisted development. Step-by-step setup, configuration, and practical examples for developers."
+description: "Learn how to integrate Claude Code with GitPod for cloud-based AI-assisted development. Step-by-step setup, configuration, and practical examples for devel"
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, gitpod, cloud-ide, integration, ai-coding]
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # Claude Code GitPod Cloud IDE Integration Tutorial 2026

@@ -200,7 +200,7 @@ Maintain code quality by following these guidelines when working with Claude:
 
 Integrating Claude Code into your Kotlin Android development workflow transforms how you build mobile applications. The combination of AI-assisted code generation, structured testing approaches with the tdd skill, and documentation capabilities creates a comprehensive development environment. Start with simple implementations and gradually adopt more advanced workflows as your team becomes comfortable with the collaboration pattern.
 
-Experiment with different skill combinations to find what works best for your specific project needs. The key is maintaining developer control while leveraging Claude's capabilities for productivity gains.
+Experiment with different skill combinations to find what works best for your specific project needs. The key is maintaining developer control while using Claude's capabilities for productivity gains.
 ---
 
 ## Related Reading

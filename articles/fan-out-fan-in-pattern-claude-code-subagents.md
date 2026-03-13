@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, subagents, parallel-processing, automation, workflows]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Fan Out Fan In Pattern with Claude Code Subagents

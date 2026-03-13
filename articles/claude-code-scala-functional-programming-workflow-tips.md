@@ -59,7 +59,7 @@ Claude Code can refactor nested conditionals into cleaner for-comprehensions, su
 
 The `Either` type proves essential for error handling that preserves type information. Claude Code helps you implement left-biased `Either` operations and correctly handle validation scenarios where you need to collect multiple errors.
 
-## Leveraging Higher-Order Functions
+## Working With Higher-Order Functions
 
 Scala's collection library provides rich higher-order functions that enable declarative data transformations. Claude Code can suggest the most appropriate function for your specific use case, whether you need `map`, `filter`, `fold`, `reduce`, or more specialized operations.
 

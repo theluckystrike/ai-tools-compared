@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Claude Skill Inheritance and Composition Patterns"
 description: "Master Claude skill inheritance and composition patterns. Learn how to build modular, reusable skills that combine multiple capabilities for complex workflows."
 date: 2026-03-14
