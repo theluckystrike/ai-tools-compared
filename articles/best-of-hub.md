@@ -86,6 +86,28 @@ If you're just getting started with skills, these five deliver the highest value
 | [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) | Top 8 frontend-specific skills with practical examples |
 | [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) | Best skills for pdf/xlsx/tdd data pipelines |
 | [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) | Best skills for infrastructure, CI/CD, and deployment |
+| [Best Claude Code Skills to Install First in 2026](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) | The first skills any developer should install |
+| [Best Claude Skills for Code Review Automation](/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/) | Top picks for automated code review workflows |
+| [Best Claude Skills for Solo Developers and Freelancers](/claude-skills-guide/articles/best-claude-skills-for-solo-developers-and-freelancers/) | Essential skills for independent developers working solo |
+| [Best Claude Skills for Writing and Content Creation](/claude-skills-guide/articles/best-claude-skills-for-writing-and-content-creation/) | Top skills for writers, marketers, and content teams |
+| [Top 10 Free Claude Code Skills for GitHub Projects](/claude-skills-guide/articles/top-10-free-claude-code-skills-github/) | Best free community skills available on GitHub |
+| [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/articles/what-is-claude-code-and-why-developers-love-it-2026/) | The case for Claude Code as your primary AI coding assistant |
+| [Claude Code 2026: Skills and Hooks Feature Roundup](/claude-skills-guide/articles/claude-code-2026-new-features-skills-and-hooks-roundup/) | New features in Claude Code 2026 covering skills and hooks |
+| [Claude 4 Skills: Improvements and New Features](/claude-skills-guide/articles/claude-4-skills-improvements-and-new-features/) | What changed in Claude 4 for skill authors and users |
+| [Anthropic Model Context Protocol Updates March 2026](/claude-skills-guide/articles/anthropic-model-context-protocol-updates-march-2026/) | Latest MCP protocol changes and what they mean for skill builders |
+| [Building Production AI Agents with Claude Skills in 2026](/claude-skills-guide/articles/building-production-ai-agents-with-claude-skills-2026/) | 2026 patterns for shipping production AI agents with Claude |
+| [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) | State-of-the-art testing pipelines using the TDD skill |
+| [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) | The definitive TDD workflow using Claude's official TDD skill |
+| [Claude xlsx Skill Spreadsheet Automation Tutorial](/claude-skills-guide/articles/claude-xlsx-skill-spreadsheet-automation-tutorial/) | Using the xlsx skill to automate spreadsheet workflows |
+| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) | Best practices for managing context in 2026 skill workflows |
+| [Claude Code vs Amazon Q Developer: 2026 Comparison](/claude-skills-guide/articles/claude-code-vs-amazon-q-developer-comparison-2026/) | 2026 comparison of Claude Code and Amazon Q for enterprise teams |
+| [Claude Code vs GitHub Copilot Workspace: 2026 Comparison](/claude-skills-guide/articles/claude-code-vs-github-copilot-workspace-2026/) | 2026 showdown between Claude Code and GitHub Copilot Workspace |
+| [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/articles/claude-code-vs-replit-agent-which-is-better-2026/) | 2026 comparison for developers choosing an AI coding agent |
+| [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/articles/claude-cowork-vs-cursor-ai-editor-comparison-2026/) | 2026 head-to-head between Claude Code and Cursor |
+| [Claude Skills vs Custom GPTs: 2026 Comparison](/claude-skills-guide/articles/claude-skills-vs-custom-gpts-comparison-2026/) | 2026 comparison: Claude skills vs OpenAI Custom GPTs |
+| [Claude Code Skill Permission Denied Error Fix](/claude-skills-guide/articles/claude-code-skill-permission-denied-error-fix-2026/) | Resolving permission errors that block skill execution |
+| [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) | The 2026 guide to Claude Code security and permission scopes |
+| [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) | Complete 2026 setup walkthrough for MCP server integration |
 
 ---
 

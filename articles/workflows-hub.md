@@ -85,6 +85,24 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 | Article | What You'll Learn |
 |---------|-------------------|
 | [How to Contribute Claude Skills to Open Source](/claude-skills-guide/articles/how-to-contribute-claude-skills-to-open-source/) | End-to-end guide: prepare, format, submit, maintain |
+| [Claude Skills Automated Blog Post Workflow Tutorial](/claude-skills-guide/articles/claude-skills-automated-blog-post-workflow-tutorial/) | Building a fully automated blog writing pipeline with Claude skills |
+| [Automate Social Media Content with Claude Skills](/claude-skills-guide/articles/claude-skills-automated-social-media-content-workflow/) | Scheduling and generating social posts automatically via skills |
+| [Daily Standup Automation with Claude Skills](/claude-skills-guide/articles/claude-skills-daily-standup-automation-workflow/) | Generating daily standups automatically from project context |
+| [Automated Dependency Updates with Claude Skills](/claude-skills-guide/articles/claude-skills-automated-dependency-update-workflow/) | Keeping dependencies current with an automated Claude skill workflow |
+| [How to Automate Pull Request Review with Claude Skill](/claude-skills-guide/articles/how-to-automate-pull-request-review-with-claude-skill/) | Setting up an automated PR review skill for code quality |
+| [How to Automate Client Reports with Claude Skills](/claude-skills-guide/articles/how-to-automate-client-reports-with-claude-skills/) | Generating polished client reports from raw data automatically |
+| [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/articles/how-to-automate-code-reviews-with-claude-skills/) | Automating detailed code review as part of your CI pipeline |
+| [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) | Integrating Claude skills directly into GitHub Actions workflows |
+| [Automated GitHub Issue Triage with Claude Skills](/claude-skills-guide/articles/claude-skills-for-automated-github-issue-triage/) | Automatically categorize and route GitHub issues using skills |
+| [Competitive Analysis Automation with Claude Skills](/claude-skills-guide/articles/claude-skills-competitive-analysis-automation-workflow/) | Running recurring competitive research with an automated skill |
+| [Claude Skills for SEO Content Generation Workflow](/claude-skills-guide/articles/claude-skills-for-seo-content-generation-workflow/) | Producing SEO-optimized content at scale using Claude skills |
+| [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) | Building a continuous testing pipeline driven by the TDD skill |
+| [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) | Using the TDD skill to enforce test-first development |
+| [Claude xlsx Skill Spreadsheet Automation Tutorial](/claude-skills-guide/articles/claude-xlsx-skill-spreadsheet-automation-tutorial/) | Automating spreadsheet generation and updates via the xlsx skill |
+| [Best Claude Skills for Code Review Automation](/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/) | Top skills for building reliable automated code review workflows |
+| [How to Share Claude Skills with Your Team](/claude-skills-guide/articles/how-to-share-claude-skills-with-your-team/) | Distributing and standardizing skills across an engineering team |
+| [How to Use Claude Skills with n8n Automation Workflows](/claude-skills-guide/articles/how-to-use-claude-skills-with-n8n-automation-workflows/) | Building end-to-end automation with n8n and Claude skills |
+| [Claude Skill Not Triggering? Troubleshooting Guide](/claude-skills-guide/articles/claude-skill-not-triggering-automatically-troubleshoot/) | Why workflow automation can fail and how to debug trigger issues |
 
 ---
 
