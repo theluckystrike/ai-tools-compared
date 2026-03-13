@@ -1,280 +1,162 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Agent Swarm Coordination Strategies"
-description: "Learn how to coordinate multiple Claude Code agents working in parallel on complex projects. Practical patterns for multi-agent workflows, shared state, an"
+description: "Practical strategies for coordinating multiple Claude Code agents in parallel. Learn about fan-out/fan-in patterns, message routing, and state synchronization for multi-agent workflows."
 date: 2026-03-14
-categories: [advanced]
-tags: [claude-code, claude-skills, multi-agent, swarm, coordination, automation]
-author: "Claude Skills Guide"
-reviewed: true
-score: 8
+author: theluckystrike
+categories: [coordination]
+tags: [claude-code, agent-swarm, multi-agent, coordination, parallel-execution]
 ---
 
 # Claude Code Agent Swarm Coordination Strategies
 
-When a single Claude Code instance handles complex workflows, you often hit a ceiling—too many concurrent tasks, context window limits, or simply too much happening at once. Coordinating multiple Claude agents in parallel solves this, but introduces new challenges: how do agents share state, avoid stepping on each other's work, and coordinate toward a unified goal?
+Running multiple Claude Code agents simultaneously transforms your development workflow from sequential task execution into parallel processing. This guide covers practical strategies for coordinating agent swarms, managing shared state, and building robust multi-agent pipelines.
 
-This guide covers practical strategies for building agent swarms with Claude Code. You'll find code patterns you can implement today using skills, MCP servers, and lightweight coordination layers.
+## The Case for Agent Swarms
 
-## The Multi-Agent Coordination Problem
+Single-agent workflows handle individual tasks well, but production scenarios often require parallel execution. Processing hundreds of PDF documents, running test suites across multiple modules, or generating documentation for a large codebase benefits from concurrent agent execution. The **tdd** skill demonstrates this naturally—when you run test generation across twenty files, coordinating multiple agents reduces completion time from minutes to seconds.
 
-Claude Code operates as a single agent per session by default. But real-world projects often need parallel work: generating frontend components while running backend tests, or processing multiple data files simultaneously. The solution involves spawning multiple agent processes, each handling a slice of the workload.
+Claude Code supports spawning multiple agents within a single session through the `/spawn` command or via structured tool calls. Understanding how to coordinate these agents effectively separates basic usage from professional-grade automation.
 
-The core coordination challenges are:
+## Strategy One: Fan-Out/Fan-In Pattern
 
-1. **Task distribution** — Splitting work into independent chunks
-2. **Shared state** — Agents need access to common data (file paths, API keys, progress)
-3. **Synchronization** — Knowing when one agent's work affects another's
-4. **Result aggregation** — Collecting outputs into a final deliverable
+The fan-out/fan-in pattern spawns multiple agents to handle independent tasks, then aggregates results. This works when tasks share no dependencies and can execute in any order.
 
-Each challenge has practical solutions using Claude Code's existing capabilities.
+```bash
+# Fan-out: Spawn agents for parallel PDF processing
+/spawn agent-1: /pdf extract text from contract-part1.pdf
+/spawn agent-2: /pdf extract text from contract-part2.pdf
+/spawn agent-3: /pdf extract text from contract-part3.pdf
 
-## Pattern 1: Task Queue with Shared Files
+# Fan-in: Aggregate results after all complete
+```
 
-The simplest coordination mechanism uses a task queue backed by a JSON file. Each agent reads the queue, claims a task, marks it complete, and updates shared state.
+The key is identifying truly independent work units. If you're processing a directory of invoices with the **pdf** skill, each invoice processes independently. Spawn an agent per file, then combine outputs using a final aggregation agent.
 
-Create a `tasks.json` file:
+```bash
+/spawn parser-1: Process invoices/invoice-001.pdf through invoice-010.pdf
+/spawn parser-2: Process invoices/invoice-011.pdf through invoice-020.pdf
+```
 
-```json
+## Strategy Two: Hierarchical Agent Trees
+
+Rather than flat parallelism, structure agents in a tree hierarchy. Parent agents delegate work to children and handle result aggregation. This reduces the coordination burden on any single agent.
+
+```
+Root Agent (coordinator)
+├── Child Agent A (frontend)
+│   ├── /frontend-design analyze components/
+│   └── /frontend-design generate storybook/
+└── Child Agent B (backend)
+    ├── /tdd generate tests for api/
+    └── /xlsx export database schema/
+```
+
+The root agent maintains context about what each child does, enabling intelligent task distribution. When the **xlsx** skill generates a spreadsheet report, the parent knows the output format and can route it appropriately without explicit hand-coding.
+
+## Strategy Three: Message Passing via Shared Memory
+
+Agents need a communication channel beyond direct spawning. Shared memory files or a dedicated coordination skill enables message passing between agents.
+
+Create a coordination file:
+
+```
+# coordination.txt
+STATUS: processing
+CURRENT_PHASE: 1_of_3
+ACTIVE_AGENTS: ["agent-1", "agent-2", "agent-3"]
+RESULTS: []
+```
+
+Each agent reads and writes to this file. The **supermemory** skill can track this state automatically, providing a cleaner interface than raw file operations.
+
+```bash
+# Agent 1 updates status
+/supermemory store agent-1-status: completed processing 50 files
+
+# Agent 2 queries progress  
+/supermemory query all agent statuses
+```
+
+## Strategy Four: Event-Driven Coordination
+
+Trigger agent spawns based on file system events or message queue updates. This pattern works well for watch folders or continuous integration pipelines.
+
+```bash
+# Monitor directory for new files
+# When new PDF arrives, spawn processing agent
+
+/spawn document-agent: /pdf extract metadata from {new_file} and update index.json
+```
+
+The **pdf** skill integrates cleanly here since it handles single-file and batch operations equally well. Combine with a file watcher, and you have an automated document processing pipeline.
+
+## Strategy Five: Checkpointing and Recovery
+
+Long-running agent swarms need fault tolerance. Implement checkpoint logic so failed agents can resume without restarting the entire pipeline.
+
+```
+# checkpoint.json
 {
-  "queue": [
-    {"id": "component-header", "status": "pending", "file": "src/components/Header.tsx"},
-    {"id": "component-footer", "status": "pending", "file": "src/components/Footer.tsx"},
-    {"id": "component-sidebar", "status": "pending", "file": "src/components/Sidebar.tsx"}
-  ],
-  "results": {}
+  "completed_agents": ["agent-1", "agent-2"],
+  "failed_agents": ["agent-3"],
+  "pending_agents": ["agent-4", "agent-5"],
+  "last_checkpoint": "2026-03-14T10:30:00Z"
 }
 ```
 
-A Claude skill for worker agents reads this file, atomically claims a task, and updates the status. Here's how to structure the skill body:
-
-```
-Task coordination:
-1. Read ./tasks.json to see available work
-2. Find the first item with status "pending"
-3. If none exist, report "All tasks complete" and exit
-4. Update that item's status to "in_progress" and write the file
-5. Perform the assigned work (read_file, write_file, bash as needed)
-6. On completion, update the item status to "completed" and add result metadata
-7. write_file ./tasks.json with updated state
-8. Report completion: "Finished [task_id], result: [summary]"
-
-Do not modify tasks assigned to other agents. Always read tasks.json fresh before claiming.
-```
-
-This pattern works well with the [frontend-design skill](/claude-skills-guide/articles/claude-frontend-design-skill-review-and-tutorial/) for component generation, or the `pdf` skill for batch document processing. Each agent operates independently, and the shared file acts as the coordination mechanism.
-
-## Pattern 2: Event-Driven Coordination via MCP
-
-For more responsive coordination, build an MCP server that acts as a message broker between agents. This enables real-time signaling without polling.
-
-```python
-# .claude/mcp-servers/swarm-coordinator.py
-import json
-import os
-from pathlib import Path
-from mcp.server import Server
-from mcp.server.stdio import stdio_server
-from mcp.types import Tool, TextContent
-
-COORDINATION_FILE = ".claude/swarm-state.json"
-
-server = Server("swarm-coordinator")
-
-def load_state():
-    if not os.path.exists(COORDINATION_FILE):
-        return {"agents": {}, "events": []}
-    with open(COORDINATION_FILE) as f:
-        return json.load(f)
-
-def save_state(state):
-    with open(COORDINATION_FILE, "w") as f:
-        json.dump(state, f, indent=2)
-
-@server.list_tools()
-async def list_tools():
-    return [
-        Tool(
-            name="register_agent",
-            description="Register this agent in the swarm",
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "agent_id": {"type": "string"},
-                    "capabilities": {"type": "array", "items": {"type": "string"}}
-                },
-                "required": ["agent_id"]
-            }
-        ),
-        Tool(
-            name="broadcast_event",
-            description="Broadcast an event to other agents",
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "event_type": {"type": "string"},
-                    "payload": {"type": "object"}
-                },
-                "required": ["event_type"]
-            }
-        ),
-        Tool(
-            name="wait_for_event",
-            description="Wait for a specific event from another agent",
-            inputSchema={
-                "type": "object",
-                "properties": {
-                    "event_type": {"type": "string"},
-                    "timeout_seconds": {"type": "number", "default": 60}
-                },
-                "required": ["event_type"]
-            }
-        )
-    ]
-
-@server.call_tool()
-async def call_tool(name: str, arguments: dict):
-    state = load_state()
-    
-    if name == "register_agent":
-        agent_id = arguments["agent_id"]
-        state["agents"][agent_id] = {
-            "capabilities": arguments.get("capabilities", []),
-            "registered_at": "now"
-        }
-        save_state(state)
-        return [TextContent(type="text", text=f"Registered {agent_id}")]
-    
-    elif name == "broadcast_event":
-        event = {
-            "type": arguments["event_type"],
-            "payload": arguments.get("payload", {}),
-            "timestamp": "now"
-        }
-        state["events"].append(event)
-        save_state(state)
-        return [TextContent(type="text", text="Event broadcasted")]
-    
-    elif name == "wait_for_event":
-        # Simple polling implementation
-        import time
-        target_type = arguments["event_type"]
-        timeout = arguments.get("timeout_seconds", 60)
-        start = time.time()
-        
-        while time.time() - start < timeout:
-            state = load_state()
-            for event in reversed(state["events"]):
-                if event["type"] == target_type:
-                    return [TextContent(type="text", text=json.dumps(event))]
-            time.sleep(1)
-        
-        return [TextContent(type="text", text=f"Timeout waiting for {target_type}")]
-
-async def main():
-    async with stdio_server() as (read_stream, write_stream):
-        await server.run(read_stream, write_stream, server.create_initialization_options())
-
-if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
-```
-
-Agents use these tools to coordinate. For example, an agent running tests with the `tdd` skill can broadcast a "tests-failed" event, triggering a frontend agent to watch for that signal and hold off on integration work.
-
-## Pattern 3: Hierarchical Agent Supervision
-
-For large projects, organize agents in a hierarchy: a supervisor agent delegates work to worker agents and handles aggregation. The supervisor runs in one Claude session, spawning worker processes via bash.
+When agent-3 fails, read the checkpoint, identify it as failed, and spawn a replacement:
 
 ```bash
-# Start worker agents in background processes
-claude --print < worker1-tasks.md &
-claude --print < worker2-tasks.md &
-claude --print < worker3-tasks.md &
-
-# Wait for completion
-wait
-echo "All workers finished"
+/spawn agent-3-retry: Resume processing from failed-step in document-003.pdf
 ```
 
-Each worker receives a task file specific to its assignment:
+## Practical Example: Documentation Pipeline
 
-```markdown
----
-# worker1-tasks.md
-You are a worker agent. Complete these tasks:
-1. Generate API endpoints in src/api/
-2. Write tests for: src/api/users.py, src/api/auth.py
-3. Report results to stdout as JSON: {"completed": [...], "failed": [...]}
+Consider generating documentation for a monorepo with multiple packages. Each package requires different handling:
+
+1. **Frontend packages** use the **frontend-design** skill for component documentation
+2. **Backend packages** use the **tdd** skill for API documentation  
+3. **Data packages** use the **xlsx** skill for schema exports
+
+```bash
+# Hierarchical spawn with role assignment
+/spawn coordinator: Coordinate documentation generation across 5 packages
+
+# Coordinator then spawns:
+/spawn fe-docs: /frontend-design generate docs for ./packages/ui/
+/spawn be-docs: /generate api docs for ./packages/api/
+/spawn data-docs: /xlsx export schemas from ./packages/data/
 ```
 
-The supervisor skill coordinates:
+Each specialized agent operates independently, then the coordinator aggregates outputs into a unified documentation site.
 
-```
-Supervision workflow:
-1. Analyze the incoming request and decompose into N independent tasks
-2. write_file ./worker-{n}.md for each worker with their specific assignment
-3. bash: Start all workers in parallel using claude --print
-4. Monitor worker progress via shared output files or polling
-5. If a worker fails, assess whether to retry or redistribute
-6. Aggregate results: combine outputs from all workers
-7. Validate the combined result (e.g., run integration tests)
-8. Report final status to the user
+## Common Pitfalls to Avoid
 
-For aggregation, read each worker's output file and merge as appropriate.
+**Over-spawning** creates resource contention. Start with two to four agents and scale based on observed performance. Claude Code agents consume memory and CPU; more isn't always faster.
+
+**Ignoring shared state** causes race conditions. If multiple agents write to the same file without coordination, you'll lose data. Use file locking or the **supermemory** skill for atomic operations.
+
+**No timeout strategy** leaves hung agents blocking progress. Set explicit timeout expectations:
+
+```bash
+/spawn agent-with-timeout: Process this file, fail if not complete in 60 seconds
 ```
 
-This pattern scales well with the `supermemory` skill for maintaining project context across sessions, or the `docx` skill for generating consolidated reports.
+## Skill Recommendations for Coordination
 
-## Shared State Patterns
+Several skills enhance multi-agent workflows:
 
-Beyond file-based coordination, consider these shared state options:
+- **supermemory**: Tracks shared state across agents without manual file management
+- **tdd**: Generates test coverage while other agents handle implementation
+- **pdf**: Processes documents in parallel across spawned agents
+- **xlsx**: Aggregates data from multiple sources into unified reports
+- **frontend-design**: Runs component analysis concurrently across codebases
 
-| Approach | Best For | Trade-offs |
-|----------|----------|------------|
-| JSON files | Simple task queues | Manual locking, eventual consistency |
-| MCP server | Real-time events | Requires additional infrastructure |
-| Redis | Production swarms | Needs Redis running |
-| Git branches | Code collaboration | Merge conflicts possible |
+The **docx** skill also proves valuable when generating coordination reports or status documents that agents share during execution.
 
-For most Claude Code workflows, starting with JSON files and graduating to MCP for complex cases works well.
+## Conclusion
 
-## Error Handling in Agent Swarms
-
-When coordinating multiple agents, failures multiply. Build resilience into your coordination layer:
-
-```
-Error handling for swarm operations:
-- If a worker agent exits non-zero: log the failure, check if it's retryable
-- If a coordination file becomes corrupted: backup and rebuild from agent status
-- If an agent goes silent beyond expected runtime: treat as failed after timeout
-- Always write completion status to shared state before exiting
-
-Workers should idempotently handle re-execution: check if work is already done before proceeding.
-```
-
-## Practical Example: Batch Document Processing
-
-Imagine processing 50 PDFs to extract tables. A single Claude session with the `pdf` skill would take hours. A swarm processes them in minutes:
-
-1. Split PDF list into 5 chunks of 10 files each
-2. Start 5 Claude agents, each with `pdf` skill and assigned file list
-3. Each agent writes extracted data to `output/chunk-{n}.json`
-4. Supervisor reads all JSON files, merges into `output/combined.json`
-
-This approach uses the `pdf` skill's table extraction capabilities in parallel, reducing total processing time linearly with agent count.
-
-## Building Your Own Swarm
-
-Start simple: use a task queue file and spawn 2-3 Claude agents to handle parallel work. As your coordination needs grow, add MCP-based event broadcasting. The hierarchical supervisor pattern handles the most complex scenarios.
-
-The key insight is that Claude Code's tool-based architecture translates naturally to multi-agent systems. Each agent is just a Claude process with access to tools—the coordination layer connects them.
-
-## Related Reading
-
-- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Structured orchestration patterns that complement agent swarm coordination for complex projects.
-- [Fan Out Fan In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Implement the fan-out/fan-in concurrency pattern to distribute and collect swarm workloads.
-- [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/articles/claude-code-multi-agent-subagent-communication-guide/) — Deep dive into inter-agent communication protocols for swarm coordination.
-- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Explore advanced patterns for production agent architectures.
+Agent swarm coordination transforms Claude Code from a single assistant into a parallel processing platform. Start with the fan-out/fan-in pattern for independent tasks, scale to hierarchical trees for complex projects, and implement checkpointing for production reliability. The key insight: treat agents as disposable workers that communicate through structured channels, and your automation pipelines will scale horizontally with minimal overhead.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
