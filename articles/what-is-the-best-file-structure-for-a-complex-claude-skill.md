@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "What Is the Best File Structure for a Complex Claude Skill"
 description: "A practical guide to organizing complex Claude Code skills with proven file structures, code examples, and real-world patterns used by advanced developers."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 # What Is the Best File Structure for a Complex Claude Skill
