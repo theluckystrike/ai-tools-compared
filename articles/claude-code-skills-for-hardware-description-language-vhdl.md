@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code Skills for Hardware Description Language VHDL
 
-Hardware Description Languages like VHDL require precise syntax, rigorous testing, and careful documentation. Claude Code skills enhance your development workflow by providing specialized assistance for different aspects of VHDL projects. This guide covers practical applications of Claude skills for VHDL development.
+Hardware Description Languages like VHDL require precise syntax, rigorous testing, and careful documentation. Claude Code skills enhance your development workflow by providing specialized assistance for different aspects of VHDL projects. This guide covers practical applications of Claude skills for VHDL development. For an overview of how [Claude skills work with advanced use cases](/claude-skills-guide/advanced-hub/), the advanced hub covers multi-agent orchestration and specialized tooling.
 
 ## Setting Up VHDL Projects with Claude
 
@@ -124,7 +124,7 @@ Claude will provide line-by-line feedback and suggest improvements following VHD
 
 ## Memory Exploration with Supermemory
 
-The `supermemory` skill maintains context across your VHDL project. It remembers:
+The [supermemory skill maintains context](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) across your VHDL project. It remembers:
 
 - Previous design decisions
 - Signal naming conventions
@@ -171,8 +171,15 @@ Each skill focuses on a specific aspect of development, allowing you to chain th
 
 ## Key Takeaways
 
-Claude Code skills transform VHDL development by providing structured assistance for testing, documentation, and code quality. The TDD skill encourages test-first thinking for testbenches. The review skill catches synthesis issues early. Documentation skills automate datasheet generation.
+Claude Code skills transform VHDL development by providing structured assistance for testing, documentation, and code quality. The TDD skill encourages test-first thinking for testbenches. The review skill catches synthesis issues early. Documentation skills automate datasheet generation. For teams looking to apply [skill inheritance and composition patterns](/claude-skills-guide/articles/claude-skill-inheritance-and-composition-patterns/), modular skill design scales well across large hardware projects.
 
 Start with the skills that match your biggest pain point—testbench creation, documentation, or code review—and expand from there.
+
+## Related Reading
+
+- [Claude Skill Inheritance and Composition Patterns](/claude-skills-guide/articles/claude-skill-inheritance-and-composition-patterns/) — Build modular, reusable skills that chain together for complex hardware workflows
+- [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) — Persist design decisions and naming conventions across VHDL project sessions
+- [Claude Skills for Kubernetes Operator Development](/claude-skills-guide/articles/claude-code-skills-for-kubernetes-operator-development/) — Another specialized domain guide showing how Claude skills handle complex technical workflows
+- [Claude TDD Skill: Test-Driven Development Guide](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) — Deep dive into the TDD skill used for testbench generation
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

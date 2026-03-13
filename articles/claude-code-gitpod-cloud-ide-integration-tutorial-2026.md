@@ -201,6 +201,11 @@ Integrating Claude Code with GitPod creates a powerful cloud-based development e
 
 Experiment with different skill combinations to find what works best for your workflow. The cloud-based approach means you can access this setup from any machine with a browser.
 
----
+## Related Reading
+
+- [Claude Code Dev Containers: devcontainer.json Setup Guide](/claude-skills-guide/articles/claude-code-dev-containers-devcontainer-json-setup-guide/) — Configure containerized Claude Code environments with VS Code Dev Containers
+- [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) — Maintain project context across sessions and workspace restarts
+- [How to Share Claude Skills Across Multiple Projects](/claude-skills-guide/articles/how-do-i-share-claude-skills-across-multiple-projects/) — Distribute skill configurations consistently across team members
+- [Claude Code GitHub Codespaces Workflow](/claude-skills-guide/articles/claude-code-github-codespaces-cloud-development-workflow/) — Compare GitPod with GitHub's native cloud development environment
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
