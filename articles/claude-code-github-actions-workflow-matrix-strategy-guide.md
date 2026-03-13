@@ -186,7 +186,7 @@ Matrix jobs can consume significant GitHub Actions minutes. Consider these optim
       ${{ runner.os }}-npm-
 ```
 
-**Leverage the `supermemory` skill** to track historical matrix runtimes and suggest optimizations based on past performance data.
+**Use the `supermemory` skill** to track historical matrix runtimes and suggest optimizations based on past performance data.
 
 ## Generating Matrix Reports with Claude
 
