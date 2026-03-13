@@ -198,5 +198,12 @@ Compare results against your Express baseline. Most teams see significant improv
 ## Conclusion
 
 Migrating from Express to Fastify requires thoughtful refactoring but delivers substantial performance and developer experience improvements. Claude Code's ecosystem—including the **tdd** skill for test-driven migration, **super-memory** for tracking progress, **pdf** for documentation, and **frontend-design** for code patterns—makes the process more manageable. Start with non-critical routes, establish validation schemas early, and verify performance at each step.
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The tdd and supermemory skills power migration workflows
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Trigger skills automatically during migration and refactoring tasks
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Manage token usage during long migration sessions
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

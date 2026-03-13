@@ -165,5 +165,12 @@ The **canvas-design** skill also helps by generating accessible color palettes d
 Addressing color contrast accessibility issues does not require manual testing across every page of your application. By leveraging Claude Code skills like frontend-design, tdd, pdf, and supermemory, you can build automated workflows that detect, fix, test, and document accessibility compliance. This systematic approach saves development time while ensuring your applications remain accessible to all users.
 
 Implement this workflow in your next project sprint, and you will see measurable improvements in both accessibility compliance and development efficiency.
+---
+
+## Related Reading
+
+- [Best Claude Skills for Frontend and UI Development](/claude-skills-guide/articles/best-claude-skills-for-frontend-ui-development/) — Frontend skills including accessibility and design system automation
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Core developer skills that pair with accessibility workflows
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep automated accessibility audit sessions cost-efficient
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

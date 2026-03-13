@@ -197,5 +197,12 @@ Maintain code quality by following these guidelines when working with Claude:
 Integrating Claude Code into your Kotlin Android development workflow transforms how you build mobile applications. The combination of AI-assisted code generation, structured testing approaches with the tdd skill, and documentation capabilities creates a comprehensive development environment. Start with simple implementations and gradually adopt more advanced workflows as your team becomes comfortable with the collaboration pattern.
 
 Experiment with different skill combinations to find what works best for your specific project needs. The key is maintaining developer control while leveraging Claude's capabilities for productivity gains.
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — The tdd skill drives the test-first mobile development pattern
+- [Best Claude Skills for Frontend and UI Development](/claude-skills-guide/articles/best-claude-skills-for-frontend-ui-development/) — UI skills for building polished Android interfaces with Claude Code
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Auto-invoke skills for Kotlin testing and UI generation automatically
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

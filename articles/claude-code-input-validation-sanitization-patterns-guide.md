@@ -200,5 +200,12 @@ Use schema validation libraries like Zod or Joi when building complex skills wit
 Log validation failures to understand what inputs cause problems in production. This feedback loop helps you improve validation rules over time, especially when users provide unexpected data formats.
 
 Finally, remember that validation adds latency. Balance thoroughness with performance by applying stricter validation to untrusted external input while trusting data from within your own skill chain.
+---
+
+## Related Reading
+
+- [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/articles/claude-skills-for-enterprise-security-compliance-guide/) — Enterprise security patterns that build on solid input validation foundations
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Developer skills including tdd for test-driven validation pattern development
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Efficiently automate validation code generation without runaway API costs
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

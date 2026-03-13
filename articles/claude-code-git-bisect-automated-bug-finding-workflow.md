@@ -140,7 +140,12 @@ Automated bug finding with git bisect and Claude Code dramatically reduces mean 
 Instead of dreading regressions, you gain confidence that you can quickly identify and resolve issues—making your development process more robust and your codebase healthier.
 
 Next time you encounter a mysterious bug, remember: git bisect with Claude Code is your automated detective, systematically narrowing down the search until the culprit is found.
-
 ---
+
+## Related Reading
+
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Core developer skills for debugging and test-driven bug isolation
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Understand how skills activate automatically during debug sessions
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Optimize multi-step bisect sessions to keep costs under control
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

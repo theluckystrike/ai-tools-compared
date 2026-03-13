@@ -158,5 +158,12 @@ Open source contribution in 2026 has evolved significantly with Claude Code and 
 The key remains consistent: start with small, manageable contributions, understand the project conventions, and communicate clearly with maintainers. Claude Code serves as a powerful assistant throughout this process, handling both technical implementation and helping you navigate the social aspects of open source collaboration.
 
 Remember that every contribution—no matter how small—adds value to the ecosystem. Your first PR might fix a simple documentation error, but the skills you develop translate directly to larger contributions over time.
+---
+
+## Related Reading
+
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Developer skills for writing tests and documentation before submitting PRs
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Skills auto-trigger when working on test files or documentation
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Keep contribution sessions efficient when working across unfamiliar codebases
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -167,5 +167,12 @@ Successful LLM evaluation requires treating it as an ongoing process rather than
 Document your evaluation methodology so team members can reproduce results. Share findings through team channels, building institutional knowledge about model behavior. This cultural investment pays dividends as your AI infrastructure grows more complex.
 
 The evaluation workflow transforms model selection from guesswork into data-driven decision making. With Claude Code skills handling report generation, spreadsheet automation, and persistent context, you can focus on interpreting results and optimizing your applications.
+---
+
+## Related Reading
+
+- [Best Claude Skills for Data Analysis](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — Data analysis skills for structuring and reporting LLM evaluation results
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — pdf and xlsx skills automate benchmark report generation
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Monitor and reduce API costs while running repeated evaluation loops
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

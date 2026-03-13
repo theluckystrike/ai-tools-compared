@@ -165,7 +165,12 @@ Core dump analysis doesn't have to be a tedious manual process. By combining GDB
 The key is having core dumps configured before crashes happen, extracting actionable information through targeted GDB commands, and leveraging Claude skills like **supermemory** for pattern recognition across debugging sessions.
 
 When segfaults occur, this workflow transforms a cryptic crash into a solvable problem.
-
 ---
+
+## Related Reading
+
+- [Best Claude Skills for Developers 2026](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — Core developer skills for debugging and crash analysis workflows
+- [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — Skills activate during debugging sessions to provide relevant context
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Manage token usage during intensive core dump analysis sessions
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
