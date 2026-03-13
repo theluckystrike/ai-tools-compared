@@ -1,9 +1,13 @@
 ---
-layout: default
-title: How Do I Share Claude Skills Across Multiple Projects
-description: A practical guide to sharing Claude skills across projects. Learn version control strategies, repository patterns, and workflow optimization techniques.
+layout: post
+title: "How Do I Share Claude Skills Across Multiple Projects"
+description: "A practical guide to sharing Claude skills across projects. Learn version control strategies, repository patterns, and workflow optimization techniques."
 date: 2026-03-14
-author: theluckystrike
+categories: [tutorials]
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 
 ---
 
 Sharing Claude skills across multiple projects is one of the most powerful ways to standardize your development workflow and avoid duplicating effort. Whether you're working on a monorepo with multiple packages or maintaining separate repositories for different applications, having a strategy for skill sharing can significantly boost your productivity.
