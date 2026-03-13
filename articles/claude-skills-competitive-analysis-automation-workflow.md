@@ -1,13 +1,9 @@
 ---
-layout: post
-title: "Competitive Analysis Automation with Claude Skills"
+layout: default
+title: "Claude Skills Competitive Analysis Automation Workflow"
 description: "Automate competitive analysis using Claude Code skills for document processing, data extraction, memory management, and stakeholder reporting."
 date: 2026-03-13
-categories: [workflows, tutorials]
-tags: [claude-code, claude-skills, competitive-analysis, market-research, automation]
-author: "Claude Skills Guide"
-reviewed: true
-score: 6
+author: theluckystrike
 ---
 
 # Competitive Analysis Automation with Claude Skills
