@@ -15,11 +15,11 @@ Linear is a project management tool built for engineering teams, known for its s
 
 ## What You Can Automate
 
-- **Issue triage**: Incoming bug reports run through `tdd` skill to assess test impact and suggest repro steps
+- **Issue triage**: Incoming bug reports run through [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) to assess test impact and suggest repro steps
 - **Spec generation**: Feature requests sent to Claude return structured technical specs ready to paste into Linear
 - **Sprint summaries**: Completed issues analyzed by Claude and summarized for stakeholder updates
 - **PR-to-issue linking**: GitHub PR descriptions processed to auto-update Linear issue status and add review notes
-- **Supermemory context**: `supermemory` skill tracks patterns across sprint cycles
+- **Supermemory context**: [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) tracks patterns across sprint cycles
 
 ## Prerequisites
 

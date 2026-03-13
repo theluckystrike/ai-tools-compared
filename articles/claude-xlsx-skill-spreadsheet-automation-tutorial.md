@@ -219,10 +219,10 @@ This reduces processing time significantly for large datasets. Ask Claude via `/
 
 The `/xlsx` skill pairs naturally with others:
 
-- `/pdf` — extract invoice data from PDFs, then write it to a summary spreadsheet
+- [`/pdf`](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) — extract invoice data from PDFs, then write it to a summary spreadsheet
 - `/docx` — pull tables from Word documents into Excel for further analysis
-- `/tdd` — write tests for your data transformation functions
-- `/supermemory` — save column mapping configurations between sessions
+- [`/tdd`](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) — write tests for your data transformation functions
+- [`/supermemory`](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — save column mapping configurations between sessions
 
 ---
 

@@ -24,7 +24,7 @@ You will also need a PostgreSQL database running locally or access to a cloud da
 
 ## Step 1: Project Initialization with supermemory
 
-Every successful project starts with clear requirements. The **supermemory** skill helps you organize project context, track decisions, and maintain a knowledge base throughout development.
+Every successful project starts with clear requirements. The [**supermemory** skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) helps you organize project context, track decisions, and maintain a knowledge base throughout development.
 
 Initialize your project structure:
 
@@ -56,7 +56,7 @@ This creates a persistent context that Claude Code references throughout develop
 
 ## Step 2: Backend Development with tdd and pdf Skills
 
-For the backend, use test-driven development to ensure your API is reliable from the start. The **tdd** skill guides you through writing tests before implementation, a practice that catches bugs early and improves code design.
+For the backend, use test-driven development to ensure your API is reliable from the start. The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) guides you through writing tests before implementation, a practice that catches bugs early and improves code design.
 
 ### Setting Up the Express Backend
 
@@ -121,7 +121,7 @@ The tdd skill provides guidance on test structure, assertions, and helps interpr
 
 ### Generating API Documentation
 
-The **pdf** skill helps you create comprehensive API documentation. After implementing your endpoints, generate documentation:
+The [**pdf** skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) helps you create comprehensive API documentation. After implementing your endpoints, generate documentation:
 
 ```bash
 # Use pdf skill to extract and format API docs

@@ -12,14 +12,14 @@ score: 8
 
 # Claude Skills with Vercel Deployment Automation
 
-Vercel's deployment platform hooks into your Git workflow, but the gap between pushing code and knowing whether your deployment is production-ready still requires human judgment. Claude skills fill that gap: the `tdd` skill catches missing tests before deployment, `frontend-design` flags accessibility regressions, `pdf` generates release notes, and `supermemory` tracks deployment history for incident context. This guide covers Claude skills with Vercel deployment automation from Vercel API setup through full pre- and post-deployment pipelines.
+Vercel's deployment platform hooks into your Git workflow, but the gap between pushing code and knowing whether your deployment is production-ready still requires human judgment. Claude skills fill that gap: the [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) catches missing tests before deployment, `frontend-design` flags accessibility regressions, [`pdf`](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) generates release notes, and `supermemory` tracks deployment history for incident context. This guide covers Claude skills with Vercel deployment automation from Vercel API setup through full pre- and post-deployment pipelines.
 
 ## What You Will Build
 
 - Pre-deployment gate: Claude `tdd` skill reviews staged changes and blocks deploys with critical test gaps
 - Post-deployment check: Claude validates the live deployment against a checklist
 - Automated changelog: `pdf` skill generates structured release notes from commit history
-- Incident context: `supermemory` skill stores deployment metadata for faster debugging
+- Incident context: [`supermemory` skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) stores deployment metadata for faster debugging
 
 ## Prerequisites
 

@@ -87,7 +87,7 @@ The tdd skill recognizes when your code is becoming difficult to test—a strong
 
 ## Integrating with Other Claude Skills
 
-The true power emerges when you combine the tdd skill with other Claude capabilities. The **frontend-design** skill can generate testable component structures, while the **pdf** skill helps you create test fixtures from documentation. The **supermemory** skill remembers your testing patterns across projects, learning your preferences and common approaches.
+The true power emerges when you combine the tdd skill with other Claude capabilities. The **frontend-design** skill can generate testable component structures, while the [**pdf** skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) helps you create test fixtures from documentation. The [**supermemory** skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) remembers your testing patterns across projects, learning your preferences and common approaches.
 
 For projects involving data processing, combining tdd with the **xlsx** skill allows you to test spreadsheet transformations before implementing business logic. Similarly, the **docx** skill can verify document generation outputs match expected templates.
 

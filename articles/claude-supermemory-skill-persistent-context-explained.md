@@ -100,7 +100,7 @@ For anything you'd want in your repo's git history — tech stack, architecture 
 
 ## Combining SuperMemory with Other Skills
 
-SuperMemory composes well with other skills. The `tdd` skill benefits from remembering where your test files live and which framework you use. The `frontend-design` skill produces better output when it already knows your component library and design tokens. The `pdf` skill can store extraction schemas so you don't re-specify column mappings for recurring document types.
+SuperMemory composes well with other skills. The [`tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) benefits from remembering where your test files live and which framework you use. The `frontend-design` skill produces better output when it already knows your component library and design tokens. The [`pdf` skill](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) can store extraction schemas so you don't re-specify column mappings for recurring document types.
 
 Invoke both in the same session:
 
