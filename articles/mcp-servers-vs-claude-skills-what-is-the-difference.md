@@ -4,7 +4,8 @@ title: "MCP Servers vs Claude Skills: What Is the Difference?"
 description: "MCP servers vs Claude skills explained: what each does, how they relate, and when to use one vs the other for AI-powered developer workflows."
 date: 2026-03-13
 author: "Claude Skills Guide"
-categories: [guides]
+categories: [guides, comparisons]
+tags: [claude-code, claude-skills, mcp, comparison, architecture]
 reviewed: true
 score: 8
 ---

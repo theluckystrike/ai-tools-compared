@@ -5,6 +5,7 @@ description: "Honest beginner review of Claude Code: what works well, what's fru
 date: 2026-03-13
 author: "Claude Skills Guide"
 categories: [guides]
+tags: [claude-code, claude-skills, review, beginner, 2026]
 reviewed: true
 score: 8
 ---

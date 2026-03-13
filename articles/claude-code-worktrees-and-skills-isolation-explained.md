@@ -77,20 +77,20 @@ Skills are read from `.claude/skills/` relative to the **main project root**, no
 
 This is by design — you do not want different worktrees running different versions of your [`/tdd` skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/). It creates consistency across parallel workstreams.
 
-### Worktree-Aware context_files
+### Skills and Relative File References
 
-The `context_files` in a skill's front matter are resolved relative to the **current working directory** at invocation time, which for a worktree session is the worktree directory. This means context files correctly read from the worktree's version of the files:
+When a skill's instructions reference project files, Claude resolves those paths relative to the **current working directory** at invocation time — which in a worktree session is the worktree directory. This means Claude naturally reads the worktree's version of the files.
 
-```yaml
----
-name: tdd
-context_files:
-  - src/test-utils/setup.ts    # Reads from worktree's version
-  - docs/testing-guide.md      # Reads from worktree's version
----
+To make this explicit, write skill instructions that reference files using relative paths:
+
+```
+When writing tests, first read src/test-utils/setup.ts for the test helper patterns,
+and docs/testing-guide.md for project testing conventions.
 ```
 
-This is correct behavior — when Claude is working in a worktree branch for a feature, it should see that branch's version of the test utilities.
+Note: `context_files` is not a valid skill front matter field — do not add it to your `.md` skill files. Use prose instructions in the skill body instead.
+
+When Claude is working in a worktree branch for a feature, it reads that branch's version of the referenced files automatically.
 
 ## Designing Skills for Worktree Use
 

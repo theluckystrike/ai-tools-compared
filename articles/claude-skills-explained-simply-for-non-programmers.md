@@ -5,6 +5,7 @@ description: "A plain-English explanation of what Claude skills are, why they ex
 date: 2026-03-13
 author: "Claude Skills Guide"
 categories: [guides]
+tags: [claude-code, claude-skills, beginner, non-programmer]
 reviewed: true
 score: 8
 ---
