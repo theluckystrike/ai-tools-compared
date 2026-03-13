@@ -22,7 +22,7 @@ The challenge lies not just in detecting issues, but in systematically fixing th
 
 ## Setting Up Your Accessibility Workflow
 
-Before starting, ensure you have the necessary Claude Code skills installed. The **frontend-design** skill includes accessibility-aware component generation, while **tdd** helps you write tests that validate contrast requirements.
+Before starting, ensure you have the necessary Claude Code skills installed. The [**frontend-design** skill](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) includes accessibility-aware component generation, while [**tdd**](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) helps you write tests that validate contrast requirements.
 
 ```bash
 # Verify installed skills

@@ -18,7 +18,7 @@ Fastify has become the preferred choice for Node.js developers seeking better pe
 
 Express.js served the Node.js community well for over a decade, but Fastify addresses many of its shortcomings. Fastify offers serialization at roughly three times the speed of Express, native support for async/await without wrapper libraries, and a schema-based validation system that eliminates manual input checking. The plugin system is more intuitive, and the TypeScript support is first-class rather than an afterthought.
 
-Before starting your migration, ensure your current Express application has adequate test coverage. The **tdd** skill from Claude Code can help you establish test patterns if your project lacks them. Run your existing test suite to establish a baseline, then begin the incremental migration.
+Before starting your migration, ensure your current Express application has adequate test coverage. The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) from Claude Code can help you establish test patterns if your project lacks them. Run your existing test suite to establish a baseline, then begin the incremental migration.
 
 ## Setting Up Your Migration Environment
 
@@ -33,7 +33,7 @@ cd myapp-fastify
 npm install express@^4.18.0
 ```
 
-The migration works best when you copy your existing Express route handlers and adapt them to Fastify's interface. The **supermemory** skill helps maintain context across your migration sessions, remembering which routes you've converted and any issues encountered.
+The migration works best when you copy your existing Express route handlers and adapt them to Fastify's interface. The [**supermemory** skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) helps maintain context across your migration sessions, remembering which routes you've converted and any issues encountered.
 
 ## Converting Route Handlers
 

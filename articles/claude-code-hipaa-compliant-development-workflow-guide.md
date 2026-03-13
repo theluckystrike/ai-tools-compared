@@ -22,7 +22,7 @@ The technical safeguards include access controls, audit controls, integrity cont
 
 ## Setting Up a Secure Development Environment
 
-Before writing any HIPAA-compliant code, establish a secure development environment. Use isolated project directories and avoid storing PHI in logs or temporary files. The supermemory skill helps maintain clean context by organizing your development sessions without accidentally exposing sensitive data.
+Before writing any HIPAA-compliant code, establish a secure development environment. Use isolated project directories and avoid storing PHI in logs or temporary files. The [supermemory skill](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) helps maintain clean context by organizing your development sessions without accidentally exposing sensitive data.
 
 ```bash
 # Create isolated project structure
@@ -65,7 +65,7 @@ function requirePermission(action) {
 }
 ```
 
-Claude Code's tdd skill helps you write comprehensive tests for these access control mechanisms before implementing the full feature set.
+Claude Code's [tdd skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) helps you write comprehensive tests for these access control mechanisms before implementing the full feature set.
 
 ## Audit Logging with Claude Code
 

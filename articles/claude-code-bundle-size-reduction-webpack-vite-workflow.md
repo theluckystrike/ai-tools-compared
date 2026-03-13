@@ -146,7 +146,7 @@ rollupOptions: {
 
 ## Using Claude Skills for Optimization Workflow
 
-Several Claude Code skills accelerate the optimization process. The **tdd** skill helps you set up proper test coverage to ensure your optimizations don't break functionality. Before making significant changes, invoke the skill to establish test baselines:
+Several Claude Code skills accelerate the optimization process. The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) helps you set up proper test coverage to ensure your optimizations don't break functionality. Before making significant changes, invoke the skill to establish test baselines:
 
 ```
 /tdd Write tests for the main application components to verify functionality after bundle optimization
@@ -154,7 +154,7 @@ Several Claude Code skills accelerate the optimization process. The **tdd** skil
 
 The **pdf** skill proves useful when you need to generate bundle size reports for stakeholders or documentation. Create automated reports that track size changes over time.
 
-For teams using **supermemory** to maintain project context, store your optimization configurations and findings so they persist across sessions. This is particularly valuable when optimizing large codebases over multiple sessions.
+For teams using [**supermemory**](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) to maintain project context, store your optimization configurations and findings so they persist across sessions. This is particularly valuable when optimizing large codebases over multiple sessions.
 
 ## Measuring and Monitoring Results
 

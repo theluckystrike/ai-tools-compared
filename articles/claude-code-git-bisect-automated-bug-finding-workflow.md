@@ -72,13 +72,13 @@ Claude Code can help you craft these test scripts, especially when dealing with 
 
 Several Claude skills complement the git bisect workflow beautifully:
 
-The **tdd skill** helps you write regression tests that catch the bug, which you can then use with bisect run. When you load the skill with `/tdd`, Claude helps structure comprehensive tests that verify specific behaviors—these tests become your automated bug detectors.
+The [**tdd skill**](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) helps you write regression tests that catch the bug, which you can then use with bisect run. When you load the skill with `/tdd`, Claude helps structure comprehensive tests that verify specific behaviors—these tests become your automated bug detectors.
 
 The **pdf skill** proves useful when the bug involves documentation or report generation. You can script validation checks that verify PDF output matches expected content, then feed those checks into bisect.
 
 For projects involving visual output, the **frontend-design skill** helps validate UI components programmatically, ensuring your automated bisect tests catch visual regressions.
 
-The **supermemory skill** can track your bisect sessions across projects, remembering which commits were problematic and what fixes resolved them—building institutional knowledge about recurring issues.
+The [**supermemory skill**](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) can track your bisect sessions across projects, remembering which commits were problematic and what fixes resolved them—building institutional knowledge about recurring issues.
 
 ## Practical Example: Finding a Login Bug
 

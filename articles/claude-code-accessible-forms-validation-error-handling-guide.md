@@ -25,7 +25,7 @@ Web Content Accessibility Guidelines (WCAG) specify several requirements for for
 - Error identification should be clear and specific
 - Input purpose should be programmatically determinable
 
-The **frontend-design** skill understands these requirements and generates form components with proper ARIA attributes, labels, and error message containers built in.
+The [**frontend-design** skill](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) understands these requirements and generates form components with proper ARIA attributes, labels, and error message containers built in.
 
 ## Setting Up Accessible Form Markup
 
@@ -60,7 +60,7 @@ Key accessibility attributes include `aria-describedby` linking the input to its
 
 ## Implementing Validation with the tdd Skill
 
-Use the **tdd** skill to develop validation logic test-first. This ensures your error handling works correctly for all users:
+Use the [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) to develop validation logic test-first. This ensures your error handling works correctly for all users:
 
 ```javascript
 // Request the tdd skill to write validation tests

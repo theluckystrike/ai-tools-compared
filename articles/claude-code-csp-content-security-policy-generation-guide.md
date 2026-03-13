@@ -163,9 +163,9 @@ Once your basic CSP is working, progressively harden it:
 
 Several Claude skills can assist with CSP management:
 
-- The **tdd** skill helps you write tests that verify CSP headers are correctly applied
+- The [**tdd** skill](/claude-skills-guide/articles/best-claude-skills-for-developers-2026/) helps you write tests that verify CSP headers are correctly applied
 - The **frontend-design** skill can audit your frontend code for CSP compliance
-- Use **supermemory** to maintain a record of approved domains and their purposes
+- Use [**supermemory**](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) to maintain a record of approved domains and their purposes
 - The **xlsx** skill helps you track CSP violations across different environments
 
 ## Common CSP Pitfalls
