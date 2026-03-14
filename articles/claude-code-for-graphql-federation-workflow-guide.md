@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for GraphQL Federation Workflow Guide"
 description: "Learn how to use Claude Code to streamline GraphQL Federation development, from schema design to subgraph configuration and federated query testing."
@@ -7,11 +8,14 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-graphql-federation-workflow-guide/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for GraphQL Federation Workflow Guide
 
-GraphQL Federation allows you to compose multiple GraphQL services into a unified supergraph, enabling teams to build independent services that expose a seamless API. However, managing federated schemas, coordinating between subgraphs, and debugging federated queries can quickly become complex. This guide shows you how to leverage Claude Code to automate and accelerate your GraphQL Federation workflow.
+GraphQL Federation allows you to compose multiple GraphQL services into a unified supergraph, enabling teams to build independent services that expose a seamless API. However, managing federated schemas, coordinating between subgraphs, and debugging federated queries can quickly become complex. This guide shows you how to use Claude Code to automate and accelerate your GraphQL Federation workflow.
 
 ## Setting Up Claude Code for GraphQL Projects
 

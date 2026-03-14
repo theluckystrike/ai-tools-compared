@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for NGINX Ingress Workflow Tutorial"
 description: "Learn how to use Claude Code to streamline your NGINX Ingress configuration and deployment workflow. Practical examples and actionable advice for developers."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-nginx-ingress-workflow-tutorial/
 categories: [Tutorial, DevOps, Kubernetes]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for NGINX Ingress Workflow Tutorial
 
-NGINX Ingress Controller is the go-to solution for managing external access to Kubernetes services. Yet configuring ingress resources, managing SSL certificates, and handling routing rules can become tedious and error-prone. This tutorial shows you how to leverage Claude Code to automate and accelerate your NGINX Ingress workflow from configuration to deployment.
+NGINX Ingress Controller is the go-to solution for managing external access to Kubernetes services. Yet configuring ingress resources, managing SSL certificates, and handling routing rules can become tedious and error-prone. This tutorial shows you how to use Claude Code to automate and accelerate your NGINX Ingress workflow from configuration to deployment.
 
 ## Prerequisites
 

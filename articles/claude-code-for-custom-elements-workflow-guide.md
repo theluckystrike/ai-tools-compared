@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Custom Elements Workflow Guide"
 description: "Learn how to create custom elements in Claude Code, including MCP tools, custom skills, and reusable function-calling patterns for your development workflow."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-custom-elements-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Custom Elements Workflow Guide
@@ -265,7 +269,7 @@ claude -s api-builder "Generate an Express.js API"
 
 ## Integrating Custom Elements into Your Workflow
 
-Once created, integrate custom elements seamlessly:
+Once created, integrate custom elements smoothly:
 
 1. **Load on Demand**: Only load elements needed for current task
 2. **Environment-Based**: Use different elements for development vs. production

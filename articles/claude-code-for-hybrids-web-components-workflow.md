@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Hybrids Web Components Workflow"
 description: "Learn how to use Claude Code effectively with Hybrids web components. This guide covers practical workflows, code examples, and best practices for building modern web components."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-hybrids-web-components-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -38,7 +42,7 @@ export const config = {
 
 ## Creating Your First Hybrids Component
 
-When generating Hybrids components with Claude Code, the descriptor pattern is central to the workflow. Hybrids uses descriptors—special objects that define how properties behave—to create reactive components. Claude Code understands this pattern and can help you generate components that leverage Hybrids' full capabilities.
+When generating Hybrids components with Claude Code, the descriptor pattern is central to the workflow. Hybrids uses descriptors—special objects that define how properties behave—to create reactive components. Claude Code understands this pattern and can help you generate components that use Hybrids' full capabilities.
 
 A typical component creation workflow starts with defining the component structure. Ask Claude Code to generate a component with specific properties, and it will create the appropriate descriptor definitions. The key is being explicit about property types, default values, and any custom getters or setters you need.
 

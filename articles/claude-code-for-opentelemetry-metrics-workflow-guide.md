@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for OpenTelemetry Metrics Workflow Guide"
 description: "Learn how to use Claude Code to implement OpenTelemetry metrics in your applications. A practical workflow guide for developers integrating metrics observability."
@@ -8,11 +9,14 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-opentelemetry-metrics-workflow-guide/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for OpenTelemetry Metrics Workflow Guide
 
-OpenTelemetry has become the go-to standard for observability in modern applications. While distributed tracing gets most of the attention, metrics are equally crucial for understanding system health, capacity planning, and performance optimization. This guide shows you how to leverage Claude Code to implement OpenTelemetry metrics efficiently in your projects.
+OpenTelemetry has become the go-to standard for observability in modern applications. While distributed tracing gets most of the attention, metrics are equally crucial for understanding system health, capacity planning, and performance optimization. This guide shows you how to use Claude Code to implement OpenTelemetry metrics efficiently in your projects.
 
 ## Understanding OpenTelemetry Metrics
 

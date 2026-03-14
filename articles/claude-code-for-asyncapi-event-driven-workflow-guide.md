@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for AsyncAPI Event-Driven Workflow Guide"
 description: "Learn how to use Claude Code to design, document, and implement event-driven workflows using AsyncAPI. Practical examples and code snippets for developers."
@@ -7,14 +8,17 @@ author: Claude Skills Guide
 permalink: /claude-code-for-asyncapi-event-driven-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for AsyncAPI Event-Driven Workflow Guide
 
 Event-driven architectures have become the backbone of modern distributed systems. Whether you're building microservices, IoT platforms, or real-time data pipelines, communicating through events requires clear contracts and reliable specifications. AsyncAPI provides that specification, and Claude Code can help you write, validate, and implement event-driven workflows efficiently.
 
-This guide shows you how to leverage Claude Code to work with AsyncAPI—from generating your first specification to maintaining event-driven workflows in production.
+This guide shows you how to use Claude Code to work with AsyncAPI—from generating your first specification to maintaining event-driven workflows in production.
 
 ## What is AsyncAPI?
 

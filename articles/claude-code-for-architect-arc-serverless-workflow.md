@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Architect ARC Serverless Workflow"
 description: "Learn how to use Claude Code to architect efficient serverless workflows using ARC patterns. Practical examples, code snippets, and actionable advice for developers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-architect-arc-serverless-workflow/
 categories: [Development, AI, Serverless]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -384,7 +388,7 @@ export class CachedOrderStore implements OrderStore {
 
 ## Conclusion
 
-Architecting ARC serverless workflows with Claude Code combines the structured approach of the ARC pattern with AI-assisted development. By leveraging Claude Code's understanding of serverless patterns, you can rapidly scaffold components, implement best practices, and optimize for cost and performance.
+Architecting ARC serverless workflows with Claude Code combines the structured approach of the ARC pattern with AI-assisted development. By using Claude Code's understanding of serverless patterns, you can rapidly scaffold components, implement best practices, and optimize for cost and performance.
 
 Key takeaways: define clear event triggers, implement idempotent processing, use structured logging, right-size your functions, and monitor costs continuously. With these practices and Claude Code as your development partner, you'll build serverless workflows that are robust, scalable, and cost-effective.
 

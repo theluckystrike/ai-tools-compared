@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Envoy Proxy Workflow Tutorial"
 description: "A practical guide to using Claude Code for Envoy Proxy configuration, deployment, and management. Learn workflows for service mesh, traffic routing, and observability."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-envoy-proxy-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills, envoy, proxy, service-mesh]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Envoy Proxy Workflow Tutorial
 

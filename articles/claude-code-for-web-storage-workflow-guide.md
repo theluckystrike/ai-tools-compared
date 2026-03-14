@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Web Storage Workflow Guide"
 description: "Learn how to use Claude Code CLI to automate and streamline your web storage operations with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-web-storage-workflow-guide/
 categories: [Development, CLI, Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Web Storage Workflow Guide

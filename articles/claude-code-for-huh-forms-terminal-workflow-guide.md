@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Huh Forms Terminal Workflow Guide"
 description: "Learn how to integrate Claude Code with huh forms for building powerful interactive CLI workflows. This guide covers terminal form handling, workflow automation, and practical examples."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-huh-forms-terminal-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Huh Forms Terminal Workflow Guide
 
-Building interactive command-line applications often requires handling user input through forms, prompts, and guided workflows. The `huh` library in Go provides a powerful way to create terminal forms, and when combined with Claude Code, you can create intelligent, AI-assisted CLI experiences that guide users through complex tasks. This guide shows you how to leverage Claude Code for building sophisticated terminal workflows using huh forms.
+Building interactive command-line applications often requires handling user input through forms, prompts, and guided workflows. The `huh` library in Go provides a powerful way to create terminal forms, and when combined with Claude Code, you can create intelligent, AI-assisted CLI experiences that guide users through complex tasks. This guide shows you how to use Claude Code for building sophisticated terminal workflows using huh forms.
 
 ## Understanding Huh Forms and Claude Code Integration
 
@@ -41,7 +45,7 @@ go mod init my-cli-tool
 go get github.com/charmbracelet/huh
 ```
 
-With these tools in place, you can start building forms that leverage Claude Code's capabilities.
+With these tools in place, you can start building forms that use Claude Code's capabilities.
 
 ## Building Interactive Forms with Huh
 

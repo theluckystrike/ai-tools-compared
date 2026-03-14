@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Mise Tasks Workflow Tutorial"
 description: "Master the integration of Claude Code with Mise tasks to automate your development workflow. Learn practical patterns for creating intelligent task runners that adapt to your project context."
@@ -6,8 +7,11 @@ date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-mise-tasks-workflow-tutorial/
 categories: [tutorials]
-tags: [claude-code, mise, workflow-automation, developer-tools, task-runner]
+tags: [claude-code, mise, workflow-automation, developer-tools, task-runner, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Mise Tasks Workflow Tutorial
 

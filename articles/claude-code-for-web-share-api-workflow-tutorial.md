@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Web Share API Workflow Tutorial"
 description: "Learn how to leverage Claude Code to build efficient workflows around the Web Share API for seamless content sharing in web applications."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-web-share-api-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Web Share API Workflow Tutorial
@@ -198,5 +202,5 @@ Claude Code can help you set up the server-side handler for these incoming share
 
 The Web Share API, combined with Claude Code's development workflow, enables you to create seamless sharing experiences that rival native applications. By following this tutorial's patterns—feature detection, graceful degradation, and reusable components—you'll build robust sharing functionality that works across all browsers and devices.
 
-Remember to always provide fallback options for unsupported browsers, and leverage Claude Code to iterate quickly on your implementation. With these tools and practices, you can create share features that feel natural and effective for your users.
+Remember to always provide fallback options for unsupported browsers, and use Claude Code to iterate quickly on your implementation. With these tools and practices, you can create share features that feel natural and effective for your users.
 {% endraw %}

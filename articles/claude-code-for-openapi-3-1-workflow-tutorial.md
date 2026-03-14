@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for OpenAPI 3.1 Workflow Tutorial"
 description: "Learn how to leverage Claude Code to streamline your OpenAPI 3.1 API design, documentation, and implementation workflow with practical examples."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-openapi-3-1-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 OpenAPI 3.1 represents a significant evolution in API specification, introducing a more powerful schema system based on JSON Schema 2020-12. For developers working with modern APIs, combining Claude Code with OpenAPI 3.1 creates a powerful workflow that accelerates API design, generates client SDKs, and ensures documentation stays in sync with implementation. This tutorial walks you through practical strategies to integrate Claude Code into your OpenAPI 3.1 development process.
@@ -202,7 +206,7 @@ These automations reduce boilerplate work, letting your team focus on business l
 
 ## Conclusion
 
-Integrating Claude Code into your OpenAPI 3.1 workflow transforms API development from a documentation exercise into a collaborative design process. By leveraging Claude Code's understanding of both specification semantics and implementation patterns, you can create better APIs faster, maintain accurate documentation, and ensure your specification serves as a reliable source of truth throughout your project's lifecycle.
+Integrating Claude Code into your OpenAPI 3.1 workflow transforms API development from a documentation exercise into a collaborative design process. By using Claude Code's understanding of both specification semantics and implementation patterns, you can create better APIs faster, maintain accurate documentation, and ensure your specification serves as a reliable source of truth throughout your project's lifecycle.
 
 Start with small workflows—specification writing and client generation—then expand to testing and validation as your team becomes comfortable with the process. The investment in setting up these workflows pays dividends in reduced manual work and improved API quality.
 {% endraw %}

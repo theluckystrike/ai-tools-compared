@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Gravitee API Gateway Workflow"
 description: "Learn how to leverage Claude Code to streamline your Gravitee API Gateway workflow. Practical examples for API configuration, policy management, and deployment automation."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-gravitee-api-gateway-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Gravitee API Gateway Workflow

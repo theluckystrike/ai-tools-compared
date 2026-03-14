@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for HAProxy Load Balancer Workflow"
 description: "Learn how to use Claude Code to configure, manage, and optimize HAProxy load balancer deployments with practical examples and automation strategies."
@@ -7,11 +8,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-haproxy-load-balancer-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for HAProxy Load Balancer Workflow
 
-HAProxy remains one of the most popular load balancers for modern infrastructure, offering high availability, traffic distribution, and layer 7 routing capabilities. When combined with Claude Code's AI-assisted development workflow, configuring and managing HAProxy becomes significantly more efficient. This guide explores how developers can leverage Claude Code to streamline HAProxy configuration, debugging, and optimization.
+HAProxy remains one of the most popular load balancers for modern infrastructure, offering high availability, traffic distribution, and layer 7 routing capabilities. When combined with Claude Code's AI-assisted development workflow, configuring and managing HAProxy becomes significantly more efficient. This guide explores how developers can use Claude Code to streamline HAProxy configuration, debugging, and optimization.
 
 ## Why Use Claude Code with HAProxy
 

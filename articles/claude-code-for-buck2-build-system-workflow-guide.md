@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Buck2 Build System Workflow Guide"
 description: "Learn how to integrate Claude Code into your Buck2 build system workflow for faster builds, intelligent debugging, and optimized compilation strategies."
@@ -8,11 +9,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-buck2-build-system-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 
-Buck2, Meta's high-performance build system, powers large-scale codebases with incredible speed and efficiency. However, mastering its configuration, debugging build failures, and optimizing build times can be challenging. This guide shows you how to leverage Claude Code as an intelligent assistant throughout your Buck2 workflow—writing BUILD files, diagnosing build errors, and optimizing compilation strategies.
+Buck2, Meta's high-performance build system, powers large-scale codebases with incredible speed and efficiency. However, mastering its configuration, debugging build failures, and optimizing build times can be challenging. This guide shows you how to use Claude Code as an intelligent assistant throughout your Buck2 workflow—writing BUILD files, diagnosing build errors, and optimizing compilation strategies.
 
 ## Setting Up Claude Code for Buck2 Projects
 
@@ -164,7 +168,7 @@ Successfully integrating Claude Code with Buck2 requires establishing consistent
 1. **Create Buck2-specific skills** that encapsulate your team's conventions and common operations
 2. **Provide context** when asking for help—include relevant BUILD files, error messages, and configuration snippets
 3. **Use Claude Code proactively** for maintenance and optimization, not just debugging
-4. **Document custom patterns** in your skill files so team members can leverage shared knowledge
+4. **Document custom patterns** in your skill files so team members can use shared knowledge
 5. **Iterate on configurations** based on Claude Code's recommendations and measure actual build time improvements
 
 By treating Claude Code as a knowledgeable teammate familiar with your project's build structure, you can dramatically improve productivity when working with Buck2. From writing correct BUILD files faster to diagnosing complex failures and optimizing build performance, AI-assisted workflows become an invaluable part of modern build engineering.

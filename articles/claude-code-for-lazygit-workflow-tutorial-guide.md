@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for LazyGit Workflow Tutorial Guide"
 description: "Master the LazyGit workflow with Claude Code integration. Learn practical patterns for managing git operations efficiently using lazygit with AI assistance."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-lazygit-workflow-tutorial-guide/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for LazyGit Workflow Tutorial Guide
@@ -126,7 +130,7 @@ Claude displays each conflict section and guides you through the resolution proc
 
 ### Code Review Before Committing
 
-Before committing significant changes, leverage Claude for preliminary review:
+Before committing significant changes, use Claude for preliminary review:
 
 ```
 "Review my staged changes for potential issues: check for debugging code, hardcoded credentials, and missing error handling."

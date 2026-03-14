@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Charm Bracelet Workflow Guide"
 description: "Learn how to build modular, composable Claude Code workflows that combine multiple skills like charms on a bracelet. Practical examples for developers."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-charm-bracelet-workflow-guide/
 categories: [workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Charm Bracelet Workflow Guide

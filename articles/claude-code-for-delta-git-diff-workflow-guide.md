@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Delta Git Diff Workflow Guide"
 description: "Learn how to integrate Delta (the syntax-highlighting git diff pager) with Claude Code to create powerful, visual git diff workflows that enhance your code review experience."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-delta-git-diff-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills, git, delta, workflow]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Delta Git Diff Workflow Guide
 
@@ -223,6 +227,6 @@ This workflow scales from quick self-reviews to thorough pull request examinatio
 
 Integrating Delta with Claude Code creates a powerful combination: Delta handles the visual presentation of git diffs with beautiful syntax highlighting and navigation, while Claude Code provides intelligent analysis and context. Together, they transform git diffs from raw text into actionable insights.
 
-Start by installing Delta and configuring it as your default git pager. Then create custom Claude Code skills that leverage Delta for visual display while Claude handles the analytical work. This workflow will significantly improve your code review efficiency and help you catch issues faster.
+Start by installing Delta and configuring it as your default git pager. Then create custom Claude Code skills that use Delta for visual display while Claude handles the analytical work. This workflow will significantly improve your code review efficiency and help you catch issues faster.
 
 The beauty of this integration is its flexibility—you can adapt it to your specific needs, whether you prefer minimal setups or comprehensive automation. Experiment with different Delta options and Claude Code prompts to find the workflow that works best for you.

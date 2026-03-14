@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Glow Markdown Viewer Workflow"
 description: "Master the Claude Code and Glow markdown viewer workflow to enhance your documentation reading experience. Learn practical examples, automation tips, and expert integration strategies."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-glow-markdown-viewer-workflow/
 categories: [guides, workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Glow Markdown Viewer Workflow
@@ -56,7 +60,7 @@ This command chain tells Claude Code to locate documentation, then pipes the res
 
 ## Building an Advanced Documentation Pipeline
 
-A more sophisticated workflow leverages Claude Code's ability to understand context and Glow's rendering capabilities together. Create a custom skill that streamlines documentation review:
+A more sophisticated workflow uses Claude Code's ability to understand context and Glow's rendering capabilities together. Create a custom skill that streamlines documentation review:
 
 ```yaml
 ---
