@@ -62,7 +62,7 @@ The team addressed several issues affecting developer experience:
 The legacy skill format using `+description` front matter fields is now deprecated. Migration to the standard `description` field completes by the end of the month. Skills still using the old format will continue working but will emit warnings during loading. Check your installed skills with:
 
 ```bash
-claude skills list --verbose
+ls -la ~/.claude/skills/
 ```
 
 The deprecated format looks like:
@@ -89,10 +89,10 @@ To check your current Claude Code version and installed skills:
 
 ```bash
 claude --version
-claude skills list
+ls ~/.claude/skills/
 ```
 
-Run `claude skills update` regularly to pull the latest versions of installed skills. Many skill authors release improvements weekly, particularly for skills like `tdd` that benefit from frequent test pattern updates.
+Update skills regularly by replacing skill `.md` files in `~/.claude/skills/` with newer versions. Many skill authors release improvements weekly, particularly for skills like `tdd` that benefit from frequent test pattern updates.
 
 The `internal-comms` skill received a significant update this week with new templates for project status reports. If you regularly communicate team progress, this skill now generates formatted updates in multiple formats compatible with the `docx` skill for Word documents or direct Markdown output.
 

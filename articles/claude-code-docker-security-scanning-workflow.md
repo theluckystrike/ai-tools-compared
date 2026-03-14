@@ -31,14 +31,9 @@ The key challenge is not just running scans but effectively triaging results. A 
 
 Claude Code skills extend the tool's capabilities for specific tasks. For Docker security scanning, you'll want skills that handle container analysis, vulnerability parsing, and remediation guidance. The best-claude-skills-for-devops-and-deployment collection includes several relevant options for infrastructure security automation.
 
-Install scanning-related skills using the claude skill install command:
+To use scanning-related skills, place the skill `.md` files in `~/.claude/skills/` (for user-wide access) or `.claude/` in your project root (for project-scoped access). Then invoke skills with `/skill-name` in the Claude Code REPL.
 
-```bash
-claude skill install https://github.com/anthropic/claude-devops-skills
-claude skill install https://github.com/community/docker-security-skill
-```
-
-After installation, verify the skills are available by checking skill list output. Each skill provides specialized commands for security tasks like image scanning, result parsing, and compliance reporting.
+After adding skill files, verify they are available by listing your skills directory: Each skill provides specialized commands for security tasks like image scanning, result parsing, and compliance reporting.
 
 For teams using MCP servers, the mcp-server-docker extension provides direct Docker daemon communication for scanning images without manual image export steps. This integration reduces workflow friction and provides faster feedback during development cycles.
 

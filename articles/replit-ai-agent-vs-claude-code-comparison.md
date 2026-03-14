@@ -58,11 +58,10 @@ The agent generates all files, installs dependencies, and typically produces a w
 With Claude Code, you work in your local environment:
 
 ```bash
-# Create project directory
+# Create project directory and start an interactive session
 mkdir my-api && cd my-api
-
-# Initialize with Claude
-claude "Create a FastAPI project with JWT auth using SQLite"
+claude
+# Then in the session: "Create a FastAPI project with JWT auth using SQLite"
 ```
 
 Claude Code generates the files locally and you control the deployment target—local server, VPS, or any cloud provider.
@@ -79,14 +78,13 @@ Claude Code gains power through specialized skills that extend its capabilities.
 - **pptx**: Builds presentations directly from code or data
 - **xlsx**: Generates spreadsheets with formulas and formatting
 
-These skills integrate naturally into your workflow. For instance, after building an API:
+These skills integrate naturally into your workflow. For instance, after building an API, start a session and invoke skills with their slash commands:
 
 ```bash
-# Generate API documentation as PDF
-claude --skill pdf "Create API documentation from this OpenAPI spec"
-
-# Write unit tests
-claude --skill tdd "Add comprehensive tests for the auth module"
+claude
+# Then in the session:
+# /pdf Create API documentation from this OpenAPI spec
+# /tdd Add comprehensive tests for the auth module
 ```
 
 Replit AI Agent focuses on code generation within its platform rather than these specialized document workflows.
@@ -128,13 +126,15 @@ Let's compare a concrete task—building a todo application with a Vue frontend 
 
 ```bash
 mkdir todo-app && cd todo-app
-claude "Create a todo app with Vue 3 frontend and Python Flask backend. Use local SQLite for storage."
+claude
+# Then in the session:
+# "Create a todo app with Vue 3 frontend and Python Flask backend. Use local SQLite for storage."
 
 # Add tests using the tdd skill
-claude --skill tdd "Write pytest tests for the Flask API endpoints"
+# /tdd Write pytest tests for the Flask API endpoints
 
 # Generate documentation
-claude --skill pdf "Create user documentation for the API"
+# /pdf Create user documentation for the API
 ```
 
 The Claude Code approach gives you more granular control over each step and produces files you fully own.

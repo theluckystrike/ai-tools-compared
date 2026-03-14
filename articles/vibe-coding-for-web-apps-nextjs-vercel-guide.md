@@ -60,10 +60,11 @@ Claude will generate the necessary components, typically creating files like `co
 
 Claude skills transform how Claude approaches different development scenarios. For frontend work, the **frontend-design** skill provides design-focused prompting that produces cleaner, more cohesive UI code. Invoke it when you need help with layouts, component composition, or visual polish.
 
-When you need test coverage, switch to the **tdd** skill. It guides Claude to write tests before implementation, resulting in more reliable code:
+When you need test coverage, switch to the **tdd** skill. It guides Claude to write tests before implementation, resulting in more reliable code. Start a session and invoke the skill:
 
 ```bash
-claude -s tdd
+claude
+# Then in the session: /tdd
 ```
 
 For persistent context across sessions, the **supermemory** skill helps Claude remember your project decisions, architectural choices, and coding conventions. This creates a more personalized development experience where Claude understands your project's history.

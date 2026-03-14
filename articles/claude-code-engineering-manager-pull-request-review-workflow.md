@@ -79,25 +79,23 @@ This automated screening catches low-hanging fruit that would otherwise consume 
 After the automated screening, Claude Code becomes your strategic partner for deeper analysis. Use it to:
 
 **Analyze complex logic paths:**
-```
-claude review --pr=123 --focus=logic --complexity-threshold=15
-```
 
-This command identifies functions with high cyclomatic complexity that warrant closer human attention.
+Open Claude Code and describe the PR context:
+```
+claude --print "Review the diff in this PR for functions with high cyclomatic complexity. Identify those above threshold 15 that warrant closer human attention."
+```
 
 **Check for memory leaks and performance issues:**
-```
-claude review --pr=123 --focus=performance --baseline=main
-```
 
-Claude Code compares the PR against your main branch to identify potential performance regressions.
+```
+claude --print "Compare the changed code against the main branch. Identify potential performance regressions, memory leaks, or inefficient patterns."
+```
 
 **Verify dependency updates:**
-```
-claude review --pr=123 --focus=dependencies
-```
 
-This ensures new dependencies don't introduce known vulnerabilities or unnecessary bloat.
+```
+claude --print "Review the dependency changes in package.json and check if any new dependencies introduce known vulnerabilities or unnecessary bloat."
+```
 
 ### Tier 3: Human Expert Review
 
@@ -135,7 +133,7 @@ const token = httpOnlyCookie;
 Your team has standardized on specific patterns. When a PR introduces a different approach:
 
 ```
-claude review --pr=456 --pattern=error-handling
+claude --print "Review the error handling in the changed files. Compare it against our established pattern and provide specific suggestions to align with team standards."
 ```
 
 Claude Code compares the PR's error handling against your established pattern and provides specific suggestions to align with team standards.
@@ -145,7 +143,7 @@ Claude Code compares the PR's error handling against your established pattern an
 Before approving a PR that modifies database queries:
 
 ```
-claude review --pr=789 --focus=performance --compare-query-count
+claude --print "Analyze the database query changes in this PR. Count queries per request and compare to the main branch to identify any performance regressions."
 ```
 
 Claude Code analyzes the query impact and generates a report like:
@@ -171,10 +169,10 @@ PR_NUMBER=$1
 REPO_ROOT=$2
 
 echo "Running Claude Code pre-review..."
-claude review --pr=$PR_NUMBER --output=json > $REPO_ROOT/.review/initial-scan.json
+claude --print "Review the latest changes in this PR for security issues, missing tests, style violations, and hardcoded credentials. Output findings as JSON." > $REPO_ROOT/.review/initial-scan.json
 
-# Parse and comment on PR
-claude comment --pr=$PR_NUMBER --from=$REPO_ROOT/.review/initial-scan.json
+# Parse results and post as a PR comment via the GitHub CLI or API
+# gh pr review $PR_NUMBER --comment --body "$(cat $REPO_ROOT/.review/initial-scan.json)"
 
 # Exit with warning if critical issues found
 CRITICAL_COUNT=$(jq '.critical | length' $REPO_ROOT/.review/initial-scan.json)

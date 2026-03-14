@@ -91,11 +91,7 @@ jobs:
           curl -s https://install.claude.ai | bash
       - name: Run Enterprise Review
         run: |
-          claude code-review \
-            --skill claude-code-enterprise-code-review-automation \
-            --config .claude-review.yaml \
-            --enterprise-mode \
-            --audit-output review-audit.json
+          claude --print "Using the claude-code-enterprise-code-review-automation skill, review all changed files per .claude-review.yaml in enterprise mode and output audit findings to review-audit.json"
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           ENTERPRISE_SSO_TOKEN: ${{ secrets.ENTERPRISE_SSO_TOKEN }}
@@ -112,7 +108,7 @@ The third layer provides periodic comprehensive reviews. Schedule weekly full re
 
 ```bash
 # Place claude-code-enterprise-security-scan.md in .claude/ and invoke with /claude-code-enterprise-security-scan
-claude security-scan --full-repo --output weekly-report.json --compliance-mode
+# Then in the REPL: /claude-code-enterprise-security-scan scan full repo, output weekly-report.json, compliance mode
 ```
 
 ## Enterprise Authentication and Compliance
@@ -189,7 +185,7 @@ Claude Code skills integrate with popular enterprise development tools. The **cl
 
 ```bash
 # Place claude-code-enterprise-jira-integration.md in .claude/ and invoke with /claude-code-enterprise-jira-integration
-claude review --link-jira --project SECURITY
+# Then in the REPL: /claude-code-enterprise-jira-integration link findings to Jira project SECURITY
 ```
 
 This creates Jira tickets automatically for critical findings, ensuring security issues receive proper tracking.
@@ -217,7 +213,7 @@ Install the foundational skill and run it against your current codebase:
 
 ```bash
 # Place claude-code-enterprise-code-review-automation.md in .claude/ and invoke with /claude-code-enterprise-code-review-automation
-claude review --init --config .claude-review.yaml
+# Then in the REPL: /claude-code-enterprise-code-review-automation initialize review config from .claude-review.yaml
 ```
 
 Start with conservative rules, focusing on security and critical bugs. Expand to style and best practices as teams build confidence. Enable compliance reporting once basic review stabilizes.

@@ -44,15 +44,7 @@ The documentation does an excellent job explaining Claude Code's core concepts. 
 
 ### Conversations and Sessions
 
-Claude Code organizes work into conversations and sessions. Each conversation represents a topic or project, while sessions within a conversation maintain context across interactions. The documentation shows how to manage multiple conversations effectively:
-
-```
-# Start a new conversation
-claude --new "project-name"
-
-# Resume an existing conversation  
-claude --resume conversation-id
-```
+Claude Code organizes work into sessions. Each session maintains context across interactions. Simply start a new session for a fresh topic, or continue an existing one by launching Claude from the same directory. The documentation shows how to manage sessions effectively.
 
 ### Skills System
 
@@ -72,13 +64,14 @@ The documentation emphasizes project-based workflows as the recommended approach
 
 ### Initializing a Project
 
-For new projects, the documentation recommends using the interactive initialization:
+For new projects, the documentation recommends creating a `CLAUDE.md` file in your project root to set project-specific context. Then simply run:
 
-```
-claude init
+```bash
+cd your-project
+claude
 ```
 
-This command walks you through setting up project-specific configurations, including:
+Once in the interactive session, describe your project to Claude so it can provide relevant assistance, including:
 
 - Project name and description
 - Default programming languages

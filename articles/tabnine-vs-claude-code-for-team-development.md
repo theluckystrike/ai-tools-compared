@@ -109,14 +109,12 @@ Tabnine integrates into most IDEs smoothly. It requires minimal configuration an
 Claude Code integrates through the Claude CLI and supports extensible skills. You can invoke it for specific tasks:
 
 ```bash
-# Generate a component using a skill
-claude -p "Create a new user profile component using our frontend-design skill"
-
-# Run tests with TDD guidance
-claude -s tdd "Add authentication flow"
-
-# Generate documentation
-claude -s pdf "Generate API docs for the users module"
+# Start a session and invoke skills via slash commands
+claude
+# Then in the session:
+# /frontend-design Create a new user profile component
+# /tdd Add authentication flow
+# /pdf Generate API docs for the users module
 ```
 
 Skills like `supermemory` can maintain team knowledge bases, while `pdf` skills enable automated documentation generation. This flexibility makes Claude Code adaptable to various team processes.

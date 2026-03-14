@@ -22,12 +22,12 @@ One of the most frequent problems developers face is Claude Code failing to init
 ```bash
 # Check Claude Code version
 claude --version
+```
 
-# Verify authentication status
-claude auth status
+If you're seeing authentication errors, verify your `ANTHROPIC_API_KEY` environment variable is set correctly:
 
-# Re-authenticate if needed
-claude auth login
+```bash
+echo $ANTHROPIC_API_KEY
 ```
 
 If you're seeing "command not found" errors, your PATH might not include the Claude Code binary. Add it manually:
@@ -42,34 +42,24 @@ Add this line to your `.bashrc` or `.zshrc` to make it permanent. This simple PA
 
 Developers working with large codebases often hit context window limits. The simple solution isn't upgrading hardware—it's optimizing how you interact with Claude Code. Break your queries into smaller chunks:
 
-```bash
-# Instead of asking about the entire codebase
-claude "explain this entire project"
-
-# Ask about specific modules
-claude "explain the src/auth/ directory"
-claude "explain the database/ models"
-```
-
-For projects exceeding reasonable context limits, use the `--focus` flag to direct Claude's attention to specific files:
+Instead of asking about the entire codebase in one prompt, break your queries into smaller chunks within an interactive session:
 
 ```bash
-claude --focus src/core/main.ts "refactor this function"
+claude
+# Then in the session: "Explain the src/auth/ directory"
+# Or: "Explain the database/ models"
 ```
+
+For projects exceeding reasonable context limits, start your session in the specific subdirectory relevant to your task rather than the repository root.
 
 ## Fixing Skill Loading Errors
 
 Claude Code's skill system powers specialized tasks through modules like `frontend-design`, `pdf`, `tdd`, and `supermemory`. When skills fail to load, the issue is usually straightforward:
 
+Skills are plain Markdown files in `~/.claude/skills/`. If a skill fails to load, verify the file exists and has valid YAML front matter with `name:` and `description:` fields. To check available skills, list the directory:
+
 ```bash
-# List available skills
-# List skills: check your .claude/ directory or run /help
-
-# Verify a specific skill is installed
-claude skills verify frontend-design
-
-# Reinstall a problematic skill
-# Place tdd.md in .claude/ then invoke: /tdd
+ls ~/.claude/skills/
 ```
 
 If a skill like `pdf` isn't generating documents correctly, check for conflicting dependencies in your project:
@@ -77,43 +67,31 @@ If a skill like `pdf` isn't generating documents correctly, check for conflictin
 ```bash
 # Check for dependency conflicts
 npm ls | grep -i pdf
-
-# Clear skill cache and reinstall
-claude skills cache clear
-# Place pdf.md in .claude/ then invoke: /pdf --force
 ```
+
+To reinstall a skill, simply replace the file in `~/.claude/skills/` with the updated version.
 
 ## Handling Rate Limits and API Errors
 
 Rate limiting can interrupt workflow when processing multiple files. The simple fix involves adjusting your approach rather than waiting for limit resets:
 
 ```bash
-# Process files sequentially instead of batch
-for file in src/*.ts; do
-  claude "analyze $file"
-done
-
-# Use the --no-stream flag to reduce API calls
-claude --no-stream "review this code"
+# Process files sequentially instead of batch — start a session and describe each file
+claude
+# Then in the session: "Analyze src/utils.ts" followed by "Now analyze src/auth.ts"
 ```
 
-For persistent API errors, verify your API key hasn't expired:
-
-```bash
-# Check API key validity
-claude auth refresh
-```
+For persistent API errors, verify your API key is still valid at [console.anthropic.com](https://console.anthropic.com) and that your `ANTHROPIC_API_KEY` environment variable is current.
 
 ## Fixing Response Quality Issues
 
 When Claude Code responses seem off-topic or low quality, the problem often lies in prompt structure rather than the tool itself. Refine your prompts:
 
 ```bash
-# Vague prompt (often produces poor results)
-claude "fix this"
-
-# Specific prompt (produces targeted results)
-claude "fix the null pointer exception in src/utils/parser.ts line 42"
+# Start a session and use specific prompts
+claude
+# Vague (produces poor results): "fix this"
+# Specific (produces targeted results): "Fix the null pointer exception in src/utils/parser.ts line 42"
 ```
 
 For code review tasks, combine the `tdd` skill with specific instructions:
@@ -153,8 +131,8 @@ Corporate networks and proxies often cause connection problems. Configure Claude
 export HTTP_PROXY=http://your-proxy:8080
 export HTTPS_PROXY=http://your-proxy:8080
 
-# Verify connection
-claude ping
+# Verify connection by running a simple session
+claude --version
 ```
 
 If you're behind a corporate firewall, ensure your firewall allows connections to api.claude.ai.

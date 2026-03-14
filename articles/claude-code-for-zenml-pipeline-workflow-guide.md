@@ -26,20 +26,20 @@ Before diving into workflow optimization, ensure Claude Code is installed and co
 
 ```bash
 # Install Claude Code CLI
-curl -fsSL https://github.com/anthropics/claude-code/releases/download/stable/claude-code-install.sh | sh
+npm install -g @anthropic-ai/claude-code
 
 # Verify installation
 claude --version
 ```
 
-Once installed, initialize Claude in your ZenML project directory:
+Once installed, start an interactive Claude session in your ZenML project directory:
 
 ```bash
 cd your-zenml-project
-claude init
+claude
 ```
 
-This creates a `.claude` configuration file that Claude Code uses to understand your project context, including dependencies, virtual environments, and project structure.
+You can describe your project context to Claude, including dependencies, virtual environments, and project structure, so it can provide relevant suggestions.
 
 ## Creating ZenML Pipelines with Claude Code
 

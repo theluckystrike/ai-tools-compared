@@ -34,8 +34,8 @@ An automated workflow with Claude Code offers several advantages:
 Before building your workflow, ensure Claude Code has the right skills loaded. The `/frontend-design` skill provides accessibility-aware component generation, while `/axe` skill (if available) handles automated testing integration.
 
 ```bash
-# Verify your skills are installed
-claude skills list | grep -E "frontend|axe|accessibility"
+# Verify your skills are installed by listing the skills directory
+ls ~/.claude/skills/ | grep -E "frontend|axe|accessibility"
 ```
 
 If you don't have these skills, you can load them from the Claude Skills marketplace or create a custom accessibility skill that matches your team's standards.

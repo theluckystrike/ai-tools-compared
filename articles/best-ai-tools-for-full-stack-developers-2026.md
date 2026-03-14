@@ -27,15 +27,16 @@ What makes Claude Code particularly valuable for full stack work is its skill sy
 Getting started with Claude Code is straightforward:
 
 ```bash
-npm install -g @anthropic/claude-code
-claude init
+npm install -g @anthropic-ai/claude-code
 ```
 
-After initialization, you can start working on any project:
+After installation, you can start working on any project by running `claude` to open the interactive REPL:
 
 ```bash
-claude "Create a REST API for a task management app with Express and PostgreSQL"
+claude
 ```
+
+Then describe what you want to build in the interactive session.
 
 Claude Code handles the entire workflow—creating database schemas, writing API endpoints, and even generating basic frontend scaffolding.
 

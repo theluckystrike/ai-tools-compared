@@ -27,21 +27,20 @@ When working with Claude Code, you can describe your use case and get recommenda
 
 ## Setting Up Claude Code for Node.js Development
 
-Before diving into workflows, ensure Claude Code is properly configured for your Node.js projects. Install the CLI globally and authenticate:
+Before diving into workflows, ensure Claude Code is properly configured for your Node.js projects. Install the CLI globally:
 
 ```bash
 npm install -g @anthropic-ai/claude-code
-claude auth
 ```
 
-Within your project directory, initialize Claude Code to understand your codebase:
+Within your project directory, start an interactive session so Claude Code can understand your codebase:
 
 ```bash
 cd your-node-project
-claude init
+claude
 ```
 
-This creates a `.claude` configuration file that helps Claude understand your project's structure, dependencies, and testing framework. For child process workflows specifically, you might want to specify your testing framework (Jest, Mocha, or Node's built-in test runner) so Claude can generate appropriate test cases.
+This opens an interactive session where Claude can read your project's structure, dependencies, and testing framework. For child process workflows specifically, you might want to describe your testing framework (Jest, Mocha, or Node's built-in test runner) so Claude can generate appropriate test cases.
 
 ## Practical Example: Building a File Processing Pipeline
 

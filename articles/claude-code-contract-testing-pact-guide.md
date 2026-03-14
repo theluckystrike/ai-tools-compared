@@ -117,7 +117,9 @@ Run this against your running provider service. The verifier checks each interac
 Claude Code enhances contract testing through several practical integrations. When working with API documentation, combine the **openapi** skill with Pact to automatically generate contract tests from OpenAPI specifications:
 
 ```bash
-claude -s openapi "generate pact tests from ./api-spec.yaml"
+# Open Claude Code, then invoke the openapi skill in the REPL:
+claude
+# /openapi generate pact tests from ./api-spec.yaml
 ```
 
 This approach ensures your contract tests stay synchronized with your API specification—a critical practice for teams practicing API-first development.

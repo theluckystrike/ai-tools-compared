@@ -68,18 +68,6 @@ Claude Code skills can automate many Traceloop-related tasks. Here's a skill tha
 ```yaml
 name: traceloop-setup
 description: Set up Traceloop observability in your LLM project
-parameters:
-  - name: project_path
-    type: string
-    description: Path to the project directory
-  - name: api_key
-    type: string
-    description: Traceloop API key
-    required: true
-  - name: framework
-    type: string
-    description: Framework being used (openai, langchain, llama-index)
-    default: openai
 ---
 
 # Traceloop Setup Skill
@@ -147,15 +135,6 @@ A key benefit of Traceloop is comprehensive metrics collection. Here's a skill t
 ```yaml
 name: traceloop-metrics
 description: Query and analyze Traceloop metrics for your LLM application
-parameters:
-  - name: time_range
-    type: string
-    description: Time range for metrics (1h, 24h, 7d)
-    default: 24h
-  - name: metric_type
-    type: string
-    description: Type of metric (latency, tokens, cost, errors)
-    default: all
 ---
 
 # Traceloop Metrics Analysis
@@ -228,11 +207,6 @@ When issues occur in production, quick debugging is essential. Here's a skill fo
 ```yaml
 name: traceloop-debug
 description: Debug failed LLM requests using Traceloop traces
-parameters:
-  - name: trace_id
-    type: string
-    description: The Traceloop trace ID to analyze
-    required: true
 ---
 
 # Traceloop Debug Skill

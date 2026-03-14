@@ -137,14 +137,7 @@ Need to generate documentation? The pdf skill creates professional PDF output di
 Apply the tdd skill to write unit tests for the authentication module.
 ```
 
-The supermemory skill enables persistent context across sessions—useful when working on long-term projects. Install these skills within the container just as you would on a native system:
-
-```bash
-claude skill install frontend-design
-claude skill install pdf
-claude skill install tdd
-claude skill install supermemory
-```
+The supermemory skill enables persistent context across sessions—useful when working on long-term projects. Install skills within the container by placing skill Markdown files in `~/.claude/skills/` (which you've mounted from your host via `-v ~/.claude:/homedeveloper/.claude:z`). Any skill files already in your host `~/.claude/skills/` directory will be available automatically.
 
 ## Practical Development Workflow
 

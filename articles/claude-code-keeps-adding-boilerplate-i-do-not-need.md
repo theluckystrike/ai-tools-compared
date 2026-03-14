@@ -44,15 +44,16 @@ The most direct solution is to explicitly tell Claude Code what you don't want. 
 
 This pattern works because Claude Code interprets "write a function" as "create a complete, usable code element." By explicitly stating "just the logic" or "no imports," you reset expectations.
 
-## Strategy 2: Use the --compact Flag
+## Strategy 2: Request Concise Output Explicitly
 
-Claude Code supports a `--compact` flag (or `-c` shorthand) that reduces verbosity across responses. When enabled, this flag encourages more concise code generation:
+You can reduce verbosity by being explicit in your prompt. When starting an interactive session, immediately tell Claude what style you prefer:
 
 ```bash
-claude -c "Create a function to parse JSON"
+claude
+# Then in the session: "Create a function to parse JSON — minimal code only, no boilerplate"
 ```
 
-The compact mode doesn't eliminate boilerplate entirely, but it significantly reduces the amount of scaffolding Claude Code generates by default.
+Making the conciseness requirement part of your initial prompt consistently reduces the amount of scaffolding Claude Code generates.
 
 ## Strategy 3: Leverage Skill Configurations
 
@@ -164,7 +165,7 @@ instructions: |
   - Prefer inline implementations over helper functions
 ```
 
-Loading this skill with `claude --skill minimal-code` sets a persistent preference for concise output.
+To use this skill, place it in `~/.claude/skills/minimal-code.md`. Then invoke it in a session with `/minimal-code` to set a persistent preference for concise output during that session.
 
 ## Finding the Right Balance
 

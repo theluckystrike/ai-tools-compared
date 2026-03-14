@@ -22,17 +22,13 @@ Effective log management is crucial for maintaining healthy applications and快�
 
 Before diving into log management workflows, you need to configure Claude Code to communicate with your Datadog account. The recommended approach uses Datadog's API through a dedicated skill that handles authentication and API interactions smoothly.
 
-Install the Datadog integration skill using the following command:
+To use a Datadog integration skill, place the `datadog-log-management.md` skill file in `~/.claude/skills/` (or `.claude/` in your project root), then invoke it with `/datadog-log-management` in the Claude Code REPL.
+
+After loading the skill, configure your Datadog API key and application key as environment variables:
 
 ```bash
-claude skill install datadog-log-management
-```
-
-This skill provides a comprehensive set of tools for interacting with Datadog's Log Management API. After installation, you'll need to configure your Datadog API key and application key. Create a configuration file in your project directory:
-
-```bash
-claude config set datadog.api_key "your_api_key"
-claude config set datadog.app_key "your_app_key"
+export DATADOG_API_KEY="your_api_key"
+export DATADOG_APP_KEY="your_app_key"
 ```
 
 The skill automatically handles rate limiting, retry logic, and response parsing, allowing you to focus on analyzing logs rather than managing API interactions.
@@ -59,13 +55,7 @@ This natural language approach is particularly valuable when you're searching fo
 
 Beyond simple searches, Claude Code excels at creating automated analysis workflows. Let's walk through a practical example of building a log analysis routine for monitoring application health.
 
-Create a new Claude Code workflow file:
-
-```bash
-claude workflow create log-health-check
-```
-
-Define the workflow to perform these steps:
+Create a new Claude skill file for your log health check workflow. Define the workflow to perform these steps:
 
 1. Query recent error logs across all services
 2. Group errors by frequency and service
@@ -110,11 +100,8 @@ Claude Code can help you set up sophisticated monitoring pipelines that react to
 Here's how you might define this monitoring setup:
 
 ```bash
-claude monitor create security-log-watch \
-  --query="status:warning AND @event:auth_failure" \
-  --threshold=5 \
-  --window=10m \
-  --action=notify-security-team
+# Open Claude Code and describe the monitor you want to create:
+claude --print "Create a Datadog monitor named security-log-watch that queries for status:warning AND @event:auth_failure, triggers at threshold 5 within a 10-minute window, and notifies the security team"
 ```
 
 The monitor configuration gets pushed to Datadog, where it continuously evaluates incoming logs. When thresholds are exceeded, Datadog triggers alerts through your configured channels—Slack, PagerDuty, or email.
@@ -122,8 +109,8 @@ The monitor configuration gets pushed to Datadog, where it continuously evaluate
 You can also use Claude Code to test your monitors before deploying them. Run a simulation that feeds historical log data through your monitor definitions to verify they behave as expected:
 
 ```bash
-claude monitor test security-log-watch \
-  --test-data=sample-security-logs.json
+# Open Claude Code and test the monitor definition:
+claude --print "Test the security-log-watch monitor using the log data in sample-security-logs.json and verify it triggers correctly"
 ```
 
 ## Log Correlation and Root Cause Analysis
@@ -180,7 +167,12 @@ Claude Code generates a complete dashboard configuration:
 Import this configuration directly into Datadog:
 
 ```bash
-claude dashboard import --file=dashboard-config.json
+# Import the dashboard configuration via the Datadog API:
+curl -X POST "https://api.datadoghq.com/api/v1/dashboard" \
+  -H "DD-API-KEY: ${DATADOG_API_KEY}" \
+  -H "DD-APPLICATION-KEY: ${DATADOG_APP_KEY}" \
+  -H "Content-Type: application/json" \
+  -d @dashboard-config.json
 ```
 
 ## Conclusion

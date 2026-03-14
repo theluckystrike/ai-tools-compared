@@ -25,13 +25,7 @@ Accessing beta features requires specific configuration steps that differ from s
 
 ## How to Access Claude Code Beta Features
 
-The primary method for accessing beta features involves using command-line flags when launching Claude Code. The `--beta` flag enables various experimental capabilities depending on the feature you want to use.
-
-```bash
-claude --beta features,extended-skills
-```
-
-This command enables multiple beta feature categories simultaneously. Separate each feature category with commas to activate multiple beta options.
+The primary method for accessing beta features involves enabling them through your Claude Code configuration file. The `settings.json` file controls which experimental capabilities are active.
 
 ### Accessing Beta Through Configuration Files
 
@@ -60,50 +54,47 @@ This configuration approach ensures beta features remain active across sessions 
 
 Many beta features arrive as specialized skills that you install separately. Beta skills often provide access to new tool integrations or enhanced capabilities for specific workflows.
 
-```bash
-claude skill install @beta/tdd
-claude skill install @beta/frontend-design
-claude skill install @beta/superbeta
-```
+To use a beta skill, place the skill's `.md` file in `~/.claude/skills/` (for user-wide access) or `.claude/` in your project root (for project-scoped access), then invoke it with `/skill-name` in the Claude Code REPL.
 
-The `@beta/` prefix indicates skills that include experimental functionality. These skills may have additional requirements or limitations compared to their stable counterparts.
+Beta skill files may have additional requirements or limitations compared to their stable counterparts.
 
 ## Practical Examples of Beta Feature Usage
 
 ### Enhanced Test-Driven Development with Beta Skills
 
-The beta TDD skill provides advanced testing capabilities including property-based testing, mutation testing integration, and automatic test optimization suggestions. To use these features effectively:
+The beta TDD skill provides advanced testing capabilities including property-based testing, mutation testing integration, and automatic test optimization suggestions. To use these features, place the beta TDD skill file in `~/.claude/skills/` then open Claude Code:
 
 ```bash
-# Initialize a project with beta TDD features
-claude --beta tdd init --project my-app
-
-# Run enhanced test generation
-claude --beta tdd generate --mutation-testing
+# Open Claude Code, then invoke the beta TDD skill
+claude
+# In the REPL: /tdd initialize project my-app with mutation testing enabled
 ```
 
-This workflow activates the beta TDD environment with experimental test generation algorithms that analyze code patterns to produce more robust test suites.
+This workflow activates the beta TDD skill with experimental test generation algorithms that analyze code patterns to produce more robust test suites.
 
 ### Advanced Frontend Design with Beta Preview
 
-The beta frontend-design skill includes real-time component preview generation, design system integration, and cross-browser compatibility checking. Access these features by specifying the preview flag:
+The beta frontend-design skill includes real-time component preview generation, design system integration, and cross-browser compatibility checking. Place the skill file in `~/.claude/skills/` then invoke it in the REPL:
 
 ```bash
-claude --beta frontend-design generate --preview --design-system=material
+# Open Claude Code, then invoke the beta frontend-design skill
+claude
+# In the REPL: /frontend-design generate a Material Design component with browser compatibility checks
 ```
-
-The preview flag enables the live component rendering feature, which generates interactive previews you can test directly in your browser.
 
 ### Memory and Context Management
 
-Beta features for memory management provide enhanced context retention and retrieval capabilities. The supermemory skill represents one of the most powerful beta offerings in this category:
+Beta features for memory management provide enhanced context retention and retrieval capabilities. The supermemory skill represents one of the most powerful beta offerings in this category. Configure it in `~/.claude/settings.json`:
 
-```bash
-# Enable enhanced memory with beta features
-claude --beta memory enhanced --context-window=200k
+```json
+{
+  "env": {
+    "CLAUDE_CONTEXT_WINDOW": "200000"
+  }
+}
 ```
 
-This configuration expands the context window and enables semantic memory retrieval, allowing Claude Code to reference relevant information from previous sessions with greater accuracy.
+This configuration expands the context window, allowing Claude Code to reference relevant information from previous sessions with greater accuracy.
 
 ## Configuring Beta Feature Dependencies
 
@@ -132,11 +123,11 @@ npm install -g @anthropic-ai/claude-mcp
 Beta features update frequently, sometimes daily. Stay current with beta releases to access the latest improvements and bug fixes.
 
 ```bash
-# Check for beta updates
-claude --beta update --check
+# Check for Claude Code updates
+npm update -g @anthropic-ai/claude-code
 
-# Install latest beta versions
-claude --beta update --install
+# Verify installed version
+claude --version
 ```
 
 Enable auto-update in your configuration for hands-free maintenance:

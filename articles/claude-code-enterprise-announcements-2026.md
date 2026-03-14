@@ -87,10 +87,11 @@ The Claude skill ecosystem has grown substantially, with enterprise-focused skil
 **The supermemory skill** introduces team memory features where organizations can maintain shared knowledge bases. New team members gain immediate access to institutional knowledge without requiring extensive onboarding.
 
 ```bash
-# Installing enterprise skills
-claude skill install @enterprise/compliance-framework
-claude skill install @enterprise/security-scanner
-claude skill install @enterprise/api-contract-validator
+# To use enterprise skills, place the skill .md files in ~/.claude/skills/
+# or .claude/ in your project root, then invoke with /skill-name in the REPL:
+# /compliance-framework
+# /security-scanner
+# /api-contract-validator
 ```
 
 ## Deployment Options and Integration

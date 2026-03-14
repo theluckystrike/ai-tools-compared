@@ -27,13 +27,7 @@ The community-driven skills ecosystem has matured considerably. Skills like **td
 
 ### Installing New Skills
 
-Getting started with new skills is straightforward:
-
-```bash
-claude skill install claude-skills/frontend-design
-claude skill install claude-skills/tdd
-claude skill install claude-skills/supermemory
-```
+Getting started with new skills is straightforward. Skills are Markdown files placed in your `~/.claude/skills/` directory. Once a skill file is present, invoke it with the `/skill-name` command in the Claude REPL. For example, if you have `frontend-design.md` in your skills directory, type `/frontend-design` followed by your request.
 
 Each skill comes with configuration options. For instance, the **pdf** skill supports custom extraction rules:
 

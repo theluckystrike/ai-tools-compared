@@ -36,7 +36,7 @@ Say you're building a React button component. Instead of writing everything from
 
 ```bash
 # Initialize a new component with Claude Code
-claude --prompt "Create a Button component in React with:
+claude --print "Create a Button component in React with:
 - Primary, secondary, and outline variants
 - Loading state with spinner
 - Disabled state

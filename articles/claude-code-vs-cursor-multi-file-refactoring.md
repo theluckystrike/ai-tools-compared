@@ -64,7 +64,7 @@ When you need surgical precision in refactoring, Claude Code's file operation to
 
 ```bash
 # Refactor across specific directories
-claude --prompt "Rename all uses of 'getUser()' to 'fetchUser()' in src/api/ and src/hooks/"
+claude --print "Rename all uses of 'getUser()' to 'fetchUser()' in src/api/ and src/hooks/"
 ```
 
 The ability to chain operations and script complex refactoring sequences makes Claude Code particularly effective for systematic changes.

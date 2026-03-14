@@ -81,17 +81,14 @@ Create a custom command in your `init.vim` or `init.lua`:
 local function claude_edit()
   local filename = vim.fn.expand("%:p")
   local cursor_pos = vim.fn.getpos(".")
+  -- Launch an interactive claude session in a terminal split
   local cmd = string.format(
-    "claude edit %s --line %d --column %d",
+    "claude",
     filename,
     cursor_pos[2],
     cursor_pos[3]
   )
-  vim.fn.jobstart(cmd, {
-    on_exit = function()
-      vim.cmd("e!")
-    end
-  })
+  vim.cmd("split | terminal " .. cmd)
 end
 
 vim.api.nvim_create_user_command("ClaudeEdit", claude_edit, {})
@@ -107,36 +104,44 @@ vim.keymap.set("n", "<leader>ce", ":ClaudeEdit<CR>", { noremap = true, silent = 
 
 ### Code Review Workflow
 
-Use Claude to review code in your current buffer:
+Use Claude to review code in your current buffer by passing it to `claude --print`:
 
 ```bash
-claude review main.py --line-start 10 --line-end 50
+claude --print "Review the following file for code quality issues: $(cat main.py)"
 ```
 
 In Neovim, create a keymap for quick reviews:
 
 ```lua
 vim.keymap.set("n", "<leader>cr", function()
-  local cmd = string.format("claude review %s", vim.fn.expand("%:p"))
+  local cmd = string.format(
+    "claude --print 'Review this file for issues: ' < %s",
+    vim.fn.expand("%:p")
+  )
   vim.fn.jobstart(cmd, { detach = true })
 end, { noremap = true, silent = true })
 ```
 
 ### AI-Powered Code Generation
 
-Generate boilerplate code or implement functions using Claude skills. For frontend development, the frontend-design skill provides specialized guidance:
+Generate boilerplate code or implement functions using Claude skills. For frontend development, the frontend-design skill provides specialized guidance. Start an interactive session and invoke the skill:
 
 ```bash
-claude generate component Button --props "variant,size,onClick"
+claude
+# Then in the session: /frontend-design Create a Button component with variant, size, and onClick props
 ```
 
 ### Test-Driven Development Setup
 
-Integrate the tdd skill for test generation:
+Integrate the tdd skill for test generation. The simplest approach is a keymap that opens a terminal with a non-interactive Claude invocation:
 
 ```lua
 vim.keymap.set("n", "<leader>tg", function()
-  local cmd = string.format("claude skill run tdd --file %s", vim.fn.expand("%:p"))
+  local filepath = vim.fn.expand("%:p")
+  local cmd = string.format(
+    "claude --print 'Using the tdd skill, generate tests for: %s'",
+    filepath
+  )
   vim.fn.jobstart(cmd, {
     on_stdout = function(_, data)
       vim.api.nvim_put(data, "l", true, true)
@@ -157,12 +162,13 @@ Claude skills extend your editor's capabilities beyond basic AI assistance. Each
 - **supermemory**: Project-aware context management across sessions
 - **webapp-testing**: Automated testing for web applications
 
-Configure skill shortcuts in your Neovim config for quick access:
+Configure skill shortcuts in your Neovim config for quick access. These open an interactive Claude session in a terminal split where you can invoke skills with `/skill-name`:
 
 ```lua
-vim.keymap.set("n", "<leader>ftd", ":!claude skill run tdd<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>ffd", ":!claude skill run frontend-design<CR>", { noremap = true })
-vim.keymap.set("n", "<leader>fsm", ":!claude skill run supermemory --query<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>ftd", ":split | terminal claude<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>ffd", ":split | terminal claude<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>fsm", ":split | terminal claude<CR>", { noremap = true })
+-- Then type /tdd, /frontend-design, or /supermemory in the session
 ```
 
 ## Advanced Configuration: Context Awareness
@@ -170,13 +176,13 @@ vim.keymap.set("n", "<leader>fsm", ":!claude skill run supermemory --query<CR>",
 The supermemory skill proves particularly valuable in Neovim workflows. Configure it to remember your project structure:
 
 ```lua
--- Auto-save context when switching projects
+-- Notify yourself to update supermemory when switching projects
 vim.api.nvim_create_autocmd("DirChanged", {
   callback = function()
-    vim.fn.jobstart(string.format(
-      "claude skill run supermemory --save-project %s",
-      vim.fn.getcwd()
-    ), { detach = true })
+    vim.notify(
+      "Project changed to " .. vim.fn.getcwd() .. " — run /supermemory in Claude to update context",
+      vim.log.levels.INFO
+    )
   end
 })
 ```
@@ -206,11 +212,10 @@ Example lazy-loading configuration:
 
 ## Troubleshooting Common Issues
 
-Authentication failures typically stem from expired tokens. Re-authenticate with:
+Authentication failures typically stem from an invalid or missing API key. Verify your `ANTHROPIC_API_KEY` environment variable is set correctly:
 
 ```bash
-claude auth logout
-claude auth login
+echo $ANTHROPIC_API_KEY
 ```
 
 Plugin conflicts often manifest as slow startup or erratic behavior. Diagnose using:

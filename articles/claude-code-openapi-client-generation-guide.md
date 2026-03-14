@@ -200,7 +200,7 @@ Add a generation script to your project that documents exactly how to regenerate
 ```bash
 #!/bin/bash
 # generate-client.sh
-claude --prompt "Generate a TypeScript API client from ./api spec.yaml with these requirements: [your requirements here]"
+claude --print "Generate a TypeScript API client from ./api spec.yaml with these requirements: [your requirements here]"
 ```
 
 ## Summary

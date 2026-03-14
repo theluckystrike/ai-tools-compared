@@ -37,13 +37,13 @@ Create a `.env` file to store your API key securely:
 ZENROWS_API_KEY=your_zenrows_api_key_here
 ```
 
-Initialize Claude Code in your project directory:
+Start an interactive Claude Code session in your project directory:
 
 ```bash
-claude init
+claude
 ```
 
-This creates a `CLAUDE.md` file where you can define project-specific instructions for Claude Code.
+You can create a `CLAUDE.md` file where you define project-specific instructions for Claude Code, which it will read automatically at session start.
 
 ## Building Your First ZenRows Scraper
 

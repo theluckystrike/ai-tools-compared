@@ -34,14 +34,13 @@ Claude Code can help automate many of these tasks, giving maintainers more time 
 
 The foundation of an efficient triage workflow is a well-configured Claude Code setup. You'll want to install the appropriate skills and configure them for your project's specific needs.
 
-First, ensure you have the latest version of Claude Code installed, then install the relevant skills for issue management:
+First, ensure you have the latest version of Claude Code installed:
 
 ```bash
 claude --version
-# Install triage-related skills
-claude skill install claude-skills/issue-triage-automation
-claude skill install claude-skills/github-issue-mgmt
 ```
+
+Then place any triage-related skill files (e.g. `issue-triage-automation.md`) in your `~/.claude/skills/` directory so they're available via `/skill-name` in a session.
 
 Create a configuration file in your project to define triage rules. This file tells Claude how to categorize and prioritize issues:
 
@@ -162,11 +161,13 @@ The real power of Claude Code comes from automating repetitive tasks.
 
 Issues that haven't been updated in months need periodic review. Set up automated reminders:
 
-```bash
-# Configure stale issue detection
-claude config set triage.stale_after_days 60
-claude config set triage.stale_comment "This issue hasn't had activity in 60 days. 
-Please update if you're still experiencing the problem, or we'll close it soon."
+Configure stale issue detection in your `.claude/triage-config.yml`:
+
+```yaml
+stale_detection:
+  stale_after_days: 60
+  stale_comment: "This issue hasn't had activity in 60 days.
+    Please update if you're still experiencing the problem, or we'll close it soon."
 ```
 
 ### Welcome Messages

@@ -60,7 +60,7 @@ runs:
         ANTHROPIC_API_KEY: ${{ inputs.api-key }}
         CLAUDE_MODEL: ${{ inputs.model }}
       run: |
-        claude -p "Analyze these files for code quality issues: ${{ inputs.files }}"
+        claude --print "Analyze these files for code quality issues: ${{ inputs.files }}"
 ```
 
 This action sets up Node.js, installs Claude Code globally, and runs an analysis command. You can now invoke it from any workflow without repeating the setup steps.
@@ -90,7 +90,7 @@ runs:
       env:
         ANTHROPIC_API_KEY: ${{ inputs.api-key }}
       run: |
-        claude -p "Review these pull request changes for bugs and improvements: ${{ steps.files.outputs.files }}"
+        claude --print "Review these pull request changes for bugs and improvements: ${{ steps.files.outputs.files }}"
 ```
 
 The composite action captures the changed files between base and head commits, then passes them to Claude for review. This pattern works with any Claude skill you have installed.
@@ -117,14 +117,14 @@ runs:
       env:
         ANTHROPIC_API_KEY: ${{ inputs.api-key }}
       run: |
-        claude -p "Analyze test coverage in ${{ inputs.test-dir }} and suggest improvements"
-    
+        claude --print "Analyze test coverage in ${{ inputs.test-dir }} and suggest improvements"
+
     - name: Generate PDF report
       shell: bash
       env:
         ANTHROPIC_API_KEY: ${{ inputs.api-key }}
       run: |
-        claude -p "Create a test coverage summary in markdown, then use the pdf skill to generate a report"
+        claude --print "Create a test coverage summary in markdown, then use the pdf skill to generate a report"
 ```
 
 This composite action chains two Claude invocations. The first analyzes test coverage using TDD patterns, and the second generates a PDF report using the pdf skill.
@@ -147,7 +147,7 @@ runs:
       env:
         ANTHROPIC_API_KEY: ${{ inputs.api-key }}
       run: |
-        RESULT=$(claude -p "Analyze this code and return PASS or FAIL")
+        RESULT=$(claude --print "Analyze this code and return PASS or FAIL")
         echo "result=$RESULT" >> $GITHUB_OUTPUT
 ```
 

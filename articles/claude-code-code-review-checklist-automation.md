@@ -33,10 +33,6 @@ Create a new skill file in your skills directory called `code-review.md`. The fr
 ---
 name: code-review
 description: Runs through your team's code review checklist interactively
-tools:
-  - Read
-  - Bash
-  - Write
 ---
 
 # Code Review Checklist
@@ -75,7 +71,7 @@ pytest --cov=. --cov-report=term-missing
 For JavaScript projects, use the `tdd` skill which includes built-in test patterns:
 
 ```bash
-tdd --framework jest --coverage
+# In the Claude Code REPL: /tdd Run jest tests with coverage
 ```
 
 ### Code Style and Standards
@@ -151,7 +147,7 @@ For maximum automation, trigger your checklist skill from CI/CD pipelines or git
 # .git/hooks/pre-push
 #!/bin/bash
 echo "Running pre-push code review checklist..."
-claude -s code-review --target-branch main
+claude --print "Using the code-review skill, run the full code review checklist against changes targeting main"
 ```
 
 This ensures reviews happen before code merges, catching issues early.

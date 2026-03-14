@@ -80,10 +80,10 @@ paths:
                     format: date-time
 ```
 
-Using the **tdd** skill, generate test scaffolding:
+Using the **tdd** skill, generate test scaffolding. Open the Claude REPL and invoke:
 
-```bash
-claude tdd:generate --contract contracts/user-service.yaml --output tests/consumer-tests/
+```
+/tdd Generate test scaffolding from contracts/user-service.yaml and place tests in tests/consumer-tests/
 ```
 
 This creates test files that verify your consumer handles the contract correctly.

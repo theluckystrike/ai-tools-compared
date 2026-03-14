@@ -83,11 +83,11 @@ After installation, you need to configure Claude Code to work with your preferre
 
 For VS Code, you would install the Claude Code extension from the marketplace and then run:
 
-```bash
-claude auth --beta-token YOUR_BETA_TOKEN
-```
+Set your Anthropic API key in the environment so Claude Code can authenticate:
 
-Replace `YOUR_BETA_TOKEN` with the token you received upon acceptance into the beta program.
+```bash
+export ANTHROPIC_API_KEY=your_api_key_here
+```
 
 ## Getting Started with Claude Code
 
@@ -95,16 +95,16 @@ Once installed and configured, you can start using Claude Code immediately. The 
 
 ```bash
 # Start an interactive Claude Code session
-claude start
+claude
 
-# Ask Claude Code to explain a piece of code
-claude explain src/utils/helper.js
+# In the REPL, ask Claude Code to explain a piece of code:
+# "Explain the code in src/utils/helper.js"
 
-# Generate a new component using the frontend-design skill
-claude generate component --skill frontend-design --name UserProfile
+# Generate a new component using the frontend-design skill:
+# /frontend-design Create a UserProfile component
 
-# Create a test file using the tdd skill
-claude generate test --skill tdd --file src/api/users.js
+# Create a test file using the tdd skill:
+# /tdd Write tests for src/api/users.js
 ```
 
 ## Leveraging Claude Skills
@@ -119,10 +119,12 @@ One of the most powerful features of Claude Code is its skill system. Skills are
 To use a skill, simply specify it in your command:
 
 ```bash
-claude create --skill pdf invoice-generator --data customer-data.json
+# Open Claude Code, then invoke the pdf skill in the REPL:
+claude
+# /pdf Generate an invoice using customer-data.json
 ```
 
-This command uses the pdf skill to generate an invoice based on your customer data.
+This invokes the pdf skill to generate an invoice based on your customer data.
 
 ## Providing Feedback
 

@@ -32,12 +32,12 @@ Here's how to get started with the free tier:
 # Install Claude Code CLI
 npm install -g @anthropic/claude-code
 
-# Initialize a new project
-claude init my-project
-
-# Ask for code suggestions
-claude "How do I implement authentication in Express?"
+# Start an interactive session in your project
+cd my-project
+claude
 ```
+
+Once in the interactive session, you can ask for code suggestions by typing naturally, for example: "How do I implement authentication in Express?"
 
 ### Limitations to Consider
 
@@ -51,22 +51,7 @@ The Pro plan unlocks significant performance improvements and advanced features 
 
 Pro subscribers receive priority processing, eliminating queue wait times during high-traffic periods. The context window expands substantially, allowing Claude Code to analyze larger codebases in a single session.
 
-```javascript
-// With Pro plan, you can analyze entire monorepos
-const { Claude } = require('@anthropic/claude-code');
-
-const client = new Claude({
-  tier: 'pro',
-  maxTokens: 200000, // Larger context window
-  priority: true
-});
-
-// Analyze a full project structure
-await client.analyze('./my-monorepo', {
-  includeTests: true,
-  deepScan: true
-});
-```
+With the Pro plan, you can work with larger codebases in a single session. Start Claude in your monorepo directory and describe what you want to analyze — Claude can read and understand the full project structure, including tests and dependencies.
 
 ### Advanced Skills Access
 
@@ -106,9 +91,10 @@ team:
 If you're building personal projects on evenings and weekends, the free tier typically suffices. Your needs center on code completion, basic refactoring, and occasional debugging help.
 
 ```bash
-# Free tier workflow
-claude refactor optimize-database-queries
-claude debug handle-null-reference
+# Free tier workflow — start claude and describe what you need
+claude
+# Then in the session: "Refactor the database query functions for better performance"
+# Or: "Help me debug this null reference error"
 ```
 
 ### Scenario 2: Professional Developer
@@ -116,10 +102,11 @@ claude debug handle-null-reference
 When coding becomes your primary work, the Pro plan pays for itself through time savings. The larger context window means fewer back-and-forth explanations when working with complex architectures.
 
 ```bash
-# Pro tier workflow - deeper analysis
-claude "analyze full-stack-vulnerability"
-claude "suggest architectural changes for the entire backend"
-claude "generate integration tests with 95% coverage"
+# Pro tier workflow - start claude and describe complex tasks
+claude
+# Then in the session: "Analyze this codebase for full-stack security vulnerabilities"
+# Or: "Suggest architectural changes for the entire backend"
+# Or: "Generate integration tests with 95% coverage"
 ```
 
 ### Scenario 3: Team Lead or Engineering Manager

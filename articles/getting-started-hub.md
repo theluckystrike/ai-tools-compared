@@ -64,13 +64,13 @@ If you see "command not found" after installing, close and reopen your terminal.
 
 **Step 2 — Authenticate:**
 
-Get an API key from [console.anthropic.com](https://console.anthropic.com) under "API Keys", then run:
+Get an API key from [console.anthropic.com](https://console.anthropic.com) under "API Keys", then set it as an environment variable:
 
 ```bash
-claude auth
+export ANTHROPIC_API_KEY=your-key-here
 ```
 
-Paste your key when prompted. The key is stored locally — you authenticate once and it persists.
+Add this to your `.bashrc` or `.zshrc` to make it permanent. The key is stored locally — you authenticate once and it persists.
 
 **Step 3 — Navigate to a project:**
 

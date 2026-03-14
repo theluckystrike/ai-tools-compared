@@ -45,7 +45,7 @@ pipelines:
     - step:
         name: Run Claude Code Analysis
         script:
-          - claude analyze --scope src/
+          - claude --print "Analyze all files in src/ for code quality issues and output a JSON report to analysis-results.json"
         artifacts:
           - analysis-results.json
 ```
@@ -62,7 +62,7 @@ Consider a frontend project using React. You might want Claude Code to generate 
     - step:
         name: Generate Component Files
         script:
-          - claude generate component $COMPONENT_NAME --template react-ts
+          - claude --print "Generate a React TypeScript component named $COMPONENT_NAME following the frontend-design skill patterns"
           - git add components/$COMPONENT_NAME/
           - git commit -m "Generate $COMPONENT_NAME component"
         variables:
@@ -84,7 +84,7 @@ Configure a pipeline step to generate and run tests:
         name: Generate and Run Tests
         script:
           - npm install
-          - claude test generate --coverage --scope src/
+          - claude --print "Using the tdd skill, generate unit and integration tests with coverage for all files in src/"
           - npm test -- --coverage
         caches:
           - npm
@@ -100,7 +100,7 @@ Documentation often falls behind code changes in fast-moving projects. Integrate
     - step:
         name: Generate API Documentation
         script:
-          - claude doc generate --format pdf --output docs/api.pdf
+          - claude --print "Using the pdf skill, generate API documentation from code comments and output to docs/api.pdf"
         artifacts:
           - docs/api.pdf
 ```
@@ -117,8 +117,7 @@ Configure your pipeline to load project context before running tasks:
     - step:
         name: Load Project Context
         script:
-          - claude memory load --project my-app
-          - claude analyze --context-aware
+          - claude --print "Using the supermemory skill, load context for my-app and analyze the codebase with full project awareness"
 ```
 
 This ensures Claude Code understands your project's history, coding conventions, and architectural decisions when generating or reviewing code.
@@ -142,24 +141,24 @@ pipelines:
     - step:
         name: Generate Tests
         script:
-          - claude test generate --coverage
+          - claude --print "Using the tdd skill, generate tests with coverage for all source files"
           - npm test
-    
+
     - step:
         name: Code Quality Check
         script:
-          - claude analyze --scope src/ --output quality-report.json
-    
+          - claude --print "Analyze all files in src/ for code quality issues and save a report to quality-report.json"
+
     - step:
         name: Build and Lint
         script:
           - npm run build
           - npm run lint
-    
+
     - step:
         name: Generate Documentation
         script:
-          - claude doc generate --format pdf
+          - claude --print "Using the pdf skill, generate API documentation in PDF format"
 
   branches:
     main:

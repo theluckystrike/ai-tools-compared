@@ -35,11 +35,9 @@ Claude Code excels at helping architects design and implement these patterns bec
 Before diving into serverless workflow design, ensure your Claude Code environment is properly configured for ARC development. You'll want to create a dedicated skill that understands your serverless stack and project conventions.
 
 ```bash
-# Initialize a new Claude Code project with serverless focus
-claude init --template serverless-arc
-
-# Configure your skill with ARC-specific instructions
-claude skill create arc-architect
+# Create the .claude/ directory and add an arc-architect skill file
+mkdir -p .claude/skills
+# Create arc-architect.md in .claude/skills/ with ARC-specific instructions
 ```
 
 Create a `CLAUDE.md` file in your project root that defines your ARC architecture preferences:

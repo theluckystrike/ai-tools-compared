@@ -58,8 +58,6 @@ Here's how a team project initialization skill might look:
 ---
 name: project-init
 description: Initialize a new project with team standards
-tools: [Write, Bash, Read]
-version: 1.0.0
 ---
 
 # Project Initialization
@@ -85,18 +83,15 @@ For skills that only read or analyze code:
 ---
 name: code-analyzer
 description: Analyze code without modifications
-tools: [Read, Glob, Grep]
-read_only: true
 ---
 ```
 
 For skills that modify files:
 
-```yaml---
+```yaml
+---
 name: code-generator
 description: Generate code from specifications
-tools: [Write, Read, Bash, Glob, Grep]
-requires_confirmation: true
 ---
 ```
 
@@ -138,9 +133,9 @@ New team members benefit from an `onboard` skill that:
 A `release` skill can automate version bumps, changelog generation, and deployment coordination:
 
 ```bash
-# Typical release workflow
-claude -s release --version minor
-# This triggers: version bump → changelog → tag → deploy → notify
+# Typical release workflow: open claude, then invoke the release skill
+# /release
+# Then describe: bump minor version, update changelog, tag, deploy, notify
 ```
 
 ## Scaling Across Teams

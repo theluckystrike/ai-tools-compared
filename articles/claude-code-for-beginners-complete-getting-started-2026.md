@@ -44,13 +44,13 @@ You should see a version number. If you see "command not found", restart your te
 
 Claude Code needs your Anthropic API key to work. Get one at console.anthropic.com under "API Keys".
 
-Then run:
+Set it as an environment variable:
 
 ```bash
-claude auth
+export ANTHROPIC_API_KEY="your-key-here"
 ```
 
-You will be prompted to paste your API key. It gets stored securely — you only need to do this once.
+Add this to your shell profile (e.g., `~/.zshrc` or `~/.bashrc`) so it persists across sessions — you only need to do this once.
 
 ## Step 3: Start Your First Session
 

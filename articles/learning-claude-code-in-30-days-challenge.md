@@ -33,21 +33,18 @@ This challenge assumes basic familiarity with command-line tools and at least on
 
 ### Day 1-2: Skill Discovery and Installation
 
-Start by exploring the built-in skill system. Claude Code ships with several foundational skills, but the real power lies in community-created skills from the skill registry.
+Start by exploring the skill system. Skills are Markdown files stored in `~/.claude/skills/`. Community-created skills can be downloaded and placed in that directory.
 
 ```bash
-# List available skills
-claude skills list
-
-# Search for specific skill categories
-claude skills search pdf
-claude skills search frontend
+# List skills you have installed
+ls ~/.claude/skills/
 ```
 
-Install your first skill using the skill URL or local path:
+Install your first skill by downloading a skill Markdown file and placing it in `~/.claude/skills/`:
 
 ```bash
-claude skills install https://github.com/example/skill-name
+# Download a community skill (example)
+curl -o ~/.claude/skills/pdf.md https://example.com/skills/pdf.md
 ```
 
 ### Day 3-4: Understanding Skill Anatomy
@@ -118,9 +115,11 @@ if __name__ == "__main__":
 Combine skills for complex workflows. Use the **pdf** skill to generate documentation, then employ the **canvas-design** skill to create visual summaries:
 
 ```bash
-# Example skill chain concept
-claude --skill pdf --prompt "Generate API documentation"
-claude --skill canvas-design --input ./docs/api-summary.md
+# Example skill chain concept — start a session and invoke each skill in sequence
+claude
+# Then in the session:
+# /pdf Generate API documentation
+# /canvas-design Summarize ./docs/api-summary.md visually
 ```
 
 **Week 2 Milestone:** You can set up MCP servers and understand how to chain external tools with skills.
@@ -137,9 +136,9 @@ Automate skill execution using shell scripts or CI/CD pipelines:
 #!/bin/bash
 # daily-code-review.sh
 
-claude --skill tdd --prompt "Review and improve test coverage in ./src"
-claude --skill code-review --prompt "Check for security vulnerabilities"
-claude --skill docs --prompt "Update API documentation"
+claude --print "Review and improve test coverage in ./src using TDD principles"
+claude --print "Check for security vulnerabilities in the codebase"
+claude --print "Update API documentation based on current source"
 ```
 
 ### Day 18-19: Event-Driven Automation
@@ -149,7 +148,7 @@ Set up triggers for skill execution based on file changes or git events:
 ```bash
 # Using a file watcher to trigger skill execution
 while inotifywait -e modify ./src/*.py; do
-    claude --skill linter --prompt "Check modified Python files"
+    claude --print "Check modified Python files for linting issues"
 done
 ```
 
@@ -206,11 +205,11 @@ When project type is detected:
 Publish your optimized skills to share with the community or maintain private registries:
 
 ```bash
-# Export skill for sharing
-claude skills export my-custom-skill --output ./shared-skills/
+# Copy skill for sharing
+cp ~/.claude/skills/my-custom-skill.md ./shared-skills/
 
 # Version control your skill collection
-git add skills/
+git add shared-skills/
 git commit -m "Add project-specific workflow skills"
 ```
 

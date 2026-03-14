@@ -41,12 +41,6 @@ Create a skill configuration for AsyncAPI work:
 ---
 name: asyncapi-developer
 description: "Assists with AsyncAPI specification writing and event-driven architecture"
-tools:
-  - Read
-  - Write
-  - Bash
-  - Glob
-  - Grep
 ---
 ```
 

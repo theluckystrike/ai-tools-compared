@@ -38,14 +38,14 @@ gradle --version
 echo $ANDROID_HOME
 ```
 
-Once your environment is ready, initialize Claude Code in your project:
+Once your environment is ready, start Claude Code in your project:
 
 ```bash
 cd your-android-project
-claude init
+claude
 ```
 
-This creates a `.claude` directory with settings tailored to your project. You can now invoke Claude for any development task.
+This opens an interactive session in your project directory. Describe your project to Claude so it can tailor its assistance to your codebase.
 
 ## Core Workflow Differences
 

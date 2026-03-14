@@ -100,10 +100,10 @@ Install it with npm:
 npm install -g @anthropic-ai/claude-code
 ```
 
-Authenticate:
+Set your API key (get one at [console.anthropic.com](https://console.anthropic.com)):
 
 ```bash
-claude auth
+export ANTHROPIC_API_KEY=your-key-here
 ```
 
 Start a session:

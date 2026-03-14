@@ -35,8 +35,7 @@ For organizations using **custom skill repositories**, ensure your internal pack
 ```bash
 # Verify network connectivity
 curl -I https://api.anthropic.com
-# For air-gapped environments, prepare offline skill bundles
-claude --package-skills ./internal-skills --output ./offline-bundle.tar.gz
+# For air-gapped environments, copy skill .md files to ~/.claude/skills/ manually
 ```
 
 ### Security Review Checklist
@@ -73,14 +72,11 @@ sudo yum install claude-code      # RHEL/CentOS
 Configure enterprise authentication early. Claude Code supports multiple authentication methods suitable for enterprise environments:
 
 ```bash
-# API key authentication (per-developer)
-claude auth login --api-key $ANTHROPIC_API_KEY
+# API key authentication — set as an environment variable
+export ANTHROPIC_API_KEY="sk-ant-..."
 
-# SSO integration (enterprise)
-claude auth login --sso --organization $YOUR_ORG
-
-# Service account for CI/CD pipelines
-claude auth login --service-account --key-path ./service-key.json
+# For CI/CD pipelines, use a service account API key stored in your secrets manager
+export ANTHROPIC_API_KEY="${ANTHROPIC_SERVICE_ACCOUNT_KEY}"
 ```
 
 Store credentials securely—never commit API keys to version control. Use environment variables or enterprise secrets management:
@@ -100,8 +96,9 @@ Establish team-wide workspace conventions to ensure consistency across projects.
 Create a standardized project template that includes Claude Code configuration:
 
 ```bash
-# Generate enterprise-compliant project structure
-claude init --template enterprise-webapp --org $YOUR_ORG
+# Create the .claude/ directory and project structure manually
+mkdir -p .claude/skills
+# Add a CLAUDE.md to your project root with team standards
 ```
 
 This creates a `.claude/` directory with recommended settings:
@@ -128,13 +125,10 @@ skills:
 Curate a core set of skills appropriate for your tech stack:
 
 ```bash
-# Install recommended skills for your stack
-claude skill install @claude/prompt-engineering
-claude skill install @claude/code-review
-claude skill install @claude/security-scan
-
-# For enterprise, create organization-wide skill bundles
-claude skill bundle ./team-skills --org $YOUR_ORG
+# Copy skill .md files to your shared skills directory
+cp ./team-skills/*.md ~/.claude/skills/
+# Or add them to the project's .claude/ directory for project-scoped skills
+cp ./team-skills/*.md ./.claude/
 ```
 
 Maintain a **skills manifest** in your organization's shared documentation:
@@ -154,11 +148,11 @@ Define clear workflows for how Claude Code integrates with your development proc
 Configure Claude Code to work within your existing review process:
 
 ```bash
-# Pre-commit review setup
-claude review --config .claude/review-rules.yaml
+# Pre-commit: use Claude Code non-interactively
+claude --print "Review changed files per .claude/review-rules.yaml and flag any blocking issues"
 
 # Pre-PR validation
-claude validate --strict --security-only
+claude --print "Check the staged changes for security issues only and block if any are found"
 ```
 
 Create team-specific review rules in `.claude/review-rules.yaml`:
@@ -211,9 +205,12 @@ audit:
 Integrate with your SIEM:
 
 ```bash
-# Ship logs to centralized logging
-claude audit forward --endpoint https://logs.company.com/api/v1/claude \
-  --api-key $SIEM_API_KEY
+# Ship logs to centralized logging (example using curl)
+tail -f /var/log/claude/audit.jsonl | \
+  curl -X POST https://logs.company.com/api/v1/claude \
+    -H "Authorization: Bearer $SIEM_API_KEY" \
+    -H "Content-Type: application/json" \
+    --data-binary @-
 ```
 
 ### Data Privacy Controls
@@ -221,14 +218,11 @@ claude audit forward --endpoint https://logs.company.com/api/v1/claude \
 Implement data handling policies:
 
 ```bash
-# Configure data residency
-claude config set data-residency us-east-1
-
-# Disable telemetry for sensitive projects
-claude config set telemetry.enabled false --project $SENSITIVE_PROJECT
-
-# Enable local-only mode for critical code
-claude config set mode local-only --project $CRITICAL_PROJECT
+# Configure data handling via environment variables or settings.json
+# ~/.claude/settings.json or project .claude/settings.json:
+# {
+#   "env": { "CLAUDE_DATA_RESIDENCY": "us-east-1" }
+# }
 ```
 
 ### Rate Limiting and Budgets
@@ -254,7 +248,7 @@ Provide new developers with a concrete onboarding path:
 
 - [ ] Install Claude Code via approved package manager
 - [ ] Authenticate using company credentials
-- [ ] Pull team skill bundle: `claude skill sync --team`
+- [ ] Copy team skill `.md` files to `~/.claude/skills/` or your project's `.claude/` directory
 - [ ] Review `.claude/config.yaml` in your project
 - [ ] Complete security awareness training
 
@@ -281,11 +275,11 @@ Enterprise onboarding is not a one-time event—establish processes for ongoing 
 Collect usage data and team feedback monthly:
 
 ```bash
-# Generate usage report
-claude analytics usage --period 30d --format markdown
+# Generate a usage report using Claude Code interactively:
+claude --print "Analyze our team's Claude Code usage patterns over the last 30 days and generate a Markdown report"
 
-# Team retrospective template
-claude template retrospective --output ./retro-q1.md
+# Team retrospective — run Claude Code and describe what you need:
+# In the REPL: "Generate a retrospective template for Q1 and save it to ./retro-q1.md"
 ```
 
 ### Skill Lifecycle Management

@@ -40,8 +40,8 @@ The Claude skill system has evolved into a powerful extensibility mechanism. Her
 The **frontend-design** skill generates complete UI components with proper styling, accessibility, and responsiveness. It understands design patterns and can implement everything from simple buttons to complex data dashboards.
 
 ```bash
-# Using the frontend-design skill
-claude -s frontend-design "Create a pricing page with three tiers"
+# Using the frontend-design skill: open claude, then type:
+# /frontend-design Create a pricing page with three tiers
 ```
 
 This skill outputs production-ready code with CSS variables, proper semantic HTML, and responsive layouts.
@@ -65,8 +65,8 @@ await pdf.generate({
 The **tdd** skill enforces test-driven development practices while vibe coding. It generates meaningful tests alongside code, ensuring your rapid iterations don't break existing functionality:
 
 ```bash
-claude -s tdd --test-framework vitest \
-  "Implement user authentication with JWT tokens"
+# Using the tdd skill: open claude, then type:
+# /tdd Implement user authentication with JWT tokens (using vitest)
 ```
 
 ### supermemory
@@ -110,7 +110,7 @@ For TypeScript projects, the T3 stack and similar generators provide type-safe f
 # Scaffold with T3, then enhance with Claude
 npm create t3-app@latest my-vibe-project
 cd my-vibe-project
-claude -s frontend-design "Add a dashboard page with charts"
+# Then open claude and use: /frontend-design Add a dashboard page with charts
 ```
 
 ## Version Control Workflows

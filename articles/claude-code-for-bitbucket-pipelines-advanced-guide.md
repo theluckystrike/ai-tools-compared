@@ -42,7 +42,7 @@ pipelines:
         script:
           - npm install -g @anthropic-ai/claude-code
           - claude --version
-          - claude analyze ./src --output report.json
+          - claude --print "Analyze all source files in ./src for code quality issues and output a JSON report to report.json"
         caches:
           - npm
 ```
@@ -60,10 +60,7 @@ Create a comprehensive code review step that uses Claude's understanding of your
       name: AI-Powered Code Review
       script:
         - |
-          claude review ./src \
-            --context "PR: $BITBUCKET_PR_ID" \
-            --output review-results.json \
-            --severity-threshold medium
+          claude --print "Review all changed files in ./src in the context of PR $BITBUCKET_PR_ID. Flag issues at medium severity or above and output findings to review-results.json"
         - pipe: atlassian/aws-s3-deploy:1.2.0
           variables:
             AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
@@ -85,11 +82,7 @@ Use Claude Code to generate environment-specific configurations based on your de
       deployment: production
       script:
         - |
-          claude generate-config \
-            --template ./config/template.yaml \
-            --environment production \
-            --secrets $SECRETS_JSON \
-            > ./config/production.yaml
+          claude --print "Generate a production environment configuration from ./config/template.yaml using the secrets in $SECRETS_JSON and write it to ./config/production.yaml"
         - pipe: atlassian/aws-s3-deploy:1.2.0
           variables:
             AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
@@ -115,10 +108,7 @@ Implement intelligent deployments that use Claude to evaluate health metrics and
           sleep 30
           
           # Invoke Claude to evaluate deployment health
-          claude evaluate-deployment \
-            --environment production \
-            --metrics-endpoint $METRICS_URL \
-            --decision-file deployment-decision.json
+          claude --print "Evaluate deployment health for production using metrics from $METRICS_URL. Output a JSON decision to deployment-decision.json with fields: action (deploy|rollback) and reason."
           
           # Read and act on Claude's decision
           DECISION=$(cat deployment-decision.json | jq -r '.action')
@@ -138,12 +128,9 @@ Custom Claude skills enhance pipeline intelligence. Install and configure skills
       name: Install Custom Pipeline Skills
       script:
         - |
-          # Install domain-specific skills
-          claude skill install @company/security-review
-          claude skill install @company/api-docs-generator
-          
-          # Verify installation
-          claude skill list
+          # Copy skill .md files to the pipeline's skills directory
+          cp ./pipeline-skills/*.md ./.claude/
+          ls ./.claude/
 ```
 
 Create custom skills for pipeline-specific tasks:
@@ -152,10 +139,6 @@ Create custom skills for pipeline-specific tasks:
 ---
 name: pipeline-helper
 description: Assists with Bitbucket Pipeline configuration and troubleshooting
-tools:
-  - Read
-  - Write
-  - Bash
 ---
 
 ## Pipeline Diagnostics
@@ -174,9 +157,7 @@ When invoked, analyze the current pipeline configuration and identify potential 
 Claude can analyze your pipeline and suggest optimal timeout values:
 
 ```bash
-claude analyze-pipeline \
-  --file bitbucket-pipelines.yml \
-  --suggest-timeouts
+claude --print "Analyze bitbucket-pipelines.yml and suggest optimal timeout values for each step"
 ```
 
 ### Cache Optimization
@@ -184,9 +165,7 @@ claude analyze-pipeline \
 Identify files and dependencies that should be cached:
 
 ```bash
-claude recommend-cache \
-  --package-manager npm \
-  --analysis-type dependency-tree
+claude --print "Analyze our npm dependency tree and identify which files and directories should be cached in Bitbucket Pipelines"
 ```
 
 ## Best Practices for Production Pipelines
