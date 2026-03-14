@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Cline AI Coding Assistant Review vs Claude Code"
-description: "A comprehensive comparison of Cline AI and Claude Code, exploring features, capabilities, and which AI coding assistant best suits your development workflow."
+description: "A comprehensive comparison of Cline AI and Claude Code, exploring features, capabilities, and which AI coding assistant best suits your development."
 date: 2026-03-14
 author: theluckystrike
 permalink: /cline-ai-coding-assistant-review-vs-claude-code/
+categories: [guides]
 ---
 
 {% raw %}
@@ -145,3 +146,10 @@ The optimal choice depends on your workflow, team structure, and specific projec
 
 The future of coding is collaborative—between human developers and AI assistants. Whether you choose Claude Code, Cline, or both, you're equipping yourself with powerful tools that will reshape how you approach software development.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
