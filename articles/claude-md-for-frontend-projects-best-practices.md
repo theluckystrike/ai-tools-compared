@@ -208,4 +208,11 @@ Custom Claude MD files for frontend projects transform how you work with AI codi
 
 Start with a basic skill containing your core conventions, then layer in specialized skills like `tdd`, `frontend-design`, and `supermemory` as your workflow matures. The investment in crafting your skill files pays returns in every subsequent coding session.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

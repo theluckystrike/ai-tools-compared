@@ -193,4 +193,11 @@ When用户提供临时凭证:
 
 Following these patterns keeps your Claude skill workflows secure while maintaining the flexibility needed for complex development tasks. The key principle: secrets should flow through Claude's context without ever being written to persistent storage beyond your secure vault.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

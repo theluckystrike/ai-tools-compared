@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude MD for Dependency Management Rules"
-description: "Learn how to use Markdown files to define and enforce dependency management rules when working with Claude Code. Practical patterns for developers and power users."
+description: "Learn how to use Markdown files to define and enforce dependency management rules when working with Claude Code. Practical patterns for developers and."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-md-for-dependency-management-rules/
@@ -191,5 +191,12 @@ Claude reads the rules, understands your constraints, and applies them throughou
 Keep your dependency rules documents current by updating them alongside actual dependency changes. Review rules quarterly to remove outdated constraints. Use tables for version information—they're easier for Claude to parse than prose. Include skill-specific dependency notes when your project uses specialized Claude skills. Document conflict resolution procedures so Claude handles issues consistently.
 
 By maintaining dependency management rules in Markdown, you create a single source of truth that both humans and AI assistants can follow. This reduces errors, accelerates onboarding, and keeps your projects running smoothly.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

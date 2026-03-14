@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude MD Example for Remix Fullstack Application"
-description: "A practical guide to using Claude Code with Remix. Includes skill templates, fullstack workflows, loaders, actions, and real code examples for modern web development."
+description: "A practical guide to using Claude Code with Remix. Includes skill templates, fullstack workflows, loaders, actions, and real code examples for modern."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, remix, fullstack, react, web-development, markdown]
@@ -196,5 +196,12 @@ This approach ensures consistent patterns across your entire Remix application. 
 ## Conclusion
 
 Creating Claude skills for Remix fullstack development significantly improves your productivity. Skills that understand loaders, actions, nested routing, and error handling provide context-aware assistance throughout your project. Combine with complementary skills like `frontend-design`, `tdd`, and `supermemory` for comprehensive development support.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

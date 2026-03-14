@@ -5,6 +5,7 @@ description: "Learn how to create effective claude-md files that accelerate deve
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-md-for-onboarding-new-team-members/
+categories: [guides]
 ---
 
 When a new developer joins your team, the first week sets the tone for their entire tenure. Traditional onboarding involves hours of documentation reading, scattered wiki pages, and endless Slack threads. However, using claude-md files strategically transforms this process into an automated, self-service experience that benefits both new hires and existing team members.
@@ -126,5 +127,12 @@ The docx skill can help generate onboarding progress reports. New developers can
 - Test them yourself—pretend you're a new developer and try to complete basic tasks
 
 Effective onboarding documentation compounds over time. Each improvement helps every future team member, making the investment worthwhile even for small teams. The goal is helping new developers become productive contributors as quickly as possible while maintaining the quality standards your team has established.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

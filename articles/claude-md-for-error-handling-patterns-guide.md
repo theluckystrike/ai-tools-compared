@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude MD for Error Handling Patterns Guide"
-description: "A practical guide to implementing error handling patterns in Claude MD files. Learn how to structure error recovery, retry logic, and graceful degradation for your Claude skills."
+description: "A practical guide to implementing error handling patterns in Claude MD files. Learn how to structure error recovery, retry logic, and graceful."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-md-for-error-handling-patterns-guide/
@@ -158,6 +158,13 @@ Study these patterns and adapt them to your own skills. Error handling becomes e
 ## Best Practices Summary
 
 Keep error handling declarative and specific. Instead of generic "handle errors" instructions, specify exactly what constitutes an error, how to detect it, and what action to take. Test your error paths by intentionally triggering failures during development. Document expected error states in your skill's usage section so users understand failure modes. Finally, ensure error messages remain helpful rather than technical—users should understand what went wrong and how to fix it.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

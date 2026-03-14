@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Pass State Between AI Agents: A Practical Guide"
-description: "Master the techniques for passing state between AI agents with Claude Code. Learn practical patterns for multi-agent workflows, context sharing, and seamless collaboration."
+description: "Master the techniques for passing state between AI agents with Claude Code. Learn practical patterns for multi-agent workflows, context sharing, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-to-pass-state-between-ai-agents/
@@ -223,3 +223,10 @@ Whether you're building a simple two-agent pipeline or a complex autonomous work
 
 With these techniques, you can create AI agent systems that collaborate effectively, maintain context across operations, and scale to handle real-world complexity.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

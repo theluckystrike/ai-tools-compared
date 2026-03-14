@@ -5,6 +5,7 @@ description: "Practical guide to creating Claude skill files for .NET ASPNET Cor
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-md-example-for-dotnet-aspnet-core-project/
+categories: [guides]
 ---
 
 {% raw %}
@@ -194,6 +195,13 @@ You can view your loaded skills at any time using the skills list command, and s
 ## Integration with Other Skills
 
 The .NET skills work well with other Claude skills. The pdf skill helps generate documentation from your API specs. The supermemory skill maintains context across sessions about your project decisions. The canvas-design skill assists with architecture diagrams and flowcharts.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
