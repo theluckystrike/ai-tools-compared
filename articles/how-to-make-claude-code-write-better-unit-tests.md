@@ -170,4 +170,11 @@ Getting better unit tests from Claude Code comes down to specificity and structu
 
 Remember that Claude Code mirrors your specificity. Vague requests produce vague tests; detailed requests produce detailed, comprehensive tests. Invest time in crafting your prompts, and the test quality will improve accordingly.
 
+## Related Reading
+
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — The dedicated TDD skill for test-first workflows
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Full CI pipeline using the TDD skill
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Scoping test requests precisely improves quality
+- [Claude Skills Tutorials Hub](/claude-skills-guide/tutorials-hub/) — More how-to guides for Claude Code
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
