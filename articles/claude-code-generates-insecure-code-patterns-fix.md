@@ -9,6 +9,7 @@ author: theluckystrike
 reviewed: false
 score: 0
 ---
+{% raw %}
 
 # Claude Code Generates Insecure Code Patterns Fix
 
@@ -207,3 +208,4 @@ Claude Code generates code based on patterns it has seen in training data, which
 The key is establishing security as a consistent part of your development workflow. Use the `tdd` skill for test-driven security, create custom security review skills, and automate scanning where possible. With these practices in place, you get the speed benefits of AI-assisted development without sacrificing code security.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
