@@ -30,15 +30,15 @@ One of Claude Code's most compelling features is its **skills system**. Skills a
 
 For example, if you're working on API development, you can install skills specifically tailored to REST API design or GraphQL schema creation. Similarly, there are skills for database migrations, security audits, documentation generation, and virtually any development workflow you can imagine.
 
-Installing a skill is straightforward:
+Using a skill is straightforward — skills are `.md` files you place in your `.claude/` directory (project-level) or `~/.claude/` (global). Once in place, invoke them with a slash command during a Claude Code session:
 
-```bash
-claude skill install api-design-skills
-claude skill install security-audit-skills
-claude skill install database-migration-helpers
+```
+/api-design-skills
+/security-audit-skills
+/database-migration-helpers
 ```
 
-Once installed, these skills understand your project's context and provide intelligent assistance specific to your domain. A security skill, for instance, will recognize vulnerable patterns in your codebase and suggest fixes, while an API design skill will help you structure endpoints following best practices.
+Once invoked, these skills guide Claude's behavior for your current context. A security skill, for instance, will recognize vulnerable patterns in your codebase and suggest fixes, while an API design skill will help you structure endpoints following best practices.
 
 ## Agentic Capabilities: Beyond Autocomplete
 
