@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Vue Developer Component Workflow Best Practices"
-description: "Master Vue.js component development with Claude Code. Learn efficient workflows for building, testing, and maintaining Vue components using Claude Code's powerful features."
+description: "Master Vue.js component development with Claude Code. Learn efficient workflows for building, testing, and maintaining Vue components using Claude."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -205,3 +205,10 @@ The best Vue developers using Claude Code don't just accept generated code—the
 ---
 
 *This guide covers core workflows for Vue development with Claude Code. For deeper dives into specific topics like Pinia integration, Vue Router patterns, or testing strategies, explore more articles in our Claude Code guide series.*
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

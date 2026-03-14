@@ -5,6 +5,7 @@ description: "Learn how to use Claude Code and specialized skills to optimize Ne
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-nextjs-performance-optimization/
+categories: [guides]
 ---
 
 # Claude Code Next.js Performance Optimization
@@ -227,5 +228,12 @@ Next.js performance optimization involves multiple layers: bundle size through c
 The specialized skills like `frontend-design`, `tdd`, and `supermemory` each contribute to a comprehensive performance workflow—from design patterns that prevent performance issues, to tests that catch regressions, to memory systems that track improvements over time.
 
 Start with bundle analysis, implement route-based and component-based code splitting, add image optimization, and layer on runtime optimizations as needed. Measure continuously to ensure your optimizations actually move the metrics that matter.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

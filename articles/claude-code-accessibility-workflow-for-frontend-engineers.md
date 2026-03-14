@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Accessibility Workflow for Frontend Engineers"
-description: "Learn how to build accessible web applications using Claude Code. This guide covers automated accessibility testing, ARIA patterns, semantic HTML, and integrating accessibility checks into your development workflow."
+description: "Learn how to build accessible web applications using Claude Code. This guide covers automated accessibility testing, ARIA patterns, semantic HTML, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, accessibility, frontend, web-development, a11y]
@@ -190,3 +190,10 @@ The key to sustainable accessibility is making it part of your daily workflow:
 4. **Documentation**: Document accessibility considerations for complex components
 
 Claude Code becomes your accessibility partner, catching issues early and teaching your team better practices over time. The investment in accessibility upfront saves massive remediation costs later—and more importantly, ensures your software works for everyone.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

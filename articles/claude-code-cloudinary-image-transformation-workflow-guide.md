@@ -5,6 +5,7 @@ description: "Master Cloudinary image transformations with Claude Code. Learn to
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-cloudinary-image-transformation-workflow-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -146,3 +147,10 @@ Claude Code skills that understand Cloudinary's transformation API enable powerf
 
 The combination of Claude Code's understanding capabilities and Cloudinary's transformation engine represents a significant step toward fully automated asset management—letting developers focus on building while Claude handles the image complexity.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
