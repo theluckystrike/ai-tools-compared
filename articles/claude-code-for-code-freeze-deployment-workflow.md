@@ -209,3 +209,10 @@ Claude Code transforms code freeze from a stressful bottleneck into a controlled
 *Ready to implement these strategies? Start by configuring your code freeze validation skills in Claude Code, and gradually expand to more advanced automation as your team becomes comfortable with the workflow.*
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

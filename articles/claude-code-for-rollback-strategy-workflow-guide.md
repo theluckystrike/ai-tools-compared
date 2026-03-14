@@ -3,11 +3,11 @@
 
 layout: default
 title: "Claude Code for Rollback Strategy Workflow Guide"
-description: "Learn how to implement effective rollback strategies in your Claude Code workflows. Practical examples and code snippets for safe deployments and error recovery."
+description: "Learn how to implement effective rollback strategies in your Claude Code workflows. Practical examples and code snippets for safe deployments and error."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-rollback-strategy-workflow-guide/
-categories: [claude-code, development-practices, devops]
+categories: [guides, development-practices, devops]
 tags: [claude-code, claude-skills, rollback, deployment, devops, workflow]
 reviewed: true
 score: 7
@@ -252,3 +252,10 @@ Remember: the best rollback strategy is one you've tested before you need it. Ta
 
 Start small, test frequently, and gradually build more sophisticated rollback capabilities as your deployment confidence grows.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

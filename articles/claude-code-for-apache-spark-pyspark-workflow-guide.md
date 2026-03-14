@@ -187,3 +187,10 @@ Follow these practical recommendations to improve your PySpark workflows:
 5. **Test with small data first** - Validate logic with `spark.createDataFrame()` using local data before scaling to cluster
 
 Claude Code can assist you at every step—reviewing your code, suggesting optimizations, and helping you understand Spark's complex execution model. By combining your domain knowledge with AI-assisted development, you can build robust, efficient Spark pipelines that scale with your data needs.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

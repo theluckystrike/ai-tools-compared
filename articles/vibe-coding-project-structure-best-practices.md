@@ -2,7 +2,7 @@
 
 layout: default
 title: "Vibe Coding Project Structure Best Practices"
-description: "Master project structure for vibe coding workflows. Learn how to organize your codebase for AI-assisted development, maintain clean architecture, and scale your projects effectively."
+description: "Master project structure for vibe coding workflows. Learn how to organize your codebase for AI-assisted development, maintain clean architecture, and."
 date: 2026-03-14
 categories: [vibe-coding, ai-development, developer-guide]
 tags: [vibe-coding, ai-development, project-structure, claude-code, best-practices, claude-skills]
@@ -191,5 +191,12 @@ This structure balances simplicity with scalability. Your AI assistant can quick
 Vibe coding transforms how we build software, but it requires thoughtful project organization to reach its full potential. By keeping structures flat, naming files descriptively, organizing by feature, and documenting decisions, you create projects where AI assistants thrive. The investment in good structure pays dividends through faster development, fewer errors, and more maintainable codebases.
 
 Start with simple structures and evolve as needed. Your future self—and every AI session—will benefit from the clarity you create today.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

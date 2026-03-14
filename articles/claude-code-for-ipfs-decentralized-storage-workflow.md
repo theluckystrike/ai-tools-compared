@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for IPFS Decentralized Storage Workflow"
-description: "A comprehensive guide to building decentralized storage workflows using Claude Code and IPFS. Learn practical patterns for file uploading, content addressing, and persistent data management."
+description: "A comprehensive guide to building decentralized storage workflows using Claude Code and IPFS. Learn practical patterns for file uploading, content."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-ipfs-decentralized-storage-workflow/
@@ -253,3 +253,10 @@ Start with simple single-file uploads, then expand to directory management, pinn
 
 Remember to always consider your redundancy needs, implement proper error handling, and maintain systematic CID tracking. With these patterns, you're well-equipped to use decentralized storage effectively in your projects.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -155,3 +155,10 @@ To get the most out of Claude Code in your Bazel workflow, follow these practica
 ## Conclusion
 
 Integrating Claude Code into your Bazel workflow transforms how you handle build configuration and project setup. From generating BUILD files to debugging complex issues, Claude Code acts as an intelligent assistant that understands both your codebase and Bazel's configuration language. By providing context, iterating on feedback, and following best practices, you can significantly accelerate your development workflow while maintaining high-quality, consistent build configurations across your projects.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

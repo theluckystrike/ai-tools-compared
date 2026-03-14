@@ -339,3 +339,10 @@ Implementing a PWA install prompt workflow doesn't have to be complicated. With 
 
 The key is to balance visibility with user experience—show the prompt to engaged users, but never force it. With these patterns and practices, you're well on your way to building a successful PWA install workflow.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

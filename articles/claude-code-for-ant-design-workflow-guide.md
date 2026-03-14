@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Ant Design Workflow Guide"
-description: "Master the integration of Claude Code with Ant Design to accelerate your React component development. Learn practical workflows, code generation patterns, and best practices."
+description: "Master the integration of Claude Code with Ant Design to accelerate your React component development. Learn practical workflows, code generation."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-ant-design-workflow-guide/
@@ -265,3 +265,10 @@ Integrating Claude Code with Ant Design dramatically improves development veloci
 
 Start by generating simple components, then progressively tackle more complex implementations like data tables with CRUD operations. With practice, you'll discover that Claude Code becomes an invaluable partner in building robust Ant Design applications.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

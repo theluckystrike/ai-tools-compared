@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for K3s Lightweight Kubernetes Workflow"
-description: "Learn how to use Claude Code to streamline K3s Kubernetes management. This guide covers practical workflows for deploying, managing, and monitoring lightweight Kubernetes clusters using AI-assisted commands."
+description: "Learn how to use Claude Code to streamline K3s Kubernetes management. This guide covers practical workflows for deploying, managing, and monitoring."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-k3s-lightweight-kubernetes-workflow/
@@ -172,3 +172,10 @@ To get the most out of Claude Code with K3s, keep these practices in mind:
 Claude Code transforms K3s cluster management from a series of kubectl commands into a conversational workflow. By describing your intent in natural language, you can deploy applications, troubleshoot issues, and manage configurations without memorizing complex command syntax. This approach is particularly valuable for developers who want Kubernetes capabilities without the operational overhead of larger distributions.
 
 Start with simple deployments and gradually incorporate more advanced patterns as you become comfortable with the workflow. The combination of K3s' lightweight footprint and Claude Code's intelligent assistance creates an efficient development environment suitable for learning, development, and production edge deployments.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

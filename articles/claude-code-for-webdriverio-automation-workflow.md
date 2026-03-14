@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for WebDriverIO Automation Workflow"
-description: "Master AI-assisted browser automation with Claude Code and WebDriverIO. Learn practical patterns for writing, debugging, and maintaining robust test suites."
+description: "Master AI-assisted browser automation with Claude Code and WebDriverIO. Learn practical patterns for writing, debugging, and maintaining robust test."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -207,3 +207,10 @@ Keep these principles in mind as you work with Claude on your WebDriverIO projec
 Claude Code transforms WebDriverIO development from a solo endeavor into a collaborative process. By using Claude's understanding of JavaScript, async patterns, and browser automation, you can write more robust tests in less time. The key is providing clear context, iterating on solutions, and following established patterns for wait handling and element interaction.
 
 Start by applying these patterns to a single test suite, then expand as you build confidence in the AI-assisted workflow.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -333,3 +333,10 @@ Remember to review and understand the generated code, maintain proper error hand
 
 Start integrating Claude Code into your Go microservices workflow today and experience the difference in developer productivity and code quality.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

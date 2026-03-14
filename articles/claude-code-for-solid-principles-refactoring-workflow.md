@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for SOLID Principles Refactoring Workflow"
-description: "A practical workflow for using Claude Code to refactor codebases to follow SOLID principles. Learn how to leverage AI-assisted refactoring for cleaner, more maintainable software design."
+description: "A practical workflow for using Claude Code to refactor codebases to follow SOLID principles. Learn how to leverage AI-assisted refactoring for cleaner."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-solid-principles-refactoring-workflow/
@@ -224,3 +224,10 @@ Always run your test suite after substantial refactoring. If tests pass, you hav
 Refactoring toward SOLID principles doesn't have to be a painful, months-long endeavor. With Claude Code as your assistant, you can systematically audit, plan, and refactor code while maintaining confidence through each step. The key is establishing a clear workflow: audit first, prioritize, refactor incrementally, and always verify with tests.
 
 Start with a small, well-contained module to build confidence in the process. Once you see the benefits—easier testing, clearer code organization, simpler debugging—you'll want to apply this workflow across your entire codebase.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

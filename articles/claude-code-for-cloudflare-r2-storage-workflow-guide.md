@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Cloudflare R2 Storage Workflow Guide"
-description: "Learn how to integrate Claude Code with Cloudflare R2 for efficient object storage workflows. Practical examples, code snippets, and best practices for developers."
+description: "Learn how to integrate Claude Code with Cloudflare R2 for efficient object storage workflows. Practical examples, code snippets, and best practices for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-cloudflare-r2-storage-workflow-guide/
@@ -165,3 +165,10 @@ Claude Code transforms Cloudflare R2 storage from simple object persistence into
 
 Start with simple workflows like file organization, then progressively add sophistication as you gain confidence in Claude's operation within your specific use case. The combination of R2's cost-effective storage and Claude's AI capabilities creates a powerful foundation for modern application storage needs.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

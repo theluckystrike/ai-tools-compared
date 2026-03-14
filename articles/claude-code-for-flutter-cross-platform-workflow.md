@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Flutter Cross-Platform Workflow"
-description: "Master the art of using Claude Code to streamline your Flutter cross-platform development workflow. Learn practical patterns, code generation techniques, and automation strategies."
+description: "Master the art of using Claude Code to streamline your Flutter cross-platform development workflow. Learn practical patterns, code generation."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-flutter-cross-platform-workflow/
@@ -218,3 +218,10 @@ Start small by creating a Flutter-specific skill, then gradually expand your aut
 
 Remember: the goal isn't to replace your Flutter expertise but to amplify it. Use Claude for what it does best—generating consistent code, managing complexity, and handling repetitive patterns—while you focus on the creative problem-solving that makes great apps exceptional.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

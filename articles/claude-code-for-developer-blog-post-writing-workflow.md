@@ -2,11 +2,11 @@
 
 layout: default
 title: "Claude Code for Developer Blog Post Writing Workflow"
-description: "A comprehensive guide to using Claude Code for writing developer blog posts. Includes practical examples, workflow templates, and actionable advice for technical content creation."
+description: "A comprehensive guide to using Claude Code for writing developer blog posts. Includes practical examples, workflow templates, and actionable advice for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-developer-blog-post-writing-workflow/
-categories: [claude-code, productivity, content-creation]
+categories: [guides, productivity, content-creation]
 tags: [claude-code, claude-skills, blog-posting, technical-writing]
 reviewed: true
 score: 7
@@ -156,3 +156,10 @@ To implement this workflow effectively:
 
 Claude Code transforms developer blog writing from a solitary struggle into a collaborative process. By handling the mechanical aspects of writing—formatting, code accuracy, structure—it frees you to focus on what matters most: sharing knowledge that helps other developers grow.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

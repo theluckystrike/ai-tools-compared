@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Hono Edge Framework Workflow"
-description: "Learn how to integrate Claude Code into your Hono edge framework development workflow. Set up automated testing, generate API documentation, and build efficient edge applications with AI assistance."
+description: "Learn how to integrate Claude Code into your Hono edge framework development workflow. Set up automated testing, generate API documentation, and build."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-hono-edge-framework-workflow/
@@ -218,3 +218,10 @@ Integrating Claude Code into your Hono edge framework workflow transforms how yo
 
 Start with a small project, experiment with Claude's capabilities, and gradually incorporate more advanced patterns as you become comfortable with the workflow.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Harness CD Pipeline Workflow"
-description: "Learn how to integrate Claude Code into your Harness CD pipeline workflow for intelligent deployment automation, automated pipeline generation, and smart rollback decisions."
+description: "Learn how to integrate Claude Code into your Harness CD pipeline workflow for intelligent deployment automation, automated pipeline generation, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-harness-cd-pipeline-workflow/
@@ -190,3 +190,10 @@ When integrating Claude Code with Harness CD, keep these recommendations in mind
 Integrating Claude Code into your Harness CD pipeline workflow transforms deployment automation from reactive to proactive. By using AI for pipeline generation, deployment monitoring, and rollback decisions, you reduce manual effort while improving deployment reliability and speed.
 
 Start small—automate one aspect of your pipeline—then expand as you build confidence. The combination of Claude Code's reasoning capabilities and Harness CD's robust deployment platform creates a powerful foundation for intelligent, self-healing deployment workflows.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

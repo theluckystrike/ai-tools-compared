@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Rspack Webpack Compatible Workflow"
-description: "Learn how to use Claude Code to create a Rspack and Webpack compatible build workflow. Practical examples, code snippets, and actionable advice for modern web development."
+description: "Learn how to use Claude Code to create a Rspack and Webpack compatible build workflow. Practical examples, code snippets, and actionable advice for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-rspack-webpack-compatible-workflow/
@@ -275,3 +275,10 @@ const config = {
 Claude Code can significantly streamline the process of creating and maintaining a Rspack-Webpack compatible workflow. By using Claude Code's ability to analyze configurations, generate code, and suggest optimizations, you can achieve the benefits of Rspack's performance while maintaining backward compatibility with your Webpack setup.
 
 Start by setting up a shared configuration base, then gradually migrate components while testing both bundlers. With the right approach, you can enjoy faster build times from Rspack without sacrificing the reliability of your existing Webpack configuration.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

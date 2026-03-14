@@ -3,11 +3,11 @@
 
 layout: default
 title: "Claude Code for Temporal Workflow Orchestration"
-description: "Learn how to orchestrate complex workflows using Claude Code with Temporal. Practical examples, code patterns, and actionable advice for developers building durable applications."
+description: "Learn how to orchestrate complex workflows using Claude Code with Temporal. Practical examples, code patterns, and actionable advice for developers."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-temporal-workflow-orchestration/
-categories: [claude-code, workflow-automation, temporal]
+categories: [guides, workflow-automation, temporal]
 tags: [claude-code, claude-skills, temporal, workflow-orchestration, durable-execution]
 reviewed: true
 score: 7
@@ -233,3 +233,10 @@ Claude Code significantly accelerates Temporal workflow development by handling 
 
 Whether you're implementing simple task queues or complex distributed transaction patterns, Claude Code serves as an intelligent partner throughout the development lifecycle. Start small, iterate frequently, and use Claude Code's capabilities to handle the complexity that comes with sophisticated workflow orchestration.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

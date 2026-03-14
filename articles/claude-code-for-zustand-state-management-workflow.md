@@ -253,3 +253,10 @@ Start small—use Claude Code for simple store generation—and gradually incorp
 
 Remember: Claude Code is a powerful tool that amplifies your capabilities, but the final decisions about your application's architecture should always be made with careful consideration of your specific requirements.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

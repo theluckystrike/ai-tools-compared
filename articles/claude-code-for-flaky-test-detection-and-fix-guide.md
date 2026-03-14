@@ -228,3 +228,10 @@ Follow these guidelines to minimize flaky tests:
 Flaky tests don't have to plague your development workflow. By using Claude Code to detect, diagnose, and fix flaky tests, you can build a more reliable test suite. Start by identifying your flakiest tests, apply the fixes suggested in this guide, and implement prevention strategies to maintain test reliability over time.
 
 Remember that fixing flaky tests is an iterative process. Run your tests multiple times after making changes, monitor for new flakiness, and continuously improve your test isolation patterns.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

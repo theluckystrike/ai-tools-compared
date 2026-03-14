@@ -215,3 +215,10 @@ Claude Code transforms Zig development by handling boilerplate, explaining compl
 
 Start by integrating Claude into your project scaffolding process, then gradually expand to debugging and pattern generation. As you become more comfortable with Zig's unique features, you'll find Claude increasingly valuable for handling the language's complexity while maintaining control over your code's behavior.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
