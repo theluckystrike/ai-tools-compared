@@ -5,6 +5,7 @@ reviewed: true
 score: 7
 categories: [guides]
 tags: [claude-code, claude-skills]
+permalink: /product-architecture-for-a-claude-code-powered-cli-tool/
 ---
 
 layout: default
