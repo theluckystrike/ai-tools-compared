@@ -189,4 +189,11 @@ If you frequently encounter 429 errors despite implementing these strategies, co
 
 For teams using Claude Code at scale, implementing request queuing with a dedicated service can abstract rate limiting away from individual developers, allowing everyone to work without manual throttling concerns.
 
+## Related Reading
+
+- [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/) — Write resilient code that handles API changes gracefully
+- [Claude Code Uses Deprecated API Methods Fix](/claude-skills-guide/claude-code-uses-deprecated-api-methods-fix/) — Related API error: deprecated methods causing failures
+- [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) — Track which operations consume most requests
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All Claude Code error and API issue guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
