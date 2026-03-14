@@ -12,7 +12,7 @@ score: 5
 
 # Claude Code Keeps Making Same Mistake Fix Guide
 
-Claude Code is a powerful AI coding assistant, but users frequently encounter repeated mistakes that frustrate workflows. This guide addresses the most common recurring issues and provides practical solutions to help you get consistent, accurate results.
+Claude Code is a powerful AI coding assistant, but users frequently encounter repeated mistakes that frustrate workflows. This guide addresses the most common recurring issues and provides practical solutions to help you get consistent, accurate results. For related troubleshooting, see the [troubleshooting hub](/claude-skills-guide/troubleshooting-hub/).
 
 ## The Context Window Problem
 
@@ -24,7 +24,7 @@ Claude generates code that contradicts your earlier requirements, uses wrong var
 
 ### Solution
 
-Use the `/compact` skill to summarize conversation history periodically. This skill compresses context while preserving key requirements:
+Use the `/compact` skill to summarize conversation history periodically. This skill compresses context while preserving key requirements. Also see [Claude Skills Context Window Management Best Practices](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) for broader strategies.
 
 ```
 /compact
@@ -75,7 +75,7 @@ Before writing any new code:
 3. If similar functionality exists, extend it instead of creating duplicates
 ```
 
-The `supermemory` skill helps maintain project awareness by indexing your codebase and surfacing relevant existing code during discussions.
+The [supermemory skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) helps maintain project awareness by indexing your codebase and surfacing relevant existing code during discussions.
 
 ## Permission and Execution Mistakes
 
@@ -196,7 +196,7 @@ We are building a payment processing module. Start by writing tests.
 
 ## Summary
 
-Claude Code mistakes typically stem from context gaps, unclear environment constraints, or missing project-specific patterns. You can dramatically reduce repeated errors by:
+Claude Code mistakes typically stem from context gaps, unclear environment constraints, or missing project-specific patterns. Using a [skill file](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) to encode your project conventions helps eliminate whole categories of recurring errors. You can dramatically reduce repeated errors by:
 
 1. Using `/compact` to maintain context in long sessions
 2. Providing explicit import path examples
@@ -207,6 +207,13 @@ Claude Code mistakes typically stem from context gaps, unclear environment const
 7. Creating and referencing a constraints document
 
 These patterns work across all project types and skill combinations. The more context you provide upfront, the more accurate Claude's outputs will be throughout your session.
+
+## Related Reading
+
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) — managing long sessions and context in Claude Code
+- [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) — persist project conventions between sessions
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) — encode your project constraints in a custom skill file
+- [Claude Code Gives Incorrect Imports: How to Fix](/claude-skills-guide/articles/claude-code-gives-incorrect-imports-how-to-fix/) — specific fix for the common import path mistake pattern
 
 ---
 
