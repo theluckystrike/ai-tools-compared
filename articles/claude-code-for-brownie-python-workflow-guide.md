@@ -29,8 +29,9 @@ brownie --version
 Initialize Claude Code and configure it to recognize your Brownie project:
 
 ```bash
-claude init
-# Select your Brownie project directory as the working directory
+# Start Claude Code in your Brownie project directory
+claude
+# Claude Code will automatically detect your Python/Brownie project
 ```
 
 Claude Code will automatically detect Python projects and configure appropriate tools. For Brownie projects, you'll want to ensure the following tools are available: read_file, write_file, edit_file, bash, and glob. These enable Claude to interact with your contract files, run Brownie commands, and navigate your project structure.

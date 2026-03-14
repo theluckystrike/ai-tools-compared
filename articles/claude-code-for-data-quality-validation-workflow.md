@@ -36,7 +36,7 @@ First, ensure Claude Code is installed and configured. Then create a dedicated v
 
 ```bash
 mkdir data-validation && cd data-validation
-claude init
+mkdir -p .claude
 ```
 
 Create a validation script that Claude can use:

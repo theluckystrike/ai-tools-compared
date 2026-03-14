@@ -64,8 +64,7 @@ interface CardProps {
 The **tdd** skill enforces a test-first workflow that prevents the "it works locally but breaks in production" nightmare common in hackathon code. Even under time pressure, writing tests for critical paths—user authentication, API endpoints, data validation—saves debugging time later.
 
 ```bash
-# Install the tdd skill for your hackathon project
-claude skill install tdd
+# Place tdd.md in ~/.claude/skills/ then invoke in the Claude Code REPL: /tdd
 ```
 
 When time is short, focus your test coverage on user-facing flows. A simple test that confirms "users can sign up, log in, and see their dashboard" catches the integration bugs that otherwise surface during your demo.
@@ -79,9 +78,8 @@ Hackathon judges appreciate good documentation. The **pdf** skill generates prof
 In multi-day hackathons, you need a way to preserve context between sessions. The **supermemory** skill maintains persistent context across Claude Code invocations, letting you pick up exactly where you left off without re-explaining your codebase to the AI.
 
 ```bash
-# Initialize supermemory for your project
-claude skill install supermemory
-claude --skill supermemory "init --project my-hackathon"
+# Place supermemory.md in ~/.claude/skills/ then invoke in the Claude Code REPL:
+# /supermemory init --project my-hackathon
 ```
 
 This proves invaluable when team members rotate through the night shifts or when you return to debug code written hours earlier.
@@ -136,8 +134,8 @@ Run through this list systematically. Use Claude to generate any missing pieces:
 Before submission, use the **pdf** or **docx** skills to generate your submission documentation. Judges receive dozens of projects—clear documentation helps yours stand out.
 
 ```bash
-claude skill install pdf
-claude --skill pdf "generate README.md --format markdown"
+# Place pdf.md in ~/.claude/skills/ then invoke in the Claude Code REPL:
+# /pdf generate README.md in markdown format
 ```
 
 ## Practical Tips for Hackathon Success

@@ -88,7 +88,7 @@ For teams building web applications, integrating with **frontend-design** skills
 Manual audits catch problems eventually, but automated schedules keep dependencies healthy continuously. Set up a cron job that invokes Claude Code with your audit skill:
 
 ```bash
-0 9 * * 1 cd /path/to/project && claude -s dependency-audit >> weekly-audit.log
+0 9 * * 1 cd /path/to/project && claude --print "Using the dependency-audit skill, run a full dependency audit and report findings" >> weekly-audit.log
 ```
 
 This runs audits every Monday morning and logs results. You can configure Claude Code to send notifications through webhooks when critical vulnerabilities appear, ensuring your team responds quickly to serious issues.
@@ -131,10 +131,10 @@ Embed dependency auditing into your CI pipeline to block vulnerable code from re
 ```yaml
 - name: Dependency Audit
   run: |
-    claude -s dependency-audit --fail-on-critical
+    claude --print "Using the dependency-audit skill, run a full dependency audit. Exit with a non-zero code if any critical vulnerabilities are found."
 ```
 
-The `--fail-on-critical` flag causes the skill to exit with a failure code when critical vulnerabilities exist, preventing merges that introduce known security issues.
+This causes Claude Code to fail the CI step when critical vulnerabilities exist, preventing merges that introduce known security issues.
 
 ## Conclusion
 

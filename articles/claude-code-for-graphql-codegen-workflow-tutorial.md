@@ -41,7 +41,8 @@ First, ensure you have Claude Code installed and configured. If you haven't alre
 
 ```bash
 npm install -g @anthropic-ai/claude-code
-claude init my-graphql-project
+mkdir my-graphql-project && cd my-graphql-project
+mkdir -p .claude
 ```
 
 Now let's set up GraphQL Codegen in your project:
@@ -93,7 +94,7 @@ Always run `graphql-codegen` after any schema modifications.
 Now you can invoke Claude Code to handle codegen:
 
 ```bash
-claude --prompt "Run graphql-codegen and verify the generated types compile"
+claude --print "Run graphql-codegen and verify the generated types compile"
 ```
 
 Or create a custom script in your `package.json`:

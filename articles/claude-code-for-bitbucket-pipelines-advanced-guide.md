@@ -188,7 +188,7 @@ claude --print "Analyze our npm dependency tree and identify which files and dir
       name: Claude Analysis
       max-time: 10
       script:
-        - claude analyze ./src --output results.json || claude analyze ./src --output results.json
+        - claude --print "Analyze all source files in ./src and output a JSON report" > results.json || claude --print "Analyze all source files in ./src and output a JSON report" > results.json
    ```
 
 4. **Monitor Usage and Costs**: Track Claude API usage within your pipeline:

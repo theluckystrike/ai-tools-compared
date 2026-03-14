@@ -26,8 +26,9 @@ Before you step on stage, Claude Code skills help you set up reproducible demo e
 The **frontend-design** skill accelerates prototyping when you need to show a UI component alongside your API. Instead of spending precious preparation time writing HTML and CSS, you describe what you need:
 
 ```bash
-# Using frontend-design skill to generate a component
-claude --skill frontend-design "Create a responsive login form with email, password fields and a submit button using Tailwind CSS"
+# Open Claude Code, then invoke the frontend-design skill in the REPL:
+claude
+# /frontend-design Create a responsive login form with email, password fields and a submit button using Tailwind CSS
 ```
 
 This approach gives you clean, production-ready markup in seconds. You can prepare several variations beforehand, then swap between them during your demo to show different states or customization options.
@@ -42,7 +43,6 @@ Create a skill specifically for your demo workflow. Here's a skill definition op
 ---
 name: demo-api-client
 description: Generate API client code for live demos
-tools: [read_file, write_file, bash]
 ---
 
 ## API Client Generator
@@ -83,7 +83,6 @@ Use the **skill-creator** skill to build custom skills for your demo workflow:
 ---
 name: api-demo-generator
 description: Generate complete API demo with server and client
-tools: [read_file, write_file, bash]
 ---
 
 ## Usage
@@ -111,7 +110,6 @@ Beyond code generation, use Claude Code to practice your delivery. Create a skil
 ---
 name: demo-rehearsal
 description: Practice demo delivery and receive feedback
-tools: []
 ---
 
 ## Purpose
@@ -145,7 +143,6 @@ After each demo, use Claude Code to analyze what worked. Create a quick reflecti
 ---
 name: demo-reflection
 description: Post-demo analysis and improvement
-tools: []
 ---
 
 ## Input

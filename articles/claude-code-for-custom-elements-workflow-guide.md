@@ -37,9 +37,6 @@ Before creating custom elements, ensure your environment is properly configured:
 # Verify Claude Code is installed
 claude --version
 
-# Check available tools in your session
-claude -t list
-
 # Initialize a skills directory if you haven't
 mkdir -p ~/.claude/skills
 ```
@@ -133,11 +130,6 @@ my-skill/
 ---
 name: api-builder
 description: Generate REST API boilerplate for Node.js projects
-tools:
-  - Read
-  - Write
-  - Bash
-  - Edit
 ---
 
 # API Builder Skill
@@ -227,32 +219,14 @@ def safe_execute(tool_name, args):
 
 ### 3. Document Everything
 
-Clear documentation ensures others (and future you) can understand and maintain the custom elements:
+Clear documentation ensures others (and future you) can understand and maintain the custom elements. Include a header comment in each skill file explaining its purpose, requirements, and example usage.
 
-```yaml
----
-name: cloud-deploy
-description: Deploy applications to cloud providers
-version: 1.0.0
-author: your-username
-requirements:
-  - AWS CLI configured
-  - Valid credentials
-examples:
-  - input: "Deploy to staging"
-    output: "Deploys current branch to staging environment"
----
-```
+### 4. Note Versions in Comments
 
-### 4. Version Your Elements
+Track the version of your skill in a comment at the top of the skill `.md` file:
 
-Use semantic versioning for trackable changes:
-
-```yaml
-version: 1.2.0
-# Major: Breaking changes
-# Minor: New features
-# Patch: Bug fixes
+```markdown
+<!-- version: 1.2.0 — Major: Breaking changes | Minor: New features | Patch: Bug fixes -->
 ```
 
 ### 5. Test Regularly
@@ -263,8 +237,8 @@ Create test cases for your custom elements:
 # Test MCP tool
 echo '{"query": "SELECT * FROM users"}' | python tools/database-query.py
 
-# Test skill
-claude -s api-builder "Generate an Express.js API"
+# Test skill — open Claude Code REPL and invoke:
+# /api-builder Generate an Express.js API
 ```
 
 ## Integrating Custom Elements into Your Workflow
@@ -283,7 +257,7 @@ Once created, integrate custom elements smoothly:
 Verify the tool is properly registered in your configuration:
 
 ```bash
-claude -t list | grep <tool-name>
+ls ~/.claude/skills/ | grep <skill-name>
 ```
 
 ### Permission Errors

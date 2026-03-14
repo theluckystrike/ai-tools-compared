@@ -47,10 +47,10 @@ Install होने के बाद, आप `claude` command use करके 
 पहली बार Claude Code use करते समय, आपको कुछ basic setup करना होगा। Terminal में यह command run करें:
 
 ```bash
-claude init
+mkdir -p .claude
 ```
 
-यह command आपके लिए एक interactive setup wizard शुरू करेगा। इसमें आपसे कुछ questions पूछे जाएंगे जैसे कि आप किस तरह की projects बनाते हैं और आपकी coding preferences क्या हैं।
+यह command आपके project में एक `.claude` directory बनाएगा जहाँ आप अपने skills और configuration files रख सकते हैं। अपनी coding preferences के लिए `CLAUDE.md` file बनाएं।
 
 Setup complete होने के बाद, आप अपनी Hindi में code-related questions पूछ सकते हैं। जैसे:
 

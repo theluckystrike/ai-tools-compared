@@ -111,44 +111,42 @@ Create reusable Claude Skills to standardize your New Relic interactions.
 
 Here's a skill structure for common APM tasks:
 
-```yaml
-# CLAUDE.SKILL
+```markdown
+---
 name: newrelic-apm
 description: "Integration with New Relic APM for monitoring and debugging"
+---
 
-commands:
-  - name: apm-overview
-    description: "Get overview of all services and their health status"
-    prompt: |
-      Query New Relic APM for all services in the account.
-      For each service, retrieve:
-      - Apdex score
-      - Error rate
-      - Response time (p50, p95, p99)
-      - Throughput
-      Format as a health dashboard table.
+## APM Overview
 
-  - name: trace-analysis
-    description: "Analyze distributed traces for a specific transaction"
-    prompt: |
-      Find the most recent trace for the {{transaction_name}} transaction.
-      Show the complete span hierarchy with timing information.
-      Identify any spans exceeding 100ms.
+Query New Relic APM for all services in the account.
+For each service, retrieve:
+- Apdex score
+- Error rate
+- Response time (p50, p95, p99)
+- Throughput
+Format as a health dashboard table.
 
-  - name: alert-investigation
-    description: "Investigate active alerts and their root causes"
-    prompt: |
-      List all active alerts in the account.
-      For each alert, find related errors and metric data from the past hour.
-      Suggest possible remediation steps.
+## Trace Analysis
+
+Find the most recent trace for the specified transaction.
+Show the complete span hierarchy with timing information.
+Identify any spans exceeding 100ms.
+
+## Alert Investigation
+
+List all active alerts in the account.
+For each alert, find related errors and metric data from the past hour.
+Suggest possible remediation steps.
 ```
 
 ### Using the Skill
 
-Once you've created the skill, invoke it with specific tasks:
+Once you've created the skill file and placed it in `~/.claude/skills/` or `.claude/`, invoke it in the Claude Code REPL:
 
-```bash
-claude --skill newrelic-apm
+```
+# In the Claude Code REPL:
+/newrelic-apm
 ```
 
 Then ask natural language questions:

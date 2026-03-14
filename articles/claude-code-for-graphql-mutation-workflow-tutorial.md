@@ -48,13 +48,13 @@ npm init -y
 npm install graphql @apollo/server express
 ```
 
-Initialize Claude Code in your project:
+Initialize Claude Code in your project by creating the configuration directory:
 
 ```bash
-claude init
+mkdir -p .claude
 ```
 
-This creates a `.claude` directory with configuration files that Claude Code will use to understand your project context.
+This creates a `.claude` directory where you can add configuration files and skills that Claude Code will use to understand your project context.
 
 ## Building Your First Mutation with Claude Code
 

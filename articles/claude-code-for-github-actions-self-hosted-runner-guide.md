@@ -54,13 +54,13 @@ sudo mv claude-code /usr/local/bin/
 claude --version
 ```
 
-Next, authenticate Claude Code with your GitHub account:
+Next, configure your Anthropic API key for the runner:
 
 ```bash
-claude auth
+export ANTHROPIC_API_KEY="your-api-key-here"
 ```
 
-This opens a browser window for GitHub OAuth authentication. After authenticating, your Claude Code installation is linked to your GitHub account.
+Add this to the runner service's environment file for persistence across sessions.
 
 ## Configuring GitHub Actions to Use Claude Code
 
@@ -86,16 +86,9 @@ jobs:
 
       - name: Run Claude Code review
         run: |
-          claude --print \
-            --system "You are a code review assistant. Review the changes for bugs, security issues, and code quality improvements." \
-            --prompt "Review the changes in this repository. Focus on:
-            1. Potential bugs or logic errors
-            2. Security vulnerabilities
-            3. Code style inconsistencies
-            4. Missing error handling
-
-            Provide a detailed report in markdown format."
+          claude --print "Review the changes in this repository as a code review assistant. Focus on: 1. Potential bugs or logic errors, 2. Security vulnerabilities, 3. Code style inconsistencies, 4. Missing error handling. Provide a detailed report in markdown format."
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
@@ -126,15 +119,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install skill
-        run: |
-          claude skill install https://github.com/your-org/claude-skill-${{ github.event.inputs.skill_name }}
+      - name: Copy skill file
+        run: cp ./skills/${{ github.event.inputs.skill_name }}.md ./.claude/
 
       - name: Execute skill
-        run: |
-          claude \
-            --system "Use the ${{ github.event.inputs.skill_name }} skill to analyze the code." \
-            --prompt "Apply the ${{ github.event.inputs.skill_name }} skill to ${{ github.event.inputs.target_path }}"
+        run: claude --print "Using the /${{ github.event.inputs.skill_name }} skill, analyze ${{ github.event.inputs.target_path }}"
 ```
 
 ## Best Practices for Running Claude Code on Self-Hosted Runners
@@ -169,11 +158,9 @@ Never expose sensitive data in workflow files. Use GitHub secrets:
 steps:
   - name: Claude Code with secure context
     run: |
-      claude --print \
-        --system "You are working with sensitive data. Do not log any secrets." \
-        --prompt "${{ github.event.inputs.task }}"
+      claude --print "You are working with sensitive data. Do not log any secrets. Task: ${{ github.event.inputs.task }}"
     env:
-      API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
 ```
 
@@ -231,11 +218,10 @@ export PATH="$PATH:/usr/local/bin"
 
 ### Authentication Failures
 
-Re-authenticate if your token expires:
+If your API key is invalid or expired, update it:
 
 ```bash
-claude auth logout
-claude auth
+export ANTHROPIC_API_KEY="new-api-key-here"
 ```
 
 ### Memory Issues

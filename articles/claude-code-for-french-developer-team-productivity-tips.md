@@ -30,13 +30,13 @@ Avant de commencer, assurez-vous que votre équipe dispose d'une configuration o
 
 ```bash
 # Installation de Claude Code
-npm install -g @anthropic/claude-code
+npm install -g @anthropic-ai/claude-code
 
-# Configuration du projet
-claude init --project-name="mon-projet" --framework=react
+# Créer le répertoire de configuration du projet
+mkdir -p .claude
 
-# Activation du mode équipe
-claude config set team-mode enabled
+# Définir la clé API
+export ANTHROPIC_API_KEY="votre-clé-ici"
 ```
 
 Cette configuration de base permet à tous les membres de l'équipe de bénéficier d'un environnement cohérent. La mise en place d'un fichier `CLAUDE.md` à la racine du projet facilite également le partage des standards decodage au sein de l'équipe.
@@ -161,10 +161,6 @@ Créez des skills personnalisés pour enforcecer les standards de votre équipe 
 ---
 name: code-review-fr
 description: Effectue une revue de code selon les standards français
-tools:
-  - Read
-  - Bash
-  - Edit
 ---
 
 # Règles de revue de code pour l'équipe
@@ -197,8 +193,8 @@ set -e
 
 echo "🚀 Démarrage du build..."
 
-# Validation du code
-claude check --strict
+# Validation du code avec Claude
+claude --print "Vérification stricte du code : chercher les bugs, problèmes de sécurité, et violations des standards"
 
 # Tests unitaires
 npm test -- --coverage
