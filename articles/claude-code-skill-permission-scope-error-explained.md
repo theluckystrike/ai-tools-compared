@@ -3,7 +3,11 @@ layout: default
 title: "Claude Code Skill Permission Scope Error Explained"
 description: "Fix the permission scope error in Claude Code skills. Covers sandbox model, settings.json allow/deny rules, tool-level scope, and skill permissions."
 date: 2026-03-13
-author: theluckystrike
+categories: [guides]
+tags: [claude-code, claude-skills, permissions, security, settings]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Claude Code Skill Permission Scope Error Explained
@@ -22,10 +26,11 @@ A permission scope error occurs when a skill tries to call a tool or access a pa
 
 ## What the Error Looks Like
 
+When a permission scope violation occurs, Claude Code may report an error like:
+
 ```
-PermissionScopeError: Tool 'Bash' is not permitted in current scope
-PermissionScopeError: Path '/etc/hosts' is outside the allowed scope
-SkillError: permission scope violation — tool call rejected
+Tool 'Bash' is not permitted in current scope
+Path '/etc/hosts' is outside the allowed scope
 ```
 
 Or more cryptically, the skill simply does not perform the action with no error shown, which is a **silent scope rejection**.
@@ -136,20 +141,20 @@ Without these rules, the `pdf` skill will produce a scope error when trying to r
 
 ## The `supermemory` Skill and Write Scope
 
-The `supermemory` skill writes session state to a storage path. The default storage path is outside most project directories, so it requires a write scope rule:
+The `supermemory` skill writes session state to a storage path outside the current project directory. If the skill is configured to store data in a path that is not covered by your default project-scoped permissions, you will need an explicit write scope rule for that path:
 
 ```json
 {
   "permissions": {
     "allow": [
-      "Write(~/.claude-memory/**)",
-      "Read(~/.claude-memory/**)"
+      "Write(~/.claude/**)",
+      "Read(~/.claude/**)"
     ]
   }
 }
 ```
 
-If you configured a custom storage path in the `supermemory` skill settings, allow that path instead.
+Check your `supermemory` skill configuration to find the actual storage path it uses, then allow that specific path rather than a broad home directory rule.
 
 ## The `frontend-design` Skill and Node Scope
 
@@ -171,16 +176,7 @@ The `frontend-design` skill may invoke ESLint or Prettier to validate or format 
 
 Some scope rejections produce no error message — Claude just does not perform the action. If Claude says "I'll write to that file" but the file is never created, or says "Running the tests now" but nothing executes, you may have a silent scope rejection.
 
-**Diagnose with `--debug`:**
-```bash
-claude --debug 2>&1 | grep -i "scope\|permission\|denied\|blocked"
-```
-
-Look for lines like:
-```
-[sandbox] Blocked: Write(/etc/hosts) — outside allowed scope
-[sandbox] Blocked: Bash(sudo systemctl restart nginx) — sudo not permitted
-```
+To diagnose, check your `.claude/settings.json` permissions block carefully. Compare the exact command or path that Claude tried to use against your `allow` rules. A mismatch in the glob pattern is the most common cause — for example, having `"Bash(npm run *)"` but the skill calls `"npx jest"` instead. Add a more specific rule that matches the actual command Claude is trying to run.
 
 ## Security Considerations: Scope as a Feature
 

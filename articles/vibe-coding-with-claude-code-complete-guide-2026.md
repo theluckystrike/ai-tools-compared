@@ -1,9 +1,13 @@
 ---
 layout: default
 title: "Vibe Coding with Claude Code: Complete Guide 2026"
-description: "A practical guide to vibe coding with Claude Code in 2026. Learn how to build apps through natural conversation, leverage Claude skills, and ship faster."
+description: "A practical guide to vibe coding with Claude Code in 2026. Learn how to build apps through natural conversation, use Claude skills, and ship faster."
 date: 2026-03-14
-author: theluckystrike
+categories: [guides]
+tags: [claude-code, claude-skills, vibe-coding, workflow, prototyping]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Vibe Coding with Claude Code: Complete Guide 2026

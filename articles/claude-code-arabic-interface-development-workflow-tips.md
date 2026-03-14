@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code Arabic Interface Development Workflow Tips"
 description: "Practical workflow tips for building Arabic RTL interfaces with Claude Code. Apply specialized skills for bilingual development, text processing, and RTL-aware component generation."
 date: 2026-03-14
-categories: [workflows, internationalization]
+categories: [workflows]
 tags: [claude-code, claude-skills, arabic, rtl, i18n, frontend]
 author: "Claude Skills Guide"
 reviewed: true
@@ -42,7 +42,7 @@ export const arabicConfig = {
 
 This triggers component generation with proper `dir="rtl"` attributes and mirrored layout structures.
 
-## Leveraging Claude Skills for Arabic Development
+## Using Claude Skills for Arabic Development
 
 Several Claude skills accelerate Arabic interface development:
 
@@ -208,4 +208,4 @@ Start with frontend-design for component scaffolding, then layer in documentatio
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)*
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

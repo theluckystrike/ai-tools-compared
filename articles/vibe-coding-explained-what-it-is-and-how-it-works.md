@@ -5,7 +5,9 @@ description: "A practical guide to vibe coding with Claude Code. Learn how AI-as
 date: 2026-03-14
 categories: [tutorials]
 tags: [vibe-coding, claude-code, ai-assisted-coding, workflow, productivity]
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Vibe Coding Explained: What It Is and How It Works
