@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Zeek Network Analysis Workflow"
 description: "Learn how to leverage Claude Code CLI to streamline Zeek network analysis workflows, automate log processing, and build efficient security."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-zeek-network-analysis-workflow/
 categories: [tutorials]
 tags: [claude-code, claude-skills, zeek, network-analysis, security]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Zeek Network Analysis Workflow
 
@@ -44,7 +48,7 @@ mkdir -p zeek-logs/{current,archived,reports}
 
 ## Automated Log Parsing and Filtering
 
-One of Claude Code's strongest capabilities is transforming raw data into actionable insights. For Zeek analysis, you can leverage this to create powerful parsing pipelines.
+One of Claude Code's strongest capabilities is transforming raw data into actionable insights. For Zeek analysis, you can use this to create powerful parsing pipelines.
 
 ### Parsing Connection Logs
 
@@ -223,7 +227,7 @@ To maximize your analysis efficiency, follow these proven practices:
 
 ## Conclusion
 
-Claude Code transforms Zeek network analysis from a manual, time-intensive process into an efficient, automated workflow. By leveraging intelligent parsing, reusable analysis scripts, and standardized investigation procedures, security teams can dramatically reduce response times and improve threat detection accuracy.
+Claude Code transforms Zeek network analysis from a manual, time-intensive process into an efficient, automated workflow. By using intelligent parsing, reusable analysis scripts, and standardized investigation procedures, security teams can dramatically reduce response times and improve threat detection accuracy.
 
 The key is starting simple: set up proper log organization, create your first analysis scripts, and progressively build more sophisticated automation as your needs evolve. With Claude Code as your analysis partner, you have a powerful ally for navigating even the most complex network security investigations.
 

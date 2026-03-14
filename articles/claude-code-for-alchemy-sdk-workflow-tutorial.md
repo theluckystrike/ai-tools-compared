@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Alchemy SDK Workflow Tutorial"
 description: "Learn how to integrate Claude Code with Alchemy SDK to streamline blockchain development workflows, automate smart contract interactions, and build."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-alchemy-sdk-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Alchemy SDK Workflow Tutorial
@@ -167,7 +171,7 @@ This class provides methods to watch pending transactions, retrieve historical d
 
 ## Debugging with Alchemy's Enhanced APIs
 
-Alchemy provides enhanced APIs that go beyond standard JSON-RPC endpoints. Claude Code can leverage these for debugging smart contract issues:
+Alchemy provides enhanced APIs that go beyond standard JSON-RPC endpoints. Claude Code can use these for debugging smart contract issues:
 
 ```javascript
 import alchemy from './index.js';

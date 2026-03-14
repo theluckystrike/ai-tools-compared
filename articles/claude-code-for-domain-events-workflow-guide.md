@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Domain Events Workflow Guide"
 description: "Learn how to use Claude Code to build robust domain event workflows, implement event sourcing patterns, and create scalable event-driven architectures."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-domain-events-workflow-guide/
 categories: [Development, Architecture, Event-Driven]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Domain Events Workflow Guide
 
-Domain events are a powerful architectural pattern that enables loose coupling, scalability, and traceability in modern applications. When something significant happens in your domain—like a user registering, an order being placed, or a payment being processed—domain events capture these occurrences as first-class objects that other parts of your system can react to. This guide shows you how to leverage Claude Code to design, implement, and maintain robust domain event workflows.
+Domain events are a powerful architectural pattern that enables loose coupling, scalability, and traceability in modern applications. When something significant happens in your domain—like a user registering, an order being placed, or a payment being processed—domain events capture these occurrences as first-class objects that other parts of your system can react to. This guide shows you how to use Claude Code to design, implement, and maintain robust domain event workflows.
 
 ## Understanding Domain Events in Modern Architecture
 

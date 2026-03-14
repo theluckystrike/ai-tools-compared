@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Suricata IDS Workflow Guide"
 description: "A comprehensive guide to using Claude Code for developing, testing, and managing Suricata IDS rules and workflows."
@@ -11,7 +12,10 @@ categories:
 - DevOps
 tags: [claude-code, claude-skills]
 categories: [guides]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Suricata IDS Workflow Guide

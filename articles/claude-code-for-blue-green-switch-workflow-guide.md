@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Blue-Green Switch Workflow Guide"
 description: "Master the critical switch phase of blue-green deployments using Claude Code. Learn practical strategies for traffic routing, health verification, and."
@@ -8,7 +9,10 @@ categories: [guides]
 tags: [claude-code, blue-green-switch, devops, deployment, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-blue-green-switch-workflow-guide/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Blue-Green Switch Workflow Guide

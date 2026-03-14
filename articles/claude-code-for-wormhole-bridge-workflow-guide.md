@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Wormhole Bridge Workflow Guide"
 description: "Learn how to create efficient Wormhole bridge workflows using Claude Code. This guide covers cross-chain transfer automation, skill creation, and."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-wormhole-bridge-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Wormhole Bridge Workflow Guide
 
-Cross-chain bridge development requires precise coordination between multiple blockchain networks. Wormhole stands as one of the most popular protocols for bridging assets across chains, but managing bridge operations manually can be error-prone and time-consuming. This guide shows you how to leverage Claude Code to automate and streamline your Wormhole bridge workflows, reducing manual effort while maintaining security and reliability.
+Cross-chain bridge development requires precise coordination between multiple blockchain networks. Wormhole stands as one of the most popular protocols for bridging assets across chains, but managing bridge operations manually can be error-prone and time-consuming. This guide shows you how to use Claude Code to automate and streamline your Wormhole bridge workflows, reducing manual effort while maintaining security and reliability.
 
 ## Understanding Wormhole Bridge Architecture
 

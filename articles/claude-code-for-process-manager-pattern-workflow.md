@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Process Manager Pattern Workflow"
 description: "Learn how to implement the Process Manager pattern using Claude Code. Master workflow orchestration, state management, and compensation strategies for."
@@ -8,13 +9,16 @@ author: Claude Skills Guide
 permalink: /claude-code-for-process-manager-pattern-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
 # Claude Code for Process Manager Pattern Workflow
 
-The Process Manager pattern (also known as Saga Coordinator or Workflow Orchestrator) is a powerful architectural pattern for coordinating complex multi-step business processes across distributed services. When implemented correctly, it enables reliable execution of long-running workflows while handling failures gracefully through compensation mechanisms. This guide shows you how to leverage Claude Code to implement robust Process Manager workflows efficiently.
+The Process Manager pattern (also known as Saga Coordinator or Workflow Orchestrator) is a powerful architectural pattern for coordinating complex multi-step business processes across distributed services. When implemented correctly, it enables reliable execution of long-running workflows while handling failures gracefully through compensation mechanisms. This guide shows you how to use Claude Code to implement robust Process Manager workflows efficiently.
 
 ## Understanding the Process Manager Pattern
 

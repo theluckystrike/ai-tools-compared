@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Prisma Cloud Workflow Tutorial"
 description: "Learn how to integrate Claude Code into your Prisma Cloud security workflows. This tutorial covers automating security scans, vulnerability management."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-prisma-cloud-workflow-tutorial/
 categories: [tutorials, integrations]
 tags: [claude-code, claude-skills, prisma-cloud, security, devsecops]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Prisma Cloud Workflow Tutorial
 
-Security teams today face the challenge of managing increasingly complex cloud environments while maintaining rapid development cycles. Prisma Cloud provides comprehensive cloud security posture management, but integrating it smoothly into your development workflow requires automation and intelligent tooling. This tutorial shows you how to leverage Claude Code to streamline your Prisma Cloud workflows, making security checks seamless and automated.
+Security teams today face the challenge of managing increasingly complex cloud environments while maintaining rapid development cycles. Prisma Cloud provides comprehensive cloud security posture management, but integrating it smoothly into your development workflow requires automation and intelligent tooling. This tutorial shows you how to use Claude Code to streamline your Prisma Cloud workflows, making security checks seamless and automated.
 
 ## Understanding the Prisma Cloud and Claude Code Integration
 

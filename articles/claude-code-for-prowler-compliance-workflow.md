@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Prowler Compliance Workflow"
 description: "Learn how to leverage Claude Code to automate Prowler security compliance workflows. This guide covers practical techniques for integrating Prowler."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-prowler-compliance-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Prowler Compliance Workflow
@@ -33,7 +37,7 @@ prowler aws -o json
 
 ## Setting Up Claude Code for Prowler Integration
 
-Claude Code excels at parsing Prowler's output, analyzing findings, and generating actionable reports. The key is structuring your prompts to leverage Claude's strength in understanding security contexts.
+Claude Code excels at parsing Prowler's output, analyzing findings, and generating actionable reports. The key is structuring your prompts to use Claude's strength in understanding security contexts.
 
 ### Basic Scan Analysis Workflow
 
@@ -218,7 +222,7 @@ Prowler output combined with Claude Code analysis creates comprehensive complian
 
 ## Conclusion
 
-Integrating Claude Code with Prowler transforms security compliance from a periodic manual process into an automated, continuous workflow. By leveraging Claude's natural language understanding and code generation capabilities, you can quickly analyze findings, generate actionable remediation steps, and maintain comprehensive compliance documentation. Start with basic scan analysis, then gradually build toward automated remediation pipelines as your team's confidence grows.
+Integrating Claude Code with Prowler transforms security compliance from a periodic manual process into an automated, continuous workflow. By using Claude's natural language understanding and code generation capabilities, you can quickly analyze findings, generate actionable remediation steps, and maintain comprehensive compliance documentation. Start with basic scan analysis, then gradually build toward automated remediation pipelines as your team's confidence grows.
 
 The key is treating Claude Code not just as a reporting tool, but as an active participant in your security compliance workflow—asking it to generate specific commands, compare findings across scans, and develop long-term remediation strategies.
 {% endraw %}

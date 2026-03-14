@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for GCP Security Command Workflow"
 description: "Learn how to use Claude Code for GCP security command workflows. Practical examples for IAM policies, security scanning, and compliance automation."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-gcp-security-command-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for GCP Security Command Workflow
@@ -250,7 +254,7 @@ jobs:
 
 ## Conclusion
 
-Claude Code transforms GCP security command workflows from complex CLI navigation into intuitive, automated processes. By leveraging Claude's natural language understanding, you can:
+Claude Code transforms GCP security command workflows from complex CLI navigation into intuitive, automated processes. By using Claude's natural language understanding, you can:
 
 - Quickly construct accurate gcloud commands for any security task
 - Generate and validate IAM policies following least-privilege principles

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Cloudflare WAF Rules Workflow"
 description: "Learn how to leverage Claude Code to streamline Cloudflare WAF rule creation, management, and deployment for robust web application security."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-cloudflare-waf-rules-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 

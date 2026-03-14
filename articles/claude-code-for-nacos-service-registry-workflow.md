@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Nacos Service Registry Workflow"
 description: "Learn how to use Claude Code CLI to automate Nacos service registration, discovery, and management workflows. Practical examples and best practices for."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-nacos-service-registry-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills, nacos, service-registry, microservices]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Nacos Service Registry Workflow
 
@@ -148,7 +152,7 @@ Finally, use Claude to generate monitoring and observability code that exports N
 
 ## Conclusion
 
-Integrating Claude Code into your Nacos service registry workflow transforms what was once manual configuration into an automated, intelligent process. From generating service registration configurations to implementing advanced discovery patterns, Claude Code serves as an invaluable assistant for developers building Nacos-powered microservices. By providing clear context about your Nacos setup and specific requirements, you can leverage Claude Code to accelerate development while maintaining best practices for service registry operations.
+Integrating Claude Code into your Nacos service registry workflow transforms what was once manual configuration into an automated, intelligent process. From generating service registration configurations to implementing advanced discovery patterns, Claude Code serves as an invaluable assistant for developers building Nacos-powered microservices. By providing clear context about your Nacos setup and specific requirements, you can use Claude Code to accelerate development while maintaining best practices for service registry operations.
 
 ## Related Reading
 

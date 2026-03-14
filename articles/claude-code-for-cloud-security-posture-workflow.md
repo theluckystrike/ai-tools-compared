@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Cloud Security Posture Workflow"
 description: "Learn how to automate cloud security posture management using Claude Code. Practical examples for developers implementing CSPM workflows across AWS."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-cloud-security-posture-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Cloud Security Posture Workflow

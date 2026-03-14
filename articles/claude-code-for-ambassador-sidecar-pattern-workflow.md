@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Ambassador Sidecar Pattern Workflow"
 description: "Learn how to implement the Ambassador sidecar pattern using Claude Code. This guide covers practical workflows for deploying Envoy-powered sidecars."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-ambassador-sidecar-pattern-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Ambassador Sidecar Pattern Workflow
 
-The Ambassador sidecar pattern is a powerful architectural approach that deploys Envoy proxy as a sidecar alongside your microservices. This pattern enables transparent traffic management, observability, and cross-cutting concerns without modifying your application code. In this guide, you'll learn how to leverage Claude Code to implement, configure, and manage Ambassador sidecar deployments efficiently.
+The Ambassador sidecar pattern is a powerful architectural approach that deploys Envoy proxy as a sidecar alongside your microservices. This pattern enables transparent traffic management, observability, and cross-cutting concerns without modifying your application code. In this guide, you'll learn how to use Claude Code to implement, configure, and manage Ambassador sidecar deployments efficiently.
 
 ## Understanding the Ambassador Sidecar Pattern
 

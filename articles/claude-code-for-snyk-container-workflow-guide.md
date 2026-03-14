@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Snyk Container Workflow Guide"
 description: "Learn how to integrate Claude Code with Snyk for automated container security scanning, vulnerability remediation, and secure deployment workflows."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-snyk-container-workflow-guide/
 categories: [workflows, security]
 tags: [claude-code, claude-skills, snyk, container-security, devsecops]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Snyk Container Workflow Guide
 
-Container security is no longer optional in modern software development. As organizations deploy more containerized applications, integrating security scanning into developer workflows becomes essential. This guide shows you how to leverage Claude Code alongside Snyk to create an automated, efficient container security pipeline that catches vulnerabilities before they reach production.
+Container security is no longer optional in modern software development. As organizations deploy more containerized applications, integrating security scanning into developer workflows becomes essential. This guide shows you how to use Claude Code alongside Snyk to create an automated, efficient container security pipeline that catches vulnerabilities before they reach production.
 
 ## Understanding the Snyk-Container Integration
 

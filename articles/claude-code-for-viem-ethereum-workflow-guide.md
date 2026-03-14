@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Viem Ethereum Workflow Guide"
 description: "Learn how to leverage Claude Code to streamline your Viem Ethereum development workflow with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-viem-ethereum-workflow-guide/
 categories: [Development, Ethereum, Web3]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Viem Ethereum Workflow Guide

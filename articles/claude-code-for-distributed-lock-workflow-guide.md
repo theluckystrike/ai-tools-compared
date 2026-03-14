@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Distributed Lock Workflow Guide"
 description: "Learn how to leverage Claude Code to implement distributed locking patterns in your applications, with practical examples, code snippets, and."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-distributed-lock-workflow-guide/
 categories: [Development, Distributed Systems, Backend]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Distributed Lock Workflow Guide

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Thirdweb SDK Workflow Tutorial"
 description: "Learn how to use Claude Code to streamline your Thirdweb SDK development workflow. This tutorial covers smart contract deployment, NFT minting, and."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-thirdweb-sdk-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Thirdweb SDK Workflow Tutorial
 
-Thirdweb simplifies blockchain development by providing powerful SDKs that abstract away the complexity of smart contract interactions. When combined with Claude Code, you can create efficient workflows for deploying contracts, managing NFTs, and interacting with blockchain applications. This tutorial shows you how to leverage Claude Code to accelerate your Thirdweb development.
+Thirdweb simplifies blockchain development by providing powerful SDKs that abstract away the complexity of smart contract interactions. When combined with Claude Code, you can create efficient workflows for deploying contracts, managing NFTs, and interacting with blockchain applications. This tutorial shows you how to use Claude Code to accelerate your Thirdweb development.
 
 ## Setting Up Your Thirdweb Project
 
