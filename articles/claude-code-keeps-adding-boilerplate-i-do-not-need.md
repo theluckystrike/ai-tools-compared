@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Keeps Adding Boilerplate I Do Not Need"
 description: "Practical solutions to prevent Claude Code from generating unnecessary boilerplate code in your projects."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /claude-code-keeps-adding-boilerplate-i-do-not-need/
 ---
@@ -172,3 +173,11 @@ By communicating your intent clearly and using these strategies, you can transfo
 
 The next time Claude Code hands you a 50-line solution when you needed 5, remember: you have the power to constrain, refine, and direct its output. Your coding assistant is only as verbose as you allow it to be.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

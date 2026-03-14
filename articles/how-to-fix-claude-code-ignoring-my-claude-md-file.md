@@ -182,3 +182,11 @@ If your skill still isn't working after checking the basics:
 Claude Code ignoring your claude.md file is usually caused by simple issues like wrong file location, missing front matter, or incorrect file extensions. By ensuring your skill file is in the right place (`.claude/skills/`), has proper YAML front matter, and uses the `.md` extension, you should be able to get your custom skills recognized and working.
 
 Remember: Claude Code skills are powerful tools for customizing your AI assistant. Take the time to set them up correctly, and they'll serve you well in your development workflow.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
