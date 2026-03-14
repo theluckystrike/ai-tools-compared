@@ -9,7 +9,6 @@ author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---
-{% raw %}
 
 # Ansible MCP Server Configuration Management
 
@@ -19,9 +18,9 @@ Managing infrastructure configuration across multiple environments demands preci
 
 [The Ansible MCP server acts as a bridge between Claude Code and your Ansible infrastructure](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) It exposes Ansible's powerful configuration management capabilities through MCP tools, allowing you to execute playbooks, manage variables, and query inventory data without leaving your conversational context.
 
-When you configure the Ansible MCP server, it runs as a separate process that communicates with Claude Code via stdio or HTTP transport. This architecture keeps your Ansible execution environment isolated while providing seamless integration with Claude's reasoning capabilities.
+When you configure the Ansible MCP server, it runs as a separate process that communicates with Claude Code via stdio or HTTP transport. This architecture keeps your Ansible execution environment isolated while integrating with Claude's reasoning capabilities.
 
-The server reads your existing Ansible configuration—ansible.cfg, inventory files, and playbook directories—without modification. This means you can leverage your current Ansible setup while gaining MCP-driven automation benefits.
+The server reads your existing Ansible configuration—ansible.cfg, inventory files, and playbook directories—without modification. This means you can use your current Ansible setup while gaining MCP-driven automation benefits.
 
 ## Setting Up the Ansible MCP Server
 
@@ -101,6 +100,7 @@ Configuration management often involves manipulating variables across environmen
 
 Here's how you might update a configuration value across multiple environments:
 
+{% raw %}
 ```yaml
 # playbook: update-config.yml
 ---
@@ -127,6 +127,7 @@ Here's how you might update a configuration value across multiple environments:
         name: myapp
         state: restarted
 ```
+{% endraw %}
 
 ## Integrating with Other Claude Skills
 
@@ -194,4 +195,3 @@ The Ansible MCP server transforms how you manage infrastructure configuration. B
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
