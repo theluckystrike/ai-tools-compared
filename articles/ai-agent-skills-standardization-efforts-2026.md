@@ -114,7 +114,7 @@ Community-driven standards lack formal governance. Multiple competing approaches
 
 The trajectory points toward fuller standardization. Industry groups are negotiating common skill formats, and major AI providers show interest in cross-platform compatibility. The economic case is compelling—developers will build more skills if they can reuse them across platforms.
 
-For now, adopt standards that reduce lock-in while maintaining flexibility. Build skills with portable core logic, use manifest formats that support multiple platforms, and distribute through registries that index across platforms. Skills you build following these principles will remain valuable regardless of how the standardization landscape evolves.
+For now, adopt standards that reduce lock-in while maintaining flexibility. Build skills with portable core logic, use manifest formats that support multiple platforms, and distribute through registries that index across platforms. Skills you build following these principles will remain valuable regardless of how standardization evolves.
 
 The fragmentation problem won't solve itself, but the tools and patterns emerging in 2026 give developers real options for building portable AI agent capabilities.
 
