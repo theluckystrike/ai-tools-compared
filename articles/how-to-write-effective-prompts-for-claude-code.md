@@ -192,7 +192,7 @@ Your first prompt rarely produces perfect results. Use follow-up prompts to refi
 3. **Narrow**: "That's too complex. Simplify it to use only native JavaScript, no libraries."
 4. **Verify**: "Does this implementation handle the case where the API returns a 429 status?"
 
-Each refinement teaches Claude your preferences and produces better subsequent output.
+Each refinement teaches Claude your preferences and produces better subsequent output. Combining iterative prompting with [Claude's skill system](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) lets you make your best prompts permanent and reusable.
 
 ## Practical Prompt Template
 
