@@ -28,12 +28,10 @@ One of the most powerful developments in 2026 is the ability for skills to work 
 
 This orchestration happens through a common execution context that skills share. When you invoke multiple skills in sequence, the AI agent maintains state across those invocations, understanding that output from one skill serves as input to the next. You don't need to manually copy-paste between tools or manage file paths—the agent handles the integration.
 
-```bash
-# Example: Coordinated skill execution
-/generate-api-docs: Creates OpenAPI spec using /pdf and /docx skills
-/create-mockup: Generates React components using /frontend-design
-/run-tests: Validates implementation using /tdd and /webapp-testing
-```
+A typical coordinated workflow might instruct Claude to:
+1. Generate an OpenAPI spec and export it using the `/pdf` and `/docx` skills
+2. Create React components matching the spec using `/frontend-design`
+3. Validate the implementation using `/tdd` and `/webapp-testing`
 
 The **webapp-testing** skill has become particularly valuable in this context, allowing you to verify that generated frontends actually work against your running application. Rather than just checking that code compiles, you can validate user flows, form submissions, and responsive behavior automatically.
 

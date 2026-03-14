@@ -18,7 +18,7 @@ score: 7
 
 [Claude skills operate within a defined permission boundary](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This boundary determines three key things:
 
-1. **Tool access**: Which tools the skill can call (read_file, write_file, bash, etc.)
+1. **Tool access**: Which tools the skill can call (Read, Write, Bash, etc.)
 2. **Resource access**: Which files, directories, and external services the skill can interact with
 3. **Capability limits**: Constraints on execution time, token usage, and turn count
 
@@ -35,13 +35,13 @@ The most direct way to control what a skill can do is through the `tools` field 
 name: pdf-generator
 description: Converts markdown documents to formatted PDF files
 tools:
-  - read_file
-  - write_file
-  - bash
+  - Read
+  - Write
+  - Bash
 ---
 ```
 
-In this example, the `pdf-generator` skill can only use three specific tools. Even if your Claude session has additional tools enabled (like `web_fetch` or database connectors), this skill cannot access them. This is a fundamental security feature.
+In this example, the `pdf-generator` skill can only use three specific tools. Even if your Claude session has additional tools enabled (like `WebFetch` or database connectors), this skill cannot access them. This is a fundamental security feature.
 
 ### Why Tool Restriction Matters
 
@@ -68,7 +68,7 @@ This default is convenient but should be used carefully. For production skills, 
 
 ## File System Access
 
-Skills access the file system through the `read_file` and `write_file` tools. However, there are practical constraints and patterns you should understand.
+Skills access the file system through the `Read` and `Write` tools. However, there are practical constraints and patterns you should understand.
 
 ### Path Restrictions
 
@@ -81,8 +81,8 @@ To restrict file access, combine tool restrictions with explicit instructions in
 name: config-editor
 description: Edits configuration files safely
 tools:
-  - read_file
-  - write_file
+  - Read
+  - Write
 ---
 # Skill body
 You may only read and write files in the ./config/ directory.
@@ -98,22 +98,22 @@ A common pattern for file operations is the read-modify-write sequence:
 name: code-formatter
 description: Formats code files according to project standards
 tools:
-  - read_file
-  - write_file
-  - bash
+  - Read
+  - Write
+  - Bash
 ---
 # Skill body
 Before modifying any file:
-1. read_file the current content
+1. Read the current content
 2. Identify the file type and applicable formatting rules
-3. write_file the formatted version
+3. Write the formatted version
 
 After writing, run: npx prettier --write {file_path}
 ```
 
 ## Bash and Command Execution
 
-The `bash` tool provides the most powerful capability but also carries the highest risk. When a skill has bash access, it can execute any command your user environment permits.
+The `Bash` tool provides the most powerful capability but also carries the highest risk. When a skill has Bash access, it can execute any command your user environment permits.
 
 ### Limiting Command Scope
 
@@ -124,8 +124,8 @@ You cannot restrict which specific bash commands a skill runs through front matt
 name: test-runner
 description: Runs project test suites
 tools:
-  - bash
-  - read_file
+  - Bash
+  - Read
 ---
 # Skill body
 You may only run the following commands:
@@ -141,9 +141,9 @@ Do not modify git state or run git commands.
 
 Certain tool combinations require extra scrutiny:
 
-- `bash` + `write_file` + `web_fetch`: Could download and execute arbitrary code
-- `bash` + database tools: Could modify production data
-- `write_file` without `read_file` first: Could overwrite files unintentionally
+- `Bash` + `Write` + `WebFetch`: Could download and execute arbitrary code
+- `Bash` + database tools: Could modify production data
+- `Write` without `Read` first: Could overwrite files unintentionally
 
 Always audit skills that combine powerful tools.
 
@@ -156,9 +156,9 @@ The `max_turns` field controls how long a skill can run:
 name: complex-refactor
 description: Performs large-scale code refactoring
 tools:
-  - read_file
-  - write_file
-  - bash
+  - Read
+  - Write
+  - Bash
 max_turns: 25
 ---
 ```
@@ -167,7 +167,7 @@ Each "turn" represents one model response, which may include multiple tool calls
 
 ## Environment Variables and Secrets
 
-Skills access environment variables from the parent Claude session. There's no per-skill secret isolation. If your session has `API_KEY` in the environment, any skill with `bash` access can read it.
+Skills access environment variables from the parent Claude session. There's no per-skill secret isolation. If your session has `API_KEY` in the environment, any skill with `Bash` access can read it.
 
 For sensitive workflows, consider:
 
@@ -184,19 +184,19 @@ Here's a complete example of a well-structured, restricted skill:
 name: logger
 description: Adds structured logging to JavaScript functions
 tools:
-  - read_file
-  - write_file
+  - Read
+  - Write
 max_turns: 15
 ---
 # Skill body
 You help developers add consistent logging to their JavaScript code.
 
 Process:
-1. read_file the target file to understand its structure
+1. Read the target file to understand its structure
 2. Identify functions that would benefit from logging
 3. Add console.log statements with the format:
    `[FUNCTION_NAME] called with:`, arguments
-4. write_file the modified file
+4. Write the modified file
 
 Rules:
 - Only modify .js and .ts files
@@ -217,13 +217,7 @@ To audit what a skill can do, examine its front matter:
 2. Review `max_turns` for execution limits
 3. Read the skill body for behavioral constraints
 
-You can also enable tool logging while a skill runs:
-
-```
-/tools log on
-```
-
-This shows every tool call in real time, helping you verify the skill behaves as expected.
+You can enable verbose mode when running Claude Code to see tool calls in real time, which helps you verify a skill behaves as expected.
 
 ## Summary
 
@@ -235,7 +229,7 @@ Key principles:
 - Combine tool restrictions with behavioral guidance in the skill body
 - Set appropriate `max_turns` based on task complexity
 - Understand that environment variables and file access are shared with the parent session
-- Audit skills that combine powerful tools like `bash` + `write_file`
+- Audit skills that combine powerful tools like `Bash` + `Write`
 
 By understanding and properly configuring these permissions, you can build reliable, secure skills that do exactly what you intend—no more, no less.
 
