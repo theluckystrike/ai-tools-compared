@@ -1,11 +1,12 @@
 ---
 
 layout: default
-title: "Claude Code vs Aider: Open Source Contribution Workflow Comparison"
-description: "Compare Claude Code and Aider for open source contributions. Learn practical workflows, skill advantages, and which tool best suits your OSS contribution goals."
+title: "Claude Code vs Aider: Open Source Contribution Workflow."
+description: "Compare Claude Code and Aider for open source contributions. Learn practical workflows, skill advantages, and which tool best suits your OSS."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-vs-aider-open-source-contribution-workflow/
+categories: [guides]
 ---
 
 # Claude Code vs Aider: Open Source Contribution Workflow Comparison
@@ -158,3 +159,10 @@ Claude Code and Aider represent different philosophies in AI-assisted developmen
 For open source contributions specifically, Claude Code's ability to maintain context, enforce project conventions through skills, and provide comprehensive guidance often provides a smoother experience. The skill system ensures you follow each project's unique requirements without manual tracking.
 
 Try both tools with your next OSS contribution and see which workflow feels more natural for your development style.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Should I Switch from Aider to Claude Code? A Practical Guide"
-description: "Thinking about switching from Aider to Claude Code? This comprehensive guide covers the key differences, Claude Code's unique skills system, and practical examples to help you decide."
+description: "Thinking about switching from Aider to Claude Code? This comprehensive guide covers the key differences, Claude Code's unique skills system, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /should-i-switch-from-aider-to-claude-code/
+categories: [guides]
 ---
 
 # Should I Switch from Aider to Claude Code? A Practical Guide
@@ -119,3 +120,10 @@ If you decide to switch, here's a practical approach:
 The decision to switch from Aider to Claude Code ultimately depends on your specific needs. Claude Code's skill system, superior handling of large codebases, and more conversational interface make it a compelling choice for developers who want more than basic AI-assisted editing. If customization, scalability, and workflow integration matter to you, the switch is likely worth it.
 
 The best way to know for certain is to try Claude Code on your next project. Its skill system alone offers capabilities that fundamentally change how you interact with AI coding assistants—and that might be exactly what you're looking for.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
