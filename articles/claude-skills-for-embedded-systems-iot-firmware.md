@@ -1,9 +1,11 @@
 ---
-layout: default
-title: "Claude Skills for Embedded Systems, IoT, and Firmware Development"
-description: "Claude skills for embedded systems IoT firmware: accelerate firmware development, automate hardware abstraction layers, streamline RTOS workflows, and build reliable embedded software with AI assistance."
+layout: post
+title: "Claude Skills for Embedded Systems, IoT, and Firmware Dev..."
+description: "Claude skills for embedded systems IoT firmware: accelerate firmware development, automate hardware abstraction layers, streamline RTOS workflows, and b..."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 Embedded systems development presents unique challenges: resource constraints, real-time requirements, hardware-software interaction, and the need for rigorous testing. Claude Code skills provide specialized automation for firmware development, hardware abstraction, RTOS configuration, and embedded debugging workflows. These skills work alongside your existing toolchain—gcc, CMake, PlatformIO, FreeRTOS—to accelerate common operations without replacing your core development environment.
