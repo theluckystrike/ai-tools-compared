@@ -1,204 +1,194 @@
 ---
-layout: post
-title: "Claude Code Multi Agent Orchestration Patterns Guide"
-description: "A practical guide to multi-agent orchestration patterns in Claude Code. Learn to coordinate multiple specialized agents for complex development workflows."
+layout: default
+title: "Claude Code Multi-Agent Orchestration Patterns Guide"
+description: "A practical guide to building multi-agent orchestration systems with Claude Code. Learn patterns, code examples, and skill integration for developer workflows."
 date: 2026-03-14
-categories: [tutorials]
-tags: [claude-code, claude-skills, multi-agent, orchestration, automation, ai]
-author: "Claude Skills Guide"
-reviewed: true
-score: 9
+author: theluckystrike
 ---
 
-# Claude Code Multi Agent Orchestration Patterns Guide
+# Claude Code Multi-Agent Orchestration Patterns Guide
 
-Claude Code supports multi-agent workflows through skill orchestration and coordinated agent patterns. This guide covers practical approaches to running multiple specialized agents together, enabling sophisticated automation for complex development tasks.
+Building complex software systems often requires coordinating multiple specialized agents, each handling different aspects of a task. Claude Code provides a flexible foundation for multi-agent orchestration through its skill system, allowing you to define and coordinate agents that work together on sophisticated workflows.
 
-## Understanding Multi-Agent Orchestration in Claude Code
+This guide explores practical patterns for orchestrating multiple agents using Claude Code skills, with real code examples you can adapt to your projects.
 
-Multi-agent orchestration in Claude Code involves coordinating multiple skills or agents to handle tasks that require diverse expertise. Rather than relying on a single agent to handle everything, you can invoke specialized skills sequentially or in parallel to use their individual strengths.
+## Understanding Agent Coordination in Claude Code
 
-The foundation of this approach lies in Claude's skill system. Skills are [Markdown files in `~/.claude/skills/`](/claude-skills-guide/articles/skill-md-file-format-explained-with-examples/) that define agent behavior for specific domains. By combining skills strategically, you create powerful orchestration pipelines.
+Claude Code's skill system lets you define specialized instructions that shape how Claude behaves in different contexts. Each skill acts like a focused agent with specific expertise. The key to multi-agent orchestration lies in how you sequence, nest, and communicate between these skills.
 
-## Core Orchestration Patterns
+When you invoke a skill with `/skill-name`, Claude loads that specific instruction set. For orchestration, you combine multiple skills through clear transitions, shared context, and structured output formats that let one "agent" pass work to another seamlessly.
 
-### Sequential Skill Chaining
+## Pattern 1: Sequential Agent Pipeline
 
-The simplest pattern involves loading skills one after another, where each skill handles its portion of the task and passes context forward. This works well for linear workflows where output from one skill feeds into the next.
-
-Consider a web development workflow:
+The simplest orchestration pattern runs agents one after another, with each passing its output to the next. This works well for linear workflows like document generation followed by formatting.
 
 ```
-/frontend-design
-Create a React dashboard with three charts and user authentication UI.
+# First, invoke the document skill
+/document
 
+# Generate initial content, then transition to pdf skill
 /pdf
-Generate a specification document from the component structure.
 
-/tdd
-Write test cases covering the authentication flow and chart rendering.
+# Convert to PDF format
 ```
 
-In this sequence, the frontend-design skill creates the UI components, the pdf skill documents the architecture, and the tdd skill ensures test coverage. Each skill operates on the shared context of the project.
+Here's a practical implementation showing how this works in practice:
 
-### Parallel Agent Execution
-
-For independent tasks that don't depend on each other's output, you can run skills concurrently by opening multiple Claude Code sessions. This approach maximizes throughput when you have multiple isolated tasks.
-
-Common parallel scenarios include:
-- Running /tdd in one session while /frontend-design works in another
-- Using /supermemory to search historical context while /skill-creator generates new skills
-- Combining /tdd with /webapp-testing to develop and validate APIs simultaneously
-
-### Context Passing Between Sessions
-
-When skills need to share data across sessions, file-based communication works effectively. Write intermediate results to files that subsequent skills can read:
-
-```
-# Session 1: Generate API specification
-/claude-code
-Write OpenAPI spec to api-spec.yaml for a user management service.
-
-# Session 2: Build and test the API
-/openapi
-Generate Node.js server from api-spec.yaml.
-
-/webapp-testing
-Test the generated endpoints using the spec.
+```python
+# orchestrator.py - Sequential pipeline example
+def run_sequential_pipeline(task, skills_sequence):
+    """Run tasks through a sequence of specialized agents."""
+    context = {"task": task, "results": []}
+    
+    for skill in skills_sequence:
+        # Each skill receives the accumulated context
+        result = invoke_claude_skill(skill, context)
+        context["results"].append(result)
+        # Pass refined context to next agent
+        context["task"] = result["next_action"]
+    
+    return context["results"]
 ```
 
-This pattern preserves data integrity and allows checkpoint recovery if a session fails.
+This pattern works excellently when you need content go through distinct transformation stages. The supermemory skill, for example, can research and gather context, then pass findings to another skill for implementation.
 
-## Practical Orchestration Examples
+## Pattern 2: Parallel Agent Execution
 
-### Full-Stack Development Pipeline
+Some tasks benefit from agents working simultaneously on independent subtasks. Claude Code handles this through structured prompts that define separate contexts for each parallel agent.
 
-A complete development workflow might combine five or more skills:
-
-```
-/frontend-design
-Create a Vue 3 login page with form validation and error states.
-
-/backend-skill
-Generate Express routes for /login, /logout, and /register endpoints.
-
-/tdd
-Write integration tests for all three authentication routes.
-
-/webapp-testing
-Verify the frontend login form communicates correctly with the backend.
-
-/database-skill
-Create PostgreSQL migration scripts for the users table.
-```
-
-The frontend-design skill handles the UI layer, backend-skill manages API routes, tdd ensures testability, webapp-testing validates integration, and database-skill handles persistence. Each skill operates within its domain while contributing to the overall system.
-
-### Documentation Generation Workflow
-
-Documentation often requires multiple skill perspectives:
-
-```
-/pdf
-Extract all function signatures and class definitions from src/ directory.
-
-/docx
-Format the extracted API reference into a professional documentation Word document.
-
-/slides
-Create a technical presentation summarizing the API for stakeholders.
+```yaml
+# Parallel execution configuration
+agents:
+  - name: frontend-agent
+    skill: frontend-design
+    task: "Design the UI components for the dashboard"
+    output: "component-specs.json"
+  
+  - name: backend-agent  
+    skill: backend-architecture
+    task: "Design the API schema and data models"
+    output: "api-schema.yaml"
+  
+  - name: docs-agent
+    skill: documentation
+    task: "Generate API documentation from specs"
+    output: "api-docs.md"
 ```
 
-This workflow produces API reference documentation, formatted user guides, and executive summaries from the same codebase.
+Each agent operates independently on its assigned subtask. You then coordinate results through a merge step that combines outputs into a unified deliverable.
 
-### Code Review and Refactoring Pipeline
+The tdd skill pairs well in parallel scenarios—one agent can write tests while another implements features, then you synchronize for integration testing.
 
-When refactoring legacy code, orchestration ensures thorough coverage:
+## Pattern 3: Hierarchical Agent Structure
 
-```
-/code-review
-Analyze the legacy payment processing module and identify technical debt.
+Complex projects benefit from a manager-agent relationship where a coordinating agent delegates to specialized sub-agents and synthesizes their outputs.
 
-/refactor
-Apply the suggested refactoring patterns to improve code quality.
-
-/tdd
-Ensure existing functionality is preserved by running the test suite.
-
-/security-skill
-Scan the refactored code for common vulnerabilities.
-```
-
-Each skill contributes specialized analysis: code-review identifies problems, refactor implements solutions, tdd validates behavior, and security-skill catches vulnerabilities.
-
-## Advanced Patterns
-
-### Conditional Skill Routing
-
-You can implement decision-making in orchestration by examining skill output before proceeding:
-
-```
-/analyze
-Examine the codebase and determine if it uses TypeScript or JavaScript.
-
-# Based on output, choose:
-# - For TypeScript: /typescript-skill
-# - For JavaScript: /javascript-skill
-```
-
-This pattern adapts the workflow based on detected conditions.
-
-### Retry and Fallback Mechanisms
-
-When a skill encounters limitations, fallback skills provide resilience:
-
-```
-/openapi
-Generate a REST API from the specification.
-
-# If the generator fails:
-/claude-code
-Manually implement the API endpoints following REST conventions.
-```
-
-The orchestration attempts the primary skill but gracefully degrades to manual implementation if needed.
-
-### State Management in Long Workflows
-
-Extended orchestrations benefit from explicit state tracking:
-
-```
-# Workflow state file: .workflow-state.json
-{
-  "current_phase": "frontend_complete",
-  "completed_phases": ["requirements", "design", "frontend"],
-  "pending_phases": ["backend", "testing", "deployment"]
+```javascript
+// hierarchical-orchestrator.js
+class HierarchicalOrchestrator {
+  constructor(managerSkill, subAgents) {
+    this.manager = managerSkill;
+    this.subAgents = subAgents;
+  }
+  
+  async execute(task) {
+    // Manager decomposes task into subtasks
+    const subtasks = await this.invokeSkill(this.manager, {
+      action: "decompose",
+      task: task
+    });
+    
+    // Execute subtasks in parallel
+    const results = await Promise.all(
+      subtasks.map(subtask => this.delegate(subtask))
+    );
+    
+    // Manager synthesizes results
+    return await this.invokeSkill(this.manager, {
+      action: "synthesize",
+      results: results
+    });
+  }
+  
+  async delegate(subtask) {
+    const agent = this.selectAgent(subtask.type);
+    return await this.invokeSkill(agent, subtask);
+  }
 }
 ```
 
-Skills can read and update this state, enabling pause-and-resume functionality and progress tracking.
+This pattern mirrors how teams operate—a project lead coordinates specialists. In Claude Code, you might use a planning skill as the manager, delegating to frontend-design, backend-architecture, and security skills for different project components.
 
-## Best Practices for Multi-Agent Orchestration
+## Pattern 4: Event-Driven Agent Communication
 
-Keep skill outputs modular and reusable across agents. Design skills to produce file-based artifacts that other skills can consume, rather than expecting direct memory passing between sessions.
+For reactive systems, agents respond to events rather than following predetermined sequences. This pattern suits monitoring, alerting, and continuous integration scenarios.
 
-Document your orchestration patterns in a central location. As skills accumulate in your workflow, maintaining a pattern library prevents duplication and enables team reuse.
+```python
+# event-driven-agents.py
+class EventDrivenAgents:
+    def __init__(self):
+        self.subscriptions = {}
+    
+    def subscribe(self, event_type, skill_handler):
+        """Register an agent to handle specific events."""
+        if event_type not in self.subscriptions:
+            self.subscriptions[event_type] = []
+        self.subscriptions[event_type].append(skill_handler)
+    
+    def emit(self, event):
+        """Trigger all agents subscribed to this event type."""
+        handlers = self.subscriptions.get(event.type, [])
+        for handler in handlers:
+            result = invoke_claude_skill(handler, event.data)
+            if result.get("continue"):
+                self.emit(result["next_event"])
+```
 
-Test orchestration sequences in development before production use. Skills evolve over time, and pattern compatibility requires periodic verification.
+Using the pdf skill for document events, the documentation skill for content updates, or security-audit for code changes creates a responsive system that adapts to your workflow events.
 
-Monitor skill interactions for unexpected behaviors. Some skill combinations produce emergent behaviors that require adjustment.
+## Skill Composition Techniques
 
-## Conclusion
+Effective orchestration requires thoughtful skill composition. Here are practical techniques:
 
-Multi-agent orchestration in Claude Code transforms isolated skills into coordinated workflows. By understanding sequential chaining, parallel execution, and context passing, you can build sophisticated automation pipelines that handle complex development tasks efficiently. The key lies in treating skills as specialized components that combine through well-defined interfaces.
+**Context Passing**: Always maintain a shared context object that accumulates information. Each skill adds its findings, creating a rich information pool for subsequent agents.
 
-Start with simple two-skill sequences and gradually expand as your patterns mature. The skill ecosystem continues growing, offering new capabilities to incorporate into your orchestrations.
+**Output Normalization**: Define standard output formats across skills so agents can parse each other's results consistently:
 
-## Related Reading
+```json
+{
+  "status": "success|error|pending",
+  "data": {},
+  "next_action": "description of follow-up task",
+  "confidence": 0.95
+}
+```
 
-- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Complement sequential skill chaining with parallel subagent orchestration for complex projects.
-- [Claude Code Agent Swarm Coordination Strategies](/claude-skills-guide/articles/claude-code-agent-swarm-coordination-strategies/) — Scale beyond single skill chains to full agent swarms for large-scale automation.
-- [Building Production AI Agents with Claude Skills in 2026](/claude-skills-guide/articles/building-production-ai-agents-with-claude-skills-2026/) — Architecture patterns for taking orchestrated skill pipelines to production.
-- [Advanced Claude Skills](/claude-skills-guide/advanced-hub/) — Explore advanced patterns for building reliable, scalable multi-skill pipelines.
+**Fallback Chains**: Define backup skills when primary agents fail or return uncertain results:
+
+```yaml
+fallback_chain:
+  - primary: code-review
+  - secondary: senior-code-review  
+  - tertiary: manual-review
+```
+
+## Real-World Example: Feature Implementation
+
+Consider implementing a new feature in your application:
+
+1. **Research** (supermemory): Gather context about existing codebase patterns and similar implementations
+2. **Design** (frontend-design): Create UI specifications
+3. **Backend** (backend-architecture): Define data models and API endpoints
+4. **Implementation** (tdd): Write tests first, then implement feature
+5. **Documentation** (documentation): Generate updated docs
+6. **Security** (security-audit): Verify implementation meets security standards
+
+Each skill focuses on its domain while receiving context from previous agents, producing a comprehensive feature delivery.
+
+## Best Practices
+
+Keep agent workflows maintainable by documenting the orchestration logic separately from skill definitions. Use version control for your skill configurations. Test your agent pipelines with representative tasks before deploying to production.
+
+Start with sequential pipelines for straightforward tasks, then evolve toward hierarchical or event-driven patterns as your needs grow more complex.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
