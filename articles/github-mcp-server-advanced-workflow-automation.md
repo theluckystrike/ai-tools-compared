@@ -39,7 +39,7 @@ With this configuration active, you can orchestrate complex automation sequences
 
 ## Automating Code Review Workflows
 
-One powerful pattern involves automatically triaging pull requests based on code changes. Using the GitHub MCP server alongside the tdd skill creates a robust review pipeline:
+One powerful pattern involves automatically triaging pull requests based on code changes. Using the GitHub MCP server alongside the tdd skill creates an automated review pipeline:
 
 When a PR lands, MCP can fetch the diff, analyze changed files, and trigger appropriate actions. You might automatically label PRs based on which files changed—marking documentation updates, flagging security-sensitive changes, or identifying tests that need verification.
 
