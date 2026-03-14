@@ -73,7 +73,7 @@ server.listen(8080, () => {
 
 ## Structuring Your WebSocket API
 
-A well-structured WebSocket API separates concerns effectively. Use the [tdd skill](https://theluckystrike.github.io/claude-skills-guide/best-claude-skills-for-developers-2026/) to generate tests before implementing your message handlers:
+A well-structured WebSocket API separates concerns effectively. Use the [tdd skill](/claude-skills-guide/best-claude-skills-for-developers-2026/) to generate tests before implementing your message handlers:
 
 ```
 /tdd
@@ -96,7 +96,7 @@ const messageSchema = {
 };
 ```
 
-The [frontend-design skill](https://theluckystrike.github.io/claude-skills-guide/best-claude-skills-for-developers-2026/) becomes valuable when building real-time dashboards that consume your WebSocket API—it helps structure reactive components that update smoothly with incoming socket data.
+The [frontend-design skill](/claude-skills-guide/best-claude-skills-for-developers-2026/) becomes valuable when building real-time dashboards that consume your WebSocket API—it helps structure reactive components that update smoothly with incoming socket data.
 
 ## Implementing Advanced Patterns
 
@@ -152,14 +152,14 @@ function setupHeartbeat(ws) {
 
 ## Using Claude Skills for Documentation
 
-The [pdf skill](https://theluckystrike.github.io/claude-skills-guide/best-claude-skills-for-developers-2026/) generates API documentation in PDF format, which proves invaluable for sharing WebSocket protocol specs with team members or external developers. After defining your message types, ask Claude to document them:
+The [pdf skill](/claude-skills-guide/best-claude-skills-for-developers-2026/) generates API documentation in PDF format, which proves invaluable for sharing WebSocket protocol specs with team members or external developers. After defining your message types, ask Claude to document them:
 
 ```
 /pdf
 Create an API reference document for our WebSocket protocol including message types, payload schemas, and error codes.
 ```
 
-Similarly, the [docx skill](https://theluckystrike.github.io/claude-skills-guide/best-claude-skills-for-developers-2026/) creates formatted Word documents for technical specifications that require tracked changes or collaborative editing.
+Similarly, the [docx skill](/claude-skills-guide/best-claude-skills-for-developers-2026/) creates formatted Word documents for technical specifications that require tracked changes or collaborative editing.
 
 ## Testing Your Implementation
 
@@ -208,7 +208,7 @@ wss.on('connection', (ws) => {
 
 ## Debugging and Monitoring
 
-The [slack-gif-creator skill](https://theluckystrike.github.io/claude-skills-guide/best-claude-skills-for-developers-2026/) proves surprisingly useful for creating visual debugging aids when documenting connection issues in team communications. For persistent debugging sessions, the superMemory skill maintains your investigation context across multiple Claude sessions—essential for tracking down intermittent connection drops or race conditions.
+The [slack-gif-creator skill](/claude-skills-guide/best-claude-skills-for-developers-2026/) proves surprisingly useful for creating visual debugging aids when documenting connection issues in team communications. For persistent debugging sessions, the superMemory skill maintains your investigation context across multiple Claude sessions—essential for tracking down intermittent connection drops or race conditions.
 
 Implement structured logging to capture connection metrics:
 
