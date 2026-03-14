@@ -3,7 +3,7 @@
 
 layout: default
 title: "How to Make Claude Code Match Existing Code Patterns"
-description: "Practical techniques for guiding Claude Code to adopt your project's coding conventions, style guides, and architectural patterns. Includes real examples and skill recommendations."
+description: "Practical techniques for guiding Claude Code to adopt your project's coding conventions, style guides, and architectural patterns. Includes real."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, code-patterns, coding-conventions, ai-programming]

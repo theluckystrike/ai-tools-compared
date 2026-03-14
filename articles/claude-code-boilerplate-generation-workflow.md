@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Boilerplate Generation Workflow"
-description: "A practical workflow for generating code boilerplate with Claude Code skills. Real examples using frontend-design, pdf, tdd, and other skills to accelerate your development setup."
+description: "A practical workflow for generating code boilerplate with Claude Code skills. Real examples using frontend-design, pdf, tdd, and other skills to."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-boilerplate-generation-workflow/

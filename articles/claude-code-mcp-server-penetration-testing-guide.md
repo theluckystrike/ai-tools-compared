@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code MCP Server Penetration Testing Guide"
-description: "Learn how to penetration test MCP servers for Claude Code. Discover security testing methodologies, common vulnerabilities, and practical assessment techniques for developers."
+description: "Learn how to penetration test MCP servers for Claude Code. Discover security testing methodologies, common vulnerabilities, and practical assessment."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, mcp, penetration-testing, security, vulnerability-assessment]

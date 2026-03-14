@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code dotenv Configuration Workflow"
-description: "A practical guide to managing environment variables with dotenv in Claude Code projects. Learn workflows for secure configuration handling across development and production environments."
+description: "A practical guide to managing environment variables with dotenv in Claude Code projects. Learn workflows for secure configuration handling across."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-dotenv-configuration-workflow/

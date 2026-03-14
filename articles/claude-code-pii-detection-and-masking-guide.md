@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code PII Detection and Masking Guide"
-description: "A practical guide to implementing PII detection and masking in your projects using Claude Code. Learn how to identify, protect, and handle sensitive data with code examples and workflows."
+description: "A practical guide to implementing PII detection and masking in your projects using Claude Code. Learn how to identify, protect, and handle sensitive."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-pii-detection-and-masking-guide/

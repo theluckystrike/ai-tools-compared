@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code for Sprint Start: Workflow Tips and Best Practices"
+title: "Claude Code for Sprint Start: Workflow Tips and Best."
 description: "Maximize your sprint velocity with Claude Code. Learn workflow patterns for backlog grooming, task estimation, test setup, and daily standup preparation."
 date: 2026-03-14
 categories: [guides]

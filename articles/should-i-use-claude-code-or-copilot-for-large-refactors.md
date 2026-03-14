@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Should I Use Claude Code or Copilot for Large Refactors?"
-description: "A practical comparison of Claude Code vs GitHub Copilot for large-scale code refactoring. Learn when each tool excels and how to choose based on your project complexity."
+description: "A practical comparison of Claude Code vs GitHub Copilot for large-scale code refactoring. Learn when each tool excels and how to choose based on your."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /should-i-use-claude-code-or-copilot-for-large-refactors/

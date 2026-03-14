@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Git Stash Workflow Tips Guide"
-description: "Master git stash workflows with Claude Code. Practical tips for developers to manage stashed changes, recover work, and integrate stash operations into AI-assisted development."
+description: "Master git stash workflows with Claude Code. Practical tips for developers to manage stashed changes, recover work, and integrate stash operations into."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-git-stash-workflow-tips-guide/

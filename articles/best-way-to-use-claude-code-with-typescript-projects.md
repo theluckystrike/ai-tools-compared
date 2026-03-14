@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Use Claude Code with TypeScript Projects"
-description: "A practical guide for developers on using Claude Code effectively with TypeScript projects: skill selection, workflow optimization, and real-world examples."
+description: "A practical guide for developers on using Claude Code effectively with TypeScript projects: skill selection, workflow optimization, and real-world."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /best-way-to-use-claude-code-with-typescript-projects/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Code Generation Templates Guide"
-description: "Master code generation templates in Claude Code. Learn to create reusable skill templates, automate repetitive coding patterns, and build consistent project structures with practical examples."
+description: "Master code generation templates in Claude Code. Learn to create reusable skill templates, automate repetitive coding patterns, and build consistent."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-code-generation-templates-guide/

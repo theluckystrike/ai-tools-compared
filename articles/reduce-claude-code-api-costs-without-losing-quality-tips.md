@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Reduce Claude Code API Costs Without Losing Quality: Practical Tips"
+title: "Reduce Claude Code API Costs Without Losing Quality."
 description: "Discover proven strategies to optimize Claude Code API usage and cut costs while maintaining high-quality code generation and analysis results."
 date: 2026-03-14
 categories: [guides]

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Debug Configuration Workflow"
-description: "A practical workflow for debugging Claude Code configuration issues. Learn to diagnose skill loading failures, environment conflicts, and permission problems."
+description: "A practical workflow for debugging Claude Code configuration issues. Learn to diagnose skill loading failures, environment conflicts, and permission."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, debugging, configuration, troubleshooting, claude-skills]

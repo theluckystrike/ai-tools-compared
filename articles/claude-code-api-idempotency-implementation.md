@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code API Idempotency Implementation: A Practical Guide"
+title: "Claude Code API Idempotency Implementation: A Practical."
 description: "Learn how to implement idempotency in Claude Code API integrations to build resilient, retry-safe applications with practical code examples."
 date: 2026-03-14
 author: "Claude Skills Guide"

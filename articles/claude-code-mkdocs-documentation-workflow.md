@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code MkDocs Documentation Workflow"
-description: "Build a Claude Code MkDocs documentation workflow that auto-generates and maintains developer docs from your codebase. Step-by-step guide with practical examples."
+description: "Build a Claude Code MkDocs documentation workflow that auto-generates and maintains developer docs from your codebase. Step-by-step guide with."
 date: 2026-03-14
 categories: [workflows]
 tags: [claude-code, claude-skills, claude-code, mkdocs, documentation, workflow, pdf, supermemory]

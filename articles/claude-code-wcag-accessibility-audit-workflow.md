@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code WCAG Accessibility Audit Workflow"
-description: "Build a practical WCAG accessibility audit workflow using Claude Code skills. Practical examples, automated checks, and remediation guidance for developers."
+description: "Build a practical WCAG accessibility audit workflow using Claude Code skills. Practical examples, automated checks, and remediation guidance for."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, wcag, accessibility, a11y, audit, workflow]

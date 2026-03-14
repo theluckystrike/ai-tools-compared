@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Data Retention Policy Workflow"
-description: "A practical guide to implementing data retention policies in Claude Code workflows. Automate cleanup, manage conversation history, and optimize storage with community skills."
+description: "A practical guide to implementing data retention policies in Claude Code workflows. Automate cleanup, manage conversation history, and optimize storage."
 date: 2026-03-14
 categories: [workflows, data-management]
 tags: [claude-code, claude-skills, data-retention, automation, workflow]

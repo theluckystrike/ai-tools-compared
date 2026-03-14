@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Write CLAUDE.md File for Your Project"
-description: "Learn the optimal strategies for crafting CLAUDE.md files that maximize Claude Code's effectiveness. Practical examples and expert techniques for developers."
+description: "Learn the optimal strategies for crafting CLAUDE.md files that maximize Claude Code's effectiveness. Practical examples and expert techniques for."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /best-way-to-write-claudemd-file-for-your-project/

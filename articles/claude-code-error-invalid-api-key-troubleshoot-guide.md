@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Error: Invalid API Key Troubleshoot Guide"
-description: "Fix the 'Invalid API Key' error in Claude Code with practical solutions for developers and power users. Learn authentication troubleshooting, environment variables, and skill configuration."
+description: "Fix the 'Invalid API Key' error in Claude Code with practical solutions for developers and power users. Learn authentication troubleshooting."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-error-invalid-api-key-troubleshoot-guide/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Prompt Claude Code for Complex Features"
-description: "Master the art of prompting Claude Code for complex features. Learn practical prompt patterns, structured approaches, and skill-based workflows for developers."
+description: "Master the art of prompting Claude Code for complex features. Learn practical prompt patterns, structured approaches, and skill-based workflows for."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, prompting, complex-features, developer-productivity]

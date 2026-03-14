@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Error Rate Limit Exceeded 429 Workaround"
-description: "Fix the 'rate limit exceeded (429)' error in Claude Code with practical workarounds. Learn what causes rate limits, how to handle them, and prevent future interruptions."
+description: "Fix the 'rate limit exceeded (429)' error in Claude Code with practical workarounds. Learn what causes rate limits, how to handle them, and prevent."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-error-rate-limit-exceeded-429-workaround/

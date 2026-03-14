@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Fixing Claude Code Error: Python Virtual Environment Not Found"
+title: "Fixing Claude Code Error: Python Virtual Environment Not."
 description: "Troubleshoot and resolve the 'python virtual environment not found' error in Claude Code. Practical solutions for developers and power users."
 date: 2026-03-14
 author: "Claude Skills Guide"

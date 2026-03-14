@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Make Claude Code Refactor Without Breaking Tests"
-description: "A practical guide for developers to use Claude Code for safe refactoring. Learn test preservation techniques, incremental changes, and verification workflows."
+description: "A practical guide for developers to use Claude Code for safe refactoring. Learn test preservation techniques, incremental changes, and verification."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /how-to-make-claude-code-refactor-without-breaking-tests/

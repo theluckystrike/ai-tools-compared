@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Fixing Claude Code Writing Code in Wrong Programming Language"
+title: "Fixing Claude Code Writing Code in Wrong Programming."
 description: "Practical solutions for when Claude Code generates code in the wrong language. Learn context management, skill configuration, and prevention techniques."
 date: 2026-03-14
 categories: [troubleshooting]

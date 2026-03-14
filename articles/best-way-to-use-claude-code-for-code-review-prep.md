@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Use Claude Code for Code Review Prep"
-description: "Learn how to prepare for code reviews efficiently using Claude Code skills. Practical workflows with tdd, supermemory, and other skills to streamline your review process."
+description: "Learn how to prepare for code reviews efficiently using Claude Code skills. Practical workflows with tdd, supermemory, and other skills to streamline."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /best-way-to-use-claude-code-for-code-review-prep/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code README Generation Automation"
-description: "Automate README creation for your projects using Claude Code skills. Generate comprehensive documentation from project structure, code analysis, and customizable templates."
+description: "Automate README creation for your projects using Claude Code skills. Generate comprehensive documentation from project structure, code analysis, and."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [guides]

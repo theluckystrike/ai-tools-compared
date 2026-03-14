@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Combine Claude Code with Unit Testing"
-description: "A practical guide to integrating Claude Code with your unit testing workflow. Learn how to use the tdd skill, generate tests efficiently, and maintain quality code."
+description: "A practical guide to integrating Claude Code with your unit testing workflow. Learn how to use the tdd skill, generate tests efficiently, and maintain."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /best-way-to-combine-claude-code-with-unit-testing/

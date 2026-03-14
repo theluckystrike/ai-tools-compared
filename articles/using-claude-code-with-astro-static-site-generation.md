@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Using Claude Code with Astro Static Site Generation"
-description: "Learn how to integrate Claude Code into your Astro static site workflow. Automate component generation, optimize images, run tests, and enhance content creation with specialized Claude skills."
+description: "Learn how to integrate Claude Code into your Astro static site workflow. Automate component generation, optimize images, run tests, and enhance content."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /using-claude-code-with-astro-static-site-generation/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Create a REST API from Scratch Using Claude Code"
-description: "A practical guide for developers building REST APIs with Claude Code. Set up endpoints, handle requests, and test your API using Claude skills and best practices."
+description: "A practical guide for developers building REST APIs with Claude Code. Set up endpoints, handle requests, and test your API using Claude skills and best."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /how-to-create-a-rest-api-from-scratch-using-claude-code/

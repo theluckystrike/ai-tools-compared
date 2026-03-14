@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Rate Limiting Implementation Guide"
-description: "A practical guide to implementing rate limiting for Claude Code API. Learn token buckets, sliding windows, and real-world code patterns for production systems."
+description: "A practical guide to implementing rate limiting for Claude Code API. Learn token buckets, sliding windows, and real-world code patterns for production."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, api-development, rate-limiting, backend]

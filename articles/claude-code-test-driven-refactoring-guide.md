@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Test-Driven Refactoring Guide"
-description: "A practical guide to using Claude Code for test-driven refactoring. Learn how to safely refactor legacy code with AI assistance, maintain test coverage, and improve code quality."
+description: "A practical guide to using Claude Code for test-driven refactoring. Learn how to safely refactor legacy code with AI assistance, maintain test."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, refactoring, tdd, testing, code-quality]

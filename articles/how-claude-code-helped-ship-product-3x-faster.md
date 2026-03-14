@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Claude Code Helped Ship Product 3x Faster"
-description: "A practical look at how Claude Code and its skill system accelerate product development workflows. Real examples from frontend, documentation, and testing tasks."
+description: "A practical look at how Claude Code and its skill system accelerate product development workflows. Real examples from frontend, documentation, and."
 date: 2026-03-14
 categories: [use-cases]
 tags: [claude-code, claude-skills, productivity, case-study, development-workflow]

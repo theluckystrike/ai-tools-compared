@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Design Patterns Refactoring Guide"
-description: "A practical guide to applying design patterns and refactoring techniques in Claude Code skills. Learn patterns that improve skill maintainability, reduce duplication, and make your workflows more predictable."
+description: "A practical guide to applying design patterns and refactoring techniques in Claude Code skills. Learn patterns that improve skill maintainability."
 date: 2026-03-14
 author: theluckystrike
 categories: [refactoring, design-patterns]

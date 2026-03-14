@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Prettier Code Formatting Guide"
-description: "A practical guide to using Prettier with Claude Code for automated code formatting. Learn configuration, integration patterns, and best practices for consistent code style."
+description: "A practical guide to using Prettier with Claude Code for automated code formatting. Learn configuration, integration patterns, and best practices for."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, prettier, code-formatting, code-quality, automation]

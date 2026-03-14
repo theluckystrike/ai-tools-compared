@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Keyboard Navigation Testing Guide"
-description: "A practical guide to testing keyboard navigation in Claude Code projects. Learn automation patterns, test strategies, and tooling for accessibility compliance."
+description: "A practical guide to testing keyboard navigation in Claude Code projects. Learn automation patterns, test strategies, and tooling for accessibility."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [testing, accessibility]

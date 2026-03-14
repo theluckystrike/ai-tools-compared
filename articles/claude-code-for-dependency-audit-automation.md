@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Dependency Audit Automation"
-description: "Learn how to automate dependency security audits using Claude Code skills. Practical examples for scanning vulnerabilities, generating reports, and integrating with CI/CD pipelines."
+description: "Learn how to automate dependency security audits using Claude Code skills. Practical examples for scanning vulnerabilities, generating reports, and."
 date: 2026-03-14
 author: "Claude Skills Guide"
 reviewed: true

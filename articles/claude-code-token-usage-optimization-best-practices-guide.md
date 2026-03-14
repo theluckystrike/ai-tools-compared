@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Token Usage Optimization Best Practices Guide"
-description: "Master token optimization in Claude Code with practical strategies for developers. Learn prompt structuring, context management, and skill selection to reduce usage costs."
+description: "Master token optimization in Claude Code with practical strategies for developers. Learn prompt structuring, context management, and skill selection to."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [guides]

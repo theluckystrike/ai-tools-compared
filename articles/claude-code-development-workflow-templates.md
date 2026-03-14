@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Development Workflow Templates"
-description: "Practical workflow templates using Claude Code skills for developers and power users. Automate documentation, testing, frontend design, and knowledge management."
+description: "Practical workflow templates using Claude Code skills for developers and power users. Automate documentation, testing, frontend design, and knowledge."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-development-workflow-templates/

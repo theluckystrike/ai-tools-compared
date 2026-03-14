@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Not Responding: Terminal Hangs Fix Guide"
-description: "Practical solutions for fixing Claude Code when it stops responding or your terminal hangs. Learn diagnostic techniques, recovery methods, and prevention strategies."
+description: "Practical solutions for fixing Claude Code when it stops responding or your terminal hangs. Learn diagnostic techniques, recovery methods, and."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-not-responding-terminal-hangs-fix/

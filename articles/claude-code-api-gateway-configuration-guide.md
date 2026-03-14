@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Gateway Configuration Guide"
-description: "A practical guide to configuring API gateways for Claude Code skills. Learn to set up routing, authentication, rate limiting, and integrate with MCP servers."
+description: "A practical guide to configuring API gateways for Claude Code skills. Learn to set up routing, authentication, rate limiting, and integrate with MCP."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-api-gateway-configuration-guide/

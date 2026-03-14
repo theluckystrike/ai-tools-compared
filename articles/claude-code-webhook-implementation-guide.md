@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Webhook Implementation Guide"
-description: "A practical guide to implementing webhooks with Claude Code. Learn patterns for receiving, processing, and responding to webhooks using MCP servers and skills."
+description: "A practical guide to implementing webhooks with Claude Code. Learn patterns for receiving, processing, and responding to webhooks using MCP servers and."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, webhooks, mcp, automation, integration]

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Why Does Claude Code Work Better with Skills Loaded?"
-description: "Discover how Claude Code skills improve AI assistance through specialized knowledge, context management, and domain-specific tooling. Practical examples included."
+description: "Discover how Claude Code skills improve AI assistance through specialized knowledge, context management, and domain-specific tooling. Practical."
 date: 2026-03-14
 categories: [comparisons]
 tags: [claude-code, claude-skills, ai-productivity, claude-code-tips]

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Claude Code Monthly Cost Breakdown: Realistic Usage Estimates for Developers"
-description: "Practical monthly cost estimates for Claude Code based on real developer workflows. Includes token usage for common tasks, skill invocations, and scenarios ranging from casual to intensive use."
+title: "Claude Code Monthly Cost Breakdown: Realistic Usage."
+description: "Practical monthly cost estimates for Claude Code based on real developer workflows. Includes token usage for common tasks, skill invocations, and."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]

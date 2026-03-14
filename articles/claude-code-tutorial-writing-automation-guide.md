@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Tutorial Writing Automation Guide"
-description: "Learn how to automate tutorial writing with Claude Code. Build workflows that generate code examples, explanations, and step-by-step guides using Claude skills."
+description: "Learn how to automate tutorial writing with Claude Code. Build workflows that generate code examples, explanations, and step-by-step guides using."
 date: 2026-03-14
 categories: [workflows]
 tags: [claude-code, claude-skills, tutorial, automation, writing]

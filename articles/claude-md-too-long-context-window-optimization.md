@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude MD Too Long Context Window Optimization"
-description: "A practical guide to fixing Claude MD files that exceed context window limits. Learn optimization techniques, file splitting strategies, and best practices for large skill files."
+description: "A practical guide to fixing Claude MD files that exceed context window limits. Learn optimization techniques, file splitting strategies, and best."
 date: 2026-03-14
 author: "Claude Skills Guide"
 reviewed: true

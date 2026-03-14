@@ -3,7 +3,7 @@
 
 layout: default
 title: "How to Make Claude Code Respect Module Boundaries"
-description: "Practical techniques for controlling Claude Code's context awareness across module boundaries in multi-file projects. Learn to scope Claude's knowledge to specific components."
+description: "Practical techniques for controlling Claude Code's context awareness across module boundaries in multi-file projects. Learn to scope Claude's knowledge."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [guides]

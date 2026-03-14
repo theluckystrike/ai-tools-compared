@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Documentation Best Practices"
-description: "Learn how to write API documentation that Claude Code can effectively use. Covers skill metadata, Markdown formatting, code examples, and practical patterns."
+description: "Learn how to write API documentation that Claude Code can effectively use. Covers skill metadata, Markdown formatting, code examples, and practical."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [guides]

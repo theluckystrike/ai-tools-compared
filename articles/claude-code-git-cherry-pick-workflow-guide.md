@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Git Cherry-Pick Workflow Guide"
-description: "Master git cherry-pick workflows with Claude Code. Learn to select commits precisely, handle merge conflicts, and automate repetitive cherry-picking tasks using Claude skills."
+description: "Master git cherry-pick workflows with Claude Code. Learn to select commits precisely, handle merge conflicts, and automate repetitive cherry-picking."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-git-cherry-pick-workflow-guide/

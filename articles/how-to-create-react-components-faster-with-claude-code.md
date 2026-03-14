@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Create React Components Faster with Claude Code"
-description: "Learn practical techniques to speed up React component development using Claude Code. Includes code examples, workflow automation tips, and skills that boost frontend development productivity."
+description: "Learn practical techniques to speed up React component development using Claude Code. Includes code examples, workflow automation tips, and skills that."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /how-to-create-react-components-faster-with-claude-code/

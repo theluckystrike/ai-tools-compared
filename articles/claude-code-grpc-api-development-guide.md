@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code gRPC API Development Guide (2026)"
-description: "Master gRPC API development with Claude Code. Learn protocol buffer patterns, streaming implementations, and practical workflows for building high-performance APIs."
+description: "Master gRPC API development with Claude Code. Learn protocol buffer patterns, streaming implementations, and practical workflows for building."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, grpc, api-development, protocol-buffers, microservices]

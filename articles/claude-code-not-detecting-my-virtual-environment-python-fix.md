@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Not Detecting My Virtual Environment Python Fix"
-description: "Having trouble with Claude Code not detecting your Python virtual environment? This guide provides practical solutions to fix virtual environment detection issues in Claude Code for Python projects."
+description: "Having trouble with Claude Code not detecting your Python virtual environment? This guide provides practical solutions to fix virtual environment."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [troubleshooting]

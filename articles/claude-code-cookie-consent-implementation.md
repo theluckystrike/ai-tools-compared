@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Cookie Consent Implementation: A Practical Guide"
-description: "Learn how to implement GDPR-compliant cookie consent in your web projects using Claude Code and the frontend-design skill. Includes code examples and best practices."
+description: "Learn how to implement GDPR-compliant cookie consent in your web projects using Claude Code and the frontend-design skill. Includes code examples and."
 date: 2026-03-14
 categories: [implementation]
 tags: [claude-code, cookie-consent, gdpr, frontend, frontend-design, claude-skills]

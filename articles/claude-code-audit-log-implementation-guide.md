@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Audit Log Implementation Guide"
-description: "A practical guide to implementing audit logs in Claude Code skills. Learn to track skill usage, log AI decisions, and build compliance-ready logging systems."
+description: "A practical guide to implementing audit logs in Claude Code skills. Learn to track skill usage, log AI decisions, and build compliance-ready logging."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-audit-log-implementation-guide/

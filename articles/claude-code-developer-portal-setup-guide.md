@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Developer Portal Setup Guide"
-description: "A practical guide to setting up Claude Code developer portals. Configure skills, customize workflows, and build your personalized AI development environment."
+description: "A practical guide to setting up Claude Code developer portals. Configure skills, customize workflows, and build your personalized AI development."
 date: 2026-03-14
 <<<<<<< HEAD
 author: "Claude Skills Guide"
