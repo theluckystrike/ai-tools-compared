@@ -6,7 +6,7 @@ date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-pulumi-typescript-infra-guide/
 ---
-
+{% raw %}
 # Claude Code Pulumi TypeScript Infra Guide
 
 Infrastructure as Code has evolved significantly, and combining Claude Code with Pulumi TypeScript projects creates a powerful workflow for managing cloud resources. This guide shows you practical patterns for using Claude Code to accelerate your Pulumi infrastructure development.
@@ -194,3 +194,4 @@ Each skill complements your Pulumi workflow differently. The supermemory skill p
 Claude Code accelerates each of these practices through code generation, error analysis, and documentation assistance. The combination of intelligent AI assistance with Pulumi's infrastructure as code platform creates a productive workflow for teams managing cloud resources.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
