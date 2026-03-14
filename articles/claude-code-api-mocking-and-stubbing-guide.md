@@ -22,7 +22,7 @@ This guide covers practical approaches to mocking and stubbing APIs within Claud
 Skills that interact with APIs face several challenges that mocking solves:
 
 - **External dependencies**: Real API calls can fail due to network issues, rate limits, or service outages
-- **Test reliability**:depending on live services makes tests flaky and slow
+- **Test reliability**: depending on live services makes tests flaky and slow
 - **Development workflow**: You may need to develop against an API that isn't yet available
 - **Cost control**: API calls incur costs; mocking reduces unnecessary spending during testing
 
