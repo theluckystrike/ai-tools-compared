@@ -3,7 +3,11 @@ layout: default
 title: "Claude Code MCP Server SOC 2 Compliance Guide"
 description: "A practical guide to building and securing MCP servers for SOC 2 compliance. Learn about security controls, audit logging, and best practices for Claude Code integrations."
 date: 2026-03-14
-author: theluckystrike
+categories: [guides]
+tags: [claude-code, claude-skills, mcp, security, soc2, compliance, devops]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Claude Code MCP Server SOC 2 Compliance Guide
@@ -92,7 +96,7 @@ mcpServer.registerTool('read_customer_data', {
 
 SOC 2 requires detailed audit trails. Your MCP server must log all security-relevant events: authentication attempts, authorization decisions, data access, and configuration changes.
 
-Structure your logs for easy analysis and长期 retention:
+Structure your logs for easy analysis and long-term retention:
 
 ```python
 import json

@@ -4,10 +4,10 @@ title: "Claude Code MCP Server Incident Response Guide"
 description: "Learn how to build incident response workflows for Claude Code MCP servers. Detect failures, automate recovery, and maintain reliable AI agent operations."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, mcp, incident-response, devops, reliability]
-author: theluckystrike
-reviewed: false
-score: 0
+tags: [claude-code, claude-skills, mcp, incident-response, devops, reliability]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 # Claude Code MCP Server Incident Response Guide
@@ -186,7 +186,7 @@ class CircuitBreaker:
             self.state = CircuitState.OPEN
 ```
 
-This pattern integrates seamlessly with Python-based MCP servers, especially those handling external API calls. When the `xlsx` skill calls external spreadsheet APIs or the `pdf` skill processes documents from cloud storage, circuit breakers prevent cascading failures.
+This pattern works well with Python-based MCP servers, especially those handling external API calls. When the `xlsx` skill calls external spreadsheet APIs or the `pdf` skill processes documents from cloud storage, circuit breakers prevent cascading failures.
 
 ## Creating Incident Response Runbooks
 

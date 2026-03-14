@@ -5,7 +5,7 @@ description: "Master Claude.md for backend development. Practical patterns for A
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, backend, best-practices, markdown]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---

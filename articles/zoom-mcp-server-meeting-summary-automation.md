@@ -5,7 +5,7 @@ description: "Automate Zoom meeting summaries with Claude Code and MCP servers. 
 date: 2026-03-14
 categories: [integrations]
 tags: [claude-code, claude-skills, mcp, zoom, automation, meeting-summary]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---

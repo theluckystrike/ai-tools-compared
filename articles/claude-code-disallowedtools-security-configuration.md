@@ -4,10 +4,10 @@ title: "Claude Code disallowedTools Security Configuration"
 description: "Master disallowedTools configuration in Claude Code to control tool access, enhance security, and build safer AI-assisted workflows for development teams."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, security, disallowedtools, configuration, tool-access]
-author: theluckystrike
+tags: [claude-code, claude-skills, security, disallowedtools, configuration]
+author: "Claude Skills Guide"
 reviewed: true
-score: 0
+score: 8
 ---
 
 # Claude Code disallowedTools Security Configuration
@@ -51,7 +51,7 @@ For security audits and code review workflows, restrict Claude to read-only oper
 }
 ```
 
-This configuration lets Claude analyze your codebase using `Read`, `Glob`, and `Greep` tools while preventing any modifications. When working with skills like `frontend-design` or `tdd`, this creates a safe environment for generating architecture recommendations or test plans without risk of accidental file changes.
+This configuration lets Claude analyze your codebase using `Read`, `Glob`, and `Grep` tools while preventing any modifications. When working with skills like `frontend-design` or `tdd`, this creates a safe environment for generating architecture recommendations or test plans without risk of accidental file changes.
 
 ### Production Environment Isolation
 
