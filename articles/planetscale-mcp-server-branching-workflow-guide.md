@@ -9,6 +9,7 @@ author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---
+{% raw %}
 
 # Planetscale MCP Server Branching Workflow Guide
 
@@ -223,3 +224,4 @@ The patterns in this guide work particularly well when combined with other Claud
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

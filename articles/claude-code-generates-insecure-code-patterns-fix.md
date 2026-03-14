@@ -9,6 +9,7 @@ author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---
+{% raw %}
 
 # Claude Code Generates Insecure Code Patterns Fix
 
@@ -214,3 +215,4 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 - [Claude Code GDPR Data Privacy Implementation Checklist](/claude-skills-guide/claude-code-gdpr-data-privacy-implementation-checklist/)
 - [Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
 
+{% endraw %}
