@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Versioning and Maintaining Published Claude Code Skills"
 description: "Learn how to effectively version, update, and maintain your Claude Code skills for long-term reliability and user trust."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
 tags: [claude-code, claude-skills, versioning, maintenance, best-practices]
 permalink: /versioning-and-maintaining-published-claude-code-skills/
+reviewed: true
+score: 7
 ---
+
 
 # Versioning and Maintaining Published Claude Code Skills
 
