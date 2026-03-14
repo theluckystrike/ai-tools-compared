@@ -221,3 +221,11 @@ test('user can login', async ({ page }) => {
 Claude Code is highly configurable when it comes to test frameworks. Whether you prefer Jest, Vitest, pytest, RSpec, or any other framework, you can ensure Claude uses your choice through custom skills, project-specific CLAUDE.md files, or explicit instructions. The key is to set up your preference once in a skill file, and Claude will remember your preference across sessions.
 
 Start by creating a custom skill for your preferred test framework, and you'll never have to specify it again.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
