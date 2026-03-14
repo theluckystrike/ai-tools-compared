@@ -17,7 +17,7 @@ Hardware Description Languages like VHDL require precise syntax, rigorous testin
 
 ## Setting Up VHDL Projects with Claude
 
-When starting a new VHDL project, organization matters. The `/project` skill helps you structure your repository with proper directories for source files, testbenches, and simulation results:
+When starting a new VHDL project, organization matters. Describe your project structure requirements to Claude Code and it will scaffold the repository with proper directories for source files, testbenches, and simulation results:
 
 ```
 vhdl_project/
@@ -30,7 +30,7 @@ vhdl_project/
 └── docs/
 ```
 
-Use the `/project` skill by typing `/project` in Claude Code, then describe your VHDL project structure. Claude will generate an appropriate folder hierarchy and suggest initial file templates.
+Describe your VHDL project structure directly to Claude Code. Claude will generate an appropriate folder hierarchy and suggest initial file templates.
 
 ## Test-Driven Development for VHDL with TDD Skill
 
@@ -104,9 +104,9 @@ For design specifications and technical reports, the `docx` skill creates format
 - Test plans and results
 - Project milestones
 
-## Code Review with Review Skill
+## Code Review with Claude
 
-The `/review` skill analyzes VHDL code for common issues. It checks for:
+Claude Code analyzes VHDL code for common issues when you paste your module and ask for a review. It checks for:
 
 - Missing default values in sensitivity lists
 - Unintended latches in combinational logic
@@ -114,10 +114,9 @@ The `/review` skill analyzes VHDL code for common issues. It checks for:
 - Proper use of `std_logic` over `bit` types
 - Incomplete case statements
 
-Activate code review:
+Ask Claude directly:
 
 ```
-/review
 Review this VHDL module for synthesis warnings and best practices.
 ```
 
@@ -149,12 +148,12 @@ Use the frontend-design skill to build dashboards that display VHDL simulation r
 
 A typical VHDL development session with Claude skills:
 
-1. **Start with project**: `/project` to scaffold your design directory
+1. **Scaffold project**: Describe your directory structure to Claude to generate the folder hierarchy
 2. **Write RTL code**: Implement your entity and architecture
 3. **Activate TDD**: `/tdd` to generate corresponding testbench
 4. **Run simulation**: Verify functionality in your FPGA toolchain
-5. **Code review**: `/review` to catch issues before synthesis
-6. **Generate docs**: Use `pdf` to create module documentation
+5. **Code review**: Ask Claude to review your module for synthesis warnings and best practices
+6. **Generate docs**: Use `/pdf` to create module documentation
 
 This workflow reduces iteration cycles and improves code quality.
 
@@ -163,16 +162,16 @@ This workflow reduces iteration cycles and improves code quality.
 Several Claude skills complement each other in hardware development:
 
 - **tdd** — Testbench generation and verification planning
-- **review** — Code quality checks and synthesis optimization
 - **pdf** — Datasheet and documentation generation
 - **supermemory** — Project context and conventions
 - **webapp-testing** — If building simulation viewers
+- Direct Claude prompting — Code quality checks and synthesis optimization
 
 Each skill focuses on a specific aspect of development, allowing you to chain them naturally throughout your workflow.
 
 ## Key Takeaways
 
-Claude Code skills transform VHDL development by providing structured assistance for testing, documentation, and code quality. The TDD skill encourages test-first thinking for testbenches. The review skill catches synthesis issues early. Documentation skills automate datasheet generation. For teams looking to apply [skill inheritance and composition patterns](/claude-skills-guide/claude-skill-inheritance-and-composition-patterns/), modular skill design scales well across large hardware projects.
+Claude Code transforms VHDL development by providing structured assistance for testing, documentation, and code quality. The TDD skill encourages test-first thinking for testbenches. Direct code review prompts catch synthesis issues early. Documentation skills automate datasheet generation. For teams looking to apply [skill inheritance and composition patterns](/claude-skills-guide/claude-skill-inheritance-and-composition-patterns/), modular skill design scales well across large hardware projects.
 
 Start with the skills that match your biggest pain point—testbench creation, documentation, or code review—and expand from there.
 
