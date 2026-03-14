@@ -203,7 +203,7 @@ This combination ensures consistent date handling across your entire application
 
 ## Summary
 
-International date format handling requires explicit locale awareness, standardized internal storage, and thoughtful display conversion. By creating a dedicated skill for date handling, establishing clear parsing rules, and testing thoroughly with the tdd skill, you can build robust date handling into your Claude Code workflows.
+International date format handling requires explicit locale awareness, standardized internal storage, and thoughtful display conversion. By creating a dedicated skill for date handling, establishing clear parsing rules, and testing thoroughly with the tdd skill, you can build reliable date handling into your Claude Code workflows.
 
 The key principles remain straightforward: store in ISO 8601, parse with explicit locale context, display in locale-appropriate formats, and test comprehensively across different date patterns.
 
