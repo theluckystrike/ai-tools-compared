@@ -138,9 +138,9 @@ Run these tests as you develop. Claude Code executes test suites and reports fai
 
 Good APIs come with clear documentation. FastAPI automatically generates OpenAPI specs and provides an interactive Swagger UI at `/docs`. For more polished documentation, use the **pdf** skill to generate downloadable API reference documents.
 
-```bash
-# Generate PDF documentation
-claude -s pdf --input api-docs.md --output api-reference.pdf
+```
+/pdf
+Generate PDF documentation from api-docs.md and save as api-reference.pdf.
 ```
 
 The **frontend-design** skill helps if you're building a developer portal to showcase your API—create clean, functional documentation pages that integrate with your API.
@@ -168,10 +168,6 @@ Create a custom skill for your API workflow:
 ---
 name: api-scaffold
 description: Scaffolds REST API projects with FastAPI
-tools:
-  - Read
-  - Write
-  - Bash
 ---
 # API Scaffolding Skill
 

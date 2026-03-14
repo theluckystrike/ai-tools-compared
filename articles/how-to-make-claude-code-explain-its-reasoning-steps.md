@@ -47,9 +47,6 @@ For a code review skill, include explicit reasoning requirements:
 ---
 name: code-review
 description: Review code and provide detailed feedback
-tools:
-  - Read
-  - Bash
 ---
 
 When reviewing code:

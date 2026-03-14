@@ -67,11 +67,7 @@ This breaks large tasks into manageable chunks that skills can complete without 
 
 ### Fix 4: Verify Tool Availability
 
-Skills that depend on missing tools will hang. Check which tools are available:
-
-```bash
-claude --list-tools
-```
+Skills that depend on missing tools will hang. Check which MCP tools are available by running `/mcp` inside a Claude Code session to see the list of configured servers and their tools.
 
 Then compare against what your skill requires. If tools are missing, you may need to install additional MCP servers or adjust the skill to use available tools.
 
@@ -88,13 +84,9 @@ Restart Claude Code after clearing these directories.
 
 ### Fix 6: Update or Reinstall the Skill
 
-Outdated skills can have bugs that cause hanging. Check for updates:
+Outdated skills can have bugs that cause hanging. Check for updates by visiting the skill's source repository and comparing with your local copy.
 
-```bash
-claude skill update <skill-name>
-```
-
-If no update is available, try reinstalling the skill from its source repository.
+If a newer version is available, replace the `.md` file in your `.claude/` directory with the updated version from the repository.
 
 ### Fix 7: Add Explicit Termination Conditions
 
@@ -139,11 +131,7 @@ Look for error messages or warnings that indicate what went wrong.
 
 ### Fix 10: Disable Problematic Skills
 
-If a specific skill consistently causes hangs, you can temporarily disable it:
-
-```bash
-claude skill disable <skill-name>
-```
+If a specific skill consistently causes hangs, you can temporarily disable it by removing or renaming its `.md` file from your `.claude/` directory.
 
 Then try alternative skills or methods to accomplish your task.
 

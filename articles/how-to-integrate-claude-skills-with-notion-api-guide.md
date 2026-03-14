@@ -70,7 +70,8 @@ const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 ```bash
 # Run a skill in print mode and capture output
-OUTPUT=$(claude -p "/pdf Extract action items from /tmp/meeting-notes.pdf" 2>/dev/null)
+OUTPUT=$(claude --print "/pdf
+Extract action items from /tmp/meeting-notes.pdf" 2>/dev/null)
 ```
 
 Then your Node.js script reads from a file or stdin that Claude Code wrote.
@@ -87,7 +88,7 @@ SKILL="$1"   # e.g. "pdf" or "tdd"
 INPUT="$2"   # path or description
 OUTPUT_FILE="$3"  # where to write the result
 
-RESULT=$(claude -p "/$SKILL $INPUT" 2>/dev/null)
+RESULT=$(claude --print "/$SKILL $INPUT" 2>/dev/null)
 echo "$RESULT" > "$OUTPUT_FILE"
 echo "Skill output saved to $OUTPUT_FILE"
 ```
@@ -214,7 +215,7 @@ async function buildProjectContext(pageIds) {
   // Feed to /supermemory skill via Claude Code CLI
   const { execSync } = require('child_process');
   const prompt = `/supermemory Store and summarize this project context:\n\n${combined.substring(0, 2000)}`;
-  const context = execSync(`claude -p "${prompt.replace(/"/g, '\\"')}"`, { encoding: 'utf8' });
+  const context = execSync(`claude --print "${prompt.replace(/"/g, '\\"')}"`, { encoding: 'utf8' });
   
   return { summary: context.trim() };
 }
@@ -231,7 +232,7 @@ async function processDocumentToNotion(documentText, databaseId) {
   fs.writeFileSync('/tmp/doc-input.txt', documentText);
   
   console.log('Running /pdf skill via Claude Code...');
-  const raw = execSync('claude -p "/pdf Extract title, summary, action items, key points, and tags from /tmp/doc-input.txt. Return as JSON."', { encoding: 'utf8' });
+  const raw = execSync('claude --print "/pdf\nExtract title, summary, action items, key points, and tags from /tmp/doc-input.txt. Return as JSON."', { encoding: 'utf8' });
   
   let extracted;
   try {

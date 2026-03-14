@@ -79,10 +79,6 @@ Create a file at `~/.claude/skills/import-discipline/skill.md`:
 ---
 name: import-discipline
 description: Ensure strict import discipline - no unused imports
-tools:
-  - Read
-  - Write
-  - Bash
 ---
 
 # Import Discipline Skill

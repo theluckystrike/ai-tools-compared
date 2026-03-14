@@ -37,7 +37,6 @@ The first line of defense against transient failures is retry logic. Claude Code
 ---
 name: retry-wrapper
 description: "Execute a command with automatic retry on failure"
-tools: [bash, read_file]
 ---
 
 I'll execute the provided command with retry logic applied.
@@ -80,7 +79,6 @@ Long-running multi-agent pipelines benefit from checkpointing. Claude Code can m
 ---
 name: checkpoint-manager
 description: "Manage pipeline state and recovery points"
-tools: [write_file, read_file, bash]
 ---
 
 I'll manage pipeline checkpoints by:

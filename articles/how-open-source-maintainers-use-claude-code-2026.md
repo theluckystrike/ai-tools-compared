@@ -41,11 +41,9 @@ Documentation drift is a persistent problem in open source projects. When code c
 
 For example, when a new API endpoint is added, a maintainer can run:
 
-```bash
-claude Code --skill docx
-# Load the API change details
-# Generate updated API reference in markdown
-# Create a diff showing what changed
+```
+/docx
+Load the API change details, generate updated API reference in markdown, and create a diff showing what changed.
 ```
 
 The **pdf** skill proves valuable for projects that distribute documentation as PDFs. Maintainers generate updated manuals without manual formatting work.
@@ -64,12 +62,9 @@ Reviewing pull requests takes substantial time, especially for large contributio
 
 A practical review workflow:
 
-```bash
-# Use claude-code with multiple context files
-claude-code review pr/1234 \
-  --style-guide .github/style-guide.md \
-  --security-patterns .github/security-checks.md \
-  --test-expectations "tests should cover new functions"
+```
+/tdd
+Review PR #1234 files for test coverage. Reference .github/style-guide.md for style conventions and .github/security-checks.md for security patterns. Tests should cover all new functions.
 ```
 
 Maintainers report that this pre-review step cuts their review time by 30-40%, allowing them to focus on architectural decisions rather than style nits.
@@ -102,8 +97,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Claude Code review
         run: |
-          # Invoke skill: /tdd --verify-tests
-          claude-code --security-scan
+          claude --print "/tdd
+Verify test coverage and flag security issues in the changed files."
 ```
 
 This automated check runs before maintainers review, catching issues like missing tests or security problems early.

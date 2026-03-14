@@ -75,7 +75,7 @@ Generate documentation for entire files or modules at once:
 
 ```bash
 # Process all functions in a file
-claude --prompt "Add comprehensive documentation to all functions in auth.js"
+claude --print "Add comprehensive documentation to all functions in auth.js"
 ```
 
 ### Step 3: Review and Refine
@@ -137,7 +137,7 @@ Add documentation generation to your pre-commit hooks:
 
 ```bash
 # .git/hooks/pre-commit
-claude --prompt "Check and update documentation for staged .js files"
+claude --print "Check and update documentation for staged .js files"
 ```
 
 ### Documentation CI/CD Pipeline

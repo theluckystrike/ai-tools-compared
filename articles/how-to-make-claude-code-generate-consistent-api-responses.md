@@ -34,13 +34,6 @@ Define your expected response structure directly in the skill description. When 
 ---
 name: json-response-generator
 description: Generate JSON responses for API endpoints
-tools: [bash, write_file]
-response_schema: |
-  {
-    "status": "success" | "error",
-    "data": object,
-    "timestamp": "ISO 8601 format"
-  }
 ---
 
 You generate JSON responses matching the specified schema.
@@ -131,14 +124,6 @@ Here's a complete example combining these patterns:
 ---
 name: api-webhook-handler
 description: Generate webhook payloads for external integrations
-tools: [bash, read_file]
-response_schema: |
-  {
-    "event": string,
-    "payload": object,
-    "timestamp": string,
-    "signature": string
-  }
 ---
 
 You generate webhook payloads for external service integration.

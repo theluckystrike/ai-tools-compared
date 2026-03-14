@@ -34,13 +34,13 @@ Claude Code supports this through conversation continuity—the agent maintains 
 ```bash
 # Example: Sequential pipeline execution
 # Stage 1: Code review
-claude -p "Review the changes in this PR and provide a detailed report"
+claude --print "Review the changes in this PR and provide a detailed report"
 
 # Stage 2: Fix issues based on review
-claude -p "Apply fixes for the following issues from the review: [paste issues]"
+claude --print "Apply fixes for the following issues from the review: [paste issues]"
 
 # Stage 3: Verify fixes
-claude -p "Verify that the previously identified issues have been resolved"
+claude --print "Verify that the previously identified issues have been resolved"
 ```
 
 ### 2. Parallel Agent Execution with Aggregation
@@ -50,15 +50,15 @@ For independent tasks that can run concurrently, you can spawn multiple Claude C
 ```bash
 # Run multiple agents in parallel (pseudocode pattern)
 # Agent 1: Frontend testing
-claude -p "Run frontend test suite and report results" &
+claude --print "Run frontend test suite and report results" &
 PID1=$!
 
-# Agent 2: Backend testing  
-claude -p "Run backend test suite and report results" &
+# Agent 2: Backend testing
+claude --print "Run backend test suite and report results" &
 PID2=$!
 
 # Agent 3: Integration testing
-claude -p "Run integration test suite and report results" &
+claude --print "Run integration test suite and report results" &
 PID3=$!
 
 # Wait for all and aggregate results
