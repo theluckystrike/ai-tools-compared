@@ -33,22 +33,26 @@ The practical benefit: you can run agentic workflows without reviewing every ind
 
 ## Setting Up Filesystem Isolation
 
-The most common sandbox configuration constrains filesystem access. Define allowed read and write paths so the agent can't touch directories outside its scope.
-
-In your Claude Code settings (`~/.claude/settings.json`):
+The most common sandbox configuration constrains filesystem access. Claude Code's permission system lets you define which paths are allowed for reads and writes using `~/.claude/settings.json`:
 
 ```json
 {
-  "agentSandbox": {
-    "filesystem": {
-      "read": ["./src/", "./tests/", "./package.json"],
-      "write": ["./src/", "./build/", "./.claude/"]
-    }
+  "permissions": {
+    "allow": [
+      "Read(./src/**)",
+      "Read(./tests/**)",
+      "Write(./src/**)",
+      "Write(./build/**)"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Write(./config/**)"
+    ]
   }
 }
 ```
 
-With this in place, a `/agent` invocation that tries to modify `./config/secrets.yml` will be blocked. The agent sees the restriction and should report it rather than proceeding.
+With this in place, a `/agent` invocation that tries to modify `./config/secrets.yml` will be blocked by the deny rule. The agent sees the restriction and should report it rather than proceeding.
 
 [For testing new community skills without risking your production code](/claude-skills-guide/how-do-i-test-a-claude-skill-before-deploying-to-team/), set up an isolated directory structure:
 
@@ -72,42 +76,44 @@ Even if the community skill behaves unexpectedly, it cannot reach `production/`.
 
 ## Network Isolation
 
-Network isolation controls outbound calls. For workflows that should be purely local, blocking all network access prevents accidental data exfiltration or unexpected API calls:
+Network isolation controls outbound calls. For workflows that should be purely local, use a `PreToolUse` hook in `~/.claude/settings.json` to block `WebFetch` and `WebSearch` tools:
 
 ```json
 {
-  "agentSandbox": {
-    "network": {
-      "mode": "whitelist",
-      "allowedDomains": [
-        "api.github.com",
-        "registry.npmjs.org"
-      ]
-    }
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "WebFetch|WebSearch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Network access blocked for this workflow' && exit 1"
+          }
+        ]
+      }
+    ]
   }
 }
 ```
 
-The `mode: "whitelist"` setting blocks all network requests except the explicitly listed domains. For package installation workflows, you need `registry.npmjs.org`. For GitHub-integrated workflows, you need `api.github.com`. Everything else is blocked.
-
-If your agent workflow is fully local, set `mode: "none"` to block all network access.
+This blocks all network requests, preventing accidental data exfiltration or unexpected API calls. For workflows that need selective network access, modify the hook to only block calls to unauthorized domains.
 
 ## Process Isolation
 
-Process isolation limits which shell commands the agent can execute. Define an allowlist:
+Process isolation limits which shell commands the agent can execute. Use a `PreToolUse` hook to intercept `Bash` tool calls and validate commands:
 
-```json
-{
-  "agentSandbox": {
-    "process": {
-      "allowedCommands": ["npm", "git", "python", "pytest"],
-      "shellAccess": false
-    }
-  }
-}
+```bash
+#!/bin/bash
+# ~/.claude/hooks/validate-bash.sh
+COMMAND=$(cat /dev/stdin | jq -r '.tool_input.command')
+ALLOWED="npm|git|python|pytest"
+if ! echo "$COMMAND" | grep -qE "^($ALLOWED)\b"; then
+  echo "Blocked: only $ALLOWED commands are permitted"
+  exit 1
+fi
 ```
 
-With `shellAccess: false`, the agent cannot run arbitrary shell commands or use pipes and redirects. It can only invoke the explicitly listed executables. This prevents shell injection from malformed inputs and blocks the agent from running commands like `curl`, `wget`, or `ssh`.
+Register this hook in `~/.claude/settings.json` under `PreToolUse` with matcher `Bash`. This prevents shell injection from malformed inputs and blocks the agent from running commands like `curl`, `wget`, or `ssh`.
 
 ## Practical Use Case: Running Tests Safely
 
@@ -136,21 +142,20 @@ This gives you OS-level isolation on top of Claude's built-in sandbox controls.
 
 Development and production sandboxes should have different permission levels. Your local development box can be more permissive; your CI/CD environment should mirror production restrictions.
 
-Keep environment-specific configs in separate files and reference them by environment:
+Keep environment-specific settings in separate files. Claude Code loads `~/.claude/settings.json` globally and `.claude/settings.json` from the project root. Use the project-level file for stricter CI settings:
 
 ```json
 {
-  "environments": {
-    "development": {
-      "agentSandbox": { "filesystem": { "write": ["./"] } }
-    },
-    "production": {
-      "agentSandbox": {
-        "filesystem": { "write": ["./build/"] },
-        "network": { "mode": "none" },
-        "process": { "shellAccess": false }
-      }
-    }
+  "permissions": {
+    "allow": [
+      "Read(./src/**)",
+      "Read(./tests/**)",
+      "Write(./build/**)"
+    ],
+    "deny": [
+      "Write(./config/**)",
+      "Write(./src/**)"
+    ]
   }
 }
 ```
