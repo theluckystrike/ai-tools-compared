@@ -133,6 +133,45 @@ Document complex relationships in comments within your schema files. If you have
 
 Finally, review generated migrations before applying them. Claude accelerates the creation process, but database changes still require careful human oversight.
 
+## Working with Relations
+
+Drizzle makes defining relationships straightforward, and Claude helps you get them right the first time. Define relations in your schema using Drizzle's relation helpers:
+
+```typescript
+import { relations } from 'drizzle-orm';
+
+export const usersRelations = relations(users, ({ many }) => ({
+  posts: many(posts),
+}));
+
+export const postsRelations = relations(posts, ({ one }) => ({
+  author: one(users, {
+    fields: [posts.userId],
+    references: [users.id],
+  }),
+}));
+```
+
+These relation definitions enable eager loading with `with` clause, which Claude can construct for you when you need to fetch related data efficiently.
+
+## Common Pitfalls and How Claude Helps Avoid Them
+
+Several frequent mistakes trip up developers working with Drizzle. First, forgetting to mark columns as `notNull()` when they should be required creates runtime errors that TypeScript cannot catch. Claude reviews your schema and flags columns that probably should not allow null values based on their naming conventions.
+
+Second, circular dependencies between schema files cause build failures. Claude can help you reorganize imports or split schema files to break cycles.
+
+Third, mixing up local development and production database configurations leads to accidental data modifications. Keep your environment configurations separate and verify with Claude which database you are targeting before running any migration command.
+
+## Automating Schema Documentation
+
+Use the pdf skill to generate schema documentation for your team. Claude can extract your Drizzle schema definitions and format them into a readable document that describes tables, columns, relationships, and constraints. This proves invaluable for onboarding new team members or maintaining external API documentation.
+
+You can also use the xlsx skill to create a visual spreadsheet mapping your database schema, useful for non-technical stakeholders who need to understand data structures without reading code.
+
+## Final Thoughts
+
+Claude Code transforms Drizzle ORM schema management from a manual, error-prone process into a collaborative workflow where an intelligent assistant helps you design, review, and maintain your database layer. The combination of Drizzle's transparent schema approach and Claude's understanding of TypeScript and database patterns creates a powerful workflow for modern application development.
+
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
