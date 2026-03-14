@@ -16,7 +16,7 @@ Measuring the effectiveness of your Claude Code skills requires a structured app
 
 ## Why Metrics Matter for Claude Skills
 
-When you invest time building custom Claude skills—whether it's a pdf skill for document processing, a tdd skill for test-driven development, or a frontend-design skill for UI generation—you need evidence that these skills actually improve your productivity. Raw intuition isn't enough. Quantitative metrics help you compare different approaches, justify time investments, and continuously improve your skill library.
+[building custom Claude skills—whether it's a pdf skill for document processing](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), a tdd skill for test-driven development, or a frontend-design skill for UI generation—you need evidence that these skills actually improve your productivity. Raw intuition isn't enough. Quantitative metrics help you compare different approaches, justify time investments, and continuously improve your skill library.
 
 ## Core Metrics to Track
 
@@ -180,5 +180,12 @@ The algorithmic-art skill demonstrates balancing execution time against output q
 Effective measurement transforms skill development from guesswork into data-driven optimization. Start with simple metrics—execution time and success rate—then add complexity as your needs evolve. The goal isn't comprehensive tracking but actionable insights that help you build better Claude skills.
 
 Remember: metrics are a tool, not the objective. Use them to make informed decisions about where to invest your skill development effort.
+
+## Related Reading
+
+- [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
+- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/articles/claude-code-output-quality-how-to-improve-results/)
+- [Claude Code Workflow Optimization Tips 2026](/claude-skills-guide/articles/claude-code-workflow-optimization-tips-2026/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
