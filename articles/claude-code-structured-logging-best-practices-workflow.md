@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Structured Logging Best Practices Workflow"
 description: "Master structured logging workflows with Claude Code. Learn practical patterns for JSON logging, log aggregation, and implementing observability in."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, logging, structured-logging, observability, devops]
-author: theluckystrike
+tags: [claude-code, logging, structured-logging, observability, devops, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-structured-logging-best-practices-workflow/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Structured Logging Best Practices Workflow
 
@@ -122,7 +126,7 @@ class LoggingMiddleware:
         logger.info("request_completed", request_id=request_id, status=response_status)
 ```
 
-This pattern works seamlessly with OpenTelemetry and distributed tracing systems. The pdf skill can help you generate documentation for your logging contracts.
+This pattern works smoothly with OpenTelemetry and distributed tracing systems. The pdf skill can help you generate documentation for your logging contracts.
 
 ## Best Practices for Log Event Naming
 

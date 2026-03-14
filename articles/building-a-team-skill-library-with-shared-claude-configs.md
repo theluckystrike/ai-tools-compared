@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Building a Team Skill Library with Shared Claude Configs"
 description: "Learn how to create, share, and manage Claude Code skills across your team to standardize workflows and boost productivity."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /building-a-team-skill-library-with-shared-claude-configs/
 categories: [troubleshooting]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Building a Team Skill Library with Shared Claude Configs
@@ -15,7 +20,7 @@ Claude Code's skill system is one of its most powerful features for teams lookin
 
 ## Understanding Claude Skills
 
-At their core, Claude skills are specialized knowledge packages that extend Claude Code's capabilities. Each skill contains guidance on how to approach specific tasks, from working with particular programming languages to handling complex development workflows. When you create a shared skill library for your team, you're essentially codifying your team's best practices into reusable components that anyone can leverage.
+At their core, Claude skills are specialized knowledge packages that extend Claude Code's capabilities. Each skill contains guidance on how to approach specific tasks, from working with particular programming languages to handling complex development workflows. When you create a shared skill library for your team, you're essentially codifying your team's best practices into reusable components that anyone can use.
 
 The skill system works through a progressive disclosure model. At the metadata level, you see skill names and descriptions. When you need to use a skill, you load its full content, which provides expert patterns and procedural knowledge. This makes skills both discoverable and deeply integrated into your workflow.
 

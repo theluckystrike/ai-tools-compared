@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code for Code Generation Pipeline Guide"
 description: "Learn how to build an automated code generation pipeline using Claude Code, leveraging specialized skills for consistent, high-quality output across."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-for-code-generation-pipeline-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code for Code Generation Pipeline Guide
 
@@ -70,7 +75,7 @@ describe('POST /users', () => {
 });
 ```
 
-This skill understands your testing framework and project conventions, producing tests that integrate seamlessly with your existing test suite.
+This skill understands your testing framework and project conventions, producing tests that integrate smoothly with your existing test suite.
 
 ### The Frontend-Design Skill
 

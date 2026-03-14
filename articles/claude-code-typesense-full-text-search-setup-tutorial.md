@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Typesense Full Text Search Setup Tutorial"
 description: "Learn how to integrate Claude Code with Typesense for powerful full-text search capabilities in your applications."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-typesense-full-text-search-setup-tutorial/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Claude Code Typesense Full Text Search Setup Tutorial
@@ -41,7 +46,7 @@ This command starts Typesense on port 8108 with CORS enabled for development pur
 
 ## Configuring Claude Code for Typesense Integration
 
-Claude Code excels at generating boilerplate code and explaining complex APIs. When working with Typesense, you can leverage Claude Code's skills to accelerate development. Create a Claude Code configuration file to establish the connection:
+Claude Code excels at generating boilerplate code and explaining complex APIs. When working with Typesense, you can use Claude Code's skills to accelerate development. Create a Claude Code configuration file to establish the connection:
 
 ```typescript
 importTypesensefrom'typesense';
@@ -155,7 +160,7 @@ This search configuration prioritizes name matches over description matches, fil
 
 ## Building a CLI Search Tool with Claude Code
 
-Claude Code shines when building command-line interfaces. Let's create a practical search tool that leverages Typesense:
+Claude Code shines when building command-line interfaces. Let's create a practical search tool that uses Typesense:
 
 ```typescript
 #!/usr/bin/envnode

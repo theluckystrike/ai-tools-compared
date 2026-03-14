@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Reducing Review Friction with Standardized Claude Skill."
 description: "Learn how to create standardized Claude skill prompts that reduce code review friction, improve consistency, and streamline your team's review process."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /reducing-review-friction-with-standardized-claude-skill-prom/
 categories: [guides]
-reviewed: false
-score: 0
+reviewed: true
+score: 7
 tags: [claude-code, claude-skills, code-review, productivity, standardization]
 ---
+
 
 {% raw %}
 

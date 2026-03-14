@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code PostHog Feature Flags Analytics Workflow"
 description: "Learn how to build a powerful analytics workflow with Claude Code and PostHog. Integrate feature flags, track user events, and analyze metrics."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, posthog, feature-flags, analytics, workflow, mcp]
-author: theluckystrike
+tags: [claude-code, posthog, feature-flags, analytics, workflow, mcp, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-posthog-feature-flags-analytics-workflow/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code PostHog Feature Flags Analytics Workflow
 

@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Skill Versioning and Upgrades: What to Expect"
 description: "Understand how Claude Code skills are versioned, how upgrades work, and what changes you might encounter when maintaining or updating your skill."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, versioning, upgrades, skill-management]
-author: theluckystrike
-reviewed: false
-score: 0
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 permalink: /claude-code-skill-versioning-and-upgrades-what-to-expect/
 ---
+
 
 # Claude Code Skill Versioning and Upgrades: What to Expect
 
@@ -44,7 +46,7 @@ The warning about database-skill indicates that version 2.0.0 includes breaking 
 
 Skill updates typically fall into several categories, each with different implications for your usage. Bug fixes are the most common and usually safe to apply immediately. These address unexpected behavior, errors in skill responses, or edge cases that weren't handled properly. They typically come as patch version increments.
 
-New features expand what a skill can do without changing existing behavior. A minor version increment often signals these additions. For instance, a code review skill might gain the ability to detect security vulnerabilities in a new language, or a documentation skill might learn to generate API reference pages in additional formats. These updates generally integrate seamlessly with your existing workflows.
+New features expand what a skill can do without changing existing behavior. A minor version increment often signals these additions. For instance, a code review skill might gain the ability to detect security vulnerabilities in a new language, or a documentation skill might learn to generate API reference pages in additional formats. These updates generally integrate smoothly with your existing workflows.
 
 Breaking changes arrive with major version increments and require attention. These might include renamed commands, altered output formats, new required parameters, or changes to how the skill interprets certain inputs. When encountering a major version update, plan to spend time reviewing the changelog and testing your workflows.
 
