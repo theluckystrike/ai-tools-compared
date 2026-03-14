@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Using Claude Code to Study Open Source Projects: A Practical Guide"
-description: "Learn how to leverage Claude Code and its skill system to efficiently study, explore, and understand open source projects. Practical examples and techniques included."
+title: "Using Claude Code to Study Open Source Projects: A."
+description: "Learn how to leverage Claude Code and its skill system to efficiently study, explore, and understand open source projects. Practical examples and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /using-claude-code-to-study-open-source-projects/
@@ -136,3 +136,11 @@ Remember that effective learning requires active engagement—ask questions, exp
 Start with a small project, apply these techniques, and gradually scale up to larger codebases. You'll find that understanding complex systems becomes not just possible, but genuinely enjoyable.
 
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

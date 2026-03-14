@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Hindi Speaking Developers - Getting Started"
-description: "A comprehensive guide for Hindi-speaking developers to get started with Claude Code, covering installation, setup, essential skills, and practical examples."
+description: "A comprehensive guide for Hindi-speaking developers to get started with Claude Code, covering installation, setup, essential skills, and practical."
 date: 2026-03-14
 categories: [getting-started]
 tags: [claude-code, beginners, hindi, setup]
@@ -269,3 +269,11 @@ Claude Code Hindi-बोलने वाले developers के लिए ए�
 सबसे important बात यह है कि आप अपनी Hindi में freely communicate कर सकते हैं। घबराएं नहीं, छोटे projects से शुरू करें और gradually अपनी skills बढ़ाएं।
 
 Happy Coding! 🚀
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

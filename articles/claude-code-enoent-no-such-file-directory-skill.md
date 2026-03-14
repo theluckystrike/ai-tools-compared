@@ -1,8 +1,9 @@
 ---
 layout: default
-title: "Claude Code ENOENT No Such File or Directory Error: Complete Skill Guide"
+title: "Claude Code ENOENT No Such File or Directory Error."
 description: "Learn how to handle ENOENT (no such file or directory) errors in Claude Code skills with practical examples and best practices."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /claude-code-enoent-no-such-file-directory-skill/
 ---
@@ -144,3 +145,11 @@ Finally, examine symlinks. Use tools to verify whether a path contains broken sy
 
 ENOENT errors are inevitable when building Claude Code skills that interact with file systems, but they don't have to break your user experience. By implementing defensive programming patterns, validating paths before operations, and providing clear guidance when files are missing, you create skills that are both powerful and resilient. Remember: a skill that gracefully handles missing files is far more valuable than one that crashes unexpectedly—and your users will appreciate the thoughtful error handling.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
