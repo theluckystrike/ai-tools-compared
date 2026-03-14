@@ -97,7 +97,7 @@ Example: {"name": "Alice", "age": 30, "skills": ["Python", "Go"]}
 For maximum determinism in scripts, use the `--print` flag which provides clean, parseable output without interactive elements:
 
 ```bash
-claude --print --temperature 0 --seed 123 "Generate a hello world function in Python"
+claude --print "Generate a hello world function in Python"
 ```
 
 This reduces variability from interactive features and produces consistent results.
@@ -130,7 +130,7 @@ claude --version
 For complex, reproducible prompts, save them to files:
 
 ```bash
-claude --print --seed 42 --temperature 0 < prompt.txt
+claude --print < prompt.txt
 ```
 
 ### 3. Capture and Compare Outputs
