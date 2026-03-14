@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bolt.new Review: AI Web App Builder in 2026"
-description: "An in-depth review of Bolt.new as an AI-powered web app builder in 2026, with practical examples integrating Claude Code skills for enhanced development workflows."
+description: "An in-depth review of Bolt.new as an AI-powered web app builder in 2026, with practical examples integrating Claude Code skills for enhanced."
 date: 2026-03-14
 categories: [ai-web-app-builders]
 tags: [bolt.new, ai-web-app-builder, claude-code, low-code, rapid-development]
@@ -200,3 +200,10 @@ When combined with Claude Code skills for testing, documentation, and refinement
 
 The key to success with Bolt.new lies in understanding its strengths—rapid scaffolding and UI development—and complementing it with Claude Code's advanced capabilities for testing, documentation, and complex problem-solving. By following best practices and maintaining code quality through rigorous testing, developers can leverage both tools to build reliable, maintainable web applications efficiently.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
