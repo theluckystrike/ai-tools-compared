@@ -192,5 +192,12 @@ The most effective Claude Code Grafana workflow follows these steps:
 
 By integrating Claude Code into your Grafana workflow, you reduce manual configuration time, ensure consistency across dashboards, and maintain a sustainable monitoring infrastructure. The key is providing Claude with specific requirements and maintaining organized panel libraries for reuse.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
