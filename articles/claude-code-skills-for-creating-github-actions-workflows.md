@@ -9,6 +9,7 @@ author: theluckystrike
 reviewed: true
 score: 8
 ---
+{% raw %}
 
 # Claude Code Skills for Creating GitHub Actions Workflows
 
@@ -167,3 +168,4 @@ Claude Code skills transform GitHub Actions workflow development from manual YAM
 Start with one skill focused on your most common workflow type, then expand as you identify more opportunities for automation. The investment pays dividends in reduced CI/CD maintenance and fewer pipeline failures.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
