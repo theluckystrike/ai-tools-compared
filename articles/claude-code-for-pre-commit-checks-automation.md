@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code for Pre-Commit Checks Automation"
 description: "Automate your pre-commit workflow using Claude Code skills. Learn to integrate linting, formatting, and code quality checks into your development pipeline."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, pre-commit, automation, dev-tools, ci-cd]
-author: theluckystrike
-reviewed: false
-score: 0
+tags: [claude-code, pre-commit, automation, dev-tools, ci-cd, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 permalink: /claude-code-for-pre-commit-checks-automation/
 ---
+
 
 # Claude Code for Pre-Commit Checks Automation
 

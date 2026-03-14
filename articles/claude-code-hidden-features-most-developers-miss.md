@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Hidden Features Most Developers Miss"
 description: "Discover hidden Claude Code features that power users leverage for maximum productivity. Learn about MCP servers, skill chaining, and advanced prompting techniques."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-hidden-features-most-developers-miss/
+reviewed: true
+score: 7
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Hidden Features Most Developers Miss
 
-Claude Code offers far more capabilities than most developers realize. While many users stick to basic conversational coding, several hidden features can dramatically transform your workflow. This guide explores the underutilized capabilities that experienced developers leverage for maximum productivity.
+Claude Code offers far more capabilities than most developers realize. While many users stick to basic conversational coding, several hidden features can dramatically transform your workflow. This guide explores the underutilized capabilities that experienced developers use for maximum productivity.
 
 ## MCP Servers Extend Claude Code's Capabilities
 
@@ -109,7 +115,7 @@ The reasoning output helps identify potential issues before implementation and s
 
 ## Clipboard and Session Management
 
-Experienced developers leverage Claude Code's clipboard integration and session management features. Rather than starting fresh each time, maintain context across related tasks:
+Experienced developers use Claude Code's clipboard integration and session management features. Rather than starting fresh each time, maintain context across related tasks:
 
 ```bash
 # Resume a previous session
@@ -153,7 +159,7 @@ Most users accept Claude Code's default output, but the tool supports extensive 
 Generate a React component table showing props, types, and default values for these form fields. Format as a Markdown table with columns: Prop Name, Type, Required, Default, Description.
 ```
 
-This approach integrates seamlessly with existing codebases and reduces post-processing time.
+This approach integrates smoothly with existing codebases and reduces post-processing time.
 
 ## Background Processing and Parallel Tasks
 

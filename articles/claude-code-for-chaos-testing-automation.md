@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code for Chaos Testing Automation"
 description: "Learn how to build Claude Code skills for chaos testing automation. Practical examples for developers and power users using CLI tools and testing."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-for-chaos-testing-automation/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Claude Code for Chaos Testing Automation

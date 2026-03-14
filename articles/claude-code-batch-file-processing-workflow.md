@@ -1,17 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Batch File Processing Workflow"
 description: "Learn how to automate repetitive file operations with Claude Code. This guide covers batch processing patterns, skill composition, and practical."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, batch-processing, automation, file-operations, workflows]
-author: theluckystrike
+tags: [claude-code, batch-processing, automation, file-operations, workflows, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-batch-file-processing-workflow/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Batch File Processing Workflow
 
-Batch file processing is one of the most practical applications of Claude Code for developers managing large codebases or repetitive tasks. Instead of editing files one at a time, you can leverage Claude's skill system and tool composition to handle dozens or hundreds of files in a single session.
+Batch file processing is one of the most practical applications of Claude Code for developers managing large codebases or repetitive tasks. Instead of editing files one at a time, you can use Claude's skill system and tool composition to handle dozens or hundreds of files in a single session.
 
 ## The Core Pattern: Iterative Processing with Claude Skills
 

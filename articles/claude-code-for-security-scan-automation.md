@@ -1,16 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code for Security Scan Automation"
 description: "Learn how to automate security scans using Claude Code. Practical examples for developers integrating security tooling into CI/CD pipelines."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-for-security-scan-automation/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 {% raw %}
 # Claude Code for Security Scan Automation
 
-Security scanning automation has become essential for teams shipping code frequently. Claude Code provides a powerful foundation for building automated security workflows that catch vulnerabilities before they reach production. This guide shows you how to leverage Claude Code skills and hooks to create robust security scan pipelines.
+Security scanning automation has become essential for teams shipping code frequently. Claude Code provides a powerful foundation for building automated security workflows that catch vulnerabilities before they reach production. This guide shows you how to use Claude Code skills and hooks to create robust security scan pipelines.
 
 ## Setting Up Security Scan Skills
 

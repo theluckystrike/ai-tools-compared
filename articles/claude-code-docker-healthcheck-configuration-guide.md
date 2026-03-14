@@ -1,12 +1,18 @@
 ---
+
 layout: default
 title: "Claude Code Docker Healthcheck Configuration Guide"
 description: "Learn how to configure Docker HEALTHCHECK directives for your containers using Claude Code. Practical examples for Dockerfile and Docker Compose with."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-healthcheck-configuration-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+{% raw %}
+
 
 # Claude Code Docker Healthcheck Configuration Guide
 
@@ -120,7 +126,7 @@ The Docker Compose healthcheck configuration overrides any HEALTHCHECK instructi
 
 ## Using Claude Code to Configure Healthchecks
 
-Claude Code can help you generate appropriate healthcheck configurations for your specific application. Here's how to leverage Claude Code for this task:
+Claude Code can help you generate appropriate healthcheck configurations for your specific application. Here's how to use Claude Code for this task:
 
 ### Asking Claude Code for Help
 
@@ -218,4 +224,4 @@ Docker healthchecks are a crucial component of reliable container deployments. B
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
+{% endraw %}

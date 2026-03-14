@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Hackathon Development Workflow"
 description: "A practical guide to using Claude Code for rapid prototyping, team coordination, and shipping winning hackathon projects in record time."
@@ -7,16 +8,17 @@ date: 2026-03-14
 author: "theluckystrike"
 permalink: /claude-code-for-hackathon-development-workflow/
 categories: [guides]
-reviewed: false
-score: 0
-tags: [claude-code, hackathon, rapid-prototyping]
+reviewed: true
+score: 7
+tags: [claude-code, hackathon, rapid-prototyping, claude-skills]
 ---
+
 {% raw %}
 
 
 Hackathons demand speed. You have 24, 48, or sometimes just 12 hours to transform an idea into a working prototype that judges can see and interact with. Claude Code becomes your secret weapon when used strategically—it handles the boilerplate, generates test cases, and keeps your codebase organized so you can focus on the creative problem-solving that actually wins competitions.
 
-This guide walks through a practical Claude Code workflow tailored specifically for hackathon conditions. You'll learn how to set up your project, leverage skills for common hackathon challenges, and maintain momentum through those critical final hours.
+This guide walks through a practical Claude Code workflow tailored specifically for hackathon conditions. You'll learn how to set up your project, use skills for common hackathon challenges, and maintain momentum through those critical final hours.
 
 ## Starting Fast: Project Initialization
 

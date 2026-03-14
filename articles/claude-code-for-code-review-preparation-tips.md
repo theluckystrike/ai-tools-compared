@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Claude Code for Code Review Preparation Tips"
 description: "Master code review preparation with Claude Code. Practical tips, skill combinations, and workflows to streamline your review process efficiently."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-for-code-review-preparation-tips/
 categories: [guides]
-tags: [claude-code, code-review]
+tags: [claude-code, code-review, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Code Review Preparation Tips
 
