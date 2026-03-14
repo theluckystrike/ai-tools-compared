@@ -199,4 +199,11 @@ Terminal hangs with Claude Code frustrate developers, especially when using powe
 
 By understanding the symptoms, applying quick recovery commands, and implementing prevention strategies, you minimize downtime and maintain productivity. For most users, `Ctrl+C` followed by a simple query test handles the situation. For recurring problems, the diagnostic and prevention techniques in this guide provide lasting solutions.
 
+## Related Reading
+
+- [Claude Code Error Connection Timeout During Task Fix](/claude-skills-guide/claude-code-error-connection-timeout-during-task-fix/) — Related: timeout vs hang distinction
+- [Claude Code Slow Response How to Fix Latency Issues](/claude-skills-guide/claude-code-slow-response-how-to-fix-latency-issues/) — Performance issues that precede hangs
+- [Claude Code Stuck in Infinite Loop How to Interrupt](/claude-skills-guide/claude-code-stuck-infinite-loop-how-to-interrupt/) — Another "Claude is stuck" scenario
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All Claude Code hang and responsiveness fixes
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

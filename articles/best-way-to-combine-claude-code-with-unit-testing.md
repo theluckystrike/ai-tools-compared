@@ -203,4 +203,11 @@ Combining Claude Code with unit testing creates a powerful development workflow.
 
 The best way to combine Claude Code with unit testing is to use it as an intelligent partner—let Claude handle test generation while you maintain oversight and domain expertise. This approach produces better tests faster while building your confidence in the code you ship.
 
+## Related Reading
+
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — The official TDD skill for test-first development
+- [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-write-better-unit-tests/) — Targeted guide on improving generated test quality
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Full CI pipeline built on TDD + Claude Code
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More workflow automation patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

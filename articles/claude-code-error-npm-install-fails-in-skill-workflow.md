@@ -192,4 +192,11 @@ If you've tried all solutions and npm install still fails, consider these final 
 
 Most npm install failures in Claude Code skill workflows resolve with cache clearing, permission fixes, or network adjustments. The skills ecosystem continues to mature, and community-maintained skills frequently update to address compatibility issues with newer Node.js versions.
 
+## Related Reading
+
+- [Claude Code Command Not Found After Install Troubleshooting](/claude-skills-guide/claude-code-command-not-found-after-install-troubleshooting/) — Related: install and PATH issues
+- [Claude Code Not Detecting My Virtual Environment Python Fix](/claude-skills-guide/claude-code-not-detecting-my-virtual-environment-python-fix/) — Similar environment detection issue (Python)
+- [Claude Code MCP Server Setup Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/) — MCP server setup often involves npm installs
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All install and environment error fixes
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

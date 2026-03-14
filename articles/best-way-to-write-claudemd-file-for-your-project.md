@@ -174,4 +174,11 @@ Consider reviewing your CLAUDE.md monthly. Remove outdated information, add newl
 
 ---
 
+## Related Reading
+
+- [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) — Complementary guide with more examples
+- [Claude MD File: Complete Guide to What It Does](/claude-skills-guide/claude-md-file-complete-guide-what-it-does/) — Full reference for all CLAUDE.md config options
+- [How to Make Claude Code Understand Domain Business Logic](/claude-skills-guide/how-to-make-claude-code-understand-domain-business-logic/) — Use CLAUDE.md to encode domain rules
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — CLAUDE.md basics for new users
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
