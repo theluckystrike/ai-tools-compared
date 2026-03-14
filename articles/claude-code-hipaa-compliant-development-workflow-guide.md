@@ -12,11 +12,11 @@ score: 8
 
 # Claude Code HIPAA Compliant Development Workflow Guide
 
-Healthcare software developers face unique challenges when building applications that must comply with the Health Insurance Portability and Accountability Act (HIPAA). This guide shows you how to use Claude Code to streamline HIPAA-compliant development while maintaining security and privacy standards throughout your workflow.
+[Healthcare software developers face unique challenges when building applications that must comply with HIPAA](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) (HIPAA). This guide shows you how to use Claude Code to streamline HIPAA-compliant development while maintaining security and privacy standards throughout your workflow.
 
 ## Understanding HIPAA Requirements for Developers
 
-HIPAA sets strict requirements for handling protected health information (PHI). As a developer, you need to ensure your applications implement administrative safeguards, physical safeguards, and technical safeguards. Claude Code can help you implement these requirements efficiently while following security best practices.
+[HIPAA sets strict requirements for handling protected health information](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) (PHI). As a developer, you need to ensure your applications implement administrative safeguards, physical safeguards, and technical safeguards. Claude Code can help you implement these requirements efficiently while following security best practices.
 
 The technical safeguards include access controls, audit controls, integrity controls, and transmission security. When building healthcare applications, every line of code that handles patient data must be carefully scrutinized for potential security vulnerabilities.
 

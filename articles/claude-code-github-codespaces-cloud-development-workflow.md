@@ -12,11 +12,11 @@ score: 7
 
 # Claude Code GitHub Codespaces Cloud Development Workflow
 
-Cloud-based development environments have transformed how developers build software. GitHub Codespaces provides fully configured development environments that run on cloud infrastructure, eliminating the need for local setup and enabling coding from any machine. When combined with Claude Code, you get AI-powered assistance that works directly within your cloud workspace. This guide walks through building an efficient Claude Code GitHub Codespaces cloud development workflow.
+[Cloud-based development environments have transformed how developers build software](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) GitHub Codespaces provides fully configured development environments that run on cloud infrastructure, eliminating the need for local setup and enabling coding from any machine. When combined with Claude Code, you get AI-powered assistance that works directly within your cloud workspace. This guide walks through building an efficient Claude Code GitHub Codespaces cloud development workflow.
 
 ## Why Combine Claude Code with GitHub Codespaces
 
-GitHub Codespaces offers several advantages that complement Claude Code's capabilities. Each Codespace is a containerized environment with your chosen runtime, dependencies, and extensions pre-configured. You can start coding immediately without worrying about environment consistency across team members.
+[GitHub Codespaces offers several advantages that complement Claude Code's capabilities](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) Each Codespace is a containerized environment with your chosen runtime, dependencies, and extensions pre-configured. You can start coding immediately without worrying about environment consistency across team members.
 
 Claude Code enhances this workflow by providing intelligent code generation, debugging assistance, and task automation. The AI assistant understands your project context within the Codespace and can perform complex operations like refactoring, testing, and documentation generation.
 

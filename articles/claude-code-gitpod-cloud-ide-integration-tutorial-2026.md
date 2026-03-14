@@ -16,10 +16,10 @@ Gitpod provides cloud-based [development environment configuration](/claude-skil
 
 ## Prerequisites
 
-Before integrating Claude Code with Gitpod, ensure you have:
+[Before integrating Claude Code with Gitpod, ensure you have the prerequisites](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
 
 - A GitHub account with Gitpod access (gitpod.io)
-- Claude Code installed locally (for the connection workflow)
+- [Claude Code installed locally for the connection workflow](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
 - Git configured with your credentials
 
 The integration works in two primary modes: using Claude Code directly within Gitpod's terminal, or connecting Gitpod to your local Claude Code instance via SSH.

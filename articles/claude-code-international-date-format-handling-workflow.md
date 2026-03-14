@@ -12,9 +12,9 @@ score: 7
 
 # Claude Code International Date Format Handling Workflow
 
-Building applications that work across multiple regions requires careful handling of date formats. Different locales represent dates in varying orders, separators, and conventions. A date displayed as "03/14/2026" in the United States means March 14th, while the same string in many European countries represents December 3rd, 2026. This ambiguity creates real bugs in production systems, and Claude Code provides effective workflows to address these challenges.
+[Building applications that work across multiple regions requires careful handling of date formats](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Different locales represent dates in varying orders, separators, and conventions. A date displayed as "03/14/2026" in the United States means March 14th, while the same string in many European countries represents December 3rd, 2026. This ambiguity creates real bugs in production systems, and Claude Code provides effective workflows to address these challenges.
 
-This guide shows you how to handle international date formats systematically using Claude Code skills and practical patterns you can implement immediately.
+[This guide shows you how to handle international date formats systematically using Claude Code skills](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) and practical patterns you can implement immediately.
 
 ## The Core Challenge
 

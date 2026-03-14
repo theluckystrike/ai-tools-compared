@@ -16,7 +16,7 @@ Working with Claude Code means dealing with code generation across various langu
 
 ## Why Incorrect Imports Happen
 
-Before diving into solutions, understanding why Claude Code produces incorrect imports helps prevent future issues. Several factors contribute to this problem:
+Before diving into solutions, [understanding why Claude Code produces incorrect imports helps prevent future issues](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Several factors contribute to this problem:
 
 1. **Outdated project context** — Claude may not have the latest information about your project's dependency structure
 2. **Similar package names** — Some frameworks have similarly named packages from different maintainers
@@ -36,7 +36,7 @@ When you notice incorrect imports in generated code, start by identifying the sp
 
 ### Solution 1: Provide Clear Directory Context
 
-The most effective fix is giving Claude Code precise information about your project structure. Before asking Claude to generate code, share your import patterns.
+[The most effective fix is giving Claude Code precise information about your project structure](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Before asking Claude to generate code, share your import patterns.
 
 ```bash
 # Share your typical import style

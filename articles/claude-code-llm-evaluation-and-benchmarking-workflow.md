@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code LLM Evaluation and Benchmarking Workflow
 
-Building reliable AI applications requires rigorous evaluation of language models. A structured LLM evaluation and benchmarking workflow helps you compare models objectively, track performance over time, and make informed decisions about which model suits your specific use case. Claude Code provides the tools to automate this process efficiently, transforming what was once a manual, time-consuming task into an streamlined pipeline.
+[Building reliable AI applications requires rigorous evaluation of language models](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) A structured LLM evaluation and benchmarking workflow helps you compare models objectively, track performance over time, and make informed decisions about which model suits your specific use case. Claude Code provides the tools to automate this process efficiently, transforming what was once a manual, time-consuming task into an streamlined pipeline.
 
 ## Why You Need an Evaluation Workflow
 
@@ -22,7 +22,7 @@ The evaluation workflow addresses several practical concerns: determining which 
 
 ## Setting Up Your Evaluation Framework
 
-The foundation of any evaluation workflow requires three components: a standardized test dataset, consistent evaluation metrics, and automated execution. Claude Code skills can assist with each aspect, though the core evaluation logic typically lives in your own code.
+[The foundation of any evaluation workflow requires three components: a standardized test dataset, consistent evaluation metrics, and automated execution](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) Claude Code skills can assist with each aspect, though the core evaluation logic typically lives in your own code.
 
 Start by creating a representative sample of prompts that reflect real-world usage. This "golden dataset" should cover the full range of tasks your application handles. Include edge cases and challenging scenarios, not just typical examples. For instance, if you're evaluating models for code generation, your dataset should contain simple functions, complex algorithms with multiple edge cases, and ambiguous requirements that require clarification.
 

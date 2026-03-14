@@ -12,11 +12,11 @@ score: 8
 
 # MongoDB to PostgreSQL Migration Workflow with Claude Code
 
-Migrating from MongoDB to PostgreSQL represents a significant architectural shift that many development teams face as their applications mature. This guide walks through a practical workflow using Claude Code to automate and streamline the migration process, reducing manual effort and potential errors.
+[Migrating from MongoDB to PostgreSQL represents a significant architectural shift that many development teams face](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) as their applications mature. This guide walks through a practical workflow using Claude Code to automate and streamline the migration process, reducing manual effort and potential errors.
 
 ## Understanding the Migration Challenge
 
-MongoDB's document-oriented model and PostgreSQL's relational structure serve different use cases. When your application outgrows MongoDB's flexibility or when you need stronger ACID guarantees, foreign key constraints, or complex reporting capabilities, PostgreSQL becomes the natural choice. The migration involves more than just moving data—it requires rethinking schema design, query patterns, and application logic.
+MongoDB's document-oriented model and PostgreSQL's relational structure serve different use cases. [When your application outgrows MongoDB's flexibility or when you need stronger ACID guarantees](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/), foreign key constraints, or complex reporting capabilities, PostgreSQL becomes the natural choice. The migration involves more than just moving data—it requires rethinking schema design, query patterns, and application logic.
 
 Claude Code accelerates this process by generating migration scripts, validating data transformations, and helping you refactor application code to work with the new database model.
 

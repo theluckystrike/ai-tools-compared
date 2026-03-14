@@ -12,11 +12,11 @@ score: 8
 
 # Claude Code Kotlin Android Development Workflow Guide
 
-Developing Android applications with Kotlin becomes significantly more productive when you integrate Claude Code into your workflow. This guide covers practical strategies for using Claude and its skill system to accelerate Android development, from project scaffolding to testing and documentation.
+[Developing Android applications with Kotlin becomes significantly more productive when you integrate Claude Code into your workflow](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This guide covers practical strategies for using Claude and its skill system to accelerate Android development, from project scaffolding to testing and documentation.
 
 ## Setting Up Claude Code for Android Development
 
-Before integrating Claude into your Android workflow, ensure you have the necessary tools installed. You'll need Android Studio or the command-line SDK tools, along with Claude Code installed on your system. The combination of these tools creates a powerful development environment where Claude handles reasoning and code generation while you maintain full control over your project.
+[Before integrating Claude into your Android workflow, ensure you have the necessary tools installed](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) You'll need Android Studio or the command-line SDK tools, along with Claude Code installed on your system. The combination of these tools creates a powerful development environment where Claude handles reasoning and code generation while you maintain full control over your project.
 
 Initialize your Android project using the standard Gradle wrapper setup. Create your project structure first, then invite Claude into your development sessions. When working on Kotlin Android projects, having your `build.gradle.kts` files and project structure visible to Claude allows for accurate context-aware suggestions.
 
