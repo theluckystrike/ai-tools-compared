@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code README Generation Automation"
 description: "Automate README creation for your projects using Claude Code skills. Generate comprehensive documentation from project structure, code analysis, and customizable templates."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
-tags: [claude-code, automation, documentation, readme, productivity]
+tags: [claude-code, automation, documentation, readme, productivity, claude-skills]
 permalink: /claude-code-readme-generation-automation/
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 
@@ -15,7 +19,7 @@ permalink: /claude-code-readme-generation-automation/
 
 README files serve as the first point of contact for anyone exploring your repository. Yet maintaining comprehensive, up-to-date documentation often falls by the wayside during active development. Claude Code offers a powerful solution through skill-based automation that generates and maintains README files automatically based on your project structure, dependencies, and code patterns.
 
-This guide shows you how to leverage Claude skills to automate README generation, saving hours of manual documentation work while ensuring your projects always have accurate, professional documentation.
+This guide shows you how to use Claude skills to automate README generation, saving hours of manual documentation work while ensuring your projects always have accurate, professional documentation.
 
 ## Understanding README Automation in Claude Code
 

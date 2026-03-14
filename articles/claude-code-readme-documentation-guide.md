@@ -1,11 +1,18 @@
 ---
+
 layout: default
 title: "Claude Code README Documentation Guide"
 description: "A practical guide to writing and maintaining project README documentation using Claude Code skills and automated workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-readme-documentation-guide/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+{% raw %}
+
 
 # Claude Code README Documentation Guide
 
@@ -167,8 +174,9 @@ Share this standard across your projects and reference it when generating new RE
 
 ## Conclusion
 
-Quality README documentation does not require sacrificing development time. By leveraging Claude Code skills strategically — generating initial drafts, using templates, maintaining updates in real-time, and testing instructions — you build documentation that serves both your current team and future collaborators.
+Quality README documentation does not require sacrificing development time. By using Claude Code skills strategically — generating initial drafts, using templates, maintaining updates in real-time, and testing instructions — you build documentation that serves both your current team and future collaborators.
 
 The key lies in treating documentation as an integral part of development rather than a separate task. Small, consistent updates prevent the overwhelming accumulation of outdated content that leads many projects to abandon documentation efforts entirely.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

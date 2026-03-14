@@ -1,24 +1,28 @@
 ---
+
 layout: default
 title: "Claude Code Client Library Generation Guide"
 description: "Learn how to generate client libraries from Claude Code using skill-based workflows. Practical examples for API integration, code generation, and developer productivity."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, client-library, code-generation, api, developer-tools]
-author: theluckystrike
+tags: [claude-code, client-library, code-generation, api, developer-tools, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-client-library-generation-guide/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Client Library Generation Guide
 
-Client library generation is one of the most practical applications of Claude Code skills. Instead of manually writing boilerplate code for API integrations, you can leverage skill-based workflows to generate type-safe, well-documented client libraries automatically. This guide shows you how to build and customize these generation pipelines.
+Client library generation is one of the most practical applications of Claude Code skills. Instead of manually writing boilerplate code for API integrations, you can use skill-based workflows to generate type-safe, well-documented client libraries automatically. This guide shows you how to build and customize these generation pipelines.
 
 ## Understanding Client Library Generation in Claude Code
 
 Claude Code skills can generate client libraries by analyzing API specifications, service definitions, or existing code patterns. The process typically involves reading OpenAPI/Swagger specs, understanding service interfaces, and outputting ready-to-use client code in your preferred language.
 
-The core workflow uses the `read_file` tool to parse specification files, then leverages Claude's code generation capabilities to produce structured, maintainable client code. Skills like `tdd` complement this by generating test scaffolding alongside your client code.
+The core workflow uses the `read_file` tool to parse specification files, then uses Claude's code generation capabilities to produce structured, maintainable client code. Skills like `tdd` complement this by generating test scaffolding alongside your client code.
 
 ## Generating Libraries from API Specifications
 

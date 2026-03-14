@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Postman Collection Automation Guide"
 description: "Learn how to automate Postman collection creation and management using Claude Code. Build intelligent API testing workflows with skill-driven automation."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-postman-collection-automation/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 

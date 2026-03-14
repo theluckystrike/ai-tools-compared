@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Confluence Documentation Guide"
 description: "Learn how to integrate Claude Code with Confluence for automated documentation workflows. Practical examples for developers and power users."
 date: 2026-03-14
 categories: [integrations, workflows]
-tags: [claude-code, confluence, documentation, automation, pdf, docx, mcp]
-author: theluckystrike
+tags: [claude-code, confluence, documentation, automation, pdf, docx, mcp, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-confluence-documentation-guide/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Confluence Documentation Guide
 
@@ -82,7 +86,7 @@ This client forms the foundation for automated documentation pushes from Claude 
 
 ## Generating Technical Documentation with Claude Skills
 
-With the connection established, leverage Claude skills to generate the actual documentation content. The `pdf` skill excels at creating formatted technical documents from code analysis. The `docx` skill generates Microsoft Word-compatible output that Confluence imports cleanly.
+With the connection established, use Claude skills to generate the actual documentation content. The `pdf` skill excels at creating formatted technical documents from code analysis. The `docx` skill generates Microsoft Word-compatible output that Confluence imports cleanly.
 
 For API documentation specifically, ask Claude Code to analyze your codebase:
 

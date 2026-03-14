@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Snippet Library Management"
 description: "Learn how to build, organize, and maintain a personal code snippet library using Claude Code skills. Practical strategies for developers and power users."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-snippet-library-management/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Snippet Library Management
 
-Building a well-organized code snippet library transforms how you work with Claude Code. Rather than repeatedly explaining common patterns or hunting through old projects for reusable code, you can leverage Claude's skill system to create a personal library that accelerates development workflows.
+Building a well-organized code snippet library transforms how you work with Claude Code. Rather than repeatedly explaining common patterns or hunting through old projects for reusable code, you can use Claude's skill system to create a personal library that accelerates development workflows.
 
 This guide covers practical strategies for managing code snippets with Claude Code, including skill organization, search patterns, and integration with your existing development environment.
 

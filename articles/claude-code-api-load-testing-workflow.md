@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code API Load Testing Workflow"
 description: "Build a practical load testing workflow for Claude Code API. Test rate limits, measure response times, and optimize your integration with real-world concurrency patterns."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-api-load-testing-workflow/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 

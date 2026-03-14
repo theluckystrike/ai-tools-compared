@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Documentation Generation Workflow"
 description: "Learn how to automate code documentation generation with Claude Code: practical workflow, skill integration, and real examples for developers."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-documentation-generation-workflow/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Documentation Generation Workflow
 
