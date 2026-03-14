@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Augment Code AI Review for Enterprise Teams 2026"
 description: "Discover how Claude Code transforms enterprise code review workflows with AI-powered analysis, automated quality gates, and collaborative review processes."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /augment-code-ai-review-for-enterprise-teams-2026/
-categories: [guides]
+reviewed: true
+score: 7
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Augment Code AI Review for Enterprise Teams 2026
@@ -26,7 +31,7 @@ Claude Code addresses these challenges through specialized skills and intelligen
 
 ## Claude Code Skills for AI-Assisted Review
 
-Claude Code's architecture enables teams to create and deploy custom skills tailored to their review requirements. These skills leverage Claude's deep code understanding to provide consistent, comprehensive analysis.
+Claude Code's architecture enables teams to create and deploy custom skills tailored to their review requirements. These skills use Claude's deep code understanding to provide consistent, comprehensive analysis.
 
 ### Setting Up Review Skills
 

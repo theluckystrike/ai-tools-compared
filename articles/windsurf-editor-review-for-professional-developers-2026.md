@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Windsurf Editor Review for Professional Developers 2026"
 description: "A comprehensive review of the Windsurf editor for professional developers in 2026, focusing on AI integration, workflow capabilities, and how it."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /windsurf-editor-review-for-professional-developers-2026/
-categories: [guides]
+reviewed: true
+score: 7
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Windsurf Editor Review for Professional Developers 2026
 
