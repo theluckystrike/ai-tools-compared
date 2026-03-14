@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code GraphQL Schema Design Guide"
 description: "A practical guide to designing efficient GraphQL schemas with Claude Code, featuring real examples and best practices for developers."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-graphql-schema-design-guide/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code GraphQL Schema Design Guide
@@ -16,7 +22,7 @@ Designing GraphQL schemas that are both performant and maintainable requires car
 
 A well-designed GraphQL schema serves as the contract between your frontend and backend teams. Poor schema decisions early in development create ripple effects that become increasingly difficult to fix as your API grows. The key is thinking in terms of data shapes and relationships rather than endpoints.
 
-When working with Claude Code, you can leverage several skills to accelerate your schema development workflow. The **pdf** skill helps extract requirements from existing documentation, while the **tdd** skill ensures your schema changes are validated against test cases.
+When working with Claude Code, you can use several skills to accelerate your schema development workflow. The **pdf** skill helps extract requirements from existing documentation, while the **tdd** skill ensures your schema changes are validated against test cases.
 
 ## Core Principles for GraphQL Schema Design
 
