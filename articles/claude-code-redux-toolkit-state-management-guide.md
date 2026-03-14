@@ -6,6 +6,7 @@ description: "A practical guide to integrating Redux Toolkit with Claude Code fo
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-redux-toolkit-state-management-guide/
+categories: [guides]
 ---
 
 # Claude Code Redux Toolkit State Management Guide
@@ -199,5 +200,12 @@ Finally, resist the temptation to put everything in Redux. Local component state
 Redux Toolkit provides a robust foundation for state management in React applications. By leveraging Claude Code's capabilities, you can implement Redux patterns quickly while maintaining code quality. The combination of createSlice, createAsyncThunk, and selectors gives you powerful tools for managing complex application state.
 
 Start with simple slices and gradually adopt advanced patterns as your application grows. The initial investment in proper Redux architecture pays dividends in maintainability and developer experience.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

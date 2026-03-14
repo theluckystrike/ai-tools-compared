@@ -5,6 +5,7 @@ description: "Learn how to implement structured logging in your Claude Code work
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-structured-logging-best-practices-workflow/
+categories: [guides]
 ---
 
 Structured logging transforms how developers debug and monitor applications. When combined with Claude Code's capabilities, you gain powerful insights into your development workflow. This guide covers practical patterns for implementing structured logging that integrate seamlessly with Claude Code and various skills like supermemory for knowledge management and tdd for test-driven development workflows.
@@ -174,5 +175,12 @@ For larger-scale analysis, ship structured logs to platforms like Elasticsearch,
 Structured logging represents an investment in debuggability and observability that pays dividends throughout your project's lifecycle. By implementing consistent JSON logging, enriching entries with contextual information, and integrating with Claude Code's execution model, you create a foundation for effective troubleshooting and knowledge retention.
 
 Start by adding structured logging to new features and gradually migrate existing code. Tools like jq make it easy to begin querying your logs immediately, while platforms like Elasticsearch handle larger-scale analysis needs as your application grows.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

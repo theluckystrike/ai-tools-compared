@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Building Fan-Out Parallel Tasks Workflows with Claude Code and Inngest"
+title: "Building Fan-Out Parallel Tasks Workflows with Claude."
 description: "Learn how to leverage Claude Code skills to build powerful fan-out parallel task processing systems using Inngest event-driven architecture."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-inngest-fan-out-parallel-tasks-workflow/
+categories: [guides]
 ---
 
 {% raw %}
@@ -235,3 +236,10 @@ Fan-out parallel task workflows are a powerful pattern for building scalable app
 
 Start experimenting with these patterns in your next project, and you'll quickly see how parallel task execution can transform your application's performance and user experience.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

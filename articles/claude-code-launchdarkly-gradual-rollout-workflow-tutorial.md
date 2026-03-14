@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code LaunchDarkly Gradual Rollout Workflow Tutorial"
-description: "Learn how to integrate Claude Code with LaunchDarkly for implementing gradual feature rollouts. Practical examples for setting up feature flags, managing rollout percentages, and automating flag operations."
+description: "Learn how to integrate Claude Code with LaunchDarkly for implementing gradual feature rollouts. Practical examples for setting up feature flags."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, launchdarkly, feature-flags, gradual-rollout]
