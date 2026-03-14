@@ -164,3 +164,10 @@ Maintain quality gates. Ensure that cost savings don't compromise output quality
 
 The combination of Claude Code's advanced agentic capabilities with GitHub's economical models represents a significant advancement in practical AI-assisted development. By implementing thoughtful routing and task segmentation, you can build pipelines that deliver high-quality results while maintaining predictable, manageable costs. The key is treating this as an optimization challenge rather than a binary choice between models—each has its place in a well-architected system.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

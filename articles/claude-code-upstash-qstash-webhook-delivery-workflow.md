@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code with Upstash QStash Webhook Delivery Workflow"
-description: "Build reliable webhook delivery systems using Claude Code and Upstash QStash. Learn how to create skills that handle async messaging, retry logic, and event-driven architectures."
+description: "Build reliable webhook delivery systems using Claude Code and Upstash QStash. Learn how to create skills that handle async messaging, retry logic, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-upstash-qstash-webhook-delivery-workflow/
+categories: [guides]
 ---
 
 # Claude Code with Upstash QStash Webhook Delivery Workflow
@@ -169,3 +170,10 @@ Combining Claude Code with Upstash QStash enables you to build reliable, scalabl
 By creating dedicated Claude Code skills for QStash interactions, you can abstract away the API complexity and focus on building event-driven features. Whether you're notifying external services, processing background jobs, or implementing complex workflows, this combination provides a solid foundation for asynchronous communication in modern applications.
 
 Start by defining your skill's capabilities, then progressively add more sophisticated patterns like batch processing, conditional routing, and advanced error handling as your system grows.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
