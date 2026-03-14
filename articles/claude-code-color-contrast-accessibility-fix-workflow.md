@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Color Contrast Accessibility Fix Workflow
 
-Accessibility issues in web applications often slip through development cycles, particularly color contrast problems that affect users with visual impairments. Addressing these issues systematically saves time and ensures compliance with WCAG guidelines. This workflow uses Claude Code skills to automate detection, analysis, and remediation of color contrast problems in your projects.
+[Accessibility issues in web applications often slip through development cycles](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), particularly color contrast problems that affect users with visual impairments. Addressing these issues systematically saves time and ensures compliance with WCAG guidelines. This workflow uses Claude Code skills to automate detection, analysis, and remediation of color contrast problems in your projects.
 
 ## Understanding Color Contrast Requirements
 
