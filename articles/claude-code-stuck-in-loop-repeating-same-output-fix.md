@@ -163,4 +163,12 @@ Claude Code loops typically stem from ambiguous prompts, missing context, or ove
 
 For persistent problems, examine your project configuration and skill definitions for hidden conflicts. With proper scoping and clear requirements, Claude Code produces focused, accurate outputs without getting trapped in repetitive cycles.
 
+
+## Related Reading
+
+- [Claude Code Keeps Making the Same Mistake: Fix Guide](/claude-skills-guide/claude-code-keeps-making-same-mistake-fix-guide/) — See also
+- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) — See also
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — See also
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — See also
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

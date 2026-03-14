@@ -40,7 +40,7 @@ head -1 large_dataset.csv > header.csv
 tail -n +2 large_dataset.csv | split -l 5000 - dataset_part_
 ```
 
-After splitting, process each chunk separately. This approach works well when analyzing logs with the supermemory skill, which helps track insights across multiple file segments.
+After splitting, process each chunk separately. This approach works well when analyzing logs with the [supermemory skill](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/), which helps track insights across multiple file segments.
 
 ## Solution 2: Adjust Context Settings
 
@@ -70,7 +70,7 @@ def read_first_n_lines(filepath, n=100):
             yield line
 ```
 
-When working with PDF files using the pdf skill, request specific page ranges rather than the entire document. Similarly, when generating presentations with pptx, process slides individually for large decks.
+When working with PDF files using the pdf skill, request specific page ranges rather than the entire document. If you regularly hit size limits, review [context window optimization strategies](/claude-skills-guide/claude-md-too-long-context-window-optimization/) to keep file processing lean. Similarly, when generating presentations with pptx, process slides individually for large decks.
 
 ## Solution 4: Increase System Resources
 

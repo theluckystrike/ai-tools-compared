@@ -193,4 +193,12 @@ Refactoring legacy JavaScript doesn't have to be a painful manual process. Claud
 
 Start small with low-risk functions, build test coverage using the tdd skill, and progressively tackle more complex refactoring challenges. Your codebase will become more maintainable, easier to test, and better suited for modern JavaScript development practices.
 
+
+## Related Reading
+
+- [How to Make Claude Code Work with Legacy Codebase](/claude-skills-guide/how-to-make-claude-code-work-with-legacy-codebase/) — See also
+- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — See also
+- [Claude Code Jest to Vitest Migration Workflow Tutorial](/claude-skills-guide/claude-code-jest-to-vitest-migration-workflow-tutorial/) — See also
+- [Claude Code Tutorials Hub](/claude-skills-guide/tutorials-hub/) — See also
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
