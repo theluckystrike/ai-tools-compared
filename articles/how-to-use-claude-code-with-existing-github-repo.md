@@ -12,9 +12,9 @@ score: 8
 
 # How to Use Claude Code with Existing GitHub Repo
 
-Connecting Claude Code to an existing GitHub repository transforms how you work with established codebases. Rather than starting fresh, you can leverage AI assistance directly within projects that already have history, tests, and infrastructure in place.
+Connecting Claude Code to an existing GitHub repository transforms how you work with established codebases. Rather than starting fresh, you can leverage AI assistance directly within projects that already have history, tests, and infrastructure in place. For beginner resources, check the [getting started hub](/claude-skills-guide/getting-started-hub/).
 
-This guide walks you through the process of setting up Claude Code with your existing GitHub repository, covering authentication, project initialization, and practical workflows that work well with real-world projects.
+This guide walks you through the process of setting up Claude Code with your existing GitHub repository, covering authentication, [project initialization best practices](/claude-skills-guide/articles/claude-code-project-initialization-best-practices/), and practical workflows that work well with real-world projects.
 
 ## Prerequisites
 
@@ -240,5 +240,14 @@ credentials.json
 Using Claude Code with an existing GitHub repository involves cloning the project, initializing Claude Code within it, and leveraging your established git workflow. The key to success is starting with small, focused tasks and providing context about your project's conventions.
 
 Connect Claude Code to your repository, respect existing patterns, and gradually expand your AI-assisted workflow. The combination of your project's history and AI assistance unlocks productivity gains without disrupting established development processes.
+
+---
+
+## Related Reading
+
+- [Claude Code Project Initialization Best Practices](/claude-skills-guide/articles/claude-code-project-initialization-best-practices/) — set up CLAUDE.md and project structure for optimal AI assistance
+- [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — integrate Claude Code workflows into your existing GitHub CI pipelines
+- [How to Automate Pull Request Review with Claude Skill](/claude-skills-guide/articles/how-to-automate-pull-request-review-with-claude-skill/) — automate code review for existing GitHub repos
+- [Getting Started Hub](/claude-skills-guide/getting-started-hub/) — more resources for setting up and configuring Claude Code effectively
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
