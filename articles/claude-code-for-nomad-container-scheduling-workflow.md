@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Nomad Container Scheduling Workflow"
-description: "Learn how to leverage Claude Code to automate Nomad container scheduling workflows. This guide provides practical examples for creating skills that manage job specifications, deployments, and monitoring."
+description: "Learn how to leverage Claude Code to automate Nomad container scheduling workflows. This guide provides practical examples for creating skills that."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-nomad-container-scheduling-workflow/
@@ -169,3 +169,10 @@ Claude Code transforms Nomad container scheduling from manual CLI operations int
 
 The combination of Claude Code's intelligence with Nomad's simplicity creates powerful developer experiences that reduce operational complexity while maintaining the flexibility needed for modern distributed systems.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

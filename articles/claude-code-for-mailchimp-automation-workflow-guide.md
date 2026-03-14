@@ -288,3 +288,10 @@ Claude Code can significantly enhance your Mailchimp automation capabilities by 
 
 Start with simple automations like welcome sequences, then gradually build more complex workflows as you become comfortable with the API. The time invested in setting up robust automations will pay dividends in improved engagement and reduced manual workload.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

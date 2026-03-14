@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Split.io Experimentation Workflow"
-description: "Learn how to leverage Claude Code to streamline your Split.io experimentation workflow, from feature flag management to A/B test implementation and analysis."
+description: "Learn how to leverage Claude Code to streamline your Split.io experimentation workflow, from feature flag management to A/B test implementation and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-split-io-experimentation-workflow/
@@ -288,3 +288,10 @@ Claude Code significantly enhances your Split.io experimentation workflow by acc
 Start with simple feature flags, establish good documentation practices, and gradually adopt more sophisticated patterns like multi-armed bandits as your experimentation maturity grows. Claude can guide you through each stage, generating boilerplate code, catching common mistakes, and helping interpret results.
 
 Remember that successful experimentation requires not just technical implementation, but also clear hypotheses, proper statistical analysis, and a culture that values data-driven decision making. Claude Code is a powerful tool to help with the technical aspects, but the strategic decisions still require human judgment.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

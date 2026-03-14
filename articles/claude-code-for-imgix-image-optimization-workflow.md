@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for imgix Image Optimization Workflow"
-description: "Learn how to leverage Claude Code to streamline your imgix image optimization workflow, from URL parameter generation to responsive image implementation and CDN integration."
+description: "Learn how to leverage Claude Code to streamline your imgix image optimization workflow, from URL parameter generation to responsive image."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-imgix-image-optimization-workflow/
@@ -225,3 +225,10 @@ Combining Claude Code with imgix creates a powerful image optimization workflow 
 The key is establishing consistent patterns for URL generation and responsive image markup, then letting Claude automate the implementation. With proper setup, you can maintain performant image delivery without the overhead of traditional image optimization pipelines.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Packer Machine Image Workflow"
-description: "Learn how to use Claude Code to streamline Packer machine image creation workflows. This guide covers template generation, validation, building, and automation with practical examples."
+description: "Learn how to use Claude Code to streamline Packer machine image creation workflows. This guide covers template generation, validation, building, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-packer-machine-image-workflow/
@@ -374,3 +374,10 @@ Start integrating Claude Code into your Packer workflows today, and you'll see s
 - [Building Immutable Infrastructure with Packer and Terraform](https://learn.hashicorp.com/tutorials/packer/aws-images)
 - [Claude Skills Guides Hub](/guides-hub/)
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

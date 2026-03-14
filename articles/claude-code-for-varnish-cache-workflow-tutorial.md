@@ -305,3 +305,10 @@ Start by creating your project structure, building basic validation scripts, and
 
 *This tutorial covers practical Varnish Cache workflows using Claude Code CLI. For more advanced topics like Varnish Enterprise features, ESI (Edge Side Includes), or VMOD development, explore our additional guides.*
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

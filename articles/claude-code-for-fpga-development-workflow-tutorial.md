@@ -220,3 +220,10 @@ Document your toolchain commands in a Makefile or shell script that Claude Code 
 Claude Code transforms FPGA development by handling routine tasks, generating boilerplate code, and accelerating the learning curve for developers new to hardware design. The key is treating AI as an intelligent assistant—provide clear specifications, verify outputs rigorously, and maintain human oversight for critical design decisions. Start with small projects, build your collection of skills and scripts, and progressively tackle more complex FPGA designs with confidence.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

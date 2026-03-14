@@ -216,3 +216,10 @@ Start by adding Claude Code to your current testing workflow—perhaps with a si
 
 Remember that the goal isn't to replace human testers but to augment their capabilities, freeing you to focus on higher-level testing strategy while Claude Code handles the repetitive boilerplate. Your tests will be more thorough, your debugging faster, and your overall test suite more maintainable.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

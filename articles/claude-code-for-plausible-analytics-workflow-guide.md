@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Plausible Analytics Workflow Guide"
-description: "Learn how to leverage Claude Code to streamline your Plausible Analytics workflow, from setup and configuration to custom event tracking and automated reporting."
+description: "Learn how to leverage Claude Code to streamline your Plausible Analytics workflow, from setup and configuration to custom event tracking and automated."
 date: 2026-03-15
 author: Claude Skills Guide
 categories: [guides]
@@ -80,3 +80,10 @@ To get the most out of combining Claude Code with Plausible Analytics, consider 
 The privacy-focused nature of Plausible Analytics aligns well with ethical data collection practices. Combined with Claude Code's ability to automate and simplify data analysis, you have a powerful, responsible approach to understanding your website visitors without compromising their privacy.
 
 By implementing these workflows, you'll spend less time navigating dashboards and more time acting on the insights that matter to your business.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

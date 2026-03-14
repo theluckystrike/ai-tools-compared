@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Claude Code for Chargebee Subscription Workflow: A Developer's Guide"
-description: "Learn how to use Claude Code to build, automate, and optimize Chargebee subscription workflows. Includes practical examples, code snippets, and actionable advice for developers."
+title: "Claude Code for Chargebee Subscription Workflow: A."
+description: "Learn how to use Claude Code to build, automate, and optimize Chargebee subscription workflows. Includes practical examples, code snippets, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-chargebee-subscription-workflow/
@@ -242,3 +242,10 @@ Claude Code significantly accelerates Chargebee subscription workflow developmen
 
 Remember to provide Claude Code with relevant context about your existing codebase, test coverage requirements, and any specific business rules that govern your subscription logic. This context enables the AI to generate code that truly fits your project.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

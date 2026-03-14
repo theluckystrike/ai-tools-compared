@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Postman Collection Generation Workflow"
-description: "Learn how to automate Postman collection generation using Claude Code skills. Create API test collections, generate request templates, and streamline your API development workflow."
+description: "Learn how to automate Postman collection generation using Claude Code skills. Create API test collections, generate request templates, and streamline."
 date: 2026-03-15
 categories: [tutorials]
 tags: [claude-code, claude-skills, postman, api-development, api-testing, automation]
@@ -310,3 +310,10 @@ Start by generating collections from your existing OpenAPI specs, then explore a
 - [Claude Code API Testing Workflows](/best-claude-code-skills-for-qa-engineers-automating-test-suites/)
 - [API Authentication Patterns](/claude-code-api-authentication-patterns-guide/)
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

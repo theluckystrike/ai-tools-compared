@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Amplitude Analytics Workflow"
-description: "Learn how to build automated analytics workflows using Claude Code and Amplitude's API. Track user events, analyze behavior patterns, and create actionable insights programmatically."
+description: "Learn how to build automated analytics workflows using Claude Code and Amplitude's API. Track user events, analyze behavior patterns, and create."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills, amplitude, analytics, api]
@@ -292,3 +292,10 @@ Consider adding these enhancements as you mature your setup:
 - Custom attribution modeling for marketing campaigns
 
 The key is treating your analytics infrastructure as programmable, with Claude Code as the bridge between your questions and the data that answers them.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
