@@ -13,7 +13,6 @@ score: 7
 ---
 
 
-{% raw %}
 # Claude Code Hot Reload Development Setup
 
 Hot reload has become an essential productivity feature for developers working with Claude Code. When you modify a skill or configuration, seeing those changes reflected immediately accelerates iteration cycles and reduces context-switching overhead. This guide walks you through practical approaches to achieving a responsive Claude Code development environment.

@@ -11,7 +11,6 @@ tags: [claude-code, claude-skills]
 reviewed: true
 score: 7
 ---
-{% raw %}
 
 
 # Claude Code Code Generation Templates Guide
@@ -216,5 +215,11 @@ Keep templates focused on a single responsibility. A template that tries to gene
 
 Code generation templates in Claude Code eliminate repetitive coding tasks while ensuring consistency across your projects. By combining the skill-creator for building generators, tdd for test coverage, and pdf for documentation, you create a fully automated development pipeline. Start with simple component templates, then expand into feature scaffolds and fullstack generators as your needs grow.
 
+## Related Reading
+
+- [Claude Code Boilerplate Generation Workflow](/claude-skills-guide/claude-code-boilerplate-generation-workflow/) — Boilerplate and templates are closely related
+- [Claude Code Project Scaffolding Automation](/claude-skills-guide/claude-code-project-scaffolding-automation/) — Templates power project scaffolding
+- [How to Write Your First Custom Prompt with Claude Code](/claude-skills-guide/how-to-write-your-first-custom-prompt-with-claude-code/) — Custom prompts are a form of code generation template
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More code generation and automation guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

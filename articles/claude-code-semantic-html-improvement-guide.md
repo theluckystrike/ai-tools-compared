@@ -180,4 +180,11 @@ When Claude Code generates new components, it follows these patterns automatical
 
 Semantic HTML improvement is an ongoing process, not a one-time refactor. Claude Code makes auditing and refactoring efficient, helping you maintain quality markup throughout your project's lifecycle. By combining automation with clear conventions, you build a foundation that supports accessibility, SEO, and long-term maintainability.
 
+## Related Reading
+
+- [Claude Code WCAG Accessibility Audit Workflow](/claude-skills-guide/claude-code-wcag-accessibility-audit-workflow/) — Semantic HTML is a WCAG requirement
+- [Claude Code Aria Labels Implementation Guide](/claude-skills-guide/claude-code-aria-labels-implementation-guide/) — ARIA labels complement semantic HTML
+- [Claude Code Keyboard Navigation Testing Guide](/claude-skills-guide/claude-code-keyboard-navigation-testing-guide/) — Semantic HTML enables proper keyboard navigation
+- [Best Way to Use Claude Code for Frontend Styling](/claude-skills-guide/best-way-to-use-claude-code-for-frontend-styling/) — Frontend styling built on semantic HTML
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

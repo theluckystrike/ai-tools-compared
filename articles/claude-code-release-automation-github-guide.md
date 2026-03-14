@@ -12,7 +12,6 @@ reviewed: true
 score: 7
 ---
 
-{% raw %}
 
 
 # Claude Code Release Automation with GitHub Guide

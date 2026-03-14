@@ -231,4 +231,11 @@ The `claude-code-api-mocking-and-stubbing-guide` skill helps create mock servers
 
 Applying these REST API design patterns creates interfaces that Claude Code can interact with reliably. Focus on consistency in response structures, proper HTTP semantics, and comprehensive documentation. When Claude skills can predict your API behavior, they generate better code, tests, and integrations.
 
+## Related Reading
+
+- [Claude Code API Documentation OpenAPI Guide](/claude-skills-guide/claude-code-api-documentation-openapi-guide/) — OpenAPI documents REST API designs
+- [How to Make Claude Code Generate Consistent API Responses](/claude-skills-guide/how-to-make-claude-code-generate-consistent-api-responses/) — Consistent responses are a REST best practice
+- [Claude Code API Contract Testing Guide](/claude-skills-guide/claude-code-api-contract-testing-guide/) — Contract tests validate REST API design
+- [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/) — REST API versioning and backward compatibility
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

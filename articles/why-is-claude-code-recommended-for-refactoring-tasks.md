@@ -14,7 +14,6 @@ score: 7
 
 <<<<<<< HEAD
 
-{% raw %}
 =======
 >>>>>>> d103d2003802453259ba0638c75428ce7618f4f9
 # Why Is Claude Code Recommended for Refactoring Tasks
