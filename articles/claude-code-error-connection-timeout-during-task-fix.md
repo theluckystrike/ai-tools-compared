@@ -226,4 +226,11 @@ If you've tried these solutions and still experience timeout errors:
 
 Connection timeout errors in Claude Code are typically resolvable through proper configuration, network settings, or timeout adjustments. By understanding the underlying causes and implementing these fixes, you can maintain productive workflows without interruption.
 
+## Related Reading
+
+- [Claude Code Not Responding Terminal Hangs Fix](/claude-skills-guide/claude-code-not-responding-terminal-hangs-fix/) — Related: terminal hang vs timeout distinction
+- [Claude Code Slow Response How to Fix Latency Issues](/claude-skills-guide/claude-code-slow-response-how-to-fix-latency-issues/) — Performance and network issues guide
+- [Claude Code Error Rate Limit 429 How to Handle](/claude-skills-guide/claude-code-error-rate-limit-429-how-to-handle/) — Another API error that affects connectivity
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All Claude Code error and connectivity fixes
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

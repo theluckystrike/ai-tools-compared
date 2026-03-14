@@ -14,6 +14,7 @@ score: 7
 {% raw %}
 
 
+
 Semantic versioning transforms how you track and communicate project changes. When combined with Claude Code's automation capabilities, you gain a powerful system that handles version bumps, changelog generation, and tag creation without manual intervention. This guide shows you how to build a complete semantic versioning automation pipeline tailored for Claude Code workflows.
 
 ## Understanding Semantic Versioning Fundamentals
@@ -163,6 +164,13 @@ Document your versioning conventions in a CONTRIBUTING.md file. Explain which co
 Test your automation extensively before relying on it in production. Create sample commits representing different scenarios—feature additions, bug fixes, breaking changes—and verify the version increment logic produces expected results. The `tdd` skill proves valuable here, allowing you to write tests that validate version calculation logic before deploying the skill to your active workflow.
 
 Semantic versioning automation through Claude Code eliminates repetitive manual tasks while ensuring consistent, informative releases. By implementing these skills and workflows, you transform version management from a chore into a reliable, automated process that scales with your project.
+
+## Related Reading
+
+- [Claude Code Conventional Commits Automation](/claude-skills-guide/claude-code-conventional-commits-automation/) — Conventional commits drive semantic versioning
+- [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/) — Integrate versioning into your CI pipeline
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Test version bump logic with TDD
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More automation workflow guides
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

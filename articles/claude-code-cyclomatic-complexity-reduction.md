@@ -203,4 +203,11 @@ Remember this pattern: When cyclomatic complexity exceeds 15, extract method and
 
 Reducing cyclomatic complexity improves code maintainability, testability, and reliability. With Claude Code and its skills ecosystem, you have powerful tools to identify, refactor, and prevent complex code. Start by measuring your current complexity, apply extraction and guard clause patterns strategically, and integrate automated checks into your workflow. The result is cleaner code that your team can work with confidently.
 
+## Related Reading
+
+- [Claude Code Technical Debt Tracking Workflow](/claude-skills-guide/claude-code-technical-debt-tracking-workflow/) — Complexity reduction is part of technical debt management
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Tests validate complexity reduction refactors
+- [Claude Code Output Quality How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) — Quality improvements include complexity reduction
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Advanced code quality and optimization patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

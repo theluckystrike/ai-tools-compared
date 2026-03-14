@@ -289,4 +289,11 @@ Teams often prefer rebase for feature branches to maintain a clean, linear commi
 
 Merge conflicts are a normal part of development. With Claude Code and the strategies outlined in this guide, you can resolve conflicts efficiently while maintaining code quality. Remember to communicate with your team, keep branches small, and always verify your resolutions with tests. Using skills like `tdd` for validation and `supermemory` for documentation creates a robust workflow that scales with your team.
 
+## Related Reading
+
+- [Claude Code for End of Day Commit Workflow](/claude-skills-guide/claude-code-for-end-of-day-commit-workflow/) — Clean commit habits reduce merge conflicts
+- [Claude Code Conventional Commits Automation](/claude-skills-guide/claude-code-conventional-commits-automation/) — Structured commits make conflict resolution easier
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Tests validate that conflict resolutions are correct
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More git and development workflow guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

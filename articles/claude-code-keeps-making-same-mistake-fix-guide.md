@@ -148,4 +148,11 @@ The repetition mistake problem isn't about Claude being broken. It's about how f
 
 Start by implementing one or two of these solutions. The skill-based approach works well as an initial step because it requires setup only once but provides ongoing benefits across all your Claude Code sessions.
 
+## Related Reading
+
+- [Claude Code Output Quality How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) — Broader guide on improving Claude Code output
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Scoping prevents recurring mistakes
+- [Claude Code Gives Incorrect Imports How to Fix](/claude-skills-guide/claude-code-gives-incorrect-imports-how-to-fix/) — A specific recurring mistake and its fix
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — More behavioral issue fixes
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
