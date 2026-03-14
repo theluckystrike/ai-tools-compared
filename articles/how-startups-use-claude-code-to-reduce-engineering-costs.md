@@ -80,7 +80,7 @@ Startups using Claude Code report faster onboarding because new team members can
 A five-person SaaS startup uses Claude Code to pre-review pull requests:
 
 ```
-/review analyze this PR for security vulnerabilities and performance issues
+Analyze this PR for security vulnerabilities and performance issues
 ```
 
 The initial review catches obvious issues, allowing human reviewers to focus on business logic and architecture. This doesn't replace human judgment—it augments it, making the review process faster without sacrificing quality.
