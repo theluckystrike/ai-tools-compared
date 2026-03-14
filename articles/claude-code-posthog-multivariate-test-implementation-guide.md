@@ -2,10 +2,11 @@
 
 layout: default
 title: "Claude Code PostHog Multivariate Test Implementation Guide"
-description: "Learn how to implement multivariate tests (A/B/n tests) using PostHog with Claude Code. Practical examples for setting up experiments, tracking variants, and analyzing results."
+description: "Learn how to implement multivariate tests (A/B/n tests) using PostHog with Claude Code. Practical examples for setting up experiments, tracking."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-posthog-multivariate-test-implementation-guide/
+categories: [guides]
 ---
 {% raw %}
 
@@ -225,3 +226,10 @@ Implementing multivariate tests with PostHog and Claude Code is straightforward 
 Start with a simple A/B test before moving to multivariate experiments, and always ensure you have enough traffic to reach statistical significance. With proper implementation, you'll be able to make data-driven decisions that improve user experience and conversion rates.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

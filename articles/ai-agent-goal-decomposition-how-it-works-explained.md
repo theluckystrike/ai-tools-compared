@@ -109,3 +109,10 @@ When working with Claude Code or similar AI agents, you can facilitate effective
 Goal decomposition transforms overwhelming AI requests into manageable, trackable, and accurate executions. Claude Code's skill system exemplifies this approach, breaking complex operations into logical phases that leverage specialized capabilities. Whether you're creating spreadsheets, processing documents, or building presentations, understanding how goal decomposition works helps you work more effectively with AI assistants.
 
 By embracing this structured approach, you unlock the full potential of AI agents—achieving results that would be impossible through undifferentiated, monolithic task execution. The next time you have a complex project, remember: break it down, and let Claude Code handle each piece systematically.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

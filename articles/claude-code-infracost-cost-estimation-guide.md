@@ -5,6 +5,7 @@ description: "Learn how to integrate Infracost with Claude Code to estimate AWS,
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-infracost-cost-estimation-guide/
+categories: [guides]
 ---
 
 # Claude Code Infracost Cost Estimation Guide
@@ -96,5 +97,12 @@ Store Infracost output in version control to maintain a historical record of cos
 Finally, remember that Infracost provides estimates, not guarantees. Actual costs vary based on usage patterns, reserved instance availability, and region-specific pricing. Use the tool as a directional guide rather than a precise predictor.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

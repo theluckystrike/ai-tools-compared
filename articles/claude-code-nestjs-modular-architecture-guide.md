@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code NestJS Modular Architecture Guide"
-description: "A practical guide to building modular NestJS applications with Claude Code. Learn how to structure your codebase for scalability and maintainability using domain-driven design patterns."
+description: "A practical guide to building modular NestJS applications with Claude Code. Learn how to structure your codebase for scalability and maintainability."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-nestjs-modular-architecture-guide/
+categories: [guides]
 ---
 
 # Claude Code NestJS Modular Architecture Guide
@@ -184,5 +185,12 @@ The **tdd** skill guides you toward testable designs. It suggests patterns like 
 Modular architecture in NestJS isn't about following rigid rules—it's about making intentional decisions that pay off as your application evolves. Group code by domain, maintain clear boundaries through DTOs, and leverage tools like Claude Code skills to accelerate development.
 
 The patterns shown here scale from small projects to enterprise applications. Start with clean modules from day one, and refactor when the domain reveals better boundaries. Your future self, and your teammates, will thank you.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

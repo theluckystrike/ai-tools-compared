@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Kubernetes Deployment Workflow Guide"
-description: "Master Kubernetes deployment workflows with Claude Code. Learn how to automate deployments, manage configurations, and streamline your DevOps pipeline using AI-assisted development."
+description: "Master Kubernetes deployment workflows with Claude Code. Learn how to automate deployments, manage configurations, and streamline your DevOps pipeline."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-kubernetes-deployment-workflow-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -188,6 +189,13 @@ Claude Code remembers your cluster configuration and can execute these tasks wit
 Claude Code transforms Kubernetes deployment from a manual, error-prone process into an automated, reproducible workflow. By generating manifests from descriptions, setting up proper configuration management, and integrating with CI/CD pipelines, you spend less time on boilerplate and more time on what matters—building your application.
 
 Start with the basics: generate your first manifest, set up environment configurations, and add CI/CD automation. Each layer builds on the previous one, creating a deployment system that scales with your project.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

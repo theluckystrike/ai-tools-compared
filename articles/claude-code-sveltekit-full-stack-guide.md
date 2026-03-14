@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code SvelteKit Full Stack Guide"
-description: "Build full-stack SvelteKit applications faster with Claude Code. Learn practical workflows, skill recommendations, and code generation patterns for modern web development."
+description: "Build full-stack SvelteKit applications faster with Claude Code. Learn practical workflows, skill recommendations, and code generation patterns for."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, sveltekit, full-stack, web-development, ai-coding]
@@ -229,5 +229,12 @@ Claude Code can generate environment-specific configuration files and help you s
 Your SvelteKit development with Claude Code follows a consistent pattern: scaffold your project, install relevant skills, generate code with clear specifications, and validate through tests. The combination of SvelteKit's cohesive architecture and Claude Code's contextual understanding creates a productive environment for building full-stack applications.
 
 For documentation needs, the pdf skill generates project documentation directly from your source code and route structure, keeping your docs synchronized with implementation.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

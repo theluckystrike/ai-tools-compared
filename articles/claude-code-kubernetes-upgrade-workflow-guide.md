@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Kubernetes Upgrade Workflow Guide"
-description: "A practical guide to upgrading Kubernetes clusters using Claude Code. Learn workflow patterns, automation strategies, and best practices for seamless cluster management."
+description: "A practical guide to upgrading Kubernetes clusters using Claude Code. Learn workflow patterns, automation strategies, and best practices for seamless."
 date: 2026-03-14
 author: "theluckystrike"
 permalink: /claude-code-kubernetes-upgrade-workflow-guide/
@@ -167,5 +167,12 @@ When running multiple cluster upgrades, consider these patterns:
 Kubernetes upgrades don't have to be stressful events that require manual intervention and crossed fingers. By building a structured workflow with Claude Code, you create repeatable processes that capture best practices and reduce risk. The key is treating upgrades as structured workflows with clear checkpoints, verification steps, and documentation requirements.
 
 Combine this workflow with skills like pdf for report generation, docx for runbook creation, and supermemory for institutional knowledge retention. Each upgrade becomes an opportunity to improve your infrastructure automation and build confidence in your cluster management practices.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

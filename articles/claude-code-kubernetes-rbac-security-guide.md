@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Kubernetes RBAC Security Guide"
-description: "A practical guide to securing Kubernetes clusters using Role-Based Access Control with Claude Code. Learn to implement fine-grained permissions and best practices."
+description: "A practical guide to securing Kubernetes clusters using Role-Based Access Control with Claude Code. Learn to implement fine-grained permissions and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-kubernetes-rbac-security-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -191,6 +192,13 @@ Automated tests catch permission misconfigurations before they reach production.
 Implementing RBAC properly requires upfront effort, but the security benefits justify the investment. A well-configured RBAC policy protects your cluster from both external attackers and internal misconfigurations.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
