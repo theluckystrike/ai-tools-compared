@@ -34,9 +34,6 @@ When you encounter the rate limit error, these solutions restore your workflow i
 The simplest solution is often the most effective. Rate limits in Claude Code are typically time-based, meaning they reset after a short period. A 30-second to 2-minute wait usually clears the restriction:
 
 ```bash
-# Check current rate limit status
-claude --status
-
 # After waiting, retry your last operation
 claude "continue where we left off"
 ```
@@ -85,8 +82,8 @@ Review your skill configurations and reduce unnecessary tool calls:
 # In your skill configuration
 tools:
   - Read
-  - write_file
-  - bash
+  - Write
+  - Bash
 # Remove unused tools to reduce request volume
 ```
 
@@ -100,7 +97,7 @@ When creating or using skills, design them with rate limits in mind:
 ---
 name: batch-processor
 description: Process files in rate-limited batches
-tools: [Read, write_file]
+tools: [Read, Write]
 rate_limit:
   max_requests_per_minute: 20
   batch_size: 5
@@ -126,10 +123,7 @@ claude "show me the cached TODO results"
 
 Keep track of your request patterns to identify when you're approaching limits:
 
-```bash
-# Add to your workflow
-alias claude-stats='claude --metrics | grep -E "requests|rate|limit"'
-```
+Track your session length and number of operations manually, or check your usage through the Anthropic console at console.anthropic.com.
 
 ## Alternative Approaches for Heavy Workloads
 
@@ -151,27 +145,9 @@ claude "and this one"
 claude "fix these three functions: [list them all at once]"
 ```
 
-## Configuring Claude Code for Better Rate Management
+## Designing Workflows for Better Rate Management
 
-Several configuration options help manage rate limits:
-
-```json
-// claude-config.json
-{
-  "rateLimits": {
-    "maxRetries": 3,
-    "retryDelay": 60,
-    "backoffMultiplier": 2,
-    "enableRateLimitWarnings": true
-  },
-  "session": {
-    "checkpointInterval": 50,
-    "autoSave": true
-  }
-}
-```
-
-Apply this configuration to enable automatic retry with exponential backoff and session checkpointing.
+Structure your sessions to minimize unnecessary requests. Start with a clear plan before opening Claude Code, batch related questions into single messages, and avoid running multiple Claude Code sessions simultaneously. These habits reduce your overall request volume without requiring any configuration changes.
 
 ## Summary
 
