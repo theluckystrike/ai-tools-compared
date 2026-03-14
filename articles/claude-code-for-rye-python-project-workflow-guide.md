@@ -263,10 +263,6 @@ Create custom Claude skills for your Rye workflow. For example, a skill that alw
 ---
 name: rye-tdd
 description: Generate code and automatically run tests
-tools:
-  - Read
-  - Write
-  - Bash
 ---
 
 # Rye TDD Workflow

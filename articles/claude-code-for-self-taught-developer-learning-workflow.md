@@ -28,11 +28,9 @@ The key difference between using Claude Code for learning versus traditional res
 Before building your workflow, configure Claude Code for optimal learning:
 
 ```bash
-# Initialize Claude Code in your project
-claude init
-
-# Verify tool access for learning activities
-claude config list | grep -E "bash|read_file|edit_file|web_fetch"
+# Create a CLAUDE.md file in your project root to initialize Claude Code context
+# This gives Claude Code information about your project and tools
+touch CLAUDE.md
 ```
 
 This ensures you have the foundational tools for reading documentation, running code experiments, and iterating on projects.
@@ -42,13 +40,11 @@ This ensures you have the foundational tools for reading documentation, running 
 Claude Code's skills system extends its capabilities with specialized knowledge packages. Install skills that accelerate learning:
 
 ```bash
-# Install the tdd skill for test-driven development learning
+# To use skills, copy the skill .md file into .claude/ directory in your project
 # Place tdd.md in .claude/ then invoke: /tdd
 
-# Install documentation generation skill
 # Place doc-generator.md in .claude/ then invoke: /doc-generator
 
-# Install code review skill for feedback
 # Place code-reviewer.md in .claude/ then invoke: /code-reviewer
 ```
 

@@ -31,8 +31,7 @@ For teams working with Jira or Linear, combine Claude Code with the **mcp-builde
 
 ```bash
 # Example: Invoke a sprint-prep skill with your backlog context
-claude "Review these 12 tickets for the upcoming sprint and identify any 
-blocking dependencies or unclear requirements"
+claude --print "Review these 12 tickets for the upcoming sprint and identify any blocking dependencies or unclear requirements"
 ```
 
 ## Streamlining Sprint Planning Sessions
@@ -61,9 +60,7 @@ Before committing to a technical approach during planning, use Claude to surface
 The [tdd skill is particularly valuable here](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). Invoke it during planning to generate test cases alongside your story breakdown:
 
 ```bash
-claude "Using the tdd skill, generate test scenarios for this login 
-feature: OAuth2 with refresh tokens, session management, and 
-password reset flow"
+claude --print "Using the tdd skill, generate test scenarios for this login feature: OAuth2 with refresh tokens, session management, and password reset flow"
 ```
 
 This immediate test generation during planning ensures your estimates account for verification effort.
@@ -85,9 +82,7 @@ Invoke the **pdf** skill early if your sprint involves documentation requirement
 For frontend work beginning in the sprint, the **frontend-design** skill helps establish component patterns before development starts. Provide your design system tokens and existing component patterns:
 
 ```bash
-claude "Using the frontend-design skill, generate a component pattern 
-for our dashboard cards following our existing atomic design structure. 
-Include prop types and TypeScript interfaces"
+claude --print "Using the frontend-design skill, generate a component pattern for our dashboard cards following our existing atomic design structure. Include prop types and TypeScript interfaces"
 ```
 
 This generates reusable patterns that developers can immediately implement, reducing setup time significantly.

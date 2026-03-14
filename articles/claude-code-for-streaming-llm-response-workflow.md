@@ -59,21 +59,10 @@ You can create custom Claude Code skills that handle streaming responses. This i
 Here's a skill structure for streaming operations:
 
 ```yaml
+---
 name: stream-llm-response
 description: Process streaming LLM responses with custom transformations
-version: "1.0.0"
-
-commands:
-  - name: stream
-    description: Stream an LLM response with custom formatting
-    parameters:
-      - name: prompt
-        type: string
-        required: true
-      - name: format
-        type: string
-        default: "plain"
-```
+---
 
 The skill implementation would handle the streaming logic, applying any transformations specified in parameters. This could include markdown formatting, code syntax highlighting, or sentiment analysis of partial responses.
 

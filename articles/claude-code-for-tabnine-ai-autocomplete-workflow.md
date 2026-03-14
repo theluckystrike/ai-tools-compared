@@ -57,7 +57,6 @@ The real power of combining these tools comes from creating a Claude skill that 
 ---
 name: tabnine-coordinator
 description: Coordinates between Claude Code and TabNine for optimal coding workflow
-tools: [read_file, bash]
 ---
 
 You are a TabNine coordinator. Your role is to work smoothly with TabNine's autocomplete suggestions.

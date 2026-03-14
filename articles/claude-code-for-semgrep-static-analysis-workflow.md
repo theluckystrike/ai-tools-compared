@@ -51,7 +51,6 @@ Create a Claude skill that encapsulates your Semgrep workflow. This skill should
 ---
 name: semgrep-analyzer
 description: "Run Semgrep analysis and interpret results"
-tools: [bash, read_file, write_file]
 ---
 
 You are a security analysis assistant specializing in Semgrep static analysis.

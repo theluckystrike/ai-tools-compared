@@ -171,7 +171,7 @@ OUTPUT_DIR=${2:-"./presentations"}
 mkdir -p "$OUTPUT_DIR"
 
 # Ask Claude Code to generate content
-claude-code -p "Generate a 5-slide presentation about $TOPIC" > "$OUTPUT_DIR/temp.md"
+claude --print "Generate a 5-slide presentation about $TOPIC" > "$OUTPUT_DIR/temp.md"
 
 # Convert to HTML with Marp
 marp "$OUTPUT_DIR/temp.md" -o "$OUTPUT_DIR/${TOPIC// /-}.html"

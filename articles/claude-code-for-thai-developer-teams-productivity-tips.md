@@ -27,9 +27,6 @@ Claude Code คือ AI assistant ที่ออกแบบมาเพื่
 ก่อนเริ่มใช้งาน ควรตั้งค่า Claude Code ให้รองรับการทำงานกับโปรเจกต์ภาษาไทยอย่างเหมาะสม:
 
 ```bash
-# ตรวจสอบการตั้งค่า Claude Code
-claude config show
-
 # ตั้งค่าให้รองรับ UTF-8
 export LANG=th_TH.UTF-8
 export LC_ALL=th_TH.UTF-8
@@ -47,9 +44,6 @@ Skills เป็นฟีเจอร์ที่ช่วยให้ Claude Co
 ---
 name: code-review-th
 description: "ตรวจสอบโค้ดตามมาตรฐานทีม พร้อมคำแนะนำภาษาไทย"
-tools:
-  - Read
-  - Bash
 ---
 
 # งาน: Code Review
@@ -165,7 +159,7 @@ Claude Code สามารถช่วยในกระบวนการ Git 
 
 ```bash
 # ให้ Claude ตรวจสอบการเปลี่ยนแปลงก่อน push
-claude "ตรวจสอบ git diff ล่าสุด และแจ้งปัญหาที่อาจเกิดขึ้น"
+claude --print "ตรวจสอบ git diff ล่าสุด และแจ้งปัญหาที่อาจเกิดขึ้น"
 ```
 
 ## เคล็ดลับที่ 6: การ Debug อย่างมีประสิทธิภาพ
@@ -313,7 +307,7 @@ Claude Code สามารถช่วยในกระบวนการ CI/C
 
 ```bash
 # ให้ Claude ตรวจสอบก่อน deploy
-claude "ตรวจสอบว่า:
+claude --print "ตรวจสอบว่า:
 1. unit tests ผ่านทั้งหมด
 2. ไม่มี security vulnerabilities
 3. code coverage เกิน 80%

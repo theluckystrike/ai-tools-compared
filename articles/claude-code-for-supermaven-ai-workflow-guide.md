@@ -68,9 +68,6 @@ This skill helps Claude understand your project structure before offering sugges
 ---
 name: project-context
 description: "Analyzes project structure and provides context for coding tasks"
-tools:
-  - Bash
-  - Read
 ---
 
 # Project Context Analyzer
@@ -92,8 +89,6 @@ Generate meaningful commit messages based on your changes:
 ---
 name: git-commit
 description: "Generates conventional commit messages from staged changes"
-tools:
-  - Bash
 ---
 
 # Commit Message Generator
@@ -115,7 +110,7 @@ The real power comes from how you sequence and combine both tools. Here's a prac
 Start your day by invoking a Claude Code skill that analyzes recent changes:
 
 ```bash
-claude -p "Summarize the changes made in the last 3 commits including file names and key modifications"
+claude --print "Summarize the changes made in the last 3 commits including file names and key modifications"
 ```
 
 This gives you context on what your team has been working on. Meanwhile, Supermaven continues providing inline completions as you navigate and edit code.
@@ -133,7 +128,7 @@ Let Supermaven handle routine typing—variable names, function bodies, imports.
 Use Claude Code skills for systematic reviews:
 
 ```bash
-claude -p "Review the following files for security issues, performance problems, and code quality: {files}"
+claude --print "Review the following files for security issues, performance problems, and code quality: {files}"
 ```
 
 Supermaven can then help implement the suggested improvements rapidly.
@@ -153,11 +148,10 @@ Adjust Supermaven's behavior based on your coding style:
 Maintain context across sessions for better assistance:
 
 ```bash
-# Continue a previous conversation
-claude -c "Continue where we left off"
+# Start Claude Code — it will maintain context from the current session
+claude
 
-# Start fresh when switching projects
-claude --new-session
+# Start a fresh Claude Code session in a new terminal or use /clear
 ```
 
 ## Advanced: Combining Both Tools in Custom Skills
@@ -168,10 +162,6 @@ You can create skills that explicitly coordinate with Supermaven by including in
 ---
 name: implement-feature
 description: "Implements a feature with optimal tool usage"
-tools:
-  - Read
-  - Write
-  - Bash
 ---
 
 # Feature Implementation Skill

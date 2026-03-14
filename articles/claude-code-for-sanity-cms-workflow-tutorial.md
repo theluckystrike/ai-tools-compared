@@ -37,11 +37,7 @@ cd my-sanity-project
 npm install
 ```
 
-Initialize Claude Code in your project:
-
-```bash
-claude init
-```
+Initialize Claude Code in your project by creating a CLAUDE.md file in your project root:
 
 Create a dedicated skill for Sanity operations. Save this as `CLAUDE.md` in your project root:
 

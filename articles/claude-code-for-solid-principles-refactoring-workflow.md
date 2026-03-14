@@ -39,12 +39,6 @@ Start by creating a focused skill or prompt for the refactoring session. Create 
 ---
 name: solid-refactor
 description: Refactor code to follow SOLID principles
-tools:
-  - Read
-  - Write
-  - Bash
-  - Glob
-  - Grep
 ---
 
 You are a code quality expert specializing in SOLID principles. When I provide code, analyze it for SOLID violations and propose refactored versions.

@@ -31,17 +31,7 @@ Claude Code can help you reason about these primitives, generate proper patterns
 
 ## Setting Up Claude Code with Your SolidJS Project
 
-The first step is ensuring Claude Code understands your project structure. In your SolidJS project directory, run:
-
-```bash
-claude --init
-```
-
-This initializes Claude Code with awareness of your project files. For SolidJS projects using Vite, specify your entry points:
-
-```bash
-claude --project /path/to/solidjs-app --include "src/**/*.{ts,tsx,js,jsx}"
-```
+The first step is ensuring Claude Code understands your project structure. In your SolidJS project directory, create a CLAUDE.md file at the project root to give Claude Code context about your project.
 
 You can also create a `.claude/settings.json` in your project root:
 

@@ -31,8 +31,8 @@ The key advantage lies in Claude Code's ability to maintain project context. It 
 The **tdd** skill transforms how you approach coding challenges. Instead of writing code first and debugging later, you write tests that define expected behavior, then implement to meet those specifications. This approach builds professional-grade habits that self-taught developers often miss in isolated learning environments.
 
 ```bash
-# Using the tdd skill to scaffold tests
-claude tdd create user-auth
+# Using the tdd skill: copy tdd.md to .claude/ directory, then invoke /tdd
+# Example: ask Claude to scaffold tests for user-auth
 ```
 
 This generates test files with proper assertions, teaching you the testing mindset alongside practical implementation.
@@ -42,8 +42,8 @@ This generates test files with proper assertions, teaching you the testing minds
 Self-taught developers constantly re-learn concepts they've forgotten. The **supermemory** skill creates persistent, searchable knowledge bases from your development sessions. Store explanations, code patterns, and architectural decisions for instant retrieval later.
 
 ```
-# Summarize and store key learnings
-claude supermemory add --context "TypeScript generics explanation"
+# Using the supermemory skill: copy supermemory.md to .claude/ directory, then invoke /supermemory
+# Example: ask Claude to summarize and store TypeScript generics explanation
 ```
 
 ### The frontend-design Skill for UI/UX Competence
@@ -92,7 +92,8 @@ Self-taught developers often spend too much time on configuration and boilerplat
 
 ```bash
 # Quick project setup with best practices built-in
-claude scaffold express-api --typescript --jest --docker
+mkdir express-api && cd express-api
+# Then ask Claude Code to scaffold the project structure with TypeScript, Jest, and Docker
 ```
 
 Each generated project follows current industry standards, teaching you modern practices automatically.

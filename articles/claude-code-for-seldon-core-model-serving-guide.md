@@ -80,7 +80,6 @@ Create a skill that generates SeldonDeployment resources based on your model typ
 ---
 name: seldon-deployment-generator
 description: Generate Seldon Core deployment manifests for various model types
-tools: [read_file, write_file, bash]
 ---
 
 You generate SeldonDeployment YAML manifests for Kubernetes. Given a model type and configuration, produce a complete manifest following these patterns:

@@ -67,7 +67,7 @@ Consider a skill that analyzes your codebase before running tests:
 # analyze-before-test.sh
 
 # Let Claude analyze code changes
-CLAUDE_ANALYSIS=$(claude code --analyze --scope changed-files)
+CLAUDE_ANALYSIS=$(claude --print "Analyze changed files and identify if there are any breaking changes")
 
 # Check if there are breaking changes
 if echo "$CLAUDE_ANALYSIS" | grep -q "breaking"; then
@@ -94,7 +94,7 @@ Create tasks that automatically determine what to build based on changes:
 # smart-build.sh
 
 # Get Claude to analyze recent changes
-CHANGES=$(claude code --analyze --recent-changes)
+CHANGES=$(claude --print "Analyze recent git changes and list affected components: api, frontend, database")
 
 # Determine affected components
 if echo "$CHANGES" | grep -q "api"; then
@@ -121,7 +121,7 @@ tasks:
   test:changed:
     desc: "Test only changed files and their dependencies"
     cmds:
-      - claude code --analyze --affected-tests | xargs go test
+      - git diff --name-only HEAD~1 | xargs go test
 
   test:full:
     desc: "Run complete test suite"
@@ -151,7 +151,7 @@ tasks:
     cmds:
       - task lint
       - task test:quick
-      - claude code --verify --security-scan
+      - semgrep --config=auto .
 ```
 
 ### The Release Pipeline Pattern
@@ -163,7 +163,7 @@ tasks:
   release:prepare:
     desc: "Prepare release (version bump, changelog)"
     cmds:
-      - claude code --semantic-release --dry-run
+      - npx semantic-release --dry-run
 
   release:build:
     desc: "Build release artifacts"
@@ -176,7 +176,7 @@ tasks:
     desc: "Publish release"
     deps: [release:build]
     cmds:
-      - claude code --release --publish
+      - npx semantic-release
 ```
 
 ## Best Practices for Claude Code and Taskfile Integration
@@ -214,7 +214,7 @@ while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
     echo "Deployment attempt $RETRY_COUNT failed, analyzing issue..."
     
     # Let Claude analyze the failure
-    ISSUE=$(claude code --analyze --deployment-failure)
+    ISSUE=$(claude --print "Analyze the deployment failure and determine if it is recoverable")
     
     if echo "$ISSUE" | grep -q "non-recoverable"; then
         echo "Non-recoverable error detected"

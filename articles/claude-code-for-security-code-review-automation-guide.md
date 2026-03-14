@@ -33,11 +33,9 @@ To automate security code reviews effectively, you first need to configure Claud
 Start by ensuring Claude Code has access to your codebase and understands the programming languages you use:
 
 ```bash
-# Initialize Claude Code with your project
-claude --init
-
-# Configure project context
-claude --project /path/to/your/project
+# Create a CLAUDE.md file in your project root to initialize context
+# Then navigate to your project directory
+cd /path/to/your/project
 ```
 
 Next, create a security review skill that defines the scanning parameters. A practical skill configuration might include checks for:
@@ -122,7 +120,8 @@ Configure Claude Code to run security scans before code is committed:
 # Create a pre-commit hook for security review
 # .git/hooks/pre-commit
 #!/bin/bash
-claude --security-scan --files $(git diff --cached --name-only)
+# Run your preferred security scanner on changed files
+git diff --cached --name-only | xargs semgrep --config=auto
 ```
 
 This ensures vulnerabilities are caught before they reach the repository. You can customize the scan intensity based on file types and risk levels.
@@ -140,11 +139,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run Claude Code Security Scan
+      - name: Run Security Scan
         run: |
-          claude --security-scan \
-            --target ${{ github.event.pull_request.base.ref }} \
-            --output security-report.json
+          semgrep --config=auto --json > security-report.json
       - name: Upload Results
         uses: actions/upload-artifact@v3
         with:
@@ -161,7 +158,7 @@ For comprehensive security coverage, implement continuous monitoring:
 ```bash
 # Schedule regular comprehensive scans
 # crontab configuration
-0 2 * * * claude --security-scan --full --report-to security-weekly.json
+0 2 * * * semgrep --config=auto --json > security-weekly.json
 ```
 
 Regular full-scans complement the targeted reviews done during development, catching issues that might slip through incremental checks.

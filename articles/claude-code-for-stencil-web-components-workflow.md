@@ -28,14 +28,14 @@ First, install Claude Code globally if you haven't already:
 npm install -g @anthropic-ai/claude-code
 ```
 
-Initialize Claude in your Stencil project root:
+Initialize Claude Code in your Stencil project root by creating a CLAUDE.md file:
 
 ```bash
 cd your-stencil-project
-claude init
+touch CLAUDE.md
 ```
 
-This creates a `CLAUDE.md` file in your project root where you can define project-specific instructions. For Stencil projects, add guidelines about your component structure, naming conventions, and testing requirements.
+Edit `CLAUDE.md` with project-specific instructions for Claude Code. For Stencil projects, add guidelines about your component structure, naming conventions, and testing requirements.
 
 ## Component Generation Workflow
 

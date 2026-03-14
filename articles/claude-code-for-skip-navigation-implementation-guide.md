@@ -71,10 +71,6 @@ Claude Code can help you implement skip navigation in several ways. First, you c
 ---
 name: accessibility-skip-links
 description: Implements accessible skip navigation links with proper ARIA attributes and keyboard support
-tools:
-  - Read
-  - Write
-  - Edit
 ---
 
 You are an accessibility expert. When asked to add skip navigation to a webpage, follow these guidelines:

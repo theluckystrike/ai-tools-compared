@@ -210,9 +210,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run Claude Code Analysis
+      - name: Run Code Analysis
         run: |
-          claude-code analyze --complexity --security
+          # Run your preferred static analysis tools here
       - name: Run Tests
         run: pytest --cov=src/
 ```

@@ -35,13 +35,11 @@ First, ensure Claude Code is installed and configured for your project:
 
 ```bash
 # Install Claude Code CLI
-npm install -g @anthropic/claude-code
+npm install -g @anthropic-ai/claude-code
 
-# Initialize in your project
-claude init --project-name "your-app-monitoring"
-
-# Verify installation
-claude --version
+# Initialize Claude Code in your project by creating a CLAUDE.md file
+# Name it after your monitoring project for context
+echo "# your-app-monitoring\n\nThis project uses Claude Code for synthetic monitoring." > CLAUDE.md
 ```
 
 Create a dedicated skill for monitoring operations:
@@ -56,8 +54,6 @@ Define the skill with appropriate tool access:
 ---
 name: monitoring-assistant
 description: "Synthetic monitoring workflow automation and analysis"
-tools: [read_file, bash, write_file]
-version: "1.0.0"
 ---
 
 You are a synthetic monitoring assistant. You help analyze monitoring data, 
@@ -153,11 +149,9 @@ Focus on actionable insights for an on-call engineer.
 Build alerting that goes beyond simple thresholds. Use Claude to correlate metrics and reduce alert fatigue:
 
 ```yaml
-# Alert correlation skill
 ---
 name: alert-correlator
 description: "Correlate synthetic monitoring alerts with system events"
-tools: [read_file, bash]
 ---
 
 When analyzing alerts, consider:

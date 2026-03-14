@@ -28,8 +28,8 @@ The real productivity gains come from treating Claude Code as a capable colleagu
 One of the most time-consuming tasks for senior engineers is maintaining code quality across a team. The **tdd** skill helps enforce test-driven development practices by generating test cases alongside implementation code.
 
 ```bash
-# Using the tdd skill to generate tests alongside code
-claude-code invoke tdd --mode generate-first --coverage-target 85
+# Using the tdd skill: copy tdd.md to .claude/ directory, then invoke /tdd
+# Ask Claude to generate tests first with 85% coverage target
 ```
 
 For documentation, the **docx** skill enables automated generation of technical specifications and API documentation. Instead of manually updating README files, you can generate comprehensive documentation from code comments and type definitions.
@@ -48,9 +48,12 @@ context = memory.search("authentication implementation decisions")
 
 Large-scale refactoring is where Claude Code truly shines for senior engineers. When migrating between frameworks or updating architectural patterns, you need consistent changes across hundreds of files.
 
-```javascript
-// claude-md example for specifying refactoring scope
-claude-code --scope ./src/components --pattern legacy-hooks --target hooks-rust
+```markdown
+<!-- In your CLAUDE.md, specify refactoring scope and instructions -->
+# Refactoring Context
+- Scope: ./src/components
+- Pattern to replace: legacy-hooks
+- Target pattern: hooks-rust
 ```
 
 The **frontend-design** skill accelerates UI component refactoring by understanding design system tokens and automatically applying consistent styling patterns across your application.
@@ -62,13 +65,16 @@ For backend migrations, combining Claude Code with the **mcp-builder** skill let
 Senior engineers should invest time in creating Claude skills that encode team conventions. The **skill-creator** skill provides templates for building reusable prompts:
 
 ```yaml
-# Custom skill for team code conventions
+---
 name: team-standards
 description: Enforce team coding standards and conventions
-rules:
-  - naming: "camelCase for functions, PascalCase for components"
-  - error-handling: "Always return structured error responses"
-  - testing: "Include unit tests for all new functions"
+---
+
+# Team Standards
+
+- Naming: camelCase for functions, PascalCase for components
+- Error handling: Always return structured error responses
+- Testing: Include unit tests for all new functions
 ```
 
 A well-designed skill can enforce anything from naming conventions to architectural patterns, ensuring consistency without repeated manual review.
@@ -78,10 +84,9 @@ A well-designed skill can enforce anything from naming conventions to architectu
 When tackling complex projects, senior engineers can use Claude Code's subagent capabilities to run parallel tasks:
 
 ```bash
-# Execute multiple tasks simultaneously
-claude-code --parallel \
-  --agents "api-design,database-schema,frontend-component" \
-  --task "Implement user authentication flow"
+# Execute multiple tasks using Claude Code's native multi-agent capabilities
+# Open separate Claude Code sessions for each workstream and coordinate through git branches
+# api-design, database-schema, and frontend-component can be worked in parallel
 ```
 
 The **mcp-server** skill enables integration with external services, allowing your agents to coordinate with issue trackers, CI/CD pipelines, and deployment systems.
@@ -105,9 +110,8 @@ incident_report = pdf.generate_from_template(
 For debugging, Claude Code excels at pattern recognition across large codebases. Instead of manually tracing through unfamiliar code, you can ask it to identify potential issues:
 
 ```bash
-# Analyze codebase for common issues
-claude-code analyze --scope ./backend \
-  --checks "memory-leaks,race-conditions,sql-injection"
+# Ask Claude Code to analyze the codebase for common issues
+# claude --print "Analyze ./backend for memory leaks, race conditions, and SQL injection"
 ```
 
 ## Best Practices for Senior Engineers

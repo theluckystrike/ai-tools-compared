@@ -29,16 +29,16 @@ These controls prevent runaway processes and help you stay within API rate limit
 
 ## Setting Up Timeout Controls
 
-Claude Code allows you to configure timeout values at multiple levels. The most common approach uses command-line flags when invoking Claude Code:
+Claude Code allows you to configure timeout values at multiple levels. The most common approach uses system-level timeout commands when invoking Claude Code:
 
 ```bash
-claude --max-time 300 "analyze this codebase"
+timeout 300 claude --print "analyze this codebase"
 ```
 
 This example sets a 5-minute (300 seconds) timeout for the entire session. For shorter, more focused tasks:
 
 ```bash
-claude --max-time 60 "fix this bug"
+timeout 60 claude --print "fix this bug"
 ```
 
 ### Implementing Timeout in Your Workflow
@@ -48,7 +48,7 @@ For automated scripts, consider wrapping Claude Code invocations with timeout ha
 ```bash
 #!/bin/bash
 TIMEOUT=120
-claude --max-time $TIMEOUT "review pull request #42" || echo "Timeout reached after $TIMEOUT seconds"
+timeout $TIMEOUT claude --print "review pull request #42" || echo "Timeout reached after $TIMEOUT seconds"
 ```
 
 This pattern ensures your CI/CD pipelines don't hang indefinitely when processing large codebases.
@@ -59,16 +59,16 @@ Token budgets control how much context Claude Code can use and how much it can g
 
 ### Setting Output Tokens
 
-Limit output tokens to prevent overly verbose responses:
+Limit output tokens to prevent overly verbose responses by including the constraint in your prompt:
 
 ```bash
-claude --max-tokens 2000 "explain this function"
+claude --print "explain this function in under 2000 tokens"
 ```
 
-For quick queries, use smaller limits:
+For quick queries, ask for brevity directly:
 
 ```bash
-claude --max-tokens 500 "what does this line do?"
+claude --print "briefly, what does this line do?"
 ```
 
 ### Context Window Management
@@ -76,29 +76,28 @@ claude --max-tokens 500 "what does this line do?"
 When working with large codebases, manage context strategically:
 
 1. **File-by-file analysis**: Process files individually rather than dumping entire directories
-2. **Selective context**: Use the `--context` flag to specify relevant files
+2. **Selective context**: Mention specific files in your prompt to focus Claude
 3. **Chunked processing**: Break large tasks into smaller, manageable chunks
 
 ```bash
-# Analyze specific files only
-claude --context src/main.py:utils/helper.py "compare these two implementations"
+# Analyze specific files only by referencing them in the prompt
+claude --print "compare the implementations in src/main.py and utils/helper.py"
 ```
 
 ## Practical Workflow Examples
 
 ### Example 1: Code Review with Budget Constraints
 
-Here's a practical workflow for reviewing code with time and token budgets:
+Here's a practical workflow for reviewing code with time constraints:
 
 ```bash
 #!/bin/bash
 # code-review.sh
 
 MAX_TIME=180  # 3 minutes
-MAX_TOKENS=3000
 
 echo "Starting code review..."
-claude --max-time $MAX_TIME --max-tokens $MAX_TOKENS \
+timeout $MAX_TIME claude --print \
   "Review the changes in this diff for bugs and improvements"
 
 echo "Review complete within budget constraints"
@@ -120,7 +119,7 @@ TASKS=(
 
 for task in "${TASKS[@]}"; do
   echo "Processing: $task"
-  claude --max-time 60 "$task"
+  timeout 60 claude --print "$task"
   
   # Verify changes
   if [ $? -eq 0 ]; then
@@ -145,7 +144,7 @@ DELAY=10  # seconds between requests
 
 for file in "${FILES[@]}"; do
   echo "Processing $file..."
-  claude --max-time 30 "add docstrings to $file"
+  timeout 30 claude --print "add docstrings to $file"
   sleep $DELAY
 done
 ```
@@ -161,7 +160,7 @@ Begin with generous budgets and tighten them based on actual usage patterns. Mon
 Design your workflows to handle budget exhaustion gracefully:
 
 ```bash
-claude --max-time 60 "summarize this file" || claude --max-tokens 200 "brief summary only"
+timeout 60 claude --print "summarize this file" || claude --print "very brief summary only, one sentence"
 ```
 
 ### 3. Use Persistent Sessions Wisely
@@ -169,8 +168,8 @@ claude --max-time 60 "summarize this file" || claude --max-tokens 200 "brief sum
 For complex tasks requiring multiple interactions, use persistent sessions but set appropriate limits:
 
 ```bash
-# Start session with explicit boundaries
-claude --max-time 600 --max-tokens 10000 "implement feature X"
+# Start session with explicit task description
+timeout 600 claude --print "implement feature X"
 ```
 
 ### 4. Monitor and Optimize
@@ -186,17 +185,13 @@ Track your usage patterns:
 For fine-grained control, combine multiple constraints:
 
 ```bash
-claude \
-  --max-time 300 \
-  --max-tokens 5000 \
-  --context file1.py:file2.py:file3.py \
-  "implement the new feature"
+timeout 300 claude --print \
+  "implement the new feature, referencing file1.py, file2.py, and file3.py"
 ```
 
 This ensures:
-- Maximum 5 minutes of execution time
-- Maximum 5000 tokens in responses
-- Focused context from specified files only
+- Maximum 5 minutes of execution time via the `timeout` command
+- Focused context by referencing specific files in the prompt
 
 ## Troubleshooting Common Issues
 
