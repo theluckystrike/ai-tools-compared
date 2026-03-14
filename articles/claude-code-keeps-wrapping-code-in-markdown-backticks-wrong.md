@@ -10,7 +10,9 @@ author: "Claude Skills Guide"
 permalink: /claude-code-keeps-wrapping-code-in-markdown-backticks-wrong/
 reviewed: true
 score: 7
----{% raw %}
+---
+
+{% raw %}
 
 
 

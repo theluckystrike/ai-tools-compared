@@ -66,7 +66,7 @@ jobs:
 ```
 {% endraw %}
 
-The fix requires proper expression syntax: `${{ matrix.os == "ubuntu-latest" }}`.
+The fix requires proper expression syntax using double curly braces with the full expression: `matrix.os == "ubuntu-latest"` (inside GitHub Actions expression syntax).
 
 ### 3. Runner Environment Issues
 
