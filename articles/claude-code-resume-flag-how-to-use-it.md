@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Resume Flag: How to Use It"
 description: "Learn how to use Claude Code's --resume flag to continue interrupted sessions, recover work in progress, and manage long-running tasks effectively."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-resume-flag-how-to-use-it/
+reviewed: true
+score: 7
 categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Resume Flag: How to Use It
 
@@ -57,7 +62,7 @@ Claude will load the previous context and continue from where you stopped, revie
 
 ### Continuing Debugging Sessions
 
-When debugging complex issues, you might need to step away after identifying the root cause but before implementing the fix. The resume flag works seamlessly with debugging workflows:
+When debugging complex issues, you might need to step away after identifying the root cause but before implementing the fix. The resume flag works smoothly with debugging workflows:
 
 ```bash
 # Start debugging
@@ -161,7 +166,7 @@ If `--resume` doesn't work as expected:
 
 When you resume a session, Claude automatically reloads any active skills. If you were using the frontend-design skill before interrupting, it will be available when you resume. Similarly, skills like pdf, xlsx, or tdd will be restored to their previous state.
 
-The resume flag preserves skill context, including any custom instructions or configuration you had active. This means your domain-specific workflows continue seamlessly.
+The resume flag preserves skill context, including any custom instructions or configuration you had active. This means your domain-specific workflows continue smoothly.
 
 ## Summary
 

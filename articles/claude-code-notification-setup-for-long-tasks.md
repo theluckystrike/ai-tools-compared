@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Notification Setup for Long Tasks"
 description: "Learn how to configure notifications in Claude Code to stay informed during long-running operations. Practical examples and code snippets for developers."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-notification-setup-for-long-tasks/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Long-running tasks are a common challenge when working with AI-assisted development. Whether you're refactoring a large codebase, generating documentation across multiple files, or running extensive test suites, knowing when your task completes—without constantly monitoring the terminal—improves your workflow significantly.

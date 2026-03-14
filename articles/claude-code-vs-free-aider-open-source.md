@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code vs Free Aider Open Source: Which One Should."
 description: "A comprehensive comparison between Claude Code with its powerful skills system and free Aider open source, focusing on features, capabilities, and."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-vs-free-aider-open-source/
 categories: [comparisons]
 tags: [claude-code, claude-skills, aider, open-source]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
