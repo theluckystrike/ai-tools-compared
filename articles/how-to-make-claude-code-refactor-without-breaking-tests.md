@@ -209,7 +209,7 @@ Create a refactoring summary document that includes:
 - What was changed
 - Why it was changed
 - Tests that verify the changes
-- Any gotchas or注意事项
+- Any gotchas or important notes
 ```
 
 This documentation helps future maintainers understand the refactoring decisions and provides context for future changes.

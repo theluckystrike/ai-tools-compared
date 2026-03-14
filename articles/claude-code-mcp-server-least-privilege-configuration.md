@@ -128,7 +128,7 @@ When working on test-driven development with the `tdd` skill, your MCP servers m
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-github"],
       "env": {
-        "GITHUB_TOKEN": "${短期_TOKEN}"
+        "GITHUB_TOKEN": "${SHORT_LIVED_TOKEN}"
       }
     }
   }

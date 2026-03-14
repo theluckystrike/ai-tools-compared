@@ -118,7 +118,7 @@ Second prompt: "Now generate the API reference section in Spanish.
 Document all exported functions with their parameters and return types."
 ```
 
-This分段 approach prevents context overflow for large codebases.
+This segmented approach prevents context overflow for large codebases.
 
 ## API Documentation in Spanish
 
