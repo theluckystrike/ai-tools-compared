@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Fixing Claude Code npm install Errors in Skill Workflows"
-description: "Troubleshooting and resolving npm install failures when running Claude skills. Practical solutions for developers working with the get_skill function."
+description: "Troubleshooting and resolving npm install failures when running Claude skills. Practical solutions for Python environment issues in skill workflows."
 date: 2026-03-14
 categories: [troubleshooting]
 tags: [claude-code, claude-skills, npm, node, troubleshooting]
@@ -17,9 +17,9 @@ permalink: /claude-code-error-npm-install-fails-in-skill-workflow/
 
 ## Understanding the Error
 
-The npm install fails in skill workflow error typically occurs when a Claude skill attempts to set up its Python environment but encounters issues with package installation. [Skills like `pdf`, `pptx`, `docx`, `xlsx`](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), `canvas-design`, and `algorithmic-art` all require specific Python packages to function properly.
+The npm install fails in skill workflow error typically occurs when a Claude skill attempts to set up its Python environment but encounters issues with package installation. [Skills like `pdf`, `pptx`, `docx`, `xlsx`](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), and `canvas-design` all require specific Python packages to function properly.
 
-When Claude tries to load a skill using `get_skill(skill_name)`, it first checks for a compatible Python environment. If packages are missing or incompatible, the operation fails with an npm-related error message, even though the actual problem is Python package management.
+When Claude invokes a skill, it first checks for a compatible Python environment. If packages are missing or incompatible, the operation fails with an npm-related error message, even though the actual problem is Python package management.
 
 ## Common Causes
 
@@ -56,7 +56,7 @@ After installation, restart your Claude session and attempt to load the skill ag
 For skills requiring specific configurations, create the virtual environment before loading the skill:
 
 ```bash
-cd /Users/mike/zovo-workspaces/minimax-a13
+cd ~/your-project
 uv venv
 uv pip install pypdf python-pptx python-docx openpyxl pillow
 ```
@@ -72,13 +72,13 @@ Use the pdf skill to extract text from document.pdf
 If encountering permission denied errors, check the ownership of your workspace directory:
 
 ```bash
-ls -la /Users/mike/zovo-workspaces/minimax-a13
+ls -la ~/your-project
 ```
 
 You may need to adjust permissions or run:
 
 ```bash
-sudo chown -R $(whoami) /Users/mike/zovo-workspaces/minimax-a13
+sudo chown -R $(whoami) ~/your-project
 ```
 
 ## Skill-Specific Requirements
@@ -91,11 +91,11 @@ The `pdf` skill requires `pypdf` or `pypdf2` for PDF manipulation. The `docx` sk
 
 ### Design Skills
 
-The `canvas-design` skill and `algorithmic-art` skill both require `pillow` for image processing. The `algorithmic-art` skill also benefits from `numpy` for numerical operations.
+The `canvas-design` skill requires `pillow` for image processing and benefits from `numpy` for numerical operations.
 
 ### Development Skills
 
-[The `tdd` skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) additional Python dependencies, focusing on code generation and structure.
+[The `tdd` skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) has minimal additional Python dependencies, focusing on code generation and structure.
 
 ### Memory Skills
 
@@ -107,7 +107,7 @@ When encountering the error, follow this systematic approach:
 
 **Step 1**: Identify the skill name from the error message or your recent command.
 
-**Step 2**: Check if the skill requires Python packages by reviewing its documentation using `get_skill(skill_name)`.
+**Step 2**: Check if the skill requires Python packages by reviewing its skill `.md` file in `~/.claude/skills/`.
 
 **Step 3**: Verify Python is installed on your system:
 
@@ -124,13 +124,13 @@ which uv
 **Step 5**: Create or verify your virtual environment exists:
 
 ```bash
-ls -la /Users/mike/zovo-workspaces/minimax-a13/.venv
+ls -la ~/your-project/.venv
 ```
 
 **Step 6**: Install required packages manually if needed:
 
 ```bash
-cd /Users/mike/zovo-workspaces/minimax-a13
+cd ~/your-project
 uv pip install <package-name>
 ```
 
@@ -151,12 +151,12 @@ Create a consistent setup process for all skill workflows:
 When working with multiple skills that require Python packages, create a comprehensive setup:
 
 ```bash
-cd /Users/mike/zovo-workspaces/minimax-a13
+cd ~/your-project
 uv venv
 uv pip install pypdf python-pptx python-docx openpyxl pillow numpy
 ```
 
-This single setup enables `pdf`, `pptx`, `docx`, `xlsx`, `canvas-design`, and `algorithmic-art` skills to function properly.
+This single setup enables `pdf`, `pptx`, `docx`, `xlsx`, and `canvas-design` skills to function properly.
 
 ## Conclusion
 

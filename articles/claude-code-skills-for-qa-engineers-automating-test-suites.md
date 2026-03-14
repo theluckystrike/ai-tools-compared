@@ -91,22 +91,24 @@ Claude Code skills integrate with continuous integration systems to enhance auto
 - **Release verification**: Run comprehensive regression suites before deployment
 
 ```yaml
-# Example GitHub Actions workflow with Claude skill integration
-name: Test Suite Enhancement
+# Example GitHub Actions workflow that runs tests
+name: Test Suite
 on: [push, pull_request]
 
 jobs:
-  claude-test-automation:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Generate additional tests
-        run: |
-          /skill-name tdd --generate --target ./src
+      - name: Install dependencies
+        run: npm ci
       - name: Run test suite
         run: npm test -- --coverage
-      - name: Report results
-        run: /skill-name supermemory --record ./coverage
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/
 ```
 
 ## Best Practices for QA Engineers
