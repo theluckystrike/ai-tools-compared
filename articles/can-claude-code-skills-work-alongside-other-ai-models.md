@@ -55,26 +55,11 @@ Different AI models excel at different tasks. Claude Code skills help you orches
 
 ### Workflow Composition
 
-Build composed workflows where multiple AI tools contribute:
+Build composed workflows where multiple AI tools contribute. An example sequence:
 
-```yaml
-# Example: Multi-step workflow
-steps:
-  - name: "Extract requirements"
-    tool: "Claude /pdf"
-    input: "./requirements.docx"
-    output: "requirements.md"
-  
-  - name: "Generate code"
-    tool: "Cursor"
-    input: "requirements.md"
-    output: "./src/"
-  
-  - name: "Generate tests"
-    tool: "Claude /tdd"
-    input: "./src/"
-    output: "./tests/"
-```
+1. **Extract requirements** — In Claude Code, invoke `/pdf` with `requirements.docx` to produce `requirements.md`
+2. **Generate code** — Use Cursor or another IDE AI to implement from `requirements.md`
+3. **Generate tests** — In Claude Code, invoke `/tdd` against `./src/` to generate test coverage
 
 ## Real-World Examples
 
