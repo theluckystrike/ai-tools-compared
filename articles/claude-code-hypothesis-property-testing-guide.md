@@ -3,8 +3,12 @@ layout: default
 title: "Claude Code Hypothesis Property Testing Guide"
 description: "Learn how to integrate Hypothesis property-based testing into your Claude Code workflow for robust, automated test generation."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 permalink: /claude-code-hypothesis-property-testing-guide/
+categories: [tutorials]
+tags: [claude-code, claude-skills, hypothesis, property-testing, python, testing]
 ---
 
 # Claude Code Hypothesis Property Testing Guide

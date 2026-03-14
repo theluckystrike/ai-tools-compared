@@ -3,8 +3,12 @@ layout: default
 title: "Claude Code for Dependency Audit Automation"
 description: "Learn how to automate dependency security audits using Claude Code skills. Practical examples for scanning vulnerabilities, generating reports, and integrating with CI/CD pipelines."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /claude-code-for-dependency-audit-automation/
+categories: [tutorials]
+tags: [claude-code, claude-skills, security, dependency-audit, automation]
 ---
 
 # Claude Code for Dependency Audit Automation
@@ -13,7 +17,7 @@ Dependency audits are a critical yet often neglected aspect of software maintena
 
 ## The Challenge with Manual Dependency Auditing
 
-Traditional dependency auditing involves running tools like `npm audit`, `pip audit`, or `bundler-audit`, then manually triaging the results. This approach works for small projects but breaks down as your dependency tree grows. A typical JavaScript application might depend on hundreds of indirect dependencies, each with its own potential vulnerabilities. Manually reviewing each finding, checking false positives, and determining remediation优先级 becomes a full-time task.
+Traditional dependency auditing involves running tools like `npm audit`, `pip audit`, or `bundler-audit`, then manually triaging the results. This approach works for small projects but breaks down as your dependency tree grows. A typical JavaScript application might depend on hundreds of indirect dependencies, each with its own potential vulnerabilities. Manually reviewing each finding, checking false positives, and determining remediationpriority becomes a full-time task.
 
 The real problem emerges when you need to track audit results over time, correlate vulnerabilities with specific code paths, or generate compliance reports for stakeholders. Spreadsheet-based tracking quickly becomes stale, and CI pipeline failures for non-critical vulnerabilities create alert fatigue that leads teams to ignore important security findings.
 
@@ -113,8 +117,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Claude Code Audit
         run: |
-          claude --print "/dep-audit-scanner" >> audit-results.md
-          claude --print "/vulnerability-reporter" >> audit-results.md
+          claude -p "Run the dep-audit-scanner workflow: identify the package manager, run its audit command, parse results, and output a structured vulnerability summary." >> audit-results.md
+          claude -p "Run the vulnerability-reporter workflow: take the audit results from the previous step, enrich each finding with patch status and code path impact, then generate a markdown report." >> audit-results.md
       - name: Post Results
         uses: actions/upload-artifact@v4
         with:

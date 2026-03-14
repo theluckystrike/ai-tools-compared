@@ -4,8 +4,8 @@ title: "Claude Code Cypress Component Testing Guide"
 description: "Learn how to leverage Claude Code for Cypress component testing. Build reliable component tests with AI assistance, test-driven workflows, and practical examples."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, cypress, component-testing, testing, tdd, frontend-development]
-author: theluckystrike
+tags: [claude-code, claude-skills, cypress, component-testing, testing, tdd, frontend-development]
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 permalink: /claude-code-cypress-component-testing-guide/
@@ -49,7 +49,8 @@ Once configured, create a `cypress/support/component.js` file to register the Cy
 
 Claude Code excels at generating test cases for your components. When you need to test a button component, you can prompt Claude with specific testing scenarios. For instance, a button component test might look like:
 
-```javascriptimport { Button } from './Button'
+```javascript
+import { Button } from './Button'
 
 describe('Button Component', () => {
   it('renders with default props', () => {
