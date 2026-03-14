@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Next.js Deployment Optimization"
 description: "Master Next.js deployment optimization with Claude Code. Learn CI/CD strategies, environment configuration, and production-ready deployment workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-nextjs-deployment-optimization/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 {% raw %}
 # Claude Code Next.js Deployment Optimization
 

@@ -1,18 +1,23 @@
 ---
 
+
 layout: default
 title: "Claude Code Docker Multi-Stage Builds Guide"
 description: "Learn how to use Claude Code to generate efficient Docker multi-stage builds. Practical examples, code snippets, and techniques for developers."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-multi-stage-builds-guide/
+reviewed: true
+score: 7
 categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Claude Code Docker Multi-Stage Builds Guide
 
-Docker multi-stage builds have become essential for creating lean, production-ready container images. When combined with Claude Code's AI capabilities, you can generate optimized multi-stage Dockerfiles that reduce image size, improve build times, and follow security best practices. This guide shows you how to leverage Claude Code effectively for Docker multi-stage build workflows.
+Docker multi-stage builds have become essential for creating lean, production-ready container images. When combined with Claude Code's AI capabilities, you can generate optimized multi-stage Dockerfiles that reduce image size, improve build times, and follow security best practices. This guide shows you how to use Claude Code effectively for Docker multi-stage build workflows.
 
 ## Why Multi-Stage Builds Matter
 
@@ -157,7 +162,7 @@ Beyond generating Dockerfiles, Claude Code can help you integrate multi-stage bu
 
 ### Automation with GitHub Actions
 
-Claude Code can generate GitHub Actions workflows that leverage multi-stage builds:
+Claude Code can generate GitHub Actions workflows that use multi-stage builds:
 
 ```yaml
 name: Build and Deploy

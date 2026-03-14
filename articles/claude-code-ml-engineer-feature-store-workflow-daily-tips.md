@@ -1,15 +1,19 @@
 ---
+
 layout: default
 title: "Claude Code for ML Engineer: Feature Store Workflow."
 description: "Master Claude Code for ML feature store development with practical daily workflow tips. Learn to create features, validate data, automate."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-ml-engineer-feature-store-workflow-daily-tips/
 categories: [guides]
-tags: [claude-code, ml-engineering, feature-store, machine-learning]
+tags: [claude-code, ml-engineering, feature-store, machine-learning, claude-skills]
+reviewed: true
+score: 7
 ---
 
-Claude Code transforms how ML engineers build and maintain feature stores. Instead of wrestling with repetitive transformation logic or manually tracking feature dependencies, you can leverage Claude Code's skills and capabilities to automate the heavy lifting. This guide provides practical daily workflow tips that will make your feature store development faster and more reliable.
+
+Claude Code transforms how ML engineers build and maintain feature stores. Instead of wrestling with repetitive transformation logic or manually tracking feature dependencies, you can use Claude Code's skills and capabilities to automate the heavy lifting. This guide provides practical daily workflow tips that will make your feature store development faster and more reliable.
 
 ## Understanding Feature Store Workflows
 

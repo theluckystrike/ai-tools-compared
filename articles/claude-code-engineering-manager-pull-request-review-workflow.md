@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Engineering Manager Pull Request Review Workflow"
 description: "Learn how to leverage Claude Code to streamline your pull request review process as an engineering manager."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-engineering-manager-pull-request-review-workflow/
-categories: [guides]
+reviewed: true
+score: 7
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Mastering Pull Request Reviews with Claude Code: A Guide for Engineering Managers
@@ -202,7 +207,7 @@ Track your review workflow improvements:
 
 Claude Code transforms pull request reviews from a bottleneck into a competitive advantage. By automating initial screening, providing deep architectural analysis, and ensuring consistent quality standards, it frees engineering managers to focus on what matters most—building great products and developing their teams.
 
-The key is implementing a thoughtful three-tier strategy that leverages Claude Code's strengths while preserving human oversight for strategic decisions. Start small, measure your results, and continuously refine your workflow. Your team—and your schedule—will thank you.
+The key is implementing a thoughtful three-tier strategy that uses Claude Code's strengths while preserving human oversight for strategic decisions. Start small, measure your results, and continuously refine your workflow. Your team—and your schedule—will thank you.
 {% endraw %}
 
 ## Related Reading

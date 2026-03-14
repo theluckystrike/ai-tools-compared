@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Frontend Developer Cross Browser Testing Guide"
 description: "A comprehensive guide to using Claude Code for cross-browser testing in frontend development. Learn how to set up, write, and automate browser."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-frontend-developer-cross-browser-testing-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Frontend Developer Cross Browser Testing Guide
 

@@ -1,16 +1,18 @@
 ---
 
+
 layout: default
 title: "Claude Code Kubernetes Logging Stack Guide"
 description: "A practical guide to building a Kubernetes logging stack with Claude Code. Learn how to configure Fluent Bit, Loki, and Grafana while leveraging Claude."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-kubernetes-logging-stack-guide/
 categories: [guides]
 tags: [claude-code, kubernetes, logging, observability, devops, claude-skills]
 reviewed: true
 score: 7
 ---
+
 
 {% raw %}
 
@@ -207,3 +209,4 @@ The skills ecosystem amplifies this workflow. Use the grafana-mcp-server for pro
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

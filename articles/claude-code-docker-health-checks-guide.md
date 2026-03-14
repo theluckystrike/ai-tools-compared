@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Docker Health Checks Guide"
 description: "Learn how to implement Docker health checks for your containerized applications with practical examples and best practices."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-health-checks-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Docker health checks provide a standardized way to monitor the health status of your containers. When you integrate health checks into your Docker workflow, you gain automatic detection of failing services, better orchestration decisions from Docker Compose and Swarm, and improved debugging capabilities. This guide walks you through implementing Docker health checks effectively, with practical examples you can apply to your projects.

@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Hypothesis Property Testing Guide"
 description: "Learn how to leverage Hypothesis for property-based testing in Python with Claude Code. Write smarter tests that catch edge cases automatically."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-hypothesis-property-testing-guide/
 categories: [guides]
-tags: [claude-code, hypothesis, property-testing, python, tdd]
+tags: [claude-code, hypothesis, property-testing, python, tdd, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 

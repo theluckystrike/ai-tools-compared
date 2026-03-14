@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Full Stack Developer Feature Shipping Workflow"
 description: "Master the complete feature shipping workflow with Claude Code as your full stack development partner. From ideation to deployment, learn practical."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-full-stack-developer-feature-shipping-workflow/
-categories: [guides]
+reviewed: true
+score: 7
+categories: [workflows]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Full Stack Developer Feature Shipping Workflow
 

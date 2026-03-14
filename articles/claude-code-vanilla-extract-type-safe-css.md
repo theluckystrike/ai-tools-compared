@@ -1,16 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Vanilla Extract Type Safe CSS"
 description: "Learn how to use Vanilla Extract with TypeScript for type-safe CSS in your Claude Code skills and projects. Practical examples for developers."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-vanilla-extract-type-safe-css/
+reviewed: true
+score: 7
 categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Vanilla Extract Type Safe CSS
 
-Type-safe CSS has become essential for maintainable frontend development, especially when building complex Claude skills that require reliable styling. Vanilla Extract provides a zero-runtime approach to CSS-in-TypeScript that integrates seamlessly with modern build tools and Claude Code workflows.
+Type-safe CSS has become essential for maintainable frontend development, especially when building complex Claude skills that require reliable styling. Vanilla Extract provides a zero-runtime approach to CSS-in-TypeScript that integrates smoothly with modern build tools and Claude Code workflows.
 
 ## What Makes Vanilla Extract Different
 
