@@ -1,7 +1,13 @@
 ---
 title: "Claude Code Error: Exceeds Max Tokens in Single Response Fix"
-description: "Learn how to fix the 'exceeds max tokens in single response' error in Claude Code. Step-by-step solutions for handling large responses and optimizing token usage."
+description: "Understanding and resolving the 'exceeds max tokens' error in Claude Code. Practical solutions for developers handling large outputs, code generation, and complex responses."
+date: 2026-03-14
+author: "Claude Skills Guide"
 permalink: /claude-code-error-exceeds-max-tokens-in-single-response-fix/
+reviewed: true
+score: 7
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
 
 {% raw %}
