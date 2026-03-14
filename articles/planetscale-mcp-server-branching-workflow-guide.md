@@ -10,7 +10,6 @@ reviewed: true
 score: 7
 permalink: /planetscale-mcp-server-branching-workflow-guide/
 ---
-{% raw %}
 
 
 
@@ -227,4 +226,3 @@ The patterns in this guide work particularly well when combined with other Claud
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

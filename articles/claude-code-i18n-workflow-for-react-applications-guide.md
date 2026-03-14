@@ -10,7 +10,6 @@ reviewed: true
 score: 8
 permalink: /claude-code-i18n-workflow-for-react-applications-guide/
 ---
-{% raw %}
 
 
 
@@ -169,4 +168,3 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 - [Claude Code International Date Format Handling Workflow](/claude-skills-guide/claude-code-international-date-format-handling-workflow/)
 - [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
-{% endraw %}

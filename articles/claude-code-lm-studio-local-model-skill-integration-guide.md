@@ -10,7 +10,6 @@ reviewed: true
 score: 8
 permalink: /claude-code-lm-studio-local-model-skill-integration-guide/
 ---
-{% raw %}
 
 
 
@@ -140,4 +139,3 @@ The integration requires initial configuration but pays dividends in flexibility
 - [MCP Servers vs Claude Skills: What Is the Difference?](/claude-skills-guide/mcp-servers-vs-claude-skills-what-is-the-difference/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

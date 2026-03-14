@@ -10,7 +10,6 @@ reviewed: true
 score: 8
 permalink: /how-do-i-share-claude-skills-across-multiple-projects/
 ---
-{% raw %}
 
 
 
@@ -166,4 +165,3 @@ Start small with your most valuable skills, then expand as you identify more opp
 - [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — Learn the foundational skill concepts before setting up cross-project sharing infrastructure.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
