@@ -2,10 +2,11 @@
 
 layout: default
 title: "AI Coding Tools for Open Source Contributions"
-description: "Discover how AI coding tools streamline open source contributions. Learn practical workflows for finding issues, writing patches, and maintaining OSS projects with Claude Code skills."
+description: "Discover how AI coding tools streamline open source contributions. Learn practical workflows for finding issues, writing patches, and maintaining OSS."
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-coding-tools-for-open-source-contributions/
+categories: [guides]
 ---
 
 # AI Coding Tools for Open Source Contributions
@@ -89,5 +90,12 @@ AI coding tools have genuinely lowered the barrier to open source participation.
 The key is treating AI as a collaborative partner rather than a magic solution. Use AI to handle mechanical aspects—understanding code, checking conventions, drafting tests—while applying your domain expertise to solve actual problems. This combination produces contributions that maintainers appreciate and that help you grow as a developer.
 
 Start with a project you use daily. Most developers interact with open source tools constantly; consider contributing back to make them even better.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

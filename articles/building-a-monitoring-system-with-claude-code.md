@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Building a Monitoring System with Claude Code"
-description: "Learn how to build a comprehensive monitoring system using Claude Code skills. This guide covers log aggregation, health checks, alerting, and integration with popular tools."
+description: "Learn how to build a comprehensive monitoring system using Claude Code skills. This guide covers log aggregation, health checks, alerting, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /building-a-monitoring-system-with-claude-code/
@@ -153,5 +153,12 @@ Finally, test your monitoring system itself. Use the tdd skill to create tests t
 ## Conclusion
 
 Building a monitoring system with Claude Code leverages the skill architecture to create flexible, automated observability for your applications. Start with simple log aggregation and health checks, then progressively add alerting and automation capabilities. The combination of supermemory for historical context, tdd for testing, pdf for reporting, and frontend-design for visualization provides a comprehensive toolkit for monitoring that adapts to your specific needs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

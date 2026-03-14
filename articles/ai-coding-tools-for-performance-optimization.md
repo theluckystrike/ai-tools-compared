@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "AI Coding Tools for Performance Optimization: A Practical Guide"
-description: "Discover how AI coding tools can help you identify bottlenecks, optimize algorithms, and write faster code. Real examples using Claude skills and other AI assistants."
+title: "AI Coding Tools for Performance Optimization: A."
+description: "Discover how AI coding tools can help you identify bottlenecks, optimize algorithms, and write faster code. Real examples using Claude skills and other."
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-coding-tools-for-performance-optimization/
+categories: [guides]
 ---
 
 # AI Coding Tools for Performance Optimization
@@ -178,5 +179,12 @@ Different AI coding tools excel at different optimization tasks:
 Start with AI for initial analysis and suggestion generation, then validate with targeted profiling. This combination gives you speed and accuracy.
 
 Performance optimization is iterative. Use AI to identify opportunities, measure the impact, and track improvements over time. The tools handle the heavy lifting of pattern recognition and code generation, while you provide context and validate results.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
