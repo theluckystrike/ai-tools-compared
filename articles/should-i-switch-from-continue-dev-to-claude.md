@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Should I Switch From Continue Dev to Claude? A Practical Guide"
-description: "Thinking about moving from Continue.dev to Claude Code? This comprehensive guide covers the key differences, unique Claude Code features, and practical examples to help you make an informed decision."
+title: "Should I Switch From Continue Dev to Claude? A Practical."
+description: "Thinking about moving from Continue.dev to Claude Code? This comprehensive guide covers the key differences, unique Claude Code features, and practical."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, continue-dev, ai-coding-tools, developer-tools, comparison, claude-skills]
@@ -110,3 +110,10 @@ The choice between Continue.dev and Claude Code ultimately depends on your workf
 However, if your work centers on quick IDE-based assistance and smaller tasks, Continue.dev remains a capable tool. The good news is that these tools can complement each other—many developers use both for different aspects of their work.
 
 If you're ready to try Claude Code's advanced capabilities, start with a complex task where you'll clearly see the difference. The skills system alone—unique to Claude Code—can transform how you approach repetitive development patterns. For developers working on substantial projects, the switch often proves transformative.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
