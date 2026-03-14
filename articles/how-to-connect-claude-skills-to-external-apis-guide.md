@@ -12,11 +12,11 @@ score: 8
 
 # How to Connect Claude Skills to External APIs Guide
 
-Claude Code skills become significantly more powerful when they can call external APIs to fetch real data, trigger actions, or store results. Whether you are extending the `tdd` skill to pull test results from a CI API, using `supermemory` to store context in an external memory service, or having `pdf` push extracted data to a CRM — the pattern for connecting Claude skills to external APIs follows consistent principles. This guide covers how to connect Claude skills to external APIs with practical code and production-ready patterns.
+[Claude Code skills become significantly more powerful when they can call external APIs](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) to fetch real data, trigger actions, or store results. Whether you are extending the `tdd` skill to pull test results from a CI API, using `supermemory` to store context in an external memory service, or having `pdf` push extracted data to a CRM — the pattern for connecting Claude skills to external APIs follows consistent principles. This guide covers how to connect Claude skills to external APIs with practical code and production-ready patterns.
 
 ## The Core Pattern: Tool Use
 
-Claude communicates with external APIs through **tool use** (also called function calling). You define tools with JSON Schema, Claude decides when to call them based on context, the results come back to Claude, and it continues reasoning. This loop is the foundation of all external API integration.
+[Claude communicates with external APIs through tool use (also called function calling)](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) You define tools with JSON Schema, Claude decides when to call them based on context, the results come back to Claude, and it continues reasoning. This loop is the foundation of all external API integration.
 
 ```
 User → Claude (with skill system prompt)

@@ -16,9 +16,9 @@ Managing the context window effectively is one of the most critical skills for d
 
 ## Understanding Context Window Basics
 
-The context window represents the maximum amount of text Claude can process in a single conversation. This includes your prompts, the AI's responses, and any files or documents you upload. When you exceed this limit, you lose earlier context, which can break continuity and lead to fragmented results.
+[The context window represents the maximum amount of text Claude can process in a single conversation](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) This includes your prompts, the AI's responses, and any files or documents you upload. When you exceed this limit, you lose earlier context, which can break continuity and lead to fragmented results.
 
-For example, when working with the **supermemory** skill to manage personal knowledge bases, you'll quickly discover that proper context segmentation prevents information loss across sessions. The skill works best when you provide clear boundaries around what you want remembered versus what should remain transient.
+For example, when working with the **supermemory** skill to manage personal knowledge bases, you'll quickly discover that [proper context segmentation prevents information loss across sessions](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/). The skill works best when you provide clear boundaries around what you want remembered versus what should remain transient.
 
 ## Practical Strategies for Context Optimization
 

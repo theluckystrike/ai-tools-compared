@@ -12,11 +12,11 @@ score: 7
 
 # Claude Skill Permissions: What Can Skills Access?
 
-When you create or use a Claude skill, understanding what that skill can and cannot access is critical for security, reliability, and predictable behavior. This guide breaks down the permission model for Claude skills, showing developers and power users exactly what capabilities are available and how to control them.
+[When you create or use a Claude skill, understanding what that skill can and cannot access is critical](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) for security, reliability, and predictable behavior. This guide breaks down the permission model for Claude skills, showing developers and power users exactly what capabilities are available and how to control them.
 
 ## The Permission Model Overview
 
-Claude skills operate within a defined permission boundary. This boundary determines three key things:
+[Claude skills operate within a defined permission boundary](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This boundary determines three key things:
 
 1. **Tool access**: Which tools the skill can call (read_file, write_file, bash, etc.)
 2. **Resource access**: Which files, directories, and external services the skill can interact with
