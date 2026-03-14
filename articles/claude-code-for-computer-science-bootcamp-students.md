@@ -225,3 +225,11 @@ Bootcamp students sometimes rely too heavily on AI assistance. Balance is key:
 Claude Code is more than a coding tool—it's a learning companion that can accelerate your bootcamp journey when used thoughtfully. By establishing good practices early, building reusable skills, and maintaining focus on understanding over output, you'll emerge from your bootcamp with both completed projects and genuine developer skills.
 
 The investment in learning Claude Code pays dividends throughout your career. Start building your skill library today, and you'll have a powerful, personalized development assistant by the time you enter the job market.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

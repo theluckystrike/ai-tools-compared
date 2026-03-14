@@ -213,3 +213,11 @@ cfml: Parameterize user query in userService.getActive()
 Claude Code transforms ColdFusion modernization from an error-prone manual effort into an automated, measurable process. By leveraging Claude's understanding of both legacy CFML and modern architectures, teams can safely migrate decades of business logic while reducing risk and accelerating timeline. The key lies in systematic application: analyze comprehensively, refactor methodically, test continuously, and deploy confidently.
 
 Start your modernization journey today by installing the cold-fusion-analyzer skill and running your first inventory scan. Your legacy codebase contains years of business value—Claude helps you unlock it for the next generation of application architecture.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

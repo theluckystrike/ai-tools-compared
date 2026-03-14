@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Cloudflare D1 Edge Database Workflow Guide"
-description: "A comprehensive guide to using Cloudflare D1 edge database with Claude Code. Learn setup, integration patterns, and practical workflows for building globally distributed applications."
+description: "A comprehensive guide to using Cloudflare D1 edge database with Claude Code. Learn setup, integration patterns, and practical workflows for building."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, cloudflare, d1, edge-database, serverless]
@@ -181,3 +181,11 @@ When encountering "database not found" errors, verify your binding configuration
 Cloudflare D1 combined with Claude Code provides a powerful workflow for building globally distributed applications. Claude Code accelerates development by generating database code, writing migrations, and helping troubleshoot issues. The key is establishing clear patterns for schema management, query development, and error handling that Claude Code can consistently apply across your project.
 
 Start with a simple table, practice the basic workflows, and gradually incorporate more advanced patterns as your application grows. Claude Code adapts to your project's conventions and can learn from your existing code to provide increasingly tailored assistance.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

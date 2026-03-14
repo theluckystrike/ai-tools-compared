@@ -183,3 +183,11 @@ Parse these iOS device logs and find any Capacitor or JavaScript errors: [paste 
 
 Claude Code transforms Capacitor debugging from a frustrating multi-platform challenge into a structured, systematic process. By leveraging its ability to work across your entire project—including native iOS and Android configurations—you can trace issues through every layer of your hybrid application. The key is providing comprehensive context: error messages, platform information, code snippets, and reproduction steps. Combine this with skills like **webapp-testing** for automated browser testing and **bash** for build verification, and you have a powerful debugging toolkit for any Capacitor project.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

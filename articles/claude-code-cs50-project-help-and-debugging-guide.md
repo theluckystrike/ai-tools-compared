@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code CS50 Project Help and Debugging Guide"
 description: "A comprehensive guide to using Claude Code for CS50 projects, featuring debugging techniques, code analysis, and practical examples to help you succeed."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /claude-code-cs50-project-help-and-debugging-guide/
 ---
@@ -222,3 +223,11 @@ Remember: the goal isn't to avoid errors—it's to learn from them. With Claude 
 
 Start small, ask questions, and embrace the debugging process. Your future self will thank you when you're building more complex projects with confidence.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

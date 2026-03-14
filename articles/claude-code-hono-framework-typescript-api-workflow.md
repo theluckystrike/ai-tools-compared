@@ -3,6 +3,7 @@ layout: default
 title: "Building TypeScript APIs with Claude Code and Hono Framework"
 description: "Learn how to leverage Claude Code CLI to build efficient TypeScript APIs using the Hono framework with modern workflow patterns."
 date: 2026-03-14
+categories: [guides]
 author: theluckystrike
 permalink: /claude-code-hono-framework-typescript-api-workflow/
 ---
@@ -258,3 +259,11 @@ As TypeScript continues to dominate web development, the combination of Claude C
 
 Start experimenting today—your next production-ready API is just a prompt away.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

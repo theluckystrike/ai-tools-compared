@@ -1,8 +1,9 @@
 ---
 layout: default
-title: "Mastering Claude Code for Swift iOS Feature Development Workflow"
+title: "Mastering Claude Code for Swift iOS Feature Development."
 description: "Learn how to leverage Claude Code to streamline your Swift iOS development workflow, from project setup to code generation and testing."
 date: 2026-03-14
+categories: [guides]
 author: theluckystrike
 permalink: /claude-code-swift-ios-feature-development-workflow/
 ---
@@ -195,3 +196,11 @@ As you integrate Claude Code into your daily workflow, you'll find it becomes an
 
 Remember, Claude Code is a powerful assistant, but your understanding of iOS fundamentals and design principles remains essential. Use it to amplify your productivity while maintaining control over your application's architecture and quality.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code WCAG 2.1 Compliance Checker Workflow Guide"
 description: "Learn how to use Claude Code to check WCAG 2.1 compliance in your web projects with practical examples and automation tips."
 date: 2026-03-14
+categories: [guides]
 author: theluckystrike
 permalink: /claude-code-wcag-21-compliance-checker-workflow-guide/
 ---
@@ -165,3 +166,11 @@ The most effective accessibility strategy combines:
 
 Claude Code transforms accessibility checking from a burdensome chore into an integrated part of your development workflow. By leveraging its ability to analyze code, explain WCAG requirements, and generate test cases, you can build more accessible websites while maintaining development velocity. Remember that accessibility is an ongoing commitment—use Claude Code regularly, stay current with WCAG updates, and always prioritize genuine usability over mere compliance checkbox.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
