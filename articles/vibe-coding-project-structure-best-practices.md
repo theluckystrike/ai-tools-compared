@@ -1,180 +1,193 @@
 ---
 layout: default
 title: "Vibe Coding Project Structure Best Practices"
-description: "Master vibe coding project structure with proven patterns. Practical directory layouts, file organization strategies, and Claude skill workflows for."
+description: "Master project structure for vibe coding workflows. Learn how to organize your codebase for AI-assisted development, maintain clean architecture, and scale your projects effectively."
 date: 2026-03-14
-categories: [tutorials]
-tags: [claude-code, claude-skills, vibe-coding, project-structure, developer-workflow, best-practices]
-author: "Claude Skills Guide"
-reviewed: true
-score: 8
+categories: [vibe-coding, ai-development, developer-guide]
+tags: [vibe-coding, ai-development, project-structure, claude-code, best-practices, claude-skills]
+author: theluckystrike
 permalink: /vibe-coding-project-structure-best-practices/
+reviewed: false
+score: 0
 ---
 
 # Vibe Coding Project Structure Best Practices
 
-[When you are vibe coding—building software with AI assistance at high speed](/claude-skills-guide/vibe-coding-explained-what-it-is-and-how-it-works/)—the project structure you choose directly impacts your velocity. A well-organized codebase helps Claude understand your architecture, enables faster iterations, and reduces the friction that slows down AI-human collaboration. This guide covers the project structure patterns that experienced vibe coders use to ship faster while maintaining code quality.
+When you embrace vibe coding—building software through natural language prompts to AI assistants—your project structure becomes the communication bridge between you and your AI partner. Unlike traditional development where you write every file yourself, vibe coding requires organizing your codebase so AI tools can navigate, understand, and modify it effectively. A well-structured project accelerates development, reduces confusion, and makes your AI assistant significantly more productive.
 
-## Why Project Structure Matters in Vibe Coding
+## Why Project Structure Matters More in Vibe Coding
 
-In traditional development, you might spend time planning your directory hierarchy. In vibe coding, the AI needs clear signals about where files live, what dependencies connect them, and how components relate to each other. When your structure is ambiguous, Claude spends cycles guessing rather than writing code.
+In traditional development, you mentally track where every file lives because you created them. With vibe coding, your AI assistant must find its way around your project based on structure hints and file organization. A messy project structure leads to the AI creating redundant code, placing files in wrong locations, or missing existing utilities that could be reused.
 
-[A good vibe coding structure follows three principles](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/): **convention over configuration**, **explicit over implicit**, and **sensible defaults**. Developers who master these patterns report faster iteration cycles and fewer context-switching errors when collaborating with AI assistants.
+The **supermemory** skill can help you maintain context about your project's architecture across sessions, but even better is designing your structure to be self-documenting from the start.
 
-## Recommended Directory Layouts
+## Core Principles for Vibe-Coding Friendly Structures
 
-For most web projects, use this structure as your starting point:
+### Keep Flat Directories When Possible
+
+Deep nesting creates confusion for AI assistants trying to understand your codebase. Instead of `src/features/users/components/forms/validation/`, consider flatter structures like `src/users/forms-validation.ts`. The simpler the path, the easier your AI partner navigates.
+
+```
+my-vibe-project/
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── features/       # Feature-specific code
+│   ├── lib/           # Utilities and helpers
+│   ├── hooks/         # Custom React hooks
+│   ├── services/      # API and external services
+│   └── types/          # TypeScript type definitions
+├── tests/             # Test files
+├── configs/           # Configuration files
+├── scripts/           # Build and deployment scripts
+└── docs/              # Documentation
+```
+
+### Use Clear, Descriptive File Names
+
+File names should communicate purpose at a glance. `utils.ts` tells you nothing, while `date-formatters.ts` immediately signals what that file contains. When prompting your AI assistant, descriptive names help it find the right files without extensive context.
+
+### Separate Concerns Explicitly
+
+Vibe coding works best when you separate business logic from presentation, configuration from code, and tests from implementation. This separation lets you prompt your AI more precisely: "Add a new button to the login form" (presentation) versus "Update the authentication logic to support 2FA" (business logic).
+
+## Organizing by Feature Over Layer
+
+Instead of organizing by file type (all controllers together, all models together), consider organizing by feature. This approach groups related code, making it easier for your AI to understand complete feature contexts.
 
 ```
 src/
-├── components/      # Reusable UI components
-├── pages/           # Route/page definitions
-├── lib/             # Utility functions and helpers
-├── hooks/           # Custom React hooks or similar
-├── services/        # API clients and external integrations
-├── types/           # TypeScript definitions
-└── styles/          # Global styles and theming
-
-tests/
-├── unit/            # Component and function tests
-├── integration/     # API and service tests
-└── e2e/             # End-to-end test scenarios
-
-scripts/             # Build and deployment utilities
-config/              # Environment and tooling configs
-docs/                # Project documentation
+├── features/
+│   ├── auth/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── types/
+│   │   └── auth.ts          # Main auth logic
+│   ├── payments/
+│   │   ├── components/
+│   │   ├── services/
+│   │   ├── types/
+│   │   └── payments.ts
+│   └── dashboard/
+│       ├── components/
+│       ├── services/
+│       ├── types/
+│       └── dashboard.ts
+├── shared/                     # Code used across features
+│   ├── components/
+│   ├── hooks/
+│   └── utils/
+└── app/                        # Framework-specific setup
 ```
 
-This layout mirrors what the **frontend-design** skill expects when generating component code. When you invoke `/frontend-design` in Claude Code, it reads from your `components/` and `pages/` directories to understand existing patterns and avoid duplication.
+This structure shines when working with AI because you can say "add a subscription management feature" and the AI knows to create a new `features/subscriptions/` directory with all necessary subdirectories.
 
-## File Naming Conventions That Speed Up Development
+## Configuration Files: The Project DNA
 
-Use lowercase with hyphens for file names: `user-profile.tsx` rather than `UserProfile.tsx`. This convention works across operating systems and connects cleanly with build tools.
+Your configuration files tell your AI assistant critical information about your project. Keep them well-organized and documented:
 
-For components, use the pattern `{component-name}.{extension}` for the main file and `{component-name}.test.{extension}` for unit tests sitting alongside. This colocation makes it easier for Claude to find and update related files in one pass.
-
-When working with the **tdd** skill, it automatically detects test files in the same directory as their targets, allowing you to write tests first and let Claude generate the implementation.
-
-## Organizing Skills and Prompts
-
-If you maintain a library of custom Claude prompts or skills, structure them for discoverability:
-
-```
-.claude/
-├── skills/
-│   ├── frontend-design.md
-│   ├── tdd.md
-│   ├── pdf.md
-│   └── supermemory.md
-├── prompts/
-│   ├── code-review.md
-│   ├── architecture-patterns.md
-│   └── security-audit.md
-└── context/
-    ├── project-overview.md
-    └── team-conventions.md
+```json
+{
+  "project": {
+    "name": "my-vibe-app",
+    "framework": "Next.js",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS"
+  },
+  "ai": {
+    "preferredPatterns": ["feature-folders", "hooks-for-logic"],
+    "avoidPatterns": ["mixins", "dynamic-imports"]
+  }
+}
 ```
 
-The **supermemory** skill integrates with this structure, reading from your `.claude/context/` directory to maintain project memory across sessions. By organizing context files clearly, you ensure Claude retains important architectural decisions without repeated explanation.
+Consider adding a `CLAUDE.md` file at your project root that explicitly documents:
+- Project architecture decisions
+- Coding conventions your team follows
+- Files to avoid modifying
+- Preferred patterns for specific tasks
 
-## Configuration Files That Support Vibe Coding
-
-Your root directory should contain these essential configuration files:
-
-- `package.json` or `pyproject.toml` — dependency definitions
-- `tsconfig.json` or `rust-toolchain.toml` — language settings
-- `.editorconfig` — team formatting standards
-- `.gitignore` — exclude node_modules, build outputs, secrets
-
-For projects using the **pdf** skill to generate documentation, add a `CLAUDE.md` file at your project root that describes your architecture:
-
-```markdown
-# Project Context
-
-- Monorepo with frontend (Next.js) and API (Express)
-- PostgreSQL database with Prisma ORM
-- Authentication via JWT tokens
-- Primary API endpoints in src/api/
-- Frontend components in src/components/
-```
-
-This file is automatically read by Claude Code when it starts a session, providing immediate context about your stack.
-
-## State Management Patterns
-
-Choose state management based on complexity:
-
-- **Local state** (`useState`, `useReducer`) for component-specific data
-- **Context API** for shared state across a feature area
-- **Server state** (TanStack Query, SWR) for API data
-- **Global store** (Zustand, Redux) only when truly necessary
-
-When using the **tdd** skill, it will ask clarifying questions about your state choices and ensure tests cover state transitions properly. Avoid premature abstraction—start simple and extract when repetition appears.
-
-## Version Control Workflow
-
-Commit frequently with meaningful messages:
-
-```bash
-git add .
-git commit -m "Add user authentication flow"
-```
-
-This practice serves two purposes in vibe coding: it creates restore points when experiments fail, and it helps Claude understand your development history. When you ask Claude to review changes or continue from where you left off, git history provides context about recent work.
-
-Consider using conventional commits for automated changelog generation:
+The **tdd** skill works particularly well when you define testing patterns in your project structure. Place test files adjacent to their corresponding source files:
 
 ```
-feat: add user profile page
-fix: resolve authentication redirect loop
-docs: update API integration guide
+src/
+├── components/
+│   ├── Button.tsx
+│   └── Button.test.tsx
 ```
 
-## Documentation That Actually Helps
+## Leveraging Claude Skills in Your Structure
 
-Write documentation that Claude can consume, not just human teammates:
+Different Claude skills work better with specific project organizations. The **frontend-design** skill generates UI components, so keeping your components in a clear, flat structure helps it place new components correctly. The **pdf** skill handles document generation—create a dedicated `templates/` folder for document templates it will modify.
 
-- `README.md` — setup instructions and running the project
-- `ARCHITECTURE.md` — high-level design decisions
-- `CLAUDE.md` — AI-specific context and conventions
+For the **tdd** skill to work effectively, maintain a `tests/` directory with clear naming conventions that match your source files. This lets the skill identify test coverage gaps and generate appropriate tests.
 
-The **pdf** skill can transform your `docs/` folder into formatted PDF documentation for stakeholders who prefer readable documents over markdown files.
+The **canvas-design** skill benefits from an `assets/` or `design/` folder where it can place generated visuals and design tokens.
 
-## Real-World Example: React Project Setup
+## Handling Generated Code
 
-When starting a new React project optimized for vibe coding, execute:
+Vibe coding produces code quickly, which means you'll have more files to manage. Implement these practices:
 
-```bash
-npx create-next-app@latest my-project --typescript --tailwind --app-router
-cd my-project
-mkdir -p tests/unit tests/integration tests/e2e
-mkdir -p src/lib src/hooks src/services src/types
+**Review before committing**: AI-generated code works most of the time but needs human review. Set up a quick review habit before each commit.
+
+**Use consistent formatting**: Configure Prettier or ESLint in your project. Your AI assistant will respect these settings when generating new code.
+
+**Document the unexpected**: When AI generates clever solutions or unusual patterns, add a comment explaining why. Future you (and future AI sessions) will thank you.
+
+## Scaling Your Structure
+
+As projects grow, your structure must evolve. Add new directories as new concerns emerge, but resist the temptation to create too many layers. If you find yourself with more than five files in a directory, consider splitting.
+
+```
+# Time to refactor signals
+- A directory contains 15+ files
+- You're adding subdirectories within the first level
+- Multiple features import from a deeply nested location
 ```
 
-Then add your `CLAUDE.md`:
+The **supermemory** skill becomes invaluable at scale, tracking not just your project's current structure but the reasoning behind architectural decisions.
 
-```markdown
-# Project Context
-- Next.js 14 with App Router
-- TypeScript strict mode
-- Tailwind CSS for styling
-- Tests in /tests directory
-- Run dev server: npm run dev
+## Example: Complete Project Structure
+
+Here's a production-ready structure for a vibe-coded Next.js application:
+
+```
+vibe-commerce/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   ├── components/
+│   │   ├── ui/                # Base UI components
+│   │   └── features/          # Feature-specific components
+│   ├── features/
+│   │   ├── products/
+│   │   ├── cart/
+│   │   └── checkout/
+│   ├── lib/                   # Core utilities
+│   ├── hooks/                 # Custom hooks
+│   ├── services/              # API clients
+│   ├── types/                 # TypeScript definitions
+│   └── constants/             # App constants
+├── public/                    # Static assets
+├── configs/                   # Configuration files
+│   ├── tailwind.config.ts
+│   ├── next.config.js
+│   └── eslint.config.js
+├── scripts/                   # Build utilities
+├── tests/                     # Test utilities
+│   ├── fixtures/
+│   └── setup.ts
+├── docs/                      # Project documentation
+├── .cursor/                   # IDE-specific settings
+├── CLAUDE.md                  # AI assistant guidance
+├── package.json
+└── README.md
 ```
 
-This setup gives Claude immediate clarity about your stack and conventions, reducing the back-and-forth questions that slow down vibe coding sessions.
+This structure balances simplicity with scalability. Your AI assistant can quickly find any file, and the project grows naturally without requiring constant refactoring.
 
-## Summary
+## Conclusion
 
-Effective vibe coding project structure follows established conventions, provides clear organizational signals, and supports both human and AI collaborators. Use sensible directory layouts, consistent naming, and configuration files that communicate context. Maintain documentation in formats Claude can parse, and organize custom skills for easy discovery.
+Vibe coding transforms how we build software, but it requires thoughtful project organization to reach its full potential. By keeping structures flat, naming files descriptively, organizing by feature, and documenting decisions, you create projects where AI assistants thrive. The investment in good structure pays dividends through faster development, fewer errors, and more maintainable codebases.
 
-The key insight: structure serves communication. Every decision about file organization should answer the question "how does this help the next developer—or AI—understand this codebase?"
-
-## Related Reading
-
-- [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-explained-what-it-is-and-how-it-works/)
-- [Vibe Coding Productivity Tips and Best Practices](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/)
-- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/)
-- [Getting Started Hub](/claude-skills-guide/getting-started-hub/)
+Start with simple structures and evolve as needed. Your future self—and every AI session—will benefit from the clarity you create today.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
