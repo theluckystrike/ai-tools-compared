@@ -18,9 +18,8 @@ You've created a custom skill, placed it in the right directory, but when you tr
 
 Claude Code searches for skills in specific locations depending on your setup. The most common locations are:
 
-- `~/claude-skills/` (user-level skills)
+- `~/.claude/skills/` (user-level skills, macOS/Linux)
 - `./skills/` (project-level skills)
-- `~/.claude/skills/` (alternative user directory)
 
 If your skill file isn't in one of these locations, Claude simply won't find it. The skill must also be in a directory that Claude is configured to scan.
 
@@ -53,7 +52,7 @@ If your front matter is malformed—missing dashes, incorrect indentation, or in
 
 Claude expects a flat directory structure or a specific organizational pattern. Common issues include:
 
-**Nested directories**: If you place your skill in `~/claude-skills/categories/frontend-design.md`, you might expect to invoke it as `/categories/frontend-design`. Instead, Claude flattens the structure or ignores nested files entirely.
+**Nested directories**: If you place your skill in `~/.claude/skills/categories/frontend-design.md`, you might expect to invoke it as `/categories/frontend-design`. Instead, Claude flattens the structure or ignores nested files entirely.
 
 **Wrong parent directory**: Skills must be in the root of the skills directory, not in subfolders (unless your specific setup uses a different configuration).
 
@@ -64,7 +63,7 @@ Sometimes your skill exists but gets overshadowed by a built-in skill or another
 To check for conflicts, list all available skills in your directory:
 
 ```bash
-ls -la ~/claude-skills/
+ls -la ~/.claude/skills/
 ```
 
 If you see duplicate names, rename one of them.
@@ -91,9 +90,9 @@ Validate your skill by:
 
 ## Example: Fixing a Skill That Won't Load
 
-Let's say you created `~/claude-skills/frontend-design.md` but `/frontend-design` doesn't work. Here's how to troubleshoot:
+Let's say you created `~/.claude/skills/frontend-design.md` but `/frontend-design` doesn't work. Here's how to troubleshoot:
 
-1. **Check the file exists**: `ls ~/claude-skills/frontend-design.md`
+1. **Check the file exists**: `ls ~/.claude/skills/frontend-design.md`
 2. **Verify front matter**: Open the file and ensure it starts with `---` and ends with `---`
 3. **Test the name**: Try invoking with the exact filename minus extension
 4. **Restart Claude**: Close and reopen your session

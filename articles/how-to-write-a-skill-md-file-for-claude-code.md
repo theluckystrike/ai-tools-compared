@@ -30,7 +30,6 @@ name: pdf-helper
 description: "Extract text and tables from PDF documents"
 category: document-processing
 tags: [pdf, extraction, document]
-version: 1.0.0
 ---
 ```
 

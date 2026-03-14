@@ -5,7 +5,7 @@ description: "Learn how to structure Claude skills with dependency injection pat
 date: 2026-03-14
 categories: [advanced]
 tags: [claude-skills, dependency-injection, automation, workflows]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---

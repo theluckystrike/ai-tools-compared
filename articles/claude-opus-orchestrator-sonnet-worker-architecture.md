@@ -90,7 +90,7 @@ The key principle: each worker should receive enough context to complete its tas
 
 Using Sonnet workers instead of Opus throughout offers significant cost advantages. Sonnet operates at roughly one-fifth the cost of Opus while maintaining strong performance on narrow tasks. A complex project that might cost $50 with pure Opus might cost $15-20 with an orchestrator-worker pattern.
 
-Response times also improve. Sonnet workers typically respond faster than Opus for focused tasks. The orchestrator can parallelize independent subtasks across multiple workers, reducing overall latency. For a task分解 into five independent subtasks, you could theoretically execute them concurrently rather than sequentially.
+Response times also improve. Sonnet workers typically respond faster than Opus for focused tasks. The orchestrator can parallelize independent subtasks across multiple workers, reducing overall latency. For a task broken into five independent subtasks, you could theoretically execute them concurrently rather than sequentially.
 
 However, this architecture introduces overhead. The orchestrator needs to manage worker lifecycle, handle failures, and synthesize results. For simple, single-domain tasks, a direct Sonnet call will be more efficient. Reserve the orchestrator pattern for genuinely complex projects requiring multiple skill domains.
 

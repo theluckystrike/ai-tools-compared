@@ -14,11 +14,11 @@ score: 8
 
 Claude Code has skills that accelerate DevOps work: shell scripting, infrastructure-as-code, container management, CI/CD pipelines, and database migrations. Here are the most useful ones.
 
-## Infrastructure Automation with shell-expert
+## Infrastructure Automation
 
-The **shell-expert** skill stands as a foundational tool for any DevOps workflow. It provides deep expertise in shell scripting, command-line operations, and system administration tasks. When you're writing deployment scripts or debugging infrastructure issues, shell-expert helps you craft efficient bash commands and pipeline scripts.
+For DevOps shell scripting tasks, describe your goal directly to Claude Code. Claude helps you craft reliable bash scripts, deployment scripts, and pipeline automation.
 
-For example, when deploying a Docker container and checking its status, shell-expert can help you create reliable scripts:
+For example, when deploying a Docker container and checking its status, Claude can help you create reliable scripts:
 
 ```bash
 #!/bin/bash
@@ -30,7 +30,7 @@ for i in {1..30}; do
 done
 ```
 
-This skill becomes invaluable when building CI/CD pipelines that require reliable shell scripting across different environments.
+Claude is particularly useful when building CI/CD pipelines that require reliable shell scripting across different environments.
 
 ## Container Management and Docker Operations
 
@@ -59,7 +59,7 @@ Claude skills help you understand multi-stage builds, security best practices, a
 
 Managing configuration across multiple environments requires careful attention to detail. Claude's skills assist with writing and maintaining Terraform, Ansible, and CloudFormation templates.
 
-The **devops** skill provides specialized knowledge for infrastructure automation. It can help you structure your Terraform modules for reusability:
+Claude Code can help you structure your Terraform modules for reusability. Describe your infrastructure needs directly:
 
 ```hcl
 # Modular VPC configuration

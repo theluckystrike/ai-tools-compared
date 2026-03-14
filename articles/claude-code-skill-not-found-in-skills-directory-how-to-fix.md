@@ -96,7 +96,6 @@ Skills use YAML front matter for metadata. If this section is malformed, Claude 
 ---
 name: pdf
 description: "Work with PDF documents"
-version: 1.0
 ---
 ```
 

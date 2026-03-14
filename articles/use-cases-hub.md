@@ -81,8 +81,7 @@ DevOps benefits from Claude skills in areas that require precision and repeatabi
 
 | Skill | Best For |
 |-------|----------|
-| `shell-expert` | Writing reliable bash scripts for deployment automation |
-| `devops` | Terraform, Ansible, CloudFormation templates |
+| `tdd` | Test-driven development for deployment scripts and infrastructure code |
 | `webapp-testing` | Playwright-based visual regression and E2E testing |
 | `tdd` | Test-driven infrastructure code |
 
@@ -103,7 +102,7 @@ Many teams operate across all three domains above. A typical full-stack workflow
 
 - `frontend-design` + `tdd` for the UI layer
 - `pdf` + `xlsx` for data ingestion and reporting
-- `shell-expert` + `devops` for CI/CD and infrastructure
+- `/tdd` + `/supermemory` for CI/CD and infrastructure patterns
 
 Token efficiency matters when running multi-skill sessions. See [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) to keep cross-stack workflows cost-effective.
 
@@ -115,7 +114,7 @@ Token efficiency matters when running multi-skill sessions. See [Claude Skills T
 |---------|-------------------|
 | [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) | Top 8 skills for React, Vue, Svelte, and design workflows |
 | [Best Claude Skills for Data Analysis in 2026](/claude-skills-guide/articles/best-claude-skills-for-data-analysis/) | pdf + xlsx + tdd pipelines for analysts |
-| [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) | shell-expert, devops, and CI/CD optimization |
+| [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) | /tdd, /supermemory, and CI/CD patterns |
 | [Best Claude Skills for Code Review Automation](/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/) | Skills that automate code review for better quality feedback |
 | [Best Claude Skills for Solo Developers and Freelancers](/claude-skills-guide/articles/best-claude-skills-for-solo-developers-and-freelancers/) | High-leverage skills for independent developers working alone |
 | [Best Claude Skills for Writing and Content Creation](/claude-skills-guide/articles/best-claude-skills-for-writing-and-content-creation/) | Skills for blog writing, documentation, and content workflows |

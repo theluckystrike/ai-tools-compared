@@ -38,7 +38,7 @@ Run the following to confirm your skill is recognized:
 claude skills list
 ```
 
-Look for your skill in the output. If it's missing, the problem isn't a silent failure—it's a loading issue. Check your skill.md file exists in the correct directory (typically `~/claude-skills/` or within your project).
+Look for your skill in the output. If it's missing, the problem isn't a silent failure—it's a loading issue. Check your skill.md file exists in the correct directory (typically `~/.claude/skills/` or within your project).
 
 ### Test with a Minimal Invocation
 
@@ -69,7 +69,6 @@ A broken front matter often causes the skill to load but ignore all instructions
 ---
 name: my-custom-skill
 description: "A skill for processing data"
-version: "1.0"
 triggers:
   - "process data"
   - "analyze this"
@@ -155,7 +154,7 @@ ls -la output/
 Load and review your skill definition:
 
 ```bash
-cat ~/claude-skills/your-skill.md
+cat ~/.claude/skills/your-skill.md
 ```
 
 Look for instructions that might be preventing execution—overly restrictive conditions, missing step definitions, or contradictory directives.

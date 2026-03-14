@@ -79,7 +79,6 @@ Individual skills can define their own file access constraints through metadata 
 ```markdown
 ---
 name: secure-pdf-processor
-version: 1.0.0
 allowed_extensions: [".pdf", ".txt"]
 max_file_size: 52428800
 read_only: true

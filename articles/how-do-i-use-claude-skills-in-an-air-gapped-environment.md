@@ -32,7 +32,6 @@ Here's a typical skill structure you might transfer:
 # Example skill structure
 name: pdf
 description: "Comprehensive PDF manipulation capabilities"
-version: "1.0"
 tools:
   - extract_text
   - create_pdf

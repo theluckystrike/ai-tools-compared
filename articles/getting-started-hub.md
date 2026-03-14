@@ -64,7 +64,6 @@ name: my-skill
 description: "What this skill does in one sentence"
 category: data-processing
 tags: [pdf, extraction, automation]
-version: 1.0.0
 ---
 ```
 

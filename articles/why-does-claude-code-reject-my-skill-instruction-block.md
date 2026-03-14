@@ -37,7 +37,6 @@ A minimal front matter looks like this:
 ---
 name: my-custom-skill
 description: A skill that does something useful
-version: 1.0.0
 ---
 ```
 
@@ -136,7 +135,6 @@ Consider this rejected skill due to YAML issues:
 ---
 name: tdd-helper
 description: Help with test-driven development
-version: 1.0
 # Missing colon after version - will fail
 ---
 ```
@@ -147,7 +145,6 @@ The fixed version:
 ---
 name: tdd-helper
 description: Help with test-driven development
-version: "1.0"
 ---
 ```
 

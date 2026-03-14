@@ -41,16 +41,26 @@ The transition from 1.x to 2.0 signals to users: "Update your automation—outpu
 
 ## Applying Semver to Skill Metadata
 
-Your skill's metadata file should reflect versions clearly. Most Claude skills include a version field:
+Skill files do not have a `version:` field — Claude Code only recognizes `name` and `description` in skill front matter. Instead, track versions using a changelog section in the skill body itself:
 
-```yaml
-# skill.yaml
+```markdown
+---
 name: my-custom-skill
-version: 1.2.0
 description: "Processes data files and generates reports"
+---
+
+# My Custom Skill
+
+<!-- Changelog
+1.2.0 - 2026-03-14 - Added image extraction support
+1.1.0 - 2026-02-20 - Fixed text extraction accuracy
+1.0.0 - 2026-01-15 - Initial release
+-->
+
+[Skill instructions here...]
 ```
 
-When releasing updates, increment versions consistently:
+Alternatively, use git tags to track released versions of your skill file. When releasing updates, increment versions consistently:
 
 - **PATCH**: Fixed text extraction accuracy in the **pdf** skill
 - **MINOR**: Added image extraction to the **pdf** skill

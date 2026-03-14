@@ -5,7 +5,7 @@ description: "Implement robust monitoring and logging for Claude Code multi-agen
 date: 2026-03-14
 categories: [advanced]
 tags: [claude-code, claude-skills, multi-agent, monitoring, logging, observability]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

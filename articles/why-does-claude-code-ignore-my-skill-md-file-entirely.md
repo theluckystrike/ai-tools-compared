@@ -46,7 +46,6 @@ A proper front matter block looks like this:
 ---
 name: pdf-processor
 description: "Extract and process text from PDF documents"
-version: "1.0.0"
 author: "your-username"
 tags: [pdf, document-processing, extraction]
 ---
@@ -71,7 +70,7 @@ tags:
 
 Beyond front matter, the body of your skill file must contain recognizable content. An empty skill file or one with only front matter gets ignored. Claude Code expects meaningful content that defines the skill's purpose and behavior.
 
-The content should include a clear description of what the skill does, example use cases, and implementation details. Skills that consist only of headings or very short content may be ignored as无效.
+The content should include a clear description of what the skill does, example use cases, and implementation details. Skills that consist only of headings or very short content may be ignored as invalid.
 
 For skills like `frontend-design`, `tdd`, or `xlsx`, the content must clearly explain the domain and provide actionable guidance. A skill named `tdd` that doesn't explain test-driven development principles or provide test templates will likely be skipped.
 

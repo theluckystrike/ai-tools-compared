@@ -34,7 +34,7 @@ A mature Claude skill workflow has three phases:
 **3. Automation** — Chain skills together so Claude can execute multi-step workflows with minimal prompting. Examples:
 - PR review workflow: code analysis → test generation with tdd → documentation update with docx
 - Data pipeline: pdf extraction → xlsx analysis → pptx reporting
-- Deployment workflow: shell-expert scripting → CI/CD config → security scanning
+- Deployment workflow: Claude Code-generated deploy scripts → CI/CD config → security scanning
 
 ---
 
@@ -72,7 +72,7 @@ Replaces: manual component scaffolding, ad-hoc test writing, documentation sprin
 
 ### DevOps Pipeline Generation
 ```
-shell-expert (deployment scripts) → devops (IaC templates) → webapp-testing (E2E verification)
+Claude Code (deployment scripts) → Claude Code (IaC templates) → webapp-testing (E2E verification)
 ```
 Replaces: manual script authoring, configuration errors, untested deployments.
 

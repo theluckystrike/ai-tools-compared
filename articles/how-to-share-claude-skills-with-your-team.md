@@ -56,7 +56,6 @@ Every skill in the shared repo should have consistent front matter:
 name: api-docs
 description: "Generate API documentation following our OpenAPI 3.1 conventions"
 author: "backend-team"
-version: 1.2.0
 ---
 
 # API Docs Skill

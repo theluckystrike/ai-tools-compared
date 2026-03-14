@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude Code Skills for Terraform IaC: Complete Guide"
-description: "Use Claude Code skills for Terraform and IaC workflows. Covers shell-expert, tdd, and git-workflow skills with real Terraform examples."
+description: "Use Claude Code skills for Terraform and IaC workflows. Practical patterns with /tdd, /supermemory, and custom skills for Terraform examples."
 date: 2026-03-13
 categories: [tutorials]
 tags: [claude-code, claude-skills, terraform, infrastructure-as-code]
@@ -34,11 +34,11 @@ Organizing your code into modules improves reusability and makes Claude's assist
 
 ## Essential Skills for Infrastructure Work
 
-### shell-expert for Terraform Commands
+### Claude Code for Terraform Commands
 
-The **shell-expert** skill provides deep knowledge of command-line operations, which is critical when running Terraform plans and applies. This skill helps you construct complex shell commands for iterating over multiple environments or parsing Terraform output.
+Claude Code has deep knowledge of command-line operations, which is critical when running Terraform plans and applies. This helps you construct complex shell commands for iterating over multiple environments or parsing Terraform output.
 
-When you need to run Terraform across multiple workspaces, shell-expert can help create efficient scripts:
+When you need to run Terraform across multiple workspaces, Claude Code can help create efficient scripts:
 
 ```bash
 #!/bin/bash
@@ -144,7 +144,7 @@ Claude can generate this structure based on your description, then use the tdd s
 
 ### Validating Infrastructure Changes
 
-Before applying changes, use shell-expert to run validation checks:
+Before applying changes, ask Claude Code to run validation checks:
 
 ```bash
 # Format checking
@@ -199,7 +199,7 @@ When working with modules, avoid creating overly complex variable structures. In
 
 ## Conclusion
 
-Combining Claude Code skills transforms Terraform workflows from manual operations into streamlined, automated processes. The shell-expert skill handles command execution, tdd ensures testing, git-workflow manages version control, and supermemory maintains project context. Together, these skills reduce errors and accelerate infrastructure delivery.
+Combining Claude Code skills transforms Terraform workflows from manual operations into streamlined, automated processes. Claude Code handles command execution, /tdd ensures testing, and /supermemory maintains project context. Together, these skills reduce errors and accelerate infrastructure delivery.
 
 Experiment with different skill combinations to find what works best for your team's specific needs. Infrastructure as code benefits enormously from systematic approaches, and Claude skills provide the tooling to implement those systems effectively.
 

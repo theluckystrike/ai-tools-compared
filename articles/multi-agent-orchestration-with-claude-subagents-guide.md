@@ -89,8 +89,8 @@ Parent agent
 │   ├── UI subagent (frontend-design)
 │   └── Test subagent (tdd)
 └── Infrastructure manager (owns deployment/)
-    ├── Scripts subagent (shell-expert)
-    └── Config subagent (devops)
+    ├── Scripts subagent (handles deployment scripts)
+    └── Config subagent (handles IaC)
 ```
 
 Each manager reduces the cognitive load on the parent and allows finer-grained progress tracking.

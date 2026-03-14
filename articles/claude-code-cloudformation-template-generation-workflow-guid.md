@@ -163,7 +163,7 @@ Start with simple templates and progressively tackle more complex architectures.
 
 - [Claude Code Skills for Terraform IaC: Complete Guide](/claude-skills-guide/articles/claude-code-skills-for-infrastructure-as-code-terraform/) — Apply the same iterative generation approach to Terraform modules and provider configurations.
 - [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — Automate CloudFormation deployments by integrating Claude skills into your GitHub Actions pipeline.
-- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — The full toolkit of DevOps skills including shell-expert, devops, and testing skills for infrastructure work.
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — The full toolkit of DevOps skills for infrastructure work.
 - [Claude Skills Workflow Guide](/claude-skills-guide/workflows-hub/) — See how CloudFormation generation fits into broader multi-skill automation pipelines.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

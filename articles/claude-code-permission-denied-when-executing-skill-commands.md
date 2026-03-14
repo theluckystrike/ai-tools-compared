@@ -84,7 +84,6 @@ Modify your skill's configuration to specify allowed commands. Create or update 
 ---
 name: my-custom-skill
 description: A skill that needs broader execution permissions
-version: 1.0.0
 execution:
   allowed_commands:
     - git
@@ -206,7 +205,6 @@ When creating custom skills, use the skill-md format with proper YAML front matt
 ---
 name: my-productivity-skill
 description: Automates daily development tasks
-version: 1.2.0
 commands:
   - name: daily-standup
     execute: ./scripts/standup.sh

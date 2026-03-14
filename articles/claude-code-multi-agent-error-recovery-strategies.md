@@ -197,7 +197,7 @@ Process quarterly data as follows:
 
 ## Conclusion
 
-Error recovery in Claude Code multi-agent workflows requires intentional design. By implementing checkpointing, fallback chains, retry logic, error classification, and escalation points, you build systems that handle failures gracefully rather than崩溃ing entirely. These patterns work across all Claude skills—from pdf document processing to frontend-design component generation—making your AI-assisted development workflow production-ready.
+Error recovery in Claude Code multi-agent workflows requires intentional design. By implementing checkpointing, fallback chains, retry logic, error classification, and escalation points, you build systems that handle failures gracefully rather than crashing entirely. These patterns work across all Claude skills—from pdf document processing to frontend-design component generation—making your AI-assisted development workflow production-ready.
 
 Start with simple retry logic, add checkpointing for longer workflows, and progressively add fallback chains and escalation points as your systems grow more complex.
 
