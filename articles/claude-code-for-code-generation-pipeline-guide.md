@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code for Code Generation Pipeline Guide"
-description: "Learn how to build an automated code generation pipeline using Claude Code, leveraging specialized skills for consistent, high-quality output across your projects."
+description: "Learn how to build an automated code generation pipeline using Claude Code, leveraging specialized skills for consistent, high-quality output across."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-for-code-generation-pipeline-guide/
+categories: [guides]
 ---
 
 # Claude Code for Code Generation Pipeline Guide
@@ -250,5 +251,12 @@ Always validate before committing. The validation stages exist to catch problems
 Claude Code pipelines transform code generation from a manual, error-prone process into an automated, reliable workflow. By combining specialized skills like `tdd`, `frontend-design`, `pdf`, and `supermemory`, you build pipelines that produce consistent, quality code while reducing developer overhead.
 
 Start with a simple pipeline for one component type, validate the output thoroughly, then expand gradually. Your team will appreciate the consistency and speed gains as the pipeline becomes a standard part of your development workflow.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

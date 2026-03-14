@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code with Mise Version Manager Guide"
-description: "Learn how to integrate Claude Code with Mise for powerful version management. Set up automated tool switching, environment handling, and seamless development workflows."
+description: "Learn how to integrate Claude Code with Mise for powerful version management. Set up automated tool switching, environment handling, and seamless."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-with-mise-version-manager-guide/
@@ -200,5 +200,12 @@ Integrating Claude Code with Mise transforms how you manage development environm
 The key benefits include automated version switching based on project context, consistent environments across team members, and intelligent tool management that works seamlessly with Claude Code's execution model. Start with a simple `.mise.toml` in one project and experience the difference automatic version management makes in your daily development workflow.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
