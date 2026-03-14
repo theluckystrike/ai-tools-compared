@@ -2,10 +2,11 @@
 
 layout: default
 title: "Splitting Large Codebases Across Specialized Claude Agents"
-description: "Learn how to leverage Claude Code skills and multi-agent architectures to efficiently work with large, complex codebases. Discover practical strategies for dividing work across specialized agents."
+description: "Learn how to leverage Claude Code skills and multi-agent architectures to efficiently work with large, complex codebases. Discover practical strategies."
 date: 2026-03-14
 author: theluckystrike
 permalink: /splitting-large-codebases-across-specialized-claude-agents/
+categories: [guides]
 ---
 
 # Splitting Large Codebases Across Specialized Claude Agents
@@ -146,3 +147,10 @@ Successfully splitting codebases across agents requires discipline and thoughtfu
 Splitting large codebases across specialized Claude agents transforms intractable projects into coordinated, manageable efforts. By leveraging Claude Code's skills system, tool-use capabilities, and multi-agent architectures, you can maintain high code quality even at scale. The key lies in thoughtful division of labor, clear interface definitions, and systematic coordination between agents.
 
 Start by identifying natural boundaries in your codebase—architectural layers, feature domains, or task types—and create focused agents around those divisions. With proper setup, your multi-agent system will handle complexity that would overwhelm a single assistant, delivering consistent, quality results across your entire codebase.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

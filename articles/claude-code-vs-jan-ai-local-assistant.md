@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code vs Jan AI: Local AI Assistant Comparison"
-description: "A comprehensive comparison of Claude Code and Jan AI as local AI coding assistants, exploring their features, capabilities, and practical use cases for developers."
+description: "A comprehensive comparison of Claude Code and Jan AI as local AI coding assistants, exploring their features, capabilities, and practical use cases for."
 date: 2026-03-14
 categories: [comparison]
 tags: [claude-code, jan-ai, local-ai, ai-assistant, coding-tools]
@@ -171,3 +171,10 @@ For most developers, Claude Code's immediate productivity gains and structured s
 The best approach? Try both and see which aligns better with your development philosophy and workflow preferences.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
