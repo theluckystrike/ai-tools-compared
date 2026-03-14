@@ -5,6 +5,7 @@ description: "Learn how to automate recurring tasks using Claude Code and Trigge
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-triggerdev-scheduled-cron-job-tutorial/
+categories: [guides]
 ---
 
 # Claude Code TriggerDev Scheduled Cron Job Tutorial
@@ -218,3 +219,10 @@ This setup is particularly valuable for:
 Start with simple scheduled jobs and gradually incorporate more complex AI-powered automation as you become comfortable with the workflow.
 
 Remember to monitor your jobs initially and adjust timeouts and schedules based on actual execution times. With these tools, you can focus on higher-level development tasks while routine operations run automatically in the background.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

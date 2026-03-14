@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code React Testing Library Workflow"
-description: "Master the React Testing Library workflow with Claude Code. Learn practical strategies for writing component tests, mocking dependencies, and integrating testing into your development process."
+description: "Master the React Testing Library workflow with Claude Code. Learn practical strategies for writing component tests, mocking dependencies, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, react, testing-library, testing, workflow, frontend-development]
@@ -217,5 +217,12 @@ The supermemory skill can help remember which tests relate to specific component
 Integrating React Testing Library with Claude Code creates a powerful testing workflow that catches bugs early and maintains code quality over time. By establishing clear testing conventions, writing user-centric tests, and integrating testing into your development cycle, you build confidence in your React applications.
 
 Remember to prioritize accessibility in your tests, use appropriate mocking strategies, and leverage Claude Code's capabilities to generate and debug tests efficiently. With practice, this workflow becomes second nature, leading to more robust and maintainable React code.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code React Router v7 Navigation Guide"
-description: "Master React Router v7 navigation patterns with Claude Code. Learn file-based routing, loaders, actions, and how AI-assisted development accelerates SPA routing."
+description: "Master React Router v7 navigation patterns with Claude Code. Learn file-based routing, loaders, actions, and how AI-assisted development accelerates."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, react-router, react-router-v7, navigation, spa-routing, frontend-development]
@@ -254,5 +254,12 @@ The **tdd** skill pairs excellently with this pattern—write tests for both suc
 React Router v7 transforms navigation from a simple routing mechanism into a comprehensive data-loading and mutation framework. By leveraging Claude Code with skills like **frontend-design** for architecture guidance, **tdd** for test-driven development, and **supermemory** for context retention, you can build sophisticated navigation systems that scale with your application.
 
 The key is understanding how loaders, actions, and outlets work together to create seamless user experiences. Start with simple routes and progressively adopt advanced patterns as your application grows.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

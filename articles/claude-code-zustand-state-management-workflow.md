@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Zustand State Management Workflow"
-description: "A practical workflow for managing React application state with Zustand using Claude Code skills. Includes code examples, best practices, and integration tips."
+description: "A practical workflow for managing React application state with Zustand using Claude Code skills. Includes code examples, best practices, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-zustand-state-management-workflow/
+categories: [guides]
 ---
 
 # Claude Code Zustand State Management Workflow
@@ -225,5 +226,12 @@ For frequently updating values like mouse position or scroll depth, consider usi
 Zustand provides a straightforward path to managing React state without the complexity of Redux or the limitations of Context. By combining Zustand with Claude Code skills like **frontend-design** for UI generation and **tdd** for test-driven development, you can build stateful applications efficiently.
 
 The workflow scales from simple shopping carts to complex enterprise dashboards. Start with a single store, add middleware as needed, and split into multiple stores when boundaries become clear.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

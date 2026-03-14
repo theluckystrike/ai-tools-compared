@@ -2,10 +2,11 @@
 
 layout: default
 title: "Claude Code OpenTelemetry Tracing Instrumentation Guide"
-description: "Learn how to implement OpenTelemetry tracing instrumentation in your applications using Claude Code. Practical examples for Python, Node.js, and Go services."
+description: "Learn how to implement OpenTelemetry tracing instrumentation in your applications using Claude Code. Practical examples for Python, Node.js, and Go."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-opentelemetry-tracing-instrumentation-guide/
+categories: [guides]
 ---
 
 # Claude Code OpenTelemetry Tracing Instrumentation Guide
@@ -279,5 +280,12 @@ Run your application and trigger some requests. Access the Jaeger UI at localhos
 OpenTelemetry tracing instrumentation provides visibility into how your applications operate in production. Start with basic span creation, add custom attributes relevant to your business domain, and propagate context across service boundaries. Claude Code accelerates this process by generating boilerplate code and helping you structure instrumentation that scales.
 
 The investment in proper tracing pays dividends when debugging production issues or optimizing performance. You'll immediately see which operations contribute to latency and where errors occur across distributed systems.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

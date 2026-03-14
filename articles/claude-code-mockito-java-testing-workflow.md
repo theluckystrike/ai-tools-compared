@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Mockito Java Testing Workflow"
-description: "Learn how to integrate Claude Code with Mockito for efficient Java testing workflows. Practical examples for developers using JUnit 5, mocking frameworks, and test automation."
+description: "Learn how to integrate Claude Code with Mockito for efficient Java testing workflows. Practical examples for developers using JUnit 5, mocking."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-mockito-java-testing-workflow/
@@ -306,5 +306,12 @@ org.mockito.MockitoDebugger=DEBUG
 ## Summary
 
 Claude Code transforms your Mockito testing workflow by generating boilerplate, suggesting edge cases, and helping structure maintainable tests. Focus on writing clear tests that verify behavior rather than implementation details. Use the `tdd` skill for test-first development, create reusable fixtures to reduce duplication, and integrate testing into your CI pipeline for consistent confidence in your codebase.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
