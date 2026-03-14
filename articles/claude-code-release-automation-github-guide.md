@@ -229,4 +229,11 @@ Keep your release pipeline maintainable by following these patterns:
 
 Claude Code combined with GitHub Actions creates a powerful release automation system. Start with a simple workflow that creates releases from tags, then gradually add Claude skills for changelog generation, version management, and deployment decisions. The investment pays off quickly as your project grows and release frequency increases.
 
+## Related Reading
+
+- [Claude Code Semantic Versioning Automation](/claude-skills-guide/claude-code-semantic-versioning-automation/) — Semantic versioning drives release automation
+- [Claude Code Git Tags Release Management](/claude-skills-guide/claude-code-git-tags-release-management/) — Git tags trigger GitHub release automation
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/) — Releases need changelogs
+- [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/) — CI/CD is part of the release pipeline
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

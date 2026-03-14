@@ -239,4 +239,11 @@ Check that your implementation properly blocks analytics cookies when consent is
 
 This implementation gives you a solid foundation for GDPR-compliant cookie consent. From here, you can extend it with cookie categorization UI, consent records for audit trails, or integration with consent management platforms.
 
+## Related Reading
+
+- [Claude Code Data Retention Policy Workflow](/claude-skills-guide/claude-code-data-retention-policy-workflow/) — Data retention and cookie consent are related compliance concerns
+- [Claude Skills Compliance SOC2 ISO27001 Guide](/claude-skills-guide/claude-skills-compliance-soc2-iso27001-guide/) — Cookie consent is part of compliance requirements
+- [Claude Code WCAG Accessibility Audit Workflow](/claude-skills-guide/claude-code-wcag-accessibility-audit-workflow/) — Cookie banners must meet accessibility standards
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — Getting started with Claude Code for web development
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
