@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Docker CI/CD Pipeline Integration Guide"
 description: "Learn how to integrate Claude Code with Docker and CI/CD pipelines for automated containerized development workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-ci-cd-pipeline-integration-guide/
+reviewed: true
+score: 7
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Claude Code Docker CI/CD Pipeline Integration Guide
