@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "What Is Agentic AI and Why It Matters"
-description: "Discover how agentic AI transforms software development with Claude Code, featuring autonomous task execution, multi-step workflows, and intelligent decision-making capabilities."
+description: "Discover how agentic AI transforms software development with Claude Code, featuring autonomous task execution, multi-step workflows, and intelligent."
 date: 2026-03-14
 author: theluckystrike
 permalink: /what-is-agentic-ai-and-why-it-matters/
+categories: [guides]
 ---
 
 # What Is Agentic AI and Why It Matters
@@ -88,3 +89,10 @@ Claude Code's approach to agentic AI emphasizes collaboration. The developer pro
 As you explore Claude Code and agentic AI, consider how these capabilities align with your development workflow. The most effective use isn't about delegating entire projects—it's about identifying tasks where autonomous execution adds value while maintaining the human oversight that ensures quality and alignment with project goals.
 
 Agentic AI isn't just a technological advancement; it's a new way of working with AI that treats it as a capable partner rather than a simple tool. Understanding this distinction and leveraging platforms like Claude Code effectively will be increasingly valuable as AI continues to evolve into more capable and autonomous systems.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
