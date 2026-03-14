@@ -57,7 +57,7 @@ In development contexts, auto invocation significantly accelerates workflows. Wh
 
 ### Creative and Design Tasks
 
-Design-oriented requests trigger specialized creative skills. Mentioning "algorithmic art" or "generative visuals" activates the algorithmic-art skill with seeded randomness controls and interactive parameter exploration. For visual design work, the canvas-design skill provides composition principles and color theory knowledge.
+Design-oriented requests trigger specialized creative skills. For visual design work, the canvas-design skill provides composition principles and color theory knowledge.
 
 ## The Progressive Disclosure Model
 
@@ -83,9 +83,9 @@ Understanding which triggers activate which skills helps you work more effective
 
 **Document Processing**: pdf, docx, xlsx, pptx—activated by file extensions and document-related verbs
 
-**Development**: tdd, mcp-builder—triggered by testing, building, or API-related requests
+**Development**: tdd—invoke with /tdd for testing, building patterns
 
-**Creative**: algorithmic-art, canvas-design, slack-gif-creator—activated by visual, artistic, or design language
+**Creative**: canvas-design—invoke with /canvas-design for visual design
 
 **Knowledge**: supermemory—engaged when searching or retrieving stored information
 
@@ -99,7 +99,7 @@ The auto invocation system handles most everyday interactions smoothly. Reserve 
 
 ## Real-World Development Scenarios
 
-Consider a typical development session where you need to build a new feature. You might start by discussing the requirements verbally. As soon as you mention creating API endpoints or working with database schemas, the mcp-builder skill activates, providing context for server-side development patterns. When you switch to building the frontend interface and reference component libraries or styling frameworks, the system transitions to frontend-design capabilities automatically.
+Consider a typical development session where you need to build a new feature. You might start by discussing the requirements verbally. As soon as you mention creating API endpoints or working with database schemas, you can invoke /tdd to start with test-driven patterns for server-side development. When you switch to building the frontend interface and reference component libraries or styling frameworks, the system transitions to frontend-design capabilities automatically.
 
 This automatic transition between skill domains reduces friction. You don't need to manually invoke a different skill every time your task shifts — the system follows your conversation and adapts based on declared TRIGGER conditions.
 
