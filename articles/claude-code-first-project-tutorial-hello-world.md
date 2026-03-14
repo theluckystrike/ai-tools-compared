@@ -96,10 +96,10 @@ Output displays the expected message. Your first Claude Code task completed succ
 
 ## Understanding Claude Code Sessions
 
-Claude Code operates within interactive sessions. Each session maintains context across multiple commands, allowing Claude to understand your project structure and development goals. Start a new session within your project:
+Claude Code operates within interactive sessions. Each session maintains context across multiple commands, allowing Claude to understand your project structure and development goals. Start an interactive session within your project directory:
 
 ```bash
-claude --session
+claude
 ```
 
 Within a session, you can issue follow-up requests:
