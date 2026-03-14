@@ -78,9 +78,9 @@ This skill handles the formatting requirements for utility regulatory bodies, in
 
 Common regulatory reports you can generate include interconnection queue status documents, outage summary reports, renewable energy credit tracking, and environmental compliance filings. Each follows the specific formatting standards required by your regulatory jurisdiction.
 
-## algorithmic-art: Grid Visualization and Monitoring
+## Grid Visualization and Monitoring
 
-The **algorithmic-art** skill generates visualizations for grid monitoring dashboards. Create heat maps showing load distribution, animated flow diagrams for power routing, and anomaly detection graphics.
+Claude Code helps generate visualization code for grid monitoring dashboards. Describe what you need and Claude will generate the implementation for heat maps showing load distribution, flow diagrams for power routing, and anomaly detection graphics.
 
 ```javascript
 // Generate a load distribution heat map
@@ -133,7 +133,7 @@ def calculate_baseline(meter_data, event_days):
 | Load forecasting | xlsx |
 | Device integration | mcp-builder |
 | Regulatory reports | pdf |
-| Operator dashboards | algorithmic-art |
+| Operator dashboards | Direct Claude prompting |
 | Control system testing | webapp-testing |
 
 ## Next Steps
@@ -142,7 +142,7 @@ Start with the xlsx skill for immediate productivity gains on existing data. Loa
 
 Build custom MCP servers as your grid integration needs mature. Connect to your utility's AMI headend system, integrate with OSIsoft PI for real-time operational data, or link to market management systems for wholesale energy pricing. Each MCP server becomes a reusable asset for future applications.
 
-[The combination of data analysis, API development, automated testing](/claude-skills-guide/how-do-i-combine-two-claude-skills-in-one-workflow/), and visualization skills provides a solid foundation for smart grid application development. These skills work well together: use MCP for data ingestion, xlsx for analysis, algorithmic-art for dashboards, webapp-testing for quality assurance, and pdf for compliance.
+[The combination of data analysis, API development, automated testing](/claude-skills-guide/how-do-i-combine-two-claude-skills-in-one-workflow/), and visualization skills provides a solid foundation for smart grid application development. These skills work well together: use MCP for data ingestion, xlsx for analysis, direct Claude prompting for dashboard visualization code, webapp-testing for quality assurance, and pdf for compliance.
 
 For utilities and grid operators, these skills reduce development time on data-intensive features while ensuring compliance and reliability requirements are met. The modular nature of Claude skills means you can adopt them incrementally based on your specific use cases.
 

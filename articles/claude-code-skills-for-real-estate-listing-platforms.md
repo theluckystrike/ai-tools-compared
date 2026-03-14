@@ -124,9 +124,9 @@ function getVisibleProperties(bounds, properties) {
 
 Combine coordinate data with the xlsx skill to manage neighborhood boundaries and school district zones stored in spreadsheets.
 
-## Algorithmic Art: Data Visualization
+## Data Visualization
 
-The **algorithmic-art** skill creates unique visualizations for market trends, price histories, and neighborhood statistics. These outputs work well for analytics dashboards.
+Claude Code generates visualization code for market trends, price histories, and neighborhood statistics. Describe what you need and Claude will implement the chart or dashboard component.
 
 ```
 "Create a line chart showing median home prices over 12 months,
@@ -192,7 +192,7 @@ A production real estate platform combines these skills:
 1. **Ingest** listing data via xlsx imports
 2. **Generate** marketing materials using pdf and canvas-design
 3. **Create** listing descriptions through docx automation
-4. **Visualize** market data with algorithmic-art
+4. **Visualize** market data through direct Claude prompting
 5. **Build** search functionality with coordinate-aware filtering
 6. **Test** everything using TDD workflows
 
