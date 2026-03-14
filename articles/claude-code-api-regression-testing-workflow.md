@@ -202,4 +202,12 @@ Building a regression testing workflow with Claude Code API combines the power o
 
 The key is starting simple: define your critical paths, establish baselines, and gradually expand coverage. Claude Code handles the heavy lifting of test generation and analysis, letting developers focus on fixing issues rather than writing extensive test suites.
 
+
+## Related Reading
+
+- [Claude Code API Contract Testing Guide](/claude-skills-guide/claude-code-api-contract-testing-guide/)
+- [Claude Code Contract Testing Pact Guide](/claude-skills-guide/claude-code-contract-testing-pact-guide/)
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
+- [Claude Skills Tutorials Hub](/claude-skills-guide/tutorials-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

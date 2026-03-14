@@ -164,7 +164,7 @@ The workflow works particularly well with GitOps practices, where dashboard chan
 
 - [Datadog MCP Server Monitoring Automation Claude](/claude-skills-guide/datadog-mcp-server-monitoring-automation-claude/) — See also
 - [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/best-claude-skills-for-devops-and-deployment/) — See also
-- [Claude Code Skills for Site Reliability Engineers (SRE)](/claude-skills-guide/claude-code-skills-for-site-reliability-engineers-sre/) — See also
+- [Claude Code Skills for Site Reliability Engineers (SRE)](/claude-skills-guide/claude-skills-for-site-reliability-engineers-sre/) — See also
 - [Claude Code Tutorials Hub](/claude-skills-guide/tutorials-hub/) — See also
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

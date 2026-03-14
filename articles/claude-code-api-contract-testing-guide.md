@@ -94,7 +94,7 @@ Run the tests with `npx pact-tests` to verify the contract. The generated pact f
 
 ## Validating OpenAPI Specifications
 
-If your API uses OpenAPI (formerly Swagger), validate contracts directly against the specification. The [pdf skill](/claude-skills-guide/working-with-pdfs-using-claude-pdf-skill/) helps generate documentation from these specs:
+If your API uses OpenAPI (formerly Swagger), validate contracts directly against the specification. The [pdf skill](/claude-skills-guide/claude-code-openapi-spec-generation-guide/) helps generate documentation from these specs:
 
 ```javascript
 const Ajv = require('ajv');
@@ -188,7 +188,7 @@ This dual approach catches two types of issues: contract violations (does the AP
 
 Keep contracts small and focused. Test one logical unit per contract rather than combining multiple concerns. Version your contracts explicitly—when the API changes, create a new contract version rather than modifying the existing one.
 
-Document contract assumptions. If your API returns timestamps in ISO 8601 format, note this in the contract. Use the [supermemory skill](/claude-skills-guide/using-claude-supermemory-skill-for-knowledge-management/) to maintain a living document of these decisions.
+Document contract assumptions. If your API returns timestamps in ISO 8601 format, note this in the contract. Use the [supermemory skill](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) to maintain a living document of these decisions.
 
 Run contract tests in parallel with unit tests. Contract tests are typically slower because they may involve network calls or file I/O, so separate them from fast unit tests that run on every commit.
 

@@ -200,4 +200,12 @@ Add this to your CI/CD pipeline to receive notifications when API versions chang
 
 The Claude Code API changelog documentation serves as your primary resource for understanding what changes are available and how they affect your projects. By reading changelogs regularly, testing upgrades in controlled environments, and using skills like tdd and supermemory effectively, you can maintain stable integrations while taking advantage of new features as they become available.
 
+
+## Related Reading
+
+- [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/)
+- [Claude Code Swagger Documentation Workflow](/claude-skills-guide/claude-code-swagger-documentation-workflow/)
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/)
+- [Claude Skills Integrations Hub](/claude-skills-guide/integrations-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
