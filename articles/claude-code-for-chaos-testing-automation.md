@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code for Chaos Testing Automation"
-description: "Learn how to build Claude Code skills for chaos testing automation. Practical examples for developers and power users using CLI tools and testing frameworks."
+description: "Learn how to build Claude Code skills for chaos testing automation. Practical examples for developers and power users using CLI tools and testing."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-for-chaos-testing-automation/
+categories: [guides]
 ---
 
 {% raw %}
@@ -190,6 +191,13 @@ kubectl logs -f deployment/myapp --tail=50 | grep -i "reconnected\|failover"
 Start with simple, low-risk experiments and expand gradually. Document each skill with clear trigger conditions and expected outcomes. Use the pdf skill to generate experiment reports, and consider integrating with incident management systems for automated runbooks.
 
 The power of Claude Code for chaos automation lies in combining reproducible experiment patterns with adaptive execution. Your skills become institutional knowledge that improves with each experiment run.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

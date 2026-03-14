@@ -5,6 +5,7 @@ description: "A comprehensive comparison of Claude Code and Supermaven for navig
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-vs-supermaven-large-codebase-navigation/
+categories: [guides]
 ---
 
 {% raw %}
@@ -141,3 +142,10 @@ The ideal approach for most development teams is to use both tools: Supermaven f
 If your work primarily involves understanding and navigating large, complex codebases, Claude Code's advanced reasoning and codebase analysis capabilities make it the clear choice. Its ability to answer questions, trace code paths, and provide comprehensive explanations transforms how developers interact with unfamiliar code.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
