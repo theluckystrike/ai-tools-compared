@@ -7,7 +7,6 @@ author: theluckystrike
 permalink: /claude-code-git-stash-workflow-tips-guide/
 ---
 
-{% raw %}
 # Claude Code Git Stash Workflow Tips Guide
 
 When you're deep in a development session with Claude Code, interruptions happen. Maybe you need to quickly check a different branch, hotfix a production bug, or switch context entirely. Git stash becomes your safety net, but using it effectively with Claude Code requires knowing the right patterns and commands. This guide covers practical git stash workflows specifically tailored for developers working with Claude Code and Claude Skills.
@@ -219,5 +218,11 @@ This creates a permanent reference you can always return to.
 
 Git stash is an indispensable tool for Claude Code developers. By mastering these workflows, you can seamlessly switch contexts, protect your AI-assisted work, and maintain productive development sessions even when interruptions arise. The combination of git stash with Claude Skills like supermemory and tdd creates a powerful workflow that handles both the AI-generated code and the human-driven development process.
 
+## Related Reading
+
+- [Claude Code Git Workflow Best Practices Guide](/claude-skills-guide/claude-code-git-workflow-best-practices-guide/) — Stash usage is part of git best practices
+- [Claude Code Merge Conflict Resolution Guide](/claude-skills-guide/claude-code-merge-conflict-resolution-guide/) — Stashing helps resolve merge conflicts
+- [Claude Code Trunk Based Development Guide](/claude-skills-guide/claude-code-trunk-based-development-guide/) — Stash is essential for trunk-based development
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Git and workflow automation guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

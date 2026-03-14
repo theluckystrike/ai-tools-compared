@@ -135,4 +135,11 @@ Finally, don't skip the context setup. The few minutes spent writing a comprehen
 
 Effective rapid prototyping with Claude Code follows a workflow: establish context through `CLAUDE.md`, select relevant skills for your domain, use progressive refinement in your prompts, and maintain quality through built-in testing capabilities. The combination of clear context, iterative refinement, and strategic skill usage transforms Claude Code from a code generator into a genuine prototyping partner.
 
+## Related Reading
+
+- [Is Claude Code Worth It for Solo Developers and Freelancers](/claude-skills-guide/is-claude-code-worth-it-for-solo-developers-freelancers/) — Solo developers prototype faster with Claude Code
+- [Claude Code Project Scaffolding Automation](/claude-skills-guide/claude-code-project-scaffolding-automation/) — Scaffolding accelerates prototyping
+- [Best Way to Prompt Claude Code for Complex Features](/claude-skills-guide/best-way-to-prompt-claude-code-for-complex-features/) — Effective prompting for faster prototype iterations
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — Start prototyping from day one
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

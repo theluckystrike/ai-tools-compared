@@ -7,7 +7,6 @@ author: theluckystrike
 permalink: /how-to-make-claude-code-follow-dry-solid-principles/
 ---
 
-{% raw %}
 # How to Make Claude Code Follow DRY and SOLID Principles
 
 When you work with Claude Code, the AI doesn't just write code—it generates architectural decisions, file structures, and interaction patterns. Without intentional guidance, this can lead to duplicated logic, fragile abstractions, and code that fights against the very principles that make software maintainable. Applying DRY (Don't Repeat Yourself) and SOLID principles to your AI-assisted workflow transforms Claude from a code generator into a genuine engineering partner.
@@ -199,5 +198,11 @@ Claude Code amplifies your productivity, but it also amplifies your architectura
 
 The key is treating Claude as a junior developer: provide clear requirements, establish conventions upfront, and review output against the same standards you'd apply to human-written code. Your documentation skills (whether using `docx` for specifications or `pdf` for reports), testing practices (through `tdd` workflows), and design capabilities (via `frontend-design`) all benefit from this disciplined approach.
 
+## Related Reading
+
+- [Claude Code Cyclomatic Complexity Reduction](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/) — DRY and SOLID reduce complexity
+- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) — SOLID patterns should match existing codebase conventions
+- [Claude Code Technical Debt Tracking Workflow](/claude-skills-guide/claude-code-technical-debt-tracking-workflow/) — DRY violations are a common debt source
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Advanced code quality patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

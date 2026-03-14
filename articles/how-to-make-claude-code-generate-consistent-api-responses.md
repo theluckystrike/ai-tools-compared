@@ -11,7 +11,6 @@ score: 7
 permalink: /how-to-make-claude-code-generate-consistent-api-responses/
 ---
 
-{% raw %}
 # How to Make Claude Code Generate Consistent API Responses
 
 When building Claude skills that interact with APIs, consistency in response formatting becomes critical. Whether you're creating a skill for generating JSON payloads, building webhook handlers, or designing integration points with external services, predictable output prevents downstream failures and makes debugging significantly easier.
@@ -176,5 +175,11 @@ Automate these tests in your CI pipeline to catch regressions immediately.
 
 ---
 
+## Related Reading
+
+- [Claude Code API Contract Testing Guide](/claude-skills-guide/claude-code-api-contract-testing-guide/) — Contract testing enforces response consistency
+- [How to Make Claude Code Handle Async Errors Properly](/claude-skills-guide/how-to-make-claude-code-handle-async-errors-properly/) — Error handling is part of API consistency
+- [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/) — Consistent responses require backward compatibility
+- [Claude Skills Tutorials Hub](/claude-skills-guide/tutorials-hub/) — More Claude Code how-to guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

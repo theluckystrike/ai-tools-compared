@@ -109,4 +109,11 @@ Claude Code succeeds at understanding legacy code because it combines the abilit
 
 For developers facing the daunting task of maintaining or modernizing older codebases, Claude Code acts as a knowledgeable partner who can explain what code does, why it was written that way, and how to improve it safely.
 
+## Related Reading
+
+- [Claude Code Git Blame Code Archaeology Guide](/claude-skills-guide/claude-code-git-blame-code-archaeology-guide/) — Git blame is a key tool for legacy code understanding
+- [Why Is Claude Code Popular for Complex Codebases](/claude-skills-guide/why-is-claude-code-popular-for-complex-codebases/) — Legacy codebases are often complex codebases
+- [Why Is Claude Code Recommended for Refactoring Tasks](/claude-skills-guide/why-is-claude-code-recommended-for-refactoring-tasks/) — Refactoring is the next step after understanding legacy code
+- [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/what-is-claude-code-and-why-developers-love-it-2026/) — Claude Code fundamentals
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
