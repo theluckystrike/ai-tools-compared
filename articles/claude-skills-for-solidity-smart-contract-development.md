@@ -156,7 +156,7 @@ The skill system helps ensure you've covered edge cases, proper access controls,
 
 Smart contract development presents unique challenges that generic coding assistants struggle with. The Ethereum Virtual Machine has specific behaviors around gas consumption, storage layout, and call depth that require specialized knowledge. Claude skills fill this gap by providing targeted guidance for blockchain-specific patterns.
 
-Using skills like /tdd ensures your contracts are battle-tested before they ever touch mainnet. The combination of test-driven development with the security-consciousness that skills bring leads to more robust decentralized applications.
+Using skills like /tdd ensures your contracts are battle-tested before they ever touch mainnet. The combination of test-driven development with the security-consciousness that skills bring leads to more dependable decentralized applications.
 
 ## Conclusion
 

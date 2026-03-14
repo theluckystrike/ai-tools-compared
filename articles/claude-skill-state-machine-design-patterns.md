@@ -169,7 +169,7 @@ When implementing state machines in your Claude skills, keep these principles in
 
 ## Conclusion
 
-State machine design patterns transform Claude skills from simple instruction lists into structured, maintainable workflows. By making states and transitions explicit, you create skills that are easier to debug, extend, and customize. Whether you're building a simple guided workflow with the pdf skill or a complex development process with tdd, applying these patterns will make your skills more robust and user-friendly.
+State machine design patterns transform Claude skills from simple instruction lists into structured, maintainable workflows. By making states and transitions explicit, you create skills that are easier to debug, extend, and customize. Whether you're building a simple guided workflow with the pdf skill or a complex development process with tdd, applying these patterns will make your skills more maintainable and user-friendly.
 
 The key is starting simple—model your skill's flow on paper first, then translate it into states and transitions. As your skills grow in complexity, you'll find the state machine approach scales naturally without becoming unmanageable.
 
