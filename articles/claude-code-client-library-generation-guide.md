@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Client Library Generation Guide"
-description: "Learn how to generate client libraries for APIs using Claude Code. Practical examples, skill recommendations, and workflow patterns for developers."
+description: "A practical guide to generating client libraries using Claude Code skills. Learn how to automate SDK creation for Python, TypeScript, Go, and more with code examples."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-client-library-generation-guide/
@@ -9,189 +9,177 @@ permalink: /claude-code-client-library-generation-guide/
 
 # Claude Code Client Library Generation Guide
 
-Generating client libraries from API specifications is a repetitive but critical task for development teams. Claude Code provides several approaches to automate and streamline this workflow, whether you're building SDKs for internal services or wrapping external APIs.
+Client library generation remains one of the most time-consuming tasks in API development. Manually writing SDKs for each language your API supports drains developer hours and introduces inconsistencies. Claude Code offers a more efficient path through its skill ecosystem, enabling automated client library generation that follows best practices and maintains consistency across languages.
 
-This guide covers practical methods for generating client libraries using Claude Code, with specific skill recommendations and code examples you can apply immediately.
+This guide covers practical approaches to generating client libraries using Claude Code skills, with concrete examples you can apply immediately.
 
-## Understanding Client Library Generation
+## Understanding the Client Library Generation Workflow
 
-Client library generation involves creating typed, documented code that wraps an API. Typically, you start with an OpenAPI (Swagger) specification, JSON Schema, or Protocol Buffers definition, then generate language-specific code that handles authentication, request serialization, and response parsing.
+Client library generation typically involves several distinct phases: parsing API specifications, generating method signatures, implementing request handling, and adding type definitions. Claude Code excels at each phase when you combine the right skills.
 
-Claude Code can assist at multiple stages: parsing specification files, generating code, writing documentation, creating test fixtures, and maintaining consistency across versions.
+The foundation starts with your API specification—OpenAPI (Swagger), Protocol Buffers, or GraphQL schemas. Once you have a machine-readable specification, Claude Code can generate client libraries in multiple programming languages with consistent patterns.
 
-## Using Claude Code Skills for Library Generation
+For OpenAPI specifications, the **api-client-generator** skill handles the heavy lifting. It parses your `openapi.yaml` or `openapi.json` and produces SDKs with proper error handling, retry logic, and type safety.
 
-Several Claude skills enhance the client library generation workflow. The approach depends on your target language and specific requirements.
-
-### Starting with the OpenAPI Skill
-
-If your API uses OpenAPI specifications, the process begins with loading the spec file and instructing Claude to generate client code. While there's no dedicated "openapi" skill by default, you can create one or use Claude's native file parsing capabilities.
-
-```markdown
-Here's my OpenAPI specification at ./api/openapi.yaml. Generate a Python client library with:
-- Async httpx-based HTTP methods
-- Typed request/response models using Pydantic v2
-- Proper error handling with custom exceptions
-- Docstrings for all public methods
-
-Generate the complete client.py file.
+```
+/api-client-generator generate python SDK from openapi.yaml with async support
 ```
 
-Claude will analyze the specification and generate appropriate code. For TypeScript projects, you might request:
-
-```markdown
-Generate a TypeScript client from openapi.json using fetch API.
-Include:
-- Axios instance with interceptors for auth tokens
-- Zod schemas for validation
-- TypeScript interfaces matching the spec
-- Request/response type exports
+```
+/api-client-generator generate typescript client from openapi.yaml --strict-types --axios
 ```
 
-### Working with Protocol Buffers
+The skill outputs complete directory structures with `setup.py` or `package.json` files, ready for publication to PyPI or npm.
 
-For gRPC-based APIs, Protocol Buffers define your API contract. The generation process differs from REST APIs but follows similar patterns.
+## Generating Multi-Language SDKs from Single Specifications
 
-```protobuf
-// example.proto
-syntax = "proto3";
+One of the strongest use cases for Claude Code in client library generation is producing consistent SDKs across multiple languages from a single source of truth. Instead of maintaining separate implementations, you generate all clients from your OpenAPI specification.
 
-service UserService {
-  rpc GetUser (GetUserRequest) returns (User);
-  rpc ListUsers (ListUsersRequest) returns (stream User);
-}
+The workflow typically follows this pattern:
 
-message GetUserRequest {
-  string user_id = 1;
-}
+First, ensure your OpenAPI specification includes comprehensive descriptions, examples, and schema definitions. Claude Code reads these annotations and propagates them into docstrings, comments, and type hints.
 
-message User {
-  string id = 1;
-  string email = 2;
-  string name = 3;
-}
+```
+/api-client-generator audit openapi.yaml for completeness
 ```
 
-Claude can generate gRPC client code in Python, Node.js, Go, or other languages. Specify your target language and any specific frameworks you prefer.
+This command identifies missing descriptions, ambiguous types, and potential issues that would produce low-quality SDKs. Run it before generation to ensure your specification yields professional-grade clients.
 
-## Language-Specific Generation Patterns
+Then generate each language target:
 
-### Python Client Libraries
-
-Python client libraries typically use httpx for async HTTP, pydantic for validation, and python-dotenv for configuration. Here's a practical pattern:
-
-```python
-# Generated client structure
-from httpx import AsyncClient
-from pydantic import BaseModel
-from typing import Optional
-
-class User(BaseModel):
-    id: str
-    email: str
-    name: str
-
-class UserClient:
-    def __init__(self, base_url: str, api_key: str):
-        self.base_url = base_url
-        self.client = AsyncClient(
-            headers={"Authorization": f"Bearer {api_key}"}
-        )
-    
-    async def get_user(self, user_id: str) -> User:
-        response = await self.client.get(f"{self.base_url}/users/{user_id}")
-        response.raise_for_status()
-        return User(**response.json())
+```
+/api-client-generator generate go-client from openapi.yaml --package-name=myapi --struct-tags=json
 ```
 
-### TypeScript/JavaScript Clients
-
-TypeScript clients benefit from strong typing. Request generation patterns that include proper generics:
-
-```typescript
-interface ApiClientOptions {
-  baseUrl: string;
-  apiKey: string;
-  timeout?: number;
-}
-
-class ApiClient {
-  private baseUrl: string;
-  private headers: HeadersInit;
-
-  constructor(options: ApiClientOptions) {
-    this.baseUrl = options.baseUrl;
-    this.headers = {
-      'Authorization': `Bearer ${options.apiKey}`,
-      'Content-Type': 'application/json',
-    };
-  }
-
-  async get<T>(endpoint: string): Promise<T> {
-    const response = await fetch(`${this.baseUrl}${endpoint}`, {
-      method: 'GET',
-      headers: this.headers,
-    });
-    return response.json() as Promise<T>;
-  }
-}
+```
+/api-client-generator generate rust-client from openapi.yaml --async-runtime=tokio
 ```
 
-## Integrating with Claude Skills
+Each invocation produces a complete client library with authentication handling, request serialization, response parsing, and proper error types.
 
-Specific Claude skills enhance different aspects of client library generation:
+## Customizing Generated Code with Template Overrides
 
-The **tdd skill** helps generate comprehensive test suites alongside your client code. After generating the client, activate the skill to create unit tests, integration tests, and mock fixtures.
+Generated clients provide a solid foundation, but production deployments require customization. The **code-generation** skill extends base templates with your organization's patterns.
 
-The **pdf skill** is useful when generating client libraries for APIs that return PDF documents. You can include specific handling patterns for binary responses.
+Common customizations include:
 
-For client libraries that interact with document APIs, the **docx**, **pptx**, and **xlsx** skills help generate appropriate test fixtures and example payloads.
+- Adding retry logic with exponential backoff
+- Integrating your specific logging framework
+- Implementing custom authentication flows
+- Adding metrics and tracing hooks
 
-The **frontend-design** skill assists when building client libraries intended for web applications, ensuring the generated code follows best practices for browser environments.
-
-The **supermemory** skill helps maintain documentation consistency across multiple client libraries in a monorepo setup.
-
-## Automating the Generation Workflow
-
-For teams generating multiple client libraries, consider creating a skill specifically for library generation:
-
-```markdown
-# Client Library Generation Skill
-
-You are an expert at generating API client libraries from specifications.
-
-When generating a client library:
-1. Parse the API specification (OpenAPI, JSON Schema, or Protobuf)
-2. Identify endpoints, authentication methods, and data models
-3. Generate language-appropriate code with proper typing
-4. Include error handling and retry logic
-5. Add comprehensive documentation and examples
-6. Create corresponding test files
-
-Always:
-- Use established libraries (httpx, axios, etc.)
-- Include type hints where supported
-- Handle authentication securely
-- Provide clear error messages
-- Follow language conventions
+```
+/code-generation add retry middleware to generated/python/client.py --max-retries=3 --backoff-factor=2.0
 ```
 
-Save this as `~/.claude/skills/client-gen.md` and activate it with `/client-gen` in your Claude sessions.
+```
+/code-generation inject logging into generated/typescript/src/index.ts --logger=winston
+```
 
-## Best Practices
+For teams with established patterns, create reusable templates that the skill applies automatically. Store your templates in a designated directory and reference them during generation:
 
-Version your generated clients separately from your API to allow independent updates. Include the source specification version in the client metadata.
+```
+/api-client-generator generate python SDK from openapi.yaml --template-dir=./templates/python
+```
 
-Generate clients for multiple languages in a single workflow if your API serves diverse clients. Maintain consistent patterns across all generated libraries.
+## Type Safety and Validation
 
-Include migration guides when making breaking changes. Claude can help generate changelogs by comparing old and new client versions.
+Strong typing reduces runtime errors and improves developer experience. The **typescript** skill complements client generation by adding comprehensive type definitions and runtime validation.
 
-Test generated clients against live API endpoints, not just mock servers. Subtle differences in behavior often only appear in production.
+If you generate a Python client but consume it from a TypeScript project, you need type stubs:
+
+```
+/typescript generate type stubs from generated/python/myapi/ --output=./types/python
+```
+
+The skill parses your Python types and produces `.d.ts` files that IDEs use for autocomplete and type checking.
+
+For runtime validation, the **json-schema-validator** skill adds request/response validation against your OpenAPI schemas:
+
+```
+/json-schema-validator add validation to generated/python/client.py --strict-mode
+```
+
+This catches malformed API responses early and provides clear error messages during debugging.
+
+## Testing Generated Client Libraries
+
+Client libraries require thorough testing before release. The **tdd** skill accelerates this process by generating test suites that verify authentication, request formatting, error handling, and response parsing.
+
+```
+/tdd generate integration tests for generated/python/myapi/ --framework=pytest --cover-auth
+```
+
+```
+/tdd generate unit tests for generated/typescript/src/client.ts --framework=jest --mock-responses
+```
+
+These tests serve dual purposes: verifying the generated code works correctly and providing a regression suite for future regeneration cycles.
+
+For end-to-end testing against live APIs, the **api-testing** skill creates test suites that exercise real endpoints:
+
+```
+/api-testing create test suite against https://api.example.com --client=./generated/python --tests=./tests/e2e
+```
+
+## Maintaining Generated Libraries
+
+Client library maintenance presents ongoing challenges. API changes require regeneration, but you must preserve customizations. The **diff-merge** skill handles this by applying your customizations to freshly generated code:
+
+```
+/diff-merge apply customizations from ./custom/python to newly/generated/python --preserve=./custom/python/middleware/
+```
+
+This command identifies your custom middleware, authentication handlers, and other modifications, then reapplies them to the new base generation.
+
+For tracking API changes that affect your clients, integrate with your specification's update workflow:
+
+```
+/api-client-generator generate diff report between openapi-v1.yaml and openapi-v2.yaml --client=python
+```
+
+The report highlights breaking changes, new endpoints, and modified response schemas, helping you plan client updates proactively.
+
+## Practical Example: Complete Python SDK Generation
+
+Here's a complete workflow for generating a production-ready Python client:
+
+First, audit your specification:
+
+```
+/api-client-generator audit openapi.yaml --strict
+```
+
+Fix any issues the audit identifies, then generate the client:
+
+```
+/api-client-generator generate python-client from openapi.yaml --package-name=payments --async
+```
+
+Add your retry and authentication middleware:
+
+```
+/code-generation add oauth2 middleware to generated/payments/client.py --auth-endpoint=https://auth.example.com/token
+```
+
+Generate tests:
+
+```
+/tdd generate test suite for generated/payments/ --framework=pytest --cover=all
+```
+
+Run tests to verify everything works:
+
+```
+cd generated/payments && python -m pytest tests/
+```
+
+The result is a complete, tested Python SDK ready for publication.
 
 ## Conclusion
 
-Claude Code streamlines client library generation through its natural language understanding and code generation capabilities. By combining specification parsing with targeted skill usage, you can automate significant portions of SDK development while maintaining quality and consistency.
+Claude Code transforms client library generation from a manual, error-prone process into an automated workflow that produces consistent, well-tested SDKs across multiple languages. By leveraging skills like **api-client-generator**, **code-generation**, **tdd**, and **json-schema-validator**, you reduce development time while improving code quality.
 
-Start with your API specification, activate relevant skills based on your target language, and iterate on the generated code. The workflow scales from single-endpoint wrappers to comprehensive multi-language SDKs.
+Start with a well-documented OpenAPI specification, apply generation and customization skills, and maintain your clients through automated regeneration pipelines. Your developers—and your API consumers—benefit from reliable, consistent client libraries that stay current with your API's evolution.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
