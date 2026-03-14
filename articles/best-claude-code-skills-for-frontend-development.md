@@ -63,7 +63,7 @@ Pair this skill with Vitest for JavaScript projects or Jest for React applicatio
 
 ## supermemory: Knowledge Management
 
-**Supermemory** acts as your project knowledge base. It indexes your codebase, documentation, and decisions, making information retrieval effortless.
+**Supermemory** acts as your project knowledge base. It indexes your codebase, documentation, and decisions, making information retrieval fast and consistent.
 
 ```bash
 # Query your project knowledge

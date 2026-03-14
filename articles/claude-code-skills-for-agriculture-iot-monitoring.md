@@ -164,7 +164,7 @@ For multi-zone systems:
 
 ## Integrating with Farm Management Systems
 
-Claude Code skills become powerful when integrated with existing farm management platforms. The key is using the `bash` and `read_file` tools to interact with APIs and databases:
+Claude Code skills become powerful when integrated with existing farm management platforms. The key is using the `Bash` and `Read` tools to interact with APIs and databases:
 
 ```python
 # Example: Querying sensor data from a time-series database

@@ -73,7 +73,7 @@ body: |
 
 ### 3. Test Generator
 
-Maintaining [test coverage](/claude-skills-guide/claude-skills-for-writing-unit-tests-automatically/) in Laravel projects becomes effortless with a dedicated skill:
+Maintaining [test coverage](/claude-skills-guide/claude-skills-for-writing-unit-tests-automatically/) in Laravel projects becomes much faster with a dedicated skill:
 
 ```
 name: laravel-test

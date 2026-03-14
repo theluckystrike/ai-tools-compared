@@ -17,7 +17,7 @@ Travel booking platforms require complex integrations with multiple APIs, real-t
 
 ## Core Architecture for Travel Skills
 
-A travel booking skill needs clear boundaries between what Claude controls and what external systems handle. The skill orchestrates API calls, formats data for users, and maintains state across interactions. [Your primary tools are `bash` for executing scripts](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/), `read_file` for accessing configuration, and `write_file` for generating outputs.
+A travel booking skill needs clear boundaries between what Claude controls and what external systems handle. The skill orchestrates API calls, formats data for users, and maintains state across interactions. [Your primary tools are `Bash` for executing scripts](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/), `Read` for accessing configuration, and `Write` for generating outputs.
 
 Structure your travel skill around three phases: initialization (loading API credentials and user preferences), execution (processing the booking logic), and cleanup (releasing resources and updating caches).
 

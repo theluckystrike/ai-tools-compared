@@ -68,7 +68,7 @@ One common debugging scenario involves skills that select inappropriate tools. F
 Look for these patterns in verbose output:
 
 ```
-[DEBUG] Evaluating tool candidates: read_file, bash, pdf_processor
+[DEBUG] Evaluating tool candidates: Read, Bash, pdf_processor
 [DEBUG] Selected tool: pdf_processor (confidence: 0.92)
 [DEBUG] Reasoning: User requested PDF manipulation, pdf_processor matches intent
 ```

@@ -65,7 +65,7 @@ Vague tool requests cause Claude to spend processing cycles deciding which tools
 "Examine the codebase and take appropriate actions"
 
 # Fast: Explicit tool guidance
-"Use read_file to examine config.yaml, then use bash to run 'npm audit --json' and pipe output to a file"
+"Use Read to examine config.yaml, then use Bash to run 'npm audit --json' and pipe output to a file"
 ```
 
 For skills like **webapp-testing**, explicit tool guidance dramatically reduces response time by eliminating unnecessary tool selection calculations.
@@ -188,7 +188,7 @@ description: Quick security-focused code review
 You are a fast code reviewer focused on critical security issues only.
 
 ## Critical checks (always run)
-1. Use read_file on the changed files only
+1. Use Read on the changed files only
 2. Use bash to run: grep -rn "exec\|eval\|innerHTML" {file_list}
 3. Report only high-severity findings
 

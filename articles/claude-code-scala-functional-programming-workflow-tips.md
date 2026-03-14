@@ -17,7 +17,7 @@ Functional programming in Scala offers powerful abstractions that can transform 
 
 ## Setting Up Your Scala Environment with Claude Code
 
-Before diving into functional patterns, ensure your development environment is properly configured. Claude Code works well with Scala through the `bash` and `read_file` tools, allowing you to run compilation, tests, and interact with your codebase directly.
+Before diving into functional patterns, ensure your development environment is properly configured. Claude Code works well with Scala through the `Bash` and `Read` tools, allowing you to run compilation, tests, and interact with your codebase directly.
 
 Initialize your Scala project using sbt or Ammonite depending on your preferences. For a quick start with functional programming libraries, consider adding Cats or ZIO dependencies to your build configuration. Claude Code can help you navigate library documentation and resolve dependency conflicts through targeted queries.
 

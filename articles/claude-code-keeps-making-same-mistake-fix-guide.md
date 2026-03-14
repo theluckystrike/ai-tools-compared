@@ -105,7 +105,7 @@ When using function calling, Claude sometimes invokes wrong functions or passes 
 
 ### Symptom
 
-Claude calls `read_file` when you asked for `bash`, or passes wrong parameters to a custom function.
+Claude calls `Read` when you asked for `Bash`, or passes wrong parameters to a custom function.
 
 ### Solution
 
@@ -113,9 +113,9 @@ Be explicit about function selection:
 
 ```
 For file operations:
-- Use read_file (not bash cat) to read files
-- Use write_file (not bash echo) to create files
-- Use bash only for terminal commands (git, npm, etc.)
+- Use Read (not Bash cat) to read files
+- Use Write (not Bash echo) to create files
+- Use Bash only for terminal commands (git, npm, etc.)
 
 When unsure about available functions, ask before proceeding.
 ```

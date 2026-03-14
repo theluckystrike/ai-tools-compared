@@ -128,7 +128,7 @@ This isolation is a feature, not a limitation. It means each AI tool operates on
 Claude skills read from and write to your local filesystem. This is fundamentally different from cloud AI APIs that operate in isolation. Skills can:
 
 - Parse your project's `package.json` to understand dependencies
-- read_file your existing test patterns for consistency
+- Read your existing test patterns for consistency
 - Modify files directly in your workspace
 - Execute build commands and report results
 

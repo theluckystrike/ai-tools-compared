@@ -38,7 +38,7 @@ firebase init firestore
 firebase firestore:rules > firestore.rules
 ```
 
-Once you have your rules in a local file, Claude Code can read and analyze them using the `read_file` tool. This allows you to ask Claude to review specific rule patterns, identify potential security gaps, or explain complex rule logic.
+Once you have your rules in a local file, Claude Code can read and analyze them using the `Read` tool. This allows you to ask Claude to review specific rule patterns, identify potential security gaps, or explain complex rule logic.
 
 ## Writing Testable Firebase Rules
 
