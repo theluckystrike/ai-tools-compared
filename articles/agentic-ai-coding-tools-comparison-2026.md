@@ -125,5 +125,6 @@ The agentic AI coding space continues evolving rapidly. The tools compared here 
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+- [Cursor vs GitHub Copilot vs Claude Code 2026: Which AI Coding Tool Wins](/cursor-vs-github-copilot-vs-claude-code-2026/) — Side-by-side comparison of the three leading agentic coding tools across real developer workflows.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

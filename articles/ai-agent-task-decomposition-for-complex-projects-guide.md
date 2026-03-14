@@ -216,4 +216,5 @@ Remember: the goal isn't just to complete tasks, but to complete them in a way t
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+- [AI Agent Goal Decomposition: How It Works Explained](/ai-agent-goal-decomposition-how-it-works-explained/) — Learn the goal-decomposition reasoning that drives how agents decide which subtasks to tackle first.
 
