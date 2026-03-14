@@ -191,7 +191,7 @@ Securing MCP servers requires attention to multiple layers: process isolation, n
 
 Implement logging and monitoring to detect issues early. Test your isolation configuration regularly to ensure it continues to work as expected.
 
-For developers working on complex projects, combining proper MCP server isolation with skills like the **tdd** skill for test-driven development creates a robust development environment that keeps security considerations front and center throughout your workflow.
+For developers working on complex projects, combining proper MCP server isolation with skills like the **tdd** skill for test-driven development creates a secure development environment that keeps security considerations front and center throughout your workflow.
 
 ## Related Reading
 

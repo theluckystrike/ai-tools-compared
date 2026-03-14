@@ -12,7 +12,7 @@ tags: [claude-code, claude-skills, agent-swarm, multi-agent, coordination, paral
 
 # Claude Code Agent Swarm Coordination Strategies
 
-[Running multiple Claude Code agents simultaneously](/claude-skills-guide/parallel-subagents-claude-code-best-practices-2026/) transforms your development workflow from sequential task execution into parallel processing. This guide covers practical strategies for coordinating agent swarms, managing shared state, and building robust multi-agent pipelines.
+[Running multiple Claude Code agents simultaneously](/claude-skills-guide/parallel-subagents-claude-code-best-practices-2026/) transforms your development workflow from sequential task execution into parallel processing. This guide covers practical strategies for coordinating agent swarms, managing shared state, and building reliable multi-agent pipelines.
 
 ## The Case for Agent Swarms
 

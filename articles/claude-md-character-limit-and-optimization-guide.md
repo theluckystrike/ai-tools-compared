@@ -12,11 +12,11 @@ score: 7
 
 # Claude MD Character Limit and Optimization Guide
 
-[When building Claude skills or writing `.md` files for Claude Code](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/), you will eventually encounter character and token limits. Understanding these constraints and knowing how to optimize your files is essential for creating reliable, high-performing skills. This guide covers the practical strategies developers and power users can apply to work effectively within these limits.
+[When building Claude skills or writing `.md` files for Claude Code](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/), you will eventually encounter character and token limits. Understanding these constraints and knowing how to optimize your files is essential for creating reliable, high-performing skills. This guide covers the practical strategies developers and power users can apply to work effectively within these limits.
 
 ## Understanding the Character Limits
 
-[Claude MD files consume tokens from the context window](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) in the traditional sense, but they consume tokens from Claude Code's context window. Each time Claude loads a skill, the entire file gets processed alongside your conversation. Large files mean fewer tokens available for actual work, and in some cases, you may hit the "maximum output length" error when Claude generates responses that exceed available space.
+[Claude MD files consume tokens from the context window](/claude-skills-guide/claude-skills-context-window-management-best-practices/) in the traditional sense, but they consume tokens from Claude Code's context window. Each time Claude loads a skill, the entire file gets processed alongside your conversation. Large files mean fewer tokens available for actual work, and in some cases, you may hit the "maximum output length" error when Claude generates responses that exceed available space.
 
 The practical boundaries depend on your Claude Code tier and the model you are using. With Claude 3.5 Sonnet, you typically have a 200K token context window. A well-optimized skill file should stay under 4,000 tokens to leave ample room for your project code and conversation history. Files approaching 10,000 tokens will noticeably slow down skill loading and reduce the space Claude has to reason about your actual task.
 
@@ -88,14 +88,11 @@ as a reference for structure and required fields.
 
 The `tdd` skill handles this elegantly by maintaining test templates in separate files, loading them only when generating new test cases. This keeps the skill definition compact while providing rich, accurate examples when needed.
 
-## Metadata Header vs Full Body Loading
+## Prioritizing Content Placement
 
-Claude Code supports two loading strategies: metadata header only and full body. You can control this through your skill's configuration:
+Claude processes your skill file from top to bottom. Place the most critical instructions early in the file — before examples, code snippets, or detailed reference sections. This ensures that even if the full file strains the context window, Claude encounters the essential instructions first.
 
-- **Metadata header loading** loads only the front matter and the first heading. Use this for skills that need fast initialization or when most functionality happens through tools rather than instruction following.
-- **Full body loading** processes everything. Use this when your skill contains complex instructions, examples, or reference material that Claude needs to access during execution.
-
-For most skills, aim for metadata header loading. Keep your front matter under 500 characters and your opening section under 1,000 characters. Reserve full body loading for skills like `frontend-design` or `pdf` that genuinely need extensive instructional content.
+Keep your opening section under 1,000 characters and focus it entirely on the skill's primary behavior. Move reference material, examples, and edge-case handling to later sections.
 
 ## Practical Optimization Checklist
 
@@ -108,21 +105,11 @@ Run through these steps when finalizing your Claude MD files:
 5. **Test loading performance** by invoking your skill in a fresh session and measuring initialization time.
 6. **Monitor output limits** when working with skills that generate large responses. If you hit "exceeded maximum output length," reduce your skill complexity or break the task into smaller steps.
 
-## Lazy Loading for Complex Skills
+## Splitting Large Skills
 
-The `claude-skill-lazy-loading-token-savings-explained` skill covers this pattern in depth, but the core idea is straightforward: split your skill into a lightweight loader and modular content files. The main `.md` file contains only the essential logic, while detailed instructions live in separate files that load on demand.
+For complex skills that span many use cases, split them into smaller, focused skill files rather than cramming everything into one large file. Create separate skill files for distinct workflows and invoke only the one you need for each task.
 
-```yaml
----
-name: my-complex-skill
-description: Handles multiple workflows
-modules:
-  - ./modules/workflow-a.md
-  - ./modules/workflow-b.md
----
-```
-
-When Claude needs workflow A, it loads only the relevant module rather than processing the entire skill. This approach is particularly valuable for enterprise skills that span many use cases.
+For example, instead of one large `development.md` skill, maintain separate `api-development.md`, `testing.md`, and `deployment.md` files. Each stays focused and small, loading only when relevant.
 
 ## Working with Output Limits
 
@@ -138,9 +125,9 @@ Claude MD character limits are soft boundaries that become hard limits when they
 
 ## Related Reading
 
-- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/)
-- [Claude MD Best Practices for Large Codebases](/claude-skills-guide/articles/claude-md-best-practices-for-large-codebases/)
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude MD Best Practices for Large Codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/)
 - [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

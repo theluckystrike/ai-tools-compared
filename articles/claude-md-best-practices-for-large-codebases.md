@@ -12,13 +12,13 @@ score: 8
 
 # Claude MD Best Practices for Large Codebases
 
-When working with large codebases, Claude Code's skill system becomes a powerful tool for automating workflows and enforcing consistency. [The `.md` files you place in `~/.claude/skills/` shape how Claude behaves](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) in every session. Getting them right means faster development, fewer errors, and more predictable results across your entire team.
+When working with large codebases, Claude Code's skill system becomes a powerful tool for automating workflows and enforcing consistency. [The `.md` files you place in `~/.claude/skills/` shape how Claude behaves](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) in every session. Getting them right means faster development, fewer errors, and more predictable results across your entire team.
 
 This guide covers practical patterns for writing Claude MD files that work well in large, complex projects.
 
 ## How Claude MD Files Work
 
-[Every skill in Claude Code is a Markdown file stored in `~/.claude/skills/`](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When you invoke a skill with `/skillname` or through auto-invocation, Claude loads that file's content and uses it to guide its responses. The file can contain instructions, examples, code snippets, and context that Claude references throughout your session.
+[Every skill in Claude Code is a Markdown file stored in `~/.claude/skills/`](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) When you invoke a skill with `/skillname` or through auto-invocation, Claude loads that file's content and uses it to guide its responses. The file can contain instructions, examples, code snippets, and context that Claude references throughout your session.
 
 For large codebases, the challenge shifts from "what does this skill do?" to "how does this skill handle complexity, multiple environments, and team-wide conventions?"
 
@@ -93,7 +93,7 @@ When developing a new feature:
 1. Activate `/testing/tdd` first—write failing tests before implementation
 2. Use `/frontend-design` patterns if building UI components
 3. Reference `/project/security` for authentication and authorization logic
-4. Document the feature using `/docs` conventions from supermemory
+4. Document the feature following your project's documentation conventions
 
 Always run the full test suite before marking a feature complete.
 ```
@@ -206,9 +206,9 @@ Combine your custom skills with built-in skills like `/tdd` for testing, `/pdf` 
 
 ## Related Reading
 
-- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
-- [Claude MD Character Limit and Optimization Guide](/claude-skills-guide/articles/claude-md-character-limit-and-optimization-guide/)
-- [Shared Claude Skills Across Monorepo Multiple Packages](/claude-skills-guide/articles/shared-claude-skills-across-monorepo-multiple-packages/)
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
+- [Claude MD Character Limit and Optimization Guide](/claude-skills-guide/claude-md-character-limit-and-optimization-guide/)
+- [Shared Claude Skills Across Monorepo Multiple Packages](/claude-skills-guide/shared-claude-skills-across-monorepo-multiple-packages/)
 - [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

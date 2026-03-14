@@ -9,7 +9,6 @@ author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---
-{% raw %}
 
 # Datadog MCP Server Monitoring Automation with Claude
 
