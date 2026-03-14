@@ -3,6 +3,7 @@ layout: default
 title: "How to Stop Claude Code from Modifying Unrelated Files"
 description: A practical guide for developers to prevent Claude Code from accidentally modifying files outside the intended scope of your tasks.
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /how-to-stop-claude-code-from-modifying-unrelated-files/
 ---
@@ -155,3 +156,11 @@ Here's a practical workflow for making changes with minimal risk of unintended m
 By combining these techniques, you can harness Claude Code's powerful capabilities while maintaining precise control over what gets modified in your codebase. Remember that the goal isn't to restrict Claude Code unnecessarily, but to ensure that its impressive abilities are directed exactly where you need them.
 
 The key is communication: the more explicit you are about boundaries, the more accurately Claude Code will respect them. Start with clear instructions, use the tools available to you, and always review before accepting changes.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

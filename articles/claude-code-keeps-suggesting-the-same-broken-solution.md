@@ -185,3 +185,11 @@ When Claude Code keeps suggesting the same broken solution, it's not misbehaving
 
 The key insight is that your prompts shape Claude's behavior. Rather than criticizing failures, guide toward successes. Rather than listing what doesn't work, specify what should work. Instead of one more attempt at the same approach, explicitly request alternatives.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

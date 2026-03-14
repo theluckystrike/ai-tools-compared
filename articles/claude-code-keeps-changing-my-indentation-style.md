@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Keeps Changing My Indentation Style"
-description: "Learn how to control indentation preferences in Claude Code, configure your preferred style, and prevent unwanted formatting changes when Claude edits your code."
+description: "Learn how to control indentation preferences in Claude Code, configure your preferred style, and prevent unwanted formatting changes when Claude edits."
 date: 2026-03-14
 author: theluckystrike
 categories: [troubleshooting]
@@ -143,3 +143,11 @@ If you've configured settings but Claude still changes indentation, check a few 
 Claude Code's indentation behavior is controllable through project settings, EditorConfig files, custom skills, and explicit conversation instructions. The key is finding the approach that fits your workflow—whether that's setting project-wide defaults that all contributors share or maintaining personal preferences in your user configuration.
 
 By configuring your indentation preferences once and referencing them consistently, you can focus on writing code rather than constantly fixing formatting. Claude Code is designed to be helpful, and that includes respecting the code style you've carefully established for your projects.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
