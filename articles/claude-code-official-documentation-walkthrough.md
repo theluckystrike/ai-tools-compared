@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Official Documentation Walkthrough (2026)"
-description: "A comprehensive walkthrough of Claude Code's official documentation. Learn the core concepts, configuration options, and best practices for using Claude Code effectively."
+description: "A comprehensive walkthrough of Claude Code's official documentation. Learn the core concepts, configuration options, and best practices for using."
 date: 2026-03-15
 categories: [tutorials]
 tags: [claude-code, documentation, getting-started, tutorial]
@@ -181,5 +181,12 @@ Based on the official documentation, here are key best practices for using Claud
 The Claude Code official documentation provides everything you need to become proficient with this AI coding assistant. By following this walkthrough and experimenting with the examples provided, you'll be well on your way to integrating Claude Code into your development workflow effectively.
 
 The documentation is continuously updated, so make it a habit to check for new features and improvements regularly. With Claude Code at your side, you'll find yourself writing better code, faster.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

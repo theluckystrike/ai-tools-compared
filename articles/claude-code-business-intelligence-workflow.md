@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Business Intelligence Workflow"
-description: "Build powerful business intelligence pipelines with Claude Code. Learn to automate data extraction, analysis, and reporting using Claude skills and workflows."
+description: "Build powerful business intelligence pipelines with Claude Code. Learn to automate data extraction, analysis, and reporting using Claude skills and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-business-intelligence-workflow/
@@ -161,6 +161,13 @@ As your BI needs grow, consider these expansion strategies:
 - **Custom skills**: Build domain-specific skills for your industry vertical
 
 Claude Code's skill system provides the flexibility to start simple and expand incrementally. Begin with one data source and one report, then add complexity as your requirements evolve.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

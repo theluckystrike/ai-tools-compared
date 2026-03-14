@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Claude Code Enterprise Announcements 2026: What's New for Development Teams"
-description: "Explore the latest Claude Code enterprise features announced in 2026. Learn about new security controls, team collaboration tools, skill ecosystem expansions, and deployment options for large organizations."
+title: "Claude Code Enterprise Announcements 2026: What's New."
+description: "Explore the latest Claude Code enterprise features announced in 2026. Learn about new security controls, team collaboration tools, skill ecosystem."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-enterprise-announcements-2026/
@@ -144,5 +144,12 @@ Claude Code enterprise features in 2026 demonstrate Anthropic's commitment to th
 Organizations evaluating Claude Code for enterprise use should focus on the specific features that match their compliance requirements. The modular nature of Enterprise Guard allows companies to adopt the security features they need without overcomplicating their deployment.
 
 For developers, these enterprise capabilities will increasingly shape daily workflows. Understanding how to work effectively with team-shared skills, audit systems, and collaborative contexts becomes essential as AI coding assistants become standard enterprise infrastructure.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

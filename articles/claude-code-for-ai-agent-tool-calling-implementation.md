@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for AI Agent Tool Calling Implementation"
-description: "Learn how to implement tool calling in AI agents using Claude Code. This guide covers practical patterns, code examples, and best practices for building agents that can execute actions."
+description: "Learn how to implement tool calling in AI agents using Claude Code. This guide covers practical patterns, code examples, and best practices for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-ai-agent-tool-calling-implementation/
@@ -311,3 +311,10 @@ Start with simple tools and ReAct-style iteration. As your agents grow more soph
 
 Remember that effective tool calling isn't just about executing actions—it's about creating a reliable loop where the agent can reason about results, adapt its approach, and ultimately deliver meaningful outcomes.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

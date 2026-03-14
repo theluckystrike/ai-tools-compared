@@ -224,3 +224,10 @@ Beyond the financial ROI, track these operational metrics:
 Calculating the ROI of Claude Code requires tracking both tangible benefits like time savings and qualitative improvements like developer satisfaction. By establishing clear baselines, tracking post-implementation metrics, and using the frameworks provided in this guide, development teams can demonstrate the real value of AI-assisted development.
 
 Remember that ROI calculations are not one-time exercises. Continuously monitor metrics, refine your calculations, and use the insights to maximize the value your team gets from Claude Code. The most successful teams treat ROI measurement as an ongoing process that drives continuous improvement.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -239,3 +239,10 @@ Claude Code transforms accessibility regression testing from a manual, error-pro
 
 The key is starting small: add accessibility checks to your next pull request, generate tests for your most critical components, and gradually expand coverage. With Claude Code as your accessibility partner, building and maintaining accessible applications becomes achievable for teams of any size.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

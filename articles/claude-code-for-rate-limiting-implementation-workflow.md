@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Rate Limiting Implementation Workflow"
-description: "Learn how to use Claude Code to implement rate limiting in your applications. A practical workflow guide with code examples and actionable advice for developers."
+description: "Learn how to use Claude Code to implement rate limiting in your applications. A practical workflow guide with code examples and actionable advice for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-rate-limiting-implementation-workflow/
@@ -280,3 +280,10 @@ Claude Code accelerates this process by generating boilerplate, explaining compl
 
 Remember to monitor your rate limiter in production—track hit rates, rejected requests, and any fallback activations. This data informs tuning decisions and helps you understand whether your rate limits align with actual usage patterns.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

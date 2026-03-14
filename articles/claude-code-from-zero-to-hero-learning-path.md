@@ -82,4 +82,11 @@ Your journey from zero to hero with Claude Code follows no fixed timeline. Some 
 
 The investment pays dividends across every aspect of technical work. Whether you generate documentation with the **docx** skill, create presentations through **pptx**, or build custom integrations with MCP, Claude Code becomes an extension of your capabilities. Start with simple tasks, build confidence, and let your expertise grow naturally through practical application.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Reporting Automation Workflow"
-description: "Master the art of building automated reporting workflows with Claude Code. Practical guide for developers and power users creating documentation, metrics, and analysis reports."
+description: "Master the art of building automated reporting workflows with Claude Code. Practical guide for developers and power users creating documentation."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-reporting-automation-workflow/
@@ -159,5 +159,12 @@ Reporting automation serves different purposes depending on your project context
 The **docx** skill complements reporting workflows when you need to generate Word documents—useful for formal client reports or internal documentation that requires specific formatting. Combined with data analysis capabilities, you can create sophisticated reports that go beyond simple text generation.
 
 Building effective reporting automation with Claude Code requires understanding both your project needs and the available tools. Start with simple reports and gradually expand into more complex analysis as you become comfortable with the workflow patterns.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

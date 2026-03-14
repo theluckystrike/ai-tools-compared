@@ -5,6 +5,7 @@ description: "Comprehensive guide to Claude Code announcements in 2026. Learn ab
 date: 2026-03-14
 author: theluckystrike
 permalink: /anthropic-claude-code-announcements-2026/
+categories: [guides]
 ---
 
 {% raw %}
@@ -141,6 +142,13 @@ Building custom skills has become more accessible with the **skill-creator** fra
 For teams adopting these new capabilities, start with one skill that addresses your biggest pain point—whether that's testing with **tdd**, frontend work with **frontend-design**, or documentation with **pdf**. Gradually incorporate additional skills as your workflow matures.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

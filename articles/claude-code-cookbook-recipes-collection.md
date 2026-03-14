@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Cookbook: Practical Recipes Collection"
-description: "A practical collection of Claude Code cookbook recipes for developers and power users. Learn how to leverage Claude skills for PDF creation, frontend design, TDD, and memory management."
+description: "A practical collection of Claude Code cookbook recipes for developers and power users. Learn how to leverage Claude skills for PDF creation, frontend."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-cookbook-recipes-collection/
+categories: [guides]
 ---
 
 # Claude Code Cookbook: Practical Recipes Collection
@@ -172,5 +173,12 @@ When using multiple skills in a session, consider these optimization strategies:
 ## Conclusion
 
 These recipes represent starting points for integrating Claude skills into your development workflow. The combination of specialized skills like pdf, frontend-design, tdd, and supermemory creates a flexible toolkit adaptable to various project requirements. Start with the recipes that address your immediate needs, then explore skill composition as your workflow matures.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

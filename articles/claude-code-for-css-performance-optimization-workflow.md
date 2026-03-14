@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for CSS Performance Optimization Workflow"
-description: "Learn how to leverage Claude Code for efficient CSS performance optimization. This guide covers automated analysis, best practices, and practical workflows for faster web pages."
+description: "Learn how to leverage Claude Code for efficient CSS performance optimization. This guide covers automated analysis, best practices, and practical."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-css-performance-optimization-workflow/
@@ -228,3 +228,10 @@ echo "Audit complete. Review reports/stylelint.json"
 CSS performance optimization doesn't require sacrificing developer productivity. By leveraging Claude Code's analysis capabilities, you can automate audits, receive actionable recommendations, and integrate performance checks into your development workflow. The key is establishing regular auditing habits and implementing preventive measures through pre-commit validation and performance budgets.
 
 Start with a comprehensive audit using Claude, prioritize high-impact changes, and establish ongoing monitoring. This systematic approach ensures your CSS remains performant as your project evolves, delivering faster experiences to users while maintaining development velocity.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Continuing Education as a Developer"
-description: "Discover how Claude Code can accelerate your learning journey as a developer. Learn practical strategies to use AI-assisted coding for continuous skill development."
+description: "Discover how Claude Code can accelerate your learning journey as a developer. Learn practical strategies to use AI-assisted coding for continuous skill."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-continuing-education-as-a-developer/
@@ -117,3 +117,10 @@ Claude Code represents a paradigm shift in developer education. Rather than repl
 
 Start your next learning session with Claude Code today. Your future self will thank you.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

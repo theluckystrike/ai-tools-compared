@@ -2,11 +2,11 @@
 
 layout: default
 title: "Claude Code for JetBrains Plugin Workflow Tutorial"
-description: "A comprehensive guide to using Claude Code for developing JetBrains plugins. Learn practical workflows, code examples, and actionable tips to accelerate your IDE plugin development."
+description: "A comprehensive guide to using Claude Code for developing JetBrains plugins. Learn practical workflows, code examples, and actionable tips to."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-jetbrains-plugin-workflow-tutorial/
-categories: [claude-code, jetbrains, plugin-development, intellij-sdk]
+categories: [guides, jetbrains, plugin-development, intellij-sdk]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
@@ -240,3 +240,10 @@ Start small, experiment with the examples in this tutorial, and gradually incorp
 *Ready to build your first JetBrains plugin? Use this tutorial as a starting point, and don't hesitate to ask Claude Code for help with specific implementation challenges. Happy coding!*
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for French Developer Team Productivity Tips"
-description: "Guide pratique pour les équipes de développement françaises : optimisez votre productivité avec Claude Code, concentrez-vous sur l'essentiel et automatez les tâches récurrentes."
+description: "Guide pratique pour les équipes de développement françaises : optimisez votre productivité avec Claude Code, concentrez-vous sur l'essentiel et."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-french-developer-team-productivity-tips/
@@ -232,3 +232,10 @@ L'adoption progressive, accompagné d'une documentation claire des processus, ga
 
 La clé du succès réside dans l'équilibre entre automation et supervision humaine. Claude Code amplifie les capacités des développeurs sans les remplacer — c'est un levier de productivité à maîtriser absolument en 2026.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -5,6 +5,7 @@ description: "A practical guide to managing environment variables with Claude Co
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-dotenv-configuration-workflow/
+categories: [guides]
 ---
 
 Environment variables are the backbone of flexible software configuration. When working with Claude Code (the CLI interface for Claude), properly configured dotenv files streamline your development workflow and keep sensitive information secure. This guide walks you through a practical Claude Code dotenv configuration workflow that works seamlessly across projects.
@@ -141,5 +142,12 @@ A solid dotenv configuration workflow transforms how you work with Claude Code. 
 Start with a simple `.env` setup and expand as your requirements grow. The patterns shown here scale from small personal projects to large team environments, maintaining clarity and security throughout.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -225,3 +225,10 @@ Start small: set up basic monitoring this week, then gradually implement automat
 
 Remember that cost optimization is iterative. Regular monitoring, analysis, and adjustment will compound into significant savings over time. Let Claude Code handle the monitoring complexity so you can focus on building great applications.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

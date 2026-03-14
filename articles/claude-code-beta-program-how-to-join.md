@@ -5,6 +5,7 @@ description: "A practical guide for developers and power users looking to join t
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-beta-program-how-to-join/
+categories: [guides]
 ---
 
 {% raw %}
@@ -142,6 +143,13 @@ Here are some recommendations to help you get the most out of your beta experien
 Joining the Claude Code beta program is a straightforward process that opens the door to advanced AI-assisted development tools. By following the steps outlined in this guide, you can gain early access to features that will significantly enhance your coding workflow. Remember to provide feedback actively and explore the various skills available to maximize your beta experience.
 
 The beta program is your opportunity to shape the future of AI-assisted coding. Take advantage of this resource, and you will likely find that Claude Code becomes an indispensable part of your development toolkit.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

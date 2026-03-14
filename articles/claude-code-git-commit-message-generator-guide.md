@@ -5,6 +5,7 @@ description: "Learn how to create and use Claude Code skills to generate semanti
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-git-commit-message-generator-guide/
+categories: [guides]
 ---
 
 # Claude Code Git Commit Message Generator Guide
@@ -117,5 +118,12 @@ For backend changes, provide context about API contracts or database migrations.
 Claude Code commit message skills transform a tedious task into an automated workflow that produces consistent, meaningful messages. Start with a basic skill definition, customize for your team's conventions, and expand as you discover new needs.
 
 The investment in setup pays dividends in readable commit history and reduced cognitive load during code review. Your future self debugging a production issue will thank you for commits that actually explain what changed and why.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code for Senior Engineer Productivity"
-description: "Discover how senior software engineers use Claude Code to accelerate development workflows, automate repetitive tasks, and focus on high-impact architectural decisions."
+description: "Discover how senior software engineers use Claude Code to accelerate development workflows, automate repetitive tasks, and focus on high-impact."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-for-senior-engineer-productivity/
+categories: [guides]
 ---
 
 # Claude Code for Senior Engineer Productivity
@@ -130,5 +131,12 @@ Track these metrics to understand your Claude Code impact:
 Most senior engineers report saving 30-50% of their time on mechanical tasks, allowing focus on design, mentoring, and complex problem-solving.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

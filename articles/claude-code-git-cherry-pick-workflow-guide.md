@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Git Cherry-Pick Workflow Guide"
-description: "Master git cherry-pick workflows with Claude Code CLI. Learn to select specific commits, handle merge conflicts, and automate backporting with practical examples."
+description: "Master git cherry-pick workflows with Claude Code CLI. Learn to select specific commits, handle merge conflicts, and automate backporting with."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -183,6 +183,13 @@ Git cherry-pick combined with Claude Code CLI transforms how you handle targeted
 The key is establishing consistent patterns: always verify commits before picking, handle conflicts methodically, and document your changes thoroughly. Claude Code handles the execution and analysis, letting you focus on decision-making rather than manual command execution.
 
 Start with simple cherry-picks, gradually incorporating them into your regular workflow. Soon, you'll wonder how you managed without this capability.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

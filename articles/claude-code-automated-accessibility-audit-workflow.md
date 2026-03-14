@@ -259,3 +259,10 @@ An automated accessibility audit workflow with Claude Code transforms accessibil
 
 Start with the basic audit script, integrate it into your Claude Code prompts, and progressively add more sophisticated checks as your team grows comfortable with the workflow. The investment pays dividends in compliance, user satisfaction, and reduced remediation costs.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

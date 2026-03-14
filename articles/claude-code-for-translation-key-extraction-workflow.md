@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Translation Key Extraction Workflow"
-description: "Learn how to use Claude Code to efficiently extract and manage translation keys from your codebase. This guide covers automated key extraction, workflow optimization, and best practices."
+description: "Learn how to use Claude Code to efficiently extract and manage translation keys from your codebase. This guide covers automated key extraction."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -120,3 +120,10 @@ When integrating with continuous integration systems, configure pipelines to run
 
 By implementing Claude Code for translation key extraction, development teams transform what was once a painful manual process into an automated workflow that improves over time. The AI's ability to understand context, maintain consistency, and handle complex patterns makes it an invaluable tool for any application requiring multilingual support. Start with the extraction fundamentals outlined in this guide, then progressively integrate more advanced automation as your internationalization needs evolve.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

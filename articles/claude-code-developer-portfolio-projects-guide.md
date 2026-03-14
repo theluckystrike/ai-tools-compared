@@ -5,6 +5,7 @@ description: "Learn how to build impressive developer portfolios using Claude Co
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-developer-portfolio-projects-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -166,6 +167,13 @@ This approach produces portfolio projects that demonstrate not just coding abili
 Your portfolio needs three to five substantial projects, each taking eight to twenty hours to complete properly. Quality trumps quantity—two excellent projects beat five half-finished ones. Focus on projects that demonstrate skills relevant to your target roles, and ensure each project tells a coherent story about your capabilities as a developer.
 
 Claude Code accelerates every phase of portfolio development, but the architectural decisions and code quality remain your responsibility. Use the skills as force multipliers for your expertise, not replacements for genuine skill development.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

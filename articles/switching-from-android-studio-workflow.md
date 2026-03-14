@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Switching from Android Studio Workflow: A Developer's Guide"
-description: "Move your Android development from Android Studio to Claude Code with AI-assisted workflows. Practical examples for building apps faster with less boilerplate."
+description: "Move your Android development from Android Studio to Claude Code with AI-assisted workflows. Practical examples for building apps faster with less."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -189,5 +189,12 @@ The optimal workflow combines both tools: generate code and debug with Claude Co
 Switching from a purely Android Studio workflow to an AI-assisted approach requires adjusting your mental model. Instead of relying on IDE menus and manual code generation, you describe requirements conversationally and let Claude handle implementation details. The transition yields significant time savings on boilerplate, faster error resolution, and improved code consistency through context-aware generation.
 
 Start by integrating Claude Code for one feature module. Gradually expand to debugging, documentation, and testing. Within weeks, you will have developed a hybrid workflow that maximizes productivity across both tools.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
