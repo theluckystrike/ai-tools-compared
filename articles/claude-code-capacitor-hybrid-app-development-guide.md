@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Capacitor Hybrid App Development Guide"
-description: "A practical guide to building hybrid mobile applications using Claude Code and Capacitor. Learn project setup, native features integration, and deployment workflows."
+description: "A practical guide to building hybrid mobile applications using Claude Code and Capacitor. Learn project setup, native features integration, and."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-capacitor-hybrid-app-development-guide/
@@ -344,3 +344,10 @@ Remember these key takeaways:
 Continue exploring Capacitor's capabilities by experimenting with additional plugins, implementing complex native features, and optimizing your app's performance across all target platforms.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

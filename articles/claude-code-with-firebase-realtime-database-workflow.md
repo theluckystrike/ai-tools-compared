@@ -312,3 +312,10 @@ module.exports = {
 ## Conclusion
 
 Integrating Claude Code with Firebase Realtime Database unlocks powerful real-time capabilities for your development workflow. By understanding how to read, write, and monitor data in Firebase, you can build skills that create dynamic, responsive applications. Remember to structure your data thoughtfully, implement proper security rules, handle errors gracefully, and manage connections efficiently. With these practices in place, you'll be well-equipped to build robust Firebase-powered workflows with Claude Code.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

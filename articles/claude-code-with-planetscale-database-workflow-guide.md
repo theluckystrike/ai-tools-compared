@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code with PlanetScale Database Workflow Guide"
-description: "Learn how to integrate Claude Code with PlanetScale for seamless database development. This guide covers connection setup, schema management, branching workflows, and practical examples."
+description: "Learn how to integrate Claude Code with PlanetScale for seamless database development. This guide covers connection setup, schema management, branching."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-with-planetscale-database-workflow-guide/
@@ -211,3 +211,10 @@ fi
 - **Test queries in development branches** — Validate before production deployment
 
 Combining Claude Code with PlanetScale gives you intelligent assistance throughout the database development lifecycle. From initial schema design to deployment and optimization, Claude helps accelerate your workflow while PlanetScale provides the infrastructure confidence you need.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

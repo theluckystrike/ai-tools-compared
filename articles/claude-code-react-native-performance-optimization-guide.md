@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code React Native Performance Optimization Guide"
-description: "Learn how to use Claude Code to optimize React Native app performance. Discover practical techniques for reducing bundle sizes, improving rendering, and optimizing memory usage."
+description: "Learn how to use Claude Code to optimize React Native app performance. Discover practical techniques for reducing bundle sizes, improving rendering."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-react-native-performance-optimization-guide/
@@ -210,3 +210,10 @@ Optimizing React Native performance is an ongoing process that requires understa
 
 Remember that not all optimizations are worth implementing. Focus on the changes that will have the biggest impact on your specific application's performance profile, and always measure before and after making changes.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

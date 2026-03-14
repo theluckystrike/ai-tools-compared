@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Fix Claude Code Context Window Full in Large Codebases"
-description: "Learn practical solutions for handling context window limitations when working with large codebases in Claude Code. Includes workspace configuration, file selection strategies, and optimization techniques."
+title: "How to Fix Claude Code Context Window Full in Large."
+description: "Learn practical solutions for handling context window limitations when working with large codebases in Claude Code. Includes workspace configuration."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-context-window-full-in-large-codebase-fix/
@@ -187,3 +187,10 @@ The context window limitation in Claude Code isn't a blocker for large codebase 
 
 Remember: The goal isn't to fit your entire codebase into context, but to put exactly the right code in context for each task. With these techniques, you'll spend less time managing constraints and more time building great software.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

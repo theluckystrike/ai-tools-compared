@@ -173,4 +173,11 @@ For example, a monitoring script could generate daily reports using the pdf skil
 
 Claude Code transforms shell scripting from a tedious manual process into a collaborative workflow. By describing your automation needs and leveraging Claude's assistance, you can build robust scripts faster while learning best practices along the way. Start with simple scripts, gradually tackle more complex workflows, and watch your productivity soar.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

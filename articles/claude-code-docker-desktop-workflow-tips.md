@@ -5,6 +5,7 @@ description: "Practical tips for integrating Claude Code with Docker Desktop. St
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-docker-desktop-workflow-tips/
+categories: [guides]
 ---
 
 # Claude Code Docker Desktop Workflow Tips
@@ -151,5 +152,12 @@ When running Docker containers alongside Claude Code, follow security best pract
 Integrating Claude Code with Docker Desktop creates a flexible, reproducible development environment. These workflow tips cover the essentials: running containers, managing compose stacks, persisting data, and debugging issues. The combination of Claude Code's agentic capabilities with Docker's isolation features enables powerful development patterns suitable for projects of any complexity.
 
 For deeper integration, explore combining Docker workflows with specialized skills like **tdd** for test-driven development, **pdf** for documentation generation, and **supermemory** for persistent context across sessions.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Docker Security Scanning Workflow"
-description: "Learn how to integrate automated Docker security scanning into your development workflow using Claude Code skills and best practices for container vulnerability management."
+description: "Learn how to integrate automated Docker security scanning into your development workflow using Claude Code skills and best practices for container."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-docker-security-scanning-workflow/
+categories: [guides]
 ---
 
 {% raw %}
@@ -158,6 +159,13 @@ Docker security scanning integrated with Claude Code workflows enables proactive
 The key is integrating scanning naturally into existing workflows rather than creating separate security gates. Claude Code's ability to understand context, parse results, and suggest remediation makes it valuable for security-conscious development teams.
 
 Start with basic scanning setup, then expand to include automated triage and remediation guidance as your workflow matures. Regular attention to container security prevents accumulation of technical debt and reduces production security incidents.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

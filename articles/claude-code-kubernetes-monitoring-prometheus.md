@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Kubernetes Monitoring with Prometheus"
-description: "Learn how to use Claude Code for Kubernetes monitoring with Prometheus. Includes practical examples, Alertmanager configuration, and skill recommendations for DevOps workflows."
+description: "Learn how to use Claude Code for Kubernetes monitoring with Prometheus. Includes practical examples, Alertmanager configuration, and skill."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, kubernetes, prometheus, monitoring, devops, observability]
@@ -162,6 +162,13 @@ When analyzing historical trends, the combination of Thanos Querier for efficien
 Effective Kubernetes monitoring with Prometheus requires thoughtful configuration of collectors, alerts, and notification pathways. Claude Code acts as a knowledgeable teammate that understands your infrastructure context and helps you build reliable monitoring systems faster.
 
 Start with solid scrape configurations, write targeted alerts that reduce noise, and ensure notifications reach the right people. Claude skills like pdf for reporting, xlsx for data analysis, and tdd for testing alert logic create a comprehensive monitoring toolkit that scales with your cluster.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

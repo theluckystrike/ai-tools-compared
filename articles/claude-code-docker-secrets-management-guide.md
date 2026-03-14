@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Docker Secrets Management Guide"
-description: "Learn how to manage Docker secrets effectively with Claude Code. Practical techniques for developers and power users working with containerized applications."
+description: "Learn how to manage Docker secrets effectively with Claude Code. Practical techniques for developers and power users working with containerized."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-docker-secrets-management-guide/
+categories: [guides]
 ---
 
 # Claude Code Docker Secrets Management Guide
@@ -169,5 +170,12 @@ Docker secrets management balances security requirements with developer workflow
 By following these practices and leveraging Claude skills like **pdf** for compliance documentation, **tdd** for testing secret handling, and **supermemory** for documentation retrieval, teams maintain strong security posture without sacrificing productivity.
 
 Start with simple secret configurations and mature your approach as your infrastructure grows. The investment in proper secrets management pays dividends through reduced security incidents and easier compliance audits.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

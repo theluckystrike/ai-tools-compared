@@ -219,6 +219,13 @@ Developing Terraform modules with Claude Code transforms infrastructure from con
 
 Invest time in building modules that follow these patterns, and your team will reap the benefits through consistent, reliable, and maintainable infrastructure for every project.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

@@ -170,3 +170,10 @@ The key to success is providing comprehensive context to Claude Code about your 
 
 Remember that AI assistance complements rather than replaces developer judgment. Review generated code for correctness, accessibility, and performance. Use the techniques in this guide to build a productive workflow that leverages Claude Code's strengths while maintaining the quality standards your project requires.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

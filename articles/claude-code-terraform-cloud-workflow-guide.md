@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Terraform Cloud Workflow Guide"
-description: "A practical guide to building automated Terraform Cloud workflows with Claude Code. Learn how to integrate AI assistance into your infrastructure provisioning pipeline."
+description: "A practical guide to building automated Terraform Cloud workflows with Claude Code. Learn how to integrate AI assistance into your infrastructure."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-terraform-cloud-workflow-guide/
+categories: [guides]
 ---
 {% raw %}
 
@@ -188,6 +189,13 @@ The **webapp-testing** skill can validate that deployed infrastructure meets you
 ## Conclusion
 
 Building automated Terraform Cloud workflows with Claude Code creates a powerful synergy. The AI handles routine operations, explains complex changes, and maintains operational awareness while you focus on architectural decisions. Start with the basic setup, then progressively add automation layers—plan reviews, compliance checking, testing—to mature your infrastructure pipeline.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Data Visualization Workflow for Researchers"
-description: "A practical guide to building efficient data visualization workflows using Claude Code, with examples for researchers working with Python, R, and statistical analysis."
+description: "A practical guide to building efficient data visualization workflows using Claude Code, with examples for researchers working with Python, R, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -283,3 +283,10 @@ Claude Code transforms data visualization from a manual, time-consuming process 
 
 The key is to establish consistent patterns early—proper environment setup, standardized figure styling, and automated processing scripts—then let Claude Code handle the iteration and refinement. Your future self will thank you when generating figures for your next publication takes minutes instead of hours.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

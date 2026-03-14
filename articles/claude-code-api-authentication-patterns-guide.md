@@ -5,6 +5,7 @@ description: "Master API authentication patterns with Claude Code. Learn OAuth 2
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-api-authentication-patterns-guide/
+categories: [guides]
 ---
 
 # Claude Code API Authentication Patterns Guide
@@ -141,5 +142,12 @@ Build dashboards showing:
 ## Conclusion
 
 Claude Code accelerates API authentication implementation across multiple patterns and protocols. From OAuth 2.0 flows to JWT token management, the combination of Claude Code and specialized skills enables secure, well-tested authentication systems. Remember to implement proper credential handling, comprehensive testing, and ongoing monitoring for robust API security.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

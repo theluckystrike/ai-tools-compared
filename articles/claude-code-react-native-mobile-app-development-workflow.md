@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code React Native Mobile App Development Workflow"
-description: "Master React Native mobile app development with Claude Code. Learn practical workflows for building, testing, and deploying cross-platform mobile applications."
+description: "Master React Native mobile app development with Claude Code. Learn practical workflows for building, testing, and deploying cross-platform mobile."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-react-native-mobile-app-development-workflow/
@@ -219,3 +219,10 @@ Claude Code transforms React Native development by providing intelligent assista
 
 Remember to test thoroughly on physical devices, as simulators don't catch all platform-specific issues. With Claude Code as your development partner, you can build production-ready React Native applications more efficiently than ever before.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

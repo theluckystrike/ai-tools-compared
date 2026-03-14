@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Survey Data Analysis Automation"
-description: "Learn how to automate survey data analysis using Claude Code. This guide covers practical techniques for processing, analyzing, and visualizing survey data with actionable code examples."
+description: "Learn how to automate survey data analysis using Claude Code. This guide covers practical techniques for processing, analyzing, and visualizing survey."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-for-survey-data-analysis-automation/
@@ -255,3 +255,10 @@ Start with simple automation for basic surveys, then gradually add complexity as
 
 With proper setup and configuration, Claude Code can reduce survey analysis time from hours to minutes while maintaining consistency and accuracy across your research projects.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

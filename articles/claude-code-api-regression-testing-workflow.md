@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Regression Testing Workflow Guide"
-description: "Master API regression testing with Claude Code. Learn workflows, tools integration, automated testing, and best practices for catching breaking changes before production."
+description: "Master API regression testing with Claude Code. Learn workflows, tools integration, automated testing, and best practices for catching breaking changes."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, api, testing, regression, automation, http, rest, graphql, claude-skills]
@@ -196,6 +196,13 @@ Claude Code can help you set up these monitoring configurations and create alert
 API regression testing is essential for maintaining reliable integrations in modern applications. By leveraging Claude Code and its ecosystem of skills, you can build comprehensive testing workflows that catch breaking changes early. The combination of httpx for HTTP operations, claude-tdd for test structure, and CI/CD integration provides a robust safety net for your API integrations.
 
 Start with the foundational configuration and test cases, then expand coverage as your API surface grows. Regular maintenance of your test suite ensures it remains effective as your application evolves.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at zovo.one
 {% endraw %}

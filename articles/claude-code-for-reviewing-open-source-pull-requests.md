@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Reviewing Open Source Pull Requests"
-description: "Learn how to use Claude Code to efficiently review open source pull requests, with practical workflows, code analysis techniques, and actionable advice for maintainers."
+description: "Learn how to use Claude Code to efficiently review open source pull requests, with practical workflows, code analysis techniques, and actionable advice."
 date: 2026-03-14
 categories: [workflows]
 tags: [claude-code, claude-skills, open-source, pull-requests, code-review]
@@ -245,3 +245,10 @@ Claude Code transforms PR review from a time-consuming chore into a more managea
 The key is using Claude Code as a collaborative partner in the review process—leveraging its ability to analyze code thoroughly while relying on human maintainers for context, judgment, and community relationship management.
 
 Start with the workflows outlined here, adapt them to your project's specific needs, and watch your PR review process become more efficient and consistent.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

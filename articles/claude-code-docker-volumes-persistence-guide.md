@@ -5,6 +5,7 @@ description: "A practical guide to managing Docker volumes for persistence in Cl
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-docker-volumes-persistence-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -183,6 +184,13 @@ du -sh /var/lib/docker/volumes/claude-skills/_data
 ## Summary
 
 Docker volumes transform ephemeral containers into persistent development environments. Bind mounts give you direct host filesystem access, while named volumes provide portable, managed storage. Configure volumes based on your workflow—whether preserving skill configurations, capturing generated outputs, or maintaining database state. Regular backups using volume export ensure your Claude Code work survives any container mishaps.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

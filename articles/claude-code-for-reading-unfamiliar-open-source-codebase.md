@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Reading Unfamiliar Open Source Codebase"
-description: "Learn how to use Claude Code to effectively navigate and understand unfamiliar open source codebases. Practical examples, code snippets, and actionable advice for developers."
+description: "Learn how to use Claude Code to effectively navigate and understand unfamiliar open source codebases. Practical examples, code snippets, and actionable."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-for-reading-unfamiliar-open-source-codebase/
@@ -216,3 +216,10 @@ The key is approaching exploration systematically: start with architecture, focu
 
 Remember that understanding a codebase is an iterative process. Don't try to understand everything at once—focus on what you need to know now, and let your understanding grow organically as you work with the project.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

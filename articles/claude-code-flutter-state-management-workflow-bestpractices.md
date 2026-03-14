@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Flutter State Management Workflow Best Practices"
-description: "Master Flutter state management with Claude Code. Learn practical workflows, code patterns, and actionable strategies for building maintainable Flutter applications."
+description: "Master Flutter state management with Claude Code. Learn practical workflows, code patterns, and actionable strategies for building maintainable Flutter."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-flutter-state-management-workflow-bestpractices/
@@ -234,3 +234,10 @@ Implementing state management in Flutter with Claude Code becomes significantly 
 Remember to organize your code logically, write tests for your state logic, and communicate clearly with Claude Code about your specific requirements. With these practices in place, you'll build maintainable Flutter applications that scale gracefully.
 
 Start with simple providers and progressively adopt more advanced patterns as your application grows. The initial investment in setting up proper state management will pay dividends in code quality and developer productivity.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

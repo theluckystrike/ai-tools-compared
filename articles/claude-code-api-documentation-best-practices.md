@@ -5,6 +5,7 @@ description: "Master API documentation with Claude Code: automate docs generatio
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-api-documentation-best-practices/
+categories: [guides]
 ---
 
 # Claude Code API Documentation Best Practices
@@ -133,5 +134,12 @@ Excellent API documentation transforms developers from confused users into confi
 Start with a solid foundation—version-controlled specs, clear guide structure, and automated validation. Then leverage Claude skills like `pdf` for exportable guides, `frontend-design` for polished interfaces, `tdd` for tested examples, and `supermemory` for institutional knowledge retention.
 
 Your documentation is a product. Invest in it accordingly.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

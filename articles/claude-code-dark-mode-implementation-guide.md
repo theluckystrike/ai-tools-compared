@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Dark Mode Implementation Guide"
-description: "A practical guide to implementing dark mode in web applications using Claude Code. Learn patterns for CSS variables, theme toggles, system preference detection, and persistence."
+description: "A practical guide to implementing dark mode in web applications using Claude Code. Learn patterns for CSS variables, theme toggles, system preference."
 date: 2026-03-14
 categories: [implementation]
 tags: [claude-code, dark-mode, css, frontend, frontend-design]
@@ -183,5 +183,12 @@ For visual regression testing, consider tools like Playwright or Percy that capt
 Keep these principles in mind as you implement dark mode: use CSS custom properties for maintainability, always persist user preferences, prevent flash of wrong theme with inline scripts, respect system preferences on first visit, test both themes thoroughly, and ensure sufficient color contrast for accessibility.
 
 Dark mode implementation doesn't have to be complicated. By building on CSS custom properties and following these patterns, you create a flexible theming system that serves all users regardless of their preference or device settings.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

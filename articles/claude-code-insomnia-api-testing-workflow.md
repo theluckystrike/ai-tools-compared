@@ -150,4 +150,11 @@ Combining Claude Code with Insomnia transforms API testing from a manual, error-
 
 Start by organizing your Insomnia workspace, then progressively adopt these workflows for request creation, test generation, and debugging. The efficiency gains will be immediately apparent, and your APIs will be more reliable as a result.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

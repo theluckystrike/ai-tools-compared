@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Kubernetes Secrets Management: A Practical Guide"
-description: "Learn how to manage Kubernetes secrets effectively using Claude Code. This guide covers native methods, external secrets operators, and automation strategies for developers."
+description: "Learn how to manage Kubernetes secrets effectively using Claude Code. This guide covers native methods, external secrets operators, and automation."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-kubernetes-secrets-management/
+categories: [guides]
 ---
 
 {% raw %}
@@ -105,6 +106,13 @@ Another advanced pattern involves using secret references in Ingress resources f
 Kubernetes secrets management requires careful planning and the right tooling. Claude Code, combined with the External Secrets Operator, provides a robust framework for managing sensitive data across your clusters. Start with namespace isolation, implement external secrets storage, and automate rotation workflows to maintain strong security without sacrificing developer productivity.
 
 By following these practices and leveraging Claude Code's automation capabilities, you can establish a secrets management workflow that scales with your infrastructure while maintaining security best practices appropriate for production workloads.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

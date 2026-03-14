@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Kubernetes HPA Autoscaling Guide"
-description: "Learn how to implement Horizontal Pod Autoscaling in Kubernetes using Claude Code. Practical examples for setting up CPU, memory, and custom metric-based autoscaling."
+description: "Learn how to implement Horizontal Pod Autoscaling in Kubernetes using Claude Code. Practical examples for setting up CPU, memory, and custom."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-kubernetes-hpa-autoscaling-guide/
@@ -167,5 +167,12 @@ Regularly review HPA performance. Traffic patterns evolve as applications grow. 
 Horizontal Pod Autoscaling transforms Kubernetes deployments into responsive, cost-efficient systems. Start with basic CPU and memory metrics, then evolve toward custom metrics as your observability maturity increases. Claude Code streamlines configuration generation and helps maintain best practices across your cluster.
 
 Combine HPA with other Claude skills for comprehensive infrastructure management. The kubernetes-deployment-workflow skill handles rolling updates, while the helm-charts-guide skill manages complex multi-environment configurations. Together, these tools create robust, self-adjusting workloads that serve users effectively while controlling costs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

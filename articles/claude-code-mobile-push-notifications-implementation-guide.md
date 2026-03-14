@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Mobile Push Notifications Implementation Guide"
-description: "A comprehensive guide to implementing mobile push notifications in iOS and Android apps. Learn APNs, FCM setup, token management, and best practices for reliable delivery."
+description: "A comprehensive guide to implementing mobile push notifications in iOS and Android apps. Learn APNs, FCM setup, token management, and best practices."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -263,3 +263,10 @@ Implementing push notifications is only half the battle. Ensuring reliable deliv
 ## Conclusion
 
 Push notifications remain a powerful tool for mobile engagement when implemented thoughtfully. The key takeaways are: properly configure your APNs and FCM credentials, handle device tokens robustly on your backend, implement proper notification interaction handling, and respect user permissions and preferences. With this foundation in place, you can build engaging notification experiences that bring users back to your app at the right moments.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

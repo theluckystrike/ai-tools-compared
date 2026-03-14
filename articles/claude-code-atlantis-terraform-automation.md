@@ -5,6 +5,7 @@ description: "Learn how to combine Claude Code with Atlantis for automated Terra
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-atlantis-terraform-automation/
+categories: [guides]
 ---
 {% raw %}
 
@@ -127,6 +128,13 @@ Security sensitive teams may worry about exposing infrastructure details to exte
 Combining Claude Code with Atlantis creates a robust infrastructure automation pipeline. Claude handles generation and review of Terraform code, while Atlantis manages the pull request workflow and apply execution. This combination accelerates infrastructure development while maintaining safety through automated planning and human review.
 
 The workflow suits teams of all sizes, from small startups managing a few resources to enterprises running complex multi-environment deployments. By automating routine tasks and providing intelligent assistance, Claude Code and Atlantis together enable infrastructure teams to move faster without sacrificing quality or security.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

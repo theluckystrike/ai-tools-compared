@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude MD for Open Source Projects Guide"
-description: "Comprehensive guide to using Claude Code and Claude MD files effectively in open source projects. Learn how to create claude-md files that help contributors, maintainers, and collaborators work more efficiently."
+description: "Comprehensive guide to using Claude Code and Claude MD files effectively in open source projects. Learn how to create claude-md files that help."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, open-source, claude-md, contribution-guide, community]
@@ -272,3 +272,10 @@ Remember: the goal isn't to replace human judgment but to augment it, helping bo
 - [Claude MD Format Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Best Claude Code Skills to Install First 2026](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude MD Best Practices for Large Codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/)
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

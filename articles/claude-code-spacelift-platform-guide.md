@@ -5,6 +5,7 @@ description: "Learn how to integrate Claude Code with Spacelift for automated in
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-spacelift-platform-guide/
+categories: [guides]
 ---
 
 # Claude Code Spacelift Platform Guide
@@ -150,5 +151,12 @@ When integrating Claude Code with Spacelift, follow these security practices:
 Start small with non-critical stacks to build confidence in the workflow. Document your infrastructure patterns so Claude Code can generate consistent configurations. Use the `tdd` skill to write tests alongside your infrastructure code—this catches issues early and gives Claude Code better context when generating changes.
 
 The combination of Claude Code's contextual understanding and Spacelift's policy enforcement creates infrastructure automation that's both intelligent and compliant. As your infrastructure grows, this integration scales to manage hundreds of stacks while maintaining consistent governance.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

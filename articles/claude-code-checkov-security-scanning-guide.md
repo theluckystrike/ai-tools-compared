@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Checkov Security Scanning Guide"
-description: "Learn how to integrate Checkov static analysis into your Claude Code workflow to automatically detect security misconfigurations in infrastructure-as-code and cloud deployments."
+description: "Learn how to integrate Checkov static analysis into your Claude Code workflow to automatically detect security misconfigurations in."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-checkov-security-scanning-guide/
+categories: [guides]
 ---
 
 # Claude Code Checkov Security Scanning Guide
@@ -200,5 +201,12 @@ The skip comment includes the Checkov ID and a reason. This documentation approa
 For comprehensive security automation, combine Checkov with other Claude Code capabilities. The **tdd** skill helps you write test cases that verify your infrastructure behaves as expected after remediation. The **pdf** skill can generate formatted security reports from Checkov JSON output for stakeholder distribution. The **supermemory** skill maintains a knowledge base of recurring issues and their solutions across your infrastructure codebase.
 
 This multi-skill approach turns infrastructure security from a point-in-time scan into a continuous improvement practice. Claude becomes your security partner—running scans, explaining findings, generating fixes, and documenting the remediation process.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
