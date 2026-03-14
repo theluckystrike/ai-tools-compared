@@ -12,7 +12,7 @@ score: 7
 
 # Firecrawl MCP Server: Web Scraping Automation with Claude
 
-[The Firecrawl MCP server brings powerful web scraping capabilities directly into your Claude workflow](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) By combining Firecrawl's robust scraping engine with Claude's natural language processing, you can extract data from websites, monitor competitors, and build automated data pipelines without writing brittle scraping scripts. This guide covers setup, configuration, and practical automation scenarios for developers and power users.
+[The Firecrawl MCP server brings powerful web scraping capabilities directly into your Claude workflow](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) By combining Firecrawl's scraping engine with Claude's natural language processing, you can extract data from websites, monitor competitors, and build automated data pipelines without writing brittle scraping scripts. This guide covers setup, configuration, and practical automation scenarios for developers and power users.
 
 ## Prerequisites
 

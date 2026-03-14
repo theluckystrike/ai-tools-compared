@@ -76,7 +76,7 @@ Because n8n is self-hosted, you can inject full skill context without worrying a
 
 Connecting Claude skills to project management tools closes the loop between where work is tracked and where AI assistance is most useful. The two primary integration targets in the developer ecosystem are Notion and Linear.
 
-**Notion** has a robust API that allows Claude skills to read and write pages, databases, and blocks. Practical use cases:
+**Notion** has a rich API that allows Claude skills to read and write pages, databases, and blocks. Practical use cases:
 
 - Automatically generate project briefs from a template, filled with data from your codebase
 - Create meeting notes, action items, and summaries from raw conversation transcripts

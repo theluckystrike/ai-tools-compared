@@ -69,48 +69,24 @@ Analyze the authentication module in /src/auth/ and suggest improvements
 
 This targeted approach produces better results and uses fewer tokens.
 
-The metadata header optimization technique also helps. By placing critical instructions in the skill's YAML front matter rather than the full body, you reduce loading overhead:
+Place critical instructions at the top of your skill markdown file so Claude processes the most important context first:
 
-```yaml
----
-name: api-specialist
-trigger: /api
-priority: high
----
-
+```markdown
 # API Development Specialist
-You are an expert in REST and GraphQL API design...
+
+You are an expert in REST and GraphQL API design. Focus on consistent resource naming, proper status codes, and versioning strategies.
 ```
 
-This structure lets Claude quickly identify relevant skills without parsing the entire instruction block.
+This structure gives Claude the key context upfront without burying it later in the file.
 
 ## Automation Through Hooks
 
-Claude Code's hooks system enables workflow automation without manual intervention. The `on-tool-use` hook triggers actions after specific tool calls:
+Claude Code's hooks system enables workflow automation. You can configure hooks in `~/.claude/settings.json` under the `hooks` key. Hooks run shell commands automatically when specific Claude Code events occur — for example, running your test suite after Claude writes a file.
 
-```yaml
-hooks:
-  on-tool-use:
-    Write: file:
-      - "Generate unit tests for the newly created file"
+For test-driven workflows, use the `/tdd` skill to create integration tests:
+
 ```
-
-Create a `.claude/hooks.yml` file in your project:
-
-```yaml
-- match: ".*\\.test\\.js$"
-  hooks:
-    - type: on-tool-use
-      command: "npm test"
-```
-
-This runs tests automatically after creating test files.
-
-For even more advanced automation, the tdd skill integrates directly with your testing workflow:
-
-```bash
-# Invoke tdd skill with specific test framework
-/tdd create integration tests for payment-gateway.js --framework vitest
+/tdd create integration tests for payment-gateway.js using vitest
 ```
 
 ## Project-Specific Skill Configuration
@@ -121,8 +97,7 @@ Global skills serve general purposes, but project-specific configurations optimi
 .claude/
 ├── skills/
 │   └── project-conventions.md
-├── hooks.yml
-└── settings.yml
+└── settings.json
 ```
 
 The project conventions skill eliminates repetitive explanations:
@@ -142,51 +117,17 @@ When Claude enters this project, it immediately understands your standards witho
 
 ## Performance Monitoring
 
-Track skill performance to identify optimization opportunities. The built-in token usage feature shows how much each skill contributes to context:
-
-```
-/usage show token breakdown for current session
-```
-
-For skills that generate repetitive output, implement caching strategies. Skills that call external APIs benefit from response caching:
-
-```yaml
-# In skill configuration
-cache:
-  enabled: true
-  ttl: 3600  # seconds
-```
-
-This reduces API calls and improves response times for frequently requested data.
+Track skill performance by paying attention to response times and output quality. When sessions slow down or outputs become inconsistent, start a fresh session. Shorter, focused sessions generally produce faster and more accurate results than long multi-hour sessions with accumulated context.
 
 ## Multi-Agent Coordination
 
-Complex projects benefit from coordinating multiple Claude instances. The 2026 workflow pattern uses subagents for parallel task execution:
-
-```
-/You are coordinating three subagents:
-- agent-backend: handles API development
-- agent-frontend: builds React components  
-- agent-tests: creates test coverage
-
-Coordinate them to build a complete feature: user authentication with JWT
-```
-
-Each subagent operates independently while the main agent orchestrates their work.
+Complex projects benefit from coordinating multiple Claude Code sessions. Run separate terminal sessions for distinct workstreams — one handling backend API development, another building React components, and a third creating test coverage. Each session focuses on its domain while you coordinate the overall feature work.
 
 ## Error Recovery Strategies
 
-Workflow optimization includes handling failures gracefully. Build retry logic into your skills:
+Workflow optimization includes handling failures gracefully. When a skill produces incorrect output, provide specific corrective instructions rather than restarting the entire task. Tell Claude exactly what went wrong and what you expected instead.
 
-```yaml
-skills:
-  - name: api-caller
-    retry:
-      max_attempts: 3
-      backoff: exponential
-```
-
-When working with the pdf skill on large documents, implement chunked processing:
+When working with the `/pdf` skill on large documents, use chunked processing:
 
 ```
 /pdf extract pages 1-50 from large-manual.pdf and summarize

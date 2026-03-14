@@ -18,7 +18,7 @@ Real-time functionality has become essential for modern web applications. Whethe
 
 WebSockets establish persistent connections between clients and servers, allowing both parties to initiate message transmission without the overhead of repeated HTTP handshakes. Unlike request-response patterns, WebSocket connections remain open, enabling push-based communication.
 
-The fundamental WebSocket lifecycle involves three stages: handshake (HTTP upgrade), active connection (bidirectional messaging), and closure. Understanding this lifecycle helps you design more robust real-time systems.
+The fundamental WebSocket lifecycle involves three stages: handshake (HTTP upgrade), active connection (bidirectional messaging), and closure. Understanding this lifecycle helps you design more reliable real-time systems.
 
 Here's a basic Node.js WebSocket server implementation:
 
@@ -149,7 +149,7 @@ This hook handles connection lifecycle, automatic reconnection, and message stat
 
 ## Handling Connection State and Errors
 
-Production WebSocket implementations require robust error handling. Connection failures, network interruptions, and server restarts all impact user experience.
+Production WebSocket implementations require thorough error handling. Connection failures, network interruptions, and server restarts all impact user experience.
 
 Implement heartbeat messages to detect stale connections:
 

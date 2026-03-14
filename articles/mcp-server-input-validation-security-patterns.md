@@ -178,7 +178,7 @@ Integrate this limiter into your MCP server's request handler to throttle excess
 
 ## Schema Validation with Pydantic
 
-For more complex input structures, Pydantic provides robust schema validation with automatic type coercion and detailed error messages.
+For more complex input structures, Pydantic provides strong schema validation with automatic type coercion and detailed error messages.
 
 ```python
 from pydantic import BaseModel, Field, validator
@@ -282,7 +282,7 @@ Run these tests as part of your CI/CD pipeline to ensure validation remains effe
 
 Input validation forms a critical security layer in any MCP server implementation. By validating types, sanitizing paths, parameterizing queries, rate limiting requests, and using schema validation libraries, you build defense in depth against common attack vectors. These patterns scale from simple single-server deployments to complex multi-service architectures.
 
-The investment in robust validation pays dividends in security and reliability. Users trust your MCP server with their data, and proper input handling protects that trust. Implement these patterns early in your development process rather than retrofitting security onto an existing codebase.
+The investment in thorough validation pays dividends in security and reliability. Users trust your MCP server with their data, and proper input handling protects that trust. Implement these patterns early in your development process rather than retrofitting security onto an existing codebase.
 
 ---
 

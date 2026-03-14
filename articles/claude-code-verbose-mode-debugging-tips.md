@@ -12,13 +12,13 @@ score: 7
 
 # Claude Code Verbose Mode Debugging Tips
 
-[When you're building custom Claude skills or integrating AI assistance](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/), understanding how to debug effectively is essential. Claude Code provides verbose mode options that expose the internal decision-making process, tool invocations, and intermediate reasoning steps that help you identify why a skill behaves unexpectedly.
+[When you're building custom Claude skills or integrating AI assistance](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/), understanding how to debug effectively is essential. Claude Code provides verbose mode options that expose the internal decision-making process, tool invocations, and intermediate reasoning steps that help you identify why a skill behaves unexpectedly.
 
 This guide covers practical techniques for using Claude Code's verbose mode to troubleshoot skill issues, trace execution flow, and optimize your AI-assisted development process.
 
 ## Enabling Verbose Mode in Claude Code
 
-[Claude Code offers multiple levels of verbosity that reveal different amounts of internal information](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) The primary flags you can use are `--verbose` and `--debug`, which control the detail level of output.
+[Claude Code offers multiple levels of verbosity that reveal different amounts of internal information](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) The primary flags you can use are `--verbose` and `--debug`, which control the detail level of output.
 
 ```bash
 # Basic verbose output
@@ -55,7 +55,7 @@ Enable verbose output to see:
 - Any errors or warnings in the skill workflow
 
 ```bash
-claude --verbose --skill tdd "generate tests for auth module"
+claude --verbose "generate tests for auth module"
 ```
 
 The output reveals each step: initial prompt analysis, tool selection, file reads, test generation, and verification. When something goes wrong, this trace shows you exactly where the process diverged from expectations.
@@ -106,12 +106,6 @@ If a design skill produces unexpected results, the verbose trace shows exactly w
 
 Here are practical patterns for common debugging scenarios:
 
-**Skill not using expected tools:**
-```bash
-claude --verbose --skill skillname "task description"
-# Check the tool selection reasoning in output
-```
-
 **Unexpected behavior in multi-step workflows:**
 ```bash
 claude --debug "complex task with multiple steps"
@@ -120,7 +114,7 @@ claude --debug "complex task with multiple steps"
 
 **Context or memory issues:**
 ```bash
-claude --debug --skill supermemory "remember this detail"
+claude --debug "store this detail in memory"
 # Observe memory operations in trace
 ```
 
@@ -171,9 +165,9 @@ Mastering Claude Code's verbose mode transforms debugging from guesswork into sy
 
 ## Related Reading
 
-- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
-- [Claude Code Crashes When Loading Skill: Debug Steps](/claude-skills-guide/articles/claude-code-crashes-when-loading-skill-debug-steps/)
-- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/articles/claude-code-output-quality-how-to-improve-results/)
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
+- [Claude Code Crashes When Loading Skill: Debug Steps](/claude-skills-guide/claude-code-crashes-when-loading-skill-debug-steps/)
+- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/)
 - [Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

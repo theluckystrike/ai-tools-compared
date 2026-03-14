@@ -9,7 +9,6 @@ author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---
-{% raw %}
 
 # Datadog MCP Server Monitoring Automation with Claude
 
@@ -123,14 +122,13 @@ Always maintain human oversight for critical operations. Use Claude automation t
 
 Automating Datadog monitoring through MCP servers transforms infrastructure management from manual oversight to intelligent, proactive control. By using Claude's natural language capabilities, developers can focus on building and optimizing rather than constantly monitoring dashboards.
 
-The combination of Datadog's robust monitoring platform with MCP server automation creates a powerful foundation for modern infrastructure management. Start small, measure results, and expand automation as your confidence grows.
+The combination of Datadog's monitoring platform with MCP server automation creates a solid foundation for modern infrastructure management. Start small, measure results, and expand automation as your confidence grows.
 
 ## Related Reading
 
-- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
-- [MCP Server Logging Audit Trail Security Guide](/claude-skills-guide/articles/mcp-server-logging-audit-trail-security-guide/)
-- [Securing MCP Servers in Production Environments](/claude-skills-guide/articles/securing-mcp-servers-in-production-environments/)
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [MCP Server Logging Audit Trail Security Guide](/claude-skills-guide/mcp-server-logging-audit-trail-security-guide/)
+- [Securing MCP Servers in Production Environments](/claude-skills-guide/securing-mcp-servers-in-production-environments/)
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
