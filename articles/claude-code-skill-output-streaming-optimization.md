@@ -89,7 +89,7 @@ Each invocation streams a manageable chunk rather than generating a single massi
 
 ## Running Multiple Skills in Sequence
 
-When your workflow requires multiple skills, ordering them efficiently reduces total wait time. Start with lightweight retrieval before heavy generation:
+When your workflow requires multiple skills, ordering them efficiently reduces total wait time. Start with lightweight retrieval before heavy generation. For storing outputs between sessions, see [caching strategies for Claude Code skill outputs](/claude-skills-guide/articles/caching-strategies-for-claude-code-skill-outputs/):
 
 1. `/supermemory recall` — retrieve stored context (fast)
 2. `/pdf` — process documents (heavy, generates substantial output)
