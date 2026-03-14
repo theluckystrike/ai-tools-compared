@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Dotfiles Integration Tips Guide"
-description: "Practical tips for integrating Claude Code with your dotfiles workflow. Learn how to manage configuration files, automate setups, and sync preferences across machines."
+description: "Practical tips for integrating Claude Code with your dotfiles workflow. Learn how to manage configuration files, automate setups, and sync preferences."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-dotfiles-integration-tips-guide/
+categories: [guides]
 ---
 
 # Claude Code Dotfiles Integration Tips Guide
@@ -127,5 +128,12 @@ Version control your dotfiles with meaningful commit messages. When Claude acces
 Finally, separate machine-specific configurations from portable ones. Use include statements or conditional loading for settings that vary between workstations. This separation helps Claude provide targeted advice for specific machines without affecting your entire setup.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
