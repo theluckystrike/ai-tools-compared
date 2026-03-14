@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code for PyTorch LoRA Fine-Tuning Workflow"
 description: "Learn how to use Claude Code skills to streamline PyTorch LoRA fine-tuning workflows. Includes practical examples for dataset preparation, training."
 date: 2026-03-14
 categories: [guides]
-author: theluckystrike
+tags: [claude-code, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-for-pytorch-lora-fine-tuning-workflow/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -222,7 +227,7 @@ Beyond generating code, Claude Code offers several features that enhance LoRA fi
 4. **Version control**: Track your training configurations in git for reproducibility
 5. **Test merged models**: Always verify that merged models produce expected outputs
 
-Claude Code transforms LoRA fine-tuning from a complex, error-prone process into a streamlined workflow. By leveraging Claude's code generation, debugging, and automation capabilities, you can focus on the creative aspects of model customization while letting Claude handle the implementation details.
+Claude Code transforms LoRA fine-tuning from a complex, error-prone process into a streamlined workflow. By using Claude's code generation, debugging, and automation capabilities, you can focus on the creative aspects of model customization while letting Claude handle the implementation details.
 
 ---
 

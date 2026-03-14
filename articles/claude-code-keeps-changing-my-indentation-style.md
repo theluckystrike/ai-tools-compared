@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Keeps Changing My Indentation Style"
 description: "Learn how to control indentation preferences in Claude Code, configure your preferred style, and prevent unwanted formatting changes when Claude edits your code."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [troubleshooting]
-tags: [claude-code, indentation, formatting, code-style, configuration]
+tags: [claude-code, indentation, formatting, code-style, configuration, claude-skills]
 permalink: /claude-code-keeps-changing-my-indentation-style/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Keeps Changing My Indentation Style
 

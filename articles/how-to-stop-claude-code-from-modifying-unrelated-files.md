@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "How to Stop Claude Code from Modifying Unrelated Files"
 description: A practical guide for developers to prevent Claude Code from accidentally modifying files outside the intended scope of your tasks.
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /how-to-stop-claude-code-from-modifying-unrelated-files/
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # How to Stop Claude Code from Modifying Unrelated Files
 
@@ -63,7 +69,7 @@ This approach works well for teams that want consistent behavior across all deve
 
 ## Technique 3: Use the --dry-run Approach with Git
 
-Before accepting any changes, you can leverage git's capabilities to review what would be modified:
+Before accepting any changes, you can use git's capabilities to review what would be modified:
 
 1. Ask Claude Code to make the changes
 2. Before accepting, run `git status` to see all modified files
