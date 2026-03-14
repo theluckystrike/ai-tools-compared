@@ -76,14 +76,14 @@ The tdd skill enforces a test-driven development workflow that naturally produce
 
 When you use the tdd skill with specific test cases, Claude Code implements only what's needed to make those tests pass:
 
-```bash
+```
 # Activate tdd skill for a specific module
-claude-code load-skill tdd
+/tdd
 
 # Then specify exact requirements
-"Write a test for a validateEmail function that returns true for valid emails 
-and false for invalid formats. After the test passes, the function should only 
-handle email validation—do not add other validation logic."
+Write a test for a validateEmail function that returns true for valid emails
+and false for invalid formats. After the test passes, the function should only
+handle email validation—do not add other validation logic.
 ```
 
 This approach guarantees minimal changes because implementation stops once tests pass. For a deeper look at TDD-driven refactoring, see [how to refactor without breaking tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/).

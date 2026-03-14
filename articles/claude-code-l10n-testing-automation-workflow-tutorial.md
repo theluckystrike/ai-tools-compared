@@ -49,14 +49,14 @@ The first component of your L10n testing pipeline validates that all languages c
 
 Create a test file using the **tdd** skill to generate validation logic:
 
-```bash
-/claude-tdd generate --pattern string-consistency --locales ./locales --output ./tests/string-validator.test.js
+```
+/tdd Generate validation tests that verify all locale files in ./locales contain identical keys, output to ./tests/string-validator.test.js
 ```
 
 The tdd skill generates test cases that verify each locale file contains identical keys. Run the tests:
 
 ```bash
-claude-code run-tests ./tests/string-validator.test.js
+npx jest ./tests/string-validator.test.js
 ```
 
 The output identifies missing keys in each language file, showing exactly which translations need attention.

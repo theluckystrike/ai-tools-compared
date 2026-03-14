@@ -138,18 +138,9 @@ Adopt practices that prevent this error from recurring:
 
 ## When the Error Persists
 
-If you continue seeing the circular dependency error after applying these fixes, the issue might lie in cached skill definitions. Clear Claude Code's skill cache:
+If you continue seeing the circular dependency error after applying these fixes, the issue might lie in skill file caching. Restart Claude Code to clear any cached definitions:
 
-```bash
-claude code cache clear
-claude restart
-```
-
-Another possibility involves nested dependencies beyond the immediate skill chain. Use the verbose logging flag to see the full dependency resolution:
-
-```bash
-claude code --verbose load <skill-name>
-```
+Another possibility involves nested dependencies beyond the immediate skill chain. To debug the full dependency chain, inspect the skill's front matter `tools` field and trace which skills it references against your skills directory.
 
 ## Conclusion
 
