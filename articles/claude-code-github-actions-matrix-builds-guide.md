@@ -13,7 +13,7 @@ score: 7
 
 # Claude Code GitHub Actions Matrix Builds Guide
 
-[GitHub Actions matrix builds let you execute the same workflow across multiple configuration combinations](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) simultaneously. When paired with Claude Code, you can automate the creation of complex matrix workflows, generate dynamic configurations, and build intelligent testing pipelines that adapt to your project requirements. This guide provides practical patterns for using matrix builds effectively.
+[GitHub Actions matrix builds let you execute the same workflow across multiple configuration combinations](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) simultaneously. When paired with Claude Code, you can automate the creation of complex matrix workflows, generate dynamic configurations, and build intelligent testing pipelines that adapt to your project requirements. This guide provides practical patterns for using matrix builds effectively.
 
 ## Why Matrix Builds Matter
 
@@ -291,9 +291,9 @@ By combining matrix strategies with Claude Code skills like tdd and supermemory,
 
 ## Related Reading
 
-- [Claude Code GitHub Actions Composite Actions](/claude-skills-guide/articles/claude-code-github-actions-composite-actions/)
-- [Claude Code GitHub Actions Approval Workflows](/claude-skills-guide/articles/claude-code-github-actions-approval-workflows/)
-- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Claude Code GitHub Actions Composite Actions](/claude-skills-guide/claude-code-github-actions-composite-actions/)
+- [Claude Code GitHub Actions Approval Workflows](/claude-skills-guide/claude-code-github-actions-approval-workflows/)
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

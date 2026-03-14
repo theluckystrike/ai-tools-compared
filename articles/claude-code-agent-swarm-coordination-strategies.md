@@ -16,7 +16,7 @@ tags: [claude-code, claude-skills, agent-swarm, multi-agent, coordination, paral
 
 ## The Case for Agent Swarms
 
-[Single-agent workflows handle individual tasks well](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), but production scenarios often require parallel execution. Processing hundreds of PDF documents, running test suites across multiple modules, or generating documentation for a large codebase benefits from concurrent agent execution. The **tdd** skill demonstrates this naturally—when you run test generation across twenty files, coordinating multiple agents reduces completion time from minutes to seconds.
+[Single-agent workflows handle individual tasks well](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), but production scenarios often require parallel execution. Processing hundreds of PDF documents, running test suites across multiple modules, or generating documentation for a large codebase benefits from concurrent agent execution. The **tdd** skill demonstrates this naturally—when you run test generation across twenty files, coordinating multiple agents reduces completion time from minutes to seconds.
 
 Claude Code supports spawning multiple subagents within a single session via structured tool calls. Understanding how to coordinate these agents effectively separates basic usage from professional-grade automation.
 
