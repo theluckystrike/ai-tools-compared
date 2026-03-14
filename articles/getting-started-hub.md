@@ -371,7 +371,7 @@ This configuration allows Claude to read files and run git commands only, with n
 | Write your first skill | [How to Write a Skill MD File for Claude Code](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) | Intermediate |
 | Full skill specification | [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) | Intermediate |
 | Auto-invocation explained | [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) | Intermediate |
-| Auto-invocation deep dive | [How Claude Skills Auto Invocation Works (Deep Dive)](/claude-skills-guide/articles/how-claude-skills-auto-invocation-actually-works-deep-dive/) | Intermediate |
+| Auto-invocation internals | [How Claude Skills Auto Invocation Works (Deep Dive)](/claude-skills-guide/articles/how-claude-skills-auto-invocation-actually-works-deep-dive/) | Intermediate |
 | Permissions and security | [Claude Code Permissions Model and Security Guide](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/) | Intermediate |
 | TDD skill guide | [Claude TDD Skill: Test-Driven Development Guide](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) | Intermediate |
 | Frontend design skill | [Claude Frontend Design Skill Review and Tutorial](/claude-skills-guide/articles/claude-frontend-design-skill-review-and-tutorial/) | Intermediate |

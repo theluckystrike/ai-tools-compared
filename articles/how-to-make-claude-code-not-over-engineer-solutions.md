@@ -145,6 +145,6 @@ The key is making these decisions intentionally rather than accepting whatever C
 
 Preventing over-engineering becomes easier with practice. Start each interaction by asking yourself what the simplest possible solution would look like. State your constraints explicitly. Break complex requests into focused pieces. Review and prune what Claude generates.
 
-These habits shift your relationship with Claude Code from passive recipient to active director. You leverage its capabilities while maintaining control over complexity. The result is maintainable code that matches your actual needs rather than hypothetical future requirements.
+These habits shift your relationship with Claude Code from passive recipient to active director. You use its capabilities while maintaining control over complexity. The result is maintainable code that matches your actual needs rather than hypothetical future requirements.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

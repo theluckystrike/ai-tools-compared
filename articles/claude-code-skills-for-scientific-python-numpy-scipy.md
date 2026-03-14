@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Skills for Scientific Python: NumPy and SciPy
 
-Scientific computing with Python demands precision, reproducibility, and efficient workflow management. NumPy and SciPy form the backbone of numerical computing in Python, and integrating Claude Code skills into your research pipeline can dramatically accelerate development cycles. This guide shows you how to leverage Claude's specialized skills for data-heavy scientific projects. For Jupyter-centric research workflows, the [Claude skills for data science and Jupyter notebooks guide](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) covers the interactive computing side of this ecosystem.
+Scientific computing with Python demands precision, reproducibility, and efficient workflow management. NumPy and SciPy form the backbone of numerical computing in Python, and integrating Claude Code skills into your research pipeline can dramatically accelerate development cycles. This guide shows you how to apply Claude's specialized skills to data-heavy scientific projects. For Jupyter-centric research workflows, the [Claude skills for data science and Jupyter notebooks guide](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) covers the interactive computing side of this ecosystem.
 
 ## Setting Up Your Scientific Python Environment
 
@@ -25,7 +25,7 @@ source scipy-env/bin/activate
 uv pip install numpy scipy pandas matplotlib jupyter
 ```
 
-The `pdf` skill proves invaluable when you need to extract data from research papers or generate PDF reports from your analysis results. If your workflow involves converting computational results into shareable documents, this skill integrates seamlessly with your Python output.
+The `pdf` skill proves invaluable when you need to extract data from research papers or generate PDF reports from your analysis results. If your workflow involves converting computational results into shareable documents, this skill works directly with your Python output.
 
 ## Core NumPy Workflows with Claude
 

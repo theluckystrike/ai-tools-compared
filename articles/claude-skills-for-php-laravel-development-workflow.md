@@ -95,7 +95,7 @@ body: |
 
 ### Running Artisan Commands
 
-Your Laravel skills should integrate seamlessly with artisan. Create a skill that handles command execution. For CI/CD integration patterns, see [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/).
+Your Laravel skills should work directly with artisan. Create a skill that handles command execution. For CI/CD integration patterns, see [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/).
 
 ```
 name: artisan

@@ -137,13 +137,9 @@ After clearing, restart Claude Code and attempt your operation again.
 
 When multiple skills attempt to use different API keys for the same service, conflicts can occur. This happens frequently in projects with many installed skills.
 
-Review your active skills and their requirements:
+Review your active skills and their requirements by running `ls ~/.claude/skills/` in your terminal.
 
-```bash
-claude --list-skills
-```
-
-Temporarily disable skills you don't need for your current task to isolate whether a skill conflict is causing the authentication failure.
+Temporarily remove skills you don't need for your current task to isolate whether a skill conflict is causing the authentication failure.
 
 ## Preventing Future API Key Issues
 
