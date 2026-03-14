@@ -177,3 +177,10 @@ Integrate logging at each stage to track pipeline health. Claude Code can write 
 Coordinating multiple AI agents in pipeline workflows unlocks powerful automation capabilities. By leveraging Claude Code's context management, tool usage, and checkpoint features, you can build robust pipelines that handle complex multi-stage workflows reliably. Start with simple sequential patterns and gradually incorporate parallel execution and advanced coordination as your needs evolve.
 
 The key is treating each pipeline stage as a focused, specialized agent that does one thing well, with clear interfaces for communication between stages. This separation of concerns makes pipelines easier to debug, maintain, and extend over time.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Stripe Webhook Handler Implementation Guide"
-description: "Learn how to implement Stripe webhook handlers using Claude Code skills. Build reliable payment event processing with practical examples and best practices."
+description: "Learn how to implement Stripe webhook handlers using Claude Code skills. Build reliable payment event processing with practical examples and best."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, stripe, webhooks, payment-processing, api-integration]
@@ -196,3 +196,10 @@ When deploying webhook handlers to production, consider these practices:
 Implementing Stripe webhook handlers with Claude Code combines reliable, secure payment processing with Claude's ability to generate, explain, and test code. The skills approach keeps your webhook logic modular and maintainable. As Stripe adds new features and event types, your handler architecture makes it easy to extend functionality without breaking existing code.
 
 Remember to always verify signatures, implement idempotency checks, test thoroughly with Stripe's CLI, and log comprehensively for production systems. With these patterns in place, you'll build webhook handlers that handle payment events reliably and scale with your business needs.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
