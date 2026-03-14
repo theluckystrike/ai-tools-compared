@@ -16,7 +16,7 @@ Claude Code enables powerful multi-agent architectures through subagents. For an
 
 ## Understanding Subagent Context Architecture
 
-[Claude Code subagents operate as isolated execution units within a parent session](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Each subagent receives its own context window, which means data generated in one subagent does not automatically propagate to another. This isolation provides safety and predictability, but requires explicit patterns for sharing information.
+[Claude Code subagents operate as isolated execution units within a parent session](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Each subagent receives its own context window, which means data generated in one subagent does not automatically propagate to another. This isolation provides safety and predictability, but requires explicit patterns for sharing information.
 
 The parent agent serves as the coordinator. It holds the master context and decides which pieces of information to pass to each subagent at invocation time. This design gives you fine-grained control over what each subagent sees and can act upon.
 

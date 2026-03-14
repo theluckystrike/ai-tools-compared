@@ -14,11 +14,11 @@ score: 8
 
 Migrating [test suite](/claude-skills-guide/what-is-the-best-claude-skill-for-automated-code-review/)s from Jest to Vitest is one of the most impactful upgrades you can make to your JavaScript development workflow. This transformation delivers dramatically faster test execution, native Vite integration, and a more intuitive API that aligns with modern frontend tooling. When you use Claude Code as your AI development assistant, the migration becomes a structured, low-friction process that handles the complexities of config translation, import rewrites, and test adaptation.
 
-[This tutorial walks you through a complete migration workflow using Claude Code](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), covering everything from initial assessment through final verification.
+[This tutorial walks you through a complete migration workflow using Claude Code](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), covering everything from initial assessment through final verification.
 
 ## Why Migrate from Jest to Vitest
 
-[Vitest shares compatibility with Jest's API, meaning most of your existing test patterns translate directly](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) The performance gains stem from Vite's native hot module replacement and intelligent watch mode. Teams report test suites running 10x faster after switching, particularly beneficial in large codebases with hundreds of test files.
+[Vitest shares compatibility with Jest's API, meaning most of your existing test patterns translate directly](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) The performance gains stem from Vite's native hot module replacement and intelligent watch mode. Teams report test suites running 10x faster after switching, particularly beneficial in large codebases with hundreds of test files.
 
 The migration makes particular sense if your project already uses Vite for bundling. Vitest uses the same configuration, plugin ecosystem, and dependency resolution, eliminating duplicate tooling and reducing maintenance overhead.
 

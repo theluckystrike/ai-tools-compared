@@ -12,13 +12,13 @@ score: 7
 
 # Claude Skills for SEO Content Generation Workflow
 
-[Creating SEO-optimized content at scale requires a systematic approach](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Developers and power users can use Claude skills to automate research, generate outlines, optimize content, and track performance. This guide walks through a practical workflow using Claude Code skills for each stage of the content generation pipeline.
+[Creating SEO-optimized content at scale requires a systematic approach](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Developers and power users can use Claude skills to automate research, generate outlines, optimize content, and track performance. This guide walks through a practical workflow using Claude Code skills for each stage of the content generation pipeline.
 
 Claude skills are Markdown files stored in `~/.claude/skills/` and invoked with `/skill-name` inside a Claude Code session.
 
 ## The SEO Content Pipeline
 
-[A modern SEO content workflow involves multiple stages: keyword research, content brief creation, drafting, optimization, and performance tracking](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) Claude skills assist with each phase, reducing manual effort while maintaining quality standards.
+[A modern SEO content workflow involves multiple stages: keyword research, content brief creation, drafting, optimization, and performance tracking](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) Claude skills assist with each phase, reducing manual effort while maintaining quality standards.
 
 ### Keyword Research with Spreadsheet Automation
 

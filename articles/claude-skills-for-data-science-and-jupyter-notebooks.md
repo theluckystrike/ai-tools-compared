@@ -10,11 +10,11 @@ reviewed: true
 score: 7
 ---
 
-[Data science workflows involve repetitive tasks that drain productivity](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/): cleaning messy datasets, generating visualizations, building machine learning pipelines, and documenting findings. Claude Code skills transform these workflows by automating common operations and enabling AI-assisted development directly within Jupyter notebooks and Python environments.
+[Data science workflows involve repetitive tasks that drain productivity](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/): cleaning messy datasets, generating visualizations, building machine learning pipelines, and documenting findings. Claude Code skills transform these workflows by automating common operations and enabling AI-assisted development directly within Jupyter notebooks and Python environments.
 
 Claude skills are Markdown files stored in `~/.claude/skills/` and invoked with `/skill-name` inside a Claude Code session. They give Claude standing instructions for specialized tasks. There are no `from canvas_design import` or `from supermemory import` Python packages—skills are invoked conversationally, not imported.
 
-[This guide covers practical Claude skills that data scientists and developers use daily](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
+[This guide covers practical Claude skills that data scientists and developers use daily](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 
 ## Foundation Skills for Data Science
 

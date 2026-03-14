@@ -17,7 +17,7 @@ score: 8
 
 ## What Is Prompt Injection in MCP?
 
-[Prompt injection occurs when malicious input manipulates an AI system's behavior through carefully crafted prompts](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) In MCP contexts, this becomes particularly dangerous because external data sources—databases, APIs, file systems—can deliver untrusted content directly into your prompt context.
+[Prompt injection occurs when malicious input manipulates an AI system's behavior through carefully crafted prompts](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/) In MCP contexts, this becomes particularly dangerous because external data sources—databases, APIs, file systems—can deliver untrusted content directly into your prompt context.
 
 Consider a scenario where your MCP server fetches user-generated content:
 

@@ -12,7 +12,7 @@ score: 10
 
 # Claude Code Multi-Agent Error Recovery Strategies
 
-[When building complex workflows with Claude Code, multi-agent architectures offer significant power but introduce new failure modes](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) A single agent failing can cascade through dependent tasks, and without proper error recovery, your entire workflow stalls. This guide covers practical strategies for building resilient multi-agent systems using Claude Code skills and patterns.
+[When building complex workflows with Claude Code, multi-agent architectures offer significant power but introduce new failure modes](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) A single agent failing can cascade through dependent tasks, and without proper error recovery, your entire workflow stalls. This guide covers practical strategies for building resilient multi-agent systems using Claude Code skills and patterns.
 
 ## Understanding Multi-Agent Failure Modes
 
@@ -27,7 +27,7 @@ Each failure mode requires a different recovery approach, and the most reliable 
 
 ## Pattern 1: Explicit Error Handling with Try-Catch Blocks
 
-[The foundation of error recovery is wrapping risky operations in explicit error handlers](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) When using skills that perform file operations or external API calls, structure your prompts to include error handling instructions:
+[The foundation of error recovery is wrapping risky operations in explicit error handlers](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) When using skills that perform file operations or external API calls, structure your prompts to include error handling instructions:
 
 ```
 /pdf extract tables from report.pdf and save results to extracted-data.json

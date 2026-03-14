@@ -18,7 +18,7 @@ This guide covers practical methods to identify the active skill during your Cla
 
 ## Understanding Claude Skills Context
 
-[Claude skills are Markdown files stored in ~/.claude/skills/ that contain instructions Claude follows](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) when processing your requests. When you invoke a skill using its slash command (like `/pdf` or `/tdd`), Claude loads those instructions and applies them to your current conversation. Without an active skill, Claude uses its default behavior.
+[Claude skills are Markdown files stored in ~/.claude/skills/ that contain instructions Claude follows](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) when processing your requests. When you invoke a skill using its slash command (like `/pdf` or `/tdd`), Claude loads those instructions and applies them to your current conversation. Without an active skill, Claude uses its default behavior.
 
 The skill context affects how Claude:
 - Interprets your code and project structure

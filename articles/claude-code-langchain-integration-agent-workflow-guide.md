@@ -12,11 +12,11 @@ score: 8
 
 # Claude Code LangChain Integration Agent Workflow Guide
 
-[Building intelligent agent workflows requires combining the right tools](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Claude Code provides a powerful CLI for AI-assisted development, while LangChain offers a reliable framework for orchestrating language model interactions. This guide shows you how to integrate these technologies to create sophisticated automation pipelines.
+[Building intelligent agent workflows requires combining the right tools](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Claude Code provides a powerful CLI for AI-assisted development, while LangChain offers a reliable framework for orchestrating language model interactions. This guide shows you how to integrate these technologies to create sophisticated automation pipelines.
 
 ## Understanding the Integration Architecture
 
-Claude Code operates as your development companion, handling tasks through natural language commands. [LangChain provides the infrastructure for chaining together language model calls, memory management](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/), and tool usage. When combined, you get an agent system that can reason about tasks, use external tools, and maintain context across interactions.
+Claude Code operates as your development companion, handling tasks through natural language commands. [LangChain provides the infrastructure for chaining together language model calls, memory management](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/), and tool usage. When combined, you get an agent system that can reason about tasks, use external tools, and maintain context across interactions.
 
 The integration works through Claude Code's ability to execute shell commands and interact with Python environments. You trigger LangChain-based scripts from within Claude Code, passing context and receiving structured outputs.
 

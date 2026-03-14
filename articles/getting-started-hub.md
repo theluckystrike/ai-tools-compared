@@ -4,7 +4,7 @@ title: "Claude Code Getting Started: Complete Beginner Guide"
 description: "Everything you need to get started with Claude Code: installation, your first skill, understanding the interface, and essential workflows."
 date: 2026-03-14
 categories: [getting-started]
-tags: [getting-started, claude-code, beginners, installation]
+tags: [claude-skills, getting-started, claude-code, beginners, installation]
 is_pillar: true
 author: "Claude Skills Guide"
 reviewed: true

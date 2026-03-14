@@ -12,7 +12,7 @@ score: 8
 
 # Measuring Claude Code Skill Efficiency Metrics
 
-[Understanding how efficiently your Claude Code skills perform helps you make smarter decisions](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) about which skills to keep, optimize, or replace. Rather than guessing which tools deliver value, tracking concrete metrics reveals the actual impact on your development workflow.
+[Understanding how efficiently your Claude Code skills perform helps you make smarter decisions](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) about which skills to keep, optimize, or replace. Rather than guessing which tools deliver value, tracking concrete metrics reveals the actual impact on your development workflow.
 
 This guide covers practical approaches to measuring skill efficiency, relevant metrics to track, and actionable patterns for improving performance across your skill stack.
 

@@ -13,11 +13,11 @@ score: 8
 
 # Claude Code i18n Workflow for React Applications Guide
 
-[Internationalization (i18n) remains one of the most challenging aspects of building React applications that serve global audiences](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Managing translation keys, coordinating with localization teams, and maintaining consistency across locales can quickly become overwhelming. This guide shows you how to use Claude Code to streamline your i18n workflow, reducing manual effort and preventing common mistakes.
+[Internationalization (i18n) remains one of the most challenging aspects of building React applications that serve global audiences](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Managing translation keys, coordinating with localization teams, and maintaining consistency across locales can quickly become overwhelming. This guide shows you how to use Claude Code to streamline your i18n workflow, reducing manual effort and preventing common mistakes.
 
 ## Setting Up Your React i18n Foundation
 
-[Before integrating Claude Code into your workflow, establish a solid i18n foundation in your React project](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) The most popular solutions include react-i18next for projects using React Router, or i18next for more comprehensive needs. Install your chosen library and configure the basic setup:
+[Before integrating Claude Code into your workflow, establish a solid i18n foundation in your React project](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) The most popular solutions include react-i18next for projects using React Router, or i18next for more comprehensive needs. Install your chosen library and configure the basic setup:
 
 ```bash
 npm install i18next react-i18next i18next-http-backend

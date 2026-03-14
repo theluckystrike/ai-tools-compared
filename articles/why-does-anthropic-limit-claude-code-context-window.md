@@ -5,7 +5,7 @@ description: "Understanding why Anthropic imposes context window limits on Claud
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [guides]
-tags: [claude-code, context-window, limits, performance]
+tags: [claude-skills, claude-code, context-window, limits, performance]
 reviewed: true
 score: 8
 ---

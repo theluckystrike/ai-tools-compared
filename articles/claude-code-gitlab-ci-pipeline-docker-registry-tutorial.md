@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code GitLab CI Pipeline Docker Registry Tutorial
 
-[Setting up automated deployments with GitLab CI and Docker Registry streamlines your development workflow significantly](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This tutorial walks you through creating a complete pipeline that builds, tests, and pushes Docker images to GitLab's integrated registry.
+[Setting up automated deployments with GitLab CI and Docker Registry streamlines your development workflow significantly](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) This tutorial walks you through creating a complete pipeline that builds, tests, and pushes Docker images to GitLab's integrated registry.
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ my-app/
 └── package.json
 ```
 
-[The `.gitlab-ci.yml` file defines your pipeline, while the `Dockerfile` specifies how to build your container image](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+[The `.gitlab-ci.yml` file defines your pipeline, while the `Dockerfile` specifies how to build your container image](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
 
 ## Creating the Dockerfile
 

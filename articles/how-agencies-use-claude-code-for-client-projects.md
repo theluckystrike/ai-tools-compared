@@ -60,11 +60,11 @@ Using Claude Code with the pdf skill, agencies generate polished proposals in mi
 
 ### Development Sprints
 
-During active development, [the **tdd** skill to maintain rigorous testing standards](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). This becomes particularly valuable when onboarding junior developers or working with offshore teams:
+During active development, [the **tdd** skill helps maintain rigorous testing standards](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). This becomes particularly valuable when onboarding junior developers or working with offshore teams:
 
-```bash
-# Run TDD workflow for a new feature
-claude -p tdd --feature "user-export-functionality"
+```
+/tdd
+Build user export functionality for the dashboard, including tests for CSV and JSON formats.
 ```
 
 The tdd skill guides developers through red-green-refactor cycles, ensuring new features come with appropriate test coverage. Client projects with strict compliance requirements benefit immensely from this discipline.
@@ -74,8 +74,8 @@ The tdd skill guides developers through red-green-refactor cycles, ensuring new 
 The **frontend-design** skill accelerates the initial design phase by generating responsive component code from descriptions. Agencies use this for rapid prototyping:
 
 ```
-Create a landing page hero section with a gradient background, 
-centered headline, subtext, and two CTA buttons — one primary 
+Create a landing page hero section with a gradient background,
+centered headline, subtext, and two CTA buttons — one primary
 (blue) and one secondary (outlined). Use CSS Grid for layout.
 ```
 
@@ -85,13 +85,16 @@ This generates production-ready code that designers and developers can iterate o
 
 Agency teams struggle with knowledge retention as developers move between projects. [The **supermemory** skill solves this by creating searchable project histories](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/):
 
-```bash
-# Capture project decisions
-claude -p supermemory --log "Client rejected OAuth, implemented 
-email magic links instead. Decision made in call 2026-03-10."
+```
+/supermemory
+Remember: Client rejected OAuth for this project. We implemented email magic links instead. Decision made in call 2026-03-10.
+```
 
-# Query past decisions
-claude -p supermemory --query "authentication decisions"
+Later, team members can ask Claude to recall this context:
+
+```
+/supermemory
+What authentication approach did we use for this client, and why?
 ```
 
 This creates institutional memory that survives staff changes, enabling new team members to understand why specific technical decisions were made.
@@ -102,29 +105,32 @@ Beyond core development work, agencies automate repetitive client project tasks:
 
 ### Report Generation
 
-```yaml
-# Skill configuration for weekly reports
+Create a custom skill for weekly progress reports:
+
+```markdown
+---
 name: client-report
 description: Generates weekly progress reports for clients
 tools:
-  - read_file
-  - write_file
-  - bash
-prompt: |
-  Generate a markdown report summarizing:
-  - Completed tasks this week
-  - blockers and risks
-  - Next week's priorities
-  Format for client consumption.
+  - Read
+  - Write
+  - Bash
+---
+
+Generate a markdown report summarizing:
+- Completed tasks this week
+- Blockers and risks
+- Next week's priorities
+
+Format for client consumption.
 ```
 
 ### Code Review Automation
 
-Agencies configure Claude Code to perform automated code reviews before human review:
+Agencies configure Claude Code to perform automated code reviews before human review. Ask Claude to review specific files or pull request diffs directly:
 
-```bash
-# Review pull request changes
-claude -p code-review --pr 42 --repo .
+```
+Review the changes in src/auth/ for security issues, style violations, and potential bugs. Focus on the new magic link implementation.
 ```
 
 This catches style violations, security issues, and potential bugs before they reach client-facing demos.
@@ -133,16 +139,17 @@ This catches style violations, security issues, and potential bugs before they r
 
 For agencies billing by the hour, documenting time spent becomes critical. Some teams create custom skills that log development activities:
 
-```yaml
+```markdown
+---
 name: time-log
 description: Log time spent on client tasks
 tools:
-  - write_file
-  - read_file
-prompt: |
-  Append current timestamp and task description to 
-  _data/time-log.md in the format:
-  [YYYY-MM-DD HH:MM] - TASK_DESCRIPTION
+  - Write
+  - Read
+---
+
+Append the current timestamp and task description to _data/time-log.md in the format:
+[YYYY-MM-DD HH:MM] - TASK_DESCRIPTION
 ```
 
 This creates audit-ready logs that simplify invoicing and client conversations about project progress.

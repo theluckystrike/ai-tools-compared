@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Skill Exceeded Maximum Output Length Error Fix
 
-[The exceeded maximum output length error is one of the most common issues developers encounter](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) when working with Claude Code skills that generate substantial content. Whether you're building a skill that outputs detailed reports, generates extensive codebases, or processes large datasets, understanding how to handle output limits is essential for creating reliable, production-ready skills.
+[The exceeded maximum output length error is one of the most common issues developers encounter](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) when working with Claude Code skills that generate substantial content. Whether you're building a skill that outputs detailed reports, generates extensive codebases, or processes large datasets, understanding how to handle output limits is essential for creating reliable, production-ready skills.
 
 This guide provides practical solutions for fixing and preventing this error across different skill use cases.
 

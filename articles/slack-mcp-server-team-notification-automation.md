@@ -12,11 +12,11 @@ score: 7
 
 # Slack MCP Server Team Notification Automation
 
-[The Slack MCP server bridges Claude Code with your team's communication hub](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/), enabling automated notifications triggered by code changes, deployment events, or system alerts. When combined with other Claude skills like `tdd` for test results or `pdf` for automated reports, you can build powerful notification workflows that keep everyone informed without manual updates.
+[The Slack MCP server bridges Claude Code with your team's communication hub](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/), enabling automated notifications triggered by code changes, deployment events, or system alerts. When combined with other Claude skills like `tdd` for test results or `pdf` for automated reports, you can build powerful notification workflows that keep everyone informed without manual updates.
 
 ## What is Slack MCP Server?
 
-The Slack MCP (Model Context Protocol) server exposes Slack's API to Claude Code as a native tool. [Unlike traditional Slack bots that require separate code and configuration, the MCP approach lets you](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) invoke Slack operations directly from your skill definitions. This means notifications become part of your existing Claude workflows.
+The Slack MCP (Model Context Protocol) server exposes Slack's API to Claude Code as a native tool. [Unlike traditional Slack bots that require separate code and configuration, the MCP approach lets you](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) invoke Slack operations directly from your skill definitions. This means notifications become part of your existing Claude workflows.
 
 Key capabilities include:
 

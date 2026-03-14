@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Multi-Agent and Subagent Communication Guide
 
-[Claude Code supports multi-agent workflows where a primary agent orchestrates one or more subagents](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), each running in isolated sessions with their own context. This architecture enables parallel work, task specialization, and complex autonomous workflows that single-session approaches cannot handle cleanly.
+[Claude Code supports multi-agent workflows where a primary agent orchestrates one or more subagents](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), each running in isolated sessions with their own context. This architecture enables parallel work, task specialization, and complex autonomous workflows that single-session approaches cannot handle cleanly.
 
 ## The Multi-Agent Mental Model
 

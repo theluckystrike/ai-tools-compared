@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code Redux Toolkit State Management Guide
 
-[Redux Toolkit has become the standard for state management in React applications](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), and using it effectively with Claude Code can improve your development workflow. This guide covers practical patterns for integrating Redux Toolkit into your projects.
+[Redux Toolkit has become the standard for state management in React applications](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), and using it effectively with Claude Code can improve your development workflow. This guide covers practical patterns for integrating Redux Toolkit into your projects.
 
 ## Setting Up Redux Toolkit with Claude Code
 

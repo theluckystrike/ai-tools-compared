@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Input Validation and Sanitization Patterns Guide
 
-[Building reliable Claude Code skills requires careful attention to how data flows through your prompts](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/), tools, and outputs. Input validation and sanitization patterns protect your skills from malformed data, injection attacks, and unexpected behavior that can break your automation workflows.
+[Building reliable Claude Code skills requires careful attention to how data flows through your prompts](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/), tools, and outputs. Input validation and sanitization patterns protect your skills from malformed data, injection attacks, and unexpected behavior that can break your automation workflows.
 
 ## Why Input Validation Matters for Claude Skills
 
@@ -24,7 +24,7 @@ Without proper validation, a malformed response from one skill can cascade into 
 
 ### Type Checking and Schema Validation
 
-[The foundation of input validation begins with type checking](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When a skill receives data from an external source—whether from user input, API responses, or file contents—you must verify the data matches expected types before processing.
+[The foundation of input validation begins with type checking](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) When a skill receives data from an external source—whether from user input, API responses, or file contents—you must verify the data matches expected types before processing.
 
 ```javascript
 // Validate incoming data structure

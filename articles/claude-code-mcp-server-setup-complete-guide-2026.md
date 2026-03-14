@@ -12,11 +12,11 @@ score: 7
 
 # Claude Code MCP Server Setup: Complete Guide 2026
 
-[The Model Context Protocol (MCP) serves as the backbone for extending Claude Code's capabilities](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) Whether you need to integrate external APIs, connect to databases, or automate custom workflows, MCP servers provide the infrastructure. This guide walks you through setting up MCP servers from scratch in 2026.
+[The Model Context Protocol (MCP) serves as the backbone for extending Claude Code's capabilities](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/) Whether you need to integrate external APIs, connect to databases, or automate custom workflows, MCP servers provide the infrastructure. This guide walks you through setting up MCP servers from scratch in 2026.
 
 ## Understanding MCP Architecture
 
-[MCP follows a client-server model where Claude Code acts as the client connecting to one or more servers](/claude-skills-guide/articles/mcp-oauth-21-authentication-implementation-guide/) Each server exposes specific tools and resources that Claude can invoke during conversations. This architecture keeps your setup modular—you can add, remove, or update servers without affecting others.
+[MCP follows a client-server model where Claude Code acts as the client connecting to one or more servers](/claude-skills-guide/mcp-oauth-21-authentication-implementation-guide/) Each server exposes specific tools and resources that Claude can invoke during conversations. This architecture keeps your setup modular—you can add, remove, or update servers without affecting others.
 
 The protocol supports three primary connection types: stdio (standard input/output), SSE (Server-Sent Events), and WebSocket. Stdio works best for local processes, while SSE and WebSocket suit remote server deployments.
 

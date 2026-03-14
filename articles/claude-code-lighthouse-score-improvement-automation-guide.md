@@ -12,11 +12,11 @@ score: 8
 
 # Claude Code Lighthouse Score Improvement Automation Guide
 
-[Performance optimization is a continuous process, not a one-time fix](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Automating Lighthouse score improvements with Claude Code skills transforms reactive debugging into proactive performance management. This guide covers practical workflows for identifying bottlenecks, applying fixes automatically, and maintaining high scores over time.
+[Performance optimization is a continuous process, not a one-time fix](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Automating Lighthouse score improvements with Claude Code skills transforms reactive debugging into proactive performance management. This guide covers practical workflows for identifying bottlenecks, applying fixes automatically, and maintaining high scores over time.
 
 ## Understanding the Lighthouse Automation Challenge
 
-[Lighthouse measures five core categories: Performance, Accessibility, Best Practices, SEO, and Progressive Web App compliance](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Each category requires specific attention, and manually checking these metrics after every code change quickly becomes tedious. The solution lies in automating both the detection and remediation of performance issues.
+[Lighthouse measures five core categories: Performance, Accessibility, Best Practices, SEO, and Progressive Web App compliance](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Each category requires specific attention, and manually checking these metrics after every code change quickly becomes tedious. The solution lies in automating both the detection and remediation of performance issues.
 
 Claude Code skills provide the building blocks for this automation. The [**frontend-design** skill](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) offers initial site audits, while the **tdd** skill helps ensure performance tests pass before deployment. For persistent memory across sessions, the [**supermemory** skill](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) stores historical scores and tracks trends.
 

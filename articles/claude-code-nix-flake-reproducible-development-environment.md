@@ -16,7 +16,7 @@ Development environment reproducibility remains one of the hardest problems in s
 
 ## What Nix Flakes Bring to Development
 
-[Nix Flakes provide a purely functional approach to package management and system configuration](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Unlike traditional package managers that install packages into a global namespace, Nix stores each package in its own isolated directory with all dependencies. This isolation eliminates the "works on my machine" problem entirely.
+[Nix Flakes provide a purely functional approach to package management and system configuration](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Unlike traditional package managers that install packages into a global namespace, Nix stores each package in its own isolated directory with all dependencies. This isolation eliminates the "works on my machine" problem entirely.
 
 A Nix Flake is a declarative specification for a development environment. You define what you need—Node.js version, Python packages, system tools, environment variables—and Nix builds an environment that matches your specification exactly. The key advantage is reproducibility: given the same flake definition, any machine running Nix will produce an identical environment.
 

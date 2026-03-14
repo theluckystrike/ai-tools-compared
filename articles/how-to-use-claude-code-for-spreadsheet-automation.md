@@ -4,7 +4,7 @@ title: "How to Use Claude Code for Spreadsheet Automation"
 description: "Learn how to use Claude Code for spreadsheet automation with practical examples, Python scripts, and real-world workflows for developers and power users."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, spreadsheet-automation, excel, python, automation]
+tags: [claude-code, claude-skills, spreadsheet-automation, excel, python, automation]
 author: "Claude Skills Guide"
 reviewed: true
 score: 8
@@ -12,7 +12,7 @@ score: 8
 
 # How to Use Claude Code for Spreadsheet Automation
 
-[Spreadsheet automation transforms repetitive data tasks into reliable, reproducible processes](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Whether you are merging data from multiple sources, generating recurring reports, or cleaning messy imports, Claude Code provides the intelligence to understand your intent and the tools to execute complex operations on Excel files, CSVs, and other tabular formats.
+[Spreadsheet automation transforms repetitive data tasks into reliable, reproducible processes](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Whether you are merging data from multiple sources, generating recurring reports, or cleaning messy imports, Claude Code provides the intelligence to understand your intent and the tools to execute complex operations on Excel files, CSVs, and other tabular formats.
 
 This guide shows you practical approaches to automate spreadsheet workflows using Claude Code, with concrete examples you can apply immediately.
 

@@ -16,11 +16,11 @@ Claude Code is a powerful AI coding assistant, but users frequently encounter re
 
 ## The Context Window Problem
 
-[One of the most frequent mistakes Claude Code makes involves forgetting earlier parts of a conversation](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) When working on large projects, Claude may lose track of constraints you established in previous messages.
+[One of the most frequent mistakes Claude Code makes involves forgetting earlier parts of a conversation](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) When working on large projects, Claude may lose track of constraints you established in previous messages.
 
 ### Symptom
 
-[Claude generates code that contradicts your earlier requirements, uses wrong variable names, or ignores established patterns](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
+[Claude generates code that contradicts your earlier requirements, uses wrong variable names, or ignores established patterns](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 
 ### Solution
 

@@ -4,7 +4,7 @@ title: "Claude Code Hooks System: Complete Guide"
 description: "How Claude Code hooks work: configuring pre-tool, post-tool, and session hooks in settings.json to audit, modify, or block Claude's tool calls."
 date: 2026-03-13
 categories: [guides]
-tags: [claude-code, hooks, settings, devops, security, automation]
+tags: [claude-skills, claude-code, hooks, settings, devops, security, automation]
 author: "Claude Skills Guide"
 reviewed: true
 score: 8

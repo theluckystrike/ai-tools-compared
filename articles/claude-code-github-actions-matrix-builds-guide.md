@@ -17,7 +17,7 @@ score: 7
 
 ## Why Matrix Builds Matter
 
-[Matrix builds solve a common problem: you need to verify your code works across multiple environments](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/), but running these sequentially wastes CI/CD time. A matrix strategy runs all combinations in parallel, cutting pipeline duration from hours to minutes.
+[Matrix builds solve a common problem: you need to verify your code works across multiple environments](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), but running these sequentially wastes CI/CD time. A matrix strategy runs all combinations in parallel, cutting pipeline duration from hours to minutes.
 
 For example, testing a Node.js library across Node versions 18, 20, and 22 on both Ubuntu and macOS creates six parallel jobs instead of six sequential steps. The time savings compound when you add programming language versions, dependency variations, or deployment targets.
 

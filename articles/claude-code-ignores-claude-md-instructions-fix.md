@@ -16,9 +16,9 @@ Your [skill.md file](/claude-skills-guide/claude-skill-md-format-complete-specif
 
 ## Why Your Instructions Get Ignored
 
-[Claude Code loads skill instructions through two mechanisms, and understanding the difference matters](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) The **front matter** (the YAML block at the top) loads into the system prompt automatically for every conversation. The **body content** only loads when the skill auto-invokes or gets manually triggered.
+[Claude Code loads skill instructions through two mechanisms, and understanding the difference matters](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) The **front matter** (the YAML block at the top) loads into the system prompt automatically for every conversation. The **body content** only loads when the skill auto-invokes or gets manually triggered.
 
-If you've put critical instructions only in the body and your skill isn't auto-invoking, Claude Code never sees them. [This is the most common reason developers feel their instructions are being ignored](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/).
+If you've put critical instructions only in the body and your skill isn't auto-invoking, Claude Code never sees them. [This is the most common reason developers feel their instructions are being ignored](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/).
 
 ### Front Matter Loading Behavior
 

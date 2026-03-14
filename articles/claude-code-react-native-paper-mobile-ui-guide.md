@@ -17,7 +17,7 @@ React Native Paper provides a comprehensive set of Material Design components fo
 
 ## Setting Up React Native Paper
 
-[Before diving into component development, ensure your project has React Native Paper installed and configured](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) The library requires React Native Paper itself, along with react-native-vector-icons for icons and react-native-safe-area-context for proper layout handling.
+[Before diving into component development, ensure your project has React Native Paper installed and configured](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) The library requires React Native Paper itself, along with react-native-vector-icons for icons and react-native-safe-area-context for proper layout handling.
 
 ```bash
 npm install react-native-paper react-native-vector-icons react-native-safe-area-context

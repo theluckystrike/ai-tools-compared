@@ -13,7 +13,7 @@ score: 9
 
 # Claude Code Skill Conflicts with MCP Server Resolution Guide
 
-[When building complex Claude Code workflows that combine skills with MCP servers, developers frequently encounter conflicts](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) that break automation pipelines. These conflicts arise from overlapping tool names, competing permission scopes, and incompatible configuration settings. This guide provides practical solutions for resolving these issues.
+[When building complex Claude Code workflows that combine skills with MCP servers, developers frequently encounter conflicts](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/) that break automation pipelines. These conflicts arise from overlapping tool names, competing permission scopes, and incompatible configuration settings. This guide provides practical solutions for resolving these issues.
 
 ## Identifying the Conflict Type
 

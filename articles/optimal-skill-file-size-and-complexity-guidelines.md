@@ -12,7 +12,7 @@ score: 8
 
 # Optimal Skill File Size and Complexity Guidelines
 
-[Claude skills have transformed how developers interact with AI assistants](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) A well-crafted skill can automate repetitive tasks, enforce coding standards, or provide specialized expertise. However, one common pitfall is creating skills that are either too simple or excessively complex. Finding the right balance ensures your skills remain maintainable, testable, and effective.
+[Claude skills have transformed how developers interact with AI assistants](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) A well-crafted skill can automate repetitive tasks, enforce coding standards, or provide specialized expertise. However, one common pitfall is creating skills that are either too simple or excessively complex. Finding the right balance ensures your skills remain maintainable, testable, and effective.
 
 This guide provides practical recommendations for determining optimal skill file size and complexity, with real examples you can apply immediately.
 

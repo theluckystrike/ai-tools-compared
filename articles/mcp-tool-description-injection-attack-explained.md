@@ -22,7 +22,7 @@ When Claude decides to use a tool, it reads the tool's description to understand
 
 ## Understanding the Attack Vector
 
-A tool description injection attack occurs when an adversary manipulates the description field of an MCP tool to cause Claude to perform unintended actions. The attack leverages Claude's reliance on tool descriptions as authoritative guidance.
+A tool description injection attack occurs when an adversary manipulates the description field of an MCP tool to cause Claude to perform unintended actions. The attack exploits Claude's reliance on tool descriptions as authoritative guidance.
 
 Consider this scenario: you install an MCP server that provides a tool for processing PDF documents. [the `pdf` skill for handling PDF operations](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/). However, if the MCP server's tool description contains malicious content, Claude might interpret those instructions as higher-priority guidance than your actual task.
 

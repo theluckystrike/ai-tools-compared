@@ -13,7 +13,7 @@ score: 8
 
 # Claude Code LM Studio Local Model Skill Integration Guide
 
-[Running large language models locally gives you privacy, control, and flexibility](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When you combine Claude Code with LM Studio, you create a powerful local development environment where AI-assisted coding works without sending data to external services. This guide shows you how to integrate these tools and use Claude skills within your local setup.
+[Running large language models locally gives you privacy, control, and flexibility](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) When you combine Claude Code with LM Studio, you create a powerful local development environment where AI-assisted coding works without sending data to external services. This guide shows you how to integrate these tools and use Claude skills within your local setup.
 
 ## Understanding the Integration Architecture
 
@@ -23,7 +23,7 @@ LM Studio serves as a local server that exposes an API matching OpenAI's format.
 
 ## Setting Up LM Studio
 
-[Download and install LM Studio from the official website](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) Launch the application and navigate to the model search interface. For skill integration tasks, models in the 7B to 14B parameter range offer good balance between capability and resource usage. Search for models tagged with "code" or "instruct" to find variants optimized for coding tasks.
+[Download and install LM Studio from the official website](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) Launch the application and navigate to the model search interface. For skill integration tasks, models in the 7B to 14B parameter range offer good balance between capability and resource usage. Search for models tagged with "code" or "instruct" to find variants optimized for coding tasks.
 
 After downloading a model, click the server icon in LM Studio's sidebar. Configure the server with default settings unless you need specific port configurations. The server typically runs on `http://localhost:1234/v1`. Make a note of your endpoint URL—you'll need it for Claude Code configuration.
 

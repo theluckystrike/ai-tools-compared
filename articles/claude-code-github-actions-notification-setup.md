@@ -17,7 +17,7 @@ score: 8
 
 ## Why Configure GitHub Actions Notifications
 
-[When Claude Code executes workflows through skills like the TDD skill or automation pipelines, you need visibility](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) into what happens in your CI/CD environment. Without proper notifications, you might miss failed builds, broken tests, or successful deployments that require your attention.
+[When Claude Code executes workflows through skills like the TDD skill or automation pipelines, you need visibility](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) into what happens in your CI/CD environment. Without proper notifications, you might miss failed builds, broken tests, or successful deployments that require your attention.
 
 GitHub Actions provides native notification mechanisms, but extending these to Slack, Discord, email, or custom webhooks gives you flexibility. The setup involves understanding workflow triggers, artifact handling, and notification channels.
 

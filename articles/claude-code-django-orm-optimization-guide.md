@@ -16,7 +16,7 @@ score: 7
 
 ## Understanding the N+1 Query Problem
 
-[The N+1 query problem is the most common performance issue in Django applications](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) It occurs when you fetch a list of objects and then access related objects in a loop, triggering a separate query for each item.
+[The N+1 query problem is the most common performance issue in Django applications](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) It occurs when you fetch a list of objects and then access related objects in a loop, triggering a separate query for each item.
 
 Consider this example that displays orders with their customer names:
 

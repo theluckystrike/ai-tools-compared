@@ -12,9 +12,9 @@ score: 7
 
 # PagerDuty MCP Server Incident Management Guide
 
-[Incident management represents one of the most critical workflows in any production environment](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When systems fail, every second counts toward minimizing downtime and restoring service. Integrating PagerDuty with Claude through Model Context Protocol (MCP) servers transforms how teams respond to incidents, enabling AI-assisted automation that accelerates resolution times and reduces human error.
+[Incident management represents one of the most critical workflows in any production environment](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) When systems fail, every second counts toward minimizing downtime and restoring service. Integrating PagerDuty with Claude through Model Context Protocol (MCP) servers transforms how teams respond to incidents, enabling AI-assisted automation that accelerates resolution times and reduces human error.
 
-[This guide walks you through setting up and using the PagerDuty MCP server for automated incident management](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/), providing practical examples that developers and DevOps engineers can implement immediately.
+[This guide walks you through setting up and using the PagerDuty MCP server for automated incident management](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/), providing practical examples that developers and DevOps engineers can implement immediately.
 
 ## Prerequisites and Initial Setup
 

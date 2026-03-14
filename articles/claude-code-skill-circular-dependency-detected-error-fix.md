@@ -12,7 +12,7 @@ score: 9
 
 # Claude Code Skill Circular Dependency Detected Error Fix
 
-The **circular dependency detected** error in Claude Code skills halts execution abruptly, leaving developers frustrated and workflows broken. [This error occurs when skills form an interdependent loop](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) import loop — skill A loads skill B, which loads skill A again, creating an infinite recursion that Claude's runtime terminates. Understanding the root causes and applying the right fixes restores your workflow within minutes.
+The **circular dependency detected** error in Claude Code skills halts execution abruptly, leaving developers frustrated and workflows broken. [This error occurs when skills form an interdependent loop](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) import loop — skill A loads skill B, which loads skill A again, creating an infinite recursion that Claude's runtime terminates. Understanding the root causes and applying the right fixes restores your workflow within minutes.
 
 ## Recognizing the Circular Dependency Error
 

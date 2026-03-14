@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Qwik Resumability Lazy Loading Workflow Guide
 
-[Qwik changes how web applications handle interactivity](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Unlike traditional frameworks that rely on hydration, Qwik uses resumability to deliver near-instant page loads. When combined with Claude Code and its ecosystem of specialized skills, you can build highly performant Qwik applications while maintaining development velocity.
+[Qwik changes how web applications handle interactivity](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Unlike traditional frameworks that rely on hydration, Qwik uses resumability to deliver near-instant page loads. When combined with Claude Code and its ecosystem of specialized skills, you can build highly performant Qwik applications while maintaining development velocity.
 
 This workflow guide walks you through implementing Qwik projects using Claude Code, focusing on resumability patterns, lazy loading strategies, and practical development workflows.
 

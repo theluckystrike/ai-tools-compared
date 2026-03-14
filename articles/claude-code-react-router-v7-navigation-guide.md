@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code React Router v7 Navigation Guide
 
-[React Router v7 represents a significant evolution in how we handle navigation in React applications](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This guide walks you through the core navigation concepts using practical patterns that work well when developing with Claude Code assistance.
+[React Router v7 represents a significant evolution in how we handle navigation in React applications](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) This guide walks you through the core navigation concepts using practical patterns that work well when developing with Claude Code assistance.
 
 ## Understanding React Router v7 Architecture
 

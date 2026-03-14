@@ -18,7 +18,7 @@ The Model Context Protocol (MCP) has transformed how developers interact with Gi
 
 [The GitHub MCP server acts as a bridge between Claude and your repositories](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/) Instead of manually crafting API calls or switching between terminal and browser, you describe your intent in natural language, and MCP translates it into API operations. This approach works exceptionally well when combined with specialized Claude skills.
 
-[When you configure the GitHub MCP server, you gain access to repository operations, issue management, pull request handling](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/), and workflow monitoring. The server handles authentication through personal access tokens, maintaining security while enabling automation across multiple repositories.
+[When you configure the GitHub MCP server, you gain access to repository operations, issue management, pull request handling](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/), and workflow monitoring. The server handles authentication through personal access tokens, maintaining security while enabling automation across multiple repositories.
 
 ## Setting Up Advanced Workflows
 

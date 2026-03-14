@@ -10,7 +10,7 @@ reviewed: true
 score: 7
 ---
 
-[Product managers face a constant challenge: translating ambiguous requirements into clear, actionable specifications](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) that developers can execute. Claude Code accelerates this workflow significantly by combining AI assistance with specialized skills tailored for documentation, technical writing, and design collaboration.
+[Product managers face a constant challenge: translating ambiguous requirements into clear, actionable specifications](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) that developers can execute. Claude Code accelerates this workflow significantly by combining AI assistance with specialized skills tailored for documentation, technical writing, and design collaboration.
 
 This guide shows practical ways product managers integrate Claude Code into their specification workflow, with real examples and code snippets you can apply immediately.
 
