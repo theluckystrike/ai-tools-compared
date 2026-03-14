@@ -1,178 +1,203 @@
 ---
 layout: default
 title: "Claude Code API Error Handling Standards"
-description: "Learn industry-standard API error handling patterns for Claude Code. Build robust error responses, status codes, and graceful failure recovery for AI-powered applications."
+description: "A practical guide to implementing robust error handling in Claude skills. Learn standard patterns for retry logic, fallback strategies, and graceful degradation."
 date: 2026-03-14
-categories: [guides]
-tags: [claude-code, api-development, error-handling, best-practices, programming]
 author: theluckystrike
-reviewed: true
-score: 5
 permalink: /claude-code-api-error-handling-standards/
 ---
 
+{% raw %}
+
 # Claude Code API Error Handling Standards
 
-Building reliable APIs means anticipating failures and handling them gracefully. When you integrate Claude Code into your development workflow, applying consistent error handling standards ensures your applications remain stable and debuggable. This guide walks you through proven patterns for API error handling that work seamlessly with Claude Code and its ecosystem of skills.
+Building reliable Claude skills requires anticipating failures and handling them gracefully. Whether you're working with file operations, API calls, or external tool integrations, proper error handling prevents unexpected interruptions and maintains a consistent user experience. This guide covers the standard patterns for error handling that experienced developers apply to their Claude skills.
 
-## Why Error Handling Standards Matter
+## Understanding Error Sources in Claude Skills
 
-Every API encounters failures—network timeouts, invalid input, rate limits, or unexpected server conditions. Without standardized error handling, your applications become fragile and difficult to maintain. Claude Code can help you implement these patterns quickly, especially when combined with skills like tdd for test-driven development and supermemory for remembering error patterns across projects.
+Claude skills interact with multiple systems that can fail. Recognizing these error sources helps you design appropriate responses:
 
-The key is establishing a consistent contract between your API and its consumers. When error responses follow a predictable structure, debugging becomes straightforward and client applications can handle failures gracefully.
+**Tool Execution Errors**: The Read, Write, and Bash tools may fail due to permission issues, missing files, or command timeouts. Skills like `pdf` and `docx` frequently encounter file system errors when processing documents.
 
-## Core Error Response Structure
+**API and Network Errors**: Skills that call external services (through MCP or direct HTTP requests) face network timeouts, rate limits, and service unavailability. The `webapp-testing` skill must handle Playwright connection failures gracefully.
 
-A well-designed error response includes enough context for developers to understand what went wrong and how to fix it. Here's a robust error response schema:
+**Token and Resource Limits**: Long-running operations may hit context window limits or exceed allowed processing time. The `tdd` skill needs to handle test execution failures without leaving the project in an inconsistent state.
 
-```json
-{
-  "error": {
-    "code": "VALIDATION_ERROR",
-    "message": "The request payload failed validation",
-    "details": [
-      {
-        "field": "email",
-        "issue": "Invalid email format"
-      }
-    ],
-    "requestId": "req_abc123"
-  }
-}
+**Schema and Format Errors**: Invalid skill definitions or malformed front matter prevent skills from loading correctly. Proper validation helps catch these issues early.
+
+## Standard Error Handling Patterns
+
+### Try-Catch Implementation
+
+Wrap operations that can fail in explicit error handlers:
+
+```
+Error handling approach:
+- Wrap file operations in validation blocks
+- Check file existence before read operations
+- Validate tool outputs for expected structure
+- Log errors with sufficient context for debugging
 ```
 
-This structure works because it separates the human-readable message from machine-parsable codes. Your client applications can programmatically respond to specific error codes while displaying user-friendly messages.
+For skills that process multiple files, implement batch-level error handling:
 
-## HTTP Status Code Selection
-
-Using the correct HTTP status codes communicates intent clearly. Claude Code's integration with various frameworks benefits from these conventions:
-
-- **400 Bad Request** — Client sent invalid JSON, missing required fields, or malformed data
-- **401 Unauthorized** — Missing or invalid authentication credentials
-- **403 Forbidden** — Authenticated but lacking permission for the requested operation
-- **404 Not Found** — The requested resource doesn't exist
-- **422 Unprocessable Entity** — Valid syntax but semantic errors (validation failures)
-- **429 Too Many Requests** — Rate limit exceeded
-- **500 Internal Server Error** — Unexpected server-side failures
-
-Avoid using 500 errors for expected failures. Validation errors, missing resources, and authentication failures are predictable—they should return 400, 404, or 401 respectively.
-
-## Implementing Error Handling with Claude Skills
-
-Claude Code's skill ecosystem accelerates error handling implementation. The tdd skill helps you write tests before implementation, ensuring your error paths work correctly:
-
-```javascript
-// Example: Testing error responses with tdd skill
-describe('API Error Handling', () => {
-  it('returns 400 for invalid email format', async () => {
-    const response = await api.createUser({ email: 'invalid' });
-    expect(response.status).toBe(400);
-    expect(response.body.error.code).toBe('VALIDATION_ERROR');
-  });
-});
+```
+Processing workflow:
+1. Validate all input files exist before starting
+2. Process files sequentially with individual try-catch blocks
+3. If any single file fails, log the error and continue with remaining files
+4. Report all failures at the end with specific file paths and error messages
+5. Never leave partial output—clean up on failure or mark output as incomplete
 ```
 
-For API documentation, the pdf skill generates error documentation automatically:
+### Retry Logic with Exponential Backoff
 
-```markdown
-## Error Codes
+Network operations and external API calls benefit from retry strategies:
 
-| Code | Status | Description |
-| VALIDATION_ERROR | 400 | Request validation failed |
-| AUTH_REQUIRED | 401 | Authentication required |
-| RESOURCE_NOT_FOUND | 404 | Requested resource doesn't exist |
+```python
+import time
+
+def retry_with_backoff(func, max_retries=3, base_delay=1):
+    """Retry a function with exponential backoff."""
+    for attempt in range(max_retries):
+        try:
+            return func()
+        except (ConnectionError, TimeoutError) as e:
+            if attempt == max_retries - 1:
+                raise
+            delay = base_delay * (2 ** attempt)
+            time.sleep(delay)
+    return None
 ```
 
-## Graceful Degradation Patterns
+The `supermemory` skill uses this pattern when interacting with storage backends, allowing temporary network hiccups to resolve without failing the entire operation.
 
-APIs should fail gracefully rather than exposing internal implementation details. Consider these strategies:
+### Graceful Degradation
 
-**Circuit Breaker Pattern** — Prevent cascading failures by tracking failed requests and temporarily disabling downstream services:
+When primary functionality fails, provide fallback behavior:
 
-```javascript
-class CircuitBreaker {
-  constructor阈值, timeout) {
-    this.failureCount = 0;
-    this.threshold = threshold;
-    this.timeout = timeout;
-    this.state = 'CLOSED';
-  }
-
-  async call(fn) {
-    if (this.state === 'OPEN') {
-      throw new Error('Circuit breaker is OPEN');
-    }
-    try {
-      const result = await fn();
-      this.reset();
-      return result;
-    } catch (error) {
-      this.recordFailure();
-      throw error;
-    }
-  }
-}
+```
+Fallback strategy:
+- If primary API is unavailable, attempt cached data
+- If file format conversion fails, return raw text
+- If image generation fails, provide descriptive text instead
+- Always provide meaningful output rather than abandoning the task
 ```
 
-**Fallback Responses** — Provide cached or default responses when primary data sources fail. This maintains API availability even during partial outages.
+Skills like `frontend-design` should attempt alternative approaches when a specific component library is unavailable, falling back to standard HTML/CSS when needed.
 
-**Retry with Exponential Backoff** — Client applications should implement retry logic with increasing delays:
+## Structured Error Responses
 
-```javascript
-async function fetchWithRetry(url, options, maxRetries = 3) {
-  for (let i = 0; i < maxRetries; i++) {
-    try {
-      return await fetch(url, options);
-    } catch (error) {
-      if (i === maxRetries - 1) throw error;
-      await sleep(Math.pow(2, i) * 1000);
-    }
-  }
-}
+Error messages should follow a consistent structure that helps debugging and user understanding:
+
+```
+Error format:
+[SKILL_NAME] Operation failed: {specific_error}
+Context: {what was attempted, file paths, inputs}
+Recovery: {suggested next steps or manual intervention required}
 ```
 
-## Error Logging and Monitoring
+For example, when the `pdf` skill encounters a corrupt input file:
 
-Effective error handling extends beyond responding to clients. Proper logging enables debugging and proactive monitoring. The frontend-design skill can help you build error dashboards that visualize API health:
-
-Track these metrics for each error type:
-- Frequency of occurrence
-- Average resolution time
-- User impact (affected requests percentage)
-- Correlation with deployment or configuration changes
-
-Structured logging with request IDs enables tracing errors through your entire system. Include correlation IDs in error responses so clients can provide debugging information.
-
-## Validation Strategies
-
-Input validation is your first line of defense against errors. Validate early and fail fast:
-
-```javascript
-function validateUserInput(data) {
-  const errors = [];
-  
-  if (!data.email || !isValidEmail(data.email)) {
-    errors.push({ field: 'email', issue: 'Valid email required' });
-  }
-  
-  if (!data.name || data.name.length < 2) {
-    errors.push({ field: 'name', issue: 'Name must be at least 2 characters' });
-  }
-  
-  if (errors.length > 0) {
-    return { valid: false, errors };
-  }
-  
-  return { valid: true };
-}
+```
+[pdf] Processing failed: Unable to parse PDF structure
+Context: Attempted to read ./documents/report-2026.pdf
+Recovery: Verify the PDF file is not corrupted. Try re-exporting from the source application.
 ```
 
-Returning detailed validation errors helps clients correct their requests without guesswork.
+## Validation Before Execution
+
+Prevent errors by validating inputs before attempting operations:
+
+```
+Validation checklist:
+- Check file existence before Read operations
+- Verify directory exists before Write operations
+- Validate input formats match expected schemas
+- Confirm required environment variables are set
+- Check available disk space for file operations
+```
+
+This approach reduces runtime errors and provides clearer feedback to users about what's needed before starting a task.
+
+## Error Handling in Skill Chaining
+
+When multiple skills work together, error handling at integration points becomes critical:
+
+```
+Skill chaining error strategy:
+1. Each skill should validate inputs before passing to next skill
+2. Intermediate outputs should be checkpointed for recovery
+3. If downstream skill fails, upstream skill can re-run with corrected inputs
+4. Clear error propagation—don't hide failures from the user
+```
+
+The `automated-testing-pipeline-with-claude-tdd-skill` demonstrates this by checkpointing test files before running, allowing re-execution if the test runner encounters issues.
+
+## Timeout and Resource Management
+
+Long-running operations need explicit timeout handling:
+
+```yaml
+---
+name: long-running-skill
+timeout: 300
+max_turns: 15
+---
+
+For operations exceeding timeout:
+1. Save partial progress to checkpoint file
+2. Report current status and remaining work
+3. Provide command to resume from checkpoint
+4. Never leave resources in locked state
+```
+
+The `algorithmic-art` skill handles long rendering operations this way, checkpointing intermediate results so users can resume if the process is interrupted.
+
+## Logging and Debugging Support
+
+Effective error handling includes structured logging:
+
+```
+Logging requirements:
+- Timestamp each error with UTC format
+- Include skill name and operation type
+- Log relevant context (file paths, API endpoints, inputs)
+- Distinguish between recoverable and fatal errors
+- Use appropriate log levels: ERROR for failures, WARN for degraded operation
+```
+
+Debug mode should provide additional detail:
+
+```
+When debugging is enabled:
+- Log full stack traces for exceptions
+- Include intermediate variable values
+- Show tool call sequences leading to error
+- Output raw API responses when available
+```
+
+## Testing Error Handling
+
+Verify error handling works correctly through intentional failure testing:
+
+```
+Test scenarios:
+1. Missing input files—verify graceful error message
+2. Invalid input formats—confirm validation catches issues
+3. Network timeouts—ensure retry logic activates
+4. Permission errors—check for clear remediation guidance
+5. Resource exhaustion—validate cleanup and recovery paths
+```
+
+The `tdd` skill benefits from comprehensive error testing since it operates across multiple files and tools where various failure modes can occur.
 
 ## Summary
 
-Implementing robust API error handling requires consistent response structures, appropriate status codes, graceful degradation, and comprehensive logging. Claude Code accelerates these implementations through its skill ecosystem—use tdd for test-driven error handling, pdf for documentation, and supermemory for capturing project-specific patterns.
+Effective error handling in Claude skills follows consistent patterns: validate early, handle gracefully, recover intelligently, and communicate clearly. Skills like `pdf`, `tdd`, `frontend-design`, `webapp-testing`, and `supermemory` demonstrate these principles by anticipating failures and providing meaningful responses rather than abandoning tasks unexpectedly.
 
-The goal isn't preventing all errors—it's handling them consistently so your applications remain reliable and maintainable regardless of what goes wrong.
+Apply these standards when building your own skills to create reliable automations that serve users even when things go wrong. The initial investment in robust error handling pays dividends in reduced support burden and improved user trust.
+
+{% endraw %}
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
