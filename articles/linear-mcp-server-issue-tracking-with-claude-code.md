@@ -56,7 +56,7 @@ createIssue(
 
 This creates an issue in your specified team with priority level 2 (urgent). The description can include code snippets, error messages, or any context you gather during your coding session.
 
-The integration works particularly well when combined with other skills. Use the tdd skill to generate test cases for your new issue, then create the issue with those test details included. Or leverage the code-analysis skill to gather relevant code context before writing your issue description.
+The integration works particularly well when combined with other skills. Use the tdd skill to generate test cases for your new issue, then create the issue with those test details included. Or leverage the code-analysis skill to gather relevant code context before writing your issue description. For a broader view of how Claude skills fit into issue-driven workflows, see the [Claude skills workflow for technical product managers guide](/claude-skills-guide/articles/claude-skills-workflow-for-technical-product-managers/).
 
 ## Querying and Managing Issues
 
@@ -132,7 +132,7 @@ tools: [createIssue, updateIssue, listIssues]
 For each issue in the current sprint, check if there's been activity. If the issue has been waiting for review for more than 2 days, add a comment requesting review. If an issue is blocked, update the status to reflect that and notify the assignee.
 ```
 
-This automation reduces manual status updates and keeps your team aware of bottlenecks.
+This automation reduces manual status updates and keeps your team aware of bottlenecks. You can explore even more patterns in the [Claude skills with Linear project management tutorial](/claude-skills-guide/articles/claude-skills-with-linear-project-management-tutorial/).
 
 ## Practical Example: Bug Reporting Workflow
 
@@ -161,6 +161,8 @@ Keep your Linear integration effective with these approaches:
 - **Use labels consistently**: Establish a labeling convention and apply it across your team
 - **Link issues to code**: Reference issue IDs in commit messages and PR descriptions for automatic tracking
 - **Leverage priority levels**: Use priorities to help Claude Code focus on high-impact work first
+
+Before committing your Linear API key to any config file, review the [MCP credential management and secrets handling guide](/claude-skills-guide/articles/mcp-credential-management-and-secrets-handling/) for secure storage patterns.
 
 ## Conclusion
 
