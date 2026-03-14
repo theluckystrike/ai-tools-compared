@@ -5,6 +5,7 @@ description: "Learn how to use Claude Code's --resume flag to continue interrupt
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-resume-flag-how-to-use-it/
+categories: [guides]
 ---
 
 # Claude Code Resume Flag: How to Use It
@@ -165,5 +166,12 @@ The resume flag preserves skill context, including any custom instructions or co
 ## Summary
 
 The `--resume` flag is an essential tool for developers working on complex, multi-session tasks with Claude Code. By maintaining conversation history and project context, it enables workflow continuity that would otherwise require manual state management. Use it alongside good practices like manual progress saves and the supermemory skill for robust, interrupted-task recovery.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide]/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026]/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

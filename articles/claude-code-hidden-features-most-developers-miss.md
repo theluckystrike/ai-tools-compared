@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Hidden Features Most Developers Miss"
-description: "Discover hidden Claude Code features that power users leverage for maximum productivity. Learn about MCP servers, skill chaining, and advanced prompting techniques."
+description: "Discover hidden Claude Code features that power users leverage for maximum productivity. Learn about MCP servers, skill chaining, and advanced."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-hidden-features-most-developers-miss/
+categories: [guides]
 ---
 
 # Claude Code Hidden Features Most Developers Miss
@@ -174,5 +175,12 @@ The parallel execution works particularly well with independent components, allo
 These hidden features transform Claude Code from a simple coding assistant into a comprehensive development platform. MCP servers extend functionality to external services, skill chaining automates complex workflows, and the claude-md system provides persistent project control. Extended thinking reveals reasoning patterns, while clipboard and session management maintain context across sessions.
 
 Experiment with these capabilities gradually. Start with one feature—perhaps the claude-md system or a single MCP server—and expand as you become comfortable. The productivity gains compound quickly once you integrate these tools into daily workflows.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide]/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026]/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
