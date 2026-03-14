@@ -1,186 +1,202 @@
 ---
 layout: default
-title: "Claude Code Not Responding Terminal Hangs Fix"
-description: "Practical solutions for fixing Claude Code when it stops responding or your terminal hangs. Developer-focused troubleshooting guide with code examples."
+title: "Claude Code Not Responding: Terminal Hangs Fix Guide"
+description: "Practical solutions for fixing Claude Code when it stops responding or your terminal hangs. Learn diagnostic techniques, recovery methods, and prevention strategies."
 date: 2026-03-14
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /claude-code-not-responding-terminal-hangs-fix/
-reviewed: true
-score: 7
-categories: [troubleshooting]
-tags: [claude-code, claude-skills]
 ---
 
-# Claude Code Not Responding Terminal Hangs Fix
+# Claude Code Not Responding: Terminal Hangs Fix
 
-When Claude Code freezes mid-conversation or your terminal becomes unresponsive, productivity comes to a grinding halt. This guide provides practical troubleshooting steps for developers and power users facing these issues.
+When Claude Code freezes mid-conversation or your terminal stops responding, productivity comes to a halt. This guide covers practical solutions for diagnosing and fixing these issues, whether you're running a simple query or using advanced skills like the tdd skill for test-driven development.
 
-## Common Causes of Claude Code Freezes
+## Identifying the Problem
 
-Claude Code hanging typically stems from a few recurring issues. Understanding these causes helps you apply the right fix faster.
+Terminal hangs with Claude Code typically manifest in three ways. First, you might see a spinner that never completes—the cursor spins indefinitely with no response. Second, output may truncate mid-stream, leaving you with partial results and no way to continue. Third, the entire terminal session becomes unresponsive, accepting no keyboard input.
 
-### 1. Stuck Background Processes
+Before applying fixes, identify which scenario matches your situation. Different symptoms require different solutions.
 
-One of the most frequent culprits involves background processes that fail to terminate properly. When Claude Code spawns a process—such as running a skill that interacts with the frontend-design skill or executing code through a tool—it may sometimes leave that process running in the background. This causes the terminal to appear frozen even though Claude Code itself is waiting for input.
+## Quick Recovery Commands
 
-**Diagnosis**: Open a new terminal window and run:
+The fastest way to recover from a frozen Claude Code session depends on your terminal and operating system.
 
-```bash
-ps aux | grep -i claude
-ps aux | grep -i node
+For most users, pressing `Ctrl+C` once sends an interrupt signal. This tells Claude Code to stop the current operation and return control to your shell. In many cases, you'll see a "Interrupted" message and can continue your session.
+
+If `Ctrl+C` fails, try `Ctrl+Z` to background the process:
+
+```
+^Z
+[1]+  Stopped
+claude
 ```
 
-Look for orphaned processes consuming CPU or memory.
-
-**Fix**: Kill the stuck processes:
+Then kill the background process:
 
 ```bash
+kill %1
+```
+
+For macOS users with iTerm2, you can send a SIGKILL directly through the terminal menu: press `Cmd+.` to send an interrupt, or use `Cmd+Shift+K` to close the pane.
+
+On Linux, the equivalent is `Alt+.` or finding the process ID and using `kill -9`:
+
+```bash
+ps aux | grep claude
 kill -9 <PID>
 ```
 
-Then restart Claude Code in a fresh session.
+## Diagnosing Root Causes
 
-### 2. Infinite Loop in Skill Execution
+If hangs recur frequently, diagnose the underlying cause. Common culprits include network connectivity issues, skill configuration problems, and resource constraints.
 
-Skills that execute code—such as those using the tdd skill for test-driven development or the pdf skill for document generation—can sometimes trigger infinite loops if the generated code contains a bug or the skill encounters unexpected input.
+### Network Issues
 
-**Diagnosis**: Check if the terminal shows any error output or if it's completely silent. A silent terminal often indicates Claude Code is waiting for a subprocess that will never complete.
-
-**Fix**: Interrupt the process with `Ctrl+C`. If that fails:
+Claude Code communicates with Anthropic's API servers. Network problems manifest as hangs during the "Thinking..." phase. Test your connection:
 
 ```bash
-# Find the parent process
-pstree -p
-
-# Kill the entire process group
-kill -9 -<PGID>
+curl -s https://api.anthropic.com/health | head
 ```
 
-To prevent recurrence, add explicit timeout parameters to your skill configurations when working with the algorithmic-art skill or any skill that runs long-running computations.
+If this fails, check your firewall settings, VPN connection, or proxy configuration. Corporate networks often block API endpoints.
 
-### 3. Memory Exhaustion
+### Skill Configuration Problems
 
-Large codebase analysis using skills like supermemory can consume significant memory. When the system runs low on RAM, the terminal may become unresponsive as the OS struggles to allocate memory to new processes.
+Skills like pdf, xlsx, or frontend-design load additional instructions that can occasionally cause conflicts. Check your skill files for syntax errors:
 
-**Diagnosis**: Check system memory:
+```bash
+ls -la ~/.claude/skills/
+```
+
+Review recent modifications to your skill files. A malformed skill can cause Claude to enter an infinite reasoning loop.
+
+### Resource Constraints
+
+Low memory or CPU throttling can cause Claude Code to appear frozen. Monitor system resources:
 
 ```bash
 # macOS
-top -l 1 | head -n 10
+top -l 1 | head -20
 
 # Linux
-free -h
+free -h && uptime
 ```
 
-**Fix**: Close other applications, clear cache, or increase swap space. Consider splitting large tasks into smaller chunks when using skills that process substantial data.
-
-### 4. Network Timeout Issues
-
-Skills that call external APIs—such as those integrating with MCP servers or cloud services—may hang when network connectivity drops. Claude Code waits indefinitely for a response, freezing the terminal.
-
-**Fix**: Add timeout configurations to your skill definitions:
-
-```yaml
----
-name: api-integration-skill
-tools: [Bash, Read]
-timeout: 30
----
-```
-
-This prevents skills from waiting forever when external services are unreachable.
-
-### 5. Corrupted State Files
-
-Claude Code maintains conversation history and state files. If these become corrupted—due to abrupt termination, disk errors, or permission issues—the application may freeze on startup or during conversation restoration.
-
-**Fix**: Clear the state directory:
-
-```bash
-rm -rf ~/.claude/state/
-rm -rf ~/.claude/cache/
-```
-
-Restart Claude Code to rebuild state from scratch. Note that you'll lose conversation history, but the terminal should become responsive again.
-
-### 6. File Descriptor Exhaustion
-
-Heavy usage of skills that open many file handles—such as those that recursively scan directories or process multiple files simultaneously—can exhaust the system's file descriptor limit. Each open file, network connection, and pipe consumes a file descriptor. When the limit is reached, any new operation that requires a descriptor will hang.
-
-**Diagnosis**: Check your current limits:
-
-```bash
-ulimit -n
-```
-
-The default is often 256 or 1024, which may be insufficient for large projects.
-
-**Fix**: Increase the limit temporarily:
-
-```bash
-ulimit -n 4096
-```
-
-For permanent changes, edit `/etc/security/limits.conf` on Linux or create a launchd configuration on macOS.
-
-### 7. Skill-Specific Infinite Waits
-
-Certain skills have known patterns that can cause hangs. The xlsx skill, for instance, may hang when processing very large spreadsheets if the underlying library encounters an unexpected cell format. Similarly, the pptx skill can freeze when working with presentations containing embedded media files that are difficult to parse.
-
-**Fix**: When using these skills on complex files, break the task into smaller steps. Instead of processing an entire workbook at once, process sheets individually:
-
-```bash
-claude-code --skill xlsx --input "file.xlsx --sheet 0"
-claude-code --skill xlsx --input "file.xlsx --sheet 1"
-```
-
-This approach prevents memory buildup and provides checkpoints for recovery if a hang occurs.
+If memory is exhausted, close other applications or restart your terminal entirely.
 
 ## Preventing Future Hangs
 
-Implement these practices to minimize freeze occurrences:
+Prevention strategies reduce the frequency of frozen sessions.
 
-**Use Process Limits**: Configure your skills to limit concurrent operations. For example, when using the canvas-design skill to generate multiple assets, process them sequentially rather than in parallel:
+### Use Explicit Context Boundaries
 
-```bash
-for file in designs/*.png; do
-  claude-code --skill canvas-design --input "$file"
-done
+When working with large codebases or long conversations, explicitly set context boundaries. Instead of letting a session run indefinitely, break work into smaller chunks:
+
+```
+/clear
 ```
 
-**Monitor Resource Usage**: Add aliases to your shell configuration:
+This clears conversation history and starts fresh, reducing memory usage and the chance of hangs.
 
-```bash
-alias claudemon='while true; do ps aux | grep claude | grep -v grep; sleep 5; done'
+### Configure Skill Timeouts
+
+If you use skills that perform file operations—such as the tdd skill for test-driven development or the xlsx skill for spreadsheet manipulation—add timeout configurations to your `~/.claude/settings.json`:
+
+```json
+{
+  "skills": {
+    "timeout": 30,
+    "maxRetries": 2
+  }
+}
 ```
 
-Run this in a separate terminal window to monitor Claude Code's resource consumption during heavy tasks.
+### Optimize Prompt Complexity
 
-**Regular Maintenance**: Periodically clear logs and cache:
+Complex prompts with multiple instructions can trigger hangs. Break complex requests into sequential steps. Instead of:
 
-```bash
-rm -rf ~/.claude/logs/*.log
+```
+Create a full-stack application with authentication, database models, and API endpoints
 ```
 
-## Emergency Recovery Steps
+Use:
 
-When all else fails, perform these steps in order:
+```
+First, create the database models for user authentication
+```
 
-1. **Ctrl+C** — Send interrupt signal to the current process
-2. **Ctrl+Z** — Suspend the process, then `kill %1` 
-3. **New Terminal** — Kill processes manually as shown earlier
-4. **System Restart** — If the entire system feels sluggish, restart
+Then follow up with subsequent requests for each component.
+
+## Recovery Workflow
+
+When you encounter a hang, follow this systematic recovery workflow:
+
+1. **Wait 30 seconds**: Sometimes Claude Code is processing a complex request. A 30-second wait eliminates false positives.
+
+2. **Press Ctrl+C once**: A single interrupt signal often resolves the issue.
+
+3. **Check process status**: If the terminal remains frozen, open a new terminal window and check for running Claude processes.
+
+4. **Kill stubborn processes**: Use process termination as a last resort before restarting your terminal entirely.
+
+5. **Restart Claude Code**: After recovery, verify functionality with a simple query like "Hello, respond with OK."
+
+## Advanced Techniques
+
+For power users running Claude Code in specialized environments, additional techniques apply.
+
+### Container Environments
+
+When running Claude Code inside Docker containers, ensure proper signal handling. Add a `ENTRYPOINT` that properly forwards signals:
+
+```dockerfile
+ENTRYPOINT ["sh", "-c"]
+CMD ["exec claude"]
+```
+
+### tmux and Screen Sessions
+
+If you use tmux or screen, configure proper pane management. Add to your `.tmux.conf`:
+
+```
+bind-key C-c send-keys C-c
+bind-key C-z send-keys C-z
+```
+
+This ensures interrupt signals reach Claude Code even when running in detached sessions.
+
+### Log Analysis
+
+Enable debug logging to diagnose recurring issues. Set the `CLAUDE_DEBUG` environment variable:
+
+```bash
+export CLAUDE_DEBUG=1
+claude
+```
+
+Debug logs reveal where Claude Code stalls, helping identify whether the issue is network-related, skill-related, or a code execution problem.
+
+## When to Reinstall
+
+If issues persist despite troubleshooting, a clean reinstallation often resolves underlying corruption:
+
+```bash
+# Uninstall Claude Code
+brew uninstall claude
+
+# Clear configuration
+rm -rf ~/.claude
+
+# Fresh installation
+brew install claude
+```
+
+Reinstallation takes minutes and eliminates configuration conflicts that troubleshooting cannot fix.
 
 ## Conclusion
 
-Claude Code freezes stem from process management issues, skill execution problems, resource exhaustion, network timeouts, and corrupted state. By understanding these causes and applying the corresponding fixes, you can restore productivity quickly. Regular maintenance and careful skill configuration minimize future occurrences.
+Terminal hangs with Claude Code frustrate developers, especially when using powerful skills like tdd for test-driven development or pdf for document processing. Most hangs resolve with simple interrupt signals, while persistent issues often stem from network connectivity, skill configuration, or system resource constraints.
 
-
-## Related Reading
-
-- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
-- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/)
-- [Claude Code Keeps Making the Same Mistake: Fix Guide](/claude-skills-guide/claude-code-keeps-making-same-mistake-fix-guide/)
-- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/)
+By understanding the symptoms, applying quick recovery commands, and implementing prevention strategies, you minimize downtime and maintain productivity. For most users, `Ctrl+C` followed by a simple query test handles the situation. For recurring problems, the diagnostic and prevention techniques in this guide provide lasting solutions.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
