@@ -248,7 +248,7 @@ Run quarterly access reviews by analyzing this log to verify users still need th
 
 ### Blocking PII Exfiltration
 
-Use pre-tool hooks to scan for PII in web_fetch and web_search calls:
+Use pre-tool hooks to scan for PII in WebFetch and WebSearch calls:
 
 ```python
 import re
@@ -259,7 +259,7 @@ PII_PATTERNS = [
     r'\b4[0-9]{12}(?:[0-9]{3})?\b',  # Visa card numbers
 ]
 
-if data["tool_name"] in ["web_fetch", "web_search"]:
+if data["tool_name"] in ["WebFetch", "WebSearch"]:
     url_or_query = str(data.get("tool_input", {}))
     for pattern in PII_PATTERNS:
         if re.search(pattern, url_or_query):
@@ -280,7 +280,7 @@ PROTECTED_PATHS = [
     ".github/workflows/deploy-prod"
 ]
 
-if data["tool_name"] == "write_file":
+if data["tool_name"] == "Write":
     path = data["tool_input"].get("path", "")
     for protected in PROTECTED_PATHS:
         if path.startswith(protected) or protected in path:

@@ -47,11 +47,11 @@ Your main instruction block is where most of the token consumption happens. The 
 
 Instead of writing:
 
-> "When the user asks you to analyze code, you should first read the relevant files using the read_file tool, then examine the structure, identify any obvious issues, and provide a summary of your findings along with recommendations for improvement."
+> "When the user asks you to analyze code, you should first read the relevant files using the Read tool, then examine the structure, identify any obvious issues, and provide a summary of your findings along with recommendations for improvement."
 
 Write:
 
-> "When analyzing code: read files with read_file, identify patterns, report issues with line numbers."
+> "When analyzing code: read files with Read, identify patterns, report issues with line numbers."
 
 Both convey the same intent, but the second version uses roughly 70% fewer tokens.
 

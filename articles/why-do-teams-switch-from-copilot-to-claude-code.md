@@ -54,7 +54,7 @@ These specialized capabilities extend Claude Code beyond code completion into a 
 
 ## Better Command-Line Integration
 
-Claude Code integrates deeply with terminal operations through tools like `Bash` and `read_file`. Teams report that Claude's ability to execute commands, run tests, and modify files directly reduces the friction between writing code and running it.
+Claude Code integrates deeply with terminal operations through tools like `Bash` and `Read`. Teams report that Claude's ability to execute commands, run tests, and modify files directly reduces the friction between writing code and running it.
 
 A typical workflow might look like this:
 

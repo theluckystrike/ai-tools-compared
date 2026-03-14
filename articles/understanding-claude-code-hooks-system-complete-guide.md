@@ -35,7 +35,7 @@ Claude Code defines three primary hook types.
 Fires before Claude executes any tool call. This is the most commonly used hook type.
 
 Event data includes:
-- `tool_name` — the tool being called (e.g., `bash`, `read_file`, `write_file`)
+- `tool_name` — the tool being called (e.g., `Bash`, `Read`, `Write`)
 - `tool_input` — the arguments Claude is passing to the tool
 - `session_id` — current session identifier
 - `project_root` — path to the project root
@@ -45,7 +45,7 @@ Use cases: logging, blocking dangerous commands, enforcing project standards bef
 ```json
 {
   "event": "pre-tool",
-  "tool_name": "bash",
+  "tool_name": "Bash",
   "tool_input": {
     "command": "rm -rf ./dist"
   },
@@ -83,7 +83,7 @@ Hooks are defined in `.claude/settings.json` under the `"hooks"` key:
     "pre-tool": [
       {
         "matcher": {
-          "tool_name": ["bash", "write_file"]
+          "tool_name": ["Bash", "Write"]
         },
         "command": "python3 .claude/hooks/audit.py"
       }

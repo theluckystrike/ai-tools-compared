@@ -47,7 +47,7 @@ This inconsistency means skills with flexible triggers can appear to fail interm
 
 ### 5. Session Configuration Differences
 
-Your current session's tool configuration affects which skills can actually execute. A skill designed for file operations requires `read_file` and `write_file` access. If your session has limited tools available, the skill may fail silently during invocation, causing Claude to skip it.
+Your current session's tool configuration affects which skills can actually execute. A skill designed for file operations requires `Read` and `Write` access. If your session has limited tools available, the skill may fail silently during invocation, causing Claude to skip it.
 
 ## Debugging Auto Invocation Failures
 

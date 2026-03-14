@@ -91,7 +91,7 @@ Keep memories concise and organized by topic.
 [Large skill bodies consume more context tokens](/claude-skills-guide/claude-skills-context-window-management-best-practices/) at each turn. To keep skills manageable:
 
 - Put only the instructions Claude needs in the skill body
-- Move reference material to separate files and instruct Claude to read them when needed using the `read_file` tool
+- Move reference material to separate files and instruct Claude to read them when needed using the `Read` tool
 - Break very large workflows into smaller, focused skills
 
 ### Practical Examples
@@ -142,7 +142,7 @@ Always produce valid OpenAPI YAML with:
 
 **Put all behavior in the body.** Instructions, examples, rules, and context all belong in the Markdown body, not in front matter.
 
-**Separate core instructions from reference material.** Put essential instructions directly in the body. Reference external files for examples and templates by instructing Claude to read them with `read_file`.
+**Separate core instructions from reference material.** Put essential instructions directly in the body. Reference external files for examples and templates by instructing Claude to read them with `Read`.
 
 **Keep the body focused.** A skill that does one thing well is easier to invoke correctly than one that handles every possible case. If a skill covers too many scenarios, split it into multiple focused skills.
 
