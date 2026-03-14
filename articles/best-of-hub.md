@@ -95,7 +95,7 @@ If you're just getting started with skills, these five deliver the highest value
 | [Claude 4 Skills: Improvements and New Features](/claude-skills-guide/claude-4-skills-improvements-and-new-features/) | What changed in Claude 4 for skill authors and users |
 | [Anthropic Model Context Protocol Updates March 2026](/claude-skills-guide/anthropic-model-context-protocol-updates-march-2026/) | Latest MCP protocol changes and what they mean for skill builders |
 | [Building Production AI Agents with Claude Skills in 2026](/claude-skills-guide/building-production-ai-agents-with-claude-skills-2026/) | 2026 patterns for shipping production AI agents with Claude |
-| [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) | State-of-the-art testing pipelines using the TDD skill |
+| [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) | Full CI/CD testing pipelines using the TDD skill |
 | [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | The definitive TDD workflow using Claude's official TDD skill |
 | [Claude xlsx Skill Spreadsheet Automation Tutorial](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/) | Using the xlsx skill to automate spreadsheet workflows |
 | [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Best practices for managing context in 2026 skill workflows |
