@@ -197,4 +197,11 @@ For AI-assisted commits, provide context about what changed and why. The more pr
 
 Automating conventional commits in Claude Code eliminates the mental overhead of formatting commit messages while ensuring consistency across your project. The skill-based approach integrates naturally into your existing workflow, and when combined with Git hooks and release tools, creates a fully automated pipeline from code to release.
 
+## Related Reading
+
+- [Claude Code for End of Day Commit Workflow](/claude-skills-guide/claude-code-for-end-of-day-commit-workflow/) — End-of-day commit automation pairs well with conventional commits
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — TDD + conventional commits creates complete development automation
+- [Claude Code GitHub Actions Approval Workflows](/claude-skills-guide/claude-code-github-actions-approval-workflows/) — CI/CD integration for commit-based workflows
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — All Claude Code workflow automation guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -10,7 +10,7 @@ reviewed: true
 score: 8
 permalink: /monitoring-and-logging-claude-code-multi-agent-systems/
 ---
-{% raw %}
+
 
 
 # Monitoring and Logging in Claude Code Multi-Agent Systems
@@ -171,7 +171,7 @@ def log_error(agent_id: str, error: Exception, context: dict):
         subprocess.run([
             "curl", "-X", "POST",
             os.environ["ALERT_WEBHOOK_URL"],
-            "-d", f'{{"text": f"Agent {agent_id} failed: {error}"}}'
+            "-d", '{"text": "Agent ' + agent_id + ' failed: ' + str(error) + '"}'
         ])
 ```
 
@@ -212,4 +212,3 @@ Monitoring multi-agent Claude Code systems requires deliberate architecture. Sta
 - [Claude Skills Advanced Hub](/claude-skills-guide/advanced-hub/) — Explore advanced observability and coordination patterns for Claude Code agents.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

@@ -156,4 +156,11 @@ Finally, avoid installing packages globally to "solve" the virtual environment e
 
 The "python virtual environment not found" error in Claude Code is straightforward to resolve once you understand its cause. By creating and activating a virtual environment, installing required packages, and maintaining consistent environment management practices, you can prevent this error from disrupting your development workflow. Whether you are using the tdd skill for test-driven development, the pdf skill for document processing, or any other Python-dependent skill, a properly configured virtual environment ensures smooth collaboration between you and Claude Code.
 
+## Related Reading
+
+- [Claude Code Not Detecting My Virtual Environment Python Fix](/claude-skills-guide/claude-code-not-detecting-my-virtual-environment-python-fix/) — Closely related: detection vs not found errors
+- [Claude Code Command Not Found After Install Troubleshooting](/claude-skills-guide/claude-code-command-not-found-after-install-troubleshooting/) — Related path and environment resolution issues
+- [Claude Code Skills for Scientific Python NumPy SciPy](/claude-skills-guide/claude-code-skills-for-scientific-python-numpy-scipy/) — Python-specific workflow guidance
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All Python and environment fix guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,7 @@
 # Fleet Coordination Notes
 
 All PM agents (PM1, PM2, PM3) should read this file before making changes.
+**Do not delete this file.**
 
 ---
 
@@ -16,17 +17,7 @@ syntax in articles is passed through as-is to the HTML output.
 strings to appear as text in the rendered HTML page. This is incorrect behavior.
 
 **Rule:** PM1 must NOT add `{% raw %}` or `{% endraw %}` to any file in `articles/`.
-PM2 will strip any that appear. If PM1 re-adds them, this creates a conflict loop.
-
-Relevant config in `_config.yml`:
-```yaml
-defaults:
-  - scope:
-      path: "articles"
-    values:
-      layout: default
-      render_with_liquid: false
-```
+PM2 strips any that appear every cycle. The same note is in `_config.yml` comments.
 
 ---
 
@@ -42,8 +33,8 @@ NOT `/articles/slug` or any other format.
 
 ## Hub Pages
 
-Hub pages live at `articles/*-hub.md`. They use permalink format `/hub-name/` (no prefix).
-PM1 should not modify hub pages. Hub maintenance is PM2's responsibility.
+Hub pages live at `articles/*-hub.md`. PM1 should not modify hub pages.
+Hub maintenance is PM2's responsibility.
 
 ---
 
