@@ -13,7 +13,7 @@ tags: [claude-code, claude-skills]
 
 # Claude Code Skips Error Handling in Generated Code
 
-When working with Claude Code to generate code, you may have noticed that sometimes the output lacks proper error handling. This behavior can catch developers off guard, especially when building production applications that require robust exception handling and graceful failure modes. Understanding why this happens and how to address it will make you more effective at using Claude Code for real-world development tasks.
+When working with Claude Code to generate code, you may have noticed that sometimes the output lacks proper error handling. This behavior can catch developers off guard, especially when building production applications that require solid exception handling and graceful failure modes. Understanding why this happens and how to address it will make you more effective at using Claude Code for real-world development tasks.
 
 ## Why Claude Code Sometimes Omits Error Handling
 
@@ -43,7 +43,7 @@ def fetch_user_data(user_id):
 
 This code assumes the API call always succeeds. In production, this will crash when the network is down, the user doesn't exist, or the API returns an error status.
 
-Here's what you get when you explicitly request robust error handling:
+Here's what you get when you explicitly request error handling:
 
 ```python
 def fetch_user_data(user_id):

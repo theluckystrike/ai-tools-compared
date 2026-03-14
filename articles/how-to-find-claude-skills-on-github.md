@@ -74,8 +74,6 @@ Before installing any skill, assess its quality using these criteria:
 ---
 name: tdd-workflow
 description: Test-driven development guidance for Claude Code
-version: 1.0.0
-author: username
 ---
 ```
 

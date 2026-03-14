@@ -108,15 +108,8 @@ Check the front matter of each skill involved in the circular dependency. If you
 
 ```yaml
 ---
-# Remove circular dependency declaration
-# Before:
-# dependencies:
-#   - pdf
-#   - tdd
-
-# After - declare only what you strictly need:
-dependencies:
-  - shared-utilities
+name: my-skill
+description: "Skill that previously had circular references — now reorganized to avoid overlap"
 ---
 ```
 

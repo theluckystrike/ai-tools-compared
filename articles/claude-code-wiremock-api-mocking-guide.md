@@ -4,7 +4,7 @@ title: "Claude Code WireMock API Mocking Guide"
 description: "Learn how to use WireMock with Claude Code to mock APIs for testing. Practical examples for developers integrating HTTP stubbing in their workflow."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, wiremock, api-mocking, testing, http-mocking]
+tags: [claude-code, claude-skills, wiremock, api-mocking, testing, http-mocking]
 author: theluckystrike
 reviewed: true
 score: 8

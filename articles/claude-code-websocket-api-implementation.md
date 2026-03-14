@@ -4,7 +4,7 @@ title: "Claude Code WebSocket API Implementation Guide"
 description: "Learn how to implement WebSocket APIs using Claude Code with practical examples, code snippets, and integration patterns for developers."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, websocket, api, real-time, nodejs, javascript]
+tags: [claude-code, claude-skills, websocket, api, real-time, nodejs, javascript]
 author: theluckystrike
 reviewed: true
 score: 7

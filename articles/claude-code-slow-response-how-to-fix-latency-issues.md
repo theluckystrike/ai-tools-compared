@@ -4,7 +4,7 @@ title: "Claude Code Slow Response: How to Fix Latency Issues"
 description: "Practical solutions for fixing slow Claude Code responses. Optimize your AI assistant with skill management, context trimming, and performance tuning techniques."
 date: 2026-03-14
 categories: [troubleshooting]
-tags: [claude-code, performance, latency, troubleshooting, optimization]
+tags: [claude-code, claude-skills, performance, latency, troubleshooting, optimization]
 author: theluckystrike
 reviewed: true
 score: 8

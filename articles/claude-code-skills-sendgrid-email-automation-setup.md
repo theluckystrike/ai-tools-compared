@@ -52,7 +52,6 @@ The core of any SendGrid skill is authentication. Store your API key securely us
 ---
 name: sendgrid-email
 description: Send emails via SendGrid API. Supports transactional emails, templates, and batch sends.
-version: 1.0.0
 ---
 
 # SendGrid Email Automation Skill

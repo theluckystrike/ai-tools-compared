@@ -4,7 +4,7 @@ title: "Claude Code MSW Mock Service Worker Guide"
 description: "Learn how to use MSW (Mock Service Worker) with Claude Code for API mocking, frontend development, and testing. Practical examples and workflow integration."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, msw, mock-service-worker, api-mocking, testing, frontend-development]
+tags: [claude-code, claude-skills, msw, mock-service-worker, api-mocking, testing, frontend-development]
 author: theluckystrike
 reviewed: true
 score: 7

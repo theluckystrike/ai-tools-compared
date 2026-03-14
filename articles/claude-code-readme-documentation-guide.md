@@ -4,7 +4,7 @@ title: "Claude Code README Documentation Guide"
 description: "Learn how to create comprehensive README documentation for your Claude Code projects with practical examples, templates, and automation tips."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, documentation, readme, workflow]
+tags: [claude-code, claude-skills, documentation, readme, workflow]
 author: theluckystrike
 reviewed: true
 score: 5

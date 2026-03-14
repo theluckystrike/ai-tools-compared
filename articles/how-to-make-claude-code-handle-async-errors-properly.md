@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Make Claude Code Handle Async Errors Properly"
-description: "Learn to handle async errors in Claude Code skills with proper error handling patterns, try-catch blocks, and fallback strategies for robust AI workflows."
+description: "Learn to handle async errors in Claude Code skills with proper error handling patterns, try-catch blocks, and fallback strategies for reliable AI workflows."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [guides]

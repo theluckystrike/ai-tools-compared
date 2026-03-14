@@ -67,7 +67,7 @@ Skills like the tdd skill help structure your workflow into manageable chunks. B
 5. Move to next function
 ```
 
-### Leverage Summarization
+### Use Summarization
 
 When you have been working on a complex problem and need to continue, ask Claude to summarize the current state before starting a new session. Use the supermemory skill to maintain persistent notes across sessions.
 

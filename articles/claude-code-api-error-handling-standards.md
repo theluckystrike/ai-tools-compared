@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code API Error Handling Standards"
-description: "A practical guide to implementing robust error handling standards for Claude Code API integrations. Includes code examples, best practices, and patterns for developers."
+description: "A practical guide to implementing solid error handling standards for Claude Code API integrations. Includes code examples, best practices, and patterns for developers."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, claude-code, api, error-handling, development, standards]

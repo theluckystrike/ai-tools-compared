@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code REST API Design Best Practices"
-description: "Learn how to build robust, scalable REST APIs with Claude Code. Covers naming conventions, versioning, error handling, and practical examples for developers."
+description: "Learn how to build reliable, scalable REST APIs with Claude Code. Covers naming conventions, versioning, error handling, and practical examples for developers."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-rest-api-design-best-practices/

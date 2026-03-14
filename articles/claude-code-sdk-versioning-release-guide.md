@@ -68,12 +68,7 @@ Include deprecation warnings in your skill documentation when removing features:
 ```yaml
 ---
 name: data-processor
-version: 2.0.0
-deprecated: true
-replacement: enhanced-data-processor
-deprecation_notice: |
-  Use `enhanced-data-processor` v3.0+ for better performance.
-  This skill will receive security updates until December 2026.
+description: "Data processor (deprecated — use enhanced-data-processor for better performance)"
 ---
 ```
 

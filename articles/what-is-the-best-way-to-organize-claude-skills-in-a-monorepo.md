@@ -82,13 +82,11 @@ Reference this shared fragment in your skill:
 ---
 name: code-review
 description: Automated code review with security focus
-dependencies:
-  - shared/templates/system-prompt-fragment.md
 ---
 
 # Code Review Skill
 
-@shared/templates/system-prompt-fragment.md
+You are a detail-oriented code reviewer focused on security vulnerabilities, performance anti-patterns, and clean code principles.
 
 Now analyze the provided code and identify issues.
 ```
