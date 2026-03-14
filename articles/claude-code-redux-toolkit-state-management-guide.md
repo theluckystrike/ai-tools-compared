@@ -10,11 +10,11 @@ reviewed: true
 score: 7
 ---
 
-Redux Toolkit has become the standard for state management in React applications, and using it effectively with Claude Code can dramatically improve your development workflow. This guide covers practical patterns for integrating Redux Toolkit into your projects while leveraging Claude Code's capabilities.
+[Redux Toolkit has become the standard for state management in React applications](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), and using it effectively with Claude Code can dramatically improve your development workflow. This guide covers practical patterns for integrating Redux Toolkit into your projects while leveraging Claude Code's capabilities.
 
 ## Setting Up Redux Toolkit with Claude Code
 
-When starting a new React project with Redux Toolkit, Claude Code can help scaffold the entire state management layer. The key is providing clear context about your application structure. Begin by specifying your state shape and which components need access to which data.
+When starting a new React project with Redux Toolkit, [Claude Code can help scaffold the entire state management layer](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) The key is providing clear context about your application structure. Begin by specifying your state shape and which components need access to which data.
 
 Install Redux Toolkit and React-Redux in your project:
 
@@ -207,5 +207,12 @@ This pattern makes updates more predictable and improves performance when dealin
 Organize your Redux code following these principles. Keep slices focused on single domains of state. Use createSelector for all derived data. Prefer RTK Query over manual async handling when possible. Normalize nested data structures. Write tests alongside your slices using the tdd skill workflow.
 
 Claude Code can assist with all aspects of Redux Toolkit implementation, from initial setup to complex middleware configuration. By providing clear context about your application architecture, you can generate precise code that fits your specific needs.
+
+## Related Reading
+
+- [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
+- [Claude Code React Router v7 Navigation Guide](/claude-skills-guide/articles/claude-code-react-router-v7-navigation-guide/)
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/articles/vibe-coding-with-claude-code-complete-guide-2026/)
+- [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

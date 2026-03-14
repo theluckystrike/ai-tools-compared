@@ -12,11 +12,11 @@ score: 7
 
 # Claude MD Character Limit and Optimization Guide
 
-When building Claude skills or writing `.md` files for Claude Code, you will eventually encounter character and token limits. Understanding these constraints and knowing how to optimize your files is essential for creating reliable, high-performing skills. This guide covers the practical strategies developers and power users can apply to work effectively within these limits.
+[When building Claude skills or writing `.md` files for Claude Code](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/), you will eventually encounter character and token limits. Understanding these constraints and knowing how to optimize your files is essential for creating reliable, high-performing skills. This guide covers the practical strategies developers and power users can apply to work effectively within these limits.
 
 ## Understanding the Character Limits
 
-Claude MD files are not subject to a strict character limit in the traditional sense, but they consume tokens from Claude Code's context window. Each time Claude loads a skill, the entire file gets processed alongside your conversation. Large files mean fewer tokens available for actual work, and in some cases, you may hit the "maximum output length" error when Claude generates responses that exceed available space.
+[Claude MD files consume tokens from the context window](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) in the traditional sense, but they consume tokens from Claude Code's context window. Each time Claude loads a skill, the entire file gets processed alongside your conversation. Large files mean fewer tokens available for actual work, and in some cases, you may hit the "maximum output length" error when Claude generates responses that exceed available space.
 
 The practical boundaries depend on your Claude Code tier and the model you are using. With Claude 3.5 Sonnet, you typically have a 200K token context window. A well-optimized skill file should stay under 4,000 tokens to leave ample room for your project code and conversation history. Files approaching 10,000 tokens will noticeably slow down skill loading and reduce the space Claude has to reason about your actual task.
 
@@ -135,5 +135,12 @@ Sometimes the issue is not your input file but Claude's output. When generating 
 ## Summary
 
 Claude MD character limits are soft boundaries that become hard limits when they impact your workflow. By keeping front matter concise, writing precise instructions, externalizing examples, and using lazy loading for complex skills, you can build robust Claude skills that perform well within token constraints. These optimization techniques apply whether you are creating a simple utility skill or a comprehensive development workflow using skills like `tdd`, `frontend-design`, or `pdf`.
+
+## Related Reading
+
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/)
+- [Claude MD Best Practices for Large Codebases](/claude-skills-guide/articles/claude-md-best-practices-for-large-codebases/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

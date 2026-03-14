@@ -12,7 +12,7 @@ score: 7
 
 # Claude MD Version Control Strategy Best Practices
 
-Managing Claude Code skills effectively requires more than just writing good markdown instructions. When you treat your `~/.claude/skills/` directory as a proper version-controlled project, you gain traceability, collaboration capabilities, and the ability to roll back problematic changes. This guide covers practical strategies for developers and power users who want to manage their Claude skills with the same rigor as their codebase.
+[Managing Claude Code skills effectively requires more than just writing good markdown instructions](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) When you treat your `~/.claude/skills/` directory as a proper version-controlled project, you gain traceability, collaboration capabilities, and the ability to roll back problematic changes. This guide covers practical strategies for developers and power users who want to manage their Claude skills with the same rigor as their codebase.
 
 ## Why Version Control Matters for Claude Skills
 
@@ -229,5 +229,12 @@ This prevents broken skills from reaching your shared skills directory.
 Version controlling your Claude MD files transforms them from ephemeral configurations into reliable, auditable, and collaborative tools. The strategies outlined here—semantic versioning, proper branching, automated testing, and CI integration—apply whether you're managing skills for a solo project or an enterprise team.
 
 Start by initializing your skills directory as a Git repository today. The initial setup takes minutes but provides lasting benefits for skill reliability and team coordination.
+
+## Related Reading
+
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
+- [Shared Claude Skills Across Monorepo Multiple Packages](/claude-skills-guide/articles/shared-claude-skills-across-monorepo-multiple-packages/)
+- [Claude MD Best Practices for Large Codebases](/claude-skills-guide/articles/claude-md-best-practices-for-large-codebases/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

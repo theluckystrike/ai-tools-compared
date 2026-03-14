@@ -12,13 +12,13 @@ score: 7
 
 # Claude MD Template for New Projects Starter Guide
 
-When you start a new project, having a solid prompt template saves time and ensures consistent results. Claude MD templates are structured Markdown files that define how Claude should approach different types of project tasks. This guide walks you through creating and using these templates effectively.
+When you start a new project, having a solid prompt template saves time and ensures consistent results. [Claude MD templates are structured Markdown files that define how Claude should approach](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) different types of project tasks. This guide walks you through creating and using these templates effectively.
 
 ## What Is a Claude MD Template
 
 A Claude MD template is a Markdown file containing predefined prompts, instructions, and context that you can reuse across multiple projects. Unlike Claude skills which extend Claude's capabilities, MD templates focus on structuring your prompts for specific workflows. Think of them as reusable project blueprints.
 
-Templates work well with Claude skills. When you combine a template with skills like **tdd** or **frontend-design**, you get a powerful starting point for any project phase.
+[combine a template with skills like **tdd** or **frontend-design**](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), you get a powerful starting point for any project phase.
 
 ## Creating Your First Template
 
@@ -208,5 +208,12 @@ Here is how a typical session might flow using templates and skills:
 Claude MD templates transform how you start new projects. By creating reusable prompt structures, you standardize your workflow and reduce repetitive setup time. Combine templates with skills like **tdd**, **frontend-design**, **pdf**, and **supermemory** to build a comprehensive project toolkit.
 
 Start with one simple template, test it in your next project, and iterate. The best template is one you actually use.
+
+## Related Reading
+
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
+- [Claude MD File Complete Guide: What It Does](/claude-skills-guide/articles/claude-md-file-complete-guide-what-it-does/)
+- [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/articles/how-to-write-effective-claude-md-for-your-project/)
+- [Getting Started Hub](/claude-skills-guide/getting-started-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

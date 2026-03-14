@@ -12,11 +12,11 @@ score: 7
 
 # Claude Code Workflow Optimization Tips for 2026
 
-Claude Code continues to evolve, and developers who master workflow optimization gain significant productivity advantages. This guide covers practical strategies to streamline your Claude Code experience, from skill composition to context management techniques that work in 2026.
+Claude Code continues to evolve, and [developers who master workflow optimization gain significant productivity advantages](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This guide covers practical strategies to streamline your Claude Code experience, from skill composition to context management techniques that work in 2026.
 
 ## Strategic Skill Loading
 
-One of the most effective optimization strategies involves loading only the skills you need for specific tasks. Claude Code loads skills from `~/.claude/skills/`, and each skill adds tokens to your context window. For complex projects, this impacts response quality and speed.
+One of the most effective optimization strategies involves loading only the skills you need for specific tasks. [each skill adds tokens to your context window](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) For complex projects, this impacts response quality and speed.
 
 Instead of loading all your installed skills, invoke only what you need:
 
@@ -200,5 +200,12 @@ This approach prevents timeout errors and produces more reliable results.
 Optimizing your Claude Code workflow in 2026 requires attention to skill loading strategy, context management, and automation through hooks. The key is starting with focused, targeted invocations rather than broad, complex requests. Skills like pdf, tdd, xlsx, frontend-design, and supermemory each excel at specific tasks—when composed thoughtfully, they transform your development workflow.
 
 Experiment with these techniques incrementally. Track what improves your productivity and refine your approach based on actual results rather than theoretical optimization.
+
+## Related Reading
+
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/)
+- [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
+- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/articles/claude-code-output-quality-how-to-improve-results/)
+- [Getting Started Hub](/claude-skills-guide/getting-started-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -16,7 +16,7 @@ The Model Context Protocol (MCP) has transformed how developers interact with Gi
 
 ## Understanding the GitHub MCP Server Architecture
 
-The GitHub MCP server acts as a bridge between Claude and your repositories. Instead of manually crafting API calls or switching between terminal and browser, you describe your intent in natural language, and MCP translates it into API operations. This approach works exceptionally well when combined with specialized Claude skills.
+[The GitHub MCP server acts as a bridge between Claude and your repositories](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) Instead of manually crafting API calls or switching between terminal and browser, you describe your intent in natural language, and MCP translates it into API operations. This approach works exceptionally well when combined with specialized Claude skills.
 
 When you configure the GitHub MCP server, you gain access to repository operations, issue management, pull request handling, and workflow monitoring. The server handles authentication through personal access tokens, maintaining security while enabling automation across multiple repositories.
 
@@ -135,5 +135,12 @@ When automating GitHub operations through MCP, follow security best practices:
 GitHub MCP server advanced workflow automation unlocks productivity gains that compound over time. By integrating with Claude skills like pdf for documentation, tdd for test-driven workflows, supermemory for context preservation, and frontend-design for visual validation, you build a comprehensive automation suite tailored to your development practices.
 
 The key is starting with specific, repetitive tasks and expanding as you identify more opportunities for automation. Each workflow you create reduces manual effort and ensures consistency across your project.
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Claude Code GitHub Actions Approval Workflows](/claude-skills-guide/articles/claude-code-github-actions-approval-workflows/)
+- [Linear MCP Server Issue Tracking with Claude Code](/claude-skills-guide/articles/linear-mcp-server-issue-tracking-with-claude-code/)
+- [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

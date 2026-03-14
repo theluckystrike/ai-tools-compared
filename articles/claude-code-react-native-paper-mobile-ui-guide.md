@@ -9,10 +9,10 @@ author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---
-
+{% raw %}
 # Claude Code React Native Paper Mobile UI Guide
 
-React Native Paper provides a comprehensive set of Material Design components for cross-platform mobile applications. Combined with Claude Code and its specialized skills, you can accelerate development significantly. This guide covers practical workflows for building mobile UIs efficiently.
+React Native Paper provides a comprehensive set of Material Design components for cross-platform mobile applications. [Combined with Claude Code and its specialized skills, you can accelerate development significantly](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) This guide covers practical workflows for building mobile UIs efficiently.
 
 ## Setting Up React Native Paper
 
@@ -281,4 +281,13 @@ The **frontend-design** skill can analyze your component tree and suggest perfor
 
 Building mobile UIs with React Native Paper becomes significantly more productive when combined with Claude Code's specialized skills. The **frontend-design** skill accelerates component generation, the **tdd** skill ensures test coverage, and the **pdf** skill automates documentation. These tools together form a powerful development workflow for cross-platform mobile applications.
 
+## Related Reading
+
+- [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
+- [Claude Code Next.js Image Optimization Guide](/claude-skills-guide/articles/claude-code-nextjs-image-optimization-guide/)
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/articles/vibe-coding-with-claude-code-complete-guide-2026/)
+- [Workflows Hub](/claude-skills-guide/workflows-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}

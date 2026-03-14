@@ -12,9 +12,9 @@ score: 7
 
 # Apache Kafka MCP Server for Event Streaming Guide
 
-Event streaming has transformed how modern applications handle real-time data. Apache Kafka leads this space as a distributed event streaming platform capable of processing millions of messages per second. When you combine Kafka with an MCP (Model Context Protocol) server, you create a powerful automation layer that can react to events, manage streaming pipelines, and coordinate complex workflows without manual oversight.
+Event streaming has transformed how modern applications handle real-time data. Apache Kafka leads this space as a distributed event streaming platform capable of processing millions of messages per second. [When you combine Apache Kafka with an MCP server](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)ne Kafka with an MCP (Model Context Protocol) server, you create a powerful automation layer that can react to events, manage streaming pipelines, and coordinate complex workflows without manual oversight.
 
-This guide shows you how to build and integrate an Apache Kafka MCP server for event streaming automation. You'll find practical code examples and patterns that work well with Claude Code and other AI assistants.
+This [build and integrate an Apache Kafka MCP server for event streaming automation](/claude-skills-guide/articles/how-do-i-combine-two-claude-skills-in-one-workflow/) for event streaming automation. You'll find practical code examples and patterns that work well with Claude Code and other AI assistants.
 
 ## Why Kafka with MCP Server
 
@@ -260,5 +260,12 @@ The foundation you build here opens doors to more sophisticated architectures. C
 Your Kafka MCP server can also integrate with other MCP servers in your ecosystem. Connect it with cloud provider servers for automated infrastructure scaling based on stream volume, or pair it with notification servers to alert teams about streaming anomalies.
 
 Start with the basic producer and consumer patterns shown here, then evolve toward windowed aggregations, complex event processing, and multi-cluster federation as your requirements mature. The MCP abstraction makes this evolution straightforward—you add new tools without restructuring your core integration.
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
+- [RabbitMQ MCP Server Message Queue Automation](/claude-skills-guide/articles/rabbitmq-mcp-server-message-queue-automation/)
+- [AWS MCP Server Cloud Automation with Claude Code](/claude-skills-guide/articles/aws-mcp-server-cloud-automation-with-claude-code/)
+- [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -185,4 +185,11 @@ The PagerDuty MCP server transforms incident management from reactive firefighti
 
 Start with simple automations like incident acknowledgment and resolution notes, then expand into more complex workflows as your confidence grows. The combination of PagerDuty's incident management with Claude's AI capabilities creates a powerful foundation for modern DevOps practices.
 
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Datadog MCP Server Monitoring Automation with Claude](/claude-skills-guide/articles/datadog-mcp-server-monitoring-automation-claude/)
+- [MCP Server Logging Audit Trail Security Guide](/claude-skills-guide/articles/mcp-server-logging-audit-trail-security-guide/)
+- [Integrations Hub](/claude-skills-guide/integrations-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

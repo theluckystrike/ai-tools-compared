@@ -14,7 +14,7 @@ score: 8
 
 When you run Claude Code in your development environment, the model has access to a powerful set of built-in tools—reading files, executing shell commands, running git operations, and more. For many workflows, this open access accelerates development. However, there are situations where restricting tool access becomes essential: isolating potentially risky operations, creating focused skill environments, or implementing defense-in-depth for automated agents.
 
-The `disallowedTools` configuration in Claude Code provides granular control over which tools the model cannot access, regardless of what the user requests. This feature gives developers and security-conscious teams precise control over their AI assistant's capabilities.
+[The `disallowedTools` configuration in Claude Code provides granular control](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/) over which tools the model cannot access, regardless of what the user requests. This feature gives developers and security-conscious teams precise control over their AI assistant's capabilities.
 
 ## Understanding the disallowedTools Mechanism
 
@@ -131,5 +131,12 @@ The `pdf` skill demonstrates practical skill-level tool configuration. When gene
 ## Summary
 
 The `disallowedTools` configuration in Claude Code provides essential security control for development teams. By carefully designing your tool access restrictions, you create safe, focused AI assistant environments that enhance productivity without introducing unnecessary risk. Start with restrictive configurations, understand the tool interactions in your workflows, and regularly audit your settings as your usage evolves.
+
+## Related Reading
+
+- [Claude Code MCP Tool Allow and Deny Lists](/claude-skills-guide/articles/claude-code-mcp-tool-allow-and-deny-lists/)
+- [MCP Server Permission Auditing Best Practices](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/)
+- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/articles/claude-code-skill-permission-scope-error-explained/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

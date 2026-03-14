@@ -16,7 +16,7 @@ This guide shows practical ways product managers integrate Claude Code into thei
 
 ## Starting a Spec from Conversation Notes
 
-Product managers often begin with messy inputs—Slack threads, meeting transcripts, or scattered notes. The supermemory skill proves invaluable here. It retrieves context from your stored conversations and documents, helping you reconstruct the reasoning behind feature requests.
+Product managers often begin with messy inputs—Slack threads, meeting transcripts, or scattered notes. [The supermemory skill proves invaluable here](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) It retrieves context from your stored conversations and documents, helping you reconstruct the reasoning behind feature requests.
 
 ```bash
 # Using supermemory to find context about a feature
@@ -112,5 +112,12 @@ Product managers using Claude Code consistently report improvements across all t
 Begin with one skill that matches your biggest bottleneck. If documentation formatting slows you down, start with the docx skill. If design ambiguity causes delays, try frontend-design. As you become comfortable, layer in additional skills for a comprehensive workflow.
 
 The key is consistency. Using Claude Code for spec development becomes powerful through regular use, building institutional knowledge that improves over time.
+
+## Related Reading
+
+- [Claude Supermemory Skill: Persistent Context Explained](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/)
+- [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)
+- [How Enterprise Teams Adopt Claude Code Workflow](/claude-skills-guide/articles/how-enterprise-teams-adopt-claude-code-workflow/)
+- [Use Cases Hub](/claude-skills-guide/use-cases-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

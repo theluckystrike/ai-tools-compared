@@ -12,13 +12,13 @@ score: 8
 
 # Claude Code MCP Server Least Privilege Configuration
 
-When integrating MCP servers with Claude Code, security should never be an afterthought. The principle of least privilege ensures that each server access only what it needs to function, minimizing the attack surface and preventing accidental or malicious data exposure.
+[When integrating MCP servers with Claude Code, security should never be an afterthought](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) The principle of least privilege ensures that each server access only what it needs to function, minimizing the attack surface and preventing accidental or malicious data exposure.
 
 This guide walks through practical configurations for securing your MCP server integrations using least privilege principles.
 
 ## Understanding MCP Server Permissions
 
-MCP servers extend Claude Code capabilities by providing tools, resources, and prompts. Each server can access different parts of your system, which creates potential security boundaries you need to manage carefully.
+[MCP servers extend Claude Code capabilities by providing tools, resources, and prompts](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/) Each server can access different parts of your system, which creates potential security boundaries you need to manage carefully.
 
 When you configure an MCP server, you control:
 - File system access scope
@@ -187,5 +187,12 @@ The `super-memory` skill can help track permission changes over time, creating a
 - Test permission changes in development before production
 
 Applying least privilege to your Claude Code MCP servers significantly reduces risk without sacrificing functionality. Start with restrictive permissions and expand only when specific tasks require additional access.
+
+## Related Reading
+
+- [MCP Server Permission Auditing Best Practices](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/)
+- [Claude Code MCP Tool Allow and Deny Lists](/claude-skills-guide/articles/claude-code-mcp-tool-allow-and-deny-lists/)
+- [Securing MCP Servers in Production Environments](/claude-skills-guide/articles/securing-mcp-servers-in-production-environments/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
