@@ -3,7 +3,11 @@ layout: default
 title: "Advanced Claude Skills with Tool Use and Function Calling"
 description: "Design Claude skills with precise tool use: restrict tool access per skill, create custom MCP tools, and build reliable function-calling workflows."
 date: 2026-03-13
-author: theluckystrike
+categories: [guides]
+tags: [claude-code, claude-skills, tool-use, function-calling, mcp]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 ---
 
 # Advanced Claude Skills with Tool Use and Function Calling
@@ -235,15 +239,9 @@ For skills that need to read many files, this can be a bottleneck. Size appropri
 
 ## Debugging Tool-Heavy Skills
 
-To see exactly what tool calls a skill is making, enable tool logging in your session:
+To see exactly what tool calls a skill is making, watch the tool call output that Claude Code prints inline as the skill runs. Claude Code shows each tool call and its result in the terminal as they execute. Use this during skill development to verify the tool call sequence matches your design.
 
-```
-/tools log on
-```
-
-This prints each tool call and its result inline as the skill runs. Use this during skill development to verify the tool call sequence matches your design.
-
-Use `/session log` to see a complete tool call history for the current session, which you can analyze after the fact.
+You can also ask Claude directly in the session: "What tool calls did you make in the last task?" and it will summarize the sequence from its context window.
 
 ---
 
