@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Database Test Fixtures Guide"
-description: "Learn how to use Claude Code CLI to create and manage database test fixtures. Practical examples for generating test data, seeding databases, and maintaining fixture files."
+description: "Learn how to use Claude Code CLI to create and manage database test fixtures. Practical examples for generating test data, seeding databases, and."
 date: 2026-03-14
 categories: [guides]
 author: theluckystrike
@@ -65,3 +65,11 @@ For example, you might need tests that exercise boundary conditions. Describe th
 
 Claude Code transforms database fixture creation from a tedious manual task into an efficient, automated process. By leveraging its understanding of code and data structures, you can generate high-quality fixtures that make your tests more reliable and maintainable. Whether you're setting up new test suites or improving existing ones, Claude Code provides practical assistance for every aspect of database fixture management.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
