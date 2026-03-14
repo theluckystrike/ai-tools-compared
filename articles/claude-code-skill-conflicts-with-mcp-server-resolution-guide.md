@@ -22,13 +22,13 @@ The first step involves diagnosing what type of conflict you're experiencing. Cl
 
 Tool name collisions occur when a skill defines a tool with the same name as an MCP server tool. Permission conflicts happen when both systems attempt to access the same resources with different access levels. Runtime conflicts emerge when executing skills and MCP tools simultaneously creates race conditions or unexpected behavior.
 
-Use the following diagnostic command to identify active tools from both skills and MCP servers:
+To identify active tools from both skills and MCP servers, ask Claude directly in your session:
 
-```bash
-claude --print-tools
+```
+List all the tools currently available to you, including any from MCP servers.
 ```
 
-This outputs all available tools, making it easier to spot duplicates.
+This surfaces all available tools, making it easier to spot duplicates.
 
 ## Resolving Tool Name Collisions
 
