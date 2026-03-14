@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Claude Code Developer Environment Reproducibility with Nix Workflow"
-description: "A practical guide to achieving fully reproducible development environments using Claude Code and Nix. Learn workflow patterns, configuration strategies, and real-world examples."
+title: "Claude Code Developer Environment Reproducibility with."
+description: "A practical guide to achieving fully reproducible development environments using Claude Code and Nix. Learn workflow patterns, configuration."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -219,5 +219,12 @@ Here's how a complete workflow looks in practice. Starting from scratch:
 The key insight is that Nix handles the "what" (which versions, which tools) while Claude Code handles the "how" (implementation, testing, debugging). Together, they create a development experience that's both intelligent and reproducible.
 
 This workflow scales from individual projects to enterprise deployments. Whether you're a solo developer or part of a large team, combining Claude Code with Nix provides the foundation for reliable, reproducible software development.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

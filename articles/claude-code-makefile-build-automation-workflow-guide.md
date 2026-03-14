@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Makefile Build Automation Workflow Guide"
-description: "Master Makefile build automation with Claude Code. Learn to create efficient build workflows, leverage AI-powered skills, and automate your development pipeline."
+description: "Master Makefile build automation with Claude Code. Learn to create efficient build workflows, leverage AI-powered skills, and automate your development."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, makefile, build-automation, devops, workflow, automation]
@@ -243,6 +243,13 @@ clean:
 Makefiles combined with Claude Code create a powerful automation layer for development workflows. The AI assistant understands your project context, suggests appropriate patterns, and helps you implement cross-platform solutions. Whether you're managing a simple Node.js project or a complex microservices architecture, this workflow scales with your needs.
 
 Start small, iterate, and let Claude Code handle the boilerplate while you focus on your unique business logic.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

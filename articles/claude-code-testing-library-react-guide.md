@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Testing Library React Guide"
-description: "Learn how to use Claude Code with React Testing Library for efficient component testing. Practical examples for developers building modern React applications."
+description: "Learn how to use Claude Code with React Testing Library for efficient component testing. Practical examples for developers building modern React."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -184,5 +184,12 @@ The internal-comms skill proves useful when your team needs to communicate testi
 React Testing Library combined with Claude Code creates a robust testing environment that emphasizes user-focused testing. By querying elements semantically, simulating realistic user interactions, and maintaining clear test structure, you build a test suite that catches bugs while remaining maintainable as your application grows.
 
 The key is treating tests as first-class citizens in your development workflow. Use Claude Code to generate test templates, debug failures, and suggest improvements. Leverage skills like tdd to adopt test-driven practices, and supermemory to track coverage across your project. Your future self—and your users—will thank you.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
