@@ -3,7 +3,7 @@ layout: default
 title: "MCP OAuth 2.1 Authentication Implementation Guide"
 description: "A practical implementation guide for MCP OAuth 2.1 authentication. Learn authorization code flow, token management, and security best practices for Model Context Protocol integrations."
 date: 2026-03-14
-categories: [tutorials, security]
+categories: [tutorials]
 tags: [mcp, oauth, authentication, security, claude-code, developer-tools]
 author: "Claude Skills Guide"
 reviewed: true

@@ -3,7 +3,7 @@ layout: default
 title: "Claude Skills Context Window Management Best Practices"
 description: "Manage context windows in Claude skill workflows: focused prompts, file references, chunking, and external memory with the supermemory skill."
 date: 2026-03-13
-categories: [guides, tutorials]
+categories: [guides]
 tags: [claude-code, claude-skills, context-window, token-optimization]
 author: "Claude Skills Guide"
 reviewed: true
