@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "AI Coding Tools Security Concerns Enterprise Guide"
-description: "A practical security guide for developers using AI coding tools in enterprise environments. Covers data exposure risks, prompt injection, API security, and mitigation strategies."
+description: "A practical security guide for developers using AI coding tools in enterprise environments. Covers data exposure risks, prompt injection, API security."
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-coding-tools-security-concerns-enterprise-guide/
+categories: [guides]
 ---
 
 # AI Coding Tools Security Concerns Enterprise Guide
@@ -213,5 +214,12 @@ For teams working with sensitive data, consider the `canvas-design` skill for ge
 The key insight: AI coding tools significantly boost productivity, but treating them as trusted internal systems without proper security controls creates unacceptable risk. Implement these mitigations before your team adopts AI assistants widely.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

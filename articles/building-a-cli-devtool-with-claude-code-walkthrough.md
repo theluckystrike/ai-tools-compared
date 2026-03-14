@@ -1,11 +1,12 @@
 ---
 
 layout: default
-title: "Building a CLI DevTool with Claude Code: A Practical Walkthrough"
-description: "Learn how to build a powerful command-line development tool using Claude Code. This guide covers project setup, skill integration, automation, and real-world CLI devtool patterns."
+title: "Building a CLI DevTool with Claude Code: A Practical."
+description: "Learn how to build a powerful command-line development tool using Claude Code. This guide covers project setup, skill integration, automation, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /building-a-cli-devtool-with-claude-code-walkthrough/
+categories: [guides]
 ---
 
 # Building a CLI DevTool with Claude Code: A Practical Walkthrough
@@ -229,5 +230,12 @@ Test your CLI thoroughly. Use the `tdd` skill to generate comprehensive test sui
 Building a CLI devtool with Claude Code unlocks powerful automation possibilities for your development workflow. By combining structured CLI commands with Claude's natural language capabilities, you create tools that understand your codebase and assist with complex tasks intelligently.
 
 Start with simple commands and gradually add more sophisticated features. The skill system provides ready-made capabilities you can integrate immediately, while the flexible prompt-based interface allows for completely custom functionality. Your CLI devtool becomes more valuable over time as you tailor it to your specific needs and workflows.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

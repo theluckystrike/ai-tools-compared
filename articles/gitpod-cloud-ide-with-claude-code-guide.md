@@ -2,7 +2,7 @@
 
 layout: default
 title: "Gitpod Cloud IDE with Claude Code Guide"
-description: "Learn how to set up Gitpod cloud IDE with Claude Code for powerful remote development. Step-by-step configuration with practical examples and productivity tips."
+description: "Learn how to set up Gitpod cloud IDE with Claude Code for powerful remote development. Step-by-step configuration with practical examples and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, gitpod, cloud-ide, development-environment, remote-development, ai-coding]
@@ -238,5 +238,12 @@ Cloud development introduces some latency compared to local development. Optimiz
 Gitpod and Claude Code together create a powerful remote development environment. The cloud IDE handles your workspace needs while Claude Code provides intelligent assistance, whether you're debugging, writing tests with the tdd skill, generating documentation with the pdf skill, or designing interfaces with the frontend-design skill. This combination scales from quick experiments to full team development workflows.
 
 Experiment with different configurations to find what works best for your projects. The flexibility of both platforms means you can adapt the setup to match your specific needs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

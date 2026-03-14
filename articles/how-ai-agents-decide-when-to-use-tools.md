@@ -5,6 +5,7 @@ description: "Understanding the decision-making process behind AI agent tool sel
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-ai-agents-decide-when-to-use-tools/
+categories: [guides]
 ---
 
 {% raw %}
@@ -130,3 +131,10 @@ AI agents decide when to use tools through a sophisticated process of capability
 
 The key insight is that tool use isn't random or purely reactive—it's a reasoned response to the gap between what an agent knows and what a task requires. By providing appropriate context and trusting the agent's judgment, you enable Claude Code to select optimal tools and deliver precisely what you need.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
