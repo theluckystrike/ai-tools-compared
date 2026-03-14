@@ -123,7 +123,7 @@ Maintain quality in your automated knowledge base by following these principles:
 - **Leverage page properties** for structured data rather than relying solely on content
 - **Combine with other MCP servers** like the filesystem MCP for importing external documentation
 
-The Notion MCP server transforms your knowledge base from passive documentation into an active automation asset. By integrating with Claude Code's reasoning capabilities, you gain a powerful system for maintaining, querying, and evolving your documentation through natural language.
+The Notion MCP server transforms your knowledge base from passive documentation into an active automation asset. By integrating with Claude Code's reasoning capabilities, you gain a powerful system for maintaining, querying, and evolving your documentation through natural language. For a deeper look at connecting Notion with Claude skills, see the [guide on integrating Claude skills with the Notion API](/claude-skills-guide/articles/how-to-integrate-claude-skills-with-notion-api-guide/).
 
 ## Related Reading
 

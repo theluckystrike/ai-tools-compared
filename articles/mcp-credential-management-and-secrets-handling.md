@@ -172,7 +172,7 @@ When running tests:
 - Report pass/fail status and any authentication errors clearly
 ```
 
-The `frontend-design` skill can integrate with design APIs that require authentication, while `xlsx` might connect to spreadsheets containing sensitive data. In each case, ensure credentials flow through environment variables rather than appearing in skill prompts or tool arguments.
+The `frontend-design` skill can integrate with design APIs that require authentication, while `xlsx` might connect to spreadsheets containing sensitive data. In each case, ensure credentials flow through environment variables rather than appearing in skill prompts or tool arguments. The [MCP server input validation security patterns guide](/claude-skills-guide/articles/mcp-server-input-validation-security-patterns/) shows how to reinforce this boundary at the server layer.
 
 ## Production Deployment Patterns
 

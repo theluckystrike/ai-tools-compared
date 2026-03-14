@@ -110,7 +110,7 @@ While TLS provides essential protection, comprehensive security requires additio
 
 For MCP deployments handling highly sensitive data, consider adding application-layer encryption. TLS protects data in transit, but encryption at the application layer ensures only intended recipients can decrypt the content, even if network security is somehow bypassed.
 
-Monitor your TLS deployments for anomalies. Unexpected certificate changes or unusual connection patterns can indicate compromise. Logging and alerting on TLS-related events helps detect issues before they become breaches.
+Monitor your TLS deployments for anomalies. Unexpected certificate changes or unusual connection patterns can indicate compromise. Logging and alerting on TLS-related events helps detect issues before they become breaches. The [MCP server vulnerability scanning and testing guide](/claude-skills-guide/articles/mcp-server-vulnerability-scanning-and-testing/) includes specific test patterns for verifying your TLS configuration is functioning correctly.
 
 ## Conclusion
 

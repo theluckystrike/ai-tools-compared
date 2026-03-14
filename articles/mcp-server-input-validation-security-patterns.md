@@ -276,7 +276,7 @@ def test_rate_limit_enforced():
     assert limiter.check_rate_limit("client1") is False
 ```
 
-Run these tests as part of your CI/CD pipeline to ensure validation remains effective as your server evolves.
+Run these tests as part of your CI/CD pipeline to ensure validation remains effective as your server evolves. For a full vulnerability testing strategy, the [MCP server vulnerability scanning and testing guide](/claude-skills-guide/articles/mcp-server-vulnerability-scanning-and-testing/) provides complementary automated scanning approaches.
 
 ## Conclusion
 

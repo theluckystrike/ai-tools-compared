@@ -137,7 +137,7 @@ When automating Render web services in production environments, follow these gui
 
 The Render MCP server works well with other Claude skills for enhanced functionality. The frontend-design skill helps you quickly deploy and test frontend changes, while the docx skill handles automated documentation generation for your deployment processes.
 
-You can also combine it with the AWS MCP server for multi-cloud deployments, managing both Render and AWS infrastructure from a single Claude Code session.
+You can also combine it with the AWS MCP server for multi-cloud deployments, managing both Render and AWS infrastructure from a single Claude Code session. If you need a comparable deployment setup on Railway, the [Railway MCP server deployment automation guide](/claude-skills-guide/articles/railway-mcp-server-deployment-automation-guide/) walks through a similar approach with Railway-specific configuration.
 
 ## Conclusion
 
