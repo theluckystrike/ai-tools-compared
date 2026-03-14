@@ -152,3 +152,10 @@ The difference between an AI agent and an AI assistant comes down to autonomy. A
 Understanding this distinction helps you choose the right approach for your task. If you need a specialist to produce specific outputs on demand, invoke a skill and work as a conversation. If you need a worker to build and run systems independently, structure your request as a goal and let Claude Code drive the execution.
 
 Both models are powerful. The key is matching the tool to the task.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
