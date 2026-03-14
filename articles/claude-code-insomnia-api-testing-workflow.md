@@ -3,7 +3,9 @@ layout: default
 title: "Claude Code Insomnia API Testing Workflow"
 description: "Learn how to integrate Claude Code with Insomnia for efficient API testing workflows. Build automated testing pipelines using Claude skills and the."
 date: 2026-03-14
+categories: [tutorials]
 author: theluckystrike
+permalink: /claude-code-insomnia-api-testing-workflow/
 categories: [guides]
 tags: [claude-code, insomnia, api-testing, workflow, automation]
 permalink: /claude-code-insomnia-api-testing-workflow/
