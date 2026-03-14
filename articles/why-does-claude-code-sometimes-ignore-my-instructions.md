@@ -5,7 +5,7 @@ description: "Debug why Claude Code ignores your instructions. Learn how token l
 date: 2026-03-14
 categories: [troubleshooting]
 tags: [claude-code, claude-skills, claude-code, instructions, debugging, troubleshooting, skill-configuration]
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /why-does-claude-code-sometimes-ignore-my-instructions/
 reviewed: true
 score: 7
