@@ -184,7 +184,7 @@ This keeps secrets out of version control while making them available to your de
 
 The Cloudflare MCP server transforms edge infrastructure management into conversational workflows. By describing desired states in natural language, you provision Workers, manage DNS, configure storage, and deploy global applications without memorizing API endpoints or writing boilerplate scripts.
 
-Start with small automations—perhaps DNS queries or single Worker deployments—and expand to complex multi-step workflows as your confidence grows. The MCP server handles the API complexity while you focus on infrastructure intent.
+Start with small automations—perhaps DNS queries or single Worker deployments—and expand to complex multi-step workflows as your confidence grows. The MCP server handles the API complexity while you focus on infrastructure intent. For deployment automation strategies, see the [serverless function development workflow](/claude-skills-guide/articles/claude-skills-serverless-function-development-workflow/).
 
 ## Related Reading
 

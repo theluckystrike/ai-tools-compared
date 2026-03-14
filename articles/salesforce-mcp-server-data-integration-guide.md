@@ -152,7 +152,7 @@ When deploying Salesforce MCP integrations to production, consider these recomme
 
 ## Conclusion
 
-Salesforce MCP server integration opens up powerful automation possibilities for developers building enterprise workflows. From simple query operations to complex multi-system syncs, the MCP approach provides a consistent, AI-friendly interface to your Salesforce data. Start with basic queries, then layer in automation and transformation logic as your integration matures.
+Salesforce MCP server integration opens up powerful automation possibilities for developers building enterprise workflows. From simple query operations to complex multi-system syncs, the MCP approach provides a consistent, AI-friendly interface to your Salesforce data. Start with basic queries, then layer in automation and transformation logic as your integration matures. For patterns on combining MCP servers with skill workflows, see [building stateful agents with Claude skills](/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/).
 
 ## Related Reading
 

@@ -210,7 +210,7 @@ When integrating Jira with Claude Code, follow these guidelines:
 
 Integrating Jira with Claude Code through MCP creates a powerful workflow automation system. From automated ticket creation to sprint management queries, this integration reduces context-switching and keeps your development workflow focused in the terminal. Start with simple queries, then expand to complex automation as your team becomes comfortable with the integration.
 
-The combination of Jira's project management capabilities with Claude Code's natural language processing transforms how teams interact with their project tracking system. Experiment with different prompt patterns to find what works best for your workflow.
+The combination of Jira's project management capabilities with Claude Code's natural language processing transforms how teams interact with their project tracking system. Experiment with different prompt patterns to find what works best for your workflow. For tips on writing effective prompts, see the [guide on how to write effective prompts for Claude Code](/claude-skills-guide/articles/how-to-write-effective-prompts-for-claude-code/).
 
 ## Related Reading
 
