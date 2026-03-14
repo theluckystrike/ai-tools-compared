@@ -97,7 +97,7 @@ Suppose your team built a custom skill for CI/CD pipeline management. Here is ho
 
 **Step 1**: Verify the repository is in your organization's internal GitHub, not a public fork.
 
-**Step 2**: Check the skill.yaml restricts `bash` tool to specific pipeline commands, not arbitrary shell access.
+**Step 2**: Review the skill's Markdown body to confirm its instructions only request commands appropriate to its purpose (like `npm`, `docker`, `git` for a CI/CD skill).
 
 Note: Skills do not have `permissions:` blocks in their YAML front matter — this is not a valid skill field. When auditing a community skill file, verify its Markdown body does not contain instructions that attempt to override Claude's safety behaviors or escalate privileges.
 

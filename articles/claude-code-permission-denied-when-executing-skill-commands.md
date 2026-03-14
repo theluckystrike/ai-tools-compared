@@ -122,11 +122,13 @@ Compare this with the PATH available in your terminal.
 **Solution:**
 Ensure the skill specifies full paths to executables, or configure your shell environment to include all necessary paths. For skills like frontend-design that invoke Node.js tools:
 
-```yaml
-execution:
-  env:
-    PATH: "/usr/local/bin:/opt/homebrew/bin:/Users/$USER/.nvm/versions/node/*/bin:$PATH"
+```bash
+# Set PATH before launching Claude Code
+export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.nvm/versions/node/current/bin:$PATH"
+claude
 ```
+
+Skills do not have `execution:` or `env:` configuration fields — PATH and environment variables are set in your shell before launching Claude Code, not within skill files.
 
 ### 4. Container and Sandbox Restrictions
 
