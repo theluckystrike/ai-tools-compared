@@ -5,6 +5,7 @@ description: "Learn how to use Claude Code for efficient gRPC API development. P
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-grpc-api-development-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -125,6 +126,13 @@ When working with Claude Code for gRPC development, keep these practices in mind
 Claude Code dramatically improves gRPC API development productivity. From initial project setup through testing and documentation, it handles the boilerplate so you can focus on business logic. The key is providing clear context about your requirements and leveraging Claude's understanding of gRPC patterns and best practices.
 
 Start with well-structured proto definitions, let Claude generate the scaffolding, then refine the implementation with domain-specific logic. This workflow consistently produces maintainable, well-tested gRPC services that scale.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

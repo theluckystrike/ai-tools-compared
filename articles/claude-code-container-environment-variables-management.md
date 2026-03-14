@@ -5,6 +5,7 @@ description: "A comprehensive guide to managing environment variables in Claude 
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-container-environment-variables-management/
+categories: [guides]
 ---
 
 {% raw %}
@@ -178,3 +179,10 @@ Effective environment variable management in Claude Code container environments 
 
 Remember to always treat environment variables containing secrets with appropriate care, use version-controlled templates for team collaboration, and implement proper validation to catch configuration errors early in your development workflow.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
