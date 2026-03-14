@@ -1,183 +1,228 @@
 ---
 layout: default
 title: "Claude Code API Response Caching Guide"
-description: "Learn how to implement API response caching in your Claude skills for faster performance, reduced costs, and efficient handling of repetitive requests."
+description: "Learn how to implement API response caching in Claude Code skills to reduce latency, save costs, and improve user experience with practical examples."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, caching, api, performance, skills]
+tags: [claude-code, api-caching, performance, skills, development]
 author: theluckystrike
 permalink: /claude-code-api-response-caching-guide/
 ---
 
 # Claude Code API Response Caching Guide
 
-API response caching is one of the most effective optimizations you can implement in your Claude skills. When working with skills like the pdf skill for document processing or the tdd skill for test-driven development, repeated API calls to fetch the same data waste both time and resources. This guide shows you how to implement caching strategies that dramatically improve performance.
+API response caching is one of the most effective techniques for improving performance in Claude Code skills. When your skills interact with external APIs—whether fetching documentation, querying databases, or retrieving user data—caching responses dramatically reduces response times and API costs. This guide shows you how to implement caching strategies that work seamlessly within the Claude Code framework.
 
-## Why Caching Matters in Claude Skills
+## Why Caching Matters for Claude Skills
 
-Every API call carries a cost—in latency, in token usage, and potentially in actual monetary expense. Skills that interact with external APIs, databases, or file systems often request the same data multiple times within a single session. Without caching, each request triggers a fresh API call, even when the underlying data hasn't changed.
+Every time a skill makes an API call, you're paying for compute time and potentially for API usage itself. Skills like `pdf` that process documents, or `tdd` that run test suites, often repeat similar requests across sessions. Without caching, each invocation starts from scratch, fetching the same resources repeatedly.
 
-Consider a scenario where you're using the supermemory skill to retrieve context across conversations. Without caching, repeated lookups for the same query strings create unnecessary overhead. With proper caching, subsequent requests for cached data return almost instantly.
+Consider a `supermemory` skill that retrieves context from a vector database. If you're working on a multi-file refactoring task, the same context gets fetched multiple times. With proper caching, subsequent requests return instantly from a local cache, making your workflow feel responsive and fluid.
 
-## Implementing In-Memory Cache
+## Basic In-Memory Caching Pattern
 
-The simplest caching approach uses a JavaScript Map or object to store responses in memory. This works well for session-based operations where data persists only during the current session.
+The simplest approach uses a JavaScript or Python cache stored in memory. Here's a pattern you can use in skills that support custom JavaScript:
 
 ```javascript
 // Simple in-memory cache implementation
-const apiCache = new Map();
+const cache = new Map();
 
-function getCachedResponse(key) {
-  const cached = apiCache.get(key);
-  if (cached && Date.now() - cached.timestamp < cached.ttl) {
-    return cached.data;
+function getCached(key, fetchFn, ttlSeconds = 300) {
+  const cached = cache.get(key);
+  
+  if (cached && Date.now() < cached.expiry) {
+    return cached.value;
   }
-  return null;
+  
+  const value = fetchFn();
+  cache.set(key, { value, expiry: Date.now() + ttlSeconds * 1000 });
+  return value;
 }
 
-function setCacheResponse(key, data, ttlMs = 300000) {
-  apiCache.set(key, {
-    data: data,
-    timestamp: Date.now(),
-    ttl: ttlMs
-  });
+// Usage example with an API call
+async function fetchDocumentation(packageName) {
+  return getCached(
+    `docs:${packageName}`,
+    async () => {
+      const response = await fetch(`https://api.example.com/docs/${packageName}`);
+      return response.json();
+    },
+    600 // 10 minute TTL
+  );
 }
 ```
 
-This pattern works seamlessly with skills that make HTTP requests. The cache key should be a deterministic representation of the request parameters—typically a hash of the URL and request body.
+This pattern works well for short-lived caching within a single session. The cache persists as long as the Claude Code process runs, which is typically for the duration of your conversation.
 
-## File-Based Caching for Persistent Storage
+## File-Based Caching for Persistence
 
-For skills that need to persist cache across sessions, file-based caching provides a more robust solution. This approach writes cached responses to disk, allowing them to survive between Claude invocations.
+When you need caching to persist across sessions, file-based storage provides a reliable solution. This approach works particularly well for skills that handle large datasets or need to share cached data between different Claude Code invocations.
 
-```javascript
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
+```python
+import json
+import os
+import time
+from pathlib import Path
 
-class FileCache {
-  constructor(cacheDir = './.cache/api') {
-    this.cacheDir = cacheDir;
-    if (!fs.existsSync(cacheDir)) {
-      fs.mkdirSync(cacheDir, { recursive: true });
-    }
-  }
-
-  getKey(url, params) {
-    const str = url + JSON.stringify(params);
-    return crypto.createHash('md5').update(str).digest('hex');
-  }
-
-  get(key) {
-    const filePath = path.join(this.cacheDir, `${key}.json`);
-    if (!fs.existsSync(filePath)) return null;
+class FileCache:
+    def __init__(self, cache_dir=".cache/claude"):
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(parents=True, exist_ok=True)
     
-    const cached = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    if (Date.now() > cached.expires) {
-      fs.unlinkSync(filePath);
-      return null;
-    }
-    return cached.data;
-  }
-
-  set(key, data, ttlSeconds = 3600) {
-    const filePath = path.join(this.cacheDir, `${key}.json`);
-    fs.writeFileSync(filePath, JSON.stringify({
-      data: data,
-      expires: Date.now() + (ttlSeconds * 1000)
-    }));
-  }
-}
+    def _get_path(self, key):
+        safe_key = key.replace("/", "_").replace(":", "_")
+        return self.cache_dir / f"{safe_key}.json"
+    
+    def get(self, key, max_age_seconds=300):
+        path = self._get_path(key)
+        if not path.exists():
+            return None
+        
+        try:
+            with open(path) as f:
+                entry = json.load(f)
+            
+            if time.time() - entry["timestamp"] > max_age_seconds:
+                return None
+            
+            return entry["value"]
+        except (json.JSONDecodeError, KeyError):
+            return None
+    
+    def set(self, key, value):
+        path = self._get_path(key)
+        entry = {"timestamp": time.time(), "value": value}
+        with open(path, "w") as f:
+            json.dump(entry, f)
 ```
 
-The frontend-design skill benefits significantly from file-based caching when fetching design system tokens or component libraries that rarely change. Set longer TTL values for stable resources and shorter values for frequently updated data.
+This `FileCache` class integrates cleanly with Python-based skills. The `frontend-design` skill, for instance, could cache fetched design system documentation this way, avoiding repeated network calls when you're iterating on UI components.
 
-## Conditional Requests with ETags
+## HTTP Caching Headers
 
-HTTP conditional requests offer another powerful caching mechanism. By using ETags and Last-Modified headers, you can ask servers whether content has changed without downloading it again.
+Many APIs already support caching through standard HTTP headers. When building skills that interact with REST APIs, leverage `ETag` and `Last-Modified` headers to avoid re-fetching unchanged resources:
 
 ```javascript
-async function fetchWithCaching(url, options = {}) {
-  const cacheKey = crypto.createHash('md5').update(url).digest('hex');
-  const cached = fileCache.get(cacheKey);
+async function fetchWithETag(url, etagStorage) {
+  const cachedEtag = etagStorage.get(url);
+  const headers = cachedEtag ? { "If-None-Match": cachedEtag } : {};
   
-  const headers = { ...options.headers };
-  
-  if (cached && cached.etag) {
-    headers['If-None-Match'] = cached.etag;
-  }
-  if (cached && cached.lastModified) {
-    headers['If-Modified-Since'] = cached.lastModified;
-  }
-
-  const response = await fetch(url, { ...options, headers });
+  const response = await fetch(url, { headers });
   
   if (response.status === 304) {
-    return cached.data;
+    console.log("Using cached version");
+    return etagStorage.get(`${url}:body`);
   }
-
-  const etag = response.headers.get('ETag');
-  const lastModified = response.headers.get('Last-Modified');
-  const data = await response.json();
   
-  fileCache.set(cacheKey, { data, etag, lastModified }, 3600);
-  return data;
+  const newEtag = response.headers.get("ETag");
+  if (newEtag) {
+    etagStorage.set(url, newEtag);
+    etagStorage.set(`${url}:body`, await response.json());
+  }
+  
+  return response.json();
 }
 ```
 
-When the server returns a 304 Not Modified status, you know the cached version is still valid. This technique works exceptionally well with RESTful APIs that support these headers.
+This pattern reduces bandwidth and API costs significantly since servers return a 304 Not Modified status when content hasn't changed. The `mcp` skill series often benefits from this approach when querying remote MCP servers.
 
 ## Cache Invalidation Strategies
 
-Proper cache invalidation prevents stale data from causing problems. The strategy you choose depends on your use case:
+A cache is only as good as its invalidation strategy. Here are three practical approaches:
 
-**Time-Based Expiration** sets a fixed TTL after which cached data is considered stale. This works well for data that changes periodically, like weather APIs or stock prices.
+**Time-based expiration** works when data changes infrequently. Set reasonable TTL values based on how often the underlying data actually changes. Documentation APIs might use hours, while user data might use minutes.
 
-**Event-Based Invalidation** clears cache entries when you know data has changed. For example, after a successful POST request that creates or modifies a resource, invalidate related GET cache entries.
-
-**Version-Based Caching** includes version identifiers in your cache keys. When the version changes, the old cache automatically becomes inaccessible:
+**Event-based invalidation** triggers cache clears when specific events occur. If your `tdd` skill caches test results, invalidate the cache when test files change:
 
 ```javascript
-function getVersionedCacheKey(baseKey, version) {
-  return `${baseKey}:v${version}`;
+function invalidateOnChange(watchPaths) {
+  let lastModified = {};
+  
+  return () => {
+    for (const path of watchPaths) {
+      const mtime = fs.statSync(path).mtimeMs;
+      if (lastModified[path] && mtime > lastModified[path]) {
+        cache.clear();
+      }
+      lastModified[path] = mtime;
+    }
+  };
 }
 ```
 
-The tdd skill often benefits from version-based caching when fetching test fixtures or mock data that changes with different test suite versions.
+**Manual invalidation** gives users control over when to refresh cached data. Skills can expose a `refresh` command or flag:
 
-## Practical Example: Caching API Responses
+```yaml
+---
+name: api-data
+description: Fetches data from external APIs with caching
+commands:
+  refresh:
+    description: Force refresh cached data
+    action: cache.clear()
+---
+```
 
-Here's how you might integrate caching into a skill that makes multiple API calls:
+## Best Practices for Claude Skill Caching
+
+When implementing caching in your skills, keep these practical tips in mind:
+
+Store cache files in project-specific directories rather than global locations. This keeps caches isolated per project and makes them easy to clear alongside project data. The `supermemory` skill benefits from project-level caching since context is inherently project-specific.
+
+Choose appropriate cache sizes to prevent unbounded growth. Implement cleanup routines that remove entries older than the TTL or when the cache exceeds a reasonable size threshold.
+
+Log cache hits and misses during development. This helps you understand whether your caching strategy is actually working and where optimization opportunities exist:
 
 ```javascript
-async function fetchUserData(userId, forceRefresh = false) {
-  const cacheKey = `user:${userId}`;
-  
-  if (!forceRefresh) {
-    const cached = cache.get(cacheKey);
-    if (cached) return cached;
+const cacheStats = { hits: 0, misses: 0 };
+
+function getWithStats(key, fetchFn, ttl) {
+  const cached = cache.get(key);
+  if (cached && Date.now() < cached.expiry) {
+    cacheStats.hits++;
+    return cached.value;
   }
-
-  const response = await fetch(`https://api.example.com/users/${userId}`);
-  const data = await response.json();
-  
-  cache.set(cacheKey, data, 1800); // 30 minute TTL
-  return data;
+  cacheStats.misses++;
+  const value = fetchFn();
+  cache.set(key, { value, expiry: Date.now() + ttl * 1000 });
+  return value;
 }
 ```
 
-This pattern scales to any skill making external API calls. Adjust the TTL based on how frequently the underlying data changes.
+## Real-World Example: Cached API Documentation
 
-## Performance Considerations
+Here's how caching improves a skill that fetches API documentation:
 
-When implementing caching, monitor these metrics to ensure your optimization delivers results:
+```javascript
+// Before caching: every invocation makes network request
+async function getApiDocs(endpoint) {
+  const response = await fetch(`https://docs.example.com/api/${endpoint}`);
+  return response.text();
+}
 
-**Cache Hit Rate** measures what percentage of requests are served from cache. A low hit rate might indicate TTL values are too short or cache keys aren't consistent.
+// After caching: subsequent calls return instantly
+const docCache = new Map();
 
-**Memory Usage** grows with in-memory caching. Set appropriate limits and consider eviction policies for long-running sessions.
+async function getApiDocsCached(endpoint) {
+  const cacheKey = `docs:${endpoint}`;
+  
+  if (docCache.has(cacheKey)) {
+    console.log(`Cache hit for ${endpoint}`);
+    return docCache.get(cacheKey);
+  }
+  
+  const response = await fetch(`https://docs.example.com/api/${endpoint}`);
+  const text = await response.text();
+  docCache.set(cacheKey, text);
+  
+  return text;
+}
+```
 
-**Stale Data Risk** increases with longer cache lifetimes. Balance performance gains against the cost of serving outdated information.
+Skills like `pdf` that generate documentation from external sources see immediate benefits from this pattern. The first generation takes a moment, but subsequent ones complete in milliseconds.
 
-Skills like the supermemory skill demonstrate excellent cache hit rates because context queries are often repeated within a work session. Meanwhile, the pdf skill benefits from caching parsed document structures when processing multiple files from the same source.
+## Summary
+
+API response caching transforms Claude Code skills from sluggish API consumers into responsive, cost-effective tools. Start with simple in-memory caching for session-level speedups, move to file-based caching for persistence across sessions, and leverage HTTP headers for API-native caching support. Remember to implement appropriate invalidation strategies and monitor your cache effectiveness during development.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
