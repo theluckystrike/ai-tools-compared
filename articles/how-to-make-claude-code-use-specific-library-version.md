@@ -10,7 +10,7 @@ score: 8
 
 # How to Make Claude Code Use Specific Library Version
 
-When you ask Claude Code to generate code that depends on external libraries, it typically selects versions based on what it knows to be stable and widely compatible. However, your project may require a specific version due to legacy dependencies, API changes, or organizational constraints. This guide shows you how to ensure Claude Code uses the exact library versions you need.
+When you ask Claude Code to generate code that depends on external libraries, it typically selects versions based on what it knows to be stable and widely compatible. For overall dependency management patterns, see the [workflows hub](/claude-skills-guide/workflows-hub/). However, your project may require a specific version due to legacy dependencies, API changes, or organizational constraints. This guide shows you how to ensure Claude Code uses the exact library versions you need, including [setting environment variables for skills](/claude-skills-guide/articles/how-do-i-set-environment-variables-for-a-claude-skill/) that pin versions automatically.
 
 ## Why Version Control Matters
 

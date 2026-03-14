@@ -12,7 +12,7 @@ score: 8
 
 # Claude Skills for Android Kotlin Development
 
-Android development with Kotlin has evolved significantly, and integrating Claude skills into your workflow can dramatically improve productivity. This guide explores practical approaches for using [Claude's skill system](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) to accelerate Android projects, from initial setup through testing and deployment. For more mobile and platform-specific skill patterns, see the [use cases hub](/claude-skills-guide/use-cases-hub/).
+Android development with Kotlin has evolved significantly, and integrating [Claude skills](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) into your workflow can dramatically improve productivity. This guide explores practical approaches for using [Claude's skill system](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) to accelerate Android projects, from initial setup through testing and deployment. For more mobile and platform-specific skill patterns, see the [use cases hub](/claude-skills-guide/use-cases-hub/).
 
 ## Why Use Claude Skills for Android Development
 
@@ -174,7 +174,7 @@ Store these custom skills in your team's shared knowledge base and load them for
 
 Claude skills provide practical assistance for Android Kotlin development across the entire development lifecycle. From initial project setup through testing, debugging, and documentation, the skill system offers targeted workflows that reduce repetitive tasks. By integrating these skills thoughtfully into your development process, you can focus your energy on building distinctive features while Claude handles boilerplate and accelerates common patterns.
 
-Start with the TDD skill for new features, use documentation skills to maintain code clarity, and explore the xlsx skill for dependency management. As you become comfortable with these workflows, consider creating custom skills tailored to your specific Android development needs.
+Start with the [TDD skill for new features](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/), use documentation skills to maintain code clarity, and explore the xlsx skill for dependency management. As you become comfortable with these workflows, consider creating custom skills tailored to your specific Android development needs.
 
 ---
 

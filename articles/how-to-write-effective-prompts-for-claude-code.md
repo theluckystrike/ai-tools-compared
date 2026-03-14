@@ -12,7 +12,7 @@ score: 8
 
 # How to Write Effective Prompts for Claude Code
 
-Claude Code responds dramatically better to well-structured prompts than to casual messages. The difference between a prompt that produces mediocre results and one that unlocks precise, actionable output often comes down to how you frame the task, provide context, and specify expectations.
+Claude Code responds dramatically better to well-structured prompts than to casual messages. For foundational knowledge visit the [getting-started hub](/claude-skills-guide/getting-started-hub/). The difference between a prompt that produces mediocre results and one that unlocks precise, actionable output — similar to [how prompt optimization improves skill accuracy](/claude-skills-guide/articles/how-to-optimize-claude-skill-prompts-for-accuracy/) often comes down to how you frame the task, provide context, and specify expectations. Clear prompts also help you [make Claude Code write secure code](/claude-skills-guide/articles/how-to-make-claude-code-write-secure-code-always/) by default.
 
 This guide provides practical techniques for writing prompts that get results.
 

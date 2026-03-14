@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code for Trigger.dev Workflow Automation Tutorial
 
-Trigger.dev has become a powerful platform for building event-driven workflows, and Claude Code skills can dramatically accelerate your development process. This guide walks through practical patterns for automating Trigger.dev workflow creation, testing, and documentation using Claude Code skills.
+Trigger.dev has become a powerful platform for building event-driven workflows, and Claude Code skills can dramatically accelerate your development process. This guide walks through practical patterns for automating Trigger.dev workflow creation, testing, and documentation using Claude Code skills. For more event-driven automation patterns, see the [integrations hub](/claude-skills-guide/integrations-hub/).
 
 ## Setting Up Your Trigger.dev Project with Claude Code
 
@@ -24,7 +24,7 @@ cd my-workflow-project
 npm install @trigger.dev/core @trigger.dev/github
 ```
 
-With your project ready, invoke Claude Code and load relevant skills for this workflow-heavy development environment. The **tdd** skill proves invaluable for writing tests alongside your workflow definitions.
+With your project ready, invoke Claude Code and load relevant skills for this workflow-heavy development environment. The [tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) proves invaluable for writing tests alongside your workflow definitions.
 
 ## Automating Workflow Creation
 

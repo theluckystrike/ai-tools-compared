@@ -10,7 +10,7 @@ score: 8
 
 # How to Make Claude Code Write Better Unit Tests
 
-Claude Code generates unit tests quickly, but the quality varies based on how you guide it. This guide covers practical techniques to get more maintainable, comprehensive, and meaningful test coverage from your AI coding assistant.
+Claude Code generates unit tests quickly, but the quality varies based on how you guide it. Visit the [workflows hub](/claude-skills-guide/workflows-hub/) for broader testing automation patterns. This guide covers practical techniques to get more maintainable, comprehensive, and meaningful test coverage from your AI coding assistant — building on the [automated testing pipeline guide](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/).
 
 ## Start with the TDD Skill
 

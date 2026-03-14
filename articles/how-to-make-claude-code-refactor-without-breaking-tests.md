@@ -10,7 +10,7 @@ score: 8
 
 # How to Make Claude Code Refactor Without Breaking Tests
 
-Refactoring is essential for maintaining healthy codebases, but it becomes risky when tests start failing. Claude Code offers powerful capabilities to help you refactor with confidence, keeping your test suite intact throughout the process. This guide covers practical strategies for refactoring using Claude's skills and workflows.
+Refactoring is essential for maintaining healthy codebases, but it becomes risky when tests start failing. The [workflows hub](/claude-skills-guide/workflows-hub/) has additional refactoring patterns and best practices. Claude Code offers powerful capabilities to help you refactor with confidence, keeping your test suite intact throughout the process. This guide covers practical strategies for refactoring using Claude's skills and workflows.
 
 ## Understanding the Refactoring Challenge
 
@@ -216,7 +216,7 @@ This documentation helps future maintainers understand the refactoring decisions
 
 ## Conclusion
 
-Refactoring with Claude Code becomes significantly safer when you use the right skills and workflows. The tdd skill provides the foundation by ensuring tests exist before changes begin. The supermemory and frontend-design skills maintain architectural context throughout the process. By making incremental changes, running tests continuously, and documenting your workflow, you can refactor with confidence.
+Refactoring with Claude Code becomes significantly safer when you use the right skills and workflows. The [tdd skill](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) provides the foundation by ensuring tests exist before changes begin. The supermemory and [frontend-design skills](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/) maintain architectural context throughout the process. By making incremental changes, running tests continuously, and documenting your workflow, you can [refactor with confidence](/claude-skills-guide/articles/why-is-claude-code-recommended-for-refactoring-tasks/).
 
 Remember: tests are not obstacles to refactoring—they are the safety net that makes refactoring possible. Claude Code amplifies this safety by providing intelligent context and systematic approaches to code improvement.
 

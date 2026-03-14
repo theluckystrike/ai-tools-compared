@@ -12,7 +12,7 @@ score: 8
 
 # How to Make Claude Code Write Secure Code Always
 
-Getting Claude Code to consistently produce secure code requires more than just hoping for the best. You need to establish patterns, use specific skills, and configure your environment to prioritize security at every step. This guide covers practical techniques that work.
+Getting Claude Code to consistently produce secure code requires more than just hoping for the best. Explore the [workflows hub](/claude-skills-guide/workflows-hub/) for related security automation patterns. You need to establish patterns, use specific skills like [OWASP security scanning](/claude-skills-guide/articles/claude-code-owasp-top-10-security-scanning-workflow/), and configure your environment to prioritize security at every step. This guide covers practical techniques that work — including how to pair Claude with [secret scanning to prevent credential leaks](/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/).
 
 ## Start with Security-First Skill Configuration
 

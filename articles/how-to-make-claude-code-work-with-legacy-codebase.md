@@ -10,7 +10,7 @@ score: 8
 
 # How to Make Claude Code Work with Legacy Codebase
 
-Legacy codebases present unique challenges for AI-assisted development. Years of accumulated technical debt, outdated patterns, and inconsistent styling can trip up even the most capable AI coding assistant. This guide provides concrete strategies to make Claude Code work effectively with older projects.
+Legacy codebases present unique challenges for AI-assisted development. The [workflows hub](/claude-skills-guide/workflows-hub/) covers many patterns applicable to older projects. Years of accumulated technical debt, outdated patterns, and inconsistent styling can trip up even the most capable AI coding assistant. Start by reading [how to make Claude Code match existing code patterns](/claude-skills-guide/articles/how-to-make-claude-code-match-existing-code-patterns/) to handle conventions consistently. This guide provides concrete strategies to make Claude Code work effectively with older projects — including how to use [Claude skill files to encode legacy conventions](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/).
 
 ## Understanding the Challenge
 
