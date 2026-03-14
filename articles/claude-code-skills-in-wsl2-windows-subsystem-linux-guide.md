@@ -16,7 +16,7 @@ Windows Subsystem for Linux (WSL2) provides a powerful Linux environment directl
 
 ## Why Run Claude Code Skills in WSL2?
 
-WSL2 offers several advantages for developers working with Claude Code skills. The filesystem performance in WSL2 rivals native Linux, making it ideal for processing large codebases or working with skills that handle substantial file operations. If your daily workflow involves Linux servers, containers, or development tools that work best in a Unix-like environment, running Claude Code skills in WSL2 keeps everything in one place.
+WSL2 offers several advantages for developers working with Claude Code skills. The filesystem performance in WSL2 rivals native Linux, making it ideal for processing large codebases or working with skills that handle substantial file operations. If your daily workflow involves Linux servers, containers, or development tools that work best in a Unix-like environment, running Claude Code skills in WSL2 keeps everything in one place. For another cross-environment setup, see [Claude Code dev containers and devcontainer.json setup guide](/claude-skills-guide/articles/claude-code-dev-containers-devcontainer-json-setup-guide/).
 
 Many skills work identically in WSL2 as they do on native Linux. Skills like **pdf** for document processing, **xlsx** for spreadsheet manipulation, and **tdd** for test-driven development workflows execute without modification. The primary difference lies in how you configure the initial setup and manage file paths between Windows and Linux.
 
@@ -256,7 +256,7 @@ iostat -x 1
 
 ## Conclusion
 
-Running Claude Code skills in WSL2 combines the best of both worlds: Windows as your host OS with a full Linux development environment. Skills like **pdf**, **xlsx**, **tdd**, **frontend-design**, and **supermemory** function identically to their native Linux counterparts once properly installed.
+Running Claude Code skills in WSL2 combines the best of both worlds: Windows as your host OS with a full Linux development environment. Skills like **pdf**, **xlsx**, **tdd**, **frontend-design**, and [**supermemory**](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) function identically to their native Linux counterparts once properly installed.
 
 The key steps are installing Claude Code within WSL2, creating the skills directory structure, adding skill files, and invoking them with slash commands. With this setup, you have a seamless development experience that leverages WSL2's capabilities while maintaining access to Claude Code's powerful skill ecosystem.
 
