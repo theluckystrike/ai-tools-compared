@@ -1,214 +1,205 @@
 ---
 layout: default
 title: "Claude Code Rust Crate Development Guide"
-description: "A practical guide to developing Rust crates efficiently with Claude Code. Learn skill patterns, TDD workflows, and crate organization for productive Rust development."
+description: "A practical guide to developing Rust crates with Claude Code. Learn workflows, tooling, and skill integration for efficient Rust development."
 date: 2026-03-14
-categories: [guides]
-tags: [claude-code, rust, crate-development, programming]
 author: theluckystrike
 permalink: /claude-code-rust-crate-development-guide/
 ---
 
 # Claude Code Rust Crate Development Guide
 
-Rust crate development benefits enormously from Claude Code when you structure your skills and workflows correctly. This guide shows you how to leverage Claude Code's capabilities specifically for Rust development, from initial crate setup through testing and publishing.
+Rust crate development becomes significantly more productive when paired with Claude Code and its specialized skill ecosystem. This guide covers practical workflows, tooling strategies, and skill integration patterns that will help you build robust Rust libraries and applications efficiently.
 
-## Setting Up Rust Development Skills
+## Setting Up Your Rust Development Environment
 
-Before starting any Rust project, ensure your Claude Code environment includes the right skills. The `tdd` skill is essential for test-driven development, while `pdf` becomes valuable when generating documentation. Create a `.claude/settings.local.md` that loads these skills for Rust projects:
+Before diving into crate development, ensure your environment is properly configured. Claude Code works seamlessly with Rust tooling, but a few setup steps optimize the experience.
 
-```
-Load the tdd skill for all Rust implementation tasks.
-Load the doc skill when generating crate documentation.
-```
+First, verify your Rust installation includes Cargo, rustc, and clippy:
 
-The `tools` field in your skill configuration should include Bash (for cargo commands), Read, and Write. For Rust development specifically, add:
-
-```yaml
----
-name: rust-dev
-description: Rust crate development workflow
-tools:
-  - Read
-  - Write
-  - Bash
----
+```bash
+rustup update
+cargo --version
+rustc --version
 ```
 
-This gives Claude access to cargo, rustc, and other essential Rust tooling.
+Create a new library crate to experiment with:
 
-## Crate Structure and Project Initialization
-
-When initializing a new Rust crate, Claude Code can scaffold the entire project structure. Provide clear instructions about your intended crate type:
-
-```
-Create a new library crate called "async-cache" with:
-- src/lib.rs as the main entry point
-- src/error.rs for custom error types using thiserror
-- src/cache.rs for the core caching implementation
-- tests/ directory for integration tests
-- examples/ directory with a basic usage example
-- Cargo.toml with: MIT license, rust-version 1.70+, 
-  dependencies: tokio, thiserror, serde
+```bash
+cargo new --lib my_awesome_crate
+cd my_awesome_crate
 ```
 
-The `frontend-design` skill pattern translates well here—specifying exact file paths and naming conventions produces consistent results. After the initial scaffold, ask Claude to read Cargo.toml and verify the dependencies before proceeding.
+The `--lib` flag creates a library crate, which is ideal for developing reusable components. For applications, omit the flag to generate a binary crate instead.
 
-## Test-Driven Development with the tdd Skill
+## Using the TDD Skill for Rust Development
 
-The `tdd` skill excels at Rust development. Configure it specifically for cargo test workflows:
+The tdd skill transforms how you approach Rust development. When you invoke `/tdd` in your Claude Code session, it applies test-driven development principles to your workflow. This is particularly valuable in Rust because the compiler's strictness means catching errors early saves substantial refactoring time.
 
-```
-For Rust TDD workflow:
-1. Write failing tests in tests/ or src/ with #[test] and #[cfg(test)]
-2. Run: cargo test --lib (verify tests fail)
-3. Implement the functionality in src/
-4. Run: cargo test --lib (verify tests pass)
-5. Run: cargo clippy (check for common Rust mistakes)
-6. Run: cargo fmt (format code before completing)
-
-Never skip clippy warnings. Fix them before moving on.
-```
-
-This pattern ensures your Rust code follows idiomatic patterns and avoids common pitfalls. The `tdd` skill's emphasis on failing tests first aligns perfectly with Rust's borrow checker—catching ownership errors early saves significant debugging time.
-
-## Working with Dependencies
-
-Rust's dependency management requires specific guidance for Claude Code. When adding dependencies:
+Activate the skill and describe your intended functionality:
 
 ```
-When adding a dependency:
-1. Search crates.io for the latest stable version
-2. Add to Cargo.toml with: cargo add {package_name}
-3. Run: cargo check (verify it compiles)
-4. Read the crate documentation
-5. Write a minimal usage example to verify understanding
-
-For async crates, always use the Tokio runtime unless specified otherwise.
+/tdd
 ```
 
-The `supermemory` skill can help you remember which crates you've used successfully in past projects, avoiding repeated research. Store crate recommendations and configuration patterns there for quick reference.
-
-## Error Handling and Thiserror Patterns
-
-Rust's error handling philosophy differs significantly from other languages. Guide Claude Code to use thiserror effectively:
+Then specify what you want to build. For example:
 
 ```
-For error types:
-1. Use thiserror for library errors (enum with #[derive(thiserror::Error)])
-2. Implement std::error::Error trait
-3. Use #[source] for chained errors
-4. Provide context with .context() from anyhow for application code
+Create a simple parsing crate that extracts email addresses from text. 
+Use regex and return a Vec<String> of valid emails.
+```
 
-Example structure:
-#[derive(Debug, thiserror::Error)]
-pub enum CacheError {
-    #[error("key not found: {0}")]
-    KeyNotFound(String),
-    #[error("serialization failed: {0}")]
-    Serialization(#[from] serde_json::Error),
+The tdd skill will guide Claude to generate test cases first, then implement the code to pass those tests. This approach works exceptionally well with Rust's built-in testing framework.
+
+## Writing and Running Tests
+
+Rust's native testing support is excellent. Place tests in your `src/lib.rs` file using the `#[cfg(test)]` module:
+
+```rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_email_extraction() {
+        let text = "Contact us at hello@example.com for more info.";
+        let emails = extract_emails(text);
+        assert_eq!(emails, vec!["hello@example.com"]);
+    }
+
+    #[test]
+    fn test_no_emails_returns_empty() {
+        let text = "This text contains no email addresses.";
+        let emails = extract_emails(text);
+        assert!(emails.is_empty());
+    }
 }
 ```
 
-This produces errors that work well with Rust's ? operator and integrate cleanly with logging systems.
+Run tests with:
+
+```bash
+cargo test
+```
+
+For more comprehensive testing scenarios, consider integrating the `proptest` crate for property-based testing, or `quickcheck` for generative testing. The tdd skill can help you set up these testing strategies when appropriate.
 
 ## Documentation Generation
 
-The `pdf` skill becomes valuable when you need to export crate documentation. For generating documentation:
+Well-documented crates receive more usage and contributions. Rust's doc comments integrate with Cargo to generate beautiful documentation automatically.
 
-```
-For crate documentation:
-1. Run: cargo doc --no-deps --open (generate and preview)
-2. Ensure all public APIs have doc comments (///)
-3. Include usage examples in doc comments (/// # Examples)
-4. Add README.md with: installation, basic usage, features list
-5. For PDF export: convert the README to PDF using the pdf skill
-```
+Write documentation directly above your public functions:
 
-Good documentation directly in the source code with `cargo doc` produces HTML documentation that you can then convert to PDF using the `pdf` skill for distribution.
-
-## Performance and Benchmarking
-
-Rust users care about performance. Guide Claude Code to include benchmarking:
-
-```
-For performance-critical code:
-1. Write benchmarks in benches/ using criterion crate
-2. Run: cargo bench (capture baseline numbers)
-3. Implement the optimization
-4. Run: cargo bench (verify improvement)
-5. Document the performance characteristics in README
-
-Always include worst-case time complexity in documentation.
+```rust
+/// Extracts all valid email addresses from the given text.
+/// 
+/// # Arguments
+/// 
+/// * `text` - A string slice containing the text to parse
+/// 
+/// # Returns
+/// 
+/// A vector ofStrings containing all found email addresses
+/// 
+/// # Example
+/// 
+/// ```
+/// let emails = extract_emails("test@domain.com");
+/// assert_eq!(emails.len(), 1);
+/// ```
+pub fn extract_emails(text: &str) -> Vec<String> {
+    // implementation
+}
 ```
 
-The `tdd` skill's verification focus applies here—baseline benchmarks before optimization, then verification after.
+Generate documentation with:
 
-## Publishing Crates
-
-When ready to publish to crates.io:
-
-```
-Before publishing:
-1. Run: cargo publish --dry-run
-2. Verify: cargo test --all-features
-3. Verify: cargo clippy --all-targets
-4. Verify: cargo fmt --check
-5. Update version in Cargo.toml following semver
-6. Run: cargo publish
-
-Ensure Cargo.toml includes:
-- description (max 200 chars)
-- license (valid SPDX identifier)
-- repository URL
-- documentation URL
+```bash
+cargo doc --open
 ```
 
-## Common Rust Development Patterns
+The `--open` flag automatically opens the generated HTML documentation in your browser. For crates intended for public distribution, consider including usage examples in your documentation—Cargo tests these examples automatically to ensure they remain accurate.
 
-A few patterns specifically for Rust development with Claude Code:
+## Integrating PDF and Documentation Skills
 
-**Module organization**: Use `mod.rs` files or the 2018+ module convention (`src/foo.rs` with `mod foo;` in parent). Specify your preference explicitly.
+When maintaining larger Rust projects, you often need to generate supplementary documentation. The pdf skill enables programmatic PDF generation for reports, API documentation summaries, or user manuals.
 
-**Workspace management**: For multi-crate projects, provide the workspace structure:
+Similarly, if you need to convert existing documentation or extract content from PDFs, the pdf skill handles these tasks without external tools. This proves valuable when migrating documentation or aggregating information across multiple sources.
 
-```
-This is a Cargo workspace with members:
-- core/ (the core library)
-- cli/ (command-line interface)
-- macros/ (proc-macros)
+For project wikis or internal documentation sites, the docx skill helps create formatted documentation files directly from your Rust project's output or test results.
 
-Run commands from workspace root: cargo test -p core
-```
+## Code Quality with Clippy and Formatting
 
-**Feature flags**: Define features in Cargo.toml and test each combination:
+Maintain consistent code quality using Rust's built-in tooling:
 
-```
-Test these feature combinations:
-- cargo test (default features only)
-- cargo test --all-features (all features)
-- cargo test --no-default-features (minimal build)
+```bash
+cargo fmt
+cargo clippy
 ```
 
-## Integrating with Other Skills
+The `fmt` command formats your code according to Rust's style guidelines. The `clippy` command provides linting suggestions beyond what the compiler offers—catching common mistakes and suggesting idiomatic Rust patterns.
 
-The Rust development workflow benefits from combining multiple skills. The `algorithmic-art` skill can visualize data structures when needed. The `docx` skill helps create formatted design documents. The `skill-creator` skill lets you build custom Rust-specific skills once and reuse them across projects.
+Integrate these checks into your development workflow:
 
-For CI/CD integration, create a skill that runs the full check suite:
-
-```
-Rust CI check list (in order):
-1. cargo fmt --check
-2. cargo clippy --all-targets -- -D warnings
-3. cargo test --all-features
-4. cargo bench
-5. cargo audit (check for vulnerabilities)
-
-Fail the build on any step failure.
+```bash
+# Format, then check, then test
+cargo fmt && cargo clippy && cargo test
 ```
 
----
+Consider adding these commands to your project's CI pipeline to enforce quality standards across all contributions.
 
-This workflow transforms Claude Code into an effective Rust development partner. The key is providing Rust-specific guidance that accounts for the language's unique features: the borrow checker, trait system, and cargo ecosystem. With the right skill configuration, you can achieve rapid development while maintaining Rust's high standards for correctness and performance.
+## Version Management and Publishing
+
+When your crate is ready for release, update your `Cargo.toml` with the appropriate version number following semantic versioning principles. Increment the version based on the nature of changes:
+
+- **Patch** (0.0.x): Bug fixes, no API changes
+- **Minor** (0.x.0): New features, backward-compatible
+- **Major** (x.0.0): Breaking changes
+
+Publish to crates.io:
+
+```bash
+cargo publish
+```
+
+Before publishing, ensure your `Cargo.toml` includes accurate metadata: description, license, repository URL, and relevant keywords. Good metadata helps users discover your crate.
+
+## Using Super Memory for Project Context
+
+For larger crate development spanning multiple sessions, the supermemory skill maintains context across conversations. It indexes your project files, previous discussions, and decisions, allowing Claude to reference relevant context even after closing and reopening sessions.
+
+This proves invaluable when returning to a crate after working on other projects, or when collaborating with team members who need to understand previous design decisions.
+
+## Performance Benchmarking
+
+Rust's performance characteristics matter for performance-critical crates. Use Criterion for benchmarking:
+
+```rust
+use criterion::{criterion_group, criterion_main, Criterion, black_box};
+
+fn benchmark_parsing(c: &mut Criterion) {
+    let text = "test@example.com ".repeat(100);
+    c.bench_function("parse_emails", |b| {
+        b.iter(|| extract_emails(black_box(&text)));
+    });
+}
+
+criterion_group!(benches, benchmark_parsing);
+criterion_main!(benches);
+```
+
+Run benchmarks with:
+
+```bash
+cargo bench
+```
+
+The tdd skill can assist in setting up benchmark tests and interpreting results, helping you identify performance regressions across versions.
+
+## Conclusion
+
+Developing Rust crates with Claude Code combines the language's powerful safety guarantees with AI-assisted productivity. The tdd skill enforces test-driven development principles, while integration with documentation tools like pdf and docx streamlines maintenance workflows. Consistent use of formatting, linting, and benchmarking tools ensures your crates meet professional quality standards.
+
+Start with small crates to build familiarity, then apply these patterns to larger projects. The combination of Rust's robust type system and Claude Code's contextual assistance creates an efficient development environment for building reliable, performant software.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
