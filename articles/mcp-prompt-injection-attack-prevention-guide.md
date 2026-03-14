@@ -111,7 +111,7 @@ This pattern prevents a single injection from compromising entire workflows.
 
 ### 4. Skill-Based Context Separation
 
-Leverage Claude skills to manage different trust contexts. The `supermemory` skill, for instance, provides structured memory management that isolates different types of information:
+Use Claude skills to manage different trust contexts. The `supermemory` skill, for instance, provides structured memory management that isolates different types of information:
 
 ```markdown
 # Using supermemory for secure context separation

@@ -160,7 +160,7 @@ Keep your Linear integration effective with these approaches:
 - **Create issues with actionable descriptions**: Include reproduction steps, root cause analysis, and relevant code references
 - **Use labels consistently**: Establish a labeling convention and apply it across your team
 - **Link issues to code**: Reference issue IDs in commit messages and PR descriptions for automatic tracking
-- **Leverage priority levels**: Use priorities to help Claude Code focus on high-impact work first
+- **Use priority levels**: Set priorities to help Claude Code focus on high-impact work first
 
 Before committing your Linear API key to any config file, review the [MCP credential management and secrets handling guide](/claude-skills-guide/mcp-credential-management-and-secrets-handling/) for secure storage patterns.
 

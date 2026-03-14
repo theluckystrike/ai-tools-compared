@@ -114,7 +114,7 @@ Several patterns have emerged as particularly effective:
 
 **Use descriptive names and clear requirements.** "A button that saves the form and shows a success message" works better than "make it save."
 
-**Leverage skills for repetitive tasks.** If you're frequently generating the same type of output—a certain test pattern, a documentation format—create or use a skill that encodes that pattern.
+**Use skills for repetitive tasks.** If you're frequently generating the same type of output—a certain test pattern, a documentation format—create or use a skill that encodes that pattern.
 
 **Embrace the iteration.** The first version won't be perfect. Plan for multiple passes where you refine the output through conversation.
 

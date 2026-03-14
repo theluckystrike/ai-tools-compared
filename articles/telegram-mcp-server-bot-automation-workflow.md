@@ -135,7 +135,7 @@ You can schedule skills using cron expressions or external triggers. The key is 
 
 ## Error Handling and Fallbacks
 
-Robust automation requires proper error handling. Configure fallback responses for scenarios your primary workflows do not cover:
+Good automation requires proper error handling. Configure fallback responses for scenarios your primary workflows do not cover:
 
 ```javascript
 // Skill: telegram-fallback-handler

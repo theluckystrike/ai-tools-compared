@@ -121,7 +121,7 @@ When building Tavily-powered research workflows, consider these optimization str
 - **Cache frequently accessed results**: Store research findings using supermemory to avoid repeated searches
 - **Limit result sets**: Request only what you need to reduce latency and processing overhead
 - **Chain strategically**: Break complex research into smaller, manageable steps with clear intermediate checkpoints
-- **Use semantic filters**: Leverage Tavily's query refinement to target specific aspects of your research topic
+- **Use semantic filters**: Apply Tavily's query refinement to target specific aspects of your research topic
 
 ## Troubleshooting Common Issues
 

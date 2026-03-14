@@ -192,7 +192,7 @@ Store your Intercom access token in environment variables rather than configurat
 
 ## Error Handling Patterns
 
-Robust MCP tool implementations handle common failure scenarios:
+Well-written MCP tool implementations handle common failure scenarios:
 
 ```javascript
 server.addTool({
