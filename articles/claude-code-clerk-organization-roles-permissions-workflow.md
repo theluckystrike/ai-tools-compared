@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Claude Code Clerk: Organization Roles, Permissions, and Workflow"
+title: "Claude Code Clerk: Organization Roles, Permissions, and."
 description: "Master the clerk workflow in Claude Code. Learn how to manage organization roles, configure permissions, and build efficient approval workflows."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-clerk-organization-roles-permissions-workflow/
+categories: [guides]
 ---
 
 {% raw %}
@@ -184,3 +185,10 @@ Leverage workflow templates for common patterns. Claude Code provides pre-built 
 
 Finally, integrate clerk notifications with your existing communication tools. Approval requests should reach reviewers through Slack, email, or other channels they actively monitor.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
