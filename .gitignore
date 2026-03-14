@@ -1,0 +1,21 @@
+# Internal pipeline scripts
+*.sh
+*.py
+*.pyc
+__pycache__/
+
+# Jekyll build artifacts
+.jekyll-cache/
+_site/
+.sass-cache/
+
+# Node
+node_modules/
+
+# Pipeline state files
+current_batch.txt
+my_assigned_files.txt
+my_files.txt
+my_range.txt
+GEMINI.md
+.agent_memory.json
