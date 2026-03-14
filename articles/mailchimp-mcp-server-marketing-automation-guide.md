@@ -5,7 +5,7 @@ description: "Learn how to integrate Mailchimp MCP server for marketing automati
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, mailchimp, mcp, marketing-automation, email-marketing, api]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 permalink: /mailchimp-mcp-server-marketing-automation-guide/

@@ -3,8 +3,12 @@ layout: default
 title: "Claude MD Changes Not Taking Effect Fix Guide"
 description: "A practical troubleshooting guide for developers experiencing issues with Claude CLI configuration changes not applying."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 permalink: /claude-md-changes-not-taking-effect-fix-guide/
+categories: [troubleshooting]
+tags: [claude-code, claude-skills, troubleshooting, claude-md, configuration]
 ---
 
 # Claude MD Changes Not Taking Effect Fix Guide

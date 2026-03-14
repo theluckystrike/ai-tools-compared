@@ -3,8 +3,12 @@ layout: default
 title: "Claude Code Artillery Performance Testing: A Practical Guide"
 description: "Learn how to use Claude Code with Artillery for load testing and performance analysis. Real-world examples, code snippets, and integration strategies."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /claude-code-artillery-performance-testing/
+categories: [tutorials]
+tags: [claude-code, claude-skills, artillery, performance-testing, load-testing]
 ---
 {% raw %}
 
@@ -30,7 +34,7 @@ Key features include:
 Before you begin, ensure you have Node.js installed. Create a new project directory and install Artillery:
 
 ```bash
-mkdir claud artillery-test && cd claud artillery-test
+mkdir artillery-test && cd artillery-test
 npm init -y
 npm install artillery
 ```
@@ -84,7 +88,7 @@ npx artillery run login-load-test.yml
 
 ## Generating Tests with Claude Code
 
-This is where Claude Code shines. Instead of manually writing complex test scenarios, you can describe your API endpoints and expected behaviors, and Claude Code will generate the Artillery configuration. Using skills like **tdd** or **internal-comms**, you can create comprehensive test suites that cover authentication, error handling, and edge cases.
+This is where Claude Code shines. Instead of manually writing complex test scenarios, you can describe your API endpoints and expected behaviors, and Claude Code will generate the Artillery configuration. Using the **tdd** skill, you can create comprehensive test suites that cover authentication, error handling, and edge cases.
 
 For example, tell Claude Code:
 

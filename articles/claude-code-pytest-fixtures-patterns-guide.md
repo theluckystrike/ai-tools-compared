@@ -3,9 +3,9 @@ layout: default
 title: "Claude Code Pytest Fixtures Patterns Guide"
 description: "A practical guide to pytest fixtures patterns for developers using Claude Code. Learn fixture scopes, parametrization, autouse, and advanced patterns with real examples."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [tutorials]
-tags: [claude-code, pytest, fixtures, testing, python, automation]
+tags: [claude-code, claude-skills, pytest, fixtures, testing, python, automation]
 reviewed: true
 score: 7
 permalink: /claude-code-pytest-fixtures-patterns-guide/

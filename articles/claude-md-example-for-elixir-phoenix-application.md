@@ -4,8 +4,10 @@ title: "Claude MD Example for Elixir Phoenix Application"
 description: "A practical guide to using Claude Code with Elixir Phoenix. Real skill examples, code snippets, and workflow patterns for Phoenix developers."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, elixir, phoenix, markdown, skill]
-author: theluckystrike
+tags: [claude-code, claude-skills, elixir, phoenix, markdown]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /claude-md-example-for-elixir-phoenix-application/
 ---
 

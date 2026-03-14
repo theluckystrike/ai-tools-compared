@@ -5,7 +5,7 @@ description: "Compare Tabnine and Claude Code for team development workflows. Le
 date: 2026-03-14
 categories: [guides]
 tags: [tabnine, claude-code, ai-code-assistant, team-development, productivity]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 permalink: /tabnine-vs-claude-code-for-team-development/

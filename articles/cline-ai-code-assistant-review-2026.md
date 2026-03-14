@@ -3,9 +3,9 @@ layout: default
 title: "Cline AI Code Assistant Review 2026"
 description: "A practical review of Cline AI code assistant in 2026. Explore its autonomous coding capabilities, skill integration, CLI workflow, and how it compares to Claude Code for developer productivity."
 date: 2026-03-14
-categories: [reviews]
+categories: [guides]
 tags: [cline, ai-code-assistant, autonomous-coding, claude-code, developer-tools, 2026]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 permalink: /cline-ai-code-assistant-review-2026/

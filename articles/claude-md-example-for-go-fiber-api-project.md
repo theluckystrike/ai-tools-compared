@@ -4,8 +4,10 @@ title: "Claude MD Example for Go Fiber API Project"
 description: "A practical guide to using Claude Code with Go Fiber. Includes Markdown skill templates, API development workflows, and real code examples."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, go-fiber, go, api-development, markdown]
-author: theluckystrike
+tags: [claude-code, claude-skills, go-fiber, go, api-development, markdown]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /claude-md-example-for-go-fiber-api-project/
 ---
 

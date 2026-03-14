@@ -1,13 +1,13 @@
 ---
 layout: default
 title: "Claude Code Jest Unit Testing Workflow Guide"
-description: "A practical guide to integrating Claude Code with Jest for efficient unit testing workflows. Learn how to leverage AI-assisted test creation, maintenance, and debugging."
+description: "A practical guide to integrating Claude Code with Jest for efficient unit testing workflows. Learn AI-assisted test creation, maintenance, and debugging."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, jest, unit-testing, testing, workflow]
-author: theluckystrike
-reviewed: false
-score: 0
+tags: [claude-code, claude-skills, jest, unit-testing, testing, workflow]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /claude-code-jest-unit-testing-workflow-guide/
 ---
 
