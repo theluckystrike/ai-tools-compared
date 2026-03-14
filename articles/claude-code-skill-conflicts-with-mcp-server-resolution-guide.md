@@ -36,15 +36,14 @@ When the frontend-design skill defines a tool called `generate_html` and your MC
 
 Skills are plain Markdown files and don't have tool configuration fields. To resolve naming conflicts between a skill and an MCP server, the conflict is resolved at the Claude Code level by prefixing MCP tool calls — rename the conflicting MCP server tool or contact the MCP server maintainer to adjust its tool namespace.
 
-Alternatively, you can configure the MCP server to use a different tool prefix. Most MCP server configurations accept a `toolPrefix` option:
+Alternatively, update the MCP server's own source code to rename the conflicting tool. If using a third-party server, check whether the server accepts a prefix argument via `args`:
 
 ```json
 {
   "mcpServers": {
     "my-custom-server": {
       "command": "npx",
-      "args": ["-y", "@example/mcp-server"],
-      "toolPrefix": "mcp_"
+      "args": ["-y", "@example/mcp-server", "--tool-prefix", "mcp_"]
     }
   }
 }
