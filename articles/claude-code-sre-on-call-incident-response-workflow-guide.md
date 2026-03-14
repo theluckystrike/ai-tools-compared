@@ -177,3 +177,10 @@ To maximize the effectiveness of Claude Code in your incident response workflows
 
 Claude Code transforms on-call incident response from a stressful, manual process into an efficient, automated workflow. By investing time in setting up proper skills, integrating with your tooling, and building comprehensive playbooks, you can significantly reduce MTTR while making incident response more manageable for your team.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
