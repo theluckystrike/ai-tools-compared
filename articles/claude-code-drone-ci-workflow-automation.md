@@ -5,6 +5,7 @@ description: "Automate your Drone CI pipelines using Claude Code skills. Learn p
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-drone-ci-workflow-automation/
+categories: [guides]
 ---
 
 # Claude Code Drone CI Workflow Automation
@@ -197,5 +198,12 @@ This iterative improvement keeps your CI infrastructure maintainable as projects
 Claude Code transforms Drone CI workflow management from manual configuration to intelligent automation. By describing requirements in natural language, you generate production-ready pipelines that scale. The combination of Claude's understanding with Drone's container-native approach creates a powerful CI/CD system that adapts to your project's needs.
 
 Start by adding Claude to your development workflow, describe your pipeline requirements, and watch as automated configurations emerge. Your team benefits from consistent, tested, and optimized CI processes without the manual overhead.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Azure DevOps Pipeline Automation"
-description: "Master Azure DevOps pipeline automation with Claude Code. Learn to build intelligent CI/CD workflows that leverage AI-powered code generation, testing, and deployment."
+description: "Master Azure DevOps pipeline automation with Claude Code. Learn to build intelligent CI/CD workflows that leverage AI-powered code generation, testing."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-azure-devops-pipeline-automation/
+categories: [guides]
 ---
 
 # Claude Code Azure DevOps Pipeline Automation
@@ -216,5 +217,12 @@ Successful Azure DevOps pipeline automation with Claude Code follows several pri
 For documentation generation within pipelines, the automated-code-documentation-workflow-with-claude-skills skill automates API documentation, README generation, and changelog creation as part of your build process.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

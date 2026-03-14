@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code GitHub Actions Monorepo Workflow"
-description: "Build automated CI/CD pipelines for monorepos using Claude Code and GitHub Actions. Includes practical examples for package management, testing, and deployment across multiple projects."
+description: "Build automated CI/CD pipelines for monorepos using Claude Code and GitHub Actions. Includes practical examples for package management, testing, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, github-actions, monorepo, ci-cd, automation]
@@ -271,6 +271,13 @@ jobs:
 Building a monorepo CI/CD pipeline with Claude Code and GitHub Actions requires thoughtful configuration but delivers significant benefits. Path-based triggering reduces unnecessary runs, matrix builds enable parallel execution, and intelligent change detection ensures you only test what matters.
 
 Start with basic path filters, then layer on matrix strategies and caching as your monorepo grows. Use Claude Code skills to automate workflow maintenance and keep your pipelines optimized over time. The combination of Claude Code's automation capabilities and GitHub Actions' flexible configuration creates a robust foundation for monorepo development at any scale.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

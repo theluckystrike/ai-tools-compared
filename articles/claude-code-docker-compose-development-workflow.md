@@ -5,6 +5,7 @@ description: "A practical guide to integrating Claude Code with Docker Compose f
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-docker-compose-development-workflow/
+categories: [guides]
 ---
 
 # Claude Code Docker Compose Development Workflow
@@ -185,5 +186,12 @@ Keep development and production configurations separate. A `docker-compose.overr
 ## Conclusion
 
 Claude Code transforms Docker Compose from a manual orchestration tool into an intelligent development partner. By describing your goals and problems in natural language, you get actionable Docker commands, debugging guidance, and architectural recommendations. Combined with skills like tdd for testing, pdf for documentation, and supermemory for knowledge retention, you build a development workflow that's both powerful and maintainable.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
