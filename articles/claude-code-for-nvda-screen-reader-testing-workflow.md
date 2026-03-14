@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for NVDA Screen Reader Testing Workflow"
 description: "A comprehensive guide to testing web accessibility with NVDA screen reader using Claude Code. Learn practical workflows for automated a11y testing."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-nvda-screen-reader-testing-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for NVDA Screen Reader Testing Workflow
 
@@ -21,7 +25,7 @@ The challenge with NVDA testing is that it requires manual interaction—you nee
 
 ## Setting Up Your NVDA Testing Environment
 
-Before leveraging Claude Code for NVDA testing, establish a proper testing environment. Here's what you need:
+Before using Claude Code for NVDA testing, establish a proper testing environment. Here's what you need:
 
 ### Prerequisites
 

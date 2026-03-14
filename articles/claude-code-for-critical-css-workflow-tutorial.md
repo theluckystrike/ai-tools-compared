@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Mastering Critical CSS Workflow with Claude Code: A Complete Tutorial"
 description: "Learn how to automate and optimize your critical CSS workflow using Claude Code. This comprehensive tutorial covers practical examples, code snippets, and actionable advice for developers."
@@ -7,10 +8,13 @@ author: Claude Skills Guide
 permalink: /claude-code-for-critical-css-workflow-tutorial/
 categories: [Development, CSS, Performance, Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
 
+
 {% raw %}
-Critical CSS is one of the most impactful optimizations you can make for your website's performance. By inlining the CSS needed to render above-the-fold content and deferring the rest, you can dramatically reduce render-blocking resources and improve First Contentful Paint (FCP). In this tutorial, we'll explore how to leverage Claude Code to automate and streamline your critical CSS workflow.
+Critical CSS is one of the most impactful optimizations you can make for your website's performance. By inlining the CSS needed to render above-the-fold content and deferring the rest, you can dramatically reduce render-blocking resources and improve First Contentful Paint (FCP). In this tutorial, we'll explore how to use Claude Code to automate and streamline your critical CSS workflow.
 
 ## What is Critical CSS?
 

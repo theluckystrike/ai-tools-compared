@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for GitHub Actions Self-Hosted Runner Guide"
 description: "Learn how to set up and configure Claude Code on GitHub Actions self-hosted runners for automated AI-assisted development workflows."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-github-actions-self-hosted-runner-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for GitHub Actions Self-Hosted Runner Guide
@@ -99,7 +103,7 @@ This workflow triggers on pull requests and uses Claude Code to review your code
 
 ### Advanced: Using Claude Code Skills in CI/CD
 
-You can leverage Claude Code skills for more specialized tasks. Here's how to use custom skills in your workflows:
+You can use Claude Code skills for more specialized tasks. Here's how to use custom skills in your workflows:
 
 ```yaml
 name: Claude Skill Execution

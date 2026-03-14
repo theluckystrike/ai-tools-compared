@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Astro Middleware Workflow Guide"
 description: "Learn how to use Claude Code to build, test, and optimize Astro middleware with practical examples and actionable workflows for modern web development."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-astro-middleware-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Astro Middleware Workflow Guide
 
-Astro middleware enables you to intercept and modify requests and responses at the edge, making it essential for authentication, logging, redirects, and performance optimizations. This guide shows you how to leverage Claude Code to build, test, and refine Astro middleware efficiently.
+Astro middleware enables you to intercept and modify requests and responses at the edge, making it essential for authentication, logging, redirects, and performance optimizations. This guide shows you how to use Claude Code to build, test, and refine Astro middleware efficiently.
 
 ## Understanding Astro Middleware Fundamentals
 

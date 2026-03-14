@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Bundle Size Analysis Workflow Guide"
 description: "Learn how to leverage Claude Code to analyze and optimize your JavaScript bundle sizes with practical workflows, code examples, and actionable optimization strategies."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-bundle-size-analysis-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 

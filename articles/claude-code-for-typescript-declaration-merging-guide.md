@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for TypeScript Declaration Merging Guide"
 description: "A practical guide to TypeScript declaration merging with Claude Code. Learn how to extend types, create ambient declarations, and build robust type definitions."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-typescript-declaration-merging-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for TypeScript Declaration Merging Guide
 
-TypeScript's declaration merging is one of the most powerful yet underutilized features in the type system. It allows you to extend existing types, augment libraries, and create sophisticated type definitions that would be impossible in other languages. When combined with Claude Code's AI-assisted development, you can leverage declaration merging to build more robust, type-safe applications with less manual effort.
+TypeScript's declaration merging is one of the most powerful yet underutilized features in the type system. It allows you to extend existing types, augment libraries, and create sophisticated type definitions that would be impossible in other languages. When combined with Claude Code's AI-assisted development, you can use declaration merging to build more robust, type-safe applications with less manual effort.
 
 This guide covers the fundamentals of declaration merging, practical patterns for everyday use, and how Claude Code can help you implement and maintain complex type systems.
 

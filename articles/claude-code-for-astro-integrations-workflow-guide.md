@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Astro Integrations Workflow Guide"
 description: "Learn how to use Claude Code to build, test, and maintain Astro integrations efficiently. Practical workflow guide with code examples for developers."
@@ -7,13 +8,16 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-astro-integrations-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
 # Claude Code for Astro Integrations Workflow Guide
 
-Astro's integration system is one of its most powerful features, enabling you to extend the framework with custom functionality, community plugins, and framework adapters. However, building and maintaining Astro integrations can be complex, requiring careful management of configurations, build processes, and TypeScript types. This guide shows you how to leverage Claude Code to streamline your Astro integration development workflow.
+Astro's integration system is one of its most powerful features, enabling you to extend the framework with custom functionality, community plugins, and framework adapters. However, building and maintaining Astro integrations can be complex, requiring careful management of configurations, build processes, and TypeScript types. This guide shows you how to use Claude Code to streamline your Astro integration development workflow.
 
 ## Setting Up Your Integration Project
 
@@ -223,6 +227,6 @@ Follow these practices for maintainable, performant integrations:
 
 ## Conclusion
 
-Building Astro integrations with Claude Code accelerates development through intelligent code generation, type safety, and debugging assistance. Start with a solid project structure, leverage lifecycle hooks effectively, and test comprehensively across configurations. Following these workflow patterns helps you create integrations that are reliable, well-documented, and a joy for other developers to use.
+Building Astro integrations with Claude Code accelerates development through intelligent code generation, type safety, and debugging assistance. Start with a solid project structure, use lifecycle hooks effectively, and test comprehensively across configurations. Following these workflow patterns helps you create integrations that are reliable, well-documented, and a joy for other developers to use.
 
 {% endraw %}

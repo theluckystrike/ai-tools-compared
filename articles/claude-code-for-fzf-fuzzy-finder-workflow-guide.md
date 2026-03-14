@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for FZF Fuzzy Finder Workflow Guide"
 description: "Master the FZF fuzzy finder workflow with Claude Code. Learn practical examples, code snippets, and actionable tips to boost your command-line productivity."
@@ -8,12 +9,15 @@ categories: [workflows, productivity]
 tags: [claude-code, claude-skills, fzf, fuzzy-finder, terminal, productivity, command-line]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-fzf-fuzzy-finder-workflow-guide/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for FZF Fuzzy Finder Workflow Guide
 
-The command line is the heart of developer productivity, and few tools have revolutionized terminal workflows as dramatically as FZF (Fuzzy Finder). When combined with Claude Code, these two powerhouses create an unstoppable productivity tandem that can transform how you navigate files, execute commands, and manage your development environment. This comprehensive guide walks you through building a seamless FZF workflow that leverages Claude Code's capabilities to their fullest extent.
+The command line is the heart of developer productivity, and few tools have revolutionized terminal workflows as dramatically as FZF (Fuzzy Finder). When combined with Claude Code, these two powerhouses create an unstoppable productivity tandem that can transform how you navigate files, execute commands, and manage your development environment. This comprehensive guide walks you through building a seamless FZF workflow that uses Claude Code's capabilities to their fullest extent.
 
 ## Understanding the FZF and Claude Code Synergy
 

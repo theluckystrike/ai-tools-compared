@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for grpcurl gRPC Testing Workflow"
 description: "Learn how to leverage Claude Code with grpcurl to streamline your gRPC API testing workflow. Practical examples and actionable advice for developers."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-grpcurl-grpc-testing-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for grpcurl gRPC Testing Workflow
 
-gRPC services require thorough testing to ensure reliable communication between microservices. While traditional REST APIs have mature testing tools, gRPC testing demands specialized approaches. This guide demonstrates how to combine Claude Code with grpcurl to create efficient, reproducible gRPC testing workflows that integrate seamlessly into your development process.
+gRPC services require thorough testing to ensure reliable communication between microservices. While traditional REST APIs have mature testing tools, gRPC testing demands specialized approaches. This guide demonstrates how to combine Claude Code with grpcurl to create efficient, reproducible gRPC testing workflows that integrate smoothly into your development process.
 
 ## Understanding grpcurl Basics
 

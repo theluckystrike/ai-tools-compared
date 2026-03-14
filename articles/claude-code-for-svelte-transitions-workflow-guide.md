@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Svelte Transitions Workflow Guide"
 description: "A practical guide to using Claude Code for building smooth Svelte transitions. Learn how to leverage AI assistance for creating fluid animations, page transitions, and interactive UI effects in Svelte applications."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-svelte-transitions-workflow-guide/
 categories: [workflows, tutorials]
 tags: [claude-code, claude-skills, svelte, transitions, animations, frontend]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Svelte Transitions Workflow Guide

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Stencil Web Components Workflow"
 description: "Learn how to leverage Claude Code CLI to streamline your Stencil web component development workflow with practical examples and actionable tips."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-stencil-web-components-workflow/
 categories: [Development, Web Components, AI Tools]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Stencil Web Components Workflow

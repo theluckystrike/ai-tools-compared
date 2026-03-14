@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Core Web Vitals Field Data Workflow"
 description: "Learn how to build an automated workflow for collecting, analyzing, and monitoring Core Web Vitals field data using Claude Code. Practical examples and code snippets included."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-core-web-vitals-field-data-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Core Web Vitals Field Data Workflow
