@@ -165,7 +165,7 @@ ENV CLAUDE_API_KEY_FILE=/run/secrets/claude-api-key
 # Or use Docker secrets in Swarm mode
 ```
 
-### 3. Leverage Multi-Stage Builds
+### 3. Use Multi-Stage Builds
 
 Keep your final image small by using multi-stage builds:
 
@@ -218,7 +218,7 @@ This enables automated code review and refactoring suggestions as part of your d
 
 The best way to use Claude Code inside Docker containers is through a combination of:
 
-1. **Skill-based workflows** - Leverage Claude's native skills system for reusable, declarative task definitions
+1. **Skill-based workflows** - Use Claude's native skills system for reusable, declarative task definitions
 2. **MCP server integration** - Extend capabilities with containerized MCP servers for specialized operations
 3. **Proper container configuration** - Use volumes, environment variables, and health checks for production-ready setups
 

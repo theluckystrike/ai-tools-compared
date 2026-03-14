@@ -13,7 +13,7 @@ permalink: /best-way-to-use-claude-code-for-large-file-refactoring/
 
 # Best Way to Use Claude Code for Large File Refactoring
 
-Refactoring large code files can feel overwhelming. A single file with thousands of lines, complex dependencies, and intricate logic poses challenges for both developers and AI assistants. Claude Code offers powerful features specifically designed to handle large file refactoring safely and efficiently. This guide walks you through the best practices and techniques for leveraging Claude Code in your large-scale refactoring projects.
+Refactoring large code files can feel overwhelming. A single file with thousands of lines, complex dependencies, and intricate logic poses challenges for both developers and AI assistants. Claude Code offers powerful features specifically designed to handle large file refactoring safely and efficiently. This guide walks you through the best practices and techniques for using Claude Code in your large-scale refactoring projects.
 
 ## Understanding the Challenge of Large File Refactoring
 
@@ -48,7 +48,7 @@ Finally, document the current behavior. Before changing anything, write down wha
 
 ## Chunk-Based Refactoring Workflow
 
-The most effective approach for large file refactoring follows a systematic workflow that leverages Claude Code's strengths:
+The most effective approach for large file refactoring follows a systematic workflow that builds on Claude Code's strengths:
 
 **Phase 1: Analysis and Planning**
 
@@ -67,7 +67,7 @@ This incremental approach catches errors early, before they've propagated throug
 
 Once all chunks are refactored, run comprehensive tests across the entire file. Look for integration issues where chunks interact in ways your isolated work didn't reveal.
 
-## Leveraging Claude Code Skills for Refactoring
+## Using Claude Code Skills for Refactoring
 
 Claude Code's skills system provides specialized assistance for refactoring tasks. The `skill-creator` skill helps you build custom skills tailored to your specific refactoring needs, while other community skills offer targeted assistance.
 
