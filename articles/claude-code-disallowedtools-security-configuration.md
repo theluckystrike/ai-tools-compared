@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code disallowedTools Security Configuration
 
-When you run Claude Code in your development environment, the model has access to a powerful set of built-in tools—reading files, executing shell commands, running git operations, and more. For many workflows, this open access accelerates development. However, there are situations where restricting tool access becomes essential: isolating potentially risky operations, creating focused skill environments, or implementing defense-in-depth for automated agents.
+[When you run Claude Code in your development environment, the model has access to a powerful set of built-in tools](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)—reading files, executing shell commands, running git operations, and more. For many workflows, this open access accelerates development. However, there are situations where restricting tool access becomes essential: isolating potentially risky operations, creating focused skill environments, or implementing defense-in-depth for automated agents.
 
 [The `disallowedTools` configuration in Claude Code provides granular control](/claude-skills-guide/mcp-server-permission-auditing-best-practices/) over which tools the model cannot access, regardless of what the user requests. This feature gives developers and security-conscious teams precise control over their AI assistant's capabilities.
 

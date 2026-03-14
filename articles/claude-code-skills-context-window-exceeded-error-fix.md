@@ -18,7 +18,7 @@ The **[context window exceeded](/claude-skills-guide/claude-skills-context-windo
 
 Skills are `.md` files loaded into your session context when you invoke them with `/skill-name`. A skill like `supermemory` or `tdd` might be 300-800 tokens on its own. If you invoke three or four skills in a long session, you are burning 1,000–3,000 tokens on skill definitions before you write a single line of productive prompt.
 
-Stack that on top of file reads, tool output, and prior conversation turns, and you hit the limit faster than you expect.
+[Stack that on top of file reads, tool output, and prior conversation turns, and you hit the limit faster than you expect](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/)
 
 Common patterns that trigger the error:
 

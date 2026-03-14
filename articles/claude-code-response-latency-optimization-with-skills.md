@@ -12,7 +12,7 @@ score: 9
 
 # Claude Code Response Latency Optimization with Skills
 
-When you invoke a skill in Claude Code, every millisecond counts. The time between typing `/skill-name` and receiving the first useful response depends on several factors you can control. This guide covers practical techniques for building skills that respond faster while maintaining quality output.
+[When you invoke a skill in Claude Code, every millisecond counts](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) The time between typing `/skill-name` and receiving the first useful response depends on several factors you can control. This guide covers practical techniques for building skills that respond faster while maintaining quality output.
 
 ## Understanding Skill Invocation Latency
 

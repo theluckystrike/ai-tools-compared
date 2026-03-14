@@ -12,7 +12,7 @@ score: 9
 
 # Claude Code Skill Invalid YAML Syntax Error How to Debug
 
-When you build custom Claude skills, the YAML front matter at the top of your skill file must be valid. A single typo in this section breaks the entire skill, often leaving you with a cryptic error message. This guide walks through common YAML syntax errors in Claude skills and shows you exactly how to debug them.
+[When you build custom Claude skills, the YAML front matter at the top of your skill file must be valid](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) A single typo in this section breaks the entire skill, often leaving you with a cryptic error message. This guide walks through common YAML syntax errors in Claude skills and shows you exactly how to debug them.
 
 ## Why YAML Front Matter Matters in Claude Skills
 

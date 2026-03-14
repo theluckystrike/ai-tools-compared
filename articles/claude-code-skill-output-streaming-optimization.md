@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code Skill Output Streaming Optimization
 
-Claude Code streams its responses token by token by default. When working with skills like `/pdf`, `/tdd`, or `/frontend-design`, the output appears progressively in your terminal as Claude generates it. This guide covers how to work effectively with streaming output and optimize your skill workflows for faster perceived response times.
+[Claude Code streams its responses token by token by default](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When working with skills like `/pdf`, `/tdd`, or `/frontend-design`, the output appears progressively in your terminal as Claude generates it. This guide covers how to work effectively with streaming output and optimize your skill workflows for faster perceived response times.
 
 ## How Streaming Works in Claude Code
 
