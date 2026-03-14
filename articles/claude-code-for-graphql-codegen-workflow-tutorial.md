@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for GraphQL Codegen Workflow Tutorial"
 description: "Learn how to automate your GraphQL codegen workflow using Claude Code. This comprehensive guide covers setup, configuration, and best practices for streamlining API type generation."
@@ -7,14 +8,17 @@ author: Claude Skills Guide
 permalink: /claude-code-for-graphql-codegen-workflow-tutorial/
 categories: [Development, GraphQL, Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for GraphQL Codegen Workflow Tutorial
 
 If you're working with GraphQL in a modern TypeScript project, you've probably experienced the tedium of manually keeping your API types in sync with your schema. GraphQL Codegen solves this problem by automatically generating types from your schema, but setting up and maintaining the workflow can still be time-consuming. This is where Claude Code becomes your secret weapon.
 
-In this tutorial, I'll show you how to leverage Claude Code to automate your GraphQL codegen workflow, making type generation seamless and almost entirely hands-off.
+In this tutorial, I'll show you how to use Claude Code to automate your GraphQL codegen workflow, making type generation seamless and almost entirely hands-off.
 
 ## What is GraphQL Codegen?
 

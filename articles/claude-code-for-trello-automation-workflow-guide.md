@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Trello Automation Workflow Guide"
 description: "Learn how to leverage Claude Code CLI to automate Trello workflows, from basic board management to complex automation pipelines."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-trello-automation-workflow-guide/
 categories: [Development, Automation, Productivity]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Trello Automation Workflow Guide
 
-Trello is a powerful project management tool, but managing boards, lists, and cards manually can become time-consuming. By combining Claude Code CLI with Trello's API, you can automate repetitive tasks, create custom workflows, and integrate Trello seamlessly into your development pipeline.
+Trello is a powerful project management tool, but managing boards, lists, and cards manually can become time-consuming. By combining Claude Code CLI with Trello's API, you can automate repetitive tasks, create custom workflows, and integrate Trello smoothly into your development pipeline.
 
 This guide walks you through setting up Claude Code for Trello automation, with practical examples you can start using today.
 
@@ -231,5 +235,5 @@ When automating Trello with Claude Code, keep these recommendations in mind:
 
 Claude Code combined with Trello's API opens up endless automation possibilities. Start with simple board listing scripts, then progressively build more complex workflows that save time and reduce manual work.
 
-Remember to check Trello's API documentation for the latest endpoints and capabilities. With proper setup and security measures, you'll have a powerful automation system that integrates seamlessly with your development workflow.
+Remember to check Trello's API documentation for the latest endpoints and capabilities. With proper setup and security measures, you'll have a powerful automation system that integrates smoothly with your development workflow.
 

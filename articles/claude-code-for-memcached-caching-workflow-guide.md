@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Memcached Caching Workflow Guide"
 description: "Learn how to leverage Claude Code CLI to streamline Memcached caching workflows, with practical examples and best practices for developers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-memcached-caching-workflow-guide/
 categories: [Development, Caching, DevOps]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Memcached Caching Workflow Guide

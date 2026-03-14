@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Vonage Voice API Workflow"
 description: "Learn how to leverage Claude Code to build, manage, and automate Vonage Voice API workflows with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-vonage-voice-api-workflow/
 categories: [guides, tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Vonage Voice API Workflow
 

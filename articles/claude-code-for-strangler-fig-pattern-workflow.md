@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Strangler Fig Pattern Workflow"
 description: "Learn how to use Claude Code to implement the strangler fig pattern for seamless legacy system migration. Practical workflows, code examples, and actionable strategies."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-strangler-fig-pattern-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Strangler Fig Pattern Workflow

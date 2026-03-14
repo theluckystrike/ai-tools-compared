@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Meilisearch Integration Workflow"
 description: "Learn how to integrate Meilisearch with Claude Code for building fast, relevant search experiences. This guide covers setup, indexing, querying, and practical workflows."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-meilisearch-integration-workflow/
 categories: [guides]
 tags: [claude-code, meilisearch, integration, search, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Meilisearch Integration Workflow
 

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for OpenObserve Workflow Tutorial"
 description: "Learn how to use Claude Code to streamline OpenObserve observability workflows, from log analysis to creating custom alerts and dashboards."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-openobserve-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for OpenObserve Workflow Tutorial

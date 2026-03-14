@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Zola Rust Static Site Workflow"
 description: "Learn how to use Claude Code to streamline your Zola static site development workflow. Practical examples and actionable advice for developers building fast, modern static sites."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-zola-rust-static-site-workflow/
 categories: [guides, web-development]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Zola Rust Static Site Workflow
 

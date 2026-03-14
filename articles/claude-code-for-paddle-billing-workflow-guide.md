@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Paddle Billing Workflow Guide"
 description: "Learn how to build intelligent billing workflows with Claude Code and Paddle. Automate subscription management, invoice handling, and revenue operations using Claude's tool-use capabilities."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-paddle-billing-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Paddle Billing Workflow Guide
 
-Integrating Claude Code with Paddle's billing infrastructure opens up powerful possibilities for automating subscription management, handling complex billing scenarios, and building intelligent revenue operations. This guide walks you through practical patterns for creating billing workflows that leverage Claude's tool-use capabilities alongside Paddle's API.
+Integrating Claude Code with Paddle's billing infrastructure opens up powerful possibilities for automating subscription management, handling complex billing scenarios, and building intelligent revenue operations. This guide walks you through practical patterns for creating billing workflows that use Claude's tool-use capabilities alongside Paddle's API.
 
 ## Understanding the Paddle Integration Landscape
 
