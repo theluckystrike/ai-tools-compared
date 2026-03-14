@@ -288,3 +288,10 @@ When using Claude Code with Strawberry GraphQL, follow these practices for optim
 ## Conclusion
 
 Claude Code transforms Strawberry GraphQL development from manual type definitions to AI-assisted rapid prototyping. By using Claude's understanding of Python type hints and Strawberry's decorator patterns, you can scaffold types, queries, mutations, and tests in a fraction of the time it would take manually. Start integrating Claude into your Strawberry workflow today and experience the productivity gains firsthand.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

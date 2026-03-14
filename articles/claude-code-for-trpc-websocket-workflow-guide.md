@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for tRPC WebSocket Workflow Guide"
-description: "Learn how to use Claude Code to build real-time applications with tRPC and WebSockets. This guide covers setup, subscription patterns, and production-ready workflows."
+description: "Learn how to use Claude Code to build real-time applications with tRPC and WebSockets. This guide covers setup, subscription patterns, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-trpc-websocket-workflow-guide/
@@ -252,3 +252,10 @@ Building real-time applications with tRPC and WebSockets requires understanding 
 
 Start with basic subscriptions, then layer in reconnection logic, cross-server communication, and performance optimizations as your application grows. The type-safe foundation tRPC provides makes this evolution manageable and maintainable.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

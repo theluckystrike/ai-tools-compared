@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Bolt.new Web App Workflow Guide"
-description: "Learn how to integrate Claude Code into your Bolt.new web app development workflow. Practical examples, code snippets, and actionable advice for developers."
+description: "Learn how to integrate Claude Code into your Bolt.new web app development workflow. Practical examples, code snippets, and actionable advice for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-bolt-new-web-app-workflow-guide/
@@ -216,3 +216,10 @@ Start with small enhancements, maintain clean separation between generated and c
 
 The key is treating Bolt.new as a starting point rather than a final destination, and using Claude Code as your development partner to shape the generated code into production-ready applications that meet your exact specifications.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

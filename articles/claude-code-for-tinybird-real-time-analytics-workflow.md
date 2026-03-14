@@ -161,3 +161,10 @@ Building real-time analytics with Tinybird and Claude Code is a powerful combina
 
 Start small—ingest a single event type and expose one endpoint. As your confidence grows, expand to more complex transformations and multiple data sources. With this workflow, you'll be building production-grade real-time analytics in no time.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

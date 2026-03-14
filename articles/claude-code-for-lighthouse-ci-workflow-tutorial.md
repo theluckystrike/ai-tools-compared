@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Lighthouse CI Workflow Tutorial"
-description: "Learn how to integrate Claude Code with Lighthouse CI to automate performance testing in your development workflow. Step-by-step guide with practical examples."
+description: "Learn how to integrate Claude Code with Lighthouse CI to automate performance testing in your development workflow. Step-by-step guide with practical."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-lighthouse-ci-workflow-tutorial/
@@ -204,3 +204,10 @@ Use this with Claude to understand why metrics changed. Ask Claude to review the
 
 Integrating Claude Code with Lighthouse CI transforms performance monitoring from a manual chore into an automated, intelligent process. Claude can explain complex metrics, identify root causes, and guide you toward solutions—all within your existing development workflow. Start with the basics in this tutorial, then gradually add more sophisticated assertions as your team becomes comfortable with the workflow.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

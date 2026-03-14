@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Artillery Load Testing Workflow"
-description: "Learn how to leverage Claude Code to build comprehensive Artillery load testing workflows for your APIs and services. Includes practical examples and actionable advice."
+description: "Learn how to leverage Claude Code to build comprehensive Artillery load testing workflows for your APIs and services. Includes practical examples and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-artillery-load-testing-workflow/
@@ -243,3 +243,10 @@ Keep these guidelines in mind when building your Artillery tests with Claude Cod
 Claude Code transforms load testing with Artillery from a manual, time-intensive process into a collaborative, AI-assisted workflow. By using Claude Code's ability to generate configurations, create realistic scenarios, and analyze results, you can build comprehensive load testing coverage that reveals performance issues before they impact users. Start integrating this workflow into your development process today, and you'll ship more resilient applications with confidence.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

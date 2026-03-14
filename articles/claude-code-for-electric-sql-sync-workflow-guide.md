@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Electric SQL Sync Workflow Guide"
-description: "A comprehensive guide for developers on using Claude Code to streamline Electric SQL sync workflows, manage local-first databases, and build reactive applications with seamless data synchronization."
+description: "A comprehensive guide for developers on using Claude Code to streamline Electric SQL sync workflows, manage local-first databases, and build reactive."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-electric-sql-sync-workflow-guide/
@@ -279,3 +279,10 @@ Electric SQL combined with Claude Code provides a powerful toolkit for building 
 - Test thoroughly for both online and offline scenarios
 
 With these practices, you'll be well-equipped to build robust local-first applications that work smoothly whether your users are online or offline.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

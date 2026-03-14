@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for TanStack Start Workflow Guide"
-description: "Master Claude Code CLI with TanStack Start for building type-safe full-stack applications. Practical workflow examples for TanStack Router, nested layouts, and data loading patterns."
+description: "Master Claude Code CLI with TanStack Start for building type-safe full-stack applications. Practical workflow examples for TanStack Router, nested."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills, tanstack-start, tanstack-router, typescript, fullstack, web-development]
@@ -271,3 +271,10 @@ Claude Code combined with TanStack Start provides a powerful workflow for buildi
 
 By following the workflows outlined in this guide—proper project setup, type-safe routing, data loading patterns, and best practices—you'll be well-equipped to build production-ready applications with confidence. The key is leveraging Claude Code's strengths in code generation and pattern implementation while relying on TanStack Start's type-safe foundations for your application's core architecture.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -292,3 +292,10 @@ Combining Claude Code with Rye gives you the best of both worlds: a powerful Pyt
 
 The key is to let Claude Code handle the cognitive heavy lifting—planning, writing, debugging, and reviewing—while Rye manages the mechanical aspects of Python project management. This separation of concerns allows you to focus on solving problems rather than managing tools.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Appsmith Dashboard Workflow Guide"
-description: "Learn how to leverage Claude Code to accelerate Appsmith dashboard development, automate workflow creation, and build more efficient data-driven applications."
+description: "Learn how to leverage Claude Code to accelerate Appsmith dashboard development, automate workflow creation, and build more efficient data-driven."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-appsmith-dashboard-workflow-guide/
@@ -217,3 +217,10 @@ Claude Code transforms Appsmith dashboard development from a manual, point-and-c
 
 Start with small, incremental improvements to your workflow, and gradually incorporate more advanced automation as you become comfortable with the collaboration pattern. Your productivity gains will compound as Claude learns your specific patterns and preferences.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

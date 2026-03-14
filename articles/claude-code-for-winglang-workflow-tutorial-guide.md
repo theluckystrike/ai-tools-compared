@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Winglang Workflow Tutorial Guide"
-description: "Learn how to use Claude Code to accelerate your Winglang cloud development workflow. This comprehensive guide covers setup, practical examples, and actionable tips for building cloud applications with Winglang and AI assistance."
+description: "Learn how to use Claude Code to accelerate your Winglang cloud development workflow. This comprehensive guide covers setup, practical examples, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-winglang-workflow-tutorial-guide/
@@ -103,3 +103,10 @@ Claude Code transforms Winglang development from a potentially steep learning cu
 The combination of Winglang's cloud-oriented approach and Claude Code's AI-assisted development creates a powerful workflow for building modern cloud applications. Start with simple resources, gradually take on more complex architectures, and use Claude Code's guidance at each step. Your cloud development productivity will noticeably improve as you master this powerful combination.
 
 Remember that both Winglang and Claude Code continue evolving. Stay current with new features by asking Claude Code about recent updates and how they might benefit your specific use cases. The AI-assisted workflow adapts alongside the tools, ensuring your development process remains efficient as technology advances.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

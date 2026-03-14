@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Bubble No-Code Workflow Guide"
-description: "Learn how to leverage Claude Code to enhance your Bubble no-code application development workflow. Practical examples for automating API integrations, backend logic, and plugin development."
+description: "Learn how to leverage Claude Code to enhance your Bubble no-code application development workflow. Practical examples for automating API integrations."
 date: 2026-03-15
 categories: [tutorials]
 tags: [claude-code, bubble, no-code, workflow-automation, claude-skills]
@@ -149,3 +149,10 @@ Start small: identify one area in your current Bubble project where custom code 
 
 The key is balance: use Bubble's strengths for the vast majority of your application, and use Claude Code to fill in the gaps where custom functionality provides meaningful value. This approach maximizes both development speed and application capability.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

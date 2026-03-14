@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Percy Visual Testing Workflow Guide"
-description: "Learn how to integrate Claude Code with Percy for automated visual testing. Set up workflows, capture snapshots, and catch visual regressions before they reach production."
+description: "Learn how to integrate Claude Code with Percy for automated visual testing. Set up workflows, capture snapshots, and catch visual regressions before."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-percy-visual-testing-workflow-guide/
@@ -227,3 +227,10 @@ The key is treating visual testing as an integral part of your development proce
 
 Start with a small set of critical pages, establish baseline acceptance criteria, and gradually expand your visual test coverage. The investment pays dividends in reduced visual bugs and improved user experience.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

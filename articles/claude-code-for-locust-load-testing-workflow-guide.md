@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Locust Load Testing Workflow Guide"
-description: "Learn how to integrate Locust load testing into your Claude Code workflow. This comprehensive guide covers practical strategies for building Python-based performance testing into your development process."
+description: "Learn how to integrate Locust load testing into your Claude Code workflow. This comprehensive guide covers practical strategies for building."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-locust-load-testing-workflow-guide/
@@ -209,3 +209,10 @@ Integrating Locust with Claude Code transforms load testing from a specialized s
 Start with simple tests, gradually add complexity, and make load testing a regular part of your development cycle. The investment in establishing these practices pays dividends through more reliable, performant applications.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

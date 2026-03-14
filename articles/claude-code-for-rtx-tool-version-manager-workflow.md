@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for RTX Tool Version Manager Workflow"
-description: "Master the RTX Tool Version Manager workflow with Claude Code. Learn how to automate tool version management, streamline CUDA environment setup, and integrate version switching into your AI-assisted development pipeline."
+description: "Master the RTX Tool Version Manager workflow with Claude Code. Learn how to automate tool version management, streamline CUDA environment setup, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-rtx-tool-version-manager-workflow/
@@ -210,3 +210,10 @@ The RTX Tool Version Manager workflow combined with Claude Code creates a powerf
 
 Remember to keep your `.rtx-version` files updated, verify environments before major builds, and let Claude Code handle the complexity of version compatibility. Your future self will thank you when switching between projects becomes as simple as changing directories.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

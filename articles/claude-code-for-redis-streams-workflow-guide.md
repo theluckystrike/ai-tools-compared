@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Redis Streams Workflow Guide"
-description: "A comprehensive guide to building Redis Streams workflows with Claude Code, featuring practical examples, code patterns, and production-ready implementations for developers."
+description: "A comprehensive guide to building Redis Streams workflows with Claude Code, featuring practical examples, code patterns, and production-ready."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-redis-streams-workflow-guide/
@@ -320,3 +320,10 @@ Start with the basic patterns in this guide, then extend them based on your spec
 
 Remember to monitor your streams in production, implement proper error handling, and design for scale from the beginning. With these patterns in place, you'll have a robust foundation for building event-driven, AI-powered applications.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

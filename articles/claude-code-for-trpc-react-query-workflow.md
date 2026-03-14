@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for tRPC React Query Workflow"
-description: "Learn how to leverage Claude Code to streamline your tRPC and React Query development workflow. Practical examples and actionable advice for modern full-stack developers."
+description: "Learn how to leverage Claude Code to streamline your tRPC and React Query development workflow. Practical examples and actionable advice for modern."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-trpc-react-query-workflow/
@@ -276,3 +276,10 @@ Claude Code significantly accelerates tRPC and React Query development by genera
 
 By following the patterns in this guide, you'll build more maintainable applications with less boilerplate code and stronger type safety throughout your full-stack TypeScript application.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
