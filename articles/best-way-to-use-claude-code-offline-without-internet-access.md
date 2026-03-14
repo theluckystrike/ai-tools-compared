@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Use Claude Code Offline Without Internet Access"
-description: "Learn how to use Claude Code effectively in offline or air-gapped environments. Complete guide to local models, offline skills, and self-hosted MCP servers."
+description: "Learn how to use Claude Code effectively in offline or air-gapped environments. Complete guide to local models, offline skills, and self-hosted MCP."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -214,3 +214,11 @@ Claude Code can be a powerful offline coding assistant with the right setup. By 
 
 Start by installing Ollama and pulling a model, then create a few offline-ready skills for your common tasks. Once you've established your offline workflow, you'll wonder how you ever worked without it.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

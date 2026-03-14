@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Upstash Redis Rate Limiting Workflow"
-description: "Learn how to build a rate limiting workflow using Claude Code skills with Upstash Redis. Practical examples for API protection, request throttling, and abuse prevention."
+description: "Learn how to build a rate limiting workflow using Claude Code skills with Upstash Redis. Practical examples for API protection, request throttling, and."
 date: 2026-03-14
 categories: [workflows, integrations]
 tags: [claude-code, upstash, redis, rate-limiting, api-protection, mcp]
@@ -308,3 +308,11 @@ Monitor for rate limit evasion attempts and implement IP-based fallback limits i
 
 Combining Claude Code's automation capabilities with Upstash Redis creates a powerful rate limiting system. The examples in this guide provide starting points for fixed window, sliding window, and token bucket implementations. Adapt these patterns to your specific requirements, and leverage Claude Code to automate the ongoing management and monitoring of your rate limiting infrastructure.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

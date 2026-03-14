@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Make Claude Code Stop Adding Markdown to Code: Practical Solutions"
-description: "Learn proven techniques to prevent Claude Code from wrapping code in markdown backticks. Practical examples for developers who want clean, paste-ready code output."
+title: "How to Make Claude Code Stop Adding Markdown to Code."
+description: "Learn proven techniques to prevent Claude Code from wrapping code in markdown backticks. Practical examples for developers who want clean, paste-ready."
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-to-make-claude-code-stop-adding-markdown-to-code/
@@ -227,3 +227,11 @@ Preventing Claude Code from adding markdown to code output is achievable through
 The key is to shift Claude Code's behavior from "chat partner" to "direct file operator" whenever possible. By favoring direct file operations and establishing clear preferences, you can significantly reduce the friction of dealing with markdown-wrapped code output.
 
 Remember that these methods work best when combined - use explicit instructions for important tasks while maintaining persistent configurations for consistent behavior across all your development sessions.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

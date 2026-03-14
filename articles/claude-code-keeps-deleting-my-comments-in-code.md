@@ -1,8 +1,9 @@
 ---
 layout: default
-title: "Claude Code Keeps Deleting My Comments in Code: Causes and Solutions"
+title: "Claude Code Keeps Deleting My Comments in Code: Causes."
 description: "Understanding why Claude Code removes code comments and how to prevent it. Practical solutions to preserve comments during AI-assisted code editing."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /claude-code-keeps-deleting-my-comments-in-code/
 ---
@@ -119,3 +120,11 @@ Remember: Claude Code is a tool that follows your instructions. The key is to ma
 ---
 
 *Have you found other effective ways to preserve comments while working with Claude Code? The solution that works best often depends on your specific workflow and project requirements.*
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

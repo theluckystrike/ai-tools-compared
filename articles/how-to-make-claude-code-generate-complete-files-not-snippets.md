@@ -3,6 +3,7 @@ layout: default
 title: "How to Make Claude Code Generate Complete Files Not Snippets"
 description: "Learn practical techniques to get Claude Code to generate complete, production-ready files instead of code snippets."
 date: 2026-03-14
+categories: [guides]
 author: theluckystrike
 permalink: /how-to-make-claude-code-generate-complete-files-not-snippets/
 ---
@@ -167,3 +168,11 @@ Getting Claude Code to generate complete files rather than snippets requires exp
 Remember: Claude Code is excellent at following detailed specifications. The more complete your initial request, the more complete your generated files will be.
 
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

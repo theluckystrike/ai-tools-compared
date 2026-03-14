@@ -1,8 +1,9 @@
 ---
 layout: default
 title: "Why Is Claude Code Producing Code That Does Not Run?"
-description: "Understand why Claude Code sometimes generates non-runnable code and learn practical strategies to improve code generation quality using Claude Code skills."
+description: "Understand why Claude Code sometimes generates non-runnable code and learn practical strategies to improve code generation quality using Claude Code."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /why-is-claude-code-producing-code-that-does-not-run/
 ---
@@ -182,3 +183,11 @@ It's important to recognize that Claude Code has inherent limitations:
 While Claude Code sometimes produces non-runnable code, understanding the causes and using the right strategies can dramatically improve results. Leverage Claude Code skills like `/review`, `/tdd`, `/spec`, and `/debug` to guide generation. Provide clear context, use iterative refinement, and always verify before running.
 
 The key is treating Claude Code as a powerful coding partner rather than a perfect code generator. With the right approach, you can harness its capabilities while avoiding the common pitfalls that lead to non-runnable code.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

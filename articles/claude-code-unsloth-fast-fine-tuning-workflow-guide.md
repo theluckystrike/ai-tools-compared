@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code + Unsloth: Fast Fine-Tuning Workflow Guide"
 description: "A practical guide to using Claude Code with Unsloth for accelerated LLM fine-tuning workflows"
 date: 2026-03-14
+categories: [guides]
 author: theluckystrike
 permalink: /claude-code-unsloth-fast-fine-tuning-workflow-guide/
 ---
@@ -244,3 +245,11 @@ Start with small models and datasets, iterate quickly, and scale up as you valid
 
 Remember to document your experiments, version your data, and always validate your fine-tuned model on held-out test sets before deployment. With this workflow, you're equipped to build production-quality fine-tuned models efficiently and reliably.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

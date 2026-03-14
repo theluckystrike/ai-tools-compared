@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Spanish Developer Documentation Generation Guide"
 description: "Aprende a utilizar Claude Code para generar documentación técnica en español para desarrolladores. Guía práctica con ejemplos de configuración y prompts."
 date: 2026-03-14
+categories: [guides]
 author: theluckystrike
 permalink: /claude-code-spanish-developer-documentation-generation-guide/
 ---
@@ -203,3 +204,11 @@ Claude Code transform Radicalmente la forma de crear documentación técnica en 
 Los beneficios son claros: mayor velocidad de desarrollo, coherencia en la comunicación técnica y возможность mejorar la experiencia de desarrollador para equipos hispanohablantes. Comienza hoy mismo integrate estas herramientas en tu flujo de trabajo y verás los resultados en tu próxima release.
 
 La documentación ya no tiene que ser un cuello de botella. Con Claude Code, se convierte en un proceso automatizado y confiable que mejora la calidad general de tus proyectos.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

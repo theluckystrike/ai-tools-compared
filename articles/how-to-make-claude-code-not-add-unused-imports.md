@@ -176,3 +176,11 @@ When refactoring a Python file, Claude will:
 Preventing Claude Code from adding unused imports requires a multi-layered approach. Start with a well-crafted CLAUDE.md file for project-wide guidance, create a dedicated import-discipline skill for explicit control, and maintain pre-commit hooks as your safety net. Combined, these techniques ensure your codebase remains clean and import-free.
 
 Remember: Claude responds well to explicit instructions. The more clearly you communicate your import preferences, the better Claude Code will follow them. Start with these configurations and adjust based on your specific project needs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

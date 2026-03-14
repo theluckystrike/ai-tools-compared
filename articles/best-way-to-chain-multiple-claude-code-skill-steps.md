@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Chain Multiple Claude Code Skill Steps"
-description: "Learn the most effective techniques for chaining multiple Claude Code skills together in a single workflow. Practical examples and patterns for automated multi-step processes."
+description: "Learn the most effective techniques for chaining multiple Claude Code skills together in a single workflow. Practical examples and patterns for."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills, workflow, automation, chaining]
@@ -160,3 +160,11 @@ Chaining Claude Code skills transforms your workflow from isolated commands into
 
 Remember that successful skill chaining relies on understanding data flow between skills, validating intermediate outputs, and building error handling into your workflows. With these techniques, you can create reliable automation that scales across your projects.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

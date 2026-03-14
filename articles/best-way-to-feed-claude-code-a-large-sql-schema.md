@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Feed Claude Code a Large SQL Schema"
-description: "Learn the most effective strategies for providing Claude Code with large SQL schemas. Practical examples for database design, schema analysis, and SQL generation tasks."
+description: "Learn the most effective strategies for providing Claude Code with large SQL schemas. Practical examples for database design, schema analysis, and SQL."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, sql, database, schema, tips]
@@ -205,3 +205,11 @@ This approach gives Claude the context, the data, and the specific task—all el
 5. **Use skills complementarily** — The xlsx and docx skills handle schema import/export
 
 Master these techniques, and Claude Code becomes significantly more effective at understanding your database structure and generating precise, optimized SQL for any task.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

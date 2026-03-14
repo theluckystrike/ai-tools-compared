@@ -3,6 +3,7 @@ layout: default
 title: "Why Is Claude Code Not Using My Custom Skill Properly?"
 description: "Troubleshooting guide for custom skill issues in Claude Code. Learn why your skills might not be loading or being recognized properly."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /why-is-claude-code-not-using-my-custom-skill-properly/
 ---
@@ -164,3 +165,11 @@ Custom skills in Claude Code are powerful tools for extending its capabilities, 
 
 By following these guidelines and troubleshooting steps, you should be able to get your custom skills working properly and take full advantage of Claude Code's extensibility.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

@@ -91,3 +91,11 @@ Claude Code 스킬의 강력한 점 중 하나는 스킬을 쉽게 공유하고 
 Claude Code는 한국 개발자들의日常 개발 워크플로우를 혁신적으로 변화시킬 수 있는 도구입니다. 기본 제공 스킬부터 커스텀 스킬까지, 적절히 활용하면 반복적인 작업을 자동화하고 핵심 비즈니스 로직에 더 많은 시간을 할애할 수 있습니다.
 
 시작하는 개발자들은 먼저 기본 스킬들을 설치하고日常적으로 사용해보는 것을 권장합니다. 익숙해지면 점진적으로 개인화된 스킬을 추가하여 나에게 맞는 최적화된 워크플로우를 구축할 수 있을 것입니다. Claude Code와 함께 더 스마트한 개발을 경험해보세요.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

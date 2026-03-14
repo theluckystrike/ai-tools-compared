@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Claude Code CIS Benchmark Hardening Script Automation"
-description: "Learn how to automate CIS benchmark hardening with Claude Code skills. Practical examples for security compliance, automated auditing, and system hardening scripts."
+description: "Learn how to automate CIS benchmark hardening with Claude Code skills. Practical examples for security compliance, automated auditing, and system."
 date: 2026-03-14
 categories: [security, automation, devops]
 tags: [claude-code, cis-benchmark, security-hardening, automation, compliance]
@@ -241,3 +241,11 @@ When automating CIS benchmark hardening with Claude Code, follow these best prac
 
 Claude Code transforms CIS benchmark compliance from a manual, error-prone process into an automated, reproducible workflow. By creating dedicated skills for security hardening, you can audit systems, generate remediation scripts, implement continuous monitoring, and integrate with configuration management—all through natural language interactions. This approach ensures consistent security compliance while saving significant time and reducing human error in your security operations.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

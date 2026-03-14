@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Weights and Biases Experiment Tracking"
-description: "Learn how to integrate Claude Code with Weights & Biases for powerful ML experiment tracking, automated logging, and streamlined model development workflows."
+description: "Learn how to integrate Claude Code with Weights & Biases for powerful ML experiment tracking, automated logging, and streamlined model development."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, weights-and-biases, experiment-tracking, ml, mlops]
@@ -240,3 +240,11 @@ This debugging capability helps you quickly identify and fix issues in your trai
 
 Combining Claude Code with Weights & Biases gives you powerful experiment tracking capabilities. Claude Code can execute training scripts, analyze results, and help you manage your ML workflow while W&B handles the heavy lifting of metrics logging and comparison. Start by creating dedicated skills for your experiment tracking needs, and progressively add more automation as your workflow matures. The integration enables reproducible research, easier debugging, and faster iteration cycles for your machine learning projects.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

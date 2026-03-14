@@ -207,3 +207,11 @@ This catches deprecated API usage at the commit stage, providing feedback that h
 Claude Code's tendency to use deprecated API methods stems from training data patterns and lack of explicit version context. By providing clear dependency information, creating rejection lists, using specific correction prompts, employing code review skills, and automating enforcement with pre-commit hooks, you can dramatically reduce this issue.
 
 The most important takeaway: Claude Code needs explicit context about your project's modern stack. Without it, the model defaults to what it knows best—often older, more prevalent patterns in its training data. Help Claude Code help you by making your technology choices clear from the start.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

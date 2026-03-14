@@ -3,6 +3,7 @@ layout: default
 title: "Debugging Failed GitHub Actions Skill Steps in Claude Code"
 description: "Learn how to diagnose and fix failed GitHub Actions steps when using Claude Code skills. Practical debugging techniques for CI/CD workflows."
 date: 2026-03-14
+categories: [troubleshooting]
 author: theluckystrike
 permalink: /claude-code-github-actions-skill-step-failed-debug/
 ---
@@ -206,3 +207,11 @@ gh api repos/$REPO/actions/runs 2>/dev/null || {
 Debugging GitHub Actions failures in Claude Code skills requires a systematic approach: verify authentication first, then examine logs for syntax or environment issues, and finally apply targeted fixes. By leveraging Claude Code's analytical capabilities alongside GitHub's debugging features, you can quickly identify root causes and implement robust solutions.
 
 Remember that most failures stem from authentication, syntax, or environment issues—all of which are solvable with the right debugging strategy. Keep your skills modular, log generously, and test incrementally for the most efficient development experience.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
