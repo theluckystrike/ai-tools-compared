@@ -232,7 +232,6 @@ Identify which operations consume the most memory:
 
 When memory errors persist despite these fixes, consider upgrading your system RAM or using remote compute resources for memory-intensive tasks. The combination of proper environment configuration, monitoring, and incremental task scoping resolves the majority of memory limit exceeded issues with Claude Code skills.
 
-<<<<<<< Updated upstream
 
 ## Related Reading
 
@@ -242,6 +241,4 @@ When memory errors persist despite these fixes, consider upgrading your system R
 - [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — Learn best practices for skill configuration to prevent resource limit errors.
 
 
-=======
->>>>>>> Stashed changes
 Built by Claude Skills Guide — More at [zovo.one](https://zovo.one)
