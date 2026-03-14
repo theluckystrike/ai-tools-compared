@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: default
 title: "Claude Opus Orchestrator Sonnet Worker Architecture"
 description: "Design patterns for Claude Opus orchestrator-sonnet-worker architectures. Build intelligent multi-agent systems with specialized Sonnet workers handling..."
 date: 2026-03-14
-author: "Claude Skills Guide"
+author: theluckystrike
 categories: [advanced]
 tags: [claude-code, claude-skills]
 reviewed: true
