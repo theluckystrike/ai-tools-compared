@@ -1,223 +1,184 @@
 ---
-
 layout: default
 title: "Claude Code Development Workflow Templates"
-description: "Practical workflow templates using Claude Code skills for developers and power users. Automate documentation, testing, frontend design, and knowledge."
+description: "Practical workflow templates for structuring Claude Code projects, from skill creation to complex multi-agent systems. Includes code examples and real-world patterns."
 date: 2026-03-14
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /claude-code-development-workflow-templates/
-categories: [guides]
-tags: [claude-code, claude-skills]
-reviewed: true
-score: 7
 ---
-
 
 # Claude Code Development Workflow Templates
 
-Claude Code skills transform how developers approach repetitive tasks. Instead of manually configuring every project, you can use pre-built skill workflows that handle documentation, testing, design, and knowledge organization. This guide provides practical templates you can implement immediately.
+Building effective Claude Code projects requires structured workflows that leverage skills, tools, and agent patterns. This guide provides practical templates you can adapt for different development scenarios, whether you're automating documentation with the pdf skill, implementing test-driven development with tdd, or managing complex project contexts with supermemory.
 
-## Core Workflow Concept
+## Core Project Initialization Template
 
-A Claude skill is a Markdown file containing instructions that Claude reads when you invoke it. Skills guide Claude's behavior without modifying your project files. The real power emerges when you chain multiple skills together or create custom templates for recurring workflows.
+Every Claude Code project starts with a consistent initialization workflow. The following template establishes project structure, configures essential skills, and sets up the development environment:
 
-Here's a basic workflow invocation:
-
-```
-/pdf
-Generate API documentation for the auth module in OpenAPI 3.0 format.
-```
-
-This single command triggers the [pdf skill](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) to produce structured documentation. No manual formatting required.
-
-## Template 1: Documentation Pipeline
-
-Every project needs documentation, but maintaining it feels like a chore. This template automates the entire documentation lifecycle using the pdf skill combined with the docx skill for cross-format output.
-
-**Workflow structure:**
-
-1. Invoke the pdf skill to generate initial documentation
-2. Use the docx skill to create editable versions for team review
-3. Export final versions to HTML or PDF for distribution
-
-```markdown
-/pdf
-Create technical documentation for the user service including:
-- API endpoints with request/response examples
-- Authentication flow diagram description
-- Error codes table
-- Usage examples in JavaScript and Python
+```bash
+# Project initialization workflow
+1. Create project directory structure
+2. Initialize git repository with proper .gitignore
+3. Install required Claude skills (frontend-design, pdf, tdd)
+4. Configure skill-specific settings in _skills/ or config/
+5. Set up supermemory context for project documentation
 ```
 
-The pdf skill generates clean, professional output. For collaborative review, follow up with:
+This template ensures all projects begin with the same baseline configuration. The pdf skill becomes particularly useful here for generating project requirement documents automatically from initial conversations.
+
+## Skill Chaining Workflow
+
+Complex tasks often require multiple skills working together. The skill chaining pattern orchestrates sequential skill execution where each skill's output feeds into the next:
 
 ```
-/docx
-Convert the user service documentation to a formatted Word document with
-company branding template applied.
+User Request → [frontend-design] → Design Tokens + Components
+                    ↓
+              [pdf] → Component Documentation
+                    ↓
+              [tdd] → Test Files + Implementation
 ```
 
-## Template 2: Test-Driven Development Workflow
+The key to effective skill chaining is clear output expectations. Each skill should produce artifacts that the next skill can consume directly. For example, when frontend-design generates component specifications, it should output structured JSON or Markdown that tdd can parse to generate corresponding test files.
 
-The tdd skill implements test-first development principles. Rather than writing code then tests, you describe desired behavior and Claude generates tests before implementation.
+## Test-Driven Development Workflow with tdd Skill
 
-**Complete TDD workflow:**
+The tdd skill transforms how you approach implementation. Rather than writing code then tests, you define behavior through tests first:
 
-```
-/tdd
-Create a test suite for a rate limiter with the following requirements:
-- Allow 100 requests per minute per user ID
-- Return 429 status when limit exceeded
-- Include proper error messages
-- Support burst traffic up to 20 additional requests
-```
-
-After Claude generates tests, implement the feature:
-
-```
-Now implement the RateLimiter class to pass these tests. Use an in-memory
-store for simplicity, but design the interface to support Redis backing.
+```python
+# Step 1: Define expected behavior in test file
+def test_user_authentication():
+    """User should be authenticated via JWT token"""
+    token = generate_token(user_id="123")
+    assert validate_token(token)["user_id"] == "123"
+    assert token.expiry > datetime.now()
 ```
 
-The tdd skill ensures your implementation meets explicit requirements before you consider the task complete.
+The tdd skill analyzes these specifications and generates the minimal implementation code needed to pass tests. This workflow particularly excels when combined with the supermemory skill, which maintains a persistent context of your test suite across sessions.
 
-## Template 3: Frontend Design System Workflow
+## Documentation Generation Workflow
 
-The frontend-design skill accelerates UI development by generating component code from descriptions. This template shows how to build a consistent design system.
-
-**Component generation workflow:**
-
-1. Define component requirements
-2. Generate initial implementation
-3. Apply design tokens for consistency
-4. Create variant implementations
-
-```markdown
-/frontend-design
-Generate a Button component with:
-- Primary, secondary, and ghost variants
-- Loading state with spinner
-- Disabled state
-- Icon support (left and right positions)
-- TypeScript with strict typing
-- CSS-in-JS using Emotion
-```
-
-The skill produces production-ready code following current best practices. For a complete design system, generate multiple components using consistent parameters:
+Documentation often becomes outdated because it requires manual maintenance. The pdf skill combined with code analysis creates an automated documentation pipeline:
 
 ```
-/frontend-design
-Create an Input component matching the Button's styling. Include:
-- Error state with message display
-- Label and helper text support
-- Focus and blur states
-- TypeScript types shared with Button component
+Code Changes → Skill Analysis → Content Generation → pdf Renderer → Documentation Artifact
 ```
 
-## Template 4: Knowledge Management with Supermemory
+This workflow runs as part of your CI/CD pipeline, ensuring documentation always reflects current code. The supermemory skill contributes by tracking which documentation sections need updates based on recent changes.
 
-The supermemory skill enables AI-powered note-taking and knowledge retrieval. This template creates a personal knowledge base that improves over time.
+## Multi-Agent Coordination Pattern
 
-**Setting up knowledge capture:**
+Large projects benefit from dividing work among specialized agents. This template coordinates multiple Claude Code instances:
 
-```
-/supermemory
-Add the following to project knowledge:
-- Project: payment-gateway-v2
-- API version: 3.1
-- Key integration partners: Stripe, PayPal, Square
-- Current architecture decisions and their reasoning
-- Team contacts and their responsibilities
-```
-
-**Retrieving knowledge later:**
-
-```
-/supermemory
-What are the current architecture decisions for payment-gateway-v2?
-Show me the reasoning behind each major choice.
-```
-
-The supermemory skill maintains context across sessions, making it invaluable for long-term projects or when onboarding new team members.
-
-## Template 5: Multi-Skill Chaining
-
-The most powerful workflows combine multiple skills. Here's a complete feature development pipeline:
-
-```markdown
-# Feature Development Template
-
-## Phase 1: Requirements Analysis
-/supermemory
-Review existing documentation for the billing module. List all current
-API endpoints and their parameters.
-
-## Phase 2: Test Creation
-/tdd
-Generate test cases for adding subscription tiers to the billing system:
-- Three tiers: basic, pro, enterprise
-- Monthly and annual billing options
-- Prorated upgrades and downgrades
-
-## Phase 3: Implementation
-Implement the SubscriptionService to pass all tests. Use dependency
-injection for payment processor abstraction.
-
-## Phase 4: Documentation
-/pdf
-Generate updated API documentation for the subscription endpoints with
-examples for each tier and billing cycle combination.
-
-## Phase 5: Code Review Preparation
-/docx
-Create a technical specification document for the subscription feature
-suitable for architecture review committee.
+```yaml
+# agent-coordination.yaml
+agents:
+  - name: frontend
+    skills: [frontend-design, canvas-design]
+    scope: "src/ui/**/*"
+    context_file: ".claude/frontend-context.md"
+    
+  - name: backend
+    skills: [tdd, database]
+    scope: "src/api/**/*"
+    context_file: ".claude/backend-context.md"
+    
+  - name: docs
+    skills: [pdf, memory]
+    scope: "docs/**/*"
+    context_file: ".claude/docs-context.md"
 ```
 
-This template moves a feature from concept to production documentation in a structured, auditable way.
+Each agent operates within defined boundaries, reporting progress to a central coordinator. The supermemory skill stores coordination state, enabling agents to resume interrupted work seamlessly.
 
-## Creating Custom Templates
+## Memory Management Workflow
 
-You can create your own skill files for frequently used workflows. Place them in `~/.claude/skills/`:
+Effective context management prevents token limit issues while maintaining project awareness. The supermemory skill provides several memory patterns:
 
-```markdown
-# ~/.claude/skills/daily-standup.md
-
-# Daily Standup Workflow
-
-## Previous Day
-Ask: "What did you accomplish yesterday?"
-
-## Current Day  
-Ask: "What will you work on today?"
-
-## Blockers
-Ask: "Do you have any blockers or impediments?"
-
-## Notes
-Capture any additional context or follow-up items.
-```
-
-Now invoke it with:
+**Session Memory**: Stores conversation context for retrieval within current session
+**Project Memory**: Maintains project-wide knowledge including architecture decisions and coding standards
+**Long-term Memory**: Persists across projects for reusable patterns and solutions
 
 ```
-/daily-standup
+# Memory hierarchy in practice
+1. Active Context (current conversation)
+        ↓
+2. Project Memory (architecture, standards, current tasks)
+        ↓
+3. Long-term Memory (reusable patterns, solved problems)
 ```
 
-## Best Practices for Workflow Templates
+When starting new work, first query supermemory for relevant past solutions before building from scratch. This avoids重复 work and maintains consistency across projects.
 
-Keep templates focused and modular. A template handling one task type proves more reusable than a monolithic workflow. Store frequently used templates as skills in your `~/.claude/skills/` directory for instant access.
+## Code Review Workflow
 
-Version your workflow templates alongside your code. As projects evolve, update the corresponding workflow descriptions in supermemory to maintain accurate context.
+Automated code review using Claude skills catches issues before human review:
 
-Review generated output before committing. Skills accelerate development but require human judgment for edge cases and business logic validation.
+```
+Developer submits PR → [claude-code review-skill] → Analysis Report
+                                                    ↓
+                              Issues Found → Assign to Developer
+                                                    ↓
+                              No Issues → Merge Approval
+```
 
+The review skill examines code against project standards, checks for common vulnerabilities, and verifies test coverage. Integrate this workflow through GitHub Actions or similar CI systems.
 
-## Related Reading
+## Deployment Pipeline Template
 
-- [Claude Code Project Scaffolding Automation](/claude-skills-guide/claude-code-project-scaffolding-automation/)
-- [Claude Code Boilerplate Generation Workflow](/claude-skills-guide/claude-code-boilerplate-generation-workflow/)
-- [Claude Code Code Generation Templates Guide](/claude-skills-guide/claude-code-code-generation-templates-guide/)
-- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/)
+Automating deployments requires careful skill orchestration:
+
+```bash
+# Deployment workflow
+1. tdd skill: Verify all tests pass
+2. security skill: Scan for vulnerabilities  
+3. build skill: Compile and bundle application
+4. deploy skill: Push to target environment
+5. verify skill: Confirm deployment success
+6. supermemory: Update deployment log and rollback procedures
+```
+
+Each step produces artifacts consumed by the next. If any step fails, the pipeline halts and supermemory records the failure context for debugging.
+
+## Custom Skill Development Pattern
+
+When existing skills don't meet requirements, build custom skills following this template:
+
+```yaml
+# custom-skill.md
+---
+name: project-scaffolder
+description: "Generates project structure from specifications"
+tools: [read_file, write_file, bash]
+triggers:
+  - "generate project"
+  - "create new project"
+---
+
+## Input Format
+Describe your project using this structure:
+- Project name
+- Tech stack (language, framework)
+- Required features
+
+## Output
+Creates complete project structure with:
+- Configuration files
+- Basic directory layout
+- Starter code files
+```
+
+The skill development workflow includes iterative testing using the tdd skill to verify skill behavior matches expectations.
+
+## Choosing the Right Workflow
+
+Select workflow templates based on project characteristics:
+
+- **Single-task projects**: Use core initialization + one specialized skill
+- **Multi-file projects**: Add skill chaining for sequential transformations
+- **Long-running projects**: Implement memory management from the start
+- **Team projects**: Coordinate multiple agents with defined boundaries
+- **Maintenance projects**: Prioritize documentation and review workflows
+
+Start with simpler workflows and add complexity as project needs demand it. The combination of pdf for documentation, tdd for implementation, and supermemory for context management provides a foundation for most development scenarios.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
