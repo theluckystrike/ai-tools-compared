@@ -4,6 +4,21 @@ title: "Claude Skills Guide"
 description: "Comprehensive guides, tutorials, and comparisons for Claude AI Skills, Claude Code workflows, and AI agent productivity"
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Claude Skills Guide",
+  "url": "https://theluckystrike.github.io/claude-skills-guide/",
+  "description": "Comprehensive guides for Claude Code skills, tutorials, and AI agent workflows",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://theluckystrike.github.io/claude-skills-guide/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
 # Claude Skills Guide
 
 Welcome to the Claude Skills Guide — your go-to resource for mastering Claude AI Skills, Claude Code workflows, and AI agent productivity.
