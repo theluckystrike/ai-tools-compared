@@ -1,9 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Code Skills for Scientific Python: NumPy and SciPy"
 description: "How to use Claude Code skills for scientific computing workflows with NumPy and SciPy. Practical patterns for data analysis, numerical computing, and research projects."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+categories: [tutorials]
+tags: [claude-code, claude-skills, python, numpy, scipy]
+reviewed: true
+score: 8
 ---
 
 # Claude Code Skills for Scientific Python: NumPy and SciPy

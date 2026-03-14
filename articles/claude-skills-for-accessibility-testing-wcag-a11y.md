@@ -1,9 +1,11 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills for Accessibility Testing WCAG A11y"
 description: "Discover how Claude skills can automate accessibility testing and help you build WCAG-compliant applications. Practical examples for developers."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
+reviewed: true
+score: 9
 ---
 
 # Claude Skills for Accessibility Testing WCAG A11y

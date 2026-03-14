@@ -1,11 +1,13 @@
 ---
-layout: default
+layout: post
 title: "Claude Skills Compliance SOC2 ISO27001 Guide"
-description: "A practical guide for developers using Claude Code skills to implement SOC2 and ISO27001 compliance controls. Includes code examples and skill recommendations."
+description: "A practical guide for developers using Claude Code skills to implement SOC2 and ISO27001 compliance controls. Includes code examples and skill recommend..."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
 tags: [claude-code, claude-skills, compliance, soc2, iso27001, security]
+reviewed: true
+score: 9
 ---
 
 # Claude Skills Compliance SOC2 ISO27001 Guide
