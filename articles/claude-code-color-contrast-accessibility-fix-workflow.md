@@ -29,7 +29,7 @@ Before starting, ensure you have the necessary Claude Code skills installed. The
 claude code skills list | grep -E "frontend|tdd|accessibility"
 ```
 
-If these skills are not installed, you can add them through the Claude Skills marketplace or GitHub repositories that host accessibility-focused skills.
+If these skills are not installed, download the `.md` files from community GitHub repositories and place them in `~/.claude/skills/`. There is no official marketplace.
 
 ## Step 1: Scan Your Project for Contrast Issues
 

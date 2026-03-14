@@ -102,7 +102,7 @@ chmod 644 ~/.claude/skills/SKILL_NAME/*.md
 When backups aren't available, reinstalling from an earlier tag or branch works.
 
 **Step 1: Find the skill repository**
-Check the skill documentation or Claude skill marketplace for the source URL.
+Check the skill documentation or the GitHub repository where you originally downloaded it for the source URL.
 
 **Step 2: Clone or pull with specific version**
 ```
