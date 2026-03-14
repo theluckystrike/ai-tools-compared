@@ -1,0 +1,188 @@
+---
+layout: default
+title: "Claude Code Kubernetes Helm Charts Guide"
+description: "A practical guide to using Claude Code for Kubernetes and Helm chart development. Learn how to automate deployments, manage configurations, and streamline your K8s workflow."
+date: 2026-03-14
+categories: [guides]
+tags: [claude-code, kubernetes, helm, devops, automation]
+author: theluckystrike
+permalink: /claude-code-kubernetes-helm-charts-guide/
+---
+
+# Claude Code Kubernetes Helm Charts Guide
+
+Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide shows you how to leverage Claude Code skills for Kubernetes and Helm chart development.
+
+## Setting Up Your Kubernetes Workflow
+
+Before diving into advanced automation, ensure your environment is properly configured. Claude Code can interact with your Kubernetes cluster through the Bash tool, running kubectl commands directly. The key is structuring your projects so Claude understands your deployment patterns.
+
+Create a project structure that separates your Helm charts, manifests, and configuration:
+
+```
+k8s-project/
+├── charts/
+│   └── my-app/
+│       ├── Chart.yaml
+│       ├── values.yaml
+│       └── templates/
+├── manifests/
+│   └── base/
+└── scripts/
+    └── deploy.sh
+```
+
+This organization allows Claude to navigate your infrastructure code efficiently. When you invoke skills like `tdd` or `frontend-design`, they can focus on their primary tasks without getting confused by Kubernetes YAML scattered throughout your project.
+
+## Automating Helm Chart Creation
+
+Creating Helm charts from scratch involves multiple files and boilerplate code. The `tdd` skill pairs well with Helm development by creating charts with test coverage from the start. For example, you can ask Claude to generate a chart with validation templates and health check definitions.
+
+Here's a minimal Chart.yaml that Claude can help you populate:
+
+```yaml
+apiVersion: v2
+name: my-application
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+```
+
+When working with values.yaml, Claude can suggest appropriate defaults based on your application's requirements. It understands common patterns like resource limits, replica counts, and service configurations. This is particularly useful when you're standardizing charts across multiple services in your organization.
+
+## Managing Environment-Specific Configurations
+
+One of Helm's strengths is handling multiple environments through values files. However, managing these files across development, staging, and production can become unwieldy. Claude Code can help organize these configurations and ensure consistency.
+
+Use a values file hierarchy:
+
+```yaml
+# values.yaml (base defaults)
+replicaCount: 2
+image:
+  repository: myapp
+  tag: latest
+
+# values.staging.yaml
+replicaCount: 3
+image:
+  tag: staging-latest
+
+# values.production.yaml
+replicaCount: 5
+image:
+  tag: production-latest
+```
+
+The `supermemory` skill proves invaluable here. It can remember your organization's deployment conventions, security requirements, and naming patterns across sessions. When you switch between projects, supermemory recalls the specific configurations you prefer for production versus development environments.
+
+## Validating Charts Before Deployment
+
+Never deploy a Helm chart without validation. Claude can automate the validation process using helm lint and template rendering checks. Create a skill that combines these checks into a single workflow:
+
+```bash
+# Validate chart syntax
+helm lint charts/my-app/
+
+# Render templates to verify manifests
+helm template my-app charts/my-app/
+
+# Check for common issues
+helm template my-app charts/my-app/ | kubeval --strict
+```
+
+This approach catches syntax errors, missing required fields, and configuration issues before they reach your cluster. The `pdf` skill can generate validation reports if you need documentation for compliance purposes.
+
+## Building a Deployment Skill
+
+You can create a custom Claude skill for Kubernetes deployments that encapsulates your organization's best practices. This skill should handle the complete deployment lifecycle:
+
+```yaml
+---
+name: k8s-deploy
+description: Deploy applications to Kubernetes using Helm
+tools:
+  - Read
+  - Write
+  - Bash
+
+When deploying to Kubernetes:
+1. Read the target namespace from deployment-config.yaml
+2. Verify the Helm chart passes linting: helm lint charts/{chart_name}/
+3. Run dry-run first: helm upgrade --install --dry-run {release} charts/{chart_name}
+4. If dry-run succeeds, execute: helm upgrade --install {release} charts/{chart_name}
+5. Verify deployment: kubectl rollout status deployment/{deployment_name} -n {namespace}
+6. Report the deployment status including version and revision number
+```
+
+This skill ensures consistent deployment procedures across your team. New team members can deploy with confidence, knowing they're following established patterns.
+
+## Working with Kubernetes Manifests
+
+While Helm charts are powerful, sometimes you need raw Kubernetes manifests. The `frontend-design` skill's file orchestration patterns translate well to manifest management. Apply the same read-modify-write patterns:
+
+```
+To add a new Kubernetes resource:
+1. Read: manifests/base/ to understand existing resource patterns
+2. Read: docs/naming-conventions.md for resource naming rules
+3. Generate the manifest following k8s best practices
+4. Write: manifests/{environment}/{resource-type}.yaml
+5. Bash: kubectl apply --dry-run=client -f manifests/{environment}/{resource-type}.yaml
+```
+
+This approach maintains consistency across your manifests while leveraging Claude's code generation capabilities.
+
+## Debugging Running Deployments
+
+When issues arise in production, quick diagnosis matters. Claude can help analyze pod logs, describe resources, and identify common problems. A debugging workflow might include:
+
+```bash
+# Check pod status
+kubectl get pods -n {namespace}
+
+# Describe problematic pod
+kubectl describe pod {pod_name} -n {namespace}
+
+# View logs
+kubectl logs {pod_name} -n {namespace} --previous
+
+# Check events
+kubectl get events -n {namespace} --sort-by='.lastTimestamp'
+```
+
+Claude can interpret these outputs and suggest fixes based on common error patterns. It remembers solutions to previously encountered issues, accelerating your incident response.
+
+## Integrating with CI/CD Pipelines
+
+Automating Kubernetes deployments requires integrating with your CI/CD system. Claude can help generate pipeline configurations that include proper Helm commands and validation steps. The key is ensuring your pipeline validates before deploying:
+
+```yaml
+# .gitlab-ci.yml snippet
+deploy:
+  stage: deploy
+  script:
+    - helm lint charts/$APP_NAME
+    - helm template test charts/$APP_NAME -f values/$ENV.yaml
+    - kubectl set image deployment/$APP_NAME $APP_NAME=$IMAGE_TAG
+    - kubectl rollout status deployment/$APP_NAME -n $NAMESPACE
+  only:
+    - main
+```
+
+## Best Practices Summary
+
+- Organize Helm charts in a dedicated charts/ directory
+- Use values files for environment-specific configuration
+- Always run helm lint before deploying
+- Create reusable skills for your team's deployment patterns
+- Leverage supermemory to remember infrastructure conventions
+- Test manifests locally before applying to clusters
+
+Claude Code transforms Kubernetes development from manual kubectl operations into automated, repeatable workflows. By investing time in proper skill setup and project organization, you reduce deployment friction and minimize configuration drift across environments.
+
+---
+
+**Related guides:** [Advanced Claude Skills with Tool Use and Function Calling](/claude-skills-guide/advanced-claude-skills-with-tool-use-and-function-calling/) — Learn how to build custom tools that extend Claude's Kubernetes capabilities
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
