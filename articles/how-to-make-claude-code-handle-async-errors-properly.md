@@ -98,7 +98,7 @@ Within the skill markdown itself, you can document expected error conditions and
 ---
 name: generate-report
 description: "Generate PDF reports from data. Handles network errors gracefully with 3 retries."
-tools: [pdf, read_file, write_file]
+tools: [pdf, Read, Write]
 ---
 
 This skill generates PDF reports. If the pdf tool fails, 

@@ -77,7 +77,7 @@ You can encapsulate the recording logic in a Claude skill for easier access. The
 ---
 name: vcr-test-helper
 description: "Helper skill for recording and replaying Claude Code test interactions"
-tools: [read_file, write_file, bash, glob]
+tools: [Read, Write, Bash, Glob]
 ---
 
 # VCR Test Helper Skill
@@ -133,8 +133,8 @@ def test_file_processing_workflow():
         "prompt": "Process all CSV files in the data directory",
         "tools_called": [
             {"name": "glob", "pattern": "data/*.csv"},
-            {"name": "read_file", "path": "data/users.csv"},
-            {"name": "bash", "command": "python process.py"}
+            {"name": "Read", "path": "data/users.csv"},
+            {"name": "Bash", "command": "python process.py"}
         ],
         "response": "Processed 150 records from 3 files"
     }

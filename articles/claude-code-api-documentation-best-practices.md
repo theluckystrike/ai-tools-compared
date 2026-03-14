@@ -25,7 +25,7 @@ Every Claude skill begins with YAML front matter that defines its capabilities. 
 ---
 name: github-api-integration
 description: "Interact with GitHub REST API for repository management"
-tools: [bash, read_file, write_file]
+tools: [Bash, Read, Write]
 api_endpoints:
   - https://api.github.com/repos/{owner}/{repo}
   - https://api.github.com/repos/{owner}/{repo}/issues

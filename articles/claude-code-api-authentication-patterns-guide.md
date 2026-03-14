@@ -30,7 +30,7 @@ The simplest authentication pattern uses API keys passed directly in request hea
 ---
 name: github-integration
 description: "Interact with GitHub API for repository operations"
-tools: [bash, read_file, write_file]
+tools: [Bash, Read, Write]
 api_config:
   base_url: "https://api.github.com"
   auth_type: "bearer_token"
