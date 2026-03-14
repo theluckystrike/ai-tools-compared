@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code vs Cursor: Multi-File Refactoring Comparison"
-description: "A comprehensive comparison of Claude Code and Cursor for multi-file refactoring tasks. Learn how Claude Code's CLI-first approach and skill system excel at large-scale code transformations."
+description: "A comprehensive comparison of Claude Code and Cursor for multi-file refactoring tasks. Learn how Claude Code's CLI-first approach and skill system."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-vs-cursor-multi-file-refactoring/
@@ -150,3 +150,10 @@ The key insight is that Claude Code treats refactoring as a workflow that can be
 ---
 
 *This comparison reflects the current capabilities of both tools as of early 2026. Both platforms continue to evolve rapidly, so specific features may change.*
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -5,6 +5,7 @@ description: "Learn how to use Claude Code to generate efficient Docker multi-st
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-generating-docker-multi-stage-builds-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -173,3 +174,10 @@ Multi-stage builds also enable sophisticated testing strategies. You can run tes
 
 Claude Code transforms multi-stage Dockerfile creation from a technical challenge into an accessible workflow. By understanding your project requirements, Claude Code generates optimized configurations that follow best practices for size, security, and maintainability. Start using these patterns in your projects to achieve leaner, more efficient container images.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -5,6 +5,7 @@ description: "Learn how to configure notifications in Claude Code to stay inform
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-notification-setup-for-long-tasks/
+categories: [guides]
 ---
 
 {% raw %}
@@ -198,6 +199,13 @@ claude_notify "Analyze code coverage for all services"
 Setting up notifications for long-running Claude Code tasks transforms your development experience. Rather than watching terminal output, you receive alerts when work completes—whether you're reviewing code, generating documentation, or running comprehensive tests.
 
 Start with simple notifications using the scripts above, then customize based on your workflow. The investment of a few minutes pays dividends in focused, efficient development sessions.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
