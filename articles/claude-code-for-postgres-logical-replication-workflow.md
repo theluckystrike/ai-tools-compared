@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Postgres Logical Replication Workflow"
-description: "Learn how to implement PostgreSQL logical replication using Claude Code. Practical examples, SQL configurations, and actionable advice for developers building resilient data distribution systems."
+description: "Learn how to implement PostgreSQL logical replication using Claude Code. Practical examples, SQL configurations, and actionable advice for developers."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-postgres-logical-replication-workflow/
@@ -213,3 +213,10 @@ For high availability, consider implementing a cascading replication topology wh
 ## Conclusion
 
 PostgreSQL logical replication is an essential tool for building resilient, distributed database architectures. By leveraging Claude Code to generate SQL configurations, create monitoring scripts, and troubleshoot issues, you can streamline the implementation and maintenance of replication workflows. The combination of PostgreSQL's powerful replication features and AI-assisted development makes it easier than ever to build robust data distribution systems that scale with your application's needs.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

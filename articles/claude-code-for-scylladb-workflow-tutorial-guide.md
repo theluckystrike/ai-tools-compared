@@ -219,3 +219,10 @@ SELECT * FROM user_profiles WHERE user_id = 123e4567-e89b-12d3-a456-426614174000
 ## Conclusion
 
 Claude Code transforms ScyllaDB database management from manual query construction to intelligent automation. By establishing proper connection patterns, implementing robust CRUD operations, and following best practices for performance, you can build reliable workflows that scale with your application needs. Start with the examples in this guide, then customize them to match your specific data models and business requirements.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

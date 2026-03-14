@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code for Kube State Metrics Workflow: A Complete Guide"
+title: "Claude Code for Kube State Metrics Workflow: A Complete."
 description: "Learn how to leverage Claude Code to streamline your Kube State Metrics workflow, from deployment configuration to custom metric creation and alerting."
 date: 2026-03-15
 author: Claude Skills Guide
@@ -255,3 +255,10 @@ The key is providing Claude Code with clear context about your cluster environme
 
 Remember: effective Kubernetes monitoring isn't about collecting every possible metric—it's about collecting the right metrics that help you understand system health and respond quickly to issues. Claude Code can help you identify and implement exactly what you need.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

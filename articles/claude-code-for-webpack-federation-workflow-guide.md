@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Webpack Federation Workflow Guide"
-description: "Learn how to use Claude Code to create and manage Webpack Module Federation workflows. Practical examples, code snippets, and actionable advice for building micro-frontend architectures."
+description: "Learn how to use Claude Code to create and manage Webpack Module Federation workflows. Practical examples, code snippets, and actionable advice for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-webpack-federation-workflow-guide/
@@ -185,4 +185,10 @@ Regular maintenance includes checking for security updates in shared dependencie
 By integrating Claude Code into your daily workflow, you can treat federation configuration as code that can be reviewed, tested, and version-controlled alongside your application code. This approach makes your micro-frontend architecture more maintainable as your project grows.
 
 ---
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 

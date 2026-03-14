@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for OpenEBS Storage Workflow Tutorial"
-description: "Learn how to use Claude Code to automate OpenEBS storage workflows in Kubernetes. Practical examples for PV provisioning, storage class management, and dynamic volume operations."
+description: "Learn how to use Claude Code to automate OpenEBS storage workflows in Kubernetes. Practical examples for PV provisioning, storage class management, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-openebs-storage-workflow-tutorial/
@@ -181,3 +181,10 @@ When using Claude Code for OpenEBS workflows, follow these actionable recommenda
 Claude Code transforms OpenEBS storage management from manual, error-prone processes into streamlined, automated workflows. By leveraging Claude Code's capabilities, you can provision storage faster, manage configurations more consistently, and reduce the operational burden of persistent storage in Kubernetes.
 
 The key is starting with simple workflows and progressively adopting more advanced patterns as your comfort with the tooling grows. Whether you're managing a single development cluster or a multi-node production environment, Claude Code provides the intelligent assistance needed to make storage operations reliable and efficient.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

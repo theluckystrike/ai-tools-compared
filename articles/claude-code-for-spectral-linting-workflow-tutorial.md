@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Spectral Linting Workflow Tutorial"
-description: "Learn how to integrate Spectral API linting into your Claude Code workflow for better API quality and consistency. This tutorial covers setup, custom rules, and automation."
+description: "Learn how to integrate Spectral API linting into your Claude Code workflow for better API quality and consistency. This tutorial covers setup, custom."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-spectral-linting-workflow-tutorial/
@@ -175,3 +175,10 @@ Finally, add Spectral to your CI/CD pipeline to ensure all API changes are valid
 
 By combining Spectral's powerful linting capabilities with Claude Code's assistance, you can build APIs that are consistent, well-documented, and aligned with your organization's standards from day one.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

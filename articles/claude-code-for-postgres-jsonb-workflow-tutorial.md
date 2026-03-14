@@ -213,3 +213,10 @@ PostgreSQL JSONB provides an excellent middle ground between rigid relational sc
 Start with simple use cases like user preferences or configuration storage, then gradually expand to more complex nested structures as your comfort with JSONB grows. Claude Code will help you navigate the learning curve by generating correct SQL and explaining the reasoning behind each approach.
 
 Remember to always consider your access patterns when designing JSONB schemas, create appropriate indexes for your most frequent queries, and leverage PostgreSQL's built-in operators for optimal performance. With these fundamentals in place, you'll be building sophisticated JSONB-powered applications in no time.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

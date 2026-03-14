@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for GraphQL DataLoader Workflow Guide"
-description: "Master GraphQL DataLoader patterns with Claude Code. Learn workflow strategies, batch loading techniques, and practical implementation for efficient data fetching."
+description: "Master GraphQL DataLoader patterns with Claude Code. Learn workflow strategies, batch loading techniques, and practical implementation for efficient."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-graphql-dataloader-workflow-guide/
@@ -241,3 +241,10 @@ When implementing DataLoader with Claude Code, keep these recommendations in min
 5. **Profile before optimizing**: Add timing to your batch functions. You might find that some relationships don't benefit from batching if they're rarely queried together.
 
 DataLoader transforms GraphQL from a potential performance trap into a highly efficient data layer. By following these patterns and integrating them properly with Claude Code workflows, you'll build GraphQL APIs that scale gracefully without the N+1 nightmare.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

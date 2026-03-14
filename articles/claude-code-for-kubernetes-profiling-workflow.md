@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Kubernetes Profiling Workflow"
-description: "Learn how to use Claude Code to build efficient Kubernetes profiling workflows. Practical examples and code snippets for developers working with containerized applications."
+description: "Learn how to use Claude Code to build efficient Kubernetes profiling workflows. Practical examples and code snippets for developers working with."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-kubernetes-profiling-workflow/
@@ -218,3 +218,10 @@ Claude Code transforms Kubernetes profiling from a manual, error-prone process i
 
 Remember that effective Kubernetes profiling is an iterative process. Start with identifying the most critical workloads, establish baseline profiles, and continuously compare against those baselines to catch performance regressions early.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Kong Mesh Workflow Tutorial"
-description: "A practical guide to using Claude Code for Kong Mesh configuration, deployment, and management. Learn workflows for service mesh, traffic routing, and observability."
+description: "A practical guide to using Claude Code for Kong Mesh configuration, deployment, and management. Learn workflows for service mesh, traffic routing, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-kong-mesh-workflow-tutorial/
@@ -248,3 +248,10 @@ When working with Kong Mesh and Claude Code, keep these recommendations in mind:
 Claude Code transforms Kong Mesh workflows from complex manual configuration to collaborative, AI-assisted operations. From generating initial mesh resources to implementing sophisticated traffic management policies, Claude Code accelerates every step of the service mesh journey. By combining Claude Code's configuration generation with your domain expertise, you can deploy robust, secure, and observable microservices architectures with confidence.
 
 Start experimenting with Kong Mesh and Claude Code today—your future self will thank you for the time saved on configuration and debugging.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

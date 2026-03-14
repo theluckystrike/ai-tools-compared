@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Web Workers Workflow Tutorial Guide"
-description: "Learn how to build Web Worker workflows with Claude Code. This comprehensive guide covers worker creation, message passing, task offloading, and best practices for responsive web applications."
+description: "Learn how to build Web Worker workflows with Claude Code. This comprehensive guide covers worker creation, message passing, task offloading, and best."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-web-workers-workflow-tutorial-guide/
@@ -284,3 +284,10 @@ Claude Code can assist you in generating worker boilerplate, refactoring existin
 Start with simple workers for specific tasks, then gradually adopt more sophisticated patterns as your application grows. The investment in learning Web Workers pays dividends in application performance and user satisfaction.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
