@@ -1,113 +1,181 @@
 ---
 layout: default
 title: "Claude Code Runbook Documentation Guide"
-description: "A practical guide to creating runbook documentation for Claude Code skills. Learn how to write clear, actionable documentation that helps developers and power users get the most out of your Claude skills."
+description: "A practical guide to creating and maintaining runbooks with Claude Code. Learn how to document operational procedures, troubleshooting steps, and system workflows."
 date: 2026-03-14
+categories: [workflows, documentation]
+tags: [claude-code, claude-skills, runbook, documentation, automation, pdf, supermemory, tdd]
 author: theluckystrike
 permalink: /claude-code-runbook-documentation-guide/
 ---
 
 # Claude Code Runbook Documentation Guide
 
-Documentation separates a useful skill from a frustrating one. When you publish a Claude skill, the runbook is what determines whether users succeed or abandon your work after the first failed attempt. This guide covers how to write documentation that developers and power users actually find helpful.
+Runbooks are living documents that capture the procedures your team needs to deploy, operate, and troubleshoot systems. Unlike README files that explain what code does, runbooks explain what to do when things break or when you need to perform routine operations. This guide shows you how to use Claude Code to create, maintain, and automate runbook documentation that actually stays current with your systems.
 
-## What Makes Runbook Documentation Effective
+## Why Runbooks Matter for Developer Workflows
 
-Runbook documentation serves a different purpose than README files. While READMEs provide an overview, runbooks walk users through specific workflows with concrete steps. The best runbooks anticipate failure modes, explain configuration requirements, and provide copy-paste examples.
+Every team eventually accumulates informal knowledge: the deployment command that works, the database query that reveals the current state, the exact sequence of steps to recover from a failed build. This knowledge lives in Slack messages, personal notes, or the memories of senior engineers. When those engineers leave or when incidents happen at 2 AM, the lack of documented procedures becomes a crisis.
 
-A Claude skill's documentation should answer three questions: What can this skill do? How do I use it correctly? What goes wrong, and how do I fix it?
+Claude Code addresses this problem directly. By treating runbook creation as a conversation rather than a documentation sprint, you can generate comprehensive operational guides while actually working through the procedures. The resulting documents reflect real systems, real commands, and real troubleshooting steps.
 
-The documentation lives inside the skill file itself using the `description` and `long_description` front matter fields. For complex skills, creating a separate runbook article (like this one) provides more space for detailed examples.
+## Prerequisites
 
-## Essential Documentation Structure
+Before building runbooks with Claude Code, ensure you have:
 
-Every Claude skill runbook should contain these sections:
+- Claude Code installed and configured with your preferred shell
+- Access to the systems and services you need to document
+- The `supermemory` skill for persisting runbook context across sessions
+- The `pdf` skill if you need to export runbooks for offline use or stakeholder distribution
+- A git repository where runbooks live alongside your code
 
-**Skill Overview**: One or two sentences describing the primary use case. Avoid marketing language—state what the skill actually does.
+## Step 1: Define Runbook Scope and Structure
 
-**Prerequisites**: What tools, API keys, or configurations must exist before invoking the skill? Many users fail because they skip this section. For example, the `pdf` skill requires Python with specific packages installed. The `supermemory` skill needs an API key configured in your environment.
+Every runbook needs a clear purpose. Before opening Claude Code, identify the boundaries of the procedure you want to document. Good runbooks focus on single, completable tasks rather than broad process descriptions.
 
-**Usage Examples**: Show the skill in action with realistic prompts. Include both the input users provide and what they can expect as output. Code snippets help developers understand the exact format expected.
+Common runbook categories include:
 
-**Configuration Options**: Document every front matter field that affects behavior. If the `temperature` parameter changes output quality, explain when to adjust it.
+- **Deployment procedures**: Steps to deploy to each environment
+- **Incident response**: Diagnostic commands and remediation steps
+- **Database operations**: Common queries, migration procedures, backup restores
+- **Onboarding tasks**: Environment setup for new team members
+- **Maintenance routines**: Log rotation, cache clearing, certificate renewal
 
-**Troubleshooting**: Document common error messages and their solutions. This section alone determines whether users can recover from mistakes independently.
+Start with a simple prompt to establish structure:
 
-## Practical Examples
+```
+Create a runbook structure for [specific procedure].
+Include sections for: prerequisites, step-by-step commands,
+expected outputs, rollback procedures, and verification steps.
+```
 
-Consider a skill that helps with test-driven development. Rather than simply stating "this skill helps with TDD," provide a concrete workflow:
+For example, a database backup restore runbook might need sections that a simple deployment runbook would skip.
+
+## Step 2: Generate Runbook Content Through Execution
+
+The most accurate runbooks come from actually performing the procedures. Open Claude Code in your project environment and work through the task while documenting each step.
+
+Begin with the context:
+
+```
+I am creating a runbook for [procedure]. 
+First, document the prerequisites: what permissions, access tokens,
+or system states are required before starting?
+```
+
+Claude Code will prompt you for specific details about your environment. Provide them. The dialogue format naturally surfaces assumptions and edge cases that written documentation often misses.
+
+Continue through each step:
+
+```
+Document step 1: the exact command to run and what it does.
+Include the exact syntax, required flags, and any environment variables.
+Show both the command and the expected output.
+```
+
+Repeat this process for each step. When you reach a decision point (branching logic, conditional steps), document both paths. When you encounter an error, document the error message and the resolution.
+
+## Step 3: Add Troubleshooting Sections
+
+The value of a runbook becomes apparent at 3 AM when something fails. Build troubleshooting directly into each runbook rather than as a separate document.
+
+After documenting the happy path, ask Claude Code:
+
+```
+For each step above, what can go wrong?
+For each potential failure, document: the error message,
+the likely cause, and the remediation steps.
+```
+
+This approach produces runbooks where troubleshooting guidance appears exactly where it is needed, not in a separate appendix that no one reads during an incident.
+
+## Step 4: Validate and Test Runbooks
+
+A runbook that has never been tested is a liability. It builds false confidence and can contain subtle errors that only surface during actual incidents. Use the `tdd` skill to approach runbook validation systematically:
+
+- **Dry-run in staging**: Execute each step in a non-production environment first
+- **Walkthrough validation**: Have a team member follow the runbook without prior knowledge
+- **Version sync**: Ensure runbook commands match current system states
+
+After testing, update the runbook with any corrections. Note that `tdd` principles apply well here: treat runbooks as living documents that improve through iterative testing and refinement.
+
+## Step 5: Maintain Runbooks Over Time
+
+Documentation rot is real. Commands change, systems evolve, and outdated runbooks become dangerous. Build maintenance into your workflow:
+
+- **Link runbooks to code**: When deployment scripts change, update the corresponding runbook in the same PR
+- **Use supermemory**: Store runbook metadata and version history so Claude Code can surface relevant procedures during troubleshooting sessions
+- **Schedule reviews**: Set calendar reminders to audit runbook accuracy quarterly
+
+A practical pattern is to include runbook update prompts in your team's operational rituals. After each incident, spend ten minutes updating the relevant runbook while the context is fresh.
+
+## Example: Complete Runbook Structure
+
+Here is what a well-structured runbook looks like in practice:
 
 ```markdown
-## Usage Example
+# Database Backup Restore Procedure
 
-Invoke the tdd skill with a feature description:
+## Prerequisites
+- Production database access credentials
+- S3 bucket read access for backup files
+- Slack notification to #ops channel
 
-> Create a function that validates email addresses and returns true for valid formats, false otherwise.
+## Steps
 
-The skill will:
-1. Generate failing tests first
-2. Implement the minimum code to pass tests
-3. Refactor for clarity
+### 1. Verify Backup Availability
+```bash
+aws s3 ls s3://company-backups/production/ | tail -5
+```
+Expected output lists recent backup files with timestamps.
 
-Expected output includes test files in `tests/` and implementation in `src/`.
+### 2. Stop Application Services
+```bash
+kubectl scale deployment api --replicas=0 -n production
+```
+Verify all pods terminate before proceeding.
+
+### 3. Restore Database
+```bash
+pg_restore -h db.production.internal -U admin -d app_production \
+  --clean --if-exists latest_backup.dump
 ```
 
-This example shows users exactly what to expect at each step.
+### 4. Verify Data Integrity
+```bash
+psql -h db.production.internal -U admin -d app_production \
+  -c "SELECT COUNT(*) FROM users;"
+```
+Compare count against expected baseline.
 
-For skills that interact with external services, document the environment variables required:
-
-```yaml
----
-name: github-automation
-description: Automates common GitHub workflows
-env:
-  GITHUB_TOKEN: Required for API authentication
-  GITHUB_REPO: Target repository in format "owner/repo"
----
+### 5. Restart Services
+```bash
+kubectl scale deployment api --replicas=3 -n production
 ```
 
-## Integrating Claude Skills Into Documentation
+## Troubleshooting
 
-Claude skills can generate their own documentation. The `skill-creator` skill produces formatted documentation from skill definitions, ensuring your runbooks stay synchronized with skill updates. Run the skill on your existing skill file to generate a starting point:
+### Connection Timeout
+If pg_restore fails with connection timeout, verify VPN connectivity to production VPC.
 
+### Foreign Key Errors
+If --clean fails due to dependencies, use --disable-triggers flag and re-enable after restore.
 ```
-Use skill-creator to generate documentation for my-skill.md
-```
 
-The output includes front matter validation, tool availability checks, and suggested usage patterns based on the skill's implementation.
+## Integrating with Claude Skills Ecosystem
 
-For skills that output code, document the expected file structure. The `frontend-design` skill generates component files with specific naming conventions. Users need to know where files will be created and how to integrate them into their projects.
+Several Claude skills enhance runbook workflows:
 
-## Documentation for Different Skill Types
+- **supermemory**: Remembers which runbooks exist and their last-update timestamps, surfacing relevant procedures during troubleshooting sessions
+- **pdf**: Exports runbooks to PDF for environments where web access is limited
+- **frontend-design**: Generates runbook templates with consistent styling if you maintain runbooks as internal web pages
 
-Documentation requirements vary by skill category:
+Runbooks stored in your repository alongside code benefit from version control. Pull requests can update procedures with full audit trails, and CI pipelines can validate runbook syntax.
 
-**File processing skills** (pdf, docx, xlsx): Document supported file formats, size limits, and output locations. The `pdf` skill handles extraction differently than creation—explain both workflows.
+## Summary
 
-**Code generation skills** (algorithmic-art, canvas-design): Show example outputs and explain customization parameters. Users benefit from seeing rendered results alongside the prompts that produced them.
+Effective runbook documentation with Claude Code treats documentation as a conversation rather than a writing exercise. By working through procedures while documenting, you capture the actual steps, the actual commands, and the actual error scenarios your team encounters. Test runbooks before relying on them, maintain them through regular reviews, and integrate them into your operational workflows.
 
-**API integration skills** (supermemory, mcp-builder): Emphasize authentication setup. Missing credentials are the most common failure point for these skills.
-
-**Workflow skills** (internal-comms, brand-guidelines): Provide templates and examples for common use cases. Show users how to adapt the skill output to their specific needs.
-
-## Maintaining Documentation
-
-Documentation becomes outdated without maintenance. Add a `version` field to your skill front matter and update it with each release. Include a `changelog` section documenting breaking changes.
-
-When users report issues, check whether documentation could have prevented the problem. Each confusing error message is an opportunity to improve your troubleshooting section.
-
-Consider adding a section on advanced usage for power users who want to customize behavior. Document edge cases and performance considerations. If your skill processes large files, warn users about memory usage.
-
-## Measuring Documentation Quality
-
-Effective documentation reduces support burden. Track how often users successfully complete workflows without asking questions. Review skill usage patterns to identify steps where users commonly fail or abandon the workflow.
-
-Solicit feedback from early users. Ask specifically which sections were unclear and what additional examples would help.
-
-## Conclusion
-
-Well-written runbook documentation transforms a functional skill into a reliable tool. Invest time in clear prerequisites, practical examples, and comprehensive troubleshooting. Your users—whether developers integrating skills into production pipelines or power users automating complex workflows—will thank you.
-
-The effort pays dividends in reduced support requests, positive reviews, and skill adoption. Start with the essential sections, then expand based on user feedback and real-world usage patterns.
+The initial time investment pays dividends during incidents when clear, tested procedures reduce MTTR and prevent junior team members from making critical mistakes under pressure.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
