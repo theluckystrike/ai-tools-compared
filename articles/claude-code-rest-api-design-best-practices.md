@@ -246,5 +246,6 @@ Claude Code accelerates these practices by generating boilerplate code, suggesti
 - [Claude Code Tutorials Hub](/claude-skills-guide/tutorials-hub/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Code Guides Hub](/claude-skills-guide/guides-hub/)
+- [Claude Code API Rate Limiting Implementation Guide](/claude-skills-guide/claude-code-api-rate-limiting-implementation/) — Implement token buckets and sliding windows to protect your REST APIs
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
