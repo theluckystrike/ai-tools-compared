@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Inngest Durable Workflow for Long Running Tasks"
-description: "Learn how to combine Claude Code with Inngest to build robust durable workflows for long-running tasks. Practical examples and best practices for developers."
+description: "Learn how to combine Claude Code with Inngest to build robust durable workflows for long-running tasks. Practical examples and best practices for."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-inngest-durable-workflow-long-running-tasks/
@@ -240,3 +240,10 @@ Inngest provides a dashboard to monitor workflow execution. Combine this with Cl
 Combining Claude Code with Inngest gives you a powerful toolkit for building reliable long-running task systems. Inngest handles the complexity of durable execution, while Claude Code assists with design, implementation, and debugging. Start with simple workflows and progressively adopt more advanced patterns as your needs grow.
 
 The key is to leverage Claude Code's strengths—understanding intent, generating code, and explaining patterns—while letting Inngest handle the heavy lifting of workflow state management. Together, they make building robust, long-running task systems accessible to developers at any level.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
