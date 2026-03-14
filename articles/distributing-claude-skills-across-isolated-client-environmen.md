@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Distributing Claude Skills Across Isolated Client Environments"
+title: "Distributing Claude Skills Across Isolated Client."
 description: "Learn how to effectively distribute and manage Claude Code skills across multiple isolated client environments for consistent AI assistance."
 date: 2026-03-14
 author: "Claude Skills Guide"
@@ -160,3 +160,10 @@ Distributing Claude skills across isolated client environments requires thoughtf
 
 The key is to establish clear distribution channels, implement proper versioning, and create validation workflows that catch issues before they impact productivity. With these practices in place, Claude Code skills become a reliable and consistent extension of your development workflow across all environments.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
