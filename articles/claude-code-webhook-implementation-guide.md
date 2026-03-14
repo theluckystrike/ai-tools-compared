@@ -1,278 +1,218 @@
 ---
 layout: default
 title: "Claude Code Webhook Implementation Guide"
-description: "A practical guide to implementing webhooks with Claude Code. Learn to set up webhook handlers, validate payloads, and integrate with Claude skills for automation."
+description: "A practical guide to implementing webhooks with Claude Code. Learn patterns for receiving, processing, and responding to webhooks using MCP servers and skills."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, webhooks, integration, automation, api]
+tags: [claude-code, claude-skills, webhooks, mcp, automation, integration]
 author: theluckystrike
+reviewed: true
+score: 7
 permalink: /claude-code-webhook-implementation-guide/
 ---
 
+{% raw %}
+
 # Claude Code Webhook Implementation Guide
 
-Webhooks enable your applications to receive real-time notifications from external services. When integrated with Claude Code, webhook handlers become powerful automation triggers that can kick off workflows, process data, or coordinate with other tools. This guide walks you through implementing webhooks in your Claude Code projects with practical examples and patterns you can apply immediately.
+Webhooks enable real-time communication between applications by sending HTTP POST requests when events occur. While Claude Code does not have native webhook reception capabilities, you can implement robust webhook workflows using MCP servers, skills, and external tooling. This guide shows you practical patterns for integrating webhooks into your Claude Code workflows.
 
-## Understanding Webhooks in the Claude Code Context
+## Understanding Webhook Patterns with Claude Code
 
-Claude Code executes locally on your machine, so webhooks work differently than with SaaS platforms. Instead of receiving HTTP callbacks directly, you run a local server that listens for webhook events and then invoke Claude Code sessions or scripts based on those events. This architecture gives you full control over what happens when a webhook fires.
+Claude Code operates primarily as a conversational AI assistant, not as a webhook receiver. However, you can bridge this gap using intermediate services that receive webhooks and pass data to Claude through MCP tools or other integration methods.
 
-The typical flow involves three components: an external service sending the webhook, a local receiver running on your machine, and Claude Code processing the payload. You can use tools like Express.js, Flask, or even simple shell scripts with netcat to receive webhooks.
+The most common pattern involves setting up a lightweight webhook receiver—such as a small Node.js server, a cloud function, or a service like Zapier—that captures incoming webhook requests and forwards them to Claude Code for processing. This approach lets Claude respond to external events in real-time.
 
-## Setting Up a Local Webhook Receiver
+For example, you might want Claude to analyze incoming GitHub webhook payloads, respond to Slack button clicks, or process Stripe webhook events. Each scenario requires a slightly different implementation strategy.
 
-Create a simple Node.js webhook receiver to handle incoming requests. This example uses Express.js:
+## Setting Up a Webhook Receiver
+
+Create a simple Node.js webhook receiver that can communicate with Claude Code:
 
 ```javascript
 // webhook-receiver.js
-const express = require('express');
-const { spawn } = require('child_process');
-const app = express();
-app.use(express.json());
+const http = require('http');
 
-const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
+const server = http.createServer(async (req, res) => {
+  if (req.method === 'POST' && req.url === '/webhook') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', async () => {
+      const payload = JSON.parse(body);
+      
+      // Process the webhook payload
+      console.log('Received webhook:', payload);
+      
+      // Forward to Claude Code via MCP or other method
+      // This is where you'd integrate with your Claude workflow
+      
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ status: 'received' }));
+    });
+  } else {
+    res.writeHead(404);
+    res.end();
+  }
+});
 
-function verifySignature(payload, signature) {
-  const crypto = require('crypto');
+server.listen(3000, () => {
+  console.log('Webhook receiver running on port 3000');
+});
+```
+
+This basic receiver captures POST requests and logs the payload. From here, you can extend it to trigger Claude Code actions.
+
+## Using Claude Skills for Webhook Processing
+
+Create a dedicated skill for webhook processing. Store this in `~/.claude/skills/webhook.md`:
+
+```
+# Webhook Processing Skill
+
+When processing webhook payloads, follow these guidelines:
+
+1. Parse the payload and identify the event type
+2. Extract relevant data fields
+3. Generate appropriate responses or actions
+4. Log the processing result
+
+For GitHub webhooks:
+- Identify event type from headers (X-GitHub-Event)
+- Extract action, repository, and sender information
+- Provide meaningful summaries of PR, issue, or push events
+
+For Stripe webhooks:
+- Verify webhook signature for security
+- Extract event type and relevant object data
+- Summarize the financial event clearly
+```
+
+Activate this skill in your Claude Code session:
+
+```
+/webhook
+Process this Stripe webhook payload: { "type": "charge.succeeded", "amount": 5000, "currency": "usd" }
+```
+
+The webhook skill guides Claude's analysis and response patterns when processing incoming payloads.
+
+## Integrating with MCP Servers for Real-Time Processing
+
+MCP servers can serve as the bridge between webhooks and Claude Code. Configure an MCP server to poll for new webhook events or receive them directly:
+
+```json
+{
+  "mcpServers": {
+    "webhook-bridge": {
+      "command": "node",
+      "args": ["/path/to/webhook-mcp-server.js"],
+      "env": {
+        "WEBHOOK_SECRET": "your_secret_here"
+      }
+    }
+  }
+}
+```
+
+The webhook bridge MCP server can expose tools like `processWebhookEvent` that Claude Code calls to handle incoming requests. This creates a seamless flow where external events trigger Claude's processing automatically.
+
+## Practical Example: GitHub Webhook Handler
+
+Here's a complete example of processing GitHub webhooks with Claude Code:
+
+1. **Set up the webhook receiver** to capture GitHub events
+2. **Activate the webhook skill** using `/webhook`
+3. **Process specific event types** based on the payload
+
+When GitHub sends a webhook for a new pull request, Claude can analyze the changes:
+
+```
+Given this GitHub webhook payload:
+{
+  "action": "opened",
+  "pull_request": {
+    "title": "Add user authentication",
+    "body": "Implements OAuth2 login flow",
+    "changed_files": 5,
+    "additions": 150,
+    "deletions": 20
+  },
+  "repository": {
+    "name": "my-app",
+    "full_name": "org/my-app"
+  }
+}
+
+Provide a summary of this PR and identify potential areas for review.
+```
+
+Claude will analyze the payload and provide insights about the pull request, helping you review incoming changes efficiently.
+
+## Processing Stripe Events
+
+For payment webhooks, combine the webhook skill with security best practices:
+
+```
+/webhook
+Analyze this Stripe webhook event:
+{
+  "type": "customer.subscription.created",
+  "data": {
+    "object": {
+      "customer": "cus_12345",
+      "plan": {
+        "amount": 2900,
+        "interval": "month"
+      }
+    }
+  }
+}
+
+What are the key details I should record about this new subscription?
+```
+
+This pattern works well for automating subscription management, invoice processing, and payment notifications.
+
+## Extending with Additional Skills
+
+Combine webhook processing with other Claude skills for powerful workflows:
+
+- Use the **tdd skill** to generate tests for webhook handlers
+- Use the **pdf skill** to generate invoices from payment webhook data
+- Use the **frontend-design skill** to create admin dashboards for webhook monitoring
+- Use the **supermemory skill** to maintain a searchable archive of webhook events
+
+The combination of webhook receiving, skill guidance, and Claude's analysis capabilities creates a flexible automation framework.
+
+## Security Considerations
+
+When implementing webhook handlers, always verify webhook signatures. Most services—Stripe, GitHub, Slack—provide signatures that prove requests originated from their servers:
+
+```javascript
+const crypto = require('crypto');
+
+function verifySignature(payload, signature, secret) {
   const expected = crypto
-    .createHmac('sha256', WEBHOOK_SECRET)
-    .update(JSON.stringify(payload))
+    .createHmac('sha256', secret)
+    .update(payload)
     .digest('hex');
   return crypto.timingSafeEqual(
     Buffer.from(signature),
     Buffer.from(expected)
   );
 }
-
-app.post('/webhook', (req, res) => {
-  const signature = req.headers['x-webhook-signature'];
-  
-  if (!verifySignature(req.body, signature)) {
-    return res.status(401).json({ error: 'Invalid signature' });
-  }
-
-  const { event, data } = req.body;
-  console.log(`Received webhook: ${event}`);
-
-  // Trigger Claude Code session
-  const claude = spawn('claude', [
-    '-p',
-    JSON.stringify({
-      event,
-      data,
-      timestamp: new Date().toISOString()
-    })
-  ]);
-
-  let output = '';
-  claude.stdout.on('data', (chunk) => { output += chunk; });
-  claude.stderr.on('data', (chunk) => { console.error(chunk); });
-  claude.on('close', (code) => {
-    console.log(`Claude session completed with code ${code}`);
-  });
-
-  res.json({ status: 'received' });
-});
-
-app.listen(3000, () => {
-  console.log('Webhook receiver running on port 3000');
-});
 ```
 
-Run this with `node webhook-receiver.js` after installing Express: `npm install express`.
+Never process unverified webhooks in production environments. Add signature verification before any payload processing.
 
-## Handling Different Event Types
+## Next Steps
 
-Your webhook handler should route different event types to appropriate processing logic. Here's how to structure that:
+Start with a simple webhook receiver and gradually add complexity. The key is establishing the connection between incoming HTTP requests and Claude Code's processing capabilities. From there, you can build sophisticated event-driven workflows that leverage Claude's analysis and generation abilities.
 
-```javascript
-const eventHandlers = {
-  'github.push': async (data) => {
-    console.log(`Processing push to ${data.repository.name}`);
-    // Use the tdd skill to run tests on the new code
-    return { action: 'run-tests', branch: data.ref };
-  },
-  
-  'stripe.payment': async (data) => {
-    console.log(`Processing payment: ${data.id}`);
-    // Use the pdf skill to generate an invoice
-    return { action: 'generate-invoice', amount: data.amount };
-  },
-  
-  'schedule.daily': async (data) => {
-    console.log('Running daily automation');
-    // Use the supermemory skill to retrieve context
-    return { action: 'daily-summary' };
-  }
-};
-
-app.post('/webhook', async (req, res) => {
-  const { event, data } = req.body;
-  const handler = eventHandlers[event];
-  
-  if (handler) {
-    try {
-      const result = await handler(data);
-      res.json({ status: 'processed', result });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  } else {
-    res.status(400).json({ error: `Unknown event: ${event}` });
-  }
-});
-```
-
-## Exposing Local Webhooks to the Internet
-
-Since Claude Code runs locally, external services cannot reach your webhook endpoint directly. Use a tunneling service to expose your local server:
-
-```bash
-# Using ngrok
-ngrok http 3000
-
-# Using cloudflared (Cloudflare Tunnel)
-cloudflared tunnel --url http://localhost:3000
-```
-
-Both tools provide a public URL you can register with external services. Copy the URL and configure it in your service's webhook settings.
-
-## Integrating with Claude Skills
-
-The real power of webhook implementation emerges when you connect incoming events to Claude skills. For instance, when a GitHub push event arrives, you can invoke the tdd skill to automatically run tests:
-
-```javascript
-const { spawn } = require('child_process');
-
-async function invokeClaudeWithSkill(skill, context) {
-  return new Promise((resolve, reject) => {
-    const prompt = `Using the /${skill} skill, process this context:\n\n${JSON.stringify(context)}`;
-    
-    const claude = spawn('claude', [
-      '--print',
-      '--dangerously-skip-permissions',
-      prompt
-    ]);
-
-    let output = '';
-    claude.stdout.on('data', (chunk) => { output += chunk; });
-    claude.on('close', (code) => {
-      resolve({ code, output });
-    });
-    claude.on('error', reject);
-  });
-}
-```
-
-You can chain multiple skills for complex workflows. Use the frontend-design skill to generate UI components based on webhook data, or the pdf skill to produce documents from incoming form submissions.
-
-## Securing Your Webhook Endpoints
-
-Never expose unprotected webhook endpoints. Implement signature verification for every incoming request:
-
-```javascript
-const crypto = require('crypto');
-
-function verifyWebhookSignature(payload, signature, secret) {
-  if (!signature) return false;
-  
-  const expected = crypto
-    .createHmac('sha256', secret)
-    .update(JSON.stringify(payload))
-    .digest('hex');
-    
-  try {
-    return crypto.timingSafeEqual(
-      Buffer.from(signature),
-      Buffer.from(expected)
-    );
-  } catch (e) {
-    return false;
-  }
-}
-
-// In your route handler
-app.post('/webhook', (req, res) => {
-  const signature = req.headers['x-webhook-signature'];
-  
-  if (!verifyWebhookSignature(req.body, signature, WEBHOOK_SECRET)) {
-    console.warn('Invalid webhook signature received');
-    return res.status(403).json({ error: 'Forbidden' });
-  }
-  
-  // Process the webhook...
-});
-```
-
-Additional security measures include IP allowlisting (if your webhook provider publishes their IP ranges), rate limiting, and logging all incoming requests for debugging.
-
-## Testing Your Webhook Implementation
-
-Use curl to test your webhook receiver during development:
-
-```bash
-# Test a webhook call
-curl -X POST http://localhost:3000/webhook \
-  -H "Content-Type: application/json" \
-  -H "x-webhook-signature: your-test-signature" \
-  -d '{"event": "github.push", "data": {"ref": "refs/heads/main"}}'
-```
-
-For automated testing, create a test suite that mocks incoming webhooks:
-
-```javascript
-// test/webhooks.test.js
-const request = require('supertest');
-const app = require('../webhook-receiver');
-
-describe('Webhook endpoints', () => {
-  it('rejects requests with invalid signatures', async () => {
-    const response = await request(app)
-      .post('/webhook')
-      .send({ event: 'test.event', data: {} });
-    
-    expect(response.status).toBe(401);
-  });
-
-  it('processes valid GitHub push events', async () => {
-    const validPayload = { event: 'github.push', data: { ref: 'refs/heads/main' } };
-    const signature = generateTestSignature(validPayload);
-    
-    const response = await request(app)
-      .post('/webhook')
-      .set('x-webhook-signature', signature)
-      .send(validPayload);
-    
-    expect(response.status).toBe(200);
-  });
-});
-```
-
-## Production Considerations
-
-When deploying webhook receivers to production, consider these factors:
-
-- **Process management**: Use PM2 or systemd to keep your webhook receiver running
-- **Logging**: Implement structured logging with timestamps and correlation IDs
-- **Error handling**: Gracefully handle malformed payloads without crashing
-- **Idempotency**: Design handlers to process the same webhook multiple times safely
-- **Timeout handling**: Set appropriate timeouts for external API calls within your handlers
-
-For high-volume webhooks, implement a message queue to decouple webhook reception from processing. Redis or RabbitMQ work well for this pattern.
-
-## Conclusion
-
-Implementing webhooks with Claude Code opens up automation possibilities across your development workflow. The pattern of receiving events locally, routing them to appropriate handlers, and invoking Claude skills creates a flexible infrastructure for real-time responses to external events. Combine webhooks with the tdd skill for automated testing, the pdf skill for document generation, or the supermemory skill for context-aware processing to build powerful integrated systems.
-
-Start with a simple Express receiver, expose it via tunneling, and progressively add signature verification, error handling, and skill integration as your needs grow.
+Remember to use the webhook skill (`/webhook`) whenever processing incoming payloads, and combine it with other skills as needed for your specific use case.
 
 ---
 
-## Related Reading
-
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — Full developer skill stack including tdd and supermemory
-- [Claude Code API Rate Limiting Implementation](/claude-skills-guide/claude-code-api-rate-limiting-implementation/) — Handle API constraints in your integrations
-- [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — Understanding skill activation patterns
-
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
