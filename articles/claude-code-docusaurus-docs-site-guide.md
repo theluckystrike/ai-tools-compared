@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code Docusaurus Docs Site Guide"
 description: "A comprehensive guide to building documentation sites with Docusaurus using Claude Code and specialized skills."
 date: 2026-03-14
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /claude-code-docusaurus-docs-site-guide/
 reviewed: true
 score: 7
