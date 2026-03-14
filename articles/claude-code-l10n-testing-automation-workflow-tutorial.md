@@ -121,20 +121,23 @@ The tdd skill helps you generate similar validation logic for other patterns, in
 
 When localizing user guides, API documentation, or marketing materials stored as PDFs, the **pdf** skill becomes valuable. It extracts text from PDF files and compares translations across language variants.
 
-Use the pdf skill to extract text from localized documentation:
+Use the pdf skill interactively to extract text from localized documentation:
 
-```bash
-/claude-pdf extract --input ./docs/en/user-guide.pdf --output ./tests/extracted/en-user-guide.txt
-/claude-pdf extract --input ./docs/es/user-guide.pdf --output ./tests/extracted/es-user-guide.txt
+```
+/pdf Extract all text content from ./docs/en/user-guide.pdf and save to ./tests/extracted/en-user-guide.txt
 ```
 
-After extraction, compare the text structure between languages:
-
-```bash
-/claude-pdf compare --source ./tests/extracted/en-user-guide.txt --target ./tests/extracted/es-user-guide.txt --threshold 0.8
+```
+/pdf Extract all text content from ./docs/es/user-guide.pdf and save to ./tests/extracted/es-user-guide.txt
 ```
 
-The comparison outputs a similarity score between documents. A score below your threshold indicates significant content differences—either missing translations or structural changes that require manual review.
+After extraction, compare the text structure between languages by asking the pdf skill:
+
+```
+/pdf Compare ./tests/extracted/en-user-guide.txt and ./tests/extracted/es-user-guide.txt — report how much content is missing or significantly different between the two
+```
+
+A high number of differences indicates missing translations or structural changes that require manual review.
 
 ## Step 4: Encoding and Character Validation
 
@@ -234,8 +237,10 @@ node ./tests/encoding-validator.test.js
 if [ $? -ne 0 ]; then echo "Encoding validation failed"; exit 1; fi
 
 echo "[4/4] Validating PDF documentation..."
-/claude-pdf compare --source ./tests/extracted/en-user-guide.txt --target ./tests/extracted/es-user-guide.txt --threshold 0.8
-if [ $? -ne 0 ]; then echo "PDF comparison failed"; exit 1; fi
+# Run PDF comparison interactively using the /pdf skill in a Claude Code session
+# before this script, then check the extracted files match expectations
+diff ./tests/extracted/en-user-guide.txt ./tests/extracted/es-user-guide.txt > /dev/null
+if [ $? -ne 0 ]; then echo "PDF comparison found differences - review manually"; fi
 
 echo "L10n Testing Pipeline complete"
 ```

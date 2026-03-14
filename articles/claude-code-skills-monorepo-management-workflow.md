@@ -151,19 +151,21 @@ Claude will:
 
 ## Skill Composition for Complex Operations
 
-Claude Code skills compose well. You can layer specialized skills on top of your base monorepo skill — a pattern also covered in [how to combine two Claude skills in one workflow](/claude-skills-guide/how-do-i-combine-two-claude-skills-in-one-workflow/):
+Claude Code skills compose well. You can layer specialized custom skills on top of your base monorepo skill — a pattern also covered in [how to combine two Claude skills in one workflow](/claude-skills-guide/how-do-i-combine-two-claude-skills-in-one-workflow/). Create additional custom skills like:
 
-- `/lint` - Enforces code quality across all packages
-- `/docs` - Generates API documentation for each package
-- `/ci` - Understands your CI pipeline configuration
+- `lint.md` - Enforces code quality across all packages
+- `api-docs.md` - Generates API documentation for each package
+- `ci.md` - Understands your CI pipeline configuration
 
-Invoke multiple skills in sequence for complex workflows:
+Invoke multiple custom skills in sequence for complex workflows:
 
 ```
-/monorepo /lint
+/lint
 Fix all linting errors in the newly added authentication module.
+```
 
-/monorepo /ci
+```
+/ci
 Verify the changes pass CI before we merge.
 ```
 
