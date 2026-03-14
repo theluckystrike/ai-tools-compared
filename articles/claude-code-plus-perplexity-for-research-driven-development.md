@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Plus Perplexity for Research-Driven Development"
-description: "Learn how combining Claude Code's AI coding capabilities with Perplexity's research features creates a powerful workflow for informed, evidence-based software development."
+description: "Learn how combining Claude Code's AI coding capabilities with Perplexity's research features creates a powerful workflow for informed, evidence-based."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, perplexity, research, ai-coding, development-workflow]
@@ -128,3 +128,10 @@ Research-driven development does take more time upfront, but the payoff comes in
 ## Conclusion
 
 Claude Code and Perplexity together create a development workflow where implementation is always informed by current research. Rather than relying on outdated assumptions or choosing tools based on past experience alone, every technical decision can be validated against the latest information. This combination doesn't slow you down—it makes your development faster by reducing the rework that comes from uninformed decisions. Start by pairing research sessions with implementation tasks, and watch your codebase become more principled and maintainable.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
