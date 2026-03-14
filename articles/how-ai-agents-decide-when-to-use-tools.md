@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "How AI Agents Decide When to Use Tools"
-description: "Discover how Claude Code intelligently decides when to use tools, including the decision-making process, practical examples, and how to optimize tool usage for better AI agent performance."
+description: "Discover how Claude Code intelligently decides when to use tools, including the decision-making process, practical examples, and how to optimize tool."
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-ai-agents-decide-when-to-use-tools/
+categories: [guides]
 ---
 
 # How AI Agents Decide When to Use Tools
@@ -90,3 +91,10 @@ AI agents like Claude Code decide when to use tools through a multi-stage evalua
 This decision-making happens automatically, but understanding it helps you communicate more effectively with AI agents. By providing clear, specific requests and appropriate context, you help Claude Code make better tool decisions—and get better results in return.
 
 The key insight is that tool use isn't random or brute-force: it's a thoughtful process where the agent weighs options, prioritizes safety, and chains operations into coherent workflows. As AI agents continue to evolve, this decision framework becomes increasingly sophisticated—enabling more complex, multi-step tasks to be accomplished with minimal human guidance.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
