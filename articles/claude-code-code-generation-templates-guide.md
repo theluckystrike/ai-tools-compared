@@ -1,228 +1,250 @@
 ---
-
 layout: default
 title: "Claude Code Code Generation Templates Guide"
-description: "Master code generation templates in Claude Code. Learn to create reusable skill templates, automate repetitive coding patterns, and build consistent."
+description: "A comprehensive guide to using Claude Code for code generation templates. Practical examples and techniques for developers and power users."
 date: 2026-03-14
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /claude-code-code-generation-templates-guide/
 categories: [guides]
-tags: [claude-code, claude-skills]
+tags: [claude-code, code-generation, templates]
 reviewed: true
-score: 7
+score: 8
 ---
-{% raw %}
-
-
 
 # Claude Code Code Generation Templates Guide
 
-Code generation templates in Claude Code transform how developers handle repetitive coding tasks. Instead of writing the same boilerplate repeatedly, you create templates once and apply them across projects. This guide shows you how to build effective code generation templates using Claude Skills and integrate them into your daily workflow.
+Code generation templates in Claude Code transform how you scaffold projects, create reusable components, and standardize patterns across your codebase. Rather than writing repetitive boilerplate manually, you define templates once and invoke them whenever needed. This guide covers practical approaches to building and using code generation templates effectively.
 
-## Understanding Template Structure in Claude Skills
+## Understanding Claude Code Template Systems
 
-A Claude skill serves as a template when it contains placeholder values that Claude fills based on context. The skill format supports variables through front matter and dynamic content generation within the skill body. When you invoke a skill with parameters, Claude uses those inputs to produce tailored output.
+Claude Code relies on skills stored in `~/.claude/skills/` as Markdown files with special formatting. These skills can define code generation behaviors, prompts, and patterns that activate when invoked. The system works best when you combine domain-specific skills with clear template definitions.
 
-Consider a basic skill that generates a React component:
+Several community skills enhance template generation capabilities:
 
-```yaml
----
-name: react-component
-description: Generate a React functional component with props
-parameters:
-  - name: componentName
-    type: string
-    required: true
-  - name: hasState
-    type: boolean
-    default: false
----
+- **frontend-design** creates component scaffolding with proper structure
+- **tdd** generates test files alongside implementation code
+- **pdf** extracts specifications from documentation to inform template output
+- **supermemory** maintains context about your preferred patterns across sessions
 
-# React Component Template
+Template generation works by passing structured prompts to Claude, which then produces code matching your specifications. The quality of output depends heavily on how well you define your templates and prompt parameters.
 
-Generate a React functional component called {{ componentName }}.
+## Building Reusable Template Definitions
 
-{% if hasState %}
-Include useState hook for local state management.
+Create a dedicated skill for your code generation templates. The skill should define common patterns your team uses, including placeholder syntax, file structures, and customization options.
+
+```markdown
+# Skill: code-templates
+## Definition
+This skill generates common code patterns and boilerplate for your projects.
+
+## Patterns
+
+### React Component
+Generates a React functional component with TypeScript, props, and basic styling:
+
+```
+# Component Template
+import React from 'react';
+import './{{componentName}}.css';
+
+interface {{componentName}}Props {
+  className?: string;
+}
+
+export const {{componentName}}: React.FC<{{componentName}}Props> = ({ 
+  className 
+}) => {
+  return (
+    <div className={`{{componentName}} ${className || ''}`}>
+      // Add your component content here
+    </div>
+  );
+};
+```
+
+### API Endpoint
+Creates an Express.js route handler with validation and error handling:
+
+```
+# API Handler Template
+import { Request, Response, NextFunction } from 'express';
+
+export const {{handlerName}} = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    // Add your logic here
+    const result = await processRequest(req.body);
+    res.status(200).json({ success: true, data: result });
+  } catch (error) {
+    next(error);
+  }
+};
+```
+```
+
+When you need to generate code, invoke the skill and specify your parameters:
+
+```
+/code-templates create-react-component UserProfile
+/code-templates create-api-handler getUserProfile
+```
+
+## Template Parameters and Dynamic Generation
+
+Effective templates accept parameters that customize output. Use consistent placeholder syntax like `{{variableName}}` throughout your templates. When invoking the skill, provide clear parameter mappings.
+
+For complex projects, chain multiple skills together. The **pdf** skill can parse specification documents to extract entity names and requirements, then pass those to your component templates:
+
+```
+/pdf extract-entities spec.pdf
+/code-templates create-react-components {{entities}}
+```
+
+This approach works well when you maintain specification documents in PDF format and need to generate corresponding frontend code.
+
+## Template Organization Strategies
+
+Organize templates by technology stack and use case. A practical directory structure might look like:
+
+```
+~/.claude/skills/
+├── code-templates/
+│   ├── skill.md          # Main skill definition
+│   ├── templates/
+│   │   ├── react/
+│   │   │   ├── component.tsx
+│   │   │   ├── hook.ts
+│   │   │   └── types.ts
+│   │   ├── api/
+│   │   │   ├── route.ts
+│   │   │   ├── middleware.ts
+│   │   │   └── controller.ts
+│   │   └── database/
+│   │       ├── model.ts
+│   │       └── migration.ts
+│   └── prompts/
+│       ├── generate-component.md
+│       └── generate-api.md
+```
+
+This organization lets you invoke specific template subsets rather than loading everything for every request.
+
+## Integrating with Project Scaffolding
+
+Combine templates with project initialization workflows. The **frontend-design** skill already includes component generation patterns, but you can extend it with custom templates for your design system:
+
+```markdown
+## Custom Design System Components
+
+### Button Variant
+Generate buttons matching your design system tokens:
+
+- primary: background #0066cc, text white
+- secondary: background transparent, border #0066cc
+- danger: background #cc0000, text white
+```
+
+When you need a new button component:
+
+```
+/frontend-design create-button --variant primary --name SubmitButton
+```
+
+The **tdd** skill complements template generation by creating test files automatically. Configure it to match your template structure:
+
+```markdown
+## Test Template Alignment
+
+When generating tests for template-created code:
+- Match the same directory structure in __tests__/
+- Use the same import paths as the source files
+- Include template parameter names in test descriptions
+```
+
+This ensures generated tests align with generated implementations.
+
+## Maintaining Template Consistency
+
+Use the **supermemory** skill to track template updates across sessions. Store your template versions and changelog in a shared knowledge base:
+
+```markdown
+# Template Version History
+
+## v2.1.0 - 2026-03-01
+- Added TypeScript strict mode to all templates
+- Updated React hooks pattern to use latest best practices
+
+## v2.0.0 - 2026-01-15
+- Migrated all templates to TypeScript
+- Added error boundary patterns
+```
+
+When Claude Code generates code, it can reference this history to apply consistent patterns.
+
+## Advanced Template Techniques
+
+For teams with complex requirements, consider these advanced approaches:
+
+**Conditional Logic**: Define templates with conditional blocks that activate based on parameters:
+
+```
+{% if includeTypescript %}
+interface Props {
+  // TypeScript-specific definitions
+}
 {% endif %}
-
-Export default {{ componentName }};
 ```
 
-When you invoke this skill with `componentName: UserCard` and `hasState: true`, Claude generates a complete component with state management included.
+**Multi-File Generation**: Generate entire features at once by chaining template outputs:
 
-## Creating Reusable Component Templates
-
-The real power of code generation templates comes from combining multiple skills. The frontend-design skill works alongside component generation to produce styled, production-ready code. Here's how to chain them effectively:
-
-```yaml
----
-name: component-scaffold
-description: Scaffold a complete component with styles and tests
-parameters:
-  - name: name
-    type: string
-  - name: type
-    type: string
-    enum: [button, card, form, modal, list]
----
-
-Create a {{ type }} component named {{ name }} including:
-1. The component file with proper imports
-2. CSS modules or styled-components
-3. Basic unit tests using your test framework
+```
+/code-templates create-feature UserAuth
+-> generates:
+   - components/LoginForm.tsx
+   - components/RegisterForm.tsx
+   - api/auth.ts
+   - hooks/useAuth.ts
+   - __tests__/auth.test.ts
 ```
 
-This template invokes multiple generation steps in sequence. For a button component, it produces the JSX structure, appropriate styling, and test scaffolding all at once.
+**Template Composition**: Build complex templates from smaller reusable pieces:
 
-## Automating File Scaffolding Patterns
+```markdown
+## Base Patterns
 
-Project scaffolding templates handle directory structures and multiple files simultaneously. A well-designed scaffolding skill reduces setup time from minutes to seconds:
+### Error Handler Base
+Standard error handling pattern used across all API templates:
 
-```yaml
----
-name: feature-scaffold
-description: Create a new feature module with standard structure
-parameters:
-  - name: featureName
-    type: string
-  - name: hasApi
-    type: boolean
-    default: true
----
-
-Generate a complete feature structure for "{{ featureName }}" including:
-- index.ts (exports)
-- {{ featureName }}.tsx (main component)
-- {{ featureName }}.types.ts (TypeScript interfaces)
-- {{ featureName }}.module.css (styles)
-
-{% if hasApi %}
-- api/{{ featureName }}.ts (API client)
-- api/types.ts (request/response types)
-{% endif %}
+```
+try {
+  {{content}}
+} catch (error) {
+  logger.error('{{operation}} failed', { error });
+  res.status(500).json({ error: 'Internal server error' });
+}
+```
 ```
 
-This pattern ensures every feature in your codebase follows the same structure. New team members immediately understand any feature's organization because all features use identical templates.
+## Best Practices for Template Development
 
-## Template Composition with the Skill-Creator Skill
+Start with templates for your most frequent code patterns. Common starting points include:
 
-The skill-creator skill helps you build templates that generate other skills. This meta-template approach creates a library of specialized generators:
+1. Component files with consistent styling approaches
+2. API route handlers with standard middleware
+3. Database models with common fields (timestamps, soft delete)
+4. Test boilerplate matching your test framework
 
-```yaml
----
-name: create-generator
-description: Generate a new code generation skill
-parameters:
-  - name: skillName
-    type: string
-  - name: outputType
-    type: string
----
+Iterate on templates based on actual usage. Track which templates get invoked most often and refine those first. Gather feedback from team members about missing patterns.
 
-Create a Claude skill that generates {{ outputType }} files.
-The generated skill should:
-1. Accept appropriate parameters via front matter
-2. Produce valid {{ outputType }} code
-3. Include proper error handling
-4. Document its parameters clearly
-```
-
-Using skill-creator to build generators multiplies your productivity. You invest time creating a generator once, then use it indefinitely to produce code.
-
-## Integrating Templates with Testing Skills
-
-Code generation templates become truly powerful when paired with complementary skills. The tdd skill generates test files alongside implementation code, ensuring every generated component has coverage:
-
-```yaml
----
-name: fullstack-feature
-description: Generate feature with implementation and tests
-parameters:
-  - name: feature
-    type: string
-  - name: layer
-    type: string
-    enum: [frontend, backend, fullstack]
----
-
-{% if layer == 'frontend' or layer == 'fullstack' %}
-Generate React component for "{{ feature }}" with:
-- Component file
-- Storybook story
-- Unit tests (using tdd skill)
-{% endif %}
-
-{% if layer == 'backend' or layer == 'fullstack' %}
-Generate API handler for "{{ feature }}" with:
-- Route handler
-- Validation schema
-- Integration tests
-{% endif %}
-```
-
-This template produces a complete feature with tests, reducing the gap between "working code" and "tested code" to zero.
-
-## Documentation Generation with PDF Skills
-
-The pdf skill transforms generated code into documentation automatically. A documentation template might include:
-
-```yaml
----
-name: api-docs
-description: Generate API documentation from code
-parameters:
-  - name: endpointFile
-    type: string
----
-
-Analyze {{ endpointFile }} and produce:
-1. Endpoint summary table
-2. Request/response examples
-3. Type definitions
-4. Save as {{ endpointFile }}.docs.pdf
-```
-
-This creates a PDF of your API documentation without manual writing. The skill reads your code and extracts the relevant information automatically.
-
-## Organizing Your Template Library
-
-The supermemory skill helps you organize and retrieve templates across projects. When you build a comprehensive template library, supermemory indexes each template with searchable metadata:
-
-```yaml
----
-name: template-search
-description: Find relevant templates from your library
-parameters:
-  - name: context
-    type: string
----
-
-Search your template library for skills matching: {{ context }}
-Return the skill names and their purposes.
-```
-
-This creates a self-documenting template system where finding the right generator takes seconds rather than browsing through files.
-
-## Best Practices for Template Design
-
-Keep templates focused on a single responsibility. A template that tries to generate everything produces bloated, hard-to-maintain code. Instead, create small, composable templates that chain together:
-
-1. **Parameterize only what changes** — Don't template every line. Extract the variable parts and keep the structure stable.
-2. **Include validation** — Use parameter types and enums to prevent invalid combinations.
-3. **Add helpful descriptions** — Future you will thank present you for clear documentation.
-4. **Test your templates** — Generate sample output and verify it matches expectations before using templates in production.
+Version your templates and document breaking changes. Claude Code works best when you provide clear context about template updates.
 
 ## Conclusion
 
-Code generation templates in Claude Code eliminate repetitive coding tasks while ensuring consistency across your projects. By combining the skill-creator for building generators, tdd for test coverage, and pdf for documentation, you create a fully automated development pipeline. Start with simple component templates, then expand into feature scaffolds and fullstack generators as your needs grow.
+Code generation templates in Claude Code eliminate repetitive coding tasks while ensuring consistency across your projects. By defining clear templates, organizing them by technology stack, and integrating skills like **frontend-design**, **tdd**, and **supermemory**, you build a powerful generation system that scales with your team.
 
-## Related Reading
-
-- [Claude Code Boilerplate Generation Workflow](/claude-skills-guide/claude-code-boilerplate-generation-workflow/) — Boilerplate and templates are closely related
-- [Claude Code Project Scaffolding Automation](/claude-skills-guide/claude-code-project-scaffolding-automation/) — Templates power project scaffolding
-- [How to Write Your First Custom Prompt with Claude Code](/claude-skills-guide/how-to-write-your-first-custom-prompt-with-claude-code/) — Custom prompts are a form of code generation template
-- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More code generation and automation guides
+Start with simple templates for components and API handlers, then expand to more complex patterns as your needs grow. The investment in creating quality templates pays dividends in development speed and code consistency.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
