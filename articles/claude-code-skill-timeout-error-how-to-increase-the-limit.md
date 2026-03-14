@@ -16,18 +16,18 @@ When working with Claude Code skills like `frontend-design`, `pdf`, `tdd`, or `s
 
 ## Understanding Timeout Errors in Claude Code Skills
 
-Timeouts in Claude Code occur when a response takes too long to generate. This can happen when:
+[Timeouts in Claude Code occur](/claude-skills-guide/articles/claude-code-skill-memory-limit-exceeded-process-killed-fix/) to generate. This can happen when:
 
 - Processing very large files with the `/pdf` skill
 - Generating comprehensive test suites with `/tdd` across a large codebase
 - Generating complex presentations with `/pptx`
 - Working with large knowledge stores through `/supermemory`
 
-There is no `--timeout` flag for the `claude` CLI, no `skillDefaults` configuration in `settings.json`, and no `CLAUDE_SKILL_TIMEOUT` environment variable. Timeouts are governed by the Anthropic API's response limits, not configurable through skill files or CLI flags.
+There is no `--timeout` flag for the `claude` CLI, no `skillDefaults` configuration in `settings.json`, and no `CLAUDE_SKILL_TIMEOUT` environment variable. [governed by the Anthropic API's response limits](/claude-skills-guide/troubleshooting-hub/), not configurable through skill files or CLI flags.
 
 ## How to Reduce Timeout Frequency
 
-The most effective way to avoid timeouts is to break large tasks into smaller pieces so each individual request completes faster.
+The [break large tasks into smaller pieces](/claude-skills-guide/articles/claude-skills-context-window-management-best-practices/) into smaller pieces so each individual request completes faster.
 
 ### Break Large Documents Into Sections
 
@@ -102,7 +102,7 @@ This approach produces better-focused tests and avoids timeout issues.
 
 ## Summary
 
-Timeout errors reflect the size of the request, not a configurable limit. The practical solution is:
+[Timeout errors reflect the size of the request](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/), not a configurable limit. The practical solution is:
 
 1. Break large tasks into smaller, scoped requests
 2. Work module-by-module or section-by-section

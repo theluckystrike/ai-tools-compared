@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Skills for iOS Swift Development
 
-iOS development with Swift requires handling complex architectures, extensive testing, and detailed documentation. Claude Code and its skill system provide valuable assistance for developers working with Xcode, SwiftUI, and UIKit. This guide covers practical applications of Claude Code's built-in skills for iOS development workflows.
+iOS development with Swift requires handling complex architectures, extensive testing, and detailed documentation. Claude Code and its [skill system](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) provide valuable assistance for developers working with Xcode, SwiftUI, and UIKit. This guide covers practical applications of Claude Code's built-in skills for iOS development workflows.
 
 ## Setting Up Claude Code for iOS Development
 

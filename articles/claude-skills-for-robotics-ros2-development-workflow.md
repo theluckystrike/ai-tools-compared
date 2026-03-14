@@ -30,7 +30,7 @@ With your environment ready, you can begin using Claude skills throughout the de
 
 ## Essential Claude Skills for ROS2 Development
 
-Several Claude skills enhance robotics development specifically. The **tdd** skill proves invaluable when building ROS2 nodes, ensuring your implementation follows test-driven development principles. Activate it in your Claude session before writing node code:
+Several Claude skills enhance robotics development specifically. [tdd skill proves invaluable when building ROS2 nodes](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/), ensuring your implementation follows test-driven development principles. Activate it in your Claude session before writing node code:
 
 ```
 /tdd
@@ -182,7 +182,7 @@ This integrated approach reduces context switching and maintains consistency acr
 
 ---
 
-Claude skills transform ROS2 development from manual scaffolding and scattered documentation into an organized, automated workflow. By incorporating skills like tdd, pdf, supermemory, frontend-design, and docx into your robotics projects, you accelerate development cycles while maintaining code quality and comprehensive documentation.
+[Claude skills transform ROS2 development](/claude-skills-guide/use-cases-hub/) and scattered documentation into an organized, automated workflow. By incorporating skills like tdd, pdf, supermemory, frontend-design, and docx into your robotics projects, you accelerate development cycles while maintaining code quality and comprehensive documentation.
 
 
 ## Related Reading

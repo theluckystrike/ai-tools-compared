@@ -13,13 +13,13 @@ tags: [claude-code, claude-skills]
 
 # How Do I Set Environment Variables for a Claude Skill
 
-Claude Code skills are powerful extensions that customize how Claude behaves in your AI sessions. Whether you're using the pdf skill for document processing, the tdd skill for test-driven development, or the supermemory skill for knowledge management, understanding how to configure environment variables is essential for getting the most out of these tools.
+[Claude Code skills are powerful extensions](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) in your AI sessions. Whether you're using the pdf skill for document processing, the tdd skill for test-driven development, or the supermemory skill for knowledge management, understanding how to configure environment variables is essential for getting the most out of these tools.
 
 This guide walks you through the process of setting environment variables for Claude skills, with practical examples for common use cases.
 
 ## Where Claude Skills Store Configuration
 
-Claude skills are stored as Markdown files in your home directory. The default location is `~/.claude/skills/`. Each skill lives in its own subdirectory or as a standalone `.md` file. When you invoke a skill using its slash command, Claude reads the file and applies the instructions to your session.
+[Claude skills are stored as Markdown files](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/). The default location is `~/.claude/skills/`. Each skill lives in its own subdirectory or as a standalone `.md` file. When you invoke a skill using its slash command, Claude reads the file and applies the instructions to your session.
 
 Environment variables for skills can be set in several ways:
 
@@ -63,7 +63,7 @@ These variables are now available to any skill that runs in your terminal sessio
 
 ## Skill-Specific Configuration Files
 
-Many skills come with their own configuration mechanism. The supermemory skill, for instance, often requires a configuration file to connect to your personal knowledge base.
+Many skills come with their own configuration mechanism. The [supermemory skill, for instance, often requires a configuration file](/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/) to connect to your personal knowledge base.
 
 ### Example: Configuring the Supermemory Skill
 
@@ -88,7 +88,7 @@ SUPERMEMORY_INDEX_NAME=my-knowledge-base
 
 ## Using Claude Code Settings for Skill Configuration
 
-Claude Code allows you to set environment variables through its settings system. Edit `~/.claude/settings.json` to make variables available specifically to Claude:
+[Claude Code allows you to set environment variables through its settings system](/claude-skills-guide/articles/claude-code-permissions-model-security-guide-2026/). Edit `~/.claude/settings.json` to make variables available specifically to Claude:
 
 ```json
 {
@@ -210,7 +210,7 @@ Available variables: $OPENAI_API_KEY, $PDF_API_KEY, etc.
 
 Setting environment variables for Claude skills involves three main approaches: shell configuration files for system-wide access, skill-specific configuration files for per-skill settings, and Claude Code's settings.json for isolated configurations.
 
-For most skills like pdf, tdd, frontend-design, and supermemory, you'll set variables in your shell profile and optionally create skill-specific configuration files for more granular control. Remember to keep sensitive keys secure and restart Claude Code after modifying environment variables.
+For most skills like pdf, tdd, frontend-design, and supermemory, you'll set variables in your shell profile and optionally create skill-specific configuration files for more granular control. Remember to keep [sensitive keys secure](/claude-skills-guide/getting-started-hub/) after modifying environment variables.
 
 With proper configuration, your Claude skills will have access to the APIs, paths, and settings they need to function effectively in your development workflow.
 

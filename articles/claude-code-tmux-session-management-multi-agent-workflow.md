@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Tmux Session Management Multi Agent Workflow
 
-When building sophisticated AI-powered development workflows with Claude Code, managing multiple concurrent agent sessions becomes essential. Tmux (terminal multiplexer) provides the infrastructure needed to spawn, monitor, and coordinate multiple Claude Code instances running in parallel. This approach transforms Claude Code from a single interactive assistant into a capable multi-agent orchestration system.
+When building [sophisticated AI-powered development workflows](/claude-skills-guide/advanced-hub/) with Claude Code, managing multiple concurrent agent sessions becomes essential. Tmux (terminal multiplexer) provides the infrastructure needed to spawn, monitor, and coordinate multiple Claude Code instances running in parallel. This approach transforms Claude Code from a single interactive assistant into a capable multi-agent orchestration system.
 
 ## Why Tmux for Claude Code Multi Agent Workflows
 
@@ -99,7 +99,7 @@ These functions form the building blocks for sophisticated orchestration logic. 
 
 ## Implementing Coordination Patterns
 
-With the foundation in place, implement coordination patterns that determine how agents interact. The fan-out-fan-in pattern works particularly well with tmux-managed Claude Code agents:
+With the foundation in place, implement coordination patterns that determine how agents interact. The [fan-out-fan-in pattern](/claude-skills-guide/articles/claude-code-agent-pipeline-sequential-vs-parallel/) with tmux-managed Claude Code agents:
 
 ```bash
 #!/bin/bash
@@ -199,7 +199,7 @@ Run this script, and tmux manages six concurrent Claude Code sessions, each hand
 
 ## Best Practices and Common Pitfalls
 
-When building tmux-based multi-agent systems, avoid spawning unlimited sessions. Monitor system resources and cap concurrent agents based on available CPU and memory. Each Claude Code instance consumes resources even in print mode.
+When building tmux-based multi-agent systems, avoid [spawning unlimited sessions](/claude-skills-guide/articles/parallel-subagents-claude-code-best-practices-2026/). Monitor system resources and cap concurrent agents based on available CPU and memory. Each Claude Code instance consumes resources even in print mode.
 
 Implement proper error handling for agent failures. Network interruptions or API timeouts can cause agents to exit unexpectedly. Your orchestration should detect these conditions and either retry or escalate:
 

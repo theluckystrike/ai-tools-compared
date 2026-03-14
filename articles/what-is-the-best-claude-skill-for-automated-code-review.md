@@ -26,7 +26,7 @@ Claude skills enhance this further because they understand context. Unlike stati
 
 ### The tdd Skill
 
-The `tdd` skill is the closest thing to a dedicated code review assistant. Originally designed for test-driven development, it excels at analyzing code structure, identifying gaps between implementation and tests, and suggesting improvements.
+The [`tdd` skill is the closest thing to a dedicated code review assistant](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/). Originally designed for test-driven development, it excels at analyzing code structure, identifying gaps between implementation and tests, and suggesting improvements.
 
 When you invoke the `tdd` skill on a code change:
 
@@ -44,7 +44,7 @@ The skill analyzes both the implementation and test files, providing feedback th
 
 ### The supermemory Skill
 
-Code review consistency is a challenge across teams and time. The `supermemory` skill solves this by persisting your team's coding standards, review preferences, and common issues across sessions.
+Code review consistency is a challenge across teams and time. The `[supermemory skill solves this by persisting your team](/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/)'s coding standards, review preferences, and common issues across sessions.
 
 Store your review standards once:
 
@@ -104,7 +104,7 @@ Review src/auth/ and src/api/ for security vulnerabilities.
 
 ### Step 1: Pre-Commit Review
 
-Catch issues before they reach your team. Add a pre-commit hook that invokes Claude in print mode:
+Catch issues before they reach your team. [pre-commit hook that invokes Claude in print mode](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/):
 
 ```bash
 # .git/hooks/pre-commit
@@ -212,7 +212,7 @@ The review that would have taken 30 minutes of human time now takes 2 minutes �
 
 ## Conclusion
 
-The best Claude skill for automated code review is not a single tool — it's a combination. The `tdd` skill provides the core analysis, `supermemory` ensures consistency, and custom skills address your specific concerns. Together, they create a review system that never gets tired, never misses a standard, and continuously improves based on your team's feedback.
+The [best Claude skill for automated code review](/claude-skills-guide/best-of-hub/) — it's a combination. The `tdd` skill provides the core analysis, `supermemory` ensures consistency, and custom skills address your specific concerns. Together, they create a review system that never gets tired, never misses a standard, and continuously improves based on your team's feedback.
 
 Start with the `tdd` skill, add `supermemory` for persistent standards, and layer in custom skills for security or performance as needed. Your codebase will thank you.
 

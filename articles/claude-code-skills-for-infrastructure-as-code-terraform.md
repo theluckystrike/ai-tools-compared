@@ -36,7 +36,7 @@ Organizing your code into modules improves reusability and makes Claude's assist
 
 ### Claude Code for Terraform Commands
 
-Claude Code has deep knowledge of command-line operations, which is critical when running Terraform plans and applies. This helps you construct complex shell commands for iterating over multiple environments or parsing Terraform output.
+[Claude Code has deep knowledge of command-line operations](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), which is critical when running Terraform plans and applies. This helps you construct complex shell commands for iterating over multiple environments or parsing Terraform output.
 
 When you need to run Terraform across multiple workspaces, Claude Code can help create efficient scripts:
 
@@ -54,7 +54,7 @@ The skill also assists with parsing Terraform's JSON output for automation. For 
 
 ### tdd for Infrastructure Testing
 
-The **tdd** skill applies test-driven development principles to infrastructure code. While traditionally associated with application code, TDD principles work remarkably well for Terraform modules. You can write tests that validate your infrastructure before deployment.
+[tdd skill applies test-driven development principles to infrastructure](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) code. While traditionally associated with application code, TDD principles work remarkably well for Terraform modules. You can write tests that validate your infrastructure before deployment.
 
 Using tools like Terratest or Terraform's built-in test framework, you can verify that your infrastructure behaves correctly:
 
@@ -174,7 +174,7 @@ For state management, consider these practices:
 
 ### Documentation Generation
 
-Infrastructure documentation often lags behind implementation. Use Claude skills to generate and maintain documentation:
+[Infrastructure documentation often lags behind implementation](/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/). Use Claude skills to generate and maintain documentation:
 
 ```hcl
 # outputs.tf
@@ -199,7 +199,7 @@ When working with modules, avoid creating overly complex variable structures. In
 
 ## Conclusion
 
-Combining Claude Code skills transforms Terraform workflows from manual operations into streamlined, automated processes. Claude Code handles command execution, /tdd ensures testing, and /supermemory maintains project context. Together, these skills reduce errors and accelerate infrastructure delivery.
+[Combining Claude Code skills transforms Terraform workflows](/claude-skills-guide/use-cases-hub/) from manual operations into streamlined, automated processes. Claude Code handles command execution, /tdd ensures testing, and /supermemory maintains project context. Together, these skills reduce errors and accelerate infrastructure delivery.
 
 Experiment with different skill combinations to find what works best for your team's specific needs. Infrastructure as code benefits enormously from systematic approaches, and Claude skills provide the tooling to implement those systems effectively.
 

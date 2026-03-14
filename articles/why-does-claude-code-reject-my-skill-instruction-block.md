@@ -18,7 +18,7 @@ When Claude Code rejects your skill instruction block, it can feel like hitting 
 
 Before troubleshooting, it helps to understand what happens when Claude Code loads a skill. When you create a skill file, Claude reads the entire file during initialization. The YAML front matter contains metadata, and the Markdown body contains your instructions. Both sections must be properly formatted for Claude to parse and use them effectively.
 
-The instruction block in your skill file is not just any Markdown content. Claude interprets it as structured guidance that influences how it behaves when the skill is active. If the parser encounters anything unexpected, it rejects the entire block rather than guessing at your intent.
+The instruction block in your skill file is not just any Markdown content. [Claude interprets it as structured guidance](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) that influences how it behaves when the skill is active. If the parser encounters anything unexpected, it rejects the entire block rather than guessing at your intent.
 
 ## Common Reasons for Rejection
 
@@ -26,7 +26,7 @@ The instruction block in your skill file is not just any Markdown content. Claud
 
 The front matter sits between the `---` delimiters at the top of your skill file. Even a single misplaced character causes parsing to fail. Common issues include:
 
-- **Inconsistent indentation**: YAML requires consistent spaces, not tabs
+- **Inconsistent indentation**: [YAML requires consistent spaces](/claude-skills-guide/articles/claude-skill-yaml-front-matter-parsing-error-fix/)
 - **Missing colons**: Every key-value pair needs a colon
 - **Unquoted special characters**: Characters like `:` or `#` in values can break parsing
 - **Invalid date formats**: Use ISO 8601 format (YYYY-MM-DD)
@@ -107,7 +107,7 @@ Certain characters have special meaning in Markdown and YAML. Using them without
 
 When your skill gets rejected, work through these steps systematically:
 
-**Step 1: Validate the YAML**
+**Step 1: [Validate the YAML](/claude-skills-guide/articles/how-do-i-debug-a-claude-skill-that-silently-fails/)**
 
 Extract the front matter and run it through a YAML linter. Most editors have extensions that highlight YAML errors in real time.
 
@@ -184,7 +184,7 @@ If you've tried these solutions and your skill still gets rejected, check the Cl
 
 The rejection message, when available, contains clues about what's wrong. Look for keywords like "parse error," "invalid format," or "unexpected token." These point directly to the offending section.
 
-Building skills for Claude Code becomes straightforward once you understand the parsing requirements. Most rejection issues come down to front matter formatting or ambiguous instruction language. Fix those, and your skills load reliably.
+Building skills for Claude Code becomes straightforward once you understand the parsing requirements. Most [rejection issues come down to front matter formatting](/claude-skills-guide/troubleshooting-hub/) or ambiguous instruction language. Fix those, and your skills load reliably.
 
 ## Related Reading
 

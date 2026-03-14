@@ -12,7 +12,7 @@ tags: [claude-code, claude-skills, automation, social-media, workflow]
 
 # Automate Social Media Content with Claude Skills
 
-Social media management consumes significant time for developers and content creators. This guide walks through building an automated social media content workflow using Claude Code skills—Markdown files stored in `~/.claude/skills/` that you invoke with `/skill-name` inside a Claude Code session.
+[Social media management](/claude-skills-guide/articles/build-personal-ai-assistant-with-claude-skills-guide/) for developers and content creators. This guide walks through building an automated social media content workflow using Claude Code skills—Markdown files stored in `~/.claude/skills/` that you invoke with `/skill-name` inside a Claude Code session.
 
 ## Understanding the Workflow Architecture
 
@@ -118,7 +118,7 @@ Consider these factors when designing your workflow:
 - **Team size**: Supermemory becomes essential with multiple contributors
 - **Analytics maturity**: Build measurement capabilities as you scale
 
-Claude Code skills provide the building blocks. Assemble them according to your specific requirements rather than adopting a one-size-fits-all approach.
+Claude Code skills provide the building blocks. Assemble them according to [your specific requirements](/claude-skills-guide/use-cases-hub/) a one-size-fits-all approach.
 
 ---
 

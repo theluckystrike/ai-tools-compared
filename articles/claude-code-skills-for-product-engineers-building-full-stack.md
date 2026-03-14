@@ -12,7 +12,7 @@ score: 9
 
 # Claude Code Skills for Product Engineers Building Full Stack
 
-Product engineers who build full-stack applications face a unique challenge: they need competence across the entire technology stack while maintaining speed and quality. Claude Code skills provide specialized capabilities that transform how you approach frontend UI, backend APIs, database schemas, testing, and deployment. This guide covers the skills that deliver the most value for product engineers shipping features end-to-end.
+Product engineers who build full-stack applications face a unique challenge: they need competence across the entire technology stack while maintaining speed and quality. [Claude Code skills provide specialized capabilities](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) that transform how you approach frontend UI, backend APIs, database schemas, testing, and deployment. This guide covers the skills that deliver the most value for product engineers shipping features end-to-end.
 
 ## The Full-Stack Challenge
 
@@ -135,7 +135,7 @@ Start with skills that address your most frequent bottlenecks. As your workflow 
 
 ## Summary
 
-Claude Code skills transform full-stack development from context-heavy juggling into focused, tool-assisted work. The **frontend-design** skill builds UI components quickly, **backend-api** constructs APIs without boilerplate, **tdd** ensures test coverage from the start, **pdf** generates documentation on demand, **xlsx** handles data and reporting needs, and **supermemory** keeps project knowledge accessible. The **skill-creator** skill lets you extend this toolkit with custom workflows.
+Claude Code skills [transform full-stack development](/claude-skills-guide/use-cases-hub/) into focused, tool-assisted work. The **frontend-design** skill builds UI components quickly, **backend-api** constructs APIs without boilerplate, **tdd** ensures test coverage from the start, **pdf** generates documentation on demand, **xlsx** handles data and reporting needs, and **supermemory** keeps project knowledge accessible. The **skill-creator** skill lets you extend this toolkit with custom workflows.
 
 Invoke these skills directly in Claude Code with `/skill-name` to integrate specialized capabilities into your development process. Start with the skill matching your current pain point, then expand as your workflow matures.
 

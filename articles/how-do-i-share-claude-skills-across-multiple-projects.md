@@ -11,7 +11,7 @@ score: 8
 ---
 {% raw %}
 
-Sharing Claude skills across multiple projects is one of the most powerful ways to standardize your development workflow and avoid duplicating effort. Whether you're working on a monorepo with multiple packages or maintaining separate repositories for different applications, having a strategy for skill sharing can significantly boost your productivity.
+[Sharing Claude skills across multiple projects](/claude-skills-guide/articles/how-do-i-make-a-claude-skill-available-organization-wide/) ways to standardize your development workflow and avoid duplicating effort. Whether you're working on a monorepo with multiple packages or maintaining separate repositories for different applications, having a strategy for skill sharing can significantly boost your productivity.
 
 ## Understanding Claude Skill Sharing
 
@@ -34,7 +34,7 @@ git submodule add git@github.com:your-org/claude-skills.git .claude/skills
 git submodule update --init --recursive
 ```
 
-Using submodules provides pinned versions, so you can update skills in one place without affecting projects that depend on older versions. When you're ready to update a project's skills reference, simply pull the latest changes in the submodule directory.
+[Using submodules provides pinned versions](/claude-skills-guide/articles/shared-claude-skills-across-monorepo-multiple-packages/), so you can update skills in one place without affecting projects that depend on older versions. When you're ready to update a project's skills reference, simply pull the latest changes in the submodule directory.
 
 For projects that need bleeding-edge skills, consider a different approach. Instead of submodules, you can clone the skills repository directly and pull changes as needed. This works well for personal projects where you want automatic access to the latest skill improvements.
 
@@ -84,7 +84,7 @@ Once you've set up your shared skills repository, importing skills into a new pr
 }
 ```
 
-Many teams find it helpful to create a meta-skill that handles the import process. This meta-skill can scan your shared repository and automatically enable relevant skills based on your project's technology stack. The supermemory skill pairs excellently with this approach, as it can remember which skills work best for different project types.
+Many teams find it helpful to create a meta-skill that handles the import process. This meta-skill can scan your shared repository and automatically enable relevant skills based on your project's technology stack. The [supermemory skill pairs excellently](/claude-skills-guide/articles/building-stateful-agents-with-claude-skills-guide/), as it can remember which skills work best for different project types.
 
 ## Handling Project-Specific Variations
 
@@ -136,7 +136,7 @@ jobs:
       - run: git push origin main
 ```
 
-You can extend this pattern to automatically update skill references in all your projects. The pdf skill works well for generating change logs that document what changed in each skill update.
+You can extend this pattern to automatically update skill references in all your projects. The [pdf skill works well for generating change logs](/claude-skills-guide/articles/automated-code-documentation-workflow-with-claude-skills/) that document what changed in each skill update.
 
 ## Practical Workflow Example
 
@@ -152,7 +152,7 @@ The key is establishing the infrastructure early. Spending time on proper skill 
 
 Sharing Claude skills across multiple projects transforms your development workflow from repetitive to standardized. By implementing version-controlled skill libraries, structured directories, and automated synchronization, you create a scalable system that improves with each new project.
 
-Start small with your most valuable skills, then expand as you identify more opportunities for reuse. The initial investment in setting up proper sharing infrastructure pays off quickly as your skill library grows and your team becomes more productive.
+Start small with your most valuable skills, then expand as you identify more opportunities for reuse. The initial investment in setting up proper sharing infrastructure pays off quickly as your [skill library grows](/claude-skills-guide/getting-started-hub/).
 
 
 ## Related Reading

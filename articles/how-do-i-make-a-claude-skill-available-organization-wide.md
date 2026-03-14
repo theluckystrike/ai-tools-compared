@@ -19,7 +19,7 @@ This guide covers practical methods for making Claude skills available organizat
 
 ## Understanding the Skills Directory
 
-Claude Code stores skills as Markdown files in `~/.claude/skills/`. Each skill is a single `.md` file containing instructions that Claude uses when you invoke it with `/skill-name`. The skills directory follows this structure:
+[Claude Code stores skills as Markdown files](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/). Each skill is a single `.md` file containing instructions that Claude uses when you invoke it with `/skill-name`. The skills directory follows this structure:
 
 ```
 ~/.claude/skills/
@@ -65,7 +65,7 @@ done
 
 Each team member runs `bash install.sh` after cloning the repository. When you update skills in the repository, team members pull the changes and the symlinks automatically point to the updated files.
 
-This method works well for teams comfortable with git and provides version history for all skill changes.
+[teams comfortable with git](/claude-skills-guide/articles/how-do-i-share-claude-skills-across-multiple-projects/) and provides version history for all skill changes.
 
 ## Method 2: Shared Network Directory
 
@@ -191,7 +191,7 @@ Run several test cases covering common use patterns. Check that the skill produc
 
 Making Claude skills available organization-wide involves distributing skill files to each team member's `~/.claude/skills/` directory. The git repository with symlinks approach provides the best balance of maintainability and simplicity for most teams. Configuration management tools work well for larger organizations with existing infrastructure automation.
 
-Regardless of distribution method, invest time in documenting skill usage and testing changes before deployment. A well-organized skill library accelerates onboarding and ensures consistent development practices across your entire organization.
+Regardless of distribution method, [invest time in documenting skill usage](/claude-skills-guide/getting-started-hub/) and testing changes before deployment. A well-organized skill library accelerates onboarding and ensures consistent development practices across your entire organization.
 
 
 ## Related Reading

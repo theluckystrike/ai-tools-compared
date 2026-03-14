@@ -16,7 +16,7 @@ Managing the context window is one of the most practical concerns when working w
 
 ## Understanding Context Window Basics
 
-The context window holds everything Claude can see in a single session:
+[context window holds everything Claude can see](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) in a single session:
 
 - The active skill system prompt (its .md file body)
 - The conversation history for the current session
@@ -27,7 +27,7 @@ When the context window fills up, older conversation history gets dropped first,
 
 ## Strategy 1: Structure Prompts to Be Specific
 
-Vague prompts require passing more context. Specific prompts let you pass less.
+Vague prompts require passing more context. [Specific prompts let you pass less](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/).
 
 Instead of: "Review my entire authentication module for security issues"
 
@@ -105,7 +105,7 @@ Skills do not automatically know your project structure unless instructed to rea
 
 Context does not carry across sessions. Use CLAUDE.md for stable context and /supermemory for accumulated decisions.
 
-Larger context does not mean better results. Focused context beats comprehensive context.
+Larger context does not mean better results. [Focused context beats comprehensive context](/claude-skills-guide/getting-started-hub/).
 
 ---
 
