@@ -20,3 +20,9 @@ my_range.txt
 GEMINI.md
 .agent_memory.json
 FLEET.md
+-e 
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*.local
