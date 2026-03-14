@@ -12,7 +12,7 @@ score: 7
 
 # MCP Credential Management and Secrets Handling
 
-Building MCP servers that interact with databases, cloud services, and third-party APIs requires careful handling of credentials and secrets. Whether you're building a custom MCP server for AWS, connecting the `pdf` skill to process documents from a secure bucket, or wiring the `tdd` skill to your CI/CD pipeline — the way you manage secrets directly impacts security and reliability. This guide covers practical approaches to credential management for MCP servers, with code examples you can adapt immediately.
+[Building MCP servers that interact with databases, cloud services, and third-party APIs](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) requires careful handling of credentials and secrets. Whether you're building a custom MCP server for AWS, connecting the `pdf` skill to process documents from a secure bucket, or wiring the `tdd` skill to your CI/CD pipeline — the way you manage secrets directly impacts security and reliability. This guide covers practical approaches to credential management for MCP servers, with code examples you can adapt immediately.
 
 ## Understanding the Threat Landscape
 
@@ -219,5 +219,12 @@ class RotatingCredential:
 ## Conclusion
 
 Secure credential management in MCP servers requires layering environment variables for configuration, OAuth flows for user-authenticated requests, secret scanning for prevention, and production-grade patterns like external secrets services and automated rotation. Start with environment variables for simplicity, implement OAuth when user delegation is needed, and add secret scanning and rotation as your deployments scale. The `tdd` skill can validate your credential handling implementation through integration tests, while `supermemory` can help you document your security architecture.
+
+## Related Reading
+
+- [MCP Server Permission Auditing Best Practices](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/)
+- [MCP OAuth 2.1 Authentication Implementation Guide](/claude-skills-guide/articles/mcp-oauth-21-authentication-implementation-guide/)
+- [Securing MCP Servers in Production Environments](/claude-skills-guide/articles/securing-mcp-servers-in-production-environments/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

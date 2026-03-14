@@ -12,11 +12,11 @@ score: 8
 
 # MCP Server Input Validation Security Patterns
 
-When building MCP servers that interface with Claude Code, input validation represents your first line of defense against malicious requests. Whether your server handles file operations, database queries, or API integrations, properly validating incoming data prevents injection attacks, data breaches, and unexpected behavior. This guide covers practical security patterns you can implement immediately in your MCP server implementations.
+[When building MCP servers that interface with Claude Code](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) against malicious requests. Whether your server handles file operations, database queries, or API integrations, properly validating incoming data prevents injection attacks, data breaches, and unexpected behavior. This guide covers practical security patterns you can implement immediately in your MCP server implementations.
 
 ## Why Input Validation Matters for MCP Servers
 
-MCP servers act as bridges between Claude Code and external systems. Without proper validation, an attacker could potentially craft requests that execute unintended operations on your systems. The stakes are particularly high when your servers interact with databases, file systems, or third-party APIs.
+[MCP servers act as bridges between Claude Code and external systems](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/) Without proper validation, an attacker could potentially craft requests that execute unintended operations on your systems. The stakes are particularly high when your servers interact with databases, file systems, or third-party APIs.
 
 Consider a scenario where your MCP server accepts user queries to search a database. Without validation, someone might inject SQL commands through the query parameters. Similarly, file path inputs could contain directory traversal sequences like `../../etc/passwd`. Input validation closes these attack vectors before they reach your core logic.
 
@@ -285,5 +285,12 @@ Input validation forms a critical security layer in any MCP server implementatio
 The investment in robust validation pays dividends in security and reliability. Users trust your MCP server with their data, and proper input handling protects that trust. Implement these patterns early in your development process rather than retrofitting security onto an existing codebase.
 
 ---
+
+## Related Reading
+
+- [MCP Server Permission Auditing Best Practices](/claude-skills-guide/articles/mcp-server-permission-auditing-best-practices/)
+- [MCP Prompt Injection Attack Prevention Guide](/claude-skills-guide/articles/mcp-prompt-injection-attack-prevention-guide/)
+- [Securing MCP Servers in Production Environments](/claude-skills-guide/articles/securing-mcp-servers-in-production-environments/)
+- [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -12,7 +12,7 @@ score: 7
 
 # Linear MCP Server Issue Tracking with Claude Code
 
-Managing issues and projects directly from your coding environment saves context-switching overhead and keeps your development workflow fluid. The Linear MCP server enables Claude Code to interact with your Linear workspace, creating, updating, and querying issues without leaving your terminal or IDE.
+Managing issues and projects directly from your coding environment saves context-switching overhead and keeps your development workflow fluid. [The Linear MCP server enables Claude Code to interact with your Linear workspace](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/), creating, updating, and querying issues without leaving your terminal or IDE.
 
 This guide walks you through setting up the Linear MCP server and demonstrates practical workflows for issue tracking with Claude Code.
 
@@ -165,5 +165,12 @@ Keep your Linear integration effective with these approaches:
 ## Conclusion
 
 The Linear MCP server transforms Claude Code into a powerful issue tracking hub. By creating and managing issues directly in your coding workflow, you maintain focus, preserve context, and keep your team synchronized. Combined with Claude Code skills like tdd for test management, pdf for documentation generation, and supermemory for knowledge recall, you build a cohesive development environment that bridges coding and project management.
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Jira MCP Server Claude Code Integration Guide](/claude-skills-guide/articles/jira-mcp-server-claude-code-integration-guide/)
+- [ClickUp MCP Server Workflow Automation Guide](/claude-skills-guide/articles/clickup-mcp-server-workflow-automation-guide/)
+- [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

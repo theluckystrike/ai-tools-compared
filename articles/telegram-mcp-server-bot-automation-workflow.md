@@ -12,7 +12,7 @@ score: 7
 
 # Telegram MCP Server Bot Automation Workflow
 
-The Telegram Model Context Protocol server enables Claude Code to interact with Telegram bots through natural language. This integration opens powerful possibilities for building responsive automation workflows, from handling customer support queries to managing team notifications. This guide walks through setting up the Telegram MCP server and creating practical automation workflows.
+[The Telegram Model Context Protocol server enables Claude Code to interact with Telegram bots](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) through natural language. This integration opens powerful possibilities for building responsive automation workflows, from handling customer support queries to managing team notifications. This guide walks through setting up the Telegram MCP server and creating practical automation workflows.
 
 ## Prerequisites and Initial Setup
 
@@ -165,5 +165,12 @@ The MCP server's permission system controls what your bot can access. Review per
 ## Conclusion
 
 The Telegram MCP server transforms Claude Code into a powerful bot development platform. By combining MCP server tools with specialized skills like pdf, tdd, supermemory, and frontend-design, you can create sophisticated automation workflows that handle complex interactions. Start with simple command responses and gradually build toward multi-step workflows as your requirements grow.
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Discord MCP Server Community Automation Guide](/claude-skills-guide/articles/discord-mcp-server-community-automation-guide/)
+- [Slack MCP Server Team Notification Automation](/claude-skills-guide/articles/slack-mcp-server-team-notification-automation/)
+- [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
