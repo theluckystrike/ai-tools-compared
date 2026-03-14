@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Hybrid Search Workflow Tutorial"
 description: "A comprehensive guide to building hybrid search workflows using Claude Code. Learn how to combine semantic and keyword search, integrate vector."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-hybrid-search-workflow-tutorial/
 categories: [workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Hybrid Search Workflow Tutorial
@@ -204,7 +208,7 @@ The RRF algorithm gives a boost to documents that rank highly in either search m
 
 ## Integrating with Claude Code Workflows
 
-Claude Code can dramatically speed up your hybrid search implementation. Here are practical ways to leverage it:
+Claude Code can dramatically speed up your hybrid search implementation. Here are practical ways to use it:
 
 **Prompt for initial setup:**
 ```

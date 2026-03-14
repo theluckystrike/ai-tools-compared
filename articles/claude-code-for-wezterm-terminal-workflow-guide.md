@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for WezTerm Terminal Workflow Guide"
 description: "Master the integration between Claude Code and WezTerm terminal emulator. Learn practical workflows for enhanced productivity, custom keybindings, and."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-wezterm-terminal-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for WezTerm Terminal Workflow Guide
 
@@ -106,7 +110,7 @@ This approach maintains your Claude Code conversation state, files being edited,
 
 ## Integrating with Claude Code Skills
 
-Claude Code's skill system pairs exceptionally well with WezTerm's automation capabilities. You can create skills that leverage WezTerm's CLI for terminal management, enabling sophisticated workflows that span Claude Code's reasoning and WezTerm's execution environment.
+Claude Code's skill system pairs exceptionally well with WezTerm's automation capabilities. You can create skills that use WezTerm's CLI for terminal management, enabling sophisticated workflows that span Claude Code's reasoning and WezTerm's execution environment.
 
 For example, a skill that manages multiple development environments might use WezTerm to spawn specific terminal configurations:
 
@@ -174,7 +178,7 @@ config.animation_fps = 30
 
 ## Conclusion
 
-WezTerm and Claude Code together form a highly productive development environment. By leveraging WezTerm's performance, multiplexing, and configuration flexibility, you can create workflows that make Claude Code interactions more seamless and effective. Start with the basic configurations in this guide, then customize based on your specific needs and workflow patterns.
+WezTerm and Claude Code together form a highly productive development environment. By using WezTerm's performance, multiplexing, and configuration flexibility, you can create workflows that make Claude Code interactions more seamless and effective. Start with the basic configurations in this guide, then customize based on your specific needs and workflow patterns.
 
 The key is experimentation—tailor your setup to match how you actually work, and both tools will become indispensable parts of your development toolkit.
 

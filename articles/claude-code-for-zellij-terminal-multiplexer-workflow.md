@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Zellij Terminal Multiplexer Workflow"
 description: "A comprehensive guide to integrating Claude Code with Zellij for powerful terminal workflows. Learn how to leverage Zellij's features for persistent."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-zellij-terminal-multiplexer-workflow/
 categories: [workflow]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -219,7 +223,7 @@ keybinds {
 
 ## Conclusion
 
-Zellij provides a robust foundation for Claude Code workflows through its session persistence, flexible layouts, and plugin ecosystem. By setting up proper layouts, leveraging multi-pane configurations, and creating automation scripts, you can build a development environment that maintains context across sessions and enables parallel AI-assisted development. The combination of Zellij's modern architecture with Claude Code's AI capabilities creates a powerful, productive workflow for developers working on complex projects.
+Zellij provides a robust foundation for Claude Code workflows through its session persistence, flexible layouts, and plugin ecosystem. By setting up proper layouts, using multi-pane configurations, and creating automation scripts, you can build a development environment that maintains context across sessions and enables parallel AI-assisted development. The combination of Zellij's modern architecture with Claude Code's AI capabilities creates a powerful, productive workflow for developers working on complex projects.
 
 Start with simple layouts and gradually add complexity as you become more comfortable with Zellij's capabilities. The investment in setting up your ideal environment will pay dividends in sustained productivity and reduced context loss throughout your development sessions.
 

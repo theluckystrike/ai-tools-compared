@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Evals Framework Workflow Tutorial"
 description: "Learn how to build evaluation workflows with Claude Code. This tutorial covers setting up evals frameworks, creating test cases, running evaluations."
@@ -7,7 +8,10 @@ categories: [tutorials]
 tags: [claude-code, claude-skills, evals, testing, framework]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-evals-framework-workflow-tutorial/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Evals Framework Workflow Tutorial
 

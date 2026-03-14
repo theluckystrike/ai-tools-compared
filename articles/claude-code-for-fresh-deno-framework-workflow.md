@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Fresh Deno Framework Workflow"
 description: "Learn how to leverage Claude Code CLI to build, debug, and deploy Fresh Deno applications with practical examples and actionable workflows."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-fresh-deno-framework-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 

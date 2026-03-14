@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Gitleaks Secret Scanning Workflow"
 description: "Learn how to integrate Claude Code with Gitleaks for automated secret scanning in your development workflow. Practical examples and actionable advice."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-gitleaks-secret-scanning-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 Secret leaks are among the most critical security vulnerabilities in software development. A single exposed API key or database password can lead to data breaches, unauthorized access, and significant financial damage. Gitleaks is a powerful open-source tool that scans Git repositories for secrets, and when combined with Claude Code, it becomes an even more powerful part of your security workflow. This guide shows you how to integrate Claude Code with Gitleaks for automated secret scanning.

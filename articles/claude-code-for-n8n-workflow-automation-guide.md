@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for n8n Workflow Automation Guide"
 description: "Master AI-powered workflow automation by integrating Claude Code with n8n. Learn practical patterns for building intelligent automation pipelines."
@@ -7,7 +8,10 @@ categories: [workflows]
 tags: [claude-code, claude-skills, n8n, automation, workflow-automation, ai-agents]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-n8n-workflow-automation-guide/
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 # Claude Code for n8n Workflow Automation Guide

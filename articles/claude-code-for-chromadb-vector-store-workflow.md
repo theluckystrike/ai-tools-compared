@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for ChromaDB Vector Store Workflow"
 description: "Learn how to build efficient vector store workflows using ChromaDB with Claude Code. Practical examples for semantic search, embeddings, and AI-powered."
@@ -7,12 +8,15 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-chromadb-vector-store-workflow/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for ChromaDB Vector Store Workflow
 
-Vector databases have become essential infrastructure for building AI applications that require semantic search, retrieval-augmented generation (RAG), and knowledge management systems. ChromaDB stands out as a popular open-source vector database that's easy to set up and integrates seamlessly with Python-based AI workflows. When combined with Claude Code, you can create powerful automation for managing document embeddings, building knowledge bases, and implementing intelligent search systems.
+Vector databases have become essential infrastructure for building AI applications that require semantic search, retrieval-augmented generation (RAG), and knowledge management systems. ChromaDB stands out as a popular open-source vector database that's easy to set up and integrates smoothly with Python-based AI workflows. When combined with Claude Code, you can create powerful automation for managing document embeddings, building knowledge bases, and implementing intelligent search systems.
 
 This guide walks you through building a complete ChromaDB vector store workflow using Claude Code, from initial setup to advanced querying patterns.
 

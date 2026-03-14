@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Grafana Plugin Development Workflow"
 description: "Learn how to use Claude Code to streamline Grafana plugin development, from scaffolding to testing, with practical examples and actionable workflows."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-grafana-plugin-development-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 
@@ -244,7 +248,7 @@ try {
 
 1. **Start with the official scaffolding** rather than writing from scratch—this ensures compatibility with Grafana's plugin infrastructure.
 
-2. **Use TypeScript throughout**—Grafana's type definitions are comprehensive, and Claude leverages them to generate accurate code.
+2. **Use TypeScript throughout**—Grafana's type definitions are comprehensive, and Claude uses them to generate accurate code.
 
 3. **Keep options minimal**—only expose settings that users need to customize. Claude can help you refactor complex options into simpler schemas.
 

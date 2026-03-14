@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Beam Cloud ML Workflow Guide"
 description: "Master Beam Cloud ML pipeline development with Claude Code. Learn efficient workflows for distributed training, model deployment, and scalable machine."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-beam-cloud-ml-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Beam Cloud ML Workflow Guide
 
@@ -49,7 +53,7 @@ This project uses Beam Cloud for model serving and training.
 
 ## Building ML Pipelines with Claude Code
 
-Claude Code excels at generating boilerplate code and structuring complex ML workflows. When working with Beam Cloud, leverage Claude Code's understanding of both the platform and ML best practices.
+Claude Code excels at generating boilerplate code and structuring complex ML workflows. When working with Beam Cloud, use Claude Code's understanding of both the platform and ML best practices.
 
 ### Data Preprocessing Workflows
 

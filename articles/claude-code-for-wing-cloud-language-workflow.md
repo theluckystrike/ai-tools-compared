@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Wing Cloud Language Workflow"
 description: "Learn how to integrate Claude Code into your Wing cloud language development workflow for faster infrastructure coding, testing, and deployment."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-wing-cloud-language-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Wing Cloud Language Workflow

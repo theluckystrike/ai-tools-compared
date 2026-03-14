@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Metabase Analytics Workflow Guide"
 description: "Learn how to integrate Claude Code with Metabase to build powerful analytics workflows, automate queries, and streamline data exploration."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-metabase-analytics-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Metabase Analytics Workflow Guide
@@ -87,7 +91,7 @@ curl -X POST "https://your-metabase.com/api/dataset" \
   }'
 ```
 
-This approach lets you leverage Metabase's database connections while using Claude Code to construct and execute sophisticated queries.
+This approach lets you use Metabase's database connections while using Claude Code to construct and execute sophisticated queries.
 
 ## Automating Recurring Analytics
 

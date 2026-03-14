@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for MCP Prompt Server Workflow"
 description: "Learn how to build an efficient MCP prompt server workflow with Claude Code. This guide covers practical patterns for creating, managing, and."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-mcp-prompt-server-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for MCP Prompt Server Workflow
 
-The Model Context Protocol (MCP) prompt server workflow represents one of the most powerful patterns for extending Claude Code's capabilities. By serving carefully crafted prompts through a dedicated server, you can create reusable, version-controlled prompt management systems that integrate seamlessly with your development workflow.
+The Model Context Protocol (MCP) prompt server workflow represents one of the most powerful patterns for extending Claude Code's capabilities. By serving carefully crafted prompts through a dedicated server, you can create reusable, version-controlled prompt management systems that integrate smoothly with your development workflow.
 
 This guide walks you through building an MCP prompt server workflow from scratch, with practical examples you can adapt to your projects.
 

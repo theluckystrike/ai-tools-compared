@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Standard Version Workflow"
 description: "Learn how to use Claude Code to implement standard version workflows including semantic versioning, changelog generation, and automated release management."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-standard-version-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 Version management is a critical aspect of software development that often gets overlooked until releases become chaotic. Whether you're maintaining a small library or a large enterprise application, having a standardized version workflow saves time, reduces errors, and keeps your team synchronized. Claude Code offers powerful capabilities to automate and streamline version-related tasks, making it an invaluable tool for developers who want to maintain consistent release processes.
@@ -23,7 +27,7 @@ Claude Code can help you determine the appropriate version bump by analyzing you
 
 ## Setting Up Version Workflow with Claude Code
 
-To implement a standard version workflow, you'll want to leverage Claude Code's skills for automation. The key skills to use include the **tdd** skill for test-driven development alongside version changes, the **changelog** skill for automatic changelog generation, and the **git-workflow** skill for managing version-related git operations.
+To implement a standard version workflow, you'll want to use Claude Code's skills for automation. The key skills to use include the **tdd** skill for test-driven development alongside version changes, the **changelog** skill for automatic changelog generation, and the **git-workflow** skill for managing version-related git operations.
 
 Start by creating a version management script that Claude Code can help you build:
 

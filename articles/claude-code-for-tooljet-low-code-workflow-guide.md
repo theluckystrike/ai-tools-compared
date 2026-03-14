@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Tooljet Low Code Workflow Guide"
 description: "Learn how to integrate Claude Code with Tooljet to build powerful low-code workflows faster. Practical examples, code snippets, and actionable advice."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-tooljet-low-code-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -183,7 +187,7 @@ For query timeout issues, review your database indexes and consider adding pagin
 
 ## Conclusion
 
-Integrating Claude Code with Tooljet transforms low-code development from a visual-only experience into an intelligent partnership. Claude Code handles the technical complexity while Tooljet provides the visual interface, enabling developers to build sophisticated applications more efficiently. Start with simple workflows, progressively incorporate more complex patterns, and leverage Claude Code's assistance for debugging and optimization.
+Integrating Claude Code with Tooljet transforms low-code development from a visual-only experience into an intelligent partnership. Claude Code handles the technical complexity while Tooljet provides the visual interface, enabling developers to build sophisticated applications more efficiently. Start with simple workflows, progressively incorporate more complex patterns, and use Claude Code's assistance for debugging and optimization.
 
 The combination of AI-assisted development and visual low-code platforms represents the future of internal tool development—faster builds, fewer errors, and more maintainable applications.
 {% endraw %}

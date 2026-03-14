@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Browser Automation Workflow Guide"
 description: "Master browser automation with Claude Code: set up Playwright MCP, create reusable automation skills, and build reliable scraping and testing workflows."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-browser-automation-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Browser Automation Workflow Guide
 
