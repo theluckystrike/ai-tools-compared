@@ -67,7 +67,9 @@ Claude Code's skill system adds a layer that Cursor does not have. You can defin
 
 ```bash
 # Using a skill for consistent component creation
-claude --skill react/component "Create a DataTable component with sorting, filtering, and pagination"
+# Place react-component.md in .claude/ then invoke:
+/react-component
+Create a DataTable component with sorting, filtering, and pagination
 ```
 
 The skill encodes your team's conventions — file structure, naming, test patterns — so every component follows the same standards. This is particularly powerful for teams where consistency matters more than speed of individual edits.
@@ -160,11 +162,9 @@ Cursor is more predictable — you know exactly what you'll pay each month. Clau
 This is an area where Claude Code differentiates significantly. The skill system allows you to create, share, and version-control reusable AI workflows:
 
 ```bash
-# Install a community skill
-claude skill install security/dependency-audit
-
-# Run it against your project
-claude --skill security/dependency-audit "Check all dependencies for known vulnerabilities and suggest updates"
+# Place a security/dependency-audit skill file in .claude/ then invoke:
+/dependency-audit
+Check all dependencies for known vulnerabilities and suggest updates
 ```
 
 Skills can encode domain-specific knowledge — your team's coding standards, deployment procedures, review checklists — in a way that Cursor's extension system does not support. Cursor extensions add IDE features; Claude Code skills add AI capabilities.

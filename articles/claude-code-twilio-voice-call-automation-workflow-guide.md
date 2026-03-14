@@ -27,13 +27,14 @@ Before diving into implementation, ensure you have your Twilio account credentia
 
 ## Building Your First Twilio Voice Skill
 
-Let's create a skill that handles incoming support calls with an intelligent IVR system. Start by initializing a new Claude Code skill structure in your project:
+Let's create a skill that handles incoming support calls with an intelligent IVR system. Start by creating a skill file in your `.claude/` directory:
 
 ```bash
-claude skill create twilio-voice-automation
+mkdir -p .claude
+touch .claude/twilio-voice-automation.md
 ```
 
-This creates the basic skill scaffolding. Now, let's build the core functionality that handles incoming calls and presents an IVR menu:
+Now, let's build the core functionality that handles incoming calls and presents an IVR menu:
 
 ```javascript
 // skills/twilio-voice-automation/index.js

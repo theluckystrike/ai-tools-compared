@@ -33,15 +33,13 @@ Claude Code offers specialized skills that streamline React component creation. 
 
 A practical example using Claude Code skills for React development:
 
-```bash
-# Install a React-focused skill for component generation
-claude skill install react/component-generator
-
-# Generate a new component with TypeScript and tests
-claude generate component UserProfile --typescript --with-tests --storybook
+```
+# Place a component-generator skill in .claude/ then invoke:
+/component-generator
+Create a UserProfile component with TypeScript, tests, and Storybook configuration
 ```
 
-This command triggers a skill that creates the component file, TypeScript definitions, corresponding test file, and Storybook configuration—all from a single prompt. The skill understands React best practices and applies them consistently across your project.
+This invokes the skill, which creates the component file, TypeScript definitions, corresponding test file, and Storybook configuration—all from a single prompt. The skill understands React best practices and applies them consistently across your project.
 
 Cursor achieves similar results through its chat interface, but requires more manual guidance for each component. You'd typically:
 1. Open the Cursor chat
@@ -55,9 +53,10 @@ React state management presents unique challenges that differ from other framewo
 
 Here's how Claude Code handles Redux Toolkit setup with a skill:
 
-```bash
-# Generate a complete Redux slice with actions and selectors
-claude redux create-slice auth --slices user,permissions --async-thunks login,logout
+```
+# Place a redux-toolkit skill in .claude/ then invoke:
+/redux-toolkit
+Create an auth slice with user and permissions sub-slices, including login and logout async thunks
 ```
 
 The skill generates:
@@ -72,9 +71,10 @@ Cursor would require explaining the Redux Toolkit structure in each conversation
 
 Testing React applications requires different strategies—unit tests for components, integration tests for user flows, and end-to-end tests for critical paths. Claude Code's skill system excels here by encoding testing patterns.
 
-```bash
-# Run a TDD workflow skill
-claude skill invoke tdd --component Button --test-library testing-library
+```
+# Invoke the built-in tdd skill:
+/tdd
+Create a Button component using testing-library, tests first
 ```
 
 This skill:
@@ -91,16 +91,11 @@ Let's examine a common scenario: building a data table component with sorting, f
 
 **With Claude Code:**
 
-```bash
-claude skill install react/data-table
-
-# Generate the complete component with all features
-claude generate data-table UsersTable \
-  --columns name,email,role,createdAt \
-  --sortable \
-  --filterable \
-  --paginated \
-  --page-size 25
+```
+# Place a data-table skill in .claude/ then invoke:
+/data-table
+Create a UsersTable component with columns for name, email, role, and createdAt.
+Include sorting, filtering, pagination, and a default page size of 25.
 ```
 
 The skill understands React patterns like:
@@ -121,15 +116,14 @@ Cursor generates solid code but may produce slightly different implementations e
 
 React performance optimization requires understanding component lifecycles, memoization strategies, and rendering patterns. Claude Code skills can encode these best practices:
 
-```bash
-# Analyze a component for performance issues
-claude skill invoke react/perf-audit --component ProductList
-
-# This skill:
-# - Identifies unnecessary re-renders
-# - Suggests memoization opportunities
-# - Checks for stable callbacks
-# - Reviews bundle size impact
+```
+# Place a perf-audit skill in .claude/ then invoke:
+/perf-audit
+Analyze the ProductList component for:
+- Unnecessary re-renders
+- Memoization opportunities
+- Stable callback patterns
+- Bundle size impact
 ```
 
 Cursor can perform similar analysis through conversation, but Claude Code's skill system makes performance auditing a repeatable, automated process that runs consistently on every component.
