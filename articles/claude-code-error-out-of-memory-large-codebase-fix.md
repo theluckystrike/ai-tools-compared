@@ -192,4 +192,11 @@ The `tdd` skill can help you work incrementally on large codebases by focusing o
 
 Claude Code out of memory errors with large codebases are solvable. Start with the quick fix of increasing Node.js memory via `NODE_OPTIONS`, then optimize your project configuration with `.claudeignore` and `claude.json`. Use targeted skills like `super记忆` and `tdd` to maintain efficiency, and break large tasks into focused sessions. These strategies keep your workflow productive regardless of codebase size.
 
+## Related Reading
+
+- [Claude Code Crashes on Large Files How to Fix](/claude-skills-guide/claude-code-crashes-on-large-files-how-to-fix/) — Similar issue: crashes vs OOM on large codebases
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) — Context management is key to avoiding memory issues
+- [Why Does Anthropic Limit Claude Code Context Window](/claude-skills-guide/why-does-anthropic-limit-claude-code-context-window/) — Understanding the engineering constraints behind memory limits
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All Claude Code error fix guides in one place
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

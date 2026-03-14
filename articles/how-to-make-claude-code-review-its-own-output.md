@@ -6,7 +6,6 @@ date: 2026-03-14
 author: theluckystrike
 permalink: /how-to-make-claude-code-review-its-own-output/
 ---
-{% raw %}
 
 # How to Make Claude Code Review Its Own Output
 
@@ -183,4 +182,3 @@ This makes review a standard part of your workflow rather than an occasional ste
 Building self-review into your Claude Code workflow takes minimal setup but delivers consistent value. Start with prompt-based reviews, add skills for structure, and iterate based on what your projects need. The goal isn't perfect code—it's fewer mistakes reaching your codebase and better understanding of how to improve both AI-assisted and manual development.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
