@@ -81,4 +81,11 @@ Kubernetes cost optimization requires systematic attention rather than occasiona
 
 The skills and tools available through Claude Code and the broader ecosystem provide powerful capabilities for managing infrastructure costs. By automating repetitive analysis and configuration tasks, you free your team to focus on application development while maintaining control over cloud spending.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
