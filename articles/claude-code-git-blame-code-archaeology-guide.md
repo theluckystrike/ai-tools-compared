@@ -166,4 +166,11 @@ Skills like the tdd skill can integrate testing context, showing whether specifi
 
 Git blame transforms code files from static text into historical documents. Combined with Claude Code's natural language interface, it becomes a powerful tool for code archaeology—understanding why code exists, who wrote it, and what problems it was meant to solve. Start with basic blame commands, then progressively adopt advanced flags like `-w`, `-M`, and `-C` as your investigations require. Build custom skills around your team's common patterns, and your codebase's history becomes an open book rather than a mystery.
 
+## Related Reading
+
+- [Claude Code Git Workflow Best Practices Guide](/claude-skills-guide/claude-code-git-workflow-best-practices-guide/) — Good practices make blame archaeology easier
+- [How to Make Claude Code Understand Domain Business Logic](/claude-skills-guide/how-to-make-claude-code-understand-domain-business-logic/) — Understanding history is key to domain knowledge
+- [Why Is Claude Code Good at Understanding Legacy Code](/claude-skills-guide/why-is-claude-code-good-at-understanding-legacy-code/) — Legacy code analysis complements git blame
+- [Claude Skills Tutorials Hub](/claude-skills-guide/tutorials-hub/) — More Claude Code how-to guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

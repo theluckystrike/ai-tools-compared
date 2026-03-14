@@ -200,4 +200,11 @@ Without guidance, Claude Code optimizes for simplicity and assumes success. By e
 
 The investment in teaching Claude Code proper async error handling pays dividends in production reliability. Your applications will handle network failures, timeouts, and unexpected errors without bringing down entire processes.
 
+## Related Reading
+
+- [Claude Code Skips Error Handling in Generated Code](/claude-skills-guide/claude-code-skips-error-handling-in-generated-code/) — Understanding why Claude skips error handling
+- [How to Make Claude Code Generate Consistent API Responses](/claude-skills-guide/how-to-make-claude-code-generate-consistent-api-responses/) — Async errors often surface in API responses
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Write tests for async error paths
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Error handling and debugging guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

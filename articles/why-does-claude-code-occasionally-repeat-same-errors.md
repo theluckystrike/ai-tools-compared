@@ -166,4 +166,11 @@ Understanding why Claude Code occasionally repeats errors helps you work more ef
 
 For developers building production applications, combining Claude Code with skills like tdd for test coverage, proper error handling patterns, and security-focused guidance creates a more reliable development experience. The key is treating Claude as a collaborator that needs clear direction rather than a mind reader that should somehow know your preferences automatically.
 
+## Related Reading
+
+- [Claude Code Keeps Making Same Mistake Fix Guide](/claude-skills-guide/claude-code-keeps-making-same-mistake-fix-guide/) — Systematic fix for recurring errors
+- [Why Does Claude Code Hallucinate Code Sometimes](/claude-skills-guide/why-does-claude-code-hallucinate-code-sometimes/) — Repeated errors often stem from hallucination
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Clear scope reduces error repetition
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Claude Code behavioral issue guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

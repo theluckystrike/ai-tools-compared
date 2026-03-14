@@ -160,4 +160,11 @@ Controlling Claude Code's tendency toward over-engineering requires explicit sco
 
 The goal isn't to limit Claude Code's capabilities—it's to direct them toward your actual needs. Start simple, expand when necessary, and never accept complexity you haven't explicitly requested.
 
+## Related Reading
+
+- [How to Make Claude Code Make Smaller Focused Changes](/claude-skills-guide/how-to-make-claude-code-make-smaller-focused-changes/) — Smaller changes prevent over-engineering
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Scoping prevents over-engineered solutions
+- [Best Way to Prompt Claude Code for Complex Features](/claude-skills-guide/best-way-to-prompt-claude-code-for-complex-features/) — Better prompts produce right-sized solutions
+- [Claude Skills Tutorials Hub](/claude-skills-guide/tutorials-hub/) — More how-to guides for Claude Code behavior
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

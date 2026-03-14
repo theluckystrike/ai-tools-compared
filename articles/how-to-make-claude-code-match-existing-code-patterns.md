@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "How to Make Claude Code Match Existing Code Patterns"
 description: "Practical techniques for guiding Claude Code to adopt your project's coding conventions, style guides, and architectural patterns. Includes real examples and skill recommendations."
@@ -11,6 +12,7 @@ permalink: /how-to-make-claude-code-match-existing-code-patterns/
 reviewed: true
 score: 7
 ---
+
 
 
 # How to Make Claude Code Match Existing Code Patterns

@@ -12,8 +12,11 @@ reviewed: true
 score: 7
 ---
 
+<<<<<<< HEAD
 
 {% raw %}
+=======
+>>>>>>> d103d2003802453259ba0638c75428ce7618f4f9
 
 # Why Does Claude Code Need So Much Context Window?
 
@@ -99,5 +102,11 @@ The next time you see Claude Code consuming significant context, recognize it as
 
 ---
 
+## Related Reading
+
+- [Why Does Anthropic Limit Claude Code Context Window](/claude-skills-guide/why-does-anthropic-limit-claude-code-context-window/) — Engineering explanation of context limits
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) — Work effectively within context limits
+- [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) — Supermemory reduces context window pressure
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Token optimization and context strategies
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

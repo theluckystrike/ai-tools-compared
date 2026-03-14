@@ -144,4 +144,11 @@ The key to working effectively with Claude Code isn't avoiding hallucinations—
 
 Understanding that hallucinations are an inherent characteristic of current AI models—not a bug to eliminate—helps you develop more effective debugging and verification habits. The combination of human oversight and AI assistance, when properly balanced, produces better results than relying on either alone.
 
+## Related Reading
+
+- [Claude Code Keeps Making Same Mistake Fix Guide](/claude-skills-guide/claude-code-keeps-making-same-mistake-fix-guide/) — Hallucinations can become recurring mistakes
+- [Claude Code Output Quality How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) — Reduce hallucinations with better prompting
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Clear scope reduces hallucination frequency
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — More guides on Claude Code behavior issues
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

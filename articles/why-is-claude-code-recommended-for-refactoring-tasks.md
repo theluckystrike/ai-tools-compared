@@ -12,8 +12,11 @@ reviewed: true
 score: 7
 ---
 
+<<<<<<< HEAD
 
 {% raw %}
+=======
+>>>>>>> d103d2003802453259ba0638c75428ce7618f4f9
 # Why Is Claude Code Recommended for Refactoring Tasks
 
 Refactoring existing code is one of the most challenging aspects of software development. You need to understand what the code does, identify improvements, and implement changes without introducing bugs. This is where Claude Code has emerged as a powerful ally for developers tackling refactoring projects.
@@ -129,5 +132,11 @@ For anyone maintaining or improving existing codebases, Claude Code offers tangi
 
 ---
 
+## Related Reading
+
+- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — Safe refactoring with test coverage
+- [Claude Code Cyclomatic Complexity Reduction](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/) — Complexity reduction is a key refactoring goal
+- [Why Is Claude Code Good at Understanding Legacy Code](/claude-skills-guide/why-is-claude-code-good-at-understanding-legacy-code/) — Understanding code is a prerequisite for refactoring
+- [Claude Code Technical Debt Tracking Workflow](/claude-skills-guide/claude-code-technical-debt-tracking-workflow/) — Refactoring reduces technical debt
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
