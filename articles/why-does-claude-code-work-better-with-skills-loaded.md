@@ -49,7 +49,7 @@ Skills don't just change what Claude says — they change what Claude does. The 
 When generating PDFs:
 1. Check if the content requires tables and use the table extraction pattern
 2. For multi-page documents, structure content with clear section breaks
-3. Use write_file for the PDF output, not bash commands
+3. Use the Write tool for the PDF output, not bash commands
 4. Verify the output file exists after generation
 ```
 
