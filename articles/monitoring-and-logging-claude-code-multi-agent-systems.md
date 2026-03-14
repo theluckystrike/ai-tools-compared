@@ -200,4 +200,12 @@ The `frontend-design` skill can help you build monitoring interfaces if you need
 
 Monitoring multi-agent Claude Code systems requires deliberate architecture. Start with structured logging, add health checks, and progressively build toward comprehensive observability as your system grows.
 
+
+## Related Reading
+
+- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Build the multi-agent architecture you will monitor and instrument for observability.
+- [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/articles/claude-code-multi-agent-subagent-communication-guide/) — Instrument inter-agent communication channels for comprehensive observability.
+- [Claude Code Agent Swarm Coordination Strategies](/claude-skills-guide/articles/claude-code-agent-swarm-coordination-strategies/) — Apply monitoring patterns to distributed agent swarm coordination workflows.
+- [Claude Skills Advanced Hub](/claude-skills-guide/advanced-hub/) — Explore advanced observability and coordination patterns for Claude Code agents.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

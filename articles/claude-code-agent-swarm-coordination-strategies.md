@@ -161,4 +161,12 @@ The **docx** skill also proves valuable when generating coordination reports or 
 
 Agent swarm coordination transforms Claude Code from a single assistant into a parallel processing platform. Start with the fan-out/fan-in pattern for independent tasks, scale to hierarchical trees for complex projects, and implement checkpointing for production reliability. The key insight: treat agents as disposable workers that communicate through structured channels, and your automation pipelines will scale horizontally with minimal overhead.
 
+
+## Related Reading
+
+- [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/articles/multi-agent-orchestration-with-claude-subagents-guide/) — Build the foundational orchestration model before scaling to swarm coordination.
+- [Fan-Out Fan-In Pattern with Claude Code Subagents](/claude-skills-guide/articles/fan-out-fan-in-pattern-claude-code-subagents/) — Apply fan-out fan-in for efficient parallel task distribution within agent swarms.
+- [Monitoring and Logging in Claude Code Multi-Agent Systems](/claude-skills-guide/articles/monitoring-and-logging-claude-code-multi-agent-systems/) — Implement observability to track swarm behavior and debug coordination issues.
+- [Claude Skills Advanced Hub](/claude-skills-guide/advanced-hub/) — Explore advanced multi-agent patterns and swarm coordination architectures.
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

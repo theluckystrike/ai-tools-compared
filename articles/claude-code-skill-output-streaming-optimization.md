@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code Skill Output Streaming Optimization
 
-When building Claude Code skills, the difference between a snappy, responsive skill and a sluggish one often comes down to how you handle output streaming. Understanding the streaming architecture and applying targeted optimizations can reduce latency by 30-70% in real-world scenarios.
+When building Claude Code skills, the difference between a snappy, responsive skill and a sluggish one often comes down to how you handle output streaming. Understanding the streaming architecture and applying targeted optimizations can reduce latency by 30-70% in real-world scenarios. For cost-conscious performance work, pair this with [Claude skills token optimization](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/).
 
 ## Understanding Claude Code Streaming Architecture
 
@@ -173,5 +173,13 @@ First, implement adaptive buffering and measure the improvement. Second, enable 
 Most skills will see meaningful improvements from the first two optimizations alone. The compression step provides diminishing returns unless you're dealing with genuinely large outputs.
 
 ---
+
+
+## Related Reading
+
+- [Claude Skills Slow Performance: Speed Up Guide](/claude-skills-guide/articles/claude-skills-slow-performance-speed-up-guide/) — Combine streaming optimizations with broader skill performance improvements.
+- [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — Reduce token consumption to complement streaming for faster, cheaper skill execution.
+- [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/articles/claude-skill-token-usage-profiling-and-optimization/) — Profile your skill token usage to identify where streaming optimizations have the biggest impact.
+- [Claude Skills Advanced Hub](/claude-skills-guide/advanced-hub/) — Explore advanced skill performance optimization patterns and techniques.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
