@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for GraphQL Code Generation Workflow"
-description: "Learn how to leverage Claude Code to automate and streamline your GraphQL code generation workflow. Practical examples and actionable advice for developers."
+description: "Learn how to leverage Claude Code to automate and streamline your GraphQL code generation workflow. Practical examples and actionable advice for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-graphql-code-generation-workflow/
@@ -241,3 +241,10 @@ The key is establishing clear conventions, maintaining schema-first development,
 
 Start small: use Claude Code to generate one type and its resolver, then expand to cover your entire schema. The incremental approach lets you validate the output and refine your conventions before scaling up.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

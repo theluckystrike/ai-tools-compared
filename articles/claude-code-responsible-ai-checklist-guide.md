@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Responsible AI Checklist: A Developer's Guide"
-description: "Use Claude Code responsibly with this practical checklist for developers. Covers security, testing, code review, and best practices for AI-assisted development."
+description: "Use Claude Code responsibly with this practical checklist for developers. Covers security, testing, code review, and best practices for AI-assisted."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-responsible-ai-checklist-guide/
@@ -215,5 +215,12 @@ Before marking any AI-assisted work complete:
 - [ ] Human review completed
 
 Using Claude Code responsibly means balancing productivity with quality. This checklist provides a framework, but adapt it to your team's specific needs and project requirements.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

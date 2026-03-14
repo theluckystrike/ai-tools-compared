@@ -157,4 +157,11 @@ Switching from Xcode to Claude Code doesn't mean abandoning Apple's development 
 
 The transition requires adjustment, but developers who make the switch typically find the productivity gains worth the initial learning curve. Start with small projects, establish good CLAUDE.md practices, and gradually expand your Claude Code usage as comfort grows.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

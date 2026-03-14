@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Beta Features: How to Access and Use Them"
-description: "A practical guide for developers and power users on accessing Claude Code beta features. Learn the setup process, configuration options, and practical examples."
+description: "A practical guide for developers and power users on accessing Claude Code beta features. Learn the setup process, configuration options, and practical."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-beta-features-how-to-access/
@@ -173,5 +173,12 @@ For production environments, stick with stable releases unless a specific beta f
 Accessing Claude Code beta features opens doors to advanced functionality that enhances your development workflow. Through command-line flags, configuration files, and beta skill installations, you can experiment with cutting-edge capabilities. Start with one beta feature, understand its behavior, then gradually incorporate more as you build confidence.
 
 The beta ecosystem continues expanding with skills like pdf for document processing, docx for Word document manipulation, and xlsx for spreadsheet operations all offering beta variants with enhanced functionality. Explore the available options, experiment safely, and provide feedback to help shape the future of Claude Code.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

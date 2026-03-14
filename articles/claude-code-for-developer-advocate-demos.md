@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Developer Advocate Demos"
-description: "Build compelling live demos with Claude Code. Practical patterns for developer advocates creating technical presentations, product walkthroughs, and code samples."
+description: "Build compelling live demos with Claude Code. Practical patterns for developer advocates creating technical presentations, product walkthroughs, and."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-for-developer-advocate-demos/
@@ -171,5 +171,12 @@ Track these reflections over time. You'll discover patterns—maybe your demos c
 Claude Code isn't just a development tool—it's a developer advocacy accelerator. By automating boilerplate, generating code on demand, and providing troubleshooting assistance, it frees you to focus on what matters: explaining your product's value and connecting with developers who want to build with you.
 
 The skills mentioned here—**tdd**, **frontend-design**, **pdf**, **supermemory**, and **skill-creator**—form a foundation. Build on it with custom skills that match your specific products and presentation style. Your future self, standing in front of an audience, will thank you.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

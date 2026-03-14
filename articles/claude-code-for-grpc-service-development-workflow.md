@@ -235,3 +235,10 @@ Claude Code transforms gRPC service development from a manual, error-prone proce
 
 Start with well-defined proto files, let Claude Code generate the scaffolding, then iteratively implement and test your service handlers. With these practices in place, you'll have production-ready gRPC services that are maintainable and scalable.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

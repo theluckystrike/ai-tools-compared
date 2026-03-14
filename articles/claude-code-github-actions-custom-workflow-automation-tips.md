@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code GitHub Actions Custom Workflow Automation Tips"
-description: "Master GitHub Actions custom workflow automation with Claude Code. Learn practical tips for creating efficient CI/CD pipelines, reusable workflows, and automated development processes."
+description: "Master GitHub Actions custom workflow automation with Claude Code. Learn practical tips for creating efficient CI/CD pipelines, reusable workflows, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-github-actions-custom-workflow-automation-tips/
@@ -365,3 +365,10 @@ GitHub Actions combined with Claude Code provides immense power for automating y
 Remember to regularly review your workflows for opportunities to reduce execution time, improve reliability, and enhance security. Automation is an iterative process—continuously refine your pipelines as your projects evolve.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

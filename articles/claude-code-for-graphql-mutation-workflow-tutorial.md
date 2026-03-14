@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for GraphQL Mutation Workflow Tutorial"
-description: "Learn how to leverage Claude Code CLI for building efficient GraphQL mutation workflows. This tutorial covers practical examples, best practices, and actionable advice for developers."
+description: "Learn how to leverage Claude Code CLI for building efficient GraphQL mutation workflows. This tutorial covers practical examples, best practices, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-graphql-mutation-workflow-tutorial/
@@ -266,3 +266,10 @@ Claude Code transforms GraphQL mutation development from manual coding to an ass
 
 The key is treating Claude Code as a collaborative partner—provide clear context about your schema, requirements, and constraints, and you'll receive well-structured, production-ready code that follows industry best practices.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Using Claude Code for SQL Query Optimization Workflow"
-description: "A practical guide to optimizing SQL queries using Claude Code's AI-powered workflow. Learn how to analyze, refactor, and improve database performance with concrete examples."
+description: "A practical guide to optimizing SQL queries using Claude Code's AI-powered workflow. Learn how to analyze, refactor, and improve database performance."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-sql-query-optimization-workflow/
@@ -155,6 +155,13 @@ Remember these core principles:
 - Correlated subqueries and N+1 patterns are frequent performance killers
 
 The workflow scales from simple query tweaks to comprehensive schema reviews. As you build experience, you'll find that most performance issues fall into recognizable patterns—and Claude Code helps you identify and fix them faster than ever.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

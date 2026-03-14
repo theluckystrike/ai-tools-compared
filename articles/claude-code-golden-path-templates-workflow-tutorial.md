@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Golden Path Templates & Workflow Tutorial"
-description: "Master Claude Code's golden path templates and workflow patterns. Learn how to leverage pre-built skill templates, automate repetitive tasks, and build efficient development workflows."
+description: "Master Claude Code's golden path templates and workflow patterns. Learn how to leverage pre-built skill templates, automate repetitive tasks, and build."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-golden-path-templates-workflow-tutorial/
@@ -289,3 +289,10 @@ Steps only execute when their conditions evaluate to true, enabling intelligent 
 Golden path templates transform Claude Code from a conversational assistant into a powerful workflow engine. By combining skills into orchestrated pipelines, you can automate complex processes, enforce consistency, and accelerate development. Start with built-in templates, then customize and create your own to match your team's specific needs.
 
 Remember: golden paths work best when they're focused, configurable, and well-documented. Begin with simple workflows and iterate toward more sophisticated automation as your needs evolve.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

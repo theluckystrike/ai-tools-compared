@@ -205,3 +205,10 @@ Claude Code accelerates each step by generating boilerplate code, suggesting pat
 
 Remember that distributed tracing is an iterative practice. Start simple, add instrumentation where you need visibility, and refine as your system evolves.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

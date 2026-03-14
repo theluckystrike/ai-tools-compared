@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Claude Code as Your Technical Co-founder: Workflow Productivity Guide"
-description: "Learn how to leverage Claude Code as a technical co-founder to accelerate development workflows, make better architectural decisions, and ship products faster."
+title: "Claude Code as Your Technical Co-founder: Workflow."
+description: "Learn how to leverage Claude Code as a technical co-founder to accelerate development workflows, make better architectural decisions, and ship products."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-technical-cofounder-workflow-productivity/
@@ -276,3 +276,10 @@ Claude Code as a technical co-founder isn't about replacing human judgment—it'
 Start with small interactions, build context over time, and watch as your development velocity transforms. Your virtual technical co-founder is ready to help you ship faster.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

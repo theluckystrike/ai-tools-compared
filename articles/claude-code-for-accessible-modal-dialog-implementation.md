@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Accessible Modal Dialog Implementation"
-description: "Learn how to implement accessible modal dialogs using Claude Code. This guide covers ARIA attributes, focus management, keyboard navigation, and practical implementation patterns."
+description: "Learn how to implement accessible modal dialogs using Claude Code. This guide covers ARIA attributes, focus management, keyboard navigation, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-accessible-modal-dialog-implementation/
@@ -253,3 +253,10 @@ Accessible modal dialog implementation requires attention to detail, but the pat
 
 Remember: an accessible modal isn't just about meeting WCAG requirements—it's about ensuring all users can successfully interact with your application. Invest the time to get it right, and your users will thank you.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

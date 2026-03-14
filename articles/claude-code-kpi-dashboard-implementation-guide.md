@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code KPI Dashboard Implementation Guide"
-description: "Build a KPI dashboard with Claude Code. Step-by-step implementation using data aggregation, visualization skills, and automation for real-time metrics tracking."
+description: "Build a KPI dashboard with Claude Code. Step-by-step implementation using data aggregation, visualization skills, and automation for real-time metrics."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-kpi-dashboard-implementation-guide/
@@ -171,5 +171,12 @@ Document your metric definitions within the skill itself. Future you (or team me
 A Claude Code KPI dashboard automates metric collection and visualization, saving hours of manual tracking. Start with basic Git metrics, then expand to include CI/CD data, error tracking, and business KPIs as your implementation matures.
 
 The combination of skills powers a complete solution: canvas-design for visualizations, pdf for reports, supermemory for historical storage, and tdd for reliable calculations. Your dashboard becomes a living document that improves alongside your project.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
