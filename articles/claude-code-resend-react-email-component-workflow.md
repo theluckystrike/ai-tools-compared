@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Resend React Email Component Workflow"
-description: "Master the workflow of building email templates with React Email and Resend using Claude Code. Learn practical patterns for creating, testing, and sending emails programmatically."
+description: "Master the workflow of building email templates with React Email and Resend using Claude Code. Learn practical patterns for creating, testing, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, resend, react-email, email-templates, workflow]
@@ -232,3 +232,10 @@ Error handling is crucial—implement retry logic for failed sends and log failu
 ## Conclusion
 
 The combination of Claude Code, React Email, and Resend creates a powerful email development workflow. React Email's component-based approach makes templates maintainable, Resend's API simplifies delivery, and Claude Code accelerates development and debugging. Start with simple templates, establish consistent patterns, and expand your email system as your needs grow.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
