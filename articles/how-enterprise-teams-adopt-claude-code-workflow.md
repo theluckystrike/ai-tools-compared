@@ -159,10 +159,10 @@ Solution: Create a team command that lists all available skills with description
 Ask Claude directly: "search the team wiki for available skills and their descriptions"
 
 **Challenge: Onboarding New Team Members**
-Solution: Build a **onboarding** skill that walks new developers through setup:
+Solution: Build a custom **onboarding** skill that walks new developers through setup:
 
 ```
-/onboarding setup my dev environment --role backend-developer
+/onboarding set up my dev environment as a backend developer
 ```
 
 ## Measuring Success

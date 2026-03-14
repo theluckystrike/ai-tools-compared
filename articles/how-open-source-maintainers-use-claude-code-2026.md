@@ -95,7 +95,7 @@ New contributors face a steep learning curve. Maintainers use **supermemory** to
 
 When a first-time contributor asks a question, maintainers point them to the relevant knowledge base rather than typing the same explanation again.
 
-The **read_file** and **bash** tools integrate with onboarding scripts:
+The **Read** and **Bash** tools integrate with onboarding scripts:
 
 ```
 Generate a contributor guide based on the existing setup.sh and CONTRIBUTING.md
