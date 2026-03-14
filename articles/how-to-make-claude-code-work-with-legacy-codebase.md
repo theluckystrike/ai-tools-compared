@@ -3,6 +3,8 @@ layout: default
 title: "How to Make Claude Code Work with Legacy Codebase"
 description: "A practical guide to integrating Claude Code with legacy codebases. Learn proven strategies, skill recommendations, and workflow patterns for maintaining and modernizing older projects."
 date: 2026-03-14
+categories: [guides]
+tags: [claude-code, claude-skills, legacy-code, migration]
 author: "Claude Skills Guide"
 reviewed: true
 score: 8

@@ -6,6 +6,7 @@ date: 2026-03-14
 categories: [getting-started]
 tags: [getting-started, claude-code, beginners, installation]
 is_pillar: true
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

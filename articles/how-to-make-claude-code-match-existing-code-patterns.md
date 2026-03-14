@@ -3,6 +3,8 @@ layout: default
 title: "How to Make Claude Code Match Existing Code Patterns"
 description: "A practical guide for developers to make Claude Code generate code that matches your project's existing patterns, conventions, and style."
 date: 2026-03-14
+categories: [guides]
+tags: [claude-code, claude-skills, code-patterns, consistency]
 author: "Claude Skills Guide"
 reviewed: true
 score: 8

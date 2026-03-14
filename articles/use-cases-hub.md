@@ -6,6 +6,7 @@ date: 2026-03-14
 categories: [use-cases]
 tags: [use-cases, examples, applications, developers]
 is_pillar: true
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---
