@@ -5,7 +5,7 @@ description: "Learn how to safely rollback problematic Claude Code skill updates
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, claude-skills]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 ---

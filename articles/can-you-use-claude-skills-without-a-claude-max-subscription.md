@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Can You Use Claude Skills Without a Claude Max Subscription?

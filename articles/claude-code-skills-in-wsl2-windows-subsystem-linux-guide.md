@@ -7,7 +7,7 @@ categories: [guides]
 tags: [claude-code, wsl2, windows-subsystem-linux, skills]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Claude Code Skills in WSL2: A Practical Setup Guide

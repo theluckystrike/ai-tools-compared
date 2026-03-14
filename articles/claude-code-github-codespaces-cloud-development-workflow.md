@@ -5,7 +5,7 @@ description: "A practical guide to building a cloud development workflow with Cl
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, github-codespaces, cloud-development, devops, tdd, supermemory]
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---

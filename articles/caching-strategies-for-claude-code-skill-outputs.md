@@ -3,7 +3,7 @@ layout: post
 title: "Caching Strategies for Claude Code Skill Outputs"
 description: "Practical caching approaches to speed up Claude Code skill execution. Store skill outputs, use persistent storage, and reduce redundant processing across sessions."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
 tags: [claude-code, claude-skills, caching, performance]
 reviewed: true
@@ -56,7 +56,7 @@ echo "$OUTPUT" > "$CACHED_OUTPUT"
 echo "$OUTPUT"
 ```
 
-This pattern works with any skill that produces file output. The `docx` skill, the `pptx` skill, and the `algorithmic-art` skill all generate deterministic outputs from input data—perfect candidates for this approach.
+This pattern works with any skill that produces file output. The `docx` skill and the `pptx` skill both generate deterministic outputs from input data—perfect candidates for this approach.
 
 ### Cache Invalidation Strategies
 
@@ -205,7 +205,7 @@ Different skills warrant different caching strategies:
 
 **The `frontend-design` skill**: Cache design token computations and component scaffold outputs. Design systems often repeat patterns—caching computed styles avoids re-parsing the same token files.
 
-**The `algorithmic-art` skill**: Cache rendered outputs by seed value. Since algorithmic art with the same seed produces identical results, caching renders provides instant delivery on repeated seed requests.
+**The `canvas-design` skill**: Cache generated visual assets when the same design brief is reused. Since designs from identical prompts tend to converge, caching avoids redundant generation.
 
 **The `supermemory` skill**: This skill handles caching internally by design, but you can enhance it by providing context about what information was previously retrieved in your session.
 

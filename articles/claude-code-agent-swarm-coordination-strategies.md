@@ -3,8 +3,9 @@ layout: post
 title: "Claude Code Agent Swarm Coordination Strategies"
 description: "Practical strategies for coordinating multiple Claude Code agents in parallel. Learn about fan-out/fan-in patterns, message routing, and state synchronization for multi-agent workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 reviewed: true
+score: 8
 categories: [advanced]
 tags: [claude-code, agent-swarm, multi-agent, coordination, parallel-execution]
 ---

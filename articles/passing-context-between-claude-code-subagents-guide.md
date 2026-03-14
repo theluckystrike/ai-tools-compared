@@ -7,7 +7,7 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 reviewed: true
-score: 
+score: 8
 ---
 
 # Passing Context Between Claude Code Subagents Guide

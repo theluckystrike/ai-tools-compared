@@ -70,12 +70,12 @@ This three-skill pipeline produces both technical and user documentation while m
 
 ### Code Review and Refactoring
 
-Chain **tdd** with the **algorithmic-art** skill for visual code analysis:
+Chain **tdd** with **pdf** to combine test generation with documentation:
 
-1. **tdd** analyzes code structure and identifies improvement areas
-2. **algorithmic-art** generates visualization of code dependencies and relationships
+1. **tdd** analyzes code structure and generates test cases for key modules
+2. **pdf** produces a summary document of the test plan and coverage strategy
 
-The combination helps teams understand complex codebases through both analytical tests and visual diagrams.
+The combination produces both executable tests and documentation suitable for sharing with stakeholders.
 
 ### Multi-Format Content Creation
 

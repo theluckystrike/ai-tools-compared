@@ -155,7 +155,7 @@ layout: post
 title: "PDF Manipulation Skill"
 description: "Work with PDF files using Python libraries"
 date: 2026-01-15
-author: theluckystrike
+author: "Claude Skills Guide"
 ---
 ```
 
@@ -167,7 +167,7 @@ layout: post
 title: "Frontend Design Assistant"
 description: "Generate responsive layouts, components, and styling with Tailwind CSS"
 date: 2026-02-20
-author: theluckystrike
+author: "Claude Skills Guide"
 tags: [frontend, design, tailwind, css, ui]
 ---
 ```
@@ -180,7 +180,7 @@ layout: post
 title: "TDD Companion"
 description: "Write tests first, then implement features"
 date: 2026-02-10
-author: theluckystrike
+author: "Claude Skills Guide"
 ---
 ```
 
@@ -196,7 +196,7 @@ Only include fields you actually need. Each additional line is another opportuni
 
 ### Use Templates
 
-When creating new skills, start from a proven template rather than writing front matter from scratch. This is especially helpful when working with complex skills like the [supermemory skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) or the algorithmic-art skill that might require additional metadata.
+When creating new skills, start from a proven template rather than writing front matter from scratch. This is especially helpful when working with complex skills like the [supermemory skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) or the canvas-design skill that might require additional metadata.
 
 ## Troubleshooting Persistent Issues
 
