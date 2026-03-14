@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Skill Versioning and Upgrades: What to Expect"
-description: "Understand how Claude Code skills are versioned, how upgrades work, and what changes you might encounter when maintaining or updating your skill collection."
+description: "Understand how Claude Code skills are versioned, how upgrades work, and what changes you might encounter when maintaining or updating your skill."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, versioning, upgrades, skill-management]
@@ -75,3 +75,10 @@ Document any customizations you've made to skills or any specific version requir
 ## Conclusion
 
 Skill versioning in Claude Code follows predictable patterns that, once understood, make managing your skill collection straightforward. By paying attention to version numbers, understanding what each type of update means, and building resilient workflows, you can take advantage of improvements while maintaining the stability your development work requires. Whether you're consuming skills from the registry or building your own, embracing these versioning practices ensures a smoother experience as the ecosystem continues to grow and evolve.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
