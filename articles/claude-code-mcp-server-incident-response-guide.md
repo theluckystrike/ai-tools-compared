@@ -207,14 +207,10 @@ Every good incident response strategy includes runbooks—documented procedures 
 
 ## Monitoring and Alerting Integration
 
-For production MCP server deployments, integrate with your existing monitoring stack. The `mcp-server-prometheus` community skill provides built-in metrics export:
+For production MCP server deployments, integrate with your existing monitoring stack. A custom skill can prompt Claude to query your Prometheus metrics endpoint and surface relevant data:
 
-```yaml
-# skill.md
-# Prompts for monitoring MCP server metrics
-- Monitor: Query Prometheus metrics endpoint
-- Alert: Check alertmanager for active alerts
-- Metrics: Retrieve cpu, memory, request_duration histograms
+```
+Check the Prometheus metrics endpoint for MCP server cpu, memory, and request_duration histograms. Report any anomalies.
 ```
 
 Connect to tools like Datadog, Grafana, or custom dashboards. Set up alerts for:
@@ -226,7 +222,7 @@ Connect to tools like Datadog, Grafana, or custom dashboards. Set up alerts for:
 
 ## Testing Your Incident Response
 
-Use chaos engineering principles to validate your response procedures. The `chaos-engineering` skill can help simulate failures:
+Use chaos engineering principles to validate your response procedures. Simulate failures directly in your terminal:
 
 ```bash
 # Kill random MCP processes to test supervisor

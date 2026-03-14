@@ -33,10 +33,10 @@ Before diving into complex diagnostics, verify the skill is even loading correct
 
 ### Verify Skill Registration
 
-Run the following to confirm your skill is recognized:
+Run the following to confirm your skill file exists:
 
 ```bash
-claude skills list
+ls ~/.claude/skills/
 ```
 
 Look for your skill in the output. If it's missing, the problem isn't a silent failure—it's a loading issue. Check your skill.md file exists in the correct directory (typically `~/.claude/skills/` or within your project).
