@@ -15,7 +15,7 @@ One of the most common frustrations developers face when working with Claude Cod
 
 Claude Code defaults to comprehensive solutions because it's trained to be helpful and anticipate potential needs. The model interprets requests through a lens of "what would a thorough developer do?" This creates a gap between what you want—a quick solution—and what Claude delivers—a production-ready system.
 
-Understanding this behavior is the first step toward correcting it. When you ask Claude Code to build something, it considers edge cases, scalability, error handling, and future extensibility by default. While these qualities matter for critical systems, they become噪声 when you need a rapid prototype or a simple automation script.
+Understanding this behavior is the first step toward correcting it. When you ask Claude Code to build something, it considers edge cases, scalability, error handling, and future extensibility by default. While these qualities matter for critical systems, they become unnecessary complexity when you need a rapid prototype or a simple automation script.
 
 ## Scope Control Through Explicit Constraints
 
