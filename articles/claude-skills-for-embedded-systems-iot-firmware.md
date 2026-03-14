@@ -3,6 +3,8 @@ layout: default
 title: "Claude Skills for Embedded Systems, IoT, and Firmware Dev..."
 description: "Claude skills for embedded systems IoT firmware: accelerate firmware development, automate hardware abstraction layers, streamline RTOS workflows, and b..."
 date: 2026-03-14
+categories: [guides]
+tags: [claude-code, claude-skills, embedded-systems, iot]
 author: "Claude Skills Guide"
 reviewed: true
 score: 8

@@ -49,7 +49,7 @@ Skills don't just change what Claude says — they change what Claude does. The 
 When generating PDFs:
 1. Check if the content requires tables and use the table extraction pattern
 2. For multi-page documents, structure content with clear section breaks
-3. Use write_file for the PDF output, not bash commands
+3. Use the Write tool for the PDF output, not bash commands
 4. Verify the output file exists after generation
 ```
 
@@ -99,7 +99,7 @@ The `pdf` skill and `docx` skill transform Claude from a text generator into a d
 
 [The `tdd` skill encodes test-first development philosophy](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). When you describe a feature, Claude with this skill loaded will:
 
-1. write_file failing tests that define expected behavior
+1. Write failing tests that define expected behavior
 2. Implement the minimum code to pass those tests
 3. Verify test passing before considering the task complete
 

@@ -4,7 +4,7 @@ title: "Why Claude Code Is Expensive: Understanding Large Context Token Costs"
 description: "Learn why large context windows cost more in Claude Code, how token limits affect pricing, and practical strategies to reduce costs while maintaining productivity."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, context-window, tokens, pricing, cost-optimization]
+tags: [claude-code, claude-skills, context-window, tokens, pricing, cost-optimization]
 author: "Claude Skills Guide"
 reviewed: true
 score: 7
@@ -76,7 +76,7 @@ Track your consumption through Claude Code's built-in metrics. You'll quickly id
 
 ## When Large Context Is Worth It
 
-Despite the costs, large context windows provide genuine value. Complex debugging sessions benefit from seeing your entire error trace and related code. Architecture reviews require understanding how components interact across your project. When using the `algorithmic-art` skill to generate complex visualizations, providing reference images and style guides in context produces better results.
+Despite the costs, large context windows provide genuine value. Complex debugging sessions benefit from seeing your entire error trace and related code. Architecture reviews require understanding how components interact across your project. When generating complex visualizations or graphics, providing reference images and style guides in context produces better results.
 
 The key is intentionality: use large context when the task genuinely requires it, not as a default approach.
 
