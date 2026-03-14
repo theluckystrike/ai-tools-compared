@@ -94,7 +94,7 @@ The **supermemory** skill acts as your project-specific knowledge base. It index
 "Why did we choose PostgreSQL over MongoDB for the user data? When was that decision made?"
 ```
 
-This skill connects with tools like Obsidian and Notion, creating a seamless knowledge management system. For full-stack engineers working on complex projects, supermemory eliminates the "where did we decide that?" moments that interrupt your flow.
+This skill connects with tools like Obsidian and Notion, creating a unified knowledge management system. For full-stack engineers working on complex projects, supermemory eliminates the "where did we decide that?" moments that interrupt your flow.
 
 When onboarding new team members or revisiting old code, supermemory provides instant context that would otherwise require searching through git history or Slack messages.
 

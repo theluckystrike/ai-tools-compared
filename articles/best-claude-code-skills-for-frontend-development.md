@@ -69,7 +69,7 @@ Pair this skill with Vitest for JavaScript projects or Jest for React applicatio
 "Where did we decide to use CSS modules over styled-components?"
 ```
 
-This skill connects with tools like Obsidian and Notion, creating a seamless knowledge management system. For large projects with multiple contributors, supermemory becomes essential for maintaining institutional knowledge. To make the most of supermemory without burning tokens, check out [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/).
+This skill connects with tools like Obsidian and Notion, creating a unified knowledge management system. For large projects with multiple contributors, supermemory becomes essential for maintaining institutional knowledge. To make the most of supermemory without burning tokens, check out [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/).
 
 ## alg Design Patterns and Architecture
 

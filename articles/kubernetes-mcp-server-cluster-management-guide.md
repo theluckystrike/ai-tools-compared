@@ -161,7 +161,7 @@ export async function healthCheck(cluster, namespace) {
 
 This pattern enables Claude to perform consistent health checks across multiple clusters, returning actionable summaries rather than raw data.
 
-For frontend development teams working on Kubernetes-native applications, combining the **frontend-design** skill with cluster management creates seamless developer experiences. You can preview changes against running services while simultaneously monitoring deployment status.
+For frontend development teams working on Kubernetes-native applications, combining the **frontend-design** skill with cluster management creates consistent developer experiences. You can preview changes against running services while simultaneously monitoring deployment status.
 
 ## Conclusion
 

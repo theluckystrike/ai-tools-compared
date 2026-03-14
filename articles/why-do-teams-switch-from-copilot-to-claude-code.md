@@ -62,7 +62,7 @@ A typical workflow might look like this:
 3. You review and iterate
 4. Claude commits the changes
 
-This end-to-end workflow is more seamless than Copilot's approach, which primarily focuses on code suggestion within the editor.
+This end-to-end workflow is more cohesive than Copilot's approach, which primarily focuses on code suggestion within the editor.
 
 ## Customization and Control
 

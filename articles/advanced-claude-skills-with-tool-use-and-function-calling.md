@@ -33,13 +33,13 @@ The `tools` field in a skill's front matter limits tool availability for that sk
 name: pdf
 description: Converts markdown documents to PDF files
 tools:
-  - read_file
-  - write_file
-  - bash
+  - Read
+  - Write
+  - Bash
 ---
 ```
 
-This skill can only use `read_file`, `write_file`, and `bash`. Even if the session has `web_fetch` enabled, the `pdf` skill cannot call it. This is useful for:
+This skill can only use `Read`, `Write`, and `Bash`. Even if the session has `WebFetch` enabled, the `pdf` skill cannot call it. This is useful for:
 
 - **Security**: Preventing skills from making unintended network calls
 - **Auditability**: A skill with a narrow tool set is easier to reason about
@@ -162,13 +162,13 @@ Now any skill can use `run_eslint` as a tool. For a code review skill:
 ---
 name: code-review
 tools:
-  - read_file
+  - Read
   - run_eslint
-  - bash
+  - Bash
 ---
 
 When reviewing code:
-1. Read the file with read_file
+1. Read the file with Read
 2. Run ESLint with run_eslint and note any violations
 3. Check for logical issues beyond what ESLint catches
 4. Provide a structured review with: violations, suggestions, and a summary score

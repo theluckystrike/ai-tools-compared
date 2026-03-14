@@ -213,7 +213,7 @@ Track these metrics to evaluate your Claude integrations:
 
 Claude skills transform LMS platforms from static content repositories into intelligent learning partners. By automating routine tasks like grading and FAQ responses, your platform frees instructors to focus on high-impact activities like mentorship and curriculum design.
 
-The implementations above provide starting points. Adapt the code snippets to your specific LMS, grading standards, and pedagogical approach. [The most effective EdTech AI tools feel invisible](/claude-skills-guide/how-do-i-combine-two-claude-skills-in-one-workflow/)—handling complexity behind the scenes while students and instructors experience seamless, personalized support.
+The implementations above provide starting points. Adapt the code snippets to your specific LMS, grading standards, and pedagogical approach. [The most effective EdTech AI tools feel invisible](/claude-skills-guide/how-do-i-combine-two-claude-skills-in-one-workflow/)—handling complexity behind the scenes while students and instructors experience consistent, personalized support.
 
 
 ## Related Reading

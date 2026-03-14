@@ -57,7 +57,7 @@ GitHub Copilot Workspace and Claude Code are both aiming at the same big idea: a
 
 ## Where GitHub Copilot Workspace Excels
 
-**GitHub-native workflow.** The issue-to-code flow in Copilot Workspace is genuinely seamless. You are looking at a bug report, you open Workspace, it proposes a plan, you edit the plan, it generates code. This end-to-end flow within GitHub reduces context-switching.
+**GitHub-native workflow.** The issue-to-code flow in Copilot Workspace is genuinely smooth. You are looking at a bug report, you open Workspace, it proposes a plan, you edit the plan, it generates code. This end-to-end flow within GitHub reduces context-switching.
 
 **No setup required.** Copilot Workspace works immediately for anyone with a GitHub Copilot subscription. There is no CLI to install, no API keys to configure, no local environment to set up.
 
