@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Docker Volume and Persistence Workflow"
-description: "Master Docker volume management and data persistence when using Claude Code. Learn practical workflows for development environments, database persistence, and multi-container setups."
+description: "Master Docker volume management and data persistence when using Claude Code. Learn practical workflows for development environments, database."
 date: 2026-03-14
 categories: [workflows, docker]
 tags: [claude-code, docker, volumes, persistence, development-workflow, claude-skills]
@@ -209,3 +209,10 @@ When debugging volume issues with Claude Code:
 When Claude Code helps you design your Docker infrastructure, make sure to discuss your persistence requirements upfront. This ensures the generated configurations include appropriate volume definitions from the start, rather than retrofitting persistence after data loss occurs.
 
 Mastering Docker volumes with Claude Code means your development environments remain consistent, your data stays safe, and your containerized applications behave predictably across restarts and deployments.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

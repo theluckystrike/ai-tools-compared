@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Writing Helm Charts with Claude Code: A Comprehensive Tutorial"
+title: "Writing Helm Charts with Claude Code: A Comprehensive."
 description: "Learn how to leverage Claude Code to create, manage, and optimize Helm charts for Kubernetes deployments with practical examples and expert tips."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-writing-helm-charts-kubernetes-tutorial/
+categories: [guides]
 ---
 {% raw %}
 # Writing Helm Charts with Claude Code: A Comprehensive Tutorial
@@ -232,3 +233,10 @@ Claude Code dramatically accelerates Helm chart development while ensuring best 
 
 Start experimenting with Claude Code today, and transform your Kubernetes workflow!
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
