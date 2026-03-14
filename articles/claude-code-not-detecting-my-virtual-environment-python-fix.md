@@ -91,7 +91,7 @@ uv venv
 uv pip install requests fastapi
 ```
 
-The supermemory skill works well with uv-based projects because the tool maintains consistent state between sessions. When your project uses uv, Claude Code automatically recognizes the lockfile and knows to use uv for package management rather than pip directly.
+The [supermemory skill](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) works well with uv-based projects because the tool maintains consistent state between sessions. When your project uses uv, Claude Code automatically recognizes the lockfile and knows to use uv for package management rather than pip directly.
 
 ## Solution 6: Verify Shell Initialization
 
@@ -126,12 +126,19 @@ Once you have a working configuration, document it in your project's CLAUDE.md f
 
 For new Python projects, consider using the xlsx skill to track your development environment setup in a spreadsheet, or create a checklist that your team follows consistently. This proactive approach prevents environment detection issues from derailing your development sessions.
 
-The tdd skill specifically benefits from consistent virtual environment detection because test execution depends on having the correct package versions available. When your environment is properly configured, running tests through Claude Code works seamlessly.
+The [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) specifically benefits from consistent virtual environment detection because test execution depends on having the correct package versions available. When your environment is properly configured, running tests through Claude Code works seamlessly.
 
 ## Summary
 
 Claude Code not detecting your Python virtual environment stems from shell session differences and configuration ambiguity. The most effective fixes involve setting explicit Python paths in CLAUDE.md, using pyproject.toml for modern Python projects, or configuring global settings. Using uv for environment management provides additional reliability. Document your working configuration in your project to prevent recurrence.
 
 With your virtual environment properly detected, Claude Code can help you build, test, and deploy Python projects without environment-related interruptions. The AI assistant becomes a reliable development partner that understands your project's specific setup and works within your established tooling.
+
+## Related Reading
+
+- [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) — Document environment setup so Claude always uses the right interpreter
+- [Claude MD File: Complete Guide to What It Does](/claude-skills-guide/claude-md-file-complete-guide-what-it-does/) — Full reference for all CLAUDE.md configuration options
+- [Claude Code Skills for Scientific Python: NumPy and SciPy](/claude-skills-guide/claude-code-skills-for-scientific-python-numpy-scipy/) — Python-specific workflows with virtual environment best practices
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — More Python and environment troubleshooting guides
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
