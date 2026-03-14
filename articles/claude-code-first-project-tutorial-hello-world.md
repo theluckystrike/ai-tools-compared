@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code First Project Tutorial — Hello World
 
-Getting started with Claude Code takes less than ten minutes. This tutorial walks you through creating your first project from scratch, configuring Claude Code for your development environment, and running a simple hello world task to verify everything works.
+Getting started with Claude Code takes less than ten minutes. This tutorial walks you through creating your first project from scratch, configuring Claude Code for your development environment, and running a simple hello world task to verify everything works. See the [getting started hub](/claude-skills-guide/getting-started-hub/) for more beginner resources.
 
 ## Prerequisites
 
@@ -170,7 +170,7 @@ Claude Code identifies the off-by-one error in the loop condition and suggests a
 
 ## Scripting and Automation
 
-For repetitive tasks, create Claude Code scripts that automate common workflows. A simple script might look like:
+For repetitive tasks, create Claude Code scripts that automate common workflows. You can pair this with [Claude Code skills](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) to make recurring automations repeatable. A simple script might look like:
 
 ```bash
 #!/bin/bash
