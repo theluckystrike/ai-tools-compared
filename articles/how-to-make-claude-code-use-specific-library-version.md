@@ -130,6 +130,75 @@ For Python:
 pip install -r requirements.txt
 ```
 
+## Common Version Control Scenarios
+
+### React 18 Project Setup
+
+When working on a React 18 project, explicitly state your requirements:
+
+```
+Create a new component using React 18.2.0 and react-dom 18.2.0.
+Use functional components with hooks. Do not use React 19 features.
+```
+
+The frontend-design skill is particularly useful here as it understands component lifecycle and React version compatibility.
+
+### Django REST Framework Projects
+
+For Django projects, specify both Django and DRF versions:
+
+```python
+# requirements.txt
+Django==4.2.7
+djangorestframework==3.14.0
+psycopg2-binary==2.9.9
+```
+
+When prompting Claude Code, reference these exact versions for any database-related code generation.
+
+### TypeScript Configuration
+
+TypeScript projects often have specific version requirements:
+
+```json
+{
+  "devDependencies": {
+    "typescript": "5.2.2",
+    "@types/node": "18.18.0"
+  }
+}
+```
+
+### Working with Monorepos
+
+Monorepo setups using tools like Turborepo require extra attention to version consistency across packages. Create a central versions.ts file that all packages reference:
+
+```typescript
+// packages/versions.ts
+export const VERSIONS = {
+  react: '18.2.0',
+  reactDOM: '18.2.0',
+  typescript: '5.2.2',
+  eslint: '8.49.0',
+} as const;
+```
+
+When using the frontend-design skill in a monorepo context, specify the exact package paths and versions to avoid cross-package version conflicts.
+
+## Final Checklist
+
+Before starting a Claude Code session, verify:
+
+- [ ] Lock files are committed to version control
+- [ ] CLAUDE.md contains version instructions
+- [ ] Runtime version files (.nvmrc, .python-version) exist
+- [ ] Requirements.txt or package-lock.json reflects exact versions
+- [ ] Dockerfiles specify precise base image versions
+
 The key is being explicit in every prompt about version constraints. Claude Code is helpful but cannot guess your version requirements without clear communication.
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## Summary
+
+Controlling library versions with Claude Code requires proactive communication and proper configuration. By using lock files, version specification files, and explicit prompts, you can ensure Claude Code generates code that works with your exact environment. Remember to document your version requirements in CLAUDE.md for persistent instructions across sessions, and always verify generated code against your requirements before deploying.
+
+Built by the luckystrike — More at [zovo.one](https://zovo.one)
