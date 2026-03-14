@@ -2,7 +2,7 @@
 
 layout: default
 title: "Why Is Claude Code Better Than ChatGPT for Developers"
-description: "A practical comparison of Claude Code vs ChatGPT for developers. Learn why Claude's agentic workflow, tool use, and skill system make it superior for programming tasks."
+description: "Claude Code vs ChatGPT for developers. Why Claude's agentic workflow and skill system wins for programming tasks."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, chatgpt, developer-tools, claude-skills]

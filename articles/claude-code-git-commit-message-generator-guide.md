@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Git Commit Message Generator Guide"
-description: "Learn how to use Claude Code to generate semantic, conventional Git commit messages. Practical examples, skill integrations, and workflow automation for developers."
+description: "Generate semantic Git commit messages with Claude Code. Skill integrations and workflow automation for developers."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-git-commit-message-generator-guide/
