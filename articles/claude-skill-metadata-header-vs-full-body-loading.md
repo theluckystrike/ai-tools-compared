@@ -205,6 +205,13 @@ Increment the version in metadata when you update behavior. This helps users tra
 
 Understanding the distinction between skill metadata and the full skill body helps you build better, more maintainable Claude skills. Metadata drives discovery and configuration while the body defines actual behavior. Design each component with its purpose in mind, and your skills will be more discoverable, performant, and maintainable.
 
-For skills like `pdf` that handle complex document operations, or `tdd` that guide development workflows, this separation allows the system to quickly determine skill applicability while providing rich, detailed guidance when executing.
+For skills like `pdf` that handle complex document operations, or `tdd` that guide development workflows, this separation allows the system to quickly determine skill applicability while providing rich, detailed guidance when executing. Understanding this system is key to [optimizing skill response latency](/claude-skills-guide/articles/claude-code-response-latency-optimization-with-skills/).
+
+## Related Reading
+
+- [Claude Code Response Latency Optimization with Skills](/claude-skills-guide/articles/claude-code-response-latency-optimization-with-skills/) — Apply the metadata vs body loading knowledge from this guide to optimize skill invocation speed
+- [Optimal Skill File Size and Complexity Guidelines](/claude-skills-guide/articles/optimal-skill-file-size-and-complexity-guidelines/) — Right-size your skill body to balance loading overhead with guidance completeness
+- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) — Master the full metadata header specification that determines how skills are indexed and loaded
+- [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill authoring patterns and loading behavior across the Claude ecosystem
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
