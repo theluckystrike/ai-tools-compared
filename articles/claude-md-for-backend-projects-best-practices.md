@@ -234,7 +234,7 @@ The response structure, error handling, and validation rules all come from your 
 
 Claude.md skills represent a paradigm shift for backend development. By encoding your team's conventions in Markdown files, you create a scalable knowledge base that Claude applies consistently across every session. Start with a general backend skill, then add specialized skills for APIs, databases, testing, and documentation as your project matures.
 
-The investment in crafting these skills pays dividends in code consistency, faster onboarding, and reduced cognitive overhead. Your skills evolve with your project, capturing institutional knowledge in a format both humans and AI can leverage.
+The investment in crafting these skills pays dividends in code consistency, faster onboarding, and reduced cognitive overhead. Your skills evolve with your project, capturing institutional knowledge in a format both humans and AI can use.
 
 ## Related Reading
 
