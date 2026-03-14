@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code Skills for Insurance Claims Processing
 
-Insurance claims processing involves repetitive document handling, data extraction, validation logic, and compliance checks. These tasks are ideal candidates for automation through Claude Code skills. This guide shows you how to build skills that handle claims intake, document analysis, fraud screening, and settlement calculation.
+Insurance claims processing involves repetitive document handling, data extraction, validation logic, and compliance checks. These tasks are ideal candidates for automation through Claude Code skills. This guide shows you how to build skills that handle claims intake, document analysis, fraud screening, and settlement calculation. For more domain-specific skill patterns, see the [use cases hub](/claude-skills-guide/use-cases-hub/).
 
 ## Understanding Claims Processing Workflows
 
@@ -22,7 +22,7 @@ A well-designed claims processing skill handles the document-heavy portions of t
 
 ## Building a Claims Intake Skill
 
-The first skill handles initial claim submission. It accepts uploaded documents, extracts key information, and creates a standardized claim record.
+The first skill handles initial claim submission. It accepts uploaded documents, extracts key information, and creates a standardized claim record. The [skill .md format guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) covers the exact syntax needed to structure these instruction files.
 
 ```markdown
 # claims-intake
@@ -220,7 +220,7 @@ You orchestrate the end-to-end insurance claims processing workflow.
 Produce complete claim file with all processing stage results and final disposition.
 ```
 
-This orchestration skill demonstrates how Claude Code skills compose into powerful automation pipelines. Each skill handles a specific domain while the orchestrator manages workflow logic.
+This orchestration skill demonstrates how Claude Code skills compose into powerful automation pipelines. Each skill handles a specific domain while the orchestrator manages workflow logic. For patterns on combining multiple skills this way, see [how to combine two Claude skills in one workflow](/claude-skills-guide/articles/how-do-i-combine-two-claude-skills-in-one-workflow/).
 
 ## Best Practices for Claims Skills
 
@@ -237,5 +237,14 @@ When building claims processing skills, follow these guidelines:
 **Handle edge cases explicitly.** Claims processing involves exceptions. Build explicit handling for appeals, disputes, and special circumstances.
 
 Claude Code skills transform insurance claims processing from manual document handling into automated workflows. Start with the intake skill, validate outputs, then incrementally add validation, fraud detection, and settlement capabilities.
+
+---
+
+## Related Reading
+
+- [Claude Skill MD Format Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) — write well-structured skill files for each stage of the claims pipeline
+- [How Do I Combine Two Claude Skills in One Workflow](/claude-skills-guide/articles/how-do-i-combine-two-claude-skills-in-one-workflow/) — orchestrate intake, validation, fraud, and settlement skills into a single pipeline
+- [Building Production AI Agents with Claude Skills 2026](/claude-skills-guide/articles/building-production-ai-agents-with-claude-skills-2026/) — deploy claims processing skills into production-grade automated systems
+- [Use Cases Hub](/claude-skills-guide/use-cases-hub/) — explore other domain-specific automation patterns for regulated industries
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

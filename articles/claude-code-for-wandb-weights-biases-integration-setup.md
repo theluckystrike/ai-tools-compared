@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code for W&B Weights & Biases Integration Setup
 
-Integrating Claude Code with Weights & Biases (W&B) transforms how you track machine learning experiments, manage model versions, and collaborate on AI projects. This guide covers practical setup steps, configuration patterns, and workflow examples that work directly within Claude Code sessions.
+Integrating Claude Code with Weights & Biases (W&B) transforms how you track machine learning experiments, manage model versions, and collaborate on AI projects. For a broader look at integration patterns, visit the [integrations hub](/claude-skills-guide/integrations-hub/). This guide covers practical setup steps, configuration patterns, and workflow examples that work directly within Claude Code sessions.
 
 ## Why Combine Claude Code with W&B
 
@@ -103,7 +103,7 @@ When you run this script, W&B creates a run in your project, logs the configurat
 
 ## Integrating with Claude Skills
 
-Several Claude skills enhance W&B workflows. The **tdd** skill helps you write tests for training pipelines before implementation. When building model training code, invoke the skill:
+Several Claude skills enhance W&B workflows. The **tdd** skill helps you write tests for training pipelines before implementation — see the [automated testing pipeline with Claude TDD skill](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) guide for details. When building model training code, invoke the skill:
 
 ```
 /tdd
@@ -200,7 +200,7 @@ Developers frequently use these patterns when combining Claude Code with W&B:
 1. **Iterative debugging**: Log model outputs at intermediate layers, inspect in W&B, then modify architecture in Claude Code
 2. **A/B testing**: Compare model variants by logging to separate W&B run names, analyzing results, then refining
 3. **Collaboration**: Share W&B run links in Claude Code session notes, enabling team members to reproduce experiments
-4. **CI/CD integration**: Trigger W&B runs from deployment scripts, tracking performance in production environments
+4. **CI/CD integration**: Trigger W&B runs from deployment scripts, tracking performance in production environments — the [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) guide covers the automation patterns
 
 The **internal-comms** skill helps when documenting these workflows for team distribution, generating status updates that reference specific W&B run IDs.
 
@@ -209,5 +209,12 @@ The **internal-comms** skill helps when documenting these workflows for team dis
 Setting up Claude Code with Weights & Biases requires only a few configuration steps—install the package, authenticate, and start logging. The real value emerges in how you structure experiments, version models, and collaborate. Claude skills like tdd, pdf, supermemory, and internal-comms enhance this workflow by adding testing rigor, documentation generation, context persistence, and team communication.
 
 By combining AI-assisted coding from Claude Code with experiment tracking from W&B, you build a development environment where every model iteration connects to its source code, hyperparameters, and results.
+
+## Related Reading
+
+- [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/articles/claude-skills-for-data-science-and-jupyter-notebooks/) — combine Jupyter notebooks with Claude skills for end-to-end ML workflows
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) — apply TDD to ML training pipelines and evaluation scripts
+- [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/articles/claude-code-llm-evaluation-and-benchmarking-workflow/) — systematically evaluate and compare model performance
+- [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — automate experiment tracking as part of your CI/CD pipeline
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

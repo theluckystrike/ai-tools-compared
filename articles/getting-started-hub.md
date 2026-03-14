@@ -704,4 +704,11 @@ Once you have the basics down, the rest of the library is organized by topic:
 
 ---
 
+## Related Reading
+
+- [Claude Code for Beginners: Getting Started 2026](/claude-skills-guide/articles/claude-code-for-beginners-complete-getting-started-2026/) — hands-on beginner tutorial to complement this hub
+- [Claude Skills Directory: Where to Find Skills 2026](/claude-skills-guide/articles/claude-skills-directory-where-to-find-skills/) — discover community and official skills to install first
+- [Best Claude Code Skills to Install First in 2026](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) — curated list of the highest-value skills for new users
+- [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/articles/claude-skills-auto-invocation-how-it-works/) — understand how skills activate automatically in your sessions
+
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)*

@@ -13,13 +13,13 @@ score: 8
 
 # Claude Code Skills for Creating GitHub Actions Workflows
 
-GitHub Actions has become the backbone of modern CI/CD pipelines, but writing and maintaining workflow files can be repetitive and error-prone. Claude Code skills offer a powerful solution by encapsulating workflow patterns into reusable, AI-assisted templates that generate production-ready workflows on demand.
+GitHub Actions has become the backbone of modern CI/CD pipelines, but writing and maintaining workflow files can be repetitive and error-prone. Claude Code skills offer a powerful solution by encapsulating workflow patterns into reusable, AI-assisted templates that generate production-ready workflows on demand. Explore the full range of workflow skills in the [workflows hub](/claude-skills-guide/workflows-hub/).
 
 This guide shows you how to create Claude skills specifically designed for GitHub Actions workflow development.
 
 ## Understanding the Skill Structure for Workflows
 
-A Claude skill for GitHub Actions follows the standard skill format—a Markdown file with YAML front matter containing metadata, followed by the skill body that serves as the system prompt. The skill body guides Claude in generating valid workflow files, understanding your repository structure, and applying best practices automatically.
+A Claude skill for GitHub Actions follows the [standard skill .md format](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)—a Markdown file with YAML front matter containing metadata, followed by the skill body that serves as the system prompt. The skill body guides Claude in generating valid workflow files, understanding your repository structure, and applying best practices automatically.
 
 The key insight is that your skill should not just generate YAML—it should understand the context of your project. A well-designed workflow skill knows when to use Node.js setup actions versus Python setup actions, when to run integration tests versus unit tests, and how to handle secrets and environment-specific configurations.
 
@@ -151,7 +151,7 @@ This feedback loop helps your skills produce increasingly better workflows over 
 
 ## Security Best Practices Integration
 
-Every workflow skill should enforce security fundamentals:
+Every workflow skill should enforce security fundamentals — the [Claude Code secret scanning guide](/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/) covers credential protection in depth:
 
 - Never log secrets or sensitive environment variables
 - Use OIDC for cloud provider authentication when possible
@@ -166,6 +166,13 @@ Your skill should include these patterns by default and flag any workflow that v
 Claude Code skills transform GitHub Actions workflow development from manual YAML editing into an intelligent, context-aware process. By building skills that understand your project structure, validate against best practices, and manage reusable templates, you create a powerful automation layer that improves consistency and reduces errors across your entire codebase.
 
 Start with one skill focused on your most common workflow type, then expand as you identify more opportunities for automation. The investment pays dividends in reduced CI/CD maintenance and fewer pipeline failures.
+
+## Related Reading
+
+- [Claude Code GitHub Actions Workflow Matrix Strategy Guide](/claude-skills-guide/articles/claude-code-github-actions-workflow-matrix-strategy-guide/) — advanced matrix strategies for testing across multiple configurations
+- [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — integrate Claude skills into automated CI/CD pipelines
+- [Best Claude Skills for Code Review Automation](/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/) — pair workflow generation with automated code review
+- [Claude Code Secret Scanning: Prevent Credential Leaks Guide](/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/) — keep secrets out of your GitHub Actions workflows
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

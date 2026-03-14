@@ -12,7 +12,7 @@ score: 7
 
 # Why Claude Code Is Expensive: Understanding Large Context Token Costs
 
-If you've used Claude Code for substantial projects, you've likely noticed that costs can add up quickly. The primary driver of these expenses is context token usage—and understanding why large context windows carry premium pricing helps you make smarter decisions about how you work with Claude.
+If you've used Claude Code for substantial projects, you've likely noticed that costs can add up quickly. The primary driver of these expenses is context token usage—and understanding why large context windows carry premium pricing helps you make smarter decisions about how you work with Claude. For recommended approaches see the [best-of hub](/claude-skills-guide/best-of-hub/).
 
 ## What Are Context Tokens
 
@@ -60,7 +60,7 @@ cat src/components/Button.ts
 
 ### Leverage Skills Efficiently
 
-Many Claude skills are designed to work with focused inputs. The `pdf` skill can extract specific sections from documents rather than loading entire files. The `docx` skill similarly works best when you target particular content. This focused approach dramatically reduces token usage.
+Many Claude skills are designed to work with focused inputs. The `pdf` skill can extract specific sections from documents rather than loading entire files. See the [Claude Skills token optimization guide](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) for a comprehensive cost-reduction strategy. The `docx` skill similarly works best when you target particular content. This focused approach dramatically reduces token usage.
 
 ### Clear Context Between Tasks
 
@@ -84,12 +84,19 @@ The key is intentionality: use large context when the task genuinely requires it
 
 Claude skills often have best practices that affect token consumption. When creating custom skills through the `skill-creator`, include guidance for minimal context usage. The `mcp-builder` skill can help you build tools that process data in smaller batches rather than loading everything at once.
 
-For repetitive workflows, consider writing skills that cache commonly needed information rather than reloading it each session. This upfront investment reduces ongoing token costs.
+For repetitive workflows, consider writing skills that cache commonly needed information rather than reloading it each session — [caching strategies for Claude Code skill outputs](/claude-skills-guide/articles/caching-strategies-for-claude-code-skill-outputs/) covers this in depth. This upfront investment reduces ongoing token costs.
 
 ## The Cost-Benefit Balance
 
 Understanding why Claude Code costs more with large context windows empowers you to make informed decisions. Every token has a price, but also provides value. The goal isn't minimizing tokens at all costs—it's spending tokens where they create meaningful results.
 
 For most development tasks, thoughtful context management keeps costs reasonable while maintaining productivity. Focus on quality interactions rather than quantity of context. Your wallet (and your project timelines) will thank you.
+
+## Related Reading
+
+- [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/articles/claude-skills-token-optimization-reduce-api-costs/) — actionable techniques to cut token consumption without losing capability
+- [Caching Strategies for Claude Code Skill Outputs](/claude-skills-guide/articles/caching-strategies-for-claude-code-skill-outputs/) — cache skill results to avoid redundant token spend
+- [Claude Code Context Window Exceeded After Loading Skill Fix](/claude-skills-guide/articles/claude-code-context-window-exceeded-after-loading-skill-fix/) — troubleshoot and resolve context overflow issues
+- [Claude Skill Lazy Loading: Token Savings Explained](/claude-skills-guide/articles/claude-skill-lazy-loading-token-savings-explained-deep-dive/) — understand how lazy loading keeps context lean
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

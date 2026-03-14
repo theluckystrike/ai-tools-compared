@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Skills Redis Caching Layer Implementation
 
-Building efficient Claude Code skills often requires persisting data across sessions, sharing state between multiple agents, or caching expensive computations. Redis provides a fast, reliable solution for these scenarios. This guide shows you how to implement a Redis caching layer for your Claude Code skills.
+Building efficient Claude Code skills often requires persisting data across sessions, sharing state between multiple agents, or caching expensive computations. Redis provides a fast, reliable solution for these scenarios. This guide shows you how to implement a Redis caching layer for your Claude Code skills. For broader persistence strategies, visit the [advanced hub](/claude-skills-guide/advanced-hub/).
 
 ## Why Redis for Claude Skills
 

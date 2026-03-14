@@ -14,7 +14,7 @@ score: 8
 
 Developers who integrate AI into their workflow often struggle with one common problem: Claude writes code first, then tests second. This reverses the proven test-driven development (TDD) methodology that leads to better software design and fewer bugs. If you want Claude Code to test before implementing a feature, you need the right skill activation and workflow configuration.
 
-This guide shows you exactly how to structure your prompts, which skills to use, and practical techniques to enforce test-first development in every Claude session.
+This guide shows you exactly how to structure your prompts, which skills to use, and practical techniques to enforce test-first development in every Claude session. For related automation workflows, see the [workflows hub](/claude-skills-guide/workflows-hub/).
 
 ## The Core Problem with AI-Assisted Coding
 
@@ -32,7 +32,7 @@ Claude responds with the Python or JavaScript implementation—complete with pas
 
 The most direct solution is activating the `tdd` skill in Claude Code. This skill modifies Claude's behavior to prioritize test generation before writing implementation code.
 
-To activate the skill, type:
+To activate the skill, type — for the full TDD skill breakdown see the [automated testing pipeline guide](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/):
 
 ```
 /tdd
@@ -129,7 +129,7 @@ Then proceed with your test-first prompt.
 
 ## Configure Default Test-First Behavior
 
-If you prefer Claude to always test before implementing, you can create a custom skill that enforces this behavior by default. Create a file at `~/.claude/skills/test-first.md`:
+If you prefer Claude to always test before implementing, you can [create a custom skill](/claude-skills-guide/articles/how-to-write-a-skill-md-file-for-claude-code/) that enforces this behavior by default. Create a file at `~/.claude/skills/test-first.md`:
 
 ```markdown
 # Test-First Development Skill
@@ -213,5 +213,12 @@ The implementation follows, using the tests as a specification.
 Making Claude Code test before implementing a feature requires explicit instruction and the right skill activation. The tdd skill provides the most direct path, while prompt engineering gives you fine-grained control. Combine this with other skills like frontend-design, pdf, or xlsx for domain-specific test-first workflows.
 
 The benefit is substantial: tests become design documents rather than afterthoughts, your code becomes more maintainable, and you catch edge cases before they become bugs.
+
+## Related Reading
+
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) — build a full CI-integrated TDD pipeline with the `/tdd` skill
+- [Claude TDD Skill: Test-Driven Development Guide](/claude-skills-guide/articles/claude-tdd-skill-test-driven-development-workflow/) — deep dive into the TDD skill's features and configuration
+- [Claude Code Skills for Writing Integration Tests](/claude-skills-guide/articles/claude-code-skills-for-writing-integration-tests/) — extend test-first practices beyond unit tests to integration testing
+- [Best Claude Skills for Code Review Automation](/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/) — complement TDD with automated code review workflows
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

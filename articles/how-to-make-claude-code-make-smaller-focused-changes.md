@@ -10,7 +10,7 @@ score: 8
 
 # How to Make Claude Code Make Smaller Focused Changes
 
-Claude Code excels at generating comprehensive solutions, but sometimes you need surgical precision rather than sweeping changes. When working on production codebases, large rewrites introduce risk and make code reviews difficult. This guide shows you how to guide Claude Code toward smaller, focused changes that integrate cleanly with your existing code.
+Claude Code excels at generating comprehensive solutions, but sometimes you need surgical precision rather than sweeping changes. When working on production codebases, large rewrites introduce risk and make code reviews difficult. This guide shows you how to guide Claude Code toward [smaller, focused changes](/claude-skills-guide/articles/how-to-make-claude-code-not-over-engineer-solutions/) that integrate cleanly with your existing code.
 
 ## The Problem with Large-Scale Changes
 
@@ -83,7 +83,7 @@ and false for invalid formats. After the test passes, the function should only
 handle email validation—do not add other validation logic."
 ```
 
-This approach guarantees minimal changes because implementation stops once tests pass.
+This approach guarantees minimal changes because implementation stops once tests pass. For a deeper look at TDD-driven refactoring, see [how to refactor without breaking tests](/claude-skills-guide/articles/how-to-make-claude-code-refactor-without-breaking-tests/).
 
 ## Technique 5: Combine Skills for Precision
 
@@ -150,5 +150,11 @@ To verify you're getting smaller changes, track these metrics:
 Getting Claude Code to make smaller, focused changes requires explicit scoping, strategic skill configuration, and deliberate prompt engineering. By using file-level references, creating focused-change skills, and requesting diff previews, you can maintain surgical precision in your codebase while leveraging AI assistance.
 
 The key principle: tell Claude Code exactly what to change, where to change it, and explicitly what to leave untouched. This clarity produces the targeted modifications that production codebases require.
+
+## Related Reading
+
+- [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/articles/how-to-make-claude-code-not-over-engineer-solutions/) — Complementary techniques for keeping AI-generated code lean and maintainable
+- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/articles/how-to-make-claude-code-refactor-without-breaking-tests/) — Combine focused changes with TDD to refactor safely
+- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/articles/how-to-make-claude-code-match-existing-code-patterns/) — Ensure scoped changes fit seamlessly into your codebase conventions
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
