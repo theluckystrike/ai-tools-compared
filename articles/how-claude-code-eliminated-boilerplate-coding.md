@@ -7,6 +7,8 @@ date: 2026-03-14
 author: theluckystrike
 permalink: /how-claude-code-eliminated-boilerplate-coding/
 ---
+{% raw %}
+
 
 # How Claude Code Eliminated Boilerplate Coding
 
@@ -149,3 +151,4 @@ The ecosystem continues evolving. More skills target specific frameworks and use
 The fundamental principle remains: Claude Code treats boilerplate as a solved problem. Rather than asking developers to maintain templates or follow complex generators, the system learns from context and applies patterns automatically. The result is development that's faster, more consistent, and focused on what actually matters.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
