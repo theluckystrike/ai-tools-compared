@@ -4,7 +4,7 @@ title: "Salesforce MCP Server Data Integration Guide"
 description: "Integrate Salesforce with MCP servers for automated data sync. Code examples, best practices, and workflow patterns for developers."
 date: 2026-03-14
 categories: [tutorials]
-tags: [salesforce, mcp, data-integration, api, automation]
+tags: [claude-code, claude-skills, salesforce, mcp, data-integration, api, automation]
 author: "Claude Skills Guide"
 reviewed: true
 score: 7
