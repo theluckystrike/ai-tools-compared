@@ -1,18 +1,22 @@
 ---
+
 layout: default
 title: "Claude Code Netlify Serverless Functions Workflow"
-description: "Learn how to build and deploy serverless APIs using Claude Code and Netlify Functions. This guide covers setup, best practices, and practical patterns for developers."
+description: "Learn how to build and deploy serverless APIs using Claude Code and Netlify Functions. This guide covers setup, best practices, and practical patterns."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-netlify-serverless-functions-workflow/
 categories: [development, serverless, netlify]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Netlify Serverless Functions Workflow
 
-Building serverless APIs has never been easier than with Netlify Functions combined with Claude Code. This workflow enables you to rapidly develop, test, and deploy backend functionality without managing infrastructure. In this guide, you'll discover how to leverage Claude Code to create robust serverless functions that integrate seamlessly with your projects.
+Building serverless APIs has never been easier than with Netlify Functions combined with Claude Code. This workflow enables you to rapidly develop, test, and deploy backend functionality without managing infrastructure. In this guide, you'll discover how to use Claude Code to create robust serverless functions that integrate smoothly with your projects.
 
 ## Why Combine Claude Code with Netlify Functions
 
@@ -318,3 +322,10 @@ Combining Claude Code with Netlify Functions creates a powerful development work
 
 Start with simple functions, gradually adding complexity as you become comfortable with the patterns. Soon you'll be building sophisticated serverless backends faster than ever before.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
