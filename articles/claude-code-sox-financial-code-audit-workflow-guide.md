@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code SOX Financial Code Audit Workflow Guide"
-description: "A comprehensive guide to using Claude Code for SOX compliance code audits, featuring practical workflows, essential skills, and automation strategies for financial software development."
+description: "A comprehensive guide to using Claude Code for SOX compliance code audits, featuring practical workflows, essential skills, and automation strategies."
 date: 2026-03-14
 author: theluckystrike
 categories: [workflows]
@@ -156,3 +156,11 @@ This automation ensures every code change receives compliance review before depl
 Claude Code transforms SOX financial code audits from a painful periodic exercise into a continuous, automated process. By leveraging skills like tdd, security, code-review, and doc-writer, development teams maintain consistent compliance without sacrificing velocity. The key is integrating these capabilities into your daily workflow rather than treating audit preparation as a separate activity.
 
 Start with the skills and workflows outlined in this guide, adapt them to your organization's specific requirements, and build a SOX compliance process that strengthens your financial software while reducing audit stress.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
