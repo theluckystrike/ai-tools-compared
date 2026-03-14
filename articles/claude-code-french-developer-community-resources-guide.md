@@ -28,7 +28,7 @@ GitHub itself contains French-language repositories focused on AI development. S
 Several Claude skills work particularly well for French development workflows. [The **supermemory** skill helps you organize research](/claude-skills-guide/building-stateful-agents-with-claude-skills-guide/) across French documentation and tutorials. When you accumulate links, code snippets, and notes from various French sources, supermemory provides a searchable knowledge base:
 
 ```
-/supermemory add https://docs.python.org/fr/3/ French Python documentation
+/supermemory Remember: https://docs.python.org/fr/3/ is the French Python documentation site
 ```
 
 The **pdf** skill extracts text from French technical documentation:
