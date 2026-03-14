@@ -37,9 +37,8 @@ Before implementing the Ambassador sidecar pattern, ensure Claude Code is proper
 # Verify Claude Code installation
 claude --version
 
-# Initialize a new project with K8s context
-claude init ambassador-sidecar-project
-cd ambassador-sidecar-project
+# Start Claude Code in your project directory
+claude
 ```
 
 Claude Code can understand your Kubernetes context and help you generate appropriate configurations. When you describe your microservice architecture, Claude Code will suggest optimal sidecar configurations based on your service communication patterns.

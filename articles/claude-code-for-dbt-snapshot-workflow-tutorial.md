@@ -36,13 +36,13 @@ The core snapshot configuration includes:
 
 Getting Claude Code ready for dbt snapshot work requires proper project configuration. First, ensure your dbt project has the standard structure with a dedicated `snapshots` directory. Claude Code works best when it has full visibility into your project's `dbt_project.yml` and snapshot configurations.
 
-Initialize your dbt project with Claude Code by running:
+Start Claude Code in your dbt project directory:
 
 ```bash
-claude init
+claude
 ```
 
-This creates the necessary configuration files. Then, configure your project paths in the settings to include your dbt project's root directory. Once configured, Claude Code can analyze your existing snapshots, suggest improvements, and help create new ones.
+This opens the interactive REPL. Then, configure your project paths in the settings to include your dbt project's root directory. Once configured, Claude Code can analyze your existing snapshots, suggest improvements, and help create new ones.
 
 The real power emerges when you describe your data requirements conversationally. Instead of memorizing all snapshot configuration options, you simply explain what you need: "I need to track changes to my products table with SCD type 2, capturing price and category changes."
 
