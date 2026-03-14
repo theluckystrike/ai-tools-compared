@@ -221,3 +221,12 @@ Managing heap allocation effectively in Claude Code skills requires understandin
 Remember: the goal isn't just to fix out-of-memory errors but to prevent them through thoughtful design. Start with memory-efficient patterns, monitor usage in production, and iterate based on real-world performance data.
 
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

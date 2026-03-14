@@ -110,3 +110,12 @@ To summarize, if Claude Code seems worse than before, consider these potential c
 8. **Cache issues**: Clear cached data when needed
 
 By systematically checking these factors, you can identify the root cause and restore Claude Code to its full potential. Remember that AI tools evolve continuously, and occasional adjustment is normal as you learn to work effectively with new capabilities and features.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Fix 'Cannot Read Property of Undefined' Error in Claude Code"
-description: "Learn how to diagnose and fix JavaScript undefined and null reference errors when working with Claude Code. Practical examples and debugging techniques included."
+title: "Claude Code: Cannot Read Property Undefined Fix"
+description: "Fix 'Cannot read property of undefined/null' errors in Claude Code skill execution. Diagnosis steps and solutions for developers."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-cannot-read-property-undefined-null-error/
@@ -224,3 +224,12 @@ Remember these key takeaways:
 - Leverage Claude Code's debugging tools to trace issues
 
 By implementing these practices, you'll write more robust code and spend less time chasing undefined errors.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

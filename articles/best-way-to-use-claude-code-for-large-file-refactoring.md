@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Use Claude Code for Large File Refactoring"
-description: "Learn effective strategies and Claude Code features for safely refactoring large code files, including chunked processing, skills usage, and practical examples."
+description: "Learn how to use Claude Code for large file refactoring without context overflow. Practical strategies for incremental refactoring across big codebases."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, refactoring, large-files, code-quality]
@@ -138,3 +138,12 @@ Once comfortable with basic chunked refactoring, explore advanced capabilities:
 Large file refactoring doesn't have to be terrifying. Claude Code's file reading capabilities, combined with systematic chunked processing and thorough testing, make even massive files manageable. The key lies in patience—breaking enormous tasks into small, verifiable steps rather than attempting comprehensive changes all at once.
 
 Start applying these techniques on your next large file refactoring project. You'll find that what once seemed impossible becomes entirely achievable, one carefully refactored chunk at a time.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-code-token-usage-optimization-best-practices-guide/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

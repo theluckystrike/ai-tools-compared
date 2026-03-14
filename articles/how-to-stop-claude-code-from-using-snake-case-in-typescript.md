@@ -3,7 +3,7 @@ layout: default
 title: "How to Stop Claude Code from Using Snake Case in TypeScript"
 description: "Practical guide to prevent Claude Code from generating snake_case variable names in TypeScript projects. Learn configuration tricks and best practices."
 date: 2026-03-14
-categories: [claude-code, typescript, configuration]
+categories: [guides]
 tags: [claude-code, typescript, naming-conventions, configuration, best-practices]
 author: theluckystrike
 permalink: /how-to-stop-claude-code-from-using-snake-case-in-typescript/
@@ -169,3 +169,12 @@ Remember that consistency matters more than perfection. If snake_case appears oc
 
 Stopping Claude Code from using snake_case in TypeScript requires a multi-layered approach: project configuration, linting rules, explicit prompts, and editor tools working together. By implementing ESLint's naming convention rules, creating a CLAUDE.md file with your conventions, and being explicit in your prompts, you can enjoy TypeScript code that consistently uses camelCase—the standard that your team and future maintainers will thank you for.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-code-token-usage-optimization-best-practices-guide/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

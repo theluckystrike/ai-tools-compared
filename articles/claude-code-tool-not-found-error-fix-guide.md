@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Tool Not Found Error Fix Guide"
-description: "Complete troubleshooting guide for fixing 'tool not found' errors in Claude Code. Learn how to resolve skill tool errors, MCP server tool issues, and common permission problems."
+description: "Fix 'tool not found' errors in Claude Code skill execution. Step-by-step diagnosis and solutions for missing tool configurations."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-tool-not-found-error-fix-guide/
@@ -88,3 +88,12 @@ Tool not found errors in Claude Code can be frustrating, but they're usually res
 Remember to keep your installation updated, maintain proper configurations, and document your setup. With these practices in place, you'll minimize disruptions and maintain a smooth development workflow with Claude Code.
 
 The key takeaway is that these errors are typically not mysterious—they have identifiable causes and practical solutions. Work through the troubleshooting steps methodically, and you'll have your tools working again in no time.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

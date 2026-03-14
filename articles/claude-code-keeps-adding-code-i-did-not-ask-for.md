@@ -139,3 +139,12 @@ The goal isn't to eliminate all extra code—it's to have control over what gets
 ## Summary
 
 Claude Code keeps adding code you didn't ask for because it follows best practices learned from millions of codebases. To control this behavior, write specific prompts with explicit constraints, use claude.md to establish persistent preferences, leverage skills designed for focused changes, and clearly communicate scope limits in every request. The investment in crafting better prompts pays off quickly in cleaner, more predictable code generation.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

@@ -199,3 +199,12 @@ This mounts the current directory, sets the working directory, and runs as your 
 ## Conclusion
 
 Docker bind mount permission errors are common but solvable. By understanding the UID/GID mismatch root cause and applying the appropriate solution—either through user flags, volume configurations, or custom Claude Code skills—you can maintain smooth development workflows. For Claude Code integration, consider creating custom skills that automate permission detection and correction, making your containerized development experience more seamless.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
