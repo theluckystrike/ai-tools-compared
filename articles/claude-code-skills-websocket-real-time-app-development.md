@@ -58,18 +58,12 @@ console.log('WebSocket server running on port 8080');
 
 ## Claude Skills for Real-Time Development
 
-Claude Code includes skills specifically designed to help with real-time application patterns. The `/web` skill provides guidance on client-side WebSocket implementations, while `/backend` assists with server architecture decisions.
+Claude Code assists with real-time application patterns directly through conversation. Describe your WebSocket requirements and Claude will generate implementation code following established patterns for connection handling, reconnection logic, and state management.
 
-To activate a skill in Claude Code:
-
-```
-/web
-```
-
-Then describe your real-time requirements. For example:
+For client-side WebSocket work, you can use the `/frontend-design` skill to get component-focused guidance:
 
 ```
-/web
+/frontend-design
 Create a React component that connects to a WebSocket and displays live messages
 ```
 
@@ -305,7 +299,7 @@ describe('WebSocket Chat', () => {
 
 ## Conclusion
 
-WebSocket development with Claude Code skills follows established patterns: implement persistent connections, handle lifecycle events reliablely, scale with Redis for multi-server deployments, and secure communications through proper authentication. The skills available in Claude Code accelerate development by generating boilerplate, suggesting architectural patterns, and helping you debug connection issues. Combine `/web` for frontend WebSocket handling with `/backend` for server-side implementation to build complete real-time systems efficiently.
+WebSocket development with Claude Code follows established patterns: implement persistent connections, handle lifecycle events reliably, scale with Redis for multi-server deployments, and secure communications through proper authentication. Claude Code accelerates development by generating boilerplate, suggesting architectural patterns, and helping you debug connection issues. Use `/frontend-design` for client-side WebSocket component work and describe your server architecture requirements directly to Claude to build complete real-time systems efficiently.
 
 ---
 
