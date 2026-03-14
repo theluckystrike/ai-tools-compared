@@ -198,13 +198,9 @@ For frontend projects using the frontend-design skill, you might want notificati
     echo "Visual regression detected - review required"
 ```
 
-The pdf skill can attach test reports to notifications:
+The pdf skill can attach test reports to notifications. After generating test results, use the `/pdf` skill in Claude Code to create a formatted report, then attach it as an artifact:
 
 ```yaml
-- name: Generate PDF Report
-  run: |
-    claude /pdf generate-report:test-results/ --output report.pdf
-  
 - name: Attach Report to Notification
   uses: actions/upload-artifact@v4
   with:

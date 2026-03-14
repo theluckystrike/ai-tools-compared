@@ -75,7 +75,8 @@ export default function ProductGallery({ products }) {
         </div>
       ))}
     </div>
->
+  );
+}
 ```
 
 The `sizes` prop is critical here. It tells the browser how wide the image will be at different viewport widths, allowing Next.js to serve appropriately sized images. Without it, Next.js defaults to serving full-width images, defeating the optimization benefits.

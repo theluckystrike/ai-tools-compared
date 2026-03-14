@@ -76,40 +76,15 @@ The `environment: production` line triggers GitHub's built-in approval mechanism
 
 ## Enhancing Approvals with Claude Code Skills
 
-Claude Code skills can augment approval workflows by performing automated pre-checks, gathering context, and providing recommendations to reviewers. The **supermemory** skill is particularly useful for retrieving relevant deployment history and context before approval decisions.
+Claude Code can augment approval workflows by performing automated pre-checks, gathering context, and providing recommendations to reviewers. The **supermemory** skill is particularly useful for retrieving relevant deployment history and context before approval decisions.
 
-Create a skill that prepares approval context:
-
-```markdown
-# skill: approval-context
-## Description
-Gathers deployment context and recent changes for approval review
-
-## Tools
-- read_file
-- bash
-
-## Action
-{{
-  metadata:
-    purpose: "pre-approval-context"
-}}
-
-1. Read the most recent commit messages from the default branch
-2. Check for any failed deployments in the last 7 days
-3. List any open security issues tagged for this release
-4. Output a summary including:
-   - Number of commits since last deployment
-   - Recent deployment success/failure status
-   - Security considerations
-}}
-```
-
-Invoke this skill before approval to give reviewers actionable information:
+Before triggering a deployment workflow, run Claude Code locally to gather context for reviewers:
 
 ```bash
-claude -p "/approval-context project=myapp environment=production"
+claude "Summarize the last 20 commits on main, highlight any changes to database migrations or infrastructure, and list any open security issues tagged for this release"
 ```
+
+This gives reviewers actionable information without requiring them to dig through git logs manually.
 
 ## Multi-Environment Approval Chains
 
@@ -188,7 +163,7 @@ jobs:
       
       - name: Generate deployment validation tests
         run: |
-          claude -p "/tdd generate deployment validation for ${{ github.event.inputs.environment }}"
+          claude -p "Generate deployment validation tests for ${{ github.event.inputs.environment }} environment"
       
       - name: Run validation tests
         run: npm run test:deployment
@@ -254,29 +229,13 @@ Implement these practices to make approval workflows effective:
 
 **Keep environments specific.** Create separate environments for development, staging, and production rather than reusing a single environment. Each environment should have appropriate reviewers.
 
-**Timeout stale approvals.** GitHub automatically cancels workflow runs after a default period, but you can configure shorter timeouts for sensitive environments:
-
-```yaml
-deploy-production:
-  environment:
-    name: production
-    url: https://production.example.com
-    required_reviewers: 2
-    timeout: 30
-```
+**Timeout stale approvals.** GitHub automatically cancels workflow runs after a default period, but you can configure shorter timeouts through your repository's environment settings. In the GitHub UI under Settings → Environments, set a wait timer to automatically cancel workflows that have not received approval within a set number of minutes.
 
 **Use the principle of least privilege.** Grant approval permissions to the smallest possible group of people. The **pdf** skill can generate audit reports documenting who approved which deployments for compliance purposes.
 
-**Document approval criteria.** Create a skill that presents reviewers with a checklist of things to verify before approving:
+**Document approval criteria.** Store a checklist in your repository that reviewers must work through before approving:
 
 ```markdown
-# skill: pre-approval-checklist
-## Description
-Displays deployment approval checklist for reviewers
-
-## Action
-Present the following checklist to the user:
-
 ## Pre-Approval Checklist
 
 - [ ] Code review completed and approved
@@ -285,9 +244,9 @@ Present the following checklist to the user:
 - [ ] Rollback plan documented
 - [ ] Communication sent to stakeholders
 - [ ] On-call engineer notified
-
-Confirm each item before proceeding with approval.
 ```
+
+Reference this checklist in your environment's deployment policy documentation.
 
 ## Conclusion
 

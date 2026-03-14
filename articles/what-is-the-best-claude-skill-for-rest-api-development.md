@@ -28,9 +28,8 @@ When you use the tdd skill, Claude helps you write tests before implementing end
 
 Here's how the tdd skill works in practice:
 
-```bash
-# Initialize tdd skill for your API project
-claude /skill tdd
+```
+/tdd Write tests for a GET /api/users/:id endpoint using Jest and supertest
 ```
 
 ```javascript
