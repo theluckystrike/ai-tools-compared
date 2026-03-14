@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Blue-Green Deployment Workflow"
 description: "Learn how to use Claude Code to implement blue-green deployment workflows for zero-downtime releases. Practical examples, code snippets, and actionable advice."
@@ -8,12 +9,15 @@ categories: [guides]
 tags: [claude-code, blue-green-deployment, devops, ci-cd, deployment, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-blue-green-deployment-workflow/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Blue-Green Deployment Workflow
 
-Blue-green deployment is a release strategy that maintains two identical production environments—called "blue" (current live version) and "green" (new version)—allowing you to deploy with zero downtime and instant rollback capabilities. This guide shows you how to leverage Claude Code to implement, automate, and manage blue-green deployment workflows effectively.
+Blue-green deployment is a release strategy that maintains two identical production environments—called "blue" (current live version) and "green" (new version)—allowing you to deploy with zero downtime and instant rollback capabilities. This guide shows you how to use Claude Code to implement, automate, and manage blue-green deployment workflows effectively.
 
 ## Understanding Blue-Green Deployment Fundamentals
 
