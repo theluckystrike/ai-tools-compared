@@ -12,7 +12,7 @@ score: 7
 
 # ClickUp MCP Server: Workflow Automation Guide
 
-The ClickUp MCP server enables Claude to interact directly with your ClickUp workspace, automating task management, status updates, and project workflows through natural language commands. This guide shows developers and power users how to set up, configure, and use this integration for efficient workflow automation.
+The ClickUp MCP server enables Claude to interact directly with your ClickUp workspace, automating task management, status updates, and project workflows through natural language commands. This guide shows developers and power users how to set up, configure, and use this integration for efficient workflow automation. For more MCP server integration patterns, see the [integrations hub](/claude-skills-guide/integrations-hub/).
 
 ## Prerequisites
 
@@ -182,7 +182,7 @@ The combination of custom MCP servers with ClickUp's API creates endless automat
 
 The ClickUp MCP server transforms Claude into a powerful project management assistant. By connecting natural language to API actions, you can automate task creation, status management, and complex workflow orchestration. Start with simple automations and gradually build toward sophisticated multi-step workflows that eliminate repetitive manual work.
 
-For developers looking to extend this further, explore combining the ClickUp MCP server with skills like frontend-design for automatic design task creation, or pdf for generating automated status reports from your ClickUp data.
+For developers looking to extend this further, explore combining the ClickUp MCP server with skills like frontend-design for automatic design task creation, or pdf for generating automated status reports from your ClickUp data. See [how to combine two Claude skills in one workflow](/claude-skills-guide/articles/how-do-i-combine-two-claude-skills-in-one-workflow/) for orchestration patterns.
 
 ## Related Reading
 
