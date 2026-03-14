@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code API Backward Compatibility Guide"
 description: "Learn strategies for maintaining backward compatibility when working with Claude Code APIs and Model Context Protocol. Practical patterns for."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, api, backward-compatibility, mcp, model-context-protocol, versioning]
+tags: [claude-code, api, backward-compatibility, mcp, model-context-protocol, versioning, claude-skills]
 author: "theluckystrike"
-reviewed: false
-score: 0
+reviewed: true
+score: 7
 permalink: /claude-code-api-backward-compatibility-guide/
 ---
+
 
 # Claude Code API Backward Compatibility Guide
 

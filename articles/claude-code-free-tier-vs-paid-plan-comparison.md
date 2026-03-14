@@ -1,13 +1,18 @@
 ---
 
+
 layout: default
 title: "Claude Code Free Tier vs Paid Plan Comparison"
 description: "A practical comparison of Claude Code free and paid plans for developers. Learn what's included, usage limits, and which tier suits your workflow."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-free-tier-vs-paid-plan-comparison/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Free Tier vs Paid Plan Comparison
 

@@ -1,13 +1,18 @@
 ---
 
+
 layout: default
 title: "Vibe Coding Productivity Tips and Best Practices"
 description: "Master vibe coding productivity tips and best practices for developers. Learn how to leverage Claude Code, automate workflows, and build faster with."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /vibe-coding-productivity-tips-and-best-practices/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Vibe Coding Productivity Tips and Best Practices
 
