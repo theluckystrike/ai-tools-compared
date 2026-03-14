@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Audit Claude Code MCP Server Permissions"
-description: "A practical guide for developers and power users to audit, review, and maintain secure MCP server permissions in Claude Code. Includes CLI commands and code examples."
+description: "A practical guide for developers and power users to audit, review, and maintain secure MCP server permissions in Claude Code. Includes CLI commands and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, mcp, security, auditing, permissions]
@@ -185,5 +185,14 @@ For servers requiring API keys, rotate credentials after removing unexpected acc
 Auditing MCP server permissions is a straightforward process that significantly improves your Claude Code security posture. By regularly reviewing your configuration, practicing permission compartmentalization, and removing unused servers, you maintain control over what data and capabilities Claude Code can access.
 
 The built-in `/mcp` command and settings.json inspection give you full visibility into your MCP landscape. Combine these tools with a simple audit checklist to keep your configuration aligned with your actual workflow needs.
+
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [MCP Servers vs Claude Skills: What's the Difference?](/claude-skills-guide/mcp-servers-vs-claude-skills-what-is-the-difference/)
+- [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
+- [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

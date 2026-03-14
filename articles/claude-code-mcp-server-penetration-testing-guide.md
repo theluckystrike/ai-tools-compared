@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code MCP Server Penetration Testing Guide"
-description: "A practical guide to penetration testing your Model Context Protocol servers. Learn to identify vulnerabilities in MCP server implementations using Claude Code skills."
+description: "A practical guide to penetration testing your Model Context Protocol servers. Learn to identify vulnerabilities in MCP server implementations using."
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, mcp, penetration-testing, security, mcp-server]

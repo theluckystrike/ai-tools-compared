@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "MCP Server Input Validation Security Patterns"
-description: "Learn essential security patterns for validating inputs in Model Context Protocol servers. Practical examples, code snippets, and best practices for building secure MCP integrations."
+description: "Learn essential security patterns for validating inputs in Model Context Protocol servers. Practical examples, code snippets, and best practices for."
 date: 2026-03-14
 categories: [tutorials]
 tags: [mcp, security, input-validation, claude-code, claude-skills, development]

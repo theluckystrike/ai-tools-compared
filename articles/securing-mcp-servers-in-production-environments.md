@@ -260,4 +260,13 @@ Securing MCP servers in production requires a layered approach: authentication a
 
 Apply these practices incrementally, starting with authentication and TLS, then adding rate limiting and monitoring. Regular audits ensure your security posture improves over time rather than degrading as your deployment grows.
 
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [MCP Servers vs Claude Skills: What's the Difference?](/claude-skills-guide/mcp-servers-vs-claude-skills-what-is-the-difference/)
+- [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
+- [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -188,4 +188,13 @@ MCP server incidents disrupt Claude Code workflows but follow recognizable patte
 
 Regular maintenance—including configuration versioning, health checks, and monitoring—prevents incidents before they impact productivity. Keep your MCP servers running smoothly and maintain uninterrupted development sessions.
 
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [MCP Servers vs Claude Skills: What's the Difference?](/claude-skills-guide/mcp-servers-vs-claude-skills-what-is-the-difference/)
+- [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
+- [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

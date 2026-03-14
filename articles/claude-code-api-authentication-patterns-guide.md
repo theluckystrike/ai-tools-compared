@@ -249,4 +249,13 @@ Implementing robust API authentication requires understanding the strengths and 
 
 Claude Code's specialized skills make implementing, testing, and documenting authentication patterns straightforward. Whether you need to build login interfaces with frontend-design, test authentication flows with tdd, or document APIs with pdf, Claude Code has the tools you need.
 
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/)
+
 Built by theluckystrike — More at zovo.one

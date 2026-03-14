@@ -156,4 +156,13 @@ Avoid these frequent errors when implementing least privilege:
 
 Least privilege configuration for MCP servers requires initial effort but delivers lasting security benefits. By scoping filesystem access, restricting environment variables, allowlisting commands, controlling network access, managing temporary files, and maintaining audit logs, you create a defense-in-depth architecture that protects your development workflow. Start with the most permissive servers and progressively restrict permissions until you find the balance between security and functionality your project requires.
 
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [MCP Servers vs Claude Skills: What's the Difference?](/claude-skills-guide/mcp-servers-vs-claude-skills-what-is-the-difference/)
+- [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
+- [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
