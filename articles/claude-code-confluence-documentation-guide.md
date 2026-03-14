@@ -182,4 +182,11 @@ The `algorithmic-art` skill even generates custom diagrams for technical content
 
 Claude Code paired with Confluence closes the documentation gap that plagues most development teams. Start with a single automated page, measure the time saved, and expand the pipeline incrementally. Your future self debugging production issues at 2 AM will thank you for documentation that actually matches the code.
 
+## Related Reading
+
+- [Claude Code Documentation Generation Workflow](/claude-skills-guide/claude-code-documentation-generation-workflow/) — Documentation generation powers Confluence content
+- [Claude Code Readme Generation Automation](/claude-skills-guide/claude-code-readme-generation-automation/) — README and Confluence docs serve different audiences
+- [Claude Code Notion API Documentation Guide](/claude-skills-guide/claude-code-notion-api-documentation-guide/) — Notion and Confluence are alternative doc platforms
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Documentation workflow automation guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

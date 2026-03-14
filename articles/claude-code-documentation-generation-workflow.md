@@ -247,4 +247,11 @@ Automating documentation with Claude Code follows a clear pattern: define scope,
 
 Start small. Document one module thoroughly, then expand to other components. The workflow scales naturally as your project grows.
 
+## Related Reading
+
+- [Claude Code Readme Generation Automation](/claude-skills-guide/claude-code-readme-generation-automation/) — README is a key documentation artifact
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/) — Changelogs are part of complete documentation
+- [Claude Code Confluence Documentation Guide](/claude-skills-guide/claude-code-confluence-documentation-guide/) — Confluence is a popular documentation platform
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Documentation and content workflow guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

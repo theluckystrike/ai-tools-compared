@@ -238,4 +238,11 @@ A solid load testing workflow prevents production issues with Claude Code integr
 
 Build your tests around realistic user patterns, and you'll catch performance issues before your users do.
 
+## Related Reading
+
+- [Claude Code Artillery Performance Testing](/claude-skills-guide/claude-code-artillery-performance-testing/) — Artillery is a primary tool for API load testing
+- [Claude Code Performance Bottleneck Finding](/claude-skills-guide/claude-code-performance-bottleneck-finding/) — Load testing reveals performance bottlenecks
+- [Claude Code REST API Design Best Practices](/claude-skills-guide/claude-code-rest-api-design-best-practices/) — Load test your REST APIs against design specs
+- [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/) — Integrate load tests into CI/CD pipelines
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
