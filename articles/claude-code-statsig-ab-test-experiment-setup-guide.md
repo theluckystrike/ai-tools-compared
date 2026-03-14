@@ -6,6 +6,7 @@ description: "Learn how to set up and configure A/B tests and experiments using 
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-statsig-ab-test-experiment-setup-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -196,3 +197,10 @@ Setting up A/B tests with Statsig and Claude Code creates a powerful experimenta
 
 Start by integrating Statsig into your project, then leverage Claude Code to generate exposure tracking and analysis code. As your experimentation program matures, develop custom Claude skills that understand your specific patterns and requirements. With this approach, you'll build a scalable system for data-driven product decisions.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

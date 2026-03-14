@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Rails API Mode Full Stack Workflow"
-description: "A comprehensive guide to building full stack Rails applications with API mode using Claude Code. Includes practical examples, skill recommendations, and workflow automation tips for developers."
+description: "A comprehensive guide to building full stack Rails applications with API mode using Claude Code. Includes practical examples, skill recommendations."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-rails-api-mode-full-stack-workflow/
+categories: [guides]
 ---
 
 # Claude Code Rails API Mode Full Stack Workflow
@@ -197,5 +198,12 @@ Your frontend deployment (Vercel, Netlify, or similar) needs to point to your Ra
 ---
 
 This workflow combines Rails' backend strength with Claude Code's AI capabilities, creating a development experience that handles the entire full stack development cycle. The key is maintaining clear API contracts and leveraging Claude Code's skills for testing and documentation generation at each layer of your application.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

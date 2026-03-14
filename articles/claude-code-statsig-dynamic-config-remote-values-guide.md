@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Statsig Dynamic Config Remote Values Guide"
-description: "Learn how to integrate Claude Code with Statsig for dynamic configuration and remote values. Practical examples for feature flags and dynamic config management."
+description: "Learn how to integrate Claude Code with Statsig for dynamic configuration and remote values. Practical examples for feature flags and dynamic config."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, statsig, feature-flags, dynamic-config]
@@ -307,3 +307,10 @@ Start by defining your configuration schema, generate abstractions with Claude C
 
 Remember to test configuration behavior thoroughly and always provide sensible defaults. With this foundation, you can safely roll out features, run experiments, and modify behavior without deploying new code.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

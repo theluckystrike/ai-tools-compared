@@ -5,6 +5,7 @@ description: "Master CSS debugging with Claude Code: learn systematic approaches
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-frontend-developer-css-debugging-workflow-guide/
+categories: [troubleshooting]
 ---
 
 # Claude Code Frontend Developer CSS Debugging Workflow Guide
@@ -109,3 +110,10 @@ Claude Code can help you formalize these patterns into checklists or debugging s
 CSS debugging doesn't have to be a frustrating guessing game. With Claude Code as your debugging partner, you can approach CSS issues systematically: isolate the problem, visualize the structure, trace the cascade, and test hypotheses one at a time. The key is treating CSS debugging as a structured investigation rather than random experimentation.
 
 Remember that most CSS problems have logical explanations once you understand how the cascade, box model, and layout algorithms work. Let Claude Code help you reason through the problem rather than relying on copy-pasting solutions from Stack Overflow. This builds your understanding and makes future debugging faster.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

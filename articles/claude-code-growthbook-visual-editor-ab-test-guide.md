@@ -192,3 +192,10 @@ Always end experiments properly:
 Claude Code and GrowthBook's visual editor form a powerful combination for data-driven development. The visual editor handles the hands-on element manipulation, while Claude Code manages the API interactions, result analysis, and experiment lifecycle. Together, they enable rapid experimentation without deep expertise in either tool.
 
 Start with simple experiments—headline changes or button colors—before attempting more complex modifications. As your team builds confidence with the workflow, expand to testing entire page sections, checkout flows, or feature flags. The key is establishing a culture of continuous experimentation backed by reliable data analysis.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
