@@ -6,6 +6,8 @@ date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-gitbook-documentation-workflow/
 ---
+{% raw %}
+
 
 # Claude Code GitBook Documentation Workflow
 
@@ -174,3 +176,4 @@ The key is starting simple: generate your first API docs automatically, validate
 - [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

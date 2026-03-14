@@ -8,6 +8,8 @@ tags: [claude-code, claude-skills, troubleshooting, skill-md, claude-code-issues
 author: theluckystrike
 permalink: /claude-code-ignores-claude-md-instructions-fix/
 ---
+{% raw %}
+
 
 # Claude Code Ignores .md Instructions Fix
 
@@ -139,7 +141,7 @@ Claude Code has built-in priority for native skills over custom skills with the 
 
 ## Common Pitfalls to Avoid
 
-Do not include Liquid template syntax like `{{ }}` or `{% %}` in skill instructions unless properly escaped. These can interfere with Jekyll processing if your skills repository uses static site generation. If you need to reference template syntax, write it as literal text without the delimiters.
+Do not include Liquid template syntax like double braces or percent tags in skill instructions unless properly escaped. These can interfere with Jekyll processing if your skills repository uses static site generation. If you need to reference template syntax, write it as literal text without the delimiters.
 
 Avoid excessive instruction length. Skills with more than 500 words of instructions often see reduced accuracy. Break complex workflows into multiple skills rather than cramming everything into one file.
 
@@ -158,3 +160,4 @@ For developers working with specific domains, skills like **pdf**, **tdd**, **xl
 - [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
