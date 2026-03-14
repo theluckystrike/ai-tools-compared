@@ -5,6 +5,7 @@ description: "Learn how to use Open Props design tokens effectively with Claude 
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-open-props-design-tokens-guide/
+categories: [guides]
 ---
 
 Open Props has become one of the most popular CSS variable-based design systems for developers who want lightweight, customizable design tokens without the overhead of a full component library. When combined with Claude Code's AI capabilities, you can rapidly scaffold design systems, generate consistent token usage, and maintain design consistency across projects. This guide walks through practical approaches to integrating Open Props with your Claude Code workflow.
@@ -173,5 +174,12 @@ Open Props tokens are CSS custom properties, which means they inherit and cascad
 ## Conclusion
 
 Open Props provides a flexible foundation for design token management that pairs excellently with Claude Code's generative capabilities. By establishing clear token conventions and leveraging AI-assisted code generation, you can build consistent design systems efficiently. The key is starting with the base tokens and extending thoughtfully for your project's specific needs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

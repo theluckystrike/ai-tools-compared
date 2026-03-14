@@ -5,6 +5,7 @@ description: "Learn how to create a blazing-fast testing workflow using Claude C
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-vitest-fast-testing-workflow/
+categories: [guides]
 ---
 
 Vitest has emerged as one of the fastest testing frameworks for JavaScript and TypeScript projects, and when combined with Claude Code, it creates a powerful workflow for developers who value speed and test-driven development. This guide explores how to leverage Claude Code's capabilities alongside Vitest to build a testing workflow that keeps pace with modern development demands.
@@ -186,5 +187,12 @@ Watch for these issues that slow down testing workflows:
 The Vitest and Claude Code combination delivers one of the fastest testing workflows available for JavaScript projects. Vitest's instant startup and responsive watch mode, paired with Claude Code's intelligent test generation and debugging capabilities, creates an environment where testing becomes a natural part of development rather than a bottleneck.
 
 By establishing good habits—writing tests first, using watch mode, and leveraging Claude Code's understanding of your codebase—you'll maintain high test coverage without sacrificing development speed. The key is treating tests as specification documents that guide implementation, not as an afterthought.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

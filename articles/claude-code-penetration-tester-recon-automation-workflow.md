@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Penetration Tester Recon Automation Workflow"
-description: "Master penetration testing reconnaissance automation with Claude Code. Learn practical workflows for subdomain enumeration, port scanning, and vulnerability assessment using AI-powered tools and skills."
+description: "Master penetration testing reconnaissance automation with Claude Code. Learn practical workflows for subdomain enumeration, port scanning, and."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-penetration-tester-recon-automation-workflow/
@@ -169,5 +169,12 @@ The combination of Claude Code's natural language interface with structured auto
 - [Claude Code Skills Tutorial](/claude-code-skills-tutorial/)
 - [Security Automation with Claude Code](/security-automation-with-claude-code/)
 - [AI-Powered Penetration Testing Guide](/ai-penetration-testing-guide/)
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

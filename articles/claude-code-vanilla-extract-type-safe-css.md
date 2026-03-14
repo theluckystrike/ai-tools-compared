@@ -5,6 +5,7 @@ description: "Learn how to use Vanilla Extract with TypeScript for type-safe CSS
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-vanilla-extract-type-safe-css/
+categories: [guides]
 ---
 
 # Claude Code Vanilla Extract Type Safe CSS
@@ -245,5 +246,12 @@ Vanilla Extract integrates with standard debugging workflows. The supermemory sk
 Begin by adding Vanilla Extract to an existing project or creating a fresh skill with the library from the start. The type safety immediately shows value when refactoring components or updating design tokens across your codebase.
 
 The initial setup requires minimal configuration, and the learning curve stays low if you already know TypeScript. Start with simple component styles, then gradually adopt themes and recipes as your skill grows in complexity.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

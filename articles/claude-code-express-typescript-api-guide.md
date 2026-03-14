@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Claude Code Express TypeScript API Guide: Build Production-Ready APIs"
-description: "A practical guide to building Express APIs with TypeScript using Claude Code. Learn project setup, routing, validation, error handling, and testing strategies."
+title: "Claude Code Express TypeScript API Guide: Build."
+description: "A practical guide to building Express APIs with TypeScript using Claude Code. Learn project setup, routing, validation, error handling, and testing."
 date: 2026-03-14
 categories: [guides]
 tags: [express, typescript, api-development, claude-code, nodejs, backend]
@@ -350,5 +350,12 @@ When building Express TypeScript APIs with Claude Code, follow these patterns:
 For persistent context across sessions, consider the supermemory skill to maintain project memory. When building frontend integrations, the frontend-design skill helps create consistent UI patterns that consume your API.
 
 This setup provides a solid foundation for production APIs. Extend with authentication using JWT, add database integration with Prisma or Drizzle ORM, and implement rate limiting for security.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

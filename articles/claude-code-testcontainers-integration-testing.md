@@ -5,6 +5,7 @@ description: "Learn how to use TestContainers with Claude Code for reliable inte
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-testcontainers-integration-testing/
+categories: [guides]
 ---
 
 # Claude Code TestContainers Integration Testing
@@ -237,5 +238,12 @@ Your skill connects using the container names as hostnames—just as services wo
 Integration tests with TestContainers run slower than unit tests. Optimize your test suite by separating concerns: keep unit tests fast with mocks, reserve TestContainers for critical paths that require real dependencies. Use test organization to run quick tests in continuous integration while running full integration suites on schedule or before releases.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

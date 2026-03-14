@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Spring Boot Microservices Guide"
-description: "A practical guide to using Claude Code for building Spring Boot microservices. Learn how to leverage AI-assisted development for faster microservices creation, testing, and deployment."
+description: "A practical guide to using Claude Code for building Spring Boot microservices. Learn how to leverage AI-assisted development for faster microservices."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, spring-boot, microservices, java, ai-assisted-development]
@@ -236,5 +236,12 @@ Document your microservice APIs using OpenAPI specifications. Claude Code can he
 Claude Code transforms Spring Boot microservices development from manual coding to collaborative AI-assisted creation. By understanding Spring Boot patterns and leveraging specialized skills like tdd, pdf, frontend-design, and supermemory, you can build robust microservices faster while maintaining code quality.
 
 The key is providing clear requirements, reviewing generated code, and maintaining good development practices. Claude Code amplifies your capabilities but works best when you guide it with your architectural vision and domain expertise.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

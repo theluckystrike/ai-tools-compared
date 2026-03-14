@@ -5,6 +5,7 @@ description: "Learn how to leverage Claude Code to streamline your pull request 
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-engineering-manager-pull-request-review-workflow/
+categories: [guides]
 ---
 
 {% raw %}
@@ -203,3 +204,10 @@ Claude Code transforms pull request reviews from a bottleneck into a competitive
 
 The key is implementing a thoughtful three-tier strategy that leverages Claude Code's strengths while preserving human oversight for strategic decisions. Start small, measure your results, and continuously refine your workflow. Your team—and your schedule—will thank you.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
