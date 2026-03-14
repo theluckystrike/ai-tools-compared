@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "How Do I Combine Two Claude Skills in One Workflow"
 description: "Learn to chain and combine Claude skills for powerful multi-step workflows. Practical patterns for developers combining skills in workflows."
 date: 2026-03-14

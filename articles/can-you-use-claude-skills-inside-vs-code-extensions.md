@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Can You Use Claude Skills Inside VS Code Extensions?"
 description: "A practical guide to integrating Claude Code skills into VS Code extensions. Learn the technical approaches, limitations, and real-world implementation pat"
 date: 2026-03-14

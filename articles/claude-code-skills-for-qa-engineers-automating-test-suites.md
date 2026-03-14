@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skills for QA Engineers Automating Test Suites"
 description: "Discover how Claude Code skills transform QA automation workflows. Learn to use specialized skills for test generation, maintenance, and continuous..."
 date: 2026-03-14

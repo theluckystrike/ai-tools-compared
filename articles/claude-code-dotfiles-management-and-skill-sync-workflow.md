@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Dotfiles Management and Skill Sync Workflow"
 description: "A practical workflow for managing Claude Code dotfiles across machines and synchronizing skills. Includes git-based dotfiles management, skill organizat..."
 date: 2026-03-14

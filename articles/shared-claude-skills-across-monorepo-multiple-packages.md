@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Shared Claude Skills Across Monorepo Multiple Packages"
 description: "Learn how to create, organize, and share Claude skills across a monorepo with multiple packages. Practical patterns for teams building large-scale TypeS..."
 date: 2026-03-14

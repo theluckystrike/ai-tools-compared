@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills for Robotics ROS2 Development Workflow"
 description: "Learn how to use Claude Code skills to accelerate your ROS2 robotics development. Practical workflow examples, skill recommendations, and integration "
 date: 2026-03-14

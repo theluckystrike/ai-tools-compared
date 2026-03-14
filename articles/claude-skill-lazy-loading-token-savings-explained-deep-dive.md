@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skill Lazy Loading: Token Savings Explained"
 description: "A deep dive into how Claude skill lazy loading works and how it reduces token consumption for developers and power users."
 date: 2026-03-14

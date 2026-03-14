@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skill Prompt Compression Techniques"
 description: "Reduce token usage and improve response speed with these practical prompt compression strategies for Claude skills."
 date: 2026-03-14

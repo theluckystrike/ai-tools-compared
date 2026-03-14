@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "When to Split One Claude Skill Into Multiple Files"
 description: "Learn when and how to split Claude skills into multiple files for better maintainability, reusability, and organization."
 date: 2026-03-14

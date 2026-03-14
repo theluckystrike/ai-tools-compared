@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Dev Containers: devcontainer.json Setup Guide"
 description: "Configure devcontainer.json for Claude Code development environments. Step-by-step setup for VS Code, Docker, and containerized AI development workflows."
 date: 2026-03-14

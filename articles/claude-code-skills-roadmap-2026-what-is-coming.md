@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skills Roadmap 2026: What Is Coming"
 description: "A practical roadmap for Claude Code skills in 2026. Discover upcoming skills, integration patterns, and how to prepare your workflow for the next generation of AI-assisted development."
 date: 2026-03-14

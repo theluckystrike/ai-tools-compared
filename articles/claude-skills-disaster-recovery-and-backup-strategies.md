@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills Disaster Recovery and Backup Strategies"
 description: "Protect your Claude skills investments with robust backup strategies, version control, and disaster recovery planning for skill-based workflows."
 date: 2026-03-14

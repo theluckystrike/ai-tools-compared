@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skill Memory Limit Exceeded Process Killed Fix"
 description: "Resolve memory limit exceeded and process killed errors when running Claude Code skills. Practical solutions for developers and power users."
 date: 2026-03-14

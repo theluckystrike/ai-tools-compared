@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "How to Create a Private Claude Skill Not on GitHub"
 description: "Learn how to create and use private Claude Code skills that stay local on your machine without publishing to GitHub. Step-by-step guide with practical e..."
 date: 2026-03-14

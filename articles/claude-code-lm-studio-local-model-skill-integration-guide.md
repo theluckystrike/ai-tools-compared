@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code LM Studio Local Model Skill Integration Guide"
 description: "Learn how to integrate Claude Code with LM Studio for local model skill integration. Practical examples and code snippets for developers."
 date: 2026-03-14

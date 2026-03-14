@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skills for Scientific Python: NumPy and SciPy"
 description: "How to use Claude Code skills for scientific computing workflows with NumPy and SciPy. Practical patterns for data analysis, numerical computing, and research projects."
 date: 2026-03-14

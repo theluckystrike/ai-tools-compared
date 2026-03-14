@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills for Regulated Industries: Fintech & Healthcare Development"
 description: "Discover Claude skills tailored for fintech and healthcare development. Practical examples, compliance workflows, and code patterns for regulated industries."
 date: 2026-03-14

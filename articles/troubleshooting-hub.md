@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skills Troubleshooting: Fix Every Common Error (2026)"
 description: "Fix Claude Code skill errors fast: permission denied, YAML parsing, infinite loops, context overflow, and every other common issue."
 date: 2026-03-14

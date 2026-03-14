@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Benchmarking Claude Code Skills Performance Guide"
 description: "A practical guide for measuring and analyzing Claude Code skill performance. Learn to track execution time, token usage, and optimize skill workflows."
 date: 2026-03-14

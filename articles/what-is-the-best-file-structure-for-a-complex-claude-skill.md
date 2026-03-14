@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "What Is the Best File Structure for a Complex Claude Skill"
 description: "A practical guide to organizing complex Claude Code skills with proven file structures, code examples, and real-world patterns used by advanced developers."
 date: 2026-03-14

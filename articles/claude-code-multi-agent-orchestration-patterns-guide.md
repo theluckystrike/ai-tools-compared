@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Multi-Agent Orchestration Patterns Guide"
 description: "A practical guide to building multi-agent orchestration systems with Claude Code. Learn patterns, code examples, and skill integration for developer workflows."
 date: 2026-03-14

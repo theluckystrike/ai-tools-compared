@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Pricing, Plans & Cost Optimization Guide 2026"
 description: "Claude Code pricing tiers, API costs, token optimization, and side-by-side comparison with Cursor, GitHub Copilot, and other AI coding tools."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Measuring Claude Code Skill Efficiency Metrics"
 description: "A practical guide to measuring and optimizing Claude Code skill efficiency. Learn which metrics matter, how to track them, and which skills deliver the best ROI."
 date: 2026-03-14

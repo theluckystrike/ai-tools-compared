@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "How Do I Share Claude Skills Across Multiple Projects"
 description: "A practical guide to sharing Claude skills across projects. Learn version control strategies, repository patterns, and workflow optimization techniques."
 date: 2026-03-14

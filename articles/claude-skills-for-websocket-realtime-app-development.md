@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills for WebSocket Realtime App Development"
 description: "Build real-time WebSocket applications faster using Claude skills. Practical patterns for connection handling, state management, and production-ready im..."
 date: 2026-03-14

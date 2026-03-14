@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skill Versioning: Semver Best Practices"
 description: "A practical guide to versioning Claude skills using Semantic Versioning. Learn how to structure releases, communicate changes, and maintain backward compat"
 date: 2026-03-14

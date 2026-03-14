@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "How Do I Set Environment Variables for a Claude Skill"
 description: "A practical guide to configuring environment variables for Claude Code skills. Learn how to set up API keys, credentials, and custom configurations for ..."
 date: 2026-03-14

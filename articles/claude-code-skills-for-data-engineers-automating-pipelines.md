@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skills for Data Engineers Automating Pipelines"
 description: "A practical guide to using Claude Code skills for building, testing, and monitoring data pipelines — with examples for ETL, batch processing, and observa"
 date: 2026-03-14

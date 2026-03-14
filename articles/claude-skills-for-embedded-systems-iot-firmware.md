@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills for Embedded Systems, IoT, and Firmware Dev..."
 description: "Claude skills for embedded systems IoT firmware: accelerate firmware development, automate hardware abstraction layers, streamline RTOS workflows, and b..."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills for Localization i18n Workflow Automation"
 description: "Practical guide to automating localization and i18n workflows using Claude Code skills. Includes code examples for translation management, locale file p..."
 date: 2026-03-14

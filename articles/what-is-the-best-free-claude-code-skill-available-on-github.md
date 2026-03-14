@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "What Is the Best Free Claude Code Skill Available on GitHub"
 description: "Discover the top free Claude Code skills on GitHub that can supercharge your development workflow. Expert recommendations for developers and power users."
 date: 2026-03-14

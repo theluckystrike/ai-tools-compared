@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skill State Machine Design Patterns"
 description: "Learn how to implement state machine design patterns in Claude skills for more predictable, maintainable, and controllable AI workflows."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skill Exceeded Maximum Output Length Error Fix"
 description: "Resolve the 'exceeded maximum output length' error in Claude Code skills. Practical solutions for developers working with long-running skill executions."
 date: 2026-03-14

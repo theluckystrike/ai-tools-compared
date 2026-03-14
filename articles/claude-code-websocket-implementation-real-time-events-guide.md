@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code WebSocket Implementation: Real-Time Events Guide"
 description: "Learn how to implement WebSocket connections in Claude Code skills for real-time event handling. Practical patterns for streaming data, live updates, and i"
 date: 2026-03-14

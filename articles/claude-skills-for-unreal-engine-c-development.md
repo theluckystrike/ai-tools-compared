@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills for Unreal Engine C++ Development"
 description: "Practical guide to using Claude skills for Unreal Engine C++ development workflow. Code generation, testing, documentation, and project management skills."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Caching Strategies for Claude Code Skill Outputs"
 description: "Practical caching approaches to speed up Claude Code skill execution. Store skill outputs, use persistent storage, and reduce redundant processing across sessions."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Tmux Session Management Multi Agent Workflow"
 description: "Master tmux session management for Claude Code multi-agent workflows. Learn to orchestrate parallel AI agents, manage terminal sessions, and automate compl"
 date: 2026-03-14

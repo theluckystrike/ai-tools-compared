@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Permission Denied When Executing Skill Commands"
 description: "Resolve permission denied errors when executing Claude Code skill commands. Covers file permissions, skill execution policies, sandbox restrictions, and pr"
 date: 2026-03-14

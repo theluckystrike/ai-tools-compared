@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skill Circular Dependency Detected Error Fix"
 description: "Resolve the circular dependency detected error in Claude Code skills with practical solutions, code examples, and prevention strategies."
 date: 2026-03-14

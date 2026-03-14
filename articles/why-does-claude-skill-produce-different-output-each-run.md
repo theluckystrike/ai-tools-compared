@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Why Does Claude Skill Produce Different Output Each Run"
 description: "Understanding why Claude Code skills generate varied results across runs. Practical examples and techniques for achieving consistent AI-assisted outputs."
 date: 2026-03-14

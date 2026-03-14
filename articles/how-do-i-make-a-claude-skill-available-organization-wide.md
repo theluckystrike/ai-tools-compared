@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "How Do I Make a Claude Skill Available Organization Wide"
 description: "A practical guide to sharing Claude Code skills across your team. Learn to distribute, install, and maintain skills organization-wide using git repositories, shared configs, and documentation patterns."
 date: 2026-03-14

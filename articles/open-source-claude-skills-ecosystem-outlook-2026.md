@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Open Source Claude Skills Ecosystem Outlook 2026"
 description: "The open source Claude skills ecosystem in 2026: how community .md skills work, where to find them, and how /tdd, /pdf, /supermemory fit in."
 date: 2026-03-14

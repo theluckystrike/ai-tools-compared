@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills Integrations: Every Platform, Tool & API Guide (2026)"
 description: "Connect Claude skills to any platform: GitHub Actions, n8n, Zapier, Supabase, Notion, Slack, and every major developer tool."
 date: 2026-03-14

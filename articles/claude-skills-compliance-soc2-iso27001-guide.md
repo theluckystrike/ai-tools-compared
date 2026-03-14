@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Skills Compliance SOC2 ISO27001 Guide"
 description: "A practical guide for developers using Claude Code skills to implement SOC2 and ISO27001 compliance controls. Includes code examples and skill recommend..."
 date: 2026-03-14

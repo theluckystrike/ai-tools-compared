@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Bundle Size Reduction: Webpack to Vite 2026 Guide"
 description: "Use Claude Code to reduce JavaScript bundle sizes when migrating from Webpack to Vite. Practical optimization strategies included."
 date: 2026-03-13

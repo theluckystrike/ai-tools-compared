@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Skill Invalid YAML Syntax Error How to Debug"
 description: "Learn how to diagnose and fix YAML syntax errors in Claude skills. Practical debugging techniques with real examples for developers."
 date: 2026-03-14
@@ -20,7 +20,7 @@ Every Claude skill file starts with a YAML block wrapped between triple dashes. 
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "My Custom Skill"
 description: "A skill that does something useful"
 date: 2026-03-14
@@ -38,7 +38,7 @@ YAML relies on consistent indentation using spaces, not tabs. Most errors stem f
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "Broken Skill"
   description: "This will fail"
 ---
@@ -48,7 +48,7 @@ The `description` line uses two extra spaces, which YAML interprets as a nested 
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "Fixed Skill"
 description: "This now works"
 ---
@@ -60,7 +60,7 @@ YAML requires colons after keys, and values containing special characters need q
 
 ```yaml
 ---
-layout: post
+layout: default
 title: My Skill with: Colon
 description: A skill description with "quotes"
 ---
@@ -70,7 +70,7 @@ The title value contains a colon, which YAML reads as a new key-value pair. Wrap
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "My Skill with: Colon"
 description: "A skill description with \"quotes\""
 ---
@@ -86,7 +86,7 @@ If your front matter includes tags or categories as a list, use the correct YAML
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "Skill with Tags"
 tags: [claude-code, debugging, yaml]
 categories: [troubleshooting]
@@ -97,7 +97,7 @@ Avoid this common mistake:
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "Broken Tags"
 tags: claude-code, debugging, yaml
 ---
@@ -129,7 +129,7 @@ If your front matter is long, comment out sections temporarily to isolate which 
 
 ```yaml
 ---
-layout: post
+layout: default
 # title: "Temporarily commented"
 # description: "Testing"
 date: 2026-03-14
@@ -153,7 +153,7 @@ A simple skill like one for PDF manipulation uses minimal front matter:
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "PDF Manipulation Skill"
 description: "Work with PDF files using Python libraries"
 date: 2026-01-15
@@ -165,7 +165,7 @@ A more complex skill with multiple tags, like a frontend design skill, might inc
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "Frontend Design Assistant"
 description: "Generate responsive layouts, components, and styling with Tailwind CSS"
 date: 2026-02-20
@@ -178,7 +178,7 @@ The TDD (Test-Driven Development) skill uses front matter without issues:
 
 ```yaml
 ---
-layout: post
+layout: default
 title: "TDD Companion"
 description: "Write tests first, then implement features"
 date: 2026-02-10

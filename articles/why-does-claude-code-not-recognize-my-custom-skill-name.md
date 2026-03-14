@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Why Does Claude Code Not Recognize My Custom Skill Name?"
 description: "Troubleshooting guide for custom skill registration issues in Claude Code. Learn why your skill won't load and how to fix skill name recognition problems."
 date: 2026-03-14

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Claude Code Sentry Error Tracking Source Maps Workflow"
 description: "A practical guide to integrating Claude Code with Sentry for error tracking and source maps. Automate debugging workflows using the tdd skill and relate..."
 date: 2026-03-14
