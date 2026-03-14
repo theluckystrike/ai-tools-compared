@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Multi-Agent Workflow Design Patterns for Developers"
-description: "Master multi-agent workflows with Claude Code: orchestrator patterns, handoff strategies, parallel execution, and real-world implementations for complex development tasks."
+description: "Master multi-agent workflows with Claude Code: orchestrator patterns, handoff strategies, parallel execution, and real-world implementations for."
 date: 2026-03-14
 author: theluckystrike
 permalink: /multi-agent-workflow-design-patterns-for-developers/
+categories: [guides]
 ---
 
 # Multi-Agent Workflow Design Patterns for Developers
@@ -137,3 +138,10 @@ When designing multi-agent workflows with Claude Code, consider these proven gui
 Multi-agent workflows represent a significant advancement in AI-assisted development. Claude Code's skill architecture provides robust primitives for implementing orchestrator patterns, handoff chains, parallel execution, and debate mechanisms. By composing specialized agents into thoughtful workflows, developers can tackle substantially more complex problems while maintaining reliability and coherence.
 
 The key is starting simple—two-agent handoffs or parallel specialists—and progressively adopting more sophisticated patterns as your workflow requirements demand. With proper design, multi-agent systems become force multipliers for development productivity.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

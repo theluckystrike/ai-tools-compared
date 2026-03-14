@@ -5,6 +5,7 @@ description: "Master custom keybindings in Claude Code: configure shortcuts, map
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-custom-keybindings-configuration/
+categories: [guides]
 ---
 
 # Claude Code Custom Keybindings Configuration
@@ -139,5 +140,12 @@ For best results, reserve quick key combinations for lightweight actions. Reserv
 Start with two or three keybindings that address your most frequent actions. Add more as your workflow stabilizes. The `claude keybindings list` command helps you audit what's active at any time.
 
 Explore combining keybindings with skills like `mcp-builder` for custom integrations, or `algorithmic-art` for creative workflows that benefit from keyboard control. The keybinding system scales with your needs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

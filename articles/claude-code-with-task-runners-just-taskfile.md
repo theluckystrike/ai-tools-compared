@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Claude Code with Task Runners: Getting Started with Just Taskfile"
+title: "Claude Code with Task Runners: Getting Started with Just."
 description: "Learn how to integrate Task (just-taskfile) with Claude Code to automate development workflows and boost productivity."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-with-task-runners-just-taskfile/
+categories: [guides]
 ---
 
 {% raw %}
@@ -164,6 +165,13 @@ This ensures environment setup happens automatically before skill execution.
 Claude Code excels at understanding intent and generating appropriate commands. Task excels at executing structured, repeatable command sequences. Together, they reduce friction between understanding what you want and making it happen.
 
 The workflow becomes: describe your goal to Claude, which reads your Taskfile, identifies the appropriate task, and executes it with proper dependencies. Complex multi-step processes collapse into single commands.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
