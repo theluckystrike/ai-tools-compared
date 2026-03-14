@@ -5,6 +5,7 @@ description: "Learn how to integrate AI tools into your code review process for 
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-assisted-code-review-workflow-best-practices/
+categories: [guides]
 ---
 
 AI-assisted code review is transforming how development teams catch bugs, enforce standards, and ship quality code. Instead of waiting hours for human reviewers, developers can get instant feedback on syntax errors, security vulnerabilities, and style violations. This guide covers practical workflows to integrate AI code review into your development process effectively.
@@ -161,5 +162,12 @@ Start small with one review skill and expand as your team builds confidence. The
 Most teams see immediate value from basic formatting and security checks. As you add more rules and refine configurations, the quality of feedback improves. The goal is faster iteration cycles without sacrificing code quality.
 
 AI-assisted review handles the repetitive checks while your team focuses on what matters: building great software.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

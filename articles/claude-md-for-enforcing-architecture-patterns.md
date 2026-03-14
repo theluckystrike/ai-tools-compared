@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude MD for Enforcing Architecture Patterns"
-description: "Learn how to use Claude Code with custom skills to enforce architectural patterns consistently across your codebase. Practical examples and implementation guide."
+description: "Learn how to use Claude Code with custom skills to enforce architectural patterns consistently across your codebase. Practical examples and."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -168,5 +168,12 @@ Track pattern violations over time by running Claude's review capabilities on pu
 ## Conclusion
 
 Claude MD skills transform architectural guidance from passive documentation into active enforcement. By encoding your patterns as skills, you get consistent application across your codebase, faster code reviews, and improved developer experience. Start with your most critical patterns, iterate on the skill definitions, and watch your architecture remain clean without manual policing.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

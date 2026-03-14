@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude MD for Fullstack Projects Complete Guide"
-description: "Master Claude Code .md skill files for fullstack development. Learn to create, organize, and deploy Claude skills across frontend, backend, and database layers."
+description: "Master Claude Code .md skill files for fullstack development. Learn to create, organize, and deploy Claude skills across frontend, backend, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills, fullstack, markdown, development]
@@ -197,5 +197,12 @@ Each skill contributes specialized guidance while maintaining consistency across
 Claude .md skill files provide a powerful mechanism for standardizing fullstack development workflows. By creating layer-specific skills for frontend, backend, and database work, and combining them with cross-cutting skills for debugging and documentation, you build a personalized development assistant that understands your project conventions and accelerates delivery across the entire stack.
 
 Start with skills for your most frequent tasks, then expand as you identify patterns worth codifying. The investment in creating and maintaining your skill library pays dividends in consistent code quality and faster development cycles.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

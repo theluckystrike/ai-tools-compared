@@ -5,6 +5,7 @@ description: "A practical workflow for reducing technical debt using AI tools an
 date: 2026-03-14
 author: theluckystrike
 permalink: /using-ai-for-technical-debt-reduction-workflow/
+categories: [guides]
 ---
 
 # Using AI for Technical Debt Reduction Workflow
@@ -192,5 +193,12 @@ Each step uses AI to accelerate what would otherwise be manual, time-consuming w
 AI doesn't eliminate the need to understand your codebase—it amplifies your ability to work on it efficiently. By systematically identifying debt, prioritizing by business impact, and using AI workflows to make incremental improvements, you can meaningfully reduce technical debt without halting feature development.
 
 The skills mentioned—**tdd**, **supermemory**, **frontend-design**, and **pdf**—each address a different aspect of the debt reduction lifecycle. Start with the **supermemory** skill to track what you find, use **tdd** to create safety nets, and layer in the other skills as your workflow matures.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -5,6 +5,7 @@ description: "A comprehensive guide to running Claude Code within Docker contain
 date: 2026-03-14
 author: theluckystrike
 permalink: /using-claude-code-inside-docker-container-tutorial/
+categories: [guides]
 ---
 
 {% raw %}
@@ -206,3 +207,10 @@ When running Claude Code in containers, you may encounter some common issues. If
 
 Running Claude Code inside Docker containers unlocks powerful possibilities for AI-assisted development. Whether you're building consistent developer environments, automating code reviews, or integrating AI capabilities into CI/CD pipelines, Docker provides the isolation and reproducibility you need. Start with the basic setup shown in this tutorial, then customize according to your team's specific requirements. Claude Code's flexibility combined with Docker's portability creates a development experience that's both powerful and predictable.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

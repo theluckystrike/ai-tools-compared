@@ -5,6 +5,7 @@ description: "Learn how to use AI tools for architecture design workflows. Pract
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-assisted-architecture-design-workflow-guide/
+categories: [guides]
 ---
 
 # AI Assisted Architecture Design Workflow Guide
@@ -138,5 +139,12 @@ AI-assisted architecture design combines human judgment with AI's ability to pro
 The key is maintaining human oversight while using AI for exploration, documentation, and validation. Claude skills like supermemory for knowledge management, tdd for test-first design, and pdf for documentation generation form a toolkit that supports each phase of the architecture workflow.
 
 Remember that architecture decisions are rarely final. Build in feedback mechanisms that allow your architecture to evolve as requirements clarify and technology landscapes change.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -6,6 +6,7 @@ description: "Master Claude's character limits and learn practical optimization 
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-md-character-limit-and-optimization-guide/
+categories: [guides]
 ---
 
 # Claude MD Character Limit and Optimization Guide
@@ -162,5 +163,12 @@ Reference this file periodically to keep Claude aligned with your project state.
 Mastering Claude's character limits and optimization techniques allows you to work more effectively on complex projects. By using focused context, clear structuring, and leveraging specialized skills like **frontend-design**, **pdf**, **tdd**, and **super memory**, you can handle substantial development tasks without losing context or efficiency.
 
 The key is intentional prompt design: provide enough context to be useful, but keep it focused enough to remain within effective processing limits. With practice, these optimization strategies become second nature, enabling seamless AI-assisted development workflows.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
