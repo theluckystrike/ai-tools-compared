@@ -3,7 +3,7 @@ layout: default
 title: "Claude Skills for SEO Content Generation: 2026 Guide"
 description: "Build an SEO content workflow using Claude Code skills. Practical examples with xlsx, pdf, docx, and supermemory for keyword research, briefs, and tracking."
 date: 2026-03-13
-categories: [workflows, guides]
+categories: [guides]
 tags: [claude-code, claude-skills, seo, content-generation, automation]
 author: "Claude Skills Guide"
 reviewed: true
@@ -12,7 +12,7 @@ score: 7
 
 # Claude Skills for SEO Content Generation Workflow
 
-Creating SEO-optimized content at scale requires a systematic approach. Developers and power users can leverage Claude skills to automate research, generate outlines, optimize content, and track performance. This guide walks through a practical workflow using Claude Code skills for each stage of the content generation pipeline.
+Creating SEO-optimized content at scale requires a systematic approach. Developers and power users can use Claude skills to automate research, generate outlines, optimize content, and track performance. This guide walks through a practical workflow using Claude Code skills for each stage of the content generation pipeline.
 
 Claude skills are Markdown files stored in `~/.claude/skills/` and invoked with `/skill-name` inside a Claude Code session.
 
