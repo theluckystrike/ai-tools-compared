@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Fluent Bit Workflow Tutorial"
 description: "A comprehensive guide to using Claude Code CLI for creating, managing, and optimizing Fluent Bit log processing workflows. Includes practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-fluent-bit-workflow-tutorial/
 categories: [tutorials, guides]
 tags: [claude-code, claude-skills, fluent-bit, logging, devops]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Fluent Bit Workflow Tutorial
 
@@ -243,4 +247,4 @@ claude "Refactor this monolithic fluent-bit.conf into separate files: inputs.con
 
 ## Conclusion
 
-Claude Code transforms Fluent Bit workflow management from manual configuration editing to an assisted, error-reduced process. By generating configurations, validating syntax, creating deployment skills, and debugging issues, Claude Code becomes an invaluable partner in your log processing infrastructure. Start with simple configurations, progressively add complexity, and leverage Claude's ability to explain and validate each step along the way.
+Claude Code transforms Fluent Bit workflow management from manual configuration editing to an assisted, error-reduced process. By generating configurations, validating syntax, creating deployment skills, and debugging issues, Claude Code becomes an invaluable partner in your log processing infrastructure. Start with simple configurations, progressively add complexity, and use Claude's ability to explain and validate each step along the way.
