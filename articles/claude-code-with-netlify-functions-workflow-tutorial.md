@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code with Netlify Functions Workflow Tutorial"
 description: "A comprehensive tutorial on building and deploying Netlify functions using Claude Code. Learn workflows, best practices, and practical examples for."
@@ -7,11 +8,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-with-netlify-functions-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills, netlify, serverless, functions, tutorial]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code with Netlify Functions Workflow Tutorial
 
-Netlify Functions provide a powerful serverless computing platform that integrates seamlessly with your frontend applications. When combined with Claude Code, you can rapidly scaffold, develop, and deploy serverless APIs without leaving your terminal. This tutorial walks you through building a complete Netlify Functions project using Claude Code, from initial setup to production deployment.
+Netlify Functions provide a powerful serverless computing platform that integrates smoothly with your frontend applications. When combined with Claude Code, you can rapidly scaffold, develop, and deploy serverless APIs without leaving your terminal. This tutorial walks you through building a complete Netlify Functions project using Claude Code, from initial setup to production deployment.
 
 ## Why Use Netlify Functions with Claude Code
 

@@ -1,16 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Spacelift Platform Guide"
 description: "Learn how to integrate Claude Code with Spacelift for automated infrastructure management, policy enforcement, and intelligent deployment workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-spacelift-platform-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Spacelift Platform Guide
 
-Infrastructure as Code (IaC) has evolved significantly, and combining Claude Code with Spacelift creates a powerful workflow for managing cloud resources intelligently. This guide shows developers how to leverage Claude Code's natural language capabilities with Spacelift's policy engine to build smarter, more compliant infrastructure automation.
+Infrastructure as Code (IaC) has evolved significantly, and combining Claude Code with Spacelift creates a powerful workflow for managing cloud resources intelligently. This guide shows developers how to use Claude Code's natural language capabilities with Spacelift's policy engine to build smarter, more compliant infrastructure automation.
 
 ## Understanding the Spacelift Integration
 
@@ -87,7 +92,7 @@ module "ecs_cluster" {
 
 ### Policy Review Workflows
 
-Spacelift's policy engine uses Open Policy Agent (OPA) Rego language. Writing these policies can be challenging. Use the `frontend-design` skill to prototype policy UIs, or leverage Claude Code's understanding of Rego to generate policies from natural language descriptions.
+Spacelift's policy engine uses Open Policy Agent (OPA) Rego language. Writing these policies can be challenging. Use the `frontend-design` skill to prototype policy UIs, or use Claude Code's understanding of Rego to generate policies from natural language descriptions.
 
 For example, to enforce tagging requirements:
 

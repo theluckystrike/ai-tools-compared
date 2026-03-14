@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code Nx Generators Executors Custom Workflow Guide"
 description: "A comprehensive guide to building custom workflows with Nx generators and executors using Claude Code. Learn how to automate your development workflow."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-nx-generators-executors-custom-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Nx Generators Executors Custom Workflow Guide

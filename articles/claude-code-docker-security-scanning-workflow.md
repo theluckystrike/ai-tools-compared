@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Docker Security Scanning Workflow"
 description: "Learn how to integrate automated Docker security scanning into your development workflow using Claude Code skills and best practices for container."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-security-scanning-workflow/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 

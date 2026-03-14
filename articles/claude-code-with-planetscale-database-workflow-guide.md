@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code with PlanetScale Database Workflow Guide"
 description: "Learn how to integrate Claude Code with PlanetScale for seamless database development. This guide covers connection setup, schema management, branching."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-with-planetscale-database-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code with PlanetScale Database Workflow Guide
 

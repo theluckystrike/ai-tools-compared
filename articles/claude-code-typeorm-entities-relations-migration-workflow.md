@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code TypeORM Entities Relations Migration Workflow"
 description: "A comprehensive guide to building TypeORM entities, defining relationships, and managing database migrations using Claude Code skills."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-typeorm-entities-relations-migration-workflow/
 categories: [workflows, databases]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code TypeORM Entities Relations Migration Workflow

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code TypeORM Query Builder Advanced Patterns Guide"
 description: "Master advanced TypeORM Query Builder patterns including subqueries, joins, conditional filtering, and dynamic query construction for complex database."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-typeorm-query-builder-advanced-patterns-guide/
 categories: [TypeORM, Database, Development, Tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 # Mastering TypeORM Query Builder: Advanced Patterns for Complex Database Operations
 
@@ -178,7 +182,7 @@ function applySortingAndPagination<T>(
 
 ## Transactional Query Building
 
-For operations requiring multiple queries to succeed or fail together, TypeORM's Query Builder integrates seamlessly with transactions:
+For operations requiring multiple queries to succeed or fail together, TypeORM's Query Builder integrates smoothly with transactions:
 
 ```typescript
 await dataSource.transaction(async (manager) => {
@@ -229,7 +233,7 @@ const users = await userRepo
 
 ### Query Result Caching
 
-For frequently accessed, rarely changing data, leverage TypeORM's built-in caching:
+For frequently accessed, rarely changing data, use TypeORM's built-in caching:
 
 ```typescript
 const cachedResults = await dataSource

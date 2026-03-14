@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Community Health Metrics Documentation Workflow"
 description: "Learn how to track, document, and maintain community health metrics for Claude Code skills. Includes practical workflows, code examples, and actionable."
@@ -7,7 +8,10 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-community-health-metrics-documentation-workflow/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Community Health Metrics Documentation Workflow

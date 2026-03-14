@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "What Can Claude Code Do? A Plain English Explanation for."
 description: "Learn what Claude Code is, what it can do, and how it can transform your development workflow. Practical examples and actionable advice included."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /what-can-claude-code-do-a-plain-english-explanation/
 categories: [Development, AI Tools, Programming]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # What Can Claude Code Do? A Plain English Explanation for Developers

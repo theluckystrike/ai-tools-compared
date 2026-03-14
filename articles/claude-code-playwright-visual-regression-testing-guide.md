@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Playwright Visual Regression Testing Guide"
 description: "Learn how to set up visual regression testing with Claude Code and Playwright. Practical examples, code snippets, and actionable advice for maintaining."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 categories: [tutorials]
 tags: [claude-code, claude-skills]
 permalink: /claude-code-playwright-visual-regression-testing-guide/
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 

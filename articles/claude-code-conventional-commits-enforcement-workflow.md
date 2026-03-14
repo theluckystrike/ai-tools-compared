@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Conventional Commits Enforcement Workflow"
 description: "Learn how to enforce Conventional Commits in your Claude Code workflow with commit hooks, CI validation, and skill-based automation for consistent."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-conventional-commits-enforcement-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Conventional Commits Enforcement Workflow

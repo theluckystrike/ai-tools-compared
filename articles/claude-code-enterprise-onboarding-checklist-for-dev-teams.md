@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Enterprise Onboarding Checklist for Dev Teams"
 description: "A comprehensive checklist for integrating Claude Code into your enterprise development workflow. Set up authentication, configure workspaces, establish."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-enterprise-onboarding-checklist-for-dev-teams/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Enterprise Onboarding Checklist for Dev Teams

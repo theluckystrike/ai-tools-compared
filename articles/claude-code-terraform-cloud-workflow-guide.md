@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Terraform Cloud Workflow Guide"
 description: "A practical guide to building automated Terraform Cloud workflows with Claude Code. Learn how to integrate AI assistance into your infrastructure."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-terraform-cloud-workflow-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 {% raw %}
 
 

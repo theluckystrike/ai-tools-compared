@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Astro Islands Architecture Workflow Deep Dive"
 description: "Master Astro's islands architecture with Claude Code. Learn practical workflows for building performant, interactive web applications with partial."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-astro-islands-architecture-workflow-deep-dive/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Astro Islands Architecture Workflow Deep Dive
@@ -137,7 +141,7 @@ export function addToCart(item: Omit<CartItem, 'quantity'>) {
 }
 ```
 
-This works seamlessly across React, Vue, Svelte, and other islands because Nano Stores is framework-agnostic.
+This works smoothly across React, Vue, Svelte, and other islands because Nano Stores is framework-agnostic.
 
 **Server-Side State with Islands**
 

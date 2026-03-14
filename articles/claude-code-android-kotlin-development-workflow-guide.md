@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Android Kotlin Development Workflow Guide"
 description: "Learn how to leverage Claude Code to streamline your Android Kotlin development workflow with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-android-kotlin-development-workflow-guide/
 categories: [Development, Android, Kotlin, AI]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Android Kotlin Development Workflow Guide
@@ -73,7 +77,7 @@ Claude Code will generate clean, idiomatic Kotlin code following Android best pr
 
 ### 2. Working with Jetpack Compose
 
-Modern Android UI development uses Jetpack Compose. Here's how to leverage Claude Code effectively:
+Modern Android UI development uses Jetpack Compose. Here's how to use Claude Code effectively:
 
 **Example: Compose ViewModel Integration**
 

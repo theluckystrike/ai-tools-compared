@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Bootcamp Students: Productivity Guide"
 description: "Master Claude Code to accelerate your coding bootcamp journey. Learn practical tips, workflows, and strategies to complete projects faster and learn."
@@ -8,11 +9,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-bootcamp-students-productivity-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Bootcamp Students: Productivity Guide
 
-Coding bootcamps move at an intense pace. Between learning new frameworks, building portfolio projects, and preparing for technical interviews, every hour counts. Claude Code can be your secret weapon to work smarter, not just harder. This guide shows you how to leverage this AI coding assistant to maximize your bootcamp productivity.
+Coding bootcamps move at an intense pace. Between learning new frameworks, building portfolio projects, and preparing for technical interviews, every hour counts. Claude Code can be your secret weapon to work smarter, not just harder. This guide shows you how to use this AI coding assistant to maximize your bootcamp productivity.
 
 ## Why Bootcamp Students Need Claude Code
 

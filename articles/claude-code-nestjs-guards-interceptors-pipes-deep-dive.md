@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code NestJS Guards Interceptors Pipes Deep Dive"
 description: "Master NestJS guards, interceptors, and pipes with Claude Code. Learn to build secure, efficient, and well-structured Node.js applications with."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-nestjs-guards-interceptors-pipes-deep-dive/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code NestJS Guards Interceptors Pipes Deep Dive

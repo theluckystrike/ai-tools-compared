@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude API System Prompt Engineering for Production Apps"
 description: "Master system prompt engineering for production Claude API applications. Learn patterns, best practices, and code examples for building reliable."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-api-system-prompt-engineering-for-production-apps/
 categories: [development, ai]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude API System Prompt Engineering for Production Apps

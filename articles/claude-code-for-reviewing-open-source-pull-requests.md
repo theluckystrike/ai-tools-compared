@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Reviewing Open Source Pull Requests"
 description: "Learn how to use Claude Code to efficiently review open source pull requests, with practical workflows, code analysis techniques, and actionable advice."
@@ -7,7 +8,10 @@ categories: [workflows]
 tags: [claude-code, claude-skills, open-source, pull-requests, code-review]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-reviewing-open-source-pull-requests/
+reviewed: true
+score: 7
 ---
+
 
 Open source maintainers often face a challenging dilemma: thoroughly reviewing pull requests takes significant time, but superficial reviews can let bugs slip through or create friction with contributors. Claude Code offers a powerful solution by providing an AI assistant that can analyze code changes, identify potential issues, and help maintainers write constructive feedback—all while respecting the unique constraints of open source projects.
 
@@ -50,7 +54,7 @@ When you share the diff output with Claude Code, it can identify patterns that m
 
 ### Practical Example: Security-First Review
 
-Consider a PR that adds user authentication to an open source project. Here's how to leverage Claude Code for a security-focused review:
+Consider a PR that adds user authentication to an open source project. Here's how to use Claude Code for a security-focused review:
 
 ```
 claude "Review this authentication PR for security issues. Check:
@@ -242,7 +246,7 @@ To get the most from Claude Code in your PR review process:
 
 Claude Code transforms PR review from a time-consuming chore into a more manageable task. By automating routine checks, identifying potential issues, and helping maintainers write constructive feedback, it allows open source maintainers to scale their efforts while maintaining quality.
 
-The key is using Claude Code as a collaborative partner in the review process—leveraging its ability to analyze code thoroughly while relying on human maintainers for context, judgment, and community relationship management.
+The key is using Claude Code as a collaborative partner in the review process—using its ability to analyze code thoroughly while relying on human maintainers for context, judgment, and community relationship management.
 
 Start with the workflows outlined here, adapt them to your project's specific needs, and watch your PR review process become more efficient and consistent.
 

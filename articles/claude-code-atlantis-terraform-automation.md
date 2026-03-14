@@ -1,19 +1,24 @@
 ---
+
 layout: default
 title: "Claude Code Atlantis Terraform Automation"
 description: "Learn how to combine Claude Code with Atlantis for automated Terraform pull request workflows. Practical examples for infrastructure-as-code teams."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-atlantis-terraform-automation/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 {% raw %}
 
 
 
 # Claude Code Atlantis Terraform Automation
 
-Infrastructure-as-code teams increasingly combine Claude Code with Atlantis to create powerful Terraform automation pipelines. This combination allows you to leverage AI-assisted infrastructure planning while maintaining established pull request workflows. The result is faster infrastructure changes with better review processes.
+Infrastructure-as-code teams increasingly combine Claude Code with Atlantis to create powerful Terraform automation pipelines. This combination allows you to use AI-assisted infrastructure planning while maintaining established pull request workflows. The result is faster infrastructure changes with better review processes.
 
 ## What is Atlantis and Why Combine It With Claude Code?
 

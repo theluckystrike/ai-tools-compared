@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Cypress Custom Commands Workflow Best Practices"
 description: "Master Cypress custom commands with Claude Code. Learn workflow patterns, TypeScript integration, best practices for maintainable test automation."
@@ -7,7 +8,10 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: Claude Skills Guide
 permalink: /claude-code-cypress-custom-commands-workflow-best-practices/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -17,7 +21,7 @@ Cypress custom commands are one of the most powerful features for creating reusa
 
 ## Why Custom Commands Matter in Cypress
 
-Custom commands let you encapsulate repetitive actions into reusable functions that integrate seamlessly with Cypress's chainable API. Rather than repeating complex selector chains or verification logic across your tests, custom commands provide a clean abstraction layer.
+Custom commands let you encapsulate repetitive actions into reusable functions that integrate smoothly with Cypress's chainable API. Rather than repeating complex selector chains or verification logic across your tests, custom commands provide a clean abstraction layer.
 
 However, poorly designed custom commands can become a maintenance nightmare. The key is following proven patterns that balance reusability with clarity. Claude Code can help you design and implement these patterns efficiently.
 
@@ -283,7 +287,7 @@ Cypress.Commands.add('safeClick', (selector: string) => {
 
 7. **Version your command library** and update tests when command signatures change.
 
-By following these best practices and leveraging Claude Code effectively, you'll build a maintainable custom command library that accelerates your Cypress test development.
+By following these best practices and using Claude Code effectively, you'll build a maintainable custom command library that accelerates your Cypress test development.
 
 {% endraw %}
 

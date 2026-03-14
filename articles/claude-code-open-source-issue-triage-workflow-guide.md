@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code Open Source Issue Triage Workflow Guide"
 description: "Learn how to use Claude Code to efficiently triage open source issues, prioritize bug reports, and streamline your contribution workflow."
@@ -8,11 +9,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-open-source-issue-triage-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 
-Open source projects often struggle with managing incoming issues. Between duplicate reports, poorly documented bugs, and feature requests that lack context, maintainers spend hours each week just categorizing and prioritizing incoming traffic. This guide shows you how to leverage Claude Code to create an efficient issue triage workflow that saves time and helps contributors get started faster.
+Open source projects often struggle with managing incoming issues. Between duplicate reports, poorly documented bugs, and feature requests that lack context, maintainers spend hours each week just categorizing and prioritizing incoming traffic. This guide shows you how to use Claude Code to create an efficient issue triage workflow that saves time and helps contributors get started faster.
 
 ## Understanding Issue Triage Challenges
 
@@ -203,7 +207,7 @@ If contributors consistently miss providing certain information, update your iss
 
 ## Conclusion
 
-An efficient issue triage workflow is crucial for healthy open source projects. By leveraging Claude Code's automation capabilities, you can reduce manual work, improve response times, and create a better experience for contributors. Start with the basics—automatic labeling and duplicate detection—then gradually add more sophisticated automation as your project grows.
+An efficient issue triage workflow is crucial for healthy open source projects. By using Claude Code's automation capabilities, you can reduce manual work, improve response times, and create a better experience for contributors. Start with the basics—automatic labeling and duplicate detection—then gradually add more sophisticated automation as your project grows.
 
 Remember: the goal isn't to replace human judgment, but to handle repetitive tasks so maintainers can focus on building and shipping great software.
 {% endraw %}

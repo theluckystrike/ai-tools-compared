@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code with Firebase Realtime Database Workflow"
 description: "Learn how to integrate Claude Code with Firebase Realtime Database for seamless real-time data synchronization in your applications."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-with-firebase-realtime-database-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code with Firebase Realtime Database Workflow
 

@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Kubernetes Secrets Management: A Practical Guide"
 description: "Learn how to manage Kubernetes secrets effectively using Claude Code. This guide covers native methods, external secrets operators, and automation."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-kubernetes-secrets-management/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Managing secrets in Kubernetes is a critical skill for any developer deploying applications to production. Whether you're handling API keys, database credentials, or TLS certificates, understanding how to manage these sensitive values securely directly impacts your application's security posture. Claude Code provides several approaches to streamline Kubernetes secrets management, from direct kubectl operations to sophisticated external secrets integrations.
@@ -55,7 +60,7 @@ This configuration syncs the Stripe API key from HashiCorp Vault into a Kubernet
 
 ## Automating Secrets Management with Claude Code
 
-Claude Code excels at automating repetitive Kubernetes operations. You can leverage the **super记忆** skill to maintain context about your secrets across sessions, remembering which secrets exist in which namespaces and their rotation schedules. This persistent context proves invaluable when debugging issues across multiple environments.
+Claude Code excels at automating repetitive Kubernetes operations. You can use the **super记忆** skill to maintain context about your secrets across sessions, remembering which secrets exist in which namespaces and their rotation schedules. This persistent context proves invaluable when debugging issues across multiple environments.
 
 For day-to-day operations, Claude Code can help you:
 
@@ -105,7 +110,7 @@ Another advanced pattern involves using secret references in Ingress resources f
 
 Kubernetes secrets management requires careful planning and the right tooling. Claude Code, combined with the External Secrets Operator, provides a robust framework for managing sensitive data across your clusters. Start with namespace isolation, implement external secrets storage, and automate rotation workflows to maintain strong security without sacrificing developer productivity.
 
-By following these practices and leveraging Claude Code's automation capabilities, you can establish a secrets management workflow that scales with your infrastructure while maintaining security best practices appropriate for production workloads.
+By following these practices and using Claude Code's automation capabilities, you can establish a secrets management workflow that scales with your infrastructure while maintaining security best practices appropriate for production workloads.
 
 
 ## Related Reading

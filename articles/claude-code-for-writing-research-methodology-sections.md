@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Writing Research Methodology Sections"
 description: "Learn how to use Claude Code to write comprehensive research methodology sections. Practical examples, code snippets, and actionable advice for developers."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-writing-research-methodology-sections/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Writing Research Methodology Sections
 
@@ -200,7 +204,7 @@ Enhance this methodology section with more formal academic language appropriate 
 
 ## Conclusion
 
-Claude Code transforms methodology writing from a tedious task into a structured, efficient process. By leveraging targeted prompts, memory capabilities, and iterative refinement, you can produce clear, comprehensive methodology sections that meet academic and technical publication standards. The key lies in providing accurate context about your research, then using Claude Code to articulate your methods with professional clarity.
+Claude Code transforms methodology writing from a tedious task into a structured, efficient process. By using targeted prompts, memory capabilities, and iterative refinement, you can produce clear, comprehensive methodology sections that meet academic and technical publication standards. The key lies in providing accurate context about your research, then using Claude Code to articulate your methods with professional clarity.
 
 Start by establishing your research context, generate structured outlines, expand sections with specific details, and refine for your target audience. With practice, this workflow becomes second nature—allowing you to document research methodologies consistently and professionally.
 

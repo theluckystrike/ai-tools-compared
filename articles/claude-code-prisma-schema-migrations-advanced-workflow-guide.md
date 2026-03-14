@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Prisma Schema Migrations Advanced Workflow Guide"
 description: "Master advanced Prisma schema migration workflows with Claude Code. Learn expert strategies for database schema changes, atomic migrations."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-prisma-schema-migrations-advanced-workflow-guide/
 categories: [AI Coding Tools, Database Development, Prisma, Migration Strategies]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Prisma Schema Migrations Advanced Workflow Guide
@@ -140,7 +144,7 @@ ALTER TABLE "Order" ALTER COLUMN "metadata" SET NOT NULL;
 
 ### PostgreSQL-Specific Considerations
 
-PostgreSQL offers advanced features that Prisma supports excellently. Claude Code can help you leverage these features effectively:
+PostgreSQL offers advanced features that Prisma supports excellently. Claude Code can help you use these features effectively:
 
 - **Partial indexes**: Optimize for specific query patterns
 - **JSONB columns**: Flexible schema for evolving data requirements

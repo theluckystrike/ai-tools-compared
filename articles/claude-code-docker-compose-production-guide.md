@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Docker Compose Production Guide"
 description: "Learn how to set up Claude Code with Docker Compose for production environments. Includes practical examples, best practices, and deployment strategies."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-compose-production-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Claude Code Docker Compose Production Guide
@@ -200,7 +205,7 @@ services:
 
 Docker Compose provides a robust foundation for deploying Claude Code in production environments. The configuration patterns shown here—from basic single-container setups to multi-service architectures—scale from individual developer workstations to enterprise deployments. Combine these patterns with skills like [frontend-design](https://github.com/get-skill/frontend-design), [pdf](https://github.com/get-skill/pdf), and [tdd](https://github.com/get-skill/tdd) to build powerful, containerized AI-assisted development workflows that your entire team can rely on.
 
-Start with the basic configuration, add production hardening as needed, and leverage Docker Compose's flexibility to adapt your setup to evolving project requirements.
+Start with the basic configuration, add production hardening as needed, and use Docker Compose's flexibility to adapt your setup to evolving project requirements.
 
 
 ## Related Reading

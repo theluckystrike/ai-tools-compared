@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Lerna Changelog Generation Workflow Guide"
 description: "Learn how to automate changelog generation in Lerna monorepos using Claude Code. Set up intelligent commit parsing, conventional commits integration."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 categories: [guides]
 tags: [claude-code, claude-skills]
 permalink: /claude-code-lerna-changelog-generation-workflow-guide/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Lerna Changelog Generation Workflow Guide
 
-Managing changelogs across a Lerna monorepo can quickly become a tedious task as your project grows. With multiple packages, each following different versioning schemes, manually tracking changes and generating meaningful release notes is error-prone and time-consuming. This guide shows you how to leverage Claude Code to automate and intelligentize your changelog generation workflow.
+Managing changelogs across a Lerna monorepo can quickly become a tedious task as your project grows. With multiple packages, each following different versioning schemes, manually tracking changes and generating meaningful release notes is error-prone and time-consuming. This guide shows you how to use Claude Code to automate and intelligentize your changelog generation workflow.
 
 ## Understanding the Lerna Changelog Challenge
 

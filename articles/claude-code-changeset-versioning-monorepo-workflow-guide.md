@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Changeset Versioning Monorepo Workflow Guide"
 description: "Master Claude Code workflows in monorepos with changeset versioning. Learn practical patterns for managing multiple packages, automated versioning, and."
@@ -7,12 +8,15 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-changeset-versioning-monorepo-workflow-guide/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Changeset Versioning Monorepo Workflow Guide
 
-Monorepos have become the standard for managing multiple related packages within a single repository. When combined with Claude Code, they create a powerful development environment where AI-assisted coding meets efficient package management. This guide explores how to leverage Claude Code effectively in monorepo environments with changeset-based versioning.
+Monorepos have become the standard for managing multiple related packages within a single repository. When combined with Claude Code, they create a powerful development environment where AI-assisted coding meets efficient package management. This guide explores how to use Claude Code effectively in monorepo environments with changeset-based versioning.
 
 ## Understanding Monorepo Challenges
 

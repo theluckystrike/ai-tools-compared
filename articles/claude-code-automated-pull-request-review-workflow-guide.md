@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Automated Pull Request Review Workflow Guide"
 description: "Learn how to build automated pull request review workflows using Claude Code skills. Automate code quality checks, security scans, and feedback generation."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-automated-pull-request-review-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Automated Pull Request Review Workflow Guide
@@ -23,7 +27,7 @@ Manual PR reviews consume significant developer time, especially for repetitive 
 - **Freeing reviewers** to focus on logic, architecture, and design
 - **Enforcing consistency** across the codebase
 
-Claude Code skills can orchestrate these checks, aggregate results, and format feedback in a way that integrates seamlessly with your existing workflow.
+Claude Code skills can orchestrate these checks, aggregate results, and format feedback in a way that integrates smoothly with your existing workflow.
 
 ## Setting Up Your PR Review Skill
 

@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code Capacitor Hybrid App Development Guide"
 description: "A practical guide to building hybrid mobile applications using Claude Code and Capacitor. Learn project setup, native features integration, and."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-capacitor-hybrid-app-development-guide/
 categories: [tutorials]
 tags: [claude-code, capacitor, hybrid-app, mobile-development, ionic, ai-assisted-development, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Capacitor Hybrid App Development Guide
@@ -27,7 +31,7 @@ Consider these compelling reasons to adopt Capacitor for your next mobile projec
 
 - **Single codebase** - Write once, deploy to iOS, Android, and web
 - **Native access** - Direct JavaScript bindings to native APIs
-- **Modern tooling** - Integrates seamlessly with popular frontend frameworks
+- **Modern tooling** - Integrates smoothly with popular frontend frameworks
 - **Active maintenance** - Backed by the Ionic team with regular updates
 
 ## Setting Up Your Capacitor Project

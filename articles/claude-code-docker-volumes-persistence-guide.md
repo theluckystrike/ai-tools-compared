@@ -1,18 +1,23 @@
 ---
+
 layout: default
 title: "Claude Code Docker Volumes Persistence Guide"
 description: "A practical guide to managing Docker volumes for persistence in Claude Code projects. Learn bind mounts, named volumes, and data management strategies."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-volumes-persistence-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 
 # Claude Code Docker Volumes Persistence Guide
 
-When running Claude Code inside Docker containers, understanding how to persist data across container restarts becomes essential for maintaining development state, preserving generated artifacts, and managing skill configurations. This guide covers Docker volume strategies that work seamlessly with Claude Code workflows.
+When running Claude Code inside Docker containers, understanding how to persist data across container restarts becomes essential for maintaining development state, preserving generated artifacts, and managing skill configurations. This guide covers Docker volume strategies that work smoothly with Claude Code workflows.
 
 ## Why Docker Volumes Matter for Claude Code
 

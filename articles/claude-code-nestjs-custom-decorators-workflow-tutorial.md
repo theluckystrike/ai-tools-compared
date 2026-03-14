@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code NestJS Custom Decorators Workflow Tutorial"
 description: "Learn how to create custom decorators in NestJS with practical examples. This tutorial covers decorator composition, parameter decorators, and workflow."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-nestjs-custom-decorators-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills, nestjs, decorators, typescript]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code NestJS Custom Decorators Workflow Tutorial
 
-NestJS decorators are one of the most powerful features for building scalable backend applications. When combined with Claude Code's development workflow, you can create clean, maintainable, and type-safe decorator patterns that accelerate your development process. This tutorial walks you through creating custom decorators in NestJS while leveraging Claude Code for intelligent code generation and refactoring.
+NestJS decorators are one of the most powerful features for building scalable backend applications. When combined with Claude Code's development workflow, you can create clean, maintainable, and type-safe decorator patterns that accelerate your development process. This tutorial walks you through creating custom decorators in NestJS while using Claude Code for intelligent code generation and refactoring.
 
 ## Understanding NestJS Decorators
 
@@ -202,7 +206,7 @@ When building custom decorators in your NestJS applications, follow these guidel
 
 ## Integrating with Claude Code Workflow
 
-Claude Code can significantly accelerate your decorator development workflow. When working on NestJS projects, you can leverage Claude Code to:
+Claude Code can significantly accelerate your decorator development workflow. When working on NestJS projects, you can use Claude Code to:
 
 1. **Generate boilerplate**: Describe your decorator requirements and let Claude Code generate the initial implementation
 2. **Refactor existing code**: Convert repetitive patterns into reusable decorators

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "FastAPI Background Tasks with Celery Integration Guide"
 description: "Learn how to integrate Celery with FastAPI for robust background task processing. Complete setup guide with code examples, best practices, and common."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-fastapi-background-tasks-celery-integration/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # FastAPI Background Tasks with Celery Integration Guide

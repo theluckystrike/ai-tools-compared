@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Not Generating Tests Correctly Fix Guide"
 description: "Learn how to fix common issues when Claude Code fails to generate tests correctly. Practical solutions for test generation problems with code examples."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-not-generating-tests-correctly-fix-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -202,7 +206,7 @@ When tests aren't generating correctly, work through this checklist:
 
 ## Conclusion
 
-Claude Code is a powerful tool for test generation, but it requires clear context and specifications to produce accurate, useful tests. By providing detailed information about your codebase, establishing consistent testing patterns through custom instructions, and iteratively refining generated tests, you can leverage Claude Code to build comprehensive test suites efficiently.
+Claude Code is a powerful tool for test generation, but it requires clear context and specifications to produce accurate, useful tests. By providing detailed information about your codebase, establishing consistent testing patterns through custom instructions, and iteratively refining generated tests, you can use Claude Code to build comprehensive test suites efficiently.
 
 Remember that test generation is a collaborative process—the more context and feedback you provide, the better the results. Start with clear specifications, verify generated tests thoroughly, and don't hesitate to iterate until your test coverage meets your standards.
 

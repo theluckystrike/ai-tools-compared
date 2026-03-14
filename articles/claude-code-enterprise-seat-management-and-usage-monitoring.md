@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Enterprise Seat Management and Usage Monitoring"
 description: "Learn how to manage Claude Code enterprise seats, track usage across teams, implement seat allocation strategies, and optimize your organization's AI."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-enterprise-seat-management-and-usage-monitoring/
 categories: [guides, enterprise]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Enterprise Seat Management and Usage Monitoring

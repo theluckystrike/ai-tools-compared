@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Checkov Security Scanning Guide"
 description: "Learn how to integrate Checkov static analysis into your Claude Code workflow to automatically detect security misconfigurations in."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-checkov-security-scanning-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Checkov Security Scanning Guide
 

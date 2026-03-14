@@ -1,21 +1,23 @@
 ---
+
 layout: default
 title: "Claude Code Shell Scripting Automation Workflow Guide"
 description: "Master shell scripting automation with Claude Code. Learn how to create, debug, and optimize bash workflows using Claude's AI assistance."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, shell-scripting, automation, bash, workflow]
-author: theluckystrike
-reviewed: false
-score: 0
+tags: [claude-code, shell-scripting, automation, bash, workflow, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 permalink: /claude-code-shell-scripting-automation-workflow-guide/
 ---
+
 
 # Claude Code Shell Scripting Automation Workflow Guide
 
 Shell scripting remains one of the most powerful ways to automate repetitive tasks, manage infrastructure, and orchestrate complex workflows. When combined with Claude Code's AI capabilities, you can transform from writing scripts manually to describing what you need and letting Claude help generate, debug, and optimize your automation solutions.
 
-This guide walks you through building shell scripting workflows that leverage Claude Code effectively.
+This guide walks you through building shell scripting workflows that use Claude Code effectively.
 
 ## Why Combine Claude Code with Shell Scripting
 
@@ -171,7 +173,7 @@ For example, a monitoring script could generate daily reports using the pdf skil
 
 ## Conclusion
 
-Claude Code transforms shell scripting from a tedious manual process into a collaborative workflow. By describing your automation needs and leveraging Claude's assistance, you can build robust scripts faster while learning best practices along the way. Start with simple scripts, gradually tackle more complex workflows, and watch your productivity soar.
+Claude Code transforms shell scripting from a tedious manual process into a collaborative workflow. By describing your automation needs and using Claude's assistance, you can build robust scripts faster while learning best practices along the way. Start with simple scripts, gradually tackle more complex workflows, and watch your productivity soar.
 
 
 ## Related Reading

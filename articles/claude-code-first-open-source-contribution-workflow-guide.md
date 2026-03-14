@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code First Open Source Contribution Workflow Guide"
 description: "A comprehensive guide to contributing to open source projects using Claude Code, covering fork-based workflows, best practices, and actionable tips for."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-first-open-source-contribution-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code First Open Source Contribution Workflow Guide
@@ -166,7 +170,7 @@ git push origin feature/your-feature --force-with-lease
 
 ## Conclusion
 
-Claude Code transforms open source contribution from an intimidating process into an achievable workflow. By leveraging its ability to understand codebases, generate style-consistent code, and explain complex patterns, you can confidently contribute to projects you care about. Remember: every significant open source maintainer started somewhere—and with Claude Code as your pair programmer, you're well-equipped to begin your open source journey today.
+Claude Code transforms open source contribution from an intimidating process into an achievable workflow. By using its ability to understand codebases, generate style-consistent code, and explain complex patterns, you can confidently contribute to projects you care about. Remember: every significant open source maintainer started somewhere—and with Claude Code as your pair programmer, you're well-equipped to begin your open source journey today.
 
 The key is to start small, learn continuously, and engage respectfully with the community. Your first PR might take longer than expected, but each contribution builds your skills and reputation in the open source ecosystem.
 {% endraw %}

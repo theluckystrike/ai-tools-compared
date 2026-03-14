@@ -1,16 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code GitLab CI Docker Registry Workflow"
 description: "A practical guide to integrating Claude Code with GitLab CI and Docker Registry for automated build, test, and deployment workflows. Includes."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-gitlab-ci-docker-registry-workflow/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code GitLab CI Docker Registry Workflow
 
-Automating your development pipeline with Claude Code, GitLab CI, and Docker Registry creates a powerful workflow that handles everything from code generation to containerized deployments. This guide walks you through building a complete pipeline that leverages Claude Code's AI capabilities within your CI/CD environment.
+Automating your development pipeline with Claude Code, GitLab CI, and Docker Registry creates a powerful workflow that handles everything from code generation to containerized deployments. This guide walks you through building a complete pipeline that uses Claude Code's AI capabilities within your CI/CD environment.
 
 ## Why Combine Claude Code with GitLab CI
 

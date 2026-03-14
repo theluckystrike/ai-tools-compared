@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Team Coding Standards Enforcement Workflow"
 description: "A comprehensive guide to implementing and enforcing coding standards across your development team using Claude Code. Learn practical workflows."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-team-coding-standards-enforcement-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Team Coding Standards Enforcement Workflow
 

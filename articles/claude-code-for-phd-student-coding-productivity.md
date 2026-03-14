@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for PhD Student Coding Productivity"
 description: "Discover how PhD students can leverage Claude Code to accelerate research workflows, automate repetitive tasks, and write better code faster."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-phd-student-coding-productivity/
 categories: [guides, productivity]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for PhD Student Coding Productivity
 

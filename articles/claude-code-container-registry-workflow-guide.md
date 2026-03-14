@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Container Registry Workflow Guide"
 description: "A practical guide to automating container builds and registry operations using Claude Code. Includes examples for Docker Hub, GHCR, and ECR with code."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-container-registry-workflow-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 

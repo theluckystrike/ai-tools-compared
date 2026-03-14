@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code Turborepo Pipeline Dependency Graph Workflow"
 description: "Master the art of integrating Claude Code with Turborepo to create efficient monorepo workflows. Learn dependency graph strategies, pipeline."
@@ -7,12 +8,15 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-turborepo-pipeline-dependency-graph-workflow/
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code Turborepo Pipeline Dependency Graph Workflow
 
-Monorepos have become the standard for managing multi-package projects, and Turborepo has emerged as the leading build system for orchestrating complex dependency graphs. When you combine Claude Code's AI capabilities with Turborepo's pipeline automation, you get a powerful workflow that can intelligently manage builds, handle caching, and optimize your development experience. This guide shows you how to leverage this combination effectively.
+Monorepos have become the standard for managing multi-package projects, and Turborepo has emerged as the leading build system for orchestrating complex dependency graphs. When you combine Claude Code's AI capabilities with Turborepo's pipeline automation, you get a powerful workflow that can intelligently manage builds, handle caching, and optimize your development experience. This guide shows you how to use this combination effectively.
 
 ## Understanding Turborepo's Pipeline Model
 

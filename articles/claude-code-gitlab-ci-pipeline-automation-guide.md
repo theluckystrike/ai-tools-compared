@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code GitLab CI Pipeline Automation Guide"
 description: "Learn how to automate your GitLab CI/CD pipelines using Claude Code. Practical examples for developers who want to streamline their deployment workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-gitlab-ci-pipeline-automation-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 Automating GitLab CI pipelines with Claude Code transforms how development teams handle continuous integration and deployment. This guide walks you through practical strategies for using Claude Code to streamline pipeline creation, debugging, and optimization.
 
@@ -171,7 +176,7 @@ Claude helps you balance thorough security checks against pipeline execution tim
 
 ## Conclusion
 
-Claude Code + GitLab CI pipeline automation represents a significant advancement in development workflow efficiency. By leveraging AI-assisted configuration generation, intelligent debugging, and skill integration, teams reduce manual overhead while improving pipeline reliability.
+Claude Code + GitLab CI pipeline automation represents a significant advancement in development workflow efficiency. By using AI-assisted configuration generation, intelligent debugging, and skill integration, teams reduce manual overhead while improving pipeline reliability.
 
 Start with simple configurations, gradually incorporating advanced features as your automation matures. The combination of Claude Code's contextual understanding and GitLab's robust CI/CD platform creates a foundation for sustainable, scalable deployment practices.
 

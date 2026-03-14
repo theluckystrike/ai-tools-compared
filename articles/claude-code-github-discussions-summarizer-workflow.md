@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code GitHub Discussions Summarizer Workflow"
 description: "Learn how to build an automated workflow that uses Claude Code to summarize GitHub Discussions, saving time and helping teams stay informed."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-github-discussions-summarizer-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills, github, automation, workflow]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code GitHub Discussions Summarizer Workflow

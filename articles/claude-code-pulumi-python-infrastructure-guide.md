@@ -1,16 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Pulumi Python Infrastructure Guide"
 description: "Learn how to use Claude Code with Pulumi and Python for infrastructure automation. Practical patterns for provisioning and managing cloud resources."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-pulumi-python-infrastructure-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 {% raw %}
 # Claude Code Pulumi Python Infrastructure Guide
 
-Infrastructure as Code has become essential for modern cloud deployments, and combining Claude Code with Pulumi Python creates a powerful automation workflow. This guide shows developers and power users how to leverage Claude Code's capabilities alongside Pulumi's infrastructure management to build, test, and deploy cloud resources efficiently.
+Infrastructure as Code has become essential for modern cloud deployments, and combining Claude Code with Pulumi Python creates a powerful automation workflow. This guide shows developers and power users how to use Claude Code's capabilities alongside Pulumi's infrastructure management to build, test, and deploy cloud resources efficiently.
 
 ## Setting Up Your Pulumi Python Project
 
@@ -31,7 +36,7 @@ Configure your cloud credentials using environment variables or the Pulumi CLI. 
 
 ## How Claude Code Enhances Pulumi Workflows
 
-Claude Code brings intelligent assistance to infrastructure projects through natural language interaction. When working with Pulumi Python, you can leverage several capabilities that accelerate development.
+Claude Code brings intelligent assistance to infrastructure projects through natural language interaction. When working with Pulumi Python, you can use several capabilities that accelerate development.
 
 **Code Generation**: Describe the infrastructure you need, and Claude Code helps generate the Python code. For example, "Create an S3 bucket with versioning enabled" produces the appropriate Pulumi code:
 

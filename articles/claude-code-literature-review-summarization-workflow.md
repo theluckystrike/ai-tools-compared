@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code Literature Review Summarization Workflow"
 description: "Learn how to build an efficient literature review summarization workflow using Claude Code. This guide covers practical examples, code snippets, and."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-literature-review-summarization-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 ## Introduction
@@ -108,7 +112,7 @@ This script demonstrates a modular approach where each function handles a specif
 
 ## Integrating Claude Code for Intelligent Processing
 
-The real power comes from combining Claude Code's language capabilities with structured processing. Create a custom skill that leverages Claude's understanding:
+The real power comes from combining Claude Code's language capabilities with structured processing. Create a custom skill that uses Claude's understanding:
 
 ```python
 # skills/literature_review_skill.py

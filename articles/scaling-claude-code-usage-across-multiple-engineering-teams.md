@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Scaling Claude Code Usage Across Multiple Engineering Teams"
 description: "A practical guide to implementing and scaling Claude Code across multiple engineering teams. Learn strategies for standardization, collaboration, and."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /scaling-claude-code-usage-across-multiple-engineering-teams/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Scaling Claude Code Usage Across Multiple Engineering Teams

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code FastAPI OpenAPI Schema Generation Workflow"
 description: "A practical guide to generating OpenAPI schemas from FastAPI applications using Claude Code. Includes code examples, workflow patterns, and actionable."
@@ -7,13 +8,16 @@ author: "Claude Skills Guide"
 permalink: /claude-code-fastapi-openapi-schema-generation-workflow/
 categories: [tutorials]
 tags: [claude-code, claude-skills, fastapi, openapi, api-development, schema]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
 # Claude Code FastAPI OpenAPI Schema Generation Workflow
 
-FastAPI has become one of the most popular Python frameworks for building modern APIs, largely because it automatically generates OpenAPI documentation from your code. When combined with Claude Code, you can streamline the entire workflow of designing, implementing, and documenting your APIs. This guide shows you how to leverage Claude Code effectively for FastAPI OpenAPI schema generation.
+FastAPI has become one of the most popular Python frameworks for building modern APIs, largely because it automatically generates OpenAPI documentation from your code. When combined with Claude Code, you can streamline the entire workflow of designing, implementing, and documenting your APIs. This guide shows you how to use Claude Code effectively for FastAPI OpenAPI schema generation.
 
 ## Understanding FastAPI's OpenAPI Generation
 

@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code ActiveRecord Query Optimization Workflow Guide"
 description: "Master ActiveRecord query optimization with Claude Code. Learn practical techniques for identifying N+1 queries, using eager loading, query methods."
@@ -8,13 +9,16 @@ author: "Claude Skills Guide"
 permalink: /claude-code-activerecord-query-optimization-workflow-guide/
 categories: [guides]
 tags: [claude-code, activerecord, rails, ruby, query-optimization, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
 # Claude Code ActiveRecord Query Optimization Workflow Guide
 
-ActiveRecord is Rails' powerful ORM that abstracts database interactions, but it can silently introduce performance bottlenecks if you're not careful. N+1 queries, missing indexes, and inefficient query patterns can turn a snappy application into a sluggish one. This guide shows you how to leverage Claude Code to identify, diagnose, and fix ActiveRecord performance issues systematically.
+ActiveRecord is Rails' powerful ORM that abstracts database interactions, but it can silently introduce performance bottlenecks if you're not careful. N+1 queries, missing indexes, and inefficient query patterns can turn a snappy application into a sluggish one. This guide shows you how to use Claude Code to identify, diagnose, and fix ActiveRecord performance issues systematically.
 
 ## Why ActiveRecord Optimization Matters
 
@@ -232,7 +236,7 @@ For production monitoring, consider tools like Scout, New Relic, or PgHero that 
 
 ## Conclusion
 
-Optimizing ActiveRecord queries is essential for building fast, scalable Rails applications. By leveraging Claude Code's understanding of your codebase, you can systematically identify N+1 problems, implement eager loading, and apply best practices for query construction. Start with the most frequently accessed pages, measure your improvements, and make query optimization part of your regular development workflow.
+Optimizing ActiveRecord queries is essential for building fast, scalable Rails applications. By using Claude Code's understanding of your codebase, you can systematically identify N+1 problems, implement eager loading, and apply best practices for query construction. Start with the most frequently accessed pages, measure your improvements, and make query optimization part of your regular development workflow.
 
 Remember: every database query has a cost. By fetching only what you need, when you need it, you'll create a more responsive experience for your users and a more efficient application overall.
 
