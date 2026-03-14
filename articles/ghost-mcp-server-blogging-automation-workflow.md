@@ -16,7 +16,7 @@ score: 8
 
 ## Prerequisites
 
-Before configuring the Ghost MCP server, ensure you have:
+[Before configuring the Ghost MCP server, ensure you have the prerequisites](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
 
 - A Ghost site (self-hosted or Ghost Pro)
 - Claude Code or Claude Desktop installed

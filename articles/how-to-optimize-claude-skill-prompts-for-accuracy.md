@@ -12,7 +12,7 @@ score: 8
 
 # How to Optimize Claude Skill Prompts for Accuracy
 
-A Claude skill is only as good as its body. The Markdown content after the front matter in your skill file becomes the system prompt Claude operates under when the skill is invoked. A vague skill body produces vague output. A well-structured one produces reliable results.
+[A Claude skill is only as good as its body](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) The Markdown content after the front matter in your skill file becomes the system prompt Claude operates under when the skill is invoked. A vague skill body produces vague output. A well-structured one produces reliable results.
 
 This guide covers the techniques that make the difference.
 

@@ -16,7 +16,7 @@ score: 7
 
 ## Prerequisites
 
-Before setting up the Firecrawl MCP server, ensure you have:
+[Before setting up the Firecrawl MCP server, ensure you have the prerequisites](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
 
 - Claude Code or Claude Desktop installed
 - Node.js 18+ for running MCP servers locally

@@ -12,7 +12,7 @@ score: 8
 
 # Open Source Claude Skills Ecosystem Outlook 2026
 
-Claude skills are Markdown files (`.md`) stored in `~/.claude/skills/`. When you type `/skill-name` in a Claude Code session, Claude loads that file's instructions and operates accordingly. The entire skill system is file-based — no npm packages, no Python imports, no CLI subcommands.
+[Claude skills are Markdown files stored in ~/.claude/skills/](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When you type `/skill-name` in a Claude Code session, Claude loads that file's instructions and operates accordingly. The entire skill system is file-based — no npm packages, no Python imports, no CLI subcommands.
 
 The open source community [shares skills as GitHub repositories](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/) containing `.md` files. This article covers how that ecosystem works in 2026.
 

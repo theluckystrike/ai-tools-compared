@@ -18,7 +18,7 @@ If you have invested time building custom rules in Cursor, you might wonder whet
 
 Cursor rules live in `.cursorrules` files placed at your project root or in a dedicated rules directory. These files contain instructions that shape how Cursor's AI assistant behaves within your codebase. Claude Code takes a different approach: skills are Markdown files stored in `~/.claude/skills/` that you invoke with a slash command during conversations.
 
-The key distinction is invocation method. In Cursor, your rules apply globally to every conversation in that project. In Claude Code, you activate a skill when needed using `/skill-name`, then describe your task. This gives you finer control—you load only the expertise you need for a specific task.
+[The key distinction is invocation method](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) In Cursor, your rules apply globally to every conversation in that project. In Claude Code, you activate a skill when needed using `/skill-name`, then describe your task. This gives you finer control—you load only the expertise you need for a specific task.
 
 ## Step 1: Export Your Cursor Rules
 

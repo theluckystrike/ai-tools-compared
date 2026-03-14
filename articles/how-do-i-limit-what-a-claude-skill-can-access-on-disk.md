@@ -12,7 +12,7 @@ score: 9
 
 # How Do I Limit What a Claude Skill Can Access on Disk
 
-Claude Code skills extend the AI assistant's capabilities by loading custom instructions from Markdown files. While these skills provide powerful automation for tasks like PDF processing with the pdf skill, spreadsheet automation with xlsx, or test-driven development with tdd, understanding how to control their file system access becomes essential when working with sensitive projects or shared environments.
+[Claude Code skills extend the AI assistant's capabilities by loading custom instructions from Markdown files](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) While these skills provide powerful automation for tasks like PDF processing with the pdf skill, spreadsheet automation with xlsx, or test-driven development with tdd, understanding how to control their file system access becomes essential when working with sensitive projects or shared environments.
 
 ## Understanding Claude Skill File Access
 

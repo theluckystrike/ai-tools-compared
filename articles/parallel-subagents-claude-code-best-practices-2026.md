@@ -18,7 +18,7 @@ This guide covers practical patterns for using parallel subagents effectively in
 
 ## How Parallel Subagents Work
 
-Claude Code supports subagent invocation through the `/subagent` command or direct tool calls. Each subagent runs as an independent reasoning thread with its own context window, allowing you to tackle multiple aspects of a problem simultaneously.
+[Claude Code supports subagent invocation through the /subagent command or direct tool calls](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) Each subagent runs as an independent reasoning thread with its own context window, allowing you to tackle multiple aspects of a problem simultaneously.
 
 The key insight: subagents share access to the parent session's tools and files, but maintain separate conversation histories. This makes them ideal for parallelizing independent tasks.
 

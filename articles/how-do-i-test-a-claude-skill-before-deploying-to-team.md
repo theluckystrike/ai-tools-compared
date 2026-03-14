@@ -12,7 +12,7 @@ score: 9
 
 # How Do I Test a Claude Skill Before Deploying to Team
 
-Testing a Claude skill before deploying it to your team is a critical step that prevents broken prompts, inconsistent behavior, and frustrated teammates. Whether you've built a custom skill for frontend design, document processing, or test-driven development, a structured testing approach catches issues early and ensures reliability. This guide covers practical methods to validate your skill at every level.
+[Testing a Claude skill before deploying it to your team is a critical step that prevents broken prompts](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/), inconsistent behavior, and frustrated teammates. Whether you've built a custom skill for frontend design, document processing, or test-driven development, a structured testing approach catches issues early and ensures reliability. This guide covers practical methods to validate your skill at every level.
 
 ## Understanding Claude Skill Testing Fundamentals
 

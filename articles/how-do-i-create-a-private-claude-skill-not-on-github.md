@@ -18,7 +18,7 @@ Private Claude skills let you build custom workflows that stay completely local.
 
 Claude Code skills live in a designated skills directory, typically `~/.claude/skills/` on Linux and macOS, or `%USERPROFILE%\.claude\skills\` on Windows. When you install a skill from GitHub using `cp skill.md ~/.claude/skills/`, it clones the repository into this folder. However, you can create skills manually in this directory without any GitHub involvement.
 
-Public skills like `frontend-design`, `pdf`, `tdd`, and `supermemory` get shared because developers want community contributions and widespread usage. Private skills serve different purposes: internal company workflows, personal automation scripts, or experimental features you aren't ready to publish.
+[Public skills like frontend-design, pdf, tdd, and supermemory get shared because developers want community contributions](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) and widespread usage. Private skills serve different purposes: internal company workflows, personal automation scripts, or experimental features you aren't ready to publish.
 
 The key difference is simply where the skill file lives. Public skills have remote repositories. Private skills exist only in your local skills directory.
 

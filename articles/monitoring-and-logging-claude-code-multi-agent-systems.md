@@ -17,7 +17,7 @@ Building multi-agent systems with Claude Code requires visibility into agent beh
 
 ## Why Multi-Agent Monitoring Matters
 
-When you orchestrate multiple Claude agents to handle different aspects of a task—such as one agent for code review, another for testing, and a third for deployment—each agent generates logs, state changes, and potential errors. A production-grade system needs centralized logging to trace requests across agents, measure latency, and detect failures early.
+[When you orchestrate multiple Claude agents to handle different aspects of a task](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/)—such as one agent for code review, another for testing, and a third for deployment—each agent generates logs, state changes, and potential errors. A production-grade system needs centralized logging to trace requests across agents, measure latency, and detect failures early.
 
 The challenge: Claude Code doesn't provide built-in observability for multi-agent orchestration. You need to implement it yourself using available tools like bash commands, file operations, and external logging services.
 
