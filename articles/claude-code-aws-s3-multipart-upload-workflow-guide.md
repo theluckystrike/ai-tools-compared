@@ -233,3 +233,10 @@ aws s3api create-multipart-upload \
 Claude Code transforms AWS S3 multipart uploads from complex manual processes into automated, reliable workflows. By combining Claude Code's skill system with AWS CLI or SDK capabilities, you can build robust upload handlers that handle large files efficiently, recover from failures automatically, and scale to meet production demands.
 
 Start by creating a basic skill following the examples above, then extend it with error handling, progress tracking, and resume capability as your requirements grow. With Claude Code managing your S3 workflows, you can focus on your application logic while it handles the intricacies of large file transfers.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
