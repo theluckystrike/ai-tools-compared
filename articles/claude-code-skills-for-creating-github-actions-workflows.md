@@ -39,7 +39,7 @@ When generating GitHub Actions workflows, first determine:
 Generate a workflow that matches your project's actual setup, not a generic template.
 ```
 
-This approach ensures the generated workflow integrates seamlessly with your existing codebase.
+This approach ensures the generated workflow integrates with your existing codebase.
 
 ## Validating Workflow Files
 
