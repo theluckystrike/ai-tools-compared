@@ -151,7 +151,7 @@ Establish a review process for team skills—treat them like code with pull requ
 ## Common Adoption Challenges
 
 **Challenge: Inconsistent Results**
-Solution: Provide more context in invocations. Instead of `/tdd test this`, use `/tdd write unit tests for the payment-processor.ts module --context ./specs/payment-requirements.md`
+Solution: Provide more context in invocations. Instead of `/tdd test this`, use `/tdd write unit tests for the payment-processor.ts module, referencing the requirements in ./specs/payment-requirements.md`
 
 **Challenge: Skill Discovery**
 Solution: Create a team command that lists all available skills with descriptions:
