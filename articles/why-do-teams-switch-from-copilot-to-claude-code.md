@@ -103,7 +103,7 @@ The learning curve is minimal for developers already comfortable with AI assista
 
 ## Conclusion
 
-Teams switch from Copilot to Claude Code primarily because of the skill system, better context understanding, and specialized capabilities for non-coding tasks. The ability to maintain project memory, execute terminal commands, and activate domain-specific workflows makes Claude Code a more comprehensive development assistant.
+Teams switch from Copilot to Claude Code primarily because of the skill system, better context understanding, and specialized capabilities for non-coding tasks. The ability to maintain project memory, execute terminal commands, and [activate domain-specific workflows](/claude-skills-guide/articles/claude-code-skills-for-backend-developers-node-and-python/) makes Claude Code a more comprehensive development assistant.
 
 While Copilot remains capable for simple code completion, Claude Code provides the depth and flexibility that professional development teams need. The skill-based approach allows teams to customize their AI assistant to match their specific processes and requirements.
 
@@ -111,9 +111,8 @@ While Copilot remains capable for simple code completion, Claude Code provides t
 
 ## Related Reading
 
-- [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-skills-guide/articles/claude-code-vs-chatgpt-code-interpreter-comparison/)
-- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/)
-- [Comparisons Hub](/claude-skills-guide/comparisons-hub/)
+- [Claude Code vs ChatGPT Code Interpreter Comparison](/claude-skills-guide/articles/claude-code-vs-chatgpt-code-interpreter-comparison/) — side-by-side breakdown of how Claude Code compares to ChatGPT's coding capabilities
+- [Claude Code vs GitHub Copilot Workspace 2026](/claude-skills-guide/articles/claude-code-vs-github-copilot-workspace-2026/) — detailed technical comparison of features, pricing, and workflow fit
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) — the `/tdd` skill in action: a complete CI-integrated testing pipeline
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
