@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Vibe Coding for Web Apps: NextJS + Vercel Guide"
-description: "A practical guide to vibe coding NextJS web applications with Vercel deployment. Learn how to build, test, and ship full-stack apps using AI-assisted development."
+description: "A practical guide to vibe coding NextJS web applications with Vercel deployment. Learn how to build, test, and ship full-stack apps using AI-assisted."
 date: 2026-03-14
 categories: [guides]
 tags: [vibe-coding, nextjs, vercel, web-development, claude-code]
@@ -163,5 +163,12 @@ Trust the process but verify the output. AI-generated code works well most of ti
 Document your decisions. When Claude makes architectural choices, add comments explaining why. This helps future maintenance and gives Claude better context in later sessions.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

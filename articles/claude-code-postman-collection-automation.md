@@ -6,6 +6,7 @@ description: "Learn how to automate Postman collections using Claude Code. Strea
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-postman-collection-automation/
+categories: [guides]
 ---
 
 # Claude Code Postman Collection Automation Guide
@@ -149,5 +150,12 @@ When automating Postman collections with Claude Code, keep these practices in mi
 Combining Claude Code with specialized skills unlocks additional automation capabilities. The frontend-design skill helps if you're building a dashboard around your API. The docx skill enables generating Word documents from your collection summaries. For teams using contract testing, Claude can generate Pact files from your Postman collections.
 
 The key is identifying repetitive tasks in your API workflow and letting Claude handle them systematically. Start with simple automations like test generation, then expand to more complex workflows as you become comfortable with the process.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
