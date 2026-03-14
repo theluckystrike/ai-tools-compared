@@ -5,6 +5,7 @@ description: "A practical guide to using Claude Code for debugging ETL pipelines
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-data-engineer-etl-debugging-daily-workflow/
+categories: [troubleshooting]
 ---
 
 # Claude Code Data Engineer ETL Debugging Daily Workflow
@@ -176,3 +177,10 @@ Load this skill automatically for ETL work by adding it to your project-specific
 Claude Code transforms ETL debugging from a manual, time-intensive process into a collaborative conversation. By providing context about your pipeline, leveraging specialized skills, and following practical debugging patterns, you can identify and fix issues faster while building more maintainable pipelines. The key is treating Claude as a debugging partner that understands your specific infrastructure rather than a generic code assistant.
 
 Start by creating project-specific context files, then gradually build custom skills for your most common debugging scenarios. Over time, this workflow becomes increasingly powerful as Claude learns your pipeline's unique characteristics and failure modes.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

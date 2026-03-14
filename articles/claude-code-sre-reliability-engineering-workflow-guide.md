@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code SRE Reliability Engineering Workflow Guide"
-description: "Master Site Reliability Engineering workflows with Claude Code. Learn practical skills for incident response, monitoring automation, and building resilient systems."
+description: "Master Site Reliability Engineering workflows with Claude Code. Learn practical skills for incident response, monitoring automation, and building."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-sre-reliability-engineering-workflow-guide/
@@ -145,3 +145,10 @@ Start by installing the core SRE skills, configure your monitoring integrations,
 *Explore related skills like `incident-response-automation`, `observability-dashboard`, and `runbook-generator` to expand your SRE toolkit with Claude Code.*
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
