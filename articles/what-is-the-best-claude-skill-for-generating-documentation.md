@@ -119,7 +119,7 @@ Most professional documentation workflows benefit from combining two or more of 
 
 ## Getting Started
 
-To begin using these skills, ensure you have Claude Code installed and the appropriate skill loaded. Each skill has specific setup requirements, but the general process involves installing any required Python packages and configuring the skill for your environment.
+To begin using these skills, ensure you have Claude Code installed. The built-in skills like `/docx`, `/pdf`, `/pptx`, and `/xlsx` are available immediately. Community skills can be added by placing a Markdown skill file in `~/.claude/skills/`.
 
 The initial investment in setting up documentation automation pays dividends quickly. Teams report saving several hours per week on documentation tasks after implementing these skills, with the added benefit of more consistent, accurate documentation.
 
