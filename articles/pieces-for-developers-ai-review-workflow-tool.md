@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Pieces for Developers AI Review Workflow Tool"
-description: "Learn how to integrate Pieces for Developers with Claude Code to build powerful AI-assisted code review workflows. Practical examples and real-world implementations."
+description: "Learn how to integrate Pieces for Developers with Claude Code to build powerful AI-assisted code review workflows. Practical examples and real-world."
 date: 2026-03-14
 author: theluckystrike
 permalink: /pieces-for-developers-ai-review-workflow-tool/
+categories: [guides]
 ---
 
 # Pieces for Developers AI Review Workflow Tool
@@ -133,3 +134,10 @@ Integrating Pieces for Developers with Claude Code transforms your code review p
 Start with the basic configuration outlined in this guide, then gradually incorporate advanced features as your team becomes comfortable with the workflow. The flexibility of Claude Code's skill system ensures you can tailor the experience to match your specific requirements and coding standards.
 
 The future of code review lies in AI-assisted workflows that augment human expertise rather than replacing it. By implementing these tools today, your team builds the foundation for more efficient and effective development practices.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
