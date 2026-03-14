@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Meilisearch Faceted Search Workflow Guide"
-description: "Master faceted search implementation with Meilisearch using Claude Code. Learn practical workflows for building dynamic filtering, attribute configuration, and search experiences."
+description: "Master faceted search implementation with Meilisearch using Claude Code. Learn practical workflows for building dynamic filtering, attribute."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-meilisearch-faceted-search-workflow-guide/
@@ -178,3 +178,10 @@ The complete faceted search workflow with Claude Code follows this pattern:
 Claude Code transforms faceted search implementation from a complex manual process into an interactive, guided workflow. By describing your requirements and data structure, you receive tailored code snippets, configuration recommendations, and architectural guidance that accelerate your implementation while ensuring best practices.
 
 Whether you're building an e-commerce product catalog, a document repository, or an internal knowledge base, the combination of Meilisearch's faceted search capabilities and Claude Code's intelligent assistance creates a powerful foundation for responsive, intuitive search experiences that scale with your data.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
