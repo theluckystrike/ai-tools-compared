@@ -40,21 +40,9 @@ The foundation of generating Spanish documentation lies in how you structure you
 ```yaml
 name: spanish-docs
 description: Generate Spanish-language documentation for codebases
-version: 1.0.0
-language: es
-terminology:
-  class: clase
-  function: función
-  method: método
-  property: propiedad
-  return: devuelve
-  parameter: parámetro
-  throws: lanza
-  example: ejemplo
-  description: descripción
 ```
 
-This configuration establishes consistent terminology translation. When you invoke this skill, Claude Code uses these mappings when generating documentation.
+This skill file stores Spanish documentation instructions in its body. When you invoke it, Claude Code follows those instructions when generating documentation.
 
 ## Generating Function Documentation in Spanish
 

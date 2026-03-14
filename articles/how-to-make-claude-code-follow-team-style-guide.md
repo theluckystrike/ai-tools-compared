@@ -86,17 +86,11 @@ Claude skills provide a powerful mechanism for enforcing team-specific patterns.
 
 Develop a dedicated skill that encapsulates your team's conventions:
 
-```
-/skill-manifest
+```markdown
+---
 name: team-style-enforcer
 description: Enforces team-specific code style and conventions
-version: 1.0.0
-rules:
-  - naming_conventions
-  - import_ordering
-  - component_structure
-  - testing_patterns
-  - documentation_requirements
+---
 ```
 
 Within this skill, define specific prompts that Claude references during code generation. For instance, your skill might include:

@@ -124,7 +124,7 @@ This checklist provides a foundation, but adapt it to your organization's risk t
 
 Document your governance decisions. When you approve a skill for production use, record what you verified, what permissions you granted, and any constraints on its use. This documentation supports compliance audits and helps future team members understand your security posture.
 
-Regular review keeps your governance effective as the Claude skills ecosystem evolves. New skills release frequently, and the threat landscape changes. Your audit checklist should be a living document, updated as you learn and as the ecosystem matures.
+Regular review keeps your governance effective as the Claude skills ecosystem evolves. New skills release frequently, and the threat field changes. Your audit checklist should be a living document, updated as you learn and as the ecosystem matures.
 
 ## Related Reading
 

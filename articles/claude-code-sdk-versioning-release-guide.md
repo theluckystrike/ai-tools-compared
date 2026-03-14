@@ -17,7 +17,7 @@ Building custom Claude skills is only part of the equation. When you distribute 
 
 ## Understanding Skill Versioning Basics
 
-Every skill you create can carry version information through its front matter. The standard approach uses Semantic Versioning (SemVer), which communicates changes clearly to users:
+Skills follow a standard two-field front matter: `name:` and `description:`. Version tracking happens at the Git repository level rather than inside the skill file itself. The standard approach uses Semantic Versioning (SemVer) for Git tags, which communicates changes clearly to users:
 
 ```yaml
 ---
@@ -26,24 +26,24 @@ description: "A skill for processing data"
 ---
 ```
 
-The version number follows the pattern `MAJOR.MINOR.PATCH`. Increment the MAJOR version when making incompatible API changes, MINOR for new functionality that maintains backward compatibility, and PATCH for bug fixes.
+The version tag follows the pattern `MAJOR.MINOR.PATCH`. Increment the MAJOR version when making incompatible changes, MINOR for new functionality that maintains backward compatibility, and PATCH for bug fixes.
 
-When you update skills used by the **pdf** skill for document processing or the **tdd** skill for test-driven development workflows, versioning helps users understand exactly what changed without reading every commit.
+When you update skills used by the **pdf** skill for document processing or the **tdd** skill for test-driven development workflows, Git version tags help users understand exactly what changed without reading every commit.
 
-## Declaring Dependencies Between Skills
+## Combining Skills for Workflows
 
-Modern skill development often involves combinations of skills working together. Your front matter can declare dependencies that Claude Code resolves before loading:
+Skills work together when invoked in sequence within a session. Rather than declaring hard dependencies in front matter (which is not supported), document in each skill's body which other skills it is designed to complement:
 
 ```yaml
 ---
 name: enterprise-pdf-processor
-description: "Enterprise PDF processing with TDD workflows"
+description: "Enterprise PDF processing with TDD workflows — use alongside /tdd for test generation"
 ---
 ```
 
-This ensures that when someone installs your skill, the system automatically pulls compatible versions of required skills. Without explicit dependency declarations, you risk runtime failures when incompatible versions interact.
+This documents the intended workflow for users who install your skill. Clear description text helps users understand which skills to load together for a complete workflow.
 
-For skills built on the **frontend-design** skill or the **canvas-design** skill, dependency management becomes especially important since these often integrate with multiple external services and tools.
+For skills built on the **frontend-design** skill or the **canvas-design** skill, documenting complementary skills in the description becomes especially important since these often integrate with multiple external services and tools.
 
 ## Managing Breaking Changes
 
@@ -72,7 +72,7 @@ description: "Data processor (deprecated — use enhanced-data-processor for bet
 ---
 ```
 
-The **supermemory** skill demonstrates this pattern well—it migrated its core storage backend in version 2.0 while maintaining a compatibility layer for users of the older API.
+Use the description field and README to communicate that a skill is deprecated and point users to the replacement.
 
 ## Release Workflow Best Practices
 

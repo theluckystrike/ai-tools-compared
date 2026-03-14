@@ -4,7 +4,7 @@ title: "Speed Up Claude Code Responses with Better Prompt Structure"
 description: "Learn how to structure prompts for faster, more accurate Claude Code responses. Practical techniques for developers and power users."
 date: 2026-03-14
 categories: [tutorials]
-tags: [claude-code, prompt-engineering, productivity, ai-coding]
+tags: [claude-code, claude-skills, prompt-engineering, productivity, ai-coding]
 author: theluckystrike
 reviewed: true
 score: 8

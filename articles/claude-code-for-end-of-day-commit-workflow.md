@@ -4,6 +4,8 @@ title: "Claude Code for End of Day Commit Workflow"
 description: "Learn how to automate your end-of-day commit workflow with Claude Code. Practical examples for staging changes, writing commit messages, and pushing to remote repositories."
 date: 2026-03-14
 author: "Claude Skills Guide"
+categories: [guides]
+tags: [claude-code, claude-skills, git, workflow, productivity]
 permalink: /claude-code-for-end-of-day-commit-workflow/
 reviewed: true
 score: 8
@@ -27,7 +29,6 @@ Create a dedicated skill for your end-of-day commit workflow. This skill should 
 # skills/end-of-day-commit.md
 name: "end-of-day-commit"
 description: "Automates the end-of-day commit workflow including staging, testing, and pushing changes"
-version: "1.0.0"
 
 ## Automatic Triggers
 

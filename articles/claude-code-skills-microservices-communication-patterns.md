@@ -31,18 +31,15 @@ REST remains the most common pattern for synchronous microservices communication
 # rest-client-skill.md
 name: REST Microservice Client Generator
 description: Generate type-safe REST client code for microservices communication
-version: 1.0.0
-
-# This skill generates client code for inter-service communication
-instructions: |
-  When generating REST client code for microservices:
-  
-  1. Use a base client class with common configuration
-  2. Implement exponential backoff for retries
-  3. Add timeout handling for long-running requests
-  4. Include circuit breaker pattern for resilience
-  5. Generate TypeScript types from OpenAPI specs
 ```
+
+When generating REST client code for microservices:
+
+1. Use a base client class with common configuration
+2. Implement exponential backoff for retries
+3. Add timeout handling for long-running requests
+4. Include circuit breaker pattern for resilience
+5. Generate TypeScript types from OpenAPI specs
 
 Here's how a generated client might look:
 
@@ -119,17 +116,15 @@ Asynchronous communication through [message queues decouples services](/claude-s
 # message-queue-skill.md
 name: Message Queue Pattern Generator
 description: Generate async communication code using RabbitMQ, Kafka, or SQS
-version: 1.0.0
-
-instructions: |
-  Generate message queue implementations that include:
-  
-  1. Publisher with confirmation handling
-  2. Consumer with graceful shutdown
-  3. Dead letter queue configuration
-  4. Message retry with backoff
-  5. Idempotency keys for duplicate detection
 ```
+
+Generate message queue implementations that include:
+
+1. Publisher with confirmation handling
+2. Consumer with graceful shutdown
+3. Dead letter queue configuration
+4. Message retry with backoff
+5. Idempotency keys for duplicate detection
 
 A practical implementation:
 
@@ -233,17 +228,15 @@ Event-driven architectures enable loose coupling and scalability. Services emit 
 # event-skill.md
 name: Event Schema Generator
 description: Generate event schemas and handlers for event-driven microservices
-version: 1.0.0
-
-instructions: |
-  Create event-driven communication that includes:
-  
-  1. Event schema definitions (JSON Schema)
-  2. Event publisher with versioning
-  3. Event subscriber with filtering
-  4. Schema evolution handling
-  5. Event sourcing support
 ```
+
+Create event-driven communication that includes:
+
+1. Event schema definitions (JSON Schema)
+2. Event publisher with versioning
+3. Event subscriber with filtering
+4. Schema evolution handling
+5. Event sourcing support
 
 ## Pattern 4: Saga Pattern for Distributed Transactions
 

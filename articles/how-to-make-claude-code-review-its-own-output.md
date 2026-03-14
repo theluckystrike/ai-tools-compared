@@ -10,6 +10,7 @@ score: 7
 categories: [guides]
 tags: [claude-code, claude-skills]
 ---
+{% raw %}
 
 # How to Make Claude Code Review Its Own Output
 
@@ -186,3 +187,4 @@ The key is treating review as a separate, deliberate step rather than hoping the
 - [Claude Code Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

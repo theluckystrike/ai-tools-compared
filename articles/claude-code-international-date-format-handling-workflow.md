@@ -29,10 +29,8 @@ Create a dedicated skill for international date handling. This skill encapsulate
 
 ```yaml
 # skills/international-date-handler/skill.md
-# skill
 name: international-date-handler
 description: Handles international date format conversion and validation
-version: 1.0.0
 
 ## Instructions
 

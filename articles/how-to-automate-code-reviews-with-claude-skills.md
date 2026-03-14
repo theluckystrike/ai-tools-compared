@@ -10,6 +10,7 @@ reviewed: true
 score: 9
 permalink: /how-to-automate-code-reviews-with-claude-skills/
 ---
+{% raw %}
 
 # How to Automate Code Reviews with Claude Skills
 
@@ -232,3 +233,4 @@ The practical workflow is: skills handle the checklist, humans handle the judgme
 
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

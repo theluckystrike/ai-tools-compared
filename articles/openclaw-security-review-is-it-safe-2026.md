@@ -8,7 +8,7 @@ reviewed: true
 score: 7
 permalink: /openclaw-security-review-is-it-safe-2026/
 categories: [guides]
-tags: [claude-code, security, openclaw, code-review, safety]
+tags: [claude-code, claude-skills, security, openclaw, code-review, safety]
 ---
 
 # OpenCLAW Security Review — Is It Safe in 2026?
