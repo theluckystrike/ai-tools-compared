@@ -168,3 +168,10 @@ As containerization matures, several advanced patterns have emerged that Claude 
 Claude Code transforms Dockerfile generation from a tedious task into a collaborative process that produces optimized, secure, and maintainable container configurations. By providing clear context, leveraging best practices, and iteratively refining outputs, you can generate production-ready Dockerfiles that follow 2026's containerization standards. The key is treating Claude Code as a knowledgeable partner that understands both your project's specific needs and the broader container ecosystem best practices.
 
 Remember that while Claude Code provides excellent starting points, always validate generated Dockerfiles in your specific environment before production deployment. Containerization is nuanced, and your particular requirements may necessitate adjustments to any template, no matter how well-generated.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

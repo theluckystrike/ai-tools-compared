@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Coordinate Multiple AI Agents in Pipeline"
-description: "Master the art of orchestrating multiple Claude Code agents in pipeline workflows. Learn coordination patterns, communication strategies, and practical implementation techniques."
+description: "Master the art of orchestrating multiple Claude Code agents in pipeline workflows. Learn coordination patterns, communication strategies, and practical."
 date: 2026-03-14
 author: "Claude Skills Guide"
 categories: [advanced]
@@ -143,3 +143,10 @@ When building multi-agent pipelines with Claude Code, follow these proven practi
 Coordinating multiple AI agents in pipeline workflows transforms Claude Code from a single assistant into a powerful orchestration engine. By implementing the supervisor-worker pattern, choosing appropriate execution strategies, and establishing clear communication protocols, you can build sophisticated automation that handles complex, multi-step tasks reliably.
 
 Start with simple two-agent pipelines to build intuition, then progressively add complexity as your coordination skills improve. The investment in proper pipeline design pays dividends through faster execution, better results, and more maintainable workflows.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
