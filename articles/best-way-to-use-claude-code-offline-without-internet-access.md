@@ -153,16 +153,16 @@ claude mcp add postgres "host=localhost port=5432 dbname=mydb"
 
 ### Pre-Caching Essential Skills
 
-Before going offline, cache all the skills you'll need:
+Before going offline, prepare your skills by copying the relevant `.md` files into your project's `.claude/` directory (or `~/.claude/` for global availability):
 
 ```bash
-# List all available skills
-claude skill list
+# Skills are .md files — copy them into place before going offline
+mkdir -p .claude
+cp ~/my-skills/code-review.md .claude/
+cp ~/my-skills/docker-helper.md .claude/
+cp ~/my-skills/git-commands.md .claude/
 
-# Ensure critical skills are downloaded
-claude skill cache "code-review"
-claude skill cache "docker-helper"
-claude skill cache "git-commands"
+# Skills are local files — no network required to use them offline
 ```
 
 ### Project-Specific Offline Configurations

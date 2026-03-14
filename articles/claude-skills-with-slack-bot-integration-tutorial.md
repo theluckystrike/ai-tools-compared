@@ -10,10 +10,6 @@ reviewed: true
 score: 8
 permalink: /claude-skills-with-slack-bot-integration-tutorial/
 ---
-author: "Claude Skills Guide"
-reviewed: true
-score: 9
----
 
 # Claude Skills with Slack Bot Integration Tutorial
 

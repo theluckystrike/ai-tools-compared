@@ -137,9 +137,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Claude Evidence Collection
         run: |
-          claude --skill iso27001-evidence \
-            --collect all \
-            --output ./evidence/
+          # Claude Code reads instructions from CLAUDE.md at repo root
+          # Place your iso27001-evidence skill instructions in CLAUDE.md
+          # or pass a prompt directly:
+          claude -p "Run ISO27001 evidence collection: audit logs, access reviews, change records. Output findings to ./evidence/"
       - name: Archive Evidence
         uses: actions/upload-artifact@v4
         with:

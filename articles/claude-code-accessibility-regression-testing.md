@@ -1,19 +1,14 @@
 ---
-
 layout: default
 title: "Claude Code Accessibility Regression Testing Guide"
 description: "Learn how to set up and run accessibility regression testing with Claude Code. Practical workflows, tools integration, and automation examples."
 date: 2026-03-14
-categories: [tutorials]
-tags: [claude-code, accessibility, testing, regression, axe, wcag, automation]
-author: "theluckystrike"
-reviewed: false
-score: 0
-permalink: /claude-code-accessibility-regression-testing/
 categories: [guides]
-tags: [claude-code, claude-skills]
+tags: [claude-code, accessibility, testing, regression, axe, wcag, automation, claude-skills]
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
+permalink: /claude-code-accessibility-regression-testing/
 ---
 
 
