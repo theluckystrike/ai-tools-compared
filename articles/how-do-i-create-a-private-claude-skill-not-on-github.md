@@ -100,7 +100,6 @@ When the user mentions formatting API responses or cleaning up JSON output, this
 ## Integration with Other Skills
 
 This skill works well alongside `pdf` for generating API documentation, or with `tdd` for creating test fixtures from real API responses.
-```
 
 ## Making Skills Auto-Invoke
 

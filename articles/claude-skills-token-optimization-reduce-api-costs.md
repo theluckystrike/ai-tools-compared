@@ -3,7 +3,7 @@ layout: default
 title: "Claude Skills Token Optimization: Reduce API Costs (2026)"
 description: "Practical strategies to optimize token usage in Claude Skills and reduce API costs without sacrificing productivity or code quality."
 date: 2026-03-13
-categories: [guides, tutorials]
+categories: [guides]
 tags: [claude-code, claude-skills, token-optimization, api-costs]
 author: "Claude Skills Guide"
 reviewed: true
@@ -36,7 +36,7 @@ One of the most effective ways to reduce token consumption is writing focused pr
 
 When using skills like **docx** for document creation or **pptx** for presentations, provide concrete requirements upfront rather than iterating through multiple rounds of feedback. This approach reduces the number of exchange cycles and keeps your context lean.
 
-## Strategy 2: Leverage Skill-Specific Optimizations
+## Strategy 2: Use Skill-Specific Optimizations
 
 Many Claude Skills are designed with efficiency in mind. The **supermemory** skill, for example, helps you organize and retrieve information without re-explaining context every session. By maintaining structured notes and references, you reduce redundant explanations in subsequent conversations. If you're using supermemory in frontend projects, pair this approach with the workflow tips in [Best Claude Code Skills for Frontend Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/).
 

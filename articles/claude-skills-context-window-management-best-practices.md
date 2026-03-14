@@ -3,7 +3,7 @@ layout: default
 title: "Claude Skills Context Window Management Best Practices"
 description: "Manage context windows in Claude skill workflows: focused prompts, file references, chunking, and external memory with the supermemory skill."
 date: 2026-03-13
-categories: [guides, tutorials]
+categories: [guides]
 tags: [claude-code, claude-skills, context-window, token-optimization]
 author: "Claude Skills Guide"
 reviewed: true
@@ -37,7 +37,7 @@ The way you structure prompts directly affects token consumption. Instead of dum
 
 This approach works exceptionally well with skills like **tdd** where you need focused analysis of specific functions rather than broad codebase reviews.
 
-### 2. Leverage File References Wisely
+### 2. Use File References Wisely
 
 When using skills such as **pdf** or document processing capabilities, reference specific sections rather than loading entire documents:
 
