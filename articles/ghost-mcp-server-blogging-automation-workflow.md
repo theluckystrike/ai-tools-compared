@@ -12,7 +12,7 @@ score: 8
 
 # Ghost MCP Server: Blogging Automation Workflow
 
-[The Ghost MCP server enables Claude to interact directly with your Ghost blog](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/), automating post creation, content updates, tag management, and publishing workflows through natural language commands. This guide shows developers and power users how to set up, configure, and leverage this integration for efficient content management.
+[The Ghost MCP server enables Claude to interact directly with your Ghost blog](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/), automating post creation, content updates, tag management, and publishing workflows through natural language commands. This guide shows developers and power users how to set up, configure, and use this integration for efficient content management.
 
 ## Prerequisites
 

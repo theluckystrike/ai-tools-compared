@@ -4,8 +4,8 @@ title: "Claude Code Django ORM Optimization Guide"
 description: "Master Django ORM performance with Claude Code. Learn query optimization, select_related, prefetch_related, and debugging techniques for production applications."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, django, orm, optimization, python, database]
-author: theluckystrike
+tags: [claude-code, claude-skills, django, orm, optimization, python, database]
+author: "Claude Skills Guide"
 reviewed: true
 score: 7
 ---
