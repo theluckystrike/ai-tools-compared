@@ -2,7 +2,7 @@
 
 layout: default
 title: "Why Is Claude Code Reading the Wrong Directory Entirely?"
-description: "Diagnose and fix directory resolution issues in Claude Code. Learn how working directories work, why Claude sometimes reads from unexpected locations, and practical solutions."
+description: "Fix Claude Code reading the wrong directory. Solutions for workspace path confusion and context misdirection in skill workflows."
 date: 2026-03-14
 categories: [troubleshooting]
 tags: [claude-code, directory, file-operations, troubleshooting, working-directory, claude-skills]
@@ -193,3 +193,12 @@ Claude Code reading the wrong directory is usually caused by:
 The fix is usually straightforward: either use absolute paths, explicitly change the working directory with `cd`, or verify the current context before performing file operations.
 
 By understanding how Claude Code resolves paths and taking a few simple precautions, you can avoid this common pitfall and work more effectively with your files.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

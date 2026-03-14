@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Use Claude Code Inside a Docker Container"
-description: "Learn the optimal approaches for running Claude Code within Docker containers, including skill-based workflows, MCP server integration, and practical configuration examples."
+description: "Use Claude Code effectively inside Docker containers. Setup, permission issues, and workflow patterns for containerized development."
 date: 2026-03-14
 categories: [guides, docker, claude-code]
 tags: [claude-code, docker, container, mcp, skills, development-environment, claude-skills]
@@ -223,3 +223,12 @@ The best way to use Claude Code inside Docker containers is through a combinatio
 3. **Proper container configuration** - Use volumes, environment variables, and health checks for production-ready setups
 
 This approach provides a scalable, reproducible way to incorporate AI-assisted development into any containerized workflow. As Claude Code continues to evolve, its skills and MCP integrations will only become more powerful for container-based development environments.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-code-token-usage-optimization-best-practices-guide/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

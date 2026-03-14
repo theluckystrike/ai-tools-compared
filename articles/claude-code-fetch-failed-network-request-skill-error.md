@@ -161,3 +161,12 @@ When building skills that make external requests, always include comprehensive e
 ## Conclusion
 
 Network request failures in Claude Code skills stem from various causes, but systematic diagnosis and proper error handling resolve most issues quickly. Implement retry logic, handle authentication correctly, and configure timeouts appropriately for reliable skill operation. With these practices in place, your Claude Code workflow continues smoothly even when dealing with unreliable external services.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Not Working After Update: How to Fix](/claude-skills-guide/claude-code-not-working-after-update-how-to-fix/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
