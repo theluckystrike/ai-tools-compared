@@ -16,9 +16,9 @@ Fly.io offers an elegant platform for deploying applications close to your users
 
 ## Why Fly.io Works Well with Claude Code Automation
 
-Fly.io's container-based deployment model pairs naturally with Claude Code's ability to execute shell commands, analyze outputs, and make decisions based on results. The platform's CLI-first approach means every deployment step can be scripted and automated. Unlike complex Kubernetes setups, Fly.io provides a simpler abstraction that Claude Code can interact with directly, making it ideal for developers who want production-grade deployment without operational overhead.
+[Fly.io's container-based deployment model pairs naturally with Claude Code's ability to execute shell commands](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), analyze outputs, and make decisions based on results. The platform's CLI-first approach means every deployment step can be scripted and automated. Unlike complex Kubernetes setups, Fly.io provides a simpler abstraction that Claude Code can interact with directly, making it ideal for developers who want production-grade deployment without operational overhead.
 
-The key advantage is that Claude Code can monitor deployment status, automatically rollback failed deployments, and maintain deployment history using skills like `/supermemory` for context retention across sessions.
+The key advantage is that [Claude Code can monitor deployment status, automatically rollback failed deployments, and maintain deployment history using skills](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) like `/supermemory` for context retention across sessions.
 
 ## Prerequisites and Project Setup
 

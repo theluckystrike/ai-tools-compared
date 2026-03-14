@@ -12,11 +12,11 @@ score: 8
 
 # Claude Code GitHub Actions Workflow Matrix Strategy Guide
 
-GitHub Actions matrix strategies let you run the same job across multiple combinations of variables in parallel. When combined with Claude Code, you can build intelligent CI/CD pipelines that adapt to different environments, run tests across platform combinations, and generate contextual reports. This guide shows you practical patterns for using matrix workflows effectively.
+[GitHub Actions matrix strategies let you run the same job across multiple combinations of variables in parallel](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/) When combined with Claude Code, you can build intelligent CI/CD pipelines that adapt to different environments, run tests across platform combinations, and generate contextual reports. This guide shows you practical patterns for using matrix workflows effectively.
 
 ## Understanding Matrix Strategy Fundamentals
 
-The matrix strategy in GitHub Actions uses the `matrix` keyword to define dimensions you want to test against. Each combination creates a separate job that runs in parallel, dramatically reducing total pipeline execution time.
+[The matrix strategy in GitHub Actions uses the matrix keyword to define dimensions you want to test against](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/) Each combination creates a separate job that runs in parallel, dramatically reducing total pipeline execution time.
 
 ```yaml
 jobs:
