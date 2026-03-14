@@ -12,7 +12,7 @@ score: 7
 
 # Claude Code Polars DataFrame Workflow Guide
 
-Polars has become the go-to library for data manipulation in Python, offering blazing-fast performance through Rust-based execution. When combined with Claude Code's AI assistance, you can build robust data pipelines that handle millions of rows without breaking a sweat. This guide shows you how to use Claude Code for Polars workflows, whether you're cleaning messy datasets or building complex transformation chains.
+Polars has become the go-to library for data manipulation in Python, offering blazing-fast performance through Rust-based execution. When combined with Claude Code's AI assistance, you can build reliable data pipelines that handle millions of rows without breaking a sweat. This guide shows you how to use Claude Code for Polars workflows, whether you're cleaning messy datasets or building complex transformation chains.
 
 ## Setting Up Your Polars Environment
 
