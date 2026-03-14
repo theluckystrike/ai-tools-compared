@@ -183,7 +183,7 @@ Automated pipelines work best when integrated into your development workflow. Se
 #!/bin/bash
 # .git/hooks/pre-commit
 
-claude-pipeline validate --staged
+claude --print "Validate the staged code changes against pipeline quality rules (linting, type checks, tests)"
 
 if [ $? -ne 0 ]; then
   echo "Pipeline validation failed"
@@ -195,7 +195,7 @@ For larger changes, trigger pipeline generation on feature branch creation:
 
 ```bash
 git checkout -b feature/new-api-endpoint
-claude-pipeline generate --spec api-spec.yaml --output src/
+claude --print "Using the api-scaffold pipeline definition, generate code from api-spec.yaml and write output files to src/"
 ```
 
 This approach maintains consistency while reducing manual work.

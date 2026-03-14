@@ -128,7 +128,6 @@ Beyond injection, Claude skills can orchestrate complete chaos experiments. Here
 ---
 name: chaos-experiment-runner
 description: Execute complete chaos experiments with validation
-tools: [bash, read_file, write_file]
 ---
 
 # Chaos Experiment Runner
