@@ -117,4 +117,11 @@ Refactor this code to add proper error handling: handle network failures, valida
 
 This approach gives you the best of both worlds—quick initial generation for exploration, followed by production-ready refinement.
 
+## Related Reading
+
+- [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) — Direct strategies for improving generated code quality
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Scoping tasks explicitly leads to more complete outputs
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — TDD catches missing error handling before it ships
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — More guides on working around Claude Code limitations
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

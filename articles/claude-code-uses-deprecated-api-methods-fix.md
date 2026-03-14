@@ -208,4 +208,11 @@ Fixing deprecated API methods in Claude Code involves three main steps: identify
 
 By keeping your SDK updated, using environment variables for configuration, and running regular validation checks, you can maintain stable integrations with the Anthropic API and avoid unexpected breakage from future deprecations.
 
+## Related Reading
+
+- [Claude Code API Changelog Documentation](/claude-skills-guide/claude-code-api-changelog-documentation/) — Track API changes and deprecation timelines
+- [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/) — How to write code that survives API updates
+- [Claude Code Error Rate Limit 429 How to Handle](/claude-skills-guide/claude-code-error-rate-limit-429-how-to-handle/) — Another common API error fix guide
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Central hub for Claude Code error fixes
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
