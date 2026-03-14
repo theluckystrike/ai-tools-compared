@@ -48,7 +48,7 @@ This layout mirrors what the **frontend-design** skill expects when generating c
 
 ## File Naming Conventions That Speed Up Development
 
-Use lowercase with hyphens for file names: `user-profile.tsx` rather than `UserProfile.tsx`. This convention works across operating systems and integrates seamlessly with build tools.
+Use lowercase with hyphens for file names: `user-profile.tsx` rather than `UserProfile.tsx`. This convention works across operating systems and connects cleanly with build tools.
 
 For components, use the pattern `{component-name}.{extension}` for the main file and `{component-name}.test.{extension}` for unit tests sitting alongside. This colocation makes it easier for Claude to find and update related files in one pass.
 
