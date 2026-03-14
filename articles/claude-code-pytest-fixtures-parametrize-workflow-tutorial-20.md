@@ -13,7 +13,7 @@ permalink: /claude-code-pytest-fixtures-parametrize-workflow-tutorial-20/
 
 # Claude Code Pytest Fixtures Parametrize Workflow Tutorial 2026
 
-Testing is the backbone of reliable software, and pytest remains the Python developer's go-to framework for writing clean, maintainable tests. Two features stand out for their ability to reduce code duplication and increase test coverage: fixtures and parametrize. When combined effectively, they create a powerful workflow that scales with your project. This guide walks you through practical patterns for using pytest fixtures and parametrize, with real-world examples you can apply immediately.
+Testing is the backbone of reliable software, and pytest remains the Python developer's go-to framework for writing clean, maintainable tests. Two features stand out for their ability to reduce code duplication and increase test coverage: fixtures and parametrize. When combined effectively, they create a powerful workflow that scales with your project. For property-based testing that complements parametrize, see the [hypothesis property testing guide](/claude-skills-guide/claude-code-hypothesis-property-testing-guide/). This guide walks you through practical patterns for using pytest fixtures and parametrize, with real-world examples you can apply immediately.
 
 ## Understanding pytest Fixtures
 
@@ -115,7 +115,7 @@ The `product_factory` fixture creates Product objects on demand, and parametrize
 
 ## Fixture Composition and Dependency Injection
 
-Pytest supports fixture dependencies, allowing one fixture to use another. This feature enables sophisticated setup pipelines where complex objects are built from simpler components:
+Pytest supports fixture dependencies, allowing one fixture to use another. This feature enables sophisticated setup pipelines where complex objects are built from simpler components. See the [pytest fixtures patterns guide](/claude-skills-guide/claude-code-pytest-fixtures-patterns-guide/) for more advanced composition examples:
 
 ```python
 @pytest.fixture

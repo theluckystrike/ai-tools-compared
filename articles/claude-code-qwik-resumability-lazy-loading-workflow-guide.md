@@ -13,7 +13,7 @@ permalink: /claude-code-qwik-resumability-lazy-loading-workflow-guide/
 
 # Claude Code Qwik Resumability Lazy Loading Workflow Guide
 
-[Qwik changes how web applications handle interactivity](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Unlike traditional frameworks that rely on hydration, Qwik uses resumability to deliver near-instant page loads. When combined with Claude Code and its ecosystem of specialized skills, you can build highly performant Qwik applications while maintaining development velocity.
+Qwik changes how web applications handle interactivity. Unlike traditional frameworks that rely on hydration, Qwik uses resumability to deliver near-instant page loads. When combined with [Claude Code's frontend development skills](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) and its ecosystem of specialized skills, you can build highly performant Qwik applications while maintaining development velocity.
 
 This workflow guide walks you through implementing Qwik projects using Claude Code, focusing on resumability patterns, lazy loading strategies, and practical development workflows.
 
@@ -43,7 +43,7 @@ Notice the `$` suffix on `component$` and `onClick$`. This marker tells Qwik to 
 
 ## Setting Up Qwik with Claude Code Skills
 
-When starting a new Qwik project, use Claude Code's skills to accelerate development. The `/frontend-design` skill helps establish component patterns and design system integration. For testing, `/tdd` ensures your components have proper test coverage from the beginning.
+When starting a new Qwik project, use Claude Code's skills to accelerate development. The `/frontend-design` skill helps establish component patterns and design system integration. For testing, `/tdd` ensures your components have proper test coverage from the beginning. A [test-driven workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) is especially valuable with Qwik's serializable component model.
 
 Initialize your Qwik project with the standard CLI:
 
