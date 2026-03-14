@@ -5,8 +5,10 @@ description: "Maximize your sprint velocity with Claude Code. Learn workflow pat
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, sprint-planning, workflow, productivity, agile]
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-for-sprint-start-workflow-tips/
+reviewed: true
+score: 8
 ---
 
 # Claude Code for Sprint Start: Workflow Tips and Best Practices

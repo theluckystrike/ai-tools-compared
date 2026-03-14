@@ -5,7 +5,7 @@ description: "Master .gitignore configuration for Claude Code projects with patt
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, gitignore, best-practices, version-control, claude-skills]
-author: "theluckystrike"
+author: "Claude Skills Guide"
 reviewed: true
 score: 8
 permalink: /claude-code-gitignore-best-practices/
