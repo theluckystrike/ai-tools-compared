@@ -13,7 +13,7 @@ permalink: /claude-md-example-for-go-fiber-api-project/
 
 # Claude MD Example for Go Fiber API Project
 
-Building REST APIs with Go Fiber and integrating Claude Code into your workflow requires understanding how Claude's Markdown-based skills work in practice. This guide provides concrete examples of using Claude's skill system with Go Fiber projects, showing real patterns you can apply immediately.
+Building REST APIs with Go Fiber and integrating Claude Code into your workflow requires understanding how Claude's Markdown-based skills work in practice. This guide provides concrete examples of using Claude's skill system with Go Fiber projects, showing real patterns you can apply immediately. For the full skill file specification, see the [Claude skill .md format complete specification guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/).
 
 ## Setting Up Claude Skills for Go Development
 
@@ -111,7 +111,7 @@ func healthCheck(c *fiber.Ctx) error {
 }
 ```
 
-With Claude's help, you can rapidly expand this skeleton into a full CRUD API. Use the `/tdd` skill to generate tests alongside your implementation:
+With Claude's help, you can rapidly expand this skeleton into a full CRUD API. Use the [tdd skill to generate tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) alongside your implementation:
 
 ```
 /tdd
@@ -261,7 +261,7 @@ Generate tests for all CRUD endpoints in my task API, including edge cases like 
 
 ## Memory and Context with Supermemory Skill
 
-For complex projects spanning multiple sessions, consider using the supermemory skill to maintain context:
+For complex projects spanning multiple sessions, consider using the [supermemory skill to maintain context](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/):
 
 ```
 /supermemory Remember: the current task API project structure and the authentication middleware decisions we made.
@@ -292,5 +292,12 @@ This produces production-ready container configurations.
 Using Claude's Markdown-based skill system with Go Fiber accelerates API development significantly. Create specialized skills for your stack, combine them effectively (go-fiber with tdd, pdf, frontend-design), and maintain project context using supermemory for multi-session workflows.
 
 The key is starting with a well-defined skill that understands Go conventions, then expanding with additional skills as your project needs grow. Your Go Fiber APIs will be more consistent, better tested, and faster to develop.
+
+## Related Reading
+
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Reference the full front matter fields when authoring your Go Fiber skill file
+- [How to Write a Skill .md File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — Detailed guidance for writing skill bodies that teach Claude language and framework conventions
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Generate Go test files alongside your Fiber handlers with the tdd skill
+- [Claude Skills Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Learn the fundamentals of the Claude Code skill system before creating custom skills
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

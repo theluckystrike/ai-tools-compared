@@ -13,7 +13,7 @@ tags: [claude-code, claude-skills, troubleshooting, claude-md, configuration]
 
 # Claude MD Changes Not Taking Effect Fix Guide
 
-When you modify your Claude CLI configuration and the changes fail to apply, debugging can be frustrating. This guide covers the most common causes and proven solutions for developers and power users who need their Claude.md settings to work correctly.
+When you modify your Claude CLI configuration and the changes fail to apply, debugging can be frustrating. This guide covers the most common causes and proven solutions for developers and power users who need their Claude.md settings to work correctly. For guidance on structuring your CLAUDE.md in the first place, see [Claude MD best practices for large codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/).
 
 ## Understanding Claude.md Configuration
 
@@ -110,7 +110,7 @@ claude --debug 2>&1 | grep -i config
 
 ### 5. Skill Loading Failures
 
-If you're using Claude skills like `frontend-design`, `pdf`, `tdd`, or `supermemory`, failures to activate them are usually because the skill file is missing or misnamed. Skills are not loaded through CLAUDE.md configuration—they are invoked during a session with `/skill-name`.
+If you're using Claude skills like `frontend-design`, `pdf`, `tdd`, or `supermemory`, failures to activate them are usually because the skill file is missing or misnamed. Skills are not loaded through CLAUDE.md configuration—they are invoked during a session with `/skill-name`. The [Claude skill .md format specification guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) shows the correct file format for skills to be recognized.
 
 Verify skills are actually installed by checking the skills directory:
 ```bash
@@ -212,5 +212,12 @@ claude --verbose
 Claude.md configuration issues typically stem from syntax errors, caching, or file placement. By validating your configuration, ensuring correct naming and location, and restarting Claude after changes, you can resolve most problems. When skills like `frontend-design`, `pdf`, `tdd`, or `supermemory` fail to activate, verify the skill file exists in `~/.claude/skills/` and invoke them correctly with `/skill-name` during your session.
 
 For persistent issues, the debug and verbose flags provide detailed information about what Claude reads and ignores. Systematic debugging, combined with version-controlled configuration, prevents these issues from recurring.
+
+## Related Reading
+
+- [Claude MD Best Practices for Large Codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/) — Structure your CLAUDE.md to avoid common configuration pitfalls from the start
+- [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Understand the correct skill file format to prevent skill loading failures
+- [Claude MD Too Long: Context Window Optimization](/claude-skills-guide/claude-md-too-long-context-window-optimization/) — Optimize oversized CLAUDE.md files that may cause parsing slowdowns or truncation
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Find solutions to other common Claude Code configuration and skill issues
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

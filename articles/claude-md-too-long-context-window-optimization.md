@@ -13,7 +13,7 @@ tags: [claude-code, claude-skills, context-window, optimization, troubleshooting
 
 # Claude MD Too Long Context Window Optimization
 
-When your Claude MD file grows too large, you will encounter context window errors that prevent Claude Code from processing your instructions effectively. This guide provides practical solutions for developers and power users who need to optimize oversized skill files and maintain responsive AI assistance.
+When your Claude MD file grows too large, you will encounter context window errors that prevent Claude Code from processing your instructions effectively. This guide provides practical solutions for developers and power users who need to optimize oversized skill files and maintain responsive AI assistance. For foundational CLAUDE.md structure advice, see [Claude MD best practices for large codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/).
 
 ## Recognizing Context Window Problems
 
@@ -53,7 +53,7 @@ Create separate focused skill files for each concern rather than one monolithic 
 
 Invoke only the skill relevant to your current task. When working on architecture decisions, use `/project-architecture`. When writing tests, switch to `/project-testing`. This keeps the active context lean.
 
-This approach mirrors how the `supermemory` skill manages persistent context across sessions. By splitting concerns across files and loading them selectively, you maintain comprehensive instructions without overwhelming the context window.
+This approach mirrors how the [supermemory skill manages persistent context across sessions](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/). By splitting concerns across files and loading them selectively, you maintain comprehensive instructions without overwhelming the context window.
 
 ## Lazy Loading for Large Projects
 
@@ -137,5 +137,14 @@ Building skills with optimization in mind from the start prevents context window
 Claude MD context window limits are manageable with the right approach. Start with quick fixes like front matter compression and content trimming. When those prove insufficient, implement file splitting and lazy loading patterns. Maintain awareness of token budgets and monitor file sizes to prevent problems before they impact your productivity.
 
 The goal is not eliminating large skill files but ensuring they load efficiently and Claude can focus its contextual understanding on your actual work rather than processing verbose instructions.
+
+## Related Reading
+
+- [Claude MD Best Practices for Large Codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/) — Structure CLAUDE.md files to stay manageable from the start
+- [Claude Skill Lazy Loading: Token Savings Explained](/claude-skills-guide/claude-skill-lazy-loading-token-savings-explained-deep-dive/) — Deep dive into lazy loading patterns for maximum token efficiency
+- [Claude MD Changes Not Taking Effect: Fix Guide](/claude-skills-guide/claude-md-changes-not-taking-effect-fix-guide/) — Diagnose why optimized CLAUDE.md changes may still not apply correctly
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Resolve other context and configuration issues in your Claude Code setup
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
