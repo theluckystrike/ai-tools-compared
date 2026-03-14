@@ -1,18 +1,23 @@
 ---
 
+
 layout: default
 title: "Claude Code PostHog Multivariate Test Implementation Guide"
 description: "Learn how to implement multivariate tests (A/B/n tests) using PostHog with Claude Code. Practical examples for setting up experiments, tracking."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-posthog-multivariate-test-implementation-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 {% raw %}
 
 # Claude Code PostHog Multivariate Test Implementation Guide
 
-Multivariate testing (MVT) allows you to test multiple variations of your application simultaneously, helping you understand which combinations of elements perform best. PostHog provides robust experimentation features that integrate seamlessly with modern web applications. This guide shows you how to implement multivariate tests using Claude Code, making experiment setup and analysis more efficient.
+Multivariate testing (MVT) allows you to test multiple variations of your application simultaneously, helping you understand which combinations of elements perform best. PostHog provides robust experimentation features that integrate smoothly with modern web applications. This guide shows you how to implement multivariate tests using Claude Code, making experiment setup and analysis more efficient.
 
 ## Understanding Multivariate Tests in PostHog
 

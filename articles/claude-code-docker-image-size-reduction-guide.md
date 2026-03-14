@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Docker Image Size Reduction Guide"
 description: "A practical guide to reducing Docker image sizes for Claude Code workflows. Learn multi-stage builds, minimal base images, and optimization techniques."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-docker-image-size-reduction-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Docker image size directly impacts deployment speed, storage costs, and CI/CD pipeline efficiency. When working with Claude Code and AI-assisted development workflows, optimizing your Docker images becomes essential for maintaining fast, responsive development environments. This guide covers practical techniques to reduce Docker image sizes while preserving functionality.

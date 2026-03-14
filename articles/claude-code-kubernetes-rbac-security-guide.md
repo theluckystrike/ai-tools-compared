@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Kubernetes RBAC Security Guide"
 description: "A practical guide to securing Kubernetes clusters using Role-Based Access Control with Claude Code. Learn to implement fine-grained permissions and."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-kubernetes-rbac-security-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Kubernetes Role-Based Access Control (RBAC) is the backbone of cluster security. When configured correctly, RBAC ensures that users, service accounts, and groups receive only the permissions they need to perform their tasks. This guide walks you through implementing robust RBAC policies using Claude Code, with practical examples and real-world patterns.

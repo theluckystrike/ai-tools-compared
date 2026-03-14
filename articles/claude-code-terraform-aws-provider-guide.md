@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Terraform AWS Provider Guide"
 description: "A practical guide to using Claude Code with Terraform and the AWS provider. Learn skill patterns, workflow automation, and real-world examples for infrastructure as code."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-terraform-aws-provider-guide/
+reviewed: true
+score: 7
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Terraform AWS Provider Guide
 
-Infrastructure as code has become essential for managing cloud resources at scale. Terraform remains the industry standard for defining infrastructure, and when combined with Claude Code's AI capabilities, you can dramatically accelerate your AWS provisioning workflows. This guide shows you how to leverage Claude skills to write, review, and manage Terraform configurations more effectively.
+Infrastructure as code has become essential for managing cloud resources at scale. Terraform remains the industry standard for defining infrastructure, and when combined with Claude Code's AI capabilities, you can dramatically accelerate your AWS provisioning workflows. This guide shows you how to use Claude skills to write, review, and manage Terraform configurations more effectively.
 
 ## Setting Up Claude for Terraform Development
 

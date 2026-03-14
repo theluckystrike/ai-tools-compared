@@ -1,15 +1,20 @@
 ---
+
 layout: default
 title: "Claude Code Podman Rootless Container Guide"
 description: "A practical guide to running Claude Code in Podman rootless containers for secure, isolated development environments."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-podman-rootless-container-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
 
+
 {% raw %}
-Running Claude Code inside Podman rootless containers gives developers a secure, reproducible way to use AI-assisted development without compromising system security. This guide walks through setting up a rootless Podman environment and configuring Claude Code to work seamlessly within it.
+Running Claude Code inside Podman rootless containers gives developers a secure, reproducible way to use AI-assisted development without compromising system security. This guide walks through setting up a rootless Podman environment and configuring Claude Code to work smoothly within it.
 
 ## Why Rootless Containers Matter
 

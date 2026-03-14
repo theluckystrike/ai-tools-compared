@@ -1,17 +1,21 @@
 ---
+
 layout: default
 title: "Claude Code Kubernetes Helm Charts Guide"
 description: "A practical guide to using Claude Code for Kubernetes and Helm chart development. Learn how to automate deployments, manage configurations, and."
 date: 2026-03-14
 categories: [guides]
-tags: [claude-code, kubernetes, helm, devops, automation]
-author: theluckystrike
+tags: [claude-code, kubernetes, helm, devops, automation, claude-skills]
+author: "Claude Skills Guide"
 permalink: /claude-code-kubernetes-helm-charts-guide/
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Kubernetes Helm Charts Guide
 
-Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide shows you how to leverage Claude Code skills for Kubernetes and Helm chart development.
+Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide shows you how to use Claude Code skills for Kubernetes and Helm chart development.
 
 ## Setting Up Your Kubernetes Workflow
 
@@ -131,7 +135,7 @@ To add a new Kubernetes resource:
 5. Bash: kubectl apply --dry-run=client -f manifests/{environment}/{resource-type}.yaml
 ```
 
-This approach maintains consistency across your manifests while leveraging Claude's code generation capabilities.
+This approach maintains consistency across your manifests while using Claude's code generation capabilities.
 
 ## Debugging Running Deployments
 

@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Claude Code Bitbucket Pipelines Workflow Guide"
 description: "A practical guide to integrating Claude Code into Bitbucket Pipelines for automated code generation, testing, and deployment workflows."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-bitbucket-pipelines-workflow-guide/
 categories: [guides]
-tags: [claude-code, bitbucket-pipelines, ci-cd, automation]
+tags: [claude-code, bitbucket-pipelines, ci-cd, automation, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -75,7 +79,7 @@ This skill understands modern design systems and can generate components that fo
 
 ## Running Automated Tests with Claude Code
 
-Testing represents another area where Claude Code adds significant value. The **tdd** skill provides test-driven development workflows that integrate seamlessly with Bitbucket Pipelines. Install it with:
+Testing represents another area where Claude Code adds significant value. The **tdd** skill provides test-driven development workflows that integrate smoothly with Bitbucket Pipelines. Install it with:
 
 ```bash
 claude skill install tdd

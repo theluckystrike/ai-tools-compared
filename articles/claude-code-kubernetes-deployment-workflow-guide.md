@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Kubernetes Deployment Workflow Guide"
 description: "Master Kubernetes deployment workflows with Claude Code. Learn how to automate deployments, manage configurations, and streamline your DevOps pipeline."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-kubernetes-deployment-workflow-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Claude Code Kubernetes Deployment Workflow Guide

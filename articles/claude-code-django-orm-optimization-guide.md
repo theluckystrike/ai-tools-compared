@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Django ORM Optimization Guide"
 description: "Master Django ORM optimization with Claude Code. Learn practical techniques for querysets, select_related, prefetch_related, and database performance."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-django-orm-optimization-guide/
 categories: [guides]
-tags: [claude-code, django, orm, optimization, python]
+tags: [claude-code, django, orm, optimization, python, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Django ORM Optimization Guide
 
@@ -17,7 +21,7 @@ Django's Object-Relational Mapper (ORM) provides a powerful abstraction layer fo
 
 Database queries often represent the slowest part of web applications. A single page load might trigger dozens of queries—each one adding latency. For applications with moderate traffic, N+1 query problems can slow response times from milliseconds to seconds. Optimizing your ORM usage directly impacts user experience and server costs.
 
-When working with Django projects in Claude Code, you can leverage several strategies to identify and fix performance issues. The platform provides excellent context management for examining code patterns across your project, making it ideal for systematic optimization work.
+When working with Django projects in Claude Code, you can use several strategies to identify and fix performance issues. The platform provides excellent context management for examining code patterns across your project, making it ideal for systematic optimization work.
 
 ## Identifying N+1 Query Problems
 
@@ -86,7 +90,7 @@ posts = Post.objects.defer('content', 'metadata')
 
 The `only()` and `defer()` methods are particularly useful when you need most but not all fields. However, avoid overusing them—retrieving too many small querysets can sometimes be less efficient than one comprehensive query.
 
-For text search, leverage database-specific features:
+For text search, use database-specific features:
 
 ```python
 # PostgreSQL full-text search

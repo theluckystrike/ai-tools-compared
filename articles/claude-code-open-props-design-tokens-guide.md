@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Open Props Design Tokens Guide"
 description: "Learn how to use Open Props design tokens effectively with Claude Code for streamlined frontend development."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-open-props-design-tokens-guide/
+reviewed: true
+score: 7
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Open Props has become one of the most popular CSS variable-based design systems for developers who want lightweight, customizable design tokens without the overhead of a full component library. When combined with Claude Code's AI capabilities, you can rapidly scaffold design systems, generate consistent token usage, and maintain design consistency across projects. This guide walks through practical approaches to integrating Open Props with your Claude Code workflow.
 
@@ -33,7 +39,7 @@ The core tokens include color scales, spacing units, font sizes, border radii, a
 
 ## Setting Up Open Props with Claude Code
 
-When starting a new project, you can leverage Claude Code to generate the complete Open Props setup. The frontend-design skill provides structured guidance for component-based architecture, but you can also work directly with Open Props for maximum flexibility.
+When starting a new project, you can use Claude Code to generate the complete Open Props setup. The frontend-design skill provides structured guidance for component-based architecture, but you can also work directly with Open Props for maximum flexibility.
 
 First, install Open Props via your preferred package manager:
 
@@ -172,6 +178,6 @@ Open Props tokens are CSS custom properties, which means they inherit and cascad
 
 ## Conclusion
 
-Open Props provides a flexible foundation for design token management that pairs excellently with Claude Code's generative capabilities. By establishing clear token conventions and leveraging AI-assisted code generation, you can build consistent design systems efficiently. The key is starting with the base tokens and extending thoughtfully for your project's specific needs.
+Open Props provides a flexible foundation for design token management that pairs excellently with Claude Code's generative capabilities. By establishing clear token conventions and using AI-assisted code generation, you can build consistent design systems efficiently. The key is starting with the base tokens and extending thoughtfully for your project's specific needs.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

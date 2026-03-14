@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code TestContainers Integration Testing"
 description: "Learn how to use TestContainers with Claude Code for reliable integration testing. Practical examples for database, message queue, and service testing."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-testcontainers-integration-testing/
+reviewed: true
+score: 7
+categories: [integrations]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code TestContainers Integration Testing
 
