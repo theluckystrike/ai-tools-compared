@@ -23,7 +23,7 @@ The real problem emerges when you need to track audit results over time, correla
 
 ## Automating Audits with Claude Skills
 
-Claude Code skills transform dependency auditing from a reactive process into a continuous, automated workflow. By combining specialized skills, you can build an audit pipeline that scans your dependencies, contextualizes findings, generates actionable reports, and integrates seamlessly with your existing development workflow.
+Claude Code skills transform dependency auditing from a reactive process into a continuous, automated workflow. By combining specialized skills, you can build an audit pipeline that scans your dependencies, contextualizes findings, generates actionable reports, and integrates with your existing development workflow.
 
 ### Skill 1: The Audit Scanner
 

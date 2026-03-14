@@ -23,7 +23,7 @@ The Mailchimp MCP server acts as a bridge between Claude Code and Mailchimp's RE
 
 Unlike traditional API integrations that require writing boilerplate code for each request, the MCP server exposes semantic tools that map directly to Mailchimp operations. You can ask Claude to "create a segment for users who opened the last three campaigns" and the server translates this into the appropriate API calls, handles pagination, and returns structured data you can immediately use.
 
-This integration pairs well with other Claude skills. For instance, you might use the **pdf** skill to generate monthly campaign performance reports, apply **frontend-design** principles to create HTML email templates, or leverage **tdd** practices to test your automation workflows before deployment.
+This integration pairs well with other Claude skills. For instance, you might use the **pdf** skill to generate monthly campaign performance reports, apply **frontend-design** principles to create HTML email templates, or apply **tdd** practices to test your automation workflows before deployment.
 
 ## Setting Up the Mailchimp MCP Server
 

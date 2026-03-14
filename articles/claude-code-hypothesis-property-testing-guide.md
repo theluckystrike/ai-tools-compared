@@ -13,7 +13,7 @@ tags: [claude-code, claude-skills, hypothesis, property-testing, python, testing
 
 # Claude Code Hypothesis Property Testing Guide
 
-Property-based testing has revolutionized how developers verify code correctness. Instead of writing hundreds of specific test cases, you define properties that your code must always satisfy, and a testing library generates thousands of random inputs to find edge cases you would never think to test manually. When combined with Claude Code skills, this approach becomes even more powerful for automated test generation and validation.
+Property-based testing has changed how developers verify code correctness. Instead of writing hundreds of specific test cases, you define properties that your code must always satisfy, and a testing library generates thousands of random inputs to find edge cases you would never think to test manually. When combined with Claude Code skills, this approach becomes even more powerful for automated test generation and validation.
 
 This guide shows you how to integrate Hypothesis, the Python property-based testing library, into your Claude Code workflow for more comprehensive test coverage.
 
@@ -144,7 +144,7 @@ Hypothesis generates complex nested dictionaries exploring various data types an
 
 ## Combining Hypothesis with Frontend Testing
 
-The frontend-design skill can leverage Hypothesis for visual regression testing by generating random component props and verifying consistent rendering:
+The frontend-design skill can use Hypothesis for visual regression testing by generating random component props and verifying consistent rendering:
 
 ```python
 @given(

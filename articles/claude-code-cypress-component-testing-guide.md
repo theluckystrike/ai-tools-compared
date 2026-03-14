@@ -188,7 +188,7 @@ it('supports keyboard navigation', () => {
 
 ## Debugging Failing Component Tests
 
-When component tests fail, Cypress provides detailed error messages and debugging tools. Use `cy.wait()` strategically when dealing with async operations, and leverage Cypress's built-in time-travel debugging by clicking on commands in the Test Runner.
+When component tests fail, Cypress provides detailed error messages and debugging tools. Use `cy.wait()` strategically when dealing with async operations, and use Cypress's built-in time-travel debugging by clicking on commands in the Test Runner.
 
 For persistent flakiness, consider increasing timeouts for slow renders or using `cy.clock()` to control time-dependent behavior in your tests.
 

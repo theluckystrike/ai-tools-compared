@@ -17,7 +17,7 @@ Integrating Claude Code into your Jest testing workflow transforms how you write
 
 ## Setting Up Jest with Claude Code
 
-Before diving into the workflow, ensure your project has Jest properly configured. Claude Code works seamlessly with Jest when your testing environment is properly set up.
+Before diving into the workflow, ensure your project has Jest properly configured. Claude Code works well with Jest when your testing environment is properly set up.
 
 Initialize Jest in your project if you haven't already:
 

@@ -131,7 +131,7 @@ When you need to generate API documentation, activate the pdf skill:
 Create a PDF document with the task API endpoints, request/response formats, and example curl commands.
 ```
 
-This generates professional documentation automatically. The pdf skill integrates seamlessly with code you've built using your Go Fiber skill.
+This generates professional documentation automatically. The pdf skill works well with code you've built using your Go Fiber skill.
 
 ### Database Testing with TDD Skill
 
