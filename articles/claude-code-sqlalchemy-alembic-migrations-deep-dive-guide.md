@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code SQLAlchemy Alembic Migrations Deep Dive Guide"
-description: "Master database migrations with Claude Code and SQLAlchemy. Learn practical workflows for generating, reviewing, and managing Alembic migrations effectively."
+description: "Master database migrations with Claude Code and SQLAlchemy. Learn practical workflows for generating, reviewing, and managing Alembic migrations."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-sqlalchemy-alembic-migrations-deep-dive-guide/
@@ -158,3 +158,10 @@ Finally, include rollback strategies in your migration reviews. Every migration 
 Database migrations don't have to be a source of stress. By leveraging Claude Code to generate, review, and refine your Alembic migrations, you can move faster while maintaining confidence in your database schema changes. The key is treating migrations as first-class citizens in your development workflow, giving them the same attention and review as your application code.
 
 Start by integrating Claude into your migration workflow on a small project, then expand to production systems once you're comfortable with the collaboration pattern. Your future self—deployed at 3 AM during a critical release—will appreciate the investment.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

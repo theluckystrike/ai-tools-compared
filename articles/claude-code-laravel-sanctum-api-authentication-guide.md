@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Laravel Sanctum API Authentication Guide"
-description: "A comprehensive guide to implementing secure API authentication in Laravel using Sanctum. Learn to protect your routes, issue tokens, and build authenticated endpoints with practical examples."
+description: "A comprehensive guide to implementing secure API authentication in Laravel using Sanctum. Learn to protect your routes, issue tokens, and build."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -281,3 +281,10 @@ Laravel Sanctum provides a secure, straightforward solution for API authenticati
 
 Remember to keep your tokens secure, implement proper CORS and rate limiting configurations, and provide clear token management features for your users. With these practices in place, your Laravel API will have professional-grade authentication ready for production use.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

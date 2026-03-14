@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code ActiveRecord Query Optimization Workflow Guide"
-description: "Master ActiveRecord query optimization with Claude Code. Learn practical techniques for identifying N+1 queries, using eager loading, query methods, and database performance improvements."
+description: "Master ActiveRecord query optimization with Claude Code. Learn practical techniques for identifying N+1 queries, using eager loading, query methods."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-activerecord-query-optimization-workflow-guide/
@@ -237,3 +237,10 @@ Optimizing ActiveRecord queries is essential for building fast, scalable Rails a
 Remember: every database query has a cost. By fetching only what you need, when you need it, you'll create a more responsive experience for your users and a more efficient application overall.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Playwright API Testing Workflow Tutorial"
-description: "Learn how to build a powerful API testing workflow using Claude Code and Playwright. This comprehensive guide covers setup, test creation, and best practices for automated API testing."
+description: "Learn how to build a powerful API testing workflow using Claude Code and Playwright. This comprehensive guide covers setup, test creation, and best."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-playwright-api-testing-workflow-tutorial/
@@ -324,3 +324,10 @@ Building an effective API testing workflow with Claude Code and Playwright combi
 Start with basic endpoint testing, then gradually add more sophisticated patterns like schema validation, error case coverage, and integration tests. The investment in comprehensive API testing pays dividends in code quality and developer confidence.
 
 Remember: the best test is one that catches bugs before they reach production while remaining maintainable as your codebase evolves.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

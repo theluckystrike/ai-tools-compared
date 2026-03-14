@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Vitest Coverage Reporting Workflow Tutorial"
-description: "Learn how to set up automated Vitest coverage reporting with Claude Code. This tutorial covers configuration, CI integration, and best practices for maintainable test coverage workflows."
+description: "Learn how to set up automated Vitest coverage reporting with Claude Code. This tutorial covers configuration, CI integration, and best practices for."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-vitest-coverage-reporting-workflow-tutorial/
@@ -191,3 +191,10 @@ Follow these practices to make coverage reporting effective:
 Integrating Vitest coverage reporting with Claude Code creates a powerful quality assurance workflow. The combination of automated testing, clear threshold enforcement, and actionable reporting helps teams maintain high code quality standards. Start with reasonable thresholds, integrate coverage checks into your CI pipeline, and gradually tighten requirements as your test suite matures.
 
 With these practices in place, you'll have visibility into your code's test coverage and be able to make informed decisions about where to focus testing efforts next.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

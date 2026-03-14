@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Conventional Commits Enforcement Workflow"
-description: "Learn how to enforce Conventional Commits in your Claude Code workflow with commit hooks, CI validation, and skill-based automation for consistent commit messages."
+description: "Learn how to enforce Conventional Commits in your Claude Code workflow with commit hooks, CI validation, and skill-based automation for consistent."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-conventional-commits-enforcement-workflow/
@@ -220,3 +220,10 @@ Finally, document your commit conventions in CONTRIBUTING.md. New team members n
 
 Enforcing Conventional Commits through Claude Code skills, Git hooks, and CI pipelines creates a robust system that improves project maintainability. The initial setup investment pays dividends through automated versioning, meaningful changelogs, and consistent commit history. Start with local validation, add Claude-assisted message generation, then extend enforcement to your CI pipeline for comprehensive coverage.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

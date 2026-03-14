@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Prisma Transactions and Error Handling Patterns"
-description: "Master Prisma transactions and error handling in your Claude Code skills. Learn practical patterns for atomic operations, rollback strategies, and building resilient database workflows."
+description: "Master Prisma transactions and error handling in your Claude Code skills. Learn practical patterns for atomic operations, rollback strategies, and."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-prisma-transactions-and-error-handling-patterns/
@@ -188,3 +188,10 @@ When implementing Prisma transactions in Claude Code skills, follow these guidel
 Prisma transactions and error handling form the backbone of reliable database operations. By using `$transaction` for atomic operations, handling Prisma-specific error codes, implementing retry patterns for transient failures, and following best practices, you build Claude Code skills that handle database interactions gracefully and maintain data integrity under all conditions.
 
 The patterns shown here scale from simple single-operation skills to complex multi-step workflows—adapt them to your specific use case and your database operations will be rock-solid.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

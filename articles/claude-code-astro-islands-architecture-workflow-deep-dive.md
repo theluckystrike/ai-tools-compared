@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Astro Islands Architecture Workflow Deep Dive"
-description: "Master Astro's islands architecture with Claude Code. Learn practical workflows for building performant, interactive web applications with partial hydration."
+description: "Master Astro's islands architecture with Claude Code. Learn practical workflows for building performant, interactive web applications with partial."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-astro-islands-architecture-workflow-deep-dive/
@@ -222,3 +222,10 @@ Astro's islands architecture provides a powerful foundation for building web app
 
 The key is starting simple—default to static, then add interactivity only where it genuinely improves the user experience. This approach, paired with thoughtful hydration strategies, will help you build Astro applications that are both delightful to develop and a joy to use.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

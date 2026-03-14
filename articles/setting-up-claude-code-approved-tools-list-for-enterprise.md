@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Setting Up Claude Code Approved Tools List for Enterprise"
-description: "Learn how to configure an approved tools list for Claude Code in enterprise environments. This guide covers security policies, tool restrictions, and practical implementation patterns for development teams."
+description: "Learn how to configure an approved tools list for Claude Code in enterprise environments. This guide covers security policies, tool restrictions, and."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /setting-up-claude-code-approved-tools-list-for-enterprise/
@@ -272,3 +272,10 @@ find . -name "claude*.json" -o -name ".claude"
 Implementing an approved tools list for Claude Code in enterprise environments requires balancing security requirements with developer productivity. Start with restrictive configurations, establish clear processes for policy changes, and maintain comprehensive audit logs. Regularly review and update your tool policies to ensure they evolve with your organization's needs while maintaining the security posture your enterprise requires.
 
 By following these patterns, security teams can confidently deploy Claude Code across their organization, knowing that tool access aligns with established policies and compliance requirements.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

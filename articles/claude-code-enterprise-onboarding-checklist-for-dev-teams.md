@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Enterprise Onboarding Checklist for Dev Teams"
-description: "A comprehensive checklist for integrating Claude Code into your enterprise development workflow. Set up authentication, configure workspaces, establish team conventions, and ensure security compliance."
+description: "A comprehensive checklist for integrating Claude Code into your enterprise development workflow. Set up authentication, configure workspaces, establish."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-enterprise-onboarding-checklist-for-dev-teams/
@@ -297,3 +297,10 @@ Maintain your skill ecosystem:
 
 By following this checklist, your development team can successfully integrate Claude Code while maintaining security compliance, establishing consistent workflows, and maximizing productivity gains. Remember that the goal is not just adoption—it's creating a sustainable AI-assisted development practice that evolves with your organization's needs.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

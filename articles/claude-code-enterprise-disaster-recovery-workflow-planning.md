@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Enterprise Disaster Recovery Workflow Planning"
-description: "A comprehensive guide to building disaster recovery workflows for enterprise systems using Claude Code, with practical examples and actionable advice for developers."
+description: "A comprehensive guide to building disaster recovery workflows for enterprise systems using Claude Code, with practical examples and actionable advice."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-enterprise-disaster-recovery-workflow-planning/
@@ -262,3 +262,10 @@ Start by assessing your current DR posture, then gradually build automated workf
 By implementing the strategies and code examples outlined in this guide, you'll be well on your way to building robust, automated disaster recovery workflows that minimize downtime and protect your organization's critical data and services.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

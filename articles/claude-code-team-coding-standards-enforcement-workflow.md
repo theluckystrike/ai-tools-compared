@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Team Coding Standards Enforcement Workflow"
-description: "A comprehensive guide to implementing and enforcing coding standards across your development team using Claude Code. Learn practical workflows, configuration strategies, and automation patterns."
+description: "A comprehensive guide to implementing and enforcing coding standards across your development team using Claude Code. Learn practical workflows."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-team-coding-standards-enforcement-workflow/
@@ -247,3 +247,10 @@ Implementing standards is only half the battle. Making them stick requires thoug
 A well-implemented Claude Code standards enforcement workflow transforms coding conventions from documentation into actionable guidance. By combining skills-based rules, pre-commit hooks, CI/CD integration, and continuous feedback, you create a self-documenting system that maintains code quality while reducing the burden on human reviewers.
 
 Start with your team's most critical standards, build automation incrementally, and measure your progress. Within a few iterations, you'll have a robust system that keeps your codebase consistent without stifling developer productivity.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

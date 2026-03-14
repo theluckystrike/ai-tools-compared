@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Prisma Schema Migrations Advanced Workflow Guide"
-description: "Master advanced Prisma schema migration workflows with Claude Code. Learn expert strategies for database schema changes, atomic migrations, zero-downtime deployments, and production database management."
+description: "Master advanced Prisma schema migration workflows with Claude Code. Learn expert strategies for database schema changes, atomic migrations."
 date: 2026-03-14
 author: Claude Skills Guide
 permalink: /claude-code-prisma-schema-migrations-advanced-workflow-guide/
@@ -249,3 +249,10 @@ Mastering Prisma schema migrations with Claude Code transforms database changes 
 
 By applying these advanced workflows—atomic migrations, zero-downtime patterns, comprehensive testing, and robust monitoring—you'll build confidence in your database change management process. Claude Code becomes not just an assistant but a strategic partner in maintaining database integrity while moving your application forward rapidly and safely.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

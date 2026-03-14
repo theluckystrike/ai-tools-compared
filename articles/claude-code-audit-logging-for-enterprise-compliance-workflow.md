@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Audit Logging for Enterprise Compliance Workflow"
-description: "Learn how to implement comprehensive audit logging in Claude Code for enterprise compliance. Practical patterns, code examples, and actionable advice for SOC 2, ISO 27001, and regulatory requirements."
+description: "Learn how to implement comprehensive audit logging in Claude Code for enterprise compliance. Practical patterns, code examples, and actionable advice."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /claude-code-audit-logging-for-enterprise-compliance-workflow/
@@ -233,3 +233,10 @@ Implementing comprehensive audit logging for Claude Code in enterprise environme
 The investment in proper audit logging pays dividends during compliance audits, security reviews, and incident investigations. Start with the patterns in this guide and adapt them to your specific organizational requirements.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
