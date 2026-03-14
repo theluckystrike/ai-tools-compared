@@ -23,7 +23,7 @@ The first step is choosing where AI review fits in your workflow. Most teams pla
 For Claude Code users, the **best-claude-skills-for-code-review-automation** skill provides a solid foundation. It wraps common review patterns into reusable workflows that integrate with GitHub, GitLab, or Bitbucket. Install it with:
 
 ```bash
-claude skill install best-claude-skills-for-code-review-automation
+# Place best-claude-skills-for-code-review-automation.md in .claude/ and invoke with /best-claude-skills-for-code-review-automation
 ```
 
 This skill can run as part of your pre-commit hooks or as part of your CI pipeline. The configuration file lets you define which rules to enforce and which to ignore.

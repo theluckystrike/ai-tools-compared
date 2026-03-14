@@ -31,7 +31,7 @@ The Claude Code ecosystem offers several skills specifically designed for enterp
 **claude-code-enterprise-code-review-automation** provides the primary workflow. It integrates with enterprise identity providers, supports multi-repository scanning, and generates compliance reports. Install it with:
 
 ```bash
-claude skill install claude-code-enterprise-code-review-automation
+# Place claude-code-enterprise-code-review-automation.md in .claude/ and invoke with /claude-code-enterprise-code-review-automation
 ```
 
 This skill understands enterprise-specific patterns: microservice communication, cloud infrastructure-as-code, container security, and API gateway configurations.
@@ -49,7 +49,7 @@ Enterprise code review works best as a layered system where each layer catches d
 The first layer runs on developer workstations during local development. Configure the pre-commit hook using the **claude-code-git-hooks-pre-commit-automation** skill:
 
 ```bash
-claude skill install claude-code-git-hooks-pre-commit-automation
+# Place claude-code-git-hooks-pre-commit-automation.md in .claude/ and invoke with /claude-code-git-hooks-pre-commit-automation
 ```
 
 Create a `.claude-review.yaml` in your repository:
@@ -111,7 +111,7 @@ This pipeline runs on every pull request, generating detailed reports that becom
 The third layer provides periodic comprehensive reviews. Schedule weekly full repository scans using the **claude-code-enterprise-security-scan** skill:
 
 ```bash
-claude skill install claude-code-enterprise-security-scan
+# Place claude-code-enterprise-security-scan.md in .claude/ and invoke with /claude-code-enterprise-security-scan
 claude security-scan --full-repo --output weekly-report.json --compliance-mode
 ```
 
@@ -146,7 +146,7 @@ Consider a financial services company building a trading platform. They need to 
 First, install the compliance skill:
 
 ```bash
-claude skill install claude-code-security-enterprise-compliance
+# Place claude-code-security-enterprise-compliance.md in .claude/ and invoke with /claude-code-security-enterprise-compliance
 ```
 
 Configure PCI-DSS rules:
@@ -188,7 +188,7 @@ Track these metrics over time to demonstrate that AI augmentation reduces securi
 Claude Code skills integrate with popular enterprise development tools. The **claude-code-enterprise-jira-integration** skill links review findings to tickets:
 
 ```bash
-claude skill install claude-code-enterprise-jira-integration
+# Place claude-code-enterprise-jira-integration.md in .claude/ and invoke with /claude-code-enterprise-jira-integration
 claude review --link-jira --project SECURITY
 ```
 
@@ -216,7 +216,7 @@ Begin your enterprise AI review implementation by auditing your current code rev
 Install the foundational skill and run it against your current codebase:
 
 ```bash
-claude skill install claude-code-enterprise-code-review-automation
+# Place claude-code-enterprise-code-review-automation.md in .claude/ and invoke with /claude-code-enterprise-code-review-automation
 claude review --init --config .claude-review.yaml
 ```
 

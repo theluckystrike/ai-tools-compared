@@ -98,7 +98,7 @@ The **webapp-testing skill** uses Playwright to verify frontend functionality, d
 **Practical Example:**
 ```bash
 # Running automated browser tests with Claude Code
-claude-code --skill webapp-testing \
+# Place webapp-testing.md in .claude/ and invoke with /webapp-testing
   --url http://localhost:3000 \
   --test-suite e2e-tests \
   --screenshot-on-failure
