@@ -80,30 +80,26 @@ Look for messages about sandbox policies or execution restrictions.
 **Solution:**
 Modify your skill's configuration to specify allowed commands. Create or update the skill.md file with explicit execution permissions:
 
-```yaml
+```markdown
 ---
 name: my-custom-skill
-description: A skill that needs broader execution permissions
-execution:
-  allowed_commands:
-    - git
-    - npm
-    - node
-    - python3
-  require_approval:
-    - shell
-    - bash
+description: A skill for project automation
 ---
+
+When running commands, use git, npm, node, and python3 only.
+Ask for confirmation before running shell commands that modify files.
 ```
+
+Skills do not have `execution:`, `allowed_commands:`, or `require_approval:` fields. These controls are not part of the skill file format. Instead, write your permission requirements as natural language instructions in the skill's Markdown body.
 
 For the [supermemory skill](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/) or other skills that manage external resources, you may need to explicitly grant file system access:
 
-```yaml
-execution:
-  file_access:
-    - read: ["~/projects/*", "~/documents/*"]
-    - write: ["~/projects/*/output/*"]
+```markdown
+Only read files from ~/projects/ and ~/documents/.
+Only write files to ~/projects/*/output/ directories.
 ```
+
+These restrictions go in the skill's Markdown body as instructions — not as YAML configuration fields.
 
 ### 3. Missing Dependencies in PATH
 
