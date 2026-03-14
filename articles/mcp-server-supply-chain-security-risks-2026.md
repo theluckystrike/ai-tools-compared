@@ -84,12 +84,21 @@ The long-term security of the MCP ecosystem depends on community awareness and r
 
 For organizations, consider maintaining an approved list of MCP servers that have passed security review. The enterprise security compliance guide provides frameworks for evaluating and approving developer tools—apply similar rigor to your MCP server selections.
 
-Claude skills like the security-code-review-checklist automation can help systematize your evaluation process. By integrating security checks into your development workflow, you reduce the chance of introducing vulnerable MCP servers in the first place.
+Claude skills like the [security code review checklist automation](/claude-skills-guide/articles/claude-code-security-code-review-checklist-automation/) can help systematize your evaluation process. By integrating security checks into your development workflow, you reduce the chance of introducing vulnerable MCP servers in the first place.
 
 ## Moving Forward Securely
 
 The MCP ecosystem provides tremendous value for developers building AI-powered workflows, but that value comes with responsibility. Regular audits, minimal permissions, and careful evaluation of dependencies form the foundation of secure MCP server usage. As the ecosystem matures in 2026, expect more automated tooling to assist with these tasks—but the fundamental principle remains unchanged: trust but verify, and assume that any server could potentially be compromised.
 
 By applying these practices consistently, you can enjoy the productivity benefits of MCP servers while minimizing your exposure to supply chain security risks.
+
+---
+
+## Related Reading
+
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/) — foundational guide to configuring MCP servers securely
+- [Claude Code Security Code Review Checklist Automation](/claude-skills-guide/articles/claude-code-security-code-review-checklist-automation/) — automate security reviews across MCP server code and dependencies
+- [Claude Code Secret Scanning: Prevent Credential Leaks Guide](/claude-skills-guide/articles/claude-code-secret-scanning-prevent-credential-leaks-guide/) — detect secrets accidentally exposed through MCP server configurations
+- [Advanced Hub](/claude-skills-guide/advanced-hub/) — explore more patterns for secure multi-agent and MCP-integrated architectures
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
