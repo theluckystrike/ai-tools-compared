@@ -48,7 +48,8 @@ code --install-extension continue.continue
 Once configured, you can use Continue.dev for quick code completions while invoking Claude Code skills for deeper analysis:
 
 ```
-/skill-name analyze the architecture of this PR and suggest improvements
+/code-review
+Analyze the architecture of this PR and suggest improvements.
 ```
 
 ## Practical Code Review Workflow
@@ -69,9 +70,18 @@ Use Continue.dev to quickly understand the changes in a pull request:
 Invoke specialized skills for thorough review:
 
 ```
-/code-review analyze this pull request for security vulnerabilities
-/tdd verify test coverage for the new functionality
-/docs check if documentation is updated for API changes
+/code-review
+Analyze this pull request for security vulnerabilities.
+```
+
+```
+/tdd
+Verify test coverage for the new functionality.
+```
+
+```
+/docs
+Check if documentation is updated for API changes.
 ```
 
 ### Example: Reviewing a New Feature
@@ -83,11 +93,11 @@ Consider you're reviewing a PR that adds a new authentication module. Here's how
 async function authenticateUser(credentials) {
   // Continue provides inline suggestions
   const user = await findUserByEmail(credentials.email);
-  
+
   if (!user) {
     throw new AuthError('User not found');
   }
-  
+
   // Claude Code skill can analyze this for:
   // - Timing attack vulnerabilities
   // - Proper error messages
@@ -105,9 +115,13 @@ Several Claude Code skills enhance the review process in 2026:
 The tdd skill ensures new code comes with proper test coverage:
 
 ```
-/tdd write tests for the new authentication module
-/tdd check coverage for api/routes/auth.js
-/tdd suggest edge cases to test
+/tdd
+Write tests for the new authentication module.
+```
+
+```
+/tdd
+Check coverage for api/routes/auth.js and suggest edge cases to test.
 ```
 
 ### The code-review Skill
@@ -115,9 +129,13 @@ The tdd skill ensures new code comes with proper test coverage:
 Specialized for comprehensive code analysis:
 
 ```
-/code-review scan this PR for common vulnerabilities
-/code-review check for memory leaks in this function
-/code-review review error handling patterns
+/code-review
+Scan this PR for common vulnerabilities and check for memory leaks.
+```
+
+```
+/code-review
+Review error handling patterns throughout the codebase.
 ```
 
 ### The security Skill
@@ -125,9 +143,13 @@ Specialized for comprehensive code analysis:
 For open source projects, security review is critical:
 
 ```
-/security check for SQL injection vulnerabilities
-/security analyze dependency changes for known CVEs
-/security verify input validation is present
+/security
+Check for SQL injection vulnerabilities and verify input validation is present.
+```
+
+```
+/security
+Analyze dependency changes for known CVEs.
 ```
 
 ## Open Source Contribution Workflow
@@ -165,7 +187,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Claude Code Review
         run: |
-          claude --print "/code-review analyze changes"
+          claude --print "Review the staged changes for security vulnerabilities, test coverage gaps, and error handling issues. Summarize findings."
 ```
 
 ## Best Practices for AI-Assisted Reviews

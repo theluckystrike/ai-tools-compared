@@ -30,7 +30,7 @@ Understanding these components is the first step toward implementing a comprehen
 
 ### Project-Based Usage Tracking
 
-The foundation of any cost allocation system is granular usage tracking. Create a structured approach to monitor Claude Code consumption at the project level:
+The foundation of any cost allocation system is granular usage tracking. Create a structured approach to monitor Claude Code consumption at the project level. Usage data is available in the Anthropic console by API key and project — configure separate API keys per team or project for clean separation:
 
 ```json
 {
@@ -137,21 +137,7 @@ This model provides budget predictability while still incentivizing efficient us
 
 ### Setting Up Cost Tracking
 
-Use the following approach to implement comprehensive cost tracking:
-
-```bash
-# Initialize cost tracking for a project
-claude-code init --track-costs --project-id engineering-backend
-
-# Enable per-session cost reporting
-claude-code config set cost_tracking.session_level true
-
-# Set up budget alerts
-claude-code config set budgets.alerts.enabled true
-claude-code config set budgets.alerts.threshold 0.80
-```
-
-The `budget-manager` skill automates these configurations and provides dashboards for monitoring.
+Cost tracking is handled at the Anthropic API level — usage data is available in the Anthropic console by API key and project. Configure usage keys per project and pull data via the Anthropic usage API. The `budget-manager` skill automates querying this data and provides dashboards for monitoring.
 
 ### Creating Allocation Rules
 
@@ -182,17 +168,12 @@ Apply these rules using the `allocation` skill, which automatically categorizes 
 
 ### Generating Chargeback Reports
 
-Create automated monthly reports for finance teams:
+Create automated monthly reports for finance teams. Usage data is pulled from the Anthropic usage API and processed via custom scripts. The `reporting` skill generates multiple output formats and can integrate with enterprise finance systems:
 
-```bash
-# Generate chargeback report for current month
-claude-code report chargeback --format json --output ./reports/chargeback-$(date +%Y-%m).json
-
-# Generate detailed breakdown by project
-claude-code report detailed --group-by project --include-skills --include-mcp
 ```
-
-The `reporting` skill generates multiple output formats and can integrate with enterprise finance systems.
+/reporting
+Generate a JSON chargeback report for this month grouped by project and team. Include skill and MCP usage breakdowns.
+```
 
 ## Budget Management Strategies
 
@@ -207,12 +188,12 @@ team_budgets:
     monthly_limit: 10000000 tokens
     soft_limit: 8000000 tokens
     enforcement: "alert"  # alert, block, or throttle
-    
+
   product:
     monthly_limit: 5000000 tokens
     soft_limit: 4000000 tokens
     enforcement: "alert"
-    
+
   design:
     monthly_limit: 2000000 tokens
     soft_limit: 1500000 tokens
@@ -271,38 +252,18 @@ optimization:
 
 ### Finance System Integration
 
-Export chargeback data in formats compatible with enterprise finance systems:
+Export chargeback data in formats compatible with enterprise finance systems. Use the `integration` skill to have Claude generate the appropriate export format from your usage data:
 
-```bash
-# Export to SAP-compatible format
-claude-code export finance --format sap-idoc --output ./exports/
-
-# Export to Oracle format
-claude-code export finance --format oracle-csv --output ./exports/
+```
+/integration
+Export this month's usage data as an SAP IDoc-compatible format and save to ./exports/
 ```
 
 The `integration` skill supports various enterprise systems including SAP, Oracle, NetSuite, and Workday.
 
 ### API-Based Access
 
-For custom integrations, use the Claude Code API:
-
-```python
-import claude_code_api
-
-# Fetch team usage data
-usage = claude_code_api.usage.get_team_usage(
-    team_id="engineering",
-    date_range={"start": "2026-01-01", "end": "2026-01-31"},
-    include_breakdown=True
-)
-
-# Generate custom chargeback calculations
-chargeback = claude_code_api.finance.calculate_chargeback(
-    allocation_model="usage_based",
-    teams=usage
-)
-```
+For custom integrations, use the Anthropic usage API directly to pull token consumption data by API key, then apply your chargeback models to the raw data in your existing finance tooling.
 
 ## Measuring Cost Allocation Success
 

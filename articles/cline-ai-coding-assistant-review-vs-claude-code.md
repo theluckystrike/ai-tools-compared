@@ -22,14 +22,12 @@ The landscape of AI-powered coding assistants has evolved rapidly, with two prom
 
 Claude Code represents Anthropic's approach to bringing their Claude AI model directly into developers' workflows. Unlike traditional IDE extensions, Claude Code operates as a command-line tool that integrates deeply with your development environment. The architecture centers on **skills**—modular, reusable prompt templates that extend Claude's capabilities for specific tasks.
 
-The skill system in Claude Code deserves special attention. Skills are defined in `.md` files with YAML front matter that specifies metadata, tool permissions, and behavioral guidelines. Here's how a basic skill structure looks:
+The skill system in Claude Code deserves special attention. Skills are defined in `.md` files with YAML front matter that specifies only a name and description. Here's how a basic skill structure looks:
 
 ```yaml
 ---
 name: code-review
 description: "Performs comprehensive code reviews"
-tools: [read_file, bash, write_file]
-version: "1.0.0"
 ---
 
 # Code Review Skill
@@ -66,16 +64,7 @@ Cline provides excellent immediate context within your current IDE session, thou
 
 ### Tool Integration and Automation
 
-Claude Code's skill system offers granular control over tool access. Skills can specify exactly which tools they require, enabling security-conscious development practices. The `tools` field in skill front matter allows precise permission management:
-
-```yaml
-tools:
-  - read_file
-  - write_file
-  - bash
-  - glob
-  - ripgrep
-```
+Claude Code's skill system offers granular control over behavior. Skills are plain markdown files placed in your `.claude/` directory, invoked with a `/skill-name` command. The skill's instructions define what Claude does when invoked.
 
 Cline integrates with over 100 tools and services, including Docker, AWS, GitHub Actions, and various cloud platforms. Its plugin marketplace extends functionality through community-contributed integrations.
 
@@ -91,11 +80,8 @@ Cline often produces more concise solutions optimized for the immediate task. It
 
 **Using Claude Code with a skill:**
 
-```bash
-# Activate the api-builder skill
-claude -s api-builder
-
-# Then describe your requirement
+```
+/api-builder
 Create a REST endpoint for user registration in Express.js
 with email validation, password hashing, and JWT token generation.
 ```
@@ -110,7 +96,7 @@ Claude Code will generate the complete endpoint, including middleware, input val
 Refactor the authentication module to use the new token service.
 This affects:
 - lib/auth/login.js (update token generation)
-- lib/auth/verify.js (update token verification)  
+- lib/auth/verify.js (update token verification)
 - lib/middleware/auth.js (update middleware)
 - tests/auth/*.test.js (update test cases)
 ```

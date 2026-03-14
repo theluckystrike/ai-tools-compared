@@ -64,7 +64,7 @@ This is where the tools diverge most significantly in 2026.
 // TODO: Convert this Express router to use FastAPI patterns
 // Should include:
 // - Route decorators instead of .get(), .post() methods
-// - Pydantic models for request/response validation  
+// - Pydantic models for request/response validation
 // - Async/await throughout
 ```
 
@@ -106,17 +106,12 @@ Claude Code's agentic workflows work well when you provide clear specifications.
 
 **Cursor** benefits from the VS Code extension ecosystem. You can combine Cursor's AI with existing extensions for Docker, Git, database tools, and more. Cursor-specific extensions for AI prompt management exist but remain relatively new.
 
-**Claude Code** has the most developed skill ecosystem in 2026. Skills are markdown files with YAML front matter that define specialized behaviors:
+**Claude Code** has the most developed skill ecosystem in 2026. Skills are markdown files placed in your `.claude/` directory, with minimal YAML front matter:
 
 ```yaml
 ---
 name: frontend-design
 description: Generate responsive UI components with Tailwind CSS
-tools:
-  - Read
-  - Write
-  - Bash
-  - WebFetch
 ---
 
 # Frontend Design Skill

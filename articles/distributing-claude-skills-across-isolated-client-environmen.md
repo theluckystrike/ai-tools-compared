@@ -133,15 +133,17 @@ enterprise-workflow-skill
 
 ### Testing Skills Across Environments
 
-Before distributing updates, validate skills in representative environments:
+Before distributing updates, validate skills in representative environments by starting a Claude session in that environment and invoking the skill directly:
 
 ```bash
-# Run skill validation in test environment
-claude --validate-skill enterprise-workflow-skill --env test
+# Verify skills are present and loadable
+ls ~/.claude/skills/your-org/
 
-# Verify skill loads correctly
-claude --list-skills | grep enterprise
+# Start a Claude session and test the skill
+claude
 ```
+
+Then invoke the skill inside the session to confirm it loads and behaves as expected before rolling out to all environments.
 
 ## Practical Example: Team Onboarding Workflow
 

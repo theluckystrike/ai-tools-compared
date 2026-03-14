@@ -32,9 +32,13 @@ Claude Code's skill system distinguishes it from every other AI coding tool. Ski
 ```bash
 # Install a skill from the marketplace
 # Place kubernetes-yaml-generation.md in .claude/ then invoke: /kubernetes-yaml-generation
+```
 
-# Use the skill for a specific task
-claude kubernetes generate deployment --name myapp --replicas 3 --port 8080
+Then use the skill in a Claude session:
+
+```
+/kubernetes-yaml-generation
+Generate a deployment manifest for myapp with 3 replicas on port 8080
 ```
 
 The skill ecosystem covers remarkable ground. Need to generate Terraform configurations? There's a skill for that. Want automated API documentation? Install it in seconds. Building a security auditing pipeline? Multiple skills exist for that purpose.
@@ -46,7 +50,7 @@ The real power emerges when you create custom skills tailored to your project:
 ```markdown
 # Skill: FastAPI Documentation Generator
 
-You are an expert API documentation specialist. When given FastAPI route handlers, 
+You are an expert API documentation specialist. When given FastAPI route handlers,
 generate comprehensive documentation including:
 
 1. Endpoint descriptions in plain English
@@ -55,11 +59,11 @@ generate comprehensive documentation including:
 4. Example curl commands for testing
 5. Authentication requirements
 
-Always follow OpenAPI 3.0 standards. Include nested schema definitions 
+Always follow OpenAPI 3.0 standards. Include nested schema definitions
 when complex data structures are involved.
 ```
 
-Save this as `CLAUDE.md` in your project, and Claude Code automatically applies it when relevant tasks arise.
+Save this as a `.md` file in your `.claude/` directory, and invoke it with the slash command.
 
 ## Practical Examples: Claude Code in Action
 
@@ -68,8 +72,8 @@ Save this as `CLAUDE.md` in your project, and Claude Code automatically applies 
 Claude Code excels at understanding project-wide context and executing complex, multi-step operations:
 
 ```bash
-claude "Extract all validation logic from the auth module into a shared 
-validation package. Update all imports across the codebase, ensure tests 
+claude "Extract all validation logic from the auth module into a shared
+validation package. Update all imports across the codebase, ensure tests
 still pass, and generate a changelog entry."
 ```
 
@@ -84,11 +88,11 @@ Because Claude Code lives in your terminal, it integrates smoothly with existing
 git diff | claude "Analyze these changes and suggest a conventional commit message"
 
 # Code review on the fly
-cat complex-function.ts | claude "Explain this code, identify potential bugs, 
+cat complex-function.ts | claude "Explain this code, identify potential bugs,
 and suggest improvements"
 
 # Pipeline composition
-find . -name "*.test.ts" | claude "Run these tests, analyze failures, and 
+find . -name "*.test.ts" | claude "Run these tests, analyze failures, and
 propose fixes for the top 3 issues"
 ```
 
@@ -96,13 +100,17 @@ propose fixes for the top 3 issues"
 
 Claude Code skills transform database work:
 
-```bash
-claude db:generate-migration --name add_user_preferences --table users
-
-claude db:seed --count 1000 --schema users --fake-data
+```
+/db-migrations
+Generate a migration to add a user_preferences column to the users table.
 ```
 
-These commands use skills that understand your ORM schema and generate appropriate migrations or seed data.
+```
+/db-seed
+Seed the users table with 1000 realistic test records using the existing schema.
+```
+
+These skill invocations provide Claude with ORM schema context to generate accurate migrations and seed data.
 
 ## Cursor: When IDE Familiarity Trumps All
 
@@ -140,17 +148,12 @@ The most productive developers increasingly use both—Cursor for daily coding s
 
 ## Getting Started with Claude Code Skills
 
-Ready to explore Claude Code's skill system? Start with these commands:
+Ready to explore Claude Code's skill system? Place skill `.md` files in your `.claude/` directory, then invoke them:
 
 ```bash
-# List available skills
-# List skills: check your .claude/ directory or run /help
-
-# Search for specific skills
-claude skill search kubernetes
-
-# Install popular skills
+# Install popular skills by placing their .md files in .claude/
 # Place dockerfile-generation.md in .claude/ then invoke: /dockerfile-generation
+# Place kubernetes-yaml-generation.md in .claude/ then invoke: /kubernetes-yaml-generation
 # Place aws-ecs-deployment.md in .claude/ then invoke: /aws-ecs-deployment
 ```
 
@@ -165,4 +168,3 @@ In 2026, Claude Code's extensibility through skills makes it the more powerful c
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Code Comparisons Hub](/claude-skills-guide/comparisons-hub/)
-
