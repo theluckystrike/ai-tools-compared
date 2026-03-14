@@ -154,4 +154,11 @@ For example, if the pdf skill struggles with your specific document structure, l
 
 Performance optimization for Claude Code is an ongoing process rather than a one-time fix. By regularly profiling your skills, analyzing tool call patterns, and monitoring resource usage, you maintain a responsive and efficient AI-assisted development environment. Start with the techniques in this guide, establish baseline metrics, and iterate toward the performance characteristics that best support your workflow.
 
+## Related Reading
+
+- [Claude Code Profiler Integration Guide](/claude-skills-guide/claude-code-profiler-integration-guide/) — Profiling is the primary tool for finding bottlenecks
+- [Claude Code Memory Leak Detection Workflow](/claude-skills-guide/claude-code-memory-leak-detection-workflow/) — Memory leaks are a common performance bottleneck
+- [How to Make Claude Code Write Performant SQL Queries](/claude-skills-guide/how-to-make-claude-code-write-performant-sql-queries/) — SQL queries are a frequent bottleneck
+- [Claude Code Slow Response How to Fix Latency Issues](/claude-skills-guide/claude-code-slow-response-how-to-fix-latency-issues/) — Latency issues often stem from bottlenecks
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

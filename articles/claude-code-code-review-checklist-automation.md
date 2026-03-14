@@ -166,4 +166,11 @@ Involve the whole team in maintaining the skill. The best automated checklists r
 
 ---
 
+## Related Reading
+
+- [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Top skills for automated code review
+- [Claude Code Static Analysis Automation Guide](/claude-skills-guide/claude-code-static-analysis-automation-guide/) — Static analysis is part of automated code review
+- [Claude Code Code Smell Identification Guide](/claude-skills-guide/claude-code-code-smell-identification-guide/) — Code review checklists should include smell detection
+- [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/) — Automate code review in your CI pipeline
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

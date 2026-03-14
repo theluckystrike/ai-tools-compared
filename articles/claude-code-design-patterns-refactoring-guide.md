@@ -189,4 +189,11 @@ Applying design patterns to Claude skills follows the same principles that make 
 
 The result is skills that are easier to understand, test, and extend. Your future self and your team will thank you.
 
+## Related Reading
+
+- [How to Make Claude Code Follow DRY and SOLID Principles](/claude-skills-guide/how-to-make-claude-code-follow-dry-solid-principles/) — Design patterns implement DRY and SOLID principles
+- [Claude Code Dependency Injection Refactoring](/claude-skills-guide/claude-code-dependency-injection-refactoring/) — DI is a key design pattern for refactoring
+- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — Safe pattern-based refactoring
+- [Claude Code Coupling and Cohesion Improvement](/claude-skills-guide/claude-code-coupling-and-cohesion-improvement/) — Design patterns improve coupling/cohesion
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

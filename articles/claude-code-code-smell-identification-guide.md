@@ -178,4 +178,11 @@ Address smells incrementally. Trying to fix everything at once leads to overwhel
 
 Identifying code smells early keeps your codebase healthy and maintainable. Claude Code serves as an intelligent review partner, helping you spot patterns you might miss and suggesting concrete improvements. Combine its analysis with disciplined refactoring and your projects stay cleaner over time.
 
+## Related Reading
+
+- [Claude Code Dead Code Detection Workflow](/claude-skills-guide/claude-code-dead-code-detection-workflow/) — Dead code is a common code smell
+- [Claude Code Cyclomatic Complexity Reduction](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/) — High complexity is a code smell
+- [Claude Code Duplicate Code Refactoring Guide](/claude-skills-guide/claude-code-duplicate-code-refactoring-guide/) — Duplicate code is one of the most common smells
+- [Claude Code Technical Debt Tracking Workflow](/claude-skills-guide/claude-code-technical-debt-tracking-workflow/) — Code smells accumulate into technical debt
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
