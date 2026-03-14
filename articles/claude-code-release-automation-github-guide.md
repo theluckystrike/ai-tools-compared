@@ -6,6 +6,8 @@ date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-release-automation-github-guide/
 ---
+{% raw %}
+
 
 # Claude Code Release Automation with GitHub Guide
 
@@ -230,3 +232,4 @@ Keep your release pipeline maintainable by following these patterns:
 Claude Code combined with GitHub Actions creates a powerful release automation system. Start with a simple workflow that creates releases from tags, then gradually add Claude skills for changelog generation, version management, and deployment decisions. The investment pays off quickly as your project grows and release frequency increases.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
