@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Algolia GeoSearch Filtering Workflow Tutorial"
-description: "Learn how to build powerful location-based search filtering workflows using Claude Code and Algolia's GeoSearch capabilities. Step-by-step guide with practical examples."
+description: "Learn how to build powerful location-based search filtering workflows using Claude Code and Algolia's GeoSearch capabilities. Step-by-step guide with."
 date: 2026-03-14
 author: theluckystrike
 categories: [tutorials]
@@ -190,3 +190,10 @@ Index performance matters significantly with GeoSearch. Ensure your `_geoloc` at
 Building GeoSearch filtering workflows with Claude Code and Algolia combines powerful location-based search capabilities with intelligent automation. The skill-based approach ensures consistent query construction, proper error handling, and optimized results. Start with basic radius searches, then layer on faceted filters and adaptive radius logic as your requirements evolve.
 
 The combination of Claude Code's workflow guidance and Algolia's GeoSearch creates a robust foundation for any location-aware application, from simple store finders to complex delivery logistics systems.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code SRE Postmortem Documentation Workflow Guide"
-description: "Learn how to use Claude Code and skills to streamline SRE postmortem documentation. Practical examples for incident analysis, root cause analysis, and automated documentation workflows."
+description: "Learn how to use Claude Code and skills to streamline SRE postmortem documentation. Practical examples for incident analysis, root cause analysis, and."
 date: 2026-03-14
 author: "theluckystrike"
 permalink: /claude-code-sre-postmortem-documentation-workflow-guide/
@@ -160,3 +160,10 @@ The skills ecosystem—particularly **internal-comms** and **docx**—provides s
 Effective postmortems build reliability culture. With Claude Code handling the mechanical aspects of documentation, your team can invest more energy in the thoughtful analysis that drives genuine improvement.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
