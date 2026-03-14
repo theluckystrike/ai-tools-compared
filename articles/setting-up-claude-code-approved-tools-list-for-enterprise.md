@@ -1,267 +1,274 @@
 ---
-
 layout: default
 title: "Setting Up Claude Code Approved Tools List for Enterprise"
-description: "A comprehensive guide for enterprise developers on configuring approved tools, skills, and MCP servers in Claude Code. Learn how to implement."
+description: "Learn how to configure an approved tools list for Claude Code in enterprise environments. This guide covers security policies, tool restrictions, and practical implementation patterns for development teams."
 date: 2026-03-14
 author: "Claude Skills Guide"
 permalink: /setting-up-claude-code-approved-tools-list-for-enterprise/
-categories: [guides]
-reviewed: true
-score: 8
-tags: [claude-code, claude-skills]
+categories: [guides, enterprise]
+tags: [claude-code, claude-skills, enterprise, security, tool-restrictions]
 ---
 
-{% raw %}
-## Introduction
+# Setting Up Claude Code Approved Tools List for Enterprise
 
-As organizations adopt Claude Code across development teams, the need for governance becomes critical. Enterprise environments require control over which tools, skills, and Model Context Protocol (MCP) servers are accessible to developers. An approved tools list helps security teams maintain compliance, ensures developers use vetted solutions, and prevents unauthorized extensions from introducing vulnerabilities.
+Enterprise development environments require careful control over which tools AI assistants can access. Claude Code's approved tools list feature enables security teams to define exactly which capabilities developers can use while working with AI-assisted coding. This guide walks through setting up and managing tool restrictions for enterprise deployments.
 
-This guide walks you through setting up a Claude Code approved tools list for enterprise environments. You'll learn the configuration methods, security considerations, and practical patterns for implementing tool governance across your organization.
+## Understanding Approved Tools Lists
 
-## Understanding Claude Code Tool Governance
+The approved tools list is a security configuration that restricts which tools Claude Code can access during a session. In enterprise environments, this serves multiple purposes:
 
-Claude Code provides several layers of tool access that enterprises can control. The primary components include built-in CLI tools, community skills from the skills directory, custom MCP servers, and file system access permissions. Each layer requires different configuration approaches.
+- **Security compliance**: Prevent sensitive data exposure through unauthorized file access
+- **Environment isolation**: Limit tool access to approved development environments
+- **Audit requirements**: Maintain clear boundaries around AI-assisted operations
+- **Risk management**: Reduce the attack surface of AI coding assistants
 
-The governance model follows a deny-by-default philosophy—developers can only use tools explicitly approved by your organization. This approach aligns with enterprise security frameworks like SOC 2 and ISO 27001, where controlling access to external resources is essential for compliance.
+When you configure an approved tools list, Claude Code will only use tools explicitly included in your configuration. Any attempt to use a non-approved tool will be blocked, and the model will either request approval or work around the limitation.
 
-### Tool Categories to Consider
+## Configuring Tool Restrictions
 
-Before implementing your approved tools list, categorize the tools your teams need:
+Claude Code supports tool restrictions through configuration files and environment variables. The primary method uses a JSON configuration file that lists approved tools.
 
-- **Development tools**: Git operations, code editors, linters, formatters
-- **Testing frameworks**: Unit testing libraries, E2E testing tools, security scanners
-- **Infrastructure tools**: Cloud provider CLIs, container tools, IaC utilities
-- **Communication tools**: Slack, Jira, Confluence integrations
-- **Data tools**: Database clients, API testing tools, ETL utilities
+### Basic Configuration Structure
 
-Understanding these categories helps you create targeted policies rather than a monolithic allowlist.
-
-## Configuring the Approved Tools List
-
-Claude Code supports configuration through the `CLAUDE_CODE_CONFIG` environment variable and project-level `claude.md` files. For enterprise deployments, combine both approaches for comprehensive coverage.
-
-### Global Configuration via Environment Variables
-
-Set up a global configuration that applies to all Claude Code sessions in your organization:
-
-```bash
-# Set approved tools globally
-export CLAUDE_CODE_ALLOWED_TOOLS="git,read_file,write_file,bash,grep"
-export CLAUDE_CODE_ALLOWED_SKILLS="code-review,security-scan,docs-generator"
-export CLAUDE_CODE_ALLOWED_MCP="github,gitlab,aws-sdk"
-export CLAUDE_CODE_DENIED_TOOLS="curl,wget,exec"
-```
-
-This configuration uses a whitelist approach—only tools explicitly listed are permitted. The `DENIED_TOOLS` variable provides an additional layer for known problematic tools.
-
-### Project-Level Tool Restrictions
-
-For project-specific controls, create a `CLAUDE.md` file in your repository:
-
-```markdown
-# Claude Code Configuration
-
-## Approved Tools
-- git: Version control operations
-- read_file: Reading source files
-- write_file: Creating and modifying code
-- bash: Running tests and builds
-- grep: Code search and analysis
-
-## Approved Skills
-- code-review: Automated code review
-- security-scan: Vulnerability scanning
-- docs-generator: Documentation generation
-
-## Restricted Operations
-- No external network calls except through approved MCP servers
-- No execution of untrusted scripts
-- File system access limited to project directory
-```
-
-This project-level configuration overrides global settings, allowing teams to customize tool access based on project requirements.
-
-## MCP Server Governance
-
-MCP servers extend Claude Code's capabilities significantly. Enterprise deployments require careful management of these extensions.
-
-### Approved MCP Server List
-
-Configure allowed MCP servers through the Claude Code configuration:
+Create a configuration file named `claude-tools.json` in your project's configuration directory:
 
 ```json
 {
-  "mcpServers": {
-    "approved": {
-      "github": {
-        "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-github"],
-        "allowed_repos": ["org/frontend-*", "org/backend-*"]
-      },
-      "aws-sdk": {
-        "command": "npx",
-        "args": ["-y", "@modelcontextprotocol/server-aws"],
-        "region": "us-east-1",
-        "allowed_services": ["s3", "lambda", "dynamodb"]
-      },
-      "database": {
-        "command": "./mcp-servers/database-server",
-        "allowed_databases": ["prod-read-replica", "staging"]
-      }
-    },
-    "denied": [
-      "unofficial-twitter",
-      "unverified-payment-processor"
+  "approvedTools": [
+    "Read",
+    "Edit",
+    "Write",
+    "Bash",
+    "Glob",
+    "Grep",
+    "WebFetch"
+  ],
+  "blockedTools": [
+    "TodoWrite",
+    "TodoRead",
+    "WebSearch"
+  ],
+  "allowMcpTools": false,
+  "strictMode": true
+}
+```
+
+This configuration explicitly allows core file operation tools while blocking potentially risky operations. The `strictMode` flag ensures that any tool not explicitly approved is automatically denied.
+
+### Environment-Based Configuration
+
+For enterprise deployments, use environment variables to manage tool restrictions across different environments:
+
+```bash
+# Development environment - more permissive
+export CLAUDE_TOOLS_CONFIG="./config/claude-tools-dev.json"
+
+# Production environment - stricter controls
+export CLAUDE_TOOLS_CONFIG="./config/claude-tools-prod.json"
+```
+
+Create environment-specific configurations to match your deployment workflows:
+
+```json
+{
+  "approvedTools": [
+    "Read",
+    "Edit",
+    "Write",
+    "Bash",
+    "Glob"
+  ],
+  "blockedTools": [
+    "WebFetch",
+    "WebSearch",
+    "McpTools"
+  ],
+  "strictMode": true,
+  "logLevel": "verbose"
+}
+```
+
+## Implementing Per-Project Tool Policies
+
+Enterprise teams often need different tool access levels for different projects. Claude Code supports project-level configurations that override global settings.
+
+### Project-Specific Configuration
+
+Add a `claude` section to your project's `.claude/settings.json`:
+
+```json
+{
+  "claude": {
+    "tools": {
+      "approved": ["Read", "Edit", "Write", "Glob", "Grep"],
+      "blocked": ["WebFetch", "McpTools", "Bash"],
+      "requireApproval": ["Bash"]
+    }
+  }
+}
+```
+
+The `requireApproval` field adds an extra layer of control by prompting for confirmation before executing specific tools. This is particularly useful for shell commands that could modify the system.
+
+### Skill-Based Tool Restrictions
+
+For skills that require specific tool access, define tool requirements in the skill's front matter:
+
+```yaml
+---
+name: Security Review Skill
+tools:
+  - Read
+  - Grep
+  - Glob
+  - Bash (requireApproval: true)
+description: "Review code for security vulnerabilities"
+---
+```
+
+This approach ensures that skills only have access to the minimum tools necessary for their purpose, following the principle of least privilege.
+
+## Enterprise Integration Patterns
+
+Large organizations typically integrate tool restrictions with their existing security infrastructure. Here are common patterns for enterprise deployments.
+
+### Integration with Directory Services
+
+Sync approved tools lists with your organization's directory service:
+
+```bash
+# Fetch tool configuration from enterprise config
+curl -H "Authorization: Bearer $ENTERPRISE_TOKEN" \
+  "https://config.enterprise.com/claude-tools" \
+  > claude-tools.json
+```
+
+This approach ensures consistent tool policies across all developers and automatically applies updates when security requirements change.
+
+### Audit Logging Configuration
+
+Enterprise environments require comprehensive audit trails. Configure logging for all tool operations:
+
+```json
+{
+  "approvedTools": ["Read", "Edit", "Glob", "Grep"],
+  "auditLog": {
+    "enabled": true,
+    "endpoint": "https://audit.enterprise.com/claude",
+    "includePayloads": true,
+    "redactPatterns": [
+      "api_key",
+      "password",
+      "secret"
     ]
   }
 }
 ```
 
-This configuration explicitly lists approved MCP servers and their parameters, preventing developers from connecting unauthorized services.
+The `redactPatterns` field automatically removes sensitive information from logs, maintaining security while preserving operational visibility.
 
-### MCP Server Security Considerations
+### Multi-Team Tool Policies
 
-When approving MCP servers for enterprise use, evaluate each server against your security criteria:
+Larger organizations may need different policies for different teams. Use hierarchical configurations:
 
-- **Data access**: What data can the server access?
-- **Network permissions**: Does the server make external network calls?
-- **Credential handling**: How does the server manage authentication?
-- **Audit logging**: Does the server log all operations?
-- **Update frequency**: How often is the server maintained?
+```
+config/
+├── claude-tools-base.json      # Default restrictions
+├── claude-tools-security.json # Security team - full access
+├── claude-tools-devops.json   # DevOps - infrastructure tools
+└── claude-tools-qa.json       # QA - testing tools only
+```
 
-Create a security review checklist and require approval from your security team before adding new MCP servers to the approved list.
+Apply team-specific configurations using environment selection or directory-based defaults.
 
-## Implementing Team-Specific Tool Policies
+## Best Practices for Enterprise Tool Lists
 
-Large organizations often need different tool policies for different teams. Claude Code supports this through environment-based configuration.
+Following these practices ensures your tool restriction strategy remains effective as your organization evolves.
 
-### Team Configuration Example
+### Start Restrictive, Expand Carefully
+
+Begin with minimal tool access and gradually add tools as your team proves its needs. This approach prevents accidental over-permissioning:
+
+```json
+{
+  "approvedTools": ["Read", "Glob"],
+  "strictMode": true
+}
+```
+
+As developers demonstrate legitimate use cases, update the configuration through your established change management process.
+
+### Regular Policy Reviews
+
+Schedule quarterly reviews of approved tools lists to ensure configurations remain aligned with current requirements:
+
+- Remove tools that are no longer needed
+- Add newly approved capabilities
+- Update blocking rules based on emerging threats
+- Document any configuration changes
+
+### Document Exceptions
+
+Create a clear process for requesting tool access exceptions:
+
+```markdown
+## Tool Access Exception Request
+
+**Requested Tool**: [Tool Name]
+**Justification**: [Business need]
+**Duration**: [Temporary/Permanent]
+**Approved By**: [Security contact]
+```
+
+This documentation ensures visibility into why certain tools are accessible and maintains accountability.
+
+### Test Configurations Before Deployment
+
+Before rolling out new tool restrictions, test them in a controlled environment:
 
 ```bash
-# Backend team configuration
-export CLAUDE_CODE_TEAM="backend"
-export CLAUDE_CODE_ALLOWED_TOOLS="git,read_file,write_file,bash,grep,docker"
-export CLAUDE_CODE_ALLOWED_MCP="github,aws-sdk,database-server"
-export CLAUDE_CODE_ALLOWED_SKILLS="code-review,security-scan,migration-helper"
+# Validate configuration syntax
+claude validate-tools --config claude-tools.json
 
-# Data science team configuration  
-export CLAUDE_CODE_TEAM="data-science"
-export CLAUDE_CODE_ALLOWED_TOOLS="git,read_file,write_file,bash,python,jupyter"
-export CLAUDE_CODE_ALLOWED_MCP="github,jupyter-kernel,s3-data-connector"
-export CLAUDE_CODE_ALLOWED_SKILLS="data-analysis,ml-pipeline,visualization-helper"
+# Dry run with new restrictions
+claude --dry-run --tools-config claude-tools-strict.json
 ```
 
-Each team gets a tailored toolset that supports their specific workflows while maintaining organizational security standards.
+This prevents configuration errors that could block legitimate development work.
 
-## Enforcing Policies with CI/CD Integration
+## Troubleshooting Common Issues
 
-Enterprise tool governance works best when integrated with your continuous integration pipeline. Add validation checks to ensure compliance:
+When tool restrictions don't work as expected, these solutions address frequent problems.
 
-```yaml
-# .github/workflows/claude-code-compliance.yml
-name: Claude Code Compliance Check
+### Tool Silently Denied
 
-on:
-  pull_request:
-    branches: [main, develop]
-  push:
-    branches: [main]
+If Claude Code appears to ignore tool restrictions, verify the configuration is being loaded:
 
-jobs:
-  validate-claude-config:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Validate approved tools list
-        run: |
-          # Check if CLAUDE.md exists
-          if [ -f "CLAUDE.md" ]; then
-            # Validate tool permissions
-            node scripts/validate-claude-tools.js
-          fi
-          
-      - name: Check for unauthorized MCP servers
-        run: |
-          # Scan for MCP server configurations
-          grep -r "mcpServers" .claude/ || true
-          # Report any unapproved servers
-          ./scripts/report-unapproved-mcp.sh
+```bash
+# Check which config is active
+claude config show
+
+# Validate JSON syntax
+cat claude-tools.json | python3 -m json.tool
 ```
 
-This workflow validates that all Claude Code configurations comply with your organization's policies before code merges.
+Configuration loading failures often stem from syntax errors or incorrect file paths.
 
-## Monitoring and Auditing Tool Usage
+### Overly Restrictive Policies
 
-Effective governance requires visibility into how tools are being used. Implement logging and monitoring:
+When tool restrictions prevent legitimate work, the model may struggle to complete tasks. Review Claude Code's feedback—it typically indicates which tools would help but are blocked. Use this information to make informed policy adjustments.
 
-```javascript
-// Tool usage logger
-const fs = require('fs');
+### Conflicts Between Global and Project Settings
 
-function logToolUsage(toolName, params, userId) {
-  const logEntry = {
-    timestamp: new Date().toISOString(),
-    tool: toolName,
-    user: userId,
-    params: sanitizeParams(params),
-    session: process.env.CLAUDE_SESSION_ID
-  };
-  
-  fs.appendFileSync(
-    '/var/log/claude-code/usage.jsonl',
-    JSON.stringify(logEntry) + '\n'
-  );
-}
+Project-level configurations should override global settings. If you encounter unexpected behavior, check for conflicting files:
 
-// Audit report generation
-function generateAuditReport(startDate, endDate) {
-  const logs = fs.readFileSync('/var/log/claude-code/usage.jsonl', 'utf8');
-  const entries = logs.split('\n')
-    .filter(line => line)
-    .map(line => JSON.parse(line))
-    .filter(entry => 
-      entry.timestamp >= startDate && entry.timestamp <= endDate
-    );
-    
-  return {
-    totalOperations: entries.length,
-    toolUsage: entries.reduce((acc, entry) => {
-      acc[entry.tool] = (acc[entry.tool] || 0) + 1;
-      return acc;
-    }, {}),
-    uniqueUsers: [...new Set(entries.map(e => e.user))],
-    complianceViolations: entries.filter(e => e.violation).length
-  };
-}
+```bash
+# Find all potential configurations
+find . -name "claude*.json" -o -name ".claude"
 ```
-
-Regular audit reports help security teams identify policy violations, usage patterns, and opportunities for tool policy refinement.
-
-## Best Practices Summary
-
-Implementing an approved tools list for Claude Code in enterprise environments requires a layered approach:
-
-1. **Start with a whitelist**: Default to denying all tools, then explicitly approve those meeting your security criteria
-2. **Categorize tools**: Group tools by function to create targeted policies for different teams
-3. **Layer configurations**: Combine global environment variables with project-level `CLAUDE.md` files
-4. **Review MCP servers carefully**: Evaluate each server's security posture before approval
-5. **Integrate with CI/CD**: Validate configurations automatically in your pipeline
-6. **Monitor usage**: Implement logging to track tool usage and identify compliance issues
-
-Following these practices ensures your organization maintains security and compliance while giving developers the tool access they need to be productive.
 
 ## Conclusion
 
-Setting up an approved tools list for Claude Code is essential for enterprise security and compliance. By configuring tool permissions at the global and project levels, implementing MCP server governance, and integrating compliance checks into your development workflow, you can confidently deploy Claude Code across your organization.
+Implementing an approved tools list for Claude Code in enterprise environments requires balancing security requirements with developer productivity. Start with restrictive configurations, establish clear processes for policy changes, and maintain comprehensive audit logs. Regularly review and update your tool policies to ensure they evolve with your organization's needs while maintaining the security posture your enterprise requires.
 
-Start with basic tool whitelisting, gradually add team-specific policies, and continuously refine your approach based on audit findings and developer feedback.
-{% endraw %}
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
+By following these patterns, security teams can confidently deploy Claude Code across their organization, knowing that tool access aligns with established policies and compliance requirements.
