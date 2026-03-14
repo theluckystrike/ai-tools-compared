@@ -5,6 +5,7 @@ description: "Learn how to automate and optimize test reporting workflows using 
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-test-reporting-workflow-guide/
+categories: [guides]
 ---
 
 Test reporting is a critical component of any software development workflow. Effective test reports help teams understand code quality, identify regression issues, and make informed decisions about releases. Claude Code can significantly enhance your test reporting workflows by automating report generation, customizing output formats, and integrating with various testing tools and platforms.
@@ -98,3 +99,10 @@ Finally, consider the security implications of your reporting. Test reports migh
 ## Conclusion
 
 Claude Code transforms test reporting from a manual, time-consuming process into an automated, customizable workflow. By parsing test results, generating formatted reports, and integrating with communication platforms, Claude Code skills help teams stay informed about code quality without sacrificing developer productivity. Start with simple reporting and iteratively enhance your workflow as your team's needs evolve.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

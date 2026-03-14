@@ -5,6 +5,7 @@ description: "Learn how to implement shift-left testing strategy with Claude Cod
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-shift-left-testing-strategy-guide/
+categories: [guides]
 ---
 
 {% raw %}
@@ -92,3 +93,10 @@ Shift-left testing with Claude Code represents a significant advancement in soft
 
 The key to successful shift-left testing lies in integrating these practices into your daily workflow rather than treating testing as a separate phase. Start with test-driven development, automate test generation for new and existing code, and maintain comprehensive coverage through continuous analysis. With Claude Code supporting your efforts, shift-left testing becomes not just achievable but sustainable across projects of any size.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

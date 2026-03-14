@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "How to Choose the Right MCP Server"
-description: "A practical guide to selecting the best Model Context Protocol (MCP) server for your Claude Code workflow. Includes evaluation criteria, common use cases, and real-world examples."
+description: "A practical guide to selecting the best Model Context Protocol (MCP) server for your Claude Code workflow. Includes evaluation criteria, common use."
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-to-choose-the-right-mcp-server/
+categories: [guides]
 ---
 
 # How to Choose the Right MCP Server
@@ -129,3 +130,10 @@ Security deserves ongoing attention with MCP servers. Follow these principles:
 Choosing the right MCP server comes down to understanding your actual workflow needs, evaluating security implications, and matching servers to specific problems rather than collecting tools. Start with fundamental servers like filesystem access, then add specialized integrations as your needs become clear.
 
 The MCP ecosystem continues growing, with new servers appearing regularly. The principles in this guide—assess your needs, prioritize security, and start minimal—will serve you well regardless of which servers you choose.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
