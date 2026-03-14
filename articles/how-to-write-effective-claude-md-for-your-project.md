@@ -25,7 +25,7 @@ The file lives in your project root and persists across sessions. Unlike chat hi
 
 ### Project Overview
 
-Start with a brief description of what your project does. Include the primary language, framework, and key dependencies. This helps Claude understand the technology landscape before diving into specifics.
+Start with a brief description of what your project does. Include the primary language, framework, and key dependencies. This helps Claude understand the technology stack before addressing specifics.
 
 ```markdown
 # Project Overview
