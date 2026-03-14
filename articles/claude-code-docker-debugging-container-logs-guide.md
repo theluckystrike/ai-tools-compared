@@ -5,6 +5,7 @@ description: "A comprehensive guide to using Claude Code skills for debugging Do
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-docker-debugging-container-logs-guide/
+categories: [troubleshooting]
 ---
 
 {% raw %}
@@ -66,3 +67,10 @@ Claude Code transforms Docker container debugging from a manual, repetitive proc
 
 As containerized architectures continue to dominate modern development, mastering these debugging techniques becomes increasingly valuable. Claude Code's flexibility and context awareness make it an ideal companion for navigating the complexity of distributed container environments, helping you identify and resolve issues efficiently.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

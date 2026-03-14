@@ -1,10 +1,11 @@
 ---
 layout: default
-title: "Amazon Q Developer vs Claude Code: A Practical Comparison for Developers"
+title: "Amazon Q Developer vs Claude Code: A Practical."
 description: "Compare Amazon Q Developer and Claude Code for coding tasks. Real examples, skill ecosystems, pricing, and which tool fits different developer workflows."
 date: 2026-03-14
 author: theluckystrike
 permalink: /amazon-q-developer-vs-claude-code-comparison/
+categories: [guides]
 ---
 
 # Amazon Q Developer vs Claude Code: A Practical Comparison for Developers
@@ -125,5 +126,12 @@ Amazon Q Developer and Claude Code serve overlapping but distinct developer need
 Your choice depends on where you spend most development time. If you're building serverless applications on AWS, Amazon Q's integrations save time. If you're building applications that span multiple platforms, or if you value customizable AI workflows, Claude Code's skill system provides more flexibility.
 
 The good news is both tools continue evolving rapidly. What matters most is understanding your workflow and choosing the tool that amplifies your productivity without creating friction.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

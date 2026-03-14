@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Tools for Code Documentation Workflow"
-description: "Discover how AI coding tools streamline code documentation workflows. Learn practical strategies for automated docs generation, API reference creation, and maintaining documentation with Claude Code and specialized skills."
+description: "Discover how AI coding tools streamline code documentation workflows. Learn practical strategies for automated docs generation, API reference creation."
 date: 2026-03-14
 categories: [guides]
 tags: [ai-coding-tools, code-documentation, developer-tools, claude-code, documentation-automation, workflow-optimization]
@@ -127,5 +127,12 @@ AI tools can automatically generate these metrics, giving you concrete data on d
 AI coding tools transform documentation from a neglected chore into an integrated part of your development workflow. By leveraging Claude Code with specialized skills like **tdd**, **pdf**, **mcp-builder**, and **super memory**, you establish documentation practices that scale with your project.
 
 The initial setup requires some investment, but the payoff comes in reduced support burden, improved developer onboarding, and codebases where documentation actually matches the implementation. Start small, automate incrementally, and watch your documentation quality improve without requiring manual effort for every code change.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

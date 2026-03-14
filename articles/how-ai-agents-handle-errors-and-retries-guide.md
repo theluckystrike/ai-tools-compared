@@ -6,6 +6,7 @@ description: "Learn how Claude Code manages error handling, implements intellige
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-ai-agents-handle-errors-and-retries-guide/
+categories: [troubleshooting]
 ---
 
 # How AI Agents Handle Errors and Retries: A Complete Guide
@@ -226,3 +227,10 @@ When building Claude Code workflows, follow these error handling best practices:
 Error handling in AI agents like Claude Code combines traditional software resilience patterns with adaptive recovery strategies. By understanding how Claude Code detects errors, implements retries, and recovers from failures, you can build more robust AI-powered workflows. The key is designing systems that gracefully handle the unpredictable nature of AI interactions while maintaining clear paths to successful task completion.
 
 Master these error handling techniques, and your Claude Code integrations will be better equipped to handle the real-world challenges of production environments.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+

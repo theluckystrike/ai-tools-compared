@@ -6,6 +6,7 @@ description: "Discover how AI coding tools can help developers build more access
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-coding-tools-for-accessibility-improvements/
+categories: [guides]
 ---
 
 # AI Coding Tools for Accessibility Improvements
@@ -178,5 +179,12 @@ Integrating AI into your accessibility workflow transforms it from a periodic au
 AI coding tools serve as an always-available accessibility consultant, providing guidance tailored to your specific codebase and requirements. The combination of AI assistance with proper testing and manual review creates a robust accessibility practice that scales with your project.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

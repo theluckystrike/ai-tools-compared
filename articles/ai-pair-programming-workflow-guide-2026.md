@@ -5,6 +5,7 @@ description: "Master AI pair programming workflows with practical strategies, re
 date: 2026-03-14
 author: theluckystrike
 permalink: /ai-pair-programming-workflow-guide-2026/
+categories: [guides]
 ---
 
 AI pair programming has transformed from an experimental concept into a production-ready workflow that developers use daily. This guide provides practical strategies for integrating AI assistants into your development process, covering setup, execution, and optimization for maximum productivity.
@@ -133,5 +134,12 @@ AI assistants have boundaries—respect them appropriately. Complex security imp
 ### Continuous Improvement
 
 Track which approaches work best for your workflow. Note patterns in how you communicate requirements, which skills you use most, and where you need to provide additional context. This feedback loop continuously improves your AI pair programming effectiveness.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

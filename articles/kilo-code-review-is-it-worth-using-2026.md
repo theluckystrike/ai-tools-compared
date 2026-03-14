@@ -5,6 +5,7 @@ description: "An honest evaluation of Kilo code review tool for developers. Lear
 date: 2026-03-14
 author: theluckystrike
 permalink: /kilo-code-review-is-it-worth-using-2026/
+categories: [guides]
 ---
 
 # Kilo Code Review: Is It Worth Using in 2026?
@@ -106,5 +107,12 @@ However, if your team already uses Claude Code extensively, investing time in bu
 The best approach involves clear criteria: define what problems you need solving, evaluate tools against those needs, and test thoroughly before committing. Most tools offer free tiers that enable practical evaluation without financial risk.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
