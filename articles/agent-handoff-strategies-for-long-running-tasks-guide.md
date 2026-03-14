@@ -2,10 +2,11 @@
 
 layout: default
 title: "Agent Handoff Strategies for Long Running Tasks Guide"
-description: "Master agent handoff strategies for long running tasks with Claude Code. Learn practical techniques for managing extended workflows, maintaining context, and ensuring seamless task transitions."
+description: "Master agent handoff strategies for long running tasks with Claude Code. Learn practical techniques for managing extended workflows, maintaining."
 date: 2026-03-14
 author: theluckystrike
 permalink: /agent-handoff-strategies-for-long-running-tasks-guide/
+categories: [guides]
 ---
 
 # Agent Handoff Strategies for Long Running Tasks Guide
@@ -230,3 +231,10 @@ Agent handoff strategies transform long-running tasks from risky single operatio
 The key is treating long tasks as series of verified handoffs rather than one continuous operation. By documenting progress, verifying each phase, and planning for interruption, you can confidently tackle substantial projects knowing that progress is preserved and failures are recoverable.
 
 Start applying these strategies on your next extended workflow, and you'll find that even the most ambitious projects become manageable when broken into proper handoff-enabled phases.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude.md Example for Data Science Python Project"
-description: "Practical Claude.md examples for data science Python projects. Learn how to create effective skill files for data analysis, ML pipelines, and pandas workflows."
+description: "Practical Claude.md examples for data science Python projects. Learn how to create effective skill files for data analysis, ML pipelines, and pandas."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-md-example-for-data-science-python-project/
+categories: [guides]
 ---
 
 # Claude.md Example for Data Science Python Project
@@ -158,5 +159,12 @@ Create your project skill by combining relevant sections:
 Place this file in your project root as `CLAUDE.md` or in a `.claude/skills/` directory. Claude automatically loads it when working in your project directory.
 
 The real power emerges when you customize skills for different sub-projects. A data preprocessing skill in your ETL directory, a modeling skill in your experiments folder—Claude adapts its behavior based on which skill file it finds.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
