@@ -148,3 +148,10 @@ AI agents like Claude Code use tools and skills to bridge the gap between theore
 
 The key is providing clear context through skills, understanding which tools are available, and structuring your requests in ways that help Claude identify the best path to accomplish your goals.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

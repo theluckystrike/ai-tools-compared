@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What Is Agentic AI and Why It Matters"
-description: "A practical guide to understanding agentic AI with Claude Code skills, featuring autonomous task execution, multi-step workflows, and real-world examples for developers."
+description: "A practical guide to understanding agentic AI with Claude Code skills, featuring autonomous task execution, multi-step workflows, and real-world."
 date: 2026-03-14
 author: theluckystrike
 permalink: /what-is-agentic-ai-and-why-it-matters/
@@ -207,3 +207,10 @@ Start with one repetitive task in your workflow, create a skill to handle it, an
 
 ---
 *Related Topics: [Claude Skills Guide](/claude-skills-guide/guides-hub/), [Best Claude Skills for Developers](/claude-skills-guide/best-claude-skills-for-developers-2026/), [Getting Started with Claude Code](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)*
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

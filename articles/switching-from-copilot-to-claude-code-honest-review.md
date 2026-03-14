@@ -5,6 +5,7 @@ description: "A practical and honest review of switching from GitHub Copilot to 
 date: 2026-03-14
 author: theluckystrike
 permalink: /switching-from-copilot-to-claude-code-honest-review/
+categories: [guides]
 ---
 
 After using GitHub Copilot for two years, I made the switch to Claude Code six months ago. Here's my honest assessment of what changed, what surprised me, and whether I think the switch is worth it for most developers.
@@ -119,3 +120,10 @@ Would I recommend switching from Copilot to Claude Code? It depends on your work
 For me, the switch was worth it. The skill system alone has transformed how I work, and I've become a more thoughtful developer through the conversational nature of Claude Code. But Copilot still has its place in my toolkit for quick, simple tasks.
 
 The honest truth is that both tools are excellent. Claude Code offers more power and customization at the cost of simplicity. Copilot offers frictionless assistance at the cost of depth. The right choice depends on what you're optimizing for.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
