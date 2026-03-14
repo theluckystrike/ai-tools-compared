@@ -151,9 +151,10 @@ This pattern ensures end-to-end type safety from your database through your load
 
 Combine your Remix skill with other Claude skills for comprehensive coverage. The `frontend-design` skill helps with component styling, while `tdd` assists with test-driven development for your route modules:
 
-```bash
-# Activate multiple skills for a Remix project
-# Invoke skill: /remix-fullstack --skill frontend-design --skill tdd
+```
+/remix-fullstack
+/frontend-design
+/tdd
 ```
 
 The `pdf` skill proves useful when generating reports from your Remix application data. The `supermemory` skill helps maintain context across complex feature development.

@@ -98,14 +98,15 @@ claude "Bu kod değişikliklerini incele ve Türkçe yorumlar ekle"
 
 ### Code Review Process
 
-Integrate Claude Code into your code review process to catch issues early:
+Integrate Claude Code into your code review process to catch issues early. Start a Claude Code session in your project directory and ask it to review your changes:
 
 ```bash
-# Pull request öncesi otomatik inceleme
-claude review-changes --verbose --turkish-output
+# Start Claude in your project directory
+cd your-project
+claude
 ```
 
-This generates a comprehensive review report in Turkish, identifying potential bugs, style issues, and improvement suggestions.
+Then in the session, ask: "Bu kod değişikliklerini incele ve Türkçe yorumlar ekle" (Review these code changes and add Turkish comments). This generates a comprehensive review in Turkish, identifying potential bugs, style issues, and improvement suggestions.
 
 ## Project-Specific Claude.md Files
 
@@ -149,9 +150,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Claude Code Review
         run: |
-          claude review-changes \
-            --output-format=json \
-            --severity=error
+          claude --print "Bu pull request'teki kod değişikliklerini incele, hataları ve iyileştirme önerilerini JSON formatında listele"
 ```
 
 This workflow automatically runs Claude Code analysis on pull requests, providing instant feedback in Turkish.

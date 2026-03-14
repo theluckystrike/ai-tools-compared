@@ -152,13 +152,12 @@ Guides Claude through Flutter development with Riverpod for state management.
 
 ## Combining Skills for Flutter Projects
 
-You can load multiple skills for comprehensive Flutter development guidance. For a production Flutter app, you might use:
+You can load multiple skills for comprehensive Flutter development guidance. For a production Flutter app, invoke each skill in your Claude Code session:
 
-```bash
-/claude-code
-/load-skill flutter-app
-/load-skill flutter-testing
-/load-skill flutter-riverpod
+```
+/flutter-app
+/flutter-testing
+/flutter-riverpod
 ```
 
 This combines architecture guidelines, testing patterns, and state management preferences in one session.
