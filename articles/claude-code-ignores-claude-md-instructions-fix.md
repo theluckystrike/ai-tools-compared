@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Ignores .md Instructions Fix
 
-Your skill.md file sits in the correct directory, the YAML front matter looks valid, yet Claude Code behaves as if the instructions don't exist. This happens more often than you'd think, and the root causes aren't always obvious. Here's how to diagnose and fix it.
+Your [skill.md file](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) sits in the correct directory, the YAML front matter looks valid, yet Claude Code behaves as if the instructions don't exist. This happens more often than you'd think, and the root causes aren't always obvious. Here's how to diagnose and fix it.
 
 ## Why Your Instructions Get Ignored
 
@@ -154,5 +154,12 @@ When Claude Code ignores your skill.md instructions, check these in order:
 6. **Context limits** — Is your content getting truncated?
 
 Most cases resolve by moving critical instructions to front matter and making the description more specific. The tdd skill, for example, succeeds because its description explicitly mentions "test-driven development" and "write tests first" — clear triggers that match how users ask for help.
+
+## Related Reading
+
+- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) — Master the correct structure for skill files that Claude Code loads reliably
+- [Claude Skill YAML Front Matter Parsing Error Fix](/claude-skills-guide/articles/claude-skill-yaml-front-matter-parsing-error-fix/) — Fix YAML syntax issues that prevent instructions from being parsed
+- [Why Does Claude Code Reject My Skill Instruction Block](/claude-skills-guide/articles/why-does-claude-code-reject-my-skill-instruction-block/) — Diagnose instruction block rejections that cause ignored skill files
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Find solutions for skill loading and instruction parsing problems
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

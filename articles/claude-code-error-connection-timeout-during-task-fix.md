@@ -12,7 +12,7 @@ score: 8
 
 # Claude Code Error Connection Timeout During Task Fix
 
-Connection timeout errors in Claude Code can interrupt productive sessions, especially during complex tasks that involve file operations, API calls, or extended reasoning. This guide provides practical solutions for developers and power users facing these issues.
+[Connection timeout errors in Claude Code](/claude-skills-guide/articles/claude-code-skill-timeout-error-how-to-increase-the-limit/) can interrupt productive sessions, especially during complex tasks that involve file operations, API calls, or extended reasoning. This guide provides practical solutions for developers and power users facing these issues.
 
 ## Understanding Connection Timeout Errors
 
@@ -153,5 +153,12 @@ If timeouts persist after trying these fixes, consider:
 - Testing with a different network connection
 
 Most timeout issues resolve through timeout configuration adjustments, task chunking, or network fixes. The key is identifying whether the problem stems from task complexity, network issues, or configuration limits, then applying the corresponding solution.
+
+## Related Reading
+
+- [Claude Code Skill Timeout Error: How to Increase the Limit](/claude-skills-guide/articles/claude-code-skill-timeout-error-how-to-increase-the-limit/) — Address timeout errors caused by task complexity alongside network timeouts
+- [Why Does My Claude Skill Work Locally But Fail in CI](/claude-skills-guide/articles/why-does-my-claude-skill-work-locally-but-fail-in-ci/) — Debug environment-specific failures including network configuration differences
+- [Claude Code Skill Memory Limit Exceeded Process Killed Fix](/claude-skills-guide/articles/claude-code-skill-memory-limit-exceeded-process-killed-fix/) — Handle resource limit errors alongside connection timeout issues
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Find solutions to connection, performance, and configuration problems
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

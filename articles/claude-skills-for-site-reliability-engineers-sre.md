@@ -200,4 +200,12 @@ Start by integrating Claude into your most frequent SRE tasks. Build reusable sc
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+
+## Related Reading
+
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/articles/best-claude-skills-for-devops-and-deployment/) — DevOps skill recommendations relevant to SRE on-call and deployment workflows
+- [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/articles/claude-skills-with-github-actions-ci-cd-pipeline/) — Integrate AI-powered analysis into CI/CD pipelines for SRE quality gates
+- [Claude Code Skills for Infrastructure as Code Terraform](/claude-skills-guide/articles/claude-code-skills-for-infrastructure-as-code-terraform/) — Manage SRE infrastructure with Terraform using Claude Code skills
+- [Claude Code Best-Of Skills Hub](/claude-skills-guide/best-of-hub/) — Discover the top Claude Code skills for infrastructure and reliability work
+
 {% endraw %}
