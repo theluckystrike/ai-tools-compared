@@ -1,10 +1,11 @@
 ---
 layout: default
 title: "Claude Code Git Worktree Parallel Development Workflow"
-description: "Learn how to leverage Git worktree for parallel development with Claude Code. Manage multiple features, hotfixes, and experiments simultaneously without context switching."
+description: "Learn how to leverage Git worktree for parallel development with Claude Code. Manage multiple features, hotfixes, and experiments simultaneously."
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-git-worktree-parallel-development-workflow/
+categories: [guides]
 ---
 
 # Claude Code Git Worktree Parallel Development Workflow
@@ -216,5 +217,12 @@ git status
 Git worktree transforms how you handle parallel development with Claude Code. By dedicating separate directories to each workstream, you eliminate context switching costs and maintain clean, focused development environments. Combined with Claude skills like tdd, pdf, frontend-design, and supermemory, this workflow becomes a powerhouse for developers managing complex, multi-faceted projects.
 
 The initial setup takes minutes, but the productivity gains compound throughout your project lifecycle. Try this workflow on your next feature that requires maintaining multiple active branches.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

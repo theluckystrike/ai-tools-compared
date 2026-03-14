@@ -5,6 +5,7 @@ description: "A practical comparison of Claude Code and Aider for test-driven de
 date: 2026-03-14
 author: theluckystrike
 permalink: /claude-code-vs-aider-for-test-driven-development/
+categories: [guides]
 ---
 
 # Claude Code vs Aider for Test Driven Development
@@ -196,3 +197,10 @@ Both Claude Code and Aider offer valuable capabilities for test-driven developme
 For teams adopting TDD or those who want structured guidance through the red-green-refactor cycle, **Claude Code with the /tdd skill** provides a more complete solution. The skill-based approach ensures you follow TDD best practices while leveraging Claude's strong reasoning capabilities.
 
 Experiment with both tools in your projects to find the workflow that best matches your team's needs. The right choice depends on your project complexity, team experience, and personal preferences—but Claude Code's integrated TDD support makes it a strong choice for developers serious about test-driven development.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
