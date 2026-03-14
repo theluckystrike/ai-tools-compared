@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Keeps Switching to Wrong File Context"
 description: A practical guide to understanding and fixing file context switching issues in Claude Code. Learn why Claude Code loses track of the correct files and how to maintain proper context throughout your development sessions.
 date: 2026-03-14
 categories: [troubleshooting]
 tags: [claude-code, claude-skills, file-context, debugging, troubleshooting]
-author: theluckystrike
-reviewed: false
-score: 0
+author: "Claude Skills Guide"
+reviewed: true
+score: 7
 permalink: /claude-code-keeps-switching-to-wrong-file-context/
 ---
+
 
 # Claude Code Keeps Switching to Wrong File Context
 

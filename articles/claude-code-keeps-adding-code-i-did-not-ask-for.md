@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Keeps Adding Code I Did Not Ask For"
 description: "Why Claude Code sometimes generates extra code you didn't request, and how to prevent it with better prompting techniques and skill configurations."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-keeps-adding-code-i-did-not-ask-for/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code Keeps Adding Code I Did Not Ask For
 
@@ -138,4 +144,4 @@ The goal isn't to eliminate all extra code—it's to have control over what gets
 
 ## Summary
 
-Claude Code keeps adding code you didn't ask for because it follows best practices learned from millions of codebases. To control this behavior, write specific prompts with explicit constraints, use claude.md to establish persistent preferences, leverage skills designed for focused changes, and clearly communicate scope limits in every request. The investment in crafting better prompts pays off quickly in cleaner, more predictable code generation.
+Claude Code keeps adding code you didn't ask for because it follows best practices learned from millions of codebases. To control this behavior, write specific prompts with explicit constraints, use claude.md to establish persistent preferences, use skills designed for focused changes, and clearly communicate scope limits in every request. The investment in crafting better prompts pays off quickly in cleaner, more predictable code generation.

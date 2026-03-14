@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Why Is Claude Code Reading the Wrong Directory Entirely?"
 description: "Diagnose and fix directory resolution issues in Claude Code. Learn how working directories work, why Claude sometimes reads from unexpected locations, and practical solutions."
 date: 2026-03-14
 categories: [troubleshooting]
-tags: [claude-code, directory, file-operations, troubleshooting, working-directory]
-author: theluckystrike
+tags: [claude-code, directory, file-operations, troubleshooting, working-directory, claude-skills]
+author: "Claude Skills Guide"
 permalink: /why-is-claude-code-reading-the-wrong-directory-entirely/
+reviewed: true
+score: 7
 ---
+
 
 # Why Is Claude Code Reading the Wrong Directory Entirely?
 
