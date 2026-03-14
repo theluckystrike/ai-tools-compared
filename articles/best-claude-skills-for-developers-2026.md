@@ -62,7 +62,7 @@ The **canvas-design** skill produces visual assets — images, diagrams, and des
 /canvas-design generate a system architecture diagram showing three microservices communicating via a message queue
 ```
 
-For a deep dive into the full frontend skill stack, see [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/).
+For a full breakdown of the frontend skill stack, see [Best Claude Code Skills for Frontend Development](/claude-skills-guide/articles/best-claude-code-skills-for-frontend-development/).
 
 ## Memory and Knowledge Management with Supermemory
 

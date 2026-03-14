@@ -11,7 +11,7 @@ score: 8
 
 # Claude Code LM Studio Local Model Skill Integration Guide
 
-Running large language models locally gives you privacy, control, and flexibility. When you combine Claude Code with LM Studio, you create a powerful local development environment where AI-assisted coding works without sending data to external services. This guide shows you how to integrate these tools and leverage Claude skills within your local setup.
+Running large language models locally gives you privacy, control, and flexibility. When you combine Claude Code with LM Studio, you create a powerful local development environment where AI-assisted coding works without sending data to external services. This guide shows you how to integrate these tools and use Claude skills within your local setup.
 
 ## Understanding the Integration Architecture
 
@@ -51,7 +51,7 @@ For project-specific configuration, create a `.claude.json` file in your project
 
 ## Creating Custom Skills for Local Model Execution
 
-The real power of this integration emerges when you create custom skills that leverage your local model. Skills extend Claude Code's capabilities with specialized workflows. When combined with local models, you gain complete privacy for sensitive development tasks.
+The real power of this integration emerges when you create custom skills that use your local model. Skills extend Claude Code's capabilities with specialized workflows. When combined with local models, you gain complete privacy for sensitive development tasks.
 
 Consider a skill that analyzes code without sending it to external services. Create a skill definition file:
 
@@ -120,7 +120,7 @@ The `supermemory` skill can integrate with local vector databases, keeping all y
 
 ## Conclusion
 
-Integrating Claude Code with LM Studio creates a private, controllable AI-assisted development environment. Skills like `pdf`, `frontend-design`, `tdd`, and `supermemory` work seamlessly with local models once you configure the connection properly. This setup suits developers with privacy requirements, teams working with sensitive codebases, or anyone wanting full control over their AI tooling.
+Integrating Claude Code with LM Studio creates a private, controllable AI-assisted development environment. Skills like `pdf`, `frontend-design`, `tdd`, and `supermemory` work correctly with local models once you configure the connection properly. This setup suits developers with privacy requirements, teams working with sensitive codebases, or anyone wanting full control over their AI tooling.
 
 The integration requires initial configuration but pays dividends in flexibility and data control. Your development workflow stays entirely local while benefiting from Claude's skill ecosystem.
 

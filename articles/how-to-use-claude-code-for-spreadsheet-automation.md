@@ -5,9 +5,9 @@ description: "Learn how to use Claude Code for spreadsheet automation with pract
 date: 2026-03-14
 categories: [tutorials]
 tags: [claude-code, spreadsheet-automation, excel, python, automation]
-author: theluckystrike
-reviewed: false
-score: 0
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 ---
 
 # How to Use Claude Code for Spreadsheet Automation

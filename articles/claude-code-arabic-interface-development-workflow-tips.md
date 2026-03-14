@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Arabic Interface Development Workflow Tips"
-description: "Practical workflow tips for building Arabic RTL interfaces with Claude Code. Learn how to leverage specialized skills for bilingual development, text processing, and RTL-aware component generation."
+description: "Practical workflow tips for building Arabic RTL interfaces with Claude Code. Apply specialized skills for bilingual development, text processing, and RTL-aware component generation."
 date: 2026-03-14
 categories: [workflows, internationalization]
 tags: [claude-code, claude-skills, arabic, rtl, i18n, frontend]
