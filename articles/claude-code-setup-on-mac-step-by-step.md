@@ -252,4 +252,11 @@ Explain this code section by section:
 cat ~/.claude/prompts/explain-code.txt src/utils.js | claude
 ```
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started 2026](/claude-skills-guide/articles/claude-code-for-beginners-complete-getting-started-2026/)
+- [Claude Code Project Initialization Best Practices](/claude-skills-guide/articles/claude-code-project-initialization-best-practices/)
+- [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/articles/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Getting Started Hub](/claude-skills-guide/getting-started-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

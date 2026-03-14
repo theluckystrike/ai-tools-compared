@@ -82,7 +82,7 @@ This analysis phase prevents the AI from suggesting refactoring that would break
 
 ## Generate Tests Before Making Changes
 
-The tdd skill proves especially valuable with legacy code. It forces Claude to write tests that capture current behavior before any modification.
+[The tdd skill proves especially valuable with legacy code](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/). It forces Claude to write tests that capture current behavior before any modification.
 
 When you want to add a feature to legacy code:
 
@@ -113,7 +113,7 @@ describe('LegacyFormHandler', () => {
 
 ## Use the Super Memory Skill for Persistent Context
 
-For ongoing legacy projects, the supermemory skill stores information that persists between Claude Code sessions. This is valuable for remembering:
+For ongoing legacy projects, [the supermemory skill stores information that persists between Claude Code sessions](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/). This is valuable for remembering:
 
 - Which files are safe to modify
 - Why certain patterns exist
@@ -137,7 +137,7 @@ Remember that the payment module has these quirks:
 
 ## Handle Deprecated Dependencies
 
-Legacy codebases often depend on deprecated packages. Tell Claude explicitly what dependencies to avoid:
+Legacy codebases often depend on deprecated packages. For precise version control, see [making Claude Code use specific library versions](/claude-skills-guide/articles/how-to-make-claude-code-use-specific-library-version/). Tell Claude explicitly what dependencies to avoid:
 
 ```
 This project uses lodash v3 for compatibility with our IE11 support. Do not suggest upgrades to lodash v4 or replace lodash with native JavaScript equivalents.
@@ -179,7 +179,7 @@ This guidance prevents Claude from making changes that would break downstream co
 
 ## Test in Isolation Before Deployment
 
-The tdd skill helps create comprehensive test coverage, but also use integration tests that verify the entire system still works:
+The tdd skill helps create comprehensive test coverage, but also use integration tests that verify the entire system still works. For more on safe refactoring practices, see [making Claude Code refactor without breaking tests](/claude-skills-guide/articles/how-to-make-claude-code-refactor-without-breaking-tests/):
 
 ```bash
 # Run legacy integration tests

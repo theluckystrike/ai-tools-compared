@@ -18,7 +18,7 @@ Getting Claude Code to consistently produce secure code requires more than just 
 
 The foundation of secure code generation begins with which skills you load and how you configure them. Claude Code skills extend Claude's capabilities in specific domains, and several skills directly address security concerns.
 
-The **tdd** skill excels at generating tests, but you can direct it to prioritize security test cases. When you invoke it, specify security-focused test patterns:
+[The **tdd** skill excels at generating tests, but you can direct it to prioritize security test cases](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/). When you invoke it, specify security-focused test patterns:
 
 ```
 /tdd write tests for this authentication module, include test cases for SQL injection, XSS, and CSRF vulnerabilities
@@ -55,7 +55,7 @@ The second prompt gives Claude clear security requirements to follow. Include ex
 
 ## Use the Super Memory Skill for Security Context
 
-The **supermemory** skill stores and retrieves context across sessions. Use it to maintain a security knowledge base that Claude references:
+[The **supermemory** skill stores and retrieves context across sessions](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/). Use it to maintain a security knowledge base that Claude references:
 
 ```
 /supermemory add our company's security standards: no eval(), always use parameterized queries, strict Content Security Policy headers required
@@ -135,7 +135,7 @@ Make these tools visible in your project so Claude incorporates them into genera
 
 Some approaches undermine your security goals.
 
-Avoid vague prompts like "make this secure" — they produce inconsistent results. Specific requirements work better.
+Avoid vague prompts like "make this secure" — they produce inconsistent results. [Writing effective prompts for Claude Code](/claude-skills-guide/articles/how-to-write-effective-prompts-for-claude-code/) directly improves security outcomes.
 
 Don't skip the code review step. Even good AI-generated code benefits from verification.
 

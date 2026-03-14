@@ -14,7 +14,7 @@ Claude Code generates unit tests quickly, but the quality varies based on how yo
 
 ## Start with the TDD Skill
 
-The `/tdd` skill fundamentally changes how Claude approaches testing. Rather than writing implementation code first and retrofilling tests, the tdd skill instructs Claude to follow test-driven development principles—writing the test specification before any implementation.
+[The `/tdd` skill fundamentally changes how Claude approaches testing](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/). Rather than writing implementation code first and retrofilling tests, the tdd skill instructs Claude to follow test-driven development principles—writing the test specification before any implementation.
 
 Activate it at the start of your session:
 
@@ -70,7 +70,7 @@ where amount is 0 or negative.
 
 ## Use the Right Skills for Different Scenarios
 
-Different Claude skills improve different aspects of testing:
+Different Claude skills improve different aspects of testing. [Claude skills for writing unit tests automatically](/claude-skills-guide/articles/claude-skills-for-writing-unit-tests-automatically/) provides a full breakdown:
 
 - **tdd**: Overall test-driven development workflow
 - **frontend-design**: Testing React/Vue component behavior and rendering
@@ -132,7 +132,7 @@ Analyze this function and identify code paths that lack test coverage.
 Then write tests for each uncovered branch.
 ```
 
-This works especially well after adding new features—ask Claude to review your implementation for coverage gaps before considering the work complete.
+This works especially well after adding new features—ask Claude to review your implementation for coverage gaps before considering the work complete. Pairing this with [automated code review](/claude-skills-guide/articles/best-claude-skills-for-code-review-automation/) catches issues the tests don't cover.
 
 ## Build a Testing Prompt Library
 

@@ -44,7 +44,7 @@ When asked about chaos engineering:
 5. Follow safety rules: never run chaos in production without approval
 ```
 
-Activate this skill in your Claude Code session by typing `/chaos` if you've named the file appropriately, or simply reference it when describing your chaos testing needs.
+[Activate this skill in your Claude Code session](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/) if you've named the file appropriately, or simply reference it when describing your chaos testing needs.
 
 ## Automating Test Execution with Claude Skills
 
@@ -66,7 +66,7 @@ def test_payment_service_timeout_handling():
         assert response.order_placed is True
 ```
 
-The `tdd` skill helps you think through these scenarios systematically, ensuring your tests cover the right failure modes.
+[The `tdd` skill helps you think through these scenarios systematically](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/), ensuring your tests cover the right failure modes.
 
 ## Building a Chaos Testing Pipeline
 
@@ -103,7 +103,7 @@ Integrate this with your CI/CD system to run experiments automatically. The `pdf
 
 ## Using Claude Skills for Experiment Design
 
-When designing chaos experiments, use multiple Claude skills together. The `frontend-design` skill helps you visualize dashboard metrics during experiments. The `supermemory` skill tracks experiment results over time, building institutional knowledge about your system's failure modes.
+When designing chaos experiments, use multiple Claude skills together. The `frontend-design` skill helps you visualize dashboard metrics during experiments. [The `supermemory` skill tracks experiment results over time](/claude-skills-guide/articles/claude-supermemory-skill-persistent-context-explained/), building institutional knowledge about your system's failure modes.
 
 A practical experiment design process:
 
@@ -200,5 +200,12 @@ Always follow core chaos engineering principles:
 Claude Code transforms chaos engineering from a complex, tool-heavy discipline into an accessible automation practice. By combining the `tdd` skill for test generation, the `supermemory` skill for knowledge retention, and custom chaos skills for injection, you can build comprehensive resilience testing into your development workflow.
 
 The key is starting simple—run one small experiment, learn from the results, and iterate. Over time, you'll build a library of experiments that continuously validate your system's ability to handle reality.
+
+## Related Reading
+
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Claude Skills Event Driven Architecture Setup](/claude-skills-guide/articles/claude-skills-event-driven-architecture-setup/)
+- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
+- [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

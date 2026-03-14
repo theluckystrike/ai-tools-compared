@@ -198,4 +198,11 @@ With your first project complete, explore more advanced capabilities:
 
 The hello world project you created demonstrates the fundamentals. From here, integrate Claude Code into your actual development workflow, using it for code generation, review, debugging, and documentation tasks as they arise.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started 2026](/claude-skills-guide/articles/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/articles/best-way-to-scope-tasks-for-claude-code-success/)
+- [How to Write Effective Prompts for Claude Code](/claude-skills-guide/articles/how-to-write-effective-prompts-for-claude-code/)
+- [Getting Started Hub](/claude-skills-guide/getting-started-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

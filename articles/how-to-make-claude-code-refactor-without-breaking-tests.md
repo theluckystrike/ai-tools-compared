@@ -20,7 +20,7 @@ Claude Code addresses this through its conversation-based approach. Unlike tradi
 
 ## Using the TDD Skill for Safe Refactoring
 
-The **tdd** skill is your first line of defense when refactoring with Claude Code. This skill emphasizes writing tests before making changes, ensuring you have a safety net throughout the refactoring process.
+[The **tdd** skill is your first line of defense when refactoring with Claude Code](/claude-skills-guide/articles/automated-testing-pipeline-with-claude-tdd-skill-2026/). This skill emphasizes writing tests before making changes, ensuring you have a safety net throughout the refactoring process.
 
 To activate the tdd skill, type:
 

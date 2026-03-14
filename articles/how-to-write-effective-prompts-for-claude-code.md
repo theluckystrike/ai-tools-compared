@@ -83,7 +83,7 @@ This context prevents Claude from suggesting solutions that don't fit your stack
 
 ## Break Down Complex Tasks
 
-Large, undifferentiated requests produce shallow results. Break complex tasks into explicit steps:
+Large, undifferentiated requests produce shallow results. [Break complex tasks into explicit steps](/claude-skills-guide/articles/best-way-to-scope-tasks-for-claude-code-success/):
 
 ```
 I need to add user authentication to our API. Please:
@@ -142,7 +142,7 @@ Constraints are especially useful for avoiding common pitfalls:
 
 ## Leverage Claude Code's Skill System
 
-Claude Code's skill system lets you package effective prompts into reusable tools. A well-written skill combines all the techniques above into a reusable format.
+[Claude Code's skill system lets you package effective prompts into reusable tools](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/). A well-written skill combines all the techniques above into a reusable format.
 
 Example skill structure:
 

@@ -40,11 +40,11 @@ Claude reads your project's dependency files and respects their constraints. Cre
 }
 ```
 
-When you invoke skills like `pdf` or `xlsx` for document generation, Claude will read your lockfile and use matching versions. The same applies when using `canvas-design` or `algorithmic-art` for visual outputs that depend on specific rendering libraries.
+[When you invoke skills like `pdf` or `xlsx` for document generation](/claude-skills-guide/articles/best-claude-code-skills-to-install-first-2026/), Claude will read your lockfile and use matching versions. The same applies when using `canvas-design` or `algorithmic-art` for visual outputs that depend on specific rendering libraries.
 
 ## Method 3: Version Constraints in Skill Instructions
 
-For skills you invoke frequently, embed version requirements directly in the skill configuration. Skills like `superagent` or custom MCP configurations can include version pinning:
+[embed version requirements directly in the skill configuration](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/). Skills like `superagent` or custom MCP configurations can include version pinning:
 
 ```
 When creating HTTP requests, always use axios version 1.6.0.

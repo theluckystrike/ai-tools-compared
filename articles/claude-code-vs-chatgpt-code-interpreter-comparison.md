@@ -194,4 +194,11 @@ For professional developers working on real projects, Claude Code's terminal-nat
 
 ---
 
+## Related Reading
+
+- [Why Claude Code Beats ChatGPT for Developers](/claude-skills-guide/articles/why-is-claude-code-better-than-chatgpt-for-developers/)
+- [Why Teams Switch from Copilot to Claude Code](/claude-skills-guide/articles/why-do-teams-switch-from-copilot-to-claude-code/)
+- [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/articles/claude-skill-md-format-complete-specification-guide/)
+- [Comparisons Hub](/claude-skills-guide/comparisons-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
