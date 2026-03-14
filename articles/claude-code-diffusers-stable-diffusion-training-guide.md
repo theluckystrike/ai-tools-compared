@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Diffusers Stable Diffusion Training Guide"
-description: "Learn how to use Claude Code skills to build, train, and fine-tune Stable Diffusion models with the Diffusers library. Practical examples for AI artists and developers."
+description: "Learn how to use Claude Code skills to build, train, and fine-tune Stable Diffusion models with the Diffusers library. Practical examples for AI."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -208,3 +208,11 @@ With these foundations, you can:
 
 Claude Code skills transform the complex landscape of diffusion model training into manageable, reproducible workflows. Start with LoRA fine-tuning on a small dataset, then progressively tackle more advanced techniques as you build confidence.
 {% endraw %}
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
