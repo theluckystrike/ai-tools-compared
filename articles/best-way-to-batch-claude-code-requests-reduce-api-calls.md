@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Batch Claude Code Requests to Reduce API Calls"
-description: "Learn how to efficiently batch Claude Code requests to minimize API calls and reduce costs by up to 70%. Practical examples with skills, hooks, and automation patterns."
+description: "Learn how to efficiently batch Claude Code requests to minimize API calls and reduce costs by up to 70%. Practical examples with skills, hooks, and."
 date: 2026-03-14
 categories: [guides]
 tags: [claude-code, batching, api-calls, optimization, claude-skills, cost-reduction]
@@ -203,3 +203,11 @@ This shows token usage per operation, helping you identify where batching would 
 Batching Claude Code requests effectively is one of the most powerful ways to reduce API costs while maintaining productivity. By leveraging multi-turn conversations, Claude Skills, hooks, subagents, shell scripts, and MCP servers, you can consolidate what would be dozens of individual requests into a handful of efficient batch operations. Start implementing these strategies today, and you'll likely see 50-70% reduction in API calls for typical development workflows.
 
 The key is to think in terms of complete tasks rather than individual actions. Every time you would naturally say "now do this next thing," consider whether it can be incorporated into your current batch of operations instead.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

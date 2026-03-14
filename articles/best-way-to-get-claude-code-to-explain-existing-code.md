@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Way to Get Claude Code to Explain Existing Code"
-description: "Practical techniques for getting Claude Code to explain unfamiliar codebases effectively. Learn prompt strategies, skills to use, and how to extract meaningful explanations."
+description: "Practical techniques for getting Claude Code to explain unfamiliar codebases effectively. Learn prompt strategies, skills to use, and how to extract."
 date: 2026-03-14
 author: theluckystrike
 categories: [guides]
@@ -162,3 +162,11 @@ data structures, and configuration
 Getting Claude Code to explain existing code effectively comes down to providing clear context, asking specific questions, and leveraging relevant skills. The investment in crafting good prompts pays dividends in the quality and usefulness of explanations you receive. Start with context-rich requests, use skills strategically, and iterate with follow-up questions until your understanding is complete.
 
 With these techniques, Claude Code becomes an invaluable partner for understanding unfamiliar codebases quickly and thoroughly.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
