@@ -44,26 +44,23 @@ my-monorepo/
 │   │   └── db-migration.skill.md
 │   └── docs/
 │       └── swagger-to-md.skill.md
-└── claude.json            # Root-level skill config
+└── CLAUDE.md              # Root-level Claude instructions
 ```
 
 ## Configuring Claude to Find Shared Skills
 
-In your monorepo's root `claude.json`, define skill paths that span multiple locations. Claude Code supports multiple skill directories, allowing you to reference both shared and package-specific skills:
+Claude Code reads skills from `~/.claude/skills/`. To make monorepo skills available, symlink your shared skills directory into that location:
 
-```json
-{
-  "skills": [
-    "skills/_shared",
-    "skills/frontend",
-    "skills/backend",
-    "skills/docs",
-    "packages/*/skills"
-  ]
-}
+```bash
+# Symlink the entire shared skills directory
+ln -s /path/to/my-monorepo/skills/_shared/* ~/.claude/skills/
+
+# Or symlink individual skills
+ln -s /path/to/my-monorepo/skills/_shared/tdd.skill.md ~/.claude/skills/tdd.md
+ln -s /path/to/my-monorepo/skills/frontend/frontend-design.skill.md ~/.claude/skills/frontend-design.md
 ```
 
-The glob pattern `packages/*/skills` automatically includes any package that defines its own skills directory. This means individual packages can maintain their specialized workflows without polluting the shared namespace.
+This makes all shared skills available for the entire monorepo without duplication. Individual packages can maintain their specialized skill files in the repo for documentation purposes.
 
 ## The Shared Skill Pattern
 
@@ -135,25 +132,21 @@ This composition approach means you maintain the TDD skill once, and it automati
 
 While shared skills handle common patterns, individual packages often need customization. The frontend-design skill might apply only to UI packages, while database migration skills belong only to packages with data layer code.
 
-Use skill metadata to control when skills are available. In your `claude.json`, you can restrict skills to specific paths:
+While shared skills handle common patterns, individual packages often need customization. The frontend-design skill might apply only to UI packages, while database migration skills belong only to packages with data layer code.
 
-```json
-{
-  "skills": [
-    {
-      "name": "tdd",
-      "path": "skills/_shared/tdd.skill.md"
-    },
-    {
-      "name": "frontend-design",
-      "path": "skills/frontend/frontend-design.skill.md",
-      "allowedDirectories": ["packages/web", "packages/mobile"]
-    }
-  ]
-}
+To restrict a skill's scope, include directory constraints directly in the skill's CLAUDE.md instructions:
+
+```markdown
+---
+name: frontend-design
+description: UI component generation for web and mobile packages
+---
+
+This skill applies to packages in packages/web/ and packages/mobile/ only.
+When working in backend or shared packages, decline to generate UI components.
 ```
 
-This configuration ensures the frontend-design skill only activates when working within web or mobile packages.
+This ensures the frontend-design skill is contextually appropriate by self-limiting its scope in the skill instructions.
 
 ## Real-World Example: Multi-Language Monorepo
 
