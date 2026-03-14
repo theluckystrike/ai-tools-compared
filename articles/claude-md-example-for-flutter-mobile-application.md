@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude MD Example for Flutter Mobile Application"
 description: "Practical guide to creating Claude skill files for Flutter mobile apps. Includes real examples, code patterns, and integration tips for cross-platform development."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-md-example-for-flutter-mobile-application/
 categories: [guides]
-tags: [claude-code, flutter, mobile-development]
+tags: [claude-code, flutter, mobile-development, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 

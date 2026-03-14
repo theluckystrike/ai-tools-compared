@@ -1,12 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code Dotfiles Integration Tips Guide"
 description: "Practical tips for integrating Claude Code with your dotfiles workflow. Learn how to manage configuration files, automate setups, and sync preferences."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-dotfiles-integration-tips-guide/
 categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
+
 
 # Claude Code Dotfiles Integration Tips Guide
 

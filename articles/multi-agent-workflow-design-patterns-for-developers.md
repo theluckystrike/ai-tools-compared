@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Multi-Agent Workflow Design Patterns for Developers"
 description: "Master multi-agent workflows with Claude Code: orchestrator patterns, handoff strategies, parallel execution, and real-world implementations for complex development tasks."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /multi-agent-workflow-design-patterns-for-developers/
+reviewed: true
+score: 7
+categories: [workflows]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Multi-Agent Workflow Design Patterns for Developers
 
