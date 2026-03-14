@@ -22,7 +22,7 @@ Claude Code addresses this gap differently. Instead of treating code generation 
 
 ## Getting Started with Design Prototyping
 
-Before diving into specific workflows, ensure Claude Code is installed and you have a few essential skills loaded. [The `frontend-design` skill provides specialized guidance for creating responsive layouts](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)outs, component structures, and styling decisions. Install it alongside `pdf` for generating design documentation and `tdd` if you want test coverage alongside your prototype.
+Before diving into specific workflows, ensure Claude Code is installed and you have a few essential skills loaded. [The `frontend-design` skill provides specialized guidance for creating responsive layouts](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/), component structures, and styling decisions. Install it alongside `pdf` for generating design documentation and `tdd` if you want test coverage alongside your prototype.
 
 Initialize a new project for your prototype:
 

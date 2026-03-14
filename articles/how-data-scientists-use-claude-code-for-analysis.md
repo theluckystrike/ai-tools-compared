@@ -64,8 +64,8 @@ def generate_analysis_report(data, output_path='analysis.pdf'):
     
     # Add summary statistics
     pdf.set_font('Arial', '', 12)
-    pdf.cell(0, 10 f"Total Revenue: ${data['revenue'].sum():,.2f}", ln=True)
-    pdf.cell(0, 10 f"Records Analyzed: {len(data)}", ln=True)
+    pdf.cell(0, 10, f"Total Revenue: ${data['revenue'].sum():,.2f}", ln=True)
+    pdf.cell(0, 10, f"Records Analyzed: {len(data)}", ln=True)
     
     pdf.output(output_path)
     return output_path
