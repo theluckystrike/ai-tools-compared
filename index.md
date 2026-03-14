@@ -1,38 +1,41 @@
 ---
 layout: default
-title: "Claude Skills Guide"
-description: "Comprehensive guides, tutorials, and comparisons for Claude AI Skills, Claude Code workflows, and AI agent productivity"
+title: "Claude Skills Guide — Comprehensive Tutorials and Comparisons"
+description: "The most comprehensive collection of Claude Code skills guides, tutorials, and comparisons. 360+ free articles for developers."
 ---
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Claude Skills Guide",
-  "url": "https://theluckystrike.github.io/claude-skills-guide/",
-  "description": "Comprehensive guides for Claude Code skills, tutorials, and AI agent workflows",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://theluckystrike.github.io/claude-skills-guide/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
 
 # Claude Skills Guide
 
-Welcome to the Claude Skills Guide — your go-to resource for mastering Claude AI Skills, Claude Code workflows, and AI agent productivity.
+The most comprehensive collection of Claude Code skills guides on the web. Free, open source, updated weekly.
 
-Whether you're exploring slash commands, building custom skills, or optimizing your Claude Code setup, you'll find practical guides, tutorials, and comparisons here to level up your workflow.
+## Getting Started
 
-## What You'll Find
+- [What Are Claude Skills and How to Use Them](/claude-skills-guide/what-are-claude-skills-and-how-to-use-them/)
+- [How to Install Claude Code Skills Step by Step](/claude-skills-guide/how-to-install-claude-code-skills-step-by-step/)
+- [Best Claude Code Skills to Install First 2026](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
+- [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/)
 
-- **Skill deep-dives** — How each Claude Skill works and when to use it
-- **Claude Code tutorials** — Step-by-step workflows for real-world tasks
-- **Agent productivity tips** — Get more done with AI-assisted development
-- **Comparisons** — Side-by-side breakdowns to pick the right tool for the job
+## Popular Comparisons
+
+- [Claude Code vs Cursor 2026](/claude-skills-guide/claude-code-vs-cursor-2026-detailed-comparison/)
+- [Claude Code vs GitHub Copilot](/claude-skills-guide/claude-code-vs-github-copilot-workspace-features/)
+- [Claude Code vs Windsurf](/claude-skills-guide/claude-code-vs-windsurf-for-ai-development/)
+- [Claude Skills vs Custom GPTs](/claude-skills-guide/claude-skills-vs-custom-gpts-comparison-2026/)
+
+## By Category
+
+### Workflows and How-To
+Automated testing, code review, CI/CD pipelines, documentation generation, and more.
+
+### Use Cases
+Skills for React, Python, DevOps, fintech, healthcare, ecommerce, and 20+ domains.
+
+### Integrations
+VS Code, Docker, AWS, PostgreSQL, GitHub Actions, Vercel, and 50+ tools.
+
+### Advanced
+Token optimization, multi-agent orchestration, extended thinking, enterprise patterns.
 
 ---
 
-*Built by [theluckystrike](https://github.com/theluckystrike) — More at [zovo.one](https://zovo.one)*
-
+Built by [theluckystrike](https://github.com/theluckystrike) — More at [zovo.one](https://zovo.one)
