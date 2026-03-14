@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code API Pagination Best Practices for Developers"
 description: "Learn how to implement efficient pagination with the Claude Code API. Practical examples for handling large datasets, cursor-based pagination, and optimizing API calls."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /claude-code-api-pagination-best-practices/
+categories: [guides]
+tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 When building applications that interact with the Claude Code API, handling large datasets efficiently becomes crucial. Pagination isn't just about splitting data into chunks—it's about creating a smooth, performant experience for your users while respecting API rate limits and response times.
 
