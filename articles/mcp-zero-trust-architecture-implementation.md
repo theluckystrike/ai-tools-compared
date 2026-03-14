@@ -210,7 +210,7 @@ Store these logs in a secure, tamper-evident system. Regular audit reviews help 
 
 ## Integration with Claude Code Skills
 
-Your zero trust MCP implementation integrates seamlessly with Claude Code skills. Skills like **frontend-design** and **pdf** can invoke authenticated MCP tools while respecting capability boundaries. When building custom skills, include authentication context in the skill metadata:
+Your zero trust MCP implementation works directly with Claude Code skills. Skills like **frontend-design** and **pdf** can invoke authenticated MCP tools while respecting capability boundaries. When building custom skills, include authentication context in the skill metadata:
 
 ```yaml
 # In your skill.md file
