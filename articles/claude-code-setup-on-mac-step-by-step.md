@@ -145,19 +145,17 @@ xattr -rd com.apple.quarantine /usr/local/bin/claude
 
 ### Slow Responses
 
-If responses feel sluggish, try a lighter model in your config:
+If responses feel sluggish, try a faster model by passing the `--model` flag:
 
-```json
-{
-  "model": "claude-haiku-3-20250307"
-}
+```bash
+claude --model claude-haiku-4-5 "Your prompt here"
 ```
 
 Haiku responds faster for straightforward tasks.
 
 ## Advanced: Using MCP Servers
 
-For expanded capabilities, configure Model Context Protocol servers. Create `~/.config/claude/mcp.json`:
+For expanded capabilities, configure Model Context Protocol servers. Create or edit `~/.claude/mcp.json`:
 
 ```json
 {
@@ -176,13 +174,12 @@ Restart your Claude session to load the MCP configuration.
 
 ## Summary
 
-Setting up Claude Code on Mac involves five core steps:
+Setting up Claude Code on Mac involves four core steps:
 
-1. Install via Homebrew: `brew install anthropic-cli`
+1. Install via npm: `npm install -g @anthropic-ai/claude-code`
 2. Configure your API key as an environment variable
-3. Create a config file for model and behavior preferences
-4. Test with basic commands
-5. Integrate into your workflow with aliases and scripts
+3. Test with basic commands
+4. Integrate into your workflow with aliases and scripts
 
 Once configured, Claude becomes a persistent coding companion in your terminal—ready to explain code, write functions, review changes, and automate repetitive tasks.
 
