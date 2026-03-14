@@ -13,3 +13,4 @@ defaults:
       path: "articles"
     values:
       layout: default
+      render_with_liquid: false
