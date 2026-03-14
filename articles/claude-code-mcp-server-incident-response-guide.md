@@ -63,11 +63,6 @@ Integrate this into your MCP server configuration:
       "args": ["/path/to/server/index.js"],
       "env": {
         "PORT": "3000"
-      },
-      "healthCheck": {
-        "command": "/path/to/mcp-health-check.sh",
-        "interval": 60,
-        "timeout": 10
       }
     }
   }
