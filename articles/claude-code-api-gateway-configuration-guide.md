@@ -1,87 +1,120 @@
 ---
 layout: default
 title: "Claude Code API Gateway Configuration Guide"
-description: "A practical guide to configuring API gateways with Claude Code. Learn skill setup, configuration patterns, and real-world examples for developers."
+description: "A practical guide to configuring API gateways for Claude Code skills. Learn to set up routing, authentication, rate limiting, and integrate with MCP servers."
 date: 2026-03-14
-categories: [tutorials]
-tags: [claude-code, api-gateway, configuration, development, skill-setup]
 author: theluckystrike
 permalink: /claude-code-api-gateway-configuration-guide/
 ---
 
+{% raw %}
 # Claude Code API Gateway Configuration Guide
 
-API gateways serve as the single entry point for distributed systems, handling request routing, authentication, rate limiting, and protocol translation. Configuring these gateways effectively requires understanding both infrastructure patterns and Claude Code's skill system. This guide walks through practical API gateway configuration using Claude Code skills and workflows.
+API gateways serve as the entry point for external services interacting with your Claude Code skills. Proper configuration ensures secure, efficient communication between your skills and the outside world. This guide walks through practical setup scenarios for developers building production-ready Claude skills.
 
-## Understanding API Gateway Configuration in Claude Code
+## Understanding Gateway Architecture
 
-Claude Code doesn't include a built-in API gateway skill, but you can leverage other skills to configure and manage gateway deployments. The key is combining skills like `frontend-design` for API documentation, `pdf` for generating configuration guides, and `tdd` for testing gateway rules.
+When you expose Claude skills through an API gateway, you're creating a bridge between HTTP requests and the skill execution environment. The gateway handles authentication, request validation, rate limiting, and routing before passing requests to your skill handlers.
 
-The most common approach involves defining gateway configurations as code—typically YAML or JSON files that describe routes, middleware, and policies. Claude Code excels at reading, generating, and modifying these configuration files when you provide context about your infrastructure.
+A typical configuration involves three main components: the gateway service (such as Kong, AWS API Gateway, or nginx), your skill definitions, and the MCP server that coordinates tool access. Understanding how these pieces communicate helps you debug issues and optimize performance.
 
-## Setting Up Your Gateway Configuration Workflow
+## Basic Gateway Setup
 
-Start by creating a dedicated skill for API gateway configuration. While the official skill marketplace doesn't offer a dedicated API gateway skill, you can create a custom skill that describes your gateway's behavior:
-
-```markdown
-# API Gateway Configuration Skill
-
-You help configure and maintain API gateway rules. When asked about gateway configuration:
-- Suggest appropriate routing patterns for REST and GraphQL APIs
-- Recommend security policies including OAuth, JWT validation, and rate limiting
-- Provide example configurations for common gateways (Kong, AWS API Gateway, NGINX)
-- Help troubleshoot routing issues and performance problems
-```
-
-Save this to `~/.claude/skills/gateway.md` and Claude will load it when you mention gateway-related tasks.
-
-## Practical Configuration Examples
-
-### Basic Route Configuration
-
-For a simple microservice architecture, your gateway routes might look like:
+The simplest way to expose a skill is through a RESTful endpoint. Here's a minimal configuration using a self-hosted gateway:
 
 ```yaml
+# gateway-config.yaml
 services:
-  - name: user-service
-    url: http://localhost:3001
+  - name: claude-skill-handler
+    url: http://localhost:8080
     routes:
-      - path: /api/users
-        methods: [GET, POST, PUT, DELETE]
-  - name: order-service
-    url: http://localhost:3002
-    routes:
-      - path: /api/orders
-        methods: [GET, POST]
+      - name: pdf-generation
+        path: /api/v1/generate-pdf
+        methods: [POST]
+    plugins:
+      - name: rate-limiting
+        config:
+          minute: 60
+          policy: local
+      - name: jwt
+        config:
+          secret: your-secret-key
 ```
 
-Claude Code can generate these configurations when you describe your service topology. Simply explain what services you have and their purposes, and Claude will draft the routing configuration.
+This configuration creates a protected endpoint for PDF generation. The rate limiting plugin prevents abuse, while JWT authentication ensures only authorized users can trigger skill executions. The skill itself would use the `pdf` skill to handle the actual document generation.
 
-### Authentication Middleware
+## Authentication Strategies
 
-Gateway authentication typically involves JWT validation or OAuth token exchange:
+Choosing the right authentication method depends on your use case. For internal tools, API keys provide simplicity. For multi-user environments, OAuth 2.0 or JWT tokens offer better security and audit trails.
+
+API key authentication works well for server-to-server communication:
+
+```yaml
+plugins:
+  - name: api-key
+    config:
+      header_name: X-API-Key
+      hide_credentials: false
+```
+
+For user-facing applications, implement JWT with expiration:
 
 ```yaml
 plugins:
   - name: jwt
     config:
-      key_claim: kid
       claims_to_verify:
         - exp
         - iat
-      run_on_preflight: true
-  - name: rate-limiting
-    config:
-      minute: 100
-      hour: 1000
-      policy: local
+      maximum_expiration: 3600
 ```
 
-When configuring authentication, use the `supermemory` skill to document which services require which authentication methods. This creates a reference that helps Claude suggest appropriate gateway policies for each endpoint.
+When integrating with the `supermemory` skill for context management, ensure your authentication layer passes user identity to maintain proper memory segregation between users.
 
-### Request Transformation
+## Rate Limiting and Throttling
 
-Gateways often transform requests before forwarding to backend services:
+Rate limiting protects your skills from overload and prevents resource exhaustion. Configure limits based on the skill's computational cost rather than using uniform defaults.
+
+A compute-intensive skill like `tdd` (test-driven development) requires stricter limits than a simple lookup skill:
+
+```yaml
+plugins:
+  - name: rate-limiting
+    config:
+      minute: 10
+      hour: 100
+      policy: redis
+      redis_host: localhost
+      redis_port: 6379
+```
+
+For simpler skills that primarily read files or perform quick transformations, you can allow higher throughput. The key is matching limits to actual resource consumption.
+
+## Routing to Multiple Skills
+
+A well-designed gateway routes requests to appropriate skills based on URL patterns or request headers. This enables a single gateway to serve multiple skills:
+
+```yaml
+routes:
+  - name: frontend-routes
+    path: /api/v1/frontend/*
+    methods: [POST]
+    service: frontend-skill-service
+  - name: document-routes
+    path: /api/v1/documents/*
+    methods: [POST]
+    service: document-skill-service
+  - name: analysis-routes
+    path: /api/v1/analyze/*
+    methods: [POST]
+    service: analysis-skill-service
+```
+
+The `frontend-design` skill handles frontend generation requests, while document processing goes to skills using the `pdf` and `docx` capabilities. This separation keeps each skill's resources isolated and easier to monitor.
+
+## Request Transformation
+
+Sometimes your gateway needs to transform incoming requests to match your skill's expected format. Use request transformation plugins to add context:
 
 ```yaml
 plugins:
@@ -89,112 +122,98 @@ plugins:
     config:
       add:
         headers:
-          - X-Gateway-Version: "2.0"
-          - X-Request-ID: $(uuid)
-      remove:
-        headers:
-          - X-Internal-Debug
+          - X-Skill-Context:production
+          - X-Request-ID:$(uuid)
+        json:
+          user_id: "$(jwt.claims.sub)"
+          timestamp: "$(timestamp)"
 ```
 
-## Integrating Claude Skills with Gateway Development
+This injects the user ID from the JWT token into the request body, allowing your skill to identify the requester without requiring them to include it manually. The timestamp helps with auditing and debugging.
 
-Several Claude skills accelerate gateway configuration:
+## Response Handling
 
-- **tdd**: Use test-driven development to validate gateway rules before deployment
-- **frontend-design**: Generate OpenAPI specifications and API documentation
-- **pdf**: Export gateway configuration guides for team reference
-
-The workflow typically involves describing your API surface to Claude, which then generates draft configurations. Use `/tdd` to validate the configuration handles edge cases correctly.
-
-## Troubleshooting Common Gateway Issues
-
-### Routing Failures
-
-When requests fail to route correctly, verify your path matching patterns. Claude Code can help analyze logs and suggest fixes:
-
-```yaml
-routes:
-  - name: api-routes
-    paths:
-      - /api/v1/
-    strip_path: true
-```
-
-### Authentication Errors
-
-JWT validation failures often stem from clock skew or incorrect key configuration. Document your auth setup using the `supermemory` skill:
-
-```
-Auth Flow:
-- Client obtains token from /auth/login
-- Token includes exp, iat, sub claims
-- Gateway validates signature using JWKS endpoint
-- Failed validations return 401 with error details
-```
-
-This documentation helps Claude quickly identify configuration mismatches.
-
-### Performance Bottlenecks
-
-Rate limiting and caching configurations impact gateway performance significantly:
+Configure response transformations to return consistent formats to clients:
 
 ```yaml
 plugins:
-  - name: proxy-cache
+  - name: response-transformer
     config:
-      response_code:
-        - 200
-      request_method:
+      add:
+        headers:
+          - X-Response-Time:$(latency)
+      json:
+        status: "success"
+        version: "1.0"
+```
+
+Skills that generate artifacts (images, PDFs, code) should return signed URLs or direct downloads rather than embedding large payloads in JSON responses.
+
+## Monitoring and Logging
+
+Effective monitoring helps you understand skill performance and identify issues. Configure your gateway to emit metrics:
+
+```yaml
+plugins:
+  - name: prometheus
+    config:
+      per_consumer: true
+      latency_buckets: [5, 10, 25, 50, 100, 250, 500, 1000]
+```
+
+Track these key metrics: request latency, error rates per skill, rate limit hits, and authentication failures. The `mcp-builder` skill often generates diagnostic information that's useful for troubleshooting integration issues.
+
+## Security Best Practices
+
+Always use TLS for gateway communication. Configure CORS properly to restrict which domains can invoke your skills:
+
+```yaml
+plugins:
+  - name: cors
+    config:
+      origins:
+        - https://yourapp.com
+      methods:
         - GET
-      cache_ttl: 300
+        - POST
+      headers:
+        - Authorization
+        - Content-Type
+      exposed_headers:
+        - X-Request-ID
+      credentials: true
+      max_age: 3600
 ```
 
-## Deployment Best Practices
+For skills that handle sensitive data, implement additional verification steps within the skill itself using tool access controls.
 
-1. **Version control all configurations**: Store gateway configs in your repository alongside application code
-2. **Use environment-specific configs**: Separate development, staging, and production configurations
-3. **Test before deployment**: Use the `tdd` skill to validate routing and security rules
-4. **Document everything**: Use `pdf` to generate configuration documentation for stakeholders
+## Integration with MCP Servers
 
-## Advanced Patterns
-
-For complex architectures, consider these advanced configurations:
-
-### Service Mesh Integration
-
-When using a service mesh, the gateway handles external traffic while the mesh manages internal service communication:
+The Model Context Protocol (MCP) server coordinates tool access for your skills. Configure your gateway to communicate with MCP over its native protocol:
 
 ```yaml
-gateway:
-  external:
-    tls:
-      mode: PASSTHROUGH
-  internal:
-    mesh_enabled: true
-    service_discovery: consul
+upstream:
+  url: http://mcp-server:3000
+  health_checks:
+    active:
+      healthy: 200
+      interval: 10
+      unhealthy: 5
 ```
 
-### GraphQL Federation
+This ensures requests fail fast if the MCP server becomes unavailable, allowing your gateway to return appropriate error messages rather than timing out.
 
-Gateway configuration for federated GraphQL requires specific routing:
+## Common Configuration Issues
 
-```yaml
-services:
-  - name: federated-gateway
-    url: http://localhost:4000
-    routes:
-      - path: /graphql
-        methods: [POST, GET]
-        plugins:
-          - name: graphql-introspection
-            config:
-              allow: true
-```
+Gateway configuration errors often manifest as confusing error messages. A few common pitfalls: mismatched content types between gateway and skill, missing authentication headers for protected routes, and incorrect path matching patterns. When debugging, check gateway logs first—they typically indicate whether the request reached your skill at all.
 
-## Conclusion
+For skills using the `algorithmic-art` or `canvas-design` capabilities, ensure your gateway timeout settings accommodate longer generation times.
 
-Configuring API gateways with Claude Code involves combining clear documentation practices with the skill system's flexibility. By creating custom gateway skills, leveraging existing skills like `tdd` and `supermemory`, and treating gateway configurations as code, you can build reliable, secure API infrastructures.
+## Next Steps
 
-The key is starting simple—define basic routes, add authentication incrementally, and expand to advanced features like caching and transformation as your system matures. Claude Code's ability to read, generate, and modify configuration files makes it an invaluable tool for this iterative process.
+Start with basic authentication and rate limiting, then add complexity as needed. Monitor your metrics and adjust limits based on actual usage patterns. As your skill suite grows, consider implementing a service mesh for better traffic management between skills.
+
+The gateway is your first line of defense and your primary interface. Invest time in getting the configuration right, and your skills will be more secure, performant, and maintainable.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
