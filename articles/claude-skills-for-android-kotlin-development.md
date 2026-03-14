@@ -82,13 +82,7 @@ When managing Android build variants, Gradle configurations, or dependency versi
 
 ### Documentation Generation Skills
 
-Android projects require comprehensive documentation. Use the documentation generation skill to create API docs, architecture decision records, and README files:
-
-```
-/use documentation generation skill
-```
-
-For Android specifically, ask Claude to generate KDoc comments for your ViewModels, repositories, and use cases. This keeps your codebase documented without manual effort.
+Android projects require comprehensive documentation. Ask Claude directly to generate API docs, architecture decision records, and README files. For Android specifically, ask Claude to generate KDoc comments for your ViewModels, repositories, and use cases. This keeps your codebase documented without manual effort.
 
 ```kotlin
 /**

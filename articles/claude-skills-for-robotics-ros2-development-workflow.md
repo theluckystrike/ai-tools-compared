@@ -59,20 +59,19 @@ When designing robot user interfaces or visualization dashboards, the **frontend
 
 One of the most time-consuming aspects of ROS2 development is creating new packages with proper structure. While the `ros2 pkg create` command handles basic setup, you can enhance it with Claude skills for more sophisticated scaffolding.
 
-Use the **skill-creator** skill to build a custom ROS2 package generator that matches your project conventions. This eliminates repetitive setup tasks for each new node:
+Create a custom ROS2 package generator skill by placing a `.md` file in `~/.claude/skills/ros2-package.md`. This skill can be invoked with `/ros2-package` to scaffold new packages that match your project conventions. This eliminates repetitive setup tasks for each new node:
 
-```python
-# Example: Custom package generation workflow
-/skill-creator create ros2-package
-# This generates a complete package with:
-# - CMakeLists.txt with proper dependencies
-# - package.xml with maintainer info
-# - Standard node templates
-# - Launch file examples
-# - Test directory structure
+```markdown
+# ros2-package skill
+When invoked, create a new ROS2 package with:
+- CMakeLists.txt with proper dependencies
+- package.xml with maintainer info
+- Standard node templates
+- Launch file examples
+- Test directory structure
 ```
 
-After generation, your new package includes all necessary files with your preferred coding patterns already applied.
+After invoking the skill, your new package includes all necessary files with your preferred coding patterns already applied.
 
 ## Implementing Test-Driven Development for Robots
 
@@ -98,7 +97,8 @@ This test-first approach catches bugs before they manifest in live robot behavio
 Robotics codebases benefit from rigorous documentation. Use the **docx** skill to generate specification documents, design proposals, and technical reports. Export your markdown documentation to formatted Word documents for stakeholder reviews:
 
 ```
-/docx convert --source architecture-design.md --output architecture-design.docx
+/docx
+Convert architecture-design.md to a formatted Word document for stakeholder reviews.
 ```
 
 For inline documentation within your code, maintain clear docstrings following ROS2 conventions:
@@ -160,7 +160,7 @@ Integrate Claude skills into your CI/CD pipeline for automated quality assurance
     
 - name: Generate documentation
   run: |
-    /pdf generate --input docs/api.md --output build/api.pdf
+    pandoc docs/api.md -o build/api.pdf
     
 - name: Archive artifacts
   uses: actions/upload-artifact@v4

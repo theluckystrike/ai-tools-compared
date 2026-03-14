@@ -28,7 +28,8 @@ A well-crafted Claude skill for Unity acts as your build engineer, documentation
 Unity's command-line build support is powerful but requires memorization. A build automation skill abstracts this into simple invocations:
 
 ```
-/unity-build --platform=webgl --output ./Builds/webgl
+/unity-build
+Build for WebGL and output to ./Builds/webgl
 ```
 
 The skill handles platform detection, build path creation, and error reporting. Here's the core structure:
@@ -36,15 +37,14 @@ The skill handles platform detection, build path creation, and error reporting. 
 ```
 # Unity Build Automation Skill
 
-When invoked with --platform and --output flags, perform these steps:
+When invoked, ask the user for the target platform and output path (or use defaults),
+then perform these steps:
 
 1. Validate Unity project exists in current directory
-2. Parse the platform parameter (webgl, windows, macos, android, ios)
+2. Identify the platform parameter (webgl, windows, macos, android, ios)
 3. Execute: unity -buildTarget [platform] -buildPath [output] -quit
 4. Parse build output for errors
 5. Report success with build size and time
-
-If no platform specified, ask the user to choose from: webgl, windows, macos, android, ios, linux
 ```
 
 This skill works alongside the `tdd` skill to run tests after each build, ensuring your game logic remains stable across deployments. The [Claude TDD skill guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) covers how to configure test-driven workflows that pair naturally with Unity's command-line tooling.
@@ -54,7 +54,8 @@ This skill works alongside the `tdd` skill to run tests after each build, ensuri
 Creating MonoBehaviour scripts follows conventions. A script generation skill scaffolds new components instantly:
 
 ```
-/unity-script PlayerController --type movement --template character
+/unity-script
+Create a PlayerController with movement type using the character template.
 ```
 
 The skill generates:
@@ -71,7 +72,8 @@ Pair this with the `frontend-design` skill when building in-game UI—generate t
 Unity projects accumulate scripts, scenes, and assets that become hard to track. A documentation skill scans your project and produces reference documentation:
 
 ```
-/unity-docs --scope scripts --output ./Docs/api-reference.md
+/unity-docs
+Scan all scripts and generate api-reference.md in ./Docs/
 ```
 
 This skill uses file reading capabilities to:
@@ -87,7 +89,8 @@ The `supermemory` skill complements this by indexing your documentation into a s
 Managing sprites, audio, and prefabs requires consistent organization. An asset pipeline skill enforces conventions:
 
 ```
-/unity-assets --organize --validate
+/unity-assets
+Organize and validate the current project's asset structure.
 ```
 
 The skill:
@@ -100,10 +103,10 @@ The skill:
 
 When adding a new game feature, chain multiple skills together:
 
-1. **Generate the script**: `/unity-script EnemySpawner --type spawner --template manager`
+1. **Generate the script**: `/unity-script` — ask it to create an EnemySpawner using the manager template
 2. **Create tests**: Use `tdd` to scaffold unit tests for the spawner's logic
-3. **Build and verify**: `/unity-build --platform webgl --output ./Builds/test`
-4. **Update docs**: `/unity-docs --scope scripts --output ./Docs/enemy-spawner.md`
+3. **Build and verify**: `/unity-build` — ask it to build for WebGL to ./Builds/test
+4. **Update docs**: `/unity-docs` — ask it to document the EnemySpawner script
 
 This workflow transforms a multi-hour task into a sequence of three commands. The `pdf` skill can export your documentation to PDF for team distribution.
 
