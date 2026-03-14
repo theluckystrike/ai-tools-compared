@@ -69,48 +69,24 @@ Analyze the authentication module in /src/auth/ and suggest improvements
 
 This targeted approach produces better results and uses fewer tokens.
 
-The metadata header optimization technique also helps. By placing critical instructions in the skill's YAML front matter rather than the full body, you reduce loading overhead:
+Place critical instructions at the top of your skill markdown file so Claude processes the most important context first:
 
-```yaml
----
-name: api-specialist
-trigger: /api
-priority: high
----
-
+```markdown
 # API Development Specialist
-You are an expert in REST and GraphQL API design...
+
+You are an expert in REST and GraphQL API design. Focus on consistent resource naming, proper status codes, and versioning strategies.
 ```
 
-This structure lets Claude quickly identify relevant skills without parsing the entire instruction block.
+This structure gives Claude the key context upfront without burying it later in the file.
 
 ## Automation Through Hooks
 
-Claude Code's hooks system enables workflow automation without manual intervention. The `on-tool-use` hook triggers actions after specific tool calls:
+Claude Code's hooks system enables workflow automation. You can configure hooks in `~/.claude/settings.json` under the `hooks` key. Hooks run shell commands automatically when specific Claude Code events occur — for example, running your test suite after Claude writes a file.
 
-```yaml
-hooks:
-  on-tool-use:
-    Write: file:
-      - "Generate unit tests for the newly created file"
+For test-driven workflows, use the `/tdd` skill to create integration tests:
+
 ```
-
-Create a `.claude/hooks.yml` file in your project:
-
-```yaml
-- match: ".*\\.test\\.js$"
-  hooks:
-    - type: on-tool-use
-      command: "npm test"
-```
-
-This runs tests automatically after creating test files.
-
-For even more advanced automation, the tdd skill integrates directly with your testing workflow:
-
-```bash
-# Invoke tdd skill with specific test framework
-/tdd create integration tests for payment-gateway.js --framework vitest
+/tdd create integration tests for payment-gateway.js using vitest
 ```
 
 ## Project-Specific Skill Configuration
@@ -142,22 +118,7 @@ When Claude enters this project, it immediately understands your standards witho
 
 ## Performance Monitoring
 
-Track skill performance to identify optimization opportunities. The built-in token usage feature shows how much each skill contributes to context:
-
-```
-/usage show token breakdown for current session
-```
-
-For skills that generate repetitive output, implement caching strategies. Skills that call external APIs benefit from response caching:
-
-```yaml
-# In skill configuration
-cache:
-  enabled: true
-  ttl: 3600  # seconds
-```
-
-This reduces API calls and improves response times for frequently requested data.
+Track skill performance by paying attention to response times and output quality. When sessions slow down or outputs become inconsistent, start a fresh session. Shorter, focused sessions generally produce faster and more accurate results than long multi-hour sessions with accumulated context.
 
 ## Multi-Agent Coordination
 

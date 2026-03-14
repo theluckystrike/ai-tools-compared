@@ -127,7 +127,7 @@ Each worker operates independently on its domain, returning results to the orche
 
 ## Conclusion
 
-The orchestrator-sonnet-worker pattern provides a powerful framework for building sophisticated AI agent systems. By combining Opus's reasoning capabilities with specialized Sonnet workers, you get cost-effective, focused execution across multiple domains. The key is defining clear worker boundaries, implementing robust communication protocols, and designing graceful error handling.
+The orchestrator-sonnet-worker pattern provides a powerful framework for building sophisticated AI agent systems. By combining Opus's reasoning capabilities with specialized Sonnet workers, you get cost-effective, focused execution across multiple domains. The key is defining clear worker boundaries, implementing clear communication protocols, and designing graceful error handling.
 
 Start by identifying distinct skill domains in your project, then assign each to a specialized worker. Let Opus handle the coordination and synthesis. This architecture scales well and produces more consistent results than asking a single model to handle everything.
 
@@ -135,7 +135,7 @@ Start by identifying distinct skill domains in your project, then assign each to
 
 - [Claude Code Agent Pipeline: Sequential vs Parallel Execution](/claude-skills-guide/claude-code-agent-pipeline-sequential-vs-parallel/) — Compare sequential and parallel execution models for multi-agent workflows
 - [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/multi-agent-orchestration-with-claude-subagents-guide/) — Build coordinated multi-agent systems with specialized subagents
-- [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/) — Implement robust communication protocols between orchestrator and worker agents
+- [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/) — Implement reliable communication protocols between orchestrator and worker agents
 - [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced orchestration patterns and multi-agent system design
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
