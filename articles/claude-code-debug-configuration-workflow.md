@@ -139,4 +139,11 @@ This systematic approach—isolating variables, checking debug output, and verif
 
 ---
 
+## Related Reading
+
+- [Claude Code Local Development Setup Guide](/claude-skills-guide/claude-code-local-development-setup-guide/) — Debug configuration is part of local dev setup
+- [Claude Code Performance Bottleneck Finding](/claude-skills-guide/claude-code-performance-bottleneck-finding/) — Debug configuration helps identify bottlenecks
+- [Claude Code Error Out of Memory Large Codebase Fix](/claude-skills-guide/claude-code-error-out-of-memory-large-codebase-fix/) — Debug config needed when diagnosing OOM errors
+- [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — Debugging and error resolution guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

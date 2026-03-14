@@ -218,4 +218,11 @@ The artifacts-builder skill proves useful when you need to prototype SOLID-compl
 
 Implementing SOLID principles with Claude Code requires explicit guidance, consistent patterns, and proactive refactoring. By prompting for abstractions first, enforcing responsibility boundaries, and maintaining clear contracts, you can use AI assistance while building maintainable software. The key lies in treating Claude Code as a pair programmer that needs clear architectural direction rather than a magic solution that understands implicit requirements.
 
+## Related Reading
+
+- [How to Make Claude Code Follow DRY and SOLID Principles](/claude-skills-guide/how-to-make-claude-code-follow-dry-solid-principles/) — DRY and SOLID implementation guide
+- [Claude Code Dependency Injection Refactoring](/claude-skills-guide/claude-code-dependency-injection-refactoring/) — Dependency Injection implements the D in SOLID
+- [Claude Code Design Patterns Refactoring Guide](/claude-skills-guide/claude-code-design-patterns-refactoring-guide/) — Design patterns enable SOLID implementation
+- [Claude Code Coupling and Cohesion Improvement](/claude-skills-guide/claude-code-coupling-and-cohesion-improvement/) — High cohesion and low coupling embody SOLID
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

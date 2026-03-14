@@ -14,6 +14,7 @@ score: 7
 {% raw %}
 
 
+
 # Claude Code Dependency Injection Refactoring
 
 Dependency injection isn't just for traditional software development—it transforms how you build and maintain Claude skills. When your skills grow beyond simple prompts into complex workflows, applying dependency injection principles makes them testable, reusable, and easier to evolve.

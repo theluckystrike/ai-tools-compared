@@ -203,4 +203,11 @@ Test-driven refactoring with Claude Code combines the safety of comprehensive te
 
 Start small: pick one function or module, write tests for its current behavior, then refactor. As you build confidence in the workflow, apply it to larger system components. The discipline pays dividends in code quality and reduced regression bugs.
 
+## Related Reading
+
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — TDD is the foundation of test-driven refactoring
+- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — Safe refactoring under test coverage
+- [Claude Code Mutation Testing Workflow Guide](/claude-skills-guide/claude-code-mutation-testing-workflow-guide/) — Mutation testing validates refactoring quality
+- [Claude Code Code Coverage Improvement Guide](/claude-skills-guide/claude-code-code-coverage-improvement-guide/) — Coverage is essential for safe refactoring
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

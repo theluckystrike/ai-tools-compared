@@ -13,7 +13,6 @@ score: 7
 ---
 
 
-{% raw %}
 # Claude Code Hot Reload Development Setup
 
 Hot reload has become an essential productivity feature for developers working with Claude Code. When you modify a skill or configuration, seeing those changes reflected immediately accelerates iteration cycles and reduces context-switching overhead. This guide walks you through practical approaches to achieving a responsive Claude Code development environment.
@@ -129,6 +128,12 @@ This approach prevents issues where a skill loads before its dependencies are av
 Setting up hot reload for Claude Code transforms your development experience from periodic restart cycles to continuous iteration. The investment in configuring file watchers and reload handlers pays dividends in reduced context-switching and faster feedback loops. Whether you're building complex document pipelines with the `pdf` skill, iterating on presentations with `pptx`, or practicing test-driven development, hot reload keeps your workflow fluid.
 
 Start with simple file watching, then layer on optimizations as your needs grow. Your skills, configurations, and productivity will thank you.
-{% endraw %}
+
+## Related Reading
+
+- [Claude Code Local Development Setup Guide](/claude-skills-guide/claude-code-local-development-setup-guide/) — Local dev setup includes hot reload configuration
+- [Claude Code Environment Setup Automation](/claude-skills-guide/claude-code-environment-setup-automation/) — Environment setup with hot reload enabled
+- [Best Way to Use Claude Code for Rapid Prototyping](/claude-skills-guide/best-way-to-use-claude-code-for-rapid-prototyping/) — Hot reload accelerates prototyping
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Development environment workflow guides
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
