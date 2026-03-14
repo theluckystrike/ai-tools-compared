@@ -164,7 +164,7 @@ function calculateTotal(prices) {
 Ask Claude Code to review it:
 
 ```
-/review review-me.js for bugs and improvements
+Review review-me.js for bugs and improvements
 ```
 
 Claude Code identifies the off-by-one error in the loop condition and suggests a cleaner implementation using `reduce()`. This demonstrates the practical value of using Claude Code as a review partner during development.

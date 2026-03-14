@@ -126,16 +126,16 @@ The **theme-factory** skill applies consistent visual themes across your documen
 
 For .NET developers building enterprise applications, this skill ensures consistency between documentation, presentations, and UI mockups.
 
-## Internal Comms: Project Documentation and Updates
+## Project Documentation and Updates
 
-The **internal-comms** skill helps generate status reports, sprint updates, and technical documentation.
+Claude Code helps generate status reports, sprint updates, and technical documentation through direct prompting.
 
 ```bash
 # Generate a status report from task data
 "Sprint 12 status report: completed user auth, started payment integration"
 ```
 
-This skill produces:
+This produces:
 - Sprint summaries
 - Technical decision records
 - Incident reports
@@ -182,8 +182,8 @@ Different developer roles benefit from different skill combinations:
 
 - **Backend developers**: xlsx, docx, pdf, mcp-builder
 - **Full-stack developers**: Add webapp-testing for frontend verification
-- **Tech leads**: internal-comms, pptx for presentations
-- **Architects**: theme-factory for consistent design artifacts
+- **Tech leads**: pptx for presentations, docx for documentation
+- **Architects**: pdf for design documentation, canvas-design for visual artifacts
 
 Start with skills matching your most frequent tasks. As your workflow matures, add skills that address new pain points.
 
