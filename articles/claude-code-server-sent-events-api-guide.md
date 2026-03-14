@@ -7,7 +7,6 @@ date: 2026-03-14
 categories: [guides]
 author: theluckystrike
 permalink: /claude-code-server-sent-events-api-guide/
-categories: [guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 7
