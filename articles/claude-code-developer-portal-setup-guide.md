@@ -175,4 +175,12 @@ For team environments, consider sharing skill configurations through a dotfiles 
 
 ---
 
+
+## Related Reading
+
+- [Claude Code MCP Server Setup Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
+- [Claude Code Local Development Setup Guide](/claude-skills-guide/claude-code-local-development-setup-guide/)
+- [Best Way to Set Up Claude Code for a New Project](/claude-skills-guide/best-way-to-set-up-claude-code-for-new-project/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
