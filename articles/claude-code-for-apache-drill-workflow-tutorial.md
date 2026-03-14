@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Apache Drill Workflow Tutorial"
 description: "Learn how to use Claude Code to create efficient Apache Drill workflows, automate SQL queries on complex data sources, and build reproducible data."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-apache-drill-workflow-tutorial/
 categories: [tutorials, data-engineering]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Apache Drill Workflow Tutorial
 

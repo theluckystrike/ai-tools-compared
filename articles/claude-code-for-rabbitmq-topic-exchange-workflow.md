@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for RabbitMQ Topic Exchange Workflow"
 description: "Learn how to leverage Claude Code to build robust RabbitMQ topic exchange workflows with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-rabbitmq-topic-exchange-workflow/
 categories: [Development, Messaging, RabbitMQ]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for RabbitMQ Topic Exchange Workflow

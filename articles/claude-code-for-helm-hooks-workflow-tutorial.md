@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Helm Hooks Workflow Tutorial"
 description: "Learn how to integrate Claude Code into your Helm hooks workflow to automate Kubernetes deployments with intelligent automation and testing."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-helm-hooks-workflow-tutorial/
 categories: [DevOps, Kubernetes, Helm, Claude Code]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Helm Hooks Workflow Tutorial
@@ -312,7 +316,7 @@ env:
 
 ## Conclusion
 
-Integrating Claude Code with Helm hooks transforms your Kubernetes deployments from simple package installations into intelligent, automated workflows. By leveraging Claude Code's analysis capabilities in pre-install validation, post-install verification, and migration hooks, you gain confidence in your deployments while reducing manual oversight.
+Integrating Claude Code with Helm hooks transforms your Kubernetes deployments from simple package installations into intelligent, automated workflows. By using Claude Code's analysis capabilities in pre-install validation, post-install verification, and migration hooks, you gain confidence in your deployments while reducing manual oversight.
 
 Start with simple hooks and progressively add more sophisticated Claude Code integration as your workflow matures. The combination of Helm's lifecycle management and Claude Code's intelligent automation creates a powerful foundation for production-grade Kubernetes deployments.
 {% endraw %}

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Health Endpoint Pattern Workflow"
 description: "Learn how to use Claude Code to implement robust health endpoint patterns in your applications. Covers Kubernetes probes, dependency checks, and."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-health-endpoint-pattern-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Health Endpoint Pattern Workflow
 
-Health endpoints are a critical infrastructure component in modern applications. Whether you're running microservices in Kubernetes, exposing APIs behind load balancers, or building distributed systems, health checks determine when traffic should be routed to your service and whether your application needs attention. This guide shows you how to leverage Claude Code to implement comprehensive health endpoint patterns efficiently.
+Health endpoints are a critical infrastructure component in modern applications. Whether you're running microservices in Kubernetes, exposing APIs behind load balancers, or building distributed systems, health checks determine when traffic should be routed to your service and whether your application needs attention. This guide shows you how to use Claude Code to implement comprehensive health endpoint patterns efficiently.
 
 ## Understanding Health Endpoint Types
 

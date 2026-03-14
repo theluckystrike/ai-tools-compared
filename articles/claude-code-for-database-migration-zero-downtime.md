@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Database Migration Zero Downtime"
 description: "Learn how to use Claude Code CLI to implement zero-downtime database migrations with practical examples, code patterns, and actionable strategies for."
@@ -7,14 +8,17 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-database-migration-zero-downtime/
 categories: [guides, database]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Database Migration Zero Downtime
 
 Database migrations are one of the most anxiety-inducing operations in software development. A poorly executed migration can bring down production systems, corrupt data, or leave your application in an inconsistent state. The good news is that with careful planning and the right tools, you can achieve zero-downtime migrations that keep your users happy and your system reliable.
 
-In this guide, I'll show you how to leverage Claude Code CLI to plan, execute, and verify database migrations with minimal risk. We'll cover practical strategies, code patterns, and real-world examples you can apply to your projects today.
+In this guide, I'll show you how to use Claude Code CLI to plan, execute, and verify database migrations with minimal risk. We'll cover practical strategies, code patterns, and real-world examples you can apply to your projects today.
 
 ## Understanding Zero-Downtime Migration Principles
 

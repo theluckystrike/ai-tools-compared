@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Lottie Animation Workflow Tutorial"
 description: "Learn how to integrate Claude Code into your Lottie animation workflow for efficient animation management and seamless web integration."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-lottie-animation-workflow-tutorial/
 categories: [Development, Tutorials, Animation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Lottie Animation Workflow Tutorial

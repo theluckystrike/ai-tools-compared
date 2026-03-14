@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for OpenLineage Workflow Tutorial Guide"
 description: "Learn how to use Claude Code to streamline your OpenLineage workflow implementation with practical examples and actionable advice."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-openlineage-workflow-tutorial-guide/
 categories: [Development, Data Engineering, OpenLineage]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for OpenLineage Workflow Tutorial Guide
 
-OpenLineage has become the de facto standard for metadata collection in modern data ecosystems. This comprehensive guide shows you how to leverage Claude Code to accelerate your OpenLineage workflow implementation, from initial setup to advanced integrations.
+OpenLineage has become the de facto standard for metadata collection in modern data ecosystems. This comprehensive guide shows you how to use Claude Code to accelerate your OpenLineage workflow implementation, from initial setup to advanced integrations.
 
 ## What is OpenLineage?
 

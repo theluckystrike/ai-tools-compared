@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Using Claude Code for Kubernetes Priority Class Workflow"
 description: "Learn how to leverage Claude Code to automate and streamline Kubernetes PriorityClass management with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-kubernetes-priority-class-workflow/
 categories: [Kubernetes, DevOps, Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 # Using Claude Code for Kubernetes Priority Class Workflow
 
@@ -58,7 +62,7 @@ kubectl get priorityclasses.scheduling.k8s.io
 
 ## Creating PriorityClass Configurations with Claude Code
 
-Claude Code excels at generating consistent, well-documented Kubernetes manifests. Here's how to leverage it for PriorityClass creation:
+Claude Code excels at generating consistent, well-documented Kubernetes manifests. Here's how to use it for PriorityClass creation:
 
 ### Generating a PriorityClass Template
 

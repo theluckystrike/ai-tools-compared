@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Chart Museum Workflow Tutorial"
 description: "Learn how to use Claude Code CLI to streamline Chart Museum workflows, from managing Helm chart repositories to automating deployments."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-chart-museum-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills, helm, chart-museum, devops]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Chart Museum Workflow Tutorial
 

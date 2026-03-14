@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Pulsar Tenant Workflow Tutorial"
 description: "Learn how to leverage Claude Code to streamline Apache Pulsar tenant management workflows with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-pulsar-tenant-workflow-tutorial/
 categories: [Tutorial, Apache Pulsar, Claude Code]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Pulsar Tenant Workflow Tutorial
@@ -146,7 +150,7 @@ This approach ensures consistent access control management and provides an audit
 
 ## Building a Complete Tenant Lifecycle Workflow
 
-To fully leverage Claude Code, consider building a comprehensive workflow that handles the entire tenant lifecycle:
+To fully use Claude Code, consider building a comprehensive workflow that handles the entire tenant lifecycle:
 
 1. **Provision**: Create tenant with initial configuration
 2. **Configure**: Set up namespaces with appropriate policies

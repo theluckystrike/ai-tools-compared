@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for NX Monorepo Micro Frontend Guide"
 description: "Learn how to use Claude Code to develop NX monorepo micro frontends efficiently. Includes practical patterns for workspace management, shared."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-nx-monorepo-micro-frontend-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for NX Monorepo Micro Frontend Guide
 
-Building micro frontends with NX provides excellent structure for scaling frontend applications, but managing a monorepo comes with its own challenges. This guide shows you how to leverage Claude Code to accelerate NX monorepo development, from initial setup to deploying independent micro frontends.
+Building micro frontends with NX provides excellent structure for scaling frontend applications, but managing a monorepo comes with its own challenges. This guide shows you how to use Claude Code to accelerate NX monorepo development, from initial setup to deploying independent micro frontends.
 
 ## Understanding NX Micro Frontend Architecture
 
@@ -192,7 +196,7 @@ When using Claude Code with NX monorepos, follow these patterns for optimal resu
 
 ## Conclusion
 
-Claude Code significantly accelerates NX monorepo development by understanding the workspace structure and applying appropriate patterns. From setting up shared libraries to configuring independent deployments, Claude helps you maintain architectural integrity while moving quickly. The key is leveraging NX's built-in tooling and enforcing boundaries through configuration, with Claude handling the implementation details and identifying opportunities for code reuse across your micro frontends.
+Claude Code significantly accelerates NX monorepo development by understanding the workspace structure and applying appropriate patterns. From setting up shared libraries to configuring independent deployments, Claude helps you maintain architectural integrity while moving quickly. The key is using NX's built-in tooling and enforcing boundaries through configuration, with Claude handling the implementation details and identifying opportunities for code reuse across your micro frontends.
 {% endraw %}
 
 ## Related Reading

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for CQRS Read Model Workflow Guide"
 description: "Learn how to leverage Claude Code to build, maintain, and optimize CQRS read models with practical workflows and code examples."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-cqrs-read-model-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 {% raw %}
 
 CQRS (Command Query Responsibility Segregation) is an architectural pattern that separates read and write operations into distinct models. While the write side handles commands (create, update, delete), the read side provides optimized data representations for querying. This guide shows how Claude Code can streamline your CQRS read model workflow—from initial design to ongoing maintenance.
@@ -159,7 +163,7 @@ Keep these principles in mind as you build and maintain your read models:
 
 ## Conclusion
 
-Claude Code transforms CQRS read model development from manual boilerplate to guided, efficient workflows. By leveraging code generation, pattern recognition, and test automation, you can focus on domain logic while Claude handles the structural complexity. Start with well-defined read models for your most critical queries, and expand as your understanding of query patterns matures.
+Claude Code transforms CQRS read model development from manual boilerplate to guided, efficient workflows. By using code generation, pattern recognition, and test automation, you can focus on domain logic while Claude handles the structural complexity. Start with well-defined read models for your most critical queries, and expand as your understanding of query patterns matures.
 
 The key is treating read models as first-class citizens in your architecture—with proper versioning, testing, and monitoring. Claude Code becomes your partner in maintaining this complexity, generating consistent code and catching potential issues before they reach production.
 

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Spark Delta Lake Workflow Tutorial"
 description: "Learn how to leverage Claude Code to streamline your Spark Delta Lake workflows with practical examples and actionable advice for modern data engineering."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-spark-delta-lake-workflow-tutorial/
 categories: [Data Engineering, Apache Spark, Delta Lake, AI Assistants]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 
@@ -115,7 +119,7 @@ incremental_upsert("/staging/new_data", "production_data", merge_condition)
 
 ## Time Travel and Data Versioning
 
-One of Delta Lake's most powerful features is time travel. Claude Code can help you construct queries that leverage this capability:
+One of Delta Lake's most powerful features is time travel. Claude Code can help you construct queries that use this capability:
 
 ```python
 # Query previous versions of a Delta table

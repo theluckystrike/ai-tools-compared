@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Metacontroller Workflow Guide"
 description: "A practical guide for developers to use Claude Code when building and managing Metacontroller workflows in Kubernetes. Learn how to leverage AI."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-metacontroller-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 # Claude Code for Metacontroller Workflow Guide
 
@@ -20,7 +24,7 @@ Metacontroller operates through three main abstraction types: Composite Controll
 
 A composite controller watches one API (the parent) and manages one or more child APIs based on declarative sync logic. For example, you might create a controller that watches a custom `Database` resource and automatically creates and manages the corresponding `StatefulSet`, `Service`, and `ConfigMap` resources.
 
-When working with Claude Code, you can leverage its Kubernetes and Go expertise to generate boilerplate code, explain existing implementations, and debug sync logic. The key is knowing how to prompt Claude effectively for each phase of Metacontroller development.
+When working with Claude Code, you can use its Kubernetes and Go expertise to generate boilerplate code, explain existing implementations, and debug sync logic. The key is knowing how to prompt Claude effectively for each phase of Metacontroller development.
 
 ## Setting Up Your Development Environment
 

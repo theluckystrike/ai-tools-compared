@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Kubernetes CSI Driver Workflow"
 description: "A practical guide to using Claude Code for developing, testing, and maintaining Kubernetes CSI drivers. Learn workflow patterns, code examples, and."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-kubernetes-csi-driver-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 7
 ---
+
 
 {% raw %}
 # Claude Code for Kubernetes CSI Driver Workflow
