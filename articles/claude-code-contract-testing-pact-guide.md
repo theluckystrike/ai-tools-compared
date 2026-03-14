@@ -188,4 +188,12 @@ Contract testing with Pact provides confidence that your services communicate co
 By establishing contract tests early in API development, catching mismatches in CI, and maintaining pact files as version-controlled contracts, teams reduce integration bugs and move faster with confidence.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code API Contract Testing Guide](/claude-skills-guide/claude-code-api-contract-testing-guide/)
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
+- [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

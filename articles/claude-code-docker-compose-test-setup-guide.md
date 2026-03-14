@@ -276,6 +276,14 @@ Docker Compose provides the isolation and repeatability you need for testing Cla
 
 The key patterns are: isolate each test run with fresh volumes, mock external dependencies, scale horizontally for multi-agent tests, and mirror your local setup in CI for consistent results.
 
+
+## Related Reading
+
+- [Claude Code Test Environment Management Guide](/claude-skills-guide/claude-code-test-environment-management-guide/)
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
+- [Claude Code Mutation Testing Workflow Guide](/claude-skills-guide/claude-code-mutation-testing-workflow-guide/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

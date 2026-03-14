@@ -193,4 +193,12 @@ Server-Sent Events offer a straightforward solution for real-time streaming in w
 
 Whether you're streaming AI responses, live logs, or notification updates, SSE provides a reliable foundation that integrates well with modern development workflows.
 
+
+## Related Reading
+
+- [Claude Code WebSocket API Implementation](/claude-skills-guide/claude-code-websocket-api-implementation/)
+- [Claude Code gRPC API Development Guide](/claude-skills-guide/claude-code-grpc-api-development-guide/)
+- [Claude Code REST API Design Best Practices](/claude-skills-guide/claude-code-rest-api-design-best-practices/)
+- [Claude Skills Integrations Hub](/claude-skills-guide/integrations-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

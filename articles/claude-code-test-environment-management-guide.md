@@ -198,4 +198,12 @@ Effective test environment management with Claude Code involves several key prac
 
 By combining Claude Code's skill system with proper environment management practices, you can build reliable testing workflows that catch issues early and provide fast, actionable feedback to your team.
 
+
+## Related Reading
+
+- [Claude Code Docker Compose Test Setup Guide](/claude-skills-guide/claude-code-docker-compose-test-setup-guide/)
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
+- [Claude Code Test Data Generation Workflow](/claude-skills-guide/claude-code-test-data-generation-workflow/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

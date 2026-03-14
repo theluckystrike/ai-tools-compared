@@ -165,6 +165,14 @@ Maintaining backward compatibility with Claude Code API comes down to three core
 
 The investment in defensive coding pays dividends through reduced support burden and happier users who trust your skills to work reliably across different Claude Code versions.
 
+
+## Related Reading
+
+- [Claude Code API Contract Testing Guide](/claude-skills-guide/claude-code-api-contract-testing-guide/)
+- [Claude Code API Documentation OpenAPI Guide](/claude-skills-guide/claude-code-api-documentation-openapi-guide/)
+- [Claude Code Swagger Documentation Workflow](/claude-skills-guide/claude-code-swagger-documentation-workflow/)
+- [Claude Skills Integrations Hub](/claude-skills-guide/integrations-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
