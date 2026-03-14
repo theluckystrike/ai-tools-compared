@@ -181,4 +181,11 @@ Start with a simple `.claude-standards.md` file in your project, create a patter
 
 With consistent application of these techniques, you'll find Claude Code becoming an increasingly effective team member that naturally adopts your project's unique character and conventions.
 
+## Related Reading
+
+- [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) — CLAUDE.md is where you encode code patterns
+- [Claude Code Keeps Making Same Mistake Fix Guide](/claude-skills-guide/claude-code-keeps-making-same-mistake-fix-guide/) — Pattern mismatches are a recurring mistake type
+- [Best Way to Prompt Claude Code for Complex Features](/claude-skills-guide/best-way-to-prompt-claude-code-for-complex-features/) — Prompting with examples helps match patterns
+- [Claude Skills Tutorials Hub](/claude-skills-guide/tutorials-hub/) — More how-to guides for Claude Code
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

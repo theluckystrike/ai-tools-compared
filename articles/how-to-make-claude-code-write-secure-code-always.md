@@ -104,4 +104,11 @@ Making Claude Code write secure code consistently requires deliberate setup. Con
 
 The effort pays off in reduced vulnerabilities, faster development cycles, and code that meets security standards from the first line written. Security becomes embedded in your development process rather than an afterthought.
 
+## Related Reading
+
+- [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/) — Understand Claude Code's security model first
+- [Claude Code Generates Insecure Code Patterns Fix](/claude-skills-guide/claude-code-generates-insecure-code-patterns-fix/) — Fix insecure patterns when they appear
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Security tests catch vulnerabilities before they ship
+- [Best Way to Prompt Claude Code for Complex Features](/claude-skills-guide/best-way-to-prompt-claude-code-for-complex-features/) — Include security requirements in complex prompts
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

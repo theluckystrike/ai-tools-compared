@@ -163,4 +163,11 @@ Claude Code environment setup automation transforms repetitive configuration tas
 
 Start with simple automations—virtual environment activation, dependency installation—and progressively add sophistication as your needs grow. The time invested in setup automation pays dividends across every project you create.
 
+## Related Reading
+
+- [Claude Code Project Scaffolding Automation](/claude-skills-guide/claude-code-project-scaffolding-automation/) — Scaffolding is the first step in environment setup
+- [Claude Code Not Detecting My Virtual Environment Python Fix](/claude-skills-guide/claude-code-not-detecting-my-virtual-environment-python-fix/) — Fix environment detection issues after setup
+- [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) — Document your environment setup in CLAUDE.md
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More project setup and workflow automation
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

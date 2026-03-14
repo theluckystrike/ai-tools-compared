@@ -155,4 +155,11 @@ Claude Code's skill system makes it straightforward to generate consistent, mean
 
 The key is starting simple—a basic skill that follows Conventional Commits—then expanding as your team develops preferences. Soon, generating clear commit messages becomes another automated part of your development process rather than a separate task.
 
+## Related Reading
+
+- [Claude Code Conventional Commits Automation](/claude-skills-guide/claude-code-conventional-commits-automation/) — Conventional commit format for generated messages
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/) — Turn commit messages into automated changelogs
+- [Claude Code for End of Day Commit Workflow](/claude-skills-guide/claude-code-for-end-of-day-commit-workflow/) — End-of-day commit automation with message generation
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Git workflow automation guides
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

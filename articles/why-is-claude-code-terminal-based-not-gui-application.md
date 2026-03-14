@@ -97,4 +97,11 @@ Claude Code is terminal-based because the terminal is the most capable interface
 
 The terminal is not a throwback to a simpler era—it is a highly efficient, scriptable, remote-friendly interface that happens to be perfect for AI-assisted development. As you explore Claude skills like **brand-guidelines**, **artifacts-builder**, and the various MCP-related skills, you will find that the terminal enables capabilities that would be difficult or impossible to implement in a GUI application.
 
+## Related Reading
+
+- [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/what-is-claude-code-and-why-developers-love-it-2026/) — Understand what Claude Code actually is
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — Start using Claude Code in your terminal
+- [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/claude-cowork-vs-cursor-ai-editor-comparison-2026/) — See how Claude Code compares to GUI-based alternatives
+- [Claude Code Free Tier vs Pro Plan Feature Comparison 2026](/claude-skills-guide/claude-code-free-tier-vs-pro-plan-feature-comparison-2026/) — What you get with each plan
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

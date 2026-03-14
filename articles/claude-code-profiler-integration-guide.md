@@ -173,4 +173,11 @@ Claude Code can help analyze trends across multiple profiler runs. Share histori
 
 ---
 
+## Related Reading
+
+- [Claude Code Memory Leak Detection Workflow](/claude-skills-guide/claude-code-memory-leak-detection-workflow/) — Memory profiling and leak detection go together
+- [Claude Code Cyclomatic Complexity Reduction](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/) — Profiling reveals which code needs simplification
+- [Claude Code Slow Response How to Fix Latency Issues](/claude-skills-guide/claude-code-slow-response-how-to-fix-latency-issues/) — Profiling helps diagnose slow response times
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Performance optimization and advanced patterns
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

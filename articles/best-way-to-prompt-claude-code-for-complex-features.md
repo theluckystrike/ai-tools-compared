@@ -146,4 +146,11 @@ Once you find prompt structures that work well for your team's use cases, docume
 
 The best prompts share common characteristics: they provide context, specify constraints, break large tasks into phases, leverage appropriate skills, and include concrete examples of expected output. Apply these patterns consistently, and Claude Code becomes significantly more reliable for complex feature development.
 
+## Related Reading
+
+- [Best Way to Scope Tasks for Claude Code Success](/claude-skills-guide/best-way-to-scope-tasks-for-claude-code-success/) — Scoping is the foundation of effective prompting
+- [Claude Code Output Quality How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) — Broader guide to improving Claude Code outputs
+- [How to Make Claude Code Understand Domain Business Logic](/claude-skills-guide/how-to-make-claude-code-understand-domain-business-logic/) — Domain context improves complex feature prompts
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — Start here before tackling complex prompting
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

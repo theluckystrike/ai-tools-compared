@@ -195,4 +195,11 @@ Even with careful detection and prevention, some sessions benefit from a clean s
 - Error rates spike without clear cause
 - You've switched between significantly different projects
 
-## Built by theluckystrike — More at [zovo.one](https://zovo.one)
+## ## Related Reading
+
+- [Claude Code Profiler Integration Guide](/claude-skills-guide/claude-code-profiler-integration-guide/) — Profiling complements memory leak detection
+- [Claude Code Error Out of Memory Large Codebase Fix](/claude-skills-guide/claude-code-error-out-of-memory-large-codebase-fix/) — OOM errors often stem from memory leaks
+- [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Write tests that catch memory leaks early
+- [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Advanced debugging and optimization patterns
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

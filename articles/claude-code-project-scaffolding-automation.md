@@ -7,7 +7,6 @@ author: theluckystrike
 permalink: /claude-code-project-scaffolding-automation/
 ---
 
-{% raw %}
 # Claude Code Project Scaffolding Automation
 
 Project scaffolding represents one of the most repetitive tasks in software development. Every new codebase requires the same fundamental structure: configuration files, directory organization, base dependencies, and initial code patterns. Claude Code transforms this tedious process into an automated workflow that adapts to your team's specific needs.
@@ -142,6 +141,12 @@ Claude Code transforms project scaffolding from a manual, error-prone process in
 The key lies in treating scaffolding as an ongoing process rather than a one-time event. Define your standards clearly, leverage appropriate skills for domain expertise, and allow Claude Code to handle the execution complexity.
 
 Start with simple projects and gradually incorporate more sophisticated automation as your patterns mature. Your future self will thank you when new projects spin up in minutes instead of hours.
-{% endraw %}
+
+## Related Reading
+
+- [Claude Code Environment Setup Automation](/claude-skills-guide/claude-code-environment-setup-automation/) — Environment setup follows project scaffolding
+- [Best Way to Write CLAUDE.md File for Your Project](/claude-skills-guide/best-way-to-write-claudemd-file-for-your-project/) — Add CLAUDE.md as part of your scaffold
+- [Is Claude Code Worth It for Solo Developers and Freelancers](/claude-skills-guide/is-claude-code-worth-it-for-solo-developers-freelancers/) — Scaffolding is where solo developers see the most value
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — More project initialization workflow guides
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

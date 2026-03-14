@@ -179,4 +179,11 @@ Claude Code transforms Git from a version control tool into an intelligent partn
 
 Start with these practices: write descriptive commits, use branches intentionally, and let Claude skills like **tdd**, **pdf**, and **super memory** enhance your workflow. The investment in good Git habits pays dividends throughout your project's lifetime.
 
+## Related Reading
+
+- [Claude Code Merge Conflict Resolution Guide](/claude-skills-guide/claude-code-merge-conflict-resolution-guide/) — Conflict resolution is a core git workflow skill
+- [Claude Code Trunk Based Development Guide](/claude-skills-guide/claude-code-trunk-based-development-guide/) — Trunk-based development is a key workflow pattern
+- [Claude Code Conventional Commits Automation](/claude-skills-guide/claude-code-conventional-commits-automation/) — Structured commits are part of git best practices
+- [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — All git and development workflow automation
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
