@@ -47,24 +47,16 @@ echo "Skill: $SKILL_NAME"
 echo "Execution time: ${ELAPSED}s"
 ```
 
-For more detailed metrics, modify your skill's entry point to log timestamps:
+For more detailed metrics, add a timestamp note at the start of your skill file to track when it was invoked:
 
-{% raw %}
 ```markdown
-# skill: benchmark-example
-## Tools
-- read_file
-- write_file
-- bash
+# Benchmark Example Skill
 
-## Action
-{{
-  metadata:
-    benchmark: true
-    start_time: "${DATE}"
-}}
+Invoked: [record start time manually or via wrapper script]
+
+## Instructions
+[Your skill content here]
 ```
-{% endraw %}
 
 ## Measuring Token Usage
 
