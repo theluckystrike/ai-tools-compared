@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Trigger.dev Background Job Workflow Guide"
-description: "A comprehensive guide to building background job workflows with Trigger.dev using Claude Code skills. Learn practical patterns for task queues, scheduled jobs, and event-driven architectures."
+description: "A comprehensive guide to building background job workflows with Trigger.dev using Claude Code skills. Learn practical patterns for task queues."
 date: 2026-03-14
 categories: [integrations, workflow-automation]
 tags: [claude-code, claude-skills, trigger-dev, background-jobs, task-queues]
@@ -190,3 +190,10 @@ Claude Code can assist with implementing these best practices and help you gener
 Building background job workflows with Trigger.dev becomes significantly more productive when combined with Claude Code's assistance. From initial scaffolding to production monitoring, Claude Code skills help you write better code faster while maintaining quality standards. Start with simple jobs, iterate on error handling, and progressively add complexity as your background processing needs grow.
 
 For more information on related topics, explore the [workflow automation hub](/claude-skills-guide/workflows-hub/) or learn about [event-driven architectures](/claude-skills-guide/claude-skills-event-driven-architecture-setup/) that complement background job patterns.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Reducing Review Friction with Standardized Claude Skill Prompts"
+title: "Reducing Review Friction with Standardized Claude Skill."
 description: "Learn how to create standardized Claude skill prompts that reduce code review friction, improve consistency, and streamline your team's review process."
 date: 2026-03-14
 author: theluckystrike
@@ -125,3 +125,10 @@ Standardized Claude skill prompts transform code reviews from friction points in
 
 Start small with your most common review issues, build out comprehensive standards over time, and watch your review velocity improve consistently.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
