@@ -31,7 +31,6 @@ Start with a minimal, auditable configuration. Create a dedicated project direct
 ```bash
 mkdir -p ~/compliance-workspace
 cd ~/compliance-workspace
-claude init
 ```
 
 Configure your environment to restrict file access. Edit your project settings to limit Claude's visibility to specific directories:

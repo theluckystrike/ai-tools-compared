@@ -58,9 +58,9 @@ The tdd skill doesn't just write tests—it helps you think through edge cases, 
 
 The **code-generation** skill excels at quickly scaffolding REST API projects. If you're starting from scratch or adding new endpoints to an existing project, this skill can generate boilerplate code that follows best practices.
 
-```bash
-# Generate a new API endpoint with the code-generation skill
-claude /skill code-generation "create REST endpoint for user authentication"
+```
+# Invoke the tdd skill to generate and validate API endpoint code
+/tdd create REST endpoint for user authentication with input validation and error handling
 ```
 
 The generated code includes proper middleware setup, input validation using libraries like Joi or Zod, and consistent error handling patterns. This skill is particularly useful when you need to quickly prototype or maintain consistency across multiple endpoints.

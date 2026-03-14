@@ -35,7 +35,6 @@ Install the Claude Code CLI and initialize your project:
 
 ```bash
 npm install -g @anthropic-ai/claude-code
-claude init
 ```
 
 For this tutorial, you'll benefit from having the **frontend-design** skill loaded in Claude Code. This skill helps you create responsive, accessible component layouts that work cleanly with Remix's data-driven approach. Additionally, the **pdf** skill proves useful when you need to generate reports from your Remix application's data.

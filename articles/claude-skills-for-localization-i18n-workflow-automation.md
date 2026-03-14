@@ -134,13 +134,7 @@ After translation, the skill can regenerate localized PDFs or verify that transl
 
 Modern applications often use multiple frameworks, each with different translation file formats. A typical React project might use `react-i18next` with JSON files, while a Node.js backend uses YAML. Claude skills can synchronize between these formats:
 
-```bash
-# Convert JSON locale to YAML format
-/convert Convert locale/en.json to YAML and save as backend/locales/en.yaml
-
-# Merge translations from different sources
-/merge Combine frontend/locales/fr.json and backend/locales/fr.yaml into unified locale/fr.json
-```
+Claude can handle cross-format locale processing directly. Provide the source file and ask it to convert or merge the locale data. For example, ask Claude to convert `locale/en.json` to YAML format and save it as `backend/locales/en.yaml`, or to merge `frontend/locales/fr.json` and `backend/locales/fr.yaml` into a unified `locale/fr.json`.
 
 This cross-format processing eliminates manual conversion and ensures all parts of your application use consistent translations.
 
