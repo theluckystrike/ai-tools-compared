@@ -108,4 +108,11 @@ The streaming behavior in Claude Code is automatic. Focus on prompt structure an
 
 ---
 
+## Related Reading
+
+- [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/articles/claude-skill-token-usage-profiling-and-optimization/) — Measure token consumption to identify streaming bottlenecks and optimization opportunities
+- [Claude Skill Prompt Compression Techniques](/claude-skills-guide/articles/claude-skill-prompt-compression-techniques/) — Reduce output verbosity through compression before tackling streaming architecture
+- [Claude Code Skill Exceeded Maximum Output Length Error Fix](/claude-skills-guide/articles/claude-code-skill-exceeded-maximum-output-length-error-fix/) — Handle maximum output limits that can interfere with streaming optimization
+- [Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Explore advanced performance optimization patterns for Claude Code skills
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
