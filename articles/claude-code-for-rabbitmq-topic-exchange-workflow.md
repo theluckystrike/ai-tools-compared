@@ -256,3 +256,10 @@ When issues arise, Claude Code can help analyze your topology. Describe your pro
 
 RabbitMQ topic exchanges provide the flexibility needed for complex, evolving message routing requirements. By combining Claude Code's development assistance with solid RabbitMQ patterns, you can rapidly build robust messaging systems that scale with your application's needs. Start with simple routing patterns and gradually add complexity as your system grows.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

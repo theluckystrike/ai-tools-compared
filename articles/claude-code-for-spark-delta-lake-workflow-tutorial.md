@@ -262,3 +262,10 @@ Claude Code can help you refactor existing code to follow these patterns and sug
 By integrating Claude Code into your Spark Delta Lake development workflow, you gain a powerful assistant that understands data engineering patterns, helps debug issues quickly, and accelerates your path to production. Start small, automate repetitive tasks, and let AI handle the boilerplate while you focus on business logic.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

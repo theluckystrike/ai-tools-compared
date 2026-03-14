@@ -280,3 +280,10 @@ Start integrating Claude Code into your Spark workflow today, and you'll see imm
 
 *This guide is part of the Claude Skills Guide series, providing practical developer resources for modern data engineering workflows.*
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

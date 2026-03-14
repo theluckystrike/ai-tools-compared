@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Health Endpoint Pattern Workflow"
-description: "Learn how to use Claude Code to implement robust health endpoint patterns in your applications. Covers Kubernetes probes, dependency checks, and production-ready workflows."
+description: "Learn how to use Claude Code to implement robust health endpoint patterns in your applications. Covers Kubernetes probes, dependency checks, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-health-endpoint-pattern-workflow/
@@ -198,3 +198,10 @@ Claude Code streamlines health endpoint implementation by generating boilerplate
 
 A well-designed health endpoint system improves reliability by enabling Kubernetes to restart failing containers, routing traffic away from unhealthy instances, and providing visibility into system status. With Claude Code handling the implementation details, you can focus on defining what healthy means for your specific application.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

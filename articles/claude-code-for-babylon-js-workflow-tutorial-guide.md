@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Babylon.js Workflow Tutorial Guide"
-description: "Master Claude Code CLI to streamline your Babylon.js development workflow. Learn essential commands, automation patterns, and practical techniques for 3D web game development."
+description: "Master Claude Code CLI to streamline your Babylon.js development workflow. Learn essential commands, automation patterns, and practical techniques for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-babylon-js-workflow-tutorial-guide/
@@ -195,3 +195,10 @@ Integrating Claude Code into your Babylon.js workflow transforms how you approac
 
 The combination of Babylon.js's powerful 3D capabilities and Claude Code's assistance creates a productive environment for game developers of all skill levels. Experiment with different prompts, track which approaches work best for your workflow, and continuously refine your process.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -203,3 +203,10 @@ Claude Code transforms Pulsar tenant management from a manual, error-prone proce
 
 Start small by automating one aspect of your tenant workflows—such as provisioning or policy configuration—and gradually expand to cover the full lifecycle. The time invested in building these automation scripts will pay dividends in reduced errors, faster provisioning, and more maintainable infrastructure.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

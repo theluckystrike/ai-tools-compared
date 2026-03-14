@@ -241,3 +241,10 @@ Integrating Claude Code into your Lottie animation workflow transforms a potenti
 Remember that the best Lottie workflows combine technical excellence with clear communication between designers and developers. Let Claude Code handle the repetitive tasks while you focus on creating engaging user experiences.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Rook Ceph Storage Workflow Guide"
-description: "A comprehensive guide to using Claude Code for managing Rook Ceph storage workflows, including practical examples, code snippets, and actionable advice for developers."
+description: "A comprehensive guide to using Claude Code for managing Rook Ceph storage workflows, including practical examples, code snippets, and actionable advice."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-rook-ceph-storage-workflow-guide/
@@ -257,3 +257,10 @@ Claude Code transforms Rook Ceph management from manual operations into automate
 
 Start with the foundational scripts in this guide, then extend them to match your organization's specific requirements. The combination of Kubernetes' orchestration capabilities, Ceph's robust storage primitives, and Claude Code's automation power creates a formidable platform for modern cloud-native applications.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

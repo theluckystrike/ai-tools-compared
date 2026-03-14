@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Kubernetes CSI Driver Workflow"
-description: "A practical guide to using Claude Code for developing, testing, and maintaining Kubernetes CSI drivers. Learn workflow patterns, code examples, and actionable best practices."
+description: "A practical guide to using Claude Code for developing, testing, and maintaining Kubernetes CSI drivers. Learn workflow patterns, code examples, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-kubernetes-csi-driver-workflow/
@@ -204,3 +204,10 @@ When debugging, provide Claude with relevant log excerpts and error messages. As
 
 Claude Code transforms CSI driver development from a daunting undertaking into an iterative, manageable process. By generating boilerplate, explaining complex APIs, and helping debug issues, it lets developers focus on what matters: integrating their storage backend with Kubernetes. Start with small, focused requests and gradually build up to complete driver implementations. The key is understanding that Claude accelerates your learning while you remain responsible for the final implementation's correctness.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

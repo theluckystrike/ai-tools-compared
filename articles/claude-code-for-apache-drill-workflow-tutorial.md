@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Apache Drill Workflow Tutorial"
-description: "Learn how to use Claude Code to create efficient Apache Drill workflows, automate SQL queries on complex data sources, and build reproducible data exploration pipelines."
+description: "Learn how to use Claude Code to create efficient Apache Drill workflows, automate SQL queries on complex data sources, and build reproducible data."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-apache-drill-workflow-tutorial/
@@ -182,4 +182,10 @@ When building production-grade Drill workflows with Claude Code, consider these 
 ## Conclusion
 
 Claude Code transforms Apache Drill from an interactive query tool into an automatable workflow engine. By encapsulating connection logic, query templates, and result processing into skills, you enable reproducible data exploration across your organization. Start with simple REST API interactions, then graduate to parameterized workflows that handle real-world analytical requirements. The combination of Drill's schema-free flexibility and Claude Code's automation capabilities creates a powerful foundation for data-driven workflows.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Shell Operator Workflow Tutorial"
-description: "Learn how to use Claude Code to build, debug, and automate shell operator workflows. A comprehensive guide for developers working with Kubernetes operators, infrastructure automation, and custom operator patterns."
+description: "Learn how to use Claude Code to build, debug, and automate shell operator workflows. A comprehensive guide for developers working with Kubernetes."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-shell-operator-workflow-tutorial/
@@ -290,3 +290,10 @@ log_json() {
 Claude Code transforms shell operator development from manually writing scripts to describing requirements and letting AI generate robust, production-ready code. By leveraging Claude's capabilities for code generation, debugging, and skill creation, you can build more reliable operators faster. Start with clear descriptions of your operator's purpose, use skills to maintain consistency, and always test thoroughly before deploying to production.
 
 The key is treating Claude as a partner in your development workflow—not just a code generator, but a debugger, reviewer, and advisor who can help you navigate the complexities of operator development.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

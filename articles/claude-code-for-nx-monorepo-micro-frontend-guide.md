@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for NX Monorepo Micro Frontend Guide"
-description: "Learn how to use Claude Code to develop NX monorepo micro frontends efficiently. Includes practical patterns for workspace management, shared libraries, and deployment."
+description: "Learn how to use Claude Code to develop NX monorepo micro frontends efficiently. Includes practical patterns for workspace management, shared."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-nx-monorepo-micro-frontend-guide/
@@ -194,3 +194,10 @@ When using Claude Code with NX monorepos, follow these patterns for optimal resu
 
 Claude Code significantly accelerates NX monorepo development by understanding the workspace structure and applying appropriate patterns. From setting up shared libraries to configuring independent deployments, Claude helps you maintain architectural integrity while moving quickly. The key is leveraging NX's built-in tooling and enforcing boundaries through configuration, with Claude handling the implementation details and identifying opportunities for code reuse across your micro frontends.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

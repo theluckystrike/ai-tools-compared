@@ -164,3 +164,10 @@ Claude Code transforms CQRS read model development from manual boilerplate to gu
 The key is treating read models as first-class citizens in your architecture—with proper versioning, testing, and monitoring. Claude Code becomes your partner in maintaining this complexity, generating consistent code and catching potential issues before they reach production.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

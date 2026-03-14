@@ -184,3 +184,10 @@ Claude Code can help diagnose and fix frequent problems:
 Claude Code transforms Chart Museum management from manual CLI work into an intelligent, automated process. By creating reusable skills for common operations, you can standardize chart workflows across your team while letting Claude handle the nuanced decision-making. Start with simple operations like search and upload, then gradually build toward complete deployment pipelines.
 
 The key is treating Claude Code as a developer assistant that understands both your infrastructure and your intent—describe what you want to accomplish, and let it handle the implementation details.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
