@@ -5,6 +5,7 @@ description: "Discover how Claude Code and AI agents think through decisions, pl
 date: 2026-03-14
 author: theluckystrike
 permalink: /how-ai-agents-reason-before-taking-actions-guide/
+categories: [guides]
 ---
 
 # How AI Agents Reason Before Taking Actions: A Complete Guide
@@ -110,3 +111,10 @@ AI agents like Claude Code reason through problems systematically before taking 
 The key to working successfully with AI agents is recognizing that they're not just executing commands—they're thinking through problems. Your role is to provide the context, constraints, and feedback that enable this reasoning process to produce optimal results.
 
 Remember: the best AI agent interactions are collaborative. You provide direction, and the agent provides systematic reasoning and precise execution. Together, you can accomplish complex tasks that neither could achieve alone.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
