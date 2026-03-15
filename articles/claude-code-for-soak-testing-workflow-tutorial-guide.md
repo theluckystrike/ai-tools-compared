@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Soak Testing Workflow Tutorial Guide"
 description: "Learn how to build automated soak testing workflows with Claude Code. This guide covers continuous endurance testing, resource monitoring, and detecting memory leaks in your applications."
@@ -7,14 +8,17 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-soak-testing-workflow-tutorial-guide/
 categories: [tutorials, guides]
 tags: [claude-code, claude-skills, soak-testing, automation, DevOps]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Soak Testing Workflow Tutorial Guide
 
 Soak testing—also known as endurance testing—is a critical quality assurance practice that runs your application under sustained load for extended periods to identify issues that only emerge over time. Memory leaks, database connection exhaustion, resource leaks, and gradual performance degradation often go unnoticed in short functional tests but can bring production systems to their knees after hours or days of operation.
 
-This guide shows you how to leverage Claude Code to build automated soak testing workflows that run continuously, monitor resource consumption, and alert you to problems before they reach production.
+This guide shows you how to use Claude Code to build automated soak testing workflows that run continuously, monitor resource consumption, and alert you to problems before they reach production.
 
 ## Understanding Soak Testing Fundamentals
 
