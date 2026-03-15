@@ -10,6 +10,8 @@ permalink: /copilot-enterprise-license-not-assigned-fix/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
+voice-checked: true
 ---
 
 
@@ -27,7 +29,7 @@ Most administrators encounter this issue when migrating from Copilot Business to
 
 ### Fix 1: Verify Organization-Level Subscription
 
-Before troubleshooting individual accounts, confirm that your organization actually has a Copilot Enterprise subscription active.
+Confirm that your organization actually has a Copilot Enterprise subscription active.
 
 1. Navigate to your organization on GitHub
 2. Click on **Settings** in the organization menu

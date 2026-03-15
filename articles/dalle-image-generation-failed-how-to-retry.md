@@ -9,6 +9,8 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
+voice-checked: true
 ---
 
 When your DALL-E image generation request fails, it can halt your entire workflow. Whether you're building an AI-powered application or creating assets for a project, understanding why these failures occur and how to recover from them is essential. This guide walks you through the most common causes of DALL-E generation failures and provides practical retry strategies you can implement today.
@@ -17,15 +19,15 @@ When your DALL-E image generation request fails, it can halt your entire workflo
 
 DALL-E API requests fail for several predictable reasons. Recognizing the error type is the first step toward resolving it.
 
-**Rate limiting errors** occur when you exceed the API's allowed request frequency. OpenAI imposes limits based on your tier, and hitting these limits triggers 429 errors. The response typically includes a `Retry-After` header indicating how long to wait before attempting another request.
+Rate limiting errors occur when you exceed the API's allowed request frequency. OpenAI imposes limits based on your tier, and hitting these limits triggers 429 errors. The response typically includes a `Retry-After` header indicating how long to wait before attempting another request.
 
-**Authentication failures** manifest as 401 errors, usually stemming from expired or invalid API keys. Your integration may also fail if the key lacks sufficient permissions for the requested operation.
+Authentication failures manifest as 401 errors, usually stemming from expired or invalid API keys. Your integration may also fail if the key lacks sufficient permissions for the requested operation.
 
-**Content policy violations** result in 400 errors when your prompt violates OpenAI's usage policies. The API rejects prompts containing explicit content, harmful instructions, or requests for copyrighted characters. The error message usually indicates the general category of violation.
+Content policy violations result in 400 errors when your prompt violates OpenAI's usage policies. The API rejects prompts containing explicit content, harmful instructions, or requests for copyrighted characters. The error message usually indicates the general category of violation.
 
-**Timeout errors** occur when the generation takes longer than the allowed window. This happens more frequently with complex prompts or during high-traffic periods.
+Timeout errors occur when the generation takes longer than the allowed window. This happens more frequently with complex prompts or during high-traffic periods.
 
-**Invalid request errors** stem from malformed prompts, incorrect parameter values, or exceeding size limits. These 400-level errors often include specific details about what went wrong.
+Invalid request errors stem from malformed prompts, incorrect parameter values, or exceeding size limits. These 400-level errors often include specific details about what went wrong.
 
 ## Step-by-Step Retry Strategies
 
@@ -124,11 +126,11 @@ class CircuitBreaker:
         self.failure_threshold = failure_threshold
         self.recovery_timeout = recovery_timeout
         self.circuit_open = False
-    
+
     def call(self, func):
         if self.circuit_open:
             raise Exception("Circuit breaker is open")
-        
+
         try:
             result = func()
             self.failure_count = 0
@@ -144,33 +146,33 @@ class CircuitBreaker:
 
 When DALL-E failures persist, work through this checklist:
 
-1. **Verify API key validity** — Check that your key hasn't expired and has the correct permissions
-2. **Review prompt for policy violations** — Remove or rephrase potentially problematic terms
-3. **Check your rate limit status** — Monitor your usage against your tier's limits
-4. **Test with a simple prompt** — Determine if the issue is prompt-specific or systemic
-5. **Examine response headers** — Look for specific error codes and messages
-6. **Check OpenAI status page** — Service disruptions affect all users
+1. Verify API key validity — check that your key hasn't expired and has the correct permissions
+2. Review prompt for policy violations — remove or rephrase potentially problematic terms
+3. Check your rate limit status — monitor your usage against your tier's limits
+4. Test with a simple prompt — determine if the issue is prompt-specific or systemic
+5. Examine response headers — look for specific error codes and messages
+6. Check OpenAI status page — service disruptions affect all users
 
 ## Reducing Failure Frequency
 
 Preventive measures minimize retry scenarios. Consider these practices:
 
-**Prompt engineering** reduces content policy rejections. Use clear, descriptive language without ambiguous terms that might trigger filters. For example, instead of requesting "a dangerous weapon," specify "a vintage wooden toy sword."
+Prompt engineering reduces content policy rejections. Use clear, descriptive language without ambiguous terms that might trigger filters. For example, instead of requesting "a dangerous weapon," specify "a vintage wooden toy sword."
 
-**Batch processing** with proper spacing reduces rate limit hits. If you need multiple images, introduce delays between requests rather than firing them simultaneously.
+Batch processing with proper spacing reduces rate limit hits. If you need multiple images, introduce delays between requests rather than firing them simultaneously.
 
-**Monitoring and alerting** catch patterns in your failures. Track failure rates and set up notifications when they exceed normal thresholds.
+Monitoring and alerting catch patterns in your failures. Track failure rates and set up notifications when they exceed normal thresholds.
 
-**Graceful degradation** prepares for total outages. Cache successful generations and have fallback content ready for when the API is unavailable.
+Graceful degradation prepares for total outages. Cache successful generations and have fallback content ready for when the API is unavailable.
 
 ## When All Else Fails
 
 If you continue experiencing failures after implementing these strategies, consider these options:
 
-- **Upgrade your API tier** for higher rate limits
-- **Contact OpenAI support** with specific error details
-- **Implement alternative image generation** as a backup (Stable Diffusion, Midjourney API)
-- **Use a queue system** to manage generation requests asynchronously
+- Upgrade your API tier for higher rate limits
+- Contact OpenAI support with specific error details
+- Use alternative image generation as a backup (Stable Diffusion, Midjourney API)
+- Use a queue system to manage generation requests asynchronously
 
 DALL-E failures don't have to break your workflow. With proper error handling, retry logic, and diagnostic procedures, you can build resilient systems that recover gracefully from transient failures.
 

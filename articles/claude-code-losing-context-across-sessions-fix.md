@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -147,7 +148,7 @@ source ~/.zshrc
 
 When fixes do not resolve context loss, gather diagnostic information to identify the underlying cause.
 
-**Check Claude Code logs for errors:**
+Check Claude Code logs for errors:
 
 ```bash
 claude --debug 2>&1 | tee claude-debug.log
@@ -155,7 +156,7 @@ claude --debug 2>&1 | tee claude-debug.log
 
 Logs often reveal permission denials, file not found errors, or configuration parsing failures.
 
-**Verify terminal multiplexer compatibility:**
+Verify terminal multiplexer compatibility:
 
 If using tmux or screen, test Claude Code outside these environments. Multiplexer session management sometimes interferes with context restoration. Test with a plain terminal:
 
@@ -165,7 +166,7 @@ tmux kill-server
 claude --resume
 ```
 
-**Confirm project directory permissions:**
+Confirm project directory permissions:
 
 For project-specific Claude Code usage, ensure the project directory and hidden files allow access:
 
@@ -178,10 +179,10 @@ chmod -R 755 .
 
 Implement a consistent workflow to minimize context disruption:
 
-1. **End sessions cleanly** — Use `exit` or `quit` commands rather than forcibly terminating the terminal
-2. **Maintain backup context files** — Keep plaintext summaries of active work
-3. **Version control configuration** — Track your Claude Code settings in git for reproducibility
-4. **Regular exports** — Periodically export session summaries using built-in export functions if available
+1. End sessions cleanly — use `exit` or `quit` commands rather than forcibly terminating the terminal
+2. Maintain backup context files — keep plaintext summaries of active work
+3. Version control configuration — track your Claude Code settings in git for reproducibility
+4. Export regularly — periodically export session summaries using built-in export functions if available
 
 ## Summary
 

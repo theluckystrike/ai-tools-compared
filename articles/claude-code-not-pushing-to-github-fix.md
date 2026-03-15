@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -21,7 +22,7 @@ To fix Claude Code not pushing to GitHub, first test your SSH connection with `s
 
 When Claude Code attempts to push to GitHub and fails, the issue typically falls into one of several categories: authentication problems, SSH key misconfiguration, repository permissions, or network issues. Identifying which category applies to your situation is the first step toward resolution.
 
-Before diving into specific fixes, ensure you have access to your terminal and your GitHub account. Some solutions require actions in both environments.
+Ensure you have access to your terminal and your GitHub account, as some solutions require actions in both environments.
 
 ## Authentication Issues
 
@@ -289,9 +290,7 @@ When troubleshooting, work through this checklist:
 
 ## Conclusion
 
-Push failures in Claude Code are usually caused by authentication or SSH configuration issues. By systematically working through the solutions in this guide, you can identify and fix the problem quickly. Start with the authentication fixes, then move to SSH configuration, and finally check network issues if problems persist.
-
-Most push failures resolve by ensuring your SSH keys are properly set up and your remote URL is correct. Keep your credentials secure and your configuration backed up to minimize future issues.
+Push failures in Claude Code are usually caused by authentication or SSH configuration issues. Start with the authentication fixes, then move to SSH configuration, and check network issues if problems persist.
 
 ---
 

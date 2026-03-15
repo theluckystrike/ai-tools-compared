@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -19,7 +20,7 @@ To fix Gemini not showing up in Google Docs, first verify your Google One AI Pre
 
 ## Understanding Gemini Integration Requirements
 
-Before diving into fixes, understand what Google requires for Gemini to function in Docs. Your Google account must have one of these subscriptions:
+Gemini in Docs requires one of these Google subscriptions:
 
 - Google One AI Premium ($20/month)
 - Gemini Business ($10/user/month)
@@ -151,8 +152,6 @@ If all else fails, your account may have a corrupted AI preferences profile. Cre
 Alternatively, submit feedback directly to Google through Help → Help Docs improve → Report a problem. Include your domain, subscription type, and exact error messages. Google's AI team monitors these reports and sometimes provides personalized recovery steps.
 
 ---
-
-These troubleshooting steps should resolve most instances of Gemini not appearing in Google Docs. Start with subscription verification and work through the browser-specific fixes. Corporate users should coordinate with their IT departments for network and domain-level issues.
 
 
 ## Related Reading
