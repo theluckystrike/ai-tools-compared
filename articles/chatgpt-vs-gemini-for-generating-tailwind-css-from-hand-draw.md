@@ -5,6 +5,10 @@ description: "A practical comparison of ChatGPT and Gemini for converting hand-d
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Building user interfaces faster is a priority for many developers, and AI tools have made significant strides in helping convert visual designs into code. If you have a hand-drawn wireframe and want to generate Tailwind CSS, you might be wondering whether ChatGPT or Gemini is the better choice. This article breaks down the strengths and weaknesses of each approach with practical examples.
