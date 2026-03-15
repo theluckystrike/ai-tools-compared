@@ -11,8 +11,7 @@ tags: [claude-code, claude-skills]
 reviewed: true
 score: 7
 ---
-
-
+{% raw %}
 # Claude Code Code Review Checklist Automation
 
 Code reviews are essential for maintaining code quality, but the process often becomes inconsistent when different team members run reviews. Automating your checklist with Claude Code skills transforms subjective reviews into repeatable, documented workflows that catch common issues every time.
@@ -286,3 +285,4 @@ Involve the whole team in maintaining the skill. The best automated checklists r
 - [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/) — Automate code review in your CI pipeline
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
