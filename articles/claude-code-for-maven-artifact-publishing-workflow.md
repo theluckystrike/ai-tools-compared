@@ -214,3 +214,10 @@ Start by identifying repetitive tasks in your current workflow, then create Clau
 
 *Ready to optimize your Maven workflow? Explore Claude Code skills for Java development or create a custom publishing skill tailored to your organization's needs.*
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
