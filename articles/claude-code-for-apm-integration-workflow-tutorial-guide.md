@@ -166,3 +166,4 @@ Finally, maintain human oversight. Claude Code augments your monitoring capabili
 Integrating Claude Code into your APM workflow transforms monitoring from reactive investigation into proactive optimization. By automating metric analysis, enriching alerts with context, and generating regular reports, you reduce alert fatigue while improving response times to genuine issues. Start with one integration point—alert triage or performance reports—and expand as you build confidence in the workflow.
 
 The key is treating Claude Code as an intelligent assistant that amplifies your observability expertise rather than a replacement for human judgment. With proper setup and iteration, your APM integration becomes a force multiplier for engineering teams focused on delivering reliable, performant applications.
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
