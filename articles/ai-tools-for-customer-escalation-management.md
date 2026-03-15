@@ -5,6 +5,10 @@ description: "A practical guide to AI-powered tools for managing customer escala
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-customer-escalation-management/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 voice-checked: true
 ---
 

@@ -5,6 +5,10 @@ description: "A practical guide to AI tools for government citizen support, with
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-government-citizen-support/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 voice-checked: true
 ---
 
