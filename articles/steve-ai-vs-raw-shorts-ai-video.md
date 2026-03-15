@@ -5,6 +5,10 @@ description: "A technical comparison of Steve AI and Raw Shorts for automated vi
 date: 2026-03-15
 author: theluckystrike
 permalink: /steve-ai-vs-raw-shorts-ai-video/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

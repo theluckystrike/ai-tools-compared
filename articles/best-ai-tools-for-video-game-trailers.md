@@ -5,6 +5,10 @@ description: "Discover the top AI tools for creating professional video game tra
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-video-game-trailers/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
