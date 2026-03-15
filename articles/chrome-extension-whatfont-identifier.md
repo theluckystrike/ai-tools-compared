@@ -1,18 +1,24 @@
 ---
+
 layout: default
 title: "Chrome Extension WhatFont Identifier: Identify Fonts on Any Website"
 description: "Discover how to use WhatFont identify extensions in Chrome to instantly discover font families, sizes, and styles used on any website. A practical guide for developers and designers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-whatfont-identifier/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Font identification is a common need when browsing the web—whether you're a developer trying to replicate a design, a designer gathering inspiration, or a typography enthusiast curious about what makes a site visually distinctive. Chrome extensions designed for WhatFont identification solve this problem by letting you hover over any text on a webpage and instantly see the font details.
 
 ## How WhatFont Identifier Extensions Work
 
-WhatFont identifier extensions work by leveraging the Document Object Model (DOM) to extract computed CSS properties from any element on a page. When you activate the extension and hover over text, it reads the `font-family`, `font-size`, `font-weight`, `line-height`, and other relevant properties from the element's computed styles.
+WhatFont identifier extensions work by using the Document Object Model (DOM) to extract computed CSS properties from any element on a page. When you activate the extension and hover over text, it reads the `font-family`, `font-size`, `font-weight`, `line-height`, and other relevant properties from the element's computed styles.
 
 The core mechanism involves using `window.getComputedStyle(element)` in JavaScript, which returns all CSS properties applied to an element after stylesheets and inheritance are resolved. This gives you the actual rendered font rather than just what's declared in the CSS.
 

@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "How to Check SSL Certificates in Chrome: Developer Guide"
 description: "Learn multiple methods to inspect, verify, and troubleshoot SSL certificates directly in Chrome browser for developers and power users."
 date: 2026-03-15
 categories: [guides]
-tags: [chrome, ssl, security, https, developer-tools]
-author: theluckystrike
-reviewed: false
-score: 0
+tags: [chrome, ssl, security, https, developer-tools, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /chrome-check-ssl-certificate/
 ---
+
 
 # How to Check SSL Certificates in Chrome: Developer Guide
 

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "How to Check if a Chrome Extension is Safe Before Installing"
 description: "Learn practical methods to verify Chrome extension safety, including analyzing permissions, inspecting source code, and using verification tools."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /check-chrome-extension-safe/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Chrome extensions enhance browser functionality but can also access sensitive data. Before installing any extension, you should verify its safety. This guide covers practical methods for developers and power users to assess extension security.
 

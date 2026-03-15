@@ -1,14 +1,20 @@
 ---
+
 layout: default
 title: "AI Vocabulary Builder Chrome Extension: A Developer Guide"
 description: "Learn how to build and integrate AI vocabulary builder chrome extensions for language learning and vocabulary expansion."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-vocabulary-builder-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
 
+
 {% raw %}
-AI vocabulary builder chrome extensions represent a specialized category of browser tools that leverage large language models to help users learn new words, understand context, and build vocabulary more effectively. For developers and power users, understanding how these extensions work enables you to create custom solutions or integrate vocabulary building into existing workflows.
+AI vocabulary builder chrome extensions represent a specialized category of browser tools that use large language models to help users learn new words, understand context, and build vocabulary more effectively. For developers and power users, understanding how these extensions work enables you to create custom solutions or integrate vocabulary building into existing workflows.
 
 ## How AI Vocabulary Builder Extensions Work
 

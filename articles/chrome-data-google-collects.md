@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "What Chrome Data Google Collects: A Technical Guide for Developers"
 description: "A comprehensive technical breakdown of what data Google Chrome collects, how tracking works, and what developers need to know about browser data harvesting."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-data-google-collects/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # What Chrome Data Google Collects: A Technical Guide for Developers
 

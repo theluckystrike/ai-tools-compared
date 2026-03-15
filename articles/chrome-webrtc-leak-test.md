@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome WebRTC Leak Test: A Developer's Guide to Detecting and Preventing IP Leaks"
 description: "Learn how WebRTC can expose your real IP address in Chrome, detection methods, and practical mitigation strategies for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-webrtc-leak-test/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 WebRTC (Web Real-Time Communication) is a powerful technology that enables direct peer-to-peer communication in web browsers. However, it harbors a significant privacy risk that many users and developers overlook: IP address leakage. This guide walks you through understanding Chrome WebRTC leaks, detecting them, and implementing effective countermeasures.
 

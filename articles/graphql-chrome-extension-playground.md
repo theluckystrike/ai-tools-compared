@@ -1,12 +1,19 @@
 ---
 
+
 layout: default
 title: "GraphQL Chrome Extension Playground: Test APIs Directly in Your Browser"
 description: "Discover how to use Chrome extensions to test GraphQL APIs directly in your browser. A practical guide for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /graphql-chrome-extension-playground/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+{% raw %}
+
 
 # GraphQL Chrome Extension Playground: Test APIs Directly in Your Browser
 
@@ -131,3 +138,4 @@ Chrome extensions transform your browser into a capable GraphQL testing environm
 Experiment with different extensions to find the combination that matches your workflow. The investment in setting up environments and organizing queries pays dividends through faster iteration and reduced context switching between testing tools.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

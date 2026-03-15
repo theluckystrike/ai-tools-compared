@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "How to Handle Chrome Third Party Cookies Blocked in 2026"
 description: "Learn how Chrome's third-party cookies blocking affects web developers and power users. Discover practical solutions, testing strategies, and implementation alternatives."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-third-party-cookies-blocked/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # How to Handle Chrome Third Party Cookies Blocked in 2026
 
