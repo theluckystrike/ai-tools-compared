@@ -186,5 +186,11 @@ Chrome extensions provide viable alternatives to Talend API for developers prior
 
 The best choice depends on your specific requirements: Postman for collaborative teams, RESTMan for simplicity, Boomerang for legacy SOAP support, and ARC for comprehensive feature sets without desktop installation. Evaluate based on your actual workflow needs rather than feature lists—most developers find they need far less than Talend provides.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

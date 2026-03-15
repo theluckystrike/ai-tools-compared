@@ -222,4 +222,10 @@ Many developers extend these basics by adding custom dictionaries, supporting mu
 
 The ecosystem around AI-powered writing assistance continues to evolve rapidly. Building one yourself gives you full control over the user experience and lets you customize behavior for specific use cases—whether that's technical documentation, code comments, or creative writing.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
