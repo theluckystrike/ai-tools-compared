@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Hootsuite Alternative Chrome Extension in 2026"
 description: "Discover the best Hootsuite alternatives for Chrome in 2026. Developer-friendly social media management tools with scheduling, analytics, and automation."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /hootsuite-alternative-chrome-extension-2026/
 categories: [comparisons]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Hootsuite Alternative Chrome Extension in 2026
 

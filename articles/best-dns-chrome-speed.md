@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Best DNS for Chrome: Speed Optimization Guide"
 description: "Learn how to configure the best DNS settings for Chrome to maximize browsing speed. Practical examples, code snippets, and configuration tips for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-dns-chrome-speed/
+reviewed: true
+score: 8
+categories: [best-of]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Best DNS for Chrome: Speed Optimization Guide
 
