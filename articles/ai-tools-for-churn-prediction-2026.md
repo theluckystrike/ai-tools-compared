@@ -5,7 +5,7 @@ description: "A practical guide to AI tools for churn prediction, with code exam
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-churn-prediction-2026/
-categories: [ai, machine-learning, churn-prediction]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
