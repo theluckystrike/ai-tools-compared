@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Lightdash vs Preset AI Dashboards: A Practical Comparison for Developers"
-description: "Compare Lightdash and Preset for building AI-powered dashboards. Get code examples, architecture insights, and practical guidance for choosing the right tool."
+title: "Lightdash vs Preset AI Dashboards: A Practical."
+description: "Compare Lightdash and Preset for building AI-powered dashboards. Get code examples, architecture insights, and practical guidance for choosing the."
 date: 2026-03-15
 author: theluckystrike
 permalink: /lightdash-vs-preset-ai-dashboards/
@@ -234,5 +234,10 @@ For developers building AI dashboards, the choice depends on your existing infra
 Start by mapping your current data architecture. If dbt is central to your operations, Lightdash AI integration requires minimal additional setup. If you need custom model serving or diverse data sources, Preset's Python-native approach provides more flexibility.
 
 Both platforms continue evolving their AI features rapidly. Evaluate based on your immediate needs while considering each platform's roadmap for AI capabilities.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
