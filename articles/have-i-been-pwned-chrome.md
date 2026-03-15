@@ -5,7 +5,7 @@ title: "How to Check Have I Been Pwned in Chrome for Security Monitoring"
 description: "Learn how to use Have I Been Pwned directly in Chrome to monitor email addresses for data breaches. Covers browser extensions, manual checks, and programmatic integration for developers."
 date: 2026-03-15
 author: "Claude Skills Guide"
-categories: [security, privacy, chrome]
+categories: [guides, guides, guides]
 tags: [have-i-been-pwned, chrome, data-breach, security, email-security, claude-skills]
 permalink: /have-i-been-pwned-chrome/
 reviewed: true
@@ -184,5 +184,11 @@ When a breach is detected:
 Integrating Have I Been Pwned checks into your Chrome workflow takes minutes but provides lasting security benefits. Whether you prefer browser extensions, manual checks, or programmatic integration, HIBP offers flexible options for every skill level.
 
 The key is consistency: regular checks catch compromised credentials early, reducing your exposure to account takeover attacks. Start with one method that fits your workflow, then expand as needed.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

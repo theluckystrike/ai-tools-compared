@@ -163,4 +163,10 @@ Find your balance based on workload. Light browsing may work fine without accele
 
 Chrome's GPU process high memory usage stems from hardware-accelerated rendering, WebGL content, and video decoding. For power users and developers, options range from completely disabling hardware acceleration to fine-tuning specific features through flags. Monitor your GPU memory usage through Task Manager and adjust settings based on your workflow needs.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
