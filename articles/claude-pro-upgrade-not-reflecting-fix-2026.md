@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -17,13 +18,9 @@ To fix Claude Pro not reflecting after upgrade, sign out and sign back in with `
 
 ## Common Reasons Your Claude Pro Upgrade Isn't Reflecting
 
-Before diving into fixes, understand what typically causes this issue:
+Several issues can cause this:
 
-- **Cache staleness** — The application is using cached authentication tokens from before your upgrade
-- **Multiple accounts** — You upgraded a different account than the one currently authenticated
-- **Organization vs personal** — Your organization has a separate billing setup overriding personal Pro
-- **Token expiration** — Stale OAuth tokens prevent the system from fetching your current tier
-- **Region sync delays** — Payment processors in certain regions can take longer to sync with Claude's servers
+The application may be using cached authentication tokens from before your upgrade, or you may have upgraded a different account than the one currently authenticated. Your organization might have a separate billing setup that overrides personal Pro status. Stale OAuth tokens can prevent the system from fetching your current tier, and payment processors in certain regions can take longer to sync with Claude's servers.
 
 ## Step-by-Step Fixes
 
@@ -154,10 +151,7 @@ Save the output if you need to file a support ticket.
 
 If you've tried all steps above and Pro still isn't reflecting:
 
-1. **Wait 24-48 hours** — In rare cases, payment to tier sync takes up to two business days, especially for international payments
-2. **Check email** — Claude sends a confirmation email when your tier changes; search for "Claude Pro" in your inbox
-3. **Try a different network** — Corporate firewalls or VPNs can sometimes interfere with authentication callbacks
-4. **Contact support** — Provide your account email, payment date, amount, and the output from `claude doctor`
+In rare cases, payment-to-tier sync takes up to two business days, especially for international payments. Check your email for a confirmation from Claude when your tier changes. Corporate firewalls or VPNs can sometimes interfere with authentication callbacks, so try a different network if possible. If nothing resolves the issue, contact support with your account email, payment date, amount, and the output from `claude doctor`.
 
 ## Prevention
 

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 The best approach combines Whisper for transcription with Claude or GPT-4 for processing—this stack handles technical terminology well, produces accurate timestamps, and outputs publication-ready show notes. For maximum privacy, use Whisper + Ollama locally; for managed infrastructure, pair AssemblyAI's speaker diarization with Claude's long-context understanding. This guide compares the most effective options and provides code examples for each combination.
@@ -199,12 +200,9 @@ In this episode, we explore practical approaches to integrating AI tools into de
 
 Your choice depends on several factors:
 
-- **Volume**: High-volume podcasts benefit from fully automated pipelines using Whisper + API models
-- **Privacy**: Sensitive content favors local processing with Whisper + Ollama
-- **Quality**: For highest quality, combine human review with AI-generated drafts
-- **Budget**: Local tools have higher upfront costs but lower per-episode expenses
+High-volume podcasts benefit from fully automated pipelines using Whisper and an API model. Sensitive content favors local processing with Whisper and Ollama. For highest quality, combine human review with AI-generated drafts. Local tools carry higher upfront costs but lower per-episode expenses.
 
-Starting with Whisper for transcription and Claude for generation provides a strong baseline. Adjust based on your specific requirements and iterate on your workflow as needs evolve.
+Whisper for transcription and Claude for generation is a reliable starting point. Adjust from there based on volume, privacy requirements, and budget.
 
 ---
 

@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting, guides]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -23,10 +24,7 @@ Claude is designed to decline requests that violate its usage policies, contain 
 
 The most common reasons for refusals include:
 
-- **Policy-triggering language**: Certain words or phrases automatically activate content filters
-- **Ambiguous intent**: Claude may refuse when it cannot determine whether a request is safe
-- **Repetitive patterns**: Multiple similar requests in quick succession can trigger rate limiting
-- **Context confusion**: Previous conversation context may cause unexpected refusals
+Certain words or phrases automatically activate content filters, even when the request itself is harmless. Claude may also refuse when it cannot determine whether a request is safe, or when previous conversation context creates ambiguity. Multiple similar requests in quick succession can trigger rate limiting as well.
 
 ## Fix 1: Remove Trigger Words and Phrases
 
@@ -112,11 +110,7 @@ This transformation provides the same security knowledge while making Claude's e
 
 When rephrasing doesn't resolve the issue, these diagnostic steps help identify the root cause:
 
-1. **Check for typos in keywords**: Misspelled words sometimes create unexpected trigger patterns
-2. **Review recent conversation history**: Earlier requests may have created a context that's affecting current responses
-3. **Test with minimal prompt**: Remove everything except the core request to isolate the problem
-4. **Try different phrasing**: Synonyms often work when specific words don't
-5. **Check rate limits**: Excessive requests in a short period may cause temporary refusals
+Check for typos in keywords, since misspelled words sometimes create unexpected trigger patterns. Review recent conversation history—earlier requests may have created context that affects current responses. Test with a minimal prompt by removing everything except the core request to isolate the problem. Try synonyms when specific words trigger refusals, and check whether excessive requests in a short period may be causing temporary rate-limit refusals.
 
 ## Common Scenarios and Solutions
 
@@ -134,9 +128,7 @@ Some code patterns can appear malicious. Provide more context about your project
 
 ## Summary
 
-Claude refusals typically occur due to ambiguous phrasing, trigger words, or insufficient context. The fixes are straightforward: remove problematic language, provide clear context, state your intent explicitly, break down complex requests, and frame questions educationally. When in doubt, add more context about who you are, what you're building, and why you need the information.
-
-Most refusal issues resolve by focusing on your legitimate goal rather than using words that describe potentially harmful techniques. Claude is designed to help with legitimate development tasks—making your purpose clear is the key to getting the assistance you need.
+Most refusal issues resolve by removing problematic language, adding context about what you're building, and focusing on the legitimate goal rather than words that describe potentially harmful techniques.
 
 ## Related Reading
 
