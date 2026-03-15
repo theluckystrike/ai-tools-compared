@@ -6,6 +6,10 @@ description: "Discover the best Chrome extension Notion web clipper alternatives
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-notion-web-clipper-alternative/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
