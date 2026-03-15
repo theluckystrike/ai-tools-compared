@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -22,11 +23,11 @@ To fix Cursor multi-file edits breaking your code, narrow your edit scope to onl
 
 Understanding why Cursor breaks code during multi-file edits helps you prevent issues and troubleshoot when they occur.
 
-**Context window limitations** cause Cursor to truncate or misinterpret file relationships. When editing many files simultaneously, the AI model may lose track of dependencies between files, leading to incorrect imports or function calls.
+Context window limitations cause Cursor to truncate or misinterpret file relationships. When editing many files simultaneously, the AI model may lose track of dependencies between files, leading to incorrect imports or function calls.
 
-**Conflicting edit patterns** happen when multiple files reference each other. Cursor might update a function signature in one file while forgetting to update corresponding call sites in other files.
+Conflicting edit patterns happen when multiple files reference each other. Cursor might update a function signature in one file while forgetting to update corresponding call sites in other files.
 
-**Version mismatch errors** occur when Cursor applies changes based on stale information about your codebase, particularly in large projects with recent changes.
+Version mismatch errors occur when Cursor applies changes based on stale information about your codebase, particularly in large projects with recent changes.
 
 ## Step-by-Step Fixes
 
@@ -163,9 +164,7 @@ Newer versions include improvements to multi-file edit accuracy:
 
 Projects with TypeScript or strong type annotations work better with multi-file edits:
 
-- Types provide explicit contracts that Cursor can follow
-- Type errors immediately reveal incorrect edits
-- Consider adding type annotations to critical files
+Types provide explicit contracts that Cursor can follow, and type errors immediately reveal incorrect edits. Consider adding type annotations to critical files.
 
 ### Maintain Clean Git State
 
@@ -195,7 +194,7 @@ Cursor excels at boilerplate generation and repetitive changes across many files
 
 ## Summary
 
-Multi-file edit failures in Cursor usually stem from context limitations, dependency confusion, or overly broad edit scopes. Apply targeted file selection, implement edit chaining, use preview mode, and maintain good project hygiene. Always test after edits and keep Cursor updated for the best experience.
+Multi-file edit failures in Cursor usually stem from context limitations, dependency confusion, or overly broad edit scopes. Apply targeted file selection, implement edit chaining, use preview mode, and maintain good project hygiene.
 
 
 ## Related Reading

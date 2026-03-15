@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -18,7 +19,7 @@ To fix ChatGPT Code Interpreter not running Python, start a new conversation to 
 
 ## Common Reasons Code Interpreter Fails to Run Python
 
-Before diving into fixes, understanding why the Code Interpreter stops working helps you diagnose the issue faster. The problems generally fall into several categories: session-related issues, syntax or runtime errors that cause immediate termination, resource limitations, and authentication or account status problems.
+Understanding why the Code Interpreter stops working helps you diagnose the issue faster. The problems generally fall into several categories: session-related issues, syntax or runtime errors that cause immediate termination, resource limitations, and authentication or account status problems.
 
 ### Session and Environment Issues
 
@@ -165,10 +166,7 @@ If this basic code fails, the issue is definitely with the environment rather th
 
 Developers can adopt practices to minimize Code Interpreter failures:
 
-1. **Save critical work locally** — Don't rely solely on Code Interpreter for important projects
-2. **Break complex tasks into smaller steps** — Easier to debug when issues arise
-3. **Keep backup code** — Maintain local versions of scripts you plan to run
-4. **Monitor resource usage** — Be mindful of memory and CPU consumption
+Save critical work locally and don't rely solely on Code Interpreter for important projects. Break complex tasks into smaller steps so issues are easier to debug. Keep local versions of scripts you plan to run, and stay mindful of memory and CPU consumption.
 
 ## Summary
 
