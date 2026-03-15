@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Conventional Commits Workflow Guide"
 description: "A practical guide to using Claude Code for conventional commits. Learn how to automate commit message formatting, integrate with CI/CD pipelines, and maintain consistent commit history."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-conventional-commits-workflow-guide/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Conventional Commits Workflow Guide

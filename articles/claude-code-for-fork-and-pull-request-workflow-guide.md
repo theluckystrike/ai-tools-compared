@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Fork and Pull Request Workflow Guide"
 description: "Learn how to use Claude Code effectively with fork and pull request workflows to contribute to open source projects and collaborate with teams."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-fork-and-pull-request-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
@@ -121,4 +125,4 @@ For teams working with multiple repositories, consider creating skills that appl
 Mastering fork and pull request workflows with Claude Code significantly reduces the mechanical overhead of open source contribution. By automating branch creation, commit messaging, and synchronization tasks, you can focus on writing quality code rather than managing Git mechanics. The key is setting up your environment properly, maintaining clean commit histories, and always synchronizing with upstream before submitting changes.
 
 Start by implementing one or two of these practices in your next contribution. As you become comfortable with the workflow, add more automation to handle increasingly complex scenarios. Your future self—and the maintainers reviewing your PRs—will appreciate the effort.
-
+{% endraw %}

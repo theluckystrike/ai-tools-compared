@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for OSS Deprecation Workflow Tutorial"
 description: "Learn how to leverage Claude Code to streamline open source deprecation workflows, from planning deprecated features to communicating changes to users."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-deprecation-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
