@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Building AI-powered dashboards requires choosing a platform that supports both traditional business intelligence and emerging AI features. Lightdash and Preset both offer compelling options, but they take different approaches to integrating AI capabilities into your data workflows. This comparison helps developers and power users make informed decisions based on practical implementation details.
+Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need custom ML model integration, Python-native visualizations, or work with data sources outside dbt. This comparison covers architecture, AI features, and code examples for both platforms.
 
 ## Architecture Overview
 
