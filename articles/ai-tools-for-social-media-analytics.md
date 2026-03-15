@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tools for Social Media Analytics: A Practical Guide for Developers"
-description: "Discover how to leverage AI for social media analytics. This guide covers APIs, Python libraries, and code examples for developers building data-driven insights."
+title: "AI Tools for Social Media Analytics: A Practical Guide."
+description: "Discover how to leverage AI for social media analytics. This guide covers APIs, Python libraries, and code examples for developers building data-driven."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-tools-for-social-media-analytics/
@@ -210,5 +210,10 @@ Start small. Collect a few hundred posts, run the sentiment analysis code above,
 
 The ecosystem of AI tools for social media analytics is mature enough that you don't need to reinvent the core components. Focus your energy on the unique aspects of your analysis—whatever specific insights you're trying to extract from the conversation.
 {% endraw %}
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
