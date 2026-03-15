@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Version Bump Workflow Tutorial Guide"
-description: "Learn how to automate version bumping in your projects using Claude Code. This tutorial covers creating skills, workflow patterns, and best practices for semantic versioning."
+description: "Learn how to automate version bumping in your projects using Claude Code. This tutorial covers creating skills, workflow patterns, and best practices."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-version-bump-workflow-tutorial-guide/
@@ -313,3 +313,10 @@ Automating version bumping with Claude Code transforms a tedious manual task int
 
 The key is starting simple—create your initial version bump skill, test it thoroughly, then gradually add complexity as your workflow matures.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
