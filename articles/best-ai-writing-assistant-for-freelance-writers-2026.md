@@ -34,7 +34,7 @@ The best tool depends on your workflow. Some writers need a responsive AI chatbo
 
 Claude excels at maintaining consistent tone across long-form content. ItsArtifacts feature lets you create reusable prompts for different client voices—a significant advantage for freelancers managing multiple accounts.
 
-**Practical use case**: Create a system prompt for each client:
+Create a system prompt for each client:
 
 ```
 You write in a conversational but authoritative tone for tech startups.
@@ -54,7 +54,7 @@ Python async programming. Include specific subtopics for each section."
 
 ChatGPT's strength lies in its flexible API. Developers can embed it directly into custom writing workflows. The GPT-4 model produces high-quality drafts, and custom instructions persist across sessions.
 
-**API integration example**:
+API integration example:
 
 ```python
 import openai
@@ -120,7 +120,7 @@ def freelance_writer_pipeline(topic, client_voice):
     return polished
 ```
 
-This approach leverages each tool's strengths. Replace the placeholder functions with actual API calls. Store client voice prompts in a configuration file for reuse.
+This approach uses each tool's strengths. Replace the placeholder functions with actual API calls. Store client voice prompts in a configuration file for reuse.
 
 ## Cost Considerations
 

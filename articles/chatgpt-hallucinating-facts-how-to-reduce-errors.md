@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -119,7 +120,7 @@ If you're uncertain about any specific detail, state "I'm not certain" rather th
 
 This simple instruction dramatically reduces confident-sounding but incorrect statements.
 
-### 7. use System Prompts for Consistent Behavior
+### 7. Use System Prompts for Consistent Behavior
 
 When using ChatGPT consistently for specific tasks, craft a system prompt that establishes accuracy requirements:
 
@@ -166,9 +167,6 @@ Reducing hallucinations requires combining prompt engineering with verification 
 These practices transform AI from an unverified oracle into a reliable component of your workflow.
 
 ---
-
-ChatGPT hallucination remains an active challenge, but applying these techniques significantly improves output reliability. The key is treating AI as a powerful assistant that requires verification rather than an infallible source of truth.
-
 
 ## Related Reading
 

@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 
@@ -28,8 +29,6 @@ Developers and power users benefit most from tools that understand app metadata,
 ### 1. ChatGPT with Custom Instructions
 
 OpenAI's ChatGPT remains versatile when configured with custom instructions specifically for App Store writing. The key advantage is flexibility—you can specify character limits, tone requirements, and keyword priorities directly in your instructions.
-
-**Setting up a reusable prompt:**
 
 ```python
 # Python script to generate app descriptions using OpenAI API
@@ -84,9 +83,9 @@ Claude works particularly well for:
 
 Several tools focus specifically on App Store optimization rather than general writing:
 
-- **AppTweak**: Combines AI writing with keyword research, showing you search volume and competition data alongside generated descriptions
-- **Sensor Tower**: Offers AI suggestions integrated with market intelligence
-- **AppFollow**: Provides AI-powered description generation with review analysis
+- AppTweak: Combines AI writing with keyword research, showing you search volume and competition data alongside generated descriptions
+- Sensor Tower: Offers AI suggestions integrated with market intelligence
+- AppFollow: Provides AI-powered description generation with review analysis
 
 These tools trade some creative flexibility for ASO-specific features like keyword density suggestions and competitor comparison.
 
@@ -150,17 +149,13 @@ This automation generates fresh descriptions whenever your feature set changes, 
 
 ## Writing Effective Prompts for App Descriptions
 
-Regardless of which AI tool you choose, prompt quality determines output quality. Effective prompts for App Store descriptions should include:
-
-**Essential prompt elements:**
+Regardless of which AI tool you choose, prompt quality determines output quality. Effective prompts for App Store descriptions include:
 - Exact character count limits
 - Primary keywords that must appear in the first line
 - Target audience description
 - Tone guidelines (professional, playful, technical, etc.)
 - Feature list with prioritization
 - Competitor differentiators
-
-**Example refined prompt:**
 
 ```
 Write a 4000-character App Store description for a fitness tracking app called "RunTrack."
@@ -183,17 +178,7 @@ End with: "Download RunTrack and beat your personal best today!"
 
 ## Common Pitfalls to Avoid
 
-AI-generated descriptions often fail in predictable ways. Watch for:
-
-1. **Generic openings**: "Introducing [app name], the best way to..." This wastes precious first-line character space with non-keyword content
-
-2. **Missing localization markers**: If you plan to localize, include placeholders or notes for translators in your prompts
-
-3. **Feature dumping**: Lists of features without benefits do not convert. Ensure your prompt asks for benefit-focused language
-
-4. **No A/B testing variants**: Generate at least 3 variations with different opening hooks for testing
-
-5. **Ignoring guidelines**: Each app store has specific content policies. AI may generate content that violates guidelines—always review before publishing
+AI-generated descriptions often fail in predictable ways. Generic openings like "Introducing [app name], the best way to..." waste precious first-line character space with non-keyword content. If you plan to localize, include placeholders or notes for translators in your prompts. Lists of features without benefits do not convert—ensure your prompt asks for benefit-focused language. Generate at least 3 variations with different opening hooks for A/B testing. Each app store has specific content policies, and AI may generate content that violates guidelines, so always review before publishing.
 
 ## Making Your Choice
 

@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -29,8 +30,6 @@ Developers and power users typically take one of two paths: using general-purpos
 ### General-Purpose LLMs with Prompt Engineering
 
 The most flexible approach uses models like Claude, GPT-4, or Gemini with carefully crafted prompts. This method gives you complete control over the output and works for any outreach scenario.
-
-**Example prompt for cold outreach:**
 
 ```python
 import anthropic
@@ -79,13 +78,7 @@ The advantage of specialized tools is speed. You fill in fields, select a tone, 
 
 When comparing tools for cold outreach email writing, focus on these practical criteria rather than marketing claims.
 
-**Personalization depth**: Can the tool incorporate multiple data points about recipients? The best tools pull from LinkedIn profiles, company information, recent news, and custom fields you provide.
-
-**Tone control**: Can you specify exactly how formal or casual the output should be? Some tools offer sliders or preset tones; others require prompt engineering to achieve specific voices.
-
-**Batch processing**: If you're scaling outreach, batch capabilities matter. Look for APIs that let you process lists of recipients and generate unique emails for each.
-
-**Output format**: Do you need plain text, HTML, or integration with specific email platforms? Some tools output ready-to-send emails, while others give you raw text to format yourself.
+Check how deeply a tool can personalize — the best options pull from LinkedIn profiles, company information, recent news, and custom fields you provide. Confirm you can control tone precisely: some tools offer sliders or preset tones, while others require prompt engineering to hit specific voices. If you're scaling outreach, look for APIs that process lists of recipients and generate unique emails for each. Finally, decide whether you need plain text, HTML, or direct integration with specific email platforms, since some tools output ready-to-send emails while others return raw text.
 
 ## Practical Comparison
 
