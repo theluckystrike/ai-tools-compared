@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Chrome Extension APA Citation Formatter: Automate Your Academic References"
-description: "A practical guide to building and using Chrome extensions for APA citation formatting. Learn implementation approaches, key APIs, and how to integrate citation generation into your browser workflow."
+title: "Chrome Extension APA Citation Formatter: Automate Your."
+description: "A practical guide to building and using Chrome extensions for APA citation formatting. Learn implementation approaches, key APIs, and how to integrate."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-apa-citation-formatter/
@@ -271,6 +271,13 @@ When building citation extensions, handle user data responsibly. The extension a
 Building a functional APA citation formatter requires attention to both the technical implementation details and the nuanced formatting rules that academics expect. The patterns outlined here provide a foundation, but the real work comes from testing against diverse real-world sources and refining the extraction logic based on edge cases.
 
 The Chrome extension platform offers sufficient capabilities to build a professional-grade citation tool that integrates smoothly into research workflows. With careful attention to APA formatting rules and robust metadata extraction, you can significantly reduce the time researchers spend on citation management.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
