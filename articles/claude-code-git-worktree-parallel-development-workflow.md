@@ -97,6 +97,37 @@ git worktree add ../myproject-refactor experimental/refactor-database-layer
 
 If the refactor succeeds, merge it. If it doesn't work out, abandon that worktree without any impact on your main development line.
 
+## Parallel Feature Development Strategy
+
+When working on multiple features simultaneously, create separate worktrees branching from main. This lets Claude Code work on one feature while you manually work on another, with zero risk of mixing changes:
+
+```bash
+# Create worktrees for parallel development
+git worktree add -b feature/user-auth ../project-auth main
+git worktree add -b feature/payment-system ../project-payments main
+git worktree add -b feature/notifications ../project-notifications main
+```
+
+Each worktree has its own independent working directory. You can run Claude Code in each directory to handle different aspects of your project concurrently.
+
+## Using a CLAUDE.md File for Worktree Context
+
+Create a `CLAUDE.md` file in your main repository to define worktree-specific instructions that Claude Code will follow automatically when invoked from each directory:
+
+```markdown
+# Worktree Guidelines
+
+When working in feature worktrees:
+- Focus on the specific feature for this branch
+- Do not modify files outside the feature scope
+- Run tests before marking a task complete
+
+When working in hotfix worktrees:
+- Prioritize minimal, targeted changes
+- Include regression tests for the fix
+- Verify fix works in main branch context
+```
+
 ## Automating Worktree Management
 
 You can create shell aliases or scripts to streamline worktree operations:
@@ -109,23 +140,70 @@ alias worktree-feature='git worktree add ../myproject-$(basename $PWD)-$1 $1'
 worktree-feature feature-payment-integration
 ```
 
-For more sophisticated automation, consider combining this with Claude Code's MCP (Model Context Protocol) capabilities. Skills like `internal-comms` can automatically generate status updates about what you're working on in each worktree, keeping your team informed without manual tracking.
+For more sophisticated automation, consider a dedicated worktree-manager skill script:
+
+```bash
+#!/bin/bash
+# Skill: worktree-manager
+
+case "$1" in
+  create)
+    BRANCH_NAME="$2"
+    WORKTREE_PATH="../project-${BRANCH_NAME}"
+    git worktree add -b "$BRANCH_NAME" "$WORKTREE_PATH" main
+    echo "Created worktree at $WORKTREE_PATH for branch $BRANCH_NAME"
+    ;;
+  list)
+    git worktree list
+    ;;
+  cleanup)
+    WORKTREE_PATH="$2"
+    BRANCH=$(basename "$WORKTREE_PATH")
+    git worktree remove "$WORKTREE_PATH"
+    git branch -D "$BRANCH"
+    echo "Removed worktree and branch $BRANCH"
+    ;;
+esac
+```
+
+You can also combine this with Claude Code's MCP (Model Context Protocol) capabilities. Skills like `internal-comms` can automatically generate status updates about what you're working on in each worktree, keeping your team informed without manual tracking.
 
 ## Best Practices
 
 Organize your worktree parent directory consistently. Many developers use a structure like `~/workspaces/project-name/` with subdirectories for each branch. This keeps related directories grouped and makes navigation intuitive.
 
-Name worktrees descriptively. While branch names might be cryptic, adding context helps:
+Establish clear naming conventions using prefixes to identify worktree purpose at a glance:
 
-```bash
-git worktree add ../frontend-refactor feature/ refactor-frontend
-```
+- Use prefixes like `feat-`, `fix-`, `review-`, `exp-` to identify worktree purpose
+- Include the ticket or issue number when applicable
+- Keep names lowercase with hyphens for consistency
 
 Regularly prune stale worktrees to avoid accumulating directories for merged or abandoned branches:
 
 ```bash
 git worktree prune
 ```
+
+Worktrees share the `.git` directory, so they do not duplicate the entire repository. However, each worktree has its own working files. For large projects, be mindful of disk usage and remove worktrees when no longer needed.
+
+## Common Worktree Issues and Solutions
+
+### Issue: Detached HEAD in Worktree
+
+When you create a worktree for a branch that does not exist yet, it starts in detached HEAD state. This is normal and expected. Once you make your first commit, the branch will be properly established.
+
+### Issue: Moving Files Between Worktrees
+
+If you need to move files between worktrees, use standard file operations — Git handles the rest:
+
+```bash
+# Copy file from one worktree to another
+cp ../project-feature/src/utils.js ../project-bugfix/src/utils.js
+```
+
+### Issue: Permission Errors
+
+Worktrees sometimes have permission issues on shared filesystems. Ensure consistent file permissions across all worktree directories.
 
 ## Conclusion
 
