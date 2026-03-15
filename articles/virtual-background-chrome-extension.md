@@ -6,6 +6,10 @@ description: "Learn how virtual background Chrome extensions work under the hood
 date: 2026-03-15
 author: theluckystrike
 permalink: /virtual-background-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Virtual Background Chrome Extension: A Practical Guide for Developers
