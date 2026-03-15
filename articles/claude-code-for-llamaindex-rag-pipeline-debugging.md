@@ -37,10 +37,10 @@ Each component presents potential points of failure that require systematic debu
 Start by ensuring Claude Code is properly configured with the necessary skills. The most relevant skills for RAG debugging include:
 
 ```bash
-claude install python
-claude install xlsx
-claude install docx
-claude install pdf
+# Place the python skill in ~/.claude/skills/python.md
+# Place the xlsx skill in ~/.claude/skills/xlsx.md
+# Place the docx skill in ~/.claude/skills/docx.md
+# Place the pdf skill in ~/.claude/skills/pdf.md
 ```
 
 These skills enable Claude to read and analyze various document types, which is crucial when debugging the document loading phase.

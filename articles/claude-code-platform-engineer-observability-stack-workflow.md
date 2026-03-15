@@ -35,10 +35,10 @@ First, ensure you have the essential observability-related skills installed. Cla
 
 ```bash
 # Install key observability skills
-claude install grafana
-claude install prometheus
-claude install datadog
-claude install logging
+# Place the grafana skill in ~/.claude/skills/grafana.md
+# Place the prometheus skill in ~/.claude/skills/prometheus.md
+# Place the datadog skill in ~/.claude/skills/datadog.md
+# Place the logging skill in ~/.claude/skills/logging.md
 ```
 
 These skills understand the configuration formats, best practices, and deployment patterns for each tool.

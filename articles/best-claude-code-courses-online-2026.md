@@ -45,7 +45,7 @@ Many developers benefit from focusing on individual skills rather than trying to
 
 ```bash
 # Installing the pdf skill
-claude install pdf
+# Place the pdf skill in ~/.claude/skills/pdf.md
 
 # Basic PDF generation
 claude pdf create --template invoice --data data.json --output invoice.pdf
