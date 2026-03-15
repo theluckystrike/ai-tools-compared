@@ -1,19 +1,23 @@
 ---
 
+
 layout: default
 title: "AI Password Generator Chrome Extension: A Developer Guide"
 description: "Learn how to build an AI-powered password generator Chrome extension. Practical code examples, security considerations, and implementation patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-password-generator-chrome-extension/
 categories: [guides]
-tags: [chrome-extension, password-security, ai-tools]
+tags: [chrome-extension, password-security, ai-tools, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # AI Password Generator Chrome Extension: A Developer Guide
 
-Password security remains one of the most critical aspects of digital hygiene. While traditional password generators produce random strings, AI-powered generators can create memorable yet highly secure passwords based on user context, preferences, and predictable patterns that humans naturally struggle with. This guide walks you through building a Chrome extension that leverages AI to generate intelligent passwords.
+Password security remains one of the most critical aspects of digital hygiene. While traditional password generators produce random strings, AI-powered generators can create memorable yet highly secure passwords based on user context, preferences, and predictable patterns that humans naturally struggle with. This guide walks you through building a Chrome extension that uses AI to generate intelligent passwords.
 
 ## Why AI for Password Generation?
 
