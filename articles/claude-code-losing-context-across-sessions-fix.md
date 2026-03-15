@@ -9,12 +9,13 @@ permalink: /claude-code-losing-context-across-sessions-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 # Claude Code Losing Context Across Sessions Fix
 
-Claude Code provides a powerful terminal-based AI assistant experience, but users sometimes encounter issues where the assistant loses context between sessions. This creates frustration when you expect Claude to remember previous conversations, project details, or ongoing tasks. This guide covers the common causes and practical solutions for restoring persistent context across Claude Code sessions.
+To fix Claude Code losing context across sessions, use the `--session` flag to persist conversation history: run `claude --session my-project-session` each time you start work, and Claude will retain context from previous interactions. If named sessions aren't enough, combine them with project-level `.claude-context` files and shell aliases for automatic session resumption. Below are all the common causes and step-by-step fixes.
 
 ## Understanding How Claude Code Handles Sessions
 

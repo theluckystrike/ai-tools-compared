@@ -9,13 +9,14 @@ permalink: /claude-code-tool-use-loop-not-terminating-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
 # Claude Code Tool Use Loop Not Terminating Fix
 
-Claude Code provides powerful tool-use capabilities that allow the AI to interact with your filesystem, run commands, and perform complex development tasks. However, you may encounter situations where Claude Code enters a tool use loop that fails to terminate, repeatedly calling tools without reaching a resolution. This guide covers the common causes of this issue and provides practical solutions.
+To stop a Claude Code tool use loop that won't terminate, press `Ctrl+C` to interrupt the current operation, then start a fresh session with `claude --new-session` to clear the accumulated context causing the loop. If the problem recurs, provide explicit exit conditions in your prompts (e.g., "Stop after correcting lines 12, 24, and 31") and enable confirmation prompts with `CLAUDE_CODE_PROMPT_CONFIRMATION=true` so you can break cycles manually. This guide covers all the root causes and fixes below.
 
 ## Understanding Tool Use Loops
 
