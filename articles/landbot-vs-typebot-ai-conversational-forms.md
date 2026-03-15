@@ -210,5 +210,10 @@ For AI-powered conversational forms specifically, Typebot's approach of letting 
 
 Both platforms continue evolving their AI capabilities, so evaluating current needs while considering future requirements matters when making a long-term platform decision.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
