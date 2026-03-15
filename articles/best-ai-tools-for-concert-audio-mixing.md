@@ -6,6 +6,10 @@ description: "A practical comparison of AI-powered tools for concert audio mixin
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-concert-audio-mixing/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
