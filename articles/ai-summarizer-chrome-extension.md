@@ -93,11 +93,29 @@ function extractPageContent() {
     }
   }
 
-  // Fallback: extract from body, removing common non-content elements
+  // Fallback: find the largest text block by scanning paragraph parent elements
+  const paragraphs = document.querySelectorAll('p');
+  let maxText = '';
+  let parentElement = null;
+
+  paragraphs.forEach(p => {
+    const parent = p.parentElement;
+    const text = parent.textContent;
+    if (text.length > maxText.length) {
+      maxText = text;
+      parentElement = parent;
+    }
+  });
+
+  if (parentElement) {
+    return cleanText(parentElement.textContent);
+  }
+
+  // Last resort: extract from body, removing common non-content elements
   const clone = document.body.cloneNode(true);
-  const removeSelectors = ['script', 'style', 'nav', 'header', 'footer', 
+  const removeSelectors = ['script', 'style', 'nav', 'header', 'footer',
                             'aside', '.ad', '.sidebar', '.comments'];
-  
+
   removeSelectors.forEach(sel => {
     clone.querySelectorAll(sel).forEach(el => el.remove());
   });
@@ -246,6 +264,77 @@ async function getApiKey() {
   return result.apiKey;
 }
 ```
+
+### Alternative: OpenAI Integration with Background Script Routing
+
+If you prefer OpenAI or want to support multiple summarization styles (bullet points vs. paragraphs), move the API call into `background.js` and have the popup route requests through it. This pattern also keeps your API key out of the popup context entirely.
+
+```javascript
+// background.js - OpenAI summarization handler
+const API_ENDPOINT = 'https://api.openai.com/v1/chat/completions';
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === 'generateSummary') {
+    generateSummary(request.content, request.style)
+      .then(sendResponse)
+      .catch(err => sendResponse({ error: err.message }));
+    return true; // keep channel open for async response
+  }
+});
+
+async function generateSummary(content, style = 'concise') {
+  const apiKey = await getApiKey();
+  if (!apiKey) {
+    throw new Error('API key not configured. Please set your API key in extension settings.');
+  }
+
+  const systemPrompt = style === 'bullet'
+    ? 'Summarize the following article in 5-7 bullet points. Each point should capture a key concept or finding.'
+    : 'Summarize the following article in 2-3 paragraphs. Capture the main points and key takeaways.';
+
+  const response = await fetch(API_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: `Article content:\n\n${content}` }
+      ],
+      temperature: 0.5,
+      max_tokens: 1000
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status}`);
+  }
+
+  const data = await response.json();
+  return data.choices[0].message.content;
+}
+
+async function getApiKey() {
+  const result = await chrome.storage.local.get('openaiApiKey');
+  return result.openaiApiKey;
+}
+```
+
+When using this routing pattern, the popup sends a message to background rather than calling the API directly:
+
+```javascript
+// In popup.js — send to background for processing
+const summary = await chrome.runtime.sendMessage({
+  action: 'generateSummary',
+  content: response.content,
+  style: styleSelect.value  // 'concise' or 'bullet'
+});
+```
+
+You can expose the style choice in the popup with a `<select>` element offering "Paragraph Summary" and "Bullet Points" options. This gives users flexible output formats without duplicating API logic across files.
 
 ### Step 6: Options Page for API Key Management
 
