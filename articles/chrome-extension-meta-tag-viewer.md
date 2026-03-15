@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Extension Meta Tag Viewer: Inspect HTML Metadata Without Leaving Your Browser"
+title: "Chrome Extension Meta Tag Viewer: Inspect HTML Metadata."
 description: "Learn how to build and use a Chrome extension for viewing meta tags. Complete guide for developers to inspect OG tags, Twitter cards, and custom metadata."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -238,5 +238,12 @@ The extension icon appears in your toolbar. Visit any webpage and click it to vi
 A Chrome extension meta tag viewer transforms metadata inspection from a multi-step process into a single click. The manifest, popup interface, and injection script combine to extract structured data from any webpage. Developers use these tools daily for SEO audits, social sharing verification, and integration debugging. Building your own gives you full control over the presentation and can be customized for specific workflows.
 
 The complete code above provides a functional foundation. From here, you can add features like tag filtering, export capabilities, or integration with APIs for automated testing. Metadata affects how your content appears across the web, and having the right tools to inspect it quickly saves development time.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

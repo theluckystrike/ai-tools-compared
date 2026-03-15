@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Extension Bulk Social Media Posting: A Developer Guide"
+title: "Chrome Extension Bulk Social Media Posting: A Developer."
 description: "Learn how to build and use Chrome extensions for bulk social media posting. Technical guide for developers and power users with practical examples."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -219,5 +219,12 @@ When ready to distribute your extension, create a `zip` file of your extension d
 For enterprise or team deployments, you can package the extension as a CRX file and distribute it through group policies or internal hosting.
 
 Building a Chrome extension for bulk social media posting gives you complete control over your publishing workflow while keeping data under your own control. Start with a single platform, validate the architecture, then expand to additional networks as your implementation matures.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
