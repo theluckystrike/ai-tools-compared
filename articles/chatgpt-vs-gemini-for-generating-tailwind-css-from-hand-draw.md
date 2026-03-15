@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Gemini for Generating Tailwind CSS from Hand-Drawn Wireframes"
+title: "ChatGPT vs Gemini for Generating Tailwind CSS from."
 description: "A practical comparison of ChatGPT and Gemini for converting hand-drawn wireframes into Tailwind CSS code. Includes real examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
@@ -165,5 +165,10 @@ When something isn't right, provide feedback directly. Both tools respond well t
 Both ChatGPT and Gemini are capable of generating useful Tailwind CSS from wireframe descriptions. ChatGPT wins on prompt-based workflows and iterative refinement, while Gemini offers a unique advantage with native image input support. For most developers working from written wireframe specs, ChatGPT remains the more predictable choice. If you prefer to share visual sketches directly, Gemini's multimodal capabilities are worth exploring.
 
 Test both with a simple wireframe first, then decide which fits your workflow best.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
