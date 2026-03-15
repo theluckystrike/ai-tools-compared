@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Changelog Review Workflow Tutorial"
 description: "Learn how to create a Claude skill for automated changelog review. This tutorial covers building a custom skill that validates, analyzes, and improves your project's changelog entries."
@@ -7,7 +8,10 @@ categories: [tutorials, workflows]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-changelog-review-workflow-tutorial/
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Changelog Review Workflow Tutorial
 
