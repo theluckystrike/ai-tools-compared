@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome vs Opera GX RAM: A Developer's Performance Guide"
 description: "Compare Chrome and Opera GX memory usage with practical benchmarks and optimization strategies for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-vs-opera-gx-ram/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 When choosing a browser for development work, memory consumption directly impacts your workflow. Running multiple browser instances, developer tools, and background services means every megabyte counts. This article compares Chrome and Opera GX RAM usage with concrete benchmarks and practical optimization strategies.
 
