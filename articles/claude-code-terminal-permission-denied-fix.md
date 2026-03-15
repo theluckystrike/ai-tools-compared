@@ -204,5 +204,10 @@ Once you have resolved the permission error, take steps to prevent recurrence:
 
 Permission denied errors in Claude Code usually stem from three sources: executable permissions on commands, file and directory access, or Claude Code's own internal data. Work through each fix systematically, starting with the simplest (checking command permissions) and moving to more complex solutions (shell profile debugging). Most issues resolve quickly once you identify which layer is causing the problem.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
