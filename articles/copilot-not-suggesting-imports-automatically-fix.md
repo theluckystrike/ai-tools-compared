@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -22,7 +23,7 @@ To fix Copilot not suggesting imports, first verify that `editor.inlineSuggest.e
 
 Copilot should automatically suggest import statements when you use a function, class, or module that isn't currently imported in your file. For example, if you type `Math.random()` in JavaScript, Copilot should recognize that `Math` needs to be imported and suggest the appropriate import statement. When this feature stops working, several factors could be responsible.
 
-Before diving into fixes, verify that Copilot is actually enabled in your environment. Sometimes the simplest explanation is the correct one.
+First, verify that Copilot is actually enabled in your environment. Sometimes the simplest explanation is the correct one.
 
 ## Step-by-Step Fixes
 
@@ -147,12 +148,7 @@ If the issue persists after trying all fixes, consider:
 
 The most frequent reasons Copilot stops suggesting imports include:
 
-- **Disabled language support**: The specific language may be turned off
-- **Outdated software**: Old versions lack necessary fixes
-- **Authentication problems**: Session expiration or sign-in issues
-- **Conflicting settings**: Editor or workspace configurations interfere
-- **Insufficient context**: Files need proper extensions and saved state
-- **Network issues**: Connectivity problems prevent Copilot from functioning
+The most frequent causes are disabled language support for the specific language, outdated software lacking necessary fixes, authentication problems from session expiration or sign-in issues, conflicting editor or workspace settings, insufficient context from missing file extensions or unsaved state, and network issues that prevent Copilot from reaching GitHub.
 
 ## Prevention Best Practices
 
@@ -163,7 +159,7 @@ Maintain consistent Copilot performance by:
 - Avoiding overly broad exclusion patterns
 - Monitoring extension interactions when installing new tools
 
-Most import suggestion issues resolve by updating your software or re-authenticating. Start with the simpler fixes before proceeding to more involved troubleshooting steps.
+Most import suggestion issues resolve by updating your software or re-authenticating.
 
 ---
 

@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose ChatGPT if you describe wireframes in text and want polished, iteratively refinable Tailwind CSS output. Choose Gemini if you want to photograph a hand-drawn sketch and get working code directly from the image. ChatGPT produces slightly more organized class structures from written prompts, while Gemini's native multimodal input eliminates the need to verbalize every layout detail.
