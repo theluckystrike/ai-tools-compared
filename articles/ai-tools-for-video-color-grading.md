@@ -6,7 +6,7 @@ description: "Explore AI-powered tools for video color grading with practical ex
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-color-grading/
-categories: [tools, video, color-grading]
+categories: [guides]
 ---
 
 {% raw %}
