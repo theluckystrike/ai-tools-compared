@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome iPad Slow Fix: Speed Up Your Browser in 2026"
 description: "Discover proven methods to fix Chrome running slow on iPad. Developer-tested solutions for memory issues, tab management, and performance optimization."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-ipad-slow-fix/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome iPad Slow Fix: Speed Up Your Browser in 2026
 
