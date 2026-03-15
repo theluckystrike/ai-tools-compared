@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Workload Balance Tracker: A Developer Guide"
 description: "Learn how to build and use chrome extension workload balance trackers to manage tasks, time, and productivity across projects."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-workload-balance-tracker/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extension workload balance trackers are specialized browser tools that help developers and power users monitor, distribute, and optimize their work across multiple projects and time blocks. These extensions bridge the gap between simple task lists and comprehensive project management, offering real-time insights into how you allocate your time and mental energy.

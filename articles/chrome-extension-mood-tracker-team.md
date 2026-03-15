@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Mood Tracker for Teams: Building Collaborative Wellness Tools"
 description: "Learn how to build a Chrome extension for team mood tracking. Explore implementation patterns, data synchronization, and privacy considerations for collaborative wellness monitoring."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-mood-tracker-team/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Building a Chrome extension for team mood tracking represents an interesting intersection of browser extension development, real-time data synchronization, and team wellness analytics. This guide covers the technical implementation details, architectural decisions, and practical considerations for developers looking to create collaborative mood tracking tools.
@@ -295,3 +301,4 @@ Iterate based on feedback. A mood tracking tool that team members find intrusive
 Building a Chrome extension for team mood tracking requires thoughtful architecture balancing utility with privacy. The implementation patterns shown here provide a foundation, but adapt them to your specific team size, culture, and privacy requirements.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
