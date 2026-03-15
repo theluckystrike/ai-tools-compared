@@ -6,6 +6,10 @@ description: "A practical comparison of Claude and ChatGPT for creating custom E
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

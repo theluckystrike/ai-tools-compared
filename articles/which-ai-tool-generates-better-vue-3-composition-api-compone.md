@@ -5,6 +5,10 @@ description: "A practical comparison of AI coding assistants generating Vue 3 Co
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-tool-generates-better-vue-3-composition-api-compone/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
