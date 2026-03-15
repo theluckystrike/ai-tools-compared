@@ -5,6 +5,10 @@ description: "A practical comparison of GitHub Copilot and Cursor IDE when writi
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-rust-error-handling-with-custo/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
