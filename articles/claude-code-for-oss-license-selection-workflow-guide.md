@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for OSS License Selection Workflow Guide"
 description: "Build a Claude Code skill that guides developers through open source license selection with practical examples, decision trees, and automated compliance checks."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-license-selection-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for OSS License Selection Workflow Guide

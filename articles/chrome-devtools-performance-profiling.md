@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome DevTools Performance Profiling: A Practical Guide"
 description: "Master Chrome DevTools performance profiling to identify bottlenecks, optimize rendering, and build faster web applications. Includes practical examples and code snippets."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-devtools-performance-profiling/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome DevTools Performance Profiling: A Practical Guide
 

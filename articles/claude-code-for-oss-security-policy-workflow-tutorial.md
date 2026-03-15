@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for OSS Security Policy Workflow Tutorial"
 description: "Learn how to use Claude Code to create, manage, and automate Open Source Software security policy workflows for your projects."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-oss-security-policy-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills, security, open-source, workflow]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for OSS Security Policy Workflow Tutorial
 
@@ -149,7 +153,7 @@ Claude Code can explain these commands and help interpret their outputs in the c
 
 ## Integrating Security into Development Workflows
 
-The best security policies integrate seamlessly with development workflows rather than creating bottlenecks.
+The best security policies integrate smoothly with development workflows rather than creating bottlenecks.
 
 ### Pre-Commit Security Checks
 

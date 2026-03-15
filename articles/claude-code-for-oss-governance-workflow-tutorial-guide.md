@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for OSS Governance Workflow Tutorial Guide"
 description: "Learn how to use Claude Code to streamline open source software governance. Practical workflow automation for license compliance, dependency management, and security policies."
@@ -8,7 +9,10 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-governance-workflow-tutorial-guide/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
@@ -272,7 +276,7 @@ Governance needs evolve. Regularly review what your automation catches, what it 
 
 ## Conclusion
 
-OSS governance doesn't have to be a manual burden that slows down development. By leveraging Claude Code's capabilities for analysis, automation, and workflow orchestration, you can establish robust governance processes that scale with your project.
+OSS governance doesn't have to be a manual burden that slows down development. By using Claude Code's capabilities for analysis, automation, and workflow orchestration, you can establish robust governance processes that scale with your project.
 
 Start by implementing one or two of the workflows described in this guide—license compliance checks or dependency health reviews—and expand from there. The key is establishing consistent processes that protect your project while maintaining the agility that makes open source development powerful.
 

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Brave vs Chrome Privacy: A Technical Comparison for Developers and Power Users"
 description: "An in-depth technical comparison of Brave and Chrome browser privacy features. Explore tracking prevention, fingerprinting defense, network request patterns, and practical configuration strategies for developers who value privacy."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /brave-vs-chrome-privacy/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [chrome, claude-skills]
 ---
+
 
 {% raw %}
 

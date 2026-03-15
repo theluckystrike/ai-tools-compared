@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Release Branching Strategy Workflow"
 description: "Master release branching strategies with Claude Code. Learn practical workflows for managing releases, hotfixes, and version control in your development pipeline."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-release-branching-strategy-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 
 

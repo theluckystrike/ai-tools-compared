@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome DevTools Network Throttling: A Practical Guide"
 description: "Learn how to use Chrome DevTools network throttling to simulate slow connections, debug performance issues, and test your applications under real-world conditions."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-devtools-network-throttling/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome DevTools Network Throttling: A Practical Guide
 

@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Color Contrast Checker: Complete Guide"
 description: "Learn how to build and use Chrome extensions for color contrast checking. Practical implementation guide with code examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-color-contrast-checker/
 categories: [guides]
-tags: [chrome-extension, accessibility, color-contrast, web-development]
+tags: [chrome-extension, accessibility, color-contrast, web-development, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Extension Color Contrast Checker: Complete Guide
 
