@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Invoice Generator for Freelance Developers"
 description: "A practical guide to building a Chrome extension invoice generator tailored for freelance developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-invoice-generator-freelance/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Invoice Generator for Freelance Developers

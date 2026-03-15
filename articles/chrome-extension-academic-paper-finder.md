@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Academic Paper Finder: A Developer Guide"
 description: "Discover the best Chrome extensions for finding academic papers. Learn how to use these tools effectively for research, with code examples and practical tips."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-academic-paper-finder/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Academic Paper Finder: A Developer Guide
 
