@@ -230,11 +230,58 @@ Bump the version using semantic-version skill
 
 Claude Code will execute the versioning workflow, analyzing your commits and creating the appropriate release.
 
+## CI/CD Integration
+
+Automate version bumps in your CI pipeline with a GitHub Actions workflow:
+
+```yaml
+name: Semantic Release
+on:
+  push:
+    branches: [main]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+      - run: npm ci
+      - name: Run semantic versioning
+        id: semantic-version
+        run: node claude-skills/semantic-version/main.js
+      - name: Create GitHub Release
+        if: steps.semantic-version.outputs.new-version
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### Changelog Generation
+
+Extend the skill with a changelog generator that groups commits by type:
+
+```javascript
+function generateChangelog(commits, newVersion) {
+  const groups = { feat: [], fix: [], docs: [], perf: [], refactor: [] };
+  commits.forEach(c => {
+    const type = c.message.split(':')[0].replace(/\(.+\)/, '');
+    if (groups[type]) groups[type].push(c.message);
+  });
+
+  let changelog = `## ${newVersion}\n\n`;
+  if (groups.feat.length) changelog += `### Features\n${groups.feat.map(m => `- ${m}`).join('\n')}\n\n`;
+  if (groups.fix.length) changelog += `### Bug Fixes\n${groups.fix.map(m => `- ${m}`).join('\n')}\n\n`;
+  return changelog;
+}
+```
+
 ## Best Practices for Versioning Workflows
 
-Maintain consistency in your versioning workflow by following these proven practices. First, always use conventional commit messages—establish team conventions requiring `feat:`, `fix:`, and `BREAKING CHANGE:` prefixes for clear version impact detection. Second, automate the version bump in your CI pipeline—integrate the skill into GitHub Actions or similar CI systems to ensure every release follows the same process.
+Maintain consistency in your versioning workflow by following these proven practices. First, always use conventional commit messages—establish team conventions requiring `feat:`, `fix:`, and `BREAKING CHANGE:` prefixes for clear version impact detection. Second, automate the version bump in your CI pipeline. Third, use **annotated tags** over lightweight tags—they store metadata, author info, and message content that lightweight tags omit. Fourth, document versioning conventions in a **CONTRIBUTING.md** file for contributors. Fifth, test version calculations in isolation before applying changes to production repositories.
 
-Third, protect your release tags by configuring branch protection rules that require pull requests for tag creation. Fourth, generate comprehensive changelogs by extending the skill to parse full commit bodies and group changes by type. Fifth, test version calculations in isolation before applying changes to production repositories.
+The **tdd** skill helps verify release-readiness, **pdf** and **docx** skills generate versioned release documentation, and **supermemory** tracks release history across sessions.
 
 ## Troubleshooting Common Issues
 

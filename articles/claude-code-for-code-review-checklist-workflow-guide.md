@@ -164,18 +164,31 @@ Switch between profiles by updating your context or specifying the checklist to 
 Please review this PR using the security-focused checklist in docs/security-review-checklist.md
 ```
 
-## Automating Review Reminders
+## Dynamic PR-Based Checklist Generation
 
-You can set up Git hooks or CI integration to remind reviewers about the checklist. Here's a simple pre-commit hook that validates checklist completion:
+Instead of static checklists, generate context-aware checklists from the actual PR diff:
 
 ```bash
-#!/bin/bash
-# .git/hooks/prepare-commit-msg
-
-echo "Remember to reference your code review checklist findings in this commit"
+PR_DIFF=$(git diff origin/main...HEAD)
+claude -p "Analyze this PR diff and generate a code review checklist" << EOF
+$PR_DIFF
+EOF
+gh pr comment $PR_NUMBER --body-file checklist.md
 ```
 
-For GitHub Actions, create a workflow that links to your checklist:
+For language-specific reviews:
+
+```bash
+claude "/review: Generate a Python-specific code review checklist"
+# Returns: PEP 8 compliance, type hints, docstrings, bandit security checks
+
+claude "/review: Generate a JavaScript-specific code review checklist"
+# Returns: ESLint compliance, React best practices, bundle size impact
+```
+
+## Automating Review Reminders
+
+Set up Git hooks or CI integration to automate checklist posting. A GitHub Actions workflow can generate and post the checklist as a PR comment:
 
 ```yaml
 name: Code Review Checklist
@@ -186,10 +199,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Post checklist reminder
+      - name: Generate and post checklist
         run: |
-          echo "Please review using the checklist: https://github.com/yourorg/project/CODE_REVIEW_CHECKLIST.md"
+          chmod +x .github/scripts/review-checklist.sh
+          .github/scripts/review-checklist.sh
 ```
+
+### Audit Trail
+
+Write dated review summaries to disk for compliance tracking:
+
+```bash
+cat > reviews/$(date +%Y%m%d)-${PR_NUMBER}.md << 'EOF'
+# Code Review: PR #123
+
+| Category | Status | Notes |
+|----------|--------|-------|
+| Security | Pass | No credentials found |
+| Tests    | Pass | Coverage above threshold |
+| Performance | Warn | Large query in user service |
+EOF
+```
+
+Enforce checklist completion via branch protection rules to prevent merging without a completed review.
 
 ## Best Practices for Effective Reviews
 

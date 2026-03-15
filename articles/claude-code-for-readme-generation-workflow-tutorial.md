@@ -221,17 +221,49 @@ Always review generated README files before committing. While Claude Code produc
 
 Once you're comfortable with basic README generation, explore these advanced techniques.
 
+### Template-Based Generation
+
+Create a separate `README.template.md` file with placeholders for repeatable generation:
+
+```markdown
+# {{project_name}}
+{{project_description}}
+## Features
+{{features}}
+## Quick Start
+{{install_command}}
+## Configuration
+{{config_section}}
+## Contributing
+{{contributing_section}}
+```
+
+Version-control templates separately from generated output to track template evolution independently.
+
+### Extracting Documentation from Source
+
+Use grep-based extraction to feed existing inline docs into README generation:
+
+```bash
+# Extract documented TypeScript functions
+grep -r "export function" src/ --include="*.ts"
+grep -r "/\*\*" src/ --include="*.ts" -A 5
+
+# Extract Python docstrings
+grep -r '"""' --include="*.py" -A 2
+```
+
+### Package Manifest to README Mapping
+
+Parse `package.json` scripts to generate accurate command documentation automatically, mapping each script to a user-friendly description in the README.
+
+### Cross-Session Context with Supermemory
+
+Use the **supermemory** skill to maintain README context across Claude Code sessions — storing previous README versions, tracking which sections need updates, and suggesting improvements based on common patterns. The **frontend-design**, **tdd**, and **pdf** skills also integrate well: documenting UI components, generating test coverage badges, and converting README to PDF for distribution.
+
 ### Multi-Language Support
 
 Create separate templates for different project types and let Claude detect and apply the appropriate template automatically. This ensures each project gets documentation tailored to its language and ecosystem.
-
-### Custom Sections
-
-Add project-specific sections for unique requirements. For example, include architecture diagrams, migration guides, or performance benchmarks when relevant to your project.
-
-### Automated Updates
-
-Set up triggers to update specific README sections when code changes. For instance, automatically update the API reference when function signatures change, or refresh version badges when you release new versions.
 
 ## Conclusion
 
