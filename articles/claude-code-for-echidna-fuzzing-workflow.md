@@ -160,14 +160,51 @@ jobs:
 
 **Iterative improvement**: Start with simple properties and gradually add more complex invariants as your contract evolves.
 
+## Interpreting Results with Claude Code
+
+When Echidna discovers a vulnerability, it outputs a minimal reproduction sequence. Here's sample output for a failing property:
+
+```
+echidna_test_balance_non_negative: FAILED!
+Call sequence:
+    buy() from 0x1... with 10000000000000000
+    buy() from 0x2... with 10000000000000000
+    withdraw() from 0x00a3... (owner)
+```
+
+Paste this output into Claude Code and ask it to explain:
+- What the vulnerability is
+- How the attack works
+- How to fix it in your contract
+- Whether similar patterns exist elsewhere in your codebase
+
+Claude can also help you triage findings by distinguishing:
+- **True positives**: Actual vulnerabilities requiring fixes
+- **False positives**: Properties that are too strict or incorrectly defined
+- **Low severity**: Issues that don't pose practical risk
+
 ## Common Echidna Issues and Solutions
 
 Claude Code can help troubleshoot common fuzzing challenges:
 
-- **Slow execution**: Reduce the number of senders or simplify property functions
+- **Slow execution**: Reduce the number of senders or simplify property functions. You can also tune `testLimit` (number of transactions to generate) and `seqLen` (length of transaction sequences) in your configuration — lower values run faster, while higher values give broader coverage.
 - **Coverage gaps**: Ensure all public functions have corresponding properties
 - **False positives**: Refine property logic to handle valid edge cases
 - **Timeout issues**: Increase gas limits in your configuration
+
+## Best Practices for Effective Fuzzing
+
+Follow these recommendations to get the most from your Echidna campaigns:
+
+**Define clear invariants**: Properties should express fundamental truths about your contract's behavior. Avoid testing implementation details — focus on security properties and business logic rules.
+
+**Start with broad coverage**: Begin with a high transaction limit to discover obvious issues, then narrow focus on specific areas as you fix vulnerabilities.
+
+**Update properties as you learn**: Each fuzzing campaign may reveal assumptions that don't hold. Update your properties to accurately reflect intended behavior.
+
+**Combine with other tools**: Use Echidna alongside static analysis (Slither), formal verification (Certora, Mythril), and manual code review for comprehensive security coverage.
+
+**Track findings over time**: Maintain a database of discovered vulnerabilities and their status to understand your security posture improvements.
 
 ## Conclusion
 
