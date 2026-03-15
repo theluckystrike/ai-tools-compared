@@ -21,6 +21,12 @@ Vitest offers significant performance advantages over traditional testing framew
 
 The real power comes from how Claude Code can understand your project structure and generate meaningful tests without requiring extensive context. Using the **tdd** skill alongside Vitest allows you to work in true test-first fashion, writing tests before implementation while Claude Code helps translate your intent into working code.
 
+## Why Choose Vitest?
+
+Vitest is purpose-built for projects that use Vite, giving it native ESM support and sub-second startup times that Jest cannot match in those environments. Its watch mode is powered by Vite's HMR pipeline, so only the tests affected by a file change re-run—making the feedback loop feel nearly instantaneous on large codebases. The API is intentionally Jest-compatible (`describe`, `it`, `expect`, `vi.fn()`), which means migrating existing tests is usually a find-and-replace away. If you are working on a Vite-based project, a modern framework like Nuxt 3 or SvelteKit, or any stack where native ESM is a first-class concern, Vitest is the natural choice.
+
+For teams using Jest, see [Jest Unit Testing Workflow](/claude-skills-guide/claude-code-jest-unit-testing-workflow-guide/)
+
 ## Setting Up Vitest with Claude Code
 
 First, ensure Vitest is installed in your project:
@@ -196,6 +202,7 @@ By establishing good habits—writing tests first, using watch mode, and using C
 
 ## Related Reading
 
+- [Jest Unit Testing Workflow](/claude-skills-guide/claude-code-jest-unit-testing-workflow-guide/)
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
