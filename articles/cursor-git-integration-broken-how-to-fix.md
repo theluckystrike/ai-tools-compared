@@ -3,9 +3,11 @@ layout: default
 title: "Cursor Git Integration Broken How to Fix"
 description: "Troubleshooting guide for fixing Cursor IDE Git integration issues. Step-by-step solutions for developers experiencing broken Git features in Cursor."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /cursor-git-integration-broken-how-to-fix/
 categories: [troubleshooting]
+reviewed: true
+score: 8
 ---
 
 Cursor IDE offers powerful Git integration that streamlines version control workflows directly within the editor. When this integration breaks, it disrupts your development process and can block essential operations like committing changes, pulling updates, or viewing diffs. This guide walks through the most common causes of broken Git integration in Cursor and provides practical solutions to get you back on track.

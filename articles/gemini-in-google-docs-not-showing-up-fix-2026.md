@@ -3,8 +3,11 @@ layout: default
 title: "Gemini in Google Docs Not Showing Up? Fixes for 2026"
 description: "Troubleshooting guide for developers and power users experiencing Gemini AI features missing from Google Docs. Step-by-step diagnostic tips and solutions."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /gemini-in-google-docs-not-showing-up-fix-2026/
+reviewed: true
+score: 8
+categories: [troubleshooting]
 ---
 
 {% raw %}
