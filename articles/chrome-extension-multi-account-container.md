@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Multi Account Container: A Developer Guide"
 description: "Learn how to build and implement multi-account container systems for Chrome extensions, enabling users to manage separate identities within a single browser profile."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-multi-account-container/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extensions that handle multiple accounts within a single browser profile solve a real problem for developers, marketers, and power users who manage numerous identities. Rather than maintaining separate browser profiles or logging out and back in repeatedly, a well-designed multi-account container system lets users switch between contexts instantly.
