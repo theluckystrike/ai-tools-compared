@@ -175,4 +175,11 @@ When Chrome doesn't appear in Self Service or fails to install, check these comm
 
 Deploying Chrome Enterprise with Munki gives your organization a flexible, scriptable solution for browser management. The initial setup requires some infrastructure work, but the payoff comes in consistent deployments, automatic updates, and centralized policy control across your entire Mac fleet.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Tree-Sitter Node Types Workflow Guide"
-description: "Learn how to leverage Claude Code with tree-sitter for analyzing source code structure, understanding node types, and building powerful code analysis workflows."
+description: "Learn how to leverage Claude Code with tree-sitter for analyzing source code structure, understanding node types, and building powerful code analysis."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -157,3 +157,10 @@ The key is starting with understanding node types, then building progressively m
 ## Conclusion
 
 Tree-sitter node types provide a robust foundation for code analysis, and Claude Code amplifies this capability by helping you write queries, understand patterns, and build analysis tools. Start with understanding basic node types, practice parsing and exploring code structure, then progressively tackle more complex analysis tasks. The combination of tree-sitter's parsing power and Claude Code's assistance makes sophisticated code analysis accessible to developers at any level.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

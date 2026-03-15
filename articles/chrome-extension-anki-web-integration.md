@@ -2,7 +2,7 @@
 
 layout: default
 title: "Chrome Extension Anki Web Integration: A Developer Guide"
-description: "Learn how to build Chrome extensions that integrate with Anki for automatic flashcard creation from web content. Practical code examples and implementation patterns."
+description: "Learn how to build Chrome extensions that integrate with Anki for automatic flashcard creation from web content. Practical code examples and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-anki-web-integration/
@@ -275,5 +275,12 @@ When distributing your extension, keep these practical notes in mind:
 This foundation supports many extensions: language learning from news sites, technical term capture from documentation, research paper highlights, and more. The key is defining clear extraction rules for your specific use case and handling the data transformation between web content and Anki's card format.
 
 The AnkiConnect API supports additional operations like searching existing cards, updating notes, and managing decks. These enable features like duplicate detection before adding new cards, automatic deck routing based on content source, and bulk import from saved collections.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

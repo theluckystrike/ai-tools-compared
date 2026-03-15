@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Chrome Extension Language Learning Immersion: A Developer's Guide"
-description: "Build Chrome extensions for language learning immersion. Explore implementation patterns, content injection techniques, and practical code examples for developers."
+title: "Chrome Extension Language Learning Immersion: A."
+description: "Build Chrome extensions for language learning immersion. Explore implementation patterns, content injection techniques, and practical code examples for."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-language-learning-immersion/
@@ -264,5 +264,12 @@ Successful language immersion extensions balance learning with usability. Consid
 **Progress tracking**: Store vocabulary acquisition data locally using the Chrome Storage API to show users their learning progress over time.
 
 Chrome extensions for language learning immersion transform ordinary browsing into continuous learning opportunities. The implementation patterns covered here provide a foundation for building effective tools that help users acquire new languages naturally through their existing web activities.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
