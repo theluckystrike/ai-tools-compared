@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Sync Slowing Browser: Causes and Solutions for Power Users"
 description: "Discover why Chrome sync may be slowing your browser. Learn practical troubleshooting steps, diagnostic techniques, and optimization strategies."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-sync-slowing-browser/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [chrome, claude-skills]
 ---
+
 
 Chrome Sync is a powerful feature that keeps your bookmarks, history, passwords, and settings synchronized across all your devices. However, when Chrome sync starts causing browser slowdowns, it can significantly impact your productivity. This guide explores the root causes of Chrome sync performance issues and provides actionable solutions for developers and power users.
 

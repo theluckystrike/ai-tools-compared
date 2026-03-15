@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Slow Too Many Extensions: A Practical Guide for Developers"
 description: "Diagnose and fix Chrome performance issues caused by excessive extensions. Learn to identify resource-heavy extensions, profile memory usage, and optimize your browser for development workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-slow-too-many-extensions/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome Slow Too Many Extensions: A Practical Guide for Developers
 

@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Performance Flags: The Complete Developer Guide"
 description: "Master Chrome performance flags to optimize browser speed, reduce memory usage, and improve development workflow. Practical examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-performance-flags/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome Performance Flags: The Complete Developer Guide
 

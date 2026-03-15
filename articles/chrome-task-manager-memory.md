@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Task Manager Memory: A Developer Guide to Monitoring and Optimizing"
 description: "Learn how to use Chrome Task Manager to identify memory leaks, monitor tab resource usage, and optimize browser performance for development workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-task-manager-memory/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 The Chrome Task Manager is an essential utility for developers and power users who need detailed insights into browser resource consumption. While most users interact with Chrome through its simple interface, the Task Manager reveals the complex machinery running beneath each tab, extension, and renderer process.
 
