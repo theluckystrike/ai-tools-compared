@@ -74,7 +74,15 @@ When using the **pdf** skill for document processing, specify output format upfr
 ```
 This produces structured output instead of explanatory paragraphs.
 
-## Strategy 4: Use Caching Strategically
+## Strategy 4: Optimize Skill Chains
+
+Many workflows require multiple skills working together. The **mcp-builder** skill, for instance, might need to coordinate with **docx** for documentation and **xlsx** for test data. Plan these interactions to minimize redundant context loading.
+
+A practical approach is to complete work in stages with explicit boundaries. Process your documentation with **docx** first, then close that context before starting your spreadsheet work with **xlsx**. This prevents all the documentation context from carrying over into unrelated tasks.
+
+Similarly, the **canvas-design** skill works efficiently with clear design specifications. Provide exact dimensions, color codes, and layout requirements in your initial request, and the skill will generate precise outputs without requiring follow-up clarifications.
+
+## Strategy 5: Use Caching Strategically
 
 Claude Code supports response caching for repeated contexts. For workflows that process similar content, caching eliminates redundant API calls entirely.
 
@@ -90,14 +98,14 @@ def run_claude_task(prompt, context_key=None):
     if context_key and context_key in CLAUDE_CONTEXT_CACHE:
         # Reuse cached context instead of re-sending
         return claude.complete(
-            prompt, 
+            prompt,
             context=CLAUDE_CONTEXT_CACHE[context_key]
         )
 ```
 
 The **xlsx** skill works well with caching when you're processing similar spreadsheet templates repeatedly.
 
-## Strategy 5: Model Selection
+## Strategy 6: Model Selection
 
 Claude offers multiple models with different price points. Using Sonnet for complex reasoning tasks and Haiku for simple operations can cut costs significantly.
 
@@ -108,7 +116,7 @@ Claude offers multiple models with different price points. Using Sonnet for comp
 
 Reserve Opus for tasks requiring deep architectural decisions. Most code reviews, refactoring, and documentation tasks work perfectly with Sonnet.
 
-## Strategy 6: Batch Operations
+## Strategy 7: Batch Operations
 
 Single prompts with multiple tasks cost more than batched operations. Instead of multiple back-and-forth exchanges, combine requests:
 
@@ -124,13 +132,19 @@ Single prompts with multiple tasks cost more than batched operations. Instead of
 /doc generate API docs for user.py, order.py, payment.py - output to /docs/api/
 ```
 
-## Strategy 7: Skill-Specific Optimizations
+## Strategy 8: Skill-Specific Optimizations
 
 Different skills have unique optimization opportunities:
 
 - **tdd**: Write tests incrementally rather than generating entire test suites at once. This produces focused code and reduces context accumulation.
 - **frontend-design**: Use component-scoped prompts. "Update Button.tsx to use the new color palette" sends less context than "update our design system."
 - **pdf**: Extract specific sections rather than full documents when you only need portions.
+
+## Real-World Example: Reducing Costs by 40%
+
+Consider a development team using Claude Skills for a web application project. Initially, they invoked the **frontend-design** skill for every UI component request, loading their entire design system documentation each time. By extracting just the relevant component specifications and passing them explicitly, they reduced average token usage per request from 8,000 to 4,800 tokens.
+
+They applied similar optimizations to their **tdd** workflow. By narrowing test requests to specific functions and providing precise input-output expectations, they cut test generation time and token costs nearly in half.
 
 ## Measuring Your Savings
 
@@ -162,9 +176,11 @@ Reducing Claude Code API token costs comes down to being intentional about what 
 
 ## Related Reading
 
-- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) — Dedicated token optimization guide
 - [Why Is Claude Code Expensive: Large Context Tokens](/claude-skills-guide/why-is-claude-code-expensive-large-context-tokens/) — Understanding where token costs come from
 - [Claude Code Free Tier vs Pro Plan Feature Comparison 2026](/claude-skills-guide/claude-code-free-tier-vs-pro-plan-feature-comparison-2026/) — Plan comparison for cost management
+- [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — How skills load affects your token budget
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — Top skills worth the token investment
+- [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/best-claude-skills-for-devops-and-deployment/) — Optimize token usage in automated deployment pipelines
 - [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Advanced token optimization strategies
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
