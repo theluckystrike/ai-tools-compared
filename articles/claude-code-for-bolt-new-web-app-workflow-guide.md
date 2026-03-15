@@ -219,6 +219,7 @@ The key is treating Bolt.new as a starting point rather than a final destination
 
 ## Related Reading
 
+- [Bolt.new Review: AI Web App Builder 2026](/claude-skills-guide/bolt-new-review-ai-web-app-builder-2026/) — Full feature review of Bolt.new covering its capabilities, limitations, and where it fits in the modern development stack
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
