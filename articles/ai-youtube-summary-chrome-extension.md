@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "AI YouTube Summary Chrome Extension: Build Your Own"
 description: "Learn how to build an AI-powered YouTube summary Chrome extension from scratch. Practical code examples, architecture patterns, and implementation strategies for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-youtube-summary-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # AI YouTube Summary Chrome Extension: Build Your Own
 
