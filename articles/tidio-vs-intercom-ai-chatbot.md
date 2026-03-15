@@ -5,6 +5,10 @@ description: "A practical technical comparison of Tidio and Intercom AI chatbots
 date: 2026-03-15
 author: theluckystrike
 permalink: /tidio-vs-intercom-ai-chatbot/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
