@@ -6,6 +6,10 @@ description: "Discover how Chrome extensions can accelerate your LeetCode practi
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-leetcode-helper/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
