@@ -120,7 +120,7 @@ Claude Code adapts to every major programming language and framework. These guid
 - [Claude Code for Fly.io Deployment Automation Workflow](/claude-skills-guide/claude-code-for-fly-io-deployment-automation-workflow/) — Fly.io application deployment automation
 - [Claude Code for Monolith to Microservices Refactor Guide](/claude-skills-guide/claude-code-for-monolith-to-microservices-refactor-guide/) — Decomposing monoliths into microservices with Claude
 - [Claude Code MongoDB to PostgreSQL Migration Workflow](/claude-skills-guide/claude-code-mongodb-to-postgresql-migration-workflow/) — Migrating from document to relational storage
-- [Claude Code Polars DataFrame Workflow Guide](/claude-skills-guide/claude-code-polars-dataframe-workflow-guide/) — High-performance DataFrame operations with Polars
+- [Claude Code for Polars DataFrame Workflow Guide](/claude-skills-guide/claude-code-for-polars-dataframe-workflow-guide/) — High-performance DataFrame operations with Polars
 - [Claude Code Skills for PHP Laravel Development Workflow](/claude-skills-guide/claude-skills-for-php-laravel-development-workflow/) — Laravel development patterns and workflow automation
 - [Claude Code Skills for Solidity Smart Contracts](/claude-skills-guide/claude-code-skills-for-solidity-smart-contracts/) — Smart contract development on Ethereum
 - [Claude Code Spring Boot Java Microservices Guide 2026](/claude-skills-guide/claude-code-spring-boot-java-microservices-development/) — Spring Boot microservice patterns and JPA integration
@@ -356,7 +356,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [Claude Code Next.js Image Optimization Guide](/claude-skills-guide/claude-code-nextjs-image-optimization-guide/) | Frontend |
 | [Claude Code with Nix Flakes for Reproducible Development](/claude-skills-guide/claude-code-nix-flake-reproducible-development-environment/) | Cloud |
 | [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/) | Performance |
-| [Claude Code Polars DataFrame Workflow Guide](/claude-skills-guide/claude-code-polars-dataframe-workflow-guide/) | Data Science |
+| [Claude Code for Polars DataFrame Workflow Guide](/claude-skills-guide/claude-code-for-polars-dataframe-workflow-guide/) | Data Science |
 | [Claude Code Response Latency Optimization with Skills](/claude-skills-guide/claude-code-response-latency-optimization-with-skills/) | Performance |
 | [Claude Code Secret Scanning: Prevent Credential Leaks Guide](/claude-skills-guide/claude-code-secret-scanning-prevent-credential-leaks-guide/) | Security |
 | [Claude Code Security Code Review Checklist Automation](/claude-skills-guide/claude-code-security-code-review-checklist-automation/) | Security |
