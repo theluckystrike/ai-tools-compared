@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Translate Slow: Causes and Solutions for Developers"
 description: "Experiencing Chrome translate slow performance? This guide covers the technical reasons behind slow Google Translate in Chrome and practical fixes for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-translate-slow/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Translate Slow: Causes and Solutions for Developers
 

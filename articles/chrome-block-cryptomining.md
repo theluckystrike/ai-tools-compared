@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Block Cryptomining: A Developer's Guide to Protection"
 description: "Learn how to block cryptomining scripts in Chrome. Practical methods for developers and power users to protect browsers and servers from unauthorized mining."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-block-cryptomining/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Block Cryptomining: A Developer's Guide to Protection
 

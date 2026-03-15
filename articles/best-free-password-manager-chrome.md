@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Best Free Password Manager Chrome: A Developer's Guide"
 description: "Compare the top free password managers for Chrome extension integration. Features, security architecture, and developer workflow tips."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-free-password-manager-chrome/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Best Free Password Manager Chrome: A Developer's Guide
 

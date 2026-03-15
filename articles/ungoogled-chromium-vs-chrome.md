@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Ungoogled Chromium vs Chrome: A Practical Guide for Developers"
 description: "Compare ungoogled Chromium and Google Chrome: privacy differences, developer features, extension compatibility, and which browser suits your workflow."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ungoogled-chromium-vs-chrome/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Ungoogled Chromium vs Chrome: A Practical Guide for Developers

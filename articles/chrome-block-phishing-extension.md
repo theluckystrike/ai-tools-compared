@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Block Phishing Extension: A Developer Guide to Building Browser-Based Threat Detection"
 description: "Learn how to build a Chrome extension that detects and blocks phishing attempts. Covers URL analysis, domain verification, and practical implementation patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-block-phishing-extension/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Block Phishing Extension: A Developer Guide to Building Browser-Based Threat Detection
 

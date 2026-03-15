@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Core Web Vitals Fix: Complete Optimization Guide for 2026"
 description: "Learn how to fix Chrome Core Web Vitals issues. Practical code examples and optimization techniques for LCP, FID, and CLS improvements."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-core-web-vitals-fix/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Core Web Vitals Fix: Complete Optimization Guide for 2026
 

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Web Vitals Optimization: A Practical Guide for Developers"
 description: "Learn how to optimize your website's Chrome Web Vitals metrics including LCP, FID, and CLS with practical code examples and debugging strategies."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-web-vitals-optimization/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 Chrome Web Vitals have become essential metrics for understanding how users experience your website. These metrics directly impact search rankings and user engagement, making optimization a priority for developers who want to build high-performance web applications.
 

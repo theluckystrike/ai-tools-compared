@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Enhancer for YouTube Alternative Chrome Extension in 2026"
 description: "Discover the best Enhancer for YouTube alternatives in 2026. Learn about custom Chrome extensions, userscripts, and developer tools for advanced YouTube playback control."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /enhancer-for-youtube-alternative-chrome-extension-2026/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Enhancer for YouTube Alternative Chrome Extension in 2026
 
