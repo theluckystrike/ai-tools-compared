@@ -3,8 +3,11 @@ layout: default
 title: "Chrome Extension Social Media Image Resizer: A Developer Guide"
 description: "Learn how to build a Chrome extension for resizing images for social media platforms. Includes code examples and best practices for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-social-media-image-resizer/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 # Building a Chrome Extension for Social Media Image Resizing
