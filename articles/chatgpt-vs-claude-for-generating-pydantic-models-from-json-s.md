@@ -6,6 +6,10 @@ description: "A practical comparison of ChatGPT and Claude for generating Pydant
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
