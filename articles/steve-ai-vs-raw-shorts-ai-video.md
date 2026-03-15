@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Steve AI vs Raw Shorts: AI Video Creation Comparison for Developers"
-description: "A technical comparison of Steve AI and Raw Shorts for automated video creation, covering API capabilities, integration options, and practical code examples."
+title: "Steve AI vs Raw Shorts: AI Video Creation Comparison for."
+description: "A technical comparison of Steve AI and Raw Shorts for automated video creation, covering API capabilities, integration options, and practical code."
 date: 2026-03-15
 author: theluckystrike
 permalink: /steve-ai-vs-raw-shorts-ai-video/
@@ -180,6 +180,11 @@ Your choice depends on the primary use case:
 - **Budget-conscious short video needs** → Raw Shorts provides cost-effective short-form generation
 
 For developers building video automation systems that require both long-form content and social media clips, combining both platforms in a single pipeline may provide optimal results. Use Steve AI for explainer videos and detailed content, while leveraging Raw Shorts for quick social media updates and advertisements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
