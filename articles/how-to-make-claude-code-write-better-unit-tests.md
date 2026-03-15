@@ -37,14 +37,26 @@ This approach gives Claude Code a concrete checklist, resulting in tests that ac
 
 The **tdd** skill is specifically designed to guide Claude Code through test-driven development workflows. When you activate this skill before writing code, it encourages a test-first approach where tests are written before implementation code.
 
-To use the TDD skill effectively:
+Activate the skill with the `/tdd` command, then provide a concrete prompt:
 
-1. Invoke the tdd skill at the start of your session
+```
+/tdd
+
+Create a simple authentication module with validateCredentials(email, password)
+function that returns true for valid credentials and false otherwise.
+Use Jest for testing.
+```
+
+The workflow follows these steps:
+
+1. Invoke `/tdd` at the start of your session
 2. Describe the expected behavior of your function
 3. Let Claude Code generate failing tests first
-4. Then implement the code to make tests pass
+4. Implement the minimum code to make tests pass
+5. Refactor while keeping tests green
+6. Add edge cases to strengthen coverage
 
-This workflow naturally produces more testable code because it forces you to think about the interface before implementation.
+This workflow naturally produces more testable code because it forces you to think about the interface before implementation. Keep `npm test -- --watch` (Jest) or `pytest -v --tb=short` (pytest) running in a separate terminal for a tight feedback loop as Claude implements functionality.
 
 ## Structure Your Code for Testability
 
@@ -102,6 +114,16 @@ Claude Code will then systematically work through these cases rather than stoppi
 
 The **supermemory** skill can help maintain consistency across test files. When working on a larger codebase, activate supermemory to let Claude Code reference existing test patterns, avoiding duplicate test logic and ensuring consistent naming conventions throughout your test suite.
 
+For team-wide strategy persistence across sessions, store your testing philosophy:
+
+```
+Use supermemory to store our testing approach: we prioritize
+business-critical paths with 100% coverage, utility functions
+at 80% coverage, and UI components with snapshot testing.
+```
+
+This ensures consistent test quality even when different team members work with Claude Code.
+
 ## Specify Assertion Libraries and Styles
 
 Different projects use different assertion libraries. Be explicit about which library you prefer:
@@ -139,8 +161,31 @@ For comprehensive test coverage, consider combining multiple skills:
 - **tdd** for test-first workflow
 - **code-review** for quality verification
 - **supermemory** for consistent patterns across files
+- **frontend-design** for React component rendering assertions
+- **pdf** for generating test reports or validating PDF output
 
 Activate each skill at the start of your session and let Claude Code apply the combined guidance throughout your testing work.
+
+## Integrate with CI/CD
+
+Automate test quality gates in your pipeline to prevent coverage regressions:
+
+```yaml
+- name: Run tests with coverage
+  run: npm test -- --ci --coverage
+- name: Check coverage thresholds
+  run: npx jest-coverage-threshold
+```
+
+Set coverage thresholds to prevent regressions — Claude Code can help configure appropriate thresholds based on your codebase.
+
+## Common Pitfalls to Avoid
+
+Watch out for these common issues when generating tests with Claude Code:
+
+- **Don't blindly trust generated tests** — Review each test to understand what it verifies and why
+- **Avoid testing implementation details** — Test public interfaces and observable behavior; implementation changes shouldn't break tests
+- **Don't skip manual review** — Automated generation handles the boilerplate, but human judgment catches logic gaps
 
 ## Example: Complete Test Generation Request
 
