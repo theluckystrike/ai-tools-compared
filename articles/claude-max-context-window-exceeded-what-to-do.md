@@ -189,6 +189,11 @@ Context window limits exist to maintain response quality and model performance. 
 
 These strategies keep your Claude Code sessions productive and prevent interruptions during important development work.
 
+
+## Related Reading
+
+- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
