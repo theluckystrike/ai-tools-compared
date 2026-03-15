@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Claude Code Terminal Permission Denied Fix"
 description: "A comprehensive troubleshooting guide for fixing 'permission denied' errors when using Claude Code in the terminal. Step-by-step solutions for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-terminal-permission-denied-fix/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 # Claude Code Terminal Permission Denied Fix
