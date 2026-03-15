@@ -3,8 +3,11 @@ layout: default
 title: "Chrome Extension Word Count Tracker: A Developer's Guide"
 description: "Learn how to build and use Chrome extensions for tracking word counts in real-time. Practical examples, code snippets, and implementation guide for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-word-count-tracker/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}
