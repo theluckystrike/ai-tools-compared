@@ -6,6 +6,10 @@ description: "A practical guide to AI-powered multilingual customer support tool
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-multilingual-customer-support/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
