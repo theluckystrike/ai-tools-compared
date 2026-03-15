@@ -5,6 +5,10 @@ description: "A practical comparison of GitHub Copilot and Cursor for implementi
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-implementing-server-sent-events-in-spr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Server-Sent Events provide a powerful way to push real-time updates from a Spring Boot backend to client applications. When you need to implement SSE in Spring Boot, AI coding assistants can significantly accelerate your development workflow. This comparison examines how GitHub Copilot and Cursor perform when building SSE endpoints, handling event streams, and managing client connections.

@@ -5,6 +5,10 @@ description: "A practical comparison of ChatGPT and Claude when helping beginner
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

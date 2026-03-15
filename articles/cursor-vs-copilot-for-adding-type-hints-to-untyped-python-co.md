@@ -5,6 +5,10 @@ description: "A practical comparison of Cursor and GitHub Copilot for adding typ
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Adding type hints to a large Python codebase can be time-consuming. Many developers turn to AI assistants to accelerate this process, and two tools frequently come up in discussion: Cursor and GitHub Copilot. This article compares their capabilities for adding type hints to untyped Python code, with practical examples to help you decide which tool fits your workflow.
