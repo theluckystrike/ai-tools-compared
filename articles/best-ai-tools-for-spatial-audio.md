@@ -6,6 +6,10 @@ description: "Explore AI tools that transform spatial audio production—物体�
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-spatial-audio/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
