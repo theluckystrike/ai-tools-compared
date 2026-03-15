@@ -6,6 +6,10 @@ description: "A developer's guide to AI-powered video color grading tools with C
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-color-grading/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Video color grading transforms raw footage into visually compelling content. For developers and power users building automated pipelines or integrating color correction into applications, AI-powered tools offer significant advantages over manual workflows. This guide covers practical approaches to implementing AI-driven color grading in your projects.

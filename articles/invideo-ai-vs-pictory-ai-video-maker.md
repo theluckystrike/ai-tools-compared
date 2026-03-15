@@ -5,6 +5,10 @@ description: "A technical comparison of InVideo AI and Pictory AI video creation
 date: 2026-03-15
 author: theluckystrike
 permalink: /invideo-ai-vs-pictory-ai-video-maker/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
