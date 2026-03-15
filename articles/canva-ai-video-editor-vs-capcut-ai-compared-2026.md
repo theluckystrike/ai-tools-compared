@@ -185,5 +185,12 @@ For developers and power users building video-centric applications or automation
 
 The choice ultimately depends on your workflow: Choose Canva for collaborative design-centric projects, and choose CapCut for automated video production and developer-centric implementations.
 
+
+## Related Reading
+
+- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
+- [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
+- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
