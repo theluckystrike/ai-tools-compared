@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Auto Assign Reviewer Workflow Tutorial"
 description: "Learn how to automate your pull request reviewer assignment process using Claude Code. This tutorial covers practical workflows, code examples, and best practices for development teams."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-auto-assign-reviewer-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

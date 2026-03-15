@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Go Benchmark Workflow Tutorial Guide"
 description: "Learn how to leverage Claude Code CLI to create, run, and analyze Go benchmark workflows. This guide covers setting up benchmarks, automating performance testing, and integrating benchmarking into your development process."
@@ -7,11 +8,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-go-benchmark-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Go Benchmark Workflow Tutorial Guide
 
-Go's built-in testing package provides powerful benchmarking capabilities that let you measure code performance directly from your terminal. When combined with Claude Code, you can create an intelligent workflow that not only runs benchmarks but also analyzes results, suggests optimizations, and tracks performance over time. This guide shows you how to leverage Claude Code to build a complete Go benchmark workflow.
+Go's built-in testing package provides powerful benchmarking capabilities that let you measure code performance directly from your terminal. When combined with Claude Code, you can create an intelligent workflow that not only runs benchmarks but also analyzes results, suggests optimizations, and tracks performance over time. This guide shows you how to use Claude Code to build a complete Go benchmark workflow.
 
 ## Setting Up Your First Go Benchmark
 

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Spike Testing Workflow Tutorial Guide"
 description: "Learn how to leverage Claude Code for spike testing workflows. A practical guide for developers to create, execute, and analyze spike tests effectively."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-spike-testing-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Spike Testing Workflow Tutorial Guide
@@ -93,7 +97,7 @@ Claude Code can help you extend this framework with scenario variants: gradual s
 
 ## Implementing Load Generation with Claude Code
 
-When implementing load generation, leverage Claude Code's ability to work with multiple testing tools and languages. Choose load generation approaches based on your testing needs:
+When implementing load generation, use Claude Code's ability to work with multiple testing tools and languages. Choose load generation approaches based on your testing needs:
 
 For HTTP-based APIs, tools like `wrk`, `k6`, or `vegeta` provide reliable load generation. Claude Code can help you write k6 scripts that define spike scenarios:
 
