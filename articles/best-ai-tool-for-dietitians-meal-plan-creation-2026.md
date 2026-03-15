@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "Best AI Tool for Dietitians Meal Plan Creation 2026: A Practical Guide"
 description: "Discover how AI tools help dietitians create personalized meal plans faster. Real-world use cases, key features to evaluate, and practical guidance for nutrition professionals."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-ai-tool-for-dietitians-meal-plan-creation-2026/
+reviewed: true
+score: 8
+categories: [best-of]
 ---
+
 
 {% raw %}
 {%- include why-choose-ai-meal-planning.html -%}

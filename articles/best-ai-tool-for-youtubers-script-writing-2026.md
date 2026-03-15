@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Best AI Tool for YouTubers Script Writing in 2026"
 description: "Discover the most effective AI writing tools for YouTube script creation in 2026. Compare features, pricing, and real-world performance for professional content creators."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-ai-tool-for-youtubers-script-writing-2026/
+reviewed: true
+score: 8
+categories: [best-of]
 ---
+
 
 {% raw %}
 
