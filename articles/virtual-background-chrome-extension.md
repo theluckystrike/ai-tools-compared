@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Virtual Background Chrome Extension: A Practical Guide for Developers"
-description: "Learn how virtual background Chrome extensions work under the hood. Technical deep-dive into WebRTC, TensorFlow.js body segmentation, and building custom background replacement for video calls."
+title: "Virtual Background Chrome Extension: A Practical Guide."
+description: "Learn how virtual background Chrome extensions work under the hood. Technical deep-dive into WebRTC, TensorFlow.js body segmentation, and building."
 date: 2026-03-15
 author: theluckystrike
 permalink: /virtual-background-chrome-extension/
@@ -232,5 +232,12 @@ Testing across different hardware configurations is essential since segmentation
 ---
 
 Virtual background Chrome extensions represent a sophisticated intersection of browser APIs, machine learning, and real-time image processing. Understanding these underlying technologies enables you to build more capable extensions and integrate similar functionality into broader applications. As browser ML capabilities continue improving, expect to see more sophisticated real-time video manipulation becoming standard in web applications.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
