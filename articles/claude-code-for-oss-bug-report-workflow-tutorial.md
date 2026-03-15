@@ -7,6 +7,8 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-bug-report-workflow-tutorial/
+reviewed: true
+score: 8
 ---
 
 # Claude Code for OSS Bug Report Workflow Tutorial
