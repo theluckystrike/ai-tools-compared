@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for CDN Optimization Workflow Tutorial"
-description: "Learn how to use Claude Code to automate and streamline your CDN optimization workflow. This comprehensive tutorial covers caching strategies, asset optimization, and performance monitoring."
+description: "Learn how to use Claude Code to automate and streamline your CDN optimization workflow. This comprehensive tutorial covers caching strategies, asset."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-cdn-optimization-workflow-tutorial/
@@ -306,4 +306,11 @@ Claude Code significantly accelerates CDN optimization by automating analysis, g
 Remember: CDN optimization is an ongoing process. Regular monitoring, analysis, and iteration will continuously improve your performance and reduce costs.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

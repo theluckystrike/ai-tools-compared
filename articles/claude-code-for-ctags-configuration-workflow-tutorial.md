@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for ctags Configuration Workflow Tutorial"
-description: "Learn how to configure and optimize ctags for code navigation using Claude Code CLI. A comprehensive guide for developers seeking efficient code exploration."
+description: "Learn how to configure and optimize ctags for code navigation using Claude Code CLI. A comprehensive guide for developers seeking efficient code."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-ctags-configuration-workflow-tutorial/
@@ -209,4 +209,11 @@ Integrating ctags with your development workflow dramatically improves code navi
 
 Start with basic settings, then refine as you understand your project's structure. Within a few days, you'll wonder how you navigated code without ctags at all.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
