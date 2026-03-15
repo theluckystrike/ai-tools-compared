@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for OpenAPI Code Generation Workflow"
-description: "Learn how to leverage Claude Code to automate OpenAPI specification parsing and code generation. This guide covers practical workflows, custom skills, and integration patterns for building robust API clients."
+description: "Learn how to leverage Claude Code to automate OpenAPI specification parsing and code generation. This guide covers practical workflows, custom skills."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-openapi-code-generation-workflow/
@@ -189,3 +189,10 @@ When building your Claude Code-powered workflow, follow these best practices:
 Claude Code transforms OpenAPI code generation from a one-size-fits-all approach into a customizable, project-specific workflow. By using its tool-use capabilities and natural language understanding, you can generate type-safe, convention-compliant API clients that integrate smoothly with your existing codebase.
 
 Start by building a simple skill that parses your OpenAPI spec, then progressively add customization layers until the generated code matches your project's standards exactly. The initial investment pays dividends in reduced boilerplate, fewer bugs, and faster API integration cycles.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

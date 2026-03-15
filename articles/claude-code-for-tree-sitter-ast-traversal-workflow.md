@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Tree-sitter AST Traversal Workflow"
-description: "Master AST traversal with Tree-sitter and Claude Code. Learn practical patterns for analyzing code structure, finding nodes, and building automated refactoring workflows."
+description: "Master AST traversal with Tree-sitter and Claude Code. Learn practical patterns for analyzing code structure, finding nodes, and building automated."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-tree-sitter-ast-traversal-workflow/
@@ -210,3 +210,10 @@ Tree-sitter AST traversal unlocks sophisticated code analysis and transformation
 
 Start with simple node-finding patterns, then layer in query-based matching for more complex analysis. The investment pays dividends in the reliability and precision of your automated code workflows.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

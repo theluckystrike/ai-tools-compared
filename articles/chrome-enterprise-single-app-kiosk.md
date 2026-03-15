@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Enterprise Single App Kiosk: Complete Implementation Guide"
-description: "Learn how to configure Chrome Enterprise single app kiosk mode for dedicated devices. Step-by-step setup, XML configuration, and PowerShell deployment for IT administrators and developers."
+title: "Chrome Enterprise Single App Kiosk: Complete."
+description: "Learn how to configure Chrome Enterprise single app kiosk mode for dedicated devices. Step-by-step setup, XML configuration, and PowerShell deployment."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-enterprise-single-app-kiosk/
@@ -184,5 +184,12 @@ Use the Chrome Management Settings Report in Admin Console to audit which device
 Chrome Enterprise single app kiosk mode provides a robust foundation for deploying dedicated-purpose ChromeOS devices. By combining XML assignment files, PowerShell deployment scripts, and Chrome Policy API configurations, IT administrators can manage kiosk deployments at scale while maintaining security and control.
 
 The key to successful kiosk deployments lies in thoroughly testing your configuration before broad rollout and maintaining clear policies around application updates and session management. With proper implementation, Chrome Enterprise kiosk mode delivers reliable, distraction-free computing experiences for any single-app use case.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

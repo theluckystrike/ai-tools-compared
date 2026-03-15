@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Code Bookmark Workflow Tutorial Guide"
-description: "Learn how to build a code bookmark workflow with Claude Code. This tutorial covers organizing code snippets, creating a personal snippet library, and integrating with your development workflow."
+description: "Learn how to build a code bookmark workflow with Claude Code. This tutorial covers organizing code snippets, creating a personal snippet library, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-code-bookmark-workflow-tutorial-guide/
@@ -235,3 +235,10 @@ Consider expanding your system with:
 A well-maintained code bookmark system becomes one of your most valuable development assets over time.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

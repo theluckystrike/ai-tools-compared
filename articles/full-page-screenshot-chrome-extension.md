@@ -3,7 +3,7 @@
 
 layout: default
 title: "Full Page Screenshot Chrome Extension: A Developer's Guide"
-description: "Build and use full page screenshot Chrome extensions for developers and power users. Practical code examples, implementation patterns, and techniques for capturing entire web pages."
+description: "Build and use full page screenshot Chrome extensions for developers and power users. Practical code examples, implementation patterns, and techniques."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /full-page-screenshot-chrome-extension/
@@ -338,5 +338,12 @@ async function captureScaled(factor = 0.5) {
 Building a full page screenshot Chrome extension requires handling scroll positions, fixed elements, lazy-loaded content, and cross-origin restrictions. The scroll-and-stitch approach provides the most reliable results across diverse web pages. Focus on the core capture logic first, then layer in advanced features like iframe handling and performance optimizations based on your users' specific needs.
 
 For most use cases, combining viewport captures with careful page preparation yields consistent results. Test your implementation across various page types—single-page applications, infinite scroll feeds, and pages with extensive lazy-loaded content—to ensure reliable operation.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

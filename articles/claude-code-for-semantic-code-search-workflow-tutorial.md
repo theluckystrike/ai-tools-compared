@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Semantic Code Search Workflow Tutorial"
-description: "Learn how to leverage Claude Code CLI for intelligent, semantic code search in your development workflow. This tutorial covers practical techniques for finding code using natural language queries."
+description: "Learn how to leverage Claude Code CLI for intelligent, semantic code search in your development workflow. This tutorial covers practical techniques for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-semantic-code-search-workflow-tutorial/
@@ -215,3 +215,10 @@ The key is treating Claude Code as a pair programmer who already knows your enti
 Start with simple queries today, and you'll quickly discover how much more efficient your code exploration workflow can become.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
