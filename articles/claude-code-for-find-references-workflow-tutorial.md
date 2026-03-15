@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Find References Workflow Tutorial"
 description: "Learn how to use Claude Code to efficiently find references in your codebase, track function usages, and navigate complex code relationships."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-find-references-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 
 

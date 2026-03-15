@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Toby Alternative Chrome Extensions 2026: Best Options for Power Users"
 description: "Discover the best Toby alternatives for Chrome in 2026. Compare features, performance, and find the perfect tab management solution for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /toby-alternative-chrome-extension-2026/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 
