@@ -6,7 +6,7 @@ description: "A practical guide for startup founders comparing AI tools for pitc
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-startup-founders-pitch-deck-writing/
-categories: [ai-tools, startup, pitch-deck]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
