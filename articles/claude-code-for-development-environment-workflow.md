@@ -130,7 +130,7 @@ As you become comfortable with basic Claude Code usage, these advanced patterns 
 Start an interactive session for complex features:
 
 ```bash
-claude --interactive
+claude
 ```
 
 This opens a persistent conversation where you can iterate on implementation details, ask clarifying questions, and receive real-time guidance as you code.

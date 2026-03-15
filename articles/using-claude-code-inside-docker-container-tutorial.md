@@ -60,10 +60,10 @@ docker run -it -v $(pwd):/workspace claude-dev
 
 ## Configuring Claude Code Inside the Container
 
-Once your container is running, initialize Claude Code with the `--dangerously-use_arbitrary_trusted_extensions` flag to enable full functionality:
+Once your container is running, launch Claude Code with the `--dangerously-skip-permissions` flag to enable full functionality:
 
 ```bash
-claude --dangerously_use_arbitrary_trusted_extensions
+claude --dangerously-skip-permissions
 ```
 
 This allows Claude Code to access tools and execute commands within the container. You can create a `CLAUDE.md` file in your project to provide context-specific instructions:

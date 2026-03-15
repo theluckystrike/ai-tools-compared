@@ -37,7 +37,7 @@ numpy
 Ask Claude Code to create a complete project structure:
 
 ```bash
-claude --prompt "Create a Prefect ML project structure with:
+claude --print "Create a Prefect ML project structure with:
 - A flows/ directory for workflow definitions
 - A tasks/ directory for reusable task modules  
 - A configs/ directory for configuration files
@@ -159,7 +159,7 @@ def parameterized_training(config: TrainingConfig):
 Ask Claude Code to add scheduling and automated triggers:
 
 ```bash
-claude --prompt "Add Prefect scheduling to the ML pipeline:
+claude --print "Add Prefect scheduling to the ML pipeline:
 - Schedule the flow to run daily at 6 AM
 - Add email notifications on flow completion or failure
 - Include a retry policy with exponential backoff
@@ -228,7 +228,7 @@ Once your ML flows are working, Claude Code can help you deploy and monitor them
 
 ```bash
 # Deploy flow to Prefect Cloud or self-hosted server
-claude --prompt "Create Prefect deployment configuration:
+claude --print "Create Prefect deployment configuration:
 - Build a Docker image for the ML training flow
 - Create a prefect.yaml deployment file
 - Add GPU support for training tasks

@@ -156,7 +156,7 @@ For more advanced use cases, consider adding these configurations to your Claude
 cat >> ~/.bashrc << 'EOF'
 # Claude Code shell integration
 alias claude-term='claude --print "Explain: "'
-alias claude-do='claude --execute'
+alias claude-do='claude --print'
 EOF
 ```
 

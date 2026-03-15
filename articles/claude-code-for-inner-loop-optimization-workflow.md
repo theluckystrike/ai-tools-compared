@@ -91,7 +91,7 @@ brew install fswatch
 
 # Watch src directory and trigger analysis
 fswatch -o src/ | xargs -n1 -I{} \
-  claude-code analyze --changed-only --fast
+  claude --print "analyze changed files for issues"
 ```
 
 This runs a lightweight analysis whenever you save a file. Claude Code can catch issues immediately—before you even switch to your terminal window.

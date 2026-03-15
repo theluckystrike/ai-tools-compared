@@ -157,7 +157,7 @@ find ./src -name "*.ts" | head -10 | xargs -I {} claude "analyze {}"
 Skills that generate large outputs—like those using algorithmic-art or canvas-design—may benefit from streaming disabled:
 
 ```bash
-claude --no-stream "generate the design"
+claude --print "generate the design"
 ```
 
 ### Configure Retry Behavior
