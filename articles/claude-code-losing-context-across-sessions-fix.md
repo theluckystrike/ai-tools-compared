@@ -267,5 +267,10 @@ The fixes range from simple command-line flags to custom script solutions. Start
 
 Remember that Claude Code's session handling differs from the web interface, and adapting your workflow accordingly leads to better results. With these solutions, you can work on long-running projects without losing the benefit of previous conversations and accumulated context.
 
+
+## Related Reading
+
+- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
