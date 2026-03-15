@@ -219,3 +219,4 @@ Chrome DevTools network throttling is a practical tool for building applications
 Your users on slow connections will thank you.
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

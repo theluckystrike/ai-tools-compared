@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /chrome-check-link-safety/
 reviewed: true
 score: 8
-categories: [security, chrome]
+categories: [security, guides]
 tags: [chrome, link-safety, security]
 ---
 
