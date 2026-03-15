@@ -38,7 +38,7 @@ async function classifyTicket(ticketId) {
     path: '/crm/v3/objects/tickets/ai/classify',
     body: {
       content: ticket.properties.subject + ' ' + ticket.properties.content,
-      categories: ['technical', 'billing', 'feature_request', 'bug']
+      categories: [guides]
     }
   });
   
