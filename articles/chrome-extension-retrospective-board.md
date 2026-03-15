@@ -1,14 +1,14 @@
 ---
 
 layout: default
-title: "Chrome Extension Retrospective Board: Agile Tools for Browser-Based Teams"
-description: "A comprehensive guide to Chrome extension retrospective boards for development teams. Compare top tools, features, and implementation strategies for remote agile workflows."
+title: "Chrome Extension Retrospective Board: Agile Tools for."
+description: "A comprehensive guide to Chrome extension retrospective boards for development teams. Compare top tools, features, and implementation strategies for."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-retrospective-board/
 reviewed: true
 score: 8
-categories: [chrome-extensions, agile]
+categories: [guides, guides]
 tags: [chrome, retrospective, agile, project-management]
 ---
 
@@ -144,5 +144,12 @@ The best Chrome extension retrospective board depends on your team's size, workf
 Consider starting with a free tier to validate the tool works for your team before committing to paid plans. Most providers offer generous free versions suitable for evaluating core functionality.
 
 Effective retrospectives transform team performance over time. The right Chrome extension makes these meetings seamless, accessible, and integrated into your daily workflow—helping your team continuously improve without adding administrative burden.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

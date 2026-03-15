@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Chrome Extension Outlook Calendar Integration: A Developer Guide"
-description: "Learn how to build Chrome extensions that integrate with Outlook Calendar. Practical code examples, API authentication, and implementation patterns for developers."
+title: "Chrome Extension Outlook Calendar Integration: A."
+description: "Learn how to build Chrome extensions that integrate with Outlook Calendar. Practical code examples, API authentication, and implementation patterns for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-outlook-calendar-integration/
@@ -216,5 +216,12 @@ For extension testing, use Chrome's developer mode to load your unpacked extensi
 Building a Chrome extension with Outlook Calendar integration combines web development skills with Microsoft Graph expertise. The APIs are well-documented and the authentication flow follows standard OAuth patterns, making the implementation straightforward once you understand the specific Microsoft requirements.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

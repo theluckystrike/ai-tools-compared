@@ -6,7 +6,7 @@ description: "Learn how to use Claude Code for extract method refactoring. Pract
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-extract-method-refactoring-workflow/
-categories: [guides, programming, refactoring]
+categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
@@ -196,3 +196,4 @@ Extract Method refactoring, when done properly, dramatically improves code maint
 
 The key is to be methodical: identify candidates, plan your extraction, execute carefully, and always verify with tests. With practice, you'll find the rhythm of effective refactoring that makes your codebases healthier and more enjoyable to work with.
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

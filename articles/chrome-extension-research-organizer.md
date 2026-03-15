@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension Research Organizer: Complete Guide for Developers"
-description: "Learn how to build and use Chrome extension research organizers to efficiently manage research workflows. Practical code examples, architecture patterns, and implementation tips for developers and power users."
+title: "Chrome Extension Research Organizer: Complete Guide for."
+description: "Learn how to build and use Chrome extension research organizers to efficiently manage research workflows. Practical code examples, architecture."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-research-organizer/
@@ -258,5 +258,12 @@ Ready-made research organizer extensions exist across the functionality spectrum
 Building your own research organizer extension requires upfront investment but pays dividends through customization. Start with basic extraction and storage, then iterate based on your actual usage patterns. The architecture outlined here provides a solid foundation—add features as needs emerge rather than trying to predict all requirements upfront.
 
 The best research organization system is one you actually use consistently. Whether you customize an existing extension or build from scratch, focus on reducing friction in the capture process. The value of research compounds when you can efficiently retrieve and synthesize findings across projects.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

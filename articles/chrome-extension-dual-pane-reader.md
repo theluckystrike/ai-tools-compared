@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Chrome Extension Dual Pane Reader: Building Split-Screen Reading Tools"
-description: "Learn how to build a Chrome extension dual pane reader for comparing content side-by-side. Practical implementation guide with code examples for developers and power users."
+title: "Chrome Extension Dual Pane Reader: Building Split-Screen."
+description: "Learn how to build a Chrome extension dual pane reader for comparing content side-by-side. Practical implementation guide with code examples for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-dual-pane-reader/
@@ -233,6 +233,13 @@ async function saveConfiguration(leftUrl, rightUrl) {
 Loading two full web pages simultaneously places significant memory demands on the browser. Optimize performance by implementing lazy loading—only load iframe content when the user specifically requests each pane. Use Chrome's `chrome.tabs` API to retrieve tab information before creating iframes, and consider implementing a virtual scrolling approach for very long documents.
 
 The dual pane reader pattern demonstrates how Chrome extensions can fundamentally transform browser behavior to serve specific workflows. By understanding the messaging system between extension components and the DOM manipulation techniques available in content scripts, you can build powerful productivity tools that rival standalone applications.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
