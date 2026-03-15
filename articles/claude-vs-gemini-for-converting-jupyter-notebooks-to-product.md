@@ -6,6 +6,10 @@ description: "A practical comparison of Claude and Gemini for converting Jupyter
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-gemini-for-converting-jupyter-notebooks-to-product/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Claude vs Gemini for Converting Jupyter Notebooks to Production Python Scripts
