@@ -1,5 +1,5 @@
 {
-  "total": 37,
+  "total": 38,
   "clusters": {
     "best-of": {
       "count": 12
@@ -9,6 +9,9 @@
     },
     "comparisons": {
       "count": 18
+    },
+    "troubleshooting": {
+      "count": 1
     }
   }
 }
