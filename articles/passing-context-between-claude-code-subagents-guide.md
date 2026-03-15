@@ -128,6 +128,7 @@ When results seem inconsistent across subagents, ensure they're reading from the
 
 ## Related Reading
 
+- [How to Pass State Between AI Agents](/claude-skills-guide/how-to-pass-state-between-ai-agents/) — Framework-agnostic patterns for state sharing applicable to Claude, LangChain, CrewAI, and other agent runtimes.
 - [Multi-Agent Orchestration with Claude Subagents Guide](/claude-skills-guide/multi-agent-orchestration-with-claude-subagents-guide/) — Understand the subagent coordination model before implementing context-passing patterns.
 - [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/) — Implement clear communication protocols alongside context passing for reliable workflows.
 - [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) — Use the supermemory skill to persist and share context across subagent sessions.
