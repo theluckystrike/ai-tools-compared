@@ -153,7 +153,7 @@ Several patterns undermine accessibility efforts:
 After implementing ARIA labels, document your components for other developers. The **pdf** skill generates formatted documentation:
 
 ```bash
-claude use pdf
+claude --print "/pdf"
 claude "Generate accessibility documentation for components in components/"
 ```
 

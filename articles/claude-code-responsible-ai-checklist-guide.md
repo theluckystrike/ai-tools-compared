@@ -64,7 +64,7 @@ For sensitive projects, the claude-security-skill provides automated vulnerabili
 Never commit code without test coverage. Use the claude-tdd skill to enforce test-driven development:
 
 ```bash
-claude tdd --init
+claude "/tdd initialize project"
 ```
 
 This skill creates test files first, then guides implementation to pass those tests. It catches edge cases you might miss when reviewing generated code manually.

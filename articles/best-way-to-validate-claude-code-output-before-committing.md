@@ -43,7 +43,7 @@ The static-analysis-automation skill provides comprehensive code analysis before
 To use this skill effectively, activate it at the beginning of your validation workflow:
 
 ```bash
-claude static-analysis-automation
+claude --print "run static analysis"
 ```
 
 The skill runs linters, type checkers, and security scanners appropriate to your project type. It then presents findings in a prioritized list, allowing you to address critical issues before committing.

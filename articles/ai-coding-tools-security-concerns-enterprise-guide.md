@@ -123,8 +123,8 @@ Before installing any skill, verify its source and review its code:
 
 ```bash
 # Check skill signature and source repository
-claude skill verify tdd
-claude skill info frontend-design
+# Verify skill: test tdd manually
+cat ~/.claude/skills/frontend-design.md
 ```
 
 ### Use an Approved Skills List

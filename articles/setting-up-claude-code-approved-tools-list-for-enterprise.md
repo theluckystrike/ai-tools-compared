@@ -232,7 +232,7 @@ Before rolling out new tool restrictions, test them in a controlled environment:
 
 ```bash
 # Validate configuration syntax
-claude validate-tools --config claude-tools.json
+claude --print "validate --config claude-tools.json
 
 # Dry run with new restrictions
 claude --dry-run --tools-config claude-tools-strict.json

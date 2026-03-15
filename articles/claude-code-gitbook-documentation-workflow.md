@@ -86,7 +86,7 @@ If you have existing documentation in other formats, the `docx` skill converts W
 
 ```bash
 # Convert a Word document to GitBook-compatible Markdown
-claude skill run docx --convert input.docx --output docs/guides/
+claude --print "/docx--convert input.docx --output docs/guides/"
 ```
 
 The conversion preserves headings, code blocks, and basic formatting while transforming the content into GitBook's expected structure.
@@ -96,7 +96,7 @@ The conversion preserves headings, code blocks, and basic formatting while trans
 GitBook publishes to the web by default, but your users may need offline access or printable versions. The `pdf` skill generates professional PDF documentation directly from your GitBook content:
 
 ```bash
-claude skill run pdf --source docs/ --output build/user-guide.pdf --template professional
+claude --print "/pdf--source docs/ --output build/user-guide.pdf --template professional"
 ```
 
 You can create multiple output formats for different audiences: a concise quick-start guide as a single PDF, comprehensive API documentation as a web-hosted GitBook, and a printable cheat sheet as a separate document.

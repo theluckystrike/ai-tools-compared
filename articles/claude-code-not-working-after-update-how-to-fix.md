@@ -61,7 +61,7 @@ Check the skill definition files in your `.claude/skills` directory. Updates som
 Re-register any skills that don't match the current schema by running:
 
 ```bash
-claude skill register /path/to/your-skill
+cp /path/to/your-skill ~/.claude/skills/
 ```
 
 ## Issue 2: Path and Environment Variable Problems

@@ -36,7 +36,7 @@ Before entering code freeze, configure Claude Code with specific skills and rule
 
 ```bash
 # Create a code-freeze-safety skill
-claude skill create code-freeze-safety
+# Create a skill file: ~/.claude/skills/code-freeze-safety.md
 ```
 
 This skill should include validation rules that trigger during the freeze period. Here's an example configuration for your code-freeze-safety skill:

@@ -22,7 +22,7 @@ German developers face unique localization challenges: compound words that break
 Before diving into workflows, ensure your Claude Code environment is configured for multilingual development. Start by creating a dedicated skill for localization tasks:
 
 ```bash
-claude skill create localization-helper
+# Create a skill file: ~/.claude/skills/localization-helper.md
 ```
 
 This creates a new skill directory where you can define persistent prompts for translation and i18n workflows. The skill persists across sessions, meaning your localization helper remembers project-specific terminology and style guidelines.
