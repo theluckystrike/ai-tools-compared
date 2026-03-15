@@ -169,10 +169,8 @@ gh search code "$QUERY" --repo="$DISCOVER_REPO" \
   --limit=10 --json path,url,snapshot \
   > /tmp/search-results.json
 
-# Step 2: Let Claude analyze results
-claude analyze search-results.json \
-  --intent="Find implementation patterns for $QUERY" \
-  --output analysis.md
+# Step 2: Share results with Claude for analysis
+# cat /tmp/search-results.json | claude --print "Find implementation patterns for $QUERY"
 
 # Step 3: Display summary
 cat analysis.md

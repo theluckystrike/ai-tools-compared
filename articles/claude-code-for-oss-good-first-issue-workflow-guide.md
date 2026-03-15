@@ -113,10 +113,10 @@ Claude Code's skills system enhances your workflow. Load relevant skills before 
 
 ```bash
 # Load the git skill for better commit messages
-claude skill load git
+# Skills load automatically from ~/.claude/skills/
 
 # Load a language-specific skill
-claude skill load javascript
+# Add: ~/.claude/skills/javascript.md
 ```
 
 These skills provide contextual awareness and specialized commands for different tasks.

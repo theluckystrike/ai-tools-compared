@@ -44,7 +44,7 @@ claude --version
 Create a new skill for taint analysis:
 
 ```bash
-claude skill create taint-analyzer
+# Create skill: ~/.claude/skills/taint-analyzer.md
 ```
 
 Edit the skill file to include the necessary configuration:
