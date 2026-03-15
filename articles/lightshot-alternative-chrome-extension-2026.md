@@ -6,7 +6,7 @@ description: "Discover the best Lightshot alternatives for Chrome in 2026. Compa
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /lightshot-alternative-chrome-extension-2026/
-categories: [Chrome Extensions, Screenshot Tools, Productivity]
+categories: [guides, guides, productivity]
 tags: [screenshot, screen capture, chrome extension, lightshot alternative, developer tools, claude-skills]
 reviewed: true
 score: 8

@@ -6,7 +6,7 @@ description: "Learn how to automate software license compliance using Claude Cod
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-license-compliance-workflow-tutorial/
-categories: [Development, Compliance, Automation]
+categories: [guides, guides, workflows]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
@@ -32,13 +32,12 @@ First, create a skill file in your project:
 ```yaml
 name: license-compliance
 description: Automates license compliance checks and reporting
-version: 1.0.0
 ```
 
 The skill should include tools for scanning dependencies, identifying licenses, and generating compliance reports. Use the skill by invoking it whenever you add new dependencies:
 
 ```
-$ claude --skill license-compliance
+$ claude /license-compliance
 ```
 
 ## Automated Dependency Scanning
@@ -174,7 +173,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run License Compliance
         run: |
-          claude --skill license-compliance --scan
+          claude /license-compliance --scan
       - name: Upload Results
         uses: actions/upload-artifact@v3
         with:

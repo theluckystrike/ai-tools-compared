@@ -6,7 +6,7 @@ description: "Learn how to build automated governance workflows for Compound-lik
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-compound-governance-workflow/
-categories: [guides, governance, defi]
+categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
@@ -36,12 +36,6 @@ Create a specialized skill for governance operations. This skill should handle b
 ---
 name: compound-governance
 description: Manage Compound governance proposals and voting
-version: 1.0.0
-tools: [read_file, write_file, bash]
-env:
-  RPC_URL: ${RPC_URL}
-  GOVERNANCE_ADDRESS: "0xc0dA01A76C4f0Dc6dEC3e6ABe13de2071fCtx000"
-  TIMELOCK_ADDRESS: "0x6d5f2eA5E8E7fC8d2E3c1a9D6f4B7cA1eF2d9E8b"
 ---
 ```
 

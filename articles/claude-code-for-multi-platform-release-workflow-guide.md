@@ -37,7 +37,6 @@ First, ensure Claude Code is installed and configured for your project. Create a
 ---
 name: release-manager
 description: Automates multi-platform release workflows
-tools: [Bash, Read, Write, Grep]
 ---
 
 # Multi-Platform Release Manager
@@ -159,7 +158,6 @@ Here's a complete release workflow you can invoke with Claude Code:
 ---
 name: execute-release
 description: Execute a full multi-platform release
-tools: [Bash, Read, Write, Grep]
 ---
 
 # Execute Release Workflow

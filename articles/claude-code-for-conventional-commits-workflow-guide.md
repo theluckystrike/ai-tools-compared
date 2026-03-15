@@ -67,7 +67,6 @@ A well-designed Claude skill can analyze your staged changes and suggest proper 
 ---
 name: conventional-commit
 description: Analyze staged changes and generate conventional commit messages
-tools: [read_file, bash]
 ---
 
 You are an expert in conventional commits. Analyze the staged Git changes and generate an appropriate commit message following the conventional commits specification.
@@ -121,7 +120,6 @@ A more advanced skill can validate that scopes match your project's conventions:
 ---
 name: strict-conventional-commit
 description: Validate and generate conventional commits with scope enforcement
-tools: [read_file, bash]
 ---
 
 You validate commit messages against conventional commits with strict scope rules.

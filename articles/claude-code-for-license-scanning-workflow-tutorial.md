@@ -127,29 +127,6 @@ For recurring license scanning tasks, creating a custom Claude Code skill stream
 # CLAUDE_SKILL_LICENSE_SCAN
 name: license-scan
 description: Automated software license compliance scanning and analysis
-commands:
-  - name: scan
-    description: Run full license scan on project
-    action: |
-      1. Execute license-scan.sh in project root
-      2. Parse JSON results
-      3. Generate compliance report
-      4. Identify any GPL/AGPL dependencies
-      
-  - name: check-package
-    description: Check license for specific package
-    action: |
-      1. Query package metadata from npm/pypi
-      2. Verify license expression
-      3. Flag any compatibility concerns
-      
-  - name: update-allowlist
-    description: Update license allowlist
-    action: |
-      1. Read current allowlist
-      2. Add/remove licenses as specified
-      3. Validate JSON syntax
-      4. Commit changes
 ```
 
 ## Handling License Violations

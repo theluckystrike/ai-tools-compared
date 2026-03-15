@@ -37,7 +37,6 @@ The foundation of any wormhole workflow is a well-structured skill that captures
 ---
 name: pattern-capture
 description: Capture and store code patterns for later reuse
-tools: [read_file, write_file, bash]
 ---
 
 # Pattern Capture Skill
@@ -144,7 +143,6 @@ Create a shared skill that teams can use to share solutions instantly:
 ---
 name: team-wormhole
 description: Access and contribute to team knowledge base
-tools: [read_file, write_file, bash]
 ---
 
 # Team Knowledge Wormhole
@@ -182,12 +180,6 @@ The most powerful wormhole workflows are automated. Here's a skill that automati
 ---
 name: auto-wormhole
 description: Automatically create wormholes for common patterns
-tools: [read_file, write_file, bash]
-auto_invoke:
-  - pattern: "error.*fix"
-    action: "capture-error-fix"
-  - pattern: "pattern.*reuse"
-    action: "capture-pattern"
 ---
 
 # Auto-Wormhole Skill
@@ -232,7 +224,6 @@ For teams working with multiple languages, create language-agnostic wormholes:
 ---
 name: xlang-wormhole
 description: Language-agnostic pattern capture and sharing
-tools: [read_file, write_file]
 ---
 
 # Cross-Language Wormhole

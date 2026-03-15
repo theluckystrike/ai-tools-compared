@@ -43,10 +43,10 @@ git remote add upstream https://github.com/original-owner/repository-name.git
 git remote -v
 ```
 
-Once cloned, initialize Claude Code in the project directory. This allows Claude Code to understand project-specific context:
+Once cloned, launch Claude Code in the project directory. This allows Claude Code to understand project-specific context:
 
 ```bash
-claude --init
+claude
 ```
 
 Create a CLAUDE.md file in the project root to provide Claude Code with essential context about the project:

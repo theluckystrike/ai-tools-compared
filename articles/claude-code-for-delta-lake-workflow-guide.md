@@ -295,13 +295,6 @@ Create reusable skills to standardize your Delta Lake workflows:
 # delta-lake-table-create skill
 name: "Create Delta Lake Table"
 description: "Generate boilerplate for creating Delta Lake tables"
-parameters:
-  - name: table_name
-    type: string
-  - name: schema
-    type: object
-  - name: partition_columns
-    type: array
 ```
 
 With this skill, you can describe your table requirements in natural language, and Claude Code generates the appropriate code.

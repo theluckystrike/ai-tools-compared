@@ -6,7 +6,7 @@ description: "Learn how to build intelligent release automation workflows using 
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-release-automation-workflow-tutorial/
-categories: [tutorials, automation]
+categories: [tutorials, guides]
 tags: [claude-code, claude-skills, release-automation, ci-cd, devops]
 reviewed: true
 score: 8
@@ -41,7 +41,6 @@ Create a dedicated skill for release automation. Save this as `skills/release.md
 ---
 name: release
 description: Automates release workflows including version bumps, changelog generation, and deployment triggers
-tools: [Read, Write, Bash, Git]
 ---
 
 # Release Automation Skill
@@ -110,7 +109,6 @@ A well-maintained changelog is invaluable for users. Create a skill that generat
 ---
 name: changelog
 description: Generates changelogs from git commits using conventional commit format
-tools: [Read, Write, Bash, Git]
 ---
 ```
 

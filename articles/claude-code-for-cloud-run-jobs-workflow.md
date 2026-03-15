@@ -46,7 +46,6 @@ Create a new skill file at `~/.claude/skills/cloud-run-jobs-skill.md`:
 ---
 name: cloud-run-jobs
 description: Assists with Google Cloud Run Jobs operations
-tools: [Read, Write, Bash, Glob, Grep]
 ---
 
 # Cloud Run Jobs Assistant

@@ -6,7 +6,7 @@ description: "Discover the best Grammarly alternatives for Chrome in 2026. Compa
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /grammarly-alternative-chrome-extension-2026/
-categories: [Productivity, Writing, Chrome Extensions]
+categories: [productivity, guides, guides]
 tags: [grammarly, chrome extension, writing tools, productivity, claude-skills]
 reviewed: true
 score: 8

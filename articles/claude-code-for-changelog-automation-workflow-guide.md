@@ -58,17 +58,6 @@ Create a dedicated skill file for changelog automation in your project's `.claud
 # .claude/skills/changelog.md
 name: Generate Changelog
 description: Creates automated changelog from git history
-parameters:
-  - name: fromTag
-    type: string
-    description: Starting version tag
-  - name: toTag  
-    type: string
-    description: Ending version tag
-  - name: format
-    type: string
-    default: markdown
-    description: Output format (markdown, json, html)
 ```
 
 This skill definition establishes the interface Claude Code uses to interact with your changelog workflow. The parameters give you precise control over what versions to compare and how to format the output.
@@ -125,15 +114,6 @@ Chain multiple Claude Code skills together for comprehensive automation:
 # .claude/skills/release-automation.md
 name: Full Release Automation
 description: Complete release workflow with changelog
-steps:
-  - skill: validate-commits
-    description: Ensure conventional commit format
-  - skill: generate-changelog
-    description: Create changelog from git history
-  - skill: create-release-draft
-    description: Generate GitHub release notes
-  - skill: notify-team
-    description: Send release notifications
 ```
 
 This composite skill orchestrates the entire release process. Each step builds on the previous, creating a seamless pipeline from code to published release notes.

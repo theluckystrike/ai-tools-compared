@@ -6,7 +6,7 @@ description: "Learn how to leverage Claude Code CLI to automate Trello workflows
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-trello-automation-workflow-guide/
-categories: [guides, workflows, productivity]
+categories: [guides, workflows, guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 7

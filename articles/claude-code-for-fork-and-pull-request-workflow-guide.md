@@ -6,7 +6,7 @@ description: "Learn how to use Claude Code effectively in a fork-based Git workf
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-fork-and-pull-request-workflow-guide/
-categories: [Development Workflow, Git, Open Source]
+categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8

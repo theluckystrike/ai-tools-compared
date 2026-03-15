@@ -86,7 +86,6 @@ For teams working extensively with CDK, creating a dedicated skill for Nag workf
 ---
 name: cdk-nag-helper
 description: Analyzes CDK Nag results and generates remediation code for security and compliance violations
-tools: [read_file, write_file, bash]
 ---
 
 You are a CDK infrastructure security expert. When analyzing Nag results:

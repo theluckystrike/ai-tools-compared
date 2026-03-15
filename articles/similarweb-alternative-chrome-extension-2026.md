@@ -6,7 +6,7 @@ description: "Explore the best SimilarWeb alternative Chrome extensions for 2026
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /similarweb-alternative-chrome-extension-2026/
-categories: [chrome-extensions, web-analytics, developer-tools]
+categories: [guides, guides, guides]
 tags: [similarweb, chrome-extensions, competitive-analysis, web-analytics, seo-tools]
 reviewed: true
 score: 7

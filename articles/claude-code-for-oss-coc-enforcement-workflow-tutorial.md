@@ -41,9 +41,6 @@ Your CoC enforcement skill needs clear front matter defining its scope and avail
 ---
 name: coc-enforcer
 description: Guided workflow for handling Code of Conduct violation reports
-tools: [Read, Write, Bash, Glob]
-category: moderation
-version: 1.0.0
 ---
 ```
 

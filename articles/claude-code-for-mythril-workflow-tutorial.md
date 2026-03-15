@@ -44,7 +44,6 @@ Create a new skill to handle Mythril interactions. In your Claude Skills directo
 ---
 name: mythril
 description: Run Mythril security analysis on Ethereum smart contracts
-tools: [Read, Write, Bash]
 ---
 ```
 
@@ -69,7 +68,6 @@ Create a skill that doesn't just run Mythril but also interprets findings:
 ---
 name: mythril-analyze
 description: Analyze Solidity contracts with Mythril and provide remediation guidance
-tools: [Read, Write, Bash]
 ---
 ```
 

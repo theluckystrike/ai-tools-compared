@@ -67,30 +67,7 @@ Claude Code excels at orchestrating evaluation workflows through its skill syste
 # Evaluation skill structure
 name: llm-evaluator
 description: Automated LLM evaluation workflow
-trigger: on_call
 
-steps:
-  - name: load_tests
-    action: read_test_dataset
-    params:
-      path: "./evaluation/test_cases.jsonl"
-  
-  - name: execute_prompts
-    action: run_model_batch
-    params:
-      model: "claude-3-5-sonnet-20241022"
-      prompts: "{{ steps.load_tests.output }}"
-  
-  - name: evaluate_results
-    action: compute_metrics
-    params:
-      responses: "{{ steps.execute_prompts.output }}"
-      metrics: ["accuracy", "latency", "token_count"]
-  
-  - name: generate_report
-    action: create_evaluation_report
-    params:
-      results: "{{ steps.evaluate_results.output }}"
 ```
 
 This skill loads your test cases, executes them against your chosen model, computes metrics, and generates a report—all automatically.
