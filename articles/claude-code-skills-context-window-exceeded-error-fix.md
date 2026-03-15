@@ -137,7 +137,25 @@ Restore latest checkpoint for this project.
 
 This way you never need to reconstruct context manually after a context window error.
 
-## Fix 7: Reduce Tool Output Verbosity
+## Fix 7: Create Lightweight Skill Aliases
+
+If you regularly need a subset of a large skill, create a minimal alias that contains only the instructions you actually use. For example, instead of loading the full MCP skill, create a stripped-down version:
+
+```
+---
+name: quick-mcp
+description: Fast MCP tool creation
+---
+
+When creating MCP tools:
+1. Use the existing template in templates/mcp-tool.ts
+2. Keep tool definitions under 200 lines
+3. Test immediately after writing
+```
+
+This alias consumes perhaps 200 tokens instead of 2,000. Review your skills directory for any that you only partially rely on — aliases pay off fast.
+
+## Fix 8: Reduce Tool Output Verbosity
 
 Tool outputs (Bash results, file reads, grep results) consume context. Ask Claude to summarize tool output rather than showing it raw:
 
@@ -182,6 +200,19 @@ Session N+2: /supermemory restore auth-impl
 ```
 
 Each session starts small, uses one or two skills, and ends with a checkpoint.
+
+## Which Skill to Use Per Task Phase
+
+Loading skills sequentially rather than simultaneously is the core discipline. Match the skill to the current work phase:
+
+- **`frontend-design`**: Component structure and styling decisions
+- **`tdd`**: Writing tests before or after implementation
+- **`pdf`**: Generating or parsing documentation
+- **`docx`**: Extracting content from Word documents
+- **`supermemory`**: Retrieving project context at session start, then close
+- **`skill-creator`**: Creating custom skills, then close the skill
+
+When in doubt, use one skill per session. Most developers find two skills is the practical maximum before context pressure becomes a problem.
 
 ---
 

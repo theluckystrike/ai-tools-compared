@@ -205,7 +205,6 @@ These issues are usually caused by insufficient context in the skill body or CLA
 | [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Best practices for keeping context usage efficient |
 | [Claude Skills Memory and Context Architecture Guide](/claude-skills-guide/claude-skills-memory-and-context-architecture-explained/) | How memory and context work under the hood |
 | [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) | Token-saving techniques that also prevent context overflow |
-| [Claude Code Context Window Exceeded After Loading Skill Fix](/claude-skills-guide/claude-code-context-window-exceeded-after-loading-skill-fix/) | Fix context overflow errors that trigger immediately on skill load |
 | [Claude Code Skill Not Found in Skills Directory: How to Fix](/claude-skills-guide/claude-code-skill-not-found-in-skills-directory-how-to-fix/) | Resolve file-not-found errors when skills fail to locate themselves |
 | [Claude Code Skill Circular Dependency Detected Error Fix](/claude-skills-guide/claude-code-skill-circular-dependency-detected-error-fix/) | Diagnose and break circular dependency chains in skill files |
 | [Claude Code Skill Invalid YAML Syntax Error: How to Debug](/claude-skills-guide/claude-code-skill-invalid-yaml-syntax-error-how-to-debug/) | Step-by-step YAML debugging for malformed front matter |

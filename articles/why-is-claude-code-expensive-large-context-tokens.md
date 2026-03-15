@@ -97,7 +97,7 @@ For most development tasks, thoughtful context management keeps costs reasonable
 
 - [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) — actionable techniques to cut token consumption without losing capability
 - [Caching Strategies for Claude Code Skill Outputs](/claude-skills-guide/caching-strategies-for-claude-code-skill-outputs/) — cache skill results to avoid redundant token spend
-- [Claude Code Context Window Exceeded After Loading Skill Fix](/claude-skills-guide/claude-code-context-window-exceeded-after-loading-skill-fix/) — troubleshoot and resolve context overflow issues
+- [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) — troubleshoot and resolve context overflow issues
 - [Claude Skill Lazy Loading: Token Savings Explained](/claude-skills-guide/claude-skill-lazy-loading-token-savings-explained-deep-dive/) — understand how lazy loading keeps context lean
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
