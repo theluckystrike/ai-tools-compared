@@ -16,41 +16,9 @@ score: 7
 {% raw %}
 # Claude Code for Remix Error Boundary Workflow Guide
 
-Error handling is a critical aspect of building reliable web applications, and Remix provides a powerful mechanism through error boundaries. This guide explores how Claude Code can assist developers in implementing effective error boundary workflows that enhance user experience and simplify debugging.
+Implementing consistent error boundaries across a Remix application is tedious work: every route needs a boundary, patterns vary by context, and it's easy to forget edge cases like network failures or authentication errors. Claude Code eliminates that friction by generating contextually appropriate error boundaries on demand, enforcing consistency, and helping you catalog the failure modes specific to your application.
 
-## Understanding Remix Error Boundaries
-
-Remix uses React's error boundary concept to handle runtime errors gracefully. When an error occurs in a route or its child components, the error boundary catches it and displays a fallback UI instead of crashing the entire application. This granular error handling is one of Remix's standout features.
-
-Error boundaries in Remix work at two levels: route-level and boundary-level. Route-level error boundaries catch errors specific to a route, while parent routes can define boundaries to catch errors from child routes. This hierarchical approach gives you fine-grained control over error handling.
-
-### The Basic Error Boundary Structure
-
-A Remix error boundary is a React component that implements the `ErrorBoundary` component interface. Here's a typical structure:
-
-```jsx
-import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
-
-export function ErrorBoundary() {
-  const error = useRouteError();
-
-  if (isRouteErrorResponse(error)) {
-    return (
-      <div>
-        <h1>{error.status} - {error.statusText}</h1>
-        <p>{error.data}</p>
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <h1>Unexpected Error</h1>
-      <p>{error.message || "An unexpected error occurred"}</p>
-    </div>
-  );
-}
-```
+This guide focuses on the practical Claude Code workflow — the prompts, patterns, and integration strategies that let you build robust Remix error handling faster and with less manual overhead. For a deep dive into the nested route architecture that underpins Remix error isolation, see [Remix Error Boundaries and Nested Routes](/claude-skills-guide/claude-code-remix-error-boundaries-nested-routes-guide/).
 
 ## How Claude Code Enhances Error Boundary Development
 

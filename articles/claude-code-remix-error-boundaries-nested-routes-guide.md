@@ -16,17 +16,13 @@ score: 7
 {% raw %}
 # Remix Error Boundaries and Nested Routes: A Practical Guide
 
-Building robust web applications means handling errors gracefully without bringing down your entire app. Remix provides a powerful combination of error boundaries and nested routes that lets you create granular, resilient error handling at any level of your application hierarchy. This guide walks you through practical patterns for implementing these features effectively.
+Remix's nested routing system is one of its most powerful architectural features — and understanding how error boundaries interact with that hierarchy is the key to building applications where failures are contained rather than catastrophic. This guide focuses on the structural decisions: where to place boundaries in your route tree, how parent and child boundaries relate, and the practical patterns for loader errors, action errors, and error recovery in a nested route context.
 
-## Understanding Error Boundaries in Remix
+If you're looking for how to use Claude Code to generate and manage error boundaries efficiently, see [Claude Code for Remix Error Boundary Workflow Guide](/claude-skills-guide/claude-code-for-remix-error-boundary-workflow-guide/).
 
-Error boundaries in Remix are React components that catch JavaScript errors anywhere in their child component tree. Unlike traditional try-catch blocks that only handle synchronous code, error boundaries capture errors from component rendering, lifecycle methods, and even asynchronous operations in loaders and actions.
+## The Basic Error Boundary Contract
 
-When an error occurs within a boundary's scope, Remix intercepts the error, renders the boundary's fallback UI, and prevents the error from propagating upward. This isolation means a failure in one route doesn't crash your entire application.
-
-### Creating Your First Error Boundary
-
-A basic error boundary is a React component that implements the `ErrorBoundary` prop:
+Before diving into nesting, here's the essential pattern: export an `ErrorBoundary` function from any route module, and Remix will render it whenever that route (or a child without its own boundary) throws:
 
 ```jsx
 import { isRouteErrorResponse, useRouteError } from "@remix-run/react";
