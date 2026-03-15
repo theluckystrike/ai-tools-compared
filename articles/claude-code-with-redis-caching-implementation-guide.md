@@ -14,13 +14,13 @@ tags: [claude-code, claude-skills]
 
 # Claude Code with Redis Caching Implementation Guide
 
-Redis has become an essential tool for developers building high-performance applications, and integrating it with Claude Code can dramatically improve your development workflow. This guide walks you through implementing Redis caching in your Claude Code projects, from basic setup to advanced patterns that will help you build faster, more efficient AI-assisted development pipelines.
+Redis has become an essential tool for developers building high-performance applications, and integrating it with Claude Code can dramatically improve your development workflow. This guide walks you through implementing Redis caching in your Claude Code projects using JavaScript and Node.js, from Docker-based local setup to team-shared distributed caching patterns. If you are building Claude Code skills that need to cache skill outputs or coordinate multiple subagents internally, see the companion article [Claude Code Skills Redis Caching Layer Implementation](/claude-skills-guide/claude-code-skills-redis-caching-layer-implementation/) for Python-based, skills-specific patterns.
 
 ## Why Redis Caching Matters for Claude Code Projects
 
-When you're working with Claude Code for extended development sessions, you'll often encounter scenarios where the same data needs to be retrieved repeatedly. Whether it's fetching API responses, computing expensive operations, or accessing configuration data, caching these results can save significant time and resources.
+When you're working with Claude Code for extended development sessions, you'll often encounter scenarios where the same data needs to be retrieved repeatedly across your application layer. Whether it's caching API responses from third-party services, memoizing expensive computations triggered by Claude Code tool calls, or sharing configuration data between Node.js processes, a dedicated caching layer saves time and money.
 
-Redis provides an in-memory data structure store that excels at this purpose. Its support for various data types—strings, hashes, lists, and sets—makes it versatile for different caching scenarios. By implementing Redis caching in your Claude Code workflow, you can reduce API calls, speed up repeated computations, and maintain state across sessions.
+Redis provides an in-memory data structure store that excels at this purpose. Its support for various data types—strings, hashes, lists, and sets—makes it versatile for different caching scenarios at the application level. By implementing Redis caching in your Claude Code project, you can reduce redundant API calls, speed up repeated computations, share state across multiple processes, and give teams working on the same codebase a shared cache that cuts duplicate work.
 
 ## Setting Up Redis for Your Claude Code Project
 
@@ -59,11 +59,9 @@ For Go projects:
 go get github.com/go-redis/redis/v8
 ```
 
-## Implementing Basic Caching Patterns
+## Implementing Basic Caching Patterns in JavaScript
 
-Now let's explore fundamental caching patterns you can implement in your Claude Code workflows. The most common pattern is the cache-aside pattern, where you check the cache first before computing or fetching data.
-
-Here's a practical implementation in JavaScript:
+The cache-aside pattern is the workhorse of Redis caching in Node.js applications. Your application checks Redis first, and only hits the underlying data source on a miss. Here is a reusable JavaScript helper built on `ioredis`:
 
 ```javascript
 const Redis = require('ioredis');
@@ -184,6 +182,7 @@ Start with basic cache-aside patterns, then evolve your implementation to includ
 
 ## Related Reading
 
+- [Claude Code Skills Redis Caching Layer Implementation](/claude-skills-guide/claude-code-skills-redis-caching-layer-implementation/) — Python-based Redis patterns for caching skill outputs, session state, and cross-agent pub/sub communication
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)

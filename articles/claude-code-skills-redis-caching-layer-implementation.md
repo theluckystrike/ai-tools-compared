@@ -233,6 +233,7 @@ Start with simple key-value caching, then expand to hashes for session data and 
 
 ## Related Reading
 
+- [Claude Code with Redis Caching Implementation Guide](/claude-skills-guide/claude-code-with-redis-caching-implementation-guide/) — project-level Redis caching in JavaScript/Node.js, including Docker setup, multi-language clients, and team-shared distributed caching
 - [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/) — coordinate agents with Redis as the shared message bus
 - [Parallel Subagents Claude Code Best Practices 2026](/claude-skills-guide/parallel-subagents-claude-code-best-practices-2026/) — run multiple agents concurrently while sharing cached outputs via Redis
 - [Building Stateful Agents with Claude Skills Guide](/claude-skills-guide/building-stateful-agents-with-claude-skills-guide/) — persist workflow state across sessions using structured storage
