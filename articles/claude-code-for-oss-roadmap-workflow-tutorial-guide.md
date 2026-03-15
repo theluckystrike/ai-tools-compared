@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for OSS Roadmap Workflow Tutorial Guide"
 description: "Learn how to use Claude Code to streamline open source software roadmap planning and management. Practical workflow automation for feature prioritization, milestone planning, and community coordination."
@@ -8,7 +9,10 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-roadmap-workflow-tutorial-guide/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

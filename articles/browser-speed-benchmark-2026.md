@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Browser Speed Benchmark 2026 – Performance Comparison for Developers"
 description: "A comprehensive browser speed benchmark comparing Chrome, Firefox, Safari, Edge, and Brave in 2026. Learn which browser delivers the best performance for development workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /browser-speed-benchmark-2026/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Browser Speed Benchmark 2026 – Performance Comparison for Developers

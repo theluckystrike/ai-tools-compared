@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome WASM Performance: A Practical Guide for Developers"
 description: "Learn how WebAssembly performs in Chrome, with code examples and optimization techniques for building high-performance web applications."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-wasm-performance/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 
@@ -181,7 +187,7 @@ Compare against pure JavaScript implementations to validate the performance bene
 
 ## Conclusion
 
-Chrome WASM performance depends on thoughtful implementation. Focus on minimizing JS-WASM boundary crossings, managing memory efficiently, and using appropriate compilation strategies. Profile your application in Chrome DevTools to identify bottlenecks specific to your use case. With these techniques, you can build web applications that leverage near-native performance through WebAssembly.
+Chrome WASM performance depends on thoughtful implementation. Focus on minimizing JS-WASM boundary crossings, managing memory efficiently, and using appropriate compilation strategies. Profile your application in Chrome DevTools to identify bottlenecks specific to your use case. With these techniques, you can build web applications that use near-native performance through WebAssembly.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

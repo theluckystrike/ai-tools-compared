@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Lag When Switching Tabs — Causes and Solutions for Developers"
 description: "experiencing chrome lag when switching tabs? this guide covers the technical causes and practical fixes for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-lag-switching-tabs/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Lag When Switching Tabs — Causes and Solutions for Developers

@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Core Web Vitals Fix: A Practical Guide for Developers"
 description: "Learn how to identify and fix Core Web Vitals issues in Chrome. This guide covers LCP, FID, and CLS optimization with code examples and tools."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-core-web-vitals-fix/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Core Web Vitals Fix: A Practical Guide for Developers
 

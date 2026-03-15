@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Tabs Crashing: A Developer's Guide to Diagnosis and Solutions"
 description: "Learn why Chrome tabs crash and how to diagnose the issue. Practical solutions for developers and power users dealing with tab crashes, memory issues, and extension conflicts."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-tabs-crashing/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Tabs Crashing: A Developer's Guide to Diagnosis and Solutions
 
