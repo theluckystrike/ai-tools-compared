@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Sora vs Runway AI Video Generation: A Technical Comparison for Developers"
+title: "Sora vs Runway AI Video Generation: A Technical."
 description: "A practical comparison of OpenAI Sora and Runway AI video generation APIs for developers building video applications."
 date: 2026-03-15
 author: theluckystrike
@@ -280,6 +280,11 @@ Choosing between Sora and Runway depends on your specific requirements. If you n
 Both platforms are evolving rapidly, with frequent model updates and new features. Stay current with their documentation to leverage the latest capabilities as they become available. Consider building abstraction layers in your code to swap between providers as the technology matures.
 
 For production deployments, implement proper error handling, caching, and rate limiting. Monitor API usage closely to manage costs effectively while delivering the best user experience.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
