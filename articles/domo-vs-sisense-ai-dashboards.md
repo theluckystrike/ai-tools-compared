@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Domo vs Sisense AI Dashboards: A Practical Comparison for Developers"
+title: "Domo vs Sisense AI Dashboards: A Practical Comparison."
 description: "A technical comparison of Domo and Sisense AI dashboard capabilities with code examples, API integration patterns, and recommendations for power users."
 date: 2026-03-15
 author: theluckystrike
@@ -244,5 +244,10 @@ If your project requires deep integration with custom ML models or complex dashb
 Evaluate based on your specific use case, existing infrastructure, and the skill sets of your data team.
 
 {% endraw %}
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
