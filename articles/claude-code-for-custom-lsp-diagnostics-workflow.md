@@ -1,217 +1,234 @@
 ---
-
 layout: default
 title: "Claude Code for Custom LSP Diagnostics Workflow"
-description: "Learn how to build powerful custom LSP diagnostics workflows using Claude Code CLI. Automate code analysis, create tailored error handling, and."
+description: "Learn how to build powerful custom diagnostics workflows using Claude Code and Language Server Protocol to automate code quality checks and error detection."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: Claude Skills Guide
 permalink: /claude-code-for-custom-lsp-diagnostics-workflow/
-categories: [guides]
+categories: [Development, Automation, Claude Code]
 tags: [claude-code, claude-skills]
-reviewed: true
-score: 8
 ---
-
 
 {% raw %}
 # Claude Code for Custom LSP Diagnostics Workflow
 
-Language Server Protocol (LSP) diagnostics are the backbone of modern code quality tools—those red squiggles telling you about syntax errors, the yellow warnings about deprecated APIs, and the hints suggesting code improvements. While most IDEs handle these diagnostics automatically, building custom workflows around LSP diagnostics can dramatically improve your development process. This guide shows you how to use Claude Code CLI to create powerful, automated diagnostic workflows tailored to your project's needs.
+The Language Server Protocol (LSP) has revolutionized how we approach code analysis and diagnostics. By combining Claude Code with custom LSP diagnostics workflows, developers can create powerful automated systems that catch errors, enforce coding standards, and provide intelligent feedback—all without leaving their development environment.
+
+This guide walks you through building a custom LSP diagnostics workflow using Claude Code, with practical examples you can adapt for your own projects.
 
 ## Understanding LSP Diagnostics in Claude Code
 
-Before diving into custom workflows, it's essential to understand how Claude Code interacts with LSP diagnostics. Claude Code can connect to LSP servers through the `lsp` command, enabling it to understand your codebase's structure and receive diagnostic information in real-time.
+LSP diagnostics are standardized messages that language servers send to clients to report errors, warnings, and other issues in your code. Claude Code can interact with these diagnostics to help you build workflows that automatically detect, categorize, and respond to code issues.
 
-The LSP specification defines diagnostics as JSON-RPC messages containing severity levels, error codes, and source locations. When Claude Code connects to an LSP server (like pyright for Python, typescript-language-server for TypeScript, or rust-analyzer for Rust), it receives these diagnostics and can use them to inform its responses.
+When you work with LSP-enabled editors, diagnostics appear as squiggly lines under problematic code. But with Claude Code, you can go beyond visual indicators—you can capture, filter, and act on these diagnostics programmatically.
 
-## Setting Up Your Diagnostic Environment
+## Setting Up Your Diagnostic Collection
 
-The first step in building custom LSP diagnostics workflows is ensuring your environment is properly configured. Here's how to set up Claude Code with LSP support:
+The first step in building a custom diagnostics workflow is capturing LSP messages. Here's a basic setup using Claude Code's tools:
 
-```bash
-# Check current LSP status
-claude lsp status
+```python
+import subprocess
+import json
 
-# Connect to a specific language server
-claude lsp add python --command "pyright-langserver --stdio"
-
-# For TypeScript/JavaScript
-claude lsp add typescript --command "typescript-language-server --stdio"
+def get_lsp_diagnostics(lsp_server, file_path):
+    """Capture diagnostics from an LSP server for a given file."""
+    # Initialize LSP server and send didOpen notification
+    initialize_msg = {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "initialize",
+        "params": {
+            "processId": None,
+            "rootUri": "file:///your/project/root",
+            "capabilities": {}
+        }
+    }
+    
+    # Send document open notification
+    did_open_msg = {
+        "jsonrpc": "2.0",
+        "method": "textDocument/didOpen",
+        "params": {
+            "textDocument": {
+                "uri": f"file://{file_path}",
+                "languageId": "python",
+                "version": 1,
+                "text": open(file_path).read()
+            }
+        }
+    }
+    
+    # Parse diagnostics from server response
+    return parse_diagnostics_response(response)
 ```
 
-Create a dedicated skill for handling diagnostics. This skill will serve as the foundation for your custom workflow:
+This foundation lets you build more sophisticated workflows that process diagnostics in real-time.
 
-```yaml
----
-name: diagnostics
-description: Analyze and report LSP diagnostics for the current project
----
-```
+## Building a Custom Diagnostics Pipeline
 
-This skill declaration ensures you have the necessary tools to read diagnostic data, execute verification commands, and glob for relevant files.
+A well-designed diagnostics pipeline has three main stages: collection, analysis, and action. Let's build each component.
 
-## Building Custom Diagnostic Workflows
+### Stage 1: Collection
 
-With your environment ready, you can now build custom workflows that go beyond what standard IDEs offer. Here are three practical examples:
+Create a Claude Code skill that intercepts diagnostics from your language server:
 
-### 1. Project-Wide Diagnostic Aggregation
-
-Instead of checking diagnostics file-by-file, create a workflow that aggregates all diagnostic information:
-
-```bash
-#!/bin/bash
-# aggregate-diagnostics.sh
-
-# Collect diagnostics from all relevant files
-claude lsp diagnostics --all > diagnostics.json
-
-# Parse and summarize by severity
-jq '.diagnostics | group_by(.severity) | map({
-  severity: .[0].severity,
-  count: length,
-  files: [.file] | unique
-})' diagnostics.json
-```
-
-This script collects all diagnostics and groups them by severity level, giving you a quick overview of your project's health.
-
-### 2. Automated Fix Suggestions
-
-Create a workflow that not only identifies problems but suggests fixes:
-
-```markdown
-## Diagnostic Analysis Skill
-
-When analyzing diagnostics:
-
-1. First, retrieve all current diagnostics using `claude lsp diagnostics`
-2. For each error:
-   - Read the relevant source file
-   - Analyze the error context
-   - Provide a concrete fix suggestion with code example
-   
-3. For warnings:
-   - Assess if the warning indicates a genuine issue
-   - Suggest refactoring if applicable
-   
-4. Categorize issues by:
-   - Quick fixes (syntax errors, simple corrections)
-   - Refactoring needed (code smells, deprecated patterns)
-   - Architectural concerns (performance, security)
-```
-
-This skill guides Claude Code to provide actionable fixes rather than just reporting errors.
-
-### 3. CI/CD Integration
-
-Integrate LSP diagnostics into your continuous integration pipeline:
-
-```yaml
-# In your CI configuration
-lint-stage:
-  script:
-    - claude lsp diagnostics --format json > lint-results.json
-    - |
-      if jq '.diagnostics | length' lint-results.json | grep -qv '^0$'; then
-        echo "Linting errors found:"
-        jq '.diagnostics[] | "\(.file):\(.line) - \(.message)"' lint-results.json
-        exit 1
-      fi
-```
-
-This integration ensures that code with unresolved diagnostics cannot pass through your CI pipeline.
-
-## Advanced Patterns for Diagnostic Workflows
-
-### Filtering and Prioritization
-
-Not all diagnostics are equal. Build filters to focus on what matters:
-
-```bash
-# Only show errors and warnings, ignore hints
-claude lsp diagnostics --min-severity warning
-
-# Filter by file pattern
-claude lsp diagnostics "src/**/*.ts"
-
-# Focus on specific error codes
-claude lsp diagnostics --filter-code "no-unused-vars"
-```
-
-### Custom Diagnostic Rules
-
-For teams with specific coding standards, create custom rules that go beyond what the language server provides:
-
-```javascript
-// custom-linter.js - Run after LSP diagnostics
-const { execSync } = require('child_process');
-
-function checkCustomRules(filePath) {
-  const content = require('fs').readFileSync(filePath, 'utf8');
-  const diagnostics = [];
-  
-  // Example: Check for TODO comments that should be addressed
-  const todoPattern = /\/\/\s*TODO.*\n/gi;
-  let match;
-  while ((match = todoPattern.exec(content)) !== null) {
-    diagnostics.push({
-      file: filePath,
-      line: content.substring(0, match.index).split('\n').length,
-      severity: 'warning',
-      message: 'TODO comment found - ensure it has a tracking issue'
-    });
-  }
-  
-  return diagnostics;
+```json
+{
+  "name": "diagnostics-collector",
+  "description": "Collect and aggregate LSP diagnostics",
+  "actions": [
+    {
+      "trigger": "on-save",
+      "execute": "capture_current_diagnostics"
+    }
+  ]
 }
 ```
 
-### Historical Analysis
+### Stage 2: Analysis
 
-Track diagnostic trends over time:
+Once collected, diagnostics need categorization. Here's a pattern for analyzing and grouping issues:
+
+```python
+def analyze_diagnostics(diagnostics):
+    """Categorize diagnostics by severity and type."""
+    categorized = {
+        "errors": [],
+        "warnings": [],
+        "information": [],
+        "by_file": {},
+        "by_type": {}
+    }
+    
+    for diag in diagnostics:
+        severity = diag.get("severity", 3)
+        if severity == 1:
+            categorized["errors"].append(diag)
+        elif severity == 2:
+            categorized["warnings"].append(diag)
+        else:
+            categorized["information"].append(diag)
+        
+        # Group by file
+        file = diag.get("uri", "").split("/")[-1]
+        categorized["by_file"].setdefault(file, []).append(diag)
+        
+        # Group by error code
+        code = diag.get("code", "unknown")
+        categorized["by_type"].setdefault(code, []).append(diag)
+    
+    return categorized
+```
+
+### Stage 3: Action
+
+The final stage is taking action based on your analysis. This could mean generating reports, triggering notifications, or automatically creating fix suggestions:
+
+```python
+def generate_diagnostic_report(analyzed, output_path):
+    """Create a formatted diagnostic report."""
+    report = []
+    report.append("# Diagnostics Report\n")
+    
+    report.append(f"## Summary")
+    report.append(f"- Errors: {len(analyzed['errors'])}")
+    report.append(f"- Warnings: {len(analyzed['warnings'])}")
+    report.append(f"- Info: {len(analyzed['information'])}\n")
+    
+    if analyzed['errors']:
+        report.append("## Critical Errors\n")
+        for error in analyzed['errors']:
+            report.append(f"- **{error['source']}**: {error['message']}")
+            if 'range' in error:
+                report.append(f"  Location: {error['range']}")
+            report.append("")
+    
+    return "\n".join(report)
+```
+
+## Practical Example: Git Pre-Commit Diagnostics
+
+One powerful use case is running diagnostics before commits. Here's how to integrate with git hooks:
 
 ```bash
 #!/bin/bash
-# diagnostic-trend.sh
+# .git/hooks/pre-commit
 
-DATE=$(date +%Y-%m-%d)
-claude lsp diagnostics --all > "diagnostics-$DATE.json"
+# Run diagnostics on staged files
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
 
-# Compare with previous run
-if [ -f "diagnostics-previous.json" ]; then
-  echo "Trend Analysis:"
-  echo "Errors: $(jq '.diagnostics | map(select(.severity == "error")) | length' diagnostics-$DATE.json)"
-  echo "Previous: $(jq '.diagnostics | map(select(.severity == "error")) | length' diagnostics-previous.json)"
+for file in $STAGED_FILES; do
+    echo "Running diagnostics on: $file"
+    claude-code run-diagnostics --file "$file" --format json
+done
+
+# Exit with error if critical issues found
+if [ $? -ne 0 ]; then
+    echo "Critical diagnostics found. Commit aborted."
+    exit 1
 fi
+```
 
-cp diagnostics-$DATE.json diagnostics-previous.json
+This workflow ensures code quality before it enters your repository, catching issues early in the development cycle.
+
+## Advanced: Custom Diagnostic Rules
+
+Beyond standard LSP diagnostics, you can create custom rules specific to your project:
+
+```javascript
+// Define custom diagnostic rules
+const customRules = {
+    "no-console-log": {
+        "severity": "warning",
+        "message": "Use a proper logging framework instead of console.log",
+        "pattern": /console\.(log|debug|info)/
+    },
+    "auth-check-required": {
+        "severity": "error",
+        "message": "Route handler must include authentication check",
+        "pattern": /router\.(get|post|put|delete)\(.*\)$/m,
+        "requires": ["authMiddleware"]
+    }
+};
+
+// Apply custom rules alongside LSP diagnostics
+function applyCustomRules(sourceCode, lspDiagnostics) {
+    const customIssues = [];
+    
+    for (const [ruleName, rule] of Object.entries(customRules)) {
+        const matches = sourceCode.matchAll(rule.pattern);
+        for (const match of matches) {
+            customIssues.push({
+                rule: ruleName,
+                message: rule.message,
+                severity: rule.severity,
+                position: match.index
+            });
+        }
+    }
+    
+    return [...lspDiagnostics, ...customIssues];
+}
 ```
 
 ## Best Practices for Diagnostic Workflows
 
-When building custom LSP diagnostic workflows with Claude Code, follow these guidelines:
+When building your custom LSP diagnostics workflow, keep these principles in mind:
 
-**Start Simple**: Begin with basic diagnostic collection and gradually add complexity. It's easier to debug a simple workflow than a complex one.
+1. **Prioritize by severity**: Not all diagnostics are equal. Focus on errors first, then warnings, and finally informational messages.
 
-**Use Version Control**: Store your diagnostic scripts and configurations in version control. This ensures consistency across team members and provides audit trails.
+2. **Aggregate strategically**: Instead of treating each diagnostic in isolation, look for patterns. A hundred similar warnings might indicate a systemic issue worth addressing holistically.
 
-**Combine with Other Tools**: LSP diagnostics work best when combined with other static analysis tools. Consider integrating with ESLint, Pylint, or SonarQube for comprehensive coverage.
+3. **Integrate with your tooling**: Your diagnostics workflow should play well with existing tools—linters, formatters, and CI/CD pipelines.
 
-**Automate Responsibly**: While automation is powerful, ensure there's a process for handling false positives. Create mechanisms to suppress legitimate exceptions.
+4. **Provide actionable feedback**: When diagnostics are detected, the action should be clear. Don't just say "there's an error"; explain what to do about it.
 
-**Document Your Rules**: If you're creating custom diagnostic rules, document them clearly. Future you (and your teammates) will thank you.
+5. **Cache intelligently**: Running full diagnostics on every keystroke is expensive. Implement debouncing and caching to balance responsiveness with accuracy.
 
 ## Conclusion
 
-Custom LSP diagnostics workflows through Claude Code unlock new possibilities for code quality management. By moving beyond passive error display and creating主动的 automated workflows, you can catch issues earlier, maintain consistent code standards, and integrate quality checks smoothly into your development process.
+Building custom LSP diagnostics workflows with Claude Code opens up powerful possibilities for automated code quality assurance. By collecting diagnostics, analyzing patterns, and taking targeted actions, you can catch issues early, enforce standards consistently, and focus your attention on what matters most—writing great code.
 
-Start with the basic patterns in this guide, then adapt them to your specific needs. The flexibility of Claude Code means your diagnostic workflows can evolve alongside your project requirements.
+Start with simple workflows and iterate. The key is finding the right balance between thoroughness and performance, ensuring your diagnostics enhance rather than hinder your development process.
+
 {% endraw %}
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
