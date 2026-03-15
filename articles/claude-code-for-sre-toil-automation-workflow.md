@@ -40,8 +40,8 @@ First, configure Claude Code with the necessary tools for SRE operations:
 # Install Claude Code if needed
 npm install -g @anthropic-ai/claude-code
 
-# Initialize with SRE-specific configuration
-claude configure --profile sre-workflows
+# Launch Claude Code in the project directory
+claude
 ```
 
 Create a `.claude/settings.json` for your SRE automation:
