@@ -2,7 +2,7 @@
 
 layout: default
 title: "Chrome Extension LinkedIn Post Scheduler: A Developer Guide"
-description: "Learn how to build or use a Chrome extension for scheduling LinkedIn posts. Technical implementation details, API integration, and practical examples for developers."
+description: "Learn how to build or use a Chrome extension for scheduling LinkedIn posts. Technical implementation details, API integration, and practical examples."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-linkedin-post-scheduler/
@@ -322,5 +322,12 @@ For production use cases, consider these alternatives:
 - **Custom web app + LinkedIn Marketing API**: Most reliable for high-volume scheduling
 
 The Chrome extension approach works well for individual users who want quick access to scheduling without monthly subscription costs. For teams or agencies managing multiple accounts, the official API-based solutions provide better reliability and support.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

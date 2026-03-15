@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension LeetCode Helper: Boost Your Coding Interview Prep"
-description: "Discover how Chrome extensions can accelerate your LeetCode practice. Explore features like solution hints, timer tracking, problem categorization, and code snippets for developers."
+title: "Chrome Extension LeetCode Helper: Boost Your Coding."
+description: "Discover how Chrome extensions can accelerate your LeetCode practice. Explore features like solution hints, timer tracking, problem categorization, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-leetcode-helper/
@@ -175,6 +175,13 @@ Avoid extensions that require excessive permissions or seem abandoned by their d
 Chrome extensions provide meaningful enhancements to LeetCode practice by automating tracking, improving workflow efficiency, and integrating with your existing development tools. The key is selecting extensions that address your specific pain points and building a consistent practice routine around them.
 
 Start with one or two extensions that track progress and provide timers, then expand your toolkit as you identify additional needs during your preparation journey.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
