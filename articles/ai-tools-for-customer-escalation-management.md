@@ -239,5 +239,10 @@ Consider multi-channel handling. Modern customers escalate through chat, email, 
 
 The patterns shown here provide a starting point—adjust classification weights, routing rules, and notification channels based on your team's capacity and your customers' expectations.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

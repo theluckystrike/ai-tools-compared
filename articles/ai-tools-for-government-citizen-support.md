@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Government Citizen Support"
-description: "A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector applications."
+description: "A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-government-citizen-support/
@@ -199,6 +199,11 @@ Government AI implementation succeeds when it augments staff capabilities rather
 
 ---
 voice-checked: true
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
