@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for CloudWatch RUM Workflow"
 description: "Learn how to use Claude Code to set up, configure, and manage AWS CloudWatch RUM (Real User Monitoring) for your web applications. Practical examples."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-cloudwatch-rum-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for CloudWatch RUM Workflow

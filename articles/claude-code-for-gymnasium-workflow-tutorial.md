@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Gymnasium Workflow Tutorial"
 description: "A comprehensive guide for developers on using Claude Code for Gymnasium reinforcement learning environments. Learn practical workflows, code patterns, and tips for RL development."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-gymnasium-workflow-tutorial/
 categories: [workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Gymnasium Workflow Tutorial
 

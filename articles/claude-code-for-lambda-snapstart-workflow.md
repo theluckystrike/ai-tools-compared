@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Lambda SnapStart Workflow"
 description: "Learn how to use Claude Code to automate AWS Lambda SnapStart configuration, optimization, and deployment workflows. Practical patterns with code examples."
@@ -7,7 +8,10 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-lambda-snapstart-workflow/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Lambda SnapStart Workflow
@@ -91,7 +95,7 @@ Claude Code can review your function code, identify potential SnapStart compatib
 
 ## Creating a SnapStart CI/CD Pipeline with Claude Code
 
-Automating SnapStart deployment requires careful pipeline orchestration. Claude Code can help you build a robust CI/CD workflow that handles snapshot publishing and function updates:
+Automating SnapStart deployment requires careful pipeline orchestration. Claude Code can help you build a solid CI/CD workflow that handles snapshot publishing and function updates:
 
 ```yaml
 # GitHub Actions workflow for Lambda SnapStart deployment

@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for LLM Code Review Workflow"
 description: "Master the art of building LLM-powered code review workflows with Claude Code. Learn practical implementations, automation patterns, and best practices for integrating AI into your review process."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-llm-code-review-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 
 Integrating Large Language Models into your code review workflow represents one of the most impactful applications of AI in software development. Claude Code provides a powerful CLI foundation for building sophisticated LLM-powered review systems that can analyze code, provide feedback, and even suggest improvements in real-time. This guide walks you through creating an effective LLM code review workflow using Claude Code.
@@ -73,7 +77,7 @@ claude -p "Review the following code changes and provide feedback:
 $DIFF_CONTENT"
 ```
 
-This script demonstrates the core pattern but needs enhancement for production use. A more robust approach includes error handling, context window management for large changes, and structured output parsing.
+This script demonstrates the core pattern but needs enhancement for production use. A more solid approach includes error handling, context window management for large changes, and structured output parsing.
 
 ## Advanced Patterns for Large Codebases
 
@@ -149,7 +153,7 @@ Many organizations require these precautions before deploying LLM review in prod
 
 ## Conclusion
 
-Building an LLM-powered code review workflow with Claude Code transforms how teams ship software. By automating initial review feedback, developers receive faster iteration cycles while maintaining code quality standards. The key lies in thoughtful implementation: create well-defined skills, build robust automation scripts, integrate seamlessly with your existing tools, and continuously refine based on team feedback.
+Building an LLM-powered code review workflow with Claude Code transforms how teams ship software. By automating initial review feedback, developers receive faster iteration cycles while maintaining code quality standards. The key lies in thoughtful implementation: create well-defined skills, build solid automation scripts, integrate smoothly with your existing tools, and continuously refine based on team feedback.
 
 Start with a simple implementation focusing on one language or project type, measure the results, and expand incrementally. Your developers will quickly appreciate the faster feedback loop, and you'll wonder how you ever managed without it.
 

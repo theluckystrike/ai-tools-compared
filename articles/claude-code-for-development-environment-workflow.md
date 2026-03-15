@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Development Environment Workflow"
 description: "A practical guide to integrating Claude Code into your development environment workflow. Learn setup, configuration, and real-world usage patterns."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-development-environment-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Development Environment Workflow

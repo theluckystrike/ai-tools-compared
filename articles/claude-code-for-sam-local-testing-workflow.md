@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for SAM Local Testing Workflow"
 description: "Learn how to use Claude Code to streamline your AWS SAM local testing workflow. Practical examples, automation tips, and code snippets for developers."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-sam-local-testing-workflow/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for SAM Local Testing Workflow
 
-AWS SAM (Serverless Application Model) has become the go-to framework for building serverless applications. Testing these applications locally with `sam local` is an essential part of the development cycle, but it can sometimes be cumbersome to set up and manage. This guide shows you how to leverage Claude Code to automate and streamline your SAM local testing workflow, making local development faster and more efficient.
+AWS SAM (Serverless Application Model) has become the go-to framework for building serverless applications. Testing these applications locally with `sam local` is an essential part of the development cycle, but it can sometimes be cumbersome to set up and manage. This guide shows you how to use Claude Code to automate and streamline your SAM local testing workflow, making local development faster and more efficient.
 
 ## Understanding the SAM Local Testing Challenge
 

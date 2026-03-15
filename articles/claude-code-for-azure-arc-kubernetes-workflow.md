@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Azure Arc Kubernetes Workflow"
 description: "A practical guide to using Claude Code for managing Azure Arc-enabled Kubernetes clusters, including deployment automation, configuration management."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-azure-arc-kubernetes-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Azure Arc Kubernetes Workflow
 
-Azure Arc-enabled Kubernetes extends Azure's management capabilities to Kubernetes clusters running anywhere—on-premises, on other cloud providers, or at the edge. Managing these hybrid Kubernetes environments can be complex, but Claude Code can significantly streamline your workflow. This guide shows you how to leverage Claude Code effectively for Azure Arc Kubernetes operations.
+Azure Arc-enabled Kubernetes extends Azure's management capabilities to Kubernetes clusters running anywhere—on-premises, on other cloud providers, or at the edge. Managing these hybrid Kubernetes environments can be complex, but Claude Code can significantly streamline your workflow. This guide shows you how to use Claude Code effectively for Azure Arc Kubernetes operations.
 
 ## Understanding Azure Arc Kubernetes Architecture
 
@@ -231,7 +235,7 @@ done
 
 ## Conclusion
 
-Claude Code is a powerful assistant for Azure Arc Kubernetes management. By providing the right context about your environment and asking specific questions, you can leverage Claude to:
+Claude Code is a powerful assistant for Azure Arc Kubernetes management. By providing the right context about your environment and asking specific questions, you can use Claude to:
 
 - Generate accurate configuration files and commands
 - Understand Azure Arc concepts and architecture

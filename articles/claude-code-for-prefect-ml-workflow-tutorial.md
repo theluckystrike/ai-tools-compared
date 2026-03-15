@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Prefect ML Workflow Tutorial"
 description: "Learn how to use Claude Code to build, orchestrate, and automate ML workflows with Prefect. A practical guide for data scientists and ML engineers."
@@ -8,13 +9,16 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-prefect-ml-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Prefect ML Workflow Tutorial
 
 Machine learning workflows often involve complex chains of data preprocessing, model training, evaluation, and deployment tasks. Prefect is a powerful workflow orchestration tool that helps data scientists and ML engineers build reliable data pipelines. When combined with Claude Code, you get an AI-powered development partner that can accelerate your ML workflow implementation significantly.
 
-This tutorial shows you how to leverage Claude Code to build Prefect-based ML workflows efficiently.
+This tutorial shows you how to use Claude Code to build Prefect-based ML workflows efficiently.
 
 ## Setting Up Your Prefect Environment
 
@@ -164,7 +168,7 @@ claude --prompt "Add Prefect scheduling to the ML pipeline:
 
 ## Integrating with MLflow for Experiment Tracking
 
-Prefect integrates seamlessly with MLflow for tracking experiments, parameters, and metrics. Here's how to set up the integration:
+Prefect integrates smoothly with MLflow for tracking experiments, parameters, and metrics. Here's how to set up the integration:
 
 ```python
 from prefect_mlflow import MLFlowTracker

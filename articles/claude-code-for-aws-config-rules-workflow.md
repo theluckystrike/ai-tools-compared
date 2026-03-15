@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for AWS Config Rules Workflow"
 description: "Learn how to automate AWS Config Rules management using Claude Code. Practical workflow patterns, code examples, and actionable tips for developers."
@@ -7,12 +8,15 @@ categories: [tutorials]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-aws-config-rules-workflow/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for AWS Config Rules Workflow
 
-AWS Config Rules provide a powerful way to evaluate the configuration settings of your AWS resources against desired security and compliance standards. However, managing these rules at scale can become complex and time-consuming. This guide shows you how to leverage Claude Code to streamline your AWS Config Rules workflow, making it more efficient and maintainable.
+AWS Config Rules provide a powerful way to evaluate the configuration settings of your AWS resources against desired security and compliance standards. However, managing these rules at scale can become complex and time-consuming. This guide shows you how to use Claude Code to streamline your AWS Config Rules workflow, making it more efficient and maintainable.
 
 ## Understanding AWS Config Rules Basics
 

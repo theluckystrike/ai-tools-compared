@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Bazel Remote Cache Workflow"
 description: "Learn how to integrate Claude Code into your Bazel build pipeline with remote caching. This guide covers setup, configuration, and practical workflows to speed up your builds."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-bazel-remote-cache-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Bazel Remote Cache Workflow

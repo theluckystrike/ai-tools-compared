@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Inner Loop Optimization Workflow"
 description: "Learn how to optimize your inner development loop with Claude Code. Practical techniques for faster builds, instant feedback, and streamlined debugging workflows."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-inner-loop-optimization-workflow/
 categories: [workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Inner Loop Optimization Workflow

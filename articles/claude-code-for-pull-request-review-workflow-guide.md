@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Pull Request Review Workflow Guide"
 description: "Learn how to leverage Claude Code CLI to streamline your pull request review process with practical examples and actionable advice."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-pull-request-review-workflow-guide/
 categories: [Development, Tools, Workflow]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 ## Introduction
@@ -141,7 +145,7 @@ claude "Identify potential regressions these changes might introduce based on th
 
 ## Conclusion
 
-Claude Code transforms pull request reviews from a tedious chore into an efficient, educational process. By automating routine checks and providing intelligent suggestions, it helps teams maintain quality while reducing review time. The key is finding the right balance between leveraging AI assistance and applying human judgment to produce the best code reviews possible.
+Claude Code transforms pull request reviews from a tedious chore into an efficient, educational process. By automating routine checks and providing intelligent suggestions, it helps teams maintain quality while reducing review time. The key is finding the right balance between using AI assistance and applying human judgment to produce the best code reviews possible.
 
 Start integrating Claude Code into your PR workflow today, and you'll likely see improvements in both review quality and team productivity.
 {% endraw %}

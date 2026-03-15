@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for ElastiCache Cluster Workflow"
 description: "Learn how to use Claude Code for ElastiCache cluster management, including Redis and Memcached setup, configuration, and operational workflows."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-elasticache-cluster-workflow/
 categories: [workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Tree-sitter Workflow Tutorial"
 description: "A comprehensive guide to integrating Claude Code with Tree-sitter for efficient code parsing, analysis, and automated refactoring workflows."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-tree-sitter-workflow-tutorial/
 categories: [workflow, tree-sitter, development, code-analysis]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Tree-sitter Workflow Tutorial
@@ -122,7 +126,7 @@ tree-sitter parse src/utils.js
 #       (statement_block body)))
 ```
 
-You can create a prompt for Claude Code that leverages this parsed information:
+You can create a prompt for Claude Code that uses this parsed information:
 
 > "Analyze the parse tree for `src/utils.js` and generate JSDoc comments for each function, including parameter types and return values."
 
@@ -232,7 +236,7 @@ Tree-sitter queries are more powerful when they're specific. Instead of capturin
 (declaration @any-declaration)
 ```
 
-### 3. Leverage Incremental Parsing
+### 3. use Incremental Parsing
 
 When integrating with Claude Code, take advantage of Tree-sitter's incremental parsing for large files. Parse only the changed portions rather than re-parsing entire files.
 
@@ -242,7 +246,7 @@ Tree-sitter provides structural understanding, while Claude Code provides semant
 
 ## Conclusion
 
-Integrating Claude Code with Tree-sitter opens up powerful possibilities for code analysis, refactoring, and automated transformations. By understanding how to leverage Tree-sitter's parsing capabilities alongside Claude Code's natural language processing, you can build sophisticated development workflows that save time and reduce errors.
+Integrating Claude Code with Tree-sitter opens up powerful possibilities for code analysis, refactoring, and automated transformations. By understanding how to use Tree-sitter's parsing capabilities alongside Claude Code's natural language processing, you can build sophisticated development workflows that save time and reduce errors.
 
 Start with simple queries to understand your code's structure, then progressively build more complex automations. The combination of structural parsing and semantic understanding makes this workflow particularly powerful for large-scale codebases and complex refactoring tasks.
 

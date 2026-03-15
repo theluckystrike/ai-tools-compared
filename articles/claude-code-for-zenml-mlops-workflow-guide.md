@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for ZenML MLOps Workflow Guide"
 description: "Learn how to leverage Claude Code to streamline ZenML MLOps workflows. This guide covers pipeline creation, step definitions, and best practices for integrating AI-assisted development into your machine learning operations."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-zenml-mlops-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills, zenml, mlops, machine-learning]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for ZenML MLOps Workflow Guide
 
@@ -160,7 +164,7 @@ class CustomModelMaterializer(BaseMaterializer):
 
 ### Use Type Annotations Consistently
 
-ZenML leverages type hints for artifact tracking. Always use Annotated types to explicitly name your artifacts:
+ZenML uses type hints for artifact tracking. Always use Annotated types to explicitly name your artifacts:
 
 ```python
 @step
@@ -173,7 +177,7 @@ def process_data(
 
 This enables ZenML to track data lineage throughout your pipeline.
 
-### Leverage Configuration Classes
+### use Configuration Classes
 
 Separate pipeline configuration from code using ZenML's configuration system:
 

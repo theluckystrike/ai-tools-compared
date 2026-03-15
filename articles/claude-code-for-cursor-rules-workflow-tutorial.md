@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Cursor Rules Workflow Tutorial"
 description: "Learn how to leverage Claude Code to create powerful Cursor Rules that supercharge your development workflow with AI-assisted productivity."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-cursor-rules-workflow-tutorial/
 categories: [Development Tools, AI Programming, Cursor]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Cursor Rules Workflow Tutorial
 
-Modern development workflows are evolving rapidly, and integrating AI assistants like Claude Code with your IDE can dramatically improve productivity. In this tutorial, we'll explore how to create effective Cursor Rules that harness the power of Claude Code for an optimized development experience.
+Modern development workflows are evolving rapidly, and integrating AI assistants like Claude Code with your IDE can dramatically improve productivity. In this tutorial, we'll explore how to create effective Cursor Rules that use of Claude Code for an optimized development experience.
 
 ## Understanding Cursor Rules and Claude Code
 
@@ -26,7 +30,7 @@ The integration allows you to:
 - Automate repetitive coding tasks
 - Enforce consistent code patterns across your team
 - Generate context-aware responses based on your project structure
-- Create custom commands that leverage Claude's capabilities
+- Create custom commands that use Claude's capabilities
 
 ## Setting Up Your Cursor Rules
 

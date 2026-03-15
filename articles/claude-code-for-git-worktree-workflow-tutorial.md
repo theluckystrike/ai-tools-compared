@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Git Worktree Workflow Tutorial"
 description: "Learn how to use Claude Code with Git Worktree to manage multiple features in parallel, switch contexts instantly, and streamline your development workflow."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-git-worktree-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Git Worktree Workflow Tutorial
 

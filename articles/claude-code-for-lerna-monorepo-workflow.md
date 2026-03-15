@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Lerna Monorepo Workflow"
 description: "Master Lerna monorepo management with Claude Code. Learn how to automate package publishing, manage dependencies, coordinate cross-package changes, and streamline your monorepo workflow."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 categories: [guides]
 tags: [claude-code, claude-skills]
 permalink: /claude-code-for-lerna-monorepo-workflow/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Lerna Monorepo Workflow
@@ -153,7 +157,7 @@ Claude Code parses these messages to understand the scope and type of changes, m
 
 Help Claude Code understand your architecture by documenting package purposes and dependencies. This enables more accurate impact analysis when changes occur.
 
-### Leverage Lerna's Filters
+### use Lerna's Filters
 
 When working with large monorepos, use Lerna's filter flags to scope operations:
 

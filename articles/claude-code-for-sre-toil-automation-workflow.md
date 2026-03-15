@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for SRE Toil Automation Workflow"
 description: "Learn how to leverage Claude Code to automate repetitive SRE tasks and reduce operational toil with practical examples and actionable workflows."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-sre-toil-automation-workflow/
 categories: [DevOps, SRE, Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for SRE Toil Automation Workflow

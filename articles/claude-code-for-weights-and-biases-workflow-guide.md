@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Weights & Biases Workflow Guide"
 description: "A practical guide to integrating Claude Code with Weights & Biases for machine learning experiment tracking, model versioning, and collaborative workflows."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-weights-and-biases-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Weights & Biases Workflow Guide
@@ -220,5 +224,5 @@ Integrating Claude Code with Weights & Biases creates a powerful development env
 
 Start by setting up basic W&B logging in your training scripts, then progressively adopt more advanced features like sweeps and artifacts as your workflow matures. With Claude Code as your assistant, you'll make better use of your experiment data and accelerate your ML development cycle.
 
-The key is to establish good logging practices early and leverage Claude's understanding of your project context. This creates a virtuous cycle where each experiment becomes more informative than the last.
+The key is to establish good logging practices early and use Claude's understanding of your project context. This creates a virtuous cycle where each experiment becomes more informative than the last.
 {% endraw %}

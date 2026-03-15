@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Starship Prompt Workflow"
 description: "Learn how to use Claude Code to streamline your Starship prompt configuration workflow. Get practical prompts, code examples, and actionable tips for customizing your shell prompt."
@@ -7,11 +8,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-starship-prompt-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Starship Prompt Workflow
 
-Starship is a blazingly fast, customizable prompt for any shell that works across bash, zsh, fish, and PowerShell. But crafting the perfect Starship configuration can be time-consuming—writing TOML, testing segments, and iterating on the visual design. This is where Claude Code becomes your secret weapon. By leveraging Claude's code generation and editing capabilities, you can dramatically accelerate your Starship prompt workflow.
+Starship is a blazingly fast, customizable prompt for any shell that works across bash, zsh, fish, and PowerShell. But crafting the perfect Starship configuration can be time-consuming—writing TOML, testing segments, and iterating on the visual design. This is where Claude Code becomes your secret weapon. By using Claude's code generation and editing capabilities, you can dramatically accelerate your Starship prompt workflow.
 
 ## Why Use Claude Code with Starship?
 

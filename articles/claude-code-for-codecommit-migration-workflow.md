@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for CodeCommit Migration Workflow"
 description: "Learn how to use Claude Code to automate and streamline your AWS CodeCommit repository migration workflow. Practical examples, migration strategies."
@@ -7,7 +8,10 @@ categories: [tutorials]
 tags: [claude-code, claude-skills, aws, codecommit, migration, devops]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-codecommit-migration-workflow/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for CodeCommit Migration Workflow
@@ -189,7 +193,7 @@ Claude will provide commands to compare commit logs and verify history completen
 
 ## Conclusion
 
-Claude Code significantly accelerates CodeCommit migrations through automation, validation, and systematic approaches. By leveraging Claude's ability to generate scripts, identify configuration changes, and validate results, you can migrate repositories more reliably and with less manual effort. The key is breaking the migration into discrete phases: preparation, transfer, pipeline updates, and validation—with Claude assisting at each stage.
+Claude Code significantly accelerates CodeCommit migrations through automation, validation, and systematic approaches. By using Claude's ability to generate scripts, identify configuration changes, and validate results, you can migrate repositories more reliably and with less manual effort. The key is breaking the migration into discrete phases: preparation, transfer, pipeline updates, and validation—with Claude assisting at each stage.
 
 For large-scale enterprise migrations, consider running pilot migrations with non-critical repositories to refine your process before tackling production workloads.
 {% endraw %}

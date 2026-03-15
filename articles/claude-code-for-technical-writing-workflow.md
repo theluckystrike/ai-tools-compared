@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Technical Writing Workflow"
 description: "Master technical writing with Claude Code: build skills for API documentation, code comments, README files, and automated content generation."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-technical-writing-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Technical Writing Workflow
@@ -231,7 +235,7 @@ Technical writing requirements evolve. Keep your skills in version control and t
 
 Layer multiple skills for sophisticated workflows. Use your documentation auditor skill as a final step after generating new content to catch any issues immediately.
 
-### Leverage Claude's Context Window
+### use Claude's Context Window
 
 Provide rich context to your skills. Include your existing documentation style guide, coding conventions, and example outputs. The more context Claude has, the better the documentation it produces.
 

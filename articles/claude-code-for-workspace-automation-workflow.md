@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Workspace Automation Workflow"
 description: "Learn how to leverage Claude Code to automate your development workspace. From file organization to batch processing, discover practical workflows that."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-workspace-automation-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Workspace Automation Workflow
 

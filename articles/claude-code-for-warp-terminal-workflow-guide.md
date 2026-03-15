@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Warp Terminal Workflow Guide"
 description: "Learn how to integrate Claude Code with Warp terminal for enhanced developer productivity. This guide covers setup, configuration, and practical workflows."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-warp-terminal-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Warp Terminal Workflow Guide
 
@@ -139,7 +143,7 @@ To get the most out of this combination, consider these productivity tips:
 claude: Create a cheatsheet of the top 20 git commands I use based on my bash history
 ```
 
-**Leverage Context Awareness.** Both Warp and Claude Code understand your project context. When working in a project directory, Claude Code can read your package.json, git status, and other relevant files to provide contextually appropriate suggestions.
+**use Context Awareness.** Both Warp and Claude Code understand your project context. When working in a project directory, Claude Code can read your package.json, git status, and other relevant files to provide contextually appropriate suggestions.
 
 **Integrate with Your IDE.** While Warp handles terminal tasks beautifully, use Claude Code alongside your editor for comprehensive development. The combination of terminal automation with IDE-based coding creates a complete development experience.
 

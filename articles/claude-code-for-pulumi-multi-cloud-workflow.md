@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Pulumi Multi-Cloud Workflow"
 description: "Learn how to leverage Claude Code to accelerate your Pulumi infrastructure-as-code projects across multiple cloud providers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-pulumi-multi-cloud-workflow/
 categories: [DevOps, Infrastructure, Cloud]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Pulumi Multi-Cloud Workflow
@@ -255,7 +259,7 @@ Claude Code will analyze the error, identify missing permissions, and suggest th
 
 ## Conclusion
 
-Combining Pulumi's infrastructure-as-code capabilities with Claude Code's intelligent assistance creates a powerful workflow for managing multi-cloud environments. By building reusable components, organizing configuration properly, and leveraging Claude Code's debugging capabilities, you can deploy consistent infrastructure across AWS, Azure, GCP, and other providers efficiently.
+Combining Pulumi's infrastructure-as-code capabilities with Claude Code's intelligent assistance creates a powerful workflow for managing multi-cloud environments. By building reusable components, organizing configuration properly, and using Claude Code's debugging capabilities, you can deploy consistent infrastructure across AWS, Azure, GCP, and other providers efficiently.
 
 Remember to start small—deploy a simple resource to multiple clouds first, then gradually add complexity as your confidence grows. Claude Code becomes more effective as it understands your specific infrastructure patterns and conventions.
 
