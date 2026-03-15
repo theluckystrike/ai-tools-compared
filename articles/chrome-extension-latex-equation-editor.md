@@ -1,13 +1,19 @@
 ---
+
 layout: default
 title: "Chrome Extension LaTeX Equation Editor: A Developer's Guide"
 description: "Discover the best Chrome extensions for writing LaTeX equations. Compare features, learn integration methods, and find the right tool for your workflow."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-latex-equation-editor/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
 
-LaTeX equation editors have become essential tools for developers, academics, and technical writers who work with mathematical notation. While many solutions exist online, having a Chrome extension that works directly in your browser provides a seamless experience without switching contexts. This guide explores the landscape of Chrome extensions for LaTeX equation editing, focusing on practical implementations and integration strategies for developers.
+
+LaTeX equation editors have become essential tools for developers, academics, and technical writers who work with mathematical notation. While many solutions exist online, having a Chrome extension that works directly in your browser provides a seamless experience without switching contexts. This guide explores the ecosystem of Chrome extensions for LaTeX equation editing, focusing on practical implementations and integration strategies for developers.
 
 ## Why Use a Chrome Extension for LaTeX?
 

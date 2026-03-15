@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Reporting Connector Enterprise: Implementation Guide"
 description: "A practical guide to building and deploying Chrome reporting connectors for enterprise environments. Learn API integration patterns, authentication strategies, and real-world implementation examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-reporting-connector-enterprise/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Reporting Connector Enterprise: Implementation Guide
 

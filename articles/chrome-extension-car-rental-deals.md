@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Car Rental Deals: A Developer's Guide to Building Price Trackers"
 description: "Learn how to build a Chrome extension that tracks car rental prices across multiple providers. Technical implementation guide with code examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-car-rental-deals/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 Building a Chrome extension to track car rental deals represents a practical intersection of web development skills and real-world utility. This guide walks through the technical implementation of creating an extension that monitors rental prices, alerts users to deals, and provides price comparison functionality.
 

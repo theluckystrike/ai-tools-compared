@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Signage Kiosk Digital Display: A Developer Guide"
 description: "Learn how to configure Chrome for digital signage and kiosk deployments. Covers kiosk mode, autostart, remote management, and custom display solutions."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-signage-kiosk-digital-display/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Signage Kiosk Digital Display: A Developer Guide
 

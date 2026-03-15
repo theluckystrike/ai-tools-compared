@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension WebP to PNG Converter: A Developer Guide"
 description: "Learn how to build and use Chrome extensions for converting WebP images to PNG format. Includes practical code examples and implementation patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-webp-to-png-converter/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extensions that convert WebP images to PNG format provide practical solutions for developers and power users who need to work with image formats across different platforms. Whether you're extracting images from websites, batch converting assets, or building image processing workflows, understanding how these extensions work helps you choose the right tool or build your own implementation.

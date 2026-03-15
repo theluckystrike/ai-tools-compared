@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension PubMed Search Helper: A Developer's Guide"
 description: "Build a Chrome extension to enhance PubMed search workflows. Practical implementation guide with code examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-pubmed-search-helper/
 categories: [guides]
-tags: [chrome-extension, pubmed, search-tools]
+tags: [chrome-extension, pubmed, search-tools, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Extension PubMed Search Helper: A Developer's Guide
 

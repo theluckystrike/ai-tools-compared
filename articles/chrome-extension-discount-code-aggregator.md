@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Discount Code Aggregator: Build Your Own Coupon Finder"
 description: "Learn how chrome extension discount code aggregators work, how to build one, and the technical challenges of aggregating coupon data from multiple sources."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-discount-code-aggregator/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Discount Code Aggregator: Build Your Own Coupon Finder
 

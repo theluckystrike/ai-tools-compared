@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Vocabulary Builder: A Practical Guide for Developers"
 description: "Learn how to build, customize, and leverage chrome extension vocabulary builder tools for efficient language learning and terminology management."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-vocabulary-builder/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extension vocabulary builder tools have become essential for developers, researchers, and language learners who need to capture and organize terminology from their daily web browsing. These extensions transform how you interact with text on the web, enabling automatic collection of new words, context-aware definitions, and structured review systems.

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Enterprise Jamf Deployment on Mac: A Practical Guide"
 description: "Learn how to deploy and manage Google Chrome Enterprise on Mac using Jamf Pro with practical examples, scripts, and configuration strategies."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-jamf-deployment-mac/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 Deploying Google Chrome Enterprise across a Mac fleet using Jamf Pro gives administrators precise control over browser settings, updates, and security policies. This guide walks through the complete deployment pipeline, from package acquisition to ongoing management, with actionable scripts you can adapt for your environment.
 

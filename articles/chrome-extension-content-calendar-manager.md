@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Content Calendar Manager: A Developer Guide"
 description: "Build a Chrome extension to manage content calendars directly in your browser. Practical implementation guide with code examples and architecture patterns."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-content-calendar-manager/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Content Calendar Manager: A Developer Guide
 

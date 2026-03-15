@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Bookmark Manager for Students: A Practical Guide"
 description: "Build and customize Chrome bookmark manager extensions tailored for student workflows. Includes code examples, architecture patterns, and productivity tips for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-bookmark-manager-students/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Bookmark Manager for Students: A Practical Guide
 

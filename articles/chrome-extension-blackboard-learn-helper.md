@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Blackboard Learn Helper: A Developer Guide"
 description: "Learn how to build a Chrome extension to enhance your Blackboard Learn experience with automation, customization, and productivity features."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-blackboard-learn-helper/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Blackboard Learn remains one of the most widely used learning management systems in educational institutions worldwide. While it provides core functionality for course management, assignments, and grade tracking, many power users find themselves performing repetitive tasks or wishing for streamlined interfaces. Building a Chrome extension to enhance Blackboard Learn addresses these pain points directly.

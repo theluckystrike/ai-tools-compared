@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension APA Citation Formatter: Build Your Own Reference Tool"
 description: "Learn how to create a Chrome extension that automatically formats citations in APA style. Practical implementation guide with code examples for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-apa-citation-formatter/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension APA Citation Formatter: Build Your Own Reference Tool
 
