@@ -9,10 +9,11 @@ permalink: /dalle-image-generation-failed-how-to-retry/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
-When your DALL-E image generation request fails, the debugging process can feel frustrating—especially when you're integrating the API into production workflows. This guide walks through the most common failure scenarios, explains what error codes mean, and provides actionable retry strategies you can implement today.
+To retry a failed DALL-E image generation, check the HTTP status code first: for 429 rate-limit errors, implement exponential backoff starting at 1 second and respect the `Retry-After` header; for 5xx server errors, retry after 5-15 seconds; for 400 errors, validate that your prompt is under 4000 characters, uses a supported resolution (1024x1024, 1024x1792, or 1792x1024), and does not violate content policy. The full retry logic and diagnostic checklist are below.
 
 ## Understanding DALL-E API Error Responses
 

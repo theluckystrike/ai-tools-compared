@@ -9,13 +9,14 @@ permalink: /claude-code-terminal-permission-denied-fix/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 # Claude Code Terminal Permission Denied Fix
 
-The "permission denied" error when running Claude Code in your terminal can stop your workflow cold. This error typically occurs due to file permission issues, shell configuration problems, or Claude Code's own permission settings. This guide walks you through the most common causes and their fixes, so you can get back to coding.
+To fix "permission denied" errors in Claude Code, run `chmod +x` on the failing command, verify your project directory has `755` permissions, and reset ownership of Claude's data directory with `sudo chown -R $(whoami)`. If the error persists, check your shell profile for broken sourced scripts and remove any macOS quarantine attributes with `xattr -rd com.apple.quarantine`. The detailed fixes below cover every common cause.
 
 ## Understanding the Error
 

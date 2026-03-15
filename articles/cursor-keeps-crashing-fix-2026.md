@@ -8,11 +8,12 @@ permalink: /cursor-keeps-crashing-fix-2026/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
-Cursor has become one of the most popular AI-powered code editors, but like any complex development tool, it can experience stability issues. If you're dealing with Cursor crashes in 2026, this comprehensive troubleshooting guide will help you identify the root causes and apply effective fixes.
+To fix Cursor crashing, clear the cache folder at `~/Library/Application Support/Cursor/User/Cache` (macOS) or `%APPDATA%\Cursor\User\Cache` (Windows), then launch in safe mode by holding Shift to isolate extension conflicts. If crashes persist, update your GPU drivers and add the `--disable-gpu` launch flag to rule out rendering issues. These three steps resolve the majority of Cursor stability problems, with a full walkthrough below.
 
 ## Common Reasons Why Cursor Crashes
 

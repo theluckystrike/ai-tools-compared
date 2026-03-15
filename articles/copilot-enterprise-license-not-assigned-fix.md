@@ -8,11 +8,12 @@ permalink: /copilot-enterprise-license-not-assigned-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
-If you're seeing the "Copilot Enterprise license not assigned" error, you're not alone. This issue prevents developers from accessing GitHub Copilot Enterprise features, and it typically occurs when the license assignment process fails or when organizational settings aren't properly configured. In this guide, I'll walk you through the most effective solutions to get your Copilot Enterprise access working again.
+To fix the "Copilot Enterprise license not assigned" error, have your org admin verify your user is explicitly assigned under Settings > Copilot > Access management, confirm the organization is included in the enterprise-level Copilot policy, and clear your browser cache then re-authenticate. If your organization uses SAML SSO, also verify your IdP group mappings include the Copilot-authorized security group. These steps resolve most license assignment failures within minutes.
 
 ## Understanding the Error
 

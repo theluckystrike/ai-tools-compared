@@ -8,9 +8,10 @@ permalink: /cursor-composer-stuck-in-loop-how-to-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
-Cursor Composer is one of the most powerful AI-assisted coding features available, but users occasionally encounter an issue where the Composer gets stuck in an infinite loop, continuously generating suggestions without reaching a resolution. This problem can interrupt your workflow and waste valuable development time. In this guide, I will walk you through several proven methods to diagnose and fix a stuck Cursor Composer.
+To fix Cursor Composer stuck in a loop, clear the Cursor cache (Cmd+Shift+P > "Clear Cache"), then restart the application to eliminate corrupted cache files. If the loop continues, reset the context window by closing all open files and starting a fresh Composer thread, and disable conflicting extensions -- especially other AI coding assistants. These three fixes resolve the infinite-loop issue in most cases, with full details below.
 
 ## Understanding the Problem
 

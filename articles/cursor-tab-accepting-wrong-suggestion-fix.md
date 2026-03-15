@@ -9,12 +9,13 @@ permalink: /cursor-tab-accepting-wrong-suggestion-fix/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 # Cursor Tab Accepting Wrong Suggestion Fix: Troubleshooting Guide
 
-Cursor's Tab key is designed to accelerate your coding workflow by accepting AI-generated suggestions with a single keystroke. However, when the AI suggests incorrect code and you accidentally press Tab, it can introduce bugs, break functionality, or overwrite code you meant to keep. This guide provides practical solutions to prevent unwanted acceptances and fix issues when they occur.
+To fix Cursor Tab accepting the wrong suggestion, immediately press Ctrl+Z (Cmd+Z on Mac) to undo the acceptance. To prevent it going forward, increase the "Quick Suggestions Delay" to 100-200ms in editor settings, use the right-arrow key to accept suggestions word-by-word instead of all at once, and disable conflicting AI extensions. These changes stop accidental acceptances while keeping Cursor's autocomplete productive.
 
 ## Understanding the Problem
 
