@@ -2,7 +2,7 @@
 
 layout: default
 title: "Chrome Extension Employee Recognition Tool: Build Your Own"
-description: "Learn how to build a custom Chrome extension for employee recognition. Practical code examples, architecture patterns, and implementation strategies for developers."
+description: "Learn how to build a custom Chrome extension for employee recognition. Practical code examples, architecture patterns, and implementation strategies."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-employee-recognition-tool/
@@ -267,5 +267,12 @@ For internal team tools, loading unpacked extensions or using Chrome Enterprise 
 Building a Chrome extension for employee recognition gives your team a dedicated tool that fits naturally into daily browser workflows. Start with the basic popup interface, then expand with Slack integration, context-aware recognition, and secure storage as needed. The Chrome extension API provides everything you need to create a powerful, customized recognition system that integrates with your existing tools.
 
 The key is starting simple—capture recognitions, store them locally, and gradually add integrations that matter most to your team.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

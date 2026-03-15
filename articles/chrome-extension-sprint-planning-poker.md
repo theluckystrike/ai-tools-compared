@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Chrome Extension Sprint Planning Poker: Build Your Own Agile Estimation Tool"
-description: "Learn how to build a Chrome extension for sprint planning poker. Practical code examples, architecture patterns, and implementation strategies for developers."
+title: "Chrome Extension Sprint Planning Poker: Build Your Own."
+description: "Learn how to build a Chrome extension for sprint planning poker. Practical code examples, architecture patterns, and implementation strategies for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-sprint-planning-poker/
@@ -313,5 +313,12 @@ For team distribution, package the extension using the "Pack extension" button i
 ## Summary
 
 Building a Chrome extension for sprint planning poker gives your team complete control over the estimation experience. The architecture demonstrated here—using manifest V3, Chrome storage APIs, and content scripts—provides a solid foundation that scales from simple local tools to fully synchronized team applications. You can extend this further with features like estimation history tracking, integration with more project management tools, or real-time collaboration through WebSockets.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
