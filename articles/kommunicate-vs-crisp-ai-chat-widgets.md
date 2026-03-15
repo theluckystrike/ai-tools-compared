@@ -231,5 +231,10 @@ Both platforms provide solid AI chat capabilities for different use cases. Kommu
 
 The integration code above should help you prototype quickly with either platform. Test both with your actual use cases before committing to a subscription.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
