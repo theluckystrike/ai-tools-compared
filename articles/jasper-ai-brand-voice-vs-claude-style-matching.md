@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [comparisons]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -114,7 +115,7 @@ Tone: educational but concise. Avoid fluff.
 
 ### Marketing Content at Scale
 
-Jasper Brand Voice works well when generating high-volume marketing content. Once you've uploaded successful past campaigns, new variations maintain consistency without per-prompt tuning. This works for teams that produce大量内容 but lack prompt engineering expertise.
+Jasper Brand Voice works well when generating high-volume marketing content. Once you've uploaded successful past campaigns, new variations maintain consistency without per-prompt tuning. This works for teams that produce high volumes of content but lack prompt engineering expertise.
 
 ### Product Copy with Variants
 
