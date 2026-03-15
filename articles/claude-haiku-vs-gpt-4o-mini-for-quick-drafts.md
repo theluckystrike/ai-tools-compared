@@ -3,8 +3,11 @@ layout: default
 title: "Claude Haiku vs GPT-4o Mini for Quick Drafts"
 description: "A practical comparison of Claude Haiku and GPT-4o Mini for generating quick drafts. Learn which model excels at speed, quality, and developer integration."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-haiku-vs-gpt-4o-mini-for-quick-drafts/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
 
 When you need to generate quick drafts—whether emails, code comments, documentation snippets, or blog outlines—two models frequently come up in developer conversations: **Claude Haiku** from Anthropic and **GPT-4o Mini** from OpenAI. Both are positioned as fast, affordable options for lightweight tasks. But which one actually performs better for quick drafting workflows?
