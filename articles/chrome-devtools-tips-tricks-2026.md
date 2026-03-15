@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome DevTools Tips and Tricks for 2026"
 description: "Master Chrome DevTools with practical tips and tricks for debugging, performance optimization, and modern web development workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-devtools-tips-tricks-2026/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome DevTools Tips and Tricks for 2026
 

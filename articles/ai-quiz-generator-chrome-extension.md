@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "AI Quiz Generator Chrome Extension: Build Your Own Quiz Tool"
 description: "A practical guide to AI-powered quiz generator Chrome extensions for developers. Learn how these tools work, their key features, and how to build custom solutions."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-quiz-generator-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # AI Quiz Generator Chrome Extension: Build Your Own Quiz Tool
 
-Chrome extensions that leverage artificial intelligence to generate quizzes have become valuable tools for educators, content creators, and developers. These extensions can automatically create multiple-choice questions, fill-in-the-blank exercises, and interactive assessments from existing content. This guide explores how AI quiz generator Chrome extensions work, their practical applications, and how developers can build custom solutions.
+Chrome extensions that use artificial intelligence to generate quizzes have become valuable tools for educators, content creators, and developers. These extensions can automatically create multiple-choice questions, fill-in-the-blank exercises, and interactive assessments from existing content. This guide explores how AI quiz generator Chrome extensions work, their practical applications, and how developers can build custom solutions.
 
 ## How AI Quiz Generators Work in Chrome
 

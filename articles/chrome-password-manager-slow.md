@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Password Manager Slow: Causes and Solutions for Power Users"
 description: "Diagnose and fix Chrome password manager performance issues. Practical solutions for developers experiencing slow password autofill, sync delays, and vault access problems."
 date: 2026-03-15
 categories: [guides]
-tags: [chrome, password-manager, performance, troubleshooting, browser]
-author: theluckystrike
+tags: [chrome, password-manager, performance, troubleshooting, browser, claude-skills]
+author: "Claude Skills Guide"
 permalink: /chrome-password-manager-slow/
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Password Manager Slow: Causes and Solutions for Power Users
 

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome vs Vivaldi Memory: A Developer's Technical Comparison"
 description: "A technical deep-dive into memory usage differences between Chrome and Vivaldi browsers, with practical benchmarks and optimization strategies for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-vs-vivaldi-memory/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 Memory consumption remains a critical factor when choosing a browser for development work. If you run multiple browser instances, local servers, Docker containers, and IDEs simultaneously, the browser's RAM footprint directly impacts your system responsiveness and productivity.
 

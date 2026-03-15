@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Wappalyzer Chrome Extension Developer Guide"
 description: "Learn how Wappalyzer detects web technologies and how developers can build similar Chrome extensions for technology fingerprinting."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /wappalyzer-chrome-extension-developer/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Wappalyzer Chrome Extension Developer Guide
 
