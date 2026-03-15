@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Cargo Crate Publishing Workflow Guide"
-description: "Learn how to use Claude Code to streamline your Rust crate publishing workflow. From initial setup to publishing on crates.io, discover practical techniques."
+description: "Learn how to use Claude Code to streamline your Rust crate publishing workflow. From initial setup to publishing on crates.io, discover practical."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-cargo-crate-publishing-workflow-guide/
@@ -229,4 +229,11 @@ Claude Code significantly improves your cargo crate publishing workflow by autom
 
 Start by implementing the pre-publish checklist, then gradually add more automation as you identify pain points in your workflow. Your future self—and your crate's users—will thank you.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

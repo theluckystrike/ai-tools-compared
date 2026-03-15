@@ -181,4 +181,11 @@ When using Claude Code for npm publishing, keep these principles in mind:
 
 Claude Code transforms npm package publishing from a manual, error-prone process into an assisted workflow where you remain in control while benefiting from intelligent automation. By integrating Claude into initialization, quality checks, versioning, and maintenance tasks, you publish faster with greater confidence. Start with the basic skills outlined here, then customize and expand them to match your specific package requirements and organizational standards.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

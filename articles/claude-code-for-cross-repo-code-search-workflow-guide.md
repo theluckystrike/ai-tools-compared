@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Cross-Repo Code Search Workflow Guide"
-description: "Learn how to leverage Claude Code to efficiently search and analyze code across multiple repositories. This comprehensive guide covers practical workflows, command patterns, and actionable techniques for developers working with polyrepo architectures."
+description: "Learn how to leverage Claude Code to efficiently search and analyze code across multiple repositories. This comprehensive guide covers practical."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-cross-repo-code-search-workflow-guide/
@@ -298,4 +298,11 @@ Claude Code's ability to search across multiple repositories transforms how you 
 Start implementing these workflows today, and you'll wonder how you ever managed without cross-repo search capabilities.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

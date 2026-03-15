@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Memory Profiling Workflow Tutorial"
-description: "Learn how to use Claude Code to set up and execute memory profiling workflows. This tutorial covers practical techniques for identifying memory leaks, analyzing heap snapshots, and optimizing memory usage in your applications."
+description: "Learn how to use Claude Code to set up and execute memory profiling workflows. This tutorial covers practical techniques for identifying memory leaks."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-memory-profiling-workflow-tutorial/
@@ -286,4 +286,11 @@ Memory profiling doesn't have to be a frustrating detective game. By creating a 
 
 Start by setting up the profiling environment, create your custom memory profiling skill, and run through several profiling cycles to build intuition. As you become more familiar with your application's memory patterns, you'll find it increasingly easy to spot anomalies and address them before they become production problems.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

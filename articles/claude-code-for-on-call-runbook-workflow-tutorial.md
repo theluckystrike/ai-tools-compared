@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for On-Call Runbook Workflow Tutorial"
-description: "Learn how to leverage Claude Code to automate and streamline your on-call runbook workflows. This comprehensive tutorial covers practical examples, code snippets, and actionable advice for developers."
+description: "Learn how to leverage Claude Code to automate and streamline your on-call runbook workflows. This comprehensive tutorial covers practical examples."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-on-call-runbook-workflow-tutorial/
@@ -264,4 +264,11 @@ Start small—pick one service, create a basic runbook, and let Claude help you 
 
 Remember: The goal isn't to replace human judgment—it's to augment it with intelligent automation that helps you respond faster and more accurately when it matters most.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

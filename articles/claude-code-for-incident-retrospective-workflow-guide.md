@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Incident Retrospective Workflow Guide"
-description: "Learn how to leverage Claude Code to streamline incident retrospectives, automate documentation, and create actionable follow-up workflows for your DevOps team."
+description: "Learn how to leverage Claude Code to streamline incident retrospectives, automate documentation, and create actionable follow-up workflows for your."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-retrospective-workflow-guide/
@@ -125,4 +125,11 @@ Claude Code transforms incident retrospectives from painful documentation exerci
 
 The key is starting simple—create a basic retrospective skill, use it for a few incidents, and refine based on experience. Over time, you'll build a powerful knowledge base that makes each retrospective more valuable than the last.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
