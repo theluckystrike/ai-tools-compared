@@ -6,6 +6,8 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /cognigy-vs-boost-ai-virtual-agents/
 ---
+{% raw %}
+
 
 When selecting a platform to build conversational AI agents for enterprise deployment, developers and technical decision-makers need more than marketing comparisons. This guide examines Cognigy and Boost AI from a practical implementation standpoint, focusing on API capabilities, integration patterns, and developer experience.
 
@@ -253,3 +255,4 @@ For teams requiring maximum extensibility and programmatic control, Cognigy's SD
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -12,6 +12,8 @@ categories: [comparisons]
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 For ecommerce businesses scaling customer support operations, choosing the right AI-powered platform determines both agent productivity and customer satisfaction. Gorgias and Richpanel dominate this space, but their approaches to automation, integration, and developer experience differ significantly. This comparison examines both platforms from a technical standpoint, focusing on implementation details that matter to developers and power users.
 
@@ -223,3 +225,4 @@ Both platforms evolve rapidly—request current feature sets and pricing directl
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
