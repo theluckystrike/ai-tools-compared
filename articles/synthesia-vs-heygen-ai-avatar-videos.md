@@ -6,6 +6,10 @@ description: "A technical comparison of Synthesia and HeyGen for AI avatar video
 date: 2026-03-15
 author: theluckystrike
 permalink: /synthesia-vs-heygen-ai-avatar-videos/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

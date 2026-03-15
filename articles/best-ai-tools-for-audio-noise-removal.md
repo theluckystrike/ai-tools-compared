@@ -6,6 +6,10 @@ description: "A practical comparison of AI-powered audio noise removal tools for
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-audio-noise-removal/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
