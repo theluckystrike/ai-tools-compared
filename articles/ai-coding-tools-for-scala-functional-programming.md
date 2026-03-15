@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -142,37 +143,15 @@ def getUser(id: String): ZIO[UserRepository, UserNotFound, User] =
 
 Provide explicit context to AI tools when working with Scala:
 
-1. **Specify the Scala version and libraries** in your prompts. Include library dependencies or describe your tech stack.
-
-2. **Request immutability explicitly**. Tell the tool to prefer val over var, immutable collections, and pure functions.
-
-3. **Ask for type annotations** in signatures even when they could be inferred, improving code readability.
-
-4. **Request sealed traits for enumerations** instead of Java-style enums.
-
-5. **Specify for comprehensions** when you prefer them over chained flatMap calls.
-
-6. **Include import statements** in your prompts to help the tool understand your context.
+Specify your Scala version and library dependencies in prompts so the tool knows your tech stack. Request immutability explicitly—tell it to prefer val over var, immutable collections, and pure functions. Include type annotations in signatures even when they could be inferred, since this improves readability. Ask for sealed traits instead of Java-style enums, for comprehensions instead of chained flatMap calls, and include import statements to anchor the tool's context.
 
 ## Limitations and Considerations
 
 AI coding tools struggle with several Scala-specific challenges:
 
-**Complex type inference**: Deeply nested generic types can confuse AI models, leading to compilation errors.
+Deeply nested generic types can confuse AI models and produce compilation errors. Tools cannot understand code generated at compile time via macros. Code relying heavily on implicit parameters may require explicit instruction, and AI tools may not recognize domain-specific type class implementations. Breaking complex problems into smaller pieces improves results significantly when you hit these limits.
 
-**Macro-generated code**: Tools cannot understand code that will be generated at compile time via macros.
-
-**Implicit resolution**: Code relying heavily on implicit parameters may require explicit instruction.
-
-**Custom type class instances**: AI tools may not recognize domain-specific type class implementations.
-
-When encountering these limitations, breaking down complex problems into smaller pieces improves results significantly.
-
-## Conclusion
-
-AI coding tools have become valuable assistants for Scala developers, particularly when working with functional programming patterns. The key to success lies in understanding each tool's strengths and providing appropriate context through clear prompts. By explicitly requesting functional style, immutability, and idiomatic Scala patterns, developers can use AI assistance effectively while maintaining code quality.
-
-Both Claude and GPT models continue to improve their Scala support, but success depends heavily on how developers frame their requests and validate the generated code against Scala's strong type system.
+Both Claude and GPT models continue to improve their Scala support, but success depends heavily on how you frame requests and validate generated code against Scala's strong type system.
 
 
 ## Related Reading
