@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Rust Profiling Workflow Tutorial Guide"
-description: "Learn how to integrate Claude Code into your Rust profiling workflow for efficient performance optimization. This guide covers practical examples, tools, and actionable advice."
+description: "Learn how to integrate Claude Code into your Rust profiling workflow for efficient performance optimization. This guide covers practical examples."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-rust-profiling-workflow-tutorial-guide/
@@ -196,3 +196,10 @@ Integrating Claude Code into your Rust profiling workflow significantly reduces 
 Start by setting up your profiling tools, create reusable Claude skills for common operations, and establish a workflow that includes regular profiling as part of your development process. With these practices in place, you'll be equipped to maintain optimal performance in your Rust applications.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

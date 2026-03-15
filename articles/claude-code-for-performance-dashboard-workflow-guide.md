@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Performance Dashboard Workflow Guide"
-description: "Learn how to build, customize, and optimize performance dashboards using Claude Code. This comprehensive guide covers workflow strategies, practical examples, and actionable advice for developers."
+description: "Learn how to build, customize, and optimize performance dashboards using Claude Code. This comprehensive guide covers workflow strategies, practical."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-performance-dashboard-workflow-guide/
@@ -251,3 +251,10 @@ Claude Code transforms performance dashboard development from a tedious coding e
 
 Remember to iterate on your prompts, utilize specialized skills, and maintain good development practices. With these strategies, you'll build production-ready performance dashboards faster than ever before.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

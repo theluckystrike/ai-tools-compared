@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Go Benchmark Workflow Tutorial Guide"
-description: "Learn how to leverage Claude Code CLI to create, run, and analyze Go benchmark workflows. This guide covers setting up benchmarks, automating performance testing, and integrating benchmarking into your development process."
+description: "Learn how to leverage Claude Code CLI to create, run, and analyze Go benchmark workflows. This guide covers setting up benchmarks, automating."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-go-benchmark-workflow-tutorial-guide/
@@ -226,3 +226,10 @@ go tool pprof cpu.out
 Claude Code transforms Go benchmarking from a manual, error-prone process into an intelligent workflow. By creating specialized skills for benchmark analysis, automation, and trend tracking, you can establish performance monitoring that catches regressions early and guides optimization efforts. Start with simple benchmark analysis, then expand to automated tracking as your project grows. The key is consistency—run benchmarks regularly and track results over time to understand your code's performance characteristics.
 
 Remember: measuring is the first step to improving. Let Claude handle the analysis so you can focus on writing fast code.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

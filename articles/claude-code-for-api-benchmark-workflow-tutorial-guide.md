@@ -221,3 +221,10 @@ Use this skill by pointing Claude at your result files and asking for analysis. 
 Claude Code transforms API benchmarking from a manual, time-consuming process into an automated, repeatable workflow. By defining reusable skills, generating appropriate test scripts, and orchestrating complete benchmark cycles, you can focus on improving your API performance rather than managing test infrastructure.
 
 Start small—create a basic benchmark skill for your most critical endpoint—and expand from there. The combination of Claude's understanding of API concepts and its ability to execute commands makes it an ideal companion for any API performance testing strategy.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

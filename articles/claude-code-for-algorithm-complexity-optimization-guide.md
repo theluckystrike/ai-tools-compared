@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Algorithm Complexity Optimization Guide"
-description: "Learn how to leverage Claude Code to analyze, understand, and optimize algorithm complexity in your code. Practical examples and actionable advice for developers."
+description: "Learn how to leverage Claude Code to analyze, understand, and optimize algorithm complexity in your code. Practical examples and actionable advice for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-algorithm-complexity-optimization-guide/
@@ -213,3 +213,10 @@ By combining Claude Code's analysis capabilities with solid engineering fundamen
 
 Start small: pick one function in your codebase, analyze its complexity, and optimize it. The skills you build will apply to every code review and design decision that follows.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
