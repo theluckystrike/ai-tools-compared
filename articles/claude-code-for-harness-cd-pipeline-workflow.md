@@ -61,11 +61,7 @@ For example, when you need a new deployment pipeline:
 
 ```bash
 # Claude Code generates a complete pipeline YAML
-claude generate-pipeline \
-  --service my-service \
-  --environment production \
-  --strategy rolling \
-  --approvers engineering-lead
+claude --print "Generate a Harness CD pipeline YAML for my-service deploying to production with rolling strategy and engineering-lead approval"
 ```
 
 This creates a complete `pipeline.yaml` ready for import into Harness:
