@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Enterprise Network Settings: Configuring Proxy PAC Files"
 description: "A practical guide to configuring Proxy PAC files in Chrome Enterprise for developers and power users. Learn to deploy, troubleshoot, and automate proxy settings."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-network-settings-proxy-pac/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Enterprise Network Settings: Configuring Proxy PAC Files
 

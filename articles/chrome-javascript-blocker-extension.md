@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome JavaScript Blocker Extension: A Developer's Guide"
 description: "Learn how to use JavaScript blockers in Chrome for privacy, performance, and development testing. Compare extensions, understand tradeoffs, and implement selective blocking."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-javascript-blocker-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome JavaScript Blocker Extension: A Developer's Guide
 

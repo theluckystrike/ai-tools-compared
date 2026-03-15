@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Translate Pages: A Developer Guide"
 description: "Learn how to build chrome extension translate pages with practical code examples. Target developers and power users looking to integrate translation functionality."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-translate-pages/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Translating web page content automatically has become essential for developers working with international users and for power users browsing foreign-language content. Chrome extensions that translate pages offer a flexible solution that runs directly in the browser, processing content without sending entire pages to external services.

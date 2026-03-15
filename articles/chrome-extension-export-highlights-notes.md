@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Export Highlights Notes: A Developer Guide"
 description: "Learn how to build highlight and note export functionality in Chrome extensions. Practical code examples, storage patterns, and export format options for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-export-highlights-notes/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Export Highlights Notes: A Developer Guide

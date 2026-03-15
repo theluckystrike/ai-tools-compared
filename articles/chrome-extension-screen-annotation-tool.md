@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Screen Annotation Tool: A Developer Guide"
 description: "Learn how to build and use Chrome extensions for screen annotation. Technical implementation details, APIs, and practical code examples for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-screen-annotation-tool/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Screen Annotation Tool: A Developer Guide
 

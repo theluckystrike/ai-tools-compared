@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Responsive Design Tester: A Developer's Guide"
 description: "Discover the best Chrome extensions for testing responsive web designs. Compare top tools, features, and find the perfect solution for your workflow."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-responsive-design-tester/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Testing responsive designs across multiple viewports is a fundamental part of modern web development. Chrome extensions designed for responsive design testing provide developers and power users with quick ways to preview how websites appear at different screen sizes without switching devices or resizing browser windows.
 
@@ -36,7 +42,7 @@ Window Resizer offers precise viewport control with customizable dimensions. You
 **Key features:**
 - Custom width and height input
 - Preset management (add, edit, delete)
-- Orientation toggle (portrait/landscape)
+- Orientation toggle (portrait/ecosystem)
 - Keyboard shortcuts for quick switching
 
 **Example preset configuration:**

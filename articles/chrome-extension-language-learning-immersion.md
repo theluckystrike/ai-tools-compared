@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Language Learning Immersion: A Developer's Guide"
 description: "Learn how to build and use Chrome extensions for language learning immersion. Practical code examples and architecture patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-language-learning-immersion/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Language learning through immersion is one of the most effective methods for acquiring fluency. By surrounding yourself with target language content, you naturally absorb vocabulary, grammar patterns, and cultural nuances. Chrome extensions provide a powerful way to bring immersion directly into your daily browsing experience, transforming any website into a learning opportunity.
 

@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Core Web Vitals Checker: A Practical Guide"
 description: "Learn how to build and use a Chrome extension for checking Core Web Vitals. Practical code examples for measuring LCP, FID, and CLS in your browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-core-web-vitals-checker/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Core Web Vitals Checker: A Practical Guide
 

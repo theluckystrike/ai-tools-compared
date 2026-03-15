@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Managed Browser vs Unmanaged: A Technical Comparison"
 description: "Understand the differences between Chrome managed browsers and unmanaged installations. Learn about policies, extensions, sync, and when to choose each for development workflows."
 date: 2026-03-15
 categories: [guides]
-tags: [chrome, browser, enterprise, managed, policies, dev-tools]
-author: theluckystrike
+tags: [chrome, browser, enterprise, managed, policies, dev-tools, claude-skills]
+author: "Claude Skills Guide"
 permalink: /chrome-managed-browser-vs-unmanaged/
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Managed Browser vs Unmanaged: A Technical Comparison
 

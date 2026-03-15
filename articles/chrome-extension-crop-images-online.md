@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Crop Images Online: A Developer Guide"
 description: "Learn how to build and use Chrome extensions for cropping images directly in your browser. Technical implementation guide for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-crop-images-online/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extensions that crop images online represent a practical category of browser tools that bring image editing capabilities directly to your workflow. For developers building these extensions and power users seeking efficient workflows, understanding the technical implementation opens up powerful possibilities for image manipulation without leaving the browser.

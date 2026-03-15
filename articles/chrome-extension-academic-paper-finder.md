@@ -1,15 +1,21 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Academic Paper Finder: Tools and Implementation Guide"
 description: "Explore chrome extensions for finding academic papers, including implementation patterns for developers building research tools."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-academic-paper-finder/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
 
+
 {% raw %}
-Finding academic papers efficiently is a common challenge for researchers, students, and developers working in technical fields. Chrome extensions designed for academic paper discovery have evolved significantly, offering various approaches from simple search overlays to sophisticated AI-powered research assistants. This guide covers the landscape of available tools and provides implementation patterns for developers interested in building custom solutions.
+Finding academic papers efficiently is a common challenge for researchers, students, and developers working in technical fields. Chrome extensions designed for academic paper discovery have evolved significantly, offering various approaches from simple search overlays to sophisticated AI-powered research assistants. This guide covers the ecosystem of available tools and provides implementation patterns for developers interested in building custom solutions.
 
 ## Understanding Academic Paper Finder Extensions
 
