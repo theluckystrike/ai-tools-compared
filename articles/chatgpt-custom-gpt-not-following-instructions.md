@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT Custom GPT Not Following Instructions: Troubleshooting Guide"
+title: "ChatGPT Custom GPT Not Following Instructions."
 description: "A practical troubleshooting guide for developers and power users when Custom GPTs ignore their instructions. Step-by-step diagnostics and fixes."
 date: 2026-03-15
 author: theluckystrike
@@ -172,6 +172,11 @@ Choose targeted fixes when:
 - Knowledge files are the likely culprit
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

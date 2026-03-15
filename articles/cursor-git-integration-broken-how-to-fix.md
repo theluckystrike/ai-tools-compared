@@ -134,4 +134,9 @@ When facing Git integration issues in Cursor, work through this checklist:
 
 Maintain healthy Git integration by keeping Git updated to the latest version. Restart Cursor periodically, especially after system updates or network changes. Keep your workspace folder organized with clear project boundaries. Use SSH keys for authentication to avoid credential prompts and token expiration issues.
 
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

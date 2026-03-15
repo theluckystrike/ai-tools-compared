@@ -153,6 +153,11 @@ Alternatively, submit feedback directly to Google through Help → Help Docs imp
 
 These troubleshooting steps should resolve most instances of Gemini not appearing in Google Docs. Start with subscription verification and work through the browser-specific fixes. Corporate users should coordinate with their IT departments for network and domain-level issues.
 
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
