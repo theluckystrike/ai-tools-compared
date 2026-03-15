@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Price History Chrome Extension: Technical Implementation Guide"
-description: "Learn how to build a price history Chrome extension from scratch. Complete guide covering data storage, price parsing, historical visualization, and extension architecture for developers."
+title: "Price History Chrome Extension: Technical Implementation."
+description: "Learn how to build a price history Chrome extension from scratch. Complete guide covering data storage, price parsing, historical visualization, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /price-history-chrome-extension/
@@ -370,6 +370,13 @@ Test your extension thoroughly across different e-commerce sites. Use Chrome's b
 Monitor console logs in both the popup and service worker for debugging. Use Chrome's Storage Inspector to view persisted price data during development.
 
 Building a price history extension requires handling diverse price formats, managing storage efficiently, and creating useful visualizations. The implementation above provides a solid foundation that you can customize for specific retailers or add features like price drop alerts and shopping lists.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
