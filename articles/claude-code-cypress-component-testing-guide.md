@@ -48,7 +48,19 @@ Once configured, create a `cypress/support/component.js` file to register the Cy
 
 ## Writing Component Tests with Claude Code Assistance
 
-Claude Code excels at generating test cases for your components. When you need to test a button component, you can prompt Claude with specific testing scenarios. For instance, a button component test might look like:
+Claude Code excels at generating test cases for your components. Rather than writing every test case manually, describe your component to Claude and request test generation. For example:
+
+```
+Write Cypress component tests for a Button component that accepts:
+- variant: 'primary' | 'secondary' | 'ghost'
+- size: 'sm' | 'md' | 'lg'
+- disabled: boolean
+- onClick: () => void
+
+Include tests for click handling, disabled state, and variant rendering.
+```
+
+Claude generates foundational tests that you can extend and refine. For instance, a button component test might look like:
 
 ```javascript
 import { Button } from './Button'
@@ -186,6 +198,50 @@ it('supports keyboard navigation', () => {
 ```
 
 **Keep tests independent.** Each test should mount a fresh component instance and not rely on execution order or shared state.
+
+## Scaling Your Test Suite
+
+As your component library grows, organize tests to mirror your component architecture:
+
+```
+cypress/
+├── component/
+│   ├── buttons/
+│   │   ├── Button.cy.tsx
+│   │   └── IconButton.cy.tsx
+│   ├── forms/
+│   │   ├── Input.cy.tsx
+│   │   └── Select.cy.tsx
+│   └── layout/
+│       ├── Modal.cy.tsx
+│       └── Card.cy.tsx
+└── e2e/
+    └── flows/
+```
+
+This structure keeps tests discoverable and maintainable as your codebase grows.
+
+The **supermemory** skill helps maintain context across testing sessions. Before starting a new feature, query supermemory for related test patterns to retrieve previous implementations and reduce duplication.
+
+## Continuous Integration
+
+Run component tests in CI pipelines to catch regressions early:
+
+```yaml
+# .github/workflows/component-tests.yml
+name: Component Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cypress-io/github-action@v6
+        with:
+          component: true
+```
+
+Cypress automatically parallelizes test execution when integrated with Cypress Cloud, significantly reducing CI build times.
 
 ## Debugging Failing Component Tests
 
