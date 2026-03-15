@@ -8,13 +8,14 @@ permalink: /gemini-in-google-docs-not-showing-up-fix-2026/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
 # Gemini in Google Docs Not Showing Up? Fixes for 2026
 
-Google's Gemini AI integration into Google Docs has transformed how developers and power users interact with documents. However, when the Gemini sidebar disappears or fails to appear, productivity takes an immediate hit. This guide provides systematic troubleshooting steps to restore Gemini functionality in Google Docs.
+To fix Gemini not showing up in Google Docs, first verify your Google One AI Premium, Gemini Business, or Gemini Enterprise subscription is active at one.google.com. Then clear your browser cache and cookies for docs.google.com, disable privacy-focused extensions (uBlock Origin, Privacy Badger) that block the Gemini iframe, and test in an incognito window. For Workspace accounts, have your domain admin enable "Gemini in Docs and Gmail" under Admin console > Apps > Google Workspace > Gemini.
 
 ## Understanding Gemini Integration Requirements
 

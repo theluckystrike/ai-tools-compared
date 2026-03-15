@@ -8,9 +8,10 @@ permalink: /cursor-git-integration-broken-how-to-fix/
 categories: [troubleshooting]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Cursor IDE offers powerful Git integration that streamlines version control workflows directly within the editor. When this integration breaks, it disrupts your development process and can block essential operations like committing changes, pulling updates, or viewing diffs. This guide walks through the most common causes of broken Git integration in Cursor and provides practical solutions to get you back on track.
+To fix broken Git integration in Cursor, first verify Git is installed and accessible by running `git --version` in your terminal, then confirm you opened the repository's root folder (not a subdirectory) in Cursor. If the Source Control panel remains empty, reset the Git index with `git reset` and check your authentication by running `ssh -T git@github.com`. For persistent issues, manually set the Git executable path in Cursor settings and disable recently installed extensions that may conflict.
 
 ## Recognizing Git Integration Failure
 

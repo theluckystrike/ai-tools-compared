@@ -9,12 +9,13 @@ permalink: /claude-refusing-to-answer-how-to-rephrase-prompt/
 reviewed: true
 score: 8
 categories: [troubleshooting, guides]
+intent-checked: true
 ---
 
 {% raw %}
 # Claude Refusing to Answer: How to Rephrase Your Prompt
 
-When Claude refuses to answer your question or appears to ignore your prompt entirely, the issue usually stems from how the request is framed rather than a problem with Claude itself. This guide explains why these refusals occur and provides practical techniques for rephrasing your prompts to get the responses you need.
+To get Claude to answer when it refuses your prompt, remove trigger words that activate safety filters, add clear context about your legitimate purpose, and explicitly state what you are building. For example, replace "How do I bypass authentication" with "Explain common authentication patterns for my application." If refusals persist, break complex requests into smaller parts and use educational framing such as "I'm learning about X. Can you explain how it works and what defenses prevent misuse?"
 
 ## Why Claude Refuses to Answer
 

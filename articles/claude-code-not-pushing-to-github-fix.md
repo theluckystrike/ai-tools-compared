@@ -8,13 +8,14 @@ permalink: /claude-code-not-pushing-to-github-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
 # Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide
 
-Claude Code is a powerful AI assistant that integrates with your development workflow, but sometimes pushing changes to GitHub fails. This guide covers the most common reasons why Claude Code might not push to GitHub and provides step-by-step solutions to get you back on track.
+To fix Claude Code not pushing to GitHub, first test your SSH connection with `ssh -T git@github.com` and verify your remote URL with `git remote -v`. Most push failures resolve by regenerating your SSH key or Personal Access Token and ensuring the remote URL matches your authentication method (SSH vs HTTPS). If you are behind a corporate firewall, configure SSH to use port 443 by setting `HostName ssh.github.com` and `Port 443` in `~/.ssh/config`.
 
 ## Understanding the Push Failure
 

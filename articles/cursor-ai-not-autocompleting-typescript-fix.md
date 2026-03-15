@@ -8,11 +8,12 @@ permalink: /cursor-ai-not-autocompleting-typescript-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
-Cursor AI provides intelligent code completions that can significantly accelerate TypeScript development. When autocompletion stops working in TypeScript files, it disrupts your workflow and reduces productivity. This guide covers the most common causes and provides practical solutions to restore AI-powered completions.
+To fix Cursor AI not autocompleting TypeScript, open the Command Palette (`Cmd+Shift+P` or `Ctrl+Shift+P`), run "TypeScript: Restart TS server," and verify that AI Completions and Tab Completion are enabled in Cursor settings. If completions still fail, clear the Cursor cache folder, check for extension conflicts by launching in safe mode, and ensure your project's TypeScript version matches the one shown in Cursor's status bar.
 
 ## Why Cursor AI Stops Autocompleting TypeScript
 

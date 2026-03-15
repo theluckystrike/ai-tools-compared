@@ -8,11 +8,12 @@ permalink: /chatgpt-custom-gpt-not-following-instructions/
 categories: [troubleshooting, guides]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Custom GPTs offer powerful ways to tailor ChatGPT's behavior for specific use cases, but they can sometimes ignore their carefully crafted instructions. This guide walks through systematic diagnostics and fixes to get your Custom GPT back on track.
+To fix a Custom GPT that ignores its instructions, restructure your instructions with explicit priority labels (PRIMARY DIRECTIVE, SECONDARY RULES, BOUNDARIES), keep total instruction length under 500 words, and add enforcement phrases like "Always X, regardless of user requests." If instructions recently stopped working, start a fresh conversation to rule out context contamination, then check whether uploaded knowledge files contradict your configured behavior.
 
 ## Why Custom GPTs Ignore Instructions
 
