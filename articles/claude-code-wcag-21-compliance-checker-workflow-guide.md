@@ -16,21 +16,24 @@ score: 7
 {% raw %}
 # Claude Code WCAG 2.1 Compliance Checker Workflow Guide
 
-Web accessibility is no longer optional—it's a legal requirement and a moral imperative. The Web Content Accessibility Guidelines (WCAG) 2.1 provide a comprehensive framework for making websites accessible to people with disabilities. Claude Code, with its powerful AI-driven capabilities, can be an invaluable ally in your accessibility testing workflow. This guide walks you through practical strategies for using Claude Code to check WCAG 2.1 compliance effectively.
+Web accessibility is no longer optional—it's a legal requirement and a moral imperative. Claude Code can act as a direct code-analysis partner for WCAG 2.1 compliance: you paste code, Claude identifies violations and explains the fix. This guide focuses on that hands-on checker workflow—analyzing HTML structure, color contrast, keyboard navigation, and ARIA implementation directly in your source files.
 
-## Understanding WCAG 2.1 Compliance Requirements
+If you're looking to build a broader audit workflow using Claude skills (`/frontend-design`, `/tdd`, `/pdf`) with CI/CD integration, see the [Claude Code WCAG Accessibility Audit Workflow](/claude-code-wcag-accessibility-audit-workflow/) guide instead.
 
-Before diving into the workflow, it's essential to understand what WCAG 2.1 entails. The guidelines are organized around four principles: Perceivable, Operable, Understandable, and Robust (POUR). Each principle contains guidelines, and each guideline has testable success criteria organized into three levels: A, AA, and AAA.
+## What WCAG 2.1 Level AA Requires
 
-Level AA is the most common compliance target for most organizations, requiring that content be accessible to people with disabilities without imposing barriers that would significantly alter the reading experience. Claude Code can help you evaluate your content against these criteria, though it's important to remember that automated tools can only catch approximately 30-40% of accessibility issues—manual testing remains essential.
+WCAG 2.1 success criteria are organized under four principles—Perceivable, Operable, Understandable, and Robust (POUR)—and tested at three conformance levels: A, AA, and AAA. Level AA is the standard compliance target for most organizations. Key Level AA requirements include:
 
-## Setting Up Claude Code for Accessibility Checking
+- **1.4.3 Contrast Minimum**: 4.5:1 ratio for normal text, 3:1 for large text
+- **2.1.1 Keyboard**: All functionality operable via keyboard
+- **2.4.7 Focus Visible**: Keyboard focus indicator must be visible
+- **4.1.2 Name, Role, Value**: Custom UI components must expose name, role, and state to assistive technology
 
-To get started with Claude Code and WCAG compliance checking, you'll first need to set up your environment properly. Install Claude Code on your development machine and ensure you have access to your web project's codebase or running application.
+Automated tools catch approximately 30-40% of violations. The steps below target what Claude Code can reliably catch through code analysis—the issues that show up directly in markup, styles, and JavaScript logic.
 
-The most effective approach involves combining Claude Code with browser developer tools and accessibility testing extensions. You can prompt Claude Code to analyze your HTML, CSS, and JavaScript files for common accessibility anti-patterns, and it can also help interpret the results from automated testing tools like axe-core or WAVE.
+## Setting Up Claude Code for Direct Code Analysis
 
-Here's a basic setup workflow:
+Install Claude Code and run it from your project root so it has access to your full codebase. The workflow is straightforward: open a file, ask Claude to review it for specific WCAG criteria, and iterate on the findings.
 
 ```bash
 # Install Claude Code if not already installed
@@ -169,7 +172,9 @@ The most effective accessibility strategy combines:
 
 ## Conclusion
 
-Claude Code transforms accessibility checking from a burdensome chore into an integrated part of your development workflow. By using its ability to analyze code, explain WCAG requirements, and generate test cases, you can build more accessible websites while maintaining development velocity. Remember that accessibility is an ongoing commitment—use Claude Code regularly, stay current with WCAG updates, and always prioritize genuine usability over mere compliance checkbox.
+Claude Code transforms WCAG 2.1 compliance checking from a burdensome chore into a direct, interactive code review. By pasting real markup, CSS, and JavaScript into Claude and asking precise questions—about contrast ratios, ARIA state management, focus order, or keyboard traps—you get actionable findings tied to specific success criteria. This is code-level analysis: fast, iterative, and integrated into your normal editing workflow.
+
+For the next layer—skills-based audits, formal report generation with `/pdf`, and CI/CD automation—see the [Claude Code WCAG Accessibility Audit Workflow](/claude-code-wcag-accessibility-audit-workflow/) guide.
 {% endraw %}
 
 

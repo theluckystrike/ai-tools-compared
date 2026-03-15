@@ -13,7 +13,9 @@ permalink: /claude-code-wcag-accessibility-audit-workflow/
 
 # Claude Code WCAG Accessibility Audit Workflow
 
-Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your digital products. The Web Content Accessibility Guidelines (WCAG) provide a comprehensive framework with success criteria across four principles: Perceivable, Operable, Understandable, and Robust (POUR). This guide shows you how to use Claude Code skills to build an automated accessibility audit workflow.
+Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your digital products. This guide shows you how to use Claude Code *skills*—`/frontend-design`, `/tdd`, `/pdf`, and `/supermemory`—to build a complete accessibility audit workflow: from component generation through automated CI/CD checks to formal stakeholder reports.
+
+If you need to review existing code snippet-by-snippet for specific WCAG 2.1 violations (contrast ratios, ARIA state, keyboard traps), see the [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](/claude-code-wcag-21-compliance-checker-workflow-guide/) instead. This guide focuses on the skills layer—orchestrating Claude's built-in capabilities to audit at project scale.
 
 ## Setting Up Your Accessibility Skills
 
@@ -30,30 +32,20 @@ Your skill setup directory should include:
 
 Each skill is a Markdown file that Claude loads when you invoke its slash command. The `/frontend-design` skill ensures new components follow WCAG patterns from the start, while `/tdd` helps you write tests that verify accessibility behavior.
 
-## Creating an Accessibility Audit Checklist
+## Mapping Skills to Audit Phases
 
-Before auditing, establish a checklist based on WCAG 2.1 Level AA compliance—the standard most projects target. Your checklist should cover:
+A skills-based audit workflow covers three distinct phases, each handled by a different Claude skill:
 
-**Perceivable**
-- Text alternatives for images (1.1.1)
-- Captions for video content (1.2.1-1.2.5)
-- Color contrast ratios of 4.5:1 for normal text (1.4.3)
-- Resizable text without loss of functionality (1.4.4)
+**Phase 1 — Prevent (during development)**
+Use `/frontend-design` when building new components. The skill bakes WCAG patterns in from the start: semantic landmarks, proper heading hierarchy, label associations, and focus management. Prevention is cheaper than remediation.
 
-**Operable**
-- Keyboard accessibility for all interactive elements (2.1.1)
-- No keyboard traps (2.1.2)
-- Skip navigation links (2.4.1)
-- Page titles that describe purpose (2.4.2)
+**Phase 2 — Detect (during testing)**
+Use `/tdd` to generate accessibility-specific test cases. These become your regression safety net—catching issues before they reach production. Pair with axe-core for automated runtime analysis.
 
-**Understandable**
-- Language specification in HTML (3.1.1)
-- Consistent navigation (3.2.3)
-- Error identification and suggestions (3.3.1-3.3.2)
+**Phase 3 — Report (after audit)**
+Use `/pdf` to generate formal audit documentation for stakeholders and compliance records. Use `/supermemory` to persist your organization's accessibility patterns across sessions so Claude remembers project-specific conventions.
 
-**Robust**
-- Valid HTML parsing (4.1.1)
-- Name, role, and value for custom components (4.1.2)
+This three-phase structure is what separates a skills-based workflow from one-off code review. Each skill handles a discrete responsibility, and together they cover the full audit lifecycle.
 
 ## Automated Testing with Axe and Claude
 
@@ -250,7 +242,9 @@ Here are frequent issues Claude helps identify and fix:
 
 ## Conclusion
 
-Building a WCAG accessibility audit workflow with Claude Code combines automated testing, manual review guidance, and documentation generation. The `/frontend-design`, `/tdd`, `/pdf`, and `/supermemory` skills work together to create a comprehensive accessibility practice. Start with automated axe-core tests, use Claude to guide manual audits, and generate formal reports for stakeholders. By integrating accessibility checks into your CI/CD pipeline, you catch issues early and maintain compliance over time.
+Building a WCAG accessibility audit workflow with Claude Code skills means shifting from reactive code review to a systematic practice. The `/frontend-design` skill prevents violations at the component level. The `/tdd` skill encodes accessibility requirements as executable tests. The CI/CD pipeline catches regressions automatically. The `/pdf` skill turns audit findings into formal documentation, and `/supermemory` preserves your team's accumulated patterns across sessions.
+
+This is project-scale accessibility work. For hands-on analysis of specific code—checking a single component's contrast ratios, dissecting ARIA state, or tracing keyboard focus through a modal—the [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](/claude-code-wcag-21-compliance-checker-workflow-guide/) covers that layer in detail.
 
 ---
 
