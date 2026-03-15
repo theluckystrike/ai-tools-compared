@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Extension Package Tracker for All Carriers: A Developer's Guide"
+title: "Chrome Extension Package Tracker for All Carriers: A."
 description: "Learn how to build or use a Chrome extension that tracks packages across all carriers. Practical code examples and architecture for developers."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -213,5 +213,12 @@ When building package tracking extensions, keep these security practices in mind
 Building a Chrome extension for multi-carrier package tracking requires handling diverse API patterns, managing rate limits, and presenting unified data to users. The adapter pattern shown here scales well as you add carriers, while caching and proper storage ensure a responsive user experience.
 
 For developers looking to extend this foundation, consider adding features like delivery notifications, historical tracking data visualization, or integration with calendar apps for expected delivery dates.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -270,5 +270,12 @@ The Linear GraphQL API offers extensive capabilities. Explore the schema to add 
 
 This guide provides a foundation for building a Chrome extension that integrates Linear issue tracking into your daily workflow. The combination of a browser extension with Linear's API creates efficient workflows for developers who spend significant time in their browsers.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
