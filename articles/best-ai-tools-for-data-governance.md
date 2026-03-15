@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -30,8 +31,6 @@ The core capabilities that matter include automated data classification using ma
 ### 1. Amundsen (Open Source)
 
 Amundsen, developed by Lyft, provides data discovery and cataloging with metadata ingestion from multiple sources. Its architecture supports plugins for various data systems, making it adaptable to diverse environments.
-
-**Practical Implementation:**
 
 ```python
 # Ingest metadata from a PostgreSQL database
@@ -54,8 +53,6 @@ The tool automatically generates popularity rankings based on query frequency, h
 ### 2. DataHub (Open Source)
 
 DataHub, originally developed at LinkedIn and now under the Linux Foundation, offers comprehensive metadata management with real-time updates and graph-based relationships. Its schema registry integration and flexible data model support enterprise-scale deployments.
-
-**Configuration Example:**
 
 ```yaml
 # data-platforms.yaml
@@ -100,7 +97,7 @@ results = client.search.search_entities(
 
 Monte Carlo focuses on data quality monitoring with machine learning that learns normal data patterns. Its anomaly detection identifies issues without requiring predefined rules, reducing false positives over time.
 
-**Integration with dbt:**
+Monte Carlo integrates with dbt for data quality monitoring:
 
 ```yaml
 # monte_carlo_config.yml
@@ -144,7 +141,7 @@ mc.register_alert_handler(handle_alert)
 
 Atlan combines active metadata with workflow automation, enabling self-service data governance. Its no-code workflow builder lets data stewards create approval processes without developer intervention.
 
-**Automated PII Tagging Workflow:**
+An automated PII tagging workflow in Atlan looks like this:
 
 ```yaml
 # atlan-pii-workflow.yml
@@ -173,8 +170,6 @@ workflows:
 ### 5. Great Expectations (Open Source)
 
 Great Expectations provides data quality testing with a developer-first approach. Its expectation framework lets you define data contracts that teams can validate against actual data.
-
-**Defining Expectations:**
 
 ```python
 import great_expectations as ge
@@ -231,7 +226,7 @@ checkpoints:
 
 Select based on your specific requirements:
 
-For **open-source flexibility**, Amundsen and DataHub provide robust foundations with extensive customization options. Both integrate well with modern data stacks and support self-hosted deployments.
+For **open-source flexibility**, Amundsen and DataHub provide solid foundations with extensive customization options. Both integrate well with modern data stacks and support self-hosted deployments.
 
 For **automated quality monitoring**, Monte Carlo's ML-driven approach reduces the burden of defining manual rules. It works particularly well for teams with diverse data sources.
 
