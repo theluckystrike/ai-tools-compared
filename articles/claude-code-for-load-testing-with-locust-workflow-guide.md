@@ -6,7 +6,7 @@ description: "Learn how to leverage Claude Code for load testing with Locust. Th
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-load-testing-with-locust-workflow-guide/
-categories: [development, testing, devops]
+categories: [guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
