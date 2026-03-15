@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Runbook Testing Workflow Tutorial"
-description: "Learn how to use Claude Code to automate runbook testing workflows. This tutorial covers setting up test environments, executing validation steps, and integrating with CI/CD pipelines."
+description: "Learn how to use Claude Code to automate runbook testing workflows. This tutorial covers setting up test environments, executing validation steps, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-runbook-testing-workflow-tutorial/
@@ -318,3 +318,10 @@ The investment pays dividends immediately—every test run is one less potential
 
 Begin your runbook testing journey today, and sleep better tonight knowing your procedures actually work when you need them.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

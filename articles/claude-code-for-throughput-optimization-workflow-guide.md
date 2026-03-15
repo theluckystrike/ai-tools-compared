@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Throughput Optimization Workflow Guide"
-description: "Learn how to optimize your development workflow with Claude Code to maximize throughput. Practical examples, code snippets, and actionable strategies for developers."
+description: "Learn how to optimize your development workflow with Claude Code to maximize throughput. Practical examples, code snippets, and actionable strategies."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-throughput-optimization-workflow-guide/
@@ -218,3 +218,10 @@ Start with one workflow—perhaps code reviews or test generation—and refine i
 
 Remember: the goal isn't to use Claude Code more—it's to accomplish more valuable work through intelligent automation. Focus on outcomes rather than activity, and your throughput will naturally increase.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

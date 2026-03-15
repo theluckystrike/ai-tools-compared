@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Performance Data Analysis Workflow"
-description: "Learn how to build efficient performance data analysis workflows with Claude Code. Discover practical techniques for processing metrics, identifying bottlenecks, and automating analysis tasks."
+description: "Learn how to build efficient performance data analysis workflows with Claude Code. Discover practical techniques for processing metrics, identifying."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-performance-data-analysis-workflow/
@@ -105,3 +105,10 @@ Finally, document your analysis process and findings. Claude Code can help you m
 Claude Code transforms performance data analysis from a manual, time-consuming process into an efficient, automated workflow. By using its capabilities for data processing, correlation analysis, and workflow automation, you can quickly identify performance issues and measure the impact of optimizations. The key is establishing good data collection practices, building reusable analysis scripts, and maintaining systematic documentation of your findings.
 
 Start with simple analyses and gradually build more sophisticated capabilities. Over time, you'll develop a powerful performance analysis toolkit that helps you maintain optimal system performance with minimal manual effort.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

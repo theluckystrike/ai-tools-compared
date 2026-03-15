@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Documentation Testing Workflow Guide"
-description: "Learn how to build automated documentation testing workflows using Claude Code. Verify your docs compile, links work, and content stays accurate with practical examples and CI integration."
+description: "Learn how to build automated documentation testing workflows using Claude Code. Verify your docs compile, links work, and content stays accurate with."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-documentation-testing-workflow-guide/
@@ -289,3 +289,10 @@ Claude Code transforms documentation testing from a manual chore into an automat
 
 The key is integrating these tests into your daily workflow and CI pipeline. When documentation testing becomes automatic, you free up time for actually writing great documentation while maintaining confidence in its quality.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

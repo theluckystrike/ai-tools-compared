@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Release Gate Workflow Tutorial Guide"
-description: "Learn how to leverage Claude Code for release gate workflows. A practical guide for developers to create, implement, and automate release gates effectively."
+description: "Learn how to leverage Claude Code for release gate workflows. A practical guide for developers to create, implement, and automate release gates."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-release-gate-workflow-tutorial-guide/
@@ -301,3 +301,10 @@ Claude Code transforms release gate implementation from a tedious maintenance ta
 
 Start with a few essential gates—static analysis, security scanning, and basic test coverage. As your processes mature, layer in additional checks for performance, compliance, and specialized quality attributes. With Claude Code handling the implementation details, your team focuses on defining what quality means for your specific context.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

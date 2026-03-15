@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Claude Code for Release Automation Workflow Tutorial: A Complete Guide"
-description: "Learn how to build automated release workflows with Claude Code. Master CI/CD integration, version management, and deployment automation for faster, more reliable releases."
+title: "Claude Code for Release Automation Workflow Tutorial: A."
+description: "Learn how to build automated release workflows with Claude Code. Master CI/CD integration, version management, and deployment automation for faster."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-release-automation-workflow-tutorial/
@@ -245,3 +245,10 @@ Start with the fundamentals outlined in this tutorial, then gradually add comple
 
 Remember that effective release automation is an investment. The initial setup time pays dividends through faster shipping cycles, reduced errors, and more confident deployments. With Claude Code as your automation partner, you have a powerful ally in building the release workflows your team needs to succeed.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

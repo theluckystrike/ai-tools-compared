@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for PR Changelog Generation Workflow"
-description: "Learn how to automate PR changelog generation using Claude Code. Streamline your release documentation with practical workflows, code examples, and actionable advice."
+description: "Learn how to automate PR changelog generation using Claude Code. Streamline your release documentation with practical workflows, code examples, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-pr-changelog-generation-workflow/
@@ -170,3 +170,10 @@ Claude Code transforms PR changelog generation from a tedious manual task into a
 The key is consistency in your commit messages and PR descriptions—once Claude has quality input, it excels at producing structured, readable output that your users and stakeholders will appreciate.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
