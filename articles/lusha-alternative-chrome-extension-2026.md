@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Lusha Alternative Chrome Extension in 2026"
 description: "Discover the best Lusha alternatives for Chrome in 2026. These developer-friendly tools help you find verified emails, phone numbers, and company data without the premium pricing."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /lusha-alternative-chrome-extension-2026/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Lusha Alternative Chrome Extension in 2026
 

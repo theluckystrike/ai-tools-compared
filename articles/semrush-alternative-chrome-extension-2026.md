@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "SEMrush Alternative Chrome Extension in 2026"
 description: "Looking for a SEMrush alternative Chrome extension in 2026? Discover developer-friendly SEO tools with free tiers, API integrations, and customizable features."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /semrush-alternative-chrome-extension-2026/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 # SEMrush Alternative Chrome Extension in 2026
 
