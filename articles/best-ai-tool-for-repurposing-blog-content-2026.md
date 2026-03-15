@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "Best AI Tool for Repurposing Blog Content 2026"
 description: "A practical guide to AI tools that transform blog posts into social content, newsletters, and more. Code examples and real workflows for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-ai-tool-for-repurposing-blog-content-2026/
+reviewed: true
+score: 8
+categories: [best-of]
 ---
+
 
 {% raw %}
 
