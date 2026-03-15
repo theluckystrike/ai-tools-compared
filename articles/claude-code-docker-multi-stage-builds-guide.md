@@ -124,6 +124,87 @@ ENV PYTHONUNBUFFERED=1 \
 CMD ["python", "main.py"]
 ```
 
+### React Frontend Applications
+
+For a React application built with Vite, multi-stage builds separate the Node.js build environment from a lightweight Nginx serving stage:
+
+```dockerfile
+# Build stage
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+RUN npm ci
+
+# Copy source and build
+COPY . .
+RUN npm run build
+
+# Production stage
+FROM nginx:alpine
+
+# Copy built assets from builder
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+This approach reduces the final image size dramatically since Node.js is not included in the production image—only the compiled static assets and Nginx are present.
+
+### Python FastAPI Applications (Virtual Environment Approach)
+
+For a Python FastAPI application, Claude Code can use a virtual environment pattern that cleanly separates build-time dependencies from the runtime image:
+
+```dockerfile
+# Build stage
+FROM python:3.12-slim AS builder
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create virtual environment
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Copy and install requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Runtime stage
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Copy virtual environment from builder
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+
+# Create non-root user
+RUN useradd --create-home appuser && \
+    chown -R appuser:appuser /app
+USER appuser
+
+# Copy application code
+COPY --chown=appuser:appuser . .
+
+EXPOSE 8000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+The virtual environment is copied wholesale from the builder stage, preserving all installed packages without reinstalling them in the runtime stage.
+
 ### Go Applications
 
 Go applications benefit enormously from multi-stage builds since the compilation produces a single binary:
@@ -266,6 +347,8 @@ Always specify exact versions in your base images rather than using floating tag
 Consider security implications when copying files between stages. The production stage should never contain source code, development dependencies, or build tools.
 
 Use `.dockerignore` files to exclude unnecessary files from your build context. This reduces build context transfer time and prevents accidentally including sensitive files.
+
+Consider adding health checks to your multi-stage Dockerfiles. Claude Code can generate `HEALTHCHECK` instructions appropriate for your application type, which improves reliability in container orchestration environments like Kubernetes or Docker Swarm.
 
 Test your multi-stage builds locally before deploying. The `--target` flag allows you to build specific stages for testing:
 

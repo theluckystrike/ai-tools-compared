@@ -1017,7 +1017,7 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code GDPR Compliance Implementation Guide](/claude-skills-guide/claude-code-gdpr-compliance-implementation/)
 - [GDPR Data Privacy Implementation with Claude Code 2026](/claude-skills-guide/claude-code-gdpr-data-privacy-implementation-checklist/)
 - [Claude Code Generating CSS Variables from Design System](/claude-skills-guide/claude-code-generating-css-variables-from-design-system/)
-- [Claude Code Generating Docker Multi-Stage Builds Guide](/claude-skills-guide/claude-code-generating-docker-multi-stage-builds-guide/)
+- [Claude Code Docker Multi-Stage Builds Guide](/claude-skills-guide/claude-code-docker-multi-stage-builds-guide/)
 - [Claude Code German Developer Localization Workflow Guide](/claude-skills-guide/claude-code-german-developer-localization-workflow-guide/)
 - [Claude Code German Enterprise Compliance Workflow Tips](/claude-skills-guide/claude-code-german-enterprise-compliance-workflow-tips/)
 - [Claude Code Gin GoLang REST API Development Guide](/claude-skills-guide/claude-code-gin-golang-rest-api-development-guide/)
