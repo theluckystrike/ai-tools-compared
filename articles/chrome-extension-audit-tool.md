@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Audit Tool: A Developer's Guide"
 description: "Learn how to audit Chrome extensions for security, performance, and code quality. Practical tools and techniques for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-audit-tool/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Audit Tool: A Developer's Guide

@@ -1,15 +1,21 @@
 ---
 
+
 layout: default
 title: "AI Knowledge Base Chrome Extension: A Developer's Guide"
 description: "Learn how to build and use AI knowledge base chrome extensions for intelligent document management and quick information retrieval."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-knowledge-base-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
 
+
 {% raw %}
-AI knowledge base chrome extensions transform how developers and power users manage information across the web. These extensions leverage large language models to organize, search, and retrieve information from personal document collections, team wikis, and online resources. If you work with large amounts of documentation, research papers, or technical articles, understanding how these tools function helps you make informed decisions about integrating them into your workflow.
+AI knowledge base chrome extensions transform how developers and power users manage information across the web. These extensions use large language models to organize, search, and retrieve information from personal document collections, team wikis, and online resources. If you work with large amounts of documentation, research papers, or technical articles, understanding how these tools function helps you make informed decisions about integrating them into your workflow.
 
 ## How AI Knowledge Base Extensions Work
 
