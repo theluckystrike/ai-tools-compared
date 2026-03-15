@@ -6,7 +6,7 @@ description: "A practical comparison of AI tools for video summarization with co
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /ai-tools-for-video-summarization/
-categories: [ai-tools, video-processing]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
