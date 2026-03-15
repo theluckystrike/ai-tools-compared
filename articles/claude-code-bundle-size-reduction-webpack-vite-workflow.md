@@ -145,6 +145,52 @@ rollupOptions: {
 }
 ```
 
+## Custom Bundle Analysis Skill
+
+Create a dedicated skill file at `.claude/skills/bundle-analysis.md` for repeatable analysis:
+
+```markdown
+---
+name: bundle-analysis
+description: Analyze and optimize JavaScript bundle sizes
+---
+
+Commands:
+- `/analyze-bundle` — Run full analysis: list top 10 largest deps, code splitting opportunities, tree-shaking effectiveness
+- `/compare-bundles [baseline]` — Compare current bundle against a baseline commit or branch
+- `/find-bloat` — Identify unused code and unnecessary dependencies
+
+For `/analyze-bundle`:
+1. Check bundler config (webpack.config.js or vite.config.js)
+2. Run production build with stats output
+3. Parse the stats JSON for size breakdown
+4. Identify dependencies >10KB
+5. Provide recommendations with expected savings
+```
+
+### Lightweight Alternatives Reference
+
+When the skill identifies oversized dependencies, use this reference for common swaps:
+
+| Heavy Package | Lightweight Alternative | Typical Savings |
+|---|---|---|
+| moment.js | dayjs or date-fns | ~70KB |
+| lodash (full) | lodash-es or individual functions | ~50KB |
+| axios | native fetch | ~15KB |
+| moment/locale | dynamic imports | ~30KB |
+
+### Tree-Shaking at the Package Level
+
+Beyond import-level tree-shaking, verify that your `package.json` enables aggressive dead-code elimination:
+
+```json
+{
+  "sideEffects": false
+}
+```
+
+This tells bundlers the code has no side effects, enabling removal of unused exports. Review this setting in both your own packages and dependencies.
+
 ## Using Claude Skills for Optimization Workflow
 
 Several Claude Code skills accelerate the optimization process. The [**tdd** skill](/claude-skills-guide/best-claude-skills-for-developers-2026/) helps you set up proper test coverage to ensure your optimizations don't break functionality. Before making significant changes, invoke the skill to establish test baselines:
@@ -188,7 +234,40 @@ Another frequent error involves forgetting to update import paths after splittin
 
 ## Automating the Workflow
 
-For ongoing optimization, consider integrating bundle analysis into your CI pipeline. The **skill-creator** skill can help you build custom automation skills that run these checks automatically:
+### CI/CD Bundle Size Enforcement
+
+Integrate bundle analysis into your CI pipeline with a GitHub Actions workflow that fails PRs exceeding size thresholds:
+
+```yaml
+name: Bundle Size Analysis
+on: [pull_request]
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run build
+      - name: Check bundle size
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const size = require('./bundle-stats.json').assets[0].size;
+            const threshold = 200 * 1024; // 200KB
+            if (size > threshold) {
+              core.setFailed(`Bundle size ${size} exceeds threshold ${threshold}`);
+            }
+```
+
+### Workflow Cadences
+
+Structure your optimization into regular checkpoints:
+
+- **Pre-commit**: Use a Husky hook to block commits that add >50KB to the bundle
+- **Release preparation**: Run `/compare-bundles main` and append findings to release reports
+- **Quarterly review**: Run `/find-bloat` to identify unused dependencies and research alternatives
+
+The **skill-creator** skill can help you build custom automation skills that run these checks automatically:
 
 ```
 /skill-creator Create a skill that runs bundle analysis and posts size changes to Slack

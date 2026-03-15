@@ -49,7 +49,25 @@ Despite the name, this is a separate project from the original EditThisCookie. I
 
 **Best for:** Users who want a familiar interface without learning a new tool.
 
-### 3. CookieX
+### 3. CookieSpy
+
+CookieSpy specializes in cross-profile cookie viewing and monitoring. For developers working with multiple browser profiles or managing cookies across different testing environments, it offers:
+
+- Cross-profile cookie viewing
+- Detailed cookie statistics and change monitoring with alerts
+- Bulk operations (delete, export)
+- Search by name, value, or domain
+
+### 4. ModHeader
+
+ModHeader extends beyond pure cookie management, allowing you to set custom cookies alongside request and response headers. It is particularly powerful for API testing and debugging cookie-related issues in complex applications:
+
+- Profile-based configurations for different environments
+- Request and response cookie manipulation
+- Match rules based on URLs
+- Import/export configurations
+
+### 5. CookieX
 
 CookieX targets developers who need to test cookie-based authentication flows. It provides a clean API-like interface for manipulating cookies.
 
@@ -164,17 +182,40 @@ function exportCookiesAsJson() {
 exportCookiesAsJson();
 ```
 
+### Using the Cookie Store API
+
+Modern browsers support the Cookie Store API, an async alternative to `document.cookie` that provides cleaner programmatic access:
+
+```javascript
+async function getCookiesForUrl(url) {
+  return await cookieStore.getAll({ url });
+}
+
+await cookieStore.set({
+  name: 'session',
+  value: 'abc123',
+  expires: Date.now() + 86400000,
+  domain: '.example.com',
+  path: '/',
+  sameSite: 'strict'
+});
+```
+
 ## Choosing the Right Tool
 
 Your choice depends on your specific needs:
 
-| Use Case | Recommended Tool |
-|----------|------------------|
-| Quick cookie inspection | Cookie-Editor |
-| Authentication testing | CookieX |
-| Staying within DevTools | Native Application tab |
-| Automated testing | JavaScript snippets + DevTools Protocol |
-| Cross-browser development | Cookie-Editor (multi-browser) |
+| Use Case | Recommended Tool | Performance |
+|----------|------------------|-------------|
+| Quick cookie inspection | Cookie-Editor | Excellent |
+| Authentication testing | CookieX | Good |
+| Cross-profile monitoring | CookieSpy | Good |
+| API testing with headers | ModHeader | Excellent |
+| Staying within DevTools | Native Application tab | Excellent |
+| Automated testing | JavaScript snippets + DevTools Protocol | Excellent |
+| Cross-browser development | Cookie-Editor (multi-browser) | Good |
+
+Some extensions add noticeable overhead to page loads. Test extensions in your development environment before committing. Only install extensions from trusted sources and review the permissions each extension requests.
 
 ## Security Considerations
 

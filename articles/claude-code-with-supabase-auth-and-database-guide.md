@@ -14,7 +14,7 @@ tags: [claude-code, claude-skills]
 
 # Claude Code with Supabase Auth and Database Guide
 
-Supabase is an open-source Firebase alternative that provides authentication, database, real-time subscriptions, and edge functions. When combined with Claude Code, you can rapidly build secure, data-driven applications without the complexity of traditional backend setups. This guide walks you through integrating Supabase auth and database into your Claude Code workflows.
+Supabase is an open-source Firebase alternative that provides authentication, database, real-time subscriptions, and edge functions. When combined with Claude Code, you can rapidly build secure, data-driven applications without the complexity of traditional backend setups. This guide covers the full Supabase integration — auth setup, database schema design, CRUD operations, and real-time subscriptions. For a deep dive into Row Level Security policies and fine-grained access control, see the [Supabase Auth RLS Guide](/claude-skills-guide/claude-code-supabase-auth-row-level-security-guide/).
 
 ## Why Supabase with Claude Code?
 
