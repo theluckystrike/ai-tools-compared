@@ -3,16 +3,18 @@ layout: default
 title: "Claude Code for Incident Management Workflow Tutorial"
 description: "Learn how to build an intelligent incident management system using Claude Code CLI. This tutorial covers workflow automation, alerting, and automated response scripts."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-management-workflow-tutorial/
 categories: [Development, Tutorial, Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
 # Claude Code for Incident Management Workflow Tutorial
 
-Incident management is a critical aspect of DevOps and SRE practices. When production issues arise, every second counts. In this comprehensive tutorial, you'll learn how to leverage Claude Code CLI to build an intelligent incident management workflow that automates detection, escalation, and resolution processes.
+Incident management is a critical aspect of DevOps and SRE practices. When production issues arise, every second counts. In this comprehensive tutorial, you'll learn how to use Claude Code CLI to build an intelligent incident management workflow that automates detection, escalation, and resolution processes.
 
 ## What is Claude Code?
 
@@ -216,7 +218,7 @@ Schedule regular game days to test your incident response procedures. Claude Cod
 
 ## Advanced: Integrating with Claude Code's Tool Use
 
-For more advanced automation, you can leverage Claude Code's tool-calling capabilities directly. Create a `CLAUDE.md` file in your project:
+For more advanced automation, you can use Claude Code's tool-calling capabilities directly. Create a `CLAUDE.md` file in your project:
 
 ```markdown
 # Incident Response Agent
