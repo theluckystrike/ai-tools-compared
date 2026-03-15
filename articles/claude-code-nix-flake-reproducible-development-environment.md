@@ -115,6 +115,36 @@ Consider a project that requires multiple tools: Go for the backend, Node.js for
 
 With this setup, running `nix develop` in your project directory drops you into an environment with exactly the versions of Go, Node.js, and tools you specified. No system-wide installations required.
 
+### Managing Multiple Development Shells
+
+Large projects often require separate environments for different components. Nix Flakes handle this elegantly by defining multiple named shells:
+
+```nix
+{
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+      in
+      {
+        devShells.default = pkgs.mkShell {
+          buildInputs = with pkgs; [ rustc cargo ];
+        };
+
+        devShells.backend = pkgs.mkShell {
+          buildInputs = with pkgs; [ python311 postgresql_15 ];
+        };
+
+        devShells.frontend = pkgs.mkShell {
+          buildInputs = with pkgs; [ nodejs_22 pnpm ];
+        };
+      }
+    );
+}
+```
+
+Enter a specific shell with `nix develop .#backend`. Claude Code can help you switch between environments by understanding which tools each shell provides. When you run `nix flake show`, all available shells and outputs are listed—share that output with Claude when debugging environment-related issues.
+
 ## Integrating Claude Code Commands
 
 Claude Code can automate your Nix workflows directly. A simple skill that understands your flake structure can help developers get started quickly:
@@ -171,6 +201,63 @@ inputs.sharedEnv.url = "github:yourorg/shared-dev-env";
 ```
 
 The **docx** skill can help generate documentation about these configurations. The **artifacts-builder** skill can create visualization of your environment dependencies.
+
+### Flake Checks for Local CI
+
+Flakes support running checks—equivalent to CI pipelines—locally before you push:
+
+```nix
+{
+  outputs = { self, nixpkgs }:
+    let
+      pkgs = import nixpkgs { system = "x86_64-linux"; };
+    in
+    {
+      checks.x86_64-linux = {
+        myapp-test = pkgs.runCommand "test" {} ''
+          cargo test --manifest-path ${self}/Cargo.toml
+          touch $out
+        '';
+      };
+    };
+}
+```
+
+Run all checks with `nix flake check`. Claude Code can help interpret results and fix failing tests before they reach CI.
+
+### Flake Templates for Project Scaffolding
+
+Standardize new project setups with templates:
+
+```nix
+{
+  outputs = { self }:
+  {
+    templates.default = {
+      path = ./template;
+      description = "Standard project template";
+    };
+  };
+}
+```
+
+Use `nix flake init -t .` to generate new projects from a template. Claude Code can help customize these templates for your team's conventions.
+
+## Debugging Flake Issues with Claude Code
+
+When your Flake configuration fails, Claude Code can help diagnose problems. Common issues include:
+
+**Input resolution failures** occur when a Flake input URL no longer exists or points to an outdated branch. Run `nix flake metadata` to see current input states and share the output with Claude for diagnosis.
+
+**System-specific package missing** errors happen when you reference a package unavailable on your platform. Use conditional expressions:
+
+```nix
+buildInputs = with pkgs; [
+  (if pkgs.stdenv.isLinux then docker else docker-desktop)
+];
+```
+
+**Hash mismatch** errors indicate a source package changed upstream. Update the hash in your Flake, or temporarily use `sha256 = "0000000000000000000000000000000000000000000000000000000000000000";` to let Nix report the correct hash.
 
 ## When to Choose Nix Flakes Over Docker
 
