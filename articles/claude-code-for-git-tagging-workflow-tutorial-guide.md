@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Git Tagging Workflow Tutorial Guide"
-description: "Learn how to automate and streamline your Git tagging workflow using Claude Code. This comprehensive guide covers practical examples, code snippets, and actionable advice for developers."
+description: "Learn how to automate and streamline your Git tagging workflow using Claude Code. This comprehensive guide covers practical examples, code snippets."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-git-tagging-workflow-tutorial-guide/
@@ -239,3 +239,10 @@ Start small: implement one automation at a time, measure the improvement, and gr
 ---
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

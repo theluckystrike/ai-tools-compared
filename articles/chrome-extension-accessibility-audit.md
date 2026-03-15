@@ -3,7 +3,7 @@
 
 layout: default
 title: "Chrome Extension Accessibility Audit: A Practical Guide"
-description: "Learn how to conduct a comprehensive accessibility audit for Chrome extensions. Step-by-step process, automated tools, and manual testing techniques for developers."
+description: "Learn how to conduct a comprehensive accessibility audit for Chrome extensions. Step-by-step process, automated tools, and manual testing techniques."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-accessibility-audit/
@@ -201,5 +201,12 @@ Run these tests in CI to catch regressions before shipping updates.
 Regular accessibility audits protect all users—particularly those relying on assistive technologies. By combining automated scanning with manual testing and integrating accessibility checks into your development workflow, you build extensions that work effectively for everyone.
 
 The effort required for accessibility auditing is modest compared to the impact: inclusive extensions reach more users and comply with store policies. Start with the automated tools, add keyboard and screen reader testing, and maintain accessibility as a continuous priority.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

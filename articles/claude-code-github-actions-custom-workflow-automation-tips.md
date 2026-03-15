@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code GitHub Actions Custom Workflow Automation Tips"
-description: "Master custom GitHub Actions workflow automation with Claude Code. Learn advanced patterns for CI/CD pipelines, matrix builds, conditional execution, and more."
+description: "Master custom GitHub Actions workflow automation with Claude Code. Learn advanced patterns for CI/CD pipelines, matrix builds, conditional execution."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-github-actions-custom-workflow-automation-tips/
@@ -274,6 +274,13 @@ Building effective GitHub Actions workflows requires thoughtful organization, st
 With these custom workflow automation tips, you can create CI/CD pipelines that are efficient, secure, and maintainable. Remember to regularly review and optimize your workflows as your project evolves.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
