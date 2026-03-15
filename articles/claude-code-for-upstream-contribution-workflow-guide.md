@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Upstream Contribution Workflow Guide"
 description: "A comprehensive guide to mastering upstream contribution workflows using Claude Code, with practical examples, code snippets, and actionable advice for developers."
@@ -8,12 +9,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-upstream-contribution-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Upstream Contribution Workflow Guide
 
-Contributing to upstream projects is a fundamental practice in the open source ecosystem. Whether you're working with Linux kernel modules, distribution packages, or foundational libraries, sending your changes upstream ensures they benefit the entire community and remain available in future releases. However, upstream contribution workflows can be complex, involving patch series, revision tracking, and strict coding standards. This guide shows you how to leverage Claude Code to navigate upstream contribution workflows efficiently.
+Contributing to upstream projects is a fundamental practice in the open source ecosystem. Whether you're working with Linux kernel modules, distribution packages, or foundational libraries, sending your changes upstream ensures they benefit the entire community and remain available in future releases. However, upstream contribution workflows can be complex, involving patch series, revision tracking, and strict coding standards. This guide shows you how to use Claude Code to navigate upstream contribution workflows efficiently.
 
 ## Understanding Upstream Contribution
 

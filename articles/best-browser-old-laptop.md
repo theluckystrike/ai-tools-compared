@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Best Browser for Old Laptop: A Developer and Power User Guide"
 description: "Discover the most performant browsers for aging hardware. We test Firefox, Chrome, Brave, and lightweight alternatives to find the best browser for old laptop systems."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-browser-old-laptop/
+reviewed: true
+score: 8
+categories: [best-of]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Best Browser for Old Laptop: A Developer and Power User Guide
 

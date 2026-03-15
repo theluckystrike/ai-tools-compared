@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Slowing Browser? Here's How to Fix It"
 description: "Discover why Chrome extensions slow down your browser and learn practical solutions to optimize performance for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-slowing-browser/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 

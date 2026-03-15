@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Energy Saver Mode: A Complete Guide for Developers and Power Users"
 description: "Learn how Chrome Energy Saver Mode works, its impact on browser performance, and practical configurations for developers who need to balance power efficiency with productivity."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-energy-saver-mode/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Chrome Energy Saver Mode represents one of the browser's most underutilized features for developers and power users who spend significant time working in Chrome. Understanding how this feature works and how to configure it appropriately can help you extend battery life on laptops, reduce heat generation during intensive coding sessions, and optimize resource allocation across multiple browser windows.
 

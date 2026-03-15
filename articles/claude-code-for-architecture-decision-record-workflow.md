@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Architecture Decision Record Workflow"
 description: "Learn how to leverage Claude Code to streamline your Architecture Decision Record (ADR) workflow. Practical examples and code snippets for developers."
@@ -8,12 +9,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-architecture-decision-record-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Architecture Decision Record Workflow
 
-Architecture Decision Records (ADRs) are a powerful practice for documenting significant architectural choices in your projects. When combined with Claude Code's capabilities, you can automate, streamline, and enhance your ADR workflow significantly. This guide shows you how to leverage Claude Code to create, manage, and maintain ADRs effectively.
+Architecture Decision Records (ADRs) are a powerful practice for documenting significant architectural choices in your projects. When combined with Claude Code's capabilities, you can automate, streamline, and enhance your ADR workflow significantly. This guide shows you how to use Claude Code to create, manage, and maintain ADRs effectively.
 
 ## What is an Architecture Decision Record?
 
