@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension LeetCode Helper: Tools and Extensions to Speed Up Your Practice"
 description: "Discover the best Chrome extensions for LeetCode practice. Learn about timer overlays, solution hints, problem organization, and coding environment enhancements."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-leetcode-helper/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 
