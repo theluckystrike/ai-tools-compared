@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension LeetCode Helper: Tools and Extensions to Speed Up Your Practice"
-description: "Discover the best Chrome extensions for LeetCode practice. Learn about timer overlays, solution hints, problem organization, and coding environment enhancements."
+title: "Chrome Extension LeetCode Helper: Tools and Extensions."
+description: "Discover the best Chrome extensions for LeetCode practice. Learn about timer overlays, solution hints, problem organization, and coding environment."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-leetcode-helper/
@@ -136,6 +136,13 @@ Extensions that work across platforms are worth extra consideration if you pract
 Building an effective LeetCode practice routine takes experimentation. Start with one or two extensions that address your biggest friction point—whether that's timing, tracking, or organization. Add more tools only when you notice specific areas where your workflow stalls.
 
 The best extension is the one you actually use consistently. A simple timer you check every session will outperform a complex dashboard you never look at.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
