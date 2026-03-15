@@ -195,15 +195,72 @@ This architecture gives you complete control over extraction logic, API calls, a
 
 **Meeting notes from web** capture articles or documentation you want to discuss, attaching the URL and extracted content as a starting point.
 
-## Choosing Between Build and Buy
+## Established Third-Party Alternatives
 
-Several established alternatives exist if building from scratch doesn't fit your timeline:
+If building from scratch doesn't fit your timeline, several established tools offer good developer support:
+
+### Raindrop.io
+
+Raindrop.io provides advanced collection management with a REST API for programmatic content access. It suits automation workflows and can serve as an intermediary feeding into Notion via platforms like Zapier or Make.
+
+```javascript
+const RAINDROP_API = 'https://api.raindrop.io/v1';
+async function getCollectionItems(collectionId, token) {
+  const response = await fetch(`${RAINDROP_API}/raindrops/${collectionId}`, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  return response.json();
+}
+```
+
+Key features: REST API access, tag-based organization, full-text search, and collection sharing.
+
+### Omnivore
+
+Omnivore is an open-source alternative with self-hosting options and a clean API. Its TypeScript/Node.js codebase and markdown export compatibility make it developer-friendly. Integration with Notion involves exporting to markdown then using the Notion API:
+
+```typescript
+// Convert clipped content to Notion blocks
+function markdownToNotionBlocks(markdown: string): Block[] {
+  const lines = markdown.split('\n');
+  return lines.map(line => {
+    if (line.startsWith('# ')) {
+      return { heading_1: { rich_text: [{ text: { content: line.slice(2) } }] } };
+    }
+    if (line.startsWith('```')) {
+      return { code: { rich_text: [{ text: { content: line.slice(3) } }], language: 'plain text' } };
+    }
+    return { paragraph: { rich_text: [{ text: { content: line } }] } };
+  });
+}
+```
+
+### Other Options
 
 - **Notion2MD** tools convert existing clips to markdown for migration
 - **Parsers** like jina.ai Reader provide clean article extraction as a service
 - **Zapier/Make integrations** connect browser actions to Notion without code
 
-For simple needs, these handle the job. For custom extraction, processing pipelines, or tight integration with development workflows, building your own extension delivers the control you need.
+## Choosing the Right Approach
+
+| Requirement | Recommended Solution |
+|-------------|---------------------|
+| Full API control | Custom extension |
+| Quick setup with good features | Raindrop.io |
+| Self-hosted and open source | Omnivore |
+| Notion-native with extra features | Notion + third-party automation |
+
+For simple needs, established tools handle the job. For custom extraction, processing pipelines, or tight integration with development workflows, building your own extension delivers the control you need.
+
+## Implementation Checklist
+
+When building or selecting an alternative, consider:
+
+1. **Content extraction quality** — Does it handle dynamic content, code blocks, and images?
+2. **API flexibility** — Can you programmatically access and manipulate saved content?
+3. **Storage options** — Is it limited to Notion or can you use multiple destinations?
+4. **Offline support** — Does it work without an active internet connection?
+5. **Privacy controls** — Who has access to your clipped data?
 
 ## Security Considerations
 
