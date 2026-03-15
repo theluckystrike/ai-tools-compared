@@ -5,7 +5,7 @@ description: "Learn how to integrate Claude Code into your Go pprof profiling wo
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-go-pprof-profiling-workflow-tutorial/
-categories: [tutorials, go, performance]
+categories: [tutorials, guides, guides]
 tags: [claude-code, claude-skills, go, pprof, profiling, performance-optimization]
 ---
 
@@ -141,7 +141,6 @@ Create a custom skill to standardize your profiling workflow:
 ---
 name: pprof
 description: Analyze Go pprof profiles and identify optimization opportunities
-tools: [Read, Bash]
 ---
 
 # Go pprof Profile Analysis
@@ -207,3 +206,4 @@ claude "Compare the CPU and heap profiles I collected during load testing. What 
 ## Conclusion
 
 Integrating Claude Code into your Go pprof workflow transforms raw profiling data into actionable insights. By combining pprof's powerful instrumentation with Claude's ability to explain code patterns and suggest fixes, you can systematically improve your application's performance. Start with the skill above, customize it for your stack, and make profiling a regular part of your development cycle.
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
