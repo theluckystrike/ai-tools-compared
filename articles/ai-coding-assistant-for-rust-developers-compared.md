@@ -151,4 +151,11 @@ AI coding assistants have become essential tools for Rust developers, each offer
 
 The best choice ultimately depends on your existing workflow and specific requirements. Consider trying multiple options—most offer free tiers—before committing. As these tools continue to evolve, expect even deeper integration with Rust's ecosystem and improved understanding of advanced patterns like async programming and unsafe code.
 
+
+## Related Reading
+
+- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
+- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+- [Wordtune vs Quillbot: A Comprehensive Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

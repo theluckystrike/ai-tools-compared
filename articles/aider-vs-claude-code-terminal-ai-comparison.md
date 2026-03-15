@@ -2,7 +2,7 @@
 
 layout: default
 title: "Aider vs Claude Code: Terminal AI Coding Assistants Compared"
-description: "A practical comparison of Aider and Claude Code for terminal-based AI-assisted coding. Includes code examples, use cases, and recommendations for developers."
+description: "A practical comparison of Aider and Claude Code for terminal-based AI-assisted coding. Includes code examples, use cases, and recommendations for."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /aider-vs-claude-code-terminal-ai-comparison/
@@ -157,5 +157,12 @@ If you want AI assistance that automatically manages git commits and works smoot
 If you prefer working with Claude's advanced reasoning capabilities and want explicit control over when changes are applied, Claude Code offers a more transparent approach. Its tool-use capabilities make it versatile for non-coding tasks as well.
 
 Many developers end up using both tools for different purposes—Aider for focused coding sessions with git integration, Claude Code for broader questions and exploration.
+
+
+## Related Reading
+
+- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
+- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+- [Wordtune vs Quillbot: A Comprehensive Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
