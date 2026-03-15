@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Pair Review Workflow Tutorial Guide"
 description: "Learn how to leverage Claude Code for effective pair programming and code review workflows. This guide covers practical setups, skill combinations, and real-world examples for developers."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-pair-review-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 
 Pair programming and code review are fundamental practices for building high-quality software. When combined with AI assistance through Claude Code, these workflows become even more powerful—enabling real-time collaboration, instant feedback, and knowledge sharing across your team. This tutorial guide walks you through setting up and maximizing Claude Code for pair review workflows.

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Throughput Optimization Workflow Guide"
 description: "Learn how to optimize your development workflow with Claude Code to maximize throughput. Practical examples, code snippets, and actionable strategies for developers."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-throughput-optimization-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Throughput Optimization Workflow Guide
