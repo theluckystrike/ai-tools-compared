@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Git Stash Advanced Workflow"
-description: "Master advanced git stash workflows with Claude Code. Learn to manage complex stashing scenarios, automate stash operations, and integrate stash workflows into your development process."
+description: "Master advanced git stash workflows with Claude Code. Learn to manage complex stashing scenarios, automate stash operations, and integrate stash."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-git-stash-advanced-workflow/
@@ -162,3 +162,10 @@ Following these practices will help you maintain a clean, manageable stash histo
 
 Git stash is an essential tool in any developer's toolkit, and Claude Code amplifies its power by adding intelligent context awareness, automation, and decision support. By mastering these advanced workflows, you can handle complex context switching with confidence, maintain a clean working directory, and never lose track of unfinished work. Start incorporating these patterns into your daily workflow, and you'll find yourself switching between tasks more fluidly than ever before.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

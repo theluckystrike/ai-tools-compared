@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Git Filter-Repo Workflow"
-description: "Learn how to use Claude Code to automate and simplify git filter-repo workflows for cleaning up repository history, removing sensitive data, and reducing repository size."
+description: "Learn how to use Claude Code to automate and simplify git filter-repo workflows for cleaning up repository history, removing sensitive data, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-git-filter-repo-workflow/
@@ -175,3 +175,10 @@ For ongoing repository maintenance, consider these Claude Code enhanced practice
 Git filter-repo combined with Claude Code provides a powerful workflow for repository maintenance. Claude acts as your assistant—generating correct commands, helping you plan complex operations, and troubleshooting issues that arise. Start with small, safe operations and gradually tackle more complex history rewrites as you gain confidence.
 
 Remember: the key to successful filter-repo use is careful planning, thorough backups, and methodical execution. Let Claude Code help you every step of the way.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

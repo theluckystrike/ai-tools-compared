@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Workspace Automation Workflow"
-description: "Learn how to leverage Claude Code to automate your development workspace. From file organization to batch processing, discover practical workflows that save time."
+description: "Learn how to leverage Claude Code to automate your development workspace. From file organization to batch processing, discover practical workflows that."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-workspace-automation-workflow/
@@ -180,3 +180,10 @@ Start with one automation that saves the most time:
 Test each skill in a low-stakes project before relying on it for production work. Claude's pattern recognition improves with context, so the more it knows about your preferences, the better it automates.
 
 The key insight is that workspace automation with Claude Code isn't about writing complex scripts—it's about teaching Claude your conventions once and letting it apply them consistently across all your projects.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
