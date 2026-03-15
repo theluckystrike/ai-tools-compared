@@ -11,6 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 ---
+{% raw %}
+
 
 Choose Gemini if you deploy Gen 2 Cloud Functions frequently, want Secret Manager integration by default, and work primarily within the Google Cloud ecosystem. Choose ChatGPT if you need quick, straightforward deployment scripts with cross-platform CI/CD compatibility and prefer iterative refinement through conversation. Both produce usable gcloud scripts, but Gemini includes more production-oriented defaults like service accounts and ingress settings.
 
@@ -182,3 +184,4 @@ The best results come from combining AI assistance with your domain knowledge—
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

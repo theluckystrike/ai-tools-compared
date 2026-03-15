@@ -217,3 +217,4 @@ For most developer use cases, combining OpenAI Whisper for transcription with ei
 Building your voice translation pipeline requires testing with your specific audio conditions. What works perfectly with clear studio recordings may struggle with noisy environments or multiple speakers. Implement comprehensive logging to identify and address edge cases in production.
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
