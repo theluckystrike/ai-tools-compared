@@ -5,7 +5,7 @@ description: "Learn how to build a powerful cross-repository code search workflo
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-cross-repo-code-search-workflow-guide/
-categories: [Claude Code, Developer Tools, Workflow Automation]
+categories: [guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
