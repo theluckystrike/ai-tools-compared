@@ -15,7 +15,9 @@ score: 7
 
 # Claude Code Kubernetes Helm Charts Guide
 
-Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide shows you how to use Claude Code skills for Kubernetes and Helm chart development.
+Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide focuses on the *workflow and automation* side: project structure, deployment skills, validation pipelines, CI/CD integration, and debugging running clusters.
+
+If you want a deep dive into writing Helm template syntax — deployment templates, values files, helpers, and conditionals — see [Writing Helm Charts for Kubernetes with Claude Code](/claude-skills-guide/claude-code-writing-helm-charts-kubernetes-tutorial/).
 
 ## Setting Up Your Kubernetes Workflow
 
@@ -56,29 +58,21 @@ When working with values.yaml, Claude can suggest appropriate defaults based on 
 
 ## Managing Environment-Specific Configurations
 
-One of Helm's strengths is handling multiple environments through values files. However, managing these files across development, staging, and production can become unwieldy. Claude Code can help organize these configurations and ensure consistency.
+One of Helm's strengths is handling multiple environments through values files. However, managing these files across development, staging, and production becomes a workflow problem as much as a YAML problem. Claude Code addresses this at the process level, not just the file level.
 
-Use a values file hierarchy:
+For the mechanics of writing well-structured values files and templates, see [Writing Helm Charts for Kubernetes with Claude Code](/claude-skills-guide/claude-code-writing-helm-charts-kubernetes-tutorial/). This guide focuses on how Claude Code *orchestrates* that content across your pipeline.
 
-```yaml
-# values.yaml (base defaults)
-replicaCount: 2
-image:
-  repository: myapp
-  tag: latest
+The workflow challenge is promotion consistency: ensuring that what you test in staging reflects what you deploy to production. Claude Code handles this through automated diff analysis across values files. Ask it to compare your environment values and surface any configuration drift before you promote:
 
-# values.staging.yaml
-replicaCount: 3
-image:
-  tag: staging-latest
+```bash
+# Ask Claude to diff environment configs
+diff values.staging.yaml values.production.yaml
 
-# values.production.yaml
-replicaCount: 5
-image:
-  tag: production-latest
+# Let Claude analyze the output and flag risky differences
+# such as missing resource limits or differing replica counts
 ```
 
-The `supermemory` skill proves invaluable here. It can remember your organization's deployment conventions, security requirements, and naming patterns across sessions. When you switch between projects, supermemory recalls the specific configurations you prefer for production versus development environments.
+The `supermemory` skill proves invaluable here. It remembers your organization's deployment conventions, security requirements, and naming patterns across sessions. When you switch between projects, supermemory recalls specific production constraints — for example, that your production namespace requires PodDisruptionBudgets or that certain services must use pinned image tags rather than `latest`.
 
 ## Validating Charts Before Deployment
 

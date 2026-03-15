@@ -13,6 +13,8 @@ tags: [claude-code, claude-skills]
 ---
 
 
+This tutorial focuses on writing Helm chart templates — deployment YAML, values files, helper functions, and conditional resources. For the workflow side (CI/CD integration, deployment skills, cluster debugging, and multi-environment promotion), see [Claude Code Kubernetes Helm Charts Guide](/claude-skills-guide/claude-code-kubernetes-helm-charts-guide/).
+
 {% raw %}
 # Writing Helm Charts for Kubernetes with Claude Code: A Complete Tutorial
 
