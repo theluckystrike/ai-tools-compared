@@ -6,7 +6,7 @@ description: "A practical guide to AI tools that help consultants create client 
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-consultants-client-deliverables/
-categories: [ai-tools, consulting]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

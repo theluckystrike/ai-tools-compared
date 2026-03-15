@@ -6,7 +6,7 @@ description: "A practical guide to AI-powered research tools for journalists, co
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-journalists-article-research-2026/
-categories: [research, journalism]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
