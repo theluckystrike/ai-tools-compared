@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Copilot for Adding Type Hints to Untyped Python Codebase"
+title: "Cursor vs Copilot for Adding Type Hints to Untyped."
 description: "A practical comparison of Cursor and GitHub Copilot for adding type hints to untyped Python code, with real code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -158,5 +158,10 @@ Your choice depends on your specific situation:
 Many teams use both tools for different purposes—Copilot for rapid code completion and Cursor for more involved refactoring tasks like comprehensive type hint addition.
 
 The most effective approach often involves using Cursor for initial type inference across your core domain types, then using Copilot for routine typing as you continue development. Both tools continue improving, and their relative strengths may shift as the underlying AI models evolve.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

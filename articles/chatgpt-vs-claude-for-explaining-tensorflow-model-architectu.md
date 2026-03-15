@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Claude for Explaining TensorFlow Model Architecture to Beginners"
+title: "ChatGPT vs Claude for Explaining TensorFlow Model."
 description: "A practical comparison of ChatGPT and Claude when helping beginners understand TensorFlow model architectures, with code examples and real-world scenarios."
 date: 2026-03-16
 author: theluckystrike
@@ -126,6 +126,11 @@ Both ChatGPT and Claude serve beginners learning TensorFlow effectively, but the
 The most effective approach combines ChatGPT's practical code generation with Claude's conceptual depth. This hybrid strategy helps beginners not just build working models, but truly understand what those models do and why they work that way.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
