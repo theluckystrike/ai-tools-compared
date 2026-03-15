@@ -183,6 +183,18 @@ claude -p "Add a detailed API reference section to README.md based on the functi
 
 To get the most out of your README generation workflow, follow these best practices.
 
+### Test Your Instructions
+
+The best measure of README quality is whether someone unfamiliar with the project can follow your instructions successfully. Clone your repo to a fresh location and attempt setup from your README alone. If any step fails or confuses, update immediately.
+
+### Use Badges Strategically
+
+CI status, version, and license badges provide quick visual reference without clutter. Include only those relevant to your project — avoid badge bloat that distracts from content.
+
+### Keep Installation Current
+
+Dependencies change. Review and test installation steps during each release cycle to prevent stale documentation from confusing new users.
+
 ### Maintain Template Quality
 
 Your skill templates should evolve based on project requirements. Regularly review and update the templates to include new sections, modern badges, and current best practices.
@@ -261,6 +273,10 @@ Parse `package.json` scripts to generate accurate command documentation automati
 
 Use the **supermemory** skill to maintain README context across Claude Code sessions — storing previous README versions, tracking which sections need updates, and suggesting improvements based on common patterns. The **frontend-design**, **tdd**, and **pdf** skills also integrate well: documenting UI components, generating test coverage badges, and converting README to PDF for distribution.
 
+### Multi-Project Documentation Strategy
+
+If you maintain multiple related projects, use the **supermemory** skill to store cross-project documentation context. Create a documentation standard specifying required sections, preferred terminology, code example style, and badge placement conventions. Share this standard across repositories and reference it when generating new README files, ensuring consistency without duplicating effort.
+
 ### Multi-Language Support
 
 Create separate templates for different project types and let Claude detect and apply the appropriate template automatically. This ensures each project gets documentation tailored to its language and ecosystem.
@@ -274,6 +290,7 @@ Start with simple templates and gradually expand your README generation capabili
 
 ## Related Reading
 
+- [Claude Code Runbook Documentation Guide](/claude-skills-guide/claude-code-runbook-documentation-guide/)
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)

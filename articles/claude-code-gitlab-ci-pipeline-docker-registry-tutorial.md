@@ -199,6 +199,70 @@ The `/supermemory` skill stores your pipeline configurations and deployment patt
 
 For frontend applications, `/frontend-design` helps scaffold components that work well with your Docker setup, including proper environment variable handling and build configurations.
 
+## Running Claude Code Inside the Pipeline
+
+You can add Claude Code as a live AI analysis stage that reviews code on every merge request:
+
+```yaml
+claude-analysis:
+  stage: test
+  image: node:20-alpine
+  before_script:
+    - npm install -g @anthropic-ai/claude-code
+  script:
+    - claude --print --dangerously-skip-permissions "Analyze this codebase for security vulnerabilities and suggest fixes"
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+```
+
+Store your `ANTHROPIC_API_KEY` as a protected, masked CI/CD variable. The `--dangerously-skip-permissions` flag enables non-interactive execution in CI.
+
+## Multi-Environment Deployments
+
+Extend your pipeline for staging and production with manual approval gates:
+
+```yaml
+deploy:staging:
+  stage: deploy
+  image: alpine:3.19
+  script:
+    - apk add --no-cache curl
+    - curl -X POST $STAGING_WEBHOOK -d "{\"image\":\"$IMAGE_TAG\"}"
+  environment:
+    name: staging
+    url: https://staging.your-app.com
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop"
+
+deploy:production:
+  stage: deploy
+  image: alpine:3.19
+  script:
+    - apk add --no-cache curl
+    - curl -X POST $PROD_WEBHOOK -d "{\"image\":\"$IMAGE_TAG\"}"
+  environment:
+    name: production
+    url: https://your-app.com
+  when: manual
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+```
+
+The production deployment uses `when: manual` for safety, requiring explicit trigger approval. For debugging pipeline issues, add a conditional debug job:
+
+```yaml
+debug:
+  stage: build
+  image: docker:24-cli
+  services:
+    - docker:24-dind
+  script:
+    - docker info
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  rules:
+    - if: $CI_COMMIT_MESSAGE =~ /debug/
+```
+
 ## Security Best Practices
 
 Harden your pipeline with these security measures:

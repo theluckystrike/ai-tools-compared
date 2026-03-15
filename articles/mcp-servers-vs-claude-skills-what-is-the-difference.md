@@ -137,6 +137,43 @@ No — MCP is an open protocol. Other tools and AI systems can implement MCP cli
 - You need Claude to access an external service, API, or database
 - You want consistent, authenticated access to a tool across all your Claude sessions
 - You are building a capability that multiple skills or team members will rely on
+- You need **long-running processes** — background tasks, system monitoring, or persistent connections that outlive a single conversation
+- You need **shared resources across sessions** — skills are session-specific, but MCP servers persist and can be shared across all Claude interactions
+
+Here is a Python example showing the MCP server decorator pattern:
+
+```python
+from mcp.server import Server
+from mcp.types import Tool
+import requests
+
+server = Server("internal-api")
+
+@server.list_tools()
+async def list_tools():
+    return [
+        Tool(
+            name="query_database",
+            description="Query internal customer database",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "table": {"type": "string"},
+                    "filters": {"type": "object"}
+                }
+            }
+        )
+    ]
+
+@server.call_tool()
+async def call_tool(name, arguments):
+    if name == "query_database":
+        response = requests.post(
+            "https://api.internal.company.com/query",
+            json=arguments
+        )
+        return response.json()
+```
 
 ## When to Write a Claude Skill
 

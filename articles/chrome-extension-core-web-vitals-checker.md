@@ -240,6 +240,44 @@ For ongoing monitoring, consider integrating Core Web Vitals into your CI/CD pip
 
 Setting performance budgets in your build process ensures metrics do not degrade over time.
 
+### Development Workflow Best Practices
+
+Use a Web Vitals extension continuously during development to catch regressions early:
+
+1. **Establish a baseline**: Before making significant changes, note current Web Vitals values for key pages
+2. **Test after each major change**: Check metrics after updating styles, adding JavaScript, or modifying DOM structure
+3. **Check mobile simulation**: Use Chrome's device toolbar to simulate mobile conditions alongside the extension
+
+The extension proves especially valuable when optimizing third-party scripts. Many analytics, ads, and widget integrations cause CLS issues or increase FID — with the extension running, you can immediately see whether adding a new script degrades user experience.
+
+### Real User Monitoring Integration
+
+Extensions handle manual testing, but production requires continuous monitoring. Integrate the web-vitals library for real user data collection:
+
+```javascript
+import {getCLS, getFID, getLCP} from 'web-vitals';
+
+function sendToAnalytics({name, delta, id}) {
+  ga('send', 'event', {
+    eventCategory: 'Web Vitals',
+    eventAction: name,
+    eventValue: Math.round(name === 'CLS' ? delta * 1000 : delta),
+    eventLabel: id,
+    nonInteraction: true,
+  });
+}
+
+getCLS(sendToAnalytics);
+getFID(sendToAnalytics);
+getLCP(sendToAnalytics);
+```
+
+This captures data across different devices, network conditions, and geographic locations that manual testing cannot replicate.
+
+### Browser Compatibility
+
+Web Vitals extensions work in Chrome, Edge, Brave, and other Chromium-based browsers. Firefox users have fewer options but can use the Web Vitals Extension from the Mozilla add-ons store. Safari's extensions framework has limited support for Web Vitals APIs at this time.
+
 ## Conclusion
 
 A Chrome extension for checking Core Web Vitals gives you immediate, actionable performance data directly in your browser. Whether you build your own extension using the web-vitals library or use existing tools, understanding LCP, FID, and CLS helps you create faster, more stable websites that provide better user experiences.

@@ -224,6 +224,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
+## Domain-Specific Deal Finding
+
+For specialized markets like textbooks, prices can vary by $50 or more across retailers. Domain-specific detection uses product identifiers rather than generic price selectors. For textbooks, ISBN serves as the universal lookup key:
+
+```javascript
+const RETAILER_PATTERNS = {
+  amazon: {
+    urlPattern: /amazon\.(com|co\.uk|de|fr)\/.*(isbn|dp|product)/i,
+    isbnSelector: '#productTitle, [data-asin]',
+    titleSelector: '#productTitle'
+  },
+  chegg: {
+    urlPattern: /chegg\.com\/.*-textbook/i,
+    isbnSelector: '.isbn13',
+    titleSelector: 'h1'
+  },
+  barnesandnoble: {
+    urlPattern: /barnesandnoble\.com\/w\/.*-isbn/i,
+    isbnSelector: '.isbn',
+    titleSelector: 'h1.product-title'
+  }
+};
+```
+
+ISBN formats vary internationally — normalize to ISBN-13 for consistent cross-retailer comparison, handling both ISBN-10 and ISBN-13 inputs by stripping formatting characters with `.replace(/[^0-9X]/g, '')`. This domain-specific approach applies equally to other verticals like electronics (using UPC/EAN) or auto parts (using part numbers).
+
 ## Advanced Features to Consider
 
 Building beyond basic price tracking requires additional engineering. Consider implementing retailer-specific parsers that understand each site's unique pricing structure. Many sites load prices dynamically with JavaScript, requiring you to wait for DOM updates or use MutationObservers.
@@ -245,7 +271,6 @@ A deal finder Chrome extension combines DOM manipulation, storage management, an
 
 ## Related Reading
 
-- [Chrome Extension Textbook Deal Finder: A Developer Guide](/claude-skills-guide/chrome-extension-textbook-deal-finder/) — ISBN-based price comparison across academic retailers
 - [Building a Chrome Extension for Gaming Deal Finding](/claude-skills-guide/chrome-extension-gaming-deal-finder-chrome/) — CheapShark API integration and game watchlists
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)

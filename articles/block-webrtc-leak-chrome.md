@@ -145,6 +145,112 @@ async function testWebRTCLeak() {
 }
 ```
 
+### Detailed Leak Detection with Categorized Results
+
+For a more comprehensive detection function that separates local, public, and IPv6 addresses:
+
+```javascript
+function detectWebRTCLeak() {
+  const results = { localIP: [], publicIP: [], ipv6: [] };
+  const pc = new RTCPeerConnection({
+    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+  });
+  pc.createDataChannel('');
+  pc.createOffer().then(offer => pc.setLocalDescription(offer));
+  pc.onicecandidate = (ice) => {
+    if (ice.candidate) {
+      const candidate = ice.candidate.candidate;
+      const ipMatch = candidate.match(/(\d{1,3}\.){3}\d{1,3}/);
+      if (ipMatch) {
+        const ip = ipMatch[0];
+        if (ip.startsWith('192.168.') || ip.startsWith('10.') || ip.startsWith('172.'))
+          results.localIP.push(ip);
+        else results.publicIP.push(ip);
+      }
+      if (candidate.includes(':')) results.ipv6.push(candidate);
+    }
+  };
+  setTimeout(() => { pc.close(); console.log('Results:', results); }, 2000);
+}
+```
+
+### Automated Testing with Puppeteer
+
+For CI/CD integration, use Puppeteer to test WebRTC leak behavior programmatically:
+
+```javascript
+const puppeteer = require('puppeteer');
+
+async function testWebRTCLeak() {
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--disable-blink-features=WebRTC']
+  });
+  const page = await browser.newPage();
+  await page.evaluateOnNewDocument(() => {
+    const originalCreateOffer = RTCPeerConnection.prototype.createOffer;
+    RTCPeerConnection.prototype.createOffer = function(...args) {
+      console.log('WebRTC createOffer called');
+      return originalCreateOffer.apply(this, args);
+    };
+  });
+  await page.goto('https://your-target-site.com');
+  await page.waitForTimeout(3000);
+  await browser.close();
+}
+```
+
+### IPv6 Leak Testing
+
+IPv6 addresses can also expose identity. Test specifically for IPv6 leaks:
+
+```javascript
+async function testIPv6Leak() {
+  const pc = new RTCPeerConnection({
+    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+  });
+  return new Promise((resolve) => {
+    pc.onicecandidate = (ice) => {
+      if (ice.candidate && ice.candidate.candidate.includes(':')) {
+        resolve({ hasIPv6Leak: true, candidate: ice.candidate.candidate });
+        pc.close();
+      }
+    };
+    pc.createDataChannel('test');
+    pc.createOffer().then(o => pc.setLocalDescription(o));
+    setTimeout(() => { resolve({ hasIPv6Leak: false }); pc.close(); }, 3000);
+  });
+}
+```
+
+### Sanitizing Peer Connections
+
+Intercept WebRTC at the connection level to filter sensitive candidates:
+
+```javascript
+const sanitizePeerConnection = () => {
+  const OriginalRTCPeerConnection = window.RTCPeerConnection;
+  window.RTCPeerConnection = function(pcConfig, pcConstraints) {
+    const pc = new OriginalRTCPeerConnection(pcConfig, pcConstraints);
+    const originalAddIceCandidate = pc.addIceCandidate;
+    pc.addIceCandidate = function(...args) {
+      return originalAddIceCandidate.apply(this, args);
+    };
+    return pc;
+  };
+};
+```
+
+### Network-Level Blocking
+
+For enterprise environments, block STUN traffic at the firewall:
+
+```bash
+# Block STUN traffic (iptables)
+iptables -A INPUT -p udp --dport 3478 -j DROP
+iptables -A OUTPUT -p udp --dport 3478 -j DROP
+```
+
 ## Limitations and Considerations
 
 Blocking WebRTC has trade-offs. Some applications require WebRTC for legitimate features:

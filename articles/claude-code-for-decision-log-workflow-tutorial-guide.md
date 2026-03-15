@@ -219,6 +219,21 @@ Here's how a typical feature development session works with decision logging:
 
 Claude Code then generates `docs/decisions/004-jwt-authentication-implementation.md` with the full documentation, then proceeds to implement the feature.
 
+## Maintaining and Evolving Decision Logs
+
+Deprecate rather than delete old decisions. When a decision gets superseded, update its status and link to the replacement:
+
+```markdown
+## Status
+Superseded by [ADR-007: Migrate to Event-Driven Architecture](007-event-driven-architecture.md)
+```
+
+This preserves the historical record while guiding readers to current thinking. The pdf skill can generate summary reports of your architecture decisions, useful for stakeholder presentations or compliance documentation.
+
+### Real-World Example: Database Selection
+
+Consider a scenario where your team chose PostgreSQL over MongoDB and DynamoDB. Document the evaluation criteria — query patterns, scaling requirements, team expertise, operational overhead — and list alternatives with reasoning. Six months later, when performance issues arise, your decision log provides the context needed to evaluate whether to optimize, migrate, or supplement with another database. Without it, you spend hours reconstructing why the original choice was made.
+
 ## Best Practices for Decision Logs
 
 Follow these guidelines to maintain useful decision logs:
@@ -228,6 +243,7 @@ Follow these guidelines to maintain useful decision logs:
 3. **Link related decisions**: Create a web of context, not isolated entries
 4. **Review periodically**: Check decision logs during planning sessions
 5. **Keep templates consistent**: Uniform format makes future reference easier
+6. **Deprecate, never delete**: Old decisions provide valuable context even when superseded
 
 ## Conclusion
 
