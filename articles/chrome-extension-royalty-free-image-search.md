@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Extension Royalty Free Image Search: A Developer Guide"
+title: "Chrome Extension Royalty Free Image Search: A Developer."
 description: "Discover the best Chrome extensions for finding royalty-free images. Compare features, API integrations, and workflows for developers and power users."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -191,5 +191,12 @@ Chrome extensions for royalty-free image search save time by eliminating context
 The best approach depends on your workflow: extensions for ad-hoc searches, APIs for programmatic access, and custom scripts for repetitive tasks. Start with the extension that matches your primary image source, then expand to programmatic solutions as your needs grow.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
