@@ -165,7 +165,7 @@ If latency persists after applying these solutions, consider these additional st
 ## Related Reading
 
 - [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) — Cut token usage alongside latency for more efficient sessions
-- [Claude Code Context Window Exceeded After Loading Skill: Fix](/claude-skills-guide/claude-code-context-window-exceeded-after-loading-skill-fix/) — Resolve context overload that compounds slow responses
+- [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) — Resolve context overload that compounds slow responses
 - [Best Claude Code Skills to Install First in 2026](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) — Start lean with only the skills that justify their overhead
 - [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All performance and troubleshooting guides indexed
 

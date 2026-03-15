@@ -493,7 +493,6 @@ Fixing the most common errors you will encounter with Claude Code skills.
 - [Claude Skill YAML Front Matter Parsing Error Fix](/claude-skills-guide/claude-skill-yaml-front-matter-parsing-error-fix/)
 - [Claude Code Skill Invalid YAML Syntax Error How to Debug](/claude-skills-guide/claude-code-skill-invalid-yaml-syntax-error-how-to-debug/)
 - [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/)
-- [Claude Code Context Window Exceeded After Loading Skill Fix](/claude-skills-guide/claude-code-context-window-exceeded-after-loading-skill-fix/)
 - [Fix Claude Code Skill Tool Not Found Error (2026)](/claude-skills-guide/claude-code-skill-tool-not-found-error-solution/)
 - [Claude Code Skill Not Found in Skills Directory — How to Fix](/claude-skills-guide/claude-code-skill-not-found-in-skills-directory-how-to-fix/)
 - [Claude Code Skill Exceeded Maximum Output Length Error Fix](/claude-skills-guide/claude-code-skill-exceeded-maximum-output-length-error-fix/)
