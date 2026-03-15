@@ -7,6 +7,8 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-pr-diff-analysis-workflow-tutorial/
 categories: [tutorials, workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
