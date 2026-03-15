@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Force Install Extensions via GPO: Enterprise Deployment Guide"
 description: "Learn how to force install Chrome extensions across Windows workstations using Group Policy Objects. Practical examples for IT admins and developers managing enterprise Chrome deployments."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-force-install-extensions-gpo/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Force Install Extensions via GPO: Enterprise Deployment Guide
 

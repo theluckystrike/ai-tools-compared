@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Tree-Sitter Node Types Workflow Guide"
 description: "Learn how to leverage Claude Code with tree-sitter for analyzing source code structure, understanding node types, and building powerful code analysis workflows."
@@ -7,7 +8,10 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-tree-sitter-node-types-workflow-guide/
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Tree-Sitter Node Types Workflow Guide
 
@@ -110,7 +114,7 @@ Tree-sitter allows you to name nodes using `(#eq? @node "value")` patterns in qu
 (function_declaration name: (identifier) @fn-name)
 ```
 
-### 2. Leverage Query Syntax
+### 2. use Query Syntax
 
 Tree-sitter's query language is powerful for pattern matching:
 

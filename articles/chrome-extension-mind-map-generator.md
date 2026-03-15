@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Mind Map Generator: Build Your Own or Customize Existing Tools"
 description: "Learn how chrome extension mind map generators work, their practical applications for developers, and how to build custom solutions for your workflow."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-mind-map-generator/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Mind Map Generator: Build Your Own or Customize Existing Tools
 
@@ -217,6 +223,6 @@ When building or using mind map extensions, keep these performance factors in mi
 
 Chrome extension mind map generators bridge the gap between browser-based research and visual organization. Whether you build your own solution using the manifest v3 architecture or customize existing extensions, the core pattern involves capturing content through context menus, storing structured node data, and rendering visual representations that support editing and export.
 
-For developers, the extension platform provides reliable APIs for storage, cross-page communication, and file handling—making it feasible to create fully-featured mind mapping tools that integrate seamlessly into everyday browsing workflows.
+For developers, the extension platform provides reliable APIs for storage, cross-page communication, and file handling—making it feasible to create fully-featured mind mapping tools that integrate smoothly into everyday browsing workflows.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

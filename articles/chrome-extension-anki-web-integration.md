@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Anki Web Integration: A Developer Guide"
 description: "Learn how to build Chrome extensions that integrate with Anki for automatic flashcard creation from web content. Practical code examples and implementation patterns."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-anki-web-integration/
+reviewed: true
+score: 8
+categories: [integrations]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 Building a Chrome extension that integrates with Anki opens up powerful possibilities for automated learning. Whether you want to capture vocabulary from foreign language websites, save technical documentation highlights, or create flashcards from research articles, combining Chrome's web access with Anki's spaced repetition system creates a seamless learning pipeline.
 
