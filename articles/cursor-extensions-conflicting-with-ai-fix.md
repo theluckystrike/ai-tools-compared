@@ -4,8 +4,11 @@ layout: default
 title: "Cursor Extensions Conflicting with AI Fix: Troubleshooting Guide"
 description: "Practical solutions for resolving conflicts between Cursor IDE extensions and AI features. Step-by-step diagnostics and fixes for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /cursor-extensions-conflicting-with-ai-fix/
+reviewed: true
+score: 8
+categories: [troubleshooting]
 ---
 
 {% raw %}
