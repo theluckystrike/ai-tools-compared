@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "How to Clear Chrome Cache for Faster Browser Performance"
 description: "Learn multiple methods to clear Chrome cache, including keyboard shortcuts, developer tools, and command-line automation for power users and developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /clear-chrome-cache-speed/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # How to Clear Chrome Cache for Faster Browser Performance
 

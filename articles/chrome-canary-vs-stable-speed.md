@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Canary vs Stable Speed: A Practical Comparison for Developers"
 description: "Discover the real speed differences between Chrome Canary and Stable channels. Learn which version suits your development workflow best."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-canary-vs-stable-speed/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 Chrome offers multiple release channels, each serving different purposes for different users. For developers and power users, understanding the speed differences between Chrome Canary and Chrome Stable helps you choose the right tool for your workflow. This comparison breaks down the practical performance characteristics you need to know.
 

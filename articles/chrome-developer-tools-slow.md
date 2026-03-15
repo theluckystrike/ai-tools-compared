@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Developer Tools Running Slow? Here's How to Fix It"
 description: "Is Chrome DevTools running slow? Discover proven techniques to speed up the Chrome Developer Tools, from disabling extensions to optimizing memory usage."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-developer-tools-slow/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Developer Tools Running Slow? Here's How to Fix It
 

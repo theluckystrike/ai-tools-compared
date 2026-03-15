@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Speed Up Chrome on Low RAM: A Developer's Guide"
 description: "Practical techniques to reduce Chrome memory usage and improve performance on low-RAM systems. Includes flags, extensions, and automation scripts for power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
-tags: [chrome, performance, memory, developer-tools, optimization]
+tags: [chrome, performance, memory, developer-tools, optimization, claude-skills]
 permalink: /speed-up-chrome-low-ram/
+reviewed: true
+score: 8
 ---
+
 
 # Speed Up Chrome on Low RAM: A Developer's Guide
 

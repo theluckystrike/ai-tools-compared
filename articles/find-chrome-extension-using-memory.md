@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Find Chrome Extension Using Memory: A Developer's Guide"
 description: "Learn how to find Chrome extensions with memory capabilities, build extensions that persist data locally, and leverage AI tools to discover the right extension for your needs."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /find-chrome-extension-using-memory/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Finding the right Chrome extension for memory-related tasks requires understanding what these extensions do and how they store data. This guide covers practical methods to discover extensions with memory functionality, build your own memory-enabled extensions, and use AI assistants to streamline the search process.
 
@@ -48,7 +54,7 @@ Benefits of open source extensions include:
 - No reliance on third-party servers
 - Community-driven security reviews
 
-### Method 3: Leverage AI Assistants for Discovery
+### Method 3: use AI Assistants for Discovery
 
 Modern AI coding assistants can help you find and evaluate extensions. Here's how to structure your query:
 

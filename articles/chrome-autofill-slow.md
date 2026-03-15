@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Fix Chrome Autofill Slow Performance: A Developer's Guide"
 description: "Learn why Chrome autofill slows down your forms and discover practical solutions to optimize form performance for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-autofill-slow/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 Chrome autofill can significantly improve user experience by automatically filling saved information in web forms. However, when autofill performs slowly, it creates frustration for users and can hurt conversion rates. Understanding why autofill slows down and how to address these issues helps you build faster, more responsive forms.
 

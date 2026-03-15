@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "How to Improve Your Chrome Lighthouse Score: A Practical Guide"
 description: "Learn actionable techniques to boost your Chrome Lighthouse scores across Performance, Accessibility, Best Practices, and SEO. Includes code examples and optimization strategies."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-lighthouse-score-improve/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # How to Improve Your Chrome Lighthouse Score: A Practical Guide
 

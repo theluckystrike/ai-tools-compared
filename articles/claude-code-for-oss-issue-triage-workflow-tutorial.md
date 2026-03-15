@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for OSS Issue Triage Workflow Tutorial"
 description: "Learn how to use Claude Code to automate and streamline your open-source issue triage workflow, saving time and improving community engagement."
@@ -8,10 +9,13 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-issue-triage-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 
-Issue triage is one of the most critical yet time-consuming tasks in maintaining an open-source project. Every day, OSS maintainers face a flood of new issues: bug reports, feature requests, duplicate tickets, and questions that could be answered by reading the documentation. This guide shows you how to leverage Claude Code to automate and streamline your issue triage workflow, helping you respond faster while maintaining quality engagement with your community.
+Issue triage is one of the most critical yet time-consuming tasks in maintaining an open-source project. Every day, OSS maintainers face a flood of new issues: bug reports, feature requests, duplicate tickets, and questions that could be answered by reading the documentation. This guide shows you how to use Claude Code to automate and streamline your issue triage workflow, helping you respond faster while maintaining quality engagement with your community.
 
 ## Understanding the Issue Triage Challenge
 

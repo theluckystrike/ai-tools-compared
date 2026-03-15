@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Fix Chrome Network Service High CPU Usage: A Practical Guide"
 description: "Diagnose and resolve Chrome network service CPU spikes with proven troubleshooting techniques, command-line tools, and optimization strategies for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-network-service-cpu/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Fix Chrome Network Service High CPU Usage: A Practical Guide
 

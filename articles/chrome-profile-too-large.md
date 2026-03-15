@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Profile Too Large: Causes, Solutions, and Prevention for Developers"
 description: "Your Chrome profile is eating disk space. Learn what causes profile bloat, how to diagnose it with CLI tools, and practical strategies to reclaim gigabytes of storage."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-profile-too-large/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Profile Too Large: Causes, Solutions, and Prevention for Developers
 
