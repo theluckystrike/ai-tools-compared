@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Web Store Slow: Causes and Solutions for Developers"
 description: "Experiencing Chrome Web Store slow loading times? This guide covers common causes, diagnostic techniques, and practical solutions for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-web-store-slow/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Web Store Slow: Causes and Solutions for Developers
 

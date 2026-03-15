@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Using Too Much RAM: Fixes for Developers and Power Users"
 description: "Practical solutions to reduce Chrome memory usage. Learn to diagnose memory leaks, manage extensions, and optimize browser settings for better performance."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [guides]
-tags: [chrome, browser-performance, memory-optimization, developer-tools]
+tags: [chrome, browser-performance, memory-optimization, developer-tools, claude-skills]
 permalink: /chrome-using-too-much-ram-fix/
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Using Too Much RAM: Fixes for Developers and Power Users
 

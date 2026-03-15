@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for OSS Code Review Contribution Guide"
 description: "Learn how to use Claude Code to contribute effective code reviews to open source projects. Practical examples, workflows, and actionable advice for developers."
@@ -7,13 +8,16 @@ author: Claude Skills Guide
 permalink: /claude-code-for-oss-code-review-contribution-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for OSS Code Review Contribution Guide
 
 Code review is one of the most valuable ways to contribute to open source projects. It improves code quality, helps maintainers, and teaches you about different programming approaches. However, writing helpful code reviews takes practice. Claude Code can accelerate your learning curve and help you provide more effective feedback to OSS projects.
 
-This guide shows you how to leverage Claude Code to become a better code reviewer for open source projects.
+This guide shows you how to use Claude Code to become a better code reviewer for open source projects.
 
 ## Why Use Claude Code for Code Review
 
