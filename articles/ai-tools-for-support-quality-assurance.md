@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Support quality assurance has traditionally relied on manual sampling, spreadsheet tracking, and periodic audits. These approaches scale poorly as ticket volumes grow. AI tools for support quality assurance automate the monitoring, evaluation, and feedback loops that keep support teams performing at their best. This guide covers practical implementations for developers and power users building QA systems.
+AI tools for support quality assurance automate conversation scoring, intent classification, and response accuracy evaluation to monitor 100% of support interactions instead of the typical 2-5% manual sample. Developers can implement automated QA using sentiment analysis models from Hugging Face, intent classifiers with scikit-learn, and LLM-based response evaluation through OpenAI APIs. This guide provides working code for each QA component and shows how to assemble them into a complete pipeline.
 
 ## The QA Automation Challenge
 

@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When building AI-powered customer support systems, developers face a fundamental choice: use a purpose-built platform like Drift or integrate a general-purpose model like ChatGPT via API. Both approaches have merit, and the right choice depends on your specific requirements, technical resources, and long-term maintenance considerations.
+Choose Drift if you need a working chatbot within days using visual flow builders, your support is FAQ-style or structured, or you rely on native CRM integrations with Salesforce and HubSpot. Choose ChatGPT's API if you need complex multi-step reasoning, custom data integration with your own databases, or cost optimization at high volumes via pay-per-token pricing. Drift is a managed platform that minimizes engineering effort, while ChatGPT gives you full code-level control at the cost of building your own infrastructure.
 
 ## Understanding the Two Approaches
 
