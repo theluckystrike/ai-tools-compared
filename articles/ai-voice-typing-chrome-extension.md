@@ -335,6 +335,54 @@ function insertTextModern(element, text) {
 }
 ```
 
+## When to Use a Server-Side Transcription API
+
+The Web Speech API works well for most use cases, but has constraints worth understanding before committing to it:
+
+- **Browser dependency**: Only Chrome provides reliable recognition
+- **Language coverage**: Limited compared to cloud services
+- **Privacy**: Audio processing occurs locally, but network requests may occur
+- **No customization**: Cannot train on domain-specific vocabulary
+
+For applications requiring higher accuracy or custom vocabulary, consider server-side transcription using Whisper:
+
+```javascript
+// Server-side transcription example (Node.js)
+import fetch from 'node-fetch';
+import FormData from 'form-data';
+
+async function transcribeWithWhisper(audioBuffer, apiKey) {
+  const form = new FormData();
+  form.append('file', audioBuffer, { filename: 'audio.webm' });
+  form.append('model', 'whisper-1');
+  form.append('language', 'en');
+
+  const response = await fetch(
+    'https://api.openai.com/v1/audio/transcriptions',
+    {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${apiKey}` },
+      body: form
+    }
+  );
+
+  return response.json();
+}
+```
+
+This approach requires a backend service to handle API credentials securely, avoiding exposure in the extension.
+
+## Best Practices
+
+When deploying speech recognition in Chrome extensions:
+
+1. **Handle permissions gracefully**: Request microphone access only when needed
+2. **Provide visual feedback**: Indicate listening state clearly to users
+3. **Support keyboard shortcuts**: Add hotkeys for hands-free operation (see the section above)
+4. **Test with various accents**: The API performs inconsistently across dialects
+5. **Cache language settings**: Avoid re-configuring on each recognition session
+6. **Implement error recovery**: Handle `no-speech` and `audio-capture` errors
+
 ## Testing Your Extension
 
 Load your extension in Chrome by navigating to `chrome://extensions/`, enabling Developer mode, and clicking "Load unpacked". Select your extension directory.
