@@ -9,7 +9,7 @@ author: "AI Tools Compared"
 permalink: /best-ai-tool-for-compliance-officers-policy-review/
 reviewed: true
 score: 8
-categories: [reviews]
+categories: [comparisons]
 ---
 
 
