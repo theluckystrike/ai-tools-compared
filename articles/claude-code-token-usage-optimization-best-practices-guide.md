@@ -135,12 +135,16 @@ The second version provides the specific context needed while avoiding loading t
 
 ## Measuring and Iterating
 
-Track token usage across sessions to identify patterns. Claude Code doesn't display token counts by default, but monitoring your API usage through your provider's dashboard reveals which workflows consume the most tokens.
+Track token usage across sessions to identify patterns in your workflow. Claude Code doesn't display token counts by default, but you can enable verbose output by adding `"verbose": true` and `"showTokenCounts": true` to `~/.claude/settings.json`. This shows input and output token counts after each response, letting you see which prompt patterns are expensive.
 
-Common optimization targets:
-- Sessions exceeding 30 minutes often have bloated history
-- Loading large repositories into context repeatedly wastes tokens
+Focus your session-level monitoring on workflow patterns rather than individual skill internals:
+
+- Sessions exceeding 30 minutes often have bloated conversation history
+- Loading large repositories into context repeatedly wastes tokens across turns
 - Overly broad prompts generate verbose, unnecessary responses
+- Switching tasks within a long session carries irrelevant history forward
+
+If you find that token costs are coming from the skill files themselves rather than your prompts and context, that's a skill authoring problem covered separately in [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/claude-skill-token-usage-profiling-and-optimization/).
 
 ## Summary
 
@@ -157,6 +161,7 @@ These practices reduce costs and often improve response quality—focused prompt
 
 ## Related Reading
 
+- [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/claude-skill-token-usage-profiling-and-optimization/) — If you're building or maintaining skills, this covers how to measure and trim the skill body tokens themselves.
 - [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/)
 - [Claude MD Too Long: Context Window Optimization](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Claude Code Slow Response: How to Fix Latency Issues](/claude-skills-guide/claude-code-slow-response-how-to-fix-latency-issues/)

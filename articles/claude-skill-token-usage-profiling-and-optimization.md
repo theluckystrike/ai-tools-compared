@@ -218,6 +218,7 @@ Start by measuring your current skills, then apply these strategies systematical
 
 ## Related Reading
 
+- [Claude Code Token Usage Optimization Best Practices Guide](/claude-skills-guide/claude-code-token-usage-optimization-best-practices-guide/) — If you're a user rather than a skill author, this covers session-level strategies: prompt structuring, context window management, and output constraints.
 - [Claude Skill Prompt Compression Techniques](/claude-skills-guide/claude-skill-prompt-compression-techniques/) — Apply compression techniques directly to the skill bodies you profile for fastest results.
 - [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) — Extend token profiling results with broader API cost reduction strategies.
 - [Measuring Claude Code Skill Efficiency Metrics](/claude-skills-guide/measuring-claude-code-skill-efficiency-metrics/) — Go beyond token counts to measure full skill efficiency including task completion rates and time to output.
