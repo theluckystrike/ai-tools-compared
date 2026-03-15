@@ -24,11 +24,13 @@ This guide walks you through integrating Claude Code into your vLLM inference se
 
 vLLM is an open-source inference server that uses PagedAttention technology to achieve state-of-the-art serving throughput. It supports popular models like Llama, Mistral, and Qwen, making it a versatile choice for production deployments.
 
-Claude Code extends your development environment with AI-assisted capabilities. It can help you:
-- Generate server configurations
-- Write client integration code
-- Debug inference issues
-- Automate deployment scripts
+This guide focuses on the **coding workflow**: using Claude Code as a development partner to write, extend, and debug the Python code that powers a vLLM inference server. If you are looking for deployment automation with Claude Code skills (Dockerfiles, Kubernetes manifests, CI/CD pipelines), see the companion guide [Claude Code vLLM Inference Server Deployment Workflow](/claude-code-vllm-inference-server-deployment-workflow/).
+
+Claude Code accelerates the coding side of vLLM development by helping you:
+- Generate server setup and configuration code
+- Write typed API request/response models
+- Instrument code with observability metrics
+- Debug inference logic and error handling
 
 ## Setting Up Your vLLM Environment
 
@@ -280,7 +282,7 @@ Key takeaways:
 - Containerize everything for reproducible deployments
 - Implement health checks and auto-scaling for production resilience
 
-By following this workflow, you'll have a production-ready LLM inference server that's both performant and maintainable.
+By following this workflow, you'll have a production-ready LLM inference server that's both performant and maintainable. Once the server code is solid, move on to the infrastructure side with the companion guide [Claude Code vLLM Inference Server Deployment Workflow](/claude-code-vllm-inference-server-deployment-workflow/), which covers using Claude Code skills to build Dockerfiles, Kubernetes manifests, CI/CD pipelines, and security hardening for your vLLM service.
 
 {% endraw %}
 

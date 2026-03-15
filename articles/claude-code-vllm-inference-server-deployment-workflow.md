@@ -18,6 +18,8 @@ score: 7
 
 Deploying large language model inference servers has become a critical skill for AI engineering teams. vLLM, the high-performance inference framework, offers exceptional throughput but requires careful orchestration for production deployments. Claude Code provides powerful skills that can automate virtually every step of the vLLM deployment pipeline, from environment setup to Kubernetes scaling.
 
+This guide focuses on the **deployment automation workflow**: using Claude Code slash-command skills to generate Dockerfiles, Kubernetes manifests, CI/CD pipelines, security audits, and monitoring dashboards. If you are looking for help writing the vLLM Python server code itself — setting up the inference engine, building a FastAPI layer, or instrumenting metrics — see the companion guide [Claude Code for vLLM Inference Server Workflow](/claude-code-for-vllm-inference-server-workflow/).
+
 This guide walks you through a complete deployment workflow using Claude Code skills, showing practical examples you can adapt for your infrastructure.
 
 ## Setting Up Your Development Environment
@@ -201,6 +203,8 @@ Common security improvements include restricting the metrics endpoint to interna
 Claude Code transforms vLLM inference server deployment from a manual, error-prone process into an automated, repeatable workflow. By using skills for Docker, Kubernetes, GitHub Actions, and monitoring, you can deploy production-grade inference infrastructure in minutes rather than days.
 
 The key is loading the appropriate skills before starting your deployment project. Skills like dockerfile-generation, kubernetes-manifest, github-actions-workflow, and monitoring-dashboards work together smoothly to build a complete deployment pipeline. As vLLM continues to evolve, these skills update to support new features and best practices, ensuring your deployment remains current with the latest framework capabilities.
+
+If you have not yet written the vLLM inference server itself, the companion guide [Claude Code for vLLM Inference Server Workflow](/claude-code-for-vllm-inference-server-workflow/) covers using Claude Code to build the FastAPI server, initialize the LLM engine, and add inline Prometheus instrumentation before you containerize and deploy.
 {% endraw %}
 
 
