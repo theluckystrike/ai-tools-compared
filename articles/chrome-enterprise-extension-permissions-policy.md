@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Enterprise Extension Permissions Policy: A Complete Guide"
 description: "Learn how to configure Chrome Enterprise extension permissions policy to control which extensions can access sensitive data in your organization."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 categories: [enterprise, chrome, security]
-tags: [chrome-enterprise, extension-policy, browser-security, g-suite]
+tags: [chrome-enterprise, extension-policy, browser-security, g-suite, claude-skills]
 permalink: /chrome-enterprise-extension-permissions-policy/
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Enterprise Extension Permissions Policy: A Complete Guide
 

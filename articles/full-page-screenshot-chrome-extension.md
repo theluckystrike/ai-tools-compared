@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Full Page Screenshot Chrome Extension: A Developer's Guide"
 description: "Build and use full page screenshot Chrome extensions for developers and power users. Practical code examples, implementation patterns, and techniques for capturing entire web pages."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /full-page-screenshot-chrome-extension/
 categories: [guides]
-tags: [chrome-extension, screenshots, web-development]
+tags: [chrome-extension, screenshots, web-development, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Full Page Screenshot Chrome Extension: A Developer's Guide
 
@@ -24,7 +28,7 @@ Chrome extensions operate with privileges unavailable to regular web pages, maki
 
 ### Using the Chrome TabCapture API
 
-The most straightforward method leverages Chrome's `chrome.tabCapture` API, which records visible tab content:
+The most straightforward method uses Chrome's `chrome.tabCapture` API, which records visible tab content:
 
 ```javascript
 // background.js - Capturing a tab's visual content

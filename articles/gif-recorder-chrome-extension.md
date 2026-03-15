@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "GIF Recorder Chrome Extension: A Developer's Guide to Screen Capture"
 description: "Learn how to build and use GIF recorder Chrome extensions for capturing screen activity. Technical deep-dive for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /gif-recorder-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 GIF recorder Chrome extensions have become essential tools for developers creating documentation, bug reports, and tutorial content. Whether you need to capture a UI interaction, demonstrate a bug, or create a quick walkthrough, understanding how these extensions work under the hood gives you more control over your screen capture workflow.
 

@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Tree-sitter Syntax Highlighting Guide"
 description: "Learn how to use Claude Code with Tree-sitter for powerful syntax highlighting in your projects. Practical examples, code patterns, and implementation strategies for developers."
@@ -8,11 +9,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-tree-sitter-syntax-highlighting-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Tree-sitter Syntax Highlighting Guide
 
-Syntax highlighting is fundamental to developer productivity, yet achieving high-quality, consistent highlighting across different languages and editors remains challenging. Tree-sitter, a parser generator tool and incremental parsing library, has emerged as the gold standard for syntax analysis in modern developer tools. This guide explores how to leverage Claude Code effectively with Tree-sitter to create robust syntax highlighting solutions.
+Syntax highlighting is fundamental to developer productivity, yet achieving high-quality, consistent highlighting across different languages and editors remains challenging. Tree-sitter, a parser generator tool and incremental parsing library, has emerged as the gold standard for syntax analysis in modern developer tools. This guide explores how to use Claude Code effectively with Tree-sitter to create robust syntax highlighting solutions.
 
 ## Understanding Tree-sitter Basics
 
