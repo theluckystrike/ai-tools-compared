@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -18,13 +19,13 @@ AI tools for social media analytics let developers build pipelines that collect 
 
 ## Understanding the Analytics Stack
 
-Before diving into code, you need to understand the core components of a social media analytics system. The typical architecture includes data collection, natural language processing, sentiment analysis, and visualization. Each component can use different AI tools depending on your specific needs.
+The core components of a social media analytics system include data collection, natural language processing, sentiment analysis, and visualization. Each component can use different AI tools depending on your specific needs.
 
 For data collection, most platforms offer official APIs. Twitter (X), Reddit, and LinkedIn all provide programmatic access to posts, comments, and engagement metrics. The challenge isn't getting the data—it's processing it efficiently.
 
 ## Collecting Data with Python
 
-Let's start with a practical example using Python and the Tweepy library to collect tweets:
+Here's a practical example using Python and the Tweepy library to collect tweets:
 
 ```python
 import tweepy
