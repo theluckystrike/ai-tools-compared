@@ -1,14 +1,11 @@
 {
-  "total": 35,
+  "total": 37,
   "clusters": {
     "best-of": {
-      "count": 10
-    },
-    "uncategorized": {
-      "count": 4
+      "count": 12
     },
     "guides": {
-      "count": 3
+      "count": 7
     },
     "comparisons": {
       "count": 18
