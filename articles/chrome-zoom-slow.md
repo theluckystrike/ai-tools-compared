@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Fix Chrome Zoom Running Slow: Complete Developer Guide"
 description: "Troubleshoot and fix Chrome browser zoom performance issues. Covers hardware acceleration, GPU processes, extension conflicts, and developer tools optimization."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-zoom-slow/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Fix Chrome Zoom Running Slow: Complete Developer Guide
 
