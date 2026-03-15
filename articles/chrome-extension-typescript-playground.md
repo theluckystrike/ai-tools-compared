@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension TypeScript Playground: A Developer Guide"
 description: "Learn how to set up a TypeScript playground for building Chrome extensions with hot reloading, type safety, and modern development workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-typescript-playground/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Building Chrome extensions with TypeScript provides type safety, better autocomplete, and catch errors before runtime. A well-configured TypeScript playground accelerates your development workflow and makes maintaining extension code significantly easier.

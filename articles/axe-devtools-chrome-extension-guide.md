@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Axe DevTools Chrome Extension Guide"
 description: "Master accessibility testing with axe DevTools Chrome extension. Learn installation, configuration, and advanced usage for identifying and fixing WCAG violations in your web projects."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /axe-devtools-chrome-extension-guide/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Axe DevTools Chrome Extension Guide
 
