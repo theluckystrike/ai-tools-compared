@@ -1,12 +1,19 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Wolfram Alpha Helper"
 description: "A practical guide to Chrome extensions that integrate Wolfram Alpha for developers and power users. Learn how to leverage computational knowledge directly in your browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-wolfram-alpha-helper/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+{% raw %}
+
 
 # Chrome Extension Wolfram Alpha Helper
 
@@ -173,3 +180,4 @@ Chrome extensions that integrate Wolfram Alpha bridge the gap between your brows
 The key is selecting the approach that matches your workflow: quick address bar queries for speed, sidebar tools for research, or custom extensions for specialized needs. Start with the official extension and expand as your requirements become clearer.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

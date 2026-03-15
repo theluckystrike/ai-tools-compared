@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Best Buy Price Alert"
 description: "Learn how to build a Chrome extension for Best Buy price alerts. Includes code examples, manifest structure, and practical implementation for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-best-buy-price-alert/
+reviewed: true
+score: 8
+categories: [best-of]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Building a Chrome Extension for Best Buy Price Alerts
 

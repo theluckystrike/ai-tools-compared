@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Webcam Overlay Recording: A Developer's Guide"
 description: "Learn how to build Chrome extensions that overlay webcam feeds on top of recorded screen content. Complete with code examples and practical implementation details."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-webcam-overlay-recording/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 Building a Chrome extension that captures both screen content and webcam video simultaneously opens up powerful possibilities for content creators, educators, and developers. This guide walks you through the technical implementation of webcam overlay recording using Chrome's modern Media Capture and Streams API.
 
@@ -228,6 +234,6 @@ Recording dual video streams impacts system resources significantly. Optimize yo
 
 ## Final Thoughts
 
-Chrome extension webcam overlay recording leverages powerful browser APIs to create flexible recording solutions. The key is understanding how to combine screen capture and webcam streams effectively, then composite them into a usable output format. Start with the simple stream combination approach, then add canvas-based compositing for polished results.
+Chrome extension webcam overlay recording uses powerful browser APIs to create flexible recording solutions. The key is understanding how to combine screen capture and webcam streams effectively, then composite them into a usable output format. Start with the simple stream combination approach, then add canvas-based compositing for polished results.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Color Palette Extractor: A Developer Guide"
 description: "Learn how to build and use chrome extension color palette extractors for design automation, frontend development, and creative workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-color-palette-extractor/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extension color palette extractors have become essential tools for developers, designers, and power users who need to capture, analyze, and reuse colors from any webpage. These extensions work by scanning the DOM, extracting color values from CSS properties, and generating usable color palettes that can be exported in various formats.

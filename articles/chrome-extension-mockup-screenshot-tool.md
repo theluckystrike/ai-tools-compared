@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Mockup Screenshot Tool: A Developer Guide"
 description: "Learn how to build and use Chrome extension mockup screenshot tools for capturing UI designs, annotations, and developer documentation. Includes practical code examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-mockup-screenshot-tool/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Mockup Screenshot Tool: A Developer Guide
 

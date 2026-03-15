@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Rakuten Chrome Extension Review"
 description: "A technical deep-dive into the Rakuten Chrome extension for developers and power users—exploring API access, customization, automation potential, and real-world use cases."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /rakuten-chrome-extension-review/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Rakuten Chrome Extension Review: A Developer's Perspective
 
@@ -58,7 +64,7 @@ One of the more technically interesting features is the built-in price compariso
 
 The Rakuten extension does not expose a public API for external developers. If you're building applications that need to interact with Rakuten's affiliate program, you'll need to work through their official partner API, which requires separate approval and integration.
 
-For developers looking to extend the extension's functionality, there are several Chrome APIs you can leverage:
+For developers looking to extend the extension's functionality, there are several Chrome APIs you can use:
 
 ```javascript
 // Reading extension storage for custom integrations

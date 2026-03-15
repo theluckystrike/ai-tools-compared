@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Black Friday Deal Tracker: A Developer's Guide"
 description: "Learn how to build a Chrome extension for tracking Black Friday deals. Practical implementation patterns, code examples, and architecture for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-black-friday-deal-tracker/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Black Friday Deal Tracker: A Developer's Guide
 
