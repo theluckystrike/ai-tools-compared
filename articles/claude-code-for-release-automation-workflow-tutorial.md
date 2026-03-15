@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Release Automation Workflow Tutorial"
-description: "Learn how to build intelligent release automation workflows using Claude Code. Automate version bumps, changelog generation, CI/CD pipeline triggers, and deployment processes with AI-powered guidance."
+description: "Learn how to build intelligent release automation workflows using Claude Code. Automate version bumps, changelog generation, CI/CD pipeline triggers."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-release-automation-workflow-tutorial/
@@ -265,4 +265,10 @@ Claude Code transforms release automation from a manual, error-prone process int
 
 Start small—automate just the version bumping—and progressively add more capabilities as you build confidence in your release pipeline.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Context Menu Search Alternative Chrome Extension: A Developer's Guide"
+title: "Context Menu Search Alternative Chrome Extension: A."
 description: "Build custom context menu search functionality in Chrome extensions. Practical implementation guide with code examples for developers and power users."
 date: 2026-03-15
 categories: [guides]
@@ -255,5 +255,12 @@ After implementing your context menu extension, test it thoroughly:
 Building a context menu search alternative for Chrome gives developers complete control over how they interact with selected content. From simple search engine redirects to complex API queries, the `chrome.contextMenus` API provides the foundation for powerful browser extensions.
 
 Start with basic search functionality, then expand into API integrations and keyboard shortcuts as your needs grow. The flexibility of Chrome's extension architecture means you can tailor the experience precisely for your workflow.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

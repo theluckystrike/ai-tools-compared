@@ -198,4 +198,11 @@ Chrome's native Picture in Picture serves basic needs, but developers and power 
 
 Evaluate your specific requirements—single video playback works fine with native PiP, while multi-stream monitoring, custom overlays, or programmatic control justify building or installing extended solutions.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Comparisons Hub](/claude-skills-guide/comparisons-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
