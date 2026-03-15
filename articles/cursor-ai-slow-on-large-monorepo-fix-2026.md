@@ -122,4 +122,9 @@ Establishing good practices prevents performance degradation over time. Keep you
 
 Large monorepos push AI tools to their limits, but with proper configuration, Cursor AI remains usable even on substantial codebases. The fixes above address the most common performance issues developers encounter. Start with the ignore patterns and context chunking adjustments, as these provide the biggest improvements with minimal effort.
 
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
