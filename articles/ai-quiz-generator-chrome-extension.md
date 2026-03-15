@@ -186,4 +186,10 @@ The key components include content extraction scripts, AI integration for questi
 
 For developers and power users, custom quiz generators offer flexibility that pre-built extensions cannot match. Start with basic implementations and iterate based on your specific needs.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

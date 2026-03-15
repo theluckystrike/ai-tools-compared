@@ -137,6 +137,12 @@ Make Lighthouse auditing a regular part of your development process:
 
 The Lighthouse Chrome extension provides a powerful, accessible way to audit and improve your web projects. By regularly running audits and addressing the recommendations, you can create faster, more accessible, and more user-friendly websites. Start incorporating Lighthouse into your workflow today, and watch as your website metrics improve across the board.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
