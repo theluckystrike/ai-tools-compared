@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Enterprise Split Tunnel Browsing: A Practical Guide"
 description: "Learn how to configure split tunnel browsing in Chrome Enterprise for optimal performance and security. Includes policy settings, examples, and troubleshooting tips."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-split-tunnel-browsing/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Split tunnel browsing in Chrome Enterprise allows administrators to control which network traffic flows through the corporate VPN and which traffic goes directly to the internet. This configuration significantly reduces bandwidth usage, improves latency for web applications, and optimizes the overall user experience without compromising security. For developers and power users, understanding these settings enables better troubleshooting and more efficient network configurations.
 

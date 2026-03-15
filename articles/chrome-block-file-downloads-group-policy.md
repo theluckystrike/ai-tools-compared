@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Block File Downloads via Group Policy: A Practical Guide"
 description: "Learn how to configure Chrome Group Policy to block file downloads in enterprise environments. Step-by-step instructions for IT administrators and developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-block-file-downloads-group-policy/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Block File Downloads via Group Policy: A Practical Guide
 

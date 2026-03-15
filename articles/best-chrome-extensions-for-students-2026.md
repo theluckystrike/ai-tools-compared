@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Best Chrome Extensions for Students 2026"
 description: "Discover the most powerful Chrome extensions for developers and power users in 2026. Boost productivity with these essential tools."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-chrome-extensions-for-students-2026/
+reviewed: true
+score: 8
+categories: [best-of]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Best Chrome Extensions for Students 2026

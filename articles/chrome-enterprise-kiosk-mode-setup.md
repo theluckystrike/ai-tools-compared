@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Enterprise Kiosk Mode Setup: Complete Implementation Guide"
 description: "A comprehensive guide to setting up Chrome Enterprise Kiosk Mode for enterprise deployments. Covers Google Admin Console configuration, PowerShell deployment, and programmatic setup."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-kiosk-mode-setup/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Enterprise Kiosk Mode Setup: Complete Implementation Guide
 

@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Study Schedule Planner: Build Your Own Productivity Tool"
 description: "Learn how to create a Chrome extension for study schedule planning. Practical code examples, architecture patterns, and implementation guide for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-study-schedule-planner/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Study Schedule Planner: Build Your Own Productivity Tool

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension HTML Email Preview: A Developer Guide"
 description: "Learn how to build and use Chrome extensions for HTML email preview. Practical examples for developers and power users working with email templates."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-html-email-preview/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Building a Chrome extension for HTML email preview functionality gives developers and power users a powerful tool for testing email templates directly in the browser. This guide covers the essential concepts, implementation patterns, and practical examples for creating or using extensions that render HTML email previews.

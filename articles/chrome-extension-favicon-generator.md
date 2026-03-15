@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Favicon Generator: Complete Developer Guide"
 description: "Learn how to generate and implement favicons for Chrome extensions. Practical code examples, size requirements, and optimization techniques for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-favicon-generator/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Favicon Generator: Complete Developer Guide

@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Enterprise Self-Hosted Extension Store: A Practical Guide"
 description: "Learn how to set up and manage a self-hosted Chrome extension store for enterprise environments. Complete implementation guide with code examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-self-hosted-extension-store/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Chrome extensions power productivity across organizations, but distributing them securely within an enterprise requires more than the public Chrome Web Store. A self-hosted extension store gives IT administrators complete control over which extensions are available, when they're updated, and who can access them.
 

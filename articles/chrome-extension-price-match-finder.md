@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Price Match Finder: A Developer's Guide"
 description: "Build or use Chrome extensions to automatically find price matches across retailers. Technical implementation details and practical examples for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-price-match-finder/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Price Match Finder: A Developer's Guide
 

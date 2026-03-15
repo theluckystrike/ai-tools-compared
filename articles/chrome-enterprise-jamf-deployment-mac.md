@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Enterprise Jamf Deployment on Mac: A Practical Guide"
 description: "Learn how to deploy Chrome Enterprise on Mac using Jamf Pro. Includes configuration profiles, plist settings, and automation scripts for IT administrators and developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-jamf-deployment-mac/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Enterprise Jamf Deployment on Mac: A Practical Guide
 

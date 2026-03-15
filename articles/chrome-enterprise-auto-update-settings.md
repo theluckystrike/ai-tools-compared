@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Enterprise Auto Update Settings: A Practical Guide for IT Administrators"
 description: "Master Chrome enterprise auto update settings with practical examples, registry configurations, and Group Policy management for Chrome Browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-auto-update-settings/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Enterprise Auto Update Settings: A Practical Guide for IT Administrators
 

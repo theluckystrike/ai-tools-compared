@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "How to Save Research Sessions with Chrome Extensions"
 description: "Learn how to use Chrome extensions to save and restore your research sessions, keeping tabs organized and accessible across browsing sessions."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-save-research-sessions/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 
@@ -91,7 +97,7 @@ This basic implementation captures all tabs in the current window and stores the
 
 ## Practical Research Workflows
 
-Implementing session management transforms how you approach research projects. Here are workflows that leverage these extensions effectively.
+Implementing session management transforms how you approach research projects. Here are workflows that use these extensions effectively.
 
 **Multi-project Research**: Create separate sessions for different research projects. When working on Project A, save your session before switching to Project B. This prevents context mixing and ensures you can return to exactly where you left off.
 
