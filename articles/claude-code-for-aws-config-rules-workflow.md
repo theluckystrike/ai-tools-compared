@@ -230,3 +230,10 @@ Claude Code transforms AWS Config Rules management from a manual, error-prone pr
 
 Start by creating a Claude.md file in your infrastructure project, then incrementally adopt the patterns and skills that fit your organization's needs. The time invested in setting up this workflow will pay dividends in reduced manual work and improved compliance outcomes.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

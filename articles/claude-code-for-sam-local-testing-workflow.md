@@ -168,3 +168,10 @@ Claude Code significantly enhances your SAM local testing workflow by automating
 Remember that Claude Code acts as an intelligent assistant—it can read and analyze your code, generate appropriate commands, and explain complex behaviors, but you'll still execute the actual SAM CLI commands yourself. This collaboration model gives you the best of both worlds: AI-powered assistance with full control over your infrastructure.
 
 Start implementing these practices in your next SAM project, and you'll notice a significant improvement in your local development velocity and testing coverage.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

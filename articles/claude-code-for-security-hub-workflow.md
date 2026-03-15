@@ -1,11 +1,11 @@
 ---
 layout: default
 title: "Claude Code for Security Hub Workflow: A Developer's Guide"
-description: "Learn how to integrate Claude Code into your AWS Security Hub workflow for automated security compliance, finding and fixing vulnerabilities, and maintaining secure infrastructure."
+description: "Learn how to integrate Claude Code into your AWS Security Hub workflow for automated security compliance, finding and fixing vulnerabilities, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-security-hub-workflow/
-categories: [claude-code, security, aws, devsecops]
+categories: [guides, security, aws, devsecops]
 tags: [claude-code, claude-skills, security-hub, aws, compliance]
 reviewed: true
 score: 8
@@ -145,3 +145,10 @@ Claude Code transforms Security Hub from a passive alerting system into an activ
 
 Start small—perhaps with automated reporting or a single remediation workflow—and expand as you gain confidence. The key is establishing the foundation for automated security operations while maintaining proper controls and oversight. With Claude Code handling the repetitive tasks, your security team can focus on strategic initiatives that require human judgment and expertise.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

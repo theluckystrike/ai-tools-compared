@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Inspector v2 Workflow"
-description: "Master the Inspector v2 workflow with Claude Code. Learn practical integration patterns, debugging techniques, and actionable strategies for AI-assisted development."
+description: "Master the Inspector v2 workflow with Claude Code. Learn practical integration patterns, debugging techniques, and actionable strategies for."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -212,3 +212,10 @@ Inspector v2 transforms debugging from a reactive, manual process into an AI-ass
 
 The key is treating Inspector v2 not as a replacement for your debugging skills, but as an amplifier that makes your expertise more effective. Combined with Claude Code's understanding of your specific codebase, you'll have a powerful ally for tackling the most challenging bugs.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

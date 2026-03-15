@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for AWS App Mesh Workflow"
-description: "Learn how to use Claude Code CLI to streamline AWS App Mesh configuration, deployment, and management workflows with practical examples and actionable advice."
+description: "Learn how to use Claude Code CLI to streamline AWS App Mesh configuration, deployment, and management workflows with practical examples and actionable."
 date: 2026-03-15
 categories: [guides]
 tags: [claude-code, claude-skills]
@@ -189,3 +189,10 @@ This script can be integrated into CI/CD pipelines to catch configuration errors
 
 Claude Code transforms AWS App Mesh development from manual, error-prone configuration to an interactive, assisted workflow. By providing context-specific skills, generating accurate configurations, and debugging traffic issues, Claude helps developers focus on architecture rather than syntax. Start with basic Virtual Node configurations, then progressively adopt advanced patterns like weighted routing, TLS enforcement, and automated validation.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
