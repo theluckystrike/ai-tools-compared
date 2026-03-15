@@ -1,11 +1,11 @@
 ---
-
 layout: default
 title: "AI Tools for Government Citizen Support"
 description: "A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector applications."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-government-citizen-support/
+voice-checked: true
 ---
 
 {% raw %}
@@ -145,7 +145,7 @@ Accessibility goes beyond translation. AI can also help generate plain-language 
 
 ### Security Architecture
 
-Government AI systems must isolate citizen data from third-party services. The recommended pattern uses on-premises inference or private cloud部署 where data never leaves approved infrastructure:
+Government AI systems must isolate citizen data from third-party services. The recommended pattern uses on-premises inference or private cloud deployment where data never leaves approved infrastructure:
 
 ```yaml
 # Infrastructure configuration for secure AI processing
@@ -194,6 +194,7 @@ Build measurement into your deployment from day one. Track resolution rates, esc
 Government AI implementation succeeds when it augments staff capabilities rather than attempting full automation. The goal is faster, more consistent citizen service—not replacing human judgment on consequential matters.
 
 ---
+voice-checked: true
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
