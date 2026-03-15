@@ -144,6 +144,50 @@ Establish a convention for how subagents report results. A structured output for
 
 If a subagent hits a blocker, the parent can retry with adjusted context, re-assign the task, or escalate to the user.
 
+## Event-Driven Agent Communication
+
+For reactive systems, subagents can respond to events rather than following predetermined sequences. This suits monitoring, alerting, and continuous integration scenarios. The parent agent acts as the event router:
+
+```
+Event received: code-push to main branch
+
+Dispatch subagents:
+1. security-audit subagent: scan the diff for vulnerabilities
+2. tdd subagent: run the test suite and report failures
+3. documentation subagent: check if changed functions have updated docstrings
+
+Collect results and post a status summary.
+```
+
+The parent tracks which events have been handled and which subagent outputs remain pending, then routes follow-up actions based on what each subagent reports.
+
+## Skill Composition Techniques
+
+Effective orchestration requires thoughtful composition of what you pass to each subagent.
+
+**Output Normalization**: Define a standard output format across subagents so the parent can parse results consistently without guessing. The structured format shown in the Agent Communication section above works well. Extend it with a `confidence` field for tasks where the subagent is uncertain:
+
+```json
+{
+  "agent": "security-audit",
+  "status": "completed",
+  "deliverables": [],
+  "findings": ["SQL injection risk in routes/users.js:42"],
+  "confidence": 0.85,
+  "blockers": []
+}
+```
+
+**Fallback Chains**: Define what happens when a subagent fails or returns low-confidence results. The parent can retry with a simpler scope, reassign to a different skill, or escalate to the user:
+
+```
+Primary: code-review subagent
+On failure: reduce scope to a single function, retry
+On second failure: surface to user with context
+```
+
+**Context Passing**: Maintain a running summary in the parent context. Each subagent adds its key findings; the parent distills these into a compact handoff for the next subagent rather than forwarding full conversation history.
+
 ## Error Handling and Recovery
 
 Multi-agent workflows need defined recovery paths:
@@ -177,10 +221,11 @@ Monitor token usage. Context accumulates quickly in long-running multi-agent pro
 
 ---
 
----
-
 ## Related Reading
 
+- [Multi-Agent Workflow Design Patterns for Developers](/claude-skills-guide/multi-agent-workflow-design-patterns-for-developers/) — Conceptual pattern overview covering handoff chains and debate-and-consensus patterns
+- [Supervisor Agent and Worker Agent Pattern with Claude Code](/claude-skills-guide/supervisor-agent-worker-agent-pattern-claude-code/) — Deep dive on the supervisor/worker topology
+- [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/) — How results pass between agents
 - [Best Claude Code Skills for Frontend Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) — Top frontend skills with examples
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — Broader developer skill overview
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — How skills activate automatically
