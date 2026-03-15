@@ -16,7 +16,9 @@ score: 7
 {% raw %}
 # Claude Code for Wormhole Bridge Workflow Guide
 
-Cross-chain bridge development requires precise coordination between multiple blockchain networks. Wormhole stands as one of the most popular protocols for bridging assets across chains, but managing bridge operations manually can be error-prone and time-consuming. This guide shows you how to use Claude Code to automate and streamline your Wormhole bridge workflows, reducing manual effort while maintaining security and reliability.
+Cross-chain bridge development requires precise coordination between multiple blockchain networks. This guide focuses specifically on the **Wormhole cross-chain bridge protocol**—the guardian-network-based system for transferring tokens between blockchains such as Solana, Ethereum, Polygon, and Avalanche. If you are looking for the metaphorical "wormhole" concept of sharing context and patterns across Claude Code sessions, see the [Wormhole Workflow Guide](/claude-code-for-wormhole-workflow-guide/) instead.
+
+Wormhole stands as one of the most popular protocols for bridging assets across chains, but managing bridge operations manually can be error-prone and time-consuming. This guide shows you how to use Claude Code to automate and streamline your Wormhole bridge workflows, reducing manual effort while maintaining security and reliability.
 
 ## Understanding Wormhole Bridge Architecture
 

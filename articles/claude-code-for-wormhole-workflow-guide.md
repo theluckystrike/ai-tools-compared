@@ -16,7 +16,7 @@ score: 8
 {% raw %}
 # Claude Code for Wormhole Workflow Guide
 
-The "wormhole" concept in Claude Code refers to creating instantaneous knowledge and context transfers across different development environments, projects, or team members. Just as a wormhole connects two distant points in space-time, a wormhole workflow connects disparate parts of your development ecosystem—enabling rapid context sharing, pattern propagation, and solution reuse.
+The "wormhole" concept in Claude Code refers to creating instantaneous knowledge and context transfers across different development environments, projects, or team members. Just as a wormhole connects two distant points in space-time, a wormhole workflow connects disparate parts of your development ecosystem—enabling rapid context sharing, pattern propagation, and solution reuse. This guide covers the **Claude Code productivity pattern**—not the Wormhole blockchain bridge protocol. For automating cross-chain token transfers using the Wormhole SDK, see the [Wormhole Bridge Workflow Guide](/claude-code-for-wormhole-bridge-workflow-guide/) instead.
 
 ## What Is a Wormhole Workflow?
 
