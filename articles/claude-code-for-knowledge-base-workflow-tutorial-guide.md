@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Knowledge Base Workflow: A Complete Tutorial Guide"
 description: "Learn how to leverage Claude Code to build, manage, and automate knowledge base workflows. This comprehensive guide covers practical examples and actionable advice for developers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-knowledge-base-workflow-tutorial-guide/
 categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Knowledge Base Workflow: A Complete Tutorial Guide
@@ -156,7 +160,7 @@ def semantic_search(query, knowledge_base):
 
 ### Building Context-Aware Recommendations
 
-Leverage Claude Code's conversation memory to provide context-aware article recommendations:
+use Claude Code's conversation memory to provide context-aware article recommendations:
 
 ```javascript
 // recommendation-engine.js
@@ -292,7 +296,7 @@ Track these metrics to improve your knowledge base:
 
 ### 4. Automate Repetitive Tasks
 
-Leverage Claude Code for:
+use Claude Code for:
 - Format consistency checks
 - Broken link detection
 - Content freshness validation

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Tree-Sitter Syntax Highlighting Guide"
 description: "Master Tree-sitter syntax highlighting with Claude Code. Learn to create custom grammars, build highlighting rules, and integrate with your editor for powerful code visualization."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-tree-sitter-syntax-highlighting-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Tree-Sitter Syntax Highlighting Guide
 
-Tree-sitter has revolutionized how developers visualize and navigate code. As a robust parsing library, Tree-sitter generates precise syntax trees that power everything from editor highlighting to code intelligence tools. This guide shows you how to leverage Claude Code to work with Tree-sitter for syntax highlighting in your projects.
+Tree-sitter has revolutionized how developers visualize and navigate code. As a robust parsing library, Tree-sitter generates precise syntax trees that power everything from editor highlighting to code intelligence tools. This guide shows you how to use Claude Code to work with Tree-sitter for syntax highlighting in your projects.
 
 ## Understanding Tree-Sitter Fundamentals
 
@@ -201,7 +205,7 @@ Install the Tree-sitter extension and add your queries to the extension's query 
 1. **Start Simple**: Begin with keywords and basic types before adding complexity
 2. **Use Semantic Names**: Choose capture names that convey meaning (`@function`, `@variable`, `@type`)
 3. **Test Incrementally**: Add queries one category at a time and verify they work
-4. **Leverage Claude Code**: Describe what you want to highlight, and let Claude suggest queries
+4. **use Claude Code**: Describe what you want to highlight, and let Claude suggest queries
 5. **Consider Performance**: Complex queries across large files can slow parsing; optimize patterns
 
 ## Advanced: Custom Grammars for Domain-Specific Languages
@@ -245,7 +249,7 @@ Generate the parser with `tree-sitter generate`, then write queries following th
 
 ## Conclusion
 
-Tree-sitter syntax highlighting transforms code visualization from simple pattern matching to semantic understanding. By leveraging Claude Code's assistance, you can efficiently create and maintain highlighting rules that make your codebase more navigable and readable. Start with basic queries, iterate based on what you see in your editor, and gradually build comprehensive coverage for all the languages you work with.
+Tree-sitter syntax highlighting transforms code visualization from simple pattern matching to semantic understanding. By using Claude Code's assistance, you can efficiently create and maintain highlighting rules that make your codebase more navigable and readable. Start with basic queries, iterate based on what you see in your editor, and gradually build comprehensive coverage for all the languages you work with.
 
 The investment in well-crafted Tree-sitter queries pays dividends every time you open your editor and instantly recognize code structure at a glance.
 {% endraw %}

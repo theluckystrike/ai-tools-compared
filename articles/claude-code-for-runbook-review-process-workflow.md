@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Runbook Review Process Workflow"
 description: "A comprehensive guide to using Claude Code for reviewing, validating, and improving runbook quality. Includes practical examples and actionable workflows for DevOps and SRE teams."
@@ -8,11 +9,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-runbook-review-process-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
-Runbook reviews are critical for maintaining operational excellence. Yet many engineering teams treat runbook maintenance as an afterthought, leading to documentation that fails when you need it most. This guide shows you how to leverage Claude Code to create a systematic runbook review process that ensures your operational procedures remain accurate, complete, and actionable.
+Runbook reviews are critical for maintaining operational excellence. Yet many engineering teams treat runbook maintenance as an afterthought, leading to documentation that fails when you need it most. This guide shows you how to use Claude Code to create a systematic runbook review process that ensures your operational procedures remain accurate, complete, and actionable.
 
 ## Understanding the Runbook Review Challenge
 
