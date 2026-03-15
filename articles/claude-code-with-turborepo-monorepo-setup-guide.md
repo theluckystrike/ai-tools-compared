@@ -115,6 +115,22 @@ When working with multiple developers, establish conventions in your root `CLAUD
 
 Consider creating package-specific prompts for common tasks. For instance, store a prompt in `packages/ui/.claude/prompts/component.md` that defines your component creation standards.
 
+## Optimizing Claude Performance in Large Monorepos
+
+For monorepos with dozens of packages, consider these optimizations:
+
+- **Scoped Focus**: When working on a specific feature, ask Claude to focus on relevant packages
+- **Selective Indexing**: Exclude build output and generated files from Claude's context
+- **Task Caching**: Use Turborepo's caching to speed up repeated operations Claude requests
+
+## Common Pitfalls to Avoid
+
+When using Claude in monorepo environments, watch out for:
+
+- **Circular Dependencies**: Claude can help identify them, but resolving them requires architectural decisions
+- **Build Order Issues**: Always let Turborepo manage build order rather than manual sequencing
+- **Version Mismatches**: Use `pnpm` or `npm` workspace features to ensure consistent dependency versions
+
 ## Conclusion
 
 Integrating Claude Code with Turborepo creates a powerful development environment where AI assistance understands your entire project ecosystem. The monorepo structure becomes an advantage rather than a complexity, as Claude Code navigates your packages intelligently.
