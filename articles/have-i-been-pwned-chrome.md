@@ -34,6 +34,38 @@ curl -H "hibp-api-key: YOUR_API_KEY" \
 
 The API returns a JSON array of breach objects. Each object contains the breach name, title, domain, breach date, and a description of what was exposed. Handle this data carefully—it's breach data, meaning you're working with compromised credentials that should never be stored or misused.
 
+### Batch Checking Multiple Emails
+
+If you need to check multiple email addresses, a Python script provides flexibility for bulk workflows:
+
+```python
+import requests
+import os
+
+def check_email_breaches(email, api_key):
+    url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}"
+    headers = {"hibp-api-key": api_key}
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        breaches = response.json()
+        print(f"{email} found in {len(breaches)} breach(es):")
+        for breach in breaches:
+            print(f"  - {breach['Name']} ({breach['BreachDate']})")
+    elif response.status_code == 404:
+        print(f"{email} not found in any known breaches")
+    else:
+        print(f"Error checking {email}: {response.status_code}")
+
+if __name__ == "__main__":
+    email = os.environ.get("CHECK_EMAIL")
+    api_key = os.environ.get("HIBP_API_KEY")
+    if email and api_key:
+        check_email_breaches(email, api_key)
+```
+
+Save this as `check_breaches.py`, set your environment variables, and run it with `python check_breaches.py`. This pattern extends easily to read emails from a file or database for bulk checking.
+
 ### Checking Passwords Securely
 
 Password checking via the API uses a k-anonymity model that never sends your actual password over the network. The process works like this:
@@ -133,6 +165,24 @@ while True:
     time.sleep(60)
 ```
 
+## Quick Checks with Chrome DevTools
+
+For on-the-fly verification without leaving the browser, Chrome DevTools provides a handy shortcut. Open the console on any page and run a fetch directly:
+
+```javascript
+async function checkBreach(email) {
+  const response = await fetch(
+    `https://haveibeenpwned.com/api/v3/breachedaccount/${encodeURIComponent(email)}`,
+    { headers: { 'hibp-api-key': 'YOUR_KEY' } }
+  );
+  const data = await response.json();
+  console.log(data);
+}
+checkBreach('your@email.com');
+```
+
+This is useful for quick, one-off checks during development or security audits without needing a dedicated script.
+
 ## Chrome Extension Alternatives and Extensions
 
 Beyond the official HIBP extension, several Chrome extensions provide similar functionality with additional features:
@@ -144,6 +194,35 @@ Beyond the official HIBP extension, several Chrome extensions provide similar fu
 **Chrome Password Manager Integration**: Google's built-in password manager includes breach detection through Google Password Manager. While not as comprehensive as HIBP, it provides baseline protection for casual users.
 
 For power users managing multiple identities or conducting security research, consider running local copies of breach databases. Several projects provide downloadable breach datasets for offline analysis, though handling this data requires strict security practices.
+
+## Scheduling Automated Breach Checks
+
+For continuous monitoring without a full application stack, a simple cron job is sufficient. Schedule the Python batch script to run daily:
+
+```bash
+0 8 * * * /usr/bin/python3 /path/to/check_breaches.py >> /var/log/breach_check.log 2>&1
+```
+
+This runs at 8 AM every day and logs results. Extend the script to send notifications via email, Slack, or a webhook when new breaches are detected.
+
+## What to Do If Your Email Is Breached
+
+When breach checking reveals exposed addresses, act immediately:
+
+1. **Change passwords** for all affected accounts
+2. **Enable two-factor authentication** wherever available
+3. **Review the breach details** to understand what other data was exposed (passwords, phone numbers, physical addresses)
+4. **Use a password manager** to generate unique, strong passwords for each account going forward
+5. **Monitor for phishing attempts** that may weaponize information from the breach
+
+## API Security Considerations
+
+When building breach-checking workflows, follow these guardrails:
+
+- **Protect your API keys** — store them in environment variables or a secrets manager, never hardcoded in source files
+- **Respect rate limits** — the HIBP free tier has per-day request caps; plan bulk checks accordingly
+- **Only check addresses you own or have explicit permission to query** — checking third-party emails without consent raises ethical and legal concerns
+- **Never store breach data beyond its immediate use** — breach datasets contain compromised credentials and should not be persisted
 
 ## Best Practices for Ongoing Protection
 
