@@ -3,10 +3,12 @@ layout: default
 title: "Claude Code for LSP Hover Provider Workflow Tutorial"
 description: "Learn how to build LSP hover provider workflows with Claude Code. Create custom skills that leverage language server protocol for intelligent code hovering and documentation lookup."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-lsp-hover-provider-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills, lsp, hover-provider, workflow]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
@@ -80,7 +82,7 @@ This skill provides the foundation for hover-like functionality. Now let's enhan
 
 ## Integrating MCP Servers for Enhanced Hover Information
 
-MCP servers can provide rich contextual information about your codebase. Here's how to create an enhanced hover provider that leverages MCP:
+MCP servers can provide rich contextual information about your codebase. Here's how to create an enhanced hover provider that uses MCP:
 
 ```markdown
 ---
@@ -266,5 +268,5 @@ Building LSP hover provider workflows with Claude Code brings the power of intel
 
 The key is to iterate: begin simple, test with real workflows, and expand capabilities as you discover new use cases. Your hover provider skills will become invaluable tools for understanding unfamiliar code, reviewing changes, and learning new APIs.
 
-Remember, the goal isn't to replicate a visual hover UI—it's to provide the same rich, contextual information through a conversational interface that leverages Claude Code's strengths in understanding and explaining code.
+Remember, the goal isn't to replicate a visual hover UI—it's to provide the same rich, contextual information through a conversational interface that uses Claude Code's strengths in understanding and explaining code.
 {% endraw %}
