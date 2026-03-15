@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Claude Code Losing Context Across Sessions Fix"
 description: "Troubleshooting guide for Claude Code losing context between sessions. Step-by-step fixes for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-losing-context-across-sessions-fix/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 # Claude Code Losing Context Across Sessions Fix
 

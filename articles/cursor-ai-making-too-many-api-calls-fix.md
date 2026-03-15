@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "Cursor AI Making Too Many API Calls Fix: Troubleshooting Guide"
 description: "Practical solutions to reduce excessive API usage in Cursor AI. Learn how to diagnose and fix the issue with step-by-step instructions."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /cursor-ai-making-too-many-api-calls-fix/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 

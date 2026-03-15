@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Grammarly AI Not Working in Browser Fix (2026)"
 description: "Troubleshooting guide for fixing Grammarly AI features not working in your browser. Step-by-step solutions for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /grammarly-ai-not-working-in-browser-fix-2026/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 # Grammarly AI Not Working in Browser Fix (2026)
 
