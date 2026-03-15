@@ -239,5 +239,10 @@ Start with one metric—first response time accuracy, for example—and expand a
 
 AI tools for support quality assurance transform QA from a sampling exercise into comprehensive monitoring. The implementations above provide starting points for developers building custom solutions. Adjust the scoring criteria, thresholds, and integration points to match your team's specific requirements.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

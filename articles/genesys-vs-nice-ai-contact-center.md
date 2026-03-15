@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Genesys vs NICE AI Contact Center: A Developer Comparison"
-description: "A practical technical comparison of Genesys and NICE AI contact center platforms for developers and power users, with API examples and integration guidance."
+description: "A practical technical comparison of Genesys and NICE AI contact center platforms for developers and power users, with API examples and integration."
 date: 2026-03-15
 author: theluckystrike
 permalink: /genesys-vs-nice-ai-contact-center/
@@ -274,5 +274,10 @@ Both Genesys and NICE deliver enterprise-grade contact center capabilities with 
 For developers, both platforms provide adequate API coverage, though Genesys' webhook-first approach may suit event-driven architectures better, while NICE's granular APIs offer fine-grained control for complex integrations.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Drift vs ChatGPT for Customer Support: A Technical Comparison"
-description: "A practical comparison of Drift and ChatGPT for building customer support solutions. Includes code examples, integration patterns, and implementation considerations for developers."
+title: "Drift vs ChatGPT for Customer Support: A Technical."
+description: "A practical comparison of Drift and ChatGPT for building customer support solutions. Includes code examples, integration patterns, and implementation."
 date: 2026-03-15
 author: theluckystrike
 permalink: /drift-vs-chatgpt-for-customer-support/
@@ -147,6 +147,11 @@ Consider starting with a hybrid approach: use Drift for quick wins and basic sup
 The best solution is one that actually gets deployed and used. A simpler tool in production beats a perfect system that never ships.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
