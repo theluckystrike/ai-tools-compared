@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Dependency License Audit Workflow"
 description: "Learn how to use Claude Code to automate dependency license audits in your projects. Practical examples and actionable advice for maintaining license compliance."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-dependency-license-audit-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Dependency License Audit Workflow
@@ -40,7 +44,7 @@ Store this in your repository as `LICENSE_POLICY.md` or `.license-policy.json`. 
 
 The first step in any license audit is identifying what you're actually using. Most package managers provide commands to list dependencies with their versions. Claude Code can execute these commands and parse the output systematically.
 
-For Node.js projects, start with `npm ls` to see your dependency tree. For Python, use `pip freeze` or `poetry show --tree`. Java projects can leverage `mvn dependency:tree` or Gradle's dependency tasks. Each ecosystem has its approach, but the pattern remains consistent: retrieve the complete dependency list, including transitive dependencies.
+For Node.js projects, start with `npm ls` to see your dependency tree. For Python, use `pip freeze` or `poetry show --tree`. Java projects can use `mvn dependency:tree` or Gradle's dependency tasks. Each ecosystem has its approach, but the pattern remains consistent: retrieve the complete dependency list, including transitive dependencies.
 
 Claude Code can run these commands and capture the full output for analysis. It can also detect which dependencies have newer versions available and flag potential security vulnerabilities alongside license issues.
 
