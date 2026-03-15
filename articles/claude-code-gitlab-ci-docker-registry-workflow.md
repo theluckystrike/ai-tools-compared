@@ -153,7 +153,7 @@ claude-analysis:
   stage: code-check
   image: node:20-alpine
   before_script:
-    - npm install -g @anthropic-ai/claude-code-cli
+    - npm install -g @anthropic-ai/claude-code
   script:
     - claude --print --dangerously-skip-permissions "Analyze this codebase for security vulnerabilities and suggest fixes"
   rules:
