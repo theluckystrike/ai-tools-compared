@@ -248,3 +248,4 @@ Building a review comment automation workflow with Claude Code transforms an cha
 Start with the basic skill structure outlined here, customize it to your team's needs, and iterate as you learn what works best. The time investment pays dividends in reduced review cycle times and clearer communication.
 
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

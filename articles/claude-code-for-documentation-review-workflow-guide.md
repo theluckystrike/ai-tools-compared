@@ -5,7 +5,7 @@ description: "Learn how to leverage Claude Code to streamline and automate your 
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-documentation-review-workflow-guide/
-categories: [Developer Guides, AI Tools]
+categories: [guides, guides]
 tags: [claude-code, claude-skills]
 ---
 {% raw %}
@@ -208,3 +208,4 @@ Start small: implement pre-commit hooks for new documentation, then expand to co
 
 Remember: great documentation isn't written once—it's refined through consistent review and continuous improvement. Claude Code makes that refinement sustainable.
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

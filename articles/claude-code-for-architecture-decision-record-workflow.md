@@ -5,7 +5,7 @@ description: "Learn how to streamline your Architecture Decision Record (ADR) wo
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-architecture-decision-record-workflow/
-categories: [Development, Workflow Automation, Documentation]
+categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
 ---
 
@@ -202,3 +202,4 @@ Start small by creating one custom skill for ADR generation, then expand to incl
 3. Train your team on Claude-assisted ADR workflows
 4. Integrate ADR creation into your development process
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

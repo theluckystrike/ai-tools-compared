@@ -48,12 +48,6 @@ First, define the skill structure with appropriate tools:
 ```yaml
 name: pr-status-check
 description: Check pull request status and wait for required checks
-parameters:
-  owner: string
-  repo: string
-  pr_number: integer
-  required_checks: string[]
-  timeout_minutes: integer
 ```
 
 The skill should use GitHub's API endpoint to fetch the combined status for a commit:
@@ -133,27 +127,6 @@ Here's an example skill that waits for PR checks:
 ```yaml
 name: wait-for-pr-checks
 description: Wait for all required PR status checks to complete
-steps:
-  - name: Get PR info
-    github.rest.pulls.get
-    parameters:
-      owner: "{{owner}}"
-      repo: "{{repo}}"
-      pull_number: "{{pr_number}}"
-  
-  - name: Wait for checks
-    custom.waitForChecksComplete
-    parameters:
-      owner: "{{owner}}"
-      repo: "{{repo}}"
-      pr_number: "{{pr_number}}"
-      required_checks: "{{required_checks}}"
-      timeout_minutes: "{{timeout | default(60)}}"
-  
-  - name: Report results
-    output.console.log
-    parameters:
-      message: "All required checks completed for PR #{{pr_number}}"
 ```
 
 ## Automating PR Merge Conditions
@@ -211,3 +184,4 @@ Building PR status check workflows with Claude Code opens up powerful automation
 
 Remember to always handle failures gracefully, implement appropriate timeouts, and keep your credentials secure. With these patterns in place, you can create reliable automation that improves your team's productivity and code quality.
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

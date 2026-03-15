@@ -5,7 +5,7 @@ description: "A comprehensive guide to using Claude Code CLI for implementing ef
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-code-review-checklist-workflow-guide/
-categories: [Development, Tools, Workflow]
+categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
 ---
 
@@ -237,3 +237,4 @@ To maximize the benefit of your Claude Code review workflow, integrate it natura
 Implementing a structured code review checklist workflow with Claude Code transforms ad-hoc reviews into consistent, thorough quality assurance processes. By following the patterns in this guide, you can reduce missed issues, improve feedback quality, and make the code review process more efficient for your entire team.
 
 The key is starting simple—implement a basic checklist first, then refine and expand as your team identifies additional needs. Claude Code's flexibility allows you to adapt the workflow to your specific requirements while maintaining the structure that ensures comprehensive reviews every time.
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
