@@ -56,7 +56,7 @@ class FalcoWebhookHandler(BaseHTTPRequestHandler):
         
         # Invoke Claude Code for investigation
         cmd = [
-            'claude', 'code', '-p',
+            'claude', '--print',
             f'Investigate this Falco alert: {rule}. Output: {output}'
         ]
         subprocess.run(cmd, capture_output=True)
@@ -73,17 +73,17 @@ Effective security automation requires well-crafted prompts that give Claude Cod
 
 ```bash
 # Investigate suspicious shell execution
-claude code -p "A Falco alert detected a shell spawned in a container. 
-The alert details are: {alert_output}. 
-Check if this is expected behavior for the service 'payment-api' 
-running in namespace 'production'. 
+claude --print "A Falco alert detected a shell spawned in a container.
+The alert details are: {alert_output}.
+Check if this is expected behavior for the service 'payment-api'
+running in namespace 'production'.
 If suspicious, recommend containment steps."
 
-# Analyze privilege escalation attempts  
-claude code -p "Falco detected a privilege escalation attempt. 
+# Analyze privilege escalation attempts
+claude --print "Falco detected a privilege escalation attempt.
 Rule: {rule_name}, Priority: {priority}.
 Container: {container_id}, Image: {container_image}.
-Determine if this matches known attack patterns and 
+Determine if this matches known attack patterns and
 suggest remediation steps."
 ```
 
@@ -103,16 +103,16 @@ CONTAINER=$(echo $ALERT_JSON | jq -r '.container.id')
 
 case "$RULE" in
     "Write below binary dir")
-        claude code -p "Binary directory modification detected in 
+        claude --print "Binary directory modification detected in
         container $CONTAINER. This may indicate malware deployment.
         Recent changes: $(echo $ALERT_JSON | jq -r '.output').
         Isolate the container and preserve evidence."
         kubectl delete pod $CONTAINER --grace-period=0 --force
         ;;
     "Read sensitive file")
-        claude code -p "Sensitive file access detected. 
+        claude --print "Sensitive file access detected.
         File: $(echo $ALERT_JSON | jq -r '.evt.arg.path').
-        Determine if this is legitimate access by checking 
+        Determine if this is legitimate access by checking
         recent user activity and access patterns."
         ;;
 esac
