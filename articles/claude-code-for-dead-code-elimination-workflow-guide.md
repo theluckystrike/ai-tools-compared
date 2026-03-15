@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Dead Code Elimination Workflow Guide"
 description: "A practical guide to using Claude Code for identifying, analyzing, and safely removing dead code from your codebase. Includes workflow strategies and actionable examples."
@@ -7,13 +8,16 @@ author: Claude Skills Guide
 permalink: /claude-code-for-dead-code-elimination-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Dead Code Elimination Workflow Guide
 
 Dead code—unused functions, unreachable branches, obsolete variables, and deprecated modules—silently accumulates in software projects over time. It increases maintenance costs, slows down builds, confuses developers, and can even introduce security vulnerabilities. Removing dead code is essential for maintaining a healthy codebase, but identifying it accurately and removing it safely requires a systematic approach.
 
-Claude Code provides powerful capabilities that make dead code elimination more efficient, accurate, and safe. This guide walks you through a practical workflow for leveraging Claude Code to identify, analyze, and remove dead code from your projects.
+Claude Code provides powerful capabilities that make dead code elimination more efficient, accurate, and safe. This guide walks you through a practical workflow for using Claude Code to identify, analyze, and remove dead code from your projects.
 
 ## Understanding Dead Code in Modern Codebases
 
@@ -34,7 +38,7 @@ The foundation of effective dead code elimination is a reliable detection workfl
 
 ### Step 1: Create a Skill for Dead Code Analysis
 
-Create a Claude skill focused on dead code detection that leverages multiple tools:
+Create a Claude skill focused on dead code detection that uses multiple tools:
 
 ```yaml
 ---
@@ -66,7 +70,7 @@ Running tests first ensures you have a safety net. If something breaks after dea
 
 ## Identifying Dead Code with Claude Code
 
-Claude Code excels at pattern recognition across your entire codebase. Here's how to leverage its capabilities:
+Claude Code excels at pattern recognition across your entire codebase. Here's how to use its capabilities:
 
 ### Finding Unused Functions
 

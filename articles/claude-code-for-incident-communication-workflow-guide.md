@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Incident Communication Workflow Guide"
 description: "Learn how to use Claude Code to streamline incident communication workflows, automate status updates, and coordinate team responses during outages."
@@ -7,12 +8,15 @@ author: Claude Skills Guide
 permalink: /claude-code-for-incident-communication-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Incident Communication Workflow Guide
 
-When production incidents strike, clear and timely communication can be the difference between a swift resolution and a cascading failure. Claude Code isn't just a coding assistant—it can serve as your incident communication hub, helping you draft status updates, coordinate responses, and maintain a clear audit trail throughout the incident lifecycle. This guide shows you how to leverage Claude Code's capabilities to build an effective incident communication workflow.
+When production incidents strike, clear and timely communication can be the difference between a swift resolution and a cascading failure. Claude Code isn't just a coding assistant—it can serve as your incident communication hub, helping you draft status updates, coordinate responses, and maintain a clear audit trail throughout the incident lifecycle. This guide shows you how to use Claude Code's capabilities to build an effective incident communication workflow.
 
 ## Why Claude Code for Incident Communication?
 
