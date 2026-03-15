@@ -38,7 +38,6 @@ First, create a new skill for soak testing:
 ---
 name: soak-test
 description: Generate and run soak testing workflows for your applications
-tools: [Read, Write, Bash, Glob, Grep]
 ---
 
 # Soak Testing Workflow Generator
@@ -228,3 +227,4 @@ Claude Code transforms soak testing from a manually intensive process into an au
 
 Start with moderate-duration tests, establish clear thresholds, and progressively extend testing as your confidence grows. Combined with proper monitoring and analysis, Claude-assisted soak testing becomes an invaluable part of your quality assurance toolkit.
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
