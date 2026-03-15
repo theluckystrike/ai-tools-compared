@@ -6,6 +6,10 @@ description: "A practical guide to AI-powered student support tools for develope
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /ai-tools-for-education-student-support/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
