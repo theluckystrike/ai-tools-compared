@@ -1,242 +1,205 @@
 ---
-
-
 layout: default
 title: "Claude Code for Runbook Review Process Workflow"
-description: "A comprehensive guide to using Claude Code for reviewing, validating, and improving runbook quality. Includes practical examples and actionable."
+description: "Learn how to use Claude Code CLI to streamline runbook review processes, automate validation checks, and ensure operational documentation meets quality standards."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: Claude Skills Guide
 permalink: /claude-code-for-runbook-review-process-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
-reviewed: true
-score: 8
 ---
 
-
 {% raw %}
+# Claude Code for Runbook Review Process Workflow
 
-Runbook reviews are critical for maintaining operational excellence. Yet many engineering teams treat runbook maintenance as an afterthought, leading to documentation that fails when you need it most. This guide shows you how to use Claude Code to create a systematic runbook review process that ensures your operational procedures remain accurate, complete, and actionable.
+Runbooks are the backbone of reliable operations. They document the exact steps needed to diagnose issues, deploy fixes, and restore service. But poorly written runbooks can be dangerous—ambiguous steps, missing prerequisites, or outdated commands can turn a routine incident into a catastrophe. This guide shows you how to use Claude Code to build a practical runbook review process that catches errors before they reach production.
 
-## Understanding the Runbook Review Challenge
+## Why Automate Runbook Reviews?
 
-Traditional runbook reviews face several common problems. Outdated screenshots show old UI elements. Commands reference deprecated tools. Step sequences assume context that only the original author possessed. Critical error handling steps are missing entirely. These gaps become apparent only during incidents when pressure is highest and mistakes cost the most.
+Manual runbook reviews are time-consuming and inconsistent. A senior engineer might catch a missing `sudo` or an outdated API endpoint, but junior team members may approve runbooks with critical gaps. Claude Code solves this by providing:
 
-Claude Code transforms this equation. By understanding your codebase, infrastructure configuration, and deployment patterns, Claude Code can identify inconsistencies, suggest improvements, and verify that runbook procedures actually work in your current environment.
+- **Consistent validation** against defined standards
+- **Automated checks** for common runbook issues
+- **Fast feedback** during the writing process
+- **Knowledge sharing** without requiring senior review for every change
 
-## Setting Up Claude Code for Runbook Reviews
+## Setting Up a Runbook Review Skill
 
-Before implementing a review workflow, configure Claude Code with the right context. Create a CLAUDE.md file in your runbook repository:
+The first step is creating a Claude skill specifically for runbook reviews. This skill should understand what makes a good runbook and provide structured feedback.
 
-```markdown
-# Runbook Review Context
+### Skill Definition
 
-## Infrastructure
-- Kubernetes 1.28 on AWS EKS
-- PostgreSQL 15 with Patroni for HA
-- Redis 7 cluster for caching
-- Terraform for infrastructure management
+Create a file at `~/.claude/skills/runbook-reviewer/skill.md`:
 
-## Review Standards
-- Every runbook must have estimated duration
-- All commands must be idempotent
-- Error handling must include rollback steps
-- Screenshots must be less than 6 months old
+```yaml
+---
+name: runbook-reviewer
+description: Reviews operational runbooks for completeness, accuracy, and safety
+tools: [Read, Bash, Edit]
+---
 
-## Critical Runbooks Priority
-1. Database failover procedures
-2. API incident response
-3. Certificate rotation
-4. Traffic migration between regions
+You are a runbook reviewer with expertise in DevOps and site reliability engineering. Your role is to validate runbooks against these criteria:
+
+1. **Completeness**: All prerequisites listed? Emergency contacts included? Rollback steps documented?
+2. **Clarity**: Each step is atomic and unambiguous. Commands are copy-paste ready.
+3. **Safety**: Dangerous commands require confirmation. Production systems are clearly identified.
+4. **Currency**: No deprecated APIs, commands, or endpoints.
+
+For each issue found, provide:
+- Severity: critical, major, minor
+- Location: step number or section
+- Description: what's wrong and why it matters
+- Recommendation: how to fix it
+
+Output your review in this format:
+## Review Summary
+- Critical Issues: X
+- Major Issues: X  
+- Minor Issues: X
+
+## Detailed Findings
+[numbered list with each issue]
 ```
 
-This context ensures Claude Code applies consistent standards across all review activities.
+### Running the Reviewer
 
-## Creating a Structured Review Workflow
+With the skill installed, you can invoke it on any runbook:
 
-Implement a systematic review process using Claude Code's capabilities. The workflow combines automated checks with guided human oversight.
-
-### Phase 1: Automated Validation
-
-Use Claude Code to perform initial validation automatically:
-
-```bash
-# Review a specific runbook for completeness
-claude --print "Review the runbook at ./runbooks/database-failover.md for:
-1. Missing error handling steps
-2. Outdated command syntax
-3. Incomplete prerequisites
-4. Missing rollback procedures
-5. Inconsistent formatting
-
-Provide a structured report with line numbers for each issue found."
+```
+/runbook-reviewer
 ```
 
-Claude Code analyzes the document and returns specific, actionable feedback with references to exact locations requiring attention.
+This triggers the review against the currently open file. The skill reads your runbook, analyzes it against the criteria, and outputs structured feedback.
 
-### Phase 2: Contextual Verification
+## Building Validation Scripts
 
-Verify that runbook procedures match your actual environment:
+Beyond interactive review, you can create automated validation scripts that run as part of your CI/CD pipeline or pre-commit hooks.
 
-```bash
-# Check if commands reference current tool versions
-claude --print "Compare the kubectl commands in ./runbooks/pod-restart.md 
-with our current Kubernetes version (1.28). Flag any deprecated API calls 
-or commands that behave differently in this version."
-```
-
-This catches version-specific issues before they cause problems during actual incidents.
-
-### Phase 3: Cross-Reference Validation
-
-Ensure runbooks reference accurate configuration values:
-
-```bash
-# Validate resource names and endpoints
-claude --print "Cross-reference the service names, namespace references, 
-and endpoint URLs in ./runbooks/api-scaling.md against our current 
-Kubernetes manifests in ./k8s/ and Terraform state. List any discrepancies."
-```
-
-## Practical Review Patterns
-
-### Pattern 1: Pre-Deployment Review
-
-Before any runbook enters production, require Claude Code review:
+### Basic Validation Script
 
 ```bash
 #!/bin/bash
-# runbook-review.sh - Pre-deployment validation
+# runbook-validate.sh - Quick validation before committing runbooks
 
-RUNBOOK_PATH=$1
+RUNBOOK_DIR="./runbooks"
+CLAUDE_PROMPT="Review this runbook for critical issues. Check for:
+- Missing prerequisites or emergency contacts
+- Commands that could cause data loss without confirmation
+- Hardcoded credentials or secrets
+- Outdated or deprecated command syntax
 
-echo "Running automated review on: $RUNBOOK_PATH"
+Output a JSON summary: {\"critical\": N, \"major\": N, \"minor\": N, \"issues\": [description of each]}"
 
-claude --print "Perform a comprehensive review of $RUNBOOK_PATH:
-
-**Completeness Check:**
-- Are all prerequisites listed?
-- Is there a clear success criteria?
-- Are rollback steps included?
-
-**Accuracy Check:**
-- Do commands match current tool versions?
-- Are paths correct for our environment?
-- Do hostnames/IPs match current config?
-
-**Usability Check:**
-- Are steps numbered clearly?
-- Is output formatting consistent?
-- Are time estimates realistic?
-
-Output a JSON summary:
-{\"issues\": [{\"severity\": \"high|medium|low\", \"line\": N, \"issue\": \"description\", \"suggestion\": \"fix\"}], \"approved\": boolean}"
+for runbook in "$RUNBOOK_DIR"/*.md; do
+  echo "Validating: $runbook"
+  # Use Claude Code to review each runbook
+  claude -p "$CLAUDE_PROMPT" < "$runbook" | tee ".runbook-review-$(basename $runbook .md).txt"
+done
 ```
 
-### Pattern 2: Periodic Health Checks
+### Integration with Git Hooks
 
-Schedule regular automated reviews to catch drift:
+Add a pre-commit hook to catch issues before they're committed:
 
 ```bash
-# Run weekly review on all runbooks
-find ./runbooks -name "*.md" -exec ./runbook-review.sh {} \;
+# .git/hooks/pre-commit
+#!/bin/bash
+
+RUNBOOKS=$(git diff --cached --name-only | grep "^runbooks/.*\.md$")
+
+if [ -n "$RUNBOOKS" ]; then
+  echo "Validating changed runbooks..."
+  for runbook in $RUNBOOKS; do
+    claude -p "Perform a quick critical check on this runbook. Focus on safety issues only." < "$runbook"
+    if [ $? -ne 0 ]; then
+      echo "Runbook review failed for $runbook"
+      exit 1
+    fi
+  done
+fi
 ```
 
-Integrate results into your team's regular review cadence.
+## Common Runbook Issues to Check For
 
-### Pattern 3: Incident-Triggered Review
+When building your review process, focus on these high-impact areas:
 
-After any incident, use Claude Code to verify related runbooks:
+### Prerequisites and Assumptions
 
-```bash
-# Post-incident runbook validation
-claude --print "After our recent database outage, review:
-1. ./runbooks/database-failover.md
-2. ./runbooks/database-recovery.md
-3. ./runbooks/connection-pool-tuning.md
+Many runbooks assume too much context. Your review should flag:
 
-For each runbook, identify:
-- What worked correctly
-- What failed or caused confusion
-- Specific improvements needed based on the incident"
+- Missing software versions (e.g., "use kubectl" without version specified)
+- Undefined environment variables
+- Assumed IAM permissions or access rights
+- Missing backup verification steps
+
+### Command Safety
+
+Dangerous commands need explicit protection:
+
+```yaml
+# Bad
+rm -rf /var/logs/*
+
+# Good
+# WARNING: This will permanently delete logs. Ensure you have backup.
+# Confirm before running:
+#   echo "Type 'YES' to confirm" && read confirmation
+#   [ "$confirmation" = "YES" ] && rm -rf /var/logs/*
 ```
 
-## Advanced Review Techniques
+### Error Handling
 
-### Semantic Validation
+Runbooks should anticipate failure:
 
-Go beyond syntax to validate meaning and logic:
+- What happens if step 3 fails? Is step 4 safe to run?
+- Are there diagnostic commands to understand why something failed?
+- Is there a clear escalation path if the runbook doesn't work?
 
-```bash
-# Check logical consistency
-claude --print "Review the runbook ./runbooks/service-restart.md for logical 
-consistency. Trace the execution path and identify any scenarios where 
-steps could fail or produce unexpected results. Consider:
-- Network partitions during steps
-- Concurrent operations
-- Partial completion states
-- Dependencies on external systems"
+## Best Practices for Runbook Review Workflow
+
+### 1. Establish Review Tiers
+
+Not every runbook needs the same scrutiny:
+
+| Tier | Description | Review Level |
+|------|-------------|---------------|
+| Critical | Production incident response | Senior SRE, mandatory |
+| Standard | Deployment procedures | Team lead, required |
+| Low | Development utilities | Automated only |
+
+### 2. Use Checklists, Not Just Reviews
+
+Complement human review with automated checklists:
+
+```markdown
+## Pre-Publish Checklist
+- [ ] All commands tested in staging
+- [ ] Emergency contact list current
+- [ ] Version numbers verified
+- [ ] Rollback procedure tested
+- [ ] Approval from team lead
 ```
 
-### Collaboration Enhancement
+### 3. Version Control Your Runbooks
 
-Use Claude Code to facilitate team reviews:
+Treat runbooks like code:
 
-```bash
-# Generate review comments for team discussion
-claude --print "Create a structured review summary of ./runbooks/api-deploy.md
-suitable for team discussion. Group issues by:
-1. Must fix before production
-2. Should fix in this iteration  
-3. Nice to have improvements
+- Review changes through pull requests
+- Track who approved each version
+- Maintain a changelog for critical runbooks
+- Use branch protection for production runbooks
 
-Format for easy team review with clear ownership suggestions."
-```
+### 4. Continuous Improvement
 
-## Measuring Review Effectiveness
+After each incident, review whether the runbook helped or hindered:
 
-Track review quality over time:
-
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Issues found per runbook | < 5 medium/high | Automated count |
-| Time to approve | < 2 days | Git timestamps |
-| Post-incident runbook updates | < 24 hours | Issue tracking |
-| Team review participation | 80% coverage | PR reviews |
-
-Use Claude Code to generate these metrics automatically:
-
-```bash
-# Generate monthly review metrics
-claude --print "Analyze our runbook repository for the past month:
-- Number of reviews completed
-- Average issues per runbook by category
-- Most common issue types
-- Runbooks not reviewed in past 90 days
-
-Output a summary suitable for team metrics dashboard."
-```
-
-## Best Practices Summary
-
-1. **Automate initial validation** - Use Claude Code for consistent, fast initial checks
-2. **Maintain context** - Keep CLAUDE.md updated with infrastructure changes
-3. **Integrate into workflow** - Make reviews part of your deployment pipeline
-4. **Track over time** - Measure improvement and catch drift early
-5. **Learn from incidents** - Post-incident reviews prevent repeat issues
+- Did the runbook work as expected?
+- Were there gaps the reviewer should have caught?
+- Update the review criteria based on real-world experience
 
 ## Conclusion
 
-Claude Code transforms runbook reviews from a painful manual process into a systematic, scalable workflow. By automating validation, catching drift early, and facilitating continuous improvement, you ensure your runbooks remain reliable when emergencies strike.
+Claude Code transforms runbook review from a manual, inconsistent process into an automated, reliable workflow. By creating dedicated review skills, building validation scripts, and establishing clear review criteria, you ensure that operational documentation meets the high standards your team deserves.
 
-Start small: pick your most critical runbook and apply these patterns. Iterate based on what you learn. Your future on-call self will thank you.
-
+Start small: create one review skill, test it on your existing runbooks, and expand from there. The investment pays dividends in reduced incident duration and increased team confidence.
 {% endraw %}
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
