@@ -1,19 +1,15 @@
 ---
-raw %}
-author: "Claude Skills Guide"
-reviewed: true
-score: 7
-categories: [guides]
-tags: [claude-code, claude-skills]
-permalink: /product-architecture-for-a-claude-code-powered-cli-tool/
----
 
 layout: default
 title: "Product Architecture for a Claude Code Powered CLI Tool"
 description: "Learn how to design and build a powerful CLI tool powered by Claude Code, focusing on core architecture, skills integration, and practical implementation patterns."
 date: 2026-03-14
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /product-architecture-for-a-claude-code-powered-cli-tool/
+categories: [guides]
+reviewed: true
+score: 7
+tags: [claude-code, claude-skills]
 ---
 
 # Product Architecture for a Claude Code Powered CLI Tool
@@ -203,4 +199,3 @@ The key is to view Claude Code not just as a wrapper around existing commands, b
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-

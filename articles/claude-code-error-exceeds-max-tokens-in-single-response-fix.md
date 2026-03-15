@@ -1,4 +1,6 @@
 ---
+
+layout: default
 title: "Claude Code Error: Exceeds Max Tokens in Single Response Fix"
 description: "Understanding and resolving the 'exceeds max tokens' error in Claude Code. Practical solutions for developers handling large outputs, code generation."
 date: 2026-03-14
