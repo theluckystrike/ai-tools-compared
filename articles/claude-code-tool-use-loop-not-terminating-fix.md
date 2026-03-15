@@ -4,8 +4,11 @@ layout: default
 title: "Claude Code Tool Use Loop Not Terminating Fix"
 description: "Troubleshoot and fix Claude Code tool use loops that fail to terminate. Step-by-step solutions for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-tool-use-loop-not-terminating-fix/
+reviewed: true
+score: 8
+categories: [troubleshooting]
 ---
 
 {% raw %}
