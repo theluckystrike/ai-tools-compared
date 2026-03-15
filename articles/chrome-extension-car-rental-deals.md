@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Extension Car Rental Deals: A Developer's Guide to Building Price Trackers"
+title: "Chrome Extension Car Rental Deals: A Developer's Guide."
 description: "Learn how to build a Chrome extension that tracks car rental prices across multiple providers. Technical implementation guide with code examples."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -361,5 +361,12 @@ console.log('[CarRentalDeals] Found deals:', deals.length);
 ```
 
 Building a functional car rental deal tracker demonstrates practical skills in Chrome extension development, web scraping techniques, IndexedDB usage, and notification systems—all valuable competencies for developer portfolios and real-world applications.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

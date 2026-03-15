@@ -205,4 +205,11 @@ Chrome extensions for LaTeX equation editing bridge the gap between mathematical
 
 The ecosystem continues evolving with improved rendering engines and better browser APIs. Stay current with the MathJax and KaTeX blogs for updates on performance improvements and new features.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

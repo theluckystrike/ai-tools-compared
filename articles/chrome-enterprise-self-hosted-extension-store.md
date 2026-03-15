@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Enterprise Self-Hosted Extension Store: A Complete Guide"
+title: "Chrome Enterprise Self-Hosted Extension Store: A."
 description: "Learn how to deploy internal Chrome extensions in your enterprise environment using a self-hosted extension store for enhanced security and control."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -198,6 +198,13 @@ If extensions fail to install or update:
 5. Test the update URL directly in a browser
 
 Self-hosting your Chrome extension store gives enterprises the control needed for sensitive environments while maintaining the convenience of automatic updates. With proper implementation, your team can deploy internal tools efficiently without exposing them to the public web.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

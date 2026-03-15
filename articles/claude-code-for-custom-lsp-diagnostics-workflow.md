@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Custom LSP Diagnostics Workflow"
-description: "Learn how to build powerful custom LSP diagnostics workflows using Claude Code CLI. Automate code analysis, create tailored error handling, and integrate language server diagnostics into your development pipeline."
+description: "Learn how to build powerful custom LSP diagnostics workflows using Claude Code CLI. Automate code analysis, create tailored error handling, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-custom-lsp-diagnostics-workflow/
@@ -208,3 +208,10 @@ Custom LSP diagnostics workflows through Claude Code unlock new possibilities fo
 
 Start with the basic patterns in this guide, then adapt them to your specific needs. The flexibility of Claude Code means your diagnostic workflows can evolve alongside your project requirements.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

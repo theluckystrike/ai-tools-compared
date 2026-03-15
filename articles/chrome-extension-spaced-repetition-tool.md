@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Chrome Extension Spaced Repetition Tool: Building Memory Systems for Developers"
+title: "Chrome Extension Spaced Repetition Tool: Building Memory."
 description: "Learn how to build a Chrome extension spaced repetition tool for memorizing programming concepts, API documentation, and technical vocabulary."
 date: 2026-03-15
 author: "theluckystrike"
@@ -254,5 +254,12 @@ Your manifest.json must declare appropriate permissions:
 This foundation supports numerous enhancements: sync across devices using a backend, import/export card decks, track learning statistics, integrate with Obsidian or Notion for bidirectional linking, or add image support for visual memorization.
 
 Building your own Chrome extension spaced repetition tool gives you full control over your learning system. Tailor card formats, review algorithms, and interface interactions to match your workflow precisely. The investment in setup pays dividends as you systematically consolidate technical knowledge over time.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

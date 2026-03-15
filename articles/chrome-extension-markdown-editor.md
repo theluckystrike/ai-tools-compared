@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension Markdown Editor: A Developer's Guide to Browser-Based Writing"
-description: "Discover how chrome extension markdown editors can transform your writing workflow. Learn about key features, practical examples, and how to build your own."
+title: "Chrome Extension Markdown Editor: A Developer's Guide to."
+description: "Discover how chrome extension markdown editors can transform your writing workflow. Learn about key features, practical examples, and how to build your."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-markdown-editor/
@@ -131,5 +131,12 @@ Maintain a consistent file naming convention and folder structure for your markd
 A chrome extension markdown editor serves as a bridge between raw text and polished content. By selecting an extension with features aligned to your workflow and developing consistent editing habits, you can significantly improve your productivity when working with markdown in the browser.
 
 The best approach involves experimentation—try several extensions, test different features, and refine your process until you find the combination that works best for your specific needs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
