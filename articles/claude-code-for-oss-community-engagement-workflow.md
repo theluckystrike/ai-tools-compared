@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for OSS Community Engagement Workflow"
-description: "Learn how to leverage Claude Code to streamline open source community engagement, from triaging issues to managing contributions and fostering contributor relationships."
+description: "Learn how to leverage Claude Code to streamline open source community engagement, from triaging issues to managing contributions and fostering."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-community-engagement-workflow/
@@ -193,3 +193,10 @@ Focus on metrics that matter: contributor retention, time to issue resolution, a
 Claude Code transforms OSS community engagement from reactive firefighting to proactive relationship building. By automating triage, standardizing reviews, and maintaining consistent communication, you free maintainers to focus on technical decisions and meaningful community connections. Start small, measure results, and iteratively expand your automation as your community grows. Your contributors—and your sanity—will thank you.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

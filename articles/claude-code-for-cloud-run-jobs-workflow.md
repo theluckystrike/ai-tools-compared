@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Cloud Run Jobs Workflow"
-description: "Learn how to integrate Claude Code CLI into your Google Cloud Run Jobs development workflow. Practical examples for building, deploying, and managing containerized batch workloads with AI assistance."
+description: "Learn how to integrate Claude Code CLI into your Google Cloud Run Jobs development workflow. Practical examples for building, deploying, and managing."
 date: 2026-03-15
 categories: [tutorials]
 tags: [claude-code, claude-skills]
@@ -205,3 +205,10 @@ Start small: create a skill for your most frequent Cloud Run Jobs operation, the
 
 *Ready to deepen your Claude Code skills? Explore our guides on building multi-step automation workflows and integrating with other Google Cloud services.*
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

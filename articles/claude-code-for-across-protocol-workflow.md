@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Across Protocol Workflow"
-description: "A comprehensive guide for developers on using Claude Code across multiple communication protocols. Learn how to build, test, and integrate services using HTTP, WebSocket, GraphQL, gRPC, and more."
+description: "A comprehensive guide for developers on using Claude Code across multiple communication protocols. Learn how to build, test, and integrate services."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-across-protocol-workflow/
@@ -295,3 +295,10 @@ When building applications that span multiple protocols, follow these guidelines
 [Building across protocols doesn't have to be complex](/claude-skills-guide/claude-code-for-microservices-communication-patterns/). Claude Code understands the nuances of each protocol and can help generate appropriate code, debug issues, and implement best practices. By using Claude Code's capabilities, developers can focus on business logic while the tool handles protocol-specific implementation details.
 
 Remember to provide clear context about your protocol stack when working with Claude Code, specify which protocols are involved in each task, and use protocol-specific skills for specialized assistance. With these approaches, multi-protocol development becomes significantly more manageable.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Wormhole Workflow Guide"
-description: "Learn how to build wormhole-style workflows with Claude Code to instantly transfer context, code patterns, and solutions across projects, teams, and development sessions."
+description: "Learn how to build wormhole-style workflows with Claude Code to instantly transfer context, code patterns, and solutions across projects, teams, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-wormhole-workflow-guide/
@@ -261,3 +261,10 @@ Wormhole workflows transform Claude Code from a session-based assistant into a p
 
 The beauty of wormhole workflows is that they improve with use. Every pattern you capture makes your future sessions more productive, every solution you store makes problem-solving faster, and every team wormhole you create makes your entire organization more efficient.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

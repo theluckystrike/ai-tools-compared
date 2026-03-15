@@ -203,3 +203,10 @@ Integrating Claude Code with Mythril transforms smart contract security from a m
 
 Start small: create your first mythril skill, run it against a test contract, and gradually expand to cover your entire smart contract portfolio. The investment in setting up this workflow pays dividends in reduced security incidents and faster development cycles.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

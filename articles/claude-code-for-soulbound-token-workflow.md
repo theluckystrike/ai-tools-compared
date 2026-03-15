@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Soulbound Token Workflow"
-description: "Learn how to use Claude Code to develop, test, and deploy soulbound tokens (SBTs) on Ethereum and other EVM chains. Practical examples and actionable workflows for developers."
+description: "Learn how to use Claude Code to develop, test, and deploy soulbound tokens (SBTs) on Ethereum and other EVM chains. Practical examples and actionable."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-soulbound-token-workflow/
@@ -352,3 +352,10 @@ Soulbound tokens represent an emerging standard in Web3 with applications spanni
 
 Remember to always audit your smart contracts and consider professional security reviews before deploying to mainnet. Claude Code can help you identify potential vulnerabilities, but final security verification requires expert review.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

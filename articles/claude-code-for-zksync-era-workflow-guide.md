@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for zkSync Era Workflow Guide"
-description: "A comprehensive guide to using Claude Code for zkSync Era development. Learn smart contract deployment, Layer 2 optimization, testing strategies, and production workflows."
+description: "A comprehensive guide to using Claude Code for zkSync Era development. Learn smart contract deployment, Layer 2 optimization, testing strategies, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-zksync-era-workflow-guide/
@@ -256,3 +256,10 @@ Developing on zkSync Era offers significant advantages in transaction costs and 
 The key to success is understanding the differences between zkSync Era and Ethereum mainnet, particularly around account abstraction, gas mechanics, and deployment patterns. With Claude Code as your development partner, you can navigate these differences confidently and build production-ready applications on one of Ethereum's most promising Layer 2 solutions.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

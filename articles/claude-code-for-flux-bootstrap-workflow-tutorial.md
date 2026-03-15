@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Flux Bootstrap Workflow Tutorial"
-description: "Learn how to use Claude Code to streamline Flux bootstrap workflows. This tutorial covers practical examples, automation patterns, and actionable advice for Kubernetes GitOps."
+description: "Learn how to use Claude Code to streamline Flux bootstrap workflows. This tutorial covers practical examples, automation patterns, and actionable."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-flux-bootstrap-workflow-tutorial/
@@ -181,3 +181,10 @@ Claude Code transforms Flux bootstrap from a manual, error-prone process into a 
 
 The key is providing Claude Code with enough context about your environment—repository structure, cluster names, and specific requirements—to generate accurate configurations. With this foundation, you can build robust, reproducible Kubernetes deployments managed entirely through Git.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

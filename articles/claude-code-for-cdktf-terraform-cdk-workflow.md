@@ -225,3 +225,10 @@ When working with Claude Code on CDKTF projects, keep these recommendations in m
 Claude Code transforms CDKTF development by bringing intelligent assistance to every phase of infrastructure development. From generating boilerplate code and building reusable constructs to reviewing for security and setting up CI/CD pipelines, Claude accelerates your workflow while improving code quality. Start by setting up proper context in your project, then iterate with specific, focused requests to get the most out of your CDKTF and Claude Code combination.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

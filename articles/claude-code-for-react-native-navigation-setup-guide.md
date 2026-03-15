@@ -282,3 +282,10 @@ useEffect(() => {
 
 Setting up React Native navigation doesn't have to be overwhelming. By following this guide and using Claude Code's capabilities, you can implement robust navigation patterns that provide excellent user experiences. Remember to choose the right navigation types for your app's structure, use TypeScript for type safety, and test thoroughly across platforms. Claude Code can help you extend these patterns further as your app grows in complexity.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

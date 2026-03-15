@@ -270,3 +270,10 @@ Combine Claude Code with Sentinel or OPA policies for governance. Ask Claude Cod
 Claude Code transforms Terraform Cloud Run workflows from manual, error-prone processes into collaborative, assisted development experiences. By writing clear prompts, maintaining modular configurations, and using Claude Code's understanding of Terraform patterns, you can deploy Cloud Run services faster while maintaining high standards for security and reliability.
 
 Start with simple configurations and progressively adopt more advanced patterns as your infrastructure grows. Claude Code adapts to your project's complexity, providing appropriate guidance whether you're deploying a single service or managing a fleet of Cloud Run applications.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
