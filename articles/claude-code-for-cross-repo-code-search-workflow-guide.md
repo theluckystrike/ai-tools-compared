@@ -3,14 +3,16 @@ layout: default
 title: "Claude Code for Cross-Repo Code Search Workflow Guide"
 description: "Learn how to build a powerful cross-repository code search workflow with Claude Code. Practical examples, configuration tips, and automation strategies for developers working with multiple codebases."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-cross-repo-code-search-workflow-guide/
 categories: [Claude Code, Developer Tools, Workflow Automation]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
-Working with multiple repositories is a common scenario for modern development teams. Whether you're maintaining a monorepo, managing microservices, or contributing across several projects, finding code across repositories efficiently can significantly impact your productivity. This guide shows you how to leverage Claude Code to build an effective cross-repo code search workflow that saves time and reduces context switching fatigue.
+Working with multiple repositories is a common scenario for modern development teams. Whether you're maintaining a monorepo, managing microservices, or contributing across several projects, finding code across repositories efficiently can significantly impact your productivity. This guide shows you how to use Claude Code to build an effective cross-repo code search workflow that saves time and reduces context switching fatigue.
 
 ## Why Cross-Repo Search Matters
 
