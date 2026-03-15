@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Headline Analyzer: A Practical Guide for Developers"
 description: "Learn how to build and use a Chrome extension headline analyzer to evaluate headline effectiveness with real-time scoring and optimization suggestions."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-headline-analyzer/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 A headline analyzer Chrome extension gives you instant feedback on headline quality before you publish. Instead of guessing whether a title will perform well, you get measurable data on readability, sentiment, keyword density, and emotional impact. This guide walks through how these extensions work, what metrics matter, and how to build one yourself.
 

@@ -3,8 +3,11 @@ layout: default
 title: "How to Build a Chrome Extension for Watermarking Images"
 description: "A practical guide for developers to create Chrome extensions that add watermarks to images directly in the browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-watermark-images/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}
