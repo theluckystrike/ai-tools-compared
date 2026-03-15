@@ -3,8 +3,11 @@ layout: default
 title: "Chrome Extension Content Calendar Manager: Build Your Own Publishing Workflow"
 description: "Learn how to build a Chrome extension that manages content calendars. Practical code examples, manifest configuration, storage patterns, and implementation guide for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-content-calendar-manager/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 # Chrome Extension Content Calendar Manager: Build Your Own Publishing Workflow
