@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Anvil Local Fork Workflow"
 description: "A practical guide to using Claude Code with Anvil's local fork development environment for Ethereum smart contract development and testing."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-anvil-local-fork-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Anvil Local Fork Workflow
@@ -159,7 +163,7 @@ anvil --fork-url $ETHEREUM_SEPOLIA_RPC --chain-id 11155111 --port 8546
 
 Ask Claude Code to create a script that manages switching between these environments.
 
-### Leveraging Anvil's Advanced Features
+### using Anvil's Advanced Features
 
 Anvil provides several features that enhance your workflow:
 

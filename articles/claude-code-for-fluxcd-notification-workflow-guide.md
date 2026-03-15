@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for FluxCD Notification Workflow Guide"
 description: "Learn how to use Claude Code CLI to streamline FluxCD notification workflows, from setting up alerts to integrating with Slack, Discord, and custom webhooks."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-fluxcd-notification-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for FluxCD Notification Workflow Guide
 
-FluxCD has become a cornerstone of GitOps practices in Kubernetes environments, and its notification controller is essential for keeping teams informed about cluster events. This guide shows you how to leverage Claude Code CLI to build, configure, and maintain FluxCD notification workflows efficiently.
+FluxCD has become a cornerstone of GitOps practices in Kubernetes environments, and its notification controller is essential for keeping teams informed about cluster events. This guide shows you how to use Claude Code CLI to build, configure, and maintain FluxCD notification workflows efficiently.
 
 ## Understanding FluxCD Notifications
 
@@ -224,7 +228,7 @@ When implementing FluxCD notifications at scale, follow these recommendations:
 
 - **Use separate providers** for different channels to isolate failures
 - **Implement retry logic** by setting `spec.records` in Provider resources
-- **Leverage label selectors** to avoid creating duplicate alerts per resource
+- **use label selectors** to avoid creating duplicate alerts per resource
 - **Test alerts in staging** before deploying to production
 - **Rotate webhook secrets** regularly using Kubernetes secrets management
 
