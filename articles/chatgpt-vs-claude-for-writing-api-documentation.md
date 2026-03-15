@@ -1,12 +1,17 @@
 ---
 
+
 layout: default
 title: "ChatGPT vs Claude for Writing API Documentation"
 description: "A practical comparison of ChatGPT and Claude for writing API documentation. Includes code examples, prompt strategies, and recommendations for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /chatgpt-vs-claude-for-writing-api-documentation/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 # ChatGPT vs Claude for Writing API Documentation
 
