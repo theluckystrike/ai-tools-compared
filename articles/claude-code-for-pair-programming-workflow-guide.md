@@ -126,6 +126,68 @@ Files changed: src/components/*.tsx, src/hooks/*.ts"
 
 This catches obvious issues early and frees human reviewers to focus on architecture and design decisions.
 
+## Project Context Initialization
+
+For new projects or when onboarding Claude Code to an existing codebase, create a lightweight context file so every session starts with shared understanding:
+
+```bash
+# Create a PROJECT.md with key information
+echo "# Project Context
+- Framework: React 18 with TypeScript
+- State: Zustand
+- Styling: Tailwind CSS
+- Testing: Vitest + React Testing Library
+- Code conventions: Functional components, hooks-first approach" > PROJECT.md
+```
+
+Reference this file at the start of each session to eliminate repeated context-setting. The **supermemory** skill can also maintain persistent context automatically across sessions.
+
+## Signaling Roles Explicitly
+
+When you want Claude Code to shift between navigation and implementation, signal the mode clearly:
+
+- **Navigator mode**: "Review this function and suggest improvements" — Claude analyzes and provides direction
+- **Driver mode**: "Implement the authentication flow following the existing patterns" — Claude writes code that you review
+
+Explicit mode signals prevent Claude Code from defaulting to whichever role it last occupied and keep the session rhythm predictable.
+
+## Incremental Development Cycles
+
+For features of any meaningful size, avoid asking Claude Code to implement large chunks end-to-end. Each increment should follow a tight loop:
+
+1. Define the specific task
+2. Claude generates code
+3. You review and test
+4. Provide feedback or approve
+5. Move to next increment
+
+Apply the same discipline to refactoring — request single focused changes rather than broad sweeps:
+
+```typescript
+// Instead of: "Refactor this entire module"
+Request: "Extract the validation logic into a separate hook"
+Request: "Convert class components to functional components"
+Request: "Add error boundaries around async operations"
+```
+
+## Working Across Codebases
+
+Multi-repository projects require explicit boundary definition. State which repository you are addressing and describe the interdependencies:
+
+```markdown
+Context for this session:
+- Working in: payment-service (this repo)
+- Depends on: user-service API
+- Shared types in: @company/shared
+- Auth handled by: gateway-service
+```
+
+Without this framing, Claude Code may conflate responsibilities across repos or make assumptions about which codebase receives changes.
+
+## Managing Ambiguous Requirements
+
+When requirements remain unclear, use Claude Code to explore possibilities before committing to implementation. Request prototypes, ask for trade-off analysis, and use the output to refine requirements. This is faster than backtracking after a full implementation.
+
 ## Integrating Claude Skills into Your Workflow
 
 Claude Skills enhance pair programming by encapsulating domain-specific knowledge. For example, the **tdd-driven-development** skill guides you through test-driven development practices:
@@ -143,6 +205,22 @@ Skills provide reusable patterns for common workflows, making your pairing sessi
 - **code-review-automation**: Structured review patterns and checklist
 - **debugging-strategies**: Systematic debugging methodology
 - **refactoring-patterns**: Safe code improvement techniques
+- **frontend-design**: Generates component structures, suggests responsive layouts, and recommends accessible patterns for new UI work
+- **pdf**: Analyze existing documentation, integration specs, legacy architecture docs, and external API docs in PDF format
+- **xlsx / docx**: Generate spreadsheets for tracking metrics, create technical documentation, or maintain changelogs without leaving your development environment
+- **supermemory**: Maintains persistent context across sessions, remembering project-specific patterns, recurring issues, and preferences so you don't repeat yourself
+
+## Optimizing Communication
+
+A few consistent habits sharpen AI collaboration significantly:
+
+- **Prefix commands with intent**: "Refactor:", "Debug:", "Explain:", "Generate:" — removes ambiguity about what you want
+- **Provide constraints upfront**: "Without using external libraries", "Follow existing pattern in utils/"
+- **Request explicit validation**: "Verify this handles null values", "Confirm this matches the API contract"
+
+### Managing AI Limitations
+
+Complex security implementations, performance-critical code, and architecture decisions benefit from human oversight. Use Claude Code for exploration and initial implementation, then apply expert review for critical components. Tracking which areas consistently need correction helps you calibrate where to lean in and where to stay in the driver seat.
 
 ## Best Practices for Productive Sessions
 
