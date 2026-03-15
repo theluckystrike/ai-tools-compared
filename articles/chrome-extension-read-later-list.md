@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension Read Later List: Building Your Own with Modern APIs"
-description: "Learn how to build a Chrome extension for managing a read later list. Covers storage APIs, manifest V3, and practical implementation patterns for developers."
+title: "Chrome Extension Read Later List: Building Your Own with."
+description: "Learn how to build a Chrome extension for managing a read later list. Covers storage APIs, manifest V3, and practical implementation patterns for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-read-later-list/
@@ -253,5 +253,12 @@ Building a read later extension teaches fundamental Chrome extension development
 With this foundation, you can extend functionality with features like reading time estimates, article archiving, or integration with note-taking applications. The Chrome extension platform provides robust APIs for creating sophisticated productivity tools.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
