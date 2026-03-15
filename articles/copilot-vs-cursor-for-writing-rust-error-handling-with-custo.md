@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-When working with Rust, error handling stands out as one of the language's most distinctive features. The `Result` type, the `?` operator, and custom error implementations form a robust system that differs substantially from exception-based approaches in other languages. Choosing the right AI coding assistant can significantly impact your productivity when implementing these patterns. This comparison examines how GitHub Copilot and Cursor handle Rust error handling with custom types.
+Choose Cursor if you need to refactor error handling across multiple files, migrate from `String` errors to custom error enums, or describe complex `thiserror`/`anyhow` requirements conversationally. Choose GitHub Copilot if you prefer inline suggestions for standard Rust error patterns like `Result<T, E>` returns and `?` operator usage without leaving your editor. Cursor's project-wide awareness gives it an advantage for custom error type architectures, while Copilot is faster for single-file, pattern-based completions.
 
 ## Understanding Rust Error Handling Fundamentals
 

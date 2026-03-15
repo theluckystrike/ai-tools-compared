@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Adding type hints to a large Python codebase is a significant undertaking. Whether you are modernizing legacy code or improving maintainability, choosing the right AI assistant can accelerate the process considerably. This comparison evaluates Cursor and GitHub Copilot specifically for the task of adding type annotations to untyped Python code.
+Choose Cursor if you are migrating a large untyped Python codebase and need multi-file type hint propagation with strong inference across call chains. Choose GitHub Copilot if you want minimal workflow disruption while adding type hints to new code or maintaining an already-typed project. Cursor's index-based codebase awareness makes it superior for bulk migration, while Copilot works best as an inline typing accelerator for incremental annotation work.
 
 ## Understanding the Type Hint Migration Challenge
 
