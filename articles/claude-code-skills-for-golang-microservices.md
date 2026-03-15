@@ -290,9 +290,99 @@ Run these tests against your running container or locally:
 go test -v ./... -run TestCreateUserAPI
 ```
 
+## Database Integration
+
+Claude Code can set up database connections and write efficient queries using GORM or SQLx. Here is a GORM repository pattern:
+
+```go
+package repositories
+
+import (
+    "context"
+    "user-service/internal/models"
+
+    "gorm.io/gorm"
+)
+
+type UserRepository struct {
+    db *gorm.DB
+}
+
+func NewUserRepository(db *gorm.DB) *UserRepository {
+    return &UserRepository{db: db}
+}
+
+func (r *UserRepository) FindByID(ctx context.Context, id string) (*models.User, error) {
+    var user models.User
+    result := r.db.WithContext(ctx).First(&user, "id = ?", id)
+    if result.Error != nil {
+        return nil, result.Error
+    }
+    return &user, nil
+}
+```
+
+## Inter-Service Communication with gRPC
+
+Go microservices often communicate via gRPC. Claude Code can set up protobuf schemas and generate the server implementation:
+
+```protobuf
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/yourorg/user-service/pb";
+
+service UserService {
+    rpc GetUser (GetUserRequest) returns (User);
+    rpc CreateUser (CreateUserRequest) returns (User);
+}
+
+message GetUserRequest {
+    string id = 1;
+}
+
+message User {
+    string id = 1;
+    string email = 2;
+    string name = 3;
+}
+```
+
+Claude Code generates the Go code from your proto files and creates the gRPC server implementation. For broader inter-service communication patterns, see [Claude Code Skills Microservices Communication Patterns](/claude-skills-guide/claude-code-skills-microservices-communication-patterns/).
+
+## Docker Compose for Local Development
+
+Claude Code generates Docker Compose configurations for running your microservices with their dependencies locally:
+
+```yaml
+version: '3.8'
+
+services:
+  user-service:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=postgres://user:pass@db:5432/users
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: users
+
+  redis:
+    image: redis:7-alpine
+```
+
 ## Service Layer Patterns
 
-Go microservices benefit from clear service layer separation. Claude Code helps generate service implementations that handle business logic. For microservices communication patterns across services, see [Claude Code Skills Microservices Communication Patterns](/claude-skills-guide/claude-code-skills-microservices-communication-patterns/).
+Go microservices benefit from clear service layer separation. Claude Code helps generate service implementations that handle business logic.
 
 ```go
 // internal/service/user.go
@@ -342,6 +432,18 @@ func (s *UserService) GetUser(ctx context.Context, id uint64) (*User, error) {
 ```
 
 This pattern ensures your microservice handles errors consistently and validates data at the service layer.
+
+## Actionable Advice for Claude Code Workflow
+
+1. **Start with clear prompts**: Be specific about requirements. Instead of "Create a handler," say "Create a REST handler for a user service with GET and POST endpoints using the Gin framework."
+
+2. **Iterative development**: Generate code in small chunks. Create models first, then handlers, then services. This ensures each piece works before integrating.
+
+3. **Use code reviews**: Have Claude Code review generated code. It can identify potential issues like missing error handling or inefficient database queries.
+
+4. **Leverage Claude Code for boilerplate**: Save time on repetitive code like CRUD operations, middleware, and configuration loading.
+
+5. **Test-driven approach**: Ask Claude Code to generate tests alongside your implementation using the `/tdd` skill. This ensures your code is testable from the start.
 
 ## Summary
 
