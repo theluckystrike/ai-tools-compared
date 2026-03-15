@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Core Web Vitals Workflow Tutorial"
-description: "Learn how to use Claude Code to analyze, optimize, and monitor your site's Core Web Vitals. Practical workflow with code examples for LCP, FID, and CLS improvements."
+description: "Learn how to use Claude Code to analyze, optimize, and monitor your site's Core Web Vitals. Practical workflow with code examples for LCP, FID, and CLS."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-core-web-vitals-workflow-tutorial/
@@ -253,3 +253,10 @@ function measureWebVitals() {
 By integrating Claude Code into your development workflow, you can systematically improve your Core Web Vitals scores and deliver better experiences to your users. The key is to automate the measurement process and make performance optimization an integral part of your development cycle rather than an afterthought.
 
 Remember that Core Web Vitals are user-centric metrics—improving them directly translates to better user satisfaction and improved search visibility. Let Claude Code help you achieve and maintain excellent performance scores consistently.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

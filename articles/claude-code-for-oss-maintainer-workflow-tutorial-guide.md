@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for OSS Maintainer Workflow Tutorial Guide"
-description: "A practical guide to using Claude Code for open source maintainer workflows—manage issues, review PRs, automate releases, and engage with your community more efficiently."
+description: "A practical guide to using Claude Code for open source maintainer workflows—manage issues, review PRs, automate releases, and engage with your."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-oss-maintainer-workflow-tutorial-guide/
@@ -155,3 +155,10 @@ Claude Code augments maintainer capabilities but doesn't replace human judgment.
 Claude Code transforms open source maintenance from reactive firefighting into proactive project management. By automating routine tasks, standardizing workflows, and providing intelligent assistance, it frees maintainers to focus on substantive contributions and community building.
 
 Start with one workflow—issue triage or PR review—and expand as you gain confidence. The key is incremental improvement: automate what consumes time, maintain human oversight for what matters most. Your future self, and your contributors, will thank you.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
