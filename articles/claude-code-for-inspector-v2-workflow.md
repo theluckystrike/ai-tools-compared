@@ -155,11 +155,9 @@ For automated testing, capture failures for later analysis:
 
 ```yaml
 # .github/workflows/test.yml
-- name: Run tests with Inspector
+- name: Run tests with Node inspector
   run: |
-    claude inspect run --capture-on-fail \
-      --output ./inspector-reports \
-      npm test
+    node --inspect npm test 2>&1 | tee ./inspector-reports/test-output.log
   if: failure()
 ```
 
@@ -188,7 +186,7 @@ const { execSync } = require('child_process');
 function inspectAndAnalyze(cmd, context) {
   const captureFile = `./inspector-captures/${Date.now()}.json`;
   
-  execSync(`claude inspect run --capture-on-fail --output ${captureFile} ${cmd}`, {
+  execSync(`node --inspect ${cmd} 2>&1 | tee ${captureFile}`, {
     stdio: 'inherit'
   });
   
