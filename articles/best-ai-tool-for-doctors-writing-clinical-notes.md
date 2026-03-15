@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Best AI Tool for Doctors Writing Clinical Notes: A Practical Guide"
 description: "Discover how AI tools help doctors write clinical notes faster while maintaining accuracy and compliance. Real-world use cases and practical guidance inside."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /best-ai-tool-for-doctors-writing-clinical-notes/
+reviewed: true
+score: 8
+categories: [best-of]
 ---
+
 
 {% raw %}
 {%- include why-choose-ai-clinical.html -%}

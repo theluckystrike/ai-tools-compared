@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "ChatGPT Hallucinating Facts: How to Reduce Errors"
 description: "A practical guide for developers and power users to minimize ChatGPT's fact-checking errors through prompt engineering and verification strategies."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /chatgpt-hallucinating-facts-how-to-reduce-errors/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 {% raw %}
 
@@ -113,7 +118,7 @@ If you're uncertain about any specific detail, state "I'm not certain" rather th
 
 This simple instruction dramatically reduces confident-sounding but incorrect statements.
 
-### 7. Leverage System Prompts for Consistent Behavior
+### 7. use System Prompts for Consistent Behavior
 
 When using ChatGPT consistently for specific tasks, craft a system prompt that establishes accuracy requirements:
 
