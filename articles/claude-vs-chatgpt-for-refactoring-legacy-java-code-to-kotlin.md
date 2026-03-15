@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin: Practical Comparison"
-description: "A developer-focused comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. Includes code examples, conversion strategies, and recommendations."
+title: "Claude vs ChatGPT for Refactoring Legacy Java Code to."
+description: "A developer-focused comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. Includes code examples, conversion strategies, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/
@@ -241,5 +241,10 @@ Use Claude for most Java-to-Kotlin migrations. Its Kotlin output is more idiomat
 Use ChatGPT when you need verbose conversion with extensive comments, when converting code with complex business logic that must be preserved exactly, or when you want to see multiple approaches side by side for educational purposes.
 
 For production migrations, run both tools on your codebase and compare outputs. Claude's results typically require less manual intervention, but ChatGPT can serve as a useful reference for edge cases.
+
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
