@@ -259,6 +259,72 @@ Sentry.setTag("payment_provider", "stripe");
 Sentry.setUser({ id: user.id, email: user.email });
 ```
 
+### 4. Use Release Tracking
+
+Associate errors with specific releases so you can identify which deployment introduced a problem:
+
+```javascript
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  release: `my-app@${process.env.npm_package_version}`,
+  environment: process.env.NODE_ENV,
+});
+```
+
+You can also resolve issues from the command line once a fix is deployed:
+
+```bash
+# List recent issues
+sentry-cli issues list --project your-project --limit 10
+
+# Mark an issue as resolved after deploying a fix
+sentry-cli issues resolve ISSUE_ID
+```
+
+### 5. Implement Proper Log Levels
+
+Distinguish between different severity levels when capturing events:
+
+- **Error**: Actual exceptions that need immediate attention
+- **Warning**: Potential issues that might become errors
+- **Info**: Useful contextual information
+
+```javascript
+Sentry.captureMessage('Payment processing slow', {
+  level: 'warning',
+  tags: {
+    component: 'payments',
+  },
+});
+```
+
+## Troubleshooting Common Issues
+
+### Errors Not Appearing in Sentry
+
+If errors are not showing up:
+
+- Verify your DSN is correct and the SDK is initialized before any errors occur
+- Check network connectivity from your environment to sentry.io
+- Review sampling rate settings — a `tracesSampleRate` below `1.0` will drop some events
+- Confirm the environment name matches what you are filtering on in the Sentry UI
+
+### Performance Impact
+
+To minimize overhead in high-traffic production environments:
+
+- Use lower sampling rates (e.g., `tracesSampleRate: 0.1`) for performance tracing
+- Sanitize sensitive data in `beforeSend` hooks before events are transmitted
+- Limit the number of breadcrumbs captured with `maxBreadcrumbs`
+
+### Missing or Incomplete Context
+
+When error context is incomplete in Sentry:
+
+- Add `beforeSend` hooks to enrich events with application-specific fields
+- Ensure `Sentry.setUser()` is called after authentication so user context is always attached
+- Include relevant tags and extra data at the point where errors are captured
+
 ## Actionable Integration Checklist
 
 Use this checklist to verify your integration is working optimally:
