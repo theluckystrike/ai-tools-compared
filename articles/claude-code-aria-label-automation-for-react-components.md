@@ -14,7 +14,7 @@ score: 8
 {% raw %}
 # Claude Code ARIA Label Automation for React Components
 
-Accessibility is no longer optional—it's a legal requirement and a moral imperative. Yet manually adding ARIA labels to React components remains tedious and error-prone. Claude Code transforms this workflow through intelligent automation, enabling you to generate accessible components at scale while maintaining consistency across your codebase.
+Manually adding ARIA labels to React components is tedious and error-prone. Claude Code transforms this workflow through intelligent automation, enabling you to generate accessible components at scale while maintaining consistency across your codebase.
 
 ## The Accessibility Challenge in React
 
