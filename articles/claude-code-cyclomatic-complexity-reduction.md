@@ -15,7 +15,9 @@ score: 7
 
 # Claude Code Cyclomatic Complexity Reduction
 
-Cyclomatic complexity measures the number of linearly independent paths through your code's control flow. High complexity makes code harder to test, maintain, and debug. This guide shows you how to use Claude Code and its ecosystem of skills to systematically reduce complexity in your projects.
+Cyclomatic complexity measures the number of linearly independent paths through your code's control flow. High complexity makes code harder to test, maintain, and debug. This guide focuses specifically on cyclomatic complexity — the formal, measurable count of branching paths — rather than broader complexity concerns like coupling, structural bloat, or cognitive load. (If you are looking for a wider treatment of all complexity types, see the [Code Complexity Reduction Guide](/claude-skills-guide/claude-code-code-complexity-reduction-guide/).)
+
+This guide shows you how to use Claude Code and its ecosystem of skills to systematically reduce cyclomatic complexity in your projects.
 
 ## Understanding Cyclomatic Complexity
 

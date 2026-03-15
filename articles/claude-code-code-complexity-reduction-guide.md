@@ -15,13 +15,21 @@ score: 7
 
 # Claude Code Code Complexity Reduction Guide
 
-Code complexity is one of the primary factors that determines how maintainable, testable, and scalable your software remains over time. High complexity leads to bugs that are harder to find, features that take longer to implement, and developer frustration that compounds with each passing sprint. This guide shows you how to use Claude Code and its skill system to systematically reduce complexity in your codebase.
+Code complexity is one of the primary factors that determines how maintainable, testable, and scalable your software remains over time. High complexity leads to bugs that are harder to find, features that take longer to implement, and developer frustration that compounds with each passing sprint. Complexity is not one thing — it encompasses structural issues, coupling between modules, cognitive load, and control-flow branching. This guide shows you how to use Claude Code and its skill system to reduce complexity across all these dimensions.
 
 ## Understanding Code Complexity
 
-Before diving into solutions, it helps to understand what makes code complex. Cyclomatic complexity measures the number of independent paths through your code—each if statement, loop, and catch block adds to this count. Functions that do too many things violate the Single Responsibility Principle. Deeply nested conditionals create cognitive load that slows down every future change.
+Before diving into solutions, it helps to understand what makes code complex. Code complexity comes in several forms, and each requires different reduction strategies.
 
-The goal is not arbitrary simplification but intentional reduction of accidental complexity while preserving the essential complexity your problem demands.
+**Structural complexity** arises when functions do too many things, violating the Single Responsibility Principle. A 200-line function handling validation, transformation, persistence, and logging is structurally complex regardless of how its control flow is arranged.
+
+**Cognitive complexity** refers to how hard code is to read and reason about. Deeply nested conditionals, non-obvious variable names, and surprising side effects all increase cognitive load for every developer who touches the code.
+
+**Coupling complexity** emerges when modules depend heavily on one another's internals. Tightly coupled code makes isolated testing difficult and turns small changes into cascading refactors across unrelated files.
+
+**Control flow complexity** — measured formally by cyclomatic complexity — counts the independent paths through a function. Each if statement, loop, and catch block adds a branch. (For a dedicated treatment of cyclomatic complexity specifically, see the [Cyclomatic Complexity Reduction guide](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/).)
+
+The goal is not arbitrary simplification but intentional reduction of accidental complexity while preserving the essential complexity your problem demands. This guide focuses on all four dimensions, not just control flow.
 
 ## Using Claude Code Skills for Complexity Analysis
 
@@ -109,6 +117,56 @@ const processUser = pipe(
 const user = processUser(getUser(id));
 ```
 
+### 4. Break Up God Objects
+
+Structural complexity often concentrates in classes that own too much. A `UserManager` that handles authentication, billing, notifications, and profile updates has high structural complexity even if each individual method is short. Split it along clear domain lines:
+
+```python
+# Before: single class with too many responsibilities
+class UserManager:
+    def authenticate(self, credentials): ...
+    def charge_subscription(self, plan): ...
+    def send_welcome_email(self): ...
+    def update_profile(self, data): ...
+
+# After: separate classes with focused responsibilities
+class AuthService:
+    def authenticate(self, credentials): ...
+
+class BillingService:
+    def charge_subscription(self, plan): ...
+
+class NotificationService:
+    def send_welcome_email(self): ...
+
+class ProfileService:
+    def update_profile(self, data): ...
+```
+
+Each class now has a single axis of change, reducing the cognitive overhead of every future modification.
+
+### 5. Decouple via Dependency Injection
+
+Coupling complexity grows when classes instantiate their own dependencies. Injecting dependencies instead of constructing them makes each unit independently testable and the wiring explicit:
+
+```typescript
+// Before: tightly coupled
+class OrderProcessor {
+    private mailer = new EmailService();
+    private db = new DatabaseClient();
+    process(order: Order) { ... }
+}
+
+// After: dependencies injected
+class OrderProcessor {
+    constructor(
+        private mailer: EmailService,
+        private db: DatabaseClient
+    ) {}
+    process(order: Order) { ... }
+}
+```
+
 ## Measuring Complexity Improvements
 
 After refactoring, verify your changes actually reduced complexity. Claude Code can help analyze your code:
@@ -139,12 +197,12 @@ Integrating these checks with Claude Code creates a feedback loop: Claude analyz
 
 ## Building a Complexity-Aware Workflow
 
-Make complexity reduction part of your development routine:
+Make complexity reduction part of your development routine, addressing all four dimensions — structural, cognitive, coupling, and control-flow:
 
-1. **Before writing new code**, use the tdd skill to plan your implementation with tests first
-2. **During code review**, ask Claude to flag functions exceeding complexity thresholds
-3. **After features complete**, use complexity analysis to guide refactoring
-4. **Document patterns** using supermemory so your team maintains consistency
+1. **Before writing new code**, use the tdd skill to plan your implementation with tests first; testability naturally forces simpler designs
+2. **During code review**, ask Claude to flag functions exceeding complexity thresholds and classes with too many responsibilities
+3. **After features complete**, use complexity analysis to guide refactoring; check for god objects, tight coupling, and deep nesting in parallel
+4. **Document patterns** using supermemory so your team maintains consistency across codebases
 
 ## Common Complexity Pitfalls
 
@@ -159,9 +217,11 @@ When you spot these, address them immediately. The cost of fixing complexity gro
 
 ## Conclusion
 
-Reducing code complexity is not about making everything simple—it's about making complexity intentional and manageable. Claude Code skills like tdd, supermemory, and frontend-design provide systematic approaches to writing cleaner code. By applying the techniques shown here and measuring your progress, you can build a codebase that stays maintainable as it grows.
+Reducing code complexity is not about making everything simple — it is about making complexity intentional and manageable across all its dimensions. Structural complexity, coupling, cognitive load, and control-flow branching each require distinct techniques, and addressing only one while ignoring the others still leaves a difficult codebase.
 
-Start small: pick one complex function this week and refactor it using these patterns. The compounding benefits will become obvious quickly.
+Claude Code skills like tdd, supermemory, and frontend-design provide systematic approaches to writing cleaner code. By applying the techniques shown here — extracting conditionals, replacing switch logic with polymorphism, splitting god objects, decoupling via injection, and building data pipelines — and measuring your progress, you can build a codebase that stays maintainable as it grows.
+
+Start small: pick one overgrown class or deeply nested function this week and apply one of these patterns. The compounding benefits will become obvious quickly.
 
 ## Related Reading
 
