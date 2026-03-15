@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Documentation Review Workflow Guide"
 description: "Learn how to leverage Claude Code to streamline and automate your documentation review processes with practical examples and actionable advice."
@@ -7,13 +8,16 @@ author: Claude Skills Guide
 permalink: /claude-code-for-documentation-review-workflow-guide/
 categories: [guides, guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 # Claude Code for Documentation Review Workflow Guide
 
 Documentation is the backbone of any successful software project. Yet, maintaining consistent quality, catching errors, and ensuring clarity across thousands of lines of technical writing remains a persistent challenge. Enter Claude Code—the command-line companion that transforms how developers approach documentation review workflows.
 
-This guide walks you through practical strategies for leveraging Claude Code to automate documentation reviews, enforce style consistency, and catch issues before they reach your users.
+This guide walks you through practical strategies for using Claude Code to automate documentation reviews, enforce style consistency, and catch issues before they reach your users.
 
 ## Why Claude Code for Documentation Review?
 

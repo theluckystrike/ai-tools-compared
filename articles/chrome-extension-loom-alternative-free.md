@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Loom Alternative Free: A Developer Guide"
 description: "Discover free Chrome extensions that replace Loom for screen recording. Compare features, self-hosted options, and developer-friendly alternatives."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-loom-alternative-free/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Screen recording has become essential for developer workflows—creating tutorials, bug reports, and code walkthroughs. Loom set the standard, but its free tier comes with limitations that frustrate power users. Several legitimate free alternatives exist, each with distinct trade-offs worth understanding.
@@ -33,7 +39,7 @@ One limitation: Screenity stores recordings locally by default. If you need clou
 
 ## OBS Studio: Professional-Grade Free Recording
 
-For developers willing to step outside the browser, OBS Studio provides unlimited recording with no strings attached. While not a Chrome extension, it integrates seamlessly with any browser-based workflow.
+For developers willing to step outside the browser, OBS Studio provides unlimited recording with no strings attached. While not a Chrome extension, it integrates smoothly with any browser-based workflow.
 
 ```bash
 # Quick setup for screen recording on macOS

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Using Claude Code for Architecture Decision Record Workflow"
 description: "Learn how to streamline your Architecture Decision Record (ADR) workflow with Claude Code. Practical examples, code snippets, and actionable advice for developers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-architecture-decision-record-workflow/
 categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Using Claude Code for Architecture Decision Record Workflow

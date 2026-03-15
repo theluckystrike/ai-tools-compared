@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for PR Status Check Workflow Tutorial"
 description: "Learn how to build automated PR status check workflows with Claude Code. This tutorial covers GitHub API integration, status monitoring, and automation strategies."
@@ -8,12 +9,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-pr-status-check-workflow-tutorial/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for PR Status Check Workflow Tutorial
 
-Pull request status checks are essential for maintaining code quality in any development workflow. Whether you're managing a small team or coordinating across an entire organization, automated PR status checks help ensure that only properly reviewed and tested code makes it into your main branch. This tutorial demonstrates how to build powerful PR status check workflows using Claude Code, leveraging GitHub's API and automation capabilities to streamline your development process.
+Pull request status checks are essential for maintaining code quality in any development workflow. Whether you're managing a small team or coordinating across an entire organization, automated PR status checks help ensure that only properly reviewed and tested code makes it into your main branch. This tutorial demonstrates how to build powerful PR status check workflows using Claude Code, using GitHub's API and automation capabilities to streamline your development process.
 
 ## Understanding PR Status Checks
 

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Multi-Language Navigation Workflow"
 description: "Master multi-language navigation workflows in Claude Code. Learn to create skills that seamlessly switch between programming languages, handle code context switching, and maintain clarity across multilingual projects."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-multi-language-navigation-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Multi-Language Navigation Workflow
 
@@ -171,7 +175,7 @@ Implicit context detection can fail in ambiguous situations. When your skill can
 
 Track the current language context in your skill's working memory. This allows the skill to maintain continuity across multiple operations without requiring the user to repeatedly specify the language.
 
-### Leverage Language Server Protocols
+### use Language Server Protocols
 
 Many modern editors use Language Server Protocol (LSP) for code intelligence. Your skills can interact with LSP-enabled tooling through Bash commands to get accurate navigation data:
 

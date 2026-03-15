@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Codemod Authoring Workflow Tutorial"
 description: "Learn how to use Claude Code to automate and streamline your codemod authoring workflow. This comprehensive tutorial covers setup, pattern detection, transformation generation, and testing."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-codemod-authoring-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Codemod Authoring Workflow Tutorial
@@ -134,7 +138,7 @@ Following these practices will improve your codemod quality and reduce iteration
 
 ## Conclusion
 
-Claude Code transforms codemod authoring from a manual, error-prone process into an AI-assisted workflow that increases accuracy and reduces development time. By leveraging Claude's pattern analysis, code generation, and iterative refinement capabilities, you can create reliable transformations for even the most complex codebase migrations.
+Claude Code transforms codemod authoring from a manual, error-prone process into an AI-assisted workflow that increases accuracy and reduces development time. By using Claude's pattern analysis, code generation, and iterative refinement capabilities, you can create reliable transformations for even the most complex codebase migrations.
 
 The key is treating Claude as a collaborative partner: provide clear specifications, review outputs carefully, and iterate toward perfect transformations. With practice, you'll find that Claude-assisted codemod authoring becomes an indispensable part of your development toolkit.
 {% endraw %}

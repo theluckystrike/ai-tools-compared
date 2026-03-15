@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "Virtual Background Chrome Extension: A Developer Guide"
 description: "Learn how virtual background Chrome extensions work, their technical implementation, and how to build or customize your own for professional video calls."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /virtual-background-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Virtual Background Chrome Extension: A Developer Guide
 
-Virtual background technology has become essential for professionals who want to maintain privacy or present a polished image during video calls. While many users rely on platform-native solutions like Zoom or Google Meet, Chrome extensions offer cross-platform compatibility and additional customization options that power users and developers can leverage.
+Virtual background technology has become essential for professionals who want to maintain privacy or present a polished image during video calls. While many users rely on platform-native solutions like Zoom or Google Meet, Chrome extensions offer cross-platform compatibility and additional customization options that power users and developers can use.
 
 This guide explores how virtual background Chrome extensions work under the hood, practical implementation approaches, and considerations for building or configuring your own solution.
 
@@ -71,7 +77,7 @@ const segmenter = new SelfieSegmentation({
 });
 
 segmenter.setOptions({
-  modelSelection: 1, // 0 for general, 1 for landscape
+  modelSelection: 1, // 0 for general, 1 for ecosystem
   smoothSegmentation: true
 });
 

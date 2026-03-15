@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Code Review Checklist Workflow Guide"
 description: "A comprehensive guide to using Claude Code CLI for implementing efficient code review checklist workflows that improve code quality and team collaboration."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-code-review-checklist-workflow-guide/
 categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Code Review Checklist Workflow Guide
 
-Code reviews are a critical part of maintaining software quality, but they can often become inconsistent, time-consuming, or miss critical issues. This guide explores how to leverage Claude Code CLI to create a structured, efficient code review checklist workflow that ensures thoroughness and consistency across your team.
+Code reviews are a critical part of maintaining software quality, but they can often become inconsistent, time-consuming, or miss critical issues. This guide explores how to use Claude Code CLI to create a structured, efficient code review checklist workflow that ensures thoroughness and consistency across your team.
 
 ## Understanding the Code Review Challenge
 
