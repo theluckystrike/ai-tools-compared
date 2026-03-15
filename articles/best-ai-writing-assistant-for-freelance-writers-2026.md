@@ -6,6 +6,10 @@ description: "A practical comparison of AI writing tools for freelance writers i
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-writing-assistant-for-freelance-writers-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
