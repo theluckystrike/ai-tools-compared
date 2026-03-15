@@ -18,6 +18,12 @@ score: 7
 
 Web workers enable you to run JavaScript in background threads, keeping your main thread responsive during computationally intensive operations. However, developing with web workers introduces unique challenges: message passing complexity, debugging difficulties, and state synchronization issues. This guide shows you how to use Claude Code to streamline web worker development, from initial setup to production optimization.
 
+Common use cases for web workers include:
+- **Data processing**: Parsing large JSON files, filtering arrays with millions of items
+- **Image processing**: Applying filters, resizing, or compressing images
+- **Mathematical computations**: Running simulations, cryptographic operations, or machine learning inference
+- **Background synchronization**: Syncing data with servers without impacting UI responsiveness
+
 ## Understanding Web Workers in the Claude Code Context
 
 Claude Code operates as a CLI tool that can read, write, and execute code based on your instructions. When applied to web workers development, it becomes an intelligent pair programmer that understands the intricacies of multi-threaded JavaScript, message channels, and browser APIs.
@@ -101,6 +107,55 @@ Claude Code will generate a worker with:
 - Progress reporting for long operations
 - Cleanup handlers
 
+### Phase 1b: Async Communication Pattern
+
+For cleaner main-thread code, use a `WorkerManager` class that wraps workers with async/await support:
+
+```javascript
+class WorkerManager {
+  constructor(workerPath) {
+    this.worker = new Worker(workerPath);
+    this.pendingRequests = new Map();
+    this.requestId = 0;
+
+    this.worker.onmessage = this.handleMessage.bind(this);
+    this.worker.onerror = this.handleError.bind(this);
+  }
+
+  handleMessage(event) {
+    const { requestId, result, error } = event.data;
+    const pending = this.pendingRequests.get(requestId);
+
+    if (pending) {
+      if (error) {
+        pending.reject(new Error(error));
+      } else {
+        pending.resolve(result);
+      }
+      this.pendingRequests.delete(requestId);
+    }
+  }
+
+  handleError(error) {
+    console.error('Worker error:', error);
+    this.pendingRequests.forEach(({ reject }) =>
+      reject(new Error('Worker crashed'))
+    );
+    this.pendingRequests.clear();
+  }
+
+  async postMessageAsync(data) {
+    return new Promise((resolve, reject) => {
+      const requestId = ++this.requestId;
+      this.pendingRequests.set(requestId, { resolve, reject });
+      this.worker.postMessage({ ...data, requestId });
+    });
+  }
+}
+```
+
+This pattern enables clean async/await communication with workers.
+
 ### Phase 2: Testing and Debugging
 
 Web worker debugging is notoriously difficult. Claude Code helps in several ways:
@@ -157,9 +212,39 @@ Claude Code can refactor your existing code to use transferables, explaining whe
 
 ## Advanced Patterns with Claude Code
 
-### Dedicated Worker Management
+### Dedicated Workers for Domain Separation
 
-For complex applications, consider a worker pool pattern. Ask Claude Code to generate a manager:
+For complex applications, consider dedicated workers that handle specific domains. This improves organization and makes debugging easier:
+
+```javascript
+const workers = {
+  dataProcessor: new Worker('workers/data-processor.js'),
+  imageProcessor: new Worker('workers/image-processor.js'),
+  syncWorker: new Worker('workers/sync-worker.js')
+};
+
+function routeTask(task) {
+  const { type } = task;
+
+  switch (type) {
+    case 'PROCESS_DATA':
+    case 'FILTER_DATA':
+    case 'SORT_DATA':
+      return workers.dataProcessor;
+    case 'PROCESS_IMAGE':
+    case 'RESIZE_IMAGE':
+      return workers.imageProcessor;
+    case 'SYNC_DATA':
+      return workers.syncWorker;
+    default:
+      throw new Error(`Unknown task type: ${type}`);
+  }
+}
+```
+
+### Worker Pool with Lifecycle Management
+
+For complex applications requiring multiple workers, consider a worker pool pattern. Ask Claude Code to generate a manager:
 
 ```javascript
 class WorkerPool {
@@ -208,6 +293,13 @@ class WorkerPool {
       }
     }
   }
+
+  // Clean up all workers when done
+  terminate() {
+    this.workers.forEach(({ worker }) => worker.terminate());
+    this.workers = [];
+    this.queue = [];
+  }
 }
 ```
 
@@ -255,7 +347,25 @@ if (window.Worker) {
 }
 ```
 
-4. **Debug with Console Proxies**: Workers don't have access to the main thread console. Create a proxy:
+4. **Use TypeScript for Type Safety**: Define message schemas to catch communication errors at compile time:
+
+```typescript
+interface WorkerMessage {
+  requestId: number;
+  type: 'PROCESS' | 'SYNC' | 'COMPUTE';
+  payload: unknown;
+}
+
+interface WorkerResponse {
+  requestId: number;
+  result?: unknown;
+  error?: string;
+}
+```
+
+5. **Use Browser DevTools**: Chrome and Firefox provide dedicated panels for inspecting Web Worker behavior, message passing, and performance. Test worker code in isolation before integrating, since workers run in a different global context.
+
+6. **Debug with Console Proxies**: Workers don't have access to the main thread console. Create a proxy:
 
 ```javascript
 // In worker
