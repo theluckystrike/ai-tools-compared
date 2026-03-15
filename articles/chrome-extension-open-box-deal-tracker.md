@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Open Box Deal Tracker: Build Your Own Price Monitoring Tool"
 description: "Learn how to build a chrome extension that tracks open box deals and price drops. Complete guide for developers and power users with practical code examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-open-box-deal-tracker/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Open box deals represent one of the best ways to save money on electronics, but manually checking multiple retailers for price drops quickly becomes tedious. A custom chrome extension deal tracker automates this process, notifying you the moment prices drop on items you're watching. This guide walks through building a functional open box deal tracker extension from scratch.

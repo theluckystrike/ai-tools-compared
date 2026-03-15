@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Selenium IDE Recorder: Automate Browser Testing"
 description: "Discover how Chrome extension Selenium IDE recorders work, their practical applications, and how to use them for efficient browser automation and testing."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-selenium-ide-recorder/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 {% raw %}
 Chrome extension Selenium IDE recorders bridge the gap between manual browser interactions and automated test scripts. These tools capture your actions in the browser and convert them into executable Selenium IDE commands, enabling rapid test creation without writing code from scratch.

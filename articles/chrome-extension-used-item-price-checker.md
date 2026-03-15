@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Used Item Price Checker: A Developer's Guide"
 description: "Learn how to build and use Chrome extensions for checking used item prices across multiple marketplaces. Practical implementation patterns, API integrations, and code examples for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-used-item-price-checker/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Used Item Price Checker: A Developer's Guide
 
