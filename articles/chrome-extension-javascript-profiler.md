@@ -2,7 +2,7 @@
 
 layout: default
 title: "Chrome Extension JavaScript Profiler: A Developer's Guide"
-description: "Learn how to profile JavaScript performance in Chrome extensions. Practical techniques for identifying bottlenecks, measuring execution time, and optimizing your extension's runtime behavior."
+description: "Learn how to profile JavaScript performance in Chrome extensions. Practical techniques for identifying bottlenecks, measuring execution time, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-javascript-profiler/
@@ -269,5 +269,12 @@ This approach prevents UI blocking and handles larger datasets without timeout i
 Profiling Chrome extension JavaScript requires understanding the unique contexts where your code runs. Use Chrome DevTools for comprehensive analysis, the Performance API for targeted measurements, and consider adding lightweight telemetry for production insights.
 
 Focus on the areas that most affect user experience: message passing latency, startup time, and background script responsiveness. Small optimizations compound into significant improvements for users running your extension daily.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
