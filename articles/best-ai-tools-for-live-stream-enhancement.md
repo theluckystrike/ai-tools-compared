@@ -5,6 +5,10 @@ description: "A practical guide to AI tools that improve live stream quality, au
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-live-stream-enhancement/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
