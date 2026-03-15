@@ -59,7 +59,15 @@ bw create item login \
   --uri "https://api.example.com"
 ```
 
-Bitwarden's free tier includes unlimited passwords on unlimited devices, which surpasses most competitors. The browser extension supports autofill and captures new credentials automatically.
+You can also unlock the vault and search items for use in scripts:
+
+```bash
+bw unlock --passwordenv BW_PASSWORD
+# Returns JSON with all vault items
+bw list items --search github
+```
+
+Bitwarden's free tier includes unlimited passwords on unlimited devices, which surpasses most competitors. The browser extension supports autofill and captures new credentials automatically. JSON export means you're never locked into the ecosystem.
 
 ### Security Model
 
@@ -140,16 +148,30 @@ pass -c Work/aws/production
 
 Pair with browser-pass extension for Chrome integration. The command-line-first design appeals to developers comfortable with terminal workflows.
 
+## NordPass: Clean Interface, Limited Free Tier
+
+NordPass offers a polished experience with a free tier that works well for basic needs. The browser extension integrates cleanly with Chrome, and the desktop app provides a dedicated window for managing credentials.
+
+The free tier allows you to store unlimited passwords on one device—a significant limitation if you work across multiple machines. The XCHP encryption (a proprietary variant of Argon2id) provides solid security, and the interface remains intuitive.
+
+For developers, NordPass lacks CLI tools. You can export your vault to CSV or JSON, but programmatic access requires premium features. The free tier works if you primarily need browser autofill and don't require automation.
+
+## Dashlane: Free Tier Restrictions
+
+Dashlane once offered a generous free tier, but recent changes have limited free users to 50 passwords on a single device. This constraint makes Dashlane impractical for developers who typically manage far more credentials across multiple projects and services.
+
+The premium features are solid—built-in VPN, dark web monitoring, and secure sharing—but the free tier's limitations rule Dashlane out for most developers.
+
 ## Comparing the Options
 
-| Feature | Bitwarden | KeePass XC | Pass | Chrome Built-in |
-|---------|-----------|------------|------|-----------------|
-| Free Tier | Unlimited | Unlimited | Unlimited | Free |
-| Open Source | Yes | Yes | Yes | No |
-| CLI Access | Yes | Yes | Yes | No |
-| Cloud Sync | Optional | No | Manual | Yes |
-| Browser Extension | Yes | Yes | Yes | Yes |
-| TOTP Support | Yes | Yes | Via plugin | Yes |
+| Feature | Bitwarden | KeePass XC | Pass | NordPass | Dashlane | Chrome Built-in |
+|---------|-----------|------------|------|----------|----------|-----------------|
+| Free Tier | Unlimited | Unlimited | Unlimited | 1 device | 50 passwords | Free |
+| Open Source | Yes | Yes | Yes | No | No | No |
+| CLI Access | Yes | Yes | Yes | No | No | No |
+| Cloud Sync | Optional | No | Manual | Yes | Yes | Yes |
+| Browser Extension | Yes | Yes | Yes | Yes | Yes | Yes |
+| TOTP Support | Yes | Yes | Via plugin | Premium | Premium | Yes |
 
 ## Recommendation for Developers
 
