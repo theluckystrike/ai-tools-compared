@@ -281,6 +281,156 @@ type Project {
 
 For generating human-readable documentation exports, the `pdf` skill can transform schema introspection results into formatted documentation.
 
+## Advanced Schema Patterns
+
+### Connection Types for Paginated Lists
+
+When exposing lists that might grow large, implement the Connection pattern with cursor-based pagination. This approach performs better than offset-based pagination for large datasets and provides consistent results.
+
+```graphql
+type TaskConnection {
+  edges: [TaskEdge!]!
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type TaskEdge {
+  cursor: String!
+  node: Task!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  tasks(
+    first: Int
+    after: String
+    last: Int
+    before: String
+    status: TaskStatus
+  ): TaskConnection!
+}
+```
+
+### Abstract Types with Interfaces and Unions
+
+Union and interface types let you return multiple object types from a single field. This is powerful for modeling polymorphic relationships such as a search endpoint that returns mixed results:
+
+```graphql
+interface Node {
+  id: ID!
+}
+
+interface SearchResult implements Node {
+  id: ID!
+  score: Float!
+}
+
+type User implements Node & SearchResult {
+  id: ID!
+  score: Float!
+  name: String!
+  email: String!
+}
+
+type Project implements Node & SearchResult {
+  id: ID!
+  score: Float!
+  title: String!
+  description: String
+}
+
+union SearchResultUnion = User | Project
+
+type Query {
+  search(query: String!, first: Int = 10): [SearchResultUnion!]!
+}
+```
+
+The `canvas-design` skill can help you visualize complex type hierarchies before implementation, which is especially useful when mapping out inheritance chains in large schemas.
+
+### Input Types for Complex Mutations
+
+Always use input types for mutation arguments rather than multiple scalar parameters. This keeps your schema clean and makes it easier to add parameters without breaking existing clients.
+
+```graphql
+input UpdateTaskInput {
+  title: String
+  status: TaskStatus
+  assigneeId: ID
+  dueDate: String
+}
+
+input AssignTaskInput {
+  taskId: ID!
+  userId: ID!
+  notes: String
+}
+
+type Mutation {
+  updateTask(id: ID!, input: UpdateTaskInput!): UpdateTaskPayload!
+  assignTask(input: AssignTaskInput!): Task!
+}
+```
+
+### Error Handling Patterns
+
+Implement proper error handling using the union type approach, which provides type-safe error responses:
+
+```graphql
+type TaskMutationResult {
+  success: Boolean!
+  task: Task
+  errors: [TaskError!]
+}
+
+type TaskError {
+  field: String!
+  message: String!
+}
+
+union TaskMutationOutcome = TaskMutationResult | UserError
+```
+
+This pattern ensures clients can handle both success and failure cases with full type safety, rather than relying on the top-level `errors` array in the GraphQL response envelope.
+
+### Optimizing Query Patterns with Directives
+
+Design your schema with common query patterns in mind. Use field resolvers strategically to avoid over-fetching while maintaining flexibility:
+
+```graphql
+type Project {
+  id: ID!
+  title: String!
+  # Expensive computation - only resolve when explicitly requested
+  analytics: ProjectAnalytics
+}
+
+type ProjectAnalytics {
+  viewsLast30Days: Int!
+  completionRate: Float!
+  overdueTasks: Int!
+}
+
+# Client can control when to fetch expensive data using @skip
+query GetProjects($skipAnalytics: Boolean!) {
+  projects: tasks(status: IN_PROGRESS) {
+    id
+    title
+    project @skip(if: $skipAnalytics) {
+      analytics {
+        completionRate
+      }
+    }
+  }
+}
+```
+
 ## Performance Considerations
 
 Optimize your schema for common access patterns. Use DataLoader to prevent N+1 queries:
