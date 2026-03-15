@@ -4,8 +4,11 @@ layout: default
 title: "How to Inspect CSS Styles in Chrome Extensions"
 description: "Master CSS style inspection for Chrome extension development. Learn techniques to debug, analyze, and modify styles within Chrome extensions using DevTools and content scripts."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-inspect-css-styles/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

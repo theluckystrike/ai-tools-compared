@@ -3,8 +3,11 @@ layout: default
 title: "Chrome Extension SEO Checker: Developer Guide"
 description: "Build a Chrome extension SEO checker from scratch. Practical code examples, manifest configuration, and implementation patterns for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-seo-checker/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}
