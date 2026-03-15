@@ -175,6 +175,71 @@ For the webapp-testing skill, configure your local development URL:
 
 These configurations make the skills feel like extensions of your team's existing tools rather than generic utilities.
 
+## Creating a Team Onboarding CLAUDE.md
+
+For team leads setting up the onboarding experience, a dedicated `CLAUDE.md` file transforms passive documentation into an interactive guide. Unlike architecture docs that explain what the code does, an onboarding `CLAUDE.md` explains how to work on the codebase effectively.
+
+A well-structured onboarding `CLAUDE.md` addresses three core areas: project setup, coding conventions, and team workflow:
+
+```markdown
+# Project Onboarding Guide
+
+## Quick Start
+1. Clone the repository
+2. Run `npm install` in /frontend and /backend
+3. Copy `.env.example` to `.env` and fill in values
+4. Run `docker-compose up -d` to start local services
+5. Execute `npm run dev` in both directories
+
+## Important Paths
+- `/backend/src/routes` - API endpoint definitions
+- `/frontend/src/components` - React component library
+- `/shared/types` - TypeScript definitions shared between services
+- `/migrations` - Database migration files
+
+## Coding Standards
+- Use functional components with hooks in React
+- Follow RESTful conventions for API routes
+- Always include JSDoc comments for public functions
+- Run `npm run lint` before committing
+
+## Team Processes
+- Create feature branches from `develop`, not `main`
+- All PRs require one approval
+- Use conventional commits: `feat:`, `fix:`, `docs:`
+- Deployments happen on merge to `main`
+
+## Using Skills During Onboarding
+
+When working on new features, use these commands:
+
+- `Load tdd skill` - Start with tests, then implementation
+- `Load frontend-design skill` - Get component suggestions matching our design system
+- `Load supermemory skill` - Build persistent context about our codebase
+```
+
+The key insight is treating `CLAUDE.md` as a specification layer rather than a static document. New developers can ask Claude Code to execute tasks described in the file, creating an interactive onboarding experience.
+
+For larger teams, create role-specific loading instructions within the file:
+
+```markdown
+## Role-Based Guides
+
+Load these additional guides based on your role:
+- For frontend work: load /docs/frontend-standards.md
+- For backend work: load /docs/backend-standards.md
+- For DevOps: load /docs/infrastructure-guide.md
+
+## Common First Tasks for New Developers
+1. Fix a "good first issue" labeled bug
+2. Add a unit test for an existing feature
+3. Update documentation for a component you modified
+```
+
+Version control your `CLAUDE.md` files alongside your code—this creates a historical record of how your team's practices evolved. When conventions change, update the file and communicate the change to existing team members.
+
+To measure onboarding effectiveness, track time-to-productivity metrics: can new hires make their first commit on day one? Complete a small feature by end of week one? If not, the `CLAUDE.md` likely needs improvement. The **docx** skill can generate onboarding progress reports, giving you structured feedback on which parts of onboarding create bottlenecks.
+
 ## Building Your Personal Skill Stack
 
 As you become more productive with Claude skills, you'll naturally discover which ones fit your role best. Backend engineers might rely more heavily on **pdf** for reading protobuf definitions and API contracts. Frontend developers will find the **frontend-design** skill indispensable for matching pixel-perfect implementations.

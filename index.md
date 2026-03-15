@@ -1366,7 +1366,7 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude MD for Enforcing Architecture Patterns](/claude-skills-guide/claude-md-for-enforcing-architecture-patterns/)
 - [Claude MD for Fullstack Projects Complete Guide](/claude-skills-guide/claude-md-for-fullstack-projects-complete-guide/)
 - [Claude md for Internationalization i18n Setup](/claude-skills-guide/claude-md-for-internationalization-i18n-setup/)
-- [Claude MD for Onboarding New Team Members: A Practical Guide](/claude-skills-guide/claude-md-for-onboarding-new-team-members/)
+- [Claude Skills Onboarding for New Engineering Team Members](/claude-skills-guide/claude-skills-onboarding-new-engineering-team-members/)
 - [Claude MD for Open Source Projects Guide](/claude-skills-guide/claude-md-for-open-source-projects-guide/)
 - [Using Claude Code for Polyglot Multi-Language Projects](/claude-skills-guide/claude-md-for-polyglot-multi-language-projects/)
 - [Claude MD Metrics Effectiveness: Measuring Guide](/claude-skills-guide/claude-md-metrics-effectiveness-measuring-guide/)
