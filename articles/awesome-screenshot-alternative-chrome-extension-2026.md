@@ -1,12 +1,16 @@
 ---
 
+
 layout: default
 title: "Best Awesome Screenshot Alternative Chrome Extension for 2026"
 description: "Discover powerful Chrome screenshot alternatives for developers and power users. Compare features, OCR capabilities, API integrations, and workflow automation."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /awesome-screenshot-alternative-chrome-extension-2026/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
