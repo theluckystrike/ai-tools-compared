@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Import Duty Calculator: A Developer's Guide"
 description: "Learn how to build or use a Chrome extension for calculating import duties, taxes, and customs fees. Practical code examples and implementation patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-import-duty-calculator/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Import Duty Calculator: A Developer's Guide
 
