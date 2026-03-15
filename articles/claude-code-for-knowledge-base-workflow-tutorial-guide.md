@@ -80,7 +80,7 @@ layout: default
 title: "${TITLE}"
 description: "Add your description here"
 date: ${DATE}
-categories: [${CATEGORY}]
+categories: [guides]
 tags: [${TAGS}]
 author: "Your Name"
 permalink: /${SLUG}/
