@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Translate Slow: Fix Performance Issues for Power Users"
 description: "Experiencing Chrome translate slow performance? This guide covers diagnostic steps, extension conflicts, and workarounds to speed up Google Translate in Chrome."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-translate-slow/
+reviewed: true
+score: 8
+categories: [troubleshooting]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Translate Slow: Fix Performance Issues for Power Users
 
@@ -112,7 +118,7 @@ When built-in translation remains sluggish, alternative tools provide faster exp
 
 Third-party translation extensions often outperform Chrome's native implementation. Many use optimized APIs, caching strategies, and efficient DOM manipulation:
 
-- **DeepL Chrome extension** leverages DeepL's generally faster translation quality
+- **DeepL Chrome extension** uses DeepL's generally faster translation quality
 - **Mate Translate** offers offline capabilities and custom glossary support
 - **ImTranslator** provides multiple translation engines in one interface
 
