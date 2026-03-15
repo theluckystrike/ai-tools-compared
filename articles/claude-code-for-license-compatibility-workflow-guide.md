@@ -1,331 +1,227 @@
 ---
-
 layout: default
 title: "Claude Code for License Compatibility Workflow Guide"
-description: "A comprehensive guide to managing open source license compatibility using Claude Code workflows for developers."
+description: "A practical guide to using Claude Code for managing software license compatibility in your projects. Learn how to automate license checks, resolve conflicts, and maintain compliance."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-license-compatibility-workflow-guide/
-categories: [guides]
+categories: [workflows, development-tools]
 tags: [claude-code, claude-skills]
-reviewed: true
-score: 8
 ---
 
+# Claude Code for License Compatibility Workflow Guide
 
-## Understanding License Compatibility in Modern Development
+Software license compatibility is one of the most overlooked yet critical aspects of modern software development. When you're building applications that depend on open source libraries, understanding which licenses can coexist in your project isn't just good practice—it's often a legal requirement. This guide shows you how to leverage Claude Code to streamline your license compatibility workflow, saving hours of manual research while ensuring your project remains compliant.
 
-Open source software powers virtually every modern application, but navigating license compatibility remains one of the most challenging aspects of software development. With over 200 different open source licenses ranging from permissive (MIT, Apache 2.0) to copyleft (GPL, AGPL), ensuring your project remains legally compliant while incorporating third-party dependencies requires careful planning and systematic workflows.
+## Understanding License Compatibility Challenges
 
-Claude Code offers powerful capabilities to automate and streamline license compatibility checking, making it significantly easier to maintain compliance without sacrificing development velocity. This guide walks you through building a practical license compatibility workflow using Claude Code skills and best practices.
+Before diving into the workflow, it's essential to understand what makes license compatibility complex. Software licenses range from permissive (MIT, Apache 2.0, BSD) to copyleft (GPL, AGPL, LGPL), and mixing incompatible licenses can create legal liabilities or force you to open-source your proprietary code.
 
-## Why License Compatibility Matters
+The challenge intensifies because:
 
-Before diving into the technical implementation, it's essential to understand what makes license compatibility complex:
+- A single project might depend on dozens of libraries, each with different licenses
+- Transitive dependencies introduce licenses you didn't explicitly choose
+- License terms evolve, and new versions may change compatibility
 
-- **License Propagation**: Copyleft licenses like GPL require that derivative works also be open source
-- **License Conflicts**: Some licenses are incompatible with each other (e.g., GPLv2 and GPLv3)
-- **Dependency Chains**: Your dependencies have their own dependencies, creating a complex license graph
-- **Module Boundaries**: Determining where your code ends and third-party code begins isn't always clear
+This is where Claude Code becomes invaluable—it can analyze your dependency tree, identify license conflicts, and suggest resolutions much faster than manual investigation.
 
-Failing to properly manage license compatibility can result in legal liability, forced code release, or loss of intellectual property rights. A proactive workflow prevents these issues before they arise.
+## Setting Up License Analysis in Claude Code
 
-## Setting Up Your License Compatibility Skill
-
-The foundation of an effective license compatibility workflow is a well-structured Claude Code skill. Here's how to create one:
-
-### Skill Structure
-
-Create a skill file (e.g., `skills/license-compatibility-skill.md`) with the following components:
-
-```markdown
-# License Compatibility Checker
-
-## Capabilities
-- Scan project dependencies for license information
-- Identify license conflicts and incompatibilities
-- Generate compliance reports
-- Flag high-risk dependencies
-
-## How to Use
-Run `check-licenses` to scan your project's dependencies.
-```
-
-### Core Implementation
-
-Create the supporting Python script (`scripts/license_checker.py`):
-
-```python
-#!/usr/bin/env python3
-"""License compatibility checker for Claude Code integration."""
-
-import json
-import subprocess
-import sys
-from pathlib import Path
-from typing import Dict, List, Set
-
-# License compatibility matrix
-INCOMPATIBLE_PAIRS = {
-    ("GPL-2.0", "GPL-3.0"): "GPLv2 and GPLv3 are incompatible",
-    ("GPL-2.0", "AGPL-3.0"): "GPLv2 and AGPLv3 are incompatible",
-    ("BSD-3-Clause", "GPL-2.0"): "BSD-3-Clause can be included in GPLv2 projects but not vice versa",
-}
-
-PERMISSIVE_LICENSES = {"MIT", "BSD-2-Clause", "BSD-3-Clause", "Apache-2.0", "ISC"}
-COPYLEFT_LICENSES = {"GPL-2.0", "GPL-3.0", "AGPL-3.0", "LGPL-2.1", "LGPL-3.0"}
-
-def get_package_licenses() -> Dict[str, str]:
-    """Extract license information from project dependencies."""
-    # Use pip or npm depending on project type
-    try:
-        result = subprocess.run(
-            ["pip", "list", "--format=json"],
-            capture_output=True,
-            text=True,
-            check=True
-        )
-        packages = json.loads(result.stdout)
-        
-        license_map = {}
-        for pkg in packages:
-            # Try to get license from package metadata
-            try:
-                meta = subprocess.run(
-                    ["pip", "show", pkg["name"]],
-                    capture_output=True,
-                    text=True,
-                    check=True
-                )
-                for line in meta.stdout.split("\n"):
-                    if line.startswith("License:"):
-                        license_map[pkg["name"]] = line.split(":", 1)[1].strip()
-                        break
-            except subprocess.CalledProcessError:
-                license_map[pkg["name"]] = "Unknown"
-        
-        return license_map
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return {}
-
-def check_compatibility(license_map: Dict[str, str]) -> List[Dict]:
-    """Check for license compatibility issues."""
-    issues = []
-    licenses = set(license_map.values())
-    
-    # Check for incompatible pairs
-    for (lic1, lic2), reason in INCOMPATIBLE_PAIRS.items():
-        if lic1 in licenses and lic2 in licenses:
-            issues.append({
-                "severity": "high",
-                "type": "incompatible_licenses",
-                "licenses": [lic1, lic2],
-                "message": reason
-            })
-    
-    # Check for copyleft license accumulation
-    copyleft_count = sum(1 for lic in licenses if lic in COPYLEFT_LICENSES)
-    if copyleft_count > 1:
-        issues.append({
-            "severity": "medium",
-            "type": "multiple_copyleft",
-            "count": copyleft_count,
-            "message": f"Multiple copyleft licenses ({copyleft_count}) may complicate distribution"
-        })
-    
-    return issues
-
-def generate_report(license_map: Dict[str, str], issues: List[Dict]) -> str:
-    """Generate a formatted compliance report."""
-    report = ["# License Compatibility Report", ""]
-    
-    report.append("## Summary")
-    report.append(f"- Total dependencies: {len(license_map)}")
-    report.append(f"- Issues found: {len(issues)}")
-    report.append("")
-    
-    if issues:
-        report.append("## Issues")
-        for issue in issues:
-            report.append(f"### [{issue['severity'].upper()}] {issue['type']}")
-            report.append(issue['message'])
-            report.append("")
-    
-    report.append("## Dependencies by License")
-    by_license: Dict[str, List[str]] = {}
-    for pkg, lic in license_map.items():
-        by_license.setdefault(lic, []).append(pkg)
-    
-    for lic, pkgs in sorted(by_license.items()):
-        report.append(f"### {lic}")
-        for pkg in sorted(pkgs):
-            report.append(f"- {pkg}")
-        report.append("")
-    
-    return "\n".join(report)
-
-def main():
-    """Main entry point for license checking."""
-    print("Scanning dependencies...")
-    license_map = get_package_licenses()
-    
-    print("Checking compatibility...")
-    issues = check_compatibility(license_map)
-    
-    report = generate_report(license_map, issues)
-    print(report)
-    
-    if issues:
-        sys.exit(1)
-    sys.exit(0)
-
-if __name__ == "__main__":
-    main()
-```
-
-## Automating License Checks in Your Workflow
-
-Once you have your license compatibility skill set up, integrate it smoothly into your development workflow.
-
-### Pre-Commit Integration
-
-Add license checks to your pre-commit workflow to catch issues before code reaches version control:
-
-```yaml
-# .pre-commit--config.yaml
-repos:
-  - repo: local
-    hooks:
-      - id: license-check
-        name: License Compatibility Check
-        entry: python scripts/license_checker.py
-        language: system
-        pass_filenames: false
-        stages: [pre-commit]
-```
-
-### CI/CD Pipeline Integration
-
-Include license scanning in your continuous integration pipeline:
-
-```yaml
-# .github/workflows/license-check.yml
-name: License Compatibility Check
-
-on: [push, pull_request]
-
-jobs:
-  license-check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Run license check
-        run: |
-          pip install -r requirements.txt
-          python scripts/license_checker.py
-```
-
-## Handling Common License Scenarios
-
-### Scenario 1: Dual-Licensed Dependencies
-
-Some projects ship with multiple license options. When a dependency offers multiple licenses, always choose the one most compatible with your project:
-
-```python
-# If a dependency is available under both MIT and GPL-3.0
-# and your project is MIT-licensed, request MIT license only
-def resolve_dual_license(package_name: str, preferred_license: str) -> str:
-    """Resolve dual-license packages to preferred license."""
-    # Add your resolution logic here
-    return preferred_license
-```
-
-### Scenario 2: Transitive Dependencies
-
-License obligations can flow through transitive dependencies. Use tools like `pip-licenses` or `license-checker` to map the entire dependency tree:
+The first step is configuring Claude Code to understand your project's dependencies. Create a skill that specializes in license analysis for your specific ecosystem.
 
 ```bash
-# Get complete dependency tree with licenses
-pip-licenses --format=json --order=license | jq '.'
+# Create the license analysis skill directory
+mkdir -p ~/.claude/skills/license-analyzer
 ```
 
-### Scenario 3: License Exceptions
-
-Some licenses have exceptions (e.g., GPL with Classpath exception). Document these carefully:
-
-```python
-LICENSE_EXCEPTIONS = {
-    "GPL-3.0": ["Classpath exception 2.0", "LGPL-2.1+"],
-}
-
-def check_license_exception(package_license: str) -> bool:
-    """Check if license has compatible exception."""
-    return package_license in LICENSE_EXCEPTIONS.get(package_license, [])
-```
-
-## Best Practices for Ongoing Compliance
-
-### Regular Audits
-
-Schedule periodic license audits rather than relying solely on pre-commit checks:
-
-```bash
-# Weekly license audit
-0 0 * * 0 cd /path/to/project && python scripts/license_checker.py >> license-audit.log
-```
-
-### Maintain a License Inventory
-
-Keep a central registry of all licenses in your project:
+Create a skill definition file:
 
 ```json
 {
-  "project": "my-app",
-  "version": "1.0.0",
-  "license": "MIT",
-  "dependencies": [
+  "name": "license-analyzer",
+  "description": "Analyzes project dependencies for license compatibility",
+  "commands": [
     {
-      "name": "express",
-      "license": "MIT",
-      "version": "4.18.2"
+      "name": "analyze-licenses",
+      "description": "Scan project dependencies and identify license conflicts"
     },
     {
-      "name": "lodash",
-      "license": "MIT",
-      "version": "4.17.21"
+      "name": "check-compatibility",
+      "description": "Check if specific licenses are compatible with your project license"
     }
   ]
 }
 ```
 
-### Document Exceptions
+This setup gives Claude Code the context it needs to help with license-related queries throughout your development workflow.
 
-When you must use a license that conflicts with your project's main license, document the rationale:
+## The License Compatibility Analysis Workflow
 
-```markdown
-## License Exceptions
+Here's a practical workflow you can follow using Claude Code to maintain license compatibility:
 
-### Package: some-gpl-library
-- Version: 2.1.0
-- License: GPL-3.0
-- Rationale: Used only in CLI tool distributed separately
-- Review date: 2026-06-15
+### Step 1: Export Your Dependency Tree
+
+Start by generating a complete list of your project's dependencies with their licenses:
+
+```bash
+# For Node.js projects
+npm list --all --include=prod > dependencies.txt
+
+# For Python projects
+pip freeze -l > requirements.txt
+pip-licenses --format=csv > licenses.csv
 ```
+
+### Step 2: Ask Claude Code to Analyze
+
+Once you have your dependency information, engage Claude Code:
+
+```
+Please analyze these dependencies for license compatibility issues. 
+Identify any copyleft licenses (GPL, AGPL, LGPL) and check if they're 
+compatible with an MIT project license. List any potential conflicts 
+and suggest alternative packages where available.
+```
+
+Claude Code can process your dependency list and provide insights based on its training about various license terms and their compatibility.
+
+### Step 3: Review and Document Findings
+
+The analysis should produce a clear report. Here's what a typical compatibility report looks like:
+
+```
+Dependency Analysis Results:
+- express (MIT) ✓ Compatible
+- react (MIT) ✓ Compatible
+- lodash (MIT) ✓ Compatible
+- webpack (MIT) ✓ Compatible
+- fsevents (MIT) ✓ Compatible
+
+All dependencies are MIT-licensed or similarly permissive.
+No license conflicts detected.
+```
+
+## Resolving License Conflicts
+
+When Claude Code identifies a conflict, it can suggest practical solutions. Here are common resolution strategies:
+
+### Strategy 1: Find Alternative Packages
+
+If a dependency uses a problematic license, ask Claude Code for alternatives:
+
+```
+Find MIT-licensed alternatives to the 'package-x' library that provides 
+similar functionality. Consider packages with active maintenance and 
+good community support.
+```
+
+### Strategy 2: License Compatibility Matrix
+
+Claude Code can help you understand complex compatibility rules. For example:
+
+```
+Explain the compatibility between LGPL 2.1 and MIT licenses. Under what 
+conditions can I use an LGPL-licensed library in an MIT-licensed project?
+```
+
+This helps you make informed decisions about whether specific license combinations are acceptable for your use case.
+
+### Strategy 3: Modular Architecture
+
+For unavoidable conflicts, consider structuring your project to isolate incompatible components:
+
+```
+Suggest a modular architecture approach to separate GPL-licensed code 
+from my main application, allowing me to keep the core project MIT-licensed 
+while still using the necessary functionality.
+```
+
+## Automating Ongoing License Monitoring
+
+Beyond initial analysis, you can set up ongoing monitoring to catch new license issues as dependencies update:
+
+### Using Package Manager Features
+
+Modern package managers include license checking:
+
+```bash
+# npm audit licenses
+npm audit licenses --production
+
+# pip-licenses with audit
+pip-licenses --audit
+```
+
+### Creating a Claude Code Skill for Regular Checks
+
+Build a reusable skill for periodic license reviews:
+
+```javascript
+// license-monitor.js - Run as part of CI/CD
+const { execSync } = require('child_process');
+
+function checkLicenses() {
+  console.log('Running license compatibility check...');
+  
+  const deps = execSync('npm list --all --parseable').toString();
+  
+  // Send to Claude Code for analysis
+  return analyzeWithClaude(deps);
+}
+
+function analyzeWithClaude(dependencies) {
+  // Integration with Claude Code API
+  // This would send dependencies for analysis
+}
+```
+
+Run this check weekly or before releases to catch new dependencies that might introduce license conflicts.
+
+## Practical Example: Full Workflow Walkthrough
+
+Let's walk through a complete example of using Claude Code for license compatibility:
+
+**Scenario**: You're starting a new Node.js project and want to ensure all dependencies are compatible with your chosen MIT license.
+
+**Step 1**: Initialize your project and install dependencies:
+
+```bash
+mkdir my-project
+cd my-project
+npm init -y
+npm install express lodash axios moment
+```
+
+**Step 2**: Generate dependency list:
+
+```bash
+npm list --all > full-deps.txt
+```
+
+**Step 3**: Ask Claude Code:
+
+```
+Review my project dependencies from the attached list. Check each 
+package's license and verify compatibility with MIT. Flag any concerns 
+and suggest safer alternatives where needed.
+```
+
+**Step 4**: Claude Code responds with analysis and recommendations you can act on immediately.
+
+This workflow takes minutes instead of hours of manual research.
+
+## Best Practices for License Compatibility
+
+To maintain good license hygiene in your projects:
+
+1. **Choose a primary license early** - MIT, Apache 2.0, or BSD are safe choices for permissive projects
+2. **Audit regularly** - Dependencies change; your compliance status can change with it
+3. **Document your license decisions** - Keep a LICENSE_COMPLIANCE.md file explaining your choices
+4. **Use license scanners** - Combine automated tools with Claude Code analysis for comprehensive coverage
+5. **Stay informed** - License interpretations evolve; periodic reviews catch new considerations
 
 ## Conclusion
 
-Building a robust license compatibility workflow with Claude Code transforms what was once a tedious manual process into an automated, reliable system. By implementing the skills, scripts, and practices outlined in this guide, you can ensure your projects maintain proper license compliance while focusing on what matters most: writing great software.
+License compatibility doesn't have to be a painful part of software development. By integrating Claude Code into your workflow, you can automate much of the analysis, get expert guidance on complex license interactions, and maintain confidence that your project remains compliant. The key is establishing good habits early—regular checks, clear documentation, and leveraging AI assistance for the heavy lifting of research.
 
-Remember that license compliance is an ongoing responsibility. Regularly update your license compatibility skills, stay informed about license changes in your dependencies, and maintain clear documentation of your licensing decisions.
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Start implementing this workflow in your next project, and you'll find that license management becomes a straightforward part of your development process rather than an afterthought that causes headaches during audits or releases.
