@@ -4,8 +4,11 @@ layout: default
 title: "Chrome Extension Video Downloader: A Developer Guide"
 description: "Learn how chrome extension video downloaders work, their technical implementation, and how developers can build custom solutions for downloading web videos."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-video-downloader/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}
