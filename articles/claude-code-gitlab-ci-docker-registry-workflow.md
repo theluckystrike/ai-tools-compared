@@ -15,13 +15,13 @@ tags: [claude-code, claude-skills]
 
 # Claude Code GitLab CI Docker Registry Workflow
 
-Automating your development pipeline with Claude Code, GitLab CI, and Docker Registry creates a powerful workflow that handles everything from code generation to containerized deployments. This guide walks you through building a complete pipeline that uses Claude Code's AI capabilities within your CI/CD environment.
+This guide covers running Claude Code as an active participant inside your GitLab CI pipeline — not just a local tool, but a live AI stage that analyzes code, flags security issues, and generates improvements on every merge request. If you want a step-by-step tutorial covering pipeline setup from scratch, see the [Claude Code GitLab CI Pipeline Docker Registry Tutorial](/claude-code-gitlab-ci-pipeline-docker-registry-tutorial/) instead.
 
-## Why Combine Claude Code with GitLab CI
+## Why Run Claude Code Inside GitLab CI
 
-GitLab CI provides robust CI/CD capabilities with built-in Docker Registry support, making it an excellent choice for teams wanting containerized deployments. When you add Claude Code to the mix, you gain AI-assisted code generation, automated documentation, and intelligent test creation directly within your pipeline.
+GitLab CI provides robust CI/CD capabilities with built-in Docker Registry support, making it an excellent choice for teams wanting containerized deployments. Adding Claude Code as a pipeline stage gives you AI-assisted code analysis, automated security review, and intelligent suggestions directly within every CI run — before code ever reaches production.
 
-The integration works particularly well for teams using the claude-tdd skill for test-driven development or the claude-code-github-actions-skill for workflow automation. Claude Code can analyze your codebase, suggest improvements, and even generate new functionality during CI runs.
+This workflow is aimed at teams who already have a working pipeline and want to layer in AI-driven automation. Claude Code can analyze your codebase, flag vulnerabilities, and even generate new functionality during CI runs. The integration works particularly well for teams using the claude-tdd skill for test-driven development or the claude-code-github-actions-skill for workflow automation.
 
 ## Setting Up Your GitLab Project
 
