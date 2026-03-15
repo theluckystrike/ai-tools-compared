@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Facebook Page Manager: A Developer's Guide"
 description: "Learn how to build and use Chrome extensions for managing Facebook pages efficiently. Practical code examples, API integration patterns, and implementation strategies for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-facebook-page-manager/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome-extension, claude-skills]
 ---
+
 
 # Chrome Extension Facebook Page Manager: A Developer's Guide
 
