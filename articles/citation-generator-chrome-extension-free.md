@@ -2,7 +2,7 @@
 
 layout: default
 title: "Citation Generator Chrome Extension Free: Build Your Own"
-description: "Create a free citation generator Chrome extension for automatic bibliography creation. Complete developer guide with code examples and practical implementation."
+description: "Create a free citation generator Chrome extension for automatic bibliography creation. Complete developer guide with code examples and practical."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /citation-generator-chrome-extension-free/
@@ -245,5 +245,12 @@ Once the core citation generator works, consider adding features like batch cita
 The local storage approach means you can implement history search, duplicate detection, and format conversion without any server-side infrastructure.
 
 Building your own citation generator provides a free, private, and customizable alternative to commercial tools. Every feature serves your specific workflow whether you work in academic research, technical documentation, or content creation.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

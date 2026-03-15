@@ -196,4 +196,11 @@ Start with a minimal viable product that extracts text and displays words at a c
 
 The best speed reader tool is one you actually use consistently. Start with basic functionality and expand only when you identify specific pain points in your workflow.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

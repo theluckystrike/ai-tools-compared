@@ -214,5 +214,12 @@ For public distribution, create a developer account through the Chrome Web Store
 
 Building a Chrome extension flashcard maker provides developers with a personalized learning tool integrated directly into their workflow. The extension architecture enables capturing content from any webpage, storing cards using Chrome's sync API, and implementing spaced repetition for effective memorization. Start with the core components outlined here, then customize based on your specific learning needs.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension PubMed Search Helper: Build Your Own Research Tool"
-description: "Learn how to build a Chrome extension that enhances PubMed search with custom filters, quick access to saved searches, and automated citation formatting for researchers and developers."
+title: "Chrome Extension PubMed Search Helper: Build Your Own."
+description: "Learn how to build a Chrome extension that enhances PubMed search with custom filters, quick access to saved searches, and automated citation."
 date: 2026-03-15
 author: "Claude Skills Guide"
 categories: [guides, guides]
@@ -228,4 +228,11 @@ The PubMed E-utilities API supports additional endpoints for fetching full recor
 
 ---
 
-*Built by theluckystrike — More at [zovo.one](https://zovo.one)*
+*
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)*
