@@ -1,254 +1,299 @@
 ---
 layout: default
 title: "Claude Code for Incident Management Workflow Tutorial"
-description: "Learn how to build an intelligent incident management system using Claude Code CLI. This tutorial covers workflow automation, alerting, and automated response scripts."
+description: "Learn how to build Claude skills for incident management workflows. Create automated response systems, on-call escalation handlers, and post-incident review automations."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-management-workflow-tutorial/
-categories: [guides]
+categories: [guides, tutorials]
 tags: [claude-code, claude-skills]
-reviewed: true
-score: 8
 ---
 
 {% raw %}
 # Claude Code for Incident Management Workflow Tutorial
 
-Incident management is a critical aspect of DevOps and SRE practices. When production issues arise, every second counts. In this comprehensive tutorial, you'll learn how to use Claude Code CLI to build an intelligent incident management workflow that automates detection, escalation, and resolution processes.
+Incident management is one of the most valuable areas to automate with Claude Code skills. Whether you're handling service outages, security breaches, or production issues, well-designed Claude skills can reduce response times, ensure consistent processes, and free your team from repetitive triage work. This tutorial walks you through building a complete incident management workflow using Claude skills.
 
-## What is Claude Code?
+## Understanding Incident Management in Claude Code
 
-Claude Code is Anthropic's command-line interface for interacting with Claude AI models. Beyond simple conversations, it provides a powerful tool-calling system that can execute shell commands, read files, and most importantly—run autonomous agents that can handle complex workflows.
+Before diving into code, let's establish what an incident management workflow needs to accomplish. Traditional incident response follows a structured lifecycle: detection, triage, mitigation, resolution, and post-incident review. Each stage generates specific artifacts—status updates, escalation notifications, runbook links, and RCA documents.
 
-For incident management, Claude Code becomes your first-responder AI that can:
-- Monitor systems for anomalies
-- Execute diagnostic commands automatically
-- Generate incident reports
-- Coordinate with team members
-- Trigger remediation scripts
+Claude skills excel at this because they can:
+- Parse incoming alerts and categorize them by severity
+- Execute diagnostic commands to gather context
+- Generate and send notifications to appropriate channels
+- Create and update incident documentation in real-time
+- Guide responders through runbooks step-by-step
 
-## Setting Up Your Incident Management Project
+The key is designing skills that handle one responsibility well, then composing them together for complex workflows.
 
-First, create a dedicated directory for your incident management scripts:
+## Building Your First Incident Triage Skill
 
-```bash
-mkdir incident-management && cd incident-management
-mkdir -p scripts/monitoring scripts/escalation scripts/reporting
-```
+Every incident workflow starts with triage—quickly understanding what happened and how serious it is. Let's create a skill that accepts an alert and produces a structured incident assessment.
 
-Create a main configuration file `config.json`:
-
-```json
-{
-  "incident_channels": ["#incidents", "#oncall"],
-  "escalation_levels": [
-    {"level": 1, "timeout": 5, "contact": "oncall-engineer"},
-    {"level": 2, "timeout": 15, "contact": "team-lead"},
-    {"level": 3, "timeout": 30, "contact": "director"}
-  ],
-  "monitoring_targets": [
-    {"name": "api-gateway", "health_check": "curl -s https://api.example.com/health"},
-    {"name": "database", "health_check": "pg_isready -h db.example.com"},
-    {"name": "cache", "health_check": "redis-cli -h redis.example.com ping"}
-  ]
-}
-```
-
-## Building the Monitoring Agent
-
-Create a monitoring script that uses Claude Code to check system health:
-
-```bash
-#!/bin/bash
-# scripts/monitoring/health-check.sh
-
-CONFIG_FILE="config.json"
-
-check_service() {
-    local service_name=$1
-    local health_check=$2
-    
-    echo "Checking $service_name..."
-    result=$(eval $health_check 2>&1)
-    
-    if [ $? -eq 0 ]; then
-        echo "✓ $service_name: HEALTHY"
-        return 0
-    else
-        echo "✗ $service_name: UNHEALTHY - $result"
-        return 1
-    fi
-}
-
-# Parse config and check all services
-jq -r '.monitoring_targets[] | "\(.name)|\(.health_check)"' $CONFIG_FILE | while IFS='|' read -r name cmd; do
-    check_service "$name" "$cmd" || echo "ALERT: $name is down"
-done
-```
-
-## Creating the Incident Response Workflow
-
-The core of your incident management system is the workflow that handles alerts. Create `respond-to-incident.sh`:
-
-```bash
-#!/bin/bash
-# scripts/escalation/respond-to-incident.sh
-
-INCIDENT_ID=$1
-SEVERITY=${2:-"medium"}
-SLACK_WEBHOOK=${SLACK_WEBHOOK_URL:-""}
-
-log_incident() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] INCIDENT-$INCIDENT_ID: $1" | tee -a incidents.log
-}
-
-notify_slack() {
-    if [ -n "$SLACK_WEBHOOK" ]; then
-        curl -s -X POST -H 'Content-type: application/json' \
-            --data "{\"text\":\"🚨 *$1*\\nSeverity: $SEVERITY\\nIncident ID: $INCIDENT_ID\"}" \
-            $SLACK_WEBHOOK
-    fi
-}
-
-# Main incident response workflow
-main() {
-    log_incident "Incident reported - Starting response workflow"
-    notify_slack "New incident detected: INCIDENT-$INCIDENT_ID"
-    
-    # Run initial diagnostics
-    echo "Running initial diagnostics..."
-    ./scripts/monitoring/health-check.sh >> incidents.log
-    
-    # Analyze with Claude
-    claude --print "Analyze the following incident log and suggest next steps:" < incidents.log
-    
-    log_incident "Initial response complete - Monitoring for resolution"
-}
-
-main "$@"
-```
-
-## Automating Root Cause Analysis
-
-One of Claude Code's most powerful features is its ability to analyze logs and provide insights. Create an automated RCA (Root Cause Analysis) script:
-
-```bash
-#!/bin/bash
-# scripts/reporting/generate-rca.sh
-
-INCIDENT_ID=$1
-LOG_FILE=${2:-"incidents.log"}
-
-generate_report() {
-    echo "=== Root Cause Analysis Report ==="
-    echo "Incident: $INCIDENT_ID"
-    echo "Generated: $(date)"
-    echo ""
-    
-    # Extract relevant logs
-    grep "INCIDENT-$INCIDENT_ID" $LOG_FILE
-    echo ""
-    
-    # Use Claude to analyze
-    echo "--- AI Analysis ---"
-    claude --print "Provide a root cause analysis based on these incident logs. Include: 1) Likely cause 2) Impact assessment 3) Recommended preventive measures" < $LOG_FILE
-}
-
-generate_report
-```
-
-## Building a Continuous Monitoring Loop
-
-For ongoing monitoring, create a daemon script that runs continuously:
-
-```bash
-#!/bin/bash
-# scripts/monitoring/monitor-loop.sh
-
-CHECK_INTERVAL=${CHECK_INTERVAL:-60}  # seconds
-
-while true; do
-    echo "--- Health Check Cycle: $(date) ---"
-    
-    # Run health checks
-    ./scripts/monitoring/health-check.sh
-    
-    if [ $? -ne 0 ]; then
-        # Health check failed - trigger incident response
-        INCIDENT_ID=$(date +%Y%m%d%H%M%S)
-        ./scripts/escalation/respond-to-incident.sh "$INCIDENT_ID" "high"
-    fi
-    
-    sleep $CHECK_INTERVAL
-done
-```
-
-## Best Practices for Incident Management with Claude Code
-
-### 1. Separate Concerns
-Keep your monitoring, alerting, and remediation scripts in separate directories. This makes maintenance easier and reduces the risk of accidental changes.
-
-### 2. Use Idempotent Operations
-All your scripts should be idempotent—running them multiple times with the same input should produce the same result. This prevents accidental escalation or duplicate notifications.
-
-### 3. Implement Proper Logging
-Every action should be logged with timestamps. Use a centralized log file and consider integrating with log aggregation systems:
-
-```bash
-log_with_timestamp() {
-    echo "[$(date -Iseconds)] $1" | tee -a incident.log
-}
-```
-
-### 4. Set Up Proper Escalation Paths
-Never let incidents go unacknowledged. Configure escalation timeouts:
-
-```json
-{
-  "escalation": {
-    "p1_critical": {"ack_timeout": 5, "auto_escalate": true},
-    "p2_high": {"ack_timeout": 15, "auto_escalate": true},
-    "p3_medium": {"ack_timeout": 60, "auto_escalate": false}
-  }
-}
-```
-
-### 5. Test Your Workflows Regularly
-Schedule regular game days to test your incident response procedures. Claude Code can help generate synthetic incidents for testing.
-
-## Advanced: Integrating with Claude Code's Tool Use
-
-For more advanced automation, you can use Claude Code's tool-calling capabilities directly. Create a `CLAUDE.md` file in your project:
+Create a file called `incident-triage.md` in your skills directory:
 
 ```markdown
-# Incident Response Agent
+---
+name: incident-triage
+description: Triages incoming incidents by analyzing alert data, determining severity, and recommending initial actions
+tools: [read_file, bash, write_file]
+trigger: "incident triage"
+---
 
-## Tools
-- Execute health checks on all monitored services
-- Analyze log files and provide RCA
-- Send notifications to Slack
-- Run remediation scripts
+# Incident Triage Skill
 
-## Behavior
-When alerted to an incident:
-1. Acknowledge the incident
-2. Gather relevant logs
-3. Run diagnostic commands
-4. Propose remediation steps
-5. Wait for human approval before executing remediation
+You are an experienced on-call engineer performing incident triage. Analyze the provided alert information and produce a structured assessment.
+
+## Input Format
+
+When invoked, you will receive:
+- Alert summary from {{alert_summary}}
+- Error messages from {{error_messages}}
+- Relevant metrics from {{metrics}}
+
+## Your Task
+
+1. **Classify the incident type**: Is this a performance issue, availability failure, security concern, or data problem?
+
+2. **Determine severity** using this matrix:
+   - SEV1: Complete service outage, data loss, or security breach
+   - SEV2: Significant degradation affecting major functionality
+   - SEV3: Minor impact with workaround available
+   - SEV4: Cosmetic or informational only
+
+3. **Identify affected components** from the error patterns
+
+4. **Recommend initial actions**:
+   - Which runbook to consult
+   - Whether immediate escalation is required
+   - What diagnostic commands to run first
+
+## Output Format
+
+Produce your assessment in this structure:
+- **Incident Type**: [classification]
+- **Severity**: [SEV1-4]
+- **Affected Systems**: [list]
+- **Initial Actions**: [numbered list]
+- **Escalation Recommendation**: [yes/no and reason]
 ```
 
-This allows you to invoke Claude Code as an intelligent agent that understands your incident management context.
+This skill uses front matter variables (`{{alert_summary}}`, etc.) to receive dynamic input. When you call this skill from another automation, you pass values for these variables.
+
+## Creating an On-Call Escalation Handler
+
+Once triage identifies an incident, you need to notify the right people. The escalation skill handles this by determining who to contact based on severity, time of day, and incident type.
+
+```markdown
+---
+name: incident-escalation
+description: Handles incident escalation based on severity, on-call schedules, and incident type
+tools: [read_file, bash]
+trigger: "escalate incident"
+---
+
+# Incident Escalation Handler
+
+You manage incident escalation for the platform team. Your job is ensuring the right people are notified quickly.
+
+## On-Call Configuration
+
+You have access to on-call rotation data in `/etc/oncall/rotations.yaml`:
+- Primary on-call engineer
+- Secondary (backup) engineer  
+- Manager contact for SEV1 incidents
+- Security team alias for security incidents
+
+## Escalation Rules
+
+### By Severity
+- **SEV1**: Notify primary + secondary + manager immediately
+- **SEV2**: Notify primary; escalate to secondary if no acknowledgment in 5 minutes
+- **SEV3**: Notify primary only
+- **SEV4**: Log for next business day
+
+### By Type
+- **Security incidents**: Also notify security-team@company.com
+- **Database issues**: Include dba-team in the notification
+- **API failures**: Include API team lead
+
+### Time-Based Rules
+- During business hours (9am-6pm local): Use standard escalation
+- After hours: Always notify both primary and secondary for SEV2+
+
+## Your Task
+
+1. Read the current on-call rotation to identify who is primary/secondary
+2. Determine the appropriate escalation path based on the incident details
+3. Format the notification message with:
+   - Incident summary
+   - Severity level
+   - Link to incident doc
+   - Direct contact info for on-call
+4. Execute the appropriate notification command:
+   ```
+   ./scripts/notify-oncall.sh --severity {{severity}} --type {{incident_type}} --message "{{notification_message}}"
+   ```
+
+## Output
+
+Confirm the escalation was sent and list all notified parties.
+```
+
+## Building a Post-Incident Review Automator
+
+After an incident is resolved, teams need to conduct post-incident reviews (PIRs) or root cause analyses (RCAs). This skill automates gathering the necessary data and generating a template.
+
+```markdown
+---
+name: post-incident-review
+description: Generates post-incident review documentation by gathering metrics, logs, and timeline data
+tools: [read_file, bash, write_file]
+trigger: "generate incident review"
+---
+
+# Post-Incident Review Generator
+
+You help teams conduct thorough post-incident reviews by automatically gathering relevant data and generating structured documentation.
+
+## Input
+
+- Incident ID: {{incident_id}}
+- Incident start time: {{start_time}}
+- Incident end time: {{end_time}}
+- Affected services: {{affected_services}}
+
+## Data Gathering Tasks
+
+Execute these commands to collect incident data:
+
+1. **Fetch relevant metrics**:
+   ```bash
+   ./scripts/export-metrics.sh --service {{affected_services}} --start {{start_time}} --end {{end_time}}
+   ```
+
+2. **Retrieve incident timeline** from your ticketing system:
+   ```bash
+   ./scripts/get-incident-timeline.py --id {{incident_id}}
+   ```
+
+3. **Collect relevant logs** from the incident window:
+   ```bash
+   ./scripts/aggregate-logs.py --services {{affected_services}} --window {{start_time}}-{{end_time}}
+   ```
+
+4. **Pull alert history** leading up to the incident:
+   ```bash
+   ./scripts/get-alert-history.sh --services {{affected_services}} --hours 2
+   ```
+
+## Documentation Template
+
+Generate a PIR document with these sections:
+
+### Summary
+Brief overview of what happened, impact, and duration
+
+### Timeline
+- Time of first alert
+- Time to acknowledge
+- Time to mitigation
+- Time to resolution
+
+### Root Cause Analysis
+Technical explanation of the failure
+
+### What Went Well
+Positive observations and successful mitigations
+
+### Action Items
+Specific, assignable improvements with owners
+
+### Lessons Learned
+Process and communication improvements
+
+## Output
+
+Write the complete PIR to `/incident-reviews/{{incident_id}}-pir.md` and confirm the file was created.
+```
+
+## Composing Skills into a Complete Workflow
+
+The real power of Claude skills comes from composing multiple skills together. You can create a master skill that orchestrates the entire incident lifecycle:
+
+```markdown
+---
+name: incident-commander
+description: Orchestrates the complete incident management lifecycle from detection through resolution
+tools: [bash]
+trigger: "handle incident"
+---
+
+# Incident Commander
+
+You coordinate the response to production incidents, orchestrating specialized skills at each stage.
+
+## Workflow
+
+### Stage 1: Triage
+Call the incident-triage skill with:
+```
+alert_summary: {{alert_summary}}
+error_messages: {{error_messages}}
+metrics: {{metrics}}
+```
+
+### Stage 2: Escalation
+Based on triage results, call incident-escalation:
+```
+severity: [from triage output]
+incident_type: [from triage output]
+notification_message: [generated from triage]
+```
+
+### Stage 3: Resolution
+Guide the responder through relevant runbooks. Execute diagnostic commands as needed.
+
+### Stage 4: Post-Incident
+Once resolved, call post-incident-review:
+```
+incident_id: {{incident_id}}
+start_time: [from incident creation]
+end_time: [current timestamp]
+affected_services: [from triage]
+```
+
+## Response Time Targets
+
+- **SEV1**: Full workflow complete within 30 minutes
+- **SEV2**: Full workflow complete within 2 hours
+- **SEV3**: Resolution within same business day
+
+## Output
+
+Provide a summary of actions taken at each stage and confirm all documentation is complete.
+```
+
+## Best Practices for Incident Management Skills
+
+When building your own incident management skills, keep these principles in mind:
+
+**Start simple and iterate.** Begin with a single skill that handles one scenario well. Add complexity only when you've validated the basic flow works.
+
+**Separate concerns.** One skill should do one thing—triage, escalate, document, or diagnose. Composing skills is easier than debugging monolithic skills.
+
+**Always generate artifacts.** Every incident should produce documentation. This creates an audit trail and enables future analysis.
+
+**Include human judgment points.** Automated workflows should flag decisions that need human approval. Don't let skills make business decisions autonomously.
+
+**Test with simulation.** Before deploying, simulate incidents and verify your skills respond correctly. Run tabletop exercises where Claude handles the incident.
 
 ## Conclusion
 
-Building an incident management workflow with Claude Code transforms how your team responds to production issues. By automating initial detection, providing intelligent analysis, and streamlining escalation, you reduce mean time to resolution (MTTR) while ensuring consistent, documented responses.
+Claude skills transform incident management from reactive firefighting into structured, reproducible processes. By building skills for triage, escalation, resolution guidance, and post-incident reviews, you create a system that scales with your organization while maintaining consistency.
 
-Start small—implement basic health monitoring first, then gradually add automation for more complex scenarios. Remember that Claude Code is a tool to augment your incident response process, not replace human judgment entirely.
+Start with the triage skill, add escalation handling, then layer in resolution guidance. Before long, you'll have a complete incident management system that reduces response times and improves outcomes.
 
-For production deployments, ensure you have proper guardrails, approval workflows for destructive actions, and comprehensive logging. With these in place, you'll have an incident management system that's both intelligent and reliable.
-
----
-
-*Ready to level up your incident management? Explore additional resources on Claude Code tool use and DevOps automation best practices.*
+The key is treating skills as composable building blocks—each one focused, well-tested, and designed to work with others. Your incident management workflow will only be as strong as its weakest skill, so invest time in making each one robust.
 {% endraw %}
