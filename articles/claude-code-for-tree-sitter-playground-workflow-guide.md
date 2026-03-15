@@ -6,7 +6,7 @@ description: "Learn how to leverage Claude Code to streamline your Tree-sitter P
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-tree-sitter-playground-workflow-guide/
-categories: [Development Tools, Programming, Parser]
+categories: [guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8

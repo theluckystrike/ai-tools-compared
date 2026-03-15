@@ -5,7 +5,7 @@ description: "Learn how to use Claude Code to streamline your Node.js profiling 
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-nodejs-profiling-workflow-tutorial/
-categories: [tutorials, nodejs]
+categories: [tutorials, guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
