@@ -6,7 +6,7 @@ description: "Learn how to leverage Claude Code for efficient CPU profiling work
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-cpu-profiling-workflow-tutorial-guide/
-categories: [Development, Performance, Tools]
+categories: [guides]
 tags: [claude-code, claude-skills]
 reviewed: true
 score: 8
