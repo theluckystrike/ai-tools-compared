@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension PDF Editor Free: Complete Guide for Developers"
 description: "Discover free Chrome extensions for editing PDFs directly in your browser. Compare features, performance, and implementation patterns for power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-pdf-editor-free/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension PDF Editor Free: Complete Guide for Developers

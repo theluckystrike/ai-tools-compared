@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension CSS Peeper Inspect: Developer Guide for Style Analysis"
 description: "Learn how to inspect and analyze CSS styles in Chrome using built-in developer tools and extensions. Practical techniques for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-css-peeper-inspect/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 Chrome developer tools provide powerful capabilities for inspecting CSS styles on any webpage. Whether you're debugging layout issues, analyzing computed styles, or reverse-engineering a competitor's design, understanding how to effectively inspect CSS saves hours of development time.
 

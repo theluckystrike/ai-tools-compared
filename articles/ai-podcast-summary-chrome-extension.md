@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "AI Podcast Summary Chrome Extension: A Developer's Guide to Building and Using"
 description: "Learn how AI podcast summary Chrome extensions work, their technical architecture, and how to build one from scratch. Perfect for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-podcast-summary-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 {% raw %}
 
@@ -15,7 +21,7 @@ Podcasts have become an essential source of information for developers and tech 
 
 At their core, these extensions extract audio from podcast pages and send it to transcription services, then process the text through large language models to generate summaries. The workflow typically involves three stages: audio extraction, transcription, and summarization.
 
-Modern extensions leverage browser APIs to interact with podcast platforms. The Chrome Extension Manifest V3 architecture provides the foundation, with service workers handling background tasks and content scripts injecting UI elements into podcast pages.
+Modern extensions use browser APIs to interact with podcast platforms. The Chrome Extension Manifest V3 architecture provides the foundation, with service workers handling background tasks and content scripts injecting UI elements into podcast pages.
 
 ## Technical Architecture
 

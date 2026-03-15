@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Engineering Wiki Workflow Tutorial"
 description: "Learn how to leverage Claude Code to streamline your engineering wiki documentation workflow. This comprehensive tutorial covers practical examples, automation strategies, and actionable tips for developers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-engineering-wiki-workflow-tutorial/
 categories: [Development, Documentation, AI Tools]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 Engineering wikis are the backbone of knowledge sharing in technical organizations. Yet maintaining these wikis often becomes a tedious chore that teams dread. Claude Code transforms this reality by bringing AI-assisted documentation directly into your workflow, making wiki maintenance efficient and even enjoyable.
@@ -16,7 +20,7 @@ Engineering wikis are the backbone of knowledge sharing in technical organizatio
 
 Engineering wikis serve multiple critical purposes: onboarding new team members, documenting architectural decisions, preserving tribal knowledge, and enabling self-service troubleshooting. However, the overhead of keeping these wikis current often leads to stale documentation that no one trusts.
 
-Claude Code addresses this challenge by integrating seamlessly into your development environment. Instead of switching contexts to update wiki pages, you can generate, review, and improve documentation while writing code. This proximity eliminates the friction that typically causes documentation drift.
+Claude Code addresses this challenge by integrating smoothly into your development environment. Instead of switching contexts to update wiki pages, you can generate, review, and improve documentation while writing code. This proximity eliminates the friction that typically causes documentation drift.
 
 The key advantages include real-time documentation generation during coding sessions, automatic API documentation updates, consistency enforcement across all wiki pages, and rapid retrieval of existing documentation for context.
 
@@ -163,7 +167,7 @@ We will migrate to server-side session-based authentication using Redis...
 
 ## Wiki Search and Context Retrieval
 
-Claude Code excels at finding relevant information across your wiki. Instead of manually searching through pages, leverage Claude's ability to search and synthesize:
+Claude Code excels at finding relevant information across your wiki. Instead of manually searching through pages, use Claude's ability to search and synthesize:
 
 ```
 Search our engineering wiki for:
