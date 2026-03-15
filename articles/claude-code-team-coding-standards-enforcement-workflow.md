@@ -128,7 +128,7 @@ jobs:
       - name: Run Claude Code standards check
         run: |
           # Install Claude Code
-          npm install -g @anthropic/claude-code
+          npm install -g @anthropic-ai/claude-code
           
           # Run standards enforcement
           claude --print "Check all TypeScript and JavaScript files in this PR

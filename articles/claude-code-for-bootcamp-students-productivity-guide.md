@@ -34,7 +34,7 @@ Bootcamp students face unique challenges: compressed timelines, overwhelming amo
 Most bootcamp environments use Node.js, making npm the easiest installation method:
 
 ```bash
-npm install -g @anthropic/claude-code
+npm install -g @anthropic-ai/claude-code
 ```
 
 Verify your installation:

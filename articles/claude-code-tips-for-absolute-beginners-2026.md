@@ -23,7 +23,7 @@ Claude Code has become an essential tool for developers and power users in 2026.
 The first step involves installing Claude Code on your machine. Most developers use npm for installation:
 
 ```bash
-npm install -g @anthropic/claude-code
+npm install -g @anthropic-ai/claude-code
 ```
 
 After installation, verify the setup by running:

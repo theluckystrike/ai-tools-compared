@@ -35,7 +35,7 @@ Claude Code excels at:
 Before starting, ensure you have:
 - A Paddle account (sandbox mode for testing)
 - Node.js 18+ or Python 3.9+
-- Claude Code installed (`npm install -g @anthropic/claude-code`)
+- Claude Code installed (`npm install -g @anthropic-ai/claude-code`)
 - A project with an existing API structure
 
 ## Step 1: Initialize Your Project with Claude Code

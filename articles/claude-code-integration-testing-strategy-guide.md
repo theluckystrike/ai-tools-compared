@@ -112,7 +112,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Claude CLI
-        run: npm install -g @anthropic/claude-cli
+        run: npm install -g @anthropic-ai/claude-code
       - name: Run skill tests
         run: python -m pytest tests/skills/
 ```

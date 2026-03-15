@@ -30,7 +30,7 @@ Before migrating your Travis CI configurations, ensure Claude Code is properly i
 
 ```bash
 # Install Claude Code if not already installed
-npm install -g @anthropic/claude-code
+npm install -g @anthropic-ai/claude-code
 
 # Create a CLAUDE.md file to give Claude context about your project
 touch CLAUDE.md

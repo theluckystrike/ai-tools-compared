@@ -30,7 +30,7 @@ Here's how to get started with the free tier:
 
 ```bash
 # Install Claude Code CLI
-npm install -g @anthropic/claude-code
+npm install -g @anthropic-ai/claude-code
 
 # Start an interactive session in your project
 cd my-project
