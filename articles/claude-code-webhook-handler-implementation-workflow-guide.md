@@ -267,6 +267,7 @@ With this workflow guide, you're equipped to implement webhook handlers that are
 
 ## Related Reading
 
+- [Claude Code Stripe Webhook Handler Implementation Guide](/claude-skills-guide/claude-code-stripe-webhook-handler-implementation-guide/) — Stripe-specific implementation covering Stripe's timestamp-based signature format, Stripe CLI local testing, and Stripe event types like `payment_intent.succeeded` and `charge.dispute.created`
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)

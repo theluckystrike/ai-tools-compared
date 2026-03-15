@@ -19,6 +19,14 @@ score: 7
 
 gRPC has become the go-to choice for high-performance microservice communication, offering strong typing, code generation, and efficient binary serialization through Protocol Buffers. When combined with Claude Code's AI-assisted development capabilities, you can dramatically accelerate your gRPC service development workflow—from defining service contracts to implementing business logic and testing. This guide walks you through a practical end-to-end workflow that uses Claude Code's strengths.
 
+## Understanding gRPC and Protocol Buffers
+
+gRPC is a high-performance remote procedure call framework that uses HTTP/2 for transport and Protocol Buffers as the interface definition language. Unlike REST APIs with JSON, Protocol Buffers provide strongly-typed contracts, generate boilerplate code in multiple languages, and offer significant performance improvements.
+
+When working with gRPC in Claude Code, you'll interact with three main components: the .proto definition files, the generated code, and the service implementation. Claude Code excels at helping you navigate these components, generate correct code, and debug issues.
+
+Claude Code understands the structure of Protocol Buffers and gRPC service definitions. It can help you write correct .proto syntax, generate appropriate code, implement service methods, and troubleshoot common issues. The key is knowing how to leverage Claude Code's capabilities effectively.
+
 ## Setting Up Your gRPC Project Structure
 
 Every robust gRPC project starts with a well-organized directory structure. Claude Code can help you set this up efficiently while following industry best practices. Here's a recommended structure:
@@ -160,6 +168,114 @@ func (s *UserServer) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.U
 
 When implementing your handlers, ask Claude Code to add proper error handling, logging, and validation. A useful prompt: "Add request validation and proper error wrapping to this gRPC handler, returning appropriate gRPC status codes."
 
+## Setting Up the gRPC Server
+
+Create a main function that starts your gRPC server with appropriate configuration and interceptors for cross-cutting concerns:
+
+```go
+package main
+
+import (
+    "fmt"
+    "log"
+    "net"
+
+    "google.golang.org/grpc"
+    "github.com/example/userpb"
+    "github.com/example/server"
+)
+
+func main() {
+    lis, err := net.Listen("tcp", ":50051")
+    if err != nil {
+        log.Fatalf("failed to listen: %v", err)
+    }
+
+    grpcServer := grpc.NewServer(
+        grpc.UnaryInterceptor(loggingInterceptor),
+        grpc.StreamInterceptor(streamLoggingInterceptor),
+    )
+
+    userServer := server.NewUserServer()
+    userpb.RegisterUserServiceServer(grpcServer, userServer)
+
+    log.Printf("gRPC server started on port 50051")
+    if err := grpcServer.Serve(lis); err != nil {
+        log.Fatalf("failed to serve: %v", err)
+    }
+}
+
+func loggingInterceptor(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) {
+    log.Printf("gRPC method: %s", info.FullMethod)
+    return handler(ctx, req)
+}
+```
+
+## Advanced Patterns for gRPC Development
+
+### Streaming for Real-Time Data
+
+gRPC supports server streaming, client streaming, and bidirectional streaming. Here's how to implement server streaming for a real-time user updates feed:
+
+```go
+func (s *UserServer) StreamUserUpdates(req *userpb.Empty, stream userpb.UserService_StreamUserUpdatesServer) error {
+    ticker := time.NewTicker(5 * time.Second)
+    defer ticker.Stop()
+
+    for {
+        select {
+        case <-stream.Context().Done():
+            return stream.Context().Err()
+        case <-ticker.C:
+            for _, user := range s.users {
+                if err := stream.Send(user); err != nil {
+                    return err
+                }
+            }
+        }
+    }
+}
+```
+
+### Error Handling with gRPC Status Codes
+
+gRPC uses status codes for error handling rather than plain Go errors. Claude Code can help you implement proper status code usage:
+
+```go
+import (
+    "google.golang.org/grpc/codes"
+    "google.golang.org/grpc/status"
+)
+
+func (s *UserServer) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.User, error) {
+    user, err := s.db.GetUser(ctx, req.GetId())
+    if err != nil {
+        return nil, status.Errorf(codes.NotFound, "user %s not found", req.GetId())
+    }
+
+    if user.Email == "" {
+        return nil, status.Errorf(codes.InvalidArgument, "user has no email")
+    }
+
+    return &pb.User{
+        Id:    user.ID,
+        Email: user.Email,
+        Name:  user.Name,
+    }, nil
+}
+```
+
+### Debugging gRPC Issues with Claude Code
+
+When debugging gRPC issues, provide Claude Code with full context:
+
+- Share the full error message including the gRPC status code
+- Include your .proto definition
+- Show both client and server code
+- Describe expected behavior versus actual behavior
+
+Claude Code can help identify issues like mismatched proto versions, incorrect service registration, or network configuration problems.
+
 ## Writing gRPC Tests
 
 Testing gRPC services requires both unit tests and integration tests. Claude Code can help you write comprehensive test suites.
@@ -215,6 +331,41 @@ func TestGetUser_Success(t *testing.T) {
 
 Ask Claude Code to help you set up test fixtures, mock interfaces, and verify both success and error paths in your tests.
 
+### Integration Testing with bufconn
+
+For integration-style tests that exercise the full gRPC stack without a real network, use `bufconn`:
+
+```go
+package server
+
+import (
+    "testing"
+
+    "github.com/example/userpb"
+    "google.golang.org/grpc"
+    "google.golang.org/grpc/test/bufconn"
+)
+
+const bufSize = 1024 * 1024
+
+func TestGetUser_Integration(t *testing.T) {
+    lis := bufconn.Listen(bufSize)
+    defer lis.Close()
+
+    s := NewUserServer()
+    s.users["test-123"] = &userpb.User{
+        Id:    "test-123",
+        Email: "test@example.com",
+        Name:  "Test User",
+    }
+
+    // Register server, create bufconn-backed client connection,
+    // then invoke and assert on the GetUser method
+}
+```
+
+This pattern lets you test real gRPC serialization, interceptors, and status code handling without spinning up a network listener.
+
 ## Streamlining Development with Claude Code Prompts
 
 Here are some high-value prompts for gRPC development:
@@ -228,6 +379,17 @@ Here are some high-value prompts for gRPC development:
 4. **"Add health check RPC to this service following grpc_health_v1"** - Implement proper health checking for container orchestration.
 
 5. **"Review this gRPC service for security issues"** - Get a security audit covering authentication, authorization, and input validation.
+
+## Practical Tips for Claude Code Collaboration
+
+When working with Claude Code on gRPC projects, these habits improve the quality of assistance you receive:
+
+1. Share your full .proto file when asking for implementation help — partial context leads to mismatched types
+2. Specify your target language and any specific frameworks (e.g., Go with `google.golang.org/grpc`, Java with grpc-java)
+3. Include your generation commands if you're having code generation issues
+4. Describe expected behavior versus actual behavior when debugging
+5. Share relevant configuration files (`buf.yaml`, `go.mod`, `build.gradle`) for build issues
+6. When evolving your API, ask Claude Code to check backward-compatibility of field number and type changes
 
 ## Conclusion
 
