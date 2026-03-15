@@ -104,4 +104,9 @@ If you have tried all these solutions and Composer continues to loop, the issue 
 
 Most Cursor Composer loop issues resolve quickly with one of the methods outlined above. By following this guide, you can return to productive coding without significant downtime.
 
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
