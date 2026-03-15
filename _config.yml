@@ -4,6 +4,10 @@ url: "https://theluckystrike.github.io"
 baseurl: "/claude-skills-guide"
 permalink: /:title/
 theme: minima
+twitter:
+  username: _alphashark_
+  card: summary_large_image
+
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
