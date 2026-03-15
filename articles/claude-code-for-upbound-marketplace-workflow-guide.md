@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Upbound Marketplace Workflow Guide"
 description: "Learn how to use Claude Code to streamline your Upbound Marketplace workflow, from Crossplane compositions to published providers."
@@ -7,11 +8,14 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-upbound-marketplace-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Upbound Marketplace Workflow Guide
 
-The Upbound Marketplace has become the go-to platform for distributing Crossplane configurations, compositions, and managed control planes. Whether you're publishing a private provider or sharing composition templates with your team, the workflow involves multiple steps that can benefit from automation and intelligent assistance. This guide shows you how to leverage Claude Code to accelerate every phase of your Upbound Marketplace workflow.
+The Upbound Marketplace has become the go-to platform for distributing Crossplane configurations, compositions, and managed control planes. Whether you're publishing a private provider or sharing composition templates with your team, the workflow involves multiple steps that can benefit from automation and intelligent assistance. This guide shows you how to use Claude Code to accelerate every phase of your Upbound Marketplace workflow.
 
 ## Understanding the Upbound Marketplace Ecosystem
 
@@ -52,7 +56,7 @@ go mod init github.com/yourorg/provider-name
 
 ## Creating Compositions with Claude Code Assistance
 
-Compositions are the heart of your Upbound Marketplace offerings. Claude Code can help you write compositions that follow best practices and leverage the latest Crossplane features.
+Compositions are the heart of your Upbound Marketplace offerings. Claude Code can help you write compositions that follow best practices and use the latest Crossplane features.
 
 Here's how Claude Code helps you create a basic Composition:
 

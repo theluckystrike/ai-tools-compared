@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Release Automation Workflow Tutorial"
 description: "Learn how to build intelligent release automation workflows using Claude Code. Automate version bumps, changelog generation, CI/CD pipeline triggers, and deployment processes with AI-powered guidance."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-release-automation-workflow-tutorial/
 categories: [tutorials, automation]
 tags: [claude-code, claude-skills, release-automation, ci-cd, devops]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Release Automation Workflow Tutorial
@@ -121,7 +125,7 @@ git log --format="%s%n%b" --since="2026-01-01" | \
   done
 ```
 
-For projects using GitHub, you can also leverage the GitHub CLI:
+For projects using GitHub, you can also use the GitHub CLI:
 
 ```bash
 # Generate changelog between releases
@@ -259,7 +263,7 @@ This analysis considers:
 
 ## Conclusion
 
-Claude Code transforms release automation from a manual, error-prone process into an intelligent, guided workflow. By leveraging Claude's understanding of your specific codebase and its ability to execute commands, you can automate repetitive tasks while maintaining human oversight for critical decisions.
+Claude Code transforms release automation from a manual, error-prone process into an intelligent, guided workflow. By using Claude's understanding of your specific codebase and its ability to execute commands, you can automate repetitive tasks while maintaining human oversight for critical decisions.
 
 Start small—automate just the version bumping—and progressively add more capabilities as you build confidence in your release pipeline.
 {% endraw %}

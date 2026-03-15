@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Context Menu Search Alternative Chrome Extension: A Developer's Guide"
 description: "Build custom context menu search functionality in Chrome extensions. Practical implementation guide with code examples for developers and power users."
 date: 2026-03-15
 categories: [guides]
-tags: [chrome-extension, context-menu, search, developer-tools, web-development]
-author: theluckystrike
-reviewed: false
-score: 0
+tags: [chrome-extension, context-menu, search, developer-tools, web-development, claude-skills]
+author: "Claude Skills Guide"
+reviewed: true
+score: 8
 permalink: /context-menu-search-alternative-chrome-extension-2026/
 ---
+
 
 # Context Menu Search Alternative Chrome Extension: A Developer's Guide
 
