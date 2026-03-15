@@ -5,6 +5,10 @@ description: "A practical technical comparison of Kommunicate and Crisp AI chat 
 date: 2026-03-15
 author: theluckystrike
 permalink: /kommunicate-vs-crisp-ai-chat-widgets/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
