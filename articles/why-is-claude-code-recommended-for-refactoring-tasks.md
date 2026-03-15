@@ -130,6 +130,7 @@ For anyone maintaining or improving existing codebases, Claude Code offers tangi
 
 ## Related Reading
 
+- [Claude Code vs Cursor: Multi-File Refactoring Comparison](/claude-skills-guide/claude-code-vs-cursor-multi-file-refactoring/) — See how Claude Code stacks up against Cursor specifically for multi-file refactoring
 - [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — Safe refactoring with test coverage
 - [Claude Code Cyclomatic Complexity Reduction](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/) — Complexity reduction is a key refactoring goal
 - [Why Is Claude Code Good at Understanding Legacy Code](/claude-skills-guide/why-is-claude-code-good-at-understanding-legacy-code/) — Understanding code is a prerequisite for refactoring
