@@ -2,7 +2,7 @@
 
 
 layout: default
-title: "Chrome Extension Shadow DOM Viewer: Inspect Hidden Elements in Your Browser"
+title: "Chrome Extension Shadow DOM Viewer: Inspect Hidden."
 description: "A practical guide to Chrome extensions for viewing Shadow DOM. Learn how to inspect, debug, and work with shadow roots in web development."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -146,5 +146,12 @@ Run `queryShadow('.my-class')` to find elements matching selectors inside any sh
 Shadow DOM viewer extensions bridge the gap between hidden component internals and developer inspection needs. Whether you choose a dedicated extension or rely on DevTools capabilities, understanding how to navigate shadow boundaries makes debugging modern web applications significantly easier.
 
 These tools prove essential as web components and shadow DOM usage continues growing across frameworks like React, Vue, and vanilla JavaScript implementations. The ability to quickly inspect isolated component internals saves hours of troubleshooting style encapsulation and DOM structure issues.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

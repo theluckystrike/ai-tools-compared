@@ -179,4 +179,11 @@ Chrome extensions enhance browser functionality significantly, but they require 
 
 Regular audits of your installed extensions, using separate browser profiles for different activities, and staying informed about security news help maintain a secure browsing environment. The key is balancing functionality with minimal risk exposure.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
