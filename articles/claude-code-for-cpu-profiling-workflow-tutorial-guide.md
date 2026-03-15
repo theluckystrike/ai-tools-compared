@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Mastering CPU Profiling with Claude Code: A Complete Workflow Tutorial"
 description: "Learn how to leverage Claude Code for efficient CPU profiling workflows. This guide covers practical techniques, code examples, and actionable strategies for developers."
@@ -7,7 +8,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-cpu-profiling-workflow-tutorial-guide/
 categories: [Development, Performance, Tools]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Mastering CPU Profiling with Claude Code: A Complete Workflow Tutorial
