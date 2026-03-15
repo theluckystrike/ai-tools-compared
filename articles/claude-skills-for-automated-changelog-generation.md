@@ -16,6 +16,8 @@ permalink: /claude-skills-for-automated-changelog-generation/
 
 # Claude Skills for Automated Changelog Generation
 
+This guide focuses on *building* the Claude skill files that power automated changelog generation: the `.md` definitions for `changelog-generator`, `git-changelog-extractor`, `changelog-filter`, `changelog-formatter`, and `changelog-summarizer`. If you are looking for the *operational* side — how to invoke the workflow, configure output formats, and wire it into CI/CD — see [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/).
+
 Changelogs are critical for maintaining transparent release processes, yet manually documenting every change across commits, pull requests, and issues consumes valuable development time. Claude skills enable you to automate this process entirely, generating comprehensive, well-formatted changelogs that keep your team and users informed without the manual effort. For an overview of automation workflows, visit the [workflows hub](/claude-skills-guide/workflows-hub/).
 
 ## Understanding the Changelog Generation Challenge
@@ -226,6 +228,7 @@ Automate the trivial, focus on the meaningful. Use Claude skills to handle parsi
 
 ## Related Reading
 
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/) — The operational companion: invoking the workflow, configuring output formats, and integrating with GitHub Actions releases
 - [Claude Skills Automated Dependency Update Workflow](/claude-skills-guide/claude-skills-automated-dependency-update-workflow/) — automate version bumps alongside your changelog generation
 - [Claude Code GitHub Actions Workflow Matrix Strategy Guide](/claude-skills-guide/claude-code-github-actions-workflow-matrix-strategy-guide/) — wire changelog generation into your CI/CD pipeline
 - [Claude Skill Versioning: Semver Best Practices](/claude-skills-guide/claude-skill-versioning-semver-best-practices/) — version your skills using the same conventions as your changelogs

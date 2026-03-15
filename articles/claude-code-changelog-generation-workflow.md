@@ -19,6 +19,8 @@ score: 7
 
 # Claude Code Changelog Generation Workflow
 
+This guide covers the *workflow* side of changelog generation with Claude Code: how to invoke it, what commands to run, how to wire it into GitHub Actions, and how to configure its output for different audiences. If you want to learn how to *build* the underlying skill files themselves — the `.md` definitions that power the process — see [Claude Skills for Automated Changelog Generation](/claude-skills-guide/claude-skills-for-automated-changelog-generation/).
+
 Automated changelog generation transforms how development teams document releases. Instead of manually compiling commit messages, pull request descriptions, and issue references, Claude Code can parse your git history and produce well-structured release notes with minimal configuration.
 
 ## The Foundation: Conventional Commits
@@ -208,6 +210,7 @@ The key advantage: what previously required hours of manual compilation now take
 
 ## Related Reading
 
+- [Claude Skills for Automated Changelog Generation](/claude-skills-guide/claude-skills-for-automated-changelog-generation/) — Build the skill .md files that power this workflow (changelog-generator, changelog-filter, changelog-formatter, changelog-summarizer)
 - [Claude Code Conventional Commits Automation](/claude-skills-guide/claude-code-conventional-commits-automation/) — Conventional commits make changelog generation automatic
 - [Claude Code Semantic Versioning Automation](/claude-skills-guide/claude-code-semantic-versioning-automation/) — Combine with changelogs for full release automation
 - [Claude Code Git Commit Message Generator Guide](/claude-skills-guide/claude-code-git-commit-message-generator-guide/) — Better commit messages produce better changelogs
