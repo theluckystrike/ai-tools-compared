@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 {% raw %}
@@ -212,11 +213,9 @@ When integrating AI tools into your concert workflow, consider latency requireme
 
 Also consider the learning curve. Tools like iZotope RX offer sophisticated interfaces but require time to master. CLI tools like eqCD provide faster integration but less visual feedback. Choose based on whether you prioritize automation or human oversight.
 
-## Summary
+## Matching Tools to Your Workflow
 
-AI tools for concert audio mixing have moved from experimental to practical. iZotope RX handles post-production cleanup with professional results. Cedera provides real-time monitoring that catches problems before they happen. Sonarworks corrects venue acoustics automatically. eqCD accelerates sound check by providing intelligent EQ starting points. Audacity with ML plugins offers a free option for basic noise reduction.
-
-The key is matching the tool to your workflow—whether you need real-time assistance during the show or powerful post-event processing for recordings.
+For real-time assistance during performances, Cedera's feedback prevention and Sonarworks' venue correction run alongside the show. For post-event work, iZotope RX handles multitrack cleanup while eqCD accelerates sound check setup. Audacity with ML plugins covers basic noise reduction at no cost. The choice depends on whether your priority is live monitoring or recording quality.
 
 
 ## Related Reading
