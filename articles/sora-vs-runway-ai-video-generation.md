@@ -5,6 +5,10 @@ description: "A practical comparison of OpenAI Sora and Runway AI video generati
 date: 2026-03-15
 author: theluckystrike
 permalink: /sora-vs-runway-ai-video-generation/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
