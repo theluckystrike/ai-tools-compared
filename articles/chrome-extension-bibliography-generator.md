@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Bibliography Generator: Automate Your Academic Citations"
 description: "A practical guide to chrome extension bibliography generators for developers and power users. Learn how to build or use citation tools that work directly in your browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-bibliography-generator/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Bibliography Generator: Automate Your Academic Citations
 
@@ -23,7 +29,7 @@ The core components include:
 3. **Storage Layer**: Saves generated citations for later retrieval
 4. **Export Function**: Outputs citations in clipboard-ready or document-ready formats
 
-Most extensions leverage standard web metadata schemas. Schema.org citation metadata, Dublin Core tags, and embedded citation formats like BibTeX all serve as data sources. When a page lacks explicit metadata, the extension falls back to parsing visible page elements.
+Most extensions use standard web metadata schemas. Schema.org citation metadata, Dublin Core tags, and embedded citation formats like BibTeX all serve as data sources. When a page lacks explicit metadata, the extension falls back to parsing visible page elements.
 
 ## Building a Basic Bibliography Generator Extension
 
