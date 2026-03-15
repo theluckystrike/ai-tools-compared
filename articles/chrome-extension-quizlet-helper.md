@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Quizlet Helper: A Developer Guide"
 description: "A practical guide to Chrome extensions for Quizlet. Learn how these extensions work, their technical implementation, and how developers can build custom solutions."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-quizlet-helper/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Quizlet Helper: A Developer Guide
 

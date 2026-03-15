@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Stale PR Management Workflow Guide"
 description: "Learn how to leverage Claude Code CLI to automate and streamline stale pull request management with practical examples and actionable advice."
@@ -8,7 +9,10 @@ author: Claude Skills Guide
 permalink: /claude-code-for-stale-pr-management-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 ## Introduction
@@ -198,7 +202,7 @@ Based on practical experience, here are key recommendations for managing stale P
 
 ## Conclusion
 
-Stale PRs don't have to be a persistent problem in your development workflow. By leveraging Claude Code's capabilities, you can automate detection, streamline follow-ups, and implement preventive measures that keep your pull request pipeline healthy.
+Stale PRs don't have to be a persistent problem in your development workflow. By using Claude Code's capabilities, you can automate detection, streamline follow-ups, and implement preventive measures that keep your pull request pipeline healthy.
 
 Start by implementing one or two of the techniques in this guide—perhaps the stale PR detection script and weekly health reports—and expand from there. The key is consistency and making stale PR management a regular part of your development cadence.
 
