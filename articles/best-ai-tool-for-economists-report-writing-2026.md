@@ -5,7 +5,7 @@ description: "A practical guide to AI writing tools for economists creating repo
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-economists-report-writing-2026/
-categories: [guides]
+categories: [productivity, guides]
 reviewed: true
 score: 8
 intent-checked: true
