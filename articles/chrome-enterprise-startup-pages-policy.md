@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Enterprise Startup Pages Policy: A Practical Guide"
 description: "Learn how to configure Chrome enterprise startup pages policy for your organization. Practical examples for developers managing browser configurations at scale."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-enterprise-startup-pages-policy/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Enterprise Startup Pages Policy: A Practical Guide
 

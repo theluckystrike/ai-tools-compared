@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Linear Issue Tracker: A Developer's Guide"
 description: "Learn how to build and use Chrome extensions for Linear issue tracking. Practical code examples, API integration patterns, and best practices for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-linear-issue-tracker/
 categories: [development, tools, chrome-extension]
-tags: [chrome-extension, linear, issue-tracker, productivity]
+tags: [chrome-extension, linear, issue-tracker, productivity, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Extension Linear Issue Tracker: A Developer's Guide
 

@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Screen Recorder for Meetings: A Developer Guide"
 description: "Learn how to build a Chrome extension that records screen and audio during meetings. Complete implementation guide with code examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-screen-recorder-meetings/
 categories: [guides]
-tags: [chrome-extension, screen-recorder, meetings, javascript, manifest-v3, productivity]
+tags: [chrome-extension, screen-recorder, meetings, javascript, manifest-v3, productivity, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

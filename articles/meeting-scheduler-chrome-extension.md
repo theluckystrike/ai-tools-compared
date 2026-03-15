@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Building a Meeting Scheduler Chrome Extension: A Developer's Guide"
 description: "Learn how to build a meeting scheduler Chrome extension from scratch. Technical implementation guide with practical code examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /meeting-scheduler-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Building a Meeting Scheduler Chrome Extension: A Developer's Guide
 
