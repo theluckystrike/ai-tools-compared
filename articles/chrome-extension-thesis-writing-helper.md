@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Thesis Writing Helper: A Developer's Guide"
 description: "Learn how to build and customize Chrome extensions specifically designed to streamline your thesis writing workflow. Practical code examples and architecture patterns included."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-thesis-writing-helper/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Thesis Writing Helper: A Developer's Guide

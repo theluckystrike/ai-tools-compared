@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Browser Audit for Enterprise: A Developer's Guide"
 description: "Learn how to perform a comprehensive Chrome browser audit for enterprise environments. Includes practical code examples and automation strategies for IT administrators and developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-browser-audit-enterprise/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Browser Audit for Enterprise: A Developer's Guide
 

@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Docs as Code Workflow Tutorial Guide"
 description: "Learn how to integrate Claude Code into your docs as code workflow to automate documentation generation, maintain consistency, and streamline content updates."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-docs-as-code-workflow-tutorial-guide/
 categories: [tutorials, guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Docs as Code Workflow Tutorial Guide
@@ -209,7 +213,7 @@ jobs:
 
 ## Conclusion
 
-Integrating Claude Code into your docs as code workflow transforms documentation from a manual burden into an automated, collaborative process. Start with simple tasks like generating initial drafts or validating links, then expand to more complex operations like cross-file updates and release note generation. The key is maintaining the quality controls that make docs as code powerful while leveraging Claude Code's ability to handle repetitive tasks at scale.
+Integrating Claude Code into your docs as code workflow transforms documentation from a manual burden into an automated, collaborative process. Start with simple tasks like generating initial drafts or validating links, then expand to more complex operations like cross-file updates and release note generation. The key is maintaining the quality controls that make docs as code powerful while using Claude Code's ability to handle repetitive tasks at scale.
 
 Your documentation team will thank you, and your users will benefit from more consistent, up-to-date content.
 

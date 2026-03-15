@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Runbook Automation: A Complete Workflow Guide"
 description: "Learn how to automate operational runbooks using Claude Code. This guide covers skill creation, workflow automation, and practical examples for DevOps teams."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-runbook-automation-workflow-guide/
 categories: [guides, devops, automation]
 tags: [claude-code, claude-skills, runbook, automation, workflows]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Runbook Automation: A Complete Workflow Guide
