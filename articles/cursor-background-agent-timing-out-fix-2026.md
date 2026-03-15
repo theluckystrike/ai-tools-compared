@@ -11,6 +11,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -24,11 +25,11 @@ Open Cursor Settings, search for "timeout," and increase `cursor.agent.timeout` 
 
 Background agent timeouts in Cursor occur for several reasons. Understanding the root cause helps you apply the right fix:
 
-- **Network connectivity issues**: Cursor's AI features require stable internet access. Intermittent connections cause requests to fail.
-- **Excessive context load**: Loading too many files or extremely large codebases overwhelms the agent.
-- **Rate limiting**: Making too many rapid requests triggers temporary blocks.
-- **Resource constraints**: Limited system memory or CPU affects agent performance.
-- **Outdated Cursor version**: Older versions have bugs that cause premature timeouts.
+- Network connectivity issues. Cursor's AI features require stable internet access. Intermittent connections cause requests to fail.
+- Excessive context load. Loading too many files or extremely large codebases overwhelms the agent.
+- Rate limiting. Making too many rapid requests triggers temporary blocks.
+- Resource constraints. Limited system memory or CPU affects agent performance.
+- Outdated Cursor version. Older versions have bugs that cause premature timeouts.
 
 ## Step-by-Step Fixes
 
@@ -113,9 +114,9 @@ After clearing cache, reset settings to default and reconfigure only what you ne
 
 Insufficient system resources affect agent performance. Monitor your system:
 
-- **CPU usage**: Should stay below 80% during AI operations
-- **Memory usage**: Keep at least 2GB available
-- **Disk I/O**: Ensure sufficient read/write speeds
+- CPU usage should stay below 80% during AI operations
+- Keep at least 2GB of memory available
+- Ensure sufficient disk read/write speeds
 
 Close other resource-intensive applications. For developers on older hardware, consider upgrading RAM or using a faster SSD.
 
@@ -180,11 +181,11 @@ If it works with default settings, your configuration or extensions are causing 
 
 Once you've resolved the issue, implement preventive measures:
 
-- **Keep Cursor updated**: New releases often include performance improvements
-- **Maintain stable internet**: Use wired connections for critical development sessions
-- **Regularly clear cache**: Monthly cache clearing prevents accumulation
-- **Monitor resource usage**: Keep system resources healthy
-- **Use `.cursorignore` wisely**: Exclude unnecessary directories from AI processing
+- Keep Cursor updated. New releases often include performance improvements.
+- Maintain stable internet. Use wired connections for critical development sessions.
+- Regularly clear cache. Monthly cache clearing prevents accumulation.
+- Monitor resource usage. Keep system resources healthy.
+- Use `.cursorignore` wisely. Exclude unnecessary directories from AI processing.
 
 ## When to Seek Further Help
 
