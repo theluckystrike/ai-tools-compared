@@ -14,7 +14,7 @@ tags: [claude-code, claude-skills]
 
 
 {% raw %}
-Building a backend with Supabase and Claude Code together creates a powerful development workflow. This guide covers practical strategies to accelerate your backend development, from database schema design to implementing Row Level Security policies.
+Building a backend with Supabase and Claude Code together creates a powerful development workflow. This guide covers practical strategies to accelerate your backend development, from database schema design to implementing Row Level Security policies. For client-side integration patterns covering CRUD operations, authentication flows, real-time subscriptions, and file storage, see the [Claude Code with Supabase Backend Integration Guide](/claude-skills-guide/claude-code-with-supabase-backend-integration-guide/).
 
 ## Project Structure for Supabase Projects
 

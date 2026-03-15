@@ -13,7 +13,7 @@ tags: [claude-code, claude-skills]
 
 # Claude Code with Supabase Backend Integration Guide
 
-Integrating Claude Code with Supabase provides a powerful workflow for building backend services. This guide walks through connecting Claude Code to your Supabase project, executing database operations, and deploying serverless functions.
+Integrating Claude Code with Supabase provides a powerful workflow for building backend services. This guide walks through connecting Claude Code to your Supabase project, executing database operations, and deploying serverless functions. For project structure, migration strategies, RLS policy patterns, and CI/CD pipelines, see the [Claude Code Supabase Backend Development Workflow Tips](/claude-skills-guide/claude-code-supabase-backend-development-workflow-tips/) guide.
 
 ## Prerequisites
 
@@ -131,46 +131,12 @@ The **tdd** skill pairs well here—write tests for your authentication flow bef
 
 ## Edge Functions
 
-Supabase Edge Functions run Deno (or Node.js) at the edge. Deploy functions that interface with your database or external APIs.
+Supabase Edge Functions run Deno at the edge and integrate tightly with your database. For detailed examples of writing Edge Functions with full error handling, authentication checks, and deployment patterns, see the [Claude Code Supabase Backend Development Workflow Tips](/claude-skills-guide/claude-code-supabase-backend-development-workflow-tips/) guide.
 
-### Creating an Edge Function
-
-Create a new Edge Function in your supabase/functions directory:
-
-```typescript
-// supabase/functions/get-user/index.ts
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
-
-const supabase = createClient(
-  Deno.env.get('SUPABASE_URL')!,
-  Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
-)
-
-Deno.serve(async (req) => {
-  const { user_id } = await req.json()
-  
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user_id)
-    .single()
-  
-  if (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-    })
-  }
-  
-  return new Response(JSON.stringify(data), {
-    headers: { 'Content-Type': 'application/json' },
-  })
-})
-```
-
-Deploy using the Supabase CLI:
+The short form: create a function file in `supabase/functions/<name>/index.ts`, implement your handler, then deploy:
 
 ```bash
-supabase functions deploy get-user
+supabase functions deploy <function-name>
 ```
 
 ## Working with Storage
