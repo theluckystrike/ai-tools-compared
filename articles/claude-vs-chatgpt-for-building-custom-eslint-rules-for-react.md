@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Claude vs ChatGPT for Building Custom ESLint Rules for React Projects"
+title: "Claude vs ChatGPT for Building Custom ESLint Rules for."
 description: "A practical comparison of Claude and ChatGPT for creating custom ESLint rules in React projects, with code examples and real-world recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -162,6 +162,11 @@ The Claude version would likely include proper AST traversal for the dependency 
 For building custom ESLint rules for React projects, choose ChatGPT when you need quick implementations of standard patterns and choose Claude when your rules require deep understanding of your codebase or complex edge case handling. Both tools accelerate development, but their strengths complement different stages of rule creation.
 
 The best approach often involves using ChatGPT for initial drafts and Claude for refinement and complex rule development. This hybrid strategy leverages the speed of ChatGPT and the contextual depth of Claude.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
