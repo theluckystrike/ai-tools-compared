@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Steve AI and Raw Shorts are two platforms that automate video creation using artificial intelligence. Both transform text input into video content, but their technical approaches, API ecosystems, and customization capabilities differ substantially. For developers building video automation pipelines or integrating AI video tools into content management systems, understanding these differences helps in selecting the right platform for specific use cases.
+Choose Steve AI if you need varied video styles (animated, whiteboard, live-action), extensive branding controls, and multi-language support for long-form content. Choose Raw Shorts if you prioritize fast generation of short-form social media videos at lower cost with a simpler API. Both platforms offer REST APIs for automated pipelines, but they target different ends of the video creation spectrum.
 
 ## Platform Overview
 

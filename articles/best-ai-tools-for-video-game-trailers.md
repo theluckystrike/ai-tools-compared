@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 {%- include why-choose-ai-gaming.html -%}
 
-Creating compelling video game trailers requires combining visual storytelling, audio design, and precise timing. AI tools have transformed this workflow, enabling developers and content creators to produce professional-quality trailers with less manual effort. This guide covers the best AI tools for video game trailers, with practical examples and implementation details for developers integrating these solutions into their production pipelines.
+Runway ML is the best overall AI tool for video game trailers, offering text-to-video generation and style-consistent clip extension through its Gen-3 model. Pair it with ElevenLabs for voice synthesis narration and Topaz Labs for upscaling gameplay footage to 4K. For scripting, Claude or GPT-4 generates multiple trailer script variants tailored to your game's genre and audience.
 
 ## AI Video Generation and Editing Tools
 
