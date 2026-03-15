@@ -118,17 +118,35 @@ Use our standard Go service template with health endpoints,
 Prometheus metrics, and structured logging.
 ```
 
+## Advanced Scaffolding Strategies
+
+### Custom Skills for Team Patterns
+
+If your team has specific patterns — a unique architecture, internal conventions, or required coding standards — create custom Claude Code skills that encode these patterns. Once defined, these skills become reusable across all your projects, ensuring consistency without manual effort. This transforms personal scaffolding knowledge into version-controlled team assets.
+
+### Multi-Step Scaffolding Workflows
+
+Complex projects often require multi-step scaffolding: first creating the foundation, then adding features incrementally. Claude Code can manage these workflows, tracking what has been scaffolded and what remains to be done. This is particularly valuable for large projects where scaffolding happens over multiple sessions.
+
+### Iterative Refinement
+
+Start with a minimal viable structure, verify it works, then use Claude Code to extend it. This approach helps you understand what the scaffolding is generating and allows you to refine the patterns over time rather than trying to perfect your templates upfront.
+
 ## Best Practices for Automated Scaffolding
 
 Implementing effective scaffolding automation requires attention to several practical considerations.
 
-**Version control integration** should happen early in your scaffolding process. Include appropriate `.gitignore` files, initial commit patterns, and branch protection rules from the start.
+**Version control integration** should happen early in your scaffolding process. Include appropriate `.gitignore` and `.dockerignore` files, initial commit patterns, and branch protection rules from the start. These are often overlooked but critical for project hygiene — have Claude Code generate comprehensive versions based on your technology stack.
+
+**Documentation generation** belongs in scaffolding. Have Claude Code generate README files with project overview, setup instructions, development workflows, and API documentation stubs. Good scaffolding doesn't just create code — it creates the documentation framework that makes the project maintainable.
 
 **Consistency checking** becomes easier when you define team conventions explicitly. Document your scaffolding expectations so Claude Code can verify new projects meet your standards.
 
 **Incremental scaffolding** works better than complete regeneration. Rather than replacing entire project structures on each initialization, add new components to existing projects. Claude Code excels at understanding existing patterns and extending them appropriately.
 
 **Testing infrastructure** belongs in every project from day one. Even for small projects, including basic test setup during scaffolding prevents technical debt accumulation.
+
+**Treat scaffolding as code**: version control it, review it, and iterate on it. Your scaffolding setup should evolve as your tools and practices improve.
 
 ## Measuring Scaffolding Effectiveness
 
