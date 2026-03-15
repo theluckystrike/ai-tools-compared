@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "DALL-E 3 vs Stable Diffusion for Illustrations"
 description: "A practical guide comparing DALL-E 3 and Stable Diffusion for illustration workflows. Includes API code, cost analysis, and workflow recommendations for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /dall-e-3-vs-stable-diffusion-for-illustrations/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 Choose DALL-E 3 if you need rapid prototyping, minimal infrastructure overhead, and reliable API integration. Choose Stable Diffusion if you require fine-tuned control, custom model training, and cost-effective generation at scale. Both tools serve illustration workflows effectively, but the choice depends on your technical environment and project requirements.
 
@@ -158,7 +163,7 @@ Many professional workflows combine both tools effectively:
 2. **Stable Diffusion for refinement**: Take the best concept into Stable Diffusion for consistent final outputs
 3. **Upscaling**: Use RealESRGAN or similar tools to increase resolution as needed
 
-This approach leverages DALL-E 3's ease of use for exploration while utilizing Stable Diffusion's control for production assets.
+This approach uses DALL-E 3's ease of use for exploration while utilizing Stable Diffusion's control for production assets.
 
 ## Implementation Checklist
 
