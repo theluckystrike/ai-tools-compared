@@ -1,16 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension StockX Price Tracker: Monitor Sneaker Market Prices"
 description: "A practical guide to using Chrome extensions for tracking StockX sneaker prices. Learn how to set up price alerts, monitor market trends, and find the best deals."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-stockx-price-tracker/
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 categories: [chrome-extensions, shopping]
-tags: [stockx, price tracking, chrome]
+tags: [stockx, price tracking, chrome, claude-skills]
 ---
+
 
 {% raw %}
 

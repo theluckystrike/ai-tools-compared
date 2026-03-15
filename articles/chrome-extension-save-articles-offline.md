@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Save Articles Offline: A Developer's Guide"
 description: "Learn how to save articles offline using Chrome extensions. Practical implementation examples, code snippets, and tips for developers building offline reading capabilities."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-save-articles-offline/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Saving articles for offline reading has become essential for developers, researchers, and anyone who needs reliable access to web content without internet connectivity. Whether you're building a Chrome extension or integrating offline capabilities into your existing workflow, understanding the technical approaches available will help you make informed decisions.
 
@@ -54,7 +60,7 @@ dbRequest.onupgradeneeded = (event) => {
 
 ## Extracting Article Content Effectively
 
-The core challenge in saving articles offline lies in extracting clean, readable content while stripping unnecessary elements. Developers can leverage libraries like Mozilla's Readability or build custom extraction logic.
+The core challenge in saving articles offline lies in extracting clean, readable content while stripping unnecessary elements. Developers can use libraries like Mozilla's Readability or build custom extraction logic.
 
 ```javascript
 // Using @mozilla/readability for content extraction
