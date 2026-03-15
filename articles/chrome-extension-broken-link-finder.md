@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Broken Link Finder: A Developer Guide"
 description: "Learn how to build a broken link finder Chrome extension. Practical code examples, APIs, and implementation patterns for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-broken-link-finder/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Broken Link Finder: A Developer Guide
