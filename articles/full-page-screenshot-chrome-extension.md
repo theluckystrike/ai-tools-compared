@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Full Page Screenshot Chrome Extension: A Developer Guide"
 description: "Learn how to capture full page screenshots in Chrome using extensions, developer tools, and programmatic approaches. Practical examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /full-page-screenshot-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Full Page Screenshot Chrome Extension: A Developer Guide

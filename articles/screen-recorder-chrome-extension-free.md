@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Screen Recorder Chrome Extension Free: A Developer Guide"
 description: "Discover free screen recorder Chrome extensions for developers and power users. Learn implementation patterns, API capabilities, and how to integrate recording workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /screen-recorder-chrome-extension-free/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 Screen recording capabilities within Chrome have become essential for developers documenting bugs, creating tutorials, and capturing application behavior. While Chrome does not include a built-in screen recorder, several free extensions provide robust functionality without requiring paid subscriptions. This guide covers the top free options, their technical implementations, and practical integration patterns for developer workflows.

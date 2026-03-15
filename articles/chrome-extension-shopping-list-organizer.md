@@ -1,15 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Shopping List Organizer: A Developer Guide"
 description: "Learn how to build or customize a Chrome extension shopping list organizer for developers and power users. Includes code examples, architecture patterns, and practical implementation tips."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-shopping-list-organizer/
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 categories: [chrome-extensions, productivity]
-tags: [chrome-extension, shopping-list, developer-tools]
+tags: [chrome-extension, shopping-list, developer-tools, claude-skills]
 ---
+
 
 # Chrome Extension Shopping List Organizer: A Developer Guide
 

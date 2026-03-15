@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Noise Cancellation Chrome Extension: A Developer Guide"
 description: "Learn how to build noise cancellation features for Chrome extensions. Practical code examples, Web Audio API techniques, and implementation patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /noise-cancellation-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Noise Cancellation Chrome Extension: A Developer Guide
@@ -15,7 +21,7 @@ Creating a noise cancellation feature within a Chrome extension requires underst
 
 ## How Noise Cancellation Works in Browser Extensions
 
-Chrome extensions can leverage the Web Audio API to process audio in real-time. The basic architecture involves capturing microphone input, applying noise reduction algorithms, and outputting the cleaned audio. For extensions that process already-recorded audio (like voice memos or recorded calls), the approach differs slightly from real-time processing.
+Chrome extensions can use the Web Audio API to process audio in real-time. The basic architecture involves capturing microphone input, applying noise reduction algorithms, and outputting the cleaned audio. For extensions that process already-recorded audio (like voice memos or recorded calls), the approach differs slightly from real-time processing.
 
 The core challenge is implementing effective noise suppression without introducing artifacts or significant latency. Most implementations use spectral subtraction, Wiener filtering, or machine learning-based approaches. For browser extensions, the Web Audio API provides the necessary building blocks through nodes like `ScriptProcessorNode` (deprecated but still functional) or `AudioWorklet` (modern approach).
 

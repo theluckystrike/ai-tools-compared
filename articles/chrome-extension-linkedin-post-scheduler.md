@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension LinkedIn Post Scheduler: A Developer's Guide"
 description: "Learn how to build or use a Chrome extension for scheduling LinkedIn posts. Practical examples, code snippets, and architecture patterns for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-linkedin-post-scheduler/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension LinkedIn Post Scheduler: A Developer's Guide
 

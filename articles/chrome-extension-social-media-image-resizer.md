@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Social Media Image Resizer"
 description: "A practical guide to building and using Chrome extensions for resizing images across social media platforms. Learn development patterns, APIs, and implementation strategies."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-social-media-image-resizer/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Building a Chrome extension for social media image resizing solves a real problem. Every platform demands different dimensions—Instagram posts need 1080×1080, Twitter/X headers require 1500×500, LinkedIn banners want 1584×396, and Facebook cover photos need 820×312. Manually adjusting images for each platform wastes time. A well-built extension automates this workflow entirely.
 

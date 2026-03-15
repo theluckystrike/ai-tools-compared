@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Hemingway Editor Alternative for Developers"
 description: "Find the best Chrome extension Hemingway editor alternative for clean, distraction-free writing. Compare options with real-time readability analysis and Markdown support."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-hemingway-editor-alternative/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Hemingway Editor Alternative for Developers
 

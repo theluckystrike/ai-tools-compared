@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Extension Screen Capture Scrolling: Complete Implementation Guide"
 description: "Learn how to build Chrome extensions that capture scrolling screenshots. Practical code examples, APIs, and techniques for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-screen-capture-scrolling/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension Screen Capture Scrolling: Complete Implementation Guide

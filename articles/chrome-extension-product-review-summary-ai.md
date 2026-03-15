@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Product Review Summary AI: A Developer Guide"
 description: "Learn how to build and use Chrome extensions that leverage AI to summarize product reviews. Technical implementation, API patterns, and practical code examples."
 date: 2026-03-15
 categories: [guides]
-tags: [chrome-extension, ai, product-reviews, summarization, web-development]
-author: theluckystrike
+tags: [chrome-extension, ai, product-reviews, summarization, web-development, claude-skills]
+author: "Claude Skills Guide"
 permalink: /chrome-extension-product-review-summary-ai/
+reviewed: true
+score: 8
 ---
+
 
 # Chrome Extension Product Review Summary AI: A Developer Guide
 
