@@ -121,5 +121,8 @@ Many teams will find value in using both: Copilot Workspace for quick, GitHub-na
 - [Claude Skills vs Prompts: Which Is Better for Your Workflow?](/claude-skills-guide/claude-skills-vs-prompts-which-is-better/) — Understanding when skills outperform raw prompts is central to evaluating Claude Code's depth against Copilot Workspace's simplicity
 - [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — Claude Code's automatic skill triggering is one of its most powerful features compared to static GitHub Copilot suggestions
 - [Best AI Code Completion Tools vs Claude Code](/claude-skills-guide/best-ai-code-completion-tools-vs-claude-code/) — See how Claude Code stacks up against Copilot, Cursor, Tabnine, and other completion tools
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
