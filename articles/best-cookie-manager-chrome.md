@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Best Cookie Manager Chrome Extensions for Developers and Power Users"
 description: "A practical comparison of Chrome cookie management extensions for developers. Learn to inspect, edit, export, and automate cookie handling with these powerful tools."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-cookie-manager-chrome/
+reviewed: true
+score: 8
+categories: [best-of]
+tags: [chrome, claude-skills]
 ---
+
 
 {% raw %}
 # Best Cookie Manager Chrome Extensions for Developers and Power Users

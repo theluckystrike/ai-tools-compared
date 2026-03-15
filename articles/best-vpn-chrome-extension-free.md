@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Best VPN Chrome Extension Free: A Developer's Guide"
 description: "Discover free VPN Chrome extensions for developers and power users. Compare features, security considerations, and practical use cases without affiliate links."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-vpn-chrome-extension-free/
+reviewed: true
+score: 8
+categories: [best-of]
+tags: [chrome, claude-skills]
 ---
+
 
 # Best VPN Chrome Extension Free: A Developer's Guide
 
