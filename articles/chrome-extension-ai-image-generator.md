@@ -1,16 +1,22 @@
 ---
+
 layout: default
 title: "Chrome Extension AI Image Generator: A Developer Guide"
 description: "Learn how to build a Chrome extension that generates AI images directly in your browser. Practical code examples, API integration patterns, and implementation techniques for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-ai-image-generator/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 # Chrome Extension AI Image Generator: A Developer Guide
 
-Building a Chrome extension that leverages AI to generate images directly within your browser opens up powerful possibilities for designers, developers, and content creators. This guide walks you through the core concepts, API integrations, and practical implementation patterns for creating a functional AI image generator extension.
+Building a Chrome extension that uses AI to generate images directly within your browser opens up powerful possibilities for designers, developers, and content creators. This guide walks you through the core concepts, API integrations, and practical implementation patterns for creating a functional AI image generator extension.
 
 ## Understanding the Architecture
 
