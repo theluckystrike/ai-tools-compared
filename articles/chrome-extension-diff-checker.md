@@ -2,7 +2,7 @@
 
 layout: default
 title: "Chrome Extension Diff Checker: A Developer Guide"
-description: "Learn how to build and use Chrome extension diff checkers for comparing code, text, and files. Practical examples, APIs, and implementation patterns for developers."
+description: "Learn how to build and use Chrome extension diff checkers for comparing code, text, and files. Practical examples, APIs, and implementation patterns."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-diff-checker/
@@ -246,6 +246,13 @@ The foundation you build here—manifest configuration, popup interfaces, and di
 Start with the simple implementation above, test it with real code, then progressively add features like keyboard shortcuts, export options, and integration with your development tools.
 
 ---
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

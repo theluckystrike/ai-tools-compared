@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Speed Reader Chrome Extension: A Developer's Guide to Building Fast Reading Tools"
+title: "AI Speed Reader Chrome Extension: A Developer's Guide to."
 description: "Learn how to build an AI-powered speed reading Chrome extension using JavaScript, the Web Speech API, and text processing techniques."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -292,5 +292,12 @@ Load your extension in Chrome by navigating to `chrome://extensions/`, enabling 
 Use Chrome DevTools to debug content scripts and background service workers. The Console panel shows logs from both contexts when you select the appropriate frame.
 
 Building an AI speed reader extension combines DOM manipulation, text processing, and optional AI integration. Start with the core reading functionality, then layer on advanced features based on user feedback and your specific use cases.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
