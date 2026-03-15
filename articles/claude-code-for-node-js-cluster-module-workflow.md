@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Node.js Cluster Module Workflow"
-description: "Learn how to use Claude Code to streamline Node.js cluster module workflows, with practical examples for multi-process server architectures and load balancing."
+description: "Learn how to use Claude Code to streamline Node.js cluster module workflows, with practical examples for multi-process server architectures and load."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-node-js-cluster-module-workflow/
@@ -197,3 +197,10 @@ When asking for debugging help, describe the specific symptom: "One worker is us
 The Node.js cluster module provides essential tools for building scalable, resilient server applications. With Claude Code as your development partner, you can implement production-ready cluster workflows that include graceful shutdown handling, inter-process communication, and adaptive scaling. Start with the fundamental patterns shown here, then extend based on your specific requirements and deployment environment.
 
 Remember that cluster is just one approach to scaling Node.js applications—container orchestration, serverless functions, and microservice architectures each have their place. Use Claude Code to evaluate which approach fits your specific use case.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

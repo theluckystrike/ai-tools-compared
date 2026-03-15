@@ -181,3 +181,10 @@ EOF
 Integrating Claude Code with Warp terminal creates a powerful development environment that combines the best of modern terminal features with AI-assisted productivity. Start with the basic setup, then gradually incorporate more advanced workflows as you become comfortable. The initial time investment pays dividends in reduced context switching, faster command generation, and smarter automation of repetitive tasks.
 
 The key is to start simple: generate commands, explain errors, and create basic scripts. As you grow familiar with the capabilities, move toward building custom workflows and automation that match your specific development needs. With both tools evolving rapidly, staying current with new features ensures you continue extracting maximum value from this powerful combination.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

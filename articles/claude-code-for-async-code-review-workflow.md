@@ -256,3 +256,10 @@ Claude Code transforms async code review from a bottleneck into a competitive ad
 
 Implement these practices gradually, measure your outcomes, and continuously refine your prompts based on what works best for your team's unique composition and goals.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

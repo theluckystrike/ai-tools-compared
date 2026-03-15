@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for ZenML MLOps Workflow Guide"
-description: "Learn how to leverage Claude Code to streamline ZenML MLOps workflows. This guide covers pipeline creation, step definitions, and best practices for integrating AI-assisted development into your machine learning operations."
+description: "Learn how to leverage Claude Code to streamline ZenML MLOps workflows. This guide covers pipeline creation, step definitions, and best practices for."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-zenml-mlops-workflow-guide/
@@ -230,3 +230,10 @@ Claude Code transforms ZenML development by automating boilerplate generation, e
 Start by scaffolding your pipeline with Claude, then iteratively refine the generated code to match your specific requirements. As you become comfortable with the workflow, you'll find Claude indispensable for handling the complexity of production ML systems.
 
 Remember that while Claude accelerates development, understanding ZenML's core concepts remains essential. Use Claude as a learning tool and productivity enhancer, but ensure you comprehend the generated code before deploying to production.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

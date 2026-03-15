@@ -243,3 +243,10 @@ Claude Code significantly accelerates Cloudflare Workers KV development by gener
 
 Start with simple operations, then gradually add caching, batch processing, and migration capabilities as your application grows. The combination of Cloudflare's global edge network and Claude Code's development assistance creates a powerful platform for building fast, scalable serverless applications.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Python Dataclass Advanced Workflow"
-description: "Master advanced Python dataclass patterns with Claude Code. Learn to build robust data models, implement validation, and create complex workflows using dataclasses effectively."
+description: "Master advanced Python dataclass patterns with Claude Code. Learn to build robust data models, implement validation, and create complex workflows using."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-python-dataclass-advanced-workflow/
@@ -244,3 +244,10 @@ Advanced dataclass patterns enable you to build solid, maintainable Python appli
 
 Start by identifying data models in your current project that could benefit from these patterns, and use Claude Code to incrementally refactor them toward more solid implementations.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

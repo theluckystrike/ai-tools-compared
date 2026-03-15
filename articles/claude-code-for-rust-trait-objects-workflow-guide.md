@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Rust Trait Objects Workflow Guide"
-description: "A comprehensive guide to working with Rust trait objects using Claude Code. Learn practical workflows, dynamic dispatch patterns, and actionable techniques for polymorphic Rust development."
+description: "A comprehensive guide to working with Rust trait objects using Claude Code. Learn practical workflows, dynamic dispatch patterns, and actionable."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-rust-trait-objects-workflow-guide/
@@ -316,3 +316,10 @@ Claude Code can identify these issues and suggest fixes when you describe the er
 Rust trait objects unlock powerful polymorphic patterns that enable flexible, extensible software design. By combining Claude Code's AI-assisted development with these workflow patterns, you can rapidly implement plugin systems, dependency injection, and runtime polymorphism while avoiding common pitfalls. Start with well-defined traits, use object safety patterns, and use trait objects strategically where runtime flexibility provides clear benefits over static dispatch.
 
 Remember to profile your code—the dynamic dispatch overhead is small, but in performance-critical hot paths, trait bounds on generics often provide better performance through monomorphization. Use both approaches strategically based on your specific requirements.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

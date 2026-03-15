@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Clojure re-frame Workflow Guide"
-description: "Master the art of using Claude Code for Clojure re-frame development. Learn practical workflows, debugging strategies, and code generation patterns for building robust frontend applications."
+description: "Master the art of using Claude Code for Clojure re-frame development. Learn practical workflows, debugging strategies, and code generation patterns for."
 date: 2026-03-15
 categories: [workflows, clojure]
 tags: [clojure, re-frame, claude-code, claude-skills]
@@ -205,3 +205,10 @@ Claude Code transforms re-frame development by accelerating component creation, 
 
 The re-frame pattern of state, events, and views maps naturally to prompt-based description. use this alignment to generate idiomatic, maintainable code that fits smoothly into your application architecture.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

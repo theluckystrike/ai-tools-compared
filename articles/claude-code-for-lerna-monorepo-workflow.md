@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for Lerna Monorepo Workflow"
-description: "Master Lerna monorepo management with Claude Code. Learn how to automate package publishing, manage dependencies, coordinate cross-package changes, and streamline your monorepo workflow."
+description: "Master Lerna monorepo management with Claude Code. Learn how to automate package publishing, manage dependencies, coordinate cross-package changes, and."
 date: 2026-03-15
 author: "Claude Skills Guide"
 categories: [guides]
@@ -208,3 +208,10 @@ The key is providing adequate context about your monorepo structure and creating
 
 Remember: Claude Code works best when it understands your architecture. Invest time in setting up proper context and conventions, and you'll see significant productivity gains across your monorepo workflows.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

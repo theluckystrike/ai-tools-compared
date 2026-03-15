@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for LLM Code Review Workflow"
-description: "Master the art of building LLM-powered code review workflows with Claude Code. Learn practical implementations, automation patterns, and best practices for integrating AI into your review process."
+description: "Master the art of building LLM-powered code review workflows with Claude Code. Learn practical implementations, automation patterns, and best practices."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-llm-code-review-workflow/
@@ -158,3 +158,10 @@ Building an LLM-powered code review workflow with Claude Code transforms how tea
 Start with a simple implementation focusing on one language or project type, measure the results, and expand incrementally. Your developers will quickly appreciate the faster feedback loop, and you'll wonder how you ever managed without it.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

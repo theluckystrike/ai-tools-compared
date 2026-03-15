@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for WindSurf Cascade Workflow Guide"
-description: "Master the integration of Claude Code with WindSurf Cascade workflow. Learn practical techniques to enhance your AI-assisted development with powerful agentic coding."
+description: "Master the integration of Claude Code with WindSurf Cascade workflow. Learn practical techniques to enhance your AI-assisted development with powerful."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-windsurf-cascade-workflow-guide/
@@ -199,3 +199,10 @@ By following the patterns and practices outlined in this guide, you can harness 
 ---
 
 *This guide is part of the Claude Skills Guide series, providing practical insights for developers working with AI-assisted coding tools.*
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

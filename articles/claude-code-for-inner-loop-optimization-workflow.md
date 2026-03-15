@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Inner Loop Optimization Workflow"
-description: "Learn how to optimize your inner development loop with Claude Code. Practical techniques for faster builds, instant feedback, and streamlined debugging workflows."
+description: "Learn how to optimize your inner development loop with Claude Code. Practical techniques for faster builds, instant feedback, and streamlined debugging."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-inner-loop-optimization-workflow/
@@ -280,3 +280,10 @@ These techniques can reduce your inner loop from minutes to seconds for most cha
 
 Start with one optimization—targeted tests, for example—and gradually add more. You'll notice the difference in your flow state almost immediately.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
