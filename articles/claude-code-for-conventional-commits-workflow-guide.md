@@ -167,6 +167,37 @@ fi
 
 Make it executable and Claude Code will help you fix any rejected messages.
 
+## Common Mistakes and Corrections
+
+Reference this table when reviewing commit messages:
+
+| Bad Message | Corrected Version |
+|---|---|
+| `fixed bug` | `fix: resolve null pointer exception in user authentication` |
+| `update` | `feat(api): add pagination support to user endpoint` |
+| `WIP` | `chore: save work-in-progress on payment refactoring` |
+| `changes` | `refactor(core): extract validation logic into separate module` |
+| `test` | `test(auth): add integration tests for OAuth2 flow` |
+
+## Semantic-Release Integration
+
+For automated versioning based on conventional commits, configure `.releaserc.yml`:
+
+```yaml
+branches:
+  - main
+  - name: next
+    prerelease: true
+plugins:
+  - '@semantic-release/commit-analyzer'
+  - '@semantic-release/release-notes-generator'
+  - '@semantic-release/changelog'
+  - '@semantic-release/npm'
+  - '@semantic-release/github'
+```
+
+This automatically determines version bumps from commit types: `fix:` triggers a patch, `feat:` triggers a minor, and `BREAKING CHANGE:` triggers a major release.
+
 ## Measuring Commit Quality
 
 Track these metrics to improve your team's commit practices:
