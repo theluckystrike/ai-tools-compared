@@ -9,12 +9,13 @@ permalink: /chatgpt-hallucinating-facts-how-to-reduce-errors/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 {% raw %}
 
-ChatGPT generates impressively fluent text, but it sometimes produces factually incorrect information—a phenomenon commonly called "hallucination." For developers integrating AI into workflows or power users relying on accurate outputs, these errors can undermine trust and productivity. This guide provides actionable techniques to minimize hallucinations and verify the accuracy of AI-generated content.
+Three changes reduce ChatGPT hallucinations immediately: set temperature to 0.0-0.2 for factual queries, add "If you are uncertain about any detail, state that rather than guessing" to your prompt, and break complex questions into smaller focused requests. For production applications, implement retrieval-augmented generation (RAG) to ground responses in verified documents. These techniques and more are detailed below.
 
 ## Why ChatGPT Hallucinates
 

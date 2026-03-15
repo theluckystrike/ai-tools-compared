@@ -10,6 +10,7 @@ permalink: /cursor-background-agent-timing-out-fix-2026/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
@@ -17,7 +18,7 @@ categories: [guides]
 
 # Cursor Background Agent Timing Out Fix (2026)
 
-Cursor, the AI-powered code editor built on VS Code, uses background agents to handle AI-assisted coding tasks. When these agents time out, your development workflow stalls. This guide provides actionable solutions to fix timing out issues and keep your coding sessions running smoothly.
+Open Cursor Settings, search for "timeout," and increase `cursor.agent.timeout` from the default to 300000 (five minutes). If timeouts persist, create a `.cursorignore` file in your project root listing `node_modules/`, `dist/`, and other large directories to reduce context load. Update Cursor to the latest version and clear the cache (`~/Library/Application Support/Cursor/Cache` on macOS). These three fixes resolve most background agent timeout issues. Full diagnostic steps are below.
 
 ## What Causes Cursor Background Agent Timeouts
 
