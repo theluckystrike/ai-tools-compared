@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Starburst vs Trino for AI Query Engine: A Practical Comparison"
+title: "Starburst vs Trino for AI Query Engine: A Practical."
 description: "A developer-focused comparison of Starburst and Trino for building AI-powered query engines, with code examples and real-world considerations."
 date: 2026-03-15
 author: "AI Tools Compared"
@@ -152,5 +152,10 @@ The choice between Starburst and Trino for AI query engines ultimately depends o
 Both platforms can power effective AI query engines. Start with Trino if you have the technical capacity to manage it. Choose Starburst if you need enterprise features and have the budget to reduce operational overhead.
 
 The good news: your application code remains largely the same regardless of choice, so you can evaluate each option with minimal investment before committing.
+
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
