@@ -7,7 +7,7 @@ description: "A practical guide to using Claude Code for building professional J
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /claude-code-java-library-development-guide/
-categories: [development, java, claude-code]
+categories: [guides]
 reviewed: true
 score: 8
 ---
