@@ -156,6 +156,32 @@ const apiUrl = Constants.manifest.extra.apiUrl ||
 
 Create a validation function that checks for required environment variables at app startup, and let Claude Code help implement this pattern.
 
+### Debugging Metro Bundler Configuration
+
+Metro bundler errors can cause persistent build failures. When encountering them, clear the Metro cache first:
+
+```bash
+npx expo start --clear
+```
+
+Claude Code can also review your `babel.config.js` and suggest corrections for plugin ordering or misconfiguration:
+
+```javascript
+// babel.config.js for Expo
+module.exports = function(api) {
+  api.cache(true);
+  return {
+    presets: ['babel-preset-expo'],
+    plugins: [
+      // Add any necessary plugins here
+      'react-native-reanimated/plugin', // Must be last
+    ],
+  };
+};
+```
+
+Common issues Claude Code can catch include conflicting Babel plugins, missing presets, and incorrect plugin ordering (notably `react-native-reanimated/plugin` must always be last).
+
 ## Using Claude Code for Systematic Debugging
 
 Effective debugging with Claude Code involves providing the right context and asking focused questions. Here are strategies for getting the most out of Claude Code during debugging sessions.
@@ -224,6 +250,66 @@ Claude Code can help interpret errors from these commands and suggest specific f
 ### Debugging with React Native Inspector
 
 The React Native Inspector, accessible through Expo Dev Tools, allows you to inspect component hierarchies and props. When combined with Claude Code's analysis capabilities, you can quickly identify where incorrect data flows through your component tree.
+
+## Implementing Effective Debug Logging
+
+Strategic logging is essential for diagnosing issues in both development and production Expo applications. Claude Code can help you implement structured logging that makes debugging easier.
+
+### Creating Custom Debug Hooks
+
+Develop custom hooks that provide consistent logging across your application:
+
+```typescript
+const useDebug = (componentName: string) => {
+  const log = (message: string, data?: any) => {
+    if (__DEV__) {
+      console.log(`[${componentName}]`, message, data);
+    }
+  };
+
+  const error = (message: string, data?: any) => {
+    if (__DEV__) {
+      console.error(`[${componentName}] ERROR:`, message, data);
+    }
+  };
+
+  return { log, error };
+};
+
+// Usage in components
+const ProductList = () => {
+  const { log, error } = useDebug('ProductList');
+
+  useEffect(() => {
+    log('Component mounted');
+    // ... fetch data
+  }, []);
+
+  // ...
+};
+```
+
+## Integration with Sentry and Error Tracking
+
+For production applications, integrating error tracking is crucial. Claude Code can help you set up Sentry for Expo:
+
+```typescript
+import * as Sentry from 'sentry-expo';
+
+Sentry.init({
+  dsn: process.env.SENTRY_DSN,
+  enableInExpoDevelopment: true,
+});
+
+// Wrap your App component
+const App = () => {
+  return (
+    <Sentry.ErrorBoundary fallback={<ErrorScreen />}>
+      <YourApp />
+    </Sentry.ErrorBoundary>
+  );
+};
+```
 
 ## Best Practices for Expo Debugging
 
