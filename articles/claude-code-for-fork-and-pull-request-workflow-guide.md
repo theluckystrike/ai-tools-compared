@@ -5,7 +5,7 @@ description: "Learn how to use Claude Code CLI to efficiently work with GitHub f
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-fork-and-pull-request-workflow-guide/
-categories: [Development, Git, GitHub]
+categories: [guides, guides, guides]
 tags: [claude-code, claude-skills]
 ---
 
@@ -211,3 +211,4 @@ Claude Code transforms the fork and pull request workflow from a tedious series 
 Remember that the best workflow is one that works consistently for you. Experiment with these suggestions, adapt them to your needs, and enjoy smoother open source contributions.
 
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
