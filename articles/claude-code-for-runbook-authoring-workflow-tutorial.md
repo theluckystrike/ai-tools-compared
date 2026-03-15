@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Runbook Authoring Workflow Tutorial"
 description: "Learn how to use Claude Code to streamline your runbook authoring workflow. This practical tutorial covers automation, skill creation, and best practices for DevOps documentation."
@@ -7,11 +8,14 @@ categories: [tutorials, devops]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-runbook-authoring-workflow-tutorial/
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Runbook Authoring Workflow Tutorial
 
-Runbooks are essential documentation for any operations team, but authoring them manually is time-consuming and error-prone. In this tutorial, you'll learn how to leverage Claude Code to automate and streamline your runbook authoring workflow, making documentation faster, more consistent, and easier to maintain.
+Runbooks are essential documentation for any operations team, but authoring them manually is time-consuming and error-prone. In this tutorial, you'll learn how to use Claude Code to automate and streamline your runbook authoring workflow, making documentation faster, more consistent, and easier to maintain.
 
 ## Why Use Claude Code for Runbook Authoring?
 

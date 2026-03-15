@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Runbook Version Control Workflow"
 description: "A practical guide to managing operational runbooks with version control using Claude Code. Learn to create, organize, and maintain runbooks that scale."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-runbook-version-control-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Runbook Version Control Workflow
@@ -55,7 +59,7 @@ The `_common.md` files serve as reusable fragments that other runbooks can inclu
 
 ## Creating Runbooks with Claude Code
 
-Claude Code can accelerate runbook creation while ensuring quality. Here's how to leverage it effectively:
+Claude Code can accelerate runbook creation while ensuring quality. Here's how to use it effectively:
 
 ### Starting a New Runbook
 

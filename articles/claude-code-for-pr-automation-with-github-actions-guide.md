@@ -1,13 +1,17 @@
 ---
+
 layout: default
 title: "Claude Code for PR Automation with GitHub Actions Guide"
 description: "Learn how to leverage Claude Code with GitHub Actions to automate pull request workflows, including automated reviews, testing, and code quality checks."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-pr-automation-with-github-actions-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for PR Automation with GitHub Actions Guide

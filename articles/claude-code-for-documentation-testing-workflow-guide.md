@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Documentation Testing Workflow Guide"
 description: "Learn how to use Claude Code CLI to automate documentation testing, validate links, check syntax, and ensure quality across your documentation projects."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-documentation-testing-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Documentation Testing Workflow Guide
 
-Documentation is the backbone of any successful software project. Yet, maintaining high-quality documentation that stays accurate, consistent, and error-free is a persistent challenge for development teams. This is where Claude Code becomes an invaluable part of your documentation testing workflow. In this guide, we'll explore how to leverage Claude Code CLI to automate documentation testing, catch errors early, and maintain documentation quality at scale.
+Documentation is the backbone of any successful software project. Yet, maintaining high-quality documentation that stays accurate, consistent, and error-free is a persistent challenge for development teams. This is where Claude Code becomes an invaluable part of your documentation testing workflow. In this guide, we'll explore how to use Claude Code CLI to automate documentation testing, catch errors early, and maintain documentation quality at scale.
 
 ## Why Automate Documentation Testing
 

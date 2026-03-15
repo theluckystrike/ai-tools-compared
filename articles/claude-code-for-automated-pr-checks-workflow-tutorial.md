@@ -1,18 +1,22 @@
 ---
+
 layout: default
 title: "Claude Code for Automated PR Checks Workflow Tutorial"
 description: "Learn how to build automated pull request check workflows with Claude Code. This tutorial covers CI/CD integration, custom validation rules, and practical examples."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-automated-pr-checks-workflow-tutorial/
 categories: [tutorials, guides]
 tags: [claude-code, claude-skills, pr-checks, ci-cd, automation]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Automated PR Checks Workflow Tutorial
 
-Pull request checks are the gatekeepers of code quality in any modern development workflow. Manual code reviews are time-consuming and inconsistent, while traditional automated checks lack contextual understanding. Claude Code bridges this gap by bringing AI-powered analysis to your PR workflow—understanding context, catching subtle issues, and providing actionable feedback. This tutorial walks you through building automated PR check workflows that integrate seamlessly with your existing CI/CD pipeline.
+Pull request checks are the gatekeepers of code quality in any modern development workflow. Manual code reviews are time-consuming and inconsistent, while traditional automated checks lack contextual understanding. Claude Code bridges this gap by bringing AI-powered analysis to your PR workflow—understanding context, catching subtle issues, and providing actionable feedback. This tutorial walks you through building automated PR check workflows that integrate smoothly with your existing CI/CD pipeline.
 
 ## Understanding PR Check Workflows
 

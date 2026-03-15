@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Incident Tracking Workflow Tutorial"
 description: "Learn how to build an incident tracking workflow with Claude Code. Create skills for logging, triaging, and resolving incidents with practical code examples."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-tracking-workflow-tutorial/
 categories: [tutorials, workflows]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Incident Tracking Workflow Tutorial
 
-Incident tracking is critical for maintaining reliable software systems. When something goes wrong in production, you need a fast, consistent way to log, triage, and resolve issues. Claude Code combined with custom skills provides a powerful framework for building incident management workflows that integrate seamlessly into your development environment.
+Incident tracking is critical for maintaining reliable software systems. When something goes wrong in production, you need a fast, consistent way to log, triage, and resolve issues. Claude Code combined with custom skills provides a powerful framework for building incident management workflows that integrate smoothly into your development environment.
 
 This tutorial walks you through creating an incident tracking system using Claude Code skills. You'll learn how to log incidents, assign severity levels, track resolution progress, and generate incident reports—all through natural language interactions with Claude.
 

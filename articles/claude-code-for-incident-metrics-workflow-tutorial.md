@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Incident Metrics Workflow Tutorial"
 description: "Learn how to build automated incident metrics tracking workflows with Claude Code to measure, analyze, and improve your team's incident response performance."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-metrics-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
