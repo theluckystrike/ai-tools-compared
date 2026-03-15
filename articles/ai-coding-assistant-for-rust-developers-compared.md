@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "AI Coding Assistant for Rust Developers Compared"
 description: "A practical comparison of AI coding assistants for Rust developers, with code examples and recommendations for different use cases."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-coding-assistant-for-rust-developers-compared/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 Rust offers memory safety and performance, but its ownership model and strict compiler can pose a learning curve. AI coding assistants have emerged as valuable tools to accelerate Rust development, helping with everything from boilerplate generation to understanding complex borrow checker errors. This guide compares the leading options to help you choose the right assistant for your workflow.
 

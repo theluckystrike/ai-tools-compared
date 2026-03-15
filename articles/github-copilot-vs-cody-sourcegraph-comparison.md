@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "GitHub Copilot vs Cody by Sourcegraph: A Practical Comparison"
 description: "A detailed comparison of GitHub Copilot and Cody (by Sourcegraph) for developers. Learn the key differences in features, pricing, and use cases."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /github-copilot-vs-cody-sourcegraph-comparison/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 {% raw %}
 If you're deciding between GitHub Copilot and Cody by Sourcegraph for your AI-assisted coding workflow, you need to understand how they differ in approach, capabilities, and pricing. Both tools aim to boost developer productivity, but they take different paths to get there.
@@ -80,7 +85,7 @@ Example comparison in a terminal session:
 - Enterprise: custom pricing
 - Free for open-source maintainers
 
-For individual developers, Cody's free tier is more generous, while Copilot integrates more seamlessly with GitHub's ecosystem.
+For individual developers, Cody's free tier is more generous, while Copilot integrates more smoothly with GitHub's ecosystem.
 
 ## IDE Integration and Performance
 

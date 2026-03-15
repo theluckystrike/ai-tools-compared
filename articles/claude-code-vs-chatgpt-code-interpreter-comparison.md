@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Claude Code vs ChatGPT Code Interpreter Comparison"
 description: "A practical comparison of Claude Code and ChatGPT's Code Interpreter for developers. Learn which tool excels at coding tasks, automation, and technical workflows."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-vs-chatgpt-code-interpreter-comparison/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
+
 
 {% raw %}
 
