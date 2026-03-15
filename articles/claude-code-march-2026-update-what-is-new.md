@@ -94,7 +94,7 @@ File handling becomes more sophisticated with better conflict resolution and par
 
 ```bash
 # New CLI capabilities
-claude file create --template api-endpoint --count 5 --output ./routes
+claude --print "create files --template api-endpoint --count 5 --output ./routes"
 # Generates 5 API endpoint files with consistent structure
 ```
 

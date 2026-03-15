@@ -38,7 +38,7 @@ ls -la .claude/
 This directory contains conversation logs and session metadata. Each session gets a unique identifier. You can also find recent sessions by checking the session logs:
 
 ```bash
-claude sessions list
+# Sessions are not tracked via CLI — use claude --resume for context
 ```
 
 This command shows all recent sessions with their IDs, timestamps, and brief descriptions of what you were working on.

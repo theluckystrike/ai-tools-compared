@@ -207,7 +207,7 @@ The most effective approach embeds security scanning into your existing developm
 
 ```bash
 # .git/hooks/pre-commit
-claude scan-owasp --severity critical
+claude --print "scan code for OWASP top 10 vulnerabilities --severity critical"
 ```
 
 For teams using CI/CD, [integrate scanning into GitHub Actions with approval workflows](/claude-skills-guide/claude-code-github-actions-approval-workflows/) so security findings require human sign-off before merging:

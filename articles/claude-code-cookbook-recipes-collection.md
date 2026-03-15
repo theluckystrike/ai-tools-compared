@@ -36,7 +36,7 @@ To generate a PDF, invoke the pdf skill with your markdown content. The skill ha
 
 ```bash
 # Example: Convert markdown to PDF
-claude invoke pdf --input report.md --output report.pdf
+claude --print "/pdf --input report.md --output report.pdf"
 ```
 
 The pdf skill supports custom styling through CSS, allowing you to match your organization's branding guidelines. You can specify page margins, font families, and header/footer templates within your skill configuration.

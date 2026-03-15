@@ -108,7 +108,7 @@ The monitoring loop can run as part of your pipeline or as a separate process:
 
 ```bash
 # Monitor a specific deployment
-claude monitor-deployment \
+claude --print "monitor deployment \"
   --pipeline-id my-pipeline \
   --execution-id ${HARNESS_EXECUTION_ID}
 ```

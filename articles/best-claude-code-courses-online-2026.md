@@ -48,7 +48,7 @@ Many developers benefit from focusing on individual skills rather than trying to
 # Place the pdf skill in ~/.claude/skills/pdf.md
 
 # Basic PDF generation
-claude pdf create --template invoice --data data.json --output invoice.pdf
+claude --print "/pdf create --template invoice --data data.json --output invoice.pdf"
 ```
 
 **Frontend Design**: The **frontend-design** skill provides component generation and styling assistance. This skill integrates with popular frameworks like React, Vue, and Tailwind CSS. Developers learn to generate responsive layouts, implement design systems, and maintain consistency across projects.
