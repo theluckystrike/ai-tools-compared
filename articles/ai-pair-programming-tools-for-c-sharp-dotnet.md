@@ -9,12 +9,13 @@ permalink: /ai-pair-programming-tools-for-c-sharp-dotnet/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 # AI Pair Programming Tools for C# and .NET Development
 
-Artificial intelligence has transformed how developers write code, and C# developers now have access to powerful tools designed specifically for the .NET ecosystem. This guide examines the leading AI pair programming tools that integrate with Visual Studio, VS Code, and JetBrains Rider to help you write better C# code faster.
+GitHub Copilot is the best all-around AI pair programmer for C# and .NET, with broad IDE support across Visual Studio, VS Code, and JetBrains Rider and strong performance on LINQ queries, async patterns, and Entity Framework conventions. JetBrains AI Assistant generates superior unit tests and understands the .NET toolchain more deeply. Amazon CodeWhisperer is the best free option with built-in security scanning that catches SQL injection and input validation issues. Here is how each tool performs in practice.
 
 ## Understanding AI Pair Programming in the .NET Context
 

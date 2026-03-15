@@ -9,12 +9,13 @@ permalink: /ai-coding-tools-for-scala-functional-programming/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
 # AI Coding Tools for Scala Functional Programming: Practical Guide
 
-Scala developers working with functional programming patterns face unique challenges when using AI coding assistants. The language's blend of object-oriented and functional features, combined with powerful type inference and immutable data structures, requires AI tools that understand Scala's idioms. This guide examines practical approaches to using AI coding tools effectively in Scala projects.
+Claude models produce the most functionally pure Scala code by default, generating solutions using map, flatMap, and fold operations rather than mutable variables. GPT models handle complex specifications well but sometimes need explicit instructions to avoid imperative-style Scala. Both work effectively with libraries like Cats, ZIO, and Akka Streams when you provide version and library context in your prompts. This guide covers practical techniques and code examples for getting the best Scala output from AI coding tools.
 
 ## Understanding Scala's Functional Programming Demands
 
