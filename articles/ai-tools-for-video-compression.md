@@ -6,6 +6,10 @@ description: "Explore AI-powered video compression tools with practical examples
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-compression/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
