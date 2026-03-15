@@ -8,9 +8,11 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-pr-size-management-workflow-tutorial/
 categories: [guides, tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 {% raw %}
-Pull request size is one of the most overlooked factors in developer productivity. Large PRs slow down code reviews, increase the chance of bugs slipping through, and create merge conflicts that waste everyone's time. In this tutorial, you'll learn how to leverage Claude Code to automate PR size management, enforce team standards, and build healthier code review habits.
+Pull request size is one of the most overlooked factors in developer productivity. Large PRs slow down code reviews, increase the chance of bugs slipping through, and create merge conflicts that waste everyone's time. In this tutorial, you'll learn how to use Claude Code to automate PR size management, enforce team standards, and build healthier code review habits.
 
 ## Why PR Size Matters
 

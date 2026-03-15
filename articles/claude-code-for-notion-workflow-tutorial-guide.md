@@ -7,6 +7,8 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-notion-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
@@ -16,7 +18,7 @@ Integrating Claude Code with Notion opens up powerful possibilities for automati
 
 ## Understanding the Notion API Integration
 
-Before diving into workflows, you need to understand how Claude Code communicates with Notion. Notion provides a REST API that allows you to read, create, update, and delete pages, databases, and blocks. Claude Code can leverage this API through curl commands or Python scripts to perform virtually any operation you could do manually in Notion.
+Before diving into workflows, you need to understand how Claude Code communicates with Notion. Notion provides a REST API that allows you to read, create, update, and delete pages, databases, and blocks. Claude Code can use this API through curl commands or Python scripts to perform virtually any operation you could do manually in Notion.
 
 The Notion API uses OAuth 2.0 for authentication, and you'll need to create an integration in your Notion workspace to obtain the necessary API key. Visit [notion.so/my-integrations](https://www.notion.so/my-integrations), create a new integration, and copy your internal integration token. Share the specific pages or databases with your integration to grant access.
 
