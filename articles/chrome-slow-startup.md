@@ -2,7 +2,7 @@
 
 layout: default
 title: "Chrome Slow Startup: Diagnose and Fix Performance Issues"
-description: "A practical guide for developers and power users to diagnose and fix Chrome browser slow startup. Covers extension diagnostics, profile issues, startup flags, and cache management."
+description: "A practical guide for developers and power users to diagnose and fix Chrome browser slow startup. Covers extension diagnostics, profile issues, startup."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-slow-startup/
@@ -130,5 +130,12 @@ Record baseline times before making changes, then test after each modification. 
 Chrome slow startup stems from extension overload, profile corruption, excessive tab restoration, and system resource constraints. Use Chrome's built-in flags to isolate problems, manage extensions systematically, and clean profile caches when necessary. Apply startup flags judiciously, and monitor your results with actual timing measurements.
 
 With systematic diagnosis and targeted fixes, you can reduce Chrome startup from sluggish to near-instant, reclaiming minutes lost to waiting each day.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

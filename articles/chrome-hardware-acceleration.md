@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Hardware Acceleration: A Developer Guide to GPU-Accelerated Browsing"
+title: "Chrome Hardware Acceleration: A Developer Guide to."
 description: "Learn how Chrome hardware acceleration works, how to enable it, and how to optimize your web applications for GPU acceleration."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -205,5 +205,12 @@ The **Rendering** tab (accessible via Cmd+Shift+P → "Show Rendering") provides
 5. **Keep drivers updated**: GPU driver issues often manifest as browser problems
 
 Chrome hardware acceleration remains a critical technology for delivering smooth, performant web experiences. By understanding how to configure, debug, and use GPU capabilities, developers can create web applications that fully utilize modern hardware while providing fallback support for systems with limited capabilities.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

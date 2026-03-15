@@ -215,4 +215,11 @@ Fixing Core Web Vitals is not a one-time task. Set up continuous monitoring usin
 
 By addressing LCP, FID, and CLS systematically, you improve both your search rankings and the experience for your users. Start with the issues that have the biggest impact on your specific site, measure your progress, and iterate.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

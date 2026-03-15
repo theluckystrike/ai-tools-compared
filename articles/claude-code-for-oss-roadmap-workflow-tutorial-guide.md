@@ -3,7 +3,7 @@
 
 layout: default
 title: "Claude Code for OSS Roadmap Workflow Tutorial Guide"
-description: "Learn how to use Claude Code to streamline open source software roadmap planning and management. Practical workflow automation for feature prioritization, milestone planning, and community coordination."
+description: "Learn how to use Claude Code to streamline open source software roadmap planning and management. Practical workflow automation for feature."
 date: 2026-03-15
 categories: [tutorials]
 tags: [claude-code, claude-skills]
@@ -216,3 +216,10 @@ The key is to start simple, gather feedback from your community, and iterate. Cl
 By implementing these workflow improvements, you'll find it easier to coordinate contributions, communicate progress, and ultimately deliver better software that serves your users effectively.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

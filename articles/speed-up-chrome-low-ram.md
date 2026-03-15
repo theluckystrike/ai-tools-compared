@@ -2,7 +2,7 @@
 
 layout: default
 title: "Speed Up Chrome When Running Low on RAM: A Developer's Guide"
-description: "Practical techniques to reduce Chrome's memory footprint and improve performance on systems with limited RAM. Includes flags, extensions, and workflow optimizations."
+description: "Practical techniques to reduce Chrome's memory footprint and improve performance on systems with limited RAM. Includes flags, extensions, and workflow."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /speed-up-chrome-low-ram/
@@ -241,6 +241,13 @@ Reducing Chrome's RAM usage requires a multi-layered approach:
 5. **Monitor actively**: Use Chrome Task Manager to identify problems early
 
 These techniques work together. A single optimization might save 100MB; combined, they can reduce Chrome's footprint by 30-50%, leaving your system responsive even with dozens of tabs open.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
