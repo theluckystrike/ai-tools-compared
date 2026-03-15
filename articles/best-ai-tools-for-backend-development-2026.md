@@ -112,6 +112,24 @@ Selecting AI tools depends on your specific stack and workflow. Consider these f
 
 The best approach involves experimentation. Start with free tiers, integrate tools incrementally, and evaluate their impact on your productivity. The **xlsx** and **docx** skills demonstrate this principle—begin with simple tasks and expand usage as you discover capabilities.
 
+## The superapi Skill: RESTful and GraphQL Design
+
+The **superapi** skill within Claude Code helps design RESTful interfaces, generates OpenAPI specifications, and can create mock servers for testing. Rather than hand-crafting your API surface area, describe your resource model and the skill generates a well-structured spec you can iterate on.
+
+For GraphQL development, AI tools can generate resolvers, type definitions, and test queries from natural language descriptions. Describe your schema requirements and the tool produces the corresponding type definitions, resolvers, and example queries—significantly accelerating backend API development.
+
+## Bolt.new: Rapid Backend Scaffolding
+
+When you need to build an entire backend quickly, Bolt.new generates complete project structures including API routes, database configuration, authentication scaffolding, and deployment scripts. Describe your application requirements and it produces a working backend codebase ready to customize and extend.
+
+This is particularly useful for MVPs or internal tools where standing up a functional backend quickly matters more than hand-crafting every detail from scratch.
+
+## Pieces for Developers: Code Snippet Management
+
+**Pieces for Developers** solves a common backend problem: managing reusable code patterns, configuration snippets, and API examples across projects. Its AI-powered search makes finding previously saved content effortless.
+
+The desktop application runs locally, keeping your data private while providing powerful search capabilities. For backend developers working across multiple services and languages, Pieces provides a centralized repository for patterns like authentication middleware, database query templates, and infrastructure configuration.
+
 ## Building Your AI Toolkit
 
 Backend development in 2026 requires strategic tool selection. Claude Code's specialized skills provide targeted assistance for specific tasks, while general-purpose completion tools handle routine coding. Database management, testing, and deployment tools each address different workflow stages.
@@ -121,6 +139,7 @@ Remember that AI tools augment your skills rather than replace them. The most pr
 
 ## Related Reading
 
+- [Best AI Tools for Frontend Development in 2026](/claude-skills-guide/best-ai-tools-for-frontend-development-2026/)
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)

@@ -143,6 +143,30 @@ AI tools analyze your production bundles and suggest code splits, lazy loading o
 
 Automated accessibility testing has improved dramatically. AI-powered tools now catch WCAG violations, suggest ARIA improvements, and ensure keyboard navigation works correctly across your application.
 
+## v0: Rapid UI Component Generation
+
+For React-based interfaces, v0 from Vercel provides an incredibly fast way to generate production-ready UI components. It understands modern React patterns, Tailwind CSS, and shadcn/ui conventions.
+
+You describe what you need, and v0 generates the component code:
+
+```
+Create a data table with sorting, filtering, and pagination for a user management dashboard
+```
+
+The output includes not just the component, but also the necessary imports, types, and often accompanying utility functions. This dramatically accelerates frontend development without sacrificing code quality.
+
+## Bolt.new: Full Application Scaffolding
+
+When you need to spin up an entire frontend quickly, Bolt.new generates complete project structures including component hierarchies, routing, and styling configuration. Describe your application requirements and it produces a working frontend codebase you can customize and extend.
+
+The generated code follows modern best practices—TypeScript, proper error handling, and clean architecture patterns. You receive a project ready for further development rather than a rough prototype. This is particularly useful for prototyping UI-heavy applications where speed matters.
+
+## Windsurf: Agentic Development Environment
+
+Windsurf operates as an autonomous agent capable of understanding project context and executing complex multi-step tasks. For frontend developers, Windsurf can handle entire feature implementations—give it a specification, and it creates the necessary component files, writes tests, and verifies the implementation works.
+
+This shifts the developer role from writing every line of code to reviewing and refining AI-generated solutions, which is especially powerful when building out component libraries or design system implementations.
+
 ## Choosing the Right Tools for Your Stack
 
 Not every tool works well with every framework. Consider your technology stack when selecting AI tools:
@@ -165,6 +189,7 @@ Most tools offer free tiers suitable for individual developers. Experiment with 
 
 ## Related Reading
 
+- [Best AI Tools for Backend Development 2026](/claude-skills-guide/best-ai-tools-for-backend-development-2026/)
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
