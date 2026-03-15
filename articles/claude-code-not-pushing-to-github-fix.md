@@ -3,8 +3,11 @@ layout: default
 title: "Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide"
 description: "A comprehensive guide to fixing Claude Code push failures to GitHub. Learn to diagnose and resolve authentication, SSH, and configuration issues."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-not-pushing-to-github-fix/
+reviewed: true
+score: 8
+categories: [troubleshooting]
 ---
 
 {% raw %}
