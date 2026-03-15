@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI-powered music separation tools extract individual instrument tracks from mixed audio, enabling producers, remixers, and developers to work with isolated elements. This capability powers applications ranging from karaoke track generation to sample extraction and audio restoration. For developers building music applications, understanding available tools, their APIs, and integration patterns helps in selecting the right solution.
+AI music separation is the process of using deep learning models to split a mixed audio track into isolated stems such as vocals, drums, bass, and other instruments. The leading open-source tools are Demucs (highest quality, GPU-recommended) and Spleeter (fastest setup), while Audioshake offers a cloud API for production-scale separation. This guide covers installation, Python integration code, and pipeline optimization for each option.
 
 ## Understanding Music Source Separation
 
