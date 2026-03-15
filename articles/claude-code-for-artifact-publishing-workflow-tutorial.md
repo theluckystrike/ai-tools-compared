@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Artifact Publishing Workflow Tutorial"
-description: "Learn how to automate your artifact publishing workflows using Claude Code. This comprehensive tutorial covers practical examples, code snippets, and actionable advice for developers."
+description: "Learn how to automate your artifact publishing workflows using Claude Code. This comprehensive tutorial covers practical examples, code snippets, and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-artifact-publishing-workflow-tutorial/
@@ -247,4 +247,11 @@ Start with simple workflows and progressively add complexity as you become more 
 
 Remember to always test thoroughly in non-production environments, maintain comprehensive logs, and follow security best practices. With Claude Code as part of your development toolkit, you have a powerful ally for managing artifact publishing at any scale.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Keep a Changelog Workflow Tutorial"
-description: "Learn how to automate and manage your project changelog using Claude Code. A practical tutorial covering Keep a Changelog format, workflow automation, and actionable examples."
+description: "Learn how to automate and manage your project changelog using Claude Code. A practical tutorial covering Keep a Changelog format, workflow automation."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-keep-a-changelog-workflow-tutorial/
@@ -221,4 +221,11 @@ The key is integrating changelog management into your daily workflow rather than
 Start by adding changelog guidance to your CLAUDE.md, configure Conventional Commits for your team, and begin asking Claude to help maintain your CHANGELOG.md on a regular basis. Your future users—and your past self—will thank you.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

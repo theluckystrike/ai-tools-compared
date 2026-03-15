@@ -196,4 +196,11 @@ For developers evaluating **chrome vs opera gx ram** usage, the choice depends o
 
 Consider testing both browsers in your actual development environment. Memory profiles vary significantly based on your extension set, typical tab count, and workflow patterns. The baseline differences shown here represent starting points rather than definitive answers.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Code Comparisons Hub](/claude-skills-guide/comparisons-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
