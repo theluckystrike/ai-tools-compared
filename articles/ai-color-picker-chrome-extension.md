@@ -494,6 +494,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
+## Eyedropper API: An Alternative Capture Method
+
+For extensions that need users to sample any pixel on screen—not just computed CSS values—Chrome's built-in Eyedropper API is a cleaner alternative to injecting content scripts:
+
+```javascript
+async function startEyedropper() {
+  if (!window.EyeDropper) {
+    console.warn('EyeDropper API not supported in this browser');
+    return null;
+  }
+
+  const eyedropper = new EyeDropper();
+
+  try {
+    const result = await eyedropper.open();
+    return result.sRGBHex; // e.g. "#3b82f6"
+  } catch (error) {
+    if (error.name !== 'AbortError') {
+      console.error('Eyedropper error:', error);
+    }
+    return null;
+  }
+}
+```
+
+Use `chrome.scripting`-based extraction (see above) when you want to automatically harvest all dominant colors from a page without user interaction. Use the Eyedropper API when you want the user to deliberately sample a single pixel from anywhere on screen. Both approaches pair well with the `ColorAnalyzer` class.
+
 ## Content Script Integration
 
 For extensions that pick colors directly from web pages, a content script enables click-to-capture:

@@ -12,7 +12,7 @@ categories: [guides]
 
 # Chrome Extension Color Picker Design: A Developer's Guide
 
-Building a color picker for a Chrome extension requires more than dropping a standard input element into your popup. Developers and power users expect a seamless experience that feels native to the browser while delivering the precision needed for design work. This guide covers practical approaches to designing color pickers that actually work well in extension contexts.
+Building a color picker for a Chrome extension requires more than dropping a standard input element into your popup. Developers and power users expect a seamless experience that feels native to the browser while delivering the precision needed for design work. This guide covers practical approaches to **designing** color pickers that work well in extension contexts—focusing on UI patterns, the Eyedropper API, popup UX constraints, and testing. For the AI-analysis side (palette extraction, contrast scoring, WCAG checking), see the companion article [AI Color Picker Chrome Extension: A Developer Guide](/ai-color-picker-chrome-extension/).
 
 ## Why Color Picker Design Matters in Extensions
 
@@ -96,41 +96,46 @@ async function startEyedropper() {
 
 This API allows users to pick colors from any visible content on their screen, which proves invaluable for extensions that need to sample from web pages. Note that this requires HTTPS and user permission.
 
-## Handling Color Formats
+## Handling Color Formats in the UI
 
-Developers should support multiple color formats since users work with different systems:
+Developers and designers work in different color spaces—hex for CSS, RGB for code, HSL for intuitive adjustments. Rather than picking one format, let users toggle between them in the popup UI:
 
 ```javascript
-const ColorConverter = {
-  hexToRgb(hex) {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
-  },
+// Format-cycling display in the popup
+const FORMATS = ['hex', 'rgb', 'hsl'];
+let currentFormat = 0;
 
-  rgbToHsl(r, g, b) {
-    r /= 255; g /= 255; b /= 255;
-    const max = Math.max(r, g, b), min = Math.min(r, g, b);
-    let h, s, l = (max + min) / 2;
+function cycleFormat(color) {
+  currentFormat = (currentFormat + 1) % FORMATS.length;
+  return formatColor(color, FORMATS[currentFormat]);
+}
 
-    if (max === min) {
-      h = s = 0;
-    } else {
-      const d = max - min;
-      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-      switch (max) {
-        case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
-        case g: h = ((b - r) / d + 2) / 6; break;
-        case b: h = ((r - g) / d + 4) / 6; break;
-      }
+function formatColor(hex, format) {
+  // Conversion helpers live in a shared color-utils module;
+  // this function handles the display string only.
+  switch (format) {
+    case 'hex':  return hex.toUpperCase();
+    case 'rgb': {
+      const { r, g, b } = hexToRgb(hex);
+      return `rgb(${r}, ${g}, ${b})`;
     }
-    return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+    case 'hsl': {
+      const { r, g, b } = hexToRgb(hex);
+      const { h, s, l } = rgbToHsl(r, g, b);
+      return `hsl(${h}, ${s}%, ${l}%)`;
+    }
+    default: return hex;
   }
-};
+}
+
+// Wire up a click-to-cycle label in your popup
+document.getElementById('format-label').addEventListener('click', () => {
+  const current = document.getElementById('color-value').textContent;
+  document.getElementById('color-value').textContent = cycleFormat(currentHex);
+});
 ```
+
+This UX pattern—click the label to cycle formats—is familiar from tools like Figma and is well-suited to the compact popup environment. It avoids adding extra dropdowns or buttons to an already constrained layout.
 
 ## UX Considerations for Extension Contexts
 
