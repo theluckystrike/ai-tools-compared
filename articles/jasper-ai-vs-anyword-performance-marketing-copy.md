@@ -10,6 +10,8 @@ reviewed: true
 score: 8
 intent-checked: true
 ---
+{% raw %}
+
 
 # Jasper AI vs Anyword: Performance Marketing Copy Compared
 
@@ -203,3 +205,4 @@ The decision ultimately comes down to your specific marketing workflow and how m
 - [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
