@@ -1788,7 +1788,7 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code for Workspace Indexing Workflow Tutorial](/claude-skills-guide/claude-code-for-workspace-indexing-workflow-tutorial/)
 - [Claude Code for Zeek Network Analysis Workflow](/claude-skills-guide/claude-code-for-zeek-network-analysis-workflow/)
 - [Claude Code for ZenRows Scraping Workflow Tutorial](/claude-skills-guide/claude-code-for-zenrows-scraping-workflow-tutorial/)
-- [Claude Code for zkSync Era Workflow Tutorial](/claude-skills-guide/claude-code-for-zksync-era-workflow-tutorial/)
+- [Claude Code for zkSync Era Workflow Guide](/claude-skills-guide/claude-code-for-zksync-era-workflow-guide/)
 - [Claude Code for Zuora Billing Workflow Tutorial](/claude-skills-guide/claude-code-for-zuora-billing-workflow-tutorial/)
 - [Claude Code Git Rebase Interactive Workflow](/claude-skills-guide/claude-code-git-rebase-interactive-workflow/)
 - [Claude Code GitHub Actions Composite Actions](/claude-skills-guide/claude-code-github-actions-composite-actions/)

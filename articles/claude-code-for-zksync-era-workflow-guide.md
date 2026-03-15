@@ -95,9 +95,49 @@ my-zksync-dapp/
 └── hardhat.config.ts
 ```
 
+### Configuring Claude Code for Your Project
+
+Create a `CLAUDE.md` file in your project root so Claude Code understands your zkSync Era project structure and available commands:
+
+```markdown
+# zkSync Era Project Context
+
+This is a zkSync Era Layer 2 project using Hardhat.
+
+## Key Commands
+- `npx hardhat compile` - Compile contracts
+- `npx hardhat deploy-zksync` - Deploy to zkSync Era testnet/mainnet
+- `npx hardhat test` - Run tests
+
+## Project Structure
+- `/contracts` - Solidity smart contracts
+- `/deploy` - Deployment scripts
+- `/test` - Test files
+- `/artifacts` - Compiled contract artifacts
+```
+
 ## Smart Contract Development Workflow
 
 When developing smart contracts for zkSync Era, Claude Code can significantly accelerate your workflow by generating boilerplate code, identifying potential issues, and suggesting optimizations.
+
+### Writing a Standard ERC-20 Token
+
+For common token patterns, Claude Code can scaffold an OpenZeppelin-based ERC-20 contract in seconds. Ask:
+
+> "Create an ERC-20 token contract for zkSync Era with OpenZeppelin. Include mint functionality restricted to the owner."
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.20.0;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+
+contract MyToken is ERC20 {
+    constructor(uint256 initialSupply) ERC20("MyToken", "MTK") {
+        _mint(msg.sender, initialSupply);
+    }
+}
+```
 
 ### Writing zkSync-Enhanced Contracts
 
@@ -179,7 +219,7 @@ async function deployContract() {
 }
 ```
 
-### Testing zkSync Era Contracts
+### Testing zkSync Era Contracts with Hardhat
 
 Testing on zkSync Era requires specific configurations. Claude Code can help you set up comprehensive tests:
 
@@ -192,17 +232,55 @@ describe("MyContract", function() {
   it("should transfer tokens correctly", async function() {
     const provider = new Provider("http://localhost:3050");
     const wallet = new Wallet(process.env.TEST_PRIVATE_KEY!, provider);
-    
+
     const contract = await deployContract();
-    
+
     const initialBalance = await contract.balances(wallet.address);
     await contract.transfer(wallet.address, 100);
     const finalBalance = await contract.balances(wallet.address);
-    
+
     expect(finalBalance).to.equal(initialBalance.add(100));
   });
 });
 ```
+
+### Unit Testing with Foundry
+
+zkSync Era also supports Foundry. Claude Code can generate Forge-style tests:
+
+```solidity
+// test/MyToken.t.sol
+pragma solidity ^0.20.0;
+
+import "forge-std/Test.sol";
+import "../contracts/MyToken.sol";
+
+contract MyTokenTest is Test {
+    MyToken public token;
+
+    function setUp() public {
+        token = new MyToken(1000000 * 10 ** 18);
+    }
+
+    function testInitialSupply() public {
+        assertEq(token.totalSupply(), 1000000 * 10 ** 18);
+        assertEq(token.balanceOf(address(this)), 1000000 * 10 ** 18);
+    }
+}
+```
+
+Run tests with:
+
+```bash
+forge test
+```
+
+When testing zkSync Era contracts, keep these considerations in mind:
+
+- zkSync Era has different gas mechanics than Ethereum mainnet
+- Always test on zkSync Era testnet before mainnet deployment
+- Verify zkSync-specific features like account abstraction
+- Test cross-layer messaging if your app interacts with L1
 
 ## Optimizing for zkSync Era Performance
 
@@ -248,6 +326,85 @@ When moving to production on zkSync Era mainnet, follow this structured approach
 5. **Monitoring**: Set up monitoring for contract interactions
 
 Claude Code can help you create deployment scripts that handle all these steps systematically.
+
+### Security Checklist
+
+Before deploying to mainnet, use Claude Code to verify each item:
+
+- [ ] Contracts pass all tests with 100% coverage
+- [ ] External audits completed (for significant projects)
+- [ ] Timelock or governance mechanisms in place
+- [ ] Upgradeability patterns properly implemented
+- [ ] Emergency stop functionality available
+
+### Continuous Integration
+
+Automate your zkSync Era test and deploy pipeline with GitHub Actions:
+
+```yaml
+# .github/workflows/test.yml
+name: zkSync Era Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Compile contracts
+        run: npx hardhat compile
+      - name: Run tests
+        run: npx hardhat test
+      - name: Deploy to testnet
+        run: npx hardhat deploy-zksync --network zkSyncTestnet
+```
+
+### Using Claude Code for Code Reviews
+
+Before finalizing any contract, prompt Claude Code to audit it:
+
+```markdown
+> Review my zkSync Era contract for security vulnerabilities and gas optimization opportunities. Focus on:
+> - Reentrancy protection
+> - Access control
+> - Gas efficiency
+> - zkSync-specific considerations
+```
+
+### Automated Documentation with NatSpec
+
+Claude Code can generate comprehensive NatSpec documentation for your contracts. Use inline comment stubs and ask Claude Code to fill them in:
+
+```bash
+# Use NatSpec comments for auto-documentation
+/// @title MyToken
+/// @notice ERC-20 token for zkSync Era
+/// @dev Implements zkSync Era compatibility
+```
+
+### Monitoring Deployed Contracts
+
+Set up on-chain event monitoring to observe live contract activity:
+
+```javascript
+// Example: Event monitoring script
+const { ethers } = require("ethers");
+
+async function monitorEvents(contractAddress, abi) {
+    const provider = new ethers.providers.JsonRpcProvider(
+        "https://zksync-era-mainnet.infura.io/v3/YOUR_KEY"
+    );
+
+    const contract = new ethers.Contract(contractAddress, abi, provider);
+
+    contract.on("Transfer", (from, to, value, event) => {
+        console.log(`Transfer: ${from} -> ${to}: ${value}`);
+    });
+}
+```
 
 ## Conclusion
 
