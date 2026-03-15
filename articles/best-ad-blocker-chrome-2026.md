@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Best Ad Blocker Chrome 2026: A Developer's Guide to Blocking Ads"
 description: "Discover the best ad blocker for Chrome in 2026. Compare top extensions, learn technical implementation details, and find the perfect solution for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-ad-blocker-chrome-2026/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 

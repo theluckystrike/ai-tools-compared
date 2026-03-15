@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Wave Chrome Extension Accessibility: A Complete Guide for Developers"
 description: "Learn how to build accessible Chrome extensions using Wave accessibility testing principles. Practical code examples and best practices for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /wave-chrome-extension-accessibility/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 Wave is a popular web accessibility evaluation tool, and many developers want to integrate accessibility testing directly into their Chrome extensions. Whether you're building an extension inspired by Wave's functionality or adding accessibility features to an existing extension, understanding the core accessibility concepts is essential.
 

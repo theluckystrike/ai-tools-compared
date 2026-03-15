@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome DevTools Lighthouse Audit Guide"
 description: "Master Chrome DevTools Lighthouse audits: run performance, accessibility, SEO, and best practices audits with practical examples."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-devtools-lighthouse-audit-guide/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome DevTools Lighthouse Audit Guide
 
