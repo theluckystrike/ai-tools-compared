@@ -6,6 +6,8 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /copy-ai-vs-chatgpt-for-social-media-content/
 ---
+{% raw %}
+
 
 # Copy.ai vs ChatGPT for Social Media Content: A Practical Comparison
 
@@ -165,3 +167,4 @@ The choice ultimately depends on your specific requirements: integration complex
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
