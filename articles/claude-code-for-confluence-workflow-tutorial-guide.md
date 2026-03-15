@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Confluence Workflow Tutorial Guide"
 description: "Learn how to integrate Claude Code with Atlassian Confluence to automate documentation workflows, sync code changes with team wikis, and streamline developer collaboration."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-confluence-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

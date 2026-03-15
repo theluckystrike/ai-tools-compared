@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for OSS License Selection Workflow Guide"
 description: "Learn how to use Claude Code to systematically select the right open source license for your project. A practical workflow guide for developers."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-license-selection-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for OSS License Selection Workflow Guide
 
@@ -169,7 +173,7 @@ Add license headers to every source file in your project. This ensures copyright
 
 ### Update Annually
 
-Review your license decision annually or when significant project changes occur. Your goals and the landscape may evolve.
+Review your license decision annually or when significant project changes occur. Your goals and the ecosystem may evolve.
 
 ## Conclusion
 

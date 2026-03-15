@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Maven Artifact Publishing Workflow"
 description: "Learn how to use Claude Code to automate your Maven artifact publishing workflow. Practical examples and code snippets for developers."
@@ -7,11 +8,14 @@ author: Claude Skills Guide
 permalink: /claude-code-for-maven-artifact-publishing-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for Maven Artifact Publishing Workflow
 
-Maven artifact publishing is a critical part of Java and Kotlin development workflows. Whether you're publishing to Maven Central, GitHub Packages, or a private Nexus repository, the process involves multiple steps that can be error-prone when done manually. This guide shows you how to leverage Claude Code to automate and streamline your Maven artifact publishing workflow.
+Maven artifact publishing is a critical part of Java and Kotlin development workflows. Whether you're publishing to Maven Central, GitHub Packages, or a private Nexus repository, the process involves multiple steps that can be error-prone when done manually. This guide shows you how to use Claude Code to automate and streamline your Maven artifact publishing workflow.
 
 ## Understanding the Maven Publishing Pipeline
 

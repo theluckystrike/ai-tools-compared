@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Incident Retrospective Workflow Guide"
 description: "Learn how to leverage Claude Code to streamline incident retrospectives, automate documentation, and create actionable follow-up workflows for your DevOps team."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-retrospective-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 {% raw %}
 
 

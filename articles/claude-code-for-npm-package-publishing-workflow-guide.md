@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for NPM Package Publishing Workflow Guide"
 description: "Learn how to use Claude Code to streamline your npm package publishing workflow—from initialization to version management and automated releases."
@@ -7,7 +8,10 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-npm-package-publishing-workflow-guide/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for NPM Package Publishing Workflow Guide
