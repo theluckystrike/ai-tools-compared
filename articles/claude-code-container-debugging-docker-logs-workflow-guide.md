@@ -18,6 +18,12 @@ permalink: /claude-code-container-debugging-docker-logs-workflow-guide/
 
 Debugging containerized applications requires a systematic approach to log analysis, process inspection, and runtime investigation. This guide provides a practical workflow for debugging Docker containers using Claude Code, covering essential commands, automation patterns, and real-world scenarios that developers encounter daily. For setting up Claude Code itself inside Docker containers, see the [Claude Code with Docker container setup guide](/claude-skills-guide/claude-code-with-docker-container-skill-setup-guide/).
 
+## Why Claude Code for Docker Debugging?
+
+Claude Code brings intelligent analysis to log debugging. Instead of manually scanning through log files or running repetitive Docker commands, you can use Claude's natural language understanding to interpret log patterns, identify anomalies, and suggest solutions. The CLI tool integration means you can pull logs, inspect containers, and analyze issues without leaving your terminal or your conversation with Claude.
+
+The real power comes from combining Claude's reasoning capabilities with direct access to Docker CLI commands. You get the best of both worlds: natural language problem description and precise technical execution.
+
 ## Understanding the Container Debugging Challenge
 
 When your application runs inside a Docker container, traditional debugging tools often behave differently. The isolation that makes containers secure also complicates investigation. You cannot simply attach a debugger to a running process, and filesystem access requires understanding container layers and mounts.
@@ -72,6 +78,12 @@ For JSON-formatted logs from application containers, use jq:
 docker logs container_name 2>&1 | jq -r 'select(.level == "error") | .message'
 ```
 
+When debugging active issues, watch logs in real-time while filtering for critical events. The `--line-buffered` flag prevents grep from holding output in an internal buffer, ensuring you see matches immediately:
+
+```bash
+docker logs -f container_name 2>&1 | grep --line-buffered -E "(ERROR|Exception|FATAL)"
+```
+
 ## Container Inspection Beyond Logs
 
 Logs provide valuable context but rarely tell the complete story. Docker inspection reveals the container's internal state.
@@ -96,6 +108,22 @@ docker port container_name
 docker network inspect bridge
 ```
 
+## Container Health Checks
+
+Docker's health check feature provides additional debugging information beyond standard logs. When a container has a health check configured, view its health status and recent check results:
+
+```bash
+docker inspect --format='{{.State.Health.Status}}' container_name
+```
+
+For full health check history including failed attempts and their output:
+
+```bash
+docker inspect --format='{{json .State.Health}}' container_name | jq .
+```
+
+Health check failures in context with application logs provide a more complete picture of container state — especially useful when a container is running but not serving requests.
+
 ## Interactive Container Debugging
 
 Sometimes you need to enter the container environment directly. The `exec` command provides shell access:
@@ -111,6 +139,26 @@ docker run --rm -it --network container:target_container nicolaka/netshoot /bin/
 ```
 
 This approach lets you run network diagnostic tools against the target container without modifying the original image.
+
+## Multi-Container Debugging
+
+Modern applications often run across multiple containers, making log correlation challenging. Docker Compose simplifies this by letting you view logs from all services simultaneously or filter to a specific one:
+
+```bash
+# All services
+docker compose logs --follow
+
+# Specific service only
+docker compose logs --follow service_name
+```
+
+For distributed applications, consider aggregating logs to a central location using tools like the ELK stack, Loki, or cloud-native solutions. Ask Claude to help you design log aggregation strategies and write queries that span multiple containers.
+
+When correlating events across services, add `--timestamps` to every stream so you can align the timeline:
+
+```bash
+docker compose logs --follow --timestamps service_a service_b
+```
 
 ## Integrating Claude Code into Your Debugging Workflow
 
@@ -179,6 +227,8 @@ Examine the last few log lines for the error:
 docker logs --tail 20 container_name
 ```
 
+One of the most frequent causes is a missing or misconfigured environment variable. You can describe the symptom to Claude in plain language — "My container keeps exiting right after starting, can you check the logs and identify the issue?" — and Claude will execute the diagnostic commands and scan for patterns like `Environment variable X is not set` or configuration key errors that would take far longer to spot manually.
+
 ### Network Connectivity Issues
 
 Debug network problems by inspecting DNS resolution:
@@ -219,6 +269,10 @@ console.log(JSON.stringify({
   stack: error.stack
 }));
 ```
+
+Implement Docker health checks to provide additional visibility into container state beyond simple process monitoring. A health check that tests real application behaviour catches issues that a running process status would miss entirely.
+
+Combine multiple data sources for complete visibility: logs tell you what the application reported, `docker stats` shows resource pressure, `docker inspect` reveals configuration and lifecycle events, and health check history records repeated failures. No single source tells the whole story.
 
 Set up log rotation to prevent disk exhaustion:
 

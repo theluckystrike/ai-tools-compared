@@ -34,6 +34,15 @@ cd my-static-site
 npm install
 ```
 
+If you are adding Claude Code to an existing Astro project, open the project directory and start Claude directly:
+
+```bash
+cd my-astro-project
+claude
+```
+
+Claude Code automatically recognizes your Astro structure including components in `src/components`, pages in `src/pages`, and layouts in `src/layouts`. You can verify this by asking Claude to list your project structure or explain how your routing works.
+
 After scaffolding, activate the [`/frontend-design` skill](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) to help generate component patterns:
 
 ```
@@ -52,7 +61,9 @@ Claude generates the component with proper accessibility attributes and styling 
 
 ### Component-Driven Development
 
-Work through your site systematically using component patterns. Create reusable pieces first, then compose them into pages. The `/pdf` skill becomes valuable when you need to generate downloadable content or reports from your static site data.
+Work through your site systematically using component patterns. Create reusable pieces first, then compose them into pages. Claude Code excels at understanding context—if you have an existing button component in your project, Claude can generate new components that follow the same patterns and conventions. This consistency is crucial for maintaining a cohesive codebase.
+
+The `/pdf` skill becomes valuable when you need to generate downloadable content or reports from your static site data.
 
 For documentation sites, structure your content collection first:
 
@@ -88,7 +99,23 @@ Then describe your testing requirements:
 Add tests for the search component. Test input handling, debounce behavior, and result rendering.
 ```
 
-The tdd skill guides Claude to produce test files using your project's test framework, whether Vitest, Playwright, or Astro's built-in testing utilities.
+The tdd skill guides Claude to produce test files using your project's test framework, whether Vitest, Playwright, or Astro's built-in testing utilities. Here is an example of what Claude generates for a component test:
+
+```typescript
+import { render } from '@testing-library/react';
+import { Card } from '../components/Card';
+
+describe('Card Component', () => {
+  it('renders with title and description', () => {
+    const { getByText } = render(
+      <Card title="Test Title" description="Test Description" />
+    );
+    expect(getByText('Test Title')).toBeInTheDocument();
+  });
+});
+```
+
+Claude understands that static sites have unique testing requirements. It can help you test not just components, but also your build process, routing configuration, and content generation pipelines.
 
 ### Documentation and Memory
 
@@ -99,6 +126,12 @@ The [`/supermemory` skill](/claude-skills-guide/claude-skills-token-optimization
 ```
 
 This creates persistent memory of your project structure, design decisions, and coding preferences. Subsequent sessions retain knowledge of your component patterns, styling approach, and build configuration.
+
+## Image Optimization Workflows
+
+Static sites often struggle with image management. Astro provides excellent image optimization through its built-in tools, and Claude Code can automate the entire workflow. Claude can generate components that use Astro's `<Image />` component with appropriate presets. Describe your image requirements—responsive images, blur placeholders, or specific aspect ratios—and Claude will create the appropriate implementation.
+
+For bulk operations, describe your image assets and their intended usage. Claude can suggest optimal image formats, recommend compression settings, and generate the code needed to implement your image strategy.
 
 ## Automation and Deployment
 
@@ -123,7 +156,9 @@ export default defineConfig({
 
 ### Deployment Integration
 
-Connect your Astro project to deployment platforms. For GitHub Pages, add the GitHub Actions workflow:
+Connect your Astro project to deployment platforms. When deploying to platforms like Vercel, Netlify, or Cloudflare Pages, Claude can help configure environment variables, edge functions, and caching rules. Describe your deployment target and current challenges, and Claude will suggest specific configuration changes.
+
+For GitHub Pages, add the GitHub Actions workflow:
 
 ```yaml
 name: Deploy to GitHub Pages
@@ -161,6 +196,30 @@ jobs:
 ```
 
 This workflow builds your site on every push and deploys to GitHub Pages automatically.
+
+## PDF Generation for Static Content
+
+Many Astro sites need to generate PDFs—whitepapers, resumes, reports, or downloadable guides. The `/pdf` skill integrates smoothly with Astro's static generation. You can create pages that output as PDFs during build time, or generate them on-demand using server endpoints.
+
+Common use cases include:
+
+- Generating downloadable resources from markdown content
+- Creating invoice or report templates
+- Building resume sites that export to PDF
+- Producing printable versions of documentation
+
+The integration typically involves creating an Astro endpoint that renders your content to PDF format, which Claude can help architect and implement.
+
+## Workflow Integration Tips
+
+To get the most out of Claude Code with Astro, establish consistent patterns early:
+
+1. **Define component conventions** early and let Claude enforce them
+2. **Use content schemas** so Claude can validate content automatically
+3. **Create reusable snippets** for common patterns like hero sections or call-to-action blocks
+4. **Document your design system** so Claude generates matching components
+
+The more context you provide about your project conventions, the more useful Claude becomes. Reference existing components when requesting new ones, and Claude will pick up on your patterns.
 
 ## Skill Integration Examples
 
