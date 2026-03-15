@@ -44,6 +44,36 @@ description: Generate Spanish-language documentation for codebases
 
 This skill file stores Spanish documentation instructions in its body. When you invoke it, Claude Code follows those instructions when generating documentation.
 
+### Project Configuration File
+
+For consistent results across a project, create a `claude-docs.json` file in your project root to define language and output preferences:
+
+```json
+{
+  "language": "es",
+  "documentation": {
+    "targetAudience": "developers",
+    "technicalLevel": "intermediate",
+    "tone": "professional",
+    "includeCodeExamples": true,
+    "codeLanguage": "javascript"
+  },
+  "output": {
+    "format": "markdown",
+    "includeTableOfContents": true,
+    "includeIndex": true
+  }
+}
+```
+
+Claude Code works best when it understands the project context. At the start of each documentation session, provide this framing:
+
+```
+Estoy trabajando en [nombre del proyecto], una [tipo de aplicación]
+destinada a [usuario objetivo]. El stack tecnológico es: [lista de tecnologías].
+Genera documentación técnica en español siguiendo las convenciones de la industria.
+```
+
 ## Generating Function Documentation in Spanish
 
 To document a specific function in Spanish, invoke Claude Code with a precise prompt:
@@ -108,6 +138,20 @@ Document all exported functions with their parameters and return types."
 ```
 
 This segmented approach prevents context overflow for large codebases.
+
+## Using the docx and xlsx Skills for Structured Documentation
+
+When your documentation requires formal corporate templates or offline distribution, the `docx` skill creates professionally formatted Word documents. Place `docx.md` in your `.claude/` directory, then invoke `/docx`:
+
+```
+Crea una guía de API en español para mi proyecto de biblioteca JavaScript. Incluye:
+- Introducción con ejemplos de instalación
+- Referencia de métodos con parámetros y tipos
+- Ejemplos de código en cada sección
+- Sección de errores comunes y soluciones
+```
+
+For API matrices, feature comparisons, or tabular technical data, the `xlsx` skill generates structured spreadsheets. Place `xlsx.md` in `.claude/` and invoke `/xlsx` with a prompt describing your columns and content.
 
 ## API Documentation in Spanish
 
@@ -197,13 +241,74 @@ jobs:
           claude "Run spanish-docs skill on ./src directory"
 ```
 
+## Full Prompt Examples in Spanish
+
+The following complete prompts can be used directly in Claude Code sessions.
+
+### JavaScript Library Documentation
+
+```
+Eres un escritor técnico especializado en documentación para desarrolladores.
+Genera documentación completa en español para una biblioteca JavaScript llamada
+"MiBiblioteca" que proporciona utilidades para manipular arrays.
+
+Incluye:
+1. Guía de inicio rápido (instalación, ejemplo básico)
+2. Referencia de API completa con JSDoc
+3. Ejemplos avanzados con casos de uso reales
+4. FAQ con preguntas frecuentes
+5. Changelog con versiones
+
+Usa markdown con encabezados jerárquicos y código ejecutable.
+```
+
+### REST API Documentation
+
+```
+Genera documentación de API en español para un servicio RESTful de gestión de tareas.
+La API tiene los siguientes endpoints:
+- GET /tasks - Listar todas las tareas
+- POST /tasks - Crear nueva tarea
+- GET /tasks/{id} - Obtener tarea por ID
+- PUT /tasks/{id} - Actualizar tarea
+- DELETE /tasks/{id} - Eliminar tarea
+
+Para cada endpoint incluye: método, URL, parámetros, cuerpo de solicitud,
+respuestas posibles con códigos de estado y ejemplos de uso.
+```
+
+### README Completo de Proyecto
+
+```
+Crea un README.md completo en español para un proyecto de aplicación web
+llamada "GestorPro". Incluye:
+- Badge de estado de build
+- Descripción corta y larga
+- Características principales (usa bullets)
+- Capturas de pantalla
+- Instalación paso a paso
+- Uso con ejemplos de código
+- Contribución (guía de desarrollo local)
+- Licencia
+- Créditos
+```
+
 ## Best Practices
 
 When generating Spanish documentation with Claude Code, keep these points in mind:
 
 **Specify regional variants**: Spanish varies between Spain (es-ES), Mexico (es-MX), Argentina (es-AR), and other regions. Include your target variant in prompts for accurate terminology.
 
-**Review generated content**: Claude Code produces accurate translations, but always review for context-specific nuances that automated systems might miss.
+**Maintain a terminology glossary**: Decide upfront how to handle English technical terms that have common Spanish equivalents and specify your choice at the start of each prompt. Common decisions include:
+
+- "commit" → "confirmar" or keep "commit"
+- "branch" → "rama"
+- "pull request" → "solicitud de extracción" or "PR"
+- "deploy" → "desplegar" or "despliegue"
+
+Claude Code will respect whichever convention you specify.
+
+**Review generated content**: Claude Code produces accurate translations, but always review for context-specific nuances that automated systems might miss. Check technical accuracy of code examples, terminology specific to your industry, version numbers and links, and clarity for your target audience.
 
 **Combine with the frontend-design skill**: When documenting UI components, the frontend-design skill helps generate prop tables and component stories in Spanish.
 
