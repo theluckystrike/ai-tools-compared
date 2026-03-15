@@ -226,7 +226,7 @@ Use the `tdd` skill to generate comprehensive API tests:
 
 ```bash
 # Load the tdd skill and generate tests for your endpoints
-claude -l tdd "Generate integration tests for /api/v1/users endpoints covering CRUD operations, validation, and error cases"
+claude --print "Generate integration tests for /api/v1/users endpoints covering CRUD operations, validation, and error cases"
 ```
 
 The `claude-code-api-mocking-and-stubbing-guide` skill helps create mock servers for testing without depending on production endpoints.

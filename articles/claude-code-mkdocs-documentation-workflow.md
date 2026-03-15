@@ -150,19 +150,19 @@ Documentation projects span multiple sessions. The `supermemory` skill stores de
 Configure it once:
 
 ```bash
-claude -m supermemory --init
+claude /supermemory init
 ```
 
 Then store documentation decisions:
 
 ```
-claude -m supermemory --store "API docs use Google style, guides use present tense"
+claude /supermemory "Store: API docs use Google style, guides use present tense"
 ```
 
 When starting new sessions, retrieve stored context:
 
 ```
-claude -m supermemory --retrieve
+claude /supermemory "Retrieve project documentation context"
 ```
 
 This keeps your documentation consistent without re-explaining your conventions every time.
@@ -172,7 +172,7 @@ This keeps your documentation consistent without re-explaining your conventions 
 Some audiences need downloadable documentation. The `pdf` skill converts your MkDocs site to PDF:
 
 ```bash
-claude -m pdf --input docs/ --output docs/project-docs.pdf
+claude /pdf "Convert docs/ to docs/project-docs.pdf"
 ```
 
 This is useful for offline distribution, client deliverables, or archived versions of your documentation.
