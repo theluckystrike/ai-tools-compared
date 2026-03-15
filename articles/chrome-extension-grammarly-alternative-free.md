@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Free Chrome Extension Grammarly Alternatives for Developers in 2026"
 description: "Discover free Chrome extensions that replace Grammarly for developers and power users. Open-source options with API integrations, terminal-based workflows, and privacy-focused alternatives."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-grammarly-alternative-free/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [claude-code, claude-skills]
 ---
+
 
 {% raw %}
 
