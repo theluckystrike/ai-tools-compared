@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension CSS Coverage Analyzer: Find Unused Styles"
 description: "A practical guide to using Chrome extension CSS coverage analyzers. Learn how to identify unused CSS, reduce bundle sizes, and optimize your stylesheets for better performance."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-css-coverage-analyzer/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome Extension CSS Coverage Analyzer: Find Unused Styles
 

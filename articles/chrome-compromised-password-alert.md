@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Chrome Compromised Password Alert: What Developers Need to Know"
 description: "Learn how Chrome's compromised password alerts work, what they mean for your security, and how to integrate password checking into your development workflow."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-compromised-password-alert/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome Compromised Password Alert: What Developers Need to Know
 

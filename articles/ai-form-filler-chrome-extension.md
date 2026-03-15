@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "AI Form Filler Chrome Extension: A Developer and Power User Guide"
 description: "Learn how AI form filler Chrome extensions work, their technical architecture, and how to build or customize one for automated form filling."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-form-filler-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # AI Form Filler Chrome Extension: A Developer and Power User Guide
 
-Chrome extensions that leverage artificial intelligence to automate form filling have become essential tools for developers, QA engineers, and power users who frequently work with web forms. These extensions go beyond simple autocomplete by using AI to understand form context, infer appropriate values, and handle complex multi-step forms.
+Chrome extensions that use artificial intelligence to automate form filling have become essential tools for developers, QA engineers, and power users who frequently work with web forms. These extensions go beyond simple autocomplete by using AI to understand form context, infer appropriate values, and handle complex multi-step forms.
 
 ## How AI Form Fillers Work
 

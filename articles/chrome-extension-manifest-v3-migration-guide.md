@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Manifest V3 Migration Guide: A Practical Developer Handbook"
 description: "A comprehensive migration guide for developers transitioning Chrome extensions from Manifest V2 to V3. Covers service workers, breaking changes, code examples, and common pitfalls."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-manifest-v3-migration-guide/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 {% raw %}
 Google's transition from Manifest V2 to Manifest V3 represents the most significant API overhaul for Chrome extensions since the platform's inception. This guide walks you through the practical migration steps, highlighting the key differences and providing working code examples you can apply immediately.

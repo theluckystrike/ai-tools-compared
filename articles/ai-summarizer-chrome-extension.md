@@ -1,15 +1,21 @@
 ---
+
 layout: default
 title: "AI Summarizer Chrome Extension: Build Your Own Text Summarization Tool"
 description: "Learn how to build a Chrome extension that uses AI to summarize web content. Complete implementation guide with code examples for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-summarizer-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # AI Summarizer Chrome Extension: Build Your Own Text Summarization Tool
 
-Chrome extensions that leverage AI for text summarization have become essential tools for developers, researchers, and power users who need to quickly extract key information from lengthy web content. This guide walks you through building a functional AI summarizer extension from scratch, with practical code examples you can adapt for your own projects.
+Chrome extensions that use AI for text summarization have become essential tools for developers, researchers, and power users who need to quickly extract key information from lengthy web content. This guide walks you through building a functional AI summarizer extension from scratch, with practical code examples you can adapt for your own projects.
 
 ## Why Build an AI Summarizer Extension
 

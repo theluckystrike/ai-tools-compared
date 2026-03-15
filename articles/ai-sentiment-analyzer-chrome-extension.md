@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "AI Sentiment Analyzer Chrome Extension: A Developer's Guide"
 description: "Learn how to build and use AI-powered sentiment analysis Chrome extensions for real-time text emotion detection in your browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /ai-sentiment-analyzer-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 {% raw %}
 
