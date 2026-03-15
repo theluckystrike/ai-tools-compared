@@ -5,7 +5,7 @@ description: "A practical troubleshooting guide for developers and power users w
 date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-custom-gpt-not-following-instructions/
-categories: [troubleshooting, chatgpt, custom-gpt]
+categories: [troubleshooting, guides]
 reviewed: true
 score: 8
 ---
