@@ -6,7 +6,7 @@ description: "Explore the best Pesticide alternatives for Chrome in 2026. Compar
 date: 2026-03-15
 author: theluckystrike
 permalink: /pesticide-alternative-chrome-extension-2026/
-categories: [guides, development-tools]
+categories: [guides]
 reviewed: true
 score: 0
 tags: [chrome-extension, web-development, debugging, css]
