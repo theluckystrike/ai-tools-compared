@@ -6,6 +6,10 @@ description: "A technical comparison of Runway ML and Pika for AI video generati
 date: 2026-03-15
 author: theluckystrike
 permalink: /runway-ml-vs-pika-ai-video-generation/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Runway ML vs Pika AI Video Generation: Developer Comparison
