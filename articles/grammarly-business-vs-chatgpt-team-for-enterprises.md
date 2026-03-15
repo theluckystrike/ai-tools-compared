@@ -334,6 +334,7 @@ Evaluate your team's primary workflows, test both platforms with actual use case
 
 ## Related Reading
 
+- [Remote Work Tools Guide](/remote-work-tools/){: .cross-repo-linked}
 - [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
 - [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
 - [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
