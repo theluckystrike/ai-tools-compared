@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "InVideo AI vs Pictory AI: Video Maker Comparison for."
+title: "InVideo AI vs Pictory AI: Video Maker Comparison for Developers"
 description: "A technical comparison of InVideo AI and Pictory AI video creation tools, with API capabilities, automation workflows, and practical integration examples."
 date: 2026-03-15
 author: theluckystrike
@@ -230,7 +230,7 @@ When choosing between these platforms for your project, consider these technical
 
 Your choice depends on the primary use case:
 
-- **Marketing-focused automation** → InVideo AI provides better template management and批量处理
+- **Marketing-focused automation** → InVideo AI provides better template management and batch processing
 - **Content repurposing** → Pictory AI excels at extracting highlights from existing material
 - **Hybrid workflows** → Consider using both platforms for different pipeline stages
 
