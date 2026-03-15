@@ -3,8 +3,11 @@ layout: default
 title: "Web Vitals Chrome Extension: Monitor Core Web Vitals in Real-Time"
 description: "Learn how to use Chrome extensions to monitor Web Vitals directly in your browser. Track LCP, FID, and CLS metrics while you browse and debug performance issues."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /web-vitals-chrome-extension/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 # Web Vitals Chrome Extension: Monitor Core Web Vitals in Real-Time

@@ -4,8 +4,11 @@ layout: default
 title: "Best Developer Chrome Extensions 2026: A Practical Guide"
 description: "Discover the most useful Chrome extensions for developers and power users in 2026. Features code snippets, practical examples, and installation tips."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /best-developer-chrome-extensions-2026/
+reviewed: true
+score: 8
+categories: [best-of]
 ---
 
 {% raw %}
