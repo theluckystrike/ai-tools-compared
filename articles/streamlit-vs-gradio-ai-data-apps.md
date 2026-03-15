@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /streamlit-vs-gradio-ai-data-apps/
 reviewed: true
 score: 8
-categories: [comparisons, frameworks, ai-tools]
+categories: [comparisons, guides]
 intent-checked: true
 voice-checked: true
 ---
