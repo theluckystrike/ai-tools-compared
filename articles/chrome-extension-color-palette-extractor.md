@@ -214,5 +214,12 @@ When building or using color palette extractors, performance becomes important o
 
 Color palette extractor extensions bridge the gap between inspiration and implementation, enabling developers and designers to capture and reuse colors efficiently across projects.
 
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

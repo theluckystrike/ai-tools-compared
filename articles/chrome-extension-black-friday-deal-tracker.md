@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension Black Friday Deal Tracker: A Developer's Guide"
-description: "Learn how to build a Chrome extension for tracking Black Friday deals. Practical implementation patterns, code examples, and architecture for developers and power users."
+title: "Chrome Extension Black Friday Deal Tracker: A."
+description: "Learn how to build a Chrome extension for tracking Black Friday deals. Practical implementation patterns, code examples, and architecture for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-black-friday-deal-tracker/
@@ -289,5 +289,12 @@ Check that content scripts inject correctly on each retailer domain and that the
 Building a Chrome extension for Black Friday deal tracking combines practical web scraping, browser API mastery, and UI design. The architecture demonstrated here—content scripts for extraction, background scripts for monitoring, and a popup for user interaction—provides a solid foundation you can extend with cloud sync, multiple notification channels, or price prediction algorithms.
 
 The skills developed through this project transfer directly to other extension types: inventory monitors, availability checkers, and price comparison tools. For developers looking to understand Chrome extension architecture deeply, a deal tracker is an excellent starting point.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Chrome Extension Highlight Text Save: A Developer's Guide"
-description: "Learn how to build Chrome extensions that capture highlighted text and save it for later use. Includes code examples, architecture patterns, and implementation strategies."
+description: "Learn how to build Chrome extensions that capture highlighted text and save it for later use. Includes code examples, architecture patterns, and."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /chrome-extension-highlight-text-save/
@@ -250,5 +250,12 @@ Chrome provides developer tools specifically for extension debugging. Load your 
 For testing across different page types, create a test suite that includes standard HTML pages, single-page applications, pages with iframes, and sites with complex event handling. Each presents unique challenges for text capture.
 
 Building a robust Chrome extension for saving highlighted text requires attention to storage architecture, user interface design, and edge case handling. Start with the basic patterns shown here, then iterate based on your specific use case. Whether you are building a personal productivity tool or a team knowledge management system, these foundations provide a solid starting point.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
