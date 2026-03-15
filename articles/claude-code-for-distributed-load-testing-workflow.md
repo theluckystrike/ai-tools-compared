@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Distributed Load Testing Workflow"
-description: "Learn how to leverage Claude Code and specialized skills to build, execute, and analyze distributed load testing workflows for modern cloud-native applications."
+description: "Learn how to leverage Claude Code and specialized skills to build, execute, and analyze distributed load testing workflows for modern cloud-native."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-distributed-load-testing-workflow/
@@ -273,3 +273,10 @@ Follow these recommendations to get the most out of your AI-assisted load testin
 
 Claude Code transforms distributed load testing from a manual, error-prone process into an automated, intelligent workflow. By using AI for test generation, execution, and analysis, you can more quickly identify performance issues and validate system reliability at scale. The key is integrating Claude Code into your existing tooling while maintaining control over test scenarios and success criteria.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

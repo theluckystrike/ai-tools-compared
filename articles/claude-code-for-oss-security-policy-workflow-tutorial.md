@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for OSS Security Policy Workflow Tutorial"
-description: "Learn how to automate open-source security policy enforcement using Claude Code. This comprehensive tutorial covers practical workflows, code examples, and actionable security automation strategies."
+description: "Learn how to automate open-source security policy enforcement using Claude Code. This comprehensive tutorial covers practical workflows, code examples."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-oss-security-policy-workflow-tutorial/
@@ -207,3 +207,10 @@ The key is starting simple—establish basic vulnerability scanning first, then 
 *Ready to secure your open-source dependencies? Start by creating your first security policy skill and running an initial scan today.*
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

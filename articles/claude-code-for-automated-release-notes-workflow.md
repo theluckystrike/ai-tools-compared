@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Automated Release Notes Workflow"
-description: "Learn how to automate release notes generation using Claude Code. Practical examples and code snippets for developers building automated release documentation workflows."
+description: "Learn how to automate release notes generation using Claude Code. Practical examples and code snippets for developers building automated release."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-automated-release-notes-workflow/
@@ -219,3 +219,10 @@ Automated release notes with Claude Code dramatically reduce the overhead of rel
 
 The key is starting simple: automate the collection and categorization first, then progressively add enrichment and formatting features as your workflow matures. Your team will quickly wonder how they ever managed without automated release notes.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
