@@ -16,9 +16,9 @@ tags: [chrome, claude-skills]
 
 # Chrome Extension Accessibility Audit: A Practical Guide
 
-Accessibility in Chrome extensions often receives less attention than web applications, yet millions of users depend on assistive technologies to interact with browser extensions. Whether you are maintaining an existing extension or building a new one, conducting regular accessibility audits ensures your extension serves all users effectively—including those using screen readers, keyboard navigation, or magnification tools.
+Accessibility in Chrome extensions often receives less attention than web applications, yet millions of users depend on assistive technologies to interact with browser extensions. Whether you are maintaining an existing extension or reviewing one you just shipped, conducting regular accessibility audits ensures your extension serves all users effectively—including those using screen readers, keyboard navigation, or magnification tools.
 
-This guide walks you through the complete process of auditing a Chrome extension for accessibility issues, from automated scanning to manual testing with real assistive technologies.
+This guide walks you through the complete process of auditing a Chrome extension for accessibility issues, from automated scanning to manual testing with real assistive technologies. If you are starting from zero and want to build an AI-powered accessibility extension rather than audit an existing one, see the companion guide on [building an AI accessibility Chrome extension](/ai-accessibility-chrome-extension/).
 
 ## Why Chrome Extension Accessibility Matters
 
