@@ -3,8 +3,11 @@ layout: default
 title: "Mercury Reader Alternative Chrome Extension 2026: Top Picks for Distraction-Free Reading"
 description: "Discover the best Mercury Reader alternative Chrome extensions in 2026. Compare features, performance, and find the perfect readability tool for developers and power users."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /mercury-reader-alternative-chrome-extension-2026/
+reviewed: true
+score: 8
+categories: [comparisons]
 ---
 
 {% raw %}

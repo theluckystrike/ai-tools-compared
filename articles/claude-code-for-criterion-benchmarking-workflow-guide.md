@@ -4,10 +4,12 @@ layout: default
 title: "Claude Code for Criterion Benchmarking Workflow Guide"
 description: "A comprehensive guide to building efficient benchmarking workflows using Claude Code and the Criterion benchmarking framework for Rust projects."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-criterion-benchmarking-workflow-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

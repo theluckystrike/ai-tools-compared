@@ -4,8 +4,11 @@ layout: default
 title: "Chrome Extension Eyedropper Tool: Complete Developer Guide"
 description: "Master the Chrome extension eyedropper tool for precise color sampling. Learn implementation patterns, API usage, and practical code examples for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-eyedropper-tool/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

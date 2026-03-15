@@ -7,6 +7,8 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-dependency-versioning-workflow-guide/
+reviewed: true
+score: 8
 ---
 
 {% raw %}
@@ -184,7 +186,7 @@ claude "What dependency versions changed in this release?"
 # Claude Code compares lockfiles and generates a summary
 ```
 
-Each command leverages Claude Code's understanding of your project to provide relevant, safe recommendations.
+Each command uses Claude Code's understanding of your project to provide relevant, safe recommendations.
 
 ## Common Pitfalls to Avoid
 
