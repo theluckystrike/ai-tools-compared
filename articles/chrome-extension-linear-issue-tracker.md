@@ -6,7 +6,7 @@ description: "Learn how to build and use Chrome extensions for Linear issue trac
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-linear-issue-tracker/
-categories: [development, tools, chrome-extension]
+categories: [guides, guides, guides]
 tags: [chrome-extension, linear, issue-tracker, productivity]
 ---
 

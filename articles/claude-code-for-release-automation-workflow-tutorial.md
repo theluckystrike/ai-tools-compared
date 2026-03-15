@@ -32,9 +32,9 @@ Before building your release workflow, ensure Claude Code is properly configured
 Several Claude skills enhance release automation capabilities. Install the core skills for your release pipeline:
 
 ```bash
-claude skill install semantic-versioning
-claude skill install github-actions
-claude skill install npm-publish
+# Skills are .md files in ~/.claude/skills/
+# Add: ~/.claude/skills/github-actions.md
+# Add: ~/.claude/skills/npm-publish.md
 ```
 
 Each skill brings specific capabilities. The semantic versioning skill handles version calculations following SemVer conventions. The GitHub Actions skill enables workflow file generation and management. The npm publish skill streamlines package distribution.
