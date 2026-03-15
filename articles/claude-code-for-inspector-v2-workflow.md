@@ -70,7 +70,7 @@ When encountering a bug, follow this structured approach combining Inspector v2 
 Use Inspector v2 to capture the exact state when the error occurs:
 
 ```bash
-claude inspect run --capture-on-fail npm start
+node --inspect npm start  # then share crash state with Claude for analysis
 ```
 
 This command starts your application with Inspector attached and automatically captures a snapshot when an exception is thrown.
@@ -92,7 +92,7 @@ Claude Code will examine the captured state, trace through the execution context
 Apply the suggested fix and verify with a focused re-run:
 
 ```bash
-claude inspect run --breakpoint src/database/connect.ts:15 npm start
+node --inspect-brk npm start  # set breakpoints, then ask Claude to analyze the state
 ```
 
 ## Advanced Patterns for Complex Issues
@@ -102,7 +102,7 @@ claude inspect run --breakpoint src/database/connect.ts:15 npm start
 One of Inspector v2's strongest features is its async state tracking. When debugging Promise-based code, use the timeline view:
 
 ```bash
-claude inspect timeline --filter "promise" npm test
+node --inspect npm test -- --runInBand  # ask Claude to analyze promise resolution patterns
 ```
 
 This shows the complete async chain, making it easy to spot unhandled rejections or incorrect chaining.
@@ -112,7 +112,7 @@ This shows the complete async chain, making it easy to spot unhandled rejections
 For memory issues, Inspector v2 provides heap snapshots:
 
 ```bash
-claude inspect heap --snapshot --interval 5000
+node --heap-prof npm start  # generate heap profile, share with Claude for analysis
 ```
 
 Then ask Claude to analyze the snapshots:
@@ -127,7 +127,7 @@ that are growing unexpectedly and trace their allocation sites.
 Inspector v2 captures all HTTP requests automatically. Query specific failed requests:
 
 ```bash
-claude inspect network --status 500
+# Monitor network errors and share logs with Claude for root cause analysis
 ```
 
 ## Integrating with Existing Tools
