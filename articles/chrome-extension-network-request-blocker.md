@@ -1,197 +1,193 @@
 ---
-
-
 layout: default
 title: "Chrome Extension Network Request Blocker: A Developer Guide"
-description: "Learn how to build and implement network request blocking in Chrome extensions using Manifest V3. Practical examples for developers and power users."
+description: "Learn how to build and use Chrome extensions to block network requests, with practical code examples and implementation patterns for developers."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /chrome-extension-network-request-blocker/
-reviewed: true
-score: 8
-categories: [guides]
-tags: [chrome-extension, claude-skills]
 ---
 
-
 {% raw %}
-Network request blocking is one of the most powerful capabilities available to Chrome extension developers. Whether you need to block ads, tracker's analytics scripts, or debug API calls during development, understanding how to intercept and block network requests from a Chrome extension opens up a wide range of possibilities.
+Chrome extension network request blocking represents one of the most powerful capabilities available to browser extension developers. This functionality allows extensions to intercept, modify, or completely block HTTP and HTTPS requests before they reach their destination. For developers and power users, understanding this mechanism opens doors to ad blocking, API rate limiting, debugging, privacy enhancement, and custom network filtering.
 
-## Understanding the Blocking APIs
+## Understanding the Network Blocking Architecture
 
-Chrome provides two primary APIs for network request manipulation: `chrome.webRequest` and `chrome.declarativeNetRequest`. The choice between them depends on your use case and Chrome'sManifest V3 requirements.
+Chrome provides the `declarativeNetRequest` API for extensions to block or modify network requests. This API was introduced in Manifest V3 as a privacy-focused replacement for the older `webRequest` blocking API. The key advantage is that extensions no longer need to intercept and inspect every single network request in user space, which improves performance and privacy.
 
-The `chrome.webRequest` API has been available for years and provides fine-grained control over network requests. However, in Manifest V3, you can no longer use the `blocking` option in most contexts. Instead, you must use `chrome.declarativeNetRequest` for declarative blocking.
+The `declarativeNetRequest` API works through a ruleset system. You define rules in a JSON file, and Chrome applies these rules at the network layer. This means the blocking happens efficiently without needing to examine request contents in JavaScript.
 
-The `chrome.declarativeNetRequest` API is the modern approach for Manifest V3 extensions. It allows you to define rules that specify which requests to block or modify, and Chrome handles the blocking efficiently without needing a persistent background script.
+Here's a basic manifest configuration:
 
-## Setting Up Your Manifest
-
-First, you need to declare the appropriate permissions in your `manifest.json`:
-
-```json
+```javascript
 {
   "manifest_version": 3,
   "name": "Network Request Blocker",
   "version": "1.0",
-  "permissions": [
-    "declarativeNetRequest",
-    "declarativeNetRequestWithHostAccess"
-  ],
-  "host_permissions": [
-    "<all_urls>"
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["<all_urls>"],
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  }
+}
+```
+
+## Defining Blocking Rules
+
+The rules file contains an array of rule objects. Each rule specifies conditions and actions. When all conditions match a request, the corresponding action executes.
+
+```javascript
+// rules.json
+{
+  "rules": [
+    {
+      "id": 1,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": {
+        "urlFilter": "doubleclick.net",
+        "resourceTypes": ["script", "image"]
+      }
+    },
+    {
+      "id": 2,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": {
+        "urlFilter": ".*\\.googlesyndication\\.com",
+        "resourceTypes": ["sub_frame"]
+      }
+    }
   ]
 }
 ```
 
-The `declarativeNetRequestWithHostAccess` permission allows your extension to block requests while still accessing request details. For more restricted access, you can use specific host patterns.
+This example blocks scripts and images from doubleclick.net domains and prevents iframe requests to googlesyndication.com. The `urlFilter` uses regex patterns, giving you fine-grained control over what gets blocked.
 
-## Creating Blocking Rules
+## Dynamic Rule Management
 
-Rules are defined in a JSON file that describes which network requests to block. Here's a practical example that blocks common tracking domains:
-
-```json
-[
-  {
-    "id": 1,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "google-analytics.com",
-      "resourceTypes": ["script", "image", "xhr"]
-    }
-  },
-  {
-    "id": 2,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "facebook.net",
-      "resourceTypes": ["script"]
-    }
-  }
-]
-```
-
-Each rule consists of an ID, priority (higher priority rules are evaluated first), an action type, and conditions that match specific URL patterns.
-
-## Loading Rules in Your Extension
-
-In your background service worker, you load the rules when the extension installs or updates:
+Static rules work well for fixed filtering lists, but sometimes you need runtime control. The `declarativeNetRequest` API provides functions to update rules dynamically:
 
 ```javascript
 // background.js
-const RULES_FILE = 'rules.json';
-
 chrome.runtime.onInstalled.addListener(() => {
-  fetch(chrome.runtime.getURL(RULES_FILE))
-    .then(response => response.json())
-    .then(rules => {
-      chrome.declarativeNetRequest.updateDynamicRules({
-        addRules: rules,
-        removeRuleIds: rules.map(rule => rule.id)
-      });
-    })
-    .catch(console.error);
+  // Initial rules are loaded from rules.json automatically
+  console.log('Network blocker extension installed');
+});
+
+// Toggle blocking for specific domains
+function toggleDomainBlocking(domain, enabled) {
+  const rule = {
+    id: 100,
+    priority: 10,
+    action: { 
+      type: enabled ? 'block' : 'allow' 
+    },
+    condition: {
+      urlFilter: domain,
+      resourceTypes: ['xmlhttprequest', 'script']
+    }
+  };
+  
+  if (enabled) {
+    chrome.declarativeNetRequest.updateRules({
+      addRules: [rule],
+      ruleResourcesToUpdate: ['ruleset_1']
+    });
+  } else {
+    chrome.declarativeNetRequest.updateRules({
+      removeRuleIds: [100],
+      ruleResourcesToUpdate: ['ruleset_1']
+    });
+  }
+}
+
+// Listen for messages from popup or content script
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'toggleBlocking') {
+    toggleDomainBlocking(message.domain, message.enabled);
+    sendResponse({ success: true });
+  }
 });
 ```
 
-This approach loads rules dynamically, allowing users to customize blocking behavior without repackaging the extension.
+This pattern enables UI-driven blocking where users can enable or disable filters through a popup interface.
 
-## Implementing User-Controlled Blocking
+## Advanced Filtering Techniques
 
-For a practical extension, you want users to be able to toggle blocking for different categories. Here's a pattern for managing rule sets:
+Beyond simple blocking, you can implement more sophisticated filtering. For API rate limiting, you might block repeated requests to the same endpoint:
 
 ```javascript
-// Rule categories
-const ruleCategories = {
-  trackers: { id: 1, name: "Trackers", enabled: true },
-  ads: { id: 2, name: "Advertisements", enabled: true },
-  analytics: { id: 3, name: "Analytics", enabled: false }
-};
-
-async function updateBlocking(category, enabled) {
-  const rules = await loadCategoryRules(category);
-  
-  if (enabled) {
-    await chrome.declarativeNetRequest.updateDynamicRules({
-      addRules: rules
-    });
-  } else {
-    await chrome.declarativeNetRequest.updateDynamicRules({
-      removeRuleIds: rules.map(r => r.id)
-    });
-  }
-  
-  ruleCategories[category].enabled = enabled;
+{
+  "rules": [
+    {
+      "id": 1,
+      "priority": 1,
+      "action": { "type": "block" },
+      "condition": {
+        "urlFilter": "api\\.example\\.com/data",
+        "requestDomains": ["api.example.com"],
+        "resourceTypes": ["xmlhttprequest"],
+        "regexFilter": ".*"
+      }
+    },
+    {
+      "id": 2,
+      "priority": 2,
+      "action": { 
+        "type": "redirect",
+        "redirect": { "extensionPath": "/blocked.html" }
+      },
+      "condition": {
+        "urlFilter": "api\\.example\\.com/data",
+        "resourceTypes": ["xmlhttprequest"]
+      }
+    }
+  ]
 }
 ```
 
-This allows users to enable or disable specific blocking categories without affecting others.
-
-## Blocking Based on Response Content
-
-Sometimes you need to block requests based on the response content rather than just the URL. While `declarativeNetRequest` doesn't support content-based blocking directly, you can combine it with `webRequest` for more complex scenarios:
-
-```javascript
-// In background.js with webRequest
-chrome.webRequest.onBeforeRequest.addListener(
-  (details) => {
-    // Check if this matches our content-based criteria
-    if (shouldBlockBasedOnContent(details)) {
-      return { cancel: true };
-    }
-  },
-  {
-    urls: ["<all_urls>"],
-    types: ["xmlhttprequest", "script"]
-  },
-  ["blocking"]
-);
-```
-
-However, note that this pattern requires the `webRequestBlocking` permission and will only work in unpacked extensions or extensions approved for this capability.
+You can also use the `allow` action to create exceptions to broader blocking rules. Define a general block rule with low priority, then add specific allow rules with higher priority for URLs you want to permit.
 
 ## Practical Use Cases
 
-Network request blocking serves many practical purposes beyond ad blocking:
+### Debugging API Endpoints
+When developing web applications, you can block specific API calls to test error handling or simulate failures. Create rules that block endpoints temporarily while you verify your application's resilience.
 
-**Development Debugging**: Block specific API endpoints to test error handling or simulate failed requests without modifying your backend.
+### Privacy Enhancement
+Block known tracking domains and analytics scripts. Many privacy-focused extensions use this exact mechanism to prevent data collection by third-party trackers.
 
-**Privacy Enhancement**: Block known tracking domains to prevent data collection while browsing.
+### Bandwidth Conservation
+If you're on limited connectivity, block video autoplay, high-resolution image loading, or specific content types to reduce data usage.
 
-**Performance Optimization**: Block resource-heavy elements like embedded videos or social media widgets that slow down page loads.
+### Development Workflow
+Block distracting websites or API endpoints during work hours. Combine with a simple popup UI to create a personal productivity tool.
 
-**Testing**: Simulate network conditions by blocking certain request types to test your application's resilience.
+## Important Limitations
 
-## Performance Considerations
+The `declarativeNetRequest` API has constraints you should understand. First, rules have a maximum limit per ruleset, though you can use multiple rulesets. Second, you cannot inspect or modify request bodies—blocking operates on URL and headers only. Third, some request types like main frame navigation cannot be blocked entirely in all cases.
 
-When implementing network blocking, keep these performance tips in mind:
+Additionally, Chrome enforces strict rules about when extensions can use blocking rules. The extension must declare specific host permissions, and users must manually grant permission in some cases.
 
-1. Use `declarativeNetRequest` instead of `webRequest` whenever possible—it's more efficient because Chrome handles the blocking natively.
+## Testing Your Implementation
 
-2. Keep your rule sets small and specific. Thousands of rules can impact startup time.
+Always test network blocking thoroughly. Chrome provides a dedicated testing interface in `chrome://extensions` where you can enable logging for `declarativeNetRequest` events. Check the console for any rule processing errors, and verify that blocking actually occurs by monitoring network tabs in developer tools.
 
-3. Use URL patterns efficiently. Simple domain matching is faster than complex regex patterns.
+```javascript
+// Enable debug logging in background script
+chrome.declarativeNetRequest.onRuleMatchedDebug.addListener((info) => {
+  console.log('Rule matched:', info);
+});
+```
 
-4. Group related rules with the same priority to minimize rule evaluation overhead.
+This listener fires when rules match, helping you verify your conditions work as expected during development.
 
-## Wrapping Up
+## Conclusion
 
-Network request blocking in Chrome extensions has evolved significantly with Manifest V3. The `declarativeNetRequest` API provides a performant, modern approach to intercepting and blocking network calls. For developers and power users, this capability enables everything from building privacy-focused extensions to creating powerful development tools.
-
-Start with simple URL-based blocking rules, then expand to more complex scenarios as needed. The Chrome extension documentation provides comprehensive details on advanced features like redirect actions, request modification, and rule priority handling.
-
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+Chrome extension network request blocking provides a robust foundation for building privacy tools, debugging utilities, and productivity enhancements. The `declarativeNetRequest` API offers sufficient flexibility for most use cases while maintaining performance through its declarative approach. Start with simple domain blocking rules and progressively add dynamic management and advanced filtering as your requirements grow.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
