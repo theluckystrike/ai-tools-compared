@@ -1,11 +1,11 @@
 {
-  "total": 21,
+  "total": 23,
   "clusters": {
     "best-of": {
-      "count": 5
+      "count": 6
     },
     "comparisons": {
-      "count": 15
+      "count": 16
     },
     "guides": {
       "count": 1
