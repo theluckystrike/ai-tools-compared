@@ -1,12 +1,16 @@
 ---
+
 layout: default
 title: "Starburst vs Trino for AI Query Engine: A Practical Comparison"
 description: "A developer-focused comparison of Starburst and Trino for building AI-powered query engines, with code examples and real-world considerations."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /starburst-vs-trino-ai-query-engine/
 categories: [comparisons]
+reviewed: true
+score: 8
 ---
+
 
 When building AI applications that need to query large datasets, choosing the right query engine can make or break your architecture. Two popular options stand out: Trino, the open-source distributed SQL query engine, and Starburst, its enterprise-grade distribution. This comparison breaks down the practical differences for developers building AI query systems.
 
