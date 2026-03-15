@@ -9,6 +9,7 @@ categories: [troubleshooting, guides]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -155,10 +156,7 @@ Track metrics relevant to your use case—output quality, rejection rates, user 
 
 ## Common Pitfalls to Avoid
 
-- **Over-reliance on knowledge files**: Instructions should define behavior; knowledge files provide information
-- **Changing instructions mid-conversation**: This creates inconsistency; use conversation-level prompts for temporary modifications
-- **Ignoring the model's limitations**: Some instruction types (security policies, complex reasoning rules) consistently challenge the model
-- **Failing to test in production-like conditions**: Staging tests may not reveal real-world instruction following issues
+Over-reliance on knowledge files is a frequent mistake—instructions should define behavior while knowledge files provide information, not the reverse. Changing instructions mid-conversation creates inconsistency; use conversation-level prompts for temporary modifications instead. Some instruction types (security policies, complex reasoning rules) consistently challenge the model, so account for those limitations in your design. Finally, test in production-like conditions, since staging tests may not reveal real-world instruction following issues.
 
 ## When to Rebuild vs. Fix
 

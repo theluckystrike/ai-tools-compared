@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -45,7 +46,7 @@ Instead of asking:
 Ask:
 > "What is the current LTS version of Node.js as of March 2026?"
 
-This explicit framing helps Claude prioritize recent knowledge. For rapidly evolving fields like JavaScript frameworks, Always specify that you need current information.
+This explicit framing helps Claude prioritize recent knowledge. For rapidly evolving fields like JavaScript frameworks, always specify that you need current information.
 
 ### Fix 3: Verify Your Local Documentation
 
@@ -109,12 +110,7 @@ If you suspect outdated responses, test with information you already know. Ask a
 
 ### Tip 3: Monitor for Hallucination Signs
 
-Outdated information sometimes overlaps with hallucination. Watch for these warning signs:
-- Specific version numbers that do not match official sources
-- Confident statements about recently released features
-- References to APIs that have been deprecated
-
-When in doubt, always verify against official documentation.
+Outdated information sometimes overlaps with hallucination. Watch for specific version numbers that do not match official sources, confident statements about recently released features, and references to APIs that have been deprecated. When in doubt, verify against official documentation.
 
 ## Common Scenarios and Solutions
 
@@ -178,9 +174,7 @@ For these cases, check:
 - Developer Discord channels or forums
 - Recent conference talks or blog posts
 
-## Summary
-
-Claude providing outdated information usually stems from context issues, unclear prompts, or outdated local files. Fix these problems by starting fresh conversations, specifying timeframes explicitly, keeping your project documentation current, and enabling web fetching when you need real-time data. Develop a verification habit for version numbers and release dates, and know when to consult official sources directly.
+Most outdated-information issues resolve by starting a fresh conversation, adding explicit timeframe markers to prompts, or updating stale local documentation that Claude reads as context. For real-time accuracy, enable web fetching and verify version numbers against official sources.
 
 
 ## Related Reading

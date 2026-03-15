@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [guides]
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -181,12 +182,7 @@ For Claude Code itself, avoid running with sudo unless absolutely necessary. Run
 
 ## Diagnostic Tips
 
-When troubleshooting permission errors, gather as much information as possible:
-
-1. **Full error message**: Note the exact text, including any file paths or command names
-2. **Command context**: What were you asking Claude Code to do when the error occurred?
-3. **Recent changes**: Did you update your OS, install new tools, or modify permissions recently?
-4. **Log files**: Check Claude Code's logs for more detailed error information
+When troubleshooting permission errors, gather as much information as possible. Note the full error message text including any file paths or command names, and record what you were asking Claude Code to do when the error occurred. Check whether you recently updated your OS, installed new tools, or modified permissions. Review Claude Code's log files for more detailed error information.
 
 You can often find logs in:
 - macOS: `~/Library/Logs/Claude/`
@@ -201,9 +197,7 @@ Once you have resolved the permission error, take steps to prevent recurrence:
 - Keep your operating system and development tools updated
 - Periodically verify that your project directories have correct permissions
 
-## Summary
-
-Permission denied errors in Claude Code usually stem from three sources: executable permissions on commands, file and directory access, or Claude Code's own internal data. Work through each fix systematically, starting with the simplest (checking command permissions) and moving to more complex solutions (shell profile debugging). Most issues resolve quickly once you identify which layer is causing the problem.
+Permission denied errors in Claude Code usually stem from executable permissions on commands, file and directory access, or Claude Code's own internal data. Start with `chmod +x` and directory permissions before moving to shell profile debugging or Gatekeeper quarantine removal.
 
 
 ## Related Reading
