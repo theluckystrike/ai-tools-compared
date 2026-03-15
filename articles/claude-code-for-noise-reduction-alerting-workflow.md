@@ -3,10 +3,12 @@ layout: default
 title: "Claude Code for Noise Reduction Alerting Workflow"
 description: "A practical guide to implementing noise reduction alerting workflows with Claude Code. Learn how to build intelligent alert systems that filter, prioritize, and escalate notifications effectively."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-noise-reduction-alerting-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

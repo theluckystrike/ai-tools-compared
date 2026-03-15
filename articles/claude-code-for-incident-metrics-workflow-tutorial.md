@@ -4,10 +4,12 @@ layout: default
 title: "Claude Code for Incident Metrics Workflow Tutorial"
 description: "Learn how to build automated incident metrics tracking workflows with Claude Code. This tutorial covers practical examples for measuring MTTR, MTTD, incident frequency, and more."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-incident-metrics-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 # Claude Code for Incident Metrics Workflow Tutorial
@@ -16,7 +18,7 @@ Tracking incident metrics is essential for any engineering team that wants to ma
 
 ## Why Automate Incident Metrics with Claude Code
 
-Manual incident tracking consumes valuable engineering time and often results in incomplete or inconsistent data. By leveraging Claude Code, you can create workflows that automatically capture incident data from multiple sources, calculate key metrics, and generate actionable reports. The benefits extend beyond time savings—automated workflows ensure consistency and provide real-time visibility into your system's reliability.
+Manual incident tracking consumes valuable engineering time and often results in incomplete or inconsistent data. By using Claude Code, you can create workflows that automatically capture incident data from multiple sources, calculate key metrics, and generate actionable reports. The benefits extend beyond time savings—automated workflows ensure consistency and provide real-time visibility into your system's reliability.
 
 Claude Code excels at this use case because it can interact with APIs, parse logs, execute shell commands, and generate formatted reports. This makes it ideal for building an incident metrics pipeline that pulls data from your incident management system, processes it, and delivers insights.
 
