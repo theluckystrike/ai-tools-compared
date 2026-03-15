@@ -6,6 +6,10 @@ description: "A practical comparison of Landbot and Typebot for building AI-powe
 date: 2026-03-15
 author: theluckystrike
 permalink: /landbot-vs-typebot-ai-conversational-forms/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

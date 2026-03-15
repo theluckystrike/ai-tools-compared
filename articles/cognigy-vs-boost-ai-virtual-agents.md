@@ -5,6 +5,10 @@ description: "A practical comparison of Cognigy and Boost AI for building virtua
 date: 2026-03-15
 author: theluckystrike
 permalink: /cognigy-vs-boost-ai-virtual-agents/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 {% raw %}
 

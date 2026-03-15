@@ -5,6 +5,10 @@ description: "A practical guide to AI tools for support quality assurance, with 
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-support-quality-assurance/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
