@@ -75,6 +75,21 @@ Skills do not configure which tools Claude can use. If Claude cannot use a speci
 2. **Network access** — `WebSearch` requires network access. If your environment is offline, this tool is unavailable regardless of which skill is active
 3. **Claude Code settings** — Tool availability is controlled by `~/.claude/settings.json`, not skill files
 
+### Permission restrictions that surface as "not found"
+
+Claude Code's permissions system controls what tools can access. If a tool requires permissions that haven't been granted, it may surface as "not found" rather than explicitly stating a permission error. This is especially relevant for tools that access files, run shell commands, or interact with network resources. Check `~/.claude/settings.json` and verify the necessary permission flags are set.
+
+## MCP Server Configuration Issues
+
+MCP servers extend Claude Code's capabilities by providing additional tools and integrations. When an MCP server is not properly configured or is not running, any tools it provides will trigger a "not found" error.
+
+**Diagnose MCP server issues:**
+
+1. Verify the MCP server process is running
+2. Check that all server paths in your configuration files are correct and that the server binaries are executable
+3. Review server logs for connection errors or authentication failures
+4. If you recently updated Claude Code or an MCP server, check for version compatibility — rolling back to a previous version may be necessary if a recent update introduced breaking changes
+
 ### External tool dependencies (pdf, docx skills)
 
 The [`pdf` skill](/claude-skills-guide/best-claude-skills-for-data-analysis/), `docx` skill, and similar document-processing skills require external binaries. These are separate from Claude Code's built-in tools.
@@ -160,6 +175,21 @@ This is a minimal skill. Claude will use default tool access.
 ```
 
 If the stripped skill works but the original does not, a tool declaration in the original is causing the error.
+
+## Advanced Troubleshooting Techniques
+
+When basic troubleshooting does not resolve the issue:
+
+- **Enable debug logging** in Claude Code to get more detailed error messages that reveal underlying issues not visible in standard output
+- **Isolate the problem** by temporarily disabling other skills and MCP servers to determine whether a conflict between components is causing the error
+- **Community resources** — The Claude Code community forums and GitHub issues pages are useful for persistent problems. When posting for help, include your exact error messages, Claude Code version, and a description of your skill/MCP setup
+
+## Prevention
+
+- Keep skills and MCP servers updated — developers regularly release compatibility fixes
+- Document your skill configuration: which skills provide which tools, and what permissions each requires
+- Test new skills in a development environment before using them in production
+- Use version control for your skill configuration files so you can roll back if a change introduces problems
 
 ## Summary
 
