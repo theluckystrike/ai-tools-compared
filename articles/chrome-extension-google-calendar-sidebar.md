@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Chrome Extension Google Calendar Sidebar: Build Your Own Calendar Integration"
-description: "A developer guide to building Chrome extensions that integrate with Google Calendar sidebar. Learn the APIs, techniques, and code patterns for creating powerful calendar sidebar extensions."
+title: "Chrome Extension Google Calendar Sidebar: Build Your Own."
+description: "A developer guide to building Chrome extensions that integrate with Google Calendar sidebar. Learn the APIs, techniques, and code patterns for creating."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /chrome-extension-google-calendar-sidebar/
@@ -272,5 +272,12 @@ Once your extension is functional, package it for distribution through the Chrom
 For internal distribution within organizations, you can use Chrome Enterprise policies to deploy extensions managed fashion without public listing.
 
 Building a Google Calendar sidebar extension requires understanding OAuth flows, the Calendar API, and Chrome extension architecture. The investment pays off in a productivity tool that keeps your calendar visible while working in other browser tabs.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

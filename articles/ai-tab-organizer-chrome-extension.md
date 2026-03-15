@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tab Organizer Chrome Extension: A Practical Guide for Developers"
+title: "AI Tab Organizer Chrome Extension: A Practical Guide for."
 description: "Learn how AI-powered tab organizers transform browser workflow for developers. Explore practical implementations, code examples, and power user strategies."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -178,5 +178,12 @@ For developers specifically, prioritize extensions that offer:
 - Export capabilities for tab data
 
 The ideal solution integrates smoothly with your existing workflow rather than adding cognitive overhead. Start with one that handles the basics well—automatic grouping and smart search—and expand from there.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
