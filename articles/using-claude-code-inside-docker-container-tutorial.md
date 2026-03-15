@@ -8,7 +8,7 @@ permalink: /using-claude-code-inside-docker-container-tutorial/
 categories: [tutorials]
 reviewed: true
 score: 9
-tags: [claude-code, docker, containers, development-environment]
+tags: [claude-code, docker, containers, container, development-environment, mcp, skills]
 ---
 
 # Using Claude Code Inside Docker Container Tutorial
@@ -125,7 +125,7 @@ services:
       - claude-data:/home/developer/.claude
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
-    
+
   postgres:
     image: postgres:15
     environment:
@@ -136,11 +136,102 @@ services:
 
 This setup gives you Claude Code working alongside a PostgreSQL database, perfect for developing database-backed applications with AI assistance.
 
+## Integrating MCP Servers in Containers
+
+MCP (Model Context Protocol) servers extend Claude Code's capabilities by providing specialized tools for various tasks. Running MCP servers inside Docker alongside Claude Code creates a powerful, self-contained development environment.
+
+### Containerized MCP Server Example
+
+Here's how to run an MCP filesystem server inside its own container:
+
+```dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Install MCP server package
+RUN npm install -g @modelcontextprotocol/server-filesystem
+
+# Create directory for file operations
+RUN mkdir -p /workspace/files
+
+ENTRYPOINT ["npx", "server-filesystem", "/workspace/files"]
+```
+
+### Connecting Claude Code to Containerized MCP Servers
+
+Configure Claude Code to communicate with MCP servers running in separate containers:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "docker",
+      "args": [
+        "exec", "-i", "mcp-filesystem",
+        "npx", "server-filesystem", "/workspace/files"
+      ]
+    }
+  }
+}
+```
+
+This configuration allows Claude Code to interact with filesystem operations running in an isolated container, providing an additional layer of security and isolation.
+
 ## Best Practices for Docker-Based Claude Code Development
 
 When using Claude Code inside Docker containers, follow these best practices for optimal results. First, always mount your project directory as a volume to persist changes. Second, set up a `CLAUDE.md` file in each project to provide context about your development environment. Third, use environment variables for sensitive data like API keys rather than hardcoding them in Dockerfiles.
 
 Regularly rebuild your Docker image to get the latest Claude Code features and security updates. Consider creating a custom base image with pre-installed tools specific to your workflow to reduce startup time.
+
+### Use Multi-Stage Builds
+
+Keep your final image small by using multi-stage builds:
+
+```dockerfile
+# Build stage
+FROM node:20 AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+
+# Runtime stage
+FROM node:20-alpine
+WORKDIR /app
+COPY --from=builder /app/node_modules ./node_modules
+COPY . .
+```
+
+### Add Health Checks
+
+Monitor Claude Code's availability with container health checks:
+
+```yaml
+services:
+  claude-dev:
+    build: .
+    healthcheck:
+      test: ["CMD", "claude", "health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+```
+
+## Advanced Pattern: Claude Code as a CI/CD Worker
+
+One powerful use case is running Claude Code as part of your CI/CD pipeline for automated code review:
+
+```yaml
+# .gitlab-ci.yml or similar
+claude-review:
+  image: claude-code:latest
+  script:
+    - claude --verbose "Review the changes in this merge request"
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+```
+
+This enables automated code review and refactoring suggestions as part of your development workflow.
 
 ## Troubleshooting Common Issues
 
@@ -158,6 +249,7 @@ Start by creating a basic Docker setup, then gradually add complexity as you bec
 
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-code-token-usage-optimization-best-practices-guide/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
