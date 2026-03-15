@@ -16,9 +16,9 @@ score: 8
 {% raw %}
 ## Introduction
 
-Pull request reviews are a critical part of software development, but they can be time-consuming and sometimes inconsistent. Claude Code (claude) offers powerful capabilities that can transform how you approach code reviews, making them more thorough, efficient, and educational.
+Pull request reviews are a critical part of software development, but they can be time-consuming and sometimes inconsistent. Claude Code (`claude`) offers powerful capabilities that can transform how you approach code reviews, making them more thorough, efficient, and educational.
 
-In this guide, we'll explore practical strategies for using Claude Code throughout your PR review workflow, from understanding diffs to providing constructive feedback.
+In this guide, we'll explore practical strategies for **using the `claude` CLI interactively** throughout your PR review workflow — from understanding diffs to providing constructive feedback in real time. This is a human-in-the-loop approach; if you want a fully automated, always-on skill that runs without a reviewer present, see [Claude Code Automated Pull Request Review Workflow Guide](/claude-code-automated-pull-request-review-workflow-guide/).
 
 ## Setting Up Claude Code for PR Reviews
 
