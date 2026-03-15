@@ -6,6 +6,10 @@ description: "A practical guide to AI-powered video object tracking tools for de
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-object-tracking/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Video object tracking enables applications to locate and follow objects across consecutive frames in video streams. This capability powers diverse use cases: surveillance systems, autonomous vehicles, sports analytics, and interactive media. Modern AI tools make implementation accessible without requiring deep expertise in computer vision. This guide covers practical approaches and tools for developers building object tracking into their applications.

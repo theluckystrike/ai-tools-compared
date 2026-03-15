@@ -5,6 +5,10 @@ description: "A practical comparison of AI tools for music separation and stems 
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-music-separation-and-stems/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 AI-powered music separation tools extract individual instrument tracks from mixed audio, enabling producers, remixers, and developers to work with isolated elements. This capability powers applications ranging from karaoke track generation to sample extraction and audio restoration. For developers building music applications, understanding available tools, their APIs, and integration patterns helps in selecting the right solution.
