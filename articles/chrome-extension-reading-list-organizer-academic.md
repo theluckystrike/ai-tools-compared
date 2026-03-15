@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Reading List Organizer for Academic Research"
 description: "Learn how to build and use Chrome extensions for organizing academic reading lists efficiently. Practical code examples and implementation guide for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-reading-list-organizer-academic/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # Chrome Extension Reading List Organizer for Academic Research
 

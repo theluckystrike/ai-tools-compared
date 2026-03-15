@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Custom LSP Diagnostics Workflow"
 description: "Learn how to build powerful custom LSP diagnostics workflows using Claude Code CLI. Automate code analysis, create tailored error handling, and integrate language server diagnostics into your development pipeline."
@@ -7,12 +8,15 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-custom-lsp-diagnostics-workflow/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for Custom LSP Diagnostics Workflow
 
-Language Server Protocol (LSP) diagnostics are the backbone of modern code quality tools—those red squiggles telling you about syntax errors, the yellow warnings about deprecated APIs, and the hints suggesting code improvements. While most IDEs handle these diagnostics automatically, building custom workflows around LSP diagnostics can dramatically improve your development process. This guide shows you how to leverage Claude Code CLI to create powerful, automated diagnostic workflows tailored to your project's needs.
+Language Server Protocol (LSP) diagnostics are the backbone of modern code quality tools—those red squiggles telling you about syntax errors, the yellow warnings about deprecated APIs, and the hints suggesting code improvements. While most IDEs handle these diagnostics automatically, building custom workflows around LSP diagnostics can dramatically improve your development process. This guide shows you how to use Claude Code CLI to create powerful, automated diagnostic workflows tailored to your project's needs.
 
 ## Understanding LSP Diagnostics in Claude Code
 
@@ -200,7 +204,7 @@ When building custom LSP diagnostic workflows with Claude Code, follow these gui
 
 ## Conclusion
 
-Custom LSP diagnostics workflows through Claude Code unlock new possibilities for code quality management. By moving beyond passive error display and creating主动的 automated workflows, you can catch issues earlier, maintain consistent code standards, and integrate quality checks seamlessly into your development process.
+Custom LSP diagnostics workflows through Claude Code unlock new possibilities for code quality management. By moving beyond passive error display and creating主动的 automated workflows, you can catch issues earlier, maintain consistent code standards, and integrate quality checks smoothly into your development process.
 
 Start with the basic patterns in this guide, then adapt them to your specific needs. The flexibility of Claude Code means your diagnostic workflows can evolve alongside your project requirements.
 {% endraw %}
