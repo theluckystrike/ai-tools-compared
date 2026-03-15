@@ -6,9 +6,10 @@ description: "Compare the top AI writing tools for developers creating blog cont
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-writing-tool-for-blog-posts-2026/
+categories: [guides]
+tags: [tools]
 reviewed: true
 score: 8
-categories: [best-of]
 ---
 
 Writing blog posts as a developer requires tools that understand technical content, integrate with version control, and maintain consistency across articles. The best AI writing tool for blog posts in 2026 balances powerful language generation with developer-friendly workflows.
@@ -146,6 +147,10 @@ description: "'"$DESCRIPTION"'"
 date: '$(date +%Y-%m-%d)'
 author: yourname
 permalink: /'"$SLUG"'/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---' > _posts/$(date +%Y-%m-%d)-$SLUG.md
 ```
 
