@@ -18,6 +18,8 @@ score: 8
 
 Conventional Commits provide a standardized format for commit messages that make your git history readable, automatic versioning possible, and team collaboration smoother. But remembering the exact syntax and crafting meaningful messages can be challenging. This is where Claude Code becomes your pairing partner for commit excellence.
 
+This guide focuses on interactive, day-to-day workflows for writing Conventional Commits with Claude Code. For tooling enforcement — Husky, commitlint, CI/CD pipelines, and automated versioning — see the companion guide: [Claude Code Conventional Commits Enforcement Workflow](/claude-code-conventional-commits-enforcement-workflow/).
+
 ## Understanding Conventional Commits Basics
 
 The Conventional Commits specification defines a structured format:

@@ -16,27 +16,9 @@ score: 7
 {% raw %}
 # Claude Code Conventional Commits Enforcement Workflow
 
-Maintaining consistent commit messages is crucial for automated versioning, changelog generation, and readable project history. Conventional Commits provides a standardized format that enables these benefits, but enforcement requires proper tooling. This guide shows you how to set up a complete Conventional Commits enforcement workflow using Claude Code, Git hooks, and CI/CD pipelines.
+Maintaining consistent commit messages is crucial for automated versioning, changelog generation, and readable project history. Conventional Commits provides a standardized format that enables these benefits, but enforcement requires proper tooling. This guide covers the tooling layer: Git hooks with Husky and commitlint, a structured Claude Code skill for message generation, automated version bumps, and CI/CD pipeline validation.
 
-## Understanding Conventional Commits Format
-
-The Conventional Commits specification defines a lightweight convention for commit messages. A properly formatted commit message follows this structure:
-
-```
-<type>(<scope>): <description>
-
-[optional body]
-
-[optional footer(s)]
-```
-
-The `type` indicates the kind of change (feat, fix, docs, style, refactor, test, chore). The `scope` is optional and identifies the area affected. The `description` is a short summary in imperative mood.
-
-```
-feat(auth): add OAuth2 login support
-fix(api): resolve null pointer in user endpoint
-docs(readme): update installation instructions
-```
+If you are new to Conventional Commits or want interactive workflows for crafting messages day-to-day, see the companion guide: [Claude Code for Conventional Commits Workflow Guide](/claude-code-for-conventional-commits-workflow-guide/).
 
 ## Setting Up Commit Message Validation with Husky
 
