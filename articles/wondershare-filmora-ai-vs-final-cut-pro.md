@@ -5,7 +5,7 @@ description: "A practical comparison of Wondershare Filmora AI and Final Cut Pro
 date: 2026-03-15
 author: theluckystrike
 permalink: /wondershare-filmora-ai-vs-final-cut-pro/
-categories: [ai-tools, video-editing, macos, windows]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

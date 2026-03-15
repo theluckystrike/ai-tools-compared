@@ -5,7 +5,7 @@ description: "A practical comparison of AI-powered video editing tools for devel
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-video-editor-2026/
-categories: [ai-tools, video-editing, developer-tools]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

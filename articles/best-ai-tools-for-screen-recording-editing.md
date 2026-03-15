@@ -5,7 +5,7 @@ description: "A practical comparison of AI-powered screen recording and editing 
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-screen-recording-editing/
-categories: [ai-tools, screen-recording, developer-tools]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
