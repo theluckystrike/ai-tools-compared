@@ -3,11 +3,11 @@
 
 layout: default
 title: "Claude Code Java Library Development Guide"
-description: "A practical guide to using Claude Code for building professional Java libraries, covering project setup, API design, testing, and documentation with real-world examples."
+description: "A practical guide to using Claude Code for building professional Java libraries, covering project setup, API design, testing, and documentation with."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /claude-code-java-library-development-guide/
-categories: [development, java, claude-code]
+categories: [guides]
 reviewed: true
 score: 8
 ---
@@ -252,3 +252,8 @@ Claude Code accelerates every phase of Java library development—from initial d
 
 Start with a clear purpose, design intuitive APIs, test comprehensively, and document thoroughly. Your users will thank you.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
