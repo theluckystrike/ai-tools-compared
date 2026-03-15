@@ -251,3 +251,10 @@ When using Claude Code for firewall management, follow these practices:
 5. **Use the principle of least privilege** - start restrictive and open only what's necessary.
 
 Claude Code transforms firewall management from a error-prone manual process into an assisted, validated workflow. By generating configs from specifications, validating for security issues, translating between platforms, and maintaining documentation, you reduce risk while saving significant time. Start with small, low-stakes rules and progressively adopt more Claude Code automation as you build confidence in the workflow.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

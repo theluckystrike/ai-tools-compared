@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for AWS PrivateLink Workflow"
-description: "Learn how to use Claude Code to automate AWS PrivateLink configuration and management. Practical examples, code snippets, and actionable workflow patterns for developers."
+description: "Learn how to use Claude Code to automate AWS PrivateLink configuration and management. Practical examples, code snippets, and actionable workflow."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-aws-privatelink-workflow/
@@ -257,3 +257,10 @@ Finally, consider using AWS CloudFormation or Terraform for infrastructure-as-co
 
 By integrating Claude Code into your PrivateLink workflows, you can reduce manual effort, improve consistency, and catch configuration errors before they impact your production environment.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

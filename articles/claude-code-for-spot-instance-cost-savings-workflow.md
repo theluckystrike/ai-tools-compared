@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use Claude Code for Spot Instance Cost Savings Workflow"
-description: "Learn how to leverage Claude Code and Claude Skills to automate spot instance management, reduce AWS costs, and build cost-effective cloud infrastructure workflows."
+title: "How to Use Claude Code for Spot Instance Cost Savings."
+description: "Learn how to leverage Claude Code and Claude Skills to automate spot instance management, reduce AWS costs, and build cost-effective cloud."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-spot-instance-cost-savings-workflow/
@@ -215,3 +215,10 @@ Start small with non-critical workloads, measure your savings, and gradually exp
 
 Remember: the goal isn't just saving money—it's freeing up budget for more experiments, faster scaling, and bigger innovations.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

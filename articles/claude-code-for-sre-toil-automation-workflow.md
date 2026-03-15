@@ -283,3 +283,10 @@ Start small: pick one high-frequency toil task, automate it with Claude Code, me
 
 Remember: the goal isn't to eliminate all manual work—it's to eliminate work that doesn't require human judgment, freeing your team to focus on reliability, innovation, and solving novel problems.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
