@@ -6,6 +6,10 @@ description: "A technical comparison of Domo and Sisense AI dashboard capabiliti
 date: 2026-03-15
 author: theluckystrike
 permalink: /domo-vs-sisense-ai-dashboards/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
