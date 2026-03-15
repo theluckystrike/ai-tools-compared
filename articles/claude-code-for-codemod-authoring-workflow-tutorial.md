@@ -20,7 +20,7 @@ Before diving into codemod creation, ensure Claude Code is installed and configu
 
 ```bash
 # Initialize Claude Code in your project
-claude init
+# Initialize: create CLAUDE.md in your project root
 
 # Verify the setup
 claude --version
@@ -138,3 +138,4 @@ Claude Code transforms codemod authoring from a manual, error-prone process into
 
 The key is treating Claude as a collaborative partner: provide clear specifications, review outputs carefully, and iterate toward perfect transformations. With practice, you'll find that Claude-assisted codemod authoring becomes an indispensable part of your development toolkit.
 {% endraw %}
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

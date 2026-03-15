@@ -62,7 +62,6 @@ Rather than building one monolithic skill, consider creating a modular skill str
 ---
 name: multilang
 description: "Orchestrates navigation across multiple programming languages"
-tools: [Read, Bash, Glob]
 ---
 
 You are a multi-language navigation expert. When asked to navigate or explore code:
@@ -87,7 +86,6 @@ Each language-specific skill should contain detailed knowledge about that langua
 ---
 name: python-navigator
 description: "Navigate Python codebases with deep understanding of PEP conventions"
-tools: [Read, Glob, Grep, Bash]
 ---
 
 You are a Python code navigation expert. You understand:
@@ -112,7 +110,6 @@ One of the most valuable features of a multi-language workflow is handling refer
 ---
 name: xlang-refs
 description: "Resolve references across language boundaries"
-tools: [Read, Grep, Glob]
 ---
 
 When resolving cross-language references:
@@ -200,3 +197,4 @@ Finally, invest time in customizing language-specific skills for the specific fr
 Multi-language navigation is a powerful capability that transforms Claude Code from a single-language assistant into a truly polyglot development partner. By building skills that understand language context, delegate appropriately, and handle cross-language references, you create workflows that feel natural regardless of which language you're working in.
 
 The key is treating language not as an afterthought, but as a first-class concern in your skill design. With proper context detection, specialized sub-skills, and clear delegation patterns, you can navigate complex multilingual codebases with confidence and speed.
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
