@@ -114,6 +114,7 @@ The most effective security teams use AI as a force multiplier for their documen
 
 ## Related Reading
 
+- [Privacy Tools Guide](/privacy-tools-guide/){: .cross-repo-linked}
 - [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
 - [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
 - [Best AI Tool for Academic Paper Editing 2026](/ai-tools-compared/best-ai-tool-for-academic-paper-editing-2026/)
