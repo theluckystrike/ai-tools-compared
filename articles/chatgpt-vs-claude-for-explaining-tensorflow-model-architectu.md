@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-When you're learning TensorFlow, having an AI assistant that can explain complex model architectures clearly makes a significant difference. This comparison evaluates how ChatGPT and Claude perform when helping beginners understand TensorFlow concepts, with practical examples developers can apply immediately.
+Choose ChatGPT if you want fast, structured code walkthroughs of TensorFlow models with minimal preamble. Choose Claude if you prefer deeper conceptual explanations that connect architectures to underlying machine learning theory. Both handle standard model breakdowns well, but their teaching styles diverge sharply on complex topics like custom layers and training loops.
 
 ## Understanding the Task: Explaining Model Architecture
 

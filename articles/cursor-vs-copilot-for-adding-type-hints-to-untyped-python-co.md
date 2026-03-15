@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Adding type hints to a large Python codebase can be time-consuming. Many developers turn to AI assistants to accelerate this process, and two tools frequently come up in discussion: Cursor and GitHub Copilot. This article compares their capabilities for adding type hints to untyped Python code, with practical examples to help you decide which tool fits your workflow.
+Choose Cursor if your codebase has complex cross-file type relationships and you need precise `TypedDict`, union, and generic type hints inferred from actual usage patterns. Choose Copilot if your code follows standard Python conventions and you want quick inline type suggestions while actively coding. Cursor analyzes your entire project to produce accurate, specific types, while Copilot tends to default to broader types like `Dict[str, Any]` when uncertain.
 
 ## The Challenge of Typing Untyped Python
 
