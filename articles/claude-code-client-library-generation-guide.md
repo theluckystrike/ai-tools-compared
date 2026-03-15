@@ -160,9 +160,9 @@ For continuous integration, chain skills together:
 
 ```bash
 # Generate client and tests in sequence
-claude skill invoke generate-api-client --spec openapi.yaml --lang typescript
-claude skill invoke tdd --target ./generated/client --framework jest
-claude skill invoke pdf --spec openapi.yaml --output ./docs/api-reference.pdf
+claude --print "/generate-api-client--spec openapi.yaml --lang typescript"
+claude --print "/tdd--target ./generated/client --framework jest"
+claude --print "/pdf--spec openapi.yaml --output ./docs/api-reference.pdf"
 ```
 
 This pipeline ensures every API update produces consistent, tested, documented client libraries without manual intervention.

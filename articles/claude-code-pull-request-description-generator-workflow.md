@@ -29,7 +29,7 @@ Manual PR descriptions often suffer from several problems: they're incomplete, i
 The foundation of this workflow is a Claude Code skill that analyzes your git changes and generates structured descriptions. Create a new skill for this purpose:
 
 ```bash
-claude skill create pr-description-generator
+# Create a skill file: ~/.claude/skills/pr-description-generator.md
 ```
 
 This creates a skill scaffold. Now you'll configure it to extract the right information from your codebase.
@@ -178,7 +178,7 @@ Once configured, using the generator is straightforward:
 ### Manual Generation
 
 ```bash
-claude skill invoke pr-description-generator
+claude --print "/pr-description-generator"
 ```
 
 This outputs a generated description that you can copy and paste into your PR.

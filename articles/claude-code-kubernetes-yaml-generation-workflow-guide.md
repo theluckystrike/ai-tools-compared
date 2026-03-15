@@ -126,7 +126,7 @@ spec:
 One of Claude Code's most valuable features is its ability to validate existing YAML against Kubernetes best practices. Run validation on your manifests:
 
 ```bash
-claude validate deployment.yaml
+claude --print "validate deployment.yaml
 ```
 
 Claude Code checks for:

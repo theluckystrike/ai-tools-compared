@@ -30,7 +30,7 @@ For example, you might create a skill for your tech stack that understands your 
 
 ```bash
 # Creating a skill for your specific tech stack
-claude skill create my-stack
+# Create a skill file: ~/.claude/skills/my-stack.md
 ```
 
 This skill can then help you generate contextually appropriate code that follows your project's established patterns, something Continue.dev's more general approach can't match.
