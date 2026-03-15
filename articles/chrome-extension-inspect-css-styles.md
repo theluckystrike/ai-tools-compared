@@ -13,7 +13,7 @@ permalink: /chrome-extension-inspect-css-styles/
 
 # How to Inspect CSS Styles with Chrome Extensions
 
-Inspecting CSS styles is a fundamental skill for web developers, designers, and anyone building or debugging websites. While Chrome's built-in DevTools provide excellent capabilities, Chrome extensions can enhance and streamline the CSS inspection workflow. This guide covers practical methods for inspecting CSS styles using Chrome extensions, with real examples you can apply immediately.
+Inspecting CSS styles is a fundamental skill for web developers, designers, and anyone building or debugging websites. While Chrome's built-in DevTools provide excellent capabilities, Chrome extensions can enhance and streamline the CSS inspection workflow. This guide covers **pre-built third-party Chrome extensions** for CSS inspection — tools you can install and use immediately without writing any code. For programmatic access or building your own inspection tooling on top of the DevTools Protocol, see the companion guide on [CSS Peeper and custom Chrome extension inspection](/chrome-extension-css-peeper-inspect/).
 
 ## Why Use Extensions for CSS Inspection
 

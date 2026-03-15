@@ -13,7 +13,11 @@ tags: [chrome, claude-skills]
 ---
 
 
-Chrome developer tools provide powerful capabilities for inspecting CSS styles on any webpage. Whether you're debugging layout issues, analyzing computed styles, or reverse-engineering a competitor's design, understanding how to effectively inspect CSS saves hours of development time.
+Chrome developer tools provide powerful capabilities for inspecting CSS styles on any webpage. Whether you're debugging layout issues, analyzing computed styles, or reverse-engineering a competitor's design, understanding how to effectively inspect CSS saves hours of development time. This guide focuses on Chrome's native DevTools and how to build custom inspection extensions — if you're looking for ready-made third-party extensions like ColorZilla or CSSViewer, see the companion guide on [inspecting CSS with Chrome extensions](/chrome-extension-inspect-css-styles/).
+
+## CSS Peeper and the Case for Custom Inspection Tools
+
+CSS Peeper is a popular Chrome extension that extracts design assets from any site — colors, fonts, spacing, and assets — through a visual panel. While CSS Peeper excels at design hand-off workflows, developers who need deeper programmatic access or want to automate CSS auditing benefit from building custom tooling on top of Chrome's DevTools Protocol. The sections below show you how.
 
 ## Accessing Chrome DevTools CSS Inspector
 
