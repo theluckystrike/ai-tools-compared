@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Email Writer Chrome Extension: A Developer's Guide to Browser-Based Email Automation"
-description: "Learn how AI-powered Chrome extensions can streamline your email workflow with intelligent composing, reply generation, and customization options for developers and power users."
+title: "AI Email Writer Chrome Extension: A Developer's Guide to."
+description: "Learn how AI-powered Chrome extensions can streamline your email workflow with intelligent composing, reply generation, and customization options for."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /ai-email-writer-chrome-extension/
@@ -159,6 +159,13 @@ To begin using AI email writer extensions effectively:
 5. Review and refine generated content to train the system
 
 For developers interested in building custom solutions, Chrome's extension documentation provides comprehensive guidance on content scripts, message passing, and the permissions system.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
