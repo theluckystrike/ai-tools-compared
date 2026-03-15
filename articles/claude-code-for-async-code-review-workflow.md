@@ -119,7 +119,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run Claude Code Review
         run: |
-          claude review --filesChanged=${{ github.event.pull_request.changed_files }}
+          claude --print "Review the changed files and provide feedback on code quality, potential bugs, and style"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       - name: Post Review Comments
@@ -236,7 +236,7 @@ Train developers to run preliminary reviews themselves:
 
 ```bash
 # Developers can run self-review before requesting human review
-claude review --self-check --filesChanged=modified_files
+claude --print "Review my staged changes and identify any issues before I submit for review"
 ```
 
 This shifts basic feedback to the developer, reducing review cycles.
