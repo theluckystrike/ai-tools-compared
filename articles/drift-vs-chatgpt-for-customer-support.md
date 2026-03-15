@@ -6,6 +6,10 @@ description: "A practical comparison of Drift and ChatGPT for building customer 
 date: 2026-03-15
 author: theluckystrike
 permalink: /drift-vs-chatgpt-for-customer-support/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
