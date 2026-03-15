@@ -6,7 +6,7 @@ description: "Explore the best AI writing tools for real estate listings in 2026
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-writing-tools-for-real-estate-listings-2026/
-categories: [ai-tools]
+categories: [guides]
 reviewed: true
 score: 7
 tags: [ai-writing, real-estate, listings]
