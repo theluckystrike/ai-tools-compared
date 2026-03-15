@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "API Tester Chrome Extension as Postman Alternative"
 description: "Discover powerful Chrome extensions that serve as Postman alternatives for API testing. Learn how to test APIs directly in your browser without additional software."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /api-tester-chrome-extension-postman-alternative/
+reviewed: true
+score: 8
+categories: [comparisons]
+tags: [chrome, claude-skills]
 ---
+
 
 # API Tester Chrome Extension as Postman Alternative
 

@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "React DevTools Chrome Extension Guide: Master Component Inspection"
 description: "A practical guide to using React DevTools Chrome extension for debugging React applications. Learn component inspection, profiling, and advanced techniques."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /react-devtools-chrome-extension-guide/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 React DevTools is an essential browser extension for anyone working with React applications. This guide covers installation, core features, and practical techniques that will help you debug React components more effectively.
 

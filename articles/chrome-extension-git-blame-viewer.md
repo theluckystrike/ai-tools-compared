@@ -1,11 +1,17 @@
 ---
+
 layout: default
 title: "Chrome Extension Git Blame Viewer: A Practical Guide for Developers"
 description: "Discover the best Chrome extensions for Git blame analysis. Learn how to visualize commit history, track code ownership, and debug effectively directly in your browser."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-git-blame-viewer/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Chrome Extension Git Blame Viewer: A Practical Guide for Developers
 

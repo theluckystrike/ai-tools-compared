@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "Lighthouse Chrome Extension Guide: Complete Tutorial for Developers"
 description: "Master Lighthouse Chrome extension for performance auditing. Step-by-step guide with practical examples, interpretation tips, and optimization strategies for developers."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /lighthouse-chrome-extension-guide/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Lighthouse Chrome Extension Guide: Complete Tutorial for Developers
 

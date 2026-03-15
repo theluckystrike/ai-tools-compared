@@ -1,16 +1,22 @@
 ---
 
+
 layout: default
 title: "Wappalyzer Chrome Extension Developer Guide"
 description: "A practical guide for developers on using Wappalyzer Chrome extension. Learn how to detect web technologies, analyze competitors, and integrate Wappalyzer data into your development workflow."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /wappalyzer-chrome-extension-developer/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [chrome, claude-skills]
 ---
+
 
 # Wappalyzer Chrome Extension Developer Guide
 
-Wappalyzer is a powerful technology profiler that identifies the frameworks, libraries, CMS platforms, and services running on websites you visit. For developers and power users, understanding how Wappalyzer works and how to leverage its data can significantly enhance your development workflow, competitive analysis capabilities, and technical research processes.
+Wappalyzer is a powerful technology profiler that identifies the frameworks, libraries, CMS platforms, and services running on websites you visit. For developers and power users, understanding how Wappalyzer works and how to use its data can significantly enhance your development workflow, competitive analysis capabilities, and technical research processes.
 
 ## How Wappalyzer Detects Technologies
 

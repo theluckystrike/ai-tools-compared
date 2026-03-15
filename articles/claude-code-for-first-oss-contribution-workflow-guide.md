@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for First OSS Contribution Workflow Guide"
 description: "A practical guide to making your first open source contribution using Claude Code. Learn the workflow from finding projects to submitting pull requests."
@@ -7,7 +8,10 @@ categories: [guides]
 tags: [claude-code, claude-skills]
 author: "Claude Skills Guide"
 permalink: /claude-code-for-first-oss-contribution-workflow-guide/
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 # Claude Code for First OSS Contribution Workflow Guide
