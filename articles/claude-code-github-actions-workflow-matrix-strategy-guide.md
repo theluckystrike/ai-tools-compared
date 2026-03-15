@@ -172,6 +172,88 @@ jobs:
         uses: codecov/codecov-action@v4
 ```
 
+## Python Multi-Version Testing
+
+Python projects benefit from matrix strategies just as JavaScript projects do. Here is a workflow testing across Python versions with dependency caching:
+
+```yaml
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: pytest
+```
+
+The `cache: 'pip'` parameter automatically caches pip dependencies, speeding up subsequent runs significantly.
+
+## Integration Testing with Multiple Services
+
+Matrix builds excel when testing against multiple service versions or configurations. You can parameterize the service container images themselves:
+
+```yaml
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        database: [postgres:14, postgres:15, postgres:16]
+        redis: [redis:6, redis:7]
+    services:
+      postgres:
+        image: ${{ matrix.database }}
+        env:
+          POSTGRES_PASSWORD: test
+        ports:
+          - 5432:5432
+      redis:
+        image: ${{ matrix.redis }}
+        ports:
+          - 6379:6379
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run integration tests
+        run: |
+          export DATABASE_URL="postgres://test:test@localhost:5432/test"
+          export REDIS_URL="redis://localhost:6379"
+          npm run integration-tests
+```
+
+This creates six job combinations, testing every database and Redis version pairing.
+
+## Building Deployment Matrices
+
+Matrix strategies also work for deployment scenarios, parallelizing rollouts across environments and regions:
+
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        environment: [staging, production]
+        region: [us-east, us-west, eu-west]
+    environment:
+      name: ${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to ${{ matrix.region }}
+        run: |
+          echo "Deploying ${{ matrix.environment }} to ${{ matrix.region }}"
+          ./deploy.sh --env ${{ matrix.environment }} --region ${{ matrix.region }}
+```
+
+This creates six deployment jobs, covering staging and production across three regions.
+
 ## Optimizing Matrix Workflow Performance
 
 Matrix jobs can consume significant GitHub Actions minutes. Consider these optimization strategies:
