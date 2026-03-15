@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Load Testing with Locust Workflow Guide"
-description: "Learn how to leverage Claude Code for load testing with Locust. This comprehensive guide covers setting up Locust test scripts, integrating with Claude Code, and automating your load testing workflow for scalable applications."
+description: "Learn how to leverage Claude Code for load testing with Locust. This comprehensive guide covers setting up Locust test scripts, integrating with Claude."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-load-testing-with-locust-workflow-guide/
@@ -191,3 +191,10 @@ Load testing with Locust and Claude Code forms a powerful combination for ensuri
 
 Start with simple tests, iterate on them as your application evolves, and build a comprehensive testing strategy that scales with your needs.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

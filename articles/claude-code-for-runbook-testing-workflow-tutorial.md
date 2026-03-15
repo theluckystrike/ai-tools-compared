@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Runbook Testing Workflow Tutorial"
-description: "Learn how to use Claude Code to automate and streamline your runbook testing workflow. This comprehensive guide covers practical examples, code snippets, and actionable advice for developers."
+description: "Learn how to use Claude Code to automate and streamline your runbook testing workflow. This comprehensive guide covers practical examples, code."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-runbook-testing-workflow-tutorial/
@@ -267,3 +267,10 @@ Automated runbook testing with Claude Code transforms static documentation into 
 Start small: pick one critical runbook, add testable commands with expected outputs, and prompt Claude Code to execute it. Once you see the value, expand to your full runbook library.
 
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
