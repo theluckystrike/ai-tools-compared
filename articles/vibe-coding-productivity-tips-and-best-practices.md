@@ -65,6 +65,9 @@ The key is recognizing which workflows benefit from specialized skills:
 - **tdd**: Write tests before implementation
 - **frontend-design**: Rapid component prototyping
 - **docx**: Create formal documents and proposals
+- **xlsx**: Track project metrics, time spent, or sprint planning in spreadsheet format
+- **artifacts-builder**: Generate interactive web components and prototypes
+- **supermemory**: Capture and recall project knowledge across sessions
 
 Integrating these skills into your workflow reduces context switching and maintains consistency across deliverables.
 
@@ -131,6 +134,171 @@ Reserve human attention for:
 - Complex debugging requiring domain knowledge
 
 This division maximizes productivity while ensuring quality where it matters most.
+
+## Structuring a Vibe Coding Session
+
+Productive sessions follow a repeatable structure. Before writing a single prompt, invest time in requirement definition — it cuts iteration cycles dramatically.
+
+### 1. Project Initialization
+
+Set up a clean directory structure before involving the AI:
+
+```bash
+# Initialize a new project with proper structure
+mkdir my-vibe-project && cd $_
+npm init -y
+
+# Create directories for organized development
+mkdir -p src/{components,utils,hooks}
+mkdir -p tests/{unit,integration}
+```
+
+Configure your Claude configuration file to enable the skills you need:
+
+```json
+{
+  "permissions": {
+    "allow": ["Bash", "read_file", "write_file"],
+    "tools": {
+      "pdf": true,
+      "xlsx": true,
+      "tdd": true,
+      "frontend-design": true
+    }
+  }
+}
+```
+
+### 2. Requirement Definition
+
+Document feature requirements in a `SPEC.md` file before prompting. This becomes a single source of truth that keeps Claude's output aligned with your intent:
+
+```markdown
+## Feature: User Authentication
+
+### Acceptance Criteria
+- Users can register with email and password
+- Login returns JWT valid for 24 hours
+- Passwords hashed with bcrypt (cost factor 12)
+- Protected routes require valid JWT in Authorization header
+```
+
+### 3. Iterative Implementation
+
+Generate code in small, reviewable increments. Review each piece before proceeding to the next:
+
+```
+"Create the User model with email validation and password hashing methods.
+Use bcryptjs for hashing. Include a comparePassword method that returns
+a promise resolving to boolean."
+```
+
+### 4. Testing Integration
+
+Use the **tdd** skill after requirement definition to generate tests before implementation:
+
+```
+"Using the tdd skill, create unit tests for the auth middleware.
+Test the following scenarios: valid JWT, expired JWT, missing token,
+and invalid signature."
+```
+
+## Practical Workflow Example
+
+Consider building a simple REST API. A vibe coding session might proceed as follows:
+
+**Step 1: Define the API contract**
+
+```javascript
+// routes/users.js - define your endpoints first
+router.get('/users', getUsers);        // List all users
+router.post('/users', createUser);     // Create new user
+router.get('/users/:id', getUserById); // Get single user
+router.put('/users/:id', updateUser);  // Update user
+router.delete('/users/:id', deleteUser); // Delete user
+```
+
+**Step 2: Generate with context**
+
+Prompt Claude with your established patterns:
+
+```
+"Create the user routes using Express. Follow the existing pattern in
+routes/auth.js. Use async/await, proper error handling with try/catch,
+and return JSON responses with appropriate HTTP status codes."
+```
+
+**Step 3: Verify and iterate**
+
+Review the generated code. Test manually or with your tdd-generated tests. Describe changes rather than editing directly:
+
+```
+"Change the getUsers endpoint to support pagination with query
+parameters 'page' and 'limit'. Return metadata with total count
+and current page number."
+```
+
+## Maintaining Consistency and Quality
+
+Establish a `.prettierrc` and `.eslintrc` early, then have Claude enforce them across all generated code:
+
+```json
+{
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
+```
+
+Use the **pdf** skill to generate API documentation automatically from your routes after creation:
+
+```
+"Using the pdf skill, generate API documentation from these routes.
+Include request/response schemas and example payloads."
+```
+
+## Project Tracking Without Overhead
+
+A simple `TASKS.md` file provides structured project tracking without the overhead of external tools:
+
+```markdown
+## Project Roadmap
+
+### Phase 1: Core Features
+- [x] User authentication
+- [x] Basic CRUD operations
+- [ ] Search functionality
+- [ ] File upload handling
+
+### Phase 2: Enhancements
+- [ ] Email notifications
+- [ ] Dashboard analytics
+- [ ] API rate limiting
+```
+
+The **xlsx** skill extends this by tracking time spent, feature completion, or sprint velocity in spreadsheet format — useful when you need shareable metrics.
+
+## Storing Project Context with Supermemory
+
+The supermemory skill maintains context across sessions, preserving decisions, API configurations, and project-specific conventions. You can store structured context like this:
+
+```javascript
+// Using supermemory to store project context
+@memory
+project_context: {
+  apiBaseUrl: "https://api.example.com",
+  authType: "JWT",
+  database: "PostgreSQL",
+  keyDecisions: [
+    "Use Prisma for ORM",
+    "Auth via NextAuth.js",
+    "Style with Tailwind CSS"
+  ]
+}
+```
+
+This means Claude can recall architectural decisions from previous sessions without you re-explaining the project from scratch.
 
 ## Continuous Improvement of Your Workflow
 
