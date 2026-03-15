@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Claude Code for Runbook Automation: A Complete Workflow Guide"
-description: "Learn how to automate operational runbooks using Claude Code. This guide covers skill creation, workflow automation, and practical examples for DevOps teams."
+title: "Claude Code for Runbook Automation: A Complete Workflow."
+description: "Learn how to automate operational runbooks using Claude Code. This guide covers skill creation, workflow automation, and practical examples for DevOps."
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-runbook-automation-workflow-guide/
@@ -217,3 +217,10 @@ Start by converting your most frequent operational procedures into skills, then 
 
 Remember: automation should augment your team's capabilities, not replace human judgment. Design skills that handle the routine automatically while escalating genuinely novel situations to experienced engineers.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

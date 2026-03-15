@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Dead Code Elimination Workflow Guide"
-description: "A practical guide to using Claude Code for identifying, analyzing, and safely removing dead code from your codebase. Includes workflow strategies and actionable examples."
+description: "A practical guide to using Claude Code for identifying, analyzing, and safely removing dead code from your codebase. Includes workflow strategies and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-dead-code-elimination-workflow-guide/
@@ -211,3 +211,10 @@ Dead code elimination is an ongoing maintenance task that keeps your codebase he
 Start with small, low-risk removals and gradually tackle more complex dead code as you build confidence in your detection and removal process. The key is establishing a systematic workflow: identify, analyze, prioritize, remove incrementally, and verify with tests.
 
 By integrating dead code elimination into your regular development routine—with Claude Code as your analysis partner—you'll keep your codebase lean, reduce technical debt, and improve developer productivity.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

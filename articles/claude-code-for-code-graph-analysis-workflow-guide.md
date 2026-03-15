@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Code Graph Analysis Workflow Guide"
-description: "Master code graph analysis with Claude Code. Learn to map dependencies, visualize relationships, and automate architecture discovery using skills and MCP tools."
+description: "Master code graph analysis with Claude Code. Learn to map dependencies, visualize relationships, and automate architecture discovery using skills and."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-code-graph-analysis-workflow-guide/
@@ -186,3 +186,10 @@ This skill can then be invoked with natural language like "Analyze the code grap
 Code graph analysis with Claude Code transforms how you understand and work with codebases. By using skills and MCP tools, you can automate the discovery of dependencies, detect problematic patterns, and maintain architectural health as your project grows. Start with the workflows outlined here, customize them to your tech stack, and make code graph analysis a regular part of your development practice.
 
 The investment in setting up these workflows pays dividends in reduced debugging time, safer refactoring, and better architectural decisions throughout your project's lifecycle.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

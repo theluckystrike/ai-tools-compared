@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code for Call Graph Analysis Workflow Tutorial"
-description: "Learn how to leverage Claude Code for efficient call graph analysis. This tutorial covers practical workflows to understand code relationships, trace function dependencies, and analyze program structure."
+description: "Learn how to leverage Claude Code for efficient call graph analysis. This tutorial covers practical workflows to understand code relationships, trace."
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-call-graph-analysis-workflow-tutorial/
@@ -220,3 +220,10 @@ Call graph analysis with Claude Code transforms how you understand and work with
 
 Remember: the goal isn't just to generate a call graph, but to answer specific questions about your code's structure and behavior. Let your analysis questions guide the process, and Claude will help you build a clear picture of your program's architecture.
 {% endraw %}
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
