@@ -8,7 +8,7 @@ author: "Claude Skills Guide"
 permalink: /chrome-extension-shopping-list-organizer/
 reviewed: true
 score: 8
-categories: [chrome-extensions, productivity]
+categories: [guides, productivity]
 tags: [chrome-extension, shopping-list, developer-tools, claude-skills]
 ---
 
