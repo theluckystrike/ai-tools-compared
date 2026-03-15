@@ -183,4 +183,9 @@ Different requirements call for different solutions. For rapid prototyping and s
 
 The ecosystem continues evolving rapidly. Newer approaches like OC-SORT and MOTR push performance boundaries, while improvements in detection models directly benefit tracking quality. Developers should evaluate against their specific requirements: real-time constraints, object types, occlusion frequency, and deployment platform all influence the optimal choice.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
