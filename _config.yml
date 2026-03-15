@@ -1,0 +1,13 @@
+title: "AI Tools Compared"
+url: "https://theluckystrike.github.io"
+baseurl: "/ai-tools-compared"
+permalink: /:title/
+theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: "articles"
+    values:
+      layout: default
