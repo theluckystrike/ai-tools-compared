@@ -105,4 +105,10 @@ Take advantage of summarization features when researching complex topics. A 3,00
 
 AI note-taking extensions represent a significant upgrade from traditional bookmarking. By combining automatic summarization, semantic search, and smart organization, these tools help developers build personal knowledge bases that grow more useful over time. Start with one extension that fits your current workflow, then expand as you discover which features provide the most value for your specific projects.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -141,4 +141,10 @@ AI font identifier Chrome extensions bridge the gap between visual inspiration a
 
 The key is choosing an extension that provides accurate results, offers practical export options, and fits naturally into how you already work. Whether you're building websites, developing design systems, or simply exploring web typography, these tools transform font discovery from a guessing game into a precise, efficient process.
 
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
