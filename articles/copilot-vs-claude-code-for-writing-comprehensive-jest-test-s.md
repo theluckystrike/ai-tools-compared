@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose Copilot if you need fast inline test suggestions for standard React component patterns while you code. Choose Claude Code if you need comprehensive test suites that handle complex mocking, async operations, and edge cases with minimal manual correction. Copilot wins on speed for straightforward tests, while Claude Code produces more accurate and maintainable results for anything involving hooks, context providers, or multi-dependency scenarios.
