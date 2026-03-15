@@ -17,7 +17,22 @@ Integrating React Testing Library into your development workflow with Claude Cod
 
 ## Setting Up React Testing Library with Claude Code
 
-Before implementing the workflow, ensure your project has React Testing Library properly installed. Claude Code can verify your setup and identify any missing dependencies. Create a CLAUDE.md file in your project root to establish testing conventions:
+Before implementing the workflow, ensure your project has React Testing Library properly installed. React Testing Library works with Jest or Vitest as test runners:
+
+```bash
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event jest
+```
+
+Configure your test environment by creating a setup file that imports the jest-dom matchers:
+
+```javascript
+// setupTests.js
+import '@testing-library/jest-dom';
+```
+
+Update your Jest or Vitest configuration to include this setup file. This one-time configuration enables powerful matchers like `toBeInTheDocument()` and `toHaveClass()` that make assertions readable and expressive.
+
+Claude Code can verify your setup and identify any missing dependencies. Create a CLAUDE.md file in your project root to establish testing conventions:
 
 ```
 # Testing conventions for this project
@@ -30,6 +45,55 @@ Before implementing the workflow, ensure your project has React Testing Library 
 ```
 
 When Claude Code reads this file, it understands your testing preferences and applies them automatically when generating or modifying tests.
+
+## Writing Your First Component Test
+
+React Testing Library queries elements the way users interact with them—by text, label, or role rather than by test IDs when possible. Consider a simple button component:
+
+```jsx
+// Button.jsx
+export function Button({ onClick, children, disabled }) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      data-testid="submit-button"
+    >
+      {children}
+    </button>
+  );
+}
+```
+
+Claude Code generates tests using accessible queries by default:
+
+```jsx
+// Button.test.jsx
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Button } from './Button';
+
+describe('Button component', () => {
+  it('renders with correct text', () => {
+    render(<Button>Submit</Button>);
+    expect(screen.getByRole('button')).toHaveTextContent('Submit');
+  });
+
+  it('calls onClick handler when clicked', () => {
+    const handleClick = jest.fn();
+    render(<Button onClick={handleClick}>Submit</Button>);
+
+    fireEvent.click(screen.getByRole('button'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('is disabled when disabled prop is true', () => {
+    render(<Button disabled>Submit</Button>);
+    expect(screen.getByRole('button')).toBeDisabled();
+  });
+});
+```
+
+This test demonstrates three core patterns: verifying rendered content, testing user interactions, and checking component state.
 
 ## Writing Component Tests with Claude Code
 
@@ -103,6 +167,52 @@ jest.mock('next/navigation', () => ({
 ```
 
 Claude Code can generate these mocks automatically when you specify which dependencies need mocking. The tdd skill provides additional patterns for test-driven development workflows.
+
+## Testing Complex Interactions with userEvent
+
+The `userEvent` library simulates real user behavior more accurately than `fireEvent`, capturing nuances like debouncing, focus management, and typing speed. This leads to tests that catch issues fireEvent might miss.
+
+Here is a practical example testing a login form:
+
+```jsx
+// LoginForm.test.jsx
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { LoginForm } from './LoginForm';
+
+async function setup() {
+  const user = userEvent.setup();
+  const handleSubmit = jest.fn();
+
+  render(<LoginForm onSubmit={handleSubmit} />);
+
+  return { user, handleSubmit };
+}
+
+test('validates email format', async () => {
+  const { user, handleSubmit } = await setup();
+
+  await user.type(screen.getByLabelText(/email/i), 'invalid-email');
+  await user.type(screen.getByLabelText(/password/i), 'password123');
+  await user.click(screen.getByRole('button', { name: /submit/i }));
+
+  expect(handleSubmit).not.toHaveBeenCalled();
+  expect(screen.getByText(/invalid email/i)).toBeInTheDocument();
+});
+
+test('submits form with valid credentials', async () => {
+  const { user, handleSubmit } = await setup();
+
+  await user.type(screen.getByLabelText(/email/i), 'user@example.com');
+  await user.type(screen.getByLabelText(/password/i), 'securepass123');
+  await user.click(screen.getByRole('button', { name: /submit/i }));
+
+  expect(handleSubmit).toHaveBeenCalledWith({
+    email: 'user@example.com',
+    password: 'securepass123'
+  });
+});
+```
 
 ## Integrating Testing into Your Development Cycle
 
@@ -200,6 +310,18 @@ export const mockUsers = [mockUser, /* ... more users */];
 ```
 
 The claude-code-factory-bot-test-data-guide skill provides patterns for generating dynamic test data at scale.
+
+## Best Practices for Maintainable Tests
+
+Follow these principles to keep your test suite sustainable as the project grows:
+
+**Query priority matters.** Use semantic queries first — `getByRole`, `getByLabelText`, `getByText` — before falling back to `getByTestId`. Semantic queries ensure your tests reflect how users actually interact with your application and catch accessibility issues early.
+
+**Test behavior, not implementation.** Avoid testing internal state or methods. Instead, verify that the user-visible output changes correctly when users interact with your components. This makes tests resilient to refactoring.
+
+**Keep tests independent.** Each test should run in isolation and not depend on the order of execution. Mock external dependencies like API calls to ensure consistent results.
+
+**Use descriptive test names.** When tests fail, you want the name to immediately communicate what broke. `it('should show error message when network request fails')` is far more helpful than `it('handles error state')`.
 
 ## Performance Considerations
 
