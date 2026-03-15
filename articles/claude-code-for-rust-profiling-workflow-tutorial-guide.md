@@ -1,5 +1,6 @@
 ---
 
+
 layout: default
 title: "Claude Code for Rust Profiling Workflow Tutorial Guide"
 description: "Learn how to integrate Claude Code into your Rust profiling workflow for efficient performance optimization. This guide covers practical examples, tools, and actionable advice."
@@ -8,7 +9,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-rust-profiling-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 

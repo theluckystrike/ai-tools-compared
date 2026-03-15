@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for API Benchmark Workflow Tutorial Guide"
 description: "Learn how to leverage Claude Code to build automated API benchmarking workflows, from setup to execution and result analysis."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-api-benchmark-workflow-tutorial-guide/
 categories: [guides]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 # Claude Code for API Benchmark Workflow Tutorial Guide
 
