@@ -242,4 +242,9 @@ Avoid future build breaks with these practices:
 Build errors after Cursor's project-wide refactor are common but fixable. Start by identifying the scope of changes, then systematically work through import resolution, type consistency, configuration files, and dependency issues. When in doubt, clean caches and rebuild. For complex cases, use diagnostic tools to identify circular dependencies and version conflicts. With this systematic approach, you can recover your build and get back to coding quickly.
 
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
