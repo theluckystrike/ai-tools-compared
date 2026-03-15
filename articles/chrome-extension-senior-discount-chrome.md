@@ -3,8 +3,11 @@ layout: default
 title: "Building a Chrome Extension for Senior Discounts: A Developer Guide"
 description: "Learn how to build a Chrome extension that helps users discover and apply senior discounts. Includes code examples, API integration patterns, and best practices."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /chrome-extension-senior-discount-chrome/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 Building a Chrome extension for senior discounts presents an interesting technical challenge. You need to aggregate discount information from multiple sources, detect when users are on retail sites, and present relevant savings opportunities without slowing down the browsing experience. This guide walks through the architectural decisions and implementation details you'll need to create a production-ready discount discovery extension.
