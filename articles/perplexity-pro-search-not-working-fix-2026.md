@@ -9,10 +9,11 @@ permalink: /perplexity-pro-search-not-working-fix-2026/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
 ---
 
 
-Perplexity Pro has become an essential tool for developers and researchers who need AI-powered search capabilities. When search functionality stops working, it disrupts your workflow significantly. This guide provides systematic troubleshooting steps to diagnose and resolve common Perplexity Pro search issues.
+To fix Perplexity Pro search not working, first verify your subscription is active at Settings then Subscription, then sign out completely, clear browser cookies for perplexity.ai, and sign back in to refresh your authentication tokens. If you use the API, regenerate your API key from the dashboard. The most common causes are expired authentication tokens, rate limiting (HTTP 429 errors), and browser extension conflicts with ad blockers or privacy tools.
 
 ## Common Causes of Perplexity Pro Search Failures
 

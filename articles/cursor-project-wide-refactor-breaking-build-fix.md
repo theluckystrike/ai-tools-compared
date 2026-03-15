@@ -8,12 +8,13 @@ permalink: /cursor-project-wide-refactor-breaking-build-fix/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 # Cursor Project-Wide Refactor Breaking Build Fix
 
-Cursor's project-wide refactor feature is powerful for making large-scale code changes across your entire codebase. However, aggressive refactoring can sometimes break your build pipeline, leaving you with cryptic error messages and broken dependencies. This guide walks you through diagnosing and fixing the most common issues that arise after a project-wide refactor in Cursor.
+To fix a broken build after a Cursor project-wide refactor, start by running `git diff --stat` to identify all modified files, then clean and rebuild with `rm -rf node_modules package-lock.json && npm install`. The most common causes are broken import paths, out-of-sync TypeScript type definitions, and stale build caches. This guide provides a systematic five-step recovery process covering import fixes, type consistency, configuration files, and dependency resolution.
 
 ## Understanding What Happens During Project-Wide Refactor
 

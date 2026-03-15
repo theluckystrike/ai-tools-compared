@@ -8,11 +8,12 @@ permalink: /claude-pro-upgrade-not-reflecting-fix-2026/
 reviewed: true
 score: 8
 categories: [troubleshooting]
+intent-checked: true
 ---
 
 {% raw %}
 
-You've upgraded to Claude Pro, the payment went through, but Claude Code (CLI) or the desktop application still shows Free tier features. This happens more often than expected, and the causes range from simple caching issues to authentication sync problems. Here's a comprehensive troubleshooting guide to get your Pro features working.
+To fix Claude Pro not reflecting after upgrade, sign out and sign back in with `claude auth logout` followed by `claude auth login`. This forces a fresh authentication cycle that pulls your current Pro status. If that does not work, clear your local cache at `~/.config/claude/` and re-authenticate. The issue is typically caused by stale cached tokens, multiple accounts, or organization billing overrides.
 
 ## Common Reasons Your Claude Pro Upgrade Isn't Reflecting
 
