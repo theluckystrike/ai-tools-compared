@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Chrome Extension Session Storage Editor: Complete Developer Guide."
+title: "Chrome Extension Session Storage Editor: Complete."
 description: "Learn how to edit sessionStorage directly in Chrome. Tools, techniques, and code examples for debugging and managing session storage in browser extensions."
 date: 2026-03-15
 author: "Claude Skills Guide"
@@ -275,3 +275,10 @@ Several Chrome extensions provide session storage editing capabilities:
 Editing sessionStorage in Chrome extensions is essential for effective debugging and development. Whether using DevTools directly, building custom extensions, or leveraging third-party tools, understanding these techniques will significantly improve your development workflow. Remember to follow security best practices and consider using chrome.storage for production extension data.
 
 For more guides on Chrome extension development and debugging tools, explore our collection of articles covering extension development, storage APIs, and development workflows.
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
+

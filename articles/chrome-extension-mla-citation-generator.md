@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "Chrome Extension MLA Citation Generator: Build Your Own Academic Reference Tool"
-description: "Learn how to build a Chrome extension that generates MLA citations automatically. Practical implementation guide with code examples for developers and power users."
+title: "Chrome Extension MLA Citation Generator: Build Your Own."
+description: "Learn how to build a Chrome extension that generates MLA citations automatically. Practical implementation guide with code examples for developers and."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /chrome-extension-mla-citation-generator/
@@ -292,5 +292,12 @@ Load your extension in developer mode through chrome://extensions/ and verify th
 Building a Chrome extension MLA citation generator gives you a tailored tool that fits your research workflow. The extension architecture separates metadata extraction, formatting logic, and user interface, making it straightforward to maintain and extend. Start with the core functionality demonstrated here, then add features like bibliography export, integration with reference managers, or support for additional citation styles.
 
 The skills you develop building this extension transfer directly to other Chrome extension projects. Understanding content scripts, message passing between components, and the storage API provides a foundation for any browser-based tool you want to create.
+
+
+## Related Reading
+
+- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
+- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
+- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
