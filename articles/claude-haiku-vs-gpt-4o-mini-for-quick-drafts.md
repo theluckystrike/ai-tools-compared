@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [comparisons]
 intent-checked: true
+voice-checked: true
 ---
 
 Choose **Claude Haiku** if you need the fastest response times, a larger 200K context window, and consistent convention-following output for technical documentation drafts. Choose **GPT-4o Mini** if cost efficiency is your priority, you need nuanced tone variations for communication drafts, or you're building high-volume pipelines where lower per-token pricing compounds. Both models handle quick drafts well, but they diverge on speed, pricing, and output style -- this comparison breaks down the practical differences across latency, quality, and developer integration.

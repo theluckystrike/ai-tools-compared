@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -27,13 +28,13 @@ The CLI version prioritizes privacy and session isolation. Each invocation treat
 
 Several factors contribute to losing context between sessions:
 
-**Session Initialization**: Starting Claude Code without specifying an existing conversation history means beginning fresh every time.
+Starting Claude Code without specifying an existing conversation history means beginning fresh every time.
 
-**Terminal Reset**: Closing the terminal emulator or starting a new shell session breaks the persistent connection.
+Closing the terminal emulator or starting a new shell session breaks the persistent connection.
 
-**Configuration Settings**: Default settings prioritize new sessions over loading previous context.
+Default settings prioritize new sessions over loading previous context.
 
-**Project Context Not Loaded**: Claude Code needs explicit instructions to load project files into context for each new session.
+Claude Code needs explicit instructions to load project files into context for each new session.
 
 ## Step-by-Step Fixes
 
@@ -113,7 +114,7 @@ Even without native export support, you can manually save important context:
 script -q /dev/null -c "claude" | tee conversation-$(date +%Y%m%d).log
 ```
 
-### Fix 5: Leverage Project-Specific Configuration
+### Fix 5: Use Project-Specific Configuration
 
 Create a `.claude` directory in your project with configuration files:
 
@@ -266,7 +267,7 @@ Claude Code losing context between sessions stems from its design as a session-b
 
 The fixes range from simple command-line flags to custom script solutions. Start with the basic session flag approach, then add configuration files and automation as needed. Most developers find that a combination of session naming and project context files provides the right balance of simplicity and functionality.
 
-Remember that Claude Code's session handling differs from the web interface, and adapting your workflow accordingly leads to better results. With these solutions, you can work on long-running projects without losing the benefit of previous conversations and accumulated context.
+Claude Code's session handling differs from the web interface; adapting your workflow to use explicit session flags and context files bridges that gap.
 
 
 ## Related Reading

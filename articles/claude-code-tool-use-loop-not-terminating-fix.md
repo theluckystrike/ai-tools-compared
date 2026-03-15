@@ -10,6 +10,7 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -155,11 +156,11 @@ claude --update
 
 When troubleshooting tool use loops, gather information systematically:
 
-**Review recent history**: Use conversation history to identify the point where the loop began. Look for repeated tool calls with similar parameters.
+Use conversation history to identify the point where the loop began. Look for repeated tool calls with similar parameters.
 
-**Examine tool output**: Check whether tool results contain unexpected data. Malformed output can cause the AI to misinterpret success or failure.
+Check whether tool results contain unexpected data. Malformed output can cause the AI to misinterpret success or failure.
 
-**Test individual tools**: Run the problematic tool manually to verify it works correctly outside of Claude Code:
+Run the problematic tool manually to verify it works correctly outside of Claude Code:
 
 ```bash
 # Test file operations
@@ -167,7 +168,7 @@ cat target-file.py
 ls target-directory/
 ```
 
-**Check system resources**: Low memory or disk space can cause tools to fail repeatedly. Verify available resources:
+Low memory or disk space can cause tools to fail repeatedly. Verify available resources:
 
 ```bash
 # Check disk space
@@ -177,7 +178,7 @@ df -h
 free -m
 ```
 
-**Monitor for external changes**: If files are being modified by other processes, Claude Code may see inconsistent results. Ensure a stable working environment.
+If files are being modified by other processes, Claude Code may see inconsistent results. Ensure a stable working environment.
 
 ## Prevention Strategies
 
