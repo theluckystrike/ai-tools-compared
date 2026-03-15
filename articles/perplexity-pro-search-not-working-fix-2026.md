@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Perplexity Pro Search Not Working Fix (2026)"
 description: "A comprehensive troubleshooting guide for developers and power users experiencing Perplexity Pro search issues. Step-by-step fixes and diagnostic tips."
 date: 2026-03-15
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /perplexity-pro-search-not-working-fix-2026/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 Perplexity Pro has become an essential tool for developers and researchers who need AI-powered search capabilities. When search functionality stops working, it disrupts your workflow significantly. This guide provides systematic troubleshooting steps to diagnose and resolve common Perplexity Pro search issues.
 
