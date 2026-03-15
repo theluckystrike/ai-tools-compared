@@ -30,6 +30,21 @@ When you explain your project structure and requirements to Claude, it can:
 - Add business logic layer abstractions on top of raw API calls
 - Handle authentication patterns specific to your project
 
+## Setting Up Your Claude Code Environment
+
+Before generating clients, configure Claude Code with the necessary tools. You'll need file system access, shell execution, and potentially web fetching if your OpenAPI specs are hosted remotely.
+
+Create a dedicated skill for OpenAPI code generation:
+
+```yaml
+---
+name: openapi-codegen
+description: Generate type-safe API client code from OpenAPI specifications
+---
+```
+
+This skill has access to file operations, shell commands for running code generation tools, and web fetching to retrieve specs from URLs.
+
 ## Setting Up Your OpenAPI Specification
 
 Before generating clients, ensure your OpenAPI specification is well-structured. Claude works best with specs that include clear operation IDs, descriptive summaries, and proper type definitions.
@@ -72,6 +87,72 @@ components:
 ```
 
 Keep this specification accessible in your project—you'll reference it when working with Claude.
+
+## Parsing OpenAPI Specifications
+
+The first step in any code generation workflow is parsing the specification. This Python helper handles both local files and remote URLs, supporting YAML and JSON formats:
+
+```python
+import yaml
+import json
+
+def parse_openapi_spec(spec_path_or_url):
+    """Parse an OpenAPI specification from file or URL."""
+    if spec_path_or_url.startswith(('http://', 'https://')):
+        # Fetch from remote URL
+        response = requests.get(spec_path_or_url)
+        spec_data = response.json()
+    else:
+        # Read from local file
+        with open(spec_path_or_url, 'r') as f:
+            spec_data = yaml.safe_load(f) if spec_path_or_url.endswith(('.yaml', '.yml')) else json.load(f)
+
+    return spec_data
+```
+
+For a complete workflow, build on this to extract endpoint information, request/response models, authentication requirements, and custom types.
+
+## Building a Code Generation Class
+
+For more structured generation, the `OpenAPICodeGenerator` class wraps spec parsing and endpoint extraction into a reusable tool:
+
+```python
+class OpenAPICodeGenerator:
+    def __init__(self, spec_data, language='typescript'):
+        self.spec = spec_data
+        self.language = language
+        self.types = self._extract_types()
+
+    def _extract_types(self):
+        """Extract all custom types from components/schemas."""
+        schemas = self.spec.get('components', {}).get('schemas', {})
+        return {name: schema for name, schema in schemas.items()}
+
+    def generate_client(self):
+        """Generate the API client class."""
+        endpoints = self._extract_endpoints()
+        # Generate client code based on language
+        return self._render_client(endpoints)
+
+    def _extract_endpoints(self):
+        """Extract all API endpoints from paths."""
+        paths = self.spec.get('paths', {})
+        endpoints = []
+        for path, methods in paths.items():
+            for method, details in methods.items():
+                if method in ['get', 'post', 'put', 'delete', 'patch']:
+                    endpoints.append({
+                        'path': path,
+                        'method': method.upper(),
+                        'operation_id': details.get('operationId'),
+                        'parameters': details.get('parameters', []),
+                        'request_body': details.get('requestBody'),
+                        'responses': details.get('responses', {})
+                    })
+        return endpoints
+```
+
+This foundation extends to support multiple output languages, custom templates, and integration with popular HTTP client libraries.
 
 ## Generating TypeScript Clients
 
@@ -183,6 +264,27 @@ class APIClient:
         return response.json()
 ```
 
+## Integrating with Your CI/CD Pipeline
+
+For maximum efficiency, integrate OpenAPI client generation into your CI/CD pipeline. A script can fetch the latest spec, generate the client, and validate the output in one step:
+
+```bash
+#!/bin/bash
+# Generate API client from spec
+SPEC_URL="https://api.example.com/openapi.json"
+OUTPUT_DIR="./src/api/client"
+
+claude-code --skill openapi-codegen generate \
+  --spec "$SPEC_URL" \
+  --output "$OUTPUT_DIR" \
+  --language typescript
+
+# Run linting on generated code
+npm run lint -- "$OUTPUT_DIR"
+```
+
+This automation ensures your API client always stays in sync with your API specification.
+
 ## Combining with Claude Skills
 
 For enhanced productivity, combine OpenAPI client generation with other Claude skills. The `frontend-design` skill can help generate React components that consume your API client with proper state management. The `tdd` skill ensures your generated client has test coverage from the start.
@@ -194,6 +296,12 @@ The `supermemory` skill proves valuable for remembering API changes across sessi
 Keep your OpenAPI specification as the single source of truth. When you modify your spec, regenerate clients rather than manually editing generated code. This prevents drift between your API contract and implementation.
 
 Version your generated clients alongside your spec. Store clients in version control and update them deliberately rather than regenerating on every spec change.
+
+Use descriptive operation IDs in your OpenAPI spec. Clear, consistent operation IDs generate more readable client methods—`getUserById` or `retrieveUserProfile` is more useful than a generic `getUser`.
+
+Handle authentication centrally. Generate authentication handling as a separate concern so clients can inject their preferred auth mechanism without polluting the generated code.
+
+Add request validation to extend generated clients with runtime type safety using libraries like Zod or Yup—this catches type mismatches that static analysis alone may miss.
 
 Add a generation script to your project that documents exactly how to regenerate the client:
 
