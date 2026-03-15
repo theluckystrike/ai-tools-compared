@@ -197,6 +197,7 @@ Remember that style guides evolve. Build feedback mechanisms that identify when 
 
 ## Related Reading
 
+- For an in-depth guide to naming convention enforcement specifically, see [How to Make Claude Code Follow My Naming Conventions](/claude-skills-guide/how-to-make-claude-code-follow-my-naming-conventions/)
 - [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) — Provide representative code samples to anchor Claude's output to your project's style
 - [Automated Code Documentation Workflow with Claude Skills](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/) — Keep docs consistent with your style guide as code evolves
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Automate style violation detection in your PR review workflow
