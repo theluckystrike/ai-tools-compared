@@ -6,7 +6,7 @@ description: "A comprehensive troubleshooting guide to fix slow ChatGPT response
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /chatgpt-slow-response-fix-2026/
-categories: [troubleshooting, chatgpt]
+categories: [troubleshooting, guides]
 reviewed: true
 score: 8
 ---
