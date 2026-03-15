@@ -1,4 +1,5 @@
 ---
+
 layout: default
 title: "Claude Code for Keep a Changelog Workflow Tutorial"
 description: "Learn how to automate and manage your project changelog using Claude Code. A practical tutorial covering Keep a Changelog format, workflow automation, and actionable examples."
@@ -7,7 +8,10 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-keep-a-changelog-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
@@ -158,7 +162,7 @@ Ensure your changelog links to releases and compare views:
 
 Claude can automatically generate these comparison links when creating release notes.
 
-### 3. Leverage GitHub Releases Integration
+### 3. use GitHub Releases Integration
 
 When you tag a release on GitHub, the changelog becomes your release notes. Ask Claude to prepare both simultaneously:
 
@@ -210,7 +214,7 @@ Claude Code can help enforce these standards by validating your changelog entrie
 
 ## Conclusion
 
-Maintaining a well-structured changelog doesn't have to be a burden. By leveraging Claude Code's understanding of your project context, commit history, and the Keep a Changelog format, you can automate most of this work while ensuring consistency and completeness.
+Maintaining a well-structured changelog doesn't have to be a burden. By using Claude Code's understanding of your project context, commit history, and the Keep a Changelog format, you can automate most of this work while ensuring consistency and completeness.
 
 The key is integrating changelog management into your daily workflow rather than treating it as a release-day task. With Claude's help, your changelog becomes a valuable communication tool that keeps users informed and demonstrates your project's progress transparently.
 

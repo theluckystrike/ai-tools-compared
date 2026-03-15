@@ -1,12 +1,18 @@
 ---
 
+
 layout: default
 title: "How to Disable Chrome Background Extensions: A Developer Guide"
 description: "Learn how to disable Chrome background extensions to improve browser performance, enhance privacy, and streamline development debugging."
 date: 2026-03-15
-author: theluckystrike
+author: "Claude Skills Guide"
 permalink: /disable-chrome-background-extensions/
+reviewed: true
+score: 8
+categories: [guides]
+tags: [claude-code, claude-skills]
 ---
+
 
 # How to Disable Chrome Background Extensions: A Developer Guide
 
