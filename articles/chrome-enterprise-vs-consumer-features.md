@@ -5,6 +5,10 @@ description: "Understand the key differences between Chrome enterprise and consu
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-enterprise-vs-consumer-features/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Enterprise vs Consumer Features: A Developer Guide

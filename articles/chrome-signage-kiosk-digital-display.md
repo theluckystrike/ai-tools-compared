@@ -6,6 +6,10 @@ description: "Learn how to build and deploy Chrome-based digital signage solutio
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-signage-kiosk-digital-display/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
