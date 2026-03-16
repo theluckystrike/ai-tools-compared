@@ -5,6 +5,10 @@ description: "Learn how to build and use Chrome extensions for website auditing.
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-site-audit-tool/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 A Chrome extension site audit tool transforms your browser into a powerful debugging and analysis platform. Rather than switching between multiple applications, you can examine page performance, analyze DOM structure, check accessibility, and monitor network requests—all from a single extension popup. This guide shows you how to build these tools and use them effectively in your development workflow.

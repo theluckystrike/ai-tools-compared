@@ -8,6 +8,10 @@ description: "Learn how to build a Chrome extension for finding restaurant deals
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-restaurant-deal-finder/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

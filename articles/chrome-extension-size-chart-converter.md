@@ -5,6 +5,10 @@ description: "Discover the best Chrome extensions for size chart conversions. Co
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-size-chart-converter/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When shopping internationally or comparing products across different retailers, dealing with size conversions quickly becomes frustrating. A well-designed Chrome extension for size chart conversion can eliminate this friction, letting you convert between US, UK, European, and Asian sizing systems in seconds. This guide explores how these extensions work, what features to look for, and how developers can build their own conversion tools.
