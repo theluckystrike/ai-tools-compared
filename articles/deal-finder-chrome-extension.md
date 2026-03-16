@@ -5,6 +5,10 @@ description: "Learn how to build a deal finder Chrome extension from scratch. Th
 date: 2026-03-15
 author: theluckystrike
 permalink: /deal-finder-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 A deal finder chrome extension can transform how users discover online discounts, track price drops, and find the best offers across multiple retailers. For developers looking to build this type of extension, understanding the technical architecture and implementation patterns is essential for creating a tool that performs reliably at scale.
