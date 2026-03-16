@@ -6,6 +6,10 @@ description: "A practical guide for developers moving from Copilot for Neovim to
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Developers who have used GitHub Copilot inside Neovim often find themselves wanting more control over their AI-assisted workflow. Claude Code offers a terminal-first approach that gives you direct access to powerful AI capabilities without relying on editor plugins. This guide walks you through the migration process, from installation to daily workflow optimization.
