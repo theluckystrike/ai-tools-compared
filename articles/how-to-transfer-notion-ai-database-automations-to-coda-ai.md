@@ -186,6 +186,11 @@ For most use cases, Coda's embedded AI formulas provide a simpler solution than 
 
 The key to successful migration is mapping your Notion automation triggers and actions to their Coda equivalents, then leveraging Coda's native AI capabilities where possible to reduce maintenance overhead.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

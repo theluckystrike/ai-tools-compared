@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from Copilot to Codeium: What Extensions to Install First"
+title: "Switching from Copilot to Codeium: What Extensions to."
 description: "A practical guide for developers switching from GitHub Copilot to Codeium, covering essential VS Code extensions and configuration steps."
 date: 2026-03-16
 author: theluckystrike
@@ -136,5 +136,10 @@ However, avoid running Copilot and Codeium simultaneously in the same editor. Th
 With your extensions installed and configured, spend your first few days actively using Codeium for routine tasks. The AI learns your coding patterns over time, so using it consistently improves suggestion quality. Do not hesitate to dismiss irrelevant suggestions—Codeium uses this feedback to refine future recommendations.
 
 The transition from Copilot to Codeium requires an adjustment period, but installing the right extensions from the start minimizes disruption. Focus on the core Codeium extension and chat functionality first, then add supplementary tools as needed for your specific language and workflow.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

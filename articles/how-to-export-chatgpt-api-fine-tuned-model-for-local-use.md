@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Export ChatGPT API Fine-Tuned Model for Local Use"
-description: "A practical guide to exporting your ChatGPT fine-tuned models from the OpenAI API and running them locally. Includes code examples and step-by-step instructions."
+description: "A practical guide to exporting your ChatGPT fine-tuned models from the OpenAI API and running them locally. Includes code examples and step-by-step."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-chatgpt-api-fine-tuned-model-for-local-use/
@@ -212,5 +212,10 @@ Running a fine-tuned model locally involves upfront hardware costs but can save 
 ## Summary
 
 Exporting your fine-tuning data from OpenAI and training a local model gives you more control and potentially lower costs. The process involves retrieving your training data, selecting an appropriate base model, fine-tuning locally using libraries like Unsloth, and deploying for inference. While the resulting model will not be identical to OpenAI's hosted version, it captures the knowledge from your training data and runs entirely on your infrastructure.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

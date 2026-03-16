@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate ChatGPT System Prompts to Claude System Prompt Format"
+title: "How to Migrate ChatGPT System Prompts to Claude System."
 description: "A practical guide for developers on converting ChatGPT system prompts to Claude's format, with code examples and best practices."
 date: 2026-03-16
 author: theluckystrike
@@ -203,5 +203,10 @@ Use the `xml` thinking feature for complex reasoning. Claude's extended thinking
 Migrating ChatGPT system prompts to Claude's format requires restructuring your instructions to be more explicit and structured. The key changes involve breaking down complex instructions into numbered steps, providing concrete output templates, and adding detailed behavioral guidelines.
 
 Start with your most critical prompts, convert them using the patterns shown above, and test thoroughly. Most prompts will benefit from the additional structure that Claude's format encourages, resulting in more consistent and predictable outputs.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate ChatGPT Plugins to Custom GPTs (Step-by-Step Guide 2026)"
+title: "How to Migrate ChatGPT Plugins to Custom GPTs."
 description: "A practical guide for developers and power users to migrate ChatGPT plugins to Custom GPTs. Includes code examples and best practices."
 date: 2026-03-16
 author: theluckystrike
@@ -194,6 +194,11 @@ Migrating from ChatGPT Plugins to Custom GPTs requires exporting your OpenAPI sp
 By following this step-by-step approach, you can preserve your plugin functionality while taking advantage of the more integrated Custom GPT experience. The GPT Builder's interface simplifies much of the configuration overhead that plugins required.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Switching from Windsurf Free to Cursor Free: What Is Different"
-description: "A practical guide for developers comparing Windsurf Free vs Cursor Free. Learn the key differences in features, rate limits, and workflow to decide which AI code editor suits your needs."
+title: "Switching from Windsurf Free to Cursor Free: What Is."
+description: "A practical guide for developers comparing Windsurf Free vs Cursor Free. Learn the key differences in features, rate limits, and workflow to decide."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-free-to-cursor-free-what-is-different/
@@ -140,5 +140,10 @@ The choice between Windsurf Free and Cursor Free depends on your specific needs:
 - You prefer Claude's reasoning capabilities for debugging and explaining code
 
 Both tools are capable choices for developers exploring AI-assisted coding. The best way to decide is to try both and see which workflow feels more natural for your projects.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
