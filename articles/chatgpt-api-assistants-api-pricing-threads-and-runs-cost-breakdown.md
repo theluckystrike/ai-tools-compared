@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "ChatGPT API Assistants API Pricing: Threads and Runs Cost Breakdown"
-description: "A practical developer guide to understanding OpenAI Assistants API pricing, including thread storage costs, run execution pricing, and real-world cost optimization strategies."
+title: "ChatGPT API Assistants API Pricing: Threads and Runs."
+description: "A practical developer guide to understanding OpenAI Assistants API pricing, including thread storage costs, run execution pricing, and real-world cost."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/
@@ -164,5 +164,10 @@ Switching to gpt-4o for all runs would increase costs to approximately $9,000 pe
 ## Summary
 
 The Assistants API pricing model requires careful attention to thread management, model selection, and run optimization. By understanding input and output token costs, implementing thread cleanup policies, and using model routing strategically, you can build cost-effective AI applications. Monitor your actual usage through the API's usage tracking features and adjust your approach based on real-world patterns rather than estimates.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

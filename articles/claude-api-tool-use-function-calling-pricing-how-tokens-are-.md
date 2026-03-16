@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Claude API Tool Use and Function Calling: Pricing and Token Counting Explained"
-description: "A comprehensive guide to understanding Claude API tool use, function calling mechanics, and how tokens are counted for pricing. Practical examples for developers."
+title: "Claude API Tool Use and Function Calling: Pricing and."
+description: "A comprehensive guide to understanding Claude API tool use, function calling mechanics, and how tokens are counted for pricing. Practical examples for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-tool-use-function-calling-pricing-how-tokens-are-/
@@ -170,6 +170,11 @@ def execute_tool(tool_name, tool_input):
 ```
 
 Understanding these mechanics enables you to build robust applications that leverage Claude's tool use capabilities while managing costs effectively. The key is designing clean, focused tools that return only necessary data, and structuring your implementation to minimize unnecessary token accumulation across conversation turns.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
