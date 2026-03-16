@@ -160,7 +160,7 @@ Effective autoscaling requires visibility into scaling decisions. Configure Prom
 
 Use the logging-stack-guide skill to set up centralized logging for HPA events. Correlate scaling events with application logs to understand how traffic patterns affect performance. This data informs future tuning decisions.
 
-Regularly review HPA performance. Traffic patterns evolve as applications grow. Reassess threshold values quarterly to ensure they align with current workloads. Document scaling decisions using the ai-coding-tools-for-code-documentation-workflow to maintain institutional knowledge.
+Regularly review HPA performance. Traffic patterns evolve as applications grow. Reassess threshold values quarterly to ensure they align with current workloads. Document scaling decisions using the [automated code documentation workflow](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/) to maintain institutional knowledge.
 
 ## Conclusion
 
