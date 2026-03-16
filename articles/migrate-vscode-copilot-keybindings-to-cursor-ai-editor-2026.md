@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate VSCode Copilot Keybindings to Cursor AI Editor in 2026"
+title: "How to Migrate VSCode Copilot Keybindings to Cursor AI."
 description: "A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips."
 date: 2026-03-16
 author: theluckystrike
@@ -112,5 +112,10 @@ After migrating your keybindings, spend a day using Cursor with your established
 Consider documenting your keybindings configuration. A simple reference file helps when setting up new machines or troubleshooting issues. Many developers share their configurations in dotfiles repositories, making this documentation valuable for future reference.
 
 Cursor continues evolving its AI features, and new command identifiers may replace current ones. Periodically check Cursor's documentation for updates to AI commands and adjust your keybindings accordingly.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

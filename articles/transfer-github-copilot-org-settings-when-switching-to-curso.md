@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Transfer GitHub Copilot Organization Settings When Switching to Cursor Business"
-description: "A practical guide for developers moving from GitHub Copilot to Cursor Business. Learn what settings you can migrate, what requires manual reconfiguration, and how to preserve your team's AI assistant workflows."
+title: "How to Transfer GitHub Copilot Organization Settings."
+description: "A practical guide for developers moving from GitHub Copilot to Cursor Business. Learn what settings you can migrate, what requires manual."
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-github-copilot-org-settings-when-switching-to-curso/
@@ -134,6 +134,11 @@ Follow this sequence to minimize disruption during your transition:
 ## Conclusion
 
 While no automated tool transfers GitHub Copilot organization settings to Cursor Business, most configurations can be manually recreated using Cursor's `.cursorrules` system and organization settings. The key is documenting your current Copilot configuration, understanding the equivalent settings in Cursor, and methodically rebuilding those rules in your new environment. Plan for the features that do not transfer—particularly GitHub-specific integrations—and decide whether to maintain parallel tooling or accept the trade-offs.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
