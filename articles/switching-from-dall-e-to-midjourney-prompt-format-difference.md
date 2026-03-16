@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 The key prompt format difference when switching from DALL-E to Midjourney is that DALL-E uses natural language descriptions with API-level parameters, while Midjourney uses comma-separated keyword descriptors with inline `--` flags for aspect ratio, stylization, quality, and version control. Replace your `size` API parameter with `--ar`, embed quality via `--quality` instead of the API field, and use `--no` for negative prompting that DALL-E does not support. This guide covers every parameter mapping and syntax conversion you need.

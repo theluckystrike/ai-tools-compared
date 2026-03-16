@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # How to Move Stable Diffusion Workflows to Midjourney Equivalent Setup
@@ -64,8 +65,7 @@ Stable Diffusion users configure numerous explicit parameters. Here's how they t
 
 Stable Diffusion's sampler selection (Euler, DPM++, DDIM) has no direct Midjourney equivalent. Midjourney manages this internally. However, you can control iteration behavior:
 
-- **Steps**: Midjourney uses `--step` or `--steps` (range 10-1000, default varies by model)
-- **Quality**: `--quality` or `--q` adjusts rendering time (0.25, 0.5, 1, 2)
+Midjourney uses `--step` or `--steps` for iteration count (range 10-1000, default varies by model). The `--quality` or `--q` flag adjusts rendering time (0.25, 0.5, 1, 2).
 
 ```
 /imagine prompt: serene mountain landscape --steps 100 --quality 1
@@ -111,9 +111,7 @@ If you used Automatic1111's web UI, your iteration loop likely looked like this:
 
 Key commands for iteration:
 
-- **V1-V4**: Create variations of any generated image
-- **🔄**: Regenerate with same prompt
-- **Upscale**: Increase resolution of selected images
+Use V1-V4 to create variations of any generated image, the regenerate button to rerun the same prompt, and the Upscale option to increase resolution of selected images.
 
 ### ControlNet Equivalents
 
