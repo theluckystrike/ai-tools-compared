@@ -5,6 +5,10 @@ description: "A technical breakdown of Midjourney's /describe feature costs, API
 date: 2026-03-16
 author: theluckystrike
 permalink: /midjourney-describe-feature-cost-does-it-count-as-image-gene/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Midjourney's `/describe` command has become an essential tool for developers and power users who want to reverse-engineer prompts from existing images. However, a common question arises: does using `/describe` count toward your image generation quota? This article provides a technical breakdown of how the feature works, its cost implications, and practical scenarios where understanding these details matters for your workflow.
