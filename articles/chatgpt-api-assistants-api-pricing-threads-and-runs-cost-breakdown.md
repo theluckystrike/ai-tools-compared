@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "ChatGPT API Assistants API Pricing: Threads and Runs Cost Breakdown"
+title: "ChatGPT API Assistants API Pricing: Threads and Runs."
 description: "A practical guide to understanding OpenAI's Assistants API pricing structure, including thread costs, run costs, and real-world examples for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/
-categories: [ai-tools, api, openai]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -202,6 +202,11 @@ Key cost formulas to remember:
 - **Monthly thread storage**: threads × $0.50/1000/day × 30
 
 Build cost monitoring into your application from the start, and regularly review whether your model choices align with your accuracy requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
