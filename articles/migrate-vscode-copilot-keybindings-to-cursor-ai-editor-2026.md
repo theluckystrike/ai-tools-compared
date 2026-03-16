@@ -5,6 +5,10 @@ description: "A practical guide for developers migrating their VSCode Copilot ke
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have spent months or years customizing VSCode with Copilot keybindings, moving to Cursor AI does not mean starting from scratch. Cursor builds on VSCode's foundation, which means most of your keyboard shortcuts transfer with minimal effort. This guide walks you through migrating your Copilot keybindings from VSCode to Cursor, covering export methods, import processes, and adjustments for Cursor-specific AI features.

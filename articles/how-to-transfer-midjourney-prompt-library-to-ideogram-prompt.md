@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users migrating their M
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,7 +6,7 @@ description: "A practical checklist for developers migrating from GitHub Copilot
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-copilot-enterprise-to-cursor-business-migrati/
-categories: [migration, tools]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

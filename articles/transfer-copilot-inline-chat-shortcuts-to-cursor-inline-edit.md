@@ -5,6 +5,10 @@ description: "A practical guide for developers moving from GitHub Copilot to Cur
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # How to Transfer Copilot Inline Chat Shortcuts to Cursor Inline Edit Keybinds
