@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Switching from Grammarly to ChatGPT for Editing: Workflow Migration Tips"
-description: "A practical guide for developers and power users migrating their writing editing workflow from Grammarly to ChatGPT, with code examples and automation tips."
+title: "Switching from Grammarly to ChatGPT for Editing."
+description: "A practical guide for developers and power users migrating their writing editing workflow from Grammarly to ChatGPT, with code examples and automation."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/
@@ -148,5 +148,10 @@ Start by using both tools simultaneously during your transition period. Compare 
 Keep your API usage in mind if you use ChatGPT extensively. Setting usage limits and monitoring costs helps prevent unexpected charges. The free tier through chat.openai.com works for occasional editing but becomes limiting for heavy users.
 
 Pay attention to how ChatGPT handles sensitive information. Avoid pasting confidential data into public ChatGPT interfaces. Consider using API-based solutions or the desktop application for sensitive work.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

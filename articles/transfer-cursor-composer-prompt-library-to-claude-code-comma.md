@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Transfer Cursor Composer Prompt Library to Claude Code Commands"
+title: "How to Transfer Cursor Composer Prompt Library to Claude."
 description: "A practical guide for developers moving their prompt libraries from Cursor to Claude Code, with code examples and migration strategies."
 date: 2026-03-16
 author: theluckystrike
@@ -150,5 +150,10 @@ Iterate on your skill definitions based on test results. Claude Code's skill sys
 ## Conclusion
 
 Transferring your Cursor Composer prompt library to Claude Code requires rethinking how you structure and invoke prompts, but the effort pays off in a more efficient workflow. Skills provide reusability, the command-line interface offers flexibility, and the `.claude.md` file handles project-specific rules. Start with your most-used prompts, convert them to skills, and gradually expand your library as you discover new patterns that work well with Claude Code.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
