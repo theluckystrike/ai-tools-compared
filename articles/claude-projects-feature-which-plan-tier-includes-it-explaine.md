@@ -5,6 +5,10 @@ description: "A comprehensive guide to understanding which Claude AI subscriptio
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-projects-feature-which-plan-tier-includes-it-explaine/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Claude Projects Feature: Which Plan Tier Includes It Explained
