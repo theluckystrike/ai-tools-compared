@@ -6,6 +6,10 @@ description: "Learn how to build Chrome extensions with text-to-speech capabilit
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-text-to-speech/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
