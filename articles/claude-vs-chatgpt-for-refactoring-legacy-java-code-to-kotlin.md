@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Claude vs ChatGPT for Refactoring Legacy Java Code to."
-description: "A developer-focused comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. Includes code examples, conversion strategies, and."
+title: "Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin"
+description: "A developer-focused comparison of Claude and ChatGPT for converting legacy Java code to Kotlin. Includes practical code examples, null safety handling, data class conversions, and coroutine migration strategies."
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/
