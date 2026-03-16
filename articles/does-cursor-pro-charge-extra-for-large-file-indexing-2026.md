@@ -111,6 +111,11 @@ Cursor Pro does not charge extra for large file indexing in 2026. The indexing c
 
 For developers working on large projects, the combination of unlimited indexing and the powerful AI model makes Cursor Pro a strong choice. The key to success is understanding how to configure the indexing through `.cursorrules` and managing your context effectively.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
