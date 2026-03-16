@@ -200,6 +200,41 @@ verify_deployment() {
 claude --print "Verify deployment health for my-service in the production environment"
 ```
 
+## Infrastructure as Code and CI/CD Automation
+
+Beyond incident response, Claude Code handles infrastructure generation and pipeline automation that SRE teams manage daily.
+
+### Generating Terraform Configurations
+
+Instead of hand-writing YAML and HCL, describe your infrastructure needs conversationally:
+
+```
+Create a VPC with 10.0.0.0/16 CIDR, three public subnets across us-east-1a,
+us-east-1b, and us-east-1c, and corresponding private subnets for a
+production environment
+```
+
+Claude generates the complete Terraform configuration including route tables, NAT gateways, and security groups, following infrastructure best practices.
+
+### CI/CD Pipeline Patterns
+
+Automate pipeline generation for common scenarios:
+
+- **Build and test**: Multi-stage pipelines with unit tests, security scanning via Snyk or Trivy, container image builds, and automatic staging deploys
+- **PR automation**: Automatic test runs, deployment previews, changelog generation from commits, and Slack notifications on build status
+- **Container orchestration**: Kubernetes manifest generation, horizontal pod autoscaler configs, and cross-namespace resource management
+
+### Configuration and Secrets Management
+
+SRE teams can automate configuration drift detection across environments:
+
+```
+Compare the Kubernetes ConfigMaps between staging and production,
+identify differences in environment variables
+```
+
+For secrets, Claude helps integrate with AWS Secrets Manager, HashiCorp Vault, and Kubernetes secrets—including credential rotation workflows.
+
 ## Creating Self-Service Runbooks
 
 Transform static runbooks into executable Claude Code workflows:

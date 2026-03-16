@@ -91,6 +91,49 @@ Servers like the **GitHub MCP** bring repository management directly into your C
 
 The key consideration here is credential management. Many API-based MCP servers support OAuth or token-based authentication. Always use dedicated service accounts with minimal required permissions rather than personal credentials, especially in team environments.
 
+## Extending MCP with Claude Code Skills
+
+Beyond server-level integrations, Claude Code skills provide specialized tool capabilities. Two commonly paired with MCP workflows:
+
+### Data Processing with the xlsx Skill
+
+The xlsx skill handles spreadsheet operations for reporting and data analysis:
+
+```python
+from claude_code_skills import xlsx
+
+def generate_sprint_report(sprint_data, team_velocity):
+    report = xlsx.create_workbook()
+    xlsx.add_sheet(report, "Summary")
+    xlsx.write_cell(report, "Summary", "A1", "Sprint Report")
+    xlsx.write_cell(report, "Summary", "A2", "Team Velocity")
+    xlsx.write_cell(report, "Summary", "B2", team_velocity)
+    xlsx.write_formula(report, "Summary", "C2", "=B2*1.1")
+    xlsx.apply_style(report, "Summary", "A1", bold=True, font_size=14)
+    xlsx.save(report, "sprint-report.xlsx")
+```
+
+### Document Generation with the pdf Skill
+
+The pdf skill creates formatted documents—API references, deployment reports, and technical specifications—directly from your codebase:
+
+```python
+from claude_code_skills import pdf
+
+def generate_api_documentation(api_spec, output_path):
+    doc = pdf.create_document()
+    pdf.add_title(doc, "API Documentation")
+    pdf.add_section(doc, "Endpoints")
+    for endpoint in api_spec:
+        pdf.add_endpoint(doc,
+                        method=endpoint['method'],
+                        path=endpoint['path'],
+                        description=endpoint['description'])
+    pdf.save(doc, output_path)
+```
+
+These skills complement MCP servers by processing data retrieved through server connections—for example, querying a database via PostgreSQL MCP and generating a formatted report with the xlsx skill.
+
 ## Decision Framework: Questions to Ask
 
 Use these questions to narrow your choices:

@@ -227,6 +227,29 @@ Documentation Coverage Audit — 2026-03-13
 
 Address the open items before the sprint ends.
 
+## Test-Driven Documentation
+
+Tests can serve as executable documentation that never goes out of date. When properly written, test files describe expected behavior in code, making them a reliable complement to traditional docs.
+
+```javascript
+// This test documents the user authentication flow
+describe('User Authentication', () => {
+  it('rejects invalid credentials with helpful error message', async () => {
+    const result = await auth.login('user@example.com', 'wrongpassword');
+    expect(result.success).toBe(false);
+    expect(result.error).toContain('Invalid credentials');
+  });
+
+  it('returns JWT token on successful login', async () => {
+    const result = await auth.login('user@example.com', 'correctpassword');
+    expect(result.token).toBeDefined();
+    expect(result.token).toMatch(/^eyJ/);
+  });
+});
+```
+
+Any developer reading the test understands exactly how the authentication system works—inputs, outputs, and error handling. Use the `tdd` skill to generate tests that double as living documentation for your most critical code paths.
+
 ## Putting It Together
 
 The full automated code documentation workflow looks like this:
