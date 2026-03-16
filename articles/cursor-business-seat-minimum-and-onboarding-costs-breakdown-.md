@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Cursor has established itself as a strong contender in the AI-powered code editor space, built on Visual Studio Code. For development teams considering the business tier, understanding the seat requirements and onboarding costs helps with budgeting and implementation planning.
+Cursor Business requires a minimum of two seats at $19/user/month (or $15/user/month on annual billing), making it accessible for small teams that need centralized management. A five-developer team on annual billing pays $75/month ($900/year), with onboarding costs primarily driven by training time (roughly one week for full adoption) and optional SSO integration. Below is a detailed breakdown of the pricing tiers, seat requirements, and total cost of ownership for teams evaluating the platform.
 
 ## Business Tier Pricing Structure
 

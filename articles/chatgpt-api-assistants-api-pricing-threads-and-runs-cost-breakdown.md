@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-The OpenAI Assistants API introduces a paradigm for building AI-powered applications with persistent conversation contexts. Understanding the pricing model is essential for developers building production systems, as costs can accumulate quickly depending on usage patterns. This guide breaks down the pricing structure for threads, runs, and associated operations, with practical examples to help you estimate and optimize costs.
+The OpenAI Assistants API charges based on input tokens, output tokens, thread storage, and run execution, with costs varying dramatically by model. Using gpt-4o-mini, a typical run costs under a tenth of a cent ($0.15/1M input, $0.60/1M output), while the same run on gpt-4o costs roughly one cent ($2.50/1M input, $10.00/1M output). Thread storage adds a smaller but cumulative cost based on total tokens stored across all messages. This guide breaks down each cost component with practical examples to help you estimate and optimize your Assistants API spending.
 
 ## Assistants API Pricing Model Overview
 

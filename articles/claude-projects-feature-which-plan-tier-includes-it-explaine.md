@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 # Claude Projects Feature: Which Plan Tier Includes It Explained
 
-If you are a developer or power user exploring Claude AI, you have likely encountered the Projects feature and wondered which subscription tier provides access to it. Understanding the plan structure helps you make informed decisions about your AI tooling investment.
+Claude Projects is available on the Pro, Team, and Enterprise plans -- it is not included in the free tier. The Pro plan is the most affordable path to Projects access, giving you persistent file uploads, custom instructions, and organized workspaces for multi-conversation context. Below is a full breakdown of plan tiers, practical use cases for developers, and a decision framework for choosing the right plan.
 
 ## What Is Claude Projects?
 

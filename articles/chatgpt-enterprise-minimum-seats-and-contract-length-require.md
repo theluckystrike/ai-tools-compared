@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you are evaluating ChatGPT Enterprise for your organization, understanding the minimum seat requirements and contract terms is essential before requesting a quote. Unlike the consumer plans with straightforward pricing, Enterprise deployments involve negotiation and specific commitment levels that vary based on organization size and deployment scope.
+ChatGPT Enterprise requires a minimum of 150 seats and an annual contract commitment. Pricing is not published publicly but generally falls in the $50-80 per user per month range, with multi-year commitments yielding 10-20% savings. Organizations with fewer than 150 users should consider the Team plan ($25/user/month) or Microsoft 365 Copilot integration as alternatives. Below is a detailed breakdown of contract terms, deployment considerations, and procurement steps.
 
 ## Current Minimum Seat Requirements
 

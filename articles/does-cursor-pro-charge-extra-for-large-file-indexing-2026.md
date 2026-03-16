@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you are working with a large codebase in Cursor, you have likely encountered the indexing feature—it is what allows Cursor to understand your entire project, provide accurate context-aware suggestions, and answer questions about your code. However, as projects grow in size, developers often wonder whether Cursor Pro charges extra for handling large file indexing. This guide provides a clear answer and practical strategies for managing large codebases.
+No, Cursor Pro does not charge extra for large file indexing. Indexing is included in the Pro subscription with no per-file or per-MB fees -- you get full codebase indexing within the plan's size thresholds. If your project exceeds practical limits, you can manage scope with a `.cursorignore` file, selective workspace indexing, or upgrading to the Business tier for higher limits. This guide covers exactly how indexing works and strategies for keeping large codebases efficient.
 
 ## Understanding Cursor's Indexing System
 
