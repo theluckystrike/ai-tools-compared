@@ -6,6 +6,10 @@ description: "Master Chrome flags for faster browsing. Practical examples and co
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-flags-faster-browsing/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Flags for Faster Browsing: A Developer Guide

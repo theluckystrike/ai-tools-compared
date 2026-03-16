@@ -6,6 +6,10 @@ description: "Experiencing slow Chrome printing? Discover practical fixes for pr
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-print-slow-fix/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Print Slow Fix: Practical Solutions for Developers

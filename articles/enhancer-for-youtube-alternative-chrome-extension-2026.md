@@ -6,6 +6,10 @@ description: "Discover the best Enhancer for YouTube alternatives in 2026. Learn
 date: 2026-03-15
 author: theluckystrike
 permalink: /enhancer-for-youtube-alternative-chrome-extension-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

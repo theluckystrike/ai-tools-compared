@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /tampermonkey-alternative-chrome-extension-2026/
 reviewed: true
 score: 8
-categories: [tools]
+categories: [guides]
 tags: [chrome-extension, userscripts, automation]
 ---
 

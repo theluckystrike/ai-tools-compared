@@ -5,6 +5,10 @@ description: "Discover the best Workona alternatives for Chrome in 2026. Open-so
 date: 2026-03-15
 author: theluckystrike
 permalink: /workona-alternative-chrome-extension-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
