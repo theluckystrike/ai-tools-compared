@@ -13,7 +13,7 @@ permalink: /how-to-make-claude-code-follow-team-style-guide/
 
 # How to Make Claude Code Follow Team Style Guide
 
-Getting Claude Code to consistently generate code that matches your team's style guide requires a strategic approach. Rather than relying on manual corrections, you can configure Claude to understand and apply your standards from the first response. This guide walks through practical methods for achieving [style guide compliance](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) at scale.
+Getting Claude Code to consistently generate code that matches your team's style guide requires a strategic approach. Rather than relying on manual corrections, you can configure Claude to understand and apply your standards from the first response. This guide walks through practical methods for achieving [style guide compliance](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) at scale.
 
 ## Understanding the Style Guide Challenge
 
@@ -213,7 +213,7 @@ Remember that style guides evolve. Build feedback mechanisms that identify when 
 ## Related Reading
 
 - For an in-depth guide to naming convention enforcement specifically, see [How to Make Claude Code Follow My Naming Conventions](/claude-skills-guide/how-to-make-claude-code-follow-my-naming-conventions/)
-- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) — Provide representative code samples to anchor Claude's output to your project's style
+- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) — Provide representative code samples to anchor Claude's output to your project's style
 - [Automated Code Documentation Workflow with Claude Skills](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/) — Keep docs consistent with your style guide as code evolves
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Automate style violation detection in your PR review workflow
 

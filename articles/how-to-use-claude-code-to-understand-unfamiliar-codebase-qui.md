@@ -218,7 +218,7 @@ The key is being strategic about what you ask. Focus on your immediate goals, us
 
 ## Related Reading
 
-- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) — See also
+- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) — See also
 - [Claude Code Verbose Mode Debugging Tips](/claude-skills-guide/claude-code-verbose-mode-debugging-tips/) — See also
 - [Best Way to Use Claude Code for Debugging Sessions](/claude-skills-guide/best-way-to-use-claude-code-for-debugging-sessions/) — See also
 - [Claude Code Tutorials Hub](/claude-skills-guide/tutorials-hub/) — See also

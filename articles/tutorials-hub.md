@@ -189,7 +189,7 @@ CI/CD tutorials walk through integrating Claude Code into GitHub Actions, GitLab
 
 Vibe coding is the practice of generating working code through rapid AI-assisted iteration. These tutorials teach the patterns and project structures that make vibe coding sessions productive rather than chaotic.
 
-- [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-explained-what-it-is-and-how-it-works/) — Introduction to vibe coding methodology and principles
+- [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) — Introduction to vibe coding methodology and principles
 - [Vibe Coding Project Structure Best Practices](/claude-skills-guide/vibe-coding-project-structure-best-practices/) — Structuring projects for vibe coding success
 - [Claude Skills Workflow for Technical Product Managers](/claude-skills-guide/claude-skills-workflow-for-technical-product-managers/) — How technical PMs use Claude Code skills in their workflow
 - [Claude Skills Ecosystem: Predictions for the Next 12 Months](/claude-skills-guide/claude-skills-ecosystem-predictions-next-12-months/) — What to expect from the Claude skills ecosystem in 2026-2027
@@ -352,7 +352,7 @@ Short, focused tutorials answering specific "how do I" questions about Claude Co
 | [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/) | Skill Management |
 | [Slack MCP Server Team Notification Automation](/claude-skills-guide/slack-mcp-server-team-notification-automation/) | MCP |
 | [Telegram MCP Server Bot Automation Workflow](/claude-skills-guide/telegram-mcp-server-bot-automation-workflow/) | MCP |
-| [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-explained-what-it-is-and-how-it-works/) | Vibe Coding |
+| [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) | Vibe Coding |
 | [Vibe Coding Project Structure Best Practices](/claude-skills-guide/vibe-coding-project-structure-best-practices/) | Vibe Coding |
 | [What Is the Best File Structure for a Complex Claude Skill](/claude-skills-guide/what-is-the-best-file-structure-for-a-complex-claude-skill/) | Skill Management |
 | [What Is the Best Free Claude Code Skill Available on GitHub](/claude-skills-guide/what-is-the-best-free-claude-code-skill-available-on-github/) | Skill Management |

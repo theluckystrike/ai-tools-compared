@@ -226,7 +226,7 @@ Enterprise Claude Code deployment introduces questions around governance, onboar
 - [How Enterprise Teams Adopt Claude Code Workflow](/claude-skills-guide/how-enterprise-teams-adopt-claude-code-workflow/) — Adoption patterns from enterprise Claude Code rollouts
 - [How to Build a SaaS MVP with Claude Code Skills Guide](/claude-skills-guide/how-to-build-saas-mvp-with-claude-code-skills-guide/) — Compressed SaaS MVP delivery with Claude skills
 - [How to Make Claude Code Follow Team Style Guide](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) — Enforcing team style conventions through CLAUDE.md
-- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) — Teaching Claude the conventions in an existing codebase
+- [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) — Teaching Claude the conventions in an existing codebase
 - [How to Make Claude Code Work with Legacy Codebase](/claude-skills-guide/how-to-make-claude-code-work-with-legacy-codebase/) — Adapting Claude Code to work in legacy codebases
 - [Is Claude Code Worth It? An Honest Beginner Review 2026](/claude-skills-guide/is-claude-code-worth-it-honest-beginner-review-2026/) — Honest assessment of Claude Code ROI for beginners
 - [Why Do Senior Developers Prefer Claude Code in 2026?](/claude-skills-guide/why-do-senior-developers-prefer-claude-code-2026/) — What experienced engineers value most about Claude Code
@@ -249,7 +249,7 @@ Token cost is real. These guides focus on extracting maximum value from each Cla
 - [Claude Skills for SEO Content Generation: 2026 Guide](/claude-skills-guide/claude-skills-for-seo-content-generation-workflow/) — SEO-driven content generation workflows
 - [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/how-to-make-claude-code-not-over-engineer-solutions/) — Keeping Claude Code outputs appropriately simple
 - [How to Make Claude Code Use Specific Library Version](/claude-skills-guide/how-to-make-claude-code-use-specific-library-version/) — Pinning library versions in Claude Code output
-- [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-write-better-unit-tests/) — Improving unit test quality from Claude Code
+- [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) — Improving unit test quality from Claude Code
 - [Understanding Claude Code Hooks System: Complete Guide](/claude-skills-guide/understanding-claude-code-hooks-system-complete-guide/) — Using hooks to trigger automated actions in your workflow
 - [Why Claude Code Is Expensive: Understanding Token Costs](/claude-skills-guide/why-is-claude-code-expensive-large-context-tokens/) — Why large-context sessions cost more and how to manage it
 - [Why Does Anthropic Limit Claude Code Context Window?](/claude-skills-guide/why-does-anthropic-limit-claude-code-context-window/) — The technical and economic reasons behind context limits
@@ -439,11 +439,11 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [How to Contribute Claude Skills to Open Source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/) | Ecosystem |
 | [How to Find Claude Skills on GitHub: A Practical Guide](/claude-skills-guide/how-to-find-claude-skills-on-github/) | Skill Architecture |
 | [How to Make Claude Code Follow Team Style Guide](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) | Enterprise |
-| [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-match-existing-code-patterns/) | Enterprise |
+| [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) | Enterprise |
 | [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/how-to-make-claude-code-not-over-engineer-solutions/) | Performance |
 | [How to Make Claude Code Use Specific Library Version](/claude-skills-guide/how-to-make-claude-code-use-specific-library-version/) | Performance |
 | [How to Make Claude Code Work with Legacy Codebase](/claude-skills-guide/how-to-make-claude-code-work-with-legacy-codebase/) | Enterprise |
-| [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-write-better-unit-tests/) | Performance |
+| [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) | Performance |
 | [How to Make Claude Code Write Secure Code Always](/claude-skills-guide/how-to-make-claude-code-write-secure-code-always/) | Security |
 | [How to Share Claude Skills with Your Team](/claude-skills-guide/how-to-share-claude-skills-with-your-team/) | Enterprise |
 | [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) | Claude MD |

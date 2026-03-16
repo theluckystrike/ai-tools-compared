@@ -136,7 +136,7 @@ Experiment with both approaches on your next project. Describe what you need, re
 
 ## Related Reading
 
-- [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-explained-what-it-is-and-how-it-works/)
+- [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/)
 - [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/)
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)

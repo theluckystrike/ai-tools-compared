@@ -231,7 +231,7 @@ For new features, follow this cycle:
 3. Write implementation code to pass the test
 4. Refactor while maintaining test coverage
 
-This approach, detailed in the best-way-to-prompt-claude-code-to-write-tests-first guide, ensures every piece of code has explicit validation.
+This approach, detailed in the how-to-make-claude-code-test-before-implementing-feature guide, ensures every piece of code has explicit validation.
 
 ### Continuous Testing in CI
 
