@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Midjourney Describe Feature Cost: Does It Count as Image Generation?"
+title: "Midjourney Describe Feature Cost: Does It Count as Image."
 description: "A technical breakdown of Midjourney's /describe feature costs, API usage implications, and whether it consumes your image generation quota."
 date: 2026-03-16
 author: theluckystrike
@@ -140,5 +140,10 @@ This workflow uses describe's free operation to inform generation decisions, the
 Midjourney's `/describe` feature provides a valuable image-to-text capability without consuming your image generation quota. The operation is free because it uses different computational resources than the image diffusion process. For developers and power users, this enables prompt engineering workflows, style extraction pipelines, and quality assurance processes that don't impact generation budgets.
 
 The key takeaway: describe freely, then generate strategically. Use describe to explore and optimize prompts before committing your generation credits to final outputs.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
