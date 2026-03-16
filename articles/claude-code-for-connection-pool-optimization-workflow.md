@@ -5,7 +5,7 @@ description: "Learn how to use Claude Code to optimize database connection pools
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-connection-pool-optimization-workflow/
-categories: [Development, Database, Performance]
+categories: [guides]
 tags: [claude-code, claude-skills]
 ---
 
