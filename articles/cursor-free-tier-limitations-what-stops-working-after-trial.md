@@ -6,6 +6,10 @@ description: "A practical guide to Cursor's free tier restrictions after the tri
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-free-tier-limitations-what-stops-working-after-trial/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Cursor has gained significant traction among developers seeking AI-enhanced coding capabilities. Built on Visual Studio Code, it integrates large language models directly into the editing experience. However, once the free trial expires, users encounter several limitations that can impact productivity. Understanding these restrictions helps you plan accordingly and explore alternatives if needed.

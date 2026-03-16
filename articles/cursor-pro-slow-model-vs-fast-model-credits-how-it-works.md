@@ -5,6 +5,10 @@ description: "A technical breakdown of Cursor Pro's slow and fast model options,
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-pro-slow-model-vs-fast-model-credits-how-it-works/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Cursor Pro offers a dual-model system that gives developers flexibility in how they consume AI credits. Understanding the difference between the slow and fast models helps you optimize your workflow and manage credit consumption effectively.
