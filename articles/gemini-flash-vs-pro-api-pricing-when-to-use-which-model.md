@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Google's Gemini API offers two distinct tiers: Flash and Pro. Understanding the pricing differences and knowing which model to use when can significantly impact your development costs while maintaining the performance you need.
+Choose Gemini Flash for high-volume, latency-sensitive tasks like classification, summarization, and real-time chat -- it costs 75-90% less than Pro per token. Choose Gemini Pro when you need complex multi-step reasoning, reliable code generation, or nuanced creative writing where output quality matters more than cost. Most production applications benefit from routing simple requests to Flash and reserving Pro for complex cases.
 
 ## Pricing Overview
 

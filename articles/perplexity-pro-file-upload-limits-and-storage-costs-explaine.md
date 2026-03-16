@@ -10,11 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Perplexity Pro offers powerful document analysis capabilities, but understanding the file upload limits and storage costs is essential for maximizing your subscription. This guide breaks down the technical details so you can plan your workflow effectively.
-
-This article covers everything from per-file size restrictions to monthly processing quotas, with code examples showing how to build reliable integrations. Whether you are uploading API documentation, analyzing codebase exports, or processing research papers, understanding these limits helps you design better workflows and avoid interruptions.
+Perplexity Pro allows file uploads up to 25 MB per document and 100 files per month. Storage follows a tiered model: Pro Basic includes 10 GB (overage at $0.10/GB/day) and Pro Unlimited includes 50 GB (overage at $0.05/GB/day). Files uploaded for immediate analysis are automatically cleaned up after 7 days unless explicitly saved.
 
 ## File Upload Limits on Perplexity Pro
 

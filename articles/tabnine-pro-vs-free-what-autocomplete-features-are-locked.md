@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Tabnine has become one of the most popular AI code completion tools, but choosing between the free and Pro versions can be confusing. This guide breaks down exactly which autocomplete features are locked behind the paywall and helps you decide if the Pro upgrade makes sense for your development workflow.
+Tabnine Free provides basic line-level completions that predict the next few characters or words. Tabnine Pro unlocks full-line completions, entire function generation from comments, project-wide context awareness, multiple AI model options, and custom models trained on your private codebase. Choose Free if you write standard patterns on personal projects; choose Pro if you want AI to generate complete functions, understand your full project, and enforce consistent team code styles.
 
 ## What Tabnine Offers in Both Versions
 

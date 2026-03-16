@@ -11,11 +11,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-GitHub Copilot Business offers organization-wide licensing, but many engineering leaders hesitate because adoption varies across teams. Understanding how Copilot Business pricing works when only some developers actively use the tool helps you make informed purchasing decisions.
+Yes, you pay for every assigned Copilot Business seat whether developers use it or not -- $10/user/month billed annually, or $13 monthly. If you assign 50 seats but only 30 developers actively use Copilot, your effective cost rises to $16.67 per active user and you waste $200/month on idle seats. The strategies below help you maximize ROI through phased rollouts, usage monitoring, and team-based licensing.
 
 ## How Copilot Business Pricing Works
 

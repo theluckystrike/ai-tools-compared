@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-If you're a developer or power user subscribed to Google One with Gemini Advanced, you've likely wondered whether the AI features consume your cloud storage quota. This is a legitimate concern, especially if you're managing limited storage or working with large datasets. This article breaks down exactly how Gemini Advanced handles storage, what gets saved, and how to optimize your Google One usage.
+No, Gemini Advanced AI processing does not count against your Google One storage quota. Conversations, generated text responses, and AI-powered features in Gmail, Docs, and Sheets run on Google's servers without creating persistent files in your Drive. What does consume storage is any content you explicitly save -- exported chats, downloaded AI-generated images, and documents you choose to keep in Drive.
 
 ## Understanding the Google One and Gemini Advanced Relationship
 
