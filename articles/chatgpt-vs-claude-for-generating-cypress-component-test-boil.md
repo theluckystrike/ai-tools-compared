@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "ChatGPT vs Claude for Generating Cypress Component Test Boilerplate in React"
-description: "A practical comparison of ChatGPT and Claude for generating Cypress component test boilerplate in React applications, with code examples and recommendations."
+title: "ChatGPT vs Claude for Generating Cypress Component Test."
+description: "A practical comparison of ChatGPT and Claude for generating Cypress component test boilerplate in React applications, with code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-generating-cypress-component-test-boil/
@@ -145,5 +145,10 @@ Consider your workflow:
 Regardless of which tool you use, verify the generated tests in your local environment. Run the tests to confirm they pass with your component implementation. Check that the selectors match your actual DOM structure, the event handlers bind correctly, and any props you pass align with your component's API.
 
 Both AI assistants reduce the time spent writing repetitive boilerplate, but they complement rather than replace your understanding of your component's behavior and your project's testing patterns.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

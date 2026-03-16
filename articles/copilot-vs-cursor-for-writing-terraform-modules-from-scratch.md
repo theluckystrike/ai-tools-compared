@@ -6,7 +6,7 @@ description: "A practical comparison of GitHub Copilot and Cursor when writing T
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-terraform-modules-from-scratch/
-categories: [ai-coding-tools, terraform, devops]
+categories: [comparisons]
 reviewed: true
 score: 8
 intent-checked: true
@@ -158,6 +158,11 @@ Both tools require an internet connection for their AI features. Copilot offers 
 The choice ultimately depends on your workflow preferences. If you want AI that stays out of your way until needed, Copilot fits well. If you prefer describing what you want and letting the tool generate code, Cursor provides that interaction model more effectively.
 
 For writing Terraform modules from scratch, both tools offer real value. Test both with a small module to see which matches your mental model and coding style.
+
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

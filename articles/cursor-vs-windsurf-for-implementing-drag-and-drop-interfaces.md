@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Cursor vs Windsurf for Implementing Drag and Drop Interfaces with React DnD"
+title: "Cursor vs Windsurf for Implementing Drag and Drop."
 description: "A practical comparison of Cursor and Windsurf when building drag-and-drop interfaces using React DnD, with code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -149,5 +149,10 @@ When your drag-and-drop implementation has issues, both tools can help identify 
 Both Cursor and Windsurf can accelerate React DnD development, but they suit different workflows. Cursor offers more predictable, controllable assistance ideal for developers who want AI support on demand. Windsurf provides proactive suggestions that speed up scaffolding but require more oversight. Test both with a small React DnD feature to determine which matches your coding style.
 
 For React DnD specifically, ensure you provide clear context about your implementation requirements, regardless of which tool you choose. The more specific your prompts, the better the output for complex drag-and-drop interfaces.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
