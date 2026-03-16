@@ -5,7 +5,7 @@ description: "A comprehensive guide to finding, claiming, and completing good fi
 date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-oss-good-first-issue-workflow-guide/
-categories: [workflows, open-source]
+categories: [workflows, guides]
 tags: [claude-code, claude-skills]
 ---
 
