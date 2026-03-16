@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users moving knowledge 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
