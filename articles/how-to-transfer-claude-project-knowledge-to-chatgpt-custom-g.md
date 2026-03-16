@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Transfer Claude Project Knowledge to ChatGPT Custom GPT"
-description: "A practical guide for developers and power users moving knowledge from Claude Projects to ChatGPT Custom GPTs, with export methods and configuration examples."
+title: "How to Transfer Claude Project Knowledge to ChatGPT."
+description: "A practical guide for developers and power users moving knowledge from Claude Projects to ChatGPT Custom GPTs, with export methods and configuration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/
@@ -253,6 +253,11 @@ Custom GPTs excel at providing consistent responses based on uploaded documentat
 However, Custom GPTs lack Claude Projects' ability to execute code, run tests, or interact with files directly. For tasks requiring execution, you may need to keep using Claude alongside your Custom GPT.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

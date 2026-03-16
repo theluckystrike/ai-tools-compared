@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Export Grammarly Personal Dictionary Before Switching to Claude"
-description: "A practical guide for developers and power users on exporting your Grammarly personal dictionary before transitioning to AI assistants like Claude. Includes step-by-step methods and code examples."
+title: "How to Export Grammarly Personal Dictionary Before."
+description: "A practical guide for developers and power users on exporting your Grammarly personal dictionary before transitioning to AI assistants like Claude."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-grammarly-personal-dictionary-before-switching/
@@ -272,5 +272,10 @@ Run this weekly or monthly to keep your dictionary safe.
 Exporting your Grammarly personal dictionary requires accessing local storage files or browser data, then converting them to a portable format. The desktop application method works best for Windows and Mac users with the app installed. Browser-based methods work for extension users. Once exported, you can import your custom words into VS Code, Neovim, Claude, or any other tool that supports custom dictionaries.
 
 Taking a few minutes to export your dictionary prevents losing months or years of custom word entries. The scripts above provide multiple approaches depending on your setup, and automating the backup ensures you never lose your custom terms again.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

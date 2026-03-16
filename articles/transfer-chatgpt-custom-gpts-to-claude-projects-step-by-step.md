@@ -194,4 +194,9 @@ This script automates the folder creation and file copying, letting you focus on
 
 Transferring Custom GPTs to Claude Projects involves exporting your GPT configuration manually, organizing the extracted files, and recreating the functionality using Claude's project context system. The process requires some upfront effort, but the result is a more developer-friendly workflow with local file access and CLI integration. Start with your most-used GPTs, test thoroughly, and iterate on the instructions until the behavior matches your expectations.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
