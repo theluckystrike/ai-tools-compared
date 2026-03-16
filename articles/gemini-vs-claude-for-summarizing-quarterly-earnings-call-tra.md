@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Gemini vs Claude for Summarizing Quarterly Earnings Call Transcripts"
-description: "A practical comparison of Gemini and Claude for extracting insights from quarterly earnings call transcripts. Includes code examples and API integration patterns."
+title: "Gemini vs Claude for Summarizing Quarterly Earnings Call."
+description: "A practical comparison of Gemini and Claude for extracting insights from quarterly earnings call transcripts. Includes code examples and API."
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-summarizing-quarterly-earnings-call-transcripts/
@@ -208,6 +208,11 @@ Select Claude when: maximum accuracy is critical, working with complex financial
 For most financial analysis applications, Claude Sonnet provides the optimal balance—delivering accurate, consistent results without the premium pricing of Opus. Gemini Flash works well for initial screening and high-volume pipelines where some accuracy trade-off is acceptable.
 
 The best approach often involves testing with your specific transcript types and evaluation criteria. Financial documents vary significantly in structure and terminology, and model performance can vary accordingly.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
