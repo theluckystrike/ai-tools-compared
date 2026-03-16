@@ -2,168 +2,143 @@
 
 layout: default
 title: "Copilot vs Cursor for Writing Terraform Modules from Scratch"
-description: "A practical comparison of GitHub Copilot and Cursor when writing Terraform modules from scratch, with code examples and recommendations."
+description: "A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-terraform-modules-from-scratch/
-categories: [comparisons]
-reviewed: true
-score: 8
-intent-checked: true
-voice-checked: true
 ---
 
-{% raw %}
+When you need to build Terraform modules from scratch, choosing the right AI coding assistant can significantly impact your productivity. GitHub Copilot and Cursor represent two different approaches to AI-assisted development—one as a traditional code completion tool embedded in your IDE, and the other as an AI-first code editor with more context awareness. This guide compares how each tool performs when creating Terraform modules from the ground up.
 
-When starting a new Terraform module from scratch, developers often wonder which AI coding assistant will accelerate their workflow. GitHub Copilot and Cursor represent two different approaches to AI-assisted coding, and understanding their strengths for infrastructure-as-code work helps you choose the right tool.
+## Understanding the Core Differences
 
-## Understanding the Tools
+GitHub Copilot functions as an intelligent code completion engine that suggests code as you type. It integrates with popular IDEs like VS Code and JetBrains through extensions, offering inline suggestions based on your current file and surrounding context. The model has been trained on public repositories, including substantial Terraform infrastructure code.
 
-GitHub Copilot integrates directly into popular IDEs like VS Code through an extension. It provides inline code suggestions as you type, drawing from context around your current file and comments. Copilot works as a background assistant, offering completions without fundamentally changing your editing experience.
+Cursor takes a different approach by embedding AI capabilities directly into a fork of VS Code. It provides more comprehensive context awareness through features like "Codebase Indexing" and "Chat," allowing you to reference your entire project when asking for assistance. Cursor's agent mode can execute multi-step code modifications across files.
 
-Cursor, built on VS Code but with AI deeply integrated into its core, takes a more interactive approach. Beyond inline suggestions, Cursor offers chat-based interactions, intelligent file editing, and a more conversational workflow for refactoring and explaining code.
+## Starting a Terraform Module from Scratch
 
-Both tools can assist with Terraform, but their approaches differ in ways that matter when building modules from the ground up.
+When initializing a new Terraform module, both tools can help but with varying effectiveness.
 
-## Starting a New Module
-
-When creating a Terraform module from scratch, you typically begin with the directory structure and main files. Here's what a basic module structure looks like:
-
-```
-module/
-├── main.tf
-├── variables.tf
-├── outputs.tf
-├── README.md
-└── examples/
-    └── basic/
-        ├── main.tf
-        └── variables.tf
-```
-
-Copilot excels at predicting the next few lines based on what you've already written. When you start typing a resource block, it often suggests the complete resource configuration:
-
-```hcl
-resource "aws_s3_bucket" "this" {
-  bucket = var.bucket_name
-  
-  tags = var.tags
-}
-```
-
-Copilot recognizes common Terraform patterns and provides relevant completions. The suggestions appear as ghost text, and you accept them with Tab.
-
-Cursor handles the initial scaffolding differently. You can describe what you want in natural language through the chat interface. For example, asking Cursor to "create an S3 bucket module with versioning and lifecycle rules" generates the core files with sensible defaults. This approach works well when you want to generate boilerplate quickly without typing every resource attribute.
-
-## Variable and Output Handling
-
-Terraform modules require careful variable definitions and outputs. Both tools assist here, but with different workflows.
-
-Copilot suggests variable blocks when it detects patterns in your resource definitions:
+With Copilot, you typically start by creating your module structure manually. Once you have basic files in place, Copilot begins suggesting code as you write. For a simple S3 bucket module, you might write the variable declarations first:
 
 ```hcl
 variable "bucket_name" {
   description = "Name for the S3 bucket"
   type        = string
-  nullable    = false
+}
+
+variable "tags" {
+  description = "Tags to apply to resources"
+  type        = map(string)
+  default     = {}
 }
 ```
 
-The tool learns from your existing code, so if you consistently use certain variable patterns, Copilot adapts. However, it primarily reacts to what you type rather than proactively suggesting the full variable schema.
+Copilot will suggest the corresponding resource block, though you may need to refine the suggestions to match your exact requirements.
 
-Cursor can generate entire variable files based on the resources in your main.tf. This proactive generation saves time when establishing the module contract. You describe the module's purpose, and Cursor creates the corresponding variables:
+Cursor's approach feels more collaborative from the start. You can open a chat window and describe what you need: "Create an S3 bucket module with versioning and lifecycle rules." Cursor can generate the entire module structure in one go, including variables, outputs, and the main resource configuration. Since Cursor indexes your project, it remembers what you've created and maintains consistency across files.
+
+## Handling Variable and Output Definitions
+
+Terraform modules benefit from well-structured variable definitions and outputs. Copilot handles these reasonably well when you provide clear comments:
 
 ```hcl
 variable "enable_versioning" {
-  description = "Enable versioning for the bucket"
+  description = "Enable versioning for the S3 bucket"
   type        = bool
   default     = true
 }
 
 variable "lifecycle_rules" {
-  description = "List of lifecycle rules for bucket objects"
+  description = "List of lifecycle rules to apply"
   type = list(object({
-    id      = string
     enabled = bool
+    id      = string
     expiration_days = number
   }))
   default = []
 }
 ```
 
-## Refactoring and Updates
+Copilot often suggests common patterns, but it may not always understand the specific needs of your infrastructure. You frequently need to guide it with explicit requirements.
 
-When you need to modify an existing module, the tools diverge significantly.
+Cursor excels here because you can have an ongoing conversation about your module's interface. You can ask Cursor to "add a variable for server-side encryption with a default of AES256" and it will add the appropriate configuration to your variables file, maintaining consistency with your existing code.
 
-Copilot's refactoring support is limited. It works best when making incremental changes—adding a new attribute to a resource, updating a tag, or duplicating and modifying blocks. The workflow remains close to traditional coding: you make changes, Copilot suggests completions, and you accept or modify them.
+## Resource Configuration and Best Practices
 
-Cursor's chat-based interface shines for larger refactoring tasks. You can ask it to "add a conditional tag based on the environment variable" or "rename all references from `aws_instance` to use the new module." Cursor understands context across files, making global changes more reliable.
+This is where the practical differences become most apparent. Terraform has specific patterns for organizing resources, handling dependencies, and following the HashiCorp style guide.
 
-For example, to add lifecycle rules to an S3 bucket:
+Copilot provides suggestions based on patterns it has seen in training data. For a VPC module, it might suggest:
 
 ```hcl
-resource "aws_s3_bucket" "this" {
-  # ... existing config ...
-  
-  lifecycle {
-    ignore_changes = [tags]
-  }
-  
-  lifecycle_rule {
-    id      = "archive_old_objects"
-    enabled = var.enable_archive_rule
-    
-    transition {
-      days          = 90
-      storage_class = "GLACIER"
-    }
-  }
+resource "aws_vpc" "main" {
+  cidr_block           = var.vpc_cidr
+  enable_dns_hostnames = true
+  enable_dns_support   = true
+
+  tags = merge(var.tags, {
+    Name = "${var.project}-vpc"
+  })
 }
 ```
 
-Cursor can generate this entire block from a description, while Copilot would typically suggest individual pieces.
+This is generally solid, though you should verify that it matches your naming conventions and requirements.
 
-## Debugging and Error Resolution
+Cursor can do more complex refactoring. If you decide to change your tagging strategy across the entire module, Cursor can update multiple files based on a single instruction. For example, changing from a project-based tag to an environment-based tag across variables, resources, and outputs.
 
-Terraform errors can be cryptic. Both tools help, but Cursor's chat interface makes explaining errors more natural.
+## Working with Module Dependencies
 
-When you encounter an error like "Error: Invalid for_each argument," you can paste the error message into Cursor's chat and ask for explanation. Cursor analyzes the error in context and explains what went wrong:
+Terraform modules frequently depend on other modules or need to provision resources in a specific order. Both tools handle `depends_on` and `count`/`for_each` patterns, but Cursor's context awareness gives it an advantage.
 
+When you have a module that provisions an RDS instance and needs to pass the connection string to an application, Cursor understands the relationship:
+
+```hcl
+output "rds_connection_string" {
+  description = "Connection string for the RDS instance"
+  value       = "postgres://${aws_db_instance.main.username}:${aws_db_instance.main.password}@${aws_db_instance.main.endpoint}/${aws_db_instance.main.name}"
+  sensitive   = true
+}
 ```
-Error: Invalid for_each argument
-│ 
-│   on main.tf line 25, in resource "aws_security_group_rule" "ingress":
-│   25:   for_each = var.ingress_rules
-│ 
-│ The "for_each" value depends on resource attributes that cannot be 
-│ determined until apply.
+
+Cursor maintains awareness of what resources exist in your module and can suggest outputs that reference the correct attributes.
+
+## Test and Validation Workflows
+
+Writing tests for Terraform modules is crucial. Copilot can help with Terratest patterns:
+
+```go
+package test
+
+import (
+    "testing"
+    "github.com/gruntwork-io/terratest/modules/terraform"
+    "github.com/stretchr/testify/assert"
+)
+
+func TestS3BucketModule(t *testing.T) {
+    terraformOptions := &terraform.Options{
+        TerraformDir: "../examples/basic",
+        Vars: map[string]interface{}{
+            "bucket_name": "test-bucket-terratest",
+        },
+    }
+
+    defer terraform.Destroy(t, terraformOptions)
+    terraform.InitAndApply(t, terraformOptions)
+    
+    // Add assertions here
+}
 ```
 
-Cursor can then suggest fixes based on the specific error context.
+Cursor can assist with both the Terraform configuration and the test code, maintaining consistency between them. If you add a new output to your module, Cursor can update your test to verify it.
 
-Copilot handles errors differently—you typically see the error, then continue typing fixes while Copilot suggests corrections. This works for simple typos and syntax issues but requires more manual iteration for complex problems.
+## Which Tool Should You Choose
 
-## Practical Recommendations
+For Terraform module development from scratch, Cursor generally provides a better experience. Its ability to maintain context across your entire module, have conversational interactions about infrastructure requirements, and perform multi-file refactoring makes it well-suited for infrastructure work where consistency matters.
 
-Choose Copilot if you prefer inline suggestions and minimal context switching. It integrates seamlessly into your existing VS Code workflow and works well for developers who want AI assistance without changing their habits. Copilot performs reliably for standard Terraform patterns and incremental improvements.
+GitHub Copilot remains useful if you prefer traditional IDE integration and are comfortable guiding the completion engine with explicit code patterns. It works well for adding incremental improvements to existing modules or generating boilerplate when you already know the structure you need.
 
-Choose Cursor if you want more interactive assistance, especially for generating boilerplate and handling complex refactoring. The chat interface proves valuable when starting from scratch or making significant structural changes. Cursor's ability to understand your entire codebase makes it stronger for larger module development.
-
-For Terraform specifically, consider combining both tools. Use Cursor for initial scaffolding and large refactoring tasks, then let Copilot handle day-to-day completions as you refine resources and add details.
-
-## Performance Considerations
-
-Both tools require an internet connection for their AI features. Copilot offers individual and business plans, while Cursor provides a free tier with usage limits and paid plans for heavier use. Response times vary based on complexity and current load, though both have improved significantly in recent versions.
-
-The choice ultimately depends on your workflow preferences. If you want AI that stays out of your way until needed, Copilot fits well. If you prefer describing what you want and letting the tool generate code, Cursor provides that interaction model more effectively.
-
-For writing Terraform modules from scratch, both tools offer real value. Test both with a small module to see which matches your mental model and coding style.
-
-
-## Related Reading
-
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+Both tools improve with clear, descriptive comments in your Terraform code. Taking time to document your variable purposes and resource intentions helps either assistant provide more accurate suggestions.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
