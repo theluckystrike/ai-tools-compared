@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Building custom ESLint rules for React projects can significantly improve code quality and enforce team conventions. When deciding between Claude and ChatGPT for this task, understanding how each AI assistant approaches the problem helps you choose the right tool for your workflow.
+Choose Claude if your custom ESLint rules require deep codebase context, complex edge-case handling, or iterative refinement across a session. Choose ChatGPT if you need quick implementations of standard rule patterns with minimal back-and-forth. Both tools produce working AST-based rules, but Claude's contextual memory and debugging support give it an edge for intricate React-specific enforcement.
 
 ## Why Custom ESLint Rules Matter for React
 
