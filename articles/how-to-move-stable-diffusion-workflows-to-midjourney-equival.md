@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users transitioning fro
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # How to Move Stable Diffusion Workflows to Midjourney Equivalent Setup
