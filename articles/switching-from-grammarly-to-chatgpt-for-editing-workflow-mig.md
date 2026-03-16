@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users migrating their w
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/
-categories: [ai-tools, writing, productivity]
+categories: [guides, productivity]
 reviewed: true
 score: 8
 intent-checked: true
