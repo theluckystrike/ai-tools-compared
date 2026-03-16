@@ -5,6 +5,10 @@ description: "Learn how to build and use Chrome extensions for cropping images d
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-crop-images-online/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
