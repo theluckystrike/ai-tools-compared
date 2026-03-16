@@ -5,6 +5,10 @@ description: "Learn how to export highlights and notes from Chrome extensions. P
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-export-highlights-notes/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
