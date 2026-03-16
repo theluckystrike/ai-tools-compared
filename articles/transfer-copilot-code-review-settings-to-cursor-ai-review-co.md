@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Transfer your Copilot code review settings to Cursor AI by converting `.github/copilot-instructions.md` rules into Cursor's `.cursorrules` file format. Extract your file exclusion patterns, security policies, language-specific preferences, and custom review criteria from Copilot, then recreate them as structured Markdown rules in `.cursorrules` at your project root. Cursor's rule system supports multi-stage reviews and per-project configurations that go beyond what Copilot offered.
@@ -19,7 +20,7 @@ Transfer your Copilot code review settings to Cursor AI by converting `.github/c
 
 GitHub Copilot uses a combination of `.github/copilot-instructions.md` files and organization-level settings to configure code review behavior. These instructions let you define review rules, excluded file patterns, and language-specific preferences. Copilot reads these instructions during code generation and review suggestions.
 
-Cursor AI takes a different approach with its `cursor/rules` system and `.cursorrules` files. These files use a custom syntax to define AI behavior, coding standards, and review criteria. Cursor's configuration is more granular, allowing you to set per-project rules that blend seamlessly with your development workflow.
+Cursor AI takes a different approach with its `cursor/rules` system and `.cursorrules` files. These files use a custom syntax to define AI behavior, coding standards, and review criteria. Cursor's configuration is more granular, allowing you to set per-project rules that blend with your development workflow.
 
 ## Exporting Your Copilot Settings
 
@@ -143,7 +144,7 @@ Cursor AI supports more sophisticated configurations than Copilot. You can defin
 - Verify test coverage
 ```
 
-This approach lets you create a comprehensive review process that exceeds what Copilot offered. Each stage produces specific feedback, making review results easier to understand and act upon.
+This approach lets you create a review process that exceeds what Copilot offered. Each stage produces specific feedback, making review results easier to understand and act upon.
 
 ## Project-Specific Configurations
 
@@ -207,9 +208,7 @@ After creating your `.cursorrules` file, test it thoroughly. Cursor provides a r
 
 Check that rules produce the expected warnings and suggestions. Remove rules that generate too many false positives. Refine language-specific settings until the feedback matches your team's standards.
 
-## Conclusion
-
-Transferring your Copilot code review settings to Cursor AI is straightforward once you understand how each system organizes configuration. The key is mapping Copilot instructions to Cursor's `.cursorrules` format and taking advantage of Cursor's more powerful rule system. Start with basic rules, test them in your workflow, and gradually add complexity as you become familiar with Cursor's capabilities.
+Start with basic rules, test them in your workflow, and add complexity as you become familiar with Cursor's capabilities.
 
 
 ## Related Reading

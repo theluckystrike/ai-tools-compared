@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Transfer your Cursor Composer prompts to Claude Code by converting reusable prompts into skill files in `~/.claude/skills/`, migrating `.cursorrules` into a `.claude.md` project file, and using the `-p` flag for one-off prompts. The key adaptation is shifting from Cursor's conversational prompt style to Claude Code's imperative, declarative instruction format stored as Markdown skill definitions.
@@ -18,7 +19,7 @@ Transfer your Cursor Composer prompts to Claude Code by converting reusable prom
 
 Cursor uses a chat-based interface with Composer where you compose prompts in conversation threads. Claude Code operates through a terminal using commands and a skill system. The key distinction is that Cursor prompts are conversational while Claude Code prompts become declarative instructions stored as skills or passed directly through command-line arguments.
 
-Before you begin the migration, spend time reviewing your existing prompts in Cursor. Identify which ones define coding standards, which automate repetitive tasks, and which handle specific framework workflows. Categorizing your prompts helps you map them to the appropriate Claude Code mechanism.
+Spend time reviewing your existing prompts in Cursor before migrating. Identify which ones define coding standards, which automate repetitive tasks, and which handle specific framework workflows. Categorizing your prompts helps you map them to the appropriate Claude Code mechanism.
 
 ## Mapping Cursor Prompts to Claude Code Skills
 
@@ -48,7 +49,7 @@ This structure replaces the conversational prompt you might have used in Cursor'
 
 ## Converting Multi-Step Prompts to Skills
 
-Cursor prompts often span multiple exchanges as you refine requirements. Claude Code skills work best when they capture the complete workflow in a single definition. Review your multi-turn conversations and consolidate them into a comprehensive skill instruction block.
+Cursor prompts often span multiple exchanges as you refine requirements. Claude Code skills work best when they capture the complete workflow in a single definition. Review your multi-turn conversations and consolidate them into a single skill instruction block.
 
 For prompts that depend on context like file structure or project state, use Claude Code's session context mechanism. Start a session with relevant context, then invoke the skill:
 
@@ -148,9 +149,7 @@ After converting prompts to skills, test each one thoroughly. Run the skill and 
 
 Iterate on your skill definitions based on test results. Claude Code's skill system allows you to refine instructions incrementally.
 
-## Conclusion
-
-Transferring your Cursor Composer prompt library to Claude Code requires rethinking how you structure and invoke prompts, but the effort pays off in a more efficient workflow. Skills provide reusability, the command-line interface offers flexibility, and the `.claude.md` file handles project-specific rules. Start with your most-used prompts, convert them to skills, and gradually expand your library as you discover new patterns that work well with Claude Code.
+Skills provide reusability, the command-line interface offers flexibility, and the `.claude.md` file handles project-specific rules. Start with your most-used prompts, convert them to skills, and expand your library as you discover new patterns.
 
 
 ## Related Reading

@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-If you have invested time building knowledge bases, custom prompts, and project-specific context in Claude Projects, you may want to leverage that same knowledge in ChatGPT Custom GPTs. While these platforms work differently, you can transfer your accumulated knowledge effectively with the right approach. This guide shows you how.
+Export your Claude Project's instructions and uploaded files, then restructure them as a Custom GPT system prompt and knowledge documents. Copy project instructions directly into the GPT's "Instructions" field, convert uploaded reference files into the GPT's knowledge base, and remap conversation starters to match ChatGPT's format. This guide covers the full export-to-import workflow with code examples for automating the conversion.
 
 ## Understanding the Platform Differences
 
