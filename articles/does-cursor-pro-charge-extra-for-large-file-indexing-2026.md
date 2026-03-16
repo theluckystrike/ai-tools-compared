@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Does Cursor Pro Charge Extra for Large File Indexing in 2026?"
+title: "Does Cursor Pro Charge Extra for Large File Indexing in."
 description: "A practical guide to Cursor Pro's file indexing limits, pricing, and how to handle large codebases efficiently in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -186,5 +186,10 @@ Cursor Pro does not charge extra for large file indexing in the sense of per-fil
 The key is understanding that indexing is designed to be included within your subscription, and with proper configuration, most developers can work effectively with Cursor on projects of significant size without additional charges.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
