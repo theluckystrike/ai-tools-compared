@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you have been using GitHub Copilot and are considering a switch to Codeium, the transition involves more than uninstalling one extension and installing another. Codeium offers a different approach to AI-assisted coding, and getting the right extensions installed from the start will help you maintain your productivity workflow. This guide covers what to install first and how to configure your environment for a smooth transition.
+Install these extensions in order when switching from Copilot to Codeium: first the core "Codeium" extension for inline completions, then Codeium Chat for conversational AI assistance, followed by EditorConfig for consistent formatting that improves suggestion accuracy. Uninstall Copilot completely and restart your editor before installing Codeium to avoid completion engine conflicts. This guide covers the full setup including keyboard shortcut mapping, completion behavior configuration, and language-specific extension pairings.
 
 ## Understanding the Codeium Ecosystem
 

@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When you fine-tune a model through the OpenAI API, you might eventually want to export it for local deployment. Whether you need offline access, want to reduce API costs, or require more control over your inference infrastructure, running a fine-tuned model locally is a valuable skill. This guide walks you through the process of exporting your ChatGPT fine-tuned model and setting it up for local use.
+To run a ChatGPT fine-tuned model locally, export your training data from the OpenAI API, then use it to fine-tune a compatible open-source model like Mistral 7B or Llama 2 with a library such as Unsloth. OpenAI does not allow direct download of fine-tuned model weights, so this workaround retrains an open-source base model on your original training data to produce a functionally similar model you fully control. This guide covers the complete process from data export through local inference setup.
 
 ## Understanding the Constraints
 

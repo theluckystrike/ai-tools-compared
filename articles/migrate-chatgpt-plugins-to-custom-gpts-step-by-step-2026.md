@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-OpenAI's transition from ChatGPT Plugins to Custom GPTs marks a significant shift in how developers extend ChatGPT's capabilities. If you have invested time in building ChatGPT plugins, migrating to Custom GPTs is essential for continued functionality. This guide walks you through the migration process step by step, with practical code examples.
+Migrate a ChatGPT Plugin to a Custom GPT by exporting your existing OpenAPI specification, creating a new GPT in the GPT Builder, pasting the spec into the Actions configuration panel, mapping your authentication settings, and testing each endpoint. The process reuses your plugin's API server and OpenAPI schema directly, so the backend stays the same while the configuration moves into the GPT Builder interface. This step-by-step guide covers the full migration with code examples for both manual and programmatic approaches.
 
 ## Understanding the Architecture Differences
 
