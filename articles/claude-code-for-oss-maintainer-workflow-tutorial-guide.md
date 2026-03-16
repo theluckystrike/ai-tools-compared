@@ -5,7 +5,7 @@ description: "A comprehensive tutorial for open source maintainers on leveraging
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-oss-maintainer-workflow-tutorial-guide/
-categories: [tutorials, open-source]
+categories: [tutorials, guides]
 tags: [claude-code, claude-skills]
 ---
 

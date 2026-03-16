@@ -5,7 +5,7 @@ description: "Learn how to leverage Claude Code for building robust transaction 
 date: 2026-03-15
 author: Claude Skills Guide
 permalink: /claude-code-for-transaction-tracing-workflow-tutorial/
-categories: [Development, Tutorial]
+categories: [guides]
 tags: [claude-code, claude-skills]
 ---
 
