@@ -5,6 +5,10 @@ description: "A practical guide to understanding Cursor Pro's credit system, com
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-pro-slow-model-vs-fast-model-credits-how-it-works/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Cursor Pro Slow Model vs Fast Model: Credits System Explained
