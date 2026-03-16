@@ -6,6 +6,10 @@ description: "A practical guide to understanding GitHub Copilot's usage-based bi
 date: 2026-03-16
 author: theluckystrike
 permalink: /github-copilot-usage-based-billing-how-api-calls-are-counted/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 GitHub Copilot has shifted from a subscription-only model to a usage-based billing system, giving developers more flexibility in how they pay for AI-assisted coding. Understanding how API calls are counted helps you estimate costs, optimize usage, and choose the right plan for your workflow.
