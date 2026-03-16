@@ -214,7 +214,7 @@ Start with the essential skills—supermemory for knowledge, tdd for testing pat
 ## Related Reading
 
 - [Best Way to Integrate Claude Code into Team Workflow](/claude-skills-guide/best-way-to-integrate-claude-code-into-team-workflow/) — Team integration is part of onboarding
-- [Best Way to Write CLAUDE.md File for Your Project](/claude-skills-guide/best-way-to-write-claudemd-file-for-your-project/) — Good CLAUDE.md accelerates onboarding
+- [Best Way to Write CLAUDE.md File for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) — Good CLAUDE.md accelerates onboarding
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — The guide new developers read first
 - [Claude Skills Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Complete hub for getting started with Claude
 

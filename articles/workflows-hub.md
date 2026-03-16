@@ -90,7 +90,7 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 | [Automate Social Media Content with Claude Skills](/claude-skills-guide/claude-skills-automated-social-media-content-workflow/) | Scheduling and generating social posts automatically via skills |
 | [Daily Standup Automation with Claude Skills](/claude-skills-guide/claude-skills-daily-standup-automation-workflow/) | Generating daily standups automatically from project context |
 | [Automated Dependency Updates with Claude Skills](/claude-skills-guide/claude-skills-automated-dependency-update-workflow/) | Keeping dependencies current with an automated Claude skill workflow |
-| [How to Automate Pull Request Review with Claude Skill](/claude-skills-guide/how-to-automate-pull-request-review-with-claude-skill/) | Setting up an automated PR review skill for code quality |
+| [How to Automate Pull Request Review with Claude Skill](/claude-skills-guide/how-to-automate-code-reviews-with-claude-skills/) | Setting up an automated PR review skill for code quality |
 | [How to Automate Client Reports with Claude Skills](/claude-skills-guide/how-to-automate-client-reports-with-claude-skills/) | Generating polished client reports from raw data automatically |
 | [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/how-to-automate-code-reviews-with-claude-skills/) | Automating detailed code review as part of your CI pipeline |
 | [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) | Integrating Claude skills directly into GitHub Actions workflows |
