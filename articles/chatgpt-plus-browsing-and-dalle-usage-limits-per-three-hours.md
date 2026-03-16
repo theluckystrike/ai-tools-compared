@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-ChatGPT Plus subscribers get access to advanced features including web browsing and DALL-E image generation, but these capabilities come with usage limits. Understanding these restrictions helps you plan your workflow and avoid unexpected interruptions during critical tasks.
+ChatGPT Plus ($20/month) limits DALL-E image generation to approximately 50 images per three-hour window and web browsing to around 80 queries per three hours, though OpenAI adjusts these caps without public announcement. When you hit the limit, the feature grays out and shows an approximate reset time. For higher volume, use the DALL-E API directly (billed per image at $0.04-$0.12 depending on resolution) to bypass subscription caps entirely.
 
 ## ChatGPT Plus: Current Feature Set
 

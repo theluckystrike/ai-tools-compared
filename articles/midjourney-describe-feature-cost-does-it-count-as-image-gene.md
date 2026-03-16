@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Midjourney's `/describe` command has become an essential tool for developers and power users who want to reverse-engineer prompts from existing images. However, a common question arises: does using `/describe` count toward your image generation quota? This article provides a technical breakdown of how the feature works, its cost implications, and practical scenarios where understanding these details matters for your workflow.
+No, Midjourney's `/describe` command does not count toward your image generation quota. It performs image-to-text analysis rather than image generation, so it consumes no GPU minutes from your subscription. However, if you click one of the four returned prompts to generate an image from it, that subsequent generation does count against your quota. This guide covers the technical details of how `/describe` billing works and strategies for using it efficiently in prompt engineering workflows.
 
 ## What Midjourney /describe Actually Does
 
