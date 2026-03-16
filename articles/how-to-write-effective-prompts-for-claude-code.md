@@ -98,6 +98,19 @@ I need to add user authentication to our API. Please:
 
 The numbered approach gives Claude a clear roadmap and lets you verify progress at each stage.
 
+## Use Skills for Domain-Specific Prompts
+
+Claude Code's skill system provides specialized knowledge for particular domains. Invoking the right skill dramatically improves output quality:
+
+```
+/pdf Create a quarterly report PDF with header, summary section, and data tables pulled from our analytics API.
+/tdd Write unit tests for a rate limiter that allows 100 requests per minute per user ID, with burst allowance.
+/frontend-design Create a modal component with smooth enter/exit animations, focus trapping, and escape-to-close.
+/xlsx Parse the uploaded Excel file, validate the schema, and generate a summary with row counts and validation errors.
+```
+
+For complex features, break them into phases with checkpoints. Instead of "build an analytics dashboard," start with the data layer, verify it works, then prompt for the visualization layer. This incremental approach prevents massive code dumps that don't integrate cleanly.
+
 ## Specify Output Format
 
 Define exactly what you want the output to look like. This reduces back-and-forth and produces more useful results.

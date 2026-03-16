@@ -107,6 +107,43 @@ For web application PRs, the `frontend-design` skill validates UI code against d
 
 This catches visual inconsistencies before they reach production, keeping brand guidelines and design system rules enforced across all components.
 
+## Custom Review Skills for Specific Concerns
+
+Beyond the built-in skills, create custom review skills tailored to your stack. A security-focused skill in `~/.claude/skills/review-security.md`:
+
+```markdown
+# review-security
+
+You are a security code reviewer. Analyze code for common vulnerabilities:
+
+1. SQL injection: check for string concatenation in queries
+2. XSS: verify user input is properly escaped
+3. Authentication: ensure passwords are hashed, sessions are validated
+4. Secrets: no API keys or credentials in source code
+5. Dependencies: flag known CVEs in package.json
+
+For each finding, provide:
+- Severity (critical, high, medium, low)
+- Location (file and line number)
+- Recommended fix
+
+Do not flag false positives. Only report actual security issues.
+```
+
+Invoke it with `/review-security Review src/auth/ and src/api/ for security vulnerabilities.`
+
+## Comparing Skill Approaches
+
+| Skill | Best For | Limitations |
+|-------|----------|-------------|
+| `tdd` | General code quality, test coverage | Focused on TDD workflow |
+| `supermemory` | Persistent standards, team memory | Requires initial setup |
+| `pdf` / `docx` | Spec compliance, documentation | Only relevant for documented requirements |
+| `frontend-design` | UI consistency, accessibility | Frontend-specific |
+| Custom skills | Specific concerns (security, performance) | Must be created and maintained |
+
+For most teams, the combination of `tdd` + `supermemory` + one custom security skill provides comprehensive coverage without overwhelming complexity.
+
 ## A Practical Review Pipeline
 
 Combining these skills into a structured review workflow produces consistent results:

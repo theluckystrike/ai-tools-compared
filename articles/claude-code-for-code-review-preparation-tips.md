@@ -117,6 +117,38 @@ Claude Code improves at review tasks through iteration. Save effective prompt pa
 
 Store these patterns in your project documentation or `supermemory` for quick access. Consistent prompting produces consistent results and trains your workflow expectations.
 
+## Validating Against Specifications
+
+When the code implements a feature from a requirements document, verify compliance before the review meeting. The `pdf` skill extracts text from PDF specifications so you can cross-reference against the implementation:
+
+```
+/pdf extract all numbered requirements from feature-spec-v3.pdf
+```
+
+Once extracted, compare each requirement against the relevant code:
+
+```
+/tdd verify this implementation satisfies requirements 2.1 through 2.5 from the spec
+```
+
+This catches implementation drift—cases where code evolved away from original requirements across multiple iterations. For design documents in Word format, the `docx` skill provides the same extraction capability.
+
+## Building Institutional Memory
+
+Each review produces decisions worth remembering. Use `supermemory` to capture them:
+
+```
+/supermemory store: PR #418 — decided to use named exports for all new modules, converting default exports to named is not required for existing code
+```
+
+Over time, this creates a searchable knowledge base of review decisions. When similar issues arise in future PRs, reference past decisions rather than re-debating:
+
+```
+/supermemory What have we decided about error handling in async components?
+```
+
+Teams using this approach report faster review cycles and fewer repeated discussions.
+
 ## Avoiding Common Pitfalls
 
 Several patterns reduce review effectiveness. Avoid reviewing entire PRs in one session—cognitive fatigue misses issues. Break large changes into multiple review passes with breaks between.

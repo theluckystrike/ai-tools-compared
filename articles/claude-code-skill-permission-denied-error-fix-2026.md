@@ -27,6 +27,16 @@ bash: /usr/local/bin/my-script: Permission denied
 
 The first is a Node.js filesystem error. The second is Claude's built-in sandbox rejecting a tool call. The third is a shell-level execution bit problem. Each requires a different fix.
 
+## Understanding the Two Permission Layers
+
+Claude Code operates within a permission model with two distinct layers:
+
+**Layer 1 — Session-level permissions**: Set in `.claude/settings.json` or `~/.claude/settings.json`. These apply to all actions in the session and define which tools, file paths, and shell commands Claude can access.
+
+**Layer 2 — OS-level permissions**: Standard Unix file permissions (owner, group, others) and platform-specific restrictions like macOS SIP or Gatekeeper.
+
+A permission denied error can originate from either layer. Sandbox scope rejections (Layer 1) sometimes produce no error message at all—Claude simply does not perform the action. If Claude says "I'll write to that file" but the file is never created, or says "Running the tests now" but nothing executes, check your `.claude/settings.json` permissions block and compare the exact command or path Claude attempted against your `allow` rules.
+
 ## Cause 1: Missing Execute Bit on a Script the Skill Calls
 
 If your skill definition calls a shell script or binary, that file must be executable.

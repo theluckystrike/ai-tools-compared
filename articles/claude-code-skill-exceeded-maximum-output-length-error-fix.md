@@ -21,6 +21,8 @@ This guide provides practical solutions for fixing and preventing this error acr
 
 Claude Code imposes output length limits to ensure responsive interactions and prevent runaway token consumption. When a skill generates more tokens than the limit allows, you receive an error indicating the maximum output length has been exceeded. The exact limit depends on your Claude Code configuration and subscription tier.
 
+The error can also be triggered by indirect causes: accumulated conversation history consuming available token budget, or requesting multiple file operations in a single response. Starting a fresh session for unrelated tasks clears the history buffer and frees token space.
+
 For most developers, this limit manifests when working with skills that handle:
 - Large PDF generation (encountered when using the `pdf` skill)
 - Extensive spreadsheet operations (encountered when using the `xlsx` skill)

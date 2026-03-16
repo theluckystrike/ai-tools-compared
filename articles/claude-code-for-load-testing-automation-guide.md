@@ -133,6 +133,53 @@ This allows running identical tests against staging, production, or local enviro
 
 Monitor system resources during load tests. Claude Code can generate scripts that collect CPU, memory, and network metrics alongside application performance data, providing a complete picture of system behavior under stress.
 
+## Testing API Rate Limits
+
+When load testing against the Claude API specifically, understand that different tiers impose different constraints. Test your tier by gradually increasing concurrency:
+
+```bash
+# Test with increasing concurrency
+for concurrency in 10 25 50 100; do
+  echo "Testing concurrency: $concurrency"
+  loadtest -n 500 -c $concurrency \
+    -m POST \
+    -T "application/json" \
+    -H "x-api-key: $ANTHROPIC_API_KEY" \
+    -p payload.json \
+    https://api.anthropic.com/v1/messages
+done
+```
+
+Monitor for 429 status codes indicating rate limit hits. Your workflow should include exponential backoff:
+
+```javascript
+async function requestWithRetry(client, message, maxRetries = 3) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await client.messages.create(message);
+    } catch (error) {
+      if (error.status === 429) {
+        const waitTime = Math.pow(2, attempt) * 1000;
+        console.log(`Rate limited. Waiting ${waitTime}ms...`);
+        await new Promise(r => setTimeout(r, waitTime));
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw new Error('Max retries exceeded');
+}
+```
+
+### Key Metrics to Track
+
+| Metric | Healthy Range | Action Needed |
+|--------|---------------|---------------|
+| P50 Latency | < 500ms | Monitor if rising |
+| P99 Latency | < 2000ms | Optimize if higher |
+| Error Rate | < 1% | Review rate limits |
+| Throughput | Matches tier limits | Scale horizontally |
+
 ## Troubleshooting Common Issues
 
 Flaky tests plague many load testing efforts. Claude Code helps identify causes: unstable test data, race conditions in test setup, or network instability. Address these systematically.
