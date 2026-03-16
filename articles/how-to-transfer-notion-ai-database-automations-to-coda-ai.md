@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-If you have built AI-powered automations in Notion databases, you might be considering Coda as an alternative that offers more flexibility for complex workflows. Both platforms provide AI capabilities, but their architectures differ significantly. This guide helps you transfer your Notion AI database automations to Coda AI effectively.
+Transfer Notion AI database automations to Coda AI by exporting your Notion data via the API, recreating table structures in Coda, replacing external AI scripts with Coda's native `AI.Generate` formula columns, and rebuilding triggers using Coda's built-in automation system. The key architectural shift is that Notion relies on external services for AI processing, while Coda embeds AI directly into its formula language, eliminating the need for middleware scripts. This guide walks through the full migration with code examples for both platforms.
 
 ## Understanding the Architectural Differences
 
