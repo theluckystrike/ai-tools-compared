@@ -7,6 +7,8 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-package-registry-workflow-tutorial/
 categories: [tutorials]
 tags: [claude-code, claude-skills]
+reviewed: true
+score: 8
 ---
 
 # Claude Code for Package Registry Workflow Tutorial
