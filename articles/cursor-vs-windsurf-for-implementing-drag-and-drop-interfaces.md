@@ -12,6 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 ---
+{% raw %}
+
 
 Choose Cursor if you want on-demand AI assistance with strong project-wide context awareness for your React DnD implementation. Choose Windsurf if you prefer proactive code suggestions and fast multi-file scaffolding through its Flow mode. Cursor generates more accurate React DnD code with less iteration, while Windsurf scaffolds complete drag-and-drop features faster but requires more oversight to correct API mismatches.
 
@@ -156,3 +158,4 @@ For React DnD specifically, ensure you provide clear context about your implemen
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
