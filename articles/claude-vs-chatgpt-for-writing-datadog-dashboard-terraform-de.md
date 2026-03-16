@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Writing Datadog dashboard configurations in Terraform requires precision. The `datadog_dashboard` resource accepts a complex nested structure with widgets, layouts, and template variables. This article compares how Claude (Anthropic) and ChatGPT (OpenAI) handle generating these Terraform definitions, based on practical testing with real dashboard configurations.
+Choose Claude for complex, multi-widget Datadog dashboards and debugging broken Terraform configurations -- it produced valid code 80-95% of the time across test scenarios. Choose ChatGPT for quick scaffolding of simple dashboards where you can validate and correct the output yourself. In practical testing, Claude's accuracy advantage grew as dashboard complexity increased, while ChatGPT generated output faster with fewer tokens.
 
 ## The Task: Generating Datadog Terraform Resources
 
