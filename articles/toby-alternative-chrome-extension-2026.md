@@ -5,6 +5,10 @@ description: "Find the best Toby alternatives for Chrome in 2026. Explore open-s
 date: 2026-03-15
 author: theluckystrike
 permalink: /toby-alternative-chrome-extension-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Toby Alternative Chrome Extension in 2026
