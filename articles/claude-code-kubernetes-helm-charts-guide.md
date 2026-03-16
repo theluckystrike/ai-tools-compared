@@ -11,8 +11,7 @@ permalink: /claude-code-kubernetes-helm-charts-guide/
 reviewed: true
 score: 7
 ---
-
-
+{% raw %}
 # Claude Code Kubernetes Helm Charts Guide
 
 Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide focuses on the *workflow and automation* side: project structure, deployment skills, validation pipelines, CI/CD integration, and debugging running clusters.
@@ -233,3 +232,4 @@ Claude Code transforms Kubernetes development from manual kubectl operations int
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
