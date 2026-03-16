@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Perplexity Pro File Upload Limits and Storage Costs Explained"
+title: "Perplexity Pro File Upload Limits and Storage Costs."
 description: "A practical guide to Perplexity Pro's file upload limits, storage pricing, and how to optimize your workflow for document analysis."
 date: 2026-03-16
 author: theluckystrike
@@ -230,5 +230,10 @@ def handle_upload_error(response):
     }
     return error_codes.get(response.status_code, "Unknown error")
 ```
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
