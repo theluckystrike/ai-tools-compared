@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 # How to Move Stable Diffusion Workflows to Midjourney Equivalent Setup
 
-Moving from Stable Diffusion to Midjourney requires rethinking how you structure prompts, configure generation parameters, and manage iteration cycles. While both tools generate images from text descriptions, the underlying architecture and user interface create distinct workflow patterns. This guide covers the practical steps for porting your Stable Diffusion workflows to Midjourney.
+To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax to Midjourney's `::` weight system, replace explicit sampler and CFG settings with `--stylize` and `--quality` flags, and swap ControlNet for `--cref` and `--sref` reference parameters. The core shift is from parameter-heavy configuration to descriptive, flag-based prompt construction. This guide provides the complete syntax mappings, parameter equivalents, and workflow adaptation patterns you need.
 
 ## Understanding the Fundamental Differences
 

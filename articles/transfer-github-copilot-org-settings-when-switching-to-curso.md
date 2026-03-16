@@ -9,13 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When your organization decides to switch from GitHub Copilot to Cursor Business, the transition involves more than just installing a new IDE and canceling a subscription. Your team has likely invested significant time configuring GitHub Copilot's organization-level settings—code completion preferences, security policies, and team-specific prompts. Understanding what transfers automatically and what requires manual recreation ensures a smooth migration without losing valuable configuration work.
-
-This guide covers the technical aspects of moving your organization's AI assistant configuration from GitHub Copilot to Cursor Business, with practical steps developers and IT administrators can implement immediately.
+There is no automated export-import path from GitHub Copilot to Cursor Business -- all organization settings must be manually recreated. Transfer completion preferences, security policies, and team prompts by documenting your Copilot org settings, then rebuilding them as `.cursorrules` files and Cursor Organization Settings entries. GitHub-specific integrations like PR descriptions and Actions suggestions do not carry over at all. This guide provides the complete setting-by-setting mapping and a step-by-step migration sequence.
 
 ## What Actually Transfers Between Platforms
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Switching from DALL-E to Midjourney requires more than just learning a new interface—the entire prompt construction philosophy differs. DALL-E responds well to natural language descriptions, while Midjourney uses a compact, flag-heavy syntax that gives you precise control over aspect ratios, stylization, and generation parameters. This guide covers the practical differences developers and power users need to know when migrating their image generation workflows.
+The key prompt format difference when switching from DALL-E to Midjourney is that DALL-E uses natural language descriptions with API-level parameters, while Midjourney uses comma-separated keyword descriptors with inline `--` flags for aspect ratio, stylization, quality, and version control. Replace your `size` API parameter with `--ar`, embed quality via `--quality` instead of the API field, and use `--no` for negative prompting that DALL-E does not support. This guide covers every parameter mapping and syntax conversion you need.
 
 ## Core Prompt Syntax Differences
 

@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you have been using GitHub Copilot for code reviews and want to switch to Cursor AI, you might wonder how to preserve your custom review settings. Both tools offer powerful code review capabilities, but their configuration systems work differently. This guide shows you how to transfer your Copilot code review settings to Cursor AI's review configuration.
+Transfer your Copilot code review settings to Cursor AI by converting `.github/copilot-instructions.md` rules into Cursor's `.cursorrules` file format. Extract your file exclusion patterns, security policies, language-specific preferences, and custom review criteria from Copilot, then recreate them as structured Markdown rules in `.cursorrules` at your project root. Cursor's rule system supports multi-stage reviews and per-project configurations that go beyond what Copilot offered.
 
 ## Understanding the Two Systems
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you have spent time building a collection of prompts in Cursor's Composer, you might wonder how to bring that knowledge over to Claude Code. While these tools work differently, you can absolutely transfer your prompt library and adapt it for Claude Code's command-based workflow. This guide shows you how to migrate your prompts effectively.
+Transfer your Cursor Composer prompts to Claude Code by converting reusable prompts into skill files in `~/.claude/skills/`, migrating `.cursorrules` into a `.claude.md` project file, and using the `-p` flag for one-off prompts. The key adaptation is shifting from Cursor's conversational prompt style to Claude Code's imperative, declarative instruction format stored as Markdown skill definitions.
 
 ## Understanding the Fundamental Differences
 
