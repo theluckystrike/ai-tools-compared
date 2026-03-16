@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users to migrate Custom
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have invested time building Custom GPTs in ChatGPT and want to move your work to Claude Projects, the process requires manual export and reconstruction. Unlike some platforms that offer direct migration tools, you need to extract your GPT configurations, prompts, and knowledge files, then recreate them in Claude Code or Claude.ai Projects. This guide walks through the complete transfer process with practical examples.

@@ -6,6 +6,10 @@ description: "A practical guide for migrating your Cursor editor theme, layout, 
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been working with Cursor editor and want to move your carefully crafted theme and layout settings to Visual Studio Code with GitHub Copilot, the migration process is more straightforward than you might expect. Both editors share a common foundation, which means many of your customizations can transfer directly or with minimal adjustment.

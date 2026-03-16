@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users on exporting your
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-grammarly-personal-dictionary-before-switching/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been using Grammarly and built up a personal dictionary with custom words, acronyms, and domain-specific terms, losing that data when switching to other AI writing tools can be frustrating. Whether you are moving to Claude, Cursor, or another AI assistant, preserving your personal dictionary ensures consistent writing quality across all your tools. This guide covers multiple methods to export your Grammarly personal dictionary.
