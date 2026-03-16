@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Transfer Midjourney Prompt Library to Ideogram Prompt Format"
-description: "A practical guide for developers and power users migrating their Midjourney prompt collections to Ideogram. Includes conversion scripts, syntax differences, and code examples."
+title: "How to Transfer Midjourney Prompt Library to Ideogram."
+description: "A practical guide for developers and power users migrating their Midjourney prompt collections to Ideogram. Includes conversion scripts, syntax."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/
@@ -272,6 +272,11 @@ After running your conversion, review prompts containing these elements manually
 Converting Midjourney prompts to Ideogram format requires removing parameter syntax, mapping aspect ratios to presets, and translating style parameters into natural language descriptions. The Python scripts in this guide provide a foundation you can customize for your specific prompt library structure. The investment in building a conversion pipeline pays off quickly if you maintain large prompt collections across multiple platforms.
 
 For text-heavy designs, Ideogram often produces superior results compared to Midjourney, making prompt migration worthwhile even if you continue using both platforms for different use cases.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

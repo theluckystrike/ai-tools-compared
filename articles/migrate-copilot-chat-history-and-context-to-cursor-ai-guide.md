@@ -207,4 +207,9 @@ Migrating Copilot chat history to Cursor involves locating local Copilot data, p
 
 Key steps include: backing up Copilot's local data, parsing JSON files into readable format, creating context documents for Cursor to index, and configuring Cursor settings to match your workflow. The investment pays off through improved code awareness and streamlined AI interactions.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

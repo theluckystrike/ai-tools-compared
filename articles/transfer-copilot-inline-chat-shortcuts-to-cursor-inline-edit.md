@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Transfer Copilot Inline Chat Shortcuts to Cursor Inline Edit Keybinds"
+title: "How to Transfer Copilot Inline Chat Shortcuts to Cursor."
 description: "A practical guide for developers moving from GitHub Copilot to Cursor. Learn how to map inline chat keybindings to Cursor's inline edit for a seamless workflow transition."
 date: 2026-03-16
 author: theluckystrike
@@ -135,5 +135,10 @@ If your keybindings are not working as expected, verify these settings:
 ## Summary
 
 Transferring Copilot inline chat shortcuts to Cursor inline edit keybinds is straightforward. The key mappings are `Cmd + I` for inline chat, `Cmd + Shift + I` for history, and `Cmd + Shift + Space` for quick suggestions. By customizing your Cursor keybindings, you maintain your productivity and take advantage of Cursor's inline editing features without relearning new shortcuts.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
