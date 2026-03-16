@@ -5,6 +5,10 @@ description: "A practical guide to switching between Claude and GPT models in Cu
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-switching-between-claude-and-gpt-models-extra-cost/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Cursor AI has become a powerful tool for developers seeking AI-assisted coding. One of its most valuable features is the ability to switch between different AI models, including Anthropic's Claude and OpenAI's GPT series. Understanding the cost implications of these switches helps you make informed decisions about which model to use for different tasks.
