@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 GitHub Copilot's usage-based billing counts API calls by measuring prompt tokens (your code context) and completion tokens (generated suggestions) rather than charging per individual request. A typical inline completion consumes 100-500 tokens total, while a Copilot Chat exchange can use 400-1,000 tokens depending on complexity. This guide explains exactly how token consumption works, what factors drive usage up, and how to monitor and optimize your spend.
@@ -27,9 +28,7 @@ GitHub Copilot does not charge per individual API request in the traditional sen
 
 Here is a practical breakdown:
 
-- **Prompt tokens** include your current file content, surrounding code, and any additional context you provide to Copilot
-- **Completion tokens** represent the AI-generated suggestions that appear in your editor
-- Each billing unit encompasses both prompt and completion token consumption
+Prompt tokens include your current file content, surrounding code, and any additional context you provide to Copilot. Completion tokens represent the AI-generated suggestions that appear in your editor. Each billing unit encompasses both.
 
 When you trigger an inline completion, GitHub counts the tokens processed rather than the number of suggestions presented. If Copilot suggests three different code options, the tokens for all suggestions count toward your usage. The same principle applies to Copilot Chat conversations—each message exchange processes tokens on both the input and output sides.
 
@@ -101,8 +100,6 @@ The usage-based model benefits developers with variable coding patterns. Freelan
 For consistent daily users, the subscription model might offer better value through predictable pricing. Evaluate your typical usage before choosing between models.
 
 ---
-
-Understanding how GitHub Copilot counts API calls through token consumption helps you make informed decisions about billing. By monitoring your usage patterns and adjusting your workflow, you can optimize costs while maintaining productive AI-assisted development.
 
 
 ## Related Reading
