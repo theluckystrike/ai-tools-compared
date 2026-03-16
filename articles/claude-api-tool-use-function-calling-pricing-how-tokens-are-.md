@@ -5,6 +5,10 @@ description: "A comprehensive guide to understanding Claude API tool use, functi
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-tool-use-function-calling-pricing-how-tokens-are-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
