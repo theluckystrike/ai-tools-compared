@@ -1,4 +1,3 @@
-{% raw %}
 ---
 layout: default
 title: "Chrome Extension Tab Organizer Research: A Developer Guide"
@@ -7,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-tab-organizer-research/
 ---
-
+{% raw %}
 # Chrome Extension Tab Organizer Research: A Developer Guide
 
 Managing browser tabs has become a critical challenge for developers and power users who frequently juggle dozens of open pages. This research explores the technical foundations, APIs, and implementation strategies for building Chrome extensions that organize tabs effectively.
