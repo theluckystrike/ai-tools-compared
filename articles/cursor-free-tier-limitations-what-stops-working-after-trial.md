@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Cursor has gained significant traction among developers seeking AI-enhanced coding capabilities. Built on Visual Studio Code, it integrates large language models directly into the editing experience. However, once the free trial expires, users encounter several limitations that can impact productivity. Understanding these restrictions helps you plan accordingly and explore alternatives if needed.
+After Cursor's free trial expires, AI completions are capped to a limited monthly quota, chat messages drop to roughly 200 per month, and advanced features like codebase-wide indexing and multi-file editing become unavailable. Once you hit these limits, Cursor falls back to standard VS Code autocomplete without AI intelligence. Below is a breakdown of each restriction and practical workarounds to manage them.
 
 ## Understanding Cursor's Pricing Model
 
