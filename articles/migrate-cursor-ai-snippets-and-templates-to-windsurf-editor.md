@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/
 reviewed: true
 score: 8
-categories: [migration, guides]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

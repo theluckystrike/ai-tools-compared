@@ -6,6 +6,10 @@ description: "A practical guide for developers moving from GitHub Copilot to Cur
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-copilot-chat-history-and-context-to-cursor-ai-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Moving from GitHub Copilot to Cursor AI requires understanding how each tool handles conversation history and project context. This guide walks you through migrating your Copilot chat history and establishing similar workflows in Cursor.

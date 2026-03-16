@@ -5,6 +5,10 @@ description: "A practical guide for developers moving from GitHub Copilot to Cur
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-github-copilot-org-settings-when-switching-to-curso/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
