@@ -5,6 +5,10 @@ description: "A comprehensive guide to understanding Cursor Pro's refund policy,
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-pro-refund-policy-can-you-get-money-back-after-subscr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you've recently subscribed to Cursor Pro and are wondering whether you can get your money back, you're not alone. Many developers and power users want to understand the refund policy before committing to a paid plan. This guide covers everything you need to know about Cursor Pro's refund policy, including eligibility, the process, and practical tips.

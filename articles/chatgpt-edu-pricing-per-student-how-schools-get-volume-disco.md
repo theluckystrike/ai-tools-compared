@@ -6,6 +6,10 @@ description: "A practical guide to ChatGPT Edu pricing per student and how educa
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 ChatGPT Edu represents OpenAI's dedicated offering for educational institutions, providing GPT-4 access with enhanced privacy and security controls tailored for schools. Understanding the pricing structure helps administrators and IT decision-makers budget effectively and negotiate favorable terms.

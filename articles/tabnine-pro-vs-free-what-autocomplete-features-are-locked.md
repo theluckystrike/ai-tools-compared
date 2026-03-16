@@ -5,6 +5,10 @@ description: "A detailed comparison of Tabnine Pro vs Free versions. Discover wh
 date: 2026-03-16
 author: theluckystrike
 permalink: /tabnine-pro-vs-free-what-autocomplete-features-are-locked/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
