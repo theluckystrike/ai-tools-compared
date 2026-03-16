@@ -6,6 +6,10 @@ description: "Learn how to create a Chrome extension that generates MLA citation
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-mla-citation-generator/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Extension MLA Citation Generator: Build Your Own Tool
