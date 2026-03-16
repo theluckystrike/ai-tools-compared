@@ -1,251 +1,303 @@
 ---
-
 layout: default
 title: "Claude Code for OSS Issue Triage Workflow Tutorial"
-description: "Learn how to build an automated issue triage workflow for open source projects using Claude Code. Streamline bug classification, priority assignment."
+description: "Learn how to build an automated issue triage workflow for open source projects using Claude Code. Streamline bug classification, priority assignment, and maintainer notifications."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: Claude Skills Guide
 permalink: /claude-code-for-oss-issue-triage-workflow-tutorial/
-categories: [tutorials]
+categories: [guides]
 tags: [claude-code, claude-skills]
-reviewed: true
-score: 8
 ---
 
-
-{% raw %}
 # Claude Code for OSS Issue Triage Workflow Tutorial
 
-Issue triage is one of the most time-consuming responsibilities in open source maintenance. Every day, project maintainers face hundreds of new issues—bug reports, feature requests, duplicate complaints, and questions that could be answered by better documentation. Without an efficient triage system, maintainers burn out and critical issues slip through the cracks.
+Open source maintainers often struggle with incoming issue floods. A well-designed Claude Code skill can automate the tedious triage process—classifying bugs, detecting duplicates, assigning priorities, and routing issues to the right maintainers. This tutorial shows you how to build a complete issue triage workflow that integrates with GitHub's API.
 
-In this tutorial, you'll learn how to use Claude Code to build an automated issue triage workflow that classifies issues, assigns priorities, suggests labels, and drafts initial responses. This workflow can save hours of manual work each week while ensuring every contributor gets a thoughtful first response.
+## Why Automate Issue Triage?
 
-## Understanding Issue Triage Challenges
+Every OSS project eventually faces this problem: issues pile up faster than maintainers can review them. Without triage, critical bugs get lost in the noise, duplicate reports multiply, and contributors feel ignored. Manual triage consumes hours each week that could go toward actual development.
 
-Before diving into the technical implementation, let's identify the core challenges that make issue triage difficult:
+Claude Code can help by:
+- **Classifying issue types** (bug, feature request, documentation, question)
+- **Detecting potential duplicates** via semantic similarity
+- **Assigning priority labels** based on severity keywords and context
+- **Routing issues** to appropriate maintainers or teams
+- **Filtering spam** and invalid submissions
 
-1. **Volume**: Popular projects receive dozens of new issues daily
-2. **Quality**: Many issues lack sufficient detail or are duplicates
-3. **Context**: Triage requires understanding the codebase, existing labels, and community conventions
-4. **Response Time**: Delayed responses discourage contributors
-
-Claude Code excels at this because it can read your project's documentation, understand your codebase structure, and apply consistent triage logic across all incoming issues.
+The key is building a skill that understands your project's conventions and applies consistent triage logic.
 
 ## Setting Up Your Triage Skill
 
-The first step is creating a Claude Code skill dedicated to issue triage. Skills are defined in `.md` files with specific front matter that controls their behavior.
+Create a new skill file for issue triage. This skill will process GitHub issues and apply your project's triage rules:
 
 ```yaml
 ---
 name: issue-triage
-description: "Analyze GitHub issues, classify by type, assign priority, and suggest labels"
+description: "Automatically triage GitHub issues with classification, priority assignment, and duplicate detection"
+tools:
+  - read_file
+  - bash
+  - github
+  - write_file
+category: workflow
+version: 1.0.0
 ---
+
+# Issue Triage Skill
+
+This skill processes incoming GitHub issues and applies automated triage logic based on your project's conventions.
 ```
 
-This skill declaration specifies that it responds to phrases like "triage issue" and requires access to file reading and writing capabilities.
+## Building the Triage Logic
 
-## Core Triage Analysis Logic
+The core of your triage workflow is a set of classification rules. Here's how to implement each major triage function:
 
-The skill body contains the prompt that guides Claude's triage behavior. Here's a practical implementation:
+### Issue Classification
 
-```markdown
-You are an expert issue triage assistant for this open source project. Your role is to analyze incoming GitHub issues and provide structured triage feedback.
+Parse the issue body and title to determine the type:
 
-## Project Context
+```
+## Classification Rules
 
-Before triage, read these files to understand the project:
-- README.md - project overview and contribution guidelines
-- CONTRIBUTING.md - contribution process and issue templates
-- .github/ISSUE_TEMPLATE/ - issue templates (if exists)
+When processing an issue:
 
-## Triage Output Format
+1. **Bug Reports** - Look for:
+   - Keywords: "crash", "error", "broken", "fail", "bug"
+   - Error messages or stack traces
+   - Steps to reproduce patterns
 
-For each issue, provide:
+2. **Feature Requests** - Look for:
+   - Keywords: "add", "support", "feature", "would be nice", "request"
+   - "Should be able to..." statements
+   - Enhancement prefixes like "[FEATURE]"
 
-1. **Type Classification**: bug | feature-request | question | duplicate | documentation
-2. **Priority**: critical | high | medium | low
-3. **Suggested Labels**: 2-5 relevant labels from the project label set
-4. **Missing Information**: What details are needed but not provided
-5. **First Response Draft**: A friendly, helpful initial response
+3. **Documentation** - Look for:
+   - Keywords: "docs", "documentation", "typo", "spelling"
+   - File path references to docs folder
 
-## Classification Criteria
+4. **Questions** - Look for:
+   - Question marks in title
+   - Keywords: "how to", "can i", "is it possible"
 
-- **Bug**: Reports unexpected behavior with steps to reproduce
-- **Feature Request**: Proposes new functionality or improvements
-- **Question**: Seeks clarification rather than reporting a problem
-- **Duplicate**: References an existing issue
-- **Documentation**: Related to docs improvements
-
-## Priority Guidelines
-
-- **Critical**: Security issues, data loss, complete crashes
-- **High**: Major features broken, significant user impact
-- **Medium**: Workarounds exist, partial functionality affected
-- **Low**: Cosmetic issues, minor inconveniences
+5. **Duplicates** - Compare against existing issues using:
+   - Title similarity (cosine similarity > 0.7)
+   - Same error messages or keywords
 ```
 
-This prompt structure ensures consistent triage output regardless of who invokes the skill or when.
+### Priority Assignment
+
+Assign priority based on issue characteristics:
+
+```
+## Priority Assignment
+
+Assign priority labels using these rules:
+
+- **P0 - Critical**: System crashes, data loss, security vulnerabilities
+- **P1 - High**: Major features broken, significant workarounds needed
+- **P2 - Medium**: Regular bugs, minor feature gaps
+- **P3 - Low**: Cosmetic issues, minor inconveniences, documentation
+
+Use keyword matching and context analysis to determine priority.
+```
+
+## Complete Triage Workflow Implementation
+
+Here's a practical implementation that combines all triage functions:
+
+```python
+#!/usr/bin/env python3
+"""GitHub Issue Triage Bot using Claude Code"""
+
+import os
+import re
+from datetime import datetime
+
+# Configuration
+REPO_OWNER = os.getenv("GITHUB_REPO_OWNER")
+REPO_NAME = os.getenv("GITHUB_REPO_NAME")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
+# Classification patterns
+BUG_PATTERNS = [
+    r'\b(crash|error|bug|broken|fail|not working)\b',
+    r'Steps to reproduce',
+    r'Traceback|stack trace',
+]
+
+FEATURE_PATTERNS = [
+    r'\b(feature|add|support|implement|enhancement)\b',
+    r'would be nice',
+    r'should be able to',
+]
+
+DOC_PATTERNS = [
+    r'\b(docs?|documentation|typo|spelling)\b',
+    r'\.md$',
+]
+
+QUESTION_PATTERNS = [
+    r'\?$',
+    r'\b(how (to|can)|is it possible|can i)\b',
+]
+
+PRIORITY_PATTERNS = {
+    'P0': [r'\b(crash|data loss|security|vulnerability|critical)\b'],
+    'P1': [r'\b(major|broken|significant workaround)\b'],
+    'P2': [r'\b(bug|issue|problem)\b'],
+    'P3': [r'\b(cosmetic|minor|inconvenience)\b'],
+}
+
+def classify_issue(title, body):
+    """Classify issue type based on content"""
+    text = f"{title} {body}".lower()
+    
+    if any(re.search(p, text) for p in BUG_PATTERNS):
+        return "bug"
+    elif any(re.search(p, text) for p in FEATURE_PATTERNS):
+        return "enhancement"
+    elif any(re.search(p, text) for p in DOC_PATTERNS):
+        return "documentation"
+    elif any(re.search(p, text) for p in QUESTION_PATTERNS):
+        return "question"
+    else:
+        return "other"
+
+def assign_priority(title, body):
+    """Assign priority based on severity indicators"""
+    text = f"{title} {body}".lower()
+    
+    for priority, patterns in PRIORITY_PATTERNS.items():
+        if any(re.search(p, text) for p in patterns):
+            return priority
+    return "P2"  # Default priority
+
+def extract_labels(issue_type, priority):
+    """Generate labels based on classification"""
+    labels = []
+    
+    # Type labels
+    type_labels = {
+        "bug": ["type: bug"],
+        "enhancement": ["type: feature"],
+        "documentation": ["type: docs"],
+        "question": ["type: question"],
+        "other": ["type: other"],
+    }
+    labels.extend(type_labels.get(issue_type, []))
+    
+    # Priority labels
+    labels.append(f"priority: {priority}")
+    
+    return labels
+
+# Main triage function
+def triage_issue(issue_number):
+    """Process a single issue through the triage workflow"""
+    # Fetch issue details (via GitHub CLI or API)
+    # This is where Claude Code integrates
+    
+    title = get_issue_title(issue_number)
+    body = get_issue_body(issue_number)
+    
+    # Run classification
+    issue_type = classify_issue(title, body)
+    priority = assign_priority(title, body)
+    labels = extract_labels(issue_type, priority)
+    
+    # Add triage comment
+    triage_comment = f"""**Triage Complete**
+
+- **Type:** {issue_type}
+- **Priority:** {priority}
+- **Labels:** {', '.join(labels)}
+
+_This issue was automatically triaged by Claude Code._"""
+    
+    # Apply labels and comment
+    add_labels(issue_number, labels)
+    add_comment(issue_number, triage_comment)
+    
+    return {"type": issue_type, "priority": priority}
+```
 
 ## Integrating with GitHub
 
-To make this workflow practical, you need to connect it to your actual GitHub repository. There are two main approaches:
-
-### Option 1: GitHub CLI Integration
-
-First, install and configure the GitHub CLI:
+The easiest integration uses the GitHub CLI (`gh`) which Claude Code can invoke directly:
 
 ```bash
-brew install gh
-gh auth login
+# Fetch issue details
+gh issue view $ISSUE_NUMBER --repo $REPO --json title,body,labels
+
+# Add labels
+gh issue edit $ISSUE_NUMBER --add-label "triage: done,priority: P1"
+
+# Add comment
+gh issue comment $ISSUE_NUMBER --body "Triage complete: classified as bug (P1)"
 ```
 
-Then create a simple script that combines GitHub's issue fetching with Claude Code's analysis:
+Create a wrapper script that your skill calls:
 
 ```bash
 #!/bin/bash
-# triage-new-issues.sh
+# triage-issue.sh
 
-# Fetch the latest 10 open issues
-ISSUES=$(gh issue list --state open --limit 10 --json number,title,body)
+ISSUE_NUM=$1
+REPO=$2
 
-# Send each issue to Claude for triage
-echo "$ISSUES" | jq -r '.[] | .number, .title, .body' | while read -r num; do
-  read -r title
-  read -r body
-  
-  echo "=== Triage for Issue #$num: $title ==="
-  echo "$body" | claude --print "triage issue" 2>/dev/null
-  echo ""
-done
+# Get issue details
+ISSUE_DATA=$(gh issue view $ISSUE_NUM --repo $REPO --json title,body)
+TITLE=$(echo $ISSUE_DATA | jq -r '.title')
+BODY=$(echo $ISSUE_DATA | jq -r '.body')
+
+# Process with Claude Code
+# Claude analyzes and determines labels
+
+# Apply results
+gh issue edit $ISSUE_NUM --repo $REPO --add-label "triage: automated"
 ```
 
-### Option 2: Claude Code as GitHub Action
+## Actionable Advice for Effective Triage
 
-For fully automated workflows, create a GitHub Action that runs Claude Code on new issues:
+### Start Simple, Iterate
+
+Begin with basic keyword matching before adding ML-based duplicate detection. Claude Code excels at rule-based triage that's easy to audit and modify.
+
+### Maintain Human Oversight
+
+Always add a "needs: triage" label for issues requiring human review. Your skill should flag edge cases rather than guess wrong:
 
 ```yaml
-# .github/workflows/issue-triage.yml
-name: Issue Triage
-on:
-  issues:
-    types: [opened, reopened]
+## Edge Cases to Flag for Human Review
 
-jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run Claude Triage
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          ISSUE_NUMBER=${{ github.event.issue.number }}
-          ISSUE_BODY=$(gh issue view $ISSUE_NUMBER --json body -q .body)
-          
-          echo "$ISSUE_BODY" > /tmp/issue.txt
-          claude --print "triage issue" < /tmp/issue.txt
+- Security vulnerabilities → flag immediately to security team
+- Issues with no reproduction steps → request more info
+- Very old issues → mark as "stale" for cleanup
+- Issues from first-time contributors → welcome and prioritize response
 ```
 
-## Practical Triage Examples
+### Track Triage Accuracy
 
-Let's walk through concrete examples to demonstrate the triage workflow in action.
+Log triage decisions and their outcomes. Periodically review misclassifications to refine your rules. Claude Code can generate weekly triage reports:
 
-### Example 1: A Well-Formatted Bug Report
+```markdown
+## Weekly Triage Summary
 
-**Issue Title**: "Application crashes when uploading files larger than 10MB"
+- **Total Issues:** 47
+- **Auto-triaged:** 41 (87%)
+- **Classification Accuracy:** 92%
+- **Average Triage Time:** 3.2 seconds
 
-**Issue Body**:
-```
-## Description
-When I try to upload files larger than 10MB, the application crashes.
-
-## Steps to Reproduce
-1. Go to the upload page
-2. Select a file larger than 10MB
-3. Click the upload button
-
-## Expected Behavior
-File should upload successfully or show a friendly error message
-
-## Actual Behavior
-Application shows "Unexpected Error" and logs show:
-TypeError: Cannot read property 'size' of undefined
-
-## Environment
-- OS: macOS 14.0
-- Browser: Chrome 120
-- App Version: 2.3.1
+### Issues Requiring Review
+[List of flagged issues for human review]
 ```
 
-**Claude Triage Output**:
-- **Type**: bug
-- **Priority**: high (crashes for common use case)
-- **Suggested Labels**: bug, confirmed, needs-investigation, files-upload
-- **Missing Information**: Server-side logs, whether this occurs in Firefox/Safari
-- **First Response Draft**: "Thank you for this detailed bug report! We're looking into this issue with file uploads. Could you also share the server-side logs from when this crash occurs? This will help us identify the root cause."
+### Document Your Conventions
 
-### Example 2: A Vague Feature Request
-
-**Issue Title**: "Make it faster"
-
-**Issue Body**:
-```
-The app is really slow. Please make it faster.
-```
-
-**Claude Triage Output**:
-- **Type**: feature-request (likely performance-related)
-- **Priority**: low (needs clarification)
-- **Suggested Labels**: needs-triage, performance
-- **Missing Information**: What specific operations are slow? What is your environment? Can you provide benchmarks or profiling data? Which version are you using?
-- **First Response Draft**: "Thanks for this suggestion! To help us address the performance concerns, could you provide more details? Specifically: which operations feel slow, what's your system environment, and do you have any benchmarking data?"
-
-## Best Practices for Triage Workflows
-
-To get the most out of your Claude Code triage system, follow these recommendations:
-
-### 1. Maintain Clear Documentation
-
-Create a CONTRIBUTING.md that includes:
-- Clear issue templates for different types of reports
-- Links to FAQ and existing documentation
-- Expected response times and triage priorities
-- How to mark issues as resolved
-
-### 2. Iterate on Your Prompts
-
-The first version of your triage skill won't be perfect. Review the outputs weekly and refine the prompts based on:
-- Common misclassifications
-- Labels that are overused or underused
-- Feedback from the community
-
-### 3. Combine Automation with Human Oversight
-
-Automated triage should speed up your workflow, not replace judgment. Use it to:
-- Pre-fill triage fields
-- Identify missing information
-- Draft initial responses
-
-But always have a maintainer review the output before posting to ensure accuracy.
-
-### 4. Handle Escalations Gracefully
-
-Not all issues can be auto-triaged. Build in logic to escalate:
-- Security vulnerabilities to security team channels
-- Legal questions to appropriate contacts
-- Complex architectural decisions to discussion labels
+Create a CONTRIBUTING.md section explaining your triage labels. Contributors who understand the process are more likely to provide complete issue reports.
 
 ## Conclusion
 
-Building an automated issue triage workflow with Claude Code transforms a tedious maintenance task into a scalable process. By defining clear classification criteria, integrating with GitHub's tooling, and maintaining human oversight, you can ensure every contributor receives a thoughtful response while freeing maintainers to focus on substantive work.
+Automating issue triage with Claude Code transforms an overwhelming backlog into a manageable workflow. Start with classification and priority assignment, then expand to duplicate detection and maintainer routing as your rules mature. The key is maintaining human oversight for edge cases while letting Claude handle the predictable 80% of incoming issues.
 
-Start with a simple skill that classifies issues, then progressively add priority assignment, label suggestions, and response drafting. Your future self—and your community—will thank you.
-{% endraw %}
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Your maintainers will thank you—and so will contributors who see their issues addressed promptly.
