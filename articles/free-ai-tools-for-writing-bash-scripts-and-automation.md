@@ -13,7 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-
+{% raw %}
 Writing bash scripts and automation workflows can be time-consuming, especially when dealing with complex logic, error handling, or unfamiliar commands. Several free AI tools can accelerate your shell scripting workflow, whether you prefer working in your terminal, a code editor, or both. Here is how the best free options compare.
 
 ## What to Look for in a Free AI Tool for Bash Scripting
@@ -123,3 +123,4 @@ The free tier is best for developers who need simple command completion rather t
 For terminal-focused work, **Aider** provides the most flexibility since it works entirely in your command line and supports various AI backends. If you prefer an editor experience with good autocomplete, **Codeium** offers the best free tier for VS Code users. **Continue** is ideal if you want an open-source solution with full control over your AI backend.
 
 All four tools can significantly speed up bash script development, but the best choice depends on your workflow: terminal-first users should try Aider, while editor-focused developers will find Codeium or Continue more convenient.
+{% endraw %}
