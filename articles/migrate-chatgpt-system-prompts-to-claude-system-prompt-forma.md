@@ -5,6 +5,10 @@ description: "A practical guide for developers on converting ChatGPT system prom
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have invested time in crafting effective system prompts for ChatGPT, you likely want to reuse that work when switching to Claude. While both models accept system prompts, they have different formatting expectations and behavioral patterns. This guide shows you how to migrate your existing ChatGPT system prompts to Claude's format effectively.

@@ -5,6 +5,10 @@ description: "Learn how to export and transfer your valuable Copilot code sugges
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been using GitHub Copilot for any length of time, you have likely accumulated a collection of code suggestions that feel like custom-written solutions tailored to your coding style. These patterns—often refined through repeated acceptance—represent valuable intellectual property that can significantly accelerate your development workflow.
