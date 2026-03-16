@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding how Claude's API handles tool use and function calling is essential for developers building applications that require the model to interact with external systems. This guide covers the mechanics of tool calls, how Anthropic prices these interactions, and the token counting methodology that affects your API costs.
+Claude API tool use (function calling) is billed as standard API token usage with no separate pricing category -- tool definitions count as input tokens, tool call blocks count as output tokens, and tool results count as input tokens on the next turn. For example, a typical multi-tool conversation on Sonnet 4 costs roughly $0.008, with costs accumulating across all token exchanges during the interaction. Understanding these mechanics helps you estimate costs accurately and design efficient tool integrations.
 
 ## How Tool Use Works in Claude API
 

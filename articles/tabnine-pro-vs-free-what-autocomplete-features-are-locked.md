@@ -9,12 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Tabnine has become one of the most popular AI-powered code completion tools available today. If you're a developer, you've likely encountered it as a VS Code extension or within your preferred IDE. But here's the thing: Tabnine offers both a free tier and a paid Pro version, and understanding the differences between them is crucial for making an informed decision about whether you need to upgrade.
-
-This article breaks down exactly what autocomplete features are locked behind Tabnine Pro and helps you determine if the upgrade makes sense for your workflow.
+Choose Tabnine Free if you want local-only, privacy-first autocomplete for simple projects under 1,000 lines. Choose Tabnine Pro ($12/month) if you need project-wide context awareness across multiple files, integrated chat for code explanations, and custom AI model training on your codebase. The key features locked behind Pro are full-file context awareness, larger context windows (up to 10,000 tokens vs. limited), chat and code explanation, custom model training, and team collaboration features.
 
 ## Understanding Tabnine's Free Tier
 

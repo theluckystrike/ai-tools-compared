@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you've recently subscribed to Cursor Pro and are wondering whether you can get your money back, you're not alone. Many developers and power users want to understand the refund policy before committing to a paid plan. This guide covers everything you need to know about Cursor Pro's refund policy, including eligibility, the process, and practical tips.
+Yes, you can get a refund from Cursor Pro if you request it within the 30-day refund window from your purchase date. To start the process, email support@cursor.sh with your account email, purchase date, order confirmation number, and reason for the refund -- expect a response within 2-5 business days and the refund itself within 5-10 business days to your original payment method. After the refund, your account will be downgraded to the free tier.
 
 ## Understanding Cursor Pro Subscription Tiers
 
