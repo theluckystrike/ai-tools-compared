@@ -6,6 +6,10 @@ description: "A practical guide to Cursor Pro's file indexing limits, pricing, a
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you are working with a large codebase in Cursor, you have likely encountered the indexing feature—it is what allows Cursor to understand your entire project, provide accurate context-aware suggestions, and answer questions about your code. However, as projects grow in size, developers often wonder whether Cursor Pro charges extra for handling large file indexing. This guide provides a clear answer and practical strategies for managing large codebases.
