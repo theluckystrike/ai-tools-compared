@@ -5,6 +5,10 @@ description: "A practical guide for developers switching from GitHub Copilot to 
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-copilot-to-codeium-what-extensions-to-install/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been using GitHub Copilot and are considering a switch to Codeium, the transition involves more than uninstalling one extension and installing another. Codeium offers a different approach to AI-assisted coding, and getting the right extensions installed from the start will help you maintain your productivity workflow. This guide covers what to install first and how to configure your environment for a smooth transition.

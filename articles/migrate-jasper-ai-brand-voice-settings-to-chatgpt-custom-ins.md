@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users moving brand voic
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/
-categories: [migration, guides]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

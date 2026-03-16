@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users to migrate ChatGP
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

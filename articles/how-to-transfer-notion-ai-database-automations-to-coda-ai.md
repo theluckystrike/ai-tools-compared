@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users migrating Notion 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-notion-ai-database-automations-to-coda-ai/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
