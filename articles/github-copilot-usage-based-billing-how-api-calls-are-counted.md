@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-GitHub Copilot has shifted from a subscription-only model to a usage-based billing system, giving developers more flexibility in how they pay for AI-assisted coding. Understanding how API calls are counted helps you estimate costs, optimize usage, and choose the right plan for your workflow.
+GitHub Copilot's usage-based billing counts API calls by measuring prompt tokens (your code context) and completion tokens (generated suggestions) rather than charging per individual request. A typical inline completion consumes 100-500 tokens total, while a Copilot Chat exchange can use 400-1,000 tokens depending on complexity. This guide explains exactly how token consumption works, what factors drive usage up, and how to monitor and optimize your spend.
 
 ## The Two Billing Models
 

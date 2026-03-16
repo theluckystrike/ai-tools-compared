@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you are a student learning to code, GitHub Copilot can significantly accelerate your development workflow at no cost. The free student access program provides full access to GitHub Copilot's AI-powered coding features, though there are specific requirements and limitations worth understanding before you sign up.
+GitHub Copilot for Students includes unlimited code completions, chat-based assistance, test generation, and refactoring across VS Code, JetBrains, Neovim, and Visual Studio, all at no cost. You qualify by verifying student status through a .edu email, ISIC card, or manual enrollment confirmation at github.com/education. This guide covers exactly what the free plan includes, how to activate it, and practical ways to use Copilot for coursework and side projects.
 
 ## What GitHub Copilot for Students Actually Includes
 

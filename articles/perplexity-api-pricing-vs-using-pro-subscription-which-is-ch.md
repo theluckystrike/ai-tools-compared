@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Choosing between Perplexity's API and its Pro subscription requires understanding your usage patterns. This guide breaks down the actual costs, provides concrete examples, and helps you determine which option makes financial sense for your needs.
+Choose the Perplexity API if you make fewer than 500 queries per month or need programmatic access -- light usage on Sonar Small runs $3-5/month. Choose the $20/month Pro subscription if you regularly exceed that volume or want unlimited searches with access to GPT-4o and Claude 3.5 Sonnet through Perplexity's interface. This guide provides the full cost breakdown, code-based calculators, and break-even analysis to help you decide.
 
 ## Understanding Perplexity's Pricing Structure
 

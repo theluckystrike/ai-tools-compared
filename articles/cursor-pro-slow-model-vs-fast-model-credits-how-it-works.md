@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 # Cursor Pro Slow Model vs Fast Model: Credits System Explained
 
-Cursor Pro offers developers a flexible AI-powered coding experience with two distinct model tiers. Understanding how the credit system works and when to use each model type helps you maximize productivity while managing usage effectively.
+Cursor Pro's fast model costs roughly 1 credit per operation and responds in under 100ms, while the slow model uses 5-20 credits but delivers deeper multi-file analysis over 5-60 seconds. Pro subscribers receive a monthly credit allowance that covers both tiers, and most developers find that about 70% of tasks work well with the fast model. This guide breaks down exactly how credits are consumed, when each model is worth using, and strategies for stretching your monthly allowance.
 
 ## How Cursor Pro's Credit System Works
 
