@@ -2,13 +2,13 @@
 
 layout: default
 title: "Free AI Coding Tools That Work Offline Without Internet"
-description: "Discover free AI coding tools that work completely offline without internet. Run local LLMs for code completion, refactoring, and debugging on your own machine."
+description: "Discover free AI coding tools that work completely offline without internet. Run local LLMs for code completion, refactoring, and debugging on your own."
 date: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-coding-tools-that-work-offline-without-internet/
 reviewed: true
 score: 8
-categories: [tools]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
@@ -205,5 +205,10 @@ Free offline AI coding tools have matured significantly. Ollama paired with Cont
 Start with Ollama and Continue for the most comprehensive offline AI coding experience. Download your preferred models before heading offline, and you'll have powerful AI assistance available anywhere.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
