@@ -139,6 +139,73 @@ Follow our existing service patterns in src/services/
 **Step 5: Verify and iterate**
 Run the test suite. If tests fail, have Claude fix the implementation rather than the tests (unless the tests themselves are incorrect).
 
+## Prompting for Integration Tests
+
+Integration tests require different prompting because they test how components work together rather than individual units:
+
+```
+Write integration tests for the user authentication flow:
+
+1. Test successful login with valid credentials
+2. Test failed login with wrong password (should return error message)
+3. Test session persistence across page refreshes
+4. Test logout clears session properly
+
+Use the existing test infrastructure in tests/integration/.
+Write these tests BEFORE implementing any new authentication code.
+Focus on testing the public API endpoints, not internal implementation details.
+```
+
+## Test Quality Patterns
+
+Follow the AAA pattern (Arrange, Act, Assert) consistently:
+
+```python
+def test_calculate_total_with_multiple_items():
+    """Verify that calculate_total correctly sums multiple items."""
+    # Arrange
+    items = [
+        {"price": 10.00, "quantity": 2},
+        {"price": 5.50, "quantity": 3},
+    ]
+
+    # Act
+    result = calculate_total(items)
+
+    # Assert
+    assert result == 36.50
+```
+
+For a tight feedback loop, keep `npm test -- --watch` (Jest) or `pytest -v --tb=short` (pytest) running in a separate terminal as Claude implements functionality.
+
+Use **supermemory** to maintain consistent testing patterns across files. Store your testing philosophy for cross-session consistency:
+
+```
+Use supermemory to store our testing approach: we prioritize
+business-critical paths with 100% coverage, utility functions
+at 80% coverage, and UI components with snapshot testing.
+```
+
+After generating tests, ask Claude to review them with a meta-review prompt: "Review these tests for missing assertions, overly broad assertions, tests that could pass for wrong reasons, or missing coverage."
+
+## CI/CD Coverage Gates
+
+Automate test quality gates in your pipeline to prevent regressions:
+
+```yaml
+- name: Run tests with coverage
+  run: npm test -- --ci --coverage
+- name: Check coverage thresholds
+  run: npx jest-coverage-threshold
+```
+
+## Common Prompt Failures and Fixes
+
+- **"Write tests for this code"** — Too vague. Fix: specify exact test cases and scenarios
+- **"Make sure to test edge cases"** — Without domain-specific examples, Claude may miss important scenarios. Fix: list edge cases explicitly
+- **"Add tests later"** — Almost guarantees tests won't get written. Fix: make test-first a hard requirement, not a suggestion
+- **Avoid testing implementation details** — Test public interfaces and observable behavior; implementation changes shouldn't break tests
+
 ## Common Issues and Solutions
 
 **Issue:** Claude writes implementation code before tests

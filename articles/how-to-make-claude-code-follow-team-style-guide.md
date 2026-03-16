@@ -120,6 +120,21 @@ Your style guide skill works alongside domain-specific skills for better results
 
 This layered approach lets you maintain a single source of truth for style while using specialized skills for their core functionality.
 
+## Learning Patterns from Reference Files
+
+One of the most effective techniques is pointing Claude at existing files before generating new code. Instead of describing patterns abstractly, show them:
+
+```
+I'm adding a new service module. Before writing anything, read these three existing service files to understand our patterns:
+- src/services/auth-service.js
+- src/services/payment-service.js
+- src/services/notification-service.js
+
+Then create src/services/analytics-service.js following the same patterns.
+```
+
+Claude examines the reference files, extracts shared patterns (import style, error handling approach, dependency injection, method signatures), and applies them to the new file. This works especially well when generating multiple related files — establish patterns in the first file and reference them for subsequent files.
+
 ## Inline Context and Conversation Prompts
 
 Beyond configuration files, direct prompts within your conversations guide Claude's output effectively.

@@ -329,6 +329,34 @@ The popup provides quick controls without requiring full-page takeover:
 </html>
 ```
 
+## Syntax-Aware Tokenization for Code Content
+
+Developers often read pages containing code snippets. A syntax-aware tokenizer can detect and handle code blocks differently from prose:
+
+```javascript
+function tokenizeWithCode(text) {
+  const codeBlockRegex = /```[\s\S]*?```/g;
+  const parts = text.split(codeBlockRegex);
+
+  return text.match(codeBlockRegex) || [];
+}
+```
+
+This allows your reader to slow down for technical terms or skip code blocks entirely, depending on user preference.
+
+## Alternative Focus Point: ORP at 30% Offset
+
+While the center-pivot method works well, some implementations use the Optimal Recognition Point (ORP) positioned at roughly 30% from the start of a word, which better matches natural eye fixation:
+
+```javascript
+function highlightORP(word) {
+  const orpIndex = Math.floor(word.length * 0.3);
+  return word.slice(0, orpIndex) +
+    '<strong>' + word[orpIndex] + '</strong>' +
+    word.slice(orpIndex + 1);
+}
+```
+
 ## Selecting vs. Building
 
 Several quality extensions exist for different use cases. When evaluating existing options, consider:

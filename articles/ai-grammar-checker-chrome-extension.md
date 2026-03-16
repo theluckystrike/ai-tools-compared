@@ -220,6 +220,38 @@ To create a functional grammar checker extension, start with these steps:
 
 Many developers extend these basics by adding custom dictionaries, supporting multiple languages, or integrating with writing tools like Notion, Google Docs, and GitHub.
 
+## Academic Writing Configuration
+
+Academic writers need grammar checkers that understand formal tone, citation formatting, and style guide conventions. Add configurable style guide support:
+
+```javascript
+chrome.storage.sync.set({
+  styleGuide: 'apa', // apa, mla, chicago, ieee, nature
+  checkPassiveVoice: true,
+  checkCitationFormat: true,
+  formalTone: true
+});
+
+async function applyStyleSettings() {
+  const settings = await chrome.storage.sync.get([
+    'styleGuide', 'checkPassiveVoice', 'formalTone'
+  ]);
+
+  return {
+    mode: 'academic',
+    rules: {
+      passive_voice: settings.checkPassiveVoice,
+      formal_tone: settings.formalTone,
+      citation_style: settings.styleGuide
+    }
+  };
+}
+```
+
+Academic use cases include research paper drafting (flagging passive voice, suggesting precise vocabulary), thesis and dissertation checking (tracking repeated issues across sessions), conference submissions (word count compliance, required sections, acronym definitions), and peer review notes (maintaining professional tone).
+
+For unpublished research, prefer self-hosted grammar solutions or services that don't store text, and use Chrome's secure storage for API keys.
+
 The ecosystem around AI-powered writing assistance continues to evolve rapidly. Building one yourself gives you full control over the user experience and lets you customize behavior for specific use cases—whether that's technical documentation, code comments, or creative writing.
 
 ## Related Reading

@@ -173,6 +173,25 @@ API costs accumulate when processing every note through external AI services. Co
 
 Security deserves attention when granting extensions access to your browsing data. Review what data the extension accesses, where it sends that data, and how it handles authentication. Extensions with clear privacy policies and minimal permission requests generally deserve more trust.
 
+## Lightweight Non-AI Note Taking
+
+Not every workflow needs AI processing. A basic note-taking extension stores captured text with metadata using only Chrome's storage APIs:
+
+```javascript
+function saveNoteToStorage(note, url, title) {
+  const timestamp = new Date().toISOString();
+  const noteEntry = { note, url, title, timestamp };
+
+  chrome.storage.local.get(["notes"], (result) => {
+    const notes = result.notes || [];
+    notes.push(noteEntry);
+    chrome.storage.local.set({ notes });
+  });
+}
+```
+
+This approach is fast, works offline, and avoids API costs. Common use cases include API documentation capture (saving endpoint details with source URLs), bug tracking (documenting browser-specific issues with reproduction steps), research compilation (gathering information from multiple sources with automatic tagging by project), and building a code snippet library with origin URLs attached.
+
 ## Conclusion
 
 AI note taker Chrome extensions represent a powerful category of productivity tools that can significantly enhance how you capture and organize information from the web. Whether you choose to build your own extension or integrate an existing solution, understanding the underlying architecture helps you make informed decisions about storage, AI processing, and workflow integration.

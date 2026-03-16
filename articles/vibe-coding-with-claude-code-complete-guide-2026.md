@@ -101,6 +101,63 @@ Claude applies design principles—better spacing, color scheme, typography—to
 
 Each iteration builds on the previous. You're directing; Claude executes.
 
+## Code Example: Express REST API
+
+Here's what a typical vibe coding session produces. Suppose you want a REST API endpoint:
+
+```
+You: Create a Node.js Express route for CRUD operations on tasks. Each task has id, title, description, status, and createdAt fields. Use in-memory storage for now.
+```
+
+Claude generates working code:
+
+```javascript
+const express = require('express');
+const router = express.Router();
+
+let tasks = [];
+let nextId = 1;
+
+router.get('/tasks', (req, res) => {
+  res.json(tasks);
+});
+
+router.post('/tasks', (req, res) => {
+  const task = {
+    id: nextId++,
+    title: req.body.title,
+    description: req.body.description,
+    status: req.body.status || 'pending',
+    createdAt: new Date().toISOString()
+  };
+  tasks.push(task);
+  res.status(201).json(task);
+});
+
+router.put('/tasks/:id', (req, res) => {
+  const task = tasks.find(t => t.id === parseInt(req.params.id));
+  if (!task) return res.status(404).json({ error: 'Task not found' });
+
+  task.title = req.body.title ?? task.title;
+  task.description = req.body.description ?? task.description;
+  task.status = req.body.status ?? task.status;
+
+  res.json(task);
+});
+
+router.delete('/tasks/:id', (req, res) => {
+  const index = tasks.findIndex(t => t.id === parseInt(req.params.id));
+  if (index === -1) return res.status(404).json({ error: 'Task not found' });
+
+  tasks.splice(index, 1);
+  res.status(204).send();
+});
+
+module.exports = router;
+```
+
+You didn't write this code — you described what you needed. That's the essence of vibe coding.
+
 ## When Vibe Coding Works Best
 
 Vibe coding shines for prototypes, internal tools, and MVPs. It's effective when you understand the domain but want to move fast. The conversational flow maps well to iterative development—you describe what you want, see what Claude builds, then refine.
