@@ -5,6 +5,10 @@ description: "A practical comparison of Gemini and Claude for extracting insight
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-summarizing-quarterly-earnings-call-transcripts/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
