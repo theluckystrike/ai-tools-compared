@@ -1,30 +1,40 @@
 ---
 layout: default
 title: "Copilot vs Claude Code for Scaffolding New Django REST Framework Project"
-description: "A practical comparison of GitHub Copilot and Claude Code for scaffolding new Django REST Framework projects. Includes code examples, workflow differences, and recommendations for developers."
+description: "A practical comparison of GitHub Copilot and Claude Code for scaffolding Django REST Framework projects. Learn which AI tool better handles DRF project setup, API views, serializers, and URL configurations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/
 ---
 
-# Copilot vs Claude Code for Scaffolding New Django REST Framework Project
+{% raw %}
+When starting a new Django REST Framework (DRF) project, developers often wonder which AI coding assistant will speed up their workflow the most. Both GitHub Copilot and Claude Code offer intelligent code completion and generation, but they approach project scaffolding differently. This guide breaks down how each tool handles DRF-specific tasks, from initial project setup to creating API views and serializers.
+{% endraw %}
 
-When starting a new Django REST Framework (DRF) project, developers often face a common bottleneck: setting up the initial project structure, models, serializers, views, and URLs takes time even when you know the patterns. AI coding assistants have become valuable tools for accelerating this scaffolding process, and two options stand out for terminal-based workflows—GitHub Copilot and Claude Code. Each takes a different approach to helping you bootstrap a DRF project, and understanding these differences helps you choose the right tool for your workflow.
+## Setting Up the Project Structure
 
-## Understanding the Tools
+Both tools can help generate Django project structure, but their approaches differ significantly. GitHub Copilot excels at completing familiar Django patterns based on its training data, while Claude Code often provides more deliberate, step-by-step guidance through its Claude Code CLI.
 
-GitHub Copilot functions primarily as an inline autocomplete assistant integrated into your IDE. It suggests code as you type, drawing on context from your current file and project. Copilot works well for incremental additions—adding a field to a model, creating a serializer method, or generating a viewset. However, it requires you to be actively editing files and typically generates one suggestion at a time.
+For a new DRF project, you'll typically run:
 
-Claude Code, by contrast, operates as a terminal-based AI assistant that can execute commands, read files, and make edits across your entire project. You interact with it through natural language prompts, describing what you want to build rather than writing every line yourself. Claude Code can scaffold entire file structures in response to a single request.
+{% raw %}
+```bash
+django-admin startproject myapiproject
+cd myapiproject
+python manage.py startapp api
+```
+{% endraw %}
 
-## Setting Up a New DRF Project
+After running these commands, Copilot will suggest the next steps automatically as you type, offering completion for INSTALLED_APPS and other configuration. It recognizes Django patterns and can predict what comes next in your settings.py file.
 
-The initial setup for a Django REST Framework project follows a predictable pattern: create the project, install dependencies, configure settings, and build out your first app. Here's how each tool approaches this.
+Claude Code, when used with the CLI, can actively reason about your entire project structure and suggest modifications across multiple files. Instead of just completing what you're typing, it can generate entire files based on your requirements.
 
-With GitHub Copilot, you'd typically start by creating the project manually using `django-admin startproject`, then open each file and let Copilot suggest the additions. For example, when editing `settings.py`, Copilot might suggest adding REST framework and CORS configurations as you type:
+## Configuring Django Settings
 
+Once your project structure is ready, you'll need to configure settings.py for DRF. This involves adding rest_framework to INSTALLED_APPS and configuring middleware:
+
+{% raw %}
 ```python
-# settings.py - Copilot suggests adding these INSTALLED_APPS
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -34,140 +44,204 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'api',
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    # ... other middleware
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+```
+{% endraw %}
 
+Copilot handles these configurations well, suggesting standard patterns based on common Django setups. Claude Code can explain each middleware's purpose and recommend whether you need CORS headers or specific security middleware based on your deployment environment.
+
+## Installing Dependencies
+
+DRF requires specific packages. Here's what your requirements.txt might include:
+
+{% raw %}
+```python
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+django-filter==23.5
+psycopg2-binary==2.9.9
+djangorestframework-camel-case==1.4.0
+python-dotenv==1.0.0
+```
+{% endraw %}
+
+When adding these to your settings.py, Copilot often suggests the standard REST_FRAMEWORK configuration based on common patterns:
+
+{% raw %}
+```python
 REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100,
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
 ```
+{% endraw %}
 
-Copilot excels at filling in boilerplate once you start writing, but you still need to know what to write and where.
+Claude Code can explain each setting's purpose and recommend configurations tailored to your specific use case, whether you're building a public API or internal service.
 
-Claude Code can handle the entire scaffolding in one interaction. You describe your goal, and Claude executes the necessary steps:
+## Creating Serializers
 
-```
-You: Create a new Django REST Framework project called "booksapi" with user authentication, CORS headers, and a "books" app with Author and Book models,ModelSerializer, and viewsets.
-```
+Serializer files are where DRF shines. Copilot quickly generates basic ModelSerializer classes:
 
-Claude Code would then create the project structure, generate the necessary files, and produce working code like this for your models:
-
+{% raw %}
 ```python
-# books/models.py
-from django.db import models
-from django.contrib.auth.models import User
-
-class Author(models.Model):
-    name = models.CharField(max_length=200)
-    bio = models.TextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.name
-
-class Book(models.Model):
-    title = models.CharField(max_length=300)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books')
-    isbn = models.CharField(max_length=13, unique=True)
-    published_date = models.DateField(null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    
-    class Meta:
-        ordering = ['-created_at']
-    
-    def __str__(self):
-        return self.title
-```
-
-And the corresponding serializer:
-
-```python
-# books/serializers.py
 from rest_framework import serializers
-from .models import Author, Book
+from .models import Product, Category
 
-class AuthorSerializer(serializers.ModelSerializer):
-    books_count = serializers.SerializerMethodField()
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name', 'slug']
+
+class ProductSerializer(serializers.ModelSerializer):
+    category = CategorySerializer(read_only=True)
+    category_id = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        source='category',
+        write_only=True
+    )
     
     class Meta:
-        model = Author
-        fields = ['id', 'name', 'bio', 'created_at', 'books_count']
-        read_only_fields = ['created_at']
-    
-    def get_books_count(self, obj):
-        return obj.books.count()
-
-class BookSerializer(serializers.ModelSerializer):
-    author_name = serializers.CharField(source='author.name', read_only=True)
-    
-    class Meta:
-        model = Book
-        fields = ['id', 'title', 'author', 'author_name', 'isbn', 
-                  'published_date', 'price', 'created_at', 'updated_at']
+        model = Product
+        fields = ['id', 'name', 'slug', 'price', 'description', 'category', 'category_id', 'created_at', 'updated_at']
         read_only_fields = ['created_at', 'updated_at']
 ```
+{% endraw %}
 
-## Workflow Differences in Practice
+Claude Code tends to ask clarifying questions about relationships, validation requirements, and whether you need nested serializers or hypermedia controls. This often results in more complete serializers with custom validation logic included from the start.
 
-The practical difference between these tools becomes clear when you consider how you interact with them. GitHub Copilot works best when you're actively coding and want suggestions without leaving your editor. You type, Copilot suggests, you tab to accept or ignore. This works well for adding features incrementally or when you want tight editor integration.
+## Building API Views
 
-Claude Code requires switching to the terminal, but in return you get the ability to run commands, create multiple files, and work at a higher level of abstraction. For scaffolding a new project, this is often faster—you describe what you want rather than manually creating each file.
+Viewsets and generic views represent another area where these tools differ. Copilot provides completion for standard ViewSet methods:
 
-Both tools handle common DRF patterns well. When you need to add filtering, pagination, or authentication to a viewset, Copilot will suggest the additions as you type the code. Claude Code can generate an entire ViewSet with these features in one go:
-
+{% raw %}
 ```python
-# books/views.py
-from rest_framework import viewsets, filters
-from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework import viewsets
+from rest_framework import filters
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import Author, Book
-from .serializers import AuthorSerializer, BookSerializer
+from .models import Order, Customer
+from .serializers import OrderSerializer, CustomerSerializer
 
-class StandardPagination(PageNumberPagination):
-    page_size = 20
-    page_size_query_param = 'page_size'
-    max_page_size = 100
-
-class AuthorViewSet(viewsets.ModelViewSet):
-    queryset = Author.objects.all()
-    serializer_class = AuthorSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+class CustomerViewSet(viewsets.ModelViewSet):
+    queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['name', 'bio']
-    ordering_fields = ['name', 'created_at']
+    filterset_fields = ['is_active', 'created_at']
+    search_fields = ['name', 'email']
+    ordering_fields = ['created_at', 'name']
 
-class BookViewSet(viewsets.ModelViewSet):
-    queryset = Book.objects.select_related('author').all()
-    serializer_class = BookSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['author', 'published_date']
-    search_fields = ['title', 'author__name', 'isbn']
-    ordering_fields = ['title', 'published_date', 'price', 'created_at']
-    pagination_class = StandardPagination
+class OrderViewSet(viewsets.ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
 ```
+{% endraw %}
 
-## When to Use Each Tool
+Claude Code can generate more sophisticated views with filtering, pagination, and permission classes already integrated. It often suggests adding:
 
-GitHub Copilot shines when you're comfortable with the code you're writing and want quick suggestions to speed up typing. It's ideal for developers who prefer staying in their IDE and want subtle assistance rather than a conversational partner. Copilot works particularly well for repetitive patterns—adding the same field type across multiple models, or generating standard CRUD endpoints.
+- Custom pagination classes for large datasets
+- Permission classes for authentication
+- Throttling for rate limiting
+- Filtering backends for query parameter support
+- Custom actions for business logic
 
-Claude Code excels at exploration and larger tasks. When you're setting up a new project structure, need to understand unfamiliar code, or want to make coordinated changes across multiple files, the terminal-based workflow provides more flexibility. Claude Code also handles non-coding questions and tasks, making it useful as a general development assistant.
+## Configuring URLs
 
-For Django REST Framework specifically, Claude Code often provides a faster path to a working scaffold because it can generate complete file structures in response to descriptive prompts. Once the scaffold exists, you can use either tool for incremental additions—both understand DRF patterns well.
+URL routing in DRF can get complex. Copilot handles standard router patterns well:
 
-## Making Your Choice
+{% raw %}
+```python
+from django.urls import path, include
+from rest_framework import routers
+from .views import ProductViewSet, CategoryViewSet, OrderViewSet
 
-Your decision between Copilot and Claude Code for scaffolding DRF projects ultimately depends on your workflow preferences. If you want IDE-integrated autocomplete and prefer writing code while receiving suggestions, GitHub Copilot fits naturally into your existing editor. If you prefer describing what you want to build and having the tool execute the creation, Claude Code offers a more direct path to a scaffolded project.
+router = routers.DefaultRouter()
+router.register(r'products', ProductViewSet, basename='product')
+router.register(r'categories', CategoryViewSet, basename='category')
+router.register(r'orders', OrderViewSet, basename='order')
 
-Many developers actually use both—Copilot for day-to-day coding in their editor and Claude Code for project setup and exploration. Both tools understand Django and DRF patterns well enough to produce useful code, so you can choose based on how you want to work rather than worrying about capability differences for this specific use case.
+urlpatterns = [
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+]
+```
+{% endraw %}
+
+Claude Code might suggest additional URL patterns for nested routes, custom actions, or API documentation endpoints alongside the standard CRUD operations.
+
+## Authentication and Permissions
+
+Setting up authentication is another area where these tools differ. Copilot will suggest standard permission classes:
+
+{% raw %}
+```python
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
+from rest_framework.authentication import TokenAuthentication, SessionAuthentication
+
+class IsOwnerOrReadOnly(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+        return obj.owner == request.user
+```
+{% endraw %}
+
+Claude Code can discuss OAuth2 vs token-based authentication and help you implement JWT authentication or integrate with Django's built-in authentication system.
+
+## Testing Your API
+
+Both tools can generate test cases, but Copilot excels at creating standard pytest or unittest patterns:
+
+{% raw %}
+```python
+from django.test import TestCase
+from rest_framework.test import APITestCase
+from rest_framework import status
+from .models import Product
+
+class ProductAPITestCase(APITestCase):
+    def setUp(self):
+        self.user = User.objects.create_user('testuser', 'test@example.com', 'password')
+        self.client.force_authenticate(user=self.user)
+    
+    def test_create_product(self):
+        data = {'name': 'New Product', 'price': '99.99', 'description': 'Test'}
+        response = self.client.post('/api/products/', data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+```
+{% endraw %}
+
+## Which Tool Should You Choose?
+
+Choose GitHub Copilot if:
+- You're already familiar with DRF patterns
+- You want quick, familiar code completions
+- You're working on standard CRUD APIs
+- You prefer inline suggestions while typing
+
+Choose Claude Code if:
+- You need help understanding DRF concepts
+- Your API has complex requirements
+- You want more comprehensive, production-ready code
+- You prefer explaining your requirements conversationally
+- You want help with architectural decisions
+
+Both tools significantly speed up DRF development. Many developers use both: Copilot for quick completions and Claude Code for more complex architectural decisions and learning new patterns. The choice ultimately depends on your experience level and whether you prefer completion-based or conversation-based assistance.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
