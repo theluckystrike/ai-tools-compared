@@ -6,6 +6,10 @@ description: "A practical comparison of Cursor and Windsurf when building drag-a
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When building drag-and-drop interfaces in React, choosing the right AI coding assistant can significantly speed up your development workflow. Both Cursor and Windsurf are AI-powered code editors built on VS Code, but they approach coding assistance differently. This comparison evaluates how each tool handles React DnD implementation.
