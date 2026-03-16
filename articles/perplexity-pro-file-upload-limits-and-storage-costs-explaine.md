@@ -5,6 +5,10 @@ description: "A practical guide to Perplexity Pro's file upload limits, storage 
 date: 2026-03-16
 author: theluckystrike
 permalink: /perplexity-pro-file-upload-limits-and-storage-costs-explaine/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 voice-checked: true
 ---
 

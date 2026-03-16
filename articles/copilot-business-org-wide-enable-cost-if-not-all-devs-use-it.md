@@ -6,6 +6,10 @@ description: "A practical guide to understanding GitHub Copilot Business pricing
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 voice-checked: true
 ---
 
