@@ -341,7 +341,7 @@ This configuration allows Claude to read files and run git commands only, with n
 - [Claude Code Permissions Model and Security Guide](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
 - [Claude Code Skill Permission Denied Error Fix 2026](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [Claude Code Permission Denied When Executing Skill Commands](/claude-skills-guide/claude-code-permission-denied-when-executing-skill-commands/)
-- [Claude Code Skill Permission Scope Error: Fix Guide](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/)
+- [Claude Code Skill Permission Scope Error: Fix Guide](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [How Do I Limit What a Claude Skill Can Access on Disk](/claude-skills-guide/how-do-i-limit-what-a-claude-skill-can-access-on-disk/)
 - [Claude Skills Access Control and Permissions Enterprise Guide](/claude-skills-guide/claude-skills-access-control-and-permissions-enterprise/)
 - [Claude Skills Governance Security Audit Checklist](/claude-skills-guide/claude-skills-governance-security-audit-checklist/)
@@ -473,7 +473,7 @@ Understanding and configuring Claude Code's permission model.
 - [Claude Code Permissions Model and Security Guide](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
 - [Claude Code Skill Permission Denied Error Fix 2026](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [Claude Code Permission Denied When Executing Skill Commands](/claude-skills-guide/claude-code-permission-denied-when-executing-skill-commands/)
-- [Claude Code Skill Permission Scope Error: Fix Guide](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/)
+- [Claude Code Skill Permission Scope Error: Fix Guide](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [How Do I Limit What a Claude Skill Can Access on Disk](/claude-skills-guide/how-do-i-limit-what-a-claude-skill-can-access-on-disk/)
 - [Claude Skills Access Control and Permissions Enterprise Guide](/claude-skills-guide/claude-skills-access-control-and-permissions-enterprise/)
 - [Claude Skills Governance Security Audit Checklist](/claude-skills-guide/claude-skills-governance-security-audit-checklist/)
@@ -638,7 +638,7 @@ Step-by-step project guides that demonstrate skills in action.
 
 Answers to specific skill selection questions.
 
-- [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/what-is-the-best-claude-skill-for-automated-code-review/)
+- [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/)
 - [What Is the Best Claude Skill for Generating Documentation](/claude-skills-guide/what-is-the-best-claude-skill-for-generating-documentation/)
 - [What Is the Best Claude Skill for Python Data Workflows](/claude-skills-guide/what-is-the-best-claude-skill-for-python-data-workflows/)
 - [What Is the Best Claude Skill for REST API Development](/claude-skills-guide/what-is-the-best-claude-skill-for-rest-api-development/)

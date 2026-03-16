@@ -41,7 +41,7 @@ Start here. Find your error, check the likely cause, apply the fix, then follow 
 | Skill not showing up in list | File not in correct directory or wrong extension | Check that the file is `.md` and in the skills directory | [Not Showing Up Guide](/claude-skills-guide/why-is-my-claude-skill-not-showing-up-fix-guide/) |
 | YAML parsing error | Syntax error in front matter (bad quotes, missing colon) | Validate YAML with a linter; check for tabs vs spaces | [YAML Error Fix](/claude-skills-guide/claude-skill-yaml-front-matter-parsing-error-fix/) |
 | Permission denied | Skill requesting file system or shell access without approval | Grant required permissions in Claude Code settings | [Permission Denied Fix](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) |
-| Permission scope error | Skill scope is broader than the approved permission level | Narrow the skill's requested scope or elevate permissions | [Permission Scope Guide](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/) |
+| Permission scope error | Skill scope is broader than the approved permission level | Narrow the skill's requested scope or elevate permissions | [Permission Scope Guide](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) |
 | Tool not found | Skill references a tool not installed or not accessible | Install the missing tool or correct the tool name in the skill | [Tool Not Found Fix](/claude-skills-guide/claude-code-skill-tool-not-found-error-solution/) |
 | Claude crashes on skill load | Malformed skill body or circular dependency | Simplify the skill body; remove recursive references | [Crash Debug Guide](/claude-skills-guide/claude-code-crashes-when-loading-skill-debug-steps/) |
 | Slow skill response | Skill body too large; too many tool calls per turn | Split the skill; reduce context loaded per invocation | [Slow Performance Fix](/claude-skills-guide/claude-skills-slow-performance-speed-up-guide/) |
@@ -78,7 +78,7 @@ Claude Code operates a layered permissions model. Skills that request file syste
 Understanding the full permissions model before deploying skills in production environments prevents most security-related issues from occurring in the first place.
 
 - [Claude Code Skill Permission Denied Error Fix (2026)](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
-- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/)
+- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [Claude Code Permissions Model and Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
 
 ---
@@ -197,7 +197,7 @@ These issues are usually caused by insufficient context in the skill body or CLA
 | [Claude Code Skill Tool Not Found Error: Solutions](/claude-skills-guide/claude-code-skill-tool-not-found-error-solution/) | Fix tool-not-found errors in Claude Code skill execution |
 | [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) | Handle and prevent context window overflow in skill sessions |
 | [Claude Code Permissions Model and Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/) | Understanding Claude Code's permission and security model |
-| [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/) | Understanding and resolving permission scope errors |
+| [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) | Understanding and resolving permission scope errors |
 | [Claude Skills Slow Performance: Speed Up Guide](/claude-skills-guide/claude-skills-slow-performance-speed-up-guide/) | Diagnosing and fixing slow skill performance |
 | [How to Fix Claude Skill Infinite Loop Issues](/claude-skills-guide/how-to-fix-claude-skill-infinite-loop-issue/) | Identifying and resolving infinite loop bugs in Claude skills |
 | [Claude Code Skill Output Formatting Broken Fix](/claude-skills-guide/claude-code-skill-output-formatting-broken-fix/) | Diagnosing and fixing broken output formatting |

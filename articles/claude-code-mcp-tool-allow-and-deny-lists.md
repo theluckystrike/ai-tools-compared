@@ -152,7 +152,7 @@ When tools you previously used suddenly become unavailable, you may have acciden
 
 - [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
 - [MCP Server Permission Auditing Best Practices](/claude-skills-guide/mcp-server-permission-auditing-best-practices/)
-- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/)
+- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [Advanced Hub](/claude-skills-guide/advanced-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

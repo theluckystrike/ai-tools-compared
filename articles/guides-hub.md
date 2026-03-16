@@ -92,7 +92,7 @@ Security is one of Claude Code's strongest applied domains. Claude understands s
 - [Claude Code Skills for Security Engineers and Pentesters](/claude-skills-guide/claude-code-skills-for-security-engineers-and-pentesters/) — How security engineers use Claude Code for pen testing and review
 - [How to Make Claude Code Write Secure Code Always](/claude-skills-guide/how-to-make-claude-code-write-secure-code-always/) — System-level configuration to enforce secure coding by default
 - [Claude Code German Enterprise Compliance Workflow Tips](/claude-skills-guide/claude-code-german-enterprise-compliance-workflow-tips/) — Compliance considerations for German enterprise environments
-- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/) — Understanding and resolving permission scope errors
+- [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) — Understanding and resolving permission scope errors
 - [Claude Skill Permissions: What Can Skills Access?](/claude-skills-guide/claude-skill-permissions-what-can-skills-access/) — The complete permissions model for Claude skills
 - [Claude Skills Access Control and Permissions Enterprise Guide](/claude-skills-guide/claude-skills-access-control-and-permissions-enterprise/) — Enterprise access control configuration for skill deployments
 
@@ -267,7 +267,7 @@ Vibe coding represents a workflow shift: generating working code through rapid i
 - [Vibe Coding Productivity Tips and Best Practices](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) — Practical tips for maximizing productivity in vibe coding sessions
 - [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) — The definitive guide to vibe coding methodology with Claude Code
 - [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/what-is-claude-code-and-why-developers-love-it-2026/) — Overview of Claude Code and its developer appeal
-- [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/what-is-the-best-claude-skill-for-automated-code-review/) — Top skills for automated code review workflows
+- [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Top skills for automated code review workflows
 - [What Is the Best Claude Skill for Generating Documentation](/claude-skills-guide/what-is-the-best-claude-skill-for-generating-documentation/) — Documentation generation skill recommendations
 - [What Is the Best Claude Skill for Python Data Workflows](/claude-skills-guide/what-is-the-best-claude-skill-for-python-data-workflows/) — Top skills for Python data science pipelines
 - [What Is the Best Claude Skill for REST API Development](/claude-skills-guide/what-is-the-best-claude-skill-for-rest-api-development/) — REST API development skill recommendations
@@ -362,7 +362,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [Claude Code Security Code Review Checklist Automation](/claude-skills-guide/claude-code-security-code-review-checklist-automation/) | Security |
 | [Semantic HTML Accessibility with Claude Code Guide](/claude-skills-guide/claude-code-semantic-html-accessibility-improvement-guide/) | Accessibility |
 | [Claude Code Sentry Error Tracking Source Maps Workflow](/claude-skills-guide/claude-code-sentry-error-tracking-source-maps-workflow/) | Tools |
-| [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/) | Security |
+| [Claude Code Skill Permission Scope Error Explained](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) | Security |
 | [Claude Code Skills for iOS Swift Development](/claude-skills-guide/claude-code-skills-for-ios-swift-development/) | Mobile |
 | [Claude Code Skills for Japanese Developers Workflow Guide](/claude-skills-guide/claude-code-skills-for-japanese-developers-workflow-guide/) | Localization |
 | [Claude Code Skills for Product Engineers Building Full Stack](/claude-skills-guide/claude-code-skills-for-product-engineers-building-full-stack/) | Enterprise |
@@ -471,7 +471,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [Vibe Coding Productivity Tips and Best Practices](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) | Productivity |
 | [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) | Productivity |
 | [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/what-is-claude-code-and-why-developers-love-it-2026/) | Getting Started |
-| [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/what-is-the-best-claude-skill-for-automated-code-review/) | Productivity |
+| [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/) | Productivity |
 | [What Is the Best Claude Skill for Generating Documentation](/claude-skills-guide/what-is-the-best-claude-skill-for-generating-documentation/) | Productivity |
 | [What Is the Best Claude Skill for Python Data Workflows](/claude-skills-guide/what-is-the-best-claude-skill-for-python-data-workflows/) | Data Science |
 | [What Is the Best Claude Skill for REST API Development](/claude-skills-guide/what-is-the-best-claude-skill-for-rest-api-development/) | Backend |

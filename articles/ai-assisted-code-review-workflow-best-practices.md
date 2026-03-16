@@ -163,7 +163,7 @@ The skill reads your codebase context and applies rules that match your architec
 
 ## Getting Started Today
 
-Start small with one review skill and expand as your team builds confidence. The **best-way-to-use-claude-code-for-code-review-prep** skill helps you prepare code for review efficiently.
+Start small with one review skill and expand as your team builds confidence. The **claude-code-for-code-review-preparation-tips** skill helps you prepare code for review efficiently.
 
 Most teams see immediate value from basic formatting and security checks. As you add more rules and refine configurations, the quality of feedback improves. The goal is faster iteration cycles without sacrificing code quality.
 

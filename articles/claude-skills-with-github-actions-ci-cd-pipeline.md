@@ -24,7 +24,7 @@ GitHub Actions handles orchestration. Claude handles intelligence. Together they
 
 Common use cases include:
 
-- [Automated code review comments on PRs](/claude-skills-guide/what-is-the-best-claude-skill-for-automated-code-review/) analyzing test coverage
+- [Automated code review comments on PRs](/claude-skills-guide/best-claude-skills-for-code-review-automation/) analyzing test coverage
 - PDF report generation from test results
 - Accessibility and design checks on front-end PRs
 - Security analysis of infrastructure diffs before deployment

@@ -171,7 +171,7 @@ resource_limits:
   max_network_calls: 50
 ```
 
-The `xlsx` skill, for instance, would declare spreadsheet file access, while the `docker` skill would require container runtime permissions. Skills like `supermemory` that handle persistent context should declare appropriate data access permissions. For developers troubleshooting a specific denied invocation, the [skill permission scope error guide](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/) explains what each error message means and how to resolve it.
+The `xlsx` skill, for instance, would declare spreadsheet file access, while the `docker` skill would require container runtime permissions. Skills like `supermemory` that handle persistent context should declare appropriate data access permissions. For developers troubleshooting a specific denied invocation, the [skill permission scope error guide](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) explains what each error message means and how to resolve it.
 
 ## Practical Examples: Enterprise Skill Deployment
 
@@ -236,7 +236,7 @@ The key is treating permissions as a first-class concern in your Claude Code dep
 
 - [Claude Code Permissions Model and Security Guide](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
 - [Claude Skills for Enterprise Security & Compliance Guide](/claude-skills-guide/claude-skills-for-enterprise-security-compliance-guide/)
-- [Claude Code Skill Permission Scope Error: Fix Guide](/claude-skills-guide/claude-code-skill-permission-scope-error-explained/)
+- [Claude Code Skill Permission Scope Error: Fix Guide](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/)
 - [Structuring Claude Skills for Large Enterprise Codebases](/claude-skills-guide/structuring-claude-skills-for-large-enterprise-codebases/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

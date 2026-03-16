@@ -240,7 +240,7 @@ Claude skills for writing unit tests automatically handle the mechanical parts o
 ## Related Reading
 
 - [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build a complete CI/CD testing pipeline around the /tdd skill
-- [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/what-is-the-best-claude-skill-for-automated-code-review/) — Combine test generation with automated code review for complete coverage
+- [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Combine test generation with automated code review for complete coverage
 - [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) — Automate test generation and review as part of your CI/CD workflow
 - [Claude Skills Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore the full range of skills available for developer workflows
 
