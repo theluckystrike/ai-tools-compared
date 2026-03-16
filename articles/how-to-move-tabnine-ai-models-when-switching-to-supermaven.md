@@ -174,4 +174,9 @@ While you cannot directly transfer Tabnine AI model files to Supermaven due to a
 
 The key to a successful switch lies in understanding what can transfer (preferences, settings) and what cannot (trained model files), then configuring Supermaven to match your workflow. With proper preparation, you will be productive with Supermaven in no time.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

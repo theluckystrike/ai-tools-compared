@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Migrate From Copilot for Neovim to Claude Code Terminal Workflow"
+title: "How to Migrate From Copilot for Neovim to Claude Code."
 description: "A practical guide for developers moving from Copilot for Neovim to Claude Code terminal workflow, with configuration examples and migration tips."
 date: 2026-03-16
 author: "theluckystrike"
@@ -145,5 +145,10 @@ This customization brings some of the convenience of Copilot's quick actions whi
 The migration from Copilot for Neovim to Claude Code terminal workflow represents a shift from passive suggestion acceptance to active AI collaboration. You gain deeper project analysis, better multi-file refactoring capabilities, and more control over your AI interactions. The adjustment period is brief—most developers find their new workflow within a week.
 
 Start by using Claude Code for one task per day, then gradually expand as you discover where it provides the most value. The terminal becomes your new AI-powered development environment, one that scales with your project's complexity.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
