@@ -5,6 +5,10 @@ description: "Fix Chrome iOS slow performance with developer-focused solutions. 
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-ios-slow-fix/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome iOS Slow Fix: A Developer's Guide to Speed Optimization
