@@ -187,6 +187,11 @@ Extended thinking in Claude API provides deeper reasoning capabilities at the co
 
 Monitor your usage patterns, set appropriate limits, and enable extended thinking selectively to balance cost and performance for your specific use case.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
