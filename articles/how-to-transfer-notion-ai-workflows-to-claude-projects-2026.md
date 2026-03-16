@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-If you have built automated workflows in Notion that leverage AI capabilities, you likely face a challenge in 2026: moving those workflows to a more developer-centric environment. Claude Projects offers a powerful alternative with native code execution, custom tool creation, and direct API access. This guide walks you through transferring your Notion AI workflows to Claude Projects effectively.
+Transfer your Notion AI workflows to Claude Projects by exporting Notion databases as Markdown or CSV, converting them to JSON data files, then replacing AI blocks and database triggers with explicit prompt templates and Python scripts. Map Notion database properties to JSON structures, convert implicit AI block prompts to standalone prompt files, and use file watchers or cron scheduling in place of Notion's webhook triggers. Claude Projects gives you native code execution, multi-file context, and custom tool creation that Notion's block-based system cannot match.
 
 ## Understanding the Core Differences
 

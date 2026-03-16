@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you have been using Grammarly and built up a personal dictionary with custom words, acronyms, and domain-specific terms, losing that data when switching to other AI writing tools can be frustrating. Whether you are moving to Claude, Cursor, or another AI assistant, preserving your personal dictionary ensures consistent writing quality across all your tools. This guide covers multiple methods to export your Grammarly personal dictionary.
+Export your Grammarly personal dictionary by locating the local SQLite database on Windows (`%APPDATA%\Grammarly\GrammarlyAppData\userdictionary\`) or macOS (`~/Library/Application Support/Grammarly/`), then extracting the word list with a Python script or SQLite viewer. For browser extension users, pull dictionary data from Local Storage via Developer Tools. Once exported, you can import your custom words into Claude, VS Code, Neovim, or any other tool that supports custom dictionaries.
 
 ## Why Your Personal Dictionary Matters
 

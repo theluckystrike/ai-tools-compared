@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-If you have built up a substantial Midjourney prompt library and want to use those prompts with Ideogram, you need to understand the key differences between how each platform interprets prompts and parameters. This guide covers the practical steps for converting your existing prompts, with working code examples you can adapt for automated migration.
+Transfer your Midjourney prompt library to Ideogram by stripping Midjourney-specific parameters (`--ar`, `--stylize`, `--v`), mapping aspect ratios to Ideogram's preset options, and converting style values into natural language descriptions. Use the Python converter scripts below to batch-process your entire prompt collection from a CSV export. Text-heavy prompts for logos and typography will often produce better results on Ideogram without additional modification.
 
 ## Understanding the Platform Differences
 
