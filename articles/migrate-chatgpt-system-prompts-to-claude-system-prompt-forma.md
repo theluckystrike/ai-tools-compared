@@ -1,0 +1,203 @@
+---
+layout: default
+title: "How to Migrate ChatGPT System Prompts to Claude System Prompt Format"
+description: "A practical guide for developers on converting ChatGPT system prompts to Claude's format, with code examples and best practices."
+date: 2026-03-16
+author: theluckystrike
+permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/
+---
+
+If you have invested time in crafting effective system prompts for ChatGPT, you likely want to reuse that work when switching to Claude. While both models accept system prompts, they have different formatting expectations and behavioral patterns. This guide shows you how to migrate your existing ChatGPT system prompts to Claude's format effectively.
+
+## Key Differences Between ChatGPT and Claude System Prompts
+
+Before converting your prompts, understand the fundamental differences between how each model processes system instructions.
+
+ChatGPT treats system prompts as a single continuous context that sets the overall behavior. Claude uses a more structured approach with its System Prompt functionality, where you can provide context through both the system prompt and through specific instructions in the conversation.
+
+The most significant practical difference is that Claude's system prompt typically benefits from being more explicit about constraints, reasoning steps, and output format expectations. Claude also has a useful feature called the `developer` message type, which allows you to provide additional instructions that take precedence over the main system prompt.
+
+## Converting Basic System Prompts
+
+The simplest migration involves taking a straightforward ChatGPT system prompt and adapting it for Claude. Here is a before-and-after example.
+
+**ChatGPT System Prompt:**
+```
+You are a Python code reviewer. Analyze code for bugs, performance issues, and best practice violations. Provide suggestions in a clear, numbered list format.
+```
+
+**Claude System Prompt:**
+```
+You are a Python code reviewer. Your task is to analyze code for bugs, performance issues, and best practice violations.
+
+When reviewing code:
+1. Identify specific issues with line numbers
+2. Explain why each issue is problematic
+3. Suggest concrete fixes
+4. Provide improved code snippets where applicable
+
+Format your response using clear numbered lists for each issue found.
+```
+
+Notice how the Claude version breaks down the instructions into numbered steps and explicitly states the expected output format. This structured approach helps Claude follow your instructions more precisely.
+
+## Handling Role-Based Prompts
+
+Many ChatGPT prompts define a specific role or persona. Migrating these requires adding specific behavioral guidelines that align with Claude's strengths.
+
+**ChatGPT System Prompt:**
+```
+You are a senior software architect. Help users design scalable systems. Always consider trade-offs and provide multiple options when available.
+```
+
+**Claude System Prompt:**
+```
+You are a senior software architect with expertise in distributed systems, microservices, and cloud-native applications.
+
+When helping users design systems:
+- Ask clarifying questions about scale, traffic patterns, and budget constraints before recommending architectures
+- Present at least 2-3 different approaches with trade-offs for each
+- Include infrastructure recommendations, not just application design
+- Flag potential bottlenecks and single points of failure
+- Consider both short-term velocity and long-term maintainability
+
+Provide diagrams or ASCII architecture sketches when they clarify your explanation.
+```
+
+The Claude version adds specific expertise areas and detailed behavioral guidelines that help the model provide more consistent, high-quality responses.
+
+## Migrating Prompts with Output Format Requirements
+
+If your ChatGPT prompts specify output formats like JSON, Markdown tables, or specific structures, you need to be explicit about these in Claude's format.
+
+**ChatGPT System Prompt:**
+```
+Generate API documentation in Markdown format. Include endpoint descriptions, parameters, request/response examples, and HTTP status codes.
+```
+
+**Claude System Prompt:**
+```
+Generate API documentation in Markdown format. Your output must include:
+
+## Endpoint Overview
+Brief description of what this endpoint does
+
+## HTTP Method and Path
+The complete URL including path parameters
+
+## Request Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| name | string | Yes | Description |
+
+## Request Example
+```bash
+curl -X GET "https://api.example.com/endpoint"
+```
+
+## Response Example
+```json
+{
+  "status": "success",
+  "data": {}
+}
+```
+
+## HTTP Status Codes
+- 200: Success
+- 400: Bad Request
+- 401: Unauthorized
+
+Always include working curl examples and valid JSON response samples.
+```
+
+The Claude version provides a template structure that ensures consistent output across different API endpoints.
+
+## Converting Multi-Part Instructions
+
+Complex prompts with multiple stages or modes require careful restructuring. Claude responds well to explicit stage definitions.
+
+**ChatGPT System Prompt:**
+```
+You are a data analyst. First, explain the data structure. Then perform analysis. Finally, create visualizations and summarize findings.
+```
+
+**Claude System Prompt:**
+```
+You are a data analyst helping users understand and visualize their data.
+
+Follow this three-stage process:
+
+### Stage 1: Data Exploration
+- Describe the data structure and schema
+- Identify key columns and their types
+- Note any data quality issues or missing values
+- Suggest initial hypotheses
+
+### Stage 2: Analysis
+- Perform the requested analysis
+- Show your methodology
+- Include relevant statistics
+- Explain significant findings
+
+### Stage 3: Visualization and Summary
+- Suggest appropriate chart types for the data
+- Provide Python or R code to generate visualizations
+- Summarize key insights in 2-3 sentences
+- Recommend next steps or further analysis
+
+Ask the user to clarify which specific analysis they want before proceeding to Stage 2.
+```
+
+Breaking the prompt into explicit stages helps Claude follow complex workflows and ensures nothing gets skipped.
+
+## Using Developer Messages Effectively
+
+Claude supports developer messages that take precedence over the system prompt. This feature is useful for prompt variants or conditional instructions.
+
+```python
+from anthropic import Anthropic
+
+client = Anthropic()
+
+# System prompt - general behavior
+system_prompt = """You are a helpful coding assistant."""
+
+# Developer message - specific instructions for this conversation
+developer_message = """For this session:
+- Prefer functional programming approaches
+- Always include type hints in Python code
+- Suggest unit tests for any code you write
+- Explain performance implications of your suggestions"""
+
+response = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    system=[system_prompt, developer_message],
+    messages=[{"role": "user", "content": "How do I filter a list in Python?"}]
+)
+```
+
+The developer message lets you layer specific instructions on top of your general system prompt without modifying the base prompt.
+
+## Best Practices for Migration
+
+When converting your prompts, follow these guidelines for the best results.
+
+Test incrementally by migrating one aspect of your prompt at a time. Run the converted prompt with Claude and verify the output matches your expectations before adding more modifications.
+
+Be explicit about output format expectations. Claude performs better with concrete templates than general requests for "well-formatted" output.
+
+Include reasoning steps for complex tasks. If you want Claude to show its work, explicitly ask for step-by-step reasoning before providing the final answer.
+
+Define edge case handling. Specify what Claude should do when inputs are ambiguous, incomplete, or outside expected parameters.
+
+Use the `xml` thinking feature for complex reasoning. Claude's extended thinking capability helps with multi-step problems when enabled in the system prompt.
+
+## Summary
+
+Migrating ChatGPT system prompts to Claude's format requires restructuring your instructions to be more explicit and structured. The key changes involve breaking down complex instructions into numbered steps, providing concrete output templates, and adding detailed behavioral guidelines.
+
+Start with your most critical prompts, convert them using the patterns shown above, and test thoroughly. Most prompts will benefit from the additional structure that Claude's format encourages, resulting in more consistent and predictable outputs.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
