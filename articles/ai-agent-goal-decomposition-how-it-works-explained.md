@@ -137,6 +137,6 @@ By embracing this structured approach, you unlock the full potential of AI agent
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-- [AI Agent Task Decomposition for Complex Projects Guide](/ai-agent-task-decomposition-for-complex-projects-guide/) — Practical strategies for breaking large software projects into manageable agent-executable subtasks.
+- [Fan-Out Fan-In Pattern with Claude Code Subagents](/claude-skills-guide/fan-out-fan-in-pattern-claude-code-subagents/) — Apply decomposition patterns to parallel agent execution
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
