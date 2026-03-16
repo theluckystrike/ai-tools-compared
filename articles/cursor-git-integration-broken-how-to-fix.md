@@ -9,6 +9,7 @@ categories: [troubleshooting]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 To fix broken Git integration in Cursor, first verify Git is installed and accessible by running `git --version` in your terminal, then confirm you opened the repository's root folder (not a subdirectory) in Cursor. If the Source Control panel remains empty, reset the Git index with `git reset` and check your authentication by running `ssh -T git@github.com`. For persistent issues, manually set the Git executable path in Cursor settings and disable recently installed extensions that may conflict.
@@ -23,9 +24,9 @@ Several symptoms indicate your Cursor Git integration has failed. The Source Con
 
 The most fundamental cause of broken Git integration is an incorrect Git path or missing Git installation entirely. Cursor relies on having Git accessible through your system PATH.
 
-**Diagnosis**: Open a terminal and run `git --version`. If this fails, Git is not installed or not in your PATH.
+Diagnosis: Open a terminal and run `git --version`. If this fails, Git is not installed or not in your PATH.
 
-**Solution**: Install Git if missing. On macOS, use Homebrew with `brew install git`. On Windows, download the official installer from git-scm.com and ensure you select "Git from the command line and also from 3rd-party software" during installation. After installation, restart Cursor completely.
+Solution: Install Git if missing. On macOS, use Homebrew with `brew install git`. On Windows, download the official installer from git-scm.com and ensure you select "Git from the command line and also from 3rd-party software" during installation. After installation, restart Cursor completely.
 
 If Git is installed but Cursor cannot find it, you can manually specify the path in Cursor settings. Press `Cmd+,` (Mac) or `Ctrl+,` (Windows), search for "git path", and enter the full path to your Git executable. On macOS, this is typically `/usr/bin/git` or `/usr/local/bin/git`. On Windows, it is usually `C:\Program Files\Git\cmd\git.exe`.
 
@@ -33,17 +34,17 @@ If Git is installed but Cursor cannot find it, you can manually specify the path
 
 Cursor may fail to recognize a repository, especially if you opened a subdirectory instead of the project root.
 
-**Diagnosis**: Check if the Source Control panel shows any repository information. Look for the branch name in the bottom-left status bar.
+Diagnosis: Check if the Source Control panel shows any repository information. Look for the branch name in the bottom-left status bar.
 
-**Solution**: Open the root folder of your Git repository in Cursor, not a subdirectory. You can verify your current workspace folder by checking the window title or using `File > Open Folder`. If you work with monorepos or multi-root workspaces, ensure each project root is opened appropriately or configure `.cursor-workspace` files accordingly.
+Solution: Open the root folder of your Git repository in Cursor, not a subdirectory. You can verify your current workspace folder by checking the window title or using `File > Open Folder`. If you work with monorepos or multi-root workspaces, ensure each project root is opened appropriately or configure `.cursor-workspace` files accordingly.
 
 ### 3. Authentication and Credential Problems
 
 When pushing, pulling, or cloning through Cursor, authentication failures can break integration features. This commonly occurs when credentials expire or when switching between HTTPS and SSH remotes.
 
-**Diagnosis**: Attempt a push or pull from the terminal. If it prompts for credentials or fails with authentication errors, this is your issue.
+Diagnosis: Attempt a push or pull from the terminal. If it prompts for credentials or fails with authentication errors, this is your issue.
 
-**Solution**: First, ensure your remote URL matches your authentication method. Check your remote configuration:
+Solution: First, ensure your remote URL matches your authentication method. Check your remote configuration:
 
 {% raw %}
 ```bash
@@ -73,9 +74,9 @@ If using two-factor authentication with GitHub, generate a personal access token
 
 A corrupted Git index can cause Cursor to fail when reading repository status, resulting in empty or incorrect Source Control panels.
 
-**Diagnosis**: The Source Control panel shows no files despite uncommitted changes existing. Terminal Git commands work but show unexpected behavior.
+Diagnosis: The Source Control panel shows no files despite uncommitted changes existing. Terminal Git commands work but show unexpected behavior.
 
-**Solution**: Navigate to your repository in a terminal and run:
+Solution: Navigate to your repository in a terminal and run:
 
 {% raw %}
 ```bash
@@ -96,9 +97,9 @@ git reset
 
 Other Cursor extensions or misconfigured settings can interfere with Git functionality.
 
-**Diagnosis**: Git worked previously but started failing after installing new extensions or changing settings.
+Diagnosis: Git worked previously but started failing after installing new extensions or changing settings.
 
-**Solution**: Disable recently installed extensions one by one to identify the culprit. Go to `Cursor > Settings > Extensions` and disable non-essential extensions. Also, check for conflicting Git settings in your `.gitconfig` file, particularly any custom hooks or aliases that might cause issues.
+Solution: Disable recently installed extensions one by one to identify the culprit. Go to `Cursor > Settings > Extensions` and disable non-essential extensions. Also, check for conflicting Git settings in your `.gitconfig` file, particularly any custom hooks or aliases that might cause issues.
 
 Resetting Cursor's Git-related settings to defaults can help. Open settings and search for "git" to review all Git-related configurations.
 
@@ -106,9 +107,9 @@ Resetting Cursor's Git-related settings to defaults can help. Open settings and 
 
 Extremely large repositories can cause Cursor's Git integration to become unresponsive or timeout.
 
-**Diagnosis**: The Source Control panel takes very long to load or freezes entirely. This commonly happens with repositories containing thousands of files or large binary assets.
+Diagnosis: The Source Control panel takes very long to load or freezes entirely. This commonly happens with repositories containing thousands of files or large binary assets.
 
-**Solution**: Exclude unnecessary directories from Git tracking by adding them to `.gitignore`. For Cursor-specific performance, create or edit a `.git/info/exclude` file to exclude large folders from Git operations within your local clone without committing those exclusions.
+Solution: Exclude unnecessary directories from Git tracking by adding them to `.gitignore`. For Cursor-specific performance, create or edit a `.git/info/exclude` file to exclude large folders from Git operations within your local clone without committing those exclusions.
 
 You can also limit the depth of history Cursor loads. In settings, search for "git history" and reduce the number of commits loaded initially.
 
@@ -116,9 +117,9 @@ You can also limit the depth of history Cursor loads. In settings, search for "g
 
 Corrupted or conflicting workspace settings can break Git integration.
 
-**Diagnosis**: Git works in other projects but fails in a specific workspace.
+Diagnosis: Git works in other projects but fails in a specific workspace.
 
-**Solution**: Delete the `.cursor` or `.vscode` folder within your project to reset workspace-specific settings. You can also check for conflicting settings in `.cursor-workspace` or `.vscode/settings.json` files.
+Solution: Delete the `.cursor` or `.vscode` folder within your project to reset workspace-specific settings. You can also check for conflicting settings in `.cursor-workspace` or `.vscode/settings.json` files.
 
 ## Diagnostic Checklist
 

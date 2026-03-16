@@ -9,11 +9,10 @@ reviewed: true
 score: 8
 categories: [troubleshooting]
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
-# Cursor Project-Wide Refactor Breaking Build Fix
-
 To fix a broken build after a Cursor project-wide refactor, start by running `git diff --stat` to identify all modified files, then clean and rebuild with `rm -rf node_modules package-lock.json && npm install`. The most common causes are broken import paths, out-of-sync TypeScript type definitions, and stale build caches. This guide provides a systematic five-step recovery process covering import fixes, type consistency, configuration files, and dependency resolution.
 
 ## Understanding What Happens During Project-Wide Refactor
@@ -116,23 +115,20 @@ For TypeScript projects, verify your `tsconfig.json` paths configuration:
 
 TypeScript errors after refactoring typically stem from:
 
-**1. Interface changes not propagated:**
-Create a type migration map. If `User` interface changed, find all files using `User`:
+Interface changes may not propagate fully. Create a type migration map. If `User` interface changed, find all files using `User`:
 
 ```bash
 grep -r "interface User" --include="*.ts" src/
 grep -r ": User)" --include="*.ts" src/
 ```
 
-**2. Generic type parameters mismatched:**
-Check function signatures across your codebase:
+Generic type parameters may be mismatched. Check function signatures across your codebase:
 
 ```bash
 grep -r "function.*<.*>" --include="*.ts" src/
 ```
 
-**3. Enum values renamed:**
-Enums are particularly fragile. Search for hardcoded enum usages:
+Enum values may have been renamed. Enums are particularly fragile, so search for hardcoded enum usages:
 
 ```bash
 grep -r "Status\." --include="*.ts" src/
@@ -233,14 +229,10 @@ git checkout <commit-hash> -- .
 
 Avoid future build breaks with these practices:
 
-1. **Run incremental builds** during refactoring, not just at the end
-2. **Use type-safe refactoring** with TypeScript's rename feature instead of AI-only changes
-3. **Commit before large refactors** so you can easily rollback
-4. **Test the build after each major change** rather than waiting until the end
-
-## Summary
-
-Build errors after Cursor's project-wide refactor are common but fixable. Start by identifying the scope of changes, then systematically work through import resolution, type consistency, configuration files, and dependency issues. When in doubt, clean caches and rebuild. For complex cases, use diagnostic tools to identify circular dependencies and version conflicts. With this systematic approach, you can recover your build and get back to coding quickly.
+1. Run incremental builds during refactoring, not just at the end
+2. Use type-safe refactoring with TypeScript's rename feature instead of AI-only changes
+3. Commit before large refactors so you can easily rollback
+4. Test the build after each major change rather than waiting until the end
 
 {% endraw %}
 
