@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "ChatGPT vs Claude for Creating Database Migration Scripts PostgreSQL"
+title: "ChatGPT vs Claude for Creating Database Migration."
 description: "A practical comparison of ChatGPT and Claude for generating PostgreSQL migration scripts, with code examples and recommendations for database developers."
 date: 2026-03-16
 author: "theluckystrike"
@@ -185,6 +185,11 @@ Both tools require review before execution. AI-generated SQL can contain subtle 
 For teams standardizing their migration approach, consider creating a prompt template that enforces your organization's migration standards. Both ChatGPT and Claude can follow such templates, giving you consistent results regardless of which tool you choose.
 
 The key factor is understanding your own requirements well enough to validate and improve whatever the AI generates. Neither tool replaces the need for database expertise when handling critical migrations.
+
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

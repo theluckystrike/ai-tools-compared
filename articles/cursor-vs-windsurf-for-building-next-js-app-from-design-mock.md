@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Windsurf for Building Next.js App from Design Mockup"
+title: "Cursor vs Windsurf for Building Next.js App from Design."
 description: "A practical comparison of Cursor and Windsurf for converting design mockups into Next.js applications, with code examples and workflow recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -171,6 +171,11 @@ Choose Windsurf if you need to scaffold quickly and are comfortable iterating. W
 Both tools integrate with Next.js and support Tailwind CSS out of the box. Your choice ultimately depends on whether you prefer controlled, prompt-driven generation (Cursor) or proactive, batch-oriented scaffolding (Windsurf).
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
