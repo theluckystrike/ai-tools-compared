@@ -1,233 +1,234 @@
 ---
 layout: default
 title: "Claude Code for Performance Budget Workflow Tutorial"
-description: "Learn how to set up and manage performance budgets in your development workflow using Claude Code. This tutorial covers practical strategies for."
+description: "Learn how to set up automated performance budgets using Claude Code CLI. This tutorial covers creating skills, integrating Lighthouse, and enforcing performance budgets in your CI/CD pipeline."
 date: 2026-03-15
-author: Claude Skills Guide
+author: "Claude Skills Guide"
 permalink: /claude-code-for-performance-budget-workflow-tutorial/
-categories: [tutorials, guides]
-tags: [claude-code, claude-skills]
-reviewed: true
-score: 7
+categories: [guides, tutorials]
+tags: [claude-code, claude-skills, performance, devops, ci-cd]
 ---
 
 {% raw %}
-
 # Claude Code for Performance Budget Workflow Tutorial
 
-Performance budgets are one of the most effective ways to maintain fast, responsive applications throughout the development lifecycle. By establishing clear limits on metrics like bundle size, load time, and resource usage, teams can catch performance regressions before they reach production. This tutorial shows you how to integrate performance budgeting into your Claude Code workflow with practical examples and actionable strategies.
+Performance budgets are one of the most effective ways to prevent web applications from degrading over time. By setting concrete limits on metrics like bundle size, First Contentful Paint (FCP), and Time to Interactive (TTI), you create automated guardrails that catch performance regressions before they reach production. In this tutorial, you'll learn how to leverage Claude Code to create a performance budget workflow that integrates seamlessly with your development process.
 
-## What Is a Performance Budget?
+## Why Use Claude Code for Performance Automation?
 
-A performance budget is a set of constraints that define the maximum acceptable values for key performance metrics. These metrics typically include JavaScript bundle size, CSS file size, image payloads, Time to Interactive (TTI), and Core Web Vitals scores. When any metric exceeds its budget, the build process fails or triggers alerts, forcing the team to address the regression before merging.
+Claude Code isn't just for code completion—it's a programmable AI assistant that can execute shell commands, read and write files, and make decisions based on results. This makes it ideal for automating performance workflows because you can create custom skills that:
 
-Think of a performance budget as a financial budget for your application's resources. Just as overspending can derail a project, exceeding performance limits can degrade user experience, harm SEO rankings, and increase infrastructure costs.
+1. Run performance audits on demand
+2. Compare results against defined budgets
+3. Generate actionable reports
+4. Block deployments when budgets are exceeded
 
-## Setting Up Your First Performance Budget
+Unlike traditional CI/CD scripts that only pass or fail, Claude Code can analyze the results and provide intelligent suggestions for improvement.
 
-Before integrating with Claude Code, you need to define your performance budget. Start by measuring your current application's baseline performance using tools like Lighthouse, WebPageTest, or Chrome DevTools. Identify the metrics that matter most for your users and set realistic limits based on your findings.
+## Setting Up Your Performance Budget Skill
 
-For a typical React or Vue application, reasonable starting budgets might include:
+The first step is to create a Claude Code skill that handles performance auditing. Create a new skill file in your project's `.claude/settings/` directory:
 
-- **JavaScript bundle size**: 200KB (compressed)
-- **Total page weight**: 1MB (including images, fonts, and media)
-- **Time to Interactive**: 3 seconds
-- **Largest Contentful Paint**: 2.5 seconds
-- **Cumulative Layout Shift**: 0.1
+```yaml
+name: performance-budget
+description: Run performance budget audits and enforce thresholds
+tools: [bash, read_file, write_file]
+```
 
-Document these budgets in a configuration file that your build tools can read. Most modern bundlers like Webpack, Vite, and Rollup support performance budget configuration through plugins or built-in options.
+Now add the skill body with the audit logic:
 
-## Integrating Performance Budgets with Claude Code
+```python
+#!/usr/bin/env python3
+import json
+import sys
+from pathlib import Path
 
-Claude Code can help you establish, monitor, and enforce performance budgets throughout development. Here are three practical ways to integrate performance monitoring into your workflow.
+def load_budget_config():
+    """Load performance budget thresholds from config file."""
+    config_path = Path('.claude/performance-budget.json')
+    if config_path.exists():
+        return json.loads(config_path.read_text())
+    return {}
 
-### 1. Create a Performance Audit Skill
+def run_lighthouse():
+    """Execute Lighthouse CI and return metrics."""
+    import subprocess
+    result = subprocess.run(
+        ['npx', 'lighthouse', '--output=json', '--output-path=.lighthouse/audit.json'],
+        capture_output=True,
+        text=True
+    )
+    if result.returncode != 0:
+        print(f"Lighthouse error: {result.stderr}")
+        sys.exit(1)
+    
+    with open('.lighthouse/audit.json') as f:
+        return json.load(f)
 
-Build a custom Claude Code skill that runs performance audits on your application. This skill should execute Lighthouse or similar tools and parse the results to check against your defined budgets.
+def check_budgets(audit_data, budget_config):
+    """Compare audit metrics against budget thresholds."""
+    audits = audit_data['audits']
+    results = []
+    
+    metrics = {
+        'first-contentful-paint': budget_config.get('fcp', 2000),
+        'interactive': budget_config.get('tti', 3000),
+        'bundle-size': budget_config.get('total-byte', 170000),
+    }
+    
+    for metric, threshold in metrics.items():
+        actual = audits.get(metric, {}).get('numericValue', 0)
+        status = 'PASS' if actual <= threshold else 'FAIL'
+        results.append({
+            'metric': metric,
+            'actual': actual,
+            'threshold': threshold,
+            'status': status
+        })
+    
+    return results
+
+if __name__ == '__main__':
+    budget_config = load_budget_config()
+    audit_data = run_lighthouse()
+    results = check_budgets(audit_data, budget_config)
+    
+    for r in results:
+        print(f"{r['metric']}: {r['actual']} (limit: {r['threshold']}) - {r['status']}")
+    
+    failed = [r for r in results if r['status'] == 'FAIL']
+    if failed:
+        print(f"\nBudget exceeded! {len(failed)} metric(s) failed.")
+        sys.exit(1)
+```
+
+This script forms the core of your performance audit. It loads budget thresholds from a configuration file, runs Lighthouse, and compares the results.
+
+## Creating the Budget Configuration
+
+Next, create a `.claude/performance-budget.json` file in your project root:
+
+```json
+{
+  "fcp": 1500,
+  "tti": 3000,
+  "total-byte": 170000,
+  "lcp": 2500,
+  "cls": 0.1
+}
+```
+
+Each value represents milliseconds (for timing metrics) or bytes (for size metrics). Adjust these based on your application's requirements and your team's performance goals.
+
+## Integrating with Your Development Workflow
+
+The real power of using Claude Code for performance budgets comes from integrating it into your daily workflow. Here are three practical ways to do this:
+
+### 1. Pre-commit Hooks
+
+Add a performance check before every commit by creating a `.git/hooks/pre-commit` script:
 
 ```bash
 #!/bin/bash
-# performance-audit.sh - Run performance audit and check against budgets
-
-echo "Running Lighthouse performance audit..."
-lighthouse https://your-app.example.com \
-  --only-categories=performance \
-  --output=json \
-  --output-path=./reports/performance.json
-
-# Parse results and check budgets
-node -e "
-  const results = require('./reports/performance.json');
-  const budgets = {
-    lcp: 2500,  // Largest Contentful Paint in ms
-    tbt: 200,   // Total Blocking Time in ms
-    cls: 0.1    // Cumulative Layout Shift
-  };
-  
-  const passed = 
-    results.audits['largest-contentful-paint'].numericValue <= budgets.lcp &&
-    results.audits['total-blocking-time'].numericValue <= budgets.tbt &&
-    results.audits['cumulative-layout-shift'].numericValue <= budgets.cls;
-  
-  if (passed) {
-    console.log('✅ Performance budget checks passed');
-  } else {
-    console.log('❌ Performance budget exceeded');
-    process.exit(1);
-  }
-"
+echo "Running performance budget check..."
+claude -p "Run the performance-budget skill to check if the current code meets performance requirements"
 ```
 
-### 2. Track Bundle Size During Development
+This ensures that every code change passes performance validation before being committed.
 
-Use Claude Code to monitor bundle size changes during development. Create a script that compares the current bundle size against your baseline and alerts you when approaching budget limits.
+### 2. Pull Request Comments
 
-```javascript
-// check-bundle-size.js
-import { gzip } from 'zlib';
-import { promisify } from 'util';
-import fs from 'fs';
-
-const gzipAsync = promisify(gzip);
-
-const BUDGETS = {
-  'main.js': 150000,   // 150KB budget
-  'vendor.js': 100000, // 100KB budget
-  'total': 300000      // 300KB total
-};
-
-async function checkBundleSizes() {
-  const results = [];
-  
-  for (const [file, budget] of Object.entries(BUDGETS)) {
-    if (file === 'total') continue;
-    
-    const path = `./dist/${file}`;
-    if (!fs.existsSync(path)) {
-      console.warn(`⚠️  ${file} not found in build output`);
-      continue;
-    }
-    
-    const content = fs.readFileSync(path);
-    const gzipped = (await gzipAsync(content)).length;
-    const percentage = (gzipped / budget) * 100;
-    
-    results.push({ file, gzipped, budget, percentage });
-  }
-  
-  // Check total
-  const totalSize = results.reduce((sum, r) => sum + r.gzipped, 0);
-  const totalPercentage = (totalSize / BUDGETS.total) * 100;
-  
-  console.log('\n📊 Bundle Size Report');
-  console.log('─'.repeat(50));
-  
-  for (const r of results) {
-    const status = r.percentage > 90 ? '🔴' : r.percentage > 75 ? '🟡' : '🟢';
-    console.log(`${status} ${r.file}: ${(r.gzipped / 1024).toFixed(1)}KB / ${(r.budget / 1024).toFixed(0)}KB (${r.percentage.toFixed(0)}%)`);
-  }
-  
-  console.log('─'.repeat(50));
-  console.log(`Total: ${(totalSize / 1024).toFixed(1)}KB / ${(BUDGETS.total / 1024).toFixed(0)}KB (${totalPercentage.toFixed(0)}%)`);
-  
-  if (totalPercentage > 100) {
-    console.error('\n❌ Bundle size exceeds budget!');
-    process.exit(1);
-  }
-  
-  console.log('\n✅ Bundle size within budget');
-}
-
-checkBundleSizes();
-```
-
-### 3. Automate Budget Enforcement in CI/CD
-
-The most effective way to maintain performance budgets is to automate enforcement in your continuous integration pipeline. Claude Code can help you generate configuration for popular CI platforms.
+Configure your CI pipeline to have Claude Code analyze performance changes and leave comments on pull requests:
 
 ```yaml
 # .github/workflows/performance.yml
-name: Performance Budget Check
-
-on:
-  pull_request:
-    branches: [main]
-  push:
-    branches: [main]
-
+name: Performance Budget
+on: [pull_request]
 jobs:
-  performance:
+  audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          cache: 'npm'
-      
-      - name: Install dependencies
-        run: npm ci
-      
-      - name: Build application
-        run: npm run build
-      
-      - name: Run performance audit
+          node-version: '18'
+      - run: npm ci
+      - name: Run Claude Code Performance Audit
         run: |
-          npm run audit:performance
-      
-      - name: Check bundle sizes
-        run: node scripts/check-bundle-size.js
-      
-      - name: Upload audit results
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: performance-audit
-          path: reports/
+          npx @anthropic/claude-code \
+            -p "Run performance-budget skill and format results for GitHub comment"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 ```
 
-## Best Practices for Performance Budget Workflows
+### 3. Continuous Monitoring
 
-### Start Conservative and Adjust
+For production applications, create a scheduled task that runs nightly:
 
-When first implementing performance budgets, err on the side of being too lenient. Set budgets that are 10-20% higher than your current baseline performance. This gives your team room to work while still providing meaningful limits. As your team improves performance optimization practices, gradually tighten the budgets.
+```bash
+# Run performance audit every night at 2 AM
+0 2 * * * cd /path/to/project && claude -p "Run performance-budget skill and save report to logs/"
+```
 
-### Monitor Trends Over Time
+This gives you a historical record of performance trends.
 
-Single metric snapshots don't tell the full story. Track performance metrics over time using tools like Lighthouse CI, SpeedCurve, or custom dashboards. Look for trends that indicate gradual degradation even when individual builds pass their budgets. Claude Code can help you generate periodic reports and visualize these trends.
+## Interpreting Results and Taking Action
 
-### Make Performance Part of Code Review
+When Claude Code detects a budget violation, it doesn't just fail the build—it can provide actionable guidance. Here's how to enhance your skill for better remediation advice:
 
-Include performance budget checks in your code review process. Configure Claude Code to automatically run performance audits when pull requests are created and share results in the review comments. This keeps performance visible and prevents regressions from being merged.
+```python
+def suggest_improvements(failed_metrics):
+    """Generate specific suggestions based on failed metrics."""
+    suggestions = {
+        'bundle-size': [
+            'Enable tree shaking in your bundler',
+            'Implement code splitting for routes',
+            'Check for duplicate dependencies',
+            'Consider lazy loading non-critical components'
+        ],
+        'first-contentful-pcp': [
+            'Optimize critical rendering path',
+            'Inline critical CSS',
+            'Defer non-essential JavaScript',
+            'Optimize images and use modern formats'
+        ],
+        'tti': [
+            'Reduce JavaScript bundle size',
+            'Remove unused polyfills',
+            'Optimize third-party script loading',
+            'Enable gzip/brotli compression'
+        ]
+    }
+    
+    advice = []
+    for metric in failed_metrics:
+        if metric in suggestions:
+            advice.extend(suggestions[metric])
+    
+    return advice
+```
 
-### Prioritize User-Focused Metrics
+This transforms a simple pass/fail check into an intelligent code review assistant.
 
-While bundle size and load time are important, prioritize metrics that directly impact user experience. Core Web Vitals (LCP, FID, CLS) are excellent choices because they correlate strongly with user satisfaction and SEO rankings. Use these metrics as your primary success indicators.
+## Best Practices for Performance Budgets
 
-## Common Performance Budget Mistakes to Avoid
+When implementing performance budgets with Claude Code, keep these tips in mind:
 
-Many teams struggle with performance budgets because they set unrealistic expectations or fail to establish proper monitoring. Avoid these common pitfalls:
+1. **Start lenient and tighten gradually** – Begin with achievable thresholds and decrease them over time as your team improves performance.
 
-Setting budgets too tight initially creates friction and discourages adoption. Conversely, setting budgets too loose defeats the purpose of having them. Review and adjust budgets quarterly based on actual performance data.
+2. **Set different budgets for different environments** – Production should have stricter budgets than staging.
 
-Another mistake is focusing only on bundle size while ignoring runtime performance. A small bundle can still cause slow interactions if it contains expensive computations. Balance static analysis with runtime profiling.
+3. **Track trends, not just snapshots** – Use Claude Code to generate trend reports showing performance over time.
 
-Finally, don't treat performance budgets as a one-time setup. Performance optimization is an ongoing process that requires regular attention, measurement, and refinement.
+4. **Involve the whole team** – Make performance part of your code review process by having Claude Code comment on PRs.
+
+5. **Balance metrics holistically** – Don't optimize for a single metric at the expense of others.
 
 ## Conclusion
 
-Integrating performance budgets into your Claude Code workflow transforms performance from an afterthought into a fundamental part of your development process. By establishing clear limits, automating enforcement, and monitoring trends, you can maintain fast, responsive applications that delight users and perform well in search rankings.
+Claude Code transforms performance budgeting from a manual, error-prone process into an automated, intelligent workflow. By creating custom skills that run audits, compare results against budgets, and provide actionable suggestions, you give your team superpowers for maintaining fast applications.
 
-Start small by implementing basic bundle size checks, then gradually expand to include comprehensive audits, Core Web Vitals monitoring, and automated CI enforcement. With consistent effort, performance budgets will become a natural part of how your team builds software.
+Start small: create the basic audit skill, run it locally, and gradually integrate it into your CI/CD pipeline. As your team grows accustomed to performance budgets, you can add more sophisticated analysis and remediation capabilities.
 
+Remember, the goal isn't to make development slower—it's to make fast applications a sustainable reality.
 {% endraw %}
-
-## Related Reading
-
-- [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
-- [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
-- [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
