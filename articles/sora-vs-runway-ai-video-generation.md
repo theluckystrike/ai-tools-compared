@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -77,8 +78,7 @@ Runway's Gen series (Gen-2, Gen-3) offers strong motion dynamics and handles sty
 
 Both models handle complex prompts, but their strengths differ:
 
-- **Sora**: Better at understanding physical relationships and maintaining scene consistency
-- **Runway**: Stronger at artistic styles and abstract transformations
+Sora handles physical relationships and scene consistency better, while Runway is stronger at artistic styles and abstract transformations.
 
 ```python
 # Complex prompt example - Sora
@@ -101,19 +101,11 @@ neon lighting and rain effects
 
 ### When to Choose Sora
 
-Sora works best for:
-
-1. **Long-form content**: Videos requiring 60+ seconds of coherent footage
-2. **Physical simulations**: Scenarios requiring accurate object behavior
-3. **Integration with GPT models**: Building multimodal applications that combine text and video
+Sora works best for long-form content requiring 60+ seconds of coherent footage, scenarios where accurate object behavior matters, and multimodal applications that combine GPT models with video generation.
 
 ### When to Choose Runway
 
-Runway excels at:
-
-1. **Stylized content**: Artistic transformations and unique visual styles
-2. **Image-to-video**: Converting static images into animated sequences
-3. **Rapid prototyping**: Quick iteration on video concepts
+Runway excels at artistic transformations and unique visual styles, converting static images into animated sequences, and quick iteration on video concepts.
 
 ## Rate Limits and Pricing
 
@@ -258,10 +250,7 @@ high_quality_config = {
 
 When integrating video generation APIs into production systems, follow these security practices:
 
-1. **API Key Management**: Store credentials in environment variables or secret management systems
-2. **Input Validation**: Sanitize prompts to prevent prompt injection attacks
-3. **Output Validation**: Verify generated content before serving to users
-4. **Rate Limiting**: Implement application-level rate limiting to prevent abuse
+Store credentials in environment variables or a secret management system. Sanitize prompts to prevent prompt injection attacks and verify generated content before serving it to users. Implement application-level rate limiting to prevent abuse.
 
 ```python
 import os
@@ -278,7 +267,7 @@ RUNWAY_API_KEY = os.environ.get("RUNWAY_API_KEY")
 
 Choosing between Sora and Runway depends on your specific requirements. If you need physical coherence and integration with OpenAI's ecosystem, Sora provides a strong foundation. For artistic flexibility and established video-to-video capabilities, Runway remains competitive.
 
-Both platforms are evolving rapidly, with frequent model updates and new features. Stay current with their documentation to leverage the latest capabilities as they become available. Consider building abstraction layers in your code to swap between providers as the technology matures.
+Both platforms are evolving rapidly, with frequent model updates and new features. Stay current with their documentation to use the latest capabilities as they become available. Consider building abstraction layers in your code to swap between providers as the technology matures.
 
 For production deployments, implement proper error handling, caching, and rate limiting. Monitor API usage closely to manage costs effectively while delivering the best user experience.
 

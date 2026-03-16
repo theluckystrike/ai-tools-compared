@@ -9,6 +9,7 @@ reviewed: true
 score: 8
 categories: [comparisons]
 intent-checked: true
+voice-checked: true
 ---
 
 # Observable vs Jupyter for AI Data Exploration
