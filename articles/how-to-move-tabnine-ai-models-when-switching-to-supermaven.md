@@ -5,6 +5,10 @@ description: "A practical guide for developers transitioning from Tabnine to Sup
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-tabnine-ai-models-when-switching-to-supermaven/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been using Tabnine for code completion and are considering switching to Supermaven, you might wonder whether your trained Tabnine models can be transferred. This guide walks you through the process of moving your AI model data when transitioning between these two popular code completion tools.

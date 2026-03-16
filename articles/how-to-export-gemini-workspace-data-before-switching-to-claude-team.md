@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users on exporting your
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-gemini-workspace-data-before-switching-to-claude-team/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you are moving from Google Gemini to Claude Team, you probably want to keep your valuable conversation history, project context, and custom configurations. This guide shows you exactly how to export your Gemini workspace data, what you can retrieve, and practical methods for preserving your workflow.
