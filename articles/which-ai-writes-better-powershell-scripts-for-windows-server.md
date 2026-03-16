@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When you need to automate Windows Server tasks, the right AI assistant can save hours of scripting time. But not all AI tools produce equal results when writing PowerShell code. This comparison evaluates the leading AI assistants specifically for Windows Server automation, testing each with practical scenarios sysadmins face daily.
+Claude 3.5 Sonnet writes the best PowerShell scripts for Windows Server administration, producing the most secure and idiomatic code with proper error handling, `-WhatIf` support, and approved verb usage. Choose ChatGPT-4 if you need broader Windows ecosystem coverage with more detailed inline comments. Choose GitHub Copilot if you work primarily inside VS Code and want inline completions rather than full script generation. This comparison tests all four leading AI tools across Active Directory management, disk cleanup automation, service monitoring, and backup scripts.
 
 ## Test Methodology
 
