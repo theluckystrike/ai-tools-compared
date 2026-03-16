@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users adapting Midjourn
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 ## Introduction

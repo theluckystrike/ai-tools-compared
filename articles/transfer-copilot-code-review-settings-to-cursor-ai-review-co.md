@@ -6,6 +6,10 @@ description: "A practical guide for migrating your GitHub Copilot code review pr
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-copilot-code-review-settings-to-cursor-ai-review-co/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been using GitHub Copilot for code reviews and want to switch to Cursor AI, you might wonder how to preserve your custom review settings. Both tools offer powerful code review capabilities, but their configuration systems work differently. This guide shows you how to transfer your Copilot code review settings to Cursor AI's review configuration.
