@@ -17,8 +17,6 @@ score: 7
 
 Kubernetes has become the backbone of modern container orchestration, and Helm charts simplify application packaging and deployment. When you combine these with Claude Code, you get a powerful workflow that automates repetitive tasks, reduces human error, and accelerates your deployment pipeline. This guide focuses on the *workflow and automation* side: project structure, deployment skills, validation pipelines, CI/CD integration, and debugging running clusters.
 
-If you want a deep dive into writing Helm template syntax — deployment templates, values files, helpers, and conditionals — see [Writing Helm Charts for Kubernetes with Claude Code](/claude-skills-guide/claude-code-writing-helm-charts-kubernetes-tutorial/).
-
 ## Setting Up Your Kubernetes Workflow
 
 Before diving into advanced automation, ensure your environment is properly configured. Claude Code can interact with your Kubernetes cluster through the Bash tool, running kubectl commands directly. The key is structuring your projects so Claude understands your deployment patterns.
@@ -56,11 +54,56 @@ appVersion: "1.0.0"
 
 When working with values.yaml, Claude can suggest appropriate defaults based on your application's requirements. It understands common patterns like resource limits, replica counts, and service configurations. This is particularly useful when you're standardizing charts across multiple services in your organization.
 
+## Writing Helm Templates
+
+Claude Code generates well-structured Helm templates following best practices. Here is a production-ready deployment template:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "myapp.fullname" . }}
+  labels:
+    {{- include "myapp.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "myapp.selectorLabels" . | nindent 6 }}
+  template:
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.livenessProbe.path }}
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+```
+
+The `_helpers.tpl` file contains reusable template functions that Claude generates automatically:
+
+```yaml
+{{- define "myapp.fullname" -}}
+{{- if .Values.fullnameOverride -}}
+{{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" -}}
+{{- else -}}
+{{- $name := default .Chart.Name .Values.nameOverride -}}
+{{- printf "%s-%s" .Release.Name $name | trunc 63 | trimSuffix "-" -}}
+{{- end -}}
+{{- end -}}
+```
+
+For conditional resources like Ingress, use `{{- if .Values.ingress.enabled -}}` blocks. For chart testing, create test pods with the `"helm.sh/hook": test` annotation. Always use semantic versioning in Chart.yaml, define resource limits, implement proper probe configurations, and use helper templates to reduce duplication.
+
 ## Managing Environment-Specific Configurations
 
 One of Helm's strengths is handling multiple environments through values files. However, managing these files across development, staging, and production becomes a workflow problem as much as a YAML problem. Claude Code addresses this at the process level, not just the file level.
-
-For the mechanics of writing well-structured values files and templates, see [Writing Helm Charts for Kubernetes with Claude Code](/claude-skills-guide/claude-code-writing-helm-charts-kubernetes-tutorial/). This guide focuses on how Claude Code *orchestrates* that content across your pipeline.
 
 The workflow challenge is promotion consistency: ensuring that what you test in staging reflects what you deploy to production. Claude Code handles this through automated diff analysis across values files. Ask it to compare your environment values and surface any configuration drift before you promote:
 

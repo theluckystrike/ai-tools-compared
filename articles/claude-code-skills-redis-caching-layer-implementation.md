@@ -23,14 +23,26 @@ Your skill might need to cache LLM responses to avoid regenerating identical out
 
 ## Setting Up Redis Connection
 
-Before implementing caching, establish a Redis connection within your skill. Use environment variables for configuration so you can switch between local development and production Redis instances.
+Before implementing caching, establish a Redis connection within your skill. The quickest way to get a local Redis instance running is with Docker:
 
 ```bash
-# Install redis-cli if needed
-# brew install redis (macOS)
-# apt-get install redis-tools (Ubuntu/Debian)
+docker run -d --name redis-cache \
+  -p 6379:6379 \
+  -v redis-data:/data \
+  redis:latest redis-server --appendonly yes
+```
 
-# Test connection
+Install the appropriate client for your project language:
+
+```bash
+npm install ioredis      # Node.js
+pip install redis        # Python
+go get github.com/go-redis/redis/v8  # Go
+```
+
+Test your connection:
+
+```bash
 redis-cli -h localhost -p 6379 ping
 # Expected: PONG
 ```
@@ -161,6 +173,42 @@ def subscribe_to_agent(redis_client, agent_id, callback):
 
 This pattern becomes valuable when coordinating complex multi-agent workflows where one agent's output feeds into another's input. For more subagent coordination strategies, see the [subagent communication guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/).
 
+## JavaScript/Node.js Caching Patterns
+
+For Node.js projects, the cache-aside pattern with `ioredis` provides a reusable caching helper:
+
+```javascript
+const Redis = require('ioredis');
+const redis = new Redis(process.env.REDIS_URL || 'redis://localhost:6379');
+
+async function getCachedData(key, fetchFn, ttl = 3600) {
+  const cached = await redis.get(key);
+  if (cached) return JSON.parse(cached);
+
+  const data = await fetchFn();
+  await redis.setex(key, ttl, JSON.stringify(data));
+  return data;
+}
+```
+
+For team-based distributed caching, use prefixed keys so team members working on the same feature share cached results:
+
+```javascript
+const TEAM_CACHE_PREFIX = 'team:cache:';
+
+async function getTeamCachedData(teamId, feature, fetchFn, ttl = 3600) {
+  const key = `${TEAM_CACHE_PREFIX}${teamId}:${feature}`;
+  const cached = await redis.get(key);
+  if (cached) return { data: JSON.parse(cached), cached: true };
+
+  const data = await fetchFn();
+  await redis.setex(key, ttl, JSON.stringify(data));
+  return { data, cached: false };
+}
+```
+
+For version-based caching, include version identifiers in cache keys: `${baseKey}:v${version}`. Monitor cache hit rates using Redis INFO commands — a hit rate below 60% indicates your caching strategy needs review.
+
 ## Implementing Cache Invalidation
 
 Cached data eventually becomes stale. Implement proper invalidation strategies:
@@ -233,7 +281,6 @@ Start with simple key-value caching, then expand to hashes for session data and 
 
 ## Related Reading
 
-- [Claude Code with Redis Caching Implementation Guide](/claude-skills-guide/claude-code-with-redis-caching-implementation-guide/) — project-level Redis caching in JavaScript/Node.js, including Docker setup, multi-language clients, and team-shared distributed caching
 - [Claude Code Multi-Agent Subagent Communication Guide](/claude-skills-guide/claude-code-multi-agent-subagent-communication-guide/) — coordinate agents with Redis as the shared message bus
 - [Parallel Subagents Claude Code Best Practices 2026](/claude-skills-guide/parallel-subagents-claude-code-best-practices-2026/) — run multiple agents concurrently while sharing cached outputs via Redis
 - [Building Stateful Agents with Claude Skills Guide](/claude-skills-guide/building-stateful-agents-with-claude-skills-guide/) — persist workflow state across sessions using structured storage
