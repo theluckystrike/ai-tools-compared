@@ -5,6 +5,10 @@ description: "A practical guide comparing Gemini Flash and Pro API pricing. Lear
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-flash-vs-pro-api-pricing-when-to-use-which-model/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Google's Gemini API offers two distinct tiers: Flash and Pro. Understanding the pricing differences and knowing which model to use when can significantly impact your development costs while maintaining the performance you need.

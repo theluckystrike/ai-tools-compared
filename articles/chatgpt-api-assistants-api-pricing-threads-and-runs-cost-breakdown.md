@@ -5,7 +5,7 @@ description: "A practical guide to understanding OpenAI's Assistants API pricing
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/
-categories: [ai-tools, api, openai]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

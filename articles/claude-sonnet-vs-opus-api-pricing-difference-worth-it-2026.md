@@ -5,6 +5,10 @@ description: "A practical comparison of Claude Sonnet and Opus API pricing for d
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

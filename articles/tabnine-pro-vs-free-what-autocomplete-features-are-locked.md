@@ -5,6 +5,10 @@ description: "A practical comparison of Tabnine Pro vs Free versions. Learn whic
 date: 2026-03-16
 author: theluckystrike
 permalink: /tabnine-pro-vs-free-what-autocomplete-features-are-locked/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Tabnine has become one of the most popular AI code completion tools, but choosing between the free and Pro versions can be confusing. This guide breaks down exactly which autocomplete features are locked behind the paywall and helps you decide if the Pro upgrade makes sense for your development workflow.

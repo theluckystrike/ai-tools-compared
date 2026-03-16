@@ -6,7 +6,7 @@ description: "A practical guide for developers and power users explaining what h
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plus-cancel-mid-month-do-you-keep-access-until-end/
-categories: [subscription]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

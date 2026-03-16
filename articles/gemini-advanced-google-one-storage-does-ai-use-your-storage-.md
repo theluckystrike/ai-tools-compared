@@ -5,6 +5,10 @@ description: "A technical guide for developers and power users understanding how
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-advanced-google-one-storage-does-ai-use-your-storage-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 voice-checked: true
 ---
 
