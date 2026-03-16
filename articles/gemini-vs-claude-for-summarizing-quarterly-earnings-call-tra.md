@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Quarterly earnings call transcripts represent a goldmine of financial insights, but processing these lengthy documents manually consumes significant analyst time. Both Google's Gemini and Anthropic's Claude offer capabilities for automated transcript analysis, yet they approach the task with distinct strengths. This guide examines practical implementation patterns, performance characteristics, and real-world results to help developers build robust earnings call summarization systems.
+Choose Claude for earnings call summarization when you need precise financial metric extraction and nuanced sentiment analysis from executive commentary. Choose Gemini when you need to process transcripts exceeding 100K tokens or want native Google Workspace integration for analyst workflows. Both handle the 8,000–15,000 word typical transcript length, but Claude produces more structured output for revenue, EPS, and guidance extraction while Gemini handles longer multi-call batch processing more efficiently. This guide compares API implementations, output quality, and pricing for building automated earnings analysis pipelines.
 
 ## Understanding the Technical Challenge
 
