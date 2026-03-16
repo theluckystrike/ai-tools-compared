@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Transfer Copilot Code Review Settings to Cursor AI Review Config"
+title: "How to Transfer Copilot Code Review Settings to Cursor."
 description: "A practical guide for migrating your GitHub Copilot code review preferences to Cursor AI's review configuration. Includes step-by-step instructions and code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -209,5 +209,10 @@ Check that rules produce the expected warnings and suggestions. Remove rules tha
 ## Conclusion
 
 Transferring your Copilot code review settings to Cursor AI is straightforward once you understand how each system organizes configuration. The key is mapping Copilot instructions to Cursor's `.cursorrules` format and taking advantage of Cursor's more powerful rule system. Start with basic rules, test them in your workflow, and gradually add complexity as you become familiar with Cursor's capabilities.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

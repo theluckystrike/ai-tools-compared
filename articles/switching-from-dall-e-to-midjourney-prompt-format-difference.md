@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Switching from DALL-E to Midjourney: Prompt Format Differences Explained"
-description: "A practical guide for developers switching from DALL-E to Midjourney. Learn the key prompt syntax differences, parameter flags, and API integration patterns."
+title: "Switching from DALL-E to Midjourney: Prompt Format."
+description: "A practical guide for developers switching from DALL-E to Midjourney. Learn the key prompt syntax differences, parameter flags, and API integration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-dall-e-to-midjourney-prompt-format-difference/
@@ -232,5 +232,10 @@ The `--no` flag tells Midjourney to minimize those elements. This is useful for 
 4. **Skipping version flags**: Midjourney updates its model versions. Always specify `--v 6` (current) rather than relying on defaults.
 
 The switch from DALL-E to Midjourney fundamentally changes how you communicate with the model. Once you internalize the flag-based syntax and keyword-oriented prompt structure, you'll find Midjourney offers more granular control over your generations—at the cost of a steeper learning curve.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
