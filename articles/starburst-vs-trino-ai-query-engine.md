@@ -10,6 +10,7 @@ categories: [comparisons]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 
@@ -82,8 +83,7 @@ cursor.execute("""
 
 If your AI system handles sensitive data, both platforms offer row-level security, but Starburst provides more granular options out of the box:
 
-- **Starburst**: Built-in LDAP/Active Directory integration, audit logging, and fine-grained access controls without additional configuration
-- **Trino**: Requires manual setup for enterprise authentication, though the open-source Trino Gateway offers some management capabilities
+Starburst includes built-in LDAP/Active Directory integration, audit logging, and fine-grained access controls without additional configuration. Trino requires manual setup for enterprise authentication, though the open-source Trino Gateway offers some management capabilities.
 
 For AI applications processing user data or proprietary information, Starburst's integrated security reduces your implementation burden significantly.
 
@@ -113,8 +113,7 @@ Trino requires manual orchestration (typically with Kubernetes) to achieve simil
 
 Pricing significantly impacts your choice:
 
-- **Trino**: Open-source and free. You pay only for infrastructure (compute, storage, networking)
-- **Starburst**: Enterprise pricing starts around $0.40 per query per hour, plus support costs. However, the optimization features often reduce infrastructure costs enough to offset licensing.
+Trino is open-source and free—you pay only for infrastructure (compute, storage, networking). Starburst enterprise pricing starts around $0.40 per query per hour, plus support costs, though the optimization features often reduce infrastructure costs enough to offset licensing.
 
 For startups and projects with tight budgets, Trino's zero licensing cost makes it the practical choice. You can always migrate to Starburst if you need enterprise features later—the SQL and connectors are compatible.
 

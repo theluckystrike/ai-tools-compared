@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 {% raw %}
@@ -142,7 +143,7 @@ def generate_response(user_query):
 
 ## Cost Calculation Example
 
-Let's compare real costs for a realistic workload:
+Here are real costs for a realistic workload:
 
 **Scenario**: 10,000 daily user queries, average 500 input tokens, 800 output tokens
 
