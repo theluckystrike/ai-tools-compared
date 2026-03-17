@@ -5,6 +5,10 @@ description: "Discover the hidden limitations of GitHub Copilot's free tier in 2
 date: 2026-03-16
 author: theluckystrike
 permalink: /github-copilot-free-tier-hidden-limits-you-should-know-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

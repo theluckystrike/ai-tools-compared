@@ -6,6 +6,10 @@ description: "A practical comparison of the best AI coding assistants available 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tools-under-10-dollars-per-month-ranked/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Finding an AI coding assistant that delivers real value without breaking the bank is achievable. Several quality options cost $10 per month or less, and some offer generous free tiers that work well for individual developers. This ranking evaluates each tool based on code generation quality, context understanding, IDE integration, and overall value.

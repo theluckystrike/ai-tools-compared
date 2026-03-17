@@ -5,6 +5,10 @@ description: "A practical comparison of GitHub Copilot and Claude Code for scaff
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Copilot vs Claude Code for Scaffolding New Django REST Framework Project

@@ -5,6 +5,10 @@ description: "A practical comparison of Claude and Copilot when generating FastA
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

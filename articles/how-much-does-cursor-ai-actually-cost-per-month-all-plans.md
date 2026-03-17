@@ -6,7 +6,7 @@ description: "A complete breakdown of Cursor AI pricing for developers. Compare 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-much-does-cursor-ai-actually-cost-per-month-all-plans/
-categories: [pricing, tools]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

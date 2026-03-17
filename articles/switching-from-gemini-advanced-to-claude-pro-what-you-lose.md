@@ -5,6 +5,10 @@ description: "A practical guide on what features and capabilities you might lose
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-gemini-advanced-to-claude-pro-what-you-lose/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you're considering moving from Gemini Advanced to Claude Pro for your coding workflow, there are several differences you should understand before making the switch. Both are powerful AI assistants, but they excel in different areas. Here's what you might lose when making the change.

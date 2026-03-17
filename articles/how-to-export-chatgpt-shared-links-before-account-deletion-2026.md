@@ -6,6 +6,10 @@ description: "A practical guide to exporting your ChatGPT shared links before de
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-chatgpt-shared-links-before-account-deletion-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you're planning to delete your ChatGPT account, you probably have shared links you've created over time—conversations you've generated and shared with colleagues, clients, or posted publicly. These links represent valuable content you may want to keep. This guide walks you through the process of exporting your ChatGPT shared links before your account is permanently deleted.

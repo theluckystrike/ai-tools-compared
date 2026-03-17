@@ -5,6 +5,10 @@ description: "A practical comparison of Continue Dev Free and Cody Free for open
 date: 2026-03-16
 author: theluckystrike
 permalink: /continue-dev-free-vs-cody-free-open-source-ai-comparison/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you are looking for free, open source AI-powered coding assistants, two names frequently appear: Continue Dev and Cody (by Sourcegraph). Both offer free tiers, both integrate with popular editors, and both claim to understand your codebase. But which one actually delivers better value for developers working with open source tools? This comparison breaks down the practical differences.

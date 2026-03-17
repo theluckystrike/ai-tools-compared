@@ -5,6 +5,10 @@ description: "A practical guide to free AI pair programming tools that run direc
 date: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-pair-programming-tools-that-work-in-terminal-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Terminal-based AI pair programming tools have matured significantly, offering developers a keyboard-first workflow without switching contexts. Whether you prefer staying in your command line environment or working on remote servers, several free options deliver solid AI assistance without cost. Here is what works in 2026.

@@ -6,7 +6,7 @@ description: "A practical guide to migrating your Claude project knowledge bases
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/
-categories: [tutorials, migration-guides]
+categories: [tutorials, guides]
 reviewed: true
 score: 8
 intent-checked: true

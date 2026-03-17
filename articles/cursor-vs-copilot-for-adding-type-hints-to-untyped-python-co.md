@@ -5,6 +5,10 @@ description: "A practical comparison of Cursor and GitHub Copilot for automatica
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

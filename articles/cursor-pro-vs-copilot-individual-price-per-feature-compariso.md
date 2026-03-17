@@ -5,6 +5,10 @@ description: "A detailed feature-by-feature price breakdown of Cursor Pro vs Git
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /cursor-pro-vs-copilot-individual-price-per-feature-compariso/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

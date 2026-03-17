@@ -5,6 +5,10 @@ description: "A practical comparison of Claude and ChatGPT for converting legacy
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

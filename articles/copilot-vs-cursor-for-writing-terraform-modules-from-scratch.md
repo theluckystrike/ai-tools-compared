@@ -6,6 +6,10 @@ description: "A practical comparison of GitHub Copilot and Cursor for building T
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-terraform-modules-from-scratch/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When you need to build Terraform modules from scratch, choosing the right AI coding assistant can significantly impact your productivity. GitHub Copilot and Cursor represent two different approaches to AI-assisted development—one as a traditional code completion tool embedded in your IDE, and the other as an AI-first code editor with more context awareness. This guide compares how each tool performs when creating Terraform modules from the ground up.

@@ -6,7 +6,7 @@ description: "A practical guide comparing AI tools that convert Figma designs to
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-converting-figma-designs-to-react-components-2026/
-categories: [ai-tools, figma, react]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

@@ -5,6 +5,10 @@ description: "A practical guide for developers on migrating your Cursor Composer
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-cursor-composer-prompt-library-to-claude-code/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have invested time building up a library of custom prompts in Cursor Composer, you might be wondering how to bring those workflows over to Claude Code. Whether you are exploring Claude Code for its superior context handling, its efficient tool use, or simply want a backup of your prompt library, this guide walks you through the entire migration process.

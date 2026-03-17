@@ -5,6 +5,10 @@ description: "A practical cost-benefit analysis of ChatGPT Plus and Claude Pro f
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding
