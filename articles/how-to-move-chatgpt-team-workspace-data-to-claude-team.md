@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Move ChatGPT Team Workspace Data to Claude Team"
-description: "A practical guide for developers and power users on migrating your OpenAI ChatGPT Team workspace data to Anthropic Claude Team. Includes export methods and code examples."
+description: "A practical guide for developers and power users on migrating your OpenAI ChatGPT Team workspace data to Anthropic Claude Team. Includes export methods."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-chatgpt-team-workspace-data-to-claude-team/
@@ -134,5 +134,10 @@ Test the migration with a small team subset before rolling out to everyone. This
 Document your migration process internally so future team members understand how the workspace was set up and what decisions shaped the migration.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

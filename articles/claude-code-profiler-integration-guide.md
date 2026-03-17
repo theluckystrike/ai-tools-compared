@@ -244,3 +244,8 @@ Integrating profilers with Claude Code creates a powerful optimization workflow.
 
 Remember that profiling is just one part of performance optimization. Always measure before and after changes, and focus on improvements that matter for your specific use case.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

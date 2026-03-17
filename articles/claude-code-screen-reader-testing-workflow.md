@@ -4,7 +4,7 @@
 
 layout: default
 title: "Claude Code Screen Reader Testing Workflow"
-description: "A comprehensive guide to implementing screen reader testing workflows using Claude Code, covering NVDA, JAWS, VoiceOver testing, ARIA validation, and accessibility automation."
+description: "A comprehensive guide to implementing screen reader testing workflows using Claude Code, covering NVDA, JAWS, VoiceOver testing, ARIA validation, and."
 date: 2026-03-17
 author: "AI Tools Compared"
 permalink: /claude-code-screen-reader-testing-workflow/
@@ -352,3 +352,8 @@ const testResults = {
 
 Screen reader testing requires manual validation alongside automated tools. Use this workflow with Claude Code to systematically test across NVDA, VoiceOver, and JAWS, ensuring your web applications are accessible to all users.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

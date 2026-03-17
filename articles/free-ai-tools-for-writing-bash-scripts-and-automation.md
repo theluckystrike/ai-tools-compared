@@ -124,3 +124,8 @@ For terminal-focused work, **Aider** provides the most flexibility since it work
 
 All four tools can significantly speed up bash script development, but the best choice depends on your workflow: terminal-first users should try Aider, while editor-focused developers will find Codeium or Continue more convenient.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+

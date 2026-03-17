@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate Cursor Rules File to Windsurf Rules Format Guide"
+title: "How to Migrate Cursor Rules File to Windsurf Rules."
 description: "A practical guide for developers on migrating Cursor rules files to Windsurf's rules format, with code examples and step-by-step instructions."
 date: 2026-03-16
 author: theluckystrike
@@ -175,5 +175,10 @@ If something does not work as expected, check the Windsurf documentation for the
 ## Conclusion
 
 Migrating Cursor rules to Windsurf requires understanding the structural differences between the two systems and converting your YAML-unfamiliar format into Windsurf's YAML-based configuration. Take time to review each rule category and test thoroughly after migration. With careful attention to detail, you can maintain your custom AI behavior when switching tools.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

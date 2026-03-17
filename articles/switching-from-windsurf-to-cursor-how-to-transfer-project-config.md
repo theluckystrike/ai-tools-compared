@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Switching from Windsurf to Cursor: How to Transfer Project Config"
-description: "A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and maintain your workflow continuity."
+title: "Switching from Windsurf to Cursor: How to Transfer."
+description: "A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-to-cursor-how-to-transfer-project-config/
@@ -182,5 +182,10 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 ## Conclusion
 
 Switching from Windsurf to Cursor requires deliberate configuration transfer, but the process is straightforward. Export your rules, workflows, snippets, and keybindings, then recreate them using Cursor's equivalent systems. Take time to test and adjust your new setup, and you will maintain your workflow while benefiting from Cursor's Claude-powered features.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
