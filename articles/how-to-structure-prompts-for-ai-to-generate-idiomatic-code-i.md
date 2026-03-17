@@ -5,7 +5,7 @@ description: "A practical guide for developers on writing effective prompts that
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/
-categories: [ai-code-generation]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
