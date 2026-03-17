@@ -86,7 +86,7 @@ When building custom skills, the path is: understand the [skill.md format](/clau
 | [Claude Code vs GitHub Copilot Workspace: 2026 Comparison](/claude-skills-guide/claude-code-vs-github-copilot-workspace-2026/) | Feature-by-feature breakdown of Claude Code vs Copilot |
 | [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/claude-code-vs-replit-agent-which-is-better-2026/) | Comparing Claude Code and Replit Agent for app development |
 | [Claude Code vs Windsurf for AI Development](/claude-skills-guide/claude-code-vs-windsurf-for-ai-development/) | Choosing between Claude Code and Windsurf IDE |
-| [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/claude-cowork-vs-cursor-ai-editor-comparison-2026/) | Deep comparison of Claude Code and Cursor for daily coding |
+| [Claude Code vs Cursor 2026 Detailed Comparison](/claude-skills-guide/claude-code-vs-cursor-2026-detailed-comparison/) | Deep comparison of Claude Code and Cursor for daily coding |
 | [Claude Memory Feature vs SuperMemory Skill Comparison](/claude-skills-guide/claude-memory-feature-vs-supermemory-skill-comparison/) | Built-in memory feature vs the supermemory community skill |
 | [Claude Opus 4.6 vs GPT-4o for Coding Tasks](/claude-skills-guide/claude-opus-46-vs-gpt-4o-for-coding-tasks-comparison/) | Model-level comparison for coding-heavy workloads |
 | [Claude Skills vs Custom GPTs: 2026 Comparison](/claude-skills-guide/claude-skills-vs-custom-gpts-comparison-2026/) | Claude skills vs OpenAI Custom GPTs for workflow automation |

@@ -227,7 +227,7 @@ Enterprise Claude Code deployment introduces questions around governance, onboar
 - [How to Build a SaaS MVP with Claude Code Skills Guide](/claude-skills-guide/how-to-build-saas-mvp-with-claude-code-skills-guide/) — Compressed SaaS MVP delivery with Claude skills
 - [How to Make Claude Code Follow Team Style Guide](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) — Enforcing team style conventions through CLAUDE.md
 - [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) — Teaching Claude the conventions in an existing codebase
-- [How to Make Claude Code Work with Legacy Codebase](/claude-skills-guide/how-to-make-claude-code-work-with-legacy-codebase/) — Adapting Claude Code to work in legacy codebases
+- [How to Use Claude Code to Refactor Legacy JavaScript Code](/claude-skills-guide/how-to-use-claude-code-to-refactor-legacy-javascript-code/) — Adapting Claude Code to work in legacy codebases
 - [Is Claude Code Worth It? An Honest Beginner Review 2026](/claude-skills-guide/is-claude-code-worth-it-honest-beginner-review-2026/) — Honest assessment of Claude Code ROI for beginners
 - [Why Do Senior Developers Prefer Claude Code in 2026?](/claude-skills-guide/why-do-senior-developers-prefer-claude-code-2026/) — What experienced engineers value most about Claude Code
 - [Why Is Claude Code Recommended for Refactoring Tasks](/claude-skills-guide/why-is-claude-code-recommended-for-refactoring-tasks/) — Why Claude Code excels at large-scale refactoring
@@ -283,7 +283,7 @@ How does Claude Code compare to alternatives? These guides provide honest, techn
 - [Claude Code vs Amazon Q Developer Comparison 2026](/claude-skills-guide/claude-code-vs-amazon-q-developer-comparison-2026/) — Claude Code vs Amazon Q for enterprise development
 - [Claude Code vs GitHub Copilot Workspace 2026](/claude-skills-guide/claude-code-vs-github-copilot-workspace-2026/) — Head-to-head comparison with GitHub Copilot Workspace
 - [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/claude-code-vs-replit-agent-which-is-better-2026/) — Claude Code vs Replit Agent for rapid prototyping
-- [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/claude-cowork-vs-cursor-ai-editor-comparison-2026/) — Feature comparison with Cursor AI editor
+- [Claude Code vs Cursor 2026 Detailed Comparison](/claude-skills-guide/claude-code-vs-cursor-2026-detailed-comparison/) — Feature comparison with Cursor AI editor
 - [Claude Code Skills vs Bolt.new: 2026 Comparison Guide](/claude-skills-guide/claude-code-skills-vs-bolt-new-for-web-development/) — Claude Code vs Bolt.new for web development
 - [Claude Code Skills for Supabase Full Stack Apps Guide](/claude-skills-guide/claude-code-skills-for-supabase-full-stack-apps-guide/) — Supabase full-stack patterns with Claude Code
 - [Claude Skills vs Emerging Agentic Frameworks 2026](/claude-skills-guide/claude-skills-vs-emerging-agentic-frameworks-2026/) — Claude skills vs AutoGPT, CrewAI, and LangGraph
@@ -382,7 +382,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/claude-code-vs-replit-agent-which-is-better-2026/) | Comparisons |
 | [Claude Code WebSocket Implementation: Real-Time Events Guide](/claude-skills-guide/claude-code-websocket-implementation-real-time-events-guide/) | Backend |
 | [Claude Code with Docker: Container Setup Guide](/claude-skills-guide/using-claude-code-inside-docker-container-tutorial/) | Cloud |
-| [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/claude-cowork-vs-cursor-ai-editor-comparison-2026/) | Comparisons |
+| [Claude Code vs Cursor 2026 Detailed Comparison](/claude-skills-guide/claude-code-vs-cursor-2026-detailed-comparison/) | Comparisons |
 | [Claude MD Best Practices for Large Codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/) | Claude MD |
 | [Claude MD Character Limit and Optimization Guide](/claude-skills-guide/claude-md-character-limit-and-optimization-guide/) | Claude MD |
 | [Claude MD File Complete Guide — What It Does](/claude-skills-guide/claude-md-file-complete-guide-what-it-does/) | Claude MD |
@@ -442,7 +442,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [How to Make Claude Code Match Existing Code Patterns](/claude-skills-guide/how-to-make-claude-code-follow-team-style-guide/) | Enterprise |
 | [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/how-to-make-claude-code-not-over-engineer-solutions/) | Performance |
 | [How to Make Claude Code Use Specific Library Version](/claude-skills-guide/how-to-make-claude-code-use-specific-library-version/) | Performance |
-| [How to Make Claude Code Work with Legacy Codebase](/claude-skills-guide/how-to-make-claude-code-work-with-legacy-codebase/) | Enterprise |
+| [How to Use Claude Code to Refactor Legacy JavaScript Code](/claude-skills-guide/how-to-use-claude-code-to-refactor-legacy-javascript-code/) | Enterprise |
 | [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) | Performance |
 | [How to Make Claude Code Write Secure Code Always](/claude-skills-guide/how-to-make-claude-code-write-secure-code-always/) | Security |
 | [How to Share Claude Skills with Your Team](/claude-skills-guide/how-to-share-claude-skills-with-your-team/) | Enterprise |

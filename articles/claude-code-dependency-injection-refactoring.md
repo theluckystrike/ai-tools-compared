@@ -169,7 +169,7 @@ If you are working on refactoring real TypeScript or application-level code to f
 - [Claude Code for Dependency Inversion Refactoring Guide](/claude-code-for-dependency-inversion-refactoring-guide/) — Using Claude Code to apply the Dependency Inversion Principle in real application codebases
 - [How to Make Claude Code Follow DRY and SOLID Principles](/claude-skills-guide/how-to-make-claude-code-follow-dry-solid-principles/) — Dependency injection implements the Dependency Inversion principle
 - [Claude Code Coupling and Cohesion Improvement](/claude-skills-guide/claude-code-coupling-and-cohesion-improvement/) — DI reduces coupling between components
-- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — DI refactoring needs test coverage
+- [Claude Code Test Driven Refactoring Guide](/claude-skills-guide/claude-code-test-driven-refactoring-guide/) — DI refactoring needs test coverage
 - [Claude Code Technical Debt Tracking Workflow](/claude-skills-guide/claude-code-technical-debt-tracking-workflow/) — Tightly-coupled code is a common tech debt item
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

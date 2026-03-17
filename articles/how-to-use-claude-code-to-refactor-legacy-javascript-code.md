@@ -178,6 +178,31 @@ For larger refactoring projects, tracking progress matters. The xlsx skill can g
 
 This data helps justify refactoring efforts to stakeholders and plan future work.
 
+## Providing Codebase Context for Legacy Projects
+
+Legacy codebases have implicit conventions that Claude Code cannot infer from code alone. Create a `.claude/codebase-context.md` file that captures your project's constraints so Claude respects them in every interaction:
+
+```markdown
+## Legacy Patterns to Preserve
+- Use the legacy service layer pattern
+- Keep the old authentication flow unchanged
+- Maintain backward compatibility for API v1 endpoints
+
+## Technology Constraints
+- Node.js version: 14.x (do not upgrade)
+- No TypeScript - plain JavaScript only
+- Use Express 4.x, not Express 5.x
+```
+
+Set clear directory boundaries to prevent accidental modifications to critical legacy systems:
+
+```
+You may modify files in /src and /lib directories only.
+Do not touch /legacy, /vendor, or configuration files in /config.
+```
+
+For database migrations in legacy projects, enforce safety rules: never modify existing table structures without approval, always create new columns rather than altering existing ones, and back up data before any migration. These constraints prevent the kind of irreversible changes that make legacy refactoring risky.
+
 ## Best Practices for Safe Refactoring
 
 1. **Start with tests** — Use the tdd skill to establish baseline behavior
@@ -196,9 +221,8 @@ Start small with low-risk functions, build test coverage using the tdd skill, an
 
 ## Related Reading
 
-- [How to Make Claude Code Work with Legacy Codebase](/claude-skills-guide/how-to-make-claude-code-work-with-legacy-codebase/) — See also
-- [How to Make Claude Code Refactor Without Breaking Tests](/claude-skills-guide/how-to-make-claude-code-refactor-without-breaking-tests/) — See also
-- [Claude Code Jest to Vitest Migration Workflow Tutorial](/claude-skills-guide/claude-code-jest-to-vitest-migration-workflow-tutorial/) — See also
+- [Claude Code Test Driven Refactoring Guide](/claude-skills-guide/claude-code-test-driven-refactoring-guide/) — Master test-driven refactoring workflows for safely improving legacy codebases
+- [Claude Code Jest to Vitest Migration Workflow Tutorial](/claude-skills-guide/claude-code-jest-to-vitest-migration-workflow-tutorial/) — Migrate your legacy test suite from Jest to Vitest
 - [Claude Code Tutorials Hub](/claude-skills-guide/tutorials-hub/) — See also
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

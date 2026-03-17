@@ -197,6 +197,24 @@ Remember these patterns for our component library:
 
 Supermemory applies these conventions automatically in future component generations.
 
+## Solving Prop Drilling with Claude Code
+
+One of React's common pain points is prop drilling. When Claude Code analyzes your component tree, it can suggest and implement better patterns to eliminate it:
+
+- **Compound Components**: Transform verbose prop configurations into readable component composition
+- **Context API**: Identify shared state that should use React Context instead of passing through intermediate components
+- **State Management Integration**: Suggest Redux Toolkit slices or Zustand stores when the shared state warrants a dedicated store
+
+Ask Claude to refactor prop drilling into a proper context pattern:
+
+```
+Refactor this component tree to use an AuthContext. Currently user, setUser,
+and isAuthenticated are passed through 5+ intermediate components.
+Consolidate the auth state into a context provider.
+```
+
+Claude Code will generate the context provider, the custom hook, and update all consumers in one pass.
+
 ## Practical Workflow
 
 1. **Describe your need**: Write a clear prompt with component requirements

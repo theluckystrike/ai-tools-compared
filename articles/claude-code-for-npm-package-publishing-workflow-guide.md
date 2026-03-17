@@ -57,6 +57,45 @@ Claude will generate the appropriate configuration files. Here's what a well-str
 }
 ```
 
+## Scaffolding with CLAUDE.md
+
+Before generating any package code, establish context by creating a `CLAUDE.md` file in your project root. This tells Claude Code about your package goals, coding standards, and preferred tooling for every subsequent interaction:
+
+```markdown
+# Package Development Context
+
+## Project Type
+- npm library/package for Node.js and browser
+- TypeScript required
+- Target: ES2020+ environments
+
+## Coding Standards
+- Use ES modules syntax
+- Include JSDoc type annotations
+- Write comprehensive unit tests with Vitest
+
+## Package Requirements
+- Zero runtime dependencies
+- Tree-shakeable exports
+- Provide both ESM and CommonJS builds
+```
+
+For dual-format packages, configure your `package.json` exports field to serve both ESM and CJS consumers:
+
+```json
+{
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  }
+}
+```
+
+With this context in place, Claude Code generates code that matches your standards from the first interaction.
+
 ## Automating Quality Checks
 
 Before publishing, your package must pass several quality gates. Claude Code can help you create comprehensive checks that run automatically before each release.

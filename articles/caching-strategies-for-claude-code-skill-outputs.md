@@ -201,6 +201,58 @@ Different skills warrant different caching strategies:
 
 **The `supermemory` skill**: This skill handles caching internally by design, but you can enhance it by providing context about what information was previously retrieved in your session.
 
+## In-Memory Caching for Single Sessions
+
+For fast, temporary caching within a single Claude Code session, an in-memory cache avoids filesystem overhead entirely. This works well when you need immediate access to recently processed information but don't need persistence across sessions:
+
+```python
+import hashlib
+
+class PromptCache:
+    def __init__(self):
+        self._cache = {}
+
+    def get(self, key):
+        return self._cache.get(key)
+
+    def set(self, key, value):
+        self._cache[key] = value
+
+    def generate_key(self, *args):
+        return hashlib.sha256(str(args).encode()).hexdigest()
+
+cache = PromptCache()
+
+def process_with_cache(prompt, context):
+    cache_key = cache.generate_key(prompt, context)
+    cached_result = cache.get(cache_key)
+    if cached_result:
+        return cached_result
+
+    result = process_prompt(prompt, context)
+    cache.set(cache_key, result)
+    return result
+```
+
+Start with in-memory caching for immediate benefits, then add file-based or MCP-backed persistence when you need cross-session continuity.
+
+## Stale-While-Revalidate Pattern
+
+For scenarios where fresh data is desirable but cached data is acceptable as a fallback, implement the stale-while-revalidate pattern. This returns cached results immediately while triggering a background refresh:
+
+```python
+async def get_data_with_swr(key, fetch_function):
+    cached = await cache.get(key)
+    if cached:
+        return {'data': cached, 'stale': True, 'background_update': True}
+
+    fresh_data = await fetch_function()
+    await cache.set(key, fresh_data)
+    return {'data': fresh_data, 'stale': False}
+```
+
+This pattern is particularly useful for skill outputs tied to external data sources where freshness matters but latency matters more.
+
 ## Monitoring Cache Effectiveness
 
 Track your cache hit rate to ensure your strategy delivers value:

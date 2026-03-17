@@ -168,6 +168,16 @@ Claude Code will interpret the results, identify any new type errors introduced 
 
 Copilot provides no mechanism for verifying type safety. You must manually run type checking, interpret errors, and manually request fixes from Copilot for each issue.
 
+## Practical Refactoring Scenarios Beyond TypeScript
+
+While this guide focuses on TypeScript, the same Claude Code advantages apply to broader refactoring tasks:
+
+**Component Library Migration**: Converting class components to functional components with hooks involves lifecycle method translation, state migration, and prop type preservation across dozens of files. Claude Code handles this end-to-end using the **tdd** skill to capture existing behavior first, then systematically converting each component while running tests.
+
+**API Client Standardization**: When fifteen different API call implementations are scattered across modules, Claude Code analyzes all of them, creates a unified client with retry logic and error handling, and replaces each implementation while maintaining the same external interface.
+
+**Database Query Optimization**: Replacing raw SQL queries with an ORM requires understanding the data model, mapping queries to ORM syntax, and verifying no data-fetching logic breaks. Claude Code's ability to read your entire schema and locate all queries creates a clear advantage over single-file tools.
+
 ## Making the Choice
 
 For TypeScript refactoring tasks, Claude Code offers clear advantages:
@@ -184,7 +194,6 @@ The key insight is that TypeScript refactoring is fundamentally a multi-step, cr
 
 ## Related Reading
 
-- [Should I Use Claude Code or Copilot for Large Refactors?](/claude-skills-guide/should-i-use-claude-code-or-copilot-for-large-refactors/) — General large-scale refactoring guide covering component migrations, API standardization, and decision frameworks beyond TypeScript
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)

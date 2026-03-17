@@ -102,7 +102,7 @@ If you're just getting started with skills, these five deliver the highest value
 | [Claude Code vs Amazon Q Developer: 2026 Comparison](/claude-skills-guide/claude-code-vs-amazon-q-developer-comparison-2026/) | 2026 comparison of Claude Code and Amazon Q for enterprise teams |
 | [Claude Code vs GitHub Copilot Workspace: 2026 Comparison](/claude-skills-guide/claude-code-vs-github-copilot-workspace-2026/) | 2026 showdown between Claude Code and GitHub Copilot Workspace |
 | [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/claude-code-vs-replit-agent-which-is-better-2026/) | 2026 comparison for developers choosing an AI coding agent |
-| [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/claude-cowork-vs-cursor-ai-editor-comparison-2026/) | 2026 head-to-head between Claude Code and Cursor |
+| [Claude Code vs Cursor 2026 Detailed Comparison](/claude-skills-guide/claude-code-vs-cursor-2026-detailed-comparison/) | 2026 head-to-head between Claude Code and Cursor |
 | [Claude Skills vs Custom GPTs: 2026 Comparison](/claude-skills-guide/claude-skills-vs-custom-gpts-comparison-2026/) | 2026 comparison: Claude skills vs OpenAI Custom GPTs |
 | [Claude Code Skill Permission Denied Error Fix](/claude-skills-guide/claude-code-skill-permission-denied-error-fix-2026/) | Resolving permission errors that block skill execution |
 | [Claude Code Permissions Model Security Guide 2026](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/) | The 2026 guide to Claude Code security and permission scopes |

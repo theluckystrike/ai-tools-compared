@@ -187,7 +187,7 @@ For individual developers, Claude Code becomes cost-neutral compared to GitHub C
 | [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) | Fixing and preventing context overflow errors |
 | [Is Claude Code Worth It? An Honest Beginner Review 2026](/claude-skills-guide/is-claude-code-worth-it-honest-beginner-review-2026/) | Honest assessment of Claude Code's value |
 | [Claude Code vs GitHub Copilot Workspace 2026](/claude-skills-guide/claude-code-vs-github-copilot-workspace-2026/) | Full comparison: Claude Code vs GitHub Copilot |
-| [Claude Code vs Cursor AI Editor Comparison 2026](/claude-skills-guide/claude-cowork-vs-cursor-ai-editor-comparison-2026/) | Full comparison: Claude Code vs Cursor |
+| [Claude Code vs Cursor 2026 Detailed Comparison](/claude-skills-guide/claude-code-vs-cursor-2026-detailed-comparison/) | Full comparison: Claude Code vs Cursor |
 | [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/claude-code-vs-replit-agent-which-is-better-2026/) | Full comparison: Claude Code vs Replit AI |
 | [Claude Code vs Amazon Q Developer Comparison 2026](/claude-skills-guide/claude-code-vs-amazon-q-developer-comparison-2026/) | Full comparison: Claude Code vs Amazon Q |
 | [Claude Code vs OpenAI Codex CLI: 2026 Comparison](/claude-skills-guide/claude-code-vs-openai-codex-cli-comparison-2026/) | Full comparison: Claude Code vs OpenAI Codex CLI |
