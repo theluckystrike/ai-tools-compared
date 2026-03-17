@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Well Do AI Tools Handle Rust Lifetime Elision Rules Correctly"
+title: "How Well Do AI Tools Handle Rust Lifetime Elision Rules."
 description: "A practical test of AI coding assistants' ability to understand and apply Rust lifetime elision rules, with real code examples and analysis."
 date: 2026-03-16
 author: theluckystrike
@@ -142,5 +142,10 @@ Third, when an AI tool struggles with lifetime errors, provide explicit context 
 ## Conclusion
 
 Rust lifetime elision rules remain one of the more nuanced aspects of the language, and AI tools show varying levels of competence. Claude Code leads in accuracy and educational value, while all tested tools handle simple cases well. Complex scenarios requiring careful lifetime relationship modeling benefit from developer oversight and explicit guidance. Understanding elision rules yourself remains essential for reviewing AI suggestions and catching edge cases that confuse even capable AI assistants.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

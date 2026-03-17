@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Accurate Are AI Tools for Rust Unsafe Code Blocks and FFI?"
+title: "How Accurate Are AI Tools for Rust Unsafe Code Blocks."
 description: "A practical evaluation of how well AI coding assistants handle Rust unsafe blocks and foreign function interface programming."
 date: 2026-03-16
 author: theluckystrike
@@ -171,5 +171,10 @@ Given these findings, several strategies improve results when working with AI-as
 AI coding tools provide solid assistance with Rust unsafe code and FFI for straightforward cases—standard FFI declarations, common unsafe patterns, and well-documented library wrappers. Their accuracy decreases for complex scenarios requiring reasoning about safety invariants, lifetime interactions across language boundaries, and proper documentation of unsafe contracts.
 
 For production systems programming, treat AI-generated unsafe code as a starting point requiring careful review. The tool can handle the mechanical translation and boilerplate, but human judgment remains essential for verifying that safety requirements are correctly specified and maintained. As AI models receive more training data from Rust's growing ecosystem, accuracy in these specialized areas will likely improve—but the fundamental need for careful reasoning about memory safety ensures that human oversight remains necessary.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

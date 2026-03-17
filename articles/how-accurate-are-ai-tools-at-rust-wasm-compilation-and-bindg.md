@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How Accurate Are AI Tools at Rust WASM Compilation and Bindgen Code?"
-description: "A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy assessments for developers."
+title: "How Accurate Are AI Tools at Rust WASM Compilation and."
+description: "A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/
@@ -316,6 +316,11 @@ This correctly handles async-to-Promise conversion. The code compiles and works 
 AI tools perform well on straightforward WASM code generation but struggle with more advanced scenarios. GitHub Copilot showed notable weakness with slice types and async function handling. Claude Code and Cursor demonstrated stronger accuracy across all test cases, particularly excelling with complex struct exports and async-to-Promise conversions.
 
 For developers working with Rust WASM and bindgen, these results suggest verifying AI-generated code carefully, especially when dealing with slices, async functions, or custom struct exports. The nuanced differences in attribute placement and type choices can impact both performance and functionality.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
