@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Configure AI Context Includes and Excludes for Monorepo Projects"
+title: "How to Configure AI Context Includes and Excludes for."
 description: "A practical guide to configuring AI coding assistants to focus on specific directories in monorepo setups, improving context accuracy and response quality."
 date: 2026-03-16
 author: theluckystrike
@@ -191,6 +191,11 @@ Forgetting to exclude generated files is another common oversight. Files in `dis
 Finally, configuration files left at the root may not apply to nested projects. If your monorepo has independent sub-projects, consider adding localized configuration files to those directories for more precise control.
 
 Properly configured context includes and excludes transform AI assistance from a generic tool into a focused collaborator that understands exactly which part of your monorepo you're working in and provides relevant, accurate guidance accordingly.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

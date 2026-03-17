@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Reduce AI Autocomplete Ghost Text Distractions While Coding"
-description: "Practical strategies to minimize AI autocomplete ghost text distractions in your IDE. Learn configuration options, keyboard shortcuts, and workflows for focused coding."
+title: "How to Reduce AI Autocomplete Ghost Text Distractions."
+description: "Practical strategies to minimize AI autocomplete ghost text distractions in your IDE. Learn configuration options, keyboard shortcuts, and workflows."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/
@@ -143,6 +143,11 @@ The goal isn't eliminating AI assistance but finding the right integration level
 Start with conservative settings and gradually increase assistance until you identify the threshold where productivity gains outweigh distraction costs. Remember that these preferences can vary by project type, language, and even time of day.
 
 With proper configuration, AI autocomplete becomes a helpful colleague who knows when to speak and when to stay quiet—rather than a constant interruption demanding your attention.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Model Selection Guide: Which Model for Which Coding Task"
+title: "Cursor AI Model Selection Guide: Which Model for Which."
 description: "A practical guide to selecting the right AI model in Cursor IDE for different coding tasks, with examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -220,6 +220,11 @@ If you're hitting limits with your current tier, prioritize using advanced model
 ## Summary
 
 Selecting the right Cursor AI model improves both productivity and code quality. Match lightweight models to simple tasks, use balanced models for typical development work, and reserve advanced models for complex reasoning. This approach optimizes response times while ensuring you have sufficient capability when tackling difficult problems.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
