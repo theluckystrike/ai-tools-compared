@@ -249,6 +249,65 @@ database_name = "hono-api-db"
 claude "Deploy this Hono API to Cloudflare Workers and create the D1 database if it doesn't exist"
 ```
 
+## Optimizing for Edge Performance
+
+Edge functions run close to users, but memory and CPU are constrained. Apply these patterns to keep your Hono API fast:
+
+**Lazy Load Heavy Dependencies**
+
+Import expensive modules only when needed to reduce cold start times:
+
+```typescript
+app.post('/api/generate-pdf', async (c) => {
+  const { generatePDF } = await import('./pdf-generator')
+  return c.json(await generatePDF(await c.req.json()))
+})
+```
+
+**Use Durable Objects for State**
+
+For stateful edge functions on Cloudflare, use Durable Objects instead of external databases:
+
+```typescript
+export class Counter implements DurableObject {
+  private count = 0
+
+  async fetch(request: Request): Promise<Response> {
+    this.count++
+    return new Response(this.count.toString())
+  }
+}
+```
+
+**Cache Responses with the Cache API**
+
+Implement response caching directly at the edge:
+
+```typescript
+app.get('/api/data', async (c) => {
+  const cache = caches.default
+  const cached = await cache.match(c.req.url)
+  if (cached) return cached
+
+  const data = await fetchData()
+  const response = c.json(data)
+  response.headers.set('Cache-Control', 's-maxage=3600')
+  return response
+})
+```
+
+**Detect Runtime Environment**
+
+Use `getRuntimeKey()` to adapt behavior across different edge runtimes:
+
+```typescript
+import { getRuntimeKey } from 'hono/adapter'
+
+app.get('/runtime', (c) => {
+  return c.json({ runtime: getRuntimeKey() })
+})
+```
+
 ## Conclusion
 
 Claude Code revolutionizes Hono development by bringing AI-assisted coding to every step of your workflow. From initial project setup through deployment, Claude understands your API's context and generates type-safe, production-ready TypeScript code.

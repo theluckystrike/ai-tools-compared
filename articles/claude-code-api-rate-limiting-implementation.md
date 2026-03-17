@@ -281,6 +281,45 @@ async def rate_limit_middleware(request: Request, call_next):
     return response
 ```
 
+## Express.js Middleware Integration
+
+For Node.js applications, integrate rate limiting as Express middleware using the same token bucket pattern:
+
+```typescript
+import { Request, Response, NextFunction } from 'express';
+
+interface RateLimitOptions {
+  windowMs: number;
+  maxRequests: number;
+  keyGenerator?: (req: Request) => string;
+}
+
+function createRateLimitMiddleware(options: RateLimitOptions) {
+  const buckets = new Map<string, TokenBucket>();
+
+  return (req: Request, res: Response, next: NextFunction) => {
+    const key = options.keyGenerator?.(req) ?? req.ip ?? 'unknown';
+
+    if (!buckets.has(key)) {
+      buckets.set(key, new TokenBucket(options.maxRequests / 60, options.maxRequests));
+    }
+
+    const bucket = buckets.get(key)!;
+    const allowed = bucket.consume();
+
+    res.setHeader('X-RateLimit-Limit', options.maxRequests);
+    res.setHeader('X-RateLimit-Remaining', Math.floor(bucket.tokens));
+
+    if (!allowed) {
+      return res.status(429).json({ error: 'Too Many Requests' });
+    }
+    next();
+  };
+}
+```
+
+Use hierarchical rate limiting — implement limits at global, per-user, and per-endpoint levels for defense in depth.
+
 ## Graceful Degradation
 
 When Redis becomes unavailable, you have two options: fail open (allow requests) or fail closed (deny requests). Fail open risks exceeding limits during outages but prevents service degradation. A `HybridRateLimiter` implements automatic fallback to in-memory limiting:
