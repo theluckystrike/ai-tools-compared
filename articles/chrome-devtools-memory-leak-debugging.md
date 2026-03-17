@@ -5,7 +5,7 @@ layout: default
 title: "Chrome DevTools Memory Leak Debugging: Find and Fix."
 description: "Learn how to identify, analyze, and fix memory leaks in web applications using Chrome DevTools memory profiler with practical code examples."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: "theluckystrike"
 permalink: /chrome-devtools-memory-leak-debugging/
 reviewed: true
 score: 8
