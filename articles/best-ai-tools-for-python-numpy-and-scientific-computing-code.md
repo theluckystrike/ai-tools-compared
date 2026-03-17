@@ -5,6 +5,10 @@ description: "A practical comparison of AI coding assistants for NumPy and scien
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-python-numpy-and-scientific-computing-code/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A practical guide to the best AI tools for Rust web development us
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-rust-web-development-with-axum-framework-2/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Building web applications with Rust and Axum requires robust tooling. The Axum framework, built on tokio and tower, offers an ergonomic API for building HTTP services, but leveraging AI assistants effectively can dramatically speed up your development workflow. Here is a practical look at the best AI tools for Rust web development with Axum in 2026.
