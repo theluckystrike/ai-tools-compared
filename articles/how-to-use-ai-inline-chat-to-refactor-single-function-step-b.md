@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Inline Chat to Refactor Single Function Step by Step"
+title: "How to Use AI Inline Chat to Refactor Single Function."
 description: "A practical guide for developers on using VS Code AI inline chat to refactor individual functions with real code examples and step-by-step instructions."
 date: 2026-03-16
 author: theluckystrike
@@ -125,6 +125,11 @@ The feature also understands framework-specific patterns. You can ask for "React
 AI inline chat transforms code refactoring from a manual, time-consuming process into a collaborative workflow between developer and AI. By selecting your function, describing your goal precisely, and reviewing suggestions carefully, you can refactor single functions efficiently while maintaining code quality.
 
 The key lies in specificity: clear prompts yield better results. Start with simple refactoring tasks to build trust in the tool, then gradually tackle more complex transformations as you become comfortable with its behavior.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
