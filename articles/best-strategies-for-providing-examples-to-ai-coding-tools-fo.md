@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Strategies for Providing Examples to AI Coding Tools for Better Output"
-description: "Learn practical strategies for giving AI coding tools effective examples. This guide covers prompt engineering techniques, code snippet usage, and real-world patterns to improve AI-generated code quality."
+title: "Best Strategies for Providing Examples to AI Coding."
+description: "Learn practical strategies for giving AI coding tools effective examples. This guide covers prompt engineering techniques, code snippet usage, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-strategies-for-providing-examples-to-ai-coding-tools-fo/
@@ -245,6 +245,11 @@ This prompt provides everything the AI needs to generate consistent, production-
 Providing effective examples to AI coding tools requires thinking about what context the AI needs to understand your project's conventions. Include real code from your codebase, show input-output examples, demonstrate error handling patterns, specify testing requirements, and build context incrementally for complex tasks.
 
 The key principle is treating AI interactions like onboarding a new developer—they need to see your existing patterns to produce code that fits seamlessly into your project.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
