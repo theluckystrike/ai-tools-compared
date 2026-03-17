@@ -1,0 +1,188 @@
+---
+layout: default
+title: "Best Practices for Combining AI Code Generation with Manual Code Review"
+description: "A practical guide for developers on integrating AI code generation with manual code review. Learn workflows, patterns, and strategies to maximize code quality while maintaining developer control."
+date: 2026-03-16
+author: theluckystrike
+permalink: /best-practices-for-combining-ai-code-generation-with-manual-code-review/
+---
+
+AI code generation tools have transformed how developers write software, but they work best when combined with human oversight. Manual code review remains essential for catching bugs, ensuring security, and maintaining code quality. This guide covers practical strategies for combining AI-generated code with thorough manual review.
+
+## The Role Division: What AI Does Well
+
+AI excels at generating repetitive boilerplate, scaffolding project structures, and creating test cases. It can rapidly produce code based on specifications, saving hours of manual typing. However, AI lacks understanding of your specific business context, security requirements, and architectural decisions.
+
+The most effective approach assigns clear responsibilities: let AI handle the mechanical work while you focus on logic validation, security review, and architectural consistency.
+
+## Practical Workflow for AI + Manual Review
+
+### Step 1: Generate with Clear Context
+
+When prompting AI for code, provide sufficient context. Include relevant file paths, existing patterns in your codebase, and specific requirements:
+
+```python
+# Instead of:
+# "Write a function to process user data"
+
+# Use:
+"Write a Python function to validate user registration data. 
+Follow our existing patterns in models/user.py. Use Pydantic v2 
+for validation. Return 422 on validation failure with error details."
+```
+
+### Step 2: Automated Pre-Check Before Human Review
+
+Run basic checks before requesting manual review:
+
+```bash
+# Run linter and formatter
+python -m ruff check generated_code.py
+python -m black generated_code.py
+
+# Run type checker
+python -m mypy generated_code.py
+
+# Run tests
+pytest generated_code_test.py
+```
+
+This catches syntax errors, style violations, and basic type issues automatically.
+
+### Step 3: Structured Manual Review Checklist
+
+When reviewing AI-generated code, use a systematic approach:
+
+1. **Logic verification**: Does the code actually solve the stated problem?
+2. **Edge cases**: What happens with null values, empty inputs, or unexpected data?
+3. **Security**: Are there injection risks, exposed credentials, or permission issues?
+4. **Performance**: Are there obvious N+1 queries, missing indexes, or inefficient loops?
+5. **Dependencies**: Are imported libraries necessary? Any version conflicts?
+
+### Example: Reviewing AI-Generated API Endpoint
+
+Consider this AI-generated FastAPI endpoint:
+
+```python
+@router.post("/users")
+def create_user(user_data: UserCreate):
+    user = db.create(user_data)
+    return user
+```
+
+Manual review should catch several issues:
+
+```python
+# After review - corrected version
+@router.post("/users", response_model=UserResponse, status_code=201)
+def create_user(
+    user_data: UserCreate,
+    db: Session = Depends(get_db),
+    current_user: User = Depends(require_admin)  # Added auth
+):
+    # Check for duplicates before creation
+    existing = db.query(User).filter(User.email == user_data.email).first()
+    if existing:
+        raise HTTPException(status_code=409, detail="Email already registered")
+    
+    user = user_service.create(db, user_data)
+    return user
+```
+
+The review added authentication, duplicate checking, proper HTTP status codes, and response modeling.
+
+## Configuring AI Tools for Better Output
+
+Most AI coding tools support configuration that improves output quality:
+
+### Cursor Rules Example
+
+```json
+{
+  "rules": [
+    "Always add type hints to function signatures",
+    "Include docstrings for all public functions",
+    "Use logging instead of print statements",
+    "Add retry logic for external API calls"
+  ]
+}
+```
+
+### Claude Code Project Context
+
+Set up project-specific context to guide AI:
+
+```
+/project
+  /docs
+    architecture.md      # System design decisions
+    coding-standards.md  # Language-specific patterns
+  /src
+    /legacy              # Note: Avoid modifying this folder
+```
+
+This prevents AI from generating code that conflicts with existing architecture.
+
+## Balancing Speed and Quality
+
+The goal is maintaining velocity while ensuring correctness. Consider these thresholds:
+
+- **Quick prototypes**: Generate + syntax check only
+- **Production features**: Generate + automated tests + manual review
+- **Security-critical code**: Generate + security scan + senior developer review
+- **Legacy modifications**: Manual-only to preserve system stability
+
+## Common Pitfalls to Avoid
+
+### Trusting AI Without Verification
+
+Never deploy AI-generated code directly to production without review. Even experienced developers miss issues; AI can confidently produce incorrect code.
+
+### Over-Reviewing Simple Code
+
+Spending 30 minutes reviewing a generated test file wastes time. Apply proportional review effort based on code complexity and impact.
+
+### Ignoring AI Limitations
+
+AI struggles with:
+- Domain-specific business logic
+- Security-sensitive operations  
+- Performance optimization for specific workloads
+- Understanding your team's existing patterns
+
+## Measuring Success
+
+Track these metrics to evaluate your workflow:
+
+```python
+# Track review findings per code source
+review_stats = {
+    "ai_generated": {"total_reviews": 50, "issues_found": 12},
+    "manual": {"total_reviews": 30, "issues_found": 8}
+}
+# AI-generated code has higher issue density, justifying review effort
+```
+
+### Time-to-Deployment Tracking
+
+Measure the total time from code generation to deployment:
+
+```python
+# Track different stages
+task_timeline = {
+    "ai_generation": "2 minutes",
+    "automated_checks": "30 seconds", 
+    "manual_review": "15 minutes",
+    "revisions": "5 minutes",
+    "total": "23 minutes"
+}
+# Compare against purely manual development
+```
+
+Compare these metrics against purely manual development times to quantify AI's value.
+
+## Summary
+
+Combining AI code generation with manual review maximizes both speed and quality. Use AI for boilerplate, scaffolding, and test generation. Apply manual review focused on logic, security, and architecture. Configure your AI tools with project-specific context. Maintain velocity by adjusting review depth based on code criticality. Track your metrics to continuously improve the process and demonstrate value to stakeholders.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
