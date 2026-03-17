@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Idiomatic Rust Error Handling with Result Types"
-description: "A practical comparison of AI coding assistants for writing idiomatic Rust error handling using Result types. Includes code examples and tool recommendations."
+title: "Best AI Tools for Writing Idiomatic Rust Error Handling."
+description: "A practical comparison of AI coding assistants for writing idiomatic Rust error handling using Result types. Includes code examples and tool."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-idiomatic-rust-error-handling-with/
@@ -139,6 +139,11 @@ Regardless of which tool you choose, provide context for better error handling c
 4. **Verify `From` implementations**: AI tools sometimes miss automatic conversion traits
 
 The right AI tool accelerates idiomatic Rust error handling, but understanding `Result<T, E>` fundamentals remains essential for reviewing and improving generated code.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
