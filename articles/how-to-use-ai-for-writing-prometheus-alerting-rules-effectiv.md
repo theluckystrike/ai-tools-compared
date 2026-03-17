@@ -11,6 +11,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 Prometheus alerting rules form the backbone of observability for cloud-native applications. Writing effective alert definitions requires understanding metric queries, threshold selection, and alert routing. AI assistance can accelerate this process significantly, helping you craft rules that reduce noise while catching genuine issues early.
 
@@ -230,3 +232,4 @@ Effective alerting requires ongoing refinement. AI makes iteration faster, but y
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

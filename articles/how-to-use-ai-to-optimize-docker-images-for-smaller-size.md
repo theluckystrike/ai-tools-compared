@@ -7,6 +7,8 @@ date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-ai-to-optimize-docker-images-for-smaller-size/
 ---
+{% raw %}
+
 
 Reducing Docker image sizes directly impacts your deployment speed, storage costs, and security posture. Smaller images mean faster pulls, quicker scaling, and a smaller attack surface. While manual optimization requires deep Docker knowledge, AI tools now make this process accessible to developers at any skill level.
 
@@ -203,3 +205,4 @@ AI tools have transformed Docker optimization from a specialized skill into an a
 The key is measuring your baseline, applying AI recommendations, and validating functionality. Small images compound their benefits across deployments, scaling operations, and infrastructure costs.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
