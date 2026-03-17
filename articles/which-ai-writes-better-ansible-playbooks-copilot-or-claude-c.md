@@ -9,6 +9,8 @@ categories: [comparisons]
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 Writing Ansible playbooks requires understanding infrastructure-as-code patterns, idempotency principles, and the specific YAML syntax that Ansible expects. The question of which AI assistant handles this better—GitHub Copilot or Claude Code—matters because poorly written playbooks can introduce security vulnerabilities, fail during deployments, or become difficult to maintain. This comparison evaluates both tools using practical Ansible tasks that DevOps engineers encounter regularly.
 
@@ -120,3 +122,4 @@ For teams using both tools, consider using Copilot for initial scaffold generati
 The best choice depends on your specific workflow, but both tools have earned their place in the Ansible developer's toolkit. The key is understanding what each does well and applying them accordingly.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

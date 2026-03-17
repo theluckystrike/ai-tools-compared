@@ -10,6 +10,8 @@ tags: [tools]
 reviewed: true
 score: 8
 ---
+{% raw %}
+
 
 Automated documentation generation has become essential for maintaining healthy codebases. When choosing between Gemini and Claude for this task, developers need concrete performance data and practical examples. This comparison evaluates both AI assistants on their ability to parse source code and produce accurate markdown documentation.
 
@@ -185,3 +187,4 @@ Remember that AI-generated documentation requires human review. These tools prov
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
