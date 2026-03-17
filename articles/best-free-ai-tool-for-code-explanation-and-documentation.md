@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Free AI Tool for Code Explanation and Documentation"
 description: "A practical comparison of free AI tools for explaining code and generating documentation, with real examples and code snippets for developers."
@@ -12,7 +11,6 @@ categories: [best-of]
 intent-checked: true
 voice-checked: true
 ---
-
 
 {% raw %}
 
