@@ -227,6 +227,36 @@ When the docx skill encounters a corrupted file, the error classification matter
    - "permission denied" → escalate with error details
 ```
 
+## Pattern 5b: Validation Gates Between Pipeline Stages
+
+Preventing bad data from propagating is often more effective than recovering from it downstream. Insert validation checkpoints between pipeline stages to catch failures early:
+
+```python
+async def validation_gate(stage_output, next_stage_schema):
+    """Validate output before passing to the next pipeline stage."""
+    checks = {
+        "format": validate_schema(stage_output, next_stage_schema),
+        "required_fields": all(
+            field in stage_output for field in next_stage_schema.get("required", [])
+        ),
+        "data_integrity": verify_checksums(stage_output),
+        "semantic_validity": check_value_ranges(stage_output),
+    }
+
+    failures = [name for name, passed in checks.items() if not passed]
+    if failures:
+        return {
+            "passed": False,
+            "failed_checks": failures,
+            "stage": stage_output.get("stage_name", "unknown"),
+            "timestamp": datetime.now().isoformat(),
+            "suggested_action": "Fix upstream output before retrying",
+        }
+    return {"passed": True}
+```
+
+This "fail fast" approach prevents wasted computation on invalid data and makes debugging significantly easier — you know exactly which stage produced problematic output rather than tracing errors through multiple downstream stages.
+
 ## Pattern 6: Human-in-the-Loop Escalation
 
 Some errors cannot be automatically resolved. Building escalation points allows human intervention without losing context:

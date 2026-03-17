@@ -286,6 +286,81 @@ repos:
         stages: [commit-msg]
 ```
 
+## CI Integration for Enforced Quality Gates
+
+Pre-commit hooks run locally, but you should also enforce the same quality gates in your CI pipeline. Create a GitHub Actions workflow that mirrors your local checks:
+
+```yaml
+name: Code Quality Gates
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          pip install pre-commit
+          npm install
+
+      - name: Run pre-commit
+        run: pre-commit run --all-files
+
+      - name: Claude Code Analysis
+        run: |
+          git diff --name-only origin/main...HEAD > changed_files.txt
+          claude-code --skill project-linter --analyze $(cat changed_files.txt)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+```
+
+This ensures that even if a developer skips local hooks, the same checks run in CI and block merges with quality issues.
+
+## Optimizing Pre-Commit Performance
+
+As your hook collection grows, optimize for developer experience:
+
+**Parallel Execution**: Let independent hooks run simultaneously:
+
+```yaml
+fail_fast: false
+```
+
+**Selective Stages**: Some hooks only need to run before push, not every commit:
+
+```bash
+# Quick checks every commit
+pre-commit run
+
+# Full checks before push
+pre-commit run --all-files --hook-stage push
+```
+
+**Skip When Necessary**: Allow developers to skip specific hooks for work-in-progress commits:
+
+```bash
+SKIP=claude-code-review git commit -m "WIP: temporary commit"
+```
+
+Use this sparingly — CI will catch anything skipped locally.
+
 ## Best Practices for Git Hook Automation
 
 Keep your hooks fast and focused. Pre-commit hooks that take too long get disabled or bypassed. Run heavy validations asynchronously or in CI pipelines rather than blocking local commits.
