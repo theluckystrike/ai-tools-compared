@@ -126,6 +126,26 @@ function Modal({ isOpen, onClose, title, children }) {
 
 Ask Claude Code to explain each accessibility feature in this component—it will walk you through the focus trap, aria attributes, and keyboard handling.
 
+## Auditing Existing Code for Violations
+
+Beyond building new accessible components, Claude Code works as a direct code-analysis partner for existing code. Share your markup and ask Claude to identify WCAG violations:
+
+```javascript
+// Ask Claude Code to review this HTML for accessibility issues
+const pageContent = `
+  <div class="header">
+    <div class="logo">Company</div>
+    <div class="nav">
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <button>Click here</button>
+`;
+```
+
+Claude identifies missing landmark regions (`<header>`, `<nav>`, `<main>`), the lack of proper heading hierarchy, and the need for descriptive button text instead of "Click here." This hands-on checker workflow — paste code, get feedback, iterate — catches issues that automated tools miss because it understands intent, not just syntax.
+
 ## Automated Testing for Accessibility
 
 Integrate accessibility testing into your CI/CD pipeline using established tools. Claude Code can help write these tests:
@@ -250,6 +270,10 @@ jobs:
 - **Use CSS custom properties for theming**: Make contrast adjustments easy across light/dark modes
 - **Document ARIA usage**: Explain why each ARIA attribute exists in code comments
 - **Automate early**: Integrate accessibility testing from day one rather than retrofitting later
+
+## Limitations and Complementary Testing
+
+While Claude Code is powerful for code-level analysis, automated tools cannot detect all accessibility issues. Things like whether alt text meaningfully describes an image, whether error messages are helpful, or whether the overall user experience is usable for people with disabilities require human judgment. The most effective accessibility strategy combines automated testing with axe-core, AI-assisted code review with Claude Code, manual testing with screen readers (NVDA, VoiceOver, JAWS), and user testing with people who have disabilities.
 
 ## Conclusion
 
