@@ -6,6 +6,10 @@ description: "Learn how to build a word count tracker Chrome extension. Practica
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-word-count-tracker/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

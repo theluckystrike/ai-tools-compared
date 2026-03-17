@@ -5,6 +5,10 @@ description: "Master Chrome enterprise security best practices for developers an
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-enterprise-security-best-practices/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Enterprise Security Best Practices for 2026

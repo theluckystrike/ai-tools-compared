@@ -6,6 +6,10 @@ description: "Learn how to build and use Chrome extensions for optimizing credit
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-credit-card-rewards-optimizer/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Extension Credit Card Rewards Optimizer: A Developer Guide

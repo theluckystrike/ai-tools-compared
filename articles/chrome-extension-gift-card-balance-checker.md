@@ -6,6 +6,10 @@ description: "Learn how to build and use Chrome extensions for checking gift car
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-gift-card-balance-checker/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

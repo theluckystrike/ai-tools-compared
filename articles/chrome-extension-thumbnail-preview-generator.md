@@ -6,6 +6,10 @@ description: "Learn how to build a Chrome extension that generates thumbnail pre
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-thumbnail-preview-generator/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

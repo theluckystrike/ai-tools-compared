@@ -6,6 +6,10 @@ description: "Learn how to block network requests in Chrome extensions using the
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-network-request-blocker/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Chrome Extension Network Request Blocker: A Developer's Guide

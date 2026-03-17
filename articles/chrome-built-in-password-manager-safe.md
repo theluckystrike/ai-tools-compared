@@ -5,6 +5,10 @@ description: "A technical breakdown of Chrome's password manager security model,
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-built-in-password-manager-safe/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

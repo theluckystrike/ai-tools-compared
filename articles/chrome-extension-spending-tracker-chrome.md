@@ -5,6 +5,10 @@ description: "Learn how to build a spending tracker Chrome extension from scratc
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-spending-tracker-chrome/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Building a Chrome extension for tracking spending combines web development skills with practical finance management. This guide walks through creating a spending tracker that runs directly in your browser, storing data locally without relying on external servers.

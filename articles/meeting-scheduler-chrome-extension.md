@@ -5,6 +5,10 @@ description: "Learn how to build and use meeting scheduler Chrome extensions for
 date: 2026-03-15
 author: theluckystrike
 permalink: /meeting-scheduler-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Meeting Scheduler Chrome Extension: A Developer's Guide

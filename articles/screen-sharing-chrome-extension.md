@@ -5,6 +5,10 @@ description: "Learn how to build and use screen sharing Chrome extensions for de
 date: 2026-03-15
 author: theluckystrike
 permalink: /screen-sharing-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Building a screen sharing Chrome extension requires understanding Chrome's desktop capture APIs, permission models, and the constraints imposed by Manifest V3. This guide covers the technical implementation for developers and power users who want to integrate screen sharing into their browser-based workflows.

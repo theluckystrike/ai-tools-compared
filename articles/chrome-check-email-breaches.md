@@ -5,6 +5,10 @@ description: "Learn how to use Chrome and developer tools to check if your email
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-check-email-breaches/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
