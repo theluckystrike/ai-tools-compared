@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "AI Tools for Reviewing Terraform Plans Before Applying to Production"
+title: "AI Tools for Reviewing Terraform Plans Before Applying."
 description: "Discover practical AI tools that help developers review Terraform plans before production deployment, with code examples and integration tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/
-categories: [terraform, devops, ai-tools]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -193,6 +193,11 @@ Maintain human oversight throughout the process. AI tools assist review but shou
 AI tools for reviewing Terraform plans before applying to production represent a significant advancement in infrastructure safety. By automatically analyzing plan output, these tools help teams catch security issues, identify risky changes, and understand complex modifications more quickly.
 
 The best approach depends on your team's size, existing tooling, and specific concerns. Start with tools that integrate easily into your current workflow, measure their effectiveness, and expand usage as you develop confidence in the analysis quality.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

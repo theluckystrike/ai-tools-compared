@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Kubernetes Network Policies Correctly"
+title: "How to Use AI to Generate Kubernetes Network Policies."
 description: "A practical guide for developers on using AI tools to generate Kubernetes network policies with code examples and best practices."
 date: 2026-03-16
 author: theluckystrike
@@ -234,6 +234,11 @@ AI tools can generate these advanced configurations, but you must provide detail
 AI coding assistants significantly speed up Kubernetes network policy creation, but they require clear, specific prompts to generate secure configurations. Provide complete application architecture details, always specify exact labels and namespaces, include both ingress and egress rules, and validate everything before production deployment.
 
 Start with default deny policies, then incrementally add allow rules based on your actual traffic patterns. Use AI to generate the initial structure, then refine manually to match your security requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

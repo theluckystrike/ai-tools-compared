@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing AWS CDK Infrastructure Code in Python"
+title: "Best AI Tools for Writing AWS CDK Infrastructure Code in."
 description: "A practical comparison of AI coding tools for writing AWS CDK infrastructure code in Python, featuring code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -195,6 +195,11 @@ Choosing the right AI tool depends on your workflow and project requirements:
 All tools require review before production deployment. Generated IAM policies particularly need scrutiny for least-privilege compliance, and CDK constructs should match your organization's tagging and naming conventions.
 
 The AI landscape evolves rapidly, and tool capabilities improve continuously. Testing current versions against your specific use cases provides the most accurate basis for selection.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
