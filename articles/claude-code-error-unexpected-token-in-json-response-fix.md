@@ -149,7 +149,7 @@ Remember to test your integrations thoroughly, especially when combining multipl
 
 - [Claude Skill Invalid YAML Syntax Error: How to Debug](/claude-skills-guide/claude-code-skill-invalid-yaml-syntax-error-how-to-debug/) — See also
 - [Claude Skill YAML Front Matter Parsing Error Fix](/claude-skills-guide/claude-skill-yaml-front-matter-parsing-error-fix/) — See also
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — See also
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — See also
 - [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — See also
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

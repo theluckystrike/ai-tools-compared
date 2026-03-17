@@ -17,7 +17,7 @@ Claude Code skills are `.md` files — plain Markdown with YAML front matter. Th
 
 ## Understanding Claude Skills Architecture
 
-A Claude skill is a single Markdown file. Claude reads it when you invoke `/skill-name` and follows the instructions inside. There's no build step, no compiled code, and no special runtime — just the `.md` file. The skill.md format is central to this—for a complete walkthrough of how it works, see [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/).
+A Claude skill is a single Markdown file. Claude reads it when you invoke `/skill-name` and follows the instructions inside. There's no build step, no compiled code, and no special runtime — just the `.md` file. The skill.md format is central to this—for a complete walkthrough of how it works, see [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/).
 
 ```markdown
 ---
@@ -111,7 +111,7 @@ List your skill in community directories or forums. Skills gain adoption when pe
 ## Related Reading
 
 - [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — The technical foundation for building any skill
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — Technical guide to the format your contribution must follow
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Technical guide to the format your contribution must follow
 - [Official vs Community Claude Skills: Which Should You Use?](/claude-skills-guide/anthropic-official-skills-vs-community-skills-comparison/) — Understand the ecosystem you're contributing to
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)

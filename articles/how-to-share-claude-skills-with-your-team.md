@@ -137,7 +137,7 @@ Ask developers which skills they actually use in team retrospectives. Remove or 
 ## Related Reading
 
 - [How to Contribute Claude Skills to Open Source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/) — Full contribution walkthrough
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — Format your skill correctly before submitting
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Format your skill correctly before submitting
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — How skills activate automatically
 
 

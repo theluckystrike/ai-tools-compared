@@ -110,7 +110,7 @@ Format errors in the skill *body* (the Markdown section below the front matter) 
 
 - [Claude Skill YAML Front Matter Parsing Error Fix](/claude-skills-guide/claude-skill-yaml-front-matter-parsing-error-fix/)
 - [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/)
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 
 ---
 

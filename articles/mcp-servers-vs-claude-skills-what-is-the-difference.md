@@ -59,7 +59,7 @@ MCP servers are infrastructure. They are running processes, configured in Claude
 
 ## What Is a Claude Skill?
 
-A Claude skill is a file-based definition of how Claude should approach a specific task or workflow. Skills are typically [markdown files (`.md`)](/claude-skills-guide/skill-md-file-format-explained-with-examples/) stored in a `.claude/skills/` directory in your project or home directory.
+A Claude skill is a file-based definition of how Claude should approach a specific task or workflow. Skills are typically [markdown files (`.md`)](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) stored in a `.claude/skills/` directory in your project or home directory.
 
 A skill might specify:
 - The objective of the task ("generate a pull request summary")

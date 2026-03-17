@@ -227,7 +227,7 @@ Fields like `tools`, `version`, `tags`, `permissions`, `auto_invoke`, and `conte
 
 ## Related Reading
 
-- [Skill .md File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — The canonical reference for valid YAML front matter fields, including all optional configuration keys
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — The canonical reference for valid YAML front matter fields, including all optional configuration keys
 - [How to Write a Skill .md File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — A walkthrough for writing skill files from scratch with properly structured YAML that avoids common parse errors
 - [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) — How skill design and YAML front matter affect token consumption, helping you tune for cost efficiency
 

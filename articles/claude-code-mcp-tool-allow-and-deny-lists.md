@@ -134,7 +134,7 @@ When configuring tool access control for MCP servers, consider these recommendat
 
 First, prefer allow lists over deny lists whenever possible. Explicitly permitting only the tools you need provides stronger security guarantees than trying to remember which tools to block.
 
-Second, [review your MCP server configurations regularly](/claude-skills-guide/how-to-audit-claude-code-mcp-server-permissions/). As your workflows evolve, you may accumulate tool permissions that are no longer necessary. Periodic audits help maintain minimal access privileges.
+Second, [review your MCP server configurations regularly](/claude-skills-guide/mcp-server-permission-auditing-best-practices/). As your workflows evolve, you may accumulate tool permissions that are no longer necessary. Periodic audits help maintain minimal access privileges.
 
 Third, use environment-specific configurations. Your development environment might need more permissive access than production, so maintain separate configuration files for different contexts.
 

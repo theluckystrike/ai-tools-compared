@@ -205,7 +205,7 @@ The initial investment in setting up your library pays dividends quickly. Rather
 
 - [Claude Code Code Generation Templates Guide](/claude-skills-guide/claude-code-code-generation-templates-guide/) — Templates and snippets are closely related
 - [Claude Code Boilerplate Generation Workflow](/claude-skills-guide/claude-code-boilerplate-generation-workflow/) — Snippets are reusable boilerplate components
-- [How to Write Your First Custom Prompt with Claude Code](/claude-skills-guide/how-to-write-your-first-custom-prompt-with-claude-code/) — Custom prompts can reference snippet libraries
+- [How to Write Your First Custom Prompt with Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — Custom prompts can reference snippet libraries
 - [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) — Supermemory can store and retrieve code snippets
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

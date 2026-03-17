@@ -60,7 +60,7 @@ The practical benefit is separation of concerns: a well-configured MCP server ha
 - [MCP Transport Layer Security TLS Configuration Guide](/claude-skills-guide/mcp-transport-layer-security-tls-configuration/) — Configuring TLS for MCP server connections in production
 - [MCP Zero Trust Architecture Implementation: Practical Guide](/claude-skills-guide/mcp-zero-trust-architecture-implementation/) — Zero trust network design for Claude Code + MCP deployments
 - [Securing MCP Servers in Production Environments](/claude-skills-guide/securing-mcp-servers-in-production-environments/) — Production hardening checklist for MCP server deployments
-- [How to Audit Claude Code MCP Server Permissions](/claude-skills-guide/how-to-audit-claude-code-mcp-server-permissions/) — Step-by-step permission audit procedure for running servers
+- [How to Audit Claude Code MCP Server Permissions](/claude-skills-guide/mcp-server-permission-auditing-best-practices/) — Step-by-step permission audit procedure for running servers
 
 **Specific MCP servers:**
 - [Brave Search MCP Server for Research Automation](/claude-skills-guide/brave-search-mcp-server-research-automation/) — Web research automation via the Brave Search API
@@ -434,7 +434,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [How Do I Migrate from Cursor Rules to Claude Skills](/claude-skills-guide/how-do-i-migrate-from-cursor-rules-to-claude-skills/) | Tools |
 | [How Do I See Claude Skill Usage and Token Costs Breakdown](/claude-skills-guide/how-do-i-see-claude-skill-usage-and-token-costs-breakdown/) | Performance |
 | [How Enterprise Teams Adopt Claude Code Workflow](/claude-skills-guide/how-enterprise-teams-adopt-claude-code-workflow/) | Enterprise |
-| [How to Audit Claude Code MCP Server Permissions](/claude-skills-guide/how-to-audit-claude-code-mcp-server-permissions/) | MCP Security |
+| [How to Audit Claude Code MCP Server Permissions](/claude-skills-guide/mcp-server-permission-auditing-best-practices/) | MCP Security |
 | [How to Build a SaaS MVP with Claude Code Skills Guide](/claude-skills-guide/how-to-build-saas-mvp-with-claude-code-skills-guide/) | Enterprise |
 | [How to Contribute Claude Skills to Open Source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/) | Ecosystem |
 | [How to Find Claude Skills on GitHub: A Practical Guide](/claude-skills-guide/how-to-find-claude-skills-on-github/) | Skill Architecture |

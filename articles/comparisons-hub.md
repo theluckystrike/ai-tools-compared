@@ -70,7 +70,7 @@ Use this framework when deciding between options:
 | Am I experimenting or prototyping? | Prompt | N/A |
 | Does an official skill cover this use case? | Official skill | Community or custom skill |
 
-When building custom skills, the path is: understand the [skill.md format](/claude-skills-guide/skill-md-file-format-explained-with-examples/) → [write your skill](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) → [contribute to open source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/).
+When building custom skills, the path is: understand the [skill.md format](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) → [write your skill](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) → [contribute to open source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/).
 
 ---
 

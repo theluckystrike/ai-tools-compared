@@ -189,7 +189,7 @@ The initial setup takes maybe thirty minutes, but the time saved over months of 
 
 - [How to Share Claude Skills with Your Team](/claude-skills-guide/how-to-share-claude-skills-with-your-team/) — Distribute your synced skill files across engineering teams with consistent naming and versioning.
 - [Claude Skills Directory: Where to Find Skills 2026](/claude-skills-guide/claude-skills-directory-where-to-find-skills/) — Discover which skills are worth adding to your dotfiles repository in the first place.
-- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — Understand the format of the skill files you are managing in your dotfiles.
+- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Understand the format of the skill files you are managing in your dotfiles.
 - [Getting Started with Claude Skills](/claude-skills-guide/getting-started-hub/) — The foundational guide before you start syncing and managing skill files across machines.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

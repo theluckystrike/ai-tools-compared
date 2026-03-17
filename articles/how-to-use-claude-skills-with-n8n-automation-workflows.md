@@ -74,7 +74,7 @@ This gives you a basic Claude call. To invoke a specific skill's behavior, add a
 
 ## Step 3: Apply Skill Behavior via System Prompts
 
-Claude [skills are markdown files](/claude-skills-guide/skill-md-file-format-explained-with-examples/) that define how Claude should approach tasks. In n8n, you replicate this by including the skill's guidance as a system prompt. For TDD review behavior:
+Claude [skills are markdown files](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) that define how Claude should approach tasks. In n8n, you replicate this by including the skill's guidance as a system prompt. For TDD review behavior:
 
 ```json
 {

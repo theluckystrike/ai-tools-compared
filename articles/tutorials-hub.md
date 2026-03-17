@@ -145,7 +145,7 @@ These tutorials cover the mechanics of creating, managing, and distributing Clau
 - [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — The complete tutorial for writing your first skill.md
 - [Optimal Skill File Size and Complexity Guidelines](/claude-skills-guide/optimal-skill-file-size-and-complexity-guidelines/) — Guidelines for keeping skill files appropriately scoped
 - [Shared Claude Skills Across Monorepo Multiple Packages](/claude-skills-guide/shared-claude-skills-across-monorepo-multiple-packages/) — Sharing a single skill set across a monorepo
-- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — The skill.md format explained with concrete examples
+- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — The skill.md format explained with concrete examples
 - [What Is the Best File Structure for a Complex Claude Skill](/claude-skills-guide/what-is-the-best-file-structure-for-a-complex-claude-skill/) — File organization for multi-file skill implementations
 - [What Is the Best Free Claude Code Skill Available on GitHub](/claude-skills-guide/what-is-the-best-free-claude-code-skill-available-on-github/) — Top free skills available on GitHub right now
 
@@ -349,7 +349,7 @@ Short, focused tutorials answering specific "how do I" questions about Claude Co
 | [Reddit MCP Server for Content Research Automation](/claude-skills-guide/reddit-mcp-server-content-research-automation/) | MCP |
 | [Salesforce MCP Server Data Integration Guide](/claude-skills-guide/salesforce-mcp-server-data-integration-guide/) | MCP |
 | [Shared Claude Skills Across Monorepo Multiple Packages](/claude-skills-guide/shared-claude-skills-across-monorepo-multiple-packages/) | Skill Management |
-| [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/) | Skill Management |
+| [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) | Skill Management |
 | [Slack MCP Server Team Notification Automation](/claude-skills-guide/slack-mcp-server-team-notification-automation/) | MCP |
 | [Telegram MCP Server Bot Automation Workflow](/claude-skills-guide/telegram-mcp-server-bot-automation-workflow/) | MCP |
 | [Vibe Coding Explained: What It Is and How It Works](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) | Vibe Coding |
@@ -379,7 +379,7 @@ Short, focused tutorials answering specific "how do I" questions about Claude Co
 ## Related Reading
 
 - [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — The starting point before most tutorials
-- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — The format reference every tutorial assumes
+- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — The format reference every tutorial assumes
 - [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — The most used Claude Code skill, explained in full
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)

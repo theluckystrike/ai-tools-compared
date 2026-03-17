@@ -115,7 +115,7 @@ The `product_factory` fixture creates Product objects on demand, and parametrize
 
 ## Fixture Composition and Dependency Injection
 
-Pytest supports fixture dependencies, allowing one fixture to use another. This feature enables sophisticated setup pipelines where complex objects are built from simpler components. See the [pytest fixtures patterns guide](/claude-skills-guide/claude-code-pytest-fixtures-patterns-guide/) for more advanced composition examples:
+Pytest supports fixture dependencies, allowing one fixture to use another. This feature enables sophisticated setup pipelines where complex objects are built from simpler components. This feature enables sophisticated setup pipelines where complex objects are built from simpler components:
 
 ```python
 @pytest.fixture
@@ -136,6 +136,43 @@ def app(database_config):
 Each fixture builds upon the previous one, creating a chain of dependencies that pytest resolves automatically. This approach keeps configuration logic modular and testable.
 
 For advanced scenarios, you can use `pytest fixtures` from external plugins. The `pytest-mock` library, for instance, provides a `mock` fixture that automatically cleans up mocks after each test. Similarly, `pytest-asyncio` offers an `event_loop` fixture for async tests. For data-heavy test pipelines, pairing fixtures with the [automated testing pipeline approach](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) yields a continuous, reliable feedback loop.
+
+## Autouse Fixtures for Global Setup
+
+The `autouse=True` parameter runs a fixture automatically for every test without explicit injection. Use this sparingly for global setup like logging configuration or environment variables:
+
+```python
+@pytest.fixture(autouse=True)
+def setup_test_environment(monkeypatch):
+    monkeypatch.setenv("DEBUG", "true")
+    monkeypatch.setenv("TESTING", "1")
+```
+
+You can scope autouse fixtures to control when they run—session-scoped autouse fixtures execute once for the entire test run:
+
+```python
+@pytest.fixture(scope="session", autouse=True)
+def session_wide_setup():
+    print("Setting up test session")
+    yield
+    print("Cleaning up test session")
+```
+
+## Fixture Teardown with Context Managers
+
+Proper teardown ensures resources are cleaned up regardless of test outcome. For fixtures that need cleanup even when the test fails, combine try-finally with yield:
+
+```python
+@pytest.fixture
+def database_connection():
+    conn = create_connection()
+    try:
+        yield conn
+    finally:
+        conn.close()
+```
+
+This pattern guarantees `conn.close()` runs whether the test passes, fails, or raises an unexpected exception.
 
 ## Practical Workflow with Claude Code
 

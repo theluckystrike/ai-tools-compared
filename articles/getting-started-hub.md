@@ -127,7 +127,7 @@ Skills are composable. You can combine two skills in a single session — the `t
 Skills are scoped. A skill's instructions apply only while the skill is active in the current session. Different projects can use different skill configurations.
 
 **Go deeper:**
-- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/)
+- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/)
 - [Claude Skills Directory: Where to Find Skills 2026](/claude-skills-guide/claude-skills-directory-where-to-find-skills/)
@@ -358,7 +358,7 @@ This configuration allows Claude to read files and run git commands only, with n
 | Honest pros/cons review | [Is Claude Code Worth It? An Honest Beginner Review](/claude-skills-guide/is-claude-code-worth-it-honest-beginner-review-2026/) | Beginner |
 | Skills to install first | [Best Claude Code Skills to Install First in 2026](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) | Beginner |
 | Where to find skills | [Claude Skills Directory: Where to Find Skills](/claude-skills-guide/claude-skills-directory-where-to-find-skills/) | Beginner |
-| Skill file format | [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) | Intermediate |
+| Skill file format | [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) | Intermediate |
 | Write your first skill | [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) | Intermediate |
 | Full skill specification | [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) | Intermediate |
 | Auto-invocation explained | [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) | Intermediate |
@@ -422,7 +422,7 @@ Getting Claude Code running on different platforms and configurations.
 
 Understanding and writing skill.md files from first principles.
 
-- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/skill-md-file-format-explained-with-examples/)
+- [Skill MD File Format Explained With Examples Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/)
 - [Optimal Skill File Size and Complexity Guidelines](/claude-skills-guide/optimal-skill-file-size-and-complexity-guidelines/)

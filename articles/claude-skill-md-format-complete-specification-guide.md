@@ -98,6 +98,29 @@ Build all components following the established patterns.
 
 Later-loaded skills win on name conflicts. Project skills always override global skills with the same name.
 
+## Optional Front Matter Fields
+
+Beyond the required `name` and `description`, skill files support additional metadata:
+
+**tools** (optional): Specify which Claude Code tools the skill should use. Without this field, Claude decides which tools to use based on the task.
+
+```yaml
+tools: [Read, Write, Bash, Glob]
+```
+
+**model** (optional): Override the default model for this skill if you want a faster or more capable model for specific tasks.
+
+**temperature** (optional): Control response randomness. Lower values (0.0–0.3) produce more consistent, predictable output; higher values (0.7–1.0) allow more creativity.
+
+## Writing Effective Skill Bodies
+
+A few principles make skill bodies more effective:
+
+- **Be specific about inputs.** Tell Claude exactly what to ask the user for if it's missing. Skills that silently guess at missing inputs produce inconsistent results.
+- **Describe the output format.** Whether you want a markdown table, a numbered list, or a code block, state it explicitly.
+- **Define scope boundaries.** What should the skill NOT do? A code-review skill that also rewrites your code is often unwanted. Add explicit "do not" constraints.
+- **Reference files by convention.** If your skill depends on project-specific files, instruct Claude to read them at the start of every invocation rather than hardcoding their content.
+
 ## Common Mistakes
 
 **Missing triggers**: Without triggers, users must invoke manually.
@@ -120,7 +143,7 @@ If the skill does not respond as expected, check: file is in `.claude/skills/`, 
 
 ## Related Reading
 
-- [Skill .md File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/)
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [How to Write a Skill .md File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/)
 - [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/)
 

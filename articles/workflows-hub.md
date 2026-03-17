@@ -30,7 +30,7 @@ A mature Claude skill workflow has three phases:
 
 **1. Discovery** — Start with prompts to explore the problem space. Identify recurring patterns.
 
-**2. Codification** — When a pattern recurs, build a skill. Use the [skill.md format](/claude-skills-guide/skill-md-file-format-explained-with-examples/) to encode your preferences, conventions, and domain knowledge. See [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) for the step-by-step process.
+**2. Codification** — When a pattern recurs, build a skill. Use the [skill.md format](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) to encode your preferences, conventions, and domain knowledge. See [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) for the step-by-step process.
 
 **3. Automation** — Chain skills together so Claude can execute multi-step workflows with minimal prompting. Examples:
 - PR review workflow: code analysis → test generation with tdd → documentation update with docx
@@ -44,7 +44,7 @@ A mature Claude skill workflow has three phases:
 Once you've built a skill that solves a real problem, contributing it to open source multiplies its impact. The process:
 
 1. **Prepare** — Remove hardcoded values, add clear documentation, test in isolation
-2. **Format** — Follow the skill.md format exactly (see [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/))
+2. **Format** — Follow the skill.md format exactly (see [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/))
 3. **Submit** — Fork the target repository, create a feature branch, open a PR with a comprehensive description
 4. **Maintain** — Monitor issues, respond to feedback, update for compatibility
 

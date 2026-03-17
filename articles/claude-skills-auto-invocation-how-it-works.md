@@ -56,7 +56,7 @@ Here's how different triggers activate skills:
 
 Skills are explicitly invoked with the `/skill-name` slash command prefix. They are not auto-loaded from context detection — you invoke them directly.
 
-The skill definitions themselves are what Claude reads to understand when to activate. To understand how those definitions are structured, see [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/).
+The skill definitions themselves are what Claude reads to understand when to activate. To understand how those definitions are structured, see [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/).
 
 ### Specific Trigger Phrases Work Better Than Generic Ones
 

@@ -19,7 +19,7 @@ Claude Code uses skill files written in Markdown to extend its capabilities. The
 
 A skill MD file is a Markdown document that contains metadata and instructions for Claude Code. When Claude encounters a skill file, it reads the front matter to understand what the skill does, then uses the content to execute specific tasks. Skills can range from simple text transformations to complex multi-step workflows involving external APIs or tools.
 
-The file structure follows a predictable pattern. You start with YAML front matter, followed by clear documentation and implementation details. This approach makes skills easy to read, modify, and share with others. For a comprehensive reference on every supported field and format pattern, see [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/).
+The file structure follows a predictable pattern. You start with YAML front matter, followed by clear documentation and implementation details. This approach makes skills easy to read, modify, and share with others. For a comprehensive reference on every supported field and format pattern, see [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/).
 
 ## Anatomy of a Skill File
 
@@ -89,6 +89,29 @@ More sophisticated skills use conditional logic and multiple execution paths. Th
 
 Similarly, the `frontend-design` skill handles UI development tasks. It understands component structures, CSS frameworks, and responsive design principles. When you describe a UI element, the skill generates appropriate code and styling. For a broader look at how tdd and frontend-design fit into production workflows, see [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/).
 
+## Combining Skills with Meta-Skills
+
+Claude Code can load multiple skills simultaneously. You can create meta-skills that orchestrate other skills for complex workflows:
+
+```yaml
+---
+name: project-starter
+description: "Standard setup for new Python web projects"
+---
+
+# New Project Setup Workflow
+
+When starting a new project:
+1. Check the project-type skill for specific requirements
+2. Initialize the project structure following organizational conventions
+3. Set up virtual environment and dependencies
+4. Configure testing with pytest
+5. Add appropriate documentation templates
+6. Create initial README with setup instructions
+```
+
+This pattern lets you define team-wide workflows that compose multiple skill behaviors into a single invocation.
+
 ## Organizing Your Skills
 
 As you create more skills, organization becomes essential. Group related skills into directories based on their function. Common categories include:
@@ -128,7 +151,7 @@ Building skills for Claude Code transforms how you work with AI. Start with simp
 
 ## Related Reading
 
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — Full format reference with real examples
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Full format reference with real examples
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — How your skill's metadata controls auto-triggering
 - [How to Contribute Claude Skills to Open Source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/) — Share your finished skill with the community
 

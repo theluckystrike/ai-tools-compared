@@ -28,6 +28,43 @@ cat ~/.claude/settings.json | grep -A 20 '"mcpServers"'
 
 This reveals every MCP server active in your environment. Common servers include filesystem access, database connectors, and integration endpoints. Each represents a potential permission boundary you need to evaluate.
 
+## Using Built-in MCP Inspection Tools
+
+Claude Code provides a native command for reviewing MCP server status. Type `/mcp` in the chat interface to see a list of all configured servers, their running status, and available tools.
+
+For power users, the same information is accessible via the CLI:
+
+```bash
+claude --printMcpServers
+```
+
+This outputs a structured list of servers and the tools each provides. Use this output to verify that only intended servers are running.
+
+## Permission Compartmentalization
+
+Instead of granting broad filesystem access, create separate server instances with different scopes. For example, a frontend-design workflow might need access to a specific project directory only:
+
+```json
+"filesystem-frontend": {
+  "command": "npx",
+  "args": ["-y", "@modelcontextprotocol/server-filesystem",
+    "/workspace/frontend-project"
+  ],
+  "env": {}
+}
+```
+
+This limits the blast radius if a server gets compromised. Each server instance sees only the directories it needs.
+
+## Responding to Permission Issues
+
+If you discover unexpected servers or overly broad permissions, take immediate action:
+
+1. **Disable the server** by removing it from settings.json
+2. **Restart Claude Code** to apply changes
+3. **Re-enable with corrected permissions** after reviewing the configuration
+4. **Rotate credentials** for any server with unexpected access
+
 ## Audit Checklist: Four Key Areas
 
 ### 1. Scope Minimization

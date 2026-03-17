@@ -17,7 +17,7 @@ permalink: /claude-code-crashes-when-loading-skill-debug-steps/
 
 ## What a Skill File Actually Is
 
-Claude Code skills are single [skill.md files](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — plain Markdown with YAML front matter. There are no companion `.js` files, no compiled assets, no build steps. The entire skill lives in one file:
+Claude Code skills are single [skill.md files](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — plain Markdown with YAML front matter. There are no companion `.js` files, no compiled assets, no build steps. The entire skill lives in one file:
 
 ```
 ~/.claude/skills/
@@ -38,7 +38,7 @@ If the file is missing or misnamed, Claude can't load it. [Skill names are case-
 
 ## Step 2: Validate YAML Front Matter
 
-[The most common crash cause is malformed YAML at the top of the skill file](/claude-skills-guide/skill-md-file-format-explained-with-examples/). The front matter must be valid YAML between `---` delimiters:
+[The most common crash cause is malformed YAML at the top of the skill file](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/). The front matter must be valid YAML between `---` delimiters:
 
 ```yaml
 ---
@@ -146,7 +146,7 @@ npm update -g @anthropic-ai/claude-code
 
 ## Related Reading
 
-- [Skill MD File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — Complete skill.md format reference
+- [Skill MD File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Complete skill.md format reference
 - [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — Step-by-step skill creation guide
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — How skills activate automatically
 

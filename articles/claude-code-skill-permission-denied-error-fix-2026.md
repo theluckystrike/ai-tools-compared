@@ -189,7 +189,7 @@ If none of the above resolves the issue, the problem may be in the skill itself.
 
 ## Related Reading
 
-- [Skill .md File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — Understanding the correct structure for skill files helps avoid misconfiguration that can cause permission-related failures
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — Understanding the correct structure for skill files helps avoid misconfiguration that can cause permission-related failures
 - [How to Write a Skill .md File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — A step-by-step guide to authoring valid skill files including tools declarations and file placement rules
 - [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — If your skill loads but never fires, understanding the invocation model can clarify whether the issue is permissions or trigger matching
 

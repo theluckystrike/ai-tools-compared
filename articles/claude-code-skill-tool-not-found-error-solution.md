@@ -201,7 +201,7 @@ When basic troubleshooting does not resolve the issue:
 
 ## Related Reading
 
-- [Skill .md File Format Explained With Examples](/claude-skills-guide/skill-md-file-format-explained-with-examples/) — The authoritative reference for the `tools` field and all other YAML front matter fields in skill files
+- [Skill .md File Format Explained With Examples](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — The authoritative reference for the `tools` field and all other YAML front matter fields in skill files
 - [How to Write a Skill .md File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) — A hands-on walkthrough for writing skill files that correctly declare their tool dependencies
 - [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) — How skill design affects token consumption and API costs
 
