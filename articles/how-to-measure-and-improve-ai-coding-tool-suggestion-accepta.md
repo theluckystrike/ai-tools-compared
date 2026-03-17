@@ -5,7 +5,7 @@ description: "A practical guide for developers on measuring and improving AI cod
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-measure-and-improve-ai-coding-tool-suggestion-acceptance-rate-2026/
-categories: [guides, productivity, ai-coding]
+categories: [guides, productivity]
 reviewed: true
 score: 8
 intent-checked: true
