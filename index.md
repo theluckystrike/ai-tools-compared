@@ -1440,7 +1440,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [How AI Agents Plan and Execute Tasks Explained](/claude-skills-guide/how-ai-agents-plan-and-execute-tasks-explained/)
 - [How AI Agents Reason Before Taking Actions: A Complete Guide](/claude-skills-guide/how-ai-agents-reason-before-taking-actions-guide/)
 - [How AI Agents Use Tools and Skills Explained](/claude-skills-guide/how-ai-agents-use-tools-and-skills-explained/)
-- [How Claude Code Accelerated Onboarding New Devs](/claude-skills-guide/how-claude-code-accelerated-onboarding-new-devs/)
 - [How Claude Code Eliminated Boilerplate Coding](/claude-skills-guide/how-claude-code-eliminated-boilerplate-coding/)
 - [How Designers Use Claude Code for Prototyping](/claude-skills-guide/how-designers-use-claude-code-for-prototyping/)
 - [How to Create a Private Claude Skill Not on GitHub](/claude-skills-guide/how-do-i-create-a-private-claude-skill-not-on-github/)

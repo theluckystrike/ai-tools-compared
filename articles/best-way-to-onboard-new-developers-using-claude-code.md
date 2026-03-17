@@ -164,6 +164,16 @@ Implement a phased approach that uses Claude Code at each stage:
 
 This structured approach reduces time-to-productivity from months to weeks for most developers.
 
+## Reducing Senior Engineer Burden
+
+The traditional onboarding model places significant burden on senior developers. Every question from a new team member pulls them away from their own work. Claude Code handles the routine technical questions — "how does authentication work?", "where do I find the database models?", "what testing framework do we use?" — freeing senior engineers to focus on mentorship that requires human judgment, creativity, or organizational navigation.
+
+This doesn't replace human connection. New developers still need mentors for cultural integration, career guidance, and complex problem-solving. But the routine questions that once filled everyone's calendar now have an instant, knowledgeable answer available at any time.
+
+## Preserving Institutional Knowledge
+
+Team knowledge often exists only in the minds of senior developers. When they leave or are unavailable, onboarding stalls. By configuring Claude Code with project-specific skills and using supermemory to store architectural decisions, you create a persistent knowledge repository that preserves institutional memory regardless of team changes.
+
 ## Measuring Onboarding Success
 
 Track these metrics to validate your Claude Code onboarding approach:

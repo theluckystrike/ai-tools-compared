@@ -149,6 +149,40 @@ api-docs/
 
 Reference these in your OpenAPI spec to keep documentation DRY and ensure examples stay synchronized with test fixtures.
 
+## Pre-Commit Documentation Checks
+
+Prevent documentation drift by adding a pre-commit hook that validates completeness:
+
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+claude --print "Check that all new API endpoints have corresponding documentation in the docs/ directory"
+```
+
+This ensures documentation is never forgotten when new endpoints are added.
+
+## Automatic Example Generation
+
+Generate working code examples from your API handlers to keep documentation copy-paste ready:
+
+```bash
+# Get user by ID
+curl -X GET "https://api.example.com/users/123" \
+  -H "Authorization: Bearer YOUR_TOKEN"
+```
+
+```javascript
+// Get user by ID
+const response = await fetch('https://api.example.com/users/123', {
+  headers: {
+    'Authorization': 'Bearer YOUR_TOKEN'
+  }
+});
+const user = await response.json();
+```
+
+Claude Code can generate these examples for every endpoint by analyzing your route handlers and producing curl commands alongside JavaScript/Python/Ruby equivalents.
+
 ## Writing Clear, Actionable Guide Content
 
 Reference documentation tells developers what endpoints exist. Guide content teaches them how to solve problems. Claude Code helps you write both, but excels particularly at crafting tutorial-style content that addresses real developer pain points.
