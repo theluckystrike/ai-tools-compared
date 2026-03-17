@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Reduce AI Coding Tool Costs Without Losing Productivity"
 description: "A practical guide for developers and power users on cutting AI coding tool expenses while maintaining or improving productivity. Includes cost-saving strategies and real code examples."
