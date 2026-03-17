@@ -213,6 +213,53 @@ class Invoice(BaseModel):
 
 5. **Test your validators**: Write unit tests for custom validation logic to ensure edge cases are handled.
 
+## Cross-Field Payment Validation
+
+When validation depends on conditional logic across multiple fields, model validators handle the complexity:
+
+```python
+from pydantic import model_validator
+import re
+
+class PaymentDetails(BaseModel):
+    payment_method: str
+    card_last_four: str | None = None
+    paypal_email: EmailStr | None = None
+
+    @model_validator(mode='after')
+    def validate_payment_details(self) -> 'PaymentDetails':
+        if self.payment_method == 'credit_card':
+            if not self.card_last_four:
+                raise ValueError('Card last four digits required for credit card payments')
+            if not re.match(r'^\d{4}$', self.card_last_four):
+                raise ValueError('Card last four must be exactly 4 digits')
+        if self.payment_method == 'paypal':
+            if not self.paypal_email:
+                raise ValueError('PayPal email required for PayPal payments')
+        return self
+```
+
+## Error Handling with User-Friendly Messages
+
+Robust validation requires extracting meaningful error messages from Pydantic exceptions:
+
+```python
+from pydantic import ValidationError
+
+def process_request(data: dict):
+    try:
+        validated = OrderRequest(**data)
+        return {"status": "success", "data": validated.model_dump()}
+    except ValidationError as e:
+        errors = []
+        for error in e.errors():
+            field = '.'.join(str(loc) for loc in error['loc'])
+            errors.append(f"{field}: {error['msg']}")
+        return {"status": "error", "errors": errors}
+```
+
+This pattern gives API consumers actionable feedback rather than raw validation traces.
+
 ## How Claude Code Can Help
 
 Claude Code excels at rapidly generating Pydantic models from existing data structures or API specifications. Simply describe your data requirements, and Claude can:

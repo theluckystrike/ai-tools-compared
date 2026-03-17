@@ -303,6 +303,35 @@ Claude can enforce these standards when generating output, but humans need to es
 
 Automation generates drafts, not final releases. Always have a human review generated changelogs before publishing. Automation handles the heavy lifting; humans provide the nuance and context that readers appreciate.
 
+## AI-Enhanced Release Notes
+
+For more intelligent release notes, enhance your workflow with Claude's language capabilities to convert technical commit messages into user-friendly descriptions:
+
+```python
+import subprocess
+import anthropic
+
+# Get raw commits
+result = subprocess.run(
+    ["git", "log", f"{since_tag}..HEAD", "--pretty=format:%s%n%b"],
+    capture_output=True, text=True
+)
+commits = result.stdout
+
+# Use Claude to summarize and enhance
+client = anthropic.Anthropic()
+response = client.messages.create(
+    model="claude-sonnet-4-20250514",
+    max_tokens=1000,
+    system="You are a technical writer. Summarize these git commits into user-friendly release notes.",
+    messages=[{"role": "user", "content": commits}]
+)
+
+enhanced_notes = response.content[0].text
+```
+
+This approach condenses multiple related commits into coherent entries suitable for end users who don't need to know every implementation detail.
+
 ## Customizing Output Formats
 
 Different teams require different changelog formats. Your skill can output markdown, plain text, JSON, or HTML depending on your distribution channel:

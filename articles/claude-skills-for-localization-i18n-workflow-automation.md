@@ -150,6 +150,61 @@ The **tdd** skill assists with writing tests for internationalized applications:
 
 These tests run in your CI pipeline to prevent incomplete translations from reaching production. The skill generates proper test assertions based on your project's testing framework.
 
+## Automated Key Extraction and Validation
+
+Beyond simple inspection, you can build automated key extraction that scans your source files for all i18n function calls:
+
+```javascript
+function extractKeys(sourceDir) {
+  const keys = new Set();
+
+  for (const file of glob.sync(`${sourceDir}/**/*.{js,jsx,ts,tsx,vue,svelte}`)) {
+    const content = read_file(file);
+    const patterns = [
+      /t\(['"`]([^'"`]+)['"`]\)/g,
+      /i18n\.t\(['"`]([^'"`]+)['"`]\)/g,
+      /\$t\(['"`]([^'"`]+)['"`]\)/g,
+    ];
+    for (const pattern of patterns) {
+      let match;
+      while ((match = pattern.exec(content)) !== null) {
+        keys.add(match[1]);
+      }
+    }
+  }
+  return Array.from(keys).sort();
+}
+```
+
+A complementary validation function catches missing and orphaned keys across all locales:
+
+```javascript
+function validateLocales(sourceLocale, targetLocales) {
+  const sourceKeys = loadKeys(sourceLocale);
+  const issues = [];
+
+  for (const locale of targetLocales) {
+    const targetKeys = loadKeys(locale);
+    const missing = sourceKeys.filter(k => !targetKeys.includes(k));
+    const orphaned = targetKeys.filter(k => !sourceKeys.includes(k));
+
+    if (missing.length > 0) issues.push({ locale, type: 'missing', keys: missing });
+    if (orphaned.length > 0) issues.push({ locale, type: 'orphaned', keys: orphaned });
+  }
+  return issues;
+}
+```
+
+Run these as part of your CI pipeline to prevent incomplete translations from reaching production.
+
+## Scaling to Advanced i18n Patterns
+
+As your project grows, consider these patterns:
+
+- **Pluralization rules**: Different languages handle plurals differently — ensure your i18n library handles Arabic's six plural forms or Chinese's lack of plurals
+- **Gender and context**: Some translations vary by speaker gender or context — build this into your key structure (`user.gender.male`, `user.gender.female`)
+- **RTL support**: For right-to-left languages, verify your layouts adapt properly
+
 ## Best Practices for i18n Skill Workflows
 
 Implementing effective localization automation requires establishing patterns from the start:
