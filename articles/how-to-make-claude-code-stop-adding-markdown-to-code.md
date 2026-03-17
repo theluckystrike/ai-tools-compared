@@ -10,7 +10,7 @@ score: 8
 categories: [troubleshooting, guides]
 tags: [claude-code, claude-skills, output-formatting]
 ---
-
+{% raw %}
 One of the most common frustrations developers face when working with Claude Code is its tendency to wrap code in markdown code blocks. While this is useful for readability in chat interfaces, it becomes cumbersome when you need to copy and paste code directly into your files. This guide provides practical solutions to stop Claude Code from adding markdown formatting to code output.
 
 ## Understanding Why Claude Code Adds Markdown
@@ -258,3 +258,4 @@ Remember that these methods work best when combined - use explicit instructions 
 - [Claude Code Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
