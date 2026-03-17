@@ -4,6 +4,10 @@ description: "A comprehensive guide to setting up and maintaining testing workfl
 author: "theluckystrike"
 date: 2026-03-17
 permalink: /claude-code-sdk-testing-workflow-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

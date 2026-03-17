@@ -6,6 +6,10 @@ description: "A practical breakdown of ChatGPT Team and Claude Team pricing for 
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A practical comparison of Google's Gemini and Anthropic's Claude f
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-generating-markdown-documentation-from-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Automated documentation generation has become essential for maintaining healthy codebases. When choosing between Gemini and Claude for this task, developers need concrete performance data and practical examples. This comparison evaluates both AI assistants on their ability to parse source code and produce accurate markdown documentation.

@@ -5,6 +5,10 @@ description: "A practical comparison of ChatGPT and Claude for writing Celery ta
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

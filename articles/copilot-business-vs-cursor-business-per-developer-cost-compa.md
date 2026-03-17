@@ -5,6 +5,10 @@ description: "A practical cost comparison of GitHub Copilot Business and Cursor 
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-business-vs-cursor-business-per-developer-cost-comparison/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
