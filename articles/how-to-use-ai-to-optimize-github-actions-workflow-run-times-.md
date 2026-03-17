@@ -7,6 +7,8 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-github-actions-workflow-run-times-/
 categories: [guides]
 ---
+{% raw %}
+
 
 GitHub Actions has become the backbone of modern CI/CD pipelines, but slow workflow run times can frustrate developers and delay deployments. Artificial intelligence offers powerful ways to analyze your workflows, identify bottlenecks, and suggest optimizations that would take hours to discover manually. This guide shows you how to leverage AI to streamline your GitHub Actions performance.
 
@@ -261,3 +263,4 @@ Optimizing GitHub Actions with AI involves three main approaches: analyzing exis
 Start with your most frequent workflows and apply incremental improvements. Measure before and after to quantify the impact. As your workflows grow more efficient, your development team benefits from faster feedback loops and shorter release cycles.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
