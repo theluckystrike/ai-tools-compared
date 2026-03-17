@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Write Better Prompts for AI Code Generation with Examples"
-description: "A practical guide for developers on crafting effective prompts that get better code results from AI coding assistants, with real-world examples and techniques."
+title: "How to Write Better Prompts for AI Code Generation with."
+description: "A practical guide for developers on crafting effective prompts that get better code results from AI coding assistants, with real-world examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-better-prompts-for-ai-code-generation-with-examples/
@@ -168,5 +168,10 @@ Document your successful prompt patterns for recurring tasks. This creates a per
 Writing effective prompts for AI code generation requires providing clear context, specifying input and output formats, including constraints, using examples, breaking complex tasks into steps, defining code style, and requesting tests. These techniques transform generic AI responses into production-ready code that integrates seamlessly with your projects.
 
 The investment in crafting better prompts pays dividends through reduced iteration cycles, fewer bugs, and code that matches your project conventions from the first generation. Start applying these techniques to your next coding task and experience the difference quality prompts make.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
