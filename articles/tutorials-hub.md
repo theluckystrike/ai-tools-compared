@@ -109,7 +109,6 @@ These tutorials are framework-specific and language-specific. Each one teaches C
 - [Claude Skills for Financial Modeling: Excel Alternative](/claude-skills-guide/claude-skills-for-financial-modeling-excel-alternative/) — Financial modeling workflows replacing Excel macros
 - [Claude Skills for Generating Mock Data and Fixtures](/claude-skills-guide/claude-skills-for-generating-mock-data-and-fixtures/) — Generating realistic test data and fixtures at scale
 - [Claude /xlsx Skill: Spreadsheet Automation Guide](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/) — Automating spreadsheet tasks with the `/xlsx` skill
-- [How to Use Claude Code for Spreadsheet Automation](/claude-skills-guide/how-to-use-claude-code-for-spreadsheet-automation/) — Spreadsheet automation workflows beyond the xlsx skill
 
 ### Specialized and Niche
 - [Claude Code Documentation Generation in Spanish Tutorial](/claude-skills-guide/claude-code-documentation-generation-in-spanish-tutorial/) — Generating Spanish-language documentation with Claude
@@ -333,7 +332,6 @@ Short, focused tutorials answering specific "how do I" questions about Claude Co
 | [How to Combine Multiple Claude Skills in One Project](/claude-skills-guide/how-to-combine-multiple-claude-skills-in-one-project/) | Skill Management |
 | [How to Connect Claude Skills to External APIs Guide](/claude-skills-guide/how-to-connect-claude-skills-to-external-apis-guide/) | Skill Management |
 | [How to Make Claude Code Test Before Implementing Feature](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Testing |
-| [How to Use Claude Code for Spreadsheet Automation](/claude-skills-guide/how-to-use-claude-code-for-spreadsheet-automation/) | Data Science |
 | [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) | Skill Management |
 | [Kubernetes MCP Server Cluster Management Guide](/claude-skills-guide/kubernetes-mcp-server-cluster-management-guide/) | MCP |
 | [MCP OAuth 2.1 Authentication Implementation Guide](/claude-skills-guide/mcp-oauth-21-authentication-implementation-guide/) | MCP Security |
