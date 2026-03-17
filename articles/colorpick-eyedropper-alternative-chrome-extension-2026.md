@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /colorpick-eyedropper-alternative-chrome-extension-2026/
 reviewed: true
 score: 8
-categories: [tools, development]
+categories: [integrations, guides]
 tags: [chrome-extension, colorpicker, developer-tools]
 ---
 
