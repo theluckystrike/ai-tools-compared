@@ -13,7 +13,7 @@ keywords:
 categories:
   - AI Coding Tools
   - Cursor
-permalink: cursor-free-tier-limitations-what-stops-working-after-trial/
+permalink: /cursor-free-tier-limitations-what-stops-working-after-trial/
 slug: cursor-free-tier-limitations-what-stops-working-after-trial
 ---
 
