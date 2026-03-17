@@ -5,6 +5,10 @@ description: "Learn multiple methods to clear Chrome cache, including keyboard s
 date: 2026-03-15
 author: theluckystrike
 permalink: /clear-chrome-cache-speed/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # How to Clear Chrome Cache for Faster Browsing: A Developer's Guide

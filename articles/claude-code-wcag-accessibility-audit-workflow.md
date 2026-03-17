@@ -15,7 +15,7 @@ permalink: /claude-code-wcag-accessibility-audit-workflow/
 
 Web accessibility ensures that people with disabilities can perceive, understand, navigate, and interact with your digital products. This guide shows you how to use Claude Code *skills*—`/frontend-design`, `/tdd`, `/pdf`, and `/supermemory`—to build a complete accessibility audit workflow: from component generation through automated CI/CD checks to formal stakeholder reports.
 
-If you need to review existing code snippet-by-snippet for specific WCAG 2.1 violations (contrast ratios, ARIA state, keyboard traps), see the [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](/claude-code-wcag-21-compliance-checker-workflow-guide/) instead. This guide focuses on the skills layer—orchestrating Claude's built-in capabilities to audit at project scale.
+If you need to review existing code snippet-by-snippet for specific WCAG 2.1 violations (contrast ratios, ARIA state, keyboard traps), see the [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](/claude-code-for-wcag-2-2-compliance-workflow-guide/) instead. This guide focuses on the skills layer—orchestrating Claude's built-in capabilities to audit at project scale.
 
 ## Setting Up Your Accessibility Skills
 
@@ -264,7 +264,7 @@ For full automation, add Playwright with axe-core to your CI pipeline. This catc
 
 Building a WCAG accessibility audit workflow with Claude Code skills means shifting from reactive code review to a systematic practice. The `/frontend-design` skill prevents violations at the component level. The `/tdd` skill encodes accessibility requirements as executable tests. The CI/CD pipeline catches regressions automatically. The `/pdf` skill turns audit findings into formal documentation, and `/supermemory` preserves your team's accumulated patterns across sessions.
 
-This is project-scale accessibility work. For hands-on analysis of specific code—checking a single component's contrast ratios, dissecting ARIA state, or tracing keyboard focus through a modal—the [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](/claude-code-wcag-21-compliance-checker-workflow-guide/) covers that layer in detail.
+This is project-scale accessibility work. For hands-on analysis of specific code—checking a single component's contrast ratios, dissecting ARIA state, or tracing keyboard focus through a modal—the [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](/claude-code-for-wcag-2-2-compliance-workflow-guide/) covers that layer in detail.
 
 ---
 

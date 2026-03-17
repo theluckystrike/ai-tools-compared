@@ -101,6 +101,33 @@ For developers already paying for Anthropic API access for other purposes, Claud
 
 ---
 
+## Practical Example: Building a Todo App
+
+To see the difference concretely, consider building a todo application with a Vue frontend and Python backend.
+
+**With Replit Agent:**
+
+1. Create a new Replit project
+2. Prompt: "Build a todo app with Vue frontend and Flask backend"
+3. AI generates both components
+4. Deploy with one click
+
+**With Claude Code:**
+
+```bash
+mkdir todo-app && cd todo-app
+claude
+# "Create a todo app with Vue 3 frontend and Python Flask backend. Use local SQLite for storage."
+
+# Add tests using the tdd skill
+# /tdd Write pytest tests for the Flask API endpoints
+
+# Generate documentation
+# /pdf Create user documentation for the API
+```
+
+The Claude Code approach gives you more granular control over each step, produces files you fully own, and lets you layer in skills for testing and documentation.
+
 ## Verdict
 
 **Claude Code** is the better tool for professional developers working on real, complex projects. **Replit Agent** is the better tool for fast prototyping, beginner developers, and anyone who wants a fully managed environment from code to deployment.

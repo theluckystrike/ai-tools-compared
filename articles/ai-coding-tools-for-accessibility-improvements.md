@@ -186,7 +186,7 @@ AI coding tools serve as an always-available accessibility consultant, providing
 ---
 
 
-**Related guides:** [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](https://theluckystrike.github.io/claude-skills-guide/claude-code-wcag-21-compliance-checker-workflow-guide/)
+**Related guides:** [Claude Code WCAG 2.1 Compliance Checker Workflow Guide](https://theluckystrike.github.io/claude-skills-guide/claude-code-for-wcag-2-2-compliance-workflow-guide/)
 
 ## Related Reading
 
