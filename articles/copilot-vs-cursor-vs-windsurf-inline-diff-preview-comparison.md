@@ -5,6 +5,10 @@ description: "A practical comparison of inline diff preview features in GitHub C
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Copilot vs Cursor vs Windsurf: Inline Diff Preview Comparison
