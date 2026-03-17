@@ -97,7 +97,7 @@ input CreateProjectInput {
 
 ## Schema Validation and Type Checking
 
-GraphQL's type system catches many errors at compile time, but additional validation improves schema quality. The `frontend-design` skill includes accessibility and semantic validation patterns that translate well to API response validation. For teams focused on [automated testing pipelines with Claude](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), these validation layers slot naturally into CI workflows.
+GraphQL's type system catches many errors at compile time, but additional validation improves schema quality. The `frontend-design` skill includes accessibility and semantic validation patterns that translate well to API response validation. For teams focused on [automated testing pipelines with Claude](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), these validation layers slot naturally into CI workflows.
 
 Create a validation layer using GraphQL schema directives:
 
@@ -471,7 +471,7 @@ Start with clear type definitions, validate inputs rigorously, test resolver beh
 ## Related Reading
 
 - [Claude TDD Skill: Test-Driven Development Guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/)
 - [Automated Code Documentation Workflow with Claude Skills](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/)
 

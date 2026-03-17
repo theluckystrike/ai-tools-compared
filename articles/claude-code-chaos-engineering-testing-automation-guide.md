@@ -13,7 +13,7 @@ permalink: /claude-code-chaos-engineering-testing-automation-guide/
 
 # Claude Code Chaos Engineering Testing Automation Guide
 
-[Chaos engineering pushes systems to their breaking points deliberately](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) When you combine it with Claude Code's automation capabilities, you get a powerful approach to building resilient software. This guide covers practical strategies for implementing chaos engineering testing automation using Claude Code and its skill ecosystem.
+[Chaos engineering pushes systems to their breaking points deliberately](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) When you combine it with Claude Code's automation capabilities, you get a powerful approach to building resilient software. This guide covers practical strategies for implementing chaos engineering testing automation using Claude Code and its skill ecosystem.
 
 ## Why Automate Chaos Testing with Claude Code
 
@@ -73,7 +73,7 @@ def test_payment_service_timeout_handling():
         assert response.order_placed is True
 ```
 
-[The `tdd` skill helps you think through these scenarios systematically](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), ensuring your tests cover the right failure modes.
+[The `tdd` skill helps you think through these scenarios systematically](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), ensuring your tests cover the right failure modes.
 
 ## Integrating with Popular Chaos Frameworks
 
@@ -336,7 +336,7 @@ The key is starting simple—run one small experiment, learn from the results, a
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude Skills Event Driven Architecture Setup](/claude-skills-guide/claude-skills-event-driven-architecture-setup/)
 - [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Claude Code for Beginners: Complete Getting Started Guide](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/)

@@ -61,7 +61,7 @@ Using Claude Code with the pdf skill, agencies generate polished proposals in mi
 
 ### Development Sprints
 
-During active development, [the **tdd** skill helps maintain rigorous testing standards](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). This becomes particularly valuable when onboarding junior developers or working with offshore teams:
+During active development, [the **tdd** skill helps maintain rigorous testing standards](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). This becomes particularly valuable when onboarding junior developers or working with offshore teams:
 
 ```
 /tdd

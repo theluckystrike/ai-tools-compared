@@ -146,7 +146,7 @@ This configuration allows Next.js to fetch and optimize images from these domain
 
 ## Testing Image Implementations
 
-The `tdd` skill helps you [write tests for image components through a test-driven pipeline](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). Describe your testing requirements:
+The `tdd` skill helps you [write tests for image components through a test-driven pipeline](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). Describe your testing requirements:
 
 ```
 Write tests for the ProductGallery component.

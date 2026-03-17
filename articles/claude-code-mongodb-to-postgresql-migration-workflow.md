@@ -17,7 +17,7 @@ permalink: /claude-code-mongodb-to-postgresql-migration-workflow/
 
 ## Understanding the Migration Challenge
 
-MongoDB's document-oriented model and PostgreSQL's relational structure serve different use cases. [When your application outgrows MongoDB's flexibility or when you need stronger ACID guarantees](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), foreign key constraints, or complex reporting capabilities, PostgreSQL becomes the natural choice. The migration involves more than just moving data—it requires rethinking schema design, query patterns, and application logic.
+MongoDB's document-oriented model and PostgreSQL's relational structure serve different use cases. [When your application outgrows MongoDB's flexibility or when you need stronger ACID guarantees](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), foreign key constraints, or complex reporting capabilities, PostgreSQL becomes the natural choice. The migration involves more than just moving data—it requires rethinking schema design, query patterns, and application logic.
 
 Claude Code accelerates this process by generating migration scripts, validating data transformations, and helping you refactor application code to work with the new database model.
 

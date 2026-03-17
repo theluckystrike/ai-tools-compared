@@ -47,7 +47,7 @@ One of the most powerful features of Claude Code skills is auto-invocation. When
 - Format and transform incoming data
 - Trigger follow-up actions based on API results
 
-[skills like the `tdd` skill for test-driven development](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) for test-driven development, where API responses can automatically generate unit tests, or with the `supermemory` skill for maintaining context across sessions.
+[skills like the `tdd` skill for test-driven development](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) for test-driven development, where API responses can automatically generate unit tests, or with the `supermemory` skill for maintaining context across sessions.
 
 ## Practical Use Cases
 

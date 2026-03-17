@@ -154,7 +154,7 @@ class TestCreateUser:
 
 ## Managing Test Data Effectively
 
-One of the biggest challenges in integration testing is managing test data. Claude Code skills provide strategies for creating realistic, isolated test data. For a complete automated testing pipeline, see the [automated testing pipeline guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/).
+One of the biggest challenges in integration testing is managing test data. Claude Code skills provide strategies for creating realistic, isolated test data. For a complete automated testing pipeline, see the [automated testing pipeline guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/).
 
 ### Use Factories Instead of Fixtures
 
@@ -234,7 +234,7 @@ Claude Code skills provide structured workflows for applying these practices. Th
 ## Related Reading
 
 - [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — use test-first techniques to write integration tests that stay reliable
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — wire integration tests into a full CI pipeline
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — wire integration tests into a full CI pipeline
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — review integration test quality and coverage gaps automatically
 - [Claude Code Skills for QA Engineers: Automating Test Suites](/claude-skills-guide/claude-code-skills-for-qa-engineers-automating-test-suites/) — broader test suite automation patterns for QA workflows
 

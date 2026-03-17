@@ -136,7 +136,7 @@ This custom resource becomes reusable across cookbooks, and Claude generates it 
 
 ## Debugging Convergence Issues
 
-When Puppet or Chef runs fail, Claude helps analyze error messages and suggests fixes. Share the error output and describe your expected behavior, and Claude identifies common problems. Combine this with [automated testing pipelines](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) to validate configuration changes before they hit production nodes:
+When Puppet or Chef runs fail, Claude helps analyze error messages and suggests fixes. Share the error output and describe your expected behavior, and Claude identifies common problems. Combine this with [automated testing pipelines](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) to validate configuration changes before they hit production nodes:
 
 - Missing dependencies between resources
 - Incorrect attribute precedence
@@ -167,7 +167,7 @@ Start by describing your infrastructure needs clearly, provide context about you
 
 - [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/best-claude-skills-for-devops-and-deployment/) — Skill recommendations for infrastructure engineers working across cloud environments
 - [Claude Code Azure DevOps Integration Workflow Tutorial](/claude-skills-guide/claude-code-azure-devops-integration-workflow-tutorial/) — Automate configuration deployment through CI/CD pipelines
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Validate manifests and cookbooks with test-driven workflows
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Validate manifests and cookbooks with test-driven workflows
 
 ---
 

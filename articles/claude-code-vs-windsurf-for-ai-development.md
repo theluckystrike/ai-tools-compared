@@ -28,7 +28,7 @@ Skills are `.md` files stored in `~/.claude/skills/`. You invoke them with `/ski
 - `/tdd` — Enforces test-first development: write failing tests, then implement
 - `/supermemory` — Records and retrieves project notes across sessions
 
-For example, [invoking `/tdd` before describing a feature](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) tells Claude to produce the test suite first:
+For example, [invoking `/tdd` before describing a feature](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) tells Claude to produce the test suite first:
 
 ```
 /tdd

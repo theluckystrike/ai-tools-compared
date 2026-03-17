@@ -396,7 +396,7 @@ Experiment with different skill combinations to find what works best for your sp
 - [Best Claude Skills for Developers 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — The tdd skill drives the test-first mobile development pattern
 - [Best Claude Skills for Frontend and UI Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) — UI skills for building polished Android interfaces with Claude Code
 - [Claude Skills Auto-Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — Auto-invoke skills for Kotlin testing and UI generation automatically
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build CI-integrated test pipelines for your Android project
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build CI-integrated test pipelines for your Android project
 - [Claude Code Dart Flutter Cross Platform Development Guide](/claude-skills-guide/claude-code-dart-flutter-cross-platform-development-guide/) — Build cross-platform mobile apps as an alternative to native Android
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

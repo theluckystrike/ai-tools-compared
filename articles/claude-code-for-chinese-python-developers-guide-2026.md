@@ -48,7 +48,7 @@ When Claude Code reads this file, it understands your project conventions automa
 
 ### The TDD Skill
 
-[The `/tdd` skill transforms how you write Python code](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). Activate it by typing:
+[The `/tdd` skill transforms how you write Python code](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). Activate it by typing:
 
 ```
 /tdd
@@ -198,7 +198,7 @@ Claude generates secure code by default, but always validate against your specif
 ## Related Reading
 
 - [Claude Skill MD Format Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — master the skill file format for Python development workflows
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — apply test-driven development to Python projects
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — apply test-driven development to Python projects
 - [Building Stateful Agents with Claude Skills Guide](/claude-skills-guide/building-stateful-agents-with-claude-skills-guide/) — persist project preferences with supermemory across sessions
 - [Getting Started Hub](/claude-skills-guide/getting-started-hub/) — explore all skills available for Python developers
 

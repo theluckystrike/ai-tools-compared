@@ -17,7 +17,7 @@ permalink: /best-way-to-use-claude-code-for-debugging-sessions/
 
 ## Setting Up Debugging Sessions Effectively
 
-[The key to effective debugging with Claude Code lies in how you structure your initial request](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) Rather than pasting a massive error dump, provide context that helps Claude understand your codebase and environment.
+[The key to effective debugging with Claude Code lies in how you structure your initial request](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) Rather than pasting a massive error dump, provide context that helps Claude understand your codebase and environment.
 
 Start with a structured prompt that includes three components: what you expected to happen, what actually happened, and the relevant code or error context. For example:
 
@@ -29,7 +29,7 @@ This approach gives Claude enough context to trace the issue without overwhelmin
 
 ## Essential Skills for Debugging Workflows
 
-Several Claude skills significantly improve debugging productivity. [The **tdd** skill helps by writing regression tests](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) once you identify the root cause, ensuring the bug stays fixed. After debugging a tricky race condition, you can invoke:
+Several Claude skills significantly improve debugging productivity. [The **tdd** skill helps by writing regression tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) once you identify the root cause, ensuring the bug stays fixed. After debugging a tricky race condition, you can invoke:
 
 ```
 /tdd write concurrent tests for this authentication flow to catch the race condition we just fixed
@@ -130,7 +130,7 @@ For best results, match the debugging approach to the problem type. Use Claude C
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude Code Git Bisect Automated Bug Finding Workflow](/claude-skills-guide/claude-code-git-bisect-automated-bug-finding-workflow/)
 - [How to Debug a Claude Skill That Silently Fails](/claude-skills-guide/how-do-i-debug-a-claude-skill-that-silently-fails/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)

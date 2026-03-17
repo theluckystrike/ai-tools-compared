@@ -117,7 +117,7 @@ claude "Generate OpenAPI 3.0 specifications for the extracted [service-name] ser
 - Example payloads"
 ```
 
-[The **tdd** skill becomes essential here](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). Write tests before extracting to ensure the new service maintains identical behavior:
+[The **tdd** skill becomes essential here](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). Write tests before extracting to ensure the new service maintains identical behavior:
 
 ```bash
 # Using tdd skill for test-first extraction
@@ -284,7 +284,7 @@ The transition from monolith to microservices challenges teams across skill leve
 ## Related Reading
 
 - [Why Claude Code Is Recommended for Refactoring Tasks](/claude-skills-guide/why-is-claude-code-recommended-for-refactoring-tasks/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
 - [Advanced Hub](/claude-skills-guide/advanced-hub/)
 

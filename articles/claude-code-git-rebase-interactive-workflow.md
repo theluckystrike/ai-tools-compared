@@ -212,7 +212,7 @@ A clean git history isn't just aesthetic—it's a communication tool that helps 
 
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — Full developer skill stack including tdd and supermemory
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — How skills activate automatically
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build testing into your workflow
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build testing into your workflow
 - [Claude Code Integration Testing Strategy Guide](/claude-skills-guide/claude-code-integration-testing-strategy-guide/) — Comprehensive testing strategies
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

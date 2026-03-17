@@ -31,6 +31,27 @@ Generate a CloudFormation template for an ECS Fargate service with:
 
 Claude parses this and generates a complete template with resources, parameters, mappings, and outputs. The quality depends on how precisely you communicate requirements. Include VPC CIDR ranges, instance types, desired capacity, and any tagging strategies your organization uses.
 
+## Configuring Claude Code for AWS Infrastructure
+
+Before generating templates, configure Claude Code to understand your AWS environment and naming conventions. Create a `CLAUDE.md` file in your infrastructure project with your organizational standards:
+
+```markdown
+# Infrastructure Project Context
+
+## AWS Standards
+- All resource names use PascalCase
+- Environment tags: Environment=dev|staging|prod
+- Cost center tagging required on all resources
+- Stack naming: {Project}-{Environment}-{Resource}
+
+## Common Patterns
+- Use VPC templates from /templates/vpc/
+- RDS instances always use provisioned IOPS
+- ALB always redirects HTTP to HTTPS
+```
+
+This context helps Claude Code generate templates that match your existing infrastructure patterns and naming conventions across all generated resources.
+
 ## Working with Generated Templates
 
 The first output rarely represents production-ready infrastructure. Treat generated templates as a starting point that you refine through iteration.
@@ -58,7 +79,7 @@ Use the pdf skill to read architecture-diagram.pdf and generate the
 corresponding VPC and subnet resources for our CloudFormation template.
 ```
 
-The **tdd** skill applies [test-driven development principles](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) to infrastructure. Define the expected behavior of your stack—health checks passing, scaling triggers firing, failover working—then generate templates that satisfy those test conditions.
+The **tdd** skill applies [test-driven development principles](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) to infrastructure. Define the expected behavior of your stack—health checks passing, scaling triggers firing, failover working—then generate templates that satisfy those test conditions.
 
 The [**supermemory** skill](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) maintains context across sessions. Store your organization's standard VPC patterns, approved instance types, and common resource configurations. When generating new templates, reference these stored patterns to ensure consistency across projects.
 
@@ -142,6 +163,69 @@ Properties/Cluster/Ref is invalid." Fix this in the template.
 ```
 
 For complex stacks, consider using the **frontend-design** skill to generate infrastructure diagrams from your templates. Visual representations help team reviews and documentation.
+
+## Generating IAM Roles and Policies
+
+IAM resources require precise policy documents. Prompt Claude Code with the required permissions to generate least-privilege roles:
+
+```yaml
+Resources:
+  ECSTaskRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: !Sub '${AWS::StackName}-ecs-task-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ecs-tasks.amazonaws.com
+            Action: sts:AssumeRole
+
+  S3ReadPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: !Sub '${AWS::StackName}-s3-read'
+      Roles:
+        - !Ref ECSTaskRole
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action:
+              - s3:GetObject
+              - s3:ListBucket
+            Resource:
+              - !Sub 'arn:aws:s3:::app-data-*'
+              - !Sub 'arn:aws:s3:::app-data-*/*'
+```
+
+The generated policies specify exact actions and resource ARNs, following least-privilege principles.
+
+## Template Validation Script
+
+Automate validation before deployment with a reusable script:
+
+```bash
+#!/bin/bash
+TEMPLATE_FILE=$1
+
+# Syntax check
+python3 -c "import yaml; yaml.safe_load(open('$TEMPLATE_FILE'))"
+
+# Validate template
+aws cloudformation validate-template \
+  --template-body file://$TEMPLATE_FILE
+
+# Preview changes without executing
+aws cloudformation deploy \
+  --stack-name ${TEMPLATE_FILE%.*}-test \
+  --template-file $TEMPLATE_FILE \
+  --capabilities CAPABILITY_IAM \
+  --no-execute-changeset
+```
+
+Run periodic template audits by asking Claude to review all CloudFormation templates for deprecated resource types, missing tags for cost allocation, overly permissive security group rules, and missing logging configurations.
 
 ## Building Reusable Patterns
 

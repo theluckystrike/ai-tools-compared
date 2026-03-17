@@ -139,7 +139,7 @@ The skill should parse your project's actual testing requirements and generate a
 
 ## Continuous Improvement Through Feedback
 
-The most effective workflow skills learn from usage. Include mechanisms for capturing feedback — this aligns with the [automated testing pipeline](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) approach where results feed back into the workflow:
+The most effective workflow skills learn from usage. Include mechanisms for capturing feedback — this aligns with the [automated testing pipeline](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) approach where results feed back into the workflow:
 
 ```
 After generating a workflow:

@@ -202,7 +202,7 @@ The implementations above provide starting points. Adapt the code snippets to yo
 
 - [Building Production AI Agents with Claude Skills in 2026](/claude-skills-guide/building-production-ai-agents-with-claude-skills-2026/) — architecture patterns for embedding AI in production LMS platforms
 - [Build Personal AI Assistant with Claude Skills Guide](/claude-skills-guide/build-personal-ai-assistant-with-claude-skills-guide/) — create personalized student support assistants
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — verify grading logic and LMS integrations with automated tests
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — verify grading logic and LMS integrations with automated tests
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/) — discover Claude Code skills for education and learning platforms
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

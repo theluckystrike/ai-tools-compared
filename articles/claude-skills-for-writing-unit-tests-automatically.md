@@ -17,7 +17,7 @@ Writing unit tests is one of those tasks every developer knows matters, yet find
 
 ## The TDD Skill: Your Primary Test Generator
 
-The [`/tdd` skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) is the most direct way to generate unit tests in Claude Code. This skill doesn't require installation—it activates through a simple command and transforms Claude's behavior toward test-first development.
+The [`/tdd` skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) is the most direct way to generate unit tests in Claude Code. This skill doesn't require installation—it activates through a simple command and transforms Claude's behavior toward test-first development.
 
 To use the TDD skill effectively, activate it in your session:
 
@@ -239,7 +239,7 @@ Claude skills for writing unit tests automatically handle the mechanical parts o
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build a complete CI/CD testing pipeline around the /tdd skill
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build a complete CI/CD testing pipeline around the /tdd skill
 - [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Combine test generation with automated code review for complete coverage
 - [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) — Automate test generation and review as part of your CI/CD workflow
 - [Claude Skills Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore the full range of skills available for developer workflows

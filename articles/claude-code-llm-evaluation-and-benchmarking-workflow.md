@@ -23,7 +23,7 @@ The evaluation workflow addresses several practical concerns: determining which 
 
 ## Setting Up Your Evaluation Framework
 
-[The foundation of any evaluation workflow requires three components: a standardized test dataset, consistent evaluation metrics, and automated execution](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) Claude Code skills can assist with each aspect, though the core evaluation logic typically lives in your own code.
+[The foundation of any evaluation workflow requires three components: a standardized test dataset, consistent evaluation metrics, and automated execution](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) Claude Code skills can assist with each aspect, though the core evaluation logic typically lives in your own code.
 
 Start by creating a representative sample of prompts that reflect real-world usage. This "golden dataset" should cover the full range of tasks your application handles. Include edge cases and challenging scenarios, not just typical examples. For instance, if you're evaluating models for code generation, your dataset should contain simple functions, complex algorithms with multiple edge cases, and ambiguous requirements that require clarification.
 

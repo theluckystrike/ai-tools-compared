@@ -74,7 +74,7 @@ The skill also assists with parsing Terraform's JSON output for automation. For 
 
 ### tdd for Infrastructure Testing
 
-[tdd skill applies test-driven development principles to infrastructure](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) code. While traditionally associated with application code, TDD principles work remarkably well for Terraform modules. You can write tests that validate your infrastructure before deployment.
+[tdd skill applies test-driven development principles to infrastructure](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) code. While traditionally associated with application code, TDD principles work remarkably well for Terraform modules. You can write tests that validate your infrastructure before deployment.
 
 Using tools like Terratest or Terraform's built-in test framework, you can verify that your infrastructure behaves correctly:
 

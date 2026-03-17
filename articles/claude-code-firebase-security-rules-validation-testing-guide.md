@@ -23,7 +23,7 @@ When you write Firebase rules, you need to verify that they allow intended opera
 
 ## Setting Up Claude Code for Firebase Rules Testing
 
-[Claude Code can assist with Firebase rules validation through its file operations and bash execution capabilities](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) The key is structuring your workflow so Claude can analyze your rules and suggest improvements based on Firebase's validation logic.
+[Claude Code can assist with Firebase rules validation through its file operations and bash execution capabilities](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) The key is structuring your workflow so Claude can analyze your rules and suggest improvements based on Firebase's validation logic.
 
 First, ensure your Firebase project has the CLI installed:
 

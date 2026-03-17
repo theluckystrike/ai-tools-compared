@@ -43,7 +43,7 @@ The skill handles multi-column layouts, scanned documents, and form fields. For 
 
 ## Test-Driven Development with the TDD Skill
 
-The [**tdd** skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) enforces test-first development practices. It generates unit tests, integration tests, and edge case suggestions based on code you provide.
+The [**tdd** skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) enforces test-first development practices. It generates unit tests, integration tests, and edge case suggestions based on code you provide.
 
 ```
 /tdd write pytest tests for this function: [paste function]
@@ -69,7 +69,7 @@ The [**tdd** skill](/claude-skills-guide/automated-testing-pipeline-with-claude-
 /tdd generate a property-based test suite for this pure function using fast-check: [paste function]
 ```
 
-[The skill works with pytest, Jest, Vitest, and Bun Test](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) For API developers and service teams, it catches regressions before they reach production by structuring development around failing tests first. The skill analyzes your existing code and suggests meaningful test cases you might have overlooked, ensuring better coverage without the boilerplate overhead.
+[The skill works with pytest, Jest, Vitest, and Bun Test](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) For API developers and service teams, it catches regressions before they reach production by structuring development around failing tests first. The skill analyzes your existing code and suggests meaningful test cases you might have overlooked, ensuring better coverage without the boilerplate overhead.
 
 ## Spreadsheet Automation with the xlsx Skill
 

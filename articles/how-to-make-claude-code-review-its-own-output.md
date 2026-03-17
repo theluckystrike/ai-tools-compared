@@ -59,7 +59,7 @@ After creating this skill, invoke it with `/review` whenever you want Claude to 
 
 ## Method 2: Using Claude Skills for Automated Review
 
-Several community skills include review components. The [tdd skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) enforces test-driven development, which naturally creates a review cycle—you write tests, then implementation, then verify the tests pass. This catches issues early.
+Several community skills include review components. The [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) enforces test-driven development, which naturally creates a review cycle—you write tests, then implementation, then verify the tests pass. This catches issues early.
 
 The [frontend-design skill](https://claude.ai/skills/frontend-design) includes accessibility and performance checks that review generated UI code against web standards. When you generate a component using this skill, it will flag accessibility violations like missing ARIA labels or improper heading hierarchy.
 

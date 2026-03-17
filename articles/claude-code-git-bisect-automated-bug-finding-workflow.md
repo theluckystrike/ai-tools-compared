@@ -17,7 +17,7 @@ permalink: /claude-code-git-bisect-automated-bug-finding-workflow/
 
 ## What is Git Bisect?
 
-[Git bisect is a built-in Git command that uses binary search to find which specific commit introduced a bug](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) Instead of checking hundreds of commits manually, bisect narrows it down in logarithmic time—typically finding the culprit in just 7-10 steps regardless of how many commits separate you from the problem.
+[Git bisect is a built-in Git command that uses binary search to find which specific commit introduced a bug](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) Instead of checking hundreds of commits manually, bisect narrows it down in logarithmic time—typically finding the culprit in just 7-10 steps regardless of how many commits separate you from the problem.
 
 The workflow works by marking known-good and known-bad commits, then letting Git systematically test commits in between. Each test tells bisect which half of the remaining range contains the bug, until it pinpoints the exact problematic commit.
 

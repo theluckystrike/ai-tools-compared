@@ -18,7 +18,7 @@ permalink: /claude-code-generates-insecure-code-patterns-fix/
 
 [When working with Claude Code, you might occasionally receive code that contains security vulnerabilities](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) This happens because AI models generate code based on patterns in their training data, which can include legacy or insecure practices. Understanding how to identify and fix these patterns is essential for building secure applications.
 
-[This guide covers common insecure code patterns that Claude Code might generate, how to recognize them](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), and practical workflows using Claude skills to improve your code security.
+[This guide covers common insecure code patterns that Claude Code might generate, how to recognize them](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), and practical workflows using Claude skills to improve your code security.
 
 ## Common Insecure Patterns in AI-Generated Code
 
@@ -42,7 +42,7 @@ query = "SELECT * FROM users WHERE name = %s"
 cursor.execute(query, (user_input,))
 ```
 
-When you encounter this pattern, you can [use the `tdd` skill to write proper test cases](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) that verify your queries are safe.
+When you encounter this pattern, you can [use the `tdd` skill to write proper test cases](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) that verify your queries are safe.
 
 ### Hardcoded Secrets and API Keys
 
@@ -213,7 +213,7 @@ The key is establishing security as a consistent part of your development workfl
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [How to Make Claude Code Write Secure Code Always](/claude-skills-guide/how-to-make-claude-code-write-secure-code-always/)
 - [Claude Code GDPR Data Privacy Implementation Checklist](/claude-skills-guide/claude-code-gdpr-data-privacy-implementation-checklist/)
 - [Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/)

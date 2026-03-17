@@ -66,7 +66,7 @@ Claude will generate tables following your conventions—singular table names, s
 
 ## Integration with Other Skills
 
-Database conventions work well alongside other Claude skills. The [tdd skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) helps you write migration tests alongside your schema changes. The [pdf skill](/claude-skills-guide/best-claude-skills-for-data-analysis/) lets you generate database documentation in PDF format for stakeholders. Combined with the [supermemory skill](/claude-skills-guide/best-claude-skills-for-developers-2026/), you can maintain a searchable history of schema decisions and migrations.
+Database conventions work well alongside other Claude skills. The [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) helps you write migration tests alongside your schema changes. The [pdf skill](/claude-skills-guide/best-claude-skills-for-data-analysis/) lets you generate database documentation in PDF format for stakeholders. Combined with the [supermemory skill](/claude-skills-guide/best-claude-skills-for-developers-2026/), you can maintain a searchable history of schema decisions and migrations.
 
 For frontend developers working with ORMs, the [frontend-design skill](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) pairs with database conventions to ensure your API responses match your schema structure consistently.
 

@@ -71,7 +71,7 @@ Claude Code can help you generate proper type definitions for your tables. Descr
 
 ## Schema Design with Claude
 
-When designing your database schema, use Claude's skills for structured thinking. [The `/tdd` skill proves particularly useful here](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)—you can define your data requirements first, then generate migrations that satisfy those requirements.
+When designing your database schema, use Claude's skills for structured thinking. [The `/tdd` skill proves particularly useful here](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)—you can define your data requirements first, then generate migrations that satisfy those requirements.
 
 Suppose you need a user authentication system:
 
@@ -358,7 +358,7 @@ Explore embedding Turso in serverless functions, implementing real-time subscrip
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
 - [Claude Code Skills for Supabase Full Stack Apps](/claude-skills-guide/claude-code-skills-for-supabase-full-stack-apps-guide/)
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)

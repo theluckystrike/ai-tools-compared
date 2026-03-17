@@ -132,6 +132,28 @@ import { formatDate } from './utils/helpers.js';
 console.log(formatDate(new Date()));
 ```
 
+## Practical Example: React Application Cleanup
+
+Consider a React application that has grown over several iterations. Running the dead code elimination workflow on a frontend project reveals patterns like replaced components, abandoned hooks, and orphaned dependencies:
+
+```
+Unused Components:
+- src/components/legacy/ModalV1.tsx (replaced by ModalV2)
+- src/components/ExportButton.tsx (functionality moved to bulk-export)
+
+Unused Hooks:
+- src/hooks/useLegacyAuth.ts (replaced by useAuth with SSO)
+- src/hooks/useMousePosition.ts (only used in removed demo)
+
+Dead Dependencies:
+- moment (replaced by date-fns)
+- lodash (most functions replaced by native JS)
+```
+
+For each finding, validate through cross-reference analysis: build a call graph showing which code actually gets executed. Functions that appear in definitions but never appear in any import or call statement represent strong removal candidates. Maintain a configurable allowlist for known dynamic patterns—code that uses reflection, dependency injection containers, or plugin systems might appear dead to static analysis but gets invoked at runtime.
+
+Test coverage data provides another validation layer. Code covered by tests is likely actively used. Unused functions without test coverage are the strongest candidates for removal.
+
 ## Actionable Advice for Ongoing Dead Code Management
 
 ### Integrate Dead Code Checks into Your CI/CD Pipeline

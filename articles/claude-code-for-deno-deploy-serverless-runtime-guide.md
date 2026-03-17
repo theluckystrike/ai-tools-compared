@@ -96,7 +96,7 @@ export const handler: Handlers = {
 
 ## Integrating Claude Skills for Deno Deploy Development
 
-Several Claude skills enhance Deno Deploy development. The **tdd** skill helps you write tests alongside your code — for a full breakdown see the [automated testing pipeline guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). Since Deno includes a built-in test runner, pairing Claude with test-driven development produces reliable serverless functions:
+Several Claude skills enhance Deno Deploy development. The **tdd** skill helps you write tests alongside your code — for a full breakdown see the [automated testing pipeline guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). Since Deno includes a built-in test runner, pairing Claude with test-driven development produces reliable serverless functions:
 
 ```typescript
 // Test file: routes/api/hello_test.ts
@@ -252,7 +252,7 @@ Build your serverless functions with confidence—describe what you need, let Cl
 ## Related Reading
 
 - [Claude Skills Serverless Function Development Workflow](/claude-skills-guide/claude-skills-serverless-function-development-workflow/) — general serverless patterns applicable across runtimes
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — test-first workflows for serverless functions
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — test-first workflows for serverless functions
 - [Claude Code Response Latency Optimization with Skills](/claude-skills-guide/claude-code-response-latency-optimization-with-skills/) — optimize edge function response times
 - [Claude Code GCP Google Cloud Setup and Deployment Guide](/claude-skills-guide/claude-code-gcp-google-cloud-setup-and-deployment-guide/) — compare cloud deployment options alongside Deno Deploy
 

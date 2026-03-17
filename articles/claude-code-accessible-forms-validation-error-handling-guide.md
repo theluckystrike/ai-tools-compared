@@ -15,7 +15,7 @@ permalink: /claude-code-accessible-forms-validation-error-handling-guide/
 
 [Building accessible forms requires more than semantic HTML](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) Proper validation error handling determines whether users with disabilities can successfully complete your forms. Claude Code provides several skills that streamline accessible form development, from generating compliant markup to implementing thorough validation logic.
 
-[This guide covers practical approaches to accessible form validation using Claude Code skills](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), with code examples you can apply immediately.
+[This guide covers practical approaches to accessible form validation using Claude Code skills](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), with code examples you can apply immediately.
 
 ## Understanding WCAG Form Accessibility Requirements
 
@@ -220,7 +220,7 @@ Invoke `/frontend-design` to generate accessible form components, `/tdd` to deve
 ## Related Reading
 
 - [Best Claude Code Skills for Frontend Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) — UI generation, testing, and component patterns
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Test-driven development workflows
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Test-driven development workflows
 - [Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Automated accessibility checks
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)

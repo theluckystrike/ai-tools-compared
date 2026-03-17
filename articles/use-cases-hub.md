@@ -47,7 +47,7 @@ Key use-case guides for software developers:
 
 ### Backend Developers
 
-Backend developers using Claude Code focus on schema design, API patterns, service reliability, and performance profiling. Claude's `/tdd` skill enforces [test-first habits](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) at the unit and integration level, while the shell and tooling access enables real interaction with running services.
+Backend developers using Claude Code focus on schema design, API patterns, service reliability, and performance profiling. Claude's `/tdd` skill enforces [test-first habits](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) at the unit and integration level, while the shell and tooling access enables real interaction with running services.
 
 - [Claude Code Skills for Backend Developers: Node.js and Python](/claude-skills-guide/claude-code-skills-for-backend-developers-node-and-python/) — Practical skill configurations for Node.js and Python API development.
 - [Claude Code Express Middleware Error Handling Patterns Guide](/claude-skills-guide/claude-code-express-middleware-error-handling-patterns-guide/) — Systematic middleware design and error propagation patterns.
@@ -147,7 +147,7 @@ Documentation is where Claude Code pays for itself fastest. The `/pdf` skill gen
 
 Testing is one of Claude Code's strongest applied use cases. The `/tdd` skill enforces red-green-refactor cycles for unit tests. The `/webapp-testing` skill handles Playwright-based end-to-end and visual regression tests. Claude also assists with test data generation, fixture management, and parametrize patterns.
 
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Building full CI-integrated test pipelines with the `/tdd` skill.
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Building full CI-integrated test pipelines with the `/tdd` skill.
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Automated code review workflows for consistent quality feedback.
 - [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — End-to-end setup for PR-triggered automated review.
 - [Claude Code Selenium Browser Testing Automation Guide](/claude-skills-guide/claude-code-selenium-browser-testing-automation-guide/) — Cross-browser test automation with Selenium and Claude orchestration.
@@ -251,7 +251,7 @@ Use this table to go directly to the most relevant guide based on your role and 
 | Security Engineer | [Secret Scanning Guide](/claude-skills-guide/claude-code-secret-scanning-prevent-credential-leaks-guide/) | Intermediate | [OWASP Top 10 Scanning](/claude-skills-guide/claude-code-owasp-top-10-security-scanning-workflow/) |
 | Enterprise Architect | [Enterprise Architects Governance Guide](/claude-skills-guide/claude-code-skills-for-enterprise-architects-governance/) | Advanced | [Claude Skills Enterprise Security Guide](/claude-skills-guide/claude-skills-for-enterprise-security-compliance-guide/) |
 | Android Developer | [Kotlin Android Development Guide](/claude-skills-guide/claude-code-kotlin-android-development-workflow-guide/) | Intermediate | [Flutter Cross-Platform Guide](/claude-skills-guide/claude-code-dart-flutter-cross-platform-development-guide/) |
-| QA Engineer | [Automated Testing Pipeline with TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) | Beginner | [Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) |
+| QA Engineer | [Automated Testing Pipeline with TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Beginner | [Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) |
 
 ---
 

@@ -137,7 +137,7 @@ Remember that these skills work well together. You don't have to choose just one
 
 - [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Master the tdd skill identified as the top choice for REST API development in this guide
 - [Claude Code Skills for Backend Developers: Node.js and Python](/claude-skills-guide/claude-code-skills-for-backend-developers-node-and-python/) — See how the REST API skills in this guide fit into the broader Node.js and Python backend workflow
-- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build a complete CI/CD testing pipeline for your REST API using the tdd and related skills
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build a complete CI/CD testing pipeline for your REST API using the tdd and related skills
 - [Claude Skills Use Cases Hub](/claude-skills-guide/use-cases-hub/) — Explore more API development and backend automation use case skill guides
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

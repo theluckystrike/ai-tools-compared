@@ -63,7 +63,7 @@ Some MCP servers run as local processes, while others connect to remote services
 - Remote servers should use TLS encryption and valid certificates
 - Consider whether a server needs to be accessible from network contexts at all
 
-If you're running local development with the [`tdd` skill for test-driven development](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), ensure your test databases aren't exposed to network interfaces unnecessarily.
+If you're running local development with the [`tdd` skill for test-driven development](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), ensure your test databases aren't exposed to network interfaces unnecessarily.
 
 ### 4. Audit Logging
 

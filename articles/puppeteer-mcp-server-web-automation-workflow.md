@@ -129,7 +129,7 @@ For example, you can capture dashboard screenshots and generate PDF reports in a
 "Take screenshots of each tab in the analytics dashboard, then compile them into a single PDF report using the pdf skill"
 ```
 
-Similarly, [combining with the `tdd` skill allows you to write browser-based tests](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) that verify UI behavior:
+Similarly, [combining with the `tdd` skill allows you to write browser-based tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) that verify UI behavior:
 
 ```
 "Using the tdd skill, create tests that verify the login form shows appropriate error messages for invalid credentials"

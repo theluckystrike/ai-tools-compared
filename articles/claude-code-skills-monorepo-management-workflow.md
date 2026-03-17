@@ -107,7 +107,7 @@ Never install packages directly in package root unless it's a workspace-level to
 
 ### Running Targeted Tests
 
-Full test suites in monorepos are slow. A well-crafted skill teaches Claude to run only affected tests — for broader testing automation patterns see the [automated testing pipeline guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/):
+Full test suites in monorepos are slow. A well-crafted skill teaches Claude to run only affected tests — for broader testing automation patterns see the [automated testing pipeline guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/):
 
 ```markdown
 ## Testing Strategy
@@ -206,7 +206,7 @@ Start with a basic skill that describes your monorepo structure, then iterate as
 
 - [Shared Claude Skills Across Monorepo Multiple Packages](/claude-skills-guide/shared-claude-skills-across-monorepo-multiple-packages/) — organize skills so every package in your monorepo can access them
 - [What Is the Best Way to Organize Claude Skills in a Monorepo](/claude-skills-guide/what-is-the-best-way-to-organize-claude-skills-in-a-monorepo/) — directory layout and naming conventions for monorepo skills
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — run targeted test suites across affected packages automatically
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — run targeted test suites across affected packages automatically
 - [Claude Skills Automated Dependency Update Workflow](/claude-skills-guide/claude-skills-automated-dependency-update-workflow/) — keep packages in sync with automated version management
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -89,7 +89,7 @@ The `/tdd` skill ensures tests are generated alongside your contract code, while
 Smart contract security requires constant vigilance. Claude skills can help enforce security patterns:
 
 ```solidity
-// Using the [tdd skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), Claude will suggest:
+// Using the [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), Claude will suggest:
 contract SecureVault {
     mapping(address => uint256) public balances;
     

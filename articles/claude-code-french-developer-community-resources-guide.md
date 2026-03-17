@@ -37,7 +37,7 @@ The **pdf** skill extracts text from French technical documentation:
 /pdf summarize the key concepts from Rapport-Technique-FR.pdf
 ```
 
-For frontend work, **frontend-design** generates component documentation in French when you specify the language in your prompts. [The **tdd** skill assists in writing tests in French](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), producing test descriptions that match your project's language conventions.
+For frontend work, **frontend-design** generates component documentation in French when you specify the language in your prompts. [The **tdd** skill assists in writing tests in French](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), producing test descriptions that match your project's language conventions.
 
 ## Working with French Documentation
 
@@ -152,7 +152,7 @@ Your first step: explore one community listed above and share your Claude Code s
 ## Related Reading
 
 - [Building Stateful Agents with Claude Skills Guide](/claude-skills-guide/building-stateful-agents-with-claude-skills-guide/) — use supermemory to build a persistent French developer knowledge base
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — write tests with French descriptions and documentation
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — write tests with French descriptions and documentation
 - [Best Claude Code Skills to Install First in 2026](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/) — identify the most valuable skills for frontend French development
 - [Getting Started Hub](/claude-skills-guide/getting-started-hub/) — complete guide to getting Claude Code running in your environment
 

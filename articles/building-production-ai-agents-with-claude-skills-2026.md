@@ -26,7 +26,7 @@ The [**tdd** skill](/claude-skills-guide/best-claude-skills-for-developers-2026/
 claude -p "/tdd analyze the agent modules in ./src and generate missing test cases"
 ```
 
-[This generates test cases based on your agent's actual implementation](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — state management, tool invocation sequences, and response validation.
+[This generates test cases based on your agent's actual implementation](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — state management, tool invocation sequences, and response validation.
 
 ### PDF Skill for Document Processing
 

@@ -89,7 +89,7 @@ async fn main() -> std::io::Result<()> {
 }
 ```
 
-[Run the server with cargo run and test with curl](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/):
+[Run the server with cargo run and test with curl](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/):
 
 ```bash
 curl http://127.0.0.1:8080/users
@@ -225,7 +225,7 @@ The key is invoking the right skill at the appropriate time: `/tdd` for test gen
 ## Related Reading
 
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — Full developer skill stack
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — CI/CD integration
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — CI/CD integration
 - [Frontend Design Skills for React Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) — Building UI layers
 
 

@@ -273,7 +273,7 @@ Claude Code skills significantly enhance Trigger.dev development through automat
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Claude Skills Serverless Function Development Workflow](/claude-skills-guide/claude-skills-serverless-function-development-workflow/)
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)

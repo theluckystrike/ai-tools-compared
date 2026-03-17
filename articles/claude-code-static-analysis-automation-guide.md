@@ -135,7 +135,7 @@ Start small: pick one language in your project, add basic linting, and run it au
 ## Related Reading
 
 - [Claude Code SonarQube Code Quality Workflow](/claude-skills-guide/claude-code-sonarqube-code-quality-workflow/) — SonarQube is a leading static analysis platform
-- [Claude Code Dead Code Detection Workflow](/claude-skills-guide/claude-code-dead-code-detection-workflow/) — Static analysis is the primary dead code detection method
+- [Claude Code Dead Code Detection Workflow](/claude-skills-guide/claude-code-for-dead-code-elimination-workflow-guide/) — Static analysis is the primary dead code detection method
 - [Claude Code Cyclomatic Complexity Reduction](/claude-skills-guide/claude-code-cyclomatic-complexity-reduction/) — Static analysis tools measure cyclomatic complexity
 - [Advanced Claude Skills Hub](/claude-skills-guide/advanced-hub/) — Advanced code quality automation strategies
 

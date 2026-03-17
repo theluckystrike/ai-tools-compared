@@ -82,7 +82,7 @@ Claude is particularly good at shell tooling because it understands unix convent
 
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/)
 - [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/)
 
 ---
@@ -210,7 +210,7 @@ Use this table to estimate what you are getting into before you start a new proj
 | [Best Claude Code Skills for Frontend Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) | Frontend-specific skill stack and workflows |
 | [Claude Frontend Design Skill Review and Tutorial](/claude-skills-guide/claude-frontend-design-skill-review-and-tutorial/) | Detailed guide to the official frontend-design skill |
 | [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Using the TDD skill effectively for real projects |
-| [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) | Building a full automated testing pipeline |
+| [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Building a full automated testing pipeline |
 | [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) | Skills that automate and improve code review |
 | [Claude Code Express to Fastify Migration Tutorial (2026)](/claude-skills-guide/claude-code-express-to-fastify-migration-tutorial-2026/) | Migrating Express APIs to Fastify with Claude |
 | [Claude Code Spring Boot Java Microservices Guide 2026](/claude-skills-guide/claude-code-spring-boot-java-microservices-development/) | Java microservices development patterns |

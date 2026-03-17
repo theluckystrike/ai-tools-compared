@@ -228,7 +228,7 @@ The `tdd` skill enforces test-driven development: write a failing test first, wr
 
 The skill does not just generate tests — it helps you think through edge cases you would miss on your own: expired sessions, concurrent logins, malformed inputs. For any developer building anything that needs to work reliably, TDD skill is the one to add first.
 
-**Read more:** [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+**Read more:** [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 
 ### Frontend Design Skill
 
@@ -559,7 +559,7 @@ Role-specific skill recommendations and configurations.
 Stack-specific skill guides for common platforms and languages.
 
 - [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude Code Pytest Fixtures Parametrize Workflow Tutorial 2026](/claude-skills-guide/claude-code-pytest-fixtures-parametrize-workflow-tutorial-20/)
 - [Claude Frontend Design Skill Review and Tutorial](/claude-skills-guide/claude-frontend-design-skill-review-and-tutorial/)
 - [Claude /xlsx Skill: Spreadsheet Automation Guide](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/)

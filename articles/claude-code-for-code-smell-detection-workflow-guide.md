@@ -56,6 +56,24 @@ Before scanning your codebase, establish clear criteria for what constitutes a c
 - Files exceeding 500 lines
 ```
 
+### Configuring Detection via CLAUDE.md
+
+Create a project-level configuration that Claude Code loads automatically during reviews:
+
+```markdown
+# Code Review Guidelines
+
+When reviewing code, flag these patterns:
+1. Functions over 30 lines
+2. Functions with more than 3 parameters
+3. Nested conditionals deeper than 3 levels
+4. Classes with more than 10 public methods
+5. Duplicate code blocks within 10 lines of each other
+6. Magic numbers without named constants
+```
+
+Load this file before code reviews by including it in your active context or using skill composition to layer it with other quality checks.
+
 ### Step 2: Create a Systematic Scanning Prompt
 
 Build a reusable prompt for Claude Code to analyze your code. This ensures consistent, thorough analysis:
@@ -102,6 +120,26 @@ Find all functions over 40 lines in the API module. For each:
 2. Suggest natural extraction points for helper functions
 3. Provide refactored code examples showing the separation
 ```
+
+Here's a concrete example. This JavaScript function handles validation, business logic, database operations, and notifications in one place:
+
+```javascript
+function processUserRegistration(userData) {
+  if (!userData.email || !userData.email.includes('@')) {
+    return { error: 'Invalid email' };
+  }
+  if (!userData.password || userData.password.length < 8) {
+    return { error: 'Password too short' };
+  }
+  const hashedPassword = await bcrypt.hash(userData.password, 10);
+  const user = { email: userData.email, password: hashedPassword, createdAt: new Date() };
+  await db.users.insert(user);
+  await sendEmail(userData.email, 'Welcome!');
+  return { success: true, userId: user.id };
+}
+```
+
+Claude identifies the violations: the function handles validation, hashing, database operations, and notifications in one place. It suggests extracting validation into a separate function, creating a user repository for persistence, and moving email notifications to a background job.
 
 ### Identifying Code Duplication
 

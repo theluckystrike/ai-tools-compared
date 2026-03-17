@@ -68,7 +68,7 @@ This approach reduces the time spent on repetitive infrastructure tasks and mini
 
 The AWS MCP server works well alongside traditional Infrastructure as Code tools. You can generate CloudFormation or Terraform configurations by describing your requirements to Claude.
 
-Combine the MCP server with the [tdd skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) to create testable infrastructure. First, describe the architecture you need, then ask Claude to generate the CloudFormation template. The tdd skill helps ensure your infrastructure meets specific requirements before deployment.
+Combine the MCP server with the [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) to create testable infrastructure. First, describe the architecture you need, then ask Claude to generate the CloudFormation template. The tdd skill helps ensure your infrastructure meets specific requirements before deployment.
 
 Example workflow:
 
@@ -153,7 +153,7 @@ This conversational interface reduces the learning curve for developers new to A
 
 ## Combining with Other Claude Skills
 
-The real power emerges when combining AWS automation with other Claude skills. Use the [tdd skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) to validate infrastructure changes before applying them. Apply the [frontend-design skill](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) to deploy complete applications with cloud backends.
+The real power emerges when combining AWS automation with other Claude skills. Use the [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) to validate infrastructure changes before applying them. Apply the [frontend-design skill](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) to deploy complete applications with cloud backends.
 
 For documentation, the [pdf skill](/claude-skills-guide/claude-skills-for-legal-document-automation/) generates architecture diagrams and deployment guides. The [supermemory skill](/claude-skills-guide/claude-code-2026-new-features-skills-and-hooks-roundup/) maintains institutional knowledge about your AWS setup.
 
@@ -178,8 +178,8 @@ Start with simple queries to verify your setup, then gradually introduce more co
 ## Related Reading
 
 - [Claude Code MCP Server Setup: Complete Guide 2026](/claude-skills-guide/claude-code-mcp-server-setup-complete-guide-2026/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
-- [Claude Code Skills for Writing CloudFormation Templates](/claude-skills-guide/claude-code-skills-for-writing-cloudformation-templates/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
+- [Claude Code Skills for Writing CloudFormation Templates](/claude-skills-guide/claude-code-cloudformation-template-generation-workflow-guid/)
 - [Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 **Related guides:** [Claude Code API Authentication Patterns Guide](https://theluckystrike.github.io/claude-skills-guide/claude-code-api-authentication-patterns-guide/)

@@ -19,7 +19,7 @@ permalink: /claude-code-for-ant-to-maven-gradle-build-migration/
 
 Ant builds rely on explicit task definitions in `build.xml`. Each target specifies exact commands, making dependency management manual and builds difficult to reproduce. Maven introduced convention-over-configuration with standardized project layouts and transitive dependencies. Gradle offers flexibility through DSL-based build scripts with Maven-compatible repositories.
 
-[The migration involves several critical steps: analyzing the Ant build structure, mapping dependencies](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), converting custom tasks to plugins, and validating build outputs. Claude Code can assist at each stage, but using the right skills amplifies productivity.
+[The migration involves several critical steps: analyzing the Ant build structure, mapping dependencies](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), converting custom tasks to plugins, and validating build outputs. Claude Code can assist at each stage, but using the right skills amplifies productivity.
 
 ## Analyzing Your Ant Build Structure
 
@@ -118,7 +118,7 @@ Create three Maven profiles for dev, staging, and production environments with t
 
 ## Validating Build Parity
 
-After migration, you must verify that Maven or Gradle produces identical outputs. [The tdd skill helps create validation tests](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/), though you might also compare artifacts directly.
+After migration, you must verify that Maven or Gradle produces identical outputs. [The tdd skill helps create validation tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/), though you might also compare artifacts directly.
 
 Build the same artifact with both systems during transition:
 
@@ -216,7 +216,7 @@ For teams managing this transition, consider [creating a reusable migration skil
 ## Related Reading
 
 - [Claude Skill MD Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 

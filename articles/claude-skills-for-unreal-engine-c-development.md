@@ -19,7 +19,7 @@ Unreal Engine remains one of the most powerful game development frameworks, and 
 
 Unreal Engine projects follow strict naming conventions and module structures. The framework relies heavily on macros like `UFUNCTION()`, `UPROPERTY()`, and `UCLASS()`, creating a learning curve that even experienced C++ developers find challenging. Claude skills can encode these conventions into reusable prompts, ensuring every piece of code follows Epic's coding standards without manual repetition. If you are new to creating these reusable definitions, [the skill .md file format specification](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) explains every field and option in detail.
 
-When you invoke a skill like the `tdd` (test-driven development) skill, you can generate test cases for your Actor components before writing implementation code. The [automated testing pipeline guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) shows how to extend these individual skill invocations into a full CI/CD loop. This approach reduces debugging time significantly since Unreal's hot-reload system, while powerful, still requires careful module management.
+When you invoke a skill like the `tdd` (test-driven development) skill, you can generate test cases for your Actor components before writing implementation code. The [automated testing pipeline guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) shows how to extend these individual skill invocations into a full CI/CD loop. This approach reduces debugging time significantly since Unreal's hot-reload system, while powerful, still requires careful module management.
 
 ## Core Skills for Unreal C++ Workflows
 
@@ -135,7 +135,7 @@ Avoid over-automation. Some tasks, like debugging complex replication issues or 
 ## Related Reading
 
 - [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude SuperMemory Skill: Persistent Context Guide](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
 - [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/)
 

@@ -249,7 +249,7 @@ Token cost is real. These guides focus on extracting maximum value from each Cla
 - [Claude Skills for SEO Content Generation: 2026 Guide](/claude-skills-guide/claude-skills-for-seo-content-generation-workflow/) — SEO-driven content generation workflows
 - [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/how-to-make-claude-code-not-over-engineer-solutions/) — Keeping Claude Code outputs appropriately simple
 - [How to Make Claude Code Use Specific Library Version](/claude-skills-guide/how-to-make-claude-code-use-specific-library-version/) — Pinning library versions in Claude Code output
-- [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) — Improving unit test quality from Claude Code
+- [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Improving unit test quality from Claude Code
 - [Understanding Claude Code Hooks System: Complete Guide](/claude-skills-guide/understanding-claude-code-hooks-system-complete-guide/) — Using hooks to trigger automated actions in your workflow
 - [Why Claude Code Is Expensive: Understanding Token Costs](/claude-skills-guide/why-is-claude-code-expensive-large-context-tokens/) — Why large-context sessions cost more and how to manage it
 - [Why Does Anthropic Limit Claude Code Context Window?](/claude-skills-guide/why-does-anthropic-limit-claude-code-context-window/) — The technical and economic reasons behind context limits
@@ -443,7 +443,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/how-to-make-claude-code-not-over-engineer-solutions/) | Performance |
 | [How to Make Claude Code Use Specific Library Version](/claude-skills-guide/how-to-make-claude-code-use-specific-library-version/) | Performance |
 | [How to Use Claude Code to Refactor Legacy JavaScript Code](/claude-skills-guide/how-to-use-claude-code-to-refactor-legacy-javascript-code/) | Enterprise |
-| [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) | Performance |
+| [How to Make Claude Code Write Better Unit Tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Performance |
 | [How to Make Claude Code Write Secure Code Always](/claude-skills-guide/how-to-make-claude-code-write-secure-code-always/) | Security |
 | [How to Share Claude Skills with Your Team](/claude-skills-guide/how-to-share-claude-skills-with-your-team/) | Enterprise |
 | [How to Write Effective CLAUDE.md for Your Project](/claude-skills-guide/how-to-write-effective-claude-md-for-your-project/) | Claude MD |

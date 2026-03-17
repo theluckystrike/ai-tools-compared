@@ -26,7 +26,7 @@ Before you begin, ensure you have:
 - GitLab Runner configured (or use GitLab's shared runners)
 - Basic familiarity with YAML syntax and command-line operations
 
-If you are new to [CI/CD pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/)s, consider using the `/[tdd skill for testing](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)` skill in Claude Code to generate test cases for your application before setting up the pipeline. The skill helps ensure your code works correctly before automation takes over.
+If you are new to [CI/CD pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/)s, consider using the `/[tdd skill for testing](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)` skill in Claude Code to generate test cases for your application before setting up the pipeline. The skill helps ensure your code works correctly before automation takes over.
 
 ## Project Structure
 
@@ -43,7 +43,7 @@ my-app/
 └── package.json
 ```
 
-[The `.gitlab-ci.yml` file defines your pipeline, while the `Dockerfile` specifies how to build your container image](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+[The `.gitlab-ci.yml` file defines your pipeline, while the `Dockerfile` specifies how to build your container image](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 
 ## Creating the Dockerfile
 
@@ -319,7 +319,7 @@ Combining this setup with Claude Code skills like `/tdd` for test generation, `/
 
 - [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/best-claude-skills-for-devops-and-deployment/) — Automate infrastructure with Claude skills
 - [Claude Code Skills for Testing](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Improve test coverage with AI assistance
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build testing workflows with Claude
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build testing workflows with Claude
 
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

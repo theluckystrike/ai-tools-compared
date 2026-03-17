@@ -135,7 +135,7 @@ def app(database_config):
 
 Each fixture builds upon the previous one, creating a chain of dependencies that pytest resolves automatically. This approach keeps configuration logic modular and testable.
 
-For advanced scenarios, you can use `pytest fixtures` from external plugins. The `pytest-mock` library, for instance, provides a `mock` fixture that automatically cleans up mocks after each test. Similarly, `pytest-asyncio` offers an `event_loop` fixture for async tests. For data-heavy test pipelines, pairing fixtures with the [automated testing pipeline approach](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) yields a continuous, reliable feedback loop.
+For advanced scenarios, you can use `pytest fixtures` from external plugins. The `pytest-mock` library, for instance, provides a `mock` fixture that automatically cleans up mocks after each test. Similarly, `pytest-asyncio` offers an `event_loop` fixture for async tests. For data-heavy test pipelines, pairing fixtures with the [automated testing pipeline approach](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) yields a continuous, reliable feedback loop.
 
 ## Practical Workflow with Claude Code
 
@@ -151,7 +151,7 @@ Pytest fixtures and parametrize form a complementary duo for efficient test auth
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Scale your pytest workflows into a continuous testing pipeline driven by the TDD skill.
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Scale your pytest workflows into a continuous testing pipeline driven by the TDD skill.
 - [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — How to enforce test-first development in Python and beyond using the tdd skill.
 - [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/claude-skills-for-data-science-and-jupyter-notebooks/) — Extend your parametrized pytest patterns into Jupyter-based data analysis workflows.
 - [Claude Skills Workflow Guide](/claude-skills-guide/workflows-hub/) — See how testing automation fits into broader multi-skill development pipelines.

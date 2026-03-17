@@ -20,7 +20,7 @@ permalink: /claude-code-github-actions-workflow-matrix-strategy-guide/
 
 ## Understanding Matrix Strategy Fundamentals
 
-[The matrix strategy in GitHub Actions uses the matrix keyword to define dimensions you want to test against](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) Each combination creates a separate job that runs in parallel, dramatically reducing total pipeline execution time.
+[The matrix strategy in GitHub Actions uses the matrix keyword to define dimensions you want to test against](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) Each combination creates a separate job that runs in parallel, dramatically reducing total pipeline execution time.
 
 ```yaml
 jobs:
@@ -319,7 +319,7 @@ For more advanced patterns, explore the `supermemory` skill for tracking matrix 
 ## Related Reading
 
 - [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) — Integrate Claude skills directly into GitHub Actions workflows beyond matrix strategy patterns.
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build continuous testing pipelines that feed results back into your matrix analysis workflows.
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build continuous testing pipelines that feed results back into your matrix analysis workflows.
 - [How to Automate Pull Request Review with Claude Skills](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Extend your matrix CI pipeline with automated pull request review for every combination.
 - [Claude Skills Workflow Guide](/claude-skills-guide/workflows-hub/) — See how matrix workflows fit into larger multi-skill automation patterns.
 

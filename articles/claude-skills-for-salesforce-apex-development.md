@@ -51,7 +51,7 @@ The generated code includes proper null checks and bulkification patterns from t
 
 ## test-generator: Create Comprehensive Test Classes
 
-[Testing in Salesforce is mandatory for deployment](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). The **test-generator** skill builds test classes with realistic test data, assert statements, and proper coverage targets.
+[Testing in Salesforce is mandatory for deployment](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). The **test-generator** skill builds test classes with realistic test data, assert statements, and proper coverage targets.
 
 ```bash
 # Generate test class for OpportunityTriggerHandler
@@ -239,7 +239,7 @@ Add these security checks before deploying to production environments.
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — achieve Salesforce code coverage requirements with TDD patterns
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — achieve Salesforce code coverage requirements with TDD patterns
 - [Claude Code Skills for C# .NET Developers](/claude-skills-guide/claude-code-skills-for-c-sharp-dotnet-developers/) — compare enterprise development skill patterns across platforms
 - [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) — automate Salesforce metadata deployment in CI/CD
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/) — explore Claude Code skills for enterprise CRM development

@@ -157,7 +157,7 @@ ngrok http 3000
 
 ## Event-Driven Testing Workflow
 
-Implement an event-driven testing setup that responds to code changes — the [automated testing pipeline guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) covers complementary patterns for test-driven workflows:
+Implement an event-driven testing setup that responds to code changes — the [automated testing pipeline guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) covers complementary patterns for test-driven workflows:
 
 ```yaml
 # ~/.claude/skills/test-automation/skill.md

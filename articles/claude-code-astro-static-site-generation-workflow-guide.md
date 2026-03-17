@@ -285,7 +285,7 @@ Build incrementally, test consistently, and deploy automatically. Your static si
 ## Related Reading
 
 - [Best Claude Code Skills for Frontend Development](/claude-skills-guide/best-claude-code-skills-for-frontend-development/) — Complete frontend skill stack
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Testing workflows for any project
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Testing workflows for any project
 - [Claude Skills Auto Invocation: How It Works](/claude-skills-guide/claude-skills-auto-invocation-how-it-works/) — Understanding skill activation
 
 

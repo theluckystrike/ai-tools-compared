@@ -23,7 +23,7 @@ Before starting your migration, ensure your current Express application has adeq
 
 ## Setting Up Your Migration Environment
 
-[Create a parallel Fastify project alongside your existing Express application](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) This approach lets you migrate route by route without disrupting production traffic.
+[Create a parallel Fastify project alongside your existing Express application](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) This approach lets you migrate route by route without disrupting production traffic.
 
 ```bash
 # Initialize new Fastify project

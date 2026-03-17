@@ -102,7 +102,7 @@ def display_date(iso_date: str, target_locale: str) -> str:
 
 ### Pattern 3: Testing Date Handling with TDD
 
-[The tdd skill provides excellent patterns for testing date handling](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). Create comprehensive test coverage for your date utilities:
+[The tdd skill provides excellent patterns for testing date handling](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). Create comprehensive test coverage for your date utilities:
 
 ```javascript
 // date-handler.test.js
@@ -195,7 +195,7 @@ The key principles remain straightforward: store in ISO 8601, parse with explici
 
 - [Claude Code i18n Workflow for React Applications](/claude-skills-guide/claude-code-i18n-workflow-for-react-applications-guide/)
 - [Claude Code L10n Testing Automation Workflow Tutorial](/claude-skills-guide/claude-code-l10n-testing-automation-workflow-tutorial/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

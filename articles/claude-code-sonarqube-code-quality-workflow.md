@@ -152,7 +152,7 @@ The key is establishing the workflow early in project setup, running analysis co
 ## Related Reading
 
 - [Claude Code Static Analysis Automation Guide](/claude-skills-guide/claude-code-static-analysis-automation-guide/) — SonarQube is a static analysis platform
-- [Claude Code Dead Code Detection Workflow](/claude-skills-guide/claude-code-dead-code-detection-workflow/) — SonarQube detects dead code among other issues
+- [Claude Code Dead Code Detection Workflow](/claude-skills-guide/claude-code-for-dead-code-elimination-workflow-guide/) — SonarQube detects dead code among other issues
 - [Claude Code Technical Debt Tracking Workflow](/claude-skills-guide/claude-code-technical-debt-tracking-workflow/) — SonarQube quantifies technical debt
 - [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/) — Integrate SonarQube into CI/CD pipelines
 

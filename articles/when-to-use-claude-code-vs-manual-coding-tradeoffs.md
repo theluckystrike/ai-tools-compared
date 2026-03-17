@@ -125,7 +125,7 @@ Both approaches are valid. The Claude Code approach suits rapid development cycl
 
 Most effective developers combine both approaches strategically. Use Claude Code for initial scaffolding, boilerplate, and routine tasks. Then manually refine, optimize, and extend the code where it matters most.
 
-This hybrid model captures the speed advantages of AI assistance while preserving human judgment for critical implementation details. The [tdd skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) pairs well with this approach—let Claude generate tests, then manually enhance edge cases and performance-critical assertions.
+This hybrid model captures the speed advantages of AI assistance while preserving human judgment for critical implementation details. The [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) pairs well with this approach—let Claude generate tests, then manually enhance edge cases and performance-critical assertions.
 
 ## Conclusion
 

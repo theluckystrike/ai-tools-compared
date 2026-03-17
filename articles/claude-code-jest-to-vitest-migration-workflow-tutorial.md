@@ -19,7 +19,7 @@ Migrating [test suite](/claude-skills-guide/best-claude-skills-for-code-review-a
 
 ## Why Migrate from Jest to Vitest
 
-[Vitest shares compatibility with Jest's API, meaning most of your existing test patterns translate directly](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) The performance gains stem from Vite's native hot module replacement and intelligent watch mode. Teams report test suites running 10x faster after switching, particularly beneficial in large codebases with hundreds of test files.
+[Vitest shares compatibility with Jest's API, meaning most of your existing test patterns translate directly](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) The performance gains stem from Vite's native hot module replacement and intelligent watch mode. Teams report test suites running 10x faster after switching, particularly beneficial in large codebases with hundreds of test files.
 
 The migration makes particular sense if your project already uses Vite for bundling. Vitest uses the same configuration, plugin ecosystem, and dependency resolution, eliminating duplicate tooling and reducing maintenance overhead.
 

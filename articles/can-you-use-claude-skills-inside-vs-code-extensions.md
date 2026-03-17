@@ -55,7 +55,7 @@ function invokeClaudeWithSkill(skillName: string, userPrompt: string): Promise<s
 }
 ```
 
-This approach lets you use any skill from your `~/.claude/skills/` directory. For example, [you could invoke the **tdd** skill to generate tests](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) in the editor:
+This approach lets you use any skill from your `~/.claude/skills/` directory. For example, [you could invoke the **tdd** skill to generate tests](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) in the editor:
 
 ```typescript
 vscode.commands.registerCommand('extension.generateTests', async () => {

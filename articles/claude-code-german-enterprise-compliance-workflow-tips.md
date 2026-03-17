@@ -55,7 +55,7 @@ Several Claude skills enhance compliance productivity without introducing unnece
 
 ### The tdd Skill for Test-Driven Compliance
 
-[The **tdd** skill helps generate compliant test cases automatically](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). When building features that must meet specific regulatory requirements, express those requirements as test cases:
+[The **tdd** skill helps generate compliant test cases automatically](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). When building features that must meet specific regulatory requirements, express those requirements as test cases:
 
 ```
 /tdd generate test cases for user data retention policy that deletes records after 90 days of inactivity, ensuring DSGVO right to erasure is honored
@@ -205,7 +205,7 @@ Claude Code fits well into German enterprise compliance workflows when configure
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — generate compliance test cases with the TDD skill
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — generate compliance test cases with the TDD skill
 - [Building Stateful Agents with Claude Skills Guide](/claude-skills-guide/building-stateful-agents-with-claude-skills-guide/) — build a persistent compliance knowledge base with supermemory
 - [Claude Code GDPR Data Privacy Implementation Checklist](/claude-skills-guide/claude-code-gdpr-data-privacy-implementation-checklist/) — implement DSGVO-compliant data handling in your workflows
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/) — explore Claude Code use cases for enterprise and regulated environments

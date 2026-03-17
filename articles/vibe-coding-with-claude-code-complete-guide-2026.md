@@ -43,7 +43,7 @@ Claude skills are pre-built prompt templates that specialize Claude's behavior f
 
 For documentation-heavy workflows, the **pdf** skill enables Claude to generate PDF documents directly from your project. This is useful for reports, invoices, or any generated content that needs to leave your application as a PDF.
 
-When testing matters, [the **tdd** skill guides Claude to practice test-driven development](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/). It writes tests before implementation code, helping you build more reliable software from the start.
+When testing matters, [the **tdd** skill guides Claude to practice test-driven development](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/). It writes tests before implementation code, helping you build more reliable software from the start.
 
 [The **supermemory** skill connects Claude to your project context](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/), allowing it to remember decisions, architecture choices, and code patterns across sessions. This creates a more personalized experience where Claude understands your project's history.
 

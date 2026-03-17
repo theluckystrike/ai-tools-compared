@@ -83,6 +83,47 @@ HAVING COUNT(p.id) > 0
 ORDER BY post_count DESC;
 ```
 
+## Optimizing Aggregate Queries
+
+Aggregation queries often become slow as data grows. Correlated subqueries are a frequent performance killer—they execute once per row in the outer query:
+
+```sql
+-- Slow: Correlated subquery runs once per user
+SELECT
+    user_id,
+    (SELECT COUNT(*) FROM orders WHERE user_id = users.id) as order_count,
+    (SELECT SUM(total) FROM orders WHERE user_id = users.id) as total_spent
+FROM users;
+```
+
+Convert these to a single JOIN with GROUP BY for dramatic improvement:
+
+```sql
+-- Optimized: Single aggregation pass
+SELECT
+    u.id,
+    u.name,
+    COUNT(o.id) as order_count,
+    COALESCE(SUM(o.total), 0) as total_spent
+FROM users u
+LEFT JOIN orders o ON o.user_id = u.id
+GROUP BY u.id, u.name;
+```
+
+When prompting Claude, be specific: "Rewrite this correlated subquery as a JOIN with GROUP BY to eliminate per-row execution." Claude recognizes the pattern and generates the optimized version while preserving result correctness.
+
+### Composite Index Strategy
+
+Beyond rewriting queries, ask Claude to recommend indexes that support your actual query patterns. A well-designed composite index can cover the JOIN, WHERE, and ORDER BY in a single structure:
+
+```sql
+-- Composite index covering common order query patterns
+CREATE INDEX idx_orders_user_status
+ON orders(user_id, status, total DESC);
+```
+
+This index serves queries that filter by user and status while sorting by total—all without touching the underlying table rows.
+
 ## Using Claude Skills for SQL Tasks
 
 Several Claude skills enhance SQL query writing and optimization. The tdd skill helps you write tests first, then implement queries that pass those tests. This approach catches performance regressions before deployment.

@@ -265,7 +265,7 @@ Start with the skills and workflows outlined here, then customize them to your o
 - [Claude Code SOC2 Compliance Audit Preparation Guide](/claude-skills-guide/claude-code-soc2-compliance-audit-preparation-guide-2026/) — Comprehensive compliance preparation
 - [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/best-claude-skills-for-devops-and-deployment/) — Automate deployments with Claude skills
 - [Claude Code MCP Server SOC2 Compliance Guide](/claude-skills-guide/claude-code-mcp-server-soc2-compliance-guide/) — Using MCP servers for compliance
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Quality assurance workflows
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Quality assurance workflows
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

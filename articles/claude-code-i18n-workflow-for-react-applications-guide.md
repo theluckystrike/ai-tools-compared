@@ -92,7 +92,7 @@ When prompting Claude for translations, specify the plural forms you need:
 }
 ```
 
-This explicit approach ensures Claude generates translations that match your i18n library's expected format. [The tdd skill can help you write tests that verify pluralization works correctly](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) for each locale, catching edge cases before they affect users.
+This explicit approach ensures Claude generates translations that match your i18n library's expected format. [The tdd skill can help you write tests that verify pluralization works correctly](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) for each locale, catching edge cases before they affect users.
 
 ## Building Locale Switching into Your Application
 
@@ -167,6 +167,6 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 - [Claude Code Multilingual Codebase Management Guide](/claude-skills-guide/claude-code-multilingual-codebase-management-guide/)
 - [Claude Code International Date Format Handling Workflow](/claude-skills-guide/claude-code-international-date-format-handling-workflow/)
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 {% endraw %}

@@ -97,7 +97,7 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 | [Automated GitHub Issue Triage with Claude Skills](/claude-skills-guide/claude-skills-for-automated-github-issue-triage/) | Automatically categorize and route GitHub issues using skills |
 | [Competitive Analysis Automation with Claude Skills](/claude-skills-guide/claude-skills-competitive-analysis-automation-workflow/) | Running recurring competitive research with an automated skill |
 | [Claude Skills for SEO Content Generation Workflow](/claude-skills-guide/claude-skills-for-seo-content-generation-workflow/) | Producing SEO-optimized content at scale using Claude skills |
-| [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) | Building a continuous testing pipeline driven by the TDD skill |
+| [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Building a continuous testing pipeline driven by the TDD skill |
 | [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Using the TDD skill to enforce test-first development |
 | [Claude xlsx Skill Spreadsheet Automation Tutorial](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/) | Automating spreadsheet generation and updates via the xlsx skill |
 | [Best Claude Skills for Code Review Automation](/claude-skills-guide/best-claude-skills-for-code-review-automation/) | Top skills for building reliable automated code review workflows |
@@ -123,7 +123,7 @@ For cost-conscious teams running these workflows at scale, see [Claude Skills To
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Build a continuous testing pipeline driven by the TDD skill for reliable, repeatable results.
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Build a continuous testing pipeline driven by the TDD skill for reliable, repeatable results.
 - [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) — Integrate Claude skills directly into GitHub Actions for fully automated deployment workflows.
 - [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Set up automated code review as part of your CI pipeline with Claude skills.
 - [Claude Skills by Use Case](/claude-skills-guide/use-cases-hub/) — Find the right skills for your specific domain before building them into workflows.

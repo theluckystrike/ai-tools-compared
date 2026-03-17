@@ -37,7 +37,7 @@ The output includes migration files, model code with associations and validation
 
 ## rspec-helper: Test-Driven Development
 
-[The rspec-helper skill implements test-driven development patterns](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) specific to Rails. It generates comprehensive test suites covering model validations, controller actions, and request specs.
+[The rspec-helper skill implements test-driven development patterns](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) specific to Rails. It generates comprehensive test suites covering model validations, controller actions, and request specs.
 
 ```bash
 # Generate tests for a User model
@@ -237,7 +237,7 @@ description:text, due_date:date, and status:integer"
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — apply TDD patterns to Rails testing with RSpec
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — apply TDD patterns to Rails testing with RSpec
 - [Claude Code Skills for Golang Microservices](/claude-skills-guide/claude-code-skills-for-golang-microservices/) — compare microservice development patterns across languages
 - [Claude Skill MD Format Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/) — build custom Rails-specific skills for your project
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/) — explore Claude Code skills for web application development

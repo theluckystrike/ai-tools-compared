@@ -241,7 +241,7 @@ The investment in crafting these skills pays dividends in code consistency, fast
 
 - [Claude Skill .md Format: Complete Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Claude MD Best Practices for Large Codebases](/claude-skills-guide/claude-md-best-practices-for-large-codebases/)
-- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

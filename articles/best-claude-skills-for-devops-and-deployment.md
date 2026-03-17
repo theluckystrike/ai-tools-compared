@@ -20,7 +20,7 @@ permalink: /best-claude-skills-for-devops-and-deployment/
 
 ## Infrastructure Automation
 
-[For DevOps shell scripting tasks, describe your goal directly to Claude Code](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) Claude helps you craft reliable bash scripts, deployment scripts, and pipeline automation.
+[For DevOps shell scripting tasks, describe your goal directly to Claude Code](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) Claude helps you craft reliable bash scripts, deployment scripts, and pipeline automation.
 
 For example, when deploying a Docker container and checking its status, Claude can help you create reliable scripts:
 

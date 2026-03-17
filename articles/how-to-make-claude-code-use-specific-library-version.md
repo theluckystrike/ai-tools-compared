@@ -60,7 +60,7 @@ dependencies = [
 ]
 ```
 
-The [tdd skill](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) often generates test code that imports your existing dependencies—version pinning ensures compatibility.
+The [tdd skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) often generates test code that imports your existing dependencies—version pinning ensures compatibility.
 
 ### Node.js Projects
 

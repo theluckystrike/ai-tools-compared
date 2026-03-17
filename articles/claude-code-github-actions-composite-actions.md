@@ -142,7 +142,7 @@ Composite actions provide the building blocks for reusable Claude Code automatio
 
 - [Claude Code GitHub Actions Approval Workflows](/claude-skills-guide/claude-code-github-actions-approval-workflows/)
 - [Claude Code GitHub Actions Matrix Builds Guide](/claude-skills-guide/claude-code-github-actions-matrix-builds-guide/)
-- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

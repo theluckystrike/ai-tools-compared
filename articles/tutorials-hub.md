@@ -155,7 +155,7 @@ These tutorials cover the mechanics of creating, managing, and distributing Clau
 
 Testing is one of Claude Code's most reliable applied domains. The `/tdd` skill enforces red-green-refactor cycles. The `/webapp-testing` skill drives Playwright end-to-end and visual regression suites. These tutorials take you from zero to a working test pipeline.
 
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Building a full CI-integrated test pipeline with the `/tdd` skill
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Building a full CI-integrated test pipeline with the `/tdd` skill
 - [Claude Code Breaks Existing Tests After Changes Fix](/claude-skills-guide/claude-code-breaks-existing-tests-after-changes-fix/) — Diagnosing and fixing test regressions caused by Claude Code changes
 - [Claude Code Chaos Engineering Testing Automation Guide](/claude-skills-guide/claude-code-chaos-engineering-testing-automation-guide/) — Chaos engineering test automation with Claude Code
 - [Claude Code Jest to Vitest Migration Workflow Tutorial](/claude-skills-guide/claude-code-jest-to-vitest-migration-workflow-tutorial/) — Migrating test suites from Jest to Vitest with Claude assistance
@@ -167,7 +167,7 @@ Testing is one of Claude Code's most reliable applied domains. The `/tdd` skill 
 - [Claude Skills for Writing Unit Tests Automatically](/claude-skills-guide/claude-skills-for-writing-unit-tests-automatically/) — Automated unit test generation with Claude skills
 - [Claude TDD Skill: Test-Driven Development Guide (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Complete guide to the `/tdd` skill workflow
 - [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — End-to-end setup for PR-triggered automated code review
-- [How to Make Claude Code Test Before Implementing Feature](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) — Enforcing test-first development with Claude Code
+- [How to Make Claude Code Test Before Implementing Feature](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Enforcing test-first development with Claude Code
 
 ---
 
@@ -240,7 +240,7 @@ Short, focused tutorials answering specific "how do I" questions about Claude Co
 |---------|---------|
 | [Ansible MCP Server Configuration Management](/claude-skills-guide/ansible-mcp-server-configuration-management/) | MCP |
 | [Apache Kafka MCP Server for Event Streaming Guide](/claude-skills-guide/apache-kafka-mcp-server-event-streaming-guide/) | MCP |
-| [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) | Testing |
+| [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Testing |
 | [AWS MCP Server Cloud Automation with Claude Code](/claude-skills-guide/aws-mcp-server-cloud-automation-with-claude-code/) | MCP |
 | [Can Claude Code Skills Call External APIs Automatically?](/claude-skills-guide/can-claude-code-skills-call-external-apis-automatically/) | How-To |
 | [Can You Use Claude Skills Without a Claude Max Subscription?](/claude-skills-guide/can-you-use-claude-skills-without-a-claude-max-subscription/) | How-To |
@@ -332,7 +332,7 @@ Short, focused tutorials answering specific "how do I" questions about Claude Co
 | [How to Automate Code Reviews with Claude Skills](/claude-skills-guide/best-claude-skills-for-code-review-automation/) | Testing |
 | [How to Combine Multiple Claude Skills in One Project](/claude-skills-guide/how-to-combine-multiple-claude-skills-in-one-project/) | Skill Management |
 | [How to Connect Claude Skills to External APIs Guide](/claude-skills-guide/how-to-connect-claude-skills-to-external-apis-guide/) | Skill Management |
-| [How to Make Claude Code Test Before Implementing Feature](/claude-skills-guide/how-to-make-claude-code-test-before-implementing-feature/) | Testing |
+| [How to Make Claude Code Test Before Implementing Feature](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Testing |
 | [How to Use Claude Code for Spreadsheet Automation](/claude-skills-guide/how-to-use-claude-code-for-spreadsheet-automation/) | Data Science |
 | [How to Write a Skill MD File for Claude Code](/claude-skills-guide/how-to-write-a-skill-md-file-for-claude-code/) | Skill Management |
 | [Kubernetes MCP Server Cluster Management Guide](/claude-skills-guide/kubernetes-mcp-server-cluster-management-guide/) | MCP |

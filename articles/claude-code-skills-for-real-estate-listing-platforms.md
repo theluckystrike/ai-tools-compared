@@ -176,7 +176,7 @@ Add geospatial filtering for proximity to schools, transit, or amenities. Storea
 
 ## Automated Testing with TDD
 
-Quality real estate platforms require rigorous testing. [Use the TDD skill to write tests first](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/):
+Quality real estate platforms require rigorous testing. [Use the TDD skill to write tests first](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/):
 
 ```
 "Write tests for property search filtering function covering
@@ -203,7 +203,7 @@ Each skill handles a specific domain, reducing context switching and maintaining
 
 ## Related Reading
 
-- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — write tests for property search filtering and pricing logic
+- [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — write tests for property search filtering and pricing logic
 - [Automated Code Documentation Workflow with Claude Skills](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/) — generate property listing documentation automatically
 - [Claude Code Skills for Travel Booking Platforms](/claude-skills-guide/claude-code-skills-for-travel-booking-platforms/) — similar patterns for booking and availability management
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/) — explore Claude Code skills for property and booking platforms

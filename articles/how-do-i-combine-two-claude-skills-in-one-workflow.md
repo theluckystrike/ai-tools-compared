@@ -27,7 +27,7 @@ The key insight is that skills aren't limited to isolated use. You can invoke on
 
 The simplest approach involves invoking skills one after another, with each skill receiving context from the previous operation. Here's a practical scenario:
 
-Suppose you need to generate API documentation from code. You could [combine the **tdd** skill with the **pdf** skill](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/):
+Suppose you need to generate API documentation from code. You could [combine the **tdd** skill with the **pdf** skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/):
 
 1. Use **tdd** to analyze your codebase and extract function signatures, parameters, and return types
 2. Pass the extracted API information to **pdf** to generate formatted documentation

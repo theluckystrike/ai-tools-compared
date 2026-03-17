@@ -116,6 +116,66 @@ Developers new to test-driven development often make several mistakes that the t
 
 **Forgetting edge cases**: The skill prompts you to consider null values, empty inputs, boundary conditions, and error scenarios.
 
+## CI/CD Pipeline Integration
+
+The tests you write with the tdd skill integrate directly into your CI/CD pipeline. While the skill itself runs locally during your Claude Code sessions, the test suites it produces execute through standard test runners in CI:
+
+```yaml
+# .github/workflows/test-pipeline.yml
+name: Automated Testing Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests with coverage
+        run: npm test -- --coverage
+
+      - name: Run integration tests
+        run: npx jest --config jest.integration.config.js
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/
+```
+
+Track pipeline health with these metrics over time:
+
+- **Coverage**: Aim for 80%+ line coverage on business logic
+- **Execution time**: Keep unit tests under 5 minutes for fast feedback
+- **Flakiness rate**: Target below 1%—fix or quarantine flaky tests immediately
+- **Bug escape rate**: Track bugs found in production versus those caught in testing
+
+## Enforcing Test-First Behavior
+
+To ensure Claude Code always writes tests before implementation, use explicit prompt structure. Configure your project's CLAUDE.md with test-first expectations:
+
+```
+When implementing any feature or function, first write comprehensive tests that cover:
+- Happy path scenarios
+- Edge cases and error conditions
+- Boundary value inputs
+- Expected exceptions
+
+Only after tests exist, implement the feature to make tests pass.
+```
+
+When prompting, be explicit about sequence: "Write tests first for a function that processes CSV uploads. Include tests for valid CSV, empty files, malformed data, and large files. Then implement the function to pass those tests." This language establishes the test-first expectation clearly.
+
 ## Conclusion
 
 The tdd skill transforms test-driven development from a discipline into a natural part of your coding workflow. By guiding you through the red-green-refactor cycle, helping you write meaningful tests, and encouraging continuous improvement, it makes high-quality, tested code the default rather than the exception.

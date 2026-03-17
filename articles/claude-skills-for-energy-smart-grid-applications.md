@@ -105,7 +105,7 @@ def test_grid_dashboard():
     assert page.locator(".alert-critical").count() == 0
 ```
 
-Use this skill to test demand response interfaces, outage management workflows, and DER coordination platforms. The [automated testing pipeline guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) covers how to wire these tests into a CI workflow.
+Use this skill to test demand response interfaces, outage management workflows, and DER coordination platforms. The [automated testing pipeline guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) covers how to wire these tests into a CI workflow.
 
 ## Practical Example: Building a Demand Response Application
 
@@ -149,7 +149,7 @@ For utilities and grid operators, these skills reduce development time on data-i
 ## Related Reading
 
 - [Claude Skills Serverless Function Development Workflow](/claude-skills-guide/claude-skills-serverless-function-development-workflow/) — Build and deploy cloud functions that power real-time grid data pipelines
-- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) — Set up CI-integrated test pipelines for critical grid control software
+- [Automated Testing Pipeline with Claude TDD Skill (2026)](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — Set up CI-integrated test pipelines for critical grid control software
 - [Best Claude Skills for DevOps and Deployment](/claude-skills-guide/best-claude-skills-for-devops-and-deployment/) — Deploy grid applications reliably across cloud environments
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -25,7 +25,7 @@ Claude Code addresses this through skills—specialized prompt packages that ext
 
 ## Automate Testing with the TDD Skill
 
-Test-driven development improves code quality but feels like overkill when you're moving fast. [The **tdd** skill reverses this equation by generating tests automatically](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/) while you focus on implementation.
+Test-driven development improves code quality but feels like overkill when you're moving fast. [The **tdd** skill reverses this equation by generating tests automatically](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) while you focus on implementation.
 
 Here's how it works in practice: type `/tdd` in your Claude Code session to invoke the skill. From that point forward in the session, Claude applies test-driven development discipline to your requests.
 
@@ -187,7 +187,7 @@ The goal isn't to use every skill—it's to identify where your time actually go
 ## Related Reading
 
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
-- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/)
+- [Automated Testing Pipeline with Claude TDD Skill 2026](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/)
 - [Claude Supermemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/)
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/)
 

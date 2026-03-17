@@ -56,7 +56,7 @@ def test_password_policy_enforcement():
         create_user(password="nouppercase123")
 ```
 
-Run these tests in your CI pipeline to maintain continuous compliance evidence. Automating the test pipeline end-to-end is covered in the [automated testing pipeline with Claude TDD skill guide](/claude-skills-guide/automated-testing-pipeline-with-claude-tdd-skill-2026/).
+Run these tests in your CI pipeline to maintain continuous compliance evidence. Automating the test pipeline end-to-end is covered in the [automated testing pipeline with Claude TDD skill guide](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/).
 
 ## Documenting Controls with the pdf Skill
 
