@@ -5,6 +5,10 @@ description: "A practical guide to AI IDE features that enable effective pair pr
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-ide-features-for-pair-programming-with-remote-team-members/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "A practical guide for developers on using GitHub Copilot agent mod
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

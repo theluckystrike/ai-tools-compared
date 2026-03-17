@@ -5,6 +5,10 @@ description: "Discover the most powerful AI-powered IDE features that make writi
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

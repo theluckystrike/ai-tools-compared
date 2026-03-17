@@ -5,7 +5,7 @@ description: "A comprehensive guide for developers on using Cursor AI rules file
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/
-categories: [guides, cursor, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true

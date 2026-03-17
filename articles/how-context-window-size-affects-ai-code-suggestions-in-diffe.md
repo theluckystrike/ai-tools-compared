@@ -5,6 +5,10 @@ description: "Discover how AI context window size impacts code suggestions acros
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-context-window-size-affects-ai-code-suggestions-in-different-idess/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

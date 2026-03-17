@@ -6,6 +6,10 @@ description: "A practical guide to using Cursor AI's background agent feature fo
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-background-agent-feature-for-autonomous-multi-step/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Cursor AI Background Agent Feature for Autonomous Multi-Step Tasks
