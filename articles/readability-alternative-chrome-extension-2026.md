@@ -138,6 +138,79 @@ console.log('preserved');
 
 This makes Zettlr ideal if your workflow involves converting web content into documentation or technical writing.
 
+### 6. LeanREAD
+
+A newer entrant focused on developer ergonomics, LeanREAD provides Vim-style keyboard navigation for reading mode.
+
+Key features:
+
+- Vim keybindings (`j`/`k` for scrolling, `h`/`l` for navigation)
+- Vimium compatibility
+- Dark mode with syntax highlighting for code blocks
+- Export to HTML, Markdown, or PDF
+
+Configuration is stored in a local JSON file:
+
+```json
+{
+  "keybindings": {
+    "scrollDown": "j",
+    "scrollUp": "k",
+    "toggleTheme": "t",
+    "openOriginal": "o"
+  },
+  "styles": {
+    "fontFamily": "JetBrains Mono, monospace",
+    "fontSize": 16,
+    "lineHeight": 1.6,
+    "maxWidth": "720px"
+  }
+}
+```
+
+LeanREAD is particularly appealing for developers who already use Vim-style keybindings in their editor and terminal.
+
+## Open-Source and Self-Hosted Alternatives
+
+For developers who value transparency and data ownership, several open-source options exist:
+
+**Wallabag** functions as a self-hosted reading list. Save articles to your own instance, then read them in a clean, customizable format:
+
+```bash
+# Self-host Wallabag with Docker
+docker run -d -p 8080:80 wallabag/wallabag
+```
+
+**Shaarli** serves as a personal bookmarking service with clean reading. Combine it with a reading mode bookmarklet for a completely self-controlled workflow.
+
+**Mercury Parser** provides the underlying extraction engine that powered the original Mercury Reader, available as an npm package:
+
+```javascript
+import Mercury from '@postlight/mercury-parser';
+
+async function extractArticle(url) {
+  const result = await Mercury.parse(url);
+  return {
+    title: result.title,
+    content: result.content,
+    author: result.author,
+    datePublished: result.date_published
+  };
+}
+```
+
+This open-source solution gives developers full control over the reading experience, enabling custom frontends and reader implementations.
+
+## Privacy Considerations
+
+When choosing a reading mode extension, consider your threat model:
+
+**Server-side processing** means some alternatives analyze your reading habits on external servers. If you're reading confidential documentation, choose extensions that process everything locally.
+
+**Browser data access** varies by extension. Some require access to all websites, while others work only on specific domains. Review permissions before installation.
+
+**Open-source options** allow you to verify that no data leaves your machine. Self-hosting provides the strongest privacy guarantees.
+
 ## Making the Right Choice
 
 Consider your specific needs:

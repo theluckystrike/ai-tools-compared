@@ -178,6 +178,29 @@ if (args[0]) {
 
 Run it with: `node strip-markdown.js input.txt`
 
+## Handling Jekyll and Template Syntax
+
+If you work with Jekyll sites, GitHub Pages, or any content containing `{{` or `{%` patterns, markdown backtick issues become more complex. These characters trigger Liquid template processing, so Claude Code sometimes over-escapes or double-wraps code blocks to protect them.
+
+The most reliable fix is wrapping code-containing content in raw and endraw tags, which tells Jekyll to treat the content literally. Claude Code should detect this situation automatically, but you can remind it explicitly:
+
+```
+This content is for a Jekyll site. Wrap any code blocks containing double-curly-brace or percent-curly-brace patterns in raw/endraw tags to prevent template processing.
+```
+
+Add this guidance to your CLAUDE.md file for Jekyll projects:
+
+```markdown
+# Code Block Guidelines
+
+- Always use exactly three backticks for code blocks
+- Include language identifiers when applicable
+- Never nest code blocks or escape backticks
+- For Jekyll sites, wrap code containing {{ or {% in raw/endraw tags
+```
+
+This proactive approach prevents the most common backtick formatting failures in static site workflows.
+
 ## Best Practices for Markdown-Free Workflows
 
 ### 1. Establish Conventions Early

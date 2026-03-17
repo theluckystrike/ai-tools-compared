@@ -48,6 +48,18 @@ claude-skills/
 
 The README should cover three things: how to install the skills, what each one does, and who to contact when something is wrong.
 
+## Categorizing Your Skills
+
+Most teams benefit from organizing skills into three categories:
+
+**Language and Framework Skills** cover the specific technologies your team uses. If your team works with Python and FastAPI, create skills that define how Claude should approach Python development, testing patterns, and common pitfalls to avoid.
+
+**Process Skills** capture your team's methodology — code review procedures, deployment checklists, incident response, or sprint planning. Process skills ensure everyone follows the same workflow, which is especially valuable when team members work across different time zones.
+
+**Quality Assurance Skills** define your standards for code quality, security, and documentation. These skills help ensure that all output meets your organization's requirements without needing manual review for every detail.
+
+Start by identifying which category has the most friction on your team, and build skills there first.
+
 ## Required Metadata for Every Shared Skill
 
 Every skill in the shared repo should have consistent front matter:
@@ -131,6 +143,16 @@ Skills with good documentation get used. Skills with vague descriptions sit unus
 ## Measuring Adoption
 
 Ask developers which skills they actually use in team retrospectives. Remove or simplify skills that nobody invokes — a smaller, well-maintained skill set beats a large, confusing one.
+
+## Managing Skill Evolution
+
+As your team grows and changes, your skills should evolve too:
+
+**Version Control**: Keep skills in git and use pull requests for changes. This creates a history of why skills changed and who approved the modification.
+
+**Feedback Loop**: Create a mechanism for team members to suggest improvements. The best skills reflect real usage patterns and address common pain points discovered during actual work.
+
+**Deprecation Process**: When you need to remove or significantly change a skill, communicate this clearly and provide migration guidance. A skill that disappears without warning breaks workflows.
 
 ---
 
