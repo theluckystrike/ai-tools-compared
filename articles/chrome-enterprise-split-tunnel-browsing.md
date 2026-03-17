@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /chrome-enterprise-split-tunnel-browsing/
 reviewed: true
 score: 8
-categories: [chrome, enterprise, networking]
+categories: [integrations, enterprise, guides]
 tags: [chrome-enterprise, split-tunnel, networking, security]
 ---
 
