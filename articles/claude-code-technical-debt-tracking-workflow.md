@@ -147,7 +147,43 @@ The ultimate goal is reducing debt systematically. Create a pipeline that conver
 4. **Implementation**: Debt fixed during dedicated sprints or alongside feature work
 5. **Verification**: Tests validate fixes and prevent regression
 
-The automation slack-gif-creator skill helps create visual summaries of this workflow for team documentation or onboarding new members.
+## Automated Reduction Strategies
+
+Once debt is identified and prioritized, systematic reduction requires concrete execution steps for each debt category.
+
+### Dependency Updates
+
+Handle dependency updates systematically with a dedicated skill:
+
+```yaml
+# dependency-updater.skill.md
+# Dependency Update Workflow
+
+When asked to update dependencies:
+
+1. Run `npm outdated` or `pip list --outdated` to get current state
+2. Check changelogs for breaking changes in major version jumps
+3. Create a feature branch for updates
+4. Update one major version at a time for large jumps
+5. Run full test suite after each update
+6. Document any breaking changes found
+
+Always prioritize: security fixes > major version stability > minor/patch updates
+```
+
+### Dead Code Removal
+
+Dead code is some of the easiest debt to eliminate. Use Claude Code to analyze import statements and function calls to find unreachable code:
+
+```
+"Find all functions in src/utils/ that are never imported or called anywhere in the codebase"
+```
+
+For UI components, the **frontend-design** skill helps identify unused React components that no route or parent component imports.
+
+### Type Safety Improvements
+
+Migrating to TypeScript or improving existing type coverage reduces a specific category of debt. Make incremental changes module by module rather than attempting an entire codebase at once — Claude Code can suggest types based on usage patterns across your project.
 
 ## Measuring Progress
 

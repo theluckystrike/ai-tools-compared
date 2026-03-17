@@ -1584,7 +1584,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code Tutorials: Complete Step-by-Step Library (2026)](/claude-skills-guide/tutorials-hub/)
 - [Types of LLM Agents Explained for Developers 2026](/claude-skills-guide/types-of-llm-agents-explained-for-developers-2026/)
 - [Claude Code Hooks System: Complete Guide](/claude-skills-guide/understanding-claude-code-hooks-system-complete-guide/)
-- [Using AI for Technical Debt Reduction Workflow](/claude-skills-guide/using-ai-for-technical-debt-reduction-workflow/)
 - [Using Claude Code as a Backend Engine for Dev Tools](/claude-skills-guide/using-claude-code-as-a-backend-engine-for-dev-tools/)
 - [Using Claude Code to Learn Algorithms and Data Structures](/claude-skills-guide/using-claude-code-to-learn-algorithms-and-structures/)
 - [Using Claude Code to Learn New Programming Languages](/claude-skills-guide/using-claude-code-to-learn-new-programming-languages/)
