@@ -17,7 +17,7 @@ Claude Code continues to evolve, and [developers who master workflow optimizatio
 
 ## Strategic Skill Loading
 
-One of the most effective optimization strategies involves loading only the skills you need for specific tasks. [each skill adds tokens to your context window](/claude-skills-guide/claude-skills-context-window-management-best-practices/) For complex projects, this impacts response quality and speed.
+One of the most effective optimization strategies involves loading only the skills you need for specific tasks. [each skill adds tokens to your context window](/claude-skills-guide/claude-md-too-long-context-window-optimization/) For complex projects, this impacts response quality and speed.
 
 Instead of loading all your installed skills, invoke only what you need:
 
@@ -145,7 +145,7 @@ Experiment with these techniques incrementally. Track what improves your product
 
 ## Related Reading
 
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude Code Output Quality: How to Improve Results](/claude-skills-guide/claude-code-output-quality-how-to-improve-results/)
 - [Getting Started Hub](/claude-skills-guide/getting-started-hub/)

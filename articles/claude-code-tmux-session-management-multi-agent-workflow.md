@@ -35,6 +35,13 @@ set -g set-titles-string "Claude Agent: #S"
 
 # Enable mouse support for manual debugging
 set -g mouse on
+
+# Start windows and panes at 1, not 0
+set -g base-index 1
+setw -g pane-base-index 1
+
+# Renumber windows when one is closed
+set -g renumber-windows on
 ```
 
 Launch tmux with this configuration using `tmux -f ~/.tmux-agent.conf`. The configuration disables automatic window renaming, which keeps agent session names stable for programmatic access.
@@ -197,6 +204,19 @@ echo "All agents spawned. Monitor with: tmux ls"
 ```
 
 Run this script, and tmux manages six concurrent Claude Code sessions, each handling different responsibilities. Monitor progress using `tmux list-windows` or attach to specific sessions with `tmux attach -t session-name`.
+
+## Pane Management Quick Reference
+
+When working with tmux interactively, these shortcuts help manage your agent workspace:
+
+- `Ctrl-b %` — Split pane vertically (left-right)
+- `Ctrl-b "` — Split pane horizontally (top-bottom)
+- `Ctrl-b` + arrow key — Navigate between panes
+- `Ctrl-b c` — Create new window
+- `Ctrl-b n` / `Ctrl-b p` — Next/previous window
+- `Ctrl-b d` — Detach from session
+
+For session persistence and recovery, consider the **tmux-resurrect** plugin, which saves and restores entire tmux environments including running programs and pane layouts.
 
 ## Best Practices and Common Pitfalls
 

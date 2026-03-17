@@ -88,7 +88,7 @@ Keep memories concise and organized by topic.
 
 ### Body Length and Performance
 
-[Large skill bodies consume more context tokens](/claude-skills-guide/claude-skills-context-window-management-best-practices/) at each turn. To keep skills manageable:
+[Large skill bodies consume more context tokens](/claude-skills-guide/claude-md-too-long-context-window-optimization/) at each turn. To keep skills manageable:
 
 - Put only the instructions Claude needs in the skill body
 - Move reference material to separate files and instruct Claude to read them when needed using the `Read` tool

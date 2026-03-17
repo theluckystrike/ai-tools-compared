@@ -135,7 +135,7 @@ The **supermemory** skill is an example where a focused, single-file approach wo
 
 ## Common Pitfalls
 
-Avoid over-splitting. Creating a separate file for every small function adds complexity without benefit. If you find yourself creating files with just a few lines each, reconsider the structure. Managing [context window constraints in Claude skills](/claude-skills-guide/claude-skills-context-window-management-best-practices/) is an equally important consideration—splitting files changes how context is loaded and can affect performance.
+Avoid over-splitting. Creating a separate file for every small function adds complexity without benefit. If you find yourself creating files with just a few lines each, reconsider the structure. Managing [context window constraints in Claude skills](/claude-skills-guide/claude-md-too-long-context-window-optimization/) is an equally important consideration—splitting files changes how context is loaded and can affect performance.
 
 Another pitfall is unclear dependencies. When modules depend on each other in complex ways, the benefit of separation disappears. Keep dependencies simple and documented.
 
@@ -149,7 +149,7 @@ For skills like **pdf**, **frontend-design**, or **tdd**, modularity enables bet
 
 - [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [How to Share Claude Skills with Your Team](/claude-skills-guide/how-to-share-claude-skills-with-your-team/)
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Claude Skills for Data Science and Jupyter Notebooks](/claude-skills-guide/claude-skills-for-data-science-and-jupyter-notebooks/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -66,7 +66,7 @@ Different skills demonstrate lazy loading benefits across various use cases:
 
 For developers running extended Claude Code sessions, lazy loading provides several advantages:
 
-1. **Reduced Context Overflow**: Large skill sets previously risked hitting context limits. Lazy loading keeps active context manageable. The [context window management best practices guide](/claude-skills-guide/claude-skills-context-window-management-best-practices/) explains how to structure your sessions to avoid overflow even when lazy loading is not an option.
+1. **Reduced Context Overflow**: Large skill sets previously risked hitting context limits. Lazy loading keeps active context manageable. The [context window management best practices guide](/claude-skills-guide/claude-md-too-long-context-window-optimization/) explains how to structure your sessions to avoid overflow even when lazy loading is not an option.
 
 2. **Faster Initial Responses**: Less initialization processing means quicker first responses in each skill invocation.
 
@@ -109,7 +109,7 @@ Understanding and applying these patterns helps you build more efficient Claude 
 ## Related Reading
 
 - [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/)
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Claude Skills Memory and Context Architecture Guide](/claude-skills-guide/claude-skills-memory-and-context-architecture-explained/)
 - [Claude Skills Slow Performance: Speed Up Guide](/claude-skills-guide/claude-skills-slow-performance-speed-up-guide/)
 

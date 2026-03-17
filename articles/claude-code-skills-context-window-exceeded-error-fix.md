@@ -13,13 +13,13 @@ permalink: /claude-code-skills-context-window-exceeded-error-fix/
 
 # Claude Code Skills Context Window Exceeded Error Fix
 
-The **[context window exceeded](/claude-skills-guide/claude-skills-context-window-management-best-practices/)** error is a hard wall. When the total tokens in your session — conversation history, skill definitions, file contents, and tool outputs — exceed Claude's limit, the model cannot continue. This guide explains why it happens specifically when using Claude Code skills, and gives you practical, tested fixes.
+The **[context window exceeded](/claude-skills-guide/claude-md-too-long-context-window-optimization/)** error is a hard wall. When the total tokens in your session — conversation history, skill definitions, file contents, and tool outputs — exceed Claude's limit, the model cannot continue. This guide explains why it happens specifically when using Claude Code skills, and gives you practical, tested fixes.
 
 ## Why Skills Make Context Window Errors More Likely
 
 Skills are `.md` files loaded into your session context when you invoke them with `/skill-name`. A skill like `supermemory` or `tdd` might be 300-800 tokens on its own. If you invoke three or four skills in a long session, you are burning 1,000–3,000 tokens on skill definitions before you write a single line of productive prompt.
 
-[Stack that on top of file reads, tool output, and prior conversation turns, and you hit the limit faster than you expect](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+[Stack that on top of file reads, tool output, and prior conversation turns, and you hit the limit faster than you expect](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 
 Common patterns that trigger the error:
 

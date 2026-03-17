@@ -183,7 +183,7 @@ Start with the `frontend-design` skill, describe your component needs, and itera
 
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude Skills for SEO Content Generation Workflow](/claude-skills-guide/claude-skills-for-seo-content-generation-workflow/)
-- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/)
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/)
 - [Use Cases Hub](/claude-skills-guide/use-cases-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

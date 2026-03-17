@@ -77,7 +77,7 @@ Advanced optimization isn't just about prompts. It's about workflow design:
 | Article | What You'll Learn |
 |---------|-------------------|
 | [Claude Skills Token Optimization: Reduce API Costs](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) | 5 strategies to cut token usage without sacrificing quality |
-| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Managing context window limits across long skill sessions |
+| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) | Managing context window limits across long skill sessions |
 | [Claude Code Skills: Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) | Fixing and preventing context overflow errors in skill use |
 | [Claude Skills Memory and Context Architecture Explained](/claude-skills-guide/claude-skills-memory-and-context-architecture-explained/) | How Claude manages memory and context in skills |
 | [Claude SuperMemory Skill: Persistent Context Explained](/claude-skills-guide/claude-supermemory-skill-persistent-context-explained/) | How the supermemory skill stores and retrieves session knowledge |

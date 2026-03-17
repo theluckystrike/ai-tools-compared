@@ -95,7 +95,7 @@ which pdftotext || brew list poppler
 
 ### 4. Empty or Invalid Context
 
-[Skills that rely on conversation context can fail silently](/claude-skills-guide/claude-skills-context-window-management-best-practices/) when that context is lost or corrupted. The `supermemory` skill is particularly vulnerable—if the memory store is corrupted or inaccessible, it may return empty results without indicating an error.
+[Skills that rely on conversation context can fail silently](/claude-skills-guide/claude-md-too-long-context-window-optimization/) when that context is lost or corrupted. The `supermemory` skill is particularly vulnerable—if the memory store is corrupted or inaccessible, it may return empty results without indicating an error.
 
 Try starting a fresh session and invoking the skill again. If it works in a new session, the issue was likely context-related.
 

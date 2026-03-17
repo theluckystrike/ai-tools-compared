@@ -239,7 +239,7 @@ Next.js image optimization works best when you understand the component's key fe
 
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude Code React Router v7 Navigation Guide](/claude-skills-guide/claude-code-react-router-v7-navigation-guide/)
-- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/)
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

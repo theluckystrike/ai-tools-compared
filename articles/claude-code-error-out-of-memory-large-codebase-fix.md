@@ -199,7 +199,7 @@ Claude Code out of memory errors with large codebases are solvable. Start with t
 ## Related Reading
 
 - [Claude Code Crashes on Large Files How to Fix](/claude-skills-guide/claude-code-crashes-on-large-files-how-to-fix/) — Similar issue: crashes vs OOM on large codebases
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) — Context management is key to avoiding memory issues
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) — Context management is key to avoiding memory issues
 - [Why Does Anthropic Limit Claude Code Context Window](/claude-skills-guide/why-does-anthropic-limit-claude-code-context-window/) — Understanding the engineering constraints behind memory limits
 - [Claude Skills Troubleshooting Hub](/claude-skills-guide/troubleshooting-hub/) — All Claude Code error fix guides in one place
 

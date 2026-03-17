@@ -289,7 +289,7 @@ Building mobile UIs with React Native Paper becomes significantly more productiv
 
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude Code Next.js Image Optimization Guide](/claude-skills-guide/claude-code-nextjs-image-optimization-guide/)
-- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/)
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/)
 - [Workflows Hub](/claude-skills-guide/workflows-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

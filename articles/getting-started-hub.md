@@ -373,7 +373,7 @@ This configuration allows Claude to read files and run git commands only, with n
 | Sharing skills with a team | [How to Share Claude Skills with Your Team](/claude-skills-guide/how-to-share-claude-skills-with-your-team/) | Intermediate |
 | WSL2 setup | [Claude Code Skills in WSL2: A Practical Setup Guide](/claude-skills-guide/claude-code-skills-in-wsl2-windows-subsystem-linux-guide/) | Intermediate |
 | Docker integration | [Claude Code with Docker: Container Setup Guide](/claude-skills-guide/using-claude-code-inside-docker-container-tutorial/) | Intermediate |
-| Context window management | [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Intermediate |
+| Context window management | [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) | Intermediate |
 | Skill versioning | [Claude Skill Versioning: Semver Best Practices](/claude-skills-guide/claude-skill-versioning-semver-best-practices/) | Advanced |
 | Enterprise skill structure | [Structuring Claude Skills for Large Enterprise Codebases](/claude-skills-guide/structuring-claude-skills-for-large-enterprise-codebases/) | Advanced |
 | Multi-agent error recovery | [Claude Code Multi-Agent Error Recovery Strategies](/claude-skills-guide/claude-code-multi-agent-error-recovery-strategies/) | Advanced |
@@ -518,7 +518,7 @@ Making Claude Code faster and more cost-efficient.
 - [Claude Skill Lazy Loading: Token Savings Explained](/claude-skills-guide/claude-skill-lazy-loading-token-savings-explained-deep-dive/)
 - [Claude Skill Token Usage Profiling and Optimization](/claude-skills-guide/claude-skill-token-usage-profiling-and-optimization/)
 - [Claude Skill Prompt Compression Techniques](/claude-skills-guide/claude-skill-prompt-compression-techniques/)
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Claude Code Response Latency Optimization with Skills](/claude-skills-guide/claude-code-response-latency-optimization-with-skills/)
 - [Claude Code Skill Output Streaming Optimization](/claude-skills-guide/claude-code-skill-output-streaming-optimization/)
 - [Caching Strategies for Claude Code Skill Outputs](/claude-skills-guide/caching-strategies-for-claude-code-skill-outputs/)

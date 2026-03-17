@@ -98,7 +98,7 @@ If you're just getting started with skills, these five deliver the highest value
 | [Automated Testing Pipeline with Claude TDD Skill in 2026](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | Full CI/CD testing pipelines using the TDD skill |
 | [Claude TDD Skill: Test-Driven Development Workflow](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) | The definitive TDD workflow using Claude's official TDD skill |
 | [Claude xlsx Skill Spreadsheet Automation Tutorial](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/) | Using the xlsx skill to automate spreadsheet workflows |
-| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Best practices for managing context in 2026 skill workflows |
+| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) | Best practices for managing context in 2026 skill workflows |
 | [Claude Code vs Amazon Q Developer: 2026 Comparison](/claude-skills-guide/claude-code-vs-amazon-q-developer-comparison-2026/) | 2026 comparison of Claude Code and Amazon Q for enterprise teams |
 | [Claude Code vs GitHub Copilot Workspace: 2026 Comparison](/claude-skills-guide/claude-code-vs-github-copilot-workspace-2026/) | 2026 showdown between Claude Code and GitHub Copilot Workspace |
 | [Claude Code vs Replit Agent: Which Is Better in 2026?](/claude-skills-guide/claude-code-vs-replit-agent-which-is-better-2026/) | 2026 comparison for developers choosing an AI coding agent |

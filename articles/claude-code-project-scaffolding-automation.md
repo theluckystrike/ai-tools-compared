@@ -118,6 +118,64 @@ Use our standard Go service template with health endpoints,
 Prometheus metrics, and structured logging.
 ```
 
+## Generating Test and Requirements Boilerplate
+
+Scaffolding extends beyond project structure into test infrastructure and requirements extraction. The **tdd** skill generates test files aligned with your scaffolded project:
+
+```python
+# conftest.py
+import pytest
+from fastapi.testclient import TestClient
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+@pytest.fixture
+def test_db():
+    engine = create_engine("sqlite:///:memory:")
+    Base.metadata.create_all(bind=engine)
+    yield sessionmaker(bind=engine)()
+    Base.metadata.drop_all(bind=engine)
+
+@pytest.fixture
+def client(test_db):
+    def override_get_db():
+        try:
+            yield test_db
+        finally:
+            test_db.close()
+    app.dependency_overrides[get_db] = override_get_db
+    return TestClient(app)
+```
+
+When starting from a specification document, the **pdf** skill extracts data model requirements and generates boilerplate directly:
+
+```python
+# Generated from project-spec.pdf
+from django.db import models
+
+class Project(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    start_date = models.DateField()
+    status = models.CharField(max_length=50, choices=STATUS_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class Task(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    assignee = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
+    due_date = models.DateField()
+    priority = models.CharField(max_length=20, choices=PRIORITY_CHOICES)
+```
+
+For recurring project types, chain multiple skill invocations to create a complete foundation in minutes:
+
+```
+/frontend-design create a Next.js app with authentication
+/tdd add unit tests for all components and pages
+/pdf generate API documentation from OpenAPI spec
+```
+
 ## Advanced Scaffolding Strategies
 
 ### Custom Skills for Team Patterns

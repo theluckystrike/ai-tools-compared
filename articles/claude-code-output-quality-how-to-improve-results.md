@@ -13,7 +13,7 @@ permalink: /claude-code-output-quality-how-to-improve-results/
 
 # Claude Code Output Quality: How to Improve Results
 
-[Getting high-quality output from Claude Code requires understanding how the model processes context](/claude-skills-guide/claude-skills-context-window-management-best-practices/), interprets instructions, and generates responses. This guide provides actionable techniques that developers and power users can apply immediately to improve their results.
+[Getting high-quality output from Claude Code requires understanding how the model processes context](/claude-skills-guide/claude-md-too-long-context-window-optimization/), interprets instructions, and generates responses. This guide provides actionable techniques that developers and power users can apply immediately to improve their results.
 
 ## Crafting Effective Prompts
 
@@ -188,7 +188,7 @@ These techniques transform generic interactions into productive partnerships. Th
 
 ## Related Reading
 
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Best Claude Code Skills to Install First (2026)](/claude-skills-guide/best-claude-code-skills-to-install-first-2026/)
 - [Claude Code First Project Tutorial: Hello World](/claude-skills-guide/claude-code-first-project-tutorial-hello-world/)
 - [Getting Started Hub](/claude-skills-guide/getting-started-hub/)

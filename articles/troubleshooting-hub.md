@@ -139,7 +139,7 @@ The most effective prevention strategies:
 3. **Use external state.** Instead of keeping all task state in the conversation, write intermediate results to files or a database and reference them by path.
 
 - [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/)
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/)
 
 ---
@@ -202,7 +202,7 @@ These issues are usually caused by insufficient context in the skill body or CLA
 | [How to Fix Claude Skill Infinite Loop Issues](/claude-skills-guide/how-to-fix-claude-skill-infinite-loop-issue/) | Identifying and resolving infinite loop bugs in Claude skills |
 | [Claude Code Skill Output Formatting Broken Fix](/claude-skills-guide/claude-code-skill-output-formatting-broken-fix/) | Diagnosing and fixing broken output formatting |
 | [How to Optimize Claude Skill Prompts for Accuracy](/claude-skills-guide/how-to-optimize-claude-skill-prompts-for-accuracy/) | Techniques to improve skill prompt precision and output quality |
-| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Best practices for keeping context usage efficient |
+| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) | Best practices for keeping context usage efficient |
 | [Claude Skills Memory and Context Architecture Guide](/claude-skills-guide/claude-skills-memory-and-context-architecture-explained/) | How memory and context work under the hood |
 | [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) | Token-saving techniques that also prevent context overflow |
 | [Claude Code Skill Not Found in Skills Directory: How to Fix](/claude-skills-guide/claude-code-skill-not-found-in-skills-directory-how-to-fix/) | Resolve file-not-found errors when skills fail to locate themselves |

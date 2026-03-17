@@ -244,7 +244,7 @@ Token cost is real. These guides focus on extracting maximum value from each Cla
 - [Claude Code + LangChain Integration: Agent Workflow](/claude-skills-guide/claude-code-langchain-integration-agent-workflow-guide/) — Combining LangChain with Claude Code for complex agent pipelines
 - [Claude Skills Automated Social Media Content Workflow](/claude-skills-guide/claude-skills-automated-social-media-content-workflow/) — Automating social media content creation with Claude
 - [Claude Skills Competitive Analysis Automation Guide](/claude-skills-guide/claude-skills-competitive-analysis-automation-workflow/) — Automated competitive research pipelines
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) — Keeping context usage efficient in long skill sessions
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) — Keeping context usage efficient in long skill sessions
 - [Claude Skills Daily Standup Automation Guide (2026)](/claude-skills-guide/claude-skills-daily-standup-automation-workflow/) — Automating daily standup updates with Claude
 - [Claude Skills for SEO Content Generation: 2026 Guide](/claude-skills-guide/claude-skills-for-seo-content-generation-workflow/) — SEO-driven content generation workflows
 - [How to Make Claude Code Not Over Engineer Solutions](/claude-skills-guide/how-to-make-claude-code-not-over-engineer-solutions/) — Keeping Claude Code outputs appropriately simple
@@ -265,7 +265,7 @@ Vibe coding represents a workflow shift: generating working code through rapid i
 - [Claude Skills for Financial Modeling: Excel Alternative](/claude-skills-guide/claude-skills-for-financial-modeling-excel-alternative/) — Financial modeling workflows using Claude instead of Excel macros
 - [Claude Skills vs Emerging Agentic Frameworks 2026](/claude-skills-guide/claude-skills-vs-emerging-agentic-frameworks-2026/) — Comparing Claude skills to AutoGPT, CrewAI, and other frameworks
 - [Vibe Coding Productivity Tips and Best Practices](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) — Practical tips for maximizing productivity in vibe coding sessions
-- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) — The definitive guide to vibe coding methodology with Claude Code
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) — The definitive guide to vibe coding methodology with Claude Code
 - [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/what-is-claude-code-and-why-developers-love-it-2026/) — Overview of Claude Code and its developer appeal
 - [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/) — Top skills for automated code review workflows
 - [What Is the Best Claude Skill for Generating Documentation](/claude-skills-guide/what-is-the-best-claude-skill-for-generating-documentation/) — Documentation generation skill recommendations
@@ -403,7 +403,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [Claude Skills + AWS Lambda: Serverless Guide](/claude-skills-guide/claude-skills-aws-lambda-serverless-integration/) | Cloud |
 | [Claude Skills: Competitive Analysis Automation Guide](/claude-skills-guide/claude-skills-competitive-analysis-automation-workflow/) | Productivity |
 | [Claude Skills Compliance SOC2 ISO27001 Guide](/claude-skills-guide/claude-skills-compliance-soc2-iso27001-guide/) | Compliance |
-| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Performance |
+| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) | Performance |
 | [Claude Skills Daily Standup Automation Guide (2026)](/claude-skills-guide/claude-skills-daily-standup-automation-workflow/) | Productivity |
 | [Claude Skills Directory: Where to Find Skills 2026](/claude-skills-guide/claude-skills-directory-where-to-find-skills/) | Skill Architecture |
 | [Claude Skills Explained Simply for Non-Programmers 2026](/claude-skills-guide/claude-skills-explained-simply-for-non-programmers/) | Getting Started |
@@ -469,7 +469,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 | [Structuring Claude Skills for Large Enterprise Codebases](/claude-skills-guide/structuring-claude-skills-for-large-enterprise-codebases/) | Enterprise |
 | [Claude Code Hooks System: Complete Guide](/claude-skills-guide/understanding-claude-code-hooks-system-complete-guide/) | Skill Architecture |
 | [Vibe Coding Productivity Tips and Best Practices](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) | Productivity |
-| [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) | Productivity |
+| [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) | Productivity |
 | [What Is Claude Code and Why Developers Love It in 2026](/claude-skills-guide/what-is-claude-code-and-why-developers-love-it-2026/) | Getting Started |
 | [What Is the Best Claude Skill for Automated Code Review](/claude-skills-guide/best-claude-skills-for-code-review-automation/) | Productivity |
 | [What Is the Best Claude Skill for Generating Documentation](/claude-skills-guide/what-is-the-best-claude-skill-for-generating-documentation/) | Productivity |
@@ -501,7 +501,7 @@ This section lists every article in the guides cluster alphabetically for quick 
 
 - [Claude Code for Beginners: Getting Started 2026](/claude-skills-guide/claude-code-for-beginners-complete-getting-started-2026/) — Start here before the guides
 - [Best Claude Skills for Developers in 2026](/claude-skills-guide/best-claude-skills-for-developers-2026/) — Top-ranked skills across all categories
-- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-with-claude-code-complete-guide-2026/) — The methodology behind modern Claude Code workflows
+- [Vibe Coding with Claude Code: Complete Guide 2026](/claude-skills-guide/vibe-coding-productivity-tips-and-best-practices/) — The methodology behind modern Claude Code workflows
 
 *Built by theluckystrike — More at [zovo.one](https://zovo.one)
 *

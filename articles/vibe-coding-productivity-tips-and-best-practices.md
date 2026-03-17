@@ -18,6 +18,12 @@ tags: [claude-code, claude-skills]
 
 Vibe coding represents a paradigm shift in software development, where developers use AI assistants to accelerate their workflow while maintaining creative control. This approach combines the best of human intuition with AI's ability to handle repetitive tasks, generate boilerplate code, and provide instant feedback. Whether you're a solo developer building side projects or part of a team looking to boost productivity, understanding the right techniques makes the difference between frustration and flow state.
 
+## What Is Vibe Coding
+
+Vibe coding is the practice of building software through natural language conversations with an AI coding assistant. Rather than manually writing each function, you express your vision — what the app should do, how it should feel — and let Claude handle the implementation details. You provide the direction; Claude provides the code.
+
+This approach works particularly well for prototyping, rapid iteration, and tasks where you understand the end goal but want to avoid boilerplate. The key skill is communicating intent clearly while trusting Claude to handle the implementation specifics.
+
 ## Establishing Your Development Environment
 
 The foundation of productive vibe coding starts with a well-configured environment. Claude Code works best when it has clear project context and proper tooling access. Before starting a session, ensure your project structure is organized and documentation is accessible.
@@ -299,6 +305,16 @@ project_context: {
 ```
 
 This means Claude can recall architectural decisions from previous sessions without you re-explaining the project from scratch.
+
+## Limitations and Considerations
+
+Vibe coding is not a universal solution. Some scenarios require more caution:
+
+- Large refactoring tasks benefit from human oversight — understanding the full impact of changes is sometimes better done manually
+- Security-sensitive code should always receive thorough review
+- Performance-critical sections may need explicit optimization that vibe coding does not always prioritize
+
+The approach also requires baseline technical knowledge. You need to understand what you're building at a high level to direct Claude effectively. Vibe coding amplifies your skills; it does not replace the need to understand software fundamentals.
 
 ## Continuous Improvement of Your Workflow
 

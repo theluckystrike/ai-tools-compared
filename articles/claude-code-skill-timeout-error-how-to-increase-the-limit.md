@@ -28,7 +28,7 @@ There is no `--timeout` flag for the `claude` CLI, no `skillDefaults` configurat
 
 ## How to Reduce Timeout Frequency
 
-The [break large tasks into smaller pieces](/claude-skills-guide/claude-skills-context-window-management-best-practices/) into smaller pieces so each individual request completes faster.
+The [break large tasks into smaller pieces](/claude-skills-guide/claude-md-too-long-context-window-optimization/) into smaller pieces so each individual request completes faster.
 
 ### Break Large Documents Into Sections
 

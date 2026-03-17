@@ -32,7 +32,7 @@ For most developers, this limit manifests when working with skills that handle:
 
 ## Solution 1: Implement Chunked Output
 
-The most effective fix for output length issues is breaking your skill's output into smaller chunks. This approach aligns with [context window management best practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) for keeping skill sessions efficient. Instead of generating everything at once, process data in segments and provide clear instructions for continuing the operation.
+The most effective fix for output length issues is breaking your skill's output into smaller chunks. This approach aligns with [context window management best practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) for keeping skill sessions efficient. Instead of generating everything at once, process data in segments and provide clear instructions for continuing the operation.
 
 ```
 ## Chunking Strategy
@@ -168,7 +168,7 @@ Remember that the goal is not just avoiding errors, but providing a smooth user 
 
 ## Related Reading
 
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) — Manage the context window strategically to prevent output length errors before they occur
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) — Manage the context window strategically to prevent output length errors before they occur
 - [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) — Address the related context window exceeded error that appears when loading multiple skills simultaneously
 - [Optimal Skill File Size and Complexity Guidelines](/claude-skills-guide/optimal-skill-file-size-and-complexity-guidelines/) — Right-size your skills so individual invocations stay within reasonable output bounds
 - [Claude Skills: Getting Started Hub](/claude-skills-guide/getting-started-hub/) — Explore foundational skill design patterns that prevent common errors like output length overflows

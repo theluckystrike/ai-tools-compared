@@ -137,6 +137,27 @@ def start_session():
 
 This approach separates active processing context from persistent knowledge, allowing you to maintain comprehensive project understanding without overwhelming the context window.
 
+## Context Isolation for Multi-Skill Workflows
+
+When combining multiple skills in a single project, isolate their contexts to prevent interference. Define skill-specific boundaries that keep each tool focused on relevant information:
+
+```yaml
+# Skill-specific context boundaries
+frontend-design:
+  focus: ["component-structure", "accessibility-requirements"]
+  exclude: ["backend-logic", "database-schema"]
+
+pdf:
+  focus: ["extracted-text", "table-data"]
+  exclude: ["previous-conversation"]
+
+tdd:
+  focus: ["function-signatures", "test-cases"]
+  exclude: ["unrelated-modules"]
+```
+
+This pattern ensures each skill operates with relevant context without carrying unnecessary baggage from other domains.
+
 ## Practical Workflow Example
 
 A practical optimization workflow might look like this:
@@ -175,6 +196,24 @@ def monitor_context(client):
 ```
 
 Most Claude Code implementations provide usage metrics. Setting up monitoring prevents surprises and allows for graceful optimization before hitting hard limits.
+
+## Common Pitfalls
+
+### The Verbose Prompt Trap
+
+Many developers assume more detail means better results. This often backfires:
+
+```markdown
+# Avoid:
+"Please thoroughly and completely analyze this very important code file
+that I've been working on for a long time. I really need you to be very
+careful and check everything because it's critical for my project..."
+
+# Prefer:
+"Analyze auth.py for SQL injection vulnerabilities in user queries"
+```
+
+Concise, targeted prompts consistently outperform verbose ones, both in quality and in token efficiency.
 
 ## Key Takeaways
 

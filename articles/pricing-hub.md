@@ -102,7 +102,7 @@ If you are calling the Claude API directly, Anthropic's prompt caching feature s
 For CI/CD integrations, filter what Claude sees. A PR with 50 changed files doesn't require Claude to review all of them. Pre-filter to changed files that touch application logic and skip generated files, lock files, and assets. This single change often halves the token cost of an automated PR review job.
 
 - [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/)
-- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/)
+- [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/)
 - [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/)
 
 ---
@@ -183,7 +183,7 @@ For individual developers, Claude Code becomes cost-neutral compared to GitHub C
 | Article | What You'll Learn |
 |---------|-------------------|
 | [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/) | Concrete techniques for reducing token consumption |
-| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-skills-context-window-management-best-practices/) | Managing context budget across long sessions |
+| [Claude Skills Context Window Management Best Practices](/claude-skills-guide/claude-md-too-long-context-window-optimization/) | Managing context budget across long sessions |
 | [Claude Code Skills Context Window Exceeded Error Fix](/claude-skills-guide/claude-code-skills-context-window-exceeded-error-fix/) | Fixing and preventing context overflow errors |
 | [Is Claude Code Worth It? An Honest Beginner Review 2026](/claude-skills-guide/is-claude-code-worth-it-honest-beginner-review-2026/) | Honest assessment of Claude Code's value |
 | [Claude Code vs GitHub Copilot Workspace 2026](/claude-skills-guide/claude-code-vs-github-copilot-workspace-2026/) | Full comparison: Claude Code vs GitHub Copilot |
