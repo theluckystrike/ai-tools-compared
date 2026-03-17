@@ -5,7 +5,7 @@ description: "A practical guide for developers on measuring AI coding productivi
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-productivity-measurement-how-to-track-if-tools-save-time/
-categories: [guides, ai-tools, productivity, measurement]
+categories: [guides, comparisons, productivity]
 reviewed: true
 score: 8
 intent-checked: true
