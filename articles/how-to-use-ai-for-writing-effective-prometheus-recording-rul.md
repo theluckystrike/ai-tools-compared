@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI for Writing Effective Prometheus Recording Rules"
-description: "A practical guide for developers on leveraging AI tools to create efficient Prometheus recording rules that improve query performance and monitoring reliability."
+title: "How to Use AI for Writing Effective Prometheus Recording."
+description: "A practical guide for developers on leveraging AI tools to create efficient Prometheus recording rules that improve query performance and monitoring."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-prometheus-recording-rul/
@@ -145,6 +145,11 @@ Fifth, version control your rulesets. Recording rules evolve as your system chan
 AI tools significantly accelerate the process of writing effective Prometheus recording rules. They generate templates quickly, suggest optimization strategies, validate expressions for common errors, and help identify patterns across your metric landscape. The key to success lies in providing clear context, carefully reviewing generated rules, and testing thoroughly before deployment.
 
 Start with specific prompts that include your actual metric names and query requirements. Iterate on the results, and build a library of AI-generated templates that match your infrastructure patterns. Over time, this approach produces reliable recording rules that keep your monitoring system responsive and efficient.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

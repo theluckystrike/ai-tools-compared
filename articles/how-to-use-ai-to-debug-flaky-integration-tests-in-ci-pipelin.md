@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Debug Flaky Integration Tests in CI Pipelines"
-description: "A practical guide for developers to leverage AI tools for identifying, diagnosing, and fixing flaky integration tests in continuous integration environments."
+title: "How to Use AI to Debug Flaky Integration Tests in CI."
+description: "A practical guide for developers to leverage AI tools for identifying, diagnosing, and fixing flaky integration tests in continuous integration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/
@@ -183,6 +183,11 @@ def db_connection():
 AI transforms flaky integration test debugging from a reactive, time-consuming process into a systematic analysis workflow. By collecting comprehensive test artifacts, presenting contextual queries to AI tools, and implementing AI-informed fixes, teams can significantly reduce CI pipeline instability. The key lies in treating AI as a collaborative partner—providing rich context and validating suggestions against your specific infrastructure.
 
 Start by instrumenting your CI pipeline to capture detailed test output, then experiment with AI-assisted analysis on your most problematic flaky tests. You'll likely discover root causes that manual inspection would have missed.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

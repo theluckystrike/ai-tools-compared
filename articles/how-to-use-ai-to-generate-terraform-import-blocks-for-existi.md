@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Generate Terraform Import Blocks for Existing Resources"
-description: "A practical guide for developers on using AI tools to automatically generate Terraform import blocks for existing cloud infrastructure, with code examples and best practices."
+title: "How to Use AI to Generate Terraform Import Blocks for."
+description: "A practical guide for developers on using AI tools to automatically generate Terraform import blocks for existing cloud infrastructure, with code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-terraform-import-blocks-for-existi/
@@ -182,6 +182,11 @@ AI tools have boundaries you should recognize:
 AI significantly reduces the friction of bringing existing resources under Terraform management. By providing clear context about your cloud environment and crafting precise prompts, you can generate accurate import blocks for most common resource types. Remember to always verify AI output before applying changes, and maintain good infrastructure practices like state backups and plan reviews.
 
 The key is treating AI as a productivity accelerator rather than a replacement for understanding your infrastructure. With that mindset, you can migrate existing resources to Terraform efficiently while maintaining control and reliability.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

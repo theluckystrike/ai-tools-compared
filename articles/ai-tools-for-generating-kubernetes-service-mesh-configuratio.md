@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Generating Kubernetes Service Mesh Configurations: Istio & Envoy"
-description: "Discover how AI tools can automate the creation of Istio and Envoy service mesh configurations in Kubernetes. Practical examples and code snippets for 2026."
+title: "AI Tools for Generating Kubernetes Service Mesh."
+description: "Discover how AI tools can automate the creation of Istio and Envoy service mesh configurations in Kubernetes. Practical examples and code snippets for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-kubernetes-service-mesh-configuratio/
@@ -176,6 +176,11 @@ As service mesh adoption matures, AI assistance will likely become standard prac
 The combination of AI-generated configurations with automated validation creates a powerful workflow: AI suggests configurations, policy engines verify security requirements, and observability tools confirm expected behavior in production.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
