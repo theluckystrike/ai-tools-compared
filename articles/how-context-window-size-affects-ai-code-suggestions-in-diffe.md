@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Context Window Size Affects AI Code Suggestions in Different IDEs"
+title: "How Context Window Size Affects AI Code Suggestions in."
 description: "Discover how AI context window size impacts code suggestions across VS Code, JetBrains, and other IDEs. Practical examples and guidance for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -138,6 +138,11 @@ Your IDE and AI tool choice should align with your project complexity. For small
 The difference between a 4K token window and a 128K token window isn't just numerical—it fundamentally changes how well the AI understands what you're building. As AI models continue improving, context windows will expand further, making this consideration increasingly important for developer productivity.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -138,6 +138,11 @@ Pay attention to how agent mode interprets your requests and adjust your communi
 
 Agent mode represents a significant evolution in AI-assisted development. By understanding when and how to use it effectively, you can accelerate complex development tasks while maintaining code quality.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
