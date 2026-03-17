@@ -216,6 +216,55 @@ wb.calculation.fullCalcOnLoad = True
 
 This reduces processing time significantly for large datasets. Ask Claude via `/xlsx` for write-optimized variants when working with files over 10,000 rows.
 
+## Data Cleaning and Transformation
+
+Messy imports with inconsistent formats are a common challenge. Build transformation pipelines that standardize data before analysis:
+
+```python
+import pandas as pd
+
+def clean_spreadsheet_data(input_file, output_file):
+    """Standardize messy spreadsheet imports."""
+    df = pd.read_csv(input_file)
+
+    # Standardize date formats
+    df['date'] = pd.to_datetime(df['date'], errors='coerce')
+
+    # Remove duplicates
+    df = df.drop_duplicates()
+
+    # Handle missing amounts
+    df['amount'] = df['amount'].fillna(0)
+
+    # Clean category names (strip whitespace)
+    df['category'] = df['category'].str.strip()
+
+    # Remove rows with invalid dates
+    df = df.dropna(subset=['date'])
+
+    df.to_csv(output_file, index=False)
+```
+
+## Common Pitfalls and Solutions
+
+**Memory issues with large files**: Load only the columns you need:
+
+```python
+df = pd.read_csv('huge_file.csv', usecols=['date', 'amount', 'category'])
+```
+
+**Formula preservation**: When updating values in a template with formulas, preserve calculations:
+
+```python
+wb = load_workbook('template.xlsx', data_only=False)
+```
+
+**Unicode and encoding**: Always specify encoding for CSV files with special characters:
+
+```python
+df = pd.read_csv('data.csv', encoding='utf-8-sig')
+```
+
 ## Combining with Other Skills
 
 The `/xlsx` skill pairs naturally with others:

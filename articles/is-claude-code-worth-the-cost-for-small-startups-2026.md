@@ -132,6 +132,16 @@ When presenting Claude Code costs to stakeholders, track baseline metrics before
 
 For startups seeking funding, demonstrating efficient AI tool use signals technical sophistication and cost-consciousness to investors. Many investors specifically evaluate how lean teams leverage AI to maximize output.
 
+## Knowledge Management and Institutional Memory
+
+Technical knowledge often walks out the door when team members leave. The **supermemory** skill helps startups capture and organize institutional knowledge that persists across sessions and team changes:
+
+```bash
+claude "Store this architectural decision: we use PostgreSQL with Prisma ORM because it provides strong type safety and migrations work well with our CI/CD pipeline"
+```
+
+New team members can query this knowledge base to understand past decisions without lengthy onboarding conversations — something particularly valuable for lean teams where every developer carries critical context.
+
 ## When Claude Code Doesn't Make Sense
 
 Not every startup benefits. Skip Claude Code if:
