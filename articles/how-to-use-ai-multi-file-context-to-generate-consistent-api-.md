@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI Multi-File Context to Generate Consistent API Endpoints"
-description: "A practical guide for developers on leveraging AI multi-file context capabilities to generate consistent, well-structured API endpoints across your codebase."
+title: "How to Use AI Multi-File Context to Generate Consistent."
+description: "A practical guide for developers on leveraging AI multi-file context capabilities to generate consistent, well-structured API endpoints across your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/
@@ -204,6 +204,11 @@ Teams benefit from establishing conventions that AI tools can reliably follow:
 5. Document team-specific conventions in a CONTRIBUTING file
 
 This approach scales well because the AI becomes a force for consistency rather than a source of variation.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

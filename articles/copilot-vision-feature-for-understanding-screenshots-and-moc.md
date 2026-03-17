@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot Vision Feature for Understanding Screenshots and Mockups in Editor"
+title: "Copilot Vision Feature for Understanding Screenshots and."
 description: "Learn how GitHub Copilot's vision feature helps developers understand screenshots and mockups directly in their code editor. Practical examples and use cases."
 date: 2026-03-16
 author: theluckystrike
@@ -108,6 +108,11 @@ The choice depends on your specific needs. For quick prototyping and understandi
 To begin using Copilot Vision, ensure you have an active GitHub Copilot subscription. The vision feature is available in Copilot Individual, Business, and Enterprise plans. Open VS Code, access Copilot Chat, and paste your first screenshot to experience the capability firsthand.
 
 The feature works particularly well with clean, well-structured designs. Start with simple UI elements like buttons, cards, or form inputs before attempting complex page layouts. As you develop familiarity with Copilot's interpretation patterns, you'll refine your prompts for better results.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
