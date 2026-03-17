@@ -5,6 +5,10 @@ description: "A practical evaluation of AI coding tools for generating Rust macr
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Proc macros remain one of Rust's most powerful features, enabling code generation at compile time, custom derive implementations, and DSL creation. But how well do modern AI coding tools handle this advanced Rust feature? I tested several leading AI assistants with various macro tasks to find out.

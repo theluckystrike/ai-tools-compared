@@ -6,6 +6,10 @@ description: "A practical guide to AI coding assistants that help with Go error 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

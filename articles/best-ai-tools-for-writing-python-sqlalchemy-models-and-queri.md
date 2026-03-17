@@ -5,6 +5,10 @@ description: "A practical guide comparing AI tools for writing SQLAlchemy models
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-python-sqlalchemy-models-and-queri/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

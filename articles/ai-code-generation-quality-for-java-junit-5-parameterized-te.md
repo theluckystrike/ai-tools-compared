@@ -6,7 +6,7 @@ description: "A practical analysis of AI code generation quality for Java JUnit 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-junit-5-parameterized-te/
-categories: [java, testing, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true
