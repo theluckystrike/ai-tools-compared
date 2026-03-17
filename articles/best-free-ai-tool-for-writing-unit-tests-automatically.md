@@ -169,4 +169,9 @@ Aider serves as an excellent open-source alternative, particularly if you prefer
 
 The specific choice matters less than consistently using AI assistance in your workflow. Even basic automated test generation dramatically improves code coverage compared to manual-only approaches.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

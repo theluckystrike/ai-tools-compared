@@ -126,4 +126,9 @@ GitHub Copilot's free tier for open source provides substantial value for develo
 
 The key is to provide clear context through naming and comments, maintain consistent code patterns, and leverage the tool's strengths for different coding scenarios. With these strategies, you'll find Copilot becoming an invaluable pair programmer in your open source journey.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

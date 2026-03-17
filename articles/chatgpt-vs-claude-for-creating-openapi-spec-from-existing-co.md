@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Claude for Creating OpenAPI Spec from Existing Code"
+title: "ChatGPT vs Claude for Creating OpenAPI Spec from."
 description: "A practical comparison of ChatGPT and Claude for generating OpenAPI specifications from existing codebases. Includes code examples and developer insights."
 date: 2026-03-16
 author: theluckystrike
@@ -191,5 +191,10 @@ For developers working with TypeScript or larger microservices architectures, Cl
 
 Test both approaches with a sample endpoint from your codebase to determine which fits your workflow better.
 {% endraw %}
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

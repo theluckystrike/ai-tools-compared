@@ -105,4 +105,9 @@ To minimize disruption when switching:
 
 The learning curve is manageable for most developers. Within a few weeks, you'll likely find Claude Pro's strengths compensating for any features you miss from Gemini Advanced. The key is understanding what's different so you can adapt your workflow accordingly.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Migrate GitHub Copilot Workspace Setup to Cursor Background Agent"
+title: "Migrate GitHub Copilot Workspace Setup to Cursor."
 description: "A practical guide for developers moving from GitHub Copilot workspace configurations to Cursor's background agent workflow."
 date: 2026-03-16
 author: theluckystrike
@@ -159,3 +159,8 @@ Migrating from GitHub Copilot workspace setup to Cursor's background agent requi
 
 The learning curve is minimal if you already understand Copilot's functionality. Start with basic tasks, explore the agent's capabilities, and progressively adopt more advanced features as you become comfortable with Cursor's approach to AI-assisted development.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

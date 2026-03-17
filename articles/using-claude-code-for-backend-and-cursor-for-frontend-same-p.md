@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Using Claude Code for Backend and Cursor for Frontend in the Same Project"
-description: "A practical guide to running Claude Code for backend development while using Cursor for frontend work in a single codebase. Includes setup tips, workflow strategies, and code examples."
+title: "Using Claude Code for Backend and Cursor for Frontend in."
+description: "A practical guide to running Claude Code for backend development while using Cursor for frontend work in a single codebase. Includes setup tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /using-claude-code-for-backend-and-cursor-for-frontend-same-p/
@@ -246,5 +246,10 @@ This workflow suits teams where developers have clear frontend or backend owners
 The combination breaks down when your frontend and backend are tightly coupled, such as with Next.js API routes or Phoenix LiveView. In those cases, a single AI tool with full context serves better.
 
 Running Claude Code for backend and Cursor for frontend gives you specialized assistance on each side of your stack without forcing one tool to handle everything. The setup takes a few minutes, and the workflow becomes natural after your first feature built this way.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

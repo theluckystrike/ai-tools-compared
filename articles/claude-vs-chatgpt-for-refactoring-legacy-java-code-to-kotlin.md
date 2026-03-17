@@ -195,5 +195,10 @@ For developers migrating Java to Kotlin, both tools offer real value. Claude edg
 
 For large-scale migrations, I recommend starting with Claude and establishing conversion patterns for your codebase. Use ChatGPT for quick validations or smaller isolated tasks. Regardless of which tool you choose, always review the output—AI assists the mechanical translation, but your domain knowledge ensures the converted code behaves correctly.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

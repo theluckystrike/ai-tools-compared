@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Summarizer Chrome Extension: A Developer Guide"
-description: "Learn how to build and use AI-powered summarizer Chrome extensions. Technical implementation details, API integration patterns, and practical examples for developers."
+description: "Learn how to build and use AI-powered summarizer Chrome extensions. Technical implementation details, API integration patterns, and practical examples."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-summarizer-chrome-extension/
@@ -172,5 +172,10 @@ You can also implement multi-pass summarization for long content. The first pass
 Effective extensions adapt their extraction strategy based on content type. News articles typically have clear headline and body separation. Academic papers follow structured formats with abstracts that already serve as summaries. Technical documentation often includes code blocks requiring special handling.
 
 A robust content classifier might examine URL patterns, HTML structure, and text characteristics to determine the best extraction approach. Video content requires transcript extraction rather than DOM parsing, often using YouTube's caption API or speech-to-text services.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

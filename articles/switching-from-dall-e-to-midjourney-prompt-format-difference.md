@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Switching from DALL-E to Midjourney: Prompt Format Differences Explained"
+title: "Switching from DALL-E to Midjourney: Prompt Format."
 description: "A practical guide covering the key differences between DALL-E and Midjourney prompt syntax, parameters, and best practices for developers and power users."
 date: 2026-03-16
 author: theluckystrike
@@ -199,5 +199,10 @@ Switching from DALL-E to Midjourney requires adjusting your prompt writing appro
 - Specifying aspect ratios explicitly rather than relying on defaults
 
 With practice, you will find Midjourney offers finer control over artistic direction, while DALL-E remains excellent for quick, descriptive generations. Both tools have their place in a developer's image generation toolkit.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: article
-title: "How to Move Stable Diffusion Workflows to Midjourney Equivalent Setup"
-description: "A practical guide for developers migrating AI image generation workflows from Stable Diffusion to Midjourney, including prompt conversion tools and code examples."
+title: "How to Move Stable Diffusion Workflows to Midjourney."
+description: "A practical guide for developers migrating AI image generation workflows from Stable Diffusion to Midjourney, including prompt conversion tools and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/
@@ -399,6 +399,11 @@ Use this checklist when moving your workflows:
 Moving from Stable Diffusion to Midjourney doesn't mean abandoning your existing workflow knowledge. By creating proper conversion tools and understanding the parameter mappings, you can maintain productivity while leveraging Midjourney's strengths. The key is building automated pipelines that handle the translation work, letting you focus on creative direction rather than syntax details.
 
 The scripts and configurations above provide a foundation for your migration. Customize them based on your specific workflow patterns and creative needs. With proper tooling in place, the transition becomes a one-time setup effort rather than an ongoing burden.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

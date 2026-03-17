@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Claude for Writing Nginx Reverse Proxy Configuration Files"
+title: "ChatGPT vs Claude for Writing Nginx Reverse Proxy."
 description: "A practical comparison of ChatGPT and Claude for writing Nginx reverse proxy configuration files, with code examples and real-world use cases."
 date: 2026-03-16
 author: theluckystrike
@@ -159,5 +159,10 @@ Both tools require verification against your specific environment—paths, SSL c
 Consider your workflow: if you prefer getting things done with complete examples, ChatGPT serves well. If you want to understand and refine each component while building, Claude's approach aligns better with learning-oriented workflows.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

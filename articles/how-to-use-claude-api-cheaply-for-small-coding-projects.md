@@ -194,4 +194,9 @@ Using Claude API economically for small coding projects comes down to three prin
 
 Start with Sonnet for most tasks, use Haiku for simple operations, and reserve Opus for complex problems. Monitor your usage and adjust based on actual costs. Most small projects can run effectively on just a few dollars per month.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

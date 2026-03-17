@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Gemini vs Claude for Summarizing Quarterly Earnings Call Transcripts"
+title: "Gemini vs Claude for Summarizing Quarterly Earnings Call."
 description: "A practical comparison of Gemini and Claude for summarizing quarterly earnings call transcripts, with code examples and API integration patterns."
 date: 2026-03-16
 author: theluckystrike
@@ -186,5 +186,10 @@ def hybrid_summarize(transcript: str, budget_mode: bool = False):
 This lets you route high-stakes analysis to Claude while using Gemini for preliminary screening or high-volume processing.
 
 Both models handle earnings call transcripts effectively. Your choice ultimately depends on your existing infrastructure, volume requirements, and whether you prioritize output consistency or cost efficiency.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

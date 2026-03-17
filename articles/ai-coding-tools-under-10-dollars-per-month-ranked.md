@@ -180,4 +180,9 @@ For pure code generation quality, Claude Code leads the pack. For IDE-native exp
 
 Most developers benefit from combining tools—for example, using Claude Code for complex debugging and GitHub Copilot for quick autocomplete suggestions during routine coding.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude vs ChatGPT for Writing Kubernetes Helm Chart Values Files"
+title: "Claude vs ChatGPT for Writing Kubernetes Helm Chart."
 description: "A practical comparison of Claude and ChatGPT for creating and managing Kubernetes Helm chart values files, with code examples and real-world scenarios."
 date: 2026-03-16
 author: theluckystrike
@@ -186,6 +186,11 @@ Use ChatGPT for quick prototyping or when you need simple, minimal configuration
 The time saved debugging misconfigured resources, missing limits, or incorrect annotations quickly justifies using the tool that gets it right the first time.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

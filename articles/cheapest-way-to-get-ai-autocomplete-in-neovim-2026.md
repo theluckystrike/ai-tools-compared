@@ -2,7 +2,7 @@
 
 layout: default
 title: "Cheapest Way to Get AI Autocomplete in Neovim 2026"
-description: "A practical guide to getting AI-powered code autocomplete in Neovim without spending money. Compare free options like CodeWhisperer, Tabnine, Ollama, and plugin-based solutions."
+description: "A practical guide to getting AI-powered code autocomplete in Neovim without spending money. Compare free options like CodeWhisperer, Tabnine, Ollama."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-way-to-get-ai-autocomplete-in-neovim-2026/
@@ -191,5 +191,10 @@ If you want the absolute simplest solution with minimal setup, **CodeWhisperer v
 **Hardware-constrained developers** should stick with Tabnine or CodeWhisperer. Local AI models demand resources that not everyone has available.
 
 The cheapest solution overall is free in every sense—no subscription, no usage fees, complete privacy. The cost is your time invested in setup and learning the system.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -140,4 +140,9 @@ Choose **Cody Free** if you work with large codebases and want automatic context
 
 For pure open source enthusiasts, Continue Dev's commitment to open source (the extension itself is open source) may be a deciding factor. For teams already using Sourcegraph or needing advanced code navigation, Cody integrates more seamlessly into existing workflows.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

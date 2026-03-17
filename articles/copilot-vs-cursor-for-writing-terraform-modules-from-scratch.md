@@ -145,4 +145,9 @@ GitHub Copilot remains useful if you prefer traditional IDE integration and are 
 
 Both tools improve with clear, descriptive comments in your Terraform code. Taking time to document your variable purposes and resource intentions helps either assistant provide more accurate suggestions.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

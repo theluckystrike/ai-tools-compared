@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Transfer Copilot Code Review Settings to Cursor AI Review Config"
-description: "A practical guide for migrating your GitHub Copilot code review settings to Cursor AI, with configuration examples and step-by-step instructions for developers."
+title: "How to Transfer Copilot Code Review Settings to Cursor."
+description: "A practical guide for migrating your GitHub Copilot code review settings to Cursor AI, with configuration examples and step-by-step instructions for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-copilot-code-review-settings-to-cursor-ai-review-co/
@@ -158,5 +158,10 @@ Cursor should now provide contextually appropriate suggestions matching your pre
 ## Summary
 
 Transferring Copilot code review settings to Cursor AI requires manual translation rather than automatic migration. Export your VS Code Copilot settings, map them to Cursor equivalents, create project-specific `.cursorrules` files, and verify the configuration works for your typical workflow. While the process takes some initial setup, the result is a personalized AI coding assistant that matches your preferences.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

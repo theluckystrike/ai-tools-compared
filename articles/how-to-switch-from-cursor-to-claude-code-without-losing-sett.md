@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Switch from Cursor to Claude Code Without Losing Settings"
+title: "How to Switch from Cursor to Claude Code Without Losing."
 description: "A practical guide for developers switching from Cursor AI to Claude Code. Learn how to export your snippets, keybindings, and workspace configurations."
 date: 2026-03-16
 author: theluckystrike
@@ -165,5 +165,10 @@ Before deleting Cursor, verify you've transferred everything:
 - [ ] Built instruction files for active projects
 
 The transition requires an adjustment period. Expect reduced autocomplete suggestions initially, but the trade-off comes with more powerful reasoning and explicit control over code changes. Start with smaller projects while building your Claude Code muscle memory.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

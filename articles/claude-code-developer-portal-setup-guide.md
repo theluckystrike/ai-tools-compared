@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Developer Portal Setup Guide"
-description: "A practical guide to setting up a developer portal using Claude Code. Learn how to structure your documentation, integrate APIs, and automate portal maintenance."
+description: "A practical guide to setting up a developer portal using Claude Code. Learn how to structure your documentation, integrate APIs, and automate portal."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /claude-code-developer-portal-setup-guide/
@@ -163,5 +163,10 @@ Developer portal analytics reveal which docs users find helpful and where they s
 - **Feedback submissions**: Direct user input highlights unclear sections
 
 Use this data to prioritize documentation improvements. Ask Claude Code to enhance sections that users frequently abandon or struggle to understand.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

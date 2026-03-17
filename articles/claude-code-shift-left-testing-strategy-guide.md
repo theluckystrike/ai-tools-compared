@@ -73,3 +73,8 @@ Collect feedback from developers on Claude Code's test generation usefulness. Re
 ## Conclusion
 
 Claude Code CLI transforms shift left testing from an aspirational methodology into a practical daily workflow. By generating tests during development, analyzing existing test suites, and integrating throughout the development lifecycle, teams catch defects earlier and build more reliable software. The key is consistent application of these practices and continuous refinement based on results.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
