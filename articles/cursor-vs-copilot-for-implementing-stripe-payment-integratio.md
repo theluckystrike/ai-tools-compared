@@ -5,6 +5,10 @@ description: "A practical comparison of Cursor and GitHub Copilot for building S
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-copilot-for-implementing-stripe-payment-integratio/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "A practical guide covering the key differences between DALL-E and 
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-dall-e-to-midjourney-prompt-format-difference/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 If you have been generating images with DALL-E and are considering Midjourney, you will quickly discover that prompt engineering does not transfer directly between the two platforms. Each model has its own syntax expectations, parameter systems, and stylistic conventions. Understanding these differences will save you hours of trial and error and help you produce better results faster.

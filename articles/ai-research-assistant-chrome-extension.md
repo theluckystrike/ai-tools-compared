@@ -5,6 +5,10 @@ description: "Learn how to build and use AI research assistant Chrome extensions
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-research-assistant-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

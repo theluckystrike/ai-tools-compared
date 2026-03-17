@@ -5,7 +5,7 @@ description: "Discover free AI coding assistants that work with JetBrains IDEs. 
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/
-categories: [ai-tools, jetbrains, coding-assistants]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---

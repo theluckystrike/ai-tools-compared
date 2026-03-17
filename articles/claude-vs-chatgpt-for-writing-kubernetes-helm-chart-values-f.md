@@ -5,6 +5,10 @@ description: "A practical comparison of Claude and ChatGPT for creating and mana
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

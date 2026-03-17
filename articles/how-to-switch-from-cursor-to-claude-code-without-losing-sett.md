@@ -6,6 +6,10 @@ description: "A practical guide for developers switching from Cursor AI to Claud
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-switch-from-cursor-to-claude-code-without-losing-settings/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # How to Switch from Cursor to Claude Code Without Losing Settings

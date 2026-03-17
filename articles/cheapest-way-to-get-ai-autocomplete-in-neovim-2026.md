@@ -6,6 +6,10 @@ description: "A practical guide to getting AI-powered code autocomplete in Neovi
 date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-way-to-get-ai-autocomplete-in-neovim-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Getting AI-powered autocomplete in Neovim doesn't require expensive subscriptions. Several free and low-cost options work directly within your existing Neovim setup. This guide covers the most practical solutions for developers who want intelligent code completion without breaking the bank.

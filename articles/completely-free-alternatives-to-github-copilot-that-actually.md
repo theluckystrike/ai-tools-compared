@@ -6,6 +6,10 @@ description: "A practical guide to free AI coding assistants for developers. Com
 date: 2026-03-16
 author: theluckystrike
 permalink: /completely-free-alternatives-to-github-copilot-that-actually/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

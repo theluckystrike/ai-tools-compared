@@ -5,6 +5,10 @@ description: "Discover the best Chrome extensions for screen sharing in 2026. Co
 date: 2026-03-16
 author: theluckystrike
 permalink: /screen-sharing-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

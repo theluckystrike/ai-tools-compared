@@ -6,6 +6,10 @@ description: "A practical breakdown of Claude Free vs ChatGPT Free daily message
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-free-vs-chatgpt-free-which-gives-more-per-day/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Claude Free vs ChatGPT Free: Which Gives More Messages Per Day?

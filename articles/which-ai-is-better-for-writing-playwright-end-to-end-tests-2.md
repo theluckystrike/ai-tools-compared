@@ -5,6 +5,10 @@ description: "A practical comparison of AI tools for generating Playwright E2E t
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-is-better-for-writing-playwright-end-to-end-tests-2/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Testing web applications with Playwright has become the standard for modern end-to-end testing. As AI coding assistants improve, developers increasingly ask which tool writes the best Playwright test code. This guide compares the leading AI options based on practical test generation capabilities.

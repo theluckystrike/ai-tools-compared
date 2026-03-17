@@ -5,6 +5,10 @@ description: "A practical breakdown of Cursor's hobby plan restrictions compared
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

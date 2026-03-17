@@ -5,6 +5,10 @@ description: "Find the most affordable AI tools that can generate complete proje
 date: 2026-03-17
 author: theluckystrike
 permalink: /cheapest-ai-tool-for-generating-entire-project-from-description/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

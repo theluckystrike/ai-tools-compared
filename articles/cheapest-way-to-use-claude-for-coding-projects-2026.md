@@ -6,6 +6,10 @@ description: "A practical guide to using Claude AI for coding while minimizing c
 date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-way-to-use-claude-for-coding-projects-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

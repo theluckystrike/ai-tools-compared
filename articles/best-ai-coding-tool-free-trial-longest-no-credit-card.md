@@ -5,6 +5,10 @@ description: "Discover AI coding tools with the longest free trials that require
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-tool-free-trial-longest-no-credit-card/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A practical guide for developers moving from GitHub Copilot worksp
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-github-copilot-workspace-setup-to-cursor-background-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A practical guide to affordable AI coding tools that won't break t
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-assistant-for-under-5-dollars-per-month/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

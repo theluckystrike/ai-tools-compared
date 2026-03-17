@@ -6,7 +6,7 @@ description: "A practical guide to the best free AI coding extensions for Visual
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-free-ai-coding-extensions-for-visual-studio-code-2026/
-categories: [ai-coding, vscode, free-tools]
+categories: [guides]
 intent-checked: true
 ---
 

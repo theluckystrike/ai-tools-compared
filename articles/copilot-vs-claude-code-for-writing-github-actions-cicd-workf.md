@@ -6,6 +6,10 @@ description: "A practical comparison of GitHub Copilot and Claude Code for writi
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing-github-actions-cicd-workf/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
