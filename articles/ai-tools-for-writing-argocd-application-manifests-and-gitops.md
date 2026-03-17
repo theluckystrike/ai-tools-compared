@@ -1,14 +1,14 @@
 ---
 
 layout: default
-title: "AI Tools for Writing ArgoCD Application Manifests and GitOps Workflows 2026"
-description: "Explore how AI coding assistants help developers write ArgoCD application manifests, manage GitOps workflows, and automate Kubernetes deployments. Practical examples and tool comparisons included."
+title: "AI Tools for Writing ArgoCD Application Manifests and."
+description: "Explore how AI coding assistants help developers write ArgoCD application manifests, manage GitOps workflows, and automate Kubernetes deployments."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-writing-argocd-application-manifests-and-gitops/
 reviewed: true
 score: 8
-categories: [best-of]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
@@ -182,5 +182,10 @@ For teams managing complex GitOps workflows with multiple environments and frequ
 For developers who prefer working directly in VS Code with inline suggestions, Cursor offers the best editor integration despite slightly lower accuracy on complex configurations.
 
 Start with Claude Code if you're building new ArgoCD deployments from scratch, then use Cursor for day-to-day manifest adjustments within your editor workflow.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "AI Tools for Generating Nginx and Caddy Reverse Proxy Configurations"
-description: "Compare AI coding assistants for generating production-ready Nginx and Caddy reverse proxy configurations. Practical examples, common pitfalls, and tool recommendations for developers."
+title: "AI Tools for Generating Nginx and Caddy Reverse Proxy."
+description: "Compare AI coding assistants for generating production-ready Nginx and Caddy reverse proxy configurations. Practical examples, common pitfalls, and."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/
 reviewed: true
 score: 8
-categories: [best-of]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
@@ -153,5 +153,10 @@ For teams using infrastructure-as-code, Aider integrates well with automated dep
 Always verify generated configurations before deploying. Test Nginx configs with `nginx -t` and review the generated output. For Caddy, use `caddy validate` before reloading. Check that the certificate paths exist and that the backend service addresses are correct for your environment.
 
 AI tools produce reliable configurations, but they cannot account for your specific infrastructure details. A few minutes of verification prevents hours of debugging production issues.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

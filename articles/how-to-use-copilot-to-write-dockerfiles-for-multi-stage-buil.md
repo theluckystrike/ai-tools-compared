@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Use Copilot to Write Dockerfiles for Multi-Stage Builds"
-description: "A practical guide to leveraging GitHub Copilot for creating efficient multi-stage Dockerfiles. Learn prompt patterns, code examples, and optimization techniques."
+title: "How to Use Copilot to Write Dockerfiles for Multi-Stage."
+description: "A practical guide to leveraging GitHub Copilot for creating efficient multi-stage Dockerfiles. Learn prompt patterns, code examples, and optimization."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/
-categories: [tutorials, guides, comparisons]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -168,5 +168,10 @@ Copilot sometimes suggests copying entire directories when specific files would 
 GitHub Copilot transforms Dockerfile creation from a manual, error-prone process into a collaborative workflow. By providing specific context about your application stack and requirements, you receive optimized multi-stage configurations that follow best practices. The resulting images are smaller, more secure, and faster to deploy.
 
 Start with clear prompts that specify your language, framework, and build tools. Review and refine Copilot's suggestions, paying attention to layer ordering and base image selection. Your Dockerfiles will improve with iteration, and Copilot learns from your feedback through continued use.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI for Capacity Planning and Resource Right Sizing"
-description: "A practical guide for developers and power users on leveraging AI to optimize infrastructure capacity planning and resource allocation across cloud environments."
+title: "How to Use AI for Capacity Planning and Resource Right."
+description: "A practical guide for developers and power users on leveraging AI to optimize infrastructure capacity planning and resource allocation across cloud."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-capacity-planning-and-resource-right-sizin/
@@ -178,5 +178,10 @@ helm upgrade --install api-gateway ./chart \
 Track the effectiveness of your AI-driven capacity planning through key metrics. Monitor actual versus predicted resource usage, cost savings from right sizing, and the frequency of capacity-related incidents. Over time, refine your models based on observed accuracy and adjust safety margins based on your tolerance for throttling or OOM events.
 
 Start with baseline measurements before implementing AI predictions, then compare costs and performance metrics over quarterly review cycles. The initial investment in data collection and model tuning pays dividends through optimized infrastructure spend and improved system reliability.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
