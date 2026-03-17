@@ -4,7 +4,7 @@ layout: default
 title: "GitLab Chrome Extension Productivity: A Complete Guide."
 description: "Discover how GitLab Chrome extensions can transform your development workflow with merge request reviews, pipeline monitoring, and issue tracking."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /gitlab-chrome-extension-productivity/
 reviewed: true
 score: 8
