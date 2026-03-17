@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Effective Strategies for AI-Assisted Refactoring Without Breaking Tests"
-description: "Learn practical strategies for using AI coding assistants to refactor code safely while keeping your test suite green. Real examples and code patterns included."
+title: "Effective Strategies for AI-Assisted Refactoring Without."
+description: "Learn practical strategies for using AI coding assistants to refactor code safely while keeping your test suite green. Real examples and code patterns."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-ai-assisted-refactoring-without-bre/
@@ -160,5 +160,10 @@ AI-assisted refactoring works best when you:
 - Create safety nets with additional regression tests
 
 The combination of AI's pattern-matching capability with disciplined verification creates a refactoring workflow that feels significantly safer than manual approaches. Your tests become the guardrails that keep the refactoring on track.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

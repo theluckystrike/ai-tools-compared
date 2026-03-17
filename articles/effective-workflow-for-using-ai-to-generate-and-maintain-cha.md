@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Effective Workflow for Using AI to Generate and Maintain Changelog Documentation"
-description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation while keeping it accurate and useful."
+title: "Effective Workflow for Using AI to Generate and Maintain."
+description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/
@@ -143,6 +143,11 @@ AI transforms changelog maintenance from a burden into a manageable workflow. Th
 - **Regular audits** catch drift between shipped code and documentation
 
 Start with cleaner commit messages, use AI to generate drafts, and maintain a review step. Your future self releasing at 2 AM will appreciate having accurate changelog entries ready to go.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

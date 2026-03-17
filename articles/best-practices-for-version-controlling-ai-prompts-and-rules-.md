@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Version Controlling AI Prompts and Rules Files 2026"
+title: "Best Practices for Version Controlling AI Prompts and."
 description: "A practical guide to version controlling AI prompts, system rules, and configuration files for developers and power users working with LLMs."
 date: 2026-03-16
 author: theluckystrike
@@ -172,5 +172,10 @@ Avoid these pitfalls by treating prompts with the same care as production code.
 ---
 
 Version controlling AI prompts and rules files transforms them from ephemeral text into maintainable, collaborative assets. The strategies outlined here—modular structure, Git workflows, metadata tracking, and CI integration—scale from individual developers to enterprise teams. As AI tools become more central to development workflows, these practices will likely become standard engineering requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

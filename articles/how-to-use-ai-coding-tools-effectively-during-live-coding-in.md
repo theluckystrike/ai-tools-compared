@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI Coding Tools Effectively During Live Coding Interviews"
-description: "A practical guide for developers on leveraging AI coding assistants during live coding interviews in 2026. Learn strategies, tools, and techniques to enhance your performance."
+title: "How to Use AI Coding Tools Effectively During Live."
+description: "A practical guide for developers on leveraging AI coding assistants during live coding interviews in 2026. Learn strategies, tools, and techniques to."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/
@@ -183,6 +183,11 @@ class LRUCache:
 AI coding tools are powerful allies in technical interviews when used thoughtfully. They handle the mechanical aspects while you focus on demonstrating your problem-solving abilities. The goal is partnership—not dependency.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
