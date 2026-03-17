@@ -1,13 +1,13 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Rust Async Code with Tokio Runtime"
-description: "A practical comparison of AI coding assistants for Rust async development with Tokio. Includes code examples, real-world performance analysis, and recommendations for developers building high-performance async applications."
+description: "A practical comparison of AI coding assistants for Rust async development with Tokio. Includes code examples, real-world performance analysis, and."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-ai-tools-for-writing-rust-async-code-with-tokio-runtime/
 reviewed: true
 score: 8
-categories: [best-of]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
@@ -205,6 +205,11 @@ Claude Code leads for serious Tokio development in 2026, offering the deepest un
 Start with the tool that matches your existing workflow, then evaluate how well it handles edge cases in your specific async architecture. The right tool should feel like having an experienced Rust developer reviewing your code in real-time.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

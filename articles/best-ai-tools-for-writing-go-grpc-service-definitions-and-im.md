@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Tools for Writing Go gRPC Service Definitions and Implementations"
+title: "Best AI Tools for Writing Go gRPC Service Definitions."
 description: "A practical guide comparing AI coding assistants for generating Go gRPC services, Protobuf definitions, and server implementations."
 date: 2026-03-16
 author: theluckystrike
@@ -135,5 +135,10 @@ For a new gRPC service, provide clear requirements including service name, metho
 For Go gRPC development, Claude Code and Cursor provide the most accurate Protobuf and Go implementations. GitHub Copilot excels at incremental additions within existing codebases. Aider works well for terminal-based workflows and multi-file coordination.
 
 Choose based on your workflow: IDE integration with Cursor or Copilot for interactive development, Claude Code for complex service design, or Aider for terminal-based workflows.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
