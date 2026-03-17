@@ -5,6 +5,10 @@ description: "A practical evaluation of how well AI coding assistants handle Rus
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Artificial intelligence has made significant progress in code generation, but systems programming presents unique challenges. Rust's unsafe code blocks and foreign function interface (FFI) operations sit at the intersection of memory safety guarantees and low-level systems work. This article evaluates how accurately current AI tools handle these specialized Rust features.

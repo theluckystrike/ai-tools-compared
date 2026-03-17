@@ -5,6 +5,10 @@ description: "A practical test of AI coding assistants' ability to understand an
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Rust's lifetime elision rules allow developers to omit explicit lifetime annotations in common scenarios. These three rules enable the compiler to infer lifetimes automatically, making code cleaner while maintaining memory safety. But how well do AI coding assistants understand these rules? This article tests popular AI tools to see which ones handle lifetime elision correctly and which struggle with edge cases.

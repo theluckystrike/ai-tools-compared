@@ -6,7 +6,7 @@ description: "A practical guide for developers exploring AI code completion tool
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-completion-for-java-record-classes-and-sealed-interf/
-categories: [guides, java, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true

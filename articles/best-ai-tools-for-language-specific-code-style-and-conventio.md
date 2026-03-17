@@ -6,6 +6,10 @@ description: "A practical guide to AI tools that enforce language-specific code 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-language-specific-code-style-and-convention-enforcement/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
