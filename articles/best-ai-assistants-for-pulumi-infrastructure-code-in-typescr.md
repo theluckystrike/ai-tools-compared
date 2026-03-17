@@ -6,6 +6,10 @@ description: "A practical comparison of AI coding tools for Pulumi infrastructur
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistants-for-pulumi-infrastructure-code-in-typescr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "A practical guide to writing prompts that generate WCAG-compliant,
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-prompting-for-ai-generation-of-accessible-frontend/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 AI coding assistants have transformed how developers build user interfaces, but getting them to produce genuinely accessible code requires specific prompting strategies. This guide shows you how to craft prompts that consistently generate WCAG-compliant frontend components with proper semantic HTML, ARIA attributes, keyboard navigation, and focus management.

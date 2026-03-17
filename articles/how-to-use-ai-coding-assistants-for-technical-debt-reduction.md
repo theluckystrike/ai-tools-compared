@@ -5,6 +5,10 @@ description: "A practical guide for developers on using AI coding assistants to 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-assistants-for-technical-debt-reduction/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Technical debt accumulates silently in every codebase. Untested functions, duplicated logic, outdated dependencies, and sprawling functions all slow down development over time. Addressing this debt manually takes hours that most teams cannot spare. AI coding assistants offer a systematic approach to identifying, prioritizing, and reducing technical debt without bringing development to a standstill.

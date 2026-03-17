@@ -5,6 +5,10 @@ description: "Learn practical strategies for organizing your project files to he
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-structure-project-files-so-ai-coding-tools-understand/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # How to Structure Project Files So AI Coding Tools Understand Context Better

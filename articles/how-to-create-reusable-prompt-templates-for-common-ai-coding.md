@@ -6,6 +6,10 @@ description: "A practical guide for developers on building reusable prompt templ
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-reusable-prompt-templates-for-common-ai-coding/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

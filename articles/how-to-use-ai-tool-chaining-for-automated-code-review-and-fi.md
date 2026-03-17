@@ -6,6 +6,10 @@ description: "A practical guide to building automated code review and fix pipeli
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-tool-chaining-for-automated-code-review-and-fi/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "A practical guide to customizing AI coding assistants with your te
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-train-your-ai-coding-assistant-on-your-team-coding-st/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 AI coding assistants have become integral to modern development workflows, but generic suggestions often miss the mark. When your team follows specific conventions, naming patterns, or architectural approaches, default AI responses can feel out of place. Training your AI assistant on your team's coding standards produces more relevant, consistent, and useful suggestions that align with your codebase.

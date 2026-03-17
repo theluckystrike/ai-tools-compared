@@ -5,7 +5,7 @@ description: "Discover practical AI tools that help developers review Terraform 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/
-categories: [terraform, devops, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "Learn how to create powerful AI-powered coding workflows using MCP
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

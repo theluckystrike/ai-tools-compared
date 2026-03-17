@@ -5,6 +5,10 @@ description: "Discover how AI tools automatically generate Grafana dashboards fr
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-grafana-dashboards-from-metrics-auto/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

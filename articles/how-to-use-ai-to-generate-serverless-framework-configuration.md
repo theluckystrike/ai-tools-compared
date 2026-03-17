@@ -5,6 +5,10 @@ description: "Learn practical techniques for using AI tools to generate, optimiz
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-ai-to-generate-serverless-framework-configuration/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Modern serverless development involves managing complex configuration files that define functions, resources, permissions, and deployment settings. AI tools can significantly accelerate the creation and maintenance of these configurations while helping you avoid common pitfalls. This guide shows you practical methods for generating Serverless Framework configuration files using AI assistance.

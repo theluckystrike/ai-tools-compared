@@ -5,6 +5,10 @@ description: "A practical guide for developers on integrating AI code generation
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-combining-ai-code-generation-with-manual-code-review/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 AI code generation tools have transformed how developers write software, but they work best when combined with human oversight. Manual code review remains essential for catching bugs, ensuring security, and maintaining code quality. This guide covers practical strategies for combining AI-generated code with thorough manual review.

@@ -5,6 +5,10 @@ description: "A practical guide to using AI tools for contributing to open sourc
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-ai-assisted-open-source-contribution-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Open source contribution can feel intimidating. Between understanding codebase architecture, following project conventions, and crafting clear commit messages, the barrier to entry is real. AI tools have changed this equation significantly. With the right workflow, you can go from finding an issue to submitting a polished pull request in hours instead of days.

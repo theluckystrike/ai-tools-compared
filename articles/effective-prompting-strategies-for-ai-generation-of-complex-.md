@@ -6,6 +6,10 @@ description: "Master the art of prompting AI tools to generate complex SQL queri
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-prompting-strategies-for-ai-generation-of-complex-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
