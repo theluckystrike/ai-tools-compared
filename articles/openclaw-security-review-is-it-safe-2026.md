@@ -159,7 +159,7 @@ Stay vigilant, configure explicitly, and treat AI-generated commands with the sa
 
 - [Claude Code MCP Server Penetration Testing Guide](/claude-skills-guide/claude-code-mcp-server-penetration-testing-guide/) — Apply similar penetration testing methodology to Claude Code's MCP server layer
 - [Cline AI Code Assistant Review 2026](/claude-skills-guide/cline-ai-code-assistant-review-2026/) — Compare OpenCLAW with another autonomous AI coding agent in the same security context
-- [Claude Code for Dependency Audit Automation](/claude-skills-guide/claude-code-for-dependency-audit-automation/) — Automate supply chain security audits to complement your OpenCLAW hardening
+- [Claude Code for Dependency Audit Automation](/claude-skills-guide/claude-code-for-dependency-vulnerability-scanning/) — Automate supply chain security audits to complement your OpenCLAW hardening
 - [Claude Skills Comparisons Hub](/claude-skills-guide/comparisons-hub/) — Read more comparisons of AI coding tools to inform your security evaluation
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
