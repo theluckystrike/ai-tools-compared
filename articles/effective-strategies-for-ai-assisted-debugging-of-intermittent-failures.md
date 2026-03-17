@@ -5,7 +5,7 @@ description: "A practical guide for developers using AI tools to identify, repro
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/
-categories: [guides, debugging]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

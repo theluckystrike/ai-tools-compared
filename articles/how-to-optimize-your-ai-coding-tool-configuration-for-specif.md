@@ -5,7 +5,7 @@ description: "A practical guide to configuring AI coding assistants like GitHub 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-optimize-your-ai-coding-tool-configuration-for-specif/
-categories: [tutorials, configuration]
+categories: [tutorials, guides]
 ---
 
 AI coding tools have become essential for developer productivity, but default configurations rarely suit every project type. Whether you're building a React application, working with Python data pipelines, or maintaining a legacy PHP codebase, optimizing your AI assistant's settings significantly impacts code quality and completion relevance. This guide shows you how to tailor configuration for specific project types with practical examples you can apply immediately.

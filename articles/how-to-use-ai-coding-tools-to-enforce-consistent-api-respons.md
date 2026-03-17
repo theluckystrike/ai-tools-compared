@@ -5,7 +5,7 @@ description: "A practical guide for developers learning to leverage AI coding to
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/
-categories: [guides, ai-coding]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
