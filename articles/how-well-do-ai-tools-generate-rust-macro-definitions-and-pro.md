@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How Well Do AI Tools Generate Rust Macro Definitions and Proc Macros"
-description: "A practical evaluation of AI coding tools for generating Rust macros. Test results, code quality, and recommendations for developers working with declarative and procedural macros."
+title: "How Well Do AI Tools Generate Rust Macro Definitions and."
+description: "A practical evaluation of AI coding tools for generating Rust macros. Test results, code quality, and recommendations for developers working with."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/
@@ -250,5 +250,10 @@ macro_rules! my_macro {
 AI tools can generate Rust macros, but capability varies significantly. Claude handles macro generation best, especially for procedural macros. GitHub Copilot works for simple declarative macros but fails at more complex tasks. Gemini currently lags behind for this specific use case.
 
 For production macro code, expect to iterate on AI-generated output. The macro system remains one of Rust's more advanced features, and AI assistance is best treated as a starting point rather than final code.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

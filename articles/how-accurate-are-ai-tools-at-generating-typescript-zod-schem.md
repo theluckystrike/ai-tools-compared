@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How Accurate Are AI Tools at Generating TypeScript Zod Schema Validations"
+title: "How Accurate Are AI Tools at Generating TypeScript Zod."
 description: "A practical test of leading AI coding tools generating TypeScript Zod validation schemas, with real code examples and accuracy comparisons."
 date: 2026-03-16
 author: theluckystrike
@@ -186,6 +186,11 @@ if (!result.success) {
 AI tools significantly speed up Zod schema creation, but accuracy varies. Claude Code leads in generating production-ready schemas with appropriate validations. Cursor offers strong context awareness but requires verification. GitHub Copilot provides a useful starting point that needs manual refinement.
 
 For best results, use AI as a productivity tool rather than a replacement for understanding Zod. The combination of AI-generated schemas with manual review produces the fastest path to accurate runtime validation in TypeScript projects.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

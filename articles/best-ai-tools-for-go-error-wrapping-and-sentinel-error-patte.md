@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Tools for Go Error Wrapping and Sentinel Error Patterns"
+title: "Best AI Tools for Go Error Wrapping and Sentinel Error."
 description: "A practical guide to AI coding assistants that help with Go error handling patterns, including error wrapping, sentinel errors, and custom error types."
 date: 2026-03-16
 author: theluckystrike
@@ -173,6 +173,11 @@ If you work primarily in an editor environment, Zed offers tight integration wit
 GitHub Copilot handles basic error wrapping well but requires more oversight to ensure idiomatic Go patterns.
 
 Regardless of which tool you choose, always verify that error wrapping preserves the information callers need—whether that's checking against sentinel errors with `errors.Is()` or extracting custom error types with `errors.As()`.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

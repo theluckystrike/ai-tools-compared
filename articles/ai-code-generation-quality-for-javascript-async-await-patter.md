@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Code Generation Quality for JavaScript Async Await Patterns Compared"
-description: "A practical comparison of how leading AI coding tools generate JavaScript async/await patterns. Includes code examples, quality analysis, and recommendations."
+title: "AI Code Generation Quality for JavaScript Async Await."
+description: "A practical comparison of how leading AI coding tools generate JavaScript async/await patterns. Includes code examples, quality analysis, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-javascript-async-await-patter/
@@ -248,5 +248,10 @@ Fourth, confirm resource cleanup is handled through try/finally blocks or explic
 Finally, evaluate whether the generated code matches your project's existing patterns. Consistency within a codebase matters more than theoretical optimization.
 
 AI coding tools continue to improve their async code generation, but human review remains essential for production applications. Use these tools as a starting point, then verify the generated code handles edge cases, follows your project's conventions, and includes appropriate logging and monitoring.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
