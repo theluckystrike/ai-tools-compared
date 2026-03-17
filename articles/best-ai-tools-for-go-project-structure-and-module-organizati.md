@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Tools for Go Project Structure and Module Organization Advice"
+title: "Best AI Tools for Go Project Structure and Module."
 description: "A practical guide to AI-powered tools that help Go developers structure projects, organize modules, and maintain clean codebases."
 date: 2026-03-16
 author: theluckystrike
@@ -162,5 +162,10 @@ Selecting an AI assistant depends on your workflow preferences and project requi
 All three tools improve with explicit context about your project's structure. Providing your existing directory layout, `go.mod` contents, and specific organization questions yields more accurate suggestions tailored to your situation.
 
 The most effective approach combines AI assistance with Go community conventions. Use AI tools to accelerate learning and maintain consistency, but verify suggestions against established patterns from resources like the Go standard library and well-maintained open-source projects.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

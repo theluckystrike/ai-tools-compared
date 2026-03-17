@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistants for Go Testing: Table-Driven Tests Generation Quality"
+title: "AI Coding Assistants for Go Testing: Table-Driven Tests."
 description: "A practical analysis of AI code generation quality for Go table-driven tests, with code examples and quality assessment for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -223,5 +223,10 @@ To get the best results from AI coding assistants for Go table-driven tests, pro
 Review generated tests carefully before committing. AI assistants can miss subtle behaviors specific to your codebase or misunderstand requirements. The generated tests serve as a starting point that requires developer validation.
 
 Run tests immediately after generation to verify they pass. Check both positive and negative paths to ensure the test logic correctly validates expected behavior.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
