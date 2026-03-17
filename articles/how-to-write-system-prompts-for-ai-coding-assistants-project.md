@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Write System Prompts for AI Coding Assistants: Project-Specific Rules"
+title: "How to Write System Prompts for AI Coding Assistants."
 description: "A practical guide for developers learning to write effective system prompts that make AI coding assistants understand your project's unique requirements, conventions, and constraints."
 date: 2026-03-16
 author: theluckystrike
@@ -161,5 +161,10 @@ System prompts require ongoing refinement. As your project evolves, update promp
 Track which prompts produce consistently good results and which need adjustment. Over time, you'll develop a set of proven prompt patterns that reliably generate high-quality code matching your project's standards.
 
 Remember that system prompts work best when they're specific without being overly verbose. Include enough detail to guide the AI effectively, but avoid overwhelming it with information it doesn't need for the task at hand.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Effective AI Coding Workflow for Building Features from Product Requirements Documents"
-description: "A practical workflow for developers using AI to transform product requirements documents into functional code. Learn step-by-step processes with real examples."
+title: "Effective AI Coding Workflow for Building Features from."
+description: "A practical workflow for developers using AI to transform product requirements documents into functional code. Learn step-by-step processes with real."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-ai-coding-workflow-for-building-features-from-prod/
@@ -158,5 +158,10 @@ Keep your context documents updated. As your project evolves, ensure the context
 ---
 
 Building features from product requirements documents doesn't have to be a painful iteration of clarification and rework. By applying a structured AI coding workflow—extracting tasks, preparing context, generating incrementally, integrating carefully, and verifying thoroughly—you can significantly accelerate development while maintaining code quality. The key is treating AI as a powerful assistant rather than a replacement for developer judgment.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

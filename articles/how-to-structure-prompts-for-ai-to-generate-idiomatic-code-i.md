@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Structure Prompts for AI to Generate Idiomatic Code in Any Language"
+title: "How to Structure Prompts for AI to Generate Idiomatic."
 description: "A practical guide for developers on writing effective prompts that produce idiomatic code in Python, JavaScript, Rust, Go, and other programming languages."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/
-categories: [ai-code-generation]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -172,5 +172,10 @@ If the code feels foreign to the language, refine your prompt with more specific
 Writing prompts for idiomatic code comes down to specificity and context. Name your language, describe your use case, specify patterns you expect, and define constraints. The AI model responds to these cues with code that matches your language's conventions rather than generic implementations.
 
 Experiment with prompt variations. Small changes in wording produce significantly different results. Track which phrasings yield the most idiomatic output for your specific needs.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

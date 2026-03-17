@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Workflow for Using AI to Debug Production Issues from Logs"
+title: "Effective Workflow for Using AI to Debug Production."
 description: "A practical workflow for developers to leverage AI tools when analyzing production logs and debugging issues, with real examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
@@ -134,5 +134,10 @@ This allows rapid context gathering when time is critical.
 AI transforms log debugging from manual pattern recognition into a collaborative process. By structuring your approach—narrowing the time window, preparing focused input, and validating suggestions—you can dramatically reduce time-to-resolution for production issues. The key lies in combining AI's pattern recognition capabilities with your understanding of the system.
 
 Start implementing this workflow during lower-severity incidents to build confidence in the approach before relying on it during critical outages.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

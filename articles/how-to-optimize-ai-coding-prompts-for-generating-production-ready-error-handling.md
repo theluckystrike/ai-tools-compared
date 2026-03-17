@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Optimize AI Coding Prompts for Generating Production-Ready Error Handling"
-description: "A practical guide to writing effective AI prompts that generate robust error handling code for production applications, with code examples and optimization techniques."
+title: "How to Optimize AI Coding Prompts for Generating."
+description: "A practical guide to writing effective AI prompts that generate robust error handling code for production applications, with code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/
@@ -213,6 +213,11 @@ Generate Jest test cases for the error handling code above:
 Effective AI-generated error handling requires specificity in your prompts. Define error categories explicitly, specify recovery actions, include logging requirements, describe API contracts, and mention production constraints. Use language-specific patterns—custom exception hierarchies for Python, typed errors for TypeScript, and @ControllerAdvice for Java.
 
 The difference between development-grade and production-grade error handling lies in the prompt details. Generic requests produce generic solutions. Precise prompts with complete context produce robust, maintainable error handling code.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

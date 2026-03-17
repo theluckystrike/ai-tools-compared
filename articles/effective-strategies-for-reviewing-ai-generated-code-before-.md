@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Effective Strategies for Reviewing AI-Generated Code Before Committing to Repo"
-description: "Practical strategies and code review techniques for developers working with AI-generated code. Learn how to validate, test, and audit AI outputs before committing to your repository."
+title: "Effective Strategies for Reviewing AI-Generated Code."
+description: "Practical strategies and code review techniques for developers working with AI-generated code. Learn how to validate, test, and audit AI outputs before."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/
@@ -172,5 +172,10 @@ This ensures consistent quality regardless of which team member reviewed the cod
 As you review more AI-generated code, you'll notice patterns in what each tool does well and where it struggles. Some AI assistants excel at boilerplate code but struggle with complex business logic. Others generate elegant algorithms but miss security considerations. Use this knowledge to focus your review efforts on the areas where each tool needs the most oversight.
 
 Over time, your team can create specific guidelines for working with your preferred AI coding assistant, reducing review time while maintaining code quality.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

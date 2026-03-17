@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI Context Management to Work on Large Refactoring Tasks"
-description: "A practical guide for developers on managing AI context during large-scale code refactoring projects. Learn techniques to maintain context window efficiency and get better results from AI coding assistants."
+title: "How to Use AI Context Management to Work on Large."
+description: "A practical guide for developers on managing AI context during large-scale code refactoring projects. Learn techniques to maintain context window."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-context-management-to-work-on-large-refactorin/
@@ -165,5 +165,10 @@ Run tests after each atomic refactoring step. If tests pass, commit and proceed.
 Successful AI-assisted refactoring depends on treating context as a finite resource to allocate strategically. Break large refactorings into sequential, testable phases. Provide targeted context for each change rather than overwhelming the AI with entire codebases. Maintain external documentation that tracks progress and preserves institutional memory. 
 
 By managing context intentionally, you leverage AI's strengths in code generation while maintaining the control that complex refactoring requires.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
