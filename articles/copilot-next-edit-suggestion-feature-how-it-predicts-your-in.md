@@ -6,7 +6,7 @@ description: "A technical deep dive into GitHub Copilot's Next Edit Suggestion f
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-next-edit-suggestion-feature-how-it-predicts-your-in/
-categories: [ai-coding-assistants, github-copilot]
+categories: [guides]
 ---
 
 GitHub Copilot's Next Edit Suggestion (NES) feature represents a significant advancement in AI-assisted coding. Unlike traditional autocomplete that predicts the next few characters or words, NES anticipates your next code modification across multiple locations in your file. This capability transforms how developers interact with their codebases, reducing repetitive editing tasks and maintaining consistency across large codebases.

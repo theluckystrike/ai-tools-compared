@@ -5,6 +5,10 @@ description: "A practical guide to configuring AI coding assistants to focus on 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-context-includes-and-excludes-for-monore/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
