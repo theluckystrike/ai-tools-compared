@@ -6,6 +6,10 @@ description: "A practical test of leading AI coding tools generating TypeScript 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-generating-typescript-zod-schem/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

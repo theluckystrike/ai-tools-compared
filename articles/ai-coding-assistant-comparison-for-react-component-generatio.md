@@ -5,6 +5,10 @@ description: "A practical comparison of AI coding assistants for React component
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-comparison-for-react-component-generatio/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "A practical comparison of how leading AI coding tools generate Jav
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-javascript-async-await-patter/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # AI Code Generation Quality for JavaScript Async Await Patterns Compared
