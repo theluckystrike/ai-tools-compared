@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI Coding Assistants Effectively with Trunk Based Development"
-description: "A practical guide for developers integrating AI coding assistants into trunk-based development workflows. Learn strategies for maintaining fast commits, avoiding merge conflicts, and maximizing AI productivity."
+title: "How to Use AI Coding Assistants Effectively with Trunk."
+description: "A practical guide for developers integrating AI coding assistants into trunk-based development workflows. Learn strategies for maintaining fast."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-assistants-effectively-with-trunk-based/
@@ -217,6 +217,11 @@ AI coding assistants and trunk-based development work well together when you:
 5. Generate tests alongside implementation
 
 The speed of trunk-based development complements AI's code generation capabilities. By respecting the workflow constraints—small, frequent commits and continuous integration—you get the best of both worlds: rapid development with manageable review cycles.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

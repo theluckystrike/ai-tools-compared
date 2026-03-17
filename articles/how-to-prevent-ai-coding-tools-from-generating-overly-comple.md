@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Prevent AI Coding Tools from Generating Overly Complex Solutions"
+title: "How to Prevent AI Coding Tools from Generating Overly."
 description: "A practical guide for developers on how to keep AI-generated code simple, maintainable, and focused. Includes techniques and prompts that work."
 date: 2026-03-16
 author: theluckystrike
@@ -118,5 +118,10 @@ Include prompts for common scenarios: simple functions, data transformations, ba
 Preventing AI coding tools from generating overly complex solutions requires a combination of techniques. Precise prompts that specify scope and constraints are the foundation. Iterative refinement gives you control over complexity levels. Tool configuration lets you set defaults that match your preferences. And careful review ensures you catch any complexity that slips through.
 
 The key insight is that you are the architect. The AI generates code based on your instructions, and those instructions determine complexity. By providing clearer guidance and iterating toward your desired solution, you can get the simplicity you need while still benefiting from AI assistance.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

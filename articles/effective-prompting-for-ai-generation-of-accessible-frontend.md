@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Prompting for AI Generation of Accessible Frontend Component Code 2026"
+title: "Effective Prompting for AI Generation of Accessible."
 description: "A practical guide to writing prompts that generate WCAG-compliant, accessible frontend components using AI coding assistants."
 date: 2026-03-16
 author: theluckystrike
@@ -184,5 +184,10 @@ Avoid these patterns that produce inaccessible code:
 Accessible AI-generated code requires intentional prompting. By specifying semantic HTML, ARIA attributes, keyboard navigation, and focus management in your prompts, you produce components that work for all users. The investment in crafting detailed prompts pays dividends in code quality and user experience.
 
 Test every AI-generated component. Use automated tools, screen readers, and keyboard-only navigation. Accessibility isn't optional—it's essential for creating inclusive web experiences.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

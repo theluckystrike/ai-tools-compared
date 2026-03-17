@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Create Reusable Prompt Templates for Common AI Coding Tasks 2026"
-description: "A practical guide for developers on building reusable prompt templates that streamline AI-assisted coding workflows. Includes code examples and template patterns."
+title: "How to Create Reusable Prompt Templates for Common AI."
+description: "A practical guide for developers on building reusable prompt templates that streamline AI-assisted coding workflows. Includes code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-reusable-prompt-templates-for-common-ai-coding/
@@ -166,6 +166,11 @@ Track metrics that matter: time saved per task, consistency of AI outputs, and i
 Gather feedback from team members using shared templates. What works well might need adjustment for different project contexts. Treat your template library as a living system that improves through use and observation.
 
 Building a robust prompt template library takes initial investment but pays dividends through consistency, speed, and reduced cognitive load. As AI coding tools continue advancing, developers with well-structured templates will leverage these capabilities more effectively than those relying on ad-hoc interactions.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best Workflow for AI-Assisted Test Driven Development Step by Step"
-description: "A practical step-by-step workflow for implementing AI-assisted test driven development in your projects, with real code examples and expert recommendations."
+title: "Best Workflow for AI-Assisted Test Driven Development."
+description: "A practical step-by-step workflow for implementing AI-assisted test driven development in your projects, with real code examples and expert."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-ai-assisted-test-driven-development-step-b/
@@ -99,5 +99,10 @@ Some developers skip the refactoring step because tests pass, but this misses an
 Track how AI-assisted TDD affects your development process. Measure the time spent writing tests versus implementing features. Monitor the number of bugs that slip through to production. Notice how confident you feel when refactoring code that has good test coverage. These metrics help you refine your workflow over time.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

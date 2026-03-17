@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Manage AI Coding Context Across Multiple Related Repositories"
+title: "How to Manage AI Coding Context Across Multiple Related."
 description: "Practical strategies and code examples for maintaining AI coding context when working across multiple related repositories in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -145,5 +145,10 @@ This makes it clear which codebase you are referring to, especially when similar
 Effective context management across multiple repositories requires combining these strategies. Start by documenting your repository relationships in a central location. Use submodules for shared code that you actively develop. Create context snapshots for feature work that spans repositories. Maintain consistent project structures. Configure persistent instructions in your AI tools.
 
 The investment in context management pays off quickly. You spend less time repeating explanations, receive more accurate suggestions, and maintain consistency across your entire codebase. Review and update your context documentation regularly, especially when adding new repositories or changing integration patterns.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

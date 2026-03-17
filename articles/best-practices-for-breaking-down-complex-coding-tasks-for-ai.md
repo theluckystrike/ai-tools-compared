@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best Practices for Breaking Down Complex Coding Tasks for AI Assistants in 2026"
-description: "Learn proven strategies for decomposing large coding tasks into manageable prompts that yield better results from AI coding assistants. Practical examples and real-world techniques included."
+title: "Best Practices for Breaking Down Complex Coding Tasks."
+description: "Learn proven strategies for decomposing large coding tasks into manageable prompts that yield better results from AI coding assistants. Practical."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-practices-for-breaking-down-complex-coding-tasks-for-ai/
@@ -133,5 +133,10 @@ Use your judgment: if you can clearly articulate the interface between two compo
 Effective use of AI coding assistants in 2026 hinges on treating them as collaborative partners rather than oracles. Break your work into logical, verifiable pieces. Provide explicit context about your project. Frame requests with clear inputs and outputs. Verify each piece before building on it.
 
 This iterative approach takes more interactions but produces substantially better results. You're not just getting code—you're building a solution with deliberate architectural decisions at every step.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

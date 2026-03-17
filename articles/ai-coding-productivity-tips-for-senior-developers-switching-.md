@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Coding Productivity Tips for Senior Developers Switching From Manual Workflow"
+title: "AI Coding Productivity Tips for Senior Developers."
 description: "Practical strategies and code examples to help senior developers maximize productivity when transitioning from manual coding to AI-assisted workflows."
 date: 2026-03-16
 author: theluckystrike
@@ -165,5 +165,10 @@ Track your productivity improvements objectively:
 AI coding tools represent a paradigm shift for senior developers, but the transition requires intentional practice. Focus on crafting effective prompts, maintaining rigorous verification practices, and reserving your expertise for architectural decisions where it matters most. The developers who succeed treat AI as a powerful junior developer—one who needs guidance but handles implementation details efficiently.
 
 Start with small, low-risk tasks to build confidence. Gradually expand to more complex scenarios as you develop intuition for when AI assistance helps and when it hinders. Your years of experience remain invaluable; AI simply amplifies your capabilities when applied thoughtfully.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

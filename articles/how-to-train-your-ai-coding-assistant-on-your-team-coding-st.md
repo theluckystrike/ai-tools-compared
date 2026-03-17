@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Train Your AI Coding Assistant on Your Team Coding Standards"
+title: "How to Train Your AI Coding Assistant on Your Team."
 description: "A practical guide to customizing AI coding assistants with your team's coding conventions, patterns, and best practices for more relevant code suggestions."
 date: 2026-03-16
 author: theluckystrike
@@ -186,5 +186,10 @@ When team standards change, update your documentation and reference files immedi
 ---
 
 Training your AI coding assistant on team standards requires initial effort, but produces significant long-term benefits. More relevant suggestions mean less time rewriting code, fewer style debates in code reviews, and faster onboarding for new team members. Start with documentation, add configuration, provide consistent feedback, and watch your assistant become a genuinely useful team member.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

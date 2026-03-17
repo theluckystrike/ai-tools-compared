@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Generate Serverless Framework Configuration Files"
-description: "Learn practical techniques for using AI tools to generate, optimize, and maintain Serverless Framework configuration files. Includes code examples and best practices for AWS Lambda, Google Cloud Functions, and Azure Functions."
+title: "How to Use AI to Generate Serverless Framework."
+description: "Learn practical techniques for using AI tools to generate, optimize, and maintain Serverless Framework configuration files. Includes code examples and."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-ai-to-generate-serverless-framework-configuration/
@@ -187,5 +187,10 @@ AI generation works best as a starting point that you refine rather than as a co
 ## Conclusion
 
 AI tools significantly improve the Serverless Framework configuration development process by accelerating initial generation, suggesting best practices, and helping avoid common mistakes. The key to success lies in providing clear requirements, understanding the generated configurations, and maintaining appropriate review processes for production deployments.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

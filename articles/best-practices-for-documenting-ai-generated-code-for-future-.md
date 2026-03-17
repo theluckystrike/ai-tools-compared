@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Documenting AI-Generated Code for Future Maintainability"
+title: "Best Practices for Documenting AI-Generated Code for."
 description: "Learn essential strategies for documenting AI-generated code to ensure long-term maintainability and team collaboration."
 date: 2026-03-16
 author: theluckystrike
@@ -214,6 +214,11 @@ Documenting AI-generated code requires intentional effort, but the payoff is sig
 - **Track generation context**: Store prompts and test results alongside code
 
 The goal isn't to document every line—it's to provide enough context that future developers (including your future self) can understand what the AI generated, why it works the way it does, and where the boundaries of its functionality lie.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

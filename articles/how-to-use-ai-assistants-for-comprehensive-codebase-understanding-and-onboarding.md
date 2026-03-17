@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI Assistants for Comprehensive Codebase Understanding and Onboarding"
-description: "A practical guide for developers on using AI assistants to understand large codebases quickly, with real examples and proven techniques for effective onboarding."
+title: "How to Use AI Assistants for Comprehensive Codebase."
+description: "A practical guide for developers on using AI assistants to understand large codebases quickly, with real examples and proven techniques for effective."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-assistants-for-comprehensive-codebase-understanding-and-onboarding/
@@ -192,6 +192,11 @@ AI assistants fundamentally change how developers understand and onboard to new 
 Remember: AI accelerates understanding but doesn't replace the need for deep domain knowledge. Use these tools to work smarter, not to skip the hard work of truly understanding your codebase.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

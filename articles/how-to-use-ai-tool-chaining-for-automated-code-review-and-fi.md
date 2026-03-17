@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI Tool Chaining for Automated Code Review and Fix Workflow"
+title: "How to Use AI Tool Chaining for Automated Code Review."
 description: "A practical guide to building automated code review and fix pipelines using chained AI tools. Learn to connect linting, analysis, and correction workflows."
 date: 2026-03-16
 author: theluckystrike
@@ -175,6 +175,11 @@ Each addition makes your pipeline more comprehensive but increases runtime and c
 ---
 
 AI tool chaining transforms code review from a manual, time-consuming process into an automated pipeline that catches issues early and consistently. Start with a simple chain, measure its effectiveness, and expand as your workflow matures.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

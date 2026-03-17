@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build Custom AI Coding Workflows with MCP Server Integrations"
+title: "How to Build Custom AI Coding Workflows with MCP Server."
 description: "Learn how to create powerful AI-powered coding workflows using MCP server integrations. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -196,5 +196,10 @@ class WorkflowLibrary:
 
 This modular approach lets you assemble sophisticated automation pipelines from proven building blocks, reducing maintenance overhead as your AI coding workflows evolve.
 {% endraw %}
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

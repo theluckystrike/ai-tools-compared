@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Coding Assistants for Technical Debt Reduction Systematically"
+title: "How to Use AI Coding Assistants for Technical Debt."
 description: "A practical guide for developers on using AI coding assistants to systematically reduce technical debt. Learn frameworks, code examples, and workflows."
 date: 2026-03-16
 author: theluckystrike
@@ -267,5 +267,10 @@ Run this weekly to measure your debt reduction velocity.
 - **Document decisions**: When you choose to accept technical debt temporarily, document why. Future developers will thank you.
 
 AI coding assistants transform technical debt from an overwhelming problem into manageable, measurable work. The key lies in using them systematically rather than randomly. Identify debt, prioritize it, batch similar fixes, track progress, and maintain discipline. Your codebase will become more maintainable with each iteration.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

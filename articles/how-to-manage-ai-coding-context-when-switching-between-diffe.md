@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Manage AI Coding Context When Switching Between Different Features"
-description: "A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples, and best practices."
+title: "How to Manage AI Coding Context When Switching Between."
+description: "A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-when-switching-between-diffe/
@@ -167,5 +167,10 @@ Apply these strategies based on your workflow complexity:
 - For large projects with many concurrent features: Use all strategies in combination, with particular emphasis on modular organization and dedicated context files
 
 The key principle remains consistent: make context transitions explicit rather than assumed. Your AI coding assistant performs best when you clearly define what context matters for the current task.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

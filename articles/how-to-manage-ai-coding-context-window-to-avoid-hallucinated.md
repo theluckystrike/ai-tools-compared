@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Manage AI Coding Context Window to Avoid Hallucinated Imports"
+title: "How to Manage AI Coding Context Window to Avoid."
 description: "Learn practical techniques to manage AI coding assistant context windows and prevent hallucinated imports from breaking your codebase."
 date: 2026-03-16
 author: theluckystrike
@@ -145,5 +145,10 @@ The best defense against hallucinated imports is consistent communication discip
 - Reset conversations when context becomes unwieldy
 
 These habits reduce AI errors dramatically and make your coding assistant a reliable partner rather than a source of subtle bugs.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

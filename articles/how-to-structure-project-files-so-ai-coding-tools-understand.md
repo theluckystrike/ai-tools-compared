@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Structure Project Files So AI Coding Tools Understand Context Better"
-description: "Learn practical strategies for organizing your project files to help AI coding assistants like Cursor, GitHub Copilot, and Claude understand your codebase context."
+title: "How to Structure Project Files So AI Coding Tools."
+description: "Learn practical strategies for organizing your project files to help AI coding assistants like Cursor, GitHub Copilot, and Claude understand your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-structure-project-files-so-ai-coding-tools-understand/
@@ -237,5 +237,10 @@ Your project structure should evolve with your needs. Periodically review whethe
 Making incremental adjustments keeps your project structure aligned with how your team and AI tools work together.
 
 By implementing these file organization strategies, you'll notice improved accuracy in code completions, more relevant refactoring suggestions, and better overall assistance from AI coding tools. The investment in thoughtful project structure pays dividends in developer productivity.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

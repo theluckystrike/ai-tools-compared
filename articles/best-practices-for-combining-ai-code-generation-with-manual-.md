@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Practices for Combining AI Code Generation with Manual Code Review"
-description: "A practical guide for developers on integrating AI code generation with manual code review. Learn workflows, patterns, and strategies to maximize code quality while maintaining developer control."
+title: "Best Practices for Combining AI Code Generation with."
+description: "A practical guide for developers on integrating AI code generation with manual code review. Learn workflows, patterns, and strategies to maximize code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-combining-ai-code-generation-with-manual-code-review/
@@ -188,5 +188,10 @@ Compare these metrics against purely manual development times to quantify AI's v
 ## Summary
 
 Combining AI code generation with manual review maximizes both speed and quality. Use AI for boilerplate, scaffolding, and test generation. Apply manual review focused on logic, security, and architecture. Configure your AI tools with project-specific context. Maintain velocity by adjusting review depth based on code criticality. Track your metrics to continuously improve the process and demonstrate value to stakeholders.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

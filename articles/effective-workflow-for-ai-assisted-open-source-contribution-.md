@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Workflow for AI-Assisted Open Source Contribution and PR Preparation"
+title: "Effective Workflow for AI-Assisted Open Source."
 description: "A practical guide to using AI tools for contributing to open source projects, from finding issues to preparing polished pull requests."
 date: 2026-03-16
 author: theluckystrike
@@ -207,5 +207,10 @@ Before marking your PR as ready:
 AI tools accelerate every step of this workflow, but they do not replace understanding. Verify every AI-generated change. The maintainer will notice if you submit code you do not understand.
 
 With practice, this workflow becomes second nature. You will find yourself contributing to open source projects more confidently and more often.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
