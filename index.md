@@ -879,7 +879,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code for Remix Optimistic UI Workflow](/claude-skills-guide/claude-code-for-remix-optimistic-ui-workflow/)
 - [Claude Code for Resilience4j Circuit Breaker Guide](/claude-skills-guide/claude-code-for-resilience4j-circuit-breaker-guide/)
 - [Claude Code for Retool Internal Tools Workflow](/claude-skills-guide/claude-code-for-retool-internal-tools-workflow/)
-- [Claude Code for Rollback Strategy Workflow Guide](/claude-skills-guide/claude-code-for-rollback-strategy-workflow-guide/)
 - [Claude Code for Rome Biome Linting Workflow](/claude-skills-guide/claude-code-for-rome-biome-linting-workflow/)
 - [Claude Code for Rook Ceph Storage Workflow Guide](/claude-skills-guide/claude-code-for-rook-ceph-storage-workflow-guide/)
 - [Claude Code for Roving Tabindex Pattern Workflow](/claude-skills-guide/claude-code-for-roving-tabindex-pattern-workflow/)

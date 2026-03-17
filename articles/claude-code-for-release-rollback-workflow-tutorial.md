@@ -176,6 +176,79 @@ After rollback:
 - Never rollback without understanding the root cause first
 ```
 
+## Selective Rollback and Canary Deployments
+
+Not all rollbacks need to be complete system restores. Sometimes you only need to revert specific components. Structure your rollback config to support selective rollback by component type:
+
+```yaml
+# rollback-config.yml
+rollback_strategies:
+  database:
+    type: selective
+    restoration_method: "point_in_time"
+
+  configuration:
+    type: full_replacement
+    backup_location: "/config/backups"
+    restoration_method: "file_copy"
+
+  application_code:
+    type: git_based
+    restoration_method: "revert_commit"
+    require_approval: true
+```
+
+For even safer deployments, combine rollback strategies with canary rollouts that catch issues before they affect all users:
+
+```yaml
+deployment_strategy:
+  type: canary
+  initial_percentage: 10
+  increment_percentage: 20
+  increment_interval_minutes: 15
+  auto_rollback_on_error_rate: 5
+```
+
+## Common Rollback Scenarios
+
+### Database Schema Changes
+
+When rolling back schema changes, ensure you always write reversible migrations:
+
+```sql
+-- Forward migration: add column
+ALTER TABLE users ADD COLUMN status VARCHAR(20) DEFAULT 'active';
+
+-- Rollback: only drop after confirming all applications can handle its absence
+ALTER TABLE users DROP COLUMN status;
+```
+
+### Configuration Errors
+
+Configuration rollbacks should use version-controlled config files:
+
+```bash
+# Restore previous configuration
+git checkout HEAD~1 config/production.yaml
+
+# Or restore a specific tagged version
+git checkout v1.2.3 config/production.yaml
+```
+
+### Failed Feature Deployments
+
+For feature flags that don't work as expected, disable immediately and document:
+
+```javascript
+const features = {
+    newCheckout: {
+        enabled: false,
+        reason: "High error rate detected",
+        ticket: "JIRA-1234"
+    }
+};
+```
+
 ## Best Practices for Rollback Workflows
 
 When implementing rollback automation with Claude Code, follow these proven practices:
