@@ -6,7 +6,7 @@ description: "A practical guide to leveraging GitHub Copilot for creating effici
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/
-categories: [tutorials, docker, copilot]
+categories: [tutorials, guides, comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true

@@ -5,7 +5,7 @@ description: "A practical guide for developers and power users on leveraging AI 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-capacity-planning-and-resource-right-sizin/
-categories: [guides, infrastructure]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
