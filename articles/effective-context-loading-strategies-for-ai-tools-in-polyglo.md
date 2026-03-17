@@ -5,7 +5,7 @@ description: "A practical guide to optimizing AI tool performance in projects mi
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-context-loading-strategies-for-ai-tools-in-polyglo/
-categories: [guides, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true
