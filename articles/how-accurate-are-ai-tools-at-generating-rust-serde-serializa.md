@@ -6,6 +6,10 @@ description: "A practical analysis of how well AI coding assistants generate Rus
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

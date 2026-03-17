@@ -5,6 +5,10 @@ description: "A practical evaluation of how accurately AI coding assistants gene
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-correct-go-interface-implement/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Go interfaces provide a powerful way to define behavior contracts between components. Getting AI tools to generate correct interface implementations requires understanding how these tools handle Go's type system, method receivers, and error handling patterns. This article examines how well various AI coding assistants perform when asked to implement Go interfaces, with practical examples and testing methodology.
