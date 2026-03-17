@@ -5,7 +5,7 @@ description: "A practical guide for developers migrating Java EE applications fr
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-completion-for-java-jakarta-ee-migration-from-javax-/
-categories: [guides, java, jakarta-ee, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true

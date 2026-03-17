@@ -5,6 +5,10 @@ description: "A practical evaluation of how well AI coding tools handle Java 17+
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-pattern-matching-and-swi/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 AI coding assistants have become essential tools for Java developers, but their effectiveness varies significantly when handling modern Java features like pattern matching and switch expressions introduced in Java 17 and later. This article evaluates how well popular AI tools generate high-quality code using these powerful language features.
