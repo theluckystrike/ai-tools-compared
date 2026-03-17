@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use AI Codebase Search to Find Relevant Code Before Generating"
-description: "Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques for developers."
+title: "How to Use AI Codebase Search to Find Relevant Code."
+description: "Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-codebase-search-to-find-relevant-code-before-g/
@@ -174,6 +174,11 @@ After implementing code generated with codebase search context, evaluate:
 When the answer to these questions is yes, your search-and-generate workflow is working effectively.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

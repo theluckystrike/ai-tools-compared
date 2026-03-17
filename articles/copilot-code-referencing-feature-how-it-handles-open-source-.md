@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Copilot Code Referencing Feature: How It Handles Open Source License Detection"
+title: "Copilot Code Referencing Feature: How It Handles Open."
 description: "A technical deep-dive into GitHub Copilot's code referencing system and how it detects and handles open source licenses when suggesting code."
 date: 2026-03-16
 author: theluckystrike
@@ -104,6 +104,11 @@ The key is awareness. When you understand that Copilot's suggestions come from r
 For most everyday development tasks—writing utility functions, implementing standard algorithms, or working with common frameworks—Copilot's suggestions present minimal legal risk. The feature becomes most valuable when you are working with specialized code, unique implementations, or code from less common projects where license terms might be unexpected.
 
 Stay informed, check references when they appear, and build with confidence knowing you have the information needed to make sound licensing decisions.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

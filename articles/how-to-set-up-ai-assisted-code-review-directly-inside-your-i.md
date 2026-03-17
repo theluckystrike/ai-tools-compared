@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Set Up AI Assisted Code Review Directly Inside Your IDE"
-description: "Learn practical methods for setting up AI-powered code review directly in your IDE. This guide covers GitHub Copilot, Cursor, and other tools for real-time code analysis."
+title: "How to Set Up AI Assisted Code Review Directly Inside."
+description: "Learn practical methods for setting up AI-powered code review directly in your IDE. This guide covers GitHub Copilot, Cursor, and other tools for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-ai-assisted-code-review-directly-inside-your-ide/
@@ -226,5 +226,10 @@ Keep your AI tools updated—vendors regularly improve their analysis capabiliti
 ## Conclusion
 
 Setting up AI-assisted code review in your IDE takes under an hour but provides continuous value. Start with GitHub Copilot or Cursor for quick setup, then expand to CLI tools like Claude Code and Aider for deeper analysis. The goal is catching issues before they reach peer review, making your development process faster and your code more reliable.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

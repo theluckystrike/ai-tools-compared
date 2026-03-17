@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tools for Automating Cloud Security Compliance Scanning in CI/CD"
-description: "A practical guide to AI-powered cloud security compliance scanning tools that integrate with CI/CD pipelines. Code examples and implementation tips for developers."
+title: "AI Tools for Automating Cloud Security Compliance."
+description: "A practical guide to AI-powered cloud security compliance scanning tools that integrate with CI/CD pipelines. Code examples and implementation tips for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automating-cloud-security-compliance-scanning-i/
@@ -195,6 +195,11 @@ Many teams struggle with security scan fatigue. The AI layer helps by filtering 
 | Slow scans | Intelligent caching of results |
 
 Start with one infrastructure type—typically Terraform if you're cloud-agnostic—and expand gradually. The AI improves as it sees more of your specific patterns.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

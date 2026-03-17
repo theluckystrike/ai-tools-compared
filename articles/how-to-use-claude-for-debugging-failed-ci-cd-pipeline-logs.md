@@ -2,13 +2,13 @@
 
 layout: default
 title: "How to Use Claude for Debugging Failed CI/CD Pipeline Logs"
-description: "A practical guide for developers using Claude to analyze and debug failed CI/CD pipeline logs. Learn effective prompts, common patterns, and real-world examples."
+description: "A practical guide for developers using Claude to analyze and debug failed CI/CD pipeline logs. Learn effective prompts, common patterns, and real-world."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/
 reviewed: true
 score: 8
-categories: [devops]
+categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
 ---
@@ -194,5 +194,10 @@ Claude identified that the build step was missing in the workflow—the TypeScri
 This is a common pattern: the error message points to a symptom (missing module) while the real issue is a missing build step in CI.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

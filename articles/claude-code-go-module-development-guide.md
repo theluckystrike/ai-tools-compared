@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Go Module Development Guide"
-description: "A comprehensive guide to developing Go modules with Claude Code. Learn how to scaffold projects, generate code, write tests, and automate your Go development workflow."
+description: "A comprehensive guide to developing Go modules with Claude Code. Learn how to scaffold projects, generate code, write tests, and automate your Go."
 date: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-go-module-development-guide/
@@ -318,5 +318,10 @@ Use interfaces liberally in Go, and let Claude Code help you design them. Descri
 Take advantage of Go's context package for cancellation and timeouts. When describing async operations or long-running tasks to Claude Code, mention that you need context propagation, and it will include proper context handling throughout your code.
 
 Finally, leverage Go's built-in tooling. Claude Code understands `go fmt`, `go vet`, and `go mod` intimately. Use these tools consistently, and Claude Code will help you maintain a clean, secure, and well-organized codebase.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at zovo.one
