@@ -5,6 +5,10 @@ description: "Discover how AI tools can automate the creation of Istio and Envoy
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-kubernetes-service-mesh-configuratio/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,7 +5,7 @@ description: "A practical guide for developers exploring AI-powered automated ro
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automated-rollback-decision-making-in-deploymen/
-categories: [guides, devops, ai]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "Learn how Cursor AI's Apply model intelligently merges AI-generate
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-apply-model-how-it-merges-generated-code-into-exis/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

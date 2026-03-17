@@ -6,7 +6,7 @@ description: "A practical guide to improving AI code completion quality through 
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-get-better-ai-autocomplete-suggestions-by-structuring/
-categories: [ai-tools, developer-productivity]
+categories: [comparisons, guides]
 reviewed: true
 score: 8
 intent-checked: true

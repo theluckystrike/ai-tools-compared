@@ -5,6 +5,10 @@ description: "A practical comparison of how leading AI coding tools handle test 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-autocomplete-for-test-files-how-well-different-tools-pred/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
