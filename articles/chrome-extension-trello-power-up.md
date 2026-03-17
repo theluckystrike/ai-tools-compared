@@ -1,10 +1,9 @@
 ---
-
 layout: default
-title: "Building a Chrome Extension Trello Power-Up: A."
+title: "Building a Chrome Extension Trello Power-Up: A Developer's Guide"
 description: "Learn how to build a Chrome extension that integrates with Trello Power-Ups. Practical code examples and architecture for developers and power users."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: "theluckystrike"
 permalink: /chrome-extension-trello-power-up/
 reviewed: true
 score: 8
