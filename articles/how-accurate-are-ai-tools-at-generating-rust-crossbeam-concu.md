@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Accurate Are AI Tools at Generating Rust Crossbeam Concurrent Code"
+title: "How Accurate Are AI Tools at Generating Rust Crossbeam."
 description: "A practical evaluation of AI coding tools for generating Rust Crossbeam concurrent code. Test results, code quality, and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -232,5 +232,10 @@ For developers working with Crossbeam and AI tools:
 4. **Test concurrent code thoroughly** — AI-generated concurrent code should always be tested with Miri and race detectors before production use.
 
 The accuracy of AI tools for Crossbeam code generation ranges from 56% to 88% depending on complexity. For critical concurrent code, AI assistance is helpful but human review remains essential.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

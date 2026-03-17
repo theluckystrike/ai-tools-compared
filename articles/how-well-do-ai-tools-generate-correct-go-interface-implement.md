@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Well Do AI Tools Generate Correct Go Interface Implementations (2026)"
+title: "How Well Do AI Tools Generate Correct Go Interface."
 description: "A practical evaluation of how accurately AI coding assistants generate Go interface implementations, with real code examples and testing results."
 date: 2026-03-16
 author: theluckystrike
@@ -172,5 +172,10 @@ AI coding assistants have become reasonably capable of generating correct Go int
 For production code, treat AI-generated interface implementations as a starting point. Add compile-time verification with the `var _ Interface = (*Type)(nil)` pattern, write tests that exercise all interface methods, and review error handling for completeness. With these safeguards, AI tools can significantly accelerate interface implementation while maintaining code quality.
 
 The gap between AI tools continues to narrow as language-specific training improves. By 2026, the major players have substantially improved their Go support, though subtle differences in handling edge cases remain noticeable for developers working on critical systems.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

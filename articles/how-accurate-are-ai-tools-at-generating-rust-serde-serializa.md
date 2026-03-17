@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How Accurate Are AI Tools at Generating Rust Serde Serialization Code"
+title: "How Accurate Are AI Tools at Generating Rust Serde."
 description: "A practical analysis of how well AI coding assistants generate Rust serde serialization code, with real examples and accuracy assessments for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -219,6 +219,11 @@ When using AI assistants for serde code, always verify three things: the code co
 For complex serialization scenarios—particularly custom serializers, flattened structures, or enum tagging—review the generated code carefully. AI tools handle straightforward derive macros well but can miss nuanced requirements in advanced use cases.
 
 The pattern that AI tools struggle with most is custom serialization logic. Always review and test custom `Serialize` and `Deserialize` implementations thoroughly before deploying to production.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
