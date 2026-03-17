@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Free AI Tool for Generating Regex Patterns Explained"
 description: "A practical guide for developers on using free AI tools to generate, test, and refine regex patterns with real-world examples."
