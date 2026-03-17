@@ -6,6 +6,10 @@ description: "A practical guide for developers on managing AI coding context eff
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-when-switching-between-diffe/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Working with AI coding assistants across multiple features in a single project introduces a specific challenge: context management. When you switch between implementing authentication, then debugging a payment flow, then adding user notifications, the AI model loses track of what you were just doing. Understanding how to manage this context transition directly impacts your productivity and the quality of generated code.

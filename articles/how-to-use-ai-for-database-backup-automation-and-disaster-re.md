@@ -6,6 +6,10 @@ description: "Learn practical techniques for automating database backups and dis
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-database-backup-automation-and-disaster-re/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

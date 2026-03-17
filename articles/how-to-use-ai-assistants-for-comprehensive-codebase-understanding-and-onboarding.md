@@ -5,6 +5,10 @@ description: "A practical guide for developers on using AI assistants to underst
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-assistants-for-comprehensive-codebase-understanding-and-onboarding/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

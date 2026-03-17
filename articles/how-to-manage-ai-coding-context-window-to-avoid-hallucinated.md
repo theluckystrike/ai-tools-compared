@@ -5,6 +5,10 @@ description: "Learn practical techniques to manage AI coding assistant context w
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-window-to-avoid-hallucinated/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When AI coding assistants suggest imports that don't exist in your project, you face a frustrating cycle: code that looks correct, fails at runtime, and wastes debugging time. These hallucinated imports happen because AI models lose track of your actual project structure as the conversation grows. Managing the context window effectively stops this problem at its source.

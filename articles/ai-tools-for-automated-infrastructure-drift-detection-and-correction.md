@@ -5,6 +5,10 @@ description: "A practical guide for developers exploring AI-powered tools that d
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automated-infrastructure-drift-detection-and-correction/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

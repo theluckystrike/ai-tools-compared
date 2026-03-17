@@ -5,6 +5,10 @@ description: "Learn essential strategies for documenting AI-generated code to en
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-documenting-ai-generated-code-for-future-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

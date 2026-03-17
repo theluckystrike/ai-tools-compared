@@ -5,6 +5,10 @@ description: "Compare the best AI-powered incident response tools for DevOps tea
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-powered-incident-response-tools-for-devops-teams-compared/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
