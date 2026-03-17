@@ -11,6 +11,8 @@ tags: [tools]
 reviewed: true
 score: 8
 ---
+{% raw %}
+
 
 Running two AI coding assistants simultaneously in the same project sounds chaotic, but it works remarkably well when you assign each tool to its strength. Claude Code excels at complex backend logic, API design, and data processing, while Cursor shines at frontend component creation, UI polish, and rapid visual iteration. This separation lets you leverage both tools without conflict.
 
@@ -253,3 +255,4 @@ Running Claude Code for backend and Cursor for frontend gives you specialized as
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

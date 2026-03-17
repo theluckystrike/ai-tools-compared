@@ -10,6 +10,8 @@ categories: [comparisons]
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 When managing a TypeScript monorepo with Turborepo, choosing the right AI coding assistant can significantly impact your development workflow. Turborepo's caching, remote execution, and task orchestration features create unique requirements that not all AI assistants handle equally well. This comparison evaluates the leading options based on their ability to understand monorepo structure, work across multiple packages, and integrate with Turborepo's specific tooling.
 
@@ -93,3 +95,4 @@ For teams using Turborepo, the key factor is how well the assistant understands 
 Consider testing each option with a small feature that spans at least two packages in your monorepo. This practical test reveals which assistant truly understands your Turborepo setup versus one that only works well within single packages.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
