@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini vs Claude for Generating Markdown Documentation from Source Code"
+title: "Gemini vs Claude for Generating Markdown Documentation."
 description: "A practical comparison of Google's Gemini and Anthropic's Claude for automatically generating markdown documentation from your source code."
 date: 2026-03-16
 author: theluckystrike
@@ -178,5 +178,10 @@ Start with a small code sample—five to ten functions—and compare outputs dir
 Remember that AI-generated documentation requires human review. These tools provide excellent starting points but cannot replace understanding your code's actual behavior and edge cases.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

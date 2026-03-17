@@ -221,3 +221,8 @@ describe('Performance Tests', () => {
 
 A well-structured testing workflow is essential for maintaining a reliable Claude Code SDK. Implement these testing strategies to ensure your SDK performs correctly across all scenarios.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
