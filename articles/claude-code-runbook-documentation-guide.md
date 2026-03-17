@@ -211,8 +211,8 @@ Invest time in creating comprehensive runbooks now—it pays dividends during in
 ## Related Reading
 
 
-- [Claude Code Documentation Generation Workflow](/claude-skills-guide/claude-code-documentation-generation-workflow/)
-- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/)
+- [Claude Code Documentation Generation Workflow](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/)
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelogs-and-release-notes-automation/)
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

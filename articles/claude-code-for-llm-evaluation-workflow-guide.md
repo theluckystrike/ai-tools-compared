@@ -59,6 +59,45 @@ def evaluate_similarity(response, reference, threshold=0.8):
     return similarity >= threshold
 ```
 
+### LLM-as-Judge Evaluation
+
+Beyond simple metric functions, you can use a capable model to evaluate responses against your expected qualities. This "LLM-as-judge" approach works well for subjective quality dimensions:
+
+```python
+def evaluate_with_claude(prompt, response, qualities):
+    evaluation_prompt = f"""Evaluate this response for the following qualities: {', '.join(qualities)}.
+
+Original prompt: {prompt}
+Response to evaluate: {response}
+
+Provide a score from 1-10 for each quality and brief justification."""
+
+    client = Anthropic()
+    evaluation = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=500,
+        messages=[{"role": "user", "content": evaluation_prompt}]
+    )
+    return evaluation.content[0].text
+```
+
+### Failure Mode Analysis
+
+Document where models consistently struggle to inform prompt engineering or determine when human review is necessary:
+
+```python
+def analyze_failure_modes(results):
+    failures = {}
+    for result in results:
+        if result.get("score", 10) < 5:
+            category = result["category"]
+            failures[category] = failures.get(category, 0) + 1
+
+    return sorted(failures.items(), key=lambda x: x[1], reverse=True)
+```
+
+**Cost-performance trade-offs** combine quality metrics with pricing data. Calculate the "value" of each model by dividing quality score by cost-per-thousand-tokens to reveal whether premium models justify their pricing for your specific use case.
+
 ## Automating Evaluation with Claude Code
 
 Claude Code excels at orchestrating evaluation workflows through its skill system. You can create a skill that handles test execution, result collection, and reporting:

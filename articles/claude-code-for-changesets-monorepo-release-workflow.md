@@ -55,7 +55,32 @@ Initialize Changesets in your repository:
 npx changeset init
 ```
 
-This creates a `.changeset` directory and a `changesets` configuration in your `package.json`.
+This creates a `.changeset` directory. Configure it for your monorepo structure:
+
+```json
+// .changeset/config.json
+{
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "restricted",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch"
+}
+```
+
+When packages depend on each other, use workspace protocols to maintain correct relationships:
+
+```json
+// packages/app/package.json
+{
+  "name": "@myorg/app",
+  "dependencies": {
+    "@myorg/utils": "workspace:*"
+  }
+}
+```
 
 ## Using Claude Code to Generate Changesets
 
@@ -166,6 +191,22 @@ When updating dependencies, ask Claude Code to:
 - Identify which packages will be affected
 - Check for breaking changes in dependency updates
 - Suggest appropriate version bumps
+
+## Cross-Package Refactoring
+
+For larger refactoring affecting multiple packages, coordinate changes carefully by specifying the full scope to Claude Code:
+
+```
+I'm refactoring the error handling in @myorg/utils. The ErrorHandler class
+is being renamed to AppError. Please:
+
+1. Update all internal usages in @myorg/utils
+2. Update imports in @myorg/app and @myorg/api
+3. Create appropriate changeset files for each affected package
+4. Run tests to verify everything works
+```
+
+This ensures dependent packages receive version bumps and changeset entries that accurately describe the cascading impact.
 
 ## Common Pitfalls to Avoid
 

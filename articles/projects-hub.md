@@ -175,7 +175,7 @@ Data pipeline projects are where Claude skills and automation integrations conve
 - [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/claude-skills-for-data-science-and-jupyter-notebooks/)
 - [Best Claude Skills for Data Analysis in 2026](/claude-skills-guide/best-claude-skills-for-data-analysis/)
 - [Claude Code MongoDB to PostgreSQL Migration Workflow](/claude-skills-guide/claude-code-mongodb-to-postgresql-migration-workflow/)
-- [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/)
+- [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/)
 - [Claude /xlsx Skill: Spreadsheet Automation Guide](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/)
 
 ---
@@ -224,7 +224,7 @@ Use this table to estimate what you are getting into before you start a new proj
 | [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/claude-skills-for-data-science-and-jupyter-notebooks/) | Data science workflows in Jupyter with Claude |
 | [Best Claude Skills for Data Analysis in 2026](/claude-skills-guide/best-claude-skills-for-data-analysis/) | Top skills for working with data |
 | [Claude Code MongoDB to PostgreSQL Migration Workflow](/claude-skills-guide/claude-code-mongodb-to-postgresql-migration-workflow/) | Database migration with Claude assistance |
-| [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/) | Building evaluation pipelines for LLM outputs |
+| [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/) | Building evaluation pipelines for LLM outputs |
 | [Claude /xlsx Skill: Spreadsheet Automation Guide](/claude-skills-guide/claude-xlsx-skill-spreadsheet-automation-tutorial/) | Using the xlsx skill for data output and automation |
 | [Build a Personal AI Assistant with Claude Skills Guide](/claude-skills-guide/build-personal-ai-assistant-with-claude-skills-guide/) | Building a persistent personal AI assistant |
 | [How to Contribute Claude Skills to Open Source](/claude-skills-guide/how-to-contribute-claude-skills-to-open-source/) | Contributing your project skills back to the community |

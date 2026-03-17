@@ -150,6 +150,33 @@ class {{ model_name }}Create({{ model_name }}Base):
     pass
 ```
 
+## Template Organization Strategies
+
+As your template library grows, organize templates by technology stack and use case. A practical directory structure helps Claude Code locate and apply the right template:
+
+```
+~/.claude/skills/
+├── code-templates/
+│   ├── skill.md
+│   ├── templates/
+│   │   ├── react/
+│   │   │   ├── component.tsx
+│   │   │   ├── hook.ts
+│   │   │   └── types.ts
+│   │   ├── api/
+│   │   │   ├── route.ts
+│   │   │   ├── middleware.ts
+│   │   │   └── controller.ts
+│   │   └── database/
+│   │       ├── model.ts
+│   │       └── migration.ts
+│   └── prompts/
+│       ├── generate-component.md
+│       └── generate-api.md
+```
+
+This organization lets you invoke specific template subsets rather than loading everything for every request. The **supermemory** skill tracks template versions across sessions, while **tdd** generates test files alongside your generated implementations to ensure correctness.
+
 ## Best Practices for Template-Based Generation
 
 ### 1. Keep Templates Versioned

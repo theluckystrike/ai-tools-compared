@@ -250,6 +250,27 @@ describe('User Authentication', () => {
 
 Any developer reading the test understands exactly how the authentication system works—inputs, outputs, and error handling. Use the `tdd` skill to generate tests that double as living documentation for your most critical code paths.
 
+## Measuring Documentation Quality
+
+Documentation quality matters as much as quantity. Track these metrics to ensure your automated output stays useful:
+
+- **Coverage percentage**: What portion of public APIs have documentation?
+- **Staleness**: When was each doc last updated relative to its source code?
+- **Example presence**: Do docs include working code examples?
+- **Formatting consistency**: Are all files using the same doc style (JSDoc, Google-style, NumPy)?
+
+Use Claude to audit documentation quality periodically:
+
+```
+Audit the documentation in this project. Report:
+- Files with 0% documentation coverage
+- Files with outdated documentation (not updated in 90+ days)
+- Missing examples in function documentation
+- Inconsistent formatting across files
+```
+
+This periodic audit catches drift before it becomes a maintenance burden.
+
 ## Putting It Together
 
 The full automated code documentation workflow looks like this:

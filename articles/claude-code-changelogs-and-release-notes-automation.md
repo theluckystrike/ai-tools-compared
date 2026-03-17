@@ -303,6 +303,43 @@ Claude can enforce these standards when generating output, but humans need to es
 
 Automation generates drafts, not final releases. Always have a human review generated changelogs before publishing. Automation handles the heavy lifting; humans provide the nuance and context that readers appreciate.
 
+## Customizing Output Formats
+
+Different teams require different changelog formats. Your skill can output markdown, plain text, JSON, or HTML depending on your distribution channel:
+
+```yaml
+output_formats:
+  markdown:
+    template: "changelog-template.md"
+    include_toc: true
+  html:
+    styling: "github-style"
+    include_anchors: true
+  json:
+    schema: "keepachangelog"
+    pretty_print: true
+```
+
+The `docx` skill becomes valuable when generating polished Microsoft Word documents for stakeholders who need formatted release notes with corporate branding.
+
+## Automating Pre-release Validation
+
+Before publishing, validate your changelog for completeness. Add checks that ensure:
+
+- No empty sections (features without entries)
+- All referenced issues and PRs are closed
+- Breaking changes include migration notes
+- Minimum change threshold is met
+
+```yaml
+validation:
+  require_migration_for_breaking: true
+  min_changes_for_release: 1
+  check_issue_status: true
+```
+
+The `tdd` skill integrates here by running your test suite and including pass/fail status in release notes, providing confidence that shipped code works as expected.
+
 ## Advanced Techniques
 
 Once you have basic automation working, consider these enhancements:

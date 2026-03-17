@@ -86,7 +86,7 @@ Local models behave differently than cloud-based Claude. Adjust your skill expec
 
 **Prompt clarity matters more.** Cloud models have larger context windows and more training on following complex instructions. When using Ollama, write skill prompts that are explicit and linear. Break multi-step processes into numbered steps rather than flowing paragraphs.
 
-**Model selection affects skill execution.** The tdd skill works better with code-focused models like codellama or deepseek-coder. Creative tasks may work with llama3.2. Test your specific skills with different models to find optimal pairings. The [LLM evaluation and benchmarking guide](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/) provides a structured approach for measuring which models perform best for specific skill types.
+**Model selection affects skill execution.** The tdd skill works better with code-focused models like codellama or deepseek-coder. Creative tasks may work with llama3.2. Test your specific skills with different models to find optimal pairings. The [LLM evaluation and benchmarking guide](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/) provides a structured approach for measuring which models perform best for specific skill types.
 
 **Temperature settings improve consistency.** Add temperature configuration to your Ollama requests by modifying the skill's execution context. Lower temperatures (0.1-0.3) produce more predictable outputs for tasks like generating tests or following code patterns.
 
@@ -139,7 +139,7 @@ Experiment with different models for different skill types. The code-focused ski
 
 - [Claude Skill .md File Format: Full Specification Guide](/claude-skills-guide/claude-skill-md-format-complete-specification-guide/)
 - [Claude Skills for Enterprise Security and Compliance](/claude-skills-guide/claude-skills-for-enterprise-security-compliance-guide/)
-- [LLM Evaluation and Benchmarking with Claude Code](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/)
+- [LLM Evaluation and Benchmarking with Claude Code](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/)
 - [Claude Code Permissions Model and Security Guide](/claude-skills-guide/claude-code-permissions-model-security-guide-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

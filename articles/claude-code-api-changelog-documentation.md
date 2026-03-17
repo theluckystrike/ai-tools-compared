@@ -205,7 +205,7 @@ The Claude Code API changelog documentation serves as your primary resource for 
 
 - [Claude Code API Backward Compatibility Guide](/claude-skills-guide/claude-code-api-backward-compatibility-guide/)
 - [Claude Code Swagger Documentation Workflow](/claude-skills-guide/claude-code-swagger-documentation-workflow/)
-- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelog-generation-workflow/)
+- [Claude Code Changelog Generation Workflow](/claude-skills-guide/claude-code-changelogs-and-release-notes-automation/)
 - [Claude Skills Integrations Hub](/claude-skills-guide/integrations-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

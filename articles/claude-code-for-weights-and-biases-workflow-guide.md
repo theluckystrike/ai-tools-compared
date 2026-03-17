@@ -290,7 +290,7 @@ The key is to establish good logging practices early and use Claude's understand
 - [Claude Skills Guides Hub](/claude-skills-guide/guides-hub/)
 - [Claude Skills for Data Science and Jupyter: 2026 Guide](/claude-skills-guide/claude-skills-for-data-science-and-jupyter-notebooks/) — combine Jupyter notebooks with Claude skills for end-to-end ML workflows
 - [Automated Testing Pipeline with Claude TDD Skill](/claude-skills-guide/claude-tdd-skill-test-driven-development-workflow/) — apply TDD to ML training pipelines and evaluation scripts
-- [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/) — systematically evaluate and compare model performance
+- [Claude Code LLM Evaluation and Benchmarking Workflow](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/) — systematically evaluate and compare model performance
 - [Claude Skills with GitHub Actions CI/CD Pipeline](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/) — automate experiment tracking as part of your CI/CD pipeline
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

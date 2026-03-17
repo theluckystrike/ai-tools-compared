@@ -104,7 +104,7 @@ Total execution: 45-90 seconds
 Token usage: 8000-15000 tokens
 ```
 
-The **supermemory** skill introduces persistent context, which can reduce initialization time in long sessions but adds memory overhead. Benchmark both approaches to see which fits your workflow. For a deeper look at how Claude evaluates model outputs and measures quality, see the [LLM evaluation and benchmarking workflow](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/).
+The **supermemory** skill introduces persistent context, which can reduce initialization time in long sessions but adds memory overhead. Benchmark both approaches to see which fits your workflow. For a deeper look at how Claude evaluates model outputs and measures quality, see the [LLM evaluation and benchmarking workflow](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/).
 
 ## Benchmarking Real-World Scenarios
 
@@ -235,7 +235,7 @@ Regular benchmarking catches performance regressions early and validates optimiz
 ## Related Reading
 
 - [Claude Skills Token Optimization: Reduce API Costs Guide](/claude-skills-guide/claude-skills-token-optimization-reduce-api-costs/)
-- [LLM Evaluation and Benchmarking with Claude Code 2026](/claude-skills-guide/claude-code-llm-evaluation-and-benchmarking-workflow/)
+- [LLM Evaluation and Benchmarking with Claude Code 2026](/claude-skills-guide/claude-code-for-llm-evaluation-workflow-guide/)
 - [Claude Skills Slow Performance: Speed Up Guide](/claude-skills-guide/claude-skills-slow-performance-speed-up-guide/)
 - [Claude Skills with GitHub Actions CI/CD Pipeline 2026](/claude-skills-guide/claude-skills-with-github-actions-ci-cd-pipeline/)
 

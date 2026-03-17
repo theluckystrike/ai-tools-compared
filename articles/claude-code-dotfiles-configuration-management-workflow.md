@@ -115,6 +115,20 @@ Claude searches your entire configuration ecosystem, aggregating Docker-related 
 
 Claude examines both files, identifies their contents, and recommends whether consolidation makes sense for your use case.
 
+## Practical Integration Patterns
+
+### Configuration Debugging
+
+When something breaks in your shell environment, Claude can systematically trace through startup files. For example, if your terminal shows "command not found" for installed programs, Claude reads your bashrc, zshrc, and profile files, identifies PATH modifications, and pinpoints where the issue occurs. This beats manually grepping through multiple files.
+
+### Migration Assistance
+
+Moving to a new machine or switching shell platforms becomes smoother with Claude assisting. When migrating from bash to zsh, Claude reads your current bashrc and creates equivalent zsh configurations, accounting for syntax differences and zsh-specific features like global aliases. This extends to application migrations — moving from iTerm2 to Alacritty, Claude can translate your color schemes and keybindings.
+
+### Documentation Through Conversation
+
+Over time, configuration files accumulate options chosen for forgotten reasons. Use Claude to document decisions by asking it to examine your configuration alongside git history. Claude can explain why a particular option exists based on past commits and suggest whether it's still necessary.
+
 ## Machine-Specific Configurations
 
 Most developers need some variations between machines. Your work machine might require different git credentials than your personal laptop, and your server configurations differ from your desktop setup.
