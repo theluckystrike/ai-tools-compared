@@ -5,7 +5,7 @@ description: "Master the art of prompting AI coding assistants to generate preci
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-prompting-strategies-for-getting-accurate-code-from-ai-/
-categories: [guides, ai, development]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,7 +5,7 @@ description: "A practical guide for developers on crafting effective prompts tha
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-better-prompts-for-ai-code-generation-with-examples/
-categories: [guides, ai-coding]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

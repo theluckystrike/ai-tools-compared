@@ -5,7 +5,7 @@ description: "A practical guide for developers on managing AI context during lar
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-context-management-to-work-on-large-refactorin/
-categories: [guides, ai-tools]
+categories: [guides, comparisons]
 reviewed: true
 score: 8
 intent-checked: true

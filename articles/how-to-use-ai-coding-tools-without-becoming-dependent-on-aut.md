@@ -5,7 +5,7 @@ description: "A practical guide for developers on using AI coding assistants eff
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/
-categories: [guides, best-practices]
+categories: [guides]
 ---
 
 AI coding tools have transformed how developers write software, offering intelligent suggestions, automating repetitive patterns, and helping navigate unfamiliar APIs. However, relying too heavily on autocomplete features can erode your fundamental programming abilities over time. The key lies in using these tools as accelerators while maintaining your own problem-solving capabilities.
