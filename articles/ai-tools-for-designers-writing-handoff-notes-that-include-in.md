@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Writing effective handoff notes for design-development teams requires clarity, precision, and thoroughness. When your documentation includes interaction state descriptions, you bridge the gap between visual design and functional implementation. AI tools can significantly accelerate this process while maintaining quality. This guide explores practical approaches for using AI to generate comprehensive handoff documentation that covers all interaction states.

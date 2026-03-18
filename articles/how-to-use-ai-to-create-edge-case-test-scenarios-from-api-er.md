@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 API error documentation often contains valuable information that goes underutilized during testing. When an API provider lists error codes like `400 Bad Request`, `401 Unauthorized`, or `429 Too Many Requests`, these aren't just documentation—they're blueprints for comprehensive test coverage. AI tools can transform this static documentation into actionable test scenarios, helping you catch edge cases that manual testing often misses.
