@@ -133,7 +133,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Best Way to Use Claude Code with Existing CI/CD Pipelines](/claude-skills-guide/best-way-to-use-claude-code-with-existing-ci-cd/)
 - [Best Way to Use Claude Code with TypeScript Projects](/claude-skills-guide/best-way-to-use-claude-code-with-typescript-projects/)
 - [Best Way to Validate Claude Code Output Before Committing](/claude-skills-guide/best-way-to-validate-claude-code-output-before-committing/)
-- [Best Way to Version Control Claude MD Across Projects](/claude-skills-guide/best-way-to-version-control-claude-md-across-projects/)
 - [Best Way to Write CLAUDE.md File for Your Project](/claude-skills-guide/best-way-to-write-claudemd-file-for-your-project/)
 - [How to Block Chrome from Sending Data to Google](/claude-skills-guide/block-chrome-sending-data-google/)
 - [Block WebRTC Leak in Chrome: Complete Developer Guide](/claude-skills-guide/block-webrtc-leak-chrome/)

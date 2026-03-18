@@ -142,6 +142,45 @@ jobs:
 
 This validation prevents malformed skills from entering your repository. For skills that generate code—such as `tdd` producing test files—consider adding output validation to ensure generated content meets expected patterns.
 
+## Sharing Skills Across Projects
+
+When you maintain skills across multiple projects, symlinks and Git submodules prevent duplication while allowing project-specific customization.
+
+### Symlinks for Project-Specific Overrides
+
+Rather than copying skill files between projects, use symlinks with a project-specific skills structure:
+
+```bash
+my-project/
+├── .claude/
+│   └── skills/
+│       ├── project-specific.md -> ../../shared-skills/project-specific.md
+│       └── custom.md
+└── src/
+```
+
+This pattern works well when different projects require slightly different skill configurations. The `pdf` skill, for instance, might need different output paths for different projects. Keep the shared base in your centralized repo, then override or extend with project-specific files.
+
+### Git Submodules for Team Skills
+
+If you work on a team and want to share standardized skills, Git submodules pin to a specific commit, giving you reproducible skill versions:
+
+```bash
+git submodule add git@github.com:yourteam/claude-team-skills.git .claude/team-skills
+```
+
+When the team updates skills, each project pulls the new commit:
+
+```bash
+cd .claude/team-skills
+git pull origin main
+cd ../..
+git add .
+git commit -m "Update team skills to latest version"
+```
+
+This ensures everyone on the team uses identical skill configurations.
+
 ## Migration and Refactoring Strategies
 
 When refactoring skill structures, use git's history rewriting carefully. If you rename a skill directory, use `git mv` to preserve history:
