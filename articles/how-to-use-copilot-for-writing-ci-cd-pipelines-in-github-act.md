@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Copilot for Writing CI CD Pipelines in GitHub Actions"
+title: "How to Use Copilot for Writing CI CD Pipelines in GitHub."
 description: "A practical guide for developers on using GitHub Copilot to write and optimize CI CD pipelines in GitHub Actions with real examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
@@ -269,6 +269,11 @@ Iterate on suggestions rather than accepting them blindly. Start with a basic st
 Copilot accelerates workflow development, but understanding the underlying GitHub Actions concepts remains valuable. Use generated code as a starting point, then customize based on your project's specific requirements.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

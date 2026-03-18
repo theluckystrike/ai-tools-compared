@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Use AI to Generate Serverless Framework Configuration Files"
+title: "How to Use AI to Generate Serverless Framework."
 description: "Learn how to leverage AI tools to automatically generate Serverless Framework configuration files, including practical examples and code snippets for 2026."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-serverless-framework-configuration/
-categories: [serverless, ai, devops]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -231,6 +231,11 @@ Test in staging first. Deploy to a non-production environment to verify the conf
 AI tools have become valuable assistants for generating Serverless Framework configurations. They accelerate the initial scaffolding process and help you discover configuration options you might otherwise overlook. The key is providing clear requirements and reviewing the generated output for accuracy and security. As AI models continue improving, their understanding of serverless patterns will only deepen, making them even more capable infrastructure partners.
 
 Start with simple configurations and gradually tackle more complex setups as you learn how your AI tool interprets serverless requirements. The time savings accumulate quickly, especially when managing services with multiple functions and event sources.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

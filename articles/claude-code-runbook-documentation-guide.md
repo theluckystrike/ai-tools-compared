@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Runbook Documentation Guide"
-description: "A comprehensive guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation, and keep your documentation current."
+description: "A comprehensive guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation."
 date: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-runbook-documentation-guide/
@@ -248,3 +248,8 @@ Claude Code transforms runbook documentation from a tedious manual task into an 
 The key is providing rich context—configuration files, incident history, monitoring data—and treating generated runbooks as a starting point for refinement. Combine Claude Code's generation capabilities with your team's operational expertise to create documentation that truly supports effective incident response and system maintenance.
 
 Start by auditing your current runbook coverage, then use Claude Code to fill gaps and automate ongoing maintenance. Your on-call team will thank you when they have accurate, up-to-date documentation at their fingertips during incidents.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

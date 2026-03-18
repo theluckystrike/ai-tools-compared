@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI for Writing Prometheus Alerting Rules Effectively"
+title: "How to Use AI for Writing Prometheus Alerting Rules."
 description: "A practical guide for developers on leveraging AI tools to write Prometheus alerting rules. Real examples, code snippets, and techniques for 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -144,6 +144,11 @@ Always review the generated `for` duration—the time an condition must be true 
 ## Conclusion
 
 AI tools can significantly accelerate your Prometheus alerting rule development when used with proper context and validation. Provide specific metric information, generate reusable templates, and always test expressions before deployment. The combination of AI assistance and proper validation creates robust alerting that catches issues without overwhelming your on-call rotation.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

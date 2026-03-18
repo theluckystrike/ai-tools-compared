@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Generating Docker Compose Files for Complex Microservice Stacks"
-description: "Discover practical AI tools and techniques for generating Docker Compose configurations for complex microservice architectures. Learn how to automate container orchestration setup."
+title: "AI Tools for Generating Docker Compose Files for Complex."
+description: "Discover practical AI tools and techniques for generating Docker Compose configurations for complex microservice architectures. Learn how to automate."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-docker-compose-files-for-complex-mic/
@@ -197,5 +197,10 @@ AI tools excel at generating boilerplate and recognizing patterns, but they cann
 - **Persistence**: Ensure data volumes are correctly defined for databases and caches
 
 The most effective approach combines AI generation with human oversight. Use AI to accelerate initial configuration creation and handle repetitive patterns, then apply domain knowledge to customize for your specific requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

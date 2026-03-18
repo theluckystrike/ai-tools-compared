@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Windsurf Premium Model Access: Which Models Cost Extra Credits in 2026"
+title: "Windsurf Premium Model Access: Which Models Cost Extra."
 description: "A comprehensive guide to Windsurf Premium model access, including which AI models require extra credits, pricing breakdown, and recommendations for 2026."
 date: 2026-03-18
 author: "AI Tools Compared"
@@ -158,3 +158,8 @@ Choosing the right Windsurf Premium tier depends on your specific needs:
 Understanding which models cost extra credits helps you make informed decisions about your Windsurf Premium subscription. By strategically using standard models for routine tasks and premium models for complex challenges, you can optimize both your productivity and your budget.
 
 The key is matching model capability to task requirements—not every task requires the most advanced model, but having access to premium models when needed ensures you can handle any development challenge effectively.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Writing Effective Runbooks and Incident Playbooks"
+title: "How to Use AI for Writing Effective Runbooks and."
 description: "Learn practical techniques for leveraging AI to create clear, actionable runbooks and incident response playbooks that accelerate incident resolution."
 date: 2026-03-16
 author: theluckystrike
@@ -216,6 +216,11 @@ Always have experienced engineers review and test AI-generated content before de
 ## Conclusion
 
 AI accelerates runbook creation while improving consistency and coverage. The key lies in using AI as a drafting assistant rather than a final authority—generate initial content efficiently, then apply human expertise to verify accuracy and tailor to your specific environment. This hybrid approach produces documentation that remains usable when incident response speed matters most.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
