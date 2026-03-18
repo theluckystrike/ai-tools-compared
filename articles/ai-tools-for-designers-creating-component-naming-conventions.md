@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Designers Creating Component Naming Conventions From Design System Tokens"
-description: "A practical guide to using AI tools for generating consistent component naming conventions from design system tokens. Includes prompt strategies and code examples."
+title: "AI Tools for Designers Creating Component Naming."
+description: "A practical guide to using AI tools for generating consistent component naming conventions from design system tokens. Includes prompt strategies and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-designers-creating-component-naming-conventions/
@@ -191,5 +191,10 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 AI tools transform design tokens into component naming conventions by analyzing patterns, understanding context, and applying consistent logic. The process requires preparation — clean token data and clear constraints — but significantly accelerates naming decisions for design systems.
 
 Start with your existing token structure, provide representative examples, and refine prompts based on initial results. Over time, your team develops a prompt library tailored to your specific naming conventions.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
