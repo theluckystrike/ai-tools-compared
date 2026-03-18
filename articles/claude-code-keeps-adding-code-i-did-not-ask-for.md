@@ -134,6 +134,76 @@ Your CLAUDE.md file (or claude.md) serves as a persistent instruction set for Cl
 
 This configuration tells Claude Code your preferences upfront, reducing the need to repeat constraints in every prompt.
 
+## Practical Example: API Endpoint Boilerplate
+
+Here's a real scenario where focused prompting eliminates unwanted boilerplate:
+
+**Initial Request:**
+> "Create an API endpoint to get user data"
+
+**Claude Code Response (typical):**
+```python
+from flask import Flask, jsonify, request
+from typing import Dict, Any, Optional
+import json
+
+app = Flask(__name__)
+
+def validate_user_id(user_id: str) -> bool:
+    """Validate that user_id is a valid format."""
+    if not user_id or not isinstance(user_id, str):
+        return False
+    return len(user_id) > 0
+
+@app.route('/api/user/<user_id>', methods=['GET'])
+def get_user(user_id: str) -> Dict[str, Any]:
+    """
+    Retrieve user data by ID.
+
+    Args:
+        user_id: The unique identifier for the user
+
+    Returns:
+        JSON response containing user data
+    """
+    if not validate_user_id(user_id):
+        return jsonify({'error': 'Invalid user ID'}), 400
+
+    user_data = {
+        'id': user_id,
+        'name': 'Sample User',
+        'email': 'user@example.com'
+    }
+
+    return jsonify(user_data), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+**Refined Request:**
+> "Just the route handler function, no Flask setup or validation"
+
+**Claude Code Response (refined):**
+```python
+@app.route('/api/user/<user_id>', methods=['GET'])
+def get_user(user_id):
+    return jsonify({'id': user_id, 'name': 'Sample User'})
+```
+
+The difference is dramatic — from a full file to 3 lines. For many workflows, that concise version is exactly what's needed.
+
+## Creating a Custom Minimal-Code Skill
+
+You can create a custom skill that instructs Claude Code to minimize boilerplate by default:
+
+```yaml
+name: minimal-code
+description: Generate minimal, focused code snippets without boilerplate
+```
+
+Place it in `~/.claude/skills/minimal-code.md` and invoke it in a session with `/minimal-code` to set a persistent preference for concise output during that session.
+
 ## When to Allow Extra Code
 
 Sometimes the extra code Claude Code adds is actually beneficial. Error handling, type safety, and proper logging make code more robust. The key is knowing when to accept these additions and when to reject them.

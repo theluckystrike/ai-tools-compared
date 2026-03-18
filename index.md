@@ -1989,7 +1989,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Debugging Failed GitHub Actions Skill Steps in Claude Code](/claude-skills-guide/claude-code-github-actions-skill-step-failed-debug/)
 - [Claude Code Gives Incorrect Imports: How to Fix](/claude-skills-guide/claude-code-gives-incorrect-imports-how-to-fix/)
 - [Claude Code Ignores .md Instructions Fix](/claude-skills-guide/claude-code-ignores-claude-md-instructions-fix/)
-- [Claude Code Keeps Adding Boilerplate I Do Not Need](/claude-skills-guide/claude-code-keeps-adding-boilerplate-i-do-not-need/)
 - [Claude Code Keeps Adding Unnecessary Console Log.](/claude-skills-guide/claude-code-keeps-adding-unnecessary-console-log-statements/)
 - [Claude Code Keeps Breaking Imports When Refactoring](/claude-skills-guide/claude-code-keeps-breaking-imports-when-refactoring/)
 - [Claude Code Keeps Changing My Indentation Style](/claude-skills-guide/claude-code-keeps-changing-my-indentation-style/)
