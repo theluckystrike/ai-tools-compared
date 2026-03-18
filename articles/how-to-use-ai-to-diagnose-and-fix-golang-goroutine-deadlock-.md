@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Goroutine deadlocks are among the most frustrating issues in Go development. Your application simply stops responding, and the panic message often points you to a location far removed from the actual root cause. Understanding how to use AI to diagnose and fix these deadlock panic messages can save hours of frustrated debugging.
