@@ -1003,7 +1003,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code for Fortran Scientific Code Modernization Guide](/claude-skills-guide/claude-code-fortran-scientific-code-modernization-guide/)
 - [Claude Code Free Tier vs Paid Plan Comparison](/claude-skills-guide/claude-code-free-tier-vs-paid-plan-comparison/)
 - [Claude Code Free Tier vs Pro Plan: Feature Comparison 2026](/claude-skills-guide/claude-code-free-tier-vs-pro-plan-feature-comparison-2026/)
-- [Claude Code Freelance Developer Client Project Workflow.](/claude-skills-guide/claude-code-freelance-developer-client-project-workflow-guid/)
 - [Claude Code Freelancer Multi-Client Project Workflow Guide](/claude-skills-guide/claude-code-freelancer-multi-client-project-workflow-guide/)
 - [Claude Code French Developer Community Resources Guide](/claude-skills-guide/claude-code-french-developer-community-resources-guide/)
 - [Claude Code French Developer Team Collaboration Guide](/claude-skills-guide/claude-code-french-developer-team-collaboration-guide/)

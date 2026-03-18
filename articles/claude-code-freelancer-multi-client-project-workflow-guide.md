@@ -218,6 +218,30 @@ Different context. Client C's configuration specifies WordPress PHP conventions 
 
 Each transition takes seconds, and Claude Code immediately adapts to each client's specific requirements.
 
+## Project Discovery and Scope Management
+
+The discovery phase sets the tone for each engagement. Use Claude Code to accelerate requirements gathering: upload existing specs, wireframes, or brand guidelines and ask Claude to break complex features into actionable tasks and identify potential technical challenges early.
+
+When clients request changes mid-project, manage scope creep systematically:
+
+1. **Document the request** — use Claude Code to formalize the change request
+2. **Analyze impact** — ask for time and cost implications
+3. **Propose options** — offer alternatives that fit the original budget
+4. **Update agreements** — create written change orders before proceeding
+
+## Quality Assurance Before Delivery
+
+Establish a QA checklist that runs before every client delivery:
+
+- Unit tests pass with minimum coverage threshold
+- Integration tests pass for all API endpoints
+- Security scan clean with no vulnerabilities
+- Performance acceptable with load times under target
+- Browser and mobile testing complete
+- Documentation complete for all delivered features
+
+Create a Claude Code skill that runs through this checklist automatically, ensuring consistent quality across all client projects.
+
 ## Key Benefits of This Approach
 
 Implementing a structured multi-client workflow with Claude Code provides several advantages:
