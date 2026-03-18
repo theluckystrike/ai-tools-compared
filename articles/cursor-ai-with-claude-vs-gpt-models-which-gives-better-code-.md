@@ -5,6 +5,10 @@ description: "A practical comparison of Claude and GPT models in Cursor AI for c
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

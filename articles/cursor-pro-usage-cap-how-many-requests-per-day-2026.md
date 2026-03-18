@@ -5,6 +5,10 @@ description: "Understanding Cursor Pro's usage limits and request caps. Learn ho
 date: 2026-03-18
 author: theluckystrike
 permalink: /cursor-pro-usage-cap-how-many-requests-per-day-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
