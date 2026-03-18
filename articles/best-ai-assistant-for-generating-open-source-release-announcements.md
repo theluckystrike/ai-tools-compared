@@ -1,14 +1,14 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Generating Open Source Release Announcements: Compared"
+title: "Best AI Assistant for Generating Open Source Release."
 description: "Discover the best AI assistants for crafting professional open source release announcements with practical examples and tool comparisons."
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /best-ai-assistant-for-generating-open-source-release-announcements/
 reviewed: true
 score: 8
-categories: [best-of]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
@@ -157,3 +157,8 @@ All of these tools can save significant time in crafting release announcements w
 
 Remember that AI assists but doesn't replace human judgment—always review outputs for accuracy and appropriateness before publishing.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

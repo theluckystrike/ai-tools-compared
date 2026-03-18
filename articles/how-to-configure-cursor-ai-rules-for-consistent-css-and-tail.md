@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Configure Cursor AI Rules for Consistent CSS and Tailwind Class Ordering"
-description: "A practical guide to setting up Cursor AI rules for consistent CSS and Tailwind class ordering. Learn how to configure rules.yaml and .cursorrules for predictable code generation."
+title: "How to Configure Cursor AI Rules for Consistent CSS and."
+description: "A practical guide to setting up Cursor AI rules for consistent CSS and Tailwind class ordering. Learn how to configure rules.yaml and .cursorrules for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/
@@ -167,6 +167,11 @@ Document your rules in a README or internal wiki. This helps team members unders
 ## Conclusion
 
 Configuring Cursor AI rules for CSS and Tailwind class ordering creates consistent, maintainable code across your projects. Start with global rules for baseline consistency, then customize per-project as needed. Regular testing and refinement ensures the rules continue meeting your team's needs as projects grow.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

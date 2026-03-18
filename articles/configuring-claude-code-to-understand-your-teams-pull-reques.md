@@ -133,5 +133,10 @@ Track how well Claude's reviews align with human feedback over time. If reviewer
 
 Configuring Claude Code to understand your team's pull request review checklist transforms it from a general-purpose coding assistant into a specialized reviewer that aligns with your team's standards. By investing time in proper configuration, you get consistent, automated feedback that helps maintain code quality while reducing the burden on human reviewers.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

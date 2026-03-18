@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Create Cursorrules That Enforce Your Teams React Component Composition Patterns"
+title: "How to Create Cursorrules That Enforce Your Teams React."
 description: "A practical guide to creating Cursorrules that enforce your team's React component composition patterns. Real examples and implementation strategies."
 date: 2026-03-16
 author: theluckystrike
@@ -167,6 +167,11 @@ If something does not match, adjust your rules and test again. Iterating on your
 ## Conclusion
 
 Cursorrules transforms your AI coding assistant from a generic code generator into a team-specific pair programmer. By defining clear component composition patterns, props conventions, and file organization rules, you ensure consistency across your React codebase. Start with basic rules and refine them as your team identifies additional patterns worth standardizing.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

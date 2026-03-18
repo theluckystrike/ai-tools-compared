@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tool Customization Comparison: Claude.md vs CursorRules vs Copilot Instructions"
-description: "A practical comparison of AI tool customization methods: Claude.md, CursorRules, and GitHub Copilot instructions. Code examples and real-world insights for developers."
+title: "AI Tool Customization Comparison: Claude.md vs."
+description: "A practical comparison of AI tool customization methods: Claude.md, CursorRules, and GitHub Copilot instructions. Code examples and real-world insights."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/
@@ -144,6 +144,11 @@ Choose Copilot instructions if you prefer inline control or work across multiple
 Many developers use multiple methods together. A common setup includes Claude.md for high-level project guidelines, CursorRules for editor-specific behavior, and Copilot comments for experimental code sections. This layered approach maximizes customization flexibility.
 
 The best strategy depends on your specific workflow. Start with one method, measure its effectiveness, and add layers as needed. AI tool customization improves dramatically when you invest time in proper configuration.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
