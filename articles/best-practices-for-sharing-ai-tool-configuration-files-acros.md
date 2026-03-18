@@ -4,7 +4,7 @@ title: "Best Practices for Sharing AI Tool Configuration Files Across Distribute
 description: "A practical guide to sharing AI coding assistant configuration files across distributed engineering teams. Learn version control strategies, synchronization methods, and team collaboration patterns."
 date: 2026-03-16
 author: theluckystrike
-permalink: /best-practices-for-sharing-ai-tool-configuration-files-across-distributed-engineering-teams/
+permalink: /best-practices-for-sharing-ai-tool-configuration-files-acros/
 categories: [guides]
 tags: [tools]
 ---
