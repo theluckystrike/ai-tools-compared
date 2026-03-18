@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write an Enterprise Acceptable Use Policy for AI Coding Assistants"
+title: "How to Write an Enterprise Acceptable Use Policy for AI."
 description: "A practical guide for developers and IT leaders creating policies that govern AI coding assistant usage in enterprise environments."
 date: 2026-03-16
 author: theluckystrike
@@ -134,5 +134,10 @@ When developers understand why certain restrictions exist, they're more likely t
 ---
 
 An effective acceptable use policy for AI coding assistants balances security requirements with developer productivity. By clearly defining approved tools, data handling rules, and enforcement mechanisms, your organization can confidently adopt AI-assisted development while maintaining compliance and protecting intellectual property.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "AI Coding Tool Penetration Test Findings: Common Vulnerabilities in IDE Plugins"
-description: "A comprehensive analysis of common vulnerabilities discovered in AI coding tool IDE plugins through penetration testing. Practical examples and security recommendations for developers."
+title: "AI Coding Tool Penetration Test Findings: Common."
+description: "A comprehensive analysis of common vulnerabilities discovered in AI coding tool IDE plugins through penetration testing. Practical examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-penetration-test-findings-common-vulnerabilit/
-categories: [security]
+categories: [guides]
 tags: [ai-tools, penetration-testing]
 reviewed: true
 score: 8
@@ -195,6 +195,11 @@ Vendors are responding with enhanced security features, including:
 However, developers must remain vigilant. The attack surface continues expanding as AI coding tools integrate more deeply into development workflows.
 
 Stay informed about security advisories from your AI coding tool providers. Participate in responsible disclosure programs to help vendors identify vulnerabilities before attackers can exploit them.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
