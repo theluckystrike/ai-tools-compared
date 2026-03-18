@@ -9,9 +9,10 @@ categories: [guides]
 tags: [debugging, logs, production]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When production issues arise, developers face the challenge of parsing through massive log files to identify the root cause. Modern AI tools can significantly accelerate this debugging process when used with a structured approach. This guide presents a practical workflow for using AI to analyze production logs and resolve issues efficiently.
+AI tools can accelerate production debugging by parsing logs, suggesting root causes, and recommending fixes. This guide shows the workflow: feed logs into AI, ask targeted questions about patterns and errors, validate suggestions before deploying, and use AI to write fix explanations for your team.
 
 ## The Core Debugging Workflow
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Monorepos require explicit context configuration to prevent AI from hallucinating about unrelated packages. This guide shows how to set up AI tools to include only relevant workspace paths, package dependencies, and type definitions while excluding irrelevant codebases.
 
 When working with large monorepo projects, AI coding assistants often struggle to provide relevant suggestions because they attempt to process the entire repository. Configuring context includes and excludes allows you to direct the AI's attention to the specific packages and directories that matter for your current task. This results in more accurate completions, better-informed responses, and faster interactions.
 

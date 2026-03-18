@@ -10,10 +10,10 @@ categories: [guides]
 tags: [tools, productivity]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-# How to Get AI Code Suggestions That Follow Your Project Naming Conventions
+AI tools follow your naming conventions when you include examples in your codebase context and explicitly mention conventions in prompts. This guide shows which tool configurations, context inclusions, and prompt phrasings actually enforce your naming standards versus producing generic names.
 
 AI code completion tools have transformed how developers write code, but one persistent challenge remains: getting these tools to respect your project's specific naming conventions. Whether you use snake_case, camelCase, PascalCase, or custom prefixes, training your AI assistant to match your codebase conventions saves significant editing time and maintains code consistency across your team.
 

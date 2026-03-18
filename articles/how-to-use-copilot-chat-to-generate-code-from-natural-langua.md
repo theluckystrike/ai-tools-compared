@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Generate code with Copilot chat by describing requirements in natural language, iterating on implementation details, and asking for explanations. This guide shows the conversation flow that produces working code efficiently.
 
 GitHub Copilot Chat provides a powerful interface for generating code through natural language conversations. Instead of writing every line manually, you can describe what you need in plain English and receive functional code snippets that integrate with your project. This approach accelerates development and helps developers quickly prototype ideas or implement features they might otherwise postpone.
 

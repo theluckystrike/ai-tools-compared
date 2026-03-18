@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Scientific computing with Python relies heavily on NumPy, SciPy, and related libraries for numerical operations, data processing, and mathematical computations. Finding AI assistants that understand these libraries and generate correct, efficient code requires evaluating their knowledge of array operations, vectorized computations, and numerical stability. This guide compares leading AI coding tools based on their ability to produce production-quality NumPy and scientific computing code.
+Several AI tools excel at this task. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation.
 
 ## What Defines Quality in Scientific Computing Code Generation
 

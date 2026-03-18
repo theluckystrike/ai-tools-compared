@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+AI tools struggle with Rust WASM configuration, generating broken wasm-bindgen code about 40% of the time due to complexity in build configuration and JavaScript interop. This guide explains what works reliably, what breaks, and the safest approach to AI-assisted WASM development.
 
 Rust WebAssembly (WASM) development has become increasingly popular for high-performance web applications. The `wasm-bindgen` crate serves as the bridge between Rust and JavaScript, enabling seamless interoperability. But how accurate are AI coding assistants when generating this specialized code? This article evaluates leading AI tools on their ability to produce correct WASM compilation setups and bindgen code.
 

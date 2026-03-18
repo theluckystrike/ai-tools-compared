@@ -10,10 +10,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-GitHub Copilot has transformed how developers write code by suggesting snippets based on patterns learned from vast code repositories. However, with great power comes legal responsibility. When Copilot suggests code derived from open source projects, understanding its code referencing feature and license detection capabilities becomes essential for developers who want to stay compliant.
+This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
 ## What Is the Code Referencing Feature
 

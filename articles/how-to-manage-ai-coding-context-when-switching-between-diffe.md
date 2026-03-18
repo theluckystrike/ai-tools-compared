@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Working with AI coding assistants across multiple features in a single project introduces a specific challenge: context management. When you switch between implementing authentication, then debugging a payment flow, then adding user notifications, the AI model loses track of what you were just doing. Understanding how to manage this context transition directly impacts your productivity and the quality of generated code.
+Switch between features without losing AI context by explicitly naming features in prompts, maintaining separate chat threads per feature, and periodically summarizing context. This guide shows the workflow that keeps AI focused on the right problem as you jump between different tasks.
 
 This guide covers practical methods for maintaining context continuity with AI coding tools, regardless of which assistant you use.
 

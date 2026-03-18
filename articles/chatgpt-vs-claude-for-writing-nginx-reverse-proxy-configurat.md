@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When setting up a reverse proxy with Nginx, having accurate configuration files is essential for routing traffic correctly. Both ChatGPT and Claude can help you write Nginx reverse proxy configurations, but their approaches differ in ways that matter for developers and system administrators. This comparison examines how each AI assistant performs when you need to configure Nginx as a reverse proxy.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Basics
 

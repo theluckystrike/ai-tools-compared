@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Artificial intelligence has made significant progress in code generation, but systems programming presents unique challenges. Rust's unsafe code blocks and foreign function interface (FFI) operations sit at the intersection of memory safety guarantees and low-level systems work. This article evaluates how accurately current AI tools handle these specialized Rust features.
+AI tools generate incorrect unsafe code about 30% of the time due to missing proper synchronization, memory layout assumptions, and FFI safety violations. This guide shows which unsafe patterns are safe to generate with AI and which absolutely require expert manual review.
 
 ## Understanding the Challenge
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [code-review, best-practices]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI coding assistants have transformed how developers write code, but the output still requires careful human review. Blindly trusting AI-generated code can introduce security vulnerabilities, performance issues, and bugs that are difficult to track later. This guide provides practical strategies for reviewing AI-generated code before it enters your repository.
+AI-generated code requires specific review patterns that catch hallucinations, missing error handling, and subtle bugs before they reach production. This guide covers the checklist, code patterns, and questions that reveal whether AI output is actually production-ready or requires substantial rework.
 
 ## Start with Understanding the Generated Code
 

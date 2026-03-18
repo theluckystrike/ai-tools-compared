@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Building SwiftUI interfaces from design specs traditionally requires significant manual effort. You receive a Figma mockup or a design specification document, then manually translate colors, spacing, typography, and layout constraints into SwiftUI code. This process is time-consuming and prone to inconsistencies. In 2026, several AI tools claim to automate this workflow—but which ones actually deliver production-ready code?
+Claude generates better SwiftUI from design specs than Cursor due to superior reasoning about layout constraints and state management, while Cursor excels at file scaffolding. This guide compares both tools on different design patterns.
 
 ## The Challenge of Design-to-SwiftUI Conversion
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [interview, tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Use AI during live coding by having AI suggestions off by default, activating it for specific problems, and narrating decisions to avoid creating confusion. This guide shows the workflow that keeps live coding interactive while leveraging AI assistance.
 
 Live coding interviews have evolved significantly with the integration of AI coding assistants. Whether you're interviewing at a startup or a tech giant, understanding how to leverage these tools effectively can differentiate you from other candidates. This guide provides actionable strategies for using AI coding tools during technical interviews in 2026.
 

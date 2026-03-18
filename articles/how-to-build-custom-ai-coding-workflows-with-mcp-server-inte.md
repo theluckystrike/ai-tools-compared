@@ -9,10 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-Building custom AI coding workflows has become essential for developers seeking to automate repetitive tasks and enhance productivity. The Model Context Protocol (MCP) provides a standardized way to connect AI assistants with external tools and services. This guide shows you how to construct practical workflows that integrate MCP servers into your development process.
+Build custom AI coding workflows by creating MCP servers that expose your proprietary tools, database queries, or domain knowledge to Claude, then integrate into your IDE. This guide shows step-by-step how to create a basic MCP server and wire it into your coding assistant.
 
 ## Understanding MCP Server Architecture
 

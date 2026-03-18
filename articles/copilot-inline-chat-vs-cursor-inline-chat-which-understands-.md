@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Inline chat has become an essential workflow for developers who want AI assistance without leaving their editor. Both GitHub Copilot and Cursor offer inline chat capabilities, but their approach to understanding your code differs substantially. This comparison examines how each tool processes context, handles complex queries, and delivers accurate code modifications.
+This guide provides a comprehensive overview to help you understand and make informed decisions about this topic.
 
 ## How Inline Chat Works in Each Platform
 

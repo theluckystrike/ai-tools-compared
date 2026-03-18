@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 # Copilot vs Claude Code for Scaffolding New Django REST Framework Project
 
-When starting a new Django REST Framework (DRF) project, developers often face a common bottleneck: setting up the initial project structure, models, serializers, views, and URLs takes time even when you know the patterns. AI coding assistants have become valuable tools for accelerating this scaffolding process, and two options stand out for terminal-based workflows—GitHub Copilot and Claude Code. Each takes a different approach to helping you bootstrap a DRF project, and understanding these differences helps you choose the right tool for your workflow.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Tools
 

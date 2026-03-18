@@ -8,9 +8,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
+
+This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
+
 ## Introduction
 
 Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing robust testing workflows for Claude Code SDK implementations.

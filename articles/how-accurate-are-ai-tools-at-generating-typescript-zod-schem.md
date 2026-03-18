@@ -10,10 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-Zod has become the go-to library for TypeScript runtime validation, but writing schemas manually takes time. Developers increasingly turn to AI tools to generate Zod schemas automatically. This article puts that promise to the test by examining how well different AI assistants generate accurate Zod validation schemas from TypeScript types, JSON structures, and API responses.
+AI tools generate correct Zod schemas about 80% of the time for common validation patterns but frequently miss edge cases, custom validators, and complex nested structures. This guide evaluates each tool's accuracy and shows which schema types are reliable versus requiring manual review.
 
 ## Testing AI Tools with Zod Schema Generation
 

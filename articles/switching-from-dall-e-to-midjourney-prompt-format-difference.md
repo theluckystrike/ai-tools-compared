@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you have been generating images with DALL-E and are considering Midjourney, you will quickly discover that prompt engineering does not transfer directly between the two platforms. Each model has its own syntax expectations, parameter systems, and stylistic conventions. Understanding these differences will save you hours of trial and error and help you produce better results faster.
+Migrate DALL-E prompts to Midjourney by converting your descriptive prompts to style tokens, adjusting aspect ratios, and using Midjourney's parameter syntax. This guide shows the translation patterns for different image types.
 
 This guide covers the key distinctions between DALL-E and Midjourney prompt formats, with practical examples you can use immediately.
 

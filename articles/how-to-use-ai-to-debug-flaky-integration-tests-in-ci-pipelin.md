@@ -9,9 +9,10 @@ categories: [guides]
 tags: [testing, ci-cd, debugging]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Debug flaky tests with AI by analyzing test logs, asking about race conditions and timing issues, and getting suggestions for stabilization. This guide shows the prompting technique that helps AI identify subtle flakiness causes.
 
 Flaky integration tests represent one of the most frustrating challenges in CI/CD pipelines. These tests fail intermittently without code changes, eroding team confidence in the test suite and wasting hours of developer time. Traditional debugging approaches—adding logs, increasing timeouts, and manually analyzing test output—often prove insufficient. AI-powered debugging tools now offer a more systematic approach to identifying root causes and suggesting fixes.
 

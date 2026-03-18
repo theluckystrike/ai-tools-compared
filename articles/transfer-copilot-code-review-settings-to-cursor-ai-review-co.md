@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you're making the switch from GitHub Copilot to Cursor AI, you might be wondering how to preserve your custom code review configurations. While these two tools handle AI-assisted coding differently, there are practical ways to translate your Copilot preferences into Cursor's environment. This guide walks you through the process.
+Transfer Copilot code review settings to Cursor by exporting rules, reconfiguring Cursor's AI review panel, and testing on sample code. This guide shows how to preserve your custom code review logic.
 
 ## Understanding the Difference Between Copilot and Cursor
 

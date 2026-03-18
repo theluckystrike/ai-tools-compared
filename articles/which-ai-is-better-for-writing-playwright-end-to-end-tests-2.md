@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Testing web applications with Playwright has become the standard for modern end-to-end testing. As AI coding assistants improve, developers increasingly ask which tool writes the best Playwright test code. This guide compares the leading AI options based on practical test generation capabilities.
+Claude produces more maintainable Playwright tests with better selector strategies and error handling, while Cursor scaffolds test files faster. This guide compares both on test coverage, flakiness prevention, and maintainability.
 
 ## Why AI-Assisted Playwright Test Writing Matters
 

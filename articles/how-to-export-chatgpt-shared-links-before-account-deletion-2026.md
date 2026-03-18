@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you're planning to delete your ChatGPT account, you probably have shared links you've created over time—conversations you've generated and shared with colleagues, clients, or posted publicly. These links represent valuable content you may want to keep. This guide walks you through the process of exporting your ChatGPT shared links before your account is permanently deleted.
+Export ChatGPT shared links by using Markdownify to convert HTML to readable text, or use third-party archive tools before deleting your account. This guide shows the most effective method for each content type: conversations, code snippets, and long-form responses.
 
 ## Why Export Your Shared Links First
 

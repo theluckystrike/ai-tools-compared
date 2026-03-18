@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-GitHub Copilot has transformed how developers write code, and the free tier offers remarkable value for open source maintainers and contributors. Understanding how to maximize this resource can significantly boost your productivity while keeping costs at zero.
+Maximize GitHub Copilot free tier on open source by batching your completions, focusing on boilerplate tasks where Copilot excels, and strategically using the monthly limit for your highest-ROI work. This guide shows the workflow that gets maximum value before hitting the 2,000 completion limit.
 
 ## Understanding the Free Tier Eligibility
 

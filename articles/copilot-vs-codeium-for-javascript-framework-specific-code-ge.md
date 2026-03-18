@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-JavaScript framework-specific code generation has become a critical use case for AI coding assistants. When working with React and Vue, developers need tools that understand component lifecycles, state management patterns, and framework-specific conventions. This comparison evaluates GitHub Copilot and Codeium based on their ability to generate high-quality, production-ready code for React and Vue applications.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding Framework-Specific Code Generation
 

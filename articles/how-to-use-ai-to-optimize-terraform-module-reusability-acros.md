@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Terraform modules serve as building blocks for infrastructure as code. When teams create reusable modules, they accelerate provisioning, reduce errors, and enforce consistency. However, maintaining modules that work across multiple use cases while remaining simple enough for teams to adopt presents challenges. AI tools offer practical solutions for improving module design, documentation, and adoption.
+Optimize Terraform modules by asking AI to identify duplication across modules, abstract common patterns, and generate reusable components. This guide shows the refactoring workflow that increases module reusability while maintaining backwards compatibility.
 
 ## The Reusability Challenge
 

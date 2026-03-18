@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Adding type hints to untyped Python code is one of the most time-consuming tasks when modernizing legacy codebases. Both Cursor and GitHub Copilot offer AI-assisted type annotation features, but they approach the problem differently. This comparison examines how each tool performs when you need to add type hints to existing Python code.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Type Hint Challenge
 

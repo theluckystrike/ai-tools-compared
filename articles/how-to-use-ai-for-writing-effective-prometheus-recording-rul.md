@@ -9,9 +9,10 @@ categories: [guides]
 tags: [prometheus, monitoring, ai]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Write Prometheus rules with AI by providing metric definitions, asking for common aggregations, and requesting rules for specific alerting scenarios. This guide shows which prompts generate correct recording rules versus those requiring substantial manual fixing.
 
 Recording rules in Prometheus transform complex, expensive queries into pre-computed results that dashboards and alerts can consume instantly. Writing effective recording rules requires understanding your metric patterns, query performance characteristics, and the relationships between your time series data. AI tools can accelerate this process by generating rule templates, identifying optimization opportunities, and validating expressions before deployment.
 

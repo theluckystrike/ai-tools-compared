@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Writing comprehensive pytest fixtures and mocks can significantly impact your test suite's maintainability and coverage. Both GitHub Copilot and Cursor AI offer code completion and generation capabilities, but their approaches differ in meaningful ways for test infrastructure. This comparison examines practical outcomes when using each tool for pytest fixtures and mock patterns.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Core Differences
 

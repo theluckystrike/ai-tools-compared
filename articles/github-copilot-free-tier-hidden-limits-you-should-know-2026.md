@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+GitHub Copilot free tier has several hidden limits: 2,000 completions per month, no chat interface, limited context window, and blocking on enterprise firewalls. This guide explains each limit, workarounds, and when upgrading to Pro actually makes sense for your workflow.
 
 GitHub Copilot has become an essential tool for developers, offering AI-powered code suggestions that can significantly speed up development workflows. While the free tier appears generous at first glance, several hidden limitations can catch you off guard mid-project. Understanding these constraints helps you plan your workflow and avoid frustrating interruptions when you need Copilot the most.
 

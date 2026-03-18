@@ -9,9 +9,10 @@ categories: [guides]
 tags: [ai, api, development]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Use multi-file context to generate consistent APIs by including multiple endpoint examples and data models, ensuring AI understands your patterns. This guide shows how multi-file awareness prevents consistency issues across your API.
 
 Generating consistent API endpoints across a large codebase presents real challenges. When you have multiple developers, evolving requirements, and dozens of endpoints, subtle inconsistencies creep in. AI coding assistants with multi-file context capabilities offer a solution by understanding your entire project structure and generating endpoint code that matches your existing patterns.
 

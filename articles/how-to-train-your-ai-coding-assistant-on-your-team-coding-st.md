@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI coding assistants have become integral to modern development workflows, but generic suggestions often miss the mark. When your team follows specific conventions, naming patterns, or architectural approaches, default AI responses can feel out of place. Training your AI assistant on your team's coding standards produces more relevant, consistent, and useful suggestions that align with your codebase.
+Train your AI assistant on team standards by including your coding guidelines in context, showing pattern examples in prompts, and providing feedback on non-compliant suggestions. This guide shows the training workflow that makes AI output match your team's style without manual rework.
 
 This guide covers practical methods for teaching AI coding assistants understand and respect your team's unique conventions.
 

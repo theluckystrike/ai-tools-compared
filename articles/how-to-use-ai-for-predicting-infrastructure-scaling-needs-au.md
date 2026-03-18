@@ -9,10 +9,10 @@ categories: [guides]
 tags: [infrastructure, devops, ai]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-Predicting infrastructure scaling needs before traffic spikes occur prevents downtime, reduces costs, and improves user experience. Manual capacity planning relies on guesswork and historical averages. AI-driven prediction analyzes patterns in your metrics data and forecasts future resource requirements with greater accuracy. This article shows you how to implement automated infrastructure scaling predictions using machine learning models and existing monitoring data.
+Use AI to predict scaling by analyzing metrics, asking what-if questions about traffic patterns, and generating load testing scenarios. This guide shows the prompting techniques that help AI analyze infrastructure data and recommend proactive scaling decisions.
 
 ## Understanding the Problem
 

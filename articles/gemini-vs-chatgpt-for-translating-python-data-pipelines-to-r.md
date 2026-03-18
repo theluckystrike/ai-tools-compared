@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Translating Python data pipelines to Rust can significantly improve performance for compute-intensive workflows. Python remains the dominant language for data engineering, but Rust's zero-cost abstractions and memory safety make it attractive for high-throughput pipelines. This comparison evaluates how Gemini and ChatGPT handle the translation from Python to Rust, focusing on code quality, accuracy, and developer experience.
+Choose Gemini for idiomatic Rust code that leverages the ecosystem's best libraries and patterns. Choose ChatGPT if you need more explicit explanations and step-by-step guidance during translation. This comparison evaluates both on handling Rust's ownership model, error types, and the conceptual gap between Python and Rust paradigms.
 
 ## Why Translate Data Pipelines to Rust
 

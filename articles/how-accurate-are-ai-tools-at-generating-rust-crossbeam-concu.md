@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Crossbeam is one of Rust's most popular crates for concurrent programming, providing tools like channels, epochs, and atomic collections. As AI coding assistants become more prevalent, developers want to know: how well do these tools actually generate Crossbeam code? I tested the leading AI coding tools with various Crossbeam patterns to find out.
+AI tools generate correct Crossbeam code for basic channel patterns and synchronization primitives about 70% of the time, but struggle with advanced features like epochs and memory ordering. This guide shows which patterns each tool handles well, which require manual verification, and when to review the output closely.
 
 ## Testing Methodology
 

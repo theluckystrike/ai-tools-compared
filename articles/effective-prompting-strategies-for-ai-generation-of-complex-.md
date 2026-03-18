@@ -10,10 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-{%- include why-choose-ai-sql.html -%}
+Writing SQL queries with AI requires prompting strategies that specify your database schema, expected query patterns, and performance constraints upfront. This guide demonstrates which prompt structures, examples, and follow-up questions produce correct, optimized SQL across complex joins, aggregations, and window functions.
 
 AI tools have become capable of generating sophisticated SQL queries, but getting them to produce exactly what you need requires knowing how to ask. The difference between a generic response and a production-ready query often comes down to how you structure your prompt. This guide covers practical strategies for eliciting complex SQL from AI systems in 2026.
 

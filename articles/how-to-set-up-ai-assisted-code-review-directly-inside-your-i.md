@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-# How to Set Up AI Assisted Code Review Directly Inside Your IDE
+Set up AI code review in your IDE by configuring extensions, creating review comment templates, and running AI analysis as a pre-commit hook. This guide shows the setup that integrates AI review into your workflow without slowing down your commit process.
 
 Waiting for pull request reviews slows down development cycles. Setting up AI-assisted code review directly inside your IDE catches issues before you commit, reducing review iterations and improving code quality. This guide walks you through configuring real-time AI code review in Visual Studio Code, JetBrains IDEs, and modern AI-first editors.
 

@@ -10,10 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-Creating reusable prompt templates transforms sporadic AI coding sessions into systematic, efficient workflows. Rather than crafting fresh prompts for every task, you build parameterized templates that capture best practices and produce consistent results. This approach saves time, reduces prompt fatigue, and helps teams maintain coding standards across projects.
+Create reusable prompt templates that capture your coding standards, error handling patterns, and preferred libraries—this transforms sporadic AI sessions into systematic, consistent workflows. This guide shows the template structure that actually works and how to maintain them.
 
 ## Why Reusable Templates Matter
 

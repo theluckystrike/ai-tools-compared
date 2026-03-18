@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When AI coding assistants suggest imports that don't exist in your project, you face a frustrating cycle: code that looks correct, fails at runtime, and wastes debugging time. These hallucinated imports happen because AI models lose track of your actual project structure as the conversation grows. Managing the context window effectively stops this problem at its source.
+Prevent hallucinated imports by including only the files your feature needs in context, explicitly showing available imports in prompts, and asking AI to verify imports exist. This guide shows the context management technique that eliminates the frustration of AI suggesting non-existent modules.
 
 ## What Is the Context Window Problem
 

@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-# How to Switch from Cursor to Claude Code Without Losing Settings
+Switch from Cursor to Claude Code by exporting your Cursor settings, configuring equivalent keybindings in Claude Code, and migrating your custom prompts. This guide shows the step-by-step process that minimizes friction when making the switch.
 
 Making the switch from Cursor AI to Claude Code doesn't mean abandoning your carefully configured workflow. With proper preparation, you can export most of your custom settings and continue working without missing a beat. This guide walks you through preserving your snippets, keyboard shortcuts, and workspace preferences during the transition.
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Building a complete application from a single description used to require hours of setup and configuration. Today, several AI tools can generate entire project structures, boilerplate code, and functional prototypes based on natural language prompts. This guide examines the most cost-effective options for developers who want to spin up projects quickly without spending much money.
+Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
 ## What Makes a Tool Suitable for Full Project Generation
 

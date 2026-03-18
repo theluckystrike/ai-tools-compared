@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Use AI codebase search to find relevant code before generating, reducing hallucinations and ensuring consistency with existing patterns. This guide shows the search workflow that speeds up both finding references and generating code that matches your codebase style.
 
 AI coding assistants have become remarkably capable at generating code, but their output quality depends heavily on the context you provide. One of the most effective strategies for improving AI-generated code involves searching your existing codebase for relevant examples before requesting new code. This approach, often called "retrieval-augmented generation" in professional contexts, dramatically improves accuracy and consistency.
 

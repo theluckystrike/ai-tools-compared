@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools, aws, cdk, python]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Building AWS infrastructure with the Cloud Development Kit (CDK) in Python has become increasingly popular among developers who want the benefits of infrastructure as code with the expressiveness of Python. However, CDK Python code involves understanding AWS service concepts, construct hierarchy, and proper typing—which creates a learning curve and often leads to verbose configuration. AI coding assistants have emerged as valuable tools for accelerating CDK development, helping developers generate constructs, understand AWS patterns, and avoid common pitfalls.
+Several AI tools excel at this task. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation.
 
 This guide evaluates the best AI tools for writing AWS CDK infrastructure code in Python, focusing on practical output quality and developer experience.
 

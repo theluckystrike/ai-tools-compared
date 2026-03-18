@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Terraform state management is one of the most critical yet often overlooked aspects of infrastructure as code. The state file serves as the bridge between your configuration and the real-world resources Terraform creates. Poorly managed state leads to drift, conflicts, and deployment failures. AI tools can help you develop state management strategies that are secure, scalable, and maintainable.
+Manage Terraform state safely by asking AI for backend configurations, remote state strategies, and state file locking approaches. This guide shows which Terraform state patterns AI handles well and which require manual expertise.
 
 This guide covers practical methods for using AI to improve your Terraform state management workflow.
 

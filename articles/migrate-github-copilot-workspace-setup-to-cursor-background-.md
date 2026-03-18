@@ -9,10 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-If you have been using GitHub Copilot with custom workspace configurations and are considering switching to Cursor, understanding how to migrate your setup is essential for maintaining productivity. Both tools offer AI-assisted development, but their approaches to workspace handling differ significantly. This guide walks you through the process of moving your GitHub Copilot workspace setup to Cursor's background agent workflow.
+Migrate Copilot workspace setup to Cursor by exporting settings, recreating project structure in Cursor, and testing equivalent workflows. This guide shows the step-by-step migration that preserves your workspace optimization.
 
 ## Understanding the Core Differences
 

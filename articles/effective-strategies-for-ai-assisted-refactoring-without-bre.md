@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Refactoring legacy code feels risky. One wrong change and your test suite explodes. But AI coding assistants have changed this equation. When used strategically, AI tools can handle much of the heavy lifting in refactoring while you maintain confidence that tests stay passing.
+AI coding assistants can make legacy code refactoring significantly safer by generating tests before changes, suggesting incremental improvements, and explaining transformations. This guide shows you the workflow to refactor risky code using AI while maintaining test coverage and understanding every change.
 
 This guide covers practical strategies for AI-assisted refactoring that keep your test suite intact.
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-# How to Structure Project Files So AI Coding Tools Understand Context Better
+Structure projects for AI by using clear naming conventions, organizing related files together, maintaining consistent package structures, and avoiding deeply nested directories. This guide shows the file organization principles that help AI understand your codebase architecture.
 
 AI coding assistants have transformed how developers work, but their effectiveness depends heavily on how well they understand your project. When these tools grasp your codebase's structure, dependencies, and relationships, they provide more accurate suggestions, relevant code completions, and smarter refactoring. Here's how to organize your project files so AI coding tools deliver their best results.
 

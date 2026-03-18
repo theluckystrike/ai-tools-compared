@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Move Stable Diffusion to Midjourney by translating your custom models to Midjourney's style tokens, converting your prompts to their format, and adjusting sampling parameters. This guide shows the prompt transformation and configuration changes that achieve equivalent results.
 
 Moving your AI image generation workflows from Stable Diffusion to Midjourney requires understanding the fundamental differences between these two platforms. While Stable Diffusion runs locally with extensive customization options, Midjourney operates through Discord with its own prompt syntax and generation pipeline. This guide walks you through converting your existing workflows step by step.
 

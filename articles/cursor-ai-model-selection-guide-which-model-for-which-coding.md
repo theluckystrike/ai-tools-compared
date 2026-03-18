@@ -9,11 +9,12 @@ categories: [guides]
 tags: [cursor, ai, coding]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Cursor IDE offers multiple AI model options, each optimized for different aspects of software development. Understanding which model performs best for specific tasks significantly improves your coding workflow and output quality. This guide breaks down the available models and provides practical recommendations for matching them to your coding needs.
+This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
 ## Understanding Cursor's Model Options
 

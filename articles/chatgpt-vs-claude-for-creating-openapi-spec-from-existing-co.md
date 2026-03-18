@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-Generating OpenAPI specifications from existing code is a common challenge for developers maintaining legacy APIs or documenting microservices. Both ChatGPT and Claude can assist with this task, but they approach it differently. This comparison evaluates their strengths and weaknesses for creating OpenAPI specs from existing code.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Task
 

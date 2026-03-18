@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When you need to build Terraform modules from scratch, choosing the right AI coding assistant can significantly impact your productivity. GitHub Copilot and Cursor represent two different approaches to AI-assisted development—one as a traditional code completion tool embedded in your IDE, and the other as an AI-first code editor with more context awareness. This guide compares how each tool performs when creating Terraform modules from the ground up.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Core Differences
 

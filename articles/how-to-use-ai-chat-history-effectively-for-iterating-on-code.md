@@ -10,10 +10,10 @@ categories: [guides]
 tags: [productivity]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-{%- include why-choose-ai-chat-history.html -%}
+Use chat history effectively by maintaining context across iterations, referring back to earlier discussions, and building on previous code decisions. This guide shows the chat practices that keep iterations productive and prevent re-explaining context repeatedly.
 
 When working with AI coding assistants, each conversation builds on previous exchanges. The context from your chat history becomes a powerful tool for refining code solutions, avoiding past mistakes, and accelerating your development workflow. Learning to use this history effectively transforms how you iterate on problems with AI assistance.
 

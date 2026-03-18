@@ -9,10 +9,10 @@ categories: [guides]
 tags: [devops, ai, sre]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-{%- include ai-runbooks-intro.html -%}
+Use AI to draft runbooks by describing your systems, incident patterns, and resolution steps, then iterating with AI to refine decision trees and automation steps. This guide shows the workflow that produces runbooks useful enough for your team to actually follow.
 
 Runbooks and incident playbooks serve as the operational backbone for any reliability-focused engineering team. Yet many organizations struggle to maintain documentation that actually helps during incidents. AI tools offer a practical solution for creating, organizing, and refining these critical documents. This guide covers practical approaches to using AI for writing runbooks and incident playbooks that your team will actually use when seconds matter.
 

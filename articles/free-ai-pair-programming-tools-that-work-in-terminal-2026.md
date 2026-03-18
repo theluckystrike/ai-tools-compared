@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Terminal-based AI pair programming tools have matured significantly, offering developers a keyboard-first workflow without switching contexts. Whether you prefer staying in your command line environment or working on remote servers, several free options deliver solid AI assistance without cost. Here is what works in 2026.
+The best terminal AI pair programming tools are Cline, Claude in terminal via API, and Zed's AI assistant—all free and keyboard-native. This guide compares features, installation, and real-world workflows for developers who prefer CLI-only development environments.
 
 ## Claude Code: Anthropic's CLI Companion
 

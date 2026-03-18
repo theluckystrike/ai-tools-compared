@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Cursor has become a popular AI-powered code editor built on Visual Studio Code, offering intelligent code completion, chat-based assistance, and refactoring tools. If you're evaluating whether to stick with the free Hobby plan or upgrade to Pro, understanding the actual limitations helps you make an informed decision.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## What the Cursor Hobby Plan Actually Includes
 

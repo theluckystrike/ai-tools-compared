@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Open source contribution can feel intimidating. Between understanding codebase architecture, following project conventions, and crafting clear commit messages, the barrier to entry is real. AI tools have changed this equation significantly. With the right workflow, you can go from finding an issue to submitting a polished pull request in hours instead of days.
+Contributing to open source with AI assistants requires mapping the codebase first, then using AI to understand conventions, write compatible code, and prepare pull requests. This guide walks through the specific workflow that balances AI acceleration with the project maintainer expectations.
 
 This guide walks through a practical AI-assisted workflow for open source contribution. The strategies here work with any AI coding assistant, though specific command syntax varies by tool.
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [workflow, automation]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Effective multi-tool workflows use each AI tool's strengths: Cursor for file scaffolding, Claude for complex reasoning, GitHub Copilot for inline completion, and specialized tools for testing. This guide shows the exact workflow that speeds up full-stack development without tool thrashing.
 
 Modern full stack development involves numerous repetitive tasks across frontend, backend, and infrastructure layers. Rather than switching between AI tools manually, chaining them together creates automated pipelines that handle entire feature development cycles. This approach transforms isolated AI interactions into cohesive development workflows.
 

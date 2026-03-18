@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Generate production-ready error handling by explicitly requesting typed errors, specific exception cases, logging statements, and retry logic in prompts. This guide shows exactly which error-handling patterns to request in prompts that consistently produce robust, maintainable error handling.
 
 Error handling remains one of the most critical yet frequently neglected aspects of production software. When you delegate code generation to AI tools, getting robust error handling requires specific prompting strategies. This guide shows you how to craft prompts that produce production-ready error handling code across multiple programming languages and frameworks.
 

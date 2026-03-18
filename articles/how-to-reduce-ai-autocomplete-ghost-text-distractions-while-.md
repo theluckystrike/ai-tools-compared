@@ -9,10 +9,10 @@ categories: [guides]
 tags: [productivity]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-{%- include why-choose-ai-coding-productivity.html -%}
+Reduce ghost-text distractions by disabling autocomplete for specific file types, setting longer completion delays, or switching to chat-only mode during deep focus work. This guide shows which IDE settings actually reduce distraction versus just hiding the visual display.
 
 AI autocomplete has transformed how developers write code. Tools like GitHub Copilot, Cursor, and Codeium suggest entire functions, complete patterns, and generate boilerplate as you type. However, this helpful feature can become a distraction when ghost text—those faded suggestions popping up in your editor—interrupts your thought process or conflicts with what you're actually trying to write.
 

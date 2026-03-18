@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Managing AI coding context across multiple related repositories is a practical challenge that developers face when working with microservices, monorepos, or interconnected projects. When your AI assistant loses track of shared code, dependencies, or architectural patterns, you end up repeating context explanations and receiving less accurate suggestions. Here is how to maintain effective context across related repositories in 2026.
+Manage context across multiple repos by symlinking shared packages, maintaining a unified context in your IDE settings, and being explicit about which repo each task targets. This guide shows the configuration patterns that prevent hallucinated imports and cross-repo inconsistencies.
 
 ## Why Context Management Matters Across Repositories
 

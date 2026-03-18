@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-GitHub Copilot's vision capability transforms how developers work with visual design assets. Rather than manually translating mockups into code, you can now paste screenshots directly into Copilot Chat and receive accurate HTML, CSS, or component implementations. This feature bridges the gap between design and development workflows, saving hours of tedious reverse-engineering work.
+This guide provides a comprehensive overview to help you understand and make informed decisions about this topic.
 
 ## How Copilot Vision Works in Your Editor
 

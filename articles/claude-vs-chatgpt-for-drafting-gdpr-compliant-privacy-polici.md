@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When building applications that collect user data, having a solid privacy policy is not optional—it's a legal requirement under the General Data Protection Regulation. Both Claude and ChatGPT can help draft these documents, but they approach the task differently. This comparison examines how each AI assistant performs when creating GDPR-compliant privacy policies, with practical examples developers can use immediately.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding GDPR Requirements for Privacy Policies
 

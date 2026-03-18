@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you're considering moving from Gemini Advanced to Claude Pro for your coding workflow, there are several differences you should understand before making the switch. Both are powerful AI assistants, but they excel in different areas. Here's what you might lose when making the change.
+Switching to Claude Pro gains better reasoning and code generation but loses Gemini's superior real-time web search and Workspace integration. This guide shows feature-by-feature tradeoffs to help you evaluate the switch.
 
 ## Context Window Differences
 

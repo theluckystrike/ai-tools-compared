@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Cursor AI has become a popular code editor built on VS Code, offering powerful AI-assisted coding features. For developers working with sensitive codebases, proprietary algorithms, or in regulated industries, the question of data privacy is crucial. Cursor AI provides a privacy mode that addresses these concerns by allowing you to use AI features without sending your code to external servers.
+This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
 ## Understanding Cursor AI's Privacy Mode
 

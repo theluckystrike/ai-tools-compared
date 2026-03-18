@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+AI tools generate correct Serde schemas about 75% of the time for simple types but require substantial fixes for custom implementations, derive macros, and edge cases. This guide shows exactly which serialization patterns work reliably, which generate broken code, and how to verify correctness.
 
 Serde remains the de facto standard for serialization in Rust, yet writing manual serialization implementations can be tedious. Developers increasingly turn to AI coding assistants to generate this boilerplate code automatically. But how accurate are these tools really? This article puts popular AI assistants to the test with practical Rust serde serialization scenarios.
 

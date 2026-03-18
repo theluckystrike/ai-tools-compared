@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Generating entire projects from a description used to require expensive subscriptions or enterprise licenses. Now, several AI tools can scaffold complete applications from natural language prompts at a fraction of the cost. This guide breaks down the cheapest options for turning your ideas into working code.
+Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
 ## Why Generate Projects from Description?
 

@@ -9,10 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-When working on real-world software projects, you rarely change just one file. A new feature might require updates to a component file, its styles, tests, and type definitions. This is where multi-file editing capabilities become critical in AI-powered coding assistants. In this comparison, we examine how GitHub Copilot Workspace and Cursor Composer handle multi-file editing tasks in 2026.
+This guide provides a comprehensive overview to help you understand and make informed decisions about this topic.
 
 ## Understanding the Two Approaches
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-If you are looking for free, open source AI-powered coding assistants, two names frequently appear: Continue Dev and Cody (by Sourcegraph). Both offer free tiers, both integrate with popular editors, and both claim to understand your codebase. But which one actually delivers better value for developers working with open source tools? This comparison breaks down the practical differences.
+Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
 ## Understanding the Two Tools
 

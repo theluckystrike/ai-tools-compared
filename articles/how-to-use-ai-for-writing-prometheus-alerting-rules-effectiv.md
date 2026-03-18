@@ -10,10 +10,10 @@ categories: [guides]
 tags: [monitoring, prometheus, devops]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-{%- include why-choose-ai-autocomplete-boilerplate.html -%}
+Write Prometheus alerts with AI by providing metric definitions, alert thresholds, and notification requirements, then validating rules in staging first. This guide shows the prompting and validation workflow that prevents broken alerts in production.
 
 Writing Prometheus alerting rules manually can be time-consuming and error-prone. AI assistance has evolved significantly, offering developers powerful ways to generate, validate, and optimize Prometheus alerting rules. This guide shows practical techniques for using AI effectively in your alerting workflow.
 

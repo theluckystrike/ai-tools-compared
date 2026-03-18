@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI coding tools have transformed software development, but they share a common weakness: they tend to over-engineer solutions. When you ask an AI to build a feature, it often produces elaborate abstractions, unnecessary interfaces, and patterns that add complexity without adding value. This happens because AI models optimize for correctness and comprehensiveness, not simplicity. The good news is that you can guide AI tools toward simpler solutions with the right prompts and workflow adjustments.
+Prevent over-engineered solutions by explicitly requesting simplicity in prompts, showing simpler examples in context, and asking AI to explain why it made certain choices. This guide shows the prompting techniques that reliably get straightforward solutions instead of gold-plated code.
 
 ## Why AI Tools Over-Complexify Code
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI coding assistants have transformed how developers build user interfaces, but getting them to produce genuinely accessible code requires specific prompting strategies. This guide shows you how to craft prompts that consistently generate WCAG-compliant frontend components with proper semantic HTML, ARIA attributes, keyboard navigation, and focus management.
+To generate truly accessible frontend components with AI, you need specific prompting strategies that explicitly require semantic HTML, ARIA attributes, and keyboard navigation. Generic prompts produce visually functional but inaccessible code—this guide shows you exactly which phrases, constraints, and examples to include in your prompts to consistently get WCAG-compliant output.
 
 ## Why Standard Prompts Fall Short
 

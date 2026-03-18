@@ -10,10 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
-{%- include why-choose-ai-inline-completion.html -%}
+Use inline completion for function signatures by starting your function, letting AI suggest parameters and return types, then expanding the implementation. This guide shows the keystroke-efficient workflow for writing typed function signatures.
 
 Writing function signatures is one of the most frequent tasks in software development. Whether you're defining API endpoints, creating utility functions, or building class methods, the repetitive nature of signature writing slows down your workflow. AI inline completion transforms this process by predicting what you need based on context, comments, and your coding patterns.
 

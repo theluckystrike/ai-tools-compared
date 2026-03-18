@@ -9,12 +9,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 # Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin
 
-When you need to modernize a legacy Java codebase by migrating it to Kotlin, AI assistants can significantly accelerate the process. This article compares how Claude and ChatGPT handle the task of refactoring Java code to Kotlin, with practical examples and recommendations for developers.
+This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 ## Understanding the Migration Challenge
 

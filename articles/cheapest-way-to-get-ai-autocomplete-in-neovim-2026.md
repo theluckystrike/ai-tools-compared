@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Getting AI-powered autocomplete in Neovim doesn't require expensive subscriptions. Several free and low-cost options work directly within your existing Neovim setup. This guide covers the most practical solutions for developers who want intelligent code completion without breaking the bank.
+Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price point.
 
 ## Understanding Your Options
 

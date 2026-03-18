@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-{% raw %}
+Use inline chat to refactor functions by selecting the target function, describing desired improvements in natural language, and reviewing changes step-by-step. This guide shows how inline chat keeps refactoring focused and verifiable.
 
 AI inline chat in Visual Studio Code represents a significant shift in how developers approach code refactoring. Instead of switching between your editor and a separate AI chat interface, you can refactor functions directly where you write code. This guide walks you through using AI inline chat to refactor a single function, from understanding the feature to executing precise transformations.
 

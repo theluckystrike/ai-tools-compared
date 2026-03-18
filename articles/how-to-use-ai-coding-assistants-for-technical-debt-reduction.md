@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Technical debt accumulates silently in every codebase. Untested functions, duplicated logic, outdated dependencies, and sprawling functions all slow down development over time. Addressing this debt manually takes hours that most teams cannot spare. AI coding assistants offer a systematic approach to identifying, prioritizing, and reducing technical debt without bringing development to a standstill.
+Use AI to tackle technical debt by identifying debt patterns, generating targeted refactorings, and using AI to write supporting tests. This guide shows the systematic workflow that pays down debt without breaking features.
 
 This guide shows you how to use AI tools systematically to tackle technical debt in your projects.
 

@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Fine-tuning a model on OpenAI's platform gives you excellent results, but running inference through their API introduces latency, costs money per request, and creates dependency on external services. Many developers want to export their fine-tuned models for local use—either to reduce costs, work offline, or have complete control over their infrastructure. This guide walks you through the process of getting your fine-tuned model out of the OpenAI ecosystem and running it locally.
+Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned model ID—you cannot directly download the weights but can run inference locally with proper API integration. This guide explains the limitations and the practical workflow for local deployment.
 
 ## Understanding What You Actually Have
 
