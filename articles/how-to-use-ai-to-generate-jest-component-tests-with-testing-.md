@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Component Tests with Testing Library User Events"
+title: "How to Use AI to Generate Jest Component Tests with."
 description: "Learn how to leverage AI tools to automatically generate Jest component tests using Testing Library and user events for robust React applications."
 date: 2026-03-16
 author: theluckystrike
@@ -183,6 +183,11 @@ This workflow accelerates test coverage without sacrificing quality.
 ## Conclusion
 
 AI tools significantly reduce the time needed to write Jest component tests with Testing Library and user events. By providing clear context and specifying your testing libraries, you can generate reliable test boilerplate that captures real user interactions. Remember to review, refine, and enhance AI-generated tests to ensure they accurately reflect your component's behavior and provide meaningful coverage.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
