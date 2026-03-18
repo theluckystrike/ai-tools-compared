@@ -1,14 +1,14 @@
 ---
 
 layout: default
-title: "AI Coding Tool GDPR Compliance Checklist for European Engineering Teams 2026"
-description: "A practical GDPR compliance checklist for engineering teams using AI coding tools. Includes data handling requirements, privacy controls, and implementation examples for European regulations."
+title: "AI Coding Tool GDPR Compliance Checklist for European."
+description: "A practical GDPR compliance checklist for engineering teams using AI coding tools. Includes data handling requirements, privacy controls, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-gdpr-compliance-checklist-for-european-engine/
 reviewed: true
 score: 8
-categories: [compliance]
+categories: [guides]
 intent-checked: true
 voice-checked: true
 ---
@@ -220,5 +220,10 @@ Several mistakes frequently lead to GDPR violations with AI coding tools:
 | Vendor Documentation | Required | ☐ |
 
 By following this checklist, European engineering teams can adopt AI coding tools while maintaining GDPR compliance. Start with the required items, then implement the recommended controls based on your specific risk profile and data sensitivity.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Configure AI Coding Tools to Exclude Secrets and Env Files"
-description: "A practical guide for developers on configuring AI coding assistants like GitHub Copilot, Cursor, and Claude to exclude sensitive files from training and context."
+title: "How to Configure AI Coding Tools to Exclude Secrets and."
+description: "A practical guide for developers on configuring AI coding assistants like GitHub Copilot, Cursor, and Claude to exclude sensitive files from training."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/
@@ -226,5 +226,10 @@ Periodically review your configuration:
 Configuring AI coding tools to exclude secrets and environment files requires attention to tool-specific settings, repository organization, and ongoing vigilance. Most tools support exclusion through standard mechanisms like `.gitignore`, `.vscode/settings.json`, or custom configuration files.
 
 The key steps are: verify your `.gitignore` covers all sensitive file patterns, create tool-specific exclusion rules where needed, adopt structured secret management practices, and regularly audit your configuration. By implementing these measures, you can safely leverage AI coding assistants while keeping your credentials and secrets protected.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

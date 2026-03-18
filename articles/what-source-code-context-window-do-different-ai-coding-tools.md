@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "What Source Code Context Window Do Different AI Coding Tools Upload to Servers"
-description: "A practical guide examining context window sizes across popular AI coding tools. Learn what code gets uploaded and how much context each tool processes server-side."
+title: "What Source Code Context Window Do Different AI Coding."
+description: "A practical guide examining context window sizes across popular AI coding tools. Learn what code gets uploaded and how much context each tool processes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-source-code-context-window-do-different-ai-coding-tools/
@@ -144,6 +144,11 @@ Choosing an AI coding tool involves balancing several factors:
 | Cursor | Up to 100,000+ tokens | Claude/OpenAI servers |
 
 Understanding these differences helps you select tools that align with your privacy requirements and workflow needs. Many teams use multiple tools for different purposes, leveraging large-context tools for exploration while using faster tools for routine autocomplete tasks.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

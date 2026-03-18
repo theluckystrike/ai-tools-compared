@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Draft RFC Documents for Proposed Open Source Feature Changes"
-description: "Learn practical methods for using AI tools to draft RFC documents for open source feature proposals, with examples and code snippets for developers in 2026."
+title: "How to Use AI to Draft RFC Documents for Proposed Open."
+description: "Learn practical methods for using AI tools to draft RFC documents for open source feature proposals, with examples and code snippets for developers in."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/
@@ -156,6 +156,11 @@ Maintain your voice. Use AI to structure and draft, but add your own analysis an
 ## Conclusion
 
 AI tools can significantly accelerate RFC drafting for open source feature proposals. The key is treating AI as a collaborative tool—providing clear context, generating structured drafts, and then refining the output with your domain expertise. This approach helps you produce well-structured RFCs faster while ensuring the final document reflects your technical vision for the feature.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

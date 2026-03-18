@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Creating Open Source Project Architecture Documentation with Diagrams 2026"
+title: "Best AI for Creating Open Source Project Architecture."
 description: "A practical guide for developers comparing AI tools that generate architecture diagrams, C4 models, and technical documentation for open source projects."
 date: 2026-03-16
 author: theluckystrike
@@ -162,6 +162,11 @@ Most projects benefit from combining tools. Use Claude Code for initial document
 Effective architecture documentation reduces contributor friction and helps open source projects grow. AI tools significantly reduce the effort required to create and maintain this documentation, allowing maintainers to focus on code quality and community engagement.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

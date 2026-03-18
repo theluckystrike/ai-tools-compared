@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Ollama as Private AI Coding Assistant for Sensitive Codebases"
+title: "How to Set Up Ollama as Private AI Coding Assistant for."
 description: "A practical guide for developers looking to run local AI models for code assistance while keeping sensitive code completely private and offline."
 date: 2026-03-16
 author: theluckystrike
@@ -216,5 +216,10 @@ The entire interaction happens offline. No code leaves your machine.
 Ollama transforms local hardware into a capable AI coding assistant without sacrificing data privacy. By running models locally, you maintain complete control over sensitive code while benefiting from AI-powered suggestions, code completion, and debugging assistance. The setup process takes minutes, and the security benefits for regulated or proprietary projects are substantial.
 
 Experiment with different models to find what works best for your use case. As local AI capabilities improve, running sophisticated coding assistants entirely offline becomes increasingly viable.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

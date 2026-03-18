@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Detecting Duplicate GitHub Issues Using Semantic Similarity Matching"
+title: "AI Tools for Detecting Duplicate GitHub Issues Using."
 description: "A practical guide for developers using AI-powered semantic similarity tools to identify and merge duplicate GitHub issues automatically."
 date: 2026-03-16
 author: theluckystrike
@@ -127,5 +127,10 @@ Automating duplicate detection is just one part of maintaining a healthy issue t
 Over time, the data from detected duplicates can reveal patterns. If certain types of issues frequently get duplicated, consider whether the original issue could be more clearly written, or whether a FAQ document would help users find existing solutions before filing new reports.
 
 AI-powered duplicate detection reduces manual effort while improving the experience for both contributors and maintainers. By automatically surfacing similar issues when new reports come in, you help users discover relevant discussions faster and keep your project's issue tracker organized.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

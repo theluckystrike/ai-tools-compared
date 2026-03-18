@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Does WindSurf AI Send Entire Project Context or Just Open File to Servers"
-description: "A technical breakdown of how WindSurf AI handles context management, what gets sent to servers, and practical implications for developers concerned about privacy."
+title: "Does WindSurf AI Send Entire Project Context or Just."
+description: "A technical breakdown of how WindSurf AI handles context management, what gets sent to servers, and practical implications for developers concerned."
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-windsurf-ai-send-entire-project-context-or-just-open-fi/
@@ -129,6 +129,11 @@ This command captures network traffic to see exactly where your code is going.
 WindSurf AI does not send your entire project to external servers by default. Instead, it transmits the currently active file and any files you explicitly reference during your coding session. The AI can access more of your project when using advanced features like Cascade, but you maintain control through configuration options and privacy settings.
 
 For most developers, this balanced approach provides strong AI assistance while keeping unopened files local. If you're working with highly sensitive code, take advantage of WindSurf's configuration options and consider enterprise deployments for stricter controls.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
