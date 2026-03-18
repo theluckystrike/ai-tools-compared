@@ -5,6 +5,10 @@ description: "A practical guide for developers on using AI tools to identify and
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Tailwind CSS is a utility-first framework that has transformed how developers style web applications. However, when deploying to production, you may encounter situations where classes that work perfectly in development suddenly fail to apply. This guide shows you how to leverage AI to diagnose and resolve these issues efficiently.

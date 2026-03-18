@@ -6,7 +6,7 @@ description: "A practical guide to using AI tools for diagnosing and resolving A
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/
-categories: [ai-tools, android-development, gradle]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

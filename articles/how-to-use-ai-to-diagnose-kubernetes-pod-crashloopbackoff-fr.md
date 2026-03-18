@@ -5,7 +5,7 @@ description: "Learn practical techniques for using AI tools to analyze container
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/
-categories: [kubernetes, devops, debugging]
+categories: [guides]
 ---
 
 When a Kubernetes pod enters CrashLoopBackOff status, developers face the challenging task of diagnosing why their container keeps crashing. Traditional debugging involves manually parsing logs, checking resource limits, and piecing together clues from multiple sources. AI-powered tools now offer a more efficient approach to analyzing container logs and identifying root causes quickly.
