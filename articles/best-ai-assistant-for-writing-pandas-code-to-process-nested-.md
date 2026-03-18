@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Processing paginated API responses with nested JSON structures is a common challenge for developers working with data pipelines. When your API returns data spread across multiple pages with deeply nested objects, writing efficient pandas code to flatten, transform, and analyze this data requires careful handling. This article evaluates the best AI assistants for generating pandas code that handles nested JSON and API pagination effectively.

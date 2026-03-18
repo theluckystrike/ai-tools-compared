@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Moving SQL queries between different database systems remains a common challenge for developers. Each database platform has unique syntax, function names, and feature sets. While manual conversion works for simple queries, complex SQL often requires significant refactoring. AI tools now offer a practical solution for automating this translation process across PostgreSQL, MySQL, BigQuery, and Snowflake.

@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Midjourney has become one of the most popular AI image generation tools, offering multiple subscription tiers to cater to different user needs. If you're deciding between the Standard and Pro plans, the stealth mode feature is likely a key consideration. This guide breaks down exactly what you get with each plan and whether upgrading to Pro is worth it for the privacy features.
