@@ -293,6 +293,54 @@ async function validateStatusChecks(github, owner, repo, branch) {
 }
 ```
 
+## Managing Multiple Repositories
+
+For organizations managing multiple repositories, Claude Code can apply protection rules across all projects simultaneously.
+
+### Bulk Application
+
+Apply the same protection rules to multiple repositories at once:
+
+```bash
+claude code branch-protect bulk-apply --config branch-protection-config.yaml --org my-organization
+```
+
+This command iterates through all repositories in your organization and applies the specified protection rules, ensuring consistency without manual configuration.
+
+### Repository-Specific Overrides
+
+Sometimes you need variations for specific repositories. Create override configurations:
+
+```yaml
+# branch-protection-override.yml
+repository: special-project
+branches:
+  - name: main
+    protection:
+      required_approving_reviews: 1  # Override for this repo
+      require_code_owner_reviews: false
+```
+
+Apply the override alongside your base configuration:
+
+```bash
+claude code branch-protect apply --config branch-protection-config.yaml --override branch-protection-override.yml
+```
+
+## Troubleshooting Common Issues
+
+### Protected Branch Still Being Modified
+
+If users can push directly to protected branches, verify that branch protection is actually enabled and that users aren't bypassing it through admin permissions.
+
+### Status Checks Not Blocking Merges
+
+Ensure status checks are configured as required, not optional. Check that your CI system is correctly posting statuses to GitHub.
+
+### Override Not Working
+
+Verify the override file syntax and ensure the repository name matches exactly. Override files take precedence but require a valid base configuration.
+
 ## Common Pitfalls to Avoid
 
 When implementing Claude Code for branch protection rules workflow, watch out for these common issues:

@@ -556,7 +556,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code for Bicep Azure IaC Workflow Guide](/claude-skills-guide/claude-code-for-bicep-azure-iac-workflow-guide/)
 - [Claude Code for Bitbucket Pipelines Advanced Guide](/claude-skills-guide/claude-code-for-bitbucket-pipelines-advanced-guide/)
 - [Claude Code for Blue-Green Deployment Workflow](/claude-skills-guide/claude-code-for-blue-green-deployment-workflow/)
-- [Claude Code for Blue-Green Switch Workflow Guide](/claude-skills-guide/claude-code-for-blue-green-switch-workflow-guide/)
 - [Claude Code for Bolt.new Web App Workflow Guide](/claude-skills-guide/claude-code-for-bolt-new-web-app-workflow-guide/)
 - [Claude Code for Bootcamp Students: Productivity Guide](/claude-skills-guide/claude-code-for-bootcamp-students-productivity-guide/)
 - [Claude Code for Branch Protection Rules Workflow](/claude-skills-guide/claude-code-for-branch-protection-rules-workflow/)

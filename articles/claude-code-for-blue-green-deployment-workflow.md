@@ -253,6 +253,95 @@ readinessProbe:
   periodSeconds: 5
 ```
 
+## Advanced Switch Strategies
+
+The switch phase can be implemented through various mechanisms depending on your infrastructure. Beyond Kubernetes service selectors, Claude Code can help you implement DNS-based and load balancer-based switches.
+
+### DNS-Based Switch
+
+For DNS-based switches, you update DNS records to point to the new environment. This approach works well when your blue and green environments have separate endpoints:
+
+```python
+#!/usr/bin/env python3
+import boto3
+
+def switch_dns_record(hosted_zone_id, record_name, green_elb_dns):
+    route53 = boto3.client('route53')
+
+    response = route53.change_resource_record_sets(
+        HostedZoneId=hosted_zone_id,
+        ChangeBatch={
+            'Changes': [{
+                'Action': 'UPSERT',
+                'ResourceRecordSet': {
+                    'Name': record_name,
+                    'Type': 'A',
+                    'AliasTarget': {
+                        'HostedZoneId': get_hosted_zone_id(green_elb_dns),
+                        'DNSName': green_elb_dns,
+                        'EvaluateTargetHealth': True
+                    }
+                }
+            }]
+        }
+    )
+    return response['ChangeInfo']['Id']
+```
+
+DNS switches require careful TTL management. Lower TTLs (300 seconds or less) allow faster failover but increase DNS query load.
+
+### Load Balancer Switch
+
+For environments using load balancers, switch traffic by updating target group registrations. This approach is faster than DNS-based switches since it doesn't require waiting for DNS propagation:
+
+```bash
+#!/bin/bash
+set -e
+
+BLUE_TG_ARN="arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/blue-api/abc123"
+GREEN_TG_ARN="arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/green-api/def456"
+
+# Register green targets, deregister blue targets
+aws elbv2 register-targets --target-group-arn "$GREEN_TG_ARN" \
+    --targets Id=green-api-1,Port=80 Id=green-api-2,Port=80
+
+aws elbv2 deregister-targets --target-group-arn "$BLUE_TG_ARN" \
+    --targets Id=blue-api-1,Port=80 Id=blue-api-2,Port=80
+
+# Wait for targets to become healthy
+aws elbv2 wait target-in-service \
+    --target-group-arn "$GREEN_TG_ARN" \
+    --targets Id=green-api-1,Port=80 Id=green-api-2,Port=80
+
+echo "Switch completed successfully"
+```
+
+### Post-Switch Monitoring with Automatic Rollback
+
+A complete blue-green switch workflow includes post-switch monitoring to detect issues before users report them. Claude Code can help you set up monitoring checks that automatically trigger rollback:
+
+```python
+def monitor_post_switch(environment, duration_seconds=300, error_threshold=5):
+    start_time = time.time()
+
+    while time.time() - start_time < duration_seconds:
+        error_count = get_error_count(environment)
+        p99_latency = get_p99_latency(environment)
+
+        if error_count > error_threshold:
+            print(f"ERROR: {error_count} errors detected, triggering rollback")
+            trigger_rollback(environment)
+            return False
+
+        if p99_latency > 5000:
+            print(f"WARN: High latency detected: {p99_latency}ms")
+
+        time.sleep(10)
+
+    print(f"Monitoring passed for {environment}")
+    return True
+```
+
 ## Best Practices and Actionable Advice
 
 Here are key recommendations for successful blue-green deployments with Claude Code:
