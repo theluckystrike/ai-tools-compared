@@ -186,6 +186,48 @@ claude rollback --environment production --target {{ previous_version }}
 
 This command handles the complexity of rolling back deployments across your infrastructure.
 
+## Pre-Release Verification
+
+Create a comprehensive pre-release checklist script that Claude Code can execute before any release:
+
+```bash
+#!/bin/bash
+set -e
+
+echo "Running pre-release checks..."
+
+# Check version consistency
+PACKAGE_VERSION=$(node -p "require('./package.json').version")
+GIT_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "no-tag")
+
+if [ "$PACKAGE_VERSION" != "$GIT_TAG" ]; then
+    echo "Version mismatch: package.json ($PACKAGE_VERSION) vs git tag ($GIT_TAG)"
+    exit 1
+fi
+
+# Check test coverage
+COVERAGE=$(npm test -- --coverage 2>/dev/null | grep "All files" | awk '{print $NF}')
+if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+    echo "Test coverage ($COVERAGE%) below threshold (80%)"
+    exit 1
+fi
+
+echo "All pre-release checks passed"
+```
+
+## Debugging Pipeline Failures
+
+When your pipeline fails, Claude Code can analyze error logs and suggest solutions. Provide the error message, deployment environment, and project context — Claude will identify root causes like permission issues, missing environment variables, or misconfigured services, then generate the exact commands to fix the problem.
+
+## Optimizing Pipeline Performance
+
+As projects grow, build times increase. Claude Code can analyze your workflow configuration and suggest optimizations:
+
+- **Caching dependencies**: Add cache actions for npm, pip, or other package managers
+- **Parallel job execution**: Split independent jobs to run concurrently
+- **Conditional steps**: Skip expensive operations when only documentation changes
+- **Artifact optimization**: Use faster compression or skip unnecessary artifacts
+
 ## Best Practices for Release Automation
 
 Following established best practices ensures your release workflows remain reliable and maintainable.

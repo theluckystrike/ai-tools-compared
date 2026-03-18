@@ -872,7 +872,6 @@ Open source. Updated daily. Built by [theluckystrike](https://github.com/theluck
 - [Claude Code for Release Branching Strategy Workflow](/claude-skills-guide/claude-code-for-release-branching-strategy-workflow/)
 - [Claude Code for Release Candidate Workflow Tutorial](/claude-skills-guide/claude-code-for-release-candidate-workflow-tutorial/)
 - [Claude Code for Release Gate Workflow Tutorial Guide](/claude-skills-guide/claude-code-for-release-gate-workflow-tutorial-guide/)
-- [Claude Code for Release Pipeline Workflow Tutorial](/claude-skills-guide/claude-code-for-release-pipeline-workflow-tutorial/)
 - [Claude Code for Remix Error Boundary Workflow Guide](/claude-skills-guide/claude-code-for-remix-error-boundary-workflow-guide/)
 - [Claude Code for Remix Optimistic UI Workflow](/claude-skills-guide/claude-code-for-remix-optimistic-ui-workflow/)
 - [Claude Code for Resilience4j Circuit Breaker Guide](/claude-skills-guide/claude-code-for-resilience4j-circuit-breaker-guide/)
