@@ -1,7 +1,8 @@
 ---
+
 layout: default
-title: "Configuring Claude Code to Understand Your Team's Pull Request Review Checklist"
-description: "Learn how to configure Claude Code to understand and help with your team's pull request review checklist. Practical setup guide with code examples for developers."
+title: "Configuring Claude Code to Understand Your Teams Pull Request Review Checklist"
+description: "A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality."
 date: 2026-03-16
 author: theluckystrike
 permalink: /configuring-claude-code-to-understand-your-teams-pull-reques/
@@ -13,130 +14,154 @@ intent-checked: true
 voice-checked: true
 ---
 
-{% raw %}
-Pull request reviews are a critical part of maintaining code quality in any development team. When multiple developers contribute to a project, having a consistent review process helps catch bugs, enforce coding standards, and share knowledge across the team. Claude Code, Anthropic's CLI AI assistant, can be configured to understand your team's specific pull request review checklist and help ensure your code meets those standards before you even submit a PR.
+Claude Code can be configured to understand and respect your team's pull request review checklist, helping maintain consistent code quality across your codebase. By setting up the right configuration files and providing proper context, you can make Claude Code an effective partner in your code review process.
 
-## Setting Up Claude Code for PR Reviews
+## Understanding Pull Request Checklist Context
 
-The first step in configuring Claude Code for pull request reviews is ensuring you have the latest version installed. You can verify this by running:
+Your team's pull request checklist likely includes items specific to your codebase, coding standards, and project requirements. These might cover security considerations, performance criteria, testing requirements, and documentation standards. Claude Code needs to understand this context to provide meaningful assistance during code reviews and before you submit changes.
 
-```bash
-claude --version
-```
+The most effective approach involves creating a CLAUDE.md file that documents your team's review requirements. This file acts as persistent context that Claude Code references when working with your codebase.
 
-If you need to update, follow the installation instructions for your operating system from the official documentation.
+## Setting Up CLAUDE.md for Review Checklists
 
-### Configuring Project-Specific Instructions
-
-Claude Code supports project-specific configuration through the `CLAUDE.md` file in your project root. This file allows you to define custom instructions that Claude will follow when working in your project. For pull request reviews, you'll want to include your team's checklist items here.
-
-Create or edit the `CLAUDE.md` file in your repository:
-
-```bash
-touch CLAUDE.md
-```
-
-Add your team's pull request review checklist as context:
+Create a CLAUDE.md file in your project root with your team's pull request requirements. This file should contain specific criteria that Claude Code will consider when reviewing code or suggesting improvements.
 
 ```markdown
-# Project Review Requirements
+# Project Review Checklist
 
-## Pull Request Checklist
-Before submitting a PR, ensure:
-1. All tests pass (`npm test` or your test command)
-2. Code follows our style guide (run `npm run lint`)
-3. New functionality includes appropriate unit tests
-4. Documentation is updated for any API changes
-5. No console.log statements or debug code remains
-6. Performance implications considered for database queries
-7. Security best practices followed (no exposed secrets)
+## Security Requirements
+- All API keys and secrets must use environment variables
+- Input validation required for all user-supplied data
+- Authentication checks must occur before any data access
+- SQL queries must use parameterized statements
 
-## Code Style
-- Use TypeScript strict mode
-- Prefer functional components in React
-- Follow the existing naming conventions
-- Keep functions under 50 lines when possible
+## Testing Requirements
+- New functions require unit tests with >80% coverage
+- API endpoints need integration tests
+- Edge cases should have explicit test coverage
+- Test files must use descriptive assertion messages
+
+## Code Quality
+- Functions must have JSDoc/TypeDoc comments for public APIs
+- Error messages should be actionable and specific
+- Magic numbers must be extracted to named constants
+- Complex conditionals (>3 conditions) need early returns
+
+## Documentation
+- Breaking changes require CHANGELOG updates
+- New dependencies need rationale in PR description
+- Architecture decisions require ADR documentation
 ```
 
-## Teaching Claude About Your Review Process
+This configuration gives Claude Code clear criteria for evaluating code quality. When you run Claude Code in your project, it reads this file and applies these standards to its suggestions.
 
-Once you have your checklist defined, you can interact with Claude Code during code reviews. The key is to provide context about what you're looking for. Here's how to effectively work with Claude during PR reviews:
+## Creating Project-Specific Review Rules
 
-### Reviewing Code Before Submission
+Beyond the general checklist, your team may have specific rules for particular components or modules. Create targeted CLAUDE.md sections for different parts of your codebase.
 
-Before creating a pull request, ask Claude to review your changes:
+```markdown
+# Backend API Module Rules
 
-```bash
-claude "Review the changes in this branch against our PR checklist"
+## Endpoint Requirements
+- All endpoints must validate request schemas
+- Response codes must follow REST conventions
+- Rate limiting headers required for public endpoints
+- Deprecation notices needed 2 releases before removal
+
+## Database Rules
+- Use transactions for multi-table operations
+- Implement soft deletes where appropriate
+- Add database indexes for frequently queried columns
+- Migration files must be reversible
 ```
 
-Claude will analyze your code and provide feedback based on the checklist items you defined. This proactive review helps catch issues early.
+```markdown
+# Frontend Component Rules
 
-### Specific Review Questions
+## React Components
+- Use functional components with hooks
+- Memoize expensive computations with useMemo
+- Extract custom hooks for reusable logic
+- PropTypes or TypeScript types required
 
-You can also ask targeted questions:
-
-```bash
-claude "Check if there are any potential security issues in this diff"
-claude "Are there any performance concerns with the database queries in this PR?"
-claude "Does the new code follow our React component patterns?"
+## State Management
+- Local state for component-specific data
+- Context for shared UI state
+- Server state via React Query or SWR
+- Avoid prop drilling beyond 2 levels
 ```
+
+## Using Review Context in Claude Code Sessions
+
+When working with Claude Code, explicitly reference your checklist requirements. Start sessions by acknowledging the context:
+
+```
+I'm working on [feature description]. Please review my changes against our PR checklist: security requirements, testing standards, and code quality rules in CLAUDE.md.
+```
+
+This approach ensures Claude Code applies your team's standards throughout the development process, catching issues before they reach formal review.
 
 ## Integrating with GitHub Pull Requests
 
-For GitHub-based workflows, you can enhance Claude's understanding of your review process by adding a PR template. Create `.github/PULL_REQUEST_TEMPLATE.md`:
-
-```markdown
-## Description
-<!-- What does this PR do? -->
-
-## Testing
-- [ ] Unit tests added/updated
-- [ ] Manual testing completed
-
-## Checklist
-- [ ] Code follows style guidelines
-- [ ] Documentation updated
-- [ ] No debug code included
-- [ ] Performance considered
-```
-
-When you reference this template in your conversations with Claude, it gains better context about your review requirements.
-
-## Advanced Configuration
-
-For more sophisticated setups, you can create multiple configuration files for different types of reviews. For example:
-
-- `CLAUDE_REVIEW.md` - General code review guidelines
-- `CLAUDE_SECURITY.md` - Security-specific review criteria
-- `CLAUDE_PERFORMANCE.md` - Performance checklist
-
-Switch between them by including the relevant file in your prompts:
+Claude Code can assist with GitHub-based code reviews when you provide the PR context. Use the GitHub integration to fetch PR details and then apply your checklist criteria:
 
 ```bash
-claude "Review this code using CLAUDE_SECURITY.md criteria"
+# Clone the repository and checkout the PR branch
+git fetch origin pull/123/head
+git checkout FETCH_HEAD
+
+# Run Claude Code to review changes
+claude "Review these changes against our PR checklist in CLAUDE.md"
 ```
 
-## Best Practices
+Claude Code will analyze the diff and identify areas that need attention based on your team's standards.
 
-Keep your review configuration up to date. As your team evolves, so should your checklist. Schedule quarterly reviews of your `CLAUDE.md` to ensure it reflects current best practices.
+## Automating Pre-Submission Checks
 
-Document the reasoning behind checklist items. When Claude understands why certain standards exist, it can provide more meaningful feedback.
+Create a script that runs Claude Code against your changes before pushing:
 
-Encourage team members to contribute to the checklist. The most effective review processes emerge from collective experience.
+```bash
+#!/bin/bash
+# pre-review.sh
 
-## Measuring Effectiveness
+echo "Running pre-submission review..."
+git diff main...HEAD --stat > /tmp/changes.txt
 
-Track how well Claude's reviews align with human feedback over time. If reviewers consistently flag issues that Claude missed, update your configuration to address those gaps. Conversely, if Claude catches issues that humans commonly overlook, document those as new checklist items.
+claude "Review the changes in this diff against our team's PR checklist. 
+Focus on: security issues, test coverage, code quality, and documentation.
+Report any concerns before I submit this PR."
+```
 
----
+Make this script part of your development workflow:
 
-Configuring Claude Code to understand your team's pull request review checklist transforms it from a general-purpose coding assistant into a specialized reviewer that aligns with your team's standards. By investing time in proper configuration, you get consistent, automated feedback that helps maintain code quality while reducing the burden on human reviewers.
+```bash
+chmod +x pre-review.sh
+./pre-review.sh
+```
 
+## Handling Checklist Evolution
 
-## Related Reading
+Your team's checklist will evolve over time. Update your CLAUDE.md regularly to reflect new requirements, removed checks, and modified standards. Version control your checklist alongside your code:
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+```bash
+git add CLAUDE.md
+git commit -m "Update PR checklist with new security requirements"
+```
+
+This ensures every team member works with the same standards and new contributors can quickly understand expectations.
+
+## Best Practices for Effective Configuration
+
+Keep your CLAUDE.md focused and actionable. Include specific, measurable criteria rather than vague guidelines. For example, instead of writing "write good tests," specify what constitutes adequate coverage for your project.
+
+Review and refine your checklist quarterly. Remove checks that rarely catch issues and add requirements when recurring problems emerge. Claude Code performs best when given clear, concrete expectations.
+
+Document the reasoning behind critical checklist items. When team members understand why certain standards exist, they are more likely to follow them consistently.
+
+## Conclusion
+
+Configuring Claude Code to understand your team's pull request review checklist creates a consistent quality gate in your development process. By maintaining a well-structured CLAUDE.md file, providing explicit context during sessions, and integrating pre-submission reviews into your workflow, you can catch issues earlier and maintain higher code quality standards.
+
+The key is starting with clear, specific requirements and consistently applying them throughout your development cycle. Claude Code becomes more effective as it understands your team's unique standards and expectations.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
