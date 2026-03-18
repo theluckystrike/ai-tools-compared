@@ -5,7 +5,7 @@ description: "A practical guide for developers on using AI to transform product 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-acceptance-criteria-from-product-r/
-categories: [guides, development, productivity]
+categories: [guides, productivity]
 reviewed: true
 score: 8
 intent-checked: true
