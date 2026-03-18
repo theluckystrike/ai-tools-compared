@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 Finding an AI coding assistant that delivers powerful capabilities without locking you into a monthly subscription is increasingly possible. While many tools push toward recurring payments, several quality options let you pay only for what you use. This guide evaluates the strongest candidates and helps you find the right fit for your development workflow.

@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 Finding a capable AI coding assistant on a tight budget is entirely possible. Several tools offer solid functionality at $5 per month or less, with some providing generous free tiers that work well for individual developers. This guide evaluates practical options based on code generation quality, ease of use, IDE integration, and overall value for money.

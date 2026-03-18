@@ -9,13 +9,12 @@ categories: [guides]
 tags: [ai, coding, design-patterns]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-AI coding assistants have transformed how developers write code, offering intelligent suggestions that accelerate development workflows. However, keeping these suggestions aligned with established design patterns requires deliberate effort. Without proper guidance, AI tools may generate code that works functionally but violates architectural principles, creating technical debt that surfaces later during maintenance or scaling.
-
-This guide presents practical strategies for ensuring AI-generated code adheres to design patterns consistently across your projects.
+Provide pattern examples in your prompts: "Follow the service-repository pattern in [example file]" or "Use dependency injection like in UserController.ts". Include architecture decision records (ADRs) in context. Review AI suggestions against your design patterns before accepting them. Create team guidelines documenting approved patterns. This guide covers strategies for keeping AI coding suggestions aligned with your project's design patterns.
 
 ## Understanding the Challenge
 

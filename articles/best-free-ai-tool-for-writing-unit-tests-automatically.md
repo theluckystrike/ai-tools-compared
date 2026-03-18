@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Writing unit tests is one of those tasks every developer acknowledges as important but few enjoy doing manually. The good news is that AI tools have reached a point where they can genuinely help automate significant portions of your test writing workflow without costing anything. This guide examines the best free approaches for generating unit tests automatically, focusing on tools that actually work in practice.
+Claude's free tier generates comprehensive unit tests with proper edge case coverage and assertion libraries; GitHub Copilot free tier offers inline test generation; ChatGPT free tier works but generates simpler test coverage. Choose Claude if you need thorough test suites within message limits; use Copilot for inline generation. This guide compares free AI tools for automated unit test generation.
 
 ## Why AI for Unit Tests Makes Sense
 

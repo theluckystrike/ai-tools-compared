@@ -9,6 +9,7 @@ categories: [guides]
 tags: [ci-cd, tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}

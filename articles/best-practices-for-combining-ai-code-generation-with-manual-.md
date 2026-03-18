@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI code generation tools have transformed how developers write software, but they work best when combined with human oversight. Manual code review remains essential for catching bugs, ensuring security, and maintaining code quality. This guide covers practical strategies for combining AI-generated code with thorough manual review.
+Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling. Review AI code for unhandled edge cases, SQL injection risks, and architectural consistency. Allocate 30% of effort to generation, 70% to review and refinement. This guide covers effective workflows for combining AI generation with manual code review.
 
 ## The Role Division: What AI Does Well
 

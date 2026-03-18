@@ -9,13 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-AI coding tools have become essential for developers, but their output quality often depends heavily on how you communicate with them. Providing effective examples is one of the most powerful ways to guide these tools toward producing exactly what you need. The difference between generic, unusable code and production-ready solutions frequently comes down to how you structure your examples and context.
-
-This guide covers practical strategies for providing examples to AI coding tools, helping you get better results regardless of which tool you use.
+Provide 2-3 concrete working examples showing your preferred style and patterns; include edge cases you want handled; show error handling patterns from your codebase. Use real code snippets rather than descriptions. Highlight the specific parts you want the AI to emulate. Examples significantly improve code quality and alignment with your project standards. This guide covers effective example strategies for AI coding tools.
 
 ## Why Examples Matter for AI Code Generation
 

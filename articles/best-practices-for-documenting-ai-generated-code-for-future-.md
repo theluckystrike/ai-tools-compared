@@ -9,12 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
-AI coding assistants have transformed how developers write software, generating entire functions, modules, and sometimes entire applications in seconds. However, this speed comes with a hidden cost: the generated code often lacks the context that human developers naturally include when writing from scratch. Without proper documentation, AI-generated code becomes a maintenance nightmare—difficult to debug, extend, or hand off to team members.
-
-This guide covers practical strategies for documenting AI-generated code to ensure your codebase remains maintainable long after the AI wrote it.
+Add comments explaining design decisions and tradeoffs for every AI-generated function; document the AI prompt used so future developers understand the requirements. Include examples showing how to use the code correctly. Mark AI-generated sections with `// AI-generated:` comments. Document assumptions about context, error conditions, and performance characteristics. This guide covers strategies for documenting AI code for long-term team maintenance.
 
 ## Why AI-Generated Code Needs Extra Documentation
 
