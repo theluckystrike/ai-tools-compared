@@ -9,6 +9,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Developers working in secure environments, remote locations, or organizations with strict data policies often need AI-powered code completion without relying on cloud services. Air-gapped AI code completion solutions run entirely locally, processing code on your machine without sending data to external servers. This guide examines the best options available in 2026 for offline development workflows.
