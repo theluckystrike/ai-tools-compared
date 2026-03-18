@@ -5,6 +5,10 @@ description: "Master object-oriented design interviews using AI tools and UML di
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-practice-object-oriented-design-interview-q/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
