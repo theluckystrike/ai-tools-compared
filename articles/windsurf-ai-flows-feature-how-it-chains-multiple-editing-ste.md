@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Windsurf AI's Flows feature represents a significant advancement in AI-assisted development workflows. By allowing developers to chain multiple editing steps together, Flows enables the automation of repetitive tasks and the creation of sophisticated pipelines that transform codebases systematically. This guide explores how to leverage this feature effectively.
+Windsurf AI Flows lets you chain multiple editing steps together to automate complex code transformations like refactoring, documentation updates, and testing in a single coherent pipeline. Each step executes sequentially with context from previous steps, ensuring consistency across multi-file changes. This approach eliminates the need for manual coordination between separate edits and provides auditability of how your codebase evolved through each transformation phase.
 
 ## What Are Windsurf AI Flows?
 

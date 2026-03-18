@@ -9,11 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Writing Terraform provider configurations can feel repetitive. You look up authentication parameters, region settings, and feature flags repeatedly across providers like AWS, Azure, and GCP. GitHub Copilot accelerates this workflow by predicting your next configuration needs based on context and provider conventions.
-
-This guide shows you concrete techniques for using Copilot to write Terraform provider blocks faster, reduce errors, and maintain consistency across your infrastructure code.
+GitHub Copilot accelerates Terraform provider configuration by suggesting provider blocks with standard parameters when you start typing, reducing the need to consult documentation repeatedly. By providing clear context through variables, existing provider blocks, and comments describing requirements, Copilot generates accurate configurations for AWS, Azure, and GCP with proper authentication methods and feature flags. The key is maintaining consistent variable naming and project organization so Copilot can incorporate your specific infrastructure patterns into suggestions.
 
 ## Setting Up Copilot for Terraform
 

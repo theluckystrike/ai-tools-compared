@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-When AI coding assistants generate code that interacts with environment variables and secrets, the quality and security of their suggestions can vary significantly. Understanding how these tools handle sensitive configuration data helps developers write safer applications and recognize potential pitfalls.
+AI coding assistants generally understand to avoid hardcoding secrets and will suggest using environment variables, but the quality varies in validation, error handling, and type safety. Suggestions range from basic os.environ.get() patterns to more robust approaches with validation and explicit failure modes. You need to review and enhance AI-generated code for environment variables with proper type conversion, missing variable checks, and production-ready error handling before deploying.
 
 ## The Challenge With AI-Generated Secret Handling
 

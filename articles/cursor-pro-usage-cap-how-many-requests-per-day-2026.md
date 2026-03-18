@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Understanding Cursor Pro's usage limits is essential for developers who rely on AI-assisted coding throughout their workday. Whether you're debugging complex issues or generating boilerplate code, knowing your request allocation helps you plan your workflow effectively.
+Cursor Pro provides 2,000 monthly requests for individual plans (approximately 65-70 requests per day) and 5,000+ for business plans. Requests are consumed by chat messages, inline edits, code generation, and refactoring operations, while basic autocomplete typically doesn't count. Once you hit your limit, chat becomes read-only and generation features are disabled until the next billing cycle.
 
 ## What is Cursor Pro?
 

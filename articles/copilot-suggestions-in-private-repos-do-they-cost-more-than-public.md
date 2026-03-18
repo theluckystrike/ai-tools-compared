@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-If you're using GitHub Copilot, you might wonder whether the pricing differs between public and private repositories. The short answer is: **no, GitHub Copilot does not charge more for private repos**—but there's more nuance to consider.
+GitHub Copilot pricing is the same for both public and private repositories: $10/month for individuals, $19/user/month for Business, and $39/user/month for Enterprise. The subscription is all-you-can-eat access regardless of repository visibility, so you cannot save money by working primarily in public repositories. Copilot features and quality remain identical across all repository types.
 
 ## Understanding GitHub Copilot Pricing Model
 
