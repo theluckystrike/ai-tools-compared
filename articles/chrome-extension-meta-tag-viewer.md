@@ -4,7 +4,7 @@ layout: default
 title: "Chrome Extension Meta Tag Viewer: Inspect HTML Metadata."
 description: "Learn how to build and use a Chrome extension for viewing meta tags. Complete guide for developers to inspect OG tags, Twitter cards, and custom metadata."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /chrome-extension-meta-tag-viewer/
 reviewed: true
 score: 8
