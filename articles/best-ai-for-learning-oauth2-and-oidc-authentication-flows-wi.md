@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Learning OAuth2 and OIDC Authentication Flows with Sequence Diagrams 2026"
+title: "Best AI for Learning OAuth2 and OIDC Authentication."
 description: "A practical guide for developers to learn OAuth2 and OIDC authentication flows using AI tools with sequence diagrams and code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -216,6 +216,11 @@ Create a practical project to solidify understanding:
 4. **Multi-Provider Integration**: Add login with both Google and GitHub to compare provider implementations
 
 AI tools accelerate this learning by providing working code, explaining errors, and suggesting improvements. The combination of visual sequence diagrams and hands-on coding makes authentication concepts concrete and memorable.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

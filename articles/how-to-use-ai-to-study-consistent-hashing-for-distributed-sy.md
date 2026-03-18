@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use AI to Study Consistent Hashing for Distributed System Interviews"
-description: "A practical guide for developers preparing for distributed system interviews using AI tools to learn and master consistent hashing concepts with code examples."
+title: "How to Use AI to Study Consistent Hashing for."
+description: "A practical guide for developers preparing for distributed system interviews using AI tools to learn and master consistent hashing concepts with code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-study-consistent-hashing-for-distributed-sy/
@@ -137,5 +137,10 @@ While focusing on consistent hashing, recognize how it connects to broader distr
 Understanding these connections demonstrates depth to interviewers and reinforces overall system design knowledge.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
