@@ -6,7 +6,7 @@ description: "A practical guide for developers and DevRel professionals on lever
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/
-categories: [tutorials, devrel, ai-tools]
+categories: [tutorials, guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

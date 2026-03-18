@@ -5,7 +5,7 @@ description: "A practical guide comparing AI tools that automate stakeholder upd
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-ai-for-product-managers-creating-stakeholder-update-dec/
-categories: [ai-tools, product-management, automation]
+categories: [guides, workflows]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "Learn practical techniques and code examples for using AI to creat
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-product-managers-write-data-driven-fea/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "Discover which AI tools excel at generating Playwright tests for f
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-playwright-tests-for-file-upl/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

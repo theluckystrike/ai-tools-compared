@@ -5,7 +5,7 @@ description: "Learn how QA engineers can leverage AI to generate comprehensive a
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-qa-engineers-creating-accessibility-testing-che/
-categories: [accessibility, testing, wcag]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
