@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Tailwind CSS is a utility-first framework that has transformed how developers style web applications. However, when deploying to production, you may encounter situations where classes that work perfectly in development suddenly fail to apply. This guide shows you how to leverage AI to diagnose and resolve these issues efficiently.
+AI tools can diagnose Tailwind CSS issues by analyzing configuration files to identify missing content patterns, spotting dynamic class name construction that prevents static detection, and verifying CSS cascade order. When you share your tailwind.config.js, build output, and relevant code snippets, AI quickly identifies whether classes got purged, have incorrect naming, or are overridden by other styles. The systematic workflow—starting with configuration analysis, then checking build output, pattern matching, and CSS specificity—transforms vague "classes not applying" issues into concrete solutions.
 
 ## Common Reasons Tailwind Classes Fail in Production
 

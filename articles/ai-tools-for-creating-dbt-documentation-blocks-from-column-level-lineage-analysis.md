@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Managing dbt documentation at scale presents real challenges for data teams. When your project grows to include hundreds of models and thousands of columns, maintaining accurate documentation becomes time-consuming and often falls out of sync with the actual code. Column-level lineage analysis combined with AI-powered documentation generation offers a practical solution to this problem.
+AI tools can automatically generate dbt documentation blocks by analyzing your project's column-level lineage and transformation logic. These tools parse dbt manifests, trace column dependencies across models, and generate YAML descriptions that keep documentation synchronized with your code. Combining pattern-based generation with lineage-aware context produces accurate column descriptions at scale without manual maintenance.
 
 ## Understanding dbt Documentation Blocks
 

@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Service Level Objectives (SLOs) with burn rate calculations provide critical visibility into error budgets and reliability trends. Building these dashboards in Grafana requires understanding both SLO mechanics and the specific PromQL queries that power burn rate visualizations. AI tools can significantly accelerate this process by generating the complex queries and panel configurations needed for accurate SLO tracking.
+AI tools can generate complex PromQL queries and Grafana panel configurations for SLO dashboards with burn rate calculations, reducing hours of manual query writing to minutes. By providing SLO targets, metric names, and time windows, AI generates queries that calculate short-term and long-term burn rates, error budgets, and remaining budget percentages. These tools handle multi-layer SLOs with proper aggregation and support templated queries for multi-service dashboards.
 
 ## Understanding SLO Burn Rate Calculations
 

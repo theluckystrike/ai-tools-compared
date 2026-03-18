@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Managing Grafana dashboards at scale requires a systematic approach to defining metrics, panels, and layouts. Rather than manually constructing complex JSON files, developers increasingly use AI tools to generate Grafana dashboard templates from structured YAML specifications. This approach combines infrastructure-as-code principles with AI-assisted code generation, enabling teams to maintain version-controlled dashboard definitions alongside their application code.
+AI tools translate readable YAML specifications into valid Grafana dashboard JSON, enabling infrastructure-as-code practices for monitoring without manual JSON construction. By describing dashboard panels, queries, and thresholds in YAML, AI generates complete JSON configurations with proper panel layouts, variable definitions, and field configurations. This approach simplifies dashboard reviews in pull requests and allows teams to maintain consistent monitoring definitions across multiple services.
 
 ## Why Use YAML Specifications for Grafana Dashboards
 

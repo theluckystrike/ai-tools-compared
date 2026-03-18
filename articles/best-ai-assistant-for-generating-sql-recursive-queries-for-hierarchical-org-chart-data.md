@@ -11,12 +11,13 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 {%- include why-choose-ai-sql.html -%}
 
-Writing recursive SQL queries for hierarchical data structures like organizational charts remains one of the most challenging SQL tasks for developers. Whether you need to find all descendants of a manager, calculate reporting chains, or identify the root of an organizational tree, recursive Common Table Expressions (CTEs) are the standard approach—yet they remain notoriously error-prone. This guide evaluates how well different AI assistants handle this specific SQL challenge.
+AI assistants can generate correct recursive SQL queries for organizational hierarchies by understanding CTE syntax, proper termination conditions, and path building logic. The best AI tools produce anchor and recursive query parts separately, include safeguards against infinite loops, and explain why each component matters. They also recognize when recursion is unnecessary and offer variations for different use cases like finding descendants, entire subtrees, or reporting chains.
 
 ## The Hierarchical Query Problem
 
