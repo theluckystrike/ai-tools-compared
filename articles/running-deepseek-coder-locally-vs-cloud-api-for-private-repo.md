@@ -6,6 +6,10 @@ description: "A practical comparison of running DeepSeek Coder locally versus us
 date: 2026-03-16
 author: theluckystrike
 permalink: /running-deepseek-coder-locally-vs-cloud-api-for-private-repo/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When working with private repository code, developers face a critical decision: run AI coding assistants locally or send their code to cloud APIs. DeepSeek Coder offers both options, each with distinct trade-offs around privacy, cost, performance, and hardware requirements. This guide breaks down the practical differences to help you choose the right approach for your workflow.

@@ -5,6 +5,10 @@ description: "A practical guide for developers and power users on understanding 
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
