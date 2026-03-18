@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Create Edge Case Test Scenarios from API Error Documentation"
-description: "Learn how to leverage AI tools to automatically generate comprehensive edge case test scenarios from API error documentation, improving your test coverage and reliability."
+title: "How to Use AI to Create Edge Case Test Scenarios from."
+description: "Learn how to leverage AI tools to automatically generate comprehensive edge case test scenarios from API error documentation, improving your test."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/
@@ -231,5 +231,10 @@ When using AI to generate test scenarios from API error documentation, keep thes
 AI transforms API error documentation from static reference material into a proactive testing strategy. By systematically generating test scenarios from documented error codes, you achieve better coverage with less manual effort. The key is providing clear context to AI tools about your testing framework and requirements, then reviewing generated tests for accuracy and completeness.
 
 Start with your most critical API endpoints, generate test scenarios using the approaches shown here, and gradually expand coverage as you refine your AI prompting workflow.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

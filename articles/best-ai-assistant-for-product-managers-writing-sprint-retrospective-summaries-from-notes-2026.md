@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Product Managers Writing Sprint Retrospective Summaries from Notes 2026"
-description: "A practical guide to AI tools that help product managers transform raw sprint retrospective notes into polished, actionable summaries. Code examples and workflows included."
+title: "Best AI Assistant for Product Managers Writing Sprint."
+description: "A practical guide to AI tools that help product managers transform raw sprint retrospective notes into polished, actionable summaries. Code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/
@@ -160,6 +160,11 @@ The best tool for your team depends on your existing workflow, technical capabil
 ---
 
 Writing effective sprint retrospective summaries doesn't require sacrificing hours of manual整理. AI assistants provide a practical foundation that you refine through iterative prompt engineering and human review. The goal remains the same: clear, actionable documentation that helps your team improve continuously.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

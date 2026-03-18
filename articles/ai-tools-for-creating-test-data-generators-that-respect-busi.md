@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Creating Test Data Generators That Respect Business Rule Validation Logic"
-description: "A practical guide to using AI tools for generating test data generators that respect business rule validation logic, with code examples and implementation strategies."
+title: "AI Tools for Creating Test Data Generators That Respect."
+description: "A practical guide to using AI tools for generating test data generators that respect business rule validation logic, with code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-test-data-generators-that-respect-busi/
@@ -217,6 +217,11 @@ When working with AI tools to generate test data generators:
 5. **Add assertions**: Include validation checks in the generator to catch regressions when rules change
 
 AI tools can significantly accelerate the creation of maintainable test data generators that produce realistic, validation-compliant data. The key is providing clear context about your validation logic and reviewing the generated code to ensure it accurately reflects your business rules.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for QA Engineers: Generating Data-Driven Test Scenarios from CSV Samples"
-description: "A practical guide for developers and power users on leveraging AI tools to create data-driven test scenarios from CSV files, with code examples and implementation strategies."
+title: "AI Tools for QA Engineers: Generating Data-Driven Test."
+description: "A practical guide for developers and power users on leveraging AI tools to create data-driven test scenarios from CSV files, with code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-qa-engineers-generating-data-driven-test-scenar/
@@ -157,5 +157,10 @@ Start by preparing a representative CSV file with your test data. Include both p
 Iterate on the generated tests by running them against your codebase. Identify gaps in coverage and ask AI to generate additional test cases. Maintain your CSV as the single source of truth, regenerating tests when data changes.
 
 This approach separates test data from test logic, making maintenance straightforward. When business requirements change, update the CSV rather than modifying test code across multiple files.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
