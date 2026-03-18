@@ -11,9 +11,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Writing CVE security advisory descriptions requires precision, clarity, and adherence to standardized formats. Security researchers and vulnerability disclosure teams often face the challenge of communicating complex technical flaws in ways that are both technically accurate and accessible to diverse audiences. AI tools can significantly accelerate this process while maintaining quality standards.
+Use AI tools to generate CVE advisory descriptions by providing the vulnerability technical details (CWE classification, affected versions, attack vector, impact) and requesting output that aligns with NVD formatting standards. AI accelerates the writing of sections covering technical impact, attack vectors, CVSS severity, and remediation steps while ensuring descriptions remain accurate and accessible to both technical and non-technical audiences.
 
 This guide covers practical approaches for using AI to draft CVE advisory descriptions, including prompt engineering techniques, validation strategies, and workflow integration.
 

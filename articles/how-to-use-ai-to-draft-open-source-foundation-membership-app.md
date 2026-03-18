@@ -11,9 +11,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Open source foundations require detailed membership applications that demonstrate your contributions, technical expertise, and commitment to the community. Drafting these documents from scratch takes significant time and effort. AI tools can streamline this process, helping you create polished, comprehensive applications that accurately represent your open source journey.
+AI tools streamline foundation membership applications by drafting initial sections based on your contribution history, suggesting improvements to articulate your experience clearly, and structuring complex ideas to match foundation-specific conventions. Provide your contribution data (repository links, issue numbers, PR count, impact statements) to the AI, and it generates polished personal statements and background sections that only you can substantively refine.
 
 This guide shows developers and power users how to leverage AI to draft effective membership application documents for foundations like the Apache Software Foundation, Linux Foundation, OpenJS Foundation, and similar organizations.
 
