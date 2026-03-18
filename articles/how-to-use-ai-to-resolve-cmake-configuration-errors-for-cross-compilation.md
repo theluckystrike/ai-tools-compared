@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI assistants can analyze CMakeLists.txt files, toolchain configurations, and error messages to identify cross-compilation issues like incorrect CMAKE_SYSTEM_NAME, missing sysroot paths, or incompatible compiler binaries. By providing your host system, target architecture, toolchain location, and exact error output, AI can pinpoint misconfigurations in toolchain files and suggest fixes for CMAKE_FIND_ROOT_PATH issues or sysroot path problems. This turns CMake cross-compilation debugging from trial-and-error into structured problem-solving.

@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI with trunk-based development by managing short-lived branches, maintaining proper context across small commits, and using AI to generate safe, incremental changes. This guide shows the workflow that combines AI acceleration with trunk-based development practices.

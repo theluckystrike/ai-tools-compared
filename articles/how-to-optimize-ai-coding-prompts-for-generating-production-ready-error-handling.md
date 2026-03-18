@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Generate production-ready error handling by explicitly requesting typed errors, specific exception cases, logging statements, and retry logic in prompts. This guide shows exactly which error-handling patterns to request in prompts that consistently produce robust, maintainable error handling.

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Train your AI assistant on team standards by including your coding guidelines in context, showing pattern examples in prompts, and providing feedback on non-compliant suggestions. This guide shows the training workflow that makes AI output match your team's style without manual rework.

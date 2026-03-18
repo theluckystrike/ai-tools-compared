@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Manage context across multiple repos by symlinking shared packages, maintaining a unified context in your IDE settings, and being explicit about which repo each task targets. This guide shows the configuration patterns that prevent hallucinated imports and cross-repo inconsistencies.

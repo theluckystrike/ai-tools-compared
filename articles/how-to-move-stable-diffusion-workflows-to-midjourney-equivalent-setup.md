@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Move Stable Diffusion to Midjourney by translating your custom models to Midjourney's style tokens, converting your prompts to their format, and adjusting sampling parameters. This guide shows the prompt transformation and configuration changes that achieve equivalent results.

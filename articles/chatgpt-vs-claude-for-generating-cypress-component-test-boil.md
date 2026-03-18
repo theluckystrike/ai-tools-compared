@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose ChatGPT if you have simple React components and want quick, minimal test boilerplate you can extend yourself. Choose Claude if you need comprehensive coverage out of the box, including context providers, edge cases, and accessibility assertions. Both generate usable Cypress component tests, but Claude produces more complete output while ChatGPT keeps things lean and easy to modify.

@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Manage team rate limits by tracking per-developer usage, routing heavy tasks through higher-quota APIs, and negotiating enterprise agreements for teams >5 developers. This guide shows the monitoring and allocation strategy that prevents rate limit outages when scaling AI usage.

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI to generate test cases from requirements; write tests first; then ask AI to implement code to pass the tests. AI generates comprehensive edge case coverage 3x faster than manual test writing. Verify generated tests actually fail before implementation, then review AI implementations against test requirements. This workflow combines TDD discipline with AI acceleration. This guide covers step-by-step AI-assisted TDD workflows.

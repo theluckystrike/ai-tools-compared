@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Migrate your VSCode Copilot keybindings to Cursor by exporting your `keybindings.json` file from VSCode (`Cmd+K Cmd+S` to open it), then pasting the contents into Cursor's keybindings file at `~/.cursor-user-data/keybindings.json`. Most shortcuts transfer directly because Cursor is built on VSCode's foundation. Remap Copilot-specific commands like `github.copilot.generate` to Cursor's equivalents such as `cursorai.edit.generate`, then check for conflicts with Cursor's default AI shortcuts.

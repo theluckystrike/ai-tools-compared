@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Manage Terraform state safely by asking AI for backend configurations, remote state strategies, and state file locking approaches. This guide shows which Terraform state patterns AI handles well and which require manual expertise.

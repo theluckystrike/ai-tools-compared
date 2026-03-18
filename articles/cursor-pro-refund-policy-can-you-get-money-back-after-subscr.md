@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Yes, you can get a refund from Cursor Pro if you request it within the 30-day refund window from your purchase date. To start the process, email support@cursor.sh with your account email, purchase date, order confirmation number, and reason for the refund -- expect a response within 2-5 business days and the refund itself within 5-10 business days to your original payment method. After the refund, your account will be downgraded to the free tier.

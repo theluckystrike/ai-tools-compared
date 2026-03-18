@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # How to Transfer Copilot Inline Chat Shortcuts to Cursor Inline Edit Keybinds

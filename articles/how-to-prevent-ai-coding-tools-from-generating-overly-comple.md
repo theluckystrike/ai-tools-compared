@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Prevent over-engineered solutions by explicitly requesting simplicity in prompts, showing simpler examples in context, and asking AI to explain why it made certain choices. This guide shows the prompting techniques that reliably get straightforward solutions instead of gold-plated code.

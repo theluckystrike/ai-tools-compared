@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Claude Code to generate TypeScript GraphQL resolvers that match your schema definitions with proper type safety. The most effective assistants recognize the relationship between GraphQL schemas and TypeScript types, generating resolver signatures that align with schema definitions while maintaining type consistency across your entire API layer.

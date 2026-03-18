@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Migrate DALL-E prompts to Midjourney by converting your descriptive prompts to style tokens, adjusting aspect ratios, and using Midjourney's parameter syntax. This guide shows the translation patterns for different image types.

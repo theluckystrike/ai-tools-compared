@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools generate incorrect unsafe code about 30% of the time due to missing proper synchronization, memory layout assumptions, and FFI safety violations. This guide shows which unsafe patterns are safe to generate with AI and which absolutely require expert manual review.

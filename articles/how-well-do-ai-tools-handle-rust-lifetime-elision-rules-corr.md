@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools understand Rust lifetime elision rules about 70% of the time but often miss edge cases in generic functions and trait definitions. This guide shows which lifetime scenarios AI handles correctly and which require human expertise.

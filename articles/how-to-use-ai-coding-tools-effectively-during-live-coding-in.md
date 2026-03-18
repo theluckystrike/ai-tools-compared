@@ -10,6 +10,7 @@ tags: [interview, tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI during live coding by having AI suggestions off by default, activating it for specific problems, and narrating decisions to avoid creating confusion. This guide shows the workflow that keeps live coding interactive while leveraging AI assistance.

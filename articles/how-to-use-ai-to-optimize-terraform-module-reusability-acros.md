@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Optimize Terraform modules by asking AI to identify duplication across modules, abstract common patterns, and generate reusable components. This guide shows the refactoring workflow that increases module reusability while maintaining backwards compatibility.

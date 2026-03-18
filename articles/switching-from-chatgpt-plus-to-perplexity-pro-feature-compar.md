@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Switch to Perplexity Pro for stronger web search integration and real-time information, but lose ChatGPT's deeper reasoning and vision capabilities. This guide compares features side-by-side to help you decide if switching makes sense.

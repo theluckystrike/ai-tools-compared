@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI to tackle technical debt by identifying debt patterns, generating targeted refactorings, and using AI to write supporting tests. This guide shows the systematic workflow that pays down debt without breaking features.

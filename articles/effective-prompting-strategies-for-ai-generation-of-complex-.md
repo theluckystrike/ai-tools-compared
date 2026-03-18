@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Writing SQL queries with AI requires prompting strategies that specify your database schema, expected query patterns, and performance constraints upfront. This guide demonstrates which prompt structures, examples, and follow-up questions produce correct, optimized SQL across complex joins, aggregations, and window functions.

@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Tabnine AI models cannot be directly imported into Supermaven because the two platforms use different model architectures and training approaches. Instead, back up your Tabnine configuration from `~/.tabnine/user.config.json` and custom models from the `models/` subdirectory, then configure Supermaven's settings to match your preferences. Supermaven's adaptive learning will personalize suggestions to your coding style within a few hours of active use.

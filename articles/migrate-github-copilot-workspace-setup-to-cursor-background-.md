@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Migrate Copilot workspace setup to Cursor by exporting settings, recreating project structure in Cursor, and testing equivalent workflows. This guide shows the step-by-step migration that preserves your workspace optimization.

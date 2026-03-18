@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Claude's free tier generates comprehensive unit tests with proper edge case coverage and assertion libraries; GitHub Copilot free tier offers inline test generation; ChatGPT free tier works but generates simpler test coverage. Choose Claude if you need thorough test suites within message limits; use Copilot for inline generation. This guide compares free AI tools for automated unit test generation.

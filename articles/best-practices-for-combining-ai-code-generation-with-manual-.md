@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling. Review AI code for unhandled edge cases, SQL injection risks, and architectural consistency. Allocate 30% of effort to generation, 70% to review and refinement. This guide covers effective workflows for combining AI generation with manual code review.

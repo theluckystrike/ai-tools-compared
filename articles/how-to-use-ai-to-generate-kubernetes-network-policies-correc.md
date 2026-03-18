@@ -10,6 +10,7 @@ tags: [kubernetes, security, networking]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Generate Kubernetes network policies with AI by specifying namespace structure, ingress/egress rules, and service dependencies. This guide shows which policy patterns AI generates reliably and which require security review.

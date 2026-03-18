@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # AI Code Generation Quality for JavaScript Async Await Patterns Compared

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 ChatGPT Edu pricing typically falls between $10-$20 per student annually for full GPT-4 access, with volume discounts of 20-30% available through district-wide adoption, multi-year contracts, or consortium purchasing. Schools with 50,000+ students can negotiate rates below $10 per student, while purchasing consortia have reported rates as low as $8. The per-student model scales predictably into annual technology budgets, and committing to 2-3 year agreements typically yields an additional 15-25% reduction.

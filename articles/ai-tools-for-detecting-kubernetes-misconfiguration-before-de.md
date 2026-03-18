@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools like Claude Code, GitHub Copilot, and Cursor can identify Kubernetes misconfigurations including security violations (secrets in environment variables, privileged containers, insecure image tags), resource issues (missing requests/limits), and best practice violations before deployment. By analyzing YAML manifests against CIS Kubernetes benchmarks and your organization's policies, AI assistants catch contextual issues that traditional schema validators miss. Integrating AI analysis into CI/CD pipelines or IDE development workflows prevents problematic configurations from reaching production.

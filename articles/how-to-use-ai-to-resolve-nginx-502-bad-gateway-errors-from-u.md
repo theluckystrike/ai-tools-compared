@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools debug nginx 502 Bad Gateway errors by analyzing your upstream configuration to identify missing headers, health check gaps, socket permission issues, or incorrect timeout values that break backend communication. Provide an AI assistant with your nginx.conf, error logs showing connection failures, and which upstream technology you're using (Node.js, Python, etc.), and it can generate corrected configurations with explained fixes—such as adding proxy headers, implementing max_fails settings, or adjusting timeout values for your specific backend.

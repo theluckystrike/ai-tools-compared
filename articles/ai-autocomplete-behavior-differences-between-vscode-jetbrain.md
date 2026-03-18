@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI autocomplete behaves differently across VSCode, JetBrains, and Neovim due to how each platform integrates the AI and analyzes context. VSCode prioritizes speed with proximity-based predictions, JetBrains provides more integrated AI with deferred delivery for higher confidence, while Neovim offers flexible manual triggering with local model support. Each approach has tradeoffs in latency, context awareness, and customization that affect code suggestion quality and your development workflow.

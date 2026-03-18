@@ -10,6 +10,7 @@ tags: [devops, ai, sre]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI to draft runbooks by describing your systems, incident patterns, and resolution steps, then iterating with AI to refine decision trees and automation steps. This guide shows the workflow that produces runbooks useful enough for your team to actually follow.

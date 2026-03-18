@@ -10,6 +10,7 @@ tags: [productivity]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Reduce ghost-text distractions by disabling autocomplete for specific file types, setting longer completion delays, or switching to chat-only mode during deep focus work. This guide shows which IDE settings actually reduce distraction versus just hiding the visual display.

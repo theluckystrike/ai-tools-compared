@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Export your Grammarly personal dictionary by locating the local SQLite database on Windows (`%APPDATA%\Grammarly\GrammarlyAppData\userdictionary\`) or macOS (`~/Library/Application Support/Grammarly/`), then extracting the word list with a Python script or SQLite viewer. For browser extension users, pull dictionary data from Local Storage via Developer Tools. Once exported, you can import your custom words into Claude, VS Code, Neovim, or any other tool that supports custom dictionaries.

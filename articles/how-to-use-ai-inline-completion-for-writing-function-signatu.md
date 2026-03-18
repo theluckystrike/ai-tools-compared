@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use inline completion for function signatures by starting your function, letting AI suggest parameters and return types, then expanding the implementation. This guide shows the keystroke-efficient workflow for writing typed function signatures.

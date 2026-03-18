@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Yes, both ChatGPT Plus Memory and Custom GPTs count toward your usage limits. Memory adds persistent context tokens to every request, increasing per-message token consumption. Custom GPTs carry the computational cost of their instructions and attached knowledge files with every interaction, which can significantly accelerate rate limit exhaustion. Understanding exactly how these features affect your quota helps you optimize your setup and avoid unexpected throttling.

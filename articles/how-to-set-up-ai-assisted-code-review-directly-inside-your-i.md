@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Set up AI code review in your IDE by configuring extensions, creating review comment templates, and running AI analysis as a pre-commit hook. This guide shows the setup that integrates AI review into your workflow without slowing down your commit process.

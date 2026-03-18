@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned model ID—you cannot directly download the weights but can run inference locally with proper API integration. This guide explains the limitations and the practical workflow for local deployment.

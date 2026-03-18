@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools struggle with Rust WASM configuration, generating broken wasm-bindgen code about 40% of the time due to complexity in build configuration and JavaScript interop. This guide explains what works reliably, what breaks, and the safest approach to AI-assisted WASM development.

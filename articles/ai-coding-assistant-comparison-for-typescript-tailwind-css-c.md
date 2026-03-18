@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Claude Code to generate Tailwind CSS classes that follow composition patterns, leverage responsive prefixes and state modifiers, and remain readable in JSX. The best AI assistants understand Tailwind's constraint-based system and generate classes that work with your codebase's design conventions rather than producing generic or unmaintainable class combinations.

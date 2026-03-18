@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Install these extensions in order when switching from Copilot to Codeium: first the core "Codeium" extension for inline completions, then Codeium Chat for conversational AI assistance, followed by EditorConfig for consistent formatting that improves suggestion accuracy. Uninstall Copilot completely and restart your editor before installing Codeium to avoid completion engine conflicts. This guide covers the full setup including keyboard shortcut mapping, completion behavior configuration, and language-specific extension pairings.

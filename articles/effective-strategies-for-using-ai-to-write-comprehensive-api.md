@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI to write comprehensive API documentation by providing your code, specifying your documentation style, and asking for both reference docs and usage examples. This guide shows exactly what prompts and follow-ups produce complete documentation that accurately reflects your actual implementation.

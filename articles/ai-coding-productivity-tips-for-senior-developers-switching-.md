@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Shift your mindset from writing code to directing code generation by articulating requirements clearly, reviewing generated output carefully, and leveraging AI for architectural decisions rather than just syntax. Senior developers amplify productivity by mastering prompt engineering, using AI for fast prototyping and refactoring, and applying their experience to validate and improve AI-generated code—not by replacing their expertise with blind automation.

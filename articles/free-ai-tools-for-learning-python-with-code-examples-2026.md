@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 The best free AI tools for learning Python are Claude (via free tier or API credits), GitHub Copilot free, and specialized sites like Cursor. This guide compares them by learning style: interactive explanations, code examples, error debugging, and project-based learning.

@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use the fast model (1 credit per request) for quick completions, boilerplate, and simple refactoring; use the slow model (5-10 credits per request) for deep debugging, architectural analysis, and multi-file reasoning. Credits renew monthly, and consumption scales with context window size and response length. Most developers find that roughly 80% of tasks work well with the fast model, reserving slow model credits for the 20% that need deeper analysis.

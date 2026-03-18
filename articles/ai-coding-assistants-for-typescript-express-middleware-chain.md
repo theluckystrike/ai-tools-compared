@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Claude Code to generate type-safe Express middleware chains that handle authentication, validation, and error propagation correctly. TypeScript Express middleware requires proper typing and understanding of async middleware patterns—the best AI assistants recognize these requirements and generate middleware that maintains type safety across the entire chain.
