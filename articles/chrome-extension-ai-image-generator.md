@@ -142,6 +142,53 @@ Chrome extension AI image generators serve various use cases:
 
 The ability to trigger image generation from anywhere in the browser makes these extensions particularly valuable for workflows that involve frequent visual content creation.
 
+## Context Menu Integration
+
+For power users, adding context menu integration allows generating images from selected text on any page:
+
+```javascript
+// In background.js or service worker
+chrome.contextMenus.create({
+  id: 'generateImage',
+  title: 'Generate AI Image',
+  contexts: ['selection']
+});
+
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  if (info.menuItemId === 'generateImage') {
+    chrome.tabs.sendMessage(tab.id, {
+      action: 'showGenerator',
+      prompt: info.selectionText
+    });
+  }
+});
+```
+
+The content script then displays a floating panel with the selected text pre-filled as the image prompt. This approach lets users generate visuals from article descriptions, product copy, or any highlighted text without switching to the popup.
+
+## Rate Limiting
+
+Implement client-side rate limiting to prevent abuse and manage API costs:
+
+```javascript
+const RATE_LIMIT = 10; // requests per minute
+const requestTimestamps = [];
+
+function checkRateLimit() {
+  const now = Date.now();
+  const oneMinuteAgo = now - 60000;
+  const recent = requestTimestamps.filter(ts => ts > oneMinuteAgo);
+
+  if (recent.length >= RATE_LIMIT) {
+    throw new Error('Rate limit exceeded. Please wait.');
+  }
+
+  requestTimestamps.push(now);
+}
+```
+
+Call `checkRateLimit()` before every API request to enforce boundaries on the client side, independent of any server-side limits.
+
 ## Performance Considerations
 
 Image generation APIs can take several seconds to respond. Implement proper loading states and consider caching generated images locally using the IndexedDB API for repeat queries. This reduces API calls and improves user experience.
