@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-When PostgreSQL chooses the wrong index scan path, your queries slow down dramatically, and identifying the root cause requires digging into execution plans, statistics, and optimizer behavior. Understanding why the query planner makes poor choices and knowing which AI tools can help debug these issues saves hours of manual investigation.
+AI tools can debug PostgreSQL query planner issues by analyzing EXPLAIN output, generating diagnostic queries to check statistics and index usage, and suggesting specific fixes like ANALYZE, index creation, or cost parameter tuning. When the query planner selects a suboptimal index scan path, providing an AI assistant with your execution plan, index definitions, and table statistics enables it to identify root causes—stale statistics, misconfigured costs, or poor index column ordering—and recommend targeted solutions efficiently.
 
 ## Understanding the Problem
 

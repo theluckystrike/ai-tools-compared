@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-CSS custom properties (CSS variables) behave differently inside Shadow DOM compared to the regular DOM. When your carefully defined design tokens or theme variables fail to propagate through shadow boundaries, debugging becomes frustrating. AI assistants can help you diagnose these inheritance failures quickly, but knowing how to frame your questions and understand the underlying mechanics makes the difference between quick fixes and endless trial-and-error.
+AI assistants debug CSS custom property inheritance failures in Shadow DOM by immediately recognizing that custom properties cannot cross shadow boundaries without explicit exposure, and recommending the `--inherit` CSS property as the solution. The best AI assistants explain why variables fail to propagate (shadow encapsulation blocks them), suggest adding `--theme-color: var(--theme-color)` paired with `--inherit` to host styles, and help identify variable shadowing conflicts or incorrect `:host` selector usage.
 
 ## Understanding Shadow DOM and Custom Property Inheritance
 

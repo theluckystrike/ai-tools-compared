@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Transforming fragmented wiki pages into coherent, searchable developer portal documentation is a common challenge. When your team's knowledge lives across dozens of outdated Confluence pages, Google Docs, and random Markdown files, AI tools can help you consolidate and rewrite this content efficiently.
+AI tools consolidate scattered wiki documentation into polished internal developer portal content by extracting key concepts, modernizing outdated code examples, and generating structured markdown matching your portal's template format. You can paste fragmented Confluence pages or Google Docs into an LLM, use prompts to remove redundancy and standardize terminology, and generate portal sections consistently—then have subject matter experts verify accuracy before publishing.
 
 ## The Problem with Scattered Wiki Documentation
 
