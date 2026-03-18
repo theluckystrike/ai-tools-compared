@@ -190,7 +190,7 @@ Claude Code paired with Confluence closes the documentation gap that plagues mos
 
 - [Claude Code Documentation Generation Workflow](/claude-skills-guide/automated-code-documentation-workflow-with-claude-skills/) — Documentation generation powers Confluence content
 
-- [Claude Code Notion API Documentation Guide](/claude-skills-guide/claude-code-notion-api-documentation-guide/) — Notion and Confluence are alternative doc platforms
+- [How to Integrate Claude Skills with Notion API Guide](/claude-skills-guide/how-to-integrate-claude-skills-with-notion-api-guide/) — Notion and Confluence are alternative doc platforms
 - [Claude Skills Workflows Hub](/claude-skills-guide/workflows-hub/) — Documentation workflow automation guides
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

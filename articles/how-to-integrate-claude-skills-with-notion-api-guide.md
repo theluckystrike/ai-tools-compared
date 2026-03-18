@@ -281,6 +281,31 @@ async function getRelatedContext(databaseId, searchText) {
 }
 ```
 
+## Handling Rate Limits
+
+The Notion API enforces rate limits — typically 3 requests per second on average. Implement exponential backoff for retry logic in your pipeline:
+
+```javascript
+async function makeRequestWithRetry(fn, maxRetries = 3) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (error.status === 429) {
+        const waitTime = Math.pow(2, attempt) * 1000;
+        console.log(`Rate limited. Waiting ${waitTime}ms`);
+        await new Promise(resolve => setTimeout(resolve, waitTime));
+      } else {
+        throw error;
+      }
+    }
+  }
+  throw new Error('Max retries exceeded');
+}
+```
+
+For read-heavy workflows, implement caching to reduce API calls and improve response times. Version your API interactions by pinning to a specific Notion API version header and updating deliberately to avoid breaking changes.
+
 ## Conclusion
 
 Integrating Claude skills with the Notion API creates a knowledge management pipeline where AI analysis flows directly into your team's documentation. The `pdf` skill populates databases with structured extracts, `tdd` generates code review docs, and `supermemory` reads existing pages to maintain project context. Build the pipeline incrementally — start with document-to-Notion, then add the two-way reading pattern.

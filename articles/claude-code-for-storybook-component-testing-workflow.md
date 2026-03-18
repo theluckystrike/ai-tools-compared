@@ -508,6 +508,17 @@ export const Button: React.FC<ButtonProps> = ({
 
 Use Claude Code regularly to audit story files for missing variants, suggest prop standardization across similar components, and generate changelogs based on story modifications. The **supermemory** skill helps maintain context across complex component libraries, remembering design decisions and component relationships between sessions.
 
+## Storybook Migration and Maintenance
+
+If you're migrating from an older Storybook version, Claude Code can batch-convert stories, update deprecated APIs, and ensure compatibility:
+
+```
+Migrate all stories from Storybook 6 format to Storybook 8,
+updating deprecated APIs and adding modern controls configuration.
+```
+
+Regular maintenance keeps Storybook useful. Ask Claude Code to audit your Storybook for components that no longer exist in the codebase, stories with broken controls, duplicate stories that can be consolidated, and missing documentation. This periodic cleanup ensures your component library remains a valuable resource rather than accumulating stale content.
+
 ## Conclusion
 
 Claude Code transforms Storybook component testing from a manual, time-consuming process into an efficient, automated workflow. By using AI-assisted story generation, intelligent debugging, and systematic coverage analysis, frontend teams can maintain high-quality component libraries without sacrificing development speed. The key is establishing clear conventions, automating repetitive tasks, and using Claude Code as a collaborative partner in your testing process.
