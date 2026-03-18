@@ -6,6 +6,10 @@ description: "A practical comparison of AI assistants for writing recursive SQL 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

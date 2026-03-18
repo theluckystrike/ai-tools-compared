@@ -5,6 +5,10 @@ description: "Learn how AI tools can help create Grafana SLO dashboard panels wi
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
