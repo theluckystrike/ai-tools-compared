@@ -5,6 +5,10 @@ description: "Discover how AI can help you generate dbt seeds and fixtures to te
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -5,6 +5,10 @@ description: "Discover the best AI-powered tools and techniques to transform mes
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

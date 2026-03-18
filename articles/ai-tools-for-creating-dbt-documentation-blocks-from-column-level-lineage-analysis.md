@@ -5,6 +5,10 @@ description: "Discover how AI-powered tools can automatically generate dbt docum
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

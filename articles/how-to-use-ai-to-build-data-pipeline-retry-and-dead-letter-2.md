@@ -5,6 +5,10 @@ description: "Learn how to leverage AI to create intelligent retry mechanisms an
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

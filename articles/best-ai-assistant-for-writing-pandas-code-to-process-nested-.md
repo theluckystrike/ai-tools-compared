@@ -5,6 +5,10 @@ description: "Discover which AI coding tools excel at generating pandas code for
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Processing paginated API responses with nested JSON structures is a common challenge for developers working with data pipelines. When your API returns data spread across multiple pages with deeply nested objects, writing efficient pandas code to flatten, transform, and analyze this data requires careful handling. This article evaluates the best AI assistants for generating pandas code that handles nested JSON and API pagination effectively.

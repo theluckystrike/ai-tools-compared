@@ -6,6 +6,10 @@ description: "A practical guide for developers on using AI tools to translate SQ
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Moving SQL queries between different database systems remains a common challenge for developers. Each database platform has unique syntax, function names, and feature sets. While manual conversion works for simple queries, complex SQL often requires significant refactoring. AI tools now offer a practical solution for automating this translation process across PostgreSQL, MySQL, BigQuery, and Snowflake.
