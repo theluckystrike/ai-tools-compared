@@ -5,6 +5,10 @@ description: "A practical guide for developers working with AI coding assistants
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 AI coding tools have become essential for developer productivity, but HIPAA-regulated healthcare projects require special considerations. When your code handles protected health information (PHI), the way you interact with AI assistants directly impacts compliance. This guide provides actionable best practices for developers working in healthcare software environments.

@@ -6,7 +6,7 @@ description: "A practical guide to using AI for transforming raw customer feedba
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/
-categories: [ai-tools, product-management]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
