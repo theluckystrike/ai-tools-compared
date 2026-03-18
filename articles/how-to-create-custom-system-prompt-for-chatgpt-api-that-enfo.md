@@ -1,184 +1,192 @@
 ---
+
 layout: default
 title: "How to Create Custom System Prompt for ChatGPT API That Enforces Coding Standards"
-description: "Learn how to build custom system prompts for the ChatGPT API that enforce consistent coding standards across your codebase. Practical examples and implementation guide."
+description: "A practical guide for developers on creating custom system prompts that enforce coding standards when using the ChatGPT API, with code examples and implementation strategies."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/
+categories: [guides]
+tags: [chatgpt, api, coding-standards]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
 ---
 
-When integrating the ChatGPT API into your development workflow, the system prompt serves as the foundation that shapes how the model behaves. A well-crafted system prompt can transform the model from a general-purpose assistant into a specialized coding partner that enforces your team's coding standards. This guide walks you through creating custom system prompts that maintain consistency across your codebase.
+Custom system prompts give you control over how the ChatGPT API behaves in your applications. When you need consistent code output that follows your team's coding standards, a well-crafted system prompt becomes essential. This guide shows you how to create effective system prompts that enforce coding standards across your AI-generated code.
 
 ## Why System Prompts Matter for Code Generation
 
-The system prompt acts as an instruction set that defines the model's behavior before any user interaction occurs. Unlike regular prompts, system prompts establish persistent rules that apply throughout the conversation. When building tools that generate code automatically, these prompts become critical for maintaining quality and consistency.
+The system prompt sets the foundation for every response the API produces. Unlike user messages that change with each request, the system prompt persists throughout the conversation and shapes the model's behavior globally. When your team requires consistent code formatting, specific naming conventions, or enforcement of best practices, the system prompt is where you define those requirements.
 
-A generic ChatGPT response might produce functional code that violates your team's style guidelines. By embedding your coding standards directly into the system prompt, you ensure that every response aligns with your requirements from the first token generated.
+Without explicit instructions, the model generates code based on its training data, which may not align with your organization's standards. A custom system prompt solves this by establishing clear expectations before any user code requests arrive.
 
-## Building Your Coding Standards System Prompt
+## Building an Effective Coding Standards System Prompt
 
-The most effective approach combines multiple layers of instructions. Start with your foundational rules, then add specific enforcement mechanisms.
+An effective system prompt for enforcing coding standards contains several key components. Start with your language preferences, then specify formatting rules, and finally add any architectural constraints your team follows.
 
-### Step 1: Define Your Core Standards
+### Structure Your Prompt Clearly
 
-Before writing the prompt, document what coding standards matter to your team. Common considerations include:
+Organize your system prompt into distinct sections. This helps the model understand and follow each requirement:
 
-- Naming conventions (camelCase versus snake_case)
-- Comment styles and documentation requirements
-- Error handling approaches
-- Import organization
-- Function length and complexity limits
-- Testing requirements
+```
+You are a code generation assistant that follows strict coding standards.
+Always use the following conventions:
 
-For example, if your team uses Python with strict PEP 8 guidelines, your system prompt should explicitly state this preference.
+LANGUAGE AND STYLE
+- Write TypeScript with strict mode enabled
+- Use functional components for React
+- Prefer const over let; never use var
+- Add TypeScript types to all function parameters and return values
 
-### Step 2: Craft the System Message
+FORMATTING RULES
+- Use 2 spaces for indentation
+- Maximum line length of 80 characters
+- Place imports at the top of files
+- Group imports: external libraries, then relative paths
+- Use single quotes for strings
 
-Structure your system prompt with clear, explicit instructions. Place the most critical rules first, as models tend to prioritize early instructions.
+NAMING CONVENTIONS
+- Variables and functions: camelCase
+- React components: PascalCase
+- Constants: SCREAMING_SNAKE_CASE
+- Interfaces: prefix with 'I' (e.g., IUserProfile)
 
-```python
-SYSTEM_PROMPT = """You are a code generation assistant that strictly follows our team's coding standards.
+ERROR HANDLING
+- Always handle async errors with try-catch
+- Return proper error types, never use 'any'
+- Log errors before throwing
 
-Code Style Requirements:
-- Use Python 3.10+ type hints for all function parameters and return values
-- Follow PEP 8 style guide with maximum line length of 88 characters
-- Use snake_case for variables and functions, PascalCase for classes
-- Include docstrings using Google style format
-
-Error Handling:
-- Always use custom exceptions inheriting from ValueError
-- Never use bare except clauses
-- Handle errors at the appropriate abstraction level
-
-Code Organization:
-- Organize imports: standard library, third-party, local
-- Keep functions under 30 lines of code
-- Use dataclasses for simple data structures
-
-When generating code, output only the code without explanations unless specifically requested.
-"""
+DOCUMENTATION
+- Add JSDoc comments to all exported functions
+- Document function parameters and return types
+- Include usage examples for complex functions
 ```
 
-This prompt provides clear, actionable rules that the model can follow consistently.
+### Add Project-Specific Context
 
-### Step 3: Test and Iterate
+Your system prompt should also reference your specific project requirements. Include information about your tech stack, testing requirements, and any framework-specific patterns:
 
-Testing your system prompt requires generating multiple code samples and evaluating them against your standards. Create a validation script that checks generated code for compliance:
-
-```python
-import ast
-import re
-
-def validate_code_standards(code: str) -> list[str]:
-    """Validate generated code against team standards."""
-    issues = []
-    
-    # Check for type hints
-    if "def " in code and "->" not in code:
-        issues.append("Missing type hints on function")
-    
-    # Check for bare except
-    if re.search(r"except\s*:", code):
-        issues.append("Bare except clause detected")
-    
-    # Check function length
-    tree = ast.parse(code)
-    for node in ast.walk(tree):
-        if isinstance(node, ast.FunctionDef):
-            if len(node.body) > 30:
-                issues.append(f"Function '{node.name}' exceeds 30 lines")
-    
-    return issues
+```
+PROJECT REQUIREMENTS
+- This project uses Next.js 14 with the App Router
+- All API routes go in /app/api/
+- Use Server Actions for form submissions
+- Implement error boundaries around routes
+- Follow the repository's commit message format
 ```
 
-Run this validation on every generated response to identify where your system prompt needs refinement.
+## Implementation Example
 
-## Advanced Techniques for Standard Enforcement
-
-### Conditional Instructions
-
-Add conditional logic to your prompt for different contexts:
-
-```python
-SYSTEM_PROMPT = """When writing tests:
-- Use pytest framework
-- Follow AAA pattern (Arrange, Act, Assert)
-- Include descriptive test names following pattern test_<method>_<expected_behavior>
-- Mock external dependencies
-
-When writing production code:
-- Optimize for readability over cleverness
-- Add logging for debugging hooks
-- Include retry logic for external API calls
-"""
-```
-
-This approach helps the model adapt its output based on the specific task type.
-
-### Example-Driven Instructions
-
-Sometimes showing examples works better than describing rules:
-
-```python
-SYSTEM_PROMPT = """When generating functions, follow this pattern:
-
-Good Example:
-def calculate_total(prices: list[float], tax_rate: float) -> float:
-    \"\"\"Calculate total price including tax.
-    
-    Args:
-        prices: List of item prices
-        tax_rate: Tax rate as decimal (e.g., 0.08 for 8%)
-    
-    Returns:
-        Total price including tax
-    \"\"\"
-    subtotal = sum(prices)
-    tax = subtotal * tax_rate
-    return round(subtotal + tax, 2)
-
-Avoid:
-def calc(p, t):
-    return round(sum(p) * (1 + t), 2)
-"""
-```
-
-The model learns from these examples and applies the pattern to new code generation tasks.
-
-## Integrating with Your Development Workflow
-
-Once you have a working system prompt, integrate it into your API calls:
+Here's how to use these prompts with the OpenAI API in Python:
 
 ```python
 import openai
 
-client = openai.OpenAI()
+openai.api_key = "your-api-key"
 
-def generate_code(prompt: str, system_prompt: str) -> str:
-    """Generate code using custom system prompt."""
-    response = client.chat.completions.create(
-        model="gpt-4",
+coding_standards_prompt = """You are a code generation assistant that follows strict coding standards.
+Always use the following conventions:
+
+LANGUAGE AND STYLE
+- Write TypeScript with strict mode enabled
+- Use functional components for React
+- Prefer const over let; never use var
+- Add TypeScript types to all function parameters and return values
+
+FORMATTING RULES
+- Use 2 spaces for indentation
+- Maximum line length of 80 characters
+
+NAMING CONVENTIONS
+- Variables and functions: camelCase
+- React components: PascalCase
+
+DOCUMENTATION
+- Add JSDoc comments to all exported functions
+"""
+
+def generate_code_with_standards(user_request: str) -> str:
+    response = openai.chat.completions.create(
+        model="gpt-4o",
         messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": prompt}
+            {"role": "system", "content": coding_standards_prompt},
+            {"role": "user", "content": user_request}
         ],
-        temperature=0.2
+        temperature=0.3
     )
     return response.choices[0].message.content
 ```
 
-Set the temperature lower (around 0.2) when consistency matters more than creativity. This reduces variations in how the model interprets your standards.
+The `temperature` parameter set to 0.3 produces more consistent, predictable output. Higher values introduce randomness that may result in non-standard code patterns.
+
+## Enforcing Standards Across Multiple Languages
+
+If your project spans multiple programming languages, create language-specific sections in your system prompt:
+
+```
+PYTHON STANDARDS
+- Follow PEP 8 style guide
+- Use type hints for all function signatures
+- Prefer list comprehensions over loops when appropriate
+- Use f-strings for string formatting
+
+GO STANDARDS
+- Use gofmt for formatting
+- Return errors, never panic
+- Context should be the first parameter
+- Group imports using goimports
+```
+
+The model will switch between standards based on the language requested in the user's message.
+
+## Testing Your System Prompt
+
+After creating your system prompt, verify it works correctly. Generate code for several scenarios and check against your standards checklist:
+
+1. **Run the generated code**: Does it compile without errors?
+2. **Check formatting**: Are indentation and line lengths correct?
+3. **Verify types**: Are TypeScript types or Python type hints present?
+4. **Review documentation**: Do functions have proper comments?
+
+If the model consistently ignores specific rules, add explicit examples showing correct and incorrect code. Few-shot examples within your system prompt dramatically improve compliance:
+
+```
+EXAMPLE - CORRECT:
+function calculateTotal(items: CartItem[]): number {
+  return items.reduce((sum, item) => sum + item.price, 0);
+}
+
+EXAMPLE - INCORRECT:
+function calculateTotal(items) {
+  let total = 0;
+  for (let i = 0; i < items.length; i++) {
+    total += items[i].price;
+  }
+  return total;
+}
+```
 
 ## Maintaining Consistency Over Time
 
-As your project evolves, update your system prompt to reflect new standards. Track which rules cause the most validation failures and prioritize addressing those gaps. Document changes to your prompt in a CHANGELOG to maintain a record of evolving standards.
+Your coding standards evolve, and your system prompt should too. Keep your prompt in version control alongside your code. When standards change, update the prompt and regenerate any affected code to maintain consistency.
 
-Consider creating versioned system prompts for different project types. A prompt for data processing scripts might differ from one used for web applications, even within the same team.
+Consider creating a shared prompt template that team members can import:
+
+```python
+# prompts/coding_standards.py
+
+def get_coding_standards_prompt() -> str:
+    return """You are a code generation assistant..."""
+```
+
+This approach ensures everyone uses the same prompt version and makes updates straightforward.
 
 ## Conclusion
 
-Creating effective system prompts for the ChatGPT API requires careful attention to your team's specific needs. Start with clear, explicit rules, validate outputs consistently, and iterate based on real-world results. The investment in crafting precise system prompts pays dividends through improved code quality and reduced review cycles.
+A well-crafted system prompt transforms the ChatGPT API from a general-purpose code generator into a tool that enforces your specific coding standards. By clearly defining language preferences, formatting rules, naming conventions, and documentation requirements, you get consistent code output that integrates seamlessly with your codebase.
 
-Remember that system prompts work best as living documents that evolve with your project. Regular maintenance ensures your AI coding assistant remains aligned with current standards and best practices.
+Start with the basics, test thoroughly, and refine based on the results. Your team will benefit from AI-assisted code generation that actually follows your standards.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
