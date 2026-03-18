@@ -6,7 +6,7 @@ description: "A practical guide to AI-powered coding kata generators that adapt 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/
-categories: [ai-tools, coding-practice]
+categories: [guides]
 ---
 
 Coding kata exercises have long been a staple of developer practice, but finding the right difficulty level and variety can be challenging. AI-powered tools now make it possible to generate customized coding exercises that match your exact skill level, helping you practice exactly what you need without spending time searching through generic repositories.

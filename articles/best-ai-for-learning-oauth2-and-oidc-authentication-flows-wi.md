@@ -5,6 +5,10 @@ description: "A practical guide for developers to learn OAuth2 and OIDC authenti
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
