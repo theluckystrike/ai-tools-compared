@@ -13,6 +13,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 Duplicate GitHub issues clutter repositories, confuse contributors, and make it harder for maintainers to prioritize fixes. When multiple users report the same bug or request the same feature using different wording, these scattered reports split the discussion and delay resolution. AI tools that leverage semantic similarity matching can automatically detect when new issues are likely duplicates of existing ones, helping teams keep their issue trackers organized and actionable.
 
@@ -134,3 +136,4 @@ AI-powered duplicate detection reduces manual effort while improving the experie
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
