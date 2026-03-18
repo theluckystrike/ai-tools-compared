@@ -5,6 +5,10 @@ description: "A practical guide to AI tools that help developers resolve Git mer
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-resolving-git-merge-conflict-markers-in-complex-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

@@ -6,6 +6,10 @@ description: "Discover which AI assistants excel at debugging Swift compiler err
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
