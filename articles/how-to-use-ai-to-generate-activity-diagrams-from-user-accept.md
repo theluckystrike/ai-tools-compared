@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Generate Activity Diagrams from User Acceptance Criteria"
-description: "A practical guide for developers on using AI tools to automatically generate UML activity diagrams from user acceptance criteria, with code examples and workflow integration tips."
+title: "How to Use AI to Generate Activity Diagrams from User."
+description: "A practical guide for developers on using AI tools to automatically generate UML activity diagrams from user acceptance criteria, with code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/
@@ -231,6 +231,11 @@ AI tools transform the creation of activity diagrams from a time-consuming manua
 The key to success lies in treating AI generation as a starting point rather than a final product. Review generated diagrams carefully, validate them against original requirements, and refine as needed. When integrated into your development workflow, AI-generated activity diagrams improve team communication, reduce misunderstandings, and accelerate the delivery of well-understood features.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
