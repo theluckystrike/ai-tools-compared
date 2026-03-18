@@ -5,7 +5,7 @@ title: "Best AI for Creating Comprehensive Negative Test Cases from API Swagger 
 description: "A practical guide to using AI tools that generate thorough negative test cases from Swagger/OpenAPI specifications. Includes code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
-permalink: /best-ai-for-creating-comprehensive-negative-test-cases-from-api-swagger-definitions/
+permalink: /best-ai-for-creating-comprehensive-negative-test-cases-from-/
 categories: [development, testing, ai-tools]
 reviewed: true
 score: 8
