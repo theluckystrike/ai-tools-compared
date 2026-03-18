@@ -5,6 +5,10 @@ description: "Wondering if GitHub Copilot costs more for private repositories? G
 date: 2026-03-18
 author: theluckystrike
 permalink: /copilot-suggestions-in-private-repos-do-they-cost-more-than-public/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

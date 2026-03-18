@@ -6,6 +6,10 @@ description: "Discover the most powerful AI-powered IDE features that transform 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-ide-features-for-database-query-writing-and-optimization/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

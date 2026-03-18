@@ -6,7 +6,7 @@ description: "A practical guide to implementing AI-powered security compliance s
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automating-cloud-security-compliance-scanning-i/
-categories: [security, devops, ai]
+categories: [security, guides]
 reviewed: false
 score: 0
 intent-checked: false

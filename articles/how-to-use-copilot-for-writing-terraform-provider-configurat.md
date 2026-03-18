@@ -5,6 +5,10 @@ description: "Learn practical techniques for using GitHub Copilot to write Terra
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-for-writing-terraform-provider-configurat/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Writing Terraform provider configurations can feel repetitive. You look up authentication parameters, region settings, and feature flags repeatedly across providers like AWS, Azure, and GCP. GitHub Copilot accelerates this workflow by predicting your next configuration needs based on context and provider conventions.

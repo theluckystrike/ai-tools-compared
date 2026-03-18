@@ -5,6 +5,10 @@ description: "A practical guide to Windsurf AI Flows, explaining how to chain mu
 date: 2026-03-16
 author: theluckystrike
 permalink: /windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Windsurf AI's Flows feature represents a significant advancement in AI-assisted development workflows. By allowing developers to chain multiple editing steps together, Flows enables the automation of repetitive tasks and the creation of sophisticated pipelines that transform codebases systematically. This guide explores how to leverage this feature effectively.

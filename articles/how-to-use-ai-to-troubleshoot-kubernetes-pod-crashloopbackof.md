@@ -5,7 +5,7 @@ description: "A practical guide for developers on leveraging AI tools to diagnos
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/
-categories: [kubernetes, debugging, ai-tools]
+categories: [guides, comparisons]
 ---
 
 Kubernetes pod failures are inevitable in production environments, and the dreaded CrashLoopBackOff status ranks among the most frustrating issues developers face. Traditional debugging involves manually inspecting logs, describing resources, and piecing together clues from events. AI tools now offer a faster path to diagnosis by analyzing your cluster state, logs, and configuration in seconds rather than hours.

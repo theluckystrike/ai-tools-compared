@@ -5,6 +5,10 @@ description: "A technical deep-dive into Cursor AI's codebase indexing mechanism
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Cursor AI has transformed how developers interact with their codebases, and the secret sauce behind its effectiveness lies in codebase indexing. This process allows the AI to understand your entire project—not just the file you're currently editing—leading to more accurate suggestions, context-aware completions, and intelligent refactoring capabilities.

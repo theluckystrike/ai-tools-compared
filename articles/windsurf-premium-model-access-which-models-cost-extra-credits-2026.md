@@ -6,7 +6,7 @@ description: "A comprehensive guide to Windsurf Premium model access, including 
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /windsurf-premium-model-access-which-models-cost-extra-credits-2026/
-categories: [guides, windsurf]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
