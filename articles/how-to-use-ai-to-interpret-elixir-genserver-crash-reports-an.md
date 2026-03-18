@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Interpret Elixir GenServer Crash Reports and Supervisor Restarts"
-description: "Learn how AI tools can help you decode and understand Elixir GenServer crash reports and supervisor restart strategies. Practical examples and debugging techniques included."
+title: "How to Use AI to Interpret Elixir GenServer Crash."
+description: "Learn how AI tools can help you decode and understand Elixir GenServer crash reports and supervisor restart strategies. Practical examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/
@@ -116,6 +116,11 @@ Use AI as a learning tool. When AI explains a crash report, pay attention to the
 ## Conclusion
 
 AI tools significantly accelerate GenServer crash debugging by explaining cryptic error messages, identifying root causes in your code, and suggesting appropriate fixes. The key is providing comprehensive context—crash reports, code snippets, and application state—and verifying suggestions before deployment. Combined with understanding of OTP principles, AI assistance makes debugging Elixir applications more efficient and helps developers build more resilient systems.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
