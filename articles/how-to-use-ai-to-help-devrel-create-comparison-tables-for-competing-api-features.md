@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Use AI to Help DevRel Create Comparison Tables for Competing API Features"
+title: "How to Use AI to Help DevRel Create Comparison Tables."
 description: "A practical guide for developers and DevRel professionals on leveraging AI to create accurate, detailed comparison tables for competing API features."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/
-categories: [tutorials, guides]
+categories: [comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true
@@ -181,5 +181,10 @@ AI tools significantly speed up the research and structuring phases of creating 
 Start with a focused comparison on 5-8 features across 2-3 competitors. As your process matures, expand to cover more APIs and add dimensions like pricing, SLA guarantees, and ecosystem maturity.
 
 The goal is helping developers make informed decisions quickly. A well-structured, accurate comparison table does exactly that.
+
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

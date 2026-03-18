@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use AI to Help Designers Write Micro Interaction Specification Documents"
-description: "A practical guide for developers and power users leveraging AI to create precise micro interaction specifications that bridge design and development workflows."
+title: "How to Use AI to Help Designers Write Micro Interaction."
+description: "A practical guide for developers and power users leveraging AI to create precise micro interaction specifications that bridge design and development."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-designers-write-micro-interaction-spec/
@@ -192,5 +192,10 @@ Use these patterns to get the best results from AI when writing micro interactio
 **Iterate rather than perfect**: Generate a baseline spec quickly, then refine specific sections
 
 The goal is not to replace designer judgment but to accelerate the documentation process. AI handles the structural writing, while designers and developers provide context and validate the output against actual requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Help SRE Teams Draft Root Cause Analysis Documents"
+title: "How to Use AI to Help SRE Teams Draft Root Cause."
 description: "A practical guide for developers and SRE professionals using AI assistants to streamline incident post-mortems and root cause analysis documentation."
 date: 2026-03-16
 author: theluckystrike
@@ -137,5 +137,10 @@ Additionally, AI-generated content can sometimes miss the human elements that ma
 Begin with low-stakes incidents to build your prompt library. Track which inputs produce the best outputs for your team's needs. Over time, you'll develop templates that accelerate documentation without sacrificing quality.
 
 The key is treating AI as a drafting assistant, not a replacement for human analysis. Your team's expertise and judgment remain essential for identifying true root causes and meaningful improvements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

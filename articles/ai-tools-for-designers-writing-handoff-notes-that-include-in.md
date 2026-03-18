@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tools for Designers Writing Handoff Notes That Include Interaction State Descriptions"
-description: "A practical guide to using AI tools for creating comprehensive design handoff documentation with interaction state descriptions. Includes code examples and implementation strategies."
+title: "AI Tools for Designers Writing Handoff Notes That."
+description: "A practical guide to using AI tools for creating comprehensive design handoff documentation with interaction state descriptions. Includes code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-designers-writing-handoff-notes-that-include-in/
@@ -176,5 +176,10 @@ Effective handoff notes reduce developer questions. Track these metrics to gauge
 - Bug reports related to undocumented behaviors
 
 AI-assisted documentation should demonstrably reduce these friction points over time.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

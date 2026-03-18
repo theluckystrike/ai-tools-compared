@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Keyboard Navigation Tests"
+title: "How to Use AI to Generate Playwright Keyboard Navigation."
 description: "Learn how to leverage AI tools to automatically generate comprehensive Playwright keyboard navigation tests for your web applications."
 date: 2026-03-16
 author: theluckystrike
@@ -230,6 +230,11 @@ AI dramatically reduces the time required to create comprehensive keyboard navig
 Start small — generate tests for critical user flows first, then expand coverage. Combined with Playwright's built-in accessibility auditing, your applications become usable by everyone.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
