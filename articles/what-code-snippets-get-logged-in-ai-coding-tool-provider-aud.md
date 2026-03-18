@@ -10,12 +10,13 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 {%- include ai-coding-audit-trails-intro.html -%}
 
-If you use AI coding tools like GitHub Copilot, Cursor, Claude Code, or similar assistants, you might wonder what happens to your code during these sessions. Understanding audit trails helps you make informed decisions about privacy, security, and compliance—especially in enterprise environments where data governance matters.
+AI coding tools log your input code, generated suggestions, conversation context, and metadata like timestamps and file paths—but logging policies vary significantly across providers. GitHub Copilot logs all interactions for improvement and abuse detection, while tools like Claude Code offer granular control to disable logging. Understanding these audit trail differences is essential for making informed privacy and compliance decisions, especially in enterprise environments handling sensitive or proprietary code.
 
 ## What Are AI Coding Tool Audit Trails
 
