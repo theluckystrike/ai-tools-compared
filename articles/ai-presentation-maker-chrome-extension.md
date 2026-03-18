@@ -6,6 +6,10 @@ description: "Learn how to build an AI-powered presentation maker Chrome extensi
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-presentation-maker-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

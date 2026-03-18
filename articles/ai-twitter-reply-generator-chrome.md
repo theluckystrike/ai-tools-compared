@@ -6,6 +6,10 @@ description: "Learn how to build and use AI-powered Twitter reply generator Chro
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-twitter-reply-generator-chrome/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # AI Twitter Reply Generator for Chrome: A Developer's Guide

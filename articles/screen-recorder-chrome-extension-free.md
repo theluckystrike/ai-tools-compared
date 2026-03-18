@@ -6,6 +6,10 @@ description: "Learn how to build a free screen recorder Chrome extension from sc
 date: 2026-03-15
 author: theluckystrike
 permalink: /screen-recorder-chrome-extension-free/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Free Screen Recorder Chrome Extension: A Developer Guide

@@ -5,6 +5,10 @@ description: "Learn how to capture complete web pages programmatically using Chr
 date: 2026-03-15
 author: theluckystrike
 permalink: /full-page-screenshot-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Full Page Screenshot Chrome Extension: A Developer Guide

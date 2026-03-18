@@ -6,6 +6,10 @@ description: "Learn how to create an AI-powered flashcard generator as a Chrome 
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-flashcard-maker-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

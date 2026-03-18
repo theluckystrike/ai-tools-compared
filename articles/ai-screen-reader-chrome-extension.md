@@ -5,6 +5,10 @@ description: "Learn how to build and integrate AI-powered screen readers as Chro
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-screen-reader-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

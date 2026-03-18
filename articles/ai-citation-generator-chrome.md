@@ -5,6 +5,10 @@ description: "Build and use AI-powered citation generators for Chrome. Practical
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-citation-generator-chrome/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

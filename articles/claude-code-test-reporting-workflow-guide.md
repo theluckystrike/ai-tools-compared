@@ -5,6 +5,10 @@ keywords: "claude code test reporting workflow guide"
 date: 2024-01-01
 layout: article
 permalink: /claude-code-test-reporting-workflow-guide/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

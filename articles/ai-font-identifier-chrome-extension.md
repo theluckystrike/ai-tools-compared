@@ -5,6 +5,10 @@ description: "Discover how AI-powered font identifier Chrome extensions work, th
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-font-identifier-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # AI Font Identifier Chrome Extension: A Developer's Guide

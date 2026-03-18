@@ -6,6 +6,10 @@ description: "Learn how to build and use Chrome extensions for automatic video c
 date: 2026-03-15
 author: theluckystrike
 permalink: /chrome-extension-auto-caption-video/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

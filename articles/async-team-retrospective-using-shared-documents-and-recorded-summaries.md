@@ -6,7 +6,7 @@ description: "Learn how to run effective async team retrospectives using shared 
 date: 2026-03-18
 author: "Claude Skills Guide"
 permalink: /async-team-retrospective-using-shared-documents-and-recorded-summaries/
-categories: [remote-work]
+categories: [workflows]
 tags: [remote-work, async, retrospective, team-building]
 reviewed: true
 score: 8

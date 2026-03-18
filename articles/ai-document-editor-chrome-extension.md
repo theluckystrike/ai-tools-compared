@@ -5,6 +5,10 @@ description: "Learn how to build and integrate AI-powered document editing featu
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-document-editor-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # AI Document Editor Chrome Extension: A Developer's Guide

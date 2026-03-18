@@ -6,6 +6,10 @@ description: "Learn how AI-powered Chrome extensions can streamline your email w
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-email-writer-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 {% raw %}
 

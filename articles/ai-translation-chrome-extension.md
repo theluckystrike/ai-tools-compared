@@ -6,6 +6,10 @@ description: "Learn how to build AI-powered translation extensions for Chrome. P
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-translation-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

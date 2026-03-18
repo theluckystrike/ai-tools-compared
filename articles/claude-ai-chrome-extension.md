@@ -5,6 +5,10 @@ description: "Learn how to integrate Claude AI into Chrome with extensions, user
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-ai-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 # Claude AI Chrome Extension: A Developer's Guide to Integration

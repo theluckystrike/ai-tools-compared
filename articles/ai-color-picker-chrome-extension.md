@@ -5,6 +5,10 @@ description: "Discover how AI-powered color picker Chrome extensions can streaml
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-color-picker-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

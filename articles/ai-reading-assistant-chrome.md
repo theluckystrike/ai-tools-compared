@@ -5,6 +5,10 @@ description: "Learn how to build and integrate AI reading assistants in Chrome. 
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-reading-assistant-chrome/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

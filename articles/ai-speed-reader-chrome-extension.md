@@ -6,6 +6,10 @@ description: "Learn how to build and customize AI-powered speed reading extensio
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-speed-reader-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

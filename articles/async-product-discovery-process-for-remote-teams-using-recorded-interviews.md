@@ -8,7 +8,7 @@ description: "Learn how to implement an effective async product discovery proces
 date: 2026-03-18
 author: "Claude Skills Guide"
 permalink: /async-product-discovery-process-for-remote-teams-using-recorded-interviews/
-categories: [guides, remote-work, product-management]
+categories: [guides, workflows]
 tags: [async, product-discovery, remote-teams, user-interviews]
 reviewed: true
 score: 8

@@ -6,6 +6,10 @@ description: "Learn how to build an AI-powered content repurposing Chrome extens
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-content-repurposer-chrome-extension/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
