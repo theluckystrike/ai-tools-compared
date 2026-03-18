@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Rebasing is one of the most powerful Git operations available to developers, but it comes with a notorious downside: merge conflicts. When you rebase a feature branch onto an updated main branch, Git replays your commits one by one, and any conflicting changes stop the process in its tracks. Resolving these conflicts manually can be time-consuming and error-prone, especially in large codebases with complex dependency chains. In this guide, we explore how AI-powered tools can accelerate the conflict resolution process while helping you understand the implications of each choice.
+AI tools like Claude, ChatGPT, and Cursor can analyze conflicting file sections and suggest intelligent resolutions based on project context and coding patterns, transforming what might be hours of manual conflict resolution into a quick collaborative process. By feeding the conflicting code to an AI assistant along with project conventions, you receive a reasoned resolution that understands both sides of the conflict and explains the chosen approach. GitHub Copilot provides inline suggestions as you edit, Cursor maintains multi-file context to ensure consistency across related files, and Claude tools work best for complex semantic conflicts where understanding business logic matters more than simple text merging, allowing you to resolve even intricate rebases with confidence.
 
 ## Understanding the Challenge
 
