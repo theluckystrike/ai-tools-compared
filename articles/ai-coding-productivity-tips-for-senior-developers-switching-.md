@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Transitioning from manual coding to an AI-assisted workflow represents a fundamental shift in how you approach software development. As a senior developer, you bring years of experience writing code line by line. Now, AI tools can amplify your productivity exponentially—but only if you learn to leverage them effectively. This guide provides actionable strategies for making the most of AI coding assistants while maintaining the quality standards you have developed over your career.
+Shift your mindset from writing code to directing code generation by articulating requirements clearly, reviewing generated output carefully, and leveraging AI for architectural decisions rather than just syntax. Senior developers amplify productivity by mastering prompt engineering, using AI for fast prototyping and refactoring, and applying their experience to validate and improve AI-generated code—not by replacing their expertise with blind automation.
 
 ## Understanding the Mental Model Shift
 

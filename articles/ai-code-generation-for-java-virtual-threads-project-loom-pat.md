@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Java's introduction of Virtual Threads (Project Loom) has fundamentally changed how developers think about concurrency. Unlike traditional platform threads, Virtual Threads are lightweight, scalable, and designed to handle massive numbers of simultaneous operations without consuming excessive memory. In 2026, AI coding assistants have become valuable tools for helping developers adopt Virtual Threads and implement Project Loom patterns correctly.
+Use AI coding assistants to generate Virtual Thread implementations using `Executors.newVirtualThreadPerTaskExecutor()` instead of traditional thread pools, and to implement structured concurrency with scoped values for context propagation. Virtual Threads represent a paradigm shift from thread-per-request models, and AI tools help developers avoid common pitfalls by understanding the distinction between blocking and non-blocking operations in the Virtual Thread context.
 
 ## Understanding Virtual Threads Fundamentals
 

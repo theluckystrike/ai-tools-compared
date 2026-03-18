@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Svelte's compile-time approach combined with TypeScript creates unique challenges for AI coding assistants. When generating Svelte components with TypeScript, the accuracy of AI tools varies significantly based on their understanding of Svelte's reactivity system, prop typing, and component composition patterns. This analysis examines how different AI assistants perform when tasked with TypeScript Svelte component generation.
+Claude Code demonstrates superior accuracy for Svelte 5 components by correctly applying `$state` runes, `$derived` for computed values, and proper TypeScript prop typing. Svelte's compile-time reactivity system and recent runes (introduced in Svelte 5) require AI tools trained on recent language features—most general-purpose assistants struggle with Svelte-specific syntax, making tool selection critical for productive Svelte development.
 
 ## What Affects Accuracy in Svelte Component Generation
 

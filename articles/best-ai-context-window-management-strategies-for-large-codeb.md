@@ -10,12 +10,13 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 {%- include why-choose-ai-context-window.html -%}
 
-Working with large codebases presents a unique challenge for AI coding assistants. Context windows—the amount of code an AI can process at once—have expanded significantly, but large projects still exceed these limits. Effective context window management determines whether an AI assistant becomes an invaluable development partner or a limited autocomplete tool. This guide covers practical strategies to maximize AI performance on substantial codebases in 2026.
+Split large files into focused modules before sharing with AI to stay within context limits while improving solution quality. Use semantic chunking—grouping related functions by feature rather than arbitrary line breaks—and always provide class/interface definitions first. This guide covers practical context window management techniques that dramatically improve AI assistance effectiveness on projects exceeding 100,000 lines of code.
 
 ## Understanding Context Window Constraints
 

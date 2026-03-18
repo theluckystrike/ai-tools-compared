@@ -10,9 +10,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Fresh is Deno's official web framework, offering a unique approach to building web applications with TypeScript. The framework's island architecture, built-in routing, and zero-config setup make it attractive for developers seeking modern, performant applications. However, working with Fresh requires understanding Deno's module system, island components, and the framework's conventions. AI coding assistants can significantly accelerate Fresh development, but their effectiveness varies based on how well they understand Deno-specific patterns.
+Use Claude Code for Fresh development if you need assistants that understand Deno's URL-based imports and Fresh's island components architecture. Fresh requires understanding Deno's module system and the framework's conventions that differ from Node.js frameworks—most general-purpose AI assistants struggle with these patterns, making specialized tool selection important for productive Fresh development.
 
 ## What Developers Need for Deno Fresh Projects
 

@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI-powered platform engineering tools have transformed how developers provision resources, manage infrastructure, and deploy applications. These tools combine the principles of platform engineering with artificial intelligence to create self-service experiences that reduce friction between development teams and operations. If you are building an internal developer platform or looking to improve your team's productivity, understanding which AI tools deliver real value matters.
+Enable developer self-service by using AI to interpret infrastructure requests in plain language and generate Terraform or CloudFormation. Claude excels at understanding intent and generating policy-compliant IaC, while specialized platform tools like Humanitec integrate deeper with your deployment pipeline. This guide evaluates the best AI-powered tools for platform engineering that reduce ops friction and accelerate provisioning workflows.
 
 ## Why AI Matters in Platform Engineering
 

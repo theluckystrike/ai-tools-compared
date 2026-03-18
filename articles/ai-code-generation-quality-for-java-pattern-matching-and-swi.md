@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-AI coding assistants have become essential tools for Java developers, but their effectiveness varies significantly when handling modern Java features like pattern matching and switch expressions introduced in Java 17 and later. This article evaluates how well popular AI tools generate high-quality code using these powerful language features.
+Use AI coding assistants familiar with Java 17+ to generate pattern matching and switch expressions that reduce boilerplate while improving code expressiveness. Modern Java features like pattern matching for instanceof and switch expressions require AI tools trained on recent language standards—not all tools reliably generate these patterns correctly, making tool selection critical for Java 17+ projects.
 
 ## Understanding Pattern Matching and Switch Expressions
 

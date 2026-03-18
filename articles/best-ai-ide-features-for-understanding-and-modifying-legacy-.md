@@ -9,9 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
-Working with legacy codebases presents unique challenges that modern AI-powered IDE features are specifically designed to address. Whether you're maintaining a decade-old Java application, updating a Ruby on Rails project, or modernizing a Python codebase that predates type hints, the right AI tools can dramatically accelerate your workflow while reducing the risk of introducing bugs.
+JetBrains IDEs with AI refactoring provide semantic code search that understands intent, call graph analysis, and safe rename operations across legacy code. VS Code with AI plugins works well for navigation but requires more manual verification. Use JetBrains when making large-scale legacy changes; use VS Code for exploration and smaller modifications. This guide covers the top AI IDE features for modernizing legacy codebases safely.
 
 ## Context-Aware Code Navigation
 

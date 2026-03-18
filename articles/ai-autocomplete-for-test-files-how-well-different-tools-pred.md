@@ -9,11 +9,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Writing effective test assertions is one of the more challenging aspects of test-driven development. The question many developers face is whether AI autocomplete tools can accurately predict what assertions you need based on the code under test. This article examines how well different AI coding tools handle this specific task across multiple programming languages.
+Claude Code and Cursor outperform GitHub Copilot at predicting test assertions, generating assertions that verify both success and failure cases while considering edge cases. While AI tools have evolved beyond generic assertions like `assertTrue()`, their effectiveness varies significantly depending on the tool and the complexity of the code under test, with the best results coming from tools that analyze function docstrings and type hints.
 
 ## Understanding Assertion Prediction in AI Autocomplete
 
