@@ -5,7 +5,7 @@ description: "A practical guide to using AI tools to diagnose, debug, and resolv
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-fixing-ruby-on-rails-activerecord-migration-roll/
-categories: [ai, ruby-on-rails, development-tools]
+categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true

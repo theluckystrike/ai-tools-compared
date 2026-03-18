@@ -6,7 +6,7 @@ description: "A practical guide to using AI assistants for diagnosing and resolv
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/
-categories: [development, ios, debugging]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
