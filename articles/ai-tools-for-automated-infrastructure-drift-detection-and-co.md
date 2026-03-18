@@ -10,6 +10,8 @@ tags: [tools]
 reviewed: true
 score: 8
 ---
+{% raw %}
+
 
 Infrastructure drift occurs when your actual deployed resources diverge from the desired state defined in your infrastructure as code. Left unchecked, drift leads to configuration drift, security vulnerabilities, and unexpected costs. In 2026, AI-powered tools transform how teams detect and correct drift, offering intelligent automation that goes beyond traditional policy-as-code approaches.
 
@@ -205,3 +207,4 @@ AI tools for automated infrastructure drift detection and correction represent a
 Start with detection and reporting, then gradually enable automated correction as your team gains confidence in the system's recommendations. The key is finding the balance between automation speed and operational safety that works for your organization.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
