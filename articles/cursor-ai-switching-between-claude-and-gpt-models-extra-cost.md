@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Switching between Claude and GPT models in Cursor AI does not incur any extra fee beyond your subscription -- you pay based on which model processes each request, not how often you switch. On the Pro plan ($19/month), both model families are included with full access, and each model consumes credits at different rates (for example, Claude 3.5 Sonnet uses roughly 1 credit per 1,000 tokens while GPT-4o uses about 1.5). Use Claude for complex reasoning and multi-file refactoring, and GPT for fast iteration and boilerplate generation to optimize both performance and cost.

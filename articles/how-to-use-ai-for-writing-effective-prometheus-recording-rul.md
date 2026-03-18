@@ -11,6 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 ---
+{% raw %}
+
 
 Write Prometheus rules with AI by providing metric definitions, asking for common aggregations, and requesting rules for specific alerting scenarios. This guide shows which prompts generate correct recording rules versus those requiring substantial manual fixing.
 
@@ -154,4 +156,5 @@ Start with specific prompts that include your actual metric names and query requ
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}
 {% endraw %}

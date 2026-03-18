@@ -12,6 +12,8 @@ reviewed: true
 score: 8
 intent-checked: true
 ---
+{% raw %}
+
 
 Write Prometheus alerts with AI by providing metric definitions, alert thresholds, and notification requirements, then validating rules in staging first. This guide shows the prompting and validation workflow that prevents broken alerts in production.
 
@@ -151,4 +153,5 @@ AI tools can significantly accelerate your Prometheus alerting rule development 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
 {% endraw %}

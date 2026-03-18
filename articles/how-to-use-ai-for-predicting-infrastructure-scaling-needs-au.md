@@ -11,6 +11,8 @@ reviewed: true
 score: 8
 intent-checked: true
 ---
+{% raw %}
+
 
 Use AI to predict scaling by analyzing metrics, asking what-if questions about traffic patterns, and generating load testing scenarios. This guide shows the prompting techniques that help AI analyze infrastructure data and recommend proactive scaling decisions.
 
@@ -196,4 +198,5 @@ Building AI-powered infrastructure prediction requires upfront investment in dat
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
 {% endraw %}
