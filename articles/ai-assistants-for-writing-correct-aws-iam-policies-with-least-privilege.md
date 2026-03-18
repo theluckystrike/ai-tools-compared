@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI assistants can help you write AWS IAM policies that follow the principle of least privilege by suggesting specific actions, resources, and conditions based on your workload requirements. The key is providing clear context about what your application actually needs to do, rather than requesting broad permissions. By using AI to analyze your CloudTrail logs or architecture and iterating on the suggestions, you can create policies that are both secure and minimal.

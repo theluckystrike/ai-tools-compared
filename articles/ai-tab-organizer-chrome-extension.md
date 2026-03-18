@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI-powered tab organizer Chrome extensions use machine learning and natural language processing to automatically group tabs by content, technology, and project context rather than relying on manual grouping. Popular options like TabLab, Station, and Workona analyze page titles, URLs, and content to create smart groups that adapt to your workflow patterns. They reduce cognitive load by keeping research, documentation, and project tabs organized and easily accessible during development work.

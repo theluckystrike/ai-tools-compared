@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 To export your Gemini workspace data before switching to Claude Team, use Google Takeout at takeout.google.com to download your conversation history, custom Gems, and settings as JSON files. Back up your configuration, parse the exported JSON programmatically if needed, and document your custom instructions and prompts so you can recreate them in Claude. The process takes minutes to set up, though Google may need hours to prepare large archives.

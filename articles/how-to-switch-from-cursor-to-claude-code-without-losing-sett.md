@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Switch from Cursor to Claude Code by exporting your Cursor settings, configuring equivalent keybindings in Claude Code, and migrating your custom prompts. This guide shows the step-by-step process that minimizes friction when making the switch.

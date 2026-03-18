@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Combining GitHub Copilot for autocomplete with Claude for complex multi-file reasoning creates a faster development workflow than either tool alone. This guide explains the specific workflow: use Copilot for boilerplate and quick suggestions, use Claude for architecture decisions and refactoring tasks.

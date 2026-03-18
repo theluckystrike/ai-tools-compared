@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Claude generates more semantically correct gRPC services while Cursor provides faster scaffolding. This guide shows which tool handles different service definition complexity levels better.

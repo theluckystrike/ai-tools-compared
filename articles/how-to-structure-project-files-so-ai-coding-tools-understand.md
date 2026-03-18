@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Structure projects for AI by using clear naming conventions, organizing related files together, maintaining consistent package structures, and avoiding deeply nested directories. This guide shows the file organization principles that help AI understand your codebase architecture.

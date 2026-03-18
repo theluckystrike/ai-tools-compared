@@ -10,6 +10,7 @@ tags: [code-review, best-practices]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI-generated code requires specific review patterns that catch hallucinations, missing error handling, and subtle bugs before they reach production. This guide covers the checklist, code patterns, and questions that reveal whether AI output is actually production-ready or requires substantial rework.

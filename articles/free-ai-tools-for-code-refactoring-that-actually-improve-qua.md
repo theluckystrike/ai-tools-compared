@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 The most effective free AI tools for code refactoring are Claude via API, Cursor free tier, and GitHub Copilot free—each excels at different refactoring types. This guide shows which tool handles your specific refactoring task, from simplifying logic to extracting reusable components.

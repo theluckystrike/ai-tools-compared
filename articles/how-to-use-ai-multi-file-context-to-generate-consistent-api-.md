@@ -10,6 +10,7 @@ tags: [ai, api, development]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use multi-file context to generate consistent APIs by including multiple endpoint examples and data models, ensuring AI understands your patterns. This guide shows how multi-file awareness prevents consistency issues across your API.

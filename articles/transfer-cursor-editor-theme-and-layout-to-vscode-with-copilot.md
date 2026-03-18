@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Copy your Cursor `settings.json`, `keybindings.json`, and theme files directly into VSCode's configuration directory — since Cursor is a VSCode fork, most settings transfer without modification. Back up your Cursor config from `~/Library/Application Support/Cursor/User/` (macOS), install the GitHub Copilot and Copilot Chat extensions in VSCode, then paste your editor settings while removing Cursor-specific keys like `cursor.aiEnabled`. The shared foundation between both editors means your fonts, layout, panel positions, and keyboard shortcuts carry over with minimal adjustment.

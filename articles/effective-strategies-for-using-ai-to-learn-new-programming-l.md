@@ -10,6 +10,7 @@ tags: [learning]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools can accelerate language learning by generating runnable examples, explaining compiler errors, and building progressively complex projects. This guide shows the most effective workflow: asking for explained examples, iterating on compiler errors with AI feedback, and building real projects while learning.

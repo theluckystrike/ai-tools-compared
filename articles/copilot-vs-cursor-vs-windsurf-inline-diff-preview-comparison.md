@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # Copilot vs Cursor vs Windsurf: Inline Diff Preview Comparison

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools can debug PostgreSQL query planner issues by analyzing EXPLAIN output, generating diagnostic queries to check statistics and index usage, and suggesting specific fixes like ANALYZE, index creation, or cost parameter tuning. When the query planner selects a suboptimal index scan path, providing an AI assistant with your execution plan, index definitions, and table statistics enables it to identify root causes—stale statistics, misconfigured costs, or poor index column ordering—and recommend targeted solutions efficiently.

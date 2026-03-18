@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Export ChatGPT shared links by using Markdownify to convert HTML to readable text, or use third-party archive tools before deleting your account. This guide shows the most effective method for each content type: conversations, code snippets, and long-form responses.

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose Claude for more accurate summaries of earnings calls with better financial terminology understanding and nuanced insights. Choose Gemini if you need faster processing of multiple transcripts and don't need maximum accuracy. This comparison evaluates both on extracting key metrics, identifying risks, and handling domain-specific language.

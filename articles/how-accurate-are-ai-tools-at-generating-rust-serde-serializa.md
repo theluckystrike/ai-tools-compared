@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools generate correct Serde schemas about 75% of the time for simple types but require substantial fixes for custom implementations, derive macros, and edge cases. This guide shows exactly which serialization patterns work reliably, which generate broken code, and how to verify correctness.

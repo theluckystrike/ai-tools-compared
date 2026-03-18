@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Optimize your environment by configuring IDE settings for context inclusion, setting up proper project structure, enabling linting, and maintaining clean git history. This guide shows which environment configurations actually improve AI suggestion quality versus negligible improvements.

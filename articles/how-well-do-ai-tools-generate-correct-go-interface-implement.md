@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools generate correct Go interface implementations about 85% of the time for standard patterns but require verification for complex method signatures and embedded interfaces. This guide shows which interface patterns work reliably and which need manual review.

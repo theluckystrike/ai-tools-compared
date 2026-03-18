@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools generate correct Zod schemas about 80% of the time for common validation patterns but frequently miss edge cases, custom validators, and complex nested structures. This guide evaluates each tool's accuracy and shows which schema types are reliable versus requiring manual review.

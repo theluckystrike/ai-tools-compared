@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Maximize GitHub Copilot free tier on open source by batching your completions, focusing on boilerplate tasks where Copilot excels, and strategically using the monthly limit for your highest-ROI work. This guide shows the workflow that gets maximum value before hitting the 2,000 completion limit.

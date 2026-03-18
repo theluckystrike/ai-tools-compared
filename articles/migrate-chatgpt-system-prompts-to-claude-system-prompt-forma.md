@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 To migrate ChatGPT system prompts to Claude's format, restructure your instructions into explicit numbered steps, provide concrete output templates instead of general formatting requests, and add detailed behavioral guidelines for each role or task. Claude performs best when system prompts break down complex instructions into stages, define edge case handling, and specify exact output structures. You can also layer instructions using Claude's developer message type for session-specific overrides on top of your base system prompt.

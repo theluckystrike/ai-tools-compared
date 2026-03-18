@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use inline chat to refactor functions by selecting the target function, describing desired improvements in natural language, and reviewing changes step-by-step. This guide shows how inline chat keeps refactoring focused and verifiable.

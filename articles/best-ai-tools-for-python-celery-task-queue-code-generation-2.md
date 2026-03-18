@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 # Best AI Tools for Python Celery Task Queue Code Generation 2026

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Transfer Copilot code review settings to Cursor by exporting rules, reconfiguring Cursor's AI review panel, and testing on sample code. This guide shows how to preserve your custom code review logic.

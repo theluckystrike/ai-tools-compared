@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Reduce AI costs by batching expensive chat requests, using free tiers strategically, selecting cheaper models for routine tasks, and implementing local alternatives for boilerplate. This guide shows which cost-cutting strategies actually work without tanking productivity.

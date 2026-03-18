@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Multiple AI coding subscriptions offer unlimited requests in 2026. This guide identifies the cheapest options that actually deliver on their unlimited promise without hidden restrictions.

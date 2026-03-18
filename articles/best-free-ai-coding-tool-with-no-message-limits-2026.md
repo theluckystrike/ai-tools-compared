@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 GitHub Copilot offers unlimited code suggestions with free tier access for open-source; Grok provides unlimited messages with competitive coding ability; Claude's free tier limits you to 5 messages daily but delivers superior quality. Choose Copilot if you contribute to open-source; choose Grok for unlimited exploratory coding; choose Claude if you work in focused sessions. This guide compares truly free AI coding tools without artificial message limits.

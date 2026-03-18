@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Claude Code for Fresh development if you need assistants that understand Deno's URL-based imports and Fresh's island components architecture. Fresh requires understanding Deno's module system and the framework's conventions that differ from Node.js frameworks—most general-purpose AI assistants struggle with these patterns, making specialized tool selection important for productive Fresh development.

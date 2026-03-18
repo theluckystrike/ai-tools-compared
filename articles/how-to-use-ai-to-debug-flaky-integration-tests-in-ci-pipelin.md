@@ -10,6 +10,7 @@ tags: [testing, ci-cd, debugging]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Debug flaky tests with AI by analyzing test logs, asking about race conditions and timing issues, and getting suggestions for stabilization. This guide shows the prompting technique that helps AI identify subtle flakiness causes.

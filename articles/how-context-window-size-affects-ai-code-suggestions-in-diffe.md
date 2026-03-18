@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Larger context windows (8K+ tokens) produce better code suggestions by providing more codebase context, but diminishing returns appear after 16K tokens. This guide shows how context window size affects different coding tasks and when expanding context actually improves suggestion quality.

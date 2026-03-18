@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Claude generates better SwiftUI from design specs than Cursor due to superior reasoning about layout constraints and state management, while Cursor excels at file scaffolding. This guide compares both tools on different design patterns.

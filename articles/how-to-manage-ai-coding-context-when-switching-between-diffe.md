@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Switch between features without losing AI context by explicitly naming features in prompts, maintaining separate chat threads per feature, and periodically summarizing context. This guide shows the workflow that keeps AI focused on the right problem as you jump between different tasks.

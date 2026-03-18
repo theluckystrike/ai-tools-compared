@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use AI coding assistants to generate Virtual Thread implementations using `Executors.newVirtualThreadPerTaskExecutor()` instead of traditional thread pools, and to implement structured concurrency with scoped values for context propagation. Virtual Threads represent a paradigm shift from thread-per-request models, and AI tools help developers avoid common pitfalls by understanding the distinction between blocking and non-blocking operations in the Virtual Thread context.

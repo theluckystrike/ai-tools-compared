@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Choose Windsurf Free if you want faster, more numerous completions (roughly 500 AI commands per day) and work on smaller projects. Choose Cursor Free if you value Claude-powered contextual reasoning, deep codebase understanding, and more detailed code suggestions (around 2000 completions per month). Both editors are VS Code-based and support the same extensions, but they differ in AI models, rate limit structures, and inline editing shortcuts.

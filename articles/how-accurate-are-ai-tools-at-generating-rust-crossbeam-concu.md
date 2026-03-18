@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools generate correct Crossbeam code for basic channel patterns and synchronization primitives about 70% of the time, but struggle with advanced features like epochs and memory ordering. This guide shows which patterns each tool handles well, which require manual verification, and when to review the output closely.

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Claude API cheaply by batching requests, using claude-3-5-haiku for simple tasks, and caching context across requests. This guide shows the cost optimization techniques that keep API bills under control for small projects.

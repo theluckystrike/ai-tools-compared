@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Use Copilot agent mode for multi-step tasks by describing the goal, letting the agent decompose steps, and verifying each step. This guide shows when agent mode is faster than manual prompting and when it adds unnecessary overhead.

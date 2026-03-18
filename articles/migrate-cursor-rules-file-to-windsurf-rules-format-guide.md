@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 If you have been using Cursor's custom rules configuration and want to switch to Windsurf, you need to understand how to translate your existing rules. Both tools use rule-based systems to customize AI behavior, but they have different file formats and structures. This guide walks you through the migration process with practical examples.

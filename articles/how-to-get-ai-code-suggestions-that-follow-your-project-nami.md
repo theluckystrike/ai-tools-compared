@@ -11,6 +11,7 @@ tags: [tools, productivity]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 AI tools follow your naming conventions when you include examples in your codebase context and explicitly mention conventions in prompts. This guide shows which tool configurations, context inclusions, and prompt phrasings actually enforce your naming standards versus producing generic names.

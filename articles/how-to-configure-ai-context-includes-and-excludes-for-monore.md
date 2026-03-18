@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Monorepos require explicit context configuration to prevent AI from hallucinating about unrelated packages. This guide shows how to set up AI tools to include only relevant workspace paths, package dependencies, and type definitions while excluding irrelevant codebases.

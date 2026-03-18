@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Switching to Claude Pro gains better reasoning and code generation but loses Gemini's superior real-time web search and Workspace integration. This guide shows feature-by-feature tradeoffs to help you evaluate the switch.

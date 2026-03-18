@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Free AI tools for learning to code include GitHub Copilot free tier, Claude via API (limited free credits), Codeium, and Tabnine—all viable for students starting their coding journey. This guide ranks them by cost, feature completeness, and learning effectiveness.

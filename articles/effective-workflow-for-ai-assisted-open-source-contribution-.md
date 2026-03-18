@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Contributing to open source with AI assistants requires mapping the codebase first, then using AI to understand conventions, write compatible code, and prepare pull requests. This guide walks through the specific workflow that balances AI acceleration with the project maintainer expectations.

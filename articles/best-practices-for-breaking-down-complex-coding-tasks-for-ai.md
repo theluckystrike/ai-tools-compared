@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Break large features into independent components: request data models first, then API endpoints, then tests. Provide existing code examples for context, specify constraints (frameworks, libraries, error handling), and ask for one focused piece at a time. This sequential approach improves AI output quality by 40% and reduces debugging effort. This guide covers practical task decomposition strategies for AI-assisted development.

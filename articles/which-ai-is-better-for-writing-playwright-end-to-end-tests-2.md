@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 
 Claude produces more maintainable Playwright tests with better selector strategies and error handling, while Cursor scaffolds test files faster. This guide compares both on test coverage, flakiness prevention, and maintainability.
