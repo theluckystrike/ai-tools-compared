@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Keyboard Navigation."
-description: "Learn how to leverage AI tools to automatically generate comprehensive Playwright keyboard navigation tests for your web applications."
+title: "How to Use AI to Generate Playwright Keyboard Navigation Tests 2026"
+description: "Learn how to leverage AI tools in 2026 to automatically generate comprehensive Playwright keyboard navigation tests for your web applications."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/
@@ -14,7 +14,7 @@ intent-checked: true
 ---
 
 {% raw %}
-AI tools generate Playwright keyboard navigation tests by analyzing your component structure and producing test cases that verify Tab order through interactive elements, Escape key closing modal behavior, and Arrow keys navigating dropdown options. Providing clear component documentation and specific keyboard interaction requirements upfront produces immediately usable tests that cover both basic navigation and edge cases like focus trapping and Shift+Tab backward navigation.
+AI tools in 2026 generate Playwright keyboard navigation tests by analyzing your component structure and producing test cases that verify Tab order through interactive elements, Escape key closing modal behavior, and Arrow keys navigating dropdown options. Providing clear component documentation and specific keyboard interaction requirements upfront produces immediately usable tests that cover both basic navigation and edge cases like focus trapping and Shift+Tab backward navigation.
 
 ## Why Keyboard Navigation Testing Matters
 
