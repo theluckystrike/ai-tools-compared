@@ -10,11 +10,12 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 {% raw %}
 
-Go's error handling philosophy differs from most languages—it treats errors as values rather than exceptions. This approach gives developers fine-grained control but requires deliberate patterns for meaningful error reporting. AI coding assistants have matured significantly in understanding Go's error handling idioms, and some excel at helping you implement proper error wrapping and sentinel error patterns.
+Claude generates clean, idiomatic Go error handling with proper error wrapping using `errors.Is()` and `errors.As()`, while ChatGPT sometimes suggests older patterns. Choose Claude for Go error wrapping; it understands Go 1.13+ error handling semantics consistently. This guide compares AI assistants' ability to generate production-ready error handling patterns in Go.
 
 ## Why Error Handling Patterns Matter in Go
 

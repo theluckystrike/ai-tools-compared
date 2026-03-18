@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
 
 Organizing Go projects effectively directly impacts maintainability, team collaboration, and long-term code quality. Modern AI coding assistants offer valuable guidance for structuring Go projects, understanding module systems, and implementing clean architecture patterns. This article examines practical tools and techniques for Go project organization.
