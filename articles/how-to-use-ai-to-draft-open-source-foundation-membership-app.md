@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users on using AI tools
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-draft-open-source-foundation-membership-app/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Open source foundations require detailed membership applications that demonstrate your contributions, technical expertise, and commitment to the community. Drafting these documents from scratch takes significant time and effort. AI tools can streamline this process, helping you create polished, comprehensive applications that accurately represent your open source journey.

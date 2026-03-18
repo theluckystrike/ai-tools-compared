@@ -6,6 +6,10 @@ description: "A practical guide to the best AI assistants for writing open sourc
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-open-source-plugin-development/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

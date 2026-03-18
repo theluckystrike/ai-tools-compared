@@ -5,7 +5,7 @@ description: "A practical guide to using AI tools for creating comprehensive bac
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-backward-compatibility-testing-checklist/
-categories: [development, testing, library-maintenance]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

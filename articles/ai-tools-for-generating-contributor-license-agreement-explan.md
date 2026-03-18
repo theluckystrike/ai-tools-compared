@@ -6,6 +6,10 @@ description: "A practical guide to using AI tools for generating plain language 
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-contributor-license-agreement-explan/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

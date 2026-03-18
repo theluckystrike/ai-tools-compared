@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users comparing AI tool
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-open-source-project-branding-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

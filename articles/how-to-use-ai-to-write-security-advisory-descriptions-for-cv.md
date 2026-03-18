@@ -6,6 +6,10 @@ description: "Learn practical techniques for using AI tools to write clear, accu
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-security-advisory-descriptions-for-cv/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Writing CVE security advisory descriptions requires precision, clarity, and adherence to standardized formats. Security researchers and vulnerability disclosure teams often face the challenge of communicating complex technical flaws in ways that are both technically accurate and accessible to diverse audiences. AI tools can significantly accelerate this process while maintaining quality standards.
