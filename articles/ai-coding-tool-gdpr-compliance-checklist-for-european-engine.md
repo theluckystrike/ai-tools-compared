@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-coding-tool-gdpr-compliance-checklist-for-european-engine/
 reviewed: true
 score: 8
-categories: [compliance]
+categories: [enterprise]
 intent-checked: true
 voice-checked: true
 ---

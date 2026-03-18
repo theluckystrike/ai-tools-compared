@@ -6,6 +6,10 @@ description: "A practical guide for developers and power users on evaluating dat
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-data-processing-agreements-be/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When you integrate an AI coding assistant into your development workflow, you're essentially handing that tool access to your codebase. For enterprise deployments, understanding what happens to that code—who sees it, how long it's stored, and who it might be shared with—requires careful examination of the data processing agreement (DPA). Many developers assume their code remains private, but the reality often involves nuanced terms that can catch you off guard if you don't know what to look for.
