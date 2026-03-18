@@ -5,7 +5,7 @@ description: "A technical deep-dive into Claude Code's privacy architecture, exa
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-claude-code-send-terminal-output-to-anthropic-servers-p/
-categories: [privacy, security, claude-code]
+categories: [security, guides]
 ---
 
 Understanding what data Claude Code transmits to Anthropic's servers is crucial for developers working in sensitive environments or those with strict privacy requirements. This article examines the actual data flow between Claude Code and Anthropic's infrastructure, providing you with the technical details needed to make informed decisions about using this AI coding assistant.
