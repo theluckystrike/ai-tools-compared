@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 When working with private repository code, developers face a critical decision: run AI coding assistants locally or send their code to cloud APIs. DeepSeek Coder offers both options, each with distinct trade-offs around privacy, cost, performance, and hardware requirements. This guide breaks down the practical differences to help you choose the right approach for your workflow.
