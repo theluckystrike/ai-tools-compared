@@ -12,6 +12,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 Many data teams accumulate years of SQL queries across their analytics workflows. When it comes time to adopt dbt (data build tool) for better data transformation management, the prospect of manually converting hundreds or thousands of existing queries into a proper dbt project structure becomes overwhelming. AI tools offer a practical solution for automating this migration process while maintaining query functionality and establishing sensible project organization.
 
@@ -126,3 +128,4 @@ Establish conventions for naming, testing, and versioning early. These conventio
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
