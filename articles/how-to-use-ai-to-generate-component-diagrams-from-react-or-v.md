@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Generate Component Diagrams from React or Vue Projects"
-description: "A practical guide for developers on using AI tools to automatically generate component diagrams from React and Vue codebases, with examples and tool recommendations."
+title: "How to Use AI to Generate Component Diagrams from React."
+description: "A practical guide for developers on using AI tools to automatically generate component diagrams from React and Vue codebases, with examples and tool."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-component-diagrams-from-react-or-v/
@@ -150,6 +150,11 @@ When using AI to generate component diagrams, provide as much context as possibl
 For large projects, generate multiple focused diagrams rather than attempting to visualize everything in one view. Separate diagrams for routing, state management, feature modules, and shared components often prove more useful than a single overwhelming diagram.
 
 Regenerate diagrams regularly, especially after significant refactoring. AI makes this process fast enough to include in your workflow whenever architecture changes occur.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 

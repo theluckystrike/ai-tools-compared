@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Resolve CMake Configuration Errors for Cross Compilation"
+title: "How to Use AI to Resolve CMake Configuration Errors for."
 description: "A practical guide for developers using AI assistants to diagnose and fix CMake configuration errors in cross-compilation projects."
 date: 2026-03-16
 author: theluckystrike
@@ -102,5 +102,10 @@ Also describe what you've already attempted. This context helps the AI avoid sug
 ## Summary
 
 AI assistants transform CMake cross-compilation debugging from a frustrating trial-and-error process into a structured problem-solving exercise. By providing complete context about your build environment and target platform, you can leverage AI to identify misconfigurations in toolchain files, sysroot paths, and generator selections. The key lies in understanding that AI recommendations are based on patterns from similar projects, so always verify suggestions against your specific platform's documentation.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

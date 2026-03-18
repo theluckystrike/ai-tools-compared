@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use AI to Create Onboarding Documentation for New Team Members"
-description: "A practical guide for developers and power users leveraging AI to build comprehensive onboarding documentation that accelerates new team member productivity."
+title: "How to Use AI to Create Onboarding Documentation for New."
+description: "A practical guide for developers and power users leveraging AI to build comprehensive onboarding documentation that accelerates new team member."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-onboarding-documentation-for-new-tea/
@@ -86,5 +86,10 @@ Some teams create documentation runbooks that combine AI generation with templat
 AI accelerates documentation creation but doesn't eliminate the need for human oversight. Establish review processes that ensure accuracy before new team members encounter the documentation. Consider designating documentation owners responsible for reviewing AI-generated content before publication.
 
 Track documentation effectiveness by monitoring how quickly new team members become productive and what questions they still ask despite the documentation existing. These signals indicate areas requiring improvement.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

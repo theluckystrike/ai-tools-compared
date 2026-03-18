@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Creating System Context Diagrams Using C4 Model Notation"
-description: "A practical guide to AI tools that generate C4 model system context diagrams, comparing output quality, PlantUML support, and automation capabilities for developers."
+title: "AI Tools for Creating System Context Diagrams Using C4."
+description: "A practical guide to AI tools that generate C4 model system context diagrams, comparing output quality, PlantUML support, and automation capabilities."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-system-context-diagrams-using-c4-model/
@@ -151,6 +151,11 @@ When generating system context diagrams with AI, provide complete information ab
 - Authentication and integration patterns
 
 The more context you give, the more accurate the generated diagram becomes. Review each AI output carefully—automatic generation works well for structure, but you should validate that the relationships match your actual architecture.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
