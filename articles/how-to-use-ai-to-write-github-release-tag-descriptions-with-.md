@@ -12,6 +12,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 AI can help you write professional GitHub release descriptions that clearly communicate what's new, improved, or fixed in each version. By providing the right context and prompts, you can generate release notes that include download instructions, breaking changes, and upgrade guidance. This guide shows you how to leverage AI tools to create clear, consistent release descriptions that help users understand and install your software quickly.
 
@@ -247,3 +249,4 @@ AI tools excel at translating technical changes into accessible language, but al
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
