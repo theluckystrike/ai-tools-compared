@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best AI for Writing Good First Issue Descriptions That Attract New Contributors"
-description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes practical examples and code snippets."
+title: "Best AI for Writing Good First Issue Descriptions That."
+description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/
@@ -128,6 +128,11 @@ For most open source maintainers, Claude Code offers the best balance of quality
 However, the best tool is the one you'll actually use consistently. If you're already in Cursor or prefer ChatGPT's interface, those tools can absolutely produce good first issue descriptions with some editing. The key is investing a little time upfront to get descriptions that help new contributors succeed.
 
 Remember: a well-written first issue is an investment in your project's future. It brings in new contributors, reduces your workload answering questions, and builds a stronger community. AI tools make this easier than ever.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
