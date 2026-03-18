@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Debug Tailwind CSS Classes Not Applying in Production Builds"
+title: "How to Use AI to Debug Tailwind CSS Classes Not Applying."
 description: "A practical guide for developers on using AI tools to identify and fix Tailwind CSS classes that fail to apply in production environments."
 date: 2026-03-16
 author: theluckystrike
@@ -150,5 +150,10 @@ Regularly audit your Tailwind configuration as your project grows. New directori
 ## Summary
 
 Debugging Tailwind CSS classes not applying in production requires understanding how Tailwind's content scanning and purging work. AI tools accelerate this process by quickly analyzing configuration files, identifying dynamic class patterns, and suggesting targeted fixes. Focus on your content configuration, watch for dynamic class construction, verify CSS cascade order, and maintain a safelist for classes that cannot be statically detected.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
