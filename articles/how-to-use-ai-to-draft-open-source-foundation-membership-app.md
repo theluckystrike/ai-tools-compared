@@ -10,6 +10,7 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 Open source foundations require detailed membership applications that demonstrate your contributions, technical expertise, and commitment to the community. Drafting these documents from scratch takes significant time and effort. AI tools can streamline this process, helping you create polished, comprehensive applications that accurately represent your open source journey.
