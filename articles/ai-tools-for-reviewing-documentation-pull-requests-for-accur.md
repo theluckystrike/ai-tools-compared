@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Reviewing Documentation Pull Requests for Accuracy and Completeness"
-description: "Discover how AI tools can help developers and technical writers review documentation pull requests for accuracy, completeness, and consistency. Practical examples and workflow integration tips included."
+title: "AI Tools for Reviewing Documentation Pull Requests for."
+description: "Discover how AI tools can help developers and technical writers review documentation pull requests for accuracy, completeness, and consistency."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-reviewing-documentation-pull-requests-for-accuracy-and-completeness/
@@ -208,6 +208,11 @@ Flag any instances where we use different terms for the same concept.
 AI tools significantly improve documentation quality when integrated thoughtfully into your review process. They handle repetitive checks consistently, freeing human reviewers to focus on clarity, accuracy, and the nuanced understanding that only comes from domain expertise. Start with automated checks on your CI pipeline, then expand to interactive review sessions as your team builds confidence in the workflow.
 
 The goal is not to replace human review but to augment it—catching the obvious gaps so reviewers can focus on what matters most: helping users succeed with your documentation.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

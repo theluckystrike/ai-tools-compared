@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use AI to Write Security Advisory Descriptions for CVE Disclosures"
-description: "Learn practical techniques for using AI tools to write clear, accurate, and compliant CVE security advisory descriptions. Includes prompt templates and examples."
+title: "How to Use AI to Write Security Advisory Descriptions."
+description: "Learn practical techniques for using AI tools to write clear, accurate, and compliant CVE security advisory descriptions. Includes prompt templates and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-security-advisory-descriptions-for-cv/
@@ -195,5 +195,10 @@ General-purpose LLMs with strong instruction-following capabilities work well fo
 For teams with specific style guides or vendor templates, create custom prompt libraries that enforce your organization's standards. Store effective prompts and iterate based on review feedback.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

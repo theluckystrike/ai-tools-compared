@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Writing Open Source Plugin Development Guides with Examples 2026"
+title: "Best AI Assistant for Writing Open Source Plugin."
 description: "A practical guide to the best AI assistants for writing open source plugin development documentation. Compare top tools with real code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -125,6 +125,11 @@ Combine AI assistants with proper documentation practices. Use AI for initial dr
 Version your plugin APIs clearly and ensure AI-generated examples match your current API version. Update documentation when your plugin system changes, using AI to identify sections requiring updates.
 
 The right AI assistant accelerates plugin documentation creation while maintaining quality. Evaluate based on your specific plugin architecture, supported languages, and documentation requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
