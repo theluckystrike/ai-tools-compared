@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Windsurf AI Flows Feature: How It Chains Multiple Editing Steps Together"
+title: "Windsurf AI Flows Feature: How It Chains Multiple."
 description: "A practical guide to Windsurf AI Flows, explaining how to chain multiple editing steps for automated code workflows."
 date: 2026-03-16
 author: theluckystrike
@@ -112,5 +112,10 @@ Review the output of each step before proceeding to subsequent steps. While Flow
 ## Conclusion
 
 Windsurf AI Flows provides developers with a powerful mechanism for chaining multiple editing steps into coherent, automated pipelines. By structuring complex tasks as sequential phases, you achieve consistency, auditability, and efficiency that manual editing cannot match. Whether refactoring legacy code, maintaining documentation, or automating testing workflows, Flows offers a flexible approach to AI-assisted development that scales with your project requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

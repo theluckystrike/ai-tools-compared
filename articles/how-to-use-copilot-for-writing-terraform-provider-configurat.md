@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use Copilot for Writing Terraform Provider Configurations Efficiently"
-description: "Learn practical techniques for using GitHub Copilot to write Terraform provider configurations faster with less manual reference hunting. Includes real code examples and workflow tips."
+title: "How to Use Copilot for Writing Terraform Provider."
+description: "Learn practical techniques for using GitHub Copilot to write Terraform provider configurations faster with less manual reference hunting. Includes real."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-for-writing-terraform-provider-configurat/
@@ -183,5 +183,10 @@ Store provider configurations in a dedicated `providers.tf` file or organize the
 Copilot transforms Terraform provider configuration from a documentation-dependent task into a context-aware workflow. By providing clear context through existing code, variables, and comments, you receive accurate suggestions that reduce the need to reference provider documentation constantly.
 
 The key is starting with a well-structured project that includes your variables, existing resources, and configuration patterns. Give Copilot this foundation, and it becomes an efficient pair programmer for infrastructure-as-code work.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

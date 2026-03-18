@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Copilot Suggestions in Private Repos: Do They Cost More Than Public?"
-description: "Wondering if GitHub Copilot costs more for private repositories? Get the complete breakdown of Copilot pricing for public vs private repos and what it means for your team."
+title: "Copilot Suggestions in Private Repos: Do They Cost More."
+description: "Wondering if GitHub Copilot costs more for private repositories? Get the complete breakdown of Copilot pricing for public vs private repos and what it."
 date: 2026-03-18
 author: theluckystrike
 permalink: /copilot-suggestions-in-private-repos-do-they-cost-more-than-public/
@@ -72,5 +72,10 @@ The value proposition is straightforward: unlimited Copilot access across all yo
 
 ---
 
-*Built by theluckystrike — More at zovo.one*
+*
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+Built by theluckystrike — More at zovo.one*
 {% endraw %}

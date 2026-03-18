@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Assistants for Writing Correct AWS IAM Policies with Least Privilege"
+title: "AI Assistants for Writing Correct AWS IAM Policies with."
 description: "A practical guide for developers using AI assistants to write secure AWS IAM policies that follow the principle of least privilege."
 date: 2026-03-16
 author: theluckystrike
@@ -112,5 +112,10 @@ This approach produces policies that are both functional and minimal—granting 
 Regardless of how you generate IAM policies—whether manually, with AI assistance, or through infrastructure-as-code tools—certain principles remain essential. Regularly audit existing policies using AWS Config rules and IAM Access Analyzer. Implement policy version control so changes can be tracked and reviewed. Consider using AWS Organizations service control policies to enforce baseline security requirements across accounts.
 
 AI assistants represent a powerful tool in your security toolkit, but they work best as collaborators rather than replacements for human judgment. The combination of AI-generated policy suggestions with careful verification creates a workflow that scales across complex cloud environments while maintaining strong security posture.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
