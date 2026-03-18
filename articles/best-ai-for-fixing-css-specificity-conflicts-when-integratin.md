@@ -6,7 +6,7 @@ description: "A practical guide to using AI tools for resolving CSS specificity 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-fixing-css-specificity-conflicts-when-integratin/
-categories: [troubleshooting]
+categories: [comparisons, guides]
 reviewed: true
 score: 8
 intent-checked: true
