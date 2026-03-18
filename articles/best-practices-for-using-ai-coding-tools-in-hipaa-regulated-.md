@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Using AI Coding Tools in HIPAA Regulated Healthcare Codebases"
+title: "Best Practices for Using AI Coding Tools in HIPAA."
 description: "A practical guide for developers working with AI coding assistants in HIPAA-compliant healthcare software environments."
 date: 2026-03-16
 author: theluckystrike
@@ -158,5 +158,10 @@ When designing your healthcare codebase architecture, consider these patterns:
 ## Conclusion
 
 AI coding tools significantly boost developer productivity in healthcare software projects. The key is establishing clear boundaries: sanitize aggressively, prefer local models for sensitive code, maintain human review processes, and document your policies. By implementing these practices, you can leverage AI assistance while maintaining HIPAA compliance and protecting patient privacy.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
