@@ -5,7 +5,7 @@ description: "Discover powerful offline AI coding tools that work without intern
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/
-categories: [ai-coding, local-llm, security]
+categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
