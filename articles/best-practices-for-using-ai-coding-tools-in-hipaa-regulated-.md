@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-AI coding tools have become essential for developer productivity, but HIPAA-regulated healthcare projects require special considerations. When your code handles protected health information (PHI), the way you interact with AI assistants directly impacts compliance. This guide provides actionable best practices for developers working in healthcare software environments.
+To use AI coding tools in HIPAA-regulated environments, deploy self-hosted models (Ollama, CodeLlama) that keep PHI-containing code on-premises, or use cloud AI tools with signed Business Associate Agreements (BAAs) and strict input sanitization that strips patient data before sending code for completion. Never paste raw database queries, test fixtures, or configuration files containing PHI into cloud-based AI assistants. For teams that must use cloud tools, implement pre-send filters that detect and redact potential PHI patterns before code leaves your environment.
 
 ## Understanding the Risk Model
 
