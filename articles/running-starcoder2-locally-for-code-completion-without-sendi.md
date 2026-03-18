@@ -10,11 +10,12 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
 
-Running Starcoder2 locally for code completion without sending data to cloud provides a practical solution for developers who need AI-assisted coding while maintaining complete data privacy. This approach keeps all your code on your local machine, eliminating concerns about sensitive business logic, proprietary algorithms, or customer data leaving your development environment.
+Starcoder2 running locally is the solution for developers who need AI code completion while keeping sensitive code private. You can install it using Ollama (install Ollama, run `ollama pull starcoder2:7b`, then integrate it with VS Code via the Continue extension) and have your code stay completely on your local machine without any cloud transmission. This setup takes about 30 minutes and requires a machine with 16GB+ RAM and optional GPU for faster inference.
 
 ## Understanding Starcoder2 and Local Code Completion
 
