@@ -70,7 +70,7 @@ The Pro plan unlocks the full potential of Perplexity Spaces for team collaborat
 - API access for custom integrations
 - Priority support for collaboration issues
 
-## Feature-by-F feature Comparison
+## Feature-by-Feature Comparison
 
 | Feature | Free Plan | Pro Plan |
 |---------|-----------|----------|
