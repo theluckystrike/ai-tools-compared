@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best AI for Writing dbt Macros That Generate Dynamic SQL Based on Configuration 2026"
-description: "Compare AI coding assistants for writing dbt macros that generate dynamic SQL from configuration. Practical examples, code quality comparison, and recommendations for data engineers."
+title: "Best AI for Writing dbt Macros That Generate Dynamic SQL."
+description: "Compare AI coding assistants for writing dbt macros that generate dynamic SQL from configuration. Practical examples, code quality comparison, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/
@@ -156,6 +156,11 @@ For data engineers working extensively with dbt, **Claude Code** provides the be
 **GitHub Copilot** remains suitable for simpler macro tasks and teams already invested in the GitHub ecosystem. For straightforward, pattern-based macro generation, it provides acceptable results with minimal setup.
 
 The right choice depends on your project complexity, team setup, and workflow preferences. Testing each tool with your actual dbt macros will give you the best indication of which fits your specific needs.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

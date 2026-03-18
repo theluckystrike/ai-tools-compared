@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Create Data Quality Scorecards from dbt Test Results"
+title: "How to Use AI to Create Data Quality Scorecards from dbt."
 description: "Learn how to leverage AI to transform dbt test results into actionable data quality scorecards. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -219,6 +219,11 @@ Use the AI-generated insights to move beyond simple pass/fail reporting. Instead
 Transforming dbt test results into data quality scorecards doesn't have to be manual. By combining dbt's built-in testing with AI analysis, you can create automated, actionable reporting that helps your team maintain high data quality standards.
 
 Start small: run your tests, capture the JSON output, and build a simple scorecard. Then layer in AI insights as you refine your approach. The goal is continuous improvement in your data quality metrics.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

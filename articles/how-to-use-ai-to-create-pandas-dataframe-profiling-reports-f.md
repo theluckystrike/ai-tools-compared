@@ -1,12 +1,12 @@
 ---
 
 layout: default
-title: "How to Use AI to Create Pandas DataFrame Profiling Reports for Exploratory Analysis"
+title: "How to Use AI to Create Pandas DataFrame Profiling."
 description: "A practical guide to generating automated DataFrame profiling reports using Python and AI-assisted tools for faster exploratory data analysis."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-pandas-dataframe-profiling-reports-f/
-categories: [tutorials, pandas, data-analysis]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -217,5 +217,10 @@ Keep your profiling efficient and actionable:
 DataFrame profiling transforms exploratory analysis from a manual, time-consuming process into an automated, reproducible workflow. The combination of dedicated profiling libraries and AI interpretation tools helps you understand your data faster and catch quality issues before they impact downstream results.
 
 Whether you need quick initial exploration or comprehensive quality assessments, these tools scale to match your requirements. Start with ydata-profiling for standalone reports, add sweetviz for comparisons, and layer AI interpretation on top for natural language insights that accelerate decision-making.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

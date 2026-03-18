@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing SQL Performance Tuning Recommendations from Slow Query Logs"
+title: "Best AI for Writing SQL Performance Tuning."
 description: "Discover how AI tools analyze slow query logs and generate performance tuning recommendations. Practical examples and tool comparisons for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -176,6 +176,11 @@ Teams using **GitHub Copilot** for general coding will find its SQL optimization
 Begin by enabling slow query logging on your database with a threshold that captures meaningful performance issues without overwhelming you with data. Export a week of slow query logs and feed representative samples to your preferred AI tool. Focus on the top offenders—queries appearing most frequently or taking the longest to execute.
 
 Iterate on the AI recommendations by providing execution plan output and asking for refinement. Build a knowledge base of optimizations specific to your application patterns. Over time, you'll develop intuition for which AI suggestions provide the most value for your specific workload.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
