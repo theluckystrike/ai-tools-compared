@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "VPN Tunnel Interface vs Full Tunnel Routing: Key Differences Explained"
 description: "A technical guide explaining VPN tunnel interfaces and full tunnel routing, including how each works, security implications, performance tradeoffs, and when to use each approach."
