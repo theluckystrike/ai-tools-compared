@@ -11,6 +11,8 @@ reviewed: true
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 Creating accurate comparison tables for competing API products is a core responsibility for Developer Relations (DevRel) teams. These tables help developers make informed decisions, support sales conversations, and serve as reference material across documentation. However, gathering feature data across multiple APIs, verifying accuracy, and structuring the information into a usable format takes significant time. AI tools can accelerate this workflow substantially.
 
@@ -188,3 +190,4 @@ The goal is helping developers make informed decisions quickly. A well-structure
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
