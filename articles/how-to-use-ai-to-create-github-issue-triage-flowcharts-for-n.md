@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Create GitHub Issue Triage Flowcharts for New Maintainers"
-description: "A practical guide for open source maintainers on using AI tools to create efficient GitHub issue triage flowcharts that help new contributors navigate the contribution process."
+title: "How to Use AI to Create GitHub Issue Triage Flowcharts."
+description: "A practical guide for open source maintainers on using AI tools to create efficient GitHub issue triage flowcharts that help new contributors navigate."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/
@@ -181,6 +181,11 @@ Common evolution triggers include:
 ## Conclusion
 
 AI tools dramatically accelerate the creation of GitHub issue triage flowcharts by converting your verbal process descriptions into structured, renderable diagrams. The key is providing enough context about your project size, contribution patterns, and existing automation so the generated output matches your actual workflow. Start with a simple flowchart and evolve it as your project grows—your new contributors will thank you for the clarity.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
