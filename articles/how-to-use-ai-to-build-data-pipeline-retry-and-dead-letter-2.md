@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Build Data Pipeline Retry and Dead Letter Queues"
+title: "How to Use AI to Build Data Pipeline Retry and Dead."
 description: "Learn how to leverage AI to create intelligent retry mechanisms and dead letter queue handling for robust data pipelines."
 date: 2026-03-16
 author: theluckystrike
@@ -184,6 +184,11 @@ Deploying AI-enhanced retry and DLQ handling requires proper infrastructure:
 - **A/B testing**: Validate AI improvements against baseline approaches before full rollout
 
 The investment in AI-powered retry and dead letter handling pays dividends through reduced manual intervention, faster recovery from failures, and better utilization of computing resources. Start with your most problematic pipelines and expand as you prove the concept.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

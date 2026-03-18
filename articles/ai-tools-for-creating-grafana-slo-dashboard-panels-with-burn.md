@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Grafana SLO Dashboard Panels with Burn Rate Calculations"
+title: "AI Tools for Creating Grafana SLO Dashboard Panels with."
 description: "Learn how AI tools can help create Grafana SLO dashboard panels with burn rate calculations. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -145,6 +145,11 @@ Test burn rate calculations during both normal and incident conditions. A good b
 ## Conclusion
 
 AI tools dramatically reduce the effort required to build SLO dashboards with burn rate calculations. By providing clear specifications about your SLO structure and metrics, you can generate accurate PromQL queries and panel configurations in minutes rather than hours. The key is providing comprehensive context—metric names, labels, SLO percentages, and time windows—to get precise results. After generation, validate queries against your actual Prometheus data and adjust thresholds to match your reliability objectives.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,14 +1,14 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Preparing for AWS Solutions Architect Certification"
+title: "Best AI Assistant for Preparing for AWS Solutions."
 description: "A practical comparison of AI coding tools to help you prepare for the AWS Solutions Architect Associate and Professional exams in 2026."
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /best-ai-assistant-for-preparing-for-aws-solutions-architect/
 reviewed: true
 score: 0
-categories: [best-of]
+categories: [guides]
 intent-checked: true
 voice-checked: false
 ---
@@ -181,3 +181,8 @@ Use AI to generate working AWS infrastructure code:
 For comprehensive AWS Solutions Architect preparation, combining multiple AI tools works best: use Claude for deep concept explanations, ChatGPT for quiz generation, and Copilot or Cursor for hands-on infrastructure practice.
 
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

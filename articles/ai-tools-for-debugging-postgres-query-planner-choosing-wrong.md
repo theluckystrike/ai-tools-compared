@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Debugging PostgreSQL Query Planner: Fixing Wrong Index Scan Selection"
+title: "AI Tools for Debugging PostgreSQL Query Planner: Fixing."
 description: "Discover how AI tools help debug PostgreSQL query planner choosing wrong index scan paths. Practical examples and techniques for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -172,6 +172,11 @@ Rather than debugging after problems occur, consider proactive measures:
 AI tools accelerate PostgreSQL query planner debugging by quickly analyzing execution plans, identifying index selection issues, and suggesting targeted solutions. Combined with proper monitoring and regular statistics updates, these tools help maintain optimal query performance without extensive manual analysis.
 
 The key is capturing accurate execution plans, providing clear context to AI tools, and verifying suggestions with proper benchmarking before deploying changes to production.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tools for Generating dbt Project Structure from Existing Analytics Query Library"
-description: "A practical guide for developers on using AI tools to automatically generate dbt project structures from existing SQL queries, with code examples and implementation strategies."
+title: "AI Tools for Generating dbt Project Structure from."
+description: "A practical guide for developers on using AI tools to automatically generate dbt project structures from existing SQL queries, with code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-dbt-project-structure-from-existing-/
@@ -126,6 +126,11 @@ AI-generated models serve as an excellent starting point. After migration, inves
 Establish conventions for naming, testing, and versioning early. These conventions become the foundation for your team's dbt development practices and ensure consistency as the project grows.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

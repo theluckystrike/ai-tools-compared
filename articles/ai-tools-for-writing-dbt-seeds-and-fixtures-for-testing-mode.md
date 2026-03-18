@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing dbt Seeds and Fixtures for Testing Model Transformations"
+title: "AI Tools for Writing dbt Seeds and Fixtures for Testing."
 description: "Discover how AI can help you generate dbt seeds and fixtures to test your model transformations efficiently."
 date: 2026-03-16
 author: theluckystrike
@@ -206,5 +206,10 @@ Maintain your generated seeds in version control alongside your models. Update s
 AI tools significantly reduce the effort required to create comprehensive test data for dbt projects. By generating seeds and fixtures that cover transformation logic thoroughly, you can build more reliable pipelines while spending less time on manual data construction. The key lies in providing clear context about your models and carefully reviewing AI-generated output against your specific business requirements.
 
 Start by generating seeds for your most critical models, validate the results, and expand to fixtures as your testing needs grow. This approach delivers immediate productivity gains while establishing robust test coverage for your dbt transformations.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

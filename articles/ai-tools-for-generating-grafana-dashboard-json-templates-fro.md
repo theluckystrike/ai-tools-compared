@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Grafana Dashboard JSON Templates from YAML Specifications"
+title: "AI Tools for Generating Grafana Dashboard JSON Templates."
 description: "Discover how AI tools can automate the creation of Grafana dashboard JSON templates using YAML specifications, saving time and reducing errors."
 date: 2026-03-16
 author: theluckystrike
@@ -151,6 +151,11 @@ If the output requires adjustments, provide specific feedback to the AI tool. Ra
 ## Conclusion
 
 AI tools transform YAML specifications into Grafana dashboard JSON efficiently, enabling teams to maintain infrastructure-as-code practices for monitoring. The combination of readable YAML definitions and AI-generated JSON templates reduces manual effort while keeping dashboards consistent and version-controlled. By integrating this approach into your workflow, you can scale dashboard management across complex multi-service architectures without sacrificing quality or spend excessive time on manual configuration.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

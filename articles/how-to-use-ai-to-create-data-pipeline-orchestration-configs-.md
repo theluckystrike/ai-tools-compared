@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Create Data Pipeline Orchestration Configs for Prefect or Dagster"
+title: "How to Use AI to Create Data Pipeline Orchestration."
 description: "A practical guide for developers using AI to generate Prefect and Dagster orchestration configurations, with code examples and best practices."
 date: 2026-03-16
 author: theluckystrike
@@ -186,5 +186,10 @@ Document your modifications. When AI generates initial configurations, add comme
 ## Conclusion
 
 AI assistants provide strong starting points for Prefect and Dagster orchestration configurations. By providing detailed pipeline descriptions, reviewing generated code for security and correctness, and following production best practices, you can rapidly develop robust data pipeline setups. The key is treating AI output as a foundation to refine rather than final code to deploy directly.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating dbt Model Definitions from Raw Database Table Schemas"
+title: "AI Tools for Creating dbt Model Definitions from Raw."
 description: "Learn how AI tools can automatically generate dbt model definitions from existing database table schemas, accelerating your data transformation pipeline."
 date: 2026-03-16
 author: theluckystrike
@@ -181,6 +181,11 @@ For simple staging models, AI generation works well. For complex business logic,
 AI tools transforming raw database table schemas into dbt model definitions represent a practical application of AI in data engineering. These tools handle the boilerplate—generating YAML configurations, basic SQL models, and standard tests—freeing you to focus on business logic and data quality. The key is treating AI output as a foundation to build upon rather than final code.
 
 As AI models improve, expect these tools to handle more complex scenarios, better infer relationships, and generate increasingly sophisticated dbt configurations. Until then, combine AI efficiency with human expertise for the best results.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
