@@ -1,149 +1,212 @@
 ---
+
 layout: default
 title: "Writing CursorRules for Golang Projects with Specific Concurrency and Error Handling Patterns"
-description: "Learn how to create effective CursorRules files that guide AI coding assistants to generate idiomatic Go code with proper goroutine patterns, channel usage, and error handling conventions."
+description: "Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and idiomatic error handling."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
 ---
 
-CursorRules files let you define project-specific guidelines that AI coding assistants follow when generating code. For Go projects, writing effective CursorRules requires understanding how to communicate Go's concurrency primitives and error handling conventions to AI models. This guide shows you how to craft rules that produce idiomatic Go code with proper goroutine patterns, channel semantics, and error wrapping strategies.
+{% raw %}
 
-## Why CursorRules Matter for Go Development
+CursorRules provide a powerful mechanism to guide AI coding assistants toward generating code that matches your project's specific patterns and conventions. When working with Golang projects that rely on specific concurrency primitives and error handling strategies, configuring CursorRules becomes essential for producing production-ready code that integrates seamlessly with your existing codebase.
 
-Go's concurrency model differs fundamentally from other languages. The AI assistant needs clear instructions about when to use goroutines, how to manage channel ownership, and how to handle errors without throwing exceptions. Without explicit guidance, AI tools often generate code that looks like ported Java or Python—functional but not idiomatic.
+## Why CursorRules Matter for Go Projects
 
-CursorRules solve this by providing persistent context that shapes every code generation request. When configured correctly, the AI understands your project's conventions and applies them consistently.
+Golang's concurrency model and error handling differ significantly from other languages. The language's approach to concurrency through goroutines and channels, combined with explicit error returns instead of exceptions, requires AI assistants to understand these idiomatic patterns. Without proper guidance, AI tools often generate code that either fails to compile or violates Go conventions.
 
-## Structuring CursorRules for Go Concurrency
+When you configure CursorRules specifically for your Golang project, you ensure that every code suggestion follows your team's established patterns for goroutine lifecycle management, channel usage, and error propagation. This consistency reduces review cycles and prevents subtle bugs that emerge from inconsistent concurrency implementations.
 
-Your CursorRules file should include specific sections addressing goroutine usage, channel patterns, and synchronization primitives. Here is a practical example:
+## Configuring Concurrency Patterns in CursorRules
 
-```yaml
-# .cursorrules for Go concurrency projects
+Your CursorRules should explicitly define how the AI should handle goroutine creation, management, and cleanup. Rather than allowing generic async patterns, specify exact requirements for your concurrency model.
 
-## Go Concurrency Patterns
+For projects using the standard library's concurrency primitives, your CursorRules should include guidance like this:
 
-- Use goroutines for concurrent operations, but always provide context cancellation
-- Prefer context.Context as the first parameter for long-running operations
-- Use sync.WaitGroup for coordinating multiple goroutines
-- Never leak goroutines—ensure all spawned goroutines can exit
-
-## Channel Conventions
-
-- Channels should be closed by the sender, not the receiver
-- Use buffered channels when the sender and receiver have different rates
-- Prefer channel-based communication over shared memory
-- Never send to a closed channel—check channel direction in signatures
-
-## Context Usage
-
-- Pass context.Context as first argument to database and HTTP calls
-- Use context.WithTimeout for operations with deadlines
-- Check context cancellation in long-running loops
-- Never use background context for operations requiring cancellation
-```
-
-This structure tells the AI exactly what conventions your project follows. The AI will now generate code that respects these patterns instead of guessing.
-
-## Error Handling Patterns for Go
-
-Go's error handling is explicit—no exceptions, no try-catch blocks. Your CursorRules should define how errors are wrapped, checked, and propagated. Include specific patterns for different scenarios:
-
-```yaml
-## Error Handling
-
-- Always check errors immediately after function calls
-- Wrap errors with fmt.Errorf and %w verb to preserve context
-- Use sentinel errors for known failure cases (var ErrNotFound = errors.New(...))
-- Return errors rather than logging them in library code
-- Use errors.Is and errors.As for error checking
-
-## Example Error Pattern
-
-// For function calls:
-result, err := doSomething(ctx)
-if err != nil {
-    return fmt.Errorf("failed to do something: %w", err)
-}
-
-// For wrapped errors:
-if errors.Is(err, os.ErrNotFound) {
-    // handle not found
+```go
+// Use goroutines with explicit error channels for result propagation
+func workerPool(jobs <-chan Job, results chan<- Result, workers int) {
+    var wg sync.WaitGroup
+    for i := 0; i < workers; i++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+            for job := range jobs {
+                result, err := processJob(job)
+                if err != nil {
+                    results <- Result{Error: err}
+                    continue
+                }
+                results <- Result{Value: result}
+            }
+        }()
+    }
+    wg.Wait()
+    close(results)
 }
 ```
 
-The AI will apply these patterns consistently. When generating error handling code, it wraps errors properly instead of ignoring them or using generic messages.
+This pattern demonstrates proper goroutine lifecycle management: explicit wait groups, channel-based communication, and graceful shutdown through channel closure. Your CursorRules should require the AI to follow similar patterns rather than spawning unbounded goroutines without cleanup mechanisms.
 
-## Practical CursorRules Example
+When your project uses worker pools or task queues, specify the exact pattern your team employs. Whether you use a simple channel-based approach or a library like errgroup for parallel operation coordination, the AI needs explicit instructions to match your implementation.
 
-Here is a complete CursorRules file for a Go service with specific concurrency and error handling requirements:
+## Enforcing Error Handling Conventions
 
-```yaml
-# .cursorrules for production Go service
+Go's error handling philosophy requires explicit error checking after every operation that can fail. AI assistants sometimes take shortcuts or generate verbose error handling that doesn't match your project's style. CursorRules should address both the presence and format of error handling.
 
-language: go
-version: "1.21+"
+Define clear rules for error wrapping:
 
-## Concurrency Guidelines
-
-- Use goroutines for independent operations that can run simultaneously
-- Always pass context.Context to goroutine-starting functions
-- Use sync.WaitGroup or errgroup.Group for goroutine coordination
-- Prefer errgroup with context for parallel task execution
-
-## Channel Patterns
-
-- Use make(chan Type) for unbuffered, make(chan Type, bufferSize) for buffered
-- Close channels only when the sender is done sending
-- Use select statement for non-blocking channel operations
-- Return channels from functions, never receive-only (<-chan)
-
-## Error Handling
-
-- Wrap errors at every layer: fmt.Errorf("layer name: %w", err)
-- Use custom error types for domain-specific errors
-- Never swallow errors with _ = or similar patterns
-- Log errors at service boundaries, return errors internally
-
-## HTTP Handlers
-
-- Use pattern: func (s *Service) Handle(w http.ResponseWriter, r *http.Request)
-- Check r.Context() for cancellation before expensive operations
-- Always return appropriate HTTP status codes with error messages
-- Never panic in handlers—return errors with logging
-
-## Testing
-
-- Use table-driven tests with []struct{} test cases
-- Name test functions: TestFunctionName_Scenario_ExpectedBehavior
-- Use t.Helper() for assertion functions
-- Test error paths as thoroughly as success paths
+```go
+// Use fmt.Errorf with %w for error wrapping to preserve error chains
+func fetchUserData(ctx context.Context, id string) (*UserData, error) {
+    resp, err := client.Get(ctx, "/users/"+id)
+    if err != nil {
+        return nil, fmt.Errorf("fetching user %s: %w", id, err)
+    }
+    
+    var user UserData
+    if err := json.Unmarshal(resp.Body, &user); err != nil {
+        return nil, fmt.Errorf("unmarshaling user response: %w", err)
+    }
+    
+    return &user, nil
+}
 ```
 
-With these rules in place, the AI generates code that matches your project's standards. The context cancellation pattern appears consistently. Error wrapping follows your chosen convention. Channel usage matches your team's preferences.
+Your CursorRules should specify whether errors should include context (like user IDs or operation names), how errors should be wrapped (fmt.Errorf with %w versus custom error types), and when to use sentinel errors versus custom error types.
 
-## Integrating CursorRules into Your Workflow
+For projects that benefit from custom error types, provide examples:
 
-Place your `.cursorrules` file in the project root. Cursor automatically reads this file and incorporates its rules into every generation request. You can verify the rules are active by checking Cursor's context indicator or by asking it to explain its approach to a code generation task.
+```go
+// Define custom error types for actionable error handling
+type ValidationError struct {
+    Field   string
+    Message string
+}
 
-For teams, consider versioning your CursorRules alongside your code. Include them in code reviews to ensure consistency. The rules become documentation of your project's conventions—valuable for onboarding new team members.
+func (e *ValidationError) Error() string {
+    return fmt.Sprintf("%s: %s", e.Field, e.Message)
+}
 
-## Testing Your CursorRules
+func validateInput(input *Request) error {
+    if input.Name == "" {
+        return &ValidationError{Field: "name", Message: "cannot be empty"}
+    }
+    return nil
+}
+```
 
-After creating CursorRules, verify they work as expected. Generate code for a typical scenario and check:
+## Structuring Context Propagation
 
-- Are goroutines spawned with context support?
-- Are errors wrapped with the %w verb?
-- Do channel operations follow your stated conventions?
-- Does the generated code compile without modifications?
+Golang's context package provides the standard mechanism for request-scoped values and cancellation. Your CursorRules should ensure the AI consistently propagates context through your call stacks.
 
-If something is wrong, refine your CursorRules. Iterate until the AI consistently produces code matching your standards. This investment pays off in reduced code review friction and more reliable generated code.
+Specify requirements like always accepting context as the first parameter, using context for timeout and cancellation, and avoiding context.Background() in production code except at the entry point:
 
-## Conclusion
+```go
+func (s *Service) ProcessWithTimeout(ctx context.Context, req *Request) (*Response, error) {
+    ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
+    defer cancel()
+    
+    return s.process(ctx, req)
+}
+```
 
-Effective CursorRules for Go require explicit instructions about concurrency primitives and error handling. Define your goroutine spawning conventions, channel patterns, and error wrapping strategy. Include specific examples that demonstrate your project's standards. Test the rules by generating code and verifying it compiles and follows your conventions.
+## Channel Patterns and Buffering
 
-With well-crafted CursorRules, your AI coding assistant becomes a reliable partner that produces idiomatic Go code matching your team's standards.
+Channel behavior varies based on your use case. Unbuffered channels provide synchronization guarantees while buffered channels improve throughput for batch processing. Your CursorRules should specify when to use each type.
+
+For most RPC-style interactions, unbuffered channels ensure immediate error propagation:
+
+```go
+// Unbuffered channel for synchronous error reporting
+errCh := make(chan error)
+go func() {
+    errCh <- performOperation()
+}()
+if err := <-errCh; err != nil {
+    return fmt.Errorf("operation failed: %w", err)
+}
+```
+
+For producer-consumer patterns where producers shouldn't block, specify buffered channels with appropriate capacity:
+
+```go
+// Buffered channel with capacity matching batch size
+jobs := make(chan Job, 100)
+```
+
+## Integrating with Existing Code
+
+Review your project's existing implementations to identify patterns the AI should emulate. Extract common patterns from your codebase and incorporate them into CursorRules. Include actual code examples from your project rather than abstract descriptions.
+
+For instance, if your project uses a specific retry pattern:
+
+```go
+func retryWithBackoff(ctx context.Context, op func() error) error {
+    backoff := time.Second
+    maxBackoff := 30 * time.Second
+    
+    for attempts := 0; ; attempts++ {
+        if err := op(); err != nil {
+            if attempts >= 3 {
+                return err
+            }
+            select {
+            case <-ctx.Done():
+                return ctx.Err()
+            case <-time.After(backoff):
+                backoff *= 2
+                if backoff > maxBackoff {
+                    backoff = maxBackoff
+                }
+            }
+        } else {
+            return nil
+        }
+    }
+}
+```
+
+Include this exact implementation in your CursorRules so the AI generates consistent retry logic.
+
+## Testing Considerations
+
+Your CursorRules should also address testing patterns. Go's testing package requires specific conventions. Specify how tests should handle table-driven testing, when to use subtests, and how to structure test helper functions:
+
+```go
+func TestProcess(t *testing.T) {
+    tests := []struct {
+        name    string
+        input   string
+        want    string
+        wantErr bool
+    }{
+        {"valid input", "hello", "hello", false},
+        {"empty input", "", "", true},
+    }
+    
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            got, err := Process(tt.input)
+            if (err != nil) != tt.wantErr {
+                t.Errorf("Process() error = %v, wantErr %v", err, tt.wantErr)
+                return
+            }
+            if got != tt.want {
+                t.Errorf("Process() = %v, want %v", got, tt.want)
+            }
+        })
+    }
+}
+```
+
+## Final Configuration Tips
+
+Keep your CursorRules focused and specific rather than comprehensive. Include only patterns that differ from standard Go idioms or that your project implements differently. Review and update CursorRules as your project evolves, ensuring new team members receive consistent guidance from the AI assistant.
+
+The goal is generating code that passes your CI/CD pipeline without modification, with proper goroutine cleanup, idiomatic error handling, and consistent patterns throughout your codebase.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
