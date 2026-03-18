@@ -10,9 +10,10 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
-Design system tokens form the foundation of consistent UI development. However, translating these tokens into meaningful component names remains a persistent challenge for design and development teams. AI tools offer practical solutions for generating naming conventions that bridge design tokens with component architecture.
+AI tools can automatically generate consistent component naming conventions from your design system tokens by analyzing token structure, understanding semantic meaning, and applying your existing patterns. Using prompt strategies that provide token examples and naming constraints, you can leverage coding assistants to create scalable naming schemes that work across your entire component library—reducing manual decisions and ensuring naming consistency from the start.
 
 ## The Naming Convention Problem
 

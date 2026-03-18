@@ -10,12 +10,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-Writing compelling feature proposals is a critical skill for product managers. The difference between a feature that gets approved and one that gets shelved often comes down to how well the proposal tells a story with data. AI tools can significantly accelerate this process, helping PMs transform raw metrics into persuasive narratives that drive product decisions.
-
-This guide shows developers and power users how to leverage AI to help product managers craft data-driven feature proposals that get results.
+AI tools transform feature proposals by generating structured outlines from raw metrics, converting numbers into audience-specific narratives that resonate with engineers vs. executives vs. finance teams, and building transparent ROI frameworks that withstand stakeholder scrutiny. By feeding your data into an AI system with clear prompts for structure and audience, you get a first draft that's 80% complete—something you refine with domain expertise rather than writing from scratch.
 
 ## The Challenge with Traditional Feature Proposals
 

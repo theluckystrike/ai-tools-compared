@@ -10,10 +10,11 @@ tags: [tools]
 reviewed: true
 score: 8
 voice-checked: true
+intent-checked: true
 ---
 
 {% raw %}
-Automating keyboard navigation testing saves hours of manual validation and ensures accessibility compliance. This guide shows you how to use AI to generate Playwright keyboard navigation tests quickly and effectively.
+AI tools generate Playwright keyboard navigation tests by analyzing your component structure and producing test cases that verify Tab order through interactive elements, Escape key closing modal behavior, and Arrow keys navigating dropdown options. Providing clear component documentation and specific keyboard interaction requirements upfront produces immediately usable tests that cover both basic navigation and edge cases like focus trapping and Shift+Tab backward navigation.
 
 ## Why Keyboard Navigation Testing Matters
 
