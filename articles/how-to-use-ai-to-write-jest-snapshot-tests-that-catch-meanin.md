@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-write-jest-snapshot-tests-that-catch-meanin/
 ---
 
+{% raw %}
 Jest snapshot testing has become a staple in React applications and beyond. The concept is elegant: capture the rendered output once, then compare future renders against that baseline. When the output changes, you get an alert. However, the reality often falls short—snapshots catch every tiny whitespace change while missing the regressions that actually matter.
 
 This is where AI assistance transforms the snapshot testing experience. By understanding component structure, user interaction patterns, and visual hierarchy, AI can help you write snapshot tests that act as a safety net for meaningful UI changes. Here's how to approach this strategically.
@@ -185,3 +186,4 @@ The goal isn't more snapshots—it's smarter snapshots that developers trust. Wh
 Start by identifying high-value components in your application—those frequently modified or critical to user experience. Apply AI-assisted snapshot testing there first, then expand based on what you learn about your specific regression detection needs.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
