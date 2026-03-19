@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
+{% raw %}
 AI coding assistants can help you analyze pull request changes and identify affected downstream projects by examining dependency graphs, import relationships, and service coupling. This enables teams to notify the right stakeholders, run appropriate tests, and catch potential issues before they propagate through your system.
 
 ## The Challenge of Impact Analysis in Monorepos
@@ -173,4 +174,5 @@ Configuration drift—where production differs from code—can cause AI to miss 
 
 AI tools significantly speed up pull request impact analysis by automating the tedious work of tracing dependencies across projects. The key is providing clear context about your repository structure, using the right combination of static analysis tools and AI interpretation, and treating the results as a starting point for human verification. Teams implementing this approach report saving several hours per PR while improving their change review quality.
 
+{% endraw %}
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
