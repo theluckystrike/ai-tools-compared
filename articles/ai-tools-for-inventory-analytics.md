@@ -8,7 +8,7 @@ permalink: /ai-tools-for-inventory-analytics/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
