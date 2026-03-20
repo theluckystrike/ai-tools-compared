@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-use-claude-artifacts-for-rapid-prototyping-react-components/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

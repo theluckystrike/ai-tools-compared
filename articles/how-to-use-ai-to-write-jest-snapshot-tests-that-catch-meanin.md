@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-jest-snapshot-tests-that-catch-meanin/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

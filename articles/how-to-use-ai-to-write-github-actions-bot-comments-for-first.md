@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-actions-bot-comments-for-first/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

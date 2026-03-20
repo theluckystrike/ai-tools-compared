@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/
 categories: [guides]
-tags: [ai, prompts, development]
+tags: [ai-tools-compared, ai, prompts, development, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

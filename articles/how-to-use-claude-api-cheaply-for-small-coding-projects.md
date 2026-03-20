@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-claude-api-cheaply-for-small-coding-projects/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 8
 intent-checked: true

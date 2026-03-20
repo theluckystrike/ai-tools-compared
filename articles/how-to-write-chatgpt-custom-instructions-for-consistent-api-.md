@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/
 categories: [guides]
-tags: [chatgpt, api-design, prompts]
+tags: [ai-tools-compared, chatgpt, api-design, prompts, api]
 reviewed: true
 score: 8
 intent-checked: true

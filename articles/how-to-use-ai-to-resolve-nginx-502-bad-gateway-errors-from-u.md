@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

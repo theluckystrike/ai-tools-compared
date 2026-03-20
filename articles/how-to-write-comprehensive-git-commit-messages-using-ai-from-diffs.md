@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-write-comprehensive-git-commit-messages-using-ai-from-diffs/
 categories: [guides]
-tags: [tools, development, git]
+tags: [ai-tools-compared, tools, development, git, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
