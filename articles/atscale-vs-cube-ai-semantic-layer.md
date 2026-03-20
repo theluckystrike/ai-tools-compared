@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /atscale-vs-cube-ai-semantic-layer/
 voice-checked: true
 categories: [comparisons]
-score: 7
+score: 8
 reviewed: true
 intent-checked: true
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
 
 

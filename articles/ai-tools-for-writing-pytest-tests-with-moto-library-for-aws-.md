@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
