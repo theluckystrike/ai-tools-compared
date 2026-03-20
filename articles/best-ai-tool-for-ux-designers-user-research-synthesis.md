@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /best-ai-tool-for-ux-designers-user-research-synthesis/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 
 
