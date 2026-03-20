@@ -5,6 +5,10 @@ description: "Discover how AI-powered vendor payment optimization tools can redu
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-vendor-payment-optimization-tools-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
