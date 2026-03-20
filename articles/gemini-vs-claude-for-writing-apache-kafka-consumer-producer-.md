@@ -253,8 +253,92 @@ Choose Claude when building production Kafka systems. The generated code include
 
 For Kafka development in Java, Claude produces more production-appropriate code out of the box. The difference is most noticeable in error handling, configuration defaults, and lifecycle management. Gemini generates correct code, but Claude generates code that developers would write after years of production Kafka experience. If you are building systems that need to run reliably in production, Claude is the better starting point.
 
+## Prompting for Avro and Schema Registry Integration
 
+Most production Kafka systems use Avro serialization with a Schema Registry rather than plain string serialization. Both tools handle this when prompted correctly, but the required context level differs.
 
+Claude correctly generates the Confluent Schema Registry configuration when you include the dependency in your prompt:
+
+```java
+// Claude-generated with "use Confluent Schema Registry and Avro" prompt
+import io.confluent.kafka.serializers.KafkaAvroSerializer;
+import io.confluent.kafka.serializers.KafkaAvroDeserializer;
+import io.confluent.kafka.serializers.AbstractKafkaAvroSerDeConfig;
+
+Properties props = new Properties();
+props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
+props.put(AbstractKafkaAvroSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, schemaRegistryUrl);
+// Claude adds this automatically: subject naming strategy
+props.put(AbstractKafkaAvroSerDeConfig.VALUE_SUBJECT_NAME_STRATEGY,
+    TopicRecordNameStrategy.class.getName());
+```
+
+Gemini generates the serializer class names correctly but frequently omits `SCHEMA_REGISTRY_URL_CONFIG` unless prompted explicitly. It also tends to skip the subject naming strategy configuration, which causes runtime errors when the Schema Registry enforces subject name constraints.
+
+## Error Handling for Deserialization Failures
+
+One production scenario both tools often miss: deserialization errors. If a consumer receives a malformed message, the default behavior throws an exception that can halt the entire consumer group. Add a dead letter queue (DLQ) pattern:
+
+Prompt Claude with "add a dead letter queue handler for messages that fail deserialization or processing":
+
+```java
+// Claude-generated: DLQ pattern for failed messages
+@Override
+public void run() {
+    try {
+        while (running) {
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+            for (ConsumerRecord<String, String> record : records) {
+                try {
+                    processRecord(record);
+                } catch (ProcessingException e) {
+                    // Send to DLQ, don't halt the consumer
+                    sendToDeadLetterQueue(record, e);
+                    logger.warn("Message sent to DLQ: topic={}, partition={}, offset={}",
+                        record.topic(), record.partition(), record.offset());
+                }
+            }
+            if (!records.isEmpty()) {
+                consumer.commitSync();
+            }
+        }
+    } catch (WakeupException e) {
+        // Expected shutdown
+    } finally {
+        consumer.close();
+    }
+}
+
+private void sendToDeadLetterQueue(ConsumerRecord<String, String> record, Exception cause) {
+    ProducerRecord<String, String> dlqRecord = new ProducerRecord<>(
+        record.topic() + ".dlq",
+        record.key(),
+        record.value()
+    );
+    dlqRecord.headers().add("original-topic", record.topic().getBytes());
+    dlqRecord.headers().add("error-message", cause.getMessage().getBytes());
+    dlqRecord.headers().add("error-class", cause.getClass().getName().getBytes());
+    dlqProducer.send(dlqRecord);
+}
+```
+
+Gemini generates a similar pattern when prompted for DLQ handling, but Claude includes the header propagation (original topic, error message, error class) without being asked — details that make DLQ investigation tractable in production.
+
+## Configuration Comparison: Default Settings Quality
+
+The most significant production-readiness difference is in default configuration values. Here's a side-by-side of what each tool generates without explicit configuration requirements:
+
+| Configuration | Gemini Default | Claude Default | Production Recommendation |
+|---|---|---|---|
+| `acks` | `1` (leader only) | `all` (full ISR) | `all` for durability |
+| `enable.idempotence` | not set | `true` | `true` to prevent duplicates |
+| `auto.commit` | `true` | `false` (manual) | `false` for at-least-once |
+| `max.in.flight.requests` | `5` | `5` with idempotence check | `5` with `enable.idempotence=true` |
+| Graceful shutdown | not included | `WakeupException` + `consumer.wakeup()` | Required for clean offset commit |
+
+The table summarizes the pattern: Gemini generates defaults that work in development but require changes before going to production. Claude generates production-appropriate defaults that developers would typically discover through incident retrospectives.
 
 ## Related Reading
 
