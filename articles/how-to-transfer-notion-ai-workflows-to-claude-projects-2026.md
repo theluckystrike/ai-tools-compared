@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Transfer Notion AI Workflows to Claude Projects 2026"
 description: "A practical guide for developers and power users moving their AI-powered Notion workflows to Claude Projects, with code examples and migration strategies."

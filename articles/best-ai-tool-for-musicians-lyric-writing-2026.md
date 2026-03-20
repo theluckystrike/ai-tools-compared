@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Musicians Lyric Writing in 2026"
 description: "Discover the most effective AI writing tools for musicians creating lyrics in 2026. Compare features, pricing, and real-world performance for."

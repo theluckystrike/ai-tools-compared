@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Transfer Claude Project Knowledge to ChatGPT."
 description: "A practical guide to migrating your Claude project knowledge bases, instructions, and settings to ChatGPT Custom GPTs with step-by-step instructions."

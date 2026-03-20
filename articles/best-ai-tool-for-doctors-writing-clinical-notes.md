@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Doctors Writing Clinical Notes"
 description: "Discover how AI tools help doctors write clinical notes faster while maintaining accuracy and compliance. Real-world use cases and practical guidance."

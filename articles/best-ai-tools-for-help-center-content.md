@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Help Center Content"
 description: "A practical guide to AI tools for creating and managing help center documentation, with code examples and implementation strategies for developers."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Grammarly AI Not Working in Browser Fix (2026)"
 description: "Troubleshooting guide for fixing Grammarly AI features not working in your browser. Step-by-step solutions for developers and power users."

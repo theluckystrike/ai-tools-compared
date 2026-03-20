@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Pair Programming Tools for C# and .NET Development"
 description: "Discover the best AI pair programming tools specifically designed for C# and .NET developers. Learn about GitHub Copilot, Amazon CodeWhisperer, and more."

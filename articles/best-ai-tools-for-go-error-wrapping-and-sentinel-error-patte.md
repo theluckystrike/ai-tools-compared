@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Go Error Wrapping and Sentinel Error Patte"
 description: "A practical guide to AI coding assistants that help with Go error handling patterns, including error wrapping, sentinel errors, and custom error types."

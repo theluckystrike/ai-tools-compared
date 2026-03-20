@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "ChatGPT vs Claude for Writing API Documentation"
 description: "A practical comparison of ChatGPT and Claude for writing API documentation. Includes code examples, prompt strategies, and recommendations for developers."

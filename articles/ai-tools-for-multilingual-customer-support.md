@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Multilingual Customer Support"
 description: "A practical guide to AI-powered multilingual customer support tools for developers and power users, with code examples and implementation strategies."

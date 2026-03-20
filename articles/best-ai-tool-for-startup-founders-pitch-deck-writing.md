@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Startup Founders: Pitch Deck Writing."
 description: "A practical guide for startup founders comparing AI tools for pitch deck writing, with real-world use cases and recommendations."

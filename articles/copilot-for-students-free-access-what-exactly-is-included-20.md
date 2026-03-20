@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot for Students Free Access: What Exactly Is Included"
 description: "A guide for developers and power users on what GitHub Copilot for Students includes, how to get it, and practical ways to use it in your."

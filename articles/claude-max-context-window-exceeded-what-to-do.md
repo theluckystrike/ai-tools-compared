@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Claude Max Context Window Exceeded: What To Do"
 description: "A practical troubleshooting guide for developers facing the Claude Max context window exceeded error. Learn step-by-step fixes and diagnostic tips."

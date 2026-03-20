@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Debugging Memory Leaks Shown in."
 description: "Discover how AI assistants can help identify and fix memory leaks using Chrome DevTools heap snapshots with practical examples and code patterns."

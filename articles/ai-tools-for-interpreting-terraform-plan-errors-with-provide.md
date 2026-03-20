@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Interpreting Terraform Plan Errors with Provide"
 description: "A practical guide for developers using AI assistants to decode and resolve Terraform provider version conflicts in infrastructure code."

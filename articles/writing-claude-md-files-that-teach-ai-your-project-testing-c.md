@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Writing Claude.md Files That Teach AI Your Project."
 description: "A practical guide to creating CLAUDE.md files that communicate your testing conventions, patterns, and best practices to AI coding assistants. Includes."

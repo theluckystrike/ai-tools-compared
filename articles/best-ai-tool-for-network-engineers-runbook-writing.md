@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Network Engineers: Runbook Writing Guide"
 description: "Discover how AI can improve runbook creation for network engineers. Learn practical approaches to automating documentation workflows."

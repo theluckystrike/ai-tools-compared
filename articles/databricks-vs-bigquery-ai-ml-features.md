@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Databricks vs BigQuery AI ML Features: A Practical"
 description: "Compare Databricks and BigQuery AI ML capabilities with code examples, practical implementation details, and insights for developers building."

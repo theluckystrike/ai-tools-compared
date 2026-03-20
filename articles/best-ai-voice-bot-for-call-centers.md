@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Voice Bot for Call Centers: A Developer Guide"
 description: "A technical comparison of AI voice bot platforms for call centers, with implementation examples and API integration patterns for developers."

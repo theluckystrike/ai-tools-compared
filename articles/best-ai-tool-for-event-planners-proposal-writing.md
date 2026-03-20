@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Event Planners Proposal Writing"
 description: "Discover how AI can improve your event planning proposals. Learn practical strategies for creating compelling, professional proposals faster."

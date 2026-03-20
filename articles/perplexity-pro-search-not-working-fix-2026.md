@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Perplexity Pro Search Not Working Fix (2026)"
 description: "A troubleshooting guide for developers and power users experiencing Perplexity Pro search issues. Step-by-step fixes and diagnostic tips."

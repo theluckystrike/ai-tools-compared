@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT Enterprise vs Custom Support Bot: A Practical"
 description: "A technical comparison of ChatGPT Enterprise versus building a custom support bot, with code examples and implementation considerations for developers."

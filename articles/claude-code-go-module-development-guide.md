@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Code Go Module Development Guide"
 description: "A guide to developing Go modules with Claude Code. Learn how to scaffold projects, generate code, write tests, and automate your Go."

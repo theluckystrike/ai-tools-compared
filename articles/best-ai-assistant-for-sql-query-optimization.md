@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for SQL Query Optimization"
 description: "Discover how AI assistants can dramatically improve your SQL query performance with real-world examples and actionable techniques."

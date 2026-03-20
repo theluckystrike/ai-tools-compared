@@ -1,8 +1,4 @@
 ---
-
-
-
-
 layout: default
 title: "Claude Code API Backward Compatibility Guide"
 description: "A guide to maintaining API backward compatibility using Claude Code, covering version strategies, contract testing, and migration patterns."
@@ -12,9 +8,8 @@ permalink: /claude-code-api-backward-compatibility-guide/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

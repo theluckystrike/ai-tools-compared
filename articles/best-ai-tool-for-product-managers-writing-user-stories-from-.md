@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Product Managers Writing User Stories."
 description: "A practical guide to using AI for transforming raw customer feedback into structured user stories. Includes code examples and workflow recommendations."

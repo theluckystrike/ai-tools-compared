@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Writesonic Chatsonic vs ChatGPT: Conversation Comparison"
 description: "A practical comparison of Writesonic Chatsonic and ChatGPT for developers and power users. Includes API capabilities, conversation handling, and code."

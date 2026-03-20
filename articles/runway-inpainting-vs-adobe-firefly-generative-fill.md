@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Runway Inpainting vs Adobe Firefly Generative Fill"
 description: "A technical comparison of Runway inpainting and Adobe Firefly Generative Fill for developers and power users working with AI-powered image editing."

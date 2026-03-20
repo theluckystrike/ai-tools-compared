@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Write Security Advisory Descriptions"
 description: "Learn practical techniques for using AI tools to write clear, accurate, and compliant CVE security advisory descriptions. Includes prompt templates and."

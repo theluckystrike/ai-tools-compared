@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Artifacts Not Rendering Fix 2026"
 description: "A troubleshooting guide for developers and power users experiencing Claude artifacts not rendering. Step-by-step fixes and diagnostic tips."

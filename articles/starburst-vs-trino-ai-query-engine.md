@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Starburst vs Trino for AI Query Engine: A Practical Ai."
 description: "A developer-focused comparison of Starburst and Trino for building AI-powered query engines, with code examples and real-world considerations."

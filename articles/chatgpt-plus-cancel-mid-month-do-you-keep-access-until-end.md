@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT Plus Cancel Mid Month: Do You Keep Access Until End?"
 description: "A practical guide explaining what happens when you cancel ChatGPT Plus mid-billing cycle, including access timelines, feature changes, and practical."

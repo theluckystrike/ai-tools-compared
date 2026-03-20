@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "What Source Code Context Window Do Different AI Coding Tools"
 description: "A practical guide examining context window sizes across popular AI coding tools. Learn what code gets uploaded and how much context each tool processes."

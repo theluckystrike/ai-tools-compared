@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Claude Code Java Library Development Guide"
 description: "A practical guide to using Claude Code for building professional Java libraries, covering project setup, API design, testing, and documentation with."

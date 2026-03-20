@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Export Midjourney Images Before Downgrading Plan"
 description: "A practical developer guide for exporting Midjourney images before downgrading your subscription plan in 2026. Includes API methods, batch export."

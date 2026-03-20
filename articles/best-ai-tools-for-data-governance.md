@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tools for Data Governance: A Practical Guide for"
 description: "Discover the top AI tools for data governance with practical examples, code snippets, and implementation strategies for developers and power users."

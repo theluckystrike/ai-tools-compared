@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Switching from Copilot Enterprise to Cursor Business: A."
 description: "A practical checklist for developers migrating from GitHub Copilot Enterprise to Cursor Business, with configuration steps, workflow comparisons, and."

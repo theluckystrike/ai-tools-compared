@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Evaluate AI Coding Tool Encryption Standards for Data"
 description: "A practical guide for developers to evaluate encryption standards when selecting AI coding tools. Learn how to assess data-in-transit security with."

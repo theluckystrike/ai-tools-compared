@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 
 
 
@@ -19,11 +20,12 @@
 
 
 
+=======
+>>>>>>> a016d0bc4 (Quality: complete frontmatter audit [ai-tools-compared])
 layout: default
-
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "A guide to understanding what features become limited or unavailable when Cursor's free trial ends in 2026."
-keywords:
+keywords: 
   - cursor free tier limitations
   - cursor free trial what stops working
   - cursor ai free vs pro comparison
@@ -32,7 +34,7 @@ keywords:
   - cursor ai pricing free tier
   - cursor vs copilot free comparison
   - cursor free trial expired what next
-categories:
+categories: 
   - AI Coding Tools
   - Cursor
 permalink: /cursor-free-tier-limitations-what-stops-working-after-trial/

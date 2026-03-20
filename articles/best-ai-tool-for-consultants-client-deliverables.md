@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Consultants: Client Deliverables Compared"
 description: "A practical guide to AI tools that help consultants create client deliverables faster, including real-world use cases and recommendations."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Writing Tool for Blog Posts 2026"
 description: "Compare the top AI writing tools for developers creating blog content. Evaluate CLI options, API integrations, and workflow automation for technical."

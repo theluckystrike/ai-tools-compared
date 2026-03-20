@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Domo vs Sisense AI Dashboards: A Practical Comparison"
 description: "A technical comparison of Domo and Sisense AI dashboard capabilities with code examples, API integration patterns, and recommendations for power users."

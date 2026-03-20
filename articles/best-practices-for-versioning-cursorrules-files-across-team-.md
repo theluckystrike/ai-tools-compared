@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Practices for Versioning CursorRules Files Across Team"
 description: "A practical guide to managing .cursorrules files in Git. Learn how to version control Cursor rules across your development team with clear workflows."

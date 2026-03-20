@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Effective Prompting Strategies for AI Generation of."
 description: "Master the art of prompting AI tools to generate complex SQL queries. Learn proven strategies with practical examples for developers and power users."

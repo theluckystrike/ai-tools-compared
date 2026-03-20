@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Sudowrite vs NovelAI for Fiction Writing Compared"
 description: "A practical comparison of Sudowrite and NovelAI for fiction writers. Includes API access, customization options, and recommendations for developers and."

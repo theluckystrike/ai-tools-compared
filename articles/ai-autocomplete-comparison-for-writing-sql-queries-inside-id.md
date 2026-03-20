@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Autocomplete Comparison for Writing SQL Queries Inside"
 description: "Compare the best AI autocomplete tools for writing SQL queries in your IDE. Practical examples, pricing, and which tool works best for developers."

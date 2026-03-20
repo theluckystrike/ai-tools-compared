@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Claude Code API Error Handling Standards"
 description: "A guide to implementing API error handling standards with Claude Code, covering HTTP status codes, error response formats, and best practices."
@@ -11,9 +8,8 @@ permalink: /claude-code-api-error-handling-standards/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

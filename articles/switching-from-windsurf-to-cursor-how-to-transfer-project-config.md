@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Switching from Windsurf to Cursor: How to Transfer."
 description: "A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."

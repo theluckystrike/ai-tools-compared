@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI IDE Features for Database Query Writing and."
 description: "Discover the most powerful AI-powered IDE features that transform how developers write, test, and optimize database queries in 2026."

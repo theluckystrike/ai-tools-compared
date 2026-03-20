@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude vs ChatGPT for Building Custom ESLint Rules for React"
 description: "A practical comparison of Claude and ChatGPT for creating custom ESLint rules in React projects, with code examples and real-world recommendations."

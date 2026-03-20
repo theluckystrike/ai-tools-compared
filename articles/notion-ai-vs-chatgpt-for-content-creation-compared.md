@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Notion AI vs ChatGPT for Content Creation Compared"
 description: "A practical comparison of Notion AI and ChatGPT for content creation workflows, with code examples and use case recommendations for developers and."

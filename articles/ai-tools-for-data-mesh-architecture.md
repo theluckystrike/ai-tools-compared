@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Data Mesh Architecture: A Practical Guide"
 description: "Discover the best AI tools for implementing and managing data mesh architecture. Learn how to use AI for domain ownership, federated governance."

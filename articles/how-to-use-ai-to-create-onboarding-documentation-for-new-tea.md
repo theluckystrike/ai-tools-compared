@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Create Onboarding Documentation for New Tea"
 description: "A practical guide for developers and power users using AI to build onboarding documentation that accelerates new team member."

@@ -8,7 +8,6 @@ category: claude-code
 tags: [claude-code, typescript, api-client, type-safety, sdk]
 permalink: /claude-code-api-client-typescript-guide/
 categories: [guides]
-tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Giving Outdated Information? How to Fix This"
 description: "A practical troubleshooting guide for developers experiencing Claude providing outdated information. Includes step-by-step fixes and diagnostic tips."

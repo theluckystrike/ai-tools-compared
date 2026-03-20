@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cursor vs Copilot for Implementing OAuth2 Authentication."
 description: "A practical comparison of GitHub Copilot and Cursor when implementing OAuth2 authentication flows in Express.js applications, with code examples and."

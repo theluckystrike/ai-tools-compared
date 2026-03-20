@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Veterinarians Clinical Records 2026"
 description: "A practical comparison of AI-powered clinical record solutions for veterinary practices in 2026."

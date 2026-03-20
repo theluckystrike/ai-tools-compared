@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Financial Analysts Modeling in 2026"
 description: "Discover the most capable AI tools for financial modeling in 2026. Learn about key features, real-world use cases, and how to choose the right solution."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Fraud Detection in 2026"
 description: "A practical guide to AI-powered fraud detection tools for developers. Compare features, see code examples, and learn how to integrate these tools into."

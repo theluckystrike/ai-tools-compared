@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Autocomplete Accuracy for Boilerplate Code vs Complex Log"
 description: "A practical comparison of AI autocomplete accuracy for boilerplate code versus complex logic. Real code examples and insights for developers."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Copilot Enterprise License Not Assigned Fix"
 description: "A troubleshooting guide for developers and power users experiencing GitHub Copilot Enterprise license assignment issues. Step-by-step fixes and."

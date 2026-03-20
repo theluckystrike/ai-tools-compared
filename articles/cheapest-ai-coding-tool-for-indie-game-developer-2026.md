@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cheapest AI Coding Tool for Indie Game Developer 2026"
 description: "A practical guide to the most affordable AI coding assistants for indie game developers in 2026, with real code examples and cost comparisons."
@@ -10,6 +9,7 @@ score: 7
 voice-checked: true
 reviewed: true
 intent-checked: true
+categories: [guides]
 ---
 
 

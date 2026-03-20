@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT API Fine Tuning Costs: Training Plus Inference."
 description: "A breakdown of ChatGPT API fine-tuning costs, including training expenses and inference pricing. Learn how OpenAI bills for fine-tuned models."

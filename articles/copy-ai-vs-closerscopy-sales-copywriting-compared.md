@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Copy.ai vs ClosersCopy: Sales Copywriting Compared"
 description: "A practical developer-focused comparison of Copy.ai and ClosersCopy for sales copywriting. API integration examples, workflow automation, and."

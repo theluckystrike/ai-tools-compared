@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Analyzing Which Open Source Issues Would."
 description: "A practical guide to using AI tools for analyzing which open source issues would benefit from contributions, with code examples and implementation tips."
@@ -10,9 +9,8 @@ categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

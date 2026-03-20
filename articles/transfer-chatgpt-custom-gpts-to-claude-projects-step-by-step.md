@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Transfer ChatGPT Custom GPTs to Claude Projects Step by Step"
 description: "A practical guide for developers and power users to migrate Custom GPTs from ChatGPT to Claude Projects, with code examples and migration strategies."

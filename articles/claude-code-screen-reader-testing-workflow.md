@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Claude Code Screen Reader Testing Workflow"
 description: "A guide to implementing screen reader testing workflows using Claude Code, covering NVDA, JAWS, VoiceOver testing, ARIA validation, and."

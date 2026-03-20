@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "AI Tools for Generating Website Hero Images Compared"
 description: "A practical comparison of AI tools for generating website hero images, with code examples and recommendations for developers."

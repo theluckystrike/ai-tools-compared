@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistants for AWS CloudFormation Template"
 description: "Discover which AI assistants excel at generating and validating CloudFormation templates with practical examples and code snippets."

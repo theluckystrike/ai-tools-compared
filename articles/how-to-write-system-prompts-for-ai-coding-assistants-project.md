@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Write System Prompts for AI Coding Assistants Project"
 description: "A practical guide for developers learning to write effective system prompts that make AI coding assistants understand your project's unique requirements, conventions, and constraints."

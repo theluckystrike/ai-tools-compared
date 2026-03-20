@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Code Database Test Fixtures Guide"
 description: "A guide to creating and managing database test fixtures using Claude Code, covering fixture factories, data seeding strategies, and test."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Free Alternatives to ChatGPT Plus for Code Generation in."
 description: "Discover the best free AI coding assistants that rival ChatGPT Plus. Compare features, capabilities, and find the perfect free tool for your coding needs."

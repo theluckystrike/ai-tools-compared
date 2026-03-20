@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Traders: Market Research Summaries"
 description: "A practical guide to AI tools that help traders quickly summarize market research, news, and financial reports. Compare features and find what works."

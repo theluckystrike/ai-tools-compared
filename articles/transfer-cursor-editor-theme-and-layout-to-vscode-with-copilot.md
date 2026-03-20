@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Transfer Cursor Editor Theme and Layout"
 description: "A practical guide for migrating your Cursor editor theme, layout, and customization settings to Visual Studio Code with GitHub Copilot. Includes."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Learning Python Decorators and"
 description: "A practical guide to AI tools that help developers master Python decorators and metaclasses through hands-on exercises and real-world examples."

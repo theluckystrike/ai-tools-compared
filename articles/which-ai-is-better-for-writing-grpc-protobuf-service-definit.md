@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Which AI Is Better for Writing gRPC Protobuf Service."
 description: "A practical comparison of AI tools for writing gRPC and Protobuf service definitions, with code examples and recommendations for developers."

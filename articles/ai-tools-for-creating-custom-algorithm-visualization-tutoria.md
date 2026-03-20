@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Creating Custom Algorithm Visualization"
 description: "A practical guide for developers using AI tools to generate custom algorithm visualizations and step-by-step tutorials from code snippets."

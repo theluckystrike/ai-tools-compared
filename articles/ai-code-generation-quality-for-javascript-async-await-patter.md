@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Code Generation Quality for JavaScript Async Await Patter"
 description: "A practical comparison of how leading AI coding tools generate JavaScript async/await patterns. Includes code examples, quality analysis, and."

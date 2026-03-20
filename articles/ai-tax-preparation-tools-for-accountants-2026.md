@@ -9,9 +9,8 @@ categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 {% raw %}

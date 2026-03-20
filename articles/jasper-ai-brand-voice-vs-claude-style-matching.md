@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Jasper AI Brand Voice vs Claude Style Matching"
 description: "A technical comparison of Jasper AI Brand Voice and Claude style matching for developers and power users building content pipelines."

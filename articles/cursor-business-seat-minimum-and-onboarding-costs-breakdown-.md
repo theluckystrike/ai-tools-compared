@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cursor Business Seat Minimum and Onboarding Costs Breakdown"
 description: "Cursor Business Seat Minimum and Onboarding Costs. — guide with practical tips, comparisons, and expert recommendations for developers."

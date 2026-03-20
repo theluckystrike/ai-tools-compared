@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Customer Success Managers 2026"
 description: "A practical guide for customer success professionals comparing AI tools that help automate workflows, improve client communication, and drive."

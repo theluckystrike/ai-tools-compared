@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Academic Paper Editing 2026"
 description: "A technical comparison of AI-powered academic paper editing tools for developers and power users in 2026."

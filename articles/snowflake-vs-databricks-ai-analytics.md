@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Snowflake vs Databricks for AI Analytics: A Developer Ai."
 description: "A practical comparison of Snowflake and Databricks for AI and analytics workloads, with code examples, pricing insights, and implementation guidance."

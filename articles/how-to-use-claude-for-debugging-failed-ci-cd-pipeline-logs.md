@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use Claude for Debugging Failed CI/CD Pipeline Logs"
 description: "A practical guide for developers using Claude to analyze and debug failed CI/CD pipeline logs. Learn effective prompts, common patterns, and real-world."

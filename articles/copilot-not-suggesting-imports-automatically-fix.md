@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot Not Suggesting Imports Automatically Fix"
 description: "Troubleshooting guide for GitHub Copilot not suggesting imports automatically. Step-by-step fixes for developers."

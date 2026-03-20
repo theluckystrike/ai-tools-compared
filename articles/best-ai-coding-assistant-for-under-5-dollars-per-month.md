@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Coding Assistant for Under $5 Per Month"
 description: "A practical guide to affordable AI coding tools that cost $5 or less monthly. Compare features, code quality, and real-world usage for developers on a."

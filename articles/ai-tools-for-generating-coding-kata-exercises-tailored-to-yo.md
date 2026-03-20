@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Generating Coding Kata Exercises Tailored."
 description: "A practical guide to AI-powered coding kata generators that adapt difficulty to your experience level, with examples and tool recommendations."

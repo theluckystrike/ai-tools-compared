@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Lakehouse vs Data Warehouse for AI Workloads: Ai Comparison"
 description: "A practical comparison of lakehouse and data warehouse architectures for AI and machine learning workloads, with code examples and implementation guidance."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Help DevRel Create Interactive Coding."
 description: "A practical guide for developer relations teams on using AI tools to build interactive coding playgrounds that engage developers and showcase product."
@@ -10,9 +9,8 @@ categories: [guides]
 tags: [devrel, tools]
 reviewed: true
 score: 8
-voice-checked: false
-intent-checked: false
 voice-checked: true
+intent-checked: true
 ---
 
 

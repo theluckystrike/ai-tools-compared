@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use Copilot Chat to Generate Code from Natural"
 description: "A practical guide for developers on using GitHub Copilot Chat to transform natural language descriptions into working code with real examples."

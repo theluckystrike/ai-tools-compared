@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Grammarly Business vs ChatGPT Team for Enterprises"
 description: "A detailed comparison of Grammarly Business and ChatGPT Team for enterprise use. API access, integration methods, pricing, and practical implementation."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Creating Playwright Tests for."
 description: "A practical guide comparing AI tools for generating Playwright tests for table components with sorting, filtering, and pagination features."

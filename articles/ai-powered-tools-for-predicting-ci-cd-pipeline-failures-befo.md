@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Powered Tools for Predicting CI/CD Pipeline Failures Befo"
 description: "A practical guide to AI-powered tools that predict CI/CD pipeline failures. Learn how to catch issues early, reduce build times, and improve deployment."

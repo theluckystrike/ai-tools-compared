@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT Plus Browsing and DALL-E Usage Limits Per Three"
 description: "A practical guide to ChatGPT Plus browsing and DALL-E usage limits for developers and power users. Learn the current restrictions, workarounds, and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Generating Open Source Release."
 description: "Discover the best AI assistants for crafting professional open source release announcements with practical examples and tool comparisons."

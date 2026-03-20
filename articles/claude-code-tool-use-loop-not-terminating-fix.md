@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Code Tool Use Loop Not Terminating Fix"
 description: "Troubleshoot and fix Claude Code tool use loops that fail to terminate. Step-by-step solutions for developers and power users."

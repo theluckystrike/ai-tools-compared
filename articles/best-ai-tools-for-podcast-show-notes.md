@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Podcast Show Notes"
 description: "A practical comparison of AI tools for creating podcast show notes, with code examples and workflows for developers and power users."

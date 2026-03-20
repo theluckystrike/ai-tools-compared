@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Generating Pandas GroupBy Aggregation Code"
 description: "Discover how AI tools can convert plain English descriptions into pandas groupby aggregation code. Practical examples and code snippets for developers."

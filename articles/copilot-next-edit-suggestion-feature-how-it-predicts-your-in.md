@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot Next Edit Suggestion Feature: How It Predicts."
 description: "A technical deep dive into GitHub Copilot's Next Edit Suggestion feature, explaining how it predicts developer intent and accelerates code editing workflows."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Evaluate AI Coding Tool Data Processing Agreements"
 description: "A practical guide for developers and power users on evaluating data processing agreements in AI coding tools before making enterprise purchase decisions."

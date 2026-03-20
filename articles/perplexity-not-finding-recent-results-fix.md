@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Perplexity Not Finding Recent Results Fix"
 description: "A practical troubleshooting guide for developers and power users experiencing issues with Perplexity not returning recent search results. Learn."

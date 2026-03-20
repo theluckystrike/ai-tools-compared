@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Graphic Designers Brief Creation"
 description: "Learn how AI tools improve the graphic design brief creation process, with real-world examples and actionable comparison of top solutions."

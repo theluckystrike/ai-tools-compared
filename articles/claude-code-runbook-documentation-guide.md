@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Code Runbook Documentation Guide"
 description: "A guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation."

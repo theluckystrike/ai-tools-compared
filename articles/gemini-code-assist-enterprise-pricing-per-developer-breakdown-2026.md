@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Gemini Code Assist Enterprise Pricing: Per-Developer."
 description: "Complete guide to Google Gemini Code Assist enterprise pricing. Understand per-developer costs, feature tiers, and what enterprises should expect in 2026."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Cursor Background Agent Timing Out Fix (2026)"
 description: "A practical troubleshooting guide for developers and power users facing Cursor background agent timing out issues. Learn step-by-step fixes and."

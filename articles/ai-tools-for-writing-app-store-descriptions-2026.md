@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "AI Tools for Writing App Store Descriptions 2026"
 description: "A practical guide for developers and power users comparing AI tools specifically designed for crafting compelling App Store descriptions. Includes code."

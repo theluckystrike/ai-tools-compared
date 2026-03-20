@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Workflow for Using AI to Modernize Legacy."
 description: "A practical workflow for developers to use AI tools when modernizing legacy application architecture, with code examples and proven strategies."

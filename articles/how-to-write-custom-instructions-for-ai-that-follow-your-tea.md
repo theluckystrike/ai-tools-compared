@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Write Custom Instructions for AI That Follow Your."
 description: "A practical guide for developers on creating AI custom instructions that align with team code review standards, with concrete examples and code snippets."

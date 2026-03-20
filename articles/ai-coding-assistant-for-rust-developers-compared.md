@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Coding Assistant for Rust Developers Compared"
 description: "A practical comparison of AI coding assistants for Rust developers, with code examples and recommendations for different use cases."

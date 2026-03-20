@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026"
 description: "A practical comparison of GitHub Copilot Individual and Cursor Pro pricing for individual developers, with annual cost analysis and real-world value."

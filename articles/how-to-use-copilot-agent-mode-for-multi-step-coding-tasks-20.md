@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use Copilot Agent Mode for Multi-Step Coding Tasks"
 description: "A practical guide for developers on using GitHub Copilot agent mode to handle complex, multi-step coding tasks with real examples."

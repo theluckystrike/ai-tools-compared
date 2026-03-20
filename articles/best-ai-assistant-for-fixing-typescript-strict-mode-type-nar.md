@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Fixing TypeScript Strict Mode Type Nar"
 description: "Discover which AI coding assistant handles TypeScript strict mode type narrowing errors most effectively. Practical examples and comparisons for."

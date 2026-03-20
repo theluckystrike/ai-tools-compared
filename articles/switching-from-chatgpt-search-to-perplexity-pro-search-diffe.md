@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Switching from ChatGPT Search to Perplexity Pro Search."
 description: "A practical guide for developers and power users comparing ChatGPT Search and Perplexity Pro Search, with code examples and use case recommendations."

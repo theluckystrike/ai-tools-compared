@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT Image Upload Not Working Fix (2026)"
 description: "Troubleshooting guide for ChatGPT image upload issues. Step-by-step fixes for developers and power users experiencing problems uploading images to."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Generate Contributor Hall of Fame Pages."
 description: "A practical guide for developers on using AI to analyze git history and automatically generate contributor hall of fame pages. Code examples and."

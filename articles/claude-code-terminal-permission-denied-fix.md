@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Code Terminal Permission Denied Fix"
 description: "Claude Code Terminal Permission Denied Fix — guide with practical tips, comparisons, and expert recommendations for developers and teams."

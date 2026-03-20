@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Competitor Analysis"
 description: "A practical guide to AI-powered competitor analysis tools for developers and power users. Learn how to use AI for market research, pricing."

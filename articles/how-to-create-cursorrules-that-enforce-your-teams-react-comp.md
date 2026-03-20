@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Create Cursorules That Enforce Your Teams React."
 description: "Learn how to write Cursorules that enforce consistent React component composition patterns across your team. Practical examples and code snippets included."
@@ -10,9 +9,8 @@ categories: [guides]
 tags: [react, cursorrules, ai-tools]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

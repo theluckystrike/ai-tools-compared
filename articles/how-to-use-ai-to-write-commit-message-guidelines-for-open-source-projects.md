@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Write Commit Message Guidelines for."
 description: "A practical guide for open source maintainers using AI to create clear, consistent commit message conventions that improve collaboration and project."
@@ -10,9 +9,8 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

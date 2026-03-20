@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Coding Tool with Pay As You Go No Subscription"
 description: "A practical guide to the best AI coding assistant that uses pay-as-you-go pricing without subscriptions. Compare options, see code examples, and find."

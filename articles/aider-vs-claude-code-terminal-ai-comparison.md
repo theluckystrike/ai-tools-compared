@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Aider vs Claude Code: Terminal AI Coding Assistants Compared"
 description: "A practical comparison of Aider and Claude Code for terminal-based AI-assisted coding. Includes code examples, use cases, and recommendations for."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Game Developers Design Docs Writing"
 description: "Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases."
