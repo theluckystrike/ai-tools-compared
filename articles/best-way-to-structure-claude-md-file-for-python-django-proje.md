@@ -8,7 +8,7 @@ permalink: /best-way-to-structure-claude-md-file-for-python-django-proje/
 categories: [guides]
 tags: [ai-tools-compared, django, claude, python, workflow, best-of, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
