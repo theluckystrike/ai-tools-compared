@@ -208,21 +208,21 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Run unit tests
         run: npm run test:unit
-        
+
       - name: Run integration tests
         run: npm run test:integration
         env:
@@ -261,18 +261,147 @@ Ensure your SDK meets performance requirements:
 describe('Performance Tests', () => {
   it('should respond within 5 seconds', async () => {
     const start = Date.now();
-    
+
     await client.completions.create({
       model: 'claude-3-sonnet',
       prompt: 'Hello',
       maxTokens: 10
     });
-    
+
     const duration = Date.now() - start;
     expect(duration).toBeLessThan(5000);
   });
 });
 ```
+
+
+## Structuring Your Test Suite for Long-Term Maintainability
+
+As your SDK usage grows, disorganized tests become a liability. A well-structured test suite reduces maintenance burden and makes it easier to onboard new developers.
+
+**Group tests by behavior, not by method name.** Instead of `describe('completions.create')`, write `describe('when generating code with valid parameters')`. This naming convention surfaces intent immediately and makes failures easier to diagnose.
+
+**Use a shared fixtures module** to keep test data centralized. Duplicating mock responses across test files leads to inconsistencies when the API response shape changes:
+
+```typescript
+// tests/fixtures/completions.ts
+export const successfulCompletion = {
+  completion: 'const add = (a: number, b: number) => a + b;',
+  model: 'claude-3-sonnet',
+  stopReason: 'stop_sequence',
+  usage: { inputTokens: 12, outputTokens: 18 }
+};
+
+export const rateLimitError = new Error('Rate limit exceeded');
+rateLimitError.name = 'ClaudeRateLimitError';
+```
+
+**Apply the test pyramid principle.** Aim for roughly 70% unit tests, 20% integration tests, and 10% E2E tests. Unit tests run in milliseconds; E2E tests against live APIs take seconds and cost tokens. Keeping this ratio ensures fast feedback loops without sacrificing confidence.
+
+
+## Handling Flaky Tests in SDK Workflows
+
+SDK tests that hit real APIs introduce flakiness from network timeouts, rate limits, and non-deterministic model outputs. Address each category explicitly.
+
+**Rate limit flakiness**: Add exponential backoff in your test retry configuration:
+
+```typescript
+// jest.config.ts
+export default {
+  testTimeout: 30000,
+  retryTimes: 2,       // jest-circus supports test-level retries
+  retryDelay: 1000,
+};
+```
+
+**Non-deterministic output**: For tests that verify generated code correctness, avoid asserting on exact string matches. Instead, test structural properties:
+
+```typescript
+it('should return valid TypeScript', async () => {
+  const response = await client.completions.create({
+    model: 'claude-3-sonnet',
+    prompt: 'Write a TypeScript function that adds two numbers',
+    maxTokens: 200
+  });
+
+  // Structural checks instead of exact match
+  expect(response.completion).toMatch(/function|const|=>/);
+  expect(response.completion).toContain('number');
+  expect(response.stopReason).toBe('stop_sequence');
+});
+```
+
+**Network timeouts**: Set conservative timeouts per test and use mock servers for the bulk of your test runs. Reserve live API calls for a nightly integration suite that runs outside of PR checks.
+
+
+## Snapshot Testing for SDK Response Schemas
+
+When your application depends on specific shapes of API responses, snapshot tests catch regressions from schema changes automatically.
+
+```typescript
+// tests/snapshots/response-schema.test.ts
+import { ClaudeCodeClient } from '../src/client';
+import nock from 'nock';
+
+describe('Response schema snapshots', () => {
+  beforeEach(() => {
+    nock('https://api.claude.ai')
+      .post('/v1/completions')
+      .reply(200, {
+        completion: 'hello world',
+        model: 'claude-3-sonnet',
+        stopReason: 'stop_sequence',
+        usage: { inputTokens: 5, outputTokens: 3 }
+      });
+  });
+
+  it('completion response matches expected schema', async () => {
+    const client = new ClaudeCodeClient({ apiKey: 'test' });
+    const response = await client.completions.create({
+      model: 'claude-3-sonnet',
+      prompt: 'hello',
+      maxTokens: 10
+    });
+
+    expect(response).toMatchSnapshot();
+  });
+});
+```
+
+Run `jest --updateSnapshot` when you intentionally update the response schema. Commit the updated snapshot file so reviewers can see exactly what changed. This pattern is especially useful when upgrading SDK versions — broken snapshots immediately surface breaking changes.
+
+
+## Testing Token Usage and Cost Controls
+
+Production SDK integrations need safeguards against runaway token consumption. Test your cost control logic as a first-class concern:
+
+```typescript
+describe('Token usage controls', () => {
+  it('should reject requests that exceed token budget', async () => {
+    const client = new ClaudeCodeClient({
+      apiKey: process.env.CLAUDE_API_KEY!,
+      maxTokensPerRequest: 500
+    });
+
+    await expect(client.completions.create({
+      model: 'claude-3-sonnet',
+      prompt: 'Write a complete REST API in TypeScript',
+      maxTokens: 1000  // Exceeds the budget
+    })).rejects.toThrow('Exceeds maximum tokens per request');
+  });
+
+  it('should track cumulative usage across requests', async () => {
+    const client = new ClaudeCodeClient({ apiKey: 'test' });
+    // Make multiple requests and verify usage tracking
+    const usageBefore = client.getUsageStats().totalTokens;
+    await client.completions.create({ model: 'claude-3-sonnet', prompt: 'hi', maxTokens: 10 });
+    const usageAfter = client.getUsageStats().totalTokens;
+    expect(usageAfter).toBeGreaterThan(usageBefore);
+  });
+});
+```
+
+Pair these tests with alerting in production to catch unexpected cost spikes early. A well-tested token management layer prevents the kind of billing surprises that turn small experiments into expensive incidents.
 
 
 ## Related Reading
