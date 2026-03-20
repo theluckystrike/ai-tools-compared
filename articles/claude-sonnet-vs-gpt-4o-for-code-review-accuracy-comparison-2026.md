@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 Claude Sonnet and GPT-4o represent the frontier of AI code review capabilities, but they excel in different domains. Claude Sonnet catches more subtle logic errors and architectural issues through its reasoning approach, while GPT-4o excels at identifying common security vulnerabilities and style violations. The choice depends on your primary concern: GPT-4o for security and compliance, Claude for complex refactoring decisions and architectural improvements. Direct testing shows Claude finds ~15% more logic errors while GPT-4o finds ~20% more security issues.
 
 ## Why AI Code Review Matters
@@ -508,3 +509,4 @@ The combination of Claude and GPT-4o provides coverage that exceeds what either 
 - [GitHub Copilot vs Cursor vs Claude for Code](/github-copilot-vs-cursor-vs-claude/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
