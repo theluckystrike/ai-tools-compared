@@ -142,11 +142,196 @@ Building Pricing Intelligence Systems: Both tools have API access. Perplexity's 
 
 
 
+## Real-World Pricing Research Examples
+
+**Example 1: Researching SaaS Competitor Pricing Tiers**
+
+Query for Perplexity:
+```
+What are the current pricing tiers for Slack, Microsoft Teams, and Discord?
+Include:
+- Free tier features and limitations
+- Paid tiers with monthly/annual costs
+- Enterprise pricing models
+- Recent price changes announced in 2025-2026
+- Free trial duration
+```
+
+Perplexity output structure:
+- Direct pricing from official pages with citations
+- Current promotional offers
+- User seat discounts at scale
+- Annual vs monthly billing options
+
+Query for ChatGPT after gathering data:
+```
+Based on these current Slack/Teams/Discord pricing structures:
+[Paste Perplexity results]
+
+Analyze:
+1. Market positioning strategy (freemium vs. premium-first)
+2. Pricing psychology (why these specific tier divisions?)
+3. Where our product could compete
+4. What pricing model makes sense for our use case
+```
+
+ChatGPT synthesizes this into strategic analysis—which competitors target SMBs vs. enterprises, where margin opportunities exist, etc.
+
+**Example 2: Tracking Pricing Changes Over Time**
+
+Using Perplexity quarterly:
+```
+What were the prices for Amazon S3 in Q4 2025 and Q1 2026?
+Include storage costs, data transfer, and request pricing.
+```
+
+Then feed all quarters to ChatGPT:
+```
+S3 pricing timeline:
+- Q1 2025: [old prices]
+- Q2 2025: [mid prices]
+- Q3 2025: [current prices]
+
+Analyze the trend—is AWS raising or lowering? By how much?
+What does this suggest about cloud pricing trends generally?
+```
+
+**Example 3: International and Enterprise Pricing**
+
+Perplexity strength: Finding region-specific pricing
+```
+What are GitHub Copilot prices in different countries?
+- USA
+- Europe (with VAT differences)
+- Asia Pacific
+- Compare to local alternatives in each region
+```
+
+ChatGPT strength: Synthesizing into strategy
+```
+Given GitHub's regional pricing strategy, what does this tell us about:
+- Currency hedging strategies
+- Local market competition
+- Purchasing power parity assumptions
+- Where to focus expansion efforts
+```
+
+## Pricing Research Tool Comparison Table
+
+| Research Need | Perplexity | ChatGPT | Best Approach |
+|---|---|---|---|
+| Current pricing snapshot | Excellent (live data) | Poor (outdated) | Use Perplexity |
+| Price trends over time | Good (if data available) | Decent (historical knowledge) | Perplexity for current, ChatGPT for context |
+| Competitor analysis | Excellent | Good | Perplexity data → ChatGPT analysis |
+| Enterprise/custom pricing | Poor (not public) | Poor (not public) | Contact sales directly |
+| Promo codes/discounts | Excellent | Poor | Use Perplexity |
+| Pricing strategy reasoning | Poor (can't analyze context) | Excellent | ChatGPT alone |
+| Regional pricing | Excellent | Outdated | Perplexity |
+| Building pricing intelligence dashboard | Both useful | ChatGPT for logic | Perplexity API for data collection |
+
+## Building a Pricing Intelligence Pipeline
+
+Automated workflow combining both tools:
+
+```python
+import requests
+from datetime import datetime
+
+class PricingIntelligence:
+    def __init__(self, perplexity_key, chatgpt_key):
+        self.perplexity = perplexity_key
+        self.chatgpt = chatgpt_key
+        self.pricing_history = []
+
+    def gather_current_pricing(self, competitors: list):
+        """Use Perplexity to fetch current pricing"""
+        current_prices = {}
+
+        for competitor in competitors:
+            response = self.query_perplexity(
+                f"What is {competitor}'s current pricing? "
+                f"Include all tiers and any recent changes."
+            )
+            current_prices[competitor] = {
+                "data": response,
+                "timestamp": datetime.now(),
+                "source": "perplexity"
+            }
+
+        self.pricing_history.append(current_prices)
+        return current_prices
+
+    def analyze_pricing_strategy(self, pricing_data: dict):
+        """Use ChatGPT to analyze competitive positioning"""
+        prompt = f"""
+        Analyze this competitive pricing data:
+        {pricing_data}
+
+        Provide:
+        1. Market segmentation strategy by tier
+        2. Value positioning at each price point
+        3. Identified pricing gaps
+        4. Recommended counter-strategy
+        """
+
+        analysis = self.query_chatgpt(prompt)
+        return analysis
+
+    def identify_price_changes(self):
+        """Compare pricing over time"""
+        if len(self.pricing_history) < 2:
+            return None
+
+        previous = self.pricing_history[-2]
+        current = self.pricing_history[-1]
+
+        changes = {}
+        for competitor in previous:
+            if previous[competitor] != current[competitor]:
+                changes[competitor] = {
+                    "old": previous[competitor],
+                    "new": current[competitor],
+                    "change_date": datetime.now()
+                }
+
+        # Use ChatGPT to interpret changes
+        interpretation = self.query_chatgpt(
+            f"What do these pricing changes indicate? {changes}"
+        )
+        return {"changes": changes, "analysis": interpretation}
+
+# Usage
+intelligence = PricingIntelligence(perplexity_key, chatgpt_key)
+current = intelligence.gather_current_pricing(
+    ["Stripe", "Square", "Adyen"]
+)
+strategy = intelligence.analyze_pricing_strategy(current)
+```
+
+## API Integration and Pricing
+
+**Perplexity API** (for pricing data retrieval):
+- Base cost: ~$0.005 per search (as of 2026)
+- Best for: Automated pricing data collection
+- Rate limits: Varies by plan, typically 1000+ requests/day
+
+**ChatGPT API** (for analysis):
+- Cost: ~$0.01-0.02 per 1K tokens (GPT-4)
+- Best for: Batch analysis of pricing data
+- Use GPT-3.5 for cost savings if analysis is straightforward
+
+**Cost estimation for monthly competitor pricing monitoring:**
+```
+Perplexity: 50 competitors × 4 quarters × $0.005 = $1/month
+ChatGPT: 4 analyses/month × 2000 tokens × $0.01 = $0.08/month
+Total: ~$1.08/month for comprehensive competitive pricing data
+```
+
 ## Limitations to Consider
 
 
 
-Neither tool replaces human research entirely. Perplexity may occasionally return outdated results or miss specific pricing details buried in pricing pages. ChatGPT may generate confident-sounding but incorrect pricing information if its training data is stale.
+Neither tool replaces human research entirely. Perplexity may occasionally return outdated results or miss specific pricing details buried deep in pricing pages, especially for enterprise tiers hidden behind "Contact Sales" forms. ChatGPT may generate confident-sounding but incorrect pricing information if its training data is stale, and cannot access current web data at all.
 
 
 

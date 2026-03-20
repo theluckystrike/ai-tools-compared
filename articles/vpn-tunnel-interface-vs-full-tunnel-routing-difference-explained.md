@@ -178,13 +178,156 @@ Router-level VPN configuration often defaults to full tunnel routing, but many m
 
 
 
+## Advanced Configuration Examples
+
+For developers and sysadmins who want to configure this at the OS level:
+
+**Linux: Creating Split Tunnel with iptables**
+```bash
+#!/bin/bash
+# Configure split tunneling on Linux using routing rules
+
+# Create custom routing table
+echo "100 vpn_table" >> /etc/iproute2/rt_tables
+
+# Add VPN interface routes to custom table
+ip rule add fwmark 1 table vpn_table
+ip route add default via $VPN_GATEWAY table vpn_table
+
+# Mark traffic for specific application to use VPN
+iptables -A OUTPUT -p tcp --dport 443 -j MARK --set-mark 1
+iptables -A OUTPUT -p tcp --dport 80 -j MARK --set-mark 1
+
+# Flush DNS cache to prevent leaks
+systemctl restart systemd-resolved
+```
+
+**Windows: Routing Table Configuration**
+```powershell
+# PowerShell: Configure split tunneling on Windows
+$vpnInterface = "vpn"
+$vpnGateway = "10.8.0.1"
+
+# Add specific routes through VPN
+route add 192.168.1.0 mask 255.255.255.0 $vpnGateway metric 10
+
+# View current routing table
+route print
+
+# Clear route
+route delete 192.168.1.0
+```
+
+**macOS: pfctl Rules for Split Tunneling**
+```bash
+# Create pfctl rules for granular traffic control
+cat > /etc/pf.rules << 'EOF'
+# Redirect specific traffic through VPN interface
+pass out on utun0 proto tcp from any to any port 443
+pass out on en0 proto tcp from any to any port 22
+EOF
+
+# Load rules
+pfctl -f /etc/pf.rules
+```
+
+## Measuring the Performance Impact
+
+Real-world performance differences between full tunnel and split tunneling:
+
+**Full Tunnel Mode (all traffic through VPN)**
+- Latency increase: 15-50ms (depends on VPN server distance)
+- Bandwidth reduction: 5-15% overhead from encryption
+- Download speed example: 100 Mbps direct → 75-90 Mbps via VPN
+- Upload speed: Similar proportional reduction
+- DNS resolution time: May increase 10-30ms due to recursive lookups through VPN
+
+**Split Tunneling Mode (selective traffic)**
+- Traffic through VPN: Same latency/bandwidth reduction as full tunnel
+- Traffic direct: No impact
+- Overall speed: Depends on what percentage bypasses the tunnel
+- If 80% of traffic bypasses VPN: Only 2-4% overall speed reduction
+
+**Test methodology:**
+```bash
+# Measure latency with and without VPN
+ping -c 10 8.8.8.8                    # Direct
+ping -c 10 -I tun0 8.8.8.8           # Through tunnel
+
+# Measure throughput
+iperf -c server.com -P 4             # Direct
+iperf -c server.com -B vpn_ip -P 4  # Through tunnel
+```
+
+## Real-World Use Cases and Configurations
+
+**Case 1: Remote Worker on Corporate VPN**
+- Configuration: Full tunnel for all traffic
+- Reason: Company security policy requires it; all business data must be encrypted
+- Trade-off: Slight slowdown acceptable for security compliance
+
+**Case 2: Freelancer Using Multiple Cloud Providers**
+- Configuration: Split tunneling
+- Routes through VPN: SSH access to private servers (security)
+- Routes direct: Cloud provider APIs, downloads (performance)
+- Result: Maintains security for critical access while preserving speed
+
+**Case 3: Journalist in Restricted Country**
+- Configuration: Full tunnel to reliable VPN server
+- Reason: Must hide all activity; using public WiFi frequently
+- Trade-off: Speed is secondary to safety; may use closest VPN server for best performance
+
+**Case 4: Online Gamer with Privacy Concerns**
+- Configuration: Hybrid approach
+- Game traffic: Direct connection (for low ping)
+- Browsing: Through VPN (for privacy)
+- Configuration: Split tunneling excluding gaming app
+
+## DNS Leak Risks and Solutions
+
+A common pitfall with split tunneling is DNS leaks—your actual IP can leak through DNS requests.
+
+**Problem:**
+```bash
+# Even with split tunneling, if DNS goes direct:
+dig google.com  # Uses ISP DNS resolver
+# ISP can see this request despite VPN for HTTP traffic
+```
+
+**Solution:**
+```bash
+# Configure DNS to use VPN provider's servers
+cat /etc/resolv.conf
+# nameserver 10.8.0.1    # VPN provider's DNS
+# nameserver 10.8.0.2    # Backup
+
+# Or use DoH (DNS over HTTPS) to encrypt DNS requests
+# Cloudflare: https://1.1.1.1/dns-query
+# Quad9: https://9.9.9.9/dns-query
+```
+
+## Practical Decision Matrix
+
+| Scenario | Configuration | Reason |
+|----------|---------------|--------|
+| Public WiFi in coffee shop | Full tunnel | Prevents eavesdropping on untrusted network |
+| Home WiFi with own router | Split tunneling if desired | Network is trusted; can choose selectively |
+| Corporate office with VPN | Full tunnel (mandatory) | Company policy; all traffic monitored |
+| Gaming + general browsing | Split tunneling | Game gets direct connection for ping; browsing encrypted |
+| Video streaming + banking | Full tunnel | Both activities need different protection (streaming content, banking security) |
+| Downloading torrents + browsing | Split tunneling | Torrenting uses VPN for privacy; browsing doesn't need overhead |
+
 ## Making the Right Choice for Your Needs
 
 
 
 Your choice between full tunnel routing and split tunneling depends on your threat model, performance requirements, and use case. If you're serious about privacy and security, especially on untrusted networks, full tunnel routing provides the most protection. The slight performance tradeoff is worth the peace of mind.
 
-
+Use this decision framework:
+1. **What am I protecting against?** (ISP tracking, eavesdroppers, geolocation, corporate monitoring)
+2. **What performance do I need?** (Is 50ms latency acceptable? Do I need 100+ Mbps?)
+3. **What activities are sensitive?** (Banking, work, personal browsing)
+4. **Can I trust my network?** (Public WiFi = full tunnel; home network = flexible)
 
 If you need the best possible speeds for gaming and streaming while still using a VPN for specific purposes, split tunneling lets you have both. Just be mindful of what you're excluding from the tunnel and ensure you're not accidentally exposing sensitive activities.
 

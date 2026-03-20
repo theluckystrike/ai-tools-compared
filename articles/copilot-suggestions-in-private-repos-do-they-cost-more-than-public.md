@@ -173,13 +173,164 @@ If you're considering Copilot for your team, the repository visibility shouldn't
 
 The value proposition is straightforward: unlimited Copilot access across all your work, regardless of whether the code is visible to the world or locked behind organization permissions. Repository visibility is irrelevant to pricing.
 
+## Advanced Copilot Configuration for Private Repos
 
+For organizations managing private repositories with Copilot, consider these configurations:
+
+**Organization-Wide Copilot Policies for Private Repos:**
+```json
+{
+  "copilot_policies": {
+    "private_repos": {
+      "chat_enabled": true,
+      "inline_suggestions": true,
+      "external_code_references": "disabled",
+      "enterprise_training": "disabled"
+    },
+    "data_retention": {
+      "private_code_snippets": "do_not_store",
+      "suggestions_history": "14_days"
+    }
+  }
+}
+```
+
+**GitHub Settings for Copilot in Private Repos:**
+```yaml
+# Repository settings
+copilot:
+  enabled_for_organization: true
+  private_repo_visibility:
+    include_copilot_in_web_ui: true
+    ide_integration: true
+  data_handling:
+    github_models_training: false
+    external_model_training: false
+```
+
+**Cost Analysis: Private vs Public Repository Copilot Usage**
+
+When analyzing Copilot costs for an organization with mixed repos:
+
+```
+Scenario: 20 developers, mix of public and private repos
+
+Option 1: Individual Copilot ($10/month)
+- Cost: 20 × $10 × 12 = $2,400/year
+- Works equally well for public and private
+- No organization-wide policies
+
+Option 2: Copilot Business ($19/user/month)
+- Cost: 20 × $19 × 12 = $4,560/year
+- Benefit: Organization-wide settings and audit logs
+- Works identically for public and private repos
+- Cost increase: $2,160/year for enterprise governance
+
+Option 3: Copilot Enterprise ($39/user/month)
+- Cost: 20 × $39 × 12 = $9,360/year
+- Benefit: Custom policies, deep org code indexing, audit logs
+- Enhanced for large private codebases
+- Cost increase: $6,960/year for advanced features
+```
+
+The type of repository (public vs private) doesn't affect the cost tier—only the features you need (organization management, audit logging, custom policies) do.
+
+## Private Repository Security Considerations
+
+While Copilot costs are identical for public and private repos, security considerations differ:
+
+**Private Repository Data Handling**
+- Copilot does NOT use private code to train public models
+- GitHub states private repo code stays private
+- Snippets sent to Copilot services are encrypted in transit
+- No code retention unless you have GitHub Models enabled
+
+**Security Checklist for Private Repos Using Copilot:**
+```
+✓ Configure external code references: Disabled
+✓ Disable GitHub Models training on private code
+✓ Enable audit logging (Business/Enterprise)
+✓ Review data residency if in regulated industry
+✓ Verify secrets aren't exposed in suggestions (configure filters)
+✓ Monitor Copilot audit logs for unusual activity
+```
+
+**Secrets Management with Copilot in Private Repos**
+```javascript
+// Bad: Private API key exposed in code
+const apiKey = "sk-1234567890abcdef";  // Copilot might suggest this pattern
+
+// Good: Use environment variables
+const apiKey = process.env.API_KEY;    // Copilot knows not to hardcode
+
+// Better: Use secrets management
+const apiKey = await getSecretFromVault("api-key");
+```
+
+## Compliance and Audit Trail
+
+Organizations with compliance requirements benefit from business/enterprise tiers regardless of repo visibility:
+
+**Copilot Business Audit Logging:**
+- Track who used Copilot, when, and on which repos
+- Identify usage across private vs public repositories
+- Export audit logs for compliance reviews
+- Set up alerts for suspicious usage patterns
+
+**Example Audit Query:**
+```sql
+-- Find all Copilot usage in sensitive private repos
+SELECT user, repo, timestamp, suggestion_count
+FROM copilot_audit_log
+WHERE repo_visibility = 'private'
+  AND repo_name LIKE '%financial%'
+  OR repo_name LIKE '%patient%'
+ORDER BY timestamp DESC;
+```
+
+## Team Size and Copilot Plan Selection
+
+The visibility of repositories should not drive plan selection. Instead, evaluate based on:
+
+| Team Size | Consideration | Recommended Plan |
+|-----------|---|---|
+| Solo developer | Cost-conscious, mix of public/private | Individual ($10/month) |
+| 2-5 developers | Want some organization features | Individual or Business |
+| 6-50 developers | Need audit logs and policies | Business ($19/user) |
+| 50+ developers | Complex private codebase, compliance | Enterprise ($39/user) |
+
+Repository visibility (public or private) doesn't change these recommendations.
+
+## Calculating True Copilot ROI for Private Repos
+
+Developers working on private codebases often see higher ROI from Copilot because:
+
+1. **Proprietary code complexity** — Understanding a private codebase is harder; Copilot helps faster
+2. **Domain-specific patterns** — Custom internal frameworks benefit from context-aware suggestions
+3. **Team knowledge concentration** — Copilot fills gaps when specialists are busy
+
+```
+ROI Calculation: Private Repo Copilot Value
+
+Developer salary: $100/hour
+Time saved per day with Copilot: 45 minutes
+Days worked per year: 220
+Annual time savings: 220 × 0.75 = 165 hours
+
+Monetary value: 165 × $100 = $16,500/year
+Copilot cost (Business): $228/user/year
+ROI: ($16,500 - $228) / $228 = 71x return
+
+Even conservative 30-minute daily savings = 47x ROI
+```
+
+The calculation is identical for public and private repositories—the value comes from developer productivity, not repo visibility.
 
 ---
 
+The value proposition is straightforward: unlimited Copilot access across all your work, regardless of whether the code is visible to the world or locked behind organization permissions. Repository visibility is irrelevant to pricing.
 
-
-*
+{% endraw %}
 
 ## Related Reading
 

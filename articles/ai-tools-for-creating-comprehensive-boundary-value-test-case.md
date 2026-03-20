@@ -163,21 +163,192 @@ Regular regeneration keeps tests current. As input specifications evolve, regene
 
 
 
+## Advanced Boundary Test Generation Techniques
+
+Beyond basic boundaries, sophisticated approaches handle complex scenarios:
+
+**Combinatorial Boundary Testing** — When multiple fields have boundaries that interact, generate all meaningful combinations:
+
+```typescript
+interface PaymentRequest {
+  amount: number;        // 0.01 - 999999.99
+  currency: string;      // USD, EUR, GBP, JPY
+  cardType: 'credit' | 'debit';
+  cardNetwork: 'Visa' | 'Mastercard' | 'Amex';
+}
+
+// Boundary combinations to test:
+const combinatorialTests = [
+  // Min amount with each currency
+  { amount: 0.01, currency: 'USD', cardType: 'credit', cardNetwork: 'Visa' },
+  { amount: 0.01, currency: 'JPY', cardType: 'credit', cardNetwork: 'Visa' },
+
+  // Max amount with each currency
+  { amount: 999999.99, currency: 'USD', cardType: 'credit', cardNetwork: 'Visa' },
+  { amount: 999999.99, currency: 'JPY', cardType: 'credit', cardNetwork: 'Visa' },
+
+  // Edge case: Amex has different limits than Visa/Mastercard
+  { amount: 5000, currency: 'USD', cardType: 'credit', cardNetwork: 'Amex' },
+];
+```
+
+**State-Based Boundary Testing** — Some boundaries depend on previous state. For example, a rental service where price boundaries depend on booking status:
+
+```typescript
+// Boundary tests must consider booking state
+const stateBasedTests = [
+  {
+    initialState: { status: 'AVAILABLE', pricePerDay: 50 },
+    update: { pricePerDay: 0.01 },      // minimum price
+    expectedStatus: 200
+  },
+  {
+    initialState: { status: 'RESERVED', pricePerDay: 50 },
+    update: { pricePerDay: 0.01 },      // cannot modify price of reserved booking
+    expectedStatus: 403
+  },
+];
+```
+
+**Property-Based Testing Integration** — Combine AI-generated boundary tests with property-based testing frameworks:
+
+```typescript
+import fc from 'fast-check';
+
+// Let AI generate boundary values
+const boundaryValues = [1, 2, 20, 21];
+
+// Use property-based testing to verify behavior across all values
+fc.assert(
+  fc.property(fc.integer(), (value) => {
+    const isWithinBoundary = boundaryValues.includes(value) ||
+                            (value > 2 && value < 20);
+    return validateRange(value) === isWithinBoundary;
+  })
+);
+```
+
+## Testing Framework Integration
+
+**PyTest with AI-Generated Cases**
+```python
+import pytest
+
+# AI generates these boundary cases
+BOUNDARY_CASES = [
+    pytest.param(-1, 400, id="below_minimum_age"),
+    pytest.param(0, 400, id="zero_age"),
+    pytest.param(1, 400, id="below_legal_minimum"),
+    pytest.param(13, 201, id="minimum_valid_age"),
+    pytest.param(18, 201, id="common_age"),
+    pytest.param(120, 201, id="maximum_valid_age"),
+    pytest.param(121, 400, id="above_maximum_age"),
+    pytest.param(9999, 400, id="extreme_value"),
+]
+
+@pytest.mark.parametrize("age,expected_status", BOUNDARY_CASES)
+def test_user_registration_age_boundaries(age, expected_status):
+    response = register_user(age=age)
+    assert response.status_code == expected_status
+```
+
+**Jest/Vitest with Table-Driven Tests**
+```typescript
+describe.each([
+  [0.00, 400],
+  [0.01, 200],
+  [999999.99, 200],
+  [1000000.00, 400],
+  [NaN, 400],
+  [Infinity, 400],
+])('Payment amount boundaries: $%f', async (amount, expected) => {
+  const response = await submitPayment({ amount });
+  expect(response.status).toBe(expected);
+});
+```
+
+## Real-World Boundary Testing Scenarios
+
+**E-commerce Product Pricing**
+```typescript
+// Boundary values for product price field
+const priceTests = [
+  -0.01,           // negative prices invalid
+  0,               // zero price unusual but may be valid (promotion)
+  0.01,            // minimum monetary unit
+  9999999.99,      // maximum expected price
+  10000000.00,     // above typical price range
+  Infinity,        // type safety check
+  NaN,             // type safety check
+];
+```
+
+**Date/Time Boundaries**
+```typescript
+// API accepting date ranges
+const dateTests = [
+  {
+    startDate: '2000-01-01',
+    endDate: '2000-01-01',    // same day: valid
+    expected: 200
+  },
+  {
+    startDate: '2000-01-02',
+    endDate: '2000-01-01',    // end before start: invalid
+    expected: 400
+  },
+  {
+    startDate: '1900-01-01',  // far past
+    endDate: '2100-01-01',    // far future
+    expected: 200
+  },
+];
+```
+
 ## Limitations and Considerations
 
 
 
-AI tools struggle with complex interdependencies between fields. If username validity depends on email domain, or age restrictions vary by country, explicit specification helps but may require manual test addition.
+AI tools struggle with complex interdependencies between fields. If username validity depends on email domain, or age restrictions vary by country, explicit specification helps but may require manual test addition. Provide the AI with clear rules:
 
+```typescript
+// EXPLICIT RULES FOR AI
+const validationRules = {
+  username: {
+    minLength: 3,
+    maxLength: 20,
+    pattern: /^[a-zA-Z0-9_]+$/,
+    rule: "Cannot start with underscore"
+  },
+  email: {
+    pattern: "RFC 5322",
+    rule: "Free email domains (gmail, yahoo) allowed for personal; corporate domains only for business accounts"
+  },
+  age: {
+    minAge: 13,
+    maxAge: 120,
+    rule: "Age restrictions vary by jurisdiction—US: 13, EU: 16 for some services"
+  }
+};
+```
 
+Negative testing—verifying proper handling of invalid inputs—works well for type-based validation. However, semantic validity often requires human judgment. An AI knows that age must be a number, but only you know that age 0 might be invalid even if your spec allows it. Provide context:
 
-Negative testing—verifying proper handling of invalid inputs—works well for type-based validation. However, semantic validity often requires human judgment. An AI knows that age must be a number, but only you know that age 0 might be invalid even if your spec allows it.
+```
+When generating boundary tests:
+- Age 0 is technically a valid number but represents a newborn
+- In our system, age 0 should be treated as "unknown/unset" (return 400)
+- Only ages 13-120 return 200
+```
 
+Security testing requires separate attention. Boundary value testing checks functional correctness, not security. Injection attempts, authentication bypasses, and data exposure risks need dedicated security test suites. Don't rely on boundary tests alone for:
+- SQL injection attempts
+- XSS payloads
+- Buffer overflow attempts
+- CSRF tokens
+- Authentication validation
 
-
-Security testing requires separate attention. Boundary value testing checks functional correctness, not security. Injection attempts, authentication bypasses, and data exposure risks need dedicated security test suites.
-
-
+{% endraw %}
 
 ## Related Reading
 
