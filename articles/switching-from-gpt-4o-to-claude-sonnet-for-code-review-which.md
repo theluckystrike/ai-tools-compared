@@ -9,6 +9,7 @@ permalink: /switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/
 reviewed: true
 score: 8
 categories: [guides]
+tags: [ai-tools-compared, claude-ai]
 ---
 
 
