@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Build Model Context Protocol Server for Internal Design System Component Docs"
-description: "A practical guide for developers on building an MCP server to serve design system component documentation to AI coding assistants. Includes code examples and implementation steps."
+title: "How to Build Model Context Protocol Server for Internal."
+description: "A practical guide for developers on building an MCP server to serve design system component documentation to AI coding assistants. Includes code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-for-internal-desi/
@@ -254,5 +254,10 @@ Several enhancements make your MCP server more powerful:
 For enterprise deployments, add authentication to prevent unauthorized access to internal component information. The MCP protocol supports custom headers and authentication tokens that you can validate in each tool call.
 
 Consider running the server as a local service that multiple team members can connect to, or deploy it internally with appropriate network controls. Rate limiting protects against abuse, and logging helps track which components developers query most frequently—valuable signal for documentation priorities.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

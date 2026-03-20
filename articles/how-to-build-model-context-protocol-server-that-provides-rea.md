@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Build Model Context Protocol Server That Provides Real Time Test Results"
-description: "A practical guide to building an MCP server that streams real-time test results. Includes Python implementation, code examples, and integration patterns for CI/CD workflows."
+title: "How to Build Model Context Protocol Server That Provides."
+description: "A practical guide to building an MCP server that streams real-time test results. Includes Python implementation, code examples, and integration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-provides-rea/
@@ -222,6 +222,11 @@ CMD ["python", "server.py"]
 ## Summary
 
 Building an MCP server for real-time test results involves creating a well-structured Python application that integrates with your test framework, emits progress updates, and exposes tools through the MCP protocol. The server architecture scales from simple single-tool implementations to complex streaming systems with history and analytics. Start with the basic implementation above, then extend it based on your specific testing workflow requirements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

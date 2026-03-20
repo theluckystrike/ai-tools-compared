@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configuring AI Coding Tools to Follow Your Teams Dependency Injection Patterns"
+title: "Configuring AI Coding Tools to Follow Your Teams."
 description: "Learn how to configure AI coding tools like GitHub Copilot, Codeium, and Tabnine to respect your team's dependency injection patterns. Practical setup guide with code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -216,6 +216,11 @@ Another common issue involves stale context. AI tools cache previous suggestions
 ## Conclusion
 
 Configuring AI coding tools to follow your team's dependency injection patterns requires initial setup but pays dividends in code consistency and reduced review cycles. Start with context files, supplement with inline annotations, and train your tools on your specific patterns. The investment of thirty minutes per tool translates to cleaner code and fewer architectural violations across your entire codebase.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

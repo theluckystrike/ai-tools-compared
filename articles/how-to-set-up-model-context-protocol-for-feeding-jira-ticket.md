@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Set Up Model Context Protocol for Feeding Jira Ticket Context to AI"
-description: "A practical guide to setting up Model Context Protocol (MCP) for feeding Jira ticket context to AI tools in 2026. Code examples and configuration steps included."
+title: "How to Set Up Model Context Protocol for Feeding Jira."
+description: "A practical guide to setting up Model Context Protocol (MCP) for feeding Jira ticket context to AI tools in 2026. Code examples and configuration steps."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-for-feeding-jira-ticket/
@@ -259,6 +259,11 @@ This lets your AI assistant understand the full development context—code chang
 Setting up Model Context Protocol for Jira integration involves installing the official MCP server, configuring your credentials, and restarting your AI tool. Once connected, you can naturally reference Jira tickets in conversations without manual copy-pasting. The setup takes about 15 minutes and significantly improves AI assistant context for development workflows.
 
 The key is keeping your credentials secure using environment variables and restricting access to only the projects and issue types you need. With this foundation, you can extend the integration to include GitHub, Slack, or other tools your team uses daily.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

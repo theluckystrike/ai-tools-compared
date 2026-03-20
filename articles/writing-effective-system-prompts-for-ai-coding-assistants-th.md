@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing Effective System Prompts for AI Coding Assistants That Produce Idiomatic Code"
+title: "Writing Effective System Prompts for AI Coding."
 description: "A practical guide for developers and power users to craft system prompts that help AI coding assistants generate idiomatic code matching your project's conventions and language-specific patterns."
 date: 2026-03-16
 author: theluckystrike
@@ -164,5 +164,10 @@ Writing effective system prompts for AI coding assistants that produce idiomatic
 
 The key is treating your system prompt as documentation of your team's standards—clear, specific, and maintained over time. When done well, your AI assistant becomes a true team member who understands and follows your project's unique conventions.
 {% endraw %}
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

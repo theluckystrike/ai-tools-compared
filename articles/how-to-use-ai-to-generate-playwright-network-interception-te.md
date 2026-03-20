@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Network Interception Tests for Offline Scenarios"
+title: "How to Use AI to Generate Playwright Network."
 description: "Learn how to leverage AI tools to automatically generate Playwright network interception tests that verify your application's behavior when network connectivity is unavailable."
 date: 2026-03-16
 author: theluckystrike
@@ -185,6 +185,11 @@ Ignoring timeout scenarios misses important UX considerations. A request that ha
 AI-assisted generation of Playwright network interception tests significantly reduces the effort required to validate offline behavior. By providing clear context about your application's API dependencies and error handling patterns, you can generate comprehensive tests that cover various network failure scenarios. These tests ensure your application provides consistent, reliable experiences regardless of network conditions.
 
 The key lies in specifying exact requirements, testing both failure and recovery scenarios, and maintaining realistic interception patterns that mirror actual user conditions. With proper network interception tests in place, your application will handle offline scenarios professionally, preserving user trust and data integrity.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
