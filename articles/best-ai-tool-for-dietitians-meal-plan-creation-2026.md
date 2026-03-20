@@ -8,10 +8,11 @@ date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-dietitians-meal-plan-creation-2026/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 intent-checked: true
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 
 
