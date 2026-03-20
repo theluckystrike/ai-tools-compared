@@ -8,7 +8,7 @@ permalink: /ai-ci-cd-pipeline-optimization/
 categories: [guides]
 tags: [ai-tools-compared, devops, automation, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
