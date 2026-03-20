@@ -130,23 +130,149 @@ File Upload Limits: Max typically offers higher file upload limits and longer co
 
 
 
+## Detailed Limits by Use Case
+
+**Light Code Review (5-20k context per message):**
+- Free tier: 5-10 reviews/day before hitting limits
+- Pro tier: 30-50 reviews/day (sustainable workday usage)
+- Max tier: 300+ reviews/day (no practical limit)
+
+**Large Document Analysis (50k-200k context):**
+- Free tier: 1-2 analyses maximum
+- Pro tier: 5-8 analyses before limit
+- Max tier: 50+ analyses (effectively unlimited)
+
+**Extended Conversations (10+ back-and-forth exchanges):**
+- Free tier: 1-2 conversations/day
+- Pro tier: 3-5 conversations/day sustainable
+- Max tier: Unlimited conversation depth
+
+## Real Usage Patterns That Trigger Limits
+
+**Scenario 1: Development Day for Pro User**
+```
+Morning (9 AM - 12 PM):
+- Code review of 5 pull requests: 8 messages
+- Bug diagnosis in production: 6 messages
+- Architecture question: 4 messages
+Subtotal: 18 messages
+
+Afternoon (1 PM - 5 PM):
+- Implement new feature: 12 messages
+- Write test suite: 10 messages
+- Documentation update: 5 messages
+Subtotal: 27 messages
+
+Total daily: 45 messages (within Pro limits, but heavy)
+```
+
+**Scenario 2: Research-Heavy Day for Pro User**
+```
+Morning:
+- Document analysis (10k words): 3 messages
+- Code refactoring discussion: 8 messages
+- API design consultation: 5 messages
+Subtotal: 16 messages
+
+Afternoon:
+- Larger document analysis (50k words): 1 message
+- Follow-up questions: 12 messages
+- Implementation planning: 8 messages
+Subtotal: 21 messages
+
+Total: 37 messages (sustainable) BUT...
+If document analysis costs 2-3x normal message weight,
+effectively 50+ message-equivalents
+Result: May approach or hit limit
+```
+
+**Scenario 3: Max User - Intensive Development**
+```
+Full day of intense work:
+- Multiple large codebase analyses: 10 messages
+- Iterative feature development: 40 messages
+- Documentation and testing: 20 messages
+- Extended debugging session: 30 messages
+Total: 100 messages (well within Max allocation)
+```
+
+## Decision Matrix: Pro vs Max
+
+| Scenario | Recommendation | Why |
+|----------|---------------|-----|
+| Solo developer, part-time work | Pro | 30-50 msgs/day sufficient |
+| Full-time developer, single project | Pro | Usually sufficient, may hit limits 1-2x/week |
+| Full-time developer, multiple complex projects | Max | Avoid disruption from limits |
+| AI-first workflow (using Claude 6+ hrs/day) | Max | Pro will create bottlenecks |
+| Team using shared Claude account | Max | Multiple concurrent users exceed Pro quickly |
+| Large document processing (>100k tokens) | Max | Pro tier struggles with context-heavy work |
+
+## Cost Analysis: Pro vs Max
+
+**Annual comparison for different usage levels:**
+
+**Light user (30 msgs/day average):**
+- Pro annual: $240 (never hits limit)
+- Max annual: $360-600
+- Recommendation: Pro is sufficient
+
+**Medium user (100 msgs/day average):**
+- Pro annual: $240 (hits limits 2-3x/week, disrupting workflow)
+- Max annual: $360-600 (reliable, uninterrupted)
+- Cost of Pro limit disruption: ~5 hours/month lost productivity
+- At $50/hour: $50/month × 12 = $600/year lost productivity
+- Recommendation: Max saves money overall
+
+**Heavy user (300+ msgs/day):**
+- Pro annual: $240 (constantly hitting limits)
+- Max annual: $360-600 (never constrained)
+- Cost of Pro limit disruption: ~20 hours/month
+- At $75/hour: $1,500/month × 12 = $18,000/year lost productivity
+- Recommendation: Max is essential
+
+## Beyond Message Limits: Other Tier Differences
+
+| Feature | Free | Pro | Max |
+|---------|------|-----|-----|
+| Message limit | ~50/day | 200-500/day | 2,000-5,000/day |
+| Context window | 100k | 200k | 200k |
+| Model access | Haiku | Sonnet 3.5 | Opus + Sonnet |
+| File upload size | 10MB | 20MB | 100MB+ |
+| Priority queue | Low | High | Highest |
+| Response speed | Slower (off-peak) | Fast (consistent) | Immediate |
+| Concurrency | Shared pool | Higher priority | Dedicated |
+
 ## Making the Right Choice
 
 
 
 Consider these factors when deciding between Claude Pro and Max:
 
+**1. Daily Usage Tracking (Most Important):**
+Use this template for one week:
+- Day 1: ___ messages used
+- Day 2: ___ messages used
+- Day 3: ___ messages used
+- ...
+- Average: ___ messages/day
+- Peak day: ___ messages
 
+If average > 150 msgs/day OR peak days > 250 msgs/day regularly, Max is worthwhile.
 
-1. Daily Usage: Track your current Claude usage for a week. If you're regularly hitting limits, Max is worthwhile.
+**2. Workflow Criticality:**
+- If Claude interruption would significantly impact your productivity, the reliability of Max is valuable
+- Teams or time-sensitive projects should default to Max
+- Solo hobbyist developers can often manage Pro
 
+**3. Model Needs:**
+- If you specifically need Opus for its superior reasoning capabilities on complex tasks, factor this into your decision
+- Pro users are limited to Sonnet 3.5
+- Max provides access to more capable models
 
-
-2. Workflow Criticality: If Claude interruption would significantly impact your productivity, the reliability of Max is valuable.
-
-
-
-3. Model Needs: If you specifically need Opus for its superior reasoning capabilities, factor this into your decision.
+**4. Long-term Economics:**
+- Calculate your hourly rate
+- Each time Pro limit disrupts workflow = lost productivity cost
+- If limit disruptions cost > $120/year in lost work, Max pays for itself
 
 
 

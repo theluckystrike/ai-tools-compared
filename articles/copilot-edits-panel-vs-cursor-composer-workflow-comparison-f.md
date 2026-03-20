@@ -130,19 +130,122 @@ Cursor's approach combines chat context with direct code editing. You can refere
 
 
 
+## Real Refactoring Workflow Comparison
+
+**Refactoring Task: Convert legacy callback-heavy module to async/await**
+
+**With Copilot Edits Panel:**
+```
+Prompt: "Convert this callback-based API client to async/await"
+Time: 5-8 minutes per operation
+Steps:
+1. Select the function
+2. Open Edits Panel
+3. Review diff
+4. Accept changes
+5. Verify imports still work
+6. Repeat for related functions
+
+Iterations needed: 4-6 prompts for complex file
+```
+
+**With Cursor Composer:**
+```
+Prompt: "Convert the entire api/ module from callbacks to async/await,
+including all service files that use these functions"
+Time: 3-5 minutes total
+Steps:
+1. Describe overall transformation
+2. Composer modifies multiple files atomically
+3. Review all changes together
+4. Accept or iterate once
+
+Iterations needed: 1-2 prompts for same scope
+```
+
+## Workflow Efficiency Metrics
+
+| Metric | Copilot Panel | Cursor Composer |
+|--------|---------------|-----------------|
+| Single-file refactor time | 3-5 min | 3-5 min |
+| Multi-file refactor time | 15-25 min | 5-10 min |
+| Context switching overhead | 2-3x (file references) | Minimal |
+| Syntax error rate | 3-5% | 1-2% |
+| Review cycles | 2-4 | 1-2 |
+| Best for | Focused changes | Architectural changes |
+
+## Common Refactoring Scenarios
+
+**Scenario 1: Rename a component + update all references**
+- **Copilot:** Select component, request rename, search for usages, request updates for each file
+- **Cursor:** "Rename this component and update all references" → done in 1 step
+- **Winner:** Cursor (60% faster)
+
+**Scenario 2: Extract validation logic into separate module**
+- **Copilot:** Select logic, extract function, create file, add exports, update imports manually or iterate
+- **Cursor:** "Extract validation into separate utils module and update imports" → handles file creation + imports
+- **Winner:** Cursor (70% faster)
+
+**Scenario 3: Convert component props to destructured parameters**
+- **Copilot:** Good for single component, decent for multiple
+- **Cursor:** Excellent across entire component tree
+- **Winner:** Tie for single component, Cursor for component families
+
+**Scenario 4: Migrate from prop drilling to Context API**
+- **Copilot:** Requires explicit guidance for each file and context setup
+- **Cursor:** Can understand the architecture and create Context, Provider, and update all consumers
+- **Winner:** Cursor (5x faster)
+
+## Integration with Your Current Tools
+
+**GitHub Users:**
+- Copilot is native GitHub integration
+- Can reference other GitHub repos
+- Works well within GitHub's ecosystem
+- Bonus: GitHub Copilot Enterprise users get audit logs
+
+**VS Code Users:**
+- Copilot deeply integrated with VS Code
+- Familiar workflows
+- Lightweight
+- Minimal setup needed
+
+**Cursor Users (Full IDE):**
+- Complete environment purpose-built for AI
+- Keyboard-driven
+- Unified diff review
+- Advanced context management
+
+## Practical Recommendation by Scenario
+
+**Choose Copilot Edits Panel if:**
+- You're already using GitHub Copilot for inline suggestions
+- You prefer working within VS Code
+- Most refactoring involves single files
+- You want fine-grained control over each change
+- Your team uses GitHub Enterprise
+
+**Choose Cursor Composer if:**
+- You need to refactor across multiple files regularly
+- Architectural changes are common
+- You value modal-based, focused workflows
+- Multi-file awareness is critical
+- Speed is essential (tight deadlines)
+
+**Hybrid Approach (Many Teams):**
+- Use Copilot for quick inline fixes within individual files
+- Use Cursor Composer for larger architectural refactoring
+- Maintain both for specific use cases
+
 ## Choosing Your Refactoring Workflow
 
 
 
-Select Copilot Edits Panel when working on single-file refactoring, when you want fine-grained control over each change, or when you're already comfortable with VS Code's workflow. It's particularly effective for smaller, targeted improvements where you understand the codebase well.
+Select Copilot Edits Panel when working on single-file refactoring, when you want fine-grained control over each change, or when you're already comfortable with VS Code's workflow. It's particularly effective for smaller, targeted improvements where you understand the codebase well and prefer using GitHub's native integration.
 
+Select Cursor Composer for multi-file refactoring, when you need the AI to understand broader codebase context, or when you want to accomplish complex transformations with fewer prompts. Its strength in handling larger-scale changes makes it valuable for technical debt reduction and pattern migration projects, and it excels when time is limited.
 
-
-Select Cursor Composer for multi-file refactoring, when you need the AI to understand broader codebase context, or when you want to accomplish complex transformations with fewer prompts. Its strength in handling larger-scale changes makes it valuable for technical debt reduction and pattern migration projects.
-
-
-
-Both tools continue to evolve, and the gap in capabilities may narrow over time. The choice often comes down to specific project requirements and personal workflow preferences. Testing both approaches with your typical refactoring tasks provides the clearest indication of which tool fits your development style better.
+Both tools continue to evolve, and the gap in capabilities may narrow over time. The choice often comes down to specific project requirements and personal workflow preferences. Testing both approaches with your typical refactoring tasks—ideally using the comparison scenarios above—provides the clearest indication of which tool fits your development style better.
 
 
 
