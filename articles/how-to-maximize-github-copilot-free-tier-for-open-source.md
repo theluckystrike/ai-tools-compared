@@ -8,7 +8,7 @@ permalink: /how-to-maximize-github-copilot-free-tier-for-open-source/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 ---
