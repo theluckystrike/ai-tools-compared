@@ -10,6 +10,7 @@ intent-checked: true
 voice-checked: true
 score: 7
 reviewed: true
+tags: [ai-tools-compared]
 ---
 
 

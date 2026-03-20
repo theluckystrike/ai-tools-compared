@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-switch-from-cursor-to-claude-code-without-losing-settings/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

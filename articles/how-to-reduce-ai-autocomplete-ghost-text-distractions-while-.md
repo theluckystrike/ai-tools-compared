@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/
 categories: [guides]
-tags: [productivity]
+tags: [ai-tools-compared, productivity, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

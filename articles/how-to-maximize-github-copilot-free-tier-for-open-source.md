@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-maximize-github-copilot-free-tier-for-open-source/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

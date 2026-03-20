@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-for-feeding-jira-ticket/
 categories: [guides]
-tags: [mcp, jira, ai]
+tags: [ai-tools-compared, mcp, jira, ai]
 reviewed: true
 score: 8
 intent-checked: true

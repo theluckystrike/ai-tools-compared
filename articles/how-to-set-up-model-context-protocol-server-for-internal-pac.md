@@ -8,8 +8,9 @@ permalink: /how-to-set-up-model-context-protocol-server-for-internal-pac/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared]
 ---
 {% raw %}
 

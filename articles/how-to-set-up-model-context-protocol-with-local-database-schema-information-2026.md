@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/
 categories: [guides]
-tags: [mcp, database, ai, tools]
+tags: [ai-tools-compared, mcp, database, ai, tools]
 reviewed: true
 score: 8
 intent-checked: true

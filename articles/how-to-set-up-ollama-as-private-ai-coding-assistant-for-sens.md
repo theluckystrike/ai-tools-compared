@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/
 categories: [guides]
-tags: [tools, security, ollama]
+tags: [ai-tools-compared, tools, security, ollama, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

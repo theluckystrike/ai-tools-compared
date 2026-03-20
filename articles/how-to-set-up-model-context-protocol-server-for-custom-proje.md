@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-for-custom-proje/
 categories: [guides]
-tags: [mcp, documentation, ai-tools]
+tags: [ai-tools-compared, mcp, documentation, ai-tools]
 reviewed: true
 score: 8
 intent-checked: true
