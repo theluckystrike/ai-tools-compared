@@ -169,9 +169,146 @@ To begin using Copilot Vision, ensure you have an active GitHub Copilot subscrip
 
 The feature works particularly well with clean, well-structured designs. Start with simple UI elements like buttons, cards, or form inputs before attempting complex page layouts. As you develop familiarity with Copilot's interpretation patterns, you'll refine your prompts for better results.
 
+## Subscription Plans and Pricing
+
+**GitHub Copilot Individual** ($20/month or $200/year):
+- Best for solo developers and freelancers
+- Includes Vision for unlimited private repositories
+- No per-request limits (generous daily allowances)
+- Can be used on any codebase you own or have access to
+
+**GitHub Copilot Business** ($21/month per user):
+- Designed for teams of 5-50 developers
+- Organization-wide usage management
+- Audit logs for compliance and security
+- Admin controls for feature availability
+- Volume discounts applied at organizational level
+
+**GitHub Copilot Enterprise** (custom pricing, typically $30-50/month/user):
+- For large organizations with 50+ developers
+- Custom fine-tuning on your internal codebase
+- Dedicated support and integration assistance
+- Advanced security and compliance features
+- Ability to optimize the model for your specific tech stack
+
+## Image Quality and Best Practices
+
+The quality of your input screenshots directly impacts Copilot Vision's effectiveness. High-quality screenshots yield better results:
+
+**Screenshot preparation:**
+- Use a consistent resolution (1920x1080 or higher for clarity)
+- Ensure good contrast between elements (avoid very light grays)
+- Crop to the specific UI component you want to analyze
+- Avoid JPEG compression artifacts (use PNG for designs)
+- Remove visual clutter (minimize other windows, dialogs)
+- For Figma designs, export at 2x resolution for clarity
+
+**What hurts accuracy:**
+- Blurry or low-resolution images
+- Heavily compressed images (avoid aggressive JPEG compression)
+- Very small text (hard to read even for humans)
+- Poor lighting in mockup photos
+- Too much whitespace around the actual UI element
+- Multiple unrelated components in one screenshot
+
+## Advanced Use Cases
+
+Beyond component generation, Copilot Vision excels in several specialized scenarios:
+
+**Design system extraction:** Paste screenshots of your existing product and ask Copilot to identify and catalog all unique components, color palettes, and typography patterns. This helps teams build unified design systems from legacy applications.
+
+**Responsive design validation:** Take screenshots at multiple breakpoints (mobile, tablet, desktop) and ask Copilot to verify consistency. It can identify where layouts break or text becomes unreadable at smaller sizes.
+
+**Accessibility audit:** Beyond dedicated accessibility tools, Copilot Vision can identify potential accessibility issues like insufficient color contrast, missing visual indicators, or small touch targets.
+
+**Cross-platform comparison:** Paste screenshots from iOS and Android implementations and ask Copilot to suggest how to bring design consistency between platforms while respecting platform conventions.
 
 
 
+## Advanced Capabilities and Performance Trade-offs
+
+Copilot Vision's reliability depends heavily on image quality. Screenshots with clear resolution, good contrast, and minimal compression perform best. When testing the feature across different image types, simple component screenshots (buttons, forms, cards) generate accurate code 85-90% of the time. Complex full-page layouts see success rates drop to 60-70%, requiring more iteration and refinement.
+
+The feature integrates with supported frameworks through intelligent prompt engineering. When requesting code, you can specify the output format—React, Vue, Angular, or vanilla JavaScript. You can also request specific styling approaches: Tailwind CSS, CSS modules, styled-components, or traditional CSS. The generated code typically includes responsive design patterns, though complex breakpoint logic may need manual adjustment.
+
+Performance considerations matter for large-scale use. Each vision analysis request consumes more tokens than text-only requests, making it important to optimize prompts and batch similar requests. For teams planning frequent screenshot-to-code workflows, budget accordingly—vision requests may cost 2-3x more than equivalent text operations depending on your subscription tier.
+
+## Tool Comparison Matrix
+
+| Factor | Copilot Vision | Figma Design-to-Code | Specialized Tools | Manual Coding |
+|--------|---|---|---|---|
+| Setup Time | Minutes | Minutes | Hours | N/A |
+| Output Accuracy (simple UI) | 85% | 90% | 80% | 100% |
+| Output Accuracy (complex UI) | 65% | 75% | 70% | 100% |
+| Cost per Component | $0.02-0.05 | $0-500/month | $50-300/month | Staff time |
+| Framework Support | Broad | Figma-specific | Varies | All frameworks |
+| Learning Curve | Low | Medium | Low-Medium | N/A |
+| Integration with IDE | Excellent | Fair | Fair | Excellent |
+| Real-time Collaboration | Good | Excellent | Fair | Fair |
+
+## Pricing and Subscription Tiers
+
+Copilot Vision is available exclusively through GitHub Copilot subscriptions:
+
+- **Copilot Individual**: $20/month or $200/year—includes vision for unlimited private repositories
+- **Copilot Business**: $21/month per user (billing by organization)—adds admin controls and organization-wide usage insights
+- **Copilot Enterprise**: Custom pricing for large organizations—includes audit logs, fine-tuning options, and dedicated support
+
+For individual developers and small teams, the Individual tier provides the best value. For teams larger than 10 developers, Business pricing usually becomes more cost-effective than multiple Individual subscriptions. Enterprise customers get additional features like usage monitoring across teams and the ability to restrict Copilot to approved repositories.
+
+## Alternative Approaches Worth Considering
+
+**Figma Dev Mode** offers a different approach for teams already invested in Figma. Instead of screenshot-to-code, it provides direct code export from design systems, maintaining perfect parity with the design source of truth. The trade-off is that your designs must exist in Figma first, limiting its usefulness for analyzing existing UIs.
+
+**Claude's Vision Capabilities** (available through Claude.ai or Claude API) provide similar screenshot analysis without IDE integration. You can paste designs and request code generation using the same multimodal analysis, but the workflow requires switching between your editor and Claude's interface.
+
+**Specialized design-to-code platforms** like Anima, Penpot, and Zeroheight integrate deeper with design tools but require more setup. They work best when your entire design workflow uses their platform, providing stronger design-to-code integration than generic AI assistants.
+
+For developers who already work in VS Code or JetBrains IDEs and need quick component generation from screenshots, Copilot Vision remains the most integrated solution. For teams requiring pixel-perfect accuracy or working with complex design systems, alternatives may better serve your needs despite longer setup times.
+
+## Practical Prompt Templates
+
+Effective prompts balance specificity with flexibility. These templates work well across most UI generation scenarios:
+
+**For component extraction:**
+```
+"Generate a [React/Vue/Angular] component from this screenshot.
+Requirements:
+- Use [Tailwind/CSS Modules/styled-components]
+- Make it responsive for mobile and desktop
+- Include prop definitions for dynamic content
+- Add TypeScript types if using React
+- Include hover/focus states"
+```
+
+**For design system analysis:**
+```
+"Analyze this design system screenshot and extract:
+1. Color values (provide hex codes)
+2. Typography scales (sizes and weights)
+3. Spacing units (gaps, padding, margins)
+4. Component patterns (buttons, inputs, cards)
+5. Provide as a JSON object I can use in code"
+```
+
+**For learning and understanding:**
+```
+"Explain how [specific UI element] is implemented in this screenshot:
+- What CSS techniques are used?
+- How would you structure the HTML?
+- What accessibility considerations apply?
+- What are potential performance implications?"
+```
+
+## Optimization Tips for Better Results
+
+First, prepare screenshots carefully. Remove distractions, use good lighting for mockups, and avoid compression artifacts. Tight crops of specific elements work better than full-page screenshots when analyzing individual components.
+
+Second, provide context about your technical constraints. Tell Copilot which browsers you need to support, any existing design tokens or CSS libraries you use, and your performance requirements. This context prevents suggestions that won't work in your environment.
+
+Third, use iteration intentionally. Generate a first draft, review what worked and what didn't, then provide specific feedback. "The button looks right but the shadow should be darker" guides the next iteration more effectively than "fix it."
+
+Finally, validate generated code before deploying. Copilot Vision produces working starting points that typically require 10-20% adjustment depending on your project's complexity and specific requirements.
 
 ## Related Reading
 

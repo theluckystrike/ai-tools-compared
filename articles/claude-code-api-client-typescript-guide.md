@@ -157,7 +157,7 @@ export class ClaudeCodeClient {
 
   async createCompletion(request: CompletionRequest): Promise<CompletionResponse> {
     const url = `${this.baseUrl}/chat/completions`;
-    
+
     const response = await this.makeRequest(url, {
       method: 'POST',
       headers: {
@@ -357,8 +357,124 @@ When you're ready to share your client with other developers, configure your `pa
 ```
 
 
-Building a type-safe TypeScript client for Claude Code ensures your integration handles edge cases gracefully while providing excellent developer experience through autocomplete and type hints.
+## Using TypeScript Generics for Flexible Response Handling
 
+The API client above uses a fixed response shape, but real-world applications often need to handle multiple response formats. TypeScript generics let you build a single method that infers the correct return type based on the request:
+
+```typescript
+async request<TResponse>(
+  endpoint: string,
+  payload: CompletionRequest
+): Promise<TResponse> {
+  const response = await this.makeRequest(
+    `${this.baseUrl}/${endpoint}`,
+    {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${this.apiKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }
+  );
+  return response as TResponse;
+}
+
+// TypeScript infers the exact shape for each call
+const completion = await client.request<CompletionResponse>('chat/completions', request);
+const embedding = await client.request<EmbeddingResponse>('embeddings', embeddingRequest);
+```
+
+This pattern eliminates type assertions scattered throughout calling code and makes the client extensible without breaking existing consumers.
+
+
+## Validating Responses at Runtime with Zod
+
+Compile-time types prevent mistakes in your code, but they cannot guard against API schema changes at runtime. Integrating Zod adds a runtime safety layer:
+
+```bash
+npm install zod
+```
+
+```typescript
+import { z } from 'zod';
+
+const CompletionResponseSchema = z.object({
+  id: z.string(),
+  model: z.string(),
+  choices: z.array(z.object({
+    message: z.object({
+      role: z.enum(['user', 'assistant', 'system']),
+      content: z.string(),
+    }),
+    finishReason: z.string(),
+  })),
+  usage: z.object({
+    promptTokens: z.number(),
+    completionTokens: z.number(),
+    totalTokens: z.number(),
+  }),
+});
+
+async createCompletion(request: CompletionRequest): Promise<CompletionResponse> {
+  const raw = await this.makeRequest(`${this.baseUrl}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${this.apiKey}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify(request),
+  });
+  // Throws ZodError with field-level details if API changes its schema
+  return CompletionResponseSchema.parse(raw);
+}
+```
+
+When the API returns an unexpected field or changes a type, Zod throws a descriptive error immediately rather than silently passing malformed data further into your application. This is especially important in production systems where bugs from malformed API responses are difficult to trace.
+
+
+## Error Handling Patterns Worth Adopting
+
+Robust error handling distinguishes production-grade clients from prototype code. Beyond basic try/catch, consider these patterns:
+
+**Discriminated union results** return a result type instead of throwing, letting callers decide how to handle failures:
+
+```typescript
+type Result<T> =
+  | { success: true; data: T }
+  | { success: false; error: ClaudeCodeError };
+
+async function safeCreateCompletion(
+  client: ClaudeCodeClient,
+  request: CompletionRequest
+): Promise<Result<CompletionResponse>> {
+  try {
+    const data = await client.createCompletion(request);
+    return { success: true, data };
+  } catch (error) {
+    if (error instanceof ClaudeCodeError) {
+      return { success: false, error };
+    }
+    throw error;
+  }
+}
+
+const result = await safeCreateCompletion(client, request);
+if (result.success) {
+  console.log(result.data.choices[0].message.content);
+} else {
+  console.error(`API error ${result.error.status}: ${result.error.message}`);
+}
+```
+
+**Context-enriched errors** attach request metadata to thrown errors, so you can correlate errors with specific API calls in your monitoring dashboard:
+
+```typescript
+throw new ClaudeCodeError(
+  error.message ?? `HTTP ${response.status}`,
+  response.status,
+  { requestId: response.headers.get('x-request-id'), model: request.model }
+);
+```
+
+This small addition means every error in your logs links back to the exact model and request that failed, dramatically reducing diagnosis time.
+
+
+Building a type-safe TypeScript client for Claude Code ensures your integration handles edge cases gracefully while providing excellent developer experience through autocomplete and type hints.
 
 
 

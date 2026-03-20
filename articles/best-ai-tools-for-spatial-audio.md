@@ -181,7 +181,128 @@ Start building your spatial audio workflow with AI assistance:
 
 Define your target platform and format first—Ambisonics, object-based, or hybrid. Use AI tools to generate reference implementations, then study how they work before customizing for your needs. Test spatial audio rendering across multiple playback systems, including headphones, speakers, and VR headsets, and iterate based on user feedback about localization accuracy and immersion quality.
 
+## Complete Web Audio API Example
 
+Here's a practical example of how Claude helps with spatial audio implementation:
+
+```javascript
+class SpatialAudioEngine {
+    constructor(audioContext) {
+        this.context = audioContext;
+        this.panner = this.context.createPanner();
+        this.convolver = this.context.createConvolver();
+
+        // Setup spatial parameters
+        this.panner.panningModel = 'HRTF';
+        this.panner.distanceModel = 'inverse';
+        this.panner.refDistance = 1;
+        this.panner.maxDistance = 100;
+        this.panner.rolloffFactor = 1;
+    }
+
+    positionAudioSource(x, y, z) {
+        // Set position in 3D space (meters from listener)
+        this.panner.positionX.value = x;
+        this.panner.positionY.value = y;
+        this.panner.positionZ.value = z;
+    }
+
+    orientationListener(forwardX, forwardY, forwardZ, upX, upY, upZ) {
+        // Set listener orientation (forward and up vectors)
+        this.context.listener.forwardX.value = forwardX;
+        this.context.listener.forwardY.value = forwardY;
+        this.context.listener.forwardZ.value = forwardZ;
+        this.context.listener.upX.value = upX;
+        this.context.listener.upY.value = upY;
+        this.context.listener.upZ.value = upZ;
+    }
+
+    applyReverberation(impulseResponseBuffer) {
+        // Apply room acoustic modeling via convolution
+        this.convolver.buffer = impulseResponseBuffer;
+    }
+}
+```
+
+## Tool-Specific Strengths
+
+**Claude**: Best for HRTF personalization and complex audio DSP. Its larger context window handles complete spatial audio pipelines. Can generate implementations for Web Audio API, Unity, and FMOD simultaneously.
+
+**GPT-4**: Good at ambisonics mathematics and spatial format conversion. Strong at explaining psychoacoustic principles. Faster for quick implementations but sometimes oversimplifies complex algorithms.
+
+**GitHub Copilot**: Excellent for boilerplate and standard library usage. Best for developers already working in an IDE. Less ideal for research implementations requiring novel approaches.
+
+## Comparison of Spatial Audio Libraries
+
+| Library | Best For | Complexity | AI Support | Cost |
+|---------|----------|-----------|-----------|------|
+| Web Audio API | Browser-based spatial | Low-Medium | Excellent | Free |
+| FMOD Studio | Game audio, integration | High | Very Good | Free-$10k |
+| Wwise (Audiokinetic) | Large games, teams | Very High | Good | Free-$30k |
+| Dolby Atmos | Film/broadcast production | Very High | Fair | Custom |
+| TBE (Two Big Ears) | Research/experimental | Medium | Good | Free |
+| OpenAL | Native applications | Medium | Good | Free |
+
+## Practical Implementation: Gaming Audio
+
+For a game engine integration, AI tools can generate:
+
+```csharp
+// Unity spatial audio implementation
+public class GameAudioManager : MonoBehaviour {
+    private AudioSource[] audioSources;
+    private Transform playerTransform;
+
+    void UpdateAudioPositions() {
+        foreach (var source in audioSources) {
+            // Update 3D position relative to player
+            source.transform.position = CalculateWorldPosition(source);
+
+            // Apply distance-based volume attenuation
+            float distance = Vector3.Distance(source.transform.position, playerTransform.position);
+            source.volume = 1f / Mathf.Max(distance, 1f);
+
+            // Apply low-pass filter for distance effect
+            source.GetComponent<AudioLowPassFilter>().cutoffFrequency = 5000f / (1f + distance);
+        }
+    }
+}
+```
+
+## Performance Validation Metrics
+
+AI-generated spatial audio code requires performance testing:
+
+**Critical metrics:**
+- Audio buffer processing: Must complete in < 10ms to avoid glitches
+- 3D position updates: Should track at 60fps or higher
+- HRTF convolution: Computationally expensive, may require optimization
+- Ambisonics decoding: Matrix operations must be efficient for real-time use
+
+AI tools generate correct algorithms but may not optimize for your hardware. Test on target devices (mobile phones, VR headsets, laptops) before production.
+
+## Pricing Analysis
+
+**Individual developer using Claude:**
+- AI tool cost: $20/month
+- Time saved per project: 30-50 hours
+- Value at $75/hour: $2,250-3,750
+- ROI: Pays for 3+ years of subscriptions on first project
+
+**Team of 4 audio engineers:**
+- Tools: 4 × $20/month = $80/month
+- Time saved annually: ~800 hours
+- Value: ~$60,000/year
+- Cost: ~$1,000/year
+- ROI: 60:1
+
+## Integration Best Practices
+
+1. **Start with reference implementations**: Use AI to generate working code, then study and customize
+2. **Validate psychoacoustics**: Test with trained listeners, not just technical metrics
+3. **Profile on target hardware**: Mobile devices, VR headsets, and gaming consoles have different constraints
+4. **Plan for iteration**: Spatial audio perception is subjective—be prepared for refinement cycles
+5. **Maintain human expertise**: AI generates technical implementations, but human audio engineers guide creative decisions
 
 ## Related Reading
 
