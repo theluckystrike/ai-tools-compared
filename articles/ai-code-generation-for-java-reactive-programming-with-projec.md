@@ -10,6 +10,7 @@ score: 7
 voice-checked: true
 reviewed: true
 intent-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

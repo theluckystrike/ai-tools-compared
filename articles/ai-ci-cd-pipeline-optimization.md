@@ -8,7 +8,7 @@ date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /ai-ci-cd-pipeline-optimization/
 categories: [guides]
-tags: [devops, automation]
+tags: [ai-tools-compared, devops, automation, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true
