@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-generating-api-mock-servers-2026/
 categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
+tags: [ai-tools-compared, tools, artificial-intelligence, api]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
