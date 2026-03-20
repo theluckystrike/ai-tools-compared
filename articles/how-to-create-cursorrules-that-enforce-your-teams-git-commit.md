@@ -6,8 +6,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-enforce-your-teams-git-commit/
 categories: [guides]
-tags: [tools]
-score: 7
+tags: [ai-tools-compared, tools]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true

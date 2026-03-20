@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-teach-cursor-your-teams-state/
 categories: [guides]
-tags: [cursor, ai-tools]
+tags: [ai-tools-compared, cursor, ai-tools]
 reviewed: true
 score: 8
 intent-checked: true

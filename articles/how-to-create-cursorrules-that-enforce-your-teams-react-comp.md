@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-enforce-your-teams-react-comp/
 categories: [guides]
-tags: [react, cursorrules, ai-tools]
+tags: [ai-tools-compared, react, cursorrules, ai-tools]
 reviewed: true
 score: 8
 intent-checked: true

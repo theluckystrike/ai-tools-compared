@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompts-for-ai-that-match-your-d/
 categories: [guides]
-tags: [prompts, ai, documentation]
+tags: [ai-tools-compared, prompts, ai, documentation, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

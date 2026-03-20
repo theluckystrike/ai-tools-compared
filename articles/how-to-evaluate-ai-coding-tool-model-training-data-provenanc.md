@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-model-training-data-provenanc/
 categories: [guides]
-tags: [legal-risk, data-provenance, ai-tools, copyright]
+tags: [ai-tools-compared, legal-risk, data-provenance, ai-tools, copyright, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

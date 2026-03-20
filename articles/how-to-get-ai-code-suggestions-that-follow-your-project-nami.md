@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/
 categories: [guides]
-tags: [tools, productivity]
+tags: [ai-tools-compared, tools, productivity, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

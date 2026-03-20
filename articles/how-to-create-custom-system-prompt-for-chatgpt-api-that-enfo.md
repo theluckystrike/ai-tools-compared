@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/
 categories: [guides]
-tags: [chatgpt, api, coding-standards]
+tags: [ai-tools-compared, chatgpt, api, coding-standards]
 reviewed: true
 score: 8
 intent-checked: true

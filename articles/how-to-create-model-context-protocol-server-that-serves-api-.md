@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-model-context-protocol-server-that-serves-api-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, api]
 reviewed: true
 score: 8
 intent-checked: true

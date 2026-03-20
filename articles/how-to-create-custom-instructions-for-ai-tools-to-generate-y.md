@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-instructions-for-ai-tools-to-generate-y/
 categories: [guides]
-tags: [tools, ai, configuration]
+tags: [ai-tools-compared, tools, ai, configuration, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

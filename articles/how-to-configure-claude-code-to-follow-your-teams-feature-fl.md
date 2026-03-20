@@ -6,10 +6,11 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-to-follow-your-teams-feature-fl/
 categories: [guides]
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
+tags: [ai-tools-compared, claude-ai]
 ---
 
 

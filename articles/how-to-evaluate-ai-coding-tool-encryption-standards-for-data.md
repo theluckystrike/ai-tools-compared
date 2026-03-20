@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-encryption-standards-for-data/
 categories: [guides]
-tags: [security, encryption, ai-tools]
+tags: [ai-tools-compared, security, encryption, ai-tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-chain-multiple-ai-tools-together-for-full-stack-devel/
 categories: [guides]
-tags: [workflow, automation]
+tags: [ai-tools-compared, workflow, automation, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
