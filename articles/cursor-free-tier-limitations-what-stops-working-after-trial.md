@@ -48,6 +48,7 @@ date: 2026-03-15
 
 
 
+
 # Cursor Free Tier Limitations: What Stops Working After Trial
 
 
