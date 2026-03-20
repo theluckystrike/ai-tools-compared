@@ -8,7 +8,7 @@ permalink: /copilot-workspace-vs-cursor-composer-multi-file-editing-comp/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

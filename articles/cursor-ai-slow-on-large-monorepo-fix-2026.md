@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-ai-slow-on-large-monorepo-fix-2026/
 reviewed: true
-score: 8
+score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true

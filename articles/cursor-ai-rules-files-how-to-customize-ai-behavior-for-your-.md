@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/
 categories: [guides, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
