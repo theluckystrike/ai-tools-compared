@@ -13,7 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-
+{% raw %}
 Build custom AI coding workflows by creating MCP servers that expose your proprietary tools, database queries, or domain knowledge to Claude, then integrate into your IDE. This guide shows step-by-step how to create a basic MCP server and wire it into your coding assistant.
 
 
@@ -268,3 +268,4 @@ This modular approach lets you assemble sophisticated automation pipelines from 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
