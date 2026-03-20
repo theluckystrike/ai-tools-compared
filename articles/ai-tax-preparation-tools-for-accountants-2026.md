@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tax-preparation-tools-for-accountants-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: false
