@@ -61,6 +61,28 @@ A practical example: imagine reviewing code that processes user authentication. 
 
 Claude Code integrates through CLI, making it suitable for teams that prefer terminal-based workflows. It supports most major languages and can be configured to run automatically on pull requests through GitHub Actions or similar CI systems.
 
+```yaml
+# .github/workflows/claude-review.yml
+name: Claude Code Review
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Run Claude Code Review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git diff origin/main...HEAD > pr_diff.txt
+          claude -p "Review this diff for security vulnerabilities, logic errors, and style issues. Be specific about file and line numbers." < pr_diff.txt
+```
+
 
 
 ### GitHub Copilot

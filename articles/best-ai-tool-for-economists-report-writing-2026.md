@@ -72,6 +72,40 @@ A practical workflow involves feeding Claude your regression output alongside yo
 
 For example, when drafting a section on inflation dynamics, you might paste your Phillips curve regression results and ask Claude to help you explain the coefficient estimates in plain language suitable for a policy brief audience. The resulting text usually requires light editing but captures the right tone and accuracy level.
 
+```
+Prompt template for regression interpretation:
+
+"I ran a Phillips curve regression: π_t = α + β·u_t + γ·π_{t-1} + ε_t
+Results: α=2.1 (p<0.01), β=-0.38 (p<0.05), γ=0.72 (p<0.01), R²=0.64
+
+Write a 2-paragraph policy brief explanation of these results for a
+Federal Reserve audience. Emphasize the unemployment-inflation tradeoff
+and the persistence coefficient. Flag any concerns about the fit."
+```
+
+For R or Python users, a workflow pairing statistical output with Claude saves significant drafting time:
+
+```python
+import anthropic
+import subprocess
+
+# Run your regression and capture output
+result = subprocess.run(
+    ["Rscript", "phillips_curve.R"], capture_output=True, text=True
+)
+
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-opus-4-6",
+    max_tokens=1024,
+    messages=[{
+        "role": "user",
+        "content": f"Interpret these regression results for a policy brief:\n\n{result.stdout}"
+    }]
+)
+print(message.content[0].text)
+```
+
 
 
 Claude works well for translating technical material into accessible summaries. If you need to convert an academic paper into a Federal Reserve-style digest or a client-ready executive summary, the tool handles the restructuring efficiently.

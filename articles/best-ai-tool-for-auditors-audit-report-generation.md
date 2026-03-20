@@ -118,7 +118,16 @@ Consider a financial statement audit where you have completed testing across twe
 **AI Finding Consolidation Example:**
 
 Input to Claude:
-"Consolidate these 47 findings from 12 business units into a management letter using standard IAASB severity classifications (Material Weakness, Significant Deficiency, Deficiency). Group by control domain (IT, Financial Reporting, Operations, Compliance). Create a summary table showing finding distribution by unit and severity level."
+
+```
+Consolidate these 47 findings from 12 business units into a management letter
+using standard IAASB severity classifications (Material Weakness, Significant
+Deficiency, Deficiency). Group by control domain (IT, Financial Reporting,
+Operations, Compliance). Create a summary table showing finding distribution
+by unit and severity level.
+
+[paste raw findings here]
+```
 
 Output: Structured management letter with 8 pages covering:
 - Executive summary with severity distribution

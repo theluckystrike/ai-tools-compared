@@ -66,6 +66,40 @@ In practice, traders use Claude to summarize earnings calls by extracting guidan
 
 Claude works through both web interfaces and API integration, making it suitable for traders who want to build automated workflows. A trader might set up a pipeline that feeds press releases into Claude and outputs summaries directly to a trading dashboard.
 
+```python
+import anthropic
+import feedparser
+
+def summarize_earnings_release(text: str) -> dict:
+    """Summarize an earnings press release for trading decisions."""
+    client = anthropic.Anthropic()
+
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=512,
+        messages=[{
+            "role": "user",
+            "content": f"""Summarize this earnings release for a trader. Extract:
+1. EPS (actual vs estimate)
+2. Revenue (actual vs estimate)
+3. Forward guidance (raised/lowered/maintained)
+4. Key management commentary (1 sentence)
+5. Overall tone (bullish/neutral/bearish)
+
+Return as JSON.
+
+{text}"""
+        }]
+    )
+    return message.content[0].text
+
+# Example: pull from RSS feed and summarize
+feed = feedparser.parse("https://feeds.finance.yahoo.com/rss/2.0/headline")
+for entry in feed.entries[:5]:
+    summary = summarize_earnings_release(entry.summary)
+    print(f"{entry.title}\n{summary}\n")
+```
+
 
 
 ### ChatGPT (OpenAI)
