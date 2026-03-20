@@ -214,7 +214,215 @@ Review and refine your checklist quarterly. Remove checks that rarely catch issu
 
 Document the reasoning behind critical checklist items. When team members understand why certain standards exist, they are more likely to follow them consistently.
 
+## Performance Checklist Items
 
+Add performance-specific requirements to your PR checklist:
+
+```markdown
+# Performance Requirements
+
+## Database Queries
+- No N+1 queries (verify with django-debug-toolbar)
+- Use select_related/prefetch_related appropriately
+- Query execution time <100ms for typical endpoints
+- Queries logged and monitored in production
+
+## Frontend Performance
+- Bundle size <300KB gzip for initial load
+- Lighthouse score >90 on mobile
+- Core Web Vitals: LCP <2.5s, FID <100ms, CLS <0.1
+- No console errors or warnings in production builds
+
+## API Response Times
+- 95th percentile response time <500ms
+- P99 response time <1s
+- Cache-friendly: use ETag and Last-Modified headers
+```
+
+Claude can now suggest optimizations before code reaches review.
+
+## Testing Strategy Requirements
+
+Specify exactly what testing coverage means for your team:
+
+```markdown
+# Testing Requirements
+
+## Coverage Minimums
+- New code: 80% line coverage minimum
+- Existing code: No reduction in coverage
+- Integration tests for all API endpoints
+- E2E tests for critical user flows
+
+## Test Patterns
+- Use factory-boy for test data
+- Test both happy path and error cases
+- Use descriptive assertion messages
+- Avoid mocking external APIs (use fixtures instead)
+
+## Performance Tests
+- New endpoints must include load test (target: 1000 RPS)
+- Memory leaks detected by running under load
+- Database migration timing tested
+```
+
+## Documentation Requirements
+
+Specify what documentation changes trigger PR requirements:
+
+```markdown
+# Documentation Checklist
+
+## Required for New Features
+- API documentation updated (SwaggerUI/OpenAPI)
+- Runbook created for operational concerns
+- Architecture decision recorded if applicable
+- User-facing changes documented in changelog
+
+## Required for Modified Features
+- Breaking changes documented with migration guide
+- Deprecation timeline specified for removed features
+- Performance implications documented
+```
+
+This ensures documentation stays current without manual reminders.
+
+## Dependency Management Rules
+
+Define how your team handles dependency changes:
+
+```markdown
+# Dependency Management
+
+## Adding Dependencies
+- Security vulnerability history checked
+- Package size <500KB gzip
+- No duplicates with existing functionality
+- License compatibility verified (MIT/Apache preferred)
+
+## Version Updates
+- Patch versions: auto-merge if tests pass
+- Minor versions: require manual review
+- Major versions: require architectural review
+- Deprecation warnings fixed before upgrade
+```
+
+Claude can flag dependency additions that violate these rules.
+
+## Multi-Environment Configuration
+
+Specify requirements for code that touches multiple environments:
+
+```markdown
+# Multi-Environment Requirements
+
+## Development
+- Uses local configuration, zero production secrets
+- Database can be reset without impact
+- Can run without internet connection
+
+## Staging
+- Identical configuration to production
+- Uses production-like data volumes
+- All external service integrations tested
+- Performance tested under expected load
+
+## Production
+- All secrets stored in secure vaults
+- Deployment is reversible (via canary or blue-green)
+- Database schema changes are backward compatible
+- Monitoring alerts configured before deployment
+```
+
+## Error Handling Standards
+
+Define error handling patterns your team requires:
+
+```markdown
+# Error Handling
+
+## API Errors
+- All errors include correlation ID for debugging
+- Error messages are actionable, not generic
+- Stack traces never exposed to clients
+- Appropriate HTTP status codes used
+
+## Logging
+- Structured logging with consistent field names
+- Sensitive data redacted (passwords, tokens, PII)
+- Error level logs include stack traces
+- Request/response logging for debugging
+
+## Monitoring
+- Alerts configured for error rate increase
+- Fallback behavior defined for external service failures
+- Graceful degradation tested
+```
+
+## Commit Message Standards
+
+Include specific guidance on commit message format:
+
+```markdown
+# Commit Message Format
+
+Required format:
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+Types: feat, fix, docs, style, refactor, perf, test
+Scope: area of code affected
+Subject: 50 character limit, imperative mood
+Body: 72 character line wrapping, explain why not what
+Footer: References to issues (#123), breaking changes
+```
+
+## Code Review Feedback Tiers
+
+Help Claude understand which issues are blockers vs. suggestions:
+
+```markdown
+# Code Review Tiers
+
+## Blocker (Must Fix)
+- Security vulnerabilities
+- Production data at risk
+- Breaking backward compatibility without migration
+- Test coverage below minimum
+
+## Important (Should Fix)
+- Performance degradation >10%
+- Unclear code requiring comments
+- Duplicate functionality existing elsewhere
+- Missing error handling
+
+## Nice-to-Have (Consider)
+- Code style improvements
+- Optimization suggestions
+- Refactoring recommendations
+- Documentation enhancements
+```
+
+Claude can now categorize its feedback appropriately.
+
+## Handling False Positives
+
+Configure Claude to reduce false positives in its review:
+
+```markdown
+# Common False Positives to Ignore
+
+- TypeScript strict mode warnings on third-party types
+- Linter suggestions for auto-generated code
+- Security warnings on deliberately exposed test data
+- Performance warnings on non-critical paths
+- Deprecation warnings on transitional code during refactors
+```
 
 ## Related Reading
 

@@ -214,7 +214,216 @@ A Claude.md file provides value only when it stays current. Review and update it
 
 Consider version-controlling your Claude.md file. This lets you track how your standards evolve over time and roll back changes if needed.
 
+## Adding Database Schema Context
 
+Your Claude.md file should reference your database schema. AI tools generate better queries and models when they understand your data structure:
+
+```markdown
+# Database Schema
+
+## Core Models
+
+### User
+- id: UUID (primary key)
+- email: String (unique, indexed)
+- password_hash: String
+- full_name: String
+- is_active: Boolean
+- created_at: DateTime
+- updated_at: DateTime
+
+### Product
+- id: UUID (primary key)
+- sku: String (unique, indexed)
+- name: String
+- description: Text
+- price: Decimal
+- inventory_quantity: Integer
+- vendor_id: UUID (foreign key → Vendor)
+- category_id: UUID (foreign key → Category)
+
+### Order
+- id: UUID (primary key)
+- user_id: UUID (foreign key → User)
+- status: Enum (pending, confirmed, shipped, delivered)
+- total_amount: Decimal
+- created_at: DateTime
+```
+
+This schema context helps Claude generate appropriate ORM queries and avoid n+1 query problems.
+
+## Performance Optimization Patterns
+
+Document patterns your team uses for optimization:
+
+```markdown
+# Performance Patterns
+
+## Query Optimization
+- Use select_related for foreign key lookups (max 3 levels)
+- Use prefetch_related for reverse relationships
+- Add database indexes on filtered/sorted columns
+- Monitor query count with django-debug-toolbar
+
+## Caching Strategy
+- Redis for session data and temporary cache
+- Cache time-based on data update frequency
+- Invalidate cache on write operations
+- Use cache_page for static views
+
+## Async Tasks
+- Celery for tasks longer than 500ms
+- Background jobs for email sending
+- Periodic tasks: database cleanup, report generation
+```
+
+When you provide these patterns, Claude generates code that aligns with your optimization approach rather than suggesting alternatives.
+
+## Security Best Practices Section
+
+Security is critical for Django applications. Include your team's security standards:
+
+```markdown
+# Security Standards
+
+## Authentication & Authorization
+- Use django-allauth for user authentication
+- Implement role-based access control (RBAC)
+- Check permissions in views, not just templates
+- Never expose internal IDs in URLs
+
+## Data Protection
+- Hash sensitive data using django.contrib.auth.hashers
+- Encrypt PII fields using django-fernet
+- Log all admin actions with django-audit-log
+- Regular security audits of user-facing inputs
+
+## API Security
+- All endpoints require CORS headers validation
+- Rate limiting: 100 requests/minute per IP
+- Require HTTPS in production
+- Validate all JSON payloads with serializers
+```
+
+This prevents Claude from suggesting insecure patterns and helps catch security issues before they reach code review.
+
+## Common Third-Party Integration Patterns
+
+Document how your team integrates external services:
+
+```markdown
+# Third-Party Integrations
+
+## Payment Processing (Stripe)
+- Webhook handlers in payments/webhooks.py
+- Store payment intent IDs, not card data
+- Always verify webhook signatures
+
+## Email Service (SendGrid)
+- Email templates in templates/emails/
+- Use transactional email for critical messages
+- Log all email sends for debugging
+
+## Analytics (Mixpanel)
+- Track user events in signals.py
+- Never track PII data
+- Use consistent event naming: "action_resource"
+
+## File Storage (S3)
+- Use django-storages for file management
+- Generate signed URLs for private files
+- Set expiration on temporary URLs
+```
+
+With these patterns documented, Claude generates integration code that matches your existing approach and avoids common mistakes.
+
+## Deployment and Environment Configuration
+
+Include deployment-specific context:
+
+```markdown
+# Deployment Configuration
+
+## Environments
+- Development: local SQLite, debug=True
+- Staging: PostgreSQL, debug=False, full testing
+- Production: PostgreSQL, CloudFront CDN, monitoring enabled
+
+## Environment Variables
+DJANGO_DEBUG=False
+DATABASE_URL=postgresql://user:pass@host/db
+SECRET_KEY=<long random string>
+AWS_STORAGE_BUCKET_NAME=my-bucket
+STRIPE_API_KEY=sk_live_...
+
+## Deployment Process
+1. Run migrations: `python manage.py migrate`
+2. Collect static files: `python manage.py collectstatic --noinput`
+3. Run tests: `pytest`
+4. Deploy container to production
+5. Verify health checks pass
+```
+
+This ensures Claude understands your deployment constraints and generates code accordingly.
+
+## API Versioning Strategy
+
+If your API has versioning, document it clearly:
+
+```markdown
+# API Versioning
+
+Current version: v2
+
+## URL Structure
+/api/v2/products/
+/api/v2/orders/
+
+## Deprecation Policy
+- API versions supported for 2 major releases
+- Deprecated endpoints return 301 redirect + warning header
+- Migration guides provided 6 months before removal
+
+## Backward Compatibility
+- New optional fields added to existing endpoints
+- Breaking changes require new version
+- Old versions documented in CHANGELOG
+```
+
+## Migration Planning
+
+Document your migration strategy for long-running projects:
+
+```markdown
+# Data Migration Patterns
+
+## Approach
+1. Reversible migrations only
+2. Test migrations with copy of production data
+3. Monitor migration performance (target <5min)
+4. Plan rollback procedure before executing
+5. Verify data integrity after migration
+
+## Tools
+- Django migrations for schema changes
+- Data migrations for bulk updates
+- Custom management commands for complex operations
+```
+
+With this context, Claude generates migrations that follow your team's practices and avoid common pitfalls like long-running migrations in production.
+
+## Maintenance and Updates
+
+Schedule regular reviews of your Claude.md file:
+
+```markdown
+# Review Schedule
+- Monthly: Check for outdated dependencies
+- Quarterly: Review coding standards
+- Annually: Full audit of all sections
+```
+
+Treat your Claude.md file as a living document that evolves with your project.
 
 ## Related Reading
 

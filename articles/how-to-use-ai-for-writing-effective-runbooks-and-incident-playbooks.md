@@ -213,7 +213,218 @@ AI can also help with maintenance by analyzing your existing documentation and f
 
 - Unclear instructions that could cause confusion
 
+## Building Incident Response Templates
 
+Create reusable incident response templates that your team standardizes on:
+
+```markdown
+# Incident Response Template
+
+## Severity Levels
+- P1 (Critical): Service completely unavailable, revenue impact
+- P2 (High): Degraded performance, partial user impact
+- P3 (Medium): Minor service issue, limited user impact
+- P4 (Low): Non-critical issue, documentation or cleanup
+
+## Initial Response (First 5 minutes)
+1. Declare incident in #incidents Slack channel
+2. Assign incident commander
+3. Start incident call: [conference line]
+4. Begin triage: "Is this P1/P2/P3/P4?"
+
+## Triage Phase (5-15 minutes)
+1. Identify affected service
+2. Check recent deployments (git log --oneline -10)
+3. Review recent alerts and metrics
+4. Gather logs: [monitoring dashboard link]
+
+## Mitigation Phase (15-60 minutes)
+1. Implement immediate fix or rollback
+2. Verify fix addresses root cause
+3. Monitor for regression
+4. Update incident thread with status
+
+## Resolution Phase
+1. Confirm service stability (15+ minutes post-fix)
+2. Document root cause
+3. Schedule post-incident review
+4. Close incident ticket
+
+## Post-Incident Review (within 24 hours)
+1. Timeline: What happened?
+2. Impact: How many users affected?
+3. Root cause: Why did this happen?
+4. Prevention: How do we prevent recurrence?
+5. Follow-ups: Action items and owners
+```
+
+AI can generate these templates quickly; human expertise fills in the details.
+
+## Service-Specific Runbook Generation
+
+Generate runbooks tailored to each service in your architecture:
+
+```
+Generate separate runbooks for:
+1. PostgreSQL database - covering backup/restore, failover, query optimization
+2. Redis cache - covering eviction policies, persistence, replication
+3. Kafka message queue - covering topic management, consumer lag, rebalancing
+4. Elasticsearch - covering index management, shard allocation, query optimization
+
+Each should include prerequisites, step-by-step procedures, verification, and rollback.
+```
+
+This approach produces service-specific documentation rather than generic guides.
+
+## Automating Runbook Testing
+
+Create tests that verify your runbook procedures actually work:
+
+```bash
+#!/bin/bash
+# test-runbooks.sh
+
+# Test database backup and restore
+echo "Testing database backup procedure..."
+./runbooks/postgresql/backup.sh
+backup_file=$(ls -t backups/ | head -1)
+
+# Verify backup is valid
+pg_restore --validate "backups/$backup_file"
+if [ $? -eq 0 ]; then
+    echo "PASS: Database backup is valid"
+else
+    echo "FAIL: Database backup validation failed"
+fi
+
+# Test cache failover
+echo "Testing Redis failover..."
+redis-cli -h primary.redis SHUTDOWN
+sleep 5
+redis-cli -h replica.redis ROLE
+# Should see "master" if failover succeeded
+
+# Test message queue rebalancing
+echo "Testing Kafka consumer rebalancing..."
+./runbooks/kafka/rebalance-consumers.sh
+kafka-topics --bootstrap-server localhost:9092 --describe
+```
+
+Run these tests in staging before production issues occur.
+
+## Decision Trees for Troubleshooting
+
+Convert troubleshooting runbooks into decision trees that guide on-call engineers:
+
+```
+Is the service down?
+├─ Yes → Check service status page
+│  ├─ Marked as down → Check deployment log
+│  │  ├─ Recent deployment → Rollback procedure
+│  │  └─ No recent deployment → Check infrastructure
+│  └─ Not marked down → Update status page
+└─ No (degraded) → Check response times
+   ├─ Database queries slow → Run database optimization
+   ├─ API timeouts → Check rate limiting
+   └─ Memory usage high → Check for memory leaks
+```
+
+AI can generate these tree structures; you refine based on your actual incident patterns.
+
+## Integration with Monitoring Tools
+
+Link runbooks directly from your monitoring alerts:
+
+```python
+# Example: Prometheus alert to runbook mapping
+def get_runbook_for_alert(alert_name):
+    runbooks = {
+        'HighDiskUsage': '/runbooks/storage/disk-cleanup.md',
+        'DatabaseConnectionPoolExhausted': '/runbooks/database/connection-pool.md',
+        'HighMemoryUsage': '/runbooks/application/memory-leak.md',
+        'ServiceDown': '/runbooks/services/service-recovery.md',
+    }
+    return runbooks.get(alert_name, '/runbooks/general/triage.md')
+
+# Include in alert notification
+alert_body = f"""
+Alert: {alert_name}
+Severity: {severity}
+Runbook: {get_runbook_for_alert(alert_name)}
+Dashboard: {dashboard_url}
+"""
+```
+
+This ensures engineers immediately see the relevant runbook when an alert fires.
+
+## Version Control for Runbooks
+
+Treat runbooks as code, storing them in Git with version history:
+
+```bash
+# Runbook structure in Git
+runbooks/
+├── infrastructure/
+│   ├── database/
+│   │   ├── backup-restore.md
+│   │   ├── failover.md
+│   │   └── query-optimization.md
+│   ├── kubernetes/
+│   │   ├── pod-restart.md
+│   │   ├── node-drain.md
+│   │   └── cluster-upgrade.md
+├── applications/
+│   ├── api-service/
+│   │   ├── deployment.md
+│   │   ├── troubleshooting.md
+│   │   └── performance.md
+├── incidents/
+│   ├── high-error-rate.md
+│   ├── database-down.md
+│   └── integration-failure.md
+└── templates/
+    ├── runbook-template.md
+    └── incident-template.md
+```
+
+Track changes, get code reviews on runbook updates, and maintain history.
+
+## Measuring Runbook Effectiveness
+
+Track metrics that indicate how well your runbooks work:
+
+**Time to Resolution (TTR)**: Measure how long it takes to resolve incidents
+- Track before/after adding runbooks
+- Target: 25% reduction in TTR
+- Track by incident severity
+
+**Incident Commander Burden**: Time spent coaching on-call engineers
+- Target: Reduce from 30 mins/incident to 10 mins/incident
+- Indicates runbooks are clear and complete
+
+**Runbook Accuracy**: Percentage of times runbook procedures work as written
+- Track: How often on-call engineer had to improvise
+- Target: >95% of runbook steps work without modification
+
+**Knowledge Distribution**: Percentage of team that can handle each incident type
+- Track before/after runbook publication
+- Target: All engineers can handle P3/P4 incidents solo
+
+## Continuous Improvement Cycle
+
+Build runbook improvement into your incident workflow:
+
+```
+1. Incident occurs
+2. Use runbook to mitigate
+3. Document what worked, what didn't
+4. Post-incident review includes runbook feedback
+5. AI helps regenerate runbook with feedback
+6. Validate updated runbook in staging
+7. Deploy updated runbook for next incident
+```
+
+This creates a continuous feedback loop that improves runbooks with each incident.
 
 ## Related Reading
 

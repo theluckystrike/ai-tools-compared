@@ -212,6 +212,206 @@ Effective context management across multiple repositories requires combining the
 
 The investment in context management pays off quickly. You spend less time repeating explanations, receive more accurate suggestions, and maintain consistency across your entire codebase. Review and update your context documentation regularly, especially when adding new repositories or changing integration patterns.
 
+## Advanced Context Snapshot Patterns
+
+For complex multi-repo features, create more detailed context snapshots:
+
+```python
+# context_snapshot.py
+# Snapshot created: 2026-03-20
+# Feature: Add OAuth 2.0 authentication across all services
+
+# From auth-service/models.py (commit: a1b2c3d)
+class OAuth2Provider:
+    """Base class for OAuth 2.0 provider integrations"""
+    client_id: str
+    client_secret: str
+
+    def exchange_code_for_token(self, code: str) -> str:
+        """Exchange authorization code for access token"""
+        pass
+
+# From shared-lib/auth.py (commit: e4f5g6h)
+def validate_oauth_token(token: str, provider: str) -> Dict:
+    """Validate OAuth token and return user info"""
+    cache_key = f"oauth:{provider}:{token}"
+    # Check cache first, then validate with provider
+    pass
+
+# From api-gateway/routes.py (commit: i7j8k9l)
+@router.post("/auth/oauth/callback")
+async def oauth_callback(code: str, provider: str):
+    """Handle OAuth 2.0 callback from providers"""
+    token = await auth_service.exchange_code_for_token(code)
+    user = await shared_lib.validate_oauth_token(token, provider)
+    # Create session and return to client
+    pass
+```
+
+This snapshot shows the exact contracts and signatures across repositories, preventing incompatibilities.
+
+## Context Management for Microservices
+
+Microservice architectures require special context handling:
+
+```markdown
+# Microservices Context
+
+## Service Communication
+- All services use REST over HTTP with JSON
+- Service discovery via Consul
+- Timeouts: 5s for internal, 30s for external APIs
+- Retry logic: exponential backoff up to 3 attempts
+
+## Data Models
+- User service owns User model
+- Order service owns Order model
+- Events published to message queue for cross-service updates
+- No direct database access between services
+
+## Common Patterns
+- Saga pattern for distributed transactions
+- Event sourcing for audit trail
+- Circuit breaker for failing services
+- Bulkhead isolation for resource constraints
+```
+
+When working across microservices, this context prevents the AI from suggesting inappropriate tight coupling.
+
+## Version Management Across Repos
+
+Track which versions of dependencies are used across services:
+
+```python
+# versions.txt - centralized version registry
+shared-lib: v2.3.0
+  - Used by: auth-service, user-service, api-gateway
+  - Breaking changes: None in 2.2->2.3 migration
+  - Last checked: 2026-03-15
+
+message-queue-client: v1.8.2
+  - Used by: billing-service, notification-service
+  - Known issues: Connection pooling bug in 1.8.0-1.8.1
+  - Upgrade plan: Plan 1.9.0 for Q2 2026
+
+database-driver: v3.1.0
+  - Used by: product-service, inventory-service
+  - Compatibility matrix: Python 3.9+, PostgreSQL 12+
+```
+
+This prevents version-related incompatibilities when working across repos.
+
+## Documentation Requirements for Multi-Repo Features
+
+Create a feature documentation template for cross-repo changes:
+
+```markdown
+# Feature: [Feature Name]
+
+## Affected Repositories
+- [shared-lib]: Updated models and validators
+- [auth-service]: New OAuth provider support
+- [api-gateway]: New authentication endpoints
+
+## Dependencies Between Repos
+1. shared-lib changes must be merged first (1 day buffer for integration)
+2. auth-service can proceed once shared-lib is released
+3. api-gateway depends on auth-service being deployed
+
+## Testing Strategy
+- Unit tests in each repository
+- Integration tests in api-gateway (tests all services)
+- E2E tests verify entire flow end-to-end
+- Staging deployment verification before production
+
+## Rollback Plan
+- If api-gateway fails: revert to previous version (5 min)
+- If auth-service fails: fall back to legacy auth (immediate)
+- If shared-lib fails: requires full rollback of all services (15 min)
+```
+
+## Managing Context Window Limits
+
+With multiple repos, you can easily exceed AI context windows. Manage this by:
+
+```python
+# Be explicit about what matters for this task
+prompt = """
+We're adding a new payment provider to our system.
+
+KEY FILES (please prioritize these):
+- shared-lib/payment/models.py: PaymentProvider interface
+- billing-service/providers/: Existing provider implementations
+- api-gateway/routes/payment.py: API endpoints
+
+REFERENCE ONLY (if needed):
+- Database migrations
+- Documentation files
+- Test files
+
+IGNORE:
+- Other services (auth-service, user-service)
+- Build configurations
+- Unrelated dependencies
+"""
+```
+
+This helps the AI focus on the most important context within window limits.
+
+## Automated Context Updates
+
+Create a system to automatically update context documentation:
+
+```bash
+#!/bin/bash
+# update-context.sh
+
+# Check for broken imports across repos
+for repo in auth-service user-service billing-service; do
+    cd $repo
+    python -m pytest --collect-only > /tmp/imports_$repo.txt
+    if grep -l "import.*not found" /tmp/imports_$repo.txt; then
+        echo "WARNING: Broken imports in $repo"
+    fi
+done
+
+# Validate that all dependencies are pinned to the same versions
+python validate_dependency_versions.py
+
+# Update context snapshot with latest commits
+for repo in shared-lib auth-service; do
+    echo "# From $repo (commit: $(git rev-parse --short HEAD))" >> CONTEXT.md
+done
+```
+
+Run this as a CI job to catch context issues before they cause problems.
+
+## Communication With Your Team
+
+Document the context management approach so teammates understand it:
+
+```markdown
+# Context Management for Multi-Repo Development
+
+## When starting work on a feature:
+1. Check CONTEXT.md for repository relationships
+2. Review versions.txt to confirm compatible versions
+3. If working across multiple repos, create a snapshot of key files
+4. Specify your scope to the AI tool (focus on these repos, ignore those)
+
+## When adding new repositories:
+1. Document dependencies in CONTEXT.md
+2. Add version constraints in versions.txt
+3. Update CI checks for broken imports
+4. Review with team before first use
+
+## When you discover an issue:
+1. Update CONTEXT.md immediately
+2. Notify team in Slack
+3. Add to "known issues" section
+4. Plan fix in next sprint
+```
+
 
 
 
