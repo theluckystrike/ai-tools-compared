@@ -311,7 +311,111 @@ https.get(options, (res) => {
 
 5. Test in CI/CD pipelines: Validate SSL connections during deployment
 
+## Automating Certificate Expiration Monitoring
 
+Certificate expiration is one of the most preventable causes of SSL errors. Set up proactive monitoring rather than discovering expiry when production breaks:
+
+```javascript
+const https = require('https');
+const tls = require('tls');
+
+function checkCertExpiry(hostname, port = 443) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname,
+      port,
+      method: 'GET',
+      rejectUnauthorized: true,
+    };
+
+    const req = https.request(options, (res) => {
+      const cert = res.socket.getPeerCertificate(true);
+      const expiryDate = new Date(cert.valid_to);
+      const daysUntilExpiry = Math.floor(
+        (expiryDate - Date.now()) / (1000 * 60 * 60 * 24)
+      );
+
+      resolve({
+        hostname,
+        subject: cert.subject?.CN,
+        issuer: cert.issuer?.O,
+        expiresAt: expiryDate.toISOString(),
+        daysUntilExpiry,
+        needsRenewal: daysUntilExpiry < 30,
+      });
+    });
+
+    req.on('error', reject);
+    req.end();
+  });
+}
+
+// Check a list of hostnames and alert if any expire within 30 days
+async function auditCertificates(hostnames) {
+  const results = await Promise.allSettled(
+    hostnames.map(h => checkCertExpiry(h))
+  );
+
+  const expiringSoon = results
+    .filter(r => r.status === 'fulfilled' && r.value.needsRenewal)
+    .map(r => r.value);
+
+  if (expiringSoon.length > 0) {
+    console.error('Certificates expiring within 30 days:', expiringSoon);
+    process.exit(1);
+  }
+}
+```
+
+Run this check in CI/CD pipelines on a schedule (daily or weekly) to catch expiring certificates before they cause production incidents.
+
+## Using AI Tools to Interpret Certificate Errors in Context
+
+AI tools accelerate SSL debugging because they can correlate error codes with environment context. The same error code (`UNABLE_TO_VERIFY_LEAF_SIGNATURE`) has different root causes depending on the environment:
+
+- On a fresh Ubuntu server: likely the `ca-certificates` package needs updating
+- In a Docker container: often missing `update-ca-certificates` in the Dockerfile
+- Behind a corporate proxy: the proxy is performing SSL inspection with its own CA
+- After a Node.js upgrade: the bundled CA store may differ from the previous version
+
+When prompting AI tools, always include:
+
+```
+Error: UNABLE_TO_VERIFY_LEAF_SIGNATURE
+Node.js version: node -v output
+OS: uname -a output
+Is Docker involved: yes/no
+Is there a corporate proxy/VPN: yes/no
+When did it start failing: after what change
+```
+
+The more environmental context you provide, the more specific the AI's diagnosis. A prompt that says "SSL error in Node.js" generates generic documentation. A prompt with full context generates targeted commands for your exact environment.
+
+## Solving SSL in Docker Containers
+
+Docker containers are a common SSL debugging context. Node.js Docker images based on `node:alpine` include a minimal CA bundle that doesn't always contain the certificates your application needs:
+
+```dockerfile
+# node:alpine: minimal CA bundle — often missing enterprise or newer CAs
+FROM node:20-alpine
+
+# Fix 1: Update the CA bundle
+RUN apk add --no-cache ca-certificates && update-ca-certificates
+
+# Fix 2: Add a specific internal CA certificate
+COPY certs/internal-root-ca.crt /usr/local/share/ca-certificates/internal-root-ca.crt
+RUN update-ca-certificates
+
+# Fix 3: Point Node.js to the system CA bundle
+ENV NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt
+
+WORKDIR /app
+COPY . .
+RUN npm install
+CMD ["node", "server.js"]
+```
+
+The `NODE_EXTRA_CA_CERTS` environment variable is the cleanest solution — it appends additional certificates to Node.js's built-in CA store without replacing it, avoiding the risk of losing trust in public CAs while adding your internal CA.
 
 ## Related Reading
 
