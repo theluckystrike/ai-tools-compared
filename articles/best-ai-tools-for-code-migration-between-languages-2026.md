@@ -497,4 +497,9 @@ For teams considering language shifts—whether for performance, type safety, or
 
 Start with a single module as a proof-of-concept. If the AI output requires less than 20% rework, commit to migrating the full codebase. Most teams find that AI-assisted conversion is 70–80% cheaper than manual refactoring while producing higher-quality idiomatic code.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
