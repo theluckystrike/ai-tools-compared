@@ -6,8 +6,9 @@ date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /comparing-ai-tools-for-generating-retool-resource-queries-fr/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 {% raw %}
 # Comparing AI Tools for Generating Retool Resource Queries from Natural Language Descriptions
