@@ -11,6 +11,7 @@ tags: [react, cursorrules, ai-tools]
 reviewed: true
 score: 8
 intent-checked: false
+voice-checked: true
 voice-checked: false
 ---
 

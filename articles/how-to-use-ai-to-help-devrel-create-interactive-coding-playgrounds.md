@@ -12,6 +12,7 @@ reviewed: true
 score: 8
 voice-checked: false
 intent-checked: false
+voice-checked: true
 ---
 
 
