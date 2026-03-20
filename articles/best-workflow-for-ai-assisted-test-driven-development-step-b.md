@@ -152,6 +152,30 @@ Relying too heavily on AI leads to tests that do not reflect actual requirements
 
 Some developers skip the refactoring step because tests pass, but this misses an opportunity to improve code quality while having a safety net. Others over-automate, using AI for every test rather than recognizing when a simple test is faster to write manually.
 
+### Test Coverage Issues
+
+AI sometimes generates tests that technically pass but don't exercise edge cases your code needs to handle. Watch for tests that only cover the happy path. If your function should handle null inputs, database timeouts, or malformed data, explicitly ask the AI to include these scenarios.
+
+### False Confidence from Passing Tests
+
+A test suite that passes provides no guarantee your code works correctly. AI-generated tests can contain logic errors where the assertion itself is wrong. For example:
+
+```python
+def test_calculate_discount_applies_percentage(self):
+    result = calculate_discount(100, 0.2)
+    # WRONG: Tests that something was calculated, not that it was calculated correctly
+    assert result is not None  # This passes even with broken implementation
+
+    # CORRECT: Tests the actual expected result
+    assert result == 80
+```
+
+Run tests against intentionally broken code to verify tests fail appropriately.
+
+### Over-Reliance on Single AI Assistant
+
+Different AI assistants produce different test styles and quality. Claude excels at comprehensive edge case coverage. ChatGPT produces more boilerplate. GitHub Copilot suggests patterns from its training data. For critical test suites, generate test outlines from multiple AI sources and merge the best approaches.
+
 
 
 ## Measuring Success
@@ -159,6 +183,40 @@ Some developers skip the refactoring step because tests pass, but this misses an
 
 
 Track how AI-assisted TDD affects your development process. Measure the time spent writing tests versus implementing features. Monitor the number of bugs that slip through to production. Notice how confident you feel when refactoring code that has good test coverage. These metrics help you refine your workflow over time.
+
+### Key Metrics to Track
+
+Track test suite growth over time. Healthy projects see test count increase proportionally with feature count. If test-to-code ratio stays below 0.5:1, you may be under-testing. Compare development velocity before and after adopting AI-assisted TDD. Most teams report 15-30% faster feature delivery once the workflow stabilizes.
+
+Monitor test execution time. As your suite grows, execution time increases. Aim to keep full test suite completion under five minutes locally and under ten minutes in CI. If tests become slower, AI-generated tests with expensive operations may be the culprit—optimize with mocks and fixtures.
+
+Track defect escape rate. Count bugs discovered in production that tests should have caught. Lower escape rates indicate your tests are catching real issues. Compare escape rates before and after implementing AI TDD to measure improvement.
+
+## Tools and AI Assistants for AI-Assisted TDD
+
+Different AI assistants bring different strengths to test generation:
+
+**Claude:** Excels at understanding complex business logic and generating comprehensive edge case tests. Strong at multi-scenario testing and explaining test coverage gaps. Best choice for domain-specific testing.
+
+**ChatGPT:** Fast at generating boilerplate tests. Good for simple CRUD operation testing. Less sophisticated at edge case identification compared to Claude.
+
+**GitHub Copilot:** Integrates directly in your editor. Excellent for suggesting test names and structure based on existing code. Works best when you're writing the test outline yourself.
+
+**Cursor:** Multi-file test generation support. Can generate coordinated test suites across multiple services. Good for integration testing.
+
+Most effective approach: Use Claude for initial test suite architecture, then use Copilot for inline suggestions while writing tests locally.
+
+### Test Generation Comparison Table
+
+| Capability | Claude | ChatGPT | Copilot | Cursor |
+|-----------|--------|---------|---------|--------|
+| Edge case coverage | Excellent | Good | Good | Good |
+| Boilerplate speed | Good | Excellent | Excellent | Good |
+| Integration test design | Excellent | Good | Fair | Excellent |
+| Code explanation | Excellent | Good | Fair | Good |
+| Async/promise handling | Excellent | Good | Good | Good |
+| Mock strategy suggestion | Excellent | Fair | Fair | Good |
+| Cost per test generation | Higher | Lower | Included | Included |
 
 
 

@@ -167,6 +167,107 @@ Maintain Grammarly AI functionality by keeping your extension updated automatica
 
 For teams managing Grammarly across multiple users, deploy consistent browser configurations and whitelist necessary domains in your network infrastructure. This prevents the most common enterprise-related AI failures.
 
+## Advanced Troubleshooting for Power Users
+
+### Memory and Resource Issues
+
+Grammarly AI features require adequate browser memory. Check your browser's task manager:
+
+**Chrome:** Press Shift+Esc to open Task Manager. Grammarly should use 50-150MB. If it exceeds 500MB, restart your browser or reload the extension.
+
+**Firefox:** Use about:processes to monitor memory. Extensions listed as using >200MB may indicate corruption.
+
+**Edge:** Press Shift+Esc for Task Manager. Similar thresholds to Chrome.
+
+If Grammarly consistently uses excessive memory, try:
+1. Remove other heavy extensions
+2. Reduce the number of open tabs
+3. Enable "Lite mode" in Grammarly settings if available
+4. Consider using the desktop application instead
+
+### Proxy and SSL Inspection Issues
+
+Corporate environments using SSL inspection proxies frequently break Grammarly:
+
+In corporate proxy settings, add Grammarly domains to the bypass list:
+```
+- *.grammarly.io
+- *.grammarly.com
+- grammarly.com
+```
+
+This prevents the proxy from decrypting and re-encrypting Grammarly traffic, which breaks authentication and WebSocket connections.
+
+Some organizations use Zscaler or Palo Alto Networks for security. These require explicit exceptions for WebSocket connections:
+
+```
+Policy > SSL Inspection Exclusions
+Add: grammarly.io, grammarly.com
+Protocol: SSL/TLS
+Reason: AI feature dependencies
+```
+
+### Feature-Specific Failures
+
+**AI Tone Detection Not Loading:**
+- Often caused by outdated browser cache
+- Clear specifically Grammarly cookies, not entire browser cache
+- Try incognito mode to test if it's a local storage issue
+
+**Goals Feature Missing:**
+- Requires Premium/Business subscription
+- Verify subscription is active in Grammarly account settings
+- Sign out and sign back in to refresh subscription status
+
+**Suggestions Appearing as Grayed Out:**
+- Indicates Grammarly is running but AI backend is temporarily unavailable
+- Wait 1-2 minutes and reload the page
+- If persistent, restart the extension
+
+### Diagnosis: Creating a Minimal Test Case
+
+Isolate whether the issue is Grammarly-specific or environment-wide:
+
+1. Open a new incognito/private window
+2. Manually install Grammarly (it won't auto-install in incognito)
+3. Navigate to Gmail and try writing an email
+4. Try GitHub code commenting
+5. Try Google Docs
+
+If Grammarly works in incognito, the issue is conflicting extensions or corrupted local data, not Grammarly itself.
+
+If Grammarly fails in incognito, the issue is:
+- Network/firewall blocking grammarly.io
+- Account/subscription issue
+- Grammarly server outage (check status.grammarly.io)
+
+## Alternative Tools When Grammarly Fails
+
+When Grammarly isn't working and you need AI writing assistance immediately:
+
+**Hemingway Editor:** Local tool, no connectivity required. Focuses on readability rather than grammar. Free version available.
+
+**LanguageTool:** Open-source, can be self-hosted. Good grammar coverage, lighter resource use than Grammarly.
+
+**Notion AI:** If writing in Notion, built-in AI features provide basic writing assistance without extension requirements.
+
+**Claude/ChatGPT Web:** For critical writing, paste content directly into ChatGPT for comprehensive review.
+
+## Contact Grammarly Support Effectively
+
+When reaching out to Grammarly support with troubleshooting requests:
+
+Provide:
+1. Browser type and version (Help > About)
+2. Grammarly extension version (chrome://extensions)
+3. Screenshot of the error (from DevTools console)
+4. List of other installed extensions
+5. Whether issue occurs in incognito mode
+
+Include the exact workflow that fails (e.g., "Writing emails in Gmail, clicking the checkmark button for suggestions produces 401 error").
+
+Most issues resolve within 24-48 hours of support response if you provide the above information upfront.
+
 
 
 
