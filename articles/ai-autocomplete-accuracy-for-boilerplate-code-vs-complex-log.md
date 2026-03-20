@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

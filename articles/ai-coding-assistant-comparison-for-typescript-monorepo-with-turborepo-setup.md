@@ -9,8 +9,9 @@ permalink: /ai-coding-assistant-comparison-for-typescript-monorepo-with-turborep
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 {% raw %}
 
