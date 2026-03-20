@@ -218,6 +218,40 @@ When implementing AI for bot comments, keep these considerations in mind:
 
 
 
+## Advanced: Personalizing Beyond the PR Itself
+
+The examples above generate messages based on PR metadata available at the time the workflow runs. You can go further by incorporating repository context that helps AI generate more specific and useful guidance.
+
+Pull the repository's CONTRIBUTING.md or contribution guidelines and include a summary in your AI prompt. This lets the generated message reference your specific review timeline, testing requirements, or coding standards rather than generic advice. If your project requires signed commits, specific branch naming, or changelog entries, the welcome message can mention these requirements before the contributor discovers them through review feedback.
+
+You can also check whether the contributor has already opened issues or commented on discussions. A first-time PR author who has been active in the community deserves a different tone than someone contributing without prior engagement. AI handles these nuances well when given the relevant context as part of the prompt.
+
+## Practical Step-by-Step Setup Guide
+
+Getting AI-generated bot comments working from scratch takes about 30 minutes. Here is the complete sequence.
+
+**Step 1: Create the workflow file.** Add `.github/workflows/welcome-contributor.yml` using the structure shown above. Start with the basic version that uses a static AI prompt before adding dynamic context.
+
+**Step 2: Add your API key as a GitHub secret.** Go to your repository's Settings, then Secrets and Variables, then Actions. Add your AI provider API key as a secret named `AI_API_KEY` or `OPENAI_API_KEY` depending on your provider. Never hardcode API keys in workflow files.
+
+**Step 3: Test with a draft PR.** Open a draft pull request from an account that has no prior contributions to the repository. This triggers the workflow without affecting actual contributors. Review the generated message for tone, accuracy, and completeness.
+
+**Step 4: Iterate on the prompt.** The first version will rarely be perfect. Adjust the prompt to match your project's voice. If your project has a formal tone, tell the AI explicitly. If your community is casual and uses first names, include that instruction.
+
+**Step 5: Add the guidelines link.** Every welcome message should link to your CONTRIBUTING.md, code of conduct, and any issue templates. Add these as fixed parts of your prompt so the AI always includes them regardless of what else it generates.
+
+**Step 6: Monitor real interactions.** Once the workflow is active on real PRs, read the first ten generated comments. Look for patterns where the message is confusing, too long, or mentions things contributors have already done. Each pattern is a prompt improvement opportunity.
+
+## Common Pitfalls to Avoid
+
+**Using the same message for every contributor.** A static AI-generated template provides no advantage over a manually written template. The value comes from adapting the message to each PR's actual content. At minimum, vary the message based on contribution type.
+
+**Missing edge cases in contributor detection.** The workflow logic for detecting first-time contributors needs to handle bots, internal team members, and contributors with unusual histories. Bots that create automated PRs should not trigger welcome messages. Team members opening their first PR in a new repo may not need the same onboarding as external contributors.
+
+**Posting before CI runs.** If your project has CI checks that commonly fail for new contributors (linting, failing tests from common mistakes), consider triggering the welcome message after CI completes so you can include context about any failures. This turns a generic welcome into actionable guidance.
+
+**Not handling the workflow failure case.** If your AI API call fails, the workflow should still complete without error. Catch API failures and fall back to a static default message rather than leaving new contributors with no response at all.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
