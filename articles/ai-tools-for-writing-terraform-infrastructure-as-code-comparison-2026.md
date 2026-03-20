@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
