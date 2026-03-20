@@ -3,7 +3,7 @@ layout: default
 title: "Cursor Tab Accepting Wrong Suggestion Fix"
 description: "Fix Cursor Tab accepting incorrect code suggestions. Step-by-step solutions for developers experiencing AI autocomplete errors in Cursor editor."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /cursor-tab-accepting-wrong-suggestion-fix/
 reviewed: true
 score: 8

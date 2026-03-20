@@ -264,7 +264,7 @@ Flag any sentence over 25 words for simplification.
 - [ChatGPT Plus vs Claude Pro Cost Comparison](/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 - [ChatGPT Team Admin Billing Explained](/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
 
-Built by theluckystrike — More at https://zovo.one
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

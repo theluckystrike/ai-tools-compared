@@ -3,7 +3,7 @@ layout: default
 title: "Best AI Tool for Academic Paper Editing 2026"
 description: "A technical comparison of AI-powered academic paper editing tools for developers and power users in 2026."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /best-ai-tool-for-academic-paper-editing-2026/
 reviewed: true
 score: 8

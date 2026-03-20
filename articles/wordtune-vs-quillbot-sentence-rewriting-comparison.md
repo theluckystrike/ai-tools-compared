@@ -3,7 +3,7 @@ layout: default
 title: "Wordtune vs Quillbot Sentence Rewriting Comparison"
 description: "A technical comparison of Wordtune and Quillbot sentence rewriting capabilities for developers and power users. APIs, integration methods, and."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /wordtune-vs-quillbot-sentence-rewriting-comparison/
 reviewed: true
 score: 8

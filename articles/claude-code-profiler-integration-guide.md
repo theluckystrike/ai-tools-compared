@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code Profiler Integration Guide"
 description: "Learn how to integrate performance profilers with Claude Code to identify bottlenecks, optimize code, and build faster applications."
 date: 2026-03-16
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /claude-code-profiler-integration-guide/
 categories: [guides]
 reviewed: true

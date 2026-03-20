@@ -3,7 +3,7 @@ layout: default
 title: "Cursor Keeps Crashing Fix 2026: Complete Troubleshooting"
 description: " troubleshooting guide to fix Cursor IDE crashes in 2026. Step-by-step solutions for developers and power users experiencing stability issues."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /cursor-keeps-crashing-fix-2026/
 reviewed: true
 score: 8

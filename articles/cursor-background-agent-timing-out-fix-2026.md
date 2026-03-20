@@ -3,7 +3,7 @@ layout: default
 title: "Cursor Background Agent Timing Out Fix (2026)"
 description: "A practical troubleshooting guide for developers and power users facing Cursor background agent timing out issues. Learn step-by-step fixes and."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /cursor-background-agent-timing-out-fix-2026/
 reviewed: true
 score: 8

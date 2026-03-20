@@ -291,7 +291,7 @@ Building your voice translation pipeline requires testing with your specific aud
 - [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
 - [AI Tools Hub](/guides-hub/)
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: default
 title: "Cursor vs Copilot for Adding Type Hints to Untyped Python"
 description: "A practical comparison of Cursor and GitHub Copilot for automatically adding type hints to legacy Python codebases. Which AI coding assistant handles."
 date: 2026-03-16
