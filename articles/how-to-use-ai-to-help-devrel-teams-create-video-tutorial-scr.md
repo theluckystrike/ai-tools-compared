@@ -6,9 +6,9 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, tutorial, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -6,8 +6,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/
 categories: [guides]
-tags: [sre, devops, documentation]
-score: 7
+tags: [ai-tools-compared, sre, devops, documentation, artificial-intelligence]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true

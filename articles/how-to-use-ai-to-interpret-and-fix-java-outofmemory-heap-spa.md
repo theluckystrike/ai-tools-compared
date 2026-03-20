@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true

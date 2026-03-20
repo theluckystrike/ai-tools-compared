@@ -5,11 +5,12 @@ description: "Learn how to use AI tools to create Unicode and emoji edge case te
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
 categories: [guides]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

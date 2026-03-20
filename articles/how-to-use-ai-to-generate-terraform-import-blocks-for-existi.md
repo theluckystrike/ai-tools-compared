@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-terraform-import-blocks-for-existi/
 categories: [guides]
-tags: [terraform, infrastructure-as-code, ai-tools]
+tags: [ai-tools-compared, terraform, infrastructure-as-code, ai-tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

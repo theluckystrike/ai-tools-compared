@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/
 categories: [guides]
-tags: [testing, api, ai]
+tags: [ai-tools-compared, testing, api, ai, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

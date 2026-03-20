@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-kubernetes-network-policies-correc/
 categories: [guides]
-tags: [kubernetes, security, networking]
+tags: [ai-tools-compared, kubernetes, security, networking, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
