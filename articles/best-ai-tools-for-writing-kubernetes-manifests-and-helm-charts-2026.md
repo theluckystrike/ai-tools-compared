@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/
 categories: [guides]
-tags: [kubernetes, helm, ai-tools, devops, yaml]
+tags: [ai-tools-compared, kubernetes, helm, ai-tools, devops, yaml, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
