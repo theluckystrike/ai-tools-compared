@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Migrating Copilot Custom Instructions to Cursor Rules File Format Guide"
-description: "A practical guide for developers on migrating GitHub Copilot custom instructions to Cursor rules files. Learn the differences, conversion strategies, and best practices."
+title: "Migrating Copilot Custom Instructions to Cursor Rules."
+description: "A practical guide for developers on migrating GitHub Copilot custom instructions to Cursor rules files. Learn the differences, conversion strategies."
 date: 2026-03-20
 author: theluckystrike
 permalink: /migrating-copilot-custom-instructions-to-cursor-rules-file-f/
@@ -206,6 +206,11 @@ When migrating, watch for these common issues:
 Converting Copilot custom instructions to Cursor rules files requires restructuring your guidelines into YAML format with distinct sections. The process involves locating your current Copilot settings, converting plain text instructions into structured rules, adding Cursor-specific features like file ignore patterns and example code, and testing the new configuration thoroughly.
 
 Cursor's rule system offers more organizational options than Copilot's simple string-based instructions. Take advantage of multiple rule files, file type specificity, and example embedding to get the most out of your migration.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
