@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

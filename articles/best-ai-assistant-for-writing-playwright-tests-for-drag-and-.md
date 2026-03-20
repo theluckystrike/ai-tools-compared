@@ -7,8 +7,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/
 categories: [guides]
-tags: [tools]
-score: 7
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

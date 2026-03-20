@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true

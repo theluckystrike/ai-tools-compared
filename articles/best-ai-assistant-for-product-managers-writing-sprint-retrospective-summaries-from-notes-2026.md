@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/
 categories: [guides]
-tags: [product-management, ai-tools]
+tags: [ai-tools-compared, product-management, ai-tools, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
