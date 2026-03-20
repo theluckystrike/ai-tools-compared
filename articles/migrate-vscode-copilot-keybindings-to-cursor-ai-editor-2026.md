@@ -103,7 +103,7 @@ Cursor introduces AI-specific commands that replace or extend Copilot functional
 ```
 
 
-Map your existing Copilot keybindings to these Cursor commands for a experience. For example, if you used `Ctrl+Shift+Space` to trigger Copilot generation in VSCode, assign the same shortcut to `cursorai.edit.generate` in Cursor.
+Map your existing Copilot keybindings to these Cursor commands for an experience. For example, if you used `Ctrl+Shift+Space` to trigger Copilot generation in VSCode, assign the same shortcut to `cursorai.edit.generate` in Cursor.
 
 
 

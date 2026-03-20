@@ -190,7 +190,7 @@ test('preserves cart items during network interruption', async ({ page }) => {
 ```
 
 
-This test validates that the application maintains cart state locally even when API calls fail, providing a experience when connectivity returns.
+This test validates that the application maintains cart state locally even when API calls fail, providing an experience when connectivity returns.
 
 
 

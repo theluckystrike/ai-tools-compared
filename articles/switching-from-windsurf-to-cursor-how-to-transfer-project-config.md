@@ -195,7 +195,7 @@ Review each keybinding. Some may conflict with Cursor's default shortcuts and re
 
 
 
-If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for a experience.
+If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for an experience.
 
 
 

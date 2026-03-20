@@ -37,7 +37,7 @@ For developers, this translates into implementing policy engines that can evalua
 
 ### 1. Credal.ai
 
-Credal.ai provides a AI governance platform with strong policy management capabilities. The platform offers real-time policy enforcement, automated compliance mapping, and detailed audit logs.
+Credal.ai provides an AI governance platform with strong policy management capabilities. The platform offers real-time policy enforcement, automated compliance mapping, and detailed audit logs.
 
 **Key Features:**
 - Policy-as-code approach using YAML definitions

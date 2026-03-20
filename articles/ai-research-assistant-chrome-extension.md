@@ -32,7 +32,7 @@ Browser extensions operate within the context of your current workflow. Unlike s
 
 
 
-The real power lies in context awareness. Extensions can read page content, access browser storage, and interact with web APIs, enabling AI to provide relevant assistance based on what you're currently viewing. This integration creates a experience that standalone tools simply cannot match.
+The real power lies in context awareness. Extensions can read page content, access browser storage, and interact with web APIs, enabling AI to provide relevant assistance based on what you're currently viewing. This integration creates an experience that standalone tools simply cannot match.
 
 
 
