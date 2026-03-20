@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /claude-artifacts-vs-chatgpt-canvas-collaborative-coding/
 categories: [guides]
-tags: [ai-tools, collaboration, coding]
+tags: [ai-tools-compared, ai-tools, collaboration, coding, comparison, claude-ai, chatgpt]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

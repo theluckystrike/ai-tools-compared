@@ -5,11 +5,12 @@ description: "A practical guide to the most affordable AI coding assistants for 
 date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-ai-coding-tool-for-indie-game-developer-2026/
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
 categories: [guides]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

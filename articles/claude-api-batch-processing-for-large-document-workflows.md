@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /claude-api-batch-processing-for-large-document-workflows/
 categories: [guides]
-tags: [tools, api, claude, automation]
+tags: [ai-tools-compared, tools, api, claude, automation, workflow, claude-ai]
 reviewed: true
 score: 8
 voice-checked: true

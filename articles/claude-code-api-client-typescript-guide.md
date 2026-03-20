@@ -5,7 +5,7 @@ description: "Learn how to create a TypeScript API client for Claude Code with p
 date: 2026-03-18
 author: theluckystrike
 category: claude-code
-tags: [claude-code, typescript, api-client, type-safety, sdk]
+tags: [ai-tools-compared, claude-code, typescript, api-client, type-safety, sdk, claude-ai, api]
 permalink: /claude-code-api-client-typescript-guide/
 categories: [guides]
 reviewed: true

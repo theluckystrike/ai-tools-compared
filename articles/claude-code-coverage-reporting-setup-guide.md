@@ -6,9 +6,9 @@ date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /claude-code-coverage-reporting-setup-guide/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

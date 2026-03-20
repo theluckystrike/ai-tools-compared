@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-way-to-use-claude-for-coding-projects-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

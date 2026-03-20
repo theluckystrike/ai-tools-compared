@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, comparison, claude-ai, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true

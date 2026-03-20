@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-way-to-get-ai-code-completion-in-vim-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
