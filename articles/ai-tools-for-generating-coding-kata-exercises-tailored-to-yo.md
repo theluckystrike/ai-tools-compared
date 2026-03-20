@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

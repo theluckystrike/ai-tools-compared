@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

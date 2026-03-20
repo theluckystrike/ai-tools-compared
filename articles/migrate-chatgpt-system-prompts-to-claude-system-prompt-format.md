@@ -15,6 +15,7 @@ categories:
   - AI Tools Compared
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-format/
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /how-to-configure-claude-code-to-follow-your-teams-feature-fl/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

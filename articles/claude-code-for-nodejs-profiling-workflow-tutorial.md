@@ -8,6 +8,7 @@ permalink: /claude-code-for-nodejs-profiling-workflow-tutorial/
 categories: [guides, tutorials]
 tags: [claude-code, claude-skills]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

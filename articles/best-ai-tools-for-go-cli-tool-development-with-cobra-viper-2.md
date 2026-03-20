@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/
 categories: [comparisons]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

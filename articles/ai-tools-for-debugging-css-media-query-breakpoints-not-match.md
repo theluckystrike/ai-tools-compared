@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /ai-tools-for-debugging-css-media-query-breakpoints-not-match/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

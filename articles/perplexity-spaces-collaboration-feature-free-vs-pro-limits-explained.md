@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

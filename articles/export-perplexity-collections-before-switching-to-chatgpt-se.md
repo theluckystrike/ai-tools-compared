@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /export-perplexity-collections-before-switching-to-chatgpt-se/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

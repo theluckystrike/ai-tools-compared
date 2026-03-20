@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /legal-research-ai-tools-best-options-for-attorneys-2026/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

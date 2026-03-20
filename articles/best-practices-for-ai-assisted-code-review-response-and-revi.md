@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /best-practices-for-ai-assisted-code-review-response-and-revi/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

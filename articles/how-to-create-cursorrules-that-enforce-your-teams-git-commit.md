@@ -9,6 +9,7 @@ permalink: /how-to-create-cursorrules-that-enforce-your-teams-git-commit/
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

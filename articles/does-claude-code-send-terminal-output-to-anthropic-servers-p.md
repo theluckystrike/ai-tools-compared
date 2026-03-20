@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /does-claude-code-send-terminal-output-to-anthropic-servers-p/
 categories: [security, guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

@@ -9,6 +9,7 @@ permalink: /best-workflow-for-using-ai-to-modernize-legacy-application-a/
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

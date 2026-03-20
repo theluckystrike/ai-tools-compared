@@ -9,6 +9,7 @@ permalink: /how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

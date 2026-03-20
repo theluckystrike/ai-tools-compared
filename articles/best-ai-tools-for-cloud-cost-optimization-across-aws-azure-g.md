@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

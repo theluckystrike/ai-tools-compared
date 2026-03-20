@@ -9,6 +9,7 @@ permalink: /how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

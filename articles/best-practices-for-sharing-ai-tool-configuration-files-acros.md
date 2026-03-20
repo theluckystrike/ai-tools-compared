@@ -8,6 +8,7 @@ permalink: /best-practices-for-sharing-ai-tool-configuration-files-acros/
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

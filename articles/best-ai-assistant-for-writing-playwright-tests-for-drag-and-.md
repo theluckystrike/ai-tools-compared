@@ -9,6 +9,7 @@ permalink: /best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-int
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

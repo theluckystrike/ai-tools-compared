@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /how-to-export-midjourney-images-before-downgrading-plan-2026/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

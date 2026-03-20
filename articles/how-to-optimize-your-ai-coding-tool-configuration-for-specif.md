@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /how-to-optimize-your-ai-coding-tool-configuration-for-specif/
 categories: [tutorials, guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

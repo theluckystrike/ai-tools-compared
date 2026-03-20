@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/
 categories: [comparisons]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

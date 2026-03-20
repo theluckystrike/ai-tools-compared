@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /best-practices-for-ai-tool-customization-files-when-onboardi/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

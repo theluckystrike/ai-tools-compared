@@ -8,6 +8,7 @@ permalink: /claude-code-for-taint-analysis-workflow-tutorial-guide/
 categories: [guides, tutorials]
 tags: [claude-code, security, static-analysis]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

@@ -9,6 +9,7 @@ permalink: /writing-claude-md-files-that-teach-ai-your-project-testing-conventio
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

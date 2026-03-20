@@ -8,6 +8,7 @@ permalink: /switching-from-chatgpt-voice-to-gemini-live-conversation-differences
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

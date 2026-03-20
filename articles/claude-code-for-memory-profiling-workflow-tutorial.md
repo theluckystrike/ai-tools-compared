@@ -8,6 +8,7 @@ permalink: /claude-code-for-memory-profiling-workflow-tutorial/
 categories: [guides, tutorials]
 tags: [claude-code, memory-profiling, performance]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

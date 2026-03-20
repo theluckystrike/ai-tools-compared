@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-docker-images-for-smaller-size/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 {% raw %}

@@ -8,6 +8,7 @@ author: theluckystrike
 permalink: /copilot-next-edit-suggestion-feature-how-it-predicts-your-in/
 categories: [guides]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

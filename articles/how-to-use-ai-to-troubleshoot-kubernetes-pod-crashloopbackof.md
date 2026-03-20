@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/
 categories: [guides, comparisons]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 

@@ -9,6 +9,7 @@ permalink: /ai-tools-for-writing-playwright-tests-that-verify-accessibil/
 categories: [guides]
 tags: [tools]
 score: 7
+voice-checked: true
 reviewed: true
 ---
 
