@@ -443,4 +443,9 @@ git push origin main --tags
 
 Automated changelog generation removes manual toil and increases consistency. Claude API offers the best semantic understanding for messy real-world commits. GitHub Copilot scripts are practical if you're already paying. GPT-4 and Gemini are solid alternatives with different cost-speed tradeoffs. Start with semantic-release as a baseline, then enhance with AI for polish. For most teams shipping 2-4 times per month, the $2-5/month in API costs pay for themselves in recovered engineering time.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
