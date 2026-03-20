@@ -195,19 +195,73 @@ Test after each Apply: Run your tests after applying changes to ensure everythin
 
 
 
+## Advanced Workflow: Multi-File Refactoring with Apply
+
+For larger refactoring tasks, using multiple Apply operations strategically yields better results than attempting one massive change. Here's a practical workflow:
+
+```bash
+# Step 1: Apply model understands context from first change
+cursor-prompt: "Add TypeScript type definitions to the User interface in types/index.ts"
+# Apply generates and applies changes
+
+# Step 2: Then ask for dependent changes
+cursor-prompt: "Now update all functions in services/user.ts to use the new types"
+# Apply tracks the first change and generates compatible updates
+
+# Step 3: Finally update tests
+cursor-prompt: "Update the test file for user service with the new types"
+# Apply knows about both previous changes
+```
+
+This sequential approach works better than asking for all three changes at once. Each Apply operation has context from previous changes because Cursor maintains your edited files in the current state.
+
+## Handling Merge Conflicts and Rollback
+
+When an Apply generates unwanted changes, you have several options:
+
+**Quick revert in diff view:** The diff interface shows exactly what changed. You can deselect individual changes before applying, accepting only the parts you want.
+
+**Undo stack:** After applying changes, you can undo individual Applies to return to previous states. This gives you non-destructive experimentation.
+
+**Comparing multiple approaches:** Some developers keep separate branches or files to test different Apply suggestions side-by-side before committing to changes.
+
+## Performance and Token Costs
+
+The Apply model is optimized for efficiency. A diff-based change uses fewer tokens than regenerating entire files. For developers tracking API costs, this matters significantly:
+
+- Full file rewrite: ~2-4x more tokens than diff-based Apply
+- Multi-file Apply operations: Better cost per change when done sequentially
+- Monthly costs: Apply-heavy workflows often run 30-40% cheaper than chat-only approaches
+
+## Version Control Integration with Apply
+
+Cursor's Apply model integrates seamlessly with git, making it easy to review and revert changes:
+
+```bash
+# Cursor automatically stages Applied changes
+git diff --cached  # Shows what Apply changed
+
+# Review each Applied change before committing
+git add -p  # Stage specific hunks
+
+# If Apply generates unwanted changes, simply revert
+git checkout -- src/file.ts  # Discard specific file
+git reset HEAD  # Unstage Applied changes
+```
+
+This integration means Apply changes behave like normal code edits, giving you full version control power to audit, revert, or selectively commit. Most developers use git status to verify Apply operations before proceeding.
+
+Many teams use Apply as their primary code generation workflow, treating the diff review as mandatory code review for AI-generated changes. This maintains quality while dramatically accelerating development.
+
 ## Limitations and Considerations
-
-
 
 While the Apply model is powerful, it's important to understand its limitations:
 
-
-
-- Complex multi-file changes may require multiple Apply operations
-
-- Very large changes might be better handled through traditional code review
-
-- The model may not always understand project-specific patterns without proper context
+- **Complex multi-file changes** may require multiple Apply operations, especially when files have interdependencies
+- **Very large changes** might be better handled through traditional code review or split into smaller operations
+- **Project-specific patterns** may not be understood without proper context in comments or documentation
+- **Implicit assumptions** in your codebase can cause Apply to misinterpret where changes should go
+- **Test updates** often lag behind implementation changes and may need manual iteration
 
 
 

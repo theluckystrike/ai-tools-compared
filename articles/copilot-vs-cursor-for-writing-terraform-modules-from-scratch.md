@@ -194,19 +194,93 @@ Cursor can assist with both the Terraform configuration and the test code, maint
 
 
 
+## Complete Module Example: DynamoDB Table with Backups
+
+Here's a realistic Terraform module that both tools can help create. Cursor typically generates more complete structures faster, while Copilot works best when you guide it step by step:
+
+```hcl
+# modules/dynamodb_table/variables.tf
+variable "table_name" {
+  description = "Name of the DynamoDB table"
+  type        = string
+}
+
+variable "billing_mode" {
+  description = "Billing mode (PAY_PER_REQUEST or PROVISIONED)"
+  type        = string
+  default     = "PAY_PER_REQUEST"
+}
+
+variable "point_in_time_recovery" {
+  description = "Enable point-in-time recovery"
+  type        = bool
+  default     = true
+}
+
+variable "backup_retention_days" {
+  description = "Number of days to retain backups"
+  type        = number
+  default     = 30
+}
+
+# modules/dynamodb_table/main.tf
+resource "aws_dynamodb_table" "main" {
+  name           = var.table_name
+  billing_mode   = var.billing_mode
+  hash_key       = "id"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+
+  point_in_time_recovery {
+    enabled = var.point_in_time_recovery
+  }
+
+  tags = {
+    ManagedBy = "Terraform"
+    BackupDays = var.backup_retention_days
+  }
+}
+
+# modules/dynamodb_table/outputs.tf
+output "table_arn" {
+  value = aws_dynamodb_table.main.arn
+}
+
+output "table_name" {
+  value = aws_dynamodb_table.main.name
+}
+```
+
+Both tools can generate this, but Cursor typically produces it as a cohesive unit, while Copilot works better when you scaffold each file first.
+
+## Cost Comparison and Pricing (2026)
+
+- **GitHub Copilot**: $10/month individual, $19/month business
+- **Cursor**: $20/month Pro, unlimited usage
+- **Claude Code**: Free CLI + pay-as-you-go API ($3 per 1M input tokens)
+
+For Terraform development specifically, cost-per-query matters less than iteration speed. Cursor's codebase indexing justifies higher cost when you're developing multiple related modules.
+
 ## Which Tool Should You Choose
 
+For Terraform module development from scratch, **Cursor generally provides a better experience**. Its ability to maintain context across your entire module, have conversational interactions about infrastructure requirements, and perform multi-file refactoring makes it well-suited for infrastructure work where consistency matters.
 
+**GitHub Copilot remains useful if:**
+- You prefer traditional IDE integration
+- You're comfortable guiding the completion engine with explicit code patterns
+- You work well with incremental improvements to existing modules
+- You're generating boilerplate when you already know the structure
 
-For Terraform module development from scratch, Cursor generally provides a better experience. Its ability to maintain context across your entire module, have conversational interactions about infrastructure requirements, and perform multi-file refactoring makes it well-suited for infrastructure work where consistency matters.
+**Claude Code works well for:**
+- Terminal-first developers who prefer CLI workflows
+- Refactoring large existing modules
+- Explaining infrastructure patterns and debugging errors
+- Pay-as-you-go workflows without subscription costs
 
-
-
-GitHub Copilot remains useful if you prefer traditional IDE integration and are comfortable guiding the completion engine with explicit code patterns. It works well for adding incremental improvements to existing modules or generating boilerplate when you already know the structure you need.
-
-
-
-Both tools improve with clear, descriptive comments in your Terraform code. Taking time to document your variable purposes and resource intentions helps either assistant provide more accurate suggestions.
+Both tools improve dramatically with clear, descriptive comments in your Terraform code. Taking time to document your variable purposes and resource intentions helps either assistant provide more accurate suggestions. The key difference is workflow: Cursor for collaborative, context-aware development; Copilot for quick completions within existing editors.
 
 
 

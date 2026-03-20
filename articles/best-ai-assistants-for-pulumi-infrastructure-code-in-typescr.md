@@ -199,19 +199,172 @@ AI assistants can generate this complete setup from a simple description, then y
 
 
 
+## Real-World Multi-Stack Pulumi Project
+
+Here's how AI assistants help with a complete production setup spanning multiple stacks:
+
+```typescript
+// Pulumi.yaml structure
+// stacks: dev, staging, prod
+// resources: VPC, RDS, Lambda, API Gateway
+
+import * as pulumi from "@pulumi/pulumi";
+import * as aws from "@pulumi/aws";
+import * as awsx from "@pulumi/awsx";
+
+const config = new pulumi.Config();
+const environment = pulumi.getStack();
+const region = config.require("aws:region");
+
+// VPC Stack - shared across all environments
+const vpc = new awsx.ec2.Vpc(`${environment}-vpc`, {
+  cidrBlock: config.require("vpc-cidr"),
+  enableDnsHostnames: true,
+  enableDnsSupport: true,
+  tags: { Environment: environment },
+});
+
+// RDS Stack - with multi-AZ in production
+const dbInstance = new aws.rds.Instance(`${environment}-db`, {
+  engine: "postgres",
+  engineVersion: "15.3",
+  instanceClass: environment === "prod" ? "db.r6i.xlarge" : "db.t3.micro",
+  allocatedStorage: environment === "prod" ? 500 : 20,
+  multiAz: environment === "prod",
+  vpcSecurityGroupIds: [dbSecurityGroup.id],
+  dbSubnetGroupName: dbSubnetGroup.name,
+  skipFinalSnapshot: environment !== "prod",
+  backupRetentionPeriod: environment === "prod" ? 30 : 7,
+  storageEncrypted: true,
+  username: config.requireSecret("db-username"),
+  password: config.requireSecret("db-password"),
+  tags: { Environment: environment },
+}, { protect: environment === "prod" });
+
+// Lambda Stack with API Gateway
+const apiRole = new aws.iam.Role(`${environment}-api-role`, {
+  assumeRolePolicy: JSON.stringify({
+    Version: "2012-10-17",
+    Statement: [{
+      Action: "sts:AssumeRole",
+      Effect: "Allow",
+      Principal: { Service: "lambda.amazonaws.com" },
+    }],
+  }),
+});
+
+const lambdaFunction = new aws.lambda.Function(`${environment}-api`, {
+  runtime: "nodejs20.x",
+  handler: "dist/index.handler",
+  role: apiRole.arn,
+  code: new pulumi.asset.AssetArchive({
+    ".": new pulumi.asset.FileArchive("./dist"),
+  }),
+  environment: {
+    variables: {
+      DATABASE_URL: pulumi.concat("postgresql://",
+        config.requireSecret("db-username"),
+        "@",
+        dbInstance.endpoint),
+      ENVIRONMENT: environment,
+      LOG_LEVEL: environment === "prod" ? "info" : "debug",
+    },
+  },
+  timeout: 30,
+  memorySize: environment === "prod" ? 512 : 256,
+  tags: { Environment: environment },
+}, { protect: environment === "prod" });
+
+// API Gateway
+const api = new awsx.apigateway.API(`${environment}-api`, {
+  routes: [
+    {
+      path: "/health",
+      method: "GET",
+      eventHandler: healthHandler,
+    },
+    {
+      path: "/api/{proxy+}",
+      method: "ANY",
+      eventHandler: lambdaFunction,
+    },
+  ],
+});
+
+// Outputs
+export const apiEndpoint = api.url;
+export const dbEndpoint = dbInstance.endpoint;
+export const dbName = dbInstance.name;
+```
+
+AI assistants generate this complete structure when you describe your infrastructure needs. They understand Pulumi conventions, multi-environment patterns, and security best practices like encryption defaults and least-privilege IAM.
+
+## Cost Optimization Tips (AI-Generated)
+
+AI tools can analyze your Pulumi code and suggest cost reductions:
+
+```bash
+# Using Cursor or Claude Code
+cursor-prompt: "Review this Pulumi stack for cost optimization. Suggest changes to reduce AWS monthly costs while maintaining production reliability."
+```
+
+Common AI suggestions include:
+- Downsize compute in non-production (t3.micro vs r6i.xlarge)
+- Enable auto-shutdown for development resources
+- Use spot instances for non-critical workloads
+- Consolidate databases or use read replicas
+- Enable S3 intelligent-tiering
+
+## Testing Pulumi Infrastructure Code
+
+AI helps generate tests for your infrastructure:
+
+```typescript
+import * as pulumi from "@pulumi/pulumi";
+import { describe, it, expect } from "@jest/globals";
+
+describe("Pulumi Stack", () => {
+  it("should create VPC with correct CIDR block", async () => {
+    const stack = await pulumi.automation.select({
+      stackName: "dev",
+      projectName: "my-project",
+    });
+
+    const outputs = await stack.outputs();
+    expect(outputs.vpcId).toBeDefined();
+  });
+
+  it("should enforce encryption on RDS", async () => {
+    // Verify RDS instance has StorageEncrypted = true
+    // AI generates appropriate assertions
+  });
+});
+```
+
+## Pricing and Tool Recommendations (2026)
+
+| Tool | Cost | Strengths for Pulumi |
+|------|------|---------------------|
+| GitHub Copilot | $10/month | Good IDE integration, solid TypeScript |
+| Cursor | $20/month | Best codebase context, fastest iteration |
+| Claude Code | Free + $3/1M tokens | Excellent reasoning, pay-as-you-go |
+| Amazon CodeWhisperer | Free tier | AWS-specific knowledge, IAM expertise |
+| ChatGPT API | $3/1M input tokens | General-purpose, good for troubleshooting |
+
+For Pulumi development, **Cursor edges ahead due to codebase indexing** that understands your stack definitions, but **Claude Code offers the best value** for teams running low-volume infrastructure projects.
+
 ## Best Practices for AI-Assisted Pulumi Development
 
+Always review AI-generated code before deploying to production. While assistants are helpful, they may not understand your specific security requirements or organizational policies. **Verify:**
+- IAM policies follow least-privilege principles (no `*` permissions)
+- Encryption is enabled for storage services
+- Backup and retention policies match compliance requirements
+- Resource naming conventions align with your standards
+- Cross-stack references are correct
 
+Maintain documentation alongside AI-generated code. Infrastructure code serves as documentation for your system architecture, so add comments explaining why specific configurations were chosen—especially for non-obvious decisions around sizing, encryption, or networking.
 
-Always review AI-generated code before deploying to production. While assistants are helpful, they may not understand your specific security requirements or organizational policies. Verify IAM policies follow least-privilege principles, check that encryption settings meet compliance requirements, and confirm resource naming conventions align with your standards.
-
-
-
-Maintain documentation alongside AI-generated code. Infrastructure code serves as documentation for your system architecture, so add comments explaining why specific configurations were chosen.
-
-
-
-Test infrastructure changes in non-production environments first. Pulumi's preview functionality works well with AI-generated code, but testing ensures your infrastructure behaves as expected.
+Test infrastructure changes in non-production environments first. Pulumi's preview functionality works well with AI-generated code, but testing ensures your infrastructure behaves as expected. Use `pulumi preview` to verify changes before `pulumi up`.
 
 
 

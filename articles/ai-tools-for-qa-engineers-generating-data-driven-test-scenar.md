@@ -197,19 +197,177 @@ Review generated tests for proper error handling and assertions. AI generates fu
 
 
 
+## Framework-Specific Test Generation Patterns
+
+AI tools adapt to your testing framework. Here are real patterns for different environments:
+
+**Ruby/RSpec:**
+
+```ruby
+require 'csv'
+require 'rspec'
+
+class RegistrationTestData
+  def self.load_from_csv(file_path)
+    CSV.read(file_path, headers: true).map do |row|
+      row.to_h.transform_keys(&:to_sym)
+    end
+  end
+end
+
+describe 'User Registration' do
+  test_cases = RegistrationTestData.load_from_csv('spec/fixtures/registration_cases.csv')
+
+  test_cases.each do |test_case|
+    context "registering #{test_case[:username]}" do
+      it 'returns expected result' do
+        result = register_user(
+          test_case[:username],
+          test_case[:email],
+          test_case[:password]
+        )
+
+        expect(result[:success]).to eq(test_case[:expected_result] == 'success')
+        if test_case[:error_message].present?
+          expect(result[:error]).to include(test_case[:error_message])
+        end
+      end
+    end
+  end
+end
+```
+
+**Go/Testing:**
+
+```go
+package registration
+
+import (
+	"encoding/csv"
+	"os"
+	"testing"
+)
+
+type TestCase struct {
+	Username      string
+	Email         string
+	Password      string
+	ExpectedResult string
+	ErrorMessage  string
+}
+
+func loadCSV(filePath string) ([]TestCase, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+
+	reader := csv.NewReader(file)
+	records, err := reader.ReadAll()
+	if err != nil {
+		return nil, err
+	}
+
+	var cases []TestCase
+	for _, record := range records[1:] {
+		cases = append(cases, TestCase{
+			Username:       record[0],
+			Email:          record[1],
+			Password:       record[2],
+			ExpectedResult: record[3],
+			ErrorMessage:   record[4],
+		})
+	}
+
+	return cases, nil
+}
+
+func TestRegistration(t *testing.T) {
+	cases, err := loadCSV("test_data.csv")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	for _, tc := range cases {
+		t.Run(tc.Username, func(t *testing.T) {
+			result := RegisterUser(tc.Email, tc.Password)
+
+			if tc.ExpectedResult == "success" {
+				if !result.Success {
+					t.Errorf("expected success, got error: %v", result.Error)
+				}
+			} else {
+				if result.Success {
+					t.Errorf("expected error, but got success")
+				}
+				if !strings.Contains(result.Error, tc.ErrorMessage) {
+					t.Errorf("expected error containing %q, got %q", tc.ErrorMessage, result.Error)
+				}
+			}
+		})
+	}
+}
+```
+
+## Automating Data Generation with AI
+
+Beyond mapping CSV to tests, AI tools generate test data variations:
+
+```bash
+# Using Claude Code to expand limited CSV data
+claude "I have 10 test cases for user registration. Generate 30 additional edge case rows for these CSV columns: username, email, password, expected_result, error_message. Include: SQL injection attempts, XSS payloads, boundary usernames (1 char, 255 chars), invalid emails, weak passwords, duplicate scenarios."
+```
+
+AI recognizes common security and boundary test cases and expands your baseline data significantly.
+
+## Continuous Test Generation in CI
+
+Integrate CSV-based test generation into your pipeline:
+
+```yaml
+# GitHub Actions: Generate and run tests from CSV
+name: Data-Driven Tests
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+
+      - name: Generate tests from CSV
+        run: python scripts/generate_tests.py test_data.csv tests/generated_tests.py
+
+      - name: Run pytest
+        run: pytest tests/
+
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+```
+
+## Best Practices for AI-Assisted CSV Test Generation
+
+Providing clear context dramatically improves AI-generated test quality. Include the CSV header row, data types, and any business rules in your prompt. Specify your testing framework and whether you need unit tests, integration tests, or end-to-end scenarios.
+
+**Key practice improvements:**
+
+1. **Semantic CSV naming**: Use descriptive column names (user_age, not age; registration_status, not status) so AI understands meaning
+2. **Comments in CSV**: Add comment rows explaining test categories and why specific data matters
+3. **Type annotations**: Include data types in your prompt so AI generates proper conversions and validations
+4. **Domain knowledge**: Mention business rules, constraints, and common error scenarios
+5. **Test organization**: Ask AI to group related test cases and name them descriptively
+
+Review generated tests for proper error handling and assertions. AI generates functional test structure, but domain-specific validation logic often requires human refinement. Ensure test isolation, proper setup and teardown, and meaningful test names that describe the scenario being validated.
+
 ## Implementation Workflow
-
-
 
 Start by preparing a representative CSV file with your test data. Include both positive and negative cases, edge conditions, and boundary values. Provide this CSV to your AI assistant along with context about your application and testing framework.
 
-
-
 Iterate on the generated tests by running them against your codebase. Identify gaps in coverage and ask AI to generate additional test cases. Maintain your CSV as the single source of truth, regenerating tests when data changes.
 
-
-
-This approach separates test data from test logic, making maintenance straightforward. When business requirements change, update the CSV rather than modifying test code across multiple files.
+**This approach separates test data from test logic, making maintenance straightforward.** When business requirements change, update the CSV rather than modifying test code across multiple files. When you need new test variations, expand the CSV and regenerate the test code.
 
 
 
