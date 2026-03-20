@@ -225,10 +225,90 @@ abuse_detection:
 4. **Document exceptions**: Know which endpoints need higher limits
 5. **Test at scale**: Simulate realistic traffic patterns before deployment
 
+## AI Tool Prompting Strategies for Rate Limiting Code
+
+Getting useful rate limiting code from AI tools requires specific context. Generic prompts produce generic Express middleware. These prompting patterns produce better output:
+
+**Specify your infrastructure stack.** "I use Kong API Gateway deployed on Kubernetes with Redis Cluster for rate limit storage" produces more accurate configuration than "I need rate limiting for my API."
+
+**Describe your API's traffic profile.** "Our read endpoints have burst traffic from mobile apps (up to 200 req/sec for 5 seconds, then calm for minutes)" lets AI tools recommend burst-tolerant algorithms like token bucket over fixed window.
+
+**Include your authentication model.** Rate limiting per IP address behaves differently from per-API-key or per-user-session. Specify which identifier your limits should track.
+
+**Ask for the failure mode explicitly.** AI tools often default to `fault_tolerant: true` (fail-open) without explaining the tradeoff. Ask "generate rate limiting config and explain the behavior when Redis is unavailable" to get both options with their security implications.
+
+## Validating Rate Limit Headers
+
+Correct rate limit behavior is partially invisible — clients need headers to understand their current quota and when it resets. AI tools frequently generate the limiting logic but omit header validation tests. Add these explicitly:
+
+```javascript
+describe('Rate Limit Response Headers', () => {
+  it('returns rate limit headers on successful requests', async () => {
+    const response = await request(app)
+      .get('/api/v1/data')
+      .set('X-API-Key', validApiKey);
+
+    expect(response.headers['x-ratelimit-limit']).toBeDefined();
+    expect(response.headers['x-ratelimit-remaining']).toBeDefined();
+    expect(response.headers['x-ratelimit-reset']).toBeDefined();
+    expect(parseInt(response.headers['x-ratelimit-remaining'])).toBeLessThanOrEqual(
+      parseInt(response.headers['x-ratelimit-limit'])
+    );
+  });
+
+  it('returns Retry-After header when rate limited', async () => {
+    // Exhaust rate limit
+    for (let i = 0; i < 101; i++) {
+      await request(app).get('/api/v1/data').set('X-API-Key', validApiKey);
+    }
+
+    const limitedResponse = await request(app)
+      .get('/api/v1/data')
+      .set('X-API-Key', validApiKey);
+
+    expect(limitedResponse.status).toBe(429);
+    expect(limitedResponse.headers['retry-after']).toBeDefined();
+    expect(parseInt(limitedResponse.headers['retry-after'])).toBeGreaterThan(0);
+  });
+});
+```
+
+## Distributed Rate Limiting Considerations
+
+Single-node rate limiters break when your API runs behind a load balancer across multiple instances. Each instance maintains its own counter, so a client can exceed your intended limit by a factor equal to the number of instances.
+
+Claude and Copilot both handle this correctly when you specify "distributed" in the prompt, generating Redis-backed configurations automatically. Cursor tends to generate in-memory implementations unless Redis is mentioned explicitly.
+
+The Redis-backed approach with proper key design:
+
+```javascript
+const rateLimit = require('express-rate-limit');
+const RedisStore = require('rate-limit-redis');
+const { createClient } = require('redis');
+
+const redisClient = createClient({ url: process.env.REDIS_URL });
+
+const distributedLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  store: new RedisStore({
+    sendCommand: (...args) => redisClient.sendCommand(args),
+    // Key prefix prevents collision with other Redis consumers
+    prefix: 'rl:api:',
+  }),
+  keyGenerator: (req) => {
+    // Use user ID from JWT if authenticated, IP otherwise
+    return req.user?.id || req.ip;
+  },
+});
+```
+
+The `prefix` parameter is important in shared Redis instances — without it, your rate limit keys can collide with session storage or cache keys from other services.
+
 ## Conclusion
 
 AI tools significantly accelerate rate limiting and abuse detection configuration by generating test cases, validating edge cases, and producing working code. The key is combining AI-generated configurations with thorough testing to ensure your APIs remain protected without blocking legitimate users.
-
 
 ## Related Reading
 

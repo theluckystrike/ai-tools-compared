@@ -281,6 +281,100 @@ Claude Code can actively enforce versioning rules during development:
 4. Update version in appropriate files
 ```
 
+## Multi-Language Version File Synchronization
+
+Projects often have version strings in multiple files: `package.json` for npm, `pyproject.toml` for Python packages, `Chart.yaml` for Helm charts, and potentially a `VERSION` file for shell scripts to consume. A single version bump must update all of them atomically.
+
+Claude Code can generate the synchronization script from your project layout:
+
+```bash
+# Prompt Claude Code:
+# "Read the repository and identify all files that contain version strings.
+#  Generate a script that bumps them all simultaneously from the current
+#  version to a new version provided as an argument."
+
+# Generated: scripts/sync-versions.sh
+#!/bin/bash
+set -euo pipefail
+
+NEW_VERSION="${1:?Usage: sync-versions.sh <new-version>}"
+
+# Validate SemVer format
+if ! [[ "$NEW_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+  echo "Error: version must be in X.Y.Z format" >&2
+  exit 1
+fi
+
+# Update package.json
+jq --arg v "$NEW_VERSION" '.version = $v' package.json > package.json.tmp
+mv package.json.tmp package.json
+
+# Update pyproject.toml
+sed -i "s/^version = .*/version = \"$NEW_VERSION\"/" pyproject.toml
+
+# Update Chart.yaml
+sed -i "s/^appVersion: .*/appVersion: \"$NEW_VERSION\"/" charts/myapp/Chart.yaml
+
+# Update plain VERSION file
+echo "$NEW_VERSION" > VERSION
+
+echo "Version bumped to $NEW_VERSION across all files"
+git diff --stat
+```
+
+The key advantage is that Claude Code generates this script from your actual project structure rather than a generic template — it scans for version patterns before writing the sync logic.
+
+## Pre-Commit Hooks for Conventional Commits Enforcement
+
+Automated version detection only works if commit messages consistently follow the convention. Use `commitlint` with a Git pre-commit hook to enforce format before commits land in history:
+
+```bash
+# Install commitlint
+npm install --save-dev @commitlint/config-conventional @commitlint/cli husky
+
+# Configure commitlint
+echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
+
+# Initialize husky and add commit-msg hook
+npx husky init
+echo "npx --no -- commitlint --edit \$1" > .husky/commit-msg
+```
+
+Claude Code can help generate custom commitlint rules for your project if you have domain-specific scopes or prefixes that the conventional config doesn't cover:
+
+```javascript
+// commitlint.config.js - extended with project-specific scopes
+module.exports = {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'scope-enum': [2, 'always', [
+      'api', 'auth', 'database', 'ui', 'infra', 'docs', 'deps', 'ci'
+    ]],
+    'body-max-line-length': [1, 'always', 100],
+  }
+};
+```
+
+## Dry-Run Mode Before Publishing
+
+Before any automated release publishes a package, run a dry-run that previews what will change without making network calls:
+
+```bash
+# npm dry run — prints what would be published
+npm publish --dry-run
+
+# For Python packages using hatch or build + twine:
+python -m build --sdist --wheel
+twine check dist/*
+# Confirm package contents before upload
+
+# Preview GitHub release notes without creating the release:
+gh release create v${NEW_VERSION} --draft \
+  --title "Release v${NEW_VERSION}" \
+  --notes "$(node scripts/generate-changelog.js)"
+```
+
+Claude Code handles dry-run generation well — prompt it with "Add a dry-run mode that previews version changes without modifying files or making network calls" and it correctly adds `--dry-run` flags or conditional logic that skips write operations.
 
 ## Related Reading
 
