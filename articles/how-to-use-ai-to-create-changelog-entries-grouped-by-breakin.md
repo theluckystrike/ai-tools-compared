@@ -261,3 +261,4 @@ When using AI for changelog generation, watch for these issues:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

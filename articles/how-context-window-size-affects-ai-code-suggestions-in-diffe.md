@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Context Window Size Affects AI Code Suggestions in."
+title: "How Context Window Size Affects AI Code Suggestions"
 description: "Discover how AI context window size impacts code suggestions across VS Code, JetBrains, and other IDEs. Practical examples and guidance for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -263,3 +263,4 @@ The difference between a 4K token window and a 128K token window isn't just nume
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

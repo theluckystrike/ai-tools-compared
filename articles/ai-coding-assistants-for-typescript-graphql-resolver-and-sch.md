@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistants for TypeScript GraphQL Resolver and."
+title: "AI Coding Assistants for Typescript Graphql Resolver and"
 description: "A practical guide to AI coding assistants that help generate TypeScript GraphQL resolvers and schemas, with code examples and tool recommendations for."
 date: 2026-03-16
 author: theluckystrike

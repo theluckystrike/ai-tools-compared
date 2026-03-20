@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Test Data Snapshots for Database."
+title: "AI Tools for Creating Test Data Snapshots for Database"
 description: "A practical guide to AI-powered tools that help developers create, manage, and restore database snapshots for reliable test automation."
 date: 2026-03-16
 author: theluckystrike

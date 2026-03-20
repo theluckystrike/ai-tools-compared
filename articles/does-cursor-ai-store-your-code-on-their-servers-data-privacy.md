@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Does Cursor AI Store Your Code on Their Servers? Data."
+title: "Does Cursor AI Store Your Code on Their Servers Data Privacy"
 description: "A technical breakdown of how Cursor AI handles your code data. Learn about their privacy policy, data retention practices, and configuration options."
 date: 2026-03-16
 author: theluckystrike
@@ -267,3 +267,4 @@ The key takeaway: Cursor AI stores your code on their servers for processing, bu
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

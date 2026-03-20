@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT API Fine Tuning Costs: Training Plus Inference."
+title: "ChatGPT API Fine Tuning Costs Training Plus Inference Total"
 description: "A breakdown of ChatGPT API fine-tuning costs, including training expenses and inference pricing. Learn how OpenAI bills for fine-tuned models."
 date: 2026-03-18
 author: "theluckystrike"
@@ -332,3 +332,5 @@ Monitor your fine-tuning job and test the results before deploying to production
 - [Best AI Tools for Cost Optimization](/ai-tools-compared/best-ai-tools-cloud-cost-optimization/)
 
 Built by theluckystrike — More at zovo.one
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

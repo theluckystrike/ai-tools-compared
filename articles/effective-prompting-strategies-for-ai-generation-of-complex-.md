@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Prompting Strategies for AI Generation of."
+title: "Effective Prompting Strategies for AI Generation of Complex"
 description: "Master the art of prompting AI tools to generate complex SQL queries. Learn proven strategies with practical examples for developers and power users."
 date: 2026-03-16
 author: theluckystrike
@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
+{% raw %}
 {% raw %}
 Writing SQL queries with AI requires prompting strategies that specify your database schema, expected query patterns, and performance constraints upfront. This guide demonstrates which prompt structures, examples, and follow-up questions produce correct, optimized SQL across complex joins, aggregations, and window functions.
 

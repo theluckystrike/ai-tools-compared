@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Postmortem Generation: Automating Incident Root Cause."
+title: "AI Postmortem Generation"
 description: "A practical guide to AI postmortem generation for developers and power users. Learn how to automate incident root cause analysis with code examples and."
 date: 2026-03-20
 author: theluckystrike

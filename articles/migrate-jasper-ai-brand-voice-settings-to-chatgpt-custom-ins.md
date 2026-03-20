@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate Jasper AI Brand Voice Settings to ChatGPT."
+title: "Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins"
 description: "A practical guide for developers and power users moving brand voice configurations from Jasper AI to ChatGPT custom instructions with code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -264,3 +264,4 @@ For complex brand requirements, consider storing brand configurations in a datab
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

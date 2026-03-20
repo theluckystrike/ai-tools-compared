@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Using AI to Generate Regression Tests Automatically From."
+title: "AI for Automated Regression Test Generation from Bug Reports"
 description: "Learn how Claude, ChatGPT, and Copilot generate comprehensive regression tests directly from bug reports, saving weeks of manual test writing."
 date: 2026-03-20
 author: theluckystrike
@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 Regression testing consumes 30-50% of QA timelines for mature products, yet AI tools can now generate 60-80% of required test cases directly from bug reports. Instead of manually writing test cases for every reported defect, modern AI coding assistants analyze the bug description, root cause, reproduction steps, and existing code to generate comprehensive test suites that catch regressions in future releases.
 
 This guide shows you how to prompt AI tools effectively for test generation, which tools perform best for different tech stacks, and how to integrate AI-generated tests into your CI/CD pipeline.
@@ -307,4 +308,5 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading
 
 Explore more AI testing workflows at [AI Tools Compared Guides Hub](/ai-tools-compared/guides-hub/)
+{% endraw %}
 {% endraw %}

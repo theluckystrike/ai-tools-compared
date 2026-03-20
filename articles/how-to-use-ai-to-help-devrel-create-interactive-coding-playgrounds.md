@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Help DevRel Create Interactive Coding."
+title: "How to Use AI to Help Devrel Create Interactive Coding"
 description: "A practical guide for developer relations teams on using AI tools to build interactive coding playgrounds that engage developers and showcase product."
 date: 2026-03-18
 author: "AI Tools Compared"

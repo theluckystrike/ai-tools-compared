@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Context Management Strategies for AI Coding in."
+title: "Effective Context Management Strategies for AI Coding"
 description: "Practical strategies and techniques for managing AI coding assistant context in large monorepo projects. Learn how to optimize prompts, reduce token."
 date: 2026-03-16
 author: theluckystrike
@@ -213,3 +213,4 @@ As AI coding tools continue evolving, context management strategies will adapt. 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

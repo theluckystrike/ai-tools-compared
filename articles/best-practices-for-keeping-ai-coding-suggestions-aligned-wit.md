@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Keeping AI Coding Suggestions Aligned."
+title: "Best Practices for Keeping AI Coding Suggestions Aligned"
 description: "A practical guide for developers on maintaining design pattern consistency when using AI coding assistants, with real-world examples and actionable."
 date: 2026-03-16
 author: theluckystrike
@@ -297,3 +297,4 @@ Regular measurement reveals which strategies work best for your team and helps i
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI IDE Features for Database Query Writing and."
+title: "Best AI IDE Features for Database Query Writing and"
 description: "Discover the most powerful AI-powered IDE features that transform how developers write, test, and optimize database queries in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -293,3 +293,4 @@ The best tools combine these features, providing value from your first query whi
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

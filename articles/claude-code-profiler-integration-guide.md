@@ -368,3 +368,4 @@ Claude Code can help interpret common profiling patterns:
 - [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

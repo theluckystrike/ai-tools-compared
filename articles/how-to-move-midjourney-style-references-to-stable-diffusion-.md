@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Move Midjourney Style References to Stable."
+title: "How to Move Midjourney Style References to Stable Diffusion"
 description: "A practical guide for developers and power users on transferring Midjourney style prompts to Stable Diffusion LoRA training pipelines."
 date: 2026-03-16
 author: theluckystrike

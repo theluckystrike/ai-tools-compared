@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Writing Cursorrules File That Improves"
+title: "Best Practices for Writing .cursorrules File That Improves"
 description: "Learn how to write effective .cursorrules files that dramatically improve code suggestion quality in Cursor AI. Includes practical examples and."
 date: 2026-03-16
 author: theluckystrike
@@ -291,3 +291,4 @@ Remember that the goal is not to include every possible preference, but to focus
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

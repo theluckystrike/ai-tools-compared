@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Export ChatGPT Shared Links Before Account."
+title: "How to Export ChatGPT Shared Links Before Account Deletion"
 description: "A practical guide to exporting your ChatGPT shared links before deleting your account. Step-by-step instructions with Python scripts and API methods."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Chrome Extension for Budget Tracker Shopping Chrome."
+title: "Chrome Extension Budget Tracker Shopping"
 description: "Discover the best Chrome extensions for tracking your shopping budget, saving money on online purchases, and managing expenses while browsing."
 date: 2026-03-15
 author: "AI Tools Compared"
@@ -255,3 +255,4 @@ if (price !== null) {
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

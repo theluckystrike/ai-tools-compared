@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Coding Tools for Java Microservices with Spring."
+title: "Best AI Coding Tools for Java Microservices"
 description: "Compare the top AI coding assistants for building Java microservices with Spring Cloud. Practical examples, code generation quality, and."
 date: 2026-03-16
 author: "theluckystrike"

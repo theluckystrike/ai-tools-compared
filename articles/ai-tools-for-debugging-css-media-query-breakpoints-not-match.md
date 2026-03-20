@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Debugging CSS Media Query Breakpoints Not."
+title: "AI Tools for Debugging CSS Media Query Breakpoints Not Match"
 description: "Practical guide to using AI tools for debugging CSS media query breakpoint issues. Learn techniques to identify and fix viewport size mismatches in."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configure AI Coding Tools to Respect Your Team's Branch Naming Conventions"
+title: "Configure AI Coding Tools"
 description: "A practical guide for developers on configuring AI coding assistants to follow your team's branch naming conventions. Code examples and configuration tips included."
 date: 2026-03-16
 author: theluckystrike
@@ -296,3 +296,4 @@ This catches misnamed branches before they're pushed, complementing your AI conf
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

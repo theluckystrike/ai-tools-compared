@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lakehouse vs Data Warehouse for AI Workloads: Ai Comparison"
+title: "Lakehouse vs Data Warehouse for AI Workloads: AI Comparison"
 description: "A practical comparison of lakehouse and data warehouse architectures for AI and machine learning workloads, with code examples and implementation guidance."
 date: 2026-03-15
 author: "AI Tools Compared"
@@ -253,3 +253,4 @@ The gap between both approaches narrows as vendors add capabilities. But the und
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

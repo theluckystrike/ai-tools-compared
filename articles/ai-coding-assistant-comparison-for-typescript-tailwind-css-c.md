@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Comparison for TypeScript Tailwind Css"
+title: "AI Coding Assistant Comparison for TypeScript Tailwind CSS"
 description: "A practical comparison of AI coding assistants for TypeScript Tailwind CSS class generation, with code examples and quality assessment for developers."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Generating Open Source Release."
+title: "Best AI Assistant for Generating Open Source Release"
 description: "Discover the best AI assistants for crafting professional open source release announcements with practical examples and tool comparisons."
 date: 2026-03-18
 author: "AI Tools Compared"
@@ -280,3 +280,4 @@ Regardless of which AI tool you use, follow these practices to ensure quality an
 - [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

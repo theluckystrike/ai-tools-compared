@@ -218,4 +218,7 @@ Accuracy verification requirements vary by tool — some require more human revi
 - [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
 
 Built by theluckystrike — More at [https://zovo.one](https://zovo.one)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Inline Completion for Writing Function."
+title: "How to Use AI Inline Completion"
 description: "Learn practical techniques for using AI inline completion to write function signatures faster. Real examples for Python, JavaScript, TypeScript, and more."
 date: 2026-03-16
 author: theluckystrike

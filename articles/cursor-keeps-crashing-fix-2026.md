@@ -292,3 +292,4 @@ vm_stat | awk '/Pages free/ || /Pages active/ || /Pages wired/'
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

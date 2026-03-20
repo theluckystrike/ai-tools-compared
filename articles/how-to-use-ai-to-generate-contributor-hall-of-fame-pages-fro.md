@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Contributor Hall of Fame Pages."
+title: "How to Use AI to Generate Contributor Hall of Fame Pages Fro"
 description: "A practical guide for developers on using AI to analyze git history and automatically generate contributor hall of fame pages. Code examples and."
 date: 2026-03-16
 author: theluckystrike
@@ -304,3 +304,4 @@ When using AI to generate hall of fame content, keep these considerations in min
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

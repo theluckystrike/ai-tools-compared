@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Writing Playwright Tests for Drag."
+title: "Best AI Assistant for Writing Playwright Tests"
 description: "A practical guide for developers comparing AI assistants that help write Playwright tests specifically for drag and drop interactions."
 date: 2026-03-16
 author: theluckystrike

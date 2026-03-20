@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing Claude.md Files That Teach AI Your Project."
+title: "Writing Claude Md Files That Teach AI Your Project Testing"
 description: "A practical guide to creating CLAUDE.md files that communicate your testing conventions, patterns, and best practices to AI coding assistants. Includes."
 date: 2026-03-16
 author: theluckystrike
@@ -258,3 +258,4 @@ A CLAUDE.md that doesn't reflect reality wastes everyone's time. Keep it honest 
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

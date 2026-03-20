@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Session Data Lifecycle: From Request."
+title: "AI Coding Assistant Session Data Lifecycle"
 description: "A guide to how AI coding assistants handle your session data, from the moment you send a request until permanent deletion. Learn the."
 date: 2026-03-16
 author: theluckystrike
@@ -280,3 +280,4 @@ To maintain control over your AI coding assistant data:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

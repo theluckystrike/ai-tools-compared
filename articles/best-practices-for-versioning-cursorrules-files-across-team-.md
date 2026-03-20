@@ -314,3 +314,4 @@ Follow these guidelines to maintain effective CursorRules version control:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

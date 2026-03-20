@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison 2026"
+title: "Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison"
 description: "Head-to-head comparison of Claude Sonnet and GPT-4o for code review. Covers bug detection, security analysis, style enforcement with real code examples."
 date: 2026-03-20
 author: theluckystrike

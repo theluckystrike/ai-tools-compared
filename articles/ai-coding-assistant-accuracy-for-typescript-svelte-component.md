@@ -276,3 +276,4 @@ When evaluating AI assistants for TypeScript Svelte component generation, consid
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

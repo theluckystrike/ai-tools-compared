@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Combining AI Code Generation with."
+title: "Best Practices for Combining AI Code Generation"
 description: "A practical guide for developers on integrating AI code generation with manual code review. Learn workflows, patterns, and strategies to maximize code."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "LALAL.AI vs iZotope RX: Audio Source Separation for."
+title: "Lalal AI vs Izotope Rx Audio Separation"
 description: "A technical comparison of LALAL.AI and iZotope RX for audio source separation, with API integration examples and use case recommendations for developers."
 date: 2026-03-15
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Audit What Source Code AI Coding Tools Transmit."
+title: "How to Audit What Source Code AI Coding Tools Transmit"
 description: "Learn practical methods to audit and monitor what source code your AI coding assistants transmit to external servers. Code examples and tools for."
 date: 2026-03-16
 author: theluckystrike
@@ -332,3 +332,4 @@ After auditing, consider these mitigation strategies:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

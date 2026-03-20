@@ -291,3 +291,4 @@ Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

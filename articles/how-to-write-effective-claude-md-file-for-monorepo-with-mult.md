@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Effective CLAUDE MD File for Monorepo With Mult"
+title: "How to Write Effective CLAUDE MD File for monorepo With Mult"
 description: "A practical guide to creating CLAUDE.md files that help AI understand your monorepo architecture, service boundaries, and shared dependencies."
 date: 2026-03-16
 author: theluckystrike
@@ -302,3 +302,4 @@ The investment in maintaining a CLAUDE.md pays dividends in reduced AI hallucina
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

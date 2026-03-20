@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Generate Mermaid Sequence Diagrams from API."
+title: "How to Generate Mermaid Sequence Diagrams from API Endpoint"
 description: "A practical guide for developers to automatically create Mermaid sequence diagrams from API endpoint descriptions using AI tools, with code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -339,3 +339,4 @@ Several techniques improve diagram generation results:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

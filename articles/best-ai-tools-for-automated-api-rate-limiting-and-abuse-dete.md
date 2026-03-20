@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Tools for Automated API Rate Limiting and Abuse Detection Configuration Testing"
+title: "Best AI Tools for Automated API Rate Limiting and Abuse"
 description: "Discover how AI tools can help configure, test, and validate rate limiting rules and abuse detection systems for your APIs. Practical examples and code snippets included."
 date: 2026-03-16
 author: "AI Tools Compared"

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Generate OpenAPI specs from existing codebases using AI."
+title: "Generate Openapi Specs from Existing Codebase AI Tools"
 description: "Step-by-step guide to using AI tools to extract and generate complete OpenAPI/Swagger specifications from your existing API code."
 date: 2026-03-20
 author: theluckystrike

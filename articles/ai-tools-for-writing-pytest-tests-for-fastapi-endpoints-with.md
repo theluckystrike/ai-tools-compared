@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Pytest Tests for FastAPI Endpoints"
+title: "AI Tools for Writing pytest Tests for FastAPI Endpoints"
 description: "A practical guide for developers comparing AI tools that help write pytest tests for FastAPI endpoints with dependency injection, including code."
 date: 2026-03-16
 author: theluckystrike
@@ -294,3 +294,4 @@ The best approach involves using AI to generate initial test patterns, then manu
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

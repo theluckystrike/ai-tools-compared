@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Detecting Duplicate GitHub Issues Using."
+title: "AI Tools for Detecting Duplicate GitHub Issues Using"
 description: "A practical guide for developers using AI-powered semantic similarity tools to identify and merge duplicate GitHub issues automatically."
 date: 2026-03-16
 author: theluckystrike
@@ -387,3 +387,4 @@ Most projects see 30-40% reduction in duplicate issues within the first month, w
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

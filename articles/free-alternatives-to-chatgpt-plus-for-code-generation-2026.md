@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Free Alternatives to ChatGPT Plus for Code Generation in."
+title: "Free Alternatives to ChatGPT Plus for Code Generation"
 description: "Discover the best free AI coding assistants that rival ChatGPT Plus. Compare features, capabilities, and find the perfect free tool for your coding needs."
 date: 2026-03-17
 author: "AI Tools Compared"
@@ -395,3 +395,4 @@ echo "Continue.dev configured -- open VS Code and press Cmd+I to chat"
 - [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

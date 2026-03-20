@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Language-Specific Code Style and."
+title: "Best AI Tools for Language Specific Code Style and"
 description: "A practical guide to AI tools that enforce language-specific code style and conventions, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -230,3 +230,4 @@ The key is consistency—using AI tools that understand and enforce your team's 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Activity Diagrams from User."
+title: "How to Use AI to Generate Activity Diagrams from User"
 description: "A practical guide for developers on using AI tools to automatically generate UML activity diagrams from user acceptance criteria, with code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -359,3 +359,4 @@ Solution: Use AI tools with code execution capabilities to validate syntax befor
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format"
+title: "Writing Custom Instructions That Make AI Follow Your Team's"
 description: "A practical guide to creating custom AI instructions that enforce your team's changelog format. Code examples and implementation patterns for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -285,3 +285,4 @@ Keep your instructions in version control alongside your project code. This ensu
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

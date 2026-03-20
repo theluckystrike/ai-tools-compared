@@ -1,7 +1,7 @@
 ---
 categories: [guides]
 layout: default
-title: "Best Way to Configure Claude Code to Understand Your."
+title: "Best Way to Configure Claude Code to Understand Your Interna"
 description: "A practical guide for developers on configuring Claude Code to understand and work with internal library APIs, with configuration examples and best."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Playwright Tests That Verify."
+title: "AI Tools for Writing Playwright Tests That Verify Accessibil"
 description: "A practical guide to using AI tools for creating Playwright tests that automatically verify WCAG accessibility compliance. Code examples and."
 date: 2026-03-16
 author: theluckystrike
@@ -321,3 +321,4 @@ Maintain Test Suites: Accessibility standards evolve. Use AI to help update exis
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

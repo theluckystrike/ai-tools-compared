@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cheapest AI Tool for Generating Entire Project from."
+title: "Cheapest AI Tool for Generating Entire Project"
 description: "Find the most affordable AI tools that can generate complete project structures from a simple description. Compare pricing, features, and real-world costs."
 date: 2026-03-17
 author: theluckystrike
@@ -282,3 +282,4 @@ result = generate_project("flask", "SQLAlchemy, REST API, authentication")
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

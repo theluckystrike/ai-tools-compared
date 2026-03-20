@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configure Claude Code to Follow Your Team's Feature Flag Naming Conventions"
+title: "Configure Claude Code"
 description: "A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration tips."
 date: 2026-03-16
 author: theluckystrike
@@ -263,3 +263,4 @@ Claude Code works best when it has complete context. If you notice generated fla
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

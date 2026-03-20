@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "HubSpot vs Salesforce Service Cloud AI: A Developer."
+title: "Hubspot vs Salesforce Service Cloud AI"
 description: "A practical technical comparison of HubSpot and Salesforce Service Cloud AI capabilities, with API examples and integration insights for developers."
 date: 2026-03-15
 author: theluckystrike

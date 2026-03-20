@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Go gRPC Service Definitions."
+title: "Best AI Tools for Writing Go gRPC Service Definitions and"
 description: "A practical guide comparing AI coding assistants for generating Go gRPC services, Protobuf definitions, and server implementations."
 date: 2026-03-16
 author: theluckystrike

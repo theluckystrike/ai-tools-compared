@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing Good First Issue Descriptions That."
+title: "Best AI for Writing Good First Issue Descriptions That"
 description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes."
 date: 2026-03-16
 author: theluckystrike
@@ -224,3 +224,4 @@ Create a template for first-time contributor issues in our Python Django project
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

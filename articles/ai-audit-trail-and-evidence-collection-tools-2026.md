@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Audit Trail and Evidence Collection Tools 2026: A."
+title: "AI Audit Trail and Evidence Collection Tools"
 description: "A practical guide to AI audit trail and evidence collection tools for developers and power users. Compare solutions, see code examples, and implement."
 date: 2026-03-20
 author: "AI Tools Compared"

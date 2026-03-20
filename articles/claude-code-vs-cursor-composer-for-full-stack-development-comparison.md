@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code vs Cursor Composer for Full-Stack."
+title: "Claude Code vs Cursor Composer"
 description: "Deep comparison of Claude Code CLI and Cursor Composer for building full-stack apps. Workflow differences, context handling, multi-file editing, pricing."
 date: 2026-03-20
 author: theluckystrike

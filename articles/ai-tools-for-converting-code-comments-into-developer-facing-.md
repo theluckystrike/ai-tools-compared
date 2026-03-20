@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Converting Code Comments into."
+title: "AI Tools for Converting Code Comments into Developer Facing"
 description: "Discover how AI tools transform code comments into professional developer documentation. Practical examples and implementation guide for automating."
 date: 2026-03-16
 author: theluckystrike
@@ -248,3 +248,4 @@ Many tools integrate directly with documentation hosting platforms, automaticall
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GitHub Copilot vs Amazon CodeWhisperer for AWS."
+title: "GitHub Copilot vs Amazon Codewhisperer for AWS Development"
 description: "Head-to-head comparison of GitHub Copilot and CodeWhisperer for AWS work. Lambda, CDK, IAM policies, CloudFormation with real accuracy benchmarks."
 date: 2026-03-20
 author: theluckystrike
@@ -399,3 +399,4 @@ Copilot's accuracy edge on policies tips the scales for security-sensitive work.
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

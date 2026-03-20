@@ -292,3 +292,4 @@ Claude Code can actively enforce versioning rules during development:
 - [Writing CLAUDE MD Files That Define Your Project's API Versioning Strategy for AI](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

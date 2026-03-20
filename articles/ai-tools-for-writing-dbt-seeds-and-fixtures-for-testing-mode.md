@@ -13,7 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
-
+{% raw %}
 {% raw %}
 
 AI tools can generate dbt seeds and fixtures that cover edge cases, null handling, and boundary conditions without manual construction. By analyzing your model code or schema, AI produces CSV seed files and YAML fixtures that exercise specific transformation logic and validate correctness. These tools handle volume-based testing, relationship integrity across related tables, and realistic data distributions that mirror production patterns.
@@ -319,3 +319,4 @@ Maintain your generated seeds in version control alongside your models. Update s
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

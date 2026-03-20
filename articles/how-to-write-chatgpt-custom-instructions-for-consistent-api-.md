@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write ChatGPT Custom Instructions for Consistent."
+title: "How to Write ChatGPT Custom Instructions"
 description: "A practical guide for developers on crafting effective ChatGPT custom instructions that produce consistent, high-quality API design recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -271,3 +271,4 @@ Consider keeping a backup of your custom instructions in a document. This lets y
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

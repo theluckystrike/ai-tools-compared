@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Custom Instructions That Make AI Respect."
+title: "How to Write Custom Instructions That Make AI Respect Your"
 description: "Learn to write effective custom instructions that help AI tools respect your API rate limits. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -291,3 +291,4 @@ The more context you provide about your specific environment and constraints, th
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

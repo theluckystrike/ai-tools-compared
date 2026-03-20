@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude API Tool Use and Function Calling: Pricing and."
+title: "Claude API Tool Use Function Calling Pricing How Tokens Are"
 description: "A guide to understanding Claude API tool use, function calling mechanics, and how tokens are counted for pricing. Practical examples for."
 date: 2026-03-16
 author: theluckystrike
@@ -275,3 +275,4 @@ Understanding these mechanics enables you to build applications that use Claude'
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

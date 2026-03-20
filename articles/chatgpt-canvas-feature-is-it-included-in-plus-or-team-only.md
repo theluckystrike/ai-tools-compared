@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT Canvas Feature - Is It Included in Plus or Team."
+title: "ChatGPT Canvas Feature Is It Included in Plus or Team Only"
 description: "A practical guide explaining whether ChatGPT Canvas is included in ChatGPT Plus or Team subscriptions, with feature availability details for each plan."
 date: 2026-03-19
 author: theluckystrike
@@ -265,4 +265,7 @@ Flag any sentence over 25 words for simplification.
 - [ChatGPT Team Admin Billing Explained](/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
 
 Built by theluckystrike — More at https://zovo.one
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}

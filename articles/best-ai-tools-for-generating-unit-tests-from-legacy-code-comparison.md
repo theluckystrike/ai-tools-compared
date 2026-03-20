@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Generating Unit Tests from Legacy Code Comparison"
+title: "Best AI Tools for Generating Unit Tests"
 description: "Compare AI tools for automatically generating unit tests from untested legacy code. Covers Copilot, Cursor, Claude, Diffblue with real examples and coverage metrics."
 date: 2026-03-20
 author: theluckystrike

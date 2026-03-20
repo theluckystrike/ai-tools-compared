@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Prevent AI Coding Tools from Generating Overly."
+title: "How to Prevent AI Coding Tools from Generating Overly"
 description: "A practical guide for developers on how to keep AI-generated code simple, maintainable, and focused. Includes techniques and prompts that work."
 date: 2026-03-16
 author: theluckystrike

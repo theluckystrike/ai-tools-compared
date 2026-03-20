@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude API Pay-Per-Token vs Pro Subscription: Which Is."
+title: "Claude API Pay Per Token vs Pro Subscription Which Cheaper"
 description: "A practical cost comparison between Claude API pay-per-token pricing and Claude Pro subscription. Calculate which option saves you money based on your."
 date: 2026-03-16
 author: theluckystrike

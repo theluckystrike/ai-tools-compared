@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Comprehensive Git Commit Messages Using AI."
+title: "How to Write Comprehensive Git Commit Messages Using AI"
 description: "Learn how to use AI tools to generate detailed, context-rich git commit messages directly from code diffs, improving team communication and code history."
 date: 2026-03-20
 author: theluckystrike
@@ -269,3 +269,5 @@ Future developers debugging authentication issues can read this message and unde
 ## Footer
 
 AI commit message generation works best as part of a broader development workflow that emphasizes code quality and team communication. Pair this with pre-commit linters and comprehensive code review processes for maximum effectiveness. Consider your team's naming conventions and commit history before deploying automation—the goal is to amplify good practices, not enforce arbitrary standards.
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Slow on Large Monorepo Fix (2026)"
+title: "Cursor AI Slow on Large monorepo Fix (2026)"
 description: "Troubleshooting guide for fixing Cursor AI performance issues on large monorepos. Step-by-step solutions and diagnostic tips for developers."
 date: 2026-03-15
 author: "AI Tools Compared"

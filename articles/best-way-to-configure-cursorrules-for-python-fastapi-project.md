@@ -315,3 +315,4 @@ The time invested in configuring CursorRules properly pays dividends through imp
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

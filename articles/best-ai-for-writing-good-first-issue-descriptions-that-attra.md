@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing Good First Issue Descriptions That Attract New Contributors"
+title: "Best AI for Writing Good First Issue Descriptions That"
 description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects in 2026. Includes."
 date: 2026-03-16
 author: theluckystrike
@@ -267,3 +267,4 @@ Getting the best results requires some refinement:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
