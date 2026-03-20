@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tab-organizer-chrome-extension/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

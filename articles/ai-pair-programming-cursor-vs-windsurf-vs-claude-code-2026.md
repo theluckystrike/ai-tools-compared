@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/
 categories: [guides]
-tags: [tools, pair-programming, development]
+tags: [ai-tools-compared, tools, pair-programming, development, comparison, artificial-intelligence, claude-ai]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

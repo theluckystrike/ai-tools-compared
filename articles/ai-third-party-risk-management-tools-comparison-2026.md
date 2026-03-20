@@ -7,7 +7,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-third-party-risk-management-tools-comparison-2026/
 categories: [comparisons]
-tags: [tprm, vendor-risk, security-automation]
+tags: [ai-tools-compared, tprm, vendor-risk, security-automation, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

@@ -11,6 +11,7 @@ score: 8
 categories: [enterprise]
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

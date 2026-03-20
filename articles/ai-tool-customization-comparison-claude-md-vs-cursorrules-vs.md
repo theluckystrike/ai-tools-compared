@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, artificial-intelligence, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

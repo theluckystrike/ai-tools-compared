@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-penetration-test-findings-common-vulnerabilit/
 categories: [guides]
-tags: [ai-tools, penetration-testing]
+tags: [ai-tools-compared, ai-tools, penetration-testing, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
