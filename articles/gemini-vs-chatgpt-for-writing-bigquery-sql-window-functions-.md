@@ -213,8 +213,229 @@ For production queries where correctness matters most, Gemini's tighter BigQuery
 
 Both tools will continue improving, and the gap between them narrows with each model update. The best approach is understanding both tools' strengths and selecting based on your immediate need.
 
+## Practical Window Function Test Cases
 
+Test both tools with real-world scenarios to evaluate their competence:
 
+```sql
+-- Test 1: Running totals with NULL handling
+SELECT
+  transaction_date,
+  amount,
+  SUM(amount) IGNORE NULLS OVER (
+    ORDER BY transaction_date
+    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+  ) AS running_total,
+  COUNT(*) OVER (
+    ORDER BY transaction_date
+    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+  ) AS transaction_count
+FROM transactions
+WHERE EXTRACT(YEAR FROM transaction_date) = 2025;
+
+-- Test 2: Ranking with tie handling and gaps
+SELECT
+  department,
+  employee_name,
+  salary,
+  RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS rank,
+  DENSE_RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS dense_rank,
+  ROW_NUMBER() OVER (PARTITION BY department ORDER BY salary DESC) AS row_number,
+  salary - LAG(salary) OVER (PARTITION BY department ORDER BY salary DESC) AS salary_diff
+FROM employees;
+
+-- Test 3: Cumulative percentages
+SELECT
+  product_category,
+  sales_amount,
+  SUM(sales_amount) OVER (
+    PARTITION BY product_category
+  ) AS category_total,
+  ROUND(
+    100.0 * SUM(sales_amount) OVER (
+      PARTITION BY product_category
+      ORDER BY sales_amount DESC
+      ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) / SUM(sales_amount) OVER (PARTITION BY product_category),
+    2
+  ) AS cumulative_percentage
+FROM monthly_sales
+ORDER BY product_category, sales_amount DESC;
+```
+
+## Comparing Generated SQL Quality
+
+Here's how to evaluate the quality of generated SQL:
+
+```python
+def evaluate_sql_quality(sql_string):
+    """Assess generated SQL for correctness and efficiency"""
+
+    quality_metrics = {
+        'syntax': check_syntax(sql_string),
+        'window_frame_correctness': check_window_frames(sql_string),
+        'null_handling': check_null_handling(sql_string),
+        'partition_logic': check_partition_logic(sql_string),
+        'index_friendliness': check_index_usage(sql_string),
+        'performance': estimate_execution_cost(sql_string)
+    }
+
+    return quality_metrics
+
+def check_window_frames(sql):
+    """Verify window frame specifications are correct"""
+    issues = []
+
+    # Check for missing ORDER BY in ranking functions
+    if 'RANK() OVER' in sql and 'ORDER BY' not in sql:
+        issues.append('RANK() without ORDER BY')
+
+    # Check for unbounded frames without explicit bounds
+    if 'OVER (' in sql and 'ROWS BETWEEN' not in sql and 'RANGE BETWEEN' not in sql:
+        # Implicit frame might be unexpected
+        issues.append('Implicit window frame - verify expected behavior')
+
+    # Check for confusing RANGE vs ROWS
+    if 'RANGE' in sql:
+        # RANGE has different semantics than ROWS
+        issues.append('Using RANGE frame - ensure this is intentional')
+
+    return issues
+
+def check_null_handling(sql):
+    """Verify NULL values are handled correctly"""
+    issues = []
+
+    # Check for IGNORE NULLS in aggregate functions
+    if 'AVG(' in sql and 'IGNORE NULLS' not in sql:
+        issues.append('AVG() without IGNORE NULLS - NULLs will be skipped automatically')
+
+    # Check for proper NULL comparisons
+    if '= NULL' in sql or '!= NULL' in sql:
+        issues.append('Incorrect NULL comparison - use IS NULL / IS NOT NULL')
+
+    return issues
+
+def check_partition_logic(sql):
+    """Verify PARTITION BY logic matches intent"""
+    issues = []
+
+    # Check for single-value partitions
+    partition_clause = extract_partition_clause(sql)
+    if partition_clause and len(partition_clause.split(',')) > 3:
+        issues.append('Partitioning by many columns - verify this is intentional')
+
+    return issues
+```
+
+## Cost Implications of Different Approaches
+
+Window functions can have significant cost differences in BigQuery:
+
+| Approach | Cost Per GB | Notes |
+|---|---|---|
+| Single OVER clause | 1.0x | Baseline |
+| Multiple PARTITION BY | 1.2x | Scans same data multiple times |
+| Nested window functions | 1.5x | Creates intermediate results |
+| Self-join alternative | 2.0x-5.0x | Much less efficient |
+| Approximate functions | 0.3x | APPROX_QUANTILES faster but less precise |
+
+Window functions are generally the most cost-efficient approach for analytical queries.
+
+## Handling BigQuery-Specific Features
+
+Both tools need to understand BigQuery's unique features:
+
+```sql
+-- STRUCT and ARRAY handling in window functions
+SELECT
+  user_id,
+  ARRAY_AGG(STRUCT(
+    event_type,
+    event_timestamp,
+    event_properties
+  ) ORDER BY event_timestamp DESC LIMIT 5) OVER (
+    PARTITION BY user_id
+  ) AS last_5_events,
+
+  ARRAY_LENGTH(ARRAY_AGG(DISTINCT event_type) OVER (
+    PARTITION BY user_id
+  )) AS unique_event_types
+FROM events
+WHERE _TABLE_SUFFIX BETWEEN '20250101' AND '20250131';
+
+-- QUALIFY clause (BigQuery-specific alternative to WHERE with window functions)
+SELECT
+  user_id,
+  purchase_amount,
+  RANK() OVER (PARTITION BY user_id ORDER BY purchase_amount DESC) AS rank
+FROM purchases
+QUALIFY rank <= 5;  -- Filter window results without subquery
+
+-- WINDOW clause for reusable frame specifications
+SELECT
+  date,
+  revenue,
+  AVG(revenue) OVER daily_window,
+  SUM(revenue) OVER monthly_window
+FROM daily_metrics
+WINDOW
+  daily_window AS (ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW),
+  monthly_window AS (ORDER BY date ROWS BETWEEN 29 PRECEDING AND CURRENT ROW);
+```
+
+BigQuery's QUALIFY clause and reusable WINDOW definitions are powerful features that simpler SQL dialects don't support. Top-tier AI tools should understand and leverage these.
+
+## Testing with Real BigQuery Data
+
+The only true test is running generated queries against real data:
+
+```python
+from google.cloud import bigquery
+import time
+
+def benchmark_generated_sql(sql_chatgpt, sql_gemini, dataset):
+    """Compare execution of two SQL versions"""
+
+    client = bigquery.Client()
+
+    results = {}
+
+    for name, sql in [('ChatGPT', sql_chatgpt), ('Gemini', sql_gemini)]:
+        job_config = bigquery.QueryJobConfig()
+        job_config.use_query_cache = False
+
+        start = time.time()
+        query_job = client.query(sql, job_config=job_config)
+        result = query_job.result()
+        duration = time.time() - start
+
+        bytes_scanned = query_job.total_bytes_processed
+        bytes_billed = query_job.total_bytes_billed
+
+        results[name] = {
+            'rows_returned': result.total_rows,
+            'duration_seconds': duration,
+            'bytes_scanned': bytes_scanned,
+            'bytes_billed': bytes_billed,
+            'estimated_cost': (bytes_billed / 1e12) * 6.25  # $6.25 per TB
+        }
+
+    return results
+```
+
+## Decision Framework for Your Use Case
+
+Choose based on your specific needs:
+
+| Criteria | Gemini | ChatGPT |
+|---|---|---|
+| First-time correct | Better | Good |
+| BigQuery-specific syntax | Better | Needs clarification |
+| Complex business logic | Better | Good |
+| Educational value | Good | Better |
+| Iterative refinement | Better | Good |
+| Cost optimization | Similar | Similar |
 
 
 ## Related Reading

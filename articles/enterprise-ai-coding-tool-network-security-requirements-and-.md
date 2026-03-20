@@ -163,6 +163,150 @@ if __name__ == '__main__':
 
 Run this validation script regularly to catch configuration drift before it impacts developer productivity.
 
+## Setting Up VPN and Secure Tunneling for Distributed Teams
+
+Enterprise teams often require VPN integration to protect AI coding tool traffic across distributed networks. Configure your VPN to tunnel all AI tool traffic through your organization's secure infrastructure:
+
+```bash
+# OpenVPN configuration for tunneling AI tool traffic
+remote vpn.company.com 443
+
+# Route specific AI service destinations through VPN
+route api.githubcopilot.com
+route api.cursor.sh
+route api.claude.ai
+
+# Enable data encryption
+cipher AES-256-GCM
+auth SHA-512
+```
+
+This ensures that even if developers work from untrusted networks, all communication with AI services remains encrypted and passes through your security monitoring infrastructure.
+
+## Certificate Pinning and HTTPS Validation
+
+For sensitive environments, implement certificate pinning to ensure your connections reach the legitimate API endpoints and not man-in-the-middle compromises. This prevents attackers from spoofing trusted AI service domains using valid but incorrect certificates.
+
+```python
+#!/usr/bin/env python3
+# Certificate pinning validator
+import ssl
+import socket
+import hashlib
+
+def verify_certificate_pin(domain, expected_pin):
+    """Verify that server certificate matches expected pin"""
+    context = ssl.create_default_context()
+    conn = socket.create_connection((domain, 443), timeout=5)
+
+    with context.wrap_socket(conn, server_hostname=domain) as ssock:
+        der_cert = ssock.getpeercert(binary_form=True)
+        cert_pin = hashlib.sha256(der_cert).hexdigest()
+
+        if cert_pin == expected_pin:
+            print(f"✓ Certificate pin verified for {domain}")
+            return True
+        else:
+            print(f"✗ Certificate pin mismatch for {domain}")
+            return False
+
+# Pre-computed certificate pins for AI services
+TRUSTED_PINS = {
+    'api.githubcopilot.com': 'abc123def456...',
+    'api.cursor.sh': 'xyz789uvw012...',
+    'api.claude.ai': 'pqr345stu678...'
+}
+
+for domain, pin in TRUSTED_PINS.items():
+    verify_certificate_pin(domain, pin)
+```
+
+## Rate Limiting and Abuse Prevention
+
+Implement rate limiting to prevent compromised developer accounts from overwhelming your infrastructure or the AI service endpoints. Use token bucket algorithms to establish fair usage policies:
+
+```nginx
+# Nginx rate limiting configuration
+limit_req_zone $binary_remote_addr zone=ai_tools:10m rate=10r/s;
+limit_req_status 429;
+
+server {
+    location /copilot/ {
+        limit_req zone=ai_tools burst=20 nodelay;
+        proxy_pass https://api.githubcopilot.com/;
+    }
+
+    location /cursor/ {
+        limit_req zone=ai_tools burst=20 nodelay;
+        proxy_pass https://api.cursor.sh/;
+    }
+}
+```
+
+This configuration limits each developer to 10 requests per second with bursting up to 20, protecting both your network and the external services.
+
+## Logging and Compliance Audit Trails
+
+Comprehensive logging enables compliance teams to verify that your security controls function correctly. Log all connection attempts, denials, and policy violations:
+
+```bash
+# rsyslog configuration for AI tool access logging
+:programname, isequal, "firewall" /var/log/ai-tools-access.log
+:programname, isequal, "firewall" stop
+
+# Log format includes timestamps, source IPs, and destinations
+$template AIToolsLog, "%TIMESTAMP:::date-rfc3339% [%HOSTNAME%] %syslogtag% %msg%\n"
+```
+
+Maintain these logs for at least 12 months to support security audits and incident investigations. Configure log rotation to prevent disk space exhaustion:
+
+```bash
+# logrotate configuration
+/var/log/ai-tools-access.log {
+    daily
+    rotate 365
+    compress
+    delaycompress
+    missingok
+    notifempty
+}
+```
+
+## Data Classification and Sensitive Code Protection
+
+Classify code being sent to AI tools and implement rules preventing transmission of sensitive data. Many enterprises require explicit tagging of sensitive code:
+
+```python
+# Sensitive code detector
+import re
+
+class SensitiveCodeDetector:
+    """Detects sensitive patterns that shouldn't be sent to AI tools"""
+
+    SENSITIVE_PATTERNS = [
+        r'password\s*=\s*["\'].*["\']',
+        r'api[_-]?key\s*=\s*["\'].*["\']',
+        r'private[_-]?key\s*=\s*["\'].*["\']',
+        r'token\s*=\s*["\'].*["\']',
+        r'secret\s*=\s*["\'].*["\']'
+    ]
+
+    def detect_sensitive_content(self, code):
+        """Check if code contains sensitive patterns"""
+        violations = []
+        for pattern in self.SENSITIVE_PATTERNS:
+            if re.search(pattern, code, re.IGNORECASE):
+                violations.append(pattern)
+        return violations
+
+detector = SensitiveCodeDetector()
+sensitive_findings = detector.detect_sensitive_content(user_code)
+if sensitive_findings:
+    print(f"Warning: Code contains {len(sensitive_findings)} sensitive patterns")
+```
+
+Integrate this detection into your IDE or pre-submission hooks to warn developers before sending code to AI services.
+
 ## Common Pitfalls to Avoid
 
 Several mistakes frequently cause problems in enterprise AI coding tool deployments. Avoid allowing all outbound HTTPS traffic, as this defeats the purpose of targeted firewall rules. Do not rely solely on IP-based filtering, since cloud providers frequently change underlying infrastructure. Never forget to allow license validation connections, or tools will stop working unexpectedly.

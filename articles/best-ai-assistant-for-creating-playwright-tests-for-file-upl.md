@@ -215,7 +215,273 @@ Maintain your test files in version control and run them consistently in your CI
 
 Consider creating a library of reusable test utilities for common upload and download scenarios. You can ask AI to help design these utilities based on patterns that emerge across your tests.
 
+## Advanced File Upload Scenarios
 
+Real-world applications require testing complex upload scenarios beyond basic file selection:
+
+```javascript
+// Testing chunked/resumable uploads
+test('should handle resumable upload with retry', async ({ page }) => {
+  await page.goto('/upload');
+
+  // Create a large file (simulate 100MB upload in chunks)
+  const largeBuffer = Buffer.alloc(100 * 1024 * 1024);
+  await page.setInputFiles('input[type="file"]', {
+    name: 'large-dataset.bin',
+    mimeType: 'application/octet-stream',
+    buffer: largeBuffer
+  });
+
+  // Monitor upload progress
+  const progressUpdates = [];
+  await page.on('console', msg => {
+    if (msg.text().includes('upload progress')) {
+      progressUpdates.push(msg.text());
+    }
+  });
+
+  // Simulate network interruption and resume
+  await page.click('button[type="submit"]');
+
+  // Wait for initial upload progress
+  await page.waitForFunction(
+    () => window.uploadProgress > 25,
+    { timeout: 30000 }
+  );
+
+  // Kill network connection
+  await page.context().setOffline(true);
+  await page.waitForTimeout(2000);
+
+  // Resume upload
+  await page.context().setOffline(false);
+
+  // Verify upload completes
+  await expect(page.locator('.upload-success')).toBeVisible();
+  expect(progressUpdates.length).toBeGreaterThan(5);
+});
+
+// Testing drag-and-drop uploads
+test('should accept files via drag-and-drop', async ({ page }) => {
+  await page.goto('/upload');
+
+  const dropZone = page.locator('[data-drop-zone]');
+
+  // Simulate drag-and-drop event
+  await dropZone.evaluate((element) => {
+    const event = new DragEvent('drop', {
+      bubbles: true,
+      cancelable: true,
+      dataTransfer: new DataTransfer()
+    });
+    element.dispatchEvent(event);
+  });
+
+  // Attach file during drop event
+  await page.setInputFiles('input[type="file"]', {
+    name: 'drag-and-drop-file.pdf',
+    mimeType: 'application/pdf',
+    buffer: Buffer.from('PDF content')
+  });
+
+  await expect(page.locator('.file-name')).toContainText('drag-and-drop-file');
+});
+
+// Testing multiple file uploads with ordering
+test('should maintain file order in multi-file upload', async ({ page }) => {
+  await page.goto('/upload');
+
+  const files = [
+    { name: 'first.txt', buffer: Buffer.from('First file') },
+    { name: 'second.txt', buffer: Buffer.from('Second file') },
+    { name: 'third.txt', buffer: Buffer.from('Third file') }
+  ];
+
+  // Upload all files
+  await page.setInputFiles('input[type="file"]', files);
+
+  // Verify order in UI
+  const fileList = await page.locator('.file-list li');
+  const count = await fileList.count();
+
+  for (let i = 0; i < count; i++) {
+    const text = await fileList.nth(i).textContent();
+    expect(text).toContain(files[i].name);
+  }
+});
+```
+
+## Testing Upload Security and Validation
+
+Security testing is critical for file upload functionality:
+
+```javascript
+// Testing security boundaries
+test('should sanitize uploaded filenames', async ({ page }) => {
+  await page.goto('/upload');
+
+  // Attempt path traversal in filename
+  await page.setInputFiles('input[type="file"]', {
+    name: '../../../etc/passwd',
+    mimeType: 'text/plain',
+    buffer: Buffer.from('malicious')
+  });
+
+  await page.click('button[type="submit"]');
+
+  // Verify filename is sanitized in the response
+  const response = await page.waitForResponse(
+    response => response.url().includes('/api/upload') && response.status() === 200
+  );
+
+  const data = await response.json();
+  expect(data.filename).not.toContain('..');
+  expect(data.filename).not.toContain('/');
+});
+
+test('should enforce MIME type restrictions', async ({ page }) => {
+  await page.goto('/upload');
+
+  // Attempt to upload executable with fake extension
+  const maliciousFile = {
+    name: 'document.pdf',
+    mimeType: 'application/x-executable',
+    buffer: Buffer.from('MZ\x90\x00\x03') // EXE header
+  };
+
+  await page.setInputFiles('input[type="file"]', maliciousFile);
+  await page.click('button[type="submit"]');
+
+  // Verify rejection
+  await expect(page.locator('.error-message')).toContainText(
+    'File type not allowed'
+  );
+});
+
+test('should rate limit uploads per user', async ({ page }) => {
+  await page.goto('/upload');
+
+  // Attempt rapid sequential uploads
+  const uploadPromises = [];
+
+  for (let i = 0; i < 50; i++) {
+    await page.setInputFiles('input[type="file"]', {
+      name: `file${i}.txt`,
+      mimeType: 'text/plain',
+      buffer: Buffer.from('test content')
+    });
+
+    uploadPromises.push(
+      page.click('button[type="submit"]')
+    );
+  }
+
+  const results = await Promise.allSettled(uploadPromises);
+
+  // Expect rate limiting to trigger
+  const rejected = results.filter(r => r.status === 'rejected');
+  expect(rejected.length).toBeGreaterThan(0);
+});
+```
+
+## Performance and Stress Testing for Uploads
+
+Test upload performance under various conditions:
+
+```javascript
+// Measure upload speed and resource usage
+test('upload performance benchmarking', async ({ page }) => {
+  await page.goto('/upload');
+
+  const fileSizes = [
+    { size: 1024 * 1024, name: '1MB' },
+    { size: 10 * 1024 * 1024, name: '10MB' },
+    { size: 50 * 1024 * 1024, name: '50MB' }
+  ];
+
+  const benchmarks = [];
+
+  for (const { size, name } of fileSizes) {
+    const buffer = Buffer.alloc(size);
+
+    const startTime = Date.now();
+    const startMetrics = await page.evaluate(() => ({
+      memory: performance.memory?.usedJSHeapSize || 0,
+      time: performance.now()
+    }));
+
+    await page.setInputFiles('input[type="file"]', {
+      name: `benchmark-${name}.bin`,
+      mimeType: 'application/octet-stream',
+      buffer
+    });
+
+    await page.click('button[type="submit"]');
+    await expect(page.locator('.upload-success')).toBeVisible();
+
+    const duration = Date.now() - startTime;
+    const endMetrics = await page.evaluate(() => ({
+      memory: performance.memory?.usedJSHeapSize || 0,
+      time: performance.now()
+    }));
+
+    benchmarks.push({
+      fileSize: name,
+      duration: duration,
+      memoryIncrease: (endMetrics.memory - startMetrics.memory) / 1024 / 1024,
+      throughput: (size / 1024 / 1024) / (duration / 1000)
+    });
+  }
+
+  console.table(benchmarks);
+});
+```
+
+## Integrating with CI/CD Pipelines
+
+Ensure upload tests run reliably in CI environments:
+
+```javascript
+// Configuration for CI-compatible file uploads
+const config = {
+  // Use memory-based file system in CI
+  uploadDir: process.env.CI
+    ? '/tmp/uploads'
+    : './test-uploads',
+
+  // Disable browser cache in CI
+  launchOptions: process.env.CI ? {
+    args: [
+      '--disable-blink-features=AutomationControlled',
+      '--no-first-run',
+      '--no-default-browser-check'
+    ]
+  } : {},
+
+  // Timeout adjustments for slower CI runners
+  timeout: process.env.CI ? 60000 : 30000
+};
+
+test.describe('File upload tests (CI-compatible)', () => {
+  test.beforeEach(async ({ page }) => {
+    // Create temporary upload directory if needed
+    if (!fs.existsSync(config.uploadDir)) {
+      fs.mkdirSync(config.uploadDir, { recursive: true });
+    }
+  });
+
+  test('upload works in CI environment', async ({ page }) => {
+    await page.goto('/upload');
+    await page.setInputFiles('input[type="file"]', {
+      name: 'ci-test.txt',
+      mimeType: 'text/plain',
+      buffer: Buffer.from('CI test content')
+    });
+    await page.click('button[type="submit"]');
+    await expect(page.locator('.upload-success')).toBeVisible({ timeout: config.timeout });
+  });
+});
+```
 
 ## Related Reading
 

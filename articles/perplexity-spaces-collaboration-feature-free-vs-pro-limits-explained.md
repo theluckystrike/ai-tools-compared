@@ -219,13 +219,196 @@ Suggested files to attach: competitor annual reports, industry whitepapers
 Members: research lead, product manager, strategy analyst
 ```
 
+## Real-World Collaboration Workflows
+
+Different team types use Spaces for distinct purposes:
+
+### Product Teams (5-10 members)
+Product teams benefit most from Pro's expanded member limits and extended history:
+
+```
+Workflow: Feature research and competitive analysis
+- Product Manager: Creates Space for new feature area
+- Design Lead: Attaches wireframes and design systems
+- Engineers: Research technical implementations
+- Marketing: Gathers competitive positioning data
+
+Pro Plan Value:
+- 90-day history preserves research context
+- 10GB storage holds design assets and reports
+- 10 member limit includes future hires
+```
+
+### Content and Editorial Teams
+Editorial teams leverage Spaces for fact-checking and source management:
+
+```
+Workflow: Article research with source validation
+- Editor: Initiates Space for article topic
+- Writers: Conduct collaborative research
+- Fact-checkers: Verify claims with AI-assisted verification
+- Designer: Gathers images and visual assets
+
+Free Plan Limitation:
+- 7-day history loses context mid-article
+- 2-member limit excludes full editorial team
+- Limited external sharing affects fact-checking workflow
+```
+
+### Research Teams
+Academic and market research teams need deep history and large collections:
+
+```
+Workflow: Longitudinal market research tracking
+- Research Lead: Manages main Space with quarterly benchmarks
+- Analysts: Contribute ongoing research
+- Stakeholders: Access shared findings
+
+Pro Plan Benefits:
+- 90-day retention tracks trend emergence
+- API access enables automated data collection
+- Extended storage holds historical datasets
+```
+
+## Comparing Collaboration Features Beyond Limits
+
+The differences go deeper than member counts:
+
+| Feature | Free | Pro |
+|---------|------|-----|
+| Real-time editing indicators | Yes | Yes |
+| Thread commenting on sources | No | Yes |
+| Permission granularity | Read-only | Read/Edit/Admin |
+| Member invitation via email | Limited | Full |
+| Space templates | No | Yes |
+| Export history (PDF/CSV) | 7 days max | 90 days full |
+| Integration with Slack | No | Yes |
+| Integration with Notion | No | Yes |
+| Brand customization | No | Yes (Pro Spaces) |
+
+## Migration Strategies from Free to Pro
+
+If your team outgrows Free tier:
+
+```
+Phase 1: Identify bottleneck (usually member limit or search quota)
+Phase 2: Create new Pro Space, manually migrate important threads
+Phase 3: Gradually shift team to Pro Space
+Phase 4: Maintain Free Space for reference only
+
+Gotcha: Perplexity doesn't auto-migrate Free Spaces to Pro.
+You must manually recreate or move work.
+```
+
+## Cost Analysis for Teams
+
+Pricing breakdown for different team sizes:
+
+```
+Small team (3-5 people):
+- Free: $0/month but limited to 2 concurrent users
+- Pro: $200/month (5 × $40/month) for full collaboration
+
+Medium team (8-15 people):
+- Free: Completely blocked (exceeds member limit)
+- Pro: $300-600/month (7.5-15 seats)
+- Team Plan: Custom pricing, typically $25-35/seat for bulk
+
+Large team (20+):
+- Always Team Plan: Custom negotiated rates
+- API access essential for scaling
+```
+
+## Setting Up Effective Spaces for Your Use Case
+
+Configure Spaces for maximum team productivity:
+
+```
+Space: Competitive Intelligence
+├─ System prompt: "You are a competitive analyst..."
+├─ Suggested sources: Industry reports, earnings calls
+├─ Members: 3 analysts + manager
+├─ Search frequency: 50+ daily searches
+└─ History retention: Critical (keep all 90 days)
+
+Space: Product Roadmap Research
+├─ System prompt: "Research feature viability..."
+├─ Attached files: Design system, user research data
+├─ Members: Product + 2 engineers
+├─ Search frequency: 10-20 daily
+└─ External share: Yes, with stakeholder access
+
+Space: Content Research Hub
+├─ System prompt: "Verify facts and find authoritative sources..."
+├─ Suggested sources: Academic databases, news archives
+├─ Members: Editor + 2 writers
+├─ Search frequency: 30-40 daily
+└─ Export need: High (PDF reports to stakeholders)
+```
+
+## Evaluating Whether Pro Is Worth the Cost
+
+Decision matrix for your situation:
+
+```
+Annual cost: Free = $0, Pro = $200+ per person
+
+Calculate value:
+- Time saved per person per month: _____ hours
+- Hourly rate: $_____
+- Monthly value: (hours × rate)
+- 10 team members: (monthly value × 10)
+- Annual value: (monthly value × 12)
+
+If annual value > $2,400, Pro pays for itself
+Most teams save 2-5 hours/month → $2,400-6,000 annual value
+```
+
+## Common Pain Points to Avoid
+
+Free users frequently encounter these bottlenecks:
+
+### 1. Search Quota Exhaustion
+Problem: Team hits 5 searches/day quickly
+Solution: Pro upgrade or async research workflow
+
+### 2. Member Limit Conflicts
+Problem: New team members can't access Space
+Solution: Remove least-active member or upgrade
+
+### 3. History Loss
+Problem: 7-day retention loses important context
+Solution: Export critical threads before expiration
+
+### 4. External Collaboration Gaps
+Problem: Can't share with clients or partners
+Solution: Pro's external sharing with permissions
+
+## Workspace Organization for Collaboration
+
+Structure Spaces for maximum team effectiveness:
+
+```
+Workspace Structure:
+├── Core Research Spaces (Pro only if shared)
+│   ├── Market Analysis
+│   ├── Competitive Intelligence
+│   └── Trend Monitoring
+├── Project-Based Spaces
+│   ├── Q1 Product Launch
+│   ├── Marketing Campaign Research
+│   └── Sales Enablement
+└── Archived Spaces (history preserved)
+    ├── Q4 2025 Research
+    └── Previous campaign projects
+```
+
+Avoid mixing unrelated research in single Space—maintain focus and search efficiency.
 
 ## Related Reading
 
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
 - [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
 - [AI Tools Hub](/guides-hub/)
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)**
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -218,7 +218,210 @@ AI tools accelerate debugging but cannot replace understanding. Certain issues r
 
 The most effective approach combines AI efficiency with solid fundamentals. Understand how viewport calculations work, use AI to automate detection and generate diagnostic code, then apply your judgment to interpret findings and implement solutions.
 
+## Testing Breakpoints Across Device Classes
 
+Different device classes have different characteristics that affect breakpoint behavior:
+
+```javascript
+// Comprehensive device testing grid
+const deviceProfiles = [
+  // Mobile phones
+  { name: 'iPhone 12', width: 390, height: 844, dpr: 3 },
+  { name: 'iPhone SE', width: 375, height: 667, dpr: 2 },
+  { name: 'Pixel 6', width: 412, height: 915, dpr: 2.75 },
+  { name: 'Galaxy S10', width: 360, height: 800, dpr: 3 },
+
+  // Tablets
+  { name: 'iPad Mini', width: 768, height: 1024, dpr: 2 },
+  { name: 'iPad Air', width: 820, height: 1180, dpr: 2 },
+  { name: 'iPad Pro 11', width: 834, height: 1194, dpr: 2 },
+
+  // Desktops
+  { name: 'Laptop HD', width: 1366, height: 768, dpr: 1 },
+  { name: 'Laptop Full HD', width: 1920, height: 1080, dpr: 1 },
+  { name: 'Ultrawide', width: 2560, height: 1440, dpr: 1.5 }
+];
+
+// Test each profile with Playwright
+for (const device of deviceProfiles) {
+  await page.setViewportSize({
+    width: device.width,
+    height: device.height
+  });
+  // Verify expected layout for this device
+}
+```
+
+This device-focused approach ensures your breakpoints work across the actual devices your users access.
+
+## Common Viewport Calculation Errors
+
+Many breakpoint issues stem from incorrect viewport size assumptions:
+
+```css
+/* ❌ Wrong: Assumes specific viewport width */
+@media (min-width: 768px) {
+  .sidebar { width: 250px; }
+}
+/* On iPad at 768px with scrollbar visible, actual content width is ~752px */
+
+/* ✓ Correct: Use container queries instead */
+@container (min-width: 40rem) {
+  .sidebar { width: 250px; }
+}
+
+/* ✓ Alternative: Account for scrollbar explicitly */
+@media (min-width: 784px) {
+  /* 768px + 16px scrollbar = 784px safe margin */
+  .sidebar { width: 250px; }
+}
+```
+
+## Debugging with Chrome DevTools Integration
+
+AI tools can help generate DevTools commands to automate breakpoint investigation:
+
+```javascript
+// Programmatically test breakpoints via DevTools Protocol
+const puppeteer = require('puppeteer');
+
+async function debugMediaQueries(url) {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  // Define breakpoints to test
+  const breakpoints = [320, 480, 768, 1024, 1440, 1920];
+
+  for (const width of breakpoints) {
+    await page.setViewportSize({ width, height: 800 });
+
+    // Get all computed media query matches
+    const mediaQueryMatches = await page.evaluate(() => {
+      const matches = {};
+      const styles = document.styleSheets;
+
+      for (let i = 0; i < styles.length; i++) {
+        try {
+          const rules = styles[i].cssRules;
+          for (let j = 0; j < rules.length; j++) {
+            if (rules[j].media) {
+              const mediaText = rules[j].media.mediaText;
+              matches[mediaText] = window.matchMedia(mediaText).matches;
+            }
+          }
+        } catch (e) {
+          // Cross-origin stylesheets can't be read
+        }
+      }
+      return matches;
+    });
+
+    console.log(`\n=== Breakpoint: ${width}px ===`);
+    Object.entries(mediaQueryMatches).forEach(([media, matches]) => {
+      console.log(`${matches ? '✓' : '✗'} ${media}`);
+    });
+  }
+
+  await browser.close();
+}
+
+debugMediaQueries('https://example.com');
+```
+
+## Preventing Breakpoint Regressions
+
+Once you've fixed breakpoint issues, prevent them from reoccurring:
+
+```javascript
+// Automated visual regression testing
+const percySnapshot = require('@percy/playwright');
+
+test('responsive layout matches design at all breakpoints', async ({ page }) => {
+  const breakpoints = [
+    { width: 375, name: 'mobile' },
+    { width: 768, name: 'tablet' },
+    { width: 1920, name: 'desktop' }
+  ];
+
+  for (const breakpoint of breakpoints) {
+    await page.setViewportSize({
+      width: breakpoint.width,
+      height: 1024
+    });
+
+    await page.goto('/');
+
+    // Capture visual snapshot for regression detection
+    await percySnapshot(page, `Homepage at ${breakpoint.name}`);
+
+    // Also verify specific layout properties
+    const contentWidth = await page.evaluate(() =>
+      document.querySelector('main').offsetWidth
+    );
+
+    expect(contentWidth).toBeGreaterThanOrEqual(breakpoint.width * 0.9);
+  }
+});
+```
+
+This approach catches breakpoint regressions before they reach production.
+
+## Handling Browser-Specific Quirks
+
+Different browsers handle media queries slightly differently:
+
+```css
+/* Firefox handles sub-pixel scrollbar widths differently */
+@media (min-width: 769px) {
+  /* Firefox with scrollbar: 769px might be cutting it close */
+}
+
+/* Safari on iOS doesn't hide address bar in media queries */
+@media (max-height: 600px) {
+  /* Address bar may consume 50-100px on iOS */
+}
+
+/* Chrome DevTools doesn't perfectly simulate mobile */
+@media (pointer: coarse) {
+  /* Touch-specific styles - test on actual devices */
+}
+```
+
+Always test on actual devices and across browsers, not just in DevTools simulators.
+
+## Transition and Animation Breakpoint Timing
+
+Breakpoint changes can cause layout jumps if not handled carefully:
+
+```css
+/* Smooth transitions during breakpoint changes */
+.container {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+```
+
+The transition property should only apply during user-initiated resize, not on page load. Use JavaScript to disable transitions on initial load:
+
+```javascript
+// Disable transitions on initial page load
+document.documentElement.classList.add('no-transitions');
+window.addEventListener('load', () => {
+  document.documentElement.classList.remove('no-transitions');
+});
+```
 
 
 ## Related Reading

@@ -215,7 +215,255 @@ end
 
 This approach bypasses foreign key checks temporarily but requires careful handling to avoid data integrity issues.
 
+## Testing Migrations in Isolation Before Production
 
+Create a test environment that mimics production data to validate migration rollback safety:
+
+```ruby
+namespace :db do
+  namespace :migrate do
+    desc "Test migration rollback with production-like data"
+    task test_rollback: :environment do
+      require 'fileutils'
+
+      # Create test database
+      test_db = "test_migrate_#{Time.now.to_i}"
+      Rake::Task['db:create'].invoke
+
+      begin
+        # Copy production schema
+        sh "pg_dump -s production_db | psql #{test_db}"
+
+        # Run migrations on test database
+        ENV['RAILS_ENV'] = 'test'
+        ENV['DATABASE_URL'] = "postgres://localhost/#{test_db}"
+
+        # Run specific migration
+        migration_version = ARGV.first || ActiveRecord::Migrator.current_version
+        ActiveRecord::Migrator.run(:up, 'db/migrate', migration_version)
+
+        puts "Migration UP succeeded"
+
+        # Test rollback
+        ActiveRecord::Migrator.run(:down, 'db/migrate', migration_version)
+
+        puts "Migration DOWN succeeded - safe to deploy"
+
+      rescue StandardError => e
+        puts "ERROR: #{e.message}"
+        puts "DO NOT DEPLOY - rollback failed"
+
+      ensure
+        # Clean up test database
+        sh "dropdb #{test_db}"
+      end
+    end
+  end
+end
+```
+
+## Handling Complex Data Transformations During Rollback
+
+Some migrations require data transformation logic on rollback:
+
+```ruby
+class BackfillUserMetadata < ActiveRecord::Migration[7.1]
+  def up
+    add_column :users, :metadata_json, :jsonb, default: {}
+
+    User.reset_column_information
+
+    # Backfill with existing data
+    User.find_in_batches(batch_size: 1000) do |users|
+      users.each do |user|
+        user.update(metadata_json: {
+          account_type: user.account_type,
+          created_year: user.created_at.year
+        })
+      end
+    end
+  end
+
+  def down
+    # Important: Restore original data if it can be reconstructed
+    # before removing the column
+
+    User.reset_column_information
+
+    User.find_in_batches(batch_size: 1000) do |users|
+      users.each do |user|
+        if user.metadata_json.present?
+          # Restore account_type from metadata
+          user.update(
+            account_type: user.metadata_json['account_type']
+          )
+        end
+      end
+    end
+
+    remove_column :users, :metadata_json
+  end
+end
+```
+
+## Concurrent Migration Strategies for Zero-Downtime Deployments
+
+Minimize downtime with careful migration sequencing:
+
+```ruby
+class AddEncryptedPasswordToUsers < ActiveRecord::Migration[7.1]
+  # Phase 1: Add column without constraint
+  def up
+    add_column :users, :encrypted_password, :string
+
+    # Migrate data asynchronously in batches
+    User.find_in_batches(batch_size: 5000) do |batch|
+      batch.each do |user|
+        # Only encrypt if not already encrypted
+        next if user.encrypted_password.present?
+
+        # Use ActiveRecord encryption
+        user.update_column(:encrypted_password, user.password)
+      end
+    end
+  end
+
+  def down
+    remove_column :users, :encrypted_password
+  end
+end
+
+# Phase 2: Deploy code that reads from encrypted_password
+# Phase 3: Stop writing to old password column
+# Phase 4: Remove old password column
+```
+
+## Monitoring and Alerting During Migration Execution
+
+Set up comprehensive monitoring for long-running migrations:
+
+```ruby
+class MonitoredMigration < ActiveRecord::Migration[7.1]
+  def execute_with_monitoring(description, &block)
+    start_time = Time.current
+    last_log = start_time
+
+    ActiveSupport::Notifications.subscribe('active_record.sql') do |name, started, finished, unique_id, payload|
+      current_time = Time.current
+      elapsed = (current_time - start_time).to_i
+      since_last = (current_time - last_log).to_i
+
+      if since_last > 30  # Log every 30 seconds
+        Rails.logger.info("Migration #{description} in progress: #{elapsed}s elapsed")
+        last_log = current_time
+
+        # Alert if taking too long
+        if elapsed > 300 && elapsed % 60 == 0
+          SlackNotifier.warn("Migration #{description} running for #{elapsed}s")
+        end
+      end
+    end
+
+    block.call
+
+    total_time = (Time.current - start_time).to_i
+    Rails.logger.info("Migration #{description} completed in #{total_time}s")
+  end
+
+  def up
+    execute_with_monitoring('backfill_users_table') do
+      User.find_in_batches(batch_size: 2000) do |batch|
+        batch.each { |user| user.update_column(:migrated, true) }
+      end
+    end
+  end
+end
+```
+
+## Database Lock Monitoring During Rollback
+
+Some migrations acquire locks that could cause issues on rollback:
+
+```ruby
+class SafeMigrationWithLockDetection < ActiveRecord::Migration[7.1]
+  def execute_with_lock_monitoring(sql, description = nil)
+    pid = Process.pid
+    start_time = Time.current
+
+    # Start lock monitoring in background thread
+    monitor = Thread.new do
+      loop do
+        sleep(5)
+
+        locks = ActiveRecord::Base.connection.execute(<<-SQL)
+          SELECT relation::regclass, mode FROM pg_locks
+          WHERE NOT granted AND pid != #{pid}
+          LIMIT 10;
+        SQL
+
+        if locks.any?
+          blocked = locks.map { |l| "#{l['relation']} (#{l['mode']})" }.join(", ")
+          Rails.logger.warn("Migration #{description} blocked by: #{blocked}")
+        end
+      end
+    end
+
+    begin
+      ActiveRecord::Base.connection.execute(sql)
+    ensure
+      Thread.kill(monitor)
+    end
+  end
+
+  def up
+    execute_with_lock_monitoring(
+      'ALTER TABLE users ADD COLUMN new_field VARCHAR(255)',
+      'add_column_to_users'
+    )
+  end
+end
+```
+
+## Documentation and Runbook for Emergency Rollback
+
+Create clear procedures for emergency rollback scenarios:
+
+```bash
+#!/bin/bash
+# script/db/emergency-rollback.sh
+
+# Usage: ./emergency-rollback.sh <migration_version> <environment>
+
+MIGRATION_VERSION=$1
+ENVIRONMENT=${2:-production}
+
+if [ -z "$MIGRATION_VERSION" ]; then
+  echo "Usage: $0 <migration_version> [environment]"
+  exit 1
+fi
+
+echo "Emergency rollback of migration $MIGRATION_VERSION in $ENVIRONMENT"
+
+# Backup current database state
+BACKUP_FILE="db/backups/backup-$(date +%Y%m%d-%H%M%S).sql"
+pg_dump $DATABASE_URL > $BACKUP_FILE
+echo "Backup created: $BACKUP_FILE"
+
+# Disable foreign key checks temporarily
+RAILS_ENV=$ENVIRONMENT bundle exec rails db:rollback STEP=1 VERBOSE=true
+
+# Verify rollback succeeded
+CURRENT_VERSION=$(RAILS_ENV=$ENVIRONMENT bundle exec rails db:migrate:status | grep "down" | head -1 | awk '{print $1}')
+
+if [ "$CURRENT_VERSION" == "$MIGRATION_VERSION" ]; then
+  echo "Rollback successful!"
+  SlackNotifier.info("Emergency rollback completed for migration $MIGRATION_VERSION")
+else
+  echo "Rollback may have failed. Check $BACKUP_FILE for recovery"
+  SlackNotifier.error("Emergency rollback FAILED for migration $MIGRATION_VERSION")
+  exit 1
+fi
+```
 
 ## Related Reading
 

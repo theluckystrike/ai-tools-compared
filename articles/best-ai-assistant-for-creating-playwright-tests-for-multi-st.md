@@ -212,7 +212,255 @@ However, the ideal choice depends on your workflow. Teams already using VS Code 
 
 Regardless of which assistant you choose, provide detailed context about your wizard's specific behaviors. The more precisely you describe your multi-step form's logic, validation rules, and expected user interactions, the more accurate and useful the generated tests will be.
 
+## Testing Dynamic Field Visibility in Wizards
 
+Many wizards show/hide fields based on previous selections. AI can help generate tests for these conditional scenarios:
+
+```typescript
+test('conditional fields appear based on shipping method', async ({ page }) => {
+  await page.goto('/checkout');
+
+  // Step 1: Select shipping method
+  await expect(page.locator('h2')).toContainText('Shipping');
+  await page.click('input[value="express"]');
+
+  // Verify conditional fields appear
+  await expect(page.locator('[data-field="overnight-by"]')).toBeVisible();
+  await expect(page.locator('[data-field="signature-required"]')).toBeVisible();
+
+  // Step 2: Select standard shipping
+  await page.click('button:has-text("Modify Shipping")');
+  await page.click('input[value="standard"]');
+
+  // Verify different conditional fields appear
+  await expect(page.locator('[data-field="overnight-by"]')).toBeHidden();
+  await expect(page.locator('[data-field="estimated-delivery"]')).toBeVisible();
+});
+
+test('conditional validation triggers for conditional fields', async ({ page }) => {
+  await page.goto('/checkout');
+
+  // Select option requiring conditional field
+  await page.click('input[value="express"]');
+
+  // Try to proceed without filling conditional field
+  await page.click('button:has-text("Next")');
+
+  // Verify validation error appears only for conditional field
+  await expect(page.locator('[data-error="overnight-by"]')).toContainText('Required');
+});
+```
+
+## Managing State Across Browser Navigation
+
+Test that wizard state persists when users leave and return:
+
+```typescript
+test('wizard state persists when navigating away and returning', async ({ page, context }) => {
+  await page.goto('/wizard/step-1');
+
+  // Fill first step
+  await page.fill('#email', 'test@example.com');
+  await page.fill('#password', 'SecurePass123!');
+
+  // Navigate to email verification page
+  await page.goto('/verify-email');
+  await expect(page.locator('h1')).toContainText('Verify Email');
+
+  // Return to wizard
+  await page.back();
+
+  // Verify data persisted
+  await expect(page.locator('#email')).toHaveValue('test@example.com');
+  await expect(page.locator('#password')).toHaveValue('SecurePass123!');
+});
+
+test('wizard state survives page refresh', async ({ page }) => {
+  await page.goto('/wizard/step-2');
+
+  // Fill current step
+  await page.fill('#first-name', 'John');
+  await page.fill('#last-name', 'Doe');
+
+  // Refresh page
+  await page.reload();
+
+  // Verify data still present
+  await expect(page.locator('#first-name')).toHaveValue('John');
+  await expect(page.locator('#last-name')).toHaveValue('Doe');
+
+  // Verify we're still on step 2
+  await expect(page.locator('[data-step-indicator]')).toContainText('Step 2');
+});
+```
+
+## Testing Wizard Progress Indicators
+
+Verify progress tracking works correctly:
+
+```typescript
+test('progress indicator updates correctly', async ({ page }) => {
+  await page.goto('/wizard');
+
+  const progressBar = page.locator('[data-progress-bar]');
+
+  // Step 1: Should show 25% (1 of 4 steps)
+  await expect(progressBar).toHaveAttribute('aria-valuenow', '25');
+  await expect(page.locator('[data-step-indicator]')).toContainText('Step 1 of 4');
+
+  // Move to step 2
+  await page.fill('#step-1-field', 'value');
+  await page.click('button:has-text("Next")');
+
+  // Should show 50% (2 of 4)
+  await expect(progressBar).toHaveAttribute('aria-valuenow', '50');
+  await expect(page.locator('[data-step-indicator]')).toContainText('Step 2 of 4');
+
+  // Move to step 3
+  await page.fill('#step-2-field', 'value');
+  await page.click('button:has-text("Next")');
+
+  // Should show 75% (3 of 4)
+  await expect(progressBar).toHaveAttribute('aria-valuenow', '75');
+
+  // Go back to step 1
+  await page.click('button:has-text("Back")');
+  await page.click('button:has-text("Back")');
+
+  // Should show 25% again
+  await expect(progressBar).toHaveAttribute('aria-valuenow', '25');
+});
+```
+
+## Testing Error Recovery in Multi-Step Forms
+
+Handle error scenarios gracefully:
+
+```typescript
+test('recovers from server error and allows retry', async ({ page }) => {
+  await page.goto('/wizard/step-1');
+
+  await page.fill('#email', 'test@example.com');
+  await page.fill('#password', 'SecurePass123!');
+
+  // Mock server error on first attempt
+  let requestCount = 0;
+  await page.route('**/api/wizard/validate-step-1', route => {
+    requestCount++;
+    if (requestCount === 1) {
+      route.abort('failed');
+    } else {
+      route.continue();
+    }
+  });
+
+  await page.click('button:has-text("Next")');
+
+  // Verify error message
+  await expect(page.locator('[role="alert"]')).toContainText('Network error');
+
+  // Retry should succeed
+  await page.click('button:has-text("Retry")');
+  await expect(page.locator('h2')).toContainText('Step 2');
+});
+
+test('handles timeout during form submission', async ({ page }) => {
+  await page.goto('/wizard/step-1');
+
+  // Mock slow response
+  await page.route('**/api/wizard/**', route => {
+    route.abort('timedout');
+  });
+
+  await page.fill('#email', 'test@example.com');
+  await page.click('button:has-text("Next")');
+
+  // Verify timeout message
+  await expect(page.locator('[role="alert"]')).toContainText('Request timed out');
+
+  // Verify retry button available
+  await expect(page.locator('button:has-text("Retry")')).toBeEnabled();
+});
+```
+
+## Performance Testing for Large Wizards
+
+Test that wizards with many steps remain performant:
+
+```typescript
+test('large wizard (20+ steps) maintains acceptable performance', async ({ page }) => {
+  await page.goto('/wizard');
+
+  const stepTimes = [];
+
+  for (let step = 1; step <= 20; step++) {
+    const startTime = performance.now();
+
+    // Fill step field
+    await page.fill('input[name="step-field"]', `value-${step}`);
+
+    // Click next
+    await page.click('button:has-text("Next")');
+
+    // Wait for step to load
+    await expect(page.locator('h2')).toContainText(`Step ${step + 1}`);
+
+    const duration = performance.now() - startTime;
+    stepTimes.push(duration);
+
+    // Assert step transitions in under 500ms
+    expect(duration).toBeLessThan(500);
+  }
+
+  // Verify no significant slowdown in later steps
+  const firstFiveAvg = stepTimes.slice(0, 5).reduce((a, b) => a + b) / 5;
+  const lastFiveAvg = stepTimes.slice(-5).reduce((a, b) => a + b) / 5;
+
+  expect(lastFiveAvg).toBeLessThan(firstFiveAvg * 1.5);
+});
+```
+
+## Testing Accessibility in Multi-Step Forms
+
+Ensure wizards are accessible to all users:
+
+```typescript
+test('wizard is fully keyboard navigable', async ({ page }) => {
+  await page.goto('/wizard');
+
+  // Start with focus on first field
+  await page.press('body', 'Tab');
+  await expect(page.locator('#step-1-field')).toBeFocused();
+
+  // Tab through form
+  await page.press('body', 'Tab');
+  await page.press('body', 'Tab');
+
+  // Next button should be focused
+  await expect(page.locator('button:has-text("Next")')).toBeFocused();
+
+  // Enter activates next
+  await page.press('body', 'Enter');
+
+  // Verify moved to step 2
+  await expect(page.locator('h2')).toContainText('Step 2');
+});
+
+test('wizard announcements for screen readers', async ({ page }) => {
+  await page.goto('/wizard');
+
+  const liveRegion = page.locator('[aria-live="polite"]');
+
+  // Announce step completion
+  await page.fill('#step-1-field', 'value');
+  await page.click('button:has-text("Next")');
+
+  // Verify announcement
+  const announcement = await liveRegion.textContent();
+  expect(announcement).toContain('Step 1 complete');
+  expect(announcement).toContain('Now on Step 2');
+});
+```
 
 
 
