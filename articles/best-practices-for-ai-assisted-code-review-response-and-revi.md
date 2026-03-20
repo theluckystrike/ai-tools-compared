@@ -312,14 +312,14 @@ jobs:
         uses: ai-code-review/action@latest
         with:
           severity: critical
-          categories: [security, type-errors, logic-errors]
+          categories: [security, guides]
           fail_on_match: true  # Fail PR if critical issues found
 
       - name: AI Review - Quality
         uses: ai-code-review/action@latest
         with:
           severity: warning
-          categories: [style, performance, readability]
+          categories: [guides]
           fail_on_match: false  # Report but don't fail
 
       - name: Comment with Summary
