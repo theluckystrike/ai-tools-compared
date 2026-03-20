@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 # AI Tools for Automated Changelog Generation 2026
 
 Manual changelog maintenance is a bottleneck. You're shipping features, but documentation falls behind. AI tools now parse git commit history, extract meaningful changes, and generate structured changelogs in seconds. This guide compares specific tools, integration patterns, and real-world CLI workflows.
@@ -449,3 +450,4 @@ Automated changelog generation removes manual toil and increases consistency. Cl
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
