@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /ai-coding-assistant-for-rust-developers-compared/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true

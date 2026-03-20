@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-code-review-automation-tools-comparison/
 categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence, automation]
 reviewed: true
 score: 8
 voice-checked: true
