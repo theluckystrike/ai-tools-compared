@@ -1,10 +1,16 @@
 ---
+layout: default
 title: "Migrating from JetBrains AI to Copilot in IntelliJ - Step by Step Guide"
 description: "A comprehensive guide to switching from JetBrains AI to GitHub Copilot in IntelliJ IDEA. Learn how to transfer your settings, preserve your workflow, and optimize Copilot for Java development."
 keywords: "JetBrains AI, GitHub Copilot, IntelliJ IDEA, migration guide, AI coding assistant"
 voice-checked: "true"
 last-updated: "2026-03-21"
 permalink: /migrating-jetbrains-ai-to-copilot-intellij-step-by-step-guide/
+reviewed: true
+score: 8
+author: "AI Tools Compared"
+date: 2026-03-16
+categories: [guides]
 ---
 
 {% raw %}
