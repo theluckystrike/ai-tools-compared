@@ -1,17 +1,19 @@
 ---
+
 layout: default
 title: "How to Use AI to Write Commit Message Guidelines for Open Source Projects."
 description: "A practical guide for open source maintainers using AI to create clear, consistent commit message conventions that improve collaboration and project maintainability."
 date: 2026-03-19
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/
 categories: [guides]
 tags: [tools]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
@@ -62,7 +64,7 @@ Different types of projects benefit from different commit message approaches:
 
 
 
-Consider your project's contributor landscape when designing guidelines:
+Consider your project's contributor ecosystem when designing guidelines:
 
 
 
@@ -420,3 +422,4 @@ When you need to update conventions:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

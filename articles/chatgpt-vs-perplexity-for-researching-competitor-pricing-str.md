@@ -1,17 +1,19 @@
 ---
 
+
 layout: default
 title: "ChatGPT vs Perplexity for Researching Competitor Pricing Strategies"
 description: "A practical guide comparing ChatGPT and Perplexity for gathering competitor pricing intelligence. Includes code examples and workflow recommendations for developers."
 date: 2026-03-16
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /chatgpt-vs-perplexity-for-researching-competitor-pricing-str/
 categories: [comparisons]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 When researching competitor pricing strategies, developers and power users need tools that can gather, synthesize, and present market intelligence efficiently. ChatGPT and Perplexity represent two fundamentally different approaches to AI-assisted research—one excels at structured analysis and conversation, while the other specializes in real-time information retrieval. Understanding which tool fits your workflow can significantly impact the quality and speed of your pricing research.

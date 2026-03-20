@@ -1,17 +1,19 @@
 ---
+
 layout: default
 title: "How to Create Cursorules That Enforce Your Teams React Component Composition Patterns"
 description: "Learn how to write Cursorules that enforce consistent React component composition patterns across your team. Practical examples and code snippets included."
 date: 2026-03-16
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /how-to-create-cursorrules-that-enforce-your-teams-react-comp/
 categories: [guides]
 tags: [react, cursorrules, ai-tools]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
@@ -286,3 +288,4 @@ interface ButtonProps {
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

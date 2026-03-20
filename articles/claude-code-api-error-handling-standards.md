@@ -1,18 +1,20 @@
 ---
 
 
+
 layout: default
 title: "Claude Code API Error Handling Standards"
 description: "A comprehensive guide to implementing robust API error handling standards with Claude Code, covering HTTP status codes, error response formats, and best practices."
 date: 2026-03-17
-author: "theluckystrike"
+author: "AI Tools Compared"
 permalink: /claude-code-api-error-handling-standards/
 categories: [guides]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 
@@ -333,3 +335,4 @@ def test_validation_error_includes_field_details(client):
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

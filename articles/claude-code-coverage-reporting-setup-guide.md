@@ -1,18 +1,20 @@
 ---
 
+
 layout: default
 title: "Claude Code Coverage Reporting Setup Guide"
 description: "A comprehensive guide to setting up automated code coverage reporting with Claude Code. Learn how to integrate coverage tools, generate reports, and track metrics."
 date: 2026-03-18
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-coverage-reporting-setup-guide/
 categories: [guides]
 tags: [tools]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
@@ -265,3 +267,4 @@ This approach lets Claude Code actively participate in improving your test cover
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

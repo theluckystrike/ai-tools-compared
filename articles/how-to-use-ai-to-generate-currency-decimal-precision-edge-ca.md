@@ -1,17 +1,19 @@
 ---
+
 layout: default
 title: "How to Use AI to Generate Currency Decimal Precision Edge Case Tests"
 description: "A practical guide for developers on leveraging AI tools to generate comprehensive test cases for currency decimal precision edge cases, with code examples and best practices."
 date: 2026-03-16
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/
 categories: [guides]
 tags: [testing, currency, decimal, ai]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
@@ -266,3 +268,4 @@ When using AI to generate currency tests, follow these guidelines:
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

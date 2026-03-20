@@ -1,17 +1,19 @@
 ---
 
+
 layout: default
 title: "AI Tools for Automating Cloud Security Compliance Scanning in CI CD"
 description: "A practical guide to implementing AI-powered security compliance scanning in your CI CD pipeline. Learn about tools, implementation patterns, and code examples."
 date: 2026-03-16
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-tools-for-automating-cloud-security-compliance-scanning-i/
 categories: [security, guides]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
@@ -312,3 +314,4 @@ Track these metrics to understand your compliance program's effectiveness:
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

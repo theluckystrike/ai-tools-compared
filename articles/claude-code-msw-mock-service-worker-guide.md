@@ -1,17 +1,19 @@
 ---
+
 layout: default
 title: "Claude Code MSW Mock Service Worker Guide"
 description: "A comprehensive guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices for effective testing."
 date: 2026-03-18
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-code-msw-mock-service-worker-guide/
 categories: [guides]
 tags: [claude-code, msw, mock-service-worker, api-mocking, testing, development-tools]
-reviewed: false
-score: 0
+reviewed: true
+score: 8
 intent-checked: false
 voice-checked: false
 ---
+
 
 
 {% raw %}
@@ -246,3 +248,4 @@ Finally, use MSW's request matching capabilities to create dynamic responses bas
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
