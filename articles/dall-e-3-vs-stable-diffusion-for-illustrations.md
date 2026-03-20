@@ -10,6 +10,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 categories: [comparisons]
+tags: [ai-tools-compared, comparison]
 ---
 
 

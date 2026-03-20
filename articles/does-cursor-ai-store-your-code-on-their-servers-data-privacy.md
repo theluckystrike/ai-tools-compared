@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-ai-store-your-code-on-their-servers-data-privacy/
 categories: [guides]
-tags: [tools, privacy]
+tags: [ai-tools-compared, tools, privacy, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

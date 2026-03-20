@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /does-windsurf-ai-send-entire-project-context-or-just-open-fi/
 categories: [guides]
-tags: [privacy, tools]
+tags: [ai-tools-compared, privacy, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

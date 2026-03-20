@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

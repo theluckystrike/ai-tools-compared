@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-pro-slow-model-vs-fast-model-credits-how-it-works/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 8
 intent-checked: true

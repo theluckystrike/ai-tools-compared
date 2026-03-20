@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, chatgpt, api]
 reviewed: true
 score: 8
 intent-checked: true
