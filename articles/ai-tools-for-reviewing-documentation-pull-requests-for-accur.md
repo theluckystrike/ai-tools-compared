@@ -4,7 +4,7 @@ title: "AI Tools for Reviewing Documentation Pull Requests for."
 description: "Discover how AI tools can help developers and technical writers review documentation pull requests for accuracy, completeness, and consistency."
 date: 2026-03-16
 author: theluckystrike
-permalink: /ai-tools-for-reviewing-documentation-pull-requests-for-accuracy-and-completeness/
+permalink: /ai-tools-for-reviewing-documentation-pull-requests-for-accur/
 categories: [guides]
 tags: [tools]
 reviewed: true
