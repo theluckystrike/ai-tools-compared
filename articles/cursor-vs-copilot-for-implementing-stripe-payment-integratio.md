@@ -13,7 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-
+{% raw %}
 Choose Cursor if you need multi-file scaffolding for complete Stripe integrations with automatic API route and component generation. Choose GitHub Copilot if you prefer incremental inline suggestions for existing code and want faster single-file completions. This comparison evaluates both tools across checkout session creation, frontend components, and webhook handling to help you pick the right fit for payment integration work.
 
 
@@ -280,3 +280,4 @@ For Next.js projects specifically, both tools understand the framework patterns 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
