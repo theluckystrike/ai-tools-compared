@@ -207,6 +207,271 @@ The assistant understands feature flags and recommends appropriate configuration
 
 
 
+## Tool Comparison Matrix
+
+| Tool | Ownership Understanding | Async Support | Ecosystem Knowledge | Context Window | Cost |
+|------|---|---|---|---|---|
+| Claude Code | Excellent | Excellent | Excellent | 200k tokens | $3/1M tokens (pay-as-you-go) |
+| Cursor | Excellent | Excellent | Excellent | 200k tokens | $20-40/month |
+| GitHub Copilot | Good | Good | Good | Limited to file | $10/month |
+| Zed AI | Excellent | Excellent | Good | Context-aware | $100/year |
+| Tabnine | Good | Moderate | Moderate | Limited | $120/year free |
+
+## Advanced Rust Patterns with AI Assistance
+
+### Async Patterns and Tokio
+
+```rust
+// Claude Code helps generate complete async workflows
+use tokio::task;
+use tokio::time::{sleep, Duration};
+
+pub async fn process_requests_concurrently(requests: Vec<Request>) -> Result<Vec<Response>, ProcessError> {
+    let handles: Vec<_> = requests
+        .into_iter()
+        .map(|req| {
+            task::spawn(async move {
+                process_single_request(req).await
+            })
+        })
+        .collect();
+
+    let mut results = Vec::new();
+    for handle in handles {
+        match handle.await {
+            Ok(Ok(response)) => results.push(response),
+            Ok(Err(e)) => eprintln!("Request failed: {}", e),
+            Err(e) => eprintln!("Task join error: {}", e),
+        }
+    }
+
+    Ok(results)
+}
+
+pub async fn process_single_request(req: Request) -> Result<Response, ProcessError> {
+    sleep(Duration::from_secs(1)).await;
+    // Implementation details
+    Ok(Response::default())
+}
+```
+
+### Trait Bounds and Generic Constraints
+
+```rust
+// AI assistants help with complex trait specifications
+use std::fmt::Debug;
+
+pub trait DataProcessor: Send + Sync + Debug {
+    fn process(&self, data: Vec<u8>) -> Result<String, ProcessError>;
+}
+
+pub async fn apply_processor<T>(
+    processor: impl DataProcessor,
+    data: Vec<u8>,
+) -> Result<String, ProcessError> {
+    processor.process(data)
+}
+
+// Advanced: Associated types and where clauses
+pub trait Repository<T>
+where
+    T: Clone + Send + Sync,
+{
+    async fn find(&self, id: u64) -> Result<Option<T>, RepositoryError>;
+    async fn save(&self, item: T) -> Result<u64, RepositoryError>;
+}
+
+pub struct InMemoryRepository<T>
+where
+    T: Clone + Send + Sync + Debug,
+{
+    store: Arc<Mutex<HashMap<u64, T>>>,
+}
+
+impl<T> Repository<T> for InMemoryRepository<T>
+where
+    T: Clone + Send + Sync,
+{
+    async fn find(&self, id: u64) -> Result<Option<T>, RepositoryError> {
+        let store = self.store.lock().await;
+        Ok(store.get(&id).cloned())
+    }
+
+    async fn save(&self, item: T) -> Result<u64, RepositoryError> {
+        let mut store = self.store.lock().await;
+        let id = store.len() as u64 + 1;
+        store.insert(id, item);
+        Ok(id)
+    }
+}
+```
+
+## CLI Commands for Rust Development with AI
+
+```bash
+# Using Claude Code for Rust development
+claude code --file src/main.rs "Refactor this async function to use tokio::select for timeout handling"
+
+# Clippy for linting—use with AI feedback
+cargo clippy -- -D warnings
+
+# Run tests and capture output for AI context
+cargo test -- --nocapture --test-threads=1
+
+# Generate documentation
+cargo doc --open
+
+# Check for common mistakes
+cargo check && cargo build
+
+# Performance profiling (helpful to share with AI)
+cargo flamegraph
+
+# Format code before asking AI for improvements
+cargo fmt --all
+```
+
+## Troubleshooting Common Rust Issues with AI Help
+
+### Issue: Lifetime Errors
+When you encounter lifetime issues, provide context to the AI:
+
+```rust
+// Common error: lifetime mismatch
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {  // Wrong
+    if x.len() > y.len() {
+        x
+    } else {
+        y
+    }
+}
+
+// Correct version (AI can generate this):
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    if x.len() > y.len() { x } else { y }
+}
+
+// Even better: use references correctly
+fn longest(x: &str, y: &str) -> &str {
+    if x.len() > y.len() { x } else { y }
+}
+```
+
+### Issue: Move vs Copy Semantics
+```rust
+// Problem: trying to use after move
+let s1 = String::from("hello");
+let s2 = s1;  // s1 is moved to s2
+println!("{}", s1);  // ERROR: value used after move
+
+// AI assists with appropriate fixes:
+// Option 1: Clone
+let s2 = s1.clone();
+println!("{}", s1);  // OK
+
+// Option 2: Borrow
+let s2 = &s1;
+println!("{}", s1);  // OK
+```
+
+## Performance Testing with AI Assistance
+
+When working on performance-critical Rust code:
+
+```rust
+#[cfg(test)]
+mod benches {
+    use super::*;
+
+    #[test]
+    fn benchmark_algorithm() {
+        let data = vec![1; 1_000_000];
+        let start = std::time::Instant::now();
+
+        let result = expensive_operation(&data);
+
+        let elapsed = start.elapsed();
+        println!("Time: {:?}", elapsed);
+        assert!(!result.is_empty());
+    }
+}
+
+// Use with Criterion.rs for professional benchmarks
+#[cfg(test)]
+mod criterion_benchmarks {
+    use criterion::{black_box, criterion_group, criterion_main, Criterion};
+
+    fn fibonacci_benchmark(c: &mut Criterion) {
+        c.bench_function("fib 20", |b| b.iter(|| fibonacci(black_box(20))));
+    }
+
+    criterion_group!(benches, fibonacci_benchmark);
+    criterion_main!(benches);
+}
+```
+
+## Error Handling Patterns
+
+AI tools help establish consistent error handling:
+
+```rust
+use thiserror::Error;
+
+#[derive(Error, Debug)]
+pub enum AppError {
+    #[error("Database error: {0}")]
+    Database(#[from] sqlx::Error),
+
+    #[error("Invalid input: {0}")]
+    InvalidInput(String),
+
+    #[error("Not found")]
+    NotFound,
+
+    #[error("Internal server error")]
+    InternalError,
+}
+
+// Custom result type
+pub type AppResult<T> = Result<T, AppError>;
+
+// AI can generate handlers for each error type
+impl From<AppError> for HttpResponse {
+    fn from(err: AppError) -> Self {
+        match err {
+            AppError::InvalidInput(msg) => {
+                HttpResponse::BadRequest().json(json!({"error": msg}))
+            }
+            AppError::NotFound => {
+                HttpResponse::NotFound().json(json!({"error": "Not found"}))
+            }
+            _ => {
+                HttpResponse::InternalServerError().json(json!({"error": "Server error"}))
+            }
+        }
+    }
+}
+```
+
+## Best Practices When Using AI for Rust
+
+1. **Test aggressively**: Compile your AI-generated code immediately with `cargo check`
+2. **Review for idiomatic Rust**: AI sometimes generates correct but non-idiomatic code
+3. **Use Clippy feedback**: Run `cargo clippy` after generation and ask AI to address warnings
+4. **Establish patterns first**: Share existing code with AI to match your style
+5. **Verify ownership**: For every generated function, trace the ownership rules
+6. **Async safety**: Always verify async code uses proper synchronization primitives
+
+## Learning Resources to Share with AI
+
+When providing context to your AI assistant, include:
+
+- Your `Cargo.toml` for dependency versions
+- Existing trait definitions and implementations
+- Error types your codebase uses
+- Style preferences from `.rustfmt.toml`
+- Performance requirements or constraints
+
 ## Related Reading
 
 - [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)

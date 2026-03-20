@@ -186,7 +186,199 @@ For sealed interfaces, ensure the tool correctly generates the complete hierarch
 
 Document any limitations discovered with specific patterns, as tool behavior may improve in subsequent releases. Many AI code completion providers update their Java support based on user feedback and evolving language features.
 
+## Tool Comparison Matrix
 
+| Tool | Record Syntax | Sealed Classes | Pattern Matching | Canonical Constructors | Performance |
+|------|---|---|---|---|---|
+| GitHub Copilot | Good | Moderate | Good | Good | Excellent (inline) |
+| Claude Code | Excellent | Excellent | Excellent | Excellent | Good (terminal) |
+| Cursor | Excellent | Excellent | Excellent | Excellent | Excellent |
+| IntelliJ AI Assistant | Excellent | Excellent | Good | Excellent | Excellent |
+| Tabnine | Good | Moderate | Moderate | Good | Excellent (inline) |
+
+## Testing Record Classes with AI Assistance
+
+AI tools excel at generating test cases for records. Here's what effective record testing looks like:
+
+```java
+// Test class generated with AI assistance
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class UserProfileTest {
+
+    @Test
+    public void testRecordFieldsCannotBeNull() {
+        assertThrows(NullPointerException.class, () -> {
+            new UserProfile(null, "test@example.com", 25);
+        });
+    }
+
+    @Test
+    public void testRecordEqualsAndHashCode() {
+        UserProfile user1 = new UserProfile("alice", "alice@test.com", 30);
+        UserProfile user2 = new UserProfile("alice", "alice@test.com", 30);
+        UserProfile user3 = new UserProfile("bob", "bob@test.com", 25);
+
+        assertEquals(user1, user2);
+        assertEquals(user1.hashCode(), user2.hashCode());
+        assertNotEquals(user1, user3);
+    }
+
+    @Test
+    public void testRecordToString() {
+        UserProfile user = new UserProfile("charlie", "charlie@test.com", 28);
+        String expectedFormat = "UserProfile[username=charlie, email=charlie@test.com, age=28]";
+        assertEquals(expectedFormat, user.toString());
+    }
+
+    @Test
+    public void testCompactConstructorValidation() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new ValidatedUser("", "test@example.com");
+        });
+    }
+}
+
+public record ValidatedUser(String username, String email) {
+    public ValidatedUser {
+        if (username == null || username.isEmpty()) {
+            throw new IllegalArgumentException("Username cannot be empty");
+        }
+        if (!email.contains("@")) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
+    }
+}
+```
+
+## Sealed Interface Verification Strategies
+
+When working with sealed types, AI tools should help verify type safety:
+
+```java
+// CLI command to check sealed type compliance
+javac --enable-preview SealedShape.java
+
+// Sealed interface with computed properties
+public sealed interface NumericShape permits Circle, Rectangle, Triangle {
+    double area();
+    double perimeter();
+}
+
+// AI should generate complete implementations
+public final class Circle implements NumericShape {
+    private final double radius;
+
+    public Circle(double radius) {
+        if (radius <= 0) throw new IllegalArgumentException("Radius must be positive");
+        this.radius = radius;
+    }
+
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    public double perimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Pattern matching with exhaustiveness checking
+public static String describeShape(NumericShape shape) {
+    return switch(shape) {
+        case Circle c ->
+            String.format("Circle with radius %.2f, area %.2f", c.radius(), c.area());
+        case Rectangle r ->
+            String.format("Rectangle %dx%d, area %d", r.width(), r.height(), r.area());
+        case Triangle t ->
+            String.format("Triangle, area %.2f", t.area());
+    };
+}
+```
+
+## AI Tool Evaluation Checklist
+
+When testing an AI code completion tool with records and sealed interfaces:
+
+1. **Record Recognition Test**
+   - Type `record User` and verify the tool suggests complete syntax
+   - Check if it generates canonical constructors automatically
+   - Verify handling of defensive copies for mutable fields
+
+2. **Sealed Type Test**
+   - Create a sealed interface with 3-4 permitted types
+   - Verify the tool suggests all permitted implementations
+   - Check that incomplete switch statements get flagged
+
+3. **Pattern Matching Test**
+   - Write a switch expression on a sealed type with some cases missing
+   - Verify the tool suggests completing the pattern match
+   - Confirm it knows when a case is unreachable
+
+4. **Compilation Verification**
+   ```bash
+   # Test that generated code compiles without warnings
+   javac -Xlint:all -Werror RecordTest.java
+   ```
+
+## Common Generation Mistakes
+
+Tools sometimes generate problematic record code:
+
+```java
+// WRONG: Trying to make a record mutable (records are immutable by design)
+public record MutableUser(String username) {
+    public void setUsername(String newName) {  // ERROR: won't compile
+        this.username = newName;
+    }
+}
+
+// CORRECT: Records are immutable; use builders if mutation needed
+public final class UserBuilder {
+    private String username;
+
+    public UserBuilder withUsername(String username) {
+        this.username = username;
+        return this;
+    }
+
+    public UserRecord build() {
+        return new UserRecord(username);
+    }
+}
+
+// WRONG: Forgetting sealed keyword on permitted subtypes
+public class Circle implements Shape {  // Should be final or sealed
+    // ...
+}
+
+// CORRECT: All permitted implementations must be final or sealed
+public final class Circle implements Shape {
+    // ...
+}
+```
+
+## Building a Record/Sealed Type Strategy
+
+Teams using modern Java should establish patterns for AI-assisted development:
+
+1. **Document your record conventions**
+   - Whether you use records for DTOs, value objects, or domain models
+   - Validation expectations (defensive copies, null checks, etc.)
+   - Share examples with your AI tool context
+
+2. **Use sealed types consistently**
+   - Define sealed hierarchies for domain models where all subtypes are known
+   - Use unsealed classes only when necessary
+   - Leverage pattern matching exclusively for sealed types
+
+3. **Validate AI-generated code**
+   - Compile with `-Xlint:all -Werror` to catch subtle issues
+   - Run tests verifying immutability and equality semantics
+   - Code review focus: validation logic in compact constructors
 
 ## Looking Forward
 

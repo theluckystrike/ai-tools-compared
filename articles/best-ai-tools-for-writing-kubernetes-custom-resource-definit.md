@@ -206,6 +206,329 @@ For teams already using specific IDEs, the choice often comes down to which tool
 
 4. Version carefully: Follow Kubernetes versioning conventions—start with v1 for stable resources, use v1alpha1 for experimental features with clear upgrade paths.
 
+## Advanced CRD Patterns
+
+### Subresources for Status Separation
+
+```yaml
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: pipelines.ci.example.com
+spec:
+  group: ci.example.com
+  names:
+    kind: Pipeline
+    plural: pipelines
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      subresources:
+        status: {}  # Separate status subresource
+        scale:      # Optional: enable horizontal scaling
+          specReplicasPath: .spec.parallelism
+          statusReplicasPath: .status.activeRuns
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              required: [steps]
+              properties:
+                steps:
+                  type: array
+                  minItems: 1
+                  items:
+                    type: object
+                    required: [name, image]
+                    properties:
+                      name:
+                        type: string
+                      image:
+                        type: string
+                      timeout:
+                        type: string
+                        pattern: '^[0-9]+(s|m|h)$'
+                      retries:
+                        type: integer
+                        minimum: 0
+                        maximum: 3
+                parallelism:
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                  default: 1
+            status:
+              type: object
+              properties:
+                phase:
+                  type: string
+                  enum: [Pending, Running, Succeeded, Failed]
+                activeRuns:
+                  type: integer
+                conditions:
+                  type: array
+                  items:
+                    type: object
+                    required: [type, status]
+                    properties:
+                      type:
+                        type: string
+                      status:
+                        type: string
+                        enum: [True, False, Unknown]
+                      reason:
+                        type: string
+                      message:
+                        type: string
+                completionTime:
+                  type: string
+                  format: date-time
+```
+
+## CLI Commands for CRD Development
+
+```bash
+# Validate CRD syntax
+kubectl apply -f crd.yaml --dry-run=server --validate=strict
+
+# Check CRD status
+kubectl get crd pipelines.ci.example.com
+kubectl describe crd pipelines.ci.example.com
+
+# List all custom resources of a type
+kubectl get Pipeline --all-namespaces
+
+# Watch for resource changes
+kubectl get Pipeline --all-namespaces --watch
+
+# Get detailed resource info
+kubectl get Pipeline my-pipeline -o yaml
+
+# Explain custom resource fields
+kubectl explain Pipeline.spec.steps
+
+# Test controller webhook validation
+kubectl apply -f invalid-resource.yaml
+```
+
+## Real-World Example: Database CRD
+
+```yaml
+# Complete DatabaseInstance CRD with best practices
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: databaseinstances.data.example.com
+spec:
+  group: data.example.com
+  names:
+    kind: DatabaseInstance
+    plural: databaseinstances
+    shortNames: [dbinst, dbi]
+  scope: Namespaced
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      deprecated: false
+      deprecationWarning: "v1 is stable and not deprecated"
+      subresources:
+        status: {}
+      schema:
+        openAPIV3Schema:
+          type: object
+          description: "DatabaseInstance represents a database deployment"
+          required: [spec]
+          properties:
+            spec:
+              type: object
+              required: [engine, version]
+              properties:
+                engine:
+                  type: string
+                  description: "Database engine type"
+                  enum: [postgresql, mysql, mongodb, redis]
+                version:
+                  type: string
+                  description: "Database version"
+                  pattern: '^[0-9]+\.[0-9]+(\.[0-9]+)?$'
+                replicas:
+                  type: integer
+                  description: "Number of replicas for HA"
+                  minimum: 1
+                  maximum: 10
+                  default: 1
+                backup:
+                  type: object
+                  description: "Backup configuration"
+                  properties:
+                    enabled:
+                      type: boolean
+                      default: true
+                    schedule:
+                      type: string
+                      description: "Cron schedule for backups"
+                      pattern: '^(@(annually|yearly|monthly|weekly|daily|hourly|reboot)|(@every [0-9]+(ns|us|ms|s|m|h))|([0-9 ,/*-]+))$'
+                    retentionDays:
+                      type: integer
+                      minimum: 1
+                      maximum: 365
+                      default: 7
+                resources:
+                  type: object
+                  description: "Resource requests and limits"
+                  properties:
+                    cpu:
+                      type: string
+                      pattern: '^[0-9]+(m|[0-9]*$)'
+                    memory:
+                      type: string
+                      pattern: '^[0-9]+(Mi|Gi|Ti)$'
+            status:
+              type: object
+              properties:
+                phase:
+                  type: string
+                  enum: [Initializing, Ready, Degraded, Failed]
+                conditions:
+                  type: array
+                  items:
+                    type: object
+                    required: [type, status]
+                    properties:
+                      type:
+                        type: string
+                      status:
+                        type: string
+                        enum: [True, False, Unknown]
+                      lastTransitionTime:
+                        type: string
+                        format: date-time
+                      reason:
+                        type: string
+                      message:
+                        type: string
+                lastBackupTime:
+                  type: string
+                  format: date-time
+                observedGeneration:
+                  type: integer
+            metadata:
+              type: object
+              properties:
+                name:
+                  type: string
+      additionalPrinterColumns:
+        - name: Engine
+          type: string
+          description: Database engine
+          jsonPath: .spec.engine
+        - name: Version
+          type: string
+          description: Database version
+          jsonPath: .spec.version
+        - name: Replicas
+          type: integer
+          description: Number of replicas
+          jsonPath: .spec.replicas
+        - name: Status
+          type: string
+          description: Current status
+          jsonPath: .status.phase
+        - name: Age
+          type: date
+          jsonPath: .metadata.creationTimestamp
+```
+
+## Validation Rule Examples (CEL Expressions)
+
+```yaml
+# Add to version schema for inline validation
+x-kubernetes-validations:
+  - rule: "self.spec.replicas >= 1 && self.spec.replicas <= 10"
+    message: "replicas must be between 1 and 10"
+  - rule: "self.spec.version != ''"
+    message: "version cannot be empty"
+  - rule: "!has(self.spec.backup) || self.spec.backup.retentionDays <= 365"
+    message: "backup retention cannot exceed 365 days"
+  - rule: "self.spec.engine in ['postgresql', 'mysql', 'mongodb', 'redis']"
+    message: "unsupported database engine"
+  # Cross-field validation
+  - rule: "self.spec.replicas == 1 || self.spec.backup.enabled"
+    message: "single replica instances should have backups enabled"
+```
+
+## Tool Comparison for CRD Generation
+
+| Tool | Schema Generation | Validation Rules | Multi-version Support | Controller Scaffolding |
+|------|---|---|---|---|
+| Claude Code | Excellent | Excellent | Excellent | Good |
+| Cursor | Excellent | Excellent | Excellent | Excellent |
+| GitHub Copilot | Good | Moderate | Moderate | Moderate |
+| ChatGPT Plus | Good | Good | Moderate | Good |
+| Kubebuilder (scaffolding) | N/A | N/A | Excellent | Excellent |
+
+## Testing CRDs
+
+```bash
+# Test with valid resource
+kubectl apply -f valid-database.yaml
+
+# Example valid resource
+cat <<EOF | kubectl apply -f -
+apiVersion: data.example.com/v1
+kind: DatabaseInstance
+metadata:
+  name: production-postgres
+spec:
+  engine: postgresql
+  version: 15.2
+  replicas: 3
+  backup:
+    enabled: true
+    schedule: "0 2 * * *"
+    retentionDays: 30
+  resources:
+    cpu: 2000m
+    memory: 8Gi
+EOF
+
+# Test with invalid resource (should fail validation)
+cat <<EOF | kubectl apply -f -
+apiVersion: data.example.com/v1
+kind: DatabaseInstance
+metadata:
+  name: invalid-db
+spec:
+  engine: mongodb  # Valid
+  version: invalid  # Invalid: doesn't match pattern
+  replicas: 100  # Invalid: exceeds maximum
+EOF
+```
+
+## Troubleshooting CRD Issues
+
+```bash
+# Check CRD definition is valid
+kubectl get crd databaseinstances.data.example.com -o yaml | kubectl apply -f - --dry-run=server
+
+# View validation errors in detail
+kubectl apply -f resource.yaml 2>&1 | grep -A5 "ValidationError"
+
+# Inspect resource details
+kubectl get databaseinstance my-db -o yaml
+
+# Check controller logs
+kubectl logs -f deployment/database-controller -n database-system
+
+# Debug webhook issues
+kubectl get validatingwebhookconfigurations
+kubectl describe validatingwebhookconfigurations database-validator
+```
 
 ## Related Reading
 
