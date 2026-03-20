@@ -8,7 +8,7 @@ permalink: /how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-
 categories: [guides]
 tags: [ai-tools-compared, ai, prompts, development, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
