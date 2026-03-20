@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, chatgpt]
