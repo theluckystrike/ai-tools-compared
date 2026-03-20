@@ -8,7 +8,7 @@ permalink: /copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
