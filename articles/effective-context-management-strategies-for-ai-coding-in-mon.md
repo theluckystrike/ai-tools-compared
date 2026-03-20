@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true

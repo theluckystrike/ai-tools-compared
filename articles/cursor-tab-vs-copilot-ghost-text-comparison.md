@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-tab-vs-copilot-ghost-text-comparison/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true

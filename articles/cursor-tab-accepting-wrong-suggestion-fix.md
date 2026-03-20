@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-tab-accepting-wrong-suggestion-fix/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
