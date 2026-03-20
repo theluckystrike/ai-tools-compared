@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/
 categories: [guides]
-tags: [ai, prompts, workflow]
+tags: [ai-tools-compared, ai, prompts, workflow, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

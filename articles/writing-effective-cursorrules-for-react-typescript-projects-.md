@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-cursorrules-for-react-typescript-projects-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

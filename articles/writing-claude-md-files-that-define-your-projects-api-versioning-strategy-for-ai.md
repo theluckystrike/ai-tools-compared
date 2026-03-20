@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai, api]
 reviewed: true
 score: 8
 intent-checked: true

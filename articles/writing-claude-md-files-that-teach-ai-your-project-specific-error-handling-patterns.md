@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/
 categories: [guides]
-tags: [claude-code, ai-assistants, error-handling]
+tags: [ai-tools-compared, claude-code, ai-assistants, error-handling, troubleshooting, artificial-intelligence, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

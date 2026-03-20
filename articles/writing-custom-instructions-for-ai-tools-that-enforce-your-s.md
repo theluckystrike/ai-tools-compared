@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
