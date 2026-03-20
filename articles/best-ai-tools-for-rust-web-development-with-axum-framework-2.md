@@ -181,8 +181,258 @@ When implementing specific Axum features, verify that generated code handles err
 
 The Axum ecosystem continues evolving, and these tools adapt alongside it. Stay current with Axum releases to ensure your AI assistants provide relevant suggestions for new features and patterns.
 
+## Real-World Axum Application Examples
 
+Understanding how AI assists with actual Axum patterns helps in choosing tools.
 
+**Middleware Implementation**
+
+Axum middleware wraps handlers and can be tricky to implement correctly. When you ask Claude Code to implement a request logging middleware:
+
+```rust
+use axum::{
+    body::Body,
+    extract::ConnectInfo,
+    http::{Request, StatusCode},
+    middleware::Next,
+    response::Response,
+};
+use std::net::SocketAddr;
+use tower::ServiceExt;
+use tracing::info;
+
+pub async fn log_middleware(
+    ConnectInfo(addr): ConnectInfo<SocketAddr>,
+    mut req: Request<Body>,
+    next: Next,
+) -> Response {
+    let method = req.method().clone();
+    let uri = req.uri().clone();
+    let start = std::time::Instant::now();
+
+    let response = next.run(req).await;
+
+    let elapsed = start.elapsed();
+    let status = response.status();
+
+    info!(
+        method = %method,
+        uri = %uri,
+        status = status.as_u16(),
+        elapsed_ms = elapsed.as_millis(),
+        client_addr = %addr,
+        "Request processed"
+    );
+
+    response
+}
+```
+
+Claude correctly understands the middleware trait bounds and async patterns. Copilot would likely produce something that compiles but might miss proper error handling or tracing integration.
+
+**Database Integration with Sqlx**
+
+Working with async database queries requires understanding Rust's async patterns alongside SQL. When asking for repository pattern with Sqlx:
+
+```rust
+use sqlx::postgres::PgPool;
+
+pub struct UserRepository {
+    pool: PgPool,
+}
+
+impl UserRepository {
+    pub async fn find_by_id(&self, id: i32) -> Result<User, sqlx::Error> {
+        sqlx::query_as::<_, User>(
+            "SELECT id, name, email FROM users WHERE id = $1"
+        )
+        .bind(id)
+        .fetch_one(&self.pool)
+        .await
+    }
+
+    pub async fn create(&self, name: &str, email: &str) -> Result<User, sqlx::Error> {
+        sqlx::query_as::<_, User>(
+            "INSERT INTO users (name, email) VALUES ($1, $2) RETURNING id, name, email"
+        )
+        .bind(name)
+        .bind(email)
+        .fetch_one(&self.pool)
+        .await
+    }
+}
+```
+
+Claude produces idiomatic Rust with proper error handling. GitHub Copilot handles this pattern well but might suggest less optimal query patterns. Cursor excels here because it understands your existing database schema through context.
+
+## Tool Comparison: Specific Scenarios
+
+| Scenario | Claude | Copilot | Cursor | Zed |
+|----------|--------|---------|--------|-----|
+| Handler with extractors | Excellent | Good | Good | Good |
+| Middleware chains | Excellent | Fair | Good | Fair |
+| Error handling | Excellent | Good | Good | Fair |
+| Database integration | Excellent | Good | Excellent | Fair |
+| State management | Excellent | Good | Excellent | Fair |
+| Custom extractors | Excellent | Fair | Good | Fair |
+| Performance optimization | Excellent | Fair | Good | Good |
+| Type-safe routing | Excellent | Good | Good | Good |
+
+## Avoiding Common Axum Pitfalls with AI Help
+
+AI assistants sometimes generate code that compiles but has subtle issues:
+
+**The Cloning State Problem**
+
+Incorrect (but sometimes suggested):
+```rust
+#[derive(Clone)]
+struct AppState {
+    db: Database,  // Database connections are expensive to clone!
+}
+```
+
+Correct (Claude typically suggests):
+```rust
+#[derive(Clone)]
+struct AppState {
+    db: Arc<Database>,  // Shared reference, not cloned
+}
+```
+
+When reviewing AI-generated code that involves shared state, verify that expensive resources use `Arc` or `Arc<Mutex<T>>` rather than direct cloning.
+
+**Extractor Order Matters**
+
+Incorrect (sometimes suggested):
+```rust
+pub async fn handler(
+    State(state): State<AppState>,
+    Path(id): Path<u64>,
+    Json(payload): Json<CreateRequest>,
+) -> Json<Response>
+```
+
+While this works, the conventional Axum order is:
+```rust
+pub async fn handler(
+    Path(id): Path<u64>,
+    State(state): State<AppState>,
+    Json(payload): Json<CreateRequest>,
+) -> Json<Response>
+```
+
+Claude respects this convention. Copilot sometimes suggests working but unconventional orderings.
+
+## Integration Patterns with Axum
+
+Real Axum projects use patterns that AI sometimes struggles with:
+
+**Composing Multiple Routers**
+
+```rust
+use axum::routing::{get, post};
+use axum::Router;
+
+pub fn api_routes(state: AppState) -> Router {
+    Router::new()
+        .nest("/users", user_routes(state.clone()))
+        .nest("/posts", post_routes(state.clone()))
+        .with_state(state)
+}
+
+fn user_routes(state: AppState) -> Router {
+    Router::new()
+        .route("/", get(list_users).post(create_user))
+        .route("/:id", get(get_user).delete(delete_user))
+}
+```
+
+Claude and Cursor handle nested routing well. Copilot sometimes produces flat route structures that work but lack organization.
+
+## Performance Considerations
+
+Axum is designed for high performance, and AI suggestions should respect that:
+
+**Avoid Unnecessary Allocations**
+
+```rust
+// Less efficient (creates owned String)
+pub async fn handler() -> String {
+    "Hello".to_string()
+}
+
+// More efficient (returns static str)
+pub async fn handler() -> &'static str {
+    "Hello"
+}
+
+// Or when dynamic:
+pub async fn handler() -> Html<String> {
+    Html(format!("<h1>Hello</h1>"))
+}
+```
+
+Claude naturally suggests the most efficient approach. Copilot and others might suggest less optimal patterns that still work.
+
+## Dependency Ecosystem Awareness
+
+Different AI tools have varying awareness of Axum's ecosystem. When you mention common libraries:
+
+- **tokio**: All tools understand async runtime
+- **tower**: Claude and Cursor understand tower service traits well
+- **tracing**: Claude knows tracing integration, others less so
+- **serde**: All tools handle JSON serialization
+- **uuid**: All tools aware of UUID generation
+- **chrono**: All tools understand time handling
+
+If your Axum project uses less common libraries (e.g., `sea-orm`, `diesel` with async), Claude is more likely to produce correct suggestions. For very new Axum features released in 2026, all tools may lack complete knowledge.
+
+## Development Workflow Optimization
+
+Pair AI assistance with effective development practices:
+
+1. **Start with Claude for architecture**: Ask Claude to outline handler structure, error handling approach, and middleware strategy
+2. **Use Copilot for implementation**: Inline suggestions accelerate repetitive pattern implementation
+3. **Cursor for refactoring**: When you need to understand how changes propagate through multiple files
+4. **Manual review**: Always verify suggestions handle error cases and follow Rust best practices
+
+This hybrid approach captures the strengths of each tool while minimizing weaknesses.
+
+## Staying Current with Axum
+
+Axum evolves regularly. Keep your AI assistants' knowledge current by:
+
+- Providing recent Axum examples in context when prompting Claude
+- Noting your Axum version explicitly ("using Axum 0.8")
+- Checking Axum changelog before accepting AI suggestions for new features
+- Testing generated code thoroughly before production deployment
+
+## Production Deployment Considerations
+
+When using AI to build production Axum applications:
+
+- **Error handling**: Ensure AI-generated error responses include appropriate HTTP status codes
+- **Logging**: Verify structured logging is consistent across handlers
+- **Timeouts**: AI might not include request timeouts; add them explicitly
+- **Rate limiting**: Consider adding tower-governor for rate limiting
+- **Security headers**: Add appropriate CORS, CSP, and other security headers
+- **Monitoring**: Integrate with observability tools like OpenTelemetry
+
+These production-critical features are sometimes overlooked in AI-generated code.
+
+## Comparison Table: AI Tools for Axum in Detail
+
+| Feature | Claude | Copilot | Cursor | Zed |
+|---------|--------|---------|--------|-----|
+| Async runtime understanding | 9/10 | 8/10 | 8/10 | 7/10 |
+| Error handling patterns | 9/10 | 7/10 | 7/10 | 6/10 |
+| Type system leverage | 9/10 | 7/10 | 8/10 | 7/10 |
+| Middleware patterns | 9/10 | 6/10 | 7/10 | 5/10 |
+| State management | 9/10 | 6/10 | 8/10 | 5/10 |
+| IDE integration | N/A | 10/10 | 10/10 | 10/10 |
+| Codebase context | N/A | 7/10 | 9/10 | 7/10 |
+| Inline suggestions | N/A | 9/10 | 9/10 | 8/10 |
 
 
 ## Related Reading

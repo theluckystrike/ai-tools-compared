@@ -183,6 +183,197 @@ Building a reliable test suite for table components requires attention to these 
 
 
 
+## Advanced Table Test Scenarios
+
+Beyond basic sorting and filtering, tables often include advanced features that require sophisticated test coverage.
+
+**Multi-column sorting:** When users click multiple column headers while holding Shift, the table should sort by multiple columns in sequence. Testing this requires verifying that rows maintain proper ordering based on primary and secondary sort columns.
+
+```javascript
+// Test multi-column sort behavior
+test('sorts by multiple columns when Shift-clicking headers', async ({ page }) => {
+  // Sort by first column
+  await page.click('th:has-text("Category")');
+
+  // Shift-click second column
+  await page.click('th:has-text("Price")', { modifiers: ['Shift'] });
+
+  // Verify rows are sorted by category first, then price
+  const rows = page.locator('tbody tr');
+  const firstCategory = await rows.first().locator('td:nth-child(1)').textContent();
+  const secondCategory = await rows.nth(1).locator('td:nth-child(1)').textContent();
+
+  // Categories should be equal or increasing
+  expect(firstCategory <= secondCategory).toBeTruthy();
+});
+```
+
+**Expandable rows:** Tables with expandable rows (for displaying additional details) require tests that verify click handlers, content visibility, and state management.
+
+```javascript
+// Test row expansion and content visibility
+test('expands row and displays detailed information', async ({ page }) => {
+  const firstRow = page.locator('tbody tr').first();
+  const expandButton = firstRow.locator('[aria-label="Expand row"]');
+
+  // Initially, details should be hidden
+  let detailsPanel = firstRow.locator('[data-testid="row-details"]');
+  await expect(detailsPanel).toHaveClass(/hidden/);
+
+  // Click to expand
+  await expandButton.click();
+
+  // Details should now be visible
+  await expect(detailsPanel).not.toHaveClass(/hidden/);
+  await expect(detailsPanel).toContainText('Order ID:');
+  await expect(detailsPanel).toContainText('Customer:');
+
+  // Click again to collapse
+  await expandButton.click();
+  await expect(detailsPanel).toHaveClass(/hidden/);
+});
+```
+
+**Batch selection and actions:** Tables that allow selecting multiple rows and performing bulk operations need tests for checkbox state management and action availability.
+
+```javascript
+// Test batch selection and bulk actions
+test('enables bulk actions when rows are selected', async ({ page }) => {
+  const selectAllCheckbox = page.locator('[data-testid="select-all-checkbox"]');
+  const bulkDeleteButton = page.locator('[data-testid="bulk-delete-button"]');
+
+  // Initially, delete button should be disabled
+  await expect(bulkDeleteButton).toBeDisabled();
+
+  // Click select all
+  await selectAllCheckbox.check();
+
+  // Delete button should now be enabled
+  await expect(bulkDeleteButton).toBeEnabled();
+
+  // Check checkbox count matches table rows
+  const checkboxes = page.locator('[data-testid="row-checkbox"]');
+  const rowCount = await page.locator('tbody tr').count();
+  const checkedCount = await checkboxes.count();
+
+  expect(checkedCount).toBe(rowCount);
+});
+```
+
+**Virtual scrolling:** Large tables often implement virtual scrolling to handle thousands of rows efficiently. Testing virtual scrolling requires verifying that DOM content changes as users scroll.
+
+```javascript
+// Test virtual scrolling renders correct content
+test('virtualizes table rows for performance with large datasets', async ({ page }) => {
+  // Assume table is loaded with 5000 rows
+  const tableViewport = page.locator('[data-testid="table-body-viewport"]');
+
+  // Initially, only visible rows should be in DOM
+  let visibleRows = page.locator('tbody tr');
+  let initialCount = await visibleRows.count();
+  expect(initialCount).toBeLessThan(50); // Typically less than viewport height
+
+  // Scroll down
+  await tableViewport.evaluate(el => el.scrollTop = 10000);
+
+  // Content should change
+  const newRows = page.locator('tbody tr');
+  const newContent = await newRows.first().textContent();
+
+  // Verify rows have updated without loading the full dataset
+  expect(newContent).not.toEqual('');
+});
+```
+
+## Table Testing Best Practices with AI Assistance
+
+When using AI assistants to generate table tests, provide comprehensive context about your table implementation:
+
+Include the actual HTML structure or a representative example. Show data-testid attributes, ARIA labels, and semantic elements. Describe any custom CSS classes or attribute conventions your table uses.
+
+Specify which interactions users perform most frequently. Prioritize test generation for those scenarios.
+
+Explain any asynchronous behavior. If your table fetches data from an API when sorting, include those details so generated tests include appropriate waiting strategies.
+
+Provide error state examples. Describe what happens when filtering returns no results or when the data source experiences connectivity issues.
+
+## Performance Considerations in Generated Tests
+
+AI-generated tests sometimes lack awareness of performance implications. Review generated tests for:
+
+**Implicit waits:** Tests should wait for specific elements or conditions, not arbitrary timeouts. Replace `await page.waitForTimeout(2000)` with `await expect(element).toBeVisible()`.
+
+**Batch operations:** When testing multiple table actions, combine related operations rather than repeating entire test flows.
+
+**Fixture optimization:** Use page object patterns or fixtures to share table state between tests, reducing setup overhead.
+
+```javascript
+// Better: Shared fixture reduces duplication
+const tableTest = test.extend({
+  sortedTable: async ({ page }, use) => {
+    await page.goto('/table');
+    await page.click('th:has-text("Name")');
+    await expect(page.locator('tbody tr').first()).toContainText('Alpha');
+    await use(page);
+  }
+});
+
+tableTest('adds item to sorted table', async ({ sortedTable }) => {
+  // Start with already-sorted table
+  await sortedTable.click('[data-testid="add-item-button"]');
+  // ... rest of test
+});
+```
+
+## Handling Dynamic Table Content
+
+Modern applications often update table content dynamically without page reloads. Generated tests should account for this:
+
+```javascript
+// Handle dynamic updates with proper waiting
+test('reflects real-time updates in table', async ({ page }) => {
+  await page.goto('/live-table');
+
+  // Initial state
+  let rows = page.locator('tbody tr');
+  const initialCount = await rows.count();
+
+  // Wait for table mutation observer to fire
+  await page.waitForFunction(() => {
+    return document.querySelectorAll('tbody tr').length > initialCount;
+  });
+
+  // Verify new row was added
+  rows = page.locator('tbody tr');
+  await expect(rows).toHaveCount(initialCount + 1);
+});
+```
+
+## Comparison Table: AI Tools for Table Testing
+
+| Tool | Sorting Tests | Filtering Tests | Pagination Tests | Complex Interactions | Maintainability |
+|------|---------------|-----------------|------------------|---------------------|-----------------|
+| Claude Code | Excellent | Excellent | Good | Excellent | Excellent |
+| GitHub Copilot | Good | Good | Good | Fair | Good |
+| Codeium | Good | Fair | Fair | Fair | Good |
+| Tabnine | Fair | Fair | Fair | Fair | Fair |
+| Cursor | Excellent | Good | Good | Good | Excellent |
+
+## Production Readiness Checklist
+
+Before deploying table tests to production CI/CD pipelines, ensure AI-generated tests include:
+
+- Proper error handling for network failures or API delays
+- Clear, descriptive assertion messages that aid debugging
+- Data cleanup between tests (deleting created items, resetting state)
+- Timeout values appropriate for your environment
+- Cross-browser coverage if your users span multiple browsers
+- Mobile viewport testing if tables appear on responsive designs
+
+The combination of AI-generated scaffolding and human review produces the most reliable test suites. Use AI assistants to accelerate initial test creation, but invest time in review and refinement to ensure comprehensive coverage.
+
+{% endraw %}
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -191,6 +382,8 @@ Building a reliable test suite for table components requires attention to these 
 - [Best AI Assistant for Writing Playwright Tests for Drag and Drop Interactions 2026](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
 - [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+
+{% raw %}
 
 Built by
 

@@ -183,8 +183,412 @@ Consider documenting your keybindings configuration. A simple reference file hel
 
 Cursor continues evolving its AI features, and new command identifiers may replace current ones. Periodically check Cursor's documentation for updates to AI commands and adjust your keybindings accordingly.
 
+## Platform-Specific Keybinding Paths
 
+Finding your keybindings file depends on your platform:
 
+**macOS**
+VS Code: `~/Library/Application Support/Code/User/keybindings.json`
+Cursor: `~/.cursor/User/keybindings.json`
+
+**Windows**
+VS Code: `%APPDATA%\Code\User\keybindings.json`
+Cursor: `%APPDATA%\Cursor\User\keybindings.json`
+
+**Linux**
+VS Code: `~/.config/Code/User/keybindings.json`
+Cursor: `~/.config/Cursor/User/keybindings.json`
+
+You can also access these through editor settings menus, which is safer than direct file editing.
+
+## Complete Copilot Command Mapping Reference
+
+Understanding all Copilot commands helps you remap them completely:
+
+```json
+{
+  // Generate completions
+  "key": "ctrl+shift+space",
+  "command": "github.copilot.generate",
+  "when": "editorTextFocus && !editorReadOnly"
+},
+{
+  // Accept suggestion
+  "key": "tab",
+  "command": "github.copilot.accept",
+  "when": "editorTextFocus && copilotState == 'completionInProgress'"
+},
+{
+  // Dismiss suggestion
+  "key": "escape",
+  "command": "github.copilot.dismissCompletion",
+  "when": "editorTextFocus && copilotState == 'completionInProgress'"
+},
+{
+  // Previous suggestion
+  "key": "ctrl+["  ,
+  "command": "github.copilot.previous",
+  "when": "editorTextFocus && copilotState == 'completionInProgress'"
+},
+{
+  // Next suggestion
+  "key": "ctrl+]",
+  "command": "github.copilot.next",
+  "when": "editorTextFocus && copilotState == 'completionInProgress'"
+},
+{
+  // Open chat
+  "key": "ctrl+l",
+  "command": "github.copilot.openSymbolFromEditor",
+  "when": "editorTextFocus"
+}
+```
+
+## Cursor AI Command Reference
+
+Cursor's native AI commands are different:
+
+```json
+{
+  // Edit/generate code
+  "key": "cmd+k",
+  "command": "cursorai.edit.generate",
+  "when": "editorTextFocus"
+},
+{
+  // Chat sidebar
+  "key": "cmd+shift+l",
+  "command": "cursorai.chat.focus",
+  "when": "editorTextFocus"
+},
+{
+  // New chat panel
+  "key": "cmd+shift+m",
+  "command": "cursorai.chatpanel.new",
+  "when": "editorTextFocus"
+},
+{
+  // Accept suggestion
+  "key": "tab",
+  "command": "cursorai.accept",
+  "when": "editorTextFocus && cursoraiSuggestionVisible"
+},
+{
+  // Reject suggestion
+  "key": "escape",
+  "command": "cursorai.reject",
+  "when": "editorTextFocus && cursoraiSuggestionVisible"
+},
+{
+  // Previous suggestion
+  "key": "ctrl+[",
+  "command": "cursorai.previous",
+  "when": "editorTextFocus"
+},
+{
+  // Next suggestion
+  "key": "ctrl+]",
+  "command": "cursorai.next",
+  "when": "editorTextFocus"
+}
+```
+
+## Advanced: Custom When Clauses
+
+The "when" clause determines when a keybinding activates. Advanced conditions:
+
+```json
+{
+  // Only in JavaScript/TypeScript files
+  "key": "cmd+shift+g",
+  "command": "cursorai.edit.generate",
+  "when": "editorLangId == 'typescript' || editorLangId == 'javascript'"
+},
+{
+  // Only in focused terminal
+  "key": "cmd+shift+i",
+  "command": "cursorai.edit.generate",
+  "when": "terminalFocus"
+},
+{
+  // Only when specific file is open
+  "key": "cmd+k",
+  "command": "cursorai.edit.generate",
+  "when": "resourceFilename == 'README.md'"
+},
+{
+  // Only when text is selected
+  "key": "cmd+shift+e",
+  "command": "cursorai.edit.generate",
+  "when": "editorTextFocus && editorHasSelection"
+},
+{
+  // Never in comments
+  "key": "cmd+k",
+  "command": "cursorai.edit.generate",
+  "when": "editorTextFocus && !editorInComment"
+},
+{
+  // Only when not in read-only mode
+  "key": "cmd+shift+a",
+  "command": "cursorai.edit.generate",
+  "when": "editorTextFocus && !editorReadonly"
+}
+```
+
+## Conflict Detection and Resolution
+
+When keybindings conflict, Cursor shows warnings. To identify conflicts:
+
+1. Open Command Palette (`Cmd+Shift+P`)
+2. Run "Preferences: Open Default Keybindings"
+3. Search for your custom bindings
+4. Look for red underlines indicating conflicts
+
+**Conflict resolution strategies:**
+
+*Option 1: Change your binding to an unused shortcut*
+```json
+// Instead of Cmd+K (which Cursor might use)
+{
+  "key": "cmd+shift+k",
+  "command": "cursorai.edit.generate"
+}
+```
+
+*Option 2: Use context-specific bindings*
+```json
+// Only use in Python files
+{
+  "key": "cmd+k",
+  "command": "cursorai.edit.generate",
+  "when": "editorLangId == 'python'"
+}
+```
+
+*Option 3: Remove your binding if Cursor's is better*
+Don't fight defaults. If Cursor's binding is intuitive, use it.
+
+## Testing Your Migrated Keybindings
+
+Create a checklist for testing:
+
+**Before Migration**
+- [ ] List all custom Copilot keybindings from VS Code
+- [ ] Backup your VS Code keybindings.json file
+- [ ] Note any extensions that add custom keybindings
+- [ ] Document your muscle memory (which keys feel natural to you)
+
+**After Migration**
+- [ ] Create test files in each language you use (Python, JavaScript, etc.)
+- [ ] Test AI generation with your primary shortcut
+- [ ] Test chat panel opening
+- [ ] Test accepting/rejecting suggestions
+- [ ] Test navigating between multiple suggestions
+- [ ] Test in different contexts (comment, function, class definition)
+- [ ] Test with extensions enabled and disabled
+
+**Quality Metrics**
+- [ ] No conflicts reported in settings
+- [ ] All custom bindings work as expected
+- [ ] No accidental triggering of other commands
+- [ ] Response time is <500ms
+- [ ] Works across all file types you use
+
+## Keyboard Layout Considerations
+
+If you use non-QWERTY layouts, keybindings work differently:
+
+**Dvorak layout example:**
+```json
+{
+  // This might be difficult to reach on Dvorak
+  "key": "ctrl+shift+space",
+  "command": "cursorai.edit.generate"
+}
+```
+
+Remap to keys that are in similar positions on your layout:
+
+```json
+{
+  // Better position on Dvorak
+  "key": "ctrl+shift+a",
+  "command": "cursorai.edit.generate"
+}
+```
+
+## Integration with Extension Keybindings
+
+Extensions add their own keybindings. Manage conflicts:
+
+**List all keybindings:** Open Command Palette > "Preferences: Open Keyboard Shortcuts"
+This shows default bindings, your custom bindings, and extension bindings in a searchable interface.
+
+**Common extension conflicts:**
+- ESLint/Linter extensions: Often use `Ctrl+Shift+F` (similar to Cursor defaults)
+- GitHub extensions: May conflict with Copilot bindings
+- VIM extensions: Redefine many keys entirely
+
+**Resolving:**
+1. Identify which extension causes conflict
+2. Disable the extension if you rarely use it
+3. Or remap one of the conflicting commands
+
+## Synchronizing Keybindings Across Machines
+
+If you use Cursor on multiple machines:
+
+**Option 1: Settings Sync (Built-in)**
+1. Enable Settings Sync in Cursor
+2. Sign in with your account
+3. Your keybindings automatically sync across machines
+
+**Option 2: Manual Sync via Dotfiles**
+Store your keybindings in a Git repository:
+
+```bash
+# On Machine 1
+mkdir -p ~/dotfiles/cursor
+cp ~/.cursor/User/keybindings.json ~/dotfiles/cursor/
+
+# Commit and push
+cd ~/dotfiles
+git add cursor/keybindings.json
+git commit -m "Update Cursor keybindings"
+git push
+
+# On Machine 2
+cd ~/dotfiles && git pull
+cp cursor/keybindings.json ~/.cursor/User/
+
+# Restart Cursor
+```
+
+**Option 3: Symbolic Links**
+```bash
+# Create symlink
+ln -s ~/dotfiles/cursor/keybindings.json ~/.cursor/User/keybindings.json
+```
+
+Any changes on one machine immediately reflect on others.
+
+## Creating Keybinding Profiles
+
+Different projects might benefit from different keybindings:
+
+**Project-level keybindings** (in `.vscode/settings.json` of your project):
+```json
+{
+  // These override user settings for this project only
+  "keybindings": [
+    {
+      "key": "cmd+shift+d",
+      "command": "cursorai.edit.generate",
+      "when": "editorTextFocus"
+    }
+  ]
+}
+```
+
+This allows different keybindings for React projects vs. backend API projects.
+
+## Migration Troubleshooting
+
+**Issue: Keybinding works in VS Code but not Cursor**
+
+Solution: VS Code and Cursor use slightly different context conditions. Simplify the "when" clause:
+
+```json
+// Too specific - may not work
+"when": "editorTextFocus && !editorReadonly && !editorInComment && resourceLangId == 'javascript'"
+
+// Simpler - more likely to work
+"when": "editorTextFocus && !editorReadonly"
+```
+
+**Issue: Key combination doesn't register**
+
+Solution: Some key combinations are reserved by your OS. Try alternatives:
+- macOS reserves Cmd+Space (Spotlight), Cmd+Tab (app switcher)
+- Windows reserves Alt+Tab
+- Linux reserves Super (Windows key)
+
+Pick different keys for these OS-reserved combinations.
+
+**Issue: Keybinding triggers multiple commands**
+
+Solution: Add more specific context:
+
+```json
+// Instead of binding to just Cmd+K (too general)
+{
+  "key": "cmd+k",
+  "command": "cursorai.edit.generate",
+  "when": "editorTextFocus && !editorReadonly && !isInDiffEditor"
+}
+```
+
+## Long-Term Maintenance
+
+As you use Cursor, you'll optimize your keybindings:
+
+**Monthly Review**
+- Did you use all your custom keybindings?
+- Did any muscle memory develop (are you using shortcuts unconsciously)?
+- Did Cursor release new features with better default keybindings?
+
+**Quarterly Cleanup**
+- Remove unused keybindings
+- Consolidate similar commands if possible
+- Update documentation
+
+**Keep Documentation**
+```markdown
+# My Cursor Keybindings
+
+## AI Generation
+- Cmd+K: Generate code (main editor)
+- Cmd+Shift+K: Generate in chat
+
+## Navigation
+- Cmd+L: Focus chat sidebar
+- Cmd+Shift+M: New chat panel
+
+## Acceptance/Rejection
+- Tab: Accept suggestion
+- Esc: Reject suggestion
+
+## Migration Date
+2026-03-20 from VS Code Copilot
+
+## Issues Found
+None yet
+```
+
+This documentation helps when you set up new machines or onboard team members.
+
+## Team Coordination
+
+If your team shares keybinding preferences:
+
+1. Create a team `.vscode/settings.json` template
+2. Commit to your project repository
+3. Include setup instructions in your README
+4. During onboarding, team members copy this template
+
+```json
+// .vscode/settings.json (team standard)
+{
+  "github.copilot.keybindings": {
+    "acceptSuggestion": "Tab",
+    "dismissSuggestion": "Escape",
+    "generateNewSuggestion": "Ctrl+Shift+Space"
+  }
+}
+```
+
+This ensures consistency across your development team.
 
 
 ## Related Reading

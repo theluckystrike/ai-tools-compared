@@ -175,7 +175,168 @@ The key is awareness. When you understand that Copilot's suggestions come from r
 
 For most everyday development tasks—writing utility functions, implementing standard algorithms, or working with common frameworks—Copilot's suggestions present minimal legal risk. The feature becomes most valuable when you are working with specialized code, unique implementations, or code from less common projects where license terms might be unexpected.
 
+## Real-World Code Reference Scenarios
 
+Understanding how Copilot's code referencing works in practice helps you make informed decisions. Consider these scenarios:
+
+**Scenario 1: Common Utility Function**
+You ask Copilot to generate a debounce function for JavaScript. The suggestion might match implementations from dozens of popular libraries like Lodash. Copilot flags the match with a license reference. In this case, the match is likely fine—debounce implementations are straightforward patterns used across MIT and Apache-licensed code. You can safely use the suggestion.
+
+**Scenario 2: Specialized Algorithm**
+You need an implementation of the Knuth-Morris-Pratt string matching algorithm. Copilot suggests code that closely matches an academic implementation you've studied. The tool flags a match to a GPL-licensed repository. This requires careful consideration. You can study the algorithmic approach freely, but directly copying that code means your project inherits the GPL obligation.
+
+**Scenario 3: Framework-Specific Boilerplate**
+You're setting up a React component with context and hooks. Copilot's suggestion matches examples from the official React documentation (MIT license) and several popular tutorials. Multiple references appear. This is routine—framework boilerplate appears everywhere with permissive licenses. The references confirm you're using standard patterns.
+
+## Building a License Audit Workflow
+
+For teams concerned about license compliance, establish a structured approach:
+
+```bash
+#!/bin/bash
+# Script to audit code references flagged by Copilot
+
+# Run this periodically in CI/CD
+# Extract all flagged references from recent commits
+git log --oneline -20 | while read commit; do
+  echo "Checking commit: $commit"
+  # Query Copilot API for flagged references (if available)
+  # Log any GPL, AGPL, or custom-license matches
+done
+
+# Use FOSSA or Black Duck to scan actual dependencies
+fossa analyze --include-unlicensed
+```
+
+## License Reference Configuration for Teams
+
+If you work in an organization, administrators can enforce licensing policies through GitHub's Copilot settings:
+
+```json
+{
+  "github.copilot.advanced": {
+    "codeReferenceBehavior": "strict",
+    "deniedLicenses": ["GPL-3.0", "AGPL-3.0"],
+    "auditMode": true
+  }
+}
+```
+
+This configuration rejects suggestions with GPL or AGPL licenses and logs all flagged references for compliance review.
+
+## Comparing Copilot's Approach to Other Tools
+
+Different AI coding assistants handle code references differently:
+
+**GitHub Copilot** provides active code reference detection with specific license identification. It's transparent about when your suggestions match existing code and what licenses apply.
+
+**Claude (by Anthropic)** does not currently provide code reference detection like Copilot. Developers using Claude for code generation must manually consider licensing implications. However, Claude's training approach emphasizes understanding patterns rather than memorizing exact code, potentially reducing licensing concerns.
+
+**Cursor AI** builds on Copilot but adds codebase context awareness. It's less likely to suggest code that directly matches your existing codebase, though it doesn't provide the same explicit license flagging.
+
+**Tabnine** offers license filtering options, allowing you to restrict suggestions to permissively licensed code only.
+
+## Practical License Evaluation Matrix
+
+When Copilot flags a match, use this matrix to quickly determine whether you can use the suggestion:
+
+| License Type | Commercial Use | Modification | Distribution | Link Source | Action |
+|--------------|----------------|--------------|--------------|-------------|--------|
+| MIT | Yes | Yes | Yes | Link | Use freely |
+| Apache 2.0 | Yes | Yes | Yes | Link | Use freely |
+| BSD | Yes | Yes | Yes | Link | Use freely |
+| GPL v2 | Yes* | Yes | Yes* | Link | Evaluate impact |
+| GPL v3 | Yes* | Yes | Yes* | Link | Evaluate impact |
+| AGPL v3 | No** | Yes | Yes* | Link | Avoid for SaaS |
+| Custom | Maybe | Maybe | Maybe | Check | Manual review |
+
+*Requires disclosing source code
+**May trigger disclosure requirements in SaaS contexts
+
+## Advanced Reference Checking
+
+For organizations with compliance requirements, go beyond Copilot's automatic flagging:
+
+```python
+# Python script to validate code matches against license database
+import requests
+from typing import Dict, List
+
+def check_external_licenses(code_snippet: str) -> List[Dict]:
+    """Check code snippet against known licensed code"""
+
+    # Option 1: Use FOSSA API
+    fossa_response = requests.post(
+        "https://api.fossa.com/api/code-check",
+        headers={"Authorization": f"Bearer {FOSSA_TOKEN}"},
+        json={"code": code_snippet}
+    )
+
+    # Option 2: Query Copilot's reference API (if available)
+    copilot_response = requests.post(
+        "https://copilot-proxy.githubusercontent.com/api/references",
+        json={"code": code_snippet}
+    )
+
+    return fossa_response.json().get('matches', [])
+
+# Usage
+suspicious_function = """
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+"""
+
+matches = check_external_licenses(suspicious_function)
+for match in matches:
+    print(f"License: {match['license']}, Repo: {match['source']}")
+```
+
+## Documenting Code References
+
+Maintain transparency by documenting how you used flagged suggestions:
+
+```markdown
+# Code References Documentation
+
+## Date: 2026-03-20
+## Flagged by Copilot: Yes
+
+### Reference Details
+- **Source Repository**: github.com/example/utility-library
+- **File**: src/string-utils.js
+- **License**: MIT
+- **Similarity**: 92%
+- **Modified**: Yes, added parameter validation
+
+### Justification
+The flagged code implements a standard string escaping function. MIT license permits commercial use with attribution. We added input validation beyond the original implementation.
+
+### Attribution
+Original implementation: https://github.com/example/utility-library/blob/main/src/string-utils.js
+Licensed under MIT (see LICENSE file in our dependencies)
+```
+
+## Copilot Reference Detection in 2026
+
+Copilot's reference detection capabilities continue evolving. Stay informed about:
+
+- New license types being recognized
+- Changes to detection sensitivity thresholds
+- Updates to Copilot's training data that may affect match rates
+- API changes for programmatic reference checking
+
+Subscribe to GitHub's release notes and Copilot documentation updates to stay current with these changes.
+
+## The Bottom Line
+
+Copilot's code referencing feature provides genuine value for teams concerned about licensing compliance. It transforms an invisible process into explicit, verifiable information. Rather than worrying about unknowingly incorporating licensed code, you receive clear notification when matches occur.
+
+The key is treating these references as information, not restrictions. When Copilot flags a match, you have the context needed to make an informed decision based on your project's needs and licensing obligations. For most everyday development, the suggestions work fine under permissive licenses. For specialized code or GPL contexts, the feature alerts you to consider implications before proceeding.
 
 Stay informed, check references when they appear, and build with confidence knowing you have the information needed to make sound licensing decisions.
 
