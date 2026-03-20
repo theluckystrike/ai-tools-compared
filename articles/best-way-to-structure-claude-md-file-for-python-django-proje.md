@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Way to Structure Claude MD File for Python Django Project"
+title: "Best Way to Structure Claude MD File for Python Django."
 description: "A comprehensive guide to structuring Claude.md files for Python Django projects, with practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -163,5 +163,10 @@ Consider version-controlling your Claude.md file. This lets you track how your s
 A well-crafted Claude.md file acts as a bridge between your team's Django expertise and AI-assisted development. By documenting your project structure, coding standards, and common patterns, you enable AI tools to generate code that integrates seamlessly with your existing codebase.
 
 The initial effort invested in creating a comprehensive Claude.md file pays dividends in reduced revision cycles and more accurate code generation. Take time to document your conventions clearly, and your AI assistant becomes a more effective development partner.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

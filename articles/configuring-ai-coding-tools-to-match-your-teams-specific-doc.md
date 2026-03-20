@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Configuring AI Coding Tools to Match Your Teams Specific Dockerfile Layer Ordering"
+title: "Configuring AI Coding Tools to Match Your Teams Specific."
 description: "A practical guide to configuring AI coding assistants like GitHub Copilot, Codeium, and Cursor to understand your team's specific Dockerfile layer ordering conventions."
 date: 2026-03-16
 author: "theluckystrike"
@@ -158,5 +158,10 @@ Configuring AI coding tools to match your team's specific Dockerfile layer order
 
 The initial effort to configure these tools pays dividends across your entire codebase. As team members adopt the configured tools, your Dockerfiles maintain consistency, your build caches remain optimized, and your CI/CD pipelines run more efficiently. Start with one tool, validate the approach, then extend the configuration to your full toolchain.
 
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Set Up Custom Instructions for AI Tools to Match Your Team's Linting Rules"
+title: "How to Set Up Custom Instructions for AI Tools to Match."
 description: "A practical guide for developers on configuring AI coding assistants with custom instructions that enforce your team's linting rules, code style, and formatting conventions."
 date: 2026-03-16
 author: theluckystrike
@@ -187,5 +187,10 @@ detailed rules and examples.
 Review and update your AI instructions when you update your linting configuration. Treat AI instructions as version-controlled documentation that evolves with your project standards.
 
 Set a calendar reminder to audit AI-generated code monthly. Track which linting rules frequently appear as violations in AI output, then add explicit examples to your instructions. Over time, your instructions become comprehensive enough that AI output requires zero manual corrections.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

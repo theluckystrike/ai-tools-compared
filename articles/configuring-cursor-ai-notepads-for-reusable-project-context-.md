@@ -190,5 +190,10 @@ This approach creates a single source of truth that both humans and AI can refer
 
 Configuring Cursor AI notepads transforms how you work with AI-assisted coding. By investing time upfront to document project context, you save effort repeatedly explaining your codebase. Notepads evolve with your project, serving as living documentation that improves over time. Start with a basic notepad covering your project structure and key conventions, then expand as your project grows.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

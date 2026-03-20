@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Pull Request Impact Analysis Showing Affected Downstream Projects"
+title: "How to Use AI to Generate Pull Request Impact Analysis."
 description: "Learn how to leverage AI tools to automatically analyze pull requests and identify which downstream projects and services will be affected by your changes."
 date: 2026-03-16
 author: theluckystrike
@@ -175,4 +175,9 @@ Configuration drift—where production differs from code—can cause AI to miss 
 AI tools significantly speed up pull request impact analysis by automating the tedious work of tracing dependencies across projects. The key is providing clear context about your repository structure, using the right combination of static analysis tools and AI interpretation, and treating the results as a starting point for human verification. Teams implementing this approach report saving several hours per PR while improving their change review quality.
 
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Generate Pagination Edge Case Tests for APIs"
-description: "A practical guide for developers to use AI tools in generating comprehensive pagination edge case tests for REST APIs, with code examples and testing strategies."
+title: "How to Use AI to Generate Pagination Edge Case Tests for."
+description: "A practical guide for developers to use AI tools in generating comprehensive pagination edge case tests for REST APIs, with code examples and testing."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/
@@ -203,6 +203,11 @@ You can integrate AI test generation into your CI/CD pipeline:
 AI accelerates the initial test generation, but maintaining and updating tests still requires developer oversight. The combination produces more comprehensive test coverage than either approach alone.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

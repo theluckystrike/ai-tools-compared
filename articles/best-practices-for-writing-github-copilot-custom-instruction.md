@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Practices for Writing GitHub Copilot Custom Instructions in VSCode Settings"
-description: "A practical guide for developers on writing effective GitHub Copilot custom instructions in VSCode settings. Learn how to configure Copilot to match your coding style."
+title: "Best Practices for Writing GitHub Copilot Custom."
+description: "A practical guide for developers on writing effective GitHub Copilot custom instructions in VSCode settings. Learn how to configure Copilot to match."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-writing-github-copilot-custom-instruction/
@@ -180,6 +180,11 @@ Use version control for your instruction files. Track changes and review modific
 GitHub Copilot Custom Instructions represent a significant opportunity to personalize your AI-assisted development experience. By defining clear code style preferences, documentation standards, and project-specific patterns, you receive higher-quality code suggestions that require less manual refinement. Start with basic guidelines and progressively refine them based on your workflow needs.
 
 Effective custom instructions evolve with your project. Regular review and updates ensure Copilot continues providing relevant suggestions that align with your team's current practices and future direction.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

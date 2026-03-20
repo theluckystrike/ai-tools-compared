@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Set Up Model Context Protocol Server for Custom Project Documentation"
+title: "How to Set Up Model Context Protocol Server for Custom."
 description: "A practical guide to building an MCP server that serves your project documentation to AI coding tools. Step-by-step implementation with code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -356,6 +356,11 @@ Some AI tools require a restart after adding MCP server configuration. Close and
 ## Conclusion
 
 Setting up an MCP server for your project documentation brings your internal knowledge directly into your AI assistant's context. This means more accurate code generation, better adherence to your project's conventions, and faster onboarding for new team members. The initial setup takes less than an hour, and the productivity benefits compound over time as your documentation grows.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "Best Practices for Maintaining AI Tool Configuration Files Alongside Code Documentation"
-description: "A practical guide to managing AI tool configuration files with your code documentation, including version control strategies, environment-specific setups, and real-world examples for developers."
+title: "Best Practices for Maintaining AI Tool Configuration."
+description: "A practical guide to managing AI tool configuration files with your code documentation, including version control strategies, environment-specific."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-maintaining-ai-tool-configuration-files-a/
-categories: [best-practices]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -242,6 +242,11 @@ Effective AI tool configuration management requires treating your configs as fir
 When developers can discover and understand your AI configuration through natural documentation, they become more effective at using AI tools and your codebase benefits from better-generated code.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

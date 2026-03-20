@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Create Model Context Protocol Server That Serves API Documentation to AI"
-description: "Learn to build a Model Context Protocol server that exposes your API documentation to AI assistants, enabling accurate code generation and intelligent API interactions in 2026."
+title: "How to Create Model Context Protocol Server That Serves."
+description: "Learn to build a Model Context Protocol server that exposes your API documentation to AI assistants, enabling accurate code generation and intelligent."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-model-context-protocol-server-that-serves-api-/
@@ -339,6 +339,11 @@ To enhance your documentation server further, consider adding these capabilities
 Building an MCP server that serves your API documentation transforms how AI assistants interact with your APIs. Instead of relying on outdated context or incomplete prompts, AI tools can now query your live documentation, understand endpoint structures, and generate accurate code that matches your actual API contracts.
 
 The implementation above provides a solid foundation that you can extend based on your specific documentation formats and AI tool requirements. As AI assistants become more capable of using structured tool definitions, having your documentation available through MCP will become increasingly valuable for accurate, context-aware code generation.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -165,5 +165,10 @@ Start with one pattern your team uses frequently, write detailed rules, and expa
 
 ---
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing CLAUDE.md Files That Define Your Project's API Versioning Strategy"
-description: "A practical guide to creating CLAUDE.md files that communicate API versioning strategy to AI coding assistants. Includes real code examples and implementation patterns for 2026."
+description: "A practical guide to creating CLAUDE.md files that communicate API versioning strategy to AI coding assistants. Includes real code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy/
@@ -220,6 +220,11 @@ When documenting your API versioning strategy, watch for these common mistakes t
 ## Conclusion
 
 A well-structured CLAUDE.md file transforms how your AI coding assistant handles API versioning. By providing clear documentation, code templates, and explicit rules, you ensure consistent version implementation across your entire codebase. Take time to document your specific versioning scheme, and your AI assistant will generate production-ready, properly versioned endpoints from day one.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

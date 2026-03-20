@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best Practices for Versioning CursorRules Files Across Team Members in Git"
-description: "A practical guide to managing .cursorrules files in Git. Learn how to version control Cursor rules across your development team with clear workflows and git strategies."
+title: "Best Practices for Versioning CursorRules Files Across."
+description: "A practical guide to managing .cursorrules files in Git. Learn how to version control Cursor rules across your development team with clear workflows."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-versioning-cursorrules-files-across-team-/
@@ -227,6 +227,11 @@ Follow these guidelines to maintain effective CursorRules version control:
 Properly versioning CursorRules files in Git creates a foundation for consistent AI-assisted development across your entire team. Whether you choose simple direct commits or a more elaborate modular system, the key is establishing clear workflows that everyone follows. Start with basic version control, then evolve your approach as your team identifies more sophisticated needs.
 
 With the right Git strategy in place, your team can maintain coherent AI assistance that aligns with your project's coding standards and conventions. The initial setup effort pays dividends in reduced context-switching and more predictable AI behavior across all team members.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

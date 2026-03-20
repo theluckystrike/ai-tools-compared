@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Use AI to Create Changelog Entries Grouped by Breaking Changes and Features"
-description: "Learn practical methods for using AI to generate well-organized changelog entries that separate breaking changes from new features. Includes code examples and prompt templates."
+title: "How to Use AI to Create Changelog Entries Grouped by."
+description: "Learn practical methods for using AI to generate well-organized changelog entries that separate breaking changes from new features. Includes code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/
@@ -178,6 +178,11 @@ When using AI for changelog generation, watch for these issues:
 AI tools excel at the mechanical task of processing many changes and organizing them into categories. By providing clear prompts, specific context about your project, and reviewing the output for accuracy, you can create well-structured changelogs in a fraction of the time it takes to write them manually.
 
 The key is treating AI as a first draft generator rather than a final output. Use it to gather and organize information quickly, then apply human judgment for the details that matter most—especially for breaking changes that directly impact your users' code.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

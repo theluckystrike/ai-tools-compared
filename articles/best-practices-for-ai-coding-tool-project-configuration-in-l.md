@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Practices for AI Coding Tool Project Configuration in Large Enterprise Codebases"
-description: "Learn how to configure AI coding tools for large enterprise codebases. Practical configuration strategies, .gitignore optimization, and context management tips."
+title: "Best Practices for AI Coding Tool Project Configuration."
+description: "Learn how to configure AI coding tools for large enterprise codebases. Practical configuration strategies, .gitignore optimization, and context."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-ai-coding-tool-project-configuration-in-l/
@@ -223,6 +223,11 @@ Review these metrics quarterly and adjust configurations as your codebase evolve
 ## Summary
 
 Effective AI coding tool configuration in enterprise environments requires deliberate setup. Focus on excluding irrelevant files, defining clear project structures, maintaining security compliance, and standardizing configurations across your team. Start with basic exclude patterns, then refine based on actual usage patterns and team feedback. The initial investment in proper configuration pays dividends in improved productivity and code quality across your entire organization.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

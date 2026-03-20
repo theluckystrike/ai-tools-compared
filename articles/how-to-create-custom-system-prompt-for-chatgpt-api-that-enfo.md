@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Create Custom System Prompt for ChatGPT API That Enforces Coding Standards"
-description: "A practical guide for developers on creating custom system prompts that enforce coding standards when using the ChatGPT API, with code examples and implementation strategies."
+title: "How to Create Custom System Prompt for ChatGPT API That."
+description: "A practical guide for developers on creating custom system prompts that enforce coding standards when using the ChatGPT API, with code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/
@@ -188,5 +188,10 @@ This approach ensures everyone uses the same prompt version and makes updates st
 A well-crafted system prompt transforms the ChatGPT API from a general-purpose code generator into a tool that enforces your specific coding standards. By clearly defining language preferences, formatting rules, naming conventions, and documentation requirements, you get consistent code output that integrates seamlessly with your codebase.
 
 Start with the basics, test thoroughly, and refine based on the results. Your team will benefit from AI-assisted code generation that actually follows your standards.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

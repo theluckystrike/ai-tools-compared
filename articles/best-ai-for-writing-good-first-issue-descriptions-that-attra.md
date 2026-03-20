@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best AI for Writing Good First Issue Descriptions That Attract New Contributors 2026"
-description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects in 2026. Includes practical examples and code snippets."
+title: "Best AI for Writing Good First Issue Descriptions That."
+description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects in 2026. Includes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-good-first-issue-descriptions-that-attra/
@@ -171,6 +171,11 @@ AI tools have reached a point where they can genuinely help maintainers write be
 The best approach is to start with a clear prompt that includes project context, contributor level expectations, and specific section requirements. Review the output for technical accuracy, add any project-specific details, and publish.
 
 Well-written issues don't just attract contributors—they retain them. A good first issue experience often determines whether someone becomes a regular project contributor.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

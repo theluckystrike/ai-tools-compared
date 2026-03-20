@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write ChatGPT Custom Instructions for Consistent API Design Suggestions"
+title: "How to Write ChatGPT Custom Instructions for Consistent."
 description: "A practical guide for developers on crafting effective ChatGPT custom instructions that produce consistent, high-quality API design recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -162,6 +162,11 @@ Consider keeping a backup of your custom instructions in a document. This lets y
 ## Conclusion
 
 Effective ChatGPT custom instructions transform generic API design suggestions into context-aware recommendations that fit your workflow. The investment in crafting precise, detailed instructions pays off through consistent, high-quality output across every session. Start with the basics—your framework, language, and key conventions—then refine based on the results you get.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

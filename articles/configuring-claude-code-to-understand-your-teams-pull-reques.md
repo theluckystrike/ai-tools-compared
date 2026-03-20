@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Configuring Claude Code to Understand Your Teams Pull Request Review Checklist"
+title: "Configuring Claude Code to Understand Your Teams Pull."
 description: "A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality."
 date: 2026-03-16
 author: theluckystrike
@@ -163,5 +163,10 @@ Document the reasoning behind critical checklist items. When team members unders
 Configuring Claude Code to understand your team's pull request review checklist creates a consistent quality gate in your development process. By maintaining a well-structured CLAUDE.md file, providing explicit context during sessions, and integrating pre-submission reviews into your workflow, you can catch issues earlier and maintain higher code quality standards.
 
 The key is starting with clear, specific requirements and consistently applying them throughout your development cycle. Claude Code becomes more effective as it understands your team's unique standards and expectations.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
