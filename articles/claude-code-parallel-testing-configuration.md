@@ -7,6 +7,7 @@ author: theluckystrike
 permalink: /claude-code-parallel-testing-configuration/
 ---
 
+{% raw %}
 Parallel testing is one of the most effective ways to reduce CI/CD pipeline times and get faster feedback on your code changes. When configured correctly with Claude Code, you can dramatically accelerate your test execution while maintaining thorough coverage. This guide walks you through setting up parallel testing configurations that work seamlessly with Claude Code's AI-assisted development workflow.
 
 ## Why Parallel Testing Matters with AI Development
@@ -361,3 +362,4 @@ Configuring parallel testing with Claude Code transforms your development workfl
 Remember that Claude Code can help you both write new tests that are parallel-safe and refactor existing tests to work better in parallel. Use the AI assistant to identify shared state and suggest improvements to your test architecture.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
