@@ -182,13 +182,111 @@ Create a user journey map showing:
 
 ## Limitations and Verification
 
-
-
 AI-generated journey maps require validation. The assistant might misinterpret ambiguous event names, conflate unrelated user segments, or propose journeys that don't actually exist in your data. Always verify key insights against raw analytics before acting on them.
 
+**Validation checklist for AI-generated journeys:**
 
+1. **Statistical validity**
+   - [ ] Does the journey path appear in actual data (check frequency)
+   - [ ] Are drop-off percentages accurate (spot-check 3-5 events)
+   - [ ] Do user segment sizes match analytics (within 5%)
+   - [ ] Are time durations realistic (not conflating steps)
+
+2. **Logical coherence**
+   - [ ] Does the sequence make sense for your product?
+   - [ ] Are stated pain points actual friction points?
+   - [ ] Do hypothesized reasons align with product design?
+   - [ ] Are alternatives realistic paths users would take?
+
+3. **Actionability**
+   - [ ] Can you identify specific design changes from the journey?
+   - [ ] Are recommendations specific (not generic advice)?
+   - [ ] Do suggestions address root causes vs. symptoms?
+   - [ ] Can you measure impact of addressing issues?
+
+**Example validation:**
+
+```
+AI Generated Insight:
+"Users abandon checkout 40% of the time on the payment step.
+They likely get confused by security warnings."
+
+Your verification:
+✓ Confirmed: 38% abandon at payment (analytics check)
+✓ Plausible: Security language could be confusing
+? Needs testing: Survey users or A/B test clearer language
+✗ Wrong assumption: Maybe mobile users abandon due to form friction,
+  not security warnings—need device breakdown
+```
+
+**AI-generated segment analysis template:**
+
+```markdown
+## Checkout Journey - Mobile Users (iPhone)
+
+### User Segment: Mobile iOS Users
+- Sample size: 2,847 unique sessions
+- Conversion rate: 18% (below 25% desktop average)
+- Average session duration: 8:32
+
+### Primary Path (68% of users)
+Home → Product Page → Add to Cart → Checkout → Payment → Confirm
+- Duration: 5-7 minutes
+- Drop-off point: Payment entry (40% bounce)
+
+### Secondary Path (22% of users)
+Home → Product Page → Wishlist → Wait → Return → Checkout
+- Duration: 15+ minutes (includes off-site time)
+- Drop-off point: Password reset (28% abandon)
+
+### Tertiary Path (10% of users)
+Home → Search → Multiple Products → Comparison → Abandon Cart
+- Duration: 10-12 minutes
+- Drop-off point: Price comparison to competitor (100% abandon)
+
+### Key Insights
+1. Mobile users take 3x longer than desktop in checkout
+2. Touch-based form entry on small screens drives friction
+3. Password reset flow incomplete (CTA unclear)
+4. Comparison feature drives users away (consider removing or hiding)
+
+### Recommended Priorities
+- [P0] Simplify mobile payment form (test auto-fill)
+- [P1] Add password reset completion tracking
+- [P2] Test hiding competitor price comparison
+```
 
 Also consider that journey maps describe *what happened*, not necessarily *what should happen*. Use AI-generated maps as a starting point for design decisions, not a replacement for user research.
+
+**Combining AI insights with qualitative research:**
+
+| Data Source | AI Role | Limitations |
+|-------------|---------|-------------|
+| Analytics | Identify what happened | Can't explain why |
+| AI analysis | Propose hypotheses | Educated guesses |
+| User interviews | Validate hypotheses | Small sample size |
+| Behavioral testing | Measure impact | Requires changes first |
+
+**Practical workflow:**
+1. AI generates journey from analytics (15 minutes)
+2. You validate against raw data (20 minutes)
+3. Recruit 5-10 users for interviews (1 week setup)
+4. Run interviews to validate AI hypotheses (2 hours)
+5. Implement top-priority changes (1-2 weeks)
+6. Measure impact with A/B testing (2 weeks)
+7. Repeat cycle with updated data
+
+This combines AI's speed with user research rigor.
+
+**Tools for journey visualization after AI generation:**
+
+- **Figma**: Design journey diagrams with AI-suggested flows
+- **Miro**: Collaborative whiteboard for team refinement
+- **Amplitude**: Built-in journey analysis (validate AI suggestions)
+- **Mixpanel**: Funnel visualization (cross-check AI recommendations)
+- **Custom tools**: Build internal journey viewers from your data
+
+The most valuable use of AI for journey mapping is rapid hypothesis generation followed by rigorous validation.
 
 
 

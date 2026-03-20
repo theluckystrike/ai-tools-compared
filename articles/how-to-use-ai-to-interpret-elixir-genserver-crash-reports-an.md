@@ -182,13 +182,92 @@ When describing your supervision tree to AI, explain the relationships between p
 
 Provide complete context rather than just the error message. Include the relevant GenServer code, the supervision tree structure, and what the application was doing at the time. This helps the AI avoid guessing and provides more accurate diagnoses.
 
+**Effective crash report documentation:**
 
+```
+## GenServer Crash: UserManager
+
+Application: myapp
+Version: 1.2.3
+Timestamp: 2026-03-20 14:32:15 UTC
+Supervisor: MyApp.UserSupervisor
+
+Error Message:
+** (EXIT) #PID<0.123.0> exited with reason: {:bad_match, {:ok, user_data}}
+    (myapp 1.2.3) lib/myapp/server/user_manager.ex:45: MyApp.Server.UserManager.handle_cast/2
+
+Context:
+- This GenServer manages user sessions
+- Called approximately 500 times per minute during peak hours
+- Just updated dependency versions yesterday
+- Error started appearing after new deployment
+
+Supervision Tree:
+MyApp.Application (application supervisor)
+└─ MyApp.UserSupervisor (:one_for_one)
+   ├─ MyApp.UserManager (:permanent)
+   ├─ MyApp.SessionStore (permanent)
+   └─ MyApp.EventLog (temporary)
+```
+
+This structured format gives AI all the context needed to suggest root causes accurately.
+
+**AI-specific code review approach:**
+
+When asking AI to review GenServer code, provide these details:
+
+1. **What the GenServer is supposed to do:** "Manages user authentication sessions"
+2. **What callbacks you've implemented:** "init/1, handle_call/3, handle_cast/2, handle_info/2, terminate/2"
+3. **What changed recently:** "Updated pattern match on user data structure"
+4. **What the error pattern suggests:** "bad_match errors usually mean pattern match failed"
 
 Verify AI suggestions before applying them. AI can suggest plausible but incorrect fixes, especially with complex OTP behaviors. Test fixes in a development environment first.
 
+**Testing AI-suggested fixes:**
 
+```elixir
+defmodule MyApp.UserManager.Test do
+  use ExUnit.Case
 
-Use AI as a learning tool. When AI explains a crash report, pay attention to the underlying OTP principles it mentions. This builds your understanding of GenServer behavior and helps you write more code.
+  # Test the problematic scenario that crashed in production
+  test "handle_cast with old user data structure" do
+    user_data = {:ok, %{id: 1, email: "test@example.com"}}
+
+    # This should not crash—it's what the AI suggested
+    result = MyApp.UserManager.handle_cast({:update_user, user_data}, %{})
+    assert {:noreply, _state} = result
+  end
+
+  # Test edge cases AI might have missed
+  test "handle_cast with nil user data" do
+    result = MyApp.UserManager.handle_cast({:update_user, nil}, %{})
+    assert {:noreply, _state} = result
+  end
+
+  # Test concurrent updates to ensure no race conditions
+  test "handle_cast is idempotent" do
+    user_data = {:ok, %{id: 1}}
+    state = %{}
+
+    {:noreply, state1} = MyApp.UserManager.handle_cast({:update_user, user_data}, state)
+    {:noreply, state2} = MyApp.UserManager.handle_cast({:update_user, user_data}, state1)
+
+    assert state1 == state2  # Idempotent
+  end
+end
+```
+
+Use AI as a learning tool. When AI explains a crash report, pay attention to the underlying OTP principles it mentions. This builds your understanding of GenServer behavior and helps you write more fault-tolerant code.
+
+**Learning from AI explanations:**
+
+Instead of just applying AI's fix, ask follow-up questions:
+- "Why did this pattern match fail in this scenario?"
+- "What's the difference between {:ok, data} and just data here?"
+- "How would I prevent this error proactively in the future?"
+- "What OTP principle does this violation?"
+
+These conversations build your expertise with OTP supervision trees and GenServer patterns.
 
 
 

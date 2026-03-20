@@ -189,6 +189,156 @@ Implement prompt optimization to reduce token consumption. Shorter, more focused
 
 For enterprise-scale applications, consider distributing requests across multiple API keys or implementing a load-balancing strategy that routes traffic based on current rate limit status. This approach maximizes throughput while staying within acceptable usage limits.
 
+**Enterprise-scale rate limit management:**
+
+```python
+import asyncio
+from typing import List
+from openai import AsyncOpenAI
+
+class RateLimitRouter:
+    def __init__(self, api_keys: List[str], requests_per_minute_per_key: int = 90):
+        self.clients = [AsyncOpenAI(api_key=key) for key in api_keys]
+        self.current_client_idx = 0
+        self.rate_limit = requests_per_minute_per_key
+        self.request_count = [0] * len(api_keys)
+        self.reset_time = [0] * len(api_keys)
+
+    async def send_request(self, prompt: str) -> str:
+        while True:
+            client = self.clients[self.current_client_idx]
+            current_count = self.request_count[self.current_client_idx]
+
+            # Rotate to next client if current is rate limited
+            if current_count >= self.rate_limit:
+                self.current_client_idx = (self.current_client_idx + 1) % len(self.clients)
+                continue
+
+            try:
+                response = await client.chat.completions.create(
+                    model="gpt-4",
+                    messages=[{"role": "user", "content": prompt}],
+                    max_tokens=500
+                )
+                self.request_count[self.current_client_idx] += 1
+                return response.choices[0].message.content
+            except Exception as e:
+                if "429" in str(e):
+                    # Mark client as rate limited
+                    self.request_count[self.current_client_idx] = self.rate_limit
+                    # Switch to next client
+                    self.current_client_idx = (self.current_client_idx + 1) % len(self.clients)
+                else:
+                    raise
+
+# Usage for high-throughput applications
+router = RateLimitRouter(
+    api_keys=["key1", "key2", "key3", "key4"],
+    requests_per_minute_per_key=90
+)
+
+# Now you can send up to 360 requests per minute (4 keys × 90 RPM)
+for i in range(100):
+    response = await router.send_request("Generate a product description")
+```
+
+**Real-world 429 error response breakdown:**
+
+```
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
+x-ratelimit-limit-requests: 3500
+x-ratelimit-limit-tokens: 90000
+x-ratelimit-remaining-requests: 0
+x-ratelimit-remaining-tokens: 0
+x-ratelimit-reset-requests: 20s
+x-ratelimit-reset-tokens: 15m
+
+{
+  "error": {
+    "message": "Rate limit exceeded. Retry after 20s",
+    "type": "rate_limit_error",
+    "param": null,
+    "code": "rate_limit_exceeded"
+  }
+}
+```
+
+The header `x-ratelimit-reset-requests: 20s` tells you exactly when to retry—this is more reliable than fixed exponential backoff.
+
+**Intelligent retry with header parsing:**
+
+```python
+import time
+import asyncio
+
+async def make_request_with_smart_retry(client, prompt, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            response = await client.chat.completions.create(
+                model="gpt-4",
+                messages=[{"role": "user", "content": prompt}]
+            )
+            return response
+        except Exception as e:
+            if "429" in str(e):
+                # Try to extract retry-after from response headers
+                retry_after = e.response.headers.get('x-ratelimit-reset-requests')
+                if retry_after:
+                    wait_time = int(retry_after.rstrip('s'))
+                else:
+                    # Fallback to exponential backoff
+                    wait_time = (2 ** attempt) + random.uniform(0, 1)
+
+                print(f"Rate limited. Waiting {wait_time}s before retry...")
+                await asyncio.sleep(wait_time)
+            else:
+                raise
+
+    raise Exception(f"Max retries exceeded for prompt: {prompt[:50]}...")
+```
+
+This approach respects OpenAI's explicit retry guidance rather than guessing.
+
+**Monitoring dashboard for rate limit health:**
+
+```python
+from datetime import datetime, timedelta
+
+class RateLimitMonitor:
+    def __init__(self):
+        self.requests_by_hour = {}
+        self.limit_breaches = []
+
+    def log_request(self, success: bool):
+        hour_key = datetime.now().strftime("%Y-%m-%d %H:00")
+        if hour_key not in self.requests_by_hour:
+            self.requests_by_hour[hour_key] = {"success": 0, "rate_limited": 0}
+
+        if success:
+            self.requests_by_hour[hour_key]["success"] += 1
+        else:
+            self.requests_by_hour[hour_key]["rate_limited"] += 1
+            self.limit_breaches.append(datetime.now())
+
+    def get_health_summary(self):
+        latest_hour = max(self.requests_by_hour.keys())
+        hour_data = self.requests_by_hour[latest_hour]
+        success = hour_data["success"]
+        rate_limited = hour_data["rate_limited"]
+        success_rate = success / (success + rate_limited) * 100 if (success + rate_limited) > 0 else 100
+
+        return {
+            "current_hour": latest_hour,
+            "successful_requests": success,
+            "rate_limited_requests": rate_limited,
+            "success_rate": f"{success_rate:.1f}%",
+            "recent_breaches": len([b for b in self.limit_breaches if b > datetime.now() - timedelta(hours=1)])
+        }
+```
+
+Track these metrics to identify patterns in when rate limits occur and adjust accordingly.
+
 
 
 

@@ -188,8 +188,86 @@ Break it down into individual tasks with file paths and dependencies.
 
 Once you approve the plan, you can execute each task through separate agent calls, maintaining better control over the overall process.
 
+**Multi-agent orchestration pattern:**
 
+```
+Agent 1 (Backend): "Add API endpoint for real-time data sync"
+  - Dependencies: Database schema migration, auth service
+  - Files to touch: /api/routes, /models, /migrations
 
+Agent 2 (Frontend): "Build WebSocket listener component"
+  - Dependencies: Message types from Agent 1
+  - Files to touch: /components, /hooks, /utils
+
+Agent 3 (Tests): "Write integration tests for real-time sync"
+  - Dependencies: Completion of Agents 1 & 2
+  - Files to touch: /tests, /fixtures
+```
+
+**Practical orchestration using task files:**
+
+Create a `.agent-tasks.json` file in your project root:
+
+```json
+{
+  "tasks": [
+    {
+      "id": "backend-sync",
+      "name": "Add real-time sync API",
+      "status": "pending",
+      "agent_prompt": "Implement WebSocket server for real-time data sync. Handle connection, message routing, and authentication.",
+      "dependencies": [],
+      "expected_files": ["api/websocket.ts", "api/routes/sync.ts"],
+      "estimated_time": "30 minutes"
+    },
+    {
+      "id": "frontend-listener",
+      "name": "Build frontend listener",
+      "status": "pending",
+      "agent_prompt": "Create React hook that listens to WebSocket events from backend. Manages connection, reconnection, and state updates.",
+      "dependencies": ["backend-sync"],
+      "expected_files": ["hooks/useRealtimeSync.ts", "services/websocket.ts"],
+      "estimated_time": "20 minutes"
+    },
+    {
+      "id": "integration-tests",
+      "name": "Integration tests",
+      "status": "pending",
+      "agent_prompt": "Write tests that verify real-time sync works end-to-end. Test connection, message delivery, and error recovery.",
+      "dependencies": ["backend-sync", "frontend-listener"],
+      "expected_files": ["tests/realtime-sync.test.ts"],
+      "estimated_time": "25 minutes"
+    }
+  ]
+}
+```
+
+Then initiate agents with context:
+
+```
+I have a task list in .agent-tasks.json. Please work on task "backend-sync".
+The task description is: [task description]
+Dependencies are satisfied: [yes/no]
+Use these patterns from existing code: [code snippets]
+```
+
+**Agent failure recovery:**
+
+If an agent completes a task but introduces bugs:
+
+1. Review the generated code immediately
+2. Use the agent to fix: "The code you generated has an issue on line X. Fix it."
+3. Run tests before proceeding to dependent tasks
+4. Document any manual fixes needed for future runs
+
+**Performance optimization for multi-agent workflows:**
+
+- Agent 1 completes in ~10 min
+- Agent 2 starts immediately (doesn't wait)
+- Agent 3 waits for Agents 1 & 2 completion
+- Total time: 55 minutes vs. 75+ minutes manually
+
+This parallelization saves time on large implementations. For a 5-agent workflow on a complex feature, you might save 2-3 hours versus sequential manual development.
 
 
 ## Related Reading

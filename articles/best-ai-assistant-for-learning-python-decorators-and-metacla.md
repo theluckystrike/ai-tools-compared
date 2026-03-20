@@ -177,17 +177,120 @@ The most effective learning happens when you actively engage with the material�
 
 ## Getting Started with Practice
 
+**30-day Python mastery roadmap:**
 
+| Week | Focus | Key Exercises | Output |
+|------|-------|---------------|--------|
+| 1 | Decorator basics | Timer, logging, retry decorators | Working decorators in project |
+| 2 | Decorator factories | Parametrized decorators with args | reuse_this(times=3) pattern |
+| 3 | Class decorators | Add methods, modify __init__ | Dataclass-like decorator |
+| 4 | Metaclasses | Registry pattern, validation | Plugin system implementation |
+
+**Code progression example (Week 1 → Week 4):**
+
+```python
+# Week 1: Simple timing decorator
+def timer(func):
+    def wrapper(*args, **kwargs):
+        import time
+        start = time.time()
+        result = func(*args, **kwargs)
+        print(f"Took {time.time() - start:.2f}s")
+        return result
+    return wrapper
+
+# Week 2: Parameterized decorator factory
+def repeat(times):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            results = []
+            for _ in range(times):
+                results.append(func(*args, **kwargs))
+            return results
+        return wrapper
+    return decorator
+
+# Week 3: Class decorator
+def dataclass_like(cls):
+    def __init__(self, **kwargs):
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+    cls.__init__ = __init__
+    return cls
+
+# Week 4: Metaclass for plugin registry
+class PluginRegistry(type):
+    plugins = {}
+
+    def __new__(mcs, name, bases, namespace):
+        cls = super().__new__(mcs, name, bases, namespace)
+        if name != 'BasePlugin':
+            mcs.plugins[name] = cls
+        return cls
+```
 
 Begin your decorator practice with simple use cases: logging, timing, and authentication. These common patterns appear frequently in production code and provide immediate practical value. Once comfortable with function decorators, move to class decorators that modify class behavior or add methods.
 
+**Production examples of decorators:**
 
+```python
+# Flask routing (decorator in action)
+@app.route('/users/<id>')
+def get_user(id):
+    return {"user_id": id}
+
+# Django middleware
+@require_POST
+@login_required
+def create_post(request):
+    return {"status": "created"}
+
+# Click CLI
+@click.command()
+@click.option('--name', required=True)
+def greet(name):
+    click.echo(f"Hello {name}")
+```
 
 For metaclasses, start by simply printing during class creation to observe when the metaclass code executes. Then progress to modifications like adding methods automatically or validating class structure. The registry pattern provides an excellent final exercise that demonstrates metaclasses' power for organizing related classes.
 
+**Real-world metaclass usage:**
 
+```python
+# Django ORM uses metaclasses for model definition
+from django.db import models
+
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    # Behind the scenes, Django's metaclass:
+    # - Intercepts field definitions
+    # - Validates field types
+    # - Creates database mappings
+    # - Generates query methods
+
+# SQLAlchemy also uses metaclasses
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
+
+class Product(Base):
+    __tablename__ = 'products'
+    # Metaclass hooks into column definitions
+    # Creates mapper between Python objects and database
+```
 
 Remember that these advanced features solve specific problems—don't force them into code where simpler solutions suffice. The goal is recognizing when decorators and metaclasses provide genuine value versus when they add unnecessary complexity.
+
+**When to use each pattern:**
+
+| Pattern | Use When | Avoid When |
+|---------|----------|-----------|
+| Simple decorator | Logging, timing, validation | Changing control flow |
+| Decorator factory | Need parameters | Decorating decorators |
+| Class decorator | Modifying class structure | Modifying instances |
+| Metaclass | Controlling class creation | Simple class modifications |
+
+Most Python code never needs metaclasses. If you're unsure, decorators usually suffice. The 80/20 rule applies: 80% of real-world scenarios use decorators; 20% actually need metaclasses.
 
 
 

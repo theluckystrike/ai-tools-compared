@@ -185,6 +185,81 @@ Your choice depends on workflow preferences and project requirements:
 
 Both platforms continue evolving their AI features rapidly. The gap between them narrows as VSCode extensions mature and JetBrains expands AI capabilities across their IDE lineup.
 
+**Real-world workflow comparison:**
+
+Scenario: Refactoring a 50-line authentication function
+
+**VSCode approach:**
+1. Select the function (15 seconds)
+2. Cmd+I to open inline chat (5 seconds)
+3. Type: "Convert to async/await and add error handling" (10 seconds)
+4. Review suggestion inline, click accept (15 seconds)
+5. Total: ~45 seconds
+
+**JetBrains approach:**
+1. Select the function (15 seconds)
+2. Click AI Assistant in tool window (5 seconds)
+3. Type same request (10 seconds)
+4. AI reads entire file context and suggests refactor (30 seconds)
+5. Review in separate panel, apply changes (20 seconds)
+6. Total: ~80 seconds, but with better context
+
+The difference: VSCode is faster for simple changes; JetBrains provides better context for complex refactoring.
+
+**Extension ecosystem strength:**
+
+VSCode advantages:
+- GitHub Copilot Chat (most mature)
+- Continue.dev (local LLM support)
+- Tabnine (enterprise-friendly)
+- Custom extensions easily built
+
+JetBrains advantages:
+- Built-in AI Assistant (official)
+- Deeper IDE integration (jump to definition while chatting)
+- Language-specific optimizations
+- Enterprise support and licensing
+
+**Cost comparison (as of March 2026):**
+
+| Tool | Cost | Best IDE Match |
+|------|------|----------------|
+| GitHub Copilot | $20/month | VSCode |
+| Cursor | $20/month | VSCode alternative |
+| JetBrains AI Assistant | Included with IDE | All JetBrains |
+| Codeium | Free/Premium | Both |
+| Tabnine | Free/Pro/Enterprise | Both |
+
+If you have a JetBrains license ($199-600/year), AI Assistant is included. This makes JetBrains substantially cheaper for serious developers.
+
+**Language-specific capabilities:**
+
+| Language | VSCode | JetBrains |
+|----------|--------|-----------|
+| Python | Via extension | Native (PyCharm) |
+| Java | Via extension | Native (IntelliJ) |
+| Kotlin | Limited | Native (IntelliJ) |
+| Go | Via extension | Native (GoLand) |
+| JavaScript | Strong | Strong |
+
+If you use language-specific IDEs (PyCharm for Python, IntelliJ for Java), JetBrains AI has deeper language understanding.
+
+**Migration checklist if switching:**
+
+From VSCode to JetBrains:
+- [ ] Copy your GitHub Copilot prompts/history
+- [ ] Configure keyboard shortcuts to match VSCode
+- [ ] Install JetBrains ecosystem theme (VSCode theme available)
+- [ ] Set up project structure for IDE indexing
+- [ ] Test AI on your first 3 files before fully switching
+
+From JetBrains to VSCode:
+- [ ] Subscribe to GitHub Copilot ($20/month)
+- [ ] Install VSCode extensions matching JetBrains features
+- [ ] Relearn keybindings (Cmd vs Ctrl differences)
+- [ ] Set up workspace settings for project context
+- [ ] Test refactoring and debugging workflows
+
 
 
 ---
