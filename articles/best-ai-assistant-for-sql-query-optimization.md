@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-assistant-for-sql-query-optimization/
 reviewed: true
-score: 8
+score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true

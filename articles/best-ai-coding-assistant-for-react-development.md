@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-coding-assistant-for-react-development/
 reviewed: true
-score: 7
+score: 9
 categories: [best-of]
 intent-checked: true
 voice-checked: true
