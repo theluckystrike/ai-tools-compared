@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI for Writing Prometheus Alerting Rules."
 description: "A practical guide for developers on using AI tools to write Prometheus alerting rules. Real examples, code snippets, and techniques for 2026."

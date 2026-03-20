@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Procurement Managers Vendor Analysis"
 description: "A practical guide to AI-powered vendor analysis tools for procurement professionals. Learn how AI simplifies supplier evaluation, risk assessment, and."

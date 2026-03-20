@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot vs Claude for Generating Java Spring Boot"
 description: "A practical comparison of GitHub Copilot and Claude for generating Java Spring Boot application code, with real examples and performance insights for."

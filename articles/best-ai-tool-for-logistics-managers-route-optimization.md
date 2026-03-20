@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Logistics Managers: Route Optimization"
 description: "Discover how AI-powered route optimization tools help logistics managers reduce fuel costs, improve delivery times, and improve fleet operations with."

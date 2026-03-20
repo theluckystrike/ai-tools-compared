@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Drift vs ChatGPT for Customer Support: A Technical"
 description: "A practical comparison of Drift and ChatGPT for building customer support solutions. Includes code examples, integration patterns, and implementation."

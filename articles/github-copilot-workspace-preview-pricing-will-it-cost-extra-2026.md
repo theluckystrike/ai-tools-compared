@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "GitHub Copilot Workspace Preview: Pricing & Extra Costs."
 description: "Everything you need to know about GitHub Copilot Workspace preview pricing, including whether it costs extra, feature availability, and what to expect."

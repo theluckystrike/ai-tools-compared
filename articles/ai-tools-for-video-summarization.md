@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Video Summarization: A Practical Guide for."
 description: "Explore practical AI tools for video summarization with code examples, API integrations, and implementation approaches for developers and power users."
@@ -11,6 +10,7 @@ score: 8
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
+categories: [guides]
 ---
 
 

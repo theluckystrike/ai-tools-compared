@@ -32,11 +32,7 @@ When Git encounters conflicting changes during a rebase, it inserts conflict mar
 
 ```javascript
 function calculateTotal(items) {
-<<<<<<< HEAD
   return items.reduce((sum, item) => sum + item.price, 0);
-=======
-  return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
->>>>>>> feature/add-quantity-support
 }
 ```
 

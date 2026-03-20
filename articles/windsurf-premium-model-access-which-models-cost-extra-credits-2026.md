@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Windsurf Premium Model Access: Which Models Cost Extra."
 description: "A guide to Windsurf Premium model access, including which AI models require extra credits, pricing breakdown, and recommendations for 2026."

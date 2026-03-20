@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Set Up Model Context Protocol Server for Internal."
 description: "A practical guide to setting up a Model Context Protocol server for internal package registry documentation, with code examples and configuration tips."

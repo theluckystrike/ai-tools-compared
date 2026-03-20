@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "ChatGPT Conversation History Disappeared Fix"
 description: "A practical troubleshooting guide for developers and power users facing the issue of ChatGPT conversation history disappearing. Learn step-by-step."

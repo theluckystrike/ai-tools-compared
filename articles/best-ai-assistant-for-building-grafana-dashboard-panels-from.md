@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Building Grafana Dashboard Panels."
 description: "Discover the top AI tools for creating Grafana dashboard panels using Prometheus queries. Practical examples, code snippets, and recommendations for."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Container Security Scanning: A Practical Guide for."
 description: "Learn how AI-powered container security scanning tools detect vulnerabilities, misconfigurations, and compliance issues in Docker and Kubernetes."
@@ -11,6 +10,7 @@ score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
+intent-checked: true
 ---
 {% raw %}
 

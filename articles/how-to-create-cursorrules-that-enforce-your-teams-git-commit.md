@@ -1,7 +1,6 @@
 ---
-
 layout: default
-title: "How to Create CursorRules That Enforce Your Team's Git Commit Message Format"
+title: "Create CursorRules That Enforce Your Team's Git Commit Message Format"
 description: "Learn how to create CursorRules that automatically enforce consistent git commit message formats across your entire development team."
 date: 2026-03-16
 author: theluckystrike

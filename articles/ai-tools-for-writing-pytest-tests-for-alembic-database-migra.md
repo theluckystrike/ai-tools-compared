@@ -1,7 +1,6 @@
 ---
-
 layout: default
-title: "AI Tools for Writing Pytest Tests for Alembic Database"
+title: "AI Tools for Writing Pytest Tests for Alembic Database Migrations: Up and Down Paths"
 description: "A practical guide to using AI tools to generate pytest tests for Alembic database migrations. Learn how to automate testing of upgrade and downgrade."
 date: 2026-03-16
 author: theluckystrike

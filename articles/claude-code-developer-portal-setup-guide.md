@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Code Developer Portal Setup Guide"
 description: "A practical guide to setting up a developer portal using Claude Code. Learn how to structure your documentation, integrate APIs, and automate portal."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT vs Claude for Creative Storytelling Compared"
 description: "A practical comparison of ChatGPT and Claude for creative storytelling, with code examples and real-world use cases for developers."

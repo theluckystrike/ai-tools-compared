@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Returns and Refund Automation"
 description: "A practical guide to AI-powered returns and refund automation tools for developers building e-commerce solutions."
@@ -11,6 +10,7 @@ score: 8
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence, automation]
+categories: [guides]
 ---
 
 

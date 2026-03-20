@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Clio AI Legal Practice Management Review 2026"
 description: "Clio AI Legal Practice Management Review 2026 — guide with practical tips, comparisons, and expert recommendations for developers and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cursor AI Background Agent Feature for Autonomous Multi Step"
 description: "Cursor AI Background Agent Feature for Autonomous. — guide with practical tips, comparisons, and expert recommendations for developers."

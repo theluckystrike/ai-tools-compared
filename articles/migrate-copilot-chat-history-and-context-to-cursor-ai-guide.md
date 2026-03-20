@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Migrate Copilot Chat History and Context to Cursor AI"
 description: "A practical guide for developers moving from GitHub Copilot to Cursor AI, covering chat history migration, context transfer, and configuration steps."

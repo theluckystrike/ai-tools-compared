@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Video Frame Interpolation"
 description: "A practical guide to AI-powered video frame interpolation tools for developers and power users, with implementation examples and tool comparisons."
@@ -11,6 +10,7 @@ score: 8
 reviewed: true
 intent-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
+categories: [guides]
 ---
 
 

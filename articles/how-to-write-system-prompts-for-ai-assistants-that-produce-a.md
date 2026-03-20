@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Write System Prompts for AI Assistants That Produce"
 description: "A practical guide for developers on crafting system prompts that generate semantic, accessible HTML markup."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI Codebase Search to Find Relevant Code Before"
 description: "Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques."

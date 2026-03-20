@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "AI Presentation Maker Chrome Extension"
 description: "A guide to AI-powered Chrome extensions for creating presentations automatically, with feature comparisons and recommendations."
@@ -10,9 +8,8 @@ permalink: /ai-presentation-maker-chrome-extension/
 categories: [guides, productivity]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 tags: [ai-tools-compared, artificial-intelligence]
 ---
 

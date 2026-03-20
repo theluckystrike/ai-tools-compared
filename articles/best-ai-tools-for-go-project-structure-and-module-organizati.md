@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Go Project Structure and Module."
 description: "A practical guide to AI-powered tools that help Go developers structure projects, organize modules, and maintain clean codebases."

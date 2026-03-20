@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Export Perplexity Collections Before Switching to."
 description: "A practical developer guide for exporting Perplexity collections before switching to ChatGPT Search in 2026. Includes API methods, automation scripts."

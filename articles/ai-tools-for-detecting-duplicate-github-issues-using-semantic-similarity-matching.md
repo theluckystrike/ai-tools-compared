@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Detecting Duplicate GitHub Issues Using."
 description: "A practical guide for developers using AI-powered semantic similarity tools to identify and merge duplicate GitHub issues automatically."

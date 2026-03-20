@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Coding Assistant Comparison for TypeScript Monorepo."
 description: "A practical comparison of AI coding assistants for TypeScript monorepos using Turborepo, with code examples and recommendations for developers."

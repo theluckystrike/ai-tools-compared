@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Generating dbt Project Structure from Existing"
 description: "A practical guide for developers on using AI tools to automatically generate dbt project structures from existing SQL queries, with code examples and."

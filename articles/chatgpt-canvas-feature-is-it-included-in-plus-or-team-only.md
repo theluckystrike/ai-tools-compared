@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT Canvas Feature - Is It Included in Plus or Team."
 description: "A practical guide explaining whether ChatGPT Canvas is included in ChatGPT Plus or Team subscriptions, with feature availability details for each plan."

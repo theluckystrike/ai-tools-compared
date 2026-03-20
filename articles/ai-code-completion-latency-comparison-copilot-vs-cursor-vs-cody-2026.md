@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Code Completion Latency Comparison: Copilot vs Cursor vs Cody 2026"
+title: "AI Code Completion Latency Comparison"
 description: "Real latency benchmarks for AI code completion tools. Compare Copilot, Cursor, and Cody across response times, factors affecting speed, and optimization tips."
 date: 2026-03-20
 author: theluckystrike

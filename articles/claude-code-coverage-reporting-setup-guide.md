@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Claude Code Coverage Reporting Setup Guide"
 description: "A guide to setting up automated code coverage reporting with Claude Code. Learn how to integrate coverage tools, generate reports, and track metrics."
@@ -11,9 +9,8 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

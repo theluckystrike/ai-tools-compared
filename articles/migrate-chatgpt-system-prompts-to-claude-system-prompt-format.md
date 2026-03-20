@@ -3,7 +3,7 @@ title: "How to Migrate ChatGPT System Prompts to Claude System."
 description: "Learn how to convert and migrate your existing ChatGPT system prompts to Claude's system prompt format for optimal AI assistant performance."
 author: theluckystrike
 date: 2026-03-16
-tags:
+tags: 
   - ai assistants
   - chatgpt
   - claude
@@ -11,13 +11,14 @@ tags:
   - system prompts
   - migration
   - ai tools
-categories:
+categories: 
   - AI Tools Compared
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-format/
 score: 7
 voice-checked: true
 reviewed: true
 intent-checked: true
+layout: default
 ---
 
 

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Education Student Support"
 description: "A practical guide to AI-powered student support tools for developers building educational platforms, with implementation examples and technical."

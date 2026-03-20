@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "AI Tools for Writing Grant Proposals Compared 2026"
 description: "A practical comparison of AI tools for writing grant proposals in 2026. Features, pricing, API access, and integration options for developers and power."

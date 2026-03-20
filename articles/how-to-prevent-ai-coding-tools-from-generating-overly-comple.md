@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Prevent AI Coding Tools from Generating Overly."
 description: "A practical guide for developers on how to keep AI-generated code simple, maintainable, and focused. Includes techniques and prompts that work."

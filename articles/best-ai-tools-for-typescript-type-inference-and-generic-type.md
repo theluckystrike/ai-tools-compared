@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for TypeScript Type Inference and Generic Type"
 description: "A practical comparison of AI coding assistants for TypeScript type inference and generic type generation, with code examples and recommendations for."

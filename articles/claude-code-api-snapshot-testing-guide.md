@@ -1,8 +1,4 @@
 ---
-
-
-
-
 layout: default
 title: "Claude Code API Snapshot Testing Guide"
 description: "A guide to implementing API snapshot testing using Claude Code, covering test creation, maintenance strategies, and best practices for capturing and."
@@ -12,9 +8,8 @@ permalink: /claude-code-api-snapshot-testing-guide/
 categories: [guides]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

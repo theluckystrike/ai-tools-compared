@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT Network Error on Long Responses: How to Fix in 2026"
 description: "Practical solutions for developers and power users experiencing network errors when generating long responses with ChatGPT. Includes code examples and."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Real Estate Chatbots"
 description: "A practical guide for developers building AI-powered real estate chatbots, covering key platforms, implementation patterns, and code examples for."

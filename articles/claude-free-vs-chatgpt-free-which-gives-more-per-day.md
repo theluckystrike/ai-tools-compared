@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude Free vs ChatGPT Free: Which Gives More Messages."
 description: "A practical breakdown of Claude Free vs ChatGPT Free daily message limits. Compare usage quotas, speed, and which free tier better suits developers and."

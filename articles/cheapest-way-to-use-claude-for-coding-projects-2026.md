@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cheapest Way to Use Claude for Coding Projects 2026"
 description: "A practical guide to using Claude AI for coding while minimizing costs. Explore free tiers, API pricing, and cost-effective strategies for developers."

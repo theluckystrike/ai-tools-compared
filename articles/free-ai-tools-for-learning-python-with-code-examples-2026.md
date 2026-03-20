@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Free AI Tools for Learning Python with Code Examples 2026"
 description: "A practical guide to free AI tools that help developers learn Python faster, with real code examples and actionable recommendations."

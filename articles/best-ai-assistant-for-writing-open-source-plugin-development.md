@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Writing Open Source Plugin Development"
 description: "A practical guide to the best AI assistants for writing open source plugin development documentation. Compare top tools with real code examples."

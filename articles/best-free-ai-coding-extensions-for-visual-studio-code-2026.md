@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Free AI Coding Extensions for Visual Studio Code 2026"
 description: "A practical guide to the best free AI coding extensions for Visual Studio Code in 2026, with code examples and setup tips for developers."

@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Writing Tool for SaaS Marketing Teams"
 description: "A practical guide to choosing the best AI writing tool for SaaS marketing teams. Includes API integration examples, workflow automation patterns, and."

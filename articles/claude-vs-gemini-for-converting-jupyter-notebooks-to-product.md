@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude vs Gemini for Converting Jupyter Notebooks to Product"
 description: "A practical comparison of Claude and Gemini for converting Jupyter notebooks to production-ready Python scripts. Includes code examples and migration."

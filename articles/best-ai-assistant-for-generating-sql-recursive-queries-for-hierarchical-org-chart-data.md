@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Generating SQL Recursive Queries."
 description: "A practical comparison of AI assistants for writing recursive SQL queries that traverse organizational hierarchies, with real code examples."

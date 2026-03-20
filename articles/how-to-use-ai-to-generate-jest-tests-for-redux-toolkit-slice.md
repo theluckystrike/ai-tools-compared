@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Generate Jest Tests for Redux Toolkit Slice"
 description: "A practical guide for developers looking to automate Jest test generation for Redux Toolkit slices using AI tools."

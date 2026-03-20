@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best Workflow for Using AI to Write Infrastructure as."
 description: "A practical guide for developers on how to use AI tools to convert architecture diagrams into production-ready Terraform, CloudFormation, or Pulumi."

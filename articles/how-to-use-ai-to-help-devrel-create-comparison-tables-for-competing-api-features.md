@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Help DevRel Create Comparison Tables."
 description: "A practical guide for developers and DevRel professionals on using AI to create accurate, detailed comparison tables for competing API features."

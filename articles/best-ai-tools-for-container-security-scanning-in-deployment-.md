@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Container Security Scanning in."
 description: "Discover the best AI tools for container security scanning in deployment pipelines in 2026. Compare features, integration methods, and practical code."

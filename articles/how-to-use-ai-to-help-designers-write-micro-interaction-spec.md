@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Help Designers Write Micro Interaction Spec"
 description: "A practical guide for developers and power users using AI to create precise micro interaction specifications that bridge design and development."

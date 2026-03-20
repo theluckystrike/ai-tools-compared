@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Canva AI vs Adobe Firefly: Design Tool Compared"
 description: "A practical comparison of Canva AI and Adobe Firefly for design automation, with API integrations, code examples, and recommendations for developers."

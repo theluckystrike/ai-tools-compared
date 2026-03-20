@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "DALL-E 3 vs Gemini Imagen: Quality Compared 2026"
 description: "A technical comparison of DALL-E 3 and Gemini Imagen image generation quality. Practical examples, API usage, and recommendations for developers and."

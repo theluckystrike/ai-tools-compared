@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Free AI Tools for Students Learning to Code 2026 List"
 description: "A practical guide to free AI tools that help students learning to code in 2026, with code examples and actionable recommendations."

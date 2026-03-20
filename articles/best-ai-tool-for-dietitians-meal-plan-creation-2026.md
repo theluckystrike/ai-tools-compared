@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Dietitians Meal Plan Creation 2026"
 description: "Discover how AI tools help dietitians create personalized meal plans faster. Real-world use cases, key features to evaluate, and practical guidance for."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Coding Productivity Tips for Senior Developers Switching"
 description: "Practical strategies and code examples to help senior developers maximize productivity when transitioning from manual coding to AI-assisted workflows."

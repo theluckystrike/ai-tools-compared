@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Effective Context Management Strategies for AI Coding in."
 description: "Practical strategies and techniques for managing AI coding assistant context in large monorepo projects. Learn how to optimize prompts, reduce token."

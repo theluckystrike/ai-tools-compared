@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Repurposing Blog Content 2026"
 description: "A practical guide to AI tools that transform blog posts into social content, newsletters, and more. Code examples and real workflows for developers."

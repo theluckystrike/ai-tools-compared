@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Free AI Tools for Writing Bash Scripts and Automation"
 description: "A practical comparison of free AI tools that help with writing bash scripts and automating shell tasks, with examples and recommendations."

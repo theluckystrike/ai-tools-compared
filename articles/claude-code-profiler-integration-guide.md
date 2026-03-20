@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Claude Code Profiler Integration Guide"
 description: "Learn how to integrate performance profilers with Claude Code to identify bottlenecks, optimize code, and build faster applications."

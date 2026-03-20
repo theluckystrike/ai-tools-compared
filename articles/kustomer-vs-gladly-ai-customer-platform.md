@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Kustomer vs Gladly AI Customer Platform: A Developer"
 description: "A practical technical comparison of Kustomer and Gladly AI customer service platforms, with API examples and integration guidance for developers."

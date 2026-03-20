@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Video Object Tracking"
 description: "A practical guide to AI-powered video object tracking tools for developers, with code examples and implementation recommendations."

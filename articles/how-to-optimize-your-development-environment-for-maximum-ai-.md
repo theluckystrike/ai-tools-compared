@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Optimize Your Development Environment for Maximum"
 description: "A practical guide for developers and power users to configure their development environment for optimal AI-assisted coding productivity."

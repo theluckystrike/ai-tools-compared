@@ -1,7 +1,4 @@
 ---
-
-
-
 layout: default
 title: "Best Practices for AI Coding Tools in SOX-Compliant."
 description: "Discover the essential best practices for using AI coding tools in SOX-compliant financial environments. Learn about data privacy, audit trails, and."

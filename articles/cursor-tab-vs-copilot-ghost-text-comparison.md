@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Cursor Tab vs Copilot Ghost Text: AI Code Completion."
 description: "A practical comparison of Cursor Tab and GitHub Copilot ghost text for AI-powered code completion. Learn the key differences in acceptance mechanisms."

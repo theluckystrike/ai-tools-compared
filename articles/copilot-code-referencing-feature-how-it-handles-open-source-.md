@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot Code Referencing Feature: How It Handles Open Source"
 description: "Copilot Code Referencing Feature: How It Handles Open. — guide with practical tips, comparisons, and expert recommendations for."

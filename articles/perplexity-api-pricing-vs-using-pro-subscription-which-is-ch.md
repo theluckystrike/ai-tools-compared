@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Perplexity API Pricing vs Pro Subscription: Which Is."
 description: "A practical comparison of Perplexity API costs versus the Pro subscription, with code examples and cost-saving recommendations for developers."

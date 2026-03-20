@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Preparing for AWS Solutions Architect"
 description: "A practical comparison of AI coding tools to help you prepare for the AWS Solutions Architect Associate and Professional exams in 2026."

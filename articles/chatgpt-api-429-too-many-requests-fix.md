@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "ChatGPT API 429 Too Many Requests Fix"
 description: "A troubleshooting guide for developers encountering 429 rate limit errors when using the ChatGPT API, with practical solutions and."

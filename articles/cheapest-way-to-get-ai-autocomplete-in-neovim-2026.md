@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cheapest Way to Get AI Autocomplete in Neovim 2026"
 description: "A practical guide to getting AI-powered code autocomplete in Neovim without spending money. Compare free options like CodeWhisperer, Tabnine, Ollama."

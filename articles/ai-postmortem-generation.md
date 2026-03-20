@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Postmortem Generation: Automating Incident Root Cause."
 description: "A practical guide to AI postmortem generation for developers and power users. Learn how to automate incident root cause analysis with code examples and."
@@ -10,7 +9,7 @@ categories: [guides]
 tags: [ai-tools-compared, ai, devops, incident-management, artificial-intelligence]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
 ---
 

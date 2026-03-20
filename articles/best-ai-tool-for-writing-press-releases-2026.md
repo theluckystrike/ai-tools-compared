@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for Writing Press Releases 2026"
 description: "A practical guide for developers and power users comparing AI tools for writing professional press releases. Includes code examples and API integrations."

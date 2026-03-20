@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Marketing Managers Campaign Briefs"
 description: "A practical guide for marketing managers comparing AI tools that help create effective campaign briefs faster. Real-world use cases, workflow examples."

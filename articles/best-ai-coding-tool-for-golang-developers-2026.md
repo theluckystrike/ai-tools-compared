@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Coding Tool for Golang Developers 2026"
 description: "Discover the top AI coding assistants that integrate with Go. Compare features, code completion, and real-world performance for Golang."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "GitHub Copilot Usage-Based Billing: How API Calls Are."
 description: "GitHub Copilot Usage-Based Billing: How API Calls Are. — guide with practical tips, comparisons, and expert recommendations for."

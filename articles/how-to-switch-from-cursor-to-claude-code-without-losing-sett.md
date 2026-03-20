@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Switch from Cursor to Claude Code Without Losing."
 description: "A practical guide for developers switching from Cursor AI to Claude Code. Learn how to export your snippets, keybindings, and workspace configurations."

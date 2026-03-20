@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Writing CLAUDE.md Files That Teach AI Your."
 description: "A practical guide to creating effective CLAUDE.md files that communicate your project's error handling conventions to AI assistants. Includes code examples and real-world patterns."

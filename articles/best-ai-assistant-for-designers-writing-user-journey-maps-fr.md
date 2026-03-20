@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Assistant for Designers Writing User Journey Maps"
 description: "A practical guide for developers and power users comparing AI assistants that help transform raw analytics data into actionable user journey maps."

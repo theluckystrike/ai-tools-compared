@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use Claude API Cheaply for Small Coding Projects"
 description: "How to Use Claude API Cheaply for Small Coding Projects — guide with practical tips, comparisons, and expert recommendations for."

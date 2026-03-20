@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Set Up Custom Instructions for AI Tools to Match Your"
 description: "A practical guide for developers on configuring AI coding assistants with custom instructions that enforce your team's linting rules, code style, and formatting conventions."

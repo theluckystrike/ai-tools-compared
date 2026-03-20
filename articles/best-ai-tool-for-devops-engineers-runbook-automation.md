@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tool for DevOps Engineers Runbook Automation"
 description: "Find the most effective AI assistant for automating DevOps runbooks. Compare tools, see practical examples, and learn which solution fits your."

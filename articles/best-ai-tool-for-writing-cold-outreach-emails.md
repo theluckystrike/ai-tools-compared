@@ -1,6 +1,4 @@
 ---
-
-
 layout: default
 title: "Best AI Tool for Writing Cold Outreach Emails"
 description: "Find the most effective AI writing tool for cold outreach emails. Compare approaches, examine code-based workflows, and see real examples for."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Midjourney Relax Mode Queue Times: How Slow Is It Really."
 description: "A guide to understanding Midjourney Relax mode queue times, what affects wait times, and practical tips for faster image generation."
@@ -10,9 +9,8 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
-intent-checked: false
+intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 {% raw %}
 

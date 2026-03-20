@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Set Up Model Context Protocol Server Providing Live"
 description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cursor Extensions Conflicting with AI Fix"
 description: "Practical solutions for resolving conflicts between Cursor IDE extensions and AI features. Step-by-step diagnostics and fixes for developers."

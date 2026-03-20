@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Claude vs ChatGPT for Creating AWS CDK Infrastructure."
 description: "A practical comparison of Claude and ChatGPT for building AWS CDK infrastructure stacks in Python, with code examples and recommendations."

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Cursor Tab Accepting Wrong Suggestion Fix"
 description: "Fix Cursor Tab accepting incorrect code suggestions. Step-by-step solutions for developers experiencing AI autocomplete errors in Cursor editor."

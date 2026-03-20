@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Coding Tools for Scala Functional Programming"
 description: "A developer-focused guide to AI coding tools that work well with Scala's functional programming paradigm. Includes code examples, practical tips, and."

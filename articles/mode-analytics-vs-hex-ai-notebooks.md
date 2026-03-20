@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Mode Analytics vs Hex AI Notebooks: A Practical"
 description: "A practical comparison of Mode Analytics and Hex AI Notebooks for data analysis workflows. Includes code examples, feature breakdown, and."

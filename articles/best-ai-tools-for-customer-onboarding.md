@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI Tools for Customer Onboarding: A Developer Guide"
 description: "A practical comparison of AI tools for customer onboarding automation, with code examples and implementation tips for developers."
@@ -10,6 +9,7 @@ voice-checked: true
 score: 7
 reviewed: true
 intent-checked: true
+categories: [guides]
 ---
 
 

@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Use AI to Create Pandas DataFrame Profiling Reports"
 description: "A practical guide to generating automated DataFrame profiling reports using Python and AI-assisted tools for faster exploratory data analysis."

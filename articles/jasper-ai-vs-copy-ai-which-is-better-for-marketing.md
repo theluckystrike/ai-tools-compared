@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Jasper AI vs Copy AI: Which Is Better for Marketing in 2026"
 description: "A practical comparison of Jasper AI and Copy.ai for marketing teams. Features, pricing, API access, and real-world use cases for developers."

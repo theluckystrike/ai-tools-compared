@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "How to Audit What Source Code AI Coding Tools Transmit."
 description: "Learn practical methods to audit and monitor what source code your AI coding assistants transmit to external servers. Code examples and tools for."

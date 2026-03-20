@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Completely Free Alternatives to GitHub Copilot That Actually"
 description: "A practical guide to free AI coding assistants for developers. Compare Codeium, Tabnine, and local solutions with real code examples."

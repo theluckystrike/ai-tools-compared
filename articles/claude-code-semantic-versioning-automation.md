@@ -12,19 +12,13 @@ reviewed: true
 score: 8
 robots: "index, follow"
 last_updated: "2026-03-18"
-structured_data:
+structured_data: 
   "@type": "HowTo"
   name: "Claude Code Semantic Versioning Automation"
- description: "Learn how to automate semantic versioning using Claude Code"
-  step:
-    - name: "Set up semantic versioning with Claude Code"
-      text: "Configure Claude Code to understand and manage version numbers"
-    - name: "Create version detection rules"
-      text: "Define patterns for detecting version bumps in code"
-    - name: "Automate changelog generation"
-      text: "Generate changelogs automatically based on commits"
 intent-checked: true
 voice-checked: true
+layout: default
+date: 2026-03-15
 ---
 {% raw %}
 

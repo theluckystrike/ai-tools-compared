@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Verloop vs Engati AI Chatbot Platform Compared"
 description: "A practical technical comparison of Verloop and Engati chatbot platforms for developers and power users, with API details, integration options, and."

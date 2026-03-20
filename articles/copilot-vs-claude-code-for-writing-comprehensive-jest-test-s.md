@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Copilot vs Claude Code for Writing Comprehensive Jest Test"
 description: "A practical comparison of GitHub Copilot and Claude Code for writing Jest test suites in React applications, with code examples and."

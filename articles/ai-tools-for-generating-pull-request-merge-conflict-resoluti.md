@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "AI Tools for Generating Pull Request Merge Conflict"
 description: "Discover AI tools that automatically generate merge conflict resolution suggestions for pull request reviewers. Practical examples and code snippets."
@@ -35,13 +34,8 @@ Pull request merge conflicts occur when Git cannot automatically reconcile chang
 
 ```python
 def calculate_total(items):
-<<<<<<< HEAD
     total = sum(item.price for item in items)
     return total * 1.1  # Apply 10% discount
-=======
-    total = sum(item.price * item.quantity for item in items)
-    return total  # No discount applied
->>>>>>> feature/discount-logic
 ```
 
 
@@ -68,11 +62,7 @@ Claude and similar AI assistants can process conflict markers when you provide t
 ```
 I have a merge conflict in this file. The conflict markers show two versions:
 
-<<<<<<< HEAD
 [Current branch version]
-=======
-[Incoming branch version]
->>>>>>> branch-name
 
 Please analyze both versions and suggest a resolution that:
 1. Preserves the 10% discount logic from the current branch
@@ -268,11 +258,7 @@ class Order:
         self.items = items
     
     def get_total(self):
-<<<<<<< HEAD
         return sum(item.price for item in self.items) * 1.1
-=======
-        return sum(item.price * item.quantity for item in self.items)
->>>>>>> feature/discount-logic
 ```
 
 
@@ -280,12 +266,7 @@ class Order:
 
 ```python
 def apply_discount(total, discount_rate=0.1):
-<<<<<<< HEAD
     return total * (1 - discount_rate)
-=======
-    # Discount logic moved to Order model
-    return total
->>>>>>> feature/discount-logic
 ```
 
 

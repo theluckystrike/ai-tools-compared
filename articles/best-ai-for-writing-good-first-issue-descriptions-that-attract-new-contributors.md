@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Best AI for Writing Good First Issue Descriptions That."
 description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes."
