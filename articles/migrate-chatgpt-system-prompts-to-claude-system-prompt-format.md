@@ -305,6 +305,84 @@ After migration, test your Claude system prompt by:
 
 **Solution:** Add specific scenario examples demonstrating expected behavior.
 
+## Handling Token Budget and Prompt Length Differences
+
+ChatGPT and Claude differ in how they use system prompt tokens. Claude's system prompt context window is large, and Claude extracts more signal from detailed, narrative-style instructions. A prompt that felt verbose in ChatGPT will often perform better in Claude without truncation.
+
+That said, longer system prompts are not always better. Claude can over-apply highly specific instructions, treating them as absolute rules even in edge cases. The best practice is to write Claude system prompts that explain intent rather than enumerate exhaustive rules:
+
+```
+# ChatGPT-style (rule enumeration):
+Rule 1: Always respond in English
+Rule 2: Never use bullet points for responses under 3 items
+Rule 3: Do not use the word "certainly"
+
+# Claude-style (intent-driven):
+Communicate clearly and directly. Match the complexity of your response
+to the complexity of the question — short answers for simple questions,
+structured responses when the topic warrants it. Avoid filler phrases
+that add no information.
+```
+
+The intent-driven approach gives Claude room to exercise judgment while still following the spirit of your constraints.
+
+## Multi-Turn Context and Memory Handling
+
+ChatGPT system prompts often contain explicit instructions for handling conversation history, because GPT models can lose track of earlier context across long conversations. Claude maintains coherence over longer contexts more reliably, which means some memory-management instructions from ChatGPT prompts become unnecessary noise.
+
+Remove instructions like:
+```
+At the start of each response, summarize what the user has asked so far.
+If more than 5 exchanges have occurred, ask the user to confirm the original goal.
+```
+
+These defensive patterns degrade Claude's responses by adding unnecessary scaffolding. Claude handles multi-turn context without them.
+
+Retain explicit instructions for behaviors that genuinely need reinforcement, such as persona consistency or output format requirements that apply to every turn regardless of context length.
+
+## Prompt Versioning: Managing Migrations Across Environments
+
+When migrating system prompts from ChatGPT to Claude in production applications, version your prompts in source control rather than editing them directly in the API dashboard or configuration UI.
+
+A simple versioning approach:
+
+```
+prompts/
+  system-prompt-v1-chatgpt.txt    # Original ChatGPT prompt (archived)
+  system-prompt-v2-claude.txt     # Direct migration
+  system-prompt-v3-claude.txt     # After testing and refinement
+```
+
+When switching versions, run A/B evaluations with the same test queries before changing production traffic. Claude's API supports system prompt injection at request time, making it straightforward to compare prompt versions without redeployment:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def query_with_prompt(system_prompt: str, user_message: str) -> str:
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1024,
+        system=system_prompt,
+        messages=[{"role": "user", "content": user_message}]
+    )
+    return message.content[0].text
+
+# Compare prompt versions on same query set
+v2_response = query_with_prompt(open("prompts/system-prompt-v2-claude.txt").read(), test_query)
+v3_response = query_with_prompt(open("prompts/system-prompt-v3-claude.txt").read(), test_query)
+```
+
+## When Not to Migrate
+
+Not every ChatGPT system prompt needs full migration. Prompts that work primarily as role definitions with minimal constraint logic often transfer without modification — Claude reads and respects plain-English role descriptions just as effectively. Reserve the full migration treatment for prompts that contain:
+
+- Complex behavioral rules that feel brittle or unpredictable after the switch
+- Numeric constraints (word limits, item counts) that ChatGPT honored literally but Claude interprets loosely
+- Refusal patterns that need tightening or relaxing for Claude's constitutional approach
+
+For simple assistants with no complex rules, paste your ChatGPT system prompt directly into the Claude API, run a test set, and only invest in migration work if you observe specific quality regressions.
 
 ## Related Reading
 
