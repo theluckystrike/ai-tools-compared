@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 Claude and ChatGPT excel at generating property-based tests when you provide function signatures and expected behavior descriptions. Hypothesis for Python and Fast-Check for JavaScript benefit most from AI assistance when you specify domain constraints—AI tools help identify meaningful properties (like permutation invariants for sorting) that you might otherwise miss, accelerating your workflow significantly.

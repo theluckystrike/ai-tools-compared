@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 Claude excels at generating Playwright multi-browser test matrices integrated with GitHub Actions because it understands browser-specific nuances, generates clean idiomatic code, and provides detailed explanations of configuration logic. When tasked with creating comprehensive test coverage across Chromium, Firefox, and WebKit with GitHub Actions integration, Claude produces maintainable configurations that balance coverage with CI/CD efficiency.

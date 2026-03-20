@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude and GitHub Copilot excel at generating pytest tests for Click and Typer CLI applications by understanding argument parsing, command invocation patterns, and output capture. When you provide your CLI code, these AI assistants generate comprehensive test cases covering various argument combinations, error handling, and exit codes without requiring deep CLI testing framework knowledge.
 

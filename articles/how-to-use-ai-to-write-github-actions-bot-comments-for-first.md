@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Use AI to generate GitHub Actions bot comments that automatically welcome first-time contributors with personalized guidance on contribution process, code review expectations, and pull request requirements. AI-crafted comments reduce contributor friction, address common questions immediately, and encourage continued participation by setting a welcoming tone from first interaction.
 

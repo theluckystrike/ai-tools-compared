@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
 

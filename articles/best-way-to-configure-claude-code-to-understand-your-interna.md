@@ -12,6 +12,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Configure Claude Code for internal library APIs using three core methods: create a SPEC.md file documenting API definitions with parameter types and error handling, set up context directories pointing to API specifications, and write custom instructions explaining library behavior. These configuration methods ensure Claude Code provides context-aware completions and accurate error explanations based on your actual library interfaces.
 

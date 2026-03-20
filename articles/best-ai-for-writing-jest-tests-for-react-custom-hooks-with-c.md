@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude and GitHub Copilot both excel at testing React custom hooks, but Claude demonstrates stronger understanding of state transitions, error handling, and cleanup logic. When generating tests for hooks managing pagination, caching, and multi-step workflows, Claude produces proper useCallback/useEffect patterns, correctly handles async operations, and ensures cleanup functions run appropriately across multiple state variables.
 

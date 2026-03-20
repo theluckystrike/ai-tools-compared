@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Write CLAUDE MD files that define API versioning strategy by specifying current active versions, deprecated versions with sunset dates, versioning method (URL-based or header-based), and clear version schemas. These files communicate to AI assistants which API versions to use, which ones to avoid, and how breaking changes are managed—preventing AI from generating code using deprecated endpoints.
 

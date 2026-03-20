@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude Code stands out for WebSocket handler testing because it deeply understands pytest-asyncio patterns, async context management, and WebSocket lifecycle handling. When generating asyncio tests for WebSocket handlers, Claude properly uses @pytest.mark.asyncio decorators, structures async fixtures correctly, includes comprehensive error case coverage, and manages WebSocket lifecycle semantics accurately.
 

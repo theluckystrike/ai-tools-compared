@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude and GitHub Copilot excel at generating Jest tests for DataLoader-enabled resolvers because they understand both the batching semantics and testing patterns needed. When you provide your resolver code and DataLoader configuration, these AI tools generate tests that verify batch collection, result mapping, caching behavior, and error propagation without requiring deep knowledge of DataLoader internals.
 

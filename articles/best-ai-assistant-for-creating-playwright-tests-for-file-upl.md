@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude Code excels at creating Playwright tests for file uploads and downloads because it understands Playwright's file chooser APIs and download handling mechanisms. When prompted with your upload/download flow, Claude generates tests using setInputFiles(), download event handling, and blob management that require deep API knowledge and proper async handling.
 

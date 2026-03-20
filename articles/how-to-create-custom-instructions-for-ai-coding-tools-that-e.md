@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Create custom instructions for AI coding tools by documenting your specific naming conventions (snake_case for variables, PascalCase for classes, SCREAMING_SNAKE_CASE for constants) and embedding them as persistent system-level directives. Custom instructions solve the problem of AI defaulting to training data patterns by ensuring the AI applies your exact conventions automatically across all generated code.
 

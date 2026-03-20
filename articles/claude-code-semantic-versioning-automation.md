@@ -24,6 +24,7 @@ structured_data:
     - name: "Automate changelog generation"
       text: "Generate changelogs automatically based on commits"
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 Automate semantic versioning with Claude Code by configuring version detection rules that identify version bumps from commit messages and code changes. Claude Code analyzes commits and pull request labels to determine whether changes warrant MAJOR, MINOR, or PATCH version increments according to semantic versioning standards, eliminating manual version bumps and ensuring consistent releases.

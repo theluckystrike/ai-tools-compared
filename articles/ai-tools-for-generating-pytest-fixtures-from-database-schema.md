@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude and ChatGPT can analyze SQLAlchemy models, Pydantic schemas, or raw SQL definitions and automatically generate complete pytest fixtures that handle table structure, foreign key relationships, and transaction management. By feeding your schema to these AI assistants, you can reduce hours of repetitive fixture boilerplate into minutes of AI-assisted code generation.
 

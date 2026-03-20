@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Write custom instructions for AI tools by specifying all required security headers (Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) with exact values and explaining when to apply them in middleware or server configuration. These instructions ensure every piece of AI-generated web server code includes your complete security header requirements automatically.
 

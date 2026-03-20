@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Use AI tools to generate Jest tests for Redux Toolkit slices by providing your slice definition with clear typing and organized selectors. AI assistants recognize Redux Toolkit's predictable patterns (createSlice, initial state, reducers, selectors) and can generate comprehensive test coverage for actions, reducers, and selectors in seconds—significantly faster than manual test writing for repetitive state management code.
 

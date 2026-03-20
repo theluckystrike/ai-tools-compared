@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Build an MCP server that exposes your deployment environment details to AI coding assistants by creating a Node.js server using the Model Context Protocol that returns structured information about cloud provider, regions, container orchestration, and infrastructure configuration. This context enables your AI assistant to generate Terraform, Kubernetes manifests, and deployment workflows that match your actual infrastructure setup.
 

@@ -11,6 +11,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions, project-specific configurations, and architectural decisions. Claude Code automatically reads this file and applies stored context about your tech stack, naming patterns, testing requirements, and architectural approaches—enabling consistent AI assistance across all team members.

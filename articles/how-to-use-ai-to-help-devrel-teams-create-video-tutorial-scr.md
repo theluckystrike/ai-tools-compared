@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Use AI to accelerate DevRel video creation by generating tutorial scripts, optimizing titles for discoverability, and leveraging AI-enhanced recording tools for noise cancellation and cursor highlighting. AI video editing software automatically removes dead air, trims filler words, generates accurate captions, and applies color correction—transforming hours of post-production work into clicks.
 

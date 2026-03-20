@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Write custom instructions for AI coding tools by defining your error response schema (success flag, nested error object with code/message/details, timestamp, requestId) and requiring the AI to implement exactly this structure in all generated error handling code. Custom instructions ensure consistent API error responses across generated code without requiring repeated schema specification in each prompt.
 

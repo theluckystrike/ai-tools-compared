@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Claude.md, CursorRules, and Copilot Instructions are three distinct approaches to AI customization: Claude.md uses repository-level markdown files for team-wide configuration, CursorRules operates within the Cursor IDE through JSON/YAML configuration, and Copilot Instructions work through GitHub-level settings. Each approach differs in scope, portability, and integration with your development environment.
 

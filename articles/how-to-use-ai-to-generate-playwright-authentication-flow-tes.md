@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 {% raw %}
 Use AI to generate Playwright authentication tests leveraging the storageState feature to capture authenticated sessions once, then reuse them across tests. AI assistants generate code that records login state to JSON, loads it in subsequent tests, and eliminates repeated login overhead—reducing test execution time significantly while maintaining proper session management and eliminating inter-test dependencies.

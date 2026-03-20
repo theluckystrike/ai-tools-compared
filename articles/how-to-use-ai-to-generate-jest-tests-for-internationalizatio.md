@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 score: 8
 intent-checked: true
+voice-checked: true
 ---
 Use AI coding assistants to generate Jest tests for internationalization by providing your i18n library setup (i18next or similar), locale configuration, and translation resources. AI tools can then generate comprehensive tests validating text, dates, numbers, and currencies display correctly for each locale—testing dynamic locale switching and ensuring your application handles multiple regions properly.
 
