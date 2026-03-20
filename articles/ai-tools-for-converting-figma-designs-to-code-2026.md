@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 Choose Claude's vision API for maximum control and learning if your designs contain custom interactions or brand-specific components. Choose Locofy if you want fastest time-to-code with battle-tested React/Next.js output at enterprise scale. Choose Anima if you're designing in Figma and need tight design-to-development continuity. Locofy delivers production-ready code in seconds at $99/month, while Claude vision requires more prompting but costs $0.01 per image and teaches you component architecture. Anima sits between at $30/month with Figma-native tools and solid HTML/Tailwind output.
 
 
@@ -294,3 +295,4 @@ Use Claude Vision. Investment in learning component thinking pays dividends. No 
 Start with Locofy if your team exports designs weekly and budget isn't constrained. Start with Anima if you're a designer and want to own the code output. Start with Claude Vision if you want to learn component thinking and have time for manual refinement. All three options beat manual coding by hours per project.
 
 Test each tool with one medium-complexity design (10-15 components) before committing to annual plans. The difference in output quality and integration friction becomes apparent immediately.
+{% endraw %}
