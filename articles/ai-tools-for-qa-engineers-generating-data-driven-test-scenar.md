@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for QA Engineers: Generating Data-Driven Test Scenar"
+title: "AI Tools for QA Engineers: Generating Data-Driven Test."
 description: "A practical guide for developers and power users on using AI tools to create data-driven test scenarios from CSV files, with code examples and."
 date: 2026-03-16
 author: theluckystrike

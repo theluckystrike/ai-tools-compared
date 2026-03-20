@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Privacy Mode: How to Use AI Features Without Sendin"
+title: "Cursor AI Privacy Mode: How to Use AI Features Without."
 description: "Cursor AI Privacy Mode: How to Use AI Features Without. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike

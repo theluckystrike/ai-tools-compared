@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Switching from DALL-E to Midjourney: Prompt Format Difference"
+title: "Switching from DALL-E to Midjourney: Prompt Format."
 description: "A practical guide covering the key differences between DALL-E and Midjourney prompt syntax, parameters, and best practices for developers and power users."
 date: 2026-03-16
 author: theluckystrike

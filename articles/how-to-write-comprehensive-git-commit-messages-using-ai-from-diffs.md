@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Comprehensive Git Commit Messages Using AI from Diffs"
+title: "How to Write Comprehensive Git Commit Messages Using AI."
 description: "Learn how to use AI tools to generate detailed, context-rich git commit messages directly from code diffs, improving team communication and code history."
 date: 2026-03-20
 author: theluckystrike

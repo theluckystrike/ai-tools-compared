@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI IDE Features for Writing Configuration Files Yaml Json Toml"
+title: "Best AI IDE Features for Writing Configuration Files."
 description: "Discover the most powerful AI-powered IDE features that make writing and managing configuration files in YAML, JSON, and TOML effortless."
 date: 2026-03-16
 author: theluckystrike

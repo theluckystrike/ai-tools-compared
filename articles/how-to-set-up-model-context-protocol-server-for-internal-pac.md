@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Set Up Model Context Protocol Server for Internal Package Registry Documentation"
-description: "A practical guide to setting up a Model Context Protocol server for internal package registry documentation, with code examples and configuration tips for developers."
+title: "How to Set Up Model Context Protocol Server for Internal."
+description: "A practical guide to setting up a Model Context Protocol server for internal package registry documentation, with code examples and configuration tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-for-internal-pac/

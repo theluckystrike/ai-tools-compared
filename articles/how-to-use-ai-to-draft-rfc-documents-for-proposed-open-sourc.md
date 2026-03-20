@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Draft RFC Documents for Proposed Open Source Feature Changes"
+title: "How to Use AI to Draft RFC Documents for Proposed Open."
 description: "Learn practical methods for using AI tools to draft RFC documents for open source feature proposals, with examples and code snippets for developers in."
 date: 2026-03-16
 author: theluckystrike

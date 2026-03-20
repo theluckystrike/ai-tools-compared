@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistants for Go Testing: Table-Driven Tests Gener"
+title: "AI Coding Assistants for Go Testing: Table-Driven Tests."
 description: "A practical analysis of AI code generation quality for Go table-driven tests, with code examples and quality assessment for developers."
 date: 2026-03-16
 author: theluckystrike

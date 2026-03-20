@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Data Sovereignty Requirements for Companies Operating In Eu 2026"
+title: "AI Coding Assistant Data Sovereignty Requirements for."
 description: "Understand GDPR, NIS2, and EU data sovereignty requirements when selecting AI coding assistants. Practical guidance for developers and technical teams."
 date: 2026-03-16
 author: theluckystrike

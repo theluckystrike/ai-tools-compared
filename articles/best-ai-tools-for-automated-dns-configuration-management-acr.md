@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Tools for Automated DNS Configuration Management Across Providers 2026"
+title: "Best AI Tools for Automated DNS Configuration Management."
 description: "A practical guide comparing AI-powered tools for automating DNS configuration across multiple providers, with code examples and implementation tips."
 date: 2026-03-16
 author: theluckystrike

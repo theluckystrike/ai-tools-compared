@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Projects Feature: Which Plan Tier Includes It Explaine"
+title: "Claude Projects Feature: Which Plan Tier Includes It."
 description: "A guide to understanding which Claude AI subscription plan includes the Projects feature, with practical examples for developers."
 date: 2026-03-16
 author: theluckystrike

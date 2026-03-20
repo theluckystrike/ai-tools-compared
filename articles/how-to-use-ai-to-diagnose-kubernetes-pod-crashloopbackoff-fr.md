@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Diagnose Kubernetes Pod CrashLoopBackOff from Container Logs"
+title: "How to Use AI to Diagnose Kubernetes Pod."
 description: "Learn practical techniques for using AI tools to analyze container logs and identify the root causes of Kubernetes pod CrashLoopBackOff errors."
 date: 2026-03-16
 author: theluckystrike

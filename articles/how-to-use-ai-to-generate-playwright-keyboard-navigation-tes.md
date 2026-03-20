@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Keyboard Navigation Tests 2026"
+title: "How to Use AI to Generate Playwright Keyboard Navigation."
 description: "Learn how to use AI tools in 2026 to automatically generate Playwright keyboard navigation tests for your web applications."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Generating Unit Tests from Legacy Code Without Tests"
+title: "Best AI Tools for Generating Unit Tests from Legacy Code."
 description: "Discover the best AI tools for generating unit tests from untested legacy code, comparing code analysis depth, test quality, and integration workflows."
 date: 2026-03-20
 author: theluckystrike

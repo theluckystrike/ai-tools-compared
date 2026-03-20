@@ -5,7 +5,7 @@
 
 layout: default
 title: "Claude Code API Snapshot Testing Guide"
-description: "A guide to implementing API snapshot testing using Claude Code, covering test creation, maintenance strategies, and best practices for capturing and verifying API responses."
+description: "A guide to implementing API snapshot testing using Claude Code, covering test creation, maintenance strategies, and best practices for capturing and."
 date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /claude-code-api-snapshot-testing-guide/

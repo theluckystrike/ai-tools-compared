@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Product Managers: Drafting Release Communication Emails From Feature Lists"
+title: "AI Tools for Product Managers: Drafting Release."
 description: "Practical guide for developers and power users using AI to automate release communication emails from feature lists. Code examples and workflows included."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for SQL Query Optimization and Database Performance"
+title: "Best AI Tools for SQL Query Optimization and Database."
 description: "Compare Claude, Cursor, Copilot, ChatGPT for SQL optimization. Includes real query examples, EXPLAIN analysis, index suggestions, query rewrite strategies."
 date: 2026-03-20
 author: theluckystrike

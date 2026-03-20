@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Switching from Copilot Ghost Text to Cursor Tab Autocomplete: A Practical Guide"
-description: "A guide for developers switching from GitHub Copilot ghost text to Cursor tab autocomplete. Learn key differences, configuration tips, and workflow adjustments."
+title: "Switching from Copilot Ghost Text to Cursor Tab."
+description: "A guide for developers switching from GitHub Copilot ghost text to Cursor tab autocomplete. Learn key differences, configuration tips, and workflow."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/

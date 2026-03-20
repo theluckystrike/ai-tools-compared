@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "GitHub Copilot Workspace Preview: Pricing & Extra Costs Will It Cost Extra 2026"
+title: "GitHub Copilot Workspace Preview: Pricing & Extra Costs."
 description: "Everything you need to know about GitHub Copilot Workspace preview pricing, including whether it costs extra, feature availability, and what to expect."
 date: 2026-03-18
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Shell Scripts for Server Automation"
+title: "Best AI Tools for Writing Shell Scripts for Server."
 description: "Discover the top AI coding assistants that help developers write, debug, and optimize shell scripts for server automation tasks in 2026."
 date: 2026-03-16
 author: theluckystrike

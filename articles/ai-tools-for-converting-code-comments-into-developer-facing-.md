@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tools for Converting Code Comments into Developer-Facing Documentation Automatically"
-description: "Discover how AI tools transform code comments into professional developer documentation. Practical examples and implementation guide for automating your docs workflow."
+title: "AI Tools for Converting Code Comments into."
+description: "Discover how AI tools transform code comments into professional developer documentation. Practical examples and implementation guide for automating."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-converting-code-comments-into-developer-facing-/

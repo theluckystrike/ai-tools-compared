@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Product Managers Writing Sprint Retrospective Summaries From Notes 2026"
+title: "Best AI Assistant for Product Managers Writing Sprint."
 description: "A practical guide to AI tools that help product managers transform raw sprint retrospective notes into polished, actionable summaries. Code examples."
 date: 2026-03-16
 author: theluckystrike

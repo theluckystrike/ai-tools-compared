@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Automated Infrastructure Drift Detection And Correction"
+title: "AI Tools for Automated Infrastructure Drift Detection."
 description: "A practical guide for developers exploring AI-powered tools that detect and correct infrastructure drift automatically, with code examples and."
 date: 2026-03-16
 author: theluckystrike

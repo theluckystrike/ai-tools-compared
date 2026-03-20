@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build Model Context Protocol Server That Provides Deployment Environment Context"
+title: "How to Build Model Context Protocol Server That Provides."
 description: "A practical guide for developers on creating a Model Context Protocol server that delivers deployment environment context to AI agents and coding."
 date: 2026-03-16
 author: theluckystrike

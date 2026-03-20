@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Writing Open Source Roadmap Documents From Issue Milestone Data"
+title: "Best AI Assistant for Writing Open Source Roadmap."
 description: "Discover the top AI tools for transforming GitHub issue and milestone data into clear open source roadmap documents. Practical workflows, code."
 date: 2026-03-16
 author: theluckystrike

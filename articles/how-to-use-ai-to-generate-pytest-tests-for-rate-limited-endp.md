@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior"
+title: "How to Use AI to Generate Pytest Tests for Rate-Limited."
 description: "A practical guide for developers learning to use AI tools to create pytest tests that validate rate limiting and throttling behavior in APIs."
 date: 2026-03-16
 author: theluckystrike

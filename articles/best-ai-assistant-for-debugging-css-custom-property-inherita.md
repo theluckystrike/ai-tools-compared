@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Debugging CSS Custom Property Inheritance Failures In Shadow Dom"
+title: "Best AI Assistant for Debugging CSS Custom Property."
 description: "A practical guide for developers using AI assistants to diagnose and fix CSS custom property inheritance issues within Shadow DOM boundaries."
 date: 2026-03-16
 author: theluckystrike

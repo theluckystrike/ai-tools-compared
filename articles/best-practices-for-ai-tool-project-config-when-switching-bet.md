@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for AI Tool Project Config When Switching Between Multiple Client Projects"
+title: "Best Practices for AI Tool Project Config When Switching."
 description: "A practical guide for developers managing AI tool configurations across multiple client projects in 2026."
 date: 2026-03-16
 author: theluckystrike

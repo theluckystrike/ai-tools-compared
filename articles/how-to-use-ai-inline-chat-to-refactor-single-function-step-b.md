@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Inline Chat to Refactor Single Function Step By Step"
+title: "How to Use AI Inline Chat to Refactor Single Function."
 description: "A practical guide for developers on using VS Code AI inline chat to refactor individual functions with real code examples and step-by-step instructions."
 date: 2026-03-16
 author: theluckystrike

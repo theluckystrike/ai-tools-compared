@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Perplexity Spaces Collaboration Feature: Free vs Pro Limits Explained"
+title: "Perplexity Spaces Collaboration Feature: Free vs Pro."
 description: "A guide comparing Perplexity Spaces collaboration features across Free and Pro plans. Learn the limits, capabilities, and which plan best suits your team's needs."
 date: 2026-03-18
 author: theluckystrike

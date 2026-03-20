@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Video Color Grading: A Practical Guide for Developers"
+title: "AI Tools for Video Color Grading: A Practical Guide for."
 description: "Explore AI-powered tools for video color grading with practical examples, code integrations, and recommendations for developers and power users."
 date: 2026-03-15
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor Pro Privacy Mode: Does It Cost Extra for Zero Retention"
+title: "Cursor Pro Privacy Mode: Does It Cost Extra for Zero."
 description: "Cursor Pro Privacy Mode: Does It Cost Extra for Zero. — guide with practical tips, comparisons, and expert recommendations for developers."
 date: 2026-03-18
 author: theluckystrike

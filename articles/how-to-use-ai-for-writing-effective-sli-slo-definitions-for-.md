@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Writing Effective SLI and SLO Slo Definitions For Services"
+title: "How to Use AI for Writing Effective SLI and SLO Slo."
 description: "A practical guide for developers on using AI to create precise SLI and SLO definitions for services, with real-world examples and code samples."
 date: 2026-03-16
 author: theluckystrike

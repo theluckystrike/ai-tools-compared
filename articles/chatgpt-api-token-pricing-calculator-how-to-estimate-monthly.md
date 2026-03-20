@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT API Token Pricing Calculator: How to Estimate Monthly"
+title: "ChatGPT API Token Pricing Calculator: How to Estimate."
 description: "Learn how to calculate your ChatGPT API monthly costs with practical examples and code snippets. Build a token pricing calculator for accurate budget."
 date: 2026-03-16
 author: theluckystrike

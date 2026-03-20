@@ -2,8 +2,8 @@
 
 
 layout: default
-title: "AI Tools for Automating Cloud Security Compliance Scanning in CI CD"
-description: "A practical guide to implementing AI-powered security compliance scanning in your CI CD pipeline. Learn about tools, implementation patterns, and code examples."
+title: "AI Tools for Automating Cloud Security Compliance."
+description: "A practical guide to implementing AI-powered security compliance scanning in your CI CD pipeline. Learn about tools, implementation patterns, and code."
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /ai-tools-for-automating-cloud-security-compliance-scanning-i/

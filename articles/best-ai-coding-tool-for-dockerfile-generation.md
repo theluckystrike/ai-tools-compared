@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Coding Tool for Dockerfile Generation"
-description: "Discover the top AI coding assistants that excel at writing and optimizing Dockerfiles. Compare features, real-world performance, and practical examples for containerized development."
+description: "Discover the top AI coding assistants that excel at writing and optimizing Dockerfiles. Compare features, real-world performance, and practical."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /best-ai-coding-tool-for-dockerfile-generation/

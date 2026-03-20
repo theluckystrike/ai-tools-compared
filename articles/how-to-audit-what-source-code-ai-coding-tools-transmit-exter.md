@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Audit What Source Code AI Coding Tools Transmit Externally"
+title: "How to Audit What Source Code AI Coding Tools Transmit."
 description: "Learn practical methods to audit and monitor what source code your AI coding assistants transmit to external servers. Code examples and tools for."
 date: 2026-03-16
 author: theluckystrike

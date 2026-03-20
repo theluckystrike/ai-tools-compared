@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "AI Tools for Debugging iOS AutoLayout Constraint Conflict Warnings in Storyboards"
-description: "A practical guide to using AI assistants for diagnosing and resolving iOS AutoLayout constraint conflicts in storyboards, with real examples and code solutions."
+title: "AI Tools for Debugging iOS AutoLayout Constraint."
+description: "A practical guide to using AI assistants for diagnosing and resolving iOS AutoLayout constraint conflicts in storyboards, with real examples and code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/

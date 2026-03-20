@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Multi-File Editing Feature: How It Actually Works Explained"
+title: "Cursor AI Multi-File Editing Feature: How It Actually."
 description: "A guide for developers on how Cursor AI's multi-file editing feature works. Learn the mechanics, practical examples, and best practices for editing multiple files simultaneously."
 date: 2026-03-16
 author: theluckystrike

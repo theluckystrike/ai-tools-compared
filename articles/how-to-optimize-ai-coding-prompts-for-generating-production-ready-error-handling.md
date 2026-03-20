@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Optimize AI Coding Prompts for Generating Production Ready Error Handling"
+title: "How to Optimize AI Coding Prompts for Generating."
 description: "A practical guide to writing effective AI prompts that generate error handling code for production applications, with code examples and."
 date: 2026-03-16
 author: theluckystrike

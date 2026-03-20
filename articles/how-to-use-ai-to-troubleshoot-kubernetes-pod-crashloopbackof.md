@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Troubleshoot Kubernetes Pod CrashLoopBackOff Errors"
+title: "How to Use AI to Troubleshoot Kubernetes Pod."
 description: "A practical guide for developers on using AI tools to diagnose and resolve Kubernetes pod CrashLoopBackOff errors quickly and effectively."
 date: 2026-03-16
 author: theluckystrike

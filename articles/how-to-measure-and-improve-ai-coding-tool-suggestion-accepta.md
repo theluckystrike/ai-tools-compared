@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Measure and Improve AI Coding Tool Suggestion Acceptance Rate 2026"
+title: "How to Measure and Improve AI Coding Tool Suggestion."
 description: "A practical guide for developers on measuring and improving AI coding tool suggestion acceptance rates. Learn tracking methods, optimization."
 date: 2026-03-16
 author: theluckystrike

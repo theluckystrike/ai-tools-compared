@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Switching from Midjourney to DALL-E 3: Prompt Adaptation Guid"
+title: "Switching from Midjourney to DALL-E 3: Prompt Adaptation."
 description: "A practical guide for developers and power users adapting Midjourney prompts for DALL-E 3. Includes syntax differences, parameter mappings, and code."
 date: 2026-03-16
 author: theluckystrike

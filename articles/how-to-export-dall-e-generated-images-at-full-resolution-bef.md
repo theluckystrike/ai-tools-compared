@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Export Dall-E Generated Images at Full Resolution Before Leaving"
-description: "A practical developer guide for exporting Dall-E images at full resolution before losing access. Includes API methods, batch export scripts, and preservation strategies."
+title: "How to Export Dall-E Generated Images at Full Resolution."
+description: "A practical developer guide for exporting Dall-E images at full resolution before losing access. Includes API methods, batch export scripts, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/

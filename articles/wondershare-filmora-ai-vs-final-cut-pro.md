@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Wondershare Filmora AI vs Final Cut Pro: A Technical Comparison for Power Users"
-description: "A practical comparison of Wondershare Filmora AI and Final Cut Pro for developers and power users, covering AI features, automation capabilities, and workflow integration."
+title: "Wondershare Filmora AI vs Final Cut Pro: A Technical."
+description: "A practical comparison of Wondershare Filmora AI and Final Cut Pro for developers and power users, covering AI features, automation capabilities, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /wondershare-filmora-ai-vs-final-cut-pro/

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "ChatGPT API Assistants API Pricing: Threads and Runs Cost Breakdown"
+title: "ChatGPT API Assistants API Pricing: Threads and Runs."
 description: "A practical developer guide to understanding OpenAI Assistants API pricing, including thread storage costs, run execution pricing, and real-world cost."
 date: 2026-03-16
 author: theluckystrike

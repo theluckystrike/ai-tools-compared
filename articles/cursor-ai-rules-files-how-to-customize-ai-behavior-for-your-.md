@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Rules Files: How to Customize AI Behavior for Your Project"
+title: "Cursor AI Rules Files: How to Customize AI Behavior for."
 description: "A guide for developers on using Cursor AI rules files to customize AI behavior, improve code generation, and enforce project-specific."
 date: 2026-03-16
 author: theluckystrike

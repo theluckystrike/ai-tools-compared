@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions"
+title: "How to Create Custom Instructions for AI Coding Tools."
 description: "A practical guide to creating custom instructions for AI coding tools that enforce consistent naming conventions across your projects."
 date: 2026-03-16
 author: theluckystrike

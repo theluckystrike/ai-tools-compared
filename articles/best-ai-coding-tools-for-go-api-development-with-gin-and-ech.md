@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Coding Tools for Go API Development with Gin and Echo in 2026"
+title: "Best AI Coding Tools for Go API Development with Gin and."
 description: "A practical comparison of the best AI coding assistants for building Go APIs with Gin and Echo frameworks, including code examples and quality assessment."
 date: 2026-03-17
 author: theluckystrike

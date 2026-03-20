@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "PlayHT vs WellSaid Labs: AI Voice API Comparison for Developers"
+title: "PlayHT vs WellSaid Labs: AI Voice API Comparison for."
 description: "A practical comparison of PlayHT and WellSaid Labs AI voice generation APIs, with code examples and integration guidance for developers."
 date: 2026-03-15
 author: theluckystrike

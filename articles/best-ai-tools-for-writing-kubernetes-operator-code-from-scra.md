@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Kubernetes Operator Code From Scratch"
+title: "Best AI Tools for Writing Kubernetes Operator Code From."
 description: "A practical comparison of AI coding tools for writing Kubernetes operator code from scratch, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike

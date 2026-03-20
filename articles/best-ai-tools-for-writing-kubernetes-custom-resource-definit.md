@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Kubernetes Custom Resource Definitions 2026"
+title: "Best AI Tools for Writing Kubernetes Custom Resource."
 description: "A practical guide for developers exploring AI-powered tools that help write Kubernetes CRDs, with code examples and comparison of top solutions."
 date: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Switching from Windsurf Free to Cursor Free: What Is Different"
+title: "Switching from Windsurf Free to Cursor Free: What Is."
 description: "A practical guide for developers comparing Windsurf Free vs Cursor Free. Learn the key differences in features, rate limits, and workflow to decide."
 date: 2026-03-16
 author: theluckystrike
