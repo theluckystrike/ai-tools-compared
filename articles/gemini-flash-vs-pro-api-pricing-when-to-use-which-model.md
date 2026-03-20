@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-flash-vs-pro-api-pricing-when-to-use-which-model/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, api]
 reviewed: true
 score: 8
 intent-checked: true

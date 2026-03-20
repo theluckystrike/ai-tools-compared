@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, chatgpt]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

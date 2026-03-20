@@ -6,9 +6,9 @@ date: 2026-03-19
 author: theluckystrike
 permalink: /gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

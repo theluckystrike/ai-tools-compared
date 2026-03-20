@@ -8,8 +8,9 @@ permalink: /free-ai-code-review-tools-that-integrate-with-github-2026/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

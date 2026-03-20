@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /enterprise-data-loss-prevention-rules-for-ai-coding-assistan/
 categories: [guides]
-tags: [security, enterprise]
+tags: [ai-tools-compared, security, enterprise, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

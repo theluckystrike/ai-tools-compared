@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/
 categories: [guides]
-tags: [code-review, best-practices]
+tags: [ai-tools-compared, code-review, best-practices, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

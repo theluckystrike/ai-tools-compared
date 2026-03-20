@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/
 categories: [guides]
-tags: [learning]
+tags: [ai-tools-compared, learning, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

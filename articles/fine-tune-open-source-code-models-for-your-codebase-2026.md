@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /fine-tune-open-source-code-models-for-your-codebase-2026/
 categories: [guides]
-tags: [ai, development, models, fine-tuning]
+tags: [ai-tools-compared, ai, development, models, fine-tuning]
 reviewed: true
 score: 8
 voice-checked: true

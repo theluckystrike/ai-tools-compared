@@ -6,10 +6,11 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-tools-for-writing-bash-scripts-and-automation/
 reviewed: true
-score: 8
+score: 9
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence, automation]
 ---
 
 
