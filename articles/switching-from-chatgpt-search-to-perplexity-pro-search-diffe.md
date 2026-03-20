@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true

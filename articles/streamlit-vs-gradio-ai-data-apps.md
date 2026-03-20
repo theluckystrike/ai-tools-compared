@@ -10,6 +10,7 @@ score: 8
 categories: [comparisons, guides]
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
 
 

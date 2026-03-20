@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /running-starcoder2-locally-for-code-completion-without-sendi/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 voice-checked: true

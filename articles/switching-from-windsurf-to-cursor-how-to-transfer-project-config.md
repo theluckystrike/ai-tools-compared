@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-to-cursor-how-to-transfer-project-config/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

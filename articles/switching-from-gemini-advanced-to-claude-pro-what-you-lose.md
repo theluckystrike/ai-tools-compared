@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-gemini-advanced-to-claude-pro-what-you-lose/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, advanced, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

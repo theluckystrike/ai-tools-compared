@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /tabnine-pro-vs-free-what-autocomplete-features-are-locked/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 8
 intent-checked: true
