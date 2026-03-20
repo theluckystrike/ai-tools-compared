@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/
 categories: [guides]
-tags: [tools, github, automation]
+tags: [ai-tools-compared, tools, github, automation, workflow, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

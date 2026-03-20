@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-docker-compose-files-for-complex-mic/
 categories: [guides]
-tags: [tools, docker, devops]
+tags: [ai-tools-compared, tools, docker, devops, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

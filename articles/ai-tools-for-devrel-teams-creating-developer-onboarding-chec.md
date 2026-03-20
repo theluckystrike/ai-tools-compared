@@ -6,8 +6,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-devrel-teams-creating-developer-onboarding-chec/
 categories: [guides]
-tags: [tools]
-score: 7
+tags: [ai-tools-compared, tools, artificial-intelligence]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
