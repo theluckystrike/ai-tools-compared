@@ -56,6 +56,30 @@ https://github.com/copilot/workspaces
 ```
 
 If you see a "Request access" prompt, you are not yet in the preview cohort. GitHub is rolling it out gradually to Copilot subscribers — no manual action required.
+The preview allows developers to test agentic coding capabilities without extra costs. This mirrors GitHub's approach with original Copilot, which started free before transitioning to paid tiers.
+
+## What Workspace Adds Beyond Traditional Copilot
+
+Understanding the value helps estimate future pricing:
+
+**Traditional Copilot (line-by-line completion):**
+- Single-file context
+- Real-time suggestions as you type
+- Low compute overhead
+- Cost: $10/month individual, $10/user/month business
+
+**Copilot Workspace (agentic multi-file operations):**
+- Entire codebase context analysis
+- Multi-file edits and refactoring
+- Understands system architecture
+- Generates pull request descriptions automatically
+- Can break down features into implementation tasks
+- Much higher compute overhead (5-10x more resources)
+
+**Expected Cost Impact:**
+- Current Copilot: $120/year for individuals
+- Workspace addition: +$60-240/year (10-20% additional)
+- Estimated new price: $15-20/month ($180-240/year)
 
 
 
@@ -143,7 +167,131 @@ GitHub has not announced an official GA (General Availability) date for Copilot 
 
 4. Budget Accordingly: Plan for potential $10-20/month increase to your Copilot subscription
 
+## Detailed Feature Comparison (2026)
 
+### Current Copilot vs Workspace vs Alternatives
+
+```
+Feature                      Copilot    Workspace   Cursor    Windsurf
+                            Individual  Preview     Pro       Pro
+─────────────────────────────────────────────────────────────────────
+Line completion             Yes         Yes         Yes       Yes
+Multi-file context          Limited     Yes         Yes       Yes
+Refactoring across files    No          Yes         Yes       Yes
+PR description generation   No          Yes         Yes       Limited
+Feature decomposition       No          Yes         No        Limited
+Chat interface              Yes         Yes         Yes       Yes
+Codebase indexing          Yes          Yes         Yes       Yes
+Max context window         128K         256K        256K      256K
+Monthly Cost               $10          $10* ($20+) $20       $15
+```
+
+*Workspace is currently free in preview; likely $20/month after GA
+
+### Real-World Scenarios
+
+**Scenario 1: Implementing a Medium Feature**
+
+Traditional Copilot approach:
+1. Ask Copilot to write a function (5 min)
+2. Manually write supporting functions (10 min)
+3. Update related imports (5 min)
+4. Write tests manually (15 min)
+Total: 35 minutes
+
+Workspace approach:
+1. Describe feature in natural language (2 min)
+2. Workspace generates implementation across files (3 min)
+3. Review and adjust generated PR (5 min)
+Total: 10 minutes
+
+Value: 25 min saved per feature = 3+ hours per week for active developer
+
+**Scenario 2: Refactoring Database Layer**
+
+Traditional approach:
+1. Manually identify all affected files
+2. Copilot helps with individual functions
+3. Manual import updates
+4. Manual test updates
+Total: 2-3 hours
+
+Workspace approach:
+1. Describe refactoring goal (1 min)
+2. Workspace generates multi-file changes (5 min)
+3. Review and test (20 min)
+Total: 25 minutes
+
+**Scenario 3: Learning New Codebase**
+
+Traditional Copilot:
+- Can help with single-file questions
+- Limited ability to explain system architecture
+- Requires developer to understand structure manually
+
+Workspace:
+- Generates documentation of system architecture
+- Explains data flow across multiple files
+- Identifies where to make changes for new features
+- Dramatically reduces onboarding time
+
+## Pricing Strategy Analysis
+
+### Microsoft's Incentives
+
+**Why they might bundle Workspace with Copilot:**
+- Creates stickier product (vs. switching to Cursor)
+- Justifies $20/month subscription (vs. $10)
+- Competes with Cursor Pro ($20/month)
+- Simplifies product lineup
+
+**Why they might create separate Workspace tier:**
+- Higher willingness to pay for "power users"
+- Option for budget-conscious developers
+- Usage-based billing for compute-heavy operations
+- Monetize different customer segments
+
+**Why they might do usage-based pricing:**
+- Workspace is compute-intensive (~$2-5 per request)
+- Large teams running thousands of operations = significant cost
+- Can price based on actual resource usage
+- Examples: $100-500/month per developer for heavy users
+
+## Competitive Pressure Analysis
+
+### Current Market Position (March 2026)
+
+| Competitor | Feature Set | Price | Market Position |
+|-----------|------------|-------|-----------------|
+| GitHub Copilot | Line completion, chat | $10/mo | Market leader (volume) |
+| Copilot Workspace | Agentic, multi-file | $10/mo (preview) | Category leader if launched |
+| Cursor Pro | Agentic, IDE-integrated | $20/mo | Strong in indie dev |
+| Windsurf Pro | Agentic, flows | $15/mo | Mid-market value |
+| Zed AI | Agentic, unlimited | $20/mo | Emerging alternative |
+
+**Market Dynamics:**
+- If Workspace = free with Copilot: GitHub dominates, Cursor loses edge
+- If Workspace = $20/mo separate: Cursor more competitive
+- If Workspace = $30/mo: Both Cursor and Windsurf are better value
+
+## Decision Framework: Should You Switch?
+
+**Stay with Copilot if:**
+- You primarily use line completion
+- You value GitHub integration and .gitignore awareness
+- You're willing to wait for Workspace pricing clarity
+- You have existing GitHub Advanced Security commitment
+
+**Switch to Cursor/Windsurf if:**
+- You need agentic features now (not waiting for Workspace GA)
+- You want guaranteed pricing (no surprises in 2026)
+- You do heavy refactoring or multi-file work
+- You want codebase indexing today
+
+**Hybrid approach:**
+- Use Copilot Individual ($10/mo) for line-by-line work
+- Use Cursor Free or Windsurf Free for larger tasks
+- Evaluate Workspace pricing when announced
 
 ## Related Reading
 
