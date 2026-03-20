@@ -275,6 +275,8 @@ Each addition makes your pipeline more but increases runtime and complexity. Bal
 
 ---
 
+{% raw %}
+
 
 
 AI tool chaining transforms code review from a manual, time-consuming process into an automated pipeline that catches issues early and consistently. Start with a simple chain, measure its effectiveness, and expand as your workflow matures.
@@ -289,4 +291,5 @@ AI tool chaining transforms code review from a manual, time-consuming process in
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
+{% endraw %}
 {% endraw %}
