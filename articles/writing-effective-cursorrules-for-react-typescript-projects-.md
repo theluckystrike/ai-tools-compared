@@ -13,6 +13,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
 
 ## Why CursorRules Matter for React TypeScript
@@ -307,3 +309,4 @@ Remember to review and update CursorRules periodically as your project patterns 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

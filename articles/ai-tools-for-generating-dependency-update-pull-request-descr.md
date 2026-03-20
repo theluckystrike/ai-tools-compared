@@ -12,6 +12,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 AI tools can automate the tedious process of writing dependency update pull request descriptions by extracting changelogs, analyzing security advisories, and assessing update risks. This article covers practical approaches for developers who want to streamline their dependency maintenance workflow using AI assistance.
 
@@ -146,3 +148,4 @@ The initial setup requires some effort—configuring API access, writing effecti
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
