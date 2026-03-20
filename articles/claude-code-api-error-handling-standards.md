@@ -305,10 +305,10 @@ import pytest
 
 def test_resource_not_found_returns_proper_format(client):
     response = client.get("/users/nonexistent-id")
-    
+
     assert response.status_code == 404
     data = response.json()
-    
+
     assert "error" in data
     assert data["error"]["code"] == "RESOURCE_NOT_FOUND"
     assert "message" in data["error"]
@@ -317,14 +317,122 @@ def test_resource_not_found_returns_proper_format(client):
 
 def test_validation_error_includes_field_details(client):
     response = client.post("/users", json={"email": "invalid"})
-    
+
     assert response.status_code == 422
     data = response.json()
-    
+
     assert data["error"]["code"] == "VALIDATION_ERROR"
     assert "email" in data["error"]["details"]["field_errors"]
 ```
 
+## Generating Error Handling Code with Claude Code
+
+Claude Code generates consistent error handling scaffolding across languages when prompted with your API's error taxonomy. Provide the error codes you've defined and ask for the full exception hierarchy:
+
+```bash
+# Claude Code prompt
+claude "Generate a complete error handling module for a FastAPI service.
+Error codes are defined in this enum: AUTH_INVALID_TOKEN, AUTH_EXPIRED_TOKEN,
+VALIDATION_MISSING_FIELD, VALIDATION_INVALID_FORMAT, RESOURCE_NOT_FOUND,
+RESOURCE_CONFLICT, RATE_LIMIT_EXCEEDED, INTERNAL_ERROR.
+
+Requirements:
+- Custom exception class hierarchy with HTTP status code mapping
+- Global exception handlers for FastAPI
+- Request ID middleware that propagates through all error responses
+- Log structured JSON for server errors (5xx), skip logging for client errors (4xx)
+- Never expose stack traces or internal paths in 4xx responses"
+```
+
+Claude Code generates the full module including the exception hierarchy, HTTP status mapping, and structured logging differentiated by error category. The key strength is the differentiated logging rule — logging every 4xx clutters observability dashboards with client mistakes, while silently dropping 5xx errors hides real bugs.
+
+## Consistent Error Handling Across Microservices
+
+In microservice architectures, inconsistent error formats between services create client-side parsing complexity. Define a shared error contract and use Claude Code to generate language-specific implementations that conform to it.
+
+Shared contract (published as a JSON Schema or OpenAPI component):
+
+```yaml
+# Shared error schema — reference this in all service OpenAPI specs
+components:
+  schemas:
+    APIError:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message, timestamp, request_id]
+          properties:
+            code:
+              type: string
+              pattern: '^[A-Z][A-Z0-9_]*$'
+            message:
+              type: string
+              maxLength: 500
+            details:
+              type: object
+              additionalProperties: true
+            timestamp:
+              type: string
+              format: date-time
+            request_id:
+              type: string
+```
+
+Prompt Claude Code with this schema and your service's language to generate conforming implementations across Node.js, Python, and Go services. Each implementation handles the protocol differently (Express middleware, FastAPI exception handlers, Go middleware functions) but produces identical JSON output.
+
+## Handling Upstream Errors and Error Translation
+
+API services that call other services must translate upstream errors rather than forwarding them directly. Forwarding a raw database error or an internal service's 500 response leaks implementation details and breaks the contract with your clients.
+
+Claude Code handles this translation pattern well:
+
+```python
+async def fetch_user_from_upstream(user_id: str) -> dict:
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"{USER_SERVICE_URL}/users/{user_id}",
+                timeout=5.0
+            )
+
+        if response.status_code == 404:
+            # Translate upstream 404 to our standard error
+            raise APIException(
+                code=ErrorCode.RESOURCE_NOT_FOUND,
+                message=f"User {user_id} not found",
+                status_code=404
+            )
+        if response.status_code >= 500:
+            # Upstream 5xx becomes our 502 (bad gateway)
+            logger.error(f"User service error: {response.status_code} {response.text}")
+            raise APIException(
+                code=ErrorCode.SERVICE_UNAVAILABLE,
+                message="User service is temporarily unavailable. Please retry.",
+                status_code=502
+            )
+
+        response.raise_for_status()
+        return response.json()
+
+    except httpx.TimeoutException:
+        logger.error(f"User service timeout for user_id={user_id}")
+        raise APIException(
+            code=ErrorCode.SERVICE_UNAVAILABLE,
+            message="Request timed out. Please retry in a moment.",
+            status_code=504
+        )
+    except httpx.ConnectError:
+        logger.error(f"Cannot connect to user service")
+        raise APIException(
+            code=ErrorCode.SERVICE_UNAVAILABLE,
+            message="Service temporarily unavailable.",
+            status_code=503
+        )
+```
+
+The pattern — catch upstream errors, log the raw details server-side, raise a translated exception with a client-appropriate message — is the standard that Claude Code applies when you specify "translate upstream errors rather than propagating them."
 
 ## Related Reading
 
