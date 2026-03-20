@@ -1,14 +1,18 @@
 ---
 
+
 layout: default
 title: "AI CI/CD Pipeline Optimization: A Developer Guide"
 description: "Learn practical strategies for optimizing CI/CD pipelines with AI. Discover intelligent test selection, predictive resource allocation, and automated performance tuning with code examples."
 date: 2026-03-20
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-ci-cd-pipeline-optimization/
 categories: [guides]
 tags: [devops, automation]
+reviewed: true
+score: 8
 ---
+
 
 {% raw %}
 
