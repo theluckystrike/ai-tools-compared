@@ -56,6 +56,23 @@ Large language models excel at drafting and refining strategic documents. Tools 
 
 A management consultant working on a market entry strategy can use AI to generate initial framework analyses, competitive landscape assessments, and data summaries. The human expert then applies domain knowledge and client-specific context to refine the output.
 
+```
+Prompt template for market entry strategy first draft:
+
+"You are a management consultant. Generate a structured market entry analysis
+for [CLIENT] entering [MARKET/GEOGRAPHY].
+
+Include:
+1. Market size estimate and growth rate (cite data ranges where uncertain)
+2. Competitive landscape: 3-5 top incumbents with estimated market share
+3. Customer segments and buyer profile
+4. Entry mode options with pros/cons for each
+5. Regulatory considerations
+6. Recommended go-to-market sequence
+
+Format as a consulting memo, executive-ready. Flag assumptions explicitly."
+```
+
 
 
 ### Presentation Development

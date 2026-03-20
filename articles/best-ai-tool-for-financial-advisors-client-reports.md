@@ -74,6 +74,38 @@ A wealth management firm with $500 million AUM implemented Claude for quarterly 
 
 Advisors upload portfolio snapshots and investment policy statements, then use Claude to generate sections addressing performance attribution, risk positioning, and forward-looking recommendations. The tool maintains consistency across all sections and flags any discrepancies in numerical data.
 
+```python
+import anthropic
+
+def generate_client_report_section(portfolio_data: str, section: str) -> str:
+    """Generate a specific section of a client portfolio report."""
+    client = anthropic.Anthropic()
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=1024,
+        messages=[{
+            "role": "user",
+            "content": f"""Write the {section} section of a quarterly client report.
+Use professional language for high-net-worth clients.
+Include specific figures. Flag any data inconsistencies.
+
+Portfolio data:
+{portfolio_data}"""
+        }]
+    )
+    return message.content[0].text
+
+portfolio_snapshot = """
+Portfolio value: $2,450,000
+YTD return: +8.3% vs benchmark +6.1%
+Top performers: NVDA (+42%), MSFT (+28%)
+Underperformers: XOM (-4%), T (-8%)
+Asset allocation: 65% equity, 30% fixed income, 5% cash
+"""
+
+print(generate_client_report_section(portfolio_snapshot, "performance attribution"))
+```
+
 
 
 ### 2. ChatGPT — Strong for Quick Drafts and Summarization

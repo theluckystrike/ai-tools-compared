@@ -1,29 +1,4 @@
 ---
-
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> a016d0bc4 (Quality: complete frontmatter audit [ai-tools-compared])
 layout: default
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
 description: "A guide to understanding what features become limited or unavailable when Cursor's free trial ends in 2026."
@@ -404,6 +379,28 @@ If you're stuck with the free tier temporarily:
 4. **Clear chat history** - Start fresh conversations to reset limits
 
 5. **Work in smaller chunks** - Break large tasks into smaller sessions
+
+```bash
+# Create .cursorignore to reduce indexed files and preserve free-tier quota
+cat > .cursorignore << 'EOF'
+node_modules/
+dist/
+build/
+.next/
+coverage/
+*.log
+*.lock
+*.map
+__pycache__/
+.venv/
+EOF
+
+# Count files currently visible to the indexer
+find . -not -path './.git/*' \
+       -not -path './node_modules/*' \
+       -not -path './dist/*' \
+       -type f | wc -l
+```
 
 
 ## Related Reading

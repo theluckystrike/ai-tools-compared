@@ -93,6 +93,39 @@ Never deploy AI-generated code without human review, particularly for financial 
 
 A fintech company processing payment transactions established a two-reviewer requirement for any code touching their core transaction processing systems. One reviewer focuses on functional correctness while the other assesses security and compliance implications.
 
+```yaml
+# .github/workflows/sox-review-gate.yml
+# Enforce mandatory human review for financial calculation code changes
+name: SOX Compliance Review Gate
+on:
+  pull_request:
+    paths:
+      - 'src/calculations/**'
+      - 'src/reporting/**'
+      - 'src/ledger/**'
+
+jobs:
+  compliance-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Request compliance team review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              team_reviewers: ['compliance-reviewers']
+            });
+      - name: Log AI-assisted change for audit trail
+        run: |
+          echo "PR: ${{ github.event.pull_request.number }}" >> audit_log.txt
+          echo "Author: ${{ github.event.pull_request.user.login }}" >> audit_log.txt
+          echo "Date: $(date -u +%Y-%m-%dT%H:%M:%SZ)" >> audit_log.txt
+```
+
 
 
 ### 3. Choose Tools with Enterprise Security Features

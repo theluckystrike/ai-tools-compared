@@ -110,6 +110,25 @@ For developers, both platforms offer strong coding assistance, but with differen
 
 If you need code execution and data analysis, ChatGPT Plus offers better price per feature for coding use cases.
 
+```python
+# ChatGPT Plus Advanced Data Analysis — paste into a code interpreter session
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Upload a CSV, then run this analysis template
+df = pd.read_csv("sales_data.csv")
+
+print("Shape:", df.shape)
+print("\nColumn types:\n", df.dtypes)
+print("\nSummary stats:\n", df.describe())
+print("\nMissing values:\n", df.isnull().sum())
+
+# Quick revenue visualization
+df.groupby("month")["revenue"].sum().plot(kind="bar", title="Revenue by Month")
+plt.tight_layout()
+plt.savefig("revenue_chart.png")
+```
+
 
 
 ### Research and Analysis

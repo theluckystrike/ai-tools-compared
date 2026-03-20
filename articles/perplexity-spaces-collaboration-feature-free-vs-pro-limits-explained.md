@@ -205,7 +205,18 @@ Upgrading from Free to Pro unlocks immediate access to all collaboration feature
 
 For teams, Perplexity offers organizational pricing that provides additional administrative controls, centralized billing, and dedicated support channels. These team features build upon Pro plan capabilities to provide enterprise-grade collaboration infrastructure.
 
+```
+Pro Space system instructions template for competitive research:
 
+"You are a research assistant for a [INDUSTRY] company. When answering questions:
+1. Cite sources with publication date
+2. Distinguish between confirmed facts and analyst estimates
+3. Flag information older than 6 months as potentially stale
+4. Provide a confidence level (high/medium/low) for key claims"
+
+Suggested files to attach: competitor annual reports, industry whitepapers
+Members: research lead, product manager, strategy analyst
+```
 
 
 ## Related Reading

@@ -155,6 +155,23 @@ Most VPN applications make it easy to switch between full tunnel and split tunne
 
 For more advanced control, you can configure routing rules at the operating system level. On Linux, you can use iptables or nftables to create sophisticated routing policies. On Windows, the routing table and Windows Firewall can be configured for granular control. Some users create multiple VPN configurations—one for full tunnel and one for split tunneling—and switch between them as needed.
 
+```bash
+# Linux: inspect the routing table to verify which traffic goes through VPN
+ip route show
+
+# Check which interface handles default traffic
+ip route get 8.8.8.8
+
+# WireGuard config: AllowedIPs controls split vs full tunnel
+# Full tunnel — all traffic through VPN:
+#   AllowedIPs = 0.0.0.0/0, ::/0
+# Split tunnel — only corporate subnet:
+#   AllowedIPs = 10.0.0.0/8, 192.168.100.0/24
+
+# Confirm DNS is not leaking outside the tunnel
+dig +short myip.opendns.com @resolver1.opendns.com
+```
+
 
 
 Router-level VPN configuration often defaults to full tunnel routing, but many modern routers with VPN support offer split tunneling options. This is particularly useful for protecting all devices in your home—smart TVs, IoT devices, and children's devices—without slowing down gaming consoles or streaming devices that don't need VPN protection.

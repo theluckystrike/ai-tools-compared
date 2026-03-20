@@ -53,6 +53,20 @@ The first and most effective solution is clearing the Cursor cache. Corrupted or
 
 If the Command Palette method does not work, you can manually clear the cache by locating the application data folder. On macOS, navigate to `~/Library/Application Support/Cursor/Cache` and delete its contents. On Windows, the path is `%APPDATA%\Cursor\Cache`. After deleting the files, restart Cursor.
 
+```bash
+# macOS: clear Cursor cache directories from terminal
+rm -rf ~/Library/Application\ Support/Cursor/Cache
+rm -rf ~/Library/Application\ Support/Cursor/CachedData
+rm -rf ~/Library/Application\ Support/Cursor/CachedExtensions
+
+# Linux equivalent
+# rm -rf ~/.config/Cursor/Cache ~/.config/Cursor/CachedData
+
+# Windows (PowerShell)
+# Remove-Item -Recurse -Force "$env:APPDATA\Cursor\Cache"
+# Remove-Item -Recurse -Force "$env:APPDATA\Cursor\CachedData"
+```
+
 
 
 ### Fix 2: Reset the Context Window
