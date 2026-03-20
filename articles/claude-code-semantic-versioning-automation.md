@@ -1,6 +1,6 @@
 ---
 title: "Claude Code Semantic Versioning Automation: A Complete Guide"
-description: "Learn how to automate semantic versioning in your projects using Claude Code. Covers version bump detection, changelog generation, and automated release workflows."
+description: "Learn how to automate semantic versioning in your projects using Claude Code. Covers version bump detection, changelog generation, and automated."
 keywords: "Claude Code, semantic versioning, semver, automation, version bumps, release management, AI coding tools"
 author: "AI Tools Compared"
 category: "ai-tools"
@@ -233,3 +233,8 @@ Automating semantic versioning with Claude Code transforms version management fr
 
 The key is to establish conventions early, use tools to enforce them, and continuously refine your automation based on real-world usage patterns.
 {% endraw %}
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

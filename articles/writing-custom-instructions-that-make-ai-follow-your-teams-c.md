@@ -189,6 +189,11 @@ Keep your instructions in version control alongside your project code. This ensu
 
 ---
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

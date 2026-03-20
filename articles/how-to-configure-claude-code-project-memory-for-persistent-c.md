@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Configure Claude Code Project Memory for Persistent Coding Conventions"
-description: "A practical guide to configuring Claude Code project memory for persistent coding conventions, with setup examples and configuration strategies for developers."
+title: "How to Configure Claude Code Project Memory for."
+description: "A practical guide to configuring Claude Code project memory for persistent coding conventions, with setup examples and configuration strategies for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-project-memory-for-persistent-c/
@@ -210,6 +210,11 @@ Create a component for production environment
 ```
 
 This approach ensures Claude Code maintains context awareness across different project contexts while keeping your conventions consistent and discoverable.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

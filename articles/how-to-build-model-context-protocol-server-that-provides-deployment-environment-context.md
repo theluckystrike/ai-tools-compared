@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Build a Model Context Protocol Server That Provides Deployment Environment Context"
-description: "Learn how to build a Model Context Protocol server that gives AI coding assistants access to your deployment environment details, enabling more accurate infrastructure-aware code generation."
+title: "How to Build a Model Context Protocol Server That."
+description: "Learn how to build a Model Context Protocol server that gives AI coding assistants access to your deployment environment details, enabling more."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/
@@ -288,5 +288,10 @@ echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}' | node server.js
 ```
 
 You should receive a list of available tools. Then test each tool individually to confirm it returns the expected data structure.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

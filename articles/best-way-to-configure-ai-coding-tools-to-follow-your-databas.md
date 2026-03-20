@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Best Way to Configure AI Coding Tools to Follow Your Database Naming Conventions"
-description: "Learn how to configure AI coding assistants like GitHub Copilot, Cursor, and Zed to respect your database naming conventions. Practical configuration examples and code snippets for developers."
+title: "Best Way to Configure AI Coding Tools to Follow Your."
+description: "Learn how to configure AI coding assistants like GitHub Copilot, Cursor, and Zed to respect your database naming conventions. Practical configuration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-ai-coding-tools-to-follow-your-databas/
@@ -163,6 +163,11 @@ Share your configuration files through version control so all team members benef
 Updating conventions requires coordination. When your team changes naming standards, update all configuration files simultaneously and communicate the change to every developer on the team.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Set Up Model Context Protocol Server Providing Live Database Schema to AI"
-description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code generation."
+title: "How to Set Up Model Context Protocol Server Providing."
+description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-providing-live-d/
@@ -191,6 +191,11 @@ The MCP architecture makes it easy to add new tools as your needs evolve.
 Setting up a Model Context Protocol server to provide live database schema information transforms how AI assistants interact with your database. Rather than guessing at table structures or manually documenting schemas, your AI tools gain direct access to accurate, up-to-date schema information. This leads to better code generation, fewer errors in SQL queries, and faster development cycles.
 
 Start with the basic server implementation, configure your AI assistant to connect to it, and immediately experience the difference in code quality when your AI understands your database structure.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

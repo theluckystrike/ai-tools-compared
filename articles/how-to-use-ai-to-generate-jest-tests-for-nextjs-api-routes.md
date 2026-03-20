@@ -303,4 +303,9 @@ npm test -- --coverage
 
 This shows you which parts of your API routes remain untested, helping you identify gaps in your test coverage.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

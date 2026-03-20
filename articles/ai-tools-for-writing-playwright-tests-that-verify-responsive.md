@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Writing Playwright Tests That Verify Responsive Layout Breakpoint Behavior"
-description: "A practical comparison of AI coding tools for generating Playwright tests that validate responsive design breakpoints, media queries, and layout changes across different screen sizes, with code examples."
+title: "AI Tools for Writing Playwright Tests That Verify."
+description: "A practical comparison of AI coding tools for generating Playwright tests that validate responsive design breakpoints, media queries, and layout."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-playwright-tests-that-verify-responsive/
@@ -248,6 +248,11 @@ test('images load appropriate sources at each breakpoint', async ({ page }) => {
 For generating Playwright tests that verify responsive layout breakpoint behavior, Claude provides the most reliable results. It consistently produces comprehensive tests with correct viewport handling, proper assertions, and coverage across multiple screen sizes. GitHub Copilot serves as a quick option for simple single-viewport tests, while Cursor and Aider offer workflow flexibility depending on your development environment.
 
 The key to accurate responsive tests from any AI tool is providing clear context: list your exact breakpoints, specify which elements change at each size, and indicate what behavior should change (visibility, layout, styling). With this information, AI assistants can generate tests that catch responsive regressions before they reach production.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

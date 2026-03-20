@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Create Custom Instructions for AI Tools to Generate Your Preferred Log Format"
+title: "How to Create Custom Instructions for AI Tools to."
 description: "A practical guide for developers and power users on configuring AI coding assistants to produce consistent, structured log output that matches your project's standards."
 date: 2026-03-16
 author: theluckystrike
@@ -162,6 +162,11 @@ Document the reasoning behind your format choices. This helps team members under
 ---
 
 Custom instructions transform AI assistants from generic code generators into domain-specific tools that understand your project's conventions. By investing time in proper configuration, you achieve consistent, structured logging without repetitive manual corrections.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for AI Tool Project Config When Switching Between Multiple Client Projects"
+title: "Best Practices for AI Tool Project Config When Switching."
 description: "A practical guide for developers managing AI tool configurations across multiple client projects in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -175,5 +175,10 @@ Maintain a simple internal wiki or README explaining your setup. Include the dir
 Managing AI tool configurations across multiple client projects comes down to three principles: isolation, automation, and consistency. Use environment-specific files, implement quick-switch mechanisms, template your scaffolding, and never hardcode secrets. These practices reduce errors, improve security, and make switching between projects nearly instant.
 
 With the right setup, you can handle ten clients as easily as one, without worrying about mixing up API keys or forgetting critical configuration details.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

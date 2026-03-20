@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Write Custom Instructions That Make AI Respect Your API Rate Limit Patterns"
+title: "How to Write Custom Instructions That Make AI Respect."
 description: "Learn to write effective custom instructions that help AI tools respect your API rate limits. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -207,6 +207,11 @@ Custom instructions require iteration. Start with basic limits, generate code, t
 - Including circuit breaker thresholds for sustained failures
 
 The more context you provide about your specific environment and constraints, the more accurately the AI generates code that respects your rate limit patterns.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

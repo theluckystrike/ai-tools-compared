@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Tests for Iframe and Cross-Origin Content"
+title: "How to Use AI to Generate Playwright Tests for Iframe."
 description: "A practical guide for developers on using AI tools to generate Playwright tests for iframe and cross-origin content handling."
 date: 2026-03-16
 author: theluckystrike
@@ -167,5 +167,10 @@ When using AI to generate iframe tests, include these elements in your prompts:
 AI can generate solid starting points for iframe tests, but always review the generated code for security implications, especially when testing cross-origin scenarios. Ensure your tests don't inadvertently expose sensitive information and follow your application's security policies.
 
 Building reliable iframe tests requires understanding the loading patterns of embedded content in your specific application. AI accelerates the initial code generation, while your domain knowledge ensures the tests cover the actual user interactions that matter.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

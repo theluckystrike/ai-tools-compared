@@ -169,4 +169,9 @@ AI tools dramatically speed up the creation of pytest tests using moto for AWS s
 
 The combination of pytest, moto, and AI assistance creates a powerful testing workflow that produces fast, reliable, and maintainable tests for any code interacting with AWS services.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

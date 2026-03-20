@@ -1,5 +1,7 @@
 {% raw %}
 ---
+categories: [guides]
+
 layout: default
 title: "Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026"
 description: "A practical guide for developers on configuring Claude Code to understand and work with internal library APIs, with configuration examples and best practices."
@@ -193,6 +195,11 @@ This layered approach provides Claude Code with comprehensive context while main
 ## Conclusion
 
 Configuring Claude Code to understand your internal library APIs significantly improves its usefulness as a development assistant. Start with a basic CLAUDE.md file and expand its coverage based on your most frequent interactions. The investment in maintaining accurate configuration pays dividends in more relevant suggestions and faster development cycles.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

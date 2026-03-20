@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Writing Custom Instructions for AI Tools That Enforce Your Security Header Standards"
+title: "Writing Custom Instructions for AI Tools That Enforce."
 description: "A practical guide for developers to create custom instructions that force AI coding tools to implement security headers consistently across all projects."
 date: 2026-03-16
 author: theluckystrike
@@ -208,5 +208,10 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 **Failing to test** means you won't discover issues until a security audit catches them. Regularly generate sample code to verify instructions remain effective.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

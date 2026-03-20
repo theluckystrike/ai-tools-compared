@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Best Way to Structure CursorRules for Microservices Project with Shared Proto Definitions"
-description: "A practical guide to structuring CursorRules files for microservices projects with shared protobuf definitions. Includes code examples and folder structure recommendations."
+title: "Best Way to Structure CursorRules for Microservices."
+description: "A practical guide to structuring CursorRules files for microservices projects with shared protobuf definitions. Includes code examples and folder."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-way-to-structure-cursorrules-for-microservices-project-/
@@ -264,5 +264,10 @@ As your microservices grow, update your CursorRules to reflect changes:
 A well-maintained CursorRules setup ensures consistent, high-quality code generation across your entire microservices ecosystem.
 
 {% endraw %}
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

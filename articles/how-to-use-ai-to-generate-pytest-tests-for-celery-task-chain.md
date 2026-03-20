@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Pytest Tests for Celery Task Chains"
+title: "How to Use AI to Generate Pytest Tests for Celery Task."
 description: "Learn practical approaches for leveraging AI tools to generate comprehensive pytest tests for Celery task chains and workflows."
 date: 2026-03-16
 author: theluckystrike
@@ -304,6 +304,11 @@ Review generated tests carefully—AI may miss edge cases specific to your busin
 - **Resource cleanup**: Proper handling of database connections and file handles
 
 Consider adding integration tests with a real Redis/Rabbitmq broker for production-like testing, while keeping unit tests fast and isolated.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

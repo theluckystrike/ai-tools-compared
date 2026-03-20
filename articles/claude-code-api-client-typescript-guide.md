@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Claude Code API Client TypeScript Guide: Build Type-Safe Integrations"
+title: "Claude Code API Client TypeScript Guide: Build Type-Safe."
 description: "Learn how to create a robust TypeScript API client for Claude Code with proper typing, error handling, and best practices for production applications."
 date: 2026-03-18
 author: theluckystrike
@@ -303,6 +303,11 @@ When you're ready to share your client with other developers, configure your `pa
 ```
 
 Building a type-safe TypeScript client for Claude Code ensures your integration handles edge cases gracefully while providing excellent developer experience through autocomplete and type hints.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

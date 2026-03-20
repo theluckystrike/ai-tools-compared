@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Realistic Test Data for Postgres Database Seeding"
+title: "How to Use AI to Generate Realistic Test Data for."
 description: "Learn how to leverage AI tools to create production-like test data for PostgreSQL database seeding, with practical examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
@@ -202,5 +202,10 @@ EOF
 Commit generated seed files alongside your application code. This creates self-contained, reproducible test environments that any team member can rebuild instantly.
 
 Realistic test data transforms your development and testing process. AI makes generating this data efficient while maintaining the quality and variety your applications encounter in production.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

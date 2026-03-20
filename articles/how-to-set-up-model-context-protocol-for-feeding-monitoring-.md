@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Model Context Protocol for Feeding Monitoring Alerts to AI"
+title: "How to Set Up Model Context Protocol for Feeding."
 description: "A practical guide for developers on configuring MCP to feed monitoring alerts and observability data into AI assistants for intelligent incident response."
 date: 2026-03-16
 author: theluckystrike
@@ -205,6 +205,11 @@ This approach maintains consistent configuration, simplifies updates, and enable
 ---
 
 Setting up MCP for monitoring integration transforms how you respond to incidents. Your AI assistant becomes knowledgeable about your system's actual state, enabling faster diagnosis and more informed remediation decisions. Start with a single monitoring source, validate the queries work as expected, then expand to additional data sources as your confidence grows.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

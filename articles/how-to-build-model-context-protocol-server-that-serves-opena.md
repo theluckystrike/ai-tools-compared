@@ -1,11 +1,11 @@
 ---
 layout: default
-title: "How to Build a Model Context Protocol Server That Serves OpenAPI Specs to AI Tools"
+title: "How to Build a Model Context Protocol Server That Serves."
 description: "A practical guide to building an MCP server that serves OpenAPI specifications to AI tools, with code examples and implementation patterns for 2026."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-serves-opena/
-categories: [tutorials, guides]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
@@ -200,6 +200,11 @@ When building MCP servers for OpenAPI specs, consider these recommendations:
 Building an MCP server that serves OpenAPI specifications creates a powerful bridge between your APIs and AI tools. The approach lets AI assistants discover, understand, and interact with your services dynamically—eliminating manual documentation and hardcoded integrations. With the implementation above, you have a foundation that loads OpenAPI specs, exposes endpoint information, and integrates with any MCP-compatible AI tool.
 
 This pattern scales well for single APIs or complex multi-service architectures. As AI tools continue evolving in 2026, serving your API specifications through MCP ensures they remain accessible and self-documenting.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Writing Effective CursorRules for React TypeScript Projects with Specific Component Patterns"
+title: "Writing Effective CursorRules for React TypeScript."
 description: "A practical guide to creating CursorRules that handle React TypeScript component patterns, custom hooks, and state management effectively."
 date: 2026-03-16
 author: theluckystrike
@@ -299,5 +299,10 @@ Specify testing library preferences, mock patterns, and what should be tested ve
 Effective CursorRules for React TypeScript projects require attention to component patterns, hook conventions, state management, import organization, and testing approaches. Start with these fundamentals and expand as your project evolves. The investment in well-documented rules pays dividends through consistent code quality and reduced cognitive overhead when collaborating with AI assistants.
 
 Remember to review and update CursorRules periodically as your project patterns mature and new conventions emerge.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

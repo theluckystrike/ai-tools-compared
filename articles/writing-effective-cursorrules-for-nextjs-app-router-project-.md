@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Writing Effective CursorRules for Next.js App Router Project with Specific File Conventions"
-description: "A practical guide for developers on creating effective CursorRules configurations for Next.js App Router projects, covering file structure conventions, component patterns, and API best practices."
+title: "Writing Effective CursorRules for Next.js App Router."
+description: "A practical guide for developers on creating effective CursorRules configurations for Next.js App Router projects, covering file structure conventions."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/
@@ -170,5 +170,10 @@ Testing Next.js applications requires specific approaches for Server Components,
 After creating your `.cursorrules` file, Cursor automatically detects and applies these rules in your project. The AI references them when generating code, answering questions, or refactoring existing files. You can verify the rules are active by starting a new Cursor session and prompting the AI to generate a component—observe how it follows your conventions.
 
 For optimal results, keep your CursorRules focused and specific. Include examples that demonstrate your expected patterns. Review and update the rules as your project evolves, especially when adopting new libraries or changing architectural decisions. Well-crafted CursorRules transform Cursor from a generic coding assistant into a project-aware partner that generates code matching your exact specifications.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Writing CursorRules for Golang Projects with Specific Concurrency and Error Handling Patterns"
-description: "Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and idiomatic error handling."
+title: "Writing CursorRules for Golang Projects with Specific."
+description: "Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
@@ -210,6 +210,11 @@ func TestProcess(t *testing.T) {
 Keep your CursorRules focused and specific rather than comprehensive. Include only patterns that differ from standard Go idioms or that your project implements differently. Review and update CursorRules as your project evolves, ensuring new team members receive consistent guidance from the AI assistant.
 
 The goal is generating code that passes your CI/CD pipeline without modification, with proper goroutine cleanup, idiomatic error handling, and consistent patterns throughout your codebase.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "How to Create Custom System Prompts for AI That Match Your Documentation Style"
-description: "A practical guide for developers and power users to create custom AI system prompts that align with your documentation style and produce consistent, high-quality output."
+title: "How to Create Custom System Prompts for AI That Match."
+description: "A practical guide for developers and power users to create custom AI system prompts that align with your documentation style and produce consistent."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-system-prompts-for-ai-that-match-your-d/
@@ -96,5 +96,10 @@ System prompts can backfire if not carefully constructed. Watch for these common
 ## Conclusion
 
 Custom system prompts transform AI assistants from generic tools into personalized extensions of your workflow. By investing time in crafting clear, specific instructions that match your documentation style, you reduce manual editing, maintain consistency, and accelerate your development process. Start with simple prompts, test them rigorously, and iterate toward the exact behavior your projects require.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

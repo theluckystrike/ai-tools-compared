@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Custom Instructions That Make AI Follow Your Error Response Schema"
+title: "How to Write Custom Instructions That Make AI Follow."
 description: "Learn how to write effective custom instructions for AI coding assistants to generate consistent, structured error responses that match your project's API schema."
 date: 2026-03-16
 author: theluckystrike
@@ -203,5 +203,10 @@ If the AI deviates from your schema, refine your instructions with more specific
 Custom instructions transform AI coding assistants from unpredictable generators into reliable tools that produce consistent, schema-compliant error handling code. The key is specificity—define every field, provide concrete examples, and test thoroughly.
 
 Start with the basics: document your error response schema, write explicit instructions, and include code examples in your project's AI configuration files. Iterate based on what the AI actually generates, and you'll achieve reliable error response consistency across your entire codebase.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

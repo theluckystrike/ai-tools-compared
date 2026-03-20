@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Jest Tests for GraphQL Resolvers with Dataloader Batching"
+title: "AI Tools for Writing Jest Tests for GraphQL Resolvers."
 description: "Discover how AI coding assistants can help you create comprehensive Jest tests for GraphQL resolvers that properly handle dataloader batching patterns."
 date: 2026-03-16
 author: theluckystrike
@@ -246,5 +246,10 @@ test('full GraphQL query with DataLoader batching', async () => {
 ## Conclusion
 
 AI coding assistants significantly reduce the effort required to write comprehensive Jest tests for GraphQL resolvers using DataLoader batching. The key is providing specific context about batching behavior, cache testing, and error scenarios. With proper test coverage, you can confidently refactor your resolvers knowing that the batching logic remains correct.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code Parallel Testing Configuration - Complete Setup Guide"
+title: "Claude Code Parallel Testing Configuration - Complete."
 description: "Learn how to configure parallel testing with Claude Code to speed up your test suite. Practical examples for Jest, pytest, and other frameworks."
 date: 2026-03-20
 author: theluckystrike
@@ -364,6 +364,11 @@ export default defineConfig({
 Configuring parallel testing with Claude Code transforms your development workflow. The key is starting with proper configuration, ensuring test isolation, and tuning worker counts for your specific environment. Begin with conservative settings like `maxWorkers: '50%'` and gradually increase as you identify and fix any parallelization issues.
 
 Remember that Claude Code can help you both write new tests that are parallel-safe and refactor existing tests to work better in parallel. Use the AI assistant to identify shared state and suggest improvements to your test architecture.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

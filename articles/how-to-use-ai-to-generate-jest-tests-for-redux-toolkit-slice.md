@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Generate Jest Tests for Redux Toolkit Slices"
+title: "How to Use AI to Generate Jest Tests for Redux Toolkit."
 description: "A practical guide for developers looking to automate Jest test generation for Redux Toolkit slices using AI tools."
 date: 2026-03-16
 author: theluckystrike
@@ -221,5 +221,10 @@ AI test generation works best for standard patterns. Complex slices with side ef
 The generated tests establish a baseline. You remain responsible for understanding your application's behavior and adding tests for business logic that AI cannot infer from slice code alone.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Configure Cursor AI Rules for Consistent CSS and Tailwind Class Ordering"
+title: "How to Configure Cursor AI Rules for Consistent CSS and."
 description: "A practical guide to setting up Cursor AI rules that enforce consistent CSS and Tailwind class ordering across your codebase."
 date: 2026-03-16
 author: theluckystrike
@@ -263,5 +263,10 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 Configuring Cursor AI rules for consistent CSS and Tailwind class ordering creates a more maintainable codebase. The initial setup takes only a few minutes but pays dividends in code readability and reduced code review friction. Combine Cursor AI rules with automated sorting tools like prettier-plugin-tailwindcss for maximum consistency.
 
 Remember to share your rules file with team members through your version control system. Consistent class ordering becomes even more valuable in collaborative projects where multiple developers contribute to the same codebase.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Pytest Tests for Alembic Database Migration Up and Down Paths"
+title: "AI Tools for Writing Pytest Tests for Alembic Database."
 description: "Discover how AI coding assistants can automate the creation of pytest tests for Alembic database migrations, covering both upgrade and rollback scenarios."
 date: 2026-03-16
 author: theluckystrike
@@ -172,5 +172,10 @@ To maximize the value of AI-generated tests:
 ## Conclusion
 
 AI coding tools have reached a maturity level where they can reliably generate pytest tests for Alembic database migrations. By automating the creation of upgrade and downgrade test coverage, developers can ensure their migration scripts work correctly while saving significant development time. The key lies in providing clear context, reviewing generated tests carefully, and supplementing AI output with domain-specific assertions that validate your particular business logic.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

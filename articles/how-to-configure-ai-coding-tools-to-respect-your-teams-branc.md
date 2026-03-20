@@ -202,5 +202,10 @@ Configuring AI coding tools to respect branch naming conventions requires upfron
 
 Include clear examples, specify allowed prefixes, and define character restrictions. Test your configuration by requesting branch names and verifying they match your standards. Combined with team-wide documentation and optional pre-commit validation, your AI assistant becomes a reliable partner in maintaining clean Git history.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

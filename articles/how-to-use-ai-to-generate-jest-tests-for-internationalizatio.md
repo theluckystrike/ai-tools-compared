@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Tests for Internationalization and Locale Switching"
+title: "How to Use AI to Generate Jest Tests for."
 description: "A practical guide for developers on leveraging AI tools to create comprehensive Jest tests for i18n implementation and dynamic locale switching in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -229,5 +229,10 @@ describe('Locale-Specific Formatting', () => {
 When working with AI to generate internationalization tests, keep these guidelines in mind. First, always test with at least three distinct locale types: left-to-right languages like English, right-to-left languages like Arabic, and languages with complex pluralization rules like Polish or Russian. Second, include tests for missing translation keys to catch incomplete translation files early. Third, verify that your application handles locale detection from browser settings, URL parameters, and user preferences in the correct priority order.
 
 AI-generated tests provide an excellent starting point, but review them carefully. Ensure the tests cover edge cases specific to your application's scope, and add assertions for accessibility requirements like proper language attributes on HTML elements.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

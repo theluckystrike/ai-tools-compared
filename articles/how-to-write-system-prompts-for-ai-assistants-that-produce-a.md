@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Write System Prompts for AI Assistants That Produce Accessible HTML Output"
+title: "How to Write System Prompts for AI Assistants That."
 description: "A practical guide for developers on crafting system prompts that generate semantic, accessible HTML markup."
 date: 2026-03-16
 author: theluckystrike
@@ -188,5 +188,10 @@ Output only the HTML markup without additional explanation.
 ## Conclusion
 
 Writing system prompts that produce accessible HTML requires explicit requirements, specific constraints, and clear exclusions. The patterns in this guide—naming standards, listing rules, providing examples, and validating output—work consistently across different AI assistants. Start with the template prompts provided, adapt them to your component library, and always validate the generated markup before deployment.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

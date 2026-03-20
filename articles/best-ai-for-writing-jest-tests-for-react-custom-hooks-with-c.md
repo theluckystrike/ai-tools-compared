@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing Jest Tests for React Custom Hooks with Complex State"
+title: "Best AI for Writing Jest Tests for React Custom Hooks."
 description: "A practical guide to AI tools that help developers write comprehensive Jest tests for React custom hooks with complex state management."
 date: 2026-03-16
 author: theluckystrike
@@ -195,5 +195,10 @@ describe('useWebSocket', () => {
 For hooks with straightforward state, AI tools generate adequate tests quickly. For hooks with complex async coordination or intricate state machines, treat AI output as a starting point. Add tests for edge cases the AI might miss—unmounting mid-operation, network timeouts, or state inconsistencies.
 
 The best workflow combines AI generation with developer review. Generate tests rapidly, then verify they cover the scenarios your specific application requires. AI handles the boilerplate; you provide domain-specific validation.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

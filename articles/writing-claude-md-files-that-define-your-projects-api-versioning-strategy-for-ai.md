@@ -104,4 +104,9 @@ Creating effective CLAUDE MD files for API versioning requires clarity and compl
 
 When your CLAUDE MD file is comprehensive and well-organized, AI assistants can generate more accurate, version-appropriate code. This leads to fewer integration errors, smoother migrations, and better developer experience overall.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

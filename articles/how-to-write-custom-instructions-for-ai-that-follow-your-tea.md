@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Write Custom Instructions for AI That Follow Your Team's Code Review Standards"
+title: "How to Write Custom Instructions for AI That Follow Your."
 description: "A practical guide for developers on creating AI custom instructions that align with team code review standards, with concrete examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
@@ -138,5 +138,10 @@ This targeted approach keeps instructions relevant to the task at hand rather th
 Writing effective custom instructions for AI coding assistants requires understanding your team's specific code review standards and translating them into precise, actionable guidance. Start with your most common review feedback, structure instructions clearly, and iterate based on results.
 
 The investment in crafting good custom instructions pays dividends in reduced code review cycles and more consistent codebase quality. Your AI assistant becomes an extension of your team's standards rather than a source of friction.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Help DevRel Teams Create Video Tutorial Screen Recordings"
-description: "A practical guide for developer relations teams on leveraging AI tools to streamline screen recording creation, improve video quality, and accelerate tutorial production."
+title: "How to Use AI to Help DevRel Teams Create Video Tutorial."
+description: "A practical guide for developer relations teams on leveraging AI tools to streamline screen recording creation, improve video quality, and accelerate."
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/
@@ -66,3 +66,8 @@ Finally, gather feedback from your audience on which tutorials they find most he
 ## Conclusion
 
 AI tools have transformed video tutorial creation for DevRel teams, making it possible to produce higher quality content more efficiently. From initial planning through scripting, recording, editing, and localization, AI can assist at every stage of the production workflow. By strategically incorporating these tools, DevRel teams can scale their content production while maintaining the quality that developers expect.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+

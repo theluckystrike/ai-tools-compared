@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Authentication Flow Tests with Stored State"
+title: "How to Use AI to Generate Playwright Authentication Flow."
 description: "Learn how to leverage AI tools to create Playwright authentication flow tests that use stored session state for faster, more reliable end-to-end testing."
 date: 2026-03-16
 author: theluckystrike
@@ -154,6 +154,11 @@ This automation ensures your test state remains current without manual intervent
 ## Conclusion
 
 AI tools significantly accelerate the creation of Playwright authentication tests with stored state. By providing clear prompts that specify your authentication flow, selectors, and storage state requirements, you get working test code faster. The key is combining AI generation with proper review and organization—using fixtures for different auth states and keeping your storage files updated. This approach produces test suites that run quickly, remain reliable, and accurately verify your application's authentication behavior.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
