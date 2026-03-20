@@ -8,7 +8,7 @@ permalink: /how-to-use-ai-chat-history-effectively-for-iterating-on-code/
 categories: [guides]
 tags: [ai-tools-compared, productivity, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
