@@ -13,24 +13,44 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 {%- include why-choose-writing-claude-md-files-api-versioning.html -%}
+
+
 
 When working with AI coding assistants on API-driven projects, consistent versioning behavior becomes critical. A well-crafted CLAUDE.md file ensures your AI assistant understands and respects your API versioning strategy, preventing breaking changes, maintaining backward compatibility, and following your team's conventions. This guide shows you how to document API versioning strategies in CLAUDE.md files for optimal AI-assisted development.
 
+
+
 ## Why API Versioning Belongs in CLAUDE.md
+
+
 
 Your API versioning strategy affects every endpoint, request, and response in your project. Without explicit instructions, AI assistants may generate inconsistent endpoint paths, ignore version headers, or fail to implement proper deprecation warnings. By documenting your versioning approach in CLAUDE.md, you establish a source of truth that guides every code generation decision.
 
+
+
 AI assistants excel at following explicit patterns. When you define your versioning strategy clearly, they generate versioned endpoints correctly from the start, implement proper deprecation cycles, and maintain consistent header handling across your codebase.
+
+
 
 ## Structuring Your API Versioning Documentation
 
-A comprehensive API versioning section in CLAUDE.md should cover several key areas. Start with your versioning scheme choice, then detail URL structure, header requirements, deprecation policies, and response format standards.
+
+
+A API versioning section in CLAUDE.md should cover several key areas. Start with your versioning scheme choice, then detail URL structure, header requirements, deprecation policies, and response format standards.
+
+
 
 ### Versioning Scheme Definition
 
+
+
 Begin by clearly stating which versioning approach your project uses. Common options include URL path versioning, header versioning, or query parameter versioning. Here's how to document each:
+
+
 
 ```markdown
 ## API Versioning Strategy
@@ -43,9 +63,14 @@ Begin by clearly stating which versioning approach your project uses. Common opt
 Our project uses: URL Path Versioning (v1, v2, v3)
 ```
 
+
 ### Endpoint Versioning Rules
 
+
+
 Specify how endpoints should be versioned and which patterns to follow:
+
+
 
 ```markdown
 ### Endpoint Versioning Rules
@@ -56,9 +81,14 @@ Specify how endpoints should be versioned and which patterns to follow:
 - All v1 endpoints will be sunset on December 31, 2026
 ```
 
+
 ### Header and Request Handling
 
+
+
 Document required headers and how the AI should handle version negotiation:
+
+
 
 ```markdown
 ### Request Headers
@@ -71,11 +101,18 @@ Document required headers and how the AI should handle version negotiation:
 - Deprecation warnings: `Deprecation: true`, `Sunset: Sat, 01 Jan 2027 00:00:00 GMT`
 ```
 
+
 ## Practical Implementation Patterns
+
+
 
 Beyond documentation, your CLAUDE.md should include concrete code patterns that the AI can reference when generating new endpoints.
 
+
+
 ### Versioned Endpoint Template
+
+
 
 ```typescript
 // When creating new endpoints, use this structure:
@@ -115,7 +152,10 @@ app.get('/api/v2/users/:id', (req, res) => {
 });
 ```
 
+
 ### Deprecation Warning Pattern
+
+
 
 ```typescript
 // Implement deprecation warnings for older versions
@@ -128,9 +168,14 @@ function addDeprecationHeaders(res: Response, version: number) {
 }
 ```
 
+
 ## Version-Specific Response Handling
 
+
+
 Your CLAUDE.md should specify how the AI should handle responses differently across versions:
+
+
 
 ```markdown
 ### Response Versioning Strategy
@@ -158,9 +203,14 @@ When adding new features, follow these rules:
 4. Always maintain backward compatibility within major versions
 ```
 
+
 ## Migration and Backward Compatibility
 
+
+
 Include clear guidance on how to handle migrations between versions:
+
+
 
 ```markdown
 ## API Migration Guidelines
@@ -181,9 +231,14 @@ Include clear guidance on how to handle migrations between versions:
 - Provide clear migration path in response headers
 ```
 
+
 ## Testing Versioned Endpoints
 
+
+
 Your CLAUDE.md should also specify testing requirements for versioned APIs:
+
+
 
 ```markdown
 ### Testing Requirements
@@ -196,30 +251,45 @@ Your CLAUDE.md should also specify testing requirements for versioned APIs:
 ### Test Example
 ```typescript
 describe('API v1 deprecation', () => {
-  it('should include deprecation headers', async () => {
-    const response = await request(app).get('/api/v1/users/1');
-    expect(response.headers['deprecation']).toBe('true');
-    expect(response.headers['sunset']).toBeDefined();
-  });
+
+ it('should include deprecation headers', async () => {
+
+ const response = await request(app).get('/api/v1/users/1');
+
+ expect(response.headers['deprecation']).toBe('true');
+
+ expect(response.headers['sunset']).toBeDefined();
+
+ });
+
 });
+
 ```
 ```
+
 
 ## Common Pitfalls to Avoid
 
+
+
 When documenting your API versioning strategy, watch for these common mistakes that confuse AI assistants:
+
+
 
 **Avoid vague version descriptions.** Instead of "use appropriate versioning," specify exactly which versioning method your project uses.
 
+
+
 **Don't skip deprecation policies.** Without clear sunset dates and migration guides, AI-generated code won't include proper deprecation handling.
+
+
 
 **Include concrete examples.** Abstract descriptions fail; real code patterns work. Show exactly what a versioned endpoint should look like in your language and framework.
 
+
+
 **Specify response differences explicitly.** AI assistants need to know what fields exist in each version to generate correct code.
 
-## Conclusion
-
-A well-structured CLAUDE.md file transforms how your AI coding assistant handles API versioning. By providing clear documentation, code templates, and explicit rules, you ensure consistent version implementation across your entire codebase. Take time to document your specific versioning scheme, and your AI assistant will generate production-ready, properly versioned endpoints from day one.
 
 
 ## Related Reading

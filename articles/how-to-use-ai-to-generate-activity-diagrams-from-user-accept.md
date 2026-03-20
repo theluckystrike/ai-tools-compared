@@ -13,44 +13,84 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
+
 
 Activity diagrams serve as a powerful visualization tool for understanding business processes, user flows, and system behaviors. When working with user acceptance criteria (UAC), transforming textual requirements into clear activity diagrams helps teams validate understanding before implementation begins. AI tools can automate this conversion, saving significant time while ensuring consistency across your documentation.
 
+
+
 This guide walks you through the process of generating activity diagrams from user acceptance criteria using AI coding assistants and specialized tools.
+
+
 
 ## Why Generate Activity Diagrams from Acceptance Criteria
 
+
+
 User acceptance criteria typically describe expected system behavior in structured text format. Converting these text descriptions into visual activity diagrams offers several advantages:
 
-- **Validation**: Diagrams reveal gaps or ambiguities in acceptance criteria before development starts
-- **Communication**: Stakeholders who struggle with textual requirements can review visual representations
-- **Documentation**: Activity diagrams serve as living documentation of system behavior
-- **Testing**: Clear flows help identify test cases and edge conditions
+
+
+- Validation: Diagrams reveal gaps or ambiguities in acceptance criteria before development starts
+
+- Communication: Stakeholders who struggle with textual requirements can review visual representations
+
+- Documentation: Activity diagrams serve as living documentation of system behavior
+
+- Testing: Clear flows help identify test cases and edge conditions
+
+
 
 Manual diagram creation takes 15-30 minutes per user story. AI-assisted generation reduces this to seconds while maintaining accuracy.
 
+
+
 ## Tools for AI-Powered Activity Diagram Generation
+
+
 
 Several AI tools can generate activity diagrams from natural language descriptions:
 
+
+
 ### Mermaid Live Editor with AI Assistance
+
+
 
 Mermaid.js supports activity diagram syntax and integrates with AI tools through prompt engineering. Most major AI coding assistants can generate Mermaid syntax when provided with clear acceptance criteria.
 
+
+
 ### PlantUML with AI Generation
 
-PlantUML offers robust activity diagram capabilities and works well with AI-generated code. Tools like Claude, ChatGPT, and Cursor can produce PlantUML markup from descriptions.
+
+
+PlantUML offers activity diagram capabilities and works well with AI-generated code. Tools like Claude, ChatGPT, and Cursor can produce PlantUML markup from descriptions.
+
+
 
 ### Specialized UML Generation Tools
 
+
+
 Some platforms offer direct AI-to-diagram conversion without requiring diagram syntax knowledge. These include tools integrated into documentation platforms and enterprise modeling software.
+
+
 
 ## Step-by-Step Workflow
 
+
+
 ### Step 1: Structure Your Acceptance Criteria
 
+
+
 Before feeding acceptance criteria to AI, ensure they follow a structured format. Use the Given-When-Then (Gherkin) style or a simple numbered list format:
+
+
 
 ```
 Scenario: User login flow
@@ -60,13 +100,22 @@ Then the user should be redirected to the dashboard
 And a session token should be created
 ```
 
+
 ### Step 2: Choose Your Output Format
+
+
 
 Decide whether you want Mermaid or PlantUML output. Mermaid renders directly in GitHub, GitLab, and many documentation platforms. PlantUML offers more advanced formatting options and integrates with enterprise tools.
 
+
+
 ### Step 3: Craft the AI Prompt
 
+
+
 The quality of your generated diagram depends heavily on your prompt. Here's an effective prompt structure:
+
+
 
 ```
 Generate a Mermaid.js activity diagram from these acceptance criteria:
@@ -81,19 +130,33 @@ Requirements:
 - Keep labels concise but descriptive
 ```
 
+
 ### Step 4: Review and Refine
 
+
+
 AI-generated diagrams require human review. Check for:
+
 - Missing decision branches
+
 - Incorrect flow direction
+
 - Ambiguous condition labels
+
 - Edge cases not covered in original criteria
+
+
 
 ## Practical Examples
 
+
+
 ### Example 1: Simple Login Flow
 
+
+
 **Acceptance Criteria:**
+
 ```
 1. User enters username and password
 2. System validates credentials
@@ -102,12 +165,16 @@ AI-generated diagrams require human review. Check for:
 5. After 3 failed attempts, lock account for 15 minutes
 ```
 
+
 **AI Prompt:**
+
 ```
 Generate a Mermaid activity diagram for this user login flow acceptance criteria.
 ```
 
+
 **Generated Output:**
+
 ```mermaid
 activity TDU
     Start([Start]) --> EnterCredentials[Enter username and password]
@@ -123,9 +190,13 @@ activity TDU
     Redirect --> End
 ```
 
+
 ### Example 2: E-Commerce Checkout Process
 
+
+
 **Acceptance Criteria:**
+
 ```
 Scenario: Complete checkout
 1. User views cart with items
@@ -140,7 +211,9 @@ Scenario: Complete checkout
 10. Order is marked as pending fulfillment
 ```
 
+
 **AI Prompt:**
+
 ```
 Generate a PlantUML activity diagram for an e-commerce checkout process.
 Include:
@@ -151,7 +224,9 @@ Include:
 Use PlantUML syntax.
 ```
 
+
 **Generated Output:**
+
 ```plantuml
 @startuml
 start
@@ -179,59 +254,97 @@ endif
 @enduml
 ```
 
+
 ## Integrating Activity Diagrams into Development Workflow
+
+
 
 ### Pre-Development Validation
 
+
+
 Generate activity diagrams during sprint planning or refinement sessions. Share diagrams with product owners to confirm understanding before story point assignment.
+
+
 
 ### Documentation Automation
 
+
+
 Store generated diagrams in your repository alongside acceptance criteria. Use CI/CD pipelines to render diagrams and include them in generated documentation sites.
+
+
 
 ### Test Case Identification
 
+
+
 Review activity diagrams to identify:
+
 - All possible paths through the flow
+
 - Boundary conditions requiring testing
+
 - Error handling scenarios
+
 - Integration points with other systems
+
+
 
 ## Common Pitfalls and Solutions
 
+
+
 ### Pitfall 1: Over-Complex Diagrams
 
-**Problem**: AI generates diagrams with too many branches, making them unreadable.
 
-**Solution**: Break complex acceptance criteria into multiple diagrams. Focus on one scenario per diagram.
+
+Problem: AI generates diagrams with too many branches, making them unreadable.
+
+
+
+Solution: Break complex acceptance criteria into multiple diagrams. Focus on one scenario per diagram.
+
+
 
 ### Pitfall 2: Missing Edge Cases
 
-**Problem**: Generated diagrams don't account for timeout, network failure, or data validation scenarios.
 
-**Solution**: Add explicit prompts requesting error handling paths. Review against failure mode analysis.
+
+Problem: Generated diagrams don't account for timeout, network failure, or data validation scenarios.
+
+
+
+Solution: Add explicit prompts requesting error handling paths. Review against failure mode analysis.
+
+
 
 ### Pitfall 3: Incorrect Syntax
 
-**Problem**: Generated diagram code contains syntax errors preventing rendering.
 
-**Solution**: Use AI tools with code execution capabilities to validate syntax before saving. Test rendering in a preview environment.
+
+Problem: Generated diagram code contains syntax errors preventing rendering.
+
+
+
+Solution: Use AI tools with code execution capabilities to validate syntax before saving. Test rendering in a preview environment.
+
+
 
 ## Tips for Better Results
 
-1. **Provide context**: Include system name and primary actors in your prompt
-2. **Specify notation**: Clearly state whether you want UML, Mermaid, or PlantUML syntax
-3. **Request specific elements**: Ask for decision diamonds, parallel flows, or swimlanes when needed
-4. **Iterate refinement**: Generate an initial diagram, then ask AI to add specific elements
-5. **Validate against criteria**: Ensure every acceptance criterion item appears in the diagram
 
-## Conclusion
 
-AI tools transform the creation of activity diagrams from a time-consuming manual task into a rapid, automated process. By structuring acceptance criteria clearly and crafting effective prompts, developers can generate accurate activity diagrams in seconds rather than minutes.
+1. Provide context: Include system name and primary actors in your prompt
 
-The key to success lies in treating AI generation as a starting point rather than a final product. Review generated diagrams carefully, validate them against original requirements, and refine as needed. When integrated into your development workflow, AI-generated activity diagrams improve team communication, reduce misunderstandings, and accelerate the delivery of well-understood features.
+2. Specify notation: Clearly state whether you want UML, Mermaid, or PlantUML syntax
 
----
+3. Request specific elements: Ask for decision diamonds, parallel flows, or swimlanes when needed
+
+4. Iterate refinement: Generate an initial diagram, then ask AI to add specific elements
+
+5. Validate against criteria: Ensure every acceptance criterion item appears in the diagram
+
 
 
 ## Related Reading

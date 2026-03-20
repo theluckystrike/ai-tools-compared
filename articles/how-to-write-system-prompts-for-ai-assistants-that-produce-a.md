@@ -14,33 +14,56 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 AI assistants can generate HTML output, but without proper system prompts, the markup often lacks semantic structure, proper ARIA attributes, or keyboard accessibility. This guide shows you how to write system prompts that consistently produce accessible, standards-compliant HTML.
+
+
 
 ## Why Accessible HTML Matters for AI Output
 
+
+
 When an AI assistant generates HTML fragments for your application, that code becomes part of your user interface. If the output lacks proper heading hierarchy, missing alt text on images, or no keyboard navigation support, you inherit accessibility violations that affect real users. Rather than fixing generated code manually, you can embed accessibility requirements directly into your system prompts.
+
+
 
 ## Core Principles for System Prompts
 
+
+
 Effective system prompts for accessible HTML follow three principles: specificity, constraint specification, and example inclusion.
+
+
 
 ### Be Specific About Standards
 
+
+
 Your system prompt should explicitly reference accessibility standards. Vague instructions like "make it accessible" produce inconsistent results. Instead, name specific standards and provide concrete rules.
 
+
+
 A weak prompt:
+
 ```
 Generate HTML for a product card component.
 ```
 
+
 A strong prompt:
+
 ```
 Generate HTML for a product card component. All markup must be semantic HTML5. Use the <article> element for the card container. Include proper heading hierarchy with <h3> for the product title. Any images must include descriptive alt attributes. Ensure all interactive elements are keyboard accessible.
 ```
 
+
 ### Specify Constraints Explicitly
 
+
+
 HTML generation often fails on constraints that seem obvious to developers but are ambiguous to AI models. List your requirements as explicit rules.
+
+
 
 ```
 Your output must follow these rules:
@@ -51,11 +74,18 @@ Your output must follow these rules:
 5. Any element hidden from screen readers must use aria-hidden="true"
 ```
 
+
 ## Practical System Prompt Examples
+
+
 
 Here are three system prompts you can adapt for different use cases.
 
+
+
 ### Example 1: Form Components
+
+
 
 ```
 You generate HTML form components. Follow these accessibility requirements:
@@ -70,7 +100,10 @@ You generate HTML form components. Follow these accessibility requirements:
 Return only the HTML markup with inline comments explaining accessibility decisions.
 ```
 
+
 ### Example 2: Data Tables
+
+
 
 ```
 Generate HTML tables with proper accessibility structure:
@@ -85,7 +118,10 @@ Generate HTML tables with proper accessibility structure:
 Output semantic markup only, no CSS classes.
 ```
 
+
 ### Example 3: Modal Dialogs
+
+
 
 ```
 Generate accessible modal dialog HTML:
@@ -101,11 +137,18 @@ Generate accessible modal dialog HTML:
 Return clean, semantic HTML5 markup.
 ```
 
+
 ## Combining Prompts with Output Validation
+
+
 
 System prompts guide generation, but you should validate output automatically. Consider adding a post-processing step that checks for common accessibility issues.
 
+
+
 A simple validation approach checks for these patterns:
+
+
 
 ```javascript
 function validateAccessibleHTML(html) {
@@ -131,26 +174,48 @@ function validateAccessibleHTML(html) {
 }
 ```
 
+
 ## Testing Generated Output
+
+
 
 After implementing your system prompt, verify the output with accessibility tools:
 
+
+
 1. Use the WAVE evaluator or axe DevTools to scan generated pages
+
 2. Test keyboard navigation manually—can you tab through all interactive elements?
+
 3. Use a screen reader to experience the content as users would
+
 4. Check color contrast ratios meet WCAG AA standards (4.5:1 for normal text)
+
+
 
 ## Common Pitfalls to Avoid
 
+
+
 Several patterns consistently produce inaccessible HTML:
 
+
+
 - Using <div> and <span> for interactive elements instead of <button> or <a>
+
 - Relying solely on color to convey information
+
 - Missing form labels because placeholder text exists
+
 - Creating content that requires mouse interaction
+
 - Using generic link text like "here" or "read more"
 
+
+
 Add these as explicit exclusions in your system prompts:
+
+
 
 ```
 Never do the following:
@@ -161,9 +226,14 @@ Never do the following:
 - Rely on color alone to convey meaning
 ```
 
+
 ## Putting It All Together
 
+
+
 A complete system prompt for accessible HTML might look like:
+
+
 
 ```
 You generate HTML components that meet WCAG 2.1 AA accessibility standards. 
@@ -184,10 +254,6 @@ Exclusions:
 
 Output only the HTML markup without additional explanation.
 ```
-
-## Conclusion
-
-Writing system prompts that produce accessible HTML requires explicit requirements, specific constraints, and clear exclusions. The patterns in this guide—naming standards, listing rules, providing examples, and validating output—work consistently across different AI assistants. Start with the template prompts provided, adapt them to your component library, and always validate the generated markup before deployment.
 
 
 ## Related Reading

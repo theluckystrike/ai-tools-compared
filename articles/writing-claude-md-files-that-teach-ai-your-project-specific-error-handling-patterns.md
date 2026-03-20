@@ -14,20 +14,36 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 {%- include why-choose-writing-claude-md-files-error-handling.html -%}
+
+
 
 When you work with AI coding assistants like Claude Code, the quality of output depends heavily on context. A well-crafted CLAUDE.md file transforms generic responses into project-aligned code. This guide focuses specifically on teaching AI assistants your error handling patterns—a critical aspect that often gets overlooked but dramatically affects code quality.
 
+
+
 ## Why Error Handling Deserves Special Attention
+
+
 
 Error handling varies significantly between projects and organizations. Some teams prefer exceptions, others use result types. Logging conventions, retry strategies, and user-facing error messages all follow project-specific conventions. Without explicit guidance, AI assistants default to their training patterns, which may not match your codebase.
 
+
+
 A dedicated section in your CLAUDE.md file ensures every AI-generated function follows your error handling standards from the start.
+
+
 
 ## Structuring Your Error Handling Section
 
+
+
 Organize your CLAUDE.md file with a clear error handling section. Place it prominently—ideally early in the file—since AI models pay special attention to the first substantial sections.
+
+
 
 ```markdown
 ## Error Handling Conventions
@@ -35,9 +51,14 @@ Organize your CLAUDE.md file with a clear error handling section. Place it promi
 This project follows specific error handling patterns described below.
 ```
 
+
 ### Define Your Primary Error Strategy
 
+
+
 Start by stating whether your project uses exceptions, result types, or a hybrid approach. Be explicit about when to use each.
+
+
 
 ```markdown
 ### Error Strategy
@@ -47,11 +68,18 @@ Start by stating whether your project uses exceptions, result types, or a hybrid
 - Always log errors with appropriate context before returning
 ```
 
+
 This single statement prevents the AI from wrapping everything in try-catch blocks when your codebase uses functional error handling.
+
+
 
 ## Documenting Error Naming Conventions
 
+
+
 Consistent error naming makes debugging significantly easier. Specify your conventions in the CLAUDE.md file.
+
+
 
 ```markdown
 ### Error Naming
@@ -61,11 +89,18 @@ Consistent error naming makes debugging significantly easier. Specify your conve
 - Wrap third-party errors with domain-specific errors to provide context
 ```
 
+
 When the AI encounters an unknown error type, these patterns ensure it creates appropriately named errors rather than generic "Error" types.
+
+
 
 ## Specifying Logging Requirements
 
+
+
 Error logging often follows team-specific standards. Document yours explicitly.
+
+
 
 ```markdown
 ### Logging
@@ -76,11 +111,18 @@ Error logging often follows team-specific standards. Document yours explicitly.
 - Never log sensitive data (passwords, tokens, PII)
 ```
 
+
 This prevents the AI from using `console.log` in production code when your team requires structured logging with specific fields.
+
+
 
 ## Defining Retry and Recovery Patterns
 
+
+
 Network failures and transient errors require consistent retry logic. Specify your approach in the CLAUDE.md file.
+
+
 
 ```markdown
 ### Retry Logic
@@ -91,11 +133,18 @@ Network failures and transient errors require consistent retry logic. Specify yo
 - Do not retry authentication failures—fail fast instead
 ```
 
+
 The AI will then implement appropriate retry mechanisms rather than infinite loops or no retry logic at all.
+
+
 
 ## User-Facing Error Messages
 
+
+
 How errors surface to users requires careful thought. Define your standards.
+
+
 
 ```markdown
 ### User Messages
@@ -106,11 +155,18 @@ How errors surface to users requires careful thought. Define your standards.
 - Maintain consistent tone across all error messages
 ```
 
+
 This ensures the AI generates user-safe error messages instead of exposing stack traces.
+
+
 
 ## Example: Complete Error Handling Section
 
-Here's a comprehensive example you can adapt:
+
+
+Here's an example you can adapt:
+
+
 
 ```markdown
 ## Error Handling Conventions
@@ -142,40 +198,60 @@ This project uses TypeScript with a focus on explicit error handling.
 - Verify logging is called with correct context
 ```
 
+
 ## Testing Your Error Handling Instructions
 
+
+
 After adding error handling guidance to your CLAUDE.md file, verify it works. Ask Claude Code to implement a simple function with error cases:
+
+
 
 ```
 Create a function that fetches user data from an API and handles network errors, validation errors, and authentication errors appropriately.
 ```
 
+
 Review the output against your documented patterns. If something doesn't match, refine your CLAUDE.md instructions.
+
+
 
 ## Common Mistakes to Avoid
 
+
+
 Several patterns reduce the effectiveness of error handling guidance:
 
-- **Vague instructions**: "Handle errors properly" means nothing to an AI. Be specific.
-- **Contradictory guidance**: Don't say "use exceptions sparingly" without defining what counts as exceptional.
-- **Missing context**: Include why certain patterns exist, not just what to do.
-- **Outdated examples**: Review and update your error handling section as patterns evolve.
+
+
+- Vague instructions: "Handle errors properly" means nothing to an AI. Be specific.
+
+- Contradictory guidance: Don't say "use exceptions sparingly" without defining what counts as exceptional.
+
+- Missing context: Include why certain patterns exist, not just what to do.
+
+- Outdated examples: Review and update your error handling section as patterns evolve.
+
+
 
 ## Maintaining Your CLAUDE.md File
 
+
+
 Error handling patterns evolve with projects. Schedule periodic reviews of your CLAUDE.md error handling section:
 
+
+
 1. After major refactoring that changes error patterns
+
 2. When adopting new libraries with different error handling styles
+
 3. When team members consistently need to correct AI-generated error handling
+
+
 
 Keep the error handling section focused and actionable. Remove outdated patterns and add new ones as your project matures.
 
-## Conclusion
-
-A well-structured error handling section in your CLAUDE.md file transforms AI-generated code from generic to project-native. Specify your error strategy, naming conventions, logging requirements, retry patterns, and user-facing messages. Test the instructions and iterate based on results.
-
-The time invested in crafting precise error handling guidance pays dividends in consistent, maintainable code across your entire project.
 
 
 ## Related Reading

@@ -14,19 +14,35 @@ voice-checked: true
 ---
 {% raw %}
 
+
+
 Use AI to generate GitHub Actions bot comments that automatically welcome first-time contributors with personalized guidance on contribution process, code review expectations, and pull request requirements. AI-crafted comments reduce contributor friction, address common questions immediately, and encourage continued participation by setting a welcoming tone from first interaction.
+
+
 
 This guide shows you how to set up AI-generated bot comments in GitHub Actions that respond intelligently to pull requests from first-time contributors.
 
+
+
 ## Why Automated Welcome Messages Matter
+
+
 
 First-time contributors often feel uncertain about the contribution process. They may wonder whether their PR follows the correct format, if tests will pass, or how long they should wait for feedback. A well-crafted automated comment addresses these concerns immediately, reducing friction and encouraging continued participation.
 
+
+
 GitHub Actions provides the infrastructure to detect first-time contributors and trigger appropriate responses. By combining this with AI-generated content, you can personalize messages based on the specific changes in each pull request.
+
+
 
 ## Setting Up the GitHub Actions Workflow
 
+
+
 Create a workflow file that runs on pull request events and identifies first-time contributors. Here's a practical implementation:
+
+
 
 ```yaml
 name: First-Time Contributor Welcome
@@ -98,9 +114,14 @@ jobs:
             });
 ```
 
+
 ## Creating Context-Aware Messages
 
+
+
 The basic welcome message works well, but you can enhance it with AI that analyzes the pull request changes. This provides more specific guidance based on what the contributor actually submitted:
+
+
 
 ```javascript
 // Generate context-aware guidance using AI
@@ -126,9 +147,14 @@ async function generateContextAwareMessage(prDetails, aiClient) {
 }
 ```
 
+
 ## Handling Different Contribution Types
 
+
+
 AI helps you customize messages based on what the contributor submitted. A documentation fix deserves different guidance than a new feature implementation:
+
+
 
 ```yaml
 # Example: Different messages for different contribution types
@@ -167,23 +193,29 @@ AI helps you customize messages based on what the contributor submitted. A docum
     echo "Generated message based on contribution type: $TYPE"
 ```
 
+
 ## Best Practices for AI-Generated Bot Comments
+
+
 
 When implementing AI for bot comments, keep these considerations in mind:
 
+
+
 **Review and approve AI output** before posting. While AI generates helpful messages, having a human review the final output prevents inappropriate or incorrect responses from reaching contributors.
+
+
 
 **Set clear boundaries** in your AI prompts. Specify the tone (friendly but professional), length (concise, under 200 words), and content (always include contribution guidelines link).
 
+
+
 **Monitor feedback** from contributors. If you notice confusion or negative responses to automated messages, adjust your prompts accordingly.
+
+
 
 **Handle rate limits** gracefully. If your AI provider has rate limits, implement caching or queue systems to ensure every new contributor receives their welcome message.
 
-## Conclusion
-
-AI-powered bot comments transform the first-time contributor experience from uncertain to welcoming. By automating personalized messages based on the specific pull request content, you reduce maintainer overhead while providing better guidance to new contributors.
-
-The key lies in balancing automation with authenticity. Use AI to handle the repetitive aspects of welcome messages while ensuring every contributor feels valued and informed about next steps in your project's contribution process.
 
 
 ## Related Reading

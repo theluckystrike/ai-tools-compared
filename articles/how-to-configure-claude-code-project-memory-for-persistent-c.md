@@ -14,19 +14,34 @@ intent-checked: true
 voice-checked: true
 ---
 {% raw %}
+
 Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions, project-specific configurations, and architectural decisions. Claude Code automatically reads this file and applies stored context about your tech stack, naming patterns, testing requirements, and architectural approaches—enabling consistent AI assistance across all team members.
+
+
 
 ## Understanding Claude Code Project Memory
 
+
+
 Claude Code project memory works through several mechanisms that persist context between sessions. The primary tool is the `CLAUDE.md` file, a markdown document in your project root that Claude Code automatically reads and references. Unlike chat history that disappears after each session, project memory files remain available across all future interactions.
+
+
 
 Project memory serves three main purposes. First, it stores coding conventions your team follows, such as naming patterns, file organization rules, and testing requirements. Second, it documents project-specific configurations, including build processes, dependency management, and deployment procedures. Third, it captures architectural decisions and rationale that new team members or future sessions need to understand.
 
+
+
 ## Creating Your CLAUDE.md File
+
+
 
 The `CLAUDE.md` file resides in your project root directory. Claude Code checks for this file automatically when starting a session in any subdirectory of your project. The file uses markdown syntax and can include any information helpful for understanding your codebase.
 
+
+
 A basic project memory file starts with project context:
+
+
 
 ```markdown
 # Project Context
@@ -41,7 +56,10 @@ The project follows our team's coding standards documented below.
 - Styling: Tailwind CSS with custom design tokens
 ```
 
+
 Add coding conventions that should persist across all sessions:
+
+
 
 ```markdown
 ## Coding Conventions
@@ -64,9 +82,14 @@ Add coding conventions that should persist across all sessions:
 - Minimum 80% coverage for business logic
 ```
 
+
 ## Configuring Multiple Memory Files
 
+
+
 For larger projects, create specialized memory files that Claude Code can reference explicitly. Use the `@filename` syntax in your prompts to load specific documentation:
+
+
 
 ```markdown
 <!-- In /docs/api-standards.md -->
@@ -86,15 +109,23 @@ Response format:
 }
 ```
 
+
 Reference these files in your prompts:
+
+
 
 ```
 @docs/api-standards.md Create a new API endpoint for user preferences following our standards
 ```
 
+
 ## Using Project Memory with Git Integration
 
+
+
 Combine project memory with Git hooks to enforce conventions automatically. Create a pre-commit hook that validates code against your standards:
+
+
 
 ```bash
 #!/bin/bash
@@ -110,7 +141,10 @@ npx tsc --noEmit
 node scripts/check-naming-conventions.js
 ```
 
+
 Reference these checks in your CLAUDE.md:
+
+
 
 ```markdown
 ## Git Workflow
@@ -120,9 +154,14 @@ Reference these checks in your CLAUDE.md:
 - Create feature branches from develop, merge to main via PR
 ```
 
+
 ## Team-Wide Project Memory
 
+
+
 For organizations with multiple projects, create a shared memory template that teams customize. Store this in a central repository and include in each project:
+
+
 
 ```markdown
 # Organization Standards
@@ -142,7 +181,10 @@ This project follows our company's universal coding standards.
 - Optimize images with next/image
 ```
 
+
 Include this in each project with a relative path:
+
+
 
 ```markdown
 ## Organization Standards
@@ -150,9 +192,14 @@ Include this in each project with a relative path:
 See /../org-standards/company-standards.md for universal requirements
 ```
 
+
 ## Testing Memory Configuration
 
+
+
 Ensure your testing conventions persist by documenting them explicitly:
+
+
 
 ```markdown
 ## Testing Conventions
@@ -170,25 +217,40 @@ Ensure your testing conventions persist by documenting them explicitly:
 - Use realistic test data from /fixtures
 ```
 
+
 When creating new features, reference these conventions:
+
+
 
 ```
 Create a new service for handling notifications following our testing conventions
 ```
 
+
 ## Troubleshooting Project Memory
+
+
 
 If Claude Code doesn't seem to remember your conventions, verify several factors. First, ensure the CLAUDE.md file exists in the project root where you're running Claude Code. Second, check that the file has proper markdown formatting without syntax errors. Third, confirm you're in the correct directory when starting the session—Claude Code only checks the current directory and its parents.
 
+
+
 For persistent issues, explicitly reference the memory file in your prompt:
+
+
 
 ```
 Using the conventions in CLAUDE.md, create a new component
 ```
 
+
 ## Advanced: Dynamic Project Memory
 
+
+
 For projects with multiple environments or configurations, create conditional memory sections:
+
+
 
 ```markdown
 # Development vs Production Conventions
@@ -204,13 +266,20 @@ For projects with multiple environments or configurations, create conditional me
 - Error boundaries required
 ```
 
+
 Reference the appropriate context when working:
+
+
 
 ```
 Create a component for production environment
 ```
 
+
 This approach ensures Claude Code maintains context awareness across different project contexts while keeping your conventions consistent and discoverable.
+
+
+
 
 
 ## Related Reading

@@ -13,19 +13,34 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
+
 
 CursorRules offer a powerful way to customize AI behavior for specific project types, but structuring them effectively for microservices architectures with shared protobuf definitions requires careful planning. This guide provides practical patterns for organizing your CursorRules files to maximize AI assistance across complex distributed systems.
 
+
+
 ## Understanding the Microservices Challenge
+
+
 
 Microservices projects present unique challenges for AI coding assistants. You deal with multiple services, shared dependencies, inter-service communication, and consistent API contracts. When your team uses protobuf for defining these contracts, the AI needs to understand the relationship between generated code and the underlying proto definitions.
 
+
+
 A well-structured CursorRules setup helps the AI understand service boundaries, recognize shared proto imports, generate consistent code across services, and maintain backward compatibility in your API contracts.
+
+
 
 ## Recommended Project Structure
 
+
+
 Organize your monorepo to support clear boundaries between services while maintaining shared dependencies. Here is an effective structure:
+
+
 
 ```
 my-monorepo/
@@ -48,11 +63,18 @@ my-monorepo/
 └── .cursorrules
 ```
 
+
 The root-level `.cursorrules` file handles cross-cutting concerns, while service-specific files address individual service requirements.
+
+
 
 ## Root-Level CursorRules Configuration
 
+
+
 Create a root `.cursorrules` file that establishes project-wide conventions and guides the AI on proto handling:
+
+
 
 ```yaml
 # Root .cursorrules
@@ -104,11 +126,18 @@ api_conventions:
   versioning: in proto package name
 ```
 
+
 This configuration informs the AI about your project structure, shared proto locations, and code generation preferences.
+
+
 
 ## Service-Specific CursorRules
 
+
+
 Each service should have its own `.cursorrules` file that extends the root configuration with service-specific details:
+
+
 
 ```yaml
 # services/user-service/.cursorrules
@@ -144,9 +173,14 @@ database:
   migrations: ./migrations
 ```
 
+
 ## Handling Shared Proto Imports
 
+
+
 When working with microservices, shared proto definitions become critical. Configure your CursorRules to ensure the AI properly handles these imports:
+
+
 
 ```yaml
 # Import resolution rules
@@ -175,9 +209,14 @@ proto_import_rules:
     import "{{.ImportPath}}";
 ```
 
+
 ## Best Practices for Proto-Aware Code Generation
 
+
+
 Configure the AI to generate code that properly integrates with your protobuf definitions:
+
+
 
 ```yaml
 # Code generation guidelines
@@ -205,9 +244,14 @@ generation_guidelines:
     integration_tests: required
 ```
 
+
 ## Cross-Service Communication Patterns
 
+
+
 For microservices, the AI needs to understand how services communicate:
+
+
 
 ```yaml
 # Inter-service communication
@@ -243,27 +287,51 @@ event_driven:
   schema_registry: confluent
 ```
 
+
 ## Testing the Configuration
+
+
 
 After setting up your CursorRules, verify they work correctly by prompting the AI to generate sample code:
 
+
+
 1. Ask for a new RPC method in a service
+
 2. Verify it imports shared proto definitions correctly
+
 3. Check that generated code follows your conventions
+
 4. Test backward compatibility warnings
+
+
 
 ## Maintenance and Evolution
 
+
+
 As your microservices grow, update your CursorRules to reflect changes:
 
+
+
 - Add new services to the root configuration
+
 - Update proto dependencies when services add new imports
+
 - Modify conventions as team standards evolve
+
 - Document changes in a CHANGELOG for the rules themselves
+
+
 
 A well-maintained CursorRules setup ensures consistent, high-quality code generation across your entire microservices ecosystem.
 
+
+
 {% endraw %}
+
+
+
 
 
 ## Related Reading

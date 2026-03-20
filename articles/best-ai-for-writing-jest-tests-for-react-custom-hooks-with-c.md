@@ -14,11 +14,19 @@ voice-checked: true
 ---
 Claude and GitHub Copilot both excel at testing React custom hooks, but Claude demonstrates stronger understanding of state transitions, error handling, and cleanup logic. When generating tests for hooks managing pagination, caching, and multi-step workflows, Claude produces proper useCallback/useEffect patterns, correctly handles async operations, and ensures cleanup functions run appropriately across multiple state variables.
 
+
+
 ## Why Testing Custom Hooks Demands Special Attention
+
+
 
 Custom hooks encapsulate logic that components share. When that logic includes complex state—such as form handlers, data fetching with caching, or multi-step workflows—tests must verify correct state transitions, handle error conditions, and ensure cleanup runs properly.
 
+
+
 Consider a hook managing a paginated data fetch with caching and error retry logic:
+
+
 
 ```javascript
 // usePaginatedData.js
@@ -77,15 +85,26 @@ export function usePaginatedData(apiEndpoint, options = {}) {
 }
 ```
 
+
 Writing tests for this hook manually requires understanding React Testing Library, hook testing utilities, and mocking fetch calls. AI tools can generate this boilerplate rapidly.
+
+
 
 ## AI Tools That Excel at Hook Testing
 
+
+
 ### Claude (Anthropic)
+
+
 
 Claude produces accurate Jest tests for custom hooks when provided with clear context. Give it your hook code, and it generates test files using `@testing-library/react-hooks` or the newer `@testing-library/react` with `renderHook` from Testing Library.
 
+
+
 Strengths include understanding stateful hook patterns and generating meaningful test descriptions. Claude handles async testing patterns well, including hooks that fetch data or coordinate timers.
+
+
 
 ```javascript
 // Claude-generated test example
@@ -142,29 +161,54 @@ describe('usePaginatedData', () => {
 });
 ```
 
+
 ### GitHub Copilot
+
+
 
 Copilot suggests test cases as you type in your test file. It understands Jest patterns and React Testing Library conventions. For repetitive test scenarios—like checking multiple state updates—Copilot accelerates writing by suggesting common patterns.
 
+
+
 The limitation is context window. Copilot works best with recent file history but struggles with larger hook implementations spread across multiple files.
+
+
 
 ### Cursor
 
+
+
 Cursor combines IDE features with AI assistance, making it effective for generating entire test files. You can describe what you want tested, and Cursor produces the complete test suite.
+
+
 
 Cursor handles complex state scenarios well, including hooks with multiple useEffect dependencies or those managing subscription cleanup.
 
+
+
 ## What Makes AI-Generated Tests High Quality
+
+
 
 Regardless of which tool you use, verify these elements in generated tests:
 
+
+
 1. **Proper async handling** — Tests for hooks with effects must wait for state updates. Using `waitFor` or `findBy` queries prevents flaky tests.
+
+
 
 2. **Cleanup verification** — Hooks with subscriptions or timers should have tests confirming cleanup runs. The `unmount` function from `renderHook` helps verify this.
 
+
+
 3. **State transition coverage** — Complex state hooks need tests covering each state path: loading, success, error, and intermediate states.
 
+
+
 4. **Mock accuracy** — Ensure mocks match actual API behavior. Generated tests sometimes use overly simple mocks that don't reflect real-world complexity.
+
+
 
 ```javascript
 // Testing cleanup in a hook with subscriptions
@@ -191,11 +235,19 @@ describe('useWebSocket', () => {
 });
 ```
 
+
 ## Practical Recommendations
+
+
 
 For hooks with straightforward state, AI tools generate adequate tests quickly. For hooks with complex async coordination or intricate state machines, treat AI output as a starting point. Add tests for edge cases the AI might miss—unmounting mid-operation, network timeouts, or state inconsistencies.
 
+
+
 The best workflow combines AI generation with developer review. Generate tests rapidly, then verify they cover the scenarios your specific application requires. AI handles the boilerplate; you provide domain-specific validation.
+
+
+
 
 
 ## Related Reading

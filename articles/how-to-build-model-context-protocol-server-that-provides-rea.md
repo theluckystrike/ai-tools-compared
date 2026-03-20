@@ -14,20 +14,36 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 {%- include why-choose-mcp-server.html -%}
+
+
 
 Model Context Protocol (MCP) enables AI assistants to interact with external tools and data sources through a standardized interface. When your AI assistant needs access to test execution results, building a dedicated MCP server provides a clean, maintainable solution. This guide walks through creating an MCP server that streams real-time test results from your test suite to any connected AI client.
 
+
+
 ## Understanding MCP Server Architecture
+
+
 
 An MCP server exposes capabilities through well-defined tools and resources. For test result streaming, you need three core components: a test runner integration layer, an event emission system, and MCP protocol handlers. The server runs as a standalone process that AI clients connect to when they need test information.
 
+
+
 The MCP protocol uses JSON-RPC 2.0 for communication. Clients discover available tools through the `tools/list` method, then invoke specific tools with `tools/call`. For real-time updates, MCP supports server-side notifications that push data without client requests.
+
+
 
 ## Setting Up Your Project
 
+
+
 Create a new Python project with the required dependencies:
+
+
 
 ```bash
 mkdir mcp-test-server && cd mcp-test-server
@@ -36,11 +52,18 @@ source .venv/bin/activate
 uv pip install mcp pytest pytest-asyncio aiofiles
 ```
 
+
 The MCP SDK provides the core server functionality. pytest runs your tests, and asyncio enables the non-blocking operations needed for real-time streaming.
+
+
 
 ## Implementing the MCP Server
 
+
+
 Create `server.py` with the following structure:
+
+
 
 ```python
 import asyncio
@@ -155,11 +178,18 @@ if __name__ == "__main__":
     asyncio.run(server.run())
 ```
 
+
 This server exposes two tools: `run_tests` executes your test suite and returns structured results, while `get_test_status` provides visibility into the current execution state.
+
+
 
 ## Adding Real-Time Streaming
 
+
+
 The implementation above returns results after completion. For true real-time streaming, modify the server to emit progress notifications:
+
+
 
 ```python
 async def run_tests_streaming(self, test_path: str, framework: str):
@@ -186,11 +216,18 @@ async def run_tests_streaming(self, test_path: str, framework: str):
             )
 ```
 
+
 Clients receive these notifications automatically without polling, enabling live test result dashboards.
+
+
 
 ## Integrating with AI Assistants
 
+
+
 Once your MCP server runs, connect it to your AI assistant. In Claude Desktop or another MCP-compatible client, add the server configuration:
+
+
 
 ```json
 {
@@ -203,13 +240,22 @@ Once your MCP server runs, connect it to your AI assistant. In Claude Desktop or
 }
 ```
 
-The AI assistant can now invoke `run_tests` to execute test suites and receive structured results. This integration works seamlessly with voice interfaces too—ask your assistant to run tests and describe the results audibly.
+
+The AI assistant can now invoke `run_tests` to execute test suites and receive structured results. This integration works with voice interfaces too—ask your assistant to run tests and describe the results audibly.
+
+
 
 ## Production Considerations
 
+
+
 For production deployments, add authentication to protect test execution capabilities. Implement request timeouts to prevent hung test runs from blocking the server. Store test history in a database if you need trend analysis over time.
 
+
+
 Containerize the server with Docker for consistent deployments:
+
+
 
 ```dockerfile
 FROM python:3.11-slim
@@ -218,10 +264,6 @@ COPY . .
 RUN uv pip install --system -r requirements.txt
 CMD ["python", "server.py"]
 ```
-
-## Summary
-
-Building an MCP server for real-time test results involves creating a well-structured Python application that integrates with your test framework, emits progress updates, and exposes tools through the MCP protocol. The server architecture scales from simple single-tool implementations to complex streaming systems with history and analytics. Start with the basic implementation above, then extend it based on your specific testing workflow requirements.
 
 
 ## Related Reading

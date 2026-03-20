@@ -14,34 +14,64 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Claude generates better SwiftUI from design specs than Cursor due to superior reasoning about layout constraints and state management, while Cursor excels at file scaffolding. This guide compares both tools on different design patterns.
+
+
 
 ## The Challenge of Design-to-SwiftUI Conversion
 
+
+
 Design specifications come in various formats: Figma exports, Sketch files, Zeplin outputs, or plain text descriptions. Each format presents unique challenges. A Figma frame might specify a button with specific corner radius, background color in hex, typography settings, and shadow values. Converting this to SwiftUI requires understanding both the design intent and SwiftUI's declarative syntax.
+
+
 
 The core problem is that design tools think in terms of layers and frames, while SwiftUI thinks in views and modifiers. An AI tool must bridge this conceptual gap while producing code that follows SwiftUI best practices.
 
+
+
 ## Tools Tested
+
+
 
 I evaluated four AI tools that claim to generate SwiftUI from design specs: Claude Code, Cursor, GitHub Copilot, and Claude Sonnet (via API). Each was given the same design specification and asked to generate a login screen with a text field, password field, login button, and a "forgot password" link.
 
+
+
 ## Test Design Specification
 
+
+
 The test specification describes a login screen with these elements:
+
 - Background color: #F5F5F7
+
 - Email text field with placeholder "Email address"
+
 - Password secure field with placeholder "Password"
+
 - Login button: solid #007AFF background, white text, 12pt corner radius
+
 - "Forgot Password?" text link in #8E8E93
+
 - Vertical spacing: 16pt between elements
+
 - Container padding: 24pt
+
+
 
 ## Results Comparison
 
+
+
 ### Claude Code
 
+
+
 Claude Code produced the cleanest output with proper SwiftUI conventions:
+
+
 
 ```swift
 import SwiftUI
@@ -98,11 +128,18 @@ struct LoginView: View {
 }
 ```
 
+
 The code is functional and uses correct SwiftUI syntax. The color conversions from hex are handled properly. One minor issue: the text field styling could use `RoundedTextFieldStyle` for better iOS consistency, but the result is production-ready.
+
+
 
 ### Cursor
 
+
+
 Cursor generated code with some architectural improvements:
+
+
 
 ```swift
 import SwiftUI
@@ -171,11 +208,18 @@ extension Color {
 }
 ```
 
+
 Cursor demonstrates better code organization with extracted view builders. However, the hex color extension needs implementation—you would need to add the actual conversion logic. The component extraction is excellent for maintainability.
+
+
 
 ### GitHub Copilot
 
+
+
 Copilot's output required the most manual intervention:
+
+
 
 ```swift
 struct LoginView: View {
@@ -200,11 +244,18 @@ struct LoginView: View {
 }
 ```
 
+
 The code is incomplete and missing critical styling. Copilot generates a reasonable starting point but leaves significant work for the developer.
+
+
 
 ### Claude Sonnet API
 
+
+
 The API version produced results similar to Claude Code but with slightly better accessibility attributes:
+
+
 
 ```swift
 struct LoginView: View {
@@ -251,23 +302,43 @@ struct LoginView: View {
 }
 ```
 
+
 This version includes keyboard types, text content types for autofill, and basic accessibility labels—details that matter for production apps.
+
+
 
 ## Key Findings
 
-**Accuracy**: Claude Code and Claude Sonnet produced the most accurate color conversions. Cursor offered the best code organization but required adding the hex color extension implementation.
 
-**Completeness**: Claude Sonnet included accessibility attributes that other tools omitted. This matters for apps requiring WCAG compliance.
 
-**Maintainability**: Cursor's extracted component pattern makes the code more maintainable for larger projects, though it requires more manual setup.
+Accuracy: Claude Code and Claude Sonnet produced the most accurate color conversions. Cursor offered the best code organization but required adding the hex color extension implementation.
 
-**Speed**: For simple specs, all tools generate usable code in seconds. For complex interfaces with many components, Claude tools produce more complete results with fewer back-and-forth iterations.
+
+
+Completeness: Claude Sonnet included accessibility attributes that other tools omitted. This matters for apps requiring WCAG compliance.
+
+
+
+Maintainability: Cursor's extracted component pattern makes the code more maintainable for larger projects, though it requires more manual setup.
+
+
+
+Speed: For simple specs, all tools generate usable code in seconds. For complex interfaces with many components, Claude tools produce more complete results with fewer back-and-forth iterations.
+
+
 
 ## Recommendations
 
+
+
 For quick prototyping, Claude Code provides the fastest path to working SwiftUI. For production applications where maintainability matters, Cursor's component-based approach pays dividends. If accessibility is a requirement, Claude Sonnet's attention to detail gives it an edge.
 
+
+
 None of these tools replace understanding SwiftUI yourself. You will still need to verify the output, add proper state management, and integrate with your app's architecture. But the days of manually translating every pixel are ending.
+
+
+
 
 
 ## Related Reading

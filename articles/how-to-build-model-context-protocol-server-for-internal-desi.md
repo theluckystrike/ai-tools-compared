@@ -13,19 +13,34 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Building a Model Context Protocol (MCP) server specifically for your internal design system component documentation transforms how AI coding assistants interact with your UI libraries. Instead of relying on vague descriptions or searching through outdated wikis, developers can query your design system directly through structured tools that return accurate, up-to-date component information.
+
+
 
 This guide walks through creating a production-ready MCP server that exposes your design system components to any MCP-compatible AI client.
 
+
+
 ## Why Your Design System Needs an MCP Server
+
+
 
 Design systems often suffer from discoverability problems. Components live in repositories, documentation gets stale, and developers spend valuable time hunting down prop definitions or usage examples. An MCP server solves this by providing a standardized interface where AI assistants can ask questions like "What props does the Button component accept?" or "Show me how to use the Modal component with custom footer actions."
 
+
+
 The MCP protocol handles the heavy lifting: request routing, response formatting, and tool discovery. Your server focuses on one thing—translating component metadata into useful AI-readable responses.
+
+
 
 ## Project Setup and Dependencies
 
+
+
 Create a new Python project for your MCP server. You'll need the FastMCP library, which simplifies server implementation:
+
+
 
 ```bash
 mkdir design-system-mcp && cd design-system-mcp
@@ -34,7 +49,10 @@ source .venv/bin/activate
 pip install fastmcp pandas
 ```
 
+
 Initialize your project structure:
+
+
 
 ```
 design-system-mcp/
@@ -44,9 +62,14 @@ design-system-mcp/
 └── requirements.txt
 ```
 
+
 ## Building the Component Registry
 
+
+
 First, establish how your server will access component metadata. For most design systems, a JSON registry works well. Create a `components/registry.json` that describes your components:
+
+
 
 ```json
 {
@@ -111,11 +134,18 @@ First, establish how your server will access component metadata. For most design
 }
 ```
 
+
 This registry structure mirrors what TypeScript interfaces would expose, making it easy for AI models to understand component contracts.
+
+
 
 ## Implementing the MCP Server
 
+
+
 Now create `app.py` with your server implementation:
+
+
 
 ```python
 import json
@@ -197,16 +227,24 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
+
 ## Connecting to Claude Code
 
+
+
 With your server running, configure Claude Code to connect. The server runs as a subprocess that Claude communicates with via stdin/stdout:
+
+
 
 ```bash
 # Run the server
 python app.py
 ```
 
+
 In your Claude Code configuration (typically `~/.claude/settings.json` or project-specific), add the server:
+
+
 
 ```json
 {
@@ -219,41 +257,79 @@ In your Claude Code configuration (typically `~/.claude/settings.json` or projec
 }
 ```
 
+
 After restarting Claude Code, your AI assistant gains three new tools: `get_component` for detailed component info, `list_components` for enumerating available components, and `search_components` for finding components by keyword.
+
+
 
 ## Practical Usage Examples
 
+
+
 Once connected, developers can have natural conversations about your design system:
 
+
+
 **Finding component props:**
+
 > "What props does the Modal component accept?"
+
 > → Calls `get_component("Modal")` → Returns formatted props with types and required status
 
+
+
 **Checking usage patterns:**
+
 > "Show me how to use the Button component with an icon"
+
 > → Calls `get_component("Button")` → Returns usage examples from registry
 
+
+
 **Discovering components:**
+
 > "What buttons are available in our design system?"
+
 > → Calls `list_components()` → Returns all components with descriptions
+
+
 
 ## Extending the Server
 
+
+
 Several enhancements make your MCP server more powerful:
+
+
 
 **Dynamic loading from source:** Parse TypeScript/Flow prop types directly from your component source files using AST parsers rather than maintaining a separate registry.
 
+
+
 **Version tracking:** Include version information so developers can query historical props or identify deprecated usage.
+
+
 
 **Live documentation URLs:** Return links to live Storybook or documentation pages for components that have visual examples.
 
+
+
 **Integration with package managers:** Query `node_modules` to verify installed versions and detect outdated usage patterns.
+
+
 
 ## Production Considerations
 
+
+
 For enterprise deployments, add authentication to prevent unauthorized access to internal component information. The MCP protocol supports custom headers and authentication tokens that you can validate in each tool call.
 
+
+
 Consider running the server as a local service that multiple team members can connect to, or deploy it internally with appropriate network controls. Rate limiting protects against abuse, and logging helps track which components developers query most frequently—valuable signal for documentation priorities.
+
+
+
 
 
 ## Related Reading

@@ -13,17 +13,30 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Build custom AI coding workflows by creating MCP servers that expose your proprietary tools, database queries, or domain knowledge to Claude, then integrate into your IDE. This guide shows step-by-step how to create a basic MCP server and wire it into your coding assistant.
+
+
 
 ## Understanding MCP Server Architecture
 
+
+
 MCP servers act as bridges between your AI assistant and external systems. Each server exposes specific capabilities through a well-defined interface, allowing AI models to interact with databases, file systems, APIs, and development tools. The protocol handles authentication, request formatting, and response parsing, letting you focus on workflow logic rather than plumbing.
+
+
 
 The architecture follows a client-server model where your AI assistant (the client) connects to one or more MCP servers. These servers can run locally, on your network, or in the cloud, depending on your security and latency requirements.
 
+
+
 ## Setting Up Your First MCP Server Connection
 
+
+
 Before building workflows, you need to establish basic server connectivity. Most MCP server implementations use JSON-RPC 2.0 for communication. Here's a minimal configuration example using a typical MCP server setup:
+
+
 
 ```python
 from mcp import Client
@@ -45,11 +58,18 @@ config = {
 client = Client(config)
 ```
 
+
 This configuration defines two servers: one for filesystem operations and another for database interactions. Replace the connection string with your actual database credentials.
+
+
 
 ## Building a Code Review Workflow
 
+
+
 A practical use case involves automating code reviews. This workflow triggers analysis whenever you push changes to a repository:
+
+
 
 ```python
 async def code_review_workflow(commit_sha: str):
@@ -79,11 +99,18 @@ async def code_review_workflow(commit_sha: str):
     return analysis
 ```
 
+
 This workflow demonstrates chaining multiple MCP server calls. The output from each server feeds into the next step, creating a pipeline that processes code changes automatically.
+
+
 
 ## Creating a Database Migration Assistant
 
+
+
 Another valuable workflow helps manage database migrations. This assistant can generate migration scripts based on schema changes:
+
+
 
 ```python
 class MigrationAssistant:
@@ -115,11 +142,18 @@ class MigrationAssistant:
         return migration_sql
 ```
 
+
 The assistant abstracts away the complexity of schema comparisons and SQL generation, letting you focus on defining the desired state of your database.
+
+
 
 ## Implementing a Documentation Generator
 
+
+
 Documentation often falls out of sync with code. A documentation workflow using MCP servers can maintain accuracy automatically:
+
+
 
 ```python
 async def generate_api_docs(api_spec_path: str):
@@ -158,13 +192,22 @@ async def generate_api_docs(api_spec_path: str):
     )
 ```
 
+
 This workflow parses your API specification, extracts endpoint details, generates human-readable descriptions using an LLM, and outputs properly structured documentation files.
+
+
 
 ## Best Practices for MCP Workflow Design
 
+
+
 When designing MCP-based workflows, keep these considerations in mind:
 
+
+
 **Error handling** becomes critical when chaining multiple server calls. Implement retry logic with exponential backoff for network-dependent operations:
+
+
 
 ```python
 async def call_with_retry(tool_name: str, params: dict, max_retries:3):
@@ -177,13 +220,22 @@ async def call_with_retry(tool_name: str, params: dict, max_retries:3):
             await asyncio.sleep(2 ** attempt)
 ```
 
+
 **State management** matters for long-running workflows. Track progress in a persistent store rather than relying on memory, enabling recovery from interruptions.
+
+
 
 **Security** requires careful handling of credentials. Never store sensitive values in configuration files. Use environment variables or secrets management systems, and rotate credentials regularly.
 
+
+
 ## Scaling Your Workflows
 
+
+
 As your workflows grow more complex, consider organizing them into reusable components. Create a library of standard operations that combine frequently-used server calls:
+
+
 
 ```python
 class WorkflowLibrary:
@@ -195,8 +247,13 @@ class WorkflowLibrary:
         return test_results
 ```
 
+
 This modular approach lets you assemble sophisticated automation pipelines from proven building blocks, reducing maintenance overhead as your AI coding workflows evolve.
+
 {% endraw %}
+
+
+
 
 
 ## Related Reading

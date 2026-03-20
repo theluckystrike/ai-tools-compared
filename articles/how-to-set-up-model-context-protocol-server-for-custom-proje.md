@@ -14,25 +14,46 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 {%- include why-choose-mcp-server-custom-docs.html -%}
+
+
 
 Setting up a Model Context Protocol server for your custom project documentation transforms how AI coding assistants understand and interact with your codebase. When your AI tool can access your internal docs, architecture decisions, and API specifications directly through MCP, you get more accurate suggestions that align with your project's conventions.
 
+
+
 This guide walks you through building an MCP server that serves your documentation to Claude, Cursor, and other compatible AI tools.
+
+
 
 ## Prerequisites
 
+
+
 Before you begin, ensure you have:
 
+
+
 - Node.js 18 or higher installed
+
 - A project with documentation you want to expose
+
 - An AI coding tool that supports MCP (Claude Desktop, Cursor, or Windsurf)
+
 - Basic familiarity with TypeScript or JavaScript
+
+
 
 ## Step 1: Initialize Your MCP Server Project
 
+
+
 Create a new directory for your MCP server and initialize it with the necessary dependencies:
+
+
 
 ```bash
 mkdir myproject-mcp-server
@@ -41,7 +62,10 @@ npm init -y
 npm install @modelcontextprotocol/server-sdk @types/node typescript
 ```
 
+
 Create a TypeScript configuration file:
+
+
 
 ```json
 {
@@ -57,9 +81,14 @@ Create a TypeScript configuration file:
 }
 ```
 
+
 ## Step 2: Structure Your Documentation
 
+
+
 Organize your project documentation in a way that MCP can easily parse. A clean structure helps your server deliver relevant information to AI tools:
+
+
 
 ```
 myproject/
@@ -74,11 +103,18 @@ myproject/
 │       └── coding-standards.md
 ```
 
+
 Each document should have clear headings and practical content that an AI assistant can reference when generating code or answering questions.
+
+
 
 ## Step 3: Build the MCP Server
 
+
+
 Create your server implementation in `src/index.ts`. This server will read your documentation files and expose them through MCP tools:
+
+
 
 ```typescript
 import { Server } from '@modelcontextprotocol/server-sdk';
@@ -274,9 +310,14 @@ async function main() {
 main().catch(console.error);
 ```
 
+
 ## Step 4: Configure Your AI Tool
 
+
+
 Each AI tool has its own method for adding MCP servers. For Claude Desktop, create or edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
+
+
 
 ```json
 {
@@ -292,7 +333,10 @@ Each AI tool has its own method for adding MCP servers. For Claude Desktop, crea
 }
 ```
 
+
 For Cursor, add the server configuration in Settings → MCP Servers:
+
+
 
 ```json
 {
@@ -305,57 +349,97 @@ For Cursor, add the server configuration in Settings → MCP Servers:
 }
 ```
 
+
 ## Step 5: Test Your Implementation
 
+
+
 Build and test your server:
+
+
 
 ```bash
 npm run build
 node dist/index.js
 ```
 
+
 Verify the server is working by checking if your AI tool can access the documentation tools. In Claude, you should see three new tools available: `search_docs`, `get_doc`, and `list_docs`.
+
+
 
 ## Using Your Documentation Server
 
+
+
 Once configured, your AI coding assistant can now reference your project documentation. Here are practical examples:
 
+
+
 **Asking about architecture:**
+
 > "How is authentication handled in this project?"
+
+
 
 The AI will search your docs for authentication-related content and provide accurate guidance based on your actual implementation.
 
+
+
 **Getting setup instructions:**
+
 > "What are the steps to set up local development?"
+
+
 
 The AI retrieves your setup documentation and provides precise instructions.
 
+
+
 **Finding API conventions:**
+
 > "What format should I use for API response errors?"
+
+
 
 Your conventions document gets searched and relevant details are extracted.
 
+
+
 ## Best Practices
+
+
 
 Keep your documentation server effective by following these practices:
 
+
+
 **Update documentation regularly.** Your MCP server serves static content, so rebuild and restart when docs change.
+
+
 
 **Use clear, scannable headings.** AI tools parse markdown headings to understand document structure quickly.
 
+
+
 **Include code examples.** Practical examples help AI tools generate more accurate code that matches your patterns.
+
+
 
 **Add troubleshooting sections.** Common issues and solutions in your docs help AI assistants diagnose problems faster.
 
+
+
 ## Troubleshooting
+
+
 
 If your server isn't connecting, verify the path to your compiled JavaScript is correct. Check that your documentation directory exists and contains markdown files. For permission issues, ensure Node has read access to your docs directory.
 
+
+
 Some AI tools require a restart after adding MCP server configuration. Close and reopen the application to load the new server.
 
-## Conclusion
-
-Setting up an MCP server for your project documentation brings your internal knowledge directly into your AI assistant's context. This means more accurate code generation, better adherence to your project's conventions, and faster onboarding for new team members. The initial setup takes less than an hour, and the productivity benefits compound over time as your documentation grows.
 
 
 ## Related Reading

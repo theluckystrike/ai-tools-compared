@@ -14,23 +14,42 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Export fine-tuned ChatGPT models by calling the OpenAI API with your fine-tuned model ID—you cannot directly download the weights but can run inference locally with proper API integration. This guide explains the limitations and the practical workflow for local deployment.
+
+
 
 ## Understanding What You Actually Have
 
+
+
 Before attempting an export, you need to understand the technical reality: **OpenAI does not provide a direct download mechanism for fine-tuned model weights**. Their fine-tuning service creates a model that lives on their infrastructure, and you access it exclusively through their API. This is fundamentally different from open-source fine-tuning where you have full access to the model files.
+
+
 
 However, several legitimate approaches exist to achieve local fine-tuned inference:
 
+
+
 1. **Recreate the fine-tuning using open-source models** — Take your training data and fine-tune an open-source model like Llama 2, Mistral, or Phi on it
+
 2. **Use distilled models** — Apply knowledge distillation techniques to create a smaller local model
+
 3. **Convert OpenAI format models** — If you have access to compatible model formats through other means
+
+
 
 The most practical path for most developers involves recreating the fine-tuning on an open-source base model.
 
+
+
 ## Exporting Your Training Data
 
+
+
 The first step is extracting the training data you used for fine-tuning. If you still have your training files, you're in luck. If not, you can retrieve your fine-tuning job details and training examples through the OpenAI API.
+
+
 
 ```python
 import openai
@@ -52,7 +71,10 @@ print(f"Base model: {job.model}")
 print(f"Status: {job.status}")
 ```
 
+
 Once you have your training file ID, download the training data:
+
+
 
 ```python
 # Download the training file
@@ -67,25 +89,46 @@ with open("training_data.jsonl", "w") as f:
 print("Training data saved to training_data.jsonl")
 ```
 
+
 This training data becomes your seed for recreating the model locally.
+
+
 
 ## Recreating the Fine-Tuned Model Locally
 
+
+
 With your training data extracted, you can now fine-tune an open-source model. The goal is to replicate the behavior of your OpenAI fine-tuned model as closely as possible using local infrastructure.
+
+
 
 ### Choosing Your Base Model
 
+
+
 Select a base model that matches the capabilities of your fine-tuned model:
 
+
+
 - **Llama 2 7B** — Good balance of capability and hardware requirements
+
 - **Mistral 7B** — Strong performance, efficient inference
+
 - **Phi-2** — Smaller, faster, suitable for less complex tasks
+
+
 
 For most use cases, Mistral 7B provides excellent results with reasonable hardware requirements. A single A100 GPU or even a high-end consumer GPU can handle inference.
 
+
+
 ### Fine-Tuning Locally with LoRA
 
+
+
 Low-Rank Adaptation (LoRA) lets you fine-tune efficiently without retraining the entire model:
+
+
 
 ```bash
 # Install required packages
@@ -103,7 +146,10 @@ python train_lora.py \
     --lora_alpha 32
 ```
 
+
 Here is a basic training script:
+
+
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
@@ -150,9 +196,14 @@ training_args = TrainingArguments(
 print("Ready to fine-tune locally")
 ```
 
+
 ## Running Inference Locally
 
+
+
 After fine-tuning completes, you can run inference without any external API calls:
+
+
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -190,13 +241,22 @@ response = generate("Your prompt here")
 print(response)
 ```
 
+
 ## Optimizing for Production
+
+
 
 For production deployment, consider these optimizations:
 
+
+
 - **Quantization** — Use 4-bit or 8-bit quantization to reduce memory requirements
+
 - **vLLM** — Deploy with vLLM for faster inference throughput
+
 - **TensorRT-LLM** — For maximum performance on NVIDIA hardware
+
+
 
 ```python
 # Example: Loading with 4-bit quantization using bitsandbytes
@@ -215,15 +275,27 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 ```
 
+
 ## Limitations and Tradeoffs
+
+
 
 You should know that recreating your fine-tuned model locally will not produce identical results. Differences include:
 
+
+
 - Base model variations between OpenAI's and open-source models
+
 - Training dynamics and hyperparameters differ from OpenAI's internal process
+
 - Dataset formatting and preprocessing may vary
 
+
+
 Test thoroughly to ensure the local model meets your quality requirements before migrating production workloads.
+
+
+
 
 
 ## Related Reading

@@ -12,20 +12,36 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 Cursor AI notepads provide a powerful mechanism for preserving project context between coding sessions. Instead of repeatedly explaining your project structure, coding standards, or architectural decisions every time you open the editor, you can configure notepads that automatically load relevant information. This guide walks through setting up and using notepads effectively.
+
+
 
 ## Understanding Cursor AI Notepads
 
+
+
 Notepads in Cursor AI function as persistent memory containers for your project. They store information that you want the AI to remember across sessions, reducing the need to reexplain context each time you start working. Unlike chat history that disappears or becomes unwieldy, notepads give you structured control over what context persists.
+
+
 
 The notepad system works by storing markdown-formatted content in specific locations within your project. Cursor automatically reads these files when initializing a project context, making the information available to the AI during your coding session. This approach integrates naturally with version control, since notepad files live alongside your code.
 
+
+
 ## Setting Up Project Notepads
+
+
 
 To configure a notepad for your project, create a `.cursornotepad.md` file in your project root. This file serves as the primary context container that Cursor loads automatically. The file uses markdown syntax, allowing you to organize information with headers, lists, and code blocks.
 
+
+
 Create the notepad file with essential project information:
+
+
 
 ```markdown
 # Project Context
@@ -57,13 +73,22 @@ src/
 └── utils/       # Helper functions
 ```
 
+
 This notepad becomes available immediately when you open the project in Cursor. The AI references this context when answering questions, generating code, or providing suggestions.
+
+
 
 ## Creating Multiple Context Files
 
+
+
 For larger projects, consider splitting context across multiple notepad files. Cursor supports loading from multiple sources, allowing you to organize information logically. Common patterns include separating technical architecture from team conventions or creating separate notepads for different code areas.
 
+
+
 Create a `docs/` folder in your project root with specialized notepads:
+
+
 
 ```
 docs/
@@ -72,7 +97,10 @@ docs/
 └── api-conventions.notepad.md
 ```
 
-Reference these files from your main notepad to create a comprehensive context system:
+
+Reference these files from your main notepad to create a context system:
+
+
 
 ```markdown
 # Main Project Notepad
@@ -82,11 +110,18 @@ See [Coding Standards](./docs/coding-standards.notepad.md) for style guidelines.
 See [API Conventions](./docs/api-conventions.notepad.md) for endpoint patterns.
 ```
 
+
 ## Context Template for Different Project Types
+
+
 
 Tailor your notepad content based on project type. A frontend project requires different context than a backend service or full-stack application.
 
+
+
 For a React TypeScript project, include component patterns and state management preferences:
+
+
 
 ```markdown
 # React Project Context
@@ -113,7 +148,10 @@ For a React TypeScript project, include component patterns and state management 
 - Minimum 70% coverage for components
 ```
 
+
 For backend services, emphasize API patterns and data handling:
+
+
 
 ```markdown
 # Backend Project Context
@@ -137,13 +175,22 @@ For backend services, emphasize API patterns and data handling:
 - Use migrations for schema changes
 ```
 
+
 ## Maintaining Notepads Over Time
+
+
 
 Effective notepad management requires periodic updates as projects evolve. Set a reminder to review and update notepad content when significant changes occur, such as migrating to a new library, changing architectural patterns, or onboarding new team members.
 
+
+
 Version control your notepad files alongside your code. This practice ensures that context remains consistent across different development environments and team members benefit from shared understanding. Include notepad files in your repository so new developers automatically receive project context.
 
+
+
 Add notepad updates to your development workflow:
+
+
 
 ```bash
 # When starting a new feature
@@ -157,11 +204,18 @@ Add notepad updates to your development workflow:
 3. Commit notepad changes with feature PR
 ```
 
+
 ## Advanced Notepad Patterns
+
+
 
 For teams using multiple AI assistants or transitioning between tools, maintain context portability by using standard markdown that works across platforms. Avoid Cursor-specific syntax in favor of通用 formatting that transfers cleanly.
 
+
+
 Create a "handbook" notepad that serves as an onboarding guide:
+
+
 
 ```markdown
 # Developer Handbook
@@ -184,11 +238,9 @@ Create a "handbook" notepad that serves as an onboarding guide:
 - Document public APIs
 ```
 
+
 This approach creates a single source of truth that both humans and AI can reference, improving consistency and reducing repetitive questions.
 
-## Conclusion
-
-Configuring Cursor AI notepads transforms how you work with AI-assisted coding. By investing time upfront to document project context, you save effort repeatedly explaining your codebase. Notepads evolve with your project, serving as living documentation that improves over time. Start with a basic notepad covering your project structure and key conventions, then expand as your project grows.
 
 
 ## Related Reading

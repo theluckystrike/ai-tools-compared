@@ -13,40 +13,76 @@ voice-checked: true
 intent-checked: true
 ---
 
+
 Perplexity Pro allows file uploads up to 25 MB per document and 100 files per month. Storage follows a tiered model: Pro Basic includes 10 GB (overage at $0.10/GB/day) and Pro Unlimited includes 50 GB (overage at $0.05/GB/day). Files uploaded for immediate analysis are automatically cleaned up after 7 days unless explicitly saved.
+
+
 
 ## File Upload Limits on Perplexity Pro
 
+
+
 Perplexity Pro imposes specific constraints on file uploads that differ from the free tier. As of 2026, Pro subscribers can upload files up to **25 MB per document** and process up to **100 files per month** by default. This limit applies to individual files across all supported formats.
+
+
 
 The platform accepts several document types for analysis:
 
+
+
 - PDF documents (text-based and scanned with OCR)
+
 - Microsoft Word files (.docx)
+
 - Plain text files (.txt)
+
 - CSV and TSV data files
+
 - JSON files for structured data
+
+
 
 For developers working with large codebases or documentation, these limits are sufficient. A typical 50-page PDF averages 1-3 MB, leaving comfortable headroom. However, technical documentation with embedded images can approach the 25 MB threshold quickly.
 
+
+
 ## Storage Cost Structure
 
-Perplexity Pro uses a tiered storage model based on **usage hours** and **storage retention**:
+
+
+Perplexity Pro uses a tiered storage model based on **usage hours** and storage retention:
+
+
 
 | Tier | Storage Included | Overage Rate |
+
 |------|------------------|--------------|
+
 | Pro Basic | 10 GB | $0.10/GB/day |
+
 | Pro Unlimited | 50 GB | $0.05/GB/day |
+
+
 
 The storage costs apply only to files you choose to keep in your Perplexity workspace for extended periods. Files uploaded for immediate analysis are processed and then cleaned up automatically after 7 days unless explicitly saved.
 
+
+
 For most developers, the base tier provides adequate storage. If you regularly work with large datasets or maintain a knowledge base of documentation, consider the Unlimited plan to avoid unexpected charges.
+
+
 
 ## Practical Examples
 
+
+
 ### Example 1: Analyzing a Technical Specification
 
+
+
 Suppose you have a 15 MB PDF containing API documentation:
+
+
 
 ```python
 # This file is well within limits
@@ -59,9 +95,14 @@ else:
     print("Consider splitting the PDF into smaller chunks")
 ```
 
+
 ### Example 2: Processing Multiple Code Review Documents
 
+
+
 When analyzing multiple files simultaneously, track your monthly usage:
+
+
 
 ```javascript
 // Track monthly uploads to avoid hitting limits
@@ -78,9 +119,14 @@ function uploadDocument(file) {
 }
 ```
 
+
 ### Example 3: Optimizing Large CSV Files
 
+
+
 For data files exceeding limits, consider preprocessing:
+
+
 
 ```bash
 # Split large CSV files before upload
@@ -90,11 +136,18 @@ split -l 50000 large_dataset.csv chunk_
 # After analysis, you can delete the chunks
 ```
 
+
 ## Cost Optimization Strategies
+
+
 
 ### 1. Delete Unused Files Promptly
 
+
+
 Files remain in your workspace until explicitly removed. Schedule monthly cleanup sessions:
+
+
 
 ```python
 import os
@@ -113,17 +166,30 @@ def cleanup_old_files(workspace_path, days=30):
     return removed_count
 ```
 
+
 ### 2. Use Appropriate File Formats
+
+
 
 Text-based PDFs are more efficient than image-scanned documents:
 
+
+
 - Prefer `.txt` or `.md` for code and notes
+
 - Use text-based PDFs over scanned images
+
 - Export Word documents to PDF for smaller file sizes
+
+
 
 ### 3. Use Concurrent Analysis
 
+
+
 Perplexity Pro supports batch processing. Instead of uploading files one-by-one, combine related documents:
+
+
 
 ```python
 # Group related files for batch analysis
@@ -137,9 +203,14 @@ documents = [
 # Each file counts against your monthly limit
 ```
 
+
 ## Integration Considerations for Developers
 
+
+
 When building applications that interface with Perplexity's API, implement proper error handling:
+
+
 
 ```python
 import requests
@@ -168,17 +239,18 @@ def upload_with_retry(file_path, max_retries=3):
             raise e
 ```
 
-## Summary
-
-Perplexity Pro's file upload limits and storage costs are designed for typical developer workflows. The 25 MB per-file limit accommodates most documentation and code files, while the 100 monthly uploads provide sufficient capacity for regular usage. By following the optimization strategies above, you can maintain efficient workflow without unexpected charges.
-
-For teams requiring higher limits, Perplexity offers enterprise plans with custom quotas. Evaluate your actual usage patterns before upgrading to ensure the additional cost aligns with your needs.
 
 ## API Rate Limits for File Operations
 
+
+
 Beyond the user interface limits, Perplexity's API enforces rate limiting on file operations. The current API constraints allow up to **50 requests per minute** for file uploads, with burst allowances of up to 100 requests. This matters when building automated pipelines that process multiple documents.
 
+
+
 Understanding these limits helps when designing batch processing jobs:
+
+
 
 ```python
 import time
@@ -208,16 +280,28 @@ class PerplexityFileUploader:
             return self._upload_file(file_path)
 ```
 
+
 ## Common Error Codes
+
+
 
 When working with file uploads, you may encounter specific error codes:
 
-- **413 Payload Too Large**: File exceeds the 25 MB limit
-- **429 Too Many Requests**: Monthly or rate limit exceeded  
-- **422 Unprocessable Entity**: File format not supported
-- **401 Unauthorized**: Invalid or expired API key
+
+
+- 413 Payload Too Large: File exceeds the 25 MB limit
+
+- 429 Too Many Requests: Monthly or rate limit exceeded 
+
+- 422 Unprocessable Entity: File format not supported
+
+- 401 Unauthorized: Invalid or expired API key
+
+
 
 Handling these errors gracefully in your code prevents workflow disruptions:
+
+
 
 ```python
 def handle_upload_error(response):
@@ -229,6 +313,8 @@ def handle_upload_error(response):
     }
     return error_codes.get(response.status_code, "Unknown error")
 ```
+
+
 
 
 ## Related Reading

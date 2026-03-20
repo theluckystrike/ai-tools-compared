@@ -13,30 +13,56 @@ voice-checked: true
 intent-checked: true
 ---
 
+
 {% raw %}
-Testing your application's behavior when network connectivity fails is critical for delivering robust user experiences. Users frequently encounter offline scenarios—whether they're in airplane mode, experiencing spotty connections, or navigating areas with no service. Playwright's network interception capabilities combined with AI-assisted test generation make this testing approach accessible and efficient.
+
+Testing your application's behavior when network connectivity fails is critical for delivering user experiences. Users frequently encounter offline scenarios—whether they're in airplane mode, experiencing spotty connections, or navigating areas with no service. Playwright's network interception capabilities combined with AI-assisted test generation make this testing approach accessible and efficient.
+
+
 
 ## Understanding Network Interception in Playwright
 
+
+
 Playwright provides powerful APIs to intercept, modify, and mock network requests. The `page.route()` method allows you to intercept requests before they reach the network, while `page.on('request')` and `page.on('response')` listeners enable monitoring of all HTTP traffic. For offline testing specifically, you can block specific domains, abort requests, or serve cached responses.
+
+
 
 The core mechanism involves using route patterns to match URLs and either fulfill them with custom responses or abort them entirely. This approach simulates various network failure scenarios without requiring actual network conditions.
 
+
+
 ## Why Offline Testing Deserves Attention
 
-Applications that fail gracefully during network outages preserve user trust and data integrity. Consider a user filling out a long form who loses connection mid-session—the application should save their progress locally and provide clear feedback. Similarly, offline-first applications like Progressive Web Apps rely heavily on proper handling of network interruptions.
+
+
+Applications that fail gracefully during network outages preserve user trust and data integrity. Consider an user filling out a long form who loses connection mid-session—the application should save their progress locally and provide clear feedback. Similarly, offline-first applications like Progressive Web Apps rely heavily on proper handling of network interruptions.
+
+
 
 Without automated tests covering these scenarios, developers often discover issues only through manual testing or, worse, from user reports. Network interception tests automate this validation, ensuring consistent behavior across code changes.
 
+
+
 ## Generating Tests with AI Assistance
+
+
 
 AI coding assistants can accelerate network interception test creation by understanding your application's structure and generating appropriate test cases. The process involves providing context about your application's network dependencies and specifying the offline scenarios you want to test.
 
+
+
 When prompting an AI assistant, include specifics about which API endpoints your application calls, how it handles errors, and what user-facing messages or UI states should appear when requests fail. This context helps the AI generate more accurate and relevant test code.
+
+
 
 ### Basic Offline Test Structure
 
+
+
 A fundamental offline test intercepts network requests and simulates failure:
+
+
 
 ```javascript
 import { test, expect } from '@playwright/test';
@@ -55,11 +81,18 @@ test('displays offline message when network request fails', async ({ page }) => 
 });
 ```
 
+
 This test blocks all requests, navigates to a page, and verifies the application displays appropriate feedback. The `route.abort('failed')` method simulates a network-level failure.
+
+
 
 ### Testing Specific API Endpoints
 
+
+
 For more granular control, intercept only specific endpoints while allowing others to proceed normally:
+
+
 
 ```javascript
 test('handles API failure gracefully', async ({ page }) => {
@@ -79,13 +112,22 @@ test('handles API failure gracefully', async ({ page }) => {
 });
 ```
 
+
 This approach tests how your application handles specific API failures while maintaining normal functionality for other requests.
+
+
 
 ## Handling Different Failure Types
 
+
+
 Network interception supports various failure scenarios beyond simple aborts. You can simulate timeouts, serve stale cached data, or return custom error responses.
 
+
+
 ### Timeout Simulation
+
+
 
 ```javascript
 await page.route('**/api/search', async (route) => {
@@ -95,7 +137,10 @@ await page.route('**/api/search', async (route) => {
 });
 ```
 
+
 ### Cached Response Fallback
+
+
 
 ```javascript
 const cachedData = { users: [{ id: 1, name: 'Cached User' }] };
@@ -110,9 +155,14 @@ await page.route('**/api/users', async (route) => {
 });
 ```
 
+
 ## Practical Example: E-Commerce Cart Offline Handling
 
+
+
 Consider an e-commerce application where users add items to their cart. Testing offline scenarios ensures purchases aren't lost when connectivity drops:
+
+
 
 ```javascript
 test('preserves cart items during network interruption', async ({ page }) => {
@@ -139,19 +189,34 @@ test('preserves cart items during network interruption', async ({ page }) => {
 });
 ```
 
+
 This test validates that the application maintains cart state locally even when API calls fail, providing a seamless experience when connectivity returns.
+
+
 
 ## Best Practices for AI-Generated Network Tests
 
+
+
 When using AI to generate these tests, consider the following approaches for better results.
+
+
 
 Provide the AI with your application's API contract or documentation. Understanding which endpoints exist and their expected behavior helps generate more accurate interception logic.
 
+
+
 Specify the exact error handling behavior your application implements. Different apps handle network failures differently—some show toast notifications, others display full-page errors, and some retry automatically.
+
+
 
 Include assertions for both the negative case (offline state) and the positive case (successful request). This ensures your application behaves correctly in all conditions.
 
+
+
 Test the recovery flow by simulating a network restoration after failure:
+
+
 
 ```javascript
 test('recovers gracefully when network returns', async ({ page }) => {
@@ -172,19 +237,21 @@ test('recovers gracefully when network returns', async ({ page }) => {
 });
 ```
 
+
 ## Common Pitfalls to Avoid
+
+
 
 Overly broad interception can mask real issues. Rather than blocking all requests, target specific endpoints that your application actually depends on. This provides more realistic test coverage.
 
+
+
 Failing to test the recovery path leaves a gap in your test suite. Users don't stay offline forever—ensure your application handles reconnection gracefully.
+
+
 
 Ignoring timeout scenarios misses important UX considerations. A request that hangs indefinitely creates frustration; proper timeout handling improves perceived performance.
 
-## Conclusion
-
-AI-assisted generation of Playwright network interception tests significantly reduces the effort required to validate offline behavior. By providing clear context about your application's API dependencies and error handling patterns, you can generate comprehensive tests that cover various network failure scenarios. These tests ensure your application provides consistent, reliable experiences regardless of network conditions.
-
-The key lies in specifying exact requirements, testing both failure and recovery scenarios, and maintaining realistic interception patterns that mirror actual user conditions. With proper network interception tests in place, your application will handle offline scenarios professionally, preserving user trust and data integrity.
 
 
 ## Related Reading

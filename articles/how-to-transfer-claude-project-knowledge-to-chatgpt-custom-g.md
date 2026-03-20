@@ -13,25 +13,46 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
+
 
 Export your Claude Project's instructions and uploaded files, then restructure them as a Custom GPT system prompt and knowledge documents. Copy project instructions directly into the GPT's "Instructions" field, convert uploaded reference files into the GPT's knowledge base, and remap conversation starters to match ChatGPT's format. This guide covers the full export-to-import workflow with code examples for automating the conversion.
 
+
+
 ## Understanding the Platform Differences
+
+
 
 Claude Projects store knowledge as files, instructions, and context that the AI can reference during conversations. You typically populate these with project documentation, coding standards, API references, and custom instructions that shape how Claude responds to your queries.
 
+
+
 ChatGPT Custom GPTs work differently. You configure them through a combination of instructions (the system prompt), uploaded knowledge files, and conversation starters. The knowledge becomes part of the GPT's context window and retrieval system, but the structure differs from Claude's file-based approach.
+
+
 
 The key challenge involves converting your Claude Project's accumulated knowledge into a format that works effectively in the Custom GPT environment.
 
+
+
 ## Exporting Your Claude Project Knowledge
+
+
 
 Before you can transfer knowledge, you need to export it from Claude Projects. The process involves several components:
 
+
+
 ### Retrieving Project Instructions
 
+
+
 Your Claude Project likely contains custom instructions that define how the AI behaves. Find these in your project configuration:
+
+
 
 ```
 # claude_project_instructions.md
@@ -40,11 +61,18 @@ Always use type hints, write docstrings, and follow PEP 8.
 When writing async code, prefer asyncio over threading.
 ```
 
+
 Copy these instructions into a text file you can later paste into your Custom GPT's instructions field.
+
+
 
 ### Exporting Knowledge Files
 
+
+
 Claude Projects typically store knowledge in markdown files, text files, or JSON. Identify your key knowledge files:
+
+
 
 ```bash
 # Common locations in a Claude Project
@@ -61,15 +89,26 @@ project/
     └── team-context.md
 ```
 
+
 Gather all these files. You will upload them to your Custom GPT's knowledge base.
+
+
 
 ## Configuring Your Custom GPT
 
+
+
 Now that you have exported your knowledge, set up the Custom GPT to use it effectively.
+
+
 
 ### Setting Instructions
 
+
+
 Paste your Claude Project instructions into the Instructions field of your Custom GPT. Format them clearly:
+
+
 
 ```
 You are an expert software developer specializing in Python and FastAPI.
@@ -88,17 +127,30 @@ When answering questions:
 4. Suggest test cases for critical functions
 ```
 
+
 ### Uploading Knowledge Files
+
+
 
 Upload your exported knowledge files to the Knowledge section. ChatGPT supports markdown, PDF, text, and other document formats. Prioritize files that contain:
 
+
+
 - Project-specific documentation
+
 - Coding standards and conventions
+
 - API documentation
+
 - Architecture decisions
+
 - Team processes and workflows
 
+
+
 For the best results, organize your files logically. A folder structure like this works well:
+
+
 
 ```
 knowledge/
@@ -112,24 +164,44 @@ knowledge/
     └── endpoints.md
 ```
 
+
 ## Preserving Context Through Conversation Design
+
+
 
 Custom GPTs do not maintain persistent context between sessions like Claude Projects do. You compensate for this through careful conversation design.
 
+
+
 ### Creating Effective Conversation Starters
+
+
 
 Conversation starters help users tap into your knowledge immediately:
 
+
+
 - "Help me write a FastAPI endpoint for user authentication"
+
 - "Review my Python code for type safety"
+
 - "Create pytest fixtures for testing database operations"
+
 - "Explain our API error handling approach"
+
+
 
 Each starter should trigger a specific area of your transferred knowledge.
 
+
+
 ### Building Reference Prompts
 
+
+
 Include reference prompts in your instructions that users can invoke:
+
+
 
 ```
 You have access to the following knowledge bases:
@@ -141,11 +213,17 @@ When users ask about code style, refer to coding-standards/
 When users ask about APIs, refer to endpoints.md
 ```
 
+
 ## Migrating Code Analysis Patterns
+
+
 
 If your Claude Project includes code analysis patterns, convert them to Custom GPT instructions:
 
+
+
 **Claude Project pattern:**
+
 ```
 When reviewing code, check for:
 1. Type hint usage
@@ -155,7 +233,9 @@ When reviewing code, check for:
 5. Security considerations
 ```
 
+
 **Custom GPT instruction:**
+
 ```
 When reviewing code, always check these five areas and provide specific feedback:
 1. Type Hints: Are all function parameters and return types annotated?
@@ -165,9 +245,14 @@ When reviewing code, always check these five areas and provide specific feedback
 5. Security: Are inputs validated, credentials handled securely, and SQL queries parameterized?
 ```
 
+
 ## Transferring Prompt Engineering Knowledge
 
+
+
 If you have refined prompts in Claude Projects, adapt them for the Custom GPT format:
+
+
 
 ```python
 # Claude Project prompt file: generate_tests.py
@@ -182,7 +267,10 @@ Requirements:
 """
 ```
 
+
 In your Custom GPT instructions, convert this to:
+
+
 
 ```
 When generating tests:
@@ -193,9 +281,14 @@ When generating tests:
 - Include docstrings explaining each test's purpose
 ```
 
+
 ## Automating the Transfer Process
 
+
+
 For ongoing synchronization between Claude Projects and Custom GPTs, consider a simple script:
+
+
 
 ```python
 #!/usr/bin/env python3
@@ -230,31 +323,59 @@ if __name__ == "__main__":
     export_claude_project('./my-claude-project', './gpt-knowledge')
 ```
 
+
 Run this script periodically to keep your Custom GPT knowledge current with your Claude Project.
+
+
 
 ## Validating Your Transfer
 
+
+
 After configuring your Custom GPT, test it thoroughly:
 
+
+
 1. **Ask questions** that would trigger specific knowledge areas in Claude
+
 2. **Verify responses** reference the correct files and conventions
+
 3. **Check tone and style** matches your original Claude Project instructions
+
 4. **Test edge cases** where knowledge areas might overlap
+
+
 
 Iterate on your instructions based on test results. Custom GPTs often need instruction refinement to match Claude's behavior precisely.
 
+
+
 ## When Custom GPTs Work Well
+
+
 
 Custom GPTs excel at providing consistent responses based on uploaded documentation. They work particularly well for:
 
+
+
 - Team knowledge bases that rarely change
+
 - Coding standards and style guides
+
 - API documentation and usage examples
+
 - Onboarding materials for new team members
+
+
 
 However, Custom GPTs lack Claude Projects' ability to execute code, run tests, or interact with files directly. For tasks requiring execution, you may need to keep using Claude alongside your Custom GPT.
 
+
+
 ---
+
+
+
 
 
 ## Related Reading

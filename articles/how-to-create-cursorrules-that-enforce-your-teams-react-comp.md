@@ -13,29 +13,54 @@ intent-checked: false
 voice-checked: false
 ---
 
+
 {% raw %}
+
 Cursorules are a powerful way to codify your team's React component composition patterns. When configured correctly, they ensure that AI coding assistants generate consistent, maintainable components that align with your architecture. This guide walks you through creating effective Cursorules specifically designed for enforcing React component composition patterns across your team.
+
+
 
 ## Why Component Composition Patterns Matter
 
+
+
 React's composition model gives developers flexibility in how they structure components. However, this flexibility can lead to inconsistency when multiple team members work on the same codebase. Without clear guidelines, you might encounter prop drilling, inconsistent component hierarchies, or mixed patterns for handling shared state.
 
-Cursorules solve this problem by providing AI assistants with explicit instructions about your team's preferred patterns. When an AI understands your composition conventions, it generates code that fits seamlessly into your existing architecture.
+
+
+Cursorules solve this problem by providing AI assistants with explicit instructions about your team's preferred patterns. When an AI understands your composition conventions, it generates code that fits into your existing architecture.
+
+
 
 ## Defining Your Component Composition Rules
 
+
+
 Before writing Cursorules, document your team's composition patterns. Consider these questions:
 
+
+
 - How do you handle prop drilling versus context?
+
 - What naming conventions do you use for compound components?
+
 - When do you prefer render props over hooks?
+
 - How do you structure component exports?
+
+
 
 Once you have clear answers, translate them into Cursorules that AI assistants can follow.
 
+
+
 ## Creating Effective Cursorules
 
+
+
 Here is an example of Cursorules designed to enforce compound component patterns:
+
+
 
 ```
 # Cursorules for React Component Composition
@@ -76,9 +101,14 @@ Each component should follow this structure:
 - Don't create HOCs - prefer custom hooks
 ```
 
+
 ## Enforcing Container-Presenter Pattern
 
+
+
 Many teams adopt the container-presenter pattern for separating logic from presentation. Here is how to encode this in Cursorules:
+
+
 
 ```
 ## Container-Presenter Separation
@@ -119,9 +149,14 @@ function UserListPresenter({ users }) {
 }
 ```
 
+
 ## Handling Component Composition in Custom Hooks
 
+
+
 Custom hooks have become the preferred way to share logic in React applications. Your Cursorules should specify how AI assistants should create and use hooks:
+
+
 
 ```
 ## Custom Hooks Guidelines
@@ -135,28 +170,52 @@ Example return pattern:
 const { data, loading, error, refetch } = useUserData(userId);
 ```
 
+
 ## Testing Your Cursorules
+
+
 
 After writing your Cursorules, test them by generating sample components. Ask your AI assistant to create a component following your rules, then verify:
 
+
+
 - Does it use compound components correctly?
+
 - Are naming conventions followed?
+
 - Is the file organization consistent?
+
 - Are forbidden patterns avoided?
+
+
 
 Iterate on your Cursorules based on what the AI generates versus what you expect.
 
+
+
 ## Sharing Cursorules Across Your Team
+
+
 
 Place your Cursorules file in your project root as `.cursorrules` or `.cursor/rules`. Ensure every team member uses the same file by:
 
+
+
 - Adding it to version control
+
 - Documenting the location in your contribution guidelines
+
 - Reviewing it during onboarding new developers
+
+
 
 Regular updates to your Cursorules should follow your standard code review process.
 
+
+
 ## Example: Complete Cursorules File
+
+
 
 ```
 # Project React Composition Guidelines
@@ -188,12 +247,19 @@ All AI-generated code should follow these guidelines.
 
 ```tsx
 interface ButtonProps {
-  variant?: 'primary' | 'secondary' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
-  isDisabled?: boolean;
-  onClick?: () => void;
-  children: React.ReactNode;
+
+ variant?: 'primary' | 'secondary' | 'danger';
+
+ size?: 'sm' | 'md' | 'lg';
+
+ isDisabled?: boolean;
+
+ onClick?: () => void;
+
+ children: React.ReactNode;
+
 }
+
 ```
 
 ## Import Order
@@ -212,11 +278,4 @@ interface ButtonProps {
 - Types: PascalCase (UserTypes.ts)
 ```
 
-## Conclusion
 
-Effective Cursorules transform how AI assistants interact with your codebase. By clearly defining your React component composition patterns, you ensure consistent, maintainable code across your entire team. Start with the patterns that cause the most friction in your current workflow, and expand from there.
-
-Remember to review and update your Cursorules regularly as your team's patterns evolve. The investment in well-crafted rules pays dividends in code consistency and developer productivity.
-{% endraw %}
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)

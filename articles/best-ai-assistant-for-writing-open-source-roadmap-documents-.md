@@ -14,37 +14,70 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 Open source maintainers often face the challenge of communicating project direction clearly. Turning a collection of GitHub issues, labels, and milestones into a coherent roadmap document takes significant time. AI assistants have emerged as valuable tools for automating this process, helping maintainers transform raw issue data into structured, readable roadmap documentation.
+
+
 
 This guide evaluates the best AI assistants for writing open source roadmap documents from issue and milestone data in 2026, with practical workflows you can implement immediately.
 
+
+
 ## Why AI Assistants Transform Roadmap Documentation
+
+
 
 Writing roadmap documents manually requires reviewing dozens or hundreds of issues, identifying themes, prioritizing features, and crafting clear explanations. This process becomes repetitive, especially for active projects with frequent contributions.
 
+
+
 AI assistants handle this workload effectively by:
+
 - Analyzing issue titles, descriptions, and labels to identify themes
+
 - Grouping related issues into logical roadmap sections
+
 - Generating readable summaries from complex issue threads
+
 - Suggesting timelines based on milestone data
+
 - Maintaining consistent tone across documentation
+
+
 
 The key advantage is processing large volumes of issues quickly while producing structured output that human maintainers can refine.
 
+
+
 ## Top AI Assistants for Roadmap Generation
+
+
 
 ### 1. Claude (Anthropic)
 
+
+
 Claude excels at understanding GitHub issue structures and transforming them into coherent narrative documents. Its large context window allows processing hundreds of issues in a single conversation, making it suitable for larger projects.
 
+
+
 **Strengths:**
+
 - Processes extensive issue data without losing context
+
 - Understands GitHub markdown and issue formatting
+
 - Generates well-structured sections with clear headings
+
 - Adapts tone to match project style
 
+
+
 **Workflow example:**
+
+
 
 ```python
 import requests
@@ -93,19 +126,34 @@ response = client.messages.create(
 print(response.content[0].text)
 ```
 
+
 Claude produces organized roadmap sections with thematic groupings and priority indicators, requiring minimal editing.
+
+
 
 ### 2. ChatGPT (OpenAI)
 
+
+
 ChatGPT offers fast processing and good integration options through APIs. It's particularly effective for generating standardized roadmap templates that you can customize for specific projects.
 
+
+
 **Strengths:**
+
 - Quick turnaround for roadmap drafts
+
 - Good API integration for automated workflows
+
 - Strong template generation capabilities
+
 - Handles multiple output formats (Markdown, HTML, JSON)
 
+
+
 **Workflow example:**
+
+
 
 ```python
 import openai
@@ -151,17 +199,30 @@ response = openai.chat.completions.create(
 print(response.choices[0].message.content)
 ```
 
+
 ### 3. Gemini (Google)
+
+
 
 Gemini performs well when processing mixed data sources, making it useful if your roadmap pulls from GitHub issues, project boards, and other tools simultaneously.
 
+
+
 **Strengths:**
+
 - Excellent multimodal processing
+
 - Good for combining multiple data sources
+
 - Strong Google Workspace integration
+
 - Fast processing for large issue sets
 
+
+
 **Workflow example:**
+
+
 
 ```python
 import google.generativeai as genai
@@ -198,9 +259,14 @@ response = model.generate_content(roadmap_prompt)
 print(response.text)
 ```
 
+
 ## Practical Workflow: Automated Roadmap Generation
 
+
+
 Combining these AI tools with GitHub's API creates a powerful automated pipeline:
+
+
 
 ```python
 import requests
@@ -259,24 +325,35 @@ roadmap = generate_roadmap("your-org", "your-repo", 1, openai_client)
 print(roadmap)
 ```
 
+
 This script fetches milestone issues, categorizes them by label, and generates a formatted roadmap document. You can schedule it to run automatically or trigger it when milestones update.
+
+
 
 ## Choosing the Right AI Assistant
 
+
+
 Consider these factors when selecting an AI tool for roadmap generation:
 
+
+
 | Factor | Claude | ChatGPT | Gemini |
+
 |--------|--------|---------|--------|
+
 | Context window | Largest | Moderate | Large |
+
 | Speed | Fast | Very fast | Fast |
+
 | API cost | Moderate | Competitive | Competitive |
+
 | GitHub integration | Good | Good | Moderate |
+
+
 
 For projects with hundreds of issues, Claude's larger context window provides advantages. For quick templates and cost-effective processing, ChatGPT works well. Gemini suits teams already using Google Workspace.
 
-## Conclusion
-
-AI assistants significantly reduce the time required to transform GitHub issue and milestone data into clear roadmap documentation. The workflows shown here demonstrate practical implementations you can adapt for your projects. Start with the approach that matches your existing toolchain and project scale.
 
 
 ## Related Reading

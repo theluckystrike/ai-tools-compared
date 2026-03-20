@@ -13,19 +13,34 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling. Review AI code for unhandled edge cases, SQL injection risks, and architectural consistency. Allocate 30% of effort to generation, 70% to review and refinement. This guide covers effective workflows for combining AI generation with manual code review.
+
+
 
 ## The Role Division: What AI Does Well
 
+
+
 AI excels at generating repetitive boilerplate, scaffolding project structures, and creating test cases. It can rapidly produce code based on specifications, saving hours of manual typing. However, AI lacks understanding of your specific business context, security requirements, and architectural decisions.
+
+
 
 The most effective approach assigns clear responsibilities: let AI handle the mechanical work while you focus on logic validation, security review, and architectural consistency.
 
+
+
 ## Practical Workflow for AI + Manual Review
+
+
 
 ### Step 1: Generate with Clear Context
 
+
+
 When prompting AI for code, provide sufficient context. Include relevant file paths, existing patterns in your codebase, and specific requirements:
+
+
 
 ```python
 # Instead of:
@@ -37,9 +52,14 @@ Follow our existing patterns in models/user.py. Use Pydantic v2
 for validation. Return 422 on validation failure with error details."
 ```
 
+
 ### Step 2: Automated Pre-Check Before Human Review
 
+
+
 Run basic checks before requesting manual review:
+
+
 
 ```bash
 # Run linter and formatter
@@ -53,21 +73,38 @@ python -m mypy generated_code.py
 pytest generated_code_test.py
 ```
 
+
 This catches syntax errors, style violations, and basic type issues automatically.
+
+
 
 ### Step 3: Structured Manual Review Checklist
 
+
+
 When reviewing AI-generated code, use a systematic approach:
 
-1. **Logic verification**: Does the code actually solve the stated problem?
-2. **Edge cases**: What happens with null values, empty inputs, or unexpected data?
-3. **Security**: Are there injection risks, exposed credentials, or permission issues?
-4. **Performance**: Are there obvious N+1 queries, missing indexes, or inefficient loops?
-5. **Dependencies**: Are imported libraries necessary? Any version conflicts?
+
+
+1. Logic verification: Does the code actually solve the stated problem?
+
+2. Edge cases: What happens with null values, empty inputs, or unexpected data?
+
+3. Security: Are there injection risks, exposed credentials, or permission issues?
+
+4. Performance: Are there obvious N+1 queries, missing indexes, or inefficient loops?
+
+5. Dependencies: Are imported libraries necessary? Any version conflicts?
+
+
 
 ### Example: Reviewing AI-Generated API Endpoint
 
+
+
 Consider this AI-generated FastAPI endpoint:
+
+
 
 ```python
 @router.post("/users")
@@ -76,7 +113,10 @@ def create_user(user_data: UserCreate):
     return user
 ```
 
+
 Manual review should catch several issues:
+
+
 
 ```python
 # After review - corrected version
@@ -95,13 +135,22 @@ def create_user(
     return user
 ```
 
+
 The review added authentication, duplicate checking, proper HTTP status codes, and response modeling.
+
+
 
 ## Configuring AI Tools for Better Output
 
+
+
 Most AI coding tools support configuration that improves output quality:
 
+
+
 ### Cursor Rules Example
+
+
 
 ```json
 {
@@ -114,9 +163,14 @@ Most AI coding tools support configuration that improves output quality:
 }
 ```
 
+
 ### Claude Code Project Context
 
+
+
 Set up project-specific context to guide AI:
+
+
 
 ```
 /project
@@ -127,38 +181,72 @@ Set up project-specific context to guide AI:
     /legacy              # Note: Avoid modifying this folder
 ```
 
+
 This prevents AI from generating code that conflicts with existing architecture.
+
+
 
 ## Balancing Speed and Quality
 
+
+
 The goal is maintaining velocity while ensuring correctness. Consider these thresholds:
 
-- **Quick prototypes**: Generate + syntax check only
-- **Production features**: Generate + automated tests + manual review
-- **Security-critical code**: Generate + security scan + senior developer review
-- **Legacy modifications**: Manual-only to preserve system stability
+
+
+- Quick prototypes: Generate + syntax check only
+
+- Production features: Generate + automated tests + manual review
+
+- Security-critical code: Generate + security scan + senior developer review
+
+- Legacy modifications: Manual-only to preserve system stability
+
+
 
 ## Common Pitfalls to Avoid
 
+
+
 ### Trusting AI Without Verification
+
+
 
 Never deploy AI-generated code directly to production without review. Even experienced developers miss issues; AI can confidently produce incorrect code.
 
+
+
 ### Over-Reviewing Simple Code
+
+
 
 Spending 30 minutes reviewing a generated test file wastes time. Apply proportional review effort based on code complexity and impact.
 
+
+
 ### Ignoring AI Limitations
 
+
+
 AI struggles with:
+
 - Domain-specific business logic
-- Security-sensitive operations  
+
+- Security-sensitive operations 
+
 - Performance optimization for specific workloads
+
 - Understanding your team's existing patterns
+
+
 
 ## Measuring Success
 
+
+
 Track these metrics to evaluate your workflow:
+
+
 
 ```python
 # Track review findings per code source
@@ -169,9 +257,14 @@ review_stats = {
 # AI-generated code has higher issue density, justifying review effort
 ```
 
+
 ### Time-to-Deployment Tracking
 
+
+
 Measure the total time from code generation to deployment:
+
+
 
 ```python
 # Track different stages
@@ -185,11 +278,9 @@ task_timeline = {
 # Compare against purely manual development
 ```
 
+
 Compare these metrics against purely manual development times to quantify AI's value.
 
-## Summary
-
-Combining AI code generation with manual review maximizes both speed and quality. Use AI for boilerplate, scaffolding, and test generation. Apply manual review focused on logic, security, and architecture. Configure your AI tools with project-specific context. Maintain velocity by adjusting review depth based on code criticality. Track your metrics to continuously improve the process and demonstrate value to stakeholders.
 
 
 ## Related Reading

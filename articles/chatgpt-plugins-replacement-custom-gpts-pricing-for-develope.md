@@ -13,37 +13,70 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 OpenAI's transition from plugins to Custom GPTs represents a significant shift in how developers extend ChatGPT's capabilities. If you built integrations using the plugins system, understanding this transition and the current pricing model helps you plan your development strategy for 2026.
+
+
 
 ## From Plugins to Custom GPTs
 
+
+
 The plugins system allowed external services to integrate with ChatGPT, enabling capabilities like web browsing, code execution, and third-party API connections. However, OpenAI deprecated this system in favor of Custom GPTs, which offer a more streamlined approach to extending ChatGPT functionality.
+
+
 
 Custom GPTs provide several advantages over the older plugins system. They allow you to bundle instructions, knowledge bases, and actions into a single configurable entity. The configuration happens through a visual interface or the Assistant API, reducing the boilerplate code required for basic integrations.
 
+
+
 ## Understanding Custom GPTs Pricing
+
+
 
 The pricing for Custom GPTs involves two distinct components: the underlying API usage and any additional features you enable.
 
+
+
 ### API-Based Pricing
+
+
 
 Custom GPTs run on OpenAI's API infrastructure, which means you pay for token usage. The rates depend on which model powers your GPT:
 
+
+
 | Model | Input (per 1M tokens) | Output (per 1M tokens) |
+
 |-------|----------------------|----------------------|
+
 | GPT-4o | $2.50 | $10.00 |
+
 | GPT-4o-mini | $0.15 | $0.60 |
+
 | GPT-4 Turbo | $10.00 | $30.00 |
+
+
 
 When you interact with a Custom GPT, each message consumes input tokens (your prompt plus conversation history) and generates output tokens (the model's response). The total cost depends on your conversation length and the model you select.
 
+
+
 ### GPT Store and Monetization
+
+
 
 OpenAI introduced the GPT Store where developers can publish their Custom GPTs. Some developers monetize their GPTs through various programs. The specific revenue-sharing terms depend on OpenAI's current policies and your location.
 
+
+
 ## Building a Custom GPT: Practical Example
 
+
+
 Creating a Custom GPT involves defining instructions and optionally uploading knowledge files or configuring actions. Here is how you can create one programmatically using the Assistant API:
+
+
 
 ```python
 from openai import OpenAI
@@ -80,19 +113,34 @@ assistant = client.beta.assistants.create(
 print(f"Created Custom GPT with ID: {assistant.id}")
 ```
 
+
 This code creates a Custom GPT configured for code review tasks. You can then interact with it using the standard chat completions API.
+
+
 
 ## Estimating Your Monthly Costs
 
+
+
 Calculating Custom GPT costs requires estimating your expected usage. Consider these factors:
 
-**Conversation Volume**: How many messages will users send daily? Multiply by the average tokens per message and the number of days in your billing period.
 
-**Context Length**: Longer conversation histories increase input token costs. Implement strategies to summarize or truncate history when needed.
 
-**Model Selection**: Using GPT-4o-mini instead of GPT-4o reduces costs by approximately 94% for input and 98% for output tokens.
+Conversation Volume: How many messages will users send daily? Multiply by the average tokens per message and the number of days in your billing period.
+
+
+
+Context Length: Longer conversation histories increase input token costs. Implement strategies to summarize or truncate history when needed.
+
+
+
+Model Selection: Using GPT-4o-mini instead of GPT-4o reduces costs by approximately 94% for input and 98% for output tokens.
+
+
 
 Here is a simple cost estimation function:
+
+
 
 ```python
 def estimate_monthly_cost(
@@ -129,17 +177,30 @@ cost = estimate_monthly_cost(
 print(f"Estimated monthly cost: ${cost}")
 ```
 
+
 This estimation helps you budget before deploying your Custom GPT.
+
+
 
 ## Cost Optimization Strategies
 
+
+
 Several approaches reduce Custom GPT expenses without sacrificing functionality.
 
-**Model Selection**: Reserve GPT-4o for complex reasoning tasks. Route simple queries to GPT-4o-mini, which handles many standard use cases at a fraction of the cost.
 
-**Prompt Optimization**: Concise prompts reduce input token costs. Remove unnecessary context and use clear, direct language.
 
-**Caching Responses**: Implement caching for repeated queries. Store responses for identical or similar prompts and serve cached results when applicable.
+Model Selection: Reserve GPT-4o for complex reasoning tasks. Route simple queries to GPT-4o-mini, which handles many standard use cases at a fraction of the cost.
+
+
+
+Prompt Optimization: Concise prompts reduce input token costs. Remove unnecessary context and use clear, direct language.
+
+
+
+Caching Responses: Implement caching for repeated queries. Store responses for identical or similar prompts and serve cached results when applicable.
+
+
 
 ```python
 import hashlib
@@ -165,17 +226,17 @@ def cache_response(redis_client, prompt: str, response: str, ttl_seconds: int = 
     redis_client.setex(key, ttl_seconds, json.dumps(response))
 ```
 
+
 ## Migration Considerations
+
+
 
 If you previously built plugins, migrating to Custom GPTs requires adjusting your approach. Plugins allowed server-side execution and complex multi-step workflows. Custom GPTs handle most scenarios within the chat interface, but you may need to restructure workflows that relied on specific plugin behaviors.
 
+
+
 Test your migrated Custom GPTs thoroughly before deploying to production. Pay special attention to any actions that previously required plugin-specific capabilities.
 
-## Conclusion
-
-Custom GPTs provide a more accessible way to extend ChatGPT compared to the legacy plugins system. The pricing model is straightforward—pay for API tokens based on your chosen model and usage volume. For most developer use cases, GPT-4o-mini offers the best balance between capability and cost.
-
-Start with the free tier for testing, estimate your costs using the provided formulas, and optimize as you scale. The transition from plugins to Custom GPTs simplifies deployment while maintaining the extensibility that developers need.
 
 
 ## Related Reading

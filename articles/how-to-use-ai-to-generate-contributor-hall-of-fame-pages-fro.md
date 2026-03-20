@@ -10,50 +10,87 @@ categories: [guides]
 tags: [tools]
 ---
 
+
 {% raw %}
+
 {%- include why-choose-ai-contributor-hall-of-fame.html -%}
 
-Recognizing contributors is essential for open source projects. A contributor hall of fame showcases the people who have invested time and effort into making your project successful. Instead of manually updating these pages, you can leverage AI to analyze your git history and automatically generate attribution data.
+
+
+Recognizing contributors is essential for open source projects. A contributor hall of fame showcases the people who have invested time and effort into making your project successful. Instead of manually updating these pages, you can use AI to analyze your git history and automatically generate attribution data.
+
+
 
 This guide walks you through extracting contributor data from git and using AI to structure and present it as a polished hall of fame page.
 
+
+
 ## Extracting Contributor Data from Git
+
+
 
 The first step involves gathering raw contributor statistics from your repository. Git provides several commands that extract commit authorship information useful for building a contributor database.
 
+
+
 ### Basic Contributor Statistics
 
+
+
 Run this command to get a list of contributors sorted by commit count:
+
+
 
 ```bash
 git shortlog -sne --all
 ```
 
+
 This outputs each contributor's email and the number of commits they've made. For more detailed data including commit dates and message summaries, use:
+
+
 
 ```bash
 git log --all --format='%an|%ae|%ad|%s' --date=short | sort
 ```
 
+
 The output includes author name, email, date, and commit message. You'll want to parse this data into a structured format for AI processing.
+
+
 
 ### Generating JSON Data for AI Processing
 
+
+
 Create a script to export your git data into JSON:
+
+
 
 ```bash
 git log --all --pretty=format:'{"author":"%an","email":"%ae","date":"%ad","message":"%s"}' --date=short | jq -s .
 ```
 
+
 This produces a JSON array containing every commit in your repository. Save this output to a file for AI analysis.
+
+
 
 ## Using AI to Analyze and Structure Contributor Data
 
+
+
 With your git data exported, the next step involves using AI to process and enrich this information. You can prompt AI tools to transform raw commit data into meaningful contributor profiles.
+
+
 
 ### Crafting the Right Prompt
 
+
+
 When working with AI to generate contributor profiles, provide clear context about what you want extracted:
+
+
 
 ```
 Analyze this git commit history and create contributor profiles that include:
@@ -65,9 +102,14 @@ Analyze this git commit history and create contributor profiles that include:
 Return the results as a JSON array with contributor objects.
 ```
 
+
 ### Processing Large Repositories
 
+
+
 For repositories with extensive histories, consider preprocessing the data before feeding it to AI. Group commits by contributor and calculate summary statistics:
+
+
 
 ```python
 import json
@@ -99,15 +141,26 @@ for email, data in contributors.items():
 print(json.dumps(contributor_stats, indent=2))
 ```
 
+
 This preprocessing reduces the amount of data AI needs to process and produces more consistent results.
+
+
 
 ## Generating the Hall of Fame Page
 
+
+
 Once AI has processed your contributor data, you can generate the actual hall of fame page. The approach depends on your static site generator or web framework.
+
+
 
 ### Jekyll Implementation
 
+
+
 If you use Jekyll, create a data file from your AI-generated results:
+
+
 
 ```yaml
 # _data/contributors.yml
@@ -122,7 +175,10 @@ If you use Jekyll, create a data file from your AI-generated results:
     - "Performance optimizations"
 ```
 
+
 Then create a layout that displays this data:
+
+
 
 ```html
 <div class="contributor-grid">
@@ -144,9 +200,14 @@ Then create a layout that displays this data:
 </div>
 ```
 
+
 ### Adding AI-Generated Descriptions
 
+
+
 AI excels at generating personalized descriptions for each contributor. After processing commit data, ask AI to create short bios based on contribution patterns:
+
+
 
 ```
 For each contributor below, write a 2-3 sentence description 
@@ -160,11 +221,18 @@ Focus on:
 - Their impact on the project
 ```
 
+
 Integrate these AI-generated descriptions into your contributor cards for a more personal touch.
+
+
 
 ## Automating Updates
 
+
+
 To keep your hall of fame current without manual intervention, set up automated data refreshes. A GitHub Actions workflow can regenerate contributor data on a schedule:
+
+
 
 ```yaml
 name: Update Contributors
@@ -194,25 +262,34 @@ jobs:
           git commit -m "Update contributor data" || exit 0
 ```
 
+
 This automation ensures your hall of fame reflects current contributor activity without manual maintenance.
+
+
 
 ## Best Practices for AI-Generated Contributor Pages
 
+
+
 When using AI to generate hall of fame content, keep these considerations in mind:
+
+
 
 **Verify accuracy** - AI may occasionally misattribute commits or misread dates. Review generated data before publishing.
 
+
+
 **Handle name collisions** - Multiple contributors might use similar names or emails. Add logic to detect and resolve duplicates.
+
+
 
 **Respect privacy** - Some contributors prefer not to be listed publicly. Add an opt-out mechanism or exclusion list to your generation process.
 
+
+
 **Include context** - Raw commit counts don't tell the whole story. Use AI to identify non-code contributions like documentation, issue triage, and community support.
 
-## Conclusion
 
-AI significantly reduces the manual effort required to maintain contributor recognition pages. By extracting git history, processing it with AI, and integrating the results into your site generator, you can create dynamic hall of fame pages that automatically stay current.
-
-Start with simple commit statistics and progressively add AI-generated insights as you refine your process. Your contributors will appreciate seeing their efforts recognized and accurately represented.
 
 ## Related Reading
 

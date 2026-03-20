@@ -15,35 +15,68 @@ voice-checked: true
 {% raw %}
 
 
+
+
+
 Proc macros remain one of Rust's most powerful features, enabling code generation at compile time, custom derive implementations, and DSL creation. But how well do modern AI coding tools handle this advanced Rust feature? I tested several leading AI assistants with various macro tasks to find out.
+
+
 
 ## Testing Methodology
 
+
+
 I evaluated four major AI coding tools: Claude (via Cursor), GitHub Copilot, Gemini, and GPT-4. Each tool was given three macro-related tasks of increasing complexity:
 
+
+
 1. Simple declarative macro generation
+
 2. Attribute macro for derive implementation
+
 3. Full procedural macro for custom derive
+
+
 
 I then compiled the generated code with Rust 1.78 and checked for errors. The results reveal significant variation in macro generation capability.
 
+
+
 ## Test Results at a Glance
 
+
+
 | Tool | Declarative Macros | Attribute Macros | Proc Macros | Overall Score |
+
 |------|-------------------|------------------|-------------|---------------|
+
 | Claude | 95% | 85% | 70% | 83% |
+
 | GPT-4 | 90% | 75% | 55% | 73% |
+
 | GitHub Copilot | 85% | 60% | 40% | 62% |
+
 | Gemini | 70% | 50% | 30% | 50% |
+
+
 
 ## Declarative Macro Generation
 
+
+
 Declarative macros (`macro_rules!`) are the most common form and generally handled well by all tools. However, quality varies.
 
+
+
 **Prompt given to AI tools:**
+
 > Write a Rust macro that creates getter methods for struct fields. It should take a struct and generate getter methods for each field.
 
+
+
 ### Claude's Output
+
+
 
 ```rust
 macro_rules! getters {
@@ -57,7 +90,10 @@ macro_rules! getters {
 }
 ```
 
+
 This works but has a limitation—it hardcodes `&str` return type. A better version handles multiple types:
+
+
 
 ```rust
 macro_rules! getters {
@@ -71,11 +107,18 @@ macro_rules! getters {
 }
 ```
 
+
 Claude attempted the simpler version first, then refined when prompted for generic support. The iterative approach worked well.
+
+
 
 ### GitHub Copilot's Output
 
+
+
 Copilot generated a similar macro but with subtle issues in the repetition pattern:
+
+
 
 ```rust
 macro_rules! getters {
@@ -89,18 +132,32 @@ macro_rules! getters {
 }
 ```
 
+
 The input syntax is awkward and the return type still hardcoded. Copilot struggles with macro repetition rules compared to other tasks.
+
+
 
 ## Attribute Macro Generation
 
+
+
 Attribute macros (`#[...]`) proved more challenging. These require understanding the `proc_macro` crate and the `TokenStream` manipulation API.
 
+
+
 **Test prompt:**
+
 > Create a `#[debug_display]` attribute macro that implements `fmt::Debug` and `fmt::Display` for a struct using its fields.
+
+
 
 ### Claude's Attempt
 
+
+
 Claude produced a working solution:
+
+
 
 ```rust
 use proc_macro::TokenStream;
@@ -133,11 +190,18 @@ pub fn debug_display(_attr: TokenStream, item: TokenStream) -> TokenStream {
 }
 ```
 
+
 This compiles and works. Claude correctly used `quote!` for code generation and understood the `syn` crate's API. However, the repetition syntax had a minor bug—the loop needed adjustment.
+
+
 
 ### GPT-4's Attempt
 
+
+
 GPT-4 generated the basic structure but missed the `syn` crate integration:
+
+
 
 ```rust
 #[proc_macro_attribute]
@@ -148,15 +212,26 @@ pub fn debug_display(attr: TokenStream, item: TokenStream) -> TokenStream {
 }
 ```
 
+
 The output was skeletal. GPT-4 understands Rust but struggles with the proc macro ecosystem's specific APIs.
+
+
 
 ## Procedural Macro for Custom Derive
 
+
+
 The hardest test: a full custom derive implementing `Serialize` for a struct. This requires generating code that implements a trait.
+
+
 
 ### Claude's Solution
 
+
+
 Claude produced functional code:
+
+
 
 ```rust
 use proc_macro::TokenStream;
@@ -197,11 +272,18 @@ pub fn derive_serialize(input: TokenStream) -> TokenStream {
 }
 ```
 
+
 This compiles and correctly implements serialization. The key was using `$(#field_ids),*` for repetition.
+
+
 
 ### Copilot's Struggles
 
+
+
 Copilot produced:
+
+
 
 ```rust
 #[proc_macro_derive(Serialize)]
@@ -211,35 +293,66 @@ pub fn derive_serialize(item: TokenStream) -> TokenStream {
 }
 ```
 
+
 It provided only a stub. Procedural macros are clearly outside Copilot's strong suit.
+
+
 
 ## Key Findings
 
+
+
 **1. Claude excels at macro generation.** It understands the `proc_macro`, `syn`, and `quote` ecosystem. It generates idiomatic code that follows Rust best practices.
+
+
 
 **2. All tools struggle with repetition patterns.** The `$()*` and `$()* ,*` syntax in declarative macros trips up AI models. Expect to iterate and refine.
 
+
+
 **3. Context matters significantly.** Providing existing code context improves macro generation by 30-40%. Blank-slate macro generation often misses important details.
+
+
 
 **4. Proc macro generation requires specific knowledge.** Models trained on general Rust code haven't seen as many proc macro examples. Results vary wildly.
 
+
+
 ## Practical Recommendations
+
+
 
 For developers working with macros:
 
+
+
 1. **Use Claude for proc macros** — It has the best understanding of the `syn`/`quote` ecosystem
+
 2. **Iterate with prompts** — Start simple, then refine with specific type requirements
+
 3. **Provide context** — Include existing macros in your codebase as reference
+
 4. **Verify generated code** — Always compile and test macro-generated code
+
+
 
 ## Best Practices When Working with AI-Generated Macros
 
+
+
 When using AI to help with macros, structure your prompts effectively:
 
+
+
 - Specify exact types and lifetimes needed
+
 - Include the Rust version you're targeting
+
 - Show examples of similar macros in your codebase
+
 - Request compilation with specific error handling
+
+
 
 ```rust
 // Good prompt structure:
@@ -248,12 +361,6 @@ macro_rules! my_macro {
     ($name:ident: String, $value:expr) => { ... };
 }
 ```
-
-## Conclusion
-
-AI tools can generate Rust macros, but capability varies significantly. Claude handles macro generation best, especially for procedural macros. GitHub Copilot works for simple declarative macros but fails at more complex tasks. Gemini currently lags behind for this specific use case.
-
-For production macro code, expect to iterate on AI-generated output. The macro system remains one of Rust's more advanced features, and AI assistance is best treated as a starting point rather than final code.
 
 
 ## Related Reading

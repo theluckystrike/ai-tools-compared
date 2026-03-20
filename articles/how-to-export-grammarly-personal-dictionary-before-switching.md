@@ -13,33 +13,59 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Export your Grammarly personal dictionary by locating the local SQLite database on Windows (`%APPDATA%\Grammarly\GrammarlyAppData\userdictionary\`) or macOS (`~/Library/Application Support/Grammarly/`), then extracting the word list with a Python script or SQLite viewer. For browser extension users, pull dictionary data from Local Storage via Developer Tools. Once exported, you can import your custom words into Claude, VS Code, Neovim, or any other tool that supports custom dictionaries.
+
+
 
 ## Why Your Personal Dictionary Matters
 
+
+
 Your Grammarly personal dictionary contains words that the tool has learned to recognize as correct in your writing context. These might include:
 
+
+
 - Technical acronyms specific to your industry
+
 - Company names and product names you frequently use
+
 - Specialized terminology from your field
+
 - Custom spellings you prefer
+
 - Names of people, places, or projects
+
+
 
 When you stop using Grammarly, all these custom entries vanish unless you export them first. The good news is that Grammarly does provide ways to access your dictionary data, though the methods require some technical steps.
 
+
+
 ## Method 1: Export via Grammarly Desktop Application
+
+
 
 The Grammarly desktop application for Windows and macOS stores your personal dictionary locally. Here is how to find and export it.
 
+
+
 ### On Windows
 
+
+
 Your personal dictionary is stored in an SQLite database. Navigate to:
+
+
 
 ```
 %APPDATA%\Grammarly\GrammarlyAppData\userdictionary\
 ```
 
+
 You will find a file named something like `userdictionary.db`. You can open this file with any SQLite viewer. Use this Python script to extract your words:
+
+
 
 ```python
 import sqlite3
@@ -80,15 +106,23 @@ else:
     print(f"Dictionary database not found at: {db_path}")
 ```
 
+
 ### On macOS
 
+
+
 The database location differs on macOS:
+
+
 
 ```
 ~/Library/Application Support/Grammarly/GrammarlyAppData/userdictionary/
 ```
 
+
 Use the same Python script with the adjusted path:
+
+
 
 ```python
 import os
@@ -98,21 +132,38 @@ db_path = os.path.expanduser(
 )
 ```
 
+
 ## Method 2: Browser Extension Dictionary Export
+
+
 
 If you primarily use the Grammarly browser extension, your dictionary syncs to Grammarly's servers. You can access it through the web application or by inspecting browser storage.
 
+
+
 ### Using Browser Developer Tools
+
+
 
 Open the browser where you have Grammarly installed, then:
 
+
+
 1. Go to any text field (or grammarly.com)
+
 2. Open Developer Tools (F12 or Cmd+Option+I)
+
 3. Navigate to the Application tab
+
 4. Expand Local Storage > chrome-extension://
+
 5. Look for entries containing "dictionary" or "personal"
 
+
+
 You may find JSON data with your custom words. Extract and format them:
+
+
 
 ```javascript
 // Run this in the browser console on grammarly.com
@@ -132,13 +183,22 @@ dictionaryKeys.forEach(key => {
 });
 ```
 
+
 ## Method 3: Manual Word List Recovery
+
+
 
 If other methods fail, you can rebuild your dictionary systematically. This takes more time but works reliably.
 
+
+
 ### Track Words from Your Writing
 
+
+
 Create a script that extracts unique words from your documents and identify which ones you added to Grammarly:
+
+
 
 ```python
 import os
@@ -171,15 +231,26 @@ for word, count in word_counts.most_common(50):
     print(f"  {word}: {count}")
 ```
 
+
 This gives you a list of frequently used words, making it easier to remember which ones you added to Grammarly.
+
+
 
 ## Importing Words Into Claude and Other Tools
 
+
+
 Once you have your exported word list, you can import it into your new AI assistant or text editor.
+
+
 
 ### For Claude (via Claude Code)
 
+
+
 Create a custom words file that Claude can reference. Add entries to your project configuration:
+
+
 
 ```bash
 # Create a .claude-words file in your project
@@ -199,9 +270,14 @@ cat > .claude-custom-words << 'EOF'
 EOF
 ```
 
+
 ### For VS Code with Spell Checker
 
+
+
 If you use VS Code with a spell-checking extension, import your words:
+
+
 
 ```json
 // In your VS Code settings.json
@@ -217,9 +293,14 @@ If you use VS Code with a spell-checking extension, import your words:
 }
 ```
 
+
 ### For Text Editors (Neovim, Emacs)
 
+
+
 Add to your spell checker configuration:
+
+
 
 ```lua
 -- For Neovim (add to init.lua or spell file)
@@ -230,7 +311,10 @@ vim.cmd([[
 ]])
 ```
 
+
 Then create the file with one word per line:
+
+
 
 ```
 AcmeCorp
@@ -240,9 +324,14 @@ CI/CD
 PostgreSQL
 ```
 
+
 ## Automating the Export Process
 
+
+
 For ongoing use, consider a script that backs up your dictionary regularly:
+
+
 
 ```bash
 #!/bin/bash
@@ -266,13 +355,9 @@ fi
 echo "Backup complete: $DEST_DIR"
 ```
 
+
 Run this weekly or monthly to keep your dictionary safe.
 
-## Summary
-
-Exporting your Grammarly personal dictionary requires accessing local storage files or browser data, then converting them to a portable format. The desktop application method works best for Windows and Mac users with the app installed. Browser-based methods work for extension users. Once exported, you can import your custom words into VS Code, Neovim, Claude, or any other tool that supports custom dictionaries.
-
-Taking a few minutes to export your dictionary prevents losing months or years of custom word entries. The scripts above provide multiple approaches depending on your setup, and automating the backup ensures you never lose your custom terms again.
 
 
 ## Related Reading

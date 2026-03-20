@@ -27,23 +27,42 @@ intent-checked: true
 voice-checked: true
 ---
 {% raw %}
+
 Automate semantic versioning with Claude Code by configuring version detection rules that identify version bumps from commit messages and code changes. Claude Code analyzes commits and pull request labels to determine whether changes warrant MAJOR, MINOR, or PATCH version increments according to semantic versioning standards, eliminating manual version bumps and ensuring consistent releases.
 
-Semantic versioning (SemVer) has become the standard for version numbering in modern software development. When combined with Claude Code's powerful automation capabilities, you can create a robust version management system that eliminates manual version bumps and ensures consistent releases.
+
+
+Semantic versioning (SemVer) has become the standard for version numbering in modern software development. When combined with Claude Code's powerful automation capabilities, you can create a version management system that eliminates manual version bumps and ensures consistent releases.
+
+
 
 ## Understanding Semantic Versioning Basics
 
+
+
 Semantic versioning follows the format `MAJOR.MINOR.PATCH`:
 
+
+
 - **MAJOR** version when you make incompatible API changes
+
 - **MINOR** version when you add functionality in a backward-compatible manner
+
 - **PATCH** version when you make backward-compatible bug fixes
+
+
 
 Claude Code can help automate the detection of which version component should be bumped based on your commit messages, pull request labels, and code changes.
 
+
+
 ## Setting Up Claude Code for Version Management
 
+
+
 The first step in automating semantic versioning with Claude Code is to create a `CLAUDE.md` file that defines your versioning rules and expectations.
+
+
 
 ```markdown
 # Project Versioning Rules
@@ -62,9 +81,14 @@ The first step in automating semantic versioning with Claude Code is to create a
 - Use present tense for descriptions
 ```
 
+
 ## Automated Version Detection Patterns
 
-Claude Code can analyze your codebase to automatically determine the appropriate version bump. Here's a comprehensive pattern for version detection:
+
+
+Claude Code can analyze your codebase to automatically determine the appropriate version bump. Here's a pattern for version detection:
+
+
 
 ```python
 # version_detector.py
@@ -100,9 +124,14 @@ def detect_version_bump(commit_messages: list[str]) -> str:
     return "none"
 ```
 
+
 ## Creating a Claude Code Command for Version Bumps
 
+
+
 You can create custom Claude Code commands that handle the entire version bump process:
+
+
 
 ```bash
 # .claude/commands/bump-version.sh
@@ -127,11 +156,18 @@ else
 fi
 ```
 
+
 ## Integrating with Release Workflows
+
+
 
 Here's how to integrate semantic versioning automation with your release workflow:
 
+
+
 ### GitHub Actions Integration
+
+
 
 ```yaml
 name: Semantic Version Release
@@ -166,7 +202,10 @@ jobs:
           release_name: Release v${{ steps.version.outputs.new_version }}
 ```
 
+
 ### Automated Changelog Generation
+
+
 
 ```javascript
 // scripts/generate-changelog.js
@@ -194,23 +233,42 @@ function generateChangelog(commits, version) {
 }
 ```
 
+
 ## Best Practices for Version Automation
+
+
 
 When implementing semantic versioning automation with Claude Code, follow these best practices:
 
-1. **Define Clear Commit Conventions**: Use Conventional Commits format to make automatic version detection reliable.
 
-2. **Maintain a Single Source of Truth**: Store version in one place (package.json, pyproject.toml) and reference it consistently.
 
-3. **Validate Before Bumping**: Always verify that the proposed version bump matches your actual changes.
+1. Define Clear Commit Conventions: Use Conventional Commits format to make automatic version detection reliable.
 
-4. **Include Rollback Procedures**: Have a plan for reverting version bumps if issues are discovered.
 
-5. **Test Automation Thoroughly**: Run your version detection logic against historical commits to ensure accuracy.
+
+2. Maintain a Single Source of Truth: Store version in one place (package.json, pyproject.toml) and reference it consistently.
+
+
+
+3. Validate Before Bumping: Always verify that the proposed version bump matches your actual changes.
+
+
+
+4. Include Rollback Procedures: Have a plan for reverting version bumps if issues are discovered.
+
+
+
+5. Test Automation Thoroughly: Run your version detection logic against historical commits to ensure accuracy.
+
+
 
 ## Using Claude Code to Enforce Versioning Rules
 
+
+
 Claude Code can actively enforce versioning rules during development:
+
+
 
 ```markdown
 # Development Context for Claude Code
@@ -229,12 +287,6 @@ Claude Code can actively enforce versioning rules during development:
 4. Update version in appropriate files
 ```
 
-## Conclusion
-
-Automating semantic versioning with Claude Code transforms version management from a manual, error-prone process into a reliable, automated workflow. By defining clear rules in CLAUDE.md, creating detection scripts, and integrating with your CI/CD pipeline, you can ensure consistent and accurate version bumps for every release.
-
-The key is to establish conventions early, use tools to enforce them, and continuously refine your automation based on real-world usage patterns.
-{% endraw %}
 
 ## Related Reading
 

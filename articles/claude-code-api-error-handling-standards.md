@@ -15,45 +15,87 @@ voice-checked: false
 ---
 
 
+
+
 {% raw %}
+
 Claude Code helps developers implement consistent, user-friendly error handling across APIs. This guide covers the essential standards for designing error responses that improve debugging, enhance client experience, and maintain API reliability.
+
+
 
 ## Why API Error Handling Matters
 
+
+
 Effective error handling serves three critical purposes. First, it helps clients understand what went wrong and how to recover, reducing support burden. Second, it provides debugging information for developers during development and production. Third, it maintains API reliability by preventing cascading failures and providing clear status signals.
+
+
 
 Poor error handling leads to frustrated users, difficult debugging sessions, and fragile integrations. By implementing standards from the start, you create APIs that are easier to maintain and consume.
 
+
+
 ## HTTP Status Code Standards
+
+
 
 Use HTTP status codes consistently to indicate the general category of the response.
 
+
+
 ### Success Codes (2xx)
 
+
+
 - **200 OK** - Request succeeded for GET, PUT, or DELETE
+
 - **201 Created** - New resource successfully created
+
 - **204 No Content** - Successful deletion or empty response for PUT
+
+
 
 ### Client Error Codes (4xx)
 
+
+
 - **400 Bad Request** - Invalid request syntax or parameters
+
 - **401 Unauthorized** - Missing or invalid authentication
+
 - **403 Forbidden** - Authenticated but not authorized
+
 - **404 Not Found** - Resource does not exist
+
 - **409 Conflict** - Resource state conflicts (duplicate, versioning issue)
+
 - **422 Unprocessable Entity** - Valid syntax but semantic errors
+
 - **429 Too Many Requests** - Rate limit exceeded
+
+
 
 ### Server Error Codes (5xx)
 
+
+
 - **500 Internal Server Error** - Unexpected server failure
+
 - **502 Bad Gateway** - Upstream service unavailable
+
 - **503 Service Unavailable** - Temporary overload or maintenance
+
 - **504 Gateway Timeout** - Upstream timeout
+
+
 
 ## Error Response Format
 
+
+
 Structure all error responses consistently. Use JSON for error bodies.
+
+
 
 ```json
 {
@@ -70,7 +112,10 @@ Structure all error responses consistently. Use JSON for error bodies.
 }
 ```
 
+
 Define standard error codes that your API uses:
+
+
 
 ```python
 # Example error code enum
@@ -98,9 +143,14 @@ class ErrorCode:
     SERVICE_UNAVAILABLE = "SERVICE_UNAVAILABLE"
 ```
 
+
 ## Implementing Error Handling with Claude Code
 
+
+
 Claude Code can help you implement robust error handling in multiple languages. Here is a Python FastAPI example:
+
+
 
 ```python
 from fastapi import FastAPI, Request, HTTPException
@@ -153,11 +203,18 @@ async def add_request_id(request: Request, call_next):
     return response
 ```
 
+
 ## Error Handling Best Practices
+
+
 
 ### Always Include Request IDs
 
+
+
 Every error response should include a request ID that correlates to server logs. This enables debugging without requiring users to share sensitive information.
+
+
 
 ```python
 # Middleware to add request ID to all responses
@@ -171,9 +228,14 @@ async def add_request_id(request: Request, call_next):
     return response
 ```
 
+
 ### Sanitize Error Messages
 
+
+
 Never expose internal implementation details in error messages to clients. Instead, log detailed information server-side and return generic messages to clients.
+
+
 
 ```python
 # Bad - exposing internal details
@@ -190,9 +252,14 @@ raise APIException(
 )
 ```
 
+
 ### Provide Actionable Messages
 
+
+
 Error messages should tell users what they can do to resolve the issue.
+
+
 
 ```python
 # Bad
@@ -202,9 +269,14 @@ Error messages should tell users what they can do to resolve the issue.
 {"message": "Email address is invalid", "details": {"field": "email", "hint": "Use format: user@example.com"}}
 ```
 
+
 ### Use Rate Limiting Headers
 
+
+
 When returning 429 responses, include headers that inform clients about rate limits.
+
+
 
 ```python
 response = JSONResponse(
@@ -219,9 +291,14 @@ response = JSONResponse(
 )
 ```
 
+
 ## Testing Error Handling
 
+
+
 Write tests that verify your error responses match the expected format:
+
+
 
 ```python
 import pytest
@@ -248,20 +325,4 @@ def test_validation_error_includes_field_details(client):
     assert "email" in data["error"]["details"]["field_errors"]
 ```
 
-## Summary
 
-Implementing consistent API error handling standards improves developer experience and reduces debugging time. Key principles to follow:
-
-- Use HTTP status codes correctly to indicate error categories
-- Structure all error responses consistently with codes, messages, and details
-- Include request IDs for correlation and debugging
-- Sanitize error messages to avoid exposing internals
-- Provide actionable messages that help clients recover
-- Test error handling as thoroughly as happy paths
-
-Claude Code can assist in implementing these patterns across different languages and frameworks, ensuring your APIs handle errors consistently and professionally.
-
----
-
-Built by theluckystrike — More at https://zovo.one
-{% endraw %}

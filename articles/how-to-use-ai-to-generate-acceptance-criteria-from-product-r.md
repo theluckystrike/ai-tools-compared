@@ -12,16 +12,28 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 Generating acceptance criteria from product requirement documents is a repetitive but critical task in software development. When you're working with vague requirements, turning them into testable conditions requires careful analysis. AI tools can accelerate this process significantly, helping you extract measurable criteria from natural language documents.
+
+
 
 This guide shows you practical approaches to generate acceptance criteria using AI, with concrete examples you can apply immediately.
 
+
+
 ## Understanding the Input: Product Requirement Documents
+
+
 
 Product requirement documents (PRDs) come in various formats—Google Docs, Confluence pages, Notion files, or plain text. Most contain a mix of user stories, feature descriptions, business rules, and technical constraints. The challenge is extracting unambiguous, testable conditions from these documents.
 
+
+
 A typical PRD entry might look like this:
+
+
 
 ```
 User Authentication Feature
@@ -32,11 +44,18 @@ User Authentication Feature
 - Session expires after 30 minutes of inactivity
 ```
 
+
 From this brief description, you need to generate specific acceptance criteria that QA can test and developers can implement.
+
+
 
 ## Prompting AI to Extract Acceptance Criteria
 
+
+
 The key to getting useful output is providing clear context. Here's a structured approach:
+
+
 
 ```markdown
 Extract acceptance criteria from the following product requirement. 
@@ -48,9 +67,13 @@ Requirements:
 [Your PRD content here]
 ```
 
+
 ### Example: Authentication Feature
 
+
+
 Input PRD:
+
 ```
 Registration System
 New users create accounts using email address. Password requirements:
@@ -59,23 +82,42 @@ special character. System sends verification email with link. User must
 click link within 24 hours to activate account.
 ```
 
+
 AI-generated acceptance criteria:
 
+
+
 | ID | Condition | Verification |
+
 |----|-----------|--------------|
+
 | AC-1 | Email field accepts valid email format | Submit form with test@, test@test, test@test.test |
+
 | AC-2 | Email field rejects invalid formats | Submit with no @, missing TLD, spaces |
+
 | AC-3 | Password minimum 8 characters | Submit 7-character password, verify rejection |
+
 | AC-4 | Password requires uppercase | Submit "password1!" verify rejection |
+
 | AC-5 | Password requires number | Submit "Password!" verify rejection |
+
 | AC-6 | Password requires special character | Submit "Password1" verify rejection |
+
 | AC-7 | Verification email sent | Check inbox after registration |
+
 | AC-8 | Link expires after 24 hours | Click link after 24h, verify failure |
+
 | AC-9 | Account inactive until verified | Attempt login before verification |
+
+
 
 ## Automating with CLI Tools
 
+
+
 For teams processing multiple requirements, you can build a simple CLI tool using the OpenAI API or Claude API:
+
+
 
 ```python
 #!/usr/bin/env python3
@@ -113,15 +155,23 @@ if __name__ == "__main__":
     print(json.dumps(criteria, indent=2))
 ```
 
+
 Run it with:
+
+
 
 ```bash
 python ac_generator.py "Your PRD text here" "your-api-key"
 ```
 
+
 ## Handling Complex Business Rules
 
+
+
 Real-world requirements often contain nested logic. Here's how to handle them:
+
+
 
 ```
 E-commerce Discount Rules:
@@ -132,7 +182,10 @@ E-commerce Discount Rules:
 - Free shipping on orders over $50
 ```
 
+
 A good prompt for this scenario:
+
+
 
 ```
 Break down the following business rules into individual test cases.
@@ -142,19 +195,34 @@ Rules:
 [Your business rules]
 ```
 
+
 This produces testable scenarios like:
 
+
+
 | Input | Expected | Notes |
+
 |-------|----------|-------|
+
 | $100 order, non-member | 10% discount | Threshold met |
+
 | $200 order, non-member | 15% discount | Higher tier applies |
+
 | $200 order, member | 20% discount | Capped at max |
+
 | $49 order | No discount, shipping cost | Below threshold |
+
 | $100 order, member | 15% discount | 10%+5%, capped |
+
+
 
 ## Integration with Test Management
 
+
+
 For automated test generation, output criteria in a format your framework understands:
+
+
 
 ```python
 # Pytest-compatible output
@@ -178,7 +246,10 @@ ACCEPTANCE_CRITERIA = {
 }
 ```
 
+
 You can then generate pytest tests programmatically:
+
+
 
 ```python
 import pytest
@@ -195,33 +266,49 @@ def generate_tests():
             globals()[test_name] = test_wrapper
 ```
 
+
 ## Best Practices for Better Results
+
+
 
 **Provide context in your prompts.** Include information about your tech stack, testing framework, and any existing conventions. This helps AI generate criteria that fit your workflow.
 
+
+
 **Review and refine.** AI output is a starting point. Always have a developer or QA engineer review generated criteria for completeness and accuracy.
+
+
 
 **Iterate on prompts.** If output quality is poor, adjust your prompt with more specific instructions. Include examples of good acceptance criteria in your prompt.
 
+
+
 **Maintain a criteria library.** Store successful AI-generated criteria as reference material. This improves future outputs and creates documentation.
+
+
 
 ## Common Pitfalls to Avoid
 
+
+
 Generated criteria sometimes miss implicit requirements. Always verify:
 
+
+
 - Error handling scenarios
+
 - Edge cases (empty input, maximum values, special characters)
+
 - Performance requirements (if mentioned)
+
 - Security considerations
+
 - Accessibility requirements
+
+
 
 AI excels at extracting explicit requirements but may miss unstated assumptions. Manual review remains essential.
 
-## Conclusion
-
-Using AI to generate acceptance criteria from product requirement documents saves significant time on a repetitive task. The key is structuring your input clearly, providing appropriate context, and always reviewing the output. Start with simple requirements, build confidence in the approach, then scale to handle more complex documents.
-
-The workflow integrates well with existing development processes—generate criteria, review them in your team, then use them to drive test development. This creates a traceable link between requirements and verification, improving overall product quality.
 
 
 ## Related Reading

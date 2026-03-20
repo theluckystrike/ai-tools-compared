@@ -14,27 +14,50 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Use Claude API cheaply by batching requests, using claude-3-5-haiku for simple tasks, and caching context across requests. This guide shows the cost optimization techniques that keep API bills under control for small projects.
+
+
 
 ## Understanding Claude API Pricing
 
+
+
 Claude API uses a token-based pricing model. You pay for both input tokens (your prompts) and output tokens (Claude's responses). The pricing varies by model—Haiku is the cheapest, Sonnet offers the best value for most use cases, and Opus is the most capable but expensive.
+
+
 
 For small projects, the key is selecting the right model for each task and optimizing your prompts to minimize token usage without sacrificing quality.
 
+
+
 ## Choosing the Right Model
+
+
 
 The model you choose directly impacts your costs. Here is a practical approach:
 
+
+
 - **Haiku** ( cheapest): Use for simple tasks like formatting, basic transformations, or quick classification. It costs roughly $0.20 per million input tokens.
+
 - **Sonnet** (balanced): The sweet spot for most coding tasks. It understands context well and produces high-quality code. Priced around $3.00 per million input tokens.
+
 - **Opus** (most capable): Reserve for complex reasoning, architecture design, or when you need the best possible output. Costs around $15.00 per million input tokens.
+
+
 
 For small coding projects, you will find that Sonnet provides the best balance between capability and cost.
 
+
+
 ## Practical Code Implementation
 
+
+
 Here is a basic Python implementation to call the Claude API:
+
+
 
 ```python
 import anthropic
@@ -53,13 +76,22 @@ def ask_claude(prompt: str, model: str = "claude-sonnet-4-20250514") -> str:
     return message.content[0].text
 ```
 
+
 This minimal implementation works for simple queries. However, you can optimize further by reusing the client and implementing proper error handling.
+
+
 
 ## Cost-Saving Strategies
 
+
+
 ### 1. Cache Common Responses
 
+
+
 If your application frequently asks similar questions, implement caching:
+
+
 
 ```python
 import hashlib
@@ -78,11 +110,18 @@ def cached_ask_claude(prompt: str, model: str = "claude-sonnet-4-20250514") -> s
     return response
 ```
 
+
 This approach eliminates redundant API calls for repeated queries.
+
+
 
 ### 2. Limit Context with Prompt Engineering
 
+
+
 Instead of dumping entire files, extract only the relevant sections:
+
+
 
 ```python
 # Instead of this:
@@ -92,11 +131,18 @@ prompt = f"Review this entire codebase:\n{full_codebase}"
 prompt = f"Review this function for bugs:\n{relevant_function}"
 ```
 
+
 This reduces input tokens significantly while often producing better results.
+
+
 
 ### 3. Use System Prompts Efficiently
 
+
+
 Rather than repeating instructions in every request, use a well-crafted system prompt:
+
+
 
 ```python
 def ask_claude_code_review(prompt: str) -> str:
@@ -113,9 +159,14 @@ Keep responses concise and actionable."""
     return message.content[0].text
 ```
 
+
 ### 4. Set Appropriate max_tokens
 
+
+
 Always set `max_tokens` to the minimum needed for your use case. If you expect a 50-word explanation, setting `max_tokens=100` wastes tokens when the response is short.
+
+
 
 ```python
 message = client.messages.create(
@@ -125,9 +176,14 @@ message = client.messages.create(
 )
 ```
 
+
 ## Real-World Example: Code Review Bot
 
+
+
 Here is a practical example of a cost-effective code review bot:
+
+
 
 ```python
 import anthropic
@@ -163,11 +219,18 @@ Diff:
         return message.content[0].text
 ```
 
+
 This bot limits output tokens and focuses the model on specific concerns, keeping costs minimal while still providing useful feedback.
+
+
 
 ## Monitoring and Budgeting
 
+
+
 Implement basic cost tracking to stay within budget:
+
+
 
 ```python
 class CostTracker:
@@ -189,12 +252,6 @@ class CostTracker:
             "avg_cost_per_request": f"${self.total_spent / max(self.requests, 1):.4f}"
         }
 ```
-
-## Summary
-
-Using Claude API economically for small coding projects comes down to three principles: choose the right model for each task, optimize your prompts to minimize unnecessary context, and implement caching for repeated queries. With these strategies, you can build AI-powered features into small projects without breaking the bank.
-
-Start with Sonnet for most tasks, use Haiku for simple operations, and reserve Opus for complex problems. Monitor your usage and adjust based on actual costs. Most small projects can run effectively on just a few dollars per month.
 
 
 ## Related Reading

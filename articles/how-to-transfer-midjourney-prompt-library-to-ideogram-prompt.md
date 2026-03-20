@@ -13,22 +13,40 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 Transfer your Midjourney prompt library to Ideogram by stripping Midjourney-specific parameters (`--ar`, `--stylize`, `--v`), mapping aspect ratios to Ideogram's preset options, and converting style values into natural language descriptions. Use the Python converter scripts below to batch-process your entire prompt collection from a CSV export. Text-heavy prompts for logos and typography will often produce better results on Ideogram without additional modification.
+
+
 
 ## Understanding the Platform Differences
 
+
+
 Midjourney and Ideogram take fundamentally different approaches to image generation. Midjourney uses a Discord-based command system with parameters like `--ar` for aspect ratio, `--stylize` for artistic strength, and `--v` for model version. Prompts are space-separated with double-dash parameters appended at the end.
+
+
 
 Ideogram operates through a web interface and API, accepting natural language prompts without special parameter syntax. It handles aspect ratios and style through separate dropdown selections rather than prompt modifications. This means your Midjourney prompts require structural changes before Ideogram can produce comparable results.
 
+
+
 The most significant difference lies in text rendering. If your Midjourney prompts contain text elements for logos, signage, or typography-focused designs, Ideogram will likely produce superior results without additional prompting tricks. This alone makes prompt migration valuable for many use cases.
+
+
 
 ## Converting Midjourney Parameters to Ideogram Format
 
+
+
 ### Aspect Ratio Conversion
 
+
+
 Midjourney uses the `--ar` parameter followed by width:height values. Ideogram uses preset aspect ratio options. Here's a conversion function:
+
+
 
 ```python
 def convert_aspect_ratio(mj_param):
@@ -47,9 +65,14 @@ def convert_aspect_ratio(mj_param):
     return ratio_map.get(mj_param.lower(), "square")
 ```
 
+
 ### Style Parameter Mapping
 
+
+
 Midjourney's `--stylize` parameter (0-1000) controls artistic interpretation. Ideogram handles this differently through prompt language. Higher stylize values in Midjourney mean more artistic freedom. For Ideogram, you express this through descriptive adjectives:
+
+
 
 ```python
 def convert_stylize_to_prompt(stylize_value):
@@ -62,9 +85,14 @@ def convert_stylize_to_prompt(stylize_value):
         return "highly stylized, expressive, artistic freedom"
 ```
 
+
 ### Version Parameter Handling
 
+
+
 Midjourney uses `--v` or `--version` to select model versions. Ideogram automatically uses its latest model. Remove version parameters when converting:
+
+
 
 ```python
 def strip_mj_version_params(prompt):
@@ -77,9 +105,14 @@ def strip_mj_version_params(prompt):
     return cleaned.strip()
 ```
 
+
 ## Building a Complete Prompt Converter
 
-Here's a comprehensive Python script that converts Midjourney prompts to Ideogram format:
+
+
+Here's a Python script that converts Midjourney prompts to Ideogram format:
+
+
 
 ```python
 import re
@@ -163,7 +196,10 @@ result = converter.convert(mj_prompt)
 print(json.dumps(result, indent=2))
 ```
 
+
 This produces:
+
+
 
 ```json
 {
@@ -172,11 +208,18 @@ This produces:
 }
 ```
 
+
 ## Handling Complex Prompt Patterns
+
+
 
 ### Multi-Prompt Segments
 
+
+
 Midjourney allows weighted prompts using `::` syntax. Ideogram doesn't support this directly. You need to decide how to handle weighted elements:
+
+
 
 ```python
 def handle_weighted_segments(prompt):
@@ -198,9 +241,14 @@ def handle_weighted_segments(prompt):
     return prompt
 ```
 
+
 ### Seed and Chaos Parameters
 
+
+
 Midjourney's `--seed` and `--chaos` parameters have no direct Ideogram equivalents. The converter should simply strip these:
+
+
 
 ```python
 def strip_non_transferable_params(prompt):
@@ -222,9 +270,14 @@ def strip_non_transferable_params(prompt):
     return prompt.strip()
 ```
 
+
 ## Batch Processing Your Prompt Library
 
+
+
 For large prompt collections, process them in batches:
+
+
 
 ```python
 import csv
@@ -259,21 +312,25 @@ count = batch_convert_library('midjourney_prompts.csv', 'ideogram_prompts.csv')
 print(f"Converted {count} prompts")
 ```
 
+
 ## Limitations and Manual Review
+
+
 
 Automated conversion handles approximately 80% of prompts effectively. However, certain Midjourney features require manual intervention:
 
-- **Style references (--sref)**: These cannot be automatically converted
-- **Image prompts (--iw with URLs)**: Ideogram handles images differently
-- **Complex weighted prompts**: May need manual consolidation
+
+
+- Style references (--sref): These cannot be automatically converted
+
+- Image prompts (--iw with URLs): Ideogram handles images differently
+
+- Complex weighted prompts: May need manual consolidation
+
+
 
 After running your conversion, review prompts containing these elements manually to ensure the converted version maintains your intended output.
 
-## Summary
-
-Converting Midjourney prompts to Ideogram format requires removing parameter syntax, mapping aspect ratios to presets, and translating style parameters into natural language descriptions. The Python scripts in this guide provide a foundation you can customize for your specific prompt library structure. The investment in building a conversion pipeline pays off quickly if you maintain large prompt collections across multiple platforms.
-
-For text-heavy designs, Ideogram often produces superior results compared to Midjourney, making prompt migration worthwhile even if you continue using both platforms for different use cases.
 
 
 ## Related Reading

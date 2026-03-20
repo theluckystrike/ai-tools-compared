@@ -14,24 +14,44 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 {%- include why-choose-custom-instructions.html -%}
+
+
 
 When integrating AI into your development workflow, understanding how to control API consumption becomes essential. Custom instructions let you define behavior boundaries that AI tools follow consistently. This guide shows you how to write custom instructions specifically designed to make AI respect your API rate limit patterns.
 
+
+
 ## Why Rate Limit Awareness Matters
+
+
 
 API rate limits exist to prevent abuse and ensure service availability. When AI tools generate code without understanding your rate limits, they can trigger throttling errors, cause your application to fail, or consume more quota than intended. Writing custom instructions that explicitly define your rate limit constraints helps AI generate code that operates within those boundaries.
 
+
+
 Most AI providers implement rate limits in different ways. OpenAI uses tokens-per-minute and requests-per-minute limits. Anthropic enforces tokens-per-minute constraints. Third-party APIs like GitHub, Stripe, and various SaaS platforms each have their own throttling mechanisms. Your custom instructions should reflect the specific limits of the APIs you use.
+
+
 
 ## Writing Effective Rate Limit Instructions
 
+
+
 Effective custom instructions combine specificity with clarity. Instead of vague requests like "be careful with API calls," provide concrete numbers and patterns the AI can follow.
+
+
 
 ### Specify Exact Limits
 
+
+
 Always state your rate limits in concrete terms:
+
+
 
 ```
 My application has these constraints:
@@ -41,11 +61,18 @@ My application has these constraints:
 - Implement exponential backoff when receiving 429 responses
 ```
 
+
 This approach gives the AI clear boundaries to work within. When generating code, the AI will naturally incorporate batching, caching, and throttling mechanisms that respect these constraints.
+
+
 
 ### Define Error Handling Behavior
 
+
+
 Include specific instructions for how to handle rate limit errors:
+
+
 
 ```
 When receiving rate limit errors (HTTP 429), implement:
@@ -55,11 +82,18 @@ When receiving rate limit errors (HTTP 429), implement:
 4. Graceful degradation with cached responses when possible
 ```
 
+
 The AI will then generate code with proper error handling rather than assuming successful responses.
+
+
 
 ### Request Optimized Patterns
 
+
+
 Ask for specific optimization techniques that align with your rate limits:
+
+
 
 ```
 Generate code that:
@@ -69,11 +103,18 @@ Generate code that:
 - Caches responses locally with appropriate TTL values
 ```
 
+
 ## Practical Examples
+
+
 
 ### Example 1: OpenAI API Integration
 
+
+
 Without custom instructions, an AI might generate code that makes individual calls for each item in a loop:
+
+
 
 ```python
 # Inefficient approach the AI might default to
@@ -85,7 +126,10 @@ for item in items:
     results.append(response.choices[0].message.content)
 ```
 
+
 With proper custom instructions, the AI generates batching logic:
+
+
 
 ```python
 # Optimized approach respecting rate limits
@@ -130,9 +174,14 @@ class RateLimitedClient:
         )
 ```
 
+
 ### Example 2: Multi-API Coordination
 
+
+
 When your application calls multiple APIs, custom instructions help coordinate usage:
+
+
 
 ```
 My application calls three APIs simultaneously:
@@ -146,7 +195,10 @@ Generate code that:
 - Monitors individual API usage and throttles proactively
 ```
 
+
 The resulting code implements proper coordination:
+
+
 
 ```python
 import asyncio
@@ -191,22 +243,41 @@ class MultiAPICoordinator:
             await asyncio.sleep(wait)
 ```
 
+
 ## Testing Your Custom Instructions
+
+
 
 After writing custom instructions, verify they work as intended. Create test scenarios that stress your rate limits and observe whether the AI-generated code handles them correctly.
 
+
+
 Run tests that simulate rate limit responses. Check whether exponential backoff activates properly. Verify that batching reduces the number of requests. Monitor your actual API usage to confirm the generated code respects your defined constraints.
+
+
 
 ## Refining Your Instructions
 
+
+
 Custom instructions require iteration. Start with basic limits, generate code, then observe the results. Add more specific guidance based on gaps you discover. Common refinements include:
 
+
+
 - Adding specific retry strategies for different error codes
+
 - Defining fallback behavior when limits are reached
+
 - Specifying logging requirements for debugging rate limit issues
+
 - Including circuit breaker thresholds for sustained failures
 
+
+
 The more context you provide about your specific environment and constraints, the more accurately the AI generates code that respects your rate limit patterns.
+
+
+
 
 
 ## Related Reading

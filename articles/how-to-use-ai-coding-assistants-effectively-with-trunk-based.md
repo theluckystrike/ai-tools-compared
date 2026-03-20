@@ -13,21 +13,38 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Use AI with trunk-based development by managing short-lived branches, maintaining proper context across small commits, and using AI to generate safe, incremental changes. This guide shows the workflow that combines AI acceleration with trunk-based development practices.
 
-Trunk-based development emphasizes short-lived feature branches and frequent integration with the main branch. When combined with AI coding assistants, this workflow creates unique opportunities—and challenges. This guide shows you how to leverage AI tools effectively while maintaining the fast feedback loops that trunk-based development requires.
+
+
+Trunk-based development emphasizes short-lived feature branches and frequent integration with the main branch. When combined with AI coding assistants, this workflow creates unique opportunities—and challenges. This guide shows you how to use AI tools effectively while maintaining the fast feedback loops that trunk-based development requires.
+
+
 
 ## Understanding the Trunk-Based Workflow
 
+
+
 Trunk-based development typically involves developers creating short-lived branches that live for hours or a few days at most. Multiple developers commit to these branches multiple times per day, with frequent merges back to main. This contrasts with Git Flow models where branches might persist for weeks.
+
+
 
 The key constraint: **your branch must stay mergeable**. Long gaps between integration cause painful conflicts. AI assistants can help you move faster, but they can also generate large, complex changes that complicate merging if not managed properly.
 
+
+
 ## Strategic AI Integration Points
+
+
 
 ### 1. Use AI for Code Generation, Not Architecture Decisions
 
+
+
 AI assistants excel at generating boilerplate, implementing well-defined functions, and converting specifications to code. They're less reliable for architectural choices that affect multiple files or require understanding of your entire codebase.
+
+
 
 ```python
 # Effective AI prompt for trunk-based workflow
@@ -43,14 +60,24 @@ from lib/db.py. Keep it in a single file for easy review.
 """
 ```
 
+
 This prompt produces focused, reviewable code rather than sprawling changes across your entire project.
+
+
 
 ### 2. Keep AI-Generated Changes Bounded
 
+
+
 When working in trunk-based development, smaller commits win. Train yourself to request focused changes:
 
-- **Bad**: "Refactor the entire authentication system"
-- **Good**: "Add password reset endpoint to auth.py"
+
+
+- Bad: "Refactor the entire authentication system"
+
+- Good: "Add password reset endpoint to auth.py"
+
+
 
 ```bash
 # Example workflow: generate, review, commit quickly
@@ -62,9 +89,14 @@ git push origin feature/password-reset
 # Create PR while CI runs - small changes merge fast
 ```
 
-### 3. Leverage AI for Test Generation
+
+### 3. Use AI for Test Generation
+
+
 
 Trunk-based development requires strong test coverage because you're merging frequently. AI assistants shine at generating tests for functions you've just written:
+
+
 
 ```python
 # After implementing this function, ask AI:
@@ -79,16 +111,28 @@ def validate_email(email: str) -> bool:
     return bool(re.match(pattern, email))
 ```
 
+
 Running AI-generated tests immediately after implementation catches issues before they reach the trunk.
+
+
 
 ## Practical Workflow Patterns
 
+
+
 ### Pattern 1: AI-Assisted TDD
 
+
+
 1. Write the test first (you or AI)
+
 2. Let AI implement the minimal code to pass
+
 3. Refine and commit quickly
+
 4. Push and create PR while CI runs
+
+
 
 ```bash
 # Quick cycle example
@@ -101,9 +145,14 @@ git add . && git commit -m "Implement user search with name matching"
 git push -u origin feature/user-search
 ```
 
+
 ### Pattern 2: AI Code Review Before Commit
 
+
+
 Even with trunk-based workflows, you should review AI output before committing:
+
+
 
 ```python
 # After AI generates code, always:
@@ -119,9 +168,14 @@ Even with trunk-based workflows, you should review AI output before committing:
 # - Does error handling match your project patterns?
 ```
 
+
 ### Pattern 3: Context-Aware Prompts
 
+
+
 Provide AI assistants with just enough context to be useful without overwhelming them:
+
+
 
 ```python
 # Context prompt example for a Django project:
@@ -139,13 +193,22 @@ Task: Create a serializer for the User model that:
 """
 ```
 
+
 This approach works well because you're specifying your constraints without dumping your entire codebase into the AI context window.
+
+
 
 ## Common Pitfalls to Avoid
 
+
+
 ### Over-Reliance on AI Suggestions
 
+
+
 AI suggestions are starting points, not final answers. Always understand what the code does before committing:
+
+
 
 ```python
 # Questionable: blindly accepting AI suggestion
@@ -156,9 +219,14 @@ result = execute_query(user_input)  # SQL injection risk!
 """Rewrite this to prevent SQL injection using parameterized queries."""
 ```
 
+
 ### Generating Large Code Blocks
 
+
+
 Large AI outputs are harder to review and more likely to introduce subtle bugs:
+
+
 
 ```python
 # Instead of asking for everything at once:
@@ -171,13 +239,22 @@ Large AI outputs are harder to review and more likely to introduce subtle bugs:
 # Review and commit
 ```
 
+
 ### Ignoring Merge Conflicts
+
+
 
 AI-generated code can cause unexpected merge conflicts. To minimize this:
 
+
+
 1. Pull from main frequently (at least daily)
+
 2. Run AI on latest main, not stale branches
+
 3. Keep feature scope small to reduce conflict surface
+
+
 
 ```bash
 # Daily sync routine
@@ -188,37 +265,45 @@ git rebase main  # Better than merge for cleaner history
 # Now continue working with latest code
 ```
 
+
 ## Tools That Support Trunk-Based Workflows
+
+
 
 Several AI tools integrate particularly well with trunk-based development:
 
-- **GitHub Copilot**: Fast inline suggestions, works well with frequent commits
-- **Claude Code (Claude.ai)**: Strong at understanding project context
-- **Cursor**: Combines AI with excellent Git integration
-- **Codeium**: Fast autocomplete with good IDE integration
+
+
+- GitHub Copilot: Fast inline suggestions, works well with frequent commits
+
+- Claude Code (Claude.ai): Strong at understanding project context
+
+- Cursor: Combines AI with excellent Git integration
+
+- Codeium: Fast autocomplete with good IDE integration
+
+
 
 Choose tools that minimize friction between thinking and committing.
 
+
+
 ## Measuring Success
+
+
 
 Track these metrics to ensure your AI-assisted trunk workflow is working:
 
-- **Time from branch creation to PR**: Should decrease with AI help
-- **PR review time**: Smaller, focused changes review faster
-- **Merge conflict frequency**: Should decrease as you get better at bounded changes
-- **Bug escape rate**: Monitor if AI-introduced bugs reach production
 
-## Summary
 
-AI coding assistants and trunk-based development work well together when you:
+- Time from branch creation to PR: Should decrease with AI help
 
-1. Keep AI changes small and focused
-2. Use AI for code generation, not architecture
-3. Review every suggestion before committing
-4. Maintain frequent integration with main
-5. Generate tests alongside implementation
+- PR review time: Smaller, focused changes review faster
 
-The speed of trunk-based development complements AI's code generation capabilities. By respecting the workflow constraints—small, frequent commits and continuous integration—you get the best of both worlds: rapid development with manageable review cycles.
+- Merge conflict frequency: Should decrease as you get better at bounded changes
+
+- Bug escape rate: Monitor if AI-introduced bugs reach production
+
 
 
 ## Related Reading

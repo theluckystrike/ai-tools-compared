@@ -14,23 +14,42 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
+
 
 Choose Domo if you need rapid dashboard deployment with pre-built connectors and low-code workflows for business users. Choose Sisense if you need deep customization through JavaScript/Python APIs, custom ML model integration, and superior query performance on large datasets. This comparison covers API patterns, AI features, and implementation details for both platforms.
 
+
+
 ## Platform Architecture Overview
+
+
 
 Domo operates as a cloud-first platform with a low-code emphasis. Its strength lies in connecting multiple data sources through pre-built connectors and visualizing results quickly. Domo's Magic Cards feature uses machine learning to generate visualizations automatically based on data patterns.
 
+
+
 Sisense takes a more developer-centric approach with its Fusion architecture. The platform provides a JavaScript-based scripting environment called SiSense Labs (now part of the main product) that allows deep customization of dashboard behavior. Sisense's widget architecture supports custom plugins written in JavaScript or TypeScript.
+
+
 
 Both platforms support REST APIs, but their integration philosophies differ.
 
+
+
 ## API and Integration Patterns
+
+
 
 ### Domo API Integration
 
+
+
 Domo provides a full REST API for data uploads, dataset management, and dashboard embedding. Authentication uses OAuth 2.0, and the API rate limits are generous for enterprise plans.
+
+
 
 ```python
 import requests
@@ -60,11 +79,18 @@ def upload_to_domo(dataset_id, data):
     return response.status_code == 200
 ```
 
+
 Domo's API works well for scheduled data refreshes and automated reporting workflows. The platform's DataSet API supports both replace and append operations, making it flexible for different update patterns.
+
+
 
 ### Sisense API Integration
 
+
+
 Sisense offers a more extensive API surface including the REST API for administrative tasks and the JavaScript API for client-side dashboard manipulation. The query API allows direct SQL-like queries against elasticubes.
+
+
 
 ```javascript
 // Sisense JavaScript API - Programmatic dashboard manipulation
@@ -96,13 +122,22 @@ async function createCustomDashboard() {
 }
 ```
 
+
 Sisense's API-first design appeals to developers who want to embed analytics deeply into custom applications. The platform supports OAuth 2.0 and API key authentication.
+
+
 
 ## AI Capabilities Comparison
 
+
+
 ### Domo AI Features
 
+
+
 Domo's AI functionality centers around "Magic Cards" and automated insight generation. The platform uses AutoML internally to analyze data and suggest appropriate visualizations. While this works well for business users, developers have limited programmatic access to these AI features.
+
+
 
 ```javascript
 // Domo - Enabling auto-visualization suggestions
@@ -117,11 +152,18 @@ const domoConfig = {
 // and automatically recommends visualizations
 ```
 
+
 Domo's buzz keyword detection and natural language querying ("Ask Data") provides a conversational interface, but customization options are limited compared to building custom solutions.
+
+
 
 ### Sisense AI Features
 
+
+
 Sisense takes a more developer-friendly approach with its AI analytics capabilities. The platform includes natural language querying through its widget framework, but the real power lies in its analytics engine that supports custom ML model integration.
+
+
 
 ```python
 # Sisense - Python script for custom ML model integration
@@ -149,44 +191,84 @@ df["predicted_revenue"] = predictions
 client.upload_data("sales_predictions", df)
 ```
 
+
 This approach gives developers full control over AI model selection and integration, rather than being limited to platform-provided models.
+
+
 
 ## Performance and Scalability
 
+
+
 Both platforms handle large datasets differently:
 
+
+
 | Aspect | Domo | Sisense |
+
 |--------|------|---------|
+
 | Data Processing | Cloud-based, managed | On-premise or cloud elasticubes |
+
 | Query Speed | Good for aggregated views | Excellent due to columnar compression |
+
 | Real-time Support | Available via streams | Available via direct queries |
+
 | Custom Code | Limited to platform features | JavaScript and Python supported |
+
+
 
 Sisense's elasticube technology provides excellent query performance on large datasets. For real-time dashboards with high user concurrency, Sisense generally performs better out of the box.
 
+
+
 Domo's strength is ease of setup—it connects to 100+ data sources with minimal configuration. However, extremely large datasets or complex transformations may require additional optimization.
+
+
 
 ## Practical Recommendations
 
+
+
 Choose Domo if your team prioritizes:
+
 - Rapid dashboard deployment with minimal coding
+
 - Pre-built connectors for common data sources
+
 - Low-code/no-code options for business users
+
 - Integrated cloud platform experience
 
+
+
 Choose Sisense if your team prioritizes:
+
 - Deep customization through JavaScript/Python
+
 - On-premise deployment options
+
 - Custom ML model integration
+
 - Superior query performance for large datasets
+
+
 
 For developers building custom applications, Sisense provides better programmatic control. The JavaScript API and Python SDK enable sophisticated dashboard customization that goes beyond what Domo offers through its UI.
 
+
+
 ## Common Implementation Patterns
+
+
 
 ### Embedding Dashboards
 
+
+
 Both platforms support iframe embedding for web applications:
+
+
 
 ```html
 <!-- Domo embedded dashboard -->
@@ -206,11 +288,18 @@ Both platforms support iframe embedding for web applications:
 ></iframe>
 ```
 
+
 Sisense provides additional JavaScript APIs for controlling embedded dashboards programmatically, enabling more interactive integrations.
+
+
 
 ### Webhook Automation
 
+
+
 Both platforms support webhook triggers for automation:
+
+
 
 ```yaml
 # Domo Workbench automation webhook
@@ -223,6 +312,7 @@ action:
   url: "https://api.domo.com/v1/datasets/refresh"
   method: "POST"
 ```
+
 
 ```yaml
 # Sisense webhook automation
@@ -237,7 +327,11 @@ action:
   body: "{{alert_data}}"
 ```
 
+
 {% endraw %}
+
+
+
 
 
 ## Related Reading

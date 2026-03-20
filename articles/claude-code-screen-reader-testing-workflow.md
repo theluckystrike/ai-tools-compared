@@ -17,22 +17,42 @@ voice-checked: true
 
 
 
+
+
+
 {% raw %}
-Screen reader testing is a critical component of web accessibility validation. This guide covers how to use Claude Code to implement comprehensive screen reader testing workflows, ensuring your web applications work seamlessly with assistive technologies.
+
+Screen reader testing is a critical component of web accessibility validation. This guide covers how to use Claude Code to implement screen reader testing workflows, ensuring your web applications work with assistive technologies.
+
+
 
 ## Understanding Screen Reader Testing Fundamentals
 
+
+
 Screen readers interpret web content for users with visual impairments. Unlike automated accessibility checkers that can only validate code patterns, screen reader testing reveals the actual user experience. The major screen readers include NVDA (Windows, free), JAWS (Windows, commercial), and VoiceOver (macOS/iOS, built-in).
 
+
+
 Before testing, ensure your development environment includes:
+
 - Windows with NVDA and JAWS for Windows testing
+
 - macOS with VoiceOver for Apple platform testing
+
 - Browser extensions for screen reader simulation
+
 - Accessibility inspection tools
+
+
 
 ## Setting Up Claude Code for Screen Reader Testing
 
+
+
 Configure Claude Code to assist with screen reader testing by establishing proper project context:
+
+
 
 ```bash
 # Initialize accessibility testing directory
@@ -49,9 +69,14 @@ cat > test-manifest.json << 'EOF'
 EOF
 ```
 
+
 ## Creating Screen Reader Test Scripts
 
-Use Claude Code to generate comprehensive test scripts for each screen reader:
+
+
+Use Claude Code to generate test scripts for each screen reader:
+
+
 
 ```javascript
 // screen-reader-test-suite.js
@@ -100,9 +125,14 @@ class ScreenReaderTestSuite {
 }
 ```
 
+
 ## Testing with NVDA on Windows
 
+
+
 NVDA is the most widely used free screen reader on Windows. Test your applications:
+
+
 
 ```bash
 # NVDA screen reader test command sequence
@@ -136,9 +166,14 @@ const nvdaTestCases = [
 ];
 ```
 
+
 ## Testing with VoiceOver on macOS
 
+
+
 VoiceOver comes built into macOS and iOS. Enable and test:
+
+
 
 ```bash
 # Enable VoiceOver: Cmd + F5
@@ -170,9 +205,14 @@ const voiceoverTests = [
 ];
 ```
 
+
 ## Testing with JAWS on Windows
 
+
+
 JAWS is widely used in enterprise environments:
+
+
 
 ```bash
 # JAWS key commands
@@ -202,9 +242,14 @@ const jawsTestCases = [
 ];
 ```
 
+
 ## Automating Screen Reader Tests
 
+
+
 Integrate screen reader testing into your CI/CD pipeline:
+
+
 
 ```yaml
 # .github/workflows/screen-reader-test.yml
@@ -233,11 +278,18 @@ jobs:
           npm test -- --screen-reader=voiceover
 ```
 
+
 ## Common Screen Reader Issues and Fixes
+
+
 
 Claude Code can help identify and fix common screen reader problems:
 
+
+
 ### Missing or Inaccurate Alt Text
+
+
 
 ```html
 <!-- Problem: Missing alt text -->
@@ -250,7 +302,10 @@ Claude Code can help identify and fix common screen reader problems:
 <img src="decoration.png" alt="" role="presentation" />
 ```
 
+
 ### Improper Heading Structure
+
+
 
 ```html
 <!-- Problem: Skipping heading levels -->
@@ -263,7 +318,10 @@ Claude Code can help identify and fix common screen reader problems:
 <h3>Subsection</h3>
 ```
 
+
 ### Missing Form Labels
+
+
 
 ```html
 <!-- Problem: No label association -->
@@ -274,9 +332,14 @@ Claude Code can help identify and fix common screen reader problems:
 <input type="email" id="email" placeholder="email@example.com">
 ```
 
+
 ## Testing Dynamic Content with Live Regions
 
+
+
 Ensure dynamic content is announced to screen readers:
+
+
 
 ```html
 <!-- Problem: Dynamic content not announced -->
@@ -292,20 +355,36 @@ Ensure dynamic content is announced to screen readers:
 <div id="alert" role="alert" aria-live="assertive">Error: Please correct the form</div>
 ```
 
+
 ## Best Practices for Screen Reader Compatibility
+
+
 
 Follow these guidelines for optimal screen reader support:
 
-1. **Semantic HTML**: Use proper HTML elements (header, nav, main, article, section, footer)
-2. **ARIA only when needed**: Native HTML elements are preferred over ARIA
-3. **Focus management**: Ensure logical focus order and visible focus indicators
-4. **Keyboard accessibility**: All functionality should be keyboard accessible
-5. **Text alternatives**: Provide text alternatives for all non-text content
-6. **Testing across readers**: Test with NVDA, VoiceOver, and JAWS as they behave differently
+
+
+1. Semantic HTML: Use proper HTML elements (header, nav, main, article, section, footer)
+
+2. ARIA only when needed: Native HTML elements are preferred over ARIA
+
+3. Focus management: Ensure logical focus order and visible focus indicators
+
+4. Keyboard accessibility: All functionality should be keyboard accessible
+
+5. Text alternatives: Provide text alternatives for all non-text content
+
+6. Testing across readers: Test with NVDA, VoiceOver, and JAWS as they behave differently
+
+
 
 ## Integrating with Claude Code Workflows
 
+
+
 Use Claude Code to streamline your screen reader testing:
+
+
 
 ```bash
 # Ask Claude Code to review accessibility
@@ -318,9 +397,14 @@ Use Claude Code to streamline your screen reader testing:
 > Fix all screen reader issues in this HTML: [paste code]
 ```
 
+
 ## Measuring and Reporting Screen Reader Compatibility
 
+
+
 Track your screen reader testing progress:
+
+
 
 ```javascript
 // Test results tracker
@@ -350,8 +434,12 @@ const testResults = {
 };
 ```
 
+
 Screen reader testing requires manual validation alongside automated tools. Use this workflow with Claude Code to systematically test across NVDA, VoiceOver, and JAWS, ensuring your web applications are accessible to all users.
+
 {% endraw %}
+
+
 
 ## Related Reading
 

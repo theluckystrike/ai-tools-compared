@@ -13,17 +13,30 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Manage team rate limits by tracking per-developer usage, routing heavy tasks through higher-quota APIs, and negotiating enterprise agreements for teams >5 developers. This guide shows the monitoring and allocation strategy that prevents rate limit outages when scaling AI usage.
+
+
 
 ## Understanding Rate Limit Structures
 
+
+
 AI coding tools implement rate limits at different levels. API-based tools like Claude API and ChatGPT API typically measure limits in requests per minute (RPM) or tokens per minute (TPM). IDE-integrated tools like Cursor and GitHub Copilot enforce limits through subscription tiers—free plans often provide 200-500 completions per month, while pro plans offer thousands.
+
+
 
 Before implementing any management strategy, identify your team's actual usage patterns. Track who uses the tool most, when peak usage occurs, and which features consume the most quota.
 
+
+
 ## Implementing a Shared API Key with Rate Limiting
 
+
+
 For teams using AI APIs directly, a shared API key with a rate limiter provides the simplest solution. Here's a practical implementation using Python:
+
+
 
 ```python
 import time
@@ -95,11 +108,18 @@ def call_ai_api(prompt: str) -> str:
     return response.json()
 ```
 
+
 ## Using Individual Keys with Team Quota Tracking
+
+
 
 Some teams prefer giving each developer their own API key while monitoring aggregate usage. This approach provides better accountability but requires coordination.
 
+
+
 Set up a simple dashboard using a lightweight database:
+
+
 
 ```python
 import sqlite3
@@ -152,9 +172,14 @@ if __name__ == '__main__':
     app.run(port=5000)
 ```
 
+
 ## Queue-Based Request Distribution
 
+
+
 For high-traffic teams, implementing a request queue ensures fair distribution and prevents any single developer from monopolizing resources. This approach works particularly well for batch processing tasks.
+
+
 
 ```python
 import queue
@@ -203,22 +228,40 @@ req_id = queue_system.submit("Refactor this Python function", "developer-1")
 result = queue_system.get_result(req_id)
 ```
 
+
 ## IDE-Level Solutions for Integrated Tools
+
+
 
 For IDE-integrated tools like Cursor or VS Code extensions, direct API control isn't available. Instead, focus on behavioral strategies:
 
+
+
 **Configure context windows carefully.** Large file selections consume more quota. Use selective file inclusion features to limit context to only necessary files.
 
+
+
 **Implement team guidelines:**
+
 - Reserve AI assistance for complex refactoring and unfamiliar codebases
+
 - Use traditional autocomplete for routine coding
+
 - Batch complex requests instead of making multiple small calls
+
+
 
 **Monitor through admin dashboards.** Many paid team plans include usage dashboards. Schedule weekly reviews to identify overuse patterns.
 
+
+
 ## Setting Up Alerts and Notifications
 
+
+
 Proactive monitoring prevents unexpected quota exhaustion:
+
+
 
 ```python
 import smtplib
@@ -244,11 +287,19 @@ def send_alert(developer_id: str, usage_ratio: float):
 # */30 * * * * python check_limits.py
 ```
 
+
 ## Best Practices Summary
+
+
 
 Successful rate limit management combines technical solutions with team policies. Start with centralized logging to understand your actual usage. Implement soft limits that warn before hard limits block work. Encourage developers to batch requests and use context selectively.
 
+
+
 Regular communication about quota availability helps the team self-regulate. Consider designating "heavy use" periods when multiple developers can coordinate on complex tasks that require significant AI assistance.
+
+
+
 
 
 ## Related Reading

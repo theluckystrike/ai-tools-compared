@@ -12,51 +12,89 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 # Claude MCP Server Connection Failed Fix (2026)
+
+
 
 To fix the "MCP server connection failed" error in Claude Desktop or Claude Code, verify the MCP server process is running (`ps aux | grep mcp`), confirm the port is not blocked by another process (`lsof -i :3000`), and check your `claude.json` or `settings.json` for syntax errors in the server configuration. If the connection still fails, update your MCP packages, clear the Claude cache, and review firewall rules. The full step-by-step walkthrough is below.
 
+
+
 ## Understanding MCP Server Connections
+
+
 
 The Model Context Protocol (MCP) enables Claude to connect with external tools and services through server connections. These connections allow Claude to interact with file systems, databases, APIs, and development tools. When a connection fails, you'll typically see errors like:
 
+
+
 - "MCP server connection failed"
+
 - "Unable to connect to MCP server"
+
 - "Connection timeout after X seconds"
+
 - "MCP server not responding"
+
+
 
 ## Common Causes of Connection Failures
 
+
+
 Connection failures usually trace back to one of these root causes:
 
+
+
 1. **Server not running** — The MCP server process crashed or never started
+
 2. **Port conflicts** — Another application is using the required port
+
 3. **Authentication issues** — Invalid credentials or missing tokens
+
 4. **Network configuration** — Firewall or proxy blocking connections
+
 5. **Corrupted configuration** — Damaged settings in claude.json or config files
+
 6. **Version incompatibility** — Mismatched MCP client and server versions
+
 7. **Permission problems** — Insufficient file system or process permissions
+
+
 
 ## Step-by-Step Fixes
 
+
+
 ### Step 1: Verify the MCP Server is Running
+
+
 
 First, confirm whether your MCP server process is actually running:
 
+
+
 **On macOS/Linux:**
+
 ```bash
 ps aux | grep mcp
 # or specific to your server
 ps aux | grep "server-name"
 ```
 
+
 **On Windows:**
+
 ```bash
 tasklist | findstr mcp
 ```
 
+
 If the process isn't running, start it manually:
+
 ```bash
 # Navigate to your MCP server directory
 cd /path/to/mcp-server
@@ -66,9 +104,14 @@ npm start
 python -m mcp_server
 ```
 
+
 ### Step 2: Check Port Availability
 
+
+
 MCP servers communicate over specific ports. Verify the port isn't in use:
+
+
 
 ```bash
 # Find what process is using the port (default is often 3000 or 8080)
@@ -77,30 +120,46 @@ lsof -i :3000
 netstat -ano | findstr :3000
 ```
 
+
 If another process is using the port, either:
+
 - Stop the conflicting process
+
 - Change your MCP server configuration to use a different port
+
+
 
 ### Step 3: Review Configuration Files
 
+
+
 Your MCP configuration likely lives in one of these locations:
 
+
+
 **Claude Desktop (macOS):**
+
 ```bash
 ~/Library/Application Support/Claude/claude.json
 ```
 
+
 **Claude Desktop (Windows):**
+
 ```bash
 %APPDATA%\Claude\claude.json
 ```
 
+
 **Claude Code:**
+
 ```bash
 ~/.claude/settings.json
 ```
 
+
 Check for syntax errors and verify server paths:
+
 ```json
 {
   "mcpServers": {
@@ -112,15 +171,26 @@ Check for syntax errors and verify server paths:
 }
 ```
 
+
 Common configuration mistakes:
+
 - Missing commas between entries
+
 - Incorrect path separators (use forward slashes on all platforms)
+
 - Typos in server names
+
 - Missing required arguments
+
+
 
 ### Step 4: Update MCP Packages
 
+
+
 Outdated packages frequently cause connection issues. Update all MCP-related packages:
+
+
 
 ```bash
 # Update npm packages
@@ -132,11 +202,18 @@ npm update @modelcontextprotocol/server-filesystem
 pip install --upgrade mcp
 ```
 
+
 After updating, restart Claude completely (quit and reopen).
+
+
 
 ### Step 5: Check Authentication Credentials
 
+
+
 For MCP servers requiring authentication:
+
+
 
 ```bash
 # Set environment variables before starting Claude
@@ -147,11 +224,18 @@ export MCP_AUTH_TOKEN="your-token"
 $env:MCP_API_KEY="your-api-key"
 ```
 
+
 Verify your credentials haven't expired and have the necessary permissions.
+
+
 
 ### Step 6: Firewall and Network Diagnostics
 
+
+
 Network issues often cause intermittent failures:
+
+
 
 ```bash
 # Test connectivity to your server
@@ -166,7 +250,9 @@ sudo pfctl -sr | grep 3000
 sudo iptables -L | grep 3000
 ```
 
+
 If a firewall is blocking connections, add an exception:
+
 ```bash
 # macOS
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/node
@@ -174,9 +260,14 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add /path/to/node
 sudo ufw allow 3000/tcp
 ```
 
+
 ### Step 7: Clear Cache and Reinstall
 
+
+
 Corrupted caches cause mysterious failures:
+
+
 
 ```bash
 # Clear Claude's cache (macOS)
@@ -191,26 +282,41 @@ rm -rf node_modules
 npm install
 ```
 
+
 ### Step 8: Check Logs for Detailed Errors
+
+
 
 Logs provide specific error messages:
 
+
+
 **Claude Desktop logs (macOS):**
+
 ```bash
 ~/Library/Logs/Claude/
 ```
 
+
 **Claude Code logs:**
+
 ```bash
 # Run with verbose logging
 claude --verbose
 ```
 
+
 Look for specific error codes or messages that point to the exact failure.
+
+
 
 ### Step 9: Version Compatibility Check
 
+
+
 Ensure your Claude version supports your MCP server:
+
+
 
 ```bash
 # Check Claude version
@@ -222,11 +328,18 @@ claude info
 npm list @modelcontextprotocol/server-filesystem
 ```
 
+
 If there's a mismatch, either downgrade your server or update Claude.
+
+
 
 ### Step 10: Permission Fixes
 
+
+
 Run with appropriate permissions:
+
+
 
 ```bash
 # Fix npm global permissions
@@ -238,36 +351,55 @@ export PATH=~/.npm-global/bin:$PATH
 sudo chown -R $(whoami) ~/.npm
 ```
 
+
 ## Diagnostic Checklist
+
+
 
 Use this checklist when troubleshooting:
 
+
+
 - [ ] MCP server process is running
+
 - [ ] Correct port is available and not blocked
+
 - [ ] Configuration file has valid JSON syntax
+
 - [ ] All packages are up to date
+
 - [ ] Authentication credentials are valid
+
 - [ ] Firewall allows local connections
+
 - [ ] No permission errors in logs
+
 - [ ] Version compatibility verified
+
+
 
 ## Prevention Best Practices
 
+
+
 Lock package versions in package.json to avoid unexpected updates breaking compatibility. Implement health check endpoints so you can monitor server availability proactively. Maintain copies of working configurations so you can roll back quickly when changes cause failures. Set up log rotation to prevent log files from consuming disk space, and consider running MCP servers in Docker containers for isolation from the host system.
+
+
 
 ## When to Seek Additional Help
 
+
+
 If you've exhausted these steps:
+
 - Check the [MCP GitHub repository](https://github.com/modelcontextprotocol) for issues
+
 - Search the [Claude Discord](https://discord.gg/claude) for similar problems
+
 - Review server-specific documentation
+
 - Open an issue with your logs and configuration
 
-## Conclusion
-
-Start with the simplest checks—server running, port available—and work toward more complex solutions like network rules and permissions. Logs with specific error messages often point directly to the fix.
-
----
 
 
 ## Related Reading

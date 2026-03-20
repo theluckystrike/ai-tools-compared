@@ -10,38 +10,72 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 # How to Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Instructions
+
+
 
 If you have been using Jasper AI's Brand Voice feature to maintain consistent tone and style across your content, you might be looking for ways to replicate that functionality in ChatGPT. While Jasper AI provides a structured UI for uploading sample content and extracting style preferences, ChatGPT achieves similar results through Custom Instructions. This guide shows you how to migrate your Jasper Brand Voice settings to ChatGPT, with practical examples and code snippets.
 
+
+
 ## What You Are Moving
 
+
+
 Jasper AI Brand Voice works by analyzing your uploaded content samples to extract:
+
 - Tone preferences (formal, casual, authoritative)
+
 - Vocabulary patterns (industry terms, preferred word choices)
+
 - Sentence structure (short punchy vs. longer flowing)
+
 - Formatting conventions (headings, bullets, line breaks)
+
+
 
 ChatGPT Custom Instructions accomplish the same goal through two fields: "How would you like ChatGPT to respond?" and "What would you like ChatGPT to know about you?" The first field controls behavior, while the second provides context.
 
+
+
 ## Step 1: Extract Your Jasper Brand Voice Configuration
+
+
 
 Before migrating, document your current Jasper Brand Voice settings. If you have access to your Jasper dashboard, note the following:
 
-1. **Tone Settings**: Check the tone slider (typically ranges from casual to professional)
-2. **Sample Content**: Gather 3-5 representative documents you uploaded
-3. **Writing Rules**: Note any specific rules you configured (avoid certain words, prefer active voice, etc.)
+
+
+1. Tone Settings: Check the tone slider (typically ranges from casual to professional)
+
+2. Sample Content: Gather 3-5 representative documents you uploaded
+
+3. Writing Rules: Note any specific rules you configured (avoid certain words, prefer active voice, etc.)
+
+
 
 If you no longer have access to Jasper, review your previously generated content to reverse-engineer the patterns. Look for recurring phrases, sentence lengths, and structural choices.
 
+
+
 ## Step 2: Convert Jasper Settings to ChatGPT Custom Instructions
+
+
 
 Here is how to map Jasper Brand Voice settings to ChatGPT Custom Instructions:
 
+
+
 ### Tone and Voice
 
+
+
 In Jasper, if your Brand Voice is set to "Professional but approachable," translate it to ChatGPT like this:
+
+
 
 ```
 In the "How would you like ChatGPT to respond?" field:
@@ -52,9 +86,14 @@ varied in length—mix short punchy statements with longer explanatory
 sentences for clarity.
 ```
 
+
 ### Vocabulary and Phrasing
 
+
+
 For vocabulary preferences, use the second Custom Instructions field:
+
+
 
 ```
 In the "What would you like ChatGPT to know about you?" field:
@@ -65,9 +104,14 @@ edge" (overused), "revolutionary" (too hyperbolic). Preferred phrases:
 "our platform enables," "customers achieve," "built for."
 ```
 
+
 ### Formatting Rules
 
+
+
 Map formatting preferences to the first field:
+
+
 
 ```
 Formatting requirements:
@@ -78,9 +122,14 @@ Formatting requirements:
 - Keep paragraphs under 4 sentences
 ```
 
+
 ## Practical Code Snippets
 
+
+
 For developers integrating ChatGPT via API with brand voice baked in, here is a Python example:
+
+
 
 ```python
 import openai
@@ -130,9 +179,14 @@ brand_config = {
 }
 ```
 
+
 ## Managing Multiple Brand Voices
 
+
+
 If you managed multiple Brand Voices in Jasper for different clients or products, create separate Custom Instructions profiles in ChatGPT:
+
+
 
 ```python
 BRAND_VOICES = {
@@ -156,35 +210,49 @@ def get_brand_system_message(brand_key):
     return f"Write in a {config['tone']} tone. Use {config['vocabulary']}."
 ```
 
+
 ## Testing Your Migrated Settings
 
+
+
 After setting up Custom Instructions, test them with a sample prompt:
+
+
 
 ```
 Write a 200-word product description for a project management tool.
 ```
 
+
 Compare the output against content generated in Jasper. Adjust your Custom Instructions based on gaps:
 
+
+
 - If output is too formal → add " conversational" to tone description
+
 - If sentences are too long → specify "keep sentences under 20 words"
+
 - If formatting is wrong → be more explicit about structure
+
+
 
 ## Limitations and Workarounds
 
+
+
 ChatGPT Custom Instructions have some differences from Jasper Brand Voice:
 
-1. **No automatic style learning**: Jasper analyzes your samples; ChatGPT requires manual specification
-2. **Context window limits**: Very long Custom Instructions may get truncated in longer conversations
-3. **Session-based**: Custom Instructions apply to each conversation unless saved
+
+
+1. No automatic style learning: Jasper analyzes your samples; ChatGPT requires manual specification
+
+2. Context window limits: Very long Custom Instructions may get truncated in longer conversations
+
+3. Session-based: Custom Instructions apply to each conversation unless saved
+
+
 
 For complex brand requirements, consider storing brand configurations in a database and loading them per session, as shown in the Python examples above.
 
-## Summary
 
-Migrating from Jasper AI Brand Voice to ChatGPT Custom Instructions requires translating UI-based settings into text-based instructions. Document your current Jasper configuration, convert each setting to natural language prompts, and test the output against your previous Jasper content. For API-based workflows, store brand configurations as structured data and load them dynamically.
 
-With proper configuration, ChatGPT can match the brand consistency you achieved in Jasper—often with more transparency and control over the underlying instructions.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

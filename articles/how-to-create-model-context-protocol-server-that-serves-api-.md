@@ -13,24 +13,44 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
 ## Introduction
+
+
 
 As AI coding assistants become more sophisticated, they need better access to your API documentation to generate accurate code and provide intelligent responses. The Model Context Protocol (MCP) provides a standardized way for AI tools to interact with external services and data sources. By creating an MCP server that serves your API documentation, you enable AI assistants to understand your API's structure, endpoints, authentication requirements, and response formats without manual context injection.
 
+
+
 This guide walks through building an MCP server in Python that exposes your API documentation to AI tools. You'll learn how to structure your server, parse documentation formats, and expose tools that AI assistants can query dynamically.
+
+
 
 ## Prerequisites
 
+
+
 Before building your MCP documentation server, ensure you have:
 
+
+
 - Python 3.10 or higher installed
+
 - An API with documentation (OpenAPI/Swagger, Postman collection, or custom format)
+
 - Basic familiarity with FastMCP or similar MCP frameworks
+
+
 
 ## Setting Up Your Project
 
+
+
 Start by creating a new Python project and installing the necessary dependencies:
+
+
 
 ```bash
 mkdir api-docs-mcp-server
@@ -39,7 +59,10 @@ uv venv
 uv pip install fastmcp pydantic pyyaml httpx
 ```
 
+
 Initialize your project structure:
+
+
 
 ```
 api-docs-mcp-server/
@@ -49,9 +72,14 @@ api-docs-mcp-server/
 └── requirements.txt
 ```
 
+
 ## Creating the MCP Server
 
+
+
 The core of your documentation server involves parsing your API documentation and exposing it through MCP tools. Here's a complete implementation using FastMCP:
+
+
 
 ```python
 from fastmcp import FastMCP
@@ -168,9 +196,14 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
+
 ## Creating Sample Documentation
 
+
+
 Create a sample OpenAPI specification to test your server:
+
+
 
 ```yaml
 # docs/openapi.yaml
@@ -265,15 +298,23 @@ paths:
           description: Task deleted successfully
 ```
 
+
 ## Running and Testing the Server
 
+
+
 Start your MCP server:
+
+
 
 ```bash
 python main.py
 ```
 
+
 The server will start and listen for connections from AI tools. To test it, you can use an MCP-compatible client or manually invoke the tools:
+
+
 
 ```python
 import asyncio
@@ -301,9 +342,14 @@ async def test_server():
 asyncio.run(test_server())
 ```
 
+
 ## Integrating with AI Tools
 
+
+
 Once your MCP server is running, configure your AI assistant to connect to it. Most AI coding tools support MCP through their configuration files:
+
+
 
 ```json
 {
@@ -316,29 +362,41 @@ Once your MCP server is running, configure your AI assistant to connect to it. M
 }
 ```
 
+
 After configuration, your AI assistant can query your API documentation directly. For example:
 
+
+
 - "Show me all endpoints related to user authentication"
+
 - "What parameters does the POST /tasks endpoint accept?"
+
 - "How do I authenticate with the API?"
+
+
 
 ## Advanced Features
 
+
+
 To enhance your documentation server further, consider adding these capabilities:
 
-**Response Examples**: Extract and expose example responses from your OpenAPI spec so AI tools can understand data structures.
 
-**Authentication Documentation**: Parse security schemes and expose authentication requirements clearly.
 
-**Rate Limiting Info**: Include rate limit headers and retry-after values in endpoint documentation.
+Response Examples: Extract and expose example responses from your OpenAPI spec so AI tools can understand data structures.
 
-**Version Comparison**: Support multiple API versions and allow querying differences between versions.
 
-## Conclusion
 
-Building an MCP server that serves your API documentation transforms how AI assistants interact with your APIs. Instead of relying on outdated context or incomplete prompts, AI tools can now query your live documentation, understand endpoint structures, and generate accurate code that matches your actual API contracts.
+Authentication Documentation: Parse security schemes and expose authentication requirements clearly.
 
-The implementation above provides a solid foundation that you can extend based on your specific documentation formats and AI tool requirements. As AI assistants become more capable of using structured tool definitions, having your documentation available through MCP will become increasingly valuable for accurate, context-aware code generation.
+
+
+Rate Limiting Info: Include rate limit headers and retry-after values in endpoint documentation.
+
+
+
+Version Comparison: Support multiple API versions and allow querying differences between versions.
+
 
 
 ## Related Reading

@@ -13,27 +13,50 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 Generate production-ready error handling by explicitly requesting typed errors, specific exception cases, logging statements, and retry logic in prompts. This guide shows exactly which error-handling patterns to request in prompts that consistently produce robust, maintainable error handling.
+
+
 
 Error handling remains one of the most critical yet frequently neglected aspects of production software. When you delegate code generation to AI tools, getting robust error handling requires specific prompting strategies. This guide shows you how to craft prompts that produce production-ready error handling code across multiple programming languages and frameworks.
 
+
+
 ## The Problem with Generic Error Handling Prompts
+
+
 
 Most developers ask AI tools for error handling using vague requests like "add error handling" or "handle exceptions properly." These prompts produce generic try-catch blocks that catch Exception without distinguishing between recoverable errors, programming bugs, and system failures.
 
+
+
 Production-grade error handling demands specificity. Your prompts must communicate the error categories your application encounters, the recovery strategies appropriate for each, logging requirements, and whether errors should propagate or be contained.
+
+
 
 ## Prompt Structure for Production Error Handling
 
+
+
 Effective error handling prompts contain five distinct components:
 
-1. **Error taxonomy**: Define categories of errors (validation, network, authentication, database, etc.)
-2. **Recovery actions**: Specify what happens after each error type
-3. **Logging requirements**: Indicate log levels, contextual data, and retention needs
-4. **API contract**: Define how errors reach callers (status codes, error bodies)
-5. **Environment context**: Specify production constraints like timeouts and retries
+
+
+1. Error taxonomy: Define categories of errors (validation, network, authentication, database, etc.)
+
+2. Recovery actions: Specify what happens after each error type
+
+3. Logging requirements: Indicate log levels, contextual data, and retention needs
+
+4. API contract: Define how errors reach callers (status codes, error bodies)
+
+5. Environment context: Specify production constraints like timeouts and retries
+
+
 
 A well-structured prompt includes all five elements:
+
+
 
 ```
 Generate Python error handling for a FastAPI endpoint that calls an external payment API. 
@@ -44,11 +67,18 @@ Handle three error categories:
 Include structured logging with request IDs, and use custom exception classes.
 ```
 
+
 ## Language-Specific Prompt Optimization
+
+
 
 ### Python FastAPI Applications
 
+
+
 For Python, specify exception class hierarchies and FastAPI's HTTPException usage. Include Pydantic validation requirements in your prompt:
+
+
 
 ```
 Create custom exception classes for a data processing pipeline: 
@@ -58,7 +88,10 @@ Implement a dependency that catches these and returns proper JSON responses
 with the error code at $.error.code and message at $.error.message.
 ```
 
+
 This produces cleaner error handling than generic try-catch approaches:
+
+
 
 ```python
 class DataValidationError(Exception):
@@ -83,9 +116,14 @@ class ErrorHandler:
         )
 ```
 
+
 ### JavaScript/TypeScript Node.js Applications
 
+
+
 For TypeScript, emphasize type-safe error handling and proper typing for error objects:
+
+
 
 ```
 Generate TypeScript error handling for a REST endpoint that processes file uploads.
@@ -96,7 +134,10 @@ Create:
 4) A wrapper function that types try-catch results as Promise<T | Error>
 ```
 
+
 The resulting code includes proper typing:
+
+
 
 ```typescript
 class AppError extends Error {
@@ -137,9 +178,14 @@ const errorMiddleware = (
 };
 ```
 
+
 ### Java Spring Boot Applications
 
+
+
 For Spring Boot, specify exception handler annotations and proper HTTP status mapping:
+
+
 
 ```
 Create a global exception handler using @ControllerAdvice for a Spring Boot REST API.
@@ -148,11 +194,18 @@ DatabaseConnectionException (503), and generic exceptions (500).
 Include request tracking with MDC logging, and return RFC 7807 Problem Details.
 ```
 
+
 ## Advanced Prompt Techniques
+
+
 
 ### Retry and Circuit Breaker Patterns
 
+
+
 Production systems require more than basic error catching. Include retry logic and circuit breaker patterns in your prompts:
+
+
 
 ```
 Add circuit breaker logic to a Python function that calls a third-party API.
@@ -161,9 +214,14 @@ On circuit open, raise CircuitBreakerOpenError with retry-after header.
 On retry, use exponential backoff with jitter (base: 1s, max: 30s).
 ```
 
+
 ### Asynchronous Error Handling
 
+
+
 For async code, specify how errors propagate through event loops:
+
+
 
 ```
 Generate async error handling for a Node.js function that processes multiple 
@@ -172,9 +230,14 @@ Collect all failures, log partial successes, and return a result object
 with { successful: [...], failed: [...], partial: boolean }.
 ```
 
+
 ### Error Recovery Strategies
 
+
+
 Production error handling often includes recovery attempts:
+
+
 
 ```
 Create a TypeScript function that attempts file processing with three strategies:
@@ -184,9 +247,14 @@ Create a TypeScript function that attempts file processing with three strategies
 Log each strategy attempt with timing, and include metrics for strategy effectiveness.
 ```
 
+
 ## Testing Your Error Handling Prompts
 
+
+
 Validate AI-generated error handling by prompting for test cases:
+
+
 
 ```
 Generate Jest test cases for the error handling code above:
@@ -196,25 +264,33 @@ Generate Jest test cases for the error handling code above:
 4) Test that error responses include request ID for correlation
 ```
 
+
 ## Common Prompt Failures and Fixes
 
-**Problem**: AI generates catch(Exception e) that hides bugs
-**Fix**: Explicitly ask for specific exception types and re-throw unknown ones
 
-**Problem**: Errors lose context when propagating across layers
-**Fix**: Request error enrichment at each layer with additional context
 
-**Problem**: Missing logging makes debugging impossible
-**Fix**: Specify log structure including timestamps, request IDs, and error hierarchies
+Problem: AI generates catch(Exception e) that hides bugs
 
-**Problem**: Inconsistent error formats across endpoints
-**Fix**: Request a unified error response schema and global error handler
+Fix: Explicitly ask for specific exception types and re-throw unknown ones
 
-## Summary
 
-Effective AI-generated error handling requires specificity in your prompts. Define error categories explicitly, specify recovery actions, include logging requirements, describe API contracts, and mention production constraints. Use language-specific patterns—custom exception hierarchies for Python, typed errors for TypeScript, and @ControllerAdvice for Java.
 
-The difference between development-grade and production-grade error handling lies in the prompt details. Generic requests produce generic solutions. Precise prompts with complete context produce robust, maintainable error handling code.
+Problem: Errors lose context when propagating across layers
+
+Fix: Request error enrichment at each layer with additional context
+
+
+
+Problem: Missing logging makes debugging impossible
+
+Fix: Specify log structure including timestamps, request IDs, and error hierarchies
+
+
+
+Problem: Inconsistent error formats across endpoints
+
+Fix: Request an unified error response schema and global error handler
+
 
 
 ## Related Reading

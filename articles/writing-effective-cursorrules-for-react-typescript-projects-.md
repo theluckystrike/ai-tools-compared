@@ -15,17 +15,31 @@ voice-checked: true
 ---
 {% raw %}
 
+
+
 Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
+
+
 
 ## Why CursorRules Matter for React TypeScript
 
+
+
 When working with React and TypeScript, projects often develop unique patterns around component composition, prop typing, and state management. Without explicit guidance, AI assistants may generate code that conflicts with your established conventions. CursorRules solve this by providing persistent context about your project's specific requirements.
+
+
 
 A well-structured CursorRules file acts as documentation and enforcement mechanism simultaneously. It tells your AI assistant how to structure components, which patterns to follow, and what to avoid.
 
+
+
 ## Setting Up Basic React TypeScript Rules
 
+
+
 Start with project-specific configuration details that affect every file:
+
+
 
 ```yaml
 # .cursorrules
@@ -45,15 +59,26 @@ Start with project-specific configuration details that affect every file:
 }
 ```
 
+
 This establishes the foundation. Next, address component structure specifically.
+
+
 
 ## Component Pattern Rules
 
+
+
 React TypeScript projects benefit from consistent component patterns. Define how components should be written, including file organization, naming conventions, and typing approaches.
+
+
 
 ### Functional Components with Explicit Props
 
+
+
 For projects using explicit prop interfaces:
+
+
 
 ```typescript
 // Define props interface outside component
@@ -85,11 +110,18 @@ export function Button({
 }
 ```
 
+
 Your CursorRules should specify whether components use interfaces or types, inline styles versus CSS modules, and naming conventions for props.
+
+
 
 ### Handling Compound Components
 
+
+
 Compound components require special consideration in your rules. These patterns where a parent component manages state while child components render content need explicit guidance:
+
+
 
 ```typescript
 // Tabs.tsx - Parent manages state
@@ -130,11 +162,18 @@ function Tab({ index, children }: { index: number; children: React.ReactNode }) 
 }
 ```
 
+
 Specify that compound components should use Context for state sharing, with clear separation between parent and child files.
+
+
 
 ## Custom Hooks Patterns
 
+
+
 Custom hooks deserve their own section in CursorRules. Define naming conventions, return types, and error handling approaches:
+
+
 
 ```typescript
 // useFetch.ts
@@ -172,13 +211,22 @@ export function useFetch<T>(url: string): FetchState<T> {
 }
 ```
 
+
 Rules should specify that hooks must start with "use", handle cleanup properly, and always return tuples or objects with consistent shapes.
+
+
 
 ## State Management Conventions
 
+
+
 For projects using different state management solutions, include specific rules for each:
 
+
+
 ### React Context for Global State
+
+
 
 ```typescript
 // AuthContext.tsx
@@ -226,11 +274,18 @@ export function useAuth() {
 }
 ```
 
+
 Specify that context should always include a custom hook with runtime validation, typed values properly, and include proper cleanup where needed.
+
+
 
 ## Import Organization
 
+
+
 Consistent import ordering improves readability and reduces merge conflicts:
+
+
 
 ```typescript
 // 1. React imports
@@ -259,11 +314,18 @@ import { formatDate } from '@/utils';
 import styles from './UserProfile.module.css';
 ```
 
+
 Define the exact import order and enforce separation between type and value imports.
+
+
 
 ## Testing Considerations
 
+
+
 CursorRules should also address testing patterns:
+
+
 
 ```typescript
 // Button.test.tsx
@@ -295,13 +357,9 @@ describe('Button', () => {
 });
 ```
 
+
 Specify testing library preferences, mock patterns, and what should be tested versus skipped.
 
-## Wrapping Up
-
-Effective CursorRules for React TypeScript projects require attention to component patterns, hook conventions, state management, import organization, and testing approaches. Start with these fundamentals and expand as your project evolves. The investment in well-documented rules pays dividends through consistent code quality and reduced cognitive overhead when collaborating with AI assistants.
-
-Remember to review and update CursorRules periodically as your project patterns mature and new conventions emerge.
 
 
 ## Related Reading

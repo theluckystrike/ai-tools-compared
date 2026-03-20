@@ -12,17 +12,30 @@ intent-checked: true
 voice-checked: true
 ---
 
+
 {% raw %}
+
+
 
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
 
+
+
 ## Introduction
 
-Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing robust testing workflows for Claude Code SDK implementations.
+
+
+Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing testing workflows for Claude Code SDK implementations.
+
+
 
 ## Setting Up Your Test Environment
 
+
+
 Before writing tests, ensure your development environment is properly configured:
+
+
 
 ```bash
 # Install dependencies
@@ -32,9 +45,14 @@ npm install --save-dev jest @testing-library/react vitest
 npm install @anthropic-ai/claude-code-sdk
 ```
 
+
 ## Unit Testing Fundamentals
 
+
+
 Unit tests form the foundation of your testing strategy. Focus on testing individual functions and methods in isolation:
+
+
 
 ```typescript
 // Example unit test for SDK client
@@ -60,9 +78,14 @@ describe('ClaudeCodeClient', () => {
 });
 ```
 
+
 ## Integration Testing
 
+
+
 Integration tests verify that your SDK works correctly with external services:
+
+
 
 ```typescript
 // Integration test example
@@ -86,9 +109,14 @@ describe('Claude Code SDK Integration', () => {
 });
 ```
 
+
 ## Mock Testing Strategies
 
+
+
 When testing without API access or to control responses, use mocking:
+
+
 
 ```typescript
 // Mock example using Jest
@@ -124,9 +152,14 @@ describe('Mocked SDK Tests', () => {
 });
 ```
 
+
 ## End-to-End Testing
 
+
+
 E2E tests validate complete user workflows:
+
+
 
 ```typescript
 // E2E test example
@@ -157,9 +190,14 @@ describe('Complete SDK Workflow', () => {
 });
 ```
 
+
 ## Continuous Integration Setup
 
+
+
 Automate your tests in CI/CD pipelines:
+
+
 
 ```yaml
 # GitHub Actions workflow
@@ -191,18 +229,32 @@ jobs:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
 ```
 
+
 ## Test Coverage Best Practices
+
+
 
 Maintain high test coverage across your SDK:
 
-- **Core functionality**: 90%+ coverage for critical paths
-- **Edge cases**: Test error conditions, invalid inputs
-- **API responses**: Validate parsing and transformation logic
-- **Configuration**: Test all configuration options
+
+
+- Core functionality: 90%+ coverage for critical paths
+
+- Edge cases: Test error conditions, invalid inputs
+
+- API responses: Validate parsing and transformation logic
+
+- Configuration: Test all configuration options
+
+
 
 ## Performance Testing
 
+
+
 Ensure your SDK meets performance requirements:
+
+
 
 ```typescript
 // Performance test example
@@ -222,10 +274,6 @@ describe('Performance Tests', () => {
 });
 ```
 
-## Conclusion
-
-A well-structured testing workflow is essential for maintaining a reliable Claude Code SDK. Implement these testing strategies to ensure your SDK performs correctly across all scenarios.
-{% endraw %}
 
 ## Related Reading
 

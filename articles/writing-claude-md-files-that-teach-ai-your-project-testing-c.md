@@ -10,24 +10,44 @@ categories: [guides]
 tags: [tools]
 ---
 
+
 {% raw %}
+
 {%- include why-choose-writing-claude-md-files-testing-conventions.html -%}
+
+
 
 When you work with Claude Code or similar AI coding assistants, the quality of output depends heavily on how well the AI understands your project's conventions. A well-crafted CLAUDE.md file transforms generic AI responses into context-aware assistance that respects your team's testing patterns, frameworks, and quality standards.
 
+
+
 This guide shows you how to write CLAUDE.md files that effectively teach AI assistants about your testing conventions and patterns.
+
+
 
 ## Why Testing Conventions Belong in CLAUDE.md
 
+
+
 Your test suite likely follows specific patterns that new developers (and AI) need to learn. Without explicit guidance, AI assistants generate tests that work but don't match your project's style. They might use different assertion libraries, naming conventions, or setup patterns than your team prefers.
+
+
 
 A CLAUDE.md file solves this by providing persistent context. Unlike chat prompts that reset between sessions, CLAUDE.md gets loaded with every new conversation, ensuring consistent behavior across your entire project.
 
+
+
 ## Core Sections for Testing Conventions
+
+
 
 ### Test Framework and Dependencies
 
+
+
 Start by documenting which testing frameworks your project uses and any related plugins or assertion libraries.
+
+
 
 ```markdown
 ## Testing Stack
@@ -38,11 +58,18 @@ Start by documenting which testing frameworks your project uses and any related 
 - Coverage: jest-coverage-threshold at 80% for branches and lines
 ```
 
+
 This section prevents AI from suggesting alternative frameworks like Mocha or Vitest when you're working in a Jest project.
+
+
 
 ### File Organization Patterns
 
+
+
 Define where tests live and how they're structured relative to source files.
+
+
 
 ```markdown
 ## Test File Organization
@@ -54,9 +81,14 @@ Define where tests live and how they're structured relative to source files.
 - Mock files: __mocks__/ directory at package root
 ```
 
+
 ### Naming Conventions
 
+
+
 Clear naming conventions make test intent obvious at a glance.
+
+
 
 ```markdown
 ## Test Naming Conventions
@@ -69,11 +101,18 @@ Clear naming conventions make test intent obvious at a glance.
 - Snapshot files: *.snap in __snapshots__ subdirectory
 ```
 
+
 ## Documenting Test Patterns
+
+
 
 ### Setup and Teardown Patterns
 
+
+
 Every project has specific patterns for test setup. Document yours explicitly.
+
+
 
 ```markdown
 ## Test Setup Patterns
@@ -89,9 +128,14 @@ Every project has specific patterns for test setup. Document yours explicitly.
 - Close database connections in global afterAll
 ```
 
+
 ### Mocking Strategies
 
+
+
 AI assistants need to understand your mocking preferences.
+
+
 
 ```markdown
 ## Mocking Conventions
@@ -112,9 +156,14 @@ AI assistants need to understand your mocking preferences.
 - Use rest.get() and rest.post() with path matching
 ```
 
+
 ### Async Testing Patterns
 
+
+
 Different projects handle async operations differently. Make your approach clear.
+
+
 
 ```markdown
 ## Async Testing
@@ -126,9 +175,14 @@ Different projects handle async operations differently. Make your approach clear
 - Set default timeout: jest.setTimeout(10000)
 ```
 
+
 ## Integration with CI/CD
 
+
+
 Testing conventions often tie into your CI pipeline. Document these requirements.
+
+
 
 ```markdown
 ## CI Testing Requirements
@@ -140,9 +194,14 @@ Testing conventions often tie into your CI pipeline. Document these requirements
 - Use --detectOpenHandles to catch async issues
 ```
 
+
 ## Real-World Examples
 
+
+
 ### React Component Testing
+
+
 
 ```markdown
 ## React Component Tests
@@ -154,7 +213,10 @@ Testing conventions often tie into your CI pipeline. Document these requirements
 - Always include accessibility tests for interactive elements
 ```
 
+
 ### Backend API Testing
+
+
 
 ```markdown
 ## API Endpoint Tests
@@ -166,28 +228,24 @@ Testing conventions often tie into your CI pipeline. Document these requirements
 - Mock database layer, test actual handlers
 ```
 
+
 ## Maintaining Your CLAUDE.md
+
+
 
 Testing conventions evolve. Schedule periodic reviews of your CLAUDE.md to keep it current.
 
+
+
 1. **Update on framework upgrades** - When upgrading Jest or adding libraries
+
 2. **Review in code reviews** - Check if new patterns need documentation
+
 3. **Test with AI output** - If AI consistently misses patterns, add guidance
+
+
 
 A CLAUDE.md that doesn't reflect reality wastes everyone's time. Keep it honest and current.
 
-## Summary
 
-Effective CLAUDE.md files for testing include:
 
-- Framework and tooling dependencies
-- File organization and naming conventions
-- Setup and teardown patterns
-- Mocking strategies specific to your stack
-- CI/CD requirements and thresholds
-- Real code examples from your project
-
-The goal is not to document everything about testing, but to capture the decisions your team has made that AI wouldn't guess correctly on its own.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
