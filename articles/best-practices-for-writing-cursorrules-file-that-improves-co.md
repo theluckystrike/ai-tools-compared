@@ -9,11 +9,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
 {% raw %}
 
-Cursor AI has revolutionized code editing by offering context-aware suggestions that adapt to your project's unique patterns and conventions. At the heart of this adaptability lies the `.cursorrules` file—a powerful configuration tool that shapes how the AI understands and generates code for your projects. Mastering this file can transform generic suggestions into highly relevant, project-specific code that aligns perfectly with your team's standards.
+Write effective .cursorrules files by using markdown-based natural language instructions starting with a project overview, then specifying explicit coding style guidelines rather than vague preferences, defining precise naming conventions for different contexts, and articulating architectural patterns and testing requirements. The more specific you are about conventions, the better Cursor AI anticipates your needs and generates code matching your exact standards.
 
 ## Understanding the Cursorrules File
 

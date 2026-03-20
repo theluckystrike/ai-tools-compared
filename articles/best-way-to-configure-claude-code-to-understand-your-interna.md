@@ -1,4 +1,3 @@
-{% raw %}
 ---
 categories: [guides]
 
@@ -12,9 +11,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Claude Code has become an essential tool for developers working with complex codebases. When your project depends on internal library APIs, getting Claude Code to understand those dependencies dramatically improves the quality of its assistance. This guide covers the most effective configuration methods to make Claude Code recognize and accurately work with your internal APIs.
+Configure Claude Code for internal library APIs using three core methods: create a SPEC.md file documenting API definitions with parameter types and error handling, set up context directories pointing to API specifications, and write custom instructions explaining library behavior. These configuration methods ensure Claude Code provides context-aware completions and accurate error explanations based on your actual library interfaces.
 
 ## Why Internal API Configuration Matters
 

@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Managing AI tool configurations across multiple client projects requires a systematic approach. Whether you are a freelancer handling several accounts or part of an agency team, maintaining clean, portable, and secure configurations prevents data leaks, reduces setup time, and keeps your workflow consistent. This guide covers actionable strategies for organizing project configs when switching between clients.
+Manage AI tool configurations across client projects by using environment-specific configuration files with API keys isolated in .env files, implementing a project switcher script for instant context switching, and maintaining separate configuration directories for each client. This approach prevents data leaks, reduces setup time, and keeps your multi-client workflow consistent across all projects.
 
 ## Use Environment-Specific Configuration Files
 

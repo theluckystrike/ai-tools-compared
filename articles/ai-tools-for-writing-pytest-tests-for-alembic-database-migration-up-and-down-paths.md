@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Testing database migrations is a critical yet often overlooked aspect of software development. Alembic, Python's most popular database migration tool, provides both `upgrade()` and `downgrade()` methods for each migration, but writing comprehensive pytest tests for these paths remains a manual and error-prone task. AI coding tools now offer practical solutions to automate this process, helping developers generate robust test coverage for their migration workflows.
+Claude and Cursor analyze Alembic migration files and generate pytest tests covering both upgrade and downgrade paths, verifying schema changes, data integrity, and proper rollback functionality. These AI tools understand Alembic's operation patterns and pytest fixtures, producing comprehensive test coverage that ensures migrations work bidirectionally without manual test writing.
 
 ## Understanding Alembic Migration Testing Requirements
 

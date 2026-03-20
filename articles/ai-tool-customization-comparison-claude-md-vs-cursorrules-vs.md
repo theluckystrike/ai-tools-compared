@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-AI coding assistants have evolved beyond simple autocomplete tools. Modern developers can now shape how these tools behave through custom configuration files. Understanding the differences between Claude.md, CursorRules, and Copilot Instructions helps you build a more productive development environment tailored to your specific needs.
+Claude.md, CursorRules, and Copilot Instructions are three distinct approaches to AI customization: Claude.md uses repository-level markdown files for team-wide configuration, CursorRules operates within the Cursor IDE through JSON/YAML configuration, and Copilot Instructions work through GitHub-level settings. Each approach differs in scope, portability, and integration with your development environment.
 
 ## What Is Claude.md?
 

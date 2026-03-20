@@ -10,9 +10,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-When you work with AI coding assistants like GitHub Copilot, Cursor, or Claude Code, you likely encounter a common frustration: the AI generates code with inconsistent or non-standard naming. Variable names, function names, and file names drift away from your team's established conventions. This happens because the AI defaults to its training data patterns rather than your specific project requirements. The solution lies in custom instructions—system-level directives that shape how the AI approaches code generation.
+Create custom instructions for AI coding tools by documenting your specific naming conventions (snake_case for variables, PascalCase for classes, SCREAMING_SNAKE_CASE for constants) and embedding them as persistent system-level directives. Custom instructions solve the problem of AI defaulting to training data patterns by ensuring the AI applies your exact conventions automatically across all generated code.
 
 ## Why Custom Instructions Matter for Naming Conventions
 

@@ -10,9 +10,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Cursor AI, the AI-powered code editor built on VS Code, offers powerful customization through its Rules feature. These rules let you define coding standards that the AI follows when generating or editing code. Configuring rules for consistent CSS and Tailwind class ordering helps maintain a clean, readable codebase and speeds up code reviews.
+Configure Cursor AI rules using a .cursorrules file that enforces consistent Tailwind class ordering following a logical pattern: layout properties first, then sizing, typography, colors, and interactive states. This consistency improves code readability, simplifies code review diffs, and enables Cursor AI to generate CSS with proper class organization matching your team's established conventions.
 
 ## Why Class Ordering Matters
 

@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-API versioning is a critical aspect of building maintainable software systems. When working with AI coding assistants like Claude, having a well-structured CLAUDE MD file that defines your API versioning strategy can significantly improve collaboration and reduce integration errors. This guide walks you through creating effective CLAUDE MD files that communicate your project's versioning approach to AI assistants.
+Write CLAUDE MD files that define API versioning strategy by specifying current active versions, deprecated versions with sunset dates, versioning method (URL-based or header-based), and clear version schemas. These files communicate to AI assistants which API versions to use, which ones to avoid, and how breaking changes are managed—preventing AI from generating code using deprecated endpoints.
 
 ## Why API Versioning Matters for AI-Assisted Development
 

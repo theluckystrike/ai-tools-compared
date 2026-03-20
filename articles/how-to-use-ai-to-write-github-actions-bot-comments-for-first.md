@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Automated bot comments in GitHub pull requests serve as the first line of communication between your project and new contributors. When someone submits their first pull request, the message they receive sets the tone for their entire open-source experience. Using AI to craft these messages helps maintain consistency while ensuring contributors feel welcomed and guided through the review process.
+Use AI to generate GitHub Actions bot comments that automatically welcome first-time contributors with personalized guidance on contribution process, code review expectations, and pull request requirements. AI-crafted comments reduce contributor friction, address common questions immediately, and encourage continued participation by setting a welcoming tone from first interaction.
 
 This guide shows you how to set up AI-generated bot comments in GitHub Actions that respond intelligently to pull requests from first-time contributors.
 

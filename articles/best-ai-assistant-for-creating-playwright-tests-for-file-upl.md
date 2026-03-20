@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Testing file upload and download flows is a critical part of web application quality assurance. These features often involve complex interactions with the filesystem, network requests, and browser behavior. Writing comprehensive Playwright tests for these scenarios can be time-consuming, but AI assistants have become valuable tools for accelerating this process.
+Claude Code excels at creating Playwright tests for file uploads and downloads because it understands Playwright's file chooser APIs and download handling mechanisms. When prompted with your upload/download flow, Claude generates tests using setInputFiles(), download event handling, and blob management that require deep API knowledge and proper async handling.
 
 This guide explores how AI assistants can help you create effective Playwright tests for file upload and download flows, with practical examples you can apply immediately.
 

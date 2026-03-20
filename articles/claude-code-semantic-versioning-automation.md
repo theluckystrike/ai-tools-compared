@@ -23,9 +23,10 @@ structured_data:
       text: "Define patterns for detecting version bumps in code"
     - name: "Automate changelog generation"
       text: "Generate changelogs automatically based on commits"
+intent-checked: true
 ---
 {% raw %}
-# Claude Code Semantic Versioning Automation: A Complete Guide
+Automate semantic versioning with Claude Code by configuring version detection rules that identify version bumps from commit messages and code changes. Claude Code analyzes commits and pull request labels to determine whether changes warrant MAJOR, MINOR, or PATCH version increments according to semantic versioning standards, eliminating manual version bumps and ensuring consistent releases.
 
 Semantic versioning (SemVer) has become the standard for version numbering in modern software development. When combined with Claude Code's powerful automation capabilities, you can create a robust version management system that eliminates manual version bumps and ensures consistent releases.
 
@@ -237,4 +238,3 @@ The key is to establish conventions early, use tools to enforce them, and contin
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-

@@ -9,10 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
 {% raw %}
-Property-based testing shifts the paradigm from writing specific test cases to declaring properties that your code must always satisfy. Instead of testing individual inputs, you describe the rules that should hold true across all possible inputs. This approach, popularized by Haskell's QuickCheck, has found strong footing in Python with Hypothesis and in JavaScript/TypeScript with Fast-Check. However, coming up with meaningful properties to test often requires deep domain knowledge and creative thinking. This is where AI tools step in to accelerate your workflow.
+Claude and ChatGPT excel at generating property-based tests when you provide function signatures and expected behavior descriptions. Hypothesis for Python and Fast-Check for JavaScript benefit most from AI assistance when you specify domain constraints—AI tools help identify meaningful properties (like permutation invariants for sorting) that you might otherwise miss, accelerating your workflow significantly.
 
 ## What Makes Property-Based Testing Valuable
 

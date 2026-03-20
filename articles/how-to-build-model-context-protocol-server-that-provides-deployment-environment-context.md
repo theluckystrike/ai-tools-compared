@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-The Model Context Protocol (MCP) has become a standard way to extend AI coding assistants with domain-specific knowledge. When your AI tool understands your actual deployment environment, it generates more relevant infrastructure code, avoids configuration mismatches, and suggests appropriate deployment strategies. This guide shows you how to build a custom MCP server that exposes deployment environment context to any MCP-compatible AI assistant.
+Build an MCP server that exposes your deployment environment details to AI coding assistants by creating a Node.js server using the Model Context Protocol that returns structured information about cloud provider, regions, container orchestration, and infrastructure configuration. This context enables your AI assistant to generate Terraform, Kubernetes manifests, and deployment workflows that match your actual infrastructure setup.
 
 ## Understanding MCP Servers and Deployment Context
 

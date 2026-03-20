@@ -9,10 +9,10 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
 {% raw %}
-Authentication testing is one of the most critical yet time-consuming aspects of end-to-end testing. Every application needs to verify that users can log in, stay logged in, handle sessions correctly, and log out securely. Traditionally, writing these tests meant manually scripting each login step, handling cookies, and managing session tokens. This approach slows down test suites and introduces flakiness when authentication flows change.
+Use AI to generate Playwright authentication tests leveraging the storageState feature to capture authenticated sessions once, then reuse them across tests. AI assistants generate code that records login state to JSON, loads it in subsequent tests, and eliminates repeated login overhead—reducing test execution time significantly while maintaining proper session management and eliminating inter-test dependencies.
 
 Playwright's storage state feature solves this problem by capturing authenticated session data once and reusing it across tests. When you combine this capability with AI-generated test code, you get fast, maintainable authentication tests that don't require repeated login overhead.
 

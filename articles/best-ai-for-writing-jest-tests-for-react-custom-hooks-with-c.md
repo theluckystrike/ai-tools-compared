@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Testing React custom hooks with complex state presents unique challenges. Unlike component tests, hook tests require careful setup to render hooks outside component trees while still accessing React's lifecycle. When your hooks manage multiple state variables, handle async operations, or coordinate side effects, writing thorough tests becomes time-consuming. This guide evaluates AI tools that accelerate test creation without sacrificing quality.
+Claude and GitHub Copilot both excel at testing React custom hooks, but Claude demonstrates stronger understanding of state transitions, error handling, and cleanup logic. When generating tests for hooks managing pagination, caching, and multi-step workflows, Claude produces proper useCallback/useEffect patterns, correctly handles async operations, and ensures cleanup functions run appropriately across multiple state variables.
 
 ## Why Testing Custom Hooks Demands Special Attention
 

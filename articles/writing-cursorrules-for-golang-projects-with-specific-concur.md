@@ -10,11 +10,11 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
 {% raw %}
 
-CursorRules provide a powerful mechanism to guide AI coding assistants toward generating code that matches your project's specific patterns and conventions. When working with Golang projects that rely on specific concurrency primitives and error handling strategies, configuring CursorRules becomes essential for producing production-ready code that integrates seamlessly with your existing codebase.
+Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules ensure AI generates code following Go's idiomatic concurrency model rather than generic async patterns—specifying exact requirements for sync.WaitGroup usage, error channels, worker pool patterns, and proper cleanup to prevent subtle concurrency bugs.
 
 ## Why CursorRules Matter for Go Projects
 

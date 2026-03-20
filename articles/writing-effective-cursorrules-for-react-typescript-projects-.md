@@ -10,9 +10,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-CursorRules files help AI assistants understand your project's conventions, tooling, and coding standards. For React TypeScript projects, well-crafted rules can dramatically improve code quality, consistency, and reduce repetitive feedback. This guide covers how to write effective CursorRules that handle specific component patterns, custom hooks, and state management approaches.
+Write CursorRules for React TypeScript projects by specifying TypeScript configuration (strict mode, jsx setting, module resolution), React hook rules (exhaustiveDeps warnings), and component patterns (functional/arrow function preference). These rules ensure Cursor AI generates code following your team's established conventions for component composition, prop typing, hook patterns, and state management approaches.
 
 ## Why CursorRules Matter for React TypeScript
 

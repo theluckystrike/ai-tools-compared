@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Testing GraphQL resolvers that use DataLoader for batching presents unique challenges. When resolvers rely on DataLoader to batch multiple requests into single database queries, traditional unit testing approaches fall short. This guide explores how AI tools can help you write effective Jest tests for these scenarios.
+Claude and GitHub Copilot excel at generating Jest tests for DataLoader-enabled resolvers because they understand both the batching semantics and testing patterns needed. When you provide your resolver code and DataLoader configuration, these AI tools generate tests that verify batch collection, result mapping, caching behavior, and error propagation without requiring deep knowledge of DataLoader internals.
 
 ## The Testing Challenge with DataLoader Batching
 

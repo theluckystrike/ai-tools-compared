@@ -10,9 +10,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-Security headers represent one of the most critical yet frequently overlooked aspects of web application security. When AI coding tools generate middleware, server configurations, or framework setup code, they rarely enforce your organization's specific security header requirements by default. Writing custom instructions that explicitly define your security header standards ensures every piece of generated code meets your compliance requirements without requiring manual intervention.
+Write custom instructions for AI tools by specifying all required security headers (Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) with exact values and explaining when to apply them in middleware or server configuration. These instructions ensure every piece of AI-generated web server code includes your complete security header requirements automatically.
 
 This guide shows you how to create effective custom instructions for AI coding tools that enforce your security header standards across all projects.
 

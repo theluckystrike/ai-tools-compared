@@ -9,9 +9,9 @@ categories: [guides]
 tags: [tools]
 reviewed: true
 score: 8
+intent-checked: true
 ---
-
-When building APIs, consistent error responses are critical for frontend developers and API consumers. Yet AI coding assistants often generate inconsistent error handling code that does not match your established schema. Custom instructions solve this problem by teaching AI tools exactly how to format error responses in your project.
+Write custom instructions for AI coding tools by defining your error response schema (success flag, nested error object with code/message/details, timestamp, requestId) and requiring the AI to implement exactly this structure in all generated error handling code. Custom instructions ensure consistent API error responses across generated code without requiring repeated schema specification in each prompt.
 
 This guide shows you practical techniques for writing custom instructions that ensure AI-generated error handling code always follows your error response schema.
 
