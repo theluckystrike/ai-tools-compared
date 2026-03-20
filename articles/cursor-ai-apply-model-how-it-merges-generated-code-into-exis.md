@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-apply-model-how-it-merges-generated-code-into-exis/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---

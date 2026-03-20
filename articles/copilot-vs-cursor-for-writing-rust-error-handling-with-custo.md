@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-rust-error-handling-with-custo/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

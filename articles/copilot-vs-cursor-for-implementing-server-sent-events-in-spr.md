@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-implementing-server-sent-events-in-spr/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

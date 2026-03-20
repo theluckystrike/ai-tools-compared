@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

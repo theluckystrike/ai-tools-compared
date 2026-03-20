@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-for-students-free-access-what-exactly-is-included-20/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

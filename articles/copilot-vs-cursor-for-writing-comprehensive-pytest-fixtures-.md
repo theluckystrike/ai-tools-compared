@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, comparison]
 reviewed: true
 score: 8
 intent-checked: true
