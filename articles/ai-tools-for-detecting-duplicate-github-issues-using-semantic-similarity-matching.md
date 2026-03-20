@@ -8,7 +8,7 @@ permalink: /ai-tools-for-detecting-duplicate-github-issues-using-semantic-simila
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
