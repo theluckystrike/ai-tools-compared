@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Kubernetes Network Policies."
+title: "How to Use AI to Generate Kubernetes Network Policies Correc"
 description:"A practical guide for developers on using AI tools to generate Kubernetes network policies with code examples and best practices."
 date: 2026-03-16
 author: theluckystrike

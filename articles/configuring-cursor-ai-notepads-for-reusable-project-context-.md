@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configuring Cursor AI Notepads for Reusable Project Context."
+title: "Configuring Cursor AI Notepads for Reusable Project Context"
 description:"A practical guide for developers on setting up Cursor AI notepads to maintain reusable project context across sessions. Learn how to use this feature."
 date: 2026-03-16
 author: theluckystrike

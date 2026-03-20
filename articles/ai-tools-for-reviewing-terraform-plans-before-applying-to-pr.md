@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Reviewing Terraform Plans Before Applying."
+title: "AI Tools for Reviewing Terraform Plans Before Applying"
 description:"Discover practical AI tools that help developers review Terraform plans before production deployment, with code examples and integration tips."
 date: 2026-03-16
 author: theluckystrike

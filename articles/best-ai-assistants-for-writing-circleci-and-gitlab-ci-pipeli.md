@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistants for Writing CircleCI and GitLab CI."
+title: "Best AI Assistants for Writing CircleCI and GitLab CI"
 description:"A practical guide comparing how leading AI coding tools handle CircleCI and GitLab CI configuration files, with code examples and recommendations for."
 date: 2026-03-16
 author: theluckystrike

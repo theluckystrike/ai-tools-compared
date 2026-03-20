@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor Pro vs Copilot Individual Price Per Feature."
+title: "Cursor Pro vs Copilot Individual Price Per Feature"
 description:"A detailed feature-by-feature price breakdown of Cursor Pro vs GitHub Copilot for individual developers. Includes code examples and practical."
 date: 2026-03-16
 author: "theluckystrike"

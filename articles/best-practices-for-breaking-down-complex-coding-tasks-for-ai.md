@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best Practices for Breaking Down Complex Coding Tasks."
+title: "Best Practices for Breaking Down Complex Coding Tasks"
 description:"Learn proven strategies for decomposing large coding tasks into manageable prompts that yield better results from AI coding assistants. Practical."
 date: 2026-03-16
 author: "theluckystrike"

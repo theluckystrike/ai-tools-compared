@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Switching from Windsurf to Cursor: How to Transfer."
+title: "Switching from Windsurf to Cursor: How to Transfer Project Config"
 description:"A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."
 date: 2026-03-16
 author: theluckystrike
@@ -195,7 +195,7 @@ Review each keybinding. Some may conflict with Cursor's default shortcuts and re
 
 
 
-If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for a experience.
+If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for an experience.
 
 
 

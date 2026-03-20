@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Creating Mutation Testing Configurations to."
+title: "AI Tools for Creating Mutation Testing Configurations to Find Weak Test Assertions"
 description:"A practical guide for developers using AI tools to configure mutation testing and identify weak test assertions that miss code defects."
 date: 2026-03-16
 author: theluckystrike

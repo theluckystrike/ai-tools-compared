@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Copilot Code Referencing Feature: How It Handles Open."
+title: "Copilot Code Referencing Feature: How It Handles Open Source"
 description:"Copilot Code Referencing Feature: How It Handles Open. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike

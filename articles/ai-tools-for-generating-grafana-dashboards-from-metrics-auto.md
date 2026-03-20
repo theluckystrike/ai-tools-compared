@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Grafana Dashboards from Metrics."
+title: "AI Tools for Generating Grafana Dashboards from Metrics Auto"
 description:"Discover how AI tools automatically generate Grafana dashboards from your metrics. Practical approaches for developers to improve observability."
 date: 2026-03-16
 author: theluckystrike

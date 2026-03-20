@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Cursor for Implementing Redis Caching."
+title: "Copilot vs Cursor for Implementing Redis Caching Patterns"
 description:"A practical comparison of GitHub Copilot and Cursor for implementing Redis caching patterns in Node.js applications, with code examples and."
 date: 2026-03-16
 author: theluckystrike

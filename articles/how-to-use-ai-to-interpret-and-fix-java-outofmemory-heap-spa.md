@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Interpret and Fix Java OutOfMemory Heap."
+title: "How to Use AI to Interpret and Fix Java OutOfMemory Heap Spa"
 description:"A practical guide for developers using AI tools to diagnose, interpret, and resolve Java heap space OutOfMemory errors with real code examples."
 date: 2026-03-16
 author: "theluckystrike"

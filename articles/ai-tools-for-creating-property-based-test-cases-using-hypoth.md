@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Property-Based Test Cases Using."
+title: "AI Tools for Creating Property-Based Test Cases"
 description:"Discover how AI tools can help you write property-based tests with Hypothesis and Fast-Check. Practical examples for developers and power users."
 date: 2026-03-16
 author: theluckystrike

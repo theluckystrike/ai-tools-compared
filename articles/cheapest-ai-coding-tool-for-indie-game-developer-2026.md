@@ -9,6 +9,7 @@ permalink: /cheapest-ai-coding-tool-for-indie-game-developer-2026/
 score: 7
 voice-checked: true
 reviewed: true
+intent-checked: true
 ---
 
 

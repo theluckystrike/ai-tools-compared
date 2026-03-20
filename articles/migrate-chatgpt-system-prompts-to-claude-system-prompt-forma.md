@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate ChatGPT System Prompts to Claude System."
+title: "How to Migrate ChatGPT System Prompts"
 description:"A practical guide for developers on converting ChatGPT system prompts to Claude's format, with code examples and best practices."
 date: 2026-03-16
 author: theluckystrike

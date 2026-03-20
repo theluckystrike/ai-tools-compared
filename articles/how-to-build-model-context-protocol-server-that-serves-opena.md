@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build a Model Context Protocol Server That Serves."
+title: "How to Build a Model Context Protocol Server That Serves"
 description:"A practical guide to building an MCP server that serves OpenAPI specifications to AI tools, with code examples and implementation patterns for 2026."
 date: 2026-03-16
 author: theluckystrike

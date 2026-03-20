@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use Copilot Chat to Generate Code from Natural."
+title: "How to Use Copilot Chat to Generate Code from Natural"
 description:"A practical guide for developers on using GitHub Copilot Chat to transform natural language descriptions into working code with real examples."
 date: 2026-03-16
 author: theluckystrike

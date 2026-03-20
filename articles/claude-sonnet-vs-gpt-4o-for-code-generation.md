@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Claude Sonnet vs GPT-4o for Code Generation: Practical."
+title: "Claude Sonnet vs GPT-4o for Code Generation: Practical"
 description:"A developer-focused comparison of Claude Sonnet and GPT-4o for code generation tasks. Includes benchmark results, code examples, and recommendations."
 date: 2026-03-15
 author: "AI Tools Compared"

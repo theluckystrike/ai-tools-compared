@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Write System Prompts for AI Assistants That."
+title: "How to Write System Prompts for AI Assistants That Produce"
 description:"A practical guide for developers on crafting system prompts that generate semantic, accessible HTML markup."
 date: 2026-03-16
 author: theluckystrike

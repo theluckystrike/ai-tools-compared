@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI IDE Features for Database Query Writing and."
+title: "Best AI IDE Features for Database Query Writing and Optimization"
 description:"Discover the most powerful AI-powered IDE features that transform how developers write, test, and optimize database queries in 2026."
 date: 2026-03-16
 author: theluckystrike

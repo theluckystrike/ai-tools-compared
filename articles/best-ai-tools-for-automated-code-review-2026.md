@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Automated Code Review 2026."
+title: "Best AI Tools for Automated Code Review 2026"
 description:" comparison of AI-powered code review tools including DeepSource, Codacy, and language-specific solutions with integration guides."
 date: 2026-03-20
 author: theluckystrike

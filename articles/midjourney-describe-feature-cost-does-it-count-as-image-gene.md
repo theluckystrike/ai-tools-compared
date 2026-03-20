@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Midjourney Describe Feature Cost: Does It Count as Image."
+title: "Midjourney Describe Feature Cost: Does It Count as Image Gene"
 description:"Midjourney Describe Feature Cost: Does It Count as Image. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike

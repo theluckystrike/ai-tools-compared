@@ -110,7 +110,19 @@ DevRel teams often need to reach global audiences. AI translation tools can help
 
 
 
-Some platforms offer AI-powered dubbing that can generate voiceovers in multiple languages while preserving the original speaker's tone and pacing. This enables DevRel teams to expand their reach without producing entirely new recordings for each language.
+Some platforms offer AI-powered dubbing that preserves the original speaker's tone and pacing.
+
+For subtitles, translate your SRT file with a targeted prompt:
+
+```
+Translate the following SRT subtitle file to Spanish (Latin America).
+Preserve all timestamps exactly. Keep technical terms (OAuth, API key,
+authorization code) in English. Return only the translated SRT content.
+
+[paste SRT file content here]
+```
+
+This takes under a minute and produces a subtitle file ready for upload to YouTube or your video host.
 
 
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Cloud Migration Planning and."
+title: "How to Use AI for Cloud Migration Planning and Dependency"
 description:"A practical guide for developers and power users on using AI to analyze application dependencies, map infrastructure relationships, and plan cloud."
 date: 2026-03-16
 author: theluckystrike

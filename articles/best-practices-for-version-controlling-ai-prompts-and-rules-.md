@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Version Controlling AI Prompts and."
+title: "Best Practices for Version Controlling AI Prompts and Rules"
 description:"A practical guide to version controlling AI prompts, system rules, and configuration files for developers and power users working with LLMs."
 date: 2026-03-16
 author: theluckystrike

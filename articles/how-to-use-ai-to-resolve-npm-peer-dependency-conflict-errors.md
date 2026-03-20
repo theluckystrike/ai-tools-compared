@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Resolve NPM Peer Dependency Conflict."
+title: "How to Use AI to Resolve NPM Peer Dependency Conflict Errors"
 description:"A practical guide for developers on using AI tools to diagnose and fix npm peer dependency conflicts. Real examples and code snippets for resolving."
 date: 2026-03-16
 author: theluckystrike

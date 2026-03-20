@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "ChatGPT vs Gemini for Generating Tailwind CSS from Hand."
+title: "ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw"
 description:"A practical comparison of ChatGPT and Gemini for converting hand-drawn wireframes into Tailwind CSS code, with real examples and performance benchmarks."
 date: 2026-03-16
 author: theluckystrike

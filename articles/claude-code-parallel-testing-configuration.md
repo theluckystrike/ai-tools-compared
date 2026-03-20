@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code Parallel Testing Configuration - Complete."
+title: "Claude Code Parallel Testing Configuration - Complete"
 description:"Learn how to configure parallel testing with Claude Code to speed up your test suite. Practical examples for Jest, pytest, and other frameworks."
 date: 2026-03-20
 author: theluckystrike

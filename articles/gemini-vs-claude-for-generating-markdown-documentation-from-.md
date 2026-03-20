@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini vs Claude for Generating Markdown Documentation."
+title: "Gemini vs Claude for Generating Markdown Documentation"
 description:"Gemini vs Claude for Generating Markdown Documentation. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Session Data Lifecycle: From Request."
+title: "AI Coding Assistant Session Data Lifecycle: From Request To Deletion Explained 2026"
 description:"A guide to how AI coding assistants handle your session data, from the moment you send a request until permanent deletion. Learn the."
 date: 2026-03-16
 author: theluckystrike

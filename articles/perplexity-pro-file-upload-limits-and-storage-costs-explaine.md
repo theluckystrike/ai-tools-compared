@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Perplexity Pro File Upload Limits and Storage Costs."
+title: "Perplexity Pro File Upload Limits and Storage Costs Explaine"
 description:"Perplexity Pro File Upload Limits and Storage Costs. — guide with practical tips, comparisons, and expert recommendations for developers."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Enterprise Data Loss Prevention Rules for AI Coding."
+title: "Enterprise Data Loss Prevention Rules for AI Coding Assistan"
 description:"A practical guide to implementing data loss prevention rules for AI coding assistant browser extensions in enterprise environments. Code examples and."
 date: 2026-03-16
 author: theluckystrike

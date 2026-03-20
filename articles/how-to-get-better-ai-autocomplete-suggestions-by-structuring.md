@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Get Better AI Autocomplete Suggestions by."
+title: "How to Get Better AI Autocomplete Suggestions by Structuring"
 description:"A practical guide to improving AI code completion quality through better codebase organization, naming conventions, and project structure."
 date: 2026-03-16
 author: "theluckystrike"

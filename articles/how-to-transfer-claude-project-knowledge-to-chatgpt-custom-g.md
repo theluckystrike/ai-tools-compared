@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Transfer Claude Project Knowledge to ChatGPT."
+title: "How to Transfer Claude Project Knowledge to ChatGPT Custom"
 description:"A practical guide for developers and power users moving knowledge from Claude Projects to ChatGPT Custom GPTs, with export methods and configuration."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing Playwright Multi-Browser Test."
+title: "Best AI for Writing Playwright Multi-Browser Test Matrices With Github Actions 2026"
 description:"Discover the best AI tools for generating Playwright multi-browser test matrices integrated with GitHub Actions. Practical examples and code snippets."
 date: 2026-03-16
 author: theluckystrike

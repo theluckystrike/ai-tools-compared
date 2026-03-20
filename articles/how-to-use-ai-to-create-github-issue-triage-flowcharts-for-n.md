@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Create GitHub Issue Triage Flowcharts."
+title: "How to Use AI to Create GitHub Issue Triage Flowcharts"
 description:"A practical guide for open source maintainers on using AI tools to create efficient GitHub issue triage flowcharts that help new contributors navigate."
 date: 2026-03-16
 author: theluckystrike

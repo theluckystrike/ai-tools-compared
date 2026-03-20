@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Strategies for Providing Examples to AI Coding."
+title: "Best Strategies for Providing Examples to AI Coding Tools"
 description:"Learn practical strategies for giving AI coding tools effective examples. This guide covers prompt engineering techniques, code snippet usage, and."
 date: 2026-03-16
 author: theluckystrike

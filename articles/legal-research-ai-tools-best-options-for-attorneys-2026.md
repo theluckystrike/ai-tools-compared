@@ -9,6 +9,7 @@ categories: [guides]
 score: 7
 voice-checked: true
 reviewed: true
+intent-checked: true
 ---
 
 Legal research has undergone a significant transformation with the integration of artificial intelligence. For attorneys and legal professionals, these tools now offer unprecedented capabilities in case law analysis, document review, and predictive research. This guide examines the best options available in 2026, with practical guidance for developers building legal technology integrations.

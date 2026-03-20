@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Codebase Indexing: How It Works and Why It."
+title: "Cursor AI Codebase Indexing: How It Works and Why It Matters"
 description:"Cursor AI Codebase Indexing: How It Works and Why It. — guide with practical tips, comparisons, and expert recommendations for developers."
 date: 2026-03-16
 author: theluckystrike

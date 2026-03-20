@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Migrate From Copilot for Neovim to Claude Code."
+title: "How to Migrate From Copilot for Neovim"
 description:"A practical guide for developers moving from Copilot for Neovim to Claude Code terminal workflow, with configuration examples and migration tips."
 date: 2026-03-16
 author: "theluckystrike"

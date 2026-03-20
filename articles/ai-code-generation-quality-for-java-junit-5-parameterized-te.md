@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Code Generation Quality for Java JUnit 5."
+title: "AI Code Generation Quality for Java JUnit 5 Parameterized"
 description:"A practical analysis of AI code generation quality for Java JUnit 5 parameterized tests, with code examples and quality assessment for developers."
 date: 2026-03-16
 author: theluckystrike

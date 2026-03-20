@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Powered Log Analysis Tools for Production Debugging."
+title: "AI Powered Log Analysis Tools for Production Debugging"
 description:"A practical comparison of AI-powered log analysis tools for production debugging, featuring code examples and recommendations for developers in 2026."
 date: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "ChatGPT Edu Pricing Per Student: How Schools Get Volume."
+title: "ChatGPT Edu Pricing Per Student: How Schools Get Volume"
 description:"A practical guide to ChatGPT Edu pricing per student and how educational institutions secure volume discounts. Includes cost breakdown and."
 date: 2026-03-16
 author: theluckystrike

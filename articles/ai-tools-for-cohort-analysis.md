@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Cohort Analysis: A Practical Guide for."
+title: "AI Tools for Cohort Analysis: A Practical Guide for"
 description:"A hands-on comparison of AI-powered cohort analysis tools for developers and data analysts, with code examples and implementation recommendations."
 date: 2026-03-15
 author: theluckystrike

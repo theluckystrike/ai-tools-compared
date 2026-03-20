@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lightdash vs Preset AI Dashboards: A Practical."
+title: "Lightdash vs Preset AI Dashboards: A Practical"
 description:"Compare Lightdash and Preset for building AI-powered dashboards. Get code examples, architecture insights, and practical guidance for choosing the."
 date: 2026-03-15
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Not Autocompleting TypeScript Fix."
+title: "Cursor AI Not Autocompleting TypeScript Fix"
 description:" troubleshooting guide to fix Cursor IDE AI autocompletion not working in TypeScript files. Step-by-step solutions for developers and."
 date: 2026-03-15
 author: theluckystrike

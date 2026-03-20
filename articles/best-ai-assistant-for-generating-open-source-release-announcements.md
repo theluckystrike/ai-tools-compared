@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Generating Open Source Release."
+title: "Best AI Assistant for Generating Open Source Release Announcements"
 description:"Discover the best AI assistants for crafting professional open source release announcements with practical examples and tool comparisons."
 date: 2026-03-18
 author: "AI Tools Compared"

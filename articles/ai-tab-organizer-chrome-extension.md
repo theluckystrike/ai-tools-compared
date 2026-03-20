@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tab Organizer Chrome Extension: Managing Browser Tabs."
+title: "AI Tab Organizer Chrome Extension: Managing Browser Tabs"
 description:"A practical guide to AI-powered tab organizer Chrome extensions for developers and power users, with code examples and implementation details."
 date: 2026-03-15
 author: theluckystrike

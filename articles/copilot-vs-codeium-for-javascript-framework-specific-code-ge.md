@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Codeium for JavaScript Framework-Specific."
+title: "Copilot vs Codeium for JavaScript Framework-Specific Code"
 description:"A practical comparison of GitHub Copilot and Codeium for generating React and Vue code. Includes real code examples and recommendations for JavaScript."
 date: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Gemini Code Assist Enterprise Pricing: Per-Developer."
+title: "Gemini Code Assist Enterprise Pricing: Per-Developer Breakdown 2026"
 description:"Complete guide to Google Gemini Code Assist enterprise pricing. Understand per-developer costs, feature tiers, and what enterprises should expect in 2026."
 date: 2026-03-19
 author: theluckystrike
@@ -19,7 +19,7 @@ voice-checked: true
 
 
 
-Google's Gemini Code Assist has emerged as a powerful competitor in the AI-powered coding assistance landscape, offering enterprises a compelling alternative to GitHub Copilot and Cursor. Understanding the enterprise pricing structure is crucial for development teams planning their 2026 budget. This breakdown examines the per-developer costs, feature differences across tiers, and strategic considerations for enterprises evaluating Gemini Code Assist.
+Gemini Code Assist Standard costs $19/user/month. The Enterprise tier is negotiated — expect $25-45/user/month depending on seat count and data residency requirements. For a 50-developer team on Standard, the annual cost is $11,400. For comparison: GitHub Copilot Business is $19/user/month, Cursor Business is $40/user/month. This breakdown covers what each tier includes, what enterprises actually get for the premium, and how to calculate total cost of ownership.
 
 
 
@@ -31,7 +31,13 @@ Gemini Code Assist offers a tiered pricing model designed to accommodate organiz
 
 
 
-The pricing structure generally includes a free tier for individual developers, a pro tier for small teams, and an enterprise tier with custom pricing based on organization size and requirements. Understanding these tiers helps enterprises make informed decisions about which features align with their development workflow needs.
+Here is what each tier includes as of early 2026:
+
+| Tier | Price | Context | Key Features |
+|------|-------|---------|-------------|
+| Free | $0 | Standard | Code completion, Gemini 1.5 Flash |
+| Standard | $19/user/mo | 128K tokens | Gemini 1.5 Pro, code review, multi-file context |
+| Enterprise | ~$25-45/user/mo | 1M tokens | VPC-SC, audit logs, SSO, CMEK, custom model tuning |
 
 
 
@@ -71,7 +77,16 @@ When calculating total cost of ownership for Gemini Code Assist enterprise deplo
 
 
 
-Enterprise base licensing generally follows an annual subscription model with per-developer pricing. Organizations can typically expect to pay less per seat as their developer count increases, with tiered pricing structures rewarding larger deployments. The exact figures depend on negotiated agreements and specific feature inclusions.
+Calculate your annual Standard tier cost:
+
+```
+annual_cost = developers * 19 * 12
+
+#  50 developers:  50 * 19 * 12 = $11,400/year
+# 200 developers: 200 * 19 * 12 = $45,600/year
+```
+
+Enterprise tier has volume discounts. Expect 10-20% off list price for 100+ seats on annual contracts. Annual contracts are standard — month-to-month is typically 20% more expensive.
 
 
 

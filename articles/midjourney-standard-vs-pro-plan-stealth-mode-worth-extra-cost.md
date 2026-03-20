@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Midjourney Standard vs Pro Plan: Is Stealth Mode Worth."
+title: "Midjourney Standard vs Pro Plan: Is Stealth Mode Worth"
 description:"A detailed comparison of Midjourney Standard and Pro plans, focusing on whether the stealth mode feature justifies the price difference for 2026."
 date: 2026-03-18
 author: theluckystrike
@@ -168,9 +168,23 @@ Budget is a concern. The Standard plan provides excellent image quality, and the
 
 
 
+## How to Enable Stealth Mode
+
+Once on the Pro plan, enable stealth mode in any Midjourney Discord channel:
+
+```
+/stealth
+```
+
+Check your current mode:
+
+```
+/settings
+```
+
+Stealth applies to future generations only — existing public gallery images remain visible.
+
 ## Making the Decision
-
-
 
 Consider your primary use case before upgrading. If you're generating images for clients, working on confidential projects, or need the fastest possible generation speeds, the Pro plan's additional $30 monthly cost is a reasonable investment. The stealth mode feature specifically addresses real professional needs that the Standard plan cannot fulfill.
 

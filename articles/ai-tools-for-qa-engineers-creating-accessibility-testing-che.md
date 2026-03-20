@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for QA Engineers: Creating Accessibility."
+title: "AI Tools for QA Engineers: Creating Accessibility Testing Che"
 description:"Learn how QA engineers can use AI to generate accessibility testing checklists derived directly from WCAG 2.1 guidelines, with."
 date: 2026-03-16
 author: theluckystrike

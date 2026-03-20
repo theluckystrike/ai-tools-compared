@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Jest Tests for Web Worker and."
+title: "AI Tools for Writing Jest Tests for Web Worker and Service"
 description:"Discover how AI-powered tools can improve testing of web workers and service workers with Jest. Practical examples and code snippets included."
 date: 2026-03-16
 author: theluckystrike

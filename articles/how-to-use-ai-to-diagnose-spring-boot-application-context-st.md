@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Diagnose Spring Boot Application."
+title: "How to Use AI to Diagnose Spring Boot Application Context"
 description:"A practical guide for developers to use AI tools for diagnosing and fixing Spring Boot application context startup failures. Includes real error."
 date: 2026-03-16
 author: theluckystrike

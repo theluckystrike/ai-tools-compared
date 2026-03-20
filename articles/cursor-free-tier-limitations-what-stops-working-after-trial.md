@@ -1,6 +1,7 @@
 ---
 
 
+
 layout: default
 
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
@@ -22,9 +23,11 @@ slug: cursor-free-tier-limitations-what-stops-working-after-trial
 score: 7
 voice-checked: true
 reviewed: true
+intent-checked: true
 author: "AI Tools Compared"
 date: 2026-03-15
 ---
+
 
 
 

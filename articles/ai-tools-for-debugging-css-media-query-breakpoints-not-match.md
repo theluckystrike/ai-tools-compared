@@ -9,7 +9,11 @@ categories: [guides]
 score: 8
 voice-checked: true
 reviewed: true
+<<<<<<< HEAD
 tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
+=======
+intent-checked: true
+>>>>>>> fd4aadf2bf35d3a53a8b3a4a3cbcd69d79d912ca
 ---
 
 

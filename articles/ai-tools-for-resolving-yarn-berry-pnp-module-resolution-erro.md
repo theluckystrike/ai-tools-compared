@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Resolving Yarn Berry PnP Module Resolution."
+title: "AI Tools for Resolving Yarn Berry PnP Module Resolution Erro"
 description:"Discover how AI coding assistants help developers troubleshoot and fix Yarn Berry PnP module resolution issues in large monorepos. Practical examples."
 date: 2026-03-16
 author: theluckystrike

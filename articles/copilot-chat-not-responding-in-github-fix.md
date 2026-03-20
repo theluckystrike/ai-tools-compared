@@ -78,7 +78,23 @@ Copilot Chat requires a stable connection to GitHub's servers. Test your interne
 
 
 
-If you work behind a corporate firewall, verify that your security policies allow traffic to GitHub's Copilot endpoints. You may need to configure proxy settings within your IDE. For VS Code, add proxy configuration to your settings.json file using the http.proxy setting.
+If you work behind a corporate firewall, configure proxy settings in VS Code's `settings.json`:
+
+```json
+{
+  "http.proxy": "http://proxy.corp.example.com:8080",
+  "http.proxyStrictSSL": false
+}
+```
+
+Copilot Chat connects to `api.github.com` and `copilot-proxy.githubusercontent.com`. Test both:
+
+```bash
+curl -I https://api.github.com
+curl -I https://copilot-proxy.githubusercontent.com
+```
+
+A timeout on either URL points to a firewall or DNS issue rather than an extension problem.
 
 
 
@@ -90,7 +106,20 @@ VPN connections sometimes cause routing issues that prevent Copilot from establi
 
 
 
-Local cache corruption can cause Chat to hang or fail to respond. Clear the Copilot cache by locating your IDE's application data directory. For VS Code, this typically resides in ~/.vscode/extensions/github.copilot-*/dist. Remove Copilot-related folders and restart your IDE to rebuild the cache.
+Local cache corruption can cause Chat to hang or fail to respond. Clear the Copilot cache:
+
+```bash
+# macOS
+rm -rf ~/Library/Application\ Support/Code/User/globalStorage/github.copilot*
+
+# Linux
+rm -rf ~/.config/Code/User/globalStorage/github.copilot*
+
+# Windows PowerShell
+Remove-Item -Recurse -Force "$env:APPDATA\Code\User\globalStorage\github.copilot*"
+```
+
+Restart VS Code after clearing the cache.
 
 
 

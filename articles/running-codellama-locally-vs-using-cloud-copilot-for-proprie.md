@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Running CodeLlama Locally vs Using Cloud Copilot for."
+title: "Running CodeLlama Locally vs Using Cloud Copilot for Proprie"
 description:"A practical comparison of running CodeLlama locally versus using GitHub Copilot for proprietary code, with setup examples, performance analysis, and."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Migrate GitHub Copilot Workspace Setup to Cursor."
+title: "Migrate GitHub Copilot Workspace Setup to Cursor Background"
 description:"A practical guide for developers moving from GitHub Copilot workspace configurations to Cursor's background agent workflow."
 date: 2026-03-16
 author: theluckystrike

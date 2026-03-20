@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Free AI Tools for Code Refactoring That Actually Improve."
+title: "Free AI Tools for Code Refactoring That Actually Improve Qua"
 description:"A practical guide to free AI-powered code refactoring tools that genuinely improve code quality, with real examples and performance comparisons."
 date: 2026-03-16
 author: theluckystrike

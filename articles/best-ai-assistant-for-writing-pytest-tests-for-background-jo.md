@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Writing Pytest Tests for."
+title: "Best AI Assistant for Writing Pytest Tests for Background Job Retry Failure Scenarios"
 description:"A practical comparison of AI coding tools for writing pytest tests covering background job retry logic, failure handling, and edge cases with code."
 date: 2026-03-16
 author: theluckystrike

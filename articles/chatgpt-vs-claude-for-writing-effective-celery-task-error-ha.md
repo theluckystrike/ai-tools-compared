@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Claude for Writing Effective Celery Task."
+title: "ChatGPT vs Claude for Writing Effective Celery Task Error"
 description:"A practical comparison of ChatGPT and Claude for writing Celery task error handling in Python, with code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike

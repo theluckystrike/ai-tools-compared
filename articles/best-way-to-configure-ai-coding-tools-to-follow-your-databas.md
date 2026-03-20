@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best Way to Configure AI Coding Tools to Follow Your."
+title: "Best Way to Configure AI Coding Tools to Follow Your Databas"
 description:"Learn how to configure AI coding assistants like GitHub Copilot, Cursor, and Zed to respect your database naming conventions. Practical configuration."
 date: 2026-03-16
 author: theluckystrike

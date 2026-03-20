@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Create Model Context Protocol Server That Serves."
+title: "How to Create Model Context Protocol Server That Serves Api"
 description:"Learn to build a Model Context Protocol server that exposes your API documentation to AI assistants, enabling accurate code generation and intelligent."
 date: 2026-03-16
 author: theluckystrike

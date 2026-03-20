@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Ollama as Private AI Coding Assistant for."
+title: "How to Set Up Ollama as Private AI Coding Assistant for Sensitive Codebases"
 description:"A practical guide for developers looking to run local AI models for code assistance while keeping sensitive code completely private and offline."
 date: 2026-03-16
 author: theluckystrike

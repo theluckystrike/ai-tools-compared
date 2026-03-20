@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How Accurate Are AI Tools at Rust WASM Compilation and."
+title: "How Accurate Are AI Tools at Rust WASM Compilation and Bindg"
 description:"A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy."
 date: 2026-03-16
 author: theluckystrike
@@ -416,26 +416,6 @@ pub fn compute_async(value: i32) -> js_sys::Promise {
 
 
 This correctly handles async-to-Promise conversion. The code compiles and works properly in JavaScript. **Accuracy: 100%**
-
-
-
-## Summary Results
-
-
-
-| Test Case | Claude Code | GitHub Copilot | Cursor |
-
-|-----------|-------------|----------------|--------|
-
-| Basic WASM Library | 95% | 90% | 95% |
-
-| String Handling | 90% | 85% | 90% |
-
-| Array Handling | 100% | 50% | 95% |
-
-| Complex Structs | 100% | 75% | 80% |
-
-| Async Functions | 95% | 40% | 100% |
 
 
 

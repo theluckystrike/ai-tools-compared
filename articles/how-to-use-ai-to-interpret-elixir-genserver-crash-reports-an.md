@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Interpret Elixir GenServer Crash."
+title: "How to Use AI to Interpret Elixir GenServer Crash Reports"
 description:"Learn how AI tools can help you decode and understand Elixir GenServer crash reports and supervisor restart strategies. Practical examples and."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cheapest AI Tool for Generating Entire Project From."
+title: "Cheapest AI Tool for Generating Entire Project From Description"
 description:"A practical comparison of affordable AI tools that can generate complete projects from natural language descriptions, with code examples and cost."
 date: 2026-03-16
 author: theluckystrike

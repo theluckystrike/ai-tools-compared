@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Way to Structure Claude MD File for Python Django."
+title: "Best Way to Structure Claude MD File for Python Django Proje"
 description:"A guide to structuring Claude.md files for Python Django projects, with practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike

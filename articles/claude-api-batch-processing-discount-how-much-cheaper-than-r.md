@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude API Batch Processing: How Much Cheaper Than."
+title: "Claude API Batch Processing: How Much Cheaper Than Discount"
 description:"A practical guide to Claude API batch processing pricing. Learn how to save 50% on API costs and when to use batch vs real-time processing."
 date: 2026-03-16
 author: theluckystrike

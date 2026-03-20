@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Build Model Context Protocol Server That Provides."
+title: "How to Build Model Context Protocol Server That Provides Rea"
 description:"A practical guide to building an MCP server that streams real-time test results. Includes Python implementation, code examples, and integration."
 date: 2026-03-16
 author: theluckystrike

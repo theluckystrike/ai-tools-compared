@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Create Changelog Entries Grouped by."
+title: "How to Use AI to Create Changelog Entries Grouped by Breakin"
 description:"Learn practical methods for using AI to generate well-organized changelog entries that separate breaking changes from new features. Includes code."
 date: 2026-03-16
 author: theluckystrike

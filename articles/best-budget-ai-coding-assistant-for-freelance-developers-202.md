@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best Budget AI Coding Assistant for Freelance Developers."
+title: "Best Budget AI Coding Assistant for Freelance Developers 202"
 description:"A practical guide to the most cost-effective AI coding assistants for freelance developers, with code examples and recommendations for maximizing."
 date: 2026-03-16
 author: theluckystrike

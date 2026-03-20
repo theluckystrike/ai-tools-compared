@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build Custom AI Coding Workflows with MCP Server."
+title: "How to Build Custom AI Coding Workflows with MCP Server"
 description:"Learn how to create powerful AI-powered coding workflows using MCP server integrations. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike

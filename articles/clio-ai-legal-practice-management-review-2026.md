@@ -43,7 +43,7 @@ The AI-powered intake features automatically categorize incoming leads and route
 
 ## Technical Integration Considerations
 
-For developers building custom workflows, Clio provides a API. The API allows programmatic access to matters, contacts, documents, and tasks. Here's a basic example of querying matters using the Clio Manage API:
+For developers building custom workflows, Clio provides an API. The API allows programmatic access to matters, contacts, documents, and tasks. Here's a basic example of querying matters using the Clio Manage API:
 
 ```python
 import requests
@@ -141,7 +141,7 @@ For technically inclined legal professionals evaluating Clio AI in 2026:
 
 Clio remains a solid choice for law firms seeking integrated practice management with AI-assisted features. The platform excels at standardizing common workflows and reducing administrative burden. Developers appreciate the API flexibility, while non-technical users benefit from the intuitive interface.
 
-However, firms with highly specialized practices or those requiring deep research capabilities may find Clio's AI insufficient as a standalone solution. The platform works best as part of a broader legal technology stack rather than a answer to all practice management needs.
+However, firms with highly specialized practices or those requiring deep research capabilities may find Clio's AI insufficient as a standalone solution. The platform works best as part of a broader legal technology stack rather than an answer to all practice management needs.
 
 For 2026, Clio AI represents incremental improvement over previous versions rather than revolutionary change. The technology handles routine tasks well but hasn't reached the point of replacing human legal judgment on complex matters. Expect continued evolution as legal AI matures.
 

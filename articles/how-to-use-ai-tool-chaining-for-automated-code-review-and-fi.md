@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI Tool Chaining for Automated Code Review."
+title: "How to Use AI Tool Chaining for Automated Code Review"
 description:"A practical guide to building automated code review and fix pipelines using chained AI tools. Learn to connect linting, analysis, and correction workflows."
 date: 2026-03-16
 author: theluckystrike

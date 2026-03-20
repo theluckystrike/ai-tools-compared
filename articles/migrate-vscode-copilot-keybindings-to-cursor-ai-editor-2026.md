@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate VSCode Copilot Keybindings to Cursor AI."
+title: "How to Migrate VSCode Copilot Keybindings"
 description:"A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips."
 date: 2026-03-16
 author: theluckystrike
@@ -103,7 +103,7 @@ Cursor introduces AI-specific commands that replace or extend Copilot functional
 ```
 
 
-Map your existing Copilot keybindings to these Cursor commands for a experience. For example, if you used `Ctrl+Shift+Space` to trigger Copilot generation in VSCode, assign the same shortcut to `cursorai.edit.generate` in Cursor.
+Map your existing Copilot keybindings to these Cursor commands for an experience. For example, if you used `Ctrl+Shift+Space` to trigger Copilot generation in VSCode, assign the same shortcut to `cursorai.edit.generate` in Cursor.
 
 
 

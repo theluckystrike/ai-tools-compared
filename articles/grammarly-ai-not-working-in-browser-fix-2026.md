@@ -132,11 +132,28 @@ Safari: Grammarly's Safari extension requires specific permissions. Go to Safari
 
 
 
-If you're comfortable with browser developer tools, check the console for specific error messages. Open Developer Tools (F12 or Cmd+Option+I), navigate to the Console tab, and look for network failures or JavaScript errors when Grammarly attempts to load AI features.
+Open Developer Tools (`F12`), go to the Network tab, filter by `grammarly`, and reload the page. Common error patterns:
 
+```
+# CORS error
+Access to XMLHttpRequest at 'https://api.grammarly.io/...' blocked by CORS policy
 
+# Auth error
+401 Unauthorized — POST https://auth.grammarly.io/v3/api/login
 
-Common error patterns include CORS failures indicating blocked cross-origin requests, authentication errors showing expired tokens, and WebSocket connection failures to Grammarly's real-time processing servers. Screenshot these errors when contacting Grammarly support for faster resolution.
+# WebSocket failure
+WebSocket connection to 'wss://editor.grammarly.io/...' failed
+```
+
+For WebSocket failures, check if your VPN blocks `wss://` connections. Add `*.grammarly.io` as an SSL inspection bypass in your proxy.
+
+To list installed extensions in Chrome DevTools console:
+
+```javascript
+chrome.management.getAll(e => console.log(e.map(x => x.name + ': ' + x.enabled)));
+```
+
+Screenshot any 4xx or 5xx responses when contacting Grammarly support.
 
 
 

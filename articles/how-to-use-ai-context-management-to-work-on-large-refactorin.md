@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Context Management to Work on Large."
+title: "How to Use AI Context Management to Work on Large Refactorin"
 description:"A practical guide for developers on managing AI context during large-scale code refactoring projects. Learn techniques to maintain context window."
 date: 2026-03-16
 author: theluckystrike

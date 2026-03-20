@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Jasper AI vs Frase IO: SEO Writing Comparison for Power."
+title: "Jasper AI vs Frase IO: SEO Writing Comparison for Power"
 description:"A practical comparison of Jasper AI and Frase IO for SEO content creation, with API capabilities, workflow integration, and real-world examples for."
 date: 2026-03-15
 author: "AI Tools Compared"

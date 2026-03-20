@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude vs ChatGPT for Writing Datadog Dashboard."
+title: "Claude vs ChatGPT for Writing Datadog Dashboard Terraform"
 description:"A practical comparison of Claude and ChatGPT for creating Datadog dashboard Terraform configurations. Includes code examples and performance benchmarks."
 date: 2026-03-16
 author: theluckystrike

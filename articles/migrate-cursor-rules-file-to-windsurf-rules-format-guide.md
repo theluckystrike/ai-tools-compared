@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate Cursor Rules File to Windsurf Rules."
+title: "How to Migrate Cursor Rules File"
 description:"A practical guide for developers on migrating Cursor rules files to Windsurf's rules format, with code examples and step-by-step instructions."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Does WindSurf AI Send Entire Project Context or Just."
+title: "Does WindSurf AI Send Entire Project Context or Just Open"
 description:"A technical breakdown of how WindSurf AI handles context management, what gets sent to servers, and practical implications for developers concerned."
 date: 2026-03-16
 author: theluckystrike

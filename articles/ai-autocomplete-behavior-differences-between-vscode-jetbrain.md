@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Autocomplete Behavior Differences Between VSCode."
+title: "AI Autocomplete Behavior Differences Between VSCode Jetbrain"
 description:"A practical comparison of AI autocomplete behavior across VSCode, JetBrains IDEs, and Neovim plugins. Learn how each platform handles suggestions."
 date: 2026-03-16
 author: theluckystrike

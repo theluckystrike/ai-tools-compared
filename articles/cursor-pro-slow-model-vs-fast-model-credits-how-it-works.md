@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor Pro Slow Model vs Fast Model: Credits System."
+title: "Cursor Pro Slow Model vs Fast Model: Credits System How It Works"
 description:"Cursor Pro Slow Model vs Fast Model: Credits System. — guide with practical tips, comparisons, and expert recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
