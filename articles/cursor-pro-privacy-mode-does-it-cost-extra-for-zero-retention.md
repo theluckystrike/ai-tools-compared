@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, privacy]
 reviewed: true
 score: 8
 intent-checked: true

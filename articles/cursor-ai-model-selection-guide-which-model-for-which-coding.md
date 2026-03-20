@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-model-selection-guide-which-model-for-which-coding/
 categories: [guides]
-tags: [cursor, ai, coding]
+tags: [ai-tools-compared, cursor, ai, coding, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

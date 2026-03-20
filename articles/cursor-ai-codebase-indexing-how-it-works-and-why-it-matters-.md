@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

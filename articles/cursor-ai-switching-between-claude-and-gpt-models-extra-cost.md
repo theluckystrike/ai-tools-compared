@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-switching-between-claude-and-gpt-models-extra-cost/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

@@ -8,8 +8,9 @@ permalink: /cursor-free-plan-vs-windsurf-free-plan-which-gives-more/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, comparison]
 ---
 
 

@@ -41,12 +41,13 @@ categories:
   - Cursor
 permalink: /cursor-free-tier-limitations-what-stops-working-after-trial/
 slug: cursor-free-tier-limitations-what-stops-working-after-trial
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
 author: "AI Tools Compared"
 date: 2026-03-15
+tags: [ai-tools-compared]
 ---
 
 

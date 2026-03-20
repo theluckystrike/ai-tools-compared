@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, privacy, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
