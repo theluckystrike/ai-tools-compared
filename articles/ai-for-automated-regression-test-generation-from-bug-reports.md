@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-for-automated-regression-test-generation-from-bug-reports/
 categories: [guides]
-tags: [testing, ai-tools, automation]
+tags: [ai-tools-compared, testing, ai-tools, automation, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
