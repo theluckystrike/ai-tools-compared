@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-rust-web-development-with-axum-framework-2/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
