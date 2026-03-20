@@ -169,6 +169,122 @@ For rapid scaffolding, GitHub Copilot handles boilerplate fastest. Its strength 
 
 For large projects where editor performance matters, Zed offers the fastest experience. The Rust-based foundation keeps the editor responsive even with extensive TypeScript projects.
 
+## Advanced Middleware Patterns and AI Assistance
+
+Modern Express applications require sophisticated middleware chains that many AI assistants struggle with. Understanding what each tool handles well prevents time spent on manual debugging.
+
+### Error Handling Middleware
+
+Proper error handling is critical in production applications, but Express error middleware requires specific signatures that vanilla AI suggestions often miss.
+
+```typescript
+// WRONG: Common AI suggestion - missing error parameter
+export const errorHandler = (req: Request, res: Response, next: NextFunction) => {
+  try {
+    // This won't catch errors from previous middleware
+  } catch (err) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
+
+// CORRECT: Error middleware must have 4 parameters (err, req, res, next)
+export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+  const statusCode = (err as any).statusCode || 500;
+  const message = err.message || 'Internal Server Error';
+
+  res.status(statusCode).json({
+    error: message,
+    timestamp: new Date().toISOString(),
+    path: req.path
+  });
+};
+
+// Register AFTER all other middleware
+app.use(errorHandler);
+```
+
+Claude Code and Cursor correctly generate this pattern. Copilot and other tools frequently suggest the wrong signature.
+
+### Async Middleware Chains
+
+Express middleware chains with async operations require careful error propagation:
+
+```typescript
+// WRONG: Promise rejection not caught
+export const asyncMiddleware = async (req: Request, res: Response, next: NextFunction) => {
+  const data = await fetchSomeData(); // If this rejects, error isn't caught
+  req.body.data = data;
+  next();
+};
+
+// CORRECT: Wrap async operations
+export const asyncMiddleware = (req: Request, res: Response, next: NextFunction) => {
+  fetchSomeData()
+    .then(data => {
+      req.body.data = data;
+      next();
+    })
+    .catch(next); // Pass error to error handler
+};
+
+// OR use Express async wrapper (preferred)
+export const asyncHandler = (fn: Function) => (req: Request, res: Response, next: NextFunction) => {
+  Promise.resolve(fn(req, res, next)).catch(next);
+};
+
+app.use('/api', asyncHandler(async (req, res) => {
+  const data = await fetchSomeData();
+  res.json(data);
+}));
+```
+
+Cursor and Claude Code both understand this pattern. GitHub Copilot suggests the Promise version reliably but sometimes misses the wrapper pattern.
+
+### Middleware Composition and Reusability
+
+Building composable middleware reduces duplication:
+
+```typescript
+// Creating a factory for parameterized middleware
+export const createRateLimitMiddleware = (maxRequests: number, windowMs: number) => {
+  const requestMap = new Map<string, number[]>();
+
+  return (req: Request, res: Response, next: NextFunction) => {
+    const key = req.ip || 'unknown';
+    const now = Date.now();
+    const requests = requestMap.get(key) || [];
+
+    // Remove old requests outside window
+    const recentRequests = requests.filter(time => now - time < windowMs);
+
+    if (recentRequests.length >= maxRequests) {
+      return res.status(429).json({ error: 'Too many requests' });
+    }
+
+    recentRequests.push(now);
+    requestMap.set(key, recentRequests);
+    next();
+  };
+};
+
+// Usage
+app.use('/api', createRateLimitMiddleware(100, 60000)); // 100 requests per minute
+```
+
+Claude Code consistently generates this factory pattern correctly. Cursor handles it well. Copilot struggles with the stateful nature and tends to suggest simpler, less flexible approaches.
+
+## AI Tool Pricing for Middleware Development
+
+| Tool | Cost | IDE | Best For Middleware |
+|------|------|-----|-------------------|
+| Claude Code CLI | $0 (free tier), $20/month (paid) | Terminal-based | Complex type safety, error handling patterns |
+| Cursor | $20/month | VS Code-based | Real-time suggestions, preview before commit |
+| GitHub Copilot | $10-20/month | VS Code, JetBrains | Pattern completion, boilerplate |
+| Zed | Free (local) | Zed Editor | Large projects, performance |
+| ChatGPT API | $0.50-2.00 per 1M tokens | Web interface | One-off middleware design |
+
+For middleware-heavy Express projects, Claude Code and Cursor provide the best safety guarantees, while Copilot excels at rapid boilerplate generation.
+
 
 
 ## Related Reading
