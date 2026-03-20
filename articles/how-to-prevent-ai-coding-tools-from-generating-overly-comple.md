@@ -192,6 +192,68 @@ Over time, build a collection of prompts that work well for your projects. Docum
 
 Include prompts for common scenarios: simple functions, data transformations, basic CRUD operations, and test writing. For each scenario, note what complexity level the prompt produces and adjust as needed.
 
+## Comparison of AI Tools for Simplicity Control
+
+Different AI coding assistants offer varying levels of control over complexity. Here's a practical comparison:
+
+| Tool | Simplicity Control | Best For | Configuration Options |
+|------|------------------|----------|----------------------|
+| Claude Code | Excellent | Complex refactoring, clear direction | System prompts, detailed instructions |
+| GitHub Copilot | Good | Quick suggestions, inline completions | Comments, naming conventions |
+| Cursor | Excellent | IDE integration, context-aware | Project settings, .cursor configuration |
+| Codeium | Good | Fast completions, budget-conscious | Inline comments, function naming |
+| Continue Dev | Excellent | Local control, open-source workflows | Local settings, custom instructions |
+
+Claude Code performs particularly well when you provide explicit constraints, while Cursor excels at understanding project context to auto-adjust complexity levels.
+
+## Real-World Example: REST API Endpoint
+
+Here's how to guide AI from complex to simple for a common task:
+
+**What you ask:**
+> "Create a REST endpoint that returns user data"
+
+**Typical AI response (overcomplicated):**
+- Full middleware stack
+- Custom error handling classes
+- Repository pattern with dependency injection
+- Validation schemas
+
+**Revised ask:**
+> "Create a simple GET endpoint at /users/:id that returns JSON user data. Use Express only. No middleware, no validation classes. Keep it under 15 lines."
+
+**Better result:**
+```javascript
+app.get('/users/:id', (req, res) => {
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).json({ error: 'Not found' });
+  res.json(user);
+});
+```
+
+## Anti-Patterns to Watch For
+
+When reviewing AI-generated code, watch for these complexity red flags:
+
+- Multiple abstraction layers when direct implementation works
+- Inheritance hierarchies deeper than 2 levels
+- Generic/template code that handles "all possible cases"
+- Utility classes wrapping single functions
+- Over-engineered error handling for simple operations
+
+## Testing Complexity Preferences
+
+Before committing to an AI tool, test it with a simple scenario:
+
+```bash
+# Test prompt for any AI tool
+"Write a function that validates if a string is an email.
+Keep it simple. No classes, no external dependencies.
+Just use regex and return true/false."
+```
+
+Tools that consistently generate 3-5 line solutions are better for simplicity-first workflows. Tools requiring 10+ lines may default toward enterprise patterns.
+
 
 
 ## Related Reading

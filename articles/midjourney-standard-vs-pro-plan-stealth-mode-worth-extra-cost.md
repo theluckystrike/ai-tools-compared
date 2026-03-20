@@ -184,13 +184,71 @@ Check your current mode:
 
 Stealth applies to future generations only — existing public gallery images remain visible.
 
+## Pricing and Cost Analysis
+
+**Standard Plan:**
+- $30/month (monthly billing)
+- $24/month (annual billing, saves 20%)
+- 15 fast hours/month
+- Unlimited relaxed generation
+
+**Pro Plan:**
+- $60/month (monthly billing)
+- $48/month (annual billing, saves 20%)
+- 30 fast hours/month
+- 3x faster generation speeds
+- Stealth mode enabled
+- Priority queue access
+
+**Monthly Cost Comparison:**
+The Pro plan costs $30 more per month. For professional users generating 20+ images weekly, the faster speeds often pay for themselves through increased throughput. For casual users, the difference is more noticeable—that $30 could cover other tools or services.
+
+## Speed and Generation Time Impact
+
+The "3x faster" speed claim deserves scrutiny. Here's what that means practically:
+
+- Standard Plan: Image generation typically takes 60-90 seconds
+- Pro Plan: Same image takes 20-30 seconds
+
+For batch generation workflows, this speed difference compounds significantly. Generating 50 images:
+- Standard: ~75 minutes total
+- Pro: ~25 minutes total
+
+This 50-minute difference becomes valuable when you're on client deadlines or iterating rapidly on designs.
+
 ## Making the Decision
 
 Consider your primary use case before upgrading. If you're generating images for clients, working on confidential projects, or need the fastest possible generation speeds, the Pro plan's additional $30 monthly cost is a reasonable investment. The stealth mode feature specifically addresses real professional needs that the Standard plan cannot fulfill.
 
-
-
 However, if you're primarily creating for personal projects, sharing your work with the community, or just exploring AI image generation, the Standard plan delivers 95% of the value at half the price.
+
+## Decision Matrix
+
+| Factor | Standard Best | Pro Best |
+|--------|---|---|
+| Budget conscious | ✓ | |
+| Personal creative projects | ✓ | |
+| Learning AI image generation | ✓ | |
+| Client work requiring privacy | | ✓ |
+| Commercial product launches | | ✓ |
+| Batch image generation | | ✓ |
+| Community-focused workflow | ✓ | |
+| Time-sensitive deadlines | | ✓ |
+
+## Upgrade Path and Testing
+
+You can start on Standard and upgrade mid-month without losing credits. This allows you to test whether the speed increase actually matters for your workflow. Many professional users subscribe to Pro during crunch periods and downgrade between projects.
+
+## Tier Upgrade Timing Strategy
+
+- Upgrade to Pro: 2 weeks before major project deadline
+- Use Pro for initial concepts and iterations (faster feedback loop)
+- Downgrade to Standard for final refinements (less time-critical)
+- Total savings: $30/month × 2 months = $60, still under annual Pro cost
+
+## Related Considerations
+
+If stealth mode is your primary concern but speed isn't, consider whether you actually need Midjourney's premium offering. Alternative platforms like DALL-E 3 (via ChatGPT Plus, $20/month) don't publicly display generations by default and may better serve privacy-first workflows with lower cost.
 
 
 
