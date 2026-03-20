@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Memory Profiling Workflow Tutorial"
-description:"Learn how to use Claude Code to improve your memory profiling workflow. This tutorial covers identifying memory leaks, analyzing heap snapshots, optimizing memory usage, and debugging memory issues with practical examples."
+description: "Learn how to use Claude Code to improve your memory profiling workflow. This tutorial covers identifying memory leaks, analyzing heap snapshots, optimizing memory usage, and debugging memory issues with practical examples."
 date: 2026-03-19
 author: "theluckystrike"
 permalink: /claude-code-for-memory-profiling-workflow-tutorial/

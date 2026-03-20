@@ -2,7 +2,7 @@
 
 layout: default
 title: "Free AI Tools for Writing Bash Scripts and Automation"
-description:"A practical comparison of free AI tools that help with writing bash scripts and automating shell tasks, with examples and recommendations."
+description: "A practical comparison of free AI tools that help with writing bash scripts and automating shell tasks, with examples and recommendations."
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /free-ai-tools-for-writing-bash-scripts-and-automation/

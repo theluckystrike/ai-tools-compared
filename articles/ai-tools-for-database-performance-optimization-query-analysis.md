@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI tools for database performance optimization and query analysis."
-description: "Comprehensive guide to using AI assistants for identifying slow queries, optimizing indexes, and improving database performance."
+description: " guide to using AI assistants for identifying slow queries, optimizing indexes, and improving database performance."
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-database-performance-optimization-query-analysis/

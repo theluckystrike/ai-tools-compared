@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr"
-description:"How Well Do AI Tools Handle Rust Lifetime Elision Rules. — guide with practical tips, comparisons, and expert recommendations for."
+description: "How Well Do AI Tools Handle Rust Lifetime Elision Rules. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/

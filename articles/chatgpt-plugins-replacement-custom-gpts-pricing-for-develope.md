@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Plugins Replacement: Custom GPTs Pricing for Developers"
-description:"A practical guide to understanding how ChatGPT plugins evolved into Custom GPTs, with detailed pricing information and implementation examples for."
+description: "A practical guide to understanding how ChatGPT plugins evolved into Custom GPTs, with detailed pricing information and implementation examples for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Is Paying for AI Coding Tool Worth It for Junior Developer?"
-description:"A practical guide for junior developers on whether paid AI coding tools provide enough value to justify the cost. Real examples and cost-benefit."
+description: "A practical guide for junior developers on whether paid AI coding tools provide enough value to justify the cost. Real examples and cost-benefit."
 date: 2026-03-16
 author: theluckystrike
 permalink: /is-paying-for-ai-coding-tool-worth-it-for-junior-developer/

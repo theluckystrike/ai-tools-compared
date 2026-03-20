@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Accurate Are AI Tools for Rust Unsafe Code Blocks"
-description:"A practical evaluation of how well AI coding assistants handle Rust unsafe blocks and foreign function interface programming."
+description: "A practical evaluation of how well AI coding assistants handle Rust unsafe blocks and foreign function interface programming."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/

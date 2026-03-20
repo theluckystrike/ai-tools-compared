@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Free AI Tool for Generating Regex Patterns Explained"
-description:"A practical guide for developers on using free AI tools to generate, test, and refine regex patterns with real-world examples."
+description: "A practical guide for developers on using free AI tools to generate, test, and refine regex patterns with real-world examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-free-ai-tool-for-generating-regex-patterns-explained/

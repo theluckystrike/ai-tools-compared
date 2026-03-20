@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Python NumPy and Scientific Computing Code"
-description:"A practical comparison of AI coding assistants for NumPy and scientific computing, with code examples and quality assessment for developers working."
+description: "A practical comparison of AI coding assistants for NumPy and scientific computing, with code examples and quality assessment for developers working."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-python-numpy-and-scientific-computing-code/

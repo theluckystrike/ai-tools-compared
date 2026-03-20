@@ -3,7 +3,7 @@ categories: [guides]
 
 layout: default
 title: "Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026"
-description:"A practical guide for developers on configuring Claude Code to understand and work with internal library APIs, with configuration examples and best practices."
+description: "A practical guide for developers on configuring Claude Code to understand and work with internal library APIs, with configuration examples and best practices."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-claude-code-to-understand-your-interna/

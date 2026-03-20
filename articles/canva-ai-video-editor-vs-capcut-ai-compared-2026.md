@@ -2,7 +2,7 @@
 
 layout: default
 title: "Canva AI Video Editor vs CapCut AI Compared 2026"
-description:"A technical comparison of Canva AI Video Editor and CapCut AI for developers and power users, covering APIs, automation, workflows, and practical."
+description: "A technical comparison of Canva AI Video Editor and CapCut AI for developers and power users, covering APIs, automation, workflows, and practical."
 date: 2026-03-15
 author: theluckystrike
 permalink: /canva-ai-video-editor-vs-capcut-ai-compared-2026/

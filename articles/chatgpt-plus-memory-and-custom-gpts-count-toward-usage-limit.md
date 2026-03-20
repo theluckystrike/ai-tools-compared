@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Do ChatGPT Plus Memory and Custom GPTs Count Toward"
-description:"A practical guide for developers and power users on how ChatGPT Memory and Custom GPTs impact your Plus subscription usage limits."
+description: "A practical guide for developers and power users on how ChatGPT Memory and Custom GPTs impact your Plus subscription usage limits."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/

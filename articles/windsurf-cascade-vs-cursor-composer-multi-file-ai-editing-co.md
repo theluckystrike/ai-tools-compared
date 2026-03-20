@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windsurf Cascade vs Cursor Composer: Multi-File AI Editing"
-description:"A practical comparison of Windsurf Cascade and Cursor Composer for multi-file AI editing, with real workflows, code examples, and recommendations for."
+description: "A practical comparison of Windsurf Cascade and Cursor Composer for multi-file AI editing, with real workflows, code examples, and recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/

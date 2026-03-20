@@ -74,9 +74,9 @@ async def create_payment(request: PaymentRequest) -> PaymentResponse:
 
     Example:
         ```bash
-        curl -X POST http://localhost:8000/payments \
-          -H "Content-Type: application/json" \
-          -d '{"amount": 99.99, "currency": "USD", "idempotency_key": "unique-123"}'
+ curl -X POST http://localhost:8000/payments \
+ -H "Content-Type: application/json" \
+ -d '{"amount": 99.99, "currency": "USD", "idempotency_key": "unique-123"}'
         ```
 
     Rate limit: 100 requests per minute
@@ -451,7 +451,7 @@ Webhook events: transfer.completed, transfer.failed
 ## Related Reading
 
 - [How to use AI to generate component diagrams from React code](/ai-tools-compared/guides-hub/)
-- [Best AI tools for writing comprehensive API documentation](/ai-tools-compared/guides-hub/)
+- [Best AI tools for writing API documentation](/ai-tools-compared/guides-hub/)
 - [How to use AI for cloud migration planning](/ai-tools-compared/guides-hub/)
 
 ---

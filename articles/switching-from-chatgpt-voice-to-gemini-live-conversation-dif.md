@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Switching from ChatGPT Voice to Gemini Live: Conversation Differences"
-description:"A practical guide for developers and power users comparing ChatGPT Voice and Gemini Live. Learn the key differences in real-time conversation, latency, multimodal capabilities, and API integration."
+description: "A practical guide for developers and power users comparing ChatGPT Voice and Gemini Live. Learn the key differences in real-time conversation, latency, multimodal capabilities, and API integration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-chatgpt-voice-to-gemini-live-conversation-differences/

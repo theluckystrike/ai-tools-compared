@@ -2,7 +2,7 @@
 
 layout: default
 title: "Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist"
-description:"A practical checklist for developers migrating from GitHub Copilot Enterprise to Cursor Business, with configuration steps, workflow comparisons, and code examples."
+description: "A practical checklist for developers migrating from GitHub Copilot Enterprise to Cursor Business, with configuration steps, workflow comparisons, and code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-copilot-enterprise-to-cursor-business-migrati/

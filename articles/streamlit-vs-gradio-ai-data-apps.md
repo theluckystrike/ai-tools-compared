@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Streamlit vs Gradio for AI Data Apps: A Practical Comparison"
-description:"A developer-focused comparison of Streamlit and Gradio for building AI-powered data applications. Includes code examples, use cases, and recommendations."
+description: "A developer-focused comparison of Streamlit and Gradio for building AI-powered data applications. Includes code examples, use cases, and recommendations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /streamlit-vs-gradio-ai-data-apps/

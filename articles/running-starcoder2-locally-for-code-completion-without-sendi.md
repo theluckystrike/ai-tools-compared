@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Running Starcoder2 Locally for Code Completion Without"
-description:"Learn how to run Starcoder2 locally for privacy-focused code completion. Set up BigCode Stack and Ollama to get AI suggestions without sending your."
+description: "Learn how to run Starcoder2 locally for privacy-focused code completion. Set up BigCode Stack and Ollama to get AI suggestions without sending your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /running-starcoder2-locally-for-code-completion-without-sendi/

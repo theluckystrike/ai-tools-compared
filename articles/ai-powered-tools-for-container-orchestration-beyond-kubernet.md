@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Powered Tools for Container Orchestration Beyond Kubernetes Compared"
-description:"Discover AI-powered container orchestration tools that go beyond Kubernetes. Compare intelligent automation, predictive scaling, and smart deployment."
+description: "Discover AI-powered container orchestration tools that go beyond Kubernetes. Compare intelligent automation, predictive scaling, and smart deployment."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/

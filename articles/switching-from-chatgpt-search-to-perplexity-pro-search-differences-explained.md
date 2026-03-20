@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained"
-description:"A guide for developers and power users switching between ChatGPT Search and Perplexity Pro Search. Key differences, migration tips, and feature comparisons."
+description: "A guide for developers and power users switching between ChatGPT Search and Perplexity Pro Search. Key differences, migration tips, and feature comparisons."
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/

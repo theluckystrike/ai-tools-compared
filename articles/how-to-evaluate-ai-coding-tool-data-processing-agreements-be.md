@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Evaluate AI Coding Tool Data Processing Agreements"
-description:"A practical guide for developers and power users on evaluating data processing agreements in AI coding tools before making enterprise purchase decisions."
+description: "A practical guide for developers and power users on evaluating data processing agreements in AI coding tools before making enterprise purchase decisions."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-data-processing-agreements-be/

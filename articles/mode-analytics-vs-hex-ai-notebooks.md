@@ -2,7 +2,7 @@
 
 layout: default
 title: "Mode Analytics vs Hex AI Notebooks: A Practical"
-description:"A practical comparison of Mode Analytics and Hex AI Notebooks for data analysis workflows. Includes code examples, feature breakdown, and."
+description: "A practical comparison of Mode Analytics and Hex AI Notebooks for data analysis workflows. Includes code examples, feature breakdown, and."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /mode-analytics-vs-hex-ai-notebooks/

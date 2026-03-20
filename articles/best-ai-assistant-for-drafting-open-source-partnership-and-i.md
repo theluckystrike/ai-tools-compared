@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Drafting Open Source Partnership And Integration Proposals 2026"
-description:"Discover the best AI tools for drafting open source partnership proposals, integration documentation, and technical collaboration agreements for."
+description: "Discover the best AI tools for drafting open source partnership proposals, integration documentation, and technical collaboration agreements for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/

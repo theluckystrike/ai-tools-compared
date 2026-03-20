@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Configure AI Context Includes and Excludes for Monore"
-description:"A practical guide to configuring AI coding assistants to focus on specific directories in monorepo setups, improving context accuracy and response quality."
+description: "A practical guide to configuring AI coding assistants to focus on specific directories in monorepo setups, improving context accuracy and response quality."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-context-includes-and-excludes-for-monore/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "InVideo AI vs Pictory AI: Video Maker Comparison for Developers"
-description:"A technical comparison of InVideo AI and Pictory AI video creation tools, with API capabilities, automation workflows, and practical integration examples."
+description: "A technical comparison of InVideo AI and Pictory AI video creation tools, with API capabilities, automation workflows, and practical integration examples."
 date: 2026-03-15
 author: theluckystrike
 permalink: /invideo-ai-vs-pictory-ai-video-maker/

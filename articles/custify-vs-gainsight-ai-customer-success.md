@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Custify vs Gainsight AI Customer Success: A Developer Guide"
-description:"A technical comparison of Custify and Gainsight AI for customer success workflows, with API examples, integration patterns, and implementation guidance."
+description: "A technical comparison of Custify and Gainsight AI for customer success workflows, with API examples, integration patterns, and implementation guidance."
 date: 2026-03-15
 author: theluckystrike
 permalink: /custify-vs-gainsight-ai-customer-success/

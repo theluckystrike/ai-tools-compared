@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Debug CORS Errors in Cross-Origin API Reque"
-description:"Learn practical techniques for using AI assistants to identify, diagnose, and fix CORS errors in your web applications."
+description: "Learn practical techniques for using AI assistants to identify, diagnose, and fix CORS errors in your web applications."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/

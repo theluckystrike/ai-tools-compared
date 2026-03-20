@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Writing dbt Macros That Generate Dynamic SQL Bas"
-description:"Compare AI coding assistants for writing dbt macros that generate dynamic SQL from configuration. Practical examples, code quality comparison, and."
+description: "Compare AI coding assistants for writing dbt macros that generate dynamic SQL from configuration. Practical examples, code quality comparison, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/

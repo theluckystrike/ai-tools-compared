@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Data Labeling Tools Comparison: A Developer Guide"
-description:"A practical comparison of AI-powered data labeling tools for developers and power users, with code examples and integration tips."
+description: "A practical comparison of AI-powered data labeling tools for developers and power users, with code examples and integration tips."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-data-labeling-tools-comparison/

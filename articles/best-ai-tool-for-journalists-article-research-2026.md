@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tool for Journalists Article Research 2026"
-description:"A practical guide to AI-powered research tools for journalists, comparing features, use cases, and recommendations for professional news gathering."
+description: "A practical guide to AI-powered research tools for journalists, comparing features, use cases, and recommendations for professional news gathering."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-journalists-article-research-2026/

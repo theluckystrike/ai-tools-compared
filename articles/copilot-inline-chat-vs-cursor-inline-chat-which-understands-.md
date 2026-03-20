@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Inline Chat vs Cursor Inline Chat: Which Understands"
-description:"A practical comparison of GitHub Copilot and Cursor AI inline chat features, examining code understanding, context awareness, and real-world."
+description: "A practical comparison of GitHub Copilot and Cursor AI inline chat features, examining code understanding, context awareness, and real-world."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-inline-chat-vs-cursor-inline-chat-which-understands-/

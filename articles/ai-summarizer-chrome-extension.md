@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Summarizer Chrome Extension: A Developer Guide"
-description:"Learn how to build and use AI-powered summarizer Chrome extensions. Technical implementation details, API integration patterns, and practical examples."
+description: "Learn how to build and use AI-powered summarizer Chrome extensions. Technical implementation details, API integration patterns, and practical examples."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-summarizer-chrome-extension/

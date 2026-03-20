@@ -2,7 +2,7 @@
 
 layout: default
 title: "ChatGPT Enterprise vs Custom Support Bot: A Practical"
-description:"A technical comparison of ChatGPT Enterprise versus building a custom support bot, with code examples and implementation considerations for developers."
+description: "A technical comparison of ChatGPT Enterprise versus building a custom support bot, with code examples and implementation considerations for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-enterprise-vs-custom-support-bot/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "What Code Snippets Get Logged in AI Coding Tool Provider Aud"
-description:"A practical guide for developers and power users on understanding what code is recorded in AI coding tool audit trails. Includes real examples and."
+description: "A practical guide for developers and power users on understanding what code is recorded in AI coding tool audit trails. Includes real examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/

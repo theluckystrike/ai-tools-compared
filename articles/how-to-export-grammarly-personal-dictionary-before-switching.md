@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Export Grammarly Personal Dictionary Before Switching"
-description:"A practical guide for developers and power users on exporting your Grammarly personal dictionary before transitioning to AI assistants like Claude."
+description: "A practical guide for developers and power users on exporting your Grammarly personal dictionary before transitioning to AI assistants like Claude."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-grammarly-personal-dictionary-before-switching/

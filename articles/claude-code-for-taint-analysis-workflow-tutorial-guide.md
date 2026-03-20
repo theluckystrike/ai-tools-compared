@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code for Taint Analysis Workflow Tutorial Guide"
-description:"Learn how to use Claude Code to implement taint analysis in your development workflow. This guide covers static analysis setup, tracking untrusted data flow, identifying security vulnerabilities, and integrating taint checking into CI/CD pipelines."
+description: "Learn how to use Claude Code to implement taint analysis in your development workflow. This guide covers static analysis setup, tracking untrusted data flow, identifying security vulnerabilities, and integrating taint checking into CI/CD pipelines."
 date: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-for-taint-analysis-workflow-tutorial-guide/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Generating Pandas GroupBy Aggregation Code"
-description:"Discover how AI tools can convert plain English descriptions into pandas groupby aggregation code. Practical examples and code snippets for developers."
+description: "Discover how AI tools can convert plain English descriptions into pandas groupby aggregation code. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-pandas-groupby-aggregation-code-from/

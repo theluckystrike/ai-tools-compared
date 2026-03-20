@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Create CursorRules That Teach Cursor Your Team's State Management Patterns"
-description:"A practical guide to writing CursorRules that teach Cursor your team's state management patterns. Code examples and real-world patterns for React, Vue, and Redux projects."
+description: "A practical guide to writing CursorRules that teach Cursor your team's state management patterns. Code examples and real-world patterns for React, Vue, and Redux projects."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-teach-cursor-your-teams-state/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Configuring AI Coding Tools to Follow Your Teams Dependency"
-description:"Learn how to configure AI coding tools like GitHub Copilot, Codeium, and Tabnine to respect your team's dependency injection patterns. Practical setup guide with code examples."
+description: "Learn how to configure AI coding tools like GitHub Copilot, Codeium, and Tabnine to respect your team's dependency injection patterns. Practical setup guide with code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /configuring-ai-coding-tools-to-follow-your-teams-dependency-/

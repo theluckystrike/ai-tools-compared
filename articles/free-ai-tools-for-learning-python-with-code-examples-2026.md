@@ -2,7 +2,7 @@
 
 layout: default
 title: "Free AI Tools for Learning Python with Code Examples 2026"
-description:"A practical guide to free AI tools that help developers learn Python faster, with real code examples and actionable recommendations."
+description: "A practical guide to free AI tools that help developers learn Python faster, with real code examples and actionable recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-tools-for-learning-python-with-code-examples-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Customer Health Scoring"
-description:"A practical guide to AI tools for customer health scoring, with code examples and implementation strategies for developers building customer success systems."
+description: "A practical guide to AI tools for customer health scoring, with code examples and implementation strategies for developers building customer success systems."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-customer-health-scoring/

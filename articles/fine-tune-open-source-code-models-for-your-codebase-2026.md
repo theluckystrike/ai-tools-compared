@@ -13,7 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
-Fine-tuning open source code models like Code Llama, Deepseek Coder, and Mistral's Codestral on your proprietary codebase significantly improves suggestion accuracy and reduces hallucinations. Instead of generic suggestions, your AI assistant understands your team's conventions, naming patterns, and architecture. This guide shows exactly how to adapt state-of-the-art models to your specific code repository.
+Fine-tuning open source code models like Code Llama, Deepseek Coder, and Mistral's Codestral on your proprietary codebase significantly improves suggestion accuracy and reduces hallucinations. Instead of generic suggestions, your AI assistant understands your team's conventions, naming patterns, and architecture. This guide shows exactly how to adapt modern models to your specific code repository.
 
 ## Why Fine-tune Instead of Using Commercial Models?
 

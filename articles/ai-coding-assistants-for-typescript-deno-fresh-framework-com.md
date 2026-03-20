@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Coding Assistants for TypeScript Deno Fresh Framework Compared 2026"
-description:"A practical comparison of AI coding assistants for TypeScript Deno Fresh framework development, with code examples and recommendations for developers building modern web applications."
+description: "A practical comparison of AI coding assistants for TypeScript Deno Fresh framework development, with code examples and recommendations for developers building modern web applications."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistants-for-typescript-deno-fresh-framework-com/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Screen Recording Editing: A Developer's Guide"
-description:"A practical comparison of AI-powered screen recording and editing tools for developers and power users, with CLI examples, automation tips, and workflow recommendations."
+description: "A practical comparison of AI-powered screen recording and editing tools for developers and power users, with CLI examples, automation tips, and workflow recommendations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-screen-recording-editing/

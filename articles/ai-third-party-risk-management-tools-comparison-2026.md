@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Third Party Risk Management Tools Comparison 2026"
-description:"A practical comparison of AI-powered third-party risk management tools for developers and security teams. Evaluate tools based on API security, vendor."
+description: "A practical comparison of AI-powered third-party risk management tools for developers and security teams. Evaluate tools based on API security, vendor."
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-third-party-risk-management-tools-comparison-2026/

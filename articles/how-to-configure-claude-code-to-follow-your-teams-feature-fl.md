@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Configure Claude Code to Follow Your Team's Feature Flag Naming Conventions"
-description:"A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration tips."
+description: "A practical guide to configuring Claude Code to understand and follow your team's feature flag naming conventions with real-world examples and configuration tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-to-follow-your-teams-feature-fl/

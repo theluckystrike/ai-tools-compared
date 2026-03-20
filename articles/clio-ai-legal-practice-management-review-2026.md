@@ -2,7 +2,7 @@
 
 layout: default
 title: "Clio AI Legal Practice Management Review 2026"
-description:"Clio AI Legal Practice Management Review 2026 — guide with practical tips, comparisons, and expert recommendations for developers and."
+description: "Clio AI Legal Practice Management Review 2026 — guide with practical tips, comparisons, and expert recommendations for developers and."
 date: 2026-03-20
 author: theluckystrike
 permalink: /clio-ai-legal-practice-management-review-2026/

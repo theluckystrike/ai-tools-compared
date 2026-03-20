@@ -3,7 +3,7 @@
 
 layout: default
 title: "Best AI Tool for Auditors: Audit Report Generation Compared"
-description:"A practical comparison of AI tools for auditors focusing on audit report generation, with real-world use cases and recommendations for different audit."
+description: "A practical comparison of AI tools for auditors focusing on audit report generation, with real-world use cases and recommendations for different audit."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-auditors-audit-report-generation/

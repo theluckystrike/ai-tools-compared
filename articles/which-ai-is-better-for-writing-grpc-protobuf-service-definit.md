@@ -2,7 +2,7 @@
 
 layout: default
 title: "Which AI Is Better for Writing gRPC Protobuf Service Definitions"
-description:"A practical comparison of AI tools for writing gRPC and Protobuf service definitions, with code examples and recommendations for developers."
+description: "A practical comparison of AI tools for writing gRPC and Protobuf service definitions, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-is-better-for-writing-grpc-protobuf-service-definitions/

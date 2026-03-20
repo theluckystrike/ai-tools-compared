@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Code Generation Quality for Java Spring Security"
-description:"A practical analysis of AI code generation quality for Java Spring Security configuration, with code examples and quality assessment for developers in."
+description: "A practical analysis of AI code generation quality for Java Spring Security configuration, with code examples and quality assessment for developers in."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-spring-security-configur/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Capacity Planning and Resource Right Sizin"
-description:"A practical guide for developers and power users on using AI to optimize infrastructure capacity planning and resource allocation across cloud."
+description: "A practical guide for developers and power users on using AI to optimize infrastructure capacity planning and resource allocation across cloud."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-capacity-planning-and-resource-right-sizin/

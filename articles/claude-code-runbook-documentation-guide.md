@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Runbook Documentation Guide"
-description:"A guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation."
+description: "A guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation."
 date: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-runbook-documentation-guide/

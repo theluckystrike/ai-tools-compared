@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Cursor vs Windsurf: Inline Diff Preview Comparison"
-description:"A practical comparison of inline diff preview features in GitHub Copilot, Cursor, and Windsurf. See how each tool shows code changes before acceptance."
+description: "A practical comparison of inline diff preview features in GitHub Copilot, Cursor, and Windsurf. See how each tool shows code changes before acceptance."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/

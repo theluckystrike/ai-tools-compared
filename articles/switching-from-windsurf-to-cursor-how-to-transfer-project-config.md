@@ -2,7 +2,7 @@
 
 layout: default
 title: "Switching from Windsurf to Cursor: How to Transfer Project Config"
-description:"A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."
+description: "A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-to-cursor-how-to-transfer-project-config/

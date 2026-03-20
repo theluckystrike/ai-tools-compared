@@ -2,7 +2,7 @@
 
 layout: default
 title: "Writing CursorRules for Golang Projects with Specific Concur"
-description:"Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and."
+description: "Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/

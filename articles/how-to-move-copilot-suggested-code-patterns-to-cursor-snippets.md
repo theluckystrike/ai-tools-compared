@@ -4,7 +4,7 @@
 
 layout: default
 title: "How to Move Copilot Suggested Code Patterns to Cursor Snippets: Complete Guide"
-description:"A practical step-by-step guide to migrating your favorite GitHub Copilot code suggestions into Cursor's custom snippets for faster development."
+description: "A practical step-by-step guide to migrating your favorite GitHub Copilot code suggestions into Cursor's custom snippets for faster development."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/

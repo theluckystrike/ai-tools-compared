@@ -2,7 +2,7 @@
 
 layout: default
 title: "Perplexity API Pricing vs Pro Subscription: Which Is Using Pro Subscription Which"
-description:"A practical comparison of Perplexity API costs versus the Pro subscription, with code examples and cost-saving recommendations for developers."
+description: "A practical comparison of Perplexity API costs versus the Pro subscription, with code examples and cost-saving recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/
