@@ -6,7 +6,7 @@ description: "A technical review of Clio's AI features for legal practice manage
 date: 2026-03-20
 author: theluckystrike
 permalink: /clio-ai-legal-practice-management-review-2026/
-categories: [legal-tech, ai-tools]
+categories: [guides]
 reviewed: true
 score: 7
 intent-checked: true
