@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, chatgpt, api]
 reviewed: true
 score: 8
 voice-checked: true

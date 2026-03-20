@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-enterprise-vs-custom-support-bot/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true

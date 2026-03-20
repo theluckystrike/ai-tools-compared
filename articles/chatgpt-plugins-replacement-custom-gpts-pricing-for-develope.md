@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
