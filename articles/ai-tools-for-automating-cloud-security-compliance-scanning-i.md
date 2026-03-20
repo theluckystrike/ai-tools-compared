@@ -13,6 +13,7 @@ score: 8
 intent-checked: false
 voice-checked: true
 voice-checked: false
+tags: [ai-tools-compared, security, artificial-intelligence]
 ---
 
 

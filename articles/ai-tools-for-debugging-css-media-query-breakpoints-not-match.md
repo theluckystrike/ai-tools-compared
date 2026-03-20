@@ -6,9 +6,10 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-debugging-css-media-query-breakpoints-not-match/
 categories: [guides]
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
+tags: [ai-tools-compared, troubleshooting, artificial-intelligence]
 ---
 
 

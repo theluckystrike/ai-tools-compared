@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automated-secrets-rotation-and-vault-management/
 categories: [guides]
-tags: [security, automation]
+tags: [ai-tools-compared, security, automation, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
