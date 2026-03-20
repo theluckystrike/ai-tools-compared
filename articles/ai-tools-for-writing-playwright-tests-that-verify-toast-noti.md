@@ -199,9 +199,255 @@ Include tests for edge cases like rapid trigger actions that spawn multiple toas
 
 Finally, run the generated tests multiple times to identify flakiness. Toast timing tests are particularly susceptible to timing-related flakiness in CI environments. Adjust timeouts and waiting strategies as needed.
 
+## Tool Comparison for Toast Tests
 
+| Tool | Code Generation | Context Awareness | Edge Cases | Cost |
+|------|---|---|---|---|
+| GitHub Copilot | Good | Limited to file | Moderate | $10/month |
+| Claude Code | Excellent | Full codebase | Excellent | $3/1M tokens |
+| Cursor | Excellent | Excellent | Excellent | $20-40/month |
+| Zed AI | Good | Excellent | Good | $100/year |
+| ChatGPT Plus | Good | Limited | Moderate | $20/month |
+
+## Real-World Toast Scenarios
+
+### Multiple Toast Types with Different Auto-Dismiss Times
+
+```typescript
+test.describe('Multi-type Toast Scenarios', () => {
+  test('different toast types have different durations', async ({ page }) => {
+    const toastConfigs = [
+      { type: 'success', text: 'Operation successful', duration: 3000 },
+      { type: 'error', text: 'Error occurred', duration: 7000 },
+      { type: 'warning', text: 'Be careful', duration: 5000 },
+      { type: 'info', text: 'For your information', duration: 4000 }
+    ];
+
+    for (const config of toastConfigs) {
+      // Trigger specific toast type
+      await page.evaluate((type) => {
+        window.showToast(type, 'test message');
+      }, config.type);
+
+      const toast = page.locator(`[data-toast-type="${config.type}"]`);
+      await expect(toast).toBeVisible({ timeout: 1000 });
+
+      // Verify it dismisses at expected time
+      const dismissTimeout = config.duration + 500; // Add buffer
+      await expect(toast).not.toBeVisible({ timeout: dismissTimeout });
+    }
+  });
+
+  test('rapid successive toasts queue properly', async ({ page }) => {
+    // Trigger 5 toasts in quick succession
+    for (let i = 0; i < 5; i++) {
+      await page.click('#show-toast');
+      await page.waitForTimeout(100);
+    }
+
+    // Verify all are visible
+    const toasts = page.locator('.toast-notification');
+    await expect(toasts).toHaveCount(5);
+
+    // Wait for queue to drain
+    await expect(toasts).toHaveCount(0, { timeout: 15000 });
+  });
+});
+```
+
+### Toast with Custom Actions
+
+```typescript
+test('toast with action button', async ({ page }) => {
+  await page.goto('/settings');
+
+  // Trigger action that shows toast with button
+  await page.click('#delete-account');
+
+  const toast = page.locator('.toast-notification');
+  await expect(toast).toBeVisible();
+  await expect(toast).toContainText('Account deleted. Undo?');
+
+  // Test undo action
+  await toast.locator('[data-action="undo"]').click();
+
+  // Verify undo worked (specific to your app)
+  await expect(page.locator('[data-account-status]')).toContainText('Active');
+
+  // Verify toast disappeared after action
+  await expect(toast).not.toBeVisible();
+});
+```
+
+## CLI Commands for Test Generation
+
+```bash
+# Generate test from component
+npx playwright codegen http://localhost:3000
+
+# Run tests with verbose output
+npx playwright test --reporter=list
+
+# Debug flaky tests
+npx playwright test --debug
+
+# Take screenshots on failure (helpful for AI analysis)
+npx playwright test --reporter=html --reporter=list
+
+# Check toast test coverage
+npx playwright test --grep "toast"
+```
+
+## Debugging Flaky Toast Tests
+
+When toast tests fail intermittently:
+
+```typescript
+// Add debugging information
+test('debug flaky toast behavior', async ({ page }) => {
+  // Increase timeouts and add logging
+  page.on('console', msg => console.log('PAGE:', msg.text()));
+
+  await page.goto('/dashboard');
+  await page.click('#show-toast');
+
+  const toast = page.locator('.toast-notification');
+
+  // Check if toast exists in DOM
+  const isAttached = await toast.isAttached();
+  console.log('Toast attached:', isAttached);
+
+  // Check visibility state
+  const isVisible = await toast.isVisible({ timeout: 500 }).catch(() => false);
+  console.log('Toast visible:', isVisible);
+
+  // Check computed styles that might affect visibility
+  const opacity = await toast.evaluate(el =>
+    window.getComputedStyle(el).opacity
+  );
+  console.log('Toast opacity:', opacity);
+
+  // Wait with explicit visual inspection
+  await toast.screenshot({ path: 'toast-visible.png' });
+});
+```
+
+## AI Prompt Best Practices for Toast Tests
+
+When asking an AI tool to generate toast tests, be specific:
+
+```
+Bad prompt:
+"Write tests for toast notifications"
+
+Good prompt:
+"Write Playwright tests that verify:
+1. A toast appears within 200ms of clicking '#save-button'
+2. The toast contains text 'Changes saved'
+3. The toast auto-dismisses after 5 seconds
+4. A close button with class 'toast-close' can dismiss it immediately
+5. Multiple rapid toasts stack vertically
+Use page.goto('/app/dashboard') as the starting point"
+```
+
+## Common Toast Test Mistakes and Fixes
+
+```typescript
+// MISTAKE: Racing with animations
+test('wrong: dismissal too fast', async ({ page }) => {
+  await page.click('#show');
+  const toast = page.locator('.toast');
+  await toast.click('.close');  // May click before animation complete
+  // Toast might still be animating out!
+});
+
+// CORRECT: Wait for completion
+test('right: wait for animation', async ({ page }) => {
+  await page.click('#show');
+  const toast = page.locator('.toast');
+
+  // Wait for exit animation class or use waitForElementState
+  await toast.click('.close');
+  await expect(toast).toHaveClass(/exiting/);
+  await page.waitForTimeout(300); // Animation duration
+  await expect(toast).not.toBeAttached();
+});
+
+// MISTAKE: Hardcoded timeouts that fail in CI
+test('wrong: CI-fragile timeouts', async ({ page }) => {
+  await page.click('#show');
+  await page.waitForTimeout(3000);  // Brittle!
+  const toast = page.locator('.toast');
+  await expect(toast).not.toBeVisible();
+});
+
+// CORRECT: Polling with timeout
+test('right: robust timeout handling', async ({ page }) => {
+  await page.click('#show');
+  const toast = page.locator('.toast');
+
+  // Playwright's matcher handles polling automatically
+  await expect(toast).not.toBeVisible({ timeout: 7000 });
+});
+```
+
+## Performance Testing Toast Implementation
+
+```typescript
+test('performance: toast rendering', async ({ page }) => {
+  await page.goto('/dashboard');
+
+  // Measure rendering time for a single toast
+  const startTime = Date.now();
+  await page.click('#show-success-toast');
+  const toast = page.locator('.toast-notification');
+  await expect(toast).toBeVisible();
+  const renderTime = Date.now() - startTime;
+
+  console.log(`Toast render time: ${renderTime}ms`);
+  expect(renderTime).toBeLessThan(500); // Should appear quickly
+});
+```
+
+## Integration with CI/CD
+
+```yaml
+# .github/workflows/test-toast.yml
+name: Toast Tests
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - run: npm ci
+      - run: npx playwright install
+
+      # Run just toast tests
+      - run: npx playwright test --grep "toast"
+
+      # Generate HTML report
+      - if: always()
+        run: npx playwright show-report
+```
 
 ## Related Reading
+
+- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
+- [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+
+Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)

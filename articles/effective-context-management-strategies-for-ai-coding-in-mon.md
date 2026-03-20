@@ -198,10 +198,317 @@ Pay attention to what causes AI mistakes in your monorepo. Often, incorrect sugg
 
 As AI coding tools continue evolving, context management strategies will adapt. The fundamental principle remains constant: provide the right context at the right granularity, and your AI assistant becomes significantly more effective at helping you navigate complex monorepo architectures.
 
+## Tool-Specific Context Strategies
 
+### Claude Code (Terminal-Based)
 
+Claude Code excels with explicit file references. Use glob patterns and specific paths:
 
+```bash
+# Include multiple packages with pattern
+claude code "packages/{auth,payment,shared}/**/*.ts" "Add payment validation to auth flow"
 
+# Reference specific file paths
+claude code packages/auth-service/src/auth.ts packages/shared/types/auth.ts \
+  "Update JWT validation to use new shared types"
+
+# View token usage before committing context
+claude code --tokens-estimate packages/api-gateway/src/handlers/**/*.ts
+```
+
+### Cursor (IDE-Integrated)
+
+Cursor maintains a codebase index automatically. Leverage it effectively:
+
+```
+Use @codebase reference for semantic search:
+"Find all places where validateUser is called across packages"
+
+Use @file for explicit file references:
+"In @packages/auth-lib/src/validator.ts, add stricter email validation"
+
+Use @function for function-level context:
+"Refactor @UserService.authenticate to use new async pattern"
+```
+
+### GitHub Copilot (Inline)
+
+Copilot works best with minimal but specific context:
+
+```typescript
+// Strategy: Establish context with comments before asking
+// File: packages/api/src/handlers.ts
+// This file imports from: @company/auth (packages/auth/), @company/types (packages/types/)
+
+export async function handleLogin(req) {
+  // Ask Copilot: "Add rate limiting following the pattern in packages/shared/middleware"
+  // Copilot can now find and follow the pattern
+}
+```
+
+## Advanced Context Patterns
+
+### Creating Context Bundles for Large Features
+
+```python
+# Python utility to collect relevant files for AI context
+import os
+import glob
+from pathlib import Path
+
+def create_context_bundle(monorepo_root, feature_package, import_depth=1):
+    """Collect files needed for AI to understand a feature."""
+    files = []
+
+    # 1. Main package files
+    main_pattern = f"packages/{feature_package}/src/**/*.py"
+    files.extend(glob.glob(f"{monorepo_root}/{main_pattern}"))
+
+    # 2. One level of import dependencies
+    imports = set()
+    for file_path in files:
+        with open(file_path) as f:
+            for line in f:
+                if line.startswith("from") and "packages/" in line:
+                    # Extract package name
+                    pkg = line.split("packages/")[1].split("/")[0]
+                    imports.add(pkg)
+
+    # 3. Add shared types/interfaces
+    for pkg in imports:
+        types_pattern = f"packages/{pkg}/src/types/**/*.py"
+        files.extend(glob.glob(f"{monorepo_root}/{types_pattern}"))
+
+    # 4. Skip large dependencies and node_modules
+    return [f for f in files if "node_modules" not in f and "test" not in f]
+
+# Usage:
+# bundle = create_context_bundle(".", "user-service")
+# for file in bundle:
+#     print(file)  # Pass to your AI tool
+```
+
+### Documenting Monorepo Structure for AI
+
+Create a `.ai-context.md` file in your monorepo root:
+
+```markdown
+# Monorepo Structure for AI Tools
+
+## Package Layout
+- `packages/api/` - API gateway and HTTP handlers
+- `packages/auth/` - Authentication service
+- `packages/shared/` - Shared types and utilities
+- `packages/database/` - Data access layer
+
+## Key Dependencies
+- auth -> shared, database
+- api -> auth, shared
+- shared -> (no dependencies)
+- database -> shared
+
+## Naming Conventions
+- Services: `*Service` (UserService, PaymentService)
+- Types: PascalCase interfaces
+- Utilities: camelCase functions
+- Constants: SCREAMING_SNAKE_CASE
+
+## Important Files
+- Shared types: `packages/shared/src/types/`
+- Error handling: `packages/shared/src/errors/`
+- Database models: `packages/database/src/models/`
+
+## Testing Patterns
+- Jest configuration: Root `jest.config.js`
+- Test location: `src/__tests__/`
+- Mocking pattern: Use factory functions from `test-utils/`
+```
+
+## Token Usage Optimization
+
+### Measuring Token Consumption
+
+```bash
+# For Claude Code
+echo "Check token count in response headers"
+
+# For API users
+python3 << 'EOF'
+import anthropic
+
+client = anthropic.Anthropic()
+
+response = client.messages.create(
+    model="claude-opus-4-20250514",
+    max_tokens=1024,
+    messages=[{
+        "role": "user",
+        "content": "Summarize this code..."
+    }]
+)
+
+# Check usage
+print(f"Input tokens: {response.usage.input_tokens}")
+print(f"Output tokens: {response.usage.output_tokens}")
+print(f"Total cost: ${(response.usage.input_tokens * 0.003 + response.usage.output_tokens * 0.015) / 1000000}")
+EOF
+```
+
+### Context Reduction Techniques
+
+```
+1. Use TypeScript/Python type definitions instead of code comments
+   - Types are more compact than explanations
+   - AI can infer intent from signatures
+
+2. Reference existing patterns instead of explaining
+   - "Follow the pattern in packages/auth-lib/middleware.ts"
+   - Avoids repeating similar logic
+
+3. Use search results instead of full files
+   - "Find uses of UserRepository class" (AI searches)
+   - "Show me how DatabasePool is initialized" (targeted search)
+   - Results are smaller than full file context
+
+4. Separate concerns into different prompts
+   - First prompt: Architecture validation
+   - Second prompt: Implementation details
+   - Avoids loading everything at once
+
+5. Use git history for reference
+   - "Show me the commit that added stripe integration"
+   - "Find previous migrations for payment schema"
+   - Historical context is often smaller than full files
+```
+
+## Monorepo-Specific Prompting
+
+### Good Monorepo Prompts
+
+```
+GOOD: "In packages/auth-service/src/validators, add email validation following
+the pattern used in packages/shared/validators/stringValidators.ts"
+
+GOOD: "Implement the PaymentGateway interface from packages/shared/types/payment.ts
+in packages/stripe-service/src/gateway.ts"
+
+GOOD: "Create a database migration in packages/database/migrations that adds
+a users table with fields: id, email, created_at, updated_at"
+
+BETTER: "I'm working on packages/user-service. Existing code uses the BaseService
+from packages/shared/services/BaseService.ts. Create a UserService extending it
+with methods: createUser, getUserById, updateUser"
+```
+
+### Poor Monorepo Prompts
+
+```
+POOR: "Write authentication code"
+(Too vague—doesn't reference existing patterns)
+
+POOR: "Add a feature to the API"
+(Doesn't specify which packages or what the feature is)
+
+POOR: [Paste entire monorepo structure]
+(Too much context, buries the actual request)
+
+POOR: "Make this work with the rest of the code"
+(Assumes AI knows your architecture without specifying)
+```
+
+## Handling Large Dependencies
+
+```typescript
+// Instead of including all of node_modules context, create a type definitions summary
+
+// File: packages/api/src/.ai-deps-summary.ts
+/**
+ * AI Context: External Dependencies
+ *
+ * express@4.18.0 - HTTP server
+ *   - Request/Response types from express
+ *   - Middleware pattern: (req, res, next) => void
+ *
+ * @prisma/client - Database ORM
+ *   - Usage pattern: const prisma = new PrismaClient()
+ *   - Query style: prisma.model.findUnique({ where: {...} })
+ *
+ * jsonwebtoken@9.0.0 - JWT handling
+ *   - Sign: jwt.sign(payload, secret, options)
+ *   - Verify: jwt.verify(token, secret)
+ */
+```
+
+## Monorepo-Scale Context Management
+
+For 10+ packages, implement tiered context strategy:
+
+```yaml
+# Context Management Tiers
+
+Tier 1 - Always Include:
+  - Type definitions related to feature
+  - Interfaces from shared packages
+  - Error handling patterns
+
+Tier 2 - Include When Relevant:
+  - Related service implementations
+  - Database models
+  - API route handlers
+
+Tier 3 - Include Only When Requested:
+  - Tests and test utilities
+  - Build configuration
+  - CI/CD workflows
+
+Tier 4 - Never Include Without Purpose:
+  - node_modules
+  - Large third-party types
+  - Build artifacts
+  - Lock files
+```
+
+## Tool Comparison for Monorepo Support
+
+| Tool | Index Building | Context Efficiency | Cross-Package Awareness | Best For |
+|------|---|---|---|---|
+| Cursor | Automatic | Excellent | Excellent | Large monorepos |
+| Claude Code | Manual (globs) | Good | Excellent | Terminal-focused |
+| Copilot | Limited | Limited | Moderate | Small monorepos |
+| GitHub Copilot Chat | None | Limited | Moderate | Quick questions |
+| Aider | Git-aware | Good | Good | Git-integrated workflow |
+
+## Troubleshooting Context Issues
+
+```bash
+# Problem: AI generates code incompatible with shared types
+# Solution: Include shared type files explicitly
+claude code packages/shared/types/**/*.ts packages/your-service/src/**/*.ts \
+  "Implement feature using shared types"
+
+# Problem: AI doesn't understand monorepo import paths
+# Solution: Show actual import patterns
+# Create context file showing:
+# "We use: import { User } from '@company/shared/types'"
+# "We import like: import UserService from '../../services'"
+
+# Problem: Token limit reached with large feature
+# Solution: Break into subtasks
+# 1. First: Generate types and interfaces
+# 2. Second: Implement service layer
+# 3. Third: Create API handlers
+```
+
+## Related Reading
+
+- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Context Loading Strategies for AI Tools in.](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

@@ -202,6 +202,280 @@ def lowercase_email(cls, v):
 ```
 
 
+## Advanced Validation Patterns
+
+### Custom Validators with Multiple Field Dependencies
+
+```python
+from pydantic import BaseModel, Field, field_validator, model_validator
+from datetime import date
+
+class DateRange(BaseModel):
+    start_date: date
+    end_date: date
+    inclusive: bool = True
+
+    @model_validator(mode='after')
+    def validate_date_range(self):
+        if self.start_date > self.end_date:
+            raise ValueError('start_date must be before end_date')
+        return self
+
+class Event(BaseModel):
+    name: str
+    dates: DateRange
+    capacity: int = Field(gt=0, le=10000)
+    registered: int = Field(default=0, ge=0)
+
+    @field_validator('name')
+    @classmethod
+    def validate_name(cls, v: str) -> str:
+        if len(v.strip()) == 0:
+            raise ValueError('Event name cannot be empty')
+        return v.strip()
+
+    @model_validator(mode='after')
+    def validate_registration(self):
+        if self.registered > self.capacity:
+            raise ValueError('Cannot have more registered users than capacity')
+        return self
+```
+
+### Computed Fields and Derived Values
+
+```python
+from pydantic import BaseModel, Field, computed_field
+
+class Invoice(BaseModel):
+    items: list[dict] = Field(min_length=1)
+    tax_rate: float = Field(default=0.1, ge=0, le=1)
+    discount: float = Field(default=0, ge=0)
+
+    @computed_field
+    @property
+    def subtotal(self) -> float:
+        return sum(item['price'] * item['quantity'] for item in self.items)
+
+    @computed_field
+    @property
+    def tax_amount(self) -> float:
+        return round(self.subtotal * self.tax_rate, 2)
+
+    @computed_field
+    @property
+    def total(self) -> float:
+        return round(self.subtotal + self.tax_amount - self.discount, 2)
+
+# Usage with AI-generated context
+invoice = Invoice(
+    items=[
+        {'price': 100, 'quantity': 2},
+        {'price': 50, 'quantity': 1}
+    ],
+    tax_rate=0.08,
+    discount=10
+)
+# invoice.total automatically computed
+```
+
+## CLI Commands for Pydantic Development
+
+```bash
+# Validate model structure
+python -c "from mymodule import User; print(User.model_json_schema())"
+
+# Generate TypeScript types from Pydantic models
+pydantic-json-schema mymodule.py > schema.json
+npx quicktype schema.json -o types.ts
+
+# Test model validation
+python -m pytest tests/test_models.py -v
+
+# Lint and format
+black mymodule.py
+ruff check mymodule.py --fix
+
+# Profile model creation
+python -m cProfile -s cumtime test_model_performance.py
+```
+
+## Performance Optimization
+
+```python
+from pydantic import BaseModel, ConfigDict
+import json
+
+class OptimizedModel(BaseModel):
+    model_config = ConfigDict(
+        # Use faster validation mode
+        validate_assignment=False,  # Only validate on construction
+        arbitrary_types_allowed=True,
+        # Disable features you don't need
+        validate_default=False,
+    )
+
+    id: int
+    name: str
+    email: str
+
+# Benchmark: AI can help profile and optimize
+import timeit
+
+data = [{'id': i, 'name': f'user{i}', 'email': f'user{i}@example.com'} for i in range(1000)]
+
+time_taken = timeit.timeit(
+    lambda: [OptimizedModel(**item) for item in data],
+    number=100
+)
+print(f"Time per 1000 models: {time_taken / 100:.3f}s")
+```
+
+## API Integration Examples
+
+```python
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel, EmailStr, Field
+
+app = FastAPI()
+
+class CreateUserRequest(BaseModel):
+    username: str = Field(min_length=3, max_length=50, pattern=r'^[a-zA-Z0-9_]+$')
+    email: EmailStr
+    age: int = Field(ge=18, le=120)
+    bio: str = Field(default='', max_length=500)
+
+class UserResponse(BaseModel):
+    id: int
+    username: str
+    email: str
+    age: int
+    created_at: str
+
+@app.post('/users', response_model=UserResponse)
+async def create_user(user: CreateUserRequest):
+    # Pydantic automatically validates the request
+    # If invalid, returns 422 with detailed error messages
+    try:
+        # Save to database
+        saved_user = await database.users.insert(user.model_dump())
+        return UserResponse(**saved_user)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@app.get('/users/{user_id}', response_model=UserResponse)
+async def get_user(user_id: int):
+    user = await database.users.find_one({'id': user_id})
+    if not user:
+        raise HTTPException(status_code=404, detail='User not found')
+    return UserResponse(**user)
+```
+
+## Migration from Pydantic V1 to V2
+
+```python
+# Old V1 syntax that AI tools might generate
+class OldUser(BaseModel):
+    name: str
+    email: str
+
+    class Config:
+        validate_assignment = True
+
+    @validator('email')
+    def validate_email(cls, v):
+        if '@' not in v:
+            raise ValueError('Invalid email')
+        return v
+
+# New V2 syntax AI should generate
+class NewUser(BaseModel):
+    model_config = ConfigDict(validate_assignment=True)
+
+    name: str
+    email: str
+
+    @field_validator('email')
+    @classmethod
+    def validate_email(cls, v: str) -> str:
+        if '@' not in v:
+            raise ValueError('Invalid email')
+        return v
+
+# Migration helper function
+def migrate_config(v1_model_class):
+    """AI can help generate migration helpers"""
+    if hasattr(v1_model_class, '__config__'):
+        config_attrs = vars(v1_model_class.__config__)
+        return ConfigDict(**config_attrs)
+    return ConfigDict()
+```
+
+## Troubleshooting Common Pydantic V2 Issues
+
+### JSON Serialization
+
+```python
+from pydantic import BaseModel, field_serializer
+from datetime import datetime
+
+class Event(BaseModel):
+    name: str
+    timestamp: datetime
+
+    @field_serializer('timestamp')
+    def serialize_timestamp(self, value: datetime) -> str:
+        return value.isoformat()
+
+event = Event(name='Meeting', timestamp=datetime.now())
+print(event.model_dump_json())  # timestamp is ISO formatted string
+```
+
+### Type Validation Edge Cases
+
+```python
+from pydantic import BaseModel, field_validator
+from typing import Optional
+
+class DataModel(BaseModel):
+    optional_field: Optional[str] = None
+    default_field: str = 'default'
+    required_field: str
+
+    @field_validator('optional_field', mode='before')
+    @classmethod
+    def coerce_optional(cls, v):
+        # Handle empty strings as None
+        if v == '':
+            return None
+        return v
+
+# These all pass validation with proper handling
+m1 = DataModel(required_field='test')  # optional_field is None
+m2 = DataModel(optional_field='', required_field='test')  # coerced to None
+m3 = DataModel(optional_field='value', required_field='test')  # kept as string
+```
+
+## Tool Evaluation Matrix
+
+| Tool | V1→V2 Migration | Complex Schemas | Performance Tips | Type Safety |
+|------|---|---|---|---|
+| Claude 4.0 | Excellent | Excellent | Excellent | Excellent |
+| GPT-4.5 | Good | Good | Good | Good |
+| Gemini 2.5 | Good | Moderate | Moderate | Good |
+| GitHub Copilot | Moderate | Moderate | Moderate | Moderate |
+| Cursor | Excellent | Excellent | Good | Excellent |
+
+## Best Practices Summary
+
+1. Always specify Pydantic V2 in your prompts to AI tools
+2. Use `Field` for any validation beyond basic typing
+3. Leverage `@field_validator` for single-field logic
+4. Use `@model_validator` with `mode='after'` for multi-field validation
+5. Prefer computed fields over methods for derived values
+6. Test validation edge cases with AI-generated test suites
+7. Profile model creation for performance-critical paths
+8. Document custom validators with clear error messages
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

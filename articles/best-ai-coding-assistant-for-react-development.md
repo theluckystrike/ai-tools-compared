@@ -185,27 +185,334 @@ export const Button: React.FC<ButtonProps> = ({
 
 ## Making the Right Choice
 
-
-
 Your ideal AI assistant depends on your workflow priorities:
-
-
 
 GitHub Copilot offers the best speed and editor integration. Cursor provides whole-codebase context and strong refactoring. Zed AI prioritizes performance-focused editing. Claude integrations give maximum control and flexibility.
 
-
-
 Most React developers benefit from one primary tool while keeping alternatives available for specific tasks. Choose a tool that understands React's component lifecycle, state management patterns, and modern tooling like Vite, Next.js, and TypeScript.
 
+## Pricing Comparison
 
+| Tool | Model | Cost | Context Window | Best For |
+|------|-------|------|---|---|
+| GitHub Copilot | GPT-4/Claude | $10/month | ~4,000 tokens | Quick suggestions, boilerplate |
+| Cursor | GPT-4/Claude | $20-40/month | 200,000 tokens | Large projects, refactoring |
+| Claude Code | Claude Opus | $3/1M tokens | 200,000 tokens | Terminal workflow, complex logic |
+| ChatGPT Plus | GPT-4 | $20/month | 128,000 tokens | Conversation-driven development |
+| Zed AI | Claude/GPT | $100/year | Context-aware | High-performance development |
 
----
+## React-Specific Code Patterns
 
+### Building Forms with AI Assistance
 
+```typescript
+// AI can generate robust form patterns
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
 
-*
+const useFormValidation = (initialValues: FormData) => {
+  const [values, setValues] = useState<FormData>(initialValues);
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [touched, setTouched] = useState<Partial<Record<keyof FormData, boolean>>>({});
+
+  const validate = useCallback((fieldValues: Partial<FormData> = values) => {
+    const newErrors: Partial<FormData> = {};
+
+    if (fieldValues.name !== undefined && !fieldValues.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (fieldValues.email !== undefined) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(fieldValues.email)) {
+        newErrors.email = 'Invalid email format';
+      }
+    }
+
+    if (fieldValues.message !== undefined && fieldValues.message.length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  }, [values]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setValues(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target;
+    setTouched(prev => ({ ...prev, [name]: true }));
+    validate({ [name]: values[name as keyof FormData] });
+  };
+
+  return { values, errors, touched, handleChange, handleBlur, validate };
+};
+```
+
+### State Management Patterns
+
+```typescript
+// Context for global state with AI-generated structure
+import { createContext, useReducer, ReactNode } from 'react';
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: 'admin' | 'user';
+}
+
+interface AuthState {
+  user: User | null;
+  isLoading: boolean;
+  error: string | null;
+}
+
+type AuthAction =
+  | { type: 'LOGIN_START' }
+  | { type: 'LOGIN_SUCCESS'; payload: User }
+  | { type: 'LOGIN_ERROR'; payload: string }
+  | { type: 'LOGOUT' };
+
+const authReducer = (state: AuthState, action: AuthAction): AuthState => {
+  switch (action.type) {
+    case 'LOGIN_START':
+      return { ...state, isLoading: true, error: null };
+    case 'LOGIN_SUCCESS':
+      return { ...state, user: action.payload, isLoading: false };
+    case 'LOGIN_ERROR':
+      return { ...state, error: action.payload, isLoading: false };
+    case 'LOGOUT':
+      return { ...state, user: null };
+    default:
+      return state;
+  }
+};
+
+export const AuthContext = createContext<{
+  state: AuthState;
+  dispatch: (action: AuthAction) => void;
+} | null>(null);
+
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [state, dispatch] = useReducer(authReducer, {
+    user: null,
+    isLoading: false,
+    error: null
+  });
+
+  return (
+    <AuthContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+```
+
+## Performance Optimization with AI
+
+```typescript
+// AI helps identify and fix performance issues
+const UserList = ({ users }: { users: User[] }) => {
+  // Memoization pattern AI can generate
+  return (
+    <div>
+      {users.map(user => (
+        <UserCard key={user.id} user={user} />
+      ))}
+    </div>
+  );
+};
+
+// Memoized component prevents unnecessary re-renders
+const UserCard = memo(({ user }: { user: User }) => {
+  return (
+    <div className="user-card">
+      <h3>{user.name}</h3>
+      <p>{user.email}</p>
+    </div>
+  );
+});
+
+// useCallback pattern to prevent child re-renders
+const UserManager = ({ users }: { users: User[] }) => {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const handleSelect = useCallback((id: string) => {
+    setSelectedId(id);
+  }, []);
+
+  return (
+    <div>
+      {users.map(user => (
+        <UserCard
+          key={user.id}
+          user={user}
+          onSelect={handleSelect}
+        />
+      ))}
+    </div>
+  );
+};
+
+// useMemo for expensive computations
+const StatsDashboard = ({ users }: { users: User[] }) => {
+  const stats = useMemo(() => {
+    return {
+      total: users.length,
+      admins: users.filter(u => u.role === 'admin').length,
+      avgNameLength: users.reduce((sum, u) => sum + u.name.length, 0) / users.length
+    };
+  }, [users]);
+
+  return (
+    <div>
+      <p>Total Users: {stats.total}</p>
+      <p>Admins: {stats.admins}</p>
+      <p>Avg Name Length: {stats.avgNameLength.toFixed(1)}</p>
+    </div>
+  );
+};
+```
+
+## Testing React Components
+
+```typescript
+// AI generates solid test suites
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+describe('LoginForm Component', () => {
+  test('displays validation errors', async () => {
+    const { getByRole, getByText } = render(<LoginForm />);
+
+    const submitButton = getByRole('button', { name: /submit/i });
+    fireEvent.click(submitButton);
+
+    await waitFor(() => {
+      expect(getByText('Email is required')).toBeInTheDocument();
+    });
+  });
+
+  test('submits form with valid data', async () => {
+    const user = userEvent.setup();
+    const onSubmit = vi.fn();
+
+    render(<LoginForm onSubmit={onSubmit} />);
+
+    await user.type(screen.getByLabelText('Email'), 'user@example.com');
+    await user.type(screen.getByLabelText('Password'), 'password123');
+    await user.click(screen.getByRole('button', { name: /submit/i }));
+
+    await waitFor(() => {
+      expect(onSubmit).toHaveBeenCalledWith({
+        email: 'user@example.com',
+        password: 'password123'
+      });
+    });
+  });
+
+  test('disables submit while loading', async () => {
+    render(<LoginForm isLoading={true} />);
+
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+    expect(submitButton).toBeDisabled();
+  });
+});
+```
+
+## CLI Commands for React Development
+
+```bash
+# Generate React component with Vite
+npm create vite@latest my-app -- --template react-ts
+
+# Run with AI-friendly error output
+npm run dev 2>&1 | head -50
+
+# Build and check bundle size
+npm run build && npx vite preview
+
+# Type-check React code
+npx tsc --noEmit
+
+# Lint with ESLint
+npx eslint src --fix
+
+# Format with Prettier
+npx prettier --write src/
+```
+
+## Troubleshooting React Issues with AI
+
+### Common React Hook Issues
+
+```typescript
+// WRONG: Conditional hooks
+function MyComponent({ showEmail }: { showEmail: boolean }) {
+  if (showEmail) {
+    const [email, setEmail] = useState('');  // ERROR: Hook in condition
+  }
+  return <div>Component</div>;
+}
+
+// CORRECT: Always call hooks
+function MyComponent({ showEmail }: { showEmail: boolean }) {
+  const [email, setEmail] = useState('');
+
+  if (!showEmail) return <div>No email field</div>;
+  return <input value={email} onChange={e => setEmail(e.target.value)} />;
+}
+```
+
+### Stale Closure in useEffect
+
+```typescript
+// WRONG: Missing dependency
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(seconds + 1);  // Always uses initial value
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);  // Missing dependency!
+
+  return <div>{seconds}</div>;
+}
+
+// CORRECT: Proper dependency or functional update
+function Timer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds(s => s + 1);  // Functional update
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);  // Dependencies correct
+
+  return <div>{seconds}</div>;
+}
+```
 
 ## Related Reading
+
+- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
+- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
+- [Best AI Tool for Academic Paper Editing 2026](/ai-tools-compared/best-ai-tool-for-academic-paper-editing-2026/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)

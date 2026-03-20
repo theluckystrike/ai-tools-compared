@@ -130,17 +130,164 @@ function verifyWebhookSignature(payload, signature, secret) {
 }
 ```
 
-## Making the Decision
+## Platform Pricing and Feature Comparison
 
-For most organizations, the right choice depends on your team's technical capacity and specific requirements:
+Here's a practical breakdown of major platforms available in 2026:
 
-- **High technical capacity, specific workflows**: Build custom using AI APIs—maximum flexibility, full control over data, but significant ongoing development investment
-- **Limited technical capacity**: Use standalone platforms with AI features—faster time to value, less customization
-- **Already using an HRIS**: Check their AI add-ons first—avoids adding another vendor, potential data silos
+| Platform | Pricing Model | AI Capabilities | API Availability | Customization |
+|----------|---------------|-----------------|-------------------|---------------|
+| Workday | Per employee/year (~$50-120) | Document processing, policy recommendations | Comprehensive REST API | Moderate |
+| BambooHR | $99-399/month + setup | Basic AI recommendations | Strong API + webhooks | High |
+| Rippling | Custom pricing | Document processing, task automation | Full API suite | High |
+| Gusto | $39+ per employee/month | Limited AI integration | REST API available | Moderate |
+| SAP SuccessFactors | Custom enterprise pricing | Advanced ML-based learning paths | SAP OData API | Moderate |
+| Custom (OpenAI API) | $0.01-0.30 per 1K tokens | Unlimited—you define it | Direct API access | Maximum |
+| Anthropic Claude API | $3-15 per million tokens | Document analysis, complex reasoning | Claude API with vision | Maximum |
 
-The comparison in 2026 shows that the gap between platform capabilities and custom implementations has narrowed. Platform AI features have improved substantially, making them viable for organizations that would have needed custom solutions two years ago.
+## Integration Code Examples
 
-Consider starting with a platform evaluation period—most vendors offer trials—and only build custom if you have specific requirements that can't be met within their framework. The maintenance burden of custom onboarding systems is often underestimated, and platform vendors continue investing heavily in AI features that address common use cases.
+### Webhook Handling Pattern
+When setting up onboarding automation, ensure secure webhook processing:
+
+```python
+# Python example: Validating and processing onboarding webhooks
+import hmac
+import hashlib
+from datetime import datetime
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+WEBHOOK_SECRET = "your-webhook-secret"
+
+@app.route('/webhooks/onboarding', methods=['POST'])
+def handle_onboarding_webhook():
+    # Verify webhook signature
+    signature = request.headers.get('X-Webhook-Signature')
+    payload = request.get_data(as_text=True)
+
+    expected_sig = hmac.new(
+        WEBHOOK_SECRET.encode(),
+        payload.encode(),
+        hashlib.sha256
+    ).hexdigest()
+
+    if not hmac.compare_digest(signature, expected_sig):
+        return jsonify({'error': 'Invalid signature'}), 401
+
+    data = request.json
+    employee_id = data['employee_id']
+    start_date = datetime.fromisoformat(data['start_date'])
+
+    # Process onboarding workflow
+    tasks = generate_onboarding_tasks(
+        employee_id=employee_id,
+        department=data['department'],
+        role=data['role']
+    )
+
+    # Queue async processing
+    schedule_onboarding_tasks(employee_id, tasks)
+
+    return jsonify({'status': 'processed'}), 200
+```
+
+## Document Processing with AI
+
+For teams building custom solutions, document parsing is a critical component:
+
+```bash
+# CLI command to extract employee data from PDFs using Claude
+curl -X POST https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -H "content-type: application/json" \
+  -d '{
+    "model": "claude-opus-4-20250514",
+    "max_tokens": 1024,
+    "messages": [
+      {
+        "role": "user",
+        "content": [
+          {
+            "type": "document",
+            "source": {
+              "type": "base64",
+              "media_type": "application/pdf",
+              "data": "base64_encoded_pdf_data"
+            }
+          },
+          {
+            "type": "text",
+            "text": "Extract name, address, phone, email, and emergency contact from this document. Return as JSON."
+          }
+        ]
+      }
+    ]
+  }'
+```
+
+## Common Integration Patterns
+
+### Task Assignment Flow
+```javascript
+async function assignOnboardingTasks(employeeId, config) {
+  const tasks = [
+    { name: 'setup_workstation', days_after: 0 },
+    { name: 'create_accounts', days_after: 0 },
+    { name: 'assign_training', days_after: 1 },
+    { name: 'compliance_training', days_after: 2 },
+    { name: 'manager_checkin', days_after: 5 }
+  ];
+
+  for (const task of tasks) {
+    const scheduledDate = addDays(
+      new Date(config.startDate),
+      task.days_after
+    );
+
+    await assignTask({
+      employee_id: employeeId,
+      task_type: task.name,
+      scheduled_date: scheduledDate,
+      notify: true
+    });
+  }
+}
+```
+
+## Implementation Challenges and Solutions
+
+**Challenge: Legacy HRIS Integration**
+Many organizations have existing HRIS systems that don't expose modern APIs. Solutions include:
+- Using ETL tools (Apache NiFi, Talend) to bridge systems
+- Building a lightweight integration layer that polls the legacy system
+- Migrating gradually to a modern platform with onboarding features
+
+**Challenge: Training Content Management**
+AI can generate recommendations, but organizing training materials across systems is complex:
+- Implement a learning object repository (SCORM, xAPI compatible)
+- Use AI to tag and categorize existing content
+- Generate metadata automatically using Claude or GPT-4
+
+**Challenge: Timing and Scheduling**
+Onboarding happens on specific dates; async processing requires careful queuing:
+- Use job queues (Celery, Bull, RabbitMQ) to schedule time-sensitive tasks
+- Build in retry logic with exponential backoff for failed task assignments
+- Monitor queue health—unprocessed tasks indicate system strain
+
+## Cost Analysis Framework
+
+**Custom Implementation Costs:**
+- Initial development: 3-6 months, 1-2 engineers ($150k-$300k)
+- Ongoing maintenance: 20% of development cost annually (~$30k-$60k)
+- Infrastructure: $500-$2,000/month for cloud hosting
+- **Total Year 1: $180k-$365k**
+
+**Platform Implementation Costs:**
+- Per-employee cost: $50-$120/year
+- For 100 employees: $5,000-$12,000/year
+- Setup/configuration: $5,000-$25,000 (one-time)
+- Training: $2,000-$5,000
+- **Total Year 1: $12k-$42k** (highly scalable)
 
 
 ## Related Reading
