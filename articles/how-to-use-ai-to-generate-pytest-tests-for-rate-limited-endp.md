@@ -64,8 +64,10 @@ verifying 429 body structure, and confirming retry logic respects Retry-After.
 The more specific you are, the less you need to correct in the generated output.
 
 
+Here's an effective prompt to provide to Claude, ChatGPT, or similar tools:
 
-## Generated Test Structure
+```
+Create pytest tests for an API rate limiting scenario with these requirements:
 
 A well-prompted AI produces output close to this. Use `unittest.mock` to avoid hitting real network endpoints in unit tests:
 
@@ -142,6 +144,135 @@ class TestRetryLogic:
 ```
 
 
+Endpoint: GET /api/v1/documents
+Rate Limit: 100 requests per minute
+Rate Limit Headers: X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset
+Throttle Response: 429 Too Many Requests
+
+Test scenarios needed:
+1. Verify successful requests return 200 and include rate limit headers
+2. Verify that after 100 requests, the 101st request returns 429
+3. Verify X-RateLimit-Remaining decreases with each request
+4. Verify Retry-After header is present in 429 responses
+5. Verify client-side exponential backoff works correctly
+
+Use pytest fixtures, mock the HTTP client, and include setup/teardown.
+Format code for a Python project using requests library.
+```
+
+This level of specificity produces superior results compared to generic requests like "create rate limit tests."
+
+## Generated Test Structure with Real Code Example
+
+The AI will likely produce a test file containing fixtures for API clients, helper functions for making repeated requests, and test cases that verify specific rate limiting behaviors. Here's what a typical structure looks like:
+
+```python
+import pytest
+from unittest.mock import Mock, patch
+import requests
+from requests.exceptions import ConnectionError
+import time
+
+@pytest.fixture
+def rate_limited_client():
+    """Fixture providing a mock HTTP client with rate limit tracking."""
+    class RateLimitedClient:
+        def __init__(self):
+            self.request_count = 0
+            self.rate_limit = 100
+            self.reset_time = time.time() + 60
+
+        def get(self, url):
+            self.request_count += 1
+            remaining = max(0, self.rate_limit - self.request_count)
+
+            if self.request_count > self.rate_limit:
+                response = Mock()
+                response.status_code = 429
+                response.headers = {
+                    'X-RateLimit-Limit': str(self.rate_limit),
+                    'X-RateLimit-Remaining': '0',
+                    'X-RateLimit-Reset': str(int(self.reset_time)),
+                    'Retry-After': '60'
+                }
+                return response
+
+            response = Mock()
+            response.status_code = 200
+            response.headers = {
+                'X-RateLimit-Limit': str(self.rate_limit),
+                'X-RateLimit-Remaining': str(remaining),
+                'X-RateLimit-Reset': str(int(self.reset_time))
+            }
+            response.json.return_value = {'data': 'success'}
+            return response
+
+    return RateLimitedClient()
+
+def test_successful_request_includes_rate_limit_headers(rate_limited_client):
+    """Verify successful requests include proper rate limit headers."""
+    response = rate_limited_client.get('https://api.example.com/documents')
+
+    assert response.status_code == 200
+    assert 'X-RateLimit-Limit' in response.headers
+    assert 'X-RateLimit-Remaining' in response.headers
+    assert 'X-RateLimit-Reset' in response.headers
+    assert response.headers['X-RateLimit-Limit'] == '100'
+
+def test_rate_limit_remaining_decreases(rate_limited_client):
+    """Verify X-RateLimit-Remaining decreases with each request."""
+    remaining_values = []
+
+    for _ in range(5):
+        response = rate_limited_client.get('https://api.example.com/documents')
+        remaining = int(response.headers['X-RateLimit-Remaining'])
+        remaining_values.append(remaining)
+
+    # Verify remaining count decreases
+    assert remaining_values == [95, 94, 93, 92, 91]
+
+def test_throttled_response_at_limit(rate_limited_client):
+    """Verify 429 response when rate limit exceeded."""
+    # Make requests up to the limit
+    for _ in range(100):
+        rate_limited_client.get('https://api.example.com/documents')
+
+    # Next request should be throttled
+    response = rate_limited_client.get('https://api.example.com/documents')
+
+    assert response.status_code == 429
+    assert 'Retry-After' in response.headers
+    assert response.headers['Retry-After'] == '60'
+
+def test_exponential_backoff_retry_logic():
+    """Test client retry logic with exponential backoff."""
+    attempt_count = [0]
+
+    def mock_get(url):
+        attempt_count[0] += 1
+        response = Mock()
+        if attempt_count[0] < 3:
+            response.status_code = 429
+            response.headers = {'Retry-After': '1'}
+        else:
+            response.status_code = 200
+            response.json.return_value = {'data': 'success'}
+        return response
+
+    # Simulate retry logic with exponential backoff
+    max_retries = 5
+    for attempt in range(max_retries):
+        response = mock_get('https://api.example.com/documents')
+        if response.status_code == 200:
+            break
+        wait_time = 2 ** attempt
+        # In real code, you'd sleep here: time.sleep(wait_time)
+
+    assert response.status_code == 200
+    assert attempt_count[0] == 3
+```
+
+This test structure provides comprehensive rate limit coverage while remaining maintainable and extensible.
 
 ## Customizing Generated Tests
 
