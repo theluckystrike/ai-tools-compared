@@ -8,6 +8,7 @@ author: "AI Tools Compared"
 permalink: /ai-container-security-scanning/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 ---
 {% raw %}
