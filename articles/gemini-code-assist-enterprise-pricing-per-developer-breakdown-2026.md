@@ -2,7 +2,7 @@
 
 layout: default
 title: "Gemini Code Assist Enterprise Pricing: Per-Developer Breakdown 2026"
-description:"Complete guide to Google Gemini Code Assist enterprise pricing. Understand per-developer costs, feature tiers, and what enterprises should expect in 2026."
+description: "Complete guide to Google Gemini Code Assist enterprise pricing. Understand per-developer costs, feature tiers, and what enterprises should expect in 2026."
 date: 2026-03-19
 author: theluckystrike
 permalink: /gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/
@@ -258,9 +258,9 @@ Many organizations find opportunities to optimize costs through careful seat man
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-{% endraw %}
 - [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 - [Gemini Advanced vs ChatGPT Plus Price Per Feature.](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
