@@ -232,13 +232,49 @@ Testing conventions often tie into your CI pipeline. Document these requirements
 ```
 
 
+## Advanced Patterns: Coverage and Reporting
+
+Teams with strong quality cultures go beyond basic naming and setup conventions. Document your coverage expectations explicitly so AI-generated tests meet the bar from the start, not after review feedback.
+
+Document your minimum thresholds and the commands used to enforce them. Include which directories or files should be excluded, since generated code, migration scripts, and vendor adapters typically should not count against coverage metrics.
+
+Also document your reporting format expectations. Some teams generate HTML reports for code review context, others pipe coverage JSON to internal dashboards. AI needs to know which reporters to include in commands it generates.
+
+## Practical Examples: Teaching AI Your Project Idioms
+
+Beyond naming and setup, your project likely has idioms — patterns that are not official conventions but are understood team-wide. Document these directly so AI generates code that fits without friction.
+
+If you have in-house test utilities, describe them with their location and when to use them instead of the standard alternative. For example: if your team uses a custom `renderWithProviders` wrapper that sets up Redux, Router, and ThemeProvider, document that AI should always use it instead of bare `render()` for any component that touches shared state or routing.
+
+For error boundary and edge case testing, spell out your team's minimum expectations. Specify that optional props should always be tested with null and undefined values, that loading states need explicit test coverage, and that empty states — empty arrays, empty strings, zero counts — require separate tests from populated states.
+
+## Step-by-Step: Building Your First CLAUDE.md Testing Section
+
+If you are starting from scratch, here is a practical sequence that takes about 30 minutes and produces a useful file immediately.
+
+**Step 1: Audit your test files.** Open five recent test files and note what they have in common: how describe blocks are named, how mocks are set up, where test utilities come from, and what assertion style is used. These patterns belong in CLAUDE.md whether or not they are official policy.
+
+**Step 2: Note where AI previously went wrong.** Look at past pull request comments that corrected AI-generated tests. Each recurring correction is a missing CLAUDE.md rule. If reviewers wrote "use waitFor, not await act" three times this month, that belongs in your file.
+
+**Step 3: Write rules as commands, not suggestions.** Use phrases like "always," "never," "use X instead of Y." Hedging with "prefer" or "consider" gives AI room to revert to defaults.
+
+**Step 4: Validate with a real prompt.** Write a new test using Claude Code after adding your CLAUDE.md. Check whether the output respects the conventions. If it misses something, add a more specific rule. Iteration is normal — most CLAUDE.md files reach a stable state after two or three revision cycles.
+
+**Step 5: Commit and share.** Check CLAUDE.md into version control alongside your codebase. When onboarding new developers, point them to CLAUDE.md as the source of truth for AI-assisted coding conventions, not just human ones.
+
+## Common Pitfalls When Writing Testing Conventions for AI
+
+**Being too abstract.** "Write good tests" tells AI nothing. Specifics like "use getByRole over getByTestId" give AI a concrete decision rule it can apply consistently.
+
+**Documenting aspirations, not reality.** If your codebase has 300 tests using getByTestId and your CLAUDE.md says to use getByRole, AI will produce inconsistent output. Document what the codebase actually does, or add a migration note explaining the transition direction.
+
+**Missing the "why."** Claude follows instructions more reliably when they include reasoning. Instead of "don't use toMatchSnapshot for dynamic content," write "avoid toMatchSnapshot for components with dynamic dates or IDs because diffs become noisy and unreviewed snapshots mask regressions."
+
+**Skipping anti-patterns.** Explicitly listing what not to do is often more valuable than listing what to do. A section like "Patterns to Avoid" prevents AI from reverting to common but unwanted approaches such as testing implementation details, using enzyme-style wrappers, or adding hardcoded sleeps in async tests.
+
 ## Maintaining Your CLAUDE.md
 
-
-
 Testing conventions evolve. Schedule periodic reviews of your CLAUDE.md to keep it current.
-
-
 
 1. **Update on framework upgrades** - When upgrading Jest or adding libraries
 
@@ -246,10 +282,7 @@ Testing conventions evolve. Schedule periodic reviews of your CLAUDE.md to keep 
 
 3. **Test with AI output** - If AI consistently misses patterns, add guidance
 
-
-
 A CLAUDE.md that doesn't reflect reality wastes everyone's time. Keep it honest and current.
-
 
 ## Related Reading
 
