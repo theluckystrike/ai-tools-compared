@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-open-source-maintainer-burnout-preventio/
 categories: [guides]
-tags: [productivity]
+tags: [ai-tools-compared, productivity, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

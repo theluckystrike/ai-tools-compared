@@ -6,11 +6,11 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-good-first-issue-descriptions-that-attra/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 ---
 
 

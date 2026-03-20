@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
