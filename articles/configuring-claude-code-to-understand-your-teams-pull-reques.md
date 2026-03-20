@@ -8,7 +8,7 @@ permalink: /configuring-claude-code-to-understand-your-teams-pull-reques/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

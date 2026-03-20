@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /claude-refusing-to-answer-how-to-rephrase-prompt/
 reviewed: true
-score: 8
+score: 9
 categories: [troubleshooting, guides]
 intent-checked: true
 voice-checked: true
