@@ -41,6 +41,113 @@ An effective AI assistant for drag and drop test generation must understand the 
 
 The best assistants also account for test reliability concerns like waiting for animations to complete, handling element visibility changes during drag, and managing the asynchronous nature of drag operations in modern web applications.
 
+## Real-World Drag and Drop Scenarios
+
+Different drag scenarios require different testing approaches:
+
+### Scenario 1: Kanban Board Column Reordering
+
+Testing moving cards between columns in a Kanban board:
+
+```javascript
+test('move card between kanban columns', async ({ page }) => {
+  await page.goto('/kanban');
+
+  const sourceCard = page.locator('[data-testid="card-1"]');
+  const targetColumn = page.locator('[data-testid="column-done"]');
+
+  // Wait for animations to finish before dragging
+  await page.waitForLoadState('networkidle');
+
+  // Get column center coordinates
+  const columnBox = await targetColumn.boundingBox();
+  const targetX = columnBox.x + columnBox.width / 2;
+  const targetY = columnBox.y + columnBox.height / 2;
+
+  // Perform drag with realistic timing
+  await sourceCard.dragTo(targetColumn, {
+    sourcePosition: { x: 50, y: 25 },
+    targetPosition: { x: 50, y: 25 }
+  });
+
+  // Verify card moved
+  await expect(targetColumn.locator('[data-testid="card-1"]')).toBeVisible();
+  await expect(page.locator('[data-testid="column-todo"]').locator('[data-testid="card-1"]')).not.toBeVisible();
+});
+```
+
+### Scenario 2: Draggable Table Rows
+
+Testing row reordering in a data table:
+
+```javascript
+test('reorder table rows by dragging', async ({ page }) => {
+  await page.goto('/data-table');
+
+  const row1 = page.locator('tbody tr').nth(0);
+  const row2 = page.locator('tbody tr').nth(1);
+
+  // Get initial row content
+  const initialFirstRow = await row1.textContent();
+  const initialSecondRow = await row2.textContent();
+
+  // Drag row 1 below row 2
+  const row1Box = await row1.boundingBox();
+  const row2Box = await row2.boundingBox();
+
+  await page.mouse.move(row1Box.x + row1Box.width / 2, row1Box.y + row1Box.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(row2Box.x + row2Box.width / 2, row2Box.y + row2Box.height + 20);
+  await page.mouse.up();
+
+  // Wait for reordering animation
+  await page.waitForTimeout(500);
+
+  // Verify rows swapped
+  const newFirstRow = await page.locator('tbody tr').nth(0).textContent();
+  expect(newFirstRow).toBe(initialSecondRow);
+});
+```
+
+### Scenario 3: jQuery UI Sortable Lists
+
+Testing with jQuery UI which uses different event model:
+
+```javascript
+test('reorder items in jQuery UI sortable', async ({ page }) => {
+  await page.goto('/jquery-sortable');
+
+  const sourceItem = page.locator('#sortable li').nth(2);
+  const targetItem = page.locator('#sortable li').nth(0);
+
+  // jQuery requires multiple events to recognize drag
+  await sourceItem.hover();
+  await page.mouse.move(0, 0); // Reset position
+
+  const sourceBox = await sourceItem.boundingBox();
+  const targetBox = await targetItem.boundingBox();
+
+  // Simulate full drag sequence
+  await page.mouse.move(sourceBox.x + 20, sourceBox.y + 20);
+  await page.mouse.down();
+
+  // Move in steps to trigger hover effects
+  for (let i = 0; i < 5; i++) {
+    await page.mouse.move(
+      sourceBox.x + 20,
+      sourceBox.y + 20 - (i * 10)
+    );
+    await page.waitForTimeout(50);
+  }
+
+  await page.mouse.move(targetBox.x + 20, targetBox.y + 10);
+  await page.mouse.up();
+
+  // Verify reordering with explicit wait
+  await expect(page.locator('#sortable li').nth(0)).toContainText(sourceItem);
+});
+```
+
 
 
 ## Practical Examples
@@ -122,6 +229,90 @@ Several common mistakes appear in AI-generated drag and drop tests. One frequent
 
 
 The best AI assistants avoid these pitfalls by generating tests that use relative positioning when possible, include appropriate waits, and use stable locator strategies. They also provide options for handling different viewport sizes and suggest ways to make tests more resilient to UI changes.
+
+## Best Practices Recommended by Top AI Assistants
+
+### Use Page Object Model for Maintainability
+
+```javascript
+// DragAndDropPage.js - Page Object Model
+class DragAndDropPage {
+  constructor(page) {
+    this.page = page;
+    this.sourceLocator = '[data-testid="source-item"]';
+    this.targetLocator = '[data-testid="target-zone"]';
+  }
+
+  async dragItem(sourceIndex, targetIndex) {
+    const source = this.page.locator(this.sourceLocator).nth(sourceIndex);
+    const target = this.page.locator(this.targetLocator).nth(targetIndex);
+
+    // Wait for elements to be ready
+    await source.waitFor({ state: 'visible' });
+    await target.waitFor({ state: 'visible' });
+
+    // Perform drag operation
+    await source.dragTo(target);
+
+    // Wait for animations
+    await this.page.waitForTimeout(300);
+  }
+
+  async verifyOrder(expectedOrder) {
+    const items = await this.page.locator(this.sourceLocator).count();
+    for (let i = 0; i < items; i++) {
+      const text = await this.page.locator(this.sourceLocator).nth(i).textContent();
+      expect(text).toContain(expectedOrder[i]);
+    }
+  }
+}
+
+// test.spec.js - Using Page Object
+test('using page object model', async ({ page }) => {
+  const dragPage = new DragAndDropPage(page);
+  await page.goto('/drag-drop-list');
+  await dragPage.dragItem(0, 2);
+  await dragPage.verifyOrder(['Item 2', 'Item 3', 'Item 1']);
+});
+```
+
+### Handling Animation-Heavy Interfaces
+
+```javascript
+test('drag with animation handling', async ({ page }) => {
+  // Set reduced motion for more reliable testing
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+
+  const source = page.locator('[data-draggable]').first();
+  const target = page.locator('[data-drop-zone]').first();
+
+  // Wait for any initial animations
+  await page.waitForFunction(() => {
+    const ele = document.querySelector('[data-dragging="false"]');
+    return ele !== null;
+  });
+
+  // Perform drag
+  await source.dragTo(target);
+
+  // Wait for drop animation with custom timeout
+  await target.waitFor({ state: 'visible' });
+  await page.waitForFunction(
+    () => !document.querySelector('[class*="dragging"]'),
+    { timeout: 5000 }
+  );
+});
+```
+
+## AI Assistant Performance Comparison
+
+| Assistant | Drag Test Generation | Code Quality | Documentation | Best For |
+|-----------|---------------------|--------------|----------------|----------|
+| Claude 3.5 Sonnet | 9/10 | 9/10 | Excellent | Complete test suites |
+| ChatGPT 4o | 8/10 | 8/10 | Good | Basic scenarios |
+| Cursor AI | 9/10 | 9/10 | Very Good | IDE integration |
+| GitHub Copilot | 7/10 | 7/10 | Minimal | Quick suggestions |
+| Windsurf | 8/10 | 8/10 | Good | Multi-file awareness |
 
 
 

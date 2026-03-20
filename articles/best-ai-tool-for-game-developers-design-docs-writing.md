@@ -155,9 +155,133 @@ Select a specific document type or feature to pilot with AI assistance. Starting
 
 Remember that AI tools assist human writers rather than replacing them. The most effective approach uses AI to handle initial drafts and routine tasks while team members focus on adding domain expertise, creative vision, and project-specific details that AI cannot provide.
 
-
-
 Start with clear goals for what you want to achieve with AI-assisted documentation, evaluate tools against your actual needs, and iterate based on real results.
+
+## Practical Documentation Generation Examples
+
+### GDD Structure Generation Prompt
+
+Feed this to Claude or GPT-4 for a complete GDD outline:
+
+```
+Generate a comprehensive Game Design Document structure
+for a [GAME_CONCEPT] game.
+
+Include sections for:
+1. High Concept (1 paragraph summary)
+2. Gameplay Overview
+3. Core Mechanics (with examples)
+4. Game Feel & Aesthetics
+5. Level/Content Design
+6. Progression System
+7. UI/UX Specs
+8. Technical Requirements
+9. Platform-Specific Notes
+10. Known Risks & Mitigations
+
+Focus on making it actionable for a 5-person indie team
+with 12 months to deliver. Include specific metrics where
+possible (movement speed, spawn rates, etc.)
+```
+
+### System Design Documentation
+
+```
+Create a technical design document for a [SYSTEM_NAME]
+system in our [GAME_TYPE] game.
+
+Key details:
+- Player interaction: [How players interact with it]
+- Core complexity: [What makes it tricky to implement]
+- Dependencies: [What other systems does it rely on]
+- Performance targets: [Target frame impact]
+- Platform constraints: [Console/PC/Mobile limitations]
+
+Include:
+- Data structures (C# class definitions or pseudocode)
+- Main functions/methods with descriptions
+- Edge cases and error handling
+- Balance parameters (as variables, not hardcoded)
+- Testing approach
+```
+
+## AI Tool Recommendations for Game Dev
+
+| Tool | Strengths | Weaknesses | Best Use |
+|------|-----------|-----------|----------|
+| Claude 3.5 Sonnet | Excellent narrative, technical depth | Slower | Full GDD, narrative design |
+| ChatGPT-4o | Balanced, quick | Less creative nuance | Technical specs, quick docs |
+| Anthropic Claude (Web) | Free tier available | Limited context | Concept documents |
+| Perplexity Pro | Research-backed docs | Game-specific knowledge limited | Background research |
+| Custom fine-tuned models | Game-specific terminology | Expensive setup | Large studios only |
+
+## Template: Game Mechanics Documentation
+
+```markdown
+# Crafting System Design Document
+
+## Overview
+The crafting system allows players to combine ingredients
+to create useful items. This doc specifies mechanics, UI/UX,
+and balance parameters.
+
+## Core Mechanics
+- Players gather ingredients from environment
+- Ingredients have properties (rarity, element type)
+- Recipes combine specific ingredient types
+- Success rate depends on player skill level
+
+## Data Structure
+```typescript
+interface CraftingRecipe {
+  id: string;
+  name: string;
+  requiredItems: {
+    itemId: string;
+    quantity: number;
+  }[];
+  resultItem: {
+    itemId: string;
+    quantity: number;
+  };
+  successRate: number; // 0-1
+  skillRequirement: number;
+  craftDuration: number; // seconds
+}
+```
+
+## UI Flow
+1. Player opens Crafting Menu
+2. Shows Available Recipes (filtered by skill)
+3. Player selects recipe
+4. Confirm crafting screen shows ingredients
+5. Crafting progress bar (animated)
+6. Result screen with item acquired message
+
+## Balance Parameters
+- Common recipes: 95% success
+- Uncommon recipes: 85% success
+- Rare recipes: 70% success
+- Craft time: 5-30 seconds depending on recipe
+- Skill level multiplier: +5% success per level
+
+## Known Edge Cases
+- What happens if ingredients are consumed but craft fails?
+  → Items returned to inventory
+- Can player interrupt crafting?
+  → Yes, within first 2 seconds only
+- What about duplicate recipes?
+  → UI combines them, player can select quantity
+```
+
+## Workflow Integration Best Practices
+
+1. **Version Control**: Store GDDs in git/GitHub (markdown format)
+2. **Review Process**: Use pull requests for documentation changes
+3. **Links**: Cross-reference related docs using relative paths
+4. **Updates**: Append date to sections that change, don't just overwrite
+5. **Playtest Notes**: Attach feedback to specific design sections
+6. **Change Log**: Maintain doc update history for reference
 
 
 
