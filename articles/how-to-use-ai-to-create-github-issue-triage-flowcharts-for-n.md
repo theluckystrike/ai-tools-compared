@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/
 categories: [guides]
-tags: [open-source, github, workflow]
+tags: [ai-tools-compared, open-source, github, workflow, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

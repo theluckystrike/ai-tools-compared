@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/
 categories: [guides]
-tags: [ai, api, development]
+tags: [ai-tools-compared, ai, api, development, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

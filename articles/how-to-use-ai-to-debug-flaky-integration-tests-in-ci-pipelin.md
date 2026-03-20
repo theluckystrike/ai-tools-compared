@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/
 categories: [guides]
-tags: [testing, ci-cd, debugging]
+tags: [ai-tools-compared, testing, ci-cd, debugging, troubleshooting, integration, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

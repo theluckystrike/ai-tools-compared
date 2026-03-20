@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-diagnose-spring-boot-application-context-st/
 categories: [guides]
-tags: [spring-boot, debugging, java]
+tags: [ai-tools-compared, spring-boot, debugging, java, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

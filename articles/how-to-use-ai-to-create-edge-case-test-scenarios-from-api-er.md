@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence, api]
 reviewed: true
 score: 8
 intent-checked: true

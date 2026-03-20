@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/
 categories: [guides]
-tags: [dbt, data-quality, ai]
+tags: [ai-tools-compared, dbt, data-quality, ai, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

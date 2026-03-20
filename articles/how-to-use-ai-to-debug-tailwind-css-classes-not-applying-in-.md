@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true
