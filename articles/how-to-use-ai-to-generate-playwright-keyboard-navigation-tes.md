@@ -309,6 +309,102 @@ test('keyboard navigation coverage report', async ({ page }) => {
 ```
 
 
+## Testing ARIA Roles and Focus Management Together
+
+Keyboard navigation tests become significantly more valuable when combined with ARIA role verification. A component that moves focus correctly but uses wrong ARIA roles still fails accessibility audits.
+
+Playwright's accessibility tree lets you assert ARIA roles alongside keyboard interactions:
+
+```typescript
+test('Dialog has correct ARIA roles and keyboard focus', async ({ page }) => {
+  await page.goto('/components/dialog');
+  await page.click('#open-dialog-btn');
+
+  const dialog = page.locator('[role="dialog"]');
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toHaveAttribute('aria-modal', 'true');
+  await expect(dialog).toHaveAttribute('aria-labelledby');
+
+  // Verify focus is inside the dialog
+  const focusedElement = await page.evaluate(() => document.activeElement?.tagName);
+  expect(['BUTTON', 'INPUT', 'A'].includes(focusedElement!)).toBe(true);
+
+  // Escape should close and return focus to trigger
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(page.locator('#open-dialog-btn')).toBeFocused();
+});
+```
+
+Ask the AI to generate combined ARIA and keyboard tests by providing your component's ARIA specification alongside the HTML structure. This produces tests that verify both the mechanical keyboard behavior and the semantic meaning — a much higher confidence bar than either test type alone.
+
+
+## Testing Focus Trapping in Modals
+
+Focus trapping — where Tab cycles through elements inside a modal rather than leaving it — is one of the most commonly implemented and most commonly broken accessibility patterns. Playwright makes it straightforward to test:
+
+```typescript
+test('Modal traps focus within container', async ({ page }) => {
+  await page.goto('/components/modal');
+  await page.click('#open-modal');
+
+  const modal = page.locator('.modal');
+  await expect(modal).toBeVisible();
+
+  // Get all focusable elements in the modal
+  const focusableSelectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+  const focusableElements = modal.locator(focusableSelectors);
+  const count = await focusableElements.count();
+
+  // Tab through all elements — the last one should cycle back to the first
+  for (let i = 0; i < count; i++) {
+    await page.keyboard.press('Tab');
+  }
+
+  // After count+1 tabs, focus should be back on the first focusable element
+  await page.keyboard.press('Tab');
+  await expect(focusableElements.first()).toBeFocused();
+
+  // Shift+Tab from first element should go to last (backward trap)
+  await page.keyboard.press('Shift+Tab');
+  await expect(focusableElements.last()).toBeFocused();
+});
+```
+
+When prompting AI to generate focus trap tests, specify the exact number and type of focusable elements in your modal. AI-generated tests that assume a fixed element count break when the component changes. Better to have the test dynamically count focusable elements as shown above.
+
+
+## Integrating Keyboard Tests into Your CI Pipeline
+
+Keyboard navigation tests slow down fast unit test suites because they require a real browser. Structure your test configuration to run keyboard tests in parallel and separate from your unit tests:
+
+```typescript
+// playwright.config.ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  projects: [
+    {
+      name: 'keyboard-nav',
+      testMatch: '**/*keyboard*.spec.ts',
+      use: { browserName: 'chromium' },
+    },
+    {
+      name: 'keyboard-nav-firefox',
+      testMatch: '**/*keyboard*.spec.ts',
+      use: { browserName: 'firefox' },
+    },
+  ],
+  workers: 4,
+  retries: 1,
+});
+```
+
+Run keyboard navigation tests across at least Chromium and Firefox. Keyboard event handling differs between browsers — a test that passes in Chromium may fail in Firefox due to subtle differences in focus management behavior. This cross-browser gap is where many accessibility regressions hide.
+
+Add the keyboard test suite to your pull request checks with a required status check. Make regressions visible to reviewers by including a brief summary of keyboard test failures in your PR description template.
+
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
