@@ -402,8 +402,11 @@ Track these metrics:
 
 ---
 
+{% raw %}
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Related Reading
 
 Explore more AI development workflows at [AI Tools Compared Guides Hub](/ai-tools-compared/guides-hub/)
+{% endraw %}

@@ -300,8 +300,11 @@ Track these metrics to understand the value AI-generated tests bring to your tea
 
 ---
 
+{% raw %}
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Related Reading
 
 Explore more AI testing workflows at [AI Tools Compared Guides Hub](/ai-tools-compared/guides-hub/)
+{% endraw %}
