@@ -3,7 +3,7 @@ layout: default
 title: "ChatGPT Slow Response Fix 2026: Complete Troubleshooting"
 description: "A troubleshooting guide to fix slow ChatGPT responses. Step-by-step solutions for developers and power users experiencing latency issues."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /chatgpt-slow-response-fix-2026/
 categories: [troubleshooting, guides]
 reviewed: true

@@ -3,7 +3,7 @@ layout: default
 title: "Runway ML vs Pika Labs: AI Video Generation Comparison 2026"
 description: "A practical technical comparison of Runway ML and Pika Labs for AI-powered video generation. API capabilities, integration patterns, and developer."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /runway-ml-vs-pika-labs-ai-video-comparison-2026/
 reviewed: true
 score: 8

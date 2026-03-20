@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code for Node.js Profiling Workflow Tutorial"
 description: "Learn how to use Claude Code to improve your Node.js profiling workflow. This tutorial covers identifying performance bottlenecks, analyzing CPU and."
 date: 2026-03-15
-author: "Claude Skills Guide"
+author: theluckystrike
 permalink: /claude-code-for-nodejs-profiling-workflow-tutorial/
 categories: [guides, tutorials]
 tags: [ai-tools-compared, claude-code, claude-skills, tutorial, workflow, claude-ai]

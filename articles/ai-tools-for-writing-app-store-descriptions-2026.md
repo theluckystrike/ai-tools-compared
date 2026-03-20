@@ -3,7 +3,7 @@ layout: default
 title: "AI Tools for Writing App Store Descriptions 2026"
 description: "A practical guide for developers and power users comparing AI tools specifically designed for crafting compelling App Store descriptions. Includes code."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /ai-tools-for-writing-app-store-descriptions-2026/
 reviewed: true
 score: 8

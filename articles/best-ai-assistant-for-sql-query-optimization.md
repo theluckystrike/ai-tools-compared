@@ -3,7 +3,7 @@ layout: default
 title: "Best AI Assistant for SQL Query Optimization"
 description: "Discover how AI assistants can dramatically improve your SQL query performance with real-world examples and actionable techniques."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /best-ai-assistant-for-sql-query-optimization/
 reviewed: true
 score: 8

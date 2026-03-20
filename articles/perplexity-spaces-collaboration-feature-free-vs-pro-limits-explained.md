@@ -225,6 +225,6 @@ Members: research lead, product manager, strategy analyst
 - [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
 - [AI Tools Hub](/guides-hub/)
 
-**Built by theluckystrike — More at https://zovo.one**
+Built by theluckystrike — More at [zovo.one](https://zovo.one)**
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

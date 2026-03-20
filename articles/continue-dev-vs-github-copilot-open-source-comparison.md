@@ -3,7 +3,7 @@ layout: default
 title: "Continue Dev vs GitHub Copilot: Open Source Comparison"
 description: "A practical comparison of Continue Dev and GitHub Copilot for developers. Learn about features, pricing, privacy, and which AI coding assistant fits."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /continue-dev-vs-github-copilot-open-source-comparison/
 reviewed: true
 score: 8

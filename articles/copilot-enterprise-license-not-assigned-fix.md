@@ -3,7 +3,7 @@ layout: default
 title: "Copilot Enterprise License Not Assigned Fix"
 description: "A troubleshooting guide for developers and power users experiencing GitHub Copilot Enterprise license assignment issues. Step-by-step fixes and."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /copilot-enterprise-license-not-assigned-fix/
 reviewed: true
 score: 8

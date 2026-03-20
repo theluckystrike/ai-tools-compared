@@ -3,7 +3,7 @@ layout: default
 title: "AI Tools for Debugging Flaky Cypress Tests Caused by Timing"
 description: "A practical comparison of how leading AI coding tools help diagnose and fix flaky Cypress tests that fail due to timing and async issues."
 date: 2026-03-18
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/
 categories: [guides]
 tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]

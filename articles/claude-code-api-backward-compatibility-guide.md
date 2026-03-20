@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code API Backward Compatibility Guide"
 description: "A guide to maintaining API backward compatibility using Claude Code, covering version strategies, contract testing, and migration patterns."
 date: 2026-03-18
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /claude-code-api-backward-compatibility-guide/
 categories: [guides]
 reviewed: true

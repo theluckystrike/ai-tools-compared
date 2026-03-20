@@ -3,7 +3,7 @@ layout: default
 title: "Cursor Project-Wide Refactor Breaking Build Fix"
 description: "Troubleshooting guide for fixing build errors after using Cursor's project-wide refactor feature. Step-by-step diagnostics and solutions for developers."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /cursor-project-wide-refactor-breaking-build-fix/
 reviewed: true
 score: 8

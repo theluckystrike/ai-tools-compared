@@ -3,7 +3,7 @@ layout: default
 title: "Chrome Extension Budget Tracker Shopping"
 description: "Discover the best Chrome extensions for tracking your shopping budget, saving money on online purchases, and managing expenses while browsing."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /chrome-extension-budget-tracker-shopping/
 reviewed: true
 score: 8

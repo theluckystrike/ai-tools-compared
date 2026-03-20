@@ -3,7 +3,7 @@ layout: default
 title: "Copilot Not Suggesting Imports Automatically Fix"
 description: "Troubleshooting guide for GitHub Copilot not suggesting imports automatically. Step-by-step fixes for developers."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /copilot-not-suggesting-imports-automatically-fix/
 reviewed: true
 score: 8

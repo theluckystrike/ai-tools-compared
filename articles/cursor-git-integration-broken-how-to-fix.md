@@ -3,7 +3,7 @@ layout: default
 title: "Cursor Git Integration Broken How to Fix"
 description: "Troubleshooting guide for fixing Cursor IDE Git integration issues. Step-by-step solutions for developers experiencing broken Git features in Cursor."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /cursor-git-integration-broken-how-to-fix/
 categories: [troubleshooting]
 reviewed: true

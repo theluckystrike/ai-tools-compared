@@ -3,7 +3,7 @@ layout: default
 title: "Claude MCP Server Connection Failed Fix (2026)"
 description: "Troubleshooting guide for fixing Claude MCP server connection failures. Step-by-step solutions for developers and power users."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /claude-mcp-server-connection-failed-fix-2026/
 reviewed: true
 score: 8

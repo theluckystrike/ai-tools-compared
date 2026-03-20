@@ -3,7 +3,7 @@ layout: default
 title: "ChatGPT Memory Not Updating Correctly Fix (2026)"
 description: "Troubleshooting guide for developers and power users experiencing ChatGPT memory sync issues. Step-by-step fixes and diagnostic tips."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /chatgpt-memory-not-updating-correctly-fix-2026/
 reviewed: true
 score: 9

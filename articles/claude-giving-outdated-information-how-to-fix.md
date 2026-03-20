@@ -3,7 +3,7 @@ layout: default
 title: "Claude Giving Outdated Information? How to Fix This"
 description: "A practical troubleshooting guide for developers experiencing Claude providing outdated information. Includes step-by-step fixes and diagnostic tips."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /claude-giving-outdated-information-how-to-fix/
 reviewed: true
 score: 8

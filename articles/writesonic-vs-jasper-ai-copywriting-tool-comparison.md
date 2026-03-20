@@ -3,7 +3,7 @@ layout: default
 title: "Writesonic vs Jasper AI: Copywriting Tools Compared"
 description: "A practical comparison of Writesonic and Jasper AI for developers and power users. Includes API capabilities, integration options, and code examples."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /writesonic-vs-jasper-ai-copywriting-tool-comparison/
 categories: [comparisons]
 reviewed: true

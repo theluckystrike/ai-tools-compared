@@ -3,7 +3,7 @@ layout: default
 title: "Claude Code Coverage Reporting Setup Guide"
 description: "A guide to setting up automated code coverage reporting with Claude Code. Learn how to integrate coverage tools, generate reports, and track metrics."
 date: 2026-03-18
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /claude-code-coverage-reporting-setup-guide/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai]

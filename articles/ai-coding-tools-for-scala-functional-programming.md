@@ -3,7 +3,7 @@ layout: default
 title: "AI Coding Tools for Scala Functional Programming"
 description: "A developer-focused guide to AI coding tools that work well with Scala's functional programming paradigm. Includes code examples, practical tips, and."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /ai-coding-tools-for-scala-functional-programming/
 reviewed: true
 score: 8

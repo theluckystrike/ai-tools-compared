@@ -3,7 +3,7 @@ layout: default
 title: "DALL-E 3 vs Stable Diffusion for Illustrations"
 description: "A practical guide comparing DALL-E 3 and Stable Diffusion for illustration workflows. Includes API code, cost analysis, and workflow recommendations."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /dall-e-3-vs-stable-diffusion-for-illustrations/
 reviewed: true
 score: 8

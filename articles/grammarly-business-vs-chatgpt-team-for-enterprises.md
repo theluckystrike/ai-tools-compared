@@ -3,7 +3,7 @@ layout: default
 title: "Grammarly Business vs ChatGPT Team for Enterprises"
 description: "A detailed comparison of Grammarly Business and ChatGPT Team for enterprise use. API access, integration methods, pricing, and practical implementation."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /grammarly-business-vs-chatgpt-team-for-enterprises/
 reviewed: true
 score: 8
