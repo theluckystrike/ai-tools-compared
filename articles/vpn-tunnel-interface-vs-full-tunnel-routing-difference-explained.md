@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/
 categories: [security, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, comparison, vpn]
 ---
 
 

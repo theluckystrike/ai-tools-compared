@@ -8,8 +8,9 @@ permalink: /which-ai-tool-generates-better-vue-3-composition-api-components/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence, api]
 ---
 
 

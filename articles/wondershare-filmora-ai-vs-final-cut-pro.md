@@ -8,8 +8,9 @@ permalink: /wondershare-filmora-ai-vs-final-cut-pro/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 9
 reviewed: true
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
 
 

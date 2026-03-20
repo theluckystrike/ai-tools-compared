@@ -8,8 +8,9 @@ permalink: /windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, comparison]
 ---
 
 

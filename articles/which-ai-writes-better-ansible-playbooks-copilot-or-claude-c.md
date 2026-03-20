@@ -8,8 +8,9 @@ permalink: /which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 9
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence, claude-ai]
 ---
 {% raw %}
 

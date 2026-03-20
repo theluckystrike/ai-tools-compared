@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /writesonic-chatsonic-vs-chatgpt-conversation-comparison/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, comparison, chatgpt]
 ---
 
 
