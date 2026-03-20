@@ -207,6 +207,41 @@ Despite the GPU minute cost, Fast mode is worth using when:
 
 
 
+## Estimating Midjourney Queue Activity via Discord API
+
+Use this Python script to count recent bot messages in the Midjourney server
+as a proxy for queue activity before committing to a Relax Mode job:
+
+```python
+import httpx, time
+from datetime import datetime
+
+DISCORD_TOKEN = "your_bot_token_here"
+CHANNEL_ID    = "your_midjourney_channel_id"
+
+def estimate_queue_pressure(window_seconds=300):
+    headers = {"Authorization": f"Bot {DISCORD_TOKEN}"}
+    resp = httpx.get(
+        f"https://discord.com/api/v10/channels/{CHANNEL_ID}/messages",
+        params={"limit": 100},
+        headers=headers,
+        timeout=10,
+    )
+    resp.raise_for_status()
+    messages = resp.json()
+    cutoff = time.time() - window_seconds
+    recent = [
+        m for m in messages
+        if datetime.fromisoformat(m["timestamp"].replace("Z", "+00:00")).timestamp() > cutoff
+        and m.get("author", {}).get("bot")
+    ]
+    level = "High" if len(recent) > 40 else "Medium" if len(recent) > 20 else "Low"
+    return {"bot_messages_last_5min": len(recent), "queue_pressure": level}
+
+print(estimate_queue_pressure())
+```
+
+
 {% endraw %}
 ## Related Reading
 

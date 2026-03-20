@@ -316,6 +316,25 @@ To get the most out of Cursor Pro's privacy features:
 
 
 
+## Verifying Cursor Network Connections
+
+Use lsof to inspect active outbound connections from the Cursor process
+while Privacy Mode is enabled, confirming no unexpected telemetry endpoints:
+
+```bash
+# List all TCP connections from Cursor processes
+lsof -i TCP -n -P | grep -i cursor
+
+# Show unique remote hosts Cursor is connecting to
+lsof -i TCP -n -P | grep -i cursor | awk '{print $9}' | sort -u
+
+# Monitor new connections in real time (requires sudo)
+sudo lsof -r 2 -i TCP -n -P | grep -i cursor
+
+# Privacy Mode should show: api.anthropic.com (inference), cursor.sh (auth)
+# Red flag: connections to analytics.cursor.sh or segment.io while in Privacy Mode
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

@@ -304,6 +304,34 @@ Most Canvas save failures resolve after clearing browser cache, disabling extens
 
 
 
+## Browser Console Diagnostics for Canvas Save Failures
+
+Paste this snippet into the browser console (F12 -> Console) while Canvas is open
+to inspect local storage state and any active Canvas session keys:
+
+```javascript
+// Check Canvas-related localStorage entries
+const canvasKeys = Object.keys(localStorage).filter(k =>
+  k.includes('canvas') || k.includes('chat') || k.includes('oai')
+);
+console.table(canvasKeys.map(k => ({
+  key: k,
+  value: localStorage.getItem(k)?.slice(0, 80),
+  size: localStorage.getItem(k)?.length
+})));
+
+// Monitor fetch calls for failed save requests
+const origFetch = window.fetch;
+window.fetch = async (...args) => {
+  const resp = await origFetch(...args);
+  if (!resp.ok && String(args[0]).includes('canvas')) {
+    console.error('Canvas request failed:', args[0], resp.status);
+  }
+  return resp;
+};
+console.log('Canvas save monitor active -- try saving now.');
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

@@ -300,6 +300,32 @@ Prevention reduces the frequency of future interruptions.
 
 
 
+## Detecting Blocked Iframes via Browser Console
+
+Run this in the browser console (F12) on the Claude page to check whether
+the artifacts sandbox iframe is present and whether it loaded successfully:
+
+```javascript
+// Find all iframes on the page
+const frames = document.querySelectorAll('iframe');
+console.log(`Total iframes found: ${frames.length}`);
+
+frames.forEach((f, i) => {
+  console.log(`iframe[${i}]`, {
+    src: f.src || '(no src)',
+    sandbox: f.getAttribute('sandbox') || '(none)',
+    loaded: f.contentDocument !== null ? 'accessible' : 'blocked (cross-origin or CSP)',
+    width: f.offsetWidth,
+    height: f.offsetHeight,
+  });
+});
+
+// Check for Content Security Policy blocking inline scripts
+const metaCSP = document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+console.log('Meta CSP:', metaCSP ? metaCSP.content : 'none set via meta tag');
+console.log('Check Network tab > Response Headers for server-sent CSP headers.');
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

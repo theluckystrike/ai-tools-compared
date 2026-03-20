@@ -347,6 +347,44 @@ If privacy is your primary concern:
 
 
 
+## Setting Up Continue.dev with a Local Ollama Model
+
+Get free AI code completion running locally in VS Code in under 5 minutes:
+
+```bash
+# 1. Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. Pull a code-focused model (deepseek-coder is fast and accurate)
+ollama pull deepseek-coder:6.7b
+
+# 3. Verify it runs
+ollama run deepseek-coder:6.7b "Write a Python function to reverse a string"
+
+# 4. Install Continue extension in VS Code
+code --install-extension Continue.continue
+
+# 5. Configure Continue to use Ollama
+mkdir -p ~/.continue
+cat > ~/.continue/config.json << EOF
+{
+  "models": [{
+    "title": "DeepSeek Coder (local)",
+    "provider": "ollama",
+    "model": "deepseek-coder:6.7b",
+    "apiBase": "http://localhost:11434"
+  }],
+  "tabAutocompleteModel": {
+    "title": "DeepSeek Coder",
+    "provider": "ollama",
+    "model": "deepseek-coder:6.7b"
+  }
+}
+EOF
+
+echo "Continue.dev configured -- open VS Code and press Cmd+I to chat"
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

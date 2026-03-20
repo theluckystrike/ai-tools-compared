@@ -204,6 +204,45 @@ Cashback programs require careful attention to tracking—some purchases don't q
 
 
 
+## Price Detection Content Script (Manifest V3)
+
+Core pattern for detecting and displaying prices on product pages:
+
+```javascript
+// content.js -- injected into shopping pages
+function extractPrice(doc) {
+  const selectors = [
+    '[data-price]', '.price', '#priceblock_ourprice',
+    '[itemprop="price"]', '.a-price .a-offscreen'
+  ];
+  for (const sel of selectors) {
+    const el = doc.querySelector(sel);
+    if (el) {
+      const raw = el.getAttribute('data-price') || el.textContent;
+      const match = raw.match(/[\d,]+\.?\d*/);
+      if (match) return parseFloat(match[0].replace(/,/g, ''));
+    }
+  }
+  return null;
+}
+
+const price = extractPrice(document);
+if (price !== null) {
+  chrome.storage.local.get(['budget', 'spent'], ({ budget = 500, spent = 0 }) => {
+    const remaining = budget - spent;
+    if (price > remaining) {
+      const badge = document.createElement('div');
+      badge.style.cssText =
+        'position:fixed;top:10px;right:10px;background:#e53e3e;' +
+        'color:#fff;padding:8px 14px;border-radius:6px;z-index:9999;' +
+        'font-family:sans-serif;font-size:14px;';
+      badge.textContent = `Over budget by $${(price - remaining).toFixed(2)}`;
+      document.body.appendChild(badge);
+    }
+  });
+}
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

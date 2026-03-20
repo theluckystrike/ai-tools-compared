@@ -234,6 +234,28 @@ The split-view makes it easy to iterate quickly without losing context.
 
 
 
+## Canvas SEO Optimization Workflow
+
+Use this workflow prompt inside Canvas to optimize a blog post for search:
+
+```
+Step 1 -- Keyword audit:
+Review the article and list the 3 primary keywords and 5 secondary keywords
+it should rank for. Format as a table with search intent (informational/transactional).
+
+Step 2 -- On-page optimization:
+Rewrite the H1 and meta description to include the primary keyword naturally.
+Ensure the primary keyword appears in the first 100 words.
+
+Step 3 -- Internal link suggestions:
+Identify 3 anchor text phrases in the article that could link to related pages.
+Format as: [anchor text] -> [suggested destination topic]
+
+Step 4 -- Readability pass:
+Break any paragraph longer than 4 sentences. Convert lists of 4+ items to bullet points.
+Flag any sentence over 25 words for simplification.
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

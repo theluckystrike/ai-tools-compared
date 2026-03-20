@@ -252,6 +252,33 @@ Avoid future license assignment issues by implementing these practices.
 
 
 
+## List Copilot-Licensed Users via Microsoft Graph API
+
+Use this PowerShell script to identify which users in your org have Copilot
+licenses assigned and flag accounts that are enabled but have not signed in:
+
+```powershell
+# Requires: Microsoft.Graph PowerShell module
+# Install: Install-Module Microsoft.Graph -Scope CurrentUser
+
+Connect-MgGraph -Scopes "User.Read.All", "Directory.Read.All"
+
+$copilotSku = "GitHub_Copilot_Enterprise"
+
+$licensedUsers = Get-MgUser -All -Property "displayName,userPrincipalName,assignedLicenses,signInActivity" |
+  Where-Object {
+    $_.AssignedLicenses | Where-Object {
+      (Get-MgSubscribedSku -SubscribedSkuId $_.SkuId).SkuPartNumber -eq $copilotSku
+    }
+  }
+
+$licensedUsers | Select-Object DisplayName, UserPrincipalName,
+  @{N='LastSignIn'; E={ $_.SignInActivity.LastSignInDateTime }} |
+  Format-Table -AutoSize
+
+Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
