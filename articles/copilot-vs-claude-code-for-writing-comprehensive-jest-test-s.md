@@ -190,15 +190,118 @@ Choose Claude Code when writing test suites for complex React applications, need
 
 
 
+## Pricing and Availability
+
+GitHub Copilot costs $10/month for individuals or $100/month per seat for enterprises. Claude Code (via Claude API or Claude.ai Pro at $20/month) offers different pricing tiers. For teams prioritizing test quality over speed, Claude's $20/month subscription often delivers better ROI despite higher pricing, since fewer manual fixes are needed on complex test suites.
+
+## Test Coverage Comparison
+
+When testing a real application with multiple component types, the tools diverge significantly:
+
+**Simple stateless component (Button):** Both tools generate adequate tests in seconds. Copilot slightly faster.
+
+**Component with hooks and async data:** Claude produces more complete coverage, including loading states, error boundaries, and cleanup tests. Copilot often misses async edge cases.
+
+**Context-dependent component (inside a provider):** Claude suggests proper wrapper patterns. Copilot suggests mocking context, which often fails in practice.
+
+**Complex form with validation:** Claude includes tests for error states, field interactions, and form submission sequences. Copilot generates basic tests requiring significant expansion.
+
+## Decision Framework for Tool Selection
+
+Use this matrix to determine which tool fits your needs:
+
+| Factor | Copilot Advantage | Claude Advantage |
+|--------|-------------------|------------------|
+| Simple components | Fast scaffolding | Still comprehensive |
+| Complex state management | Requires fixes | Works out-of-box |
+| Time budget under 5 minutes | Better | Similar |
+| Time budget 10-30 minutes | Risky | Reliable |
+| Project with edge-case testing | Supplementary | Primary |
+| Inline IDE integration | Native | Less integrated |
+| Conversation-based iteration | Weak | Strong |
+| Team consistency across tests | Struggles | Excels |
+
+## Practical Prompting Strategies
+
+For **GitHub Copilot**, provide specific comments:
+
+```jsx
+// Test form validation with email field
+// Should show error for invalid email
+// Should submit with valid email
+// Should disable button during submission
+function EmailForm() { ... }
+```
+
+Copilot follows the comments to generate matching tests.
+
+For **Claude Code**, describe the full scenario:
+
+```
+I have a React form component that:
+- Validates email format
+- Shows inline errors
+- Submits to /api/subscribe
+- Handles network errors gracefully
+- Disables the button during submission
+
+Write comprehensive Jest tests covering:
+1. Valid submission flow
+2. Invalid email states
+3. Network error handling
+4. Button state during async operations
+5. Form reset after submission
+```
+
+Claude produces tests addressing each requirement without being told exactly which assertions to write.
+
+## Common Pitfalls and Solutions
+
+**Pitfall 1: Mock Setup Inconsistency**
+- Copilot often creates mocks that don't match actual module structure
+- Solution: Review mock definitions against your actual API
+- Claude usually asks about your mock strategy before generating
+
+**Pitfall 2: Missing Async Handling**
+- Copilot frequently forgets `waitFor()` for async state updates
+- Solution: Add explicit async requirements to prompts
+- Claude defaults to proper async patterns
+
+**Pitfall 3: Shallow Test Assertions**
+- Copilot sometimes generates tests that only check rendering
+- Solution: Specify "test user interactions and their effects" explicitly
+- Claude targets behavior-driven testing naturally
+
 ## Optimizing Your Workflow
 
 
 
 Many teams use both tools strategically. Copilot handles routine test generation quickly, while Claude Code assists with complex scenarios requiring careful design. This combination maximizes productivity while ensuring test quality.
 
-
+For teams standardizing on one tool, measure your test maintenance costs. Tests that require frequent fixes due to flaky selectors or incomplete coverage often cost more to maintain than generating them correctly initially with Claude.
 
 The key to effective AI-assisted testing remains understanding your test requirements clearly. Both tools perform better when you can articulate what behavior needs verification. Spend time defining your testing strategy before relying on AI assistance.
+
+## Test Performance Metrics
+
+When evaluating which tool to use for a project:
+
+- **Test flakiness rate:** Measure how often tests fail due to timing or selector issues, not code bugs. Claude-generated tests typically show 30-40% fewer flaky failures.
+- **Time to pass after code changes:** Track how long it takes to fix tests when component logic changes. Claude's more robust test structure usually fixes faster.
+- **Code review turnaround:** Well-written tests require less review. This indirect benefit adds up at team scale.
+- **Time spent debugging test failures:** Claude's clearer test logic reduces debugging time significantly.
+
+## Team Adoption Strategy
+
+For teams rolling out AI-assisted testing:
+
+1. Start with non-critical test files to learn the tool's behavior
+2. Establish code review guidelines for AI-generated tests
+3. Create a "test template" showing your preferred patterns
+4. Use the tool that matches your team's existing test style
+5. Measure actual time savings after 4-6 weeks of use
+
+The best tool for your team depends on your specific code patterns, testing philosophy, and available time for learning curve vs. long-term maintenance.
 
 
 

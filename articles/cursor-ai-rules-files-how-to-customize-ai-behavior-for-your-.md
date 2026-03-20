@@ -203,6 +203,232 @@ If Cursor doesn't seem to follow your rules, check a few common issues. Ensure t
 
 Sometimes Cursor may override rules in specific contexts. For example, when explicitly editing code or following your explicit instructions, the AI may prioritize your direct input over rules. This behavior is intentional and usually desirable.
 
+## Real-World Rules File Examples
+
+**Example 1: React TypeScript E-commerce App**
+
+```markdown
+# E-commerce Platform AI Rules
+
+## Architecture
+- Client: React 18 + TypeScript + React Router v6
+- State: Zustand for global state (not Redux)
+- API: React Query for server state
+- Testing: Vitest + React Testing Library
+- Styling: Tailwind CSS
+
+## Component Rules
+- All components in `/src/components/[feature]/`
+- Use named exports, no default exports
+- Props interface always in same file, named `[ComponentName]Props`
+- Use `React.FC<Props>` for typing
+
+## Naming Conventions
+- Components: PascalCase (`ProductCard.tsx`)
+- Hooks: camelCase with `use` prefix (`useProductFilter.ts`)
+- Utils: camelCase (`formatPrice.ts`)
+- Constants: SCREAMING_SNAKE_CASE (`MAX_PRICE_FILTER = 1000`)
+- Types: PascalCase, prefixed with type declaration (`type UserProfile = {...}`)
+
+## State Management (Zustand)
+```typescript
+// Use this pattern for all stores
+export const useProductStore = create<ProductState>((set) => ({
+  products: [],
+  setProducts: (products) => set({ products }),
+}));
+```
+
+## Testing
+- Test files colocate with components (`ProductCard.test.tsx`)
+- Use `describe` blocks matching component structure
+- Test user interactions, not implementation details
+- Coverage target: 80% for business logic
+
+## API Integration
+- All API calls through React Query hooks
+- Place hooks in `/src/hooks/queries/`
+- Cache invalidation strategy defined in hook
+- Error boundaries on async operations
+```
+
+**Example 2: Node.js/Express Backend**
+
+```markdown
+# Backend API Rules
+
+## Stack
+- Node.js 20+ with TypeScript
+- Express.js for HTTP server
+- PostgreSQL with Prisma ORM
+- Jest for testing
+- Logging: Winston
+
+## Folder Structure
+```
+src/
+├── routes/          # Express route handlers
+├── services/        # Business logic
+├── models/          # Prisma models (schema.prisma)
+├── middleware/      # Express middleware
+├── utils/           # Helpers
+└── tests/           # Test files
+```
+
+## Naming Rules
+- Route files: `[resource].routes.ts`
+- Service files: `[resource].service.ts`
+- Controller methods: `list`, `get`, `create`, `update`, `delete`
+- Database models: Singular, PascalCase (`User`, `Product`)
+
+## API Response Format
+```typescript
+// Always return consistent format
+{
+  success: boolean,
+  data: T | null,
+  error?: string,
+  timestamp: ISO8601
+}
+```
+
+## Error Handling
+- Use custom AppError class for all errors
+- Include error code and HTTP status
+- Log errors with context (userId, requestId, etc.)
+- Never expose internal implementation details
+
+## Database
+- Always use transactions for multi-step operations
+- Include soft delete (deleted_at timestamp) where appropriate
+- Foreign keys with cascade delete/update explicit
+- Indexes on frequently queried columns
+
+## Testing
+- Unit tests for services: 80% coverage required
+- Integration tests for routes with test database
+- Use factories for test data
+```
+
+## Advanced: Multi-File Rule Configuration
+
+For large projects, organize rules across files:
+
+```
+.cursorrules                 # General project rules
+.cursorrules.frontend        # React-specific rules
+.cursorrules.backend         # API-specific rules
+.cursorrules.testing         # Testing practices
+.cursorrules.security        # Security requirements
+```
+
+Cursor evaluates all applicable files, combining their rules.
+
+## Rule Verification Workflow
+
+After creating rules, verify Cursor follows them:
+
+1. **Simple test:** Ask Cursor to generate a component. Check if it follows naming conventions.
+2. **Validation:** Generate code and verify structure matches rules.
+3. **Edge cases:** Ask Cursor to generate in edge-case scenarios (error handling, async operations).
+4. **Refinement:** Adjust rules if Cursor consistently misses something.
+
+Most projects need 2-3 iterations to get rules perfect.
+
+## Troubleshooting Rule Issues
+
+**Cursor ignores a rule consistently:**
+- Rule may be conflicting with another rule
+- Rewrite with more specific language
+- Place in separate `.cursorrules.specific` file if very detailed
+- Test with simple isolated questions
+
+**Rules too restrictive, slowing down suggestions:**
+- Rules aren't meant to cover every detail
+- Focus on 5-10 critical conventions
+- Let Cursor apply general best practices
+- Rules should enable speed, not constrain it
+
+**New team members struggle with rules:**
+- Document reasoning behind important rules
+- Include "why" comments in rules file
+- Share rules in team onboarding
+- Have architecture lead review rules quarterly
+
+## Rules Format Best Practices
+
+**Do:**
+- Use clear, specific language
+- Organize by category (naming, structure, style)
+- Include code examples for complex rules
+- Keep rules to one-line statements when possible
+
+**Don't:**
+- Overspecify formatting (Prettier handles this)
+- Include rules that contradict each other
+- Create rules for one-off situations
+- Write rules that are already Cursor defaults
+
+## Integration with Team Workflow
+
+**Commit rules to version control:**
+```bash
+# Add to git
+git add .cursorrules
+git commit -m "docs: establish cursor AI rules for project consistency"
+```
+
+**Share in PR reviews:**
+When reviewing AI-generated code, reference rule files:
+"This violates our testing rule about test data factories. See `.cursorrules.testing`."
+
+**Update rules as patterns evolve:**
+Review rules quarterly. Remove what's no longer relevant. Add new patterns as the codebase matures.
+
+## Measuring Rule Effectiveness
+
+Track these indicators:
+
+- **Suggestion quality:** Do generated suggestions match your project patterns? (target: 90%+)
+- **Code review turnaround:** Do rules reduce refactoring requests? (measure: review cycle time)
+- **Team adoption:** Are newer developers using Cursor more confidently? (measure: usage patterns)
+- **Consistency:** Do multiple developers generate similar code patterns? (measure: subjective team feedback)
+
+Effective rules should increase productivity without requiring constant tweaking.
+
+## Advanced: Conditional Rules
+
+For projects with multiple contexts, structure rules conditionally:
+
+```markdown
+# Mobile App Rules (React Native)
+
+## For iOS-specific code
+- Use Swift naming conventions
+- Follow Apple Human Interface Guidelines
+- Include accessibility features per WCAG 2.1
+
+## For Android-specific code
+- Use Java naming conventions
+- Follow Material Design 3
+- Test on both Kotlin and Java versions
+
+## Shared Rules
+- Component structure same as Web
+- State management identical across platforms
+```
+
+Cursor applies all rules, letting the developer choose context through comments or file location.
+
+## Related Reading
+
+- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
+
 
 
 ## Related Reading
