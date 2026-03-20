@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Datadog Monitoring Queries and."
+title: "Best AI Tools for Writing Datadog Monitoring Queries and"
 description: "Discover the top AI tools that help developers write Datadog monitoring queries and build effective dashboards. Practical examples, code snippets, and."
 date: 2026-03-16
 author: theluckystrike
@@ -332,3 +332,4 @@ The best approach is to evaluate these tools with your actual Datadog metrics an
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

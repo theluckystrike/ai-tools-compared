@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Cloud Cost Optimization Across AWS."
+title: "Best AI Tools for Cloud Cost Optimization Across AWS Azure G"
 description: "A practical guide for developers and power users comparing AI-powered tools that help reduce cloud spending across AWS, Azure, and GCP. Includes real."
 date: 2026-03-16
 author: theluckystrike

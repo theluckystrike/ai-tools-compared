@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Max vs Claude Pro: Actual Difference in Daily."
+title: "Claude Max vs Claude Pro Actual Difference"
 description: "A detailed comparison of Claude Max and Claude Pro message limits. Find out exactly how many messages you get per day with each tier and which plan."
 date: 2026-03-18
 author: theluckystrike

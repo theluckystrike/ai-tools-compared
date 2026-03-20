@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Chrome Extensions for Screen Sharing in 2026 Screen."
+title: "Screen Sharing Chrome Extension"
 description: "Discover the best Chrome extensions for screen sharing in 2026. Compare features, pricing, and performance to find the perfect tool for remote."
 date: 2026-03-16
 author: theluckystrike
@@ -314,6 +314,44 @@ Proper audio setup matters significantly for screen recordings. Most extensions 
 
 
 
+## Screen Capture with Chrome Extension (Manifest V3)
+
+Use the desktopCapture API to start a recording session from a background service worker:
+
+```javascript
+// background.js (MV3 service worker)
+chrome.action.onClicked.addListener((tab) => {
+  chrome.desktopCapture.chooseDesktopMedia(
+    ['screen', 'window', 'tab'],
+    tab,
+    (streamId) => {
+      if (!streamId) { console.error('User cancelled capture'); return; }
+      chrome.tabs.sendMessage(tab.id, { action: 'startRecording', streamId });
+    }
+  );
+});
+
+// content.js -- receives streamId and starts MediaRecorder
+chrome.runtime.onMessage.addListener(async ({ action, streamId }) => {
+  if (action !== 'startRecording') return;
+  const stream = await navigator.mediaDevices.getUserMedia({
+    video: { mandatory: { chromeMediaSource: 'desktop', chromeMediaSourceId: streamId } },
+    audio: false,
+  });
+  const recorder = new MediaRecorder(stream);
+  const chunks = [];
+  recorder.ondataavailable = e => chunks.push(e.data);
+  recorder.onstop = () => {
+    const blob = new Blob(chunks, { type: 'video/webm' });
+    const url  = URL.createObjectURL(blob);
+    // Trigger download or send to background for upload
+    chrome.runtime.sendMessage({ action: 'downloadRecording', url });
+  };
+  recorder.start();
+  setTimeout(() => recorder.stop(), 30000); // auto-stop after 30s
+});
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -326,3 +364,4 @@ Proper audio setup matters significantly for screen recordings. Most extensions 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Automated Infrastructure Drift Detection."
+title: "AI Tools for Automated Infrastructure Drift Detection and"
 description: "A practical guide for developers exploring AI-powered tools that detect and correct infrastructure drift automatically, with code examples and."
 date: 2026-03-16
 author: theluckystrike
@@ -344,3 +344,4 @@ Consider the maturity of AI features. Some tools offer simple pattern matching w
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

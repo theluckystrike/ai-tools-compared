@@ -293,5 +293,8 @@ Building your voice translation pipeline requires testing with your specific aud
 
 Built by the luckystrike — More at [zovo.one](https://zovo.one)
 
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
 {% endraw %}
 

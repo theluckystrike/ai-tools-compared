@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Sharing AI Tool Configuration Files."
+title: "Best Practices for Sharing AI Tool Configuration Files Acros"
 description: "A practical guide to sharing AI coding assistant configuration files across distributed engineering teams. Learn version control strategies."
 date: 2026-03-16
 author: theluckystrike
@@ -327,3 +327,4 @@ Collect feedback over one or two sprints, then promote stable configurations to 
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

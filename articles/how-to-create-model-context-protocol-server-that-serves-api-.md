@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Create Model Context Protocol Server That Serves Api"
+title: "How to Create Model Context Protocol Server That Serves API"
 description: "Learn to build a Model Context Protocol server that exposes your API documentation to AI assistants, enabling accurate code generation and intelligent."
 date: 2026-03-16
 author: theluckystrike
@@ -411,3 +411,4 @@ Version Comparison: Support multiple API versions and allow querying differences
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

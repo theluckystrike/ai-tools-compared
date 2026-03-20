@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Pytest Tests for Celery Task Chain"
+title: "How to Use AI to Generate pytest Tests for Celery Task Chain"
 description: "Learn practical approaches for using AI tools to generate pytest tests for Celery task chains and workflows."
 date: 2026-03-16
 author: theluckystrike
@@ -499,3 +499,4 @@ This level of context consistently produces tests that need minimal editing befo
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

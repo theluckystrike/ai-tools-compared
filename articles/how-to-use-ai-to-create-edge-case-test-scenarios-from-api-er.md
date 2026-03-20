@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Create Edge Case Test Scenarios from."
+title: "How to Use AI to Create Edge Case Test Scenarios from API Er"
 description: "Learn how to use AI tools to automatically generate edge case test scenarios from API error documentation, improving your test coverage and reducing."
 date: 2026-03-16
 author: theluckystrike

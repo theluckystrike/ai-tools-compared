@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Creating Open Source Project Architecture."
+title: "Best AI for Creating Open Source Project Architecture Docume"
 description: "A practical guide comparing AI tools that help generate open source project architecture documentation, including C4 models, API specs, and system."
 date: 2026-03-19
 author: theluckystrike
@@ -483,3 +483,4 @@ Consider your workflow: if you spend hours manually creating architecture diagra
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

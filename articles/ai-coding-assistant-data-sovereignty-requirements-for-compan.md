@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Data Sovereignty Requirements for."
+title: "AI Coding Assistant Data Sovereignty Requirements"
 description: "Understand GDPR, NIS2, and EU data sovereignty requirements when selecting AI coding assistants. Practical guidance for developers and technical teams."
 date: 2026-03-16
 author: theluckystrike
@@ -335,3 +335,4 @@ This approach balances AI productivity benefits against regulatory requirements,
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for AI Tool Customization Files When."
+title: "Best Practices for AI Tool Customization Files When Onboardi"
 description: "A practical guide to structuring and managing AI tool configuration files for team onboarding in 2026. Includes code examples and expert recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -314,3 +314,4 @@ migrations:
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

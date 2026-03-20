@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Autocomplete for Test Files: How Well Different Tools."
+title: "AI Autocomplete for Test Files How Well Different Tools Pred"
 description: "A practical comparison of how leading AI coding tools handle test file autocomplete, specifically focusing on assertion prediction accuracy across."
 date: 2026-03-16
 author: theluckystrike
@@ -229,3 +229,4 @@ The best approach treats AI autocomplete as a productivity tool rather than a re
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

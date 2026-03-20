@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Keyboard Navigation."
+title: "How to Use AI to Generate Playwright Keyboard Navigation Tes"
 description: "Learn how to use AI tools in 2026 to automatically generate Playwright keyboard navigation tests for your web applications."
 date: 2026-03-16
 author: theluckystrike
@@ -417,3 +417,4 @@ Add the keyboard test suite to your pull request checks with a required status c
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

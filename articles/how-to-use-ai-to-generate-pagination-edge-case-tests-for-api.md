@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Pagination Edge Case Tests for Api"
+title: "How to Use AI to Generate Pagination Edge Case Tests for API"
 description: "A practical guide for developers to use AI tools in generating pagination edge case tests for REST APIs, with code examples and testing."
 date: 2026-03-16
 author: theluckystrike
@@ -296,3 +296,4 @@ AI accelerates the initial test generation, but maintaining and updating tests s
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

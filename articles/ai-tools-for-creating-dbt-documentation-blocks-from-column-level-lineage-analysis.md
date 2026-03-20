@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating dbt Documentation Blocks from."
+title: "AI Tools for Creating Dbt Documentation Blocks"
 description: "Discover how AI-powered tools can automatically generate dbt documentation blocks by analyzing column-level lineage and transform your data."
 date: 2026-03-16
 author: theluckystrike
@@ -285,3 +285,4 @@ The initial investment in setting up automated documentation pays dividends thro
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

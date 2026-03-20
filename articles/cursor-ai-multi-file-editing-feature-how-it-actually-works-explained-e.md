@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Multi-File Editing Feature: How It Actually."
+title: "Cursor AI Multi File Editing Feature How It Actually Works"
 description: "A guide for developers on how Cursor AI's multi-file editing feature works. Learn the mechanics, practical examples, and best practices for editing multiple files simultaneously."
 date: 2026-03-16
 author: theluckystrike
@@ -276,3 +276,4 @@ Cursor's multi-file editing represents a significant advancement in AI-assisted 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

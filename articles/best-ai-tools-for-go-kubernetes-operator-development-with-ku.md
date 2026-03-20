@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Go Kubernetes Operator Development."
+title: "Best AI Tools for Go Kubernetes Operator Development"
 description: "A practical comparison of AI coding tools for Go Kubernetes operator development using Kubebuilder, with code examples and recommendations for."
 date: 2026-03-16
 author: theluckystrike
@@ -231,3 +231,4 @@ However, it may not fully understand Kubebuilder-specific annotations and marker
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

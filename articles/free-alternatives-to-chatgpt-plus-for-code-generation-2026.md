@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Free Alternatives to ChatGPT Plus for Code Generation in."
+title: "Free Alternatives to ChatGPT Plus for Code Generation"
 description: "Discover the best free AI coding assistants that rival ChatGPT Plus. Compare features, capabilities, and find the perfect free tool for your coding needs."
 date: 2026-03-17
 author: "AI Tools Compared"
@@ -347,6 +347,44 @@ If privacy is your primary concern:
 
 
 
+## Setting Up Continue.dev with a Local Ollama Model
+
+Get free AI code completion running locally in VS Code in under 5 minutes:
+
+```bash
+# 1. Install Ollama
+curl -fsSL https://ollama.com/install.sh | sh
+
+# 2. Pull a code-focused model (deepseek-coder is fast and accurate)
+ollama pull deepseek-coder:6.7b
+
+# 3. Verify it runs
+ollama run deepseek-coder:6.7b "Write a Python function to reverse a string"
+
+# 4. Install Continue extension in VS Code
+code --install-extension Continue.continue
+
+# 5. Configure Continue to use Ollama
+mkdir -p ~/.continue
+cat > ~/.continue/config.json << EOF
+{
+  "models": [{
+    "title": "DeepSeek Coder (local)",
+    "provider": "ollama",
+    "model": "deepseek-coder:6.7b",
+    "apiBase": "http://localhost:11434"
+  }],
+  "tabAutocompleteModel": {
+    "title": "DeepSeek Coder",
+    "provider": "ollama",
+    "model": "deepseek-coder:6.7b"
+  }
+}
+EOF
+
+echo "Continue.dev configured -- open VS Code and press Cmd+I to chat"
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -357,3 +395,4 @@ If privacy is your primary concern:
 - [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Writing Effective Runbooks and."
+title: "How to Use AI for Writing Effective Runbooks and Incident"
 description: "A practical guide for developers and power users on using AI tools to create clear, actionable runbooks and incident response playbooks."
 date: 2026-03-16
 author: theluckystrike
@@ -227,3 +227,4 @@ AI can also help with maintenance by analyzing your existing documentation and f
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

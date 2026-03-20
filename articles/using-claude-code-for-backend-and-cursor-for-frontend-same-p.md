@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Using Claude Code for Backend and Cursor for Frontend in."
+title: "Using Claude Code for Backend and Cursor for Frontend Same P"
 description: "A practical guide to running Claude Code for backend development while using Cursor for frontend work in a single codebase. Includes setup tips."
 date: 2026-03-16
 author: theluckystrike
@@ -353,3 +353,4 @@ Running Claude Code for backend and Cursor for frontend gives you specialized as
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

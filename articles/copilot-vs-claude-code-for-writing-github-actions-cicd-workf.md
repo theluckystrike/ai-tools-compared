@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Claude Code for Writing GitHub Actions CI/CD."
+title: "Copilot vs Claude Code for Writing GitHub Actions Cicd Workf"
 description: "A practical comparison of GitHub Copilot and Claude Code for writing GitHub Actions CI/CD workflows, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -267,3 +267,4 @@ Many teams use both tools together. Let Copilot generate the initial scaffold, t
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

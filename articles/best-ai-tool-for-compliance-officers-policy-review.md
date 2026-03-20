@@ -280,6 +280,35 @@ The key is treating AI as a powerful assistant that enhances rather than replace
 
 
 
+## Policy Gap Analysis Prompt Template
+
+Use this structured prompt with Claude or ChatGPT to identify compliance gaps
+in an existing policy document:
+
+```
+You are a senior compliance analyst. Review the following policy document and
+identify gaps against [REGULATION -- e.g., GDPR Article 13, SOC 2 CC6.1, HIPAA 164.312].
+
+Policy text:
+[PASTE POLICY HERE]
+
+Return your analysis in this format:
+
+1. COVERED REQUIREMENTS (list each requirement the policy addresses, with the
+   exact policy clause that covers it)
+
+2. GAPS (list each requirement NOT addressed, with the regulatory reference and
+   the risk level: Critical / High / Medium / Low)
+
+3. AMBIGUOUS LANGUAGE (flag any clause that could be interpreted multiple ways
+   and suggest clearer wording)
+
+4. RECOMMENDED ADDITIONS (draft the specific language needed to close each gap,
+   suitable for insertion into the existing policy)
+
+Be precise. Cite regulatory article numbers. Do not summarize -- give actionable findings.
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

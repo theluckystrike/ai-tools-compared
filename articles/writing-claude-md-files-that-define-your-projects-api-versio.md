@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing CLAUDE.md Files That Define Your Project's API Versioning Strategy"
+title: "Writing CLAUDE.md Files That Define Your Project's API"
 description: "A practical guide to creating CLAUDE.md files that communicate API versioning strategy to AI coding assistants. Includes real code examples and."
 date: 2026-03-16
 author: theluckystrike
@@ -304,3 +304,4 @@ When documenting your API versioning strategy, watch for these common mistakes t
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

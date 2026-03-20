@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Copilot for Implementing OAuth2 Authentication."
+title: "Cursor vs Copilot for Implementing Oauth2 Authentication Flo"
 description: "A practical comparison of GitHub Copilot and Cursor when implementing OAuth2 authentication flows in Express.js applications, with code examples and."
 date: 2026-03-16
 author: theluckystrike
@@ -291,3 +291,4 @@ Test both with a simple OAuth2 flow to see which matches your development style.
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

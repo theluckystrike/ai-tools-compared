@@ -246,3 +246,4 @@ Claude, ChatGPT, Gemini, and Perplexity each serve different needs—Claude for 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

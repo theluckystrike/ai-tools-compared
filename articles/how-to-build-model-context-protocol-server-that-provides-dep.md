@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build Model Context Protocol Server That Provides."
+title: "How to Build Model Context Protocol Server That Provides"
 description: "A practical guide for developers on creating a Model Context Protocol server that delivers deployment environment context to AI agents and coding."
 date: 2026-03-16
 author: theluckystrike
@@ -312,3 +312,4 @@ Never expose sensitive values through your MCP server. Filter out API keys, secr
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

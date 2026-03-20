@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Windsurf for Building Next.js App from Design."
+title: "Cursor vs Windsurf for Building Next Js App from Design Mock"
 description: "A practical comparison of Cursor and Windsurf for converting design mockups into Next.js applications, with code examples and workflow recommendations."
 date: 2026-03-16
 author: theluckystrike
@@ -259,3 +259,4 @@ Both tools integrate with Next.js and support Tailwind CSS out of the box. Your 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tax Preparation Tools for Accountants 2026: A."
+title: "AI Tax Preparation Tools for Accountants"
 description: "A practical guide to AI tax preparation tools for accountants in 2026. Explore APIs, code examples, and integration strategies for developers building."
 date: 2026-03-20
 author: theluckystrike

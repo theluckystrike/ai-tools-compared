@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GitHub Copilot Workspace Preview: Pricing & Extra Costs."
+title: "GitHub Copilot Workspace Preview Pricing Will It Cost Extra"
 description: "Everything you need to know about GitHub Copilot Workspace preview pricing, including whether it costs extra, feature availability, and what to expect."
 date: 2026-03-18
 author: theluckystrike
@@ -304,3 +304,4 @@ Workspace:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

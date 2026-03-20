@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI IDE Features for Writing Configuration Files."
+title: "Best AI IDE Features for Writing Configuration Files YAML"
 description: "Discover the most powerful AI-powered IDE features that make writing and managing configuration files in YAML, JSON, and TOML effortless."
 date: 2026-03-16
 author: theluckystrike
@@ -276,3 +276,4 @@ The time investment in learning these tools pays dividends immediately. Configur
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

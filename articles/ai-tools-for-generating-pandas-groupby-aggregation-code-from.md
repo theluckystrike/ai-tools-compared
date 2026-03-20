@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Pandas GroupBy Aggregation Code"
+title: "AI Tools for Generating pandas GroupBy Aggregation Code"
 description: "Discover how AI tools can convert plain English descriptions into pandas groupby aggregation code. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -221,3 +221,4 @@ Some tools also offer chat-based interfaces where you can paste data description
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

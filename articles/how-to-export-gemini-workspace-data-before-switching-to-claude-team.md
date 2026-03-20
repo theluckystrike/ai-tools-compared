@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Export Gemini Workspace Data Before Switching to."
+title: "How to Export Gemini Workspace Data Before Switching to"
 description: "A practical guide for developers and power users on exporting your Google Gemini workspace data before migrating to Claude Team. Includes code examples."
 date: 2026-03-16
 author: theluckystrike

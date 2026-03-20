@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini vs ChatGPT for Translating Python Data Pipelines."
+title: "Gemini vs ChatGPT for Translating Python Data Pipelines"
 description: "A practical comparison of Gemini and ChatGPT for converting Python data pipelines to Rust, with code examples and real-world recommendations."
 date: 2026-03-16
 author: theluckystrike

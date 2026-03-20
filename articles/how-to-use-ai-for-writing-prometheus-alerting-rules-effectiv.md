@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Writing Prometheus Alerting Rules."
+title: "How to Use AI for Writing Prometheus Alerting Rules"
 description: "A practical guide for developers on using AI tools to write Prometheus alerting rules. Real examples, code snippets, and techniques for 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -226,3 +226,4 @@ Always review the generated `for` duration—the time an condition must be true 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

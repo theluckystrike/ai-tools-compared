@@ -268,3 +268,4 @@ If your codebase uses TypeScript with explicit type definitions, Claude generall
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

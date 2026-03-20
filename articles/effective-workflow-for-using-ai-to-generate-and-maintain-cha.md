@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Workflow for Using AI to Generate and Maintain."
+title: "Effective Workflow for Using AI"
 description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation."
 date: 2026-03-16
 author: theluckystrike
@@ -232,3 +232,4 @@ Start with cleaner commit messages, use AI to generate drafts, and maintain a re
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

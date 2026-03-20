@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "GitHub Copilot Usage-Based Billing: How API Calls Are."
+title: "GitHub Copilot Usage Based Billing How API Calls Are Counted"
 description: "GitHub Copilot Usage-Based Billing: How API Calls Are. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Perplexity Spaces Collaboration Feature: Free vs Pro."
+title: "Perplexity Spaces Collaboration Feature Free vs Pro Limits"
 description: "A guide comparing Perplexity Spaces collaboration features across Free and Pro plans. Learn the limits, capabilities, and which plan best suits your team's needs."
 date: 2026-03-18
 author: theluckystrike
@@ -227,3 +227,4 @@ Members: research lead, product manager, strategy analyst
 
 **Built by theluckystrike — More at https://zovo.one**
 
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

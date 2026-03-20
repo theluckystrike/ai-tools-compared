@@ -257,6 +257,29 @@ If crashes persist after trying all these solutions, consider reaching out to Cu
 
 
 
+## Collecting Cursor Crash Logs on macOS
+
+Run these commands to gather crash reports and recent Cursor logs for diagnosis:
+
+```bash
+# View the 5 most recent Cursor crash reports
+ls -lt ~/Library/Logs/DiagnosticReports/ | grep -i cursor | head -5
+
+# Print the most recent crash report
+LATEST=$(ls -t ~/Library/Logs/DiagnosticReports/Cursor* 2>/dev/null | head -1)
+[ -n "$LATEST" ] && head -80 "$LATEST"
+
+# Check Cursor application logs (electron main process)
+LOG_DIR=~/Library/Application\ Support/Cursor/logs
+ls -lt "$LOG_DIR" | head -10
+
+# Check available disk space -- low disk triggers crashes
+df -h ~
+
+# Check memory pressure
+vm_stat | awk '/Pages free/ || /Pages active/ || /Pages wired/'
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -269,3 +292,4 @@ If crashes persist after trying all these solutions, consider reaching out to Cu
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Export Perplexity Collections Before Switching to."
+title: "Export Perplexity Collections Before Switching to ChatGPT Se"
 description: "A practical developer guide for exporting Perplexity collections before switching to ChatGPT Search in 2026. Includes API methods, automation scripts."
 date: 2026-03-16
 author: theluckystrike
@@ -294,3 +294,4 @@ Back up your exports to cloud storage (Google Drive, Dropbox, or AWS S3) in addi
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -269,3 +269,4 @@ This pipeline demonstrates how the tools complement each other: OpenCV for prepr
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

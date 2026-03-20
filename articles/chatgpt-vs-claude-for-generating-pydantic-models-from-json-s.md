@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT vs Claude for Generating Pydantic Models from Json"
+title: "ChatGPT vs Claude for Generating Pydantic Models from JSON"
 description: "A practical comparison of ChatGPT and Claude for generating Pydantic models from JSON schema, with code examples and real-world use cases for developers."
 date: 2026-03-16
 author: theluckystrike
@@ -266,3 +266,4 @@ Both tools significantly speed up boilerplate generation. For the best results, 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

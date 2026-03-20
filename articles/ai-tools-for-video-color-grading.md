@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Video Color Grading: A Practical Guide for."
+title: "AI Tools for Video Color Grading"
 description: "Explore AI-powered tools for video color grading with practical examples, code integrations, and recommendations for developers and power users."
 date: 2026-03-15
 author: theluckystrike
@@ -229,3 +229,4 @@ For open-source purists and cost-sensitive projects, the FFmpeg plus Python appr
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Generating SQL Recursive Queries."
+title: "Best AI Assistant for Generating SQL Recursive Queries"
 description: "A practical comparison of AI assistants for writing recursive SQL queries that traverse organizational hierarchies, with real code examples."
 date: 2026-03-16
 author: theluckystrike
@@ -238,3 +238,4 @@ The most effective assistants also explain the query in plain language, highligh
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

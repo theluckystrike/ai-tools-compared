@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Strategies for Using AI to Learn New."
+title: "Effective Strategies for Using AI"
 description: "Practical strategies and techniques for developers to use AI tools when learning new programming languages, with actionable examples and tips."
 date: 2026-03-16
 author: theluckystrike

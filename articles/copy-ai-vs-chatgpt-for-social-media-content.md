@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copy.ai vs ChatGPT for Social Media Content: A Practical."
+title: "Copy AI vs ChatGPT for Social Media Content"
 description: "A developer-focused comparison of Copy.ai and ChatGPT for generating social media content. Includes API integration examples, pricing analysis, and."
 date: 2026-03-15
 author: theluckystrike

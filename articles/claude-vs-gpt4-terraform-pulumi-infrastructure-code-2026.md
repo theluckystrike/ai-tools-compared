@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude vs GPT-4 for Writing Terraform and Pulumi."
+title: "Claude vs Gpt4 Terraform Pulumi Infrastructure Code"
 description: "Deep comparison of Claude, GPT-4, and specialized tools for generating production-ready IaC."
 date: 2026-03-20
 author: theluckystrike

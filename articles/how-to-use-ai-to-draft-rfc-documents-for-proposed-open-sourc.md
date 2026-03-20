@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Draft RFC Documents for Proposed Open."
+title: "How to Use AI to Draft RFC Documents for Proposed Open"
 description: "Learn practical methods for using AI tools to draft RFC documents for open source feature proposals, with examples and code snippets for developers in."
 date: 2026-03-16
 author: theluckystrike
@@ -238,3 +238,4 @@ Maintain your voice. Use AI to structure and draft, but add your own analysis an
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

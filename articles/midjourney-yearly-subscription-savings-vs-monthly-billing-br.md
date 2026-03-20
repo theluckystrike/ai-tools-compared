@@ -277,6 +277,33 @@ For most developers and power users with established creative workflows, the yea
 
 
 
+## Midjourney Savings Calculator
+
+Calculate your break-even point and total annual savings across plans:
+
+```python
+PLANS = {
+    "Basic":    {"monthly": 10,  "yearly": 96},
+    "Standard": {"monthly": 30,  "yearly": 288},
+    "Pro":      {"monthly": 60,  "yearly": 576},
+    "Mega":     {"monthly": 120, "yearly": 1152},
+}
+
+def midjourney_savings(plan_name, months_active):
+    p = PLANS[plan_name]
+    monthly_total  = p["monthly"] * months_active
+    yearly_upfront = p["yearly"]
+    savings        = monthly_total - yearly_upfront
+    breakeven      = yearly_upfront / p["monthly"]
+    print(f"Plan: {plan_name}")
+    print(f"  Monthly billing ({months_active} months): ${monthly_total:.2f}")
+    print(f"  Yearly billing (upfront):                ${yearly_upfront:.2f}")
+    print(f"  Savings with yearly:                     ${savings:.2f}")
+    print(f"  Break-even at:                           {breakeven:.1f} months")
+
+midjourney_savings("Standard", 12)
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -289,3 +316,4 @@ For most developers and power users with established creative workflows, the yea
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

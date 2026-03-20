@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Product Managers: Drafting Release."
+title: "AI Tools for Product Managers Drafting Release"
 description: "Practical guide for developers and power users using AI to automate release communication emails from feature lists. Code examples and workflows included."
 date: 2026-03-16
 author: theluckystrike
@@ -317,3 +317,4 @@ This approach scales with your release frequency and team size, making it practi
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

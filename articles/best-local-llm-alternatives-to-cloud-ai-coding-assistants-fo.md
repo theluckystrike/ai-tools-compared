@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Local LLM Alternatives to Cloud AI Coding."
+title: "Best Local LLM Alternatives to Cloud AI Coding Assistants"
 description: "Discover powerful offline AI coding tools that work without internet connectivity. Compare leading local LLM options for secure, air-gapped development."
 date: 2026-03-16
 author: theluckystrike
@@ -286,3 +286,4 @@ Document your setup for compliance reviews. Ensure model weights come from trust
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

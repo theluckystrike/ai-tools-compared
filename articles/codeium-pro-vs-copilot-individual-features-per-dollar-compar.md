@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Codeium Pro vs Copilot Individual: Features Per Dollar."
+title: "Codeium Pro vs Copilot Individual Features Per Dollar Compar"
 description: "A practical comparison of Codeium Pro and GitHub Copilot Individual pricing, features, and value for individual developers. Find which AI coding."
 date: 2026-03-16
 author: theluckystrike

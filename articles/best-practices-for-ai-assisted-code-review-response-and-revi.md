@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for AI-Assisted Code Review Response and."
+title: "Best Practices for AI Assisted Code Review Response and Revi"
 description: "A practical guide for developers mastering AI-assisted code review workflows. Learn how to effectively respond to AI feedback, iterate on revisions."
 date: 2026-03-16
 author: theluckystrike

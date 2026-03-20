@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Model Context Protocol Server for Internal."
+title: "How to Set Up Model Context Protocol Server for Internal Pac"
 description: "A practical guide to setting up a Model Context Protocol server for internal package registry documentation, with code examples and configuration tips."
 date: 2026-03-16
 author: theluckystrike
@@ -288,3 +288,4 @@ Build and run with `docker build -t mcp-registry-docs.` followed by `docker run 
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

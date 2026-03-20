@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Model Context Protocol with Local Database."
+title: "How to Set Up Model Context Protocol with Local Database"
 description: "A practical guide for developers and power users setting up MCP to connect AI assistants with local database schemas for intelligent querying and data."
 date: 2026-03-16
 author: theluckystrike
@@ -271,3 +271,4 @@ Setting up MCP with local database schema information transforms your AI assista
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

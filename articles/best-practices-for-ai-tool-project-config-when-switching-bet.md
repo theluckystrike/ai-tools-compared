@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for AI Tool Project Config When Switching."
+title: "Best Practices for AI Tool Project Config When Switching"
 description: "A practical guide for developers managing AI tool configurations across multiple client projects in 2026."
 date: 2026-03-16
 author: theluckystrike
@@ -252,3 +252,4 @@ Maintain a simple internal wiki or README explaining your setup. Include the dir
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

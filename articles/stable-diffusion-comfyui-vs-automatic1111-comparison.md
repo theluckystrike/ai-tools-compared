@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Stable Diffusion ComfyUI vs Automatic1111: A Practical."
+title: "Stable Diffusion ComfyUI vs Automatic1111 Comparison"
 description: "A technical comparison of ComfyUI and Automatic1111 for Stable Diffusion, including workflow examples, API usage, and recommendations for developers."
 date: 2026-03-15
 author: theluckystrike

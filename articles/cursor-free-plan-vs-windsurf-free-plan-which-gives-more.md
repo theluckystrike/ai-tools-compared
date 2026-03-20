@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor Free Plan vs Windsurf Free Plan: Which Gives More."
+title: "Cursor Free Plan vs Windsurf Free Plan Which Gives More"
 description: "A practical comparison of Cursor and Windsurf free tiers, including AI usage limits, features, and real-world examples for developers."
 date: 2026-03-16
 author: theluckystrike

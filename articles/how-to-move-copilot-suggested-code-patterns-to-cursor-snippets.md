@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Move Copilot Suggested Code Patterns to Cursor."
+title: "How to Move Copilot Suggested Code Patterns to Cursor"
 description: "A practical step-by-step guide to migrating your favorite GitHub Copilot code suggestions into Cursor's custom snippets for faster development."
 date: 2026-03-16
 author: "theluckystrike"
@@ -335,3 +335,4 @@ Keep your snippet library in sync by storing it in a git repository or using a c
 - [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Privacy Mode: How to Use AI Features Without."
+title: "Cursor AI Privacy Mode How to Use AI Features Without Sendin"
 description: "Cursor AI Privacy Mode: How to Use AI Features Without. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
@@ -351,3 +351,4 @@ Privacy mode in Cursor AI provides a practical solution for developers who need 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

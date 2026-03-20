@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Regulatory Change Monitoring Tools Guide 2026: A."
+title: "AI Regulatory Change Monitoring Tools Guide"
 description: "A practical guide to AI regulatory change monitoring tools for developers and power users. Learn how to track regulatory updates, automate compliance."
 date: 2026-03-20
 author: "AI Tools Compared"

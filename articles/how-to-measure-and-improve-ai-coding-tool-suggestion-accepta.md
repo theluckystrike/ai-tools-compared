@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Measure and Improve AI Coding Tool Suggestion."
+title: "How to Measure and Improve AI Coding Tool Suggestion"
 description: "A practical guide for developers on measuring and improving AI coding tool suggestion acceptance rates. Learn tracking methods, optimization."
 date: 2026-03-16
 author: theluckystrike
@@ -274,3 +274,4 @@ In these cases, shift focus from acceptance rate to productivity gains. Track wh
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

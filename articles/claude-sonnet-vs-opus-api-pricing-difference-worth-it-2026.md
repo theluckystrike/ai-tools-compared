@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Sonnet vs Opus API Pricing: Is the Difference."
+title: "Claude Sonnet vs Opus API Pricing Difference Worth It"
 description: "A practical comparison of Claude Sonnet and Opus API pricing for developers. Learn when Opus justifies its premium cost and when Sonnet delivers better."
 date: 2026-03-16
 author: theluckystrike
@@ -319,3 +319,4 @@ The 2026 reality is that most applications should start with Sonnet and selectiv
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
