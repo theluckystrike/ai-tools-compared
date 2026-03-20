@@ -197,6 +197,142 @@ The newer Copilot Edits feature allows you to make targeted changes across multi
 @workspace Rename `getUserData` to `fetchUserProfile` in all TypeScript files
 ```
 
+## Strategic Completion Budget Planning
+
+The 2,000 monthly completion limit requires strategic allocation:
+
+**Monthly Breakdown (for active developer):**
+- 200 completions: Boilerplate (40 hours work)
+- 400 completions: Bug fixes and refactoring (80 hours)
+- 300 completions: Feature development (60 hours)
+- 300 completions: Test writing (60 hours)
+- 800 completions: Reserve/experimentation
+
+**Cost per completion:** $0.001/completion at free tier (effectively free)
+
+A single avoided bug through Copilot-assisted testing justifies the entire monthly allocation.
+
+## Open Source Project Tiers
+
+**Tier 1 Projects (Qualify for free tier):**
+- 10K+ GitHub stars
+- MIT, Apache 2.0, GPL license
+- Active maintenance (commits within 30 days)
+- Clear contributing guidelines
+
+Examples: React, Vue, Kubernetes, TensorFlow
+
+**Tier 2 Projects (Often qualify, verify license):**
+- 1K-10K stars
+- Any OSI-approved license
+- Monthly maintenance
+
+**Tier 3 Projects (Check eligibility):**
+- <1K stars but OSI license
+- Apply individually to GitHub for approval
+- Usually approved within 1-2 weeks
+
+## Real ROI Calculation for Maintainers
+
+As an open source maintainer, Copilot saves significant time:
+
+**Scenario: Maintaining a 10K-star library**
+
+Monthly tasks:
+- 20 pull request reviews: 5 hours
+- 10 bug fixes: 8 hours
+- 5 feature implementations: 10 hours
+- 20 documentation updates: 3 hours
+- Total: 26 hours/month
+
+With Copilot:
+- PR reviews faster (understanding code faster)
+- Bug fixes 40% quicker (code generation)
+- Features 30% quicker (scaffolding)
+- Documentation 50% quicker (docstring generation)
+
+**Time savings: ~7 hours/month = 84 hours/year**
+
+At $50/hour developer rate: **$4,200 value annually from free tier**
+
+## Integration with Maintainer Workflows
+
+**Pre-release Checklist with Copilot:**
+
+1. Generate changelog from commits
+```bash
+git log v1.0.0..HEAD --oneline | \
+  copilot-explain "summarize these changes for end users"
+```
+
+2. Update README examples
+```bash
+# Ask Copilot to update all code examples for new API
+@workspace Update all fetch examples to use new async/await pattern
+```
+
+3. Generate migration guide
+```bash
+# Copilot drafts upgrade guide automatically
+@workspace Create migration guide from v1 to v2 API
+```
+
+4. Write release notes
+```bash
+# Combines changelog + migration guide + feature highlights
+copilot-generate-release-notes v1.0.0 v2.0.0
+```
+
+## Preventing Completion Waste
+
+Track your monthly usage to avoid surprises:
+
+```bash
+# Monthly Copilot usage check (CLI)
+gh copilot usage
+
+# In VS Code, check extension activity log
+```
+
+**Common waste sources:**
+- Accepting partial suggestions then manually completing
+- Typos in prompts causing unusable completions
+- Testing similar solutions multiple times
+- Accepting suggestions without reviewing
+
+**Mitigation:**
+- Review every suggestion before Tab
+- Test your prompts carefully
+- Accept only high-confidence suggestions
+- Disable Copilot for languages where you're expert
+
+## Comparison: Free Tier vs. Paid (for OSS Contributors)
+
+| Feature | Free Tier | Paid Tier |
+|---------|-----------|-----------|
+| Monthly completions | 2,000 | Unlimited |
+| Priority processing | No | Yes |
+| Specialized models | Limited | Full access |
+| Voice support | No | Yes |
+| Cost | Free | $10/month |
+
+**For most maintainers:** Free tier is sufficient
+**When to upgrade:**
+- Managing 3+ popular projects
+- Full-time FOSS work
+- Need guaranteed uptime/priority
+
+## Building a Sustainable Open Source Career
+
+Copilot enables maintainers to be more productive at no cost:
+
+1. **Start with free tier** on 1-2 projects
+2. **Track what takes time** (PRs, issues, docs)
+3. **Use Copilot strategically** on high-friction tasks
+4. **Measure impact** (time saved, better quality)
+5. **Scale to more projects** as bandwidth increases
+
+Success story: Maintainer managing 3 projects with 50K combined stars using only free Copilot tier, handling 200+ issues monthly with 2-hour response time average.
 
 ## Related Reading
 

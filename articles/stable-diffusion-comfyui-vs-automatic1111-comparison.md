@@ -179,19 +179,89 @@ Both platforms support model optimization techniques. ComfyUI's architecture mak
 
 
 
+## Memory and Performance Comparison
+
+| Aspect | Automatic1111 | ComfyUI |
+|--------|---|---|
+| Startup time | ~30 seconds | ~10 seconds |
+| VRAM for typical generation | 6-8 GB | 4-6 GB |
+| Model unloading between ops | No | Yes (optimized) |
+| Batch processing | Through loops | Native node batching |
+| Multi-GPU support | Limited | Excellent |
+| Max context length support | 77 tokens | 77+ tokens |
+
+## Real-World Use Cases
+
+**Choose Automatic1111 if:**
+- You're new to image generation
+- You need extensions from an active community (LoRA managers, upscalers, etc.)
+- You prefer UI-based workflow adjustments
+- You run inference on limited VRAM (automatic1111 can work on 4GB with optimization)
+- You need quick iteration with visual feedback
+
+**Choose ComfyUI if:**
+- You're building APIs or batch services
+- You need reproducible, versioned workflows
+- You work with complex multi-step generation (upscaling → inpainting → refinement)
+- You want to share workflows as serialized graphs
+- You're developing custom nodes for your team
+
+## Installation Troubleshooting
+
+**Automatic1111 common issues:**
+
+```bash
+# CUDA/GPU not detected
+# Solution: Install pytorch with CUDA support
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# Out of memory errors
+# Solution: Use optimizations flag
+./webui.sh --medvram  # Slow but runs on 6GB
+./webui.sh --lowvram  # Very slow but runs on 4GB
+```
+
+**ComfyUI common issues:**
+
+```bash
+# Missing node modules
+# Solution: Check custom nodes directory
+ls -la ComfyUI/custom_nodes/
+
+# Model not found
+# Solution: Verify checkpoints directory
+ls -la ComfyUI/models/checkpoints/
+```
+
+## Workflow Export and Portability
+
+**Automatic1111:** No standard workflow export format. Settings and extensions are tied to the running instance.
+
+**ComfyUI:** Workflows export as JSON, making them portable:
+
+```bash
+# Export workflow
+curl -X GET http://127.0.0.1:8188/system/get_prompt_info > workflow.json
+
+# Share workflow: Simply distribute the JSON file
+```
+
 ## Recommendation
-
-
 
 Choose Automatic1111 if you want the fastest path to generating images with minimal setup, need extensive community extensions, or prefer a traditional web interface. Choose ComfyUI if you need precise control over generation pipelines, want to build repeatable workflows programmatically, or work with limited GPU resources.
 
-
-
 For developers building production systems, ComfyUI's API-first design provides better long-term maintainability. The node graphs serve as executable documentation of your generation pipeline. For hobbyists or those new to Stable Diffusion, Automatic1111's all-in-one interface reduces friction.
 
-
-
 Both platforms remain actively developed with strong community support. Your choice ultimately depends on whether you prioritize ease of use or programmatic control.
+
+## Cost Comparison for Inference
+
+If running in cloud (AWS/GCP/Azure):
+- **Automatic1111 on A100:** ~$1.50/hour with optimizations, higher due to model loading overhead
+- **ComfyUI on A100:** ~$1.20/hour with efficient memory management
+- Break-even point: 100+ monthly inference hours, ComfyUI saves $30+
+
+For hobbyists on local hardware, both are free once initial setup completes.
 
 
 

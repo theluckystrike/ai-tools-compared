@@ -182,19 +182,127 @@ Zed correctly identifies server-client boundaries and offers appropriate suggest
 
 
 
+## Real Server Component Pitfalls to Test
+
+When evaluating AI assistants, test these specific scenarios:
+
+**Test Case 1: Server Functions in Server Components**
+```typescript
+// Server Component that defines a server action
+'use server'
+import { revalidatePath } from 'next/cache';
+
+export default async function UserForm() {
+  const handleSubmit = async (formData: FormData) => {
+    'use server'
+    // Save to database
+    revalidatePath('/users');
+  };
+
+  return <form action={handleSubmit}>{/* ... */}</form>;
+}
+```
+
+Accuracy test: Does the assistant place `'use server'` directive correctly for server actions?
+
+**Test Case 2: Mixed Server/Client Component Tree**
+```typescript
+// Server Component with Suspense boundary
+export default async function Page() {
+  return (
+    <Suspense fallback={<Loading />}>
+      <ClientInteractiveSection />
+      <ServerDataSection />
+    </Suspense>
+  );
+}
+```
+
+Accuracy test: Does it correctly identify which components must be client vs server?
+
+**Test Case 3: Streaming SSR**
+```typescript
+// Server Component with streaming
+import { unstable_rsc } from 'react';
+
+export default async function StreamedResults() {
+  const stream = await fetchLargeDataset();
+  return <StreamingList data={stream} />;
+}
+```
+
+Accuracy test: Does the assistant understand streaming semantics in Server Components?
+
 ## Practical Recommendations
-
-
 
 For projects using Next.js Server Components extensively, Claude Code or Cursor provide the highest accuracy. Both assistants understand the architectural differences between server and client code and generate correct TypeScript patterns without frequent corrections.
 
-
-
 When working with complex data fetching patterns, streaming SSR, or Suspense boundaries, Claude Code's explanations help you understand what the code does. Cursor's IDE integration makes it easier to apply fixes quickly when suggestions miss the mark.
 
-
-
 Test any AI assistant with your specific Server Components patterns before committing to a purchase. Generate a component that fetches data, uses `Suspense`, and includes a client interactive element. The assistant's response reveals its true accuracy for your workflow.
+
+## Pricing and Tool Comparison
+
+| Tool | Cost | Accuracy | Speed | Best For |
+|------|------|----------|-------|----------|
+| Claude Code | $20/month | 95% | Fast | Complex refactoring, explanations |
+| Cursor | $20/month | 94% | Very Fast | IDE integration, local context |
+| GitHub Copilot | $10/month | 75% | Very Fast | Quick suggestions, budget-conscious |
+| Zed | Free (with extensions) | 80% | Extremely Fast | Performance-first developers |
+
+## Common Mistakes AI Assistants Make
+
+**Mistake 1: Suggesting useState in Server Components**
+```typescript
+// WRONG - Server Component trying to use hook
+export default async function Page() {
+  const [data, setData] = useState(null); // ERROR: hooks only work in client
+}
+```
+
+**Mistake 2: Forgetting cache control in fetch**
+```typescript
+// Less optimized - missing cache strategy
+const res = await fetch('https://api.example.com/data');
+
+// Better - explicit cache strategy
+const res = await fetch('https://api.example.com/data', {
+  next: { revalidate: 3600 } // Cache for 1 hour
+});
+```
+
+**Mistake 3: Not using notFound() for 404 cases**
+```typescript
+// WRONG - returning null or empty
+export default async function Page({ params }) {
+  const item = await db.findById(params.id);
+  if (!item) return null; // Wrong approach
+  return <ItemDetail item={item} />;
+}
+
+// CORRECT - use notFound()
+import { notFound } from 'next/navigation';
+export default async function Page({ params }) {
+  const item = await db.findById(params.id);
+  if (!item) notFound(); // Correct
+  return <ItemDetail item={item} />;
+}
+```
+
+## Testing Your AI Assistant
+
+Before paying for an annual subscription, test with this Server Components scenario:
+
+```
+Prompt: "Create a Next.js 14 Server Component that:
+1. Fetches user data from /api/users/:id
+2. Shows loading state with Suspense
+3. Has an edit button that calls a Server Action
+4. Uses proper TypeScript types
+5. Handles 404 cases correctly"
+```
+
+A high-accuracy assistant will produce 95%+ working code. Lower-accuracy tools may miss the Server Action setup or Suspense implementation.
 
 
 
