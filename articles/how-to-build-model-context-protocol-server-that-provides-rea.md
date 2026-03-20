@@ -264,6 +264,121 @@ RUN uv pip install --system -r requirements.txt
 CMD ["python", "server.py"]
 ```
 
+## Handling Multiple Test Frameworks
+
+Production codebases often use more than one test framework — a Python backend tested with pytest, a JavaScript frontend tested with Jest. Extend the command builder to route correctly:
+
+```python
+def _build_command(self, framework: str, test_path: str) -> list[str]:
+    commands = {
+        "pytest": ["pytest", "-v", "--tb=short", "--json-report", test_path],
+        "unittest": ["python", "-m", "pytest", "--tb=short", test_path],
+        "jest": ["npx", "jest", "--json", test_path],
+        "vitest": ["npx", "vitest", "run", "--reporter=json", test_path],
+        "go": ["go", "test", "-v", "-json", test_path],
+    }
+    return commands.get(framework, commands["pytest"])
+```
+
+Using `--json-report` for pytest (via `pytest-json-report`) and `--json` for Jest produces structured output that's far easier to parse than terminal text. The AI client receives clean JSON it can summarize, display as a table, or correlate with source code rather than raw console output.
+
+## Persisting Test History with SQLite
+
+Trend analysis — detecting when a test suite starts flaking, tracking coverage over time — requires storing results. SQLite is the right choice for an MCP server: zero configuration, embeddable, and queryable via SQL.
+
+```python
+import sqlite3
+from datetime import datetime
+
+def init_db(db_path: str = "test_history.db"):
+    conn = sqlite3.connect(db_path)
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS runs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            timestamp TEXT NOT NULL,
+            test_path TEXT NOT NULL,
+            framework TEXT NOT NULL,
+            total INTEGER,
+            passed INTEGER,
+            failed INTEGER,
+            duration_ms INTEGER,
+            exit_code INTEGER
+        )
+    """)
+    conn.commit()
+    return conn
+
+def save_run(conn, test_path: str, framework: str, results: dict, duration_ms: int, exit_code: int):
+    conn.execute("""
+        INSERT INTO runs (timestamp, test_path, framework, total, passed, failed, duration_ms, exit_code)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    """, (
+        datetime.utcnow().isoformat(),
+        test_path, framework,
+        results["total"], results["passed"], results["failed"],
+        duration_ms, exit_code
+    ))
+    conn.commit()
+```
+
+Expose a `get_test_trends` tool that AI clients can use to detect regressions:
+
+```python
+@self.server.list_tools()
+async def list_tools() -> list[Tool]:
+    return [
+        # ... existing tools ...
+        Tool(
+            name="get_test_trends",
+            description="Get pass/fail trend for a test path over recent runs",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "test_path": {"type": "string"},
+                    "limit": {"type": "integer", "default": 10}
+                }
+            }
+        )
+    ]
+```
+
+## Securing the MCP Server
+
+An MCP server that can execute test commands on your system is a meaningful attack surface. Before exposing it outside localhost, add authentication.
+
+The simplest approach is a bearer token check on every tool invocation:
+
+```python
+import os
+import hashlib
+import hmac
+
+ALLOWED_TOKEN = os.environ.get("MCP_AUTH_TOKEN", "")
+
+def verify_token(provided: str) -> bool:
+    if not ALLOWED_TOKEN:
+        return False
+    return hmac.compare_digest(
+        hashlib.sha256(provided.encode()).digest(),
+        hashlib.sha256(ALLOWED_TOKEN.encode()).digest()
+    )
+```
+
+Also restrict the `test_path` argument to prevent directory traversal. Resolve the path and verify it stays within the project root:
+
+```python
+import pathlib
+
+PROJECT_ROOT = pathlib.Path("/workspace").resolve()
+
+def safe_test_path(user_path: str) -> pathlib.Path:
+    resolved = (PROJECT_ROOT / user_path).resolve()
+    if not str(resolved).startswith(str(PROJECT_ROOT)):
+        raise ValueError(f"test_path must be within {PROJECT_ROOT}")
+    return resolved
+```
+
+These two controls — token authentication and path restriction — prevent the most common misuse scenarios when running an MCP server in a shared or CI environment.
 
 ## Related Reading
 
