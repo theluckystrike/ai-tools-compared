@@ -5,7 +5,7 @@ description: "A technical guide explaining VPN tunnel interfaces and full tunnel
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/
-categories: [comparisons]
+categories: [security, guides]
 reviewed: true
 score: 8
 intent-checked: true
