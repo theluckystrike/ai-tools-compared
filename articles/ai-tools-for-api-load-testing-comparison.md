@@ -449,3 +449,8 @@ AI-powered (Grafana k6 Cloud): "P95 checkout latency 420ms (+12% vs baseline). E
 AI script generation is now a standard feature. Artillery and k6 excel at rapid test creation from API specs. Gatling remains the enterprise choice despite AI generation challenges. Grafana k6 Cloud is the only platform offering true AI-powered results interpretation.
 
 Start with Artillery (YAML simplicity) or k6 (JavaScript familiarity). Use Locust if you need Python-based customization. Graduate to Gatling only if you need enterprise features or complex JVM integration.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
