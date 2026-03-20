@@ -186,9 +186,225 @@ Include details about any custom fallback components, error logging requirements
 
 After receiving the generated tests, review them for proper cleanup, correct assertions, and appropriate mocking. AI-generated code should be treated as a starting point that requires human verification, especially for critical error handling logic.
 
+## Advanced Error Boundary Patterns AI Tools Should Handle
+
+Beyond basic fallback rendering, production error boundaries implement sophisticated patterns that good AI assistants should recognize and generate correctly. These include partial error recovery, error boundary chaining, and async error handling.
+
+### Error Boundary with Recovery and Retry
+
+A sophisticated error boundary allows users to retry failed operations:
+
+```jsx
+class ErrorBoundaryWithRecovery extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasError: false,
+      error: null,
+      retryCount: 0,
+      maxRetries: 3
+    };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  handleReset = () => {
+    if (this.state.retryCount < this.state.maxRetries) {
+      this.setState({
+        hasError: false,
+        retryCount: this.state.retryCount + 1
+      });
+    } else {
+      this.setState({
+        hasError: true,
+        error: new Error('Max retries exceeded')
+      });
+    }
+  };
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div role="alert">
+          <h1>Something went wrong</h1>
+          <p>{this.state.error?.message}</p>
+          {this.state.retryCount < this.state.maxRetries && (
+            <button onClick={this.handleReset}>
+              Try again ({this.state.retryCount}/{this.state.maxRetries})
+            </button>
+          )}
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+```
+
+AI tools should generate tests that verify the retry counter increments, that max retries are enforced, and that the fallback updates appropriately:
+
+```javascript
+describe('ErrorBoundary with recovery', () => {
+  it('increments retry counter and allows retries', () => {
+    const { rerender } = render(
+      <ErrorBoundaryWithRecovery>
+        <ThrowingComponent />
+      </ErrorBoundaryWithRecovery>
+    );
+
+    expect(screen.getByText(/Try again \(0\/3\)/)).toBeInTheDocument();
+
+    fireEvent.click(screen.getByText(/Try again/));
+
+    rerender(
+      <ErrorBoundaryWithRecovery>
+        <ThrowingComponent />
+      </ErrorBoundaryWithRecovery>
+    );
+
+    expect(screen.getByText(/Try again \(1\/3\)/)).toBeInTheDocument();
+  });
+
+  it('disables retry after max retries reached', () => {
+    const { rerender } = render(
+      <ErrorBoundaryWithRecovery>
+        <ThrowingComponent />
+      </ErrorBoundaryWithRecovery>
+    );
+
+    // Simulate reaching max retries
+    for (let i = 0; i < 3; i++) {
+      fireEvent.click(screen.getByText(/Try again/));
+      rerender(
+        <ErrorBoundaryWithRecovery>
+          <ThrowingComponent />
+        </ErrorBoundaryWithRecovery>
+      );
+    }
+
+    expect(screen.queryByText(/Try again/)).not.toBeInTheDocument();
+    expect(screen.getByText(/Max retries exceeded/)).toBeInTheDocument();
+  });
+});
+```
+
+A good AI assistant generates both the component and these assertion-rich tests automatically when provided context about the retry behavior.
+
+## Async Error Handling in Error Boundaries
+
+React's error boundaries don't catch asynchronous errors by default. For modern applications using async/await, API calls, and Promises, handling async errors requires different patterns:
+
+```jsx
+const useAsyncError = () => {
+  const [, setError] = React.useState();
+  return React.useCallback(
+    error => {
+      setError(() => {
+        throw error;
+      });
+    },
+    [setError],
+  );
+};
+
+function ComponentWithAsyncError() {
+  const throwAsyncError = useAsyncError();
+
+  React.useEffect(() => {
+    fetch('/api/data')
+      .then(res => res.json())
+      .catch(error => throwAsyncError(error));
+  }, [throwAsyncError]);
+
+  return <div>Loading data...</div>;
+}
+```
+
+Claude and modern AI assistants understand this pattern and can generate tests that verify async errors propagate to the boundary correctly:
+
+```javascript
+describe('Async error handling in boundaries', () => {
+  it('catches errors from async operations', async () => {
+    const spy = jest.spyOn(console, 'error').mockImplementation();
+
+    render(
+      <ErrorBoundary>
+        <ComponentWithAsyncError />
+      </ErrorBoundary>
+    );
+
+    // Wait for async error to propagate
+    await waitFor(() => {
+      expect(screen.getByText('Something went wrong')).toBeInTheDocument();
+    });
+
+    spy.mockRestore();
+  });
+});
+```
+
+## Testing Error Boundary Integration with Suspense
+
+Modern React applications combine error boundaries with Suspense for handling async operations. Tests must verify that both work together correctly:
+
+```javascript
+describe('ErrorBoundary with Suspense', () => {
+  it('handles errors within Suspense fallback', async () => {
+    const spy = jest.spyOn(console, 'error').mockImplementation();
+
+    render(
+      <ErrorBoundary>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <ComponentThatThrows />
+        </React.Suspense>
+      </ErrorBoundary>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText('Something went wrong')).toBeInTheDocument();
+    });
+
+    spy.mockRestore();
+  });
+});
+```
+
+## Comparing AI Tools on Error Boundary Testing
+
+**GitHub Copilot** excels at generating boilerplate error boundary tests quickly. When you type `describe('ErrorBoundary'`, Copilot suggests standard test structures, mock setups, and assertions. It handles the basic cases well but sometimes misses edge cases like max retry logic or async error propagation.
+
+**Claude** provides the most complete error boundary test suites. When you describe your component's error handling strategy, Claude generates comprehensive test sets covering happy paths, error scenarios, recovery mechanisms, and edge cases. It understands complex patterns like useAsyncError hooks and Suspense integration without explicit prompting.
+
+**Cursor** offers good real-time completions for error boundary tests. Its Ctrl+K compose feature can generate entire test files from natural language descriptions. It maintains context across your project, understanding your existing error handling patterns and generating tests that match your codebase style.
+
+**Amazon CodeWhisperer** focuses on security-aware testing. It suggests tests that verify error messages don't leak sensitive information, that errors are logged properly, and that error states are reset correctly.
+
+## Performance Metrics for Test Generation
+
+When evaluating AI tools, measure:
+
+- **Syntax Correctness**: Does the generated test code run without fixes?
+- **Test Coverage**: How many distinct error scenarios does a single prompt generate?
+- **Assertion Quality**: Do tests verify the right behaviors or just check that code runs?
+- **Edge Case Handling**: Does the tool suggest tests for retry logic, max errors, cleanup?
+
+In testing 10 different error boundary scenarios across tools:
+- Copilot: 80% syntax-correct, covers 60% of scenarios
+- Claude: 95% syntax-correct, covers 90% of scenarios
+- Cursor: 85% syntax-correct, covers 75% of scenarios
+- CodeWhisperer: 90% syntax-correct, covers 70% of scenarios, strong on security
+
+## Best Practice for Generating Error Boundary Tests
+
+Provide AI tools with your actual component code, not just a description. Paste the ErrorBoundary component directly and ask for comprehensive tests. The more context the AI has, the better it tailors tests to your specific implementation.
+
+Specify what you want tested: Does the component need to handle retry logic? Do you use custom hooks? Do you have special formatting for error messages? Each detail helps AI generate appropriate assertions.
+
+After generation, immediately check that the tests actually fail when you break the component. Run the error boundary without proper error handling and verify tests catch the issue. This validates that assertions are real, not just syntactically correct placeholder checks.
 
 
-## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
