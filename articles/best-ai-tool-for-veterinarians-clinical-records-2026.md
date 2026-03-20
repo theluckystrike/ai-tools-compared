@@ -3,7 +3,7 @@ layout: default
 title: "Best AI Tool for Veterinarians Clinical Records 2026"
 description: "A practical comparison of AI-powered clinical record solutions for veterinary practices in 2026."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /best-ai-tool-for-veterinarians-clinical-records-2026/
 reviewed: true
 score: 9

@@ -3,7 +3,7 @@ layout: default
 title: "Best AI Tools for Web Scraping Data in 2026"
 description: "A practical comparison of the best AI tools for web scraping and data extraction, with code examples and recommendations for developers and power users."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /best-ai-tools-for-web-scraping-data/
 categories: [guides]
 reviewed: true

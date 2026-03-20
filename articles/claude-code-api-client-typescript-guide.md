@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: default
 title: "Claude Code API Client TypeScript Guide: Build Type-Safe"
 description: "Learn how to create a TypeScript API client for Claude Code with proper typing, error handling, and best practices for production applications."
 date: 2026-03-18

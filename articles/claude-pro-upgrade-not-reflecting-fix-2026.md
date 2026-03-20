@@ -3,7 +3,7 @@ layout: default
 title: "Claude Pro Upgrade Not Reflecting? Here's the Fix (2026)"
 description: "Troubleshooting guide for developers experiencing Claude Pro subscription not showing after upgrade. Step-by-step diagnostic tips and solutions."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /claude-pro-upgrade-not-reflecting-fix-2026/
 reviewed: true
 score: 8

@@ -29,7 +29,7 @@ score: 7
 voice-checked: true
 reviewed: true
 intent-checked: true
-author: "AI Tools Compared"
+author: theluckystrike
 date: 2026-03-15
 ---
 

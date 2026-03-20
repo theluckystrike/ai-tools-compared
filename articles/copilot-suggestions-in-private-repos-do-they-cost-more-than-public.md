@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Copilot Suggestions in Private Repos Do They Cost More Than"
 description: "Wondering if GitHub Copilot costs more for private repositories? Get the complete breakdown of Copilot pricing for public vs private repos and what it."
 date: 2026-03-18

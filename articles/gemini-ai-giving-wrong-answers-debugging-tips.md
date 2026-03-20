@@ -3,7 +3,7 @@ layout: default
 title: "Gemini AI Giving Wrong Answers: Debugging Tips and Fixes"
 description: "Practical troubleshooting guide for developers experiencing inaccurate responses from Google Gemini. Step-by-step diagnostic tips and fixes."
 date: 2026-03-15
-author: "AI Tools Compared"
+author: theluckystrike
 permalink: /gemini-ai-giving-wrong-answers-debugging-tips/
 reviewed: true
 score: 8
