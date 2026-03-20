@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-automated-api-documentation-from-code-comments/
 categories: [guides]
-tags: [ai, documentation, api, devops]
+tags: [ai-tools-compared, ai, documentation, api, devops, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
