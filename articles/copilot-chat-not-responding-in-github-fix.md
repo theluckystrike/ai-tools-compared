@@ -175,6 +175,168 @@ After reinstalling, go through the authentication flow again, explicitly authori
 
 
 
+## Advanced Diagnostic Commands
+
+For developers who prefer command-line approaches, these commands help diagnose Copilot Chat issues:
+
+```bash
+# Test GitHub API connectivity
+curl -I https://api.github.com
+# Expected: HTTP/2 200
+
+# Test Copilot proxy connectivity
+curl -I https://copilot-proxy.githubusercontent.com
+# Expected: HTTP/2 200 or appropriate redirect
+
+# Check VS Code extension host logs
+# macOS: ~/Library/Logs/Code/
+# Linux: ~/.config/Code/logs/
+# Windows: %APPDATA%\Code\logs\
+
+# View extension output for debugging
+# In VS Code: Output panel > GitHub Copilot
+```
+
+If both URLs return connection errors, your network blocks GitHub Copilot. If they succeed but Chat still fails, the issue is likely local configuration.
+
+## Rate Limiting and Quota Considerations
+
+GitHub Copilot Chat is rate-limited to prevent abuse. Individual subscriptions have generous limits, but organizations may implement stricter policies.
+
+**Individual subscriber limits:**
+- 100 chat conversations per day per user
+- 1,000 tokens per response (typical conversations use 200-400 tokens)
+- Concurrent request limits to prevent server overload
+
+**Copilot for Business limits:**
+- 500 conversations per day per organization
+- Organization-wide rate limiting (shared pool across all users)
+- Custom limits available for Enterprise customers
+
+If you hit rate limits, you'll see a "Rate limited" message rather than Chat simply not responding. Wait approximately one hour for limits to reset. Organizations can contact GitHub support to increase limits for legitimate high-volume usage.
+
+## Comparing Copilot Chat to Alternatives
+
+| Feature | Copilot Chat | Claude (separate) | ChatGPT (separate) | Cursor IDE |
+|---------|---|---|---|---|
+| IDE Integration | Excellent | None | None | Excellent |
+| Cost | $20/month | $20/month | $20/month | $20/month |
+| Response Speed | Fast | Very Fast | Very Fast | Fast |
+| Context from Files | Excellent | Good | Good | Excellent |
+| File Editing | Limited | No | No | Yes |
+| Offline Capability | No | No | No | No |
+
+For developers already paying for Copilot Individual, Chat integration means no additional cost. Switching to alternatives involves both financial and workflow changes. When Chat fails persistently, evaluate whether switching costs outweigh benefits for your specific needs.
+
+## File and Configuration Reset Procedures
+
+When caches or configuration files become corrupted, complete reset often resolves issues. Here are platform-specific procedures:
+
+**macOS Complete Reset:**
+```bash
+# Backup your settings first
+cp -r ~/Library/Application\ Support/Code/ ~/Code-backup/
+
+# Remove all Copilot data
+rm -rf ~/Library/Application\ Support/Code/User/globalStorage/github.copilot*
+rm -rf ~/Library/Caches/Code
+rm -rf ~/Library/Application\ Support/Code/Cache
+
+# Remove VS Code state
+rm -f ~/Library/Application\ Support/Code/User/workspaceStorage/*/.backup.json
+
+# Restart VS Code
+killall "Visual Studio Code"
+open /Applications/Visual\ Studio\ Code.app
+```
+
+**Windows PowerShell Complete Reset:**
+```powershell
+# Backup
+Copy-Item -Recurse "$env:APPDATA\Code" "$env:APPDATA\Code-backup"
+
+# Remove Copilot data
+Remove-Item -Recurse -Force "$env:APPDATA\Code\User\globalStorage\github.copilot*"
+Remove-Item -Recurse -Force "$env:LOCALAPPDATA\Code"
+Remove-Item -Recurse -Force "$env:APPDATA\Code\User\workspaceStorage"
+
+# Restart
+Stop-Process -Name "Code" -Force
+Start-Process -FilePath "C:\Users\[YourUsername]\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+```
+
+**Linux Complete Reset:**
+```bash
+# Backup
+cp -r ~/.config/Code/ ~/.config/Code-backup/
+
+# Remove Copilot data
+rm -rf ~/.config/Code/User/globalStorage/github.copilot*
+rm -rf ~/.cache/Code
+rm -rf ~/.config/Code/User/workspaceStorage
+
+# Restart
+pkill -f "code --type="
+code
+```
+
+## Monitoring Copilot Health
+
+Set up basic health checks to catch issues early:
+
+```javascript
+// VS Code extension snippet to monitor Copilot health
+import * as vscode from 'vscode';
+
+async function checkCopilotHealth() {
+    const copilotExt = vscode.extensions.getExtension('GitHub.copilot');
+
+    if (!copilotExt) {
+        console.log('Copilot not installed');
+        return false;
+    }
+
+    if (!copilotExt.isActive) {
+        await copilotExt.activate();
+    }
+
+    // Attempt simple API call
+    try {
+        // This would use actual Copilot API if exposed
+        const health = await copilotExt.exports?.getHealthStatus?.();
+        return health?.status === 'healthy';
+    } catch (error) {
+        console.log('Health check failed:', error);
+        return false;
+    }
+}
+
+// Run periodically
+setInterval(checkCopilotHealth, 300000); // Every 5 minutes
+```
+
+## Cost Implications of Chat Unavailability
+
+When Copilot Chat fails, you're paying for a feature you can't use. For Copilot Individual users:
+
+- Monthly cost: $20
+- Daily equivalent: ~$0.67
+- Cost per hour: ~$0.03
+
+If Chat fails for extended periods, it's worth seeking refunds. GitHub usually provides courtesy credits for service disruptions lasting more than a few hours. Document when Chat was unavailable and create an issue at https://github.com/github/feedback for tracking.
+
+## Escalation Path for Persistent Issues
+
+If none of these solutions resolve your Copilot Chat issues, follow this escalation path:
+
+1. **Verify subscription status** at https://github.com/settings/copilot—ensure billing is current and no disputes exist
+2. **Check GitHub status** at https://www.githubstatus.com for ongoing service issues
+3. **Search GitHub Issues** (github/feedback) for similar reports—your issue might be known
+4. **Create detailed issue** with: OS version, IDE version, Copilot version, exact error messages, network configuration
+5. **Contact GitHub Support** at https://support.github.com for persistent billing or account issues
+
+Provide as much detail as possible—error logs, timing of when it started, whether Chat ever worked in this environment, and what you've already tried. This information helps support engineers diagnose issues quickly.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

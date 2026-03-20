@@ -177,7 +177,266 @@ Always include validation steps in your flows. After applying transformations, a
 
 Review the output of each step before proceeding to subsequent steps. While Flows automate the process, maintaining oversight ensures quality and prevents cascading errors.
 
+## Advanced Flow Patterns
 
+### Pattern 1: Dependency Chain with Error Recovery
+
+```yaml
+name: refactor-and-validate
+version: 1.0
+steps:
+  - id: analyze-deprecations
+    description: Identify deprecated API usage
+    prompt: "Find all uses of the old User API and list them"
+    output_format: json
+
+  - id: generate-migration
+    description: Create migration code
+    depends_on: analyze-deprecations
+    prompt: "For each deprecated API use found: ${analyze-deprecations.output}, generate replacement code"
+    on_failure: "Ask me for manual guidance"
+
+  - id: update-tests
+    description: Generate new tests for migrated code
+    depends_on: generate-migration
+    prompt: "Write tests for the migrated code to ensure behavior equivalence"
+
+  - id: validate-build
+    description: Verify the changes compile
+    depends_on: update-tests
+    command: "npm run build"
+    on_failure: "Stop and show errors"
+```
+
+### Pattern 2: Parallel Processing
+
+```yaml
+name: multi-language-refactor
+steps:
+  - id: analyze-codebase
+    prompt: "Identify files by language: TypeScript, Python, Go"
+    output_format: json
+
+  - id: refactor-typescript
+    depends_on: analyze-codebase
+    prompt: "Refactor TypeScript files for modern patterns"
+    parallel: true
+
+  - id: refactor-python
+    depends_on: analyze-codebase
+    prompt: "Refactor Python files for modern patterns"
+    parallel: true
+
+  - id: refactor-go
+    depends_on: analyze-codebase
+    prompt: "Refactor Go files for modern patterns"
+    parallel: true
+
+  - id: consolidate-results
+    depends_on: [refactor-typescript, refactor-python, refactor-go]
+    prompt: "Summarize all changes and identify any cross-language impacts"
+```
+
+## Real-World Use Cases Expanded
+
+### Use Case 1: Legacy Code Modernization
+
+A team has a 10-year-old JavaScript codebase using callbacks everywhere. They want to migrate to async/await while maintaining backward compatibility for 6 months.
+
+**Flow design:**
+1. **Audit**: Scan codebase and identify top 50 callback-heavy functions
+2. **Plan**: Generate migration plan with priority (high-risk vs low-risk)
+3. **Refactor**: Auto-convert functions to async/await with feature parity checks
+4. **Test**: Generate tests comparing old and new implementations
+5. **Document**: Update function documentation with new signatures
+
+**Results:**
+- 500+ callbacks converted in 2-3 hours
+- Zero manual code writing for the conversion
+- Built-in documentation updates
+- Complete test coverage for migrated code
+
+### Use Case 2: Documentation Sync
+
+When code changes, documentation often falls out of sync. A flow can automate this:
+
+1. **Detect changes**: Identify modified files and their public APIs
+2. **Extract signatures**: Pull function signatures, parameters, return types
+3. **Generate docs**: Create markdown documentation for each change
+4. **Update references**: Find and update all documentation files
+5. **Validate links**: Ensure all internal documentation links still work
+
+**Impact**: Documentation stays current without manual effort
+
+### Use Case 3: Security Hardening Sprint
+
+Before a security audit, a team runs a flow to address common issues:
+
+1. **Scan dependencies**: Check for known vulnerabilities
+2. **Identify patterns**: Find hardcoded secrets, weak crypto, SQL injection risks
+3. **Generate fixes**: Create patches for each vulnerability type
+4. **Add tests**: Generate security test cases
+5. **Create PR**: Automatically submit a well-organized pull request
+
+## Comparing Windsurf Flows to Alternatives
+
+| Feature | Windsurf Flows | Cursor Composer | GitHub Copilot | Manual Scripts |
+|---------|---|---|---|---|
+| Multi-step automation | Excellent | Good | Limited | Very High |
+| Context persistence | Excellent | Very Good | Fair | Manual |
+| Error handling | Good | Good | Fair | Manual |
+| Rollback capability | Good | Fair | Fair | Manual |
+| Learning curve | Low | Low | Very Low | Medium-High |
+| Customization | High | High | Low | Very High |
+| IDE Integration | Excellent | Excellent | Native | N/A |
+| Cost | $20/month | $20/month | $20/month | Free (labor) |
+
+## Step-by-Step: Building Your First Flow
+
+Here's how to build a practical flow from scratch:
+
+**Step 1: Define the Goal**
+```
+Goal: Modernize TypeScript code from v3 to v5
+Current state: 200+ files using deprecated syntax
+Desired state: All files using modern TypeScript patterns
+Success criteria: Code compiles, tests pass, no breaking changes
+```
+
+**Step 2: Break into Phases**
+```
+Phase 1: Analyze current codebase (identify patterns to update)
+Phase 2: Auto-migrate syntax (semi-automatic with AI assistance)
+Phase 3: Handle edge cases (manual review points)
+Phase 4: Test and validate (run test suite)
+Phase 5: Documentation (update comments and READMEs)
+```
+
+**Step 3: Structure Prompts**
+```
+Phase 1 prompt: "Analyze our TypeScript codebase and list:
+1. All deprecated TypeScript patterns
+2. Files using each pattern
+3. Risk level for migrating (critical, high, medium, low)
+4. Total number of instances"
+
+Phase 2 prompt: "Generate migration code for: [list from Phase 1]
+Requirements:
+- Maintain exact functionality
+- Add comments explaining changes
+- Handle edge cases
+- Generate type definitions"
+```
+
+**Step 4: Add Validation**
+```
+After Phase 2:
+- Run linter (tsc --strict)
+- Run test suite (npm test)
+- Compare bundle size
+- Check for type errors
+```
+
+**Step 5: Execute and Review**
+Run the flow, review each phase output, approve before proceeding to the next step.
+
+## Performance Considerations
+
+Flows execute sequentially by default, but you can optimize:
+
+**Parallel execution** for independent tasks:
+```yaml
+steps:
+  - id: audit-typescript
+    parallel: true
+  - id: audit-python
+    parallel: true
+  - id: audit-go
+    parallel: true
+  - id: consolidate
+    depends_on: [audit-typescript, audit-python, audit-go]
+```
+
+**Batch processing** for large codebases:
+```yaml
+steps:
+  - id: process-batch-1
+    prompt: "Process files 1-100: [file list]"
+  - id: process-batch-2
+    prompt: "Process files 101-200: [file list]"
+  - id: combine-results
+    prompt: "Combine all batches and resolve conflicts"
+```
+
+## Monitoring and Debugging Flows
+
+When flows go wrong, diagnose using:
+
+```javascript
+// Monitor flow execution
+const flowMonitor = {
+    onStepStart: (stepId) => console.log(`Starting: ${stepId}`),
+    onStepComplete: (stepId, output) => console.log(`Completed: ${stepId}`, output),
+    onStepError: (stepId, error) => console.error(`Failed: ${stepId}`, error),
+    onFlowComplete: (results) => console.log('Flow finished', results)
+};
+```
+
+## Pricing and ROI Analysis
+
+**Individual developer:**
+- Windsurf: $20/month
+- Time saved per flow execution: 4-8 hours
+- Value per month: $300-600
+- ROI: 15-30x
+
+**Team of 5 developers:**
+- Windsurf: $100/month
+- Annual time savings: ~1,000 hours
+- Value: ~$75,000/year
+- Cost: ~$1,200/year
+- ROI: 60:1
+
+## Best Practices for Flow Design
+
+1. **Keep steps focused**: Each step should have one clear objective
+2. **Add validation points**: Include steps that verify output before proceeding
+3. **Plan for edge cases**: Add error handling and fallback prompts
+4. **Document flow intention**: Include comments explaining why each step exists
+5. **Version your flows**: Track changes to flows like you would code
+6. **Test before production**: Run flows on sample data first
+7. **Build incrementally**: Start simple, add complexity gradually
+8. **Measure impact**: Track time saved and quality improvements
+
+## Integration with CI/CD
+
+Flows can integrate with your development pipeline:
+
+```yaml
+# GitHub Actions workflow calling Windsurf Flows
+name: Automated Refactoring
+
+on:
+  schedule:
+    - cron: '0 2 * * 0'  # Weekly
+
+jobs:
+  refactor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Windsurf Flow
+        env:
+          WINDSURF_API_KEY: ${{ secrets.WINDSURF_API_KEY }}
+        run: windsurf-cli flow refactor-and-test.yaml
+
+      - name: Create PR
+        run: |
+          git checkout -b automated-refactor
+          git add -A
+          git commit -m "Automated refactoring via Windsurf Flows"
+          gh pr create --title "Automated code improvements"
+```
 
 ## Related Reading
 
