@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/
 categories: [guides]
-tags: [cursor, vpn, proxy, network]
+tags: [ai-tools-compared, cursor, vpn, proxy, network, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

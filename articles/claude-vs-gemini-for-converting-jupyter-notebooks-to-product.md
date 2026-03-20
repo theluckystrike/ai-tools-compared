@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-gemini-for-converting-jupyter-notebooks-to-product/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

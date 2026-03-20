@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /configuring-ai-coding-tools-to-follow-your-teams-dependency-/
 categories: [guides]
-tags: [tools, configuration]
+tags: [ai-tools-compared, tools, configuration, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

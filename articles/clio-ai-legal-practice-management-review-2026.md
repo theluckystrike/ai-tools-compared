@@ -7,9 +7,10 @@ author: theluckystrike
 permalink: /clio-ai-legal-practice-management-review-2026/
 categories: [guides]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}

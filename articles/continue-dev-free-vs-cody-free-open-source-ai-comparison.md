@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /continue-dev-free-vs-cody-free-open-source-ai-comparison/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

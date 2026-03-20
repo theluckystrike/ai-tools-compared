@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/
 categories: [guides]
-tags: [ai, infrastructure, terraform, pulumi, devops]
+tags: [ai-tools-compared, ai, infrastructure, terraform, pulumi, devops, comparison, claude-ai]
 reviewed: true
 score: 8
 voice-checked: true

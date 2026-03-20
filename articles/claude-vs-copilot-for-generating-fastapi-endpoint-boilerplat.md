@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, claude-ai, api]
 reviewed: true
 score: 8
 intent-checked: true

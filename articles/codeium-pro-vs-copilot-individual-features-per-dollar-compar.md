@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /codeium-pro-vs-copilot-individual-features-per-dollar-compar/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 8
 intent-checked: true

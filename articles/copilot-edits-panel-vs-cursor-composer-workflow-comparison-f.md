@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, workflow]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

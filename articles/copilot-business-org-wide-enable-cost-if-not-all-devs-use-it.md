@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 8
 voice-checked: true

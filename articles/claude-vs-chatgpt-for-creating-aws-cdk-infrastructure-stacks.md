@@ -6,10 +6,11 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/
 categories: [comparisons]
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
+tags: [ai-tools-compared, comparison, claude-ai, chatgpt]
 ---
 
 
