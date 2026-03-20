@@ -213,7 +213,149 @@ sudo tcpdump -i any -A 'tcp[20:]' | grep -i "codeium\|api"
 
 This command captures network traffic to see exactly where your code is going.
 
+## Analyzing WindSurf Network Traffic
 
+For developers who want to verify exactly what gets transmitted, you can inspect network requests:
+
+```bash
+# Use Charles Proxy or similar to inspect HTTPS traffic
+# Or use system-level monitoring:
+sudo tcpdump -i any -n "dst host api.codeium.com" -A | grep -i "POST\|GET"
+```
+
+This helps confirm that only open files and metadata are sent, not your entire codebase.
+
+## Local-Only Alternatives
+
+If you require truly local-only AI assistance without any external transmission:
+
+- **Continue.dev**: Open-source VS Code extension with local LLM support
+- **Ollama**: Run local language models on your machine
+- **LM Studio**: UI for running local language models
+- **Private deployment**: Host Claude or other LLMs internally
+
+These options trade some capability (smaller models, slower inference) for complete data privacy.
+
+## Hybrid Approaches
+
+Many teams use hybrid strategies:
+
+```
+For proprietary code: Use local models via Continue.dev
+For open source: Use WindSurf for speed and capability
+For client projects: Use enterprise/private deployment
+```
+
+This balances productivity with privacy requirements.
+
+## Configuration Best Practices for Privacy
+
+If using WindSurf, configure it conservatively:
+
+```json
+{
+  "windsurf": {
+    "context": {
+      "maxFiles": 5,
+      "maxFileSize": 50000,
+      "includePatterns": ["src/**", "lib/**"],
+      "excludePatterns": [
+        "**/node_modules/**",
+        "**/.git/**",
+        "**/dist/**",
+        "**/*.env",
+        "**/*secret*",
+        "**/*key*",
+        "**/*token*",
+        "**/*credential*"
+      ]
+    },
+    "features": {
+      "cascade": false,
+      "chat": true,
+      "autocomplete": true
+    }
+  }
+}
+```
+
+This configuration:
+- Limits context to 5 files max
+- Excludes node_modules and build artifacts
+- Blocks any files with secrets in the name
+- Disables Cascade (which needs broader context)
+
+## Understanding Codeium's Privacy Model
+
+Codeium publishes security documentation explaining their approach:
+
+- **No training on your code**: Your code is not used to train their AI models
+- **Encryption in transit**: All data sent uses TLS 1.2+
+- **Optional retention**: Requests can be configured not to be stored
+- **GDPR/CCPA compliance**: Respects regional privacy laws
+
+For enterprise customers, Codeium offers:
+- VPC deployment (private network)
+- SOC 2 Type II certification
+- Custom data retention policies
+- Audit logging
+
+## Comparing Data Handling Across AI Editors
+
+| Tool | Transmission | Local Storage | Enterprise Option |
+|------|--------------|---------------|-------------------|
+| WindSurf | File + metadata | Temporary | VPC deployment |
+| Copilot | Snippet + context | No | Organization controls |
+| Claude Code | Selected files | Project cache | Claude Enterprise |
+| Cursor | Similar to VS Code | Configurable | Available |
+
+Each has different privacy models—choose based on your requirements.
+
+## Industry-Specific Considerations
+
+**Healthcare (HIPAA)**
+- Cannot use cloud-based tools without business associate agreements
+- Require local deployment or HIPAA-compliant cloud services
+- Patient data must never leave your infrastructure
+
+**Financial (SOC 2)**
+- Requires SOC 2 Type II certification
+- Encryption and audit logging mandatory
+- Some tools provide this; others don't
+
+**Government (FedRAMP)**
+- Typically requires Government Cloud deployment
+- Restricted to US-based data centers
+- Few AI tools meet these requirements
+
+**General Business**
+- Standard security practices usually sufficient
+- Encryption in transit and at rest standard
+- GDPR compliance important for EU operations
+
+## Setting Up Security Monitoring
+
+Monitor what your AI tool sends by configuring your firewall:
+
+```bash
+# Mac: Monitor outbound connections
+sudo lsof -i -P -n | grep ESTABLISHED | grep -i "windsurf\|codeium"
+
+# Linux: Monitor DNS queries
+sudo tcpdump -i any -n "port 53" | grep codeium
+```
+
+This helps verify that external services are only accessed for AI operations, not for data exfiltration.
+
+## Audit and Compliance Records
+
+For compliance purposes, maintain records of:
+- Which AI tools are authorized
+- What data classification each tool can access
+- Security assessments for each tool
+- Incident reports if any data is exposed
+
+This documentation helps with security reviews and regulatory compliance.
 
 ## Related Reading
 

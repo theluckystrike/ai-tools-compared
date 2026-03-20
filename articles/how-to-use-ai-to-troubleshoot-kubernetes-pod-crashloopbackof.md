@@ -219,6 +219,131 @@ kubectl top pod <pod-name> -n <namespace>
 
 Feed these outputs to AI for faster resolution when issues arise.
 
+## Analyzing Deployment Manifests Alongside Logs
+
+CrashLoopBackOff often stems from manifest misconfigurations. Provide your AI tool with both the manifest and the pod logs together:
+
+```bash
+# Get the complete manifest and describe output
+kubectl get deployment <deployment-name> -n <namespace> -o yaml > deployment.yaml
+kubectl describe pod <pod-name> -n <namespace> > pod-describe.txt
+```
+
+Then ask the AI to cross-reference the manifest against the error logs. It can identify mismatches between what the manifest specifies and what the container actually expects. For example:
+
+```
+Here's my deployment manifest and the pod failure logs.
+Point out any mismatches between the containerSpec and the errors
+shown in the logs. Specifically, check environment variables,
+volume mounts, and resource requests.
+```
+
+## Debugging Initialization Issues
+
+Some CrashLoopBackOff errors occur during pod initialization (init containers, readiness probes, startup commands). AI can help analyze complex initialization sequences:
+
+```yaml
+# Example: Multi-stage initialization
+spec:
+  initContainers:
+  - name: migration
+    image: myapp:latest
+    command: ["/app/migrate.sh"]
+    env:
+    - name: DATABASE_URL
+      valueFrom:
+        secretKeyRef:
+          name: db-secret
+          key: connection-string
+
+  containers:
+  - name: app
+    image: myapp:latest
+    livenessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 30
+      periodSeconds: 10
+```
+
+If the init container fails, the pod crashes before the main container even starts. Asking AI to trace through this sequence helps identify which stage is failing and why.
+
+## Network and Service Discovery Problems
+
+Many CrashLoopBackOff issues relate to network configuration—services can't reach required endpoints, DNS resolution fails, or network policies block connectivity. AI can help map your network configuration:
+
+```
+My application pod is trying to connect to a service called
+'postgres-service' in the 'database' namespace. The logs show
+"Connection refused". Here's my service definition and network policies.
+What could prevent this connection?
+```
+
+AI reviews service selectors, namespace DNS rules, network policies, and firewall settings to identify connectivity blockers.
+
+## Building a Debugging Checklist with AI
+
+Create a reusable debugging checklist specific to your applications. AI can generate these based on your past issues:
+
+```
+Based on these 5 past CrashLoopBackOff incidents in our cluster,
+create a debugging checklist we should run through when we encounter
+crashes in the future. Include the commands to run and what each
+output tells us about the problem.
+```
+
+This produces a team-specific guide that accelerates future troubleshooting.
+
+## Monitoring for Prevention
+
+Beyond reactive debugging, AI helps design proactive monitoring that catches issues before they cause crashes:
+
+```bash
+# Monitor for pre-crash warning signs
+kubectl top pod <pod-name> -n <namespace>  # Memory/CPU trending toward limits
+
+# Check how many times the pod has restarted
+kubectl get pod <pod-name> -n <namespace> -o jsonpath='{.status.containerStatuses[0].restartCount}'
+
+# View previous exit codes
+kubectl logs <pod-name> -n <namespace> --previous | tail -50
+```
+
+Set up alerts on restart count, memory usage trends, and failed health checks. AI can suggest which metrics to monitor based on your application type.
+
+## Common CrashLoopBackOff Patterns by Application Type
+
+Different application types crash for different reasons. AI uses this knowledge to prioritize diagnostics:
+
+**Java applications** often crash due to:
+- Heap size too small: JVM OutOfMemoryError
+- Classpath issues: Missing libraries
+- Long startup times exceeding liveness probe timeout
+
+**Python applications** often crash due to:
+- Missing dependencies: ImportError
+- Database connection failures
+- Unhanded exceptions during startup
+
+**Node.js applications** often crash due to:
+- Port already in use
+- Missing environment variables
+- Unhandled promise rejections
+
+Tell AI your application type and it will suggest the most likely causes to investigate first.
+
+## Testing Fixes Safely
+
+Before deploying fixes to production, test them in a staging environment. AI can help design test scenarios:
+
+```
+I think the issue is that our Redis cache isn't reachable.
+What's a safe way to test this fix in a staging environment
+before applying it to production?
+```
+
+AI suggests testing strategies like deploying with a DNS stub, simulating network failures, or gradually rolling out fixes using canary deployments.
 
 ## Related Reading
 
