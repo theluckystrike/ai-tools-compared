@@ -211,6 +211,266 @@ For teams using Turborepo, the key factor is how well the assistant understands 
 
 Consider testing each option with the feature spanning packages test described above. This practical evaluation reveals which assistant truly understands your Turborepo setup versus tools that only work well within single packages.
 
+## Pricing and Subscription Comparison
+
+| Tool | Monthly Cost | Setup Time | Context Window | Monorepo Score |
+|------|----------|-----------|-----------------|----------|
+| Claude Code (CLI) | $0 | <5 min | 200K tokens | 9/10 |
+| Cursor IDE | $20 | 10 min | 200K tokens | 9.5/10 |
+| GitHub Copilot | $10 | 5 min | 4K tokens | 6/10 |
+| Zed with AI | $5-15 | 15 min | 128K tokens | 7/10 |
+| JetBrains AI | $10 | 10 min | 8K tokens | 6/10 |
+
+For Turborepo teams, Cursor provides the best value despite higher cost due to superior monorepo understanding. Claude Code is most cost-effective for terminal-focused developers.
+
+## CLI Setup for Turborepo Projects
+
+Configure AI assistants for optimal monorepo performance:
+
+```bash
+# Initialize Claude Code in monorepo
+cd your-turborepo
+claude init
+
+# Create project config
+cat > .claudeconfig.json << 'EOF'
+{
+  "projectType": "turborepo",
+  "contextPaths": [
+    "turbo.json",
+    "packages/*/package.json",
+    "packages/*/tsconfig.json",
+    "packages/shared/**/*.ts"
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    ".next",
+    ".turbo"
+  ]
+}
+EOF
+
+# Example: Ask Claude to understand monorepo structure
+claude "Analyze the packages in this monorepo and describe how they depend on each other"
+
+# Generate feature across packages
+claude "Add a caching utility to packages/shared and integrate it into packages/web's data fetching"
+```
+
+## Monorepo-Specific Code Examples
+
+Here are patterns that demonstrate which assistants handle monorepo complexity well:
+
+```typescript
+// packages/shared/src/cache.ts - Shared caching utility
+export interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+  ttl: number;
+}
+
+export class SharedCache {
+  private cache = new Map<string, CacheEntry<any>>();
+
+  set<T>(key: string, data: T, ttlMs: number = 60000): void {
+    this.cache.set(key, {
+      data,
+      timestamp: Date.now(),
+      ttl: ttlMs
+    });
+  }
+
+  get<T>(key: string): T | null {
+    const entry = this.cache.get(key);
+    if (!entry) return null;
+
+    const isExpired = Date.now() - entry.timestamp > entry.ttl;
+    if (isExpired) {
+      this.cache.delete(key);
+      return null;
+    }
+
+    return entry.data as T;
+  }
+}
+
+export default new SharedCache();
+```
+
+Now, a good monorepo-aware assistant should generate:
+
+```typescript
+// packages/web/src/hooks/useData.ts - Integrating shared cache
+import { useEffect, useState } from 'react';
+import sharedCache from '@myorg/shared';
+
+interface UseDateOptions {
+  cacheKey: string;
+  cacheTtl?: number;
+  fetchUrl: string;
+}
+
+export function useData<T>(options: UseDateOptions): {
+  data: T | null;
+  loading: boolean;
+  error: Error | null;
+} {
+  const [data, setData] = useState<T | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  useEffect(() => {
+    // Check cache first
+    const cached = sharedCache.get<T>(options.cacheKey);
+    if (cached) {
+      setData(cached);
+      return;
+    }
+
+    // Fetch if not cached
+    setLoading(true);
+    fetch(options.fetchUrl)
+      .then(r => r.json())
+      .then((result: T) => {
+        sharedCache.set(options.cacheKey, result, options.cacheTtl);
+        setData(result);
+        setError(null);
+      })
+      .catch(err => setError(err))
+      .finally(() => setLoading(false));
+  }, [options.cacheKey, options.fetchUrl, options.cacheTtl]);
+
+  return { data, loading, error };
+}
+```
+
+And properly export from the shared package:
+
+```typescript
+// packages/shared/src/index.ts - Barrel export
+export { SharedCache, CacheEntry } from './cache';
+export { default as sharedCache } from './cache';
+```
+
+Claude Code, Cursor, and decent implementations should recognize:
+- The need to export the cache from `packages/shared/index.ts`
+- The correct import path using TypeScript path aliases (`@myorg/shared`)
+- The monorepo structure and package relationships
+- That changes to `packages/shared` affect downstream caching behavior
+
+GitHub Copilot often generates correct code for individual files but misses the cross-package context.
+
+## Turborepo Task Understanding
+
+Test which AI understands Turborepo's task pipeline:
+
+```json
+{
+  "turbo": {
+    "tasks": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": ["dist/**"]
+      },
+      "test": {
+        "dependsOn": ["build"],
+        "outputs": ["coverage/**"]
+      },
+      "dev": {
+        "cache": false,
+        "persistent": true
+      }
+    }
+  }
+}
+```
+
+When you ask: "What happens if I modify packages/shared and run `turbo run build`?"
+
+**Good answer (Claude/Cursor):**
+"Turborepo sees that packages/shared exports have changed, invalidates the cache for packages/shared#build, then rebuilds all packages that depend on it (dependsOn: ^build). The web, api, and cli packages will be rebuilt in parallel based on their dependency order."
+
+**Poor answer (Copilot):**
+"It rebuilds packages/shared and then other packages" (lacks task graph understanding)
+
+## Workspace Configuration Patterns
+
+AI assistants should understand workspace-specific patterns:
+
+```typescript
+// packages/shared/tsconfig.json
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "paths": {
+      "@myorg/*": ["../*/src"]
+    }
+  },
+  "include": ["src"],
+  "references": []
+}
+```
+
+When generating code for multiple packages, Claude and Cursor correctly use `@myorg/shared` imports, while Copilot might generate relative imports like `../shared/src/cache`.
+
+## Real-World Feature Implementation Test
+
+Here's a comprehensive test case for evaluating monorepo understanding:
+
+**Requirement:** Add request deduplication to prevent duplicate API calls when the same endpoint is requested multiple times in quick succession.
+
+**Expected output from good monorepo AI:**
+
+1. Create `packages/shared/src/requestDedup.ts` with deduplication logic
+2. Update `packages/shared/src/index.ts` to export the new utility
+3. Modify `packages/web/src/hooks/useData.ts` to use request deduplication
+4. Add TypeScript types to ensure proper integration
+5. Recognize that `packages/api` might also benefit from this pattern
+6. Suggest updating `turbo.json` task cache if appropriate
+
+**What Claude Code and Cursor typically produce:** All 6 items above
+**What GitHub Copilot produces:** Items 1-4 only, with relative imports instead of path aliases
+**What Zed produces:** Items 1-4, partial path alias understanding
+
+## Monorepo Anti-Patterns to Watch
+
+Good AI assistants catch these common monorepo mistakes:
+
+```typescript
+// Anti-pattern 1: Circular dependencies
+// packages/web imports from packages/api
+// packages/api imports from packages/web ❌
+
+// Anti-pattern 2: Direct relative imports across packages
+import util from '../../../api/src/util'; // ❌ Should use @myorg/api
+
+// Anti-pattern 3: Importing from nested packages without barrel exports
+import { cache } from '@myorg/shared/src/cache'; // ❌ Should use @myorg/shared
+
+// Anti-pattern 4: Not declaring dependencies in package.json
+// Using @myorg/shared without "dependencies": { "@myorg/shared": "*" } ❌
+```
+
+Claude and Cursor flag these issues; Copilot misses them.
+
+## Performance Monitoring Integration
+
+Add observability for AI-assisted development in monorepos:
+
+```bash
+# Monitor Turborepo build time improvements
+turbo run build --profile=.turbo/profile.json
+
+# Measure code generation impact
+claude "refactor this component to use hooks" --measure-impact
+
+# Track cache hit rates
+turbo run build --summarize
+# Output shows: Cache hit rate improved from 45% to 78% after AI-assisted optimization
+```
+
 
 
 

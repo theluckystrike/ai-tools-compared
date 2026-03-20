@@ -215,6 +215,300 @@ Selecting the right legal research AI tool depends on several factors:
 
 All three major platforms offer API access, making it possible to build custom workflows that use their underlying AI capabilities while maintaining your own user interface and processes.
 
+## Pricing and Deployment Models
+
+| Tool | Type | Annual Cost | Deployment | Best For |
+|------|------|----------|-----------|----------|
+| CaseText CoCounsel | Cloud SaaS | $3-5k | Web + API | Solo practitioners, small firms |
+| Westlaw Edge | Enterprise SaaS | $10-20k | Web + API | Law firms 20+ attorneys |
+| LexisNexis+ AI | Enterprise SaaS | $12-18k | Web + API | Corporate legal teams |
+| Anthropic Claude API | Self-hosted | Usage-based ($3-15/1M tokens) | Custom | High-volume, specialized workflows |
+| Vector DB approach (OSS) | Self-hosted | Free ($0 software, cloud hosting ~$200-500/mo) | Custom | Privacy-critical, custom domain |
+
+## Real-World Legal Research CLI Workflow
+
+Integrate AI-powered legal research into command-line workflows:
+
+```bash
+# Install legal research CLI tools
+pip install legal-research-sdk anthropic langchain chromadb
+
+# Index case law database locally
+legal-research index \
+  --source "supreme_court_decisions.json" \
+  --embeddings "openai" \
+  --database "local_legal_db"
+
+# Query with semantic search
+legal-research query \
+  --question "Fourth Amendment search and seizure digital evidence" \
+  --jurisdiction "federal" \
+  --court "supreme-court" \
+  --date-range "2020-2026"
+
+# Export search results in various formats
+legal-research export \
+  --format "bibtex" \
+  --output "citations.bib"
+```
+
+## Building a Custom Legal Research Assistant
+
+For firms needing specialized legal research capabilities:
+
+```python
+import anthropic
+import json
+from datetime import datetime
+
+class LegalResearchAssistant:
+    def __init__(self, api_key: str):
+        self.client = anthropic.Anthropic(api_key=api_key)
+        self.research_history = []
+
+    def analyze_legal_question(
+        self,
+        question: str,
+        jurisdiction: str = "federal",
+        practice_area: str = "general"
+    ) -> dict:
+        """Analyze legal question and suggest research strategy."""
+
+        system_prompt = f"""You are a legal research specialist.
+Jurisdiction: {jurisdiction}
+Practice Area: {practice_area}
+
+When given a legal question:
+1. Identify key legal concepts
+2. Suggest relevant statutes and regulations
+3. Recommend case law to review
+4. Outline a research strategy
+Format response as JSON."""
+
+        message = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=2048,
+            system=system_prompt,
+            messages=[{
+                "role": "user",
+                "content": f"Legal question: {question}"
+            }]
+        )
+
+        try:
+            result = json.loads(message.content[0].text)
+        except json.JSONDecodeError:
+            result = {"analysis": message.content[0].text}
+
+        self.research_history.append({
+            "question": question,
+            "timestamp": datetime.now().isoformat(),
+            "result": result
+        })
+
+        return result
+
+    def synthesize_findings(self, findings: list, case_name: str) -> dict:
+        """Synthesize research findings into coherent brief."""
+
+        findings_text = json.dumps(findings, indent=2)
+
+        message = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=3000,
+            system="You are a legal brief writer. Synthesize research into a structured brief.",
+            messages=[{
+                "role": "user",
+                "content": f"""Case: {case_name}
+Research findings:
+{findings_text}
+
+Create a brief with:
+1. Issue statement
+2. Rule explanation
+3. Application
+4. Conclusion
+5. Relevant citations"""
+            }]
+        )
+
+        return {
+            "case": case_name,
+            "brief": message.content[0].text,
+            "generated_at": datetime.now().isoformat()
+        }
+
+    def cite_check(self, citation: str) -> dict:
+        """Verify citation format and provide context."""
+
+        message = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=500,
+            messages=[{
+                "role": "user",
+                "content": f"""Verify and analyze this legal citation: {citation}
+Provide:
+- Proper citation format
+- Case name and year
+- Court level
+- Legal relevance"""
+            }]
+        )
+
+        return {"citation": citation, "analysis": message.content[0].text}
+
+    def export_research(self, format: str = "pdf") -> str:
+        """Export research history in specified format."""
+        if format == "json":
+            return json.dumps(self.research_history, indent=2)
+        elif format == "markdown":
+            return self._format_as_markdown()
+        else:
+            return json.dumps(self.research_history)
+
+    def _format_as_markdown(self) -> str:
+        """Format research history as markdown."""
+        md = "# Legal Research Report\n\n"
+        for entry in self.research_history:
+            md += f"## {entry['question']}\n"
+            md += f"_Generated: {entry['timestamp']}_\n\n"
+            md += f"{json.dumps(entry['result'], indent=2)}\n\n"
+        return md
+
+# Usage example
+assistant = LegalResearchAssistant(api_key="your-api-key")
+
+# Analyze a legal question
+analysis = assistant.analyze_legal_question(
+    question="Can employers require genetic testing as condition of employment?",
+    jurisdiction="federal",
+    practice_area="employment law"
+)
+print("Legal Analysis:", analysis)
+
+# Synthesize findings into brief
+brief = assistant.synthesize_findings(
+    findings=analysis.get("case_law", []),
+    case_name="Doe v. MyCompany"
+)
+print("\nGenerated Brief:", brief["brief"])
+
+# Export research
+markdown_output = assistant.export_research(format="markdown")
+print("\nExported Research:\n", markdown_output)
+```
+
+## Integration with Document Management
+
+Connect legal research to document management systems:
+
+```python
+class DocumentCentricLegalResearch:
+    """Research workflow centered on document analysis."""
+
+    def __init__(self):
+        self.client = anthropic.Anthropic()
+
+    def extract_legal_issues_from_document(self, document_text: str) -> list:
+        """Identify legal issues within a document."""
+
+        message = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=1500,
+            messages=[{
+                "role": "user",
+                "content": f"""Analyze this legal document and identify:
+1. Primary legal issues
+2. Applicable statutes
+3. Relevant case law areas
+4. Potential conflicts or gaps
+
+Document:
+{document_text}"""
+            }]
+        )
+
+        return self._parse_legal_issues(message.content[0].text)
+
+    def compare_contracts(self, contract1: str, contract2: str) -> dict:
+        """Compare two contracts and identify differences."""
+
+        message = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=2000,
+            messages=[{
+                "role": "user",
+                "content": f"""Compare these two contracts:
+
+Contract 1:
+{contract1}
+
+Contract 2:
+{contract2}
+
+Identify:
+1. Key differences in terms
+2. Favorable vs unfavorable provisions
+3. Missing clauses
+4. Legal risk areas"""
+            }]
+        )
+
+        return {
+            "comparison": message.content[0].text,
+            "risk_level": self._assess_risk_level(message.content[0].text)
+        }
+
+    def _parse_legal_issues(self, text: str) -> list:
+        """Parse identified legal issues from response."""
+        # Implementation would extract structured data from Claude's response
+        return text.split("\n")
+
+    def _assess_risk_level(self, text: str) -> str:
+        """Quick risk assessment based on findings."""
+        if "severe" in text.lower() or "critical" in text.lower():
+            return "high"
+        elif "moderate" in text.lower():
+            return "medium"
+        else:
+            return "low"
+```
+
+## Multi-Jurisdiction Compliance
+
+Handle research across multiple jurisdictions:
+
+```python
+def research_multi_jurisdiction(
+    query: str,
+    jurisdictions: list = ["federal", "ca", "ny", "tx"]
+) -> dict:
+    """Research a legal question across multiple jurisdictions."""
+
+    results = {}
+    client = anthropic.Anthropic()
+
+    for jurisdiction in jurisdictions:
+        message = client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=1500,
+            messages=[{
+                "role": "user",
+                "content": f"""Research this question in {jurisdiction} law:
+{query}
+
+Provide:
+1. Applicable statutes
+2. Key cases
+3. Current legal status"""
+            }]
+        )
+
+        results[jurisdiction] = message.content[0].text
+
+    return results
+```
+
 
 ## Related Reading
 

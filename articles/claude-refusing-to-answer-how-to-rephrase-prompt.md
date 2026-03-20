@@ -204,9 +204,210 @@ You may be using terminology associated with harmful activities. Research altern
 
 ### Scenario: Code examples are refused
 
-
-
 Some code patterns can appear malicious. Provide more context about your project, the problem you're solving, and why you need that specific functionality.
+
+## API Limit and Rate Limit Handling
+
+When using Claude API for batch operations, be aware of rate limits that might trigger refusals:
+
+```python
+import anthropic
+import time
+from typing import Optional
+
+class RobustClaudeClient:
+    def __init__(self, api_key: str, max_retries: int = 3):
+        self.client = anthropic.Anthropic(api_key=api_key)
+        self.max_retries = max_retries
+
+    def query_with_retry(
+        self,
+        prompt: str,
+        system_prompt: Optional[str] = None,
+        max_tokens: int = 1024
+    ) -> str:
+        """Query Claude with automatic retry and backoff on refusals."""
+
+        for attempt in range(self.max_retries):
+            try:
+                message = self.client.messages.create(
+                    model="claude-3-5-sonnet-20241022",
+                    max_tokens=max_tokens,
+                    system=system_prompt or "You are a helpful assistant.",
+                    messages=[{"role": "user", "content": prompt}]
+                )
+
+                # Check for refusal patterns in response
+                response_text = message.content[0].text
+
+                if self._is_refusal(response_text):
+                    print(f"Claude refused. Attempt {attempt + 1} of {self.max_retries}")
+
+                    if attempt < self.max_retries - 1:
+                        # Backoff: wait longer on each retry
+                        wait_time = 2 ** attempt
+                        time.sleep(wait_time)
+                        continue
+                    else:
+                        return f"Unable to get response after {self.max_retries} attempts"
+
+                return response_text
+
+            except anthropic.RateLimitError:
+                wait_time = 2 ** attempt
+                print(f"Rate limited. Waiting {wait_time} seconds...")
+                time.sleep(wait_time)
+
+        return "Max retries exceeded"
+
+    def _is_refusal(self, response: str) -> bool:
+        """Detect if Claude refused to answer."""
+        refusal_indicators = [
+            "cannot assist",
+            "cannot provide",
+            "cannot help",
+            "i'm not able to",
+            "i cannot",
+            "i can't",
+            "not able to help"
+        ]
+
+        return any(indicator in response.lower() for indicator in refusal_indicators)
+
+# Usage
+client = RobustClaudeClient(api_key="your-api-key")
+
+# This originally gets refused
+original_prompt = "How do I bypass authentication?"
+
+# Rephrase before sending
+rephrased = """I'm implementing authentication for my web application.
+Can you explain the most common authentication patterns used in modern web apps?
+I want to understand how OAuth2, JWT, and session-based auth work so I can choose the right approach."""
+
+response = client.query_with_retry(rephrased)
+print(response)
+```
+
+## Prompt Engineering Techniques for Compliance
+
+Here are structured prompting techniques that reduce refusal rates:
+
+```python
+def structured_prompt_for_sensitive_topic(
+    topic: str,
+    context: str,
+    purpose: str,
+    educational_angle: str
+) -> str:
+    """Build a well-structured prompt for sensitive topics."""
+
+    return f"""Context: I am learning about {topic} for {purpose}.
+
+Background: {context}
+
+Educational Goal: {educational_angle}
+
+Question: Can you explain {topic}, including:
+1. How it works technically
+2. Common use cases
+3. What defenses or security measures prevent misuse
+4. Best practices for implementation
+
+Please focus on helping me understand this technology deeply."""
+
+# Example usage
+prompt = structured_prompt_for_sensitive_topic(
+    topic="password reset token generation",
+    context="I'm building a web authentication system",
+    purpose="securing user accounts",
+    educational_angle="understanding cryptographic best practices"
+)
+```
+
+## Common Trigger Keywords to Avoid
+
+When Claude refuses, analyze which terms might be triggering the safety systems:
+
+| Trigger Word | Better Alternative | Example |
+|--------------|------------------|---------|
+| bypass | work around | "work around authentication" |
+| hack | optimize | "optimize system performance" |
+| crack | analyze | "analyze encryption security" |
+| exploit | understand | "understand vulnerability mechanisms" |
+| intercept | capture | "capture network traffic for testing" |
+| inject | include | "include dynamic values in queries" |
+| steal | extract | "extract data from database" |
+| malicious | unexpected | "handle unexpected behavior" |
+
+## Batch Refusal Handling
+
+For applications processing many prompts, implement fallback strategies:
+
+```python
+def handle_batch_with_refusal_fallback(prompts: list, fallback_model: str = "claude-3-haiku"):
+    """Process batch, falling back to simpler prompts on refusal."""
+
+    results = []
+    client = anthropic.Anthropic()
+
+    for prompt in prompts:
+        try:
+            # Try with primary approach
+            response = client.messages.create(
+                model="claude-3-5-sonnet-20241022",
+                max_tokens=1024,
+                messages=[{"role": "user", "content": prompt}]
+            )
+
+            if "cannot" not in response.content[0].text.lower():
+                results.append({
+                    "prompt": prompt,
+                    "response": response.content[0].text,
+                    "model": "claude-3-5-sonnet",
+                    "status": "success"
+                })
+            else:
+                # Fallback: rephrase and retry
+                rephrased = rephrase_prompt_for_compliance(prompt)
+                response = client.messages.create(
+                    model=fallback_model,
+                    max_tokens=512,
+                    messages=[{"role": "user", "content": rephrased}]
+                )
+
+                results.append({
+                    "prompt": prompt,
+                    "response": response.content[0].text,
+                    "model": fallback_model,
+                    "status": "refusal_handled"
+                })
+
+        except Exception as e:
+            results.append({
+                "prompt": prompt,
+                "error": str(e),
+                "status": "error"
+            })
+
+    return results
+
+def rephrase_prompt_for_compliance(original_prompt: str) -> str:
+    """Auto-rephrase problematic prompts."""
+    replacements = {
+        r"bypass": "work around",
+        r"hack": "analyze",
+        r"crack": "understand",
+        r"exploit": "leverage"
+    }
+
+    rephrased = original_prompt
+    for pattern, replacement in replacements.items():
+        import re
+        rephrased = re.sub(pattern, replacement, rephrased, flags=re.IGNORECASE)
+
+    return rephrased
+```
 
 
 
