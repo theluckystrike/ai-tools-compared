@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 Code documentation is the forgotten tax that grows exponentially as teams scale. Manual docstring maintenance kills velocity. This guide compares five AI documentation generators with real pricing, setup complexity, and output quality metrics.
 
 ## Quick Comparison Table
@@ -694,4 +695,4 @@ Start with the tool that matches your current scale, then upgrade as you grow.
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+{% endraw %}
