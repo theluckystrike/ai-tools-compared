@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 Most engineers write good code comments but hate writing documentation. Modern AI can transform those inline comments into professional API documentation: OpenAPI specs, Markdown guides, and interactive API references. This guide covers the best tools and workflows.
 
 ## Why AI-Generated Docs Matter
@@ -448,6 +449,98 @@ Webhook events: transfer.completed, transfer.failed
 """
 ```
 
+## Keeping Docs in Sync with Code Changes
+
+The biggest documentation problem is not generation — it is staleness. API docs that drift from the actual implementation erode developer trust faster than having no docs at all.
+
+Treat documentation generation as part of your CI/CD pipeline rather than a manual step. Add a workflow job that regenerates the OpenAPI spec on every push to main and commits the result:
+
+```yaml
+# .github/workflows/docs.yml
+name: Regenerate API Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'api/**/*.py'
+      - 'src/**/*.py'
+
+jobs:
+  regenerate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install anthropic pyyaml fastapi
+      - name: Generate OpenAPI spec
+        run: python generate_docs.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Commit updated spec
+        run: |
+          git config --local user.email "docs-bot@example.com"
+          git config --local user.name "Docs Bot"
+          git add openapi.yaml API_DOCS.md
+          git diff --staged --quiet || git commit -m "docs: regenerate API docs from code"
+          git push
+```
+
+This approach eliminates documentation drift entirely for teams that already use CI. The cost per regeneration is typically under $0.10 for a medium-sized API.
+
+
+## Language-Specific Comment Extraction Strategies
+
+Different languages need different extraction approaches. Python's `ast` module works well, but TypeScript, Go, and Java each have better-suited tooling.
+
+**TypeScript with TSDoc:**
+TypeScript projects using TSDoc can use the `@microsoft/tsdoc` parser to extract structured comments programmatically. The parsed output includes parameter descriptions, return types, and examples that map directly to OpenAPI request/response schemas.
+
+**Go with `go/doc`:**
+Go's standard library includes `go/doc` for parsing godoc comments. An AI-assisted workflow extracts function signatures and their associated comments, then uses Claude to generate REST endpoint documentation even though Go's HTTP handlers often lack the explicit structure of FastAPI.
+
+**Java with Javadoc:**
+Java's `javadoc` tool produces XML output that AI can consume directly. Pass the Javadoc XML to Claude with a prompt asking for OpenAPI 3.0 output, and it resolves cross-references between `@param`, `@return`, and `@throws` tags into proper schema definitions.
+
+The universal principle: get your comment data into a structured intermediate format (JSON or XML) before handing it to the AI. Unstructured text extraction produces inconsistent documentation quality.
+
+
+## Validating AI-Generated OpenAPI Specs
+
+AI-generated OpenAPI specs frequently contain subtle errors: incorrect schema references, missing required fields in the top-level info object, or invalid HTTP status codes. Always validate before publishing.
+
+```bash
+# Install validation tools
+npm install -g @stoplight/spectral-cli swagger-cli
+
+# Validate with Spectral (checks style + correctness)
+spectral lint openapi.yaml
+
+# Validate with swagger-cli (checks schema validity)
+swagger-cli validate openapi.yaml
+```
+
+Spectral supports custom rulesets, letting you enforce your team's API design standards automatically — for example, requiring all endpoints to have a description, or flagging generic 400 responses without a response schema.
+
+Add both validators to your CI pipeline and treat spec validation failures the same as test failures: block the PR until resolved. This creates a positive feedback loop where developers improve their code comments because they see immediate feedback when the AI-generated docs fail validation.
+
+
+## Choosing the Right Tool for Your Documentation Needs
+
+The comparison table in this guide covers Claude and GPT-4 as AI backends, but the most important decision is not which AI to use — it is which documentation format to target.
+
+- **OpenAPI YAML**: Choose this when you need to generate SDKs, mock servers, or integrate with API gateways. Claude excels here.
+- **Markdown guides**: Choose this for developer-facing tutorials and getting-started content. GPT-4 produces more conversational prose.
+- **Interactive docs (Swagger UI, ReDoc)**: These consume your OpenAPI spec automatically — generate the spec with AI, publish with these tools.
+- **Mintlify or ReadMe**: For teams that want a branded documentation site with minimal setup, these platforms accept OpenAPI specs and add search, versioning, and analytics on top.
+
+Start with OpenAPI generation even if you only plan to display Markdown docs initially. A valid OpenAPI spec is reusable: tools can generate client libraries, test suites, and mock servers from it at any time.
+
+
 ## Related Reading
 
 - [How to use AI to generate component diagrams from React code](/ai-tools-compared/guides-hub/)
@@ -457,3 +550,4 @@ Webhook events: transfer.completed, transfer.failed
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

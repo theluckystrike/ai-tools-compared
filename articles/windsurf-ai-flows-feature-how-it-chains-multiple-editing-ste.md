@@ -13,7 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-
+{% raw %}
 Windsurf AI Flows lets you chain multiple editing steps together to automate complex code transformations like refactoring, documentation updates, and testing in a single coherent pipeline. Each step executes sequentially with context from previous steps, ensuring consistency across multi-file changes. This approach eliminates the need for manual coordination between separate edits and provides auditability of how your codebase evolved through each transformation phase.
 
 
@@ -450,3 +450,4 @@ jobs:
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

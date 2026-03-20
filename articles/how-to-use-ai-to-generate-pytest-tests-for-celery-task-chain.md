@@ -358,7 +358,133 @@ Review generated tests carefully—AI may miss edge cases specific to your busin
 Consider adding integration tests with a real Redis/Rabbitmq broker for production-like testing, while keeping unit tests fast and isolated.
 
 
+## Testing Task Timeouts and Rate-Limited Queues
 
+Production Celery deployments impose hard limits on task execution time and queue throughput. Testing these constraints prevents silent failures where a task appears to succeed but was silently killed.
+
+Configure per-task time limits in your tests and simulate timeout conditions:
+
+```python
+# tests/test_timeout_behavior.py
+import pytest
+from unittest.mock import patch
+from celery.exceptions import SoftTimeLimitExceeded
+
+class TestTaskTimeouts:
+
+    def test_task_handles_soft_time_limit(self):
+        """Verify task catches SoftTimeLimitExceeded and cleans up"""
+        @app.task(bind=True, soft_time_limit=5, time_limit=10)
+        def long_running_task(self):
+            try:
+                import time
+                time.sleep(100)
+            except SoftTimeLimitExceeded:
+                return {"status": "timeout_handled"}
+
+        with patch("time.sleep", side_effect=SoftTimeLimitExceeded()):
+            result = long_running_task.apply()
+            assert result.get()["status"] == "timeout_handled"
+```
+
+When building the test suite with AI assistance, give the AI your Celery worker configuration including `CELERY_TASK_TIME_LIMIT` and `CELERY_TASK_SOFT_TIME_LIMIT` settings. This context lets the AI generate timeouts that match your actual production constraints rather than arbitrary values.
+
+
+## Debugging Chain Failures with Structured Test Output
+
+When a chain fails mid-execution, the error message often points to the wrong task. A debugging-friendly test structure helps you localize failures quickly:
+
+```python
+# tests/test_chain_debugging.py
+import pytest
+from celery import chain
+from unittest.mock import patch
+
+class TestChainDebugging:
+
+    def test_chain_failure_identifies_failing_step(self):
+        """Capture which step in the chain raised an error"""
+        with patch("tasks.process_user_data") as mock_process,              patch("tasks.validate_user_data") as mock_validate,              patch("tasks.enrich_user_profile", side_effect=RuntimeError("Enrichment API down")) as mock_enrich:
+
+            mock_process.return_value = {"user": {"id": 1, "email": "test@example.com"}, "step": "fetched"}
+            mock_validate.return_value = {"user": {"id": 1, "email": "test@example.com"}, "validated": True}
+
+            workflow = chain(
+                mock_process.s(user_id=1),
+                mock_validate.s(),
+                mock_enrich.s()
+            )
+
+            with pytest.raises(RuntimeError, match="Enrichment API down"):
+                workflow.apply().get(timeout=5)
+
+        # Verify execution stopped at the enrich step
+        assert mock_process.called
+        assert mock_validate.called
+        assert mock_enrich.called
+```
+
+This pattern captures exact execution state at the moment of failure. When an AI tool generates your chain tests, ask it to include execution state tracking so failed tests tell you precisely where the chain broke and what data each step received.
+
+
+## Organizing Your Celery Test Suite for Long-Term Maintainability
+
+A well-organized test suite makes it easier to run targeted tests during development and full coverage in CI. Structure your tests to mirror your task hierarchy:
+
+```
+tests/
+  unit/
+    test_process_user_data.py
+    test_validate_user_data.py
+    test_enrich_user_profile.py
+  integration/
+    test_user_processing_chain.py
+    test_chain_error_handling.py
+    test_retry_behavior.py
+  fixtures/
+    conftest.py          # Shared fixtures and Celery eager setup
+    sample_data.py       # Reusable test data factories
+```
+
+Keep unit tests completely independent — they should pass with no external services running. Isolate integration tests that require an actual broker under a separate pytest mark:
+
+```bash
+# Run only unit tests during development
+pytest tests/unit/ -v
+
+# Run full suite in CI with real broker
+pytest -m "not slow" tests/
+```
+
+Ask your AI tool to generate `conftest.py` after you have written a few tests. The AI infers the common patterns from your existing tests and produces a clean, reusable fixture file that eliminates duplication across your test modules. Provide it with your Celery app configuration, your fixture sample data, and the eager mode setup code so it has the full context needed to generate something you can use immediately.
+
+
+## Prompting AI Effectively for Celery Test Generation
+
+The most common failure mode when using AI to generate Celery tests is providing insufficient context. AI tools need to understand your complete task topology — not just one task in isolation.
+
+An effective prompt includes:
+- Your full `tasks.py` file with all task definitions
+- Your `celery_app.py` or app configuration
+- The chain composition code
+- Specific failure scenarios you want covered (validation failures, retries, partial chain execution)
+- Your preferred fixture patterns (inline fixtures vs. conftest)
+
+Example prompt structure:
+```
+Here is my Celery app configuration [paste config], my task definitions
+[paste tasks.py], and how I compose them into chains [paste chain code].
+
+Generate pytest tests that cover:
+1. Successful execution of the full chain
+2. Chain stopping when validate_user_data raises ValueError
+3. Retry behavior when process_user_data raises ConnectionError
+4. Data accumulation across all chain steps
+
+Use task_always_eager=True for testing. Mock fetch_user and send_notification.
+```
+
+This level of context consistently produces tests that need minimal editing before they can be run.
 
 
 ## Related Reading
