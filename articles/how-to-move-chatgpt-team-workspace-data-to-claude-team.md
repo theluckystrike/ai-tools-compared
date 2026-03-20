@@ -192,7 +192,248 @@ Test the migration with a small team subset before rolling out to everyone. This
 
 Document your migration process internally so future team members understand how the workspace was set up and what decisions shaped the migration.
 
+## Complete Migration Checklist
 
+Here's a practical checklist for teams migrating between platforms:
+
+```markdown
+## ChatGPT Team to Claude Team Migration Checklist
+
+### Week 1: Inventory and Planning
+- [ ] Export all conversations (OpenAI API)
+- [ ] List all custom GPTs with descriptions
+- [ ] Document API integrations and endpoints
+- [ ] Identify critical conversations to preserve
+- [ ] Create team communication plan
+
+### Week 2: Data Export
+- [ ] Run export scripts for all conversation history
+- [ ] Backup custom GPT configurations
+- [ ] Export workspace settings and member permissions
+- [ ] Test export file integrity
+- [ ] Create migration documentation
+
+### Week 3: Claude Team Setup
+- [ ] Create Claude Team workspace
+- [ ] Set up team members and permissions
+- [ ] Create corresponding projects
+- [ ] Configure custom instructions
+- [ ] Test user access and permissions
+
+### Week 4: Content Migration
+- [ ] Import key conversations into projects
+- [ ] Recreate custom GPTs as Claude configurations
+- [ ] Migrate shared files and knowledge bases
+- [ ] Update internal documentation links
+- [ ] Run parallel testing
+
+### Week 5: Cutover and Validation
+- [ ] Communicate cutover date to team
+- [ ] Monitor ChatGPT usage (should decline)
+- [ ] Verify Claude Team usage increases
+- [ ] Collect team feedback
+- [ ] Plan deactivation of ChatGPT Team
+```
+
+## Detailed Export Script for Conversations
+
+```python
+import openai
+import json
+from datetime import datetime
+import os
+
+class ChatGPTExporter:
+    def __init__(self, api_key):
+        self.client = openai.OpenAI(api_key=api_key)
+        self.conversations = []
+
+    def export_conversations(self, output_dir="chatgpt_export"):
+        """Export all conversations from ChatGPT Team workspace."""
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Get all threads (paginated)
+        offset = 0
+        limit = 100
+        total_exported = 0
+
+        try:
+            while True:
+                threads = self.client.beta.threads.list(limit=limit)
+
+                if not threads.data:
+                    break
+
+                for thread in threads.data:
+                    thread_data = self._extract_thread(thread)
+                    if thread_data:
+                        self.conversations.append(thread_data)
+                        total_exported += 1
+
+                        # Save individual thread as JSON
+                        with open(
+                            f"{output_dir}/thread_{thread.id}.json", "w"
+                        ) as f:
+                            json.dump(thread_data, f, indent=2)
+
+                offset += limit
+
+        except Exception as e:
+            print(f"Error exporting conversations: {e}")
+
+        # Save comprehensive export
+        with open(f"{output_dir}/all_conversations.json", "w") as f:
+            json.dump(
+                {
+                    "exported_at": datetime.utcnow().isoformat(),
+                    "total_conversations": total_exported,
+                    "conversations": self.conversations,
+                },
+                f,
+                indent=2,
+            )
+
+        return total_exported
+
+    def _extract_thread(self, thread):
+        """Extract full conversation from a thread."""
+        try:
+            messages = self.client.beta.threads.messages.list(
+                thread_id=thread.id, limit=100
+            )
+
+            return {
+                "thread_id": thread.id,
+                "created_at": str(thread.created_at),
+                "title": getattr(thread, "title", "Untitled"),
+                "messages": [
+                    {
+                        "role": msg.role,
+                        "content": msg.content[0].text.value
+                        if msg.content
+                        else "",
+                        "created_at": str(msg.created_at),
+                    }
+                    for msg in messages.data
+                ],
+            }
+        except Exception as e:
+            print(f"Error extracting thread {thread.id}: {e}")
+            return None
+
+    def export_custom_gpts(self, output_dir="chatgpt_export"):
+        """Export custom GPT definitions."""
+        try:
+            # List all custom GPTs
+            response = self.client.beta.assistants.list()
+
+            gpts = []
+            for assistant in response.data:
+                gpt_data = {
+                    "id": assistant.id,
+                    "name": assistant.name,
+                    "description": assistant.description,
+                    "instructions": assistant.instructions,
+                    "tools": [tool.type for tool in assistant.tools],
+                    "model": assistant.model,
+                    "file_ids": assistant.file_ids,
+                }
+                gpts.append(gpt_data)
+
+            with open(f"{output_dir}/custom_gpts.json", "w") as f:
+                json.dump(gpts, f, indent=2)
+
+            return len(gpts)
+        except Exception as e:
+            print(f"Error exporting custom GPTs: {e}")
+            return 0
+
+
+# Usage
+exporter = ChatGPTExporter(api_key="your-openai-api-key")
+num_conversations = exporter.export_conversations()
+num_gpts = exporter.export_custom_gpts()
+
+print(f"Exported {num_conversations} conversations and {num_gpts} custom GPTs")
+```
+
+## Cost Comparison: ChatGPT Team vs Claude Team
+
+| Factor | ChatGPT Team | Claude Team |
+|--------|--------------|------------|
+| Per-seat cost | $30/month | $25/month |
+| Minimum team size | 1 person | 1 person |
+| Setup fee | None | None |
+| API overages | Included | Additional cost |
+| Admin controls | Limited | Full featured |
+| File storage | 20GB per user | 100MB files, unlimited conversations |
+| Integration support | API only | API + MCP |
+
+For a 5-person team:
+- ChatGPT Team: $150/month = $1,800/year
+- Claude Team: $125/month = $1,500/year
+
+Claude Team saves $300/year for this size, plus better admin controls.
+
+## Migration Impact on Team Workflows
+
+Plan for these workflow changes:
+
+**Conversation structure:**
+ChatGPT: Conversations exist in Team workspace
+Claude: Conversations organized by Projects
+
+Migration requires:
+- Think about logical project groupings
+- Brief team on new organizational structure
+- Update internal documentation links
+
+**API usage:**
+ChatGPT: Single team API key
+Claude: Can create separate API keys per project
+
+Migration opportunity:
+- Separate billing by project
+- Better cost tracking
+- Improved access control
+
+## Validation After Migration
+
+Verify the migration was successful:
+
+```bash
+#!/bin/bash
+# verify-migration.sh
+
+echo "Checking ChatGPT Team..."
+CHATGPT_USAGE=$(curl -s https://api.openai.com/dashboard/usage \
+  -H "Authorization: Bearer $OPENAI_KEY" \
+  | jq '.total_usage')
+
+echo "Checking Claude Team..."
+CLAUDE_USAGE=$(curl -s https://api.anthropic.com/v1/usage \
+  -H "x-api-key: $CLAUDE_KEY" \
+  | jq '.usage.total_messages')
+
+echo "ChatGPT Team usage: $CHATGPT_USAGE"
+echo "Claude Team usage: $CLAUDE_USAGE"
+
+# Compare conversation counts
+echo ""
+echo "Validating conversation preservation..."
+EXPORTED_COUNT=$(jq '.total_conversations' chatgpt_export/all_conversations.json)
+CLAUDE_COUNT=$(curl -s https://api.anthropic.com/v1/projects \
+  -H "x-api-key: $CLAUDE_KEY" \
+  | jq '.projects | length')
+
+echo "Conversations exported from ChatGPT: $EXPORTED_COUNT"
+echo "Projects created in Claude: $CLAUDE_COUNT"
+
+if [ "$CHATGPT_USAGE" -gt 0 ] && [ "$CLAUDE_USAGE" -gt 0 ]; then
+    echo ""
+    echo "WARNING: Both systems still in use. Ensure deprecation plan is on track."
+fi
+```
 
 ---
 

@@ -195,8 +195,113 @@ Choose Dagster when your AI pipelines involve complex data dependencies, require
 
 Both tools handle production AI workloads effectively. The choice often comes down to your team's preferences around testing rigor, pipeline complexity, and how much structure you want to enforce versus how much flexibility you need.
 
+## Deployment and Scaling
 
+**Prefect** offers multiple deployment models. You can deploy flows to Prefect Cloud, self-hosted Prefect Server, or use local agents. Scaling out to handle large workloads involves setting up work pools that distribute tasks across your infrastructure. This approach works well for teams wanting flexibility but requires managing your own infrastructure at scale.
 
+**Dagster** typically deploys via Dagster Cloud for managed hosting, or you can self-host using Kubernetes and other orchestrators. Dagster's deployment model is more tightly integrated with your infrastructure choices. The asset-based model naturally scales to distributed execution, making it simpler to reason about parallel execution across many machines.
+
+## Cost Comparison for AI Teams
+
+| Factor | Prefect | Dagster |
+|--------|---------|---------|
+| Open Source | Free forever | Free forever |
+| Cloud Pricing | $0.25/task execution | Pay-per-seat ($500+/month base) |
+| Scaling | Pay per task | Flat seat-based model |
+| Team Size | Better for small teams | Better for larger orgs |
+| Self-hosting | Minimal infrastructure needed | Requires more resources |
+
+For AI teams at early stages, Prefect's task-based pricing scales more favorably. For mature teams with dedicated DevOps, Dagster's seat-based model may be more predictable.
+
+## Real-World Scenario: Retraining Pipeline
+
+Here's how each tool approaches a model retraining pipeline that runs daily:
+
+**Prefect approach:**
+```python
+@flow(schedule=CronSchedule(cron="0 2 * * *"))  # 2am daily
+def daily_retrain():
+    dataset = fetch_latest_data()
+    metrics = evaluate_current_model()
+    if metrics['accuracy'] < 0.92:
+        new_model = train_model(dataset)
+        validate(new_model)
+        deploy_model(new_model)
+```
+
+**Dagster approach:**
+```python
+@sensor
+def retrain_when_needed(context):
+    if should_retrain():
+        yield RunRequest(job_name="model_retraining_job")
+
+@asset
+def current_metrics():
+    return get_model_metrics()
+
+@asset
+def retraining_required(current_metrics):
+    return current_metrics['accuracy'] < 0.92
+
+@job
+def model_retraining_job():
+    if retraining_required():
+        dataset = latest_dataset()
+        model = train_model(dataset)
+        validate(model)
+        deploy(model)
+```
+
+Prefect's simpler syntax makes it faster to implement. Dagster's explicit dependencies make it easier to understand what triggers retraining.
+
+## Integration with ML Tools
+
+Both integrate with popular ML platforms:
+
+**Prefect integrations:**
+- MLflow for model tracking
+- Hugging Face Hub for model storage
+- Ray for distributed training
+- Kubernetes for containerized workloads
+
+**Dagster integrations:**
+- Mlflow asset definitions for native versioning
+- dbt for data transformation
+- Spark for distributed processing
+- Custom asset definitions for any tool
+
+For teams already using dbt or MLflow heavily, Dagster's native integrations provide tighter coupling. Prefect requires more custom orchestration but offers more flexibility.
+
+## Monitoring and Observability
+
+**Prefect** provides real-time monitoring through the Orion UI. You can see running flows, retry attempts, and execution history with minimal setup. The dashboard is intuitive and requires little configuration.
+
+**Dagster** includes Dagster UI which provides asset lineage visualization, showing how datasets and models flow through your pipeline. This lineage view is particularly valuable for understanding dependencies in complex ML systems. Dagster's approach to observability emphasizes understanding what your pipeline produces.
+
+## Decision Flowchart
+
+Choose **Prefect** if:
+- You want the fastest time to production
+- You have a small team or solo engineer
+- You're comfortable managing deployment yourself
+- You prefer decorator-based, minimal-friction orchestration
+- Your pipelines are relatively straightforward
+
+Choose **Dagster** if:
+- You need comprehensive lineage tracking for compliance
+- You have complex multi-stage data pipelines
+- You want built-in testing frameworks
+- You're part of a larger engineering team
+- You need strong data governance
+
+## Common Implementation Mistakes
+
+**Prefect teams often struggle with** testing orchestration logic separately from execution. The decorator-based approach makes it easy to skip writing unit tests for flow logic.
+
+**Dagster teams often struggle with** over-engineering their asset definitions. The structured approach invites complexity; resist the urge to add assets for every intermediate step.
+
+Both teams benefit from starting simple and adding complexity only when you have real requirements.
 
 
 ## Related Reading

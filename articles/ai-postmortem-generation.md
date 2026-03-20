@@ -202,6 +202,195 @@ AI postmortem generation represents a significant productivity improvement for d
 
 The key is treating AI as an accelerant rather than a replacement for human judgment. Use it to generate first drafts, suggest root causes, and structure information—but always ensure experienced team members review and refine the final output.
 
+## Tool Comparison: Cost and Features
+
+Several dedicated platforms handle AI postmortem generation. Here's a practical comparison:
+
+| Platform | Cost | Best For | Key Features |
+|----------|------|----------|--------------|
+| Incident.io | Free to $300/month | Slack teams | Auto timeline, AI root cause, incident library |
+| Blameless | Custom pricing | Enterprise | ITSM integration, automated remediation tracking |
+| FireHydrant | $50-300/month | Teams <100 | Custom templates, playbooks, AI enrichment |
+| OpenAI API | $0.03-0.06 per 1K tokens | Custom builds | Full control, lowest cost for volume |
+
+For most teams, building custom postmortems with Claude API ($0.003 per 1K tokens input) or GPT-4o ($0.015/1K tokens) is cheaper than enterprise tools while offering flexibility.
+
+## CLI-Based Postmortem Generation Workflow
+
+Here's a complete bash/Python workflow for automating postmortem generation from logs:
+
+```bash
+#!/bin/bash
+# fetch-incident-data.sh - Collect incident artifacts
+
+INCIDENT_ID=$1
+INCIDENT_START=$2
+INCIDENT_END=$3
+
+# Fetch logs from ELK/DataDog/CloudWatch
+curl -s "https://logs.example.com/api/logs" \
+  -H "Authorization: Bearer $LOG_TOKEN" \
+  -d "incident_id=$INCIDENT_ID&start=$INCIDENT_START&end=$INCIDENT_END" \
+  > logs.json
+
+# Get metrics spike data
+curl -s "https://metrics.example.com/api/timeseries" \
+  -H "Authorization: Bearer $METRICS_TOKEN" \
+  -d "metric=error_rate&start=$INCIDENT_START&end=$INCIDENT_END" \
+  > metrics.json
+
+# Fetch deployment info
+git log --oneline --after="$INCIDENT_START" --before="$INCIDENT_END" \
+  > deployments.txt
+
+# Get slack incident channel transcript
+python3 extract_slack_thread.py $INCIDENT_CHANNEL_ID > slack_discussion.txt
+
+# Generate postmortem
+python3 generate_postmortem.py \
+  --logs logs.json \
+  --metrics metrics.json \
+  --deployments deployments.txt \
+  --slack slack_discussion.txt \
+  --output postmortem.md
+```
+
+Then use Claude API to generate:
+
+```python
+import anthropic
+import json
+
+def generate_postmortem_from_files(logs_file, metrics_file, slack_file):
+    client = anthropic.Anthropic(api_key="your-api-key")
+
+    # Read collected data
+    with open(logs_file) as f:
+        logs = f.read()
+    with open(metrics_file) as f:
+        metrics = f.read()
+    with open(slack_file) as f:
+        slack = f.read()
+
+    prompt = f"""You are an SRE writing a blameless postmortem.
+
+## Raw Incident Data
+
+### Error Logs
+{logs[:3000]}
+
+### Metrics During Incident
+{metrics[:2000]}
+
+### Team Discussion
+{slack[:2000]}
+
+Generate a comprehensive postmortem with:
+1. Executive summary (2-3 sentences)
+2. Impact: affected services, user count, duration
+3. Timeline: at least 5 key events with timestamps
+4. Root cause: primary cause + contributing factors
+5. Resolution: what stopped the bleeding + full fix
+6. Prevention: 3-5 specific action items to prevent recurrence
+
+Use markdown format. Be specific with numbers and timeframes."""
+
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=2000,
+        messages=[
+            {"role": "user", "content": prompt}
+        ]
+    )
+
+    return response.content[0].text
+
+# Generate and save
+postmortem = generate_postmortem_from_files("logs.json", "metrics.json", "slack.txt")
+with open("postmortem.md", "w") as f:
+    f.write(postmortem)
+```
+
+## Real-World Postmortem Example
+
+Here's what AI-generated postmortems typically look like (this example was created with Claude):
+
+```markdown
+# Postmortem: Database Connection Pool Exhaustion
+
+## Summary
+A deployment of the authentication service increased connection pool utilization from 40% to 95%,
+causing 2,847 users to experience authentication failures for 38 minutes. Root cause was a
+misconfigured connection timeout in the new release.
+
+## Impact
+- 2,847 users unable to log in
+- 3 dependent services degraded (API, websockets, admin panel)
+- SLA violation: 38-minute outage vs. 99.95% target
+
+## Timeline
+- 14:23 UTC: Authentication service v2.4.1 deployed
+- 14:25 UTC: Error rate alert fires (5% vs. 0.1% baseline)
+- 14:27 UTC: On-call team pages, investigation begins
+- 14:31 UTC: Database connection pool at 95% utilization identified
+- 14:39 UTC: Service rolled back to v2.4.0
+- 14:50 UTC: Error rates return to baseline
+
+## Root Cause
+Connection pool timeout was changed from 30s to 5s in the new release, causing connections
+to be recycled too aggressively. This created connection churn that exhausted the pool.
+
+## Resolution
+Immediate: Rollback to v2.4.0. The previous connection timeout of 30s had been validated
+in production for 6 months.
+
+Permanent: Update connection pool configuration to use 45s timeout with monitoring.
+```
+
+## Addressing AI Limitations in Postmortem Generation
+
+AI struggles with certain aspects of postmortems. Always manually verify:
+
+1. **Causality claims** — AI suggests correlations as causes. Verify temporal causality with domain experts.
+2. **Specific numbers** — Check all metrics, error counts, and impact figures against actual data.
+3. **Action items** — AI generates generic fixes. Replace with specific, assigned tasks your team will actually do.
+4. **Context dependencies** — AI may miss that this is the third similar incident. Add historical context manually.
+
+## Automated Postmortem Storage and Search
+
+Store generated postmortems in a searchable database so teams learn from patterns:
+
+```python
+from datetime import datetime
+
+def save_postmortem(postmortem_text, incident_id, severity, services):
+    doc = {
+        "incident_id": incident_id,
+        "generated_at": datetime.utcnow().isoformat(),
+        "severity": severity,
+        "affected_services": services,
+        "text": postmortem_text,
+        "root_cause_tags": extract_root_causes(postmortem_text),
+        "searchable": postmortem_text.lower()
+    }
+
+    # Store in MongoDB, Elasticsearch, or similar
+    postmortem_db.insert(doc)
+
+    # Make searchable for "previous similar incidents"
+    return doc
+
+# Later, when new incident occurs:
+def find_similar_incidents(current_error_message):
+    similar = postmortem_db.search(
+        query=current_error_message,
+        limit=5
+    )
+    return similar  # Show team what they fixed before
+```
+
+This dramatically speeds up incident response by letting teams reference similar past incidents.
+
 ---
 
 
