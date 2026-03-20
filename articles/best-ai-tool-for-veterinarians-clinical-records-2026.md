@@ -259,6 +259,40 @@ The investment pays for itself in 3-4 months for high-volume practices, 8-12 mon
 
 
 
+## Generating SOAP Notes with Claude API
+
+Generate structured AAHA-format SOAP notes from visit dictation:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def generate_soap_note(patient, species, visit_notes):
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=700,
+        messages=[{"role": "user", "content": (
+            f"Patient: {patient} ({species})\n"
+            f"Visit notes:\n{visit_notes}\n\n"
+            "Generate an AAHA-format SOAP note with:\n"
+            "S (Subjective): owner-reported history\n"
+            "O (Objective): physical exam findings and vitals\n"
+            "A (Assessment): diagnosis or differential list with reasoning\n"
+            "P (Plan): treatment, medications with doses, recheck schedule"
+        )}]
+    )
+    return message.content[0].text
+
+notes = (
+    "Owner reports vomiting x2 days, decreased appetite. No diarrhea.\n"
+    "Exam: T 103.1F, HR 110, RR 24. Mild cranial abdominal pain on palpation.\n"
+    "Mucous membranes pink/moist. No masses palpated. BCS 5/9."
+)
+print(generate_soap_note("Max", "Canine, 4yr, M/N Labrador", notes))
+```
+
+
 {% endraw %}
 
 ## Related Reading

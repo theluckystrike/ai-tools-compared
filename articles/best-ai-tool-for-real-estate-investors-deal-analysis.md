@@ -239,6 +239,40 @@ The sweet spot for AI is deals in the $500K-$2M range where speed matters but no
 
 
 
+## Rental Deal Analysis with Claude API
+
+Automate the initial underwriting narrative for a rental property:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def analyze_rental_deal(deal):
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=600,
+        messages=[{"role": "user", "content": (
+            f"Property: {deal['address']}\n"
+            f"Purchase price: ${deal['price']:,}\n"
+            f"Gross rent: ${deal['monthly_rent']:,}/mo\n"
+            f"Expenses (tax/ins/mgmt/capex): ${deal['monthly_expenses']:,}/mo\n"
+            f"Financing: {deal['down_pct']}% down at {deal['rate']}% for 30yr\n\n"
+            "Calculate NOI, cap rate, cash-on-cash return, and DSCR. "
+            "Flag deal-killers. Summarize in 4 bullet points for an investor memo."
+        )}]
+    )
+    return message.content[0].text
+
+deal = {
+    "address": "412 Oak St, Columbus OH",
+    "price": 320000, "monthly_rent": 2400,
+    "monthly_expenses": 750, "down_pct": 25, "rate": 7.25,
+}
+print(analyze_rental_deal(deal))
+```
+
+
 {% endraw %}
 
 ## Related Reading

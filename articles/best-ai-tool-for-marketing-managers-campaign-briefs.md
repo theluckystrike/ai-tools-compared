@@ -222,6 +222,29 @@ Start with the tool that addresses your biggest bottleneck, measure the time sav
 
 
 
+## Campaign Brief Prompt Template
+
+Use this structured prompt in Claude or ChatGPT to generate a complete campaign brief:
+
+```
+You are a senior marketing strategist. Generate a campaign brief:
+
+Campaign: [CAMPAIGN NAME]
+Product/Service: [PRODUCT]
+Target Audience: [PERSONA]
+Goal: [OBJECTIVE -- e.g., "Generate 150 MQLs in Q2"]
+Budget: [BUDGET RANGE]
+Timeline: [START DATE] to [END DATE]
+Channels: [LIST CHANNELS]
+
+Output:
+1. Campaign Theme (one punchy sentence)
+2. Core Message (what the audience must believe after seeing this)
+3. Three content pillars with one example asset each
+4. Success metrics and measurement plan
+5. Risk factors and mitigation strategies
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

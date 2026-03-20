@@ -260,6 +260,31 @@ The most successful YouTubers treat AI as a collaborative tool rather than a rep
 
 
 
+## YouTube Script Prompt Template
+
+Use this structured prompt to generate a complete script outline in Claude or Jasper:
+
+```
+Write a YouTube script for the following video:
+
+Title: [VIDEO TITLE]
+Channel niche: [NICHE -- e.g., personal finance, tech reviews, cooking]
+Target audience: [AUDIENCE -- e.g., beginner investors aged 25-35]
+Video length: [LENGTH -- e.g., 8-10 minutes]
+Hook style: [STYLE -- e.g., shocking stat, bold claim, story]
+CTA goal: [GOAL -- e.g., subscribe, join email list, watch next video]
+
+Script structure:
+- Hook (0:00-0:30): Open with a pattern interrupt. No "Hey guys, welcome back."
+- Problem setup (0:30-1:30): State the viewer pain point in their words
+- Credibility bridge (1:30-2:00): One sentence establishing why you can help
+- Main content (2:00-7:00): 3-5 key points, each with an example or data point
+- Soft CTA (7:00-7:30): Natural transition to the call to action
+- Hard CTA + outro (7:30-8:00): Direct ask + end screen prompt
+
+Use conversational language. Avoid passive voice.
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

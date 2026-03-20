@@ -248,6 +248,28 @@ Human creativity remains central. AI tools function best as collaborators rather
 
 
 
+## Lyric Writing Prompt Template
+
+Use this prompt structure to generate lyrics that match your style and song structure:
+
+```
+Genre: [GENRE -- e.g., indie folk, trap, R&B]
+Mood: [MOOD -- e.g., melancholic, anthemic, introspective]
+Tempo feel: [FEEL -- e.g., slow burn, driving, laid-back]
+Theme: [CORE THEME in 1-2 sentences]
+Reference artists: [ARTIST 1], [ARTIST 2]
+
+Song structure needed:
+- Verse 1 (8 lines, ABAB rhyme scheme)
+- Pre-chorus (4 lines, builds tension)
+- Chorus (6 lines, hook-heavy, repeat-friendly)
+- Verse 2 (8 lines, advances the story)
+- Bridge (4 lines, emotional shift)
+
+Write in second person and use concrete imagery over abstract statements.
+Avoid cliches like "heart on fire" or "tears in rain."
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

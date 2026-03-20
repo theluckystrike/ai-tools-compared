@@ -239,6 +239,40 @@ Once you've implemented an AI vendor analysis tool, track these metrics to ensur
 
 But the real win came from identifying 12 suppliers in financial distress that manual review missed, preventing $340,000 in supply chain disruption. That single discovery justified 2+ years of tool investment.
 
+## Vendor Risk Analysis with Claude API
+
+Use this Python function to analyze vendor proposals for risk factors:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def analyze_vendor_risk(vendor_name, proposal_text):
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=700,
+        messages=[{"role": "user", "content": (
+            f"Vendor: {vendor_name}\n\n"
+            f"Proposal excerpt:\n{proposal_text}\n\n"
+            "Analyze this vendor proposal and return:\n"
+            "1. Financial stability red flags\n"
+            "2. Compliance gaps (certifications, SLAs, liability caps)\n"
+            "3. Supply chain concentration risk\n"
+            "4. Recommended negotiation points\n"
+            "Rate overall risk: Low / Medium / High with justification."
+        )}]
+    )
+    return message.content[0].text
+
+proposal = (
+    "Net 60 payment terms. No uptime SLA provided.\n"
+    "SOC 2 Type I in progress (expected Q3). Single manufacturing "
+    "facility in Shenzhen. Price valid 30 days. No liability cap stated."
+)
+print(analyze_vendor_risk("GlobalSupply Co.", proposal))
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

@@ -222,6 +222,39 @@ The return on investment from AI route optimization typically manifests through 
 
 
 
+## Querying Claude for Route Optimization Recommendations
+
+Use the Anthropic API to analyze a delivery schedule and surface optimization opportunities:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def optimize_routes(stops):
+    stops_text = "\n".join(
+        f"Stop {i+1}: {s['address']} -- {s['window']} -- {s['load_kg']}kg"
+        for i, s in enumerate(stops)
+    )
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=600,
+        messages=[{"role": "user", "content": (
+            f"Delivery stops for today:\n{stops_text}\n\n"
+            "Identify sequencing inefficiencies, suggest a reordered route "
+            "that minimizes backtracking, and flag stops with tight time windows."
+        )}]
+    )
+    return message.content[0].text
+
+stops = [
+    {"address": "123 Main St", "window": "9-11am",  "load_kg": 50},
+    {"address": "900 Oak Ave", "window": "8-9am",   "load_kg": 30},
+    {"address": "45 Elm Rd",   "window": "10-12pm", "load_kg": 80},
+]
+print(optimize_routes(stops))
+```
+
 ## Related Reading
 
 - [Best AI Tool for Customer Success Managers 2026](/ai-tools-compared/best-ai-tool-for-customer-success-managers-2026/)

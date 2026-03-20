@@ -229,6 +229,37 @@ Start with the tool that addresses your biggest pain point, measure the impact, 
 
 
 
+## Automating Churn Signal Analysis with Claude
+
+Use the Anthropic API to scan recent support tickets for churn signals and draft a proactive outreach email:
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+def analyze_churn_signal(customer_name, recent_tickets):
+    ticket_text = "\n".join(f"- {t}" for t in recent_tickets)
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=512,
+        messages=[{"role": "user", "content": (
+            f"Customer: {customer_name}\n"
+            f"Recent support tickets:\n{ticket_text}\n\n"
+            "Rate churn risk (Low/Medium/High) with a one-sentence reason. "
+            "Then draft a 3-sentence proactive outreach email from their CSM."
+        )}]
+    )
+    return message.content[0].text
+
+tickets = [
+    "Login broken for 3 days -- still waiting on fix",
+    "Exported data is missing columns again",
+    "When is the mobile app getting updated?",
+]
+print(analyze_churn_signal("Acme Corp", tickets))
+```
+
 
 ## Related Reading
 
