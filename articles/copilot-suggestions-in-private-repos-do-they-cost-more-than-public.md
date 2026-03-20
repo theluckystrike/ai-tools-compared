@@ -56,6 +56,17 @@ GitHub previously offered Copilot access for open-source maintainers at no cost.
 
 **Key takeaway:** You cannot "save money" by working primarily in public repositories. The Copilot subscription is all-you-can-eat across all your workspaces.
 
+## Copilot Pricing Comparison Table
+
+| Plan | Monthly Cost | Annual Cost | Users | Features |
+|------|--------------|------------|-------|----------|
+| Individual | $10 | $100 | 1 | Code completions, Chat, Inline suggestions |
+| Individual (annual savings) | - | $100 | 1 | ~17% discount vs monthly billing |
+| Business | $19/user | $228/user | Unlimited | Organization-wide policies, audit logs |
+| Enterprise | $39/user | $468/user | Unlimited | Custom AI models, security policies, SLA |
+
+All plans work identically for public and private repositories. Repository visibility creates no price differentiation.
+
 
 
 ## Are There Any Differences in Features?
@@ -100,6 +111,36 @@ These features apply equally to private repositories and don't change based on r
 
 
 
+## Cost Calculation Examples
+
+**Scenario 1: Small 5-Developer Team**
+- Individual plans (if paying separately): 5 × $10/month = $50/month
+- Better approach: Copilot Business = $19 × 5 = $95/month (includes org-wide policies)
+- Annual savings with Business + annual billing: ($95 × 12) × 0.92 ≈ $1,050
+
+**Scenario 2: Enterprise with 100 Developers**
+- Copilot Individual per person: $10 × 100 = $1,000/month
+- Copilot Business: $19 × 100 = $1,900/month (adds audit logs, org policies)
+- Copilot Enterprise: $39 × 100 = $3,900/month (custom models, advanced security)
+- The choice depends on governance needs, not repository visibility
+
+**Scenario 3: Mixed Public/Private Project**
+- Team working on public open-source AND private enterprise code
+- Cost: Same regardless of repository split
+- A developer with Copilot Pro can switch between public GitHub repos and private company repositories without additional fees
+
+## Hidden Factors That DO Affect Cost
+
+While visibility doesn't matter, other factors legitimately affect your Copilot investment:
+
+**Organization Size Scale:** Business plans (minimum 3 seats typically) become cost-effective around 3+ developers. Individual plans make sense for solo developers.
+
+**Enterprise Audit Requirements:** If your organization requires detailed audit logs showing which suggestions were used in which repositories, Enterprise becomes necessary (cost scales with team size).
+
+**Custom Models:** Enterprise customers can request custom Copilot models trained on proprietary code patterns. This carries premium pricing above base $39/user/month.
+
+**Concurrent Usage Limits:** Higher tiers provide better concurrency—no degradation when multiple team members use Copilot simultaneously.
+
 ## The Bottom Line
 
 
@@ -120,15 +161,17 @@ If you're considering Copilot for your team, the repository visibility shouldn't
 
 
 
-1. How many developers need access
+1. **How many developers need access** (Individual vs Business vs Enterprise)
 
-2. Whether you need Copilot Business or Enterprise features
+2. **Whether you need organization-wide policies** (Business starts here)
 
-3. Annual vs monthly billing (annual saves ~17%)
+3. **Security and audit requirements** (Enterprise for full compliance)
 
+4. **Annual vs monthly billing** (annual saves ~17%)
 
+5. **Scale and concurrency needs** (Enterprise handles large teams better)
 
-The value proposition is straightforward: unlimited Copilot access across all your work, regardless of whether the code is visible to the world or locked behind organization permissions.
+The value proposition is straightforward: unlimited Copilot access across all your work, regardless of whether the code is visible to the world or locked behind organization permissions. Repository visibility is irrelevant to pricing.
 
 
 

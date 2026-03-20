@@ -131,19 +131,85 @@ For Turborepo workflows, Zed handles the editor-side well but lacks some of the 
 
 
 
+## Monorepo-Specific Test Case
+
+To evaluate which assistant suits your team, try this practical test across all tools. Create a feature that involves:
+1. A shared utility package (`packages/shared`)
+2. A consumer package (`packages/web`)
+3. Updates to `turbo.json` task dependencies
+
+**Test prompt:** "Add a new memoization utility to packages/shared/src/cache.ts that prevents redundant API calls. Update the web app to use this utility in its data fetching hook. Ensure the Turborepo cache key includes both the utility and any API responses."
+
+Expected output comparison:
+
+| Tool | Monorepo Understanding | Multi-package Handling | Path Alias Respect | Task Pipeline Awareness |
+|------|----------------------|----------------------|-------------------|--------------------------|
+| Claude Code | Excellent | Excellent | Excellent | Good |
+| Cursor | Excellent | Excellent | Excellent | Excellent |
+| GitHub Copilot | Good | Fair | Good | Poor |
+| Zed | Good | Good | Good | Fair |
+
+Claude Code and Cursor should generate code that:
+- Correctly imports from `@my-org/shared` using your path aliases
+- Understands that changes to the utility may invalidate downstream build cache
+- Suggests appropriate TypeScript configurations for cross-package references
+
+## Real-World Workflow: Feature Implementation Across Packages
+
+Here's a realistic scenario using a Turborepo monorepo:
+
+**Project Structure:**
+```
+packages/
+├── shared/
+│   ├── src/
+│   │   ├── utils/
+│   │   │   ├── api-client.ts
+│   │   │   └── cache.ts
+│   │   └── index.ts
+│   ├── tsconfig.json
+│   └── package.json
+├── web/
+│   ├── src/
+│   │   ├── hooks/
+│   │   │   └── useData.ts
+│   │   └── pages/
+│   └── tsconfig.json
+└── api/
+    ├── src/
+    │   └── handlers/
+    └── tsconfig.json
+turbo.json
+```
+
+**Task:** Implement request deduplication across the monorepo.
+
+With **Cursor**: You describe the requirement, Cursor examines your `turbo.json`, understands the task dependencies, and generates:
+- A deduplication cache in `packages/shared`
+- Integration in `packages/web`'s `useData` hook
+- Recognition that `packages/api` might benefit from the same pattern
+- Proper export from `packages/shared/index.ts`
+
+With **Claude Code**: Similar capability but requires more explicit guidance about file locations. However, it provides excellent explanations of the monorepo structure and potential dependency issues.
+
+With **GitHub Copilot**: Generates good code within individual files but may miss that changes to the shared utility require cache invalidation in dependent packages.
+
 ## Making the Right Choice
 
 
 
-The best AI coding assistant depends on your workflow preferences and monorepo complexity. Claude Code works well for terminal-focused developers who want strong cross-package analysis. Cursor provides the most IDE experience with excellent multi-package awareness. GitHub Copilot offers the lowest learning curve if you already work within GitHub's ecosystem. Zed suits developers who prioritize editor performance above other features.
+The best AI coding assistant depends on your workflow preferences and monorepo complexity:
 
-
+- **Claude Code** works well for terminal-focused developers who want strong cross-package analysis and clear explanations of monorepo behavior
+- **Cursor** provides the most complete IDE experience with excellent multi-package awareness and real-time codebase understanding
+- **GitHub Copilot** offers the lowest learning curve if you're already using GitHub but works better for single-package scenarios
+- **Zed** suits developers who prioritize editor performance above all else
 
 For teams using Turborepo, the key factor is how well the assistant understands workspace boundaries and can generate code that properly imports from other packages using your specific path configurations. Claude Code and Cursor currently lead in this aspect, with both tools demonstrating awareness of monorepo structure and TypeScript project references.
 
+**Recommendation for Turborepo teams:** Cursor is the strongest choice for comprehensive monorepo understanding. Claude Code is excellent if you prefer terminal-based workflows. Test both with your actual monorepo structure before committing to a single tool.
 
-
-Consider testing each option with a small feature that spans at least two packages in your monorepo. This practical test reveals which assistant truly understands your Turborepo setup versus one that only works well within single packages.
+Consider testing each option with the feature spanning packages test described above. This practical evaluation reveals which assistant truly understands your Turborepo setup versus tools that only work well within single packages.
 
 
 
