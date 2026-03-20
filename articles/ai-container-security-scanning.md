@@ -171,6 +171,323 @@ To begin with AI container security scanning:
 
 AI container security scanning represents a significant advancement over traditional vulnerability matching. By bringing contextual analysis and intelligent prioritization, these tools help developers focus on the risks that matter most without overwhelming teams with low-priority findings. The key lies in thoughtful implementation that enhances your security posture without creating friction in the development process.
 
+## Practical Scanning Configuration Examples
+
+### GitHub Actions Workflow with Tiered Scanning
+
+```yaml
+name: Container Security Scanning
+on: [push, pull_request]
+
+jobs:
+  quick-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t myapp:${{ github.sha }} .
+
+      - name: Run fast security scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: myapp:${{ github.sha }}
+          format: 'sarif'
+          output: 'trivy-quick.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload quick scan results
+        if: always()
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-quick.sarif'
+
+  deep-scan:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t myapp:${{ github.sha }} .
+
+      - name: Run comprehensive AI scan
+        uses: anchore/scan-action@v3
+        with:
+          image: myapp:${{ github.sha }}
+          fail-build: true
+          acs-report-enable: true
+
+      - name: Generate AI-powered insights
+        run: |
+          # This represents AI post-processing of scan results
+          python analyze_scan_results.py trivy-results.json
+```
+
+### Kubernetes Deployment Security Scanning
+
+```yaml
+# deploy.yml with security scanning built-in
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+  labels:
+    pod-security.kubernetes.io/enforce: baseline
+    pod-security.kubernetes.io/audit: restricted
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-service
+  template:
+    metadata:
+      labels:
+        app: web-service
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsReadOnlyRootFilesystem: true
+
+      containers:
+      - name: web
+        image: myapp:sha-abc123
+
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+```
+
+## Vulnerability Prioritization Scoring
+
+AI container scanners use multi-factor scoring beyond simple severity ratings:
+
+### Sample Vulnerability Scoring Calculation
+
+**CVE-2026-12345**: OpenSSL remote code execution
+
+```
+Base Severity (CVSS): 9.8/10 (CRITICAL)
+
+Context Factors:
++ Package is explicitly used: +1.0
++ Exposed to internet traffic: +0.5
++ No WAF protection: +0.3
++ Runs as root: +0.2
+- Pod security context restrictive: -0.3
+- Service is internal-only: -0.5
+
+AI Risk Score: 9.8 + 1.0 + 0.5 + 0.3 + 0.2 - 0.3 - 0.5 = 10.0
+
+Recommendation: IMMEDIATE PATCH (within 24 hours)
+```
+
+**CVE-2026-67890**: Low-risk logging library bug
+
+```
+Base Severity (CVSS): 4.2/10 (MEDIUM)
+
+Context Factors:
++ Package is transitive dependency: 0.0
+- Package is not actively used in code: -0.5
+- Limited security impact path: -0.3
+- Service is read-only operational: -0.2
+
+AI Risk Score: 4.2 + 0.0 - 0.5 - 0.3 - 0.2 = 3.2
+
+Recommendation: MONITOR, NO PATCH REQUIRED (unless updating for other reasons)
+```
+
+## Integration Patterns: Build vs. Runtime vs. Registry
+
+### Pattern 1: Build-Time Scanning (Shift Left)
+
+```dockerfile
+FROM alpine:3.18 AS scan
+RUN apk add --no-cache trivy
+COPY . /workspace
+WORKDIR /workspace
+RUN trivy fs --exit-code 1 --no-progress .
+
+FROM node:20-alpine AS deps
+COPY package*.json ./
+RUN npm ci --only=production
+
+FROM node:20-alpine
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+CMD ["node", "index.js"]
+```
+
+**Pros**: Catches vulnerabilities before image reaches registry
+**Cons**: Slows down build process
+
+### Pattern 2: Registry Scanning
+
+```python
+# Push hook that triggers scanning
+import docker
+import subprocess
+
+client = docker.from_env()
+
+def scan_on_push(image_name):
+    # Push to registry
+    client.images.push(image_name)
+
+    # Trigger registry scan
+    subprocess.run([
+        'trivy', 'image',
+        f'registry.example.com/{image_name}',
+        '--format', 'json',
+        '--output', 'scan-results.json'
+    ])
+
+    # Parse results and update dashboard
+    parse_and_report_results('scan-results.json')
+```
+
+**Pros**: Doesn't impact local development
+**Cons**: Vulnerabilities detected after build
+
+### Pattern 3: Runtime Monitoring
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: runtime-monitor
+spec:
+  containers:
+  - name: app
+    image: myapp:latest
+    volumeMounts:
+    - name: socket
+      mountPath: /var/run/docker.sock
+
+  - name: ai-security-monitor
+    image: security-monitor:latest
+    env:
+    - name: SCAN_INTERVAL
+      value: "300"  # 5 minutes
+    - name: AI_SCORING
+      value: "true"
+    volumeMounts:
+    - name: socket
+      mountPath: /var/run/docker.sock
+```
+
+**Pros**: Detects runtime behavioral anomalies
+**Cons**: Requires additional infrastructure
+
+## Scan Result Analysis and Action
+
+### Processing Scan Output
+
+```python
+import json
+from dataclasses import dataclass
+
+@dataclass
+class Vulnerability:
+    cve: str
+    package: str
+    severity: str
+    ai_risk_score: float
+    recommendation: str
+
+def process_scan_results(scan_file: str):
+    with open(scan_file) as f:
+        results = json.load(f)
+
+    vulnerabilities = []
+
+    for vuln in results['Results'][0]['Vulnerabilities']:
+        risk_score = calculate_ai_risk_score(vuln)
+        recommendation = get_ai_recommendation(risk_score)
+
+        vulnerabilities.append(Vulnerability(
+            cve=vuln['VulnerabilityID'],
+            package=vuln['PkgName'],
+            severity=vuln['Severity'],
+            ai_risk_score=risk_score,
+            recommendation=recommendation
+        ))
+
+    return sorted(vulnerabilities, key=lambda x: x.ai_risk_score, reverse=True)
+
+def calculate_ai_risk_score(vuln):
+    base_score = cvss_to_numeric(vuln.get('CVSS', {}))
+
+    # AI context adjustments
+    if is_exploitable_in_context(vuln):
+        base_score += 1.5
+    if is_exposed_to_network(vuln):
+        base_score += 0.5
+    if has_workaround(vuln):
+        base_score -= 0.5
+
+    return min(max(base_score, 0), 10)
+```
+
+## False Positive Management
+
+AI scanners occasionally flag non-issues. Establish a process for handling:
+
+```yaml
+# .trivyignore file in repository root
+# Declare intentional exceptions
+AVD-DS-0001:
+  expiry_date: 2026-12-31
+  reason: "Acceptable risk, monitoring mitigated"
+
+CVE-2025-1234:
+  expiry_date: 2026-06-30
+  reason: "Vulnerability not exploitable in our architecture"
+  details: "This package is not exposed to untrusted input"
+```
+
+## Measuring Scanning Program Effectiveness
+
+Track key metrics over time:
+
+| Metric | Target | Measurement |
+|--------|--------|------------|
+| Mean Time to Patch (MTTP) | < 7 days | Days from vulnerability disclosure to patch deployment |
+| Scan Coverage | 100% | Percentage of images scanned before production deployment |
+| False Positive Rate | < 5% | Invalid alerts vs. total alerts |
+| Critical Vulnerabilities | 0 | Unpatched CVSS >= 9.0 in production |
+| Detection Latency | < 1 hour | Time from image push to scan completion |
+
 
 ## Related Reading
 
