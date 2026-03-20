@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tool for Environmental Scientists Reporting"
-description:"Discover how AI tools improve environmental reporting workflows, from data analysis to compliance documentation."
+description: "Discover how AI tools improve environmental reporting workflows, from data analysis to compliance documentation."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-environmental-scientists-reporting/
@@ -123,6 +123,46 @@ Several factors should influence your selection:
 Tools trained on scientific and environmental content generally produce more accurate output for your field than general-purpose AI systems, so look for evidence of scientific writing experience in the tool's training data. Environmental reports often contain sensitive information about contamination sites, proprietary operations, or protected species locations, so ensure any tool you use meets your organization's data handling requirements. Your reporting needs likely differ from other environmental professionals, and tools that allow customization—adjusting output format, incorporating organization-specific terminology, or integrating with existing templates—provide more practical value than rigid systems. Understanding how an AI tool reaches its conclusions matters for scientific work, so look for systems that explain their reasoning rather than providing opaque outputs.
 
 
+
+## Practical Prompt Templates
+
+**Discharge Monitoring Report Narrative:**
+
+```
+Write a DMR narrative for an NPDES permit holder.
+
+Facility: [name], Permit: [number], Period: [month/year], Outfall: [number]
+
+Results vs. permit limits:
+- pH: [range] measured vs. [limit] permit
+- TSS: [X] mg/L avg vs. [Y] mg/L permit limit
+- BOD5: [X] mg/L avg vs. [Y] mg/L permit limit
+- Flow: [min/max/avg MGD]
+
+Exceedances: [none / list parameters and values]
+
+Write: (1) Compliance status summary, (2) Exceedance narrative with
+probable cause and corrective actions taken (if applicable),
+(3) Data quality notes. Use EPA DMR language conventions.
+```
+
+**Environmental Impact Assessment Methodology Section:**
+
+```
+Write the Methodology section for an Environmental Impact Assessment.
+
+Project: [type, e.g., wetland delineation for commercial development]
+Regulations: [e.g., Section 404 CWA, state wetland rules]
+Survey methods: [field methods, sampling protocols, equipment used]
+Survey dates: [dates and conditions]
+Data sources: [databases and historical records consulted]
+
+Format: 400-600 words. Include: Study Area Description, Methods,
+Data Limitations. Use passive voice and past tense per scientific
+reporting standards.
+```
+
+Always verify regulatory citations against current CFR or applicable state code before submitting -- AI may reference superseded regulatory language.
 
 ## Real-World Applications
 
