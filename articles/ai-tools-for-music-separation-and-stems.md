@@ -8,8 +8,9 @@ permalink: /ai-tools-for-music-separation-and-stems/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

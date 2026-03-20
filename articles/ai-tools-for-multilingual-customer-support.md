@@ -7,7 +7,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-multilingual-customer-support/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true

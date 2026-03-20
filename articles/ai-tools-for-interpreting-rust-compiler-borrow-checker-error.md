@@ -7,7 +7,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-interpreting-rust-compiler-borrow-checker-error/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

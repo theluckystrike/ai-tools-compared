@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-resolving-docker-build-context-permission-denie/
 categories: [guides]
-tags: [docker, devops, troubleshooting]
+tags: [ai-tools-compared, docker, devops, troubleshooting, artificial-intelligence]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
 ---
