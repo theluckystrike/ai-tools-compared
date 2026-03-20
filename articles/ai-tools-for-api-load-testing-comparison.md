@@ -12,6 +12,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
+
 
 Load testing catches performance regressions before production. Traditional tools require hand-written scripts, manual threshold tuning, and complex result interpretation. AI-assisted load testing tools auto-generate test scripts from API specs, suggest realistic load profiles, and interpret results in plain English.
 
@@ -453,4 +455,4 @@ Start with Artillery (YAML simplicity) or k6 (JavaScript familiarity). Use Locus
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+{% endraw %}

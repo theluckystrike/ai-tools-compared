@@ -12,6 +12,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 
 # Copilot vs Cursor vs Windsurf: Inline Diff Preview Comparison
@@ -439,3 +441,4 @@ Test all three (most offer free trials) before committing to a long-term subscri
 - [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
