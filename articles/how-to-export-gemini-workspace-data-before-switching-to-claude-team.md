@@ -293,5 +293,8 @@ Before canceling your Gemini subscription:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
+- [How to Export Grammarly Personal Dictionary Before.](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
+- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

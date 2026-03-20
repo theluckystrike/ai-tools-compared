@@ -237,5 +237,8 @@ For most Node.js applications implementing Redis caching, testing both tools wit
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor vs Copilot for Adding Type Hints to Untyped.](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
+- [Copilot vs Cursor for Writing Comprehensive Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
+- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

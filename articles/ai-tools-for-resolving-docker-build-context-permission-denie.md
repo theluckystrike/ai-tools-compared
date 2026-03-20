@@ -265,6 +265,8 @@ Create a `DOCKER.md` file in your project explaining required permissions:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Troubleshoot Kubernetes Pod CrashLoopBackOff Errors](/ai-tools-compared/how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/)
+- [AI Tools for Generating Docker Compose Files for Complex.](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in.](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -173,5 +173,8 @@ The ability to generate visualizations from code snippets democratizes algorithm
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+- [AI Tools for Creating dbt Documentation Blocks from.](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

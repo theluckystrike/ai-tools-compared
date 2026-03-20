@@ -234,6 +234,8 @@ For team environments: Copilot's integration with GitHub and enterprise features
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [Best AI Tools for TypeScript Type Inference and Generic.](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte.](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

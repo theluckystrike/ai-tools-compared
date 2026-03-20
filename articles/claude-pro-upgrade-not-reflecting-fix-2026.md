@@ -286,7 +286,8 @@ To avoid this issue in the future:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [Claude Giving Outdated Information? How to Fix This.](/ai-tools-compared/claude-giving-outdated-information-how-to-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -296,5 +296,8 @@ Test every AI-generated component. Use automated tools, screen readers, and keyb
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for Using AI to Write Comprehensive.](/ai-tools-compared/effective-strategies-for-using-ai-to-write-comprehensive-api/)
+- [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

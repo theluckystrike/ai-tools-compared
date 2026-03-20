@@ -268,5 +268,8 @@ The ideal approach often combines tools—using Claude for initial drafts, Copil
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Jest Tests for GraphQL Resolvers.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

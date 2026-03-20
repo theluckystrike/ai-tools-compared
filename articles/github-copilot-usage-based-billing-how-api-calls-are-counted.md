@@ -176,5 +176,8 @@ For consistent daily users, the subscription model might offer better value thro
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
+- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

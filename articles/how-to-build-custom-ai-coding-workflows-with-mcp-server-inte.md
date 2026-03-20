@@ -261,5 +261,8 @@ This modular approach lets you assemble sophisticated automation pipelines from 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Build a Model Context Protocol Server That.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [AI Coding Assistant Comparison for React Component.](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

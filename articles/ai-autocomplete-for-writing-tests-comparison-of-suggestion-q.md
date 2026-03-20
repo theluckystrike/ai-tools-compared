@@ -260,7 +260,8 @@ For teams writing extensive test suites, the time saved from better suggestions 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Autocomplete for Test Files: How Well Different Tools.](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [AI Tools for Writing Jest Tests for GraphQL Resolvers.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

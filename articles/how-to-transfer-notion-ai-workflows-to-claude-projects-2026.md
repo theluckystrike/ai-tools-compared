@@ -292,7 +292,8 @@ Most teams find that after migration, they build additional automation they coul
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Notion AI Database Automations to Coda AI](/ai-tools-compared/how-to-transfer-notion-ai-database-automations-to-coda-ai/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

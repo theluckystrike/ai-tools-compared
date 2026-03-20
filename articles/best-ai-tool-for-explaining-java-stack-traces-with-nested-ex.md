@@ -265,5 +265,8 @@ ChatGPT serves as a solid secondary option for common exception patterns, while 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

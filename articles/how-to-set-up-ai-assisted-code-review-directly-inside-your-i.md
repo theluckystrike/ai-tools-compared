@@ -317,5 +317,8 @@ Keep your AI tools updated—vendors regularly improve their analysis capabiliti
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [AI Code Completion for Writing Shell Commands Inside.](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

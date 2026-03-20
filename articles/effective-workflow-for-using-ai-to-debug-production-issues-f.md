@@ -212,5 +212,8 @@ This allows rapid context gathering when time is critical.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [How to Use AI to Debug Flaky Integration Tests in CI.](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
+- [How to Use AI to Interpret Elixir GenServer Crash.](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

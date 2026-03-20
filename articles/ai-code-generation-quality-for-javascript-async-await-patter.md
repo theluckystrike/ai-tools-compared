@@ -345,5 +345,8 @@ AI coding tools continue to improve their async code generation, but human revie
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Code Suggestion Quality When Working With Environment.](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
+- [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

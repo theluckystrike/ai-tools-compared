@@ -297,5 +297,8 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
+- [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

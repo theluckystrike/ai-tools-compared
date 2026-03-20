@@ -362,5 +362,8 @@ AI coding assistants transform technical debt from an overwhelming problem into 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
+- [AI Coding Assistants for TypeScript GraphQL Resolver and.](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -284,6 +284,8 @@ This workflow reduces the manual effort of identifying edge cases while ensuring
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Write Pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
+- [Best Workflow for AI-Assisted Test Driven Development.](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Error Documentation](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

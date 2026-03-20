@@ -328,7 +328,8 @@ This approach balances AI productivity benefits against regulatory requirements,
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Coding Tool GDPR Compliance Checklist for European.](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
+- [How to Evaluate AI Coding Tool Model Training Data.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
+- [How to Evaluate AI Coding Tool Data Processing.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

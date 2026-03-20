@@ -222,5 +222,8 @@ If you've tried these solutions and still experience frequent wrong suggestion a
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting.](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
+- [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete: A Practical Guide](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

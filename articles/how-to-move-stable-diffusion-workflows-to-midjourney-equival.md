@@ -318,5 +318,8 @@ For complex pipelines requiring inpainting, consider maintaining Stable Diffusio
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Move Stable Diffusion Workflows to Midjourney.](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
+- [How to Move Midjourney Style References to Stable Diffusion LoRA Training](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

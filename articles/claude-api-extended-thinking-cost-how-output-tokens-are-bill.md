@@ -263,7 +263,8 @@ response, cost = track_request("Explain the time complexity of merge sort")
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Claude API Batch Processing: How Much Cheaper Than.](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

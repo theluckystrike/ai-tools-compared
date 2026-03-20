@@ -192,5 +192,8 @@ Cursor continues evolving its AI features, and new command identifiers may repla
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

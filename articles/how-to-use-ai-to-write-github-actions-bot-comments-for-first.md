@@ -223,6 +223,8 @@ When implementing AI for bot comments, keep these considerations in mind:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Write GitHub Release Tag Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
+- [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

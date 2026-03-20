@@ -267,5 +267,8 @@ The combination of AI's pattern-matching capability with disciplined verificatio
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Best Workflow for AI-Assisted Test Driven Development.](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
+- [Effective Strategies for Using AI to Write Comprehensive.](/ai-tools-compared/effective-strategies-for-using-ai-to-write-comprehensive-api/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

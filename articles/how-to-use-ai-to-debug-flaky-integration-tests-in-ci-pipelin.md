@@ -283,7 +283,8 @@ def db_connection():
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
+- [Effective Workflow for Using AI to Debug Production.](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [How to Use AI to Generate Pagination Edge Case Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

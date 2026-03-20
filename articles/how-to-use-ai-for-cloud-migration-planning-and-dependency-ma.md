@@ -246,5 +246,8 @@ Ask AI to generate observability dashboards that compare on-premise versus cloud
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Automating Cloud Security Compliance Scanning in CI CD](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [Best AI Tools for Cloud Cost Optimization Across AWS, Azure, and GCP](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
+- [How to Use AI for Capacity Planning and Resource Right.](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

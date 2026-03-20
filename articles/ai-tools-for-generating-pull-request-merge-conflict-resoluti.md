@@ -318,6 +318,8 @@ The AI recognized that the incoming changes moved discount logic to the model wh
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Generating Dependency Update Pull Request.](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Pandas Merge and Join Operations.](/ai-tools-compared/ai-tools-for-generating-pandas-merge-and-join-operations-fro/)
+- [Best AI for Generating Pandas Code to Merge Data from.](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

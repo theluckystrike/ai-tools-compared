@@ -151,7 +151,8 @@ Create a minimal test file with common patterns such as a function definition, l
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

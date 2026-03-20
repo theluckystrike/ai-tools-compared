@@ -265,6 +265,8 @@ For simple staging models, AI generation works well. For complex business logic,
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Creating dbt Documentation Blocks from.](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing.](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

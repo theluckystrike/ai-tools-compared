@@ -173,5 +173,8 @@ The best choice depends on your specific workflow, budget, and the complexity of
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
+- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [Which AI Writes Better PowerShell Scripts for Windows.](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

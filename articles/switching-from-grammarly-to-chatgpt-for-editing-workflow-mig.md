@@ -226,5 +226,8 @@ Pay attention to how ChatGPT handles sensitive information. Avoid pasting confid
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Search to Perplexity Pro Search.](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

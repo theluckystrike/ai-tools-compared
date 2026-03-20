@@ -312,7 +312,8 @@ For teams maintaining large component libraries, the time invested in generating
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Generating Cypress Component Test.](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [AI Tools for Creating Property-Based Test Cases Using.](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
+- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

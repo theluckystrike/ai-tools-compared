@@ -251,7 +251,8 @@ AI excels at breaking down each of these into practical terms developers can und
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI-Powered Platform Engineering Tools for Developer.](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
+- [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+- [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

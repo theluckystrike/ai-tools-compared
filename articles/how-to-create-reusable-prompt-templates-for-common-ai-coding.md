@@ -247,7 +247,8 @@ Building a prompt template library takes initial investment but pays dividends t
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing GitHub Actions Reusable.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom Instructions for AI Tools to.](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
-{% endraw %}
+Built by

@@ -281,7 +281,8 @@ The right choice depends on your workflow preferences, budget, and project compl
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Way to Configure CursorRules for Python FastAPI.](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [Best Practices for Combining AI Code Generation with.](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

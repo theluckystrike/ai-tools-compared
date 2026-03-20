@@ -206,5 +206,8 @@ This targeted approach keeps instructions relevant to the task at hand rather th
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

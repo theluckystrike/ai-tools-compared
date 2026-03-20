@@ -252,6 +252,8 @@ The right choice depends on your project complexity, team setup, and workflow pr
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic.](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

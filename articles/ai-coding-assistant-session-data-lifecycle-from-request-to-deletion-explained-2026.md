@@ -273,6 +273,8 @@ To maintain control over your AI coding assistant data:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Audit What Source Code AI Coding Tools Transmit.](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

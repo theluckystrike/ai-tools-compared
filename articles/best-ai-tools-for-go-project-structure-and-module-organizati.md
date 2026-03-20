@@ -248,5 +248,8 @@ The most effective approach combines AI assistance with Go community conventions
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [Does WindSurf AI Send Entire Project Context or Just.](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

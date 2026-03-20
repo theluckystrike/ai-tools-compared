@@ -190,4 +190,6 @@ All four tools can significantly speed up bash script development, but the best 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-
+- [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [Best AI Tools for Writing Ansible Playbooks and Roles Automatically 2026](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
+- [Best AI Tools for Writing GitHub Actions Reusable.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)

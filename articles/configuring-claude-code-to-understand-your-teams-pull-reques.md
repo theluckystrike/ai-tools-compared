@@ -222,5 +222,8 @@ Document the reasoning behind critical checklist items. When team members unders
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
+- [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

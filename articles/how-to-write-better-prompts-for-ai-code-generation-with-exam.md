@@ -251,5 +251,8 @@ Document your successful prompt patterns for recurring tasks. This creates a per
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Structure Prompts for AI to Generate Idiomatic.](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
+- [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

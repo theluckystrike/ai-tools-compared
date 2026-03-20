@@ -246,5 +246,8 @@ The quality improvements compound over time. Small, consistent refactoring with 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

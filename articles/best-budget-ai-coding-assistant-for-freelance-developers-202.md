@@ -264,5 +264,8 @@ AI coding assistants have crossed the threshold from novelty to necessity. For f
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
+- [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)
+- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

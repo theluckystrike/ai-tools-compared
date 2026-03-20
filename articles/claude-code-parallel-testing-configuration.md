@@ -484,6 +484,8 @@ export default defineConfig({
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
+- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

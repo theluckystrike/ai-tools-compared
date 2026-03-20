@@ -270,6 +270,8 @@ Consider these factors when selecting a tool:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Generating SQL Recursive Queries.](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [AI Tools for Generating Jest Mock Implementations for.](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
+- [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -280,7 +280,8 @@ No AI tool is perfect. The most effective migration strategy uses AI as a time-s
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Convert Between SQL Dialects.](/ai-tools-compared/how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/)
+- [AI Tools for Converting Raw JSON API Responses Into.](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -400,7 +400,8 @@ Most "not finding recent results" issues resolve through scope settings, query r
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

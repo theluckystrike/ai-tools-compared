@@ -258,5 +258,8 @@ All four tools can generate accurate pandas code for reading Parquet files and p
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How Well Do AI Tools Handle Go Generics Type Parameter Constraints](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [Best AI for Analyzing Google Analytics Data Exports with.](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
+- [AI Code Completion for Java Record Classes and Sealed.](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -247,6 +247,8 @@ With proper configuration, AI autocomplete becomes a helpful colleague who knows
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from Copilot Ghost Text to Cursor Tab Autocomplete: A Practical Guide](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
+- [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
+- [How to Reduce AI Coding Tool Costs Without Losing.](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

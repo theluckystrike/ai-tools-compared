@@ -343,6 +343,8 @@ npm install -g myapp
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Write GitHub Actions Bot Comments for.](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
+- [How to Use AI to Write Security Advisory Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
+- [Effective Strategies for Using AI to Write Comprehensive.](/ai-tools-compared/effective-strategies-for-using-ai-to-write-comprehensive-api/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -341,6 +341,8 @@ Permission denied errors in Claude Code usually stem from executable permissions
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers? Privacy Analysis](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

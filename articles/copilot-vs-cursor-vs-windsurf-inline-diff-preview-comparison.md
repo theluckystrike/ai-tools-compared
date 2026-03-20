@@ -204,5 +204,8 @@ Choose Windsurf if you want a middle ground—detailed diffs available on demand
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

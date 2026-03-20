@@ -195,5 +195,8 @@ AI tools for interpreting Terraform plan errors with provider version conflicts 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [AI Tools for Interpreting Python Traceback Errors in.](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)
+- [Best AI Assistant for Debugging Swift Compiler Errors in.](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

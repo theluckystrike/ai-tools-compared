@@ -295,5 +295,8 @@ If your refund request is denied, ask for specific reasons. You may be able to a
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor Pro Slow Model vs Fast Model: Credits System.](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in.](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
+- [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

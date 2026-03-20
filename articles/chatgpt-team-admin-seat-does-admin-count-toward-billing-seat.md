@@ -175,6 +175,8 @@ False. All user seats in your workspace count toward billing, regardless of role
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT Canvas Feature - Is It Included in Plus or Team Only?](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward.](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 
-Built by theluckystrike — More at https://zovo.one
-{% endraw %}
+Built by

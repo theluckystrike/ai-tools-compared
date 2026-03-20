@@ -250,5 +250,8 @@ The transition from Copilot to Codeium requires an adjustment period, but instal
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate From Copilot for Neovim to Claude Code.](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

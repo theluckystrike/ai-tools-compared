@@ -288,5 +288,8 @@ Compare these metrics against purely manual development times to quantify AI's v
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Code Generation Quality for JavaScript Async Await.](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [Best Practices for Documenting AI-Generated Code for.](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
+- [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

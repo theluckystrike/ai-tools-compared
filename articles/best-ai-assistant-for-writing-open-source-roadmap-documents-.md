@@ -361,6 +361,8 @@ For projects with hundreds of issues, Claude's larger context window provides ad
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Writing Open Source Plugin.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Assistant for Drafting Open Source Partnership.](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefit From Contributions](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -227,4 +227,6 @@ Neglecting third-party risks: If your AI tool provider experiences a breach, you
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+- [Best Practices for Using AI Coding Tools in HIPAA.](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned.](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)

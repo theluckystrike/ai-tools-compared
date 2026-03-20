@@ -162,5 +162,8 @@ When your CLAUDE MD file is and well-organized, AI assistants can generate more 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing CLAUDE.md Files That Define Your Project's API Versioning Strategy](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Writing CLAUDE.md Files That Teach AI Your Project-Specific Error Handling Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

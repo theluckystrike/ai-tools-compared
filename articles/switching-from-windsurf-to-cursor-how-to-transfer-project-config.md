@@ -289,5 +289,8 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+- [How to Migrate Cursor Rules File to Windsurf Rules.](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [How to Migrate WindSurf AI Rules to Cursor .cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

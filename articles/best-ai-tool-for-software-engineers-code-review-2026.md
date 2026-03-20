@@ -181,7 +181,8 @@ The best approach remains pragmatic: evaluate tools against your specific needs,
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Free AI Code Review Tools That Integrate With GitHub (2026)](/ai-tools-compared/free-ai-code-review-tools-that-integrate-with-github-2026/)
+- [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
+- [Gemini Code Assist Enterprise Pricing: Per-Developer.](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

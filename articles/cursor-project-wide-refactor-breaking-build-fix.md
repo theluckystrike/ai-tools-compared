@@ -363,5 +363,8 @@ Avoid future build breaks with these practices:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [Cursor AI Slow on Large Monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

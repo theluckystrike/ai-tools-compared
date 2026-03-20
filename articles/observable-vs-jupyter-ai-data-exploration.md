@@ -285,5 +285,8 @@ The key is matching your data exploration needs to the platform's strengths rath
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
+- [Prefect vs Dagster for AI Workflows](/ai-tools-compared/prefect-vs-dagster-ai-workflows/)
+- [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

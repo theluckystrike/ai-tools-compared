@@ -210,5 +210,8 @@ Both AI assistants reduce the time spent writing repetitive boilerplate, but the
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
+- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard.](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

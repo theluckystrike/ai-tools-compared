@@ -338,6 +338,8 @@ After running your conversion, review prompts containing these elements manually
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
+- [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

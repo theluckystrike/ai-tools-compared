@@ -195,7 +195,8 @@ Understanding these hidden limits helps you make informed decisions about your C
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [GitHub Copilot Usage-Based Billing: How API Calls Are.](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
+- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

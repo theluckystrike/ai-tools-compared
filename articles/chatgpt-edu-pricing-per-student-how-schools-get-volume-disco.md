@@ -294,5 +294,8 @@ The per-student pricing model scales predictably, making it easier to build into
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
+- [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [ChatGPT Enterprise Minimum Seats and Contract Length.](/ai-tools-compared/chatgpt-enterprise-minimum-seats-and-contract-length-require/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

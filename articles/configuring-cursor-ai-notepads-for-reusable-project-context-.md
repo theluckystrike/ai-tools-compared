@@ -248,6 +248,8 @@ This approach creates a single source of truth that both humans and AI can refer
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI Rules Files: How to Customize AI Behavior for.](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [Best Way to Structure Claude MD File for Python Django.](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [Does WindSurf AI Send Entire Project Context or Just.](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

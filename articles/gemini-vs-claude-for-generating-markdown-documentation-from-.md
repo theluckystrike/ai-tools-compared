@@ -282,6 +282,8 @@ Remember that AI-generated documentation requires human review. These tools prov
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Gemini vs Claude for Summarizing Quarterly Earnings Call.](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
+- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
+- [Claude vs Gemini for Converting Jupyter Notebooks to.](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

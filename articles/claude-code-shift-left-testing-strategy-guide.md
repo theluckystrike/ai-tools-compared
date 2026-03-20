@@ -133,4 +133,6 @@ Collect feedback from developers on Claude Code's test generation usefulness. Re
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [Claude Code Parallel Testing Configuration - Complete.](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)

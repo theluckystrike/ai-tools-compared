@@ -292,6 +292,8 @@ AI can help maintainers craft these guidelines in a way that is firm but welcomi
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Writing Open Source Plugin.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [Best AI Assistant for Generating Open Source Release.](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

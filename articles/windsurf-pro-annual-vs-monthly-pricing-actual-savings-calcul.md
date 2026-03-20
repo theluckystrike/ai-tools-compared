@@ -261,5 +261,8 @@ Support tiers: Enterprise support may carry additional costs. Evaluate whether b
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Midjourney Yearly Subscription Savings vs Monthly.](/ai-tools-compared/midjourney-yearly-subscription-savings-vs-monthly-billing-br/)
+- [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
+- [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -288,7 +288,8 @@ AI tools have boundaries you should recognize:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Playwright Tests for Iframe.](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
+- [How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
+- [How to Structure Prompts for AI to Generate Idiomatic.](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -290,6 +290,8 @@ Regular measurement reveals which strategies work best for your team and helps i
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Practices for Documenting AI-Generated Code for.](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
+- [Best Strategies for Providing Examples to AI Coding.](/ai-tools-compared/best-strategies-for-providing-examples-to-ai-coding-tools-fo/)
+- [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

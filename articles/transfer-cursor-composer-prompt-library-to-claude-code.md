@@ -303,5 +303,8 @@ Run this script whenever you update your prompt library to keep both systems in 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

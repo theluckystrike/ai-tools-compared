@@ -268,7 +268,8 @@ The combination of AI-generated configurations with automated validation creates
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Monitoring Kubernetes Cluster Health and.](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
+- [AI Tools for Generating Docker Compose Files for Complex.](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
+- [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

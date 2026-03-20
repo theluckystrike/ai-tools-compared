@@ -290,7 +290,8 @@ Save critical work locally and don't rely solely on Code Interpreter for importa
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [ChatGPT Plus Subscription Not Activating Fix](/ai-tools-compared/chatgpt-plus-subscription-not-activating-fix/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

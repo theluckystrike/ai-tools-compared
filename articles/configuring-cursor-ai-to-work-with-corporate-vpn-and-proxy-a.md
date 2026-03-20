@@ -233,5 +233,8 @@ This approach requires more local resources but provides complete independence f
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate Cursor AI Snippets and Templates to.](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [Cursor AI Model Selection Guide: Which Model for Which.](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

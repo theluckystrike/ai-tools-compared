@@ -278,6 +278,8 @@ Experiment with free tiers to determine which workflow matches your team's prefe
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [AI Tools for Generating Website Hero Images Compared](/ai-tools-compared/ai-tools-for-generating-website-hero-images-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

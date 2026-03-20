@@ -229,5 +229,8 @@ For optimal results, keep your CursorRules focused and specific. Include example
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [Cursor vs Windsurf for Building Next.js App from Design Mockup](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

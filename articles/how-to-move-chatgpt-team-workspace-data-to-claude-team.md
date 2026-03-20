@@ -205,5 +205,8 @@ Document your migration process internally so future team members understand how
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Export Gemini Workspace Data Before Switching to.](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

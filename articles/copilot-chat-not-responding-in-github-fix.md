@@ -151,7 +151,8 @@ After reinstalling, go through the authentication flow again, explicitly authori
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [Best Practices for Writing GitHub Copilot Custom.](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

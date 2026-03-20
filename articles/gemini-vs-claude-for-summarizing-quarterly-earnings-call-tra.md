@@ -285,5 +285,8 @@ Both models handle earnings call transcripts effectively. Your choice ultimately
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Claude vs Gemini for Converting Jupyter Notebooks to.](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
+- [Gemini vs Claude for Generating Markdown Documentation.](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

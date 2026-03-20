@@ -153,5 +153,8 @@ Both tools continue to evolve, and the gap in capabilities may narrow over time.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Cursor vs Copilot for Implementing Stripe Payment.](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

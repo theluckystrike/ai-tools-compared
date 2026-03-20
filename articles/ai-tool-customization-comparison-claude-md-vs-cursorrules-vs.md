@@ -289,5 +289,8 @@ Share configurations with your team. Consistency matters more than perfection. A
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Writing CLAUDE MD Files That Define Your Project's API Versioning Strategy for AI](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

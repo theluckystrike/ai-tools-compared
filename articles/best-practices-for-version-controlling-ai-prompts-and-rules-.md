@@ -253,5 +253,8 @@ Version controlling AI prompts and rules files transforms them from ephemeral te
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Practices for AI-Assisted Code Review Response and Revision Workflow](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
+- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for Maintaining AI Tool Configuration.](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

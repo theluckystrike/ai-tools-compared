@@ -269,6 +269,8 @@ The time investment in learning these tools pays dividends immediately. Configur
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI IDE Features for Pair Programming with Remote.](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Best AI Inline Chat Features in VSCode Compared to.](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Best AI IDE Features for Refactoring Class Hierarchies.](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

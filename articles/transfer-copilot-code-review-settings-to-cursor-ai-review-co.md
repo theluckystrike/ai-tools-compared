@@ -253,5 +253,8 @@ Solution: Re-authenticate via Cursor's GitHub settings panel
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer GitHub Copilot Organization Settings.](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [How to Switch from Cursor to Claude Code Without Losing.](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

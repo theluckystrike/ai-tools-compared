@@ -338,5 +338,8 @@ Periodically review your configuration:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Optimize Your AI Coding Tool Configuration for Specific Project Types](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [How to Use AI Coding Tools Without Becoming Dependent on Autocomplete](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
+- [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

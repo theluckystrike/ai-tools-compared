@@ -267,6 +267,8 @@ The overrides field (introduced in NPM 8.3) provides a safer middle ground by le
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [How to Use AI to Resolve Python Import Circular Dependency Errors Step by Step](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
+- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors.](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

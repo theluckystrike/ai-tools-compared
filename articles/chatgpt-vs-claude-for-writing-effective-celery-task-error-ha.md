@@ -262,7 +262,8 @@ The choice ultimately depends on your requirements. If you're building a system 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy.](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart.](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

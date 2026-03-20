@@ -258,6 +258,8 @@ Maintain dashboard templates separately from generated configurations. Template 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Generating Dependency Update Pull Request.](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [Best AI Assistant for Building Grafana Dashboard Panels.](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
+- [AI Tools for Generating Docker Compose Files for Complex.](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

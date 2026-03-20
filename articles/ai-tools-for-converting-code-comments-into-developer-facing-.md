@@ -242,6 +242,8 @@ Many tools integrate directly with documentation hosting platforms, automaticall
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Converting Raw JSON API Responses Into.](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [AI Code Completion for Writing Shell Commands Inside.](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

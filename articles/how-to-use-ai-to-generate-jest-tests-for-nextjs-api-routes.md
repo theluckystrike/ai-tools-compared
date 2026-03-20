@@ -357,5 +357,8 @@ This shows you which parts of your API routes remain untested, helping you ident
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Playwright Tests for Iframe.](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
+- [How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
+- [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

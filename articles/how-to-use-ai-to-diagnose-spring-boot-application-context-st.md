@@ -275,6 +275,8 @@ AI can also suggest adding integration tests that verify your beans initialize c
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Claude for Generating Java Spring Boot.](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
+- [AI Tools for Resolving SSL Certificate Chain.](/ai-tools-compared/ai-tools-for-resolving-ssl-certificate-chain-verification-er/)
+- [Best AI Coding Tools for Java Microservices with Spring.](/ai-tools-compared/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

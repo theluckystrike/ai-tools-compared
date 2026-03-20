@@ -280,6 +280,8 @@ Use the AI-generated insights to move beyond simple pass/fail reporting. Instead
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Create Milestone Planning Documents.](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [How to Use AI to Create Data Pipeline Orchestration.](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

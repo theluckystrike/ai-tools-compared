@@ -260,6 +260,8 @@ Both tools significantly speed up boilerplate generation. For the best results, 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Generating Cypress Component Test.](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard.](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

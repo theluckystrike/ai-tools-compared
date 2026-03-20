@@ -447,6 +447,8 @@ Some AI tools require a restart after adding MCP server configuration. Close and
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
+- [How to Set Up Model Context Protocol for Feeding Jira.](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

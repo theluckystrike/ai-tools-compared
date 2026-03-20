@@ -214,5 +214,8 @@ Consider parametrization for testing multiple scenarios. AI tools can generate p
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

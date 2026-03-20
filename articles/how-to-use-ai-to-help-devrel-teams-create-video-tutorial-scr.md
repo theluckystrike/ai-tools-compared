@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "How to Use AI to Help DevRel Teams Create Video Tutorial."
-description: "A practical guide for developer relations teams on leveraging AI tools to streamline screen recording creation, improve video quality, and accelerate."
+title: "How to Use AI to Help DevRel Teams Create Video Tutorial Scripts and Screen Recordings"
+description: "A practical guide for developer relations teams on using AI tools to write tutorial scripts, generate captions, and automate post-production for screen recordings."
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/
@@ -24,7 +24,21 @@ The foundation of any great tutorial is a well-structured script. AI writing ass
 
 
 
-For example, you might prompt an AI tool with: "Create a 5-minute tutorial script for beginner developers showing how to authenticate with OAuth2 using our API. Include an introduction, three main steps, and a conclusion with next steps." The AI can generate a structured outline that you can then refine and personalize.
+A concrete prompt that produces useful output:
+
+```
+Write a 5-minute video tutorial script for beginner developers showing how to
+authenticate with OAuth2 using our API. Structure:
+- 30-second intro: what they'll build and prerequisites
+- Step 1 (90s): register an OAuth app and get client credentials
+- Step 2 (90s): implement the authorization code flow
+- Step 3 (60s): exchange the code for an access token
+- 30-second outro: next steps (refresh tokens, scopes)
+
+Tone: conversational, not lecture-style. Assume the viewer has VS Code open.
+```
+
+This produces a draft with approximate timing per section, which you then customize with your product's actual endpoints and error messages.
 
 
 
@@ -121,3 +135,6 @@ Finally, gather feedback from your audience on which tutorials they find most he
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [AI Tools for DevRel Teams Creating Developer Onboarding Checklists from Internal Wikis](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [How to Use AI to Help DevRel Create Comparison Tables.](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)

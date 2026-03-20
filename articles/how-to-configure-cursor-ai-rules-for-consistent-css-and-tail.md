@@ -363,5 +363,8 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate WindSurf AI Rules to Cursor .cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

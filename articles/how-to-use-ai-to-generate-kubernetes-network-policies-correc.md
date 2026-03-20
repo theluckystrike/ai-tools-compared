@@ -330,7 +330,8 @@ AI tools can generate these advanced configurations, but you must provide detail
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Playwright Network.](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
+- [Best AI Tools for Writing Kubernetes Operator Code From.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [How Well Do AI Tools Generate Correct Go Interface.](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

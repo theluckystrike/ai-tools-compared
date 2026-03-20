@@ -206,5 +206,8 @@ Most professional-grade IDEs now include these capabilities, though the specific
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI IDE Features for Refactoring Class Hierarchies.](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
+- [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Best AI IDE Features for Pair Programming with Remote.](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

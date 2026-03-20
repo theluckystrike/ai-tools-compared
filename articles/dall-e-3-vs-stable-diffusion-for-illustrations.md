@@ -308,5 +308,8 @@ For developers implementing either solution:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
+- [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
+- [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

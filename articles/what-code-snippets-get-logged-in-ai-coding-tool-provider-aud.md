@@ -347,6 +347,8 @@ The convenience of AI assistance often comes with trade-offs around data privacy
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [What Source Code Context Window Do Different AI Coding.](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [How to Audit What Source Code AI Coding Tools Transmit.](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
+- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

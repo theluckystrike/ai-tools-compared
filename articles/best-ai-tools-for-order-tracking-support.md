@@ -275,5 +275,8 @@ Consider your team's development expertise, expected query volume, and integrati
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Gorgias vs Richpanel: AI Ecommerce Support Comparison](/ai-tools-compared/gorgias-vs-richpanel-ai-ecommerce-support/)
+- [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
+- [Verloop vs Engati AI Chatbot Platform Compared](/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -203,5 +203,8 @@ The newer Copilot Edits feature allows you to make targeted changes across multi
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

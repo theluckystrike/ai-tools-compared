@@ -308,5 +308,8 @@ When working with AI assistants for Grafana panel creation:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels with.](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [Best AI Assistant for Building Superset Dashboard Charts.](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
+- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -321,7 +321,8 @@ If you're hitting limits with your current tier, prioritize using advanced model
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [Cursor AI Privacy Mode: How to Use AI Features Without.](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
+- [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

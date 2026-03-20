@@ -332,4 +332,6 @@ Document breaking changes in a CHANGELOG and provide migration guides for major 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
+- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)

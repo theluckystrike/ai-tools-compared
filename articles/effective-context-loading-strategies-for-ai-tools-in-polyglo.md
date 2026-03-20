@@ -255,5 +255,8 @@ The initial investment in context documentation pays dividends through improved 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [How to Use AI Context Management to Work on Large.](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
+- [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

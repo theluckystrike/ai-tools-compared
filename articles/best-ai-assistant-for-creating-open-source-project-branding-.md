@@ -339,6 +339,8 @@ Consider your workflow: if you spend hours manually creating brand assets, AI as
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+- [Best AI Assistant for Writing Open Source Plugin.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

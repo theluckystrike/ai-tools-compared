@@ -365,5 +365,8 @@ Run this weekly or monthly to keep your dictionary safe.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Export Gemini Workspace Data Before Switching to.](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Export ChatGPT Shared Links Before Account.](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

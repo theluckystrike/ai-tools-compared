@@ -337,4 +337,6 @@ Use Claude Code to generate review checklists and even help execute portions of 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)

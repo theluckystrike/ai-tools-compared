@@ -228,5 +228,8 @@ If your keybindings are not working as expected, verify these settings:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

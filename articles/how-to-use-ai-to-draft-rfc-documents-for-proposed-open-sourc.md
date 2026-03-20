@@ -231,6 +231,8 @@ Maintain your voice. Use AI to structure and draft, but add your own analysis an
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Draft Open Source Foundation Membership.](/ai-tools-compared/how-to-use-ai-to-draft-open-source-foundation-membership-app/)
+- [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [How to Use AI to Help SRE Teams Draft Root Cause.](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

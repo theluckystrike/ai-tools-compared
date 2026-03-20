@@ -289,7 +289,8 @@ The goal is generating code that passes your CI/CD pipeline without modification
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [How to Use AI to Diagnose and Fix Golang Goroutine.](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

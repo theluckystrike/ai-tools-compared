@@ -212,7 +212,8 @@ Follow this sequence to minimize disruption during your transition:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [How to Move Copilot Suggested Code Patterns to Cursor.](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -195,6 +195,8 @@ Testing race conditions requires mindset shift from deterministic to probabilist
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+- [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI for Writing Jest Tests for React Custom Hooks.](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

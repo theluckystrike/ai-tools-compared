@@ -268,7 +268,8 @@ Understanding these mechanics enables you to build applications that use Claude'
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
+- [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

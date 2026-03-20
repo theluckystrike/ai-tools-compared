@@ -269,7 +269,8 @@ Cursor's multi-file editing represents a significant advancement in AI-assisted 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Windsurf AI Flows Feature: How It Chains Multiple.](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

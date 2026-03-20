@@ -316,5 +316,8 @@ The most cost-effective approach is to benchmark both models on your actual work
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Perplexity API Pricing vs Pro Subscription: Which Is.](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

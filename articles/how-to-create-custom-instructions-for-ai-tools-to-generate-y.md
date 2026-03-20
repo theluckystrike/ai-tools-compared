@@ -244,6 +244,8 @@ Custom instructions transform AI assistants from generic code generators into do
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [Writing Custom Instructions for AI Tools That Enforce.](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
+- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

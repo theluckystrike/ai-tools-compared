@@ -276,6 +276,8 @@ Iterate on the AI recommendations by providing execution plan output and asking 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL.](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage.](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

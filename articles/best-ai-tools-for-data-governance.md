@@ -320,6 +320,8 @@ API-first tools integrate better with your existing tooling. Look for OpenAPI sp
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide.](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for.](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [Best AI Tools for Data Cleaning: A Practical Guide for.](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

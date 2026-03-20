@@ -246,5 +246,8 @@ Both tools require review—AI suggestions occasionally include outdated Prisma 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Copilot vs Cursor for Implementing Server-Sent Events in.](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

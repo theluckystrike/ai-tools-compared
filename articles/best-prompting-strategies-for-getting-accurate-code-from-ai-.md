@@ -245,5 +245,8 @@ Each refinement produces a more accurate result than starting over.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Structure Prompts for AI to Generate Idiomatic.](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
+- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [How to Write Better Prompts for AI Code Generation with.](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

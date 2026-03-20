@@ -258,5 +258,8 @@ This pattern demonstrates proper queue-based concurrency that AI tools can help 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Debug Race Conditions in Python Asyncio.](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
+- [Best AI for Writing Pytest Asyncio Tests for WebSocket.](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
+- [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

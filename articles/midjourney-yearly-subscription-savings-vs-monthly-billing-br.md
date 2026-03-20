@@ -282,6 +282,8 @@ For most developers and power users with established creative workflows, the yea
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Windsurf Pro Annual vs Monthly Pricing: Actual Savings.](/ai-tools-compared/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calculated/)
+- [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
+- [AI Tools for Subscription Management Support](/ai-tools-compared/ai-tools-for-subscription-management-support/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

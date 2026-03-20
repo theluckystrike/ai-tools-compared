@@ -263,6 +263,8 @@ def generate_provisioning_script(checklist_items):
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Help SRE Teams Create On-Call Handoff Documents](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [AI Tools for QA Engineers: Generating Data-Driven Test.](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

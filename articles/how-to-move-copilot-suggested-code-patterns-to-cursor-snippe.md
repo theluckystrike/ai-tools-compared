@@ -226,5 +226,8 @@ When you encounter a new pattern through Copilot that you want to save, add it t
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Move Copilot Suggested Code Patterns to Cursor Snippets: Complete Guide.](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -289,6 +289,8 @@ AI accelerates the initial test generation, but maintaining and updating tests s
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Currency Decimal Precision Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -225,6 +225,8 @@ Start with cleaner commit messages, use AI to generate drafts, and maintain a re
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective AI Coding Workflow for Building Features from.](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Effective Strategies for AI-Assisted Debugging of.](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -339,5 +339,8 @@ action:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
+- [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
+- [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

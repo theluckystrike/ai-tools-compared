@@ -330,7 +330,8 @@ Most outdated-information issues resolve by starting a fresh conversation, addin
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
+- [Claude Pro Upgrade Not Reflecting? Here's the Fix (2026)](/ai-tools-compared/claude-pro-upgrade-not-reflecting-fix-2026/)
+- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

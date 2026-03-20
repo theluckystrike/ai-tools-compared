@@ -282,5 +282,8 @@ Use the `xml` thinking feature for complex reasoning. Claude's extended thinking
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate ChatGPT System Prompts to Claude System Prompt Format](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Transfer Claude Project Knowledge to ChatGPT.](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

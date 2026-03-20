@@ -268,5 +268,8 @@ The key principle remains consistent: make context transitions explicit rather t
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [How to Manage AI Coding Context Across Multiple Related.](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

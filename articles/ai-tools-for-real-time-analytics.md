@@ -287,5 +287,8 @@ Start with the simplest architecture that meets your latency requirements, then 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [Best AI for Analyzing Google Analytics Data Exports with.](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
+- [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

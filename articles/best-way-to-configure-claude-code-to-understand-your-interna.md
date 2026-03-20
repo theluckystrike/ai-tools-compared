@@ -257,6 +257,8 @@ This layered approach provides Claude Code with context while maintaining organi
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

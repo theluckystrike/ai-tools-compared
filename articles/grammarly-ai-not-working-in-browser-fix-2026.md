@@ -159,5 +159,8 @@ For teams managing Grammarly across multiple users, deploy consistent browser co
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
+- [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

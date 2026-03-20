@@ -198,5 +198,8 @@ Once you approve the plan, you can execute each task through separate agent call
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI Multi-File Editing Feature: How It Actually.](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -241,5 +241,8 @@ The good news is these options aren't mutually exclusive. Some developers use Co
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Running DeepSeek Coder Locally vs Cloud API for Private.](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [Running Starcoder2 Locally for Code Completion Without.](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

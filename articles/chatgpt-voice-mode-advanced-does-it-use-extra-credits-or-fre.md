@@ -249,7 +249,8 @@ The API approach requires more development effort but delivers predictable costs
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API.](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

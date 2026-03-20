@@ -345,5 +345,8 @@ The entire interaction happens offline. No code leaves your machine.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [How to Use AI Coding Tools in FedRAMP Authorized Cloud.](/ai-tools-compared/how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/)
+- [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

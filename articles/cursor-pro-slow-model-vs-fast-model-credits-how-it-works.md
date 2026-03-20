@@ -256,5 +256,8 @@ Experiment with both models in your daily workflow. Pay attention to when the fa
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI: Switching Between Claude and GPT Models —.](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Cursor Pro Refund Policy: Can You Get Money Back After.](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

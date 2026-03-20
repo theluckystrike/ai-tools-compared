@@ -326,7 +326,8 @@ Choose targeted fixes when:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [How to Write ChatGPT Custom Instructions for Consistent.](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom GPT](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

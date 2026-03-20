@@ -257,5 +257,8 @@ For teams, the calculus changes further—you might qualify for team plans that 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Codeium Pro vs Copilot Individual: Features Per Dollar.](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
+- [Perplexity API Pricing vs Pro Subscription: Which Is.](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

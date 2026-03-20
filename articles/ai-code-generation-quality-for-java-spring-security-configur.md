@@ -299,5 +299,8 @@ For teams implementing custom security components, consider creating detailed te
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

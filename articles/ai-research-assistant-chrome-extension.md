@@ -281,6 +281,8 @@ When building or using AI research assistant extensions, keep several factors in
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs.](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

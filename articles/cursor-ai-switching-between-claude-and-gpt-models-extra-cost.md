@@ -257,5 +257,8 @@ Experiment with both model families in your workflow. Track your credit consumpt
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better.](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [Cursor Pro Slow Model vs Fast Model: Credits System.](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
+- [How to Move Tabnine AI Models When Switching to Supermaven](/ai-tools-compared/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

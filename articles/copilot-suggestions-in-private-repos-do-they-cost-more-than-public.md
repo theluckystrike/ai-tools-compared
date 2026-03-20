@@ -143,6 +143,8 @@ The value proposition is straightforward: unlimited Copilot access across all yo
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs.](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 
-Built by theluckystrike — More at zovo.one*
-{% endraw %}
+Built by

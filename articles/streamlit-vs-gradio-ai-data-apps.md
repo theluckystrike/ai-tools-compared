@@ -253,5 +253,8 @@ Both frameworks are suitable for prototypes and internal tools. For production A
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Best AI Coding Tools for Python Data Science and Pandas.](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for.](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [Best AI Assistant for Creating Test Data Factories with.](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

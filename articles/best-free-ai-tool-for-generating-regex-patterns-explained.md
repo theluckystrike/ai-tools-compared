@@ -240,6 +240,8 @@ For developers working with text processing, data validation, or log analysis, A
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tool for Generating Regex Patterns Compared](/ai-tools-compared/best-ai-tool-for-generating-regex-patterns-compared/)
+- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Best AI Assistant for Generating SQL Recursive Queries.](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

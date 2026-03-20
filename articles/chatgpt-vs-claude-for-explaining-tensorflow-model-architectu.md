@@ -213,6 +213,8 @@ Both ChatGPT and Claude serve beginners learning TensorFlow effectively, but the
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard.](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -332,5 +332,8 @@ With practice, this workflow becomes second nature. You will find yourself contr
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Write Commit Message Guidelines for Open Source Projects.](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
+- [Best Workflow for AI-Assisted Test Driven Development.](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
+- [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

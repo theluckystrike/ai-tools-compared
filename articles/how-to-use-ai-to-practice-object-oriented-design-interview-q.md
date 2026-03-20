@@ -290,6 +290,8 @@ When practicing OOD with AI, watch out for these pitfalls:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Which AI Generates Better SwiftUI Views From Design.](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [How to Use AI Coding Tools Effectively During Live.](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better.](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

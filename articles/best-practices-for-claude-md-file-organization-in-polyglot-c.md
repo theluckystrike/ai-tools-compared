@@ -333,6 +333,8 @@ Add a documentation update checklist to your code review process:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [Claude Code Integration Guides](/ai-tools-compared/guides-hub/)
+- [How to Write Effective CLAUDE MD File for Monorepo With.](/ai-tools-compared/how-to-write-effective-claude-md-file-for-monorepo-with-mult/)
+- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Writing CLAUDE.md Files That Define Your Project's API Versioning Strategy](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

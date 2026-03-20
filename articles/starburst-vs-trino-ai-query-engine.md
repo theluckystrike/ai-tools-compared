@@ -253,5 +253,8 @@ The good news: your application code remains largely the same regardless of choi
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
+- [ChatGPT Enterprise vs Custom Support Bot: A Practical.](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
+- [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

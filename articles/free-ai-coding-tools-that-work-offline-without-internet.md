@@ -337,5 +337,8 @@ For older hardware, smaller models like Phi-3 or Mistral 7B provide reasonable p
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

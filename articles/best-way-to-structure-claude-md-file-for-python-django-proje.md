@@ -221,5 +221,8 @@ Consider version-controlling your Claude.md file. This lets you track how your s
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
+- [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

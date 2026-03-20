@@ -232,5 +232,8 @@ An effective acceptable use policy for AI coding assistants balances security re
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Enterprise Data Loss Prevention Rules for AI Coding.](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
+- [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
+- [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

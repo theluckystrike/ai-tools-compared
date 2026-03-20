@@ -259,5 +259,8 @@ class CostTracker:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

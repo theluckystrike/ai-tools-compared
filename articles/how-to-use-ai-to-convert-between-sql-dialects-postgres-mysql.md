@@ -282,5 +282,8 @@ Certain features exist in one system but not others. PostgreSQL's full-text sear
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tool for Converting MySQL Queries to.](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
+- [AI Autocomplete Behavior Differences Between VSCode.](/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
+- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

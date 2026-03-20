@@ -257,5 +257,8 @@ Configuration drift—where production differs from code—can cause AI to miss 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Generating Dependency Update Pull Request.](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Tools for Writing Pytest Tests for FastAPI Endpoints.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

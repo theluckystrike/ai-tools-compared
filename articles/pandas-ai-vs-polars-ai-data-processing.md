@@ -222,5 +222,8 @@ Your choice should align with your dataset sizes, performance requirements, and 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Lakehouse vs Data Warehouse for AI Workloads: A.](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
+- [Observable vs Jupyter for AI Data Exploration](/ai-tools-compared/observable-vs-jupyter-ai-data-exploration/)
+- [Best AI Coding Tools for Python Data Science and Pandas.](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

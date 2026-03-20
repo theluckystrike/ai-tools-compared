@@ -278,6 +278,8 @@ Your AI tool should reliably generate these patterns:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling.](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

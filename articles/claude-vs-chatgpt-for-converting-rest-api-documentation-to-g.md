@@ -275,5 +275,8 @@ Iterate on type design. Generate an initial schema, test it against your actual 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Copilot vs Claude for Generating Java Spring Boot.](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks in Python](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

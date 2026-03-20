@@ -259,6 +259,8 @@ For most developers, both tools produce usable output. The choice often comes do
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from ChatGPT Search to Perplexity Pro Search.](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Gemini vs ChatGPT for Translating Python Data Pipelines.](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
+- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

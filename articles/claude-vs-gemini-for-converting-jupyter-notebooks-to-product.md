@@ -340,5 +340,8 @@ Many developers use both tools sequentially: Gemini for quick initial conversion
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Gemini vs Claude for Summarizing Quarterly Earnings Call.](/ai-tools-compared/gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/)
+- [Gemini vs ChatGPT for Translating Python Data Pipelines.](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

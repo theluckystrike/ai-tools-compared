@@ -371,5 +371,8 @@ By implementing these file organization strategies, you'll notice improved accur
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Go Project Structure and Module.](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

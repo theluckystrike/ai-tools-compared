@@ -240,6 +240,8 @@ You can also time your coding sessions. With properly configured AI suggestions,
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Configure Claude Code to Follow Your Team's Feature Flag Naming Conventions](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How Context Window Size Affects AI Code Suggestions in.](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

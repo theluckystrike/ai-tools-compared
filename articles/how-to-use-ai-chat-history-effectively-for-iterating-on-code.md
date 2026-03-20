@@ -206,6 +206,8 @@ The key is treating each conversation as part of an ongoing collaboration rather
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
+- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

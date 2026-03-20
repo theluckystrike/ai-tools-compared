@@ -277,7 +277,8 @@ However, cloud-based solutions may still be preferable when you need the most ad
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [Running DeepSeek Coder Locally vs Cloud API for Private.](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [Running CodeLlama Locally vs Using Cloud Copilot for.](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

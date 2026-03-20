@@ -227,5 +227,8 @@ The key insight is that AI tools dramatically reduce the time from wireframe to 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from.](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

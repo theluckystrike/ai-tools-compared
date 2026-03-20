@@ -312,6 +312,8 @@ The 2026 reality is that most applications should start with Sonnet and selectiv
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Claude API Batch Processing: How Much Cheaper Than.](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
+- [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

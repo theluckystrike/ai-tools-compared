@@ -281,5 +281,8 @@ Training your AI coding assistant on team standards requires initial effort, but
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [How to Prevent AI Coding Tools from Generating Overly.](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

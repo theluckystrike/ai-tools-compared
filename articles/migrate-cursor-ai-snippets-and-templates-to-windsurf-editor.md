@@ -295,5 +295,8 @@ This approach keeps both editors in sync while you evaluate WindSurf's capabilit
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate WindSurf AI Rules to Cursor .cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Instructions](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
+- [Configuring Cursor AI to Work with Corporate VPN and.](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

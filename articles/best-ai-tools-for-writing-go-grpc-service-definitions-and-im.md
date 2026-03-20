@@ -195,5 +195,8 @@ For a new gRPC service, provide clear requirements including service name, metho
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Which AI Is Better for Writing gRPC Protobuf Service.](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Best AI Tools for Writing GitHub Actions Reusable.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

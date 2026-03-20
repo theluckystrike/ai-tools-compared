@@ -242,5 +242,8 @@ Start with the tool that matches your current IDE preference, as the productivit
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Coding Assistants for TypeScript Deno Fresh Framework Compared 2026](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Coding Assistant Comparison for React Component.](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

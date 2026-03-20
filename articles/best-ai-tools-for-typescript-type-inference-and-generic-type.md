@@ -224,5 +224,8 @@ The best choice depends on your specific use case. For library authors or teams 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
+- [Best AI Tools for Python NumPy and Scientific Computing.](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
+- [Best AI Tools for Rust Web Development with Axum.](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

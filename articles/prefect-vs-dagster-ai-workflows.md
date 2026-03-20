@@ -203,5 +203,8 @@ Both tools handle production AI workloads effectively. The choice often comes do
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Observable vs Jupyter for AI Data Exploration](/ai-tools-compared/observable-vs-jupyter-ai-data-exploration/)
+- [Snowflake vs Databricks for AI Analytics: A Developer.](/ai-tools-compared/snowflake-vs-databricks-ai-analytics/)
+- [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

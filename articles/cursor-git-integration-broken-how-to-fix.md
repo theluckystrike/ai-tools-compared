@@ -252,5 +252,8 @@ Maintain healthy Git integration by keeping Git updated to the latest version. R
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
+- [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+- [Cursor AI Slow on Large Monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

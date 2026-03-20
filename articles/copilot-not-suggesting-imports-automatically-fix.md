@@ -310,6 +310,8 @@ Most import suggestion issues resolve by updating your software or re-authentica
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
+- [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

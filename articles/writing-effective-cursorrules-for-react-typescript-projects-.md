@@ -367,6 +367,8 @@ Specify testing library preferences, mock patterns, and what should be tested ve
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing CursorRules for Golang Projects with Specific.](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
+- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [Writing Effective CursorRules for Next.js App Router.](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

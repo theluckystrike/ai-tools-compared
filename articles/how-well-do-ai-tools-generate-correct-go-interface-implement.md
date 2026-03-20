@@ -264,5 +264,8 @@ Review Error Handling: AI-generated error handling often needs enhancement. Add 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and.](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
+- [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

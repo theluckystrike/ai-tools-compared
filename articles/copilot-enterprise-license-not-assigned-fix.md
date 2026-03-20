@@ -258,7 +258,8 @@ Avoid future license assignment issues by implementing these practices.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

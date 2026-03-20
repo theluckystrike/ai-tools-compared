@@ -272,8 +272,8 @@ AI coding tools are powerful allies in technical interviews when used thoughtful
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
+- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
-{% endraw %}
+Built by

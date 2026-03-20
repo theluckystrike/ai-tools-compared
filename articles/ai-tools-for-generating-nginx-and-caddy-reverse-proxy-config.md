@@ -242,5 +242,8 @@ AI tools produce reliable configurations, but they cannot account for your speci
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Optimize Your AI Coding Tool Configuration for Specific Project Types](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy.](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [Best AI Video Editor 2026: A Developer's Guide to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

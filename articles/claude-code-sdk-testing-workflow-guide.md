@@ -280,4 +280,6 @@ describe('Performance Tests', () => {
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+- [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)

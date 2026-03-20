@@ -231,5 +231,8 @@ Contact OpenAI's enterprise sales team through their website to initiate the pro
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor Business Seat Minimum and Onboarding Costs.](/ai-tools-compared/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
+- [ChatGPT Enterprise vs Custom Support Bot: A Practical.](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
+- [ChatGPT Edu Pricing Per Student: How Schools Get Volume.](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -319,7 +319,8 @@ Preprocess with AI filters, select the codec for your delivery requirements, and
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
+- [Best AI-Powered Platform Engineering Tools for Developer.](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
+- [InVideo AI vs Pictory AI: Video Maker Comparison for Developers](/ai-tools-compared/invideo-ai-vs-pictory-ai-video-maker/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

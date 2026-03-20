@@ -220,5 +220,8 @@ This approach bypasses foreign key checks temporarily but requires careful handl
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [AI Tools for Debugging PostgreSQL Query Planner: Fixing.](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [Best AI for Fixing Android Gradle Sync Failed Errors in.](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+- [How to Use AI for Cloud Migration Planning and.](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

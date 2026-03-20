@@ -319,5 +319,8 @@ Building reliable services requires clear, measurable objectives. AI accelerates
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

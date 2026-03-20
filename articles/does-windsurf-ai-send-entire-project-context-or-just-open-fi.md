@@ -220,7 +220,8 @@ This command captures network traffic to see exactly where your code is going.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers? Privacy Analysis](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [Best AI Tools for Go Project Structure and Module.](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

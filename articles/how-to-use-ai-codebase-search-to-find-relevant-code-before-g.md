@@ -306,7 +306,8 @@ When the answer to these questions is yes, your search-and-generate workflow is 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks.](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
+- [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
-{% endraw %}
+Built by

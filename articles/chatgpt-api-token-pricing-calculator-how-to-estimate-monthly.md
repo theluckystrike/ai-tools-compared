@@ -335,5 +335,8 @@ Start with conservative estimates, measure actual usage after deployment, and re
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

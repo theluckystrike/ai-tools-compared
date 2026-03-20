@@ -227,6 +227,8 @@ The right AI tool accelerates idiomatic Rust error handling, but understanding `
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

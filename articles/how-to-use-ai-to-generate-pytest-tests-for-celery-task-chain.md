@@ -366,6 +366,8 @@ Consider adding integration tests with a real Redis/Rabbitmq broker for producti
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Pytest Tests for Django REST Framework Serializer Validation](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

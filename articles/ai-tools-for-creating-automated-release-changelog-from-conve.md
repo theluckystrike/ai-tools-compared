@@ -313,7 +313,8 @@ Maintain a changelog category strategy. Decide whether you want detailed technic
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [AI Tools for DevRel Teams Creating Developer Onboarding Checklists from Internal Wikis](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
+- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

@@ -339,5 +339,8 @@ A well-maintained CursorRules setup ensures consistent, high-quality code genera
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Go Project Structure and Module.](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Writing Effective CursorRules for Next.js App Router.](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
+- [How to Create CursorRules That Teach Cursor Your Team's State Management Patterns](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -265,7 +265,8 @@ Use Claude for analysis and Copilot for implementation:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Edits Panel vs Cursor Composer Workflow.](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
+- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

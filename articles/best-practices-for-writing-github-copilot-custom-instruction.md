@@ -251,6 +251,8 @@ Use version control for your instruction files. Track changes and review modific
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
+- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

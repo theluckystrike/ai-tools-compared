@@ -382,7 +382,8 @@ Copilot accelerates workflow development, but understanding the underlying GitHu
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

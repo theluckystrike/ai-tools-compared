@@ -223,7 +223,8 @@ Maintain human oversight for critical decisions. AI handles categorization relia
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Detecting Duplicate GitHub Issues Using.](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify Frustrated Users](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefit From Contributions](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

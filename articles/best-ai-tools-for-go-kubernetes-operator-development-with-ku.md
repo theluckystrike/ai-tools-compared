@@ -224,7 +224,8 @@ However, it may not fully understand Kubebuilder-specific annotations and marker
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing Kubernetes Operator Code From.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [Best AI Tools for Go Error Wrapping and Sentinel Error.](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
+- [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

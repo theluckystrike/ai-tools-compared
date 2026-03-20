@@ -322,5 +322,8 @@ def handle_upload_error(response):
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Perplexity API Pricing vs Pro Subscription: Which Is.](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [Perplexity Spaces Collaboration Feature: Free vs Pro Limits Explained](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
+- [Does Cursor Pro Charge Extra for Large File Indexing in.](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -285,6 +285,8 @@ The more context you provide about your specific environment and constraints, th
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [Writing Custom Instructions for AI Tools That Enforce.](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
+- [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

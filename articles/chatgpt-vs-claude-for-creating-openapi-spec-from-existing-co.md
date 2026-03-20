@@ -261,5 +261,8 @@ If your codebase uses TypeScript with explicit type definitions, Claude generall
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [ChatGPT vs Claude for Writing Effective Celery Task.](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

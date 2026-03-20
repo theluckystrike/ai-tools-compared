@@ -260,5 +260,8 @@ A content classifier might examine URL patterns, HTML structure, and text charac
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Building an AI Research Assistant Chrome Extension: A.](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs.](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison](/ai-tools-compared/kommunicate-vs-crisp-ai-chat-widgets/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

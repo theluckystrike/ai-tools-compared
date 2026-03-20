@@ -296,5 +296,8 @@ Implement a consistent workflow to minimize context disruption:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
+- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

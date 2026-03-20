@@ -255,5 +255,8 @@ The best workflow combines AI generation with developer review. Generate tests r
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Jest Tests for GraphQL Resolvers.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

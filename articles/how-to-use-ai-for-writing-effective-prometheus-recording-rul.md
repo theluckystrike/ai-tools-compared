@@ -236,8 +236,8 @@ Fifth, version control your rulesets. Recording rules evolve as your system chan
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI for Writing Prometheus Alerting Rules.](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
+- [How to Use AI for Writing Effective Terraform State.](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
+- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
-{% endraw %}
+Built by

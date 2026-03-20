@@ -264,5 +264,8 @@ Set a calendar reminder to audit AI-generated code monthly. Track which linting 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Configure AI Coding Tools to Respect Your Team's Branch Naming Conventions](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

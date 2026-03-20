@@ -245,6 +245,8 @@ Maintain a simple internal wiki or README explaining your setup. Include the dir
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

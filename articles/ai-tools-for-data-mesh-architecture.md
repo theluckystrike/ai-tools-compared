@@ -247,6 +247,8 @@ Start with open-source options like Amundsen or DataHub for cataloging, then add
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for.](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
+- [Best AI Tools for Data Cleaning: A Practical Guide for.](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

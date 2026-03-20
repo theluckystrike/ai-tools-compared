@@ -297,5 +297,8 @@ Iterate on module design with AI assistance. Initial versions rarely achieve per
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Optimize AI Coding Prompts for Generating.](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [How to Use AI for Writing Effective Terraform State.](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

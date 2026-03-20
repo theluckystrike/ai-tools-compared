@@ -302,6 +302,8 @@ This ensures no migration reaches your main branch without proper test coverage.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [Best AI Assistant for Writing pytest Tests for Pydantic.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
+- [Best AI Assistant for Writing Pytest Tests for.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

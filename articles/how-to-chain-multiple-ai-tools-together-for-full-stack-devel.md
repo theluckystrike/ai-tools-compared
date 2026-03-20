@@ -297,7 +297,8 @@ Monitoring: Track pipeline execution times and failure rates. Patterns reveal op
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [Windsurf AI Flows Feature: How It Chains Multiple.](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

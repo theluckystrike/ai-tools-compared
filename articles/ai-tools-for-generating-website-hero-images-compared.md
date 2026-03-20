@@ -216,5 +216,8 @@ Building this layer on top of any of the tools above enables dynamic hero genera
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
+- [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
+- [AI Tools for Generating UI Mockups Compared in 2026](/ai-tools-compared/ai-tools-for-generating-ui-mockups-compared-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

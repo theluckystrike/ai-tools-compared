@@ -286,6 +286,8 @@ Combine AI assistance with Superset's native features for optimal results:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Building Grafana Dashboard Panels.](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
+- [Building an AI Research Assistant Chrome Extension: A.](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type.](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

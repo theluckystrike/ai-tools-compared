@@ -345,5 +345,8 @@ Start with CodeWhisperer or Tabnine for basic needs, then add Cursor or GitHub C
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
+- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+- [Best Budget AI Coding Assistant for Freelance Developers.](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -225,5 +225,8 @@ Test against actual consumer code when possible. Create a test suite using popul
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing Kubernetes Custom Resource Definitions 2026](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
+- [AI Tools for Writing Pytest Tests with Moto Library for AWS.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -270,7 +270,8 @@ async function processWithCodaAI(tableId, rowId, content) {
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [How to Use AI for Database Backup Automation and.](/ai-tools-compared/how-to-use-ai-for-database-backup-automation-and-disaster-re/)
+- [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

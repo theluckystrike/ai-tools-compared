@@ -218,6 +218,8 @@ Create a template for first-time contributor issues in our Python Django project
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

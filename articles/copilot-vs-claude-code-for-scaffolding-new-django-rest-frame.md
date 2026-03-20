@@ -235,5 +235,8 @@ Many developers actually use both—Copilot for day-to-day coding in their edito
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

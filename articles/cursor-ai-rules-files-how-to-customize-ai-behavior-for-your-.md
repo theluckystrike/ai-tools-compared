@@ -209,5 +209,8 @@ Sometimes Cursor may override rules in specific contexts. For example, when expl
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate WindSurf AI Rules to Cursor .cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

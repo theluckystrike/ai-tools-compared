@@ -236,7 +236,8 @@ Regenerate diagrams regularly, especially after significant refactoring. AI make
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
-Built by the luckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

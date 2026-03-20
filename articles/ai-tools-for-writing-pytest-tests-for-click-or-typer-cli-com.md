@@ -213,5 +213,8 @@ def test_interactive_input():
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Jest Tests for GraphQL Resolvers.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
+- [Best AI for Writing Pytest Asyncio Tests for WebSocket.](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
+- [Best AI for Writing Jest Tests for React Custom Hooks.](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

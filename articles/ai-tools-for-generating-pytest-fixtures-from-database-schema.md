@@ -291,5 +291,8 @@ def test_order_creation(db_session, sample_user):
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

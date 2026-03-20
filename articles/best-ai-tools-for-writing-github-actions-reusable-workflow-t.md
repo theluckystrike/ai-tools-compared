@@ -307,6 +307,8 @@ When evaluating AI tools for GitHub Actions reusable workflows, prioritize these
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [Best AI Tools for Writing Go gRPC Service Definitions.](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [Best AI Tools for Writing Python SQLAlchemy Models and.](/ai-tools-compared/best-ai-tools-for-writing-python-sqlalchemy-models-and-queri/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

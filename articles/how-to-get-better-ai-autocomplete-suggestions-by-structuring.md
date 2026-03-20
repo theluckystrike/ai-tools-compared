@@ -319,5 +319,8 @@ When AI tools can see exactly what you're importing, they suggest those specific
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
+- [How to Use AI Coding Tools Without Becoming Dependent on Autocomplete](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
+- [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

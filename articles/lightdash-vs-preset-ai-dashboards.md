@@ -312,5 +312,8 @@ Start by mapping your current data architecture. If dbt is central to your opera
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Domo vs Sisense AI Dashboards: A Practical Comparison.](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
+- [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
+- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

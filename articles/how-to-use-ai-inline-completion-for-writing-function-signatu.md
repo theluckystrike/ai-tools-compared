@@ -259,6 +259,8 @@ The real productivity gain comes from staying in your flow state. Instead of pau
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI Inline Chat to Refactor Single Function.](/ai-tools-compared/how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/)
+- [AI Code Completion for Writing Shell Commands Inside.](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Autocomplete for Writing Tests: Comparison of.](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

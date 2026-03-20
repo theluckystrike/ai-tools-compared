@@ -350,5 +350,8 @@ AI tools continue to improve their Celery code generation, but always review gen
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code in.](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
+- [Best AI Tools for Python NumPy and Scientific Computing.](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

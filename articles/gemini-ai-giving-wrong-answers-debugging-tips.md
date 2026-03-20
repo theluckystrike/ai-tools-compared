@@ -282,5 +282,8 @@ A systematic approach—working through prompt structure, context management, an
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [Claude Giving Outdated Information? How to Fix This.](/ai-tools-compared/claude-giving-outdated-information-how-to-fix/)
+- [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -230,5 +230,8 @@ Test both with a single real project. Ask each tool to help you implement a feat
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from ChatGPT Search to Perplexity Pro Search.](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
+- [Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

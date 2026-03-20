@@ -267,5 +267,8 @@ The goal is not to replace product judgment—it's to eliminate the time-consumi
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Product Managers Creating User Persona.](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
+- [Best AI Assistant for Product Managers Writing Sprint.](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [Best AI Tool for UX Designers User Research Synthesis](/ai-tools-compared/best-ai-tool-for-ux-designers-user-research-synthesis/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

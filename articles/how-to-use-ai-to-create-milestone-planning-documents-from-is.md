@@ -275,5 +275,8 @@ Maintain effective milestone planning by following these practices:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Create GitHub Issue Triage Flowcharts.](/ai-tools-compared/how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/)
+- [How to Use AI to Help SRE Teams Create On-Call Handoff Documents](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [How to Use AI to Create Data Quality Scorecards from dbt.](/ai-tools-compared/how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

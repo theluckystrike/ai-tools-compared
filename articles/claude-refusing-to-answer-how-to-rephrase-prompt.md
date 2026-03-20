@@ -215,6 +215,8 @@ Some code patterns can appear malicious. Provide more context about your project
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [Claude Code Troubleshooting Guides](/ai-tools-compared/guides-hub/)
+- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

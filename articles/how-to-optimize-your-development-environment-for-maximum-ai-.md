@@ -345,5 +345,8 @@ Adjust configurations based on what you learn. The best setup evolves with your 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Optimize Your AI Coding Tool Configuration for Specific Project Types](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [AI Code Suggestion Quality When Working With Environment.](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
+- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

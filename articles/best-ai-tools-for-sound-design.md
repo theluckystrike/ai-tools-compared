@@ -239,5 +239,8 @@ The AI sound design landscape evolves rapidly. New models and services appear mo
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Audio Noise Removal](/ai-tools-compared/best-ai-tools-for-audio-noise-removal/)
+- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

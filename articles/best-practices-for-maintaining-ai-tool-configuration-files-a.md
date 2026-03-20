@@ -316,7 +316,8 @@ Set quarterly reminders to:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [Best Practices for Version Controlling AI Prompts and.](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

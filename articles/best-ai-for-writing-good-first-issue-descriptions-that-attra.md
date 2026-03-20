@@ -259,6 +259,8 @@ Getting the best results requires some refinement:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

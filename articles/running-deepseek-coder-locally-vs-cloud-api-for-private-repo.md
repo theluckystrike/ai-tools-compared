@@ -224,5 +224,8 @@ Many developers adopt a hybrid approach—using local models for quick daily tas
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Running CodeLlama Locally vs Using Cloud Copilot for.](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
+- [Running Starcoder2 Locally for Code Completion Without.](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

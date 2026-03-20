@@ -228,5 +228,8 @@ Many developers use both: ChatGPT Free for quick questions and iterations, Claud
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

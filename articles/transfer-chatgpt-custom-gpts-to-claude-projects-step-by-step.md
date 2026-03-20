@@ -273,5 +273,8 @@ This script automates the folder creation and file copying, letting you focus on
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Claude Project Knowledge to ChatGPT.](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom GPT](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -283,5 +283,8 @@ Ignoring language differences: Error handling patterns differ between languages.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Write Custom Instructions That Make AI Respect.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
+- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

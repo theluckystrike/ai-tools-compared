@@ -277,7 +277,8 @@ Document your setup for compliance reviews. Ensure model weights come from trust
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
+- [How to Use AI Coding Tools in FedRAMP Authorized Cloud.](/ai-tools-compared/how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

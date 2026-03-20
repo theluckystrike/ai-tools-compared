@@ -280,5 +280,8 @@ The ecosystem of AI tools for social media analytics is mature enough that you d
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [Copy.ai vs ChatGPT for Social Media Content: A Practical Comparison](/ai-tools-compared/copy-ai-vs-chatgpt-for-social-media-content/)
+- [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

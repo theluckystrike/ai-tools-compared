@@ -320,6 +320,8 @@ Calculate your specific scenario using the formula above. If the effective cost 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
+- [Copilot Suggestions in Private Repos: Do They Cost More.](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [Cursor Business Seat Minimum and Onboarding Costs.](/ai-tools-compared/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -295,5 +295,8 @@ The goal is not to replace designer judgment but to accelerate the documentation
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Designers Writing Handoff Notes That.](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
+- [Best AI Assistant for Designers Writing User Journey.](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

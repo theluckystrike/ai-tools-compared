@@ -338,5 +338,8 @@ This is a common pattern: the error message points to a symptom (missing module)
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+- [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
+- [AI Powered Log Analysis Tools for Production Debugging.](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
+- [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

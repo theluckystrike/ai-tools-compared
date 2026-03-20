@@ -255,6 +255,8 @@ AI autocomplete continues to improve rapidly, with tools adding better schema un
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Writing Datadog Monitoring Queries and.](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
+- [Best AI Assistant for Generating SQL Recursive Queries.](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI for Writing SQL Performance Tuning.](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -296,6 +296,8 @@ The investment in maintaining a CLAUDE.md pays dividends in reduced AI hallucina
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Practices for Claude MD File Organization in Polyglot Codebases](/ai-tools-compared/best-practices-for-claude-md-file-organization-in-polyglot-c/)
+- [Writing CLAUDE.md Files That Teach AI Your Project-Specific Error Handling Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Best Way to Structure Claude MD File for Python Django.](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

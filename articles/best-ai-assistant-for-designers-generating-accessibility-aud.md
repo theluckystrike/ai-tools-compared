@@ -180,6 +180,8 @@ Screen reader testing, keyboard navigation flow verification, and cognitive acce
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Designers Writing User Journey.](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [AI Tools for Automated Load Testing Script Generation and Analysis 2026](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

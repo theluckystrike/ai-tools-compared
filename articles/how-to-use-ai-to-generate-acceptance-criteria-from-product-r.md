@@ -316,6 +316,8 @@ AI excels at extracting explicit requirements but may miss unstated assumptions.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

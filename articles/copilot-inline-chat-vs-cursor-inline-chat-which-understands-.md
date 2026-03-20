@@ -256,7 +256,8 @@ Both tools continue to evolve, and the gap between them narrows as each platform
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Copilot vs Cursor vs Windsurf: Inline Diff Preview.](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
+- [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

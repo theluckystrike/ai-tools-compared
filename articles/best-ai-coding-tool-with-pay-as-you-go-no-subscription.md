@@ -221,5 +221,8 @@ Claude Code remains the strongest recommendation for developers seeking a capabl
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
+- [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
+- [Best AI Coding Tool Free Trial Longest No Credit Card](/ai-tools-compared/best-ai-coding-tool-free-trial-longest-no-credit-card/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

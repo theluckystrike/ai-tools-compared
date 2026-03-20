@@ -365,4 +365,6 @@ Claude Code can help interpret common profiling patterns:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
+- [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)

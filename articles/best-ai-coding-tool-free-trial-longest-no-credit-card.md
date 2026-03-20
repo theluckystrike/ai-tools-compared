@@ -267,6 +267,8 @@ These tools represent the most accessible options for developers who want to exp
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
+- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
+- [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

@@ -246,5 +246,8 @@ The ecosystem continues evolving rapidly. Newer approaches like OC-SORT and MOTR
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
+- [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
+- [AI Tools for Video Color Grading: A Practical Guide for Developers](/ai-tools-compared/ai-tools-for-video-color-grading/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

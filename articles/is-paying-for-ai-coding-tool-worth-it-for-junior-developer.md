@@ -239,6 +239,8 @@ The investment in your productivity as a developer almost always pays off—and 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+- [AI Coding Assistants for TypeScript Deno Fresh Framework Compared 2026](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

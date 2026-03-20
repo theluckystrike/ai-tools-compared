@@ -226,5 +226,8 @@ Regular audits verify that AI tool configurations haven't drifted from compliant
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [Best Practices for Using AI Coding Tools in HIPAA.](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+- [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

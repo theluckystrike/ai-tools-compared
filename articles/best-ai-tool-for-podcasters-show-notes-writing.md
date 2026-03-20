@@ -197,7 +197,8 @@ For professional podcasters serious about their show notes quality, combining ac
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Designers Writing Handoff Notes That.](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
+- [Best AI Tool for Startup Founders: Pitch Deck Writing Compared](/ai-tools-compared/best-ai-tool-for-startup-founders-pitch-deck-writing/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

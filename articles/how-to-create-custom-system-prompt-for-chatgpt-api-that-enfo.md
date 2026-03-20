@@ -246,5 +246,8 @@ This approach ensures everyone uses the same prompt version and makes updates st
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Write ChatGPT Custom Instructions for Consistent.](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

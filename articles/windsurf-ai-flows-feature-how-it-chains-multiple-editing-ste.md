@@ -184,5 +184,8 @@ Review the output of each step before proceeding to subsequent steps. While Flow
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor AI Multi-File Editing Feature: How It Actually.](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

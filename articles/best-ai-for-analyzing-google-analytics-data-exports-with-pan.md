@@ -295,5 +295,8 @@ AI tools can suggest optimizations once you describe your performance constraint
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+- [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [Best AI Assistant for Debugging Swift Compiler Errors in.](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

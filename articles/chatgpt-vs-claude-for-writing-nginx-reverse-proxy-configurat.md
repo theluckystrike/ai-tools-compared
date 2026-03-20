@@ -231,5 +231,8 @@ Consider your workflow: if you prefer getting things done with complete examples
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [ChatGPT vs Claude for Writing Effective Celery Task.](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart.](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

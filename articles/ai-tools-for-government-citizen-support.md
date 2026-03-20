@@ -285,7 +285,8 @@ Government AI implementation succeeds when it augments staff capabilities rather
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
+- [AI Tools for Customer Escalation Management](/ai-tools-compared/ai-tools-for-customer-escalation-management/)
+- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

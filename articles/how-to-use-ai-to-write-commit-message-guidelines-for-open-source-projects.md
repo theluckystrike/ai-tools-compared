@@ -413,6 +413,8 @@ When you need to update conventions:
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

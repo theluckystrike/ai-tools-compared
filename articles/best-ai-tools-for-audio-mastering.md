@@ -255,5 +255,8 @@ Start with one service's free tier to evaluate output quality against your genre
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Concert Audio Mixing](/ai-tools-compared/best-ai-tools-for-concert-audio-mixing/)
+- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [AI Tools for Video Color Grading: A Practical Guide for Developers](/ai-tools-compared/ai-tools-for-video-color-grading/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

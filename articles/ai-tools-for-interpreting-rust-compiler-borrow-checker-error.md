@@ -210,6 +210,8 @@ The borrow checker exists to prevent memory safety bugs at compile time. AI tool
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Assistant for Debugging Swift Compiler Errors in.](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xcode-build-phases-2026/)
+- [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

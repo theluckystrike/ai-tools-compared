@@ -294,6 +294,8 @@ When using AI to generate hall of fame content, keep these considerations in min
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

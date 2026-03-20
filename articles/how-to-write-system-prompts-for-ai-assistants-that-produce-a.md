@@ -261,5 +261,8 @@ Output only the HTML markup without additional explanation.
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

@@ -262,5 +262,8 @@ The final decision comes down to your specific use case. If you want simplicity 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [Claude API Pay-Per-Token vs Pro Subscription: Which Is.](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

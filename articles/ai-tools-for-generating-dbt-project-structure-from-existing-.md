@@ -202,6 +202,8 @@ Establish conventions for naming, testing, and versioning early. These conventio
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [Cheapest AI Tool for Generating Entire Project From.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

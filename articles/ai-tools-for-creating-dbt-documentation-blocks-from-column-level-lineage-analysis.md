@@ -278,7 +278,8 @@ The initial investment in setting up automated documentation pays dividends thro
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing.](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

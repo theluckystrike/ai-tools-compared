@@ -228,5 +228,8 @@ Regularly audit your Tailwind configuration as your project grows. New directori
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [How to Use AI to Debug Segmentation Faults in C and C++.](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
+- [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

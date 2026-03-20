@@ -288,5 +288,8 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Creating Realistic Test Datasets That.](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
+- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

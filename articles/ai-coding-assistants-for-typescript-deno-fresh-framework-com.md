@@ -173,5 +173,8 @@ For large projects where editor performance matters, Zed offers the fastest expe
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte.](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

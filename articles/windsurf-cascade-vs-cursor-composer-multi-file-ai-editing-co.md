@@ -254,6 +254,8 @@ For developers who prefer explicit control over which files get modified, Compos
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
+- [Cursor AI Multi-File Editing Feature: How It Actually.](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

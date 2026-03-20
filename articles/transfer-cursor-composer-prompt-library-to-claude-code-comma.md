@@ -240,5 +240,8 @@ Skills provide reusability, the command-line interface offers flexibility, and t
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Transfer Your Cursor Composer Prompt Library to.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

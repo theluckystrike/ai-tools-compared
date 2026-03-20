@@ -266,5 +266,8 @@ Over time, you'll develop patterns for the types of queries that produce the mos
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

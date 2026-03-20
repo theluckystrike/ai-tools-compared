@@ -292,5 +292,8 @@ Keep your profiling efficient and actionable:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Use AI to Create Data Quality Scorecards from dbt.](/ai-tools-compared/how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/)
+- [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
+- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

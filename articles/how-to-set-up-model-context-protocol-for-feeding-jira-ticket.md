@@ -384,6 +384,8 @@ This lets your AI assistant understand the full development context—code chang
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Set Up Model Context Protocol Server for Custom.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [How to Set Up Model Context Protocol with Local Database.](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

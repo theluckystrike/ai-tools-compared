@@ -254,5 +254,8 @@ Both approaches have value depending on your learning style and time constraints
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Plus to Perplexity Pro: Feature.](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

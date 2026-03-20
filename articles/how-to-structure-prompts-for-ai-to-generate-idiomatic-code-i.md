@@ -269,5 +269,8 @@ If the code feels foreign to the language, refine your prompt with more specific
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [How to Write Better Prompts for AI Code Generation with.](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+- [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

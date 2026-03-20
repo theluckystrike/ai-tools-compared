@@ -319,6 +319,8 @@ Another common issue involves stale context. AI tools cache previous suggestions
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Way to Configure AI Coding Tools to Follow Your.](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [Configuring AI Coding Tools to Match Your Teams Specific.](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
+- [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by

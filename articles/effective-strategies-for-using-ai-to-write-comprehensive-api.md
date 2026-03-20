@@ -314,7 +314,8 @@ Implementing AI for API documentation works best with established practices:
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Prompting for AI Generation of Accessible.](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
+- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

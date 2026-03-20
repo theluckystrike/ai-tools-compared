@@ -250,5 +250,8 @@ For teams, the Team plan adds collaborative features that make Projects even mor
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [ChatGPT Canvas Feature - Is It Included in Plus or Team Only?](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

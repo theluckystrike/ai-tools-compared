@@ -173,5 +173,8 @@ Track how AI-assisted TDD affects your development process. Measure the time spe
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [How to Use AI to Generate Jest Integration Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [How to Use AI to Write pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

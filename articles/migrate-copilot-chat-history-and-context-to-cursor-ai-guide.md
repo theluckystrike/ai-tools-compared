@@ -311,5 +311,8 @@ Test before abandoning: Keep Copilot accessible for a week while you adjust to C
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor.](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

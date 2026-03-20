@@ -330,8 +330,8 @@ Generated code may occasionally use outdated patterns or deprecated APIs. Check 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [How to Migrate From Copilot for Neovim to Claude Code.](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
-{% endraw %}
+Built by

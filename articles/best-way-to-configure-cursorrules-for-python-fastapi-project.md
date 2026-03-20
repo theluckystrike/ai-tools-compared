@@ -308,7 +308,8 @@ The time invested in configuring CursorRules properly pays dividends through imp
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [How to Configure Cursor AI Rules for Consistent CSS and.](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
+- [How to Configure AI Coding Tools to Exclude Secrets and.](/ai-tools-compared/how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

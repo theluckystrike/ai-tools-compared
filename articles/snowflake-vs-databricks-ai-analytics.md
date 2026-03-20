@@ -341,7 +341,8 @@ The platforms converge on features over time. But the underlying architectural p
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+- [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
+- [Lakehouse vs Data Warehouse for AI Workloads: A.](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
+- [Jasper AI vs Writer.com for Enterprise Writing: A Developer's Comparison](/ai-tools-compared/jasper-ai-vs-writer-com-enterprise-writing-compared/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

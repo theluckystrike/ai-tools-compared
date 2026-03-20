@@ -300,7 +300,8 @@ The specificity of prompts directly impacts code quality. Ambiguous requests pro
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Tools for Go Kubernetes Operator Development.](/ai-tools-compared/best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/)
+- [Best AI Tools for Writing Go gRPC Service Definitions.](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
-{% endraw %}
+Built by

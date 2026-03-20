@@ -264,5 +264,8 @@ The transition requires an adjustment period. Expect reduced autocomplete sugges
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Using Claude Code for Backend and Cursor for Frontend in.](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
+Built by

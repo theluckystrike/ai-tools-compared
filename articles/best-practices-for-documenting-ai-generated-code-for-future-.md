@@ -304,6 +304,8 @@ The goal isn't to document every line—it's to provide enough context that futu
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best Practices for Combining AI Code Generation with.](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned.](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}
+Built by
