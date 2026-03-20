@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /generate-openapi-specs-from-existing-codebase-ai-tools/
 categories: [guides]
-tags: [ai, api, openapi, documentation]
+tags: [ai-tools-compared, ai, api, openapi, documentation, artificial-intelligence]
 reviewed: true
 score: 8
 voice-checked: true

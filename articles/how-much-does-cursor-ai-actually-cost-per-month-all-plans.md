@@ -8,8 +8,9 @@ permalink: /how-much-does-cursor-ai-actually-cost-per-month-all-plans/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

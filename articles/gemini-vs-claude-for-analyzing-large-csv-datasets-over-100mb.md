@@ -6,10 +6,11 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/
 categories: [comparisons]
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
+tags: [ai-tools-compared, comparison, claude-ai]
 ---
 
 

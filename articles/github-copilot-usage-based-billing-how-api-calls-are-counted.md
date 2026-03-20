@@ -6,9 +6,9 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /github-copilot-usage-based-billing-how-api-calls-are-counted/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

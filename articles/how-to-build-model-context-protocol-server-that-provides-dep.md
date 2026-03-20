@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/
 categories: [guides]
-tags: [mcp, protocol, development]
+tags: [ai-tools-compared, mcp, protocol, development]
 reviewed: true
 score: 8
 intent-checked: true

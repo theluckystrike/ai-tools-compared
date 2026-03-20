@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, workflow, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

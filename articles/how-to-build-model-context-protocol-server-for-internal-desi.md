@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-for-internal-desi/
 categories: [guides]
-tags: [tools, mcp, design-systems]
+tags: [ai-tools-compared, tools, mcp, design-systems]
 reviewed: true
 score: 8
 intent-checked: true

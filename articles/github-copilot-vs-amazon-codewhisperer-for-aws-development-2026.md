@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/
 categories: [guides]
-tags: [ai-tools, aws, copilot, codewhisperer, code-generation, devops]
+tags: [ai-tools-compared, ai-tools, aws, copilot, codewhisperer, code-generation, devops, comparison]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

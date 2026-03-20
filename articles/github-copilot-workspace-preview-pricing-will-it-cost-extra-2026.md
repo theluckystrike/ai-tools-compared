@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /github-copilot-workspace-preview-pricing-will-it-cost-extra-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 voice-checked: true

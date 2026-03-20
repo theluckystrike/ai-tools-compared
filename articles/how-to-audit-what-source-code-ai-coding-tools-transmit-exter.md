@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-what-source-code-ai-coding-tools-transmit-externally/
 categories: [guides]
-tags: [privacy, security, tools]
+tags: [ai-tools-compared, privacy, security, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
