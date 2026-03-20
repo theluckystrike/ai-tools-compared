@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating OpenAPI Specs from Code"
-description: "Compare AI tools that auto-generate OpenAPI/Swagger specs from existing codebases. Coverage of Claude Code, Copilot, Cursor, Swagger Codegen, and openapi-generator."
+description: "Compare AI tools that auto-generate OpenAPI/Swagger specs from existing codebases. Coverage of Claude Code, Copilot, Cursor, Swagger Codegen, and."
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-openapi-spec-generation/
@@ -431,3 +431,8 @@ security:
 - **Best hybrid:** Start with Claude Code for initial spec, then add annotations and move to Swagger Codegen for maintenance
 
 For most teams, the ideal workflow is: Claude Code for brownfield work, Swagger Codegen in CI/CD for greenfield APIs.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
