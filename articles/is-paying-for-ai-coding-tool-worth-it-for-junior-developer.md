@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /is-paying-for-ai-coding-tool-worth-it-for-junior-developer/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

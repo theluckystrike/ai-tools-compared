@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-effective-claude-md-file-for-monorepo-with-mult/
 categories: [guides]
-tags: [claude-code, monorepo, configuration]
+tags: [ai-tools-compared, claude-code, monorepo, configuration, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

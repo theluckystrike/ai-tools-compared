@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /midjourney-relax-mode-queue-times-how-slow-is-it-really-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

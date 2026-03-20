@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /midjourney-describe-feature-cost-does-it-count-as-image-gene/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

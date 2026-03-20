@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/
 categories: [guides]
-tags: [policy, security, enterprise]
+tags: [ai-tools-compared, policy, security, enterprise, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

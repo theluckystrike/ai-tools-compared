@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison]
 reviewed: true
 score: 8
 voice-checked: true

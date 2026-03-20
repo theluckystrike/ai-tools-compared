@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-system-prompts-for-ai-assistants-that-produce-a/
 categories: [guides]
-tags: [prompts, accessibility]
+tags: [ai-tools-compared, prompts, accessibility, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
