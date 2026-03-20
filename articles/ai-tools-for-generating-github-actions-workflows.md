@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-github-actions-workflows/
 categories: [guides]
-tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence, workflow]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
