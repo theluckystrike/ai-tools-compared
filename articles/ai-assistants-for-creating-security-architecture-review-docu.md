@@ -8,7 +8,7 @@ author: "AI Tools Compared"
 permalink: /ai-assistants-for-creating-security-architecture-review-docu/
 reviewed: true
 score: 8
-categories: [reviews]
+categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
 ---
 

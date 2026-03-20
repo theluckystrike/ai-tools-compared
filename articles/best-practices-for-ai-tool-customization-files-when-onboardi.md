@@ -307,6 +307,38 @@ migrations:
 ```
 
 
+## Onboarding Workflow: Getting New Developers Started Fast
+
+The real value of well-structured AI configuration files comes during onboarding. A new developer joining your team should be productive with AI tools on their first day, not after a week of configuration troubleshooting.
+
+Create an onboarding script that sets up AI tool configurations automatically. Store it in your repository's `scripts/` directory and document it in your README. The script should copy or symlink team configuration files to the correct locations, validate API keys and connectivity, and run a quick smoke test to confirm the setup works.
+
+Document the environment variable expectations clearly. Most AI tools rely on environment variables for API keys and endpoint configuration. A well-maintained `.env.example` file with comments explaining each variable prevents new developers from guessing what values are needed and from accidentally committing credentials.
+
+Provide a prompt library for new developers. Those who have not yet learned your team's AI workflow patterns will benefit from a curated set of example prompts demonstrating how to use your configured AI tools effectively for common tasks like code review, documentation generation, and test writing.
+
+## Common Pitfalls in Configuration File Management
+
+Several issues frequently derail teams that try to standardize AI tool configurations.
+
+**Storing secrets in configuration files** is the most dangerous mistake. Never commit API keys, authentication tokens, or credentials to version control, even in private repositories. Use environment variables or a secrets manager, and add configuration files containing real credentials to `.gitignore` immediately.
+
+**Letting configurations diverge between developers** erodes the value of standardization. If one developer uses `temperature: 0.9` for code generation while another uses `0.1`, AI outputs will be inconsistent and harder to reason about during code review. Enforce configurations through validation scripts run in CI.
+
+**Forgetting to update configurations after model changes.** When AI providers release new model versions, existing configurations referencing old model names may silently fail or fall back to defaults. Pin model versions explicitly and create a process for reviewing configuration changes when providers announce model updates.
+
+**Creating configurations that are too restrictive.** Balance standardization with flexibility. Overly locked-down configurations frustrate developers who want to experiment. A two-tier approach works well: strict team defaults for production workflows, and a personal override file excluded from version control for individual experimentation.
+
+## Troubleshooting Configuration Issues
+
+When AI tools produce unexpected behavior on a new developer's machine, configuration issues are usually the first thing to check.
+
+Run configuration validation on startup and surface a clear summary of which settings are active and where they were loaded from. This makes it immediately obvious when a local override is shadowing a team default, or when a required setting is missing entirely.
+
+Test configuration loading in CI by adding a job that loads configurations in a clean environment with only environment variables available. This catches situations where a developer has a local file that masks a missing configuration that would break in a fresh environment.
+
+When a new developer's environment produces different AI outputs than expected, compare their effective configuration after all layers merge to a known-good baseline. Differences in model version, temperature, or context window settings are usually the cause of inconsistent behavior.
+
 ## Related Reading
 
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
