@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-cursor-rules-file-to-windsurf-rules-format-guide/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

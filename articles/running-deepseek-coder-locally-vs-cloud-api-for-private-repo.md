@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /running-deepseek-coder-locally-vs-cloud-api-for-private-repo/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, api]
 reviewed: true
 score: 8
 voice-checked: true

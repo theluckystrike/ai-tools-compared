@@ -6,10 +6,11 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/
 categories: [guides]
-score: 7
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true
+tags: [ai-tools-compared, comparison, collaboration]
 ---
 
 

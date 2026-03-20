@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-github-copilot-workspace-setup-to-cursor-background-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools]
 reviewed: true
 score: 8
 intent-checked: true

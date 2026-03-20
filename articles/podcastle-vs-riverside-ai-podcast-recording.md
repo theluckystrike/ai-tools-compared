@@ -8,8 +8,9 @@ permalink: /podcastle-vs-riverside-ai-podcast-recording/
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, comparison, artificial-intelligence]
 ---
 
 

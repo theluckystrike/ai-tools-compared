@@ -6,7 +6,7 @@ date: 2026-03-18
 author: theluckystrike
 permalink: /notion-ai-writing-features-vs-google-docs-ai-compared/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

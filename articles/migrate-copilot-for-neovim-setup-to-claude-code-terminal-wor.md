@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "theluckystrike"
 permalink: /migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
