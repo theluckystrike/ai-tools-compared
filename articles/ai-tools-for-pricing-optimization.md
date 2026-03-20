@@ -7,9 +7,16 @@ description: "A technical guide to AI-powered pricing optimization tools, with c
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-tools-for-pricing-optimization/
+<<<<<<< HEAD
 reviewed: true
 score: 8
 categories: [pricing]
+=======
+categories: [guides]
+tags: [ai-tools-compared, tools, artificial-intelligence]
+reviewed: true
+score: 8
+>>>>>>> 622b147d66b606181c0862f49f8e7d6bc446f30b
 ---
 
 

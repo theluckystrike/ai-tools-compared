@@ -7,9 +7,10 @@ date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-tools-for-data-mesh-architecture/
 reviewed: true
-score: 8
+score: 7
 categories: [guides]
 intent-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 
