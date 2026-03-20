@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 Most engineers write good code comments but hate writing documentation. Modern AI can transform those inline comments into professional API documentation: OpenAPI specs, Markdown guides, and interactive API references. This guide covers the best tools and workflows.
 
 ## Why AI-Generated Docs Matter
@@ -549,3 +550,4 @@ Start with OpenAPI generation even if you only plan to display Markdown docs ini
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
