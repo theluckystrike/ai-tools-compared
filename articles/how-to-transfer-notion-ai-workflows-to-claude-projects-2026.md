@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-notion-ai-workflows-to-claude-projects-2026/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, workflow, artificial-intelligence, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

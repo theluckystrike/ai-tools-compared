@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /how-to-use-ai-assistants-for-generating-retool-admin-panels-/
 categories: [guides]
-tags: [ai-tools-compared, retool, admin-panels, database, automation]
+tags: [ai-tools-compared, retool, admin-panels, database, automation, artificial-intelligence]
 reviewed: true
 score: 8
 ---

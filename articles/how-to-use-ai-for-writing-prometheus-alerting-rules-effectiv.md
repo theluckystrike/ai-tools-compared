@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/
 categories: [guides]
-tags: [monitoring, prometheus, devops]
+tags: [ai-tools-compared, monitoring, prometheus, devops, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

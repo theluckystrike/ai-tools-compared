@@ -8,8 +8,9 @@ permalink: /how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/
 categories: [guides]
-tags: [devops, ai, sre]
+tags: [ai-tools-compared, devops, ai, sre, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

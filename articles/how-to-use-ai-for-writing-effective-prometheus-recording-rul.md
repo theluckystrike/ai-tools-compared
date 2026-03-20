@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-prometheus-recording-rul/
 categories: [guides]
-tags: [prometheus, monitoring, ai]
+tags: [ai-tools-compared, prometheus, monitoring, ai, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

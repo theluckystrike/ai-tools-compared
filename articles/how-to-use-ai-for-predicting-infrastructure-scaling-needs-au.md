@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-predicting-infrastructure-scaling-needs-au/
 categories: [guides]
-tags: [infrastructure, devops, ai]
+tags: [ai-tools-compared, infrastructure, devops, ai, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
