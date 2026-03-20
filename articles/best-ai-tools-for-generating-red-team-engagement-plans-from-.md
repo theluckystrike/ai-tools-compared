@@ -7,6 +7,7 @@ author: "AI Tools Compared"
 permalink: /best-ai-tools-for-generating-red-team-engagement-plans-from-/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [best-of]
 ---
 
