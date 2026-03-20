@@ -397,7 +397,118 @@ Rate Limiting Info: Include rate limit headers and retry-after values in endpoin
 
 Version Comparison: Support multiple API versions and allow querying differences between versions.
 
+## Caching Documentation in Memory vs. Reloading on Change
 
+Loading the OpenAPI spec on every tool call adds latency. But serving stale docs when the spec changes during development produces confusing AI suggestions. The right approach is to cache with optional hot-reload:
+
+```python
+import asyncio
+import hashlib
+from pathlib import Path
+
+class DocumentationCache:
+    def __init__(self, spec_path: str):
+        self.spec_path = Path(spec_path)
+        self._cache: dict = {}
+        self._last_hash: str = ""
+
+    def _file_hash(self) -> str:
+        return hashlib.md5(self.spec_path.read_bytes()).hexdigest()
+
+    def get_or_reload(self) -> dict:
+        current_hash = self._file_hash()
+        if current_hash != self._last_hash:
+            spec = load_openapi_spec(str(self.spec_path))
+            self._cache = {
+                "spec": spec,
+                "endpoints": parse_endpoints(spec),
+                "title": spec.get("info", {}).get("title", "API"),
+                "version": spec.get("info", {}).get("version", "1.0.0"),
+            }
+            self._last_hash = current_hash
+        return self._cache
+```
+
+This approach reloads automatically when the file changes without polling. When the MD5 matches the cached hash, it returns the cached result immediately. Development workflows benefit from the hot-reload; production deployments benefit from the cache hit performance.
+
+## Exposing Authentication Schemes
+
+AI assistants generate better API client code when they understand the authentication model. Parse the security schemes from your OpenAPI spec and expose them as a dedicated tool:
+
+```python
+@mcp.tool()
+async def get_auth_schemes() -> dict:
+    """Get authentication requirements for the API."""
+    if not api_docs.get("spec"):
+        return {"error": "No documentation loaded."}
+
+    spec = api_docs["spec"]
+    security_schemes = spec.get("components", {}).get("securitySchemes", {})
+    global_security = spec.get("security", [])
+
+    result = {"global_requirements": global_security, "schemes": {}}
+
+    for name, scheme in security_schemes.items():
+        result["schemes"][name] = {
+            "type": scheme.get("type"),
+            "description": scheme.get("description", ""),
+        }
+        if scheme.get("type") == "apiKey":
+            result["schemes"][name]["in"] = scheme.get("in")
+            result["schemes"][name]["name"] = scheme.get("name")
+        elif scheme.get("type") == "http":
+            result["schemes"][name]["scheme"] = scheme.get("scheme")  # bearer, basic
+        elif scheme.get("type") == "oauth2":
+            result["schemes"][name]["flows"] = list(scheme.get("flows", {}).keys())
+
+    return result
+```
+
+When an AI assistant calls `get_auth_schemes()` before generating code for a protected endpoint, it automatically includes correct `Authorization` headers or API key parameters rather than requiring you to specify authentication in every prompt.
+
+## Supporting Multiple API Versions
+
+APIs evolve. An MCP documentation server that only knows the current version can't help when a client is pinned to an older version. Add multi-version support with a version registry:
+
+```python
+# Store multiple spec versions
+api_versions: dict[str, dict] = {}
+
+@mcp.tool()
+async def load_version(spec_path: str, version_label: str = "current") -> str:
+    """Load a specific API version's documentation."""
+    spec = load_openapi_spec(spec_path)
+    api_versions[version_label] = {
+        "spec": spec,
+        "endpoints": parse_endpoints(spec),
+        "title": spec.get("info", {}).get("title", "API"),
+        "version": spec.get("info", {}).get("version"),
+    }
+    return f"Loaded {version_label}: {api_versions[version_label]['title']} v{api_versions[version_label]['version']}"
+
+@mcp.tool()
+async def list_versions() -> list[dict]:
+    """List all loaded API versions."""
+    return [
+        {"label": label, "api_version": data["version"], "title": data["title"]}
+        for label, data in api_versions.items()
+    ]
+
+@mcp.tool()
+async def search_endpoints_by_version(query: str, version_label: str = "current") -> list[dict]:
+    """Search endpoints in a specific API version."""
+    if version_label not in api_versions:
+        return [{"error": f"Version '{version_label}' not loaded."}]
+    endpoints = api_versions[version_label]["endpoints"]
+    query_lower = query.lower()
+    return [
+        {"path": e.path, "method": e.method, "summary": e.summary}
+        for e in endpoints
+        if query_lower in e.path.lower() or query_lower in e.summary.lower()
+    ]
+```
+
+Load both versions at startup and AI assistants can generate code targeting either, or compare endpoints across versions to identify breaking changes.
 
 ## Related Reading
 
