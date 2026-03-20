@@ -6,7 +6,7 @@ description: "A practical guide to configuring AI coding assistants like GitHub 
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /configuring-ai-coding-tools-to-match-your-teams-specific-doc/
-categories: [guides, docker, ai-tools]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "A practical guide for developer relations teams on leveraging AI t
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Creating high-quality video tutorials is essential for developer relations (DevRel) teams, but the process can be time-consuming. From planning the script to recording, editing, and adding captions, each step requires significant effort. AI tools can help streamline this workflow, allowing DevRel teams to produce more content in less time without sacrificing quality. This guide explores how to leverage AI throughout the entire video tutorial creation process.

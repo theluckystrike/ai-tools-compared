@@ -6,6 +6,10 @@ description: "A practical guide to creating custom instructions for AI coding to
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-instructions-for-ai-coding-tools-that-e/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When you work with AI coding assistants like GitHub Copilot, Cursor, or Claude Code, you likely encounter a common frustration: the AI generates code with inconsistent or non-standard naming. Variable names, function names, and file names drift away from your team's established conventions. This happens because the AI defaults to its training data patterns rather than your specific project requirements. The solution lies in custom instructions—system-level directives that shape how the AI approaches code generation.

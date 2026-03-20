@@ -6,7 +6,7 @@ description: "A comprehensive guide to AI-powered Chrome extensions for creating
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /ai-presentation-maker-chrome-extension/
-categories: [ai-tools, productivity]
+categories: [guides, productivity]
 reviewed: false
 score: 0
 intent-checked: false

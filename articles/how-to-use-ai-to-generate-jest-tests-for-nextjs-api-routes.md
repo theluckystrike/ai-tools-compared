@@ -5,7 +5,7 @@ description: "A practical guide for developers on using AI tools to automaticall
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/
-categories: [development, testing, nextjs, jest]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

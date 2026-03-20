@@ -6,7 +6,7 @@ description: "A practical guide to configuring Claude Code to understand and fol
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-to-follow-your-teams-feature-fl/
-categories: [configuration, development-tools, claude-code]
+categories: [guides]
 ---
 
 {% raw %}

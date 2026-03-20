@@ -6,7 +6,7 @@ description: "A practical guide to using AI tools that generate thorough negativ
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-creating-comprehensive-negative-test-cases-from-/
-categories: [development, testing, ai-tools]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true

@@ -5,6 +5,10 @@ description: "A comprehensive comparison of Notion AI and Google Docs AI writing
 date: 2026-03-18
 author: theluckystrike
 permalink: /notion-ai-writing-features-vs-google-docs-ai-compared/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

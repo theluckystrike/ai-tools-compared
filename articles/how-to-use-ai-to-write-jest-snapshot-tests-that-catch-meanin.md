@@ -5,6 +5,10 @@ description: "Learn how to leverage AI tools to create Jest snapshot tests that 
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-jest-snapshot-tests-that-catch-meanin/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

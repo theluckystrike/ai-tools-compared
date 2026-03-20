@@ -6,6 +6,10 @@ description: "A practical guide to creating CursorRules that handle React TypeSc
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-cursorrules-for-react-typescript-projects-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 CursorRules files help AI assistants understand your project's conventions, tooling, and coding standards. For React TypeScript projects, well-crafted rules can dramatically improve code quality, consistency, and reduce repetitive feedback. This guide covers how to write effective CursorRules that handle specific component patterns, custom hooks, and state management approaches.

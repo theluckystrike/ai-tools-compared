@@ -5,6 +5,10 @@ description: "Learn how to write effective custom instructions for AI coding ass
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 When building APIs, consistent error responses are critical for frontend developers and API consumers. Yet AI coding assistants often generate inconsistent error handling code that does not match your established schema. Custom instructions solve this problem by teaching AI tools exactly how to format error responses in your project.

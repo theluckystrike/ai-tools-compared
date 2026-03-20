@@ -5,6 +5,10 @@ description: "Learn how to create effective CLAUDE MD files that define API vers
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 API versioning is a critical aspect of building maintainable software systems. When working with AI coding assistants like Claude, having a well-structured CLAUDE MD file that defines your API versioning strategy can significantly improve collaboration and reduce integration errors. This guide walks you through creating effective CLAUDE MD files that communicate your project's versioning approach to AI assistants.

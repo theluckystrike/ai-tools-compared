@@ -5,6 +5,10 @@ description: "Discover the top AI tools in 2026 for generating comprehensive tes
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-creating-test-matrices-that-cover-all-input-comb/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

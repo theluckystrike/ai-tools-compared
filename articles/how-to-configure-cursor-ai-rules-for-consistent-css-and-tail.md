@@ -6,6 +6,10 @@ description: "A practical guide to setting up Cursor AI rules that enforce consi
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Cursor AI, the AI-powered code editor built on VS Code, offers powerful customization through its Rules feature. These rules let you define coding standards that the AI follows when generating or editing code. Configuring rules for consistent CSS and Tailwind class ordering helps maintain a clean, readable codebase and speeds up code reviews.

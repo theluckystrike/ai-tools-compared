@@ -5,6 +5,10 @@ description: "Learn how to leverage AI tools to create Playwright authentication
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-authentication-flow-tes/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

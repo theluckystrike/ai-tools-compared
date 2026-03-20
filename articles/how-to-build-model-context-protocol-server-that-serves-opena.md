@@ -5,7 +5,7 @@ description: "A practical guide to building an MCP server that serves OpenAPI sp
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-serves-opena/
-categories: [tutorials, MCP, OpenAPI, AI]
+categories: [tutorials, guides]
 reviewed: true
 score: 8
 intent-checked: true

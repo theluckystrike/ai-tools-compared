@@ -6,7 +6,7 @@ description: "A practical guide to AI tools that help developers write Jest test
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-creating-jest-tests-that-cover-race-conditions-i/
-categories: [ai-tools, testing, jest]
+categories: [guides]
 reviewed: true
 score: 0
 intent-checked: false

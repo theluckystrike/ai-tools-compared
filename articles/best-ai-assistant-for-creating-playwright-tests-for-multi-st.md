@@ -6,6 +6,10 @@ description: "A practical guide comparing AI tools for generating Playwright tes
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-playwright-tests-for-multi-st/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

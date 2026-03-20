@@ -5,6 +5,10 @@ description: "Learn how to configure parallel testing with Claude Code to speed 
 date: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-parallel-testing-configuration/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

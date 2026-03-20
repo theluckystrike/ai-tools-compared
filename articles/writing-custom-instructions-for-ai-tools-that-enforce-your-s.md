@@ -6,6 +6,10 @@ description: "A practical guide for developers to create custom instructions tha
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Security headers represent one of the most critical yet frequently overlooked aspects of web application security. When AI coding tools generate middleware, server configurations, or framework setup code, they rarely enforce your organization's specific security header requirements by default. Writing custom instructions that explicitly define your security header standards ensures every piece of generated code meets your compliance requirements without requiring manual intervention.

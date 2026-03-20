@@ -5,6 +5,10 @@ description: "Learn how to leverage AI tools to create helpful, welcoming GitHub
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-actions-bot-comments-for-first/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Automated bot comments in GitHub pull requests serve as the first line of communication between your project and new contributors. When someone submits their first pull request, the message they receive sets the tone for their entire open-source experience. Using AI to craft these messages helps maintain consistency while ensuring contributors feel welcomed and guided through the review process.

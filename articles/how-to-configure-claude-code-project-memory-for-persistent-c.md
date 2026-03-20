@@ -6,6 +6,10 @@ description: "A practical guide to configuring Claude Code project memory for pe
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-project-memory-for-persistent-c/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

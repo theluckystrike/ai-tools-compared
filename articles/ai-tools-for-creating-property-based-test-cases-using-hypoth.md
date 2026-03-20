@@ -5,6 +5,10 @@ description: "Discover how AI tools can help you write property-based tests with
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-property-based-test-cases-using-hypoth/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

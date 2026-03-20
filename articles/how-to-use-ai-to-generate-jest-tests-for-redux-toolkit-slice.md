@@ -6,6 +6,10 @@ description: "A practical guide for developers looking to automate Jest test gen
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Writing tests for Redux Toolkit slices can feel repetitive. Every slice needs actions, reducers, and selectors tested—yet the patterns stay largely the same. AI code generation tools can accelerate this workflow significantly, helping you produce reliable Jest tests in seconds rather than minutes.

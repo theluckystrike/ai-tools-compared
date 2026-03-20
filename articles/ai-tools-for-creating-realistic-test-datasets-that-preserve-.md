@@ -5,6 +5,10 @@ description: "Discover how AI-powered tools can generate realistic test data whi
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-realistic-test-datasets-that-preserve-/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

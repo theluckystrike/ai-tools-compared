@@ -6,6 +6,10 @@ description: "Learn how to create effective CursorRules configurations for Golan
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

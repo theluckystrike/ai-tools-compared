@@ -5,6 +5,10 @@ description: "Discover the best AI tools for generating Playwright multi-browser
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

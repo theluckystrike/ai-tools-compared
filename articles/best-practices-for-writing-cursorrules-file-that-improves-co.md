@@ -5,6 +5,10 @@ description: "Learn how to write effective .cursorrules files that dramatically 
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-writing-cursorrules-file-that-improves-co/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}

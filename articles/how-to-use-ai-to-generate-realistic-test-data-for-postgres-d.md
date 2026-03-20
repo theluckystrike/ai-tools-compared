@@ -5,6 +5,10 @@ description: "Learn how to leverage AI tools to create production-like test data
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 Generating realistic test data for PostgreSQL databases is a common challenge for developers. Manually creating thousands of rows with believable patterns consumes hours of tedious work. AI tools now offer a practical solution for generating seed data that mimics real-world data distributions, relationships, and constraints.

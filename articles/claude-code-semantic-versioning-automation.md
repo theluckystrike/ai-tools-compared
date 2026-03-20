@@ -6,6 +6,10 @@ author: "AI Tools Compared"
 category: "ai-tools"
 topic: ["claude-code", "versioning", "automation"]
 permalink: /claude-code-semantic-versioning-automation/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 robots: "index, follow"
 last_updated: "2026-03-18"
 structured_data:

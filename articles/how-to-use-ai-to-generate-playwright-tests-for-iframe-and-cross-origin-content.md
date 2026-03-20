@@ -5,7 +5,7 @@ description: "A practical guide for developers on using AI tools to generate Pla
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/
-categories: [development, testing, playwright]
+categories: [guides]
 reviewed: true
 score: 8
 intent-checked: true
