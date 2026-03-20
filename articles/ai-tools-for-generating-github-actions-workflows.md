@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 ---
 
+{% raw %}
 GitHub Actions workflows are powerful but verbose—YAML syntax combined with conditional logic, secrets management, and job dependencies creates friction. AI tools can generate complete `.github/workflows/` files, but they vary significantly in accuracy, pricing, and understanding of GitHub's ecosystem constraints.
 
 This guide compares three leading AI tools for workflow generation: Claude Code, GitHub Copilot, and Cursor. We'll evaluate accuracy, real-world examples, debugging workflows, and total cost of ownership.
@@ -456,3 +457,4 @@ For GitHub Actions workflow generation, **Claude Code and Cursor lead in accurac
 **GitHub Copilot** is fastest for simple workflows and offers excellent value at $10/month if you're already using it for code completion.
 
 Choose based on your team's workflow complexity and AI tool budget. For teams deploying to AWS/Kubernetes with monorepos, Claude Code's $20/month investment saves hours per quarter in debugging and refinement.
+{% endraw %}
