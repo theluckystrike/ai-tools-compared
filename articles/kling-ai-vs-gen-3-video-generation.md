@@ -406,3 +406,5 @@ Both Kling AI and Gen 3 represent viable options for developer integration. The 
 - [Steve AI vs Raw Shorts: AI Video Creation Comparison for.](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

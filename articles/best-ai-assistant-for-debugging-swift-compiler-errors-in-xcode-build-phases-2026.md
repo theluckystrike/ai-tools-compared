@@ -280,3 +280,5 @@ The best choice depends on your specific needs, workflow preferences, and budget
 - [Best AI Assistant for Debugging Memory Leaks Shown in.](/ai-tools-compared/best-ai-assistant-for-debugging-memory-leaks-shown-in-chrome-devtools-heap-snapshot/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -339,3 +339,5 @@ These tools evolve rapidly. Check official documentation for the latest features
 - [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

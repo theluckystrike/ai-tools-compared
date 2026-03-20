@@ -213,3 +213,5 @@ Most Cursor Composer loop issues resolve quickly with one of the methods outline
 - [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

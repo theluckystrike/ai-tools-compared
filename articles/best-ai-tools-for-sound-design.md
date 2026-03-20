@@ -244,3 +244,5 @@ The AI sound design landscape evolves rapidly. New models and services appear mo
 - [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

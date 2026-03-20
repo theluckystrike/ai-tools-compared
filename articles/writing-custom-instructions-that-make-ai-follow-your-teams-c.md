@@ -283,3 +283,5 @@ Keep your instructions in version control alongside your project code. This ensu
 - [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

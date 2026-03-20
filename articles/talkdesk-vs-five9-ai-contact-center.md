@@ -329,3 +329,5 @@ Both platforms continue to evolve their AI offerings, and the gap between their 
 - [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/ai-tools-compared/cognigy-vs-boost-ai-virtual-agents/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

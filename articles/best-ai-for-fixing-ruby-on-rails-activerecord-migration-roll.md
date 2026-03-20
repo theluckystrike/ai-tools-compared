@@ -9,6 +9,7 @@ categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 
@@ -225,3 +226,5 @@ This approach bypasses foreign key checks temporarily but requires careful handl
 - [How to Use AI for Cloud Migration Planning and.](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

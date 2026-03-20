@@ -290,3 +290,5 @@ Test both with a simple OAuth2 flow to see which matches your development style.
 - [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

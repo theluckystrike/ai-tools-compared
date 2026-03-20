@@ -432,3 +432,5 @@ The choice between Census and HighTouch ultimately depends on your existing data
 - [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

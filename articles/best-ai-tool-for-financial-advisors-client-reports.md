@@ -212,3 +212,5 @@ Consider starting with your free tier of choice to evaluate fit with your client
 - [Best AI Tool for Compliance Officers Policy Review](/ai-tools-compared/best-ai-tool-for-compliance-officers-policy-review/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

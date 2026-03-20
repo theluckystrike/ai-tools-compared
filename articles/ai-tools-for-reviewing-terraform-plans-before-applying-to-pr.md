@@ -279,3 +279,5 @@ Maintain human oversight throughout the process. AI tools assist review but shou
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

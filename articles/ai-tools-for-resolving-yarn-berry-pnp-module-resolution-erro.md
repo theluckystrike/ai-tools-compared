@@ -268,3 +268,5 @@ For issues involving native modules or complex peer dependency chains, the Yarn 
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

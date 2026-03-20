@@ -271,3 +271,5 @@ Understanding your consumption patterns helps you schedule long-output tasks dur
 - [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

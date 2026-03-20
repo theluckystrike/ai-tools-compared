@@ -262,3 +262,5 @@ Experiment with both model families in your workflow. Track your credit consumpt
 - [How to Move Tabnine AI Models When Switching to Supermaven](/ai-tools-compared/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

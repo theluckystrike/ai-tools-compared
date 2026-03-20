@@ -235,3 +235,5 @@ Test both with a single real project. Ask each tool to help you implement a feat
 - [Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -293,3 +293,5 @@ AI tools have boundaries you should recognize:
 - [How to Structure Prompts for AI to Generate Idiomatic.](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

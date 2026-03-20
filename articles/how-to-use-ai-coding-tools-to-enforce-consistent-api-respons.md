@@ -335,3 +335,5 @@ AI coding tools transform API consistency from a manual enforcement task into an
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

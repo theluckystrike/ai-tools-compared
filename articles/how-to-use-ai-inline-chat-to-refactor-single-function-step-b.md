@@ -217,3 +217,5 @@ The feature also understands framework-specific patterns. You can ask for "React
 - [How to Use Copilot Chat to Generate Code from Natural.](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

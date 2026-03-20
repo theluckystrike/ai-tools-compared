@@ -10,6 +10,7 @@ tags: [tools]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 
@@ -264,3 +265,5 @@ Getting the best results requires some refinement:
 - [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

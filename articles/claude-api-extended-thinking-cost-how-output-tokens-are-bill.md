@@ -268,3 +268,5 @@ response, cost = track_request("Explain the time complexity of merge sort")
 - [Claude API Batch Processing: How Much Cheaper Than.](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

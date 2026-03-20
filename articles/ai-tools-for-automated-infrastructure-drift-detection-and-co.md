@@ -312,3 +312,5 @@ Automated drift correction introduces risk. Implement these safeguards:
 - [AI Powered Tools for Container Orchestration Beyond.](/ai-tools-compared/ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

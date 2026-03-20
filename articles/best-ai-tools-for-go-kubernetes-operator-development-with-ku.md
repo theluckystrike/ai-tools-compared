@@ -229,3 +229,5 @@ However, it may not fully understand Kubebuilder-specific annotations and marker
 - [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

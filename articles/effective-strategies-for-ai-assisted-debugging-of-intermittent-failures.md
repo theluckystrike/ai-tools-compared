@@ -245,3 +245,5 @@ Intermittent failures will always exist in complex distributed systems. AI-assis
 - [Effective Strategies for Reviewing AI-Generated Code.](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

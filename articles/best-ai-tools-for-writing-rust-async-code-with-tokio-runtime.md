@@ -283,3 +283,5 @@ Your AI tool should reliably generate these patterns:
 - [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

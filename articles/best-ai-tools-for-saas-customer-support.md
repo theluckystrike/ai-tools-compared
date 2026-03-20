@@ -403,3 +403,5 @@ The best choice depends on your current platform, development resources, and spe
 - [AI Tools for Customer Escalation Management](/ai-tools-compared/ai-tools-for-customer-escalation-management/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

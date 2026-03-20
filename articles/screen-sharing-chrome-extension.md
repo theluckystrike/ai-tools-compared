@@ -324,3 +324,5 @@ Proper audio setup matters significantly for screen recordings. Most extensions 
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

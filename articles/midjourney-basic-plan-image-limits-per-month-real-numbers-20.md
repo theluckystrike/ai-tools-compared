@@ -269,3 +269,5 @@ The Basic Plan works well for individual developers, learning projects, and low-
 - [How Much Does Cursor AI Actually Cost Per Month? All Plans Explained](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

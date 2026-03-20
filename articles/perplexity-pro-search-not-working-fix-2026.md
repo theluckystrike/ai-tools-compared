@@ -343,3 +343,5 @@ Perplexity's support team can access backend account information that reveals is
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

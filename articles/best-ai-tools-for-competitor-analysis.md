@@ -261,3 +261,5 @@ Combine internal and external data. Your own customer data—support tickets, ch
 - [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

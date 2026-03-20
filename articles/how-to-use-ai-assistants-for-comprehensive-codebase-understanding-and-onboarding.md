@@ -312,3 +312,5 @@ Consider these approaches for team adoption:
 - [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

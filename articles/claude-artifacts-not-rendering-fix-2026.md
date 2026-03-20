@@ -310,3 +310,5 @@ Prevention reduces the frequency of future interruptions.
 - [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

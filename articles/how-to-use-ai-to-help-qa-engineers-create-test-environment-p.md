@@ -268,3 +268,5 @@ def generate_provisioning_script(checklist_items):
 - [AI Tools for QA Engineers: Generating Data-Driven Test.](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

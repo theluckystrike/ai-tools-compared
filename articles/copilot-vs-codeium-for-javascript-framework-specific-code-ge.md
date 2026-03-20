@@ -335,3 +335,5 @@ Copilot uses GitHub's repository context to understand patterns from similar pro
 - [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

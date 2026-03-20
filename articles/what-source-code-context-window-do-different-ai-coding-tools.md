@@ -272,3 +272,5 @@ Understanding these differences helps you select tools that align with your priv
 - [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

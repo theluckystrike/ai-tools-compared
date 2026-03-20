@@ -291,3 +291,5 @@ Combine AI assistance with Superset's native features for optimal results:
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type.](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

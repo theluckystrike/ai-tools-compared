@@ -308,3 +308,5 @@ Understand that AI assistants may not always choose optimal constraint definitio
 - [AI Code Completion for Java Record Classes and Sealed.](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -256,3 +256,5 @@ Integration ecosystem: Check pre-built connectors for your data stack—Snowflak
 - [AI Tools for Data Mesh Architecture: A Practical Guide.](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

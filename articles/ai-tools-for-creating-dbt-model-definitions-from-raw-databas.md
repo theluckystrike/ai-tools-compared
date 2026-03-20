@@ -270,3 +270,5 @@ For simple staging models, AI generation works well. For complex business logic,
 - [AI Tools for Writing dbt Seeds and Fixtures for Testing.](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

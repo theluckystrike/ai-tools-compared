@@ -293,3 +293,5 @@ The best approach involves using AI to generate initial test patterns, then manu
 - [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

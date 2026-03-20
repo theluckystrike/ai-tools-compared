@@ -237,3 +237,5 @@ The key is treating AI as a drafting assistant, not a replacement for human anal
 - [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

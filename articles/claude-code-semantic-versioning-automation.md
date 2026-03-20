@@ -296,3 +296,5 @@ Claude Code can actively enforce versioning rules during development:
 - [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
 - [Claude Code Parallel Testing Configuration - Complete.](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Writing CLAUDE MD Files That Define Your Project's API Versioning Strategy for AI](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

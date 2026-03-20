@@ -246,3 +246,5 @@ The good news is these options aren't mutually exclusive. Some developers use Co
 - [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

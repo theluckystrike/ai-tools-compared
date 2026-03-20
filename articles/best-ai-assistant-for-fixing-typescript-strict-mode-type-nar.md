@@ -239,3 +239,5 @@ For team environments: Copilot's integration with GitHub and enterprise features
 - [AI Coding Assistant Accuracy for TypeScript Svelte.](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

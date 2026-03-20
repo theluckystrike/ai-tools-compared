@@ -227,3 +227,5 @@ Consider creating a library of reusable test utilities for common upload and dow
 - [Best AI Assistant for Writing Playwright Tests for Drag and Drop Interactions 2026](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

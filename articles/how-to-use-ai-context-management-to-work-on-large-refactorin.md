@@ -252,3 +252,5 @@ Run tests after each atomic refactoring step. If tests pass, commit and proceed.
 - [Effective Context Loading Strategies for AI Tools in.](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

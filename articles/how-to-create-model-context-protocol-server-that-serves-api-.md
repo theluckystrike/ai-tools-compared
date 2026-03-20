@@ -409,3 +409,5 @@ Version Comparison: Support multiple API versions and allow querying differences
 - [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

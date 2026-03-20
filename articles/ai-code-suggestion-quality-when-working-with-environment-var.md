@@ -217,3 +217,5 @@ Separating configuration from code remains essential regardless of whether you u
 - [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

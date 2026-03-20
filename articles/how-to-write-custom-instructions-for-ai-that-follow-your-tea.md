@@ -211,3 +211,5 @@ This targeted approach keeps instructions relevant to the task at hand rather th
 - [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

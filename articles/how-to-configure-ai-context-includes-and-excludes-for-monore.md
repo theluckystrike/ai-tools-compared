@@ -294,3 +294,5 @@ Properly configured context includes and excludes transform AI assistance from a
 - [Best Way to Configure AI Coding Tools to Follow Your.](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

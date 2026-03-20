@@ -293,3 +293,5 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 - [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

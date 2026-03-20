@@ -376,3 +376,5 @@ Start by identifying your most time-intensive synthesis tasks, evaluate tools ag
 - [Best AI Tool for Journalists Article Research 2026](/ai-tools-compared/best-ai-tool-for-journalists-article-research-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

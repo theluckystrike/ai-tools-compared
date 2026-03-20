@@ -317,3 +317,5 @@ For teams maintaining large component libraries, the time invested in generating
 - [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

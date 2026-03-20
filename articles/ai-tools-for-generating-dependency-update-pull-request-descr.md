@@ -194,3 +194,5 @@ Best practices for using AI in this workflow include reviewing AI-generated cont
 - [How to Use AI to Generate Pull Request Impact Analysis.](/ai-tools-compared/how-to-use-ai-to-generate-pull-request-impact-analysis-showi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

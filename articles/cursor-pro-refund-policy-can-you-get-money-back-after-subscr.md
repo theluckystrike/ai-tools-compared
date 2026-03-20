@@ -300,3 +300,5 @@ If your refund request is denied, ask for specific reasons. You may be able to a
 - [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

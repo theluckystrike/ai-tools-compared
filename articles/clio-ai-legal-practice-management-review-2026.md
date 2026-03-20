@@ -158,3 +158,5 @@ For 2026, Clio AI represents incremental improvement over previous versions rath
 - [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -306,3 +306,5 @@ The key is matching your organization's specific needs against what the business
 - [Copilot Business Org-Wide Enable: Cost If Not All Devs.](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

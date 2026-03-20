@@ -258,3 +258,5 @@ Solution: Re-authenticate via Cursor's GitHub settings panel
 - [How to Switch from Cursor to Claude Code Without Losing.](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

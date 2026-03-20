@@ -247,3 +247,5 @@ Start by using Claude Code for one task per day, then gradually expand as you di
 - [Copilot vs Claude Code for Scaffolding New Django REST.](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

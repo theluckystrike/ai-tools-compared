@@ -271,3 +271,5 @@ To maximize the value of AI-generated tests:
 - [Best AI for Writing Pytest Asyncio Tests for WebSocket.](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

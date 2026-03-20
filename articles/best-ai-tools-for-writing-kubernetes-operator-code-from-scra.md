@@ -305,3 +305,5 @@ The specificity of prompts directly impacts code quality. Ambiguous requests pro
 - [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

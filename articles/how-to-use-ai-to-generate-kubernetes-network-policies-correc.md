@@ -335,3 +335,5 @@ AI tools can generate these advanced configurations, but you must provide detail
 - [How Well Do AI Tools Generate Correct Go Interface.](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

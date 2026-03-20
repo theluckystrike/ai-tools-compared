@@ -248,3 +248,5 @@ Start with baseline measurements before implementing AI predictions, then compar
 - [Best AI Tools for Cloud Resource Tagging Compliance.](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

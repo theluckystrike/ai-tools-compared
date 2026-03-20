@@ -290,3 +290,5 @@ The more context you provide about your specific environment and constraints, th
 - [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

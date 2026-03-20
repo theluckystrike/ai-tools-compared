@@ -161,3 +161,5 @@ The right tool depends on your organization's size, existing technology, and spe
 - [Best AI Tool for Marketing Managers Campaign Briefs](/ai-tools-compared/best-ai-tool-for-marketing-managers-campaign-briefs/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

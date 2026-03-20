@@ -345,3 +345,5 @@ Both tools continue evolving as the short-form video market grows. The choice ul
 - [Wondershare Filmora AI vs Final Cut Pro: A Technical Comparison for Power Users](/ai-tools-compared/wondershare-filmora-ai-vs-final-cut-pro/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -235,3 +235,5 @@ This workflow uses describe's free operation to inform generation decisions, the
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

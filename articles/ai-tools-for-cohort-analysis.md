@@ -245,3 +245,5 @@ Build feedback loops. When AI predicts which users will churn, track whether you
 - [Best AI Tools for Data Cleaning: A Practical Guide for.](/ai-tools-compared/best-ai-tools-for-data-cleaning/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

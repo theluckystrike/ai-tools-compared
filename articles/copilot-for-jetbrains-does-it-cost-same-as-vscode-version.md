@@ -212,3 +212,5 @@ Slow performance: Large projects can slow Copilot response times. Exclude unnece
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

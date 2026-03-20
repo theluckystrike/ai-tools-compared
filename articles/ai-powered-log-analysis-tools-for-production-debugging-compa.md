@@ -274,3 +274,5 @@ Well-structured logs dramatically improve AI analysis accuracy, regardless of wh
 - [How to Use AI to Diagnose Kubernetes Pod CrashLoopBackOff from Container Logs](/ai-tools-compared/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

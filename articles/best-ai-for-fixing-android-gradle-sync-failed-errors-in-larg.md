@@ -209,3 +209,5 @@ AI tools have fundamentally changed how developers approach Gradle troubleshooti
 - [How to Use AI to Troubleshoot Kubernetes Pod CrashLoopBackOff Errors](/ai-tools-compared/how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

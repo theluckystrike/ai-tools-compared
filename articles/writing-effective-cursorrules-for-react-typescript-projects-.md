@@ -372,3 +372,5 @@ Specify testing library preferences, mock patterns, and what should be tested ve
 - [Writing Effective CursorRules for Next.js App Router.](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

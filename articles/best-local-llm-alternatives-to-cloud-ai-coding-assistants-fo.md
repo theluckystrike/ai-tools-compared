@@ -9,6 +9,7 @@ categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 
@@ -282,3 +283,5 @@ Document your setup for compliance reviews. Ensure model weights come from trust
 - [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

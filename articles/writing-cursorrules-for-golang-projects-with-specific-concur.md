@@ -294,3 +294,5 @@ The goal is generating code that passes your CI/CD pipeline without modification
 - [How to Use AI to Diagnose and Fix Golang Goroutine.](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

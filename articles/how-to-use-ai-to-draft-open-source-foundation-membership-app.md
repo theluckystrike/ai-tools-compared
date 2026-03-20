@@ -218,3 +218,5 @@ Maintain accuracy throughout. AI sometimes generates plausible-sounding but inco
 - [How to Use AI to Write Commit Message Guidelines for Open Source Projects.](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

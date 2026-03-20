@@ -209,3 +209,5 @@ Document what you learn. When you find and fix a segmentation fault, note what c
 - [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

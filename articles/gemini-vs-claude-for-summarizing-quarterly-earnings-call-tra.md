@@ -290,3 +290,5 @@ Both models handle earnings call transcripts effectively. Your choice ultimately
 - [Switching from Gemini Advanced to Claude Pro: What You Lose](/ai-tools-compared/switching-from-gemini-advanced-to-claude-pro-what-you-lose/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

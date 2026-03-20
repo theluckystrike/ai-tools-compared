@@ -231,3 +231,5 @@ If you need cross-platform consistency, consider using the same AI service acros
 - [Tabnine Pro vs Free: What Autocomplete Features Are Locked](/ai-tools-compared/tabnine-pro-vs-free-what-autocomplete-features-are-locked/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

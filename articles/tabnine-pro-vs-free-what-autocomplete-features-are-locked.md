@@ -291,3 +291,5 @@ If you find yourself frequently:
 - [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

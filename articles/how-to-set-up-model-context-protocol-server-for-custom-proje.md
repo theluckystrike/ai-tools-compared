@@ -452,3 +452,5 @@ Some AI tools require a restart after adding MCP server configuration. Close and
 - [How to Set Up Model Context Protocol for Feeding Jira.](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

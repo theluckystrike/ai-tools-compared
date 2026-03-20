@@ -247,3 +247,5 @@ Use your judgment: if you can clearly articulate the interface between two compo
 - [Best Practices for Combining AI Code Generation with.](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

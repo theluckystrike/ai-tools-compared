@@ -212,3 +212,5 @@ def lowercase_email(cls, v):
 - [Best AI Coding Tools for Java Microservices with Spring.](/ai-tools-compared/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

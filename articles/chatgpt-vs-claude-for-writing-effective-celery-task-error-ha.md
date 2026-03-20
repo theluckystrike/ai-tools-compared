@@ -267,3 +267,5 @@ The choice ultimately depends on your requirements. If you're building a system 
 - [Claude vs ChatGPT for Writing Kubernetes Helm Chart.](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

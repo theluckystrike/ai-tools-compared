@@ -261,3 +261,5 @@ This configuration retries requests on 502 errors up to three times before retur
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

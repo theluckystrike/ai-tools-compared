@@ -236,3 +236,5 @@ Your state management approach will evolve. Set up a process to keep CursorRules
 - [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

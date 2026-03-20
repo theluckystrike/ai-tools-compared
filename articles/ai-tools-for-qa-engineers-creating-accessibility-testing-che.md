@@ -202,3 +202,5 @@ Cross-reference generated checklists with official WCAG documentation to ensure 
 - [AI Tools for DevRel Teams Creating Developer Onboarding Checklists from Internal Wikis](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -258,3 +258,5 @@ The good news: your application code remains largely the same regardless of choi
 - [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

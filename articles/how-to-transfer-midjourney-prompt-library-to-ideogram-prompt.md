@@ -343,3 +343,5 @@ After running your conversion, review prompts containing these elements manually
 - [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

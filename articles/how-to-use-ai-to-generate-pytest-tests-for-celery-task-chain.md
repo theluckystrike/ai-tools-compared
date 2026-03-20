@@ -371,3 +371,5 @@ Consider adding integration tests with a real Redis/Rabbitmq broker for producti
 - [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

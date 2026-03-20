@@ -227,3 +227,5 @@ Regardless of which assistant you choose, provide detailed context about your wi
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

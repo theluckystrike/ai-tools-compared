@@ -156,3 +156,5 @@ After reinstalling, go through the authentication flow again, explicitly authori
 - [Best Practices for Writing GitHub Copilot Custom.](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -148,3 +148,5 @@ The value proposition is straightforward: unlimited Copilot access across all yo
 - [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

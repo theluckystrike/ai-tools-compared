@@ -265,3 +265,5 @@ The key factor is understanding your own requirements well enough to validate an
 - [ChatGPT vs Claude for Creating OpenAPI Spec from.](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

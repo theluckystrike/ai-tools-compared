@@ -393,3 +393,5 @@ components:
 - [Best AI Assistant for QA Engineers Writing Test Coverage.](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
 - [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 - [AI Tools for Writing dbt Seeds and Fixtures for Testing.](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

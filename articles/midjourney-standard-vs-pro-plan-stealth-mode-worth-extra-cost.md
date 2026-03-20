@@ -190,3 +190,5 @@ However, if you're primarily creating for personal projects, sharing your work w
 - [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

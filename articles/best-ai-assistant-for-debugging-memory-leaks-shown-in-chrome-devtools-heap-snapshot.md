@@ -254,3 +254,5 @@ The right AI assistant accelerates your debugging workflow significantly. Instea
 - [Best AI Assistant for Debugging CSS Custom Property.](/ai-tools-compared/best-ai-assistant-for-debugging-css-custom-property-inheritance-failures-in-shadow-dom/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

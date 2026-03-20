@@ -292,3 +292,5 @@ print(f"Estimated cost: ${batch_info.total_tokens * 0.0015:.2f}")
 - [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

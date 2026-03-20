@@ -276,3 +276,5 @@ CMD ["python", "server.py"]
 - [How to Create Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

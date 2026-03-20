@@ -373,3 +373,5 @@ Building a type-safe TypeScript client for Claude Code ensures your integration 
 - [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

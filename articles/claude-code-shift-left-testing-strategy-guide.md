@@ -432,3 +432,5 @@ For teams ready to improve code quality and reduce late-stage defect discovery, 
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 - [Claude Code Parallel Testing Configuration - Complete.](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

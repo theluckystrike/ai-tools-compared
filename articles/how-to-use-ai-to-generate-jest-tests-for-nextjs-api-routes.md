@@ -362,3 +362,5 @@ This shows you which parts of your API routes remain untested, helping you ident
 - [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

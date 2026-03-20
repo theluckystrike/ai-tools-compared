@@ -252,3 +252,5 @@ A system prompt is not a set-it-and-forget-it document. It should evolve alongsi
 - [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

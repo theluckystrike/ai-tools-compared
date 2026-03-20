@@ -275,3 +275,5 @@ async function processWithCodaAI(tableId, rowId, content) {
 - [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

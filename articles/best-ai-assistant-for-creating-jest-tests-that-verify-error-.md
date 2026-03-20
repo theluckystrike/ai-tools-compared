@@ -198,3 +198,5 @@ After receiving the generated tests, review them for proper cleanup, correct ass
 - [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

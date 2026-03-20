@@ -273,3 +273,5 @@ The key principle remains consistent: make context transitions explicit rather t
 - [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

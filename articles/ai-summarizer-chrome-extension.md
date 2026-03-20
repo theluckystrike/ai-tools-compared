@@ -265,3 +265,5 @@ A content classifier might examine URL patterns, HTML structure, and text charac
 - [Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison](/ai-tools-compared/kommunicate-vs-crisp-ai-chat-widgets/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

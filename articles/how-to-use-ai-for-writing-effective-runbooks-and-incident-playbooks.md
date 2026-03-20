@@ -225,3 +225,5 @@ AI can also help with maintenance by analyzing your existing documentation and f
 - [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

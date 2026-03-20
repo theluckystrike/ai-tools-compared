@@ -266,3 +266,5 @@ If your codebase uses TypeScript with explicit type definitions, Claude generall
 - [ChatGPT vs Claude for Writing Effective Celery Task.](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

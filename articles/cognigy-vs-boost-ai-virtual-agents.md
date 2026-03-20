@@ -366,3 +366,5 @@ For teams requiring maximum extensibility and programmatic control, Cognigy's SD
 - [Tidio vs Intercom AI Chatbot: A Developer Comparison](/ai-tools-compared/tidio-vs-intercom-ai-chatbot/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

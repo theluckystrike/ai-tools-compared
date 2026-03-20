@@ -299,3 +299,5 @@ The per-student pricing model scales predictably, making it easier to build into
 - [ChatGPT Enterprise Minimum Seats and Contract Length.](/ai-tools-compared/chatgpt-enterprise-minimum-seats-and-contract-length-require/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -283,3 +283,5 @@ describe('Performance Tests', () => {
 - [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
 - [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

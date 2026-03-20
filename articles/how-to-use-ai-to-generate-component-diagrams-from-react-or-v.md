@@ -241,3 +241,5 @@ Regenerate diagrams regularly, especially after significant refactoring. AI make
 - [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

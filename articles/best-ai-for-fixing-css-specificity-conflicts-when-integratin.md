@@ -245,3 +245,5 @@ Choose GitHub Copilot when you want inline suggestions while coding. It understa
 - [Best AI Tools for Writing Kubernetes Custom Resource Definitions 2026](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

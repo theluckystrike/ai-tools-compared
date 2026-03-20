@@ -274,3 +274,5 @@ If the code feels foreign to the language, refine your prompt with more specific
 - [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

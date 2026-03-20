@@ -249,3 +249,5 @@ Custom instructions transform AI assistants from generic code generators into do
 - [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

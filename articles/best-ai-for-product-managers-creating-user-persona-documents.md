@@ -242,3 +242,5 @@ The goal isn't to eliminate human judgment from persona creation. It's to handle
 - [Best AI for Product Managers Creating Stakeholder Update.](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

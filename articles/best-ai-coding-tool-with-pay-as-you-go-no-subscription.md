@@ -226,3 +226,5 @@ Claude Code remains the strongest recommendation for developers seeking a capabl
 - [Best AI Coding Tool Free Trial Longest No Credit Card](/ai-tools-compared/best-ai-coding-tool-free-trial-longest-no-credit-card/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

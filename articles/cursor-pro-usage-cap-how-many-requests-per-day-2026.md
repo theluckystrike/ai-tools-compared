@@ -182,3 +182,5 @@ If you regularly exceed the Pro limits, consider these options:
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

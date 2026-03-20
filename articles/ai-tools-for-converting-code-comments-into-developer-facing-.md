@@ -247,3 +247,5 @@ Many tools integrate directly with documentation hosting platforms, automaticall
 - [AI Code Completion for Writing Shell Commands Inside.](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

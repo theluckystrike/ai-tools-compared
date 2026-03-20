@@ -245,3 +245,5 @@ For developers working with text processing, data validation, or log analysis, A
 - [Best AI Assistant for Generating SQL Recursive Queries.](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

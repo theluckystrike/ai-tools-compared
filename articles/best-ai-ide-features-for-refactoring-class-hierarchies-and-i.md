@@ -251,3 +251,5 @@ Throughout this process, the IDE maintains awareness of your entire codebase, pr
 - [Best AI IDE Features for Pair Programming with Remote.](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

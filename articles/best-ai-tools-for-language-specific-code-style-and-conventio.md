@@ -229,3 +229,5 @@ The key is consistency—using AI tools that understand and enforce your team's 
 - [Best AI Tools for TypeScript Type Inference and Generic.](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -200,3 +200,5 @@ For a new gRPC service, provide clear requirements including service name, metho
 - [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

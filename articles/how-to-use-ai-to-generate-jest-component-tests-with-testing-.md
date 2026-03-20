@@ -256,3 +256,5 @@ This workflow accelerates test coverage without sacrificing quality.
 - [How to Use AI to Generate Jest Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

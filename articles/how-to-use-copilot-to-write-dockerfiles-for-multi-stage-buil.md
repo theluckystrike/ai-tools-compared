@@ -10,6 +10,7 @@ categories: [guides]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 
 
@@ -228,3 +229,5 @@ Copilot sometimes suggests copying entire directories when specific files would 
 - [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -205,3 +205,5 @@ If the output requires adjustments, provide specific feedback to the AI tool. Ra
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

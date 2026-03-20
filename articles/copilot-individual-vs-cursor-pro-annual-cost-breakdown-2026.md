@@ -164,3 +164,5 @@ The bottom line is straightforward: GitHub Copilot Individual costs $92 less per
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

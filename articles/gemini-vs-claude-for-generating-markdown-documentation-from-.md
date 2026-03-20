@@ -287,3 +287,5 @@ Remember that AI-generated documentation requires human review. These tools prov
 - [Claude vs Gemini for Converting Jupyter Notebooks to.](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -261,3 +261,5 @@ The difference between a 4K token window and a 128K token window isn't just nume
 - [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

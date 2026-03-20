@@ -272,3 +272,5 @@ The goal is not to replace product judgment—it's to eliminate the time-consumi
 - [Best AI Tool for UX Designers User Research Synthesis](/ai-tools-compared/best-ai-tool-for-ux-designers-user-research-synthesis/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

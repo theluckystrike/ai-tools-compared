@@ -186,3 +186,5 @@ The best approach remains pragmatic: evaluate tools against your specific needs,
 - [Gemini Code Assist Enterprise Pricing: Per-Developer.](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

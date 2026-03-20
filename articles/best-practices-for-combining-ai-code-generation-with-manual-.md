@@ -293,3 +293,5 @@ Compare these metrics against purely manual development times to quantify AI's v
 - [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -340,3 +340,5 @@ The best AI tool for your support team depends on existing infrastructure, techn
 - [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

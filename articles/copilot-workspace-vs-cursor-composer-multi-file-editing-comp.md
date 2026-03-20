@@ -209,3 +209,5 @@ In 2026, both tools have optimized their multi-file editing performance. Copilot
 - [Copilot vs Cursor vs Windsurf: Inline Diff Preview.](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

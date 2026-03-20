@@ -192,3 +192,5 @@ Stay current with AI tool developments. The landscape evolves rapidly, with new 
 - [Enterprise Data Loss Prevention Rules for AI Coding.](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

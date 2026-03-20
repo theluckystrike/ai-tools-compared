@@ -211,3 +211,5 @@ Most professional-grade IDEs now include these capabilities, though the specific
 - [Best AI IDE Features for Pair Programming with Remote.](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

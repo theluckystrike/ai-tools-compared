@@ -275,3 +275,5 @@ Consider these factors when selecting a tool:
 - [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -227,3 +227,5 @@ Both tools will continue improving, and the gap between them narrows with each m
 - [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

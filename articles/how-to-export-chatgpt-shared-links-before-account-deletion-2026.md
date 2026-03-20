@@ -277,3 +277,5 @@ If you want to keep using AI tools but reduce your ChatGPT footprint:
 - [How to Export ChatGPT API Fine-Tuned Model for Local Use](/ai-tools-compared/how-to-export-chatgpt-api-fine-tuned-model-for-local-use/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

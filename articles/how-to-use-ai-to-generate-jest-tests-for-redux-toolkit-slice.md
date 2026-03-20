@@ -314,3 +314,5 @@ The generated tests establish a baseline. You remain responsible for understandi
 - [How to Use AI to Generate Jest Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

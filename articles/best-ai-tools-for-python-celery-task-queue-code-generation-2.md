@@ -355,3 +355,5 @@ AI tools continue to improve their Celery code generation, but always review gen
 - [Best AI Tools for Python NumPy and Scientific Computing.](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

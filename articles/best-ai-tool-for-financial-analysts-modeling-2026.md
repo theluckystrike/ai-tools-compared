@@ -180,3 +180,5 @@ The best tool for any given analyst depends on their specific workflow, technica
 - [Best AI Tool for Auditors: Audit Report Generation Compared](/ai-tools-compared/best-ai-tool-for-auditors-audit-report-generation/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -266,3 +266,5 @@ This pipeline demonstrates how the tools complement each other: OpenCV for prepr
 - [Genesys vs NICE AI Contact Center: A Developer Comparison](/ai-tools-compared/genesys-vs-nice-ai-contact-center/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

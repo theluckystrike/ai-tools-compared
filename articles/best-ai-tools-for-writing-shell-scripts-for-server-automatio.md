@@ -178,3 +178,5 @@ The best choice depends on your specific workflow, budget, and the complexity of
 - [Which AI Writes Better PowerShell Scripts for Windows.](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

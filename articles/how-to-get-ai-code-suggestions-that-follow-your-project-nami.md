@@ -245,3 +245,5 @@ You can also time your coding sessions. With properly configured AI suggestions,
 - [How Context Window Size Affects AI Code Suggestions in.](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

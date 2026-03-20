@@ -231,3 +231,5 @@ When you encounter a new pattern through Copilot that you want to save, add it t
 - [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

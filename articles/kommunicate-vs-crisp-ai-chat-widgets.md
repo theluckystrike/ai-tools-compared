@@ -303,3 +303,5 @@ Choose **Crisp** if:
 - [Best AI Inline Chat Features in VSCode Compared to.](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

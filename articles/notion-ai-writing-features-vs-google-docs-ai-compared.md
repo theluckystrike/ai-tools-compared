@@ -297,3 +297,5 @@ Consider trialing both platforms with your actual workflow for one week each. Tr
 - [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

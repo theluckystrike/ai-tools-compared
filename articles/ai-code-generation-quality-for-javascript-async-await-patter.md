@@ -350,3 +350,5 @@ AI coding tools continue to improve their async code generation, but human revie
 - [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

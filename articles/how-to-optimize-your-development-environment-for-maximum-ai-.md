@@ -350,3 +350,5 @@ Adjust configurations based on what you learn. The best setup evolves with your 
 - [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

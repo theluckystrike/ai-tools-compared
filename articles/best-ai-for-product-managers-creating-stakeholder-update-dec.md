@@ -232,3 +232,5 @@ The most successful implementations treat AI as a drafting assistant rather than
 - [AI Tools for Creating Test Data Generators That Respect.](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

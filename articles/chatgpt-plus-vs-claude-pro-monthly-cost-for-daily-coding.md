@@ -308,3 +308,5 @@ The best AI coding assistant is the one that fits into your workflow and helps y
 - [Switching from ChatGPT Plus to Perplexity Pro: Feature.](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

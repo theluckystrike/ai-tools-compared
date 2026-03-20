@@ -284,3 +284,5 @@ AI-generated tests provide an excellent starting point, but review them carefull
 - [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

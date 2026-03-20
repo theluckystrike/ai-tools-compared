@@ -205,3 +205,5 @@ Also consider that journey maps describe *what happened*, not necessarily *what 
 - [Best AI Assistant for Designers Generating Accessibility.](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

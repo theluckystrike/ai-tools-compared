@@ -302,3 +302,5 @@ When documenting your API versioning strategy, watch for these common mistakes t
 - [Writing CLAUDE.md Files That Teach AI Your Project-Specific Error Handling Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

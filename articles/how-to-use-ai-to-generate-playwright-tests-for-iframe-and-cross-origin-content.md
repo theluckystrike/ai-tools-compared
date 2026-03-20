@@ -238,3 +238,5 @@ Building reliable iframe tests requires understanding the loading patterns of em
 - [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -313,3 +313,5 @@ For developers implementing either solution:
 - [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

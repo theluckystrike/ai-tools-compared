@@ -247,3 +247,5 @@ Reporting flexibility: Your audit requirements may change. Choose tools that sup
 - [AI Tools for Automated Load Testing Script Generation and Analysis 2026](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

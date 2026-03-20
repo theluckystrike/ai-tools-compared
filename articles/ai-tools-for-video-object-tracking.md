@@ -251,3 +251,5 @@ The ecosystem continues evolving rapidly. Newer approaches like OC-SORT and MOTR
 - [AI Tools for Video Color Grading: A Practical Guide for Developers](/ai-tools-compared/ai-tools-for-video-color-grading/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

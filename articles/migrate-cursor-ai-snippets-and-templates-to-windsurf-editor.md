@@ -300,3 +300,5 @@ This approach keeps both editors in sync while you evaluate WindSurf's capabilit
 - [Configuring Cursor AI to Work with Corporate VPN and.](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

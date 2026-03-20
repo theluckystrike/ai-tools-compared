@@ -317,3 +317,5 @@ The 2026 reality is that most applications should start with Sonnet and selectiv
 - [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -350,3 +350,5 @@ Start with CodeWhisperer or Tabnine for basic needs, then add Cursor or GitHub C
 - [Best Budget AI Coding Assistant for Freelance Developers.](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

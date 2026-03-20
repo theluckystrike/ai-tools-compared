@@ -220,3 +220,5 @@ Some code patterns can appear malicious. Provide more context about your project
 - [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

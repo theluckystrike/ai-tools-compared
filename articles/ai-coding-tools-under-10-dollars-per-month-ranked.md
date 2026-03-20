@@ -299,3 +299,5 @@ Most developers benefit from combining tools—for example, using Claude Code fo
 - [Best Budget AI Coding Assistant for Freelance Developers.](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

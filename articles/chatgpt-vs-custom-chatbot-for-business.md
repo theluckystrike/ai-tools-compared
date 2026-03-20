@@ -244,3 +244,5 @@ The choice isn't permanent—most organizations start with ChatGPT to learn thei
 - [Drift vs ChatGPT for Customer Support: A Technical.](/ai-tools-compared/drift-vs-chatgpt-for-customer-support/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

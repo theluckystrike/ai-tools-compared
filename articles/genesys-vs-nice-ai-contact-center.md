@@ -361,3 +361,5 @@ Genesys tends to have higher base costs but includes more AI capabilities in cor
 - [Talkdesk vs Five9: AI Contact Center Comparison for.](/ai-tools-compared/talkdesk-vs-five9-ai-contact-center/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

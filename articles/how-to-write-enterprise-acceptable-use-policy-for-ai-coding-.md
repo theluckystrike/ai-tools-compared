@@ -237,3 +237,5 @@ An effective acceptable use policy for AI coding assistants balances security re
 - [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

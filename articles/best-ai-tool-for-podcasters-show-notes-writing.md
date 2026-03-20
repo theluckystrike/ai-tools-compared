@@ -202,3 +202,5 @@ For professional podcasters serious about their show notes quality, combining ac
 - [Best AI Tool for Startup Founders: Pitch Deck Writing Compared](/ai-tools-compared/best-ai-tool-for-startup-founders-pitch-deck-writing/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -370,3 +370,5 @@ Run this weekly or monthly to keep your dictionary safe.
 - [How to Export ChatGPT Shared Links Before Account.](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

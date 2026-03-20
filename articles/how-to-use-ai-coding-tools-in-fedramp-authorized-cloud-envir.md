@@ -231,3 +231,5 @@ Regular audits verify that AI tool configurations haven't drifted from compliant
 - [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -260,3 +260,5 @@ When using AI for changelog generation, watch for these issues:
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

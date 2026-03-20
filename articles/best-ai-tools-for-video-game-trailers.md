@@ -281,3 +281,5 @@ Start with your core footage—AI tools enhance good source material rather than
 - [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -287,3 +287,5 @@ A systematic approach—working through prompt structure, context management, an
 - [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

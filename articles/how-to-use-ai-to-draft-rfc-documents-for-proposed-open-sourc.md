@@ -236,3 +236,5 @@ Maintain your voice. Use AI to structure and draft, but add your own analysis an
 - [How to Use AI to Help SRE Teams Draft Root Cause.](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

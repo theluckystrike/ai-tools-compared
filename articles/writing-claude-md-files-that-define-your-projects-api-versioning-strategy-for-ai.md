@@ -167,3 +167,5 @@ When your CLAUDE MD file is and well-organized, AI assistants can generate more 
 - [Writing CLAUDE.md Files That Teach AI Your Project-Specific Error Handling Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

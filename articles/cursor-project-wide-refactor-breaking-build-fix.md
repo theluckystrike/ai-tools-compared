@@ -368,3 +368,5 @@ Avoid future build breaks with these practices:
 - [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

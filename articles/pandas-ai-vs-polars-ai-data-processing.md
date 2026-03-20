@@ -227,3 +227,5 @@ Your choice should align with your dataset sizes, performance requirements, and 
 - [Best AI Coding Tools for Python Data Science and Pandas.](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -301,3 +301,5 @@ Developers building communication apps should explore Krisp or Mozilla RRSDK. Th
 - [AI Tools for Government Citizen Support](/ai-tools-compared/ai-tools-for-government-citizen-support/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

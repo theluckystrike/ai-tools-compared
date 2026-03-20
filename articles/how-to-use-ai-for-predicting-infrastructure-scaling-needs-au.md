@@ -252,3 +252,5 @@ Building AI-powered infrastructure prediction requires upfront investment in dat
 - [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

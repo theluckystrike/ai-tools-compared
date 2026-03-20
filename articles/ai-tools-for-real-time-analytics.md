@@ -292,3 +292,5 @@ Start with the simplest architecture that meets your latency requirements, then 
 - [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

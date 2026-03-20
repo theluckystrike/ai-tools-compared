@@ -231,3 +231,5 @@ Request validation. Always ask the AI to explain potential issues and provide re
 - [AI Assistants for Multicloud Infrastructure Management.](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

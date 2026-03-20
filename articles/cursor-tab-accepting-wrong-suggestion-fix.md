@@ -227,3 +227,5 @@ If you've tried these solutions and still experience frequent wrong suggestion a
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete: A Practical Guide](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

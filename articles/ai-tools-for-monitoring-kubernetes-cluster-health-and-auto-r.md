@@ -266,3 +266,5 @@ AI-powered Kubernetes monitoring has matured significantly. These tools now prov
 - [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

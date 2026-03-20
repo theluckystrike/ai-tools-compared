@@ -156,3 +156,5 @@ Use AI to handle repetitive elements, accelerate research, and polish your writi
 - [Best AI Tools for Writing Idiomatic Rust Error Handling.](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

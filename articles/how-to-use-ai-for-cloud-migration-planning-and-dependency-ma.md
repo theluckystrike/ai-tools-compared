@@ -251,3 +251,5 @@ Ask AI to generate observability dashboards that compare on-premise versus cloud
 - [How to Use AI for Capacity Planning and Resource Right.](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -303,3 +303,5 @@ Flag any instances where we use different terms for the same concept.
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

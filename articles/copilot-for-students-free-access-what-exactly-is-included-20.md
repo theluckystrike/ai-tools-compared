@@ -209,3 +209,5 @@ Use Copilot as a learning tool by asking it to explain what it suggested. When C
 - [Free AI Tools for Students Learning to Code 2026 List](/ai-tools-compared/free-ai-tools-for-students-learning-to-code-2026-list/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

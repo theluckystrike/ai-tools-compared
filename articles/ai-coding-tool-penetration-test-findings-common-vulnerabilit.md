@@ -338,3 +338,5 @@ Stay informed about security advisories from your AI coding tool providers. Part
 - [Best AI Assistant for QA Engineers Writing Test Coverage.](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

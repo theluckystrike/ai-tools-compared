@@ -162,3 +162,5 @@ Also describe what you've already attempted. This context helps the AI avoid sug
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

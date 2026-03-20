@@ -286,3 +286,5 @@ Training your AI coding assistant on team standards requires initial effort, but
 - [How to Prevent AI Coding Tools from Generating Overly.](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

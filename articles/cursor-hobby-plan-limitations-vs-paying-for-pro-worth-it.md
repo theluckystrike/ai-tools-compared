@@ -211,3 +211,5 @@ The $20/month investment makes sense once you find yourself counting requests or
 - [Copilot vs Cursor for Writing Comprehensive Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

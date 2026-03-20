@@ -251,3 +251,5 @@ Both tools require review—AI suggestions occasionally include outdated Prisma 
 - [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

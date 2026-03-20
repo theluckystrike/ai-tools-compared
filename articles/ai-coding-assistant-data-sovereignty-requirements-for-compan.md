@@ -333,3 +333,5 @@ This approach balances AI productivity benefits against regulatory requirements,
 - [How to Evaluate AI Coding Tool Data Processing.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

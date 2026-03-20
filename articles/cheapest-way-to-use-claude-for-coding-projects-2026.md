@@ -340,3 +340,5 @@ For developers on tight budgets,充分利用免费层:
 - [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

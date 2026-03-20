@@ -222,3 +222,5 @@ The right AI assistant accelerates plugin documentation creation while maintaini
 - [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

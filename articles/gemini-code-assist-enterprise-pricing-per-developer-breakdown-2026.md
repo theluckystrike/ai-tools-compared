@@ -140,3 +140,5 @@ Many organizations find opportunities to optimize costs through careful seat man
 - [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 - [Gemini Advanced vs ChatGPT Plus Price Per Feature.](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

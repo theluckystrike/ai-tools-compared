@@ -327,3 +327,5 @@ def handle_upload_error(response):
 - [Does Cursor Pro Charge Extra for Large File Indexing in.](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

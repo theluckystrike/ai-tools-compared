@@ -209,3 +209,5 @@ Choose Windsurf if you want a middle ground—detailed diffs available on demand
 - [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
