@@ -205,6 +205,237 @@ This automation ensures your test state remains current without manual intervent
 
 
 
+## Advanced Storage State Management
+
+For complex applications with multiple environments and user roles:
+
+```javascript
+// playwright.config.js - Advanced configuration
+module.exports = {
+  use: {
+    baseURL: process.env.BASE_URL || 'https://localhost:3000',
+    storageState: ({ browserName }) => {
+      if (browserName === 'chromium') {
+        return 'auth-state/chrome-state.json';
+      }
+      return 'auth-state/firefox-state.json';
+    },
+    contextOptions: {
+      permissions: ['notifications'],
+    },
+  },
+  projects: [
+    {
+      name: 'auth-setup',
+      testMatch: '**/auth.setup.ts',
+    },
+    {
+      name: 'authenticated-tests',
+      dependencies: ['auth-setup'],
+      use: { storageState: 'auth-state/admin-state.json' },
+    },
+    {
+      name: 'user-tests',
+      dependencies: ['auth-setup'],
+      use: { storageState: 'auth-state/user-state.json' },
+    },
+  ],
+};
+```
+
+## Authentication Setup Script
+
+AI can generate comprehensive setup scripts that create multiple authentication states:
+
+```javascript
+// tests/auth.setup.ts
+import { test as setup } from '@playwright/test';
+
+setup.describe.configure({ mode: 'parallel' });
+
+setup('authenticate as admin', async ({ page, context }) => {
+  // Admin login
+  await page.goto('https://your-app.com/login');
+  await page.fill('[data-testid="email"]', 'admin@example.com');
+  await page.fill('[data-testid="password"]', 'admin-password');
+  await page.click('[data-testid="login-button"]');
+
+  // Wait for dashboard and verify admin features
+  await page.waitForURL('**/dashboard');
+  await page.waitForSelector('[data-testid="admin-panel"]');
+
+  // Save authenticated state
+  await context.storageState({ path: 'auth-state/admin-state.json' });
+});
+
+setup('authenticate as regular user', async ({ page, context }) => {
+  // Regular user login
+  await page.goto('https://your-app.com/login');
+  await page.fill('[data-testid="email"]', 'user@example.com');
+  await page.fill('[data-testid="password"]', 'user-password');
+  await page.click('[data-testid="login-button"]');
+
+  // Wait for dashboard (without admin features)
+  await page.waitForURL('**/dashboard');
+
+  // Save authenticated state
+  await context.storageState({ path: 'auth-state/user-state.json' });
+});
+
+setup('authenticate as guest', async ({ page, context }) => {
+  // Guest login (temporary access)
+  await page.goto('https://your-app.com/login');
+  await page.click('[data-testid="guest-login"]');
+
+  // Handle any guest-specific flows
+  await page.waitForURL('**/guest-dashboard');
+
+  // Save authenticated state
+  await context.storageState({ path: 'auth-state/guest-state.json' });
+});
+```
+
+## Handling OAuth and Social Login
+
+For applications using OAuth providers, AI can generate appropriate test patterns:
+
+```javascript
+test('OAuth authentication workflow', async ({ browser }) => {
+  // Create a new context without existing storage state
+  const context = await browser.newContext();
+  const page = await context.newPage();
+
+  // Intercept OAuth redirect to mock provider
+  await page.goto('https://your-app.com/login');
+  await page.click('[data-testid="github-login"]');
+
+  // Handle OAuth popup
+  const [popup] = await Promise.all([
+    page.waitForEvent('popup'),
+    page.click('[data-testid="github-login"]'),
+  ]);
+
+  // Mock GitHub login (would use real credentials in integration tests)
+  await popup.goto('https://github.com/login?client_id=...');
+  await popup.fill('[name="login"]', 'github-user');
+  await popup.fill('[name="password"]', process.env.GITHUB_TEST_PASSWORD);
+  await popup.click('[name="commit"]');
+
+  // Return to main app
+  await page.waitForURL('**/dashboard');
+
+  // Verify OAuth token is stored
+  const cookies = await context.cookies();
+  const hasAuthToken = cookies.some(c => c.name === 'auth_token');
+  expect(hasAuthToken).toBe(true);
+
+  // Save state for future tests
+  await context.storageState({ path: 'auth-state/oauth-state.json' });
+  await context.close();
+});
+```
+
+## Testing Session Expiration and Renewal
+
+AI assists in generating tests for auth state lifecycle:
+
+```javascript
+test('session expiration handling', async ({ page, context }) => {
+  // Use saved auth state
+  const savedState = require('../auth-state/user-state.json');
+
+  // Manually expire tokens by modifying storage
+  await page.goto('https://your-app.com');
+  await page.addInitScript((stateJSON) => {
+    const state = JSON.parse(stateJSON);
+    // Expire all tokens
+    state.cookies.forEach(c => {
+      if (c.name.includes('auth') || c.name.includes('session')) {
+        c.expires = Math.floor(Date.now() / 1000) - 3600; // 1 hour ago
+      }
+    });
+    // Apply to storage
+    Object.entries(state.origins[0].localStorage || {}).forEach(([key, value]) => {
+      localStorage.setItem(key, value);
+    });
+  }, JSON.stringify(savedState));
+
+  // Navigate to protected route
+  await page.goto('https://your-app.com/protected');
+
+  // Should redirect to login
+  await expect(page).toHaveURL(/.*login/);
+});
+
+test('token refresh flow', async ({ page }) => {
+  await page.goto('https://your-app.com/api-test');
+
+  // Intercept API calls to capture refresh token logic
+  const responses = [];
+  page.on('response', response => {
+    if (response.url().includes('/api/auth/refresh')) {
+      responses.push(response);
+    }
+  });
+
+  // Make request that should trigger refresh
+  const response = await page.request.get(
+    'https://your-app.com/api/protected',
+    { headers: { 'Authorization': 'Bearer expired_token' }}
+  );
+
+  // Verify refresh was called
+  expect(responses.length).toBeGreaterThan(0);
+  expect(response.status()).toBe(200);
+});
+```
+
+## Parallel Test Execution with Different Auth States
+
+```javascript
+test.describe('Parallel tests with different auth', () => {
+  test('admin operations', async ({ page, storageState }) => {
+    // Uses admin-state.json from config
+    await page.goto('https://your-app.com/settings');
+    await expect(page.locator('[data-testid="user-management"]')).toBeVisible();
+  });
+
+  test('regular user operations', async ({ page, storageState }) => {
+    // Uses user-state.json from config
+    await page.goto('https://your-app.com/dashboard');
+    await expect(page.locator('[data-testid="user-management"]')).not.toBeVisible();
+  });
+
+  test('guest operations', async ({ page, storageState }) => {
+    // Uses guest-state.json from config
+    await page.goto('https://your-app.com');
+    await expect(page.locator('[data-testid="upgrade-prompt"]')).toBeVisible();
+  });
+});
+```
+
+## Debugging Storage State Issues
+
+When storage state tests fail, use AI-assisted debugging:
+
+```javascript
+test('debug storage state', async ({ page, context }) => {
+  // Log all cookies and storage
+  const cookies = await context.cookies();
+  const storageData = await page.evaluate(() => ({
+    localStorage: { ...localStorage },
+    sessionStorage: { ...sessionStorage },
+  }));
+
+  console.log('Cookies:', JSON.stringify(cookies, null, 2));
+  console.log('Storage:', JSON.stringify(storageData, null, 2));
+
+  // Verify expected auth markers exist
+  expect(cookies.some(c => c.name === 'session_id')).toBe(true);
+  expect(storageData.localStorage['user_id']).toBeDefined();
+});
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

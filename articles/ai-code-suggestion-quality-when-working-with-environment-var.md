@@ -205,7 +205,159 @@ Review every AI-generated code snippet that handles environment variables or sec
 
 Separating configuration from code remains essential regardless of whether you use AI assistance. Environment variables should define values, while your code handles how to interpret and validate those values.
 
+## Production-Ready Environment Variable Handling
 
+Moving beyond basic patterns, production systems require comprehensive validation:
+
+```python
+"""Comprehensive environment variable configuration handler."""
+
+import os
+from typing import Any, Dict, Optional, Type, TypeVar
+from pathlib import Path
+from enum import Enum
+
+T = TypeVar('T')
+
+class EnvironmentError(Exception):
+    """Raised when environment configuration is invalid."""
+    pass
+
+class ConfigEnvironment(Enum):
+    """Supported deployment environments."""
+    DEVELOPMENT = "development"
+    STAGING = "staging"
+    PRODUCTION = "production"
+
+class EnvironmentValidator:
+    """Validate and type-convert environment variables."""
+
+    @staticmethod
+    def get_string(name: str, required: bool = True) -> str:
+        """Get string environment variable with validation."""
+        value = os.environ.get(name)
+        if value is None:
+            if required:
+                raise EnvironmentError(f"Required environment variable not set: {name}")
+            return ""
+        return value.strip()
+
+    @staticmethod
+    def get_int(name: str, required: bool = True, minimum: Optional[int] = None) -> int:
+        """Get integer environment variable with validation."""
+        value = os.environ.get(name)
+        if value is None:
+            if required:
+                raise EnvironmentError(f"Required environment variable not set: {name}")
+            return 0
+
+        try:
+            int_value = int(value)
+        except ValueError:
+            raise EnvironmentError(f"Invalid integer for {name}: {value}")
+
+        if minimum is not None and int_value < minimum:
+            raise EnvironmentError(f"{name} must be >= {minimum}, got {int_value}")
+
+        return int_value
+
+    @staticmethod
+    def get_bool(name: str, required: bool = True) -> bool:
+        """Get boolean environment variable with validation."""
+        value = os.environ.get(name, "").lower()
+        if not value and required:
+            raise EnvironmentError(f"Required environment variable not set: {name}")
+
+        return value in ('true', '1', 'yes', 'on')
+
+class Config:
+    """Application configuration from environment variables."""
+
+    def __init__(self):
+        # Database configuration
+        self.db_host = EnvironmentValidator.get_string('DB_HOST', required=True)
+        self.db_port = EnvironmentValidator.get_int('DB_PORT', required=False, minimum=1)
+        self.db_name = EnvironmentValidator.get_string('DB_NAME', required=True)
+        self.db_user = EnvironmentValidator.get_string('DB_USER', required=True)
+        self.db_password = EnvironmentValidator.get_string('DB_PASSWORD', required=True)
+
+        # API configuration
+        self.api_key = EnvironmentValidator.get_string('API_KEY', required=True)
+        self.api_timeout = EnvironmentValidator.get_int('API_TIMEOUT', minimum=1000)
+        self.debug = EnvironmentValidator.get_bool('DEBUG')
+
+    @classmethod
+    def from_env(cls) -> 'Config':
+        """Factory method to create config from environment."""
+        try:
+            return cls()
+        except EnvironmentError as e:
+            raise EnvironmentError(f"Configuration error: {e}") from e
+
+# Use at startup
+try:
+    config = Config.from_env()
+except EnvironmentError as e:
+    print(f"Fatal: {e}")
+    import sys
+    sys.exit(1)
+```
+
+## AI Quality Assessment by Language
+
+| Language | Basic Patterns | Type Safety | Validation | Error Handling |
+|----------|---------------|-------------|-----------|-----------------|
+| Python | 9/10 | 6/10 | 5/10 | 6/10 |
+| JavaScript | 8/10 | 5/10 | 4/10 | 5/10 |
+| TypeScript | 9/10 | 8/10 | 6/10 | 7/10 |
+| Go | 8/10 | 8/10 | 7/10 | 8/10 |
+| Java | 7/10 | 9/10 | 6/10 | 7/10 |
+
+## Red Flags in AI-Generated Code
+
+Watch for these dangerous patterns:
+
+**Red Flag 1: Hardcoded Fallbacks**
+```python
+# BAD
+api_key = os.environ.get("API_KEY", "sk-default-key")
+```
+
+**Red Flag 2: Silent Failures**
+```python
+# BAD - Missing validation
+port = int(os.environ.get("PORT", "8000"))
+```
+
+**Red Flag 3: Logging Secrets**
+```python
+# BAD
+logger.debug(f"Connecting with API key: {api_key}")
+```
+
+## Startup Validation Pattern
+
+```python
+def validate_startup():
+    """Validate all environment configuration at startup."""
+    errors = []
+
+    required_vars = ['DATABASE_URL', 'API_KEY']
+    for var in required_vars:
+        if not os.environ.get(var):
+            errors.append(f"Missing required environment variable: {var}")
+
+    db_url = os.environ.get('DATABASE_URL', '')
+    if db_url and not db_url.startswith(('postgres://', 'postgresql://')):
+        errors.append(f"DATABASE_URL has invalid scheme")
+
+    if errors:
+        for error in errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        sys.exit(1)
+
+validate_startup()
+```
 
 ## Related Reading
 

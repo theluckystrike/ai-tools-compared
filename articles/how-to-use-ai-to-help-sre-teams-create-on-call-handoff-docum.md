@@ -211,6 +211,304 @@ Maintain consistency. Use the same template every shift. This predictability hel
 Store historical handoffs. Having a searchable archive of past handoffs helps AI models improve their output over time and allows engineers to reference previous incidents.
 
 
+## Handoff Document Template with AI Placeholders
+
+```markdown
+# On-Call Handoff Report
+**Date:** [AUTO: current date]
+**Outgoing Engineer:** [NAME]
+**Incoming Engineer:** [NAME]
+**Time:** [AUTO: current time]
+
+## Executive Summary
+[AI SECTION: 2-3 sentence summary of current state]
+
+## Critical Issues Requiring Attention
+[AI: Extract from incident tracking system]
+
+### INC-[ID]: [AI: Generated title]
+- **Status:** [AI: Current status]
+- **Impact:** [MANUAL: Human assessment of business impact]
+- **Timeline:** [AI: Structured timeline with timestamps]
+- **Next Steps:** [MANUAL: Specific actions needed]
+
+## System Health Dashboard
+[AI: Table generated from monitoring metrics]
+
+| System | Status | Trend | Alert Threshold |
+|--------|--------|-------|-----------------|
+| [AI: auto-populated] | [AI: auto-populated] | [AI: trend analysis] | [MANUAL: configured value] |
+
+## Recent Changes in Last 24 Hours
+[AI: Pull from deployment logs]
+
+| Service | Change | Deployment Time | Status |
+|---------|--------|-----------------|--------|
+| [AI: service name] | [AI: brief change description] | [AI: timestamp] | [AI: success/pending] |
+
+## Known Workarounds and Limitations
+[AI: Extract from incident notes]
+
+1. **[MANUAL: Issue Title]** - [AI: Summary of workaround]
+   - Implemented: [AI: timestamp]
+   - Estimated resolution: [MANUAL: timeline]
+
+## Monitoring Alerts to Watch For
+[AI: High-alert items from monitoring system]
+
+- Alert name: [AI: populated from alert rules]
+- Current level: [AI: current value]
+- Action if triggered: [MANUAL: response procedure]
+
+## Escalation Contacts
+[MANUAL: Team-specific contacts]
+
+## Action Items for This Shift
+[AI: Priority-ordered list from tickets]
+
+1. [Task description] - Assigned to: [incoming engineer] - Deadline: [AI: calculated from urgency]
+2. [Continue for each priority item]
+
+---
+*Generated with AI assistance at [timestamp] | Review time: [estimate minutes]*
+```
+
+## Automation Scripts for Data Collection
+
+For teams ready to fully automate, create scripts that feed AI with structured data:
+
+```python
+#!/usr/bin/env python3
+"""Collect handoff data and generate documentation via AI."""
+
+import subprocess
+import json
+import os
+from datetime import datetime, timedelta
+from typing import Dict, Any
+
+class HandoffDataCollector:
+    def __init__(self):
+        self.collection_time = datetime.now()
+        self.data = {}
+
+    def get_open_incidents(self) -> Dict[str, Any]:
+        """Fetch incidents from ticketing system."""
+        result = subprocess.run(
+            ['jira', 'search', '--jql',
+             'status in (Open, "In Progress") AND labels=production',
+             '--format=json'],
+            capture_output=True, text=True
+        )
+        incidents = json.loads(result.stdout)
+        return {
+            'total': len(incidents),
+            'high_priority': [i for i in incidents if i['priority'] == 'High'],
+            'items': incidents
+        }
+
+    def get_recent_deployments(self) -> Dict[str, Any]:
+        """Fetch recent deployments from CI/CD system."""
+        twenty_four_hours_ago = (
+            self.collection_time - timedelta(hours=24)
+        ).isoformat()
+
+        result = subprocess.run(
+            ['gh', 'run', 'list',
+             '--created', f'>{twenty_four_hours_ago}',
+             '--json', 'name,conclusion,createdAt'],
+            capture_output=True, text=True
+        )
+        deployments = json.loads(result.stdout)
+        return {
+            'total': len(deployments),
+            'succeeded': sum(1 for d in deployments if d['conclusion'] == 'success'),
+            'failed': sum(1 for d in deployments if d['conclusion'] == 'failure'),
+            'items': deployments
+        }
+
+    def get_current_alerts(self) -> Dict[str, Any]:
+        """Fetch active alerts from monitoring system."""
+        result = subprocess.run(
+            ['prometheus_query',
+             'ALERTS{alertstate="firing"}',
+             '--format=json'],
+            capture_output=True, text=True
+        )
+        alerts = json.loads(result.stdout)
+        return {
+            'total': len(alerts),
+            'critical': sum(1 for a in alerts if a['severity'] == 'critical'),
+            'warning': sum(1 for a in alerts if a['severity'] == 'warning'),
+            'items': alerts
+        }
+
+    def get_database_status(self) -> Dict[str, Any]:
+        """Check database replication and backup status."""
+        result = subprocess.run(
+            ['aws', 'rds', 'describe-db-instances',
+             '--query', 'DBInstances[*].[DBInstanceIdentifier,DBInstanceStatus]',
+             '--output', 'json'],
+            capture_output=True, text=True
+        )
+        instances = json.loads(result.stdout)
+        return {
+            'total': len(instances),
+            'healthy': sum(1 for i in instances if i[1] == 'available'),
+            'instances': instances
+        }
+
+    def collect_all(self) -> Dict[str, Any]:
+        """Collect all handoff-relevant data."""
+        print("Collecting handoff data...")
+        self.data = {
+            'timestamp': self.collection_time.isoformat(),
+            'incidents': self.get_open_incidents(),
+            'deployments': self.get_recent_deployments(),
+            'alerts': self.get_current_alerts(),
+            'databases': self.get_database_status(),
+        }
+        return self.data
+
+    def save_to_file(self, filepath: str):
+        """Save collected data for AI processing."""
+        with open(filepath, 'w') as f:
+            json.dump(self.data, f, indent=2, default=str)
+        print(f"Data saved to {filepath}")
+
+if __name__ == "__main__":
+    collector = HandoffDataCollector()
+    collector.collect_all()
+    collector.save_to_file("handoff-data.json")
+
+    # Feed to AI for summary generation
+    print("\nData ready for AI processing. Example usage:")
+    print("claude --file handoff-data.json " +
+          "'Generate concise handoff summary from this data'")
+```
+
+## Integration with Slack for Automated Handoffs
+
+For teams using Slack, automate handoff document posting:
+
+```python
+"""Post handoff documents to Slack channel."""
+
+from slack_sdk import WebClient
+from slack_sdk.errors import SlackApiError
+import json
+
+class HandoffSlackNotifier:
+    def __init__(self, token: str, channel: str):
+        self.client = WebClient(token=token)
+        self.channel = channel
+
+    def post_handoff_summary(self, handoff_data: Dict):
+        """Post formatted handoff to Slack."""
+        blocks = [
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": "On-Call Handoff Report"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": (
+                        f"*Incidents:* {handoff_data['incidents']['total']} " +
+                        f"({handoff_data['incidents']['high_priority']} high)\n" +
+                        f"*Deployments:* {handoff_data['deployments']['succeeded']} " +
+                        f"successful, {handoff_data['deployments']['failed']} failed\n" +
+                        f"*Alerts:* {handoff_data['alerts']['critical']} critical, " +
+                        f"{handoff_data['alerts']['warning']} warning"
+                    )
+                }
+            },
+            {
+                "type": "divider"
+            }
+        ]
+
+        # Add action items
+        if handoff_data['incidents']['high_priority']:
+            blocks.append({
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": "*Requires Immediate Attention:*\n" +
+                            "\n".join([
+                                f"• {inc['key']}: {inc['summary']}"
+                                for inc in handoff_data['incidents']['high_priority']
+                            ])
+                }
+            })
+
+        try:
+            response = self.client.chat_postMessage(
+                channel=self.channel,
+                blocks=blocks
+            )
+            print(f"Handoff posted to Slack: {response['ts']}")
+        except SlackApiError as e:
+            print(f"Error posting to Slack: {e}")
+```
+
+## Measuring Handoff Quality
+
+Track whether handoffs effectively prevent information loss:
+
+```python
+"""Measure handoff documentation quality and incident context transfer."""
+
+class HandoffQualityMetrics:
+    def __init__(self):
+        self.metrics = {
+            'avg_incident_clarity': 0,  # 1-10 scale
+            'context_loss_incidents': 0,  # incidents with insufficient context
+            'action_item_completion': 0,  # % of items completed as described
+            'engineer_satisfaction': 0,  # incoming engineer's confidence score
+            'documentation_completeness': 0,  # % of fields filled
+        }
+
+    def calculate_metrics(self, incident_db, handoff_history):
+        """Calculate handoff quality metrics."""
+        total_incidents = len(incident_db)
+        clarity_scores = []
+        lost_context_count = 0
+
+        for incident in incident_db:
+            # Check if handoff documented context clearly
+            if incident.get('context_loss_reported'):
+                lost_context_count += 1
+            clarity_scores.append(incident.get('clarity_score', 5))
+
+        self.metrics['avg_incident_clarity'] = (
+            sum(clarity_scores) / len(clarity_scores) if clarity_scores else 0
+        )
+        self.metrics['context_loss_incidents'] = lost_context_count
+        self.metrics['action_item_completion'] = self._calculate_completion_rate(
+            handoff_history
+        )
+
+        return self.metrics
+
+    def _calculate_completion_rate(self, handoff_history):
+        """Calculate how many action items were completed as described."""
+        completed = sum(
+            1 for handoff in handoff_history
+            if all(action.get('completed') for action in handoff.get('actions', []))
+        )
+        total = len([
+            action
+            for handoff in handoff_history
+            for action in handoff.get('actions', [])
+        ])
+        return (completed / total * 100) if total > 0 else 0
+```
+
 ## Related Reading
 
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)

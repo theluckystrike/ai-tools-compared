@@ -207,6 +207,228 @@ This allows rapid context gathering when time is critical.
 
 
 
+## Advanced Log Analysis Techniques
+
+When debugging complex issues, structure logs to maximize AI effectiveness:
+
+```python
+#!/usr/bin/env python3
+"""Extract and structure logs for AI analysis."""
+
+import json
+import re
+from datetime import datetime, timedelta
+from typing import List, Dict, Any
+
+class LogAnalyzer:
+    def __init__(self, log_file: str, time_window_minutes: int = 30):
+        self.log_file = log_file
+        self.time_window = timedelta(minutes=time_window_minutes)
+        self.entries = []
+
+    def parse_json_logs(self) -> List[Dict[str, Any]]:
+        """Parse structured JSON logs."""
+        with open(self.log_file) as f:
+            for line in f:
+                try:
+                    entry = json.loads(line)
+                    self.entries.append(entry)
+                except json.JSONDecodeError:
+                    continue
+        return self.entries
+
+    def filter_by_time_window(self, target_time: str) -> List[Dict]:
+        """Filter logs around a specific event."""
+        target = datetime.fromisoformat(target_time)
+        window_start = target - self.time_window
+        window_end = target + self.time_window
+
+        filtered = []
+        for entry in self.entries:
+            entry_time = datetime.fromisoformat(entry.get('timestamp', ''))
+            if window_start <= entry_time <= window_end:
+                filtered.append(entry)
+
+        return filtered
+
+    def extract_error_context(self, error_pattern: str) -> List[Dict]:
+        """Extract errors with surrounding context."""
+        results = []
+        for i, entry in enumerate(self.entries):
+            message = entry.get('message', '')
+            if re.search(error_pattern, message, re.IGNORECASE):
+                # Include context before and after
+                context_start = max(0, i - 5)
+                context_end = min(len(self.entries), i + 10)
+                results.append({
+                    'error_index': i,
+                    'error': entry,
+                    'context_before': self.entries[context_start:i],
+                    'context_after': self.entries[i+1:context_end]
+                })
+
+        return results
+
+    def group_by_service(self) -> Dict[str, List[Dict]]:
+        """Group logs by service for multi-service debugging."""
+        grouped = {}
+        for entry in self.entries:
+            service = entry.get('service', 'unknown')
+            if service not in grouped:
+                grouped[service] = []
+            grouped[service].append(entry)
+
+        return grouped
+
+    def create_ai_prompt(self, error_context: List[Dict]) -> str:
+        """Generate structured AI debugging prompt."""
+        prompt = "Analyze these production logs and identify the root cause:\n\n"
+
+        for ctx in error_context:
+            prompt += f"Error at index {ctx['error_index']}:\n"
+            prompt += f"```json\n{json.dumps(ctx['error'], indent=2)}\n```\n\n"
+
+            prompt += "Context (previous 5 entries):\n"
+            for entry in ctx['context_before'][-5:]:
+                prompt += f"- {entry.get('timestamp')}: {entry.get('message')}\n"
+
+            prompt += "\nContext (next 10 entries):\n"
+            for entry in ctx['context_after'][:10]:
+                prompt += f"- {entry.get('timestamp')}: {entry.get('message')}\n"
+
+        prompt += "\nKey questions:\n"
+        prompt += "1. What is the root cause of the error?\n"
+        prompt += "2. What cascade failures followed?\n"
+        prompt += "3. What remediation would prevent recurrence?\n"
+
+        return prompt
+
+# Usage
+analyzer = LogAnalyzer("production.json", time_window_minutes=15)
+analyzer.parse_json_logs()
+
+# Find errors in a specific window
+error_contexts = analyzer.extract_error_context("ConnectionException|timeout")
+
+# Generate AI prompt
+ai_prompt = analyzer.create_ai_prompt(error_contexts)
+print(ai_prompt)
+```
+
+## Production Debugging Checklist
+
+Before asking AI for help, verify you've gathered sufficient information:
+
+1. **Error Timeline**
+   - When exactly did the error start?
+   - Is it continuous or intermittent?
+   - What's the frequency pattern?
+
+2. **Affected Systems**
+   - Which services are impacted?
+   - Are there dependencies between failures?
+   - Is the blast radius increasing or contained?
+
+3. **Recent Changes**
+   - Deployments in last 24 hours
+   - Configuration changes
+   - Infrastructure changes
+   - Dependency updates
+
+4. **Resource Status**
+   - CPU, memory, disk usage
+   - Database connection pools
+   - Network bandwidth
+   - Queue depths
+
+5. **User Impact**
+   - How many users affected?
+   - Which features are broken?
+   - Workaround availability?
+
+## Real-World Debugging Example
+
+Consider this multi-service failure scenario:
+
+```
+Service A (API Gateway) → Service B (Auth) → Service C (User DB)
+                          → Service D (Payment)
+```
+
+Logs show:
+```json
+{"timestamp": "2026-03-15T14:32:01Z", "service": "A", "level": "error", "message": "timeout calling /auth/verify"}
+{"timestamp": "2026-03-15T14:32:02Z", "service": "B", "level": "error", "message": "connection pool exhausted"}
+{"timestamp": "2026-03-15T14:32:03Z", "service": "C", "level": "error", "message": "too many connections from B"}
+{"timestamp": "2026-03-15T14:32:15Z", "service": "D", "level": "warn", "message": "no auth responses, processing degraded"}
+```
+
+AI analysis would identify:
+- Root cause: Service B connection pool exhausted
+- Cascade: Service A times out waiting for auth, Service D degrades
+- Fix: Increase connection pool or add circuit breaker
+
+## Tool-Specific Capabilities
+
+| AI Tool | Log Parsing | Pattern Recognition | Root Cause Analysis | Remediation Suggestions |
+|---------|-------------|-------------------|-------------------|-------------------------|
+| Claude Code | Excellent | Excellent | Excellent | Very Good |
+| ChatGPT | Good | Good | Good | Good |
+| GitHub Copilot | Good | Fair | Fair | Fair |
+| Copilot Chat | Good | Good | Fair | Fair |
+| Gemini | Fair | Fair | Fair | Fair |
+
+## Integration with Monitoring Systems
+
+Automate log collection and AI analysis in your incident response:
+
+```python
+"""Automated incident analysis using AI."""
+
+from datetime import datetime, timedelta
+import anthropic
+
+class IncidentAnalyzer:
+    def __init__(self, api_key: str):
+        self.client = anthropic.Anthropic(api_key=api_key)
+
+    def analyze_incident(self, logs: str, incident_context: str):
+        """Get AI analysis of incident from logs."""
+        message = self.client.messages.create(
+            model="claude-opus-4.6",
+            max_tokens=1024,
+            messages=[
+                {
+                    "role": "user",
+                    "content": f"""You are a production debugging expert. Analyze these logs
+and provide a root cause analysis with remediation steps.
+
+Incident context:
+{incident_context}
+
+Production logs:
+{logs}
+
+Provide:
+1. Root cause (one sentence)
+2. Contributing factors (list)
+3. Cascade failures (what broke as a result)
+4. Immediate mitigation (what to do now)
+5. Long-term fix (prevent recurrence)
+"""
+                }
+            ]
+        )
+        return message.content[0].text
+
+# Usage in incident response
+analyzer = IncidentAnalyzer(api_key="sk-...")
+logs = open("incident-logs.json").read()
+incident_context = "Started 14:32 UTC, payment service degraded, users reporting failures"
+analysis = analyzer.analyze_incident(logs, incident_context)
+print(analysis)
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

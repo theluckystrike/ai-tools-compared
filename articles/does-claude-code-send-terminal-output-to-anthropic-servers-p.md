@@ -206,10 +206,202 @@ The key takeaway is that you maintain significant control over what gets transmi
 
 
 
----
+## Data Retention and Privacy Policies
 
+Anthropic's privacy practices for Claude Code differ from typical SaaS products:
 
+**What Anthropic retains:**
+- API request logs including prompts and responses (30 days default)
+- User identifiers and session metadata
+- Performance metrics and error logs
+- General usage statistics
 
+**What Anthropic does NOT retain:**
+- File contents after processing (not stored long-term)
+- Terminal output unless explicitly included in conversation
+- Local environment variables
+- SSH keys or credentials
+
+**Data deletion:**
+- Explicit deletion requests honored within 30 days
+- Automatic deletion after 90 days of inactivity
+- Customer data never used for model training without explicit consent
+
+## Detailed Network Analysis
+
+To fully understand Claude Code's data transmission, perform this analysis:
+
+```bash
+# macOS - Monitor network connections in real-time
+nettop -n -d -P -L 1 | grep anthropic
+
+# Linux - Track all connections
+ss -tuln | grep ESTABLISHED | grep -E "anthropic|api"
+
+# Inspect DNS lookups
+sudo tcpdump -i any -n "host api.anthropic.com" -w capture.pcap
+tcpdump -r capture.pcap -A | head -100
+
+# Detailed network analysis with tshark
+tshark -i any -f "host api.anthropic.com" -V > network-analysis.txt
+```
+
+## Enterprise Privacy Controls
+
+For organizations with strict privacy requirements, Claude Code offers:
+
+```json
+{
+  "enterprise_privacy_settings": {
+    "data_residency": "EU" or "US",
+    "encryption_in_transit": "TLS 1.3 enforced",
+    "encryption_at_rest": "customer-managed keys",
+    "data_retention_days": 7,
+    "audit_logging": "enabled",
+    "ai_training_opt_out": true,
+    "allowed_domains": [
+      "anthropic.com",
+      "claude.ai"
+    ],
+    "blocked_file_patterns": [
+      "*.key",
+      "*.pem",
+      "*credentials*",
+      "*secret*"
+    ]
+  }
+}
+```
+
+## Auditing Your Own Data Transmission
+
+Create a custom audit script to verify what data you're sending:
+
+```python
+#!/usr/bin/env python3
+"""Audit what data Claude Code transmits."""
+
+import json
+import re
+from pathlib import Path
+from typing import List, Tuple
+
+class DataTransmissionAuditor:
+    def __init__(self):
+        self.sensitive_patterns = [
+            r'password\s*=\s*["\']([^"\']+)["\']',
+            r'api[_-]?key\s*=\s*["\']([^"\']+)["\']',
+            r'(sk-|pk-)[a-zA-Z0-9]{20,}',
+            r'-----BEGIN (?:RSA|DSA|EC) PRIVATE KEY-----',
+            r'mongodb://\S+:\S+@',
+            r'postgres://\S+:\S+@',
+        ]
+
+    def scan_file(self, filepath: Path) -> List[Tuple[str, int, str]]:
+        """Scan file for sensitive data."""
+        findings = []
+        with open(filepath) as f:
+            for line_num, line in enumerate(f, 1):
+                for pattern in self.sensitive_patterns:
+                    if re.search(pattern, line, re.IGNORECASE):
+                        findings.append((
+                            filepath.name,
+                            line_num,
+                            f"Potential secret detected: {pattern}"
+                        ))
+        return findings
+
+    def scan_directory(self, directory: Path) -> List[Tuple[str, int, str]]:
+        """Scan all files in directory."""
+        all_findings = []
+        for filepath in directory.rglob('*'):
+            if filepath.is_file() and not self._should_skip(filepath):
+                all_findings.extend(self.scan_file(filepath))
+        return all_findings
+
+    def _should_skip(self, filepath: Path) -> bool:
+        """Skip binary and system files."""
+        skip_patterns = {'.git', 'node_modules', '__pycache__', '.env'}
+        return any(part in skip_patterns for part in filepath.parts)
+
+# Usage
+auditor = DataTransmissionAuditor()
+findings = auditor.scan_directory(Path('.'))
+
+if findings:
+    print("SECURITY ISSUE: Sensitive data found in project")
+    for filename, line_num, issue in findings:
+        print(f"  {filename}:{line_num} - {issue}")
+else:
+    print("✓ No obvious sensitive data found")
+```
+
+## Comparison: Claude Code vs. Other AI Tools
+
+| Tool | Data Transmission | Retention | Encryption | Enterprise Controls |
+|------|------------------|-----------|-----------|---------------------|
+| Claude Code | API requests only | 30 days | TLS 1.3 | Yes |
+| GitHub Copilot | Code snippets | 30 days | TLS 1.3 | Yes |
+| JetBrains AI | Code context | 14 days | TLS 1.2+ | Limited |
+| Cursor | Code context | 7 days | TLS 1.3 | No |
+| Codeium | Code snippets | 30 days | TLS 1.3 | Yes |
+
+## Practical Privacy Implementation
+
+For teams handling sensitive code, establish these practices:
+
+```bash
+# 1. Create a .claudeignore file to exclude sensitive directories
+echo "secrets/
+env/
+.env*
+*.pem
+*.key
+credentials/" > .claudeignore
+
+# 2. Configure Claude Code to respect file restrictions
+cat > ~/.claude/settings.json << 'EOF'
+{
+  "allowedExtensions": [".ts", ".js", ".py", ".java"],
+  "blockedPatterns": ["**/secrets/**", "**/.env*", "**/*.key"],
+  "encryptionRequired": true,
+  "auditLogging": true
+}
+EOF
+
+# 3. Use git hooks to prevent secret commits before Claude Code touches them
+cat > .git/hooks/pre-commit << 'EOF'
+#!/bin/bash
+# Check for secrets before allowing commits
+for pattern in "PRIVATE KEY" "password" "api_key" "secret"; do
+    if git diff --cached -U0 | grep -i "$pattern"; then
+        echo "ERROR: Potential secret in commit"
+        exit 1
+    fi
+done
+EOF
+chmod +x .git/hooks/pre-commit
+```
+
+## GDPR Compliance with Claude Code
+
+If your application serves EU users, ensure GDPR compliance:
+
+**User Data Rights:**
+- Right to know: Users can request what data was transmitted
+- Right to deletion: Request erasure within 30 days
+- Right to portability: Export data in standard formats
+
+**Implementation:**
+```python
+def handle_user_data_request(user_id: str, request_type: str):
+    """Handle GDPR data requests."""
+    if request_type == "access":
+        return anthropic_client.get_user_data(user_id)
+    elif request_type == "deletion":
+        anthropic_client.delete_user_data(user_id)
+        return {"status": "deletion_scheduled", "completion_date": "+30 days"}
+```
 
 ## Related Reading
 

@@ -206,6 +206,217 @@ If the AI consistently produces incorrect ordering, adjust your configuration fi
 
 
 
+## Real-World Configuration Examples
+
+### Go Dockerfile Configuration
+
+For a Go microservices team preferring minimal images:
+
+```text
+# .cursorrules
+## Go Dockerfile Conventions
+
+When generating Dockerfiles for Go applications, follow this exact pattern:
+1. Use golang:1.21-alpine as build stage
+2. Install only necessary build dependencies
+3. Build with static binary: CGO_ENABLED=0
+4. Copy binary to distroless/base-debian12
+5. Never include source code in final image
+6. Set non-root user for runtime
+7. Include health check if applicable
+
+Example:
+FROM golang:1.21-alpine AS builder
+WORKDIR /build
+RUN apk add --no-cache git
+COPY go.mod go.sum ./
+RUN go mod download
+COPY . .
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o app .
+
+FROM gcr.io/distroless/base-debian12
+COPY --from=builder /build/app /
+USER nonroot:nonroot
+EXPOSE 8080
+ENTRYPOINT ["/app"]
+```
+
+### Python Poetry Dockerfile Configuration
+
+For Python teams using Poetry for dependency management:
+
+```json
+{
+  "dockerfile_conventions": {
+    "base_image": "python:3.11-slim",
+    "package_manager": "poetry",
+    "layer_order": [
+      "FROM",
+      "ENV PYTHONUNBUFFERED=1",
+      "WORKDIR /app",
+      "RUN apt-get update && apt-get install -y --no-install-recommends build-essential && rm -rf /var/lib/apt/lists/*",
+      "RUN pip install --no-cache-dir poetry",
+      "COPY pyproject.toml poetry.lock ./",
+      "RUN poetry config virtualenvs.create false && poetry install --no-dev",
+      "COPY . .",
+      "RUN poetry build",
+      "EXPOSE 8000",
+      "CMD [\"poetry\", \"run\", \"gunicorn\"]"
+    ],
+    "multi_stage_build": true,
+    "security_scanning": true
+  }
+}
+```
+
+## Configuration Tool Comparison
+
+| Tool | Config Method | Scope | Persistence | Learning Curve |
+|------|---------------|-------|-------------|-----------------|
+| GitHub Copilot | Repository examples | Per repo | Automatic | Low |
+| Codeium | JSON config file | Per repo | Explicit | Medium |
+| Cursor | .cursorrules file | Per repo | Explicit | Low |
+| VS Code + Extensions | settings.json | Per workspace | Explicit | Medium |
+| JetBrains IDEs | .idea/inspectionProfiles | Per project | Explicit | High |
+
+## Advanced Configuration: Team-Wide Standards
+
+For organizations with multiple services, create a shared configuration repository:
+
+```bash
+# Repository structure
+team-ai-config/
+├── dockerfile-standards/
+│   ├── nodejs.cursorrules
+│   ├── python.cursorrules
+│   ├── go.cursorrules
+│   └── java.cursorrules
+├── git-hooks/
+│   └── pre-commit (validate Dockerfile consistency)
+└── README.md (implementation guide)
+```
+
+Each team member clones this repository and links the configuration files:
+
+```bash
+# In each service repository
+ln -s ../team-ai-config/dockerfile-standards/nodejs.cursorrules .cursorrules
+```
+
+## Validation and Monitoring
+
+After configuration, establish automated checks to verify AI compliance:
+
+```bash
+#!/bin/bash
+# validate-dockerfile.sh
+
+DOCKERFILE=$1
+EXPECTED_ORDER=("FROM" "ARG" "ENV" "RUN apk" "COPY package" "RUN npm" "COPY src" "RUN build")
+
+check_layer_order() {
+    local current_order=()
+    while IFS= read -r line; do
+        for pattern in "${EXPECTED_ORDER[@]}"; do
+            if [[ $line =~ $pattern ]]; then
+                current_order+=("$pattern")
+            fi
+        done
+    done < "$DOCKERFILE"
+
+    # Verify order matches expectations
+    for i in "${!current_order[@]}"; do
+        if [[ "${current_order[$i]}" != "${EXPECTED_ORDER[$i]}" ]]; then
+            echo "Layer order violation at position $i"
+            return 1
+        fi
+    done
+    return 0
+}
+
+check_layer_order && echo "Dockerfile matches team conventions" || exit 1
+```
+
+## Measuring Configuration Effectiveness
+
+Track how often AI-generated Dockerfiles comply with your standards:
+
+```python
+import json
+from pathlib import Path
+from datetime import datetime
+
+def measure_compliance():
+    compliant = 0
+    total = 0
+    violations = []
+
+    for dockerfile in Path("services").glob("**/Dockerfile"):
+        total += 1
+        # Run validation script
+        result = subprocess.run(
+            ["bash", "validate-dockerfile.sh", str(dockerfile)],
+            capture_output=True
+        )
+        if result.returncode == 0:
+            compliant += 1
+        else:
+            violations.append({
+                "file": str(dockerfile),
+                "timestamp": datetime.now().isoformat(),
+                "reason": result.stderr.decode()
+            })
+
+    compliance_rate = (compliant / total) * 100
+    print(f"Configuration compliance: {compliance_rate:.1f}%")
+
+    with open("compliance-report.json", "w") as f:
+        json.dump({
+            "date": datetime.now().isoformat(),
+            "compliance_rate": compliance_rate,
+            "total_checks": total,
+            "violations": violations
+        }, f, indent=2)
+```
+
+## Troubleshooting Configuration Issues
+
+**Problem:** AI still generates non-compliant Dockerfiles despite configuration.
+
+**Solution:** The AI may not see the configuration file. Ensure:
+1. File is in the correct location for your tool
+2. File is committed to git (not in .gitignore)
+3. IDE has reloaded the project
+4. Test with a simple, obvious rule first
+
+**Problem:** Configuration conflicts between team standards and framework best practices.
+
+**Solution:** Document exceptions explicitly. For example:
+```text
+## Framework Exceptions
+
+For Dockerfiles using Django, the layer order may be:
+- Standard: COPY source before RUN install
+- Django exception: COPY source after RUN install (due to manage.py compilation)
+
+Include a comment: # Django exception - requires source for compilation
+```
+
+**Problem:** New team members don't consistently use the configuration.
+
+**Solution:** Add a pre-commit hook that prevents committing non-compliant Dockerfiles:
+
+```bash
+# .git/hooks/pre-commit
+#!/bin/bash
+for dockerfile in $(git diff --cached --name-only | grep -i dockerfile); do
+    bash validate-dockerfile.sh "$dockerfile" || {
+        echo "Dockerfile does not match team conventions: $dockerfile"
+        exit 1
+    }
+done
+```
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

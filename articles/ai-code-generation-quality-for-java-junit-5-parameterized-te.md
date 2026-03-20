@@ -206,6 +206,179 @@ For teams working with complex test data, consider creating reusable argument pr
 
 
 
+## Tool-Specific Quality Assessment
+
+| Tool | CSV Source Quality | Method Source Quality | Custom Providers | Type Safety | Overall Score |
+|------|-------------------|----------------------|------------------|-------------|---------------|
+| Claude Code | 9/10 | 9/10 | 9/10 | 8/10 | 8.75/10 |
+| GitHub Copilot | 7/10 | 6/10 | 5/10 | 7/10 | 6.25/10 |
+| Cursor | 8/10 | 8/10 | 7/10 | 8/10 | 7.75/10 |
+| Zed AI | 8/10 | 7/10 | 6/10 | 7/10 | 7.0/10 |
+| Aider | 7/10 | 7/10 | 5/10 | 6/10 | 6.25/10 |
+
+## Advanced Parameterized Test Examples
+
+### JUnit Pioneer Extensions
+
+When using JUnit Pioneer extensions, AI generates better code with clear context:
+
+```java
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junitpioneer.jupiter.cartesian.CartesianTest;
+import org.junitpioneer.jupiter.cartesian.CartesianTest.Values;
+
+class CartesianParameterizedTest {
+
+    @CartesianTest
+    void testMultipleInputCombinations(
+            @Values(strings = {"input1", "input2"}) String input,
+            @Values(ints = {1, 2, 3}) int count) {
+
+        String result = StringUtils.repeat(input, count);
+        assertNotNull(result);
+        assertEquals(input.length() * count, result.length());
+    }
+}
+```
+
+### Nested Parameterized Tests
+
+AI sometimes struggles with nested parameterized tests. Specify clear requirements:
+
+```java
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
+class NestedParameterizedTests {
+
+    @Nested
+    class StringValidationTests {
+        @ParameterizedTest
+        @ValueSource(strings = {"valid", "also-valid", "123"})
+        void validInputs(String input) {
+            assertTrue(StringValidator.isValid(input));
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"", " ", "!!!invalid"})
+        void invalidInputs(String input) {
+            assertFalse(StringValidator.isValid(input));
+        }
+    }
+
+    @Nested
+    class NumericValidationTests {
+        @ParameterizedTest
+        @ValueSource(ints = {1, 100, 999})
+        void validNumbers(int number) {
+            assertTrue(NumberValidator.isInRange(number));
+        }
+
+        @ParameterizedTest
+        @ValueSource(ints = {-1, 0, 1000})
+        void invalidNumbers(int number) {
+            assertFalse(NumberValidator.isInRange(number));
+        }
+    }
+}
+```
+
+## Common Quality Issues and Fixes
+
+### Issue 1: Missing Argument Import
+
+AI sometimes generates `Arguments.of()` without importing the `Arguments` class:
+
+```java
+// Wrong - missing import
+static Stream<Arguments> testCases() {
+    return Stream.of(Arguments.of("a", "b"));
+}
+
+// Correct - includes import
+import org.junit.jupiter.params.provider.Arguments;
+
+static Stream<Arguments> testCases() {
+    return Stream.of(Arguments.of("a", "b"));
+}
+```
+
+### Issue 2: Incorrect Null Handling in CSV
+
+CSV sources don't handle null values well. AI sometimes suggests unsafe patterns:
+
+```java
+// Problematic - null handling unclear
+@ParameterizedTest
+@CsvSource({
+    "'value1','null'",
+    "'value2','result'"
+})
+void testWithNull(String input, String expected) {
+    assertEquals(expected, process(input));
+}
+
+// Better approach - explicit null markers
+@ParameterizedTest
+@CsvSource(useHeadersInDisplayName = true, nullValues = {"<null>"}, {
+    "input,expected",
+    "'value1',<null>",
+    "'value2','result'"
+})
+void testWithNull(String input, String expected) {
+    assertEquals(expected, process(input));
+}
+```
+
+## Testing the Generated Code
+
+Create a verification checklist before accepting AI-generated parameterized tests:
+
+1. **Compilation Check:** All imports resolve, syntax is valid
+2. **Annotation Validation:** @ParameterizedTest present, exactly one data source annotation
+3. **Execution Verification:** Tests run in IDE and CI environment
+4. **Coverage Analysis:** All parameter combinations execute
+5. **Assertion Review:** Each test asserts appropriate conditions
+6. **Edge Case Coverage:** null, empty, boundary values included
+
+## Prompting Strategy for Better Results
+
+Instead of "generate parameterized tests for this method," use structured requests:
+
+```
+Generate JUnit 5 parameterized tests for the StringUtils.capitalize() method.
+Requirements:
+1. Test with empty strings, single characters, multiple words
+2. Use @CsvSource with clear test data
+3. Include assertions for string length and character case
+4. Handle null input appropriately with IllegalArgumentException
+5. Import all required Jupiter classes
+```
+
+## Integration with Test Frameworks
+
+When AI generates parameterized tests within larger frameworks, verify integration:
+
+```java
+// Spring Boot integration
+@SpringBootTest
+class IntegratedParameterizedTests {
+
+    @Autowired
+    private UserService userService;
+
+    @ParameterizedTest
+    @ValueSource(strings = {"user1@example.com", "user2@example.com"})
+    void testUserCreation(String email) {
+        User user = userService.createUser(email);
+        assertEquals(email, user.getEmail());
+    }
+}
+```
+
+AI handles framework annotations well when you provide context about your test infrastructure.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

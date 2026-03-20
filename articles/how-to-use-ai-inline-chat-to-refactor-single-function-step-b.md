@@ -207,6 +207,284 @@ The feature also understands framework-specific patterns. You can ask for "React
 
 
 
+## Advanced Refactoring Examples
+
+### Converting Callbacks to Promises
+
+```javascript
+// Original function
+function fetchUserData(userId, callback) {
+  const url = `https://api.example.com/users/${userId}`;
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('GET', url);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      callback(null, JSON.parse(xhr.responseText));
+    } else {
+      callback(new Error(`HTTP ${xhr.status}`));
+    }
+  };
+  xhr.onerror = function() {
+    callback(new Error('Network error'));
+  };
+  xhr.send();
+}
+
+// Use inline chat: "Convert this callback-based function to use Promises"
+// AI generates this:
+function fetchUserData(userId) {
+  return new Promise((resolve, reject) => {
+    const url = `https://api.example.com/users/${userId}`;
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', url);
+    xhr.onload = () => {
+      if (xhr.status === 200) {
+        resolve(JSON.parse(xhr.responseText));
+      } else {
+        reject(new Error(`HTTP ${xhr.status}`));
+      }
+    };
+    xhr.onerror = () => reject(new Error('Network error'));
+    xhr.send();
+  });
+}
+
+// Further refactoring: "Convert to async/await using fetch API"
+async function fetchUserData(userId) {
+  const response = await fetch(`https://api.example.com/users/${userId}`);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+  return response.json();
+}
+```
+
+### Extracting Complex Logic
+
+```typescript
+// Original complex function
+class ShoppingCart {
+  calculateTotal(): number {
+    let subtotal = 0;
+    let taxRate = 0.08;
+    let discountPercent = 0;
+
+    for (const item of this.items) {
+      subtotal += item.price * item.quantity;
+    }
+
+    if (this.customerType === 'premium') {
+      discountPercent = 0.15;
+    } else if (this.customerType === 'vip') {
+      discountPercent = 0.25;
+    }
+
+    if (this.state === 'CA' || this.state === 'NY') {
+      taxRate = 0.10;
+    }
+
+    const discount = subtotal * discountPercent;
+    const subtotalAfterDiscount = subtotal - discount;
+    const tax = subtotalAfterDiscount * taxRate;
+    const total = subtotalAfterDiscount + tax;
+
+    return Math.round(total * 100) / 100;
+  }
+}
+
+// Use inline chat: "Extract tax calculation and discount logic into separate methods"
+// AI generates:
+private calculateDiscount(subtotal: number): number {
+  const discountRates: Record<string, number> = {
+    'premium': 0.15,
+    'vip': 0.25,
+    'regular': 0
+  };
+  const rate = discountRates[this.customerType] ?? 0;
+  return subtotal * rate;
+}
+
+private calculateTaxRate(): number {
+  const stateTaxRates: Record<string, number> = {
+    'CA': 0.10,
+    'NY': 0.10,
+  };
+  return stateTaxRates[this.state] ?? 0.08;
+}
+
+calculateTotal(): number {
+  const subtotal = this.items.reduce(
+    (sum, item) => sum + (item.price * item.quantity),
+    0
+  );
+  const discount = this.calculateDiscount(subtotal);
+  const subtotalAfterDiscount = subtotal - discount;
+  const tax = subtotalAfterDiscount * this.calculateTaxRate();
+  return Math.round((subtotalAfterDiscount + tax) * 100) / 100;
+}
+```
+
+## Refactoring Patterns AI Handles Well
+
+| Pattern | Success Rate | Notes |
+|---------|-------------|-------|
+| Callback to Promise | 95% | Clear transformation |
+| Promise to async/await | 98% | Straightforward conversion |
+| Nested conditions to guard clauses | 92% | Usually accurate |
+| Extracting helper functions | 88% | Sometimes over-extracts |
+| Adding type annotations | 85% | May miss edge cases |
+| Loop to functional methods | 90% | Works well for common cases |
+| Class extraction | 75% | Sometimes misses dependencies |
+
+## Iterative Refactoring Workflow
+
+Rather than asking for drastic changes, use multiple inline chat steps:
+
+```javascript
+// Original function
+function processOrders(orders) {
+  const results = [];
+  for (let i = 0; i < orders.length; i++) {
+    const order = orders[i];
+    if (order.status === 'pending') {
+      const total = order.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      if (total > 100) {
+        order.priority = 'high';
+      } else {
+        order.priority = 'normal';
+      }
+      if (order.customerType === 'premium') {
+        order.discount = total * 0.15;
+      }
+      results.push(order);
+    }
+  }
+  return results;
+}
+
+// Step 1: Use inline chat - "Convert to arrow function and filter()"
+const processOrders = (orders) => orders
+  .filter(order => order.status === 'pending')
+  .map(order => ({
+    ...order,
+    total: order.items.reduce((sum, item) => sum + item.price * item.quantity, 0),
+  }));
+
+// Step 2: "Extract priority logic into separate function"
+// Step 3: "Extract discount logic into separate function"
+// Step 4: "Add TypeScript types"
+
+// Final result after iterative refinement
+interface OrderItem {
+  price: number;
+  quantity: number;
+}
+
+interface Order {
+  status: string;
+  items: OrderItem[];
+  customerType: string;
+  priority?: 'high' | 'normal';
+  discount?: number;
+}
+
+function calculateTotal(items: OrderItem[]): number {
+  return items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+}
+
+function assignPriority(total: number): 'high' | 'normal' {
+  return total > 100 ? 'high' : 'normal';
+}
+
+function applyDiscount(total: number, customerType: string): number {
+  return customerType === 'premium' ? total * 0.15 : 0;
+}
+
+function processOrders(orders: Order[]): Order[] {
+  return orders
+    .filter(order => order.status === 'pending')
+    .map(order => {
+      const total = calculateTotal(order.items);
+      return {
+        ...order,
+        priority: assignPriority(total),
+        discount: applyDiscount(total, order.customerType),
+      };
+    });
+}
+```
+
+## Handling Refactoring Failures
+
+When inline chat produces incorrect results:
+
+```javascript
+// Original
+function sum(a, b) {
+  return a + b;
+}
+
+// AI misunderstands request: "Add error handling"
+function sum(a, b) {
+  try {
+    return a + b;
+  } catch (e) {
+    console.error(e);
+    return 0;
+  }
+}
+
+// That's wrong - arithmetic doesn't throw errors
+// Better approach: Request specific error handling
+// "Add type validation to ensure inputs are numbers"
+
+function sum(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new TypeError('Both arguments must be numbers');
+  }
+  return a + b;
+}
+```
+
+## Testing After Refactoring
+
+Always run tests after using inline chat:
+
+```bash
+# Run all tests
+npm test
+
+# Run specific test file
+npm test -- test/shopping-cart.test.js
+
+# Run with coverage to verify behavior didn't change
+npm test -- --coverage
+
+# Compare before/after behavior
+git diff --word-diff
+```
+
+## Framework-Specific Refactoring
+
+AI inline chat understands framework patterns:
+
+**React:**
+- "Convert class component to functional component with hooks"
+- "Extract custom hook from this logic"
+- "Optimize with useMemo to prevent re-renders"
+
+**Angular:**
+- "Extract to a separate service"
+- "Add RxJS operators for better stream handling"
+- "Convert callback to Observable"
+
+**Vue:**
+- "Convert to Composition API"
+- "Extract to a composable"
+- "Optimize template with v-memo"
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
