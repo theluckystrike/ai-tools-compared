@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Docker Compose Files 2026"
-description: "Compare AI tools for Docker Compose generation (Claude Code, GitHub Copilot, Cursor). Multi-service setup, networking, volumes, debugging, compose override patterns."
+description: "Compare AI tools for Docker Compose generation (Claude Code, GitHub Copilot, Cursor). Multi-service setup, networking, volumes, debugging, compose."
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-docker-compose-files-2026/
@@ -342,3 +342,8 @@ These require manual knowledge and experience. AI can generate the skeleton, but
 4. **Test**: Bring up the stack with `docker compose up` and verify all services communicate
 
 This hybrid approach gives you Claude's accuracy on initial setup with IDE-based speed for iterations.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
