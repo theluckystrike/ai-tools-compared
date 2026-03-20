@@ -205,6 +205,123 @@ After receiving AI-generated output, verify each query against your actual metri
 
 Test burn rate calculations during both normal and incident conditions. A good burn rate panel should clearly distinguish between healthy (below 100%), warning (100-150%), and critical (above 150%) states. Adjust thresholds based on your organization's risk tolerance and error budget policies.
 
+## Best AI Tools for SLO Query Generation
+
+**Claude 3.5 Sonnet** and **ChatGPT-4** both excel at generating PromQL queries. Claude tends to produce more nuanced explanations of the mathematical reasoning behind burn rate calculations. ChatGPT-4 provides faster, more direct query generation with fewer clarifications needed. For SLO-specific workflows, provide Claude with your SLO percentile targets and it will calculate error budget implications automatically.
+
+When prompting any AI tool for SLO queries, include:
+- Your exact SLO percentile (99.5%, 99.9%, 99.95%)
+- The time window for measurement (7-day, 30-day rolling)
+- Your error metric naming convention and available labels
+- Any multi-service or multi-region dimensions
+
+Example prompt: "Generate PromQL for a 99.9% SLO measured over 7-day rolling windows. I track errors with `http_requests_total{status=~"5.."}` and total requests with `http_requests_total`. Create queries for 1-hour and 7-day burn rates, and calculate percentage of error budget consumed."
+
+## Advanced Burn Rate Query Patterns
+
+For organizations tracking SLOs across multiple services, use grouping with conditional aggregation:
+
+```promql
+-- Burn rate by service, showing only services exceeding threshold
+sum by (service) (
+  rate(http_errors_total[1h]) / rate(http_requests_total[1h])
+) as burn_rate
+| burn_rate > 0.001  -- Alerts when exceeding 1 per 1000 requests
+```
+
+For composite SLOs combining latency and error metrics:
+
+```promql
+-- Combined SLO: 99% of requests complete within 500ms AND error rate below 0.1%
+(
+  histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m])) < 0.5
+  and
+  rate(http_errors_total[5m]) / rate(http_requests_total[5m]) < 0.001
+)
+```
+
+## Dashboard JSON Generation Tips
+
+AI tools can generate complete Grafana JSON, but structure matters. Ask the AI to generate dashboard JSON in sections: panels first, then variables, then alerting rules. This modular approach makes it easier to verify each section.
+
+```json
+{
+  "dashboard": {
+    "title": "SLO Burn Rate Dashboard",
+    "panels": [
+      {
+        "title": "Error Budget Remaining (7-day)",
+        "type": "stat",
+        "targets": [{
+          "expr": "(1 - sum(rate(http_errors_total[7d])) / sum(rate(http_requests_total[7d]))) * 100"
+        }],
+        "thresholds": {"steps": [{"value": 0, "color": "red"}, {"value": 10, "color": "yellow"}, {"value": 20, "color": "green"}]}
+      }
+    ],
+    "templating": {
+      "list": [
+        {"name": "service", "type": "query", "datasource": "Prometheus"},
+        {"name": "environment", "type": "query", "datasource": "Prometheus"}
+      ]
+    }
+  }
+}
+```
+
+## Validating Queries Against Live Prometheus Data
+
+After AI generates queries, test them immediately against your Prometheus instance:
+
+```bash
+# Query Prometheus directly via HTTP to validate syntax
+curl 'http://prometheus:9090/api/v1/query' \
+  --data-urlencode 'query=sum(rate(http_errors_total[5m])) / sum(rate(http_requests_total[5m])) * 100' \
+  -s | jq '.data.result'
+
+# Test range queries for burn rate calculations
+curl 'http://prometheus:9090/api/v1/query_range' \
+  --data-urlencode 'query=sum(rate(http_errors_total[1h]))' \
+  --data-urlencode 'start=1678800000' \
+  --data-urlencode 'end=1678886400' \
+  --data-urlencode 'step=300' \
+  -s | jq '.data.result'
+```
+
+## Common Mistakes AI Tools Sometimes Make
+
+1. **Forgetting label cardinality**: AI might suggest queries that explode cardinality. Ask it to use `sum()` aggregation to reduce dimensionality.
+
+2. **Incorrect error budget math**: Verify the SLO percentage conversion. For 99.9%, error budget is 0.1% or 0.001. AI occasionally flips this.
+
+3. **Window mismatches**: AI may generate queries with different time windows for burn rate calculation. Explicitly confirm that short-window and long-window burn rates use appropriate intervals (1h and 7d).
+
+4. **Missing `_total` suffixes**: When mentioning metric names, always specify whether they include `_total` suffix, as AI sometimes omits or duplicates it.
+
+## Integration with Alerting Rules
+
+AI tools can also generate alert rules to notify teams when burn rate exceeds safe thresholds. Request alert rules in Prometheus format:
+
+```yaml
+groups:
+  - name: slo_alerts
+    rules:
+      - alert: SLOBurnRateExceeded
+        expr: |
+          sum(rate(http_errors_total[1h]))
+          /
+          sum(rate(http_requests_total[1h]))
+          > 0.01  # 1% burn rate
+        for: 5m
+        annotations:
+          summary: "SLO burn rate exceeding 1% for {{ $labels.service }}"
+```
+
+When working with AI to generate alert rules, specify:
+- Acceptable burn rate thresholds
+- Alert severity levels (critical, warning)
+- Notification channels (Slack, PagerDuty)
+- Escalation policies
+
 
 
 ## Related Reading

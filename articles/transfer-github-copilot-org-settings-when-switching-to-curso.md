@@ -205,6 +205,250 @@ Follow this sequence to minimize disruption during your transition:
 
 6. Monitor and adjust: Track usage patterns and refine settings as needed
 
+## Detailed Settings Migration Checklist
+
+### GitHub Copilot Org Settings to Document
+
+```bash
+# Export Copilot organization settings via GitHub Admin
+# Settings → Copilot → Org settings
+
+# Document these values:
+export COPILOT_DUPLICATION_DETECTION="enabled"      # Duplication check on/off
+export COPILOT_NETWORK_ACCESS="restricted"          # Network restrictions
+export COPILOT_PUBLIC_CODE_SUGGESTION="allowed"     # Public code suggestion filter
+export COPILOT_IDE_SETTINGS="vs-code,jetbrains"     # Supported IDEs
+export COPILOT_TELEMETRY="disabled"                 # Telemetry collection
+export COPILOT_CODE_REVIEW="enabled"                # PR code review features
+```
+
+### Mapping GitHub to Cursor Configuration
+
+```json
+{
+  "cursor_rules": {
+    "completion_settings": {
+      "duplication_check": true,
+      "restrict_network": ["external-api"],
+      "filter_public_code": true
+    },
+    "ide_support": {
+      "vs_code": { "enabled": true },
+      "jetbrains": { "enabled": true },
+      "visual_studio": { "enabled": false }
+    },
+    "security_policies": {
+      "detect_credentials": true,
+      "block_pii": true,
+      "scan_dependencies": true
+    },
+    "team_rules": [
+      {
+        "path": "src/security/**",
+        "rule": "Manual review required for authentication code"
+      },
+      {
+        "path": "**/*.env*",
+        "rule": "Never suggest environment variable values"
+      }
+    ]
+  }
+}
+```
+
+## Pricing Comparison: GitHub Copilot vs Cursor Business
+
+| Feature | GitHub Copilot | Cursor Business |
+|---------|-----------------|-----------------|
+| Monthly cost | $10 (personal) / $21 (business) | $20 (standard) / $40 (team) |
+| Seat management | GitHub org admin | Cursor dashboard |
+| Custom rules | Limited | Comprehensive `.cursorrules` |
+| IDE support | VS Code, JetBrains, Visual Studio | VS Code primary |
+| Data retention | Microsoft policies | Configurable |
+| Audit logs | Basic | Full detailed logs |
+| SSO/SAML | Enterprise only | Business tier |
+| Offline mode | No | Limited |
+
+## Creating Organization-Wide `.cursorrules`
+
+Create a template repository for `.cursorrules` distribution:
+
+```bash
+# Repository structure
+cursor-rules-templates/
+├── README.md
+├── security/.cursorrules
+├── frontend/.cursorrules
+├── backend/.cursorrules
+├── data-science/.cursorrules
+└── scripts/
+
+# distribute-rules.sh - Deploy rules to all repositories
+#!/bin/bash
+RULES_REPO="git@github.com:org/cursor-rules-templates.git"
+
+for repo in $(gh repo list --jq '.[].nameWithOwner' -L 1000); do
+  echo "Updating $repo with Cursor rules..."
+
+  # Clone repo
+  git clone $repo temp-repo
+  cd temp-repo
+
+  # Copy appropriate rules based on repo type
+  if grep -q "jest\|vitest" package.json; then
+    cp ../frontend/.cursorrules .cursorrules
+  elif grep -q "pytest\|django" requirements.txt; then
+    cp ../backend/.cursorrules .cursorrules
+  fi
+
+  # Commit and push
+  git add .cursorrules
+  git commit -m "chore: apply organization Cursor rules"
+  git push origin main
+
+  cd ..
+  rm -rf temp-repo
+done
+```
+
+## Testing Configuration Changes
+
+Before rolling out organization-wide, test each configuration:
+
+```bash
+#!/bin/bash
+# test-cursor-rules.sh
+
+# Test completions behavior
+cursor --test-completion "const x = " --config-file .cursorrules
+
+# Verify security rules
+cursor --test-rule "block_pii" --input "user_email = 'test@example.com'"
+
+# Check IDE integrations
+cursor --validate-config .cursorrules
+
+# Simulate team policy
+cursor --test-org-policy "require_review_for:security/*"
+```
+
+## Handling Special Cases: Code Review Integration
+
+GitHub Copilot's PR code review feature doesn't directly transfer. Implement alternative workflow in Cursor:
+
+```yaml
+# cursor-review-policy.yml
+review_triggers:
+  - on_pull_request: true
+    use_ai: true
+    rules:
+      - check_security_patterns
+      - verify_test_coverage
+      - lint_code_style
+
+review_settings:
+  model: cursor-advanced
+  temperature: 0.3  # Lower temp for more consistent reviews
+  include_context: true
+  focus_areas:
+    - security
+    - performance
+    - maintainability
+```
+
+## Team Enablement During Migration
+
+Create rollout guides for different team types:
+
+```markdown
+# Cursor Migration Guide for Frontend Teams
+
+## What's Different?
+- Completions work inline (similar to Copilot)
+- Custom rules defined in `.cursorrules` (new)
+- Chat interface available (similar to Copilot Chat)
+
+## Quick Start
+1. Install Cursor extension in VS Code
+2. Authenticate with organization SSO
+3. `.cursorrules` automatically applies from repo root
+
+## Common Issues
+- Completions not showing: Check `.cursorrules` syntax
+- Rules not applying: Reload VS Code window
+- Contact @devops-team for policy questions
+```
+
+## Monitoring Post-Migration Success
+
+Track key metrics during the transition:
+
+```python
+# migration_metrics.py
+import requests
+from datetime import datetime, timedelta
+
+class CursorMigrationMonitor:
+    def __init__(self, org_token):
+        self.token = org_token
+        self.base_url = "https://api.cursor.sh/v1"
+
+    def get_adoption_rate(self):
+        """Track percentage of team using Cursor"""
+        response = requests.get(
+            f"{self.base_url}/organizations/adoption",
+            headers={"Authorization": f"Bearer {self.token}"}
+        )
+        return response.json()
+
+    def get_rule_compliance(self):
+        """Check if teams are following organization rules"""
+        response = requests.get(
+            f"{self.base_url}/organizations/rules/compliance",
+            headers={"Authorization": f"Bearer {self.token}"}
+        )
+        return response.json()
+
+    def generate_migration_report(self, start_date: str, end_date: str):
+        """Generate migration progress report"""
+        adoption = self.get_adoption_rate()
+        compliance = self.get_rule_compliance()
+
+        report = {
+            "period": f"{start_date} to {end_date}",
+            "adoption_rate": adoption["percentage"],
+            "teams_migrated": adoption["migrated_count"],
+            "rule_compliance_rate": compliance["percentage"],
+            "open_issues": adoption.get("issues", [])
+        }
+        return report
+
+# Usage
+monitor = CursorMigrationMonitor("org-token")
+report = monitor.generate_migration_report("2026-03-01", "2026-03-15")
+print(f"Migration adoption: {report['adoption_rate']}%")
+```
+
+## Fallback and Rollback Plan
+
+Maintain GitHub Copilot access for 30 days during migration:
+
+```bash
+#!/bin/bash
+# Maintain dual access temporarily
+export GITHUB_COPILOT_ENABLED=true
+export CURSOR_ENABLED=true
+
+# Monitor usage
+gh copilot stats --since "2026-03-01"
+cursor analytics --period "7d"
+
+# If problems occur, rollback by disabling Cursor at org level
+# while keeping GitHub Copilot active
+cursor org:disable --all-teams
+# Keep GitHub Copilot: GitHub Copilot remains available
+```
+
 
 
 ## Related Reading

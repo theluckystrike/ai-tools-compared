@@ -161,6 +161,104 @@ def test_greet_multiple_names(input_value, expected_output):
     assert expected_output in result.output
 ```
 
+## Testing Multi-Command Applications
+
+For Click or Typer apps with multiple subcommands, AI tools can generate comprehensive test suites:
+
+```python
+import click
+from click.testing import CliRunner
+
+@click.group()
+def cli():
+    pass
+
+@cli.command()
+@click.argument('filename')
+def upload(filename):
+    click.echo(f'Uploading {filename}')
+
+@cli.command()
+@click.option('--format', type=click.Choice(['json', 'csv']))
+def download(format):
+    click.echo(f'Downloading as {format}')
+
+# AI-generated test suite
+def test_upload_command():
+    runner = CliRunner()
+    result = runner.invoke(cli, ['upload', 'myfile.txt'])
+    assert result.exit_code == 0
+    assert 'Uploading myfile.txt' in result.output
+
+def test_download_json():
+    runner = CliRunner()
+    result = runner.invoke(cli, ['download', '--format', 'json'])
+    assert result.exit_code == 0
+    assert 'json' in result.output
+```
+
+## Testing File I/O Operations
+
+CLI applications often read from or write to files. AI tools can generate tests using Click's CliRunner file fixtures:
+
+```python
+from click.testing import CliRunner
+import os
+
+def test_process_file():
+    runner = CliRunner()
+    with runner.isolated_filesystem():
+        # Create test input file
+        with open('input.txt', 'w') as f:
+            f.write('test data')
+
+        # Run command
+        result = runner.invoke(process_file, ['input.txt'])
+
+        # Verify output file was created
+        assert result.exit_code == 0
+        assert os.path.exists('output.txt')
+
+        with open('output.txt') as f:
+            assert 'processed' in f.read()
+```
+
+## Testing Environment Variables
+
+When your CLI relies on environment variables, ask AI to generate tests that mock them:
+
+```python
+import os
+from click.testing import CliRunner
+
+def test_with_environment():
+    runner = CliRunner()
+    result = runner.invoke(
+        app,
+        ['command'],
+        env={'API_KEY': 'test-key-123', 'DEBUG': 'true'}
+    )
+    assert result.exit_code == 0
+```
+
+## Performance and Stress Testing
+
+For CLI tools that process large datasets, AI can suggest performance-focused tests:
+
+```python
+import time
+from click.testing import CliRunner
+
+def test_large_file_processing_time():
+    runner = CliRunner()
+    start = time.time()
+    result = runner.invoke(process_large_file, ['huge.csv'])
+    elapsed = time.time() - start
+
+    assert result.exit_code == 0
+    assert elapsed < 5.0  # Should complete in under 5 seconds
+```
+
 
 ## Best Practices for AI-Generated Tests
 
