@@ -13,6 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
+{% raw %}
 
 Several AI tools excel at this task. This guide recommends the best options based on specific use cases and shows you which tool to choose for your situation.
 
@@ -210,12 +211,119 @@ For developers working extensively with TypeScript type inference and generics:
 
 The best choice depends on your specific use case. For library authors or teams building type-heavy codebases, Claude Code's deeper understanding of TypeScript's type system provides significant advantages. For simpler type inference needs, any of these tools will accelerate your workflow.
 
+## Advanced Generic Patterns for Type Safety
 
+Real-world applications often require sophisticated generic patterns that go beyond basic type inference. Consider a type-safe API client factory that preserves endpoint-specific types:
 
----
+```typescript
+// Define endpoint schemas
+type Endpoints = {
+  "/users": {
+    method: "GET";
+    response: { id: string; name: string }[];
+  };
+  "/users/:id": {
+    method: "GET" | "PUT";
+    response: { id: string; name: string };
+    params: { id: string };
+  };
+  "/posts": {
+    method: "GET" | "POST";
+    response: Array<{ id: string; title: string }>;
+    body?: { title: string; content: string };
+  };
+};
 
+// Generic API client that maintains type safety
+type EndpointKey = keyof Endpoints;
+type EndpointDef = Endpoints[EndpointKey];
 
+class TypedApiClient {
+  async request<T extends EndpointKey>(
+    endpoint: T,
+    options?: {
+      params?: Endpoints[T] extends { params: infer P } ? P : never;
+      body?: Endpoints[T] extends { body: infer B } ? B : never;
+    }
+  ): Promise<Endpoints[T]["response"]> {
+    // Implementation handles type validation
+    return fetch(endpoint).then(r => r.json());
+  }
+}
 
+// Usage - TypeScript ensures correct params and infers response type
+const client = new TypedApiClient();
+
+// This works - correct types
+const users = await client.request("/users");
+const user = await client.request("/users/:id", { params: { id: "123" } });
+
+// This fails at compile time - TypeScript error
+// const invalid = await client.request("/users", { params: { id: "123" } });
+```
+
+Claude Code and Cursor both generate this pattern well, though Claude Code provides better explanation of why the pattern works. Copilot struggles with this complexity level.
+
+## Performance Considerations in Generic Inference
+
+When working with heavy generics, TypeScript compiler performance matters. AI tools that understand performance implications suggest patterns that keep compilation fast:
+
+```typescript
+// Good: Specific type helper instead of complex conditional
+type ExtractId<T extends { id: unknown }> = T["id"];
+
+// Problematic: Heavy conditional nesting can slow compilation
+type ComplexHelper<T> = T extends Record<string, infer U>
+  ? U extends { id: infer I }
+    ? I extends string | number
+      ? I
+      : never
+    : never
+  : never;
+```
+
+Tools like Claude Code and Cursor mention compilation performance when suggesting approaches. This matters for large codebases where TypeScript compilation is a bottleneck.
+
+## Testing Generic Types
+
+Quality AI tools suggest test approaches that validate your generic types work correctly:
+
+```typescript
+// Use type assertions to verify generic inference
+type AssertEqual<T, U> = T extends U ? (U extends T ? true : false) : false;
+
+// Test that inference works as expected
+type test1 = AssertEqual<ExtractId<{ id: string }>, string>; // Should be true
+type test2 = AssertEqual<ExtractId<{ id: number }>, number>; // Should be true
+
+// This approach catches regressions when refactoring generics
+const _: [test1, test2] = [true, true]; // Compilation fails if types don't match
+```
+
+Claude Code typically suggests this validation pattern automatically, while Copilot usually doesn't.
+
+## Tool Pricing and Feature Comparison
+
+| Feature | Claude Code | Cursor | GitHub Copilot | Zed AI |
+|---------|----------|--------|-----------------|--------|
+| Monthly Cost | $20 | $20 | $10 | Free or $15 |
+| Generic Complexity Support | Excellent | Excellent | Good | Moderate |
+| Documentation | Excellent | Good | Good | Moderate |
+| IDE Integration | All | All | All | Zed only |
+| Explanation Depth | Deepest | Deep | Moderate | Moderate |
+
+For teams investing heavily in TypeScript, Claude Code's cost is justified by its superior understanding of complex type systems. For casual TypeScript work, GitHub Copilot provides solid assistance at lower cost.
+
+## Common Type Inference Mistakes
+
+AI tools help catch these common mistakes:
+
+1. **Over-constrained generics** - Using `T extends Record<string, any>` when `T` doesn't need to be a record
+2. **Lost type information** - Using `any` anywhere in the generic chain breaks inference downstream
+3. **Incorrect conditional types** - Conditional type ordering matters; distributive conditionals can cause unexpected behavior
+4. **Function overload confusion** - Mixing generics with overloads can confuse inference
+
+The best approach when learning TypeScript generics is to use AI tools not just to generate code, but to ask "why does this type work?" and "what would break this type?" to build deeper understanding.
 
 
 ## Related Reading
@@ -230,3 +338,5 @@ The best choice depends on your specific use case. For library authors or teams 
 Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}

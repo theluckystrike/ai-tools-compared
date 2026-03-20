@@ -220,8 +220,241 @@ For ASP.NET Core applications, verify that AI-generated controller methods follo
 
 Start with the free tiers to evaluate which tool fits your workflow. The time saved through intelligent code suggestions justifies the setup effort quickly.
 
+## Advanced .NET Patterns AI Tools Should Understand
 
+The most effective AI pair programmers understand modern .NET idioms. When working with dependency injection containers, the best tools suggest proper configuration:
 
+```csharp
+// Good: AI suggests proper DI setup with scoped dependencies
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddScoped<IUserRepository, UserRepository>();
+    services.AddScoped<IUserService, UserService>();
+    services.AddScoped<IEmailService, EmailService>();
+
+    // AI understands order matters: services depend on repositories
+    services.AddTransient<IPasswordHasher, PasswordHasher>();
+}
+
+// When you later write:
+public class UserService : IUserService
+{
+    private readonly IUserRepository _repository;
+    private readonly IEmailService _email;
+
+    public UserService(IUserRepository repository, IEmailService email)
+    {
+        _repository = repository;
+        _email = email;
+    }
+}
+
+// Good AI tools recognize the pattern and verify dependencies match
+```
+
+This is where tools like Claude Code and JetBrains AI Assistant shine—they maintain awareness of your configured dependencies and catch injection errors before runtime.
+
+## LINQ Query Optimization
+
+For LINQ queries against Entity Framework, sophisticated AI tools prevent common performance mistakes:
+
+```csharp
+// Problematic: N+1 query problem
+public List<Order> GetOrdersWithItems()
+{
+    return _context.Orders
+        .Where(o => o.Status == OrderStatus.Pending)
+        .ToList()  // Executes query, materializes in memory
+        .Select(o => new {
+            o.Id,
+            Items = o.OrderItems.Count()  // Separate query per order!
+        })
+        .ToList();
+}
+
+// Better: AI suggests Include() to load related data
+public List<Order> GetOrdersWithItems()
+{
+    return _context.Orders
+        .Include(o => o.OrderItems)  // Load items with orders
+        .Where(o => o.Status == OrderStatus.Pending)
+        .Select(o => new {
+            o.Id,
+            ItemCount = o.OrderItems.Count()
+        })
+        .ToList();
+}
+```
+
+GitHub Copilot sometimes suggests the Include pattern but isn't consistent. Claude Code and Cursor catch the N+1 pattern almost reliably when you describe the use case.
+
+## Async/Await Patterns
+
+.NET development heavily relies on async patterns. Quality AI tools avoid suggesting blocking calls:
+
+```csharp
+// Problematic: Blocking on async (can cause deadlock in certain contexts)
+public decimal GetAccountBalance(int accountId)
+{
+    return _service.GetBalanceAsync(accountId).Result;  // Blocks!
+}
+
+// Good: AI suggests properly async all the way
+public async Task<decimal> GetAccountBalanceAsync(int accountId)
+{
+    return await _service.GetBalanceAsync(accountId);
+}
+
+// In ASP.NET Core controller:
+public async Task<IActionResult> GetBalance(int id)
+{
+    var balance = await _service.GetBalanceAsync(id);
+    return Ok(balance);
+}
+```
+
+Tools like JetBrains AI Assistant consistently suggest async-all-the-way patterns that match modern .NET best practices.
+
+## Practical Workflow: Real Example
+
+Here's how top AI tools handle a realistic .NET scenario—building an API endpoint with validation, logging, and error handling:
+
+```csharp
+// Starting point you provide:
+public async Task<IActionResult> CreateUser(CreateUserRequest request)
+
+// Claude Code suggests:
+public async Task<IActionResult> CreateUser(CreateUserRequest request)
+{
+    try
+    {
+        // Validate input
+        if (!ModelState.IsValid)
+        {
+            _logger.LogWarning("Invalid CreateUser request: {@request}", request);
+            return BadRequest(ModelState);
+        }
+
+        // Check for duplicates
+        var existingUser = await _userRepository.GetByEmailAsync(request.Email);
+        if (existingUser != null)
+        {
+            _logger.LogInformation("User already exists: {email}", request.Email);
+            return Conflict(new { error = "User already exists" });
+        }
+
+        // Create user
+        var user = new User
+        {
+            Email = request.Email,
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            CreatedAt = DateTime.UtcNow
+        };
+
+        await _userRepository.AddAsync(user);
+        await _userRepository.SaveChangesAsync();
+
+        _logger.LogInformation("User created: {userId}", user.Id);
+
+        return CreatedAtAction(nameof(GetUser), new { id = user.Id }, user);
+    }
+    catch (DbUpdateException ex)
+    {
+        _logger.LogError(ex, "Database error creating user");
+        return StatusCode(500, new { error = "Failed to create user" });
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Unexpected error creating user");
+        return StatusCode(500, new { error = "Unexpected error" });
+    }
+}
+```
+
+Notice how this includes:
+- Proper validation checking
+- Structured logging with context
+- Duplicate checking (business logic)
+- Appropriate HTTP status codes
+- Exception handling with logging
+- Use of async/await throughout
+
+Claude Code generated this naturally. GitHub Copilot would produce a basic version without the logging and validation layers.
+
+## Testing Support
+
+For unit testing, JetBrains AI Assistant excels at generating comprehensive test cases:
+
+```csharp
+[TestClass]
+public class UserServiceTests
+{
+    private UserService _service;
+    private Mock<IUserRepository> _mockRepository;
+
+    [TestInitialize]
+    public void Setup()
+    {
+        _mockRepository = new Mock<IUserRepository>();
+        _service = new UserService(_mockRepository.Object);
+    }
+
+    [TestMethod]
+    public async Task CreateUser_WithValidData_ReturnsUser()
+    {
+        // Arrange
+        var request = new CreateUserRequest { Email = "test@example.com", FirstName = "Test" };
+
+        // Act
+        var result = await _service.CreateUserAsync(request);
+
+        // Assert
+        Assert.IsNotNull(result);
+        Assert.AreEqual("test@example.com", result.Email);
+        _mockRepository.Verify(x => x.AddAsync(It.IsAny<User>()), Times.Once);
+    }
+
+    [TestMethod]
+    public async Task CreateUser_WithDuplicateEmail_ThrowsException()
+    {
+        // Arrange
+        var request = new CreateUserRequest { Email = "existing@example.com", FirstName = "Test" };
+        _mockRepository.Setup(x => x.GetByEmailAsync(request.Email))
+            .ReturnsAsync(new User { Email = request.Email });
+
+        // Act & Assert
+        await Assert.ThrowsExceptionAsync<InvalidOperationException>(
+            () => _service.CreateUserAsync(request));
+    }
+
+    [TestMethod]
+    public async Task CreateUser_WithInvalidEmail_ThrowsValidationException()
+    {
+        // Arrange
+        var request = new CreateUserRequest { Email = "invalid", FirstName = "Test" };
+
+        // Act & Assert
+        await Assert.ThrowsExceptionAsync<ValidationException>(
+            () => _service.CreateUserAsync(request));
+    }
+}
+```
+
+This comprehensive test generation is where JetBrains AI Assistant stands out from Copilot.
+
+## Choosing Based on Your .NET Focus
+
+| Focus Area | Best Tool |
+|-----------|-----------|
+| ASP.NET Core web APIs | Claude Code or JetBrains AI |
+| Entity Framework optimization | Claude Code |
+| Unit testing | JetBrains AI Assistant |
+| AWS Lambda/cloud functions | CodeWhisperer |
+| General productivity | GitHub Copilot |
+| Free tier priority | Codeium |
+
+For teams shipping production .NET applications, investing in Claude Code or JetBrains AI pays dividends through higher-quality code and fewer production bugs. The tools catch architectural issues before they become expensive failures.
 
 
 ## Related Reading

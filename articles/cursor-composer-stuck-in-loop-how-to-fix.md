@@ -214,8 +214,149 @@ If you have tried all these solutions and Composer continues to loop, the issue 
 
 Most Cursor Composer loop issues resolve quickly with one of the methods outlined above.
 
+## Advanced Debugging Techniques
 
+For persistent issues that survive basic fixes, deeper investigation helps identify root causes. Cursor stores debugging information in several locations that developers can examine.
 
+Check the Cursor application logs for repeated error patterns. On macOS, logs are located in:
+
+```bash
+# View recent Cursor logs
+tail -100 ~/Library/Logs/Cursor/default.log
+
+# Search for error patterns
+grep -i "error\|timeout\|crash" ~/Library/Logs/Cursor/default.log | tail -20
+```
+
+Look for patterns like repeated API timeouts, out-of-memory errors, or specific file parsing failures. These logs reveal whether the issue is environmental (network, disk space) or Cursor-specific (bug in a particular feature).
+
+## Context Window Overflow Issues
+
+Modern AI systems maintain conversation context in memory. When Composer processes very large codebases, the accumulated context can exceed available memory, causing the tool to enter loops trying to recover. This particularly affects:
+
+- Projects with thousands of files
+- Very large single files (>10,000 lines)
+- Complex monorepo structures with interdependencies
+- Prolonged Composer sessions without restart
+
+The solution involves deliberately limiting context. Close files you're not actively working on before starting Composer:
+
+```bash
+# Before using Composer on complex projects, identify large files
+find . -name "*.ts" -o -name "*.js" | xargs wc -l | sort -n | tail -10
+
+# Close any file over 5,000 lines before using Composer
+# Reopen only what you need for the current task
+```
+
+## Extension Conflict Resolution
+
+When multiple extensions cause Composer conflicts, a systematic approach identifies the culprit. Rather than disabling all extensions at once, disable extensions in groups:
+
+1. Disable all AI/coding-related extensions first (keep syntax highlighting)
+2. Test if Composer works
+3. If fixed, re-enable extensions one by one
+4. If not fixed, disable all extensions and find the root cause
+
+```bash
+# Extension locations for investigation
+~/Library/Application\ Support/Cursor/extensions/
+
+# Check for duplicate language servers (common conflict source)
+grep -r "langServer\|language-server" \
+  ~/Library/Application\ Support/Cursor/extensions/ \
+  | grep -v node_modules | sort | uniq -c | sort -rn
+```
+
+Common conflict sources:
+
+- ESLint extension duplicated with built-in linting
+- Two TypeScript language servers
+- Multiple AI coding assistants (Copilot + Codeium + others)
+- Outdated extensions from 2-3 versions ago
+
+## Memory and Resource Limits
+
+For developers with limited system resources, explicitly configure Cursor's resource constraints:
+
+```bash
+# Check current system memory available
+free -h  # Linux
+vm_stat | grep page  # macOS
+
+# Set environment variable to limit Node process memory before launching Cursor
+export NODE_OPTIONS="--max_old_space_size=4096"
+
+# macOS: Create wrapper script to launch Cursor with memory limits
+cat > ~/bin/cursor-limited.sh << 'EOF'
+#!/bin/bash
+export NODE_OPTIONS="--max_old_space_size=4096"
+open -a Cursor
+EOF
+chmod +x ~/bin/cursor-limited.sh
+```
+
+Limiting memory forces Cursor to be more conservative about caching, often preventing loops caused by unbounded memory growth.
+
+## Network and API Issues
+
+Cursor Composer relies on API connectivity. Network issues cause incomplete responses that trigger retries, potentially creating loop-like behavior. Diagnose network problems:
+
+```bash
+# Check DNS resolution
+nslookup api.cursor.sh
+dig api.cursor.sh +short
+
+# Test API connectivity
+curl -v https://api.cursor.sh/health
+
+# Monitor network traffic while Composer runs
+# macOS:
+nettop -u -k state
+
+# Check for proxy/firewall interference
+echo $HTTP_PROXY $HTTPS_PROXY
+
+# Temporarily disable VPN and retry Composer
+# Test from different network (phone hotspot) to isolate issue
+```
+
+If you see connection timeouts or DNS failures, the issue is likely network-related. Contact your network administrator about API access if using corporate networks.
+
+## Systematic Troubleshooting Checklist
+
+Use this checklist when standard fixes fail:
+
+1. **Document the exact behavior** - What does Composer do? Does it output repeated messages? Is it updating files?
+2. **Check system resources** - Is CPU maxed? Is memory full? Can you launch other applications?
+3. **Test in isolation** - Create a new project with 2-3 files to test if Composer works
+4. **Disable extensions systematically** - Not all at once
+5. **Check logs for specific errors** - Search for actual error messages, not just "stuck"
+6. **Test on different branch** - Create a fresh git branch to test if issue is project-specific
+7. **Update Cursor to latest version** - Might fix already-reported bugs
+8. **Report to Cursor support** - Include logs, system info, and exact reproduction steps
+
+The most productive approach treats Composer issues as software debugging problems. Gather data, form hypotheses, test systematically, and isolate the variable causing the issue.
+
+## When to Seek Professional Help
+
+Contact Cursor support when:
+
+- You've tried all fixes above without success
+- The issue is reproducible with a minimal example
+- You can share project files (sanitized if needed) to demonstrate the problem
+- You have error logs showing the actual failure
+
+Provide Cursor support with:
+
+1. Exact Cursor version and build
+2. OS version and system specs (RAM, CPU, disk space available)
+3. Project details (programming language, project size, number of files)
+4. Steps to reproduce
+5. Output from `~/Library/Logs/Cursor/default.log`
+6. Recent git history if relevant
+
+Clear information dramatically speeds up support resolution.
 
 
 ## Related Reading

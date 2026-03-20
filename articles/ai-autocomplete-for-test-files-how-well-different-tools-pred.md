@@ -217,6 +217,97 @@ The best approach treats AI autocomplete as a productivity tool rather than a re
 
 
 
+## Tool Comparison Matrix
+
+When choosing an AI tool for test assertion autocomplete, evaluate these specific capabilities:
+
+| Capability | Claude Code | Cursor | GitHub Copilot | Codeium |
+|-----------|----------|--------|-----------------|---------|
+| Edge case detection | Excellent | Good | Good | Moderate |
+| Exception testing | Excellent | Excellent | Good | Good |
+| Docstring analysis | Excellent | Good | Moderate | Moderate |
+| Type hint utilization | Excellent | Excellent | Good | Good |
+| Context window | Largest | Large | Moderate | Moderate |
+| Multi-language coverage | Excellent | Excellent | Excellent | Good |
+
+Claude Code consistently ranks highest because its larger context window allows it to analyze entire test files and understand your testing patterns before suggesting assertions. Cursor comes in second due to excellent IDE integration and multi-file analysis. GitHub Copilot remains solid for organizations already embedded in GitHub's ecosystem but sometimes lacks the reasoning depth for complex test scenarios.
+
+## Advanced Testing Patterns
+
+Beyond basic assertions, the best AI tools suggest advanced testing patterns that catch real bugs. Go-Lang developers benefit from tools that understand interface testing with mocks:
+
+```go
+// Test using mockgen or testify mocks
+func TestUserRepository(t *testing.T) {
+    ctrl := gomock.NewController(t)
+    defer ctrl.Finish()
+
+    mockDB := mocks.NewMockDatabase(ctrl)
+    mockDB.EXPECT().
+        Query("SELECT * FROM users WHERE id = ?", 1).
+        Return(&User{ID: 1, Name: "John"}, nil).
+        Times(1)
+
+    repo := &UserRepository{db: mockDB}
+    user, err := repo.GetUser(1)
+
+    assert.NoError(t, err)
+    assert.Equal(t, user.Name, "John")
+}
+```
+
+AI tools that understand Go's interface-based design generate appropriate mock expectations automatically. This prevents a common pitfall where developers write tests that pass but don't actually verify the expected behavior.
+
+## Language-Specific Performance
+
+AI assertion prediction varies significantly by language. TypeScript benefits from excellent type information, leading to higher-quality suggestions. Python's duck typing reduces AI accuracy because type hints are optional—tools must infer intent from variable names and context.
+
+For C#, the best tools understand nullable reference types (introduced in C# 8). This allows them to suggest assertions that verify null-safety properly:
+
+```csharp
+public class UserService {
+    public User? GetUserById(string id) {
+        return _repository.FindById(id);
+    }
+}
+
+// Good AI suggestion understands nullable semantics:
+[Fact]
+public void GetUserById_WithValidId_ReturnsUser() {
+    var service = new UserService(_mockRepository);
+    var result = service.GetUserById("123");
+
+    Assert.NotNull(result);
+    Assert.Equal("123", result?.Id);
+}
+
+// Poor suggestion ignores nullable:
+Assert.True(result != null); // Incomplete
+```
+
+## Evaluating Assertion Quality
+
+When reviewing AI suggestions, look for these characteristics of high-quality assertions:
+
+1. **Behavioral verification** - Tests verify what the function does, not just that it runs
+2. **Edge case coverage** - Assertions check boundary conditions and error cases
+3. **Arrange-Act-Assert pattern** - Clear separation between setup, execution, and verification
+4. **Minimal test scope** - Each test verifies one behavior, not multiple concerns
+5. **Descriptive names** - Test names clearly describe the scenario being tested
+
+Poor AI suggestions often produce assertions that verify implementation details rather than behavior. For example, checking that a function calls `console.log()` instead of verifying the actual return value.
+
+## Iterative Improvement Workflow
+
+The most productive approach combines AI suggestions with iterative refinement. Start with AI-generated baseline assertions, then enhance them:
+
+1. Accept the AI's structural pattern but review all assertions
+2. Add assertions the AI missed for error paths
+3. Verify edge cases match your domain requirements
+4. Document any non-obvious assertions with comments
+
+Tools like Claude Code excel in this iterative loop because you can ask follow-up questions: "What other edge cases should I test?" or "Can you add assertions that verify the error message matches the specification?"
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

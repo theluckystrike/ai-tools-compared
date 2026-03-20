@@ -217,7 +217,308 @@ For the best results, share your database schema or data models with the AI assi
 
 Consider creating reusable factory classes that your entire team can use. AI assistants can help maintain these factories as your data models evolve, ensuring your test data remains realistic and consistent.
 
+## Advanced Factory Patterns
 
+Beyond basic data generation, sophisticated patterns handle complex scenarios. Claude Code excels at generating factories with business rule validation:
+
+```python
+# Advanced OrderFactory with business rule validation
+import factory
+from factory.faker import Faker
+from decimal import Decimal
+from datetime import datetime, timedelta
+import random
+
+class OrderFactory(factory.Factory):
+    class Meta:
+        model = dict
+
+    id = factory.Sequence(lambda n: f"ORD-{n:08d}")
+
+    # Basic order info
+    status = factory.Faker('random_element', elements=['pending', 'confirmed', 'shipped', 'delivered', 'cancelled'])
+    created_at = factory.LazyFunction(lambda: datetime.now() - timedelta(days=random.randint(1, 365)))
+
+    # Customer reference
+    customer_id = factory.LazyFunction(lambda: f"CUST-{random.randint(1000, 9999)}")
+
+    # Business rule: total must be >= $10, order must have 1-20 line items
+    @factory.lazy_attribute
+    def line_items(self):
+        num_items = random.randint(1, 20)
+        items = []
+        total = 0
+
+        for i in range(num_items):
+            price = Decimal(str(round(random.uniform(5, 500), 2)))
+            qty = random.randint(1, 10)
+            item_total = price * qty
+            total += item_total
+
+            items.append({
+                'product_id': f"SKU-{random.randint(1000, 9999):04d}",
+                'quantity': qty,
+                'unit_price': str(price),
+                'subtotal': str(item_total)
+            })
+
+        # Ensure minimum order value
+        if total < Decimal('10'):
+            items[0]['quantity'] += 1
+
+        return items
+
+    @factory.lazy_attribute
+    def total_amount(self):
+        total = sum(
+            Decimal(item['unit_price']) * item['quantity']
+            for item in self.line_items
+        )
+        return str(total)
+
+    # Business rule: delivery address depends on status
+    @factory.lazy_attribute
+    def delivery_address(self):
+        if self.status == 'pending':
+            return None  # Not yet assigned
+
+        return {
+            'street': Faker('street_address').evaluate(None, None, {}),
+            'city': Faker('city').evaluate(None, None, {}),
+            'postal_code': Faker('postcode').evaluate(None, None, {}),
+            'country': 'US'
+        }
+
+    # Business rule: tracking number only if shipped
+    @factory.lazy_attribute
+    def tracking_number(self):
+        if self.status in ['shipped', 'delivered']:
+            return f"TRK-{random.randint(1000000000, 9999999999)}"
+        return None
+
+# Usage
+order = OrderFactory()  # Creates valid test order with business rules respected
+orders = OrderFactory.create_batch(100)  # Generate realistic test dataset
+```
+
+This level of sophistication prevents subtle bugs that occur when test data violates business constraints.
+
+## Language-Specific Considerations
+
+### TypeScript with Zod Validation
+
+Claude Code often generates factories that work with TypeScript validation schemas:
+
+```typescript
+import { z } from 'zod';
+import { faker } from '@faker-js/faker';
+
+// Define schema
+const userSchema = z.object({
+  id: z.string().uuid(),
+  email: z.string().email(),
+  age: z.number().min(18).max(120),
+  profile: z.object({
+    firstName: z.string(),
+    lastName: z.string(),
+    bio: z.string().optional()
+  })
+});
+
+type User = z.infer<typeof userSchema>;
+
+// AI-assisted factory respects schema constraints
+function generateUser(overrides?: Partial<User>): User {
+  const user: User = {
+    id: faker.string.uuid(),
+    email: faker.internet.email(),
+    age: faker.number.int({ min: 18, max: 120 }), // Respects constraints
+    profile: {
+      firstName: faker.person.firstName(),
+      lastName: faker.person.lastName(),
+      bio: faker.lorem.sentence(),
+    },
+    ...overrides,
+  };
+
+  // Validate before returning
+  return userSchema.parse(user);
+}
+
+// This pattern ensures generated data is always valid
+const validUser = generateUser(); // Always passes validation
+```
+
+### Go with Testify
+
+For Go testing, factories often use builder patterns that Claude Code handles well:
+
+```go
+package models_test
+
+import (
+    "testing"
+    "time"
+    "github.com/stretchr/testify/assert"
+)
+
+type UserBuilder struct {
+    user *User
+}
+
+func NewUserBuilder() *UserBuilder {
+    return &UserBuilder{
+        user: &User{
+            ID:        "user-" + generateID(),
+            Email:     "test-" + generateID() + "@example.com",
+            CreatedAt: time.Now(),
+            Status:    "active",
+        },
+    }
+}
+
+func (b *UserBuilder) WithEmail(email string) *UserBuilder {
+    b.user.Email = email
+    return b
+}
+
+func (b *UserBuilder) WithStatus(status string) *UserBuilder {
+    b.user.Status = status
+    return b
+}
+
+func (b *UserBuilder) Build() *User {
+    return b.user
+}
+
+// Usage in tests
+func TestUserCreation(t *testing.T) {
+    user := NewUserBuilder().
+        WithEmail("custom@example.com").
+        WithStatus("pending").
+        Build()
+
+    assert.Equal(t, "custom@example.com", user.Email)
+    assert.Equal(t, "pending", user.Status)
+}
+```
+
+Go's builder pattern is particularly well-handled by Claude Code and Cursor.
+
+## Relationship Management in Factories
+
+The most challenging aspect of test data factories is maintaining relationships between entities. Claude Code handles this better than Copilot:
+
+```python
+# Complex relationship example: User → Orders → LineItems → Products
+class ProductFactory(factory.Factory):
+    class Meta:
+        model = Product
+
+    id = factory.Sequence(lambda n: n)
+    name = factory.Faker('word')
+    price = factory.Faker('pydecimal', left_digits=3, right_digits=2, positive=True)
+    stock = factory.Faker('random_int', min=0, max=1000)
+
+class LineItemFactory(factory.Factory):
+    class Meta:
+        model = LineItem
+
+    id = factory.Sequence(lambda n: n)
+    product = factory.SubFactory(ProductFactory)
+    quantity = factory.Faker('random_int', min=1, max=10)
+
+    @factory.lazy_attribute
+    def subtotal(self):
+        return self.product.price * self.quantity
+
+class OrderFactory(factory.Factory):
+    class Meta:
+        model = Order
+
+    id = factory.Sequence(lambda n: n)
+    user = factory.SubFactory(UserFactory)  # Create user with order
+    created_at = factory.Faker('date_time_this_year')
+
+    @factory.post_generation
+    def line_items(self, create, extracted, **kwargs):
+        if not create:
+            return
+
+        if extracted:
+            # If line_items were passed, use them
+            for item in extracted:
+                self.line_items.add(item)
+        else:
+            # Otherwise create 2-5 random items
+            count = random.randint(2, 5)
+            for _ in range(count):
+                LineItemFactory(order=self)
+
+    @factory.lazy_attribute
+    def total(self):
+        return sum(item.subtotal for item in self.line_items.all())
+
+# Usage that maintains relationships
+order = OrderFactory(line_items=[
+    LineItemFactory(quantity=2),
+    LineItemFactory(quantity=1)
+])
+
+assert order.total == sum(item.subtotal for item in order.line_items.all())
+```
+
+## Performance Testing with Generated Data
+
+AI-assisted factories enable large-scale performance testing:
+
+```python
+# Generate realistic 10,000-user dataset for performance testing
+def setup_performance_test_data():
+    """Create large dataset quickly using factories"""
+
+    # Generate 10,000 users
+    users = UserFactory.create_batch(10000)
+
+    # Generate 50,000 orders across those users
+    orders = [
+        OrderFactory(
+            user=random.choice(users),
+            created_at=datetime.now() - timedelta(days=random.randint(0, 365))
+        )
+        for _ in range(50000)
+    ]
+
+    # Bulk insert for speed
+    db.session.add_all(orders)
+    db.session.commit()
+
+# Measure query performance on realistic data
+@pytest.mark.performance
+def test_order_query_performance():
+    setup_performance_test_data()
+
+    # Query that should complete in <100ms with proper indexing
+    start = time.perf_counter()
+    orders = Order.query.filter(
+        Order.created_at > datetime.now() - timedelta(days=30)
+    ).all()
+    elapsed = (time.perf_counter() - start) * 1000
+
+    assert elapsed < 100, f"Query took {elapsed}ms, expected <100ms"
+```
+
+## Evaluating AI Tool Generated Factories
+
+When reviewing AI-generated factory code, check for:
+
+1. **Business rule validation** - Does generated data respect constraints?
+2. **Relationship integrity** - Are foreign keys valid and consistent?
+3. **Edge case coverage** - Does it generate boundary values appropriately?
+4. **Readability** - Can your team maintain this factory long-term?
+5. **Performance** - Does bulk generation complete in reasonable time?
+
+Claude Code excels at all five. Cursor is strong on 1-4. Copilot handles 2-3 reliably but may miss business rules.
 
 ## Related Reading
 
