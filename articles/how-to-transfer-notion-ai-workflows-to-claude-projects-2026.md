@@ -297,3 +297,5 @@ Most teams find that after migration, they build additional automation they coul
 - [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

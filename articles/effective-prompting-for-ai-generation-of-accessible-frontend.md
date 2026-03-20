@@ -301,3 +301,5 @@ Test every AI-generated component. Use automated tools, screen readers, and keyb
 - [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

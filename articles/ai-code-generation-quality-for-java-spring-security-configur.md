@@ -304,3 +304,5 @@ For teams implementing custom security components, consider creating detailed te
 - [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

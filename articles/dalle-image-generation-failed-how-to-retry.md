@@ -268,3 +268,5 @@ DALL-E failures don't have to break your workflow. With proper error handling, r
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three.](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

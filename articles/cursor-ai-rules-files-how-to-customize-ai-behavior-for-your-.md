@@ -214,3 +214,5 @@ Sometimes Cursor may override rules in specific contexts. For example, when expl
 - [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

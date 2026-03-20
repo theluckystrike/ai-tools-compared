@@ -264,3 +264,5 @@ For most developers, both tools produce usable output. The choice often comes do
 - [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

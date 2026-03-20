@@ -278,3 +278,5 @@ The MCP architecture makes it easy to add new tools as your needs evolve.
 - [How to Build Model Context Protocol Server for Internal.](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -252,3 +252,5 @@ With proper configuration, AI autocomplete becomes a helpful colleague who knows
 - [How to Reduce AI Coding Tool Costs Without Losing.](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

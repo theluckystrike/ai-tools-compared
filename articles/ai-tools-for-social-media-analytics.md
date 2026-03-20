@@ -285,3 +285,5 @@ The ecosystem of AI tools for social media analytics is mature enough that you d
 - [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -226,3 +226,5 @@ The investment in context management pays off quickly. You spend less time repea
 - [How to Manage AI Coding Tool Rate Limits Across a Team.](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

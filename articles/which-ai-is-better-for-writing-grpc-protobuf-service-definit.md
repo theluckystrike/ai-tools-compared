@@ -157,3 +157,5 @@ For teams with complex microservices architectures, Cursor's codebase understand
 - [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

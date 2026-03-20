@@ -324,3 +324,5 @@ Building reliable services requires clear, measurable objectives. AI accelerates
 - [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

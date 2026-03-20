@@ -247,3 +247,5 @@ Test the generated fixtures in isolation before integrating them into your full 
 - [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

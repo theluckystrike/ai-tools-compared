@@ -321,3 +321,5 @@ test('full GraphQL query with DataLoader batching', async () => {
 - [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -271,3 +271,5 @@ When upgrading a component library or switching UI frameworks, use AI to map old
 - [How to Use AI to Generate Jest Component Tests with.](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

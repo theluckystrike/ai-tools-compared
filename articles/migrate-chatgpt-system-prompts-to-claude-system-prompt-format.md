@@ -14,6 +14,8 @@ tags:
 categories:
   - AI Tools Compared
 permalink: /migrate-chatgpt-system-prompts-to-claude-system-prompt-format/
+score: 7
+reviewed: true
 ---
 
 
@@ -301,4 +303,10 @@ After migration, test your Claude system prompt by:
 **Solution:** Add specific scenario examples demonstrating expected behavior.
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

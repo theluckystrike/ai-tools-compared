@@ -233,3 +233,5 @@ Start with the tool that addresses your biggest bottleneck, measure the time sav
 - [Best AI Tool for Procurement Managers Vendor Analysis](/ai-tools-compared/best-ai-tool-for-procurement-managers-vendor-analysis/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

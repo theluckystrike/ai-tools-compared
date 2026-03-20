@@ -9,6 +9,8 @@ permalink: /how-to-set-up-model-context-protocol-server-for-internal-pac/
 categories: [guides]
 intent-checked: true
 voice-checked: true
+score: 7
+reviewed: true
 ---
 {% raw %}
 
@@ -280,4 +282,10 @@ CMD ["node", "dist/server.js"]
 Build and run with `docker build -t mcp-registry-docs .` followed by `docker run mcp-registry-docs`.
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

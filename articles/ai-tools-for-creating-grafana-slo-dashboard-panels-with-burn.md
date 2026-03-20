@@ -217,3 +217,5 @@ Test burn rate calculations during both normal and incident conditions. A good b
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

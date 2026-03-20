@@ -368,3 +368,5 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 - [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

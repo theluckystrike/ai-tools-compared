@@ -173,3 +173,5 @@ Maintain a backup of your custom instructions and important memories in a separa
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

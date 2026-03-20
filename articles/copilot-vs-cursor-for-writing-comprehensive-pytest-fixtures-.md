@@ -268,3 +268,5 @@ The most effective approach involves understanding each tool's strengths and app
 - [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

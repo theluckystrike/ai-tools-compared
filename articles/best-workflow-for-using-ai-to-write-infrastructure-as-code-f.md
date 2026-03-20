@@ -8,6 +8,8 @@ author: theluckystrike
 permalink: /best-workflow-for-using-ai-to-write-infrastructure-as-code-f/
 categories: [guides]
 tags: [tools]
+score: 7
+reviewed: true
 ---
 
 
@@ -274,6 +276,13 @@ Start with simple diagrams and work up to complex architectures. Each iteration 
 The combination of clear diagram preparation, detailed prompts, careful code review, and iterative refinement creates a powerful workflow for infrastructure automation. Practice this approach on non-production resources first, then apply it to your production infrastructure once comfortable with the results.
 
 
+
+
+## Related Reading
+
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

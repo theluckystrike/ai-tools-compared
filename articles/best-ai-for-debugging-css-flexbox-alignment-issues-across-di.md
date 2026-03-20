@@ -229,3 +229,5 @@ Test your chosen tool with real Flexbox problems. Paste problematic code, ask sp
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

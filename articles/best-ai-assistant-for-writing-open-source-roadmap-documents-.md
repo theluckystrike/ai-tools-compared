@@ -366,3 +366,5 @@ For projects with hundreds of issues, Claude's larger context window provides ad
 - [AI Tools for Analyzing Which Open Source Issues Would Benefit From Contributions](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

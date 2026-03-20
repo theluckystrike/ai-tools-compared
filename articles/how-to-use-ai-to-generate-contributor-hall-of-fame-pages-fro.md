@@ -8,6 +8,8 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/
 categories: [guides]
 tags: [tools]
+score: 7
+reviewed: true
 ---
 
 
@@ -299,3 +301,5 @@ When using AI to generate hall of fame content, keep these considerations in min
 - [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -316,3 +316,5 @@ Test before abandoning: Keep Copilot accessible for a week while you adjust to C
 - [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

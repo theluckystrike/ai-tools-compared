@@ -300,3 +300,5 @@ Follow these recommendations for the smoothest transition:
 - [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

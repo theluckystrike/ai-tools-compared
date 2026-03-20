@@ -318,3 +318,5 @@ Both platforms evolve rapidly—request current feature sets and pricing directl
 - [Stable Diffusion ComfyUI vs Automatic1111: A Practical.](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

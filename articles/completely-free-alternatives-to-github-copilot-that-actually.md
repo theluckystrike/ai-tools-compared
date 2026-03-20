@@ -263,3 +263,5 @@ The landscape of AI coding assistants continues evolving rapidly. What feels lim
 - [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

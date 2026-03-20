@@ -294,3 +294,5 @@ Both platforms provide sandbox environments. Request API access early in your ev
 - [Cognigy vs Boost AI Virtual Agents: A Developer Comparison](/ai-tools-compared/cognigy-vs-boost-ai-virtual-agents/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

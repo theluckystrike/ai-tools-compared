@@ -269,3 +269,5 @@ The transition requires an adjustment period. Expect reduced autocomplete sugges
 - [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

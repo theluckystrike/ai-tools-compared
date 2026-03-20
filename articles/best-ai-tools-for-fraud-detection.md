@@ -297,3 +297,5 @@ Combine multiple tools for better coverage—use one for real-time blocking and 
 - [Legal Research AI Tools: Best Options for Attorneys in 2026](/ai-tools-compared/legal-research-ai-tools-best-options-for-attorneys-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

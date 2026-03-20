@@ -232,3 +232,5 @@ Most developers would benefit from trying both tools—their free tiers are gene
 - [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

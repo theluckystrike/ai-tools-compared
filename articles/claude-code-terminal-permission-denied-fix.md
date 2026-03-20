@@ -346,3 +346,5 @@ Permission denied errors in Claude Code usually stem from executable permissions
 - [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -331,3 +331,5 @@ The pattern that AI tools struggle with most is custom serialization logic. Alwa
 - [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

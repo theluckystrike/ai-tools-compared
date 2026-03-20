@@ -326,3 +326,5 @@ If you're hitting limits with your current tier, prioritize using advanced model
 - [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

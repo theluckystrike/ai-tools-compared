@@ -207,3 +207,5 @@ Both platforms remain actively developed with strong community support. Your cho
 - [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

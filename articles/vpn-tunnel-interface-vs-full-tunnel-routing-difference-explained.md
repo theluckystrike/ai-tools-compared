@@ -189,3 +189,5 @@ Many power users find that a hybrid approach works best: full tunnel for sensiti
 - [Configuring Cursor AI to Work with Corporate VPN and.](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

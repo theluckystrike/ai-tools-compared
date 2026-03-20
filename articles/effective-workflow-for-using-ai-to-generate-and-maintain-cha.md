@@ -230,3 +230,5 @@ Start with cleaner commit messages, use AI to generate drafts, and maintain a re
 - [Effective Strategies for AI-Assisted Debugging of.](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

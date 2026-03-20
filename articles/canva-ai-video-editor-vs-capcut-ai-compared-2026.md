@@ -295,3 +295,5 @@ For a team already invested in Canva's design ecosystem, the video capabilities 
 - [Botpress vs Rasa AI Chatbot Framework Compared](/ai-tools-compared/botpress-vs-rasa-ai-chatbot-framework/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

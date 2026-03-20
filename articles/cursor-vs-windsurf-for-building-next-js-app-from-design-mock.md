@@ -257,3 +257,5 @@ Both tools integrate with Next.js and support Tailwind CSS out of the box. Your 
 - [Cursor vs Windsurf for Implementing Drag and Drop.](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

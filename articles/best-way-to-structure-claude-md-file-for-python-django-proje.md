@@ -226,3 +226,5 @@ Consider version-controlling your Claude.md file. This lets you track how your s
 - [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

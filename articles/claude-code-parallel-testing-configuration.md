@@ -489,3 +489,5 @@ export default defineConfig({
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

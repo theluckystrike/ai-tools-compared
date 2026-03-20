@@ -241,3 +241,5 @@ Track your productivity improvements objectively:
 - [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

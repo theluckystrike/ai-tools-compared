@@ -335,3 +335,5 @@ Most outdated-information issues resolve by starting a fresh conversation, addin
 - [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

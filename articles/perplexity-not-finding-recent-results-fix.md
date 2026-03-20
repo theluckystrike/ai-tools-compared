@@ -405,3 +405,5 @@ Most "not finding recent results" issues resolve through scope settings, query r
 - [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -250,3 +250,5 @@ Maintain a simple internal wiki or README explaining your setup. Include the dir
 - [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

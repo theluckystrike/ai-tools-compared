@@ -344,3 +344,5 @@ action:
 - [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

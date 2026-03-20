@@ -257,3 +257,5 @@ The developers who benefit most from AI-assisted learning maintain an active lea
 - [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

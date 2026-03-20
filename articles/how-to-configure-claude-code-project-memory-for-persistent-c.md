@@ -292,3 +292,5 @@ This approach ensures Claude Code maintains context awareness across different p
 - [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

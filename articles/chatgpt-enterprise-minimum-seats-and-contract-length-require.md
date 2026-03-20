@@ -236,3 +236,5 @@ Contact OpenAI's enterprise sales team through their website to initiate the pro
 - [ChatGPT Edu Pricing Per Student: How Schools Get Volume.](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

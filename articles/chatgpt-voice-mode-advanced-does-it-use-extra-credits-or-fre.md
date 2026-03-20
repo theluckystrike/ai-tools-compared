@@ -254,3 +254,5 @@ The API approach requires more development effort but delivers predictable costs
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API.](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

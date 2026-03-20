@@ -326,3 +326,5 @@ To get the most out of Cursor Pro's privacy features:
 - [Cursor Pro vs Copilot Individual Price Per Feature.](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

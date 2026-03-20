@@ -232,3 +232,5 @@ The right AI tool accelerates idiomatic Rust error handling, but understanding `
 - [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

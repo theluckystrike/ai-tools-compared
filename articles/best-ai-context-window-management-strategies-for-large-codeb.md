@@ -261,3 +261,5 @@ Different projects suit different strategies. A monolithic repository benefits f
 - [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -217,3 +217,5 @@ Follow this sequence to minimize disruption during your transition:
 - [How to Move Copilot Suggested Code Patterns to Cursor.](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

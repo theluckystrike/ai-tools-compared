@@ -263,3 +263,5 @@ Maintain dashboard templates separately from generated configurations. Template 
 - [AI Tools for Generating Docker Compose Files for Complex.](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

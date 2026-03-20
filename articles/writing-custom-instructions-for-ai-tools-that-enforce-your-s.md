@@ -314,3 +314,5 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 - [How to Create Custom Instructions for AI Tools to.](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

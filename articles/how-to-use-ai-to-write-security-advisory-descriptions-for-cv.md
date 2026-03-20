@@ -306,3 +306,5 @@ For teams with specific style guides or vendor templates, create custom prompt l
 - [How to Use AI to Write Pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

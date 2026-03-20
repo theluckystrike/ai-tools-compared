@@ -308,3 +308,5 @@ The team concluded that AI tools provided measurable value after the adjustment 
 - [AI Coding Productivity Tips for Senior Developers.](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

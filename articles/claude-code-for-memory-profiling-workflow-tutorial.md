@@ -7,6 +7,8 @@ author: "theluckystrike"
 permalink: /claude-code-for-memory-profiling-workflow-tutorial/
 categories: [guides, tutorials]
 tags: [claude-code, memory-profiling, performance]
+score: 7
+reviewed: true
 ---
 
 
@@ -448,4 +450,10 @@ Integrate memory profiling into your development workflow:
 5. Implement memory budgets: Define acceptable memory limits for different operations
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -325,3 +325,5 @@ Calculate your specific scenario using the formula above. If the effective cost 
 - [Cursor Business Seat Minimum and Onboarding Costs.](/ai-tools-compared/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

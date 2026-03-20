@@ -283,3 +283,5 @@ The initial investment in setting up automated documentation pays dividends thro
 - [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

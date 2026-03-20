@@ -266,3 +266,5 @@ Fourth, keep your headers current. If you update your project's license or add n
 - [AI Assistants for Writing Correct AWS IAM Policies with.](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

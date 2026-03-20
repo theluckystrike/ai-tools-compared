@@ -315,3 +315,5 @@ Most import suggestion issues resolve by updating your software or re-authentica
 - [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

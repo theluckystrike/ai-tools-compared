@@ -251,3 +251,5 @@ This approach ensures everyone uses the same prompt version and makes updates st
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

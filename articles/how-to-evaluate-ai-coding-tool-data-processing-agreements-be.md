@@ -290,3 +290,5 @@ For developers and power users, understanding these agreements empowers you to a
 - [How to Evaluate AI Coding Tool Encryption Standards for.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

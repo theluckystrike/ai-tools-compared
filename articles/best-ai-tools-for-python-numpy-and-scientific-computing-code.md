@@ -241,3 +241,5 @@ When evaluating AI assistants for scientific computing, always verify that gener
 - [Best AI Tools for TypeScript Type Inference and Generic.](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

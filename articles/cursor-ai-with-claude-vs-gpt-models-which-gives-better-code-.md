@@ -219,3 +219,5 @@ For everyday development, consider the following approach based on task requirem
 - [Which AI Is Better for Writing gRPC Protobuf Service.](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

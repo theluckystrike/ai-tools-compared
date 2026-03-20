@@ -313,3 +313,5 @@ When working with AI assistants for Grafana panel creation:
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

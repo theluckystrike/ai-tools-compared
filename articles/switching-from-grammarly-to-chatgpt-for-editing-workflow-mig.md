@@ -231,3 +231,5 @@ Pay attention to how ChatGPT handles sensitive information. Avoid pasting confid
 - [Switching from ChatGPT Search to Perplexity Pro Search.](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

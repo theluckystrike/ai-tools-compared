@@ -156,3 +156,5 @@ Create a minimal test file with common patterns such as a function definition, l
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

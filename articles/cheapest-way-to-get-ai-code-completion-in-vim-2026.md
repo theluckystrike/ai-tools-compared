@@ -266,3 +266,5 @@ let g:codeium_filetypes = {
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

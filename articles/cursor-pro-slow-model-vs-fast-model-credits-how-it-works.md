@@ -261,3 +261,5 @@ Experiment with both models in your daily workflow. Pay attention to when the fa
 - [Cursor Pro Refund Policy: Can You Get Money Back After.](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

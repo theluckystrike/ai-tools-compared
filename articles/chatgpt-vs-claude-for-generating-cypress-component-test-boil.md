@@ -215,3 +215,5 @@ Both AI assistants reduce the time spent writing repetitive boilerplate, but the
 - [Claude vs ChatGPT for Writing Datadog Dashboard.](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

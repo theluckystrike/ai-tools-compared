@@ -178,3 +178,5 @@ The ability to generate visualizations from code snippets democratizes algorithm
 - [AI Tools for Creating dbt Documentation Blocks from.](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

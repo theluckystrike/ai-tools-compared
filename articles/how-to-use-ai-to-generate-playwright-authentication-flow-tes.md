@@ -215,3 +215,5 @@ This automation ensures your test state remains current without manual intervent
 - [How to Use AI to Generate Jest Integration Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

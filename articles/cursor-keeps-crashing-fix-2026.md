@@ -267,3 +267,5 @@ If crashes persist after trying all these solutions, consider reaching out to Cu
 - [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

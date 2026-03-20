@@ -331,3 +331,5 @@ Choose targeted fixes when:
 - [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -295,3 +295,5 @@ Save critical work locally and don't rely solely on Code Interpreter for importa
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

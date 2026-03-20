@@ -302,3 +302,5 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
 - [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

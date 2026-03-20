@@ -263,3 +263,5 @@ The assistant handles complex component compositions reasonably well but may req
 - [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

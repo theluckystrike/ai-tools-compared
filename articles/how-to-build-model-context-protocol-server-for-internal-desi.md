@@ -342,3 +342,5 @@ Consider running the server as a local service that multiple team members can co
 - [How to Build a Model Context Protocol Server That.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

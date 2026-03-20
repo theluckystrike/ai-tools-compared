@@ -321,3 +321,5 @@ Finally, document edge cases. When fixtures require special handling, add commen
 - [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 - [Best AI for Writing Playwright Multi-Browser Test.](/ai-tools-compared/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
 - [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -344,3 +344,5 @@ A well-maintained CursorRules setup ensures consistent, high-quality code genera
 - [How to Create CursorRules That Teach Cursor Your Team's State Management Patterns](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

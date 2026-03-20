@@ -302,3 +302,5 @@ Monitoring: Track pipeline execution times and failure rates. Patterns reveal op
 - [Best AI Tools for Writing Kubernetes Admission Webhook.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

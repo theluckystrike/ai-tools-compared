@@ -260,3 +260,5 @@ For pure open source enthusiasts, Continue Dev's commitment to open source (the 
 - [Cheapest AI Tool for Generating Entire Project From.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

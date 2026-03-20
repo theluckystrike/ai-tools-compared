@@ -274,3 +274,5 @@ The time investment in learning these tools pays dividends immediately. Configur
 - [Best AI IDE Features for Refactoring Class Hierarchies.](/ai-tools-compared/best-ai-ide-features-for-refactoring-class-hierarchies-and-i/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

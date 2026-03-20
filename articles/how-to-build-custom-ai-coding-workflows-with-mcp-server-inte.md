@@ -266,3 +266,5 @@ This modular approach lets you assemble sophisticated automation pipelines from 
 - [AI Coding Assistant Comparison for React Component.](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -147,3 +147,5 @@ GitHub has not announced an official GA (General Availability) date for Copilot 
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

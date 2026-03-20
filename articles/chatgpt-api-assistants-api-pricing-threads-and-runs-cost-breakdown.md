@@ -250,3 +250,5 @@ Switching to gpt-4o for all runs would increase costs to approximately $9,000 pe
 - [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -312,3 +312,5 @@ This approach scales well because the AI becomes a force for consistency rather 
 - [How to Use AI Coding Tools to Enforce Consistent API.](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

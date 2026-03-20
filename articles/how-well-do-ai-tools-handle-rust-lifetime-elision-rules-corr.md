@@ -235,3 +235,5 @@ Third, when an AI tool struggles with lifetime errors, provide explicit context 
 - [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

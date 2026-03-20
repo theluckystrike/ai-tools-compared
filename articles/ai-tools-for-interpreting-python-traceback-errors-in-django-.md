@@ -191,3 +191,5 @@ To get the most from AI tools when debugging Django middleware errors, follow th
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

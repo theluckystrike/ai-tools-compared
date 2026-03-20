@@ -187,3 +187,5 @@ AI-generated resolvers require validation before deployment. Check these aspects
 - [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

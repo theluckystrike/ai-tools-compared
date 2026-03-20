@@ -316,3 +316,5 @@ Track these metrics to ensure your AI-assisted trunk workflow is working:
 - [How to Use AI Coding Tools Effectively During Live.](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

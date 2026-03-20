@@ -342,3 +342,5 @@ The combination of AI-generated validation tests and manually-written business l
 - [How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

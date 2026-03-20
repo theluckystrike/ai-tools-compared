@@ -253,3 +253,5 @@ The most effective approach combines AI assistance with Go community conventions
 - [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -233,3 +233,5 @@ If your keybindings are not working as expected, verify these settings:
 - [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

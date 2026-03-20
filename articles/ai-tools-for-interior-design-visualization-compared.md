@@ -378,3 +378,5 @@ When evaluating these tools for production use:
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

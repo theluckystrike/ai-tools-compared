@@ -306,3 +306,5 @@ Try creating a new TypeScript file in your project. If completions work in new f
 - [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

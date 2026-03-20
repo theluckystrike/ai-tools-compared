@@ -301,3 +301,5 @@ The investment in maintaining a CLAUDE.md pays dividends in reduced AI hallucina
 - [Best Way to Structure Claude MD File for Python Django.](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

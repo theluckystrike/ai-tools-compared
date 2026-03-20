@@ -224,3 +224,5 @@ This approach separates test data from test logic, making maintenance straightfo
 - [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

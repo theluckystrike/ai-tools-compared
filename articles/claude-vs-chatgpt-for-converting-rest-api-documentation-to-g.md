@@ -280,3 +280,5 @@ Iterate on type design. Generate an initial schema, test it against your actual 
 - [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks in Python](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

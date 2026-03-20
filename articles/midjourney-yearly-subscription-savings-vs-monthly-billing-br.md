@@ -287,3 +287,5 @@ For most developers and power users with established creative workflows, the yea
 - [AI Tools for Subscription Management Support](/ai-tools-compared/ai-tools-for-subscription-management-support/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

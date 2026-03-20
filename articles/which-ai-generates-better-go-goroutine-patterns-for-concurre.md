@@ -280,3 +280,5 @@ When using AI-generated concurrency code, always verify: channel buffer sizes ar
 - [Best AI Tools for Writing Go gRPC Service Definitions.](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

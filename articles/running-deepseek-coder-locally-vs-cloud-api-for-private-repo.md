@@ -229,3 +229,5 @@ Many developers adopt a hybrid approach—using local models for quick daily tas
 - [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

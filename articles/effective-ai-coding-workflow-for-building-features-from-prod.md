@@ -272,3 +272,5 @@ Building features from product requirements documents doesn't have to be a painf
 - [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

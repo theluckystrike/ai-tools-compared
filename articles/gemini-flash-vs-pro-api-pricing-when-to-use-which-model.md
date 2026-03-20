@@ -321,3 +321,5 @@ The most cost-effective approach is to benchmark both models on your actual work
 - [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -255,3 +255,5 @@ npx jest --testPathPattern=users.test.js --watch
 - [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

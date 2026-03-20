@@ -243,3 +243,5 @@ Agent mode represents a significant evolution in AI-assisted development. By und
 - [How to Use Copilot Chat to Generate Code from Natural.](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

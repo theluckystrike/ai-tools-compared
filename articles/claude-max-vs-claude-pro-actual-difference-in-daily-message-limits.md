@@ -158,3 +158,5 @@ Consider these factors when deciding between Claude Pro and Max:
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 - [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 - [Windsurf Pro Annual vs Monthly Pricing: Actual Savings.](/ai-tools-compared/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calculated/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

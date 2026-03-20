@@ -277,3 +277,5 @@ Transparency and Logging: Every AI decision should log the underlying data and r
 - [Best AI Tools for Image Data Analysis: A Developer Guide](/ai-tools-compared/best-ai-tools-for-image-data-analysis/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

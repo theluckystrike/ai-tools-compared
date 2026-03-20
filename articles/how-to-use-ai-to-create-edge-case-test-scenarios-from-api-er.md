@@ -325,3 +325,5 @@ When using AI to generate test scenarios from API error documentation, keep thes
 - [How to Use AI to Generate Jest Component Tests with.](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

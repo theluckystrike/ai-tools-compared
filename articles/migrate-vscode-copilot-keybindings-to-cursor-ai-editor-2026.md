@@ -197,3 +197,5 @@ Cursor continues evolving its AI features, and new command identifiers may repla
 - [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

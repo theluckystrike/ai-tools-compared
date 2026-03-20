@@ -252,3 +252,5 @@ Core AI processing does not count against your quota—the model runs on Google'
 - [Does WindSurf AI Send Entire Project Context or Just.](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

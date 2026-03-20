@@ -212,3 +212,5 @@ As AI coding tools continue evolving, context management strategies will adapt. 
 - [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

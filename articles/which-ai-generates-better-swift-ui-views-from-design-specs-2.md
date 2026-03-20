@@ -351,3 +351,5 @@ None of these tools replace understanding SwiftUI yourself. You will still need 
 - [Cursor AI with Claude vs GPT Models: Which Gives Better.](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

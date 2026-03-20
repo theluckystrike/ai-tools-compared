@@ -282,3 +282,5 @@ However, cloud-based solutions may still be preferable when you need the most ad
 - [Running CodeLlama Locally vs Using Cloud Copilot for.](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

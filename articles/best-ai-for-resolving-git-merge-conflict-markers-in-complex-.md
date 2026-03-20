@@ -285,3 +285,5 @@ The ultimate goal is not just to resolve conflicts quickly, but to ensure the re
 - [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

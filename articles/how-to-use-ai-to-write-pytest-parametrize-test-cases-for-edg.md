@@ -309,3 +309,5 @@ This approach saves hours of manual test writing while ensuring better coverage 
 - [AI Tools for Creating Property-Based Test Cases Using.](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

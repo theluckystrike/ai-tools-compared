@@ -280,3 +280,5 @@ Both tools eliminate the blank-page problem and accelerate your outreach workflo
 - [Claude vs ChatGPT for Writing Kubernetes Helm Chart.](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

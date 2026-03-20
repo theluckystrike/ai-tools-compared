@@ -293,3 +293,5 @@ As the AI learns your team's patterns, it will continuously improve its suggesti
 - [Best AI Tools for Video Transcription: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-video-transcription/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

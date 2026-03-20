@@ -241,3 +241,5 @@ Start with the tool that addresses your biggest pain point, measure the impact, 
 - [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

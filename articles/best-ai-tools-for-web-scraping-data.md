@@ -253,3 +253,5 @@ This approach extracts content automatically without you needing to inspect page
 - [Best AI Tools for Fraud Detection in 2026](/ai-tools-compared/best-ai-tools-for-fraud-detection/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

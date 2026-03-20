@@ -200,3 +200,5 @@ The learning curve for Virtual Threads is manageable when you use AI tools as a 
 - [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

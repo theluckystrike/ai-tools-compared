@@ -345,3 +345,5 @@ Lip sync technology enables several real-world applications:
 - [Best Workflow for Using AI to Modernize Legacy Application Architecture in 2026](/ai-tools-compared/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

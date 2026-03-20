@@ -271,3 +271,5 @@ Over time, you'll develop patterns for the types of queries that produce the mos
 - [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

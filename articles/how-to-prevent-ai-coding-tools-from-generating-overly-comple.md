@@ -205,3 +205,5 @@ Include prompts for common scenarios: simple functions, data transformations, ba
 - [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

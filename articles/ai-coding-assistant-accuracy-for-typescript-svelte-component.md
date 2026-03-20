@@ -274,3 +274,5 @@ When evaluating AI assistants for TypeScript Svelte component generation, consid
 - [AI Coding Assistant Comparison for TypeScript Tailwind.](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -7,6 +7,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /export-perplexity-collections-before-switching-to-chatgpt-se/
 categories: [guides]
+score: 7
+reviewed: true
 ---
 
 
@@ -284,4 +286,10 @@ Test your export scripts on a single collection first to verify the data structu
 Back up your exports to cloud storage (Google Drive, Dropbox, or AWS S3) in addition to local storage. This protects against data loss if your local machine fails during the transition period.
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -256,3 +256,5 @@ Use version control for your instruction files. Track changes and review modific
 - [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

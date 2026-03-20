@@ -304,3 +304,5 @@ Both APIs are straightforward to integrate, and switching between them later is 
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

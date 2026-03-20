@@ -226,3 +226,5 @@ Most implementations benefit from starting simple—implement basic reorder poin
 - [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

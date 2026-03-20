@@ -260,3 +260,5 @@ AI autocomplete continues to improve rapidly, with tools adding better schema un
 - [Best AI for Writing SQL Performance Tuning.](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

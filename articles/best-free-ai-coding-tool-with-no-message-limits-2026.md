@@ -292,3 +292,5 @@ Experiment with different interaction styles—inline suggestions, chat-based as
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

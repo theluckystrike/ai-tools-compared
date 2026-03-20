@@ -412,3 +412,5 @@ If you've exhausted these steps:
 - [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting.](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

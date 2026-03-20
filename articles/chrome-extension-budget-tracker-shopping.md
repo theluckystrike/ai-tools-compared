@@ -214,3 +214,5 @@ Cashback programs require careful attention to tracking—some purchases don't q
 - [Building an AI Research Assistant Chrome Extension: A.](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

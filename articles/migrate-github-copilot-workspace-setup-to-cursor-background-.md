@@ -242,3 +242,5 @@ Excluding folders like `node_modules` reduces the agent's workload without losin
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 - [How to Migrate VSCode Copilot Keybindings to Cursor AI.](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 - [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

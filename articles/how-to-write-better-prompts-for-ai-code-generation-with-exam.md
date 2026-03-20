@@ -256,3 +256,5 @@ Document your successful prompt patterns for recurring tasks. This creates a per
 - [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

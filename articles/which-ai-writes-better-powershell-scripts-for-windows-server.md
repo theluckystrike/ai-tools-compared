@@ -220,3 +220,5 @@ For Windows Server automation tasks, **Claude 3.5 Sonnet** consistently produces
 - [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

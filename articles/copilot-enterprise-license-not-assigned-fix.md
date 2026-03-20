@@ -263,3 +263,5 @@ Avoid future license assignment issues by implementing these practices.
 - [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

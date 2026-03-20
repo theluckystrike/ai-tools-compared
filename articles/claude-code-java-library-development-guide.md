@@ -335,3 +335,5 @@ Document breaking changes in a CHANGELOG and provide migration guides for major 
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
 - [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
 - [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -272,3 +272,5 @@ The combination of AI's pattern-matching capability with disciplined verificatio
 - [Effective Strategies for Using AI to Write Comprehensive.](/ai-tools-compared/effective-strategies-for-using-ai-to-write-comprehensive-api/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

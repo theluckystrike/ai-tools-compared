@@ -277,3 +277,5 @@ terraform {
 - [ChatGPT vs Claude for Generating Cypress Component Test.](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

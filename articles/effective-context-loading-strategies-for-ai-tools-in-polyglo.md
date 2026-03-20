@@ -260,3 +260,5 @@ The initial investment in context documentation pays dividends through improved 
 - [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

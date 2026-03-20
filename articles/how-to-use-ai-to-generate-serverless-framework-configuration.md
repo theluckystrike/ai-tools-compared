@@ -302,3 +302,5 @@ Test in staging first. Deploy to a non-production environment to verify the conf
 - [How to Use AI to Generate Terraform Import Blocks for.](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

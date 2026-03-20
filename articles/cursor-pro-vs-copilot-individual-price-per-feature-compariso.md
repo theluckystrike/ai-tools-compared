@@ -384,3 +384,5 @@ Your choice depends on workflow complexity. Test both with free tiers before com
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

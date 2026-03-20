@@ -212,3 +212,5 @@ For teams, consider that Claude Code and Cursor offer the deepest understanding 
 - [Best AI Tools for Writing Kubernetes Operator Code From.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

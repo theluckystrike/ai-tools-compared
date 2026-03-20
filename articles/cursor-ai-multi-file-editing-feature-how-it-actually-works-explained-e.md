@@ -274,3 +274,5 @@ Cursor's multi-file editing represents a significant advancement in AI-assisted 
 - [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

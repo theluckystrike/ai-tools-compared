@@ -161,3 +161,5 @@ The key is selecting a tool that handles audit-specific terminology accurately, 
 - [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

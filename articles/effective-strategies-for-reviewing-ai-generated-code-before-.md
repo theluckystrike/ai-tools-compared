@@ -283,3 +283,5 @@ Over time, your team can create specific guidelines for working with your prefer
 - [AI Code Suggestion Quality When Working With Environment.](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

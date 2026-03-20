@@ -208,3 +208,5 @@ The newer Copilot Edits feature allows you to make targeted changes across multi
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

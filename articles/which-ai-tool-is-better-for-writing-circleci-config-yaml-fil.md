@@ -238,3 +238,5 @@ The best choice ultimately depends on your existing workflow. If you primarily w
 - [Best AI Assistants for Writing CircleCI and GitLab CI.](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

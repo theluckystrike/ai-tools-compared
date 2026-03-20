@@ -308,3 +308,5 @@ Realistic test data transforms your development and testing process. AI makes ge
 - [Best AI Assistant for Creating Test Data Factories with.](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

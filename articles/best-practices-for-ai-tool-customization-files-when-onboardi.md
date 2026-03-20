@@ -7,6 +7,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-ai-tool-customization-files-when-onboardi/
 categories: [guides]
+score: 7
+reviewed: true
 ---
 
 
@@ -303,3 +305,10 @@ migrations:
 ```
 
 
+## Related Reading
+
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

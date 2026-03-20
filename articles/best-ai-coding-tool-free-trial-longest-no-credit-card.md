@@ -272,3 +272,5 @@ These tools represent the most accessible options for developers who want to exp
 - [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

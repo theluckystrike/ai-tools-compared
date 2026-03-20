@@ -395,3 +395,5 @@ Finally, use Go's built-in tooling. Claude Code understands `go fmt`, `go vet`, 
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

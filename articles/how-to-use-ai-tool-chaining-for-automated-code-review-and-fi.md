@@ -295,3 +295,5 @@ AI tool chaining transforms code review from a manual, time-consuming process in
 - [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

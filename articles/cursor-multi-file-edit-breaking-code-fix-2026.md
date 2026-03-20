@@ -349,3 +349,5 @@ Cursor excels at boilerplate generation and repetitive changes across many files
 - [Windsurf AI Flows Feature: How It Chains Multiple.](/ai-tools-compared/windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

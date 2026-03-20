@@ -161,3 +161,5 @@ These tools accelerate analysis, but they do not replace your judgment. The inve
 - [Best AI Tool for Financial Analysts Modeling in 2026](/ai-tools-compared/best-ai-tool-for-financial-analysts-modeling-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -146,3 +146,5 @@ As AI coding tools continue to evolve, the sophistication of their code understa
 - [Does Cursor Pro Charge Extra for Large File Indexing in.](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

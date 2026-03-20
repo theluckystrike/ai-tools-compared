@@ -321,3 +321,5 @@ AI excels at extracting explicit requirements but may miss unstated assumptions.
 - [How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

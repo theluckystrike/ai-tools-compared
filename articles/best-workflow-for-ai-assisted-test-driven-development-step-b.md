@@ -178,3 +178,5 @@ Track how AI-assisted TDD affects your development process. Measure the time spe
 - [How to Use AI to Write pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

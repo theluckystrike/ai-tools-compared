@@ -245,3 +245,5 @@ Document your modifications. When AI generates initial configurations, add comme
 - [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

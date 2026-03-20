@@ -267,3 +267,5 @@ Both tools are capable choices for developers exploring AI-assisted coding. The 
 - [Cursor vs Windsurf for Building Next.js App from Design Mockup](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

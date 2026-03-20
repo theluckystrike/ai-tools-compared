@@ -262,3 +262,5 @@ If something does not work as expected, check the Windsurf documentation for the
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

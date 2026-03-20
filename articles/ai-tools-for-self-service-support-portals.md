@@ -8,6 +8,8 @@ permalink: /ai-tools-for-self-service-support-portals/
 categories: [guides]
 intent-checked: true
 voice-checked: true
+score: 7
+reviewed: true
 ---
 
 

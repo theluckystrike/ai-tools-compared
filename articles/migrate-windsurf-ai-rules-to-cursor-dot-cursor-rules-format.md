@@ -8,6 +8,8 @@ permalink: /migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/
 categories: [guides]
 intent-checked: true
 voice-checked: true
+score: 7
+reviewed: true
 ---
 
 
@@ -289,4 +291,10 @@ Another pitfall is not updating rules when project requirements change. Your .cu
 Finally, remember that .cursorrules is project-specific. If you work on multiple projects with different coding standards, you will need separate .cursorrules files for each. Unlike some global settings, project-specific rules live in each project's root directory.
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

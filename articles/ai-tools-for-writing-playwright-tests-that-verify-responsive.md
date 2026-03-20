@@ -366,3 +366,5 @@ For CI/CD integrated test generation: Aider provides efficient terminal-based wo
 - [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

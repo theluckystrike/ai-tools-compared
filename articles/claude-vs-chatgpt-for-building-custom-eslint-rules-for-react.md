@@ -229,3 +229,5 @@ The Claude version would likely include proper AST traversal for the dependency 
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

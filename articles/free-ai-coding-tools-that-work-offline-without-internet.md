@@ -342,3 +342,5 @@ For older hardware, smaller models like Phi-3 or Mistral 7B provide reasonable p
 - [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

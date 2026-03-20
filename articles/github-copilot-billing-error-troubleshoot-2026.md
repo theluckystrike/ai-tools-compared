@@ -278,3 +278,5 @@ Use GitHub's **Support** → **Billing support** category for specialized help. 
 - [ChatGPT Plus Subscription Not Activating Fix](/ai-tools-compared/chatgpt-plus-subscription-not-activating-fix/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

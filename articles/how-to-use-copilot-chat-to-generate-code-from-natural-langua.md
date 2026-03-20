@@ -335,3 +335,5 @@ Generated code may occasionally use outdated patterns or deprecated APIs. Check 
 - [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

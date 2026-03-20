@@ -278,3 +278,5 @@ Regardless of which AI tool you use, follow these practices to ensure quality an
 - [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 - [Best AI Assistant for Writing Open Source Plugin.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
 - [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

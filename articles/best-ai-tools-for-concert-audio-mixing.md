@@ -323,3 +323,5 @@ For real-time assistance during performances, Cedera's feedback prevention and S
 - [Best AI Tools for Live Stream Enhancement](/ai-tools-compared/best-ai-tools-for-live-stream-enhancement/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

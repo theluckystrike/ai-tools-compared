@@ -182,3 +182,5 @@ Cursor's interactive features provide an advantage when implementing custom erro
 - [Cursor vs Copilot for Implementing Stripe Payment.](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

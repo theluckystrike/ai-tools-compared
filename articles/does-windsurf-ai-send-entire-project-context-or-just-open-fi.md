@@ -225,3 +225,5 @@ This command captures network traffic to see exactly where your code is going.
 - [Best AI Tools for Go Project Structure and Module.](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

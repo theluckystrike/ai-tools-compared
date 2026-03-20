@@ -269,3 +269,5 @@ Consider keeping a backup of your custom instructions in a document. This lets y
 - [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

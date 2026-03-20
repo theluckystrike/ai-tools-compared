@@ -296,3 +296,5 @@ def test_order_creation(db_session, sample_user):
 - [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

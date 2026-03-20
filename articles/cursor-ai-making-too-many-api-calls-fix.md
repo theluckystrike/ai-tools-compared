@@ -253,3 +253,5 @@ Configure Cursor to ask confirmation before making API calls for non-critical fe
 - [GitHub Copilot Usage-Based Billing: How API Calls Are.](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

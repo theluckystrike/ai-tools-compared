@@ -183,3 +183,5 @@ The feature works particularly well with clean, well-structured designs. Start w
 - [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -229,3 +229,5 @@ The best choice depends on your specific use case. For library authors or teams 
 - [Best AI Tools for Rust Web Development with Axum.](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

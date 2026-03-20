@@ -190,3 +190,5 @@ Security testing requires separate attention. Boundary value testing checks func
 - [AI Tools for Creating Test Data Snapshots for Database.](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

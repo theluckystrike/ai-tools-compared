@@ -272,3 +272,5 @@ In these cases, shift focus from acceptance rate to productivity gains. Track wh
 - [Enterprise Data Loss Prevention Rules for AI Coding.](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

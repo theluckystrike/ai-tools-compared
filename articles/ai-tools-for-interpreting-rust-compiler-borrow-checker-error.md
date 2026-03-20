@@ -215,3 +215,5 @@ The borrow checker exists to prevent memory safety bugs at compile time. AI tool
 - [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

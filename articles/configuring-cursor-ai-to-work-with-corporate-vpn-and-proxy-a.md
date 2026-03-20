@@ -238,3 +238,5 @@ This approach requires more local resources but provides complete independence f
 - [Cursor AI Model Selection Guide: Which Model for Which.](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

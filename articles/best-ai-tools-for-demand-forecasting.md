@@ -221,3 +221,5 @@ Finally, remember that the best forecasting approach often combines multiple too
 - [AI Tools for Pricing Optimization: A Practical Guide for.](/ai-tools-compared/ai-tools-for-pricing-optimization/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

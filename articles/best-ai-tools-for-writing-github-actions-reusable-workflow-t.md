@@ -312,3 +312,5 @@ When evaluating AI tools for GitHub Actions reusable workflows, prioritize these
 - [Best AI Tools for Writing Python SQLAlchemy Models and.](/ai-tools-compared/best-ai-tools-for-writing-python-sqlalchemy-models-and-queri/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

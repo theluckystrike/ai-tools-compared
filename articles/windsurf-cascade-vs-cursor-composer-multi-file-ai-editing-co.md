@@ -259,3 +259,5 @@ For developers who prefer explicit control over which files get modified, Compos
 - [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

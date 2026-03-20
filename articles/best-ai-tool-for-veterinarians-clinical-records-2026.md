@@ -168,3 +168,5 @@ VetRocket leads for rapid implementation and voice-first workflows. ClienSee sui
 - [Best AI Tool for Customer Success Managers 2026](/ai-tools-compared/best-ai-tool-for-customer-success-managers-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

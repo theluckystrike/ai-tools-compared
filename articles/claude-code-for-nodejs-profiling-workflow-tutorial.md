@@ -7,6 +7,8 @@ author: "Claude Skills Guide"
 permalink: /claude-code-for-nodejs-profiling-workflow-tutorial/
 categories: [guides, tutorials]
 tags: [claude-code, claude-skills]
+score: 7
+reviewed: true
 ---
 
 
@@ -322,4 +324,10 @@ Integrate profiling into your development workflow using these strategies:
 4. Use Claude Code for code review: Have Claude Code review performance-critical code changes before merging
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

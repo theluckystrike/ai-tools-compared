@@ -297,3 +297,5 @@ AI can help maintainers craft these guidelines in a way that is firm but welcomi
 - [Best AI Assistant for Generating Open Source Release.](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

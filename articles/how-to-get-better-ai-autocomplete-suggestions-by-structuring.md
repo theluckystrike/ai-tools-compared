@@ -324,3 +324,5 @@ When AI tools can see exactly what you're importing, they suggest those specific
 - [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

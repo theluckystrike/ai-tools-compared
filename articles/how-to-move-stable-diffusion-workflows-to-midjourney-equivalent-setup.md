@@ -461,3 +461,5 @@ Use this checklist when moving your workflows:
 - [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

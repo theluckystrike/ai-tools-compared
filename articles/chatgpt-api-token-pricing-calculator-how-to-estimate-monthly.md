@@ -340,3 +340,5 @@ Start with conservative estimates, measure actual usage after deployment, and re
 - [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

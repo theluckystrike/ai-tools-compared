@@ -282,3 +282,5 @@ Track your AI-assisted proposals against traditional metrics:
 - [How to Use AI to Help Designers Write Micro Interaction.](/ai-tools-compared/how-to-use-ai-to-help-designers-write-micro-interaction-spec/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

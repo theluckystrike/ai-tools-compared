@@ -281,3 +281,5 @@ As AI coding tools become more prevalent, this evaluation process will likely be
 - [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

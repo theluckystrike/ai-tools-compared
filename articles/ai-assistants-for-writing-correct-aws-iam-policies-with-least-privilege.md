@@ -185,3 +185,5 @@ AI assistants represent a powerful tool in your security toolkit, but they work 
 - [AI Tools for Writing License Header Templates and.](/ai-tools-compared/ai-tools-for-writing-license-header-templates-and-checking-f/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

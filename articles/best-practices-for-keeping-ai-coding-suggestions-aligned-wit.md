@@ -295,3 +295,5 @@ Regular measurement reveals which strategies work best for your team and helps i
 - [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -255,3 +255,5 @@ For teams, the Team plan adds collaborative features that make Projects even mor
 - [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

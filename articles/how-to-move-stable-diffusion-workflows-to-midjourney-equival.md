@@ -323,3 +323,5 @@ For complex pipelines requiring inpainting, consider maintaining Stable Diffusio
 - [How to Move Midjourney Style References to Stable Diffusion LoRA Training](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

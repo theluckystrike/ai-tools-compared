@@ -305,3 +305,5 @@ This habit prevents feature creep and ensures you only pay for what you actually
 - [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

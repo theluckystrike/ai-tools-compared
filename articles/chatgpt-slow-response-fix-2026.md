@@ -316,3 +316,5 @@ Review your logs weekly to identify recurring slowdowns. Correlate these with Op
 - [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting.](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

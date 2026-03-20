@@ -10,6 +10,7 @@ categories: [comparisons]
 reviewed: true
 intent-checked: true
 voice-checked: true
+score: 7
 ---
 {% raw %}
 
@@ -281,3 +282,5 @@ Long cells can contain line breaks, but keep rows consistent for readability.
 - [Best AI Tool for Software Engineers Code Review 2026](/ai-tools-compared/best-ai-tool-for-software-engineers-code-review-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

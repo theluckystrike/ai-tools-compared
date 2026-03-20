@@ -266,3 +266,5 @@ Support tiers: Enterprise support may carry additional costs. Evaluate whether b
 - [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

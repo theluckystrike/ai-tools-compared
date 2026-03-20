@@ -200,3 +200,5 @@ Understanding these hidden limits helps you make informed decisions about your C
 - [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

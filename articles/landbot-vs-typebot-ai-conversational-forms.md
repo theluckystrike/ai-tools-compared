@@ -313,3 +313,5 @@ Both platforms continue evolving their AI capabilities, so evaluating current ne
 - [Kustomer vs Gladly AI Customer Platform: A Developer.](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -353,3 +353,5 @@ Keep integration tests idempotent by using unique request IDs or test-specific A
 - [How to Use AI to Generate Pytest Tests for Django REST Framework Serializer Validation](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -217,3 +217,5 @@ This allows rapid context gathering when time is critical.
 - [How to Use AI to Interpret Elixir GenServer Crash.](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)
 
 Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

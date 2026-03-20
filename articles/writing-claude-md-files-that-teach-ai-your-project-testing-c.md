@@ -8,6 +8,8 @@ author: theluckystrike
 permalink: /writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/
 categories: [guides]
 tags: [tools]
+score: 7
+reviewed: true
 ---
 
 
@@ -248,4 +250,10 @@ Testing conventions evolve. Schedule periodic reviews of your CLAUDE.md to keep 
 A CLAUDE.md that doesn't reflect reality wastes everyone's time. Keep it honest and current.
 
 
+## Related Reading
 
+- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
+- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
+- [AI Tools Hub](/guides-hub/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
