@@ -143,4 +143,9 @@ Start by migrating one small project to Cursor rather than attempting to move ev
 
 As you work in Cursor, you will find that AI assistance becomes more targeted and useful since you provide the context through your existing code. The workflow shifts from AI generating everything to AI enhancing what you build, which many developers find more sustainable for serious web application development.
 
+
+## Related Reading
+
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

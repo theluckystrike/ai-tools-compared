@@ -1,8 +1,8 @@
 ---
 
 layout: default
-title: "Migrating from ChatGPT Plugins to Claude MCP Tools for Coding Workflows"
-description: "A practical guide for developers and power users to migrate from ChatGPT Plugins to Claude MCP tools. Includes code examples, configuration steps, and workflow comparisons."
+title: "Migrating from ChatGPT Plugins to Claude MCP Tools for."
+description: "A practical guide for developers and power users to migrate from ChatGPT Plugins to Claude MCP tools. Includes code examples, configuration steps, and."
 date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/
@@ -187,6 +187,11 @@ Several issues commonly arise during migration:
 Migrating from ChatGPT Plugins to Claude MCP tools requires rewriting your integrations, but the result is a more capable, standardized system. The bidirectional communication, standardized authentication, and tool chaining capabilities of MCP make the migration worthwhile for serious development workflows.
 
 The key is treating this as more than a direct port—rethink your tool organization and use MCP's strengths to build more powerful automation chains.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
