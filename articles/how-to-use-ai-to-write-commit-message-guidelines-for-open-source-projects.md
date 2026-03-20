@@ -1,0 +1,422 @@
+---
+layout: default
+title: "How to Use AI to Write Commit Message Guidelines for Open Source Projects."
+description: "A practical guide for open source maintainers using AI to create clear, consistent commit message conventions that improve collaboration and project maintainability."
+date: 2026-03-19
+author: theluckystrike
+permalink: /how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/
+categories: [guides]
+tags: [tools]
+reviewed: false
+score: 0
+intent-checked: false
+voice-checked: false
+---
+
+
+{% raw %}
+
+AI can help you create commit message guidelines for your open source project that ensure consistency, improve code review efficiency, and make your project's history more meaningful. By using AI tools, you can develop detailed conventions tailored to your project's specific needs without spending hours researching best practices.
+
+
+
+## Why Commit Message Guidelines Matter
+
+
+
+Well-crafted commit message guidelines serve multiple critical purposes for open source projects. They create a consistent history that makes it easy to understand when and why changes were made, which is invaluable for debugging, code reviews, and onboarding new contributors.
+
+
+
+When your project has clear commit message conventions, contributors know exactly what's expected of them. This reduces the back-and-forth during pull requests and helps maintainers quickly assess whether changes align with project standards. Additionally, tools like `git log`, `git blame`, and automated changelog generators work much better when commits follow consistent formatting.
+
+
+
+## Analyzing Your Project's Needs
+
+
+
+Before creating commit message guidelines, understand your project's specific requirements. AI can help you analyze your project type and determine what conventions will be most valuable.
+
+
+
+### Project Type Considerations
+
+
+
+Different types of projects benefit from different commit message approaches:
+
+
+
+- Libraries and APIs: Focus on describing what changed from an user perspective, emphasizing API changes, new features, and breaking changes
+
+- Applications: Prioritize user-facing changes, bug fixes, and feature implementations
+
+- Infrastructure and DevOps: Emphasize configuration changes, environment-specific modifications, and deployment-related commits
+
+- Documentation projects: Highlight which files or sections changed and why
+
+
+
+### Team Size and Contributor Profile
+
+
+
+Consider your project's contributor landscape when designing guidelines:
+
+
+
+- Large open source projects: May need detailed conventions with type prefixes, issue references, and scope specifications
+
+- Small teams or personal projects: Can use simpler conventions that prioritize readability over formality
+
+- Projects with diverse contributors: Need explicit examples and clear explanations of each convention
+
+
+
+## Creating Your Commit Message Framework
+
+
+
+AI can help you design a commit message structure that balances comprehensiveness with ease of use. Here's a proven framework that works well for most open source projects:
+
+
+
+### The Conventional Commits Format
+
+
+
+The Conventional Commits specification provides an excellent foundation:
+
+
+
+```
+<type>(<scope>): <subject>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+
+Common commit types include:
+
+
+
+- feat: A new feature
+
+- fix: A bug fix
+
+- docs: Documentation changes
+
+- style: Code style changes (formatting, semicolons, etc.)
+
+- refactor: Code refactoring
+
+- test: Adding or updating tests
+
+- chore: Maintenance tasks
+
+- perf: Performance improvements
+
+- ci: CI/CD configuration changes
+
+
+
+### Example Prompt for AI
+
+
+
+Use this prompt to generate tailored commit message guidelines:
+
+
+
+```
+Create commit message guidelines for my [language/framework] open source project.
+
+Project type: [library/application/etc.]
+Main use case: [what the project does]
+Typical contributors: [experienced devs/beginners/mixed]
+Current issues: [any specific problems you want to address]
+
+Include:
+1. A commit message structure with examples
+2. List of commit types with descriptions
+3. Rules for writing good subject lines
+4. When to include a body
+5. How to reference issues and PRs
+6. Common mistakes to avoid
+7. Examples of good vs bad commit messages
+```
+
+
+## Developing Detailed Conventions
+
+
+
+Once you have a basic framework, use AI to elaborate on specific aspects of your conventions.
+
+
+
+### Writing Effective Subject Lines
+
+
+
+The subject line is the most important part of a commit message. It should be:
+
+
+
+- Concise: Under 50 characters when possible
+
+- Descriptive: Clearly communicate what the commit does
+
+- Consistent: Use the same tense and format as other commits
+
+
+
+AI can help you generate examples that demonstrate these principles:
+
+
+
+```
+# Good examples
+feat(auth): add OAuth2 support for GitHub login
+fix(api): resolve null pointer in user endpoint
+docs(readme): update installation instructions
+refactor(db): simplify connection pooling logic
+
+# Bad examples
+fixed stuff
+update
+WIP
+asdfgh
+```
+
+
+### Handling Breaking Changes
+
+
+
+Clearly communicating breaking changes is crucial for library maintainers. Your guidelines should specify how to denote and document them:
+
+
+
+```
+feat(api)!: change response format for /users endpoint
+
+BREAKING CHANGE: The /users endpoint now returns an array instead of 
+an object with a 'data' key. Users must update their code:
+
+// Old format
+{ "data": [{ "id": 1, "name": "John" }] }
+
+// New format
+[{ "id": 1, "name": "John" }]
+```
+
+
+### Issue and Pull Request References
+
+
+
+Your guidelines should specify how to reference issues and PRs:
+
+
+
+```
+# Reference an issue being fixed
+fix: resolve memory leak in cache (#123)
+
+# Reference multiple issues
+feat(ui): add dark mode toggle (#45, #67)
+
+# Close an issue via commit
+fix: update dependencies (#100)
+
+Closes #100
+```
+
+
+## Creating Documentation
+
+
+
+Once you've developed your commit message conventions, use AI to create documentation.
+
+
+
+### Including Examples
+
+
+
+Provide multiple examples for each commit type to make the guidelines accessible:
+
+
+
+```
+## Fix Commits
+
+fix: resolve null pointer in user authentication
+
+fix(api): handle missing API key gracefully
+
+fix(ui): correct button alignment on mobile devices
+
+fix(db): add connection timeout handling
+
+Fix commits should include:
+- What was wrong
+- How it was fixed
+- If applicable, what testing was done
+```
+
+
+### Adding Quick Reference Cards
+
+
+
+Create a concise reference that contributors can keep handy:
+
+
+
+```
+Quick Reference:
+- feat: New feature
+- fix: Bug fix
+- docs: Documentation
+- style: Formatting
+- refactor: Code restructure
+- test: Tests
+- chore: Maintenance
+
+Rules:
+- Use imperative mood: "add" not "added"
+- Keep subject under 50 chars
+- Reference issues with #number
+- Capitalize subject line
+- No period at end
+```
+
+
+## Enforcing Conventions
+
+
+
+Document how your project enforces commit message standards.
+
+
+
+### Pre-commit Hooks
+
+
+
+Set up automated validation:
+
+
+
+```bash
+#!/bin/bash
+# .husky/commit-msg
+
+commit_msg_file=$1
+commit_msg=$(cat $commit_msg_file)
+
+# CheckConventionalCommits format
+if ! echo "$commit_msg" | grep -qE '^(feat|fix|docs|style|refactor|test|chore|perf|ci)(\(.+\))?: .+'; then
+    echo "Invalid commit message format."
+    echo "Expected: <type>(<scope>): <description>"
+    echo "Types: feat, fix, docs, style, refactor, test, chore, perf, ci"
+    exit 1
+fi
+```
+
+
+### CI/CD Validation
+
+
+
+Add GitHub Actions to validate commits in pull requests:
+
+
+
+```yaml
+name: Validate Commit Messages
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check commit messages
+        run: |
+          # Get all commit messages in the PR
+          COMMITS=$(git log --pretty=format:"%s" origin/main..HEAD)
+          
+          for commit in $COMMITS; do
+            if ! echo "$commit" | grep -qE '^(feat|fix|docs|style|refactor|test|chore|perf|ci)(\(.+\))?: .+'; then
+              echo "Invalid commit message: $commit"
+              exit 1
+            fi
+          done
+```
+
+
+## Adapting Conventions Over Time
+
+
+
+Your commit message guidelines should evolve with your project.
+
+
+
+### Reviewing Effectiveness
+
+
+
+Periodically evaluate whether your conventions are working:
+
+
+
+- Are contributors following the guidelines?
+
+- Are commit messages informative when reading history?
+
+- Do the conventions catch the types of changes that matter most?
+
+
+
+### Updating Guidelines
+
+
+
+When you need to update conventions:
+
+
+
+1. Propose changes in a GitHub issue
+
+2. Discuss with active contributors
+
+3. Update documentation with clear migration guidance
+
+4. Announce changes in your project's communication channels
+
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+
+Built by
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
