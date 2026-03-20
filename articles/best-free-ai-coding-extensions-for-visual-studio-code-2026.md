@@ -8,8 +8,9 @@ permalink: /best-free-ai-coding-extensions-for-visual-studio-code-2026/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
+tags: [ai-tools-compared, best-of, artificial-intelligence]
 ---
 
 

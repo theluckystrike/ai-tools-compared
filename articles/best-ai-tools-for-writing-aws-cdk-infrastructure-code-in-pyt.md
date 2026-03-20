@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/
 categories: [guides]
-tags: [tools, aws, cdk, python]
+tags: [ai-tools-compared, tools, aws, cdk, python, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
