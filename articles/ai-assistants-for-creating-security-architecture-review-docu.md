@@ -115,12 +115,175 @@ This approach works well for:
 - Establishing baseline security documentation for new projects
 - Tracking security architecture evolution over time
 
+## Tool Selection for Security Architecture Analysis
+
+Different AI tools bring distinct capabilities to security architecture review:
+
+**Claude 3.5 Sonnet**: Excels at understanding complex threat models and chaining attack vectors. Its reasoning depth makes it superior for identifying non-obvious vulnerabilities. Cost: ~$3–15 per 1M input tokens via API.
+
+**GPT-4**: Strong at following detailed review templates and producing structured output. Faster iteration than Claude but sometimes less thorough on subtle security issues. Cost: ~$0.03–0.06 per 1K input tokens.
+
+**GitHub Copilot**: Integrated into your IDE; useful for reviewing code patterns in real-time. Less effective for comprehensive architecture reviews but excellent for catching security issues during coding. Cost: $10–20/month flat rate.
+
+**Specialized security tools** like GitHub Advanced Security or CodeQL provide scanning automation but lack the reasoning capabilities of general LLMs. Best used alongside AI assistants.
+
+## Step-by-Step Workflow for AI-Assisted Security Review
+
+### Step 1: Prepare Your Repository Context
+
+Gather the following for the AI:
+- Repository structure (directory tree)
+- Configuration files (.env.example, docker-compose.yml, kubernetes manifests)
+- Authentication implementation (auth.js, auth.py, auth.go)
+- API security headers (middleware, CORS policies)
+- Dependency manifests (package.json, requirements.txt, go.mod)
+
+### Step 2: Provide Architecture Narrative
+
+Write a brief architecture description that includes:
+
+```
+Microservices architecture with:
+- API Gateway (Kong): Routes requests, enforces JWT validation
+- User Service: Handles authentication via Auth0, manages user data in PostgreSQL
+- Order Service: Processes transactions, integrates with Stripe
+- Notification Service: Sends emails via SendGrid, no database
+- All services communicate via HTTPS, behind a VPC
+- Database has network-only access (no public IPs)
+```
+
+### Step 3: Run the AI Analysis
+
+Provide a structured prompt:
+
+```
+Analyze the security architecture of our microservices platform.
+Context:
+[Paste your architecture narrative]
+[Paste key files]
+
+Generate a security architecture review document covering:
+1. Authentication and authorization flow
+2. Data protection at rest and in transit
+3. API security and rate limiting
+4. Dependency vulnerability risks
+5. Trust boundaries between services
+6. Missing security controls
+7. Compliance considerations (GDPR, PCI-DSS if applicable)
+8. Remediation recommendations prioritized by severity
+```
+
+### Step 4: Validate and Expand
+
+Review the AI output and ask follow-up questions:
+
+```
+Your review identified missing CSRF protection. Can you provide specific
+code examples showing how to implement CSRF tokens in our Express.js API?
+```
+
+## Common Security Gaps AI Tools Identify
+
+AI assistants frequently catch these issues:
+
+**Session Management Problems**:
+- Sessions stored client-side without validation
+- No session invalidation on logout
+- Extended session timeouts in sensitive operations
+
+**Insufficient Input Validation**:
+- SQL injection vulnerabilities (especially in legacy code)
+- XSS vulnerabilities in template rendering
+- LDAP injection in directory service integration
+
+**Cryptographic Weaknesses**:
+- Hardcoded secrets in configuration files
+- Weak hashing algorithms (MD5, SHA1 for passwords)
+- Missing key rotation procedures
+
+**Authorization Gaps**:
+- Functions checking user role but not resource ownership
+- Admin functions accessible to authenticated users without privilege checks
+- Missing audit logging for sensitive operations
+
+## Price Comparison for AI-Assisted Security Reviews
+
+Building security documentation manually: 40–80 developer hours per project = $4,000–16,000 in labor.
+
+AI-assisted approach:
+- Claude API: 2–4 hours AI interaction = $2–10 in API costs
+- GitHub Copilot: $20/month flat rate (amortized per project)
+- GPT-4 API: 2–4 hours interaction = $3–15 in API costs
+
+**ROI**: AI tools reduce security documentation effort by 70–85%, cutting costs from thousands to tens of dollars.
+
+## Practical Example: Full Security Architecture Review
+
+Here's a complete prompt that produces actionable output:
+
+```
+Our application is a SaaS platform with:
+
+Frontend: React 18 app, uses Auth0 for authentication, stores JWT in httpOnly cookie
+Backend: Node.js/Express API, validates JWT on every request, PostgreSQL database
+Infrastructure: AWS EC2 instances in private subnets, RDS database encrypted at rest
+
+Current security controls:
+- HTTPS enforced everywhere
+- CORS configured for our domains only
+- Rate limiting on login endpoint (5 attempts/5 minutes)
+- Database backups encrypted and stored in S3 with restricted access
+
+Please generate a complete security architecture review addressing:
+1. What we're doing well
+2. Critical gaps that need immediate remediation
+3. Medium-priority improvements
+4. Nice-to-have security enhancements
+5. Specific implementation code for the top 3 recommendations
+```
+
+Expected output quality: Comprehensive, 400–600 word document with specific code examples and clear prioritization.
+
+## Integration with CI/CD Pipelines
+
+Many teams automate security review updates:
+
+```bash
+#!/bin/bash
+# Run monthly security architecture review update
+
+claude "Analyze our repository at ${REPO_PATH}.
+Configuration: [insert config]
+Architecture: [insert doc]
+
+Generate an updated security architecture review for ${CURRENT_MONTH}.
+Focus on changes since last review."  > security-review-${DATE}.md
+
+git add security-review-${DATE}.md
+git commit -m "Monthly security architecture review"
+```
+
+This maintains current security documentation automatically without manual effort each month.
+
+## Limitations of AI-Assisted Security Reviews
+
+AI assistants lack:
+- Knowledge of your specific compliance requirements (HIPAA, PCI-DSS, SOC 2)
+- Awareness of your organization's risk tolerance
+- Understanding of custom business logic that might introduce subtle flaws
+- Real-time vulnerability database (though this gap closes quickly with retraining)
+
+For high-stakes security-critical systems, supplement AI reviews with:
+- Professional penetration testing
+- Security audit by certified professionals
+- Threat modeling workshops with your team
+- Regular vulnerability scanning with dedicated tools
+
 ## Conclusion
 
 AI assistants transform security architecture review documentation from a time-consuming manual process into an automated, iterative workflow. By analyzing your code repository and generating structured documentation, these tools help developers maintain accurate security records while focusing their expertise on validating and addressing identified concerns.
 
-The key to success lies in providing comprehensive context, treating AI output as a starting point rather than final documentation, and maintaining human oversight throughout the review process. When used thoughtfully, AI assistants significantly accelerate the security documentation workflow without compromising quality.
-
+The key to success lies in providing comprehensive context, treating AI output as a starting point rather than final documentation, and maintaining human oversight throughout the review process. When used thoughtfully, AI assistants significantly accelerate the security documentation workflow without compromising quality. Start with Claude or GPT-4 for thorough analysis, validate findings with your security team, and integrate reviews into your regular development cycle.
 
 ## Related Reading
 
