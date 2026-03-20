@@ -270,9 +270,97 @@ When working with AI to generate internationalization tests, keep these guidelin
 
 AI-generated tests provide an excellent starting point, but review them carefully. Ensure the tests cover edge cases specific to your application's scope, and add assertions for accessibility requirements like proper language attributes on HTML elements.
 
+## Testing Missing and Malformed Translation Keys
 
+One of the most valuable test categories AI tools often skip is verifying behavior when translation keys are absent or malformed. An incomplete translation file silently falls back to the key string itself, which produces visible regressions in production.
 
+Add these tests to any AI-generated i18n suite:
 
+```javascript
+// __tests__/missing-keys.test.js
+describe('Missing Translation Key Handling', () => {
+  test('falls back to key string when translation missing', () => {
+    const result = i18n.t('nonexistent.translation.key');
+    expect(result).toBe('nonexistent.translation.key');
+    expect(result).not.toBeUndefined();
+  });
+
+  test('returns fallback language string when current locale lacks key', () => {
+    i18n.changeLanguage('es');
+    // This key intentionally absent from Spanish translations
+    const result = i18n.t('product.newFeatureBadge');
+    expect(result).toBe('New'); // falls back to English
+  });
+
+  test('logs warning for missing keys in development', () => {
+    const consoleSpy = jest.spyOn(console, 'warn').mockImplementation(() => {});
+    i18n.t('missing.key.for.warning.test');
+    expect(consoleSpy).toHaveBeenCalled();
+    consoleSpy.mockRestore();
+  });
+});
+```
+
+## Testing RTL Layout Switching
+
+Right-to-left languages like Arabic and Hebrew require more than translation strings — they require document direction and CSS changes. Test that your locale switch triggers the correct `dir` attribute:
+
+```javascript
+// __tests__/rtl-direction.test.js
+describe('RTL Layout', () => {
+  test('sets dir=rtl on html element for Arabic locale', async () => {
+    const { rerender } = renderWithI18n(<App />);
+    await i18n.changeLanguage('ar');
+    rerender(<App />);
+
+    await waitFor(() => {
+      expect(document.documentElement.getAttribute('dir')).toBe('rtl');
+      expect(document.documentElement.getAttribute('lang')).toBe('ar');
+    });
+  });
+
+  test('restores dir=ltr when switching back from RTL locale', async () => {
+    await i18n.changeLanguage('ar');
+    await i18n.changeLanguage('en');
+
+    await waitFor(() => {
+      expect(document.documentElement.getAttribute('dir')).toBe('ltr');
+    });
+  });
+});
+```
+
+## Prompting AI Tools for Better i18n Tests
+
+The prompt you give AI tools heavily influences what i18n test scenarios they generate. These patterns produce more complete coverage:
+
+**Include your i18n library version and config snippet.** Paste the actual `i18n.init()` call from your project. AI tools generate more accurate tests when they see your exact namespace structure, fallback language, and interpolation settings.
+
+**Name the specific locale behaviors you care about.** Rather than asking for "i18n tests," ask for "tests that verify Arabic RTL switching, Polish pluralization rules, and German number formatting." Specific requests produce specific tests.
+
+**Request negative cases explicitly.** AI tools default to happy-path tests. Add "include tests for missing keys, network-loaded translation failures, and rapid locale switching race conditions" to get coverage for failure modes.
+
+**Ask for a shared test helper file.** For projects with many i18n test files, a shared helper reduces boilerplate across the suite:
+
+```javascript
+// test-utils/i18n-helpers.js
+export const renderWithLocale = (component, locale = 'en') => {
+  i18n.changeLanguage(locale);
+  return render(
+    <Suspense fallback={<div>loading</div>}>
+      <I18nextProvider i18n={i18n}>
+        {component}
+      </I18nextProvider>
+    </Suspense>
+  );
+};
+
+export const changeLocaleAndWait = async (locale) => {
+  await act(async () => {
+    await i18n.changeLanguage(locale);
+  });
+};
+```
 
 ## Related Reading
 
