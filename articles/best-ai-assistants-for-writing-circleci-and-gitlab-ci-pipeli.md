@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/
 categories: [guides]
-tags: [ci-cd, tools]
+tags: [ai-tools-compared, ci-cd, tools, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true
