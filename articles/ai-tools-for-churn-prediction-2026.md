@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Churn Prediction 2026"
-description:"A practical guide to AI tools for churn prediction, with code examples and implementation strategies for developers building retention systems."
+description: "A practical guide to AI tools for churn prediction, with code examples and implementation strategies for developers building retention systems."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-tools-for-churn-prediction-2026/

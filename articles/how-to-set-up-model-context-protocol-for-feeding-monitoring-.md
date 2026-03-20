@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Model Context Protocol for Feeding Monitoring"
-description:"A practical guide for developers on configuring MCP to feed monitoring alerts and observability data into AI assistants for intelligent incident response."
+description: "A practical guide for developers on configuring MCP to feed monitoring alerts and observability data into AI assistants for intelligent incident response."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-for-feeding-monitoring-/

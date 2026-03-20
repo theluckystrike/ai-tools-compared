@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI Coding Assistants for Technical Debt Reduction"
-description:"A practical guide for developers on using AI coding assistants to systematically reduce technical debt. Learn frameworks, code examples, and workflows."
+description: "A practical guide for developers on using AI coding assistants to systematically reduce technical debt. Learn frameworks, code examples, and workflows."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-assistants-for-technical-debt-reduction/

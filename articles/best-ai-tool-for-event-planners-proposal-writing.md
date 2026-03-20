@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tool for Event Planners Proposal Writing"
-description:"Discover how AI can improve your event planning proposals. Learn practical strategies for creating compelling, professional proposals faster."
+description: "Discover how AI can improve your event planning proposals. Learn practical strategies for creating compelling, professional proposals faster."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-event-planners-proposal-writing/
@@ -133,7 +133,7 @@ You fill in actual quotes from your vendors, and the formula-based sheet automat
 After drafting your proposal in your own voice, AI tools can suggest clearer phrasing, identify overly complex sentences, and ensure consistent terminology throughout—all while preserving your authentic style.
 
 **Before (unclear, wordy):**
-"We will endeavor to provide comprehensive coordination of all aspects relating to the execution of your event, with particular attention paid to ensuring that all vendor communications and logistical considerations are handled in a manner consistent with the standards you expect and deserve."
+"We will endeavor to provide coordination of all aspects relating to the execution of your event, with particular attention paid to ensuring that all vendor communications and logistical considerations are handled in a manner consistent with the standards you expect and deserve."
 
 **After (AI-refined, preserving voice):**
 "We'll coordinate every detail of your event—from vendor communication to logistics—to meet the standards you expect."

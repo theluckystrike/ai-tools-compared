@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tool for Startup Founders: Pitch Deck Writing Compared"
-description:"A practical guide for startup founders comparing AI tools for pitch deck writing, with real-world use cases and recommendations."
+description: "A practical guide for startup founders comparing AI tools for pitch deck writing, with real-world use cases and recommendations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-startup-founders-pitch-deck-writing/

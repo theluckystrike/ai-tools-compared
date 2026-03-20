@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude vs ChatGPT for Converting REST API Documentation"
-description:"A practical comparison of Claude and ChatGPT for converting REST API documentation to GraphQL schema. Includes code examples, prompt strategies, and."
+description: "A practical comparison of Claude and ChatGPT for converting REST API documentation to GraphQL schema. Includes code examples, prompt strategies, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/

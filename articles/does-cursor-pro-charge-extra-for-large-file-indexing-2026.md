@@ -2,7 +2,7 @@
 
 layout: default
 title: "Does Cursor Pro Charge Extra for Large File Indexing in 2026"
-description:"Does Cursor Pro Charge Extra for Large File Indexing in. — guide with practical tips, comparisons, and expert recommendations for."
+description: "Does Cursor Pro Charge Extra for Large File Indexing in. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/

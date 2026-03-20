@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Pro Usage Cap: How Many Requests Per Day in 2026"
-description:"Cursor Pro Usage Cap: How Many Requests Per Day in 2026 — guide with practical tips, comparisons, and expert recommendations for."
+description: "Cursor Pro Usage Cap: How Many Requests Per Day in 2026 — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-18
 author: theluckystrike
 permalink: /cursor-pro-usage-cap-how-many-requests-per-day-2026/

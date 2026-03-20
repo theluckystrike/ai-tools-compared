@@ -2,7 +2,7 @@
 
 layout: default
 title: "Copilot Business Org-Wide Enable: Cost If Not All Devs Use"
-description:"A practical guide to understanding GitHub Copilot Business pricing when enabling organization-wide access, with strategies for maximizing ROI when not."
+description: "A practical guide to understanding GitHub Copilot Business pricing when enabling organization-wide access, with strategies for maximizing ROI when not."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/

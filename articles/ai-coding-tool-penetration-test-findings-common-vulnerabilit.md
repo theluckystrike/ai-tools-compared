@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Tool Penetration Test Findings: Common Vulnerabilit"
-description:"A analysis of common vulnerabilities discovered in AI coding tool IDE plugins through penetration testing. Practical examples and."
+description: "A analysis of common vulnerabilities discovered in AI coding tool IDE plugins through penetration testing. Practical examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-penetration-test-findings-common-vulnerabilit/

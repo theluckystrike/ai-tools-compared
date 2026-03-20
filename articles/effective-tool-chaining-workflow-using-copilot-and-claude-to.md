@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Tool Chaining Workflow Using Copilot and Claude Together For Coding"
-description:"Learn how to combine GitHub Copilot and Claude for maximum coding productivity. Practical workflows, real examples, and strategies for developers."
+description: "Learn how to combine GitHub Copilot and Claude for maximum coding productivity. Practical workflows, real examples, and strategies for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/

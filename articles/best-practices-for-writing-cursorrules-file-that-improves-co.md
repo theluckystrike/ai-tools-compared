@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Writing Cursorrules File That Improves"
-description:"Learn how to write effective .cursorrules files that dramatically improve code suggestion quality in Cursor AI. Includes practical examples and."
+description: "Learn how to write effective .cursorrules files that dramatically improve code suggestion quality in Cursor AI. Includes practical examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-writing-cursorrules-file-that-improves-co/

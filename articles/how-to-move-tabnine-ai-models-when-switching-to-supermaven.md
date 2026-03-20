@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Move Tabnine AI Models When Switching to Supermaven"
-description:"A practical guide for developers transitioning from Tabnine to Supermaven, covering model migration, configuration, and best practices."
+description: "A practical guide for developers transitioning from Tabnine to Supermaven, covering model migration, configuration, and best practices."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-tabnine-ai-models-when-switching-to-supermaven/

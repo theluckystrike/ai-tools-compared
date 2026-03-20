@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up Model Context Protocol with Local Database Schema Information 2026"
-description:"A practical guide for developers and power users setting up MCP to connect AI assistants with local database schemas for intelligent querying and data."
+description: "A practical guide for developers and power users setting up MCP to connect AI assistants with local database schemas for intelligent querying and data."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/

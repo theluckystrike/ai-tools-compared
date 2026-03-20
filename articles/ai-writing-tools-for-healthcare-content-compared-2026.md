@@ -3,7 +3,7 @@
 
 layout: default
 title: "AI Writing Tools for Healthcare Content Compared 2026"
-description:"A practical comparison of AI writing tools for healthcare content creation in 2026, with code examples and recommendations for developers and power users."
+description: "A practical comparison of AI writing tools for healthcare content creation in 2026, with code examples and recommendations for developers and power users."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-writing-tools-for-healthcare-content-compared-2026/

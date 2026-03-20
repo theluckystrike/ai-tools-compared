@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Generate Pytest Tests for Django REST Framework Serializer Validation"
-description:"A practical guide for developers learning to use AI tools to automatically generate pytest tests for Django REST Framework serializer validation logic."
+description: "A practical guide for developers learning to use AI tools to automatically generate pytest tests for Django REST Framework serializer validation logic."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/

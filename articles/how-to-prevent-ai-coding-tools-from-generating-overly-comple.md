@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Prevent AI Coding Tools from Generating Overly Complex Solutions"
-description:"A practical guide for developers on how to keep AI-generated code simple, maintainable, and focused. Includes techniques and prompts that work."
+description: "A practical guide for developers on how to keep AI-generated code simple, maintainable, and focused. Includes techniques and prompts that work."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/

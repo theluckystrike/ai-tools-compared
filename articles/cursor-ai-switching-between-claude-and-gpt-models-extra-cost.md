@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor AI: Switching Between Claude and GPT Models — Extra Cost"
-description:"A practical guide to switching between Claude and GPT models in Cursor AI, including cost implications and when to use each model."
+description: "A practical guide to switching between Claude and GPT models in Cursor AI, including cost implications and when to use each model."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-switching-between-claude-and-gpt-models-extra-cost/

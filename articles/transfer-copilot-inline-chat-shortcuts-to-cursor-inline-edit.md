@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Transfer Copilot Inline Chat Shortcuts"
-description:"A practical guide for developers moving from GitHub Copilot to Cursor. Learn how to map inline chat keybindings to Cursor's inline edit for a workflow transition."
+description: "A practical guide for developers moving from GitHub Copilot to Cursor. Learn how to map inline chat keybindings to Cursor's inline edit for a workflow transition."
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/

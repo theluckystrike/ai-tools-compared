@@ -2,7 +2,7 @@
 
 layout: default
 title: "Which AI Tool Generates Better Vue 3 Composition API Components"
-description:"A practical comparison of AI coding tools for generating Vue 3 Composition API components, with code examples and recommendations for developers."
+description: "A practical comparison of AI coding tools for generating Vue 3 Composition API components, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-tool-generates-better-vue-3-composition-api-components/

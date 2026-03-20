@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Interior Design Visualization Compared"
-description:"A technical comparison of AI-powered interior design visualization tools for developers and power users. Explore APIs, integration approaches, and."
+description: "A technical comparison of AI-powered interior design visualization tools for developers and power users. Explore APIs, integration approaches, and."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /ai-tools-for-interior-design-visualization-compared/

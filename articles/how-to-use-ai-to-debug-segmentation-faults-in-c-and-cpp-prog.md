@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Debug Segmentation Faults in C and C++ Cpp Prog"
-description:"A practical guide for developers on using AI tools to identify, analyze, and fix segmentation faults in C and C++ programs with real code examples."
+description: "A practical guide for developers on using AI tools to identify, analyze, and fix segmentation faults in C and C++ programs with real code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/

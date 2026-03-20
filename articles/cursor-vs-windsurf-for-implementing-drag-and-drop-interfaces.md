@@ -2,7 +2,7 @@
 
 layout: default
 title: "Cursor vs Windsurf for Implementing Drag and Drop Interfaces"
-description:"A practical comparison of Cursor and Windsurf when building drag-and-drop interfaces using React DnD, with code examples and recommendations."
+description: "A practical comparison of Cursor and Windsurf when building drag-and-drop interfaces using React DnD, with code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/

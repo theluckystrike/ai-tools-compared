@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tools for Real Estate Chatbots"
-description:"A practical guide for developers building AI-powered real estate chatbots, covering key platforms, implementation patterns, and code examples for property search, scheduling, and lead qualification."
+description: "A practical guide for developers building AI-powered real estate chatbots, covering key platforms, implementation patterns, and code examples for property search, scheduling, and lead qualification."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-real-estate-chatbots/

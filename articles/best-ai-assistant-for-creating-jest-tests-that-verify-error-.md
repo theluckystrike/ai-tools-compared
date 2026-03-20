@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Creating Jest Tests That Verify Error"
-description:"A practical guide for developers comparing AI assistants that help write Jest tests for React error boundary fallback rendering patterns."
+description: "A practical guide for developers comparing AI assistants that help write Jest tests for React error boundary fallback rendering patterns."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-jest-tests-that-verify-error-/

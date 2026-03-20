@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Pro Refund Policy: Can You Get Money Back After Subscr"
-description:"Cursor Pro Refund Policy: Can You Get Money Back After. — guide with practical tips, comparisons, and expert recommendations for."
+description: "Cursor Pro Refund Policy: Can You Get Money Back After. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-pro-refund-policy-can-you-get-money-back-after-subscr/

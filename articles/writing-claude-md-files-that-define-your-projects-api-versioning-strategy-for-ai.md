@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing CLAUDE MD Files That Define Your Project's API Versioning Strategy for AI"
-description:"Learn how to create effective CLAUDE MD files that define API versioning strategies for AI-powered development workflows in 2026."
+description: "Learn how to create effective CLAUDE MD files that define API versioning strategies for AI-powered development workflows in 2026."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/

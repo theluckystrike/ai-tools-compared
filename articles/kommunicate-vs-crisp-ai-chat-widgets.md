@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison"
-description:"A practical technical comparison of Kommunicate and Crisp AI chat widgets for developers, including integration code examples and feature analysis."
+description: "A practical technical comparison of Kommunicate and Crisp AI chat widgets for developers, including integration code examples and feature analysis."
 date: 2026-03-15
 author: theluckystrike
 permalink: /kommunicate-vs-crisp-ai-chat-widgets/

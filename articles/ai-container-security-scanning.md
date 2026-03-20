@@ -134,7 +134,7 @@ Security scanning should happen as early as possible, but lengthy scans frustrat
 
 ### Combine Multiple Scanning Approaches
 
-No single tool catches everything. A robust container security strategy combines:
+No single tool catches everything. A container security strategy combines:
 
 - **Static analysis** — Scanning Dockerfiles and Kubernetes manifests before deployment
 - **Dynamic analysis** — Testing running containers for runtime vulnerabilities

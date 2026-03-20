@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI for Writing Good First Issue Descriptions That Attract New Contributors"
-description:"Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes."
+description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/

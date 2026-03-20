@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Support Agent Assist"
-description:"A practical guide to AI tools that enhance customer support agent productivity, with code examples and implementation tips for developers."
+description: "A practical guide to AI tools that enhance customer support agent productivity, with code examples and implementation tips for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-support-agent-assist/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GitHub Copilot Free Tier Hidden Limits You Should Know 2026"
-description:"GitHub Copilot Free Tier Hidden Limits You Should Know 2026 — guide with practical tips, comparisons, and expert recommendations for."
+description: "GitHub Copilot Free Tier Hidden Limits You Should Know 2026 — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /github-copilot-free-tier-hidden-limits-you-should-know-2026/

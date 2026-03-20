@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Practices for Versioning CursorRules Files Across Team"
-description:"A practical guide to managing .cursorrules files in Git. Learn how to version control Cursor rules across your development team with clear workflows."
+description: "A practical guide to managing .cursorrules files in Git. Learn how to version control Cursor rules across your development team with clear workflows."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-versioning-cursorrules-files-across-team-/

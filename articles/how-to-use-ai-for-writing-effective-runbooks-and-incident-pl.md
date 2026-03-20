@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Writing Effective Runbooks and Incident"
-description:"Learn practical techniques for using AI to create clear, actionable runbooks and incident response playbooks that accelerate incident resolution."
+description: "Learn practical techniques for using AI to create clear, actionable runbooks and incident response playbooks that accelerate incident resolution."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/

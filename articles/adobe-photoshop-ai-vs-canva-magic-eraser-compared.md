@@ -2,7 +2,7 @@
 
 layout: default
 title: "Adobe Photoshop AI vs Canva Magic Eraser Compared"
-description:"A practical comparison of Adobe Photoshop AI and Canva Magic Eraser tools, with examples and recommendations for different use cases."
+description: "A practical comparison of Adobe Photoshop AI and Canva Magic Eraser tools, with examples and recommendations for different use cases."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /adobe-photoshop-ai-vs-canva-magic-eraser-compared/

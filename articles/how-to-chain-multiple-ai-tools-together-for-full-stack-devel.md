@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Chain Multiple AI Tools Together for Full Stack Devel"
-description:"Learn practical strategies for combining AI coding assistants, code generators, and automation tools into powerful workflows that accelerate full stack."
+description: "Learn practical strategies for combining AI coding assistants, code generators, and automation tools into powerful workflows that accelerate full stack."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-chain-multiple-ai-tools-together-for-full-stack-devel/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tidio vs Intercom AI Chatbot: A Developer Comparison"
-description:"A practical technical comparison of Tidio and Intercom AI chatbots for developers and power users, with API examples and implementation guidance."
+description: "A practical technical comparison of Tidio and Intercom AI chatbots for developers and power users, with API examples and implementation guidance."
 date: 2026-03-15
 author: theluckystrike
 permalink: /tidio-vs-intercom-ai-chatbot/

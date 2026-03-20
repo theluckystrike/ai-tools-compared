@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Video Transcription: A Developer's Guide"
-description:"A practical comparison of the best AI tools for video transcription with code examples, API integration patterns, and pricing analysis for developers."
+description: "A practical comparison of the best AI tools for video transcription with code examples, API integration patterns, and pricing analysis for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-video-transcription/

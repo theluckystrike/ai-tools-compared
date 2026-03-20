@@ -2,7 +2,7 @@
 
 layout: default
 title: "Writing Custom Instructions for AI Tools That Enforce Your Security Header Standards"
-description:"A practical guide for developers to create custom instructions that force AI coding tools to implement security headers consistently across all projects."
+description: "A practical guide for developers to create custom instructions that force AI coding tools to implement security headers consistently across all projects."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/

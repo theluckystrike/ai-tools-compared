@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Observable vs Jupyter for AI Data Exploration"
-description:"A practical comparison of Observable and Jupyter for AI-powered data exploration, with code examples and use cases for developers."
+description: "A practical comparison of Observable and Jupyter for AI-powered data exploration, with code examples and use cases for developers."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /observable-vs-jupyter-ai-data-exploration/

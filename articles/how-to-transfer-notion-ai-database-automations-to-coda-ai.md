@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Transfer Notion AI Database Automations to Coda AI"
-description:"A practical guide for developers and power users migrating Notion AI database automations to Coda AI, with code examples and migration strategies."
+description: "A practical guide for developers and power users migrating Notion AI database automations to Coda AI, with code examples and migration strategies."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-notion-ai-database-automations-to-coda-ai/

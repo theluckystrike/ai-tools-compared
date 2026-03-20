@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Jasper AI vs Anyword: Performance Marketing Copy Compared"
-description:"A practical developer-focused comparison of Jasper AI and Anyword for performance marketing copy. Includes API examples, integration patterns, and use."
+description: "A practical developer-focused comparison of Jasper AI and Anyword for performance marketing copy. Includes API examples, integration patterns, and use."
 date: 2026-03-15
 author: theluckystrike
 permalink: /jasper-ai-vs-anyword-performance-marketing-copy/

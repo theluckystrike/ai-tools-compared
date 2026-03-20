@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Rollback Decision Making in Deploymen"
-description:"A practical guide for developers exploring AI-powered automated rollback decision making in CI/CD pipelines, with code examples and implementation."
+description: "A practical guide for developers exploring AI-powered automated rollback decision making in CI/CD pipelines, with code examples and implementation."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automated-rollback-decision-making-in-deploymen/

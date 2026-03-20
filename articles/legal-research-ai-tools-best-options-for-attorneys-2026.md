@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Legal Research AI Tools: Best Options for Attorneys in 2026"
-description:"A practical comparison of the best legal research AI tools available for attorneys in 2026, with code examples and implementation guidance for developers."
+description: "A practical comparison of the best legal research AI tools available for attorneys in 2026, with code examples and implementation guidance for developers."
 date: 2026-03-20
 author: theluckystrike
 permalink: /legal-research-ai-tools-best-options-for-attorneys-2026/

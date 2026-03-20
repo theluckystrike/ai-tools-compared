@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use Claude API Cheaply for Small Coding Projects"
-description:"How to Use Claude API Cheaply for Small Coding Projects — guide with practical tips, comparisons, and expert recommendations for."
+description: "How to Use Claude API Cheaply for Small Coding Projects — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-claude-api-cheaply-for-small-coding-projects/

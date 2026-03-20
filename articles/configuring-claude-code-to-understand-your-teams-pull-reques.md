@@ -2,7 +2,7 @@
 
 layout: default
 title: "Configuring Claude Code to Understand Your Teams Pull Reques"
-description:"A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality."
+description: "A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality."
 date: 2026-03-16
 author: theluckystrike
 permalink: /configuring-claude-code-to-understand-your-teams-pull-reques/

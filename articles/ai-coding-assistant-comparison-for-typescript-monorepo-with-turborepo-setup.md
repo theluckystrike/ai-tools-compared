@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Coding Assistant Comparison for TypeScript Monorepo with Turborepo Setup"
-description:"A practical comparison of AI coding assistants for TypeScript monorepos using Turborepo, with code examples and recommendations for developers."
+description: "A practical comparison of AI coding assistants for TypeScript monorepos using Turborepo, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/
@@ -207,7 +207,7 @@ The best AI coding assistant depends on your workflow preferences and monorepo c
 
 For teams using Turborepo, the key factor is how well the assistant understands workspace boundaries and can generate code that properly imports from other packages using your specific path configurations. Claude Code and Cursor currently lead in this aspect, with both tools demonstrating awareness of monorepo structure and TypeScript project references.
 
-**Recommendation for Turborepo teams:** Cursor is the strongest choice for comprehensive monorepo understanding. Claude Code is excellent if you prefer terminal-based workflows. Test both with your actual monorepo structure before committing to a single tool.
+**Recommendation for Turborepo teams:** Cursor is the strongest choice for monorepo understanding. Claude Code is excellent if you prefer terminal-based workflows. Test both with your actual monorepo structure before committing to a single tool.
 
 Consider testing each option with the feature spanning packages test described above. This practical evaluation reveals which assistant truly understands your Turborepo setup versus tools that only work well within single packages.
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Pull Request Impact Analysis"
-description:"Learn how to use AI tools to automatically analyze pull requests and identify which downstream projects and services will be affected by your changes."
+description: "Learn how to use AI tools to automatically analyze pull requests and identify which downstream projects and services will be affected by your changes."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pull-request-impact-analysis-showi/

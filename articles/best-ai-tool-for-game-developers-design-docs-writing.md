@@ -3,7 +3,7 @@
 
 layout: default
 title: "Best AI Tool for Game Developers Design Docs Writing"
-description:"Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases."
+description: "Discover how AI tools can improve game design documentation, from GDDs to technical specifications, with practical examples and real-world use cases."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-game-developers-design-docs-writing/
@@ -235,19 +235,19 @@ and balance parameters.
 ## Data Structure
 ```typescript
 interface CraftingRecipe {
-  id: string;
-  name: string;
-  requiredItems: {
-    itemId: string;
-    quantity: number;
-  }[];
-  resultItem: {
-    itemId: string;
-    quantity: number;
-  };
-  successRate: number; // 0-1
-  skillRequirement: number;
-  craftDuration: number; // seconds
+ id: string;
+ name: string;
+ requiredItems: {
+ itemId: string;
+ quantity: number;
+ }[];
+ resultItem: {
+ itemId: string;
+ quantity: number;
+ };
+ successRate: number; // 0-1
+ skillRequirement: number;
+ craftDuration: number; // seconds
 }
 ```
 

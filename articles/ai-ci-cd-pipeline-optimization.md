@@ -232,7 +232,7 @@ For teams using GitHub Actions, native caching and matrix strategies often provi
 
 Overfitting to historical data causes AI models to miss novel issues. Always include a percentage of full test runs to catch edge cases. Similarly, training on failing pipelines creates models that predict failure too aggressively.
 
-Data quality matters more than algorithm complexity. Ensure consistent test naming, reliable timing measurements, and comprehensive change tracking before investing in sophisticated ML models.
+Data quality matters more than algorithm complexity. Ensure consistent test naming, reliable timing measurements, and change tracking before investing in sophisticated ML models.
 
 ---
 

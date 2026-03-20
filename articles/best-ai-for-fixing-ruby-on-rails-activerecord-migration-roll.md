@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Fixing Ruby on Rails ActiveRecord Migration Roll"
-description:"A practical guide to using AI tools to diagnose, debug, and resolve ActiveRecord migration rollback failures in production Rails applications."
+description: "A practical guide to using AI tools to diagnose, debug, and resolve ActiveRecord migration rollback failures in production Rails applications."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-fixing-ruby-on-rails-activerecord-migration-roll/

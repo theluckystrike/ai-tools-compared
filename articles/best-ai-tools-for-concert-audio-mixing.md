@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tools for Concert Audio Mixing"
-description:"A practical comparison of AI-powered tools for concert audio mixing, with code examples, CLI tools, and integration tips for developers and power users."
+description: "A practical comparison of AI-powered tools for concert audio mixing, with code examples, CLI tools, and integration tips for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-concert-audio-mixing/

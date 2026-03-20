@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Coding Productivity Tips for Senior Developers Switching"
-description:"Practical strategies and code examples to help senior developers maximize productivity when transitioning from manual coding to AI-assisted workflows."
+description: "Practical strategies and code examples to help senior developers maximize productivity when transitioning from manual coding to AI-assisted workflows."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-productivity-tips-for-senior-developers-switching-/

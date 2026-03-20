@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Prefect vs Dagster for AI Workflows"
-description:"A practical comparison of Prefect and Dagster for orchestrating AI and machine learning pipelines, with code examples and recommendations."
+description: "A practical comparison of Prefect and Dagster for orchestrating AI and machine learning pipelines, with code examples and recommendations."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /prefect-vs-dagster-ai-workflows/

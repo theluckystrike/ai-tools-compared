@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Customer Journey Analytics"
-description:"A practical guide to AI tools for customer journey analytics, with code examples and implementation strategies for developers building data-driven customer experience systems."
+description: "A practical guide to AI tools for customer journey analytics, with code examples and implementation strategies for developers building data-driven customer experience systems."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-customer-journey-analytics/

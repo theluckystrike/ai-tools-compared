@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Video Accessibility Features"
-description:"A practical guide to AI-powered tools for making video content accessible, with code examples and implementation strategies for developers."
+description: "A practical guide to AI-powered tools for making video content accessible, with code examples and implementation strategies for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-accessibility-features/

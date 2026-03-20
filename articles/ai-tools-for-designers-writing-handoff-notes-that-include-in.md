@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Designers Writing Handoff Notes That Include"
-description:"A practical guide to using AI tools for creating design handoff documentation with interaction state descriptions. Includes code examples."
+description: "A practical guide to using AI tools for creating design handoff documentation with interaction state descriptions. Includes code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-designers-writing-handoff-notes-that-include-in/

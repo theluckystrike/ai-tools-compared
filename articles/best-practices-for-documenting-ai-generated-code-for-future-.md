@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Documenting AI-Generated Code for Future"
-description:"Learn essential strategies for documenting AI-generated code to ensure long-term maintainability and team collaboration."
+description: "Learn essential strategies for documenting AI-generated code to ensure long-term maintainability and team collaboration."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-documenting-ai-generated-code-for-future-/

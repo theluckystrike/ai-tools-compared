@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Help SRE Teams Draft Root Cause Analysis"
-description:"A practical guide for developers and SRE professionals using AI assistants to improve incident post-mortems and root cause analysis documentation."
+description: "A practical guide for developers and SRE professionals using AI assistants to improve incident post-mortems and root cause analysis documentation."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Product Managers Creating Stakeholder Update Dec"
-description:"A practical guide comparing AI tools that automate stakeholder update presentations using project tracker data, with code examples and implementation."
+description: "A practical guide comparing AI tools that automate stakeholder update presentations using project tracker data, with code examples and implementation."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-ai-for-product-managers-creating-stakeholder-update-dec/

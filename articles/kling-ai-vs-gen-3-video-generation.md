@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Kling AI vs Gen 3 Video Generation: Developer Comparison"
-description:"A practical technical comparison of Kling AI and Gen 3 video generation tools for developers building AI-powered video applications."
+description: "A practical technical comparison of Kling AI and Gen 3 video generation tools for developers building AI-powered video applications."
 date: 2026-03-15
 author: theluckystrike
 permalink: /kling-ai-vs-gen-3-video-generation/

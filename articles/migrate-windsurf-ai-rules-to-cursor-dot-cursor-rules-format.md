@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Migrate WindSurf AI Rules to Cursor .cursorrules Format"
-description:"A practical guide to converting WindSurf AI rules to Cursor's .cursorrules format, with step-by-step instructions, code examples, and common pitfalls to avoid."
+description: "A practical guide to converting WindSurf AI rules to Cursor's .cursorrules format, with step-by-step instructions, code examples, and common pitfalls to avoid."
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/

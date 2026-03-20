@@ -2,7 +2,7 @@
 
 layout: default
 title: "ChatGPT vs Claude for Creative Storytelling Compared"
-description:"A practical comparison of ChatGPT and Claude for creative storytelling, with code examples and real-world use cases for developers."
+description: "A practical comparison of ChatGPT and Claude for creative storytelling, with code examples and real-world use cases for developers."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /chatgpt-vs-claude-for-creative-storytelling-compared/

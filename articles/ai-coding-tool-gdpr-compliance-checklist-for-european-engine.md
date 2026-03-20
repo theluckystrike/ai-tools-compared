@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Coding Tool GDPR Compliance Checklist for European Engine"
-description:"A practical GDPR compliance checklist for engineering teams using AI coding tools. Includes data handling requirements, privacy controls, and."
+description: "A practical GDPR compliance checklist for engineering teams using AI coding tools. Includes data handling requirements, privacy controls, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-gdpr-compliance-checklist-for-european-engine/

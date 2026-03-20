@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Coding Tool with Pay As You Go No Subscription"
-description:"A practical guide to the best AI coding assistant that uses pay-as-you-go pricing without subscriptions. Compare options, see code examples, and find."
+description: "A practical guide to the best AI coding assistant that uses pay-as-you-go pricing without subscriptions. Compare options, see code examples, and find."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-tool-with-pay-as-you-go-no-subscription/

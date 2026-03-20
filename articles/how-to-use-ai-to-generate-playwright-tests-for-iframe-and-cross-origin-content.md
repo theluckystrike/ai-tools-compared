@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Playwright Tests for Iframe And Cross Origin Content"
-description:"A practical guide for developers on using AI tools to generate Playwright tests for iframe and cross-origin content handling."
+description: "A practical guide for developers on using AI tools to generate Playwright tests for iframe and cross-origin content handling."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/

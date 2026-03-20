@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Migrate VSCode Copilot Keybindings"
-description:"A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips."
+description: "A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/

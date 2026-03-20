@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude API Extended Thinking: How Output Tokens Are Billed"
-description:"A practical guide to understanding Claude API extended thinking feature, how output tokens are billed, and cost optimization strategies for developers."
+description: "A practical guide to understanding Claude API extended thinking feature, how output tokens are billed, and cost optimization strategies for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-extended-thinking-cost-how-output-tokens-are-bill/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating Grafana Dashboard JSON Templates Fro"
-description:"Discover how AI tools can automate the creation of Grafana dashboard JSON templates using YAML specifications, saving time and reducing errors."
+description: "Discover how AI tools can automate the creation of Grafana dashboard JSON templates using YAML specifications, saving time and reducing errors."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-grafana-dashboard-json-templates-fro/

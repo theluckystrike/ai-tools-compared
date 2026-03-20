@@ -10,7 +10,7 @@
 layout: default
 
 title: "Cursor Free Tier Limitations: What Stops Working After Trial"
-description:"A guide to understanding what features become limited or unavailable when Cursor's free trial ends in 2026."
+description: "A guide to understanding what features become limited or unavailable when Cursor's free trial ends in 2026."
 keywords:
   - cursor free tier limitations
   - cursor free trial what stops working

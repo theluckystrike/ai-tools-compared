@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI Codebase Search to Find Relevant Code Before"
-description:"Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques."
+description: "Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-codebase-search-to-find-relevant-code-before-g/

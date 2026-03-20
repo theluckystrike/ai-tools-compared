@@ -3,7 +3,7 @@
 
 layout: default
 title: "AI Tools for Pricing Optimization: A Practical Guide for"
-description:"A technical guide to AI-powered pricing optimization tools, with code examples and implementation strategies for developers and power users."
+description: "A technical guide to AI-powered pricing optimization tools, with code examples and implementation strategies for developers and power users."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-tools-for-pricing-optimization/
