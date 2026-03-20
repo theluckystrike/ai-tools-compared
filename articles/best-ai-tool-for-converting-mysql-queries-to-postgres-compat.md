@@ -5,6 +5,10 @@ description: "Discover the most effective AI-powered solutions for automatically
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tool-for-converting-mysql-queries-to-postgres-compat/
+categories: [guides]
+tags: [tools]
+reviewed: true
+score: 8
 ---
 
 {% raw %}
