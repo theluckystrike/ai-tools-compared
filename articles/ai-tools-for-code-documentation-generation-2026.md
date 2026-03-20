@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "AI Tools for Code Documentation Generation 2026: Mintlify vs Swimm vs Claude Code"
-description: "Compare AI documentation generators with pricing, output quality, integration setup, and CI/CD automation. Includes docstring generation, API docs, and automated onboarding."
+title: "AI Tools for Code Documentation Generation 2026."
+description: "Compare AI documentation generators with pricing, output quality, integration setup, and CI/CD automation. Includes docstring generation, API docs, and."
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-code-documentation-generation-2026/
@@ -690,3 +690,8 @@ git push
 The best choice depends on team size and velocity. A 5-person startup gets ROI from Mintlify in 1 month (saves ~3 hours/week documenting). A 50-person company with 10 services needs Swimm's architecture knowledge graph—manual docs fall out of sync within weeks.
 
 Start with the tool that matches your current scale, then upgrade as you grow.
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
