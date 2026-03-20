@@ -176,6 +176,217 @@ Heavy refactoring sessions (10/day): exhausts fast quota in ~50 days
 
 For teams doing daily large refactors, Claude Code's API costs may exceed Cursor Pro pricing. For occasional large refactors alongside daily development, Cursor Pro's flat rate wins on cost.
 
+## Real CLI Examples for Large Refactors
+
+### Claude Code CLI for Full Refactor
+
+```bash
+# Analyze entire directory structure
+claude "Audit all TypeScript files in src/ for:
+1. Unused imports
+2. Deprecated API calls
+3. TypeScript any types
+4. Missing error handling
+
+Output a structured report grouped by severity."
+
+# Then execute the refactor
+claude "Using the audit results, refactor the codebase to:
+1. Remove all unused imports
+2. Replace deprecated getUser() with getUser({id})
+3. Replace 'any' types with proper interfaces
+4. Add try-catch blocks to async functions
+
+Start with src/api/, then src/models/, then src/utils/
+Output a summary of changed files."
+```
+
+### Cursor Inline Refactor with @-mentions
+
+```
+# In Cursor Composer (Cmd+I)
+@src/api/routes.ts @src/middleware/auth.ts @src/types/auth.d.ts
+
+Refactor these authentication files:
+1. Move all JWT logic to a dedicated utils/jwt.ts file
+2. Update imports in routes.ts and middleware
+3. Add comprehensive JSDoc comments to all exported functions
+4. Replace magic strings (HS256, exp) with exported constants
+```
+
+## Real-World Refactoring Scenario: Express to Fastify Migration
+
+Here's how each tool handles a complex, multi-file refactor:
+
+### Scenario Requirements
+
+- 80+ Express route files
+- 12 custom middleware files
+- 50+ test files to update
+- Complex request/response type definitions
+- Shared utility functions
+
+### Claude Code Approach
+
+```bash
+claude "Migrate our Express application to Fastify.
+
+Context:
+- 80+ route files in src/routes/
+- Custom middleware in src/middleware/
+- Tests in src/__tests__/
+- Types in src/types/express.ts
+
+Current Express pattern:
+app.get('/users/:id', authMiddleware, async (req, res) => {
+  res.json({data: req.user});
+});
+
+Target Fastify pattern:
+fastify.get<{Params: {id: string}}>('/users/:id',
+  {preHandler: authHook}, async (req, reply) => {
+  reply.send({data: req.user});
+});
+
+Execute migration:
+1. Update package.json: remove express, add fastify
+2. Rewrite src/app.ts to initialize Fastify
+3. Convert each middleware to Fastify hooks
+4. Migrate each route file to Fastify handler format
+5. Update test setup in __tests__/setup.ts
+
+Focus on correctness over speed. Show me each file's changes."
+```
+
+**Expected output**: Full migration with clear file-by-file changes, ~45 minutes to completion.
+
+### Cursor Approach (Composer)
+
+```
+@src/app.ts @src/routes/ @src/middleware/ @src/types/
+
+Migrate from Express to Fastify:
+
+Step 1: Update @src/app.ts to initialize Fastify instead of Express
+Step 2: Convert each middleware function in @src/middleware/ to Fastify preHandler hooks
+Step 3: Refactor routes in @src/routes/ to use Fastify handlers
+Step 4: Update types in @src/types/ for Fastify request/reply
+
+Show me the diff for each file before applying. I'll accept or reject per-file changes.
+```
+
+**Expected workflow**: 60–90 minutes, includes human review of each diff, catches more edge cases.
+
+## Table: Tool Strengths by Scenario
+
+| Scenario | Claude Code | Cursor | Winner |
+|----------|---|---|---|
+| Single large file refactor | Good | Excellent | Cursor |
+| 5–10 file refactor | Very Good | Excellent | Cursor |
+| 20–50 file refactor | Excellent | Good | Claude Code |
+| 50+ file refactor with dependencies | Excellent | Fair | Claude Code |
+| Real-time iterative changes | Fair | Excellent | Cursor |
+| Schema migrations (DB + code) | Excellent | Good | Claude Code |
+| API contract changes | Excellent | Very Good | Claude Code |
+
+## Practical Tips for Large Refactors with Claude Code
+
+### Tip 1: Break Into Logical Phases
+
+```bash
+# Instead of "refactor everything", phase it:
+claude "Phase 1: List all files that import the old API"
+# Review output
+
+claude "Phase 2: Create the new API module alongside the old one"
+# Verify the new API is correct
+
+claude "Phase 3: Migrate files one at a time. Start with utilities,
+then models, then routes. Show diffs for each."
+```
+
+### Tip 2: Use Git After Each Phase
+
+```bash
+# After each Claude Code refactor phase
+git add .
+git commit -m "Refactor phase 2: New API module created"
+
+# This lets you rollback if phase 3 goes wrong
+```
+
+### Tip 3: Test Early and Often
+
+```bash
+# After each major refactor, run tests immediately
+npm test -- --testPathPattern=src/api
+
+# If tests fail, ask Claude to fix before moving forward
+claude "Tests are failing with error: [paste error]
+The affected code is in src/api/. Fix this without breaking other APIs."
+```
+
+## Practical Tips for Large Refactors with Cursor
+
+### Tip 1: Use Symbol References
+
+Instead of pasting whole files, reference specific functions:
+
+```
+@utils/auth.ts::verifyToken @utils/auth.ts::refreshToken
+
+Rename these functions to verifyJWT() and refreshJWT() throughout the codebase.
+Update all callers.
+```
+
+### Tip 2: Accept Partial Diffs
+
+When Cursor shows a diff spanning multiple functions, you can accept some and reject others:
+
+```
+Diff shows 5 function updates. Accept the first 3, reject the last 2.
+Refactor the last 2 manually after reviewing Cursor's approach.
+```
+
+### Tip 3: Leverage IDE Integration
+
+Since Cursor runs in your IDE, you can:
+- See compilation errors immediately after applying changes
+- Run tests before committing
+- Use your IDE's refactor tools in tandem with AI suggestions
+
+## Red Flags and When to Stop
+
+**Stop using AI for refactoring when:**
+- Changes affect security-critical code (authentication, encryption)
+- You don't have test coverage for the changed code
+- The refactor requires business logic understanding beyond the code
+- The codebase has unusual patterns or custom frameworks unknown to AI
+
+**Instead, do manual review + code walkthrough with your team.**
+
+## Conclusion: Choosing Your Tool
+
+Use **Claude Code** when:
+- Refactoring spans 20+ files
+- You need comprehensive analysis before execution
+- You have clear test coverage to validate output
+- Cross-cutting concerns affect the entire codebase
+
+Use **Cursor** when:
+- Refactoring 5–15 files
+- You want human review of each change
+- You're working within your IDE
+- Iterative refinement and feedback are important
+
+Combine both when:
+- Large refactors require extensive planning
+- Use Claude Code for analysis phase
+- Use Cursor for execution and validation phase
+- This hybrid approach minimizes risk while maximizing coverage
+
+For most teams, Cursor alone is sufficient for day-to-day refactoring. Claude Code becomes valuable at organizational scale when refactoring complexity justifies the API costs and setup overhead.
+
 ## Related Reading
 
 - [AI Tools Compared Hub](/ai-tools-compared/)

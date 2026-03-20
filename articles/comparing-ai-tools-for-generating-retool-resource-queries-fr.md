@@ -84,11 +84,281 @@ AI query generation has clear boundaries. Extremely complex queries with busines
 
 Security-sensitive queries handling authentication, authorization, or payment logic should always be reviewed by developers. AI tools may not understand your specific security requirements or compliance obligations.
 
+## Pricing and Practical Implementation Costs
+
+When evaluating AI tools for Retool query generation, consider your total cost of ownership:
+
+**Claude API via Anthropic**: $3–15 per 1M input tokens, $15–75 per 1M output tokens. A typical query generation workflow consumes 10k–50k input tokens (schema context + prompt) and 2k–10k output tokens (generated SQL). Average cost: $0.05–0.15 per query generation session.
+
+**ChatGPT API (GPT-4)**: $0.03–0.06 per 1K input tokens, $0.06–0.12 per 1K output tokens. Similar query cost profile: ~$0.10–0.20 per session. Faster response times but sometimes less precise for complex schema understanding.
+
+**GitHub Copilot**: $10–20/month for IDE integration; free for public repositories. No per-query cost. Best for developers already using Copilot in their editor. Retool query generation works reasonably well when you @mention schema files or documentation.
+
+**Locally hosted models** (Ollama, LM Studio): Free after setup. Meta's Llama 2 13B–70B fine-tuned for SQL runs on a laptop. Trade-off: slower inference, less accurate for complex queries, but zero per-query cost and privacy benefits.
+
+## Practical Prompting Strategies for Better Query Generation
+
+Success with AI query generation depends heavily on how you frame requests. Here are prompting patterns that work reliably:
+
+### Pattern 1: Schema + Business Requirement
+
+```
+Database: PostgreSQL with the following tables:
+
+users (id INT, email VARCHAR, created_at TIMESTAMP, status VARCHAR)
+orders (id INT, user_id INT, total DECIMAL, created_at TIMESTAMP, status VARCHAR)
+order_items (id INT, order_id INT, product_id INT, quantity INT, price DECIMAL)
+products (id INT, name VARCHAR, category VARCHAR, inventory INT)
+
+Business requirement: "Show me all orders from the past 7 days where the customer
+has a status of 'active' and the order total exceeds $500. Include the customer email,
+order date, and total in the results."
+
+Generate the SQL query for Retool.
+```
+
+**AI output quality**: 85–95% accuracy. The AI understands the schema, identifies relevant tables and joins, applies time filters correctly.
+
+### Pattern 2: Reference Example + Variation
+
+```
+I have a working Retool query that fetches active users:
+
+SELECT * FROM users WHERE status = 'active' AND deleted_at IS NULL;
+
+Now I need a variation: "Get active users who haven't placed an order in the past 90 days."
+Generate the modified query that extends the existing pattern.
+```
+
+**AI output quality**: 90%+. Patterns are powerful anchors. The AI can extrapolate from working examples more reliably than from pure description.
+
+### Pattern 3: Error + Context Fix
+
+If the AI generates an incorrect query, provide the error message:
+
+```
+Your previous query returned an error:
+"ERROR: column 'user_status' does not exist"
+
+The correct column name is 'status'. Also, the table might be 'users' or 'app_users'.
+Please regenerate the query accounting for this correction.
+```
+
+## Common Mistakes to Avoid
+
+**Mistake 1: Vague table descriptions**
+```
+Bad: "I have a table with user data"
+Better: "PostgreSQL table 'users' with columns: id (INT), email (VARCHAR),
+registered_at (TIMESTAMP), subscription_tier (VARCHAR: 'free'/'pro'/'enterprise')"
+```
+
+**Mistake 2: Not specifying Retool-specific syntax needs**
+```
+Bad: "Generate a query to get orders"
+Better: "Generate a Retool resource query for {{dateRange.start}} and {{dateRange.end}}
+where I need to use Retool parameters in the WHERE clause. Use parameterized queries."
+```
+
+**Mistake 3: Assuming AI knows your business logic**
+```
+Bad: "Show struggling customers"
+Better: "Show customers where (total_lifetime_purchases < $1000 AND days_since_last_order > 180)
+OR (subscription_active = false AND account_age > 365 days)"
+```
+
+## Comparison Table: Tools and Their Strengths
+
+| Tool | Best For | Speed | Cost | Context Depth |
+|------|----------|-------|------|---|
+| Claude 3.5 Sonnet | Complex schemas, multi-table joins | 2–5s | ~$0.10/query | Excellent |
+| GPT-4 Turbo | Fast iteration, simple queries | 1–3s | ~$0.15/query | Very Good |
+| Gemini 1.5 Pro | Large schemas (1M+ tokens) | 3–6s | ~$0.12/query | Excellent |
+| GitHub Copilot | IDE-integrated, fast | Real-time | $10–20/mo flat | Good |
+| Ollama Llama 2 | Privacy-critical, offline | 10–30s | Free | Adequate |
+
+## Troubleshooting Query Generation Issues
+
+### Issue: AI generates syntactically correct but semantically wrong queries
+
+**Example**: You ask for "orders placed this month" but AI generates WHERE clauses for arbitrary date ranges.
+
+**Solution**: Provide concrete examples of expected outputs. Show sample data or reference rows that should appear in the result. Use explicit date calculations:
+```
+"For March 2026, this means WHERE created_at >= '2026-03-01' AND created_at < '2026-04-01'"
+```
+
+### Issue: AI doesn't understand your custom field meanings
+
+**Example**: You have a `source` column that can be 'api', 'web', 'mobile', 'csv_import' but AI treats it as text-only.
+
+**Solution**: Provide an enum or explanation:
+```
+source VARCHAR with allowed values: 'api', 'web', 'mobile', 'csv_import'
+In Retool queries, filter like: AND source IN ('web', 'mobile')
+```
+
+### Issue: Performance degrades with complex AI-generated queries
+
+**Example**: AI generates a query with three LEFT JOINs and a subquery that takes 10+ seconds.
+
+**Solution**: Ask the AI to optimize after generation:
+```
+"The query is correct but slow on large datasets. Suggest an optimized version
+that indexes on the key WHERE clause columns. Also suggest which columns to index."
+```
+
+## Advanced: REST API Query Generation
+
+Retool's REST API query generation requires different handling than SQL. AI tools can generate correct API calls when given endpoint specifications:
+
+### Good REST API Generation Prompt
+
+```
+Generate a Retool REST API query for the Stripe API.
+
+Requirements:
+- Endpoint: https://api.stripe.com/v1/charges
+- Authentication: Bearer token in header
+- Query params: limit (50), created (after specific date)
+- Response format: Extract charge ID, amount, status, customer email
+- Use Retool transformer to reformat the response
+
+Specific request: Get all charges from the past 30 days, filtered by status='succeeded'
+```
+
+Expected output: Properly formatted request with authentication headers, URL parameters, and transformer logic.
+
+### Handling API Pagination in Retool
+
+AI can generate pagination patterns:
+
+```
+Generate a paginated API query pattern for Retool that:
+1. Calls /api/users with limit=100
+2. Extracts the next_cursor from response.pagination.next_cursor
+3. Sets up a loop to fetch all pages
+4. Combines results into a single array
+5. Uses Retool's transformer blocks
+
+Show me the query structure and transformer code.
+```
+
+## Practical CLI Workflow for Query Optimization
+
+```bash
+#!/bin/bash
+# retool-query-generator.sh
+
+# Function to generate and test queries
+generate_query() {
+    local description="$1"
+    local schema_file="$2"
+
+    echo "Generating query for: $description"
+
+    # Call Claude API with schema context
+    curl -s https://api.anthropic.com/v1/messages \
+      -H "x-api-key: $ANTHROPIC_API_KEY" \
+      -H "content-type: application/json" \
+      -d @- << EOF | jq -r '.content[0].text'
+{
+  "model": "claude-opus-4-6",
+  "max_tokens": 1024,
+  "messages": [
+    {
+      "role": "user",
+      "content": "Generate a Retool SQL query. Schema:\\n$(cat $schema_file)\\n\\nRequirement: $description"
+    }
+  ]
+}
+EOF
+}
+
+# Test the generated query performance
+test_query() {
+    local query="$1"
+    local db_url="$2"
+
+    echo "Testing query performance..."
+
+    psql -h "$db_url" -c "EXPLAIN ANALYZE $query"
+}
+
+# Main workflow
+SCHEMA_FILE="database_schema.sql"
+REQUIREMENT="Get all active subscriptions with usage over 1000 units"
+
+QUERY=$(generate_query "$REQUIREMENT" "$SCHEMA_FILE")
+
+echo "Generated query:"
+echo "$QUERY"
+
+test_query "$QUERY" "prod-db.example.com"
+```
+
+## Performance Tuning with AI Assistance
+
+Once AI generates a query, ask it to optimize:
+
+```
+Current query:
+SELECT u.id, u.email, COUNT(o.id) as order_count
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
+WHERE u.created_at > NOW() - INTERVAL '90 days'
+GROUP BY u.id, u.email;
+
+This query runs in 5+ seconds on 1M user records. Optimize it.
+Consider: indexing strategy, query rewrite, materialized views.
+```
+
+AI will suggest:
+1. Creating an index on (created_at, id)
+2. Rewriting with INNER JOIN if possible
+3. Using a materialized view for pre-aggregated counts
+4. Partitioning tables by created_at
+
+## Retool-Specific Parameters and Variables
+
+AI tools sometimes miss Retool's dynamic parameter syntax. Always clarify:
+
+```
+Generate a Retool query that:
+1. Uses {{table1.selectedRow.id}} as the lookup parameter
+2. Uses {{dateFilter.startDate}} and {{dateFilter.endDate}} for date ranges
+3. Uses {{searchInput.value}} for dynamic text search
+4. Returns results that feed into table2.setData(data)
+
+Requirement: Find orders for a specific customer within a date range.
+```
+
+Expected output: Query that correctly interpolates Retool runtime variables using `{{}}` syntax.
+
+## Multi-Step Query Chains in Retool
+
+Complex workflows often need multiple dependent queries:
+
+```
+I have two Retool queries:
+1. "getUserOrders" - returns orders for a user
+2. "getOrderDetails" - needs order IDs from step 1
+
+Generate:
+- Step 1 query that fetches orders
+- Step 2 query that loops through order IDs and fetches details
+- JavaScript transformer that combines results
+
+Show the query structure and button click handler code.
+```
+
+This generates an end-to-end workflow rather than isolated queries.
+
 ## Conclusion
 
 AI tools for generating Retool resource queries from natural language have reached practical utility for many development scenarios. They work best as collaborative assistants that accelerate the query-writing process rather than replacements for developer expertise. The time savings are most significant for standard query patterns and when you invest in providing accurate schema context.
 
-For Retool developers, integrating these tools into your workflow can reduce the friction of translating business requirements into query code. Start with simple queries to establish baseline capabilities, then expand to more complex scenarios as you develop effective prompting strategies for your specific database structures.
+For Retool developers, integrating these tools into your workflow can reduce the friction of translating business requirements into query code. Start with simple queries to establish baseline capabilities, then expand to more complex scenarios as you develop effective prompting strategies for your specific database structures. Focus on providing complete schema context, using example-driven prompts, and treating AI output as a draft requiring verification against actual data and performance characteristics.
 
 
 ## Related Reading

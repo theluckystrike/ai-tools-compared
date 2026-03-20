@@ -164,11 +164,175 @@ Use AI as a first-pass reviewer, then apply dedicated tools:
 | Runtime Testing | Finding actual leaks | Requires instrumentation |
 | Code Review | Context understanding | Time-intensive |
 
+## Pricing for AI Code Review Tools
+
+| Tool | Cost | Best For |
+|------|------|----------|
+| Claude API | $3–15 per 1M input tokens | Detailed analysis, security review |
+| GitHub Copilot | $10–20/month | IDE-integrated, real-time |
+| ChatGPT (GPT-4) | $0.03–0.06 per 1K input tokens | Fast feedback, iterative debugging |
+| Amazon Q Developer | $20/month | AWS integration, focused learning |
+| Cursor | $20/month | File-level security checks |
+
+For teams doing frequent embedded C reviews, flat-rate tools (Copilot, Cursor) are more cost-effective. For occasional reviews, pay-per-query API tools are cheaper.
+
+## Practical Workflow: Using AI for Embedded C Review
+
+### Step 1: Prepare Your Code Context
+
+Provide the AI with:
+- Target microcontroller and architecture (ARM Cortex-M4, RISC-V, etc.)
+- RTOS if used (FreeRTOS, Zephyr, ThreadX)
+- Memory constraints (RAM size, typical heap limits)
+- Real-time requirements (latency deadlines, ISR timing)
+
+### Step 2: Request Focused Analysis
+
+```
+Review this embedded C code for memory safety issues.
+
+Target: STM32F4 microcontroller, 192KB RAM, FreeRTOS 10.2
+Focus: Memory leaks, buffer overflows, stack overflows
+Specific concerns: ISR safety, DMA buffer handling
+
+[Insert code here]
+
+For each issue found:
+1. Describe the problem
+2. Explain the risk
+3. Provide a corrected code snippet
+```
+
+Expected output: Detailed analysis with 3–8 issues identified, fix recommendations for critical items.
+
+### Step 3: Validate Against Static Analysis Results
+
+Cross-reference AI findings with Coverity, MISRA, or PC-lint results. AI often catches logic-level issues that static tools miss, while static tools find complex analysis issues AI might overlook.
+
+## Comparing AI Assistance with Traditional Methods
+
+| Aspect | AI Review | Static Analyzer | Code Review | Runtime Test |
+|--------|-----------|-----------------|-------------|--------------|
+| False positives | Medium | High | Low | Low |
+| Speed | Fast (1–5 min) | Very fast (seconds) | Slow (hours) | Slow (hours) |
+| Logic errors | Good | Poor | Excellent | Excellent |
+| Common patterns | Excellent | Excellent | Good | Poor |
+| Context understanding | Excellent | Limited | Excellent | Limited |
+
+**Optimal combination**: AI (first pass) → Static analyzer → Code review → Runtime testing
+
+## Real-World Example: Complete Memory Safety Audit
+
+Here's a complete code review prompt that yields comprehensive results:
+
+```c
+// Code to review
+#include <stdint.h>
+#include <string.h>
+#include <stdlib.h>
+
+#define MAX_DEVICES 32
+#define BUFFER_SIZE 256
+
+typedef struct {
+    uint8_t id;
+    char name[64];
+    uint32_t last_update;
+} Device;
+
+static Device* devices[MAX_DEVICES];
+static uint8_t device_count = 0;
+
+int register_device(const char* name) {
+    Device* dev = malloc(sizeof(Device));
+    if (dev == NULL) return -1;
+
+    strcpy(dev->name, name);  // Buffer overflow risk
+    dev->id = device_count;
+    dev->last_update = get_time();
+
+    if (device_count < MAX_DEVICES) {
+        devices[device_count++] = dev;
+        return 0;
+    }
+    return -1;  // Memory leak: dev is not freed
+}
+
+void process_sensor_data(const uint8_t* data, size_t len) {
+    uint8_t buffer[BUFFER_SIZE];
+    memcpy(buffer, data, len);  // Buffer overflow if len > BUFFER_SIZE
+}
+```
+
+**Expected AI Analysis**:
+1. strcpy() without bounds checking (HIGH severity)
+2. Memory leak when device_count >= MAX_DEVICES (MEDIUM severity)
+3. memcpy without length validation (HIGH severity)
+4. No bounds check in register_device before array access (MEDIUM severity)
+
+## Integration with Development Workflow
+
+Add AI review to your embedded development process:
+
+```bash
+# Pre-commit hook for embedded C code review
+#!/bin/bash
+
+for file in $(git diff --cached --name-only | grep "\\.c$"); do
+    claude "Review this embedded C code for memory safety issues:
+
+    Platform: STM32F4
+    Focus: leaks, overflows, ISR safety
+
+    [$(cat "$file")]" > ".review-$(basename $file).txt"
+
+    echo "AI review saved to .review-$(basename $file).txt"
+done
+```
+
+## Advanced Topics: ISR and DMA Safety
+
+AI review particularly helps with interrupt-safe code:
+
+```c
+// ISR with potential race condition
+volatile uint32_t interrupt_count = 0;
+
+void timer_isr(void) {
+    interrupt_count++;  // Not protected from main thread access
+}
+
+void get_interrupt_count() {
+    return interrupt_count;  // Data race
+}
+```
+
+AI tools can identify these subtle concurrency issues and recommend fixes:
+
+```c
+// Corrected version
+volatile uint32_t interrupt_count = 0;
+static uint32_t cached_count = 0;
+
+void timer_isr(void) {
+    interrupt_count++;
+}
+
+uint32_t get_interrupt_count(void) {
+    __disable_irq();
+    cached_count = interrupt_count;
+    __enable_irq();
+    return cached_count;
+}
+```
+
 ## Key Takeaways
 
 AI-powered code review tools offer significant value for identifying memory leaks and buffer overflows in embedded C code. They excel at recognizing common patterns, suggesting fixes, and providing rapid feedback during development. However, they work best as part of a comprehensive quality strategy that includes static analysis, testing, and human code review.
 
-For embedded systems where reliability is critical, use AI tools to catch obvious issues early, but maintain rigorous processes for final verification. The combination of AI assistance and traditional methods provides the best protection against memory-related failures in production embedded systems.
+For embedded systems where reliability is critical, use AI tools to catch obvious issues early, but maintain rigorous processes for final verification. The combination of AI assistance (for logic-level issues), static analysis (for pattern matching), and traditional code review (for expertise validation) provides the best protection against memory-related failures in production embedded systems.
+
+Start with Claude or GitHub Copilot for initial review, supplement with Coverity or MISRA for deep analysis, and maintain human code review as your final quality gate.
 
 ---
 

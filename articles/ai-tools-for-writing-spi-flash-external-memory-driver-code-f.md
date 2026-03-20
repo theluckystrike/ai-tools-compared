@@ -178,11 +178,209 @@ AI-generated code provides a solid foundation, but developers should verify seve
 
 Memory alignment matters for DMA-based transfers on high-performance microcontrollers. The AI may not automatically optimize for your specific chip's page size, so verify that write operations respect 256-byte or 512-byte page boundaries.
 
+## Real Prompt Examples for Production-Quality Code
+
+### Example 1: Complete W25Q128 Driver for STM32H7
+
+```
+Generate a complete SPI flash driver for W25Q128 on STM32H743 microcontroller.
+
+Requirements:
+- STM32CubeIDE project with HAL library
+- W25Q128 chip (16MB, 256-byte pages)
+- SPI1 peripheral at 50MHz
+- Non-blocking API for write/erase (DMA-based)
+- Status register polling with 5-second timeout
+- Error handling with return codes
+- Support for 4K sector erase and page program
+
+Provide:
+1. spi_flash_init() - Initialize SPI and GPIO
+2. flash_write_page(addr, data, len) - Write up to 256 bytes
+3. flash_read(addr, buf, len) - Read arbitrary length
+4. flash_erase_4k(addr) - Erase 4KB sector
+5. Complete header file with error codes
+```
+
+Expected output: 300–400 lines of production-ready code with proper error handling.
+
+### Example 2: Performance-Optimized Driver with FastRead
+
+```
+Generate an optimized SPI flash driver for W25Q256 (32MB) on ESP32-S3.
+
+Optimizations:
+- Use quad SPI (QSPI) mode for 4x throughput
+- Implement fast read command (0x0B) with wait states
+- Non-blocking async operations with callbacks
+- FreeRTOS task-safe mutexes for concurrent access
+- DMA chains for back-to-back write operations
+- Power management: enter deep power-down when idle
+
+Provide:
+1. Initialization with QSPI mode configuration
+2. Async read with callback
+3. Async write with callback
+4. Power management functions
+```
+
+Expected output: Optimized driver for high-performance scenarios.
+
+## Practical CLI Commands for Driver Development
+
+### Building and Testing with CMake
+
+```bash
+# Create STM32 project structure
+mkdir stm32_flash_driver && cd stm32_flash_driver
+
+# Generate CMakeLists.txt with STM32 support
+cat > CMakeLists.txt << 'EOF'
+cmake_minimum_required(VERSION 3.10)
+project(STM32_SPI_Flash_Driver C)
+
+set(CMAKE_C_STANDARD 11)
+
+# STM32 HAL files
+set(HAL_PATH /path/to/STM32CubeF4/Drivers/STM32F4xx_HAL_Driver)
+
+add_executable(flash_driver_test
+    src/spi_flash.c
+    src/test_flash.c
+    ${HAL_PATH}/Src/stm32f4xx_hal_spi.c
+)
+
+target_include_directories(flash_driver_test PRIVATE
+    inc/
+    ${HAL_PATH}/Inc
+)
+
+# Enable warnings
+target_compile_options(flash_driver_test PRIVATE -Wall -Wextra -pedantic)
+EOF
+
+# Compile
+mkdir build && cd build
+cmake ..
+make
+
+# Flash to device
+st-flash write flash_driver_test.bin 0x08000000
+
+# Open serial monitor
+minicom -D /dev/ttyUSB0 -b 115200
+```
+
+### Automated Testing
+
+```bash
+# Test framework for driver verification
+cat > test_flash_driver.c << 'EOF'
+#include <assert.h>
+#include "spi_flash.h"
+
+void test_write_read_cycle(void) {
+    uint8_t write_data[256] = {0xAA, 0xBB, 0xCC, ...};
+    uint8_t read_data[256] = {0};
+
+    flash_write_page(0x1000, write_data, 256);
+    flash_read(0x1000, read_data, 256);
+
+    assert(memcmp(write_data, read_data, 256) == 0);
+}
+
+void test_erase_sector(void) {
+    flash_erase_4k(0x1000);
+    uint8_t buf[256] = {0};
+    flash_read(0x1000, buf, 256);
+
+    // After erase, all bytes should be 0xFF
+    for (int i = 0; i < 256; i++) {
+        assert(buf[i] == 0xFF);
+    }
+}
+
+int main(void) {
+    flash_init();
+
+    test_write_read_cycle();
+    test_erase_sector();
+
+    printf("All tests passed!\n");
+    return 0;
+}
+EOF
+
+# Compile tests
+gcc -o test_flash test_flash_driver.c spi_flash.c -I./inc
+./test_flash
+```
+
+## Common Issues and AI Fixes
+
+### Issue: Timeout on Write Operations
+
+**Symptom**: flash_write_page() hangs indefinitely
+
+**AI-generated fix**:
+```c
+void flash_wait_ready(uint32_t timeout_ms) {
+    uint32_t start = HAL_GetTick();
+
+    while (flash_read_status() & FLASH_STATUS_BUSY) {
+        if (HAL_GetTick() - start > timeout_ms) {
+            // Log timeout, don't wait forever
+            printf("Flash timeout after %lu ms\n", timeout_ms);
+            return;  // Return on timeout instead of hanging
+        }
+    }
+}
+```
+
+### Issue: DMA Transfers Not Working
+
+**Symptom**: Writes corrupt data or read data is garbage
+
+**AI-generated fix**:
+```c
+// Ensure DMA buffer is in non-cached, DMA-accessible memory
+__attribute__((aligned(4))) uint8_t dma_buffer[256];
+
+void flash_write_dma(uint32_t addr, const uint8_t *data, uint16_t len) {
+    // Copy data to DMA buffer first
+    memcpy(dma_buffer, data, len);
+
+    // Now DMA from buffer
+    HAL_SPI_Transmit_DMA(&hspi1, dma_buffer, len);
+
+    while (__HAL_DMA_GET_FLAG(/* ... */)) {
+        // Wait for DMA completion
+    }
+}
+```
+
+## Pricing for AI-Assisted Driver Development
+
+| Scenario | Manual Dev Time | AI-Assisted Time | Cost Savings |
+|----------|---|---|---|
+| Simple driver | 8–12 hours | 1–2 hours | $700–1100 |
+| Complex driver | 20–30 hours | 3–6 hours | $1400–2400 |
+| Optimization pass | 10–15 hours | 2–3 hours | $700–1200 |
+
+For typical embedded teams, AI assistance reduces driver development time by 70–85%, translating to $1000–2500 saved per driver.
+
 ## Best Practices for Working with AI
 
-Provide AI assistants with complete context for best results. Include your microcontroller part number, clock frequency, flash chip model (such as W25Q128 or MT25QL128), and preferred development framework (HAL, bare metal, or RTOS). Specify whether you need blocking or non-blocking APIs.
+Provide AI assistants with complete context for best results. Include your microcontroller part number, clock frequency, flash chip model (such as W25Q128 or MT25QL128), and preferred development framework (HAL, bare metal, or RTOS). Specify whether you need blocking or non-blocking APIs, and detail any real-time constraints.
 
-AI tools work well for generating boilerplate code and handling common patterns. For production drivers, review generated code against the specific flash device datasheet and add appropriate error handling for your application's reliability requirements.
+For production drivers, always:
+1. Request AI to reference the specific flash chip datasheet
+2. Ask for error handling and timeout protection
+3. Test generated code on actual hardware before deployment
+4. Review the generated code against manufacturer specifications
+5. Add comprehensive comments explaining timing-critical sections
+
+AI tools work well for generating boilerplate code, SPI configuration, and standard read/write operations. For specialized requirements like quad-SPI, DMA chains, or power management, provide explicit specifications to ensure quality output.
 
 ---
 
