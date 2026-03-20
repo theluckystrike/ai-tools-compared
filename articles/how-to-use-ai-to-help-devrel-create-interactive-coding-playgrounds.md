@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Help DevRel Create Interactive Coding Playgrounds"
-description:"A practical guide for developer relations teams on using AI tools to build interactive coding playgrounds that engage developers and showcase product capabilities."
+description: "A practical guide for developer relations teams on using AI tools to build interactive coding playgrounds that engage developers and showcase product capabilities."
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/
@@ -19,9 +19,7 @@ voice-checked: true
 
 {% raw %}
 
-
-
-Creating interactive coding playgrounds has become essential for DevRel teams looking to demonstrate product capabilities, onboard developers quickly, and create engaging learning experiences. AI tools can significantly accelerate this process, helping you build better playgrounds in less time. This guide explores practical strategies for using AI to create interactive coding environments that developers love.
+For DevRel teams building interactive coding playgrounds, the fastest path is CodeSandbox or StackBlitz for infrastructure, Claude or GPT-4 for generating initial example code, and Monaco Editor for custom in-page editors. AI cuts the "blank canvas" problem — paste your SDK docs and ask for 3-5 complete working examples at different complexity levels, then embed them. The remaining work is refining examples for accuracy and adding the UX layer (progress tracking, step instructions, expected outputs).
 
 
 
@@ -275,6 +273,67 @@ Ignoring accessibility: Ensure your playground works for developers using screen
 
 Skipping mobile testing: Many developers browse documentation on mobile devices. Verify your playground functions on smaller screens.
 
+
+## Generating Examples with Claude Code
+
+Batch-generate examples for your SDK by giving Claude the full API surface:
+
+```bash
+# Prompt template for generating playground examples
+cat << 'EOF' | claude -p
+You are generating code examples for a developer playground.
+
+SDK Documentation:
+$(cat docs/sdk-reference.md)
+
+Generate 5 complete, runnable code examples:
+1. Basic hello world (20 lines max)
+2. Authentication setup
+3. Core feature with error handling
+4. Advanced pattern with async/await
+5. Real-world use case with 3+ SDK calls
+
+Requirements:
+- Each example must be copy-paste runnable
+- Include comments explaining what each block does
+- Use realistic variable names, not foo/bar
+- Handle the most common error case in each example
+- Output as separate code blocks with file names
+
+Language: JavaScript (Node.js 20)
+EOF
+```
+
+Review generated examples for accuracy — AI can hallucinate method signatures. Run each example against your actual API before publishing. For dynamic playgrounds that let users modify and run code, use Piston API as a free code execution backend:
+
+```javascript
+// Execute user code securely via Piston API
+async function runCode(code, language = 'javascript') {
+  const response = await fetch('https://emkc.org/api/v2/piston/execute', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      language,
+      version: '*',
+      files: [{ name: 'playground.js', content: code }],
+      run_timeout: 5000  // 5 second timeout for safety
+    })
+  });
+
+  const result = await response.json();
+  return {
+    output: result.run.stdout,
+    error: result.run.stderr,
+    exitCode: result.run.code
+  };
+}
+
+// Usage
+const { output, error } = await runCode(userCode);
+document.getElementById('output').textContent = output || error;
+```
+
+This avoids building sandbox infrastructure — Piston handles execution isolation and rate limiting.
 
 ## Related Reading
 

@@ -3,7 +3,7 @@
 
 layout: default
 title: "ChatGPT vs Perplexity for Researching Competitor Pricing Strategies"
-description:"A practical guide comparing ChatGPT and Perplexity for gathering competitor pricing intelligence. Includes code examples and workflow recommendations for developers."
+description: "A practical guide comparing ChatGPT and Perplexity for gathering competitor pricing intelligence. Includes code examples and workflow recommendations for developers."
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /chatgpt-vs-perplexity-for-researching-competitor-pricing-str/
@@ -14,6 +14,8 @@ intent-checked: false
 voice-checked: true
 voice-checked: false
 ---
+{% raw %}
+
 
 
 
@@ -180,6 +182,8 @@ The key is understanding that these tools serve different but complementary purp
 
 
 
+
+{% endraw %}
 ## Related Reading
 
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
