@@ -8,7 +8,7 @@ permalink: /copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
