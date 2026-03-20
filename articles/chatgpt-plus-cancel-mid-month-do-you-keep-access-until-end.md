@@ -195,7 +195,217 @@ const getChatModel = (subscriptionEnds) => {
 
 If you find yourself frequently pausing Plus, annual billing (when available) reduces the effective monthly cost and simplifies management.
 
+## ChatGPT Plus Pricing and Billing Dates
 
+Current pricing (2026):
+- Monthly Plus: $20 USD per month (auto-renew)
+- Annual Plus: $200 USD per year (roughly 17% savings)
+- API access: Separate from Plus subscription
+
+Your billing cycle renews on the same calendar date each month. If you subscribed on March 5th, your next charge is April 5th, regardless of cancellation timing.
+
+## Tracking Subscription Status Programmatically
+
+If your application manages multiple ChatGPT Plus subscriptions:
+
+```python
+from datetime import datetime, timedelta
+from enum import Enum
+
+class SubscriptionStatus(Enum):
+    ACTIVE = "active"
+    CANCELLED_ACTIVE = "cancelled_active"
+    EXPIRED = "expired"
+
+class ChatGPTPlusTracker:
+    def __init__(self, subscription_date: str, renewal_date: str = None):
+        self.subscription_date = datetime.fromisoformat(subscription_date)
+        self.renewal_date = renewal_date or self.subscription_date + timedelta(days=30)
+        self.is_cancelled = False
+
+    def cancel(self):
+        self.is_cancelled = True
+        print(f"Subscription cancelled. Access remains until {self.renewal_date}")
+
+    def get_status(self) -> SubscriptionStatus:
+        now = datetime.now()
+        if now >= self.renewal_date:
+            return SubscriptionStatus.EXPIRED
+        elif self.is_cancelled:
+            return SubscriptionStatus.CANCELLED_ACTIVE
+        else:
+            return SubscriptionStatus.ACTIVE
+
+    def days_until_expiry(self) -> int:
+        return (self.renewal_date - datetime.now()).days
+
+    def can_use_gpt4(self) -> bool:
+        return self.get_status() in [
+            SubscriptionStatus.ACTIVE,
+            SubscriptionStatus.CANCELLED_ACTIVE
+        ]
+
+# Usage
+tracker = ChatGPTPlusTracker("2026-03-05")
+tracker.cancel()
+print(f"Status: {tracker.get_status()}")
+print(f"Days remaining: {tracker.days_until_expiry()}")
+print(f"Can use GPT-4: {tracker.can_use_gpt4()}")
+```
+
+## API Rate Limits: Plus vs Free Tier
+
+Understanding rate limit differences is critical for applications:
+
+| Limit | ChatGPT Plus | Free Tier |
+|-------|--------------|-----------|
+| Requests per minute | 90 | 3 |
+| Tokens per minute | 90,000 | 40,000 |
+| Conversation turns | 25 per 3h | 3 per 3h |
+| Model access | GPT-4, GPT-4o | GPT-3.5-turbo |
+| Upload limit | 100 MB per chat | Not allowed |
+| Priority during outages | Yes | No |
+| Code execution | Yes | No |
+
+Implement rate limit handling:
+
+```python
+import time
+from openai import RateLimitError
+
+class ChatGPTRateLimitHandler:
+    def __init__(self, is_plus: bool = True):
+        self.is_plus = is_plus
+        self.rpm_limit = 90 if is_plus else 3
+        self.requests_in_window = []
+
+    def can_make_request(self) -> bool:
+        now = time.time()
+        # Remove requests older than 60 seconds
+        self.requests_in_window = [
+            req_time for req_time in self.requests_in_window
+            if now - req_time < 60
+        ]
+
+        if len(self.requests_in_window) < self.rpm_limit:
+            self.requests_in_window.append(now)
+            return True
+        return False
+
+    def wait_for_slot(self):
+        while not self.can_make_request():
+            wait_time = 60 - (time.time() - self.requests_in_window[0])
+            if wait_time > 0:
+                time.sleep(wait_time)
+
+# Usage
+handler = ChatGPTRateLimitHandler(is_plus=True)
+if not handler.can_make_request():
+    handler.wait_for_slot()
+# Make API call
+```
+
+## Refund Policy for Mid-Month Cancellations
+
+OpenAI's refund policy:
+- Full refund within 30 days of purchase (cancellation doesn't affect this)
+- Pro-rated refunds available in some cases (contact support)
+- Refunds processed to original payment method within 5-7 business days
+
+Request refund process:
+
+```bash
+#!/bin/bash
+# Document for refund request to OpenAI support
+
+# Required information:
+# 1. OpenAI account email
+# 2. Subscription charge date
+# 3. Reason for refund request
+# 4. Screenshots of unexpected charges
+
+# Contact: support@openai.com with subject line
+# "Refund Request - Unexpected ChatGPT Plus Charge - [Your Email]"
+```
+
+## Managing Multiple ChatGPT Plus Accounts
+
+For teams or organizations with multiple subscriptions:
+
+```python
+class ChatGPTPlusPortfolio:
+    def __init__(self):
+        self.subscriptions = {}
+
+    def add_subscription(self, user_id: str, email: str, billing_date: str):
+        self.subscriptions[user_id] = {
+            'email': email,
+            'billing_date': billing_date,
+            'cancelled': False,
+            'expires': None
+        }
+
+    def cancel_subscription(self, user_id: str):
+        if user_id in self.subscriptions:
+            sub = self.subscriptions[user_id]
+            sub['cancelled'] = True
+            # Calculate expiry based on billing date
+            billing_day = int(sub['billing_date'].split('-')[2])
+            today = datetime.now()
+            next_month = today.replace(day=1) + timedelta(days=32)
+            sub['expires'] = next_month.replace(day=billing_day)
+
+    def get_expiring_soon(self, days=7):
+        """Get subscriptions expiring within N days"""
+        expiring = []
+        for user_id, sub in self.subscriptions.items():
+            if sub['cancelled'] and sub['expires']:
+                days_until = (sub['expires'] - datetime.now()).days
+                if 0 < days_until <= days:
+                    expiring.append((user_id, sub, days_until))
+        return expiring
+
+    def renewal_cost_savings(self):
+        """Calculate potential savings by staggering cancellations"""
+        monthly_cost = 20
+        cancellations = sum(1 for sub in self.subscriptions.values() if sub['cancelled'])
+        return cancellations * monthly_cost
+```
+
+## Custom GPTs and Plus Dependency
+
+Custom GPTs you create require an active Plus subscription to share and distribute:
+
+```markdown
+## Custom GPT Lifecycle
+
+Before Plus Expires:
+- ✓ Can edit and test Custom GPTs
+- ✓ Can use Custom GPTs in conversations
+- ✓ Can share via link
+
+After Plus Expires:
+- ✗ Cannot create new Custom GPTs
+- ✗ Custom GPTs you created become inaccessible
+- ✗ Cannot update or modify existing Custom GPTs
+- → Data not lost, but requires Plus resubscription to access
+
+Action: Before cancellation, either:
+1. Export Custom GPT definitions as JSON
+2. Document the instructions and knowledge base
+3. Plan to recreate after resubscription
+```
+
+## Resubscription Grace Period
+
+Contrary to some reports, there is NO grace period after Plus expires. However:
+
+- Your conversation history remains accessible on free tier
+- Custom GPTs you created are preserved but locked
+- Resubscribing immediately restores access to locked content
+- No re-verification or waiting period required
+
+To minimize disruption, set a calendar reminder 2 days before your billing date to decide whether to keep Plus active.
 
 ## When to Re-subscribe
 

@@ -208,6 +208,273 @@ async function generateContextualHero(pageType, brandColors) {
 
 Building this layer on top of any of the tools above enables dynamic hero generation that scales with your application.
 
+## Pricing Breakdown: Cost per Image
+
+Detailed pricing for production use (as of 2026):
+
+**DALL-E 3:**
+- $0.04 per 1024x1024 image
+- $0.08 per 1792x1024 image (HD)
+- For 1000 hero images: ~$80 (standard) or $160 (HD)
+
+**Stable Diffusion:**
+- RunPod: $0.48/hour GPU time → ~$0.06 per image
+- Banana: $0.0075 per second → ~$0.05 per image
+- For 1000 hero images: ~$50-60 with self-hosting
+
+**Midjourney:**
+- $10/month (10 images)
+- $30/month (15 images)
+- $60/month (unlimited)
+- For 1000+ images: Switch to $60/month ($0.06 per image)
+
+**Adobe Firefly:**
+- Included in Creative Cloud ($82.49/month)
+- Or $9.99/month standalone (100 generative credits)
+- For 1000 images: ~$100/month subscription
+
+**Cost comparison for 100 hero images:**
+| Tool | Cost | Per-Image | Best Use |
+|------|------|----------|----------|
+| DALL-E 3 | $4-8 | $0.04-0.08 | Quick testing, small projects |
+| Stable Diffusion | $5-6 | $0.05-0.06 | High volume, cost-sensitive |
+| Midjourney | $30 | $0.30 | Small batches, artistic focus |
+| Adobe Firefly | $10 | $0.10 | Enterprise/Adobe ecosystem |
+
+## Quality Metrics and Testing
+
+Evaluate generated images using these criteria:
+
+```python
+class HeroImageQualityEvaluator:
+    """Evaluate hero images on key metrics"""
+
+    def evaluate(self, image_path: str) -> dict:
+        return {
+            "resolution_sufficient": self.check_resolution(image_path, 1920, 1080),
+            "composition_balance": self.score_composition(image_path),  # 1-10
+            "color_harmony": self.analyze_colors(image_path),  # 1-10
+            "text_overlay_ready": self.check_text_readiness(image_path),  # 1-10
+            "brand_alignment": self.check_brand_match(image_path),  # 1-10
+            "load_time_acceptable": self.check_file_size(image_path),
+            "no_watermarks": self.verify_no_watermarks(image_path)
+        }
+
+    def check_resolution(self, image_path, width, height):
+        """Verify minimum resolution for web display"""
+        # Implementation checks PIL image dimensions
+        pass
+
+    def score_composition(self, image_path):
+        """Rate visual composition (center of interest, rule of thirds)"""
+        # Implementation uses edge detection and contrast analysis
+        pass
+```
+
+## Bulk Generation Workflow
+
+For generating multiple hero images efficiently:
+
+```python
+import asyncio
+from typing import List
+import boto3
+
+class HeroBulkGenerator:
+    def __init__(self, tool: str = "stable-diffusion"):
+        self.tool = tool
+        self.generated_count = 0
+        self.failed_count = 0
+
+    async def generate_batch(self, prompts: List[str], output_dir: str):
+        """Generate multiple hero images concurrently"""
+        tasks = [
+            self.generate_single(prompt, output_dir)
+            for prompt in prompts
+        ]
+        results = await asyncio.gather(*tasks)
+        return results
+
+    async def generate_single(self, prompt: str, output_dir: str):
+        """Generate single hero image with retry logic"""
+        retry_count = 0
+        while retry_count < 3:
+            try:
+                if self.tool == "stable-diffusion":
+                    image = await self.generate_with_stable_diffusion(prompt)
+                elif self.tool == "dalle":
+                    image = await self.generate_with_dalle(prompt)
+
+                filename = f"{output_dir}/{self.slugify(prompt)}.png"
+                await self.save_image(image, filename)
+                self.generated_count += 1
+                return {"status": "success", "file": filename}
+
+            except Exception as e:
+                retry_count += 1
+                if retry_count >= 3:
+                    self.failed_count += 1
+                    return {"status": "failed", "error": str(e)}
+
+    def report_generation_status(self):
+        total = self.generated_count + self.failed_count
+        success_rate = (self.generated_count / total * 100) if total > 0 else 0
+        print(f"Generated: {self.generated_count}/{total} ({success_rate:.1f}% success)")
+```
+
+## Prompt Engineering for Hero Images
+
+Different AI models respond to different prompt structures:
+
+```markdown
+## DALL-E 3 Effective Prompts:
+- "Modern SaaS product hero image, clean minimalist design, blue and white theme"
+- Focus on: descriptive adjectives, specific color schemes, clear subject
+- Avoid: multiple subjects, complex scenes
+- Character limit: Generous (4000+ characters)
+
+## Stable Diffusion Effective Prompts:
+- "a sleek tech product on white background, professional lighting, 4k, trending on artstation"
+- Include: model names (SD XL v1.0), quality indicators (4k, professional)
+- Avoid: overly simple descriptions
+- Use modifiers: "masterpiece", "trending", "detailed"
+
+## Midjourney Effective Prompts:
+- "modern website hero, abstract geometric shapes, deep blue, minimalist style --aspect 16:9 --quality 2"
+- Include: parameters (--aspect, --quality, --style)
+- Style focus: artistic, distinctive outcomes
+- Parameters matter: Experiment with quality (0-2) and aspect ratios
+
+## Adobe Firefly Effective Prompts:
+- "professional website header, corporate tech theme, people collaborating"
+- Best for: professional, corporate imagery
+- Limitations: Less artistic than Midjourney
+- Content filtering: Strict brand safety guidelines
+```
+
+## A/B Testing Hero Images
+
+Generate variants and test performance:
+
+```python
+class HeroABTester:
+    """A/B test hero images for conversion optimization"""
+
+    def __init__(self, analytics_client):
+        self.analytics = analytics_client
+
+    def test_variants(self, image_a_url: str, image_b_url: str, duration_days: int = 7):
+        """Run A/B test with 50/50 split"""
+        for day in range(duration_days):
+            # Show each image to 50% of traffic
+            metrics = self.collect_metrics(image_a_url, image_b_url)
+
+            yield {
+                "day": day,
+                "image_a_ctr": metrics["a"]["click_through_rate"],
+                "image_b_ctr": metrics["b"]["click_through_rate"],
+                "image_a_bounces": metrics["a"]["bounce_rate"],
+                "image_b_bounces": metrics["b"]["bounce_rate"],
+                "winner": self.determine_winner(metrics)
+            }
+
+    def determine_winner(self, metrics: dict) -> str:
+        """Statistical significance test"""
+        a_ctr = metrics["a"]["click_through_rate"]
+        b_ctr = metrics["b"]["click_through_rate"]
+        improvement = ((b_ctr - a_ctr) / a_ctr) * 100
+
+        if improvement > 5:  # >5% improvement needed
+            return "B"
+        elif improvement < -5:
+            return "A"
+        else:
+            return "TIE"
+```
+
+## Integration with Modern Web Frameworks
+
+Implement hero image generation in Next.js or similar:
+
+```javascript
+// Next.js API route for hero image generation
+import { generateImage } from '@stable-diffusion-api';
+
+export default async function handler(req, res) {
+  const { pageType, brandColor } = req.query;
+
+  const prompts = {
+    landing: `hero image for SaaS landing page, ${brandColor} accent color, minimalist`,
+    blog: `blog post hero image, editorial style, inviting atmosphere`,
+    product: `product showcase hero, ${brandColor} theme, professional lighting`
+  };
+
+  try {
+    const imageUrl = await generateImage(prompts[pageType]);
+
+    // Cache for 30 days
+    res.setHeader('Cache-Control', 'public, max-age=2592000');
+    res.json({ success: true, imageUrl });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+}
+```
+
+## Performance Optimization
+
+Optimize generated images for web delivery:
+
+```bash
+#!/bin/bash
+# Optimize hero images for web
+
+# Resize to standard dimensions
+convert input.png -resize 1920x1080 output.png
+
+# Compress while maintaining quality
+convert input.png -quality 85 -strip output.jpg
+
+# Create WebP version (better compression)
+cwebp -q 85 input.png -o output.webp
+
+# Generate srcset variants for responsive design
+convert input.png -resize 768x432 hero-tablet.png
+convert input.png -resize 1920x1080 hero-desktop.png
+
+# Result file sizes
+# Original PNG: 2.4 MB
+# Optimized JPG: 285 KB
+# WebP version: 156 KB
+# Mobile (768px): 42 KB
+```
+
+## Choosing Your Generation Approach
+
+**Use DALL-E 3 when:**
+- You need results within hours
+- Quality matters more than cost
+- You want simple API integration
+- Team size < 5 people
+
+**Use Stable Diffusion when:**
+- Generating >100 images monthly
+- Cost optimization is critical
+- You want reproducible results (seed control)
+- Private/self-hosted preferred
+
+**Use Midjourney when:**
+- Artistic distinctiveness is essential
+- Your brand needs standout visuals
+- Budget supports $30-60/month subscription
+- Small batch sizes (50-200 images)
+
+**Use Adobe Firefly when:**
+- Already invested in Adobe ecosystem
+- Commercial licensing important
+- Enterprise security requirements
+- Integration with AEM needed
+
 
 
 ## Related Reading
