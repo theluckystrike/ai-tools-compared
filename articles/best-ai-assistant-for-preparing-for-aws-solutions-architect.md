@@ -11,7 +11,6 @@ score: 0
 categories: [guides]
 intent-checked: true
 voice-checked: true
-voice-checked: false
 ---
 
 

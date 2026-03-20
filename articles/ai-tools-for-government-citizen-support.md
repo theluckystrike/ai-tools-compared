@@ -275,7 +275,6 @@ Government AI implementation succeeds when it augments staff capabilities rather
 
 ---
 
-voice-checked: true
 
 
 

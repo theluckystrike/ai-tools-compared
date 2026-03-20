@@ -11,9 +11,7 @@ reviewed: true
 score: 0
 intent-checked: false
 voice-checked: true
-voice-checked: false
 intent-checked: true
-voice-checked: true
 ---
 GitHub Copilot and Claude excel at generating Jest tests for race conditions by suggesting concurrent test patterns and timing-dependent scenarios developers often overlook. These tools understand Promise resolution ordering, shared mutable state issues, and async hook cleanup patterns—creating test cases that expose timing-dependent bugs through deliberate out-of-order promise resolution and concurrent operation simulation.
 
