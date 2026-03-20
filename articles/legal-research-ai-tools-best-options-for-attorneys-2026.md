@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /legal-research-ai-tools-best-options-for-attorneys-2026/
 categories: [guides]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
