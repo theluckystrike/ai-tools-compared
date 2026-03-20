@@ -1,5 +1,4 @@
 ---
-
 layout: default
 title: "Enterprise Data Loss Prevention Rules for AI Coding."
 description: "A practical guide to implementing data loss prevention rules for AI coding assistant browser extensions in enterprise environments. Code examples and."
@@ -200,8 +199,7 @@ class SecureStorage {
     const iv = crypto.getRandomValues(new Uint8Array(12));
     const encrypted = await crypto.subtle.encrypt(
       { name: 'AES-GCM', iv },
-      key,
-      encodedData
+      key, encodedData
     );
     return {
       iv: Array.from(iv),
