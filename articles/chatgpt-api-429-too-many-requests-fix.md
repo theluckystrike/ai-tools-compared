@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /chatgpt-api-429-too-many-requests-fix/
 categories: [troubleshooting]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, troubleshooting, chatgpt, api]

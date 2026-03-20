@@ -8,7 +8,7 @@ permalink: /chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/
 categories: [guides]
 tags: [ai-tools-compared, chatgpt, canvas, plus, team, features]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 ---
