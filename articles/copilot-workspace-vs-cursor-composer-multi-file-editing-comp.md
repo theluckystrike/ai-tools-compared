@@ -197,7 +197,180 @@ Choose Cursor Composer when:
 
 In 2026, both tools have optimized their multi-file editing performance. Copilot Workspace typically takes a few seconds to generate multi-file plans, while Cursor's Tab completions appear almost instantly. The difference becomes noticeable with larger codebases where Copilot's analysis phase provides more suggestions.
 
+## Pricing and Model Access
 
+**Copilot Workspace:**
+- Included with GitHub Copilot Pro ($20/month)
+- Includes access to latest models (GPT-4, Claude when available)
+- Per-user licensing required for teams
+
+**Cursor Composer:**
+- Included with Cursor Pro ($20/month)
+- Access to GPT-4 and Claude models
+- Token usage affects performance with larger files
+
+For small teams (2-5 developers), both cost roughly $200-250/month. For larger teams, GitHub Copilot's enterprise offerings may provide volume discounts.
+
+## Real-World Workflow Comparison
+
+**Scenario: Refactoring authentication across a Next.js application**
+
+Using Copilot Workspace:
+```
+1. Describe: "Migrate from custom auth to Auth0, updating login page, API routes, middleware"
+2. Review generated plan showing: pages/login.js, lib/auth.js, middleware.ts, env.local changes
+3. Accept plan
+4. Apply all changes in single commit
+```
+Time: 2-3 minutes planning + verification
+
+Using Cursor Composer:
+```
+1. Open pages/login.tsx
+2. Cmd+K: "Update to use Auth0"
+3. Open lib/auth.ts
+4. Cmd+K: "Create Auth0 service"
+5. Open middleware.ts
+6. Cmd+K: "Add Auth0 verification"
+7. Manual coordination between files
+```
+Time: 5-10 minutes with manual file switching
+
+Copilot excels at coordinated changes. Cursor excels at focused, single-file edits.
+
+## File Context Limits and Workarounds
+
+Both tools have limits on how much context they can process:
+
+**Copilot Workspace** limits: ~200KB of codebase context
+**Cursor Composer** limits: Dependent on model (Claude: 200K tokens, GPT-4: 8K-128K)
+
+When hitting limits:
+
+```python
+# Workaround 1: Create a focused .cursorrules file
+# .cursorrules (for Cursor)
+You are refactoring authentication.
+
+Key files involved:
+- /app/auth/[...auth0].ts - Auth0 route
+- /lib/auth-context.tsx - React context
+- /middleware.ts - Request authentication
+- /app/api/user/route.ts - User endpoint
+
+Maintain consistency across these files.
+Auth0 domain: ${process.env.AUTH0_DOMAIN}
+```
+
+```bash
+# Workaround 2: Create minimal reproduction of related files
+# Extract just the interfaces and key functions to provide context
+cat > related_files.md << 'EOF'
+## Current Authentication Structure
+
+### /lib/auth.ts
+interface User {
+  id: string;
+  email: string;
+}
+
+export const getSession = async () => { ... }
+
+### /middleware.ts
+export const middleware = (req) => {
+  const session = getSession();
+  if (!session) redirect('/login');
+}
+
+### /pages/api/user
+export default async function handler(req, res) {
+  const session = getSession();
+  return res.json(session.user);
+}
+EOF
+
+# Pass this summary to AI instead of entire files
+```
+
+## Integration with Version Control
+
+Both tools can view git history:
+
+**Copilot**: Analyzes recent commits to understand coding patterns
+**Cursor**: Shows git blame inline, links to commit messages
+
+For multi-file changes, always review diffs before committing:
+
+```bash
+# After AI-generated changes
+git diff --stat  # See what changed
+git diff app/    # Review specific changes
+git add -p       # Stage interactively
+
+# Cursor tip: Use git diff in terminal, then Cmd+K on the output
+# to ask AI to explain the changes
+```
+
+## Handling Conflicts in Multi-File Edits
+
+When AI edits multiple files and conflicts arise:
+
+**In Copilot:**
+- Review generated diffs individually
+- Reject problematic changes before applying
+- Apply changes incrementally if there are conflicts
+
+**In Cursor:**
+- Accept/reject individual file changes
+- Use git diff to find conflicts
+- Cmd+K to fix specific conflicts
+
+```bash
+# After multi-file AI edit with conflicts
+git status                      # Find conflicted files
+git diff app/page.tsx          # See specific conflicts
+# Then use Cursor's Cmd+K on the conflicted section
+```
+
+## Scaling to Large Teams
+
+For teams >5 developers:
+
+**Copilot Workspace advantage**:
+- Enterprise admin console
+- Unified settings across team
+- Better for coordinated refactoring
+
+**Cursor advantage**:
+- Lightweight, runs locally
+- No external service dependency
+- Better for rapid iteration
+
+## Decision Tree: Which Tool to Choose
+
+Use **Copilot Workspace** when:
+- You need coordinated multi-file changes
+- You prefer reviewing plans before execution
+- Your team uses GitHub extensively
+- You want centralized admin control
+
+Use **Cursor Composer** when:
+- You're doing focused, single-file work
+- You want immediate feedback
+- You prefer real-time editing
+- You value fast context switching between files
+
+## Practical Tips for Each Tool
+
+**Copilot tips:**
+- Generate plans but don't accept automatically
+- Break large refactors into multiple workspace sessions
+- Use the VS Code sidebar to see diffs clearly
+
+**Cursor tips:**
+- Use @file references explicitly: "@app/page.tsx make this responsive"
+- Create custom instructions in .cursorrules for your project
+- Leverage Tab completions for pattern recognition across files
 
 ## Related Reading
 

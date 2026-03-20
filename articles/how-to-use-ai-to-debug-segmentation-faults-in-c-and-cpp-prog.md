@@ -199,6 +199,88 @@ Document what you learn. When you find and fix a segmentation fault, note what c
 
 
 
+## Real-World Debugging Tools and CLI Commands
+
+AI works best when combined with traditional debugging tools. Here are essential commands for capturing data to feed into AI:
+
+```bash
+# Enable core dumps (macOS/Linux)
+ulimit -c unlimited
+
+# Run your program and let it crash
+./my_program
+
+# Examine with gdb
+gdb ./my_program core
+(gdb) bt  # Print stack trace
+(gdb) print variable_name  # Inspect variables
+(gdb) frame 3  # Jump to specific frame
+
+# Use AddressSanitizer for runtime memory detection
+clang++ -fsanitize=address -g -o program program.cpp
+./program  # Will print detailed memory errors
+
+# Valgrind for memory profiling
+valgrind --leak-check=full --show-leak-kinds=all ./my_program
+```
+
+When you get AddressSanitizer output like:
+```
+==12345==ERROR: AddressSanitizer: heap-use-after-free on address 0x602000000010
+    #0 0x7f8b8c5d1234 in main program.cpp:42
+    #1 0x7f8b8c5a5678 in __libc_start_main
+```
+
+Copy this entire output to Claude or ChatGPT along with the relevant code. AI can immediately identify that you're accessing freed memory and pinpoint the exact issue.
+
+## Memory Analysis Workflow with AI
+
+A practical workflow for debugging segmentation faults:
+
+1. **Reproduce the issue** with minimal test case
+2. **Capture the crash info** using gdb, AddressSanitizer, or Valgrind
+3. **Paste everything to AI** including stack trace, error output, and relevant code sections
+4. **Request specific analysis** like "what object is likely null at line 42?" or "trace the memory lifecycle of this pointer"
+5. **Review suggestions** and test locally before applying
+6. **Ask follow-up questions** if the fix doesn't work
+
+Example prompt to AI:
+
+```
+I'm getting a segmentation fault with AddressSanitizer reporting:
+  heap-use-after-free at address 0x602000000010
+
+Stack trace:
+#0 0x7f8b8c in getData() at line 112
+#1 0x7f8b8d in process() at line 108
+
+Here's my code:
+[paste the actual code from above]
+
+What's the root cause and how do I fix it?
+```
+
+## Comparing AI Tools for Memory Debugging
+
+| Tool | Strength | Best For |
+|------|----------|----------|
+| Claude 3.5 Sonnet | Detailed reasoning about memory ownership | Complex memory lifecycle issues |
+| ChatGPT-4 | Fast analysis, good at recognizing patterns | Quick segfault identification |
+| GitHub Copilot | IDE-integrated, real-time suggestions | Immediate inline fixes |
+| Cursor AI | Multi-file context, comprehensive analysis | Large codebase segfaults |
+
+## Common Pitfalls When Using AI for Debugging
+
+**Incomplete stack traces** — Provide the full trace, not just the first few lines. The actual cause is often several frames deep.
+
+**Missing code context** — Include function definitions, not just the crash line. Buffer overflows often occur lines before the crash.
+
+**Ignoring compiler warnings** — Fix all compiler warnings before asking AI. Many segfaults stem from ignored warnings about pointer conversion or uninitialized variables.
+
+**Not testing the fix** — Just because AI suggests a fix doesn't mean it's complete. Always test with the original failing input and edge cases.
+
+
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

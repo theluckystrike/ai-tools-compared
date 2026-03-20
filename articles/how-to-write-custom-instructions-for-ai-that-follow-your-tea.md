@@ -198,7 +198,275 @@ For larger projects, consider creating instruction tiers that apply based on con
 
 This targeted approach keeps instructions relevant to the task at hand rather than overwhelming the AI with rules that don't apply.
 
+## Real-World Custom Instructions Examples
 
+Here are complete, production-tested custom instruction sets for different teams:
+
+### Startup SaaS Team (.cursorrules)
+
+```
+# Cursor Rules: Startup SaaS Development
+
+## Tech Stack
+- React 18 with TypeScript
+- Next.js 14 (App Router)
+- Supabase for authentication and database
+- Tailwind CSS for styling
+- Vercel for deployment
+
+## Code Standards
+
+### React Components
+- Use functional components only
+- Prefer TypeScript interfaces over types for props
+- All components must have TypeScript prop definitions
+- Use React hooks (useState, useContext, useCallback)
+- Implement proper loading and error states
+- Example pattern:
+  ```typescript
+  interface ButtonProps {
+    onClick: () => void;
+    loading?: boolean;
+    variant?: 'primary' | 'secondary';
+  }
+  export function Button({ onClick, loading, variant = 'primary' }: ButtonProps) {
+    return <button disabled={loading} className={`btn-${variant}`} onClick={onClick} />
+  }
+  ```
+
+### API Routes
+- Use Next.js API routes in /app/api
+- Validate all request bodies with zod
+- Return { success: boolean; data?: T; error?: string }
+- Include proper HTTP status codes (200, 400, 401, 500)
+- Never expose database errors to client
+
+### Database
+- Use Supabase client library
+- All queries in @/lib/database/queries
+- Always use parameterized queries
+- Add row-level security policies
+- Use migrations for schema changes
+
+### Testing Requirements
+- Jest for unit tests
+- Playwright for E2E tests
+- Minimum 80% coverage for utils
+- All API routes need integration tests
+- Test files: componentName.test.ts
+
+### Common Code Review Issues
+- Missing error boundaries in components
+- Unhandled async errors in useEffect
+- Missing null checks on optional data
+- Hardcoded values instead of env variables
+- No loading states on async operations
+
+## What NOT to do
+- No console.log in production code (use winston logger)
+- No raw SQL queries (use ORM/parameterized)
+- No mixing component logic with styling
+- No default exports for components
+- No modifying props directly in components
+
+## Security Checklist
+- Sanitize all user input before display
+- CSRF tokens on all state-changing requests
+- Rate limit API endpoints
+- Validate on both client and server
+- Use Content Security Policy headers
+```
+
+### Enterprise Backend Team (.cursorrules)
+
+```
+# Cursor Rules: Enterprise Backend (Python/FastAPI)
+
+## Architecture
+- Python 3.11+
+- FastAPI with async/await
+- PostgreSQL with SQLAlchemy ORM
+- Redis for caching
+- OpenTelemetry for observability
+
+## Code Style
+- Black formatter (line length: 100)
+- isort for imports
+- mypy for type checking (strict mode)
+- pylint with score threshold 8.0
+
+## API Standards
+- RESTful design with resource versioning (/v1/, /v2/)
+- OpenAPI documentation via FastAPI
+- Structured error responses with error codes
+- Request/response logging to CloudWatch
+- All endpoints require authentication
+
+## Database Patterns
+- Alembic for migrations (never manually alter schema)
+- ORM entities in /models/
+- Queries in repository classes
+- Always use transactions for multi-step operations
+- Soft deletes for customer data (never hard delete)
+
+## Testing Requirements
+- pytest with 85% code coverage minimum
+- Unit tests for business logic
+- Integration tests for API endpoints
+- Load tests for critical paths (> 1000 req/sec)
+- Fixtures for test data
+
+## Required Code Review Checks
+- No hardcoded credentials (use environment variables)
+- All external API calls have timeout and retry logic
+- Database queries use connection pooling
+- Sensitive data logged as [REDACTED]
+- Proper logging at info/warning/error levels
+
+## Deployment
+- Docker containers with minimal base images
+- Kubernetes manifests in /k8s/
+- Helm charts for configuration
+- Blue-green deployment strategy
+- Automatic rollback on failure
+```
+
+### Data Team/Jupyter Notebooks (custom instructions)
+
+```
+# Custom Instructions: Data Analysis Notebooks
+
+## Notebook Structure
+- Clear markdown cells explaining each section
+- Descriptive cell comments for complex analysis
+- Results always include confidence intervals
+- Visualizations with titles, axes labels, legends
+- Summary cell at top with key findings
+
+## Code Quality
+- Use pandas, numpy, scikit-learn from official docs
+- Always check for data quality issues first (nulls, duplicates, outliers)
+- Validate assumptions before modeling
+- Seeds for reproducibility (random_state=42)
+- All plots should be publication-quality (matplotlib.style.use('seaborn-v0_8-darkgrid'))
+
+## Analysis Standards
+- Sample size and statistical significance always noted
+- P-values reported, not just p < 0.05
+- Effect sizes included, not just p-values
+- Explain why chosen that statistical test
+- Limitations of analysis clearly stated
+
+## Visualization Rules
+- Color-blind friendly palettes (use colorblind=True in seaborn)
+- No pie charts (use bar charts instead)
+- Proper axis labels and units
+- Caption describing what to see in plot
+- Show 95% confidence intervals on estimates
+```
+
+## Testing Your Custom Instructions
+
+Create a validation checklist to verify instructions actually work:
+
+```markdown
+## Custom Instructions Validation Checklist
+
+### Test 1: Basic Compliance
+- [ ] AI generates code following naming conventions
+- [ ] AI uses specified frameworks/libraries
+- [ ] Generated code matches error handling style
+- [ ] Comments/docstrings follow template
+
+### Test 2: Code Review Standards
+- [ ] Generated tests meet coverage requirement
+- [ ] Error handling present without asking
+- [ ] Logging implemented correctly
+- [ ] Security best practices included
+
+### Test 3: Edge Cases
+- [ ] AI handles constraints mentioned (e.g., no console.log)
+- [ ] AI avoids anti-patterns listed
+- [ ] AI includes required patterns automatically
+- [ ] Multi-file changes consistent with rules
+
+### Test Feature
+- [ ] Request: "Create a new API endpoint for user signup"
+- [ ] Verify: Route structure, validation, error response, logging, testing all follow instructions
+- [ ] If any deviation: Update instructions to be clearer/more specific
+```
+
+## Measuring Instruction Effectiveness
+
+Track the impact of your custom instructions:
+
+```python
+# Analyze code review feedback over time
+pull_request_data = {
+    "before_instructions": {
+        "avg_review_comments": 8.2,
+        "common_issues": [
+            "Missing error handling (30%)",
+            "No tests (25%)",
+            "Wrong naming (20%)",
+            "Security issues (15%)"
+        ],
+        "rework_iterations": 2.3
+    },
+    "after_instructions": {
+        "avg_review_comments": 3.1,  # 62% reduction
+        "common_issues": [
+            "Logic issues (40%)",
+            "Performance (35%)",
+            "Style edge cases (25%)"
+        ],
+        "rework_iterations": 1.1  # 52% reduction
+    }
+}
+```
+
+When AI-generated code passes review comments drop by 60%+, your instructions are working.
+
+## Integrating Instructions Across Tools
+
+Most modern AI tools support instructions, but syntax varies:
+
+**Cursor:** `.cursorrules` file in project root
+**VS Code + Copilot:** `.github/copilot-instructions.md`
+**Claude:** `claude_system_prompt.md` or via Project settings
+**GitHub Copilot:** Settings in repository or organization
+
+For consistency across tools, maintain a single source:
+
+```bash
+# sync-instructions.sh
+# Copy instructions to all tools' expected locations
+
+cp team-instructions.md .cursorrules
+cp team-instructions.md .github/copilot-instructions.md
+cp team-instructions.md claude_system_prompt.md
+
+git add .cursorrules .github/copilot-instructions.md claude_system_prompt.md
+git commit -m "Update custom instructions across all AI tools"
+```
+
+## Common Mistakes and How to Fix Them
+
+**Mistake 1: Too Generic**
+❌ "Write clean code and follow best practices"
+✅ "Use early returns to reduce nesting. Max function length 30 lines. Avoid else blocks."
+
+**Mistake 2: Too Long**
+❌ 500-line instruction document that no one reads
+✅ One-page summary with links to detailed guidelines
+
+**Mistake 3: Not Enforceable**
+❌ "Be mindful of performance"
+✅ "Use .includes() instead of .find() for existence checks. Batch database queries when selecting >10 items."
+
+**Mistake 4: Out of Date**
+❌ Instructions reference old tech stack
+✅ Review instructions quarterly as tools/standards evolve
 
 ## Related Reading
 
