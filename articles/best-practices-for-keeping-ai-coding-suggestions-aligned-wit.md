@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/
 categories: [guides]
-tags: [ai, coding, design-patterns]
+tags: [ai-tools-compared, ai, coding, design-patterns, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

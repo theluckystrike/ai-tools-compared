@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-versioning-cursorrules-files-across-team-/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of]
 reviewed: true
 score: 8
 intent-checked: true

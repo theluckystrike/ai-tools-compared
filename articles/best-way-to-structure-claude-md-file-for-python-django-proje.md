@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-structure-claude-md-file-for-python-django-proje/
 categories: [guides]
-tags: [django, claude, python, workflow]
+tags: [ai-tools-compared, django, claude, python, workflow, best-of, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

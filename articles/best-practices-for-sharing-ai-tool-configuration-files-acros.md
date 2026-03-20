@@ -6,8 +6,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-sharing-ai-tool-configuration-files-acros/
 categories: [guides]
-tags: [tools]
-score: 7
+tags: [ai-tools-compared, tools, best-of, artificial-intelligence]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true

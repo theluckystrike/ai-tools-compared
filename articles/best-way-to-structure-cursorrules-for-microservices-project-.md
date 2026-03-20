@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-way-to-structure-cursorrules-for-microservices-project-/
 categories: [guides]
-tags: [cursor, ai-tools, microservices]
+tags: [ai-tools-compared, cursor, ai-tools, microservices, best-of]
 reviewed: true
 score: 8
 intent-checked: true

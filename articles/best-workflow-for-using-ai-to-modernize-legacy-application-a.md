@@ -6,8 +6,8 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-using-ai-to-modernize-legacy-application-a/
 categories: [guides]
-tags: [tools]
-score: 7
+tags: [ai-tools-compared, tools, best-of, workflow, artificial-intelligence]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true

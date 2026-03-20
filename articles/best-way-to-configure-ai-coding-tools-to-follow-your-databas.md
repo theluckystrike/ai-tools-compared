@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-ai-coding-tools-to-follow-your-databas/
 categories: [guides]
-tags: [tools, ai, configuration]
+tags: [ai-tools-compared, tools, ai, configuration, best-of, artificial-intelligence]
 reviewed: true
 score: 8
 intent-checked: true

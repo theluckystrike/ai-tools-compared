@@ -6,7 +6,7 @@ description: "A practical guide for developers on configuring Claude Code to und
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-claude-code-to-understand-your-interna/
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-practices-for-breaking-down-complex-coding-tasks-for-ai/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of]
 reviewed: true
 score: 8
 intent-checked: true

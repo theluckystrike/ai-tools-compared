@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-cursorrules-for-python-fastapi-project/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, best-of, api]
 reviewed: true
 score: 8
 intent-checked: true
