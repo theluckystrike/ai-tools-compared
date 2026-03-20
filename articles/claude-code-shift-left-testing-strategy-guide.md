@@ -6,10 +6,11 @@ date: 2026-03-17
 author: "AI Tools Compared"
 permalink: /claude-code-shift-left-testing-strategy-guide/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, claude-ai]
 ---
 
 

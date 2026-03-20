@@ -7,7 +7,7 @@ category: "ai-tools"
 topic: ["claude-code", "versioning", "automation"]
 permalink: /claude-code-semantic-versioning-automation/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai, automation]
 reviewed: true
 score: 8
 robots: "index, follow"

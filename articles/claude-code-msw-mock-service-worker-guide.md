@@ -6,7 +6,7 @@ date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /claude-code-msw-mock-service-worker-guide/
 categories: [guides]
-tags: [claude-code, msw, mock-service-worker, api-mocking, testing, development-tools]
+tags: [ai-tools-compared, claude-code, msw, mock-service-worker, api-mocking, testing, development-tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

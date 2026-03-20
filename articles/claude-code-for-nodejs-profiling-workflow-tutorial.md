@@ -6,8 +6,8 @@ date: 2026-03-15
 author: "Claude Skills Guide"
 permalink: /claude-code-for-nodejs-profiling-workflow-tutorial/
 categories: [guides, tutorials]
-tags: [claude-code, claude-skills]
-score: 7
+tags: [ai-tools-compared, claude-code, claude-skills, tutorial, workflow, claude-ai]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true

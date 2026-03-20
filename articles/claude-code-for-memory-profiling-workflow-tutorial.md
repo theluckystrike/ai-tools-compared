@@ -6,8 +6,8 @@ date: 2026-03-19
 author: "theluckystrike"
 permalink: /claude-code-for-memory-profiling-workflow-tutorial/
 categories: [guides, tutorials]
-tags: [claude-code, memory-profiling, performance]
-score: 7
+tags: [ai-tools-compared, claude-code, memory-profiling, performance, tutorial, workflow, claude-ai]
+score: 8
 voice-checked: true
 reviewed: true
 intent-checked: true

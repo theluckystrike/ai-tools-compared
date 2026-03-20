@@ -6,9 +6,9 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-vs-cursor-composer-for-full-stack-development-comparison/
 categories: [guides]
-tags: [ai, development, full-stack, tools]
+tags: [ai-tools-compared, ai, development, full-stack, tools, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

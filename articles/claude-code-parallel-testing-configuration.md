@@ -6,7 +6,7 @@ date: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-parallel-testing-configuration/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
 score: 8
 intent-checked: true

@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /claude-free-vs-chatgpt-free-which-gives-more-per-day/
 categories: [guides]
-tags: [tools]
+tags: [ai-tools-compared, tools, comparison, claude-ai, chatgpt]
 reviewed: true
 score: 8
 intent-checked: true
