@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /runway-inpainting-vs-adobe-firefly-generative-fill/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison]
