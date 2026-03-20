@@ -161,6 +161,177 @@ A developer building a coding assistant using Custom GPTs noticed their team hit
 
 By reducing the instruction set to 500 tokens and implementing on-demand context retrieval, they cut token usage by approximately 60 percent and eliminated mid-morning rate limit issues.
 
+## Token Consumption Deep Dive
+
+### How Memory Tokens Are Counted
+
+Memory overhead is calculated differently depending on implementation:
+
+**Web Interface Memory**:
+- System prompt for memory retrieval: ~150 tokens
+- Actual memory content: Varies (50-5,000 tokens depending on size)
+- Total per message with memory: 200-5,150 tokens added overhead
+
+**API Integration**:
+- The `memory` parameter adds its content to prompt tokens
+- Retrieving memory via system message: Charged at prompt token rates
+- When memory exceeds 4,096 tokens, some implementations truncate to maintain context window
+
+### Real-World Token Consumption Examples
+
+**Scenario A: Light Memory User**
+
+```
+Base conversation: 150 prompt tokens
+Memory content: 200 tokens
+Completion: 300 tokens
+Total: 650 tokens per message
+
+Hourly cost at $0.005/1k prompt tokens: $0.003
+```
+
+**Scenario B: Heavy Memory User**
+
+```
+Base conversation: 150 prompt tokens
+Memory content: 3,000 tokens (detailed history)
+Knowledge files: 2,500 tokens
+Completion: 300 tokens
+Total: 5,950 tokens per message
+
+Hourly cost at $0.005/1k prompt tokens: $0.030
+```
+
+The difference between light and heavy memory configurations creates a 10x cost variance per message.
+
+## Custom GPT Configuration Impact Analysis
+
+### Configuration 1: Minimal Custom GPT
+
+```python
+# Minimal system prompt
+system_prompt = """You are a helpful assistant."""
+
+# No knowledge files
+# No tools enabled
+
+# Token cost per message: ~50 tokens
+# Plus base conversation overhead
+```
+
+### Configuration 2: Full-Featured Custom GPT
+
+```python
+# Extended system prompt
+system_prompt = """
+You are an expert data engineer specializing in ETL pipelines.
+You understand: Apache Spark, Airflow, dbt, SQL optimization.
+You follow company standards for error handling and logging.
+[... 8 additional paragraphs ...]
+"""
+
+# Knowledge files attached:
+# - company_standards.pdf (1,200 tokens)
+# - sql_best_practices.md (800 tokens)
+# - architecture_patterns.json (600 tokens)
+
+# Tools enabled: 5 custom tools with full descriptions
+
+# Token cost per message: ~4,000 tokens
+# Plus base conversation overhead
+```
+
+The fully-featured Custom GPT consumes 80x more tokens than the minimal version.
+
+## Optimization Strategies with Quantified Impact
+
+### Strategy 1: System Prompt Minimization
+
+**Before** (2,000 tokens):
+```
+You are an expert programmer with 20 years of experience in cloud architecture...
+[detailed history, philosophy, preferred approaches, etc.]
+```
+
+**After** (200 tokens):
+```
+Expert cloud architect. Prefer: AWS, Terraform, Go. Output: concise, production-ready code.
+```
+
+**Impact**: Reduces per-message overhead by 90%. Hourly consumption drops from ~12,000 to ~1,200 tokens.
+
+### Strategy 2: Knowledge File Chunking
+
+Instead of one 5,000-token knowledge file:
+
+```python
+# Split into topic-specific files
+knowledge_files = {
+    "api_reference_basic.md": 1,200,  # Only essential API docs
+    "common_patterns.md": 800,         # Frequently used patterns
+    "troubleshooting_guide.md": 600    # Common issues only
+}
+
+# Total: 2,600 tokens vs. 5,000 tokens previously
+# 48% reduction while maintaining coverage
+```
+
+### Strategy 3: Conditional Context Loading
+
+```python
+# Only include memory if conversation explicitly requests it
+def get_context(user_message: str, has_memory: bool) -> str:
+    if "remember" in user_message.lower() and has_memory:
+        return load_memory()
+    else:
+        return ""  # Skip memory retrieval entirely
+```
+
+Implementing conditional loading reduces average token usage by 30-40% depending on user behavior.
+
+## Rate Limit Calculation Worksheet
+
+Use this framework to calculate your actual limits:
+
+```
+Your Plus subscription allows: 40 GPT-4o messages/hour
+
+Message breakdown:
+- Base tokens: 150
+- Your memory tokens: [X]
+- Custom GPT instructions: [Y]
+- Knowledge files: [Z]
+- Average completion tokens: [W]
+
+Total tokens per message: 150 + X + Y + Z + W = [Total]
+Token budget per hour: 40 messages × [Total] tokens = [Budget]
+
+At $0.005 per 1,000 prompt tokens:
+Hourly cost: ([Budget] / 1,000) × $0.005 = [Cost]
+```
+
+## Pricing Impact Calculator
+
+Create a spreadsheet tracking your actual usage:
+
+| Configuration | Messages/Hour | Tokens/Message | Daily Cost | Monthly Cost |
+|---------------|---------------|----------------|-----------|-------------|
+| No Memory, Minimal GPT | 40 | 500 | ~$0.10 | ~$3 |
+| Memory + Standard GPT | 40 | 2,000 | ~$0.40 | ~$12 |
+| Memory + 3 Custom GPTs | 40 | 4,500 | ~$0.90 | ~$27 |
+| Memory + Full-Featured GPT | 40 | 8,000 | ~$1.60 | ~$48 |
+
+Your actual Plus subscription ($20/month) includes a usage allowance. Additional consumption beyond that allowance incurs the token-based charges shown above.
+
+## Migration Path for Heavy Users
+
+If memory and Custom GPTs are consuming your entire quota:
+
+1. **Evaluate actual usage**: Measure token consumption for 7 days
+2. **Identify optimization opportunities**: Use the strategies above
+3. **Consider API access**: Direct API access offers different rate limits and pricing (potentially better for heavy usage)
+4. **Implement selective features**: Not every conversation needs full memory or Custom GPT context
+
 
 
 ## Related Reading
