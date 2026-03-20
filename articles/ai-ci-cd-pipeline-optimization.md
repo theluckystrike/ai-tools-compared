@@ -11,6 +11,7 @@ categories: [guides]
 tags: [devops, automation]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 
