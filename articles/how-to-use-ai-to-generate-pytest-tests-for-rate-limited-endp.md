@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Generate Pytest Tests for Rate-Limited Endpoint Throttling Behavior"
-description: "A practical guide for developers learning to use AI tools to create pytest tests that validate rate limiting and throttling behavior in APIs."
+description:"A practical guide for developers learning to use AI tools to create pytest tests that validate rate limiting and throttling behavior in APIs."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/
@@ -81,66 +81,66 @@ API_KEY = "test-key-12345"
 
 @pytest.fixture
 def api_client():
-    session = requests.Session()
-    session.headers.update({"Authorization": f"Bearer {API_KEY}"})
-    return session
+ session = requests.Session()
+ session.headers.update({"Authorization": f"Bearer {API_KEY}"})
+ return session
 
 def make_response(status_code, headers=None, json_body=None):
-    resp = MagicMock()
-    resp.status_code = status_code
-    resp.headers = headers or {}
-    resp.json.return_value = json_body or {}
-    return resp
+ resp = MagicMock()
+ resp.status_code = status_code
+ resp.headers = headers or {}
+ resp.json.return_value = json_body or {}
+ return resp
 
 
 class TestRateLimitHeaders:
-    def test_success_includes_rate_limit_headers(self, api_client):
-        success = make_response(
-            200,
-            headers={
-                "X-RateLimit-Limit": "100",
-                "X-RateLimit-Remaining": "99",
-                "X-RateLimit-Reset": "1710000060",
-            },
-        )
-        with patch.object(api_client, "post", return_value=success):
-            resp = api_client.post(f"{BASE_URL}/api/v1/search", json={"q": "test"})
+ def test_success_includes_rate_limit_headers(self, api_client):
+ success = make_response(
+ 200,
+ headers={
+ "X-RateLimit-Limit": "100",
+ "X-RateLimit-Remaining": "99",
+ "X-RateLimit-Reset": "1710000060",
+ },
+ )
+ with patch.object(api_client, "post", return_value=success):
+ resp = api_client.post(f"{BASE_URL}/api/v1/search", json={"q": "test"})
 
-        assert resp.status_code == 200
-        assert int(resp.headers["X-RateLimit-Remaining"]) < int(resp.headers["X-RateLimit-Limit"])
+ assert resp.status_code == 200
+ assert int(resp.headers["X-RateLimit-Remaining"]) < int(resp.headers["X-RateLimit-Limit"])
 
 
 class TestThrottling:
-    def test_returns_429_when_limit_exceeded(self, api_client):
-        throttled = make_response(
-            429,
-            headers={"Retry-After": "30"},
-            json_body={"error": "rate_limit_exceeded", "retry_after": 30},
-        )
-        with patch.object(api_client, "post", return_value=throttled):
-            resp = api_client.post(f"{BASE_URL}/api/v1/search", json={"q": "test"})
+ def test_returns_429_when_limit_exceeded(self, api_client):
+ throttled = make_response(
+ 429,
+ headers={"Retry-After": "30"},
+ json_body={"error": "rate_limit_exceeded", "retry_after": 30},
+ )
+ with patch.object(api_client, "post", return_value=throttled):
+ resp = api_client.post(f"{BASE_URL}/api/v1/search", json={"q": "test"})
 
-        assert resp.status_code == 429
-        assert int(resp.headers["Retry-After"]) > 0
-        assert resp.json()["error"] == "rate_limit_exceeded"
+ assert resp.status_code == 429
+ assert int(resp.headers["Retry-After"]) > 0
+ assert resp.json()["error"] == "rate_limit_exceeded"
 
 
 class TestRetryLogic:
-    def test_retries_on_429_then_succeeds(self):
-        throttled = make_response(429, headers={"Retry-After": "1"})
-        success = make_response(200, json_body={"results": []})
-        call_count = 0
+ def test_retries_on_429_then_succeeds(self):
+ throttled = make_response(429, headers={"Retry-After": "1"})
+ success = make_response(200, json_body={"results": []})
+ call_count = 0
 
-        def patched_post(*args, **kwargs):
-            nonlocal call_count
-            call_count += 1
-            return throttled if call_count < 2 else success
+ def patched_post(*args, **kwargs):
+ nonlocal call_count
+ call_count += 1
+ return throttled if call_count < 2 else success
 
-        session = requests.Session()
-        with patch.object(session, "post", side_effect=patched_post):
-            resp = session.post(f"{BASE_URL}/api/v1/search", json={"q": "test"})
+ session = requests.Session()
+ with patch.object(session, "post", side_effect=patched_post):
+ resp = session.post(f"{BASE_URL}/api/v1/search", json={"q": "test"})
 
-        assert call_count >= 1
+ assert call_count >= 1
 ```
 
 
@@ -272,7 +272,7 @@ def test_exponential_backoff_retry_logic():
     assert attempt_count[0] == 3
 ```
 
-This test structure provides comprehensive rate limit coverage while remaining maintainable and extensible.
+This test structure provides rate limit coverage while remaining maintainable and extensible.
 
 ## Customizing Generated Tests
 

@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Generating Coding Kata Exercises Tailored to Your Skill Level"
-description: "A practical guide to AI-powered coding kata generators that adapt difficulty to your experience level, with examples and tool recommendations."
+description:"A practical guide to AI-powered coding kata generators that adapt difficulty to your experience level, with examples and tool recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/
@@ -153,7 +153,7 @@ Claude and GPT-4 generate remarkably tailored exercises because they understand 
 
 
 
-AI code editors like Cursor and Windsurf can generate katas directly in your development environment. This creates a seamless workflow where you practice within your actual coding setup.
+AI code editors like Cursor and Windsurf can generate katas directly in your development environment. This creates a workflow where you practice within your actual coding setup.
 
 
 
@@ -170,7 +170,7 @@ The advantage here is that the generated kata integrates with your existing tool
 
 **Strengths:**
 
-- Seamless IDE integration
+- IDE integration
 
 - Immediate execution and testing
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Continue Dev Free vs Cody Free: Open Source AI Comparison"
-description: "A practical comparison of Continue Dev Free and Cody Free for open source AI coding assistance. Features, limitations, and code examples for developers."
+description:"A practical comparison of Continue Dev Free and Cody Free for open source AI coding assistance. Features, limitations, and code examples for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /continue-dev-free-vs-cody-free-open-source-ai-comparison/

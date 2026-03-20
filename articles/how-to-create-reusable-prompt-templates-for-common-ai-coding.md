@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Create Reusable Prompt Templates for Common AI."
-description: "A practical guide for developers on building reusable prompt templates that streamline AI-assisted coding workflows. Includes code examples and."
+description:"A practical guide for developers on building reusable prompt templates that improve AI-assisted coding workflows. Includes code examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-reusable-prompt-templates-for-common-ai-coding/

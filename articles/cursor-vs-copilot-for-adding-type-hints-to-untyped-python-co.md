@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Cursor vs Copilot for Adding Type Hints to Untyped."
-description: "A practical comparison of Cursor and GitHub Copilot for automatically adding type hints to legacy Python codebases. Which AI coding assistant handles."
+description:"A practical comparison of Cursor and GitHub Copilot for automatically adding type hints to legacy Python codebases. Which AI coding assistant handles."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/
@@ -422,7 +422,7 @@ Choose **GitHub Copilot** if you:
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
-- [Copilot vs Cursor for Writing Comprehensive Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
+- [Copilot vs Cursor for Writing Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
 
 Built by

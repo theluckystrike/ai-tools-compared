@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Writing Effective Terraform State."
-description: "Learn practical approaches to leveraging AI tools for creating robust Terraform state management strategies that scale with your infrastructure."
+description:"Learn practical approaches to using AI tools for creating Terraform state management strategies that scale with your infrastructure."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-terraform-state-manageme/

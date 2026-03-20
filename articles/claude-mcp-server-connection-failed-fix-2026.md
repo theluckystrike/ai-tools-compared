@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude MCP Server Connection Failed Fix (2026)"
-description: "Troubleshooting guide for fixing Claude MCP server connection failures. Step-by-step solutions for developers and power users."
+description:"Troubleshooting guide for fixing Claude MCP server connection failures. Step-by-step solutions for developers and power users."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /claude-mcp-server-connection-failed-fix-2026/
@@ -19,7 +19,7 @@ voice-checked: true
 
 
 
-To fix the "MCP server connection failed" error in Claude Desktop or Claude Code, verify the MCP server process is running (`ps aux | grep mcp`), confirm the port is not blocked by another process (`lsof -i :3000`), and check your `claude.json` or `settings.json` for syntax errors in the server configuration. If the connection still fails, update your MCP packages, clear the Claude cache, and review firewall rules. The full step-by-step walkthrough is below.
+To fix the "MCP server connection failed" error in Claude Desktop or Claude Code, verify the MCP server process is running (`ps aux | grep mcp`), confirm the port is not blocked by another process (`lsof -i:3000`), and check your `claude.json` or `settings.json` for syntax errors in the server configuration. If the connection still fails, update your MCP packages, clear the Claude cache, and review firewall rules. The full step-by-step walkthrough is below.
 
 
 

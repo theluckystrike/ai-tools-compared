@@ -2,7 +2,7 @@
 
 layout: default
 title: "Writing CursorRules for Golang Projects with Specific."
-description: "Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and."
+description:"Learn how to create effective CursorRules configurations for Golang projects that enforce proper concurrency patterns, goroutine management, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
@@ -274,7 +274,7 @@ func TestProcess(t *testing.T) {
 
 
 
-Keep your CursorRules focused and specific rather than . Include only patterns that differ from standard Go idioms or that your project implements differently. Review and update CursorRules as your project evolves, ensuring new team members receive consistent guidance from the AI assistant.
+Keep your CursorRules focused and specific rather than. Include only patterns that differ from standard Go idioms or that your project implements differently. Review and update CursorRules as your project evolves, ensuring new team members receive consistent guidance from the AI assistant.
 
 
 

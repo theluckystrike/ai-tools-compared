@@ -2,7 +2,7 @@
 
 layout: default
 title: "Midjourney Basic Plan Image Limits Per Month: Real."
-description: "A detailed breakdown of Midjourney Basic Plan image generation limits, fast hours, and practical usage estimates for developers and power users."
+description:"A detailed breakdown of Midjourney Basic Plan image generation limits, fast hours, and practical usage estimates for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /midjourney-basic-plan-image-limits-per-month-real-numbers-20/

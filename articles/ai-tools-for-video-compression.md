@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Video Compression: A Developer Guide"
-description: "Explore AI-powered video compression tools with practical examples, CLI commands, and code integration for developers and power users."
+description:"Explore AI-powered video compression tools with practical examples, CLI commands, and code integration for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-compression/

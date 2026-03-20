@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Generate Contributor Hall of Fame Pages from Git History"
-description: "A practical guide for developers on using AI to analyze git history and automatically generate contributor hall of fame pages. Code examples and implementation steps included."
+description:"A practical guide for developers on using AI to analyze git history and automatically generate contributor hall of fame pages. Code examples and implementation steps included."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/

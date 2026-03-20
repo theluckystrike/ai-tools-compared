@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tools for Customer Onboarding: A Developer Guide"
-description: "A practical comparison of AI tools for customer onboarding automation, with code examples and implementation tips for developers."
+description:"A practical comparison of AI tools for customer onboarding automation, with code examples and implementation tips for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-customer-onboarding/

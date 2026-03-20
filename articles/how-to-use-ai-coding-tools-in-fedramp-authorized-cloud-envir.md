@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI Coding Tools in FedRAMP Authorized Cloud."
-description: "Learn how to leverage AI coding assistants while maintaining FedRAMP compliance. Practical strategies for developers working in government-regulated."
+description:"Learn how to use AI coding assistants while maintaining FedRAMP compliance. Practical strategies for developers working in government-regulated."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/

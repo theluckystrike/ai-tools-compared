@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Podcastle vs Riverside: AI Podcast Recording Tools Compared"
-description: "A technical comparison of Castle and Riverside for AI-powered podcast recording, with API integrations, workflow examples, and implementation guidance for developers."
+description:"A technical comparison of Castle and Riverside for AI-powered podcast recording, with API integrations, workflow examples, and implementation guidance for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /podcastle-vs-riverside-ai-podcast-recording/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Assistant Accuracy for TypeScript Svelte."
-description: "A practical analysis of AI coding assistant accuracy when generating TypeScript Svelte components, with code examples and quality benchmarks for."
+description:"A practical analysis of AI coding assistant accuracy when generating TypeScript Svelte components, with code examples and quality benchmarks for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-accuracy-for-typescript-svelte-component/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Set Up Model Context Protocol Server Providing."
-description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code."
+description:"A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-providing-live-d/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Timezone Edge Case Test Data"
-description: "A practical guide for developers on using AI tools to generate comprehensive timezone edge case test data, with code examples and implementation."
+description:"A practical guide for developers on using AI tools to generate timezone edge case test data, with code examples and implementation."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-timezone-edge-case-test-data/
@@ -46,7 +46,7 @@ Your application must handle several categories of edge cases that appear regula
 
 
 
-**Offset calculations vary by context.** A UTC offset of -5 could mean EST, CST during standard time, or other timezones in different regions. Using fixed offsets instead of proper timezone identifiers leads to incorrect calculations in many scenarios.
+**Offset calculations vary by context.** An UTC offset of -5 could mean EST, CST during standard time, or other timezones in different regions. Using fixed offsets instead of proper timezone identifiers leads to incorrect calculations in many scenarios.
 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Write GitHub Actions Bot Comments for."
-description: "Learn how to leverage AI tools to create helpful, welcoming GitHub Actions bot comments that guide first-time contributors through the pull request."
+description:"Learn how to use AI tools to create helpful, welcoming GitHub Actions bot comments that guide first-time contributors through the pull request."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-actions-bot-comments-for-first/

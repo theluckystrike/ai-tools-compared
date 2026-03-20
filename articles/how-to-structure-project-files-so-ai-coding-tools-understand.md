@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Structure Project Files So AI Coding Tools."
-description: "Learn practical strategies for organizing your project files to help AI coding assistants like Cursor, GitHub Copilot, and Claude understand your."
+description:"Learn practical strategies for organizing your project files to help AI coding assistants like Cursor, GitHub Copilot, and Claude understand your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-structure-project-files-so-ai-coding-tools-understand/

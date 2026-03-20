@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Realistic Test Data for."
-description: "Learn how to leverage AI tools to create production-like test data for PostgreSQL database seeding, with practical examples and code snippets."
+description:"Learn how to use AI tools to create production-like test data for PostgreSQL database seeding, with practical examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/

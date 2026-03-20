@@ -2,7 +2,7 @@
 
 layout: default
 title: "Opus Clip vs Vidyo AI for Short Clips: A Technical."
-description: "A practical comparison of Opus Clip and Vidyo AI for creating short video clips, with API access, automation capabilities, and workflow integration."
+description:"A practical comparison of Opus Clip and Vidyo AI for creating short video clips, with API access, automation capabilities, and workflow integration."
 date: 2026-03-15
 author: theluckystrike
 permalink: /opus-clip-vs-vidyo-ai-short-clips/

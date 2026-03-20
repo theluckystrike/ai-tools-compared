@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Move Stable Diffusion Workflows to Midjourney."
-description: "A practical guide for developers and power users transitioning from Stable Diffusion to Midjourney. Learn prompt conversion, parameter mapping, and."
+description:"A practical guide for developers and power users transitioning from Stable Diffusion to Midjourney. Learn prompt conversion, parameter mapping, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Write GitHub Release Tag Descriptions."
-description: "A practical guide for developers using AI to create clear, informative GitHub release notes that include download instructions and asset links."
+description:"A practical guide for developers using AI to create clear, informative GitHub release notes that include download instructions and asset links."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-release-tag-descriptions-with-/
@@ -345,7 +345,7 @@ npm install -g myapp
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [How to Use AI to Write GitHub Actions Bot Comments for.](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
 - [How to Use AI to Write Security Advisory Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
-- [Effective Strategies for Using AI to Write Comprehensive.](/ai-tools-compared/effective-strategies-for-using-ai-to-write-comprehensive-api/)
+- [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
 
 Built by
 

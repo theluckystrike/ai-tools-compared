@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Edits Panel vs Cursor Composer Workflow."
-description: "A practical comparison of GitHub Copilot Edits Panel and Cursor Composer workflows for code refactoring. Includes code examples and workflow."
+description:"A practical comparison of GitHub Copilot Edits Panel and Cursor Composer workflows for code refactoring. Includes code examples and workflow."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/

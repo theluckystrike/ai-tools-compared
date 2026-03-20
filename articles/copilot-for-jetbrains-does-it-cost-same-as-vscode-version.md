@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot for JetBrains: Does It Cost Same as VSCode Version"
-description: "A practical guide for developers comparing GitHub Copilot pricing across JetBrains IDEs and VSCode. Learn about features, setup, and whether the costs."
+description:"A practical guide for developers comparing GitHub Copilot pricing across JetBrains IDEs and VSCode. Learn about features, setup, and whether the costs."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-for-jetbrains-does-it-cost-same-as-vscode-version/

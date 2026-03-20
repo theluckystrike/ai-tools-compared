@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code MSW Mock Service Worker Guide"
-description: "A comprehensive guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices for effective testing."
+description:"A guide to using MSW (Mock Service Worker) with Claude Code for API mocking in development workflows. Learn setup, configuration, and best practices for effective testing."
 date: 2026-03-18
 author: "AI Tools Compared"
 permalink: /claude-code-msw-mock-service-worker-guide/
@@ -23,7 +23,7 @@ voice-checked: false
 
 
 
-Mock Service Worker (MSW) is a powerful API mocking library that intercepts network requests at the service worker level. When combined with Claude Code, it creates a seamless development environment where you can simulate API responses without relying on external servers. This guide walks you through setting up MSW with Claude Code and using it effectively in your development workflow.
+Mock Service Worker (MSW) is a powerful API mocking library that intercepts network requests at the service worker level. When combined with Claude Code, it creates a development environment where you can simulate API responses without relying on external servers. This guide walks you through setting up MSW with Claude Code and using it effectively in your development workflow.
 
 
 

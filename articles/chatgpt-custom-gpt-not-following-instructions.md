@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Custom GPT Not Following Instructions."
-description: "A practical troubleshooting guide for developers and power users when Custom GPTs ignore their instructions. Step-by-step diagnostics and fixes."
+description:"A practical troubleshooting guide for developers and power users when Custom GPTs ignore their instructions. Step-by-step diagnostics and fixes."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-custom-gpt-not-following-instructions/

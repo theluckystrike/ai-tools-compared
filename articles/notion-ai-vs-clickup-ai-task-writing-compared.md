@@ -3,7 +3,7 @@
 
 layout: default
 title: "Notion AI vs ClickUp AI: Task Writing Compared"
-description: "A practical comparison of Notion AI and ClickUp AI for task writing. Compare prompt handling, automation capabilities, and which tool better suits."
+description:"A practical comparison of Notion AI and ClickUp AI for task writing. Compare prompt handling, automation capabilities, and which tool better suits."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /notion-ai-vs-clickup-ai-task-writing-compared/

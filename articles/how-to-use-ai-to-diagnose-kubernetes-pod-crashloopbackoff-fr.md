@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Diagnose Kubernetes Pod CrashLoopBackOff from Container Logs"
-description: "Learn practical techniques for using AI tools to analyze container logs and identify the root causes of Kubernetes pod CrashLoopBackOff errors."
+description:"Learn practical techniques for using AI tools to analyze container logs and identify the root causes of Kubernetes pod CrashLoopBackOff errors."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/
@@ -209,7 +209,7 @@ The AI immediately identifies that `express` is missing. It might ask:
 
 - Is there a package-lock.json being copied correctly?
 
-- Are node_modules in .dockerignore?
+- Are node_modules in.dockerignore?
 
 
 

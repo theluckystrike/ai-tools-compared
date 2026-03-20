@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Free AI Tool for Code Explanation and Documentation"
-description: "A practical comparison of free AI tools for explaining code and generating documentation, with real examples and code snippets for developers."
+description:"A practical comparison of free AI tools for explaining code and generating documentation, with real examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-free-ai-tool-for-code-explanation-and-documentation/

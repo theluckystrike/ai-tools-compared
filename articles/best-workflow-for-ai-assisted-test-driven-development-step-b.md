@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Workflow for AI-Assisted Test Driven Development."
-description: "A practical step-by-step workflow for implementing AI-assisted test driven development in your projects, with real code examples and expert."
+description:"A practical step-by-step workflow for implementing AI-assisted test driven development in your projects, with real code examples and expert."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-ai-assisted-test-driven-development-step-b/

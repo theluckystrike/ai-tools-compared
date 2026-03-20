@@ -3,7 +3,7 @@
 
 layout: default
 title: "Pandas AI vs Polars AI Data Processing Compared"
-description: "A practical comparison of Pandas AI and Polars AI for data processing, with code examples and recommendations for developers."
+description:"A practical comparison of Pandas AI and Polars AI for data processing, with code examples and recommendations for developers."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /pandas-ai-vs-polars-ai-data-processing/

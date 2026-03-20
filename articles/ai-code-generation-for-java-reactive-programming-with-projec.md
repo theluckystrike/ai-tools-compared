@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Code Generation for Java Reactive Programming with Project Reactor"
-description: "A practical guide for developers exploring AI code generation for Java reactive programming using Project Reactor, with examples and quality assessment in 2026."
+description:"A practical guide for developers exploring AI code generation for Java reactive programming using Project Reactor, with examples and quality assessment in 2026."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-for-java-reactive-programming-with-projec/

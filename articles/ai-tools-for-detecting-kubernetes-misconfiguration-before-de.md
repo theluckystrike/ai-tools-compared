@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Detecting Kubernetes Misconfiguration."
-description: "Explore how AI tools can identify Kubernetes misconfigurations before they reach your cluster. Practical examples, code patterns, and comparison of."
+description:"Explore how AI tools can identify Kubernetes misconfigurations before they reach your cluster. Practical examples, code patterns, and comparison of."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-detecting-kubernetes-misconfiguration-before-de/

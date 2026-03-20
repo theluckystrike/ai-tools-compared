@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Help DevRel Teams Create Video Tutorial Scripts and Screen Recordings"
-description: "A practical guide for developer relations teams on using AI tools to write tutorial scripts, generate captions, and automate post-production for screen recordings."
+description:"A practical guide for developer relations teams on using AI tools to write tutorial scripts, generate captions, and automate post-production for screen recordings."
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/

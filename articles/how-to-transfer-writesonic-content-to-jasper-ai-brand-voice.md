@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Transfer WriteSonic Content to Jasper AI Brand Voice"
-description: "A practical guide for developers and power users moving content and brand configurations from WriteSonic to Jasper AI. Includes export methods, API usage, and code examples."
+description:"A practical guide for developers and power users moving content and brand configurations from WriteSonic to Jasper AI. Includes export methods, API usage, and code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/

@@ -3,7 +3,7 @@
 
 layout: default
 title: "Jasper AI Brand Voice vs Claude Style Matching"
-description: "A technical comparison of Jasper AI Brand Voice and Claude style matching for developers and power users building content pipelines."
+description:"A technical comparison of Jasper AI Brand Voice and Claude style matching for developers and power users building content pipelines."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /jasper-ai-brand-voice-vs-claude-style-matching/

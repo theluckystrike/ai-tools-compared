@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Playwright Tests That Verify."
-description: "A practical comparison of AI coding tools for generating Playwright tests that validate responsive design breakpoints, media queries, and layout."
+description:"A practical comparison of AI coding tools for generating Playwright tests that validate responsive design breakpoints, media queries, and layout."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-playwright-tests-that-verify-responsive/

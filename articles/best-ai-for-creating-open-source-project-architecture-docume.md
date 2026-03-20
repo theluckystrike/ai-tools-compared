@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Creating Open Source Project Architecture Documentation"
-description: "A practical guide comparing AI tools that help generate comprehensive open source project architecture documentation, including C4 models, API specs, and system diagrams."
+description:"A practical guide comparing AI tools that help generate open source project architecture documentation, including C4 models, API specs, and system diagrams."
 date: 2026-03-19
 author: theluckystrike
 permalink: /best-ai-for-creating-open-source-project-architecture-docume/

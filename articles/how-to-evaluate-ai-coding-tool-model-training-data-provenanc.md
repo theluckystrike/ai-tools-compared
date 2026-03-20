@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Evaluate AI Coding Tool Model Training Data."
-description: "A practical guide for developers and power users to assess AI coding tool training data sources, understand copyright implications, and mitigate legal."
+description:"A practical guide for developers and power users to assess AI coding tool training data sources, understand copyright implications, and mitigate legal."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-model-training-data-provenanc/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Parallel Testing Configuration - Complete."
-description: "Learn how to configure parallel testing with Claude Code to speed up your test suite. Practical examples for Jest, pytest, and other frameworks."
+description:"Learn how to configure parallel testing with Claude Code to speed up your test suite. Practical examples for Jest, pytest, and other frameworks."
 date: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-parallel-testing-configuration/
@@ -484,7 +484,7 @@ export default defineConfig({
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 - [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 

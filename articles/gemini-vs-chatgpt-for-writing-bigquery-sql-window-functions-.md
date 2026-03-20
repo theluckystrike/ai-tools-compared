@@ -2,7 +2,7 @@
 
 layout: default
 title: "Gemini vs ChatGPT for Writing BigQuery SQL Window."
-description: "A practical comparison of Gemini and ChatGPT for writing BigQuery SQL window functions. Learn which AI tool handles complex SQL patterns better."
+description:"A practical comparison of Gemini and ChatGPT for writing BigQuery SQL window functions. Learn which AI tool handles complex SQL patterns better."
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/

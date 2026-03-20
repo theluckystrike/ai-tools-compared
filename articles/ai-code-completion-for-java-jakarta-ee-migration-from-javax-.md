@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Code Completion for Java Jakarta EE Migration from Javax"
-description: "A practical guide for developers migrating Java EE applications from javax to Jakarta namespace, exploring how AI code completion tools accelerate the."
+description:"A practical guide for developers migrating Java EE applications from javax to Jakarta namespace, exploring how AI code completion tools accelerate the."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-completion-for-java-jakarta-ee-migration-from-javax-/

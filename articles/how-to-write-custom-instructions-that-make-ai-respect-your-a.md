@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Write Custom Instructions That Make AI Respect."
-description: "Learn to write effective custom instructions that help AI tools respect your API rate limits. Practical examples and code snippets for developers."
+description:"Learn to write effective custom instructions that help AI tools respect your API rate limits. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/

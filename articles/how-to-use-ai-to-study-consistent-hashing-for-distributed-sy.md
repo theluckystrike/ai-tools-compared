@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Study Consistent Hashing for."
-description: "A practical guide for developers preparing for distributed system interviews using AI tools to learn and master consistent hashing concepts with code."
+description:"A practical guide for developers preparing for distributed system interviews using AI tools to learn and master consistent hashing concepts with code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-study-consistent-hashing-for-distributed-sy/
@@ -47,7 +47,7 @@ AI tools excel at breaking down complex algorithms into digestible explanations.
 
 
 
-A useful prompt structure: "Explain consistent hashing as if I were a junior developer with basic data structures knowledge. Include a simple Python implementation with comments."
+An useful prompt structure: "Explain consistent hashing as if I were a junior developer with basic data structures knowledge. Include a simple Python implementation with comments."
 
 
 

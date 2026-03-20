@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB"
-description: "A practical comparison of Google Gemini and Anthropic Claude for processing and analyzing large CSV files exceeding 100MB, with code examples and real-world recommendations."
+description:"A practical comparison of Google Gemini and Anthropic Claude for processing and analyzing large CSV files exceeding 100MB, with code examples and real-world recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/

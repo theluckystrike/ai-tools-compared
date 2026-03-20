@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically"
-description: "A practical guide to using AI tools for creating Playwright tests that automatically verify WCAG accessibility compliance. Code examples and implementation strategies for developers."
+description:"A practical guide to using AI tools for creating Playwright tests that automatically verify WCAG accessibility compliance. Code examples and implementation strategies for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-playwright-tests-that-verify-accessibil/
@@ -24,7 +24,7 @@ Automated accessibility testing has become essential for building inclusive web 
 
 
 
-WCAG (Web Content Accessibility Guidelines) provides the foundation for making web content accessible to people with disabilities. The guidelines are organized around four principles: perceivable, operable, understandable, and . Each principle contains specific success criteria that web applications must meet to achieve compliance levels A, AA, or AAA.
+WCAG (Web Content Accessibility Guidelines) provides the foundation for making web content accessible to people with disabilities. The guidelines are organized around four principles: perceivable, operable, understandable, and. Each principle contains specific success criteria that web applications must meet to achieve compliance levels A, AA, or AAA.
 
 
 

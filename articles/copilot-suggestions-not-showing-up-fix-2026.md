@@ -2,7 +2,7 @@
 
 layout: default
 title: "Copilot Suggestions Not Showing Up Fix 2026"
-description: "A practical troubleshooting guide for developers and power users experiencing GitHub Copilot suggestion issues. Learn step-by-step fixes and diagnostic."
+description:"A practical troubleshooting guide for developers and power users experiencing GitHub Copilot suggestion issues. Learn step-by-step fixes and diagnostic."
 date: 2026-03-15
 author: theluckystrike
 permalink: /copilot-suggestions-not-showing-up-fix-2026/

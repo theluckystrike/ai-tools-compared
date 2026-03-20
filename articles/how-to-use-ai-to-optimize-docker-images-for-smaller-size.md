@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Optimize Docker Images for Smaller Size"
-description: "A practical guide for developers on using AI tools to analyze, optimize, and reduce Docker image sizes with real code examples and strategies."
+description:"A practical guide for developers on using AI tools to analyze, optimize, and reduce Docker image sizes with real code examples and strategies."
 date: 2026-03-18
 author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-docker-images-for-smaller-size/
@@ -241,7 +241,7 @@ The AI can identify patterns like:
 
 - Unnecessary packages included in the base image
 
-- Missing .dockerignore file causing large contexts
+- Missing.dockerignore file causing large contexts
 
 - Inefficient COPY commands that include unnecessary files
 
@@ -249,11 +249,11 @@ The AI can identify patterns like:
 
 
 
-### Creating an Optimized .dockerignore
+### Creating an Optimized.dockerignore
 
 
 
-AI can help generate a .dockerignore file to prevent unnecessary files from being included in the build context.
+AI can help generate a.dockerignore file to prevent unnecessary files from being included in the build context.
 
 
 

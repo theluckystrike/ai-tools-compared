@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Telecom Customer Service"
-description: "A practical guide to AI-powered solutions for telecom customer service teams, with implementation examples and code snippets for developers."
+description:"A practical guide to AI-powered solutions for telecom customer service teams, with implementation examples and code snippets for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-telecom-customer-service/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Designers Creating Component Naming."
-description: "A practical guide to using AI tools for generating consistent component naming conventions from design system tokens. Includes prompt strategies and."
+description:"A practical guide to using AI tools for generating consistent component naming conventions from design system tokens. Includes prompt strategies and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-designers-creating-component-naming-conventions/

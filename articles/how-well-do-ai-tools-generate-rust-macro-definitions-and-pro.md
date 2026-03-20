@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Well Do AI Tools Generate Rust Macro Definitions and."
-description: "A practical evaluation of AI coding tools for generating Rust macros. Test results, code quality, and recommendations for developers working with."
+description:"A practical evaluation of AI coding tools for generating Rust macros. Test results, code quality, and recommendations for developers working with."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/
@@ -306,7 +306,7 @@ It provided only a stub. Procedural macros are clearly outside Copilot's strong 
 
 
 
-**2. All tools struggle with repetition patterns.** The `$()*` and `$()* ,*` syntax in declarative macros trips up AI models. Expect to iterate and refine.
+**2. All tools struggle with repetition patterns.** The `$()*` and `$()*,*` syntax in declarative macros trips up AI models. Expect to iterate and refine.
 
 
 

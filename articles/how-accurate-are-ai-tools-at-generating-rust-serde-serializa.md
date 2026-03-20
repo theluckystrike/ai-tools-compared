@@ -2,7 +2,7 @@
 
 layout: default
 title: "How Accurate Are AI Tools at Generating Rust Serde."
-description: "A practical analysis of how well AI coding assistants generate Rust serde serialization code, with real examples and accuracy assessments for developers."
+description:"A practical analysis of how well AI coding assistants generate Rust serde serialization code, with real examples and accuracy assessments for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/

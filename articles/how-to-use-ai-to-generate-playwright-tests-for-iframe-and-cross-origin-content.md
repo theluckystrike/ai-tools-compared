@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Playwright Tests for Iframe."
-description: "A practical guide for developers on using AI tools to generate Playwright tests for iframe and cross-origin content handling."
+description:"A practical guide for developers on using AI tools to generate Playwright tests for iframe and cross-origin content handling."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/
@@ -37,7 +37,7 @@ When asking an AI to generate Playwright tests for iframe scenarios, specificity
 
 
 
-A effective prompt includes the iframe element's identifying attributes, the expected behavior of the content inside, and any state changes that should occur after user interactions. For example, if clicking a button inside an iframe should update a counter on the parent page, specify this interaction pattern clearly.
+An effective prompt includes the iframe element's identifying attributes, the expected behavior of the content inside, and any state changes that should occur after user interactions. For example, if clicking a button inside an iframe should update a counter on the parent page, specify this interaction pattern clearly.
 
 
 

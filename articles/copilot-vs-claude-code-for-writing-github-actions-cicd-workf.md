@@ -2,7 +2,7 @@
 
 layout: default
 title: "Copilot vs Claude Code for Writing GitHub Actions CI/CD."
-description: "A practical comparison of GitHub Copilot and Claude Code for writing GitHub Actions CI/CD workflows, with code examples and recommendations for developers."
+description:"A practical comparison of GitHub Copilot and Claude Code for writing GitHub Actions CI/CD workflows, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing-github-actions-cicd-workf/

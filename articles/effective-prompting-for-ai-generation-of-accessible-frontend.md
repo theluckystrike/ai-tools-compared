@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Prompting for AI Generation of Accessible."
-description: "A practical guide to writing prompts that generate WCAG-compliant, accessible frontend components using AI coding assistants."
+description:"A practical guide to writing prompts that generate WCAG-compliant, accessible frontend components using AI coding assistants."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-prompting-for-ai-generation-of-accessible-frontend/
@@ -297,7 +297,7 @@ Test every AI-generated component. Use automated tools, screen readers, and keyb
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for Using AI to Write Comprehensive.](/ai-tools-compared/effective-strategies-for-using-ai-to-write-comprehensive-api/)
+- [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
 - [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 
 Built by

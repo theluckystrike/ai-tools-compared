@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Transfer Midjourney Prompt Library to Ideogram."
-description: "A practical guide for developers and power users migrating their Midjourney prompt collections to Ideogram. Includes conversion scripts, syntax."
+description:"A practical guide for developers and power users migrating their Midjourney prompt collections to Ideogram. Includes conversion scripts, syntax."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/

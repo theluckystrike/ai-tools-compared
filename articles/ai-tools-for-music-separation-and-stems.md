@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Music Separation and Stems"
-description: "A practical guide to AI-powered music source separation tools for developers, with code examples, API integrations, and implementation strategies."
+description:"A practical guide to AI-powered music source separation tools for developers, with code examples, API integrations, and implementation strategies."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-music-separation-and-stems/
@@ -60,7 +60,7 @@ Spleeter runs locally, giving you full control over processing without API costs
 
 
 
-Meta's Demucs provides state-of-the-art separation quality with support for 4-stem and 2-stem configurations. It consistently produces cleaner separations than earlier tools, particularly for drums and bass.
+Meta's Demucs provides modern separation quality with support for 4-stem and 2-stem configurations. It consistently produces cleaner separations than earlier tools, particularly for drums and bass.
 
 
 

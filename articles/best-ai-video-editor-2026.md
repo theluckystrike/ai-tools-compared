@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Video Editor 2026: A Developer's Guide to Intelligent Video Production"
-description: "A practical comparison of AI-powered video editing tools for developers and power users, with CLI examples, API integrations, and workflow recommendations."
+description:"A practical comparison of AI-powered video editing tools for developers and power users, with CLI examples, API integrations, and workflow recommendations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-video-editor-2026/

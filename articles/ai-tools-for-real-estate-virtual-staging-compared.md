@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Real Estate Virtual Staging Compared"
-description: "A technical comparison of AI-powered virtual staging tools for real estate developers and power users. Explore APIs, integration approaches, and practical implementation examples."
+description:"A technical comparison of AI-powered virtual staging tools for real estate developers and power users. Explore APIs, integration approaches, and practical implementation examples."
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /ai-tools-for-real-estate-virtual-staging-compared/

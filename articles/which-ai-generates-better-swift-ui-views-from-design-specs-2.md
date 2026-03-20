@@ -2,7 +2,7 @@
 
 layout: default
 title: "Which AI Generates Better SwiftUI Views From Design."
-description: "A practical comparison of AI tools for generating SwiftUI views from design specifications, with code examples and recommendations for developers."
+description:"A practical comparison of AI tools for generating SwiftUI views from design specifications, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-generates-better-swift-ui-views-from-design-specs-2/

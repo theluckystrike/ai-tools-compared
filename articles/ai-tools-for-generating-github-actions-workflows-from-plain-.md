@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating GitHub Actions Workflows from."
-description: "A practical guide to AI tools that convert natural language into GitHub Actions workflows, with code examples and comparison for developers."
+description:"A practical guide to AI tools that convert natural language into GitHub Actions workflows, with code examples and comparison for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/

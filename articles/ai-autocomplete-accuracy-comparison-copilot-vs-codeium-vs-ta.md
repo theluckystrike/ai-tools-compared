@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Autocomplete Accuracy Comparison: Copilot vs Codeium."
-description: "A practical comparison of AI autocomplete accuracy between GitHub Copilot, Codeium, and Tabnine. Real-world code examples and accuracy insights for."
+description:"A practical comparison of AI autocomplete accuracy between GitHub Copilot, Codeium, and Tabnine. Real-world code examples and accuracy insights for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/

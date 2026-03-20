@@ -2,7 +2,7 @@
 
 layout: default
 title: "Copilot vs Cursor for Writing Terraform Modules from Scratch"
-description: "A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations."
+description:"A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-terraform-modules-from-scratch/
@@ -218,7 +218,7 @@ Both tools improve with clear, descriptive comments in your Terraform code. Taki
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Cursor for Writing Comprehensive Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing-comprehensive-pytest-fixtures-/)
+- [Copilot vs Cursor for Writing Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 

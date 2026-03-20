@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI for Converting Figma Designs to React Components in 2026"
-description: "A practical guide comparing AI tools that convert Figma designs to React components, with code examples and recommendations for developers."
+description:"A practical guide comparing AI tools that convert Figma designs to React components, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-converting-figma-designs-to-react-components-2026/

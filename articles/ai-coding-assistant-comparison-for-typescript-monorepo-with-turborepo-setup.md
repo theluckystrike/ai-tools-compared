@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Coding Assistant Comparison for TypeScript Monorepo with Turborepo Setup"
-description: "A practical comparison of AI coding assistants for TypeScript monorepos using Turborepo, with code examples and recommendations for developers."
+description:"A practical comparison of AI coding assistants for TypeScript monorepos using Turborepo, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Triaging GitHub Issues by Severity and."
-description: "Discover the best AI tools for automatically triaging GitHub issues by severity and category in 2026. Compare features, pricing, and integration."
+description:"Discover the best AI tools for automatically triaging GitHub issues by severity and category in 2026. Compare features, pricing, and integration."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-ai-tool-for-triaging-github-issues-by-severity-and-cate/

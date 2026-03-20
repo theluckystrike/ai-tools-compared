@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sora vs Runway AI Video Generation: A Technical."
-description: "A practical comparison of OpenAI Sora and Runway AI video generation APIs for developers building video applications."
+description:"A practical comparison of OpenAI Sora and Runway AI video generation APIs for developers building video applications."
 date: 2026-03-15
 author: theluckystrike
 permalink: /sora-vs-runway-ai-video-generation/
@@ -16,7 +16,7 @@ voice-checked: true
 
 {% raw %}
 
-Choose Sora if you need physically coherent long-form video (60+ seconds) and seamless integration with OpenAI's GPT ecosystem. Choose Runway if you need stylized artistic transformations, strong image-to-video capabilities, and a more mature generation pipeline. Both offer REST APIs and pay-per-generation pricing, but their strengths diverge on quality characteristics, prompt handling, and use case fit.
+Choose Sora if you need physically coherent long-form video (60+ seconds) and integration with OpenAI's GPT ecosystem. Choose Runway if you need stylized artistic transformations, strong image-to-video capabilities, and a more mature generation pipeline. Both offer REST APIs and pay-per-generation pricing, but their strengths diverge on quality characteristics, prompt handling, and use case fit.
 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Canvas Not Saving Changes Fix (2026)"
-description: "Troubleshooting guide for developers and power users experiencing ChatGPT Canvas save issues. Step-by-step fixes and diagnostic tips."
+description:"Troubleshooting guide for developers and power users experiencing ChatGPT Canvas save issues. Step-by-step fixes and diagnostic tips."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /chatgpt-canvas-not-saving-changes-fix-2026/

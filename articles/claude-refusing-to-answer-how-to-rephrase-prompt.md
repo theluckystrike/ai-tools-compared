@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Refusing to Answer: How to Rephrase Your Prompt"
-description: "A troubleshooting guide for developers and power users experiencing Claude refusing to answer. Learn how to rephrase prompts effectively and bypass common AI assistant refusal triggers."
+description:"A troubleshooting guide for developers and power users experiencing Claude refusing to answer. Learn how to rephrase prompts effectively and bypass common AI assistant refusal triggers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-refusing-to-answer-how-to-rephrase-prompt/
@@ -217,7 +217,7 @@ Some code patterns can appear malicious. Provide more context about your project
 - [Claude Code Troubleshooting Guides](/ai-tools-compared/guides-hub/)
 - [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 - [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 
 Built by
 

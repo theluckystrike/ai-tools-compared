@@ -4,7 +4,7 @@
 
 layout: default
 title: "Copilot Suggestions Wrong How to Fix"
-description: "A practical troubleshooting guide for developers and power users experiencing incorrect GitHub Copilot suggestions. Learn step-by-step fixes."
+description:"A practical troubleshooting guide for developers and power users experiencing incorrect GitHub Copilot suggestions. Learn step-by-step fixes."
 date: 2026-03-15
 author: theluckystrike
 permalink: /copilot-suggestions-wrong-how-to-fix/

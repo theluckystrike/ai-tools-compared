@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Transfer GitHub Copilot Organization Settings."
-description: "A practical guide for developers moving from GitHub Copilot to Cursor Business. Learn what settings you can migrate, what requires manual."
+description:"A practical guide for developers moving from GitHub Copilot to Cursor Business. Learn what settings you can migrate, what requires manual."
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-github-copilot-org-settings-when-switching-to-curso/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Assistant for Creating Playwright Tests for."
-description: "A practical guide comparing AI tools for generating Playwright tests for table components with sorting, filtering, and pagination features."
+description:"A practical guide comparing AI tools for generating Playwright tests for table components with sorting, filtering, and pagination features."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/

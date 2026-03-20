@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude vs ChatGPT for Writing Datadog Dashboard."
-description: "A practical comparison of Claude and ChatGPT for creating Datadog dashboard Terraform configurations. Includes code examples and performance benchmarks."
+description:"A practical comparison of Claude and ChatGPT for creating Datadog dashboard Terraform configurations. Includes code examples and performance benchmarks."
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/
@@ -273,7 +273,7 @@ terraform {
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
-- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 - [ChatGPT vs Claude for Generating Cypress Component Test.](/ai-tools-compared/chatgpt-vs-claude-for-generating-cypress-component-test-boil/)
 
 Built by

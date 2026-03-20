@@ -2,7 +2,7 @@
 
 layout: default
 title: "Switching from Windsurf to Cursor: How to Transfer."
-description: "A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."
+description:"A practical step-by-step guide for developers moving from Windsurf to Cursor. Learn how to transfer project configurations, settings, rules, and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-to-cursor-how-to-transfer-project-config/
@@ -195,7 +195,7 @@ Review each keybinding. Some may conflict with Cursor's default shortcuts and re
 
 
 
-If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for a seamless experience.
+If you have custom terminal configurations or task definitions in Windsurf, migrate these to Cursor for a experience.
 
 
 
@@ -291,7 +291,7 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 - [How to Migrate Cursor Rules File to Windsurf Rules.](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [How to Migrate WindSurf AI Rules to Cursor .cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
 
 Built by
 

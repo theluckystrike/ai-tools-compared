@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Manage AI Coding Context When Switching Between."
-description: "A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples."
+description:"A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-when-switching-between-diffe/

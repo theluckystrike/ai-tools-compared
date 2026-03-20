@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Workflow for Using AI to Modernize Legacy Application Architecture in 2026"
-description: "A practical workflow for developers to use AI tools when modernizing legacy application architecture, with code examples and proven strategies."
+description:"A practical workflow for developers to use AI tools when modernizing legacy application architecture, with code examples and proven strategies."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-using-ai-to-modernize-legacy-application-a/
@@ -70,7 +70,7 @@ With analysis complete, shift focus to designing your target architecture. AI as
 
 
 
-A useful prompt for architecture planning:
+An useful prompt for architecture planning:
 
 
 

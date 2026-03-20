@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Assistant for Designers Writing User Journey."
-description: "A practical guide for developers and power users comparing AI assistants that help transform raw analytics data into actionable user journey maps."
+description:"A practical guide for developers and power users comparing AI assistants that help transform raw analytics data into actionable user journey maps."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-designers-writing-user-journey-maps-fr/
@@ -49,7 +49,7 @@ Most AI assistants can work with analytics data in several formats:
 
 
 
-The quality of output depends heavily on how you frame your request. Simply asking "create an user journey map" produces generic results. Providing specific data with clear questions about particular user segments or conversion paths yields actionable insights.
+The quality of output depends heavily on how you frame your request. Simply asking "create an user journey map" produces generic results. Providing specific data with clear questions about particular user segments or conversion paths yields practical recommendations.
 
 
 

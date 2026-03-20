@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Playwright Network."
-description: "Learn how to leverage AI tools to automatically generate Playwright network interception tests that verify your application's behavior when network connectivity is unavailable."
+description:"Learn how to use AI tools to automatically generate Playwright network interception tests that verify your application's behavior when network connectivity is unavailable."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-network-interception-te/
@@ -190,7 +190,7 @@ test('preserves cart items during network interruption', async ({ page }) => {
 ```
 
 
-This test validates that the application maintains cart state locally even when API calls fail, providing a seamless experience when connectivity returns.
+This test validates that the application maintains cart state locally even when API calls fail, providing a experience when connectivity returns.
 
 
 

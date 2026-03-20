@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Video Lip Sync 2026"
-description: "A practical guide for developers and power users exploring AI tools for video lip sync in 2026. Compare APIs, SDKs, open-source libraries, and."
+description:"A practical guide for developers and power users exploring AI tools for video lip sync in 2026. Compare APIs, SDKs, open-source libraries, and."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-lip-sync-2026/

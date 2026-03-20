@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gemini vs ChatGPT for Writing Google Cloud Function."
-description: "A practical comparison of Gemini and ChatGPT for writing Google Cloud Function deployment scripts. Find the best AI assistant for your serverless."
+description:"A practical comparison of Gemini and ChatGPT for writing Google Cloud Function deployment scripts. Find the best AI assistant for your serverless."
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/

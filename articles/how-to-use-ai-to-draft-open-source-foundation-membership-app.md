@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Draft Open Source Foundation Membership."
-description: "A practical guide for developers and power users on using AI tools to draft open source foundation membership application documents efficiently."
+description:"A practical guide for developers and power users on using AI tools to draft open source foundation membership application documents efficiently."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-draft-open-source-foundation-membership-app/
@@ -15,7 +15,7 @@ intent-checked: true
 ---
 
 
-AI tools streamline foundation membership applications by drafting initial sections based on your contribution history, suggesting improvements to articulate your experience clearly, and structuring complex ideas to match foundation-specific conventions. Provide your contribution data (repository links, issue numbers, PR count, impact statements) to the AI, and it generates polished personal statements and background sections that only you can substantively refine.
+AI tools improve foundation membership applications by drafting initial sections based on your contribution history, suggesting improvements to articulate your experience clearly, and structuring complex ideas to match foundation-specific conventions. Provide your contribution data (repository links, issue numbers, PR count, impact statements) to the AI, and it generates polished personal statements and background sections that only you can substantively refine.
 
 
 

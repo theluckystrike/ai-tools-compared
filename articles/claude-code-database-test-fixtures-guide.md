@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Database Test Fixtures Guide"
-description: "A comprehensive guide to creating and managing database test fixtures using Claude Code, covering fixture factories, data seeding strategies, and test."
+description:"A guide to creating and managing database test fixtures using Claude Code, covering fixture factories, data seeding strategies, and test."
 date: 2026-03-17
 author: "theluckystrike"
 permalink: /claude-code-database-test-fixtures-guide/

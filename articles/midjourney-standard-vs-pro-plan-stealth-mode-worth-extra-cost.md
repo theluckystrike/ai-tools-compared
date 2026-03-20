@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Midjourney Standard vs Pro Plan: Is Stealth Mode Worth."
-description: "A detailed comparison of Midjourney Standard and Pro plans, focusing on whether the stealth mode feature justifies the price difference for 2026."
+description:"A detailed comparison of Midjourney Standard and Pro plans, focusing on whether the stealth mode feature justifies the price difference for 2026."
 date: 2026-03-18
 author: theluckystrike
 permalink: /midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/

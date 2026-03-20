@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Prompting Strategies for Getting Accurate Code from."
-description: "Master the art of prompting AI coding assistants to generate precise, production-ready code. Practical strategies with real examples for developers."
+description:"Master the art of prompting AI coding assistants to generate precise, production-ready code. Practical strategies with real examples for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-prompting-strategies-for-getting-accurate-code-from-ai-/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tool for Product Managers Writing User Stories."
-description: "A practical guide to using AI for transforming raw customer feedback into structured user stories. Includes code examples and workflow recommendations."
+description:"A practical guide to using AI for transforming raw customer feedback into structured user stories. Includes code examples and workflow recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/

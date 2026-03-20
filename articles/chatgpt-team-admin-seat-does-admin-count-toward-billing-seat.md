@@ -2,7 +2,7 @@
 
 layout: default
 title: "ChatGPT Team Admin Seat - Does Admin Count Toward."
-description: "A practical guide explaining whether ChatGPT Team admin seats count toward billing, with cost implications and setup examples for team administrators."
+description:"A practical guide explaining whether ChatGPT Team admin seats count toward billing, with cost implications and setup examples for team administrators."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/

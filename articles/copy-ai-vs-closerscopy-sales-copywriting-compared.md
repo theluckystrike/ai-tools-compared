@@ -3,7 +3,7 @@
 
 layout: default
 title: "Copy.ai vs ClosersCopy: Sales Copywriting Compared"
-description: "A practical developer-focused comparison of Copy.ai and ClosersCopy for sales copywriting. API integration examples, workflow automation, and."
+description:"A practical developer-focused comparison of Copy.ai and ClosersCopy for sales copywriting. API integration examples, workflow automation, and."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /copy-ai-vs-closerscopy-sales-copywriting-compared/

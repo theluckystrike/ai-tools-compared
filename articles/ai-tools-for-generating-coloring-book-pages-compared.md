@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Generating Coloring Book Pages Compared"
-description: "A practical comparison of AI tools for generating coloring book pages, with code examples and recommendations for developers."
+description:"A practical comparison of AI tools for generating coloring book pages, with code examples and recommendations for developers."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-generating-coloring-book-pages-compared/

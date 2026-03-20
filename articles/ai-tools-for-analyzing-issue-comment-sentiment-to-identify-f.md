@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Analyzing Issue Comment Sentiment to Identify Frustrated Users"
-description: "A practical guide to using AI tools for analyzing issue comment sentiment to identify frustrated users quickly, with code examples and implementation tips."
+description:"A practical guide to using AI tools for analyzing issue comment sentiment to identify frustrated users quickly, with code examples and implementation tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/
@@ -30,7 +30,7 @@ Issue trackers collect valuable feedback, but manually reading every comment to 
 
 
 
-The emotional tone in issue comments often reveals hidden urgency. A user writing "This breaks our production deployment for the third time" conveys different urgency than "I think there might be a small bug." Both deserve attention, but the first example clearly requires faster response times.
+The emotional tone in issue comments often reveals hidden urgency. An user writing "This breaks our production deployment for the third time" conveys different urgency than "I think there might be a small bug." Both deserve attention, but the first example clearly requires faster response times.
 
 
 

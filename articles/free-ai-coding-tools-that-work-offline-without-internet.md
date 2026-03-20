@@ -2,7 +2,7 @@
 
 layout: default
 title: "Free AI Coding Tools That Work Offline Without Internet"
-description: "Discover free AI coding tools that work completely offline without internet. Run local LLMs for code completion, refactoring, and debugging on your own."
+description:"Discover free AI coding tools that work completely offline without internet. Run local LLMs for code completion, refactoring, and debugging on your own."
 date: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-coding-tools-that-work-offline-without-internet/

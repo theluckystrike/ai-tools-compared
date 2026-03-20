@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Genesys vs NICE AI Contact Center: A Developer Comparison"
-description: "A practical technical comparison of Genesys and NICE AI contact center platforms for developers and power users, with API examples and integration."
+description:"A practical technical comparison of Genesys and NICE AI contact center platforms for developers and power users, with API examples and integration."
 date: 2026-03-15
 author: theluckystrike
 permalink: /genesys-vs-nice-ai-contact-center/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tool for Writing Case Studies 2026"
-description: "Compare the top AI writing tools for case studies in 2026. Features, pricing, API access, and real-world performance for developers and power users."
+description:"Compare the top AI writing tools for case studies in 2026. Features, pricing, API access, and real-world performance for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-writing-case-studies-2026/

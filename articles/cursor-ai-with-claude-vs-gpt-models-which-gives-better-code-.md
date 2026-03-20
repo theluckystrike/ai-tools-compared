@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor AI with Claude vs GPT Models: Which Gives Better."
-description: "A practical comparison of Claude and GPT models in Cursor AI for code completion. Learn which model excels at different coding tasks."
+description:"A practical comparison of Claude and GPT models in Cursor AI for code completion. Learn which model excels at different coding tasks."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/

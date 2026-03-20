@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best Workflow for Using AI to Write Infrastructure as Code from Diagrams"
-description: "A practical guide for developers on how to use AI tools to convert architecture diagrams into production-ready Terraform, CloudFormation, or Pulumi code with proven workflows."
+description:"A practical guide for developers on how to use AI tools to convert architecture diagrams into production-ready Terraform, CloudFormation, or Pulumi code with proven workflows."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-using-ai-to-write-infrastructure-as-code-f/

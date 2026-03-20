@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Audio Mastering: A Practical Guide for."
-description: "A technical comparison of AI-powered audio mastering tools with code examples, CLI workflows, and integration strategies for developers building music."
+description:"A technical comparison of AI-powered audio mastering tools with code examples, CLI workflows, and integration strategies for developers building music."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-audio-mastering/

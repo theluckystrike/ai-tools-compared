@@ -2,7 +2,7 @@
 
 layout: default
 title: "ChatGPT vs Claude for Creative Storytelling Compared"
-description: "A practical comparison of ChatGPT and Claude for creative storytelling, with code examples and real-world use cases for developers."
+description:"A practical comparison of ChatGPT and Claude for creative storytelling, with code examples and real-world use cases for developers."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /chatgpt-vs-claude-for-creative-storytelling-compared/
@@ -258,7 +258,7 @@ For developers building interactive fiction or content-generation tools, testing
 
 - [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
 - [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Wordtune vs Quillbot: A Comprehensive Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
+- [Wordtune vs Quillbot: A Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

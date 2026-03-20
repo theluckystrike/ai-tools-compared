@@ -2,7 +2,7 @@
 
 layout: default
 title: "Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026"
-description: "Master the art of prompting AI tools to generate complex SQL queries. Learn proven strategies with practical examples for developers and power users."
+description:"Master the art of prompting AI tools to generate complex SQL queries. Learn proven strategies with practical examples for developers and power users."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-prompting-strategies-for-ai-generation-of-complex-/

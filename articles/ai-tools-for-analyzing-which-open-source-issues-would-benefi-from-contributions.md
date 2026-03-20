@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Analyzing Which Open Source Issues Would Benefit From Contributions"
-description: "A practical guide to using AI tools for analyzing which open source issues would benefit from contributions, with code examples and implementation tips."
+description:"A practical guide to using AI tools for analyzing which open source issues would benefit from contributions, with code examples and implementation tips."
 date: 2026-03-19
 author: "AI Tools Compared"
 permalink: /ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/

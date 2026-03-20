@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Productivity Measurement: How to Track if."
-description: "A practical guide for developers on measuring AI coding productivity. Learn to track time savings, analyze code output quality, and evaluate tool."
+description:"A practical guide for developers on measuring AI coding productivity. Learn to track time savings, analyze code output quality, and evaluate tool."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-productivity-measurement-how-to-track-if-tools-save-time/

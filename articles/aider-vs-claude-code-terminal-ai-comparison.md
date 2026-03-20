@@ -2,7 +2,7 @@
 
 layout: default
 title: "Aider vs Claude Code: Terminal AI Coding Assistants Compared"
-description: "A practical comparison of Aider and Claude Code for terminal-based AI-assisted coding. Includes code examples, use cases, and recommendations for."
+description:"A practical comparison of Aider and Claude Code for terminal-based AI-assisted coding. Includes code examples, use cases, and recommendations for."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /aider-vs-claude-code-terminal-ai-comparison/
@@ -275,6 +275,6 @@ Many developers end up using both tools for different purposes—Aider for focus
 
 - [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
 - [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Wordtune vs Quillbot: A Comprehensive Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
+- [Wordtune vs Quillbot: A Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

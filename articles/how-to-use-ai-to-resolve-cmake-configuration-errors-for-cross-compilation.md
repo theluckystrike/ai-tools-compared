@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Resolve CMake Configuration Errors for."
-description: "A practical guide for developers using AI assistants to diagnose and fix CMake configuration errors in cross-compilation projects."
+description:"A practical guide for developers using AI assistants to diagnose and fix CMake configuration errors in cross-compilation projects."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/

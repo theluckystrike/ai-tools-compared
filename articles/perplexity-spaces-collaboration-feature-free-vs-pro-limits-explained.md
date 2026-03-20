@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Perplexity Spaces Collaboration Feature: Free vs Pro Limits Explained"
-description: "A comprehensive guide comparing Perplexity Spaces collaboration features across Free and Pro plans. Learn the limits, capabilities, and which plan best suits your team's needs."
+description:"A guide comparing Perplexity Spaces collaboration features across Free and Pro plans. Learn the limits, capabilities, and which plan best suits your team's needs."
 date: 2026-03-18
 author: theluckystrike
 permalink: /perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/
@@ -198,7 +198,7 @@ The Pro plan unlocks the full potential of Perplexity Spaces for team collaborat
 
 
 
-Upgrading from Free to Pro unlocks immediate access to all collaboration features. Existing Spaces automatically expand to accommodate new members and extended storage. The transition is seamless, with no data loss during the upgrade process.
+Upgrading from Free to Pro unlocks immediate access to all collaboration features. Existing Spaces automatically expand to accommodate new members and extended storage. The transition is, with no data loss during the upgrade process.
 
 
 

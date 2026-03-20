@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Workflow for AI-Assisted Open Source."
-description: "A practical guide to using AI tools for contributing to open source projects, from finding issues to preparing polished pull requests."
+description:"A practical guide to using AI tools for contributing to open source projects, from finding issues to preparing polished pull requests."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-ai-assisted-open-source-contribution-/

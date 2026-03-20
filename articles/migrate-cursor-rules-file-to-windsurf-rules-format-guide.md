@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Migrate Cursor Rules File to Windsurf Rules."
-description: "A practical guide for developers on migrating Cursor rules files to Windsurf's rules format, with code examples and step-by-step instructions."
+description:"A practical guide for developers on migrating Cursor rules files to Windsurf's rules format, with code examples and step-by-step instructions."
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-cursor-rules-file-to-windsurf-rules-format-guide/
@@ -257,7 +257,7 @@ If something does not work as expected, check the Windsurf documentation for the
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate WindSurf AI Rules to Cursor .cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
 - [Switching from Windsurf to Cursor: How to Transfer.](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
 

@@ -3,7 +3,7 @@
 
 layout: default
 title: "ChatGPT Conversation History Disappeared Fix"
-description: "A practical troubleshooting guide for developers and power users facing the issue of ChatGPT conversation history disappearing. Learn step-by-step."
+description:"A practical troubleshooting guide for developers and power users facing the issue of ChatGPT conversation history disappearing. Learn step-by-step."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /chatgpt-conversation-history-disappeared-fix/
@@ -421,7 +421,7 @@ OpenAI maintains conversation logs server-side for Plus users and may be able to
 
 - [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 - [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
-- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [AI Pair Programming Tools for C# and.NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

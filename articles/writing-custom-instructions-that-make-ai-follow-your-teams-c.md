@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format"
-description: "A practical guide to creating custom AI instructions that enforce your team's changelog format. Code examples and implementation patterns for developers."
+description:"A practical guide to creating custom AI instructions that enforce your team's changelog format. Code examples and implementation patterns for developers."
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/
@@ -82,7 +82,7 @@ Here's an example of a well-defined team format:
 
 
 
-Custom instructions work best when they provide explicit rules with concrete examples. Place these instructions in your project's AI configuration file—CLAUDE.md for Claude Code, .cursorrules for Cursor, or your preferred AI assistant's configuration file.
+Custom instructions work best when they provide explicit rules with concrete examples. Place these instructions in your project's AI configuration file—CLAUDE.md for Claude Code,.cursorrules for Cursor, or your preferred AI assistant's configuration file.
 
 
 
@@ -188,7 +188,7 @@ Always include issue references. Use imperative mood.
 
 
 
-Create or update your .cursorrules file:
+Create or update your.cursorrules file:
 
 
 

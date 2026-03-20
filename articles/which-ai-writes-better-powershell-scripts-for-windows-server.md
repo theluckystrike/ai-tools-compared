@@ -2,7 +2,7 @@
 
 layout: default
 title: "Which AI Writes Better PowerShell Scripts for Windows."
-description: "A practical comparison of AI tools for writing PowerShell scripts in Windows Server environments, with real code examples and performance testing."
+description:"A practical comparison of AI tools for writing PowerShell scripts in Windows Server environments, with real code examples and performance testing."
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-writes-better-powershell-scripts-for-windows-server/

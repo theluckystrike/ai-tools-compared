@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Midjourney Yearly Subscription Savings vs Monthly."
-description: "A practical breakdown of Midjourney subscription costs comparing yearly vs monthly billing. Calculate your potential savings and find the right plan."
+description:"A practical breakdown of Midjourney subscription costs comparing yearly vs monthly billing. Calculate your potential savings and find the right plan."
 date: 2026-03-16
 author: theluckystrike
 permalink: /midjourney-yearly-subscription-savings-vs-monthly-billing-br/

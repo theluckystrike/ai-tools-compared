@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Generating Contributor License Agreement."
-description: "A practical guide to using AI tools for generating plain language explanations of contributor license agreements. Real examples and code snippets for."
+description:"A practical guide to using AI tools for generating plain language explanations of contributor license agreements. Real examples and code snippets for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-contributor-license-agreement-explan/

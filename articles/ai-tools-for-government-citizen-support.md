@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Government Citizen Support"
-description: "A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector."
+description:"A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-government-citizen-support/

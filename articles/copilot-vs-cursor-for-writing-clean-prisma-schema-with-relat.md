@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Cursor for Writing Clean Prisma Schema with."
-description: "A practical comparison of GitHub Copilot and Cursor for writing clean Prisma schemas with relations. Includes code examples and recommendations."
+description:"A practical comparison of GitHub Copilot and Cursor for writing clean Prisma schemas with relations. Includes code examples and recommendations."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/
@@ -248,7 +248,7 @@ Both tools require review—AI suggestions occasionally include outdated Prisma 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 - [Copilot vs Cursor for Implementing Server-Sent Events in.](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
-- [Copilot vs Claude Code for Writing Comprehensive Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing-comprehensive-jest-test-s/)
+- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 
 Built by
 

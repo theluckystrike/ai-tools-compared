@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Appointment Scheduling Bots"
-description: "A practical guide to AI tools for appointment scheduling bots, with code examples and implementation strategies for developers building automated booking systems."
+description:"A practical guide to AI tools for appointment scheduling bots, with code examples and implementation strategies for developers building automated booking systems."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-appointment-scheduling-bots/

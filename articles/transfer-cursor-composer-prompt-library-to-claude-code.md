@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Transfer Your Cursor Composer Prompt Library to."
-description: "A practical guide for developers on migrating your Cursor Composer custom prompts and workflows to Claude Code. Includes step-by-step instructions, CLI."
+description:"A practical guide for developers on migrating your Cursor Composer custom prompts and workflows to Claude Code. Includes step-by-step instructions, CLI."
 date: 2026-03-16
 author: theluckystrike
 permalink: /transfer-cursor-composer-prompt-library-to-claude-code/
@@ -180,7 +180,7 @@ With your prompts converted, you can now import them into Claude Code. There are
 
 
 
-### Method 1: Using .claude Directory
+### Method 1: Using.claude Directory
 
 
 

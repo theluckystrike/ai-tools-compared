@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API."
-description: "A practical breakdown of DALL-E 3 image generation costs comparing ChatGPT Plus subscriptions to direct API usage, with code examples and cost."
+description:"A practical breakdown of DALL-E 3 image generation costs comparing ChatGPT Plus subscriptions to direct API usage, with code examples and cost."
 date: 2026-03-16
 author: theluckystrike
 permalink: /dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/

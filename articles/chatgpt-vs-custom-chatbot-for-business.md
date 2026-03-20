@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT vs Custom Chatbot for Business: A Developer Guide"
-description: "A practical comparison of using ChatGPT versus building a custom chatbot for business applications, with code examples and implementation guidance."
+description:"A practical comparison of using ChatGPT versus building a custom chatbot for business applications, with code examples and implementation guidance."
 date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-vs-custom-chatbot-for-business/

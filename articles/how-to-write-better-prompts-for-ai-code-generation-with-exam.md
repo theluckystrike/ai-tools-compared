@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Write Better Prompts for AI Code Generation with."
-description: "A practical guide for developers on crafting effective prompts that get better code results from AI coding assistants, with real-world examples and."
+description:"A practical guide for developers on crafting effective prompts that get better code results from AI coding assistants, with real-world examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-better-prompts-for-ai-code-generation-with-examples/

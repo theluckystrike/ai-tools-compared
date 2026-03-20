@@ -3,7 +3,7 @@
 
 layout: default
 title: "Best AI Tool for Real Estate Investors Deal Analysis"
-description: "A practical guide to AI-powered tools for analyzing real estate investment deals, with use cases and comparison for investors."
+description:"A practical guide to AI-powered tools for analyzing real estate investment deals, with use cases and comparison for investors."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /best-ai-tool-for-real-estate-investors-deal-analysis/

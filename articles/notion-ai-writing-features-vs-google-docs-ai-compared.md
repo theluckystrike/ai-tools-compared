@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Notion AI vs Google Docs AI: Complete Writing Features."
-description: "A comprehensive comparison of Notion AI and Google Docs AI writing features. Discover which tool better suits your writing workflow for productivity."
+description:"A comparison of Notion AI and Google Docs AI writing features. Discover which tool better suits your writing workflow for productivity."
 date: 2026-03-18
 author: theluckystrike
 permalink: /notion-ai-writing-features-vs-google-docs-ai-compared/
@@ -76,7 +76,7 @@ Google Docs AI, powered by Gemini (formerly Duet AI), operates as a sidebar comp
 
 
 
-Google Docs AI shines in its **seamless integration with Gmail, Sheets, and Calendar**, making it ideal for users already embedded in the Google ecosystem.
+Google Docs AI shines in its ** integration with Gmail, Sheets, and Calendar**, making it ideal for users already embedded in the Google ecosystem.
 
 
 

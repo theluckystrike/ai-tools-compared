@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Strategies for Reviewing AI-Generated Code."
-description: "Practical strategies and code review techniques for developers working with AI-generated code. Learn how to validate, test, and audit AI outputs before."
+description:"Practical strategies and code review techniques for developers working with AI-generated code. Learn how to validate, test, and audit AI outputs before."
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/

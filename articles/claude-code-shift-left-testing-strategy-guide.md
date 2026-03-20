@@ -2,7 +2,7 @@
 
 layout: default
 title: "Claude Code Shift Left Testing Strategy Guide"
-description: "A practical guide to implementing shift left testing strategy using Claude Code CLI, with examples for catching bugs earlier in the development cycle."
+description:"A practical guide to implementing shift left testing strategy using Claude Code CLI, with examples for catching bugs earlier in the development cycle."
 date: 2026-03-17
 author: "AI Tools Compared"
 permalink: /claude-code-shift-left-testing-strategy-guide/
@@ -234,7 +234,7 @@ Developer reviews the tests, notices they're well-structured, and includes them 
 
 **Example 2: API Endpoint Integration Test Gap Analysis**
 
-Developer has existing tests but unsure if coverage is comprehensive:
+Developer has existing tests but unsure if coverage is:
 ```python
 def test_get_user_by_id():
     response = client.get("/users/1")

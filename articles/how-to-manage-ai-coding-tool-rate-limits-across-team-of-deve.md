@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Manage AI Coding Tool Rate Limits Across a Team."
-description: "Practical strategies and code solutions for managing AI coding assistant rate limits in team environments. Learn how to implement quota sharing."
+description:"Practical strategies and code solutions for managing AI coding assistant rate limits in team environments. Learn how to implement quota sharing."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/

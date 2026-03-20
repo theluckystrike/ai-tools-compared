@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Tools for Video Object Tracking"
-description: "A practical guide to AI-powered video object tracking tools for developers, with code examples and implementation recommendations."
+description:"A practical guide to AI-powered video object tracking tools for developers, with code examples and implementation recommendations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-object-tracking/
@@ -27,7 +27,7 @@ Object tracking differs from object detection. Detection identifies objects in i
 
 
 
-Several algorithms power modern tracking systems. SORT (Simple Online and Realtime Tracking) uses Kalman filters for motion prediction combined with Hungarian algorithm for data association. DeepSORT extends this with appearance features from a re-identification network. ByteTrack achieves state-of-the-art performance by keeping all detections and using a two-stage association strategy.
+Several algorithms power modern tracking systems. SORT (Simple Online and Realtime Tracking) uses Kalman filters for motion prediction combined with Hungarian algorithm for data association. DeepSORT extends this with appearance features from a re-identification network. ByteTrack achieves modern performance by keeping all detections and using a two-stage association strategy.
 
 
 

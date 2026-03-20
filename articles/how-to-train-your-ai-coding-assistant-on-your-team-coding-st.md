@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Train Your AI Coding Assistant on Your Team."
-description: "A practical guide to customizing AI coding assistants with your team's coding conventions, patterns, and best practices for more relevant code suggestions."
+description:"A practical guide to customizing AI coding assistants with your team's coding conventions, patterns, and best practices for more relevant code suggestions."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-train-your-ai-coding-assistant-on-your-team-coding-st/

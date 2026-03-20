@@ -3,7 +3,7 @@
 
 layout: default
 title: "Gemini Advanced Not Available in My Country Fix"
-description: "Troubleshooting guide for developers and power users when Gemini Advanced is not available in your country. Step-by-step fixes and diagnostic tips."
+description:"Troubleshooting guide for developers and power users when Gemini Advanced is not available in your country. Step-by-step fixes and diagnostic tips."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /gemini-advanced-not-available-in-my-country-fix/

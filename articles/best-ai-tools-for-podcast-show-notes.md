@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Tools for Podcast Show Notes"
-description: "A practical comparison of AI tools for creating podcast show notes, with code examples and workflows for developers and power users."
+description:"A practical comparison of AI tools for creating podcast show notes, with code examples and workflows for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-podcast-show-notes/

@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Help Designers Write Micro Interaction."
-description: "A practical guide for developers and power users leveraging AI to create precise micro interaction specifications that bridge design and development."
+description:"A practical guide for developers and power users using AI to create precise micro interaction specifications that bridge design and development."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-designers-write-micro-interaction-spec/

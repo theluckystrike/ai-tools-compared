@@ -2,7 +2,7 @@
 
 layout: default
 title: "Copilot Chat Not Responding in GitHub Fix"
-description: "A practical troubleshooting guide for developers experiencing GitHub Copilot Chat not responding. Learn step-by-step fixes and diagnostic tips."
+description:"A practical troubleshooting guide for developers experiencing GitHub Copilot Chat not responding. Learn step-by-step fixes and diagnostic tips."
 date: 2026-03-15
 author: theluckystrike
 permalink: /copilot-chat-not-responding-in-github-fix/
@@ -130,7 +130,7 @@ Create a fresh test file and attempt to use Copilot Chat in isolation. Open a ne
 
 
 
-Check for .gitignore or .copilotignore files that might affect Chat behavior. Although these files primarily influence inline suggestions, unusual configurations can sometimes impact broader Copilot functionality.
+Check for.gitignore or.copilotignore files that might affect Chat behavior. Although these files primarily influence inline suggestions, unusual configurations can sometimes impact broader Copilot functionality.
 
 
 

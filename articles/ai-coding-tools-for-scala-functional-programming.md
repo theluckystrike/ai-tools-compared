@@ -2,7 +2,7 @@
 
 layout: default
 title: "AI Coding Tools for Scala Functional Programming."
-description: "A developer-focused guide to AI coding tools that work well with Scala's functional programming paradigm. Includes code examples, practical tips, and."
+description:"A developer-focused guide to AI coding tools that work well with Scala's functional programming paradigm. Includes code examples, practical tips, and."
 date: 2026-03-15
 author: "AI Tools Compared"
 permalink: /ai-coding-tools-for-scala-functional-programming/
@@ -236,6 +236,6 @@ Both Claude and GPT models continue to improve their Scala support, but success 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [AI Pair Programming Tools for C# and.NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

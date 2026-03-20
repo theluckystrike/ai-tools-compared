@@ -2,7 +2,7 @@
 
 layout: default
 title: "How Accurate Are AI Tools at Rust WASM Compilation and."
-description: "A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy."
+description:"A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/
@@ -19,7 +19,7 @@ AI tools struggle with Rust WASM configuration, generating broken wasm-bindgen c
 
 
 
-Rust WebAssembly (WASM) development has become increasingly popular for high-performance web applications. The `wasm-bindgen` crate serves as the bridge between Rust and JavaScript, enabling seamless interoperability. But how accurate are AI coding assistants when generating this specialized code? This article evaluates leading AI tools on their ability to produce correct WASM compilation setups and bindgen code.
+Rust WebAssembly (WASM) development has become increasingly popular for high-performance web applications. The `wasm-bindgen` crate serves as the bridge between Rust and JavaScript, enabling interoperability. But how accurate are AI coding assistants when generating this specialized code? This article evaluates leading AI tools on their ability to produce correct WASM compilation setups and bindgen code.
 
 
 

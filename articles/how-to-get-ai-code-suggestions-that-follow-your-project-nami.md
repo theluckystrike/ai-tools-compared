@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Get AI Code Suggestions That Follow Your Project Naming Conventions"
-description: "Learn practical methods to make AI code completion tools respect your project's naming conventions. Configuration tips, code examples, and strategies for consistent code."
+description:"Learn practical methods to make AI code completion tools respect your project's naming conventions. Configuration tips, code examples, and strategies for consistent code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/

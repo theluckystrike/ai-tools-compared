@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI Inline Chat to Refactor Single Function."
-description: "A practical guide for developers on using VS Code AI inline chat to refactor individual functions with real code examples and step-by-step instructions."
+description:"A practical guide for developers on using VS Code AI inline chat to refactor individual functions with real code examples and step-by-step instructions."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/
@@ -26,7 +26,7 @@ AI inline chat in Visual Studio Code represents a significant shift in how devel
 
 
 
-AI inline chat integrates large language model capabilities directly into VS Code's editing experience. Unlike traditional AI assistants that require context switching, inline chat appears within your editor and can modify code in place. When you refactor a single function, this approach offers several advantages: immediate visual feedback, the ability to preview changes before applying them, and seamless integration with your existing workflow.
+AI inline chat integrates large language model capabilities directly into VS Code's editing experience. Unlike traditional AI assistants that require context switching, inline chat appears within your editor and can modify code in place. When you refactor a single function, this approach offers several advantages: immediate visual feedback, the ability to preview changes before applying them, and integration with your existing workflow.
 
 
 

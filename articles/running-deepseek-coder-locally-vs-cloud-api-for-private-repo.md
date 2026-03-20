@@ -2,7 +2,7 @@
 
 layout: default
 title: "Running DeepSeek Coder Locally vs Cloud API for Private."
-description: "A practical comparison of running DeepSeek Coder locally versus using the cloud API for private repository code, with setup examples and cost analysis."
+description:"A practical comparison of running DeepSeek Coder locally versus using the cloud API for private repository code, with setup examples and cost analysis."
 date: 2026-03-16
 author: theluckystrike
 permalink: /running-deepseek-coder-locally-vs-cloud-api-for-private-repo/

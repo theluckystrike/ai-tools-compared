@@ -2,7 +2,7 @@
 
 layout: default
 title: "Copilot for Students Free Access: What Exactly Is."
-description: "A comprehensive guide for developers and power users on what GitHub Copilot for Students includes, how to get it, and practical ways to use it in your."
+description:"A guide for developers and power users on what GitHub Copilot for Students includes, how to get it, and practical ways to use it in your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-for-students-free-access-what-exactly-is-included-20/
@@ -15,7 +15,7 @@ voice-checked: true
 ---
 
 
-GitHub Copilot for Students includes unlimited code completions, chat-based assistance, test generation, and refactoring across VS Code, JetBrains, Neovim, and Visual Studio, all at no cost. You qualify by verifying student status through a .edu email, ISIC card, or manual enrollment confirmation at github.com/education. This guide covers exactly what the free plan includes, how to activate it, and practical ways to use Copilot for coursework and side projects.
+GitHub Copilot for Students includes unlimited code completions, chat-based assistance, test generation, and refactoring across VS Code, JetBrains, Neovim, and Visual Studio, all at no cost. You qualify by verifying student status through a.edu email, ISIC card, or manual enrollment confirmation at github.com/education. This guide covers exactly what the free plan includes, how to activate it, and practical ways to use Copilot for coursework and side projects.
 
 
 
@@ -43,7 +43,7 @@ The verification process requires a GitHub account and proof of student status. 
 
 
 
-1. School email verification: Use an email address from your educational institution ending in .edu or your school's domain.
+1. School email verification: Use an email address from your educational institution ending in.edu or your school's domain.
 
 2. ISIC card verification: Upload an International Student Identity Card.
 

@@ -2,7 +2,7 @@
 
 layout: default
 title: "Best AI Assistant for Building Grafana Dashboard Panels."
-description: "Discover the top AI tools for creating Grafana dashboard panels using Prometheus queries. Practical examples, code snippets, and recommendations for."
+description:"Discover the top AI tools for creating Grafana dashboard panels using Prometheus queries. Practical examples, code snippets, and recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/
@@ -269,7 +269,7 @@ Consider these factors when selecting an AI assistant:
 
 
 
-1. Workflow integration: If you already work in VS Code, Copilot or Cursor offers seamless integration. If you prefer terminal-based work, Claude Code fits better.
+1. Workflow integration: If you already work in VS Code, Copilot or Cursor offers integration. If you prefer terminal-based work, Claude Code fits better.
 
 
 

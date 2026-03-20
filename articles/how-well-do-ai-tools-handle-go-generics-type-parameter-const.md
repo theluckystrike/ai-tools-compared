@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Well Do AI Tools Handle Go Generics Type Parameter Constraints"
-description: "A practical analysis of AI code generation quality for Go generics, focusing on type parameter constraints with code examples and quality assessment."
+description:"A practical analysis of AI code generation quality for Go generics, focusing on type parameter constraints with code examples and quality assessment."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-handle-go-generics-type-parameter-const/

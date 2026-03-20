@@ -2,7 +2,7 @@
 
 layout: default
 title: "Does Cursor Pro Charge Extra for Large File Indexing in."
-description: "Does Cursor Pro Charge Extra for Large File Indexing in. — comprehensive guide with practical tips, comparisons, and expert recommendations for."
+description:"Does Cursor Pro Charge Extra for Large File Indexing in. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/
@@ -133,7 +133,7 @@ If your project exceeds Cursor's practical limits, several strategies can help y
 
 
 
-### 1. Selective Indexing with .cursorignore
+### 1. Selective Indexing with.cursorignore
 
 
 

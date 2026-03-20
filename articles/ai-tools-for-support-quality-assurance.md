@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Support Quality Assurance"
-description: "A practical guide to AI tools for support quality assurance, with code examples and implementation strategies for developers and power users."
+description:"A practical guide to AI tools for support quality assurance, with code examples and implementation strategies for developers and power users."
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-support-quality-assurance/

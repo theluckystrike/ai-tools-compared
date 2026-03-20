@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Write Custom Instructions for AI That Follow Your."
-description: "A practical guide for developers on creating AI custom instructions that align with team code review standards, with concrete examples and code snippets."
+description:"A practical guide for developers on creating AI custom instructions that align with team code review standards, with concrete examples and code snippets."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/

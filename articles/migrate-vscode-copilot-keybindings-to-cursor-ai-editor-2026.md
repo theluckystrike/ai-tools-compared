@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Migrate VSCode Copilot Keybindings to Cursor AI."
-description: "A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips."
+description:"A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips."
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/
@@ -103,7 +103,7 @@ Cursor introduces AI-specific commands that replace or extend Copilot functional
 ```
 
 
-Map your existing Copilot keybindings to these Cursor commands for a seamless experience. For example, if you used `Ctrl+Shift+Space` to trigger Copilot generation in VSCode, assign the same shortcut to `cursorai.edit.generate` in Cursor.
+Map your existing Copilot keybindings to these Cursor commands for a experience. For example, if you used `Ctrl+Shift+Space` to trigger Copilot generation in VSCode, assign the same shortcut to `cursorai.edit.generate` in Cursor.
 
 
 
@@ -161,7 +161,7 @@ Some developers encounter issues where keybindings work in VSCode but not Cursor
 
 
 
-For example, a condition like `"when": "editorTextFocus && !editorReadonly"` may need adjustment. Remove overly specific conditions to ensure broader compatibility, then refine them if problems persist.
+For example, a condition like `"when": "editorTextFocus &&!editorReadonly"` may need adjustment. Remove overly specific conditions to ensure broader compatibility, then refine them if problems persist.
 
 
 

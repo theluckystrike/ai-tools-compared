@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI Codebase Search to Find Relevant Code."
-description: "Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques."
+description:"Learn effective strategies for using AI-powered codebase search to locate relevant code before generating new code. Practical examples and techniques."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-codebase-search-to-find-relevant-code-before-g/
@@ -206,7 +206,7 @@ For complex features, chain multiple relevant files together. If you're building
 
 - A similar API endpoint (to match routing and error handling)
 
-- A utility function that handles the same data type
+- An utility function that handles the same data type
 
 
 
@@ -285,7 +285,7 @@ After implementing code generated with codebase search context, evaluate:
 
 - Do variable names and function signatures match existing patterns?
 
-- Is integration with other parts of the codebase seamless?
+- Is integration with other parts of the codebase?
 
 
 

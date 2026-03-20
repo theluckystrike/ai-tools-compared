@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Terraform Import Blocks for."
-description: "A practical guide for developers on using AI tools to automatically generate Terraform import blocks for existing cloud infrastructure, with code."
+description:"A practical guide for developers on using AI tools to automatically generate Terraform import blocks for existing cloud infrastructure, with code."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-terraform-import-blocks-for-existi/

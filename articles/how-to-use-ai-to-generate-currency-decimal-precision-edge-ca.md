@@ -2,7 +2,7 @@
 
 layout: default
 title: "How to Use AI to Generate Currency Decimal Precision Edge Case Tests"
-description: "A practical guide for developers on leveraging AI tools to generate comprehensive test cases for currency decimal precision edge cases, with code examples and best practices."
+description:"A practical guide for developers on using AI tools to generate test cases for currency decimal precision edge cases, with code examples and best practices."
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/

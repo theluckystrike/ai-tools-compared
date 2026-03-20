@@ -2,7 +2,7 @@
 
 layout: default
 title: "Cheapest AI Coding Subscription with Unlimited Requests 2026"
-description: "A practical guide to finding affordable AI coding subscriptions that offer unlimited requests. Compare pricing, features, and find the best value for."
+description:"A practical guide to finding affordable AI coding subscriptions that offer unlimited requests. Compare pricing, features, and find the best value for."
 date: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-ai-coding-subscription-with-unlimited-requests-2026/

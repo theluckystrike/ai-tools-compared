@@ -2,7 +2,7 @@
 
 layout: default
 title: "Configuring AI Coding Tools to Match Your Teams Specific."
-description: "A practical guide to configuring AI coding assistants like GitHub Copilot, Codeium, and Cursor to understand your team's specific Dockerfile layer ordering conventions."
+description:"A practical guide to configuring AI coding assistants like GitHub Copilot, Codeium, and Cursor to understand your team's specific Dockerfile layer ordering conventions."
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /configuring-ai-coding-tools-to-match-your-teams-specific-doc/
@@ -26,7 +26,7 @@ Your team's Dockerfile layer ordering probably emerged from hard-won experience.
 
 
 
-Consider a team that requires this specific ordering: base image, system dependencies, language runtime, package manager installation, application dependencies, source code, configuration, and build commands. When AI tools suggest placing the `COPY . .` instruction before dependency installation, you lose cache layers on every code change. This seemingly small issue compounds across dozens of services and hundreds of daily commits.
+Consider a team that requires this specific ordering: base image, system dependencies, language runtime, package manager installation, application dependencies, source code, configuration, and build commands. When AI tools suggest placing the `COPY..` instruction before dependency installation, you lose cache layers on every code change. This seemingly small issue compounds across dozens of services and hundreds of daily commits.
 
 
 

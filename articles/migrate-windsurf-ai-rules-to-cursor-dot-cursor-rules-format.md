@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Migrate WindSurf AI Rules to Cursor .cursorrules Format"
-description: "A practical guide to converting WindSurf AI rules to Cursor's .cursorrules format, with step-by-step instructions, code examples, and common pitfalls to avoid."
+description:"A practical guide to converting WindSurf AI rules to Cursor's .cursorrules format, with step-by-step instructions, code examples, and common pitfalls to avoid."
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/
@@ -21,7 +21,7 @@ If you have been using WindSurf's AI rules configuration and want to switch to C
 
 
 
-Before diving into the migration process, it helps to understand how WindSurf and Cursor handle AI rules differently. WindSurf uses a JSON-based configuration system that defines AI behavior through rules files, while Cursor employs a YAML-based approach called .cursorrules that offers more flexibility and readability.
+Before diving into the migration process, it helps to understand how WindSurf and Cursor handle AI rules differently. WindSurf uses a JSON-based configuration system that defines AI behavior through rules files, while Cursor employs a YAML-based approach called.cursorrules that offers more flexibility and readability.
 
 
 
@@ -66,7 +66,7 @@ Here is a practical example of how this conversion works. Suppose your WindSurf 
 ```
 
 
-The equivalent Cursor .cursorrules format would look like this:
+The equivalent Cursor.cursorrules format would look like this:
 
 
 
@@ -109,7 +109,7 @@ Notice how Cursor allows you to add natural language explanations after the YAML
 
 
 
-WindSurf action rules define specific behaviors the AI should take in response to certain code patterns or commands. These are particularly important to migrate carefully because they control your workflow automation. In Cursor, these map to custom instructions and rule definitions within the .cursorrules file.
+WindSurf action rules define specific behaviors the AI should take in response to certain code patterns or commands. These are particularly important to migrate carefully because they control your workflow automation. In Cursor, these map to custom instructions and rule definitions within the.cursorrules file.
 
 
 
@@ -199,7 +199,7 @@ A WindSurf context configuration might look like this:
 ```
 
 
-In Cursor, you would express this as part of your .cursorrules:
+In Cursor, you would express this as part of your.cursorrules:
 
 
 
@@ -244,7 +244,7 @@ First, locate your WindSurf rules file. It is typically named `.windsurfrules` a
 
 
 
-For each preference in your WindSurf rules, add a corresponding preference in the YAML front matter of your .cursorrules file. Map JSON boolean values directly (`true` stays `true`), and convert string values as needed.
+For each preference in your WindSurf rules, add a corresponding preference in the YAML front matter of your.cursorrules file. Map JSON boolean values directly (`true` stays `true`), and convert string values as needed.
 
 
 
@@ -256,7 +256,7 @@ For action rules, describe each behavior in clear, instructional language. Think
 
 
 
-After translating all rules, add a summary section at the end of your .cursorrules file. This serves as the "system prompt" for the AI and should capture the overall philosophy and goals of your coding standards.
+After translating all rules, add a summary section at the end of your.cursorrules file. This serves as the "system prompt" for the AI and should capture the overall philosophy and goals of your coding standards.
 
 
 
@@ -264,15 +264,15 @@ After translating all rules, add a summary section at the end of your .cursorrul
 
 
 
-Once you have created your .cursorrules file, it is crucial to test that the migration was successful. Start by opening your project in Cursor and triggering a few common actions: generate a new component, refactor a function, or write a test.
+Once you have created your.cursorrules file, it is crucial to test that the migration was successful. Start by opening your project in Cursor and triggering a few common actions: generate a new component, refactor a function, or write a test.
 
 
 
-Observe whether Cursor's AI behaves similarly to how WindSurf behaved with your original rules. If something feels off, review the specific rule that should govern that behavior and refine the wording in your .cursorrules file.
+Observe whether Cursor's AI behaves similarly to how WindSurf behaved with your original rules. If something feels off, review the specific rule that should govern that behavior and refine the wording in your.cursorrules file.
 
 
 
-Pay particular attention to code style enforcement. WindSurf and Cursor may have different default behaviors, so you might need to be more explicit in your rules than you were with WindSurf. Do not hesitate to iterate on your rules— Cursor's .cursorrules format is designed to be easily editable as you refine your configuration.
+Pay particular attention to code style enforcement. WindSurf and Cursor may have different default behaviors, so you might need to be more explicit in your rules than you were with WindSurf. Do not hesitate to iterate on your rules— Cursor's.cursorrules format is designed to be easily editable as you refine your configuration.
 
 
 
@@ -280,15 +280,15 @@ Pay particular attention to code style enforcement. WindSurf and Cursor may have
 
 
 
-Several common mistakes can derail your migration effort. One of the most frequent issues is being too verbose in .cursorrules files. While Cursor encourages detailed instructions, including too many rules or overly long explanations can actually reduce effectiveness. The AI may focus on the volume of rules rather than understanding the intent behind each one.
+Several common mistakes can derail your migration effort. One of the most frequent issues is being too verbose in.cursorrules files. While Cursor encourages detailed instructions, including too many rules or overly long explanations can actually reduce effectiveness. The AI may focus on the volume of rules rather than understanding the intent behind each one.
 
 
 
-Another pitfall is not updating rules when project requirements change. Your .cursorrules file should evolve with your project, just like your WindSurf rules did. Schedule regular reviews to ensure your rules still accurately reflect your current coding standards.
+Another pitfall is not updating rules when project requirements change. Your.cursorrules file should evolve with your project, just like your WindSurf rules did. Schedule regular reviews to ensure your rules still accurately reflect your current coding standards.
 
 
 
-Finally, remember that .cursorrules is project-specific. If you work on multiple projects with different coding standards, you will need separate .cursorrules files for each. Unlike some global settings, project-specific rules live in each project's root directory.
+Finally, remember that.cursorrules is project-specific. If you work on multiple projects with different coding standards, you will need separate.cursorrules files for each. Unlike some global settings, project-specific rules live in each project's root directory.
 
 
 ## Related Reading

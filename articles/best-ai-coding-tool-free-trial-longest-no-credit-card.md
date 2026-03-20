@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Coding Tool Free Trial Longest No Credit Card"
-description: "Discover AI coding tools with the longest free trials that require no credit card. Compare features, limitations, and which option best fits your."
+description:"Discover AI coding tools with the longest free trials that require no credit card. Compare features, limitations, and which option best fits your."
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-tool-free-trial-longest-no-credit-card/

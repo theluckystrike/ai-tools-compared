@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Interpret Elixir GenServer Crash."
-description: "Learn how AI tools can help you decode and understand Elixir GenServer crash reports and supervisor restart strategies. Practical examples and."
+description:"Learn how AI tools can help you decode and understand Elixir GenServer crash reports and supervisor restart strategies. Practical examples and."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/
@@ -156,7 +156,7 @@ end
 ```
 
 
-The AI identifies that the first clause uses `=%{state: :pending}` in the pattern match but doesn't bind the entire map to a variable. When trying to use the original `state` variable in the function body, the match fails because `state` was never bound in that clause. The fix is to change the pattern match to bind the map: `state = %{state: :pending}`.
+The AI identifies that the first clause uses `=%{state::pending}` in the pattern match but doesn't bind the entire map to a variable. When trying to use the original `state` variable in the function body, the match fails because `state` was never bound in that clause. The fix is to change the pattern match to bind the map: `state = %{state::pending}`.
 
 
 

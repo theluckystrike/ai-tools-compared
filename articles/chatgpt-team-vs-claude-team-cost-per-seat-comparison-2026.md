@@ -2,7 +2,7 @@
 
 layout: default
 title: "ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026"
-description: "A practical breakdown of ChatGPT Team and Claude Team pricing for developers and power users. Per-seat costs, features, API access, and which plan."
+description:"A practical breakdown of ChatGPT Team and Claude Team pricing for developers and power users. Per-seat costs, features, API access, and which plan."
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/

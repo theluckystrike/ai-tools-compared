@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI Coding Tools to Enforce Consistent API."
-description: "A practical guide for developers learning to leverage AI coding tools to maintain consistent API response formats across your codebase."
+description:"A practical guide for developers learning to use AI coding tools to maintain consistent API response formats across your codebase."
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/

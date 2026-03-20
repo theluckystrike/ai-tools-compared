@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for UX Designers User Research Synthesis"
-description: "A practical guide to AI tools that help UX designers synthesize user research faster, with real-world use cases and recommendations."
+description:"A practical guide to AI tools that help UX designers synthesize user research faster, with real-world use cases and recommendations."
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-ux-designers-user-research-synthesis/
@@ -97,7 +97,7 @@ Several AI tools have emerged to handle user research synthesis, each with diffe
 
 
 
-For teams already using Notion or Confluence, look for tools that integrate directly with these platforms. Research synthesis should not require exporting and reformatting across multiple tools—the more seamless the workflow, the more likely your team will actually use it.
+For teams already using Notion or Confluence, look for tools that integrate directly with these platforms. Research synthesis should not require exporting and reformatting across multiple tools—the more the workflow, the more likely your team will actually use it.
 
 
 
