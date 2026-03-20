@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Activity Diagrams from User."
+title: "How to Use AI to Generate Activity Diagrams from User Acceptance"
 description:"A practical guide for developers on using AI tools to automatically generate UML activity diagrams from user acceptance criteria, with code examples."
 date: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Use AI to Study Consistent Hashing for."
+title: "How to Use AI to Study Consistent Hashing for Distributed"
 description:"A practical guide for developers preparing for distributed system interviews using AI tools to learn and master consistent hashing concepts with code."
 date: 2026-03-16
 author: theluckystrike

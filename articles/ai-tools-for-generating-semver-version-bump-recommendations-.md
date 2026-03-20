@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Semver Version Bump."
+title: "AI Tools for Generating Semver Version Bump Recommendations"
 description:"Discover AI-powered tools that analyze your commit history to automatically suggest the correct semantic version bump. Practical examples and."
 date: 2026-03-16
 author: theluckystrike

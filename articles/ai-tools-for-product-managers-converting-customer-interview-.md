@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Product Managers Converting Customer."
+title: "AI Tools for Product Managers Converting Customer"
 description:"A practical guide for developers and power users on automating customer interview analysis. Code examples, workflows, and API integrations for PMs."
 date: 2026-03-16
 author: theluckystrike

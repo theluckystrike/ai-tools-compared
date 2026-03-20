@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Interpreting Rust Compiler Borrow Checker."
+title: "AI Tools for Interpreting Rust Compiler Borrow Checker Error"
 description:"A practical guide to using AI tools for interpreting Rust compiler borrow checker errors. Real code examples and solutions for common ownership."
 date: 2026-03-16
 author: theluckystrike

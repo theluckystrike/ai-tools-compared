@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor AI Model Selection Guide: Which Model for Which."
+title: "Cursor AI Model Selection Guide: Which Model for Which Coding"
 description:"A practical guide to selecting the right AI model in Cursor IDE for different coding tasks, with examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike

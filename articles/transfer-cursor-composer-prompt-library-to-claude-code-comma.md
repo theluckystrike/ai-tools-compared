@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Transfer Cursor Composer Prompt Library to Claude."
+title: "How to Transfer Cursor Composer Prompt Library"
 description:"A practical guide for developers moving their prompt libraries from Cursor to Claude Code, with code examples and migration strategies."
 date: 2026-03-16
 author: theluckystrike

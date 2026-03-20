@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Automated Release Changelog from."
+title: "AI Tools for Creating Automated Release Changelog from Conve"
 description:"Discover how AI tools transform conventional commit messages into polished release changelogs. Practical examples and implementation guide for developers."
 date: 2026-03-16
 author: theluckystrike

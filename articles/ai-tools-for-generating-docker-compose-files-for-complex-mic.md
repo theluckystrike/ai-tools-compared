@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Docker Compose Files for Complex."
+title: "AI Tools for Generating Docker Compose Files for Complex Mic"
 description:"Discover practical AI tools and techniques for generating Docker Compose configurations for complex microservice architectures. Learn how to automate."
 date: 2026-03-16
 author: theluckystrike

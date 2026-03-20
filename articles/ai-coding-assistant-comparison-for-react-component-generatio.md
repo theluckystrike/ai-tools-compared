@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Coding Assistant Comparison for React Component."
+title: "AI Coding Assistant Comparison for React Component"
 description:"A practical comparison of AI coding assistants for React component generation, with code examples and quality assessment for developers in 2026."
 date: 2026-03-16
 author: theluckystrike

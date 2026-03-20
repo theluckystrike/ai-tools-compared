@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Serverless Framework."
+title: "How to Use AI to Generate Serverless Framework Configuration"
 description:"Learn how to use AI tools to automatically generate Serverless Framework configuration files, including practical examples and code snippets for 2026."
 date: 2026-03-16
 author: theluckystrike

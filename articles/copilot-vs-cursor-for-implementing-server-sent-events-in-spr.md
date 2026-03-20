@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Cursor for Implementing Server-Sent Events in."
+title: "Copilot vs Cursor for Implementing Server-Sent Events in Spr"
 description:"A practical comparison of GitHub Copilot and Cursor for implementing Server-Sent Events in Spring Boot applications, with code examples and developer."
 date: 2026-03-16
 author: theluckystrike

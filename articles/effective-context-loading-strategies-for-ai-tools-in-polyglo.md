@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Context Loading Strategies for AI Tools in."
+title: "Effective Context Loading Strategies for AI Tools in"
 description:"A practical guide to optimizing AI tool performance in projects mixing multiple programming languages. Learn context strategies that improve code."
 date: 2026-03-16
 author: theluckystrike

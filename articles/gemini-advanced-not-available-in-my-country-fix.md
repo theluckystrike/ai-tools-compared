@@ -89,7 +89,25 @@ Google AI Studio (formerly MakerSuite) provides an alternative access point for 
 
 
 
-Visit ai.google.dev/aistudio and sign in with your Google account. The AI Studio provides API access to Gemini models including Gemini Ultra, which powers Gemini Advanced. While this requires API usage management and incurs costs after free tier limits, it offers a functional alternative when the consumer-facing Gemini Advanced is unavailable in your region.
+Visit [ai.google.dev/aistudio](https://ai.google.dev/aistudio) and sign in with your Google account. The AI Studio provides API access to Gemini models including Gemini 1.5 Pro, which is the same model powering Gemini Advanced.
+
+For programmatic access, install the SDK and test it:
+
+```bash
+pip install google-generativeai
+```
+
+```python
+import google.generativeai as genai
+import os
+
+genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+model = genai.GenerativeModel("gemini-1.5-pro")
+response = model.generate_content("Explain async/await in Python in two sentences.")
+print(response.text)
+```
+
+Pricing is approximately $3.50 per million input tokens and $10.50 per million output tokens (as of early 2026). Light usage costs far less than the $19.99/month Gemini Advanced subscription. Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
 
 

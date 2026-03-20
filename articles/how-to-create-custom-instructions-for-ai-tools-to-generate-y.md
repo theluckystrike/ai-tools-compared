@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Create Custom Instructions for AI Tools to."
+title: "How to Create Custom Instructions for AI Tools to Generate"
 description:"A practical guide for developers and power users on configuring AI coding assistants to produce consistent, structured log output that matches your project's standards."
 date: 2026-03-16
 author: theluckystrike

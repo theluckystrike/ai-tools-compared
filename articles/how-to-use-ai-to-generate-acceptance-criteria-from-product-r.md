@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Acceptance Criteria from."
+title: "How to Use AI to Generate Acceptance Criteria from Product"
 description:"A practical guide for developers on using AI to transform product requirement documents into clear, actionable acceptance criteria with code examples."
 date: 2026-03-16
 author: theluckystrike

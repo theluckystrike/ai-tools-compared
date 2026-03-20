@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Writing Kubernetes Admission Webhook."
+title: "Best AI Tools for Writing Kubernetes Admission Webhook"
 description:"A practical comparison of AI tools that help developers write Kubernetes admission webhook configurations. Includes code examples, prompt strategies."
 date: 2026-03-16
 author: theluckystrike

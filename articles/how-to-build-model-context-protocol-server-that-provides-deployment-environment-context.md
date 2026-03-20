@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build a Model Context Protocol Server That."
+title: "How to Build a Model Context Protocol Server That"
 description:"Learn how to build a Model Context Protocol server that gives AI coding assistants access to your deployment environment details, enabling more."
 date: 2026-03-16
 author: theluckystrike

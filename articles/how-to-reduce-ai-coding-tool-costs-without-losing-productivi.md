@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Reduce AI Coding Tool Costs Without Losing."
+title: "How to Reduce AI Coding Tool Costs Without Losing"
 description:"A practical guide for developers and power users on cutting AI coding tool expenses while maintaining or improving productivity. Includes cost-saving."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude API Batch Processing for Large Document Workflows."
+title: "Claude API Batch Processing for Large Document Workflows"
 description:"Complete guide to using Claude API's batch processing feature for cost-effective document analysis and processing at scale with code examples."
 date: 2026-03-20
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude API Tool Use and Function Calling: Pricing and."
+title: "Claude API Tool Use and Function Calling: Pricing and Function Calling Pricing How Tokens"
 description:"A guide to understanding Claude API tool use, function calling mechanics, and how tokens are counted for pricing. Practical examples for."
 date: 2026-03-16
 author: theluckystrike

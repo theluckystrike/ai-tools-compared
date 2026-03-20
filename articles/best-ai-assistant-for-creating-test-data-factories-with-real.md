@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI Assistant for Creating Test Data Factories with."
+title: "Best AI Assistant for Creating Test Data Factories with Real"
 description:"A practical comparison of AI coding assistants for generating test data factories with realistic fake values, including code examples and tool."
 date: 2026-03-16
 author: theluckystrike

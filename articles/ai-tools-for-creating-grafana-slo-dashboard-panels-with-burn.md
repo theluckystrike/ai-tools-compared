@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating Grafana SLO Dashboard Panels with."
+title: "AI Tools for Creating Grafana SLO Dashboard Panels with Burn"
 description:"Learn how AI tools can help create Grafana SLO dashboard panels with burn rate calculations. Practical examples and code snippets for developers."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Multi-File Context to Generate Consistent."
+title: "How to Use AI Multi-File Context to Generate Consistent Api Endpoints"
 description:"A practical guide for developers on using AI multi-file context capabilities to generate consistent, well-structured API endpoints across your."
 date: 2026-03-16
 author: theluckystrike

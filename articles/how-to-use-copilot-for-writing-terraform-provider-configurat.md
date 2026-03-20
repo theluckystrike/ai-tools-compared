@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Copilot for Writing Terraform Provider."
+title: "How to Use Copilot for Writing Terraform Provider Configurat"
 description:"Learn practical techniques for using GitHub Copilot to write Terraform provider configurations faster with less manual reference hunting. Includes real."
 date: 2026-03-16
 author: theluckystrike

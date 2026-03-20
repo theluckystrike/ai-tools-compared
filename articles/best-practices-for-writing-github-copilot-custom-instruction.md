@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for Writing GitHub Copilot Custom."
+title: "Best Practices for Writing GitHub Copilot Custom Instruction"
 description:"A practical guide for developers on writing effective GitHub Copilot custom instructions in VSCode settings. Learn how to configure Copilot to match."
 date: 2026-03-16
 author: theluckystrike

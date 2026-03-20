@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Rust Web Development with Axum."
+title: "Best AI Tools for Rust Web Development with Axum Framework"
 description:"A practical guide to the best AI tools for Rust web development using the Axum framework, with code examples and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike

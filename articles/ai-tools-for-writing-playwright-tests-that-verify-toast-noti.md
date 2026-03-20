@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Playwright Tests That Verify Toast."
+title: "AI Tools for Writing Playwright Tests That Verify Toast Noti"
 description:"A practical guide to using AI coding assistants for creating Playwright tests that verify toast notification timing, auto-dismissal, and manual."
 date: 2026-03-16
 author: theluckystrike

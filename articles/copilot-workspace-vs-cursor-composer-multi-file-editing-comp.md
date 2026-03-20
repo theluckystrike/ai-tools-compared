@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot Workspace vs Cursor Composer: Multi-File Editing."
+title: "Copilot Workspace vs Cursor Composer: Multi-File Editing Comp"
 description:"Compare GitHub Copilot Workspace and Cursor Composer for multi-file editing in 2026. Practical examples, code snippets, and which tool works best for."
 date: 2026-03-16
 author: theluckystrike

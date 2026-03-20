@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Database Backup Automation and."
+title: "How to Use AI for Database Backup Automation and Disaster"
 description:"A practical guide for developers and power users on using AI to automate database backups and build disaster recovery scripts. Includes code."
 date: 2026-03-16
 author: theluckystrike

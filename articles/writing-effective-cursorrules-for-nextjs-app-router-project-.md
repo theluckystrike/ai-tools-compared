@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing Effective CursorRules for Next.js App Router."
+title: "Writing Effective CursorRules for Next.js App Router App Router Project With Specific File Conventions"
 description:"A practical guide for developers on creating effective CursorRules configurations for Next.js App Router projects, covering file structure conventions."
 date: 2026-03-16
 author: theluckystrike

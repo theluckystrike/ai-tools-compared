@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Autocomplete for Writing Tests: Comparison of."
+title: "AI Autocomplete for Writing Tests: Comparison of Suggestion"
 description:"A practical comparison of AI autocomplete tools for writing tests, examining suggestion quality, accuracy, and useful patterns across GitHub Copilot."
 date: 2026-03-16
 author: theluckystrike

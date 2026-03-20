@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Talkdesk vs Five9: AI Contact Center Comparison for."
+title: "Talkdesk vs Five9: AI Contact Center Comparison for"
 description:"A practical technical comparison of Talkdesk and Five9 AI contact center platforms, including API capabilities, integration patterns, and."
 date: 2026-03-15
 author: theluckystrike

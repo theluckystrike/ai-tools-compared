@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing: Open Source Maintainer Burnout."
+title: "Best AI for Writing: Open Source Maintainer Burnout"
 description:"Discover AI writing tools that help open source maintainers prevent burnout. Practical guidelines, processes, and examples for sustainable project."
 date: 2026-03-16
 author: theluckystrike

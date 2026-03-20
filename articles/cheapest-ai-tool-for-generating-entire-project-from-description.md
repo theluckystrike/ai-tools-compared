@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cheapest AI Tool for Generating Entire Project from."
+title: "Cheapest AI Tool for Generating Entire Project from Description"
 description:"Find the most affordable AI tools that can generate complete project structures from a simple description. Compare pricing, features, and real-world costs."
 date: 2026-03-17
 author: theluckystrike

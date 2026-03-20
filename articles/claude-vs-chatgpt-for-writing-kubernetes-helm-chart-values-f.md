@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude vs ChatGPT for Writing Kubernetes Helm Chart."
+title: "Claude vs ChatGPT for Writing Kubernetes Helm Chart Values"
 description:"A practical comparison of Claude and ChatGPT for creating and managing Kubernetes Helm chart values files, with code examples and real-world scenarios."
 date: 2026-03-16
 author: theluckystrike

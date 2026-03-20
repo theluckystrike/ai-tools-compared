@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Resolve Nginx 502 Bad Gateway Errors."
+title: "How to Use AI to Resolve Nginx 502 Bad Gateway Errors"
 description:"A practical guide for developers on using AI tools to diagnose, troubleshoot, and fix nginx 502 Bad Gateway errors caused by upstream server."
 date: 2026-03-16
 author: theluckystrike

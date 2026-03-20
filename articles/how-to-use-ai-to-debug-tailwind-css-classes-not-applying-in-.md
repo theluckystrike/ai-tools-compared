@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Debug Tailwind CSS Classes Not Applying."
+title: "How to Use AI to Debug Tailwind CSS Classes Not Applying"
 description:"A practical guide for developers on using AI tools to identify and fix Tailwind CSS classes that fail to apply in production environments."
 date: 2026-03-16
 author: theluckystrike

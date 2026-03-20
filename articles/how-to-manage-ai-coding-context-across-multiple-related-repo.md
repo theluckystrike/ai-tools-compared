@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Manage AI Coding Context Across Multiple Related."
+title: "How to Manage AI Coding Context Across Multiple Related Repo"
 description:"Practical strategies and code examples for maintaining AI coding context when working across multiple related repositories in 2026."
 date: 2026-03-16
 author: theluckystrike

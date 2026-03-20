@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Creating pytest conftest Files."
+title: "Best AI Assistant for Creating pytest conftest Files"
 description:"A practical guide to using AI tools for generating pytest conftest files with reusable shared fixtures. Compare top AI coding assistants and learn."
 date: 2026-03-16
 author: theluckystrike

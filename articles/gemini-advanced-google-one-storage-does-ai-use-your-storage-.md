@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini Advanced Google One Storage: Does AI Use Your."
+title: "Gemini Advanced Google One Storage: Does AI Use Your Storage"
 description:"A technical guide for developers and power users understanding how Gemini Advanced interacts with Google One storage. Learn what's stored, what's not, and how to manage your quota effectively."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Writing Effective System Prompts for AI Coding."
+title: "Writing Effective System Prompts for AI Coding Assistants"
 description:"A practical guide for developers and power users to craft system prompts that help AI coding assistants generate idiomatic code matching your project's conventions and language-specific patterns."
 date: 2026-03-16
 author: theluckystrike

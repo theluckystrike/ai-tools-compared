@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Tools for Writing License Header Templates and."
+title: "AI Tools for Writing License Header Templates and Checking"
 description:"A practical guide for developers using AI tools to generate license headers and automate compliance checks across codebases."
 date: 2026-03-16
 author: theluckystrike

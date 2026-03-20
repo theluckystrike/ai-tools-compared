@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configuring Cursor AI to Work with Corporate VPN and."
+title: "Configuring Cursor AI to Work with Corporate VPN and Proxy"
 description:"A practical guide for developers and power users setting up Cursor AI behind corporate firewalls, VPNs, and authenticated proxy servers."
 date: 2026-03-16
 author: theluckystrike

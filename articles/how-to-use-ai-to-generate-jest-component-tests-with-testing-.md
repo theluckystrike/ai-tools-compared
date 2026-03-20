@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Jest Component Tests with."
+title: "How to Use AI to Generate Jest Component Tests with Testing"
 description:"Learn how to use AI tools to automatically generate Jest component tests using Testing Library and user events for React applications."
 date: 2026-03-16
 author: theluckystrike

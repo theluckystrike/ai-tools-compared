@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "AI Assistants for Writing Correct AWS IAM Policies with."
+title: "AI Assistants for Writing Correct AWS IAM Policies with Least Privilege"
 description:"A practical guide for developers using AI assistants to write secure AWS IAM policies that follow the principle of least privilege."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Accurate Are AI Tools at Generating Rust Crossbeam."
+title: "How Accurate Are AI Tools at Generating Rust Crossbeam"
 description:"A practical evaluation of AI coding tools for generating Rust Crossbeam concurrent code. Test results, code quality, and recommendations for developers."
 date: 2026-03-16
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Practice Object-Oriented Design."
+title: "How to Use AI to Practice Object-Oriented Design Interview"
 description:"Master object-oriented design interviews using AI tools and UML diagrams. Learn practical techniques for SOLID principles, class design, and system."
 date: 2026-03-16
 author: theluckystrike

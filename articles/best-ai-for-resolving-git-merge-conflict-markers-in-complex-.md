@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Resolving Git Merge Conflict Markers in."
+title: "Best AI for Resolving Git Merge Conflict Markers in Complex"
 description:"A practical guide to AI tools that help developers resolve Git merge conflict markers during complex rebasing operations in 2026."
 date: 2026-03-16
 author: theluckystrike

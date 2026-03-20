@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "How to Move Stable Diffusion Workflows to Midjourney."
+title: "How to Move Stable Diffusion Workflows to Midjourney Equivalent Setup"
 description:"A practical guide for developers migrating AI image generation workflows from Stable Diffusion to Midjourney, including prompt conversion tools and."
 date: 2026-03-16
 author: theluckystrike

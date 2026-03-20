@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Well Do AI Tools Generate Rust Macro Definitions and."
+title: "How Well Do AI Tools Generate Rust Macro Definitions and Pro"
 description:"A practical evaluation of AI coding tools for generating Rust macros. Test results, code quality, and recommendations for developers working with."
 date: 2026-03-16
 author: theluckystrike

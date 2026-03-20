@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Building an AI Research Assistant Chrome Extension: A."
+title: "Building an AI Research Assistant Chrome Extension: Ai Research Assistant Chrome Extension"
 description:"Learn how to build and use AI research assistant Chrome extensions for enhanced productivity. Practical examples, code snippets, and implementation."
 date: 2026-03-15
 author: theluckystrike

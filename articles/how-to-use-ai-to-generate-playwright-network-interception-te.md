@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Playwright Network."
+title: "How to Use AI to Generate Playwright Network Interception"
 description:"Learn how to use AI tools to automatically generate Playwright network interception tests that verify your application's behavior when network connectivity is unavailable."
 date: 2026-03-16
 author: theluckystrike

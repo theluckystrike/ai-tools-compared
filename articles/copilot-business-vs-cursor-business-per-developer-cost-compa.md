@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot Business vs Cursor Business: Per-Developer Cost."
+title: "Copilot Business vs Cursor Business: Per-Developer Cost Comparison"
 description:"A practical cost comparison of GitHub Copilot Business and Cursor Business pricing for development teams. Find the best AI coding assistant for your."
 date: 2026-03-16
 author: theluckystrike

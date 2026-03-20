@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Create Custom System Prompts for AI That Match."
+title: "How to Create Custom System Prompts for AI That Match Your"
 description:"A practical guide for developers and power users to create custom AI system prompts that align with your documentation style and produce consistent."
 date: 2026-03-16
 author: theluckystrike

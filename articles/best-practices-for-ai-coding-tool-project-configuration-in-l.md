@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Practices for AI Coding Tool Project Configuration."
+title: "Best Practices for AI Coding Tool Project Configuration"
 description:"Learn how to configure AI coding tools for large enterprise codebases. Practical configuration strategies, .gitignore optimization, and context."
 date: 2026-03-16
 author: theluckystrike

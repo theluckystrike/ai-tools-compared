@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Set Up Model Context Protocol for Feeding Jira."
+title: "How to Set Up Model Context Protocol for Feeding Jira Ticket"
 description:"A practical guide to setting up Model Context Protocol (MCP) for feeding Jira ticket context to AI tools in 2026. Code examples and configuration steps."
 date: 2026-03-16
 author: theluckystrike

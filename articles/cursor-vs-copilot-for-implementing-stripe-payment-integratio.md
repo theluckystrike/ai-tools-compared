@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Copilot for Implementing Stripe Payment."
+title: "Cursor vs Copilot for Implementing Stripe Payment"
 description:"A practical comparison of Cursor and GitHub Copilot for building Stripe payment integration in Next.js applications, with code examples and developer."
 date: 2026-03-16
 author: theluckystrike

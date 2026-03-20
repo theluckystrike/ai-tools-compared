@@ -10,6 +10,7 @@ tags: [claude-code, memory-profiling, performance]
 score: 7
 voice-checked: true
 reviewed: true
+intent-checked: true
 ---
 
 

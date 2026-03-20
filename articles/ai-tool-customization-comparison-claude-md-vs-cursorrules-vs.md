@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tool Customization Comparison: Claude.md vs."
+title: "AI Tool Customization Comparison: Claude.md vs Cursorrules"
 description:"A practical comparison of AI tool customization methods—Claude.md, CursorRules, and Copilot Instructions—to help developers choose the best approach."
 date: 2026-03-16
 author: theluckystrike

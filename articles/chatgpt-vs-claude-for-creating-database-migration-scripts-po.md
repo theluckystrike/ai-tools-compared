@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "ChatGPT vs Claude for Creating Database Migration."
+title: "ChatGPT vs Claude for Creating Database Migration Scripts"
 description:"A practical comparison of ChatGPT and Claude for generating PostgreSQL migration scripts, with code examples and recommendations for database developers."
 date: 2026-03-16
 author: "theluckystrike"

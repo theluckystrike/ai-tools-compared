@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Configure Cursor AI Rules for Consistent CSS and."
+title: "How to Configure Cursor AI Rules for Consistent CSS and Tail"
 description:"A practical guide to setting up Cursor AI rules that enforce consistent CSS and Tailwind class ordering across your codebase."
 date: 2026-03-16
 author: theluckystrike

@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Configure Claude Code Project Memory for."
+title: "How to Configure Claude Code Project Memory for Persistent"
 description:"A practical guide to configuring Claude Code project memory for persistent coding conventions, with setup examples and configuration strategies for."
 date: 2026-03-16
 author: theluckystrike

@@ -94,7 +94,19 @@ Copilot communicates with GitHub servers to generate suggestions. Corporate fire
 
 
 
-If you use a proxy, configure your IDE's proxy settings to allow Copilot traffic. For VS Code, add proxy settings to your user or workspace settings JSON file. Ensure exceptions exist for GitHub's Copilot endpoints if your proxy performs SSL inspection.
+If you use a proxy, configure your IDE's proxy settings. For VS Code, add proxy settings to your `settings.json`:
+
+```json
+{
+  "http.proxy": "http://proxy.example.com:8080",
+  "http.proxyStrictSSL": false,
+  "github.copilot.advanced": {
+    "debug.overrideProxyUrl": "http://proxy.example.com:8080"
+  }
+}
+```
+
+Copilot connects to `copilot-proxy.githubusercontent.com` — add that hostname to your proxy allowlist.
 
 
 
@@ -130,11 +142,20 @@ Organization-level policies may require explicit enrollment of repositories or u
 
 
 
-Local cache corruption can cause unexpected behavior. Clear Copilot's local cache by navigating to your IDE's application support directory and removing Copilot-related folders. After clearing the cache, restart your IDE to allow Copilot to rebuild its local data.
+Local cache corruption can cause unexpected behavior. Clear Copilot's local cache:
 
+```bash
+# macOS
+rm -rf ~/Library/Application\ Support/Code/User/globalStorage/github.copilot*
 
+# Linux
+rm -rf ~/.config/Code/User/globalStorage/github.copilot*
 
-Resetting Copilot settings to defaults can resolve configuration-related issues. Export your current settings if you have custom configurations worth preserving, then perform a settings reset followed by a restart.
+# Windows PowerShell
+Remove-Item -Recurse -Force "$env:APPDATA\Code\User\globalStorage\github.copilot*"
+```
+
+Restart VS Code after clearing the cache. To reset only Copilot settings, open the Command Palette (`Cmd+Shift+P`), run **Preferences: Open User Settings (JSON)**, and remove any keys starting with `github.copilot`.
 
 
 
@@ -142,7 +163,24 @@ Resetting Copilot settings to defaults can resolve configuration-related issues.
 
 
 
-Create a minimal test file with common patterns such as a function definition, loop structure, or class skeleton. Paste standard boilerplate code that typically triggers Copilot suggestions. If suggestions appear in this test file but not in your actual project, the issue relates to your project configuration rather than Copilot itself.
+Create a minimal test file. Paste this and wait two seconds after the last character:
+
+```python
+# test_copilot.py
+def calculate_fibonacci(n):
+    # Copilot should suggest implementation here
+```
+
+Or in JavaScript:
+
+```javascript
+// test_copilot.js
+function reverseString(str) {
+  // Copilot should suggest implementation
+}
+```
+
+If suggestions appear here but not in your project, check for a `.copilotignore` file, very large file sizes, or workspace-level settings overriding your user config.
 
 
 

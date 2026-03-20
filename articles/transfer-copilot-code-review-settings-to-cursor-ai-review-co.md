@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "How to Transfer Copilot Code Review Settings to Cursor."
+title: "How to Transfer Copilot Code Review Settings"
 description:"A practical guide for migrating your GitHub Copilot code review settings to Cursor AI, with configuration examples and step-by-step instructions for."
 date: 2026-03-16
 author: theluckystrike

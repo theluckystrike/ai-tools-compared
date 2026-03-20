@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Structure Prompts for AI to Generate Idiomatic."
+title: "How to Structure Prompts for AI to Generate Idiomatic Code"
 description:"A practical guide for developers on writing effective prompts that produce idiomatic code in Python, JavaScript, Rust, Go, and other programming languages."
 date: 2026-03-16
 author: theluckystrike

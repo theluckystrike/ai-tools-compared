@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write an Enterprise Acceptable Use Policy for AI."
+title: "How to Write an Enterprise Acceptable Use Policy for AI"
 description:"A practical guide for developers and IT leaders creating policies that govern AI coding assistant usage in enterprise environments."
 date: 2026-03-16
 author: theluckystrike

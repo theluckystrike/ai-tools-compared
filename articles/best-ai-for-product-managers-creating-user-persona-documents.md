@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Best AI for Product Managers Creating User Persona."
+title: "Best AI for Product Managers Creating User Persona Documents"
 description:"A practical guide to using AI tools for transforming survey responses into actionable user persona documents. Code examples and workflows for PMs."
 date: 2026-03-16
 author: theluckystrike

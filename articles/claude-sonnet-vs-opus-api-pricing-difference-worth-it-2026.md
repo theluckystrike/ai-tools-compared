@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Sonnet vs Opus API Pricing: Is the Difference."
+title: "Claude Sonnet vs Opus API Pricing: Is the Difference Difference Worth It 2026"
 description:"A practical comparison of Claude Sonnet and Opus API pricing for developers. Learn when Opus justifies its premium cost and when Sonnet delivers better."
 date: 2026-03-16
 author: theluckystrike

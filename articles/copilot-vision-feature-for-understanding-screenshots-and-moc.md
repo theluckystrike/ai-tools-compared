@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot Vision Feature for Understanding Screenshots and."
+title: "Copilot Vision Feature for Understanding Screenshots and Moc"
 description:"Copilot Vision Feature for Understanding Screenshots and. — guide with practical tips, comparisons, and expert recommendations for."
 date: 2026-03-16
 author: theluckystrike

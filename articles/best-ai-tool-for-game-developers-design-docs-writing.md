@@ -63,7 +63,33 @@ Game design documents follow specific structures, so look for tools that generat
 
 
 
-Creating a GDD from scratch is daunting. AI tools can help generate initial drafts based on high-level concept descriptions, helping teams move from idea to actionable documentation faster. For example, describing a roguelike deckbuilder game to an AI can yield a starting document covering core mechanics, run structure, card types, and progression systems. Developers then refine this foundation, adding the specific details that make their game unique.
+Creating a GDD from scratch is daunting. AI tools can help generate initial drafts based on high-level concept descriptions, helping teams move from idea to actionable documentation faster. A prompt like this produces a first draft within seconds:
+
+```
+Write a game design document for a roguelike deckbuilder:
+- Concept Statement (2 sentences)
+- Core Loop (turn structure, deck management, run structure)
+- Card Categories (attack, defense, utility - 3 examples each)
+- Progression Systems (meta-progression, unlocks, difficulty scaling)
+- Win/Loss Conditions
+- Out of Scope for v1.0
+
+Format as markdown with ## headers. Focus on mechanics, not narrative.
+```
+
+Add your game's specific rules, art direction, and platform constraints in the next editing pass.
+
+For technical design specs, follow with a second prompt:
+
+```
+Based on the GDD above, write a technical design document for the Card system:
+- Data model (card struct fields)
+- Card effect execution pipeline
+- Shuffle and draw algorithms (pseudocode)
+- Save/load serialization approach
+- Edge cases: empty deck, infinite loops, status effect stacking
+Target language: C# (Unity)
+```
 
 
 

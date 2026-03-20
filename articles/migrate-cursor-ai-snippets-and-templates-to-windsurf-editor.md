@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Migrate Cursor AI Snippets and Templates to."
+title: "How to Migrate Cursor AI Snippets and Templates"
 description:"A practical guide for developers moving their custom snippets and templates from Cursor AI to WindSurf. Includes code examples and step-by-step."
 date: 2026-03-16
 author: theluckystrike

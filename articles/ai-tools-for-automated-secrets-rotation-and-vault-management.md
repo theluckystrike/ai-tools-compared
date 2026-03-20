@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Automated Secrets Rotation and Vault."
+title: "AI Tools for Automated Secrets Rotation and Vault Management"
 description:"A practical guide for developers on using AI tools to automate secrets rotation and integrate with vault management systems, with code examples and."
 date: 2026-03-16
 author: theluckystrike

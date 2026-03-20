@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "GitHub Copilot Workspace Preview: Pricing & Extra Costs."
+title: "GitHub Copilot Workspace Preview: Pricing & Extra Costs Will It Cost Extra 2026"
 description:"Everything you need to know about GitHub Copilot Workspace preview pricing, including whether it costs extra, feature availability, and what to expect."
 date: 2026-03-18
 author: theluckystrike
@@ -47,7 +47,15 @@ As of early 2026, GitHub Copilot Workspace remains in technical preview. During 
 
 
 
-The preview allows developers to test agentic coding capabilities without额外费用 (extra costs). This mirrors GitHub's approach with original Copilot, which started free before transitioning to paid tiers.
+The preview allows developers to test agentic coding capabilities at no extra cost. This mirrors GitHub's approach with the original Copilot, which started free before transitioning to paid tiers.
+
+To verify Workspace is enabled on your account:
+
+```
+https://github.com/copilot/workspaces
+```
+
+If you see a "Request access" prompt, you are not yet in the preview cohort. GitHub is rolling it out gradually to Copilot subscribers — no manual action required.
 
 
 

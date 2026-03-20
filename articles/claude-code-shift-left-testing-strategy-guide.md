@@ -419,11 +419,6 @@ Track these metrics to evaluate your shift left testing implementation:
 6. **Continuous refinement:** Adjust prompts based on results
 7. **Integrate systematically:** Embed shift left into workflows, not as optional add-on
 
-## Conclusion
-
-
-For teams ready to improve code quality and reduce late-stage defect discovery, Claude Code-assisted shift left testing offers a practical path to better outcomes. Start with a pilot on one team or project, measure results, and expand from there. The compounding benefits of catching defects earlier—faster development cycles, fewer production issues, higher-quality software—justify the investment in changing testing practices.
-
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

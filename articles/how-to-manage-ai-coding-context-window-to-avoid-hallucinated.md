@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Manage AI Coding Context Window to Avoid."
+title: "How to Manage AI Coding Context Window to Avoid Hallucinated"
 description:"Learn practical techniques to manage AI coding assistant context windows and prevent hallucinated imports from breaking your codebase."
 date: 2026-03-16
 author: theluckystrike

@@ -9,6 +9,7 @@ permalink: /ai-tools-for-returns-and-refund-automation/
 voice-checked: true
 score: 7
 reviewed: true
+intent-checked: true
 ---
 
 

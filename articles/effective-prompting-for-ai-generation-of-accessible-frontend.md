@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Prompting for AI Generation of Accessible."
+title: "Effective Prompting for AI Generation of Accessible Frontend"
 description:"A practical guide to writing prompts that generate WCAG-compliant, accessible frontend components using AI coding assistants."
 date: 2026-03-16
 author: theluckystrike
