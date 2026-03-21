@@ -37,6 +37,9 @@ When you use Cursor's project-wide refactor capability, the AI analyzes your ent
 - Environment-specific configuration
 
 
+Cursor's AI operates on statistical patterns derived from your code context. When it renames a symbol like `UserService` to `UserManager`, it traverses files it can identify via language server indexing—but it can miss files that aren't in the active workspace window, files that reference the symbol as a string (dynamic imports, config files, Jest module mappers), or files that are generated at build time. This is why a refactor that looks complete in the editor can still break the build.
+
+
 ## Common Build Errors After Project-Wide Refactor
 
 
@@ -55,6 +58,9 @@ The most frequent issue you'll encounter is module resolution failures. After re
 - `ESM module error: The requested module does not provide an export`
 
 
+These errors almost always mean the file was renamed or moved, but one or more import sites weren't updated. Cursor's project-wide rename misses files outside the workspace index or references inside template strings.
+
+
 ### TypeScript Compilation Errors
 
 
@@ -70,6 +76,9 @@ TypeScript errors explode after a refactor because type definitions get out of s
 - `Cannot find name 'OldFunctionName'`
 
 
+When Cursor updates a function signature but leaves one call site using the old argument shape, TypeScript catches the mismatch. Interface renames are especially problematic because TypeScript's structural typing means the error can surface far from the original change.
+
+
 ### Dependency Conflicts
 
 
@@ -83,6 +92,9 @@ Refactoring can introduce incompatible dependency versions or orphaned packages.
 - `Conflicting peer dependency`
 
 - `Package not found: @old/package-name`
+
+
+This typically happens when Cursor rewrites package import paths during a rename (for example, changing `lodash` usages to `lodash-es`) but doesn't update `package.json` to add the new dependency.
 
 
 ## Step-by-Step Fix Guide
@@ -121,6 +133,9 @@ pnpm build 2>&1 | tee build-errors.log
 ```
 
 
+Parse the error log to group errors by type before starting fixes. Fixing all TypeScript errors first, then module errors, prevents you from chasing cascading failures.
+
+
 ### Step 2: Fix Import Statements
 
 
@@ -154,6 +169,9 @@ For TypeScript projects, verify your `tsconfig.json` paths configuration:
 ```
 
 
+If Cursor renamed a directory (for example, `components/ui` to `components/design-system`), you need to update path aliases in `tsconfig.json`, `vite.config.ts`, and `jest.config.js` simultaneously. Missing one of these files is the most common reason a fix seems to work in the editor but still fails at build time.
+
+
 ### Step 3: Restore Type Consistency
 
 
@@ -185,6 +203,14 @@ grep -r "Status\." --include="*.ts" src/
 ```
 
 
+For complex type hierarchies, run the TypeScript compiler directly rather than through your bundler—it gives cleaner error output and locates the originating type mismatch rather than just the symptom:
+
+
+```bash
+npx tsc --noEmit 2>&1 | head -60
+```
+
+
 ### Step 4: Clean and Rebuild
 
 
@@ -205,6 +231,9 @@ rm -rf .next  # Next.js
 rm -rf dist   # Vite/Webpack
 rm -rf build  # Create React App
 ```
+
+
+After clearing caches, rebuild incrementally when possible. For Vite projects, run `vite build --watch` temporarily to see errors as they occur file by file. For Next.js, `next build` with `--debug` flag shows which pages are failing and why.
 
 
 ### Step 5: Fix Configuration Files
@@ -243,6 +272,20 @@ export default defineConfig({
 ```
 
 
+The Jest `moduleNameMapper` is frequently overlooked. If you use path aliases in tests, they must match `tsconfig.json` paths exactly:
+
+
+```javascript
+// jest.config.js
+module.exports = {
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@components/(.*)$': '<rootDir>/src/components/$1',
+  }
+}
+```
+
+
 ## Diagnostic Tips for Complex Cases
 
 
@@ -259,6 +302,9 @@ npm install -D circular-dependency-plugin
 # Or use Node's built-in analyzer
 node -e "require('module')._load('./src/index.js', {}, true)"
 ```
+
+
+Cursor's refactor can introduce circular dependencies when it moves a utility function from a low-level module to a higher-level one that imports from the first. The build fails with confusing errors because the circular reference is detected late in the module graph resolution.
 
 
 ### Version Conflict Resolution
@@ -298,6 +344,9 @@ git checkout <commit-hash> -- .
 ```
 
 
+A partial rollback is often more efficient than a full one. Use `git diff HEAD~1 -- src/` to see exactly what changed in the last commit, then selectively restore files that are hard to fix. This preserves the valid refactor changes while recovering the broken ones.
+
+
 ## Prevention
 
 
@@ -311,6 +360,10 @@ Avoid future build breaks with these practices:
 3. Commit before large refactors so you can easily rollback
 
 4. Test the build after each major change rather than waiting until the end
+
+5. Keep a checklist of all config files that reference symbol names—`tsconfig.json`, `jest.config.js`, `vite.config.ts`, and any custom scripts are all candidates
+
+6. Run `npx tsc --noEmit` before committing after a Cursor refactor to catch type issues before they enter the build pipeline
 
 
 {% endraw %}
