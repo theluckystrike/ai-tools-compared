@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-code-completion-for-java-jakarta-ee-migration-from-javax-/
 categories: [guides, comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
