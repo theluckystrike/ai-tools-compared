@@ -13,6 +13,8 @@ intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, changelog, release-management, git]
 ---
+{% raw %}
+
 
 
 Choose conventional-changelog for projects already using Conventional Commits (enforced via commitlint), with automatic semantic version bumping and multi-repository support. Choose Semantic Release for fully automated changelog generation tied to release pipelines and Git tags. Choose Cliff for Rust/system software projects with custom templates and Git metadata extraction. Choose Claude + automation for legacy codebases needing intelligent commit interpretation and manual handoff workflows. All handle semantic versioning correctly but differ in CI/CD integration depth and handling of irregular commit histories.
@@ -620,3 +622,4 @@ grep "^##" CHANGELOG.md  # Should see version headers
 - [Release Management Automation for Monorepos](/ai-tools-compared/release-management-automation-monorepos/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

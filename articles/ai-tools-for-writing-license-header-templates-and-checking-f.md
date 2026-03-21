@@ -13,6 +13,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 
 AI tools can significantly speed up the process of creating license headers and verifying that every file in your project follows the correct format. Instead of manually adding copyright notices to hundreds of source files or relying on brittle regex scripts, you can use AI assistants to generate appropriate headers, explain license requirements, and help build automated compliance workflows.
@@ -365,3 +367,4 @@ Fourth, keep your headers current. If you update your project's license or add n
 - [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

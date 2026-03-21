@@ -1,12 +1,13 @@
 ---
-title: AI Tools for Generating Unit Test Mocks and Stubs 2026
-description: Compare AI tools for generating mocks and stubs across Python, JavaScript, Go, and Java with practical examples for pytest-mock, jest, gomock, and Mockito.
+title: "AI Tools for Generating Unit Test Mocks and Stubs 2026"
+description: "Compare AI tools for generating mocks and stubs across Python, JavaScript, Go, and Java with practical examples for pytest-mock, jest, gomock, and Mockito."
 author: theluckystrike
 date: 2026-03-21
 reviewed: true
 score: 8
 voice-checked: true
 intent-checked: true
+permalink: /ai-tools-for-generating-unit-test-mocks-and-stubs-2026/
 ---
 
 # AI Tools for Generating Unit Test Mocks and Stubs 2026
