@@ -10,7 +10,7 @@ score: 8
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal]
+tags: [ai-tools-compared, troubleshooting, claude-code, windows, terminal, claude-ai]
 ---
 
 # Claude Code Terminal Output Garbled on Windows Fix 2026
