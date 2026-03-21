@@ -9,7 +9,7 @@ permalink: /ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lin
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
