@@ -40,6 +40,23 @@ AI tools enhance these capabilities by automatically detecting patterns, identif
 
 
 
+## Architecture Patterns: Choosing Your Stack
+
+Before selecting individual tools, it helps to understand the two dominant architectural patterns for real-time analytics with AI:
+
+**Lambda architecture** maintains a batch layer (for historical accuracy) and a speed layer (for low latency), with a serving layer that merges both views. This pattern suits systems where exact results matter but some latency is acceptable for historical data. The downside is operational complexity: you maintain two processing pipelines and must keep them consistent.
+
+**Kappa architecture** eliminates the batch layer entirely. All processing goes through the stream layer, and historical reprocessing is handled by replaying the event log. This is operationally simpler and increasingly the default choice for teams starting fresh in 2026.
+
+| Pattern | Complexity | Latency | Historical Accuracy | Best For |
+|---------|-----------|---------|--------------------|----|
+| Lambda | High | Low for recent data | Very high | Finance, compliance systems |
+| Kappa | Moderate | Low | High (depends on log retention) | Most real-time analytics |
+| Micro-batch (Spark Streaming) | Low | Moderate (seconds) | High | Teams already on Spark |
+
+For most teams evaluating this space today, a Kappa architecture using Kafka as the event log, Flink or ksqlDB for stream processing, and ClickHouse for analytical queries covers the majority of use cases.
+
+
 ## Streaming Data Pipelines with Apache Kafka
 
 
@@ -71,6 +88,16 @@ for message in consumer:
 
 Kafka connects naturally with stream processing frameworks, allowing AI models to score events as they flow through your pipeline.
 
+
+### Kafka vs. Competing Ingestion Layers
+
+Kafka is not always the right choice. For teams with simpler needs or cloud-native preferences:
+
+- **AWS Kinesis** reduces operational overhead at the cost of less flexibility and higher per-message pricing at scale.
+- **Redpanda** is API-compatible with Kafka but written in C++ — it handles the same workloads with lower latency and simpler operations (no JVM, no ZooKeeper).
+- **Pulsar** offers native multi-tenancy and geo-replication, making it a better fit than Kafka for large organizations with complex access control requirements.
+
+For teams that are not already operating Kafka clusters, Redpanda is increasingly the recommended starting point in 2026: you get Kafka-compatible APIs with significantly reduced operational surface area.
 
 
 ## Apache Flink for Complex Event Processing
@@ -124,6 +151,19 @@ LIMIT 100;
 ClickHouse integrates with ML models through user-defined functions, allowing you to score data during ingestion or query time without external model serving infrastructure.
 
 
+### ClickHouse vs. Apache Druid vs. StarRocks
+
+ClickHouse dominates this space for most workloads, but its competitors have meaningful strengths:
+
+| Tool | Query Latency | Ingestion Rate | ML Integration | Managed Option |
+|------|--------------|---------------|----------------|----------------|
+| ClickHouse | Sub-second | Very high | UDFs, ONNX | ClickHouse Cloud |
+| Apache Druid | Sub-second | Very high | Limited | Imply |
+| StarRocks | Sub-second | High | Good | StarRocks Cloud |
+| Apache Pinot | Sub-second | Very high | Limited | StarTree |
+
+Druid is the incumbent in many enterprise environments and excels at time-series data with high-cardinality dimensions. StarRocks has been gaining ground for workloads that mix real-time ingestion with complex joins — a query pattern where ClickHouse historically struggled. For pure analytical throughput on append-only event data, ClickHouse remains the benchmark.
+
 
 ## Implementing Real-Time Anomaly Detection
 
@@ -143,28 +183,28 @@ class RealTimeAnomalyDetector:
         self.model = self._load_model(model_path)
         self.threshold = threshold
         self.redis = redis.Redis(host='localhost', port=6379, db=0)
-    
+
     def _load_model(self, path):
         # Load pre-trained model
         import joblib
         return joblib.load(path)
-    
+
     def process_event(self, event):
         features = self._extract_features(event)
         score = self.model.decision_function([features])[0]
-        
+
         # Store for dashboard visualization
         self.redis.xadd('anomaly_scores', {
             'timestamp': event['timestamp'],
             'score': str(score),
             'is_anomaly': str(score < self.threshold)
         })
-        
+
         if score < self.threshold:
             self._trigger_alert(event, score)
-        
+
         return {'score': score, 'anomaly': score < self.threshold}
-    
+
     def _extract_features(self, event):
         # Feature engineering from raw event
         return [
@@ -177,6 +217,18 @@ class RealTimeAnomalyDetector:
 
 This detector processes each event, computes an anomaly score, stores results for real-time dashboards, and triggers alerts when anomalies exceed your threshold.
 
+
+### Model Serving Strategies for Real-Time Pipelines
+
+Embedding anomaly detection directly in your consumer process (as shown above) works well for low-throughput pipelines, but high-volume systems benefit from dedicated model serving:
+
+**ONNX Runtime** lets you export models from scikit-learn, PyTorch, or XGBoost into a portable format and serve them with near-native performance. Latency for a single inference call typically falls under 5ms for models in the complexity range of IsolationForest or gradient boosted trees.
+
+**Triton Inference Server** (NVIDIA) handles batching automatically — when traffic spikes, it groups multiple inference requests together to amortize GPU overhead. This keeps per-request latency stable under load rather than degrading linearly.
+
+**BentoML** is a higher-level option that wraps model serving with REST and gRPC endpoints, built-in monitoring, and straightforward Kubernetes deployment. For teams without a dedicated MLOps function, BentoML reduces the operational burden significantly compared to running raw Triton.
+
+The general guidance: for throughput under 1,000 events/second, embedding inference in your consumer is fine. Above that threshold, a dedicated serving layer with batching prevents the inference step from becoming the pipeline bottleneck.
 
 
 ## Materialize for Streaming SQL
@@ -276,7 +328,6 @@ For **similarity-based analytics**, vector databases integrate with your streami
 
 
 Start with the simplest architecture that meets your latency requirements, then add complexity as your needs evolve. Real-time analytics systems grow in sophistication as your team gains operational experience with streaming data.
-
 
 
 
