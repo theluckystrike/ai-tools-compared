@@ -1,7 +1,7 @@
 ---
 
 layout: default
-title: "Windsurf AI Not Picking Up ESLint Config — Troubleshooting Guide"
+title: "Windsurf AI Not Picking Up ESLint Config"
 description: "A practical troubleshooting guide for developers experiencing issues with Windsurf AI not detecting ESLint configuration files"
 date: 2026-03-20
 author: "AI Tools Compared"
@@ -10,6 +10,8 @@ categories: [troubleshooting]
 tags: [windsurf, eslint, ai-editor, configuration]
 reviewed: true
 score: 8
+intent-checked: true
+voice-checked: true
 ---
 
 

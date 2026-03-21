@@ -1,6 +1,6 @@
 ---
 title: Best AI Tools for Writing Terraform Modules in 2026
-description: Compare Claude, ChatGPT, Copilot, and CodeWhisperer for generating production-ready Terraform modules. Real HCL examples, module structure best practices, state management patterns, and terratest strategies.
+description: Compare Claude, ChatGPT, Copilot, and CodeWhisperer for generating production-ready Terraform modules. Real HCL examples, module structure best practices
 author: theluckystrike
 date: 2026-03-21
 permalink: /best-ai-tools-for-writing-terraform-modules-2026/

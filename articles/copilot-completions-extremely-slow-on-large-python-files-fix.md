@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Completions Extremely Slow on Large Python Files Fix"
-description: "Practical solutions for fixing slow GitHub Copilot completions on large Python files. Learn why Copilot lags on big codebases and how to optimize your setup for faster AI-assisted coding"
+description: "Practical solutions for fixing slow GitHub Copilot completions on large Python files. Learn why Copilot lags on big codebases and how to optimize your setup"
 date: 2026-03-20
 author: theluckystrike
 permalink: /copilot-completions-extremely-slow-on-large-python-files-fix/
