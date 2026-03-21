@@ -28,6 +28,21 @@ Finding affordable AI tools requires understanding the true cost structure. This
 GitHub Copilot costs $10 per month for individuals or $100 per year, and the free tier is limited. While Copilot performs well in many scenarios, developers increasingly seek alternatives for reasons including cost savings, privacy concerns, offline capabilities, and curiosity about competing tools. The good news is that several free options now match or approach Copilot's core functionality.
 
 
+## How Free Alternatives Compare to Copilot
+
+Before going deep on each tool, here is a direct feature-by-feature comparison with GitHub Copilot's free tier (2,000 completions/month, 50 chat messages/month) as the baseline:
+
+| Feature | Copilot Free | Codeium Free | Tabnine Free | Continue + Ollama | Aider + Local |
+|---------|-------------|--------------|--------------|-------------------|---------------|
+| Monthly completions | 2,000 | Unlimited | Unlimited | Unlimited | Unlimited |
+| Chat messages | 50 | Unlimited | None | Unlimited | Unlimited |
+| Multi-file context | Yes | Yes | No | Yes | Yes |
+| Local processing | No | No | Yes | Yes | Yes |
+| Supported IDEs | VS Code, JB | VS Code, JB, Vim | VS Code, JB, Vim | VS Code | Terminal |
+| Privacy mode | No | No | Yes | Yes | Yes |
+
+Copilot free's monthly limits are its most significant constraint. Developers who regularly use AI completions hit the 2,000 completion ceiling within a few days of active coding. Once that happens, Codeium free is the closest equivalent experience — unlimited completions, similar IDE integration, and a chat feature Tabnine free lacks entirely.
+
 
 ## Codeium: The Strongest Free Option
 
@@ -63,6 +78,10 @@ Codeium excels at filling in function bodies, import statements, and repetitive 
 
 Codeium handles boilerplate code, unit test generation, and SQL query writing effectively. It integrates with popular frameworks and suggests context-aware completions based on your open files. The free tier includes the full feature set with no usage limits.
 
+
+### Codeium's Limitations Worth Knowing
+
+Codeium's context window is shorter than Copilot's when dealing with very large files (over 5,000 lines). In practice this matters most for developers working in large monolithic files rather than modular codebases. Codeium also does not support GitHub Pull Request integration — a Copilot feature that generates PR descriptions and review summaries automatically. If you rely on that workflow, you will need to either script around it or accept Copilot for PR-related tasks while using Codeium for in-editor completion.
 
 
 ## Tabnine: Established Free Tier
@@ -138,6 +157,22 @@ ollama serve
 Then install the Continue extension in VS Code and configure it to connect to your local Ollama instance. Your code never leaves your machine, and you get unlimited completions without any subscription.
 
 
+### Choosing the Right Local Model
+
+Not all local models perform equally on coding tasks. Here is a practical guide to model selection based on your hardware:
+
+| Model | RAM Required | Coding Quality | Best Use Case |
+|-------|-------------|---------------|---------------|
+| codellama:7b | 8 GB | Good | Everyday completion, most languages |
+| codellama:13b | 16 GB | Very good | Complex logic, longer context |
+| deepseek-coder:6.7b | 8 GB | Excellent | Python, JavaScript, Go |
+| deepseek-coder:33b | 32 GB | Outstanding | Production-grade suggestions |
+| qwen2.5-coder:7b | 8 GB | Excellent | Broad language support, fast |
+
+For developers with 16 GB of RAM (the current MacBook Pro baseline), `deepseek-coder:6.7b` or `qwen2.5-coder:7b` give the best quality-to-speed ratio. Both models consistently outperform `codellama:7b` on coding benchmarks and run at acceptable inference speeds on Apple Silicon without GPU acceleration.
+
+Teams with privacy requirements that completely prohibit cloud transmission — government contractors, healthcare software, financial services — should treat this table as their starting point. The local route requires more initial setup but eliminates the data residency question entirely.
+
 
 ### Aider: Terminal-Based AI Coding
 
@@ -161,6 +196,12 @@ aider --model gpt-4
 
 Aider shines for developers comfortable in the terminal. It can refactor existing code, add features, and explain changes. The tool maintains a git diff view, so you always see what modifications it makes.
 
+
+### Aider vs. Continue: When to Choose Each
+
+The core difference is workflow integration. Continue embeds in VS Code and behaves like a supercharged inline assistant — you stay in your editor, accept suggestions, and occasionally open the chat panel. Aider takes over the terminal and operates in a conversational loop: you describe what you want, Aider writes the code and shows you the diff, you accept or reject.
+
+Aider is a better fit for tasks that span multiple files and require orchestration — "add pagination to all three API endpoints" is the kind of instruction Aider handles well. Continue excels at single-file tasks and inline help while coding. Most developers end up using both: Continue for day-to-day coding and Aider for larger refactoring sessions.
 
 
 ## Practical Examples Across Languages
