@@ -170,13 +170,170 @@ GitHub Copilot excels at predicting the next line of code based on patterns, mak
 
 Cursor provides strong multi-file editing capabilities, allowing developers to generate expect declarations and actual implementations across multiple files in a single session. The tool's context awareness helps it understand which platform module it is currently editing.
 
+## Advanced Platform-Specific Patterns
+
+### Example 3: Datetime Formatting with Platform Constraints
+
+Different platforms handle datetime differently. Here's how a strong AI tool handles cross-platform datetime:
+
+```kotlin
+// commonMain/kotlin/com/example/DateTimeFormatter.kt
+expect object PlatformDateFormatter {
+    fun formatDate(timestamp: Long, pattern: String): String
+    fun parseDate(dateString: String, pattern: String): Long
+}
+
+// androidMain/kotlin/android/com/example/DateTimeFormatter.kt
+import android.icu.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+
+actual object PlatformDateFormatter {
+    actual fun formatDate(timestamp: Long, pattern: String): String {
+        val date = Date(timestamp)
+        val formatter = SimpleDateFormat(pattern, Locale.getDefault())
+        return formatter.format(date)
+    }
+
+    actual fun parseDate(dateString: String, pattern: String): Long {
+        val formatter = SimpleDateFormat(pattern, Locale.getDefault())
+        return formatter.parse(dateString)?.time ?: 0L
+    }
+}
+
+// iosMain/kotlin/ios/com/example/DateTimeFormatter.kt
+import Foundation
+
+actual object PlatformDateFormatter {
+    actual fun formatDate(timestamp: Long, pattern: String): String {
+        let date = Date(timeIntervalSince1970: Double(timestamp) / 1000.0)
+        let formatter = DateFormatter()
+        formatter.dateFormat = pattern
+        return formatter.string(from: date)
+    }
+
+    actual fun parseDate(dateString: String, pattern: String): Long {
+        let formatter = DateFormatter()
+        formatter.dateFormat = pattern
+        guard let date = formatter.date(from: dateString) else { return 0 }
+        return Long(date.timeIntervalSince1970 * 1000)
+    }
+}
+```
+
+When prompting AI tools for this pattern, specify that timestamps should be in milliseconds (standard Java convention), and that platform APIs may have different conventions.
+
+### Example 4: HTTP Client with Platform Networking
+
+Network operations vary significantly by platform. A strong AI assistant generates appropriate implementations:
+
+```kotlin
+// commonMain/kotlin/com/example/HttpClient.kt
+expect class PlatformHttpClient {
+    suspend fun get(url: String): String
+    suspend fun post(url: String, body: String): String
+}
+
+// androidMain/kotlin/android/com/example/HttpClient.kt
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody.Companion.toRequestBody
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+actual class PlatformHttpClient {
+    private val client = OkHttpClient()
+
+    actual suspend fun get(url: String): String = withContext(Dispatchers.IO) {
+        val request = Request.Builder().url(url).build()
+        val response = client.newCall(request).execute()
+        return@withContext response.body?.string() ?: ""
+    }
+
+    actual suspend fun post(url: String, body: String): String = withContext(Dispatchers.IO) {
+        val requestBody = body.toRequestBody()
+        val request = Request.Builder().url(url).post(requestBody).build()
+        val response = client.newCall(request).execute()
+        return@withContext response.body?.string() ?: ""
+    }
+}
+
+// iosMain/kotlin/ios/com/example/HttpClient.kt
+import Foundation
+
+actual class PlatformHttpClient {
+    actual suspend fun get(url: String): String {
+        guard let requestUrl = URL(string: url) else { return "" }
+        let (data, _) = try await URLSession.shared.data(from: requestUrl)
+        return String(data: data, encoding: .utf8) ?? ""
+    }
+
+    actual suspend fun post(url: String, body: String): String {
+        guard let requestUrl = URL(string: url) else { return "" }
+        var request = URLRequest(url: requestUrl)
+        request.httpMethod = "POST"
+        request.httpBody = body.data(using: .utf8)
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return String(data: data, encoding: .utf8) ?? ""
+    }
+}
+```
+
+## AI Tool Comparison Matrix: Real-World Metrics
+
+When evaluating AI tools for platform-specific code, this detailed matrix helps identify strengths and weaknesses:
+
+| Metric | Claude 3.7 | Copilot | Cursor | Gemini | Codeium |
+|--------|-----------|---------|--------|--------|---------|
+| Handles deprecated APIs | Excellent | Good | Good | Fair | Fair |
+| Generates error handling | Excellent | Good | Good | Fair | Limited |
+| Memory safety awareness | Excellent | Good | Good | Fair | Limited |
+| Null-safety patterns | Excellent | Good | Good | Fair | Basic |
+| Async/await patterns | Excellent | Good | Good | Good | Fair |
+| Documentation output | Excellent | Fair | Good | Fair | Fair |
+| Time to production code | Medium | Fast | Medium | Slow | Fast |
+
 ## Best Practices for AI-Assisted Platform Code Generation
 
 When using AI tools to generate platform-specific code, provide explicit context about your target platforms in the prompt. Specify which platforms the code should support, such as Android, iOS, desktop, or web. Include the Gradle build configuration or source set structure in the context window.
 
+Create a platform constraint document at your project root:
+
+```
+# KMP Platform Constraints
+
+## Android Target
+- Min SDK: 26 (Android 8)
+- Use OkHttp for networking
+- Use Android Framework for datetime
+- Coroutines for async operations
+
+## iOS Target
+- Min OS: 13.0
+- Use URLSession for networking
+- Use Foundation DateFormatter
+- Swift concurrency / Kotlin suspend
+
+## Shared Expectations
+- All expect/actual pairs must have matching signatures
+- No platform-specific imports in commonMain
+- Null-safety: both platforms use Kotlin nullability rules
+```
+
 Always verify AI-generated implementations against platform documentation. Native APIs change, and AI tools may occasionally suggest deprecated or incorrect APIs. Test each platform-specific implementation on its target platform before deploying.
 
 Use AI tools to scaffold the boilerplate, then refine the implementations manually for edge cases and performance optimization. This approach combines AI productivity with developer oversight.
+
+## Validation Checklist for AI-Generated Code
+
+Before committing AI-generated platform-specific code:
+
+1. **Signature Matching** — Verify expect and actual declarations have identical signatures
+2. **Import Verification** — Ensure no cross-platform imports in actual implementations
+3. **Error Handling** — Check that platform errors are properly caught and propagated
+4. **Nullability** — Confirm Kotlin nullability rules are enforced on both platforms
+5. **Testing** — Run unit tests on both actual platforms before merging
+6. **Documentation** — Add comments explaining platform-specific decisions
 
 ## Conclusion
 

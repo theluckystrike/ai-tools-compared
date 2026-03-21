@@ -129,6 +129,151 @@ For more complex components, provide the expected structure:
 
 This approach helps the AI generate code that actually compiles in your shared module rather than requiring extensive rework.
 
+## Advanced KMP UI Patterns with AI Assistance
+
+When working with more complex UI patterns, providing detailed specifications helps AI tools generate production-ready code. Consider a feature-request screen component that appears across all platforms:
+
+```kotlin
+// shared/src/commonMain/kotlin/ui/FeatureRequestCard.kt
+@Composable
+fun FeatureRequestCard(
+    title: String,
+    description: String,
+    votes: Int,
+    onVoteClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Box(
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(12.dp)
+            .background(MaterialTheme.colors.surface, RoundedCornerShape(8.dp))
+            .border(1.dp, MaterialTheme.colors.outline, RoundedCornerShape(8.dp))
+            .padding(16.dp)
+    ) {
+        Column(modifier = Modifier.fillMaxWidth()) {
+            Text(
+                text = title,
+                style = MaterialTheme.typography.h6,
+                modifier = Modifier.fillMaxWidth(),
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 2
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = description,
+                style = MaterialTheme.typography.body2,
+                modifier = Modifier.fillMaxWidth(),
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 3,
+                color = MaterialTheme.colors.onSurface.copy(alpha = 0.7f)
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Button(
+                    onClick = onVoteClick,
+                    modifier = Modifier.wrapContentWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = MaterialTheme.colors.primary.copy(alpha = 0.1f),
+                        contentColor = MaterialTheme.colors.primary
+                    )
+                ) {
+                    Icon(
+                        painter = painterResource("ic_thumbs_up.xml"),
+                        contentDescription = "Vote",
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text("$votes votes")
+                }
+            }
+        }
+    }
+}
+```
+
+Guide your AI tool by specifying cross-platform constraints explicitly: mention that custom icons should use vector drawable resources available on both Android and iOS, specify that animations should use standard Compose values, and note which Material Design components are safe for shared code.
+
+## Handling AI Suggestions for Conditional Rendering
+
+KMP projects often need platform-specific rendering logic within shared UI. AI tools should understand when to use expect/actual pattern versus composing shared components:
+
+```kotlin
+// shared/src/commonMain/kotlin/ui/PlatformSpecificHeader.kt
+@Composable
+fun PlatformSpecificHeader(
+    title: String,
+    modifier: Modifier = Modifier
+) {
+    // This works in shared code without expect/actual
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colors.primary)
+            .padding(16.dp)
+    ) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.h5,
+            color = MaterialTheme.colors.onPrimary
+        )
+
+        Spacer(modifier = Modifier.height(4.dp))
+
+        // For platform-specific UI details, create a separate composable
+        PlatformStatusIndicator()
+    }
+}
+
+// Use expect/actual for true platform-specific rendering
+@Composable
+expect fun PlatformStatusIndicator()
+```
+
+When prompting AI tools, explain that shared code should defer platform-specific decisions to expect/actual implementations rather than using `if (Platform.isAndroid)` patterns that require conditional imports.
+
+## Context Management for Complex KMP Projects
+
+Large KMP projects with multiple modules benefit from explicit context files. When working with AI tools, reference these documented boundaries:
+
+Create a `KMP_ARCHITECTURE.md` file at your project root:
+
+```markdown
+# KMP Architecture Guide
+
+## Module Structure
+- `shared/` — Common code and shared UI (commonMain)
+- `shared/src/androidMain/` — Android-specific implementations
+- `shared/src/iosMain/` — iOS-specific implementations
+
+## UI Patterns
+- Shared composables live in `commonMain/kotlin/ui/`
+- Use `Modifier` extensions for layout concerns
+- Custom components should accept `Modifier` as final optional parameter
+
+## Forbidden Patterns in Shared Code
+- Android-specific imports (android.*)
+- iOS-specific imports (Foundation)
+- kotlinx.serialization without proper versions
+- Reflection (use inline serializers instead)
+
+## Safe Cross-Platform APIs
+- All basic Compose functions (Box, Column, Row, etc.)
+- Text, Image, Button (basic Material components)
+- Modifier builders and extensions
+- Standard Kotlin stdlib
+```
+
+Reference this guide when prompting your AI tool, which helps it understand your project's constraints without re-learning them each conversation.
+
 ## Testing AI-Generated Shared Components
 
 Always verify AI-generated code works across all target platforms. A component that compiles successfully on Android might fail on iOS due to subtle API differences:

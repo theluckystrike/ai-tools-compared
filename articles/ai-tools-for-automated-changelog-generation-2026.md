@@ -1,174 +1,253 @@
 ---
 layout: default
 title: "AI Tools for Automated Changelog Generation 2026"
-description: "Compare AI tools for generating changelogs from git history. Covers GitHub Copilot, Claude, GPT-4, semantic-release integration, and conventional commits"
-date: 2026-03-20
-last_modified_at: 2026-03-20
+description: "Compare tools for generating changelogs from git history. Include conventional commits, semantic versioning, CI/CD integration, monorepo support."
+date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-automated-changelog-generation-2026/
-categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
+categories: [comparisons]
 reviewed: true
-score: 9
-voice-checked: true
+score: 8
 intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared, changelog, release-management, git]
 ---
 
-{% raw %}
-# AI Tools for Automated Changelog Generation 2026
 
-Manual changelog maintenance is a bottleneck. You're shipping features, but documentation falls behind. AI tools now parse git commit history, extract meaningful changes, and generate structured changelogs in seconds. This guide compares specific tools, integration patterns, and real-world CLI workflows.
+Choose conventional-changelog for projects already using Conventional Commits (enforced via commitlint), with automatic semantic version bumping and multi-repository support. Choose Semantic Release for fully automated changelog generation tied to release pipelines and Git tags. Choose Cliff for Rust/system software projects with custom templates and Git metadata extraction. Choose Claude + automation for legacy codebases needing intelligent commit interpretation and manual handoff workflows. All handle semantic versioning correctly but differ in CI/CD integration depth and handling of irregular commit histories.
 
-## The Problem with Manual Changelogs
+## The Changelog Problem at Scale
 
-Teams typically maintain changelogs one of three ways: commit logs are copy-pasted (noise, inconsistency), release notes are hand-written (time-consuming, rarely complete), or changelogs are abandoned entirely (users dig through raw git history). Conventional commits solve half the problem—they standardize structure—but someone still needs to group, filter, and write human-readable summaries. AI acceleration eliminates that friction.
+Manual changelogs accumulate technical debt. Developers forget to update them, merge conflicts arise, and changelog contents diverge from actual code changes. Automated solutions parse git history, detect breaking changes from commit messages, group related changes, and generate structured documentation.
 
-## Approach Comparison: Tool Categories
+The challenge intensifies with monorepos where different packages release independently, or when commit histories are irregular (old projects without Conventional Commits). AI tools solve this by either enforcing strict commit conventions or interpreting loose, inconsistent commit messages intelligently.
 
-### 1. GitHub Copilot + Local Scripts
+## Conventional Changelog: The Gold Standard
 
-**Overview**: Copilot writes shell scripts or Node scripts that parse conventional commits and invoke LLM APIs.
+Conventional Changelog (used by Angular, React, and thousands of projects) generates changelogs from Conventional Commits—a structured commit message format specifying type (feat, fix, docs) and scope.
 
-**Cost**: $10-20/month (Copilot Individual or Business tier).
+### Installation and Setup
 
-**Integration Pattern**:
 ```bash
-#!/bin/bash
-# Generate commits since last tag
-LAST_TAG=$(git describe --tags --abbrev=0)
-COMMITS=$(git log ${LAST_TAG}..HEAD --pretty=format:"%H %s %b")
+# Install globally or per-project
+npm install --save-dev conventional-changelog-cli
 
-# Pipe to Claude API via curl or Node SDK
-echo "$COMMITS" | npx tsx changelog-generator.ts
+# Generate initial changelog
+npx conventional-changelog -p angular -i CHANGELOG.md -s
+
+# Configure in package.json for automation
+npm install --save-dev commitlint @commitlint/config-conventional
 ```
 
-**changelog-generator.ts** (Copilot-assisted):
-```typescript
-import Anthropic from '@anthropic-ai/sdk';
+### Conventional Commit Format
 
-interface CommitLog {
-  hash: string;
-  subject: string;
-  body: string;
-}
+```
+<type>[optional scope]: <description>
 
-async function generateChangelog(commits: CommitLog[]): Promise<string> {
-  const client = new Anthropic();
+[optional body]
 
-  const prompt = `Generate a structured changelog from these commits:
-${commits.map(c => `- ${c.subject}\n  ${c.body}`).join('\n')}
+[optional footer(s)]
 
-Format as markdown. Group by category (Features, Fixes, Performance, Docs, Tests).
-Be concise. Remove trivial commits (chore, docs-only).`;
+# Example:
+feat(auth): implement OAuth2 token refresh
 
-  const message = await client.messages.create({
-    model: "claude-3-5-sonnet-20241022",
-    max_tokens: 2048,
-    messages: [
-      { role: "user", content: prompt }
-    ]
-  });
+Previously, tokens expired without automatic refresh. Users were forced to
+re-authenticate when tokens became invalid.
 
-  return message.content[0].type === 'text' ? message.content[0].text : '';
-}
+This change implements automatic token refresh using a background timer
+that triggers 30 seconds before expiration.
 
-// Parse git log
-const commits: CommitLog[] = require('child_process')
-  .execSync('git log --pretty=format:"%H|%s|%b" --reverse')
-  .toString()
-  .split('\n')
-  .filter((line: string) => line.trim())
-  .map((line: string) => {
-    const [hash, subject, body] = line.split('|');
-    return { hash, subject, body: body || '' };
-  });
-
-generateChangelog(commits).then(changelog => {
-  console.log(changelog);
-});
+Closes #456
+BREAKING CHANGE: The login endpoint now returns access_token instead of token
 ```
 
-**Pros**: Flexible, handles custom commit formats, integrates with existing CI/CD.
+Types follow a standard: `feat` (features), `fix` (bug fixes), `docs` (documentation), `style` (formatting), `refactor` (code reorganization), `perf` (performance), `test` (test additions), `chore` (dependency updates).
 
-**Cons**: Requires API keys, scripting knowledge, per-call costs, inconsistent formatting across releases.
+### Automatic Semantic Versioning
 
----
+Conventional Changelog ties commit types to semantic versioning automatically:
 
-### 2. Claude API (Direct Integration)
+- `fix:` bumps patch version (1.0.0 → 1.0.1)
+- `feat:` bumps minor version (1.0.0 → 1.1.0)
+- `BREAKING CHANGE:` bumps major version (1.0.0 → 2.0.0)
 
-**Overview**: Use Claude's API directly with a Node/Python wrapper. Higher token cost than local scripts but best results for semantic grouping.
+```bash
+# Configure automatic versioning with standard-version
+npm install --save-dev standard-version
 
-**Cost**: $0.003 per 1K input tokens, $0.015 per 1K output tokens (Claude 3.5 Sonnet). Typical changelog: 2000 input tokens, 800 output tokens = ~$0.015 per generation.
-
-**Implementation** (Node.js with semantic-release):
-```javascript
-// scripts/generate-changelog.js
-import Anthropic from '@anthropic-ai/sdk';
-import { execSync } from 'child_process';
-
-const client = new Anthropic();
-
-async function generateChangelogFromGit() {
-  // Get commits since last tag or last N commits
-  const lastTag = execSync('git describe --tags --abbrev=0 2>/dev/null || echo "HEAD~50"')
-    .toString()
-    .trim();
-
-  const commitLog = execSync(
-    `git log ${lastTag}..HEAD --pretty=format:"%h|%an|%ae|%ad|%s|%b" --date=short --reverse`
-  ).toString();
-
-  const prompt = `You are a technical release notes generator. Parse these git commits and create a professional changelog.
-
-Commits (format: hash|author|email|date|subject|body):
-${commitLog}
-
-Rules:
-1. Group by type: BREAKING CHANGES, Features, Fixes, Performance, Dependencies, Documentation
-2. For each item, explain the user impact, not just what changed
-3. Remove chores, refactors without user impact, and internal-only changes
-4. If a commit mentions an issue (#123), reference it
-5. Bold breaking changes clearly
-6. Format: markdown with version header "## [version] - YYYY-MM-DD"
-
-Output only the changelog markdown.`;
-
-  const message = await client.messages.create({
-    model: "claude-3-5-sonnet-20241022",
-    max_tokens: 2048,
-    messages: [
-      { role: "user", content: prompt }
-    ]
-  });
-
-  const changelog = message.content[0].type === 'text' ? message.content[0].text : '';
-  return changelog;
+# In package.json:
+{
+  "scripts": {
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
+  }
 }
 
-// Integration with semantic-release
-export async function analyzeCommits(commits) {
-  // semantic-release passes analyzed commits; pass to Claude
-  const commitText = commits
-    .map(c => `${c.type}(${c.scope}): ${c.subject}\n${c.body || ''}`)
-    .join('\n\n');
-
-  // Similar API call with commitText
-  return generateChangelogFromGit();
-}
-
-generateChangelogFromGit().then(console.log).catch(console.error);
+# Running this generates changelog and bumps version
+npm run release
 ```
 
-**GitHub Actions Integration**:
+### CI/CD Integration Example
+
 ```yaml
-name: Generate Changelog
+# .github/workflows/release.yml
+name: Release
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
 
 jobs:
-  changelog:
+  release:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch full history for changelog
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - run: npm ci
+
+      - name: Generate changelog and bump version
+        run: |
+          git config user.email "release@example.com"
+          git config user.name "Release Bot"
+          npx standard-version
+
+      - name: Push changes
+        run: git push --follow-tags origin main
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body_path: CHANGELOG.md
+          draft: false
+          prerelease: false
+```
+
+### Monorepo Support with Lerna
+
+For monorepos with independent package versioning:
+
+```bash
+npm install --save-dev lerna conventional-changelog
+
+# Configure lerna.json
+{
+  "packages": ["packages/*"],
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "changelogPreset": "angular"
+    }
+  }
+}
+
+# Publish with automatic changelogs per package
+lerna publish
+```
+
+Each package gets its own changelog tracking its specific changes.
+
+### Customizing Output Format
+
+```bash
+# Use different preset (angular, atom, ember, eslint, express, jquery, jshint, angular-essential)
+npx conventional-changelog -p atom -i CHANGELOG.md -s
+
+# Create custom preset
+npm install --save-dev conventional-changelog-custom-preset
+```
+
+Custom preset example:
+
+```javascript
+// conventional-changelog-custom-preset.js
+module.exports = {
+  parserOpts: {
+    noteKeywords: ['BREAKING CHANGE', 'SECURITY'],
+    referenceActions: [
+      'close', 'closes', 'closed',
+      'fix', 'fixes', 'fixed',
+      'resolve', 'resolves', 'resolved'
+    ]
+  },
+  writerOpts: {
+    transform(commit) {
+      if (commit.type === 'feat') {
+        commit.type = '✨ Features';
+      } else if (commit.type === 'fix') {
+        commit.type = '🐛 Bug Fixes';
+      }
+      return commit;
+    },
+    commitGroupsSort: (a, b) => {
+      const groupOrder = ['✨ Features', '🐛 Bug Fixes', 'Documentation'];
+      return groupOrder.indexOf(a.title) - groupOrder.indexOf(b.title);
+    }
+  }
+};
+```
+
+
+## Semantic Release: Fully Automated Release Pipeline
+
+Semantic Release goes beyond changelog generation—it fully automates releases, including version bumping, changelog creation, GitHub releases, and NPM publishing.
+
+### Installation and Configuration
+
+```bash
+npm install --save-dev semantic-release @semantic-release/github @semantic-release/npm @semantic-release/changelog @semantic-release/git
+
+# Configure .releaserc.json
+{
+  "branches": ["main", {"name": "beta", "prerelease": true}],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    "@semantic-release/npm",
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json", "package-lock.json", "CHANGELOG.md"],
+        "message": "chore(release): ${nextRelease.version} [skip ci]"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}
+```
+
+### Workflow Setup
+
+```yaml
+# .github/workflows/release.yml
+name: Release
+
+on:
+  push:
+    branches: [main, beta]
+
+jobs:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -177,278 +256,367 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: '18'
 
-      - run: npm install @anthropic-ai/sdk
+      - run: npm ci
 
-      - env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: node scripts/generate-changelog.js > CHANGELOG_NEW.md
+      - run: npm test
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore: update changelog for ${{ github.event.release.tag_name }}"
-          file_pattern: CHANGELOG.md
+      - name: Publish to npm and create GitHub release
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-**Pros**: Best semantic understanding, multi-language support, handles incomplete commit messages gracefully.
+On every commit to main, Semantic Release analyzes commits, determines version bump, generates changelog entries, publishes to npm, and creates a GitHub release—all automatically.
 
-**Cons**: API key management, per-call latency (1-2 seconds), external dependency.
+### Handling Pre-releases and Hotfixes
 
----
-
-### 3. GPT-4 (OpenAI API)
-
-**Overview**: OpenAI's GPT-4 for structured changelog generation. Slightly more expensive, comparable quality.
-
-**Cost**: $0.03 per 1K input tokens, $0.06 per 1K output tokens (GPT-4 Turbo). Typical changelog: ~$0.18 per generation.
-
-**Implementation**:
-```python
-import os
-from openai import OpenAI
-
-client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
-
-def generate_changelog_gpt4(commit_log: str) -> str:
-    response = client.chat.completions.create(
-        model="gpt-4-turbo",
-        max_tokens=1500,
-        temperature=0.3,
-        messages=[
-            {
-                "role": "system",
-                "content": "You are a technical documentation expert. Generate changelogs that are clear, user-focused, and properly categorized."
-            },
-            {
-                "role": "user",
-                "content": f"""Parse these commits and generate a changelog:
-
-{commit_log}
-
-Format as markdown. Groups: BREAKING, Features, Fixes, Performance, Docs.
-Explain user impact. Remove chores and internal refactors."""
-            }
-        ]
-    )
-    return response.choices[0].message.content
-```
-
-**Comparison**: GPT-4 is slightly better at complex decision-making but slower; Claude 3.5 Sonnet is faster with better coding context.
-
----
-
-### 4. Gemini API (Google)
-
-**Overview**: Google's Gemini offers competitive pricing and strong reasoning capabilities.
-
-**Cost**: $0.075 per 1M input tokens, $0.3 per 1M output tokens (Gemini 2.0 Flash). ~$0.0006 per changelog.
-
-**Implementation**:
-```python
-import google.generativeai as genai
-
-genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
-
-def generate_changelog_gemini(commits: str) -> str:
-    model = genai.GenerativeModel('gemini-2.0-flash')
-
-    prompt = f"""Parse these git commits and create a professional changelog:
-
-{commits}
-
-Requirements:
-- Group by type: BREAKING CHANGES, Features, Fixes, Refactoring, Documentation
-- Explain what users care about (not implementation details)
-- Remove chores and trivial commits
-- Use markdown format
-- Bold breaking changes
-- Keep entries concise (1-2 sentences max)"""
-
-    response = model.generate_content(prompt)
-    return response.text
-```
-
-**Pros**: Lowest cost, strong performance, good for high-volume generation.
-
-**Cons**: Slightly lower code reasoning than Claude/GPT-4.
-
----
-
-### 5. Conventional Commits + Semantic Release (Hybrid)
-
-**Overview**: Enforce conventional commit format, let semantic-release parse them, use AI only for summarization.
-
-**Cost**: Free (if self-hosted), minimal API calls.
-
-**Example .releaserc.js**:
-```javascript
-module.exports = {
-  branches: ['main', { name: 'develop', prerelease: true }],
-  plugins: [
-    ['@semantic-release/commit-analyzer', {
-      preset: 'conventionalcommits',
-      releaseRules: [
-        { type: 'feat', release: 'minor' },
-        { type: 'fix', release: 'patch' },
-        { type: 'perf', release: 'patch' },
-        { breaking: true, release: 'major' }
-      ]
-    }],
-    ['@semantic-release/release-notes-generator', {
-      preset: 'conventionalcommits'
-    }],
-    ['@semantic-release/github', {
-      addReleases: 'top'
-    }]
+```json
+{
+  "branches": [
+    "main",
+    {"name": "next", "prerelease": true},
+    {"name": "beta", "prerelease": true},
+    {"name": "alpha", "prerelease": true},
+    {"name": "hotfix/**", "range": "1.x", "prerelease": false}
   ]
-};
+}
 ```
 
-**Then use AI to enhance**:
+Commits to `alpha` branch generate `1.0.0-alpha.1`, `beta` generates `1.0.0-beta.1`, while hotfix branches release patch versions for current stable release.
+
+
+## Cliff: System Software and Rust Projects
+
+Cliff (Changelog Generator) excels with system software, Rust projects, and complex custom formats. It parses Git history, groups commits intelligently, and supports custom templates.
+
+### Installation and Setup
+
 ```bash
-# semantic-release generates notes, Claude polishes them
-RELEASE_NOTES=$(npx semantic-release --dry-run --no-ci 2>&1)
+# Install via package managers
+brew install git-cliff
+cargo install git-cliff
+
+# Initialize configuration
+git cliff --init
+
+# Generate changelog
+git cliff -o CHANGELOG.md
+```
+
+### Configuration for Rust Projects
+
+```toml
+# cliff.toml - Rust project configuration
+[changelog]
+header = """
+# Changelog
+
+All notable changes to this project will be documented in this file.\n
+"""
+body = """
+{% if version %}\
+## [{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+{% else %}\
+## [Unreleased]
+{% endif %}\
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group | upper }}
+{% for commit in commits %}
+- {% if commit.breaking %}[**BREAKING**] {% endif %}{{ commit.message | upper_first }} ([`{{ commit.id | truncate(length=7, end="") }}`]({{ config.commit_parsers[0].link_base }}/commit/{{ commit.id }}))\
+{% endfor %}
+{% endfor %}\n
+"""
+trim = true
+
+[git]
+conventional_commits = true
+filter_unconventional = true
+split_commits = false
+commit_parsers = [
+  {message = "^feat", group = "Features"},
+  {message = "^fix", group = "Bug Fixes"},
+  {message = "^doc", group = "Documentation"},
+  {message = "^perf", group = "Performance"},
+  {message = "^refactor", group = "Refactoring"},
+  {message = "^test", group = "Testing"},
+  {message = "^chore", skip = true},
+  {message = "^style", skip = true}
+]
+protect_breaking_commits = false
+filter_commits = false
+topo_order = false
+limit_commits = 1000
+skip_tags = ""
+ignore_tags = ""
+date_order = false
+sort_commits = "oldest"
+```
+
+### Custom Template with Multiple Sections
+
+```toml
+body = """
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group }}
+{% for commit in commits %}
+{%- if commit.scope %}
+- **{{ commit.scope }}**: {{ commit.message }} ([{{ commit.id | truncate(length=7) }}]({{ commit_url }}{{ commit.id }}))
+{%- else %}
+- {{ commit.message }} ([{{ commit.id | truncate(length=7) }}]({{ commit_url }}{{ commit.id }}))
+{%- endif %}
+{%- if commit.breaking %}
+
+**BREAKING CHANGE:** {{ commit.breaking_description }}
+{%- endif %}
+{% endfor %}
+{% endfor %}
+"""
+```
+
+### CI/CD Integration with Git Cliff
+
+```bash
+#!/bin/bash
+# scripts/release.sh
+
+set -e
+
+# Get current version and next version
+CURRENT_VERSION=$(grep version Cargo.toml | head -1 | grep -oP '\d+\.\d+\.\d+')
+NEXT_VERSION=$(cargo semver bump patch)
+
+# Generate changelog
+git cliff --tag "$NEXT_VERSION" -o CHANGELOG.md
+
+# Commit and tag
+git add CHANGELOG.md
+git commit -m "chore: release $NEXT_VERSION"
+git tag "$NEXT_VERSION"
+
+# Push
+git push origin main --tags
+```
+
+```yaml
+# .github/workflows/release.yml for Rust
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 0.2.0)'
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: orhun/git-cliff-action@v3
+        with:
+          config: cliff.toml
+          args: --verbose
+        env:
+          OUTPUT: CHANGELOG.md
+
+      - name: Update version in Cargo.toml
+        run: |
+          sed -i "s/^version = .*/version = \"${{ github.event.inputs.version }}\"/" Cargo.toml
+          git add CHANGELOG.md Cargo.toml
+          git config user.email "release@bot.local"
+          git config user.name "Release Bot"
+          git commit -m "chore(release): ${{ github.event.inputs.version }}"
+          git tag "${{ github.event.inputs.version }}"
+          git push origin main --tags
+```
+
+
+## Claude: Legacy Codebases and Manual Interpretation
+
+For projects without Conventional Commits, Claude interprets commit messages and suggests structured changelog entries.
+
+### Workflow Example
+
+Request to Claude: "Analyze git log from the last 30 commits and generate a changelog following this format:
+
+```markdown
+## [Unreleased]
+
+### Added
+- New features here
+
+### Changed
+- Updated functionality
+
+### Fixed
+- Bug fixes
+
+### Security
+- Security patches
+```"
+
+Claude parses commits like:
+- "Fixed login bug where users could bypass email verification"
+- "Added support for OAuth2 providers"
+- "Updated dependencies to latest versions"
+- "Refactored database connection pooling"
+
+And structures them into proper sections with clarity improvements:
+
+```markdown
+## [Unreleased]
+
+### Added
+- OAuth2 provider support for Google, GitHub, and Microsoft accounts
+- Two-factor authentication (2FA) via authenticator apps
+
+### Fixed
+- Login bypass vulnerability where email verification could be skipped
+- Database connection pool exhaustion under high concurrency
+
+### Changed
+- Database connection pooling strategy optimized for reduced latency
+- Deprecated API endpoints removed (scheduled for version 2.0)
+
+### Security
+- Updated cryptographic libraries to fix padding oracle vulnerability in AES-GCM
+```
+
+### Automated CLI Wrapper
+
+```bash
+#!/bin/bash
+# scripts/generate-changelog-claude.sh
+
+SINCE_TAG=${1:-"v0.0.0"}
+UNTIL_TAG=${2:-"HEAD"}
+
+# Extract commits
+COMMITS=$(git log $SINCE_TAG..$UNTIL_TAG --pretty=format:"%h %s")
+
+# Create prompt for Claude
+PROMPT="Analyze these commits and generate a CHANGELOG.md entry:
+
+$COMMITS
+
+Output in this format:
+## [Unreleased]
+
+### Added
+### Changed
+### Fixed
+### Security
+
+Only include sections with content."
+
+# Call Claude API (requires CLAUDE_API_KEY)
 curl https://api.anthropic.com/v1/messages \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -H "x-api-key: $CLAUDE_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "content-type: application/json" \
   -d "{
-    \"model\": \"claude-3-5-sonnet-20241022\",
-    \"max_tokens\": 1024,
+    \"model\": \"claude-opus-4-6\",
+    \"max_tokens\": 2000,
     \"messages\": [{
       \"role\": \"user\",
-      \"content\": \"Polish these release notes for clarity and impact:\\n$RELEASE_NOTES\"
+      \"content\": \"$PROMPT\"
     }]
   }" | jq -r '.content[0].text'
 ```
 
-**Pros**: Standards-based, lightweight, cost-effective, team discipline.
+### Manual Handoff Workflow
 
-**Cons**: Requires strict commit discipline, AI enhancement is optional.
-
----
-
-## Feature Comparison Table
-
-| Feature | Claude API | GitHub Copilot | GPT-4 | Gemini | Semantic Release |
-|---------|-----------|----------------|-------|--------|------------------|
-| **Cost per changelog** | $0.015 | Included (subscription) | $0.18 | $0.0006 | Free |
-| **Semantic grouping** | Excellent | Good | Excellent | Good | Basic |
-| **Breaking change detection** | Yes | Yes | Yes | Yes | Manual |
-| **Handles messy commits** | Excellent | Good | Excellent | Good | Poor |
-| **Speed** | 1-2s | Instant (local) | 2-3s | 1-2s | <100ms |
-| **Self-hosted option** | No | No | No | No | Yes |
-| **GitHub integration** | Via API | Native | Via API | Via API | Native |
-| **Team collaboration** | Good | Excellent | Good | Fair | Excellent |
-
----
-
-## Practical Decision Framework
-
-**Choose Claude API if:**
-- You handle inconsistent commit messages and need semantic recovery
-- You want markdown-rich output with complex formatting
-- Your team sizes benefit from excellent multi-language support
-- You ship frequently and can absorb $0.15/release
-
-**Choose GitHub Copilot if:**
-- You're already paying ($10+/month) and want minimal additional setup
-- Your commits follow strict conventional format
-- You want to keep scripts local and controllable
-- You pair it with semantic-release for hybrid workflow
-
-**Choose GPT-4 if:**
-- You need the absolute best reasoning (rare edge cases)
-- You're in enterprise with OpenAI credits
-- Cost is secondary to quality
-
-**Choose Gemini if:**
-- Cost is your constraint (especially high-volume releases)
-- You have Google Cloud infrastructure
-- You release >50 times per month
-
-**Choose Semantic Release alone if:**
-- Your team strictly follows conventional commits
-- You prioritize zero external dependencies
-- You only need basic grouping (breaking, features, fixes)
-- You can train engineers on commit discipline
-
----
-
-## Real-World Example: Hybrid Workflow
+For critical releases, combine Claude's interpretation with manual review:
 
 ```bash
 #!/bin/bash
-# Release workflow with AI changelog enhancement
+# scripts/prepare-release.sh
 
-VERSION=$1
-ANTHROPIC_API_KEY=$2
+echo "=== Analyzing commits since last tag ==="
+LAST_TAG=$(git describe --tags --abbrev=0)
+COMMITS=$(git log $LAST_TAG..HEAD --oneline)
 
-# 1. Validate commits follow conventional format
-npx commitlint --from HEAD~10 --to HEAD || exit 1
+echo "$COMMITS"
+echo ""
+echo "=== Generated changelog entry ==="
 
-# 2. Bump version and generate initial notes
-npx semantic-release --dry-run --no-ci > release-notes.txt
+# Have Claude suggest, save to temp file
+./scripts/generate-changelog-claude.sh $LAST_TAG > CHANGELOG.md.draft
 
-# 3. Enhance with Claude for polish and context
-python3 << 'EOF'
-import os
-import json
-import subprocess
-from anthropic import Anthropic
-
-client = Anthropic()
-
-with open('release-notes.txt', 'r') as f:
-    raw_notes = f.read()
-
-response = client.messages.create(
-    model="claude-3-5-sonnet-20241022",
-    max_tokens=1500,
-    messages=[{
-        "role": "user",
-        "content": f"""Transform these release notes into a professional changelog entry.
-Add user impact context and highlight major improvements:
-
-{raw_notes}
-
-Output only the polished markdown changelog."""
-    }]
-)
-
-polished = response.content[0].text
-print(polished)
-EOF
-
-# 4. Commit and publish
-git add CHANGELOG.md
-git commit -m "chore(release): v${VERSION}"
-git tag "v${VERSION}"
-git push origin main --tags
+echo "Draft changelog saved to CHANGELOG.md.draft"
+echo "Review and edit manually, then:"
+echo "  mv CHANGELOG.md.draft CHANGELOG.md"
+echo "  git add CHANGELOG.md"
+echo "  git commit -m 'docs: update changelog'"
 ```
 
----
 
-## Integration Checklist
+## Comparison Matrix
 
-- [ ] Choose your git commit convention (conventional commits recommended)
-- [ ] Set up API key securely (GitHub Secrets, environment files, AWS Secrets Manager)
-- [ ] Implement changelog generation in CI/CD pipeline
-- [ ] Add human review step before publishing (optional but recommended)
-- [ ] Test with last 5 releases to validate output quality
-- [ ] Document changelog format in CONTRIBUTING.md
-- [ ] Measure time savings per release
-- [ ] Plan for AI vendor switching (use abstraction layer)
+| Feature | Conventional | Semantic | Cliff | Claude |
+|---------|-------------|----------|-------|--------|
+| Automatic versioning | Yes | Yes | No | No |
+| Changelog generation | Yes | Yes | Yes | Yes |
+| Breaking change detection | Yes | Yes | Partial | Excellent |
+| Monorepo support | Yes (Lerna) | Yes | Limited | No |
+| CI/CD integration | Excellent | Excellent | Good | Moderate |
+| Conventional Commits required | Yes | Yes | Yes | No |
+| Custom templates | Moderate | Moderate | Excellent | N/A |
+| Handles irregular commits | No | No | No | Yes |
+| License | MIT | MIT | GPL-2.0 | Proprietary |
+| Learning curve | Low | Low | Moderate | Low |
+
+
+## Implementation Strategy
+
+1. **New projects**: Use Semantic Release with Conventional Commits enforced via commitlint.
+2. **Rust/system software**: Use Cliff with custom templates.
+3. **Legacy projects**: Use Claude for one-time migration, then enforce Conventional Commits going forward.
+4. **Monorepos**: Use Lerna + Conventional Changelog with independent versioning.
+
+Enforce commit conventions early:
+
+```bash
+# Install commitlint
+npm install --save-dev commitlint @commitlint/config-conventional husky
+
+# Set up pre-commit hook
+npx husky install
+npx husky add .husky/commit-msg 'npx commitlint --edit "$1"'
+```
+
+This prevents non-conventional commits from being pushed, ensuring changelogs remain reliable.
+
+
+## Validation and Testing
+
+Always test changelog generation before release:
+
+```bash
+# Dry run semantic release
+SEMANTIC_RELEASE_DRY_RUN=true npx semantic-release
+
+# Preview Cliff output
+git cliff --latest
+
+# Validate generated changelog format
+grep "^##" CHANGELOG.md  # Should see version headers
+```
 
 ---
 
 
 ## Related Articles
 
-- [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
-- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
-- [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
-- [How to Use AI to Create Changelog Entries Grouped by Breakin](/ai-tools-compared/how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/)
+- [Git Workflow Best Practices for Large Teams 2026](/ai-tools-compared/git-workflow-best-practices-large-teams-2026/)
+- [Automated Semantic Versioning in CI/CD Pipelines](/ai-tools-compared/automated-semantic-versioning-cicd-pipelines/)
+- [Release Management Automation for Monorepos](/ai-tools-compared/release-management-automation-monorepos/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-{% endraw %}

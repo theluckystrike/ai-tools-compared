@@ -229,6 +229,201 @@ Ensure your Flutter widgets include semantic information for AI tools to generat
 
 Keep tests focused on specific user journeys rather than attempting to cover entire workflows in single tests. Smaller, focused tests are easier to maintain and debug when they fail.
 
+## AI-Assisted Test Structure Patterns
+
+When working with AI tools, provide clear test scaffolding examples. Here's a pattern AI tools can learn and replicate:
+
+```dart
+import 'package:patrol/patrol.dart';
+
+void main() {
+  group('Shopping Cart Feature', () {
+    patrolTest('add product and update quantity', ($) async {
+      await $.pumpWidgetAndSettle(MyShoppingApp());
+
+      // Navigate to products
+      await $.tap(find.byKey(const Key('products_tab')));
+      await $.pumpAndSettle();
+
+      // Find first product
+      final productCards = find.byType('ProductCard');
+      expect(productCards, findsWidgets);
+
+      // Tap add to cart
+      await $.tap(find.descendant(
+        of: productCards.first,
+        matching: find.byKey(const Key('add_to_cart_button')),
+      ));
+      await $.pumpAndSettle();
+
+      // Verify cart notification
+      expect(
+        find.byKey(const Key('cart_badge')),
+        findsOneWidget,
+        reason: 'Cart badge should appear after adding item',
+      );
+
+      // Navigate to cart
+      await $.tap(find.byKey(const Key('cart_icon')));
+      await $.pumpAndSettle();
+
+      // Verify item in cart
+      expect(find.byKey(const Key('cart_item_1')), findsOneWidget);
+    });
+  });
+}
+```
+
+This structure with clear comments helps AI tools understand the expected pattern and scope of tests.
+
+## Handling Async Operations in AI-Generated Tests
+
+Complex async flows are where AI tools struggle most. Provide explicit guidance on handling delays:
+
+```dart
+// Bad (AI might generate this without prompting)
+await $.tap(find.byKey(const Key('search_button')));
+await $.pumpAndSettle();  // This may not be enough for network requests
+
+// Good (specify network handling in your prompt)
+await $.tap(find.byKey(const Key('search_button')));
+// Wait for network request
+await $.pumpAndSettle(const Duration(seconds: 2));
+// Verify results loaded
+expect(find.byType(SearchResult), findsWidgets);
+```
+
+When prompting AI tools, explicitly mention any async operations like API calls, animations, or database queries. Request that the tool add appropriate `pump()` calls with durations if needed.
+
+## Advanced Scenario: Multi-Screen Flow Testing
+
+For complex user flows, AI tools work best when you break them into substeps:
+
+```dart
+patrolTest('complete onboarding flow', ($) async {
+  await $.pumpWidgetAndSettle(MyApp());
+
+  // Screen 1: Welcome
+  await _testWelcomeScreen($);
+  await $.tap(find.byKey(const Key('get_started_button')));
+  await $.pumpAndSettle();
+
+  // Screen 2: Account Creation
+  await _testAccountCreationScreen($);
+  await $.tap(find.byKey(const Key('continue_button')));
+  await $.pumpAndSettle();
+
+  // Screen 3: Permissions
+  await _testPermissionsScreen($);
+
+  // Final verification
+  expect(find.byKey(const Key('home_screen')), findsOneWidget);
+});
+
+Future<void> _testWelcomeScreen(PatrolTester $) async {
+  expect(find.byKey(const Key('welcome_title')), findsOneWidget);
+  expect(find.byKey(const Key('welcome_description')), findsOneWidget);
+  expect(find.byKey(const Key('get_started_button')), findsOneWidget);
+}
+
+Future<void> _testAccountCreationScreen(PatrolTester $) async {
+  await $.enterText(find.byKey(const Key('email_input')), 'test@example.com');
+  await $.enterText(find.byKey(const Key('password_input')), 'SecurePass123!');
+  expect(find.byKey(const Key('continue_button')), findsOneWidget);
+}
+
+Future<void> _testPermissionsScreen(PatrolTester $) async {
+  expect(find.byKey(const Key('permissions_dialog')), findsOneWidget);
+  await $.native.tap(Selector(text: 'Allow'));
+  await $.pumpAndSettle();
+}
+```
+
+## Debugging AI-Generated Test Failures
+
+When AI-generated tests fail, use these techniques to fix them:
+
+```dart
+// If selectors are failing, add debugging
+patrolTest('debug selector issues', ($) async {
+  await $.pumpWidgetAndSettle(MyApp());
+
+  // Print widget tree to understand structure
+  debugPrintStack();
+
+  // Use more specific finders
+  final buttons = find.byType(ElevatedButton);
+  print('Found ${buttons.evaluate().length} elevated buttons');
+
+  // Combine multiple conditions
+  final mainButton = find.byWidgetPredicate(
+    (widget) => widget is ElevatedButton &&
+                widget.key == const Key('main_action'),
+  );
+
+  expect(mainButton, findsOneWidget);
+});
+```
+
+## CI/CD Integration for AI-Generated Tests
+
+Integrate AI-generated Patrol tests into your CI/CD pipeline to catch failures early:
+
+```yaml
+# .github/workflows/patrol_tests.yml
+name: Patrol Integration Tests
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.0'
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Run Patrol tests
+        run: |
+          flutter pub global activate patrol_cli
+          patrol test --debug
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: patrol-results
+          path: build/app/outputs/
+```
+
+## Best Practices for AI-Generated Patrol Tests
+
+Maintain test reliability by following established patterns. AI tools generate tests quickly, but quality depends on proper widget accessibility and clear test descriptions.
+
+Ensure your Flutter widgets include semantic information for AI tools to generate accurate selectors. Use `find.byKey()` for critical elements rather than relying on text-based finders that may break with UI changes.
+
+Keep tests focused on specific user journeys rather than attempting to cover entire workflows in single tests. Smaller, focused tests are easier to maintain and debug when they fail.
+
+**Test Naming Convention** — Use descriptive names that indicate what scenario is being tested:
+
+- `test_login_with_valid_credentials()` — Good
+- `test_ui()` — Bad
+- `test_cart_persists_after_app_restart()` — Good
+
+**Assertion Clarity** — Add reasons to assertions for better failure diagnostics:
+
+```dart
+expect(
+  find.byKey(const Key('order_total')),
+  findsOneWidget,
+  reason: 'Order total should be visible before checkout'
+);
+```
+
 Integrate AI-generated Patrol tests into your CI/CD pipeline to catch failures early. The combination of AI-assisted test creation and automated execution provides reliable coverage for Flutter applications.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

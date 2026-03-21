@@ -206,22 +206,185 @@ Monitoring and alerting catch patterns in your failures. Track failure rates and
 Graceful degradation prepares for total outages. Cache successful generations and have fallback content ready for when the API is unavailable.
 
 
-## When All Else Fails
+## Complete Production-Ready Retry Implementation
 
+For production systems, build a comprehensive retry manager that handles all failure modes:
+
+```python
+import time
+import requests
+from enum import Enum
+from typing import Optional
+import logging
+
+logger = logging.getLogger(__name__)
+
+class ErrorCategory(Enum):
+    RATE_LIMIT = "rate_limit"
+    AUTH_ERROR = "auth_error"
+    POLICY_VIOLATION = "policy_violation"
+    TIMEOUT = "timeout"
+    INVALID_REQUEST = "invalid_request"
+    SERVER_ERROR = "server_error"
+    UNKNOWN = "unknown"
+
+class DALLERetryManager:
+    def __init__(self, api_key: str, max_retries: int = 5):
+        self.api_key = api_key
+        self.max_retries = max_retries
+        self.base_url = "https://api.openai.com/v1/images/generations"
+
+    def categorize_error(self, status_code: int, response_text: str) -> ErrorCategory:
+        if status_code == 429:
+            return ErrorCategory.RATE_LIMIT
+        elif status_code == 401:
+            return ErrorCategory.AUTH_ERROR
+        elif status_code == 400 and "policy" in response_text.lower():
+            return ErrorCategory.POLICY_VIOLATION
+        elif status_code in [408, 504]:
+            return ErrorCategory.TIMEOUT
+        elif status_code == 400:
+            return ErrorCategory.INVALID_REQUEST
+        elif status_code >= 500:
+            return ErrorCategory.SERVER_ERROR
+        return ErrorCategory.UNKNOWN
+
+    def should_retry(self, error_category: ErrorCategory, attempt: int) -> bool:
+        if error_category == ErrorCategory.POLICY_VIOLATION:
+            return False  # Never retry policy violations
+        if error_category == ErrorCategory.AUTH_ERROR:
+            return False  # Never retry auth errors
+        return attempt < self.max_retries
+
+    def calculate_backoff(self, error_category: ErrorCategory, attempt: int, retry_after: Optional[int] = None) -> int:
+        if error_category == ErrorCategory.RATE_LIMIT and retry_after:
+            return retry_after
+
+        # Exponential backoff with jitter
+        base_delay = 2 ** attempt
+        jitter = base_delay * 0.1  # 10% jitter
+        import random
+        return int(base_delay + random.uniform(0, jitter))
+
+    def generate_with_retry(
+        self,
+        prompt: str,
+        size: str = "1024x1024",
+        quality: str = "standard"
+    ) -> Optional[dict]:
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {self.api_key}"
+        }
+
+        data = {
+            "prompt": prompt,
+            "n": 1,
+            "size": size,
+            "quality": quality
+        }
+
+        for attempt in range(self.max_retries):
+            try:
+                logger.info(f"Attempt {attempt + 1}/{self.max_retries}: {prompt[:50]}...")
+                response = requests.post(
+                    self.base_url,
+                    headers=headers,
+                    json=data,
+                    timeout=60
+                )
+
+                if response.status_code == 200:
+                    logger.info(f"Success on attempt {attempt + 1}")
+                    return response.json()
+
+                error_category = self.categorize_error(response.status_code, response.text)
+                logger.warning(f"Error: {error_category.value} - {response.status_code}")
+
+                if not self.should_retry(error_category, attempt):
+                    logger.error(f"Non-retryable error: {error_category.value}")
+                    return None
+
+                retry_after = response.headers.get('Retry-After')
+                wait_time = self.calculate_backoff(error_category, attempt, int(retry_after) if retry_after else None)
+                logger.info(f"Waiting {wait_time} seconds before retry...")
+                time.sleep(wait_time)
+
+            except requests.Timeout:
+                logger.warning(f"Timeout on attempt {attempt + 1}")
+                if attempt < self.max_retries - 1:
+                    wait_time = self.calculate_backoff(ErrorCategory.TIMEOUT, attempt)
+                    time.sleep(wait_time)
+                continue
+            except Exception as e:
+                logger.error(f"Unexpected error: {str(e)}")
+                return None
+
+        logger.error("Max retries exceeded")
+        return None
+
+
+# Usage example
+manager = DALLERetryManager(api_key="your-api-key")
+result = manager.generate_with_retry(
+    prompt="A serene mountain landscape with a clear blue sky"
+)
+```
+
+## When All Else Fails
 
 If you continue experiencing failures after implementing these strategies, consider these options:
 
+- Upgrade your API tier for higher rate limits and better service quotas
 
-- Upgrade your API tier for higher rate limits
+- Contact OpenAI support with specific error details, including error codes and timestamps
 
-- Contact OpenAI support with specific error details
+- Use alternative image generation as a backup (Stable Diffusion, Midjourney API, Adobe Firefly)
 
-- Use alternative image generation as a backup (Stable Diffusion, Midjourney API)
+- Use a queue system to manage generation requests asynchronously with dead-letter handling
 
-- Use a queue system to manage generation requests asynchronously
+- Implement caching for successful generations to reduce repeated requests
 
+## Monitoring and Alerting
 
-DALL-E failures don't have to break your workflow. With proper error handling, retry logic, and diagnostic procedures, you can build resilient systems that recover gracefully from transient failures.
+Track failure patterns to identify systemic issues:
+
+```python
+import json
+from collections import defaultdict
+from datetime import datetime
+
+class FailureMonitor:
+    def __init__(self):
+        self.failures = defaultdict(int)
+        self.timestamps = []
+
+    def log_failure(self, error_code: str):
+        self.failures[error_code] += 1
+        self.timestamps.append(datetime.now())
+
+    def get_failure_rate(self) -> dict:
+        total = sum(self.failures.values())
+        return {
+            code: count / total for code, count in self.failures.items()
+        } if total > 0 else {}
+
+    def should_alert(self, threshold: float = 0.3) -> bool:
+        # Alert if rate limit errors exceed 30% of failures
+        failure_rate = self.get_failure_rate()
+        return failure_rate.get("429", 0) > threshold
+
+monitor = FailureMonitor()
+# Log failures as they occur
+monitor.log_failure("429")
+monitor.log_failure("200")
+# Check if alerting is needed
+if monitor.should_alert():
+    # Send alert to monitoring system
+    print("High rate limit failure rate detected")
+```
+
+DALL-E failures don't have to break your workflow. With proper error handling, retry logic, diagnostic procedures, and monitoring, you can build resilient systems that recover gracefully from transient failures and provide visibility into systemic issues.
 
 
 ## Related Articles
