@@ -225,18 +225,97 @@ This approach works but requires more manual setup than plugin-based solutions.
 
 
 | Solution | Monthly Cost | Setup Effort | Quality | Privacy |
-
 |----------|--------------|--------------|---------|---------|
-
 | CodeWhisperer + Copa | Free | Low | Basic | AWS |
-
 | Tabnine Free | Free | Low | Pattern-based | Mixed |
-
 | Ollama + cmp | Free | Medium | Good | 100% Local |
-
 | Continue + Ollama | Free | Medium | Good | 100% Local |
-
 | Claude Code | Free | High | Excellent | Mixed |
+
+
+## Choosing the Right Local Model for Ollama
+
+
+Not all models perform equally for code completion. The choice of model matters more than people expect.
+
+
+**codellama:7b** is the standard starting point. At 7 billion parameters it runs on most developer machines, responds within a second on modern hardware, and handles common programming languages well. It was specifically trained on code, so completions feel more relevant than general-purpose models.
+
+
+**deepseek-coder:6.7b** is worth benchmarking against codellama. Many developers find it produces better completions for Python and TypeScript specifically. The model size is comparable so hardware requirements stay the same.
+
+
+**starcoder2:3b** is the right choice if your machine has less than 8GB of RAM. The 3 billion parameter version runs comfortably on 4GB of RAM with acceptable latency. Completion quality drops noticeably for complex logic, but it handles boilerplate and common patterns adequately.
+
+
+Pull and test each model in your actual workflow before committing to one. The `ollama run <model>` command lets you chat with a model interactively before wiring it into your editor:
+
+
+```bash
+ollama pull deepseek-coder:6.7b
+ollama run deepseek-coder:6.7b "write a python function to parse TOML config"
+```
+
+
+## Fine-Tuning Your Neovim Integration for Speed
+
+
+The biggest complaint about local AI autocomplete is latency. A few configuration changes make a meaningful difference.
+
+
+**Increase the debounce delay.** Triggering completions on every keystroke wastes CPU and creates a distracting popup flood. A debounce of 300-500ms feels natural without adding perceived lag:
+
+
+```lua
+cmp.setup({
+  completion = {
+    debounce = 400,
+    throttle = 60,
+  },
+})
+```
+
+
+**Limit completion candidates.** Requesting 10 candidates from a local model costs more time than requesting 3. For inline autocomplete, 2-3 candidates is sufficient:
+
+
+```lua
+{
+  name = 'cmp_ollama',
+  option = {
+    model = 'codellama:7b',
+    host = 'localhost:11434',
+    max_completions = 3,
+  }
+}
+```
+
+
+**Use a faster inference backend.** If you have an Apple Silicon Mac or an NVIDIA GPU, Ollama automatically uses hardware acceleration. On CPU-only machines, consider llama.cpp directly, which offers better CPU optimization than the default Ollama backend for some models.
+
+
+## Privacy Considerations by Solution
+
+
+For developers working with proprietary code or regulated data, understanding where completions are generated matters.
+
+
+Cloud-based solutions (CodeWhisperer, Tabnine cloud tier) send code snippets to external servers to generate completions. Amazon and Tabnine both publish data retention policies, but if your organization prohibits sending code off-premises, these options are ruled out.
+
+
+Ollama and Continue with a local model keep everything on your machine. The model weights are downloaded once and inference runs entirely locally. No network calls occur during code editing. This is the only option that satisfies strict air-gapped or data-sovereign requirements.
+
+
+Claude Code sends code to Anthropic's servers when you explicitly invoke it, but it does not run in the background or send passive context. The on-demand model gives you control over what gets transmitted.
+
+
+## Combining Solutions for Maximum Value
+
+
+There is no rule that says you must pick exactly one approach. Many experienced Neovim users layer multiple autocomplete sources and let nvim-cmp rank them by priority. A practical layered setup puts LSP completions first (fast, accurate, context-aware), followed by local Ollama completions for broader suggestions, and Tabnine's pattern-based completions as a last resort. The result is a completion menu that covers the full spectrum from precise to speculative without any monthly cost.
+
+
+The tradeoff is configuration complexity. Each additional source adds latency to the popup and can produce noisy candidates. Start with one source, measure the improvement to your workflow, and add another only if you identify a gap that the current source does not fill.
 
 
 ## Recommendation
