@@ -223,6 +223,76 @@ Choose **Claude Code** when:
 
 Many teams use both tools together. Let Copilot generate the initial scaffold, then use Claude Code to refine and optimize the workflow for your specific requirements. This combination uses Copilot's speed for basic generation and Claude Code's depth for advanced customization.
 
+## Handling Secrets and Environment Configuration
+
+Both tools handle secret references differently. GitHub Actions uses `${{ secrets.SECRET_NAME }}` syntax inside workflow files. Copilot, due to its inline completion model, generates this syntax correctly in context but sometimes omits the required `env:` mapping at the job level. Claude Code consistently generates the full secrets mapping:
+
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ env.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+```
+
+For environment-specific deployments, Claude Code generates proper environment protection rules and deployment protection patterns. When you ask it to generate a staging/production workflow, it includes environment gates, required reviewers, and approval conditions by default — a level of completeness that Copilot requires additional prompting to achieve.
+
+## Reusable Workflows and Composite Actions
+
+Reusable workflows (`workflow_call`) and composite actions are where the AI tool quality gap widens most significantly. These patterns involve cross-file dependencies, input/output passing, and GitHub's permission inheritance model — nuances that require deep understanding of the Actions platform.
+
+Claude Code handles reusable workflow generation reliably:
+
+```yaml
+# .github/workflows/reusable-test.yml
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+      environment:
+        required: false
+        type: string
+        default: 'staging'
+    secrets:
+      NPM_TOKEN:
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+      - run: npm ci --ignore-scripts
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm test
+```
+
+Copilot tends to generate flat workflow files and requires multiple follow-up prompts to produce proper `workflow_call` triggers with typed inputs. For teams building shared CI/CD libraries across multiple repositories, this is a meaningful productivity difference.
+
+## Debugging Failed Workflow Runs
+
+Both tools can analyze workflow failure logs, but they approach debugging differently. Copilot provides inline suggestions as you edit the failing workflow. Claude Code accepts the full error log and provides a structured analysis with the specific failure reason and the fix:
+
+When pasting a GitHub Actions error log into Claude Code, prompt: "This workflow failed with the following error. Identify the root cause and provide the corrected YAML." Claude Code typically returns a root cause explanation, the affected step, and a corrected configuration in a single response — without requiring back-and-forth clarification.
+
+For common failure patterns (Node version mismatches, missing permissions, stale action versions), both tools perform similarly. For subtle failures involving OIDC token scopes, artifact retention limits, or concurrent workflow conflicts, Claude Code's broader contextual analysis produces more accurate diagnoses.
 
 ## Related Articles
 
