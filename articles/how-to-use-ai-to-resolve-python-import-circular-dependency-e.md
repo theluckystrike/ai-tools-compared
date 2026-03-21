@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-use-ai-to-resolve-python-import-circular-dependency-e/
 categories: [guides]
 tags: [ai-tools-compared, python, debugging, programming, artificial-intelligence]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
