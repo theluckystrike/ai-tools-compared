@@ -9,7 +9,7 @@ permalink: /best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/
 categories: [guides]
 tags: [ai-tools-compared, ai-tools, code-migration, python, java, javascript, devops, best-of]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
