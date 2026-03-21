@@ -8,7 +8,7 @@ permalink: /how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistan
 categories: [guides]
 tags: [ai-tools-compared, policy, security, enterprise, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
