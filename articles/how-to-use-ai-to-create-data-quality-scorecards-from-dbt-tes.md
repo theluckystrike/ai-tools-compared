@@ -376,7 +376,8 @@ Aggregate failure data before sending it to the AI. Instead of passing all 2,000
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Create Data Pipeline Orchestration Configs](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)

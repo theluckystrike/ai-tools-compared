@@ -280,7 +280,8 @@ Whisper for transcription and Claude for generation is a reliable starting point
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Podcasters Show Notes Writing](/ai-tools-compared/best-ai-tool-for-podcasters-show-notes-writing/)
 - [Podcastle vs Riverside: AI Podcast Recording Tools Compared](/ai-tools-compared/podcastle-vs-riverside-ai-podcast-recording/)

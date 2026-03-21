@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Local LLM Options for Code Generation 2026"
-description: "Compare local LLMs for code generation in 2026: DeepSeek Coder V3, Qwen2.5-Coder, CodeLlama, and Starcoder2. Benchmark scores, hardware requirements, and Ollama setup."
+description: "Compare local LLMs for code generation in 2026: DeepSeek Coder V3, Qwen2.5-Coder, CodeLlama, and Starcoder2."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -342,7 +342,8 @@ ollama create qwen-code-custom -f ~/.ollama/Modelfile_qwen
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Local LLM Alternatives to Cloud AI Coding Assistants](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 - [Health Insurance Options for Freelancers 2026](/ai-tools-compared/health-insurance-options-for-freelancers-2026/)

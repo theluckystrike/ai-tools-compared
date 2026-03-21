@@ -316,7 +316,8 @@ For pure research teams (product, documentation, design), Perplexity's cost-to-v
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)

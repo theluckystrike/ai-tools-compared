@@ -421,7 +421,8 @@ OpenAI maintains conversation logs server-side for Plus users and may be able to
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 - [Writesonic Chatsonic vs ChatGPT: Conversation Comparison](/ai-tools-compared/writesonic-chatsonic-vs-chatgpt-conversation-comparison/)

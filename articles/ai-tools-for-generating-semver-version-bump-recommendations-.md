@@ -265,7 +265,8 @@ Consider these factors when selecting a tool:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)

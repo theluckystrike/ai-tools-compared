@@ -790,7 +790,8 @@ ORDER BY mean_exec_time DESC;
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
 - [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)

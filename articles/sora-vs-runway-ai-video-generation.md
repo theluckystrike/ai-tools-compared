@@ -385,7 +385,8 @@ RUNWAY_API_KEY = os.environ.get("RUNWAY_API_KEY")
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)

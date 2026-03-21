@@ -344,7 +344,8 @@ Cursor excels at boilerplate generation and repetitive changes across many files
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)

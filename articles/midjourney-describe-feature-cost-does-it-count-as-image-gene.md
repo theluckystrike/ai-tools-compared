@@ -298,7 +298,7 @@ def is_acceptable_quality(image):
     return score_describe_output(desc) > threshold
 ```
 
-This pattern leverages the free describe operation to validate results before committing to them.
+This pattern uses the free describe operation to validate results before committing to them.
 
 ## Billing Edge Cases
 
@@ -339,7 +339,8 @@ This allocation prioritizes understanding and refinement before committing heavy
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Midjourney Basic Plan Image Limits Per Month: Real Numbers](/ai-tools-compared/midjourney-basic-plan-image-limits-per-month-real-numbers-20/)
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)

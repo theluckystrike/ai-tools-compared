@@ -307,7 +307,8 @@ When working with AI assistants for Grafana panel creation:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
 - [Best AI Assistant for Building Superset Dashboard Charts Fro](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)

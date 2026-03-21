@@ -391,7 +391,8 @@ echo "Continue.dev configured -- open VS Code and press Cmd+I to chat"
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)

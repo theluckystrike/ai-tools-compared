@@ -360,7 +360,8 @@ The most efficient approach for most teams: write a prompt template specific to 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
 - [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)

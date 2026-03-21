@@ -266,7 +266,8 @@ print(analyze_churn_signal("Acme Corp", tickets))
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
 - [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)

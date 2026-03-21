@@ -261,7 +261,8 @@ Flag any sentence over 25 words for simplification.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
 - [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)

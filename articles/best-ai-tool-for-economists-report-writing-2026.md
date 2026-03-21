@@ -408,7 +408,8 @@ Start with an outline you've drafted yourself. Use AI for filling in sections, n
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Auditors: Audit Report Generation Compared](/ai-tools-compared/best-ai-tool-for-auditors-audit-report-generation/)
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)

@@ -373,7 +373,8 @@ Most Copilot issues stem from misconfiguration, network problems, or competing e
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)

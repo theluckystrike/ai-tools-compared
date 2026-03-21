@@ -312,7 +312,8 @@ This produces a well-structured, validated query that you can confidently deploy
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Effective Prompting for AI Generation of Accessible Frontend](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
 - [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)

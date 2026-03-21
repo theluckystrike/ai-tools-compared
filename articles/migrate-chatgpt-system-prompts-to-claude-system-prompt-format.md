@@ -389,7 +389,8 @@ For simple assistants with no complex rules, paste your ChatGPT system prompt di
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
 - [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)

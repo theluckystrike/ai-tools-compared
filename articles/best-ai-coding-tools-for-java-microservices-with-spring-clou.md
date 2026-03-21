@@ -242,7 +242,8 @@ Start with the tool that matches your current IDE preference, as the productivit
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 - [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)

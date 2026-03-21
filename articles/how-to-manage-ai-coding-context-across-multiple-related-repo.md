@@ -421,7 +421,8 @@ Document the context management approach so teammates understand it:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 - [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)

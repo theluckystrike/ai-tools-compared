@@ -262,7 +262,8 @@ Claude Code works best when it has complete context. If you notice generated fla
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
 - [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)

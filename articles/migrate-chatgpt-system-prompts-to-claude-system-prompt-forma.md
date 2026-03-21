@@ -282,7 +282,8 @@ Use the `xml` thinking feature for complex reasoning. Claude's extended thinking
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
 - [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)

@@ -296,7 +296,8 @@ This ensures no migration reaches your main branch without proper test coverage.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)

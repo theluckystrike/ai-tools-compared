@@ -345,7 +345,8 @@ All these tools require human oversight. AI-generated content needs review for a
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)

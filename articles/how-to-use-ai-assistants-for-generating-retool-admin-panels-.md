@@ -311,7 +311,8 @@ For legacy systems with unclear relationships, ask the AI to generate queries fo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
 - [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)

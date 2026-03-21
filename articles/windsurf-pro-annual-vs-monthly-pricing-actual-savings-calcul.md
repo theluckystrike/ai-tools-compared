@@ -261,7 +261,8 @@ Support tiers: Enterprise support may carry additional costs. Evaluate whether b
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Midjourney Yearly Subscription Savings vs Monthly Billing](/ai-tools-compared/midjourney-yearly-subscription-savings-vs-monthly-billing-br/)
 - [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)

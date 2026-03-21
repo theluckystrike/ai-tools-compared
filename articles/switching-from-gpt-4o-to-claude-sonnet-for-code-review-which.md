@@ -352,7 +352,8 @@ When switching a team from GPT-4o to Claude Sonnet for code reviews:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
 - [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)

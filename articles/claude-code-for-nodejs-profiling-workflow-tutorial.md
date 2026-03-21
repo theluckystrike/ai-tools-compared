@@ -331,7 +331,8 @@ Integrate profiling into your development workflow using these strategies:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)

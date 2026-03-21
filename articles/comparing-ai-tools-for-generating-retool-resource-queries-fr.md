@@ -361,7 +361,8 @@ This generates an end-to-end workflow rather than isolated queries.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI Assistants for Generating Retool Admin.](/ai-tools-compared/how-to-use-ai-assistants-for-generating-retool-admin-panels-/)
 - [Comparing AI Tools for Generating No-Code Helpdesk.](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-helpdesk-ticketing/)

@@ -267,7 +267,8 @@ The key principle remains consistent: make context transitions explicit rather t
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 - [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)

@@ -270,7 +270,8 @@ The investment in AI-powered retry and dead letter handling pays dividends throu
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Build a RAG Pipeline with LangChain 2026](/ai-tools-compared/how-to-build-a-rag-pipeline-with-langchain-2026/)
 - [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)

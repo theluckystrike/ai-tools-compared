@@ -331,7 +331,8 @@ The AI-generated descriptions provide engineers with immediate context about the
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 - [Best Practices for Version Controlling AI Prompts and Rules](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)

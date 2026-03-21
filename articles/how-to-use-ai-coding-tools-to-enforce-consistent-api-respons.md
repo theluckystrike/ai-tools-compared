@@ -331,7 +331,8 @@ AI coding tools transform API consistency from a manual enforcement task into an
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
 - [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)

@@ -332,7 +332,8 @@ The combination of AI-generated validation tests and manually-written business l
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)

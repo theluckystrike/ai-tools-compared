@@ -133,7 +133,7 @@ TypeScript, Java, and Go require different considerations. Your prompts should a
 ```
 Use TypeScript strict mode. Define interfaces for all API request 
 and response objects. Prefer interfaces over types for object shapes.
-Use generics sparingly but when they improve type safety. Leverage 
+Use generics sparingly but when they improve type safety. Use 
 utility types like Partial, Required, and Pick where appropriate.
 ```
 
@@ -248,7 +248,8 @@ A system prompt is not a set-it-and-forget-it document. It should evolve alongsi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)

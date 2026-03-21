@@ -290,7 +290,8 @@ For a team already invested in Canva's design ecosystem, the video capabilities 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Video Editor 2026 to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
 - [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)

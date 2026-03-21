@@ -302,7 +302,8 @@ Test thoroughly to ensure the local model meets your quality requirements before
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
 - [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)

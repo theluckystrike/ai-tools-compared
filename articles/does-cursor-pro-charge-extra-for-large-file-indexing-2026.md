@@ -292,7 +292,8 @@ To get the best performance from Cursor on large codebases:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)

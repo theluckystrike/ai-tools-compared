@@ -378,7 +378,8 @@ cursor.setModel("gpt-4o")              // Switches to GPT-4o
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
 - [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)

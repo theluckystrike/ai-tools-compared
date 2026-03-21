@@ -270,7 +270,8 @@ The cheapest option that fits your workflow ultimately depends on your specific 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)

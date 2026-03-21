@@ -325,7 +325,8 @@ Collect feedback over one or two sprints, then promote stable configurations to 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
 - [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)

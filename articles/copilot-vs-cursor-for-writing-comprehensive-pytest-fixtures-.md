@@ -263,7 +263,8 @@ The most effective approach involves understanding each tool's strengths and app
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 - [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)

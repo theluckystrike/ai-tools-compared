@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Transfer Claude Project Knowledge to ChatGPT Custom"
+title: "How to Transfer Claude Project Knowledge to ChatGPT Custom (2)"
 description: "A practical guide to migrating your Claude project knowledge bases, instructions, and settings to ChatGPT Custom GPTs with step-by-step instructions"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -238,7 +238,8 @@ This flexibility makes Custom GPTs valuable for team workflows, though it requir
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)

@@ -380,7 +380,8 @@ Most projects see 30-40% reduction in duplicate issues within the first month, w
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Triaging GitHub Issues by Severity and Cate](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
 - [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)

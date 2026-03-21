@@ -312,7 +312,8 @@ OpenAI's `response_format` with `json_schema` guarantees schema-valid output. An
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)

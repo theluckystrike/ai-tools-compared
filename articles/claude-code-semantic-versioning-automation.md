@@ -381,7 +381,8 @@ Claude Code handles dry-run generation well — prompt it with "Add a dry-run mo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)

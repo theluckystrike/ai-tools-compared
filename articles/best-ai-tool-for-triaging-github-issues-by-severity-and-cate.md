@@ -390,7 +390,8 @@ For organizations with many repositories, automate triage across all repos and t
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)

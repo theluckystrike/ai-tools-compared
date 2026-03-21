@@ -324,7 +324,8 @@ Maintain stable image upload functionality with these practices:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
 - [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)

@@ -322,7 +322,8 @@ Plan around these by breaking work into shorter sessions.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)

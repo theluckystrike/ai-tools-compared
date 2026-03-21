@@ -264,7 +264,8 @@ Start with a 2-week pilot on one repository, measure the impact on review time a
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
 - [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)

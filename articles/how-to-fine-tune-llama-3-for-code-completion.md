@@ -325,7 +325,8 @@ Teams that do this find the model stays relevant as new modules and patterns are
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)

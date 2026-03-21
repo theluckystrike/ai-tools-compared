@@ -383,7 +383,8 @@ Use AI to help analyze these patterns: "Analyze our last 10 RCAs for common them
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 - [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)

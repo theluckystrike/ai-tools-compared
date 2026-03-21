@@ -264,7 +264,8 @@ The Basic Plan works well for individual developers, learning projects, and low-
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Midjourney Describe Feature Cost Does It Count as Image Gene](/ai-tools-compared/midjourney-describe-feature-cost-does-it-count-as-image-gene/)
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)

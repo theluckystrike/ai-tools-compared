@@ -284,7 +284,8 @@ A CLAUDE.md that doesn't reflect reality wastes everyone's time. Keep it honest 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 - [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)

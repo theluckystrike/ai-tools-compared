@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Workflow for Using AI"
+title: "Effective Workflow for Using AI — Generate"
 description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -303,7 +303,8 @@ This creates a feedback loop where AI assists with maintenance, reducing the fri
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
 - [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)

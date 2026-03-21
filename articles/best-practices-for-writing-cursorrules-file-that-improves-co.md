@@ -284,7 +284,8 @@ Remember that the goal is not to include every possible preference, but to focus
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
 - [Best Practices for Claude Md File Organization in Polyglot C](/ai-tools-compared/best-practices-for-claude-md-file-organization-in-polyglot-c/)

@@ -297,7 +297,58 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 
 - Single-pass generation: Better results come from iterative refinement
 
-- Skipping the conflict check: AI cannot see your codebase unless you show it, so grep verification is mandatory before committing any generated names
+## Automating Name Generation with Scripts
+
+For teams generating naming conventions at scale, you can script the AI interaction. This Python example uses the Anthropic API to batch-process token files:
+
+```python
+import anthropic
+import json
+
+def generate_component_names(token_file, existing_patterns):
+    client = anthropic.Anthropic()
+
+    with open(token_file) as f:
+        tokens = json.load(f)
+
+    prompt = f"""Given these design tokens:
+{json.dumps(tokens, indent=2)}
+
+And these existing component naming patterns:
+{json.dumps(existing_patterns, indent=2)}
+
+Generate consistent component names for all tokens.
+Return as JSON mapping token paths to component names."""
+
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=2048,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return json.loads(response.content[0].text)
+
+# Usage
+patterns = {
+    "ButtonPrimary": "color.brand.primary",
+    "ButtonSecondary": "color.brand.secondary",
+    "SpacingSm": "spacing.sm"
+}
+names = generate_component_names("tokens.json", patterns)
+```
+
+This approach lets you regenerate names whenever your token file changes, keeping the naming convention synchronized with your design system automatically.
+
+## Cross-Platform Naming Consistency
+
+Design systems that span web, iOS, and Android need naming conventions that translate across platforms. AI tools can generate platform-specific variants from a single token set:
+
+| Token | Web (CSS) | iOS (Swift) | Android (Kotlin) |
+|-------|-----------|-------------|-------------------|
+| color.brand.primary | --color-brand-primary | .brandPrimary | R.color.brand_primary |
+| spacing.md | --spacing-md | .spacingMd | R.dimen.spacing_md |
+| typography.heading | .text-heading | .headingStyle | @style/TextHeading |
+
+When prompting AI tools for cross-platform names, specify all target platforms upfront. The AI can then ensure naming consistency across your web components, SwiftUI views, and Jetpack Compose elements simultaneously.
 
 
 
@@ -318,7 +369,7 @@ AI tools can generate a migration mapping—old name to new name—formatted as 
 
 
 
-## Related Reading
+## Related Articles
 
 - [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/ai-tools-for-converting-figma-designs-to-code-2026/)
 - [AI Tools for Designers Writing Handoff Notes That Include In](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)

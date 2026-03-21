@@ -275,7 +275,8 @@ Both tools eliminate the blank-page problem and accelerate your outreach workflo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Writing Cold Outreach Emails](/ai-tools-compared/best-ai-tool-for-writing-cold-outreach-emails/)
 - [Best AI Writing Tool for SaaS Marketing Teams](/ai-tools-compared/best-ai-writing-tool-for-saas-marketing-teams/)

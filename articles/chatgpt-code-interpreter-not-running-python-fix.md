@@ -290,7 +290,8 @@ Save critical work locally and don't rely solely on Code Interpreter for importa
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code vs ChatGPT Code Interpreter Comparison](/ai-tools-compared/claude-code-vs-chatgpt-code-interpreter-comparison/)
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)

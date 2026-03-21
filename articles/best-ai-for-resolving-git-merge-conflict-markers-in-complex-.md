@@ -276,7 +276,8 @@ The ultimate goal is not just to resolve conflicts quickly, but to ensure the re
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
 - [AI Tools for Debugging iOS Autolayout Constraint Conflict Wa](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)

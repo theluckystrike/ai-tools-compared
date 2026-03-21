@@ -546,7 +546,8 @@ Start with OpenAPI generation even if you only plan to display Markdown docs ini
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)

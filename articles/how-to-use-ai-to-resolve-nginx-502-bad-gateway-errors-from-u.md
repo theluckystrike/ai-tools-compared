@@ -256,7 +256,8 @@ This configuration retries requests on 502 errors up to three times before retur
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Resolve CMake Configuration Errors for Cros](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
 - [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)

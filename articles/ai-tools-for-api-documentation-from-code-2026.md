@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for API Documentation from Code 2026"
-description: "Compare AI tools that generate API docs from code in 2026: Mintlify Writer, Swimm, Speakeasy, and LLMs. OpenAPI spec generation, accuracy, and maintenance workflow."
+description: "Compare AI tools that generate API docs from code in 2026: Mintlify Writer, Swimm, Speakeasy, and LLMs."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -350,7 +350,8 @@ For a 50-endpoint API:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)

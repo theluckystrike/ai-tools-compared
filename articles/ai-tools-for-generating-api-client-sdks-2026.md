@@ -378,7 +378,8 @@ The decision ultimately hinges on your specification format (OpenAPI, GraphQL, P
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)

@@ -265,7 +265,8 @@ ChatGPT serves as a solid secondary option for common exception patterns, while 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Writing pandas Code](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 - [AI Tools for Explaining Sorting Algorithm Tradeoffs for Diff](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)

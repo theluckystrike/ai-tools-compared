@@ -347,7 +347,8 @@ Keep integration tests idempotent by using unique request IDs or test-specific A
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate pytest Tests for Celery Task Chain](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
 - [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)

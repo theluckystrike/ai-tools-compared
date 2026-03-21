@@ -115,7 +115,7 @@ def check_brand_compliance(text: str, brand_guidelines_id: str):
 #     "compliance_score": 85,
 #     "issues": [
 #         {"type": "tone", "message": "Too casual for enterprise context"},
-#         {"type": "style", "message": "Use 'utilize' instead of 'use' per brand guide"}
+#         {"type": "style", "message": "Use 'use' instead of 'use' per brand guide"}
 #     ]
 # }
 ```
@@ -213,7 +213,7 @@ Jasper includes brand voice features that allow teams to define tone, style, and
 const brandVoice = {
     tone: "professional",
     formality: "medium",
-    prohibited_words: ["synergy", "leverage", "circle back"],
+    prohibited_words: ["synergy", "use", "circle back"],
     required_terms: {
         "our product": "the Platform",
         "customers": "enterprise users"
@@ -313,7 +313,8 @@ Many enterprises use both platforms—Jasper for marketing content creation and 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
 - [Jasper AI vs Frase IO: SEO Writing Comparison for Power](/ai-tools-compared/jasper-ai-vs-frase-io-seo-writing-comparison/)

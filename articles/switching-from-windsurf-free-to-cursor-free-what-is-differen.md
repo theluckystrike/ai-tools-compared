@@ -261,7 +261,8 @@ Both tools are capable choices for developers exploring AI-assisted coding. The 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
 - [Cursor Free Plan vs Windsurf Free Plan Which Gives More](/ai-tools-compared/cursor-free-plan-vs-windsurf-free-plan-which-gives-more/)

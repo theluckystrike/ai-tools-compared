@@ -286,7 +286,8 @@ The compound effect: spending 15 minutes on show notes instead of 60 minutes sav
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)

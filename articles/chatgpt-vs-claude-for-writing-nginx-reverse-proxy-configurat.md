@@ -371,7 +371,8 @@ Run this before reloading in production. It prevents configuration errors from b
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
 - [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)

@@ -448,7 +448,8 @@ Total time for a 20-endpoint API: 3-4 hours (vs 16-20 hours without AI).
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)

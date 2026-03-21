@@ -494,7 +494,8 @@ When troubleshooting, work through this checklist:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT Slow Response Fix 2026: Complete Troubleshooting](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)

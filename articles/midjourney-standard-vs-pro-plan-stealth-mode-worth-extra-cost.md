@@ -31,7 +31,7 @@ Midjourney currently offers several plans, but the two most popular options for 
 
 
 
-Before diving into the differences, it's worth noting what you get with both plans:
+Before diving into the differenceswhat you get with both plans:
 
 
 
@@ -247,8 +247,6 @@ You can start on Standard and upgrade mid-month without losing credits. This all
 - Downgrade to Standard for final refinements (less time-critical)
 - Total savings: $30/month × 2 months = $60, still under annual Pro cost
 
-## Related Considerations
-
 If stealth mode is your primary concern but speed isn't, consider whether you actually need Midjourney's premium offering. Alternative platforms like DALL-E 3 (via ChatGPT Plus, $20/month) don't publicly display generations by default and may better serve privacy-first workflows with lower cost.
 
 
@@ -257,7 +255,8 @@ If stealth mode is your primary concern but speed isn't, consider whether you ac
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)

@@ -554,7 +554,8 @@ When introducing AI-generated resolvers to your team:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)

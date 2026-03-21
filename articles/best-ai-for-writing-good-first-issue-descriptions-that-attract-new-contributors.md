@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing Good First Issue Descriptions That"
+title: "Best AI for Writing Good First Issue Descriptions That — Attract"
 description: "Discover the best AI tools for writing effective first issue descriptions that attract new contributors to your open source projects. Includes"
 date: 2026-03-16
 last_modified_at: 2026-03-16
@@ -292,7 +292,8 @@ Good first issues attract contributors. Bad ones waste everyone's time. AI tools
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
 - [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)

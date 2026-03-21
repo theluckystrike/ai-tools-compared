@@ -407,7 +407,8 @@ The most successful pipelines combine automated grading for bulk footage with ma
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
 - [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)

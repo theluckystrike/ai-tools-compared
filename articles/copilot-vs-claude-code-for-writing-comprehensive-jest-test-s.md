@@ -312,7 +312,8 @@ The best tool for your team depends on your specific code patterns, testing phil
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)

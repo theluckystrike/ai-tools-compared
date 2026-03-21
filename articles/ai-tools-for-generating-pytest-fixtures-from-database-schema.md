@@ -291,7 +291,8 @@ def test_order_creation(db_session, sample_user):
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
 - [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)

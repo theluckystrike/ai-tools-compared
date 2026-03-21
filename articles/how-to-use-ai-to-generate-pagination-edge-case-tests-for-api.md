@@ -289,7 +289,8 @@ AI accelerates the initial test generation, but maintaining and updating tests s
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
 - [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)

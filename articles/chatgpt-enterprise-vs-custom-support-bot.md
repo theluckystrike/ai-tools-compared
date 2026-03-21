@@ -249,7 +249,8 @@ For many organizations, a hybrid approach—ChatGPT Enterprise for general inqui
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
 - [ChatGPT Enterprise Minimum Seats and Contract Length Require](/ai-tools-compared/chatgpt-enterprise-minimum-seats-and-contract-length-require/)

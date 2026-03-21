@@ -272,7 +272,8 @@ terraform {
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Writing Datadog Monitoring Queries and](/ai-tools-compared/best-ai-tools-for-writing-datadog-monitoring-queries-and-dashboards/)
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)

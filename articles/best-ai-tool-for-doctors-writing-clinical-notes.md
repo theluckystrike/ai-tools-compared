@@ -369,7 +369,8 @@ The trajectory is clear: AI documentation will become standard across healthcare
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 - [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)

@@ -382,7 +382,8 @@ Copilot accelerates workflow development, but understanding the underlying GitHu
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)

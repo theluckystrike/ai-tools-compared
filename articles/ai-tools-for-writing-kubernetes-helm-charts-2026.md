@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Kubernetes Helm Charts 2026"
-description: "Compare top AI coding assistants for generating production-ready Kubernetes manifests and Helm charts. Includes real YAML examples, templating patterns, and tool accuracy benchmarks."
+description: "Compare top AI coding assistants for generating production-ready Kubernetes manifests and Helm charts."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -448,7 +448,8 @@ kubectl apply -f /tmp/rendered.yaml --dry-run=client
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
 - [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)

@@ -240,7 +240,8 @@ Remember that system prompts work best when they're specific without being overl
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 - [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)

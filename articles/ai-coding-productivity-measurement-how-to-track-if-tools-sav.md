@@ -356,7 +356,8 @@ Yes. Git commit timestamps, PR open/close times, and CI pass rates are all progr
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
 - [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)

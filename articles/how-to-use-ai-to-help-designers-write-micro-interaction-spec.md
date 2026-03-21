@@ -294,7 +294,8 @@ The goal is not to replace designer judgment but to accelerate the documentation
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 - [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)

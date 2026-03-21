@@ -248,7 +248,8 @@ Both platforms deliver excellent AI assistance at similar price points. The "bet
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Pro vs Copilot Individual Price Per Feature](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)

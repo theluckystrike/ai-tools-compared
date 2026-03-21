@@ -452,7 +452,8 @@ No. Use AI to handle the mechanical bulk of translation — it dramatically redu
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Converting MySQL Queries to Postgres Compat](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
 - [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)

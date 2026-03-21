@@ -236,7 +236,8 @@ Do NOT:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
 - [AI Autocomplete Accuracy for Boilerplate Code vs Complex Log](/ai-tools-compared/ai-autocomplete-accuracy-for-boilerplate-code-vs-complex-log/)

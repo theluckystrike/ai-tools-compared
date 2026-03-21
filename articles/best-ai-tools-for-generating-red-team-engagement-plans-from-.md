@@ -304,7 +304,8 @@ Cost comparison for engagement planning:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
 - [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)

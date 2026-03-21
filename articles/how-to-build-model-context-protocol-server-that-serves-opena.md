@@ -285,7 +285,8 @@ When building MCP servers for OpenAPI specs, consider these recommendations:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Create Model Context Protocol Server That Serves API](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
 - [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)

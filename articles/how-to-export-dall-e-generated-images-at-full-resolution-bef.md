@@ -257,7 +257,8 @@ Exporting Dall-E images at full resolution requires proactive effort. Whether yo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)
 - [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)

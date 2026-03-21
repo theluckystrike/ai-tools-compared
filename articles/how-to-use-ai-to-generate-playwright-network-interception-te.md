@@ -306,7 +306,8 @@ Forgetting service workers is a common gap in offline test suites. If your app r
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Kubernetes Network Policies Correc](/ai-tools-compared/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
 - [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)

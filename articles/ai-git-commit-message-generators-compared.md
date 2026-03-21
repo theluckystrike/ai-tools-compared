@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Git Commit Message Generators Compared 2026"
-description: "Compare AI commit message tools in 2026: Commitizen AI, Claude Code, aicommits, and IDE plugins. Message quality, conventional commits support, and workflow fit."
+description: "Compare AI commit message tools in 2026: Commitizen AI, Claude Code, aicommits, and IDE plugins."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
@@ -353,7 +353,8 @@ Share this with your AI tool (as system prompt or in hook comment) so generated 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Write Commit Message Guidelines](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
 - [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)

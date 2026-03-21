@@ -505,7 +505,8 @@ Test all three on the same task: Add new feature with 5 files touched.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)

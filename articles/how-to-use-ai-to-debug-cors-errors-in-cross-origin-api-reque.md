@@ -271,7 +271,8 @@ With clear specifications, AI generates correct configurations the first time.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Playwright Tests for Iframe and](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
 - [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)

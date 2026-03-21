@@ -327,7 +327,8 @@ Always have experienced engineers review and test AI-generated content before de
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
 - [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)

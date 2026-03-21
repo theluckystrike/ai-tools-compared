@@ -483,13 +483,14 @@ Building a type-safe TypeScript client for Claude Code ensures your integration 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
 - [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 - [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
-- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

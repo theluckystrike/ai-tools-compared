@@ -338,7 +338,8 @@ This is a common pattern: the error message points to a symptom (missing module)
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
 - [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)

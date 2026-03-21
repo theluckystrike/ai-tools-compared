@@ -238,7 +238,8 @@ This helper standardizes async communication testing across your test suite.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)

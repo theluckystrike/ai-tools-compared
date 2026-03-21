@@ -257,7 +257,8 @@ Many teams use both—Jasper for high-volume marketing content where brand consi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/ai-tools-compared/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
 - [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)

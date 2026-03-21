@@ -250,7 +250,8 @@ Test with your specific content types before committing to a provider or archite
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)

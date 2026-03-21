@@ -300,7 +300,8 @@ Choose based on your existing setup: Copilot for VS Code users, Cursor for AI-na
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
 - [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)

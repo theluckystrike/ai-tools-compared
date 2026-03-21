@@ -262,7 +262,8 @@ This modular approach lets you assemble sophisticated automation pipelines from 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
 - [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)

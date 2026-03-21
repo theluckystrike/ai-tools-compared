@@ -300,7 +300,8 @@ This habit prevents feature creep and ensures you only pay for what you actually
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 - [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)

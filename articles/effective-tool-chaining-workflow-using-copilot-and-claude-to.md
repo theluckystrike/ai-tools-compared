@@ -265,12 +265,13 @@ Use Claude for analysis and Copilot for implementation:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
 - [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
-- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Effective Workflow for Using AI — Generate](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
 - [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

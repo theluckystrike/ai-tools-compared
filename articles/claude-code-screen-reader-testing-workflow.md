@@ -444,7 +444,8 @@ Screen reader testing requires manual validation alongside automated tools. Use 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)

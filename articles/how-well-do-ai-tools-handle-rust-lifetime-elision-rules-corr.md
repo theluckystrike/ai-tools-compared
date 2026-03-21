@@ -311,7 +311,8 @@ This practice loop builds pattern recognition that helps you evaluate AI output 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
 - [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)

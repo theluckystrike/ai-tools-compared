@@ -422,7 +422,8 @@ The `NODE_EXTRA_CA_CERTS` environment variable is the cleanest solution — it a
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Automated SSL Certificate Management and](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
 - [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)

@@ -253,7 +253,8 @@ Both approaches have value depending on your learning style and time constraints
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)

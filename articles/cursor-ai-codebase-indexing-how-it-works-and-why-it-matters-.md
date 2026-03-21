@@ -304,7 +304,8 @@ Large projects need proactive management:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Does Cursor Pro Charge Extra for Large File Indexing in 2026](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
 - [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)

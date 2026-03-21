@@ -390,7 +390,8 @@ AI tools work well for generating boilerplate code, SPI configuration, and stand
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Reviewing Embedded C Code for Memory.](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
 - [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)

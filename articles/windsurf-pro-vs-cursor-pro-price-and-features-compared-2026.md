@@ -408,7 +408,8 @@ The low switching cost makes it worthwhile to experiment if multi-file refactori
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Pro vs Copilot Individual Price Per Feature](/ai-tools-compared/cursor-pro-vs-copilot-individual-price-per-feature-compariso/)
 - [Codeium Pro vs Copilot Individual Features Per Dollar Compar](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)

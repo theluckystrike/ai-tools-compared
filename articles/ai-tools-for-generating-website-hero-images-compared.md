@@ -482,7 +482,8 @@ convert input.png -resize 1920x1080 hero-desktop.png
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
 - [How to Export Midjourney Images Before Downgrading Plan](/ai-tools-compared/how-to-export-midjourney-images-before-downgrading-plan-2026/)

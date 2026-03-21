@@ -368,7 +368,8 @@ macro_rules! my_macro {
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
 - [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)

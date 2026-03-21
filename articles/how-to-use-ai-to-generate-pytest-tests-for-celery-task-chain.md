@@ -492,7 +492,8 @@ This level of context consistently produces tests that need minimal editing befo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
 - [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)

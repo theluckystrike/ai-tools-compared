@@ -273,7 +273,8 @@ Document your findings. Security assessments become valuable references when eva
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
 - [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)

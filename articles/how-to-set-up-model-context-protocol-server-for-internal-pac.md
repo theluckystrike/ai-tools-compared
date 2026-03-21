@@ -287,7 +287,8 @@ Build and run with `docker build -t mcp-registry-docs.` followed by `docker run 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
 - [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)

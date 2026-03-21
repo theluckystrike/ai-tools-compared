@@ -281,7 +281,8 @@ No AI tool is perfect. The most effective migration strategy uses AI as a time-s
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Convert Between SQL Dialects Postgres Mysql](/ai-tools-compared/how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/)
 - [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)

@@ -350,7 +350,8 @@ Cursor catches this pattern and suggests returning `Result<Config, ConfigError>`
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)

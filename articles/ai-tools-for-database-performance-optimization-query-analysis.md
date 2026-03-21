@@ -283,7 +283,8 @@ print(f"Original: {original_time:.2f}s → Optimized: {optimized_time:.2f}s")
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
 - [AI-Powered Database Query Optimization Tools 2026](/ai-tools-compared/ai-powered-database-query-optimization-tools/)

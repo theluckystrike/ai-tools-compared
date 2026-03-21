@@ -245,7 +245,8 @@ This approach ensures everyone uses the same prompt version and makes updates st
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 - [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)

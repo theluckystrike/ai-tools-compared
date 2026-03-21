@@ -288,7 +288,8 @@ providers:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
 - [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)

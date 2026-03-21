@@ -596,7 +596,8 @@ This ensures consistency across your development team.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 - [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)

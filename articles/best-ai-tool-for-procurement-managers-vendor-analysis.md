@@ -278,7 +278,8 @@ print(analyze_vendor_risk("GlobalSupply Co.", proposal))
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Vendor Payment Optimization Tools 2026: A Practical](/ai-tools-compared/ai-vendor-payment-optimization-tools-2026/)
 - [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)

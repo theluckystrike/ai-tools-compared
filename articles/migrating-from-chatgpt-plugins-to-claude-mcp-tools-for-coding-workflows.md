@@ -373,7 +373,8 @@ Verify your MCP migration with basic smoke tests for each tool. For organization
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
 - [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)

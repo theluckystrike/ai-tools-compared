@@ -269,7 +269,8 @@ AI-assisted documentation should demonstrably reduce these friction points over 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
 - [Best AI Tool for Doctors Writing Clinical Notes](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)

@@ -342,7 +342,8 @@ Treating the catalog as a one-time setup task. Metadata goes stale as schemas ev
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
 - [Best AI Tools for Data Cleaning: A Practical Guide for](/ai-tools-compared/best-ai-tools-for-data-cleaning/)

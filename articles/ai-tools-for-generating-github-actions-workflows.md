@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating GitHub Actions Workflows"
+title: "AI Tools for Generating GitHub Actions Workflows (2)"
 description: "Compare Claude Code, GitHub Copilot, and Cursor for CI/CD workflow generation. Includes real workflow examples, debugging tips, and pricing comparison"
 date: 2026-03-20
 last_modified_at: 2026-03-20
@@ -453,7 +453,8 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)

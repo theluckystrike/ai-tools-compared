@@ -497,7 +497,8 @@ class Post(Base):
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT vs Claude for Generating Pydantic Models from JSON](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
 - [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)

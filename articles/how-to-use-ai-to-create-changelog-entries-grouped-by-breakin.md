@@ -249,7 +249,8 @@ When using AI for changelog generation, watch for these issues:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
 - [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)

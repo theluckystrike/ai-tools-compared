@@ -296,7 +296,8 @@ Test every AI-generated component. Use automated tools, screen readers, and keyb
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 - [Using Claude Code for Backend and Cursor for Frontend Same P](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)

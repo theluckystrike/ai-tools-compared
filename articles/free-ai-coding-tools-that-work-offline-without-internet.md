@@ -337,7 +337,8 @@ For older hardware, smaller models like Phi-3 or Mistral 7B provide reasonable p
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Free AI Pair Programming Tools That Work in Terminal in 2026](/ai-tools-compared/free-ai-pair-programming-tools-that-work-in-terminal-2026/)
 - [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)

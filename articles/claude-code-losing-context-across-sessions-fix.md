@@ -296,7 +296,8 @@ Implement a consistent workflow to minimize context disruption:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 - [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)

@@ -265,7 +265,8 @@ The gap between tools continues to narrow, but developers focused on production 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
