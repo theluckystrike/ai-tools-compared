@@ -7,9 +7,9 @@ date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /windsurf-ai-not-picking-up-eslint-config-troubleshooting-gui/
 categories: [troubleshooting]
-tags: [windsurf, eslint, ai-editor, configuration]
+tags: [ai-tools-compared, windsurf, eslint, ai-editor, configuration, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
