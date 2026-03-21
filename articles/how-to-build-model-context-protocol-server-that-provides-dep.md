@@ -246,6 +246,52 @@ class KubernetesIntegration {
 This integration enables the MCP server to query real-time deployment status from your Kubernetes clusters.
 
 
+## Adding Resource Endpoints for Configuration Files
+
+
+Beyond tools, MCP servers can expose resources — static or dynamic content that AI clients read directly. Configuration files are a natural fit for resources because the AI can reference them without invoking a tool call.
+
+
+```typescript
+import { ListResourcesRequestSchema, ReadResourceRequestSchema } from '@modelcontextprotocol/sdk/types.js';
+
+// Add to setupHandlers()
+this.server.setRequestHandler(ListResourcesRequestSchema, async () => {
+  return {
+    resources: [
+      {
+        uri: 'deployment://config/production',
+        name: 'Production deployment configuration',
+        mimeType: 'application/json'
+      },
+      {
+        uri: 'deployment://config/staging',
+        name: 'Staging deployment configuration',
+        mimeType: 'application/json'
+      }
+    ]
+  };
+});
+
+this.server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+  const { uri } = request.params;
+  const environment = uri.split('/').pop();
+
+  const config = await this.getDeploymentEnvironment(environment);
+  return {
+    contents: [{
+      uri,
+      mimeType: 'application/json',
+      text: config.content[0].text
+    }]
+  };
+});
+```
+
+
+Resources differ from tools in that they represent data that can be read, while tools represent operations that can be invoked. Exposing environment configs as resources allows the AI to proactively load them into context without the user needing to ask.
+
+
 ## Registering the Server with Your AI Client
 
 
@@ -267,6 +313,43 @@ After implementing your server, register it with your MCP-compatible AI client. 
 ```
 
 
+For Claude Desktop, this configuration goes in `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS. For other MCP clients, consult their documentation for the equivalent configuration location.
+
+
+## Adding Error Handling and Structured Responses
+
+
+Production MCP servers need robust error handling. When an orchestrator query fails, return a structured error response rather than throwing an unhandled exception:
+
+
+```typescript
+async getContainerStatus(serviceName) {
+  try {
+    const status = await this.k8sIntegration.getServiceStatus('default', serviceName);
+    return {
+      content: [{ type: 'text', text: JSON.stringify(status, null, 2) }]
+    };
+  } catch (err) {
+    return {
+      content: [{
+        type: 'text',
+        text: JSON.stringify({
+          error: true,
+          service: serviceName,
+          message: err.message,
+          hint: 'Check that the service name is correct and the cluster is reachable'
+        }, null, 2)
+      }],
+      isError: true
+    };
+  }
+}
+```
+
+
+Setting `isError: true` in the response signals to the AI client that the operation failed. Well-formed AI assistants use this flag to adjust their response — explaining that the lookup failed rather than fabricating status information.
+
+
 ## Practical Use Cases
 
 
@@ -275,11 +358,27 @@ Once registered, your AI assistant can query deployment context during conversat
 
 For infrastructure-as-code generation, the AI can reference actual environment names, regions, and configuration values when writing Terraform or CloudFormation templates. This produces more accurate initial output and reduces manual correction cycles.
 
+When onboarding new engineers, an MCP server exposing your deployment topology means the AI assistant can answer questions like "which regions does staging run in?" or "what are the feature flags enabled in production?" without the new hire needing to locate that documentation themselves.
+
+
+## MCP Tool Design Principles
+
+
+When designing the tools your server exposes, follow these principles to get the most value from AI integration.
+
+**Narrow scope per tool:** Each tool should do one thing clearly. A `get_deployment_environment` tool that returns region, cluster, and feature flags is more composable than a single `get_everything` tool. AI clients chain narrow tools together naturally.
+
+**Include descriptions that guide the AI:** The `description` field in each tool's schema is read by the AI to decide when to invoke the tool. Write descriptions in terms of what problem the AI is solving, not what the tool technically does. "Retrieve production configuration to generate accurate Terraform variables" is more useful guidance than "Returns a JSON object."
+
+**Expose safe defaults:** Tools that accept optional parameters should work correctly when called with minimal arguments. AI assistants may call your tools without specifying every optional field.
+
 
 ## Security Considerations
 
 
 Never expose sensitive values through your MCP server. Filter out API keys, secrets, passwords, and tokens from environment variable responses. Implement authentication if your server connects to sensitive infrastructure APIs. Consider adding audit logging for tool invocations to track what information AI assistants access.
+
+For Kubernetes integrations, use a service account with read-only RBAC permissions scoped to the namespaces the MCP server needs to query. Avoid granting cluster-admin access to the process running your MCP server.
 
 
 ## Related Articles
