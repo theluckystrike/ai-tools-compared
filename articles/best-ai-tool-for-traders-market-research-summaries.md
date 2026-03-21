@@ -234,6 +234,87 @@ Claude, ChatGPT, Gemini, and Perplexity each serve different needs—Claude for 
 
 
 
+
+## API Cost Comparison: GPT-4 vs Alternatives
+
+Token costs differ significantly across providers and significantly impact production workloads.
+
+```python
+# Cost estimator for common workloads
+costs = {
+    "gpt-4o":         {"input": 2.50, "output": 10.00},   # per 1M tokens
+    "gpt-4o-mini":    {"input": 0.15, "output": 0.60},
+    "claude-3-5-sonnet": {"input": 3.00, "output": 15.00},
+    "gemini-1.5-pro": {"input": 1.25, "output": 5.00},
+    "llama3-70b":     {"input": 0.59, "output": 0.79},    # via Groq
+}
+
+def estimate_cost(model, input_tokens, output_tokens):
+    c = costs[model]
+    return (input_tokens / 1e6 * c["input"]) + (output_tokens / 1e6 * c["output"])
+
+# 1M input + 200K output tokens monthly:
+for model in costs:
+    monthly = estimate_cost(model, 1_000_000, 200_000)
+    print(f"{model:<25} ${monthly:.2f}/month")
+```
+
+For high-volume applications, gpt-4o-mini reduces costs by ~94% versus gpt-4o with minimal quality loss on classification and structured extraction tasks.
+
+## Structured Output Extraction Comparison
+
+Reliable JSON extraction is critical for production pipelines. Models differ in their instruction-following accuracy.
+
+```python
+import openai
+import anthropic
+
+# OpenAI structured outputs (guaranteed valid JSON):
+client = openai.OpenAI()
+response = client.beta.chat.completions.parse(
+    model="gpt-4o-2024-08-06",
+    messages=[{"role": "user", "content": "Extract: John Smith, age 34, engineer"}],
+    response_format={
+        "type": "json_schema",
+        "json_schema": {
+            "name": "person",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "name": {"type": "string"},
+                    "age": {"type": "integer"},
+                    "role": {"type": "string"},
+                },
+                "required": ["name", "age", "role"],
+            }
+        }
+    }
+)
+
+# Anthropic tool_use for structured extraction:
+ac = anthropic.Anthropic()
+response = ac.messages.create(
+    model="claude-opus-4-6",
+    max_tokens=256,
+    tools=[{
+        "name": "extract_person",
+        "description": "Extract person details",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "age": {"type": "integer"},
+                "role": {"type": "string"},
+            },
+            "required": ["name", "age", "role"],
+        }
+    }],
+    messages=[{"role": "user", "content": "Extract: John Smith, age 34, engineer"}]
+)
+```
+
+OpenAI's `response_format` with `json_schema` guarantees schema-valid output. Anthropic's tool_use achieves similar reliability. Both outperform prompt-only JSON requests in production.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
