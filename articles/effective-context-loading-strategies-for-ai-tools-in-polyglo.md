@@ -27,6 +27,9 @@ AI tools operate within finite context windows. When your project contains Pytho
 The core challenge involves helping AI tools understand cross-language dependencies, shared data structures, and inter-service communication patterns without overwhelming the context window with irrelevant details.
 
 
+A context window filled with unrelated Python modules when you're editing a TypeScript service is worse than no context at all—it biases the AI toward the wrong language's idioms and increases the probability of type mismatches at integration boundaries.
+
+
 ## Strategy 1: Language-Specific Context Files
 
 
@@ -55,6 +58,9 @@ For a project combining Python ML components with a TypeScript dashboard, mainta
 
 
 This approach lets AI tools reference relevant context without loading entire codebases. When working on the TypeScript side, referencing `context/ml-components.ts` provides necessary Python context.
+
+
+Keep these files concise—aim for 30-50 lines per component. Their purpose is orientation, not exhaustive documentation. AI tools should be able to ingest the full set of context files alongside the actual code you're editing.
 
 
 ## Strategy 2: Interface Definition Priority
@@ -88,6 +94,9 @@ enum SubscriptionTier {
 With the interface definition loaded, AI tools can generate compatible implementations in any language. This strategy proves particularly valuable when AI generates code in a language you're less familiar with.
 
 
+For REST APIs, OpenAPI specs serve the same role as protobufs. Load the relevant path definitions and their request/response schemas alongside the implementation file. The AI can then generate server-side handlers in Go or Python that correctly match the TypeScript client's expectations.
+
+
 ## Strategy 3: Dependency Graph Context
 
 
@@ -114,6 +123,9 @@ Consider this summary approach:
 This lightweight reference enables AI tools to make informed decisions about cross-language interactions without requiring full source context.
 
 
+Update this file whenever you add a new service or change an integration boundary. Stale dependency graphs are worse than none—they cause AI tools to generate code targeting the wrong communication pattern.
+
+
 ## Strategy 4: Token Budget Allocation
 
 
@@ -133,6 +145,18 @@ When working on a Python microservice that communicates with a TypeScript API, p
 
 
 This deliberate allocation prevents the common failure where AI generates code that technically works in isolation but breaks cross-language contracts.
+
+
+For tools like Cursor or GitHub Copilot that automatically include files from your workspace, use `.cursorignore` or `.copilotignore` files to exclude irrelevant language directories:
+
+
+```
+# .cursorignore - when working in the Go auth service
+/frontend/**
+/workers/**
+/docs/**
+# Keep: /services/auth, /api/protobuf, /context
+```
 
 
 ## Strategy 5: Selective File Inclusion
@@ -156,6 +180,9 @@ For a TypeScript file integrating with Python ML components:
 The key principle involves including files that influence your current code rather than files that happen to exist in the same repository.
 
 
+A useful mental model: if you deleted these context files, would the AI's output for your current task change? If not, they're consuming token budget without contributing signal.
+
+
 ## Strategy 6: Environment and Configuration Context
 
 
@@ -174,6 +201,49 @@ Polyglot projects require shared configuration that crosses language boundaries.
 
 
 AI tools that understand configuration constraints generate more deployable code. Without this context, AI might suggest configurations that work in development but fail in production environments.
+
+
+## Strategy 7: Cross-Language Error Pattern Reference
+
+
+Polyglot projects often have consistent error handling conventions that span languages. Documenting these conventions in a short reference file lets AI tools generate consistent error handling regardless of the language being targeted:
+
+
+```markdown
+# context/error-patterns.md
+
+## Error Propagation Conventions
+
+Go services: return (result, error) pairs; wrap with fmt.Errorf
+Python workers: raise specific exception subclasses; log at service boundary
+TypeScript frontend: catch and surface to ErrorBoundary; never swallow
+gRPC: use status codes (NOT_FOUND, INVALID_ARGUMENT, INTERNAL)
+
+## Retry Policy
+- Idempotent operations: retry up to 3x with exponential backoff
+- Non-idempotent: no automatic retry; surface error to caller
+```
+
+
+When AI generates error handling code in any language, this reference keeps the approach consistent across the full stack.
+
+
+## Tool-Specific Implementation Notes
+
+
+Different AI coding assistants handle polyglot context with varying effectiveness:
+
+
+**Claude (via Claude Code or API):** Excels at holding long context and reasoning about cross-language relationships. When given both the interface definition and the target implementation file, it reliably maintains type consistency across boundaries. Feed it the dependency graph and shared config alongside the task.
+
+
+**Cursor:** Its `@codebase` command indexes your entire repository for semantic search. In polyglot projects, use `@file` references directly rather than relying on automatic retrieval—this gives you precise control over what crosses language boundaries.
+
+
+**GitHub Copilot:** Relies primarily on the open editor tabs. Keep only the relevant files open when working in a specific language. Having Go, Python, and TypeScript files simultaneously open dilutes suggestions.
+
+
+**ChatGPT (API):** Allows explicit system prompts describing cross-language constraints. Useful for batch generation tasks where you're producing implementations in multiple languages from a single interface specification.
 
 
 ## Measuring Context Strategy Effectiveness
@@ -208,7 +278,11 @@ Start implementing these strategies with this quick checklist:
 
 5. Define token allocation guidelines for your team
 
-6. Review and update context files during significant architecture changes
+6. Add ignore files for each AI tool to exclude irrelevant language directories
+
+7. Document shared error handling and configuration conventions
+
+8. Review and update context files during significant architecture changes
 
 
 The initial investment in context documentation pays dividends through improved AI-assisted development speed and accuracy. As AI tools continue advancing, well-structured context becomes increasingly valuable for maintaining productivity in complex polyglot environments.
