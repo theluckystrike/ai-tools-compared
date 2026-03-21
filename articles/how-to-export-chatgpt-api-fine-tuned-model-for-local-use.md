@@ -37,6 +37,19 @@ However, several legitimate approaches exist to achieve local fine-tuned inferen
 The most practical path for most developers involves recreating the fine-tuning on an open-source base model.
 
 
+## What OpenAI's Fine-Tuning API Actually Gives You
+
+
+OpenAI's fine-tuning API currently supports base models including `gpt-4o-mini`, `gpt-3.5-turbo`, and several others. When you submit a fine-tuning job, OpenAI:
+
+1. Takes your JSONL training file containing prompt-completion pairs
+2. Runs supervised fine-tuning (SFT) on their proprietary model infrastructure
+3. Creates a model variant with a unique ID like `ft:gpt-3.5-turbo:your-org:custom-name:abc123`
+4. Gives you API access to that model at per-token pricing higher than the base model
+
+You own the training data and the fine-tuning job metadata. You do not own the resulting weights. This distinction matters enormously for portability and cost planning.
+
+
 ## Exporting Your Training Data
 
 
@@ -84,6 +97,45 @@ print("Training data saved to training_data.jsonl")
 This training data becomes your seed for recreating the model locally.
 
 
+## Converting OpenAI JSONL Format for Open-Source Training
+
+
+OpenAI's fine-tuning format uses a chat messages structure. Most open-source training frameworks expect a slightly different format, so you will need a conversion step:
+
+
+```python
+import json
+
+def convert_openai_to_alpaca(input_path: str, output_path: str) -> None:
+    """Convert OpenAI chat fine-tuning JSONL to Alpaca instruction format."""
+    converted = []
+
+    with open(input_path) as f:
+        for line in f:
+            example = json.loads(line.strip())
+            messages = example.get("messages", [])
+
+            system_msg = next((m["content"] for m in messages if m["role"] == "system"), "")
+            user_msg = next((m["content"] for m in messages if m["role"] == "user"), "")
+            assistant_msg = next((m["content"] for m in messages if m["role"] == "assistant"), "")
+
+            converted.append({
+                "instruction": user_msg,
+                "input": "",
+                "output": assistant_msg,
+                "system": system_msg
+            })
+
+    with open(output_path, "w") as f:
+        for item in converted:
+            f.write(json.dumps(item) + "\n")
+
+    print(f"Converted {len(converted)} examples to {output_path}")
+
+convert_openai_to_alpaca("training_data.jsonl", "training_alpaca.jsonl")
+```
+
+
 ## Recreating the Fine-Tuned Model Locally
 
 
@@ -104,6 +156,17 @@ Select a base model that matches the capabilities of your fine-tuned model:
 
 
 For most use cases, Mistral 7B provides excellent results with reasonable hardware requirements. A single A100 GPU or even a high-end consumer GPU can handle inference.
+
+
+### Hardware Requirements by Model Size
+
+
+| Model | Minimum VRAM (FP16) | Minimum VRAM (4-bit) | Training VRAM (LoRA) |
+|---|---|---|---|
+| Phi-2 (2.7B) | 6 GB | 3 GB | 10 GB |
+| Mistral 7B | 16 GB | 6 GB | 20 GB |
+| Llama 2 13B | 28 GB | 10 GB | 40 GB |
+| Llama 2 70B | 140 GB | 40 GB | 80 GB (multi-GPU) |
 
 
 ### Fine-Tuning Locally with LoRA
@@ -221,6 +284,26 @@ print(response)
 ```
 
 
+## Serving the Model as a Local API
+
+
+Once you have a working local model, you often want to expose it with an OpenAI-compatible API so that existing code that calls `openai.chat.completions.create` works without modification. The `vllm` library makes this straightforward:
+
+
+```bash
+pip install vllm
+
+# Serve the merged model with an OpenAI-compatible endpoint
+python -m vllm.entrypoints.openai.api_server \
+    --model ./local-finetuned-model-merged \
+    --host 0.0.0.0 \
+    --port 8000
+```
+
+
+Your application can then point to `http://localhost:8000` instead of the OpenAI API, with zero code changes beyond the base URL.
+
+
 ## Optimizing for Production
 
 
@@ -264,11 +347,56 @@ You should know that recreating your fine-tuned model locally will not produce i
 
 - Dataset formatting and preprocessing may vary
 
+- OpenAI applies RLHF and safety tuning on top of SFT, which you will not replicate
 
-Test thoroughly to ensure the local model meets your quality requirements before migrating production workloads.
+
+Test thoroughly to ensure the local model meets your quality requirements before migrating production workloads. A practical evaluation strategy: run 50-100 representative prompts through both the OpenAI fine-tuned model and your local reproduction, then score the outputs on your specific quality criteria. Expect 80-90% behavioral parity as a realistic target; achieving exact parity is not possible without access to OpenAI's internal training pipeline.
 
 
-## Related Articles
+## Cost Comparison: OpenAI API vs Self-Hosted
+
+
+One of the primary motivations for local deployment is cost reduction at scale. Here is how the economics typically compare:
+
+
+| Scenario | OpenAI Fine-Tuned (gpt-3.5-turbo) | Self-Hosted Mistral 7B |
+|---|---|---|
+| Monthly inference volume | 10M tokens | 10M tokens |
+| API cost (input + output) | ~$120/month | $0 (after hardware) |
+| Hardware cost (A10G cloud) | — | ~$300/month |
+| Break-even volume | — | ~25M tokens/month |
+| Latency (P50) | 200-400ms | 50-150ms (local GPU) |
+| Uptime guarantee | 99.9% SLA | Self-managed |
+
+
+At volumes above roughly 25M tokens per month, self-hosting becomes economically favorable. Below that threshold, the simplicity and reliability of OpenAI's API usually wins. The latency advantage of local inference is significant for user-facing applications regardless of cost.
+
+
+## Common Pitfalls to Avoid
+
+
+**Forgetting to merge LoRA adapters before serving.** LoRA adapters are stored separately from base model weights. For production serving with vLLM, merge them first:
+
+
+```python
+from peft import PeftModel
+import torch
+
+base_model = AutoModelForCausalLM.from_pretrained("mistralai/Mistral-7B-v0.1", torch_dtype=torch.float16)
+model = PeftModel.from_pretrained(base_model, "./local-finetuned-model")
+merged = model.merge_and_unload()
+merged.save_pretrained("./local-finetuned-model-merged")
+tokenizer.save_pretrained("./local-finetuned-model-merged")
+```
+
+
+**Using mismatched tokenizers.** Always load the tokenizer from the same base model checkpoint. Mismatched tokenizers produce garbled outputs that are hard to diagnose.
+
+
+**Skipping chat template formatting.** Mistral and Llama models require specific chat templates to produce coherent conversational outputs. Pass messages through the tokenizer's `apply_chat_template` method rather than formatting prompts manually.
+
+
+## Related Reading
 
 - [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
 - [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
