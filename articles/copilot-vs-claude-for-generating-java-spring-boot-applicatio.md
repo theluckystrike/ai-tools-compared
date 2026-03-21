@@ -275,6 +275,92 @@ public class AppConfig {
 ```
 
 
+## Testing Code Generation
+
+
+One area where the two tools diverge sharply is test generation. Spring Boot tests require specific annotations and mock configuration that both tools handle differently.
+
+
+Copilot generates tests incrementally. As you type a test class declaration, it fills in `@SpringBootTest` or `@WebMvcTest` based on what's available in context, and suggests individual test methods one at a time. This works well for developers who prefer building tests gradually.
+
+
+Claude can generate a full test suite from a single prompt. Given the `UserController` implementation, asking Claude to "generate a complete @WebMvcTest suite for UserController with MockMvc" produces:
+
+
+```java
+@WebMvcTest(UserController.class)
+class UserControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private UserService userService;
+
+    @Autowired
+    private ObjectMapper objectMapper;
+
+    @Test
+    void getAllUsers_returnsOkWithList() throws Exception {
+        List<User> users = List.of(new User(1L, "Alice", "alice@example.com"));
+        when(userService.findAll()).thenReturn(users);
+
+        mockMvc.perform(get("/api/users"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$[0].name").value("Alice"));
+    }
+
+    @Test
+    void getUserById_notFound_returns404() throws Exception {
+        when(userService.findById(99L)).thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/users/99"))
+            .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void createUser_validPayload_returns201() throws Exception {
+        User user = new User(null, "Bob", "bob@example.com");
+        User saved = new User(2L, "Bob", "bob@example.com");
+        when(userService.save(any(User.class))).thenReturn(saved);
+
+        mockMvc.perform(post("/api/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(user)))
+            .andExpect(status().isCreated())
+            .andExpect(jsonPath("$.id").value(2L));
+    }
+}
+```
+
+
+This complete test class is immediately usable, while Copilot typically requires several rounds of tab-completion to achieve the same result.
+
+
+## Side-by-Side Capability Comparison
+
+
+| Capability | GitHub Copilot | Claude |
+|---|---|---|
+| IDE integration | Native (VS Code, IntelliJ) | Via plugin or copy-paste |
+| Incremental completion | Excellent | Limited |
+| Full class generation | Good with context | Excellent from description |
+| Test suite generation | Method-by-method | Complete suite at once |
+| Multi-file scaffolding | Limited | Strong |
+| Annotation accuracy | High (from codebase context) | High (from training) |
+| Custom query derivation | Suggests common patterns | Generates complete JPQL |
+| Configuration class generation | Property-level hints | Full @ConfigurationProperties |
+
+
+## When Each Tool Excels
+
+
+Copilot is most effective when you are already inside an existing Spring Boot project with established conventions. The tool reads your existing code and mirrors patterns you have already established, making it ideal for maintaining consistency across a large codebase. It works without context-switching and integrates naturally into the edit-compile-test loop.
+
+
+Claude performs best at the start of a feature or component. When you need to create a new bounded context, generate a layered stack from entity to controller, or work through the architecture of a complex integration, Claude's conversational model lets you iterate on the design before committing to code. You can ask follow-up questions, request alternative implementations, or ask Claude to explain trade-offs between approaches.
+
+
 ## Practical Recommendations
 
 
