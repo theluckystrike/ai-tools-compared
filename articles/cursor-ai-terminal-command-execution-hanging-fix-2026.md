@@ -283,9 +283,3 @@ Implement these practices to minimize future terminal hanging issues:
 4. **Keep shell profiles minimal** with conditional loading based on terminal type
 5. **Regularly clear command history** and terminal buffers
 6. **Monitor system resources** to catch memory issues before they cause hangs
-
-## Summary
-
-Cursor AI terminal command execution hanging typically results from stuck subprocesses, shell configuration problems, or accumulated terminal state. Apply the fixes systematically: kill stuck processes first, then optimize shell configuration, manage subprocesses with proper timeouts, clear caches, and keep Cursor updated. For persistent issues, a clean reinstall often resolves underlying configuration corruption.
-
-Built by theluckystrike — More at [zovo.one](https://zovo.one)

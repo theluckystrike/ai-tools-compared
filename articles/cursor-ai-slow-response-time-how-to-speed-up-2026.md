@@ -22,7 +22,7 @@ The most effective solutions involve adjusting model selection, optimizing conte
 
 Cursor offers multiple AI models with different speed profiles. The default configuration may not be optimal for your specific use case. Navigate to **Cursor Settings > Models** and evaluate which option balances speed and capability for your workflow.
 
-The **Fast** model prioritizes response time over comprehensive analysis. For routine autocomplete and simple queries, this model delivers responses in under 500ms on typical hardware. Switch to this model when you need quick suggestions:
+The **Fast** model prioritizes response time over analysis. For routine autocomplete and simple queries, this model delivers responses in under 500ms on typical hardware. Switch to this model when you need quick suggestions:
 
 ```json
 // In .cursorrules or cursor config
@@ -33,7 +33,7 @@ The **Fast** model prioritizes response time over comprehensive analysis. For ro
 }
 ```
 
-The **Balanced** model provides a middle ground—faster than the most comprehensive option but with better reasoning. This works well for most coding tasks where you need accurate suggestions without waiting for deep analysis.
+The **Balanced** model provides a middle ground—faster than the most option but with better reasoning. This works well for most coding tasks where you need accurate suggestions without waiting for deep analysis.
 
 Reserve the most capable models for complex debugging tasks or when you need thorough code review. When you only need a quick autocomplete, manually switching to a faster model prevents unnecessary latency.
 

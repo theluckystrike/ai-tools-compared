@@ -161,7 +161,7 @@ messages = [
 validate_claude_request(messages, "claude-sonnet-4-20250514")
 ```
 
-## Implementing Robust Error Handling
+## Implementing strong Error Handling
 
 A production-ready implementation should handle connection errors gracefully:
 
