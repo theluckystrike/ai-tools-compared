@@ -205,6 +205,265 @@ Gather feedback from team members using shared templates. What works well might 
 
 Building a prompt template library takes initial investment but pays dividends through consistency, speed, and reduced cognitive load. As AI coding tools continue advancing, developers with well-structured templates will use these capabilities more effectively than those relying on ad-hoc interactions.
 
+## Template Storage and Organization
+
+Where and how you store templates affects usability:
+
+**Option 1: Git Repository with Version Control**
+
+```bash
+mkdir prompts
+cat > prompts/test_generation.md << 'EOF'
+# Unit Test Generation Template
+
+## Context
+- Language: {{language}}
+- Framework: {{test_framework}}
+- Project: {{project_name}}
+
+## Task
+Generate comprehensive unit tests for the following function:
+
+{{function_code}}
+
+## Output
+Complete test file with setup, teardown, and edge cases.
+EOF
+
+git add prompts/
+git commit -m "Add test generation template"
+```
+
+**Option 2: IDE Snippets**
+
+VS Code snippets integrate templates directly into your editor:
+
+```json
+// .vscode/ai-templates.json
+{
+  "AI Unit Test": {
+    "prefix": "aitest",
+    "body": [
+      "# Unit Test Generation",
+      "",
+      "## Context",
+      "- Language: $1",
+      "- Framework: $2",
+      "",
+      "## Task",
+      "Generate tests for this function:",
+      "${3:function_code}",
+      ""
+    ],
+    "description": "Generate unit tests via AI"
+  }
+}
+```
+
+**Option 3: Dedicated Template Management**
+
+For teams, tools like Promptly or Langchain Hub provide centralized template management:
+
+```bash
+# Using Langchain Hub
+pip install langsmith
+
+# Save template to hub
+langsmith push-template test_generation
+```
+
+## Template Variations for Different Contexts
+
+Create template variants for specific frameworks or languages:
+
+**Python + pytest variant:**
+```
+Generate pytest tests with fixtures and parametrization for:
+{{function_signature}}
+
+Include:
+- Fixture definitions
+- Parametrized test cases
+- Mock setup where needed
+```
+
+**JavaScript + Jest variant:**
+```
+Generate Jest tests with snapshots for:
+{{component_code}}
+
+Include:
+- Render tests
+- User interaction tests
+- Snapshot tests
+```
+
+Maintaining variants prevents "one template fits all" situations where generic advice produces suboptimal code.
+
+## Template Effectiveness Metrics
+
+Track which templates save the most time:
+
+```python
+# Track template performance
+import json
+from datetime import datetime
+
+template_metrics = {
+    "unit_test_generation": {
+        "uses": 24,
+        "avg_time_saved_minutes": 8.5,
+        "quality_score": 4.2/5,
+        "last_updated": "2026-03-20"
+    },
+    "api_documentation": {
+        "uses": 12,
+        "avg_time_saved_minutes": 12,
+        "quality_score": 4.8/5,
+        "last_updated": "2026-03-15"
+    }
+}
+
+# Templates with low usage or poor scores need revision
+low_performers = {
+    name: data for name, data in template_metrics.items()
+    if data["uses"] < 5 or data["quality_score"] < 3.5
+}
+```
+
+Templates that rarely get used or produce mediocre results should be rewritten or retired.
+
+## Advanced Template Composition
+
+For complex workflows, chain templates together:
+
+**Three-step workflow:**
+
+1. Generate scaffold code
+2. Identify gaps and add tests
+3. Document the result
+
+```
+# Step 1: Scaffold Generation
+Generate basic {{framework}} service for:
+{{business_requirement}}
+
+# Step 2: Test Generation (triggered on Step 1 output)
+Generate comprehensive tests for the above code
+
+# Step 3: Documentation (triggered on Step 2 output)
+Generate API documentation for the above code
+```
+
+This composition ensures each step builds on previous output, creating a complete solution pipeline.
+
+## Template Versioning and Iteration
+
+As your projects evolve, templates must adapt:
+
+```markdown
+# Unit Test Template v2.1
+Last updated: 2026-03-20
+Changelog:
+- v2.1: Added mock service pattern for v2
+- v2.0: Initial template
+- v1.5: Removed deprecated assertions
+
+Deprecated: Use v2.1+ for all new tests
+```
+
+Versioning templates prevents confusion when teams use different versions. Clearly mark deprecated templates and communicate migration paths.
+
+## Team Template Standards
+
+For distributed teams, establish template standards:
+
+**Template Review Checklist:**
+- Does it specify required context clearly?
+- Are variable names descriptive?
+- Does it produce consistent output?
+- Have multiple team members tested it?
+- Is it documented with examples?
+
+Require code review for new templates before adding to your library. This prevents low-quality templates from proliferating.
+
+## Integration with CI/CD
+
+Automate template-based code generation in your build pipeline:
+
+```yaml
+# .github/workflows/generate_docs.yml
+name: Auto-generate Documentation
+on: [push, pull_request]
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate API Docs
+        run: |
+          # Load template from prompts/api_docs.md
+          # Run against changed files
+          # Commit updated docs
+
+      - name: Generate Tests
+        run: |
+          # Load template from prompts/test_gen.md
+          # Run against files without sufficient test coverage
+          # Commit generated test files
+```
+
+Automated template application ensures consistency and catches gaps automatically.
+
+## Real-World Template Examples from Production
+
+Here's a template used by successful development teams:
+
+**Production Bug Analysis Template:**
+
+```
+## Context
+- Bug ID: {{issue_id}}
+- Severity: {{severity}}
+- Affected components: {{components}}
+
+## Symptom
+{{user_reported_symptom}}
+
+## Environment
+- OS: {{os}}
+- Version: {{version}}
+- Steps to reproduce: {{reproduction_steps}}
+
+## Task
+Analyze this bug and provide:
+1. Root cause analysis
+2. Code location where fix applies
+3. Implementation approach
+4. Test cases to verify fix
+
+## Constraints
+- Maintain backward compatibility
+- No breaking API changes
+- Performance impact < 5%
+```
+
+This template structures bug analysis work, ensuring root causes are identified before coding solutions.
+
+## Common Pitfalls to Avoid
+
+**Over-parameterization:** Too many variables create complex templates that feel more work than manual prompting.
+
+**Generic output:** Templates that produce boilerplate without context lead to code that works but lacks personality and optimization.
+
+**Stale content:** Templates reflecting old patterns generate outdated code. Regular updates are essential.
+
+**No feedback loop:** Not measuring effectiveness means you keep using templates that don't work well.
+
+Successful template libraries balance specificity with simplicity, measurable improvement, and regular maintenance.
+
 
 ## Related Articles
 

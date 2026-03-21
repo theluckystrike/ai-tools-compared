@@ -208,6 +208,305 @@ Total estimated cost: approximately $615 per month.
 
 Switching to gpt-4o for all runs would increase costs to approximately $9,000 per month. This demonstrates the importance of model selection and run optimization.
 
+## Detailed Pricing Breakdown by Model
+
+Understanding per-token costs is essential for cost estimation:
+
+```python
+# Current OpenAI Assistants API pricing (as of 2026-03)
+PRICING = {
+    "gpt-4o-mini": {
+        "input": 0.15,      # per 1M tokens
+        "output": 0.60,     # per 1M tokens
+        "input_cached": 0.075,   # 50% discount for cached
+        "output_cached": 0.30
+    },
+    "gpt-4o": {
+        "input": 2.50,
+        "output": 10.00,
+        "input_cached": 1.25,
+        "output_cached": 5.00
+    },
+    "gpt-4-turbo": {
+        "input": 10.00,
+        "output": 30.00,
+        "deprecated": True  # Use gpt-4o instead
+    }
+}
+
+def calculate_run_cost(model, input_tokens, output_tokens):
+    pricing = PRICING.get(model, {})
+    input_cost = (input_tokens / 1_000_000) * pricing['input']
+    output_cost = (output_tokens / 1_000_000) * pricing['output']
+    return input_cost + output_cost
+
+# Example: 2000 input tokens, 500 output tokens
+mini_cost = calculate_run_cost("gpt-4o-mini", 2000, 500)
+gpt4o_cost = calculate_run_cost("gpt-4o", 2000, 500)
+
+print(f"gpt-4o-mini: ${mini_cost:.4f}")
+print(f"gpt-4o: ${gpt4o_cost:.4f}")
+print(f"Difference: {gpt4o_cost / mini_cost:.1f}x")
+```
+
+## Thread Storage Cost Calculation
+
+Storage costs accumulate over time. Understanding this helps plan long-term expenses:
+
+```python
+def calculate_monthly_storage_cost(threads, avg_tokens_per_thread, model="gpt-4o-mini"):
+    """Calculate monthly thread storage costs."""
+    daily_cost = (threads * avg_tokens_per_thread / 1_000_000) * 0.10
+    monthly_cost = daily_cost * 30
+    return monthly_cost
+
+# Example scenarios
+scenarios = [
+    ("Small app", 100, 1000),      # 100 threads, 1K tokens avg
+    ("Medium app", 1000, 5000),    # 1K threads, 5K tokens avg
+    ("Large app", 10000, 25000),   # 10K threads, 25K tokens avg
+]
+
+print("Thread Storage Costs (gpt-4o-mini):")
+print("-" * 40)
+for name, threads, tokens in scenarios:
+    cost = calculate_monthly_storage_cost(threads, tokens)
+    print(f"{name}: {threads} threads → ${cost:.2f}/month")
+```
+
+## Advanced Cost Optimization Techniques
+
+Beyond basic strategies, advanced techniques minimize costs:
+
+**Technique 1: Prompt Compression**
+
+```python
+def compress_prompt(messages):
+    """Summarize old messages to reduce tokens."""
+    if len(messages) > 10:
+        # Summarize first N-5 messages
+        old_context = summarize_messages(messages[:-5])
+        return [{"role": "system", "content": old_context}] + messages[-5:]
+    return messages
+
+# Instead of sending full 50-message conversation,
+# summarize first 45, send summary + last 5 messages
+# Result: 50% token reduction on large conversations
+```
+
+**Technique 2: Token Budgets**
+
+```python
+class TokenBudgetedAssistant:
+    def __init__(self, max_tokens_per_month=500000):
+        self.budget = max_tokens_per_month
+        self.spent = 0
+
+    def run_if_budget_available(self, thread_id, cost_estimate):
+        if self.spent + cost_estimate > self.budget:
+            raise BudgetExceededError(f"Monthly budget exceeded")
+
+        # Run the assistant
+        run = client.beta.threads.runs.create(...)
+        self.spent += run.usage.prompt_tokens
+
+    def get_budget_remaining(self):
+        return self.budget - self.spent
+```
+
+**Technique 3: Intelligent Model Routing**
+
+```python
+def choose_model_for_query(query):
+    """Route to appropriate model based on query complexity."""
+    complexity_indicators = {
+        "simple": ["explain", "what is", "how do i"],
+        "complex": ["analyze", "design", "architecture", "debug"]
+    }
+
+    for complexity, keywords in complexity_indicators.items():
+        if any(keyword in query.lower() for keyword in keywords):
+            return "gpt-4o-mini" if complexity == "simple" else "gpt-4o"
+
+    return "gpt-4o-mini"  # Default to cheaper model
+
+# Use this when creating assistants
+model = choose_model_for_query(user_query)
+assistant = client.beta.assistants.create(
+    model=model,
+    instructions="..."
+)
+```
+
+## Batch Processing for Cost Savings
+
+OpenAI's Batch API offers 50% discounts on API calls:
+
+```python
+# If your application can tolerate 24-hour delays,
+# use the Batch API for 50% savings
+
+batch_requests = [
+    {
+        "custom_id": "request-1",
+        "params": {
+            "messages": [{"role": "user", "content": "Explain async/await"}],
+            "model": "gpt-4o-mini"
+        }
+    },
+    # ... more requests
+]
+
+# Process 1000s of requests at 50% discount
+# Example: 1M tokens normally costs $2.50, via batch $1.25
+```
+
+For applications where real-time response isn't critical, batch processing delivers significant savings.
+
+## Cost Forecasting Tool
+
+Plan future costs accurately:
+
+```python
+import pandas as pd
+from datetime import datetime, timedelta
+
+def forecast_assistants_costs(
+    starting_threads=100,
+    growth_rate_percent=10,
+    avg_messages_per_thread=5,
+    avg_tokens_per_message=150,
+    months=12
+):
+    """Forecast 12-month Assistants API costs."""
+
+    forecast = []
+    threads = starting_threads
+
+    for month in range(months):
+        # Project thread growth
+        threads = threads * (1 + growth_rate_percent / 100)
+
+        # Calculate storage
+        total_tokens = threads * avg_messages_per_thread * avg_tokens_per_message
+        storage_cost = (total_tokens / 1_000_000) * 0.10
+
+        # Calculate runs (assume 3 runs per thread daily)
+        monthly_runs = threads * 3 * 30
+        avg_run_cost = 0.0006  # gpt-4o-mini estimate
+        run_costs = monthly_runs * avg_run_cost
+
+        total = storage_cost + run_costs
+
+        forecast.append({
+            "month": month + 1,
+            "threads": int(threads),
+            "storage_cost": storage_cost,
+            "run_costs": run_costs,
+            "total_cost": total
+        })
+
+    df = pd.DataFrame(forecast)
+    print(df.to_string(index=False))
+    print(f"\n12-month total: ${df['total_cost'].sum():.2f}")
+    return df
+
+# Example forecast
+forecast_assistants_costs(starting_threads=500, growth_rate_percent=15)
+```
+
+## Cost Monitoring and Alerts
+
+Track spending in real-time:
+
+```python
+import os
+from datetime import datetime
+from openai import OpenAI
+
+class CostMonitor:
+    def __init__(self, monthly_budget=1000):
+        self.budget = monthly_budget
+        self.month_start = datetime.now().replace(day=1)
+        self.spent = 0
+        self.client = OpenAI()
+
+    def log_run(self, run_id, thread_id):
+        run = self.client.beta.threads.runs.retrieve(
+            thread_id=thread_id,
+            run_id=run_id
+        )
+
+        cost = self._calculate_cost(run.usage)
+        self.spent += cost
+
+        if self.spent > self.budget * 0.8:
+            self._alert_budget_warning()
+
+    def _calculate_cost(self, usage):
+        input_cost = (usage.prompt_tokens / 1_000_000) * 0.15
+        output_cost = (usage.completion_tokens / 1_000_000) * 0.60
+        return input_cost + output_cost
+
+    def _alert_budget_warning(self):
+        remaining = self.budget - self.spent
+        percentage_used = (self.spent / self.budget) * 100
+        print(f"WARNING: {percentage_used:.1f}% of budget used. ${remaining:.2f} remaining")
+
+    def get_budget_status(self):
+        return {
+            "spent": self.spent,
+            "budget": self.budget,
+            "remaining": self.budget - self.spent,
+            "percentage_used": (self.spent / self.budget) * 100
+        }
+```
+
+## Comparison with Alternative APIs
+
+Understanding cost trade-offs helps select the right approach:
+
+| API | Tokens/$ (input) | Tokens/$ (output) | Strengths | Best For |
+|-----|-----------------|-------------------|-----------|----------|
+| GPT-4o-mini | 6.7M | 1.7M | Cheapest | High-volume, simple tasks |
+| GPT-4o | 400K | 100K | Capable | Complex reasoning |
+| Claude 3.5 Sonnet API | 3M | 15K | Long context | Document processing |
+| Local LLM (Ollama) | Infinite | Infinite | Free | Privacy-critical |
+
+For most assistants applications, gpt-4o-mini provides the best cost-to-capability ratio.
+
+## ROI Analysis: When Assistants API Makes Sense
+
+Determine if Assistants API fits your budget:
+
+```python
+def analyze_roi(monthly_user_base, avg_interactions_per_user, cost_per_month):
+    """Calculate cost per interaction and ROI."""
+    total_interactions = monthly_user_base * avg_interactions_per_user
+    cost_per_interaction = cost_per_month / total_interactions
+    cost_per_user = cost_per_month / monthly_user_base
+
+    print(f"Monthly users: {monthly_user_base:,}")
+    print(f"Interactions/user: {avg_interactions_per_user}")
+    print(f"Cost per interaction: ${cost_per_interaction:.4f}")
+    print(f"Cost per user: ${cost_per_user:.2f}")
+
+    # Common benchmarks
+    if cost_per_interaction < 0.01:
+        print("ROI: Excellent (< $0.01/interaction)")
+    elif cost_per_interaction < 0.05:
+        print("ROI: Good")
+    elif cost_per_interaction < 0.20:
+        print("ROI: Acceptable for premium features")
+    else:
+        print("ROI: Marginal - consider alternatives")
+
+# Example: 10K users, 5 interactions each, $500/month
+analyze_roi(10000, 5, 500)
+```
+
+Most applications find Assistants API economics viable at scale (10K+ users).
+
 
 ## Related Articles
 

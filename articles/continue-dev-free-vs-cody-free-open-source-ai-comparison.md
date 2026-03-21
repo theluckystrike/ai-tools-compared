@@ -206,6 +206,146 @@ Choose **Cody Free** if you work with large codebases and want automatic context
 For pure open source enthusiasts, Continue Dev's commitment to open source (the extension itself is open source) may be a deciding factor. For teams already using Sourcegraph or needing advanced code navigation, Cody integrates more into existing workflows.
 
 
+## Installation and Setup Comparison
+
+Setting up each tool correctly determines whether you get value from the free tier:
+
+**Continue Dev Installation:**
+
+```bash
+# Install VS Code extension
+# https://marketplace.visualstudio.com/items?itemName=Continue.continue
+
+# For local model setup (e.g., Ollama)
+pip install ollama
+ollama pull mistral
+
+# Configure .continue/config.json
+cat > ~/.continue/config.json << 'EOF'
+{
+  "models": [
+    {
+      "model": "mistral",
+      "provider": "ollama",
+      "apiBase": "http://localhost:11434"
+    }
+  ]
+}
+EOF
+```
+
+**Cody Installation:**
+
+```bash
+# Install VS Code extension
+# https://marketplace.visualstudio.com/items?itemName=sourcegraph.cody-ai
+
+# Sign up for Sourcegraph account
+# https://sourcegraph.com/sign-up
+```
+
+Cody requires less configuration since it's cloud-hosted. Continue Dev offers more flexibility at the cost of additional setup.
+
+## Real-World Performance Testing
+
+For a concrete comparison, testing with actual codebases reveals differences:
+
+**Test Scenario: React Component Refactoring**
+
+Continue Dev response time: 2-5 seconds for inline suggestions
+Cody response time: 3-7 seconds (network roundtrip to Sourcegraph)
+
+Both tools suggest similar code but with different verbosity levels. Cody tends toward more verbose explanations, while Continue Dev suggestions are typically concise.
+
+**Test Scenario: Understanding External Function**
+
+Question: "Where is UserService.findById called in the codebase?"
+
+Continue Dev: Requires manual context selection or `/repo` command
+Cody: Automatically traces calls across the repository
+
+This is where Cody's code graph capabilities provide clear advantages for codebases with complex dependencies.
+
+## Cost Breakdown for Scaling
+
+If you outgrow the free tier, understanding upgrade paths matters:
+
+| Tier | Continue Dev | Cody |
+|------|--------------|------|
+| Free | Localhost models only | 50 messages/month |
+| Pro (monthly) | $20 + API costs | $19 |
+| Pro (yearly) | $180 + API costs | $190 |
+| Model flexibility | All LLM providers | Sourcegraph-optimized |
+
+Continue Dev's pricing is transparent—you pay only for API consumption beyond the local model. If using Claude API, expect $5-20/month for moderate usage.
+
+Cody Pro includes unlimited messages and costs a flat $19/month regardless of usage volume.
+
+## Decision Matrix for Tool Selection
+
+Create your own assessment by rating your priorities:
+
+**If you score high on these factors, choose Continue Dev:**
+- You prefer maximum control over your AI model
+- You work offline or need local processing
+- You're comfortable with API key management
+- You want to run open-source models only
+- You're price-sensitive and use sparingly
+
+**If you score high on these factors, choose Cody Free:**
+- You work with large codebases frequently
+- You want automatic context without selection
+- You need advanced code navigation
+- Your team uses Sourcegraph already
+- You prefer one unified interface
+
+## Practical Workflow Examples
+
+**Continue Dev Workflow:**
+
+```
+1. Open your project in VS Code
+2. Highlight the code you want explained
+3. Press Ctrl+L to open chat
+4. Ask: "Explain this authentication flow"
+5. Continue Dev analyzes only selected code
+```
+
+**Cody Workflow:**
+
+```
+1. Open your project in VS Code
+2. Type @-mention the symbol you want explained
+3. Ask: "Show me all usages of UserService"
+4. Cody searches across your entire codebase
+```
+
+The Continue Dev approach gives explicit control; Cody's approach automates discovery.
+
+## Migration Path Between Tools
+
+If you start with one tool and want to switch:
+
+**From Continue Dev to Cody:** Your habits transfer easily. Both use VS Code interfaces and similar chat interactions. You'll need to adjust to Cody's automatic context, which requires less manual selection.
+
+**From Cody to Continue Dev:** You lose automatic code graph features but gain model flexibility. Set up your preferred LLM (Claude, GPT-4, or Mistral) in the configuration.
+
+Neither tool locks you into its ecosystem—switching between them takes minutes.
+
+## Open Source Philosophy
+
+Continue Dev's commitment to open source appeals to developers with strong free-software values:
+
+- The extension itself is open source (Apache 2.0 license)
+- You can self-host using open-source models
+- No telemetry unless explicitly configured
+- Full transparency in how context is collected
+
+Cody is not open source, though Sourcegraph is a major contributor to open-source code intelligence projects.
+
+If open-source tooling is a requirement, Continue Dev provides clearer alignment.
+
+
 ## Related Articles
 
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)

@@ -207,6 +207,268 @@ for product in result.data:
 
 This approach extracts content automatically without you needing to inspect page structure or write selectors. The AI handles identifying product names, prices, and ratings across different page layouts.
 
+## Feature Comparison Table
+
+| Feature | Firecrawl | ScrapingBee | Bright Data | ScrapeGraphAI | Octoparse |
+|---------|-----------|------------|------------|---------------|---------|
+| JavaScript rendering | Yes | Yes | Yes | Yes (with Selenium) | Yes |
+| CAPTCHA solving | Partial | Yes | Yes | No | Yes |
+| Proxy rotation | Limited | Yes | Yes (advanced) | No | Yes |
+| Free tier | Yes | Yes | No | Yes | Yes |
+| Cost per 1K requests | $0.50-2.00 | $0.50-5.00 | Enterprise | API-dependent | $30-300/month |
+| Best for | Quick extraction | JS-heavy sites | Enterprise scale | Dev flexibility | No-code users |
+| Output formats | JSON, MD, HTML | HTML | Custom | Any LLM supports | CSV, JSON, Excel |
+
+## When to Use Each Tool
+
+**Use Firecrawl when:**
+- You need fast prototyping
+- Output should be clean markdown or structured JSON
+- You want minimal configuration
+- You're extracting from public documentation or blogs
+
+**Use ScrapingBee when:**
+- Websites heavily rely on JavaScript rendering
+- You need robust proxy rotation
+- CAPTCHA handling is required
+- You're comfortable with HTTP APIs
+
+**Use Bright Data when:**
+- Scaling to millions of requests monthly
+- Facing heavy anti-bot measures
+- You need enterprise support
+- Budget allows for premium pricing
+
+**Use ScrapeGraphAI when:**
+- You want maximum flexibility with LLM providers
+- You need to avoid per-request API costs
+- You're comfortable with Python development
+- You work with variable page structures
+
+**Use Octoparse when:**
+- Team members lack programming experience
+- Visual interface is essential
+- You prefer point-and-click configuration
+- Scheduling regular scraping jobs
+
+## Advanced Extraction Patterns
+
+**Pattern 1: Handling Pagination Automatically**
+
+```python
+from firecrawl import FirecrawlApp
+
+app = FirecrawlApp(api_key='your-api-key')
+
+# Crawl entire site with automatic pagination
+result = app.crawl_url(
+    'https://example.com/products',
+    params={
+        'limit': 500,  # Follow pagination to 500 pages
+        'scrapeOptions': {
+            'onlyMainContent': True,
+            'waitForSelectorTimeout': 5000
+        }
+    }
+)
+
+# Process all pages' data
+all_products = []
+for page in result.data:
+    all_products.extend(page.get('products', []))
+```
+
+**Pattern 2: Handling JavaScript-Rendered Content**
+
+```python
+from scrapingbee import ScrapingBeeClient
+
+client = ScrapingBeeClient(api_key='your-api-key')
+
+response = client.get(
+    'https://example.com/dynamic-products',
+    params={
+        'render_js': 'true',
+        'wait_browser': 'networkidle2',  # Wait for all resources
+        'screenshot': 'true'  # Optional: get visual proof
+    }
+)
+
+# Parse the fully-rendered HTML
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(response.text, 'html.parser')
+products = soup.find_all('div', class_='product-item')
+```
+
+**Pattern 3: Handling Anti-Bot Systems**
+
+```python
+# Using Bright Data's Web Unlocker
+from bright_data import WebUnlocker
+
+unlocker = WebUnlocker(token='your-token')
+
+response = unlocker.get('https://target-site.com/data')
+# Web Unlocker automatically handles:
+# - Browser fingerprinting
+# - CAPTCHA solving
+# - Rate limiting management
+# - Proxy rotation
+
+data = response.json()
+```
+
+## Error Handling and Resilience
+
+Production scrapers require robust error handling:
+
+```python
+from firecrawl import FirecrawlApp
+import time
+from typing import Optional, List
+
+class ResilientScraper:
+    def __init__(self, api_key: str, max_retries: int = 3):
+        self.app = FirecrawlApp(api_key=api_key)
+        self.max_retries = max_retries
+
+    def scrape_with_retry(self, url: str) -> Optional[dict]:
+        """Scrape with exponential backoff on failure."""
+        for attempt in range(self.max_retries):
+            try:
+                result = self.app.crawl_url(url)
+                return result
+            except RateLimitError:
+                wait_time = 2 ** attempt  # Exponential backoff
+                print(f"Rate limited. Waiting {wait_time}s...")
+                time.sleep(wait_time)
+            except Exception as e:
+                print(f"Attempt {attempt + 1} failed: {e}")
+                if attempt == self.max_retries - 1:
+                    return None
+
+    def scrape_multiple_urls(self, urls: List[str]) -> List[dict]:
+        """Scrape multiple URLs with rate limiting."""
+        results = []
+        for url in urls:
+            result = self.scrape_with_retry(url)
+            if result:
+                results.append(result)
+            time.sleep(1)  # Rate limiting between requests
+        return results
+```
+
+## Cost Optimization Strategies
+
+Minimize scraping costs by being strategic:
+
+**Strategy 1: Selective Content Extraction**
+
+```python
+# Only extract needed fields
+result = app.crawl_url(
+    url,
+    params={
+        'formats': ['markdown'],  # Smaller than HTML
+        'onlyMainContent': True,  # Skip navigation, sidebar
+        'removeTags': ['script', 'style']  # Strip unnecessary elements
+    }
+)
+```
+
+**Strategy 2: Smart Caching**
+
+```python
+import hashlib
+import json
+from pathlib import Path
+
+class CachedScraper:
+    def __init__(self, cache_dir: str = './scrape_cache'):
+        self.cache_dir = Path(cache_dir)
+        self.cache_dir.mkdir(exist_ok=True)
+
+    def get_cache_key(self, url: str) -> str:
+        return hashlib.md5(url.encode()).hexdigest()
+
+    def fetch(self, url: str, skip_cache: bool = False) -> dict:
+        cache_key = self.get_cache_key(url)
+        cache_file = self.cache_dir / f"{cache_key}.json"
+
+        # Return cached result if exists and not skipping
+        if not skip_cache and cache_file.exists():
+            with open(cache_file) as f:
+                return json.load(f)
+
+        # Fetch fresh data
+        result = self.app.crawl_url(url)
+
+        # Cache the result
+        with open(cache_file, 'w') as f:
+            json.dump(result, f)
+
+        return result
+```
+
+**Strategy 3: Batch Processing**
+
+Process multiple pages in batches to trigger volume discounts.
+
+## Common Scraping Pitfalls
+
+**Pitfall 1: Not respecting robots.txt**
+
+```python
+import requests
+from urllib.robotparser import RobotFileParser
+
+def can_scrape(url: str) -> bool:
+    """Check if scraping is allowed by robots.txt"""
+    rp = RobotFileParser()
+    rp.set_url(url.replace(url.split('/', 3)[3], 'robots.txt'))
+    rp.read()
+    return rp.can_fetch('*', url)
+```
+
+**Pitfall 2: Missing User-Agent Headers**
+
+```python
+# Always provide a descriptive User-Agent
+headers = {
+    'User-Agent': 'MyBot/1.0 (+http://mysite.com/bot)'
+}
+
+response = requests.get(url, headers=headers)
+```
+
+**Pitfall 3: Ignoring Terms of Service**
+
+Many websites prohibit automated scraping. Check ToS before scraping. Firecrawl and similar tools are designed for legal extraction—they won't help bypass legitimate restrictions.
+
+## Monitoring and Maintenance
+
+Track scraper health in production:
+
+```python
+import logging
+from datetime import datetime
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def log_scrape_operation(url: str, status: str, tokens_used: int, error: str = None):
+    entry = {
+        'timestamp': datetime.utcnow().isoformat(),
+        'url': url,
+        'status': status,
+        'tokens_used': tokens_used,
+        'error': error
+    }
+    logger.info(json.dumps(entry))
+```
+
+Monitor success rates, token consumption, and error patterns to catch issues before they escalate.
+
 
 ## Related Articles
 
