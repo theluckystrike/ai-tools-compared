@@ -33,6 +33,9 @@ A lakehouse combines the flexibility of a data lake with warehouse management fe
 The fundamental difference affects AI workflows: warehouses expect clean input, while lakehouses let you work with raw data and handle schema evolution.
 
 
+It's worth being precise about what "ACID transactions" means for a lakehouse. Delta Lake implements optimistic concurrency control using transaction logs stored alongside your Parquet files in S3 or GCS. This means multiple writers can work concurrently without corruption, and you can roll back to previous table versions — a capability called time travel. For ML workflows, time travel lets you reproduce training datasets from months ago even after the underlying data has changed.
+
+
 ## Data Preparation for Machine Learning
 
 
@@ -93,6 +96,29 @@ GROUP BY user_id, event_type;
 The warehouse approach requires upfront transformation. The lakehouse approach lets you transform during model inference or training.
 
 
+### Feature Store Integration
+
+
+Both architectures integrate with feature stores, but the path differs. With a lakehouse, you typically read raw Delta tables and compute features on demand using Spark or Dask. With a warehouse, you materialize feature tables via SQL and read them directly. Modern feature stores like Tecton and Feast support both patterns, but their lakehouse connectors tend to have richer support for point-in-time correct feature retrieval — critical for avoiding training/serving skew.
+
+
+```python
+# Tecton feature retrieval from lakehouse (point-in-time correct)
+from tecton import FeatureService
+import pandas as pd
+
+fs = FeatureService.get("user_recommendation_features")
+
+# Retrieve features as of each training event timestamp
+spine = pd.DataFrame({
+    "user_id": training_labels["user_id"],
+    "timestamp": training_labels["event_timestamp"]
+})
+
+training_dataset = fs.get_historical_features(spine).to_pandas()
+```
+
+
 ## Query Performance for AI Pipelines
 
 
@@ -100,19 +126,19 @@ AI pipelines often involve ad-hoc queries for exploratory data analysis and feat
 
 
 | Aspect | Data Warehouse | Lakehouse |
-
 |--------|---------------|-----------|
-
 | Small query latency | Faster (optimized for SQL) | Slower (Spark overhead) |
-
 | Large scan performance | Good with clustering | Excellent with Parquet |
-
 | Concurrent queries | Excellent | Good (depends on engine) |
-
 | Storage cost | Higher (proprietary format) | Lower (open formats) |
+| Schema flexibility | Limited | High |
+| Unstructured data | Poor | Excellent |
 
 
 For interactive exploration, warehouses typically feel snappier. For batch feature engineering at scale, lakehouses often win on cost and flexibility.
+
+
+The Spark startup overhead in lakehouses is real. A query that takes 2 seconds in Snowflake might take 45 seconds in Spark due to JVM initialization and job planning. For EDA sessions where data scientists issue dozens of quick queries, this latency adds up. Solutions like Databricks SQL Warehouse mitigate this by maintaining pre-warmed Spark clusters, but they come at a cost premium that narrows the price advantage over warehouses.
 
 
 ## Real-Time AI Inference
@@ -140,7 +166,28 @@ streaming_df.writeStream \
 ```
 
 
-Warehouses are adding streaming capabilities, but they typically require additional services or premium tiers for real-time ingestion.
+Warehouses are adding streaming capabilities, but they typically require additional services or premium tiers for real-time ingestion. Snowflake's Snowpipe and BigQuery's streaming inserts provide near-real-time data availability, but their latency (typically 30-90 seconds) makes them unsuitable for serving features in latency-sensitive inference scenarios. For inference serving with sub-second feature freshness requirements, you'll need a dedicated feature store backed by Redis or DynamoDB regardless of your storage layer.
+
+
+## Model Training at Scale
+
+
+The hardware requirements for large model training introduce another dimension to the comparison. Training a gradient boosted model on 100GB of features using a warehouse means extracting data to local storage or a cloud compute instance first — there's no native integration between Snowflake compute and GPU clusters.
+
+Lakehouses solve this more elegantly. Data stored in Delta Lake or Iceberg can be read directly by PyTorch's DataLoader using petastorm or by XGBoost's Dask integration — no intermediate export step required.
+
+```python
+import xgboost as xgb
+from dask_spark import DaskContext
+
+# Read Delta table directly into Dask DataFrame
+with DaskContext(spark):
+    ddf = spark.read.format("delta").load("s3://bucket/features/").toPandas()
+
+# Train XGBoost directly on lakehouse data
+dtrain = xgb.DMatrix(ddf.drop("label", axis=1), label=ddf["label"])
+model = xgb.train(params={"max_depth": 6, "eta": 0.1}, dtrain=dtrain, num_boost_round=100)
+```
 
 
 ## Cost Considerations at Scale
@@ -153,6 +200,9 @@ For AI workloads with bursty compute needs (training cycles), lakehouses often c
 
 
 However, warehouses reduce operational complexity. If your team lacks Spark expertise, a warehouse's managed SQL interface may be more practical despite higher per-query costs.
+
+
+A concrete cost comparison: storing 10TB of Parquet files in S3 costs roughly $230/month. Equivalent storage in Snowflake runs $400-600/month depending on compression. The compute picture is more variable — a 6-hour Databricks job on a 20-node cluster might cost $80, while the same query in Snowflake's medium warehouse might cost $40 but complete in 20 minutes, making the total cost similar.
 
 
 ## When to Choose Each Approach
@@ -168,6 +218,8 @@ However, warehouses reduce operational complexity. If your team lacks Spark expe
 
 - You require time travel and audit capabilities on raw data
 
+- Your training pipelines run on GPU clusters that need direct storage access
+
 
 **Choose a warehouse when:**
 
@@ -178,6 +230,8 @@ However, warehouses reduce operational complexity. If your team lacks Spark expe
 - Low-latency SQL queries are critical
 
 - You need tight integration with BI tools
+
+- Operational simplicity outweighs cost optimization
 
 
 ## Hybrid Approaches Work
@@ -196,6 +250,8 @@ spark.read.parquet("s3://bucket/features/") \
     .save()
 ```
 
+This hybrid architecture captures the best of both: lakehouse flexibility for ML workloads and warehouse performance for business analysts. The synchronization job runs on a schedule (typically hourly or daily depending on feature freshness requirements), keeping the warehouse current without requiring analysts to learn Spark.
+
 
 ## Making the Decision
 
@@ -206,7 +262,10 @@ Start with your data shape and team skills. If your AI pipeline consumes clean t
 If you handle diverse data types, need cost-effective large-scale processing, or want flexibility in how data is transformed, a lakehouse architecture provides advantages that matter for production AI systems.
 
 
-The gap between both approaches narrows as vendors add capabilities. But the underlying architectural differences remain relevant for AI-specific considerations like feature engineering, training scale, and inference latency.
+The gap between both approaches narrows as vendors add capabilities. Snowflake's Cortex ML functions now run directly on warehouse data, and Databricks SQL brings warehouse-like query performance to the lakehouse. But the underlying architectural differences remain relevant for AI-specific considerations like feature engineering, training scale, and inference latency.
+
+
+Evaluate against your actual workloads. Run a proof-of-concept with representative data volumes and query patterns before committing to either architecture — the right answer depends far more on your specific data characteristics and team capabilities than on any general comparison.
 
 
 ## Related Articles
