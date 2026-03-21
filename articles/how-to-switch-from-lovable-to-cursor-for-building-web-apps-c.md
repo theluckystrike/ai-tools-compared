@@ -10,6 +10,7 @@ categories: [comparisons]
 tags: [ai-tools-compared, cursor, lovable, web-development, ai-code-editors]
 reviewed: true
 score: 8
+voice-checked: true
 ---
 
 

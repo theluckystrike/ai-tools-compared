@@ -9,6 +9,7 @@ categories: [guides]
 tags: [ai-tools-compared, retool, admin-panels, database, automation, artificial-intelligence]
 reviewed: true
 score: 9
+voice-checked: true
 ---
 {% raw %}
 
