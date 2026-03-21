@@ -194,6 +194,97 @@ For large projects, generate multiple focused diagrams rather than attempting to
 
 Regenerate diagrams regularly, especially after significant refactoring. AI makes this process fast enough to include in your workflow whenever architecture changes occur.
 
+## Extracting Dependency Data for AI Processing
+
+To generate accurate diagrams, start by gathering your component dependency information. AI can parse this data and convert it to visual format automatically.
+
+```bash
+# Extract component imports and relationships
+find src/components -name "*.tsx" -o -name "*.vue" | xargs grep -h "^import\|^from" | sort | uniq
+```
+
+Feed this output to an AI with a prompt like:
+
+> "Analyze these import statements from a React project and create a Mermaid diagram showing the component hierarchy and data flow. Group components by feature area if applicable."
+
+The AI structures this raw data into a coherent visual representation without manual organization.
+
+## Comparing Tool Outputs: PlantUML vs Mermaid
+
+Different diagram formats serve different purposes. AI can generate both and help you choose:
+
+**Mermaid advantages:** Native GitHub/GitLab support, simpler syntax, faster rendering
+**PlantUML advantages:** More sophisticated layouts, advanced styling, broader enterprise tool support
+
+```
+Generate both a Mermaid and PlantUML version of this component diagram:
+[component structure]
+
+Compare the outputs for:
+1. Readability and clarity
+2. Styling flexibility
+3. Tool ecosystem support in our organization
+```
+
+Most teams find Mermaid sufficient for documentation, with PlantUML reserved for complex architectural presentations.
+
+## Handling Dynamic Component Generation
+
+Projects with dynamically loaded components or lazy-loaded routes present challenges for static diagram generation. AI can help annotate dynamic patterns:
+
+```mermaid
+graph TD
+    App[App] --> Router
+    Router --> Home[Home - static]
+    Router --> Admin["Admin (lazy)"]
+    Router --> Dashboard["Dashboard (lazy)"]
+    Admin -.dynamic load.-> AdminPanel
+    Dashboard -.dynamic load.-> Charts
+```
+
+The dashed lines and annotations clarify which components load dynamically, making the diagram more informative than a simple static hierarchy.
+
+## Auto-Updating Diagrams from Code
+
+Some teams integrate AI diagram generation into their CI/CD pipeline. Ask an AI to suggest the approach:
+
+> "Show me a GitHub Actions workflow that automatically regenerates component diagrams whenever `.tsx` or `.vue` files change, commits the updated diagrams to docs/, and opens a PR if changes are detected."
+
+This ensures documentation stays synchronized with actual code without manual effort.
+
+## Documenting Prop Drilling and State Flow
+
+Component diagrams benefit from annotations showing data flow. AI can enhance basic diagrams with flow information:
+
+```mermaid
+graph TD
+    App[App] -->|user:User| Layout
+    Layout -->|user:User| Header
+    Layout -->|user:User| Sidebar
+    Layout -->|user:User| Content
+    Content -->|user:User| UserProfile
+
+    style App fill:#e1f5ff
+    style Layout fill:#e1f5ff
+    style Header fill:#fff3e0
+    style Sidebar fill:#fff3e0
+```
+
+Color coding and prop annotations transform diagrams from visual toys into useful technical documentation.
+
+## Integrating Diagrams into Your Documentation Site
+
+Most documentation sites support Mermaid or PlantUML. Ask your AI to help integrate generated diagrams:
+
+> "I use [Docusaurus/Next.js/Jekyll]. Show me how to embed these Mermaid diagrams directly in my markdown documentation with version control integration."
+
+AI provides platform-specific guidance for seamless integration with your existing doc infrastructure.
+
+
+
+
+
+
 
 ## Related Articles
 
