@@ -30,13 +30,25 @@ AI coding assistants analyze your code to provide relevant suggestions. When the
 Most AI coding platforms have policies against using customer code for training, but configuration errors or overly broad context settings can still lead to unintended exposure. The simplest solution is ensuring your sensitive files are explicitly excluded from AI tool access.
 
 
+## The Risk in Concrete Terms
+
+
+Before diving into configuration, it helps to understand exactly what exposure looks like. AI coding tools typically index your workspace in one of three ways:
+
+- **Context window inclusion**: The tool reads nearby files and open tabs to generate relevant suggestions. If `.env` is open in your editor, its contents become part of the AI's context.
+- **Workspace indexing**: Some tools like Cursor index your entire project directory for semantic search. Any file not excluded is fair game.
+- **Snippet telemetry**: Some tools send anonymized code snippets for model improvement. Configuration options generally let you opt out, but defaults vary.
+
+The most common real-world incident is a developer asking an AI assistant to "help me debug this API call" while the `.env` file is open, resulting in the API key appearing verbatim in a code suggestion that then gets committed to version control.
+
+
 ## Configuring GitHub Copilot
 
 
 GitHub Copilot respects your repository's `.gitignore` file by default, but additional configuration provides stronger guarantees.
 
 
-### Using.gitignore Effectively
+### Using .gitignore Effectively
 
 
 Ensure your `.gitignore` contains the following entries:
@@ -81,6 +93,12 @@ src/**/*
 
 
 These files tell Copilot exactly which files to consider or ignore, independent of git tracking.
+
+
+### Organization-Level Policies
+
+
+GitHub Enterprise customers can enforce Copilot exclusions at the organization level through the GitHub admin console. Navigate to **Organization Settings > Copilot > Content exclusion** and add patterns that apply to all repositories under the organization. This approach enforces baseline security across all developer machines without relying on per-repository configuration.
 
 
 ## Configuring Cursor AI
@@ -142,6 +160,12 @@ Cursor respects VS Code settings. Add these to your `.vscode/settings.json`:
 This prevents Cursor's AI from reading excluded files while maintaining normal file operations.
 
 
+### Disabling Cursor's Codebase Indexing for Sensitive Directories
+
+
+Cursor's codebase indexing feature scans your entire project to enable semantic search. To exclude directories from the index, open **Cursor Settings > Features > Codebase Indexing** and add ignore patterns. Any directory matching these patterns will not be indexed, providing an additional layer of protection independent of the rules file.
+
+
 ## Configuring Claude Code (Anthropic)
 
 
@@ -185,6 +209,26 @@ claude config set --global excludePatterns "[\"**/.env*\", \"**/secrets/**\", \"
 
 
 This ensures all projects using Claude Code automatically exclude sensitive patterns.
+
+
+## Configuring Windsurf and Codeium
+
+
+Windsurf (formerly Codeium) offers workspace-level context controls through its settings panel. Open **Windsurf Settings > AI Context** and configure the ignore list:
+
+
+```
+.env
+.env.*
+**/secrets
+**/credentials
+**/*.pem
+**/*.key
+*serviceAccountKey*
+```
+
+
+Codeium also respects a `.codeiumignore` file at the project root, following the same syntax as `.gitignore`. This file takes precedence over workspace settings for per-repository control.
 
 
 ## Best Practices for Secret Management
@@ -247,6 +291,40 @@ api_key = get_secret("production-api-key")
 Tools like AWS Secrets Manager, HashiCorp Vault, or Doppler provide APIs that your code uses at runtime, eliminating the need for env files in your codebase entirely.
 
 
+## Pre-Commit Hooks as a Safety Net
+
+
+Even with AI tools properly configured, a pre-commit hook provides a final line of defense before secrets reach version control. Tools like `git-secrets` and `detect-secrets` can catch accidental commits:
+
+
+```bash
+# Install git-secrets
+brew install git-secrets
+
+# Configure it for your repo
+cd your-project
+git secrets --install
+git secrets --register-aws
+
+# Add custom patterns
+git secrets --add 'PRIVATE_KEY'
+git secrets --add 'sk-[a-zA-Z0-9]{32,}'
+```
+
+
+The `detect-secrets` tool from Yelp takes a different approach, creating a baseline file of known false positives so the scanner remains accurate over time:
+
+
+```bash
+pip install detect-secrets
+detect-secrets scan > .secrets.baseline
+# Commit the baseline, then add to pre-commit hooks
+```
+
+
+These tools run before every commit and reject pushes that contain strings matching secret patterns. They complement AI tool exclusions rather than replacing them — the AI configuration prevents inadvertent context exposure, while the pre-commit hooks catch any residual secrets that end up in code.
+
+
 ## Verification and Testing
 
 
@@ -284,6 +362,24 @@ Periodically review your configuration:
 2. Verify AI tool configuration files exist and are current
 
 3. Scan your repository for accidentally committed secrets using tools like git-secrets or TruffleHog
+
+
+### Scanning Git History for Leaked Secrets
+
+
+If your project has been running for some time, it is worth scanning the entire commit history for previously leaked secrets, not just the current working tree:
+
+
+```bash
+# TruffleHog scans entire git history
+trufflehog git file://. --only-verified
+
+# gitleaks is another reliable option
+gitleaks detect --source . --log-opts="--all"
+```
+
+
+Rotate any secrets discovered in history immediately, then remove them using BFG Repo-Cleaner or `git filter-repo` before the next push.
 
 
 ## Related Articles
