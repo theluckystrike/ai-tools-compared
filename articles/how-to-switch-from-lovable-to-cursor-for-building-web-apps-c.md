@@ -8,7 +8,7 @@ permalink: /how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/
 categories: [comparisons]
 tags: [ai-tools-compared, cursor, lovable, web-development, ai-code-editors]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 ---
 
