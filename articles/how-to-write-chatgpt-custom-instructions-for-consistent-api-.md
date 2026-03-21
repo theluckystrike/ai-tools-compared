@@ -9,7 +9,7 @@ permalink: /how-to-write-chatgpt-custom-instructions-for-consistent-api-design-s
 categories: [guides]
 tags: [ai-tools-compared, chatgpt, api-design, prompts, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
