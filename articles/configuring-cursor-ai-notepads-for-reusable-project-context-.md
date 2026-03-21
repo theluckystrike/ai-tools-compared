@@ -221,6 +221,235 @@ Create a "handbook" notepad that serves as an onboarding guide:
 This approach creates a single source of truth that both humans and AI can reference, improving consistency and reducing repetitive questions.
 
 
+## Notepad Organization Patterns for Large Projects
+
+
+### Monorepo Structure
+
+
+For monorepos with multiple services, create specialized notepads:
+
+
+```
+.cursornotepad.md                    # Root level: overview
+services/
+├── api-service/.cursornotepad.md   # FastAPI specifics
+├── web-app/.cursornotepad.md       # React patterns
+└── worker-service/.cursornotepad.md # Background job conventions
+
+docs/
+├── database.notepad.md
+├── authentication.notepad.md
+└── deployment.notepad.md
+```
+
+
+The root notepad references all service-specific ones, allowing Cursor to load appropriate context when navigating between services.
+
+
+### Template-Based Notepad Generation
+
+
+```python
+#!/usr/bin/env python3
+"""Generate .cursornotepad.md from template for new projects"""
+
+NOTEPAD_TEMPLATE = '''# {project_name}
+
+## Tech Stack
+- Language: {language}
+- Framework: {framework}
+- Database: {database}
+- Testing: {test_framework}
+
+## Key Conventions
+{conventions}
+
+## Project Structure
+{structure}
+
+## Important Files
+{important_files}
+'''
+
+def generate_notepad(project_config):
+    """Create notepad from project config file"""
+    content = NOTEPAD_TEMPLATE.format(
+        project_name=project_config['name'],
+        language=project_config['language'],
+        framework=project_config['framework'],
+        database=project_config['database'],
+        test_framework=project_config['test_framework'],
+        conventions="\n".join(f"- {c}" for c in project_config['conventions']),
+        structure=project_config['directory_tree'],
+        important_files="\n".join(f"- {f}: {desc}" for f, desc in project_config['important_files'].items())
+    )
+
+    with open('.cursornotepad.md', 'w') as f:
+        f.write(content)
+
+    print("Generated .cursornotepad.md")
+```
+
+
+## Notepad Best Practices
+
+
+### Version Control Integration
+
+
+Always commit notepad files to version control:
+
+
+```bash
+git add .cursornotepad.md docs/*.notepad.md
+git commit -m "Update AI context notepads with new architectural decisions"
+```
+
+
+This ensures new team members and different development environments share the same context.
+
+
+### Regular Synchronization with Reality
+
+
+Schedule quarterly reviews to ensure notepads reflect actual practices:
+
+
+```markdown
+## Last Updated: 2026-03-21
+## Next Review: 2026-06-21
+
+### Checklist
+- [ ] Verify all listed dependencies match package.json
+- [ ] Confirm coding standards are actually followed in codebase
+- [ ] Check if architectural decisions have changed
+- [ ] Update database schema description if migrations occurred
+- [ ] Review and update API conventions
+```
+
+
+### Context Windows and Token Limits
+
+
+Modern AI models have token limits. Design notepads efficiently:
+
+
+**Optimal notepad size:** 4,000-6,000 tokens (roughly 2,000-3,000 words)
+
+**Too large:** Wastes context window; Cursor may ignore parts
+
+**Too small:** Insufficient context for meaningful assistance
+
+
+Use this structure to maximize usefulness within token constraints:
+
+
+```markdown
+# Project Essentials (Cursor-Optimized)
+
+## 1. Stack (50 tokens)
+Node.js 20, Express, PostgreSQL, React 18
+
+## 2. Must-Know Patterns (100 tokens)
+- Error handling: Always return {status, message, code}
+- Database: Prisma with transaction support for multi-step operations
+- Auth: JWT with refresh token rotation
+
+## 3. File Locations (50 tokens)
+- API routes: src/routes/
+- Business logic: src/services/
+- Database: src/db/
+
+## 4. DO's and DON'Ts (100 tokens)
+- DO: Use dependency injection for services
+- DO: Log all errors with context
+- DON'T: Hardcode configuration values
+- DON'T: Make synchronous external API calls
+```
+
+
+## Contextual Prompting with Notepads
+
+
+Once notepads are set up, use them effectively in conversations:
+
+
+```
+User: "How should I structure the error handler for the new POST endpoint?"
+
+Cursor reads notepad context:
+- Error handling: Always return {status, message, code}
+- Framework: Express with TypeScript
+- Testing: Jest with integration test requirements
+
+Better response because Cursor understands your standards
+```
+
+
+## Sharing Notepads Across Teams
+
+
+For teams using the same tech stack, create a shared template repository:
+
+
+```bash
+# Share notepad templates
+git clone https://github.com/company/cursor-notepad-templates.git
+cp cursor-notepad-templates/express-typescript/.cursornotepad.md ./
+# Customize for your specific project
+```
+
+
+## Troubleshooting Notepad Issues
+
+
+### Cursor Not Reading Notepad
+
+
+Verify the file path and format:
+
+```bash
+# Ensure file exists and is readable
+ls -la .cursornotepad.md
+
+# File should be markdown format with proper syntax
+file .cursornotepad.md
+```
+
+
+### Excessive Context Usage
+
+
+If Cursor seems slow, your notepads might be too large. Split into specialized files:
+
+```bash
+mv .cursornotepad.md .cursornotepad.main.md
+mv docs/backend.md .cursornotepad.backend.md
+# Reference secondary files from main
+```
+
+
+### Context Relevance Issues
+
+
+If Cursor suggests code that ignores your conventions, the notepad context wasn't clear. Add specific examples:
+
+
+```markdown
+# WRONG: Vague instruction
+Handle errors appropriately
+
+# RIGHT: Specific example
+All route handlers must return this error format:
+res.status(error.statusCode || 500).json({
+  status: "error",
+  message: error.message,
+  code: error.code || "INTERNAL_ERROR"
+})
+```
+
+
 ## Related Articles
 
 - [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)

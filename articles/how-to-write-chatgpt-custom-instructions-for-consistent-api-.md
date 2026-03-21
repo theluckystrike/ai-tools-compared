@@ -221,6 +221,193 @@ Custom instructions persist until you change them, which creates consistency but
 Consider keeping a backup of your custom instructions in a document. This lets you maintain different instruction sets for different project types and quickly swap between contexts.
 
 
+## Custom Instructions Library
+
+
+Save these ready-to-use instruction templates for different tech stacks:
+
+
+### Next.js with Supabase
+
+
+```
+Profile: I build full-stack applications using Next.js 15, TypeScript strict mode, and Supabase for PostgreSQL backend. I use Server Actions for API logic, client components with React hooks, and Zod for validation. Authentication uses Supabase Auth with JWT. Database access through Supabase client library with RLS policies.
+
+Response: When I request API endpoints, show: 1) Server Action code with proper error handling, 2) TypeScript types for request/response, 3) Zod validation schemas, 4) RLS policy requirements, 5) Client-side usage example. Include database schema assumptions.
+```
+
+
+### Django with Django REST Framework
+
+
+```
+Profile: I develop with Django 5.0 and Django REST Framework. Using PostgreSQL with django-environ for configuration. Models use Django ORM with proper relationships and constraints. Authentication via drf-spectacular and OpenAPI 3.0 documentation.
+
+Response: For API endpoints, provide: 1) Serializer class definition with field validation, 2) ViewSet implementation with proper queryset filtering, 3) Pagination and permission classes, 4) URL routing configuration, 5) Example API calls. Always include docstrings following Django conventions.
+```
+
+
+### Rust with Actix-web
+
+
+```
+Profile: I write APIs in Rust using Actix-web framework. Database access through SQLx with compile-time query verification. Error handling with custom error types implementing ResponseError. Serde for JSON serialization with derive macros. All endpoints require explicit error types and Result returns.
+
+Response: When suggesting endpoints, show: 1) Handler function with proper type signatures, 2) Request/response struct definitions with Serde attributes, 3) Custom error enum implementation, 4) Database query code, 5) Endpoint registration in App configuration. Use #[derive(Serialize, Deserialize)] consistently.
+```
+
+
+### Go with Gin
+
+
+```
+Profile: I build REST APIs in Go 1.21+ using Gin web framework. Database access through GORM ORM with PostgreSQL. Error handling returns errors as part of function signatures. Validation uses struct tags with popular validators. All responses use consistent JSON envelope format.
+
+Response: For API suggestions, provide: 1) Handler function with gin.Context parameter, 2) Struct definitions with struct tags for validation and JSON serialization, 3) GORM query examples with proper error checking, 4) Middleware setup if needed, 5) Curl examples. Follow Go conventions: CamelCase for exported functions, lowercase for packages.
+```
+
+
+## Advanced Custom Instruction Techniques
+
+
+### Conditional Instructions for Multiple Workflows
+
+
+```
+Add these conditional instructions to your response profile:
+
+If I ask about database design: First show the ER diagram in ASCII art, then provide the schema.
+
+If I ask about testing: Always include unit test examples using my testing framework of choice.
+
+If I ask about deployment: Assume containerized deployment with Docker and Kubernetes.
+
+If I mention "urgent" or "quick": Provide the most concise solution without extensive explanation.
+
+If I reference a specific file: Ask for the file content first before suggesting changes.
+```
+
+
+### Style and Tone Customization
+
+
+```
+Style guidance:
+
+- Avoid verbose explanations. Prefer working code over lengthy descriptions.
+- If multiple approaches exist, show the most performant option.
+- Point out security implications when relevant.
+- Use code comments only for non-obvious logic.
+- Always include what NOT to do alongside what to do.
+
+Example tone:
+"Bad: Use proper error handling in your code.
+Good: Use typed error responses to prevent information leakage in production. Example: return status 500 with generic 'Internal Error' rather than stacktraces."
+```
+
+
+## Measuring Custom Instruction Effectiveness
+
+
+Track whether custom instructions are improving suggestion quality:
+
+
+```python
+# Simple metric tracking
+import json
+from datetime import datetime
+
+def track_suggestion_quality(suggestion_text, accepted: bool, modified: bool):
+    """Log suggestion outcomes"""
+
+    entry = {
+        "timestamp": datetime.now().isoformat(),
+        "accepted": accepted,
+        "modified": modified,
+        "quality_score": 1.0 if accepted else (0.5 if modified else 0.0),
+        "suggestion_length": len(suggestion_text)
+    }
+
+    with open("instruction_effectiveness.jsonl", "a") as f:
+        f.write(json.dumps(entry) + "\n")
+
+def analyze_effectiveness():
+    """Calculate effectiveness metrics"""
+    total = 0
+    accepted = 0
+
+    with open("instruction_effectiveness.jsonl") as f:
+        for line in f:
+            entry = json.loads(line)
+            total += 1
+            if entry["accepted"]:
+                accepted += 1
+
+    acceptance_rate = (accepted / total * 100) if total > 0 else 0
+    return {
+        "total_suggestions": total,
+        "accepted": accepted,
+        "acceptance_rate": f"{acceptance_rate:.1f}%"
+    }
+```
+
+Track acceptance rates before and after updating instructions. If acceptance rate drops, revert instructions and try different wording.
+
+
+## Integration with Workflow
+
+
+### ChatGPT Plus Workflow
+
+
+1. Open ChatGPT
+2. Custom instructions automatically load
+3. Ask API design question
+4. Receive suggestions aligned with your standards
+5. Copy code directly into your project or IDE
+
+
+### API Design Assistant Strategy
+
+
+Use ChatGPT for exploratory design:
+
+```
+Session Flow:
+1. "I need to design a user management API. What endpoints should I include?"
+   (Uses your custom instructions for tech stack)
+
+2. "Show me the authentication flow for JWT tokens"
+   (Generates examples matching your standards)
+
+3. "How should I handle error responses?"
+   (Uses your defined error format)
+
+4. "Generate the complete POST /users endpoint"
+   (Produces production-ready code)
+```
+
+
+## Updating Instructions Over Time
+
+
+Maintenance schedule:
+
+- **Monthly**: Review acceptance rates and adjust wording if needed
+- **Quarterly**: Update with new technology versions or framework changes
+- **Annually**: Comprehensive review with team for standardization
+
+
+Example update:
+
+```
+Before: "Use JWT for authentication"
+After: "Use JWT with RS256 algorithm, 15-minute expiry for access tokens, 7-day for refresh tokens. Implement token rotation on refresh."
+```
+
+Specific instructions yield better results than generic ones.
+
+
 ## Related Articles
 
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)

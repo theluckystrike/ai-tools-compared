@@ -85,6 +85,14 @@ Different languages require different comment syntaxes. You can ask AI assistant
 A good AI assistant understands these differences and can generate headers in the appropriate format for your specific file types.
 
 
+## Language-Specific Header Formats
+
+Different programming languages and file types require different comment styles. AI assistants understand these nuances and can generate headers in appropriate formats.
+
+Python and shell scripts use `#` for comments, making headers straightforward to insert at the top of files. JavaScript, TypeScript, and C-style languages typically use either single-line `//` comments or block `/* */` comments. C++ projects might require `//` comments that span multiple lines, while Go projects often use `//` patterns as well. CSS and SCSS files use `/* */` blocks, while HTML files can embed comments in multiple ways. XML and configuration languages like YAML typically use `#` comments.
+
+The challenge becomes managing consistency across mixed projects. A typical monorepo might contain Python backend code, JavaScript frontend, shell deployment scripts, and Terraform infrastructure—each requiring different comment syntax. When you ask your AI assistant to generate headers, specify the target file types and it will produce headers in the correct format for each.
+
 ## Automating Header Insertion with AI Guidance
 
 
@@ -100,6 +108,10 @@ Beyond generating the header text, AI tools can help you create scripts that aut
 4. Prepends the header if missing
 
 5. Handles files that already have headers appropriately
+
+6. Reports progress and statistics on processed files
+
+7. Optionally skips certain directories or files
 
 
 Here's a conceptual example of what such a script might look like:
@@ -141,6 +153,108 @@ for root, dirs, files in os.walk('src'):
 
 AI assistants can help you customize this script for your specific needs, whether that means supporting more file types, handling different license headers for different directories, or integrating with version control hooks.
 
+## Managing License Compliance Across Monorepos
+
+Monorepos with multiple projects create additional complexity. Different subprojects might use different licenses—the core library uses MIT while client applications use Apache 2.0. AI tools can help you establish directory-specific license requirements and validation strategies.
+
+Create a configuration file that maps directories to their respective licenses:
+
+```yaml
+# license-config.yml
+licenses:
+  - path: src/core
+    license: MIT
+    holder: "Acme Corp"
+    year: 2026
+
+  - path: src/client
+    license: Apache-2.0
+    holder: "Acme Corp"
+    year: 2026
+
+  - path: src/third-party
+    license: none
+    reason: "Third party code with own licenses"
+
+excluded_dirs:
+  - node_modules
+  - venv
+  - .git
+```
+
+With this configuration, your validation script can ensure each directory contains headers matching its assigned license. AI can generate the validation logic that checks not just presence but correctness of license information.
+
+## Automating License Compliance on Pull Requests
+
+The most effective compliance approach integrates header checks directly into your development workflow. When developers open pull requests, the CI system should automatically verify that new files include proper headers.
+
+Ask your AI assistant to create a GitHub Actions workflow that:
+
+```yaml
+name: License Header Check
+on: [pull_request]
+
+jobs:
+  check-headers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: files
+        run: |
+          git diff --name-only ${{ github.event.pull_request.base.sha }} HEAD > changed_files.txt
+
+      - name: Check licenses on new/modified files
+        run: |
+          python scripts/check-headers.py changed_files.txt \
+            --config license-config.yml \
+            --fail-on-missing
+
+      - name: Comment PR if headers missing
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: 'Some files are missing license headers. Please add headers and push again.'
+            })
+```
+
+This approach surfaces header issues immediately when developers open PRs, before code review begins. Combined with a bot comment, it provides helpful guidance for fixing issues.
+
+## Documenting License Decisions
+
+As your project grows, maintain a LICENSES file that explains your licensing strategy:
+
+```markdown
+# License Information
+
+## Project License
+This project uses the MIT License for all original source code.
+See LICENSE file for full text.
+
+## Third-Party Dependencies
+- React (MIT) - Used for UI framework
+- Express (MIT) - Used for server framework
+- Some vendored code (Apache 2.0) - See VENDOR_LICENSES
+
+## License Headers
+All source files contain the standard MIT header. Files in the
+`vendor/` directory retain their original headers and are NOT
+relicensed. Exception files are documented in the exceptions file.
+
+## Contributing
+Contributors must agree to license their contributions under the
+MIT License via a CLA (Contributor License Agreement).
+```
+
+This documentation prevents confusion and ensures everyone understands your licensing model.
 
 ## Checking Compliance Across Your Codebase
 
@@ -206,22 +320,40 @@ jobs:
 AI tools can help you create the actual validation script that this workflow calls, ensuring it handles all the file types in your project and provides clear error messages when headers are missing.
 
 
+## Handling License Updates and Migrations
+
+Over time, projects evolve and licensing needs change. You might relicense your project, add new copyright holders, or update year ranges. AI tools can help orchestrate these large-scale updates safely.
+
+Ask your AI assistant to generate a migration script that:
+- Updates copyright years across all files
+- Replaces old license text with new license text
+- Adds or removes copyright holders
+- Handles edge cases like files with custom headers
+
+The key is having AI generate the script with proper dry-run capabilities so you can preview changes before applying them:
+
+```bash
+# Test the migration on a copy first
+cp -r src src.backup
+./migrate-licenses.py --dry-run src.backup
+
+# Review the output, then apply to actual source
+./migrate-licenses.py src
+```
+
 ## Best Practices for AI-Assisted License Management
 
 
 When using AI tools for license header management, keep these considerations in mind:
 
 
-First, always verify the generated headers are accurate. AI can make mistakes, especially with legal text. Double-check that the license terms match your intended license and that the copyright holder information is correct.
+First, always verify the generated headers are accurate. AI can make mistakes, especially with legal text. Double-check that the license terms match your intended license and that the copyright holder information is correct. Compare against official license text from opensource.org.
 
+Second, document your license requirements clearly. Before asking AI to generate headers or compliance scripts, write down exactly which licenses apply to which directories, what format you require, and any special conditions. Include examples of correctly formatted headers.
 
-Second, document your license requirements clearly. Before asking AI to generate headers or compliance scripts, write down exactly which licenses apply to which directories, what format you require, and any special conditions.
+Third, make header checks part of your code review process. Even with automated tools, having human reviewers check that new files include proper headers catches issues early. Automated tools should fail the pull request if headers are missing.
 
-
-Third, make header checks part of your code review process. Even with automated tools, having human reviewers check that new files include proper headers catches issues early.
-
-
-Fourth, keep your headers current. If you update your project's license or add new copyright years, use AI to help update all existing headers consistently.
+Fourth, keep your headers current. If you update your project's license or add new copyright years, use AI to help update all existing headers consistently. Schedule this as an annual task.
 
 
 ## Related Articles

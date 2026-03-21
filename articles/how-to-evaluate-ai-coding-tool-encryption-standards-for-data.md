@@ -222,6 +222,281 @@ After evaluating encryption standards, compare results against your requirements
 Document your findings. Security assessments become valuable references when evaluating new tools or responding to security reviews.
 
 
+## Comprehensive Encryption Evaluation Checklist
+
+
+### Transport Layer Assessment
+
+
+```bash
+#!/bin/bash
+# Complete encryption evaluation script
+
+TOOLS=(
+  "api.copilot.github.com"
+  "api.anthropic.com"
+  "api.openai.com"
+  "api.codeium.com"
+)
+
+for tool_domain in "${TOOLS[@]}"; do
+  echo "Evaluating: $tool_domain"
+
+  # Test TLS 1.3 support
+  echo "TLS 1.3 Support:"
+  openssl s_client -connect $tool_domain:443 -tls1_3 </dev/null 2>/dev/null | grep "Protocol"
+
+  # Extract cipher suite
+  echo "Cipher Suites:"
+  openssl s_client -connect $tool_domain:443 </dev/null 2>/dev/null | grep "Cipher"
+
+  # Certificate validation
+  echo "Certificate Info:"
+  openssl s_client -connect $tool_domain:443 -showcerts </dev/null 2>/dev/null | \
+    grep -E "subject=|issuer=|notAfter="
+
+  echo "---"
+done
+```
+
+
+### Application-Level Encryption
+
+
+Beyond TLS, evaluate additional protective measures:
+
+
+```python
+import requests
+import json
+from typing import Dict
+
+def evaluate_app_level_encryption(tool_api_endpoint: str,
+                                   auth_token: str) -> Dict:
+    """
+    Test for additional application-level encryption features
+    """
+
+    evaluation = {
+        "endpoint": tool_api_endpoint,
+        "findings": {}
+    }
+
+    # 1. Test response encryption
+    headers = {"Authorization": f"Bearer {auth_token}"}
+    response = requests.get(
+        f"{tool_api_endpoint}/status",
+        headers=headers
+    )
+
+    # Check Content-Encoding header (indicates compression)
+    if response.headers.get('Content-Encoding'):
+        evaluation["findings"]["compression"] = response.headers['Content-Encoding']
+
+    # 2. Check for HSTS header (enforces HTTPS)
+    if 'Strict-Transport-Security' in response.headers:
+        evaluation["findings"]["hsts_enabled"] = True
+        evaluation["findings"]["hsts_max_age"] = \
+            response.headers['Strict-Transport-Security']
+
+    # 3. Check for Content Security Policy
+    if 'Content-Security-Policy' in response.headers:
+        evaluation["findings"]["csp_policy"] = \
+            response.headers['Content-Security-Policy']
+
+    # 4. Verify certificate pinning (if documented)
+    evaluation["findings"]["certificate_pinning"] = \
+        check_certificate_pinning(tool_api_endpoint)
+
+    return evaluation
+
+
+def check_certificate_pinning(domain: str) -> bool:
+    """
+    Check if service implements certificate pinning.
+    Indicates additional security consciousness.
+    """
+    # This requires manual verification of security docs
+    # Return True if documented in security whitepaper
+    return None  # Requires manual check
+```
+
+
+## Tools Comparison: Encryption Features
+
+
+| Tool | TLS Version | PFS | Certificate Pinning | End-to-End Encryption |
+|------|---|---|---|---|
+| GitHub Copilot | 1.3 | Yes | Yes | No |
+| Claude (Anthropic) | 1.3 | Yes | Partial | No |
+| OpenAI | 1.3 | Yes | Yes | No |
+| Codeium | 1.3 | Yes | No | No |
+| Local Ollama | HTTP only* | N/A | N/A | Yes (optional) |
+
+*Ollama runs locally; TLS depends on your setup
+
+
+## Real-World Security Scenarios
+
+
+### Scenario 1: Proprietary Algorithm
+
+
+You're working with a proprietary trading algorithm that is your company's competitive advantage.
+
+**Evaluation:**
+- TLS 1.3 with PFS: Required (protects in-transit)
+- Certificate pinning: Preferred (prevents MITM)
+- Data retention: Critical - verify code isn't used for model training
+- End-to-end encryption: Ideal but not available in commercial tools
+
+**Decision:** Use local tools (Ollama) or commercial tool with written data agreement
+
+
+### Scenario 2: Healthcare Application
+
+
+You're building HIPAA-compliant healthcare software.
+
+**Evaluation:**
+- TLS 1.3: Required ✓
+- Certificate validation: Required ✓
+- Data center location: Must be US (HIPAA requirement)
+- Audit logs: Must be available for compliance review
+- Subprocessor agreements: Must be documented
+
+**Decision:** Only tools with Business Associate Agreements (BAAs)
+
+
+### Scenario 3: Open-Source Project
+
+
+You're contributing to an open-source project (code is public).
+
+**Evaluation:**
+- TLS 1.3: Nice to have but not critical
+- PFS: Helpful but not essential
+- Any tool works fine since code is public anyway
+
+**Decision:** Copilot, ChatGPT, or any commercial tool acceptable
+
+
+## Data Retention and Deletion
+
+
+Beyond encryption, verify what happens to your code after transmission:
+
+
+```python
+# Questions to ask tool providers:
+
+questions = {
+    "data_retention_duration": "How long is transmitted code stored?",
+    "deletion_policy": "Can I request deletion of specific sessions?",
+    "training_usage": "Is my code used for model training?",
+    "audit_logs": "Can I access logs of what data was accessed?",
+    "geographic_storage": "Where is data physically stored?",
+    "subprocessor_list": "Which third parties have access to my code?"
+}
+
+# Document vendor responses
+vendor_responses = {
+    "GitHub Copilot": {
+        "data_retention_duration": "30 days for suggestions, longer for some features",
+        "training_usage": "Opt-out available (individual telemetry can be disabled)",
+        "audit_logs": "Limited; request through support"
+    },
+    "Claude (Anthropic)": {
+        "data_retention_duration": "30 days retention policy",
+        "training_usage": "Not used for training by default",
+        "audit_logs": "Available through enterprise agreements"
+    }
+}
+```
+
+
+## Compliance Documentation
+
+
+For regulated industries, maintain encryption evaluation documentation:
+
+
+```markdown
+# Encryption Assessment Report
+
+**Tool:** GitHub Copilot
+**Date:** 2026-03-21
+**Reviewer:** Security Team
+
+## Findings
+
+### Transport Security
+- [x] TLS 1.3 enforced
+- [x] Forward Secrecy enabled
+- [x] Certificate validation implemented
+- [ ] Certificate pinning (not verified)
+
+### Application Security
+- [x] HSTS header present (max-age: 31536000)
+- [x] CSP policy enforced
+- [ ] End-to-end encryption
+- [x] Data retention policy documented
+
+### Compliance
+- [x] GDPR compliant
+- [x] SOC 2 Type II certified
+- [ ] HIPAA BAA available
+
+## Recommendation
+Approved for: General development, non-sensitive code
+Not approved for: HIPAA data, client secrets, proprietary algorithms
+
+## Remediation
+For sensitive work, use local tools (Ollama) or implement code redaction layer.
+```
+
+
+## Implementing Code Redaction
+
+
+For tools without sufficient security, implement code redaction:
+
+
+```python
+import re
+
+class CodeRedactor:
+    """Redact sensitive patterns before sending to AI tools"""
+
+    SENSITIVE_PATTERNS = {
+        'aws_key': r'AKIA[0-9A-Z]{16}',
+        'api_key': r'["\']api[_-]?key["\']:\s*["\']([^"\']+)["\']',
+        'database_url': r'(postgres|mysql)://[^/]+:[^/]+@[^\s/]+',
+        'private_key': r'-----BEGIN (RSA|DSA|EC|OPENSSH) PRIVATE KEY-----',
+        'github_token': r'ghp_[A-Za-z0-9_]{36,255}',
+        'email': r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    }
+
+    def redact(self, code: str) -> str:
+        """Remove sensitive information from code before analysis"""
+        redacted = code
+        for pattern_name, pattern in self.SENSITIVE_PATTERNS.items():
+            redacted = re.sub(pattern, f'[REDACTED_{pattern_name.upper()}]', redacted)
+        return redacted
+
+# Usage
+redactor = CodeRedactor()
+code_to_analyze = """
+import os
+API_KEY = "sk-1234567890abcdef"
+db_url = "postgres://user:password@localhost:5432/db"
+"""
+
+safe_code = redactor.redact(code_to_analyze)
+# Send safe_code to Copilot instead of original
+```
+
+
 ## Related Articles
 
 - [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
