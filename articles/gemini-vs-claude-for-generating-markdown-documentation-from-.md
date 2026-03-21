@@ -95,7 +95,7 @@ Calculate basic statistical metrics from input data.
 Claude's output includes parameter types, return values, and exceptions. The markdown structure follows common documentation conventions that developers recognize immediately.
 
 
-For the `DataProcessor` class, Claude correctly identified public versus private methods, noting that `_transform` is an internal implementation detail. This contextual understanding demonstrates Claude's strength in code comprehension.
+For the `DataProcessor` class, Claude correctly identified public versus private methods, noting that `_transform` is an internal implementation detail. This contextual understanding demonstrates Claude's strength in code comprehension. Claude also produces prose-style section introductions before diving into parameter details, which makes generated docs more approachable for readers encountering an API for the first time.
 
 
 ## Gemini's Approach to Documentation
@@ -125,7 +125,23 @@ Gemini provides a slightly different output format. Its documentation tends towa
 ```
 
 
-Gemini's output uses table formats more frequently, which some developers prefer for complex parameter lists. The information density is comparable to Claude's, but the presentation style differs.
+Gemini's output uses table formats more frequently, which some developers prefer for complex parameter lists. The information density is comparable to Claude's, but the presentation style differs. When working with modules that expose many parameters, Gemini's tabular approach makes scanning easier, though it produces longer files for simple functions with only one or two arguments.
+
+
+## Head-to-Head Comparison
+
+
+| Feature | Claude | Gemini |
+|---------|--------|--------|
+| Default output format | Prose + bullet lists | Tables + formal spec |
+| Private method handling | Hides by default | Documents all methods |
+| Type annotation support | Excellent | Excellent |
+| Multi-file context | Strong | Moderate |
+| Exception documentation | Separate entries | Summary format |
+| Custom style adherence | Very responsive | Occasionally verbose |
+| Output verbosity | Moderate | Higher |
+| JSDoc / NumPy style | Follows on request | Follows on request |
+| Usage examples | Includes on request | Sometimes adds unprompted |
 
 
 ## Practical Differences
@@ -137,59 +153,140 @@ Gemini's output uses table formats more frequently, which some developers prefer
 Claude's context window handles substantial codebases effectively. For projects with multiple interconnected files, Claude maintains coherent understanding across contexts. Gemini offers competitive context handling but may require more explicit instructions about code relationships.
 
 
+When documenting a module that imports helpers from sibling files, Claude typically makes reasonable inferences about their roles without needing them explicitly provided. Gemini sometimes generates documentation that treats imported symbols as external dependencies without acknowledging their relationship to the module being documented.
+
+
 ### Type Hint Recognition
 
 
 Both tools handle Python type hints well. However, Claude shows slightly better interpretation of complex type annotations, especially those involving generics or Union types. Gemini processes type hints accurately but sometimes formats them less intuitively in the output.
 
 
+For TypeScript codebases, both tools perform at roughly equivalent levels. Interface definitions and generic constraints are recognized and documented correctly by each. Where they diverge is in how they handle intersection types and conditional types—Claude tends to explain the intent behind these constructs, while Gemini focuses on their syntactic structure.
+
+
 ### Customization Control
 
 
-When you need documentation in specific formats, Claude responds well to detailed style instructions. Requests like "use JSDoc format" or "include usage examples" produce accurate results. Gemini also follows formatting instructions but may occasionally include additional explanatory text developers didn't request.
+When you need documentation in specific formats, Claude responds well to detailed style instructions. Requests like "use JSDoc format" or "include usage examples for each function" produce accurate, consistent results. Gemini also follows formatting instructions but may occasionally include additional explanatory text that developers did not request.
+
+
+A practical technique with Claude: include a short example of your preferred documentation style in the prompt itself. Claude mirrors that format with high fidelity across the entire output. With Gemini, adding the style constraint at the end of the prompt (rather than the beginning) reduces unwanted additions.
 
 
 ### Error Handling Documentation
 
 
-Both AI assistants recognize exception handling in code. Claude tends to document each exception separately with clear explanations. Gemini sometimes combines related exceptions or presents them in summary format.
+Both AI assistants recognize exception handling in code. Claude tends to document each exception type separately with clear explanations of what triggers it. Gemini sometimes combines related exceptions or presents them in a condensed summary format. For code with complex error hierarchies, Claude's approach produces more usable reference documentation.
 
 
 ## Integration Options
 
 
-### Command-Line Usage
+### API-Based CLI Workflow
 
 
-For developers preferring terminal workflows, both tools integrate via API:
+For developers who prefer terminal workflows, both tools integrate cleanly via their respective APIs:
 
+
+```python
+# docs_generator.py - works with either Claude or Gemini
+import anthropic
+import sys
+
+def generate_docs_claude(source_code: str, style: str = "github-markdown") -> str:
+    client = anthropic.Anthropic()
+    message = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=4096,
+        messages=[
+            {
+                "role": "user",
+                "content": (
+                    f"Generate {style} documentation for the following Python module. "
+                    "Document all public functions and classes. Include parameters, "
+                    "return types, and exceptions. Skip private methods.\n\n"
+                    f"```python\n{source_code}\n```"
+                )
+            }
+        ]
+    )
+    return message.content[0].text
+
+if __name__ == "__main__":
+    source = sys.stdin.read()
+    print(generate_docs_claude(source))
+```
+
+
+Run this from the terminal against any Python file:
 
 ```bash
-# Using Claude via CLI (requires API key)
-cat sample_module.py | claude-cli --prompt "Generate markdown documentation"
-
-# Using Gemini via CLI
-cat sample_module.py | gemini --doc-format markdown
+cat src/module.py | python docs_generator.py > docs/module.md
 ```
 
 
 ### Build Pipeline Integration
 
 
-Automating documentation generation fits well into CI/CD workflows:
+Automating documentation generation fits well into CI/CD workflows. Here is a GitHub Actions step that regenerates docs whenever source files change:
 
 
 ```yaml
-# Example GitHub Actions snippet
-- name: Generate Documentation
-  run: |
-    claude-cli --input src/ --output docs/api/
-  env:
-    ANTHROPIC_API_KEY: ${{ secrets.API_KEY }}
+name: Regenerate API Docs
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**/*.py'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Generate Documentation
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          for f in src/**/*.py; do
+            python scripts/docs_generator.py < "$f" > "docs/api/$(basename $f .py).md"
+          done
+
+      - name: Commit updated docs
+        run: |
+          git config user.name "docs-bot"
+          git config user.email "docs-bot@example.com"
+          git add docs/api/
+          git diff --staged --quiet || git commit -m "docs: regenerate API reference"
+          git push
 ```
 
 
-Both tools support batch processing, making documentation generation part of your regular build process.
+Both tools support batch processing, making documentation generation a repeatable, automated step in your regular build process.
+
+
+## Prompt Engineering Tips for Better Output
+
+
+Getting the best output from either tool requires careful prompting. A few patterns that work consistently:
+
+- Specify the output format explicitly: "Generate GitHub-flavored Markdown using ATX-style headers (##, ###)."
+- Provide a negative constraint: "Do not include example usage sections unless the function signature is non-obvious."
+- Define coverage scope: "Document only public methods. Skip private methods (those prefixed with underscore) and dunder methods."
+- Set verbosity level: "Keep each description to one sentence unless the function has complex behavior or multiple edge cases."
+- Anchor to a style guide: "Follow the NumPy docstring convention for parameter and return sections."
+
+Claude consistently honors multi-constraint prompts across long outputs. With Gemini, verifying the first generated section before accepting the full output is a good habit—if the style is off, a single correction instruction in a follow-up usually resolves it for the remainder.
 
 
 ## Choosing the Right Tool
@@ -200,42 +297,36 @@ Your specific needs determine the best choice:
 
 **Choose Claude if you prioritize:**
 
-- Readable, convention-standard markdown
-
+- Readable, convention-standard markdown that requires minimal post-processing
 - Clear distinction between public and internal APIs
-
-- Flexible formatting instructions
-
-- Context-aware documentation across multiple files
+- Flexible, precise formatting instructions honored across long outputs
+- Context-aware documentation across multiple files without explicit cross-referencing
 
 
 **Choose Gemini if you prefer:**
 
-- Table-heavy documentation layouts
-
-- Formal specification-style output
-
-- Dense information presentation
-
-- Google's ecosystem integration
+- Table-heavy documentation layouts for parameter-rich APIs
+- Formal specification-style output that mirrors standards documents
+- Dense information presentation with less narrative prose
+- Google's ecosystem integration through Vertex AI and Cloud tooling
 
 
 ## Recommendations
 
 
-For most Python projects, both tools produce serviceable documentation. The deciding factors often come down to existing toolchains and preferred output format.
+For most Python projects, both tools produce serviceable documentation. The deciding factors come down to existing toolchains and preferred output format.
 
 
-Start with a small code sample—five to ten functions—and compare outputs directly. This hands-on test reveals which tool's style matches your project's documentation standards.
+Start with a small code sample—five to ten functions—and compare outputs directly. This hands-on test reveals which tool's style matches your project's documentation standards better than any benchmark.
 
 
-Remember that AI-generated documentation requires human review. These tools provide excellent starting points but cannot replace understanding your code's actual behavior and edge cases.
+Remember that AI-generated documentation requires human review. These tools provide excellent starting points but cannot replace understanding your code's actual behavior and edge cases. Build a review step into your pipeline so generated docs are checked for accuracy before reaching end users.
 
 
 ---
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
