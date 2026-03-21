@@ -344,7 +344,5 @@ Lip sync technology enables several real-world applications:
 - [AI Audit Trail and Evidence Collection Tools 2026: A Developer Guide](/ai-tools-compared/ai-audit-trail-and-evidence-collection-tools-2026/)
 - [Best Workflow for Using AI to Modernize Legacy Application Architecture in 2026](/ai-tools-compared/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

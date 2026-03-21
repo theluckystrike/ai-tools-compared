@@ -240,7 +240,5 @@ Fifth, version control your rulesets. Recording rules evolve as your system chan
 - [How to Use AI for Writing Effective Terraform State.](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
 - [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

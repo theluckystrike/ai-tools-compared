@@ -384,7 +384,7 @@ WINDOW
   monthly_window AS (ORDER BY date ROWS BETWEEN 29 PRECEDING AND CURRENT ROW);
 ```
 
-BigQuery's QUALIFY clause and reusable WINDOW definitions are powerful features that simpler SQL dialects don't support. Top-tier AI tools should understand and leverage these.
+BigQuery's QUALIFY clause and reusable WINDOW definitions are powerful features that simpler SQL dialects don't support. Top-tier AI tools should understand and use these.
 
 ## Testing with Real BigQuery Data
 
@@ -446,7 +446,5 @@ Choose based on your specific needs:
 - [ChatGPT vs Claude for Creating Database Migration.](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
 - [Gemini vs ChatGPT for Writing Google Cloud Function.](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
 - [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -369,6 +369,4 @@ Run this weekly or monthly to keep your dictionary safe.
 - [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 - [How to Export ChatGPT Shared Links Before Account.](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

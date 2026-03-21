@@ -292,6 +292,4 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 - [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

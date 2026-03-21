@@ -223,7 +223,7 @@ Review generated configurations carefully. Copilot suggestions reflect common pa
 
 - **Region endpoints** match your architecture
 
-- **Authentication methods** align with your security policies 
+- **Authentication methods** align with your security policies
 
 - **Feature flags** are appropriate for your use case
 
@@ -245,7 +245,5 @@ Store provider configurations in a dedicated `providers.tf` file or organize the
 - [Copilot vs Cursor for Writing Clean Prisma Schema with.](/ai-tools-compared/copilot-vs-cursor-for-writing-clean-prisma-schema-with-relat/)
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
 - [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

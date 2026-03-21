@@ -253,7 +253,5 @@ Writing effective sprint retrospective summaries doesn't require sacrificing hou
 - [Best AI Assistant for QA Engineers Writing Test Coverage.](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
 - [Best AI for Product Managers Creating User Persona.](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

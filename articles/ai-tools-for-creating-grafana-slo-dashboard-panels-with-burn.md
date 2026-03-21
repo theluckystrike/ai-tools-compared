@@ -333,7 +333,5 @@ When working with AI to generate alert rules, specify:
 - [AI Tools for Generating Grafana Dashboard JSON Templates.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

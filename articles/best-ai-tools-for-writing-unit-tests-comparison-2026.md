@@ -53,7 +53,7 @@ Copilot is the baseline for test generation. It's trained on millions of open-so
 
 ## Claude
 
-Claude (via Claude Code or API) uses a 200K token context window to understand entire test suites and generate comprehensive coverage.
+Claude (via Claude Code or API) uses a 200K token context window to understand entire test suites and generate coverage.
 
 **Test Generation Quality:**
 - Generates 85% average coverage for standard business logic
@@ -219,7 +219,7 @@ Tabnine is an autocomplete-first tool that generates test code inline as you typ
 
 **Async JavaScript Code (Promise chains, error handling):**
 - Copilot: 71% coverage, occasional false positives
-- Claude: 89% coverage, comprehensive async handling
+- Claude: 89% coverage, async handling
 - Diffblue: N/A (no JS support)
 - CodiumAI: 86% coverage, excellent async patterns
 - Tabnine: 63% coverage (weak on error paths)
@@ -237,7 +237,7 @@ Tabnine is an autocomplete-first tool that generates test code inline as you typ
 - Alternative: CodiumAI (good fixture generation)
 
 **Jest (JavaScript):**
-- Best: Claude (comprehensive async/promise handling)
+- Best: Claude ( async/promise handling)
 - Alternative: CodiumAI (IDE integration)
 
 **Go testing (golang):**
@@ -360,7 +360,7 @@ Diffblue premium pricing reflects enterprise test verification.
 
 **For speed and ease**: Copilot ($10/month) handles 70% of typical unit test needs.
 
-**For comprehensive suite generation**: Claude or Diffblue, depending on your language stack and budget.
+**For suite generation**: Claude or Diffblue, depending on your language stack and budget.
 
 **For IDE integration**: CodiumAI (sidebar suggestions) or Copilot (inline autocomplete).
 

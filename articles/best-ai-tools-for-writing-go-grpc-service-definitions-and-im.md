@@ -386,7 +386,7 @@ Claude Code generates complete interceptor chains that integrate with your servi
 
 ## Testing gRPC Services
 
-Good AI tools generate not just service code but also comprehensive tests. Testing gRPC requires understanding how to set up a test server and create clients:
+Good AI tools generate not just service code but also tests. Testing gRPC requires understanding how to set up a test server and create clients:
 
 ```go
 func TestUserService(t *testing.T) {

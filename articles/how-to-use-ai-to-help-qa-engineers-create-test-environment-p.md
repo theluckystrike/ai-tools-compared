@@ -133,7 +133,7 @@ Request checklist items that cover:
 
 - Database initialization scripts
 
-- Test data seeding procedures 
+- Test data seeding procedures
 
 - Data refresh schedules
 
@@ -267,8 +267,6 @@ def generate_provisioning_script(checklist_items):
 - [How to Use AI to Help SRE Teams Create On-Call Handoff Documents](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 - [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
 - [AI Tools for QA Engineers: Generating Data-Driven Test.](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

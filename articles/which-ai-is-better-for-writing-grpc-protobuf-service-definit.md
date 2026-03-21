@@ -266,6 +266,4 @@ For teams with complex microservices architectures, **Cursor** excels at underst
 - [Which AI Is Better for Writing Playwright End-to-End.](/ai-tools-compared/which-ai-is-better-for-writing-playwright-end-to-end-tests-2/)
 - [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

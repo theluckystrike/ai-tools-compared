@@ -335,6 +335,4 @@ AI coding tools transform API consistency from a manual enforcement task into an
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

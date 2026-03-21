@@ -299,7 +299,5 @@ Consider multi-channel handling. Modern customers escalate through chat, email, 
 - [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 - [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -260,6 +260,4 @@ The initial investment in context documentation pays dividends through improved 
 - [How to Use AI Context Management to Work on Large.](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 - [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -320,6 +320,4 @@ The most cost-effective approach is to benchmark both models on your actual work
 - [Perplexity API Pricing vs Pro Subscription: Which Is.](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
 - [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

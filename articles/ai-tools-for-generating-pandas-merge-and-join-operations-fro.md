@@ -236,7 +236,5 @@ The combination of clear table relationship diagrams and AI assistance transform
 - [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
 - [AI Tools for Generating Pandas GroupBy Aggregation Code.](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

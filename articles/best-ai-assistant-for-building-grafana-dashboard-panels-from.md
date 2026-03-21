@@ -311,6 +311,4 @@ When working with AI assistants for Grafana panel creation:
 - [Best AI Assistant for Building Superset Dashboard Charts.](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

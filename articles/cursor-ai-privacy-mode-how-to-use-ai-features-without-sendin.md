@@ -348,7 +348,5 @@ Privacy mode in Cursor AI provides a practical solution for developers who need 
 - [Cursor AI Model Selection Guide: Which Model for Which.](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
 - [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

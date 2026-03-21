@@ -287,6 +287,4 @@ A systematic approach—working through prompt structure, context management, an
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
 - [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

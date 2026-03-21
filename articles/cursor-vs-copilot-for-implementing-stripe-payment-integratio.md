@@ -278,7 +278,5 @@ For Next.js projects specifically, both tools understand the framework patterns 
 - [Cursor vs Windsurf for Implementing Drag and Drop.](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 - [Copilot vs Cursor for Implementing Server-Sent Events in.](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

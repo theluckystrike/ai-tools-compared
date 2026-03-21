@@ -255,6 +255,4 @@ If the application now operates within stable memory bounds during extended oper
 - [How to Use AI to Debug Segmentation Faults in C and C++.](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
 - [Best AI Assistant for Debugging Swift Compiler Errors in.](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

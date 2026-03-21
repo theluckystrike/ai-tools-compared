@@ -232,7 +232,5 @@ The most successful implementations treat AI as a drafting assistant rather than
 - [Best AI for Product Managers Creating User Persona.](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
 - [AI Tools for Creating Test Data Generators That Respect.](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

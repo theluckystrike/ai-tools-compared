@@ -292,7 +292,5 @@ The goal is generating code that passes your CI/CD pipeline without modification
 - [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 - [How to Use AI to Diagnose and Fix Golang Goroutine.](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -489,15 +489,6 @@ jobs:
           fi
 ```
 
-## Conclusion
-
-Language migration is no longer a multi-month project. AI tools (primarily Claude for complex migrations, GPT-4 for web migrations, Gemini for ML code) reduce refactoring effort from months to weeks. The key is using modular conversion, testing rigorously against reference outputs, and treating AI output as 75–80% complete rather than production-ready.
-
-For teams considering language shifts—whether for performance, type safety, or ecosystem access—AI-assisted migration makes the business case clear: 2–4 week projects instead of 3–6 month slogs, with labor costs dropping from tens of thousands to thousands of dollars.
-
-Start with a single module as a proof-of-concept. If the AI output requires less than 20% rework, commit to migrating the full codebase. Most teams find that AI-assisted conversion is 70–80% cheaper than manual refactoring while producing higher-quality idiomatic code.
-
-
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)

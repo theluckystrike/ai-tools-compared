@@ -412,7 +412,5 @@ If you've exhausted these steps:
 - [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
 - [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting.](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

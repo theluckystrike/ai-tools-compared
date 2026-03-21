@@ -223,7 +223,7 @@ For pure code completion in your preferred IDE, **Copilot is most economical** a
 
 ## Real-World Completion Examples
 
-**Example 1: Completing a utility function (TypeScript)**
+**Example 1: Completing an utility function (TypeScript)**
 
 You type:
 ```typescript
@@ -247,7 +247,7 @@ export function formatCurrency(amount: number, currencyCode: string = 'USD'): st
 }
 ```
 
-**Analysis:** Cursor's suggestion is more robust (handles any currency via Intl API). Copilot's is simpler but limited. Cursor's workspace context likely revealed your app uses international currencies.
+**Analysis:** Cursor's suggestion is more strong (handles any currency via Intl API). Copilot's is simpler but limited. Cursor's workspace context likely revealed your app uses international currencies.
 
 **Example 2: React component prop validation**
 

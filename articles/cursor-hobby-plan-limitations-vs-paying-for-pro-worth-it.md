@@ -428,6 +428,4 @@ IF in large enterprise
 - [Cursor vs Copilot for Adding Type Hints to Untyped.](/ai-tools-compared/cursor-vs-copilot-for-adding-type-hints-to-untyped-python-co/)
 - [Copilot vs Cursor for Writing Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

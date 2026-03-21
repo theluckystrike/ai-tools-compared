@@ -355,7 +355,5 @@ Start with simple translation integration, then add sophistication as you unders
 - [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
 - [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

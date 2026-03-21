@@ -235,6 +235,4 @@ Consider your workflow: if you prefer getting things done with complete examples
 - [ChatGPT vs Claude for Writing Effective Celery Task.](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 - [Claude vs ChatGPT for Writing Kubernetes Helm Chart.](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -231,6 +231,4 @@ To integrate AI assistants into your multicloud workflow:
 - [AI Coding Assistants for TypeScript GraphQL Resolver and.](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 - [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

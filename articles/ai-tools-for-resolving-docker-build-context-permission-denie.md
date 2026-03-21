@@ -269,7 +269,5 @@ Create a `DOCKER.md` file in your project explaining required permissions:
 - [AI Tools for Generating Docker Compose Files for Complex.](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 - [Best AI for Fixing Android Gradle Sync Failed Errors in.](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

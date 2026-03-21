@@ -273,6 +273,4 @@ AI-assisted documentation should demonstrably reduce these friction points over 
 - [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 - [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

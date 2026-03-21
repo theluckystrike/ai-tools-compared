@@ -434,6 +434,4 @@ Treat your Claude.md file as a living document that evolves with your project.
 - [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 - [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

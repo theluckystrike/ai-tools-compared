@@ -342,6 +342,4 @@ action:
 - [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
 - [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

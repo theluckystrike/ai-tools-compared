@@ -324,7 +324,7 @@ Resistance to AI documentation tools is common. Address it proactively:
 - Offer early adopters first choice of improvements or upgrades
 
 **Training Approach**
-- Initial comprehensive training (2-3 hours)
+- Initial training (2-3 hours)
 - Quick reference guides for each tool
 - Designated "super-users" for peer support
 - Regular refresher sessions (monthly)

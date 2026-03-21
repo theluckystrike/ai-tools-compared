@@ -364,7 +364,5 @@ For projects with hundreds of issues, Claude's larger context window provides ad
 - [Best AI Assistant for Drafting Open Source Partnership.](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefit From Contributions](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -283,7 +283,5 @@ Use the AI-generated insights to move beyond simple pass/fail reporting. Instead
 - [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 - [How to Use AI to Create Data Pipeline Orchestration.](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

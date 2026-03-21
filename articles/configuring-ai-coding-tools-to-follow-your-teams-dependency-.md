@@ -323,7 +323,5 @@ Another common issue involves stale context. AI tools cache previous suggestions
 - [Configuring AI Coding Tools to Match Your Teams Specific.](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
 - [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

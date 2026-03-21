@@ -232,6 +232,4 @@ Regularly audit your Tailwind configuration as your project grows. New directori
 - [How to Use AI to Debug Segmentation Faults in C and C++.](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
 - [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

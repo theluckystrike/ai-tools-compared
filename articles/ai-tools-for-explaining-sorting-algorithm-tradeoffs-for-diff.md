@@ -368,6 +368,4 @@ This collaborative approach combines AI's theoretical knowledge with your practi
 - [AI Coding Productivity Measurement: How to Track if.](/ai-tools-compared/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
 - [Best AI Tools for Writing Kubernetes Custom Resource Definitions 2026](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

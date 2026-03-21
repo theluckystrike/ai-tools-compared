@@ -250,6 +250,4 @@ Both tools require review—AI suggestions occasionally include outdated Prisma 
 - [Copilot vs Cursor for Implementing Server-Sent Events in.](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
 - [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

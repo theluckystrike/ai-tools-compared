@@ -254,7 +254,5 @@ npx jest --testPathPattern=users.test.js --watch
 - [How to Use AI to Create Edge Case Test Scenarios from API Error Documentation](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
 - [How to Use AI to Generate Jest Tests for Redux Toolkit.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

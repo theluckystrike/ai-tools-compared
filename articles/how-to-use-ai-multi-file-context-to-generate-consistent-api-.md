@@ -311,6 +311,4 @@ This approach scales well because the AI becomes a force for consistency rather 
 - [Cursor AI Multi-File Editing Feature: How It Actually.](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
 - [How to Use AI Coding Tools to Enforce Consistent API.](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

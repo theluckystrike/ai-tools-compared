@@ -265,7 +265,5 @@ AI-powered Kubernetes monitoring has matured significantly. These tools now prov
 - [AI Tools for Automated SSL Certificate Management and.](/ai-tools-compared/ai-tools-for-automated-ssl-certificate-management-and-monito/)
 - [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

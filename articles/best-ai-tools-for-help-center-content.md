@@ -271,6 +271,4 @@ The ideal approach often combines tools—using Claude for initial drafts, Copil
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 - [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

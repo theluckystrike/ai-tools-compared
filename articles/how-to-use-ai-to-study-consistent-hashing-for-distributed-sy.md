@@ -231,6 +231,4 @@ Understanding these connections demonstrates depth to interviewers and reinforce
 - [How to Configure Cursor AI Rules for Consistent CSS and.](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 - [Best AI Assistant for Debugging Swift Compiler Errors in.](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

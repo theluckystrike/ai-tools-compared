@@ -291,7 +291,7 @@ Cmd+L (code generation): Direct generation often more efficient than chat back-a
 
 Track which interaction type you use most:
 - If 70% chat, 30% inline: Switch to 50/50 ratio to optimize
-- If 80% chat: Reframe architectural questions as single comprehensive prompts
+- If 80% chat: Reframe architectural questions as single prompts
 
 ### Strategy 3: Batch Refactoring Operations
 
@@ -305,7 +305,7 @@ Track which interaction type you use most:
 **Efficient approach (3 edits = 3 requests):**
 1. "Refactor functions A, B, C to follow DRY principle"
 2. "Extract shared helpers across these functions"
-3. "Add comprehensive JSDoc to all functions"
+3. "Add JSDoc to all functions"
 
 Batching reduces complexity estimations and leverages Cursor's multi-file awareness.
 
@@ -355,8 +355,6 @@ Most power users recover the upgrade cost within 2-4 weeks through faster develo
 - [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
 - [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

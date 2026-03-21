@@ -312,7 +312,7 @@ main "$@"
 **Claude Code Quality**: 9.5/10
 - Properly structured with error handling throughout
 - Uses idempotent operations
-- Includes comprehensive logging
+- Includes logging
 - Handles edge cases (PID management, signal handling)
 - Would generate this exact script or very similar
 
@@ -391,7 +391,7 @@ deploy_all "${1:-main}"
 
 ## Shell Scripting Best Practices AI Tools Should Follow
 
-### Pattern 1: Robust Error Handling
+### Pattern 1: strong Error Handling
 
 ```bash
 set -euo pipefail  # Exit on error, undefined vars, pipe failures
@@ -512,7 +512,5 @@ bash -x script.sh  # Trace mode to see every command
 - [Best AI Tools for Writing Kubernetes Admission Webhook.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
 - [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
 - [Which AI Writes Better PowerShell Scripts for Windows.](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

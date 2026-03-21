@@ -235,7 +235,7 @@ The Apply model is optimized for efficiency. A diff-based change uses fewer toke
 
 ## Version Control Integration with Apply
 
-Cursor's Apply model integrates seamlessly with git, making it easy to review and revert changes:
+Cursor's Apply model integrates with git, making it easy to review and revert changes:
 
 ```bash
 # Cursor automatically stages Applied changes
@@ -273,8 +273,6 @@ While the Apply model is powerful, it's important to understand its limitations:
 - [Cursor AI Model Selection Guide: Which Model for Which.](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
 - [Cursor AI Privacy Mode: How to Use AI Features Without.](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 - [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

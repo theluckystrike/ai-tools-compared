@@ -270,7 +270,5 @@ When upgrading a component library or switching UI frameworks, use AI to map old
 - [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [How to Use AI to Generate Jest Component Tests with.](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -250,6 +250,4 @@ The quality improvements compound over time. Small, consistent refactoring with 
 - [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
 - [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

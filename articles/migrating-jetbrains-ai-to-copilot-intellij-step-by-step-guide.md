@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Migrating from JetBrains AI to Copilot in IntelliJ -."
-description: "A comprehensive guide to switching from JetBrains AI to GitHub Copilot in IntelliJ IDEA. Learn how to transfer your settings, preserve your workflow."
+description: "A guide to switching from JetBrains AI to GitHub Copilot in IntelliJ IDEA. Learn how to transfer your settings, preserve your workflow."
 keywords: "JetBrains AI, GitHub Copilot, IntelliJ IDEA, migration guide, AI coding assistant"
 voice-checked: "true"
 last-updated: "2026-03-21"
@@ -305,23 +305,7 @@ If migrating a team:
 | Business | $19/user/month | Team management, policy controls |
 | Enterprise | Contact sales | Advanced security, compliance |
 
-## Conclusion
-
-Migrating from JetBrains AI to Copilot in IntelliJ is straightforward when you follow this guide. The key is to:
-
-1. **Disable JetBrains AI** to avoid conflicts
-2. **Install and authenticate** with the Copilot plugin
-3. **Configure settings** for optimal Java development
-4. **Import custom instructions** if needed
-5. **Test thoroughly** to ensure productivity
-
-While both tools have strengths, Copilot's GitHub integration and flexible pricing make it an excellent choice for many development teams. Give yourself 2-3 weeks to fully adjust to the workflow differences.
-
-Remember: The best AI coding assistant is the one that fits your specific needs and workflow. If Copilot doesn't meet your requirements after a trial period, you can always explore alternatives or even use multiple tools together.
-
-{% endraw %}
-
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+{% endraw %}

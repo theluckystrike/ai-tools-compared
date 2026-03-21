@@ -276,7 +276,5 @@ The MCP architecture makes it easy to add new tools as your needs evolve.
 - [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 - [How to Build Model Context Protocol Server for Internal.](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

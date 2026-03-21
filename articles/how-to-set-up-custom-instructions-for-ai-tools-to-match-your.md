@@ -268,6 +268,4 @@ Set a calendar reminder to audit AI-generated code monthly. Track which linting 
 - [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [How to Configure AI Coding Tools to Respect Your Team's Branch Naming Conventions](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

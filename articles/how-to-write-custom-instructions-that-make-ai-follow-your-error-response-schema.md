@@ -287,6 +287,4 @@ Ignoring language differences: Error handling patterns differ between languages.
 - [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

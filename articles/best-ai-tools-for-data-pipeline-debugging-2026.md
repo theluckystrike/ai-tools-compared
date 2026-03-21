@@ -256,7 +256,7 @@ models/marts/customer_cohort_retention.sql
 tests/asserting_cohort_sizes.sql
 ```
 
-**Fix documentation**: Automatically generates comprehensive model documentation.
+**Fix documentation**: Automatically generates model documentation.
 
 ```
 Generated documentation:
@@ -334,7 +334,7 @@ dbt Cloud AI is included in dbt Cloud Pro ($100/month) and higher plans.
 **Pipeline consistently breaks on schema changes**:
 1. Review transformation assumptions with Claude
 2. Build defensive logic (handle NULLs, type casting) with Copilot
-3. Add comprehensive tests using dbt Cloud AI
+3. Add tests using dbt Cloud AI
 
 ## Recommendations by Pipeline Type
 
@@ -345,15 +345,6 @@ dbt Cloud AI is included in dbt Cloud Pro ($100/month) and higher plans.
 **dbt teams**: Use dbt Cloud AI + Claude. dbt Cloud AI for model generation, Claude for complex logic issues.
 
 **Complex multi-tool pipelines** (Airflow, data lake, multiple sources): Use Claude as primary debugging tool, supplemented by platform-specific AI tools.
-
-## Key Takeaways
-
-- **Claude** provides deepest analysis for broken transformations
-- **Copilot** speeds up writing and testing transformation code
-- **Databricks Assistant** optimizes queries directly against your data
-- **dbt Cloud AI** generates model boilerplate and tests automatically
-
-The best approach combines tools: Claude for understanding why data is missing, Copilot for implementing fixes, and platform-native tools for optimization and generation.
 
 ## Related Reading
 

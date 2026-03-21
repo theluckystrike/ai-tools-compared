@@ -247,6 +247,4 @@ AI tools produce reliable configurations, but they cannot account for your speci
 - [ChatGPT vs Claude for Writing Nginx Reverse Proxy.](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
 - [Best AI Video Editor 2026: A Developer's Guide to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

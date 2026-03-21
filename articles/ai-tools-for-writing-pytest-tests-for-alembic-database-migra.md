@@ -305,7 +305,5 @@ This ensures no migration reaches your main branch without proper test coverage.
 - [Best AI Assistant for Writing pytest Tests for Pydantic.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
 - [Best AI Assistant for Writing Pytest Tests for.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

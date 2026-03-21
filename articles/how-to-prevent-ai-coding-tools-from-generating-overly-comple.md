@@ -265,6 +265,4 @@ Tools that consistently generate 3-5 line solutions are better for simplicity-fi
 - [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 - [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

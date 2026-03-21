@@ -309,7 +309,5 @@ Never expose sensitive values through your MCP server. Filter out API keys, secr
 - [How to Build a Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
 - [How to Create Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

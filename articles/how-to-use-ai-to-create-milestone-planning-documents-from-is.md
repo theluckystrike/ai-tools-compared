@@ -280,6 +280,4 @@ Maintain effective milestone planning by following these practices:
 - [How to Use AI to Help SRE Teams Create On-Call Handoff Documents](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 - [How to Use AI to Create Data Quality Scorecards from dbt.](/ai-tools-compared/how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

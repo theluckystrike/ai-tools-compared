@@ -314,6 +314,4 @@ Track documentation effectiveness by monitoring how quickly new team members bec
 - [Best Practices for AI Tool Customization Files When Onboarding New Team Members](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 - [How to Use AI to Create Data Pipeline Orchestration.](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

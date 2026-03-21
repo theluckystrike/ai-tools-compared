@@ -377,6 +377,4 @@ Test infrastructure changes in non-production environments first. Pulumi's previ
 - [AI Assistants for Multicloud Infrastructure Management.](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
 - [Best AI Tools for Writing AWS CDK Infrastructure Code in.](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

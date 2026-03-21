@@ -329,7 +329,5 @@ After auditing, consider these mitigation strategies:
 - [AI Coding Assistant Session Data Lifecycle: From Request.](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 - [What Code Snippets Get Logged in AI Coding Tool Provider.](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

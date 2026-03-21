@@ -298,6 +298,4 @@ The most effective approach combines AI generation with human oversight. Use AI 
 - [AI Tools for Resolving Docker Build Context Permission.](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
 - [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

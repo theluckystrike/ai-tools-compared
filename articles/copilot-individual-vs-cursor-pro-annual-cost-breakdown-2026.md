@@ -265,6 +265,4 @@ The bottom line is straightforward: GitHub Copilot Individual costs $92 less per
 - [Copilot Business vs Cursor Business: Per-Developer Cost.](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

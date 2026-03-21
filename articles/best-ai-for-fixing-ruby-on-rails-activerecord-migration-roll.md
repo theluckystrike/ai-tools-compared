@@ -340,7 +340,7 @@ end
 
 ## Monitoring and Alerting During Migration Execution
 
-Set up comprehensive monitoring for long-running migrations:
+Set up monitoring for long-running migrations:
 
 ```ruby
 class MonitoredMigration < ActiveRecord::Migration[7.1]
@@ -473,7 +473,5 @@ fi
 - [AI Tools for Debugging PostgreSQL Query Planner: Fixing.](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 - [Best AI for Fixing Android Gradle Sync Failed Errors in.](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
 - [How to Use AI for Cloud Migration Planning and.](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

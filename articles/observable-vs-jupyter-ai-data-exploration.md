@@ -290,6 +290,4 @@ The key is matching your data exploration needs to the platform's strengths rath
 - [Prefect vs Dagster for AI Workflows](/ai-tools-compared/prefect-vs-dagster-ai-workflows/)
 - [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

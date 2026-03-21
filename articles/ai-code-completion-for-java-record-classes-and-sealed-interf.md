@@ -373,7 +373,7 @@ Teams using modern Java should establish patterns for AI-assisted development:
 2. **Use sealed types consistently**
    - Define sealed hierarchies for domain models where all subtypes are known
    - Use unsealed classes only when necessary
-   - Leverage pattern matching exclusively for sealed types
+   - use pattern matching exclusively for sealed types
 
 3. **Validate AI-generated code**
    - Compile with `-Xlint:all -Werror` to catch subtle issues
@@ -402,7 +402,5 @@ The tools that excel in 2026 will likely continue improving their support for th
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 - [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

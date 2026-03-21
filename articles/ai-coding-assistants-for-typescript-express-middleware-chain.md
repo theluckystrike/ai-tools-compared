@@ -295,6 +295,4 @@ For middleware-heavy Express projects, Claude Code and Cursor provide the best s
 - [AI Coding Assistants for TypeScript Deno Fresh Framework Compared 2026](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 - [AI Coding Assistant Accuracy for TypeScript Svelte.](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -228,6 +228,4 @@ Test against actual consumer code when possible. Create a test suite using popul
 - [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 - [AI Tools for Writing Pytest Tests with Moto Library for AWS.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

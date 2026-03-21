@@ -323,7 +323,5 @@ Calculate your specific scenario using the formula above. If the effective cost 
 - [Copilot Suggestions in Private Repos: Do They Cost More.](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
 - [Cursor Business Seat Minimum and Onboarding Costs.](/ai-tools-compared/cursor-business-seat-minimum-and-onboarding-costs-breakdown-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

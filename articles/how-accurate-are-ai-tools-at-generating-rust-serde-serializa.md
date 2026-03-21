@@ -278,30 +278,6 @@ pub struct WebhookEvent {
 
 
 
-## Summary of Findings
-
-
-
-The accuracy of AI tools for generating Rust serde code varies significantly:
-
-
-
-| Tool | Basic Structs | Complex Enums | Custom Serialization | Overall Score |
-
-|------|---------------|---------------|---------------------|---------------|
-
-| Claude Code | 100% | 100% | 85% | 95% |
-
-| Cursor | 95% | 100% | 75% | 90% |
-
-| GitHub Copilot | 70% | 80% | 20% | 57% |
-
-
-
-Claude Code demonstrates the strongest understanding of Rust's type system and serde's attribute ecosystem. It anticipates dependency requirements and applies idiomatic patterns. Copilot frequently generates code that looks correct but fails to compile due to missing trait implementations or serialization configurations.
-
-
-
 ## Practical Recommendations
 
 
@@ -328,7 +304,5 @@ The pattern that AI tools struggle with most is custom serialization logic. Alwa
 - [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [How Accurate Are AI Tools at Generating TypeScript Zod.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
 - [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

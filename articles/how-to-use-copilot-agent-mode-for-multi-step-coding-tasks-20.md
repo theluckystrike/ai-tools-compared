@@ -241,6 +241,4 @@ Agent mode represents a significant evolution in AI-assisted development. By und
 - [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [How to Use Copilot Chat to Generate Code from Natural.](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -279,7 +279,5 @@ Start with Claude Code if you're building new ArgoCD deployments from scratch, t
 - [AI Tools for Writing License Header Templates and.](/ai-tools-compared/ai-tools-for-writing-license-header-templates-and-checking-f/)
 - [AI Assistants for Writing Correct AWS IAM Policies with.](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

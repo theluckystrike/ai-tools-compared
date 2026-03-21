@@ -368,6 +368,4 @@ Avoid future build breaks with these practices:
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
 - [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -264,7 +264,5 @@ Always validate AI-generated tests by:
 - [How to Use AI to Write Pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
 - [AI Tools for Creating Test Data That Covers Timezone.](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

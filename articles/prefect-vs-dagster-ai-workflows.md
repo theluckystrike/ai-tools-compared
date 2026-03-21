@@ -289,7 +289,7 @@ Choose **Prefect** if:
 - Your pipelines are relatively straightforward
 
 Choose **Dagster** if:
-- You need comprehensive lineage tracking for compliance
+- You need lineage tracking for compliance
 - You have complex multi-stage data pipelines
 - You want built-in testing frameworks
 - You're part of a larger engineering team
@@ -312,7 +312,5 @@ Both teams benefit from starting simple and adding complexity only when you have
 - [Observable vs Jupyter for AI Data Exploration](/ai-tools-compared/observable-vs-jupyter-ai-data-exploration/)
 - [Snowflake vs Databricks for AI Analytics: A Developer.](/ai-tools-compared/snowflake-vs-databricks-ai-analytics/)
 - [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

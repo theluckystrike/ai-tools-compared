@@ -240,6 +240,4 @@ These habits reduce AI errors dramatically and make your coding assistant a reli
 - [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 - [What Source Code Context Window Do Different AI Coding.](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

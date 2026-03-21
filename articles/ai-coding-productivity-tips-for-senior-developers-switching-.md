@@ -239,6 +239,4 @@ Track your productivity improvements objectively:
 - [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
 - [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

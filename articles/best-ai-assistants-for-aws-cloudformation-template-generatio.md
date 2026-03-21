@@ -230,7 +230,5 @@ Request validation. Always ask the AI to explain potential issues and provide re
 - [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 - [AI Assistants for Multicloud Infrastructure Management.](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

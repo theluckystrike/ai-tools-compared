@@ -311,7 +311,5 @@ Follow these guidelines to maintain effective CursorRules version control:
 - [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 - [Best Practices for AI Tool Customization Files When Onboarding New Team Members](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

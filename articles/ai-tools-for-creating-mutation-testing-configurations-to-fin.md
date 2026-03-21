@@ -372,6 +372,4 @@ AI can generate optimized configurations that reduce mutation testing time from 
 - [AI Tools for Creating Property-Based Test Cases Using.](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 - [Best AI for Creating Test Matrices That Cover All Input.](/ai-tools-compared/best-ai-for-creating-test-matrices-that-cover-all-input-comb/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -322,6 +322,4 @@ For complex pipelines requiring inpainting, consider maintaining Stable Diffusio
 - [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 - [How to Move Midjourney Style References to Stable Diffusion LoRA Training](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -277,6 +277,4 @@ When your CLAUDE MD file is clear and well-organized, AI assistants can generate
 - [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 - [Writing CLAUDE.md Files That Teach AI Your Project-Specific Error Handling Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -268,6 +268,4 @@ Review Error Handling: AI-generated error handling often needs enhancement. Add 
 - [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
 - [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

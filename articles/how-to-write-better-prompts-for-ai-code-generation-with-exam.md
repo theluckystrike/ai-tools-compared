@@ -256,6 +256,4 @@ Document your successful prompt patterns for recurring tasks. This creates a per
 - [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

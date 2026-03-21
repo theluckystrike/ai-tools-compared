@@ -317,7 +317,5 @@ Both platforms evolve rapidly—request current feature sets and pricing directl
 - [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
 - [Stable Diffusion ComfyUI vs Automatic1111: A Practical.](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

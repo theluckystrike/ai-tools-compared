@@ -270,7 +270,5 @@ print(analyze_churn_signal("Acme Corp", tickets))
 - [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
 - [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

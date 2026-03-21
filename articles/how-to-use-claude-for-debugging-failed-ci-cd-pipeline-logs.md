@@ -342,6 +342,4 @@ This is a common pattern: the error message points to a symptom (missing module)
 - [AI Powered Log Analysis Tools for Production Debugging.](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
 - [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

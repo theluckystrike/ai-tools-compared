@@ -304,6 +304,4 @@ All tools improve significantly when prompts explicitly mention the Java version
 - [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 - [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

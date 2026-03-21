@@ -237,6 +237,4 @@ This approach requires more local resources but provides complete independence f
 - [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
 - [Cursor AI Model Selection Guide: Which Model for Which.](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

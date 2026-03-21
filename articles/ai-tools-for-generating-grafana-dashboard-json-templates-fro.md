@@ -292,7 +292,5 @@ providers:
 - [Best AI Assistant for Building Grafana Dashboard Panels.](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

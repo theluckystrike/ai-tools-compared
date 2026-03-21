@@ -254,6 +254,4 @@ The transition from Copilot to Codeium requires an adjustment period, but instal
 - [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 - [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

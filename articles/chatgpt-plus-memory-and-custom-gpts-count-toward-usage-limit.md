@@ -343,6 +343,4 @@ If memory and Custom GPTs are consuming your entire quota:
 - [ChatGPT Plugins Replacement: Custom GPTs Pricing for.](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

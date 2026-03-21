@@ -361,6 +361,4 @@ Genesys tends to have higher base costs but includes more AI capabilities in cor
 - [Best AI Tools for Image Data Analysis: A Developer Guide](/ai-tools-compared/best-ai-tools-for-image-data-analysis/)
 - [Talkdesk vs Five9: AI Contact Center Comparison for.](/ai-tools-compared/talkdesk-vs-five9-ai-contact-center/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

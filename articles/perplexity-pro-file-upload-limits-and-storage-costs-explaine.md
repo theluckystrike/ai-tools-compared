@@ -291,7 +291,7 @@ When working with file uploads, you may encounter specific error codes:
 
 - 413 Payload Too Large: File exceeds the 25 MB limit
 
-- 429 Too Many Requests: Monthly or rate limit exceeded 
+- 429 Too Many Requests: Monthly or rate limit exceeded
 
 - 422 Unprocessable Entity: File format not supported
 
@@ -325,7 +325,5 @@ def handle_upload_error(response):
 - [Perplexity API Pricing vs Pro Subscription: Which Is.](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
 - [Perplexity Spaces Collaboration Feature: Free vs Pro Limits Explained](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
 - [Does Cursor Pro Charge Extra for Large File Indexing in.](/ai-tools-compared/does-cursor-pro-charge-extra-for-large-file-indexing-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

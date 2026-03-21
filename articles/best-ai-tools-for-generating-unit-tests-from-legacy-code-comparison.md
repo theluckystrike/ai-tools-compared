@@ -61,7 +61,7 @@ Copilot is the most accessible option because it lives in your IDE and integrate
 Cursor is a full IDE built on VSCode that uses AI not just for suggestions but for instruction-based generation.
 
 **Strengths:**
-- Can generate entire test files with a simple instruction ("Generate comprehensive tests for this function")
+- Can generate entire test files with a simple instruction ("Generate tests for this function")
 - Multi-file understanding allows it to understand dependencies and mock requirements
 - Chat interface makes it easy to refine tests iteratively
 - Native support for modern testing patterns (mocks, fixtures, factories)
@@ -97,7 +97,7 @@ Claude excels at architectural understanding and generating tests for complex, i
 
 **Cost:** $3-20/month subscription, or $0.003/1K input tokens + $0.015/1K output tokens via API.
 
-**Best for:** Teams analyzing large modules, understanding existing tests, and generating comprehensive test strategies.
+**Best for:** Teams analyzing large modules, understanding existing tests, and generating test strategies.
 
 ### Diffblue
 
@@ -337,7 +337,7 @@ Best tool: **Copilot** (or Cursor)
 
 1. As you refactor legacy code, add tests using IDE suggestions
 2. Each commit adds test coverage for modified methods
-3. Over time, legacy code gets comprehensive coverage without disrupting other work
+3. Over time, legacy code gets coverage without disrupting other work
 
 Time: Ongoing, integrated into normal development workflow.
 

@@ -258,7 +258,5 @@ When using AI for changelog generation, watch for these issues:
 - [How to Use AI to Create Edge Case Test Scenarios from API Error Documentation](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

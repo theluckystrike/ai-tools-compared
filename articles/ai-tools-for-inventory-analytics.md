@@ -411,6 +411,4 @@ Avoid these when implementing AI inventory analytics:
 - [AI Tools for Social Media Analytics: A Practical Guide.](/ai-tools-compared/ai-tools-for-social-media-analytics/)
 - [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

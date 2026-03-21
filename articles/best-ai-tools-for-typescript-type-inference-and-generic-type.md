@@ -335,8 +335,6 @@ The best approach when learning TypeScript generics is to use AI tools not just 
 - [Best AI Tools for Python NumPy and Scientific Computing.](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
 - [Best AI Tools for Rust Web Development with Axum.](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

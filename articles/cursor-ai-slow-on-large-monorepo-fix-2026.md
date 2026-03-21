@@ -288,6 +288,4 @@ Large monorepos push AI tools to their limits, but with proper configuration, Cu
 - [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
 - [ChatGPT Slow Response Fix 2026: Complete Troubleshooting.](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

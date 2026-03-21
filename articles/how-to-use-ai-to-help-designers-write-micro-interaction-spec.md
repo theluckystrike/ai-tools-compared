@@ -298,6 +298,4 @@ The goal is not to replace designer judgment but to accelerate the documentation
 - [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 - [Best AI Assistant for Designers Writing User Journey.](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

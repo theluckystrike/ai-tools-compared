@@ -354,7 +354,5 @@ Cursor catches this pattern and suggests returning `Result<Config, ConfigError>`
 - [Best AI Tools for Writing Idiomatic Rust Error Handling.](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 - [Cursor vs Copilot for Implementing Stripe Payment.](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

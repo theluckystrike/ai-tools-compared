@@ -243,6 +243,4 @@ You can also time your coding sessions. With properly configured AI suggestions,
 - [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 - [How Context Window Size Affects AI Code Suggestions in.](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

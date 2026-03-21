@@ -130,7 +130,7 @@ class AsyncTaskScheduler:
 ```
 
 
-Cursor's scheduler implementation handles the basic case well, though Claude Code would typically add more robust error handling with `asyncio.TaskGroup`.
+Cursor's scheduler implementation handles the basic case well, though Claude Code would typically add more strong error handling with `asyncio.TaskGroup`.
 
 
 
@@ -262,7 +262,5 @@ This pattern demonstrates proper queue-based concurrency that AI tools can help 
 - [How to Use AI to Debug Race Conditions in Python Asyncio.](/ai-tools-compared/how-to-use-ai-to-debug-race-conditions-in-python-asyncio-concurrent-tasks/)
 - [Best AI for Writing Pytest Asyncio Tests for WebSocket.](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
 - [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

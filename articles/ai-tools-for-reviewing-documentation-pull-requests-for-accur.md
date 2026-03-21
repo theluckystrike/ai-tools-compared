@@ -302,7 +302,5 @@ Flag any instances where we use different terms for the same concept.
 - [AI Tools for Reviewing Terraform Plans Before Applying.](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

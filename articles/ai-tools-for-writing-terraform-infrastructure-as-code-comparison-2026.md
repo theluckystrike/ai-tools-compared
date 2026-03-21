@@ -23,7 +23,7 @@ AI tools encode best practices directly into code generation. Instead of learnin
 
 The second benefit is validation. Good AI tools catch common misconfigurations: missing security group rules, insufficient IAM permissions, unencrypted databases, and over-provisioned resources. These validations prevent post-deployment remediation.
 
-## Comprehensive Tool Comparison
+## Tool Comparison
 
 ### GitHub Copilot for Infrastructure
 
@@ -180,7 +180,7 @@ Pulumi is a full Infrastructure-as-Code platform with AI-assisted code generatio
 - Can ask "create a Kubernetes cluster with monitoring" and get working Python code
 - Built-in policy enforcement and cost management
 - Integrated with Pulumi deployment pipeline
-- Supports multi-cloud (AWS, Azure, GCP) seamlessly
+- Supports multi-cloud (AWS, Azure, GCP)
 - AI understands Pulumi-specific concepts like stacks and configuration
 
 **Limitations:**

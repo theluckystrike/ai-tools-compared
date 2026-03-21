@@ -261,6 +261,4 @@ Experiment with both model families in your workflow. Track your credit consumpt
 - [Cursor Pro Slow Model vs Fast Model: Credits System.](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
 - [How to Move Tabnine AI Models When Switching to Supermaven](/ai-tools-compared/how-to-move-tabnine-ai-models-when-switching-to-supermaven/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

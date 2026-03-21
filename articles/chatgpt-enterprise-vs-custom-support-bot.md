@@ -253,6 +253,4 @@ For many organizations, a hybrid approach—ChatGPT Enterprise for general inqui
 - [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
 - [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

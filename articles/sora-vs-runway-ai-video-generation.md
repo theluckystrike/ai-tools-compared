@@ -278,7 +278,7 @@ def get_cached_video(prompt_hash):
 
 
 
-Robust applications require proper error handling:
+strong applications require proper error handling:
 
 
 
@@ -388,8 +388,6 @@ RUNWAY_API_KEY = os.environ.get("RUNWAY_API_KEY")
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

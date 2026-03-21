@@ -286,7 +286,5 @@ AI tools have genuinely improved the workflow creation experience. What once req
 - [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
 - [How to Use AI to Optimize GitHub Actions Workflow Run Times](/ai-tools-compared/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

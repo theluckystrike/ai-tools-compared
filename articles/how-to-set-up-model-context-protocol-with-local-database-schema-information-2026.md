@@ -268,7 +268,5 @@ Setting up MCP with local database schema information transforms your AI assista
 - [How to Set Up Model Context Protocol for Feeding.](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
 - [How to Set Up Model Context Protocol for Feeding Jira.](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

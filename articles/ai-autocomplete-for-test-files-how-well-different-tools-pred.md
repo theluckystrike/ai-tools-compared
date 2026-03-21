@@ -317,7 +317,5 @@ Tools like Claude Code excel in this iterative loop because you can ask follow-u
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 - [How to Use AI to Create Edge Case Test Scenarios from API Error Documentation](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

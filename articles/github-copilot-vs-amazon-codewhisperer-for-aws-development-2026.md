@@ -381,7 +381,7 @@ For enterprise with multiple developers: **CodeWhisperer Free tier** (if suffici
 - Free tier meets your usage needs
 
 **Hybrid approach:**
-Use CodeWhisperer for infrastructure (CDK, CloudFormation) and Copilot for application code (Lambda, policies). Many teams leverage both.
+Use CodeWhisperer for infrastructure (CDK, CloudFormation) and Copilot for application code (Lambda, policies). Many teams use both.
 
 ## Practical Metrics for Your Decision
 

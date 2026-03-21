@@ -281,7 +281,5 @@ Long cells can contain line breaks, but keep rows consistent for readability.
 - [How to Use AI to Help DevRel Teams Create Video Tutorial Scripts and Screen Recordings](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
 - [Best AI Tool for Software Engineers Code Review 2026](/ai-tools-compared/best-ai-tool-for-software-engineers-code-review-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -300,7 +300,5 @@ Review these metrics quarterly and adjust configurations as your codebase evolve
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [Best Practices for Using AI Coding Tools in HIPAA.](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -313,6 +313,4 @@ The learning curve varies significantly between tools. ECS Copilot and Railway o
 - [AI Powered Incident Response Tools for DevOps Teams Compared](/ai-tools-compared/ai-powered-incident-response-tools-for-devops-teams-compared/)
 - [AI Tools for Automated Infrastructure Drift Detection.](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -295,7 +295,5 @@ For developers building image generation into products, the API provides the nec
 - [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 - [DALL-E Image Generation Failed: How to Retry](/ai-tools-compared/dalle-image-generation-failed-how-to-retry/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -231,6 +231,4 @@ Many developers use both: ChatGPT Free for quick questions and iterations, Claud
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

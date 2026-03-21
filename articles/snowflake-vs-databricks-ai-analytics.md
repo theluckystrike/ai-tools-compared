@@ -345,7 +345,5 @@ The platforms converge on features over time. But the underlying architectural p
 - [Lakehouse vs Data Warehouse for AI Workloads: A.](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
 - [Jasper AI vs Writer.com for Enterprise Writing: A Developer's Comparison](/ai-tools-compared/jasper-ai-vs-writer-com-enterprise-writing-compared/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

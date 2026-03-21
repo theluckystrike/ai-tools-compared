@@ -146,7 +146,7 @@ The break-even point occurs around year 7.5 with Filmora if subscription prices 
 - No subscription fees: $0
 - Apple hardware requirement (if not already owned): $2,000-3,500
 - Learning curve: 20-40 hours of training
-- Plugin ecosystem rarely needed (included tools comprehensive)
+- Plugin ecosystem rarely needed (included tools )
 
 **Filmora Hidden Costs**:
 - Annual subscription recurring: $89.99/year per license

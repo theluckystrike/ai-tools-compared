@@ -305,7 +305,5 @@ Most Python code never needs metaclasses. If you're unsure, decorators usually s
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type.](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
 - [Best AI Assistant for QA Engineers Writing Test Coverage.](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -236,6 +236,4 @@ An effective acceptable use policy for AI coding assistants balances security re
 - [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 - [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

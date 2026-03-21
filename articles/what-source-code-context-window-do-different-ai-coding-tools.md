@@ -231,36 +231,6 @@ Enterprise requirements: GitHub Copilot Business and CodeWhisperer offer organiz
 
 
 
-## Summary of Context Windows
-
-
-
-| Tool | Approximate Context | Processing Location |
-
-|------|---------------------|---------------------|
-
-| GitHub Copilot | 1,500-4,000 tokens | OpenAI servers |
-
-| Codeium | 1,000-2,000 tokens | Codeium servers |
-
-| Tabnine Cloud | 1,000-2,000 tokens | Tabnine servers |
-
-| Tabnine Local | Full file | Local machine |
-
-| Claude Code | Up to 200,000 tokens | Anthropic servers / Local |
-
-| CodeWhisperer | 1,000-1,500 tokens | AWS servers |
-
-| Cursor | Up to 100,000+ tokens | Claude/OpenAI servers |
-
-
-
-Understanding these differences helps you select tools that align with your privacy requirements and workflow needs. Many teams use multiple tools for different purposes, using large-context tools for exploration while using faster tools for routine autocomplete tasks.
-
-
-
-
-
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -269,8 +239,6 @@ Understanding these differences helps you select tools that align with your priv
 - [How Context Window Size Affects AI Code Suggestions in.](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 - [How to Audit What Source Code AI Coding Tools Transmit.](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 - [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

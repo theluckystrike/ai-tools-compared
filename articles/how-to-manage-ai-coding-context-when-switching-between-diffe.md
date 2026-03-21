@@ -149,7 +149,7 @@ If your AI tool supports it, maintain separate conversation threads for major fe
 
 - Conversation 1: Authentication feature development
 
-- Conversation 2: Payment processing implementation 
+- Conversation 2: Payment processing implementation
 
 - Conversation 3: General debugging and improvements
 
@@ -270,7 +270,5 @@ The key principle remains consistent: make context transitions explicit rather t
 - [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
 - [How to Manage AI Coding Context Across Multiple Related.](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 - [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

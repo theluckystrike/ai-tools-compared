@@ -312,6 +312,4 @@ For developers who prioritize IDE integration and don't mind subscriptions, Curs
 - [Best AI Coding Assistant for Under $5 Per Month](/ai-tools-compared/best-ai-coding-assistant-for-under-5-dollars-per-month/)
 - [Best AI Coding Tool Free Trial Longest No Credit Card](/ai-tools-compared/best-ai-coding-tool-free-trial-longest-no-credit-card/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

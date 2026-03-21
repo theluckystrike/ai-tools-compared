@@ -292,7 +292,5 @@ AI autocomplete continues to improve rapidly, with tools adding better command r
 - [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 - [How to Use AI Inline Completion for Writing Function.](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -295,6 +295,4 @@ Both tools improve dramatically with clear, descriptive comments in your Terrafo
 - [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

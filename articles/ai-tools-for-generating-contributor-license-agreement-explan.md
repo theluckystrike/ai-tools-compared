@@ -231,7 +231,7 @@ Certain CLA provisions consistently cause confusion:
 
 **Grant of Rights** - Explains what permissions you're giving the project
 
-**Intellectual Property** - Covers patent and trademark considerations 
+**Intellectual Property** - Covers patent and trademark considerations
 
 **Representations and Warranties** - What you're claiming about your contributions
 
@@ -253,8 +253,6 @@ AI excels at breaking down each of these into practical terms developers can und
 - [Best AI-Powered Platform Engineering Tools for Developer.](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 - [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 - [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

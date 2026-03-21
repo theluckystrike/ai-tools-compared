@@ -229,7 +229,5 @@ When your drag-and-drop implementation has issues, both tools can help identify 
 - [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 - [Copilot vs Cursor for Implementing Server-Sent Events in.](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}
