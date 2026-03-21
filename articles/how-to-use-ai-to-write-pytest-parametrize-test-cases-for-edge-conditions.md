@@ -199,6 +199,89 @@ def test_find_unique(items, expected):
 Notice how the AI identifies None, zero, and empty string as distinct edge cases—all important for thorough testing.
 
 
+## Crafting Prompts That Get Better Results
+
+
+The quality of AI-generated test cases depends heavily on how you phrase your prompt. Vague prompts produce generic tests; specific prompts produce thorough parametrize sets tailored to your function's logic.
+
+A weak prompt: "Write tests for my sort function."
+
+A stronger prompt: "Write pytest parametrize test cases for this sort function that accepts a list of integers. It should handle: an empty list, a single-element list, a list already in ascending order, a list in descending order, a list with duplicate values, a list with negative numbers mixed with positive, and a list containing the same value repeated. For each case, show the input list and the expected sorted output."
+
+The stronger prompt specifies the function type, the domain of inputs, and the categories of edge cases. The AI can generate meaningful parameters rather than guessing what matters.
+
+When working on string functions, explicitly mention: encoding issues, leading/trailing whitespace, mixed case, and strings containing only whitespace. When working on date/time functions, mention: timezone boundaries, leap year handling, month-end dates, and Unix epoch zero. Domain knowledge embedded in your prompt directly improves coverage.
+
+
+## Using AI to Test Exception Handling
+
+
+Many functions raise exceptions under certain conditions. AI assistants can generate parametrize tests that verify both the happy path and error conditions in the same test function using `pytest.raises` as a context manager.
+
+
+```python
+def parse_age(value: str) -> int:
+    """Parse age from string. Raises ValueError for invalid input."""
+    age = int(value)
+    if age < 0 or age > 150:
+        raise ValueError(f"Age {age} out of valid range")
+    return age
+```
+
+
+Prompt the AI: "Write parametrize tests for parse_age. Cover: valid ages like 0, 1, 99, 150; invalid strings like 'abc', '', '-'; out-of-range integers like -1 and 151; edge values at the boundary."
+
+AI-generated output:
+
+
+```python
+import pytest
+
+@pytest.mark.parametrize("value,expected_result,raises", [
+    ("0", 0, None),
+    ("1", 1, None),
+    ("99", 99, None),
+    ("150", 150, None),
+    ("abc", None, ValueError),
+    ("", None, ValueError),
+    ("-1", None, ValueError),
+    ("151", None, ValueError),
+    ("-0", 0, None),
+])
+def test_parse_age(value, expected_result, raises):
+    if raises:
+        with pytest.raises(raises):
+            parse_age(value)
+    else:
+        assert parse_age(value) == expected_result
+```
+
+
+This pattern—using a `raises` parameter to control whether the test expects an exception—is a clean way to test both success and failure paths without duplicating test logic.
+
+
+## Parametrize IDs for Readable Test Output
+
+
+When you run parametrize tests, pytest generates IDs like `test_validate_email[email0-expected0]` by default. AI assistants can add descriptive IDs that make test failures easier to diagnose.
+
+
+```python
+@pytest.mark.parametrize("email,expected", [
+    pytest.param("", False, id="empty_string"),
+    pytest.param(None, False, id="none_input"),
+    pytest.param("test@example.com", True, id="valid_email"),
+    pytest.param("@example.com", False, id="missing_local_part"),
+    pytest.param("test@", False, id="missing_domain"),
+])
+def test_validate_email_with_ids(email, expected):
+    assert validate_email(email) == expected
+```
+
+
+When a test fails, the output now reads `FAILED test_validate_email_with_ids[missing_local_part]` instead of a numeric index — immediately identifying the problem without needing to inspect parameter lists. Ask the AI to add `id=` arguments whenever generating parametrize cases.
+
+
 ## Best Practices for AI-Generated Tests
 
 
