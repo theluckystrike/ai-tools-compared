@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/
 categories: [guides]
 tags: [ai-tools-compared, tools, troubleshooting, artificial-intelligence, api]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---

@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/
 categories: [guides]
 tags: [ai-tools-compared, dbt, data-quality, ai, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
