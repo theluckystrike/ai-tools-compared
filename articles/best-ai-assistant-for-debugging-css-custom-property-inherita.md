@@ -224,7 +224,130 @@ Strong indicators of a capable assistant include: immediate recognition of the `
 
 Avoid assistants that suggest removing the shadow DOM or using inline styles as a first resort. These workarounds defeat the purpose of using web components and create maintenance problems.
 
+## Debugging Workflow with AI Assistance
 
+Here's an effective approach when debugging CSS custom property issues:
+
+**Step 1: Isolate the problem**
+Describe to the AI exactly what you see: "My button component has a `--btn-color` variable set in light DOM via `my-button { --btn-color: red; }`, but the button appears gray inside the shadow DOM."
+
+**Step 2: Show the structure**
+Include both the custom element and usage. The AI needs to see what's in the shadow tree and what's in the light tree.
+
+**Step 3: Ask for specific diagnosis**
+Rather than "why doesn't this work?" ask "Does this shadow encapsulation boundary prevent custom property inheritance? What's the correct syntax to expose `--btn-color` to internal elements?"
+
+This specificity triggers AI tools to explain the encapsulation mechanism rather than just suggesting quick fixes.
+
+## Testing Your Fixes
+
+After AI suggests a solution, verify it works:
+
+```javascript
+// Test harness for custom property inheritance
+const testComponent = document.createElement('themed-button');
+testComponent.style.setProperty('--theme-color', '#ff6600');
+document.body.appendChild(testComponent);
+
+// Check if the variable is accessible in shadow DOM
+const shadowButton = testComponent.shadowRoot.querySelector('button');
+const computedStyle = window.getComputedStyle(shadowButton);
+const themeColor = computedStyle.getPropertyValue('--theme-color').trim();
+
+console.log('Theme color in shadow DOM:', themeColor);
+console.assert(themeColor === '#ff6600', 'Variable not inherited!');
+```
+
+Use this test to validate that AI-suggested fixes actually work, not just theoretically.
+
+## Browser Compatibility Considerations
+
+Different browsers handle custom property inheritance in shadow DOM with subtle differences:
+
+| Scenario | Chrome | Firefox | Safari | Edge |
+|----------|--------|---------|--------|------|
+| Basic custom property in :host | Full | Full | Full | Full |
+| --inherit keyword | Full | Full | Partial | Full |
+| Computed style in shadow | Full | Full | Full | Full |
+| Slotted element variable access | Full | Full | Full | Full |
+| Constructible stylesheets + variables | Full | Full | Partial | Full |
+
+Test in Safari and Firefox if your application targets those browsers. AI tools sometimes recommend patterns that work in Chrome but fail elsewhere.
+
+## Advanced Pattern: Theming System
+
+When AI helps you build a complete theming system for web components, include clear specifications:
+
+```javascript
+// Expected contract for themed components
+class ThemedComponentContract {
+  // These variables should be available to all themed components
+  static AVAILABLE_VARIABLES = [
+    '--primary-color',
+    '--secondary-color',
+    '--background-color',
+    '--text-color',
+    '--border-radius',
+    '--shadow-depth'
+  ];
+
+  // Test that theme is applied correctly
+  static validateTheme(componentElement) {
+    const shadowRoot = componentElement.shadowRoot;
+    return this.AVAILABLE_VARIABLES.every(varName => {
+      const computed = window.getComputedStyle(shadowRoot.host)
+        .getPropertyValue(varName);
+      return computed.trim().length > 0;
+    });
+  }
+}
+```
+
+Having a clear contract helps AI understand what "correct" looks like for your theme system.
+
+## When AI Gets It Wrong
+
+Common misdiagnoses AI makes:
+
+1. **Suggests removing shadow DOM entirely** - Wrong. The encapsulation is intentional.
+2. **Recommends using CSS-in-JS instead** - Wrong. CSS custom properties are the right solution.
+3. **Proposes inline event listeners for styling** - Wrong. This defeats the purpose of components.
+4. **Suggests ::part() for all styling** - ::part() is useful but not a replacement for custom properties.
+
+When AI suggests one of these, correct it firmly: "I need to keep the shadow DOM for encapsulation. Focus on solutions that work within shadow boundaries."
+
+## Building Reusable Component Patterns
+
+Ask AI for patterns you can reuse across multiple components:
+
+```javascript
+// Base pattern for themed components
+class ThemedElement extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  connectedCallback() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          --component-primary: var(--theme-primary, #3b82f6);
+          --component-secondary: var(--theme-secondary, #10b981);
+          --inherit;
+        }
+        .root {
+          background: var(--component-primary);
+          color: var(--component-secondary);
+        }
+      </style>
+      <div class="root"><slot></slot></div>
+    `;
+  }
+}
+```
+
+Document this pattern and reference it when asking AI to generate new themed components. Consistency improves dramatically.
 
 ## Related Reading
 

@@ -223,7 +223,116 @@ def generate_consistent_images(style_elements, count):
 
 This workflow uses describe's free operation to inform generation decisions, then spends credits only on refined prompts.
 
+## Advanced Describe Strategies for Developers
 
+For developers building Midjourney workflows, consider these optimization patterns:
+
+**Batch describe operations:** If you're analyzing multiple reference images, run all describe operations first. This costs nothing but provides comprehensive style data for informed generation decisions.
+
+**Describe feedback loop:** Use describe results to guide iterative refinement. Describe your generated image, compare the extracted prompts to your intent, then re-generate with adjusted parameters. This reduces wasted generation quota.
+
+**Building prompt libraries:** Create internal libraries of describe outputs from successful images. Tag them by style, subject, mood, or medium. These become reusable foundations for new projects at zero cost.
+
+## Cost Optimization Comparison
+
+| Strategy | Cost | Speed | Quality |
+|----------|------|-------|---------|
+| Generate first, iterate | High | Slow | Variable |
+| Describe first, then generate | Medium | Moderate | High |
+| Describe multiple refs, synthesize | Low | Fast | Excellent |
+| Pure generation without describe | Highest | Fastest | Inconsistent |
+
+The "describe first" approach typically saves 30-40% on generation costs while improving consistency.
+
+## Real Example: Product Design Workflow
+
+A product design team wants to generate UI mockups with a consistent visual style:
+
+**Old approach (describe-unaware):**
+1. Generate 10 image variations ($0.80 in credits)
+2. Cherry-pick the best one
+3. Describe what you liked (costs nothing)
+4. Use that description for new variations
+5. Repeat until you find the right direction
+Total cost: $2-4 per final design, with 5-8 iterations
+
+**New approach (describe-first):**
+1. Find a reference image (existing brand asset, competitor example)
+2. Run /describe on it (free)
+3. Take the 4 returned prompts as starting points
+4. Generate 4 variations based on those prompts ($0.32 in credits)
+5. Pick the best; describe it again if refining
+6. Done with 1-2 more generations if needed
+Total cost: $0.40-0.60 per final design, with 2-3 iterations
+
+The describe-first approach costs 75% less while producing more consistent results because it works from extracted visual patterns rather than guessing at what the AI understood.
+
+## API Integration Considerations
+
+If building automation that calls Midjourney:
+
+```python
+# Pseudocode for cost-aware workflow
+def generate_product_image(concept, reference_image=None):
+    if reference_image:
+        # Free operation - always do this first
+        style_prompts = midjourney.describe(reference_image)
+        prompts_to_try = enhance_with_concept(style_prompts, concept)
+    else:
+        prompts_to_try = [concept]
+
+    # Generate with best prompts - this costs credits
+    best_result = None
+    for prompt in prompts_to_try[:3]:  # Limit iterations
+        result = midjourney.generate(prompt)
+        if is_acceptable_quality(result):
+            best_result = result
+            break
+
+    return best_result
+
+def is_acceptable_quality(image):
+    # Verify describe output matches intent before accepting
+    desc = midjourney.describe(image)
+    return score_describe_output(desc) > threshold
+```
+
+This pattern leverages the free describe operation to validate results before committing to them.
+
+## Billing Edge Cases
+
+Be aware of these nuances:
+
+**Slash commands:** Using /describe costs nothing. Using /settings or /info also costs nothing. Only image-generation commands (/imagine, /remix with generation, /vary) consume quota.
+
+**Upscale operations:** The U1-U4 buttons for upscaling do consume quota. Describe on an upscaled image is free, but the upscaling itself isn't.
+
+**Variations:** The V1-V4 buttons for generating variations consume quota. Use describe first to understand what you're varying, then decide if the variation is worth the credit cost.
+
+## Practical Quota Management
+
+For users and teams managing monthly quotas:
+
+```
+Monthly allocation: 200 fast hours
+
+Week 1: Explore concepts
+- 8 describe operations (free)
+- 20 generation iterations (5 fast hours)
+
+Week 2-3: Refine winning directions
+- 12 describe operations (free)
+- 40 generation iterations (10 fast hours)
+
+Week 4: Final polish and variations
+- 6 describe operations (free)
+- 60 generation iterations (15 fast hours)
+
+Total: 26 describe ops (free), 120 generations (30 fast hours)
+Remaining quota: 170 fast hours available
+```
+
+This allocation prioritizes understanding and refinement before committing heavy quota to generation.
 
 ## Related Reading
 

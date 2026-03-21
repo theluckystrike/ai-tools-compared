@@ -217,12 +217,45 @@ Most effective approach: Use Claude for initial test suite architecture, then us
 | Mock strategy suggestion | Excellent | Fair | Fair | Good |
 | Cost per test generation | Higher | Lower | Included | Included |
 
+## Scaling AI-Assisted TDD Across Teams
 
+As teams grow, AI-assisted TDD requires coordination. Establish these practices:
+
+**Standardize your test prompt templates.** Create shared prompts that your team reuses. Include specifications like minimum coverage thresholds, expected error cases, and naming conventions. This reduces variation in AI output quality across team members.
+
+**Review AI-generated tests as code.** Treat them the same as human-written tests in code review. Check for correct assertions, proper mocking, and alignment with requirements. This catches AI errors before they embed in your test suite.
+
+**Track metrics over time.** Monitor test escape rates (bugs found in production that tests should have caught). Compare before and after adopting AI TDD to measure improvement. Most teams see 20-35% reduction in escape rates once the workflow matures.
+
+**Document test patterns your team discovers.** When an AI generates particularly effective test patterns, document them in your team wiki. Reference these patterns in future AI prompts to improve consistency.
+
+## Practical Metrics to Track
+
+Establish measurement for AI-assisted TDD success:
+
+**Test coverage:** Aim for 70-85% code coverage for critical paths. Higher coverage becomes diminishing returns. AI tends to over-test, so review for redundancy.
+
+**Test execution time:** Target full suite under 10 minutes locally, under 15 minutes in CI. Use AI to parallelize tests where appropriate.
+
+**Defect density:** Track bugs per 1000 lines of production code. Healthy projects see 2-4 bugs per 1000 lines. AI-assisted TDD typically reduces this by 15-25%.
+
+**Development velocity:** Measure features shipped per sprint before and after implementing AI TDD. Most teams report 20-30% faster delivery after stabilizing the workflow (first 2-3 sprints are slower due to learning curve).
+
+**Test maintenance burden:** Count hours spent maintaining tests monthly. AI-assisted TDD should reduce this by automating test refactoring when implementations change.
+
+## Advanced Prompting Strategies
+
+As you mature with AI TDD, use advanced prompt techniques:
+
+**Context stacking:** Include failing test output in your prompt so AI understands what's broken, then ask it to suggest additional edge cases.
+
+**Example-driven prompts:** Show the AI one well-written test example from your project, then ask it to generate similar tests for a new function. Consistency improves dramatically.
+
+**Constraint specification:** Tell the AI the exact number of tests you want, the maximum assertions per test, and any forbidden patterns (like tightly-coupled mocks). This reduces AI drift toward over-engineered tests.
+
+**Multi-turn refinement:** Generate initial tests, then follow up with "These tests are too expensive to run. Suggest which assertions can use mocks instead." Let the AI improve its own output iteratively.
 
 ---
-
-
-
 
 
 ## Related Reading

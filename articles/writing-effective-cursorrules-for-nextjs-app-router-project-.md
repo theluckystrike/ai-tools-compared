@@ -221,8 +221,123 @@ After creating your `.cursorrules` file, Cursor automatically detects and applie
 
 For optimal results, keep your CursorRules focused and specific. Include examples that demonstrate your expected patterns. Review and update the rules as your project evolves, especially when adopting new libraries or changing architectural decisions. Well-crafted CursorRules transform Cursor from a generic coding assistant into a project-aware partner that generates code matching your exact specifications.
 
+## Advanced CursorRules Patterns
 
+Beyond basic structure, effective rules address common pain points:
 
+**Styling Strategy:**
+```markdown
+## Styling Guidelines
+- Use Tailwind CSS exclusively
+- Avoid inline styles
+- Create reusable component classes in globals.css
+- Use CSS modules for component-specific styles (Button.module.css)
+- Color palette: primary=#3b82f6, secondary=#10b981, danger=#ef4444
+```
+
+**Error Handling:**
+```markdown
+## Error Handling
+- All try-catch blocks must include logging
+- Server functions should return {success: boolean, error?: string}
+- Use custom AppError class for application-specific errors
+- Database errors should be logged but never exposed to clients
+```
+
+**Authentication and Authorization:**
+```markdown
+## Auth Guidelines
+- Use NextAuth.js for session management
+- Check auth in middleware.ts for route protection
+- All API routes must validate session before processing
+- Store user ID in session; never trust client-provided IDs
+- Admin routes require explicit role check in server action
+```
+
+## Example CursorRules for Data-Heavy App
+
+```markdown
+# Finance App CursorRules
+
+## Numbers and Calculations
+- Always use Decimal.js for currency, never floating point
+- Round currency to 2 decimals only at display time
+- Import Decimal from decimal.js; always new Decimal(value)
+- Test calculations with edge cases (0, very large, negative)
+
+## Database Queries
+- Always use transactions for multi-step operations
+- Index any column used in WHERE clause
+- Use connection pooling; never create direct connections
+- Cache read-heavy queries with 5-minute TTL
+
+## Forms
+- Use React Hook Form for all forms
+- Validate with Zod schemas matching server-side validation
+- Show field-level errors inline
+- Disable submit button while loading
+```
+
+## Measuring CursorRules Effectiveness
+
+Track these metrics to evaluate your rules:
+
+**Rule relevance:** Monitor how often Cursor suggests code that violates your rules. If violations happen frequently, the rule isn't clear enough. Refine the language or add examples.
+
+**Time to acceptance:** Measure how often you accept AI suggestions unchanged vs. modify them. High modification rates indicate rules aren't translating to generated code.
+
+**Consistency across team:** If multiple developers use the same `.cursorrules`, track whether generated code is consistent. Inconsistency suggests rules aren't specific enough.
+
+**Code review friction:** Track how many AI-generated code segments get feedback in code review. Declining feedback over time indicates improving rule clarity.
+
+## Common CursorRules Mistakes to Avoid
+
+**Too vague:** "Use best practices" doesn't guide AI. "Use snake_case for database columns, enforce via lowercase() in migrations" does.
+
+**Too long:** Rules over 500 lines get ignored. Focus on high-impact patterns your team struggles with.
+
+**Too prescriptive:** Don't dictate every variable name. "Name state variables clearly" is weak. "State for feature flags should start with 'is': isMobileMenuOpen, isLoading" is actionable.
+
+**Never updated:** Stale rules mislead the AI. Review quarterly and update for new libraries, patterns, or architectural decisions.
+
+**Lack of examples:** Abstract rules produce abstract code. Include 2-3 inline code examples for every major guideline.
+
+## Integration with Team Workflow
+
+Make CursorRules a team asset:
+
+1. **Version control:** Commit `.cursorrules` to git. Review changes like any code.
+2. **Documentation:** Link to detailed explanation in your wiki for each rule section.
+3. **Onboarding:** Include CursorRules review in developer onboarding.
+4. **Feedback loop:** When code review identifies repeated issues, add a rule addressing that pattern.
+
+This transforms CursorRules from a personal customization into a shared tool for consistent code generation.
+
+## Performance Optimization Rules
+
+Add specific guidance for performance-critical Next.js patterns:
+
+```markdown
+## Performance Guidelines
+
+### Images
+- Use Next.js Image component exclusively
+- Provide width and height props always
+- Use priority={true} only for above-fold images
+- Set sizes prop for responsive images
+
+### Bundle Size
+- Keep route components under 50KB
+- Lazy load heavy components with dynamic()
+- Use RSC for data-heavy pages to avoid hydration bloat
+
+### Caching
+- Use revalidatePath for mutations
+- Set revalidate time in generateStaticParams
+- Cache external API calls at 5-minute minimum
+```
+
+These detailed patterns prevent AI from generating performance antipatterns.
 
 
 ## Related Reading
