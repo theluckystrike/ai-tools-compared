@@ -13,6 +13,8 @@ score: 8
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 ## Quick Decision Framework
 
 Choose **Gemini** if you deploy Gen 2 Cloud Functions frequently, want Secret Manager integration by default, and work primarily within the Google Cloud ecosystem. Choose **ChatGPT** if you need quick, straightforward deployment scripts with cross-platform CI/CD compatibility and prefer iterative refinement through conversation.
@@ -482,3 +484,4 @@ The quality gap between these tools has narrowed significantly. Your productivit
 - [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
