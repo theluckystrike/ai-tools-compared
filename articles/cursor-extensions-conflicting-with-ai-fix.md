@@ -29,6 +29,8 @@ Cursor's AI capabilities—including autocomplete, chat, and agent mode—operat
 
 Most conflicts fall into three categories: keybinding collisions where extensions remap Tab, Enter, or Ctrl+Space and interfere with AI triggers; language server conflicts where competing LSP implementations prevent AI from parsing your code correctly; and state interference where extensions modify editor state mid-session and disrupt AI context.
 
+Understanding which category your conflict belongs to determines the fastest fix. Keybinding conflicts are the most common and easiest to resolve. Language server conflicts are rarer but harder to diagnose because both the extension's LSP and Cursor's AI may appear to function partially — autocomplete works for some constructs but not others. State interference issues tend to be intermittent and session-specific, making them the hardest to reproduce reliably.
+
 
 ## Diagnostic Steps
 
@@ -49,7 +51,7 @@ Document exactly when the conflict occurs:
 - Does restarting Cursor resolve the issue temporarily?
 
 
-Recording these details helps isolate the cause.
+Recording these details helps isolate the cause. A conflict that appears only in `.tsx` files points to a TypeScript-specific extension or language server. A conflict that resolves after restart suggests state interference rather than a persistent configuration problem.
 
 
 ### Step 2: Test in Safe Mode
@@ -94,6 +96,9 @@ Common offenders include:
 - Theme extensions that modify editor behavior beyond visuals
 
 
+For faster isolation, use a binary search approach rather than re-enabling extensions one by one. Re-enable half your extensions at once, test, then narrow to the half that contains the conflict. This reduces a 20-extension diagnostic from 20 test cycles to about 5.
+
+
 ## Step-by-Step Fixes
 
 
@@ -116,6 +121,19 @@ Many extension conflicts stem from keybinding overrides. To fix:
 Tab: Accept AI suggestion
 Ctrl+L: Open AI chat
 Ctrl+K: Quick edit with AI
+```
+
+The most commonly overridden binding is Tab. Extensions like `TabNine`, `Tabnine`, `Codeium`, or even `Emmet` may claim Tab for their own completion behavior. When Tab is claimed by another extension, Cursor's ghost text suggestions appear but cannot be accepted. The fix is to delete the conflicting binding in `keybindings.json` rather than in the extension's own settings, which may reinstall the binding on update:
+
+```json
+// keybindings.json — explicitly remove competitor's Tab binding
+[
+  {
+    "key": "tab",
+    "command": "-extension.acceptCompletion",
+    "when": "editorTextFocus && suggestWidgetVisible"
+  }
+]
 ```
 
 
@@ -146,6 +164,8 @@ For example, if using both ESLint and a custom linter:
 }
 ```
 
+When you have both Pylance and a custom Python LSP active, you may notice that Cursor's AI generates code that the language server then marks with red squiggles — not because the code is wrong, but because the competing LSP interprets imports differently. Deactivating the secondary LSP resolves both the AI context issue and the spurious error highlighting simultaneously.
+
 
 ### Fix 3: Update or Reinstall Problematic Extensions
 
@@ -171,6 +191,8 @@ Corrupted extension state can mimic conflicts:
 rm -rf ~/.cursor/extensions/
 # Restart Cursor—extensions will reinstall
 ```
+
+Cache corruption most often occurs after Cursor updates its core, when extension host state from the previous version becomes incompatible with the new runtime. The symptom is usually that extensions worked before the update and fail immediately after — not after installing a new extension. Clearing the cache forces a clean reinstall of all extension state.
 
 
 ### Fix 5: Adjust Extension Permissions
@@ -229,6 +251,8 @@ If you need different extension sets for different projects:
 
 3. This reduces conflict surface area
 
+A practical profile setup for most developers is three profiles: a "minimal" profile with only essential extensions for pairing sessions and quick edits, a "full" profile with all extensions for regular development, and a "debug" profile with no third-party extensions for diagnosing AI issues. Switching profiles takes under 30 seconds and immediately narrows the diagnostic scope.
+
 
 ## Advanced Troubleshooting
 
@@ -249,6 +273,9 @@ Open the developer console (Help → Toggle Developer Tools) and check for error
 - Memory-related errors
 
 
+Filter the console output by the extension name you suspect. Each extension prefixes its log messages with its identifier, so `[pylance]` or `[esbenp.prettier-vscode]` in an error message points directly to the responsible party.
+
+
 ### Examine Network Traffic
 
 
@@ -259,6 +286,8 @@ Some AI features require network access. Ensure your firewall or VPN isn't block
 https://api.cursor.sh
 https://*.anthropic.com
 ```
+
+Corporate VPNs and proxy configurations sometimes block `*.anthropic.com` because Anthropic's domains are not yet in common enterprise allowlists. If AI chat works on a personal network but fails on corporate infrastructure, this is likely the cause rather than an extension conflict. Check with your network team to allowlist `api.anthropic.com` and `api.cursor.sh`.
 
 
 ### Reset Cursor Settings
@@ -299,6 +328,12 @@ An extension is consuming excessive resources. Use Task Manager to identify reso
 
 
 An extension conflict is causing memory exhaustion. Increase available memory or disable memory-intensive extensions.
+
+
+### Scenario: AI Works in Some Files But Not Others
+
+
+This almost always indicates a file-type-specific language server conflict. Check which extensions activate for that file type using the status bar's language indicator, then disable competing LSPs for that language.
 
 
 ## When to Seek Further Help
