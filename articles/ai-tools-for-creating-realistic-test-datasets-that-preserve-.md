@@ -85,7 +85,7 @@ Key capabilities include:
 
 ```sql
 -- Mockaroo can generate SQL with proper foreign keys
-INSERT INTO orders (user_id, total, created_at) VALUES 
+INSERT INTO orders (user_id, total, created_at) VALUES
 (1, 99.99, '2026-01-15'),
 (1, 149.50, '2026-02-20'),
 (2, 75.00, '2026-03-01');
@@ -97,6 +97,14 @@ INSERT INTO orders (user_id, total, created_at) VALUES
 
 
 This tool specializes in maintaining referential integrity across complex schemas. It analyzes your existing database structure and generates related data automatically.
+
+
+
+### 4. Using Claude or ChatGPT Directly
+
+
+
+For teams that prefer prompting an LLM rather than configuring a dedicated tool, Claude and ChatGPT can generate insert scripts when you paste your schema definition. A well-structured prompt like "Here is my PostgreSQL schema. Generate 50 users, 200 orders, and 500 order_items with valid foreign key relationships, realistic names, and US-format addresses" produces usable SQL output in seconds. The AI infers cardinality, respects NOT NULL constraints, and keeps timestamps logically ordered across related records.
 
 
 
@@ -118,12 +126,12 @@ Document your database structure including primary keys, foreign keys, and const
 
 ```sql
 -- Extract schema information from PostgreSQL
-SELECT 
-    tc.table_name, 
+SELECT
+    tc.table_name,
     kcu.column_name,
     ccu.table_name AS foreign_table_name,
     ccu.column_name AS foreign_column_name
-FROM information_schema.table_constraints AS tc 
+FROM information_schema.table_constraints AS tc
 JOIN information_schema.key_column_usage AS kcu
     ON tc.constraint_name = kcu.constraint_name
 JOIN information_schema.constraint_column_usage AS ccu
@@ -170,13 +178,13 @@ def validate_referential_integrity(cursor):
         "SELECT COUNT(*) FROM orders WHERE user_id NOT IN (SELECT id FROM users)",
         "SELECT COUNT(*) FROM order_items WHERE order_id NOT IN (SELECT id FROM orders)"
     ]
-    
+
     for query in queries:
         cursor.execute(query)
         orphan_count = cursor.fetchone()[0]
         if orphan_count > 0:
             raise ValueError(f"Found {orphan_count} orphaned records")
-    
+
     return True
 ```
 
@@ -211,6 +219,36 @@ def weighted_user_id(users):
 ```
 
 
+## Automating Test Data Refresh in CI/CD
+
+
+
+Test datasets go stale when your schema evolves. Integrating data generation into your CI/CD pipeline ensures tests always run against data that matches the current schema. Here is a pattern that works well with GitHub Actions:
+
+```yaml
+# .github/workflows/test-data.yml
+name: Refresh Test Data
+on:
+  push:
+    paths:
+      - 'migrations/**'
+jobs:
+  refresh-test-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply migrations
+        run: python manage.py migrate
+      - name: Generate fresh test data
+        run: python scripts/generate_test_data.py --rows 500
+      - name: Validate integrity
+        run: python scripts/validate_integrity.py
+```
+
+Triggering refresh on migration changes catches the most common source of stale test data: schema evolution that leaves existing fixtures pointing to the wrong column types or missing required fields.
+
+
+
 ## Choosing the Right Tool
 
 
@@ -219,21 +257,36 @@ Consider these factors when selecting a solution:
 
 
 
-| Factor | Consideration |
-
-|--------|---------------|
-
-| Schema Complexity | Complex relational models need strong integrity handling |
-
-| Volume Requirements | Some tools excel at millions of records |
-
-| Integration Needs | API access versus GUI-only solutions |
-
-| Privacy Sensitivity | Purely synthetic data versus anonymized production data |
+| Factor | GenerateData | Mockaroo | Datributa | LLM (Claude/ChatGPT) |
+|--------|-------------|----------|-----------|----------------------|
+| Schema Complexity | Moderate | Moderate | High | High (with full schema) |
+| Volume (rows) | Millions | Hundreds of thousands | Millions | Thousands per prompt |
+| API Access | Yes | Yes | Yes | Via API |
+| Integrity Handling | Manual config | Visual + config | Automated | Prompt-driven |
+| Privacy Compliance | Fully synthetic | Fully synthetic | Fully synthetic | Fully synthetic |
+| Cost | Free (OSS) | Freemium | Paid | Pay-per-use |
 
 
 
-For most projects, starting with Mockaroo's free tier provides adequate capabilities. Larger projects or those requiring strict integrity might benefit from Datributa or enterprise solutions.
+For most projects, starting with Mockaroo's free tier provides adequate capabilities. Larger projects or those requiring strict integrity might benefit from Datributa or enterprise solutions. Teams already using Claude or ChatGPT in their workflow often find direct LLM generation fast enough for moderate dataset sizes, especially during early development when schemas are still changing.
+
+
+
+## Frequently Asked Questions
+
+
+
+**Can I use AI-generated test data in GDPR-regulated environments?**
+Yes. Fully synthetic data generated by these tools contains no personal information derived from real individuals, so it falls outside GDPR's scope for personal data. However, verify that your tool does not use any production records as a seed for generation — if it samples real data to inform distributions, that sampling step itself may require compliance review.
+
+**How do I handle sequences and auto-increment IDs across multiple generated tables?**
+Most tools let you define the starting value and step size for auto-increment fields. When generating multiple tables in sequence, generate parent tables first, then reference their ID ranges when configuring child tables. For LLM-generated scripts, explicitly state the ID ranges in your prompt: "Generate users with IDs 1-100, then generate orders with user_id values drawn from that range."
+
+**What is the best approach for schemas with hundreds of tables?**
+Break the schema into domain clusters — for example, user management, product catalog, and order fulfillment — and generate data for each cluster independently. Combine the outputs and run integrity validation across clusters before loading. Datributa handles large schemas best because it analyzes the full schema graph before generating any rows.
+
+**How often should test datasets be refreshed?**
+Refresh whenever your schema changes through migrations. Stale fixtures are one of the most common causes of false-positive test passes — the test succeeds against old data structures while the application code assumes a new column exists. Automating refresh as part of your migration workflow, as shown in the CI/CD section above, eliminates this class of error entirely.
 
 
 
