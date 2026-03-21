@@ -50,6 +50,23 @@ Technical Writing Support: Look for tools that generate clear technical document
 Template Awareness: The best assistants know common open source contribution patterns—Developer Certificate of Origin (DCO), Contributor License Agreements (CLA), and joint venture frameworks.
 
 
+## AI Tool Comparison for Partnership Proposals
+
+
+| Capability | Claude | ChatGPT | Gemini | Copilot |
+|---|---|---|---|---|
+| License compatibility analysis | Excellent | Good | Good | Basic |
+| CLA/DCO template generation | Excellent | Good | Partial | Basic |
+| OpenAPI documentation | Good | Good | Good | Good |
+| Long-form proposal drafting | Excellent | Good | Good | Limited |
+| SPDX identifier recognition | Yes | Yes | Partial | No |
+| Dual-licensing explanation | Yes | Partial | Partial | No |
+| Custom instruction adherence | Yes | Yes | Yes | Partial |
+
+
+Claude leads on tasks that require synthesizing legal constraints with technical content. Its long context window lets it review an entire codebase's license headers, dependency manifests, and existing partnership agreements in a single session before drafting a proposal. ChatGPT performs well for standard templates and benefits from Canvas for iterative document editing. Gemini handles structured document generation capably but is less reliable on edge cases in license compatibility. Copilot is best suited for inline code-level documentation rather than long-form proposal drafting.
+
+
 ## Practical Example: Drafting a Partnership Proposal
 
 
@@ -185,19 +202,57 @@ external partnerships and enabling third-party integrations.
 ```
 
 
+## License Compatibility Quick Reference
+
+
+AI assistants frequently get asked to check whether two licenses can coexist in the same project or distribution. Here is the compatibility matrix for the most common open source license pairings:
+
+
+| Your License | Can Integrate MIT? | Can Integrate Apache 2.0? | Can Integrate GPL v3? | Can Integrate AGPL v3? |
+|---|---|---|---|---|
+| MIT | Yes | Yes | Only if your output is also GPL | Only if your output is AGPL |
+| Apache 2.0 | Yes | Yes | Only if your output is also GPL | Only if your output is AGPL |
+| GPL v2 | Yes | No (patent clauses conflict) | No (version mismatch) | No |
+| GPL v3 | Yes | Yes | Yes | Yes (AGPL is GPL-compatible) |
+| Proprietary | Yes | Yes | No | No |
+
+
+Claude correctly identifies these compatibility rules in most cases and flags the Apache 2.0 + GPL v2 incompatibility—a commonly missed edge case. ChatGPT handles the common cases correctly but occasionally misses version-specific nuances. Always have a legal professional confirm the analysis before signing agreements.
+
+
+## Step-by-Step Workflow: Drafting a Proposal with AI
+
+
+Follow this workflow to produce a complete partnership proposal efficiently:
+
+1. **Gather source documents.** Collect the target project's LICENSE file, CONTRIBUTING.md, any existing CLA, and your own company's standard partnership agreement template.
+
+2. **Load context into the AI.** Paste all documents into the AI session or attach them as files. For Claude or ChatGPT, use the file upload feature. Tell the AI: "Review these documents. We will be drafting a partnership proposal based on them."
+
+3. **Generate the license analysis section first.** Ask: "Identify any license compatibility issues between our codebase (Apache 2.0) and the target project's license. List incompatible clauses and suggested resolutions."
+
+4. **Draft the technical integration section.** Provide the target project's OpenAPI spec or README and ask the AI to summarize the integration points, authentication requirements, and data flow.
+
+5. **Generate the contribution terms.** Ask for a CLA or DCO based on the project's existing contributor model. If the project uses DCO, ask the AI to draft a DCO sign-off process for your contributors.
+
+6. **Write the executive summary last.** Once all technical and legal sections are complete, ask the AI to summarize the proposal in 3-5 sentences for executive stakeholders.
+
+7. **Iterate on tone and specificity.** Use follow-up prompts to adjust formality, add company-specific requirements, or expand sections that need more detail.
+
+
 ## Evaluating AI Assistants for This Use Case
 
 
 Not all AI assistants perform equally for open source partnership work. Consider testing these aspects:
 
 
-Context Window Size: Longer contexts allow the AI to review existing partnership agreements, license files, and codebases before generating proposals.
+Context Window Size: Longer contexts allow the AI to review existing partnership agreements, license files, and codebases before generating proposals. Claude's 200K token context handles even large dependency trees without truncation.
 
 
-Knowledge Cutoff: Verify the assistant's training data includes recent license updates and partnership frameworks.
+Knowledge Cutoff: Verify the assistant's training data includes recent license updates and partnership frameworks. The EUPL v1.2 and Business Source License (BSL) are examples of newer licenses that older training data may handle incorrectly.
 
 
-Custom Instruction Support: Look for tools that can follow detailed style guides and organizational templates.
+Custom Instruction Support: Look for tools that can follow detailed style guides and organizational templates. Claude and ChatGPT both support persistent system prompts or custom instructions that enforce your organization's document structure.
 
 
 ## Workflow Integration Tips
@@ -216,6 +271,9 @@ To maximize efficiency when drafting partnership proposals:
 
 
 4. Maintain templates: Save successful AI-generated proposals as templates for future use.
+
+
+5. Version control your proposals: Store final AI-assisted proposals in a git repository alongside your codebase. This creates an audit trail and makes future revisions easier to manage with AI assistance.
 
 
 ## Related Articles
