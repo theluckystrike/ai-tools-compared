@@ -43,6 +43,22 @@ Before implementing any AI solution, you need to identify what constitutes an es
 An effective escalation system combines multiple signals rather than relying on a single trigger point.
 
 
+## Tool Comparison: Leading AI Escalation Platforms
+
+
+Different platforms suit different team sizes and integration requirements. Here is a practical comparison of the major options:
+
+| Tool | Best For | AI Capabilities | Integration Depth | Pricing Model |
+|---|---|---|---|---|
+| Zendesk AI | Mid-to-large support teams | Sentiment analysis, auto-triage, intelligent routing | Native; REST API for custom flows | Per-agent per-month |
+| Freshdesk Freddy AI | SMB teams with Freshworks stack | Intent detection, response suggestions, escalation triggers | Deep within Freshworks suite | Tiered by agent count |
+| Intercom Fin AI | Product-led growth companies | Conversational AI, fallback-to-human escalation | Native chat + API webhooks | Per-resolution pricing |
+| Salesforce Einstein | Enterprise CRM-centric ops | Case classification, SLA prediction, sentiment scoring | Deep Salesforce ecosystem | Enterprise licensing |
+| Custom pipeline (OpenAI + ticketing) | Dev teams wanting full control | Fully customizable NLP and routing logic | Any ticketing system via API | Compute + API costs |
+
+For teams already using a CRM like Salesforce, the native Einstein approach minimizes integration overhead. For developers wanting maximum flexibility, building a custom pipeline against your ticketing system's API delivers the best long-term control.
+
+
 ## Building a Classification Pipeline
 
 
@@ -208,6 +224,42 @@ class EscalationAutomator:
 This automator handles the mechanics of escalation: determining where tickets go, notifying the right people, and tracking SLA deadlines.
 
 
+## Configuring Keyword Weight Dictionaries
+
+
+The keyword_weights dictionary is one of the highest-leverage configuration points in a custom pipeline. Weights should reflect both legal risk and customer impact. A well-tuned dictionary looks like this:
+
+```python
+KEYWORD_WEIGHTS = {
+    # Legal / compliance triggers — immediate escalation required
+    "lawsuit": 0.95,
+    "attorney": 0.95,
+    "legal action": 0.95,
+    "regulatory": 0.88,
+    "GDPR": 0.85,
+
+    # Churn signals — priority escalation
+    "cancel": 0.78,
+    "cancellation": 0.78,
+    "competitor": 0.72,
+    "switching to": 0.70,
+
+    # Operational urgency
+    "outage": 0.82,
+    "down": 0.65,
+    "broken": 0.60,
+    "urgent": 0.68,
+
+    # Sentiment indicators — monitor only
+    "disappointed": 0.55,
+    "frustrated": 0.58,
+    "unhappy": 0.52,
+}
+```
+
+Update these weights quarterly based on your false-positive audit results. A keyword scoring above 0.9 should almost always trigger immediate escalation; words between 0.5 and 0.65 should feed into the aggregate scoring rather than triggering escalation alone.
+
+
 ## Measuring Escalation Effectiveness
 
 
@@ -251,6 +303,34 @@ class EscalationMetrics:
             "pending_escalations": total - len(resolved)
         }
 ```
+
+
+## Pro Tips for Production Deployments
+
+
+**Start narrow, then expand.** Run the classifier in shadow mode for two weeks before it controls any real routing. Log every signal it generates and compare against what human agents actually escalated. This calibration phase cuts your false-positive rate significantly before you go live.
+
+**Use confidence thresholds, not hard rules.** A single keyword match at 0.6 confidence should never trigger an escalation by itself. Require at least two signals or a combined weighted score above 1.5 before auto-routing. This prevents edge-case misfires on phrases like "I hope this doesn't end up being a legal issue."
+
+**Cache customer context at ingest time.** Pull LTV, account age, and open ticket count when a ticket arrives, not when it gets classified. Real-time database lookups during classification add latency that compounds under load. Store this context in the ticket payload from the start.
+
+**Set SLA clock logic based on business hours, not wall-clock time.** An escalation created at 11 PM Friday should not breach SLA at 3 AM Saturday. Implement a business-hours calendar before calculating deadlines, or your on-call team will be paged unnecessarily.
+
+
+## Frequently Asked Questions
+
+
+**What sentiment score threshold should I use for immediate escalation?**
+Start at 0.75 frustration score and adjust based on your false-positive audit. Teams with higher ticket volume typically raise this to 0.82 to reduce alert fatigue. Teams handling enterprise accounts often lower it to 0.70 because individual account risk is higher.
+
+**How do I handle multi-channel escalations (chat, email, phone)?**
+Assign a unified customer ID across channels and maintain a rolling contact-frequency counter per customer, not per channel. A customer who chatted yesterday and emailed today has two contacts — that should factor into your repeat-contact signal even if the channels are different.
+
+**Can I use this pipeline with Zendesk or Freshdesk without replacing their AI?**
+Yes. Run the classifier as a webhook listener on ticket-create events and write your signals back to the ticket as custom fields. This layers your logic on top of the platform's native AI rather than replacing it. The platform handles UI and workflow; your classifier handles signal aggregation.
+
+**What is a reasonable false-positive rate target?**
+Aim for under 8% in the first month, under 5% by month three. Above 10% means your keyword weights are too aggressive or your sentiment threshold is too low. Track false positives weekly and adjust the lowest-confidence keywords first.
 
 
 ## Implementation Recommendations
