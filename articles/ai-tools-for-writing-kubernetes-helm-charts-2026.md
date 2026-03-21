@@ -5,11 +5,12 @@ description: "Compare AI tools for generating Helm charts. Covers real chart tem
 author: theluckystrike
 published: true
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 date: 2026-03-21
 permalink: /ai-tools-for-writing-kubernetes-helm-charts-2026/
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 {% raw %}
 

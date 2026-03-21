@@ -6,9 +6,9 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-flutter-integration-tests-with-patrol-f/
 categories: [guides]
-tags: [ai-tools-compared, flutter, testing, patrol, mobile-development]
+tags: [ai-tools-compared, flutter, testing, patrol, mobile-development, integration, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
