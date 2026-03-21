@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Coding Tools for Python Data Science and pandas Work"
+title: "Best AI Coding Tools for Python Data Science and pandas"
 description: "Python data science workflows rely heavily on pandas for data manipulation, analysis, and transformation. Selecting the right AI coding assistant can"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Resolve Python Import Circular Dependency E"
+title: "How to Use AI to Resolve Python Import Circular Dependency"
 description: "A practical guide for developers to identify and fix circular import errors in Python using AI assistance. Includes code examples and debugging strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

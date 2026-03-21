@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Cursor for Writing Rust Error Handling With Custo"
+title: "Copilot vs Cursor for Writing Rust Error Handling"
 description: "A practical comparison of GitHub Copilot and Cursor IDE when writing Rust error handling code using custom error types. Learn which tool better assists"
 date: 2026-03-16
 last_modified_at: 2026-03-16

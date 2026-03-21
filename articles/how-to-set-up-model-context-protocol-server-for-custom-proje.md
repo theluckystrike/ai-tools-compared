@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Model Context Protocol Server for Custom Proje"
+title: "How to Set Up Model Context Protocol Server for Custom"
 description: "A practical guide to building an MCP server that serves your project documentation to AI coding tools. Step-by-step implementation with code examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code Losing Context Across Sessions Fix"
+title: "Claude Code Losing Context Across Sessions"
 description: "Troubleshooting guide for Claude Code losing context between sessions. Step-by-step fixes for developers and power users"
 date: 2026-03-15
 last_modified_at: 2026-03-15

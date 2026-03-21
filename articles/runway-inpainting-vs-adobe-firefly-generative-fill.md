@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Runway Inpainting vs Adobe Firefly Generative Fill"
+title: "Runway Inpainting vs Adobe Firefly Generative"
 description: "A technical comparison of Runway inpainting and Adobe Firefly Generative Fill for developers and power users working with AI-powered image editing"
 date: 2026-03-15
 last_modified_at: 2026-03-15

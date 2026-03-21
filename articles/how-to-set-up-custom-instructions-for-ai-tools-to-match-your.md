@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Set Up Custom Instructions for AI Tools to Match Your"
+title: "How to Set Up Custom Instructions for AI Tools to Match"
 description: "A practical guide for developers on configuring AI coding assistants with custom instructions that enforce your team's linting rules, code style, and"
 date: 2026-03-16
 last_modified_at: 2026-03-16

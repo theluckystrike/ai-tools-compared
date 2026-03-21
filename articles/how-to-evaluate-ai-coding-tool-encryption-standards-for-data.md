@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Evaluate AI Coding Tool Encryption Standards for Data"
+title: "How to Evaluate AI Coding Tool Encryption Standards"
 description: "When you paste code into an AI coding assistant, that code travels across network connections before reaching the service's servers. Understanding how to"
 date: 2026-03-16
 last_modified_at: 2026-03-16

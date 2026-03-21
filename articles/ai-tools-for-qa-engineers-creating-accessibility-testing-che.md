@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Qa Engineers Creating Accessibility Testing Che"
+title: "AI Tools for Qa Engineers Creating Accessibility Testing"
 description: "Accessibility testing remains one of the most time-consuming aspects of quality assurance. WCAG 2.1 contains over 78 success criteria across three conformance"
 date: 2026-03-16
 last_modified_at: 2026-03-16

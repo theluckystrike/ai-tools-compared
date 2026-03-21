@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Free vs ChatGPT Free Which Gives More Per Day"
+title: "Claude Free vs ChatGPT Free Which Gives More Per"
 description: "Finding affordable AI tools requires understanding the true cost structure. This guide breaks down the cheapest options and explains what you get at each price"
 date: 2026-03-16
 last_modified_at: 2026-03-16

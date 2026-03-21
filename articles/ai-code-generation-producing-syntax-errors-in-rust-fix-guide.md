@@ -9,6 +9,8 @@ permalink: /ai-code-generation-producing-syntax-errors-in-rust-fix-guide/
 reviewed: true
 score: 8
 categories: [guides]
+intent-checked: true
+voice-checked: true
 ---
 
 

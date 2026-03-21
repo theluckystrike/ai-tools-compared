@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Stable Diffusion vs Midjourney for Character Design"
+title: "Stable Diffusion vs Midjourney for Character"
 description: "A practical comparison of Stable Diffusion and Midjourney for character design. Includes prompt examples, workflow recommendations, and tool selection"
 date: 2026-03-15
 last_modified_at: 2026-03-15

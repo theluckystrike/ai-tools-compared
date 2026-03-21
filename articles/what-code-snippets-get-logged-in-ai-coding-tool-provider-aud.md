@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "What Code Snippets Get Logged in AI Coding Tool Provider Aud"
+title: "What Code Snippets Get Logged in AI Coding Tool Provider"
 description: "AI coding tools log your input code, generated suggestions, conversation context, and metadata like timestamps and file paths—but logging policies vary"
 date: 2026-03-16
 last_modified_at: 2026-03-16

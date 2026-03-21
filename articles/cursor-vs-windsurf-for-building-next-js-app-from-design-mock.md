@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Windsurf for Building Next Js App from Design Mock"
+title: "Cursor vs Windsurf for Building Next Js App from Design"
 description: "A practical comparison of Cursor and Windsurf for converting design mockups into Next.js applications, with code examples and workflow recommendations"
 date: 2026-03-16
 last_modified_at: 2026-03-16

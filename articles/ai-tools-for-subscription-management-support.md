@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Subscription Management Support"
+title: "AI Tools for Subscription Management"
 description: "A practical guide to AI tools for subscription management support, with code examples and implementation strategies for developers building customer"
 date: 2026-03-15
 last_modified_at: 2026-03-15

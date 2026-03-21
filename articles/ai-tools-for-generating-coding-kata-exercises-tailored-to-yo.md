@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Coding Kata Exercises Tailored to Yo"
+title: "AI Tools for Generating Coding Kata Exercises Tailored"
 description: "A practical guide to AI-powered coding kata generators that adapt difficulty to your experience level, with examples and tool recommendations"
 date: 2026-03-16
 last_modified_at: 2026-03-16

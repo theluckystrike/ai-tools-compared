@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Claude Code Terminal Permission Denied Fix"
+title: "Claude Code Terminal Permission Denied"
 description: "Claude Code Terminal Permission Denied Fix — guide with practical tips, comparisons, and expert recommendations for developers and teams"
 date: 2026-03-15
 last_modified_at: 2026-03-15

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tool for Cybersecurity Analysts Incident Reports"
+title: "Best AI Tool for Cybersecurity Analysts Incident"
 description: "A practical guide to AI tools that help cybersecurity analysts write faster, clearer incident reports. Includes real-world use cases and comparison"
 date: 2026-03-15
 last_modified_at: 2026-03-15

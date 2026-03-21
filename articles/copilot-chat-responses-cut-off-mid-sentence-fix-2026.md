@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Chat Responses Cut Off Mid-Sentence Fix 2026"
-description: "A comprehensive guide for developers experiencing GitHub Copilot Chat responses being cut off mid-sentence. Learn troubleshooting techniques and practical solutions"
+description: "A comprehensive guide for developers experiencing GitHub Copilot Chat responses being cut off mid-sentence. Learn troubleshooting techniques and practical"
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Strategies for Using AI to Write API"
+title: "Effective Strategies for Using AI to Write"
 description: "A practical guide for developers on using AI tools to create thorough, accurate, and maintainable API documentation with real-world examples"
 date: 2026-03-16
 last_modified_at: 2026-03-16

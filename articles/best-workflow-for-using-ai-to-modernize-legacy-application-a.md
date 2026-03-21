@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best Workflow for Using AI to Modernize Legacy Application A"
+title: "Best Workflow for Using AI to Modernize Legacy Application"
 description: "A practical workflow for developers to use AI tools when modernizing legacy application architecture, with code examples and proven strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

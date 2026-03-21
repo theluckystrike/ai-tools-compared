@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Resolve CMake Configuration Errors for Cros"
+title: "How to Use AI to Resolve CMake Configuration Errors"
 description: "A practical guide for developers using AI assistants to diagnose and fix CMake configuration errors when building for Chrome OS (CrOS) devices"
 date: 2026-03-16
 last_modified_at: 2026-03-16

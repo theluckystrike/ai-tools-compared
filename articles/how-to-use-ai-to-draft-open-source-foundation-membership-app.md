@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Draft Open Source Foundation Membership App"
+title: "How to Use AI to Draft Open Source Foundation Membership"
 description: "A practical guide for developers and power users on using AI tools to draft open source foundation membership application documents efficiently"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr"
+title: "How Well Do AI Tools Handle Rust Lifetime Elision Rules"
 description: "AI tools understand Rust lifetime elision rules about 70% of the time but often miss edge cases in generic functions and trait definitions. This guide shows"
 date: 2026-03-16
 last_modified_at: 2026-03-16

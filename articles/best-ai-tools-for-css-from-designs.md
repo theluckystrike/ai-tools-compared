@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Generating CSS from Designs"
+title: "Best AI Tools for Generating CSS"
 description: "Compare AI tools that convert design mockups to CSS: Figma AI, Locofy, Builder.io, and GPT-4V workflows with code quality and accuracy benchmarks"
 date: 2026-03-21
 author: theluckystrike

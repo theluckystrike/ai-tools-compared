@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Sound Design"
+title: "Best AI Tools for Sound"
 description: "A practical comparison of AI tools for sound design, with code examples and recommendations for developers and power users working with audio synthesis"
 date: 2026-03-15
 last_modified_at: 2026-03-15

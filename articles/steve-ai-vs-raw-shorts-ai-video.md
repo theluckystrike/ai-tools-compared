@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Steve AI vs Raw Shorts AI Video"
+title: "Steve AI vs Raw Shorts AI"
 description: "A technical comparison of Steve AI and Raw Shorts for automated video creation, covering API capabilities, integration options, and practical code"
 date: 2026-03-15
 last_modified_at: 2026-03-15

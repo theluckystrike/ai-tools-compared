@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Automated DNS Configuration Management Acr"
+title: "Best AI Tools for Automated DNS Configuration Management"
 description: "A practical guide comparing AI-powered tools for automating DNS configuration across multiple providers, with code examples and implementation tips"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI for Writing Effective Prometheus Recording Rul"
+title: "How to Use AI for Writing Effective Prometheus Recording"
 description: "A practical guide for developers on using AI tools to create efficient Prometheus recording rules that improve query performance and monitoring"
 date: 2026-03-16
 last_modified_at: 2026-03-16

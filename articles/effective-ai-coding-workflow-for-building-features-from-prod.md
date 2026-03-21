@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective AI Coding Workflow for Building Features from Prod"
+title: "Effective AI Coding Workflow for Building Features"
 description: "A practical workflow for developers using AI to transform product requirements documents into functional code. Learn step-by-step processes with real"
 date: 2026-03-16
 last_modified_at: 2026-03-16

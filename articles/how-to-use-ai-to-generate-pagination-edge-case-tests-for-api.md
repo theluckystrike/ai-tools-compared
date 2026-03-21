@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Generate Pagination Edge Case Tests for API"
+title: "How to Use AI to Generate Pagination Edge Case Tests"
 description: "A practical guide for developers to use AI tools in generating pagination edge case tests for REST APIs, with code examples and testing"
 date: 2026-03-16
 last_modified_at: 2026-03-16

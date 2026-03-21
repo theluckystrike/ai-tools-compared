@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Yellow AI vs Haptik Enterprise Chatbot"
+title: "Yellow AI vs Haptik Enterprise"
 description: "A practical comparison of Yellow AI and Haptik enterprise chatbot platforms, with API examples, integration code, and recommendations for developers"
 date: 2026-03-15
 last_modified_at: 2026-03-15

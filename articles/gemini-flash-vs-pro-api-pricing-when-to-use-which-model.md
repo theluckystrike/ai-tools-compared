@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini Flash vs Pro API Pricing: When to Use Which Model"
+title: "Gemini Flash vs Pro API Pricing: When to Use Which"
 description: "A practical guide comparing Gemini Flash and Pro API pricing. Learn when to use each model for cost-effective AI development"
 date: 2026-03-16
 last_modified_at: 2026-03-16

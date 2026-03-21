@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT Enterprise Minimum Seats and Contract Length Require"
+title: "ChatGPT Enterprise Minimum Seats and Contract Length"
 description: "A practical guide to ChatGPT Enterprise seat minimums, contract terms, and pricing structure for developers and power users planning deployments in 2026"
 date: 2026-03-16
 last_modified_at: 2026-03-16

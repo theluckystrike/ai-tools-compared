@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Write Jest Snapshot Tests That Catch Meanin"
+title: "How to Use AI to Write Jest Snapshot Tests That Catch"
 description: "Learn how to use AI tools to create Jest snapshot tests that actually catch UI regressions without generating noisy, unhelpful test output"
 date: 2026-03-16
 last_modified_at: 2026-03-16

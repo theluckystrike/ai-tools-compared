@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Code Suggestion Quality When Working With Environment Var"
+title: "AI Code Suggestion Quality When Working With Environment"
 description: "Learn how AI coding assistants handle environment variables and secrets, and discover best practices for secure code generation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

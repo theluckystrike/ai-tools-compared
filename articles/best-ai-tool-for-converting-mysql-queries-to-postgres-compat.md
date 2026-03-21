@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tool for Converting MySQL Queries to Postgres Compat"
+title: "Best AI Tool for Converting MySQL Queries to Postgres"
 description: "Migrating from MySQL to PostgreSQL is a common scenario for development teams seeking better features, JSON support, or stricter SQL compliance. However, the"
 date: 2026-03-16
 last_modified_at: 2026-03-16

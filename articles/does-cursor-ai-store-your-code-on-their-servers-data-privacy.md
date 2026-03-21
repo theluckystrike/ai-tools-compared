@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Does Cursor AI Store Your Code on Their Servers Data Privacy"
+title: "Does Cursor AI Store Your Code on Their Servers Data"
 description: "A technical breakdown of how Cursor AI handles your code data. Learn about their privacy policy, data retention practices, and configuration options"
 date: 2026-03-16
 last_modified_at: 2026-03-16

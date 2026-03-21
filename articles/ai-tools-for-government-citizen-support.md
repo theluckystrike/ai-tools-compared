@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Government Citizen Support"
+title: "AI Tools for Government Citizen"
 description: "A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector"
 date: 2026-03-15
 last_modified_at: 2026-03-15

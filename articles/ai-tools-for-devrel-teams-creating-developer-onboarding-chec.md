@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Devrel Teams Creating Developer Onboarding Chec"
+title: "AI Tools for Devrel Teams Creating Developer Onboarding"
 description: "Learn how DevRel teams use AI to transform internal wikis into developer onboarding checklists, automating documentation workflows and improving"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Dependency Update Pull Request Descr"
+title: "AI Tools for Generating Dependency Update Pull Request"
 description: "A practical guide for developers using AI tools to automate dependency update PR descriptions with integrated security risk analysis and changelog"
 date: 2026-03-16
 last_modified_at: 2026-03-16

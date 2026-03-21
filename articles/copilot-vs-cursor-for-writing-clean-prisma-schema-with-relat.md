@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Cursor for Writing Clean Prisma Schema with Relat"
+title: "Copilot vs Cursor for Writing Clean Prisma Schema"
 description: "A practical comparison of GitHub Copilot and Cursor for writing clean Prisma schemas with relations. Includes code examples and recommendations"
 date: 2026-03-16
 last_modified_at: 2026-03-16

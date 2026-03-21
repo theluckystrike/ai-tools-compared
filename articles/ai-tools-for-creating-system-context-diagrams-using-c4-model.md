@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Creating System Context Diagrams Using C4 Model"
+title: "AI Tools for Creating System Context Diagrams Using C4"
 description: "A practical guide to AI tools that generate C4 model system context diagrams, comparing output quality, PlantUML support, and automation capabilities"
 date: 2026-03-16
 last_modified_at: 2026-03-16

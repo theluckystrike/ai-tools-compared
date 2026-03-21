@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Switching from ChatGPT Plus to Perplexity Pro Feature Compar"
+title: "Switching from ChatGPT Plus to Perplexity Pro Feature"
 description: "A practical guide for developers and power users comparing ChatGPT Plus and Perplexity Pro. Includes feature breakdown, code examples, and migration"
 date: 2026-03-16
 last_modified_at: 2026-03-16

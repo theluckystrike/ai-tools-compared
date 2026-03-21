@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tool for Financial Advisors Client Reports"
+title: "Best AI Tool for Financial Advisors Client"
 description: "Discover the top AI tools that help financial advisors create professional client reports efficiently. Compare features, accuracy, and real-world use"
 date: 2026-03-15
 last_modified_at: 2026-03-15

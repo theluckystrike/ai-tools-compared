@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot Enterprise License Not Assigned Fix"
+title: "Copilot Enterprise License Not Assigned"
 description: "When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the 'license not assigned' error blocks productivity. This"
 date: 2026-03-15
 last_modified_at: 2026-03-15

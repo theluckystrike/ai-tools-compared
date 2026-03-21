@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Which AI Tool Is Better for Writing CircleCI Config YAML Fil"
+title: "Which AI Tool Is Better for Writing CircleCI Config YAML"
 description: "A practical comparison of AI coding assistants for writing CircleCI configuration YAML files, with real examples and recommendations for developers"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Effective Context Loading Strategies for AI Tools in Polyglo"
+title: "Effective Context Loading Strategies for AI Tools"
 description: "A practical guide to optimizing AI tool performance in projects mixing multiple programming languages. Learn context strategies that improve code"
 date: 2026-03-16
 last_modified_at: 2026-03-16

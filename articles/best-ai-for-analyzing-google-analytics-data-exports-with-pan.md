@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Analyzing Google Analytics Data Exports with Pan"
+title: "Best AI for Analyzing Google Analytics Data Exports"
 description: "A practical guide to using AI tools for automating Google Analytics data analysis with pandas, featuring code examples and implementation strategies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

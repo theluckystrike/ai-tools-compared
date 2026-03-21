@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Code Completion for Java Record Classes and Sealed Interf"
+title: "AI Code Completion for Java Record Classes and Sealed"
 description: "A practical guide for developers exploring AI code completion tools that support Java record classes and sealed interfaces, with real examples and tool"
 date: 2026-03-16
 last_modified_at: 2026-03-16

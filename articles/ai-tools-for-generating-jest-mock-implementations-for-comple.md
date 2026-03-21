@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating Jest Mock Implementations for Comple"
+title: "AI Tools for Generating Jest Mock Implementations"
 description: "Mocking complex third-party libraries in Jest remains one of the most time-consuming aspects of writing effective unit tests. Libraries like AWS SDK, Stripe"
 date: 2026-03-16
 last_modified_at: 2026-03-16

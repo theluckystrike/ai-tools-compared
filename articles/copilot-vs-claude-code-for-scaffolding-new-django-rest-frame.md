@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Copilot vs Claude Code for Scaffolding New Django REST Frame"
+title: "Copilot vs Claude Code for Scaffolding New Django REST"
 description: "A practical comparison of GitHub Copilot and Claude Code for scaffolding new Django REST Framework projects. Includes code examples, workflow"
 date: 2026-03-16
 last_modified_at: 2026-03-16

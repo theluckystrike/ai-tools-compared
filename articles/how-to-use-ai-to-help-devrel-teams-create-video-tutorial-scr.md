@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Help Devrel Teams Create Video Tutorial Scr"
+title: "How to Use AI to Help Devrel Teams Create Video Tutorial"
 description: "A practical guide for developer relations teams on using AI tools to write tutorial scripts, generate captions, and automate post-production for screen"
 date: 2026-03-18
 last_modified_at: 2026-03-18

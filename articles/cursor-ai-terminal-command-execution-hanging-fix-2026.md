@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor AI Terminal Command Execution Hanging Fix 2026"
-description: "Fix Cursor AI terminal command execution hanging issues with practical solutions including terminal configuration, process management, and workspace settings for developers."
+description: "Fix Cursor AI terminal command execution hanging issues with practical solutions including terminal configuration, process management, and workspace"
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike

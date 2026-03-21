@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use Copilot to Write Dockerfiles for Multi-Stage Buil"
+title: "How to Use Copilot to Write Dockerfiles for Multi-Stage"
 description: "A practical guide to using GitHub Copilot for creating efficient multi-stage Dockerfiles. Learn prompt patterns, code examples, and optimization"
 date: 2026-03-16
 last_modified_at: 2026-03-16

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI to Debug Flaky Integration Tests in CI Pipelin"
+title: "How to Use AI to Debug Flaky Integration Tests in CI"
 description: "A practical guide for developers to use AI tools for identifying, diagnosing, and fixing flaky integration tests in continuous integration"
 date: 2026-03-16
 last_modified_at: 2026-03-16

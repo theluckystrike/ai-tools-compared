@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Gemini vs Claude for Summarizing Quarterly Earnings Call Tra"
+title: "Gemini vs Claude for Summarizing Quarterly Earnings Call"
 description: "A practical comparison of Gemini and Claude for summarizing quarterly earnings call transcripts, with code examples and API integration patterns"
 date: 2026-03-16
 last_modified_at: 2026-03-16

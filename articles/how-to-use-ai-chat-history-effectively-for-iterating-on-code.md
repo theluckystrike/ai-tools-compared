@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Use AI Chat History Effectively for Iterating on Code"
+title: "How to Use AI Chat History Effectively for Iterating on"
 description: "Master the art of using AI chat history to improve your code iteration workflow. Practical techniques for developers who want to get more from"
 date: 2026-03-16
 last_modified_at: 2026-03-16

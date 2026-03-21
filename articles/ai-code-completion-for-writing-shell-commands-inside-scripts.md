@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Code Completion for Writing Shell Commands Inside Scripts"
+title: "AI Code Completion for Writing Shell Commands Inside"
 description: "Use Cursor or Claude Code for superior pipe chain generation and context-aware command suggestions in shell scripts. GitHub Copilot provides solid shell script"
 date: 2026-03-16
 last_modified_at: 2026-03-16

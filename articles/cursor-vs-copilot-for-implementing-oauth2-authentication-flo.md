@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Cursor vs Copilot for Implementing Oauth2 Authentication Flo"
+title: "Cursor vs Copilot for Implementing Oauth2 Authentication"
 description: "Implementing OAuth2 authentication in an Express application involves multiple components: route setup, token handling, callback processing, and security"
 date: 2026-03-16
 last_modified_at: 2026-03-16

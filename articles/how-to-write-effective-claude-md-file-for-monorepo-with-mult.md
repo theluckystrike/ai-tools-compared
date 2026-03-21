@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Write Effective CLAUDE MD File for monorepo With Mult"
+title: "How to Write Effective CLAUDE MD File for monorepo"
 description: "A practical guide to creating CLAUDE.md files that help AI understand your monorepo architecture, service boundaries, and shared dependencies"
 date: 2026-03-16
 last_modified_at: 2026-03-16

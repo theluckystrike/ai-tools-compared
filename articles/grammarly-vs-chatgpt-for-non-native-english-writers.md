@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Grammarly vs ChatGPT for Non-Native English Writers"
+title: "Grammarly vs ChatGPT for Non-Native English"
 description: "A practical comparison of Grammarly and ChatGPT for non-native English writers, with code examples and real-world use cases for developers"
 date: 2026-03-15
 last_modified_at: 2026-03-15

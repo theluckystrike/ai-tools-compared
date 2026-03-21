@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Move Copilot Suggested Code Patterns to Cursor Snippe"
+title: "How to Move Copilot Suggested Code Patterns to Cursor"
 description: "Learn how to export and transfer your valuable Copilot code suggestions into reusable Cursor snippets for faster workflow automation"
 date: 2026-03-16
 last_modified_at: 2026-03-16

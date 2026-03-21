@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Music Separation and Stems"
+title: "AI Tools for Music Separation"
 description: "A practical guide to AI-powered music source separation tools for developers, with code examples, API integrations, and implementation strategies"
 date: 2026-03-15
 last_modified_at: 2026-03-15

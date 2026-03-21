@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Build an AI Code Review Bot"
+title: "How to Build an AI Code Review"
 description: "Build a GitHub Actions bot that runs AI code review on pull requests using Claude or GPT-4, posts inline comments, and enforces custom review rules"
 date: 2026-03-21
 author: theluckystrike

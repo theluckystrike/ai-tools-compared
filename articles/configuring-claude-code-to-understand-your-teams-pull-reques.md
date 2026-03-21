@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Configuring Claude Code to Understand Your Teams Pull Reques"
+title: "Configuring Claude Code to Understand Your Teams Pull"
 description: "A practical guide for developers on configuring Claude Code to understand and enforce your team's pull request review checklist for consistent code quality"
 date: 2026-03-16
 last_modified_at: 2026-03-16

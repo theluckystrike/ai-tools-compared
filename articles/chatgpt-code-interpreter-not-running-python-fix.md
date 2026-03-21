@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "ChatGPT Code Interpreter Not Running Python: Fixes and Fix"
+title: "ChatGPT Code Interpreter Not Running Python: Fixes"
 description: "Troubleshooting guide for developers when ChatGPT Code Interpreter fails to run Python. Step-by-step fixes for common execution issues"
 date: 2026-03-15
 last_modified_at: 2026-03-15

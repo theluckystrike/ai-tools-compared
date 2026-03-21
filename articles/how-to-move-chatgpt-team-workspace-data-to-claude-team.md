@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How to Move ChatGPT Team Workspace Data to Claude Team"
+title: "How to Move ChatGPT Team Workspace Data to Claude"
 description: "A practical guide for developers and power users on migrating your OpenAI ChatGPT Team workspace data to Anthropic Claude Team. Includes export methods"
 date: 2026-03-16
 last_modified_at: 2026-03-16

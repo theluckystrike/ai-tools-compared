@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Not Working Behind Corporate Proxy Firewall Fix 2026"
-description: "A practical troubleshooting guide for developers experiencing GitHub Copilot issues behind corporate proxies and firewalls. Includes configuration examples and solutions."
+description: "A practical troubleshooting guide for developers experiencing GitHub Copilot issues behind corporate proxies and firewalls. Includes configuration"
 date: 2026-03-20
 last_modified_at: 2026-03-20
 author: theluckystrike
