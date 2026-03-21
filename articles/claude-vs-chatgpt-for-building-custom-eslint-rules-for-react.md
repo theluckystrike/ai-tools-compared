@@ -216,7 +216,65 @@ module.exports = {
 
 The Claude version would likely include proper AST traversal for the dependency array, handling nested functions, and possibly integration with eslint-plugin-react-hooks rules.
 
+## Advanced ESLint Rule Development
 
+Beyond basic rule creation, sophisticated teams build comprehensive rule suites.
+
+### Building Custom Rule Suites and Testing
+
+Proper ESLint rules require thorough testing. Use RuleTester to verify valid and invalid code cases, including TypeScript-specific scenarios. Claude generates more comprehensive test cases covering edge cases, while ChatGPT provides basic functional tests.
+
+### Configurable Rules for Team Flexibility
+
+Create rules with schema definitions that teams can customize for their specific needs. Claude naturally generates rules with proper schema definitions, while ChatGPT often forgets configuration options. Ask Claude to create configurable rules that adapt to different team preferences.
+
+### Integration with Popular ESLint Plugins
+
+Create rules that work seamlessly with existing plugins:
+
+```javascript
+// Create meta information that helps with plugin composition
+module.exports = {
+  meta: {
+    name: 'custom-react-rules',
+    version: '1.0.0',
+    type: 'suggestion',
+    docs: {
+      description: 'Custom React rules that extend eslint-plugin-react',
+      category: 'Best Practices',
+      recommended: true,
+      url: 'https://github.com/your-org/eslint-plugin-custom-react'
+    }
+  },
+  rules: {
+    'no-props-spreading': {
+      meta: {
+        docs: {
+          extends: 'eslint-plugin-react/rules/jsx-props-no-spreading',
+          difference: 'Adds exceptions for higher-order components'
+        }
+      },
+      create(context) { ... }
+    }
+  }
+};
+```
+
+### Auto-Fix Capabilities
+
+Make rules valuable by implementing auto-fix functionality. Claude suggests proper fix implementations that don't introduce errors, while ChatGPT generates simpler, sometimes incomplete fix suggestions.
+
+### Rule Performance Optimization
+
+Optimize rules for performance by considering caching, early returns, and context window limits. Claude naturally considers performance implications when optimizing rules for large codebases, while ChatGPT focuses more on functionality.
+
+### Documentation, CI/CD Integration, and Maintenance
+
+Create comprehensive documentation for your rule suite with examples, options, and rationale. Integrate rules into CI/CD by making them part of your quality gates with GitHub Actions that run ESLint and comment on PRs with violations. Treat ESLint rules like production code by versioning them and publishing as an npm package so all teams use consistent rules.
+
+### When to Choose Claude Over ChatGPT
+
+For ESLint rule development, Claude handles complex AST manipulation, maintains context across files, considers performance implications, generates comprehensive test cases, and identifies React-specific edge cases proactively. Choose Claude when building sophisticated rules that require deep React knowledge.
 
 ## Related Reading
 
