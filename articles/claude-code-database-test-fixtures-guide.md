@@ -24,7 +24,24 @@ Claude Code excels at generating database test fixtures that are maintainable, r
 Database test fixtures provide the foundational data your tests need to run reproducibly. Poorly designed fixtures lead to flaky tests, hard-to-debug failures, and maintenance nightmares. Claude Code can help you generate fixtures that are both realistic and reliable.
 
 
-Good fixtures share several characteristics: they represent real-world data patterns, are independent of each other, can be created and teardown quickly, and clearly document their purpose through naming and structure.
+Good fixtures share several characteristics: they represent real-world data patterns, are independent of each other, can be created and torn down quickly, and clearly document their purpose through naming and structure.
+
+The most common failure mode for fixture-heavy test suites is state leakage — one test's writes pollute the next test's reads. The strategies in this guide address that directly, with transaction rollback patterns that eliminate leakage without the performance cost of rebuilding the database from scratch on every test.
+
+
+## Comparing Fixture Approaches
+
+Before choosing a fixture strategy, understand the tradeoffs:
+
+| Approach | Speed | Isolation | Realism | Maintenance |
+|---|---|---|---|---|
+| **Static SQL dumps** | Fast restore | Poor (shared state) | High | High (manual updates) |
+| **Factory Boy factories** | Medium | Excellent (per-test) | High | Low (schema-driven) |
+| **Transaction rollback** | Very fast | Excellent | High | Very low |
+| **Fresh database per module** | Slow | Perfect | High | Medium |
+| **In-memory SQLite** | Fastest | Excellent | Low (dialect gaps) | Low |
+
+For most Python projects using SQLAlchemy, the combination of Factory Boy factories with transaction rollback fixtures provides the best balance of speed, isolation, and realism. Claude Code generates this pattern reliably when given your SQLAlchemy model definitions.
 
 
 ## Creating Fixture Factories with Claude Code
@@ -82,6 +99,22 @@ class OrderFactory(SQLAlchemyModelFactory):
     status = 'pending'
     created_at = factory.LazyFunction(lambda: datetime.utcnow())
 ```
+
+
+## Using Claude Code for Fixture Generation
+
+Claude Code generates accurate fixture factories from model definitions. The most effective workflow is to open the models file in your Claude Code session and prompt directly:
+
+```
+Read models.py and generate Factory Boy factories for User, Order, and Product.
+Use SubFactory for foreign key relationships. Include Faker providers for
+realistic data. Add a pytest fixture that creates one of each with a related
+set of OrderItems.
+```
+
+Claude Code reads your actual field types and constraints, so it generates appropriate Faker providers (`Faker('email')` for email fields, `Faker('uuid4')` for UUID primary keys) rather than placeholder strings. It also detects `NOT NULL` constraints and ensures all required fields have factory values.
+
+When your schema changes, re-run the prompt with the updated model file. Claude Code will update factory definitions to match, flagging any fields where it cannot infer an appropriate Faker provider.
 
 
 ## Test Isolation Strategies
@@ -159,6 +192,59 @@ def fresh_database():
 ```
 
 
+## Step-by-Step: Setting Up Fixtures with Claude Code
+
+Follow this workflow to build a complete fixture system for a new project:
+
+**Step 1 — Collect your models**
+
+Open Claude Code with your `models.py` (or equivalent) in the working directory. If using Django, include `models.py` from each relevant app. Claude Code needs the full model graph to generate correct SubFactory relationships.
+
+**Step 2 — Generate base factories**
+
+Prompt: "Generate Factory Boy factories for all SQLAlchemy models in models.py. Use SubFactory for ForeignKey fields. Ensure Sequence-based IDs to prevent collisions."
+
+**Step 3 — Generate the session fixture**
+
+Prompt: "Write a pytest fixture called `db_session` that uses SQLAlchemy's savepoint pattern for test isolation. The fixture should be function-scoped and roll back changes after each test."
+
+The savepoint (nested transaction) pattern is preferable to full transaction rollback when your application code itself opens and closes transactions:
+
+```python
+@pytest.fixture(scope="function")
+def db_session(database_engine):
+    connection = database_engine.connect()
+    transaction = connection.begin()
+    session = Session(bind=connection)
+
+    nested = connection.begin_nested()  # savepoint
+
+    @event.listens_for(session, "after_transaction_end")
+    def restart_savepoint(session, transaction):
+        if transaction.nested and not transaction._parent.nested:
+            session.expire_all()
+            connection.begin_nested()
+
+    yield session
+
+    session.close()
+    transaction.rollback()
+    connection.close()
+```
+
+**Step 4 — Wire factories to the session fixture**
+
+Update factory `Meta.sqlalchemy_session` to use the fixture session rather than a module-level session. Ask Claude Code: "Update the factories to accept a session parameter so they use the test's db_session fixture instead of the global session."
+
+**Step 5 — Generate scenario fixtures**
+
+For complex test scenarios, create named fixture sets: "Generate a pytest fixture called `ecommerce_scenario` that creates 3 users, 2 products, and 4 orders with line items using the factories above."
+
+**Step 6 — Validate with a smoke test**
+
+Run `pytest -v tests/test_fixtures.py` to confirm factories create records correctly and rollback works. Paste any failures back to Claude Code with the stack trace.
+
+
 ## Data Seeding Strategies
 
 
@@ -195,64 +281,6 @@ def seed_realistic_users(session, count=100):
 ```
 
 
-### Relationship-Based Seeding
-
-
-Create interconnected data that reflects real-world relationships:
-
-
-```python
-def seed_e-commerce_data(session, num_users=50, orders_per_user=3):
-    """Seed realistic e-commerce data with relationships."""
-    users = seed_realistic_users(session, num_users)
-
-    products = []
-    for i in range(100):
-        product = Product(
-            id=f"prod_{i}",
-            name=f"Product {i}",
-            price=round(random.uniform(10, 500), 2),
-            category=random.choice(['electronics', 'clothing', 'home', 'sports'])
-        )
-        products.append(product)
-
-    session.bulk_save_objects(products)
-
-    # Create orders with line items
-    for user in users:
-        for _ in range(random.randint(1, orders_per_user)):
-            order = Order(
-                id=f"order_{uuid.uuid4().hex[:8]}",
-                user_id=user.id,
-                status=random.choice(['pending', 'shipped', 'delivered', 'cancelled']),
-                created_at=faker.date_time_between(start_date='-1y')
-            )
-            session.add(order)
-
-    session.commit()
-```
-
-
-## Using Claude Code for Fixture Generation
-
-
-Claude Code can accelerate fixture creation through targeted prompts. Provide context about your schema and requirements:
-
-
-**Effective prompt structure:**
-
-- Describe your database schema and relationships
-
-- Specify the types of fixtures needed
-
-- Mention any constraints or validation rules
-
-- Indicate whether you need factories, seeds, or both
-
-
-Example prompt: "Generate a Python factory boy factory for our User model with these fields: id, email, username, role, created_at. Include a related Order factory that uses SubFactory for the user relationship."
-
-
 ## Best Practices
 
 
@@ -272,6 +300,25 @@ Fourth, version your fixtures. Keep seed data in version control and regenerate 
 
 
 Finally, document edge cases. When fixtures require special handling, add comments explaining why.
+
+
+## FAQ
+
+**Q: Should I use Factory Boy, pytest-factoryboy, or write custom fixtures?**
+
+Factory Boy is the industry standard for Python ORM fixtures and has first-class SQLAlchemy support. `pytest-factoryboy` adds pytest fixture registration on top of Factory Boy, which reduces boilerplate but adds a dependency. Start with raw Factory Boy; add `pytest-factoryboy` once your fixture count exceeds ~10 factories. Claude Code generates both patterns equally well.
+
+**Q: How do I handle fixtures for databases that don't support savepoints, like MySQL with MyISAM?**
+
+Use the fresh-database-per-module approach instead of transaction rollback. Alternatively, migrate tables to InnoDB (which supports transactions and savepoints). Claude Code can generate a conftest.py that creates and drops a test database per module using `CREATE DATABASE IF NOT EXISTS` and `DROP DATABASE` via a session-scoped fixture.
+
+**Q: My factories are slow because each one commits immediately. How do I speed them up?**
+
+Set `sqlalchemy_session_persistence = None` on the factory Meta class and flush manually: use `session.flush()` instead of `session.commit()` within tests when you only need the object in memory with an ID. Combine this with the transaction rollback fixture for maximum speed — no commits means faster rollbacks.
+
+**Q: Can Claude Code generate fixtures for NoSQL databases like MongoDB?**
+
+Yes. Claude Code generates `mongomock` fixtures for MongoDB testing, using the `mongomock` library which provides an in-memory MongoDB implementation compatible with `pymongo`. For Redis, it generates fixtures using `fakeredis`. Prompt: "Generate pytest fixtures for MongoDB using mongomock, with factory functions for User and Session documents matching this schema."
 
 
 ---
