@@ -74,6 +74,9 @@ if __name__ == '__main__':
 ```
 
 
+Aim for at least 90 days of historical data before training forecasting models. Shorter windows miss weekly and monthly seasonality patterns that strongly influence infrastructure demand in most production systems.
+
+
 ## Choosing AI Approaches
 
 
@@ -168,6 +171,9 @@ print(json.dumps(recommendations, indent=2))
 ```
 
 
+The 95th percentile with a 20% CPU buffer and 15% memory buffer is a sensible starting point for most web services. Adjust the percentile upward for latency-sensitive workloads where occasional CPU throttling is unacceptable, and downward for batch jobs that can tolerate slower processing.
+
+
 ## Automating the Workflow
 
 
@@ -203,6 +209,52 @@ helm upgrade --install api-gateway ./chart \
 ```
 
 
+## Tool Comparison: AI-Powered Capacity Planning Platforms
+
+
+Several commercial and open-source tools provide AI-driven capacity planning without requiring you to build models from scratch:
+
+
+| Tool | Deployment | ML Approach | Kubernetes Support | Cost Model |
+|------|------------|------------|-------------------|------------|
+| AWS Compute Optimizer | Cloud (AWS) | Regression + rules | Via EKS | Free |
+| Google Cloud Recommender | Cloud (GCP) | ML-based | Via GKE | Free |
+| Datadog Watchdog | SaaS | Anomaly detection | Yes | Per-host pricing |
+| Goldilocks (open-source) | Self-hosted | VPA-based | Native | Free |
+| Kubecost | Self-hosted/SaaS | Cost modeling | Native | Free tier + paid |
+
+
+AWS Compute Optimizer and GCP Recommender are the easiest starting points if you are already on those clouds—they ingest CloudWatch or Cloud Monitoring data automatically and surface recommendations without any model training. For multi-cloud or on-premises environments, Kubecost with its request sizing recommendations offers comparable functionality with more deployment flexibility.
+
+Goldilocks is worth highlighting for Kubernetes teams: it runs the Vertical Pod Autoscaler in recommendation mode and surfaces per-namespace right-sizing suggestions through a simple web dashboard. It requires no ML expertise and integrates directly with your existing kubectl workflow.
+
+
+## Real-World Workflow: Weekly Right-Sizing Review
+
+
+A repeatable weekly process prevents resource drift from accumulating. Here is how a mature engineering team structures the cycle:
+
+**Monday — data pull.** An automated job fetches the past 7 days of resource usage data from Prometheus or your cloud provider's metrics API and computes per-service p50, p95, and p99 values. This runs overnight and deposits results into a shared data warehouse table.
+
+**Tuesday — model scoring.** The Prophet or ARIMA models score the fresh data against their forecasts and produce updated limit recommendations. Any service where actual usage exceeded the current limit more than twice in the past week is flagged as a priority candidate for immediate right-sizing upward. Services where p95 usage is below 40% of the current limit are flagged as over-provisioned.
+
+**Wednesday — review and approval.** Engineers review the flagged recommendations in a 30-minute sync. Over-provisioned services get limit reductions queued for the next deployment cycle. Under-provisioned services get emergency limit increases applied immediately via kubectl patch or Terraform apply.
+
+**Thursday–Friday — deploy and monitor.** Changes roll out through staging first, then production. The monitoring dashboard tracks OOM events and throttling rates in real time. Any regression triggers an automatic rollback by restoring the previous resource configuration from version control.
+
+This cadence keeps resource configurations close to actual demand without requiring individual engineers to continuously monitor dashboards. The AI models handle the signal extraction; humans handle the risk assessment and approval.
+
+
+## Common Pitfalls
+
+
+**Ignoring memory spikes during garbage collection.** JVM-based services exhibit memory patterns that look like leaks in time-series data but are actually GC cycles. Train your anomaly detection models to exclude these periodic spikes, or use GC-aware metrics that report heap usage after collection rather than peak allocations.
+
+**Right-sizing without considering pod disruption budgets.** Reducing resource limits on a service with an aggressive horizontal pod autoscaler can trigger a cascade of evictions if the new limits cause OOMKills during traffic surges. Always validate right-sizing recommendations against your HPA configuration before applying them to production.
+
+**Training on stale data during business model shifts.** Models trained on last year's traffic patterns may dramatically underestimate capacity needs after a product launch or user base expansion. Retrain forecasting models monthly at minimum, and trigger immediate retraining after known step-change events.
+
+
 ## Measuring Success
 
 
@@ -212,7 +264,7 @@ Track the effectiveness of your AI-driven capacity planning through key metrics.
 Start with baseline measurements before implementing AI predictions, then compare costs and performance metrics over quarterly review cycles. The initial investment in data collection and model tuning pays dividends through optimized infrastructure spend and improved system reliability.
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
 - [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
