@@ -30,6 +30,24 @@ Most AI coding tools offer tiered pricing. The free tier often covers individual
 The cheapest options fall into three categories: completely free tools, freemium models with generous free tiers, and paid tools that cost under $10 monthly. This guide focuses on tools that actually work for game development scenarios.
 
 
+## Pricing Comparison at a Glance
+
+
+Before diving into each tool, here is a side-by-side cost breakdown for 2026:
+
+
+| Tool | Free Tier | Paid Tier | IDE Integration | Game Engine Support |
+|------|-----------|-----------|-----------------|---------------------|
+| Claude Code | Yes (CLI, individual use) | Usage-based via API | Terminal / any editor | Unity (C#), Godot (GDScript), Unreal (C++) |
+| GitHub Copilot | Free for students & OSS maintainers | $10/month individual | VS Code, JetBrains, Neovim | All via IDE |
+| Amazon CodeWhisperer | Yes (individual) | $19/month professional | VS Code, JetBrains, AWS Cloud9 | All via IDE |
+| Cursor | Free trial | $20/month | Standalone editor (VS Code fork) | All via editor |
+| Tabnine | Basic free | $12/month | VS Code, JetBrains, Vim | All via IDE |
+
+
+For a solo indie dev on a tight budget, Claude Code and Amazon CodeWhisperer are the only options with genuinely unlimited free tiers. GitHub Copilot's free tier is real but gated behind student or open-source maintainer status.
+
+
 ## Top Recommendation: Claude Code
 
 
@@ -122,6 +140,17 @@ public class PlayerController : MonoBehaviour
 The generated code follows Unity conventions, includes proper serialization attributes, and separates logic into appropriate lifecycle methods.
 
 
+### Getting the Most from Claude Code for Game Dev
+
+
+Claude Code performs best when you give it full context. Share relevant files, engine version, and specific constraints before asking for code. For example:
+
+- "I'm using Unity 6 LTS with the new Input System package—generate a player controller using PlayerInputActions instead of Input.GetAxisRaw."
+- "This is Godot 4.3. I need a state machine for enemy AI with idle, patrol, and attack states."
+
+The more specific the prompt, the more engine-idiomatic the output.
+
+
 ## Runner-Up: GitHub Copilot
 
 
@@ -164,6 +193,15 @@ func _physics_process(delta: float) -> void:
 Copilot excels at suggesting completions based on context. The above script handles movement, jumping, and gravity—common patterns in 2D games.
 
 
+### Where Copilot Wins Over Free Alternatives
+
+
+The inline autocomplete experience in VS Code is Copilot's strongest advantage. When you are iterating quickly on a game jam project, having suggestions appear as you type—without switching to a terminal or separate tool—saves meaningful time. Claude Code requires you to describe intent explicitly; Copilot infers from surrounding code context.
+
+
+For game jam developers who value iteration speed over reasoning depth, this tradeoff often favors Copilot despite the $10/month cost.
+
+
 ## Budget Alternative: Amazon CodeWhisperer
 
 
@@ -173,7 +211,7 @@ Copilot excels at suggesting completions based on context. The above script hand
 Amazon CodeWhisperer provides completely free access for individual developers. While it may not match Claude Code in reasoning capability, it handles code generation reliably.
 
 
-### Use Case:跨平台游戏后端
+### Use Case: Cross-Platform Game Backend
 
 
 ```python
@@ -217,6 +255,24 @@ if __name__ == '__main__':
 CodeWhisperer generates basic REST API patterns quickly, useful for leaderboards, matchmaking, or save synchronization in your game.
 
 
+## Game-Specific Workflows: Where Each Tool Shines
+
+
+Different phases of game development favor different tools. Here is how each option performs across common indie game tasks:
+
+
+**Shader writing:** Claude Code handles GLSL and HLSL shader requests well when given full context. GitHub Copilot autocompletes shaders effectively if you have existing shader files open. CodeWhisperer is weakest here due to less training data on shader languages.
+
+
+**State machine design:** Claude Code excels at generating complete state machine architectures with proper enter/exit callbacks and transition logic. Describe the states you need and it produces a full implementation ready to extend.
+
+
+**Level generation algorithms:** Procedural generation code (dungeon generators, noise-based terrain, wave function collapse) benefits from Claude Code's reasoning depth. These algorithms require understanding of the underlying math, which goes beyond simple autocomplete.
+
+
+**Asset pipeline scripting:** Unity Editor scripts, Godot plugins, and build automation scripts are all handled well by Copilot since it has strong training signal on open-source Unity and Godot tooling repos.
+
+
 ## Making Your Choice
 
 
@@ -233,6 +289,25 @@ All three tools improve with specific context. When working with game engines, i
 
 
 The cheapest option that fits your workflow ultimately depends on your specific needs, preferred development environment, and the complexity of your game project.
+
+
+## Frequently Asked Questions
+
+
+**Is Claude Code really free for solo indie developers?**
+Yes. Claude Code is free for individual use via the CLI. You pay only if you use it through the Anthropic API directly (which gives you programmatic access). The `claude` CLI tool itself has no monthly fee for personal use.
+
+
+**Does GitHub Copilot work with Godot's GDScript?**
+Yes. Copilot supports GDScript in VS Code with the Godot extension installed. Coverage is slightly thinner than for Python or C# due to less training data, but completion quality for common patterns (CharacterBody2D movement, signals, node access) is solid.
+
+
+**Can AI coding tools help with Unity's new Input System?**
+All three tools can generate code for Unity's new Input System, but you need to specify it explicitly in your prompt. Say "using Unity's new Input System package with PlayerInput component" rather than leaving it implicit. Claude Code handles the architectural differences between old and new Input System reliably when prompted clearly.
+
+
+**What about Unreal Engine C++ support?**
+Claude Code handles Unreal C++ well, including UPROPERTY macros, UObject inheritance patterns, and Blueprint-accessible functions. GitHub Copilot also performs well for Unreal C++ when Unreal project files provide context. Neither tool replaces reading the Unreal docs, but both significantly speed up boilerplate generation.
 
 
 ## Related Articles
