@@ -93,16 +93,30 @@ Several Chrome extensions implement AI-powered tab management:
 **Station** focuses on workspace organization, grouping tabs by project or topic. Its AI learns from your behavior to surface relevant information.
 
 
-**Workona** emphasizes team collaboration and project-based tab management. It includes features for sharing tab groups and maintaining context across sessions.
+**Workona** emphasizes team collaboration and project-based tab management. It includes features for sharing tab groups and maintaining context across sessions. The workspace model maps well to Jira projects or GitHub repositories, making it a natural fit for engineering teams.
 
 
 **SimpRead Reader Mode** (with tab management features) uses AI to extract and organize article content, useful when researching multiple topics.
 
 
+**Tab Wrangler** takes a different approach by automatically suspending idle tabs based on configurable timers, reducing memory consumption without requiring AI classification. It is not AI-powered in the modern sense but pairs well with AI organizers.
+
+
+## Extension Comparison Table
+
+| Extension | AI Classification | Local Processing | Team Features | Pricing | Best For |
+|---|---|---|---|---|---|
+| TabLab | ML-based | Partial | No | Free / Pro $5/mo | Individual developers |
+| Workona | Rule + ML hybrid | No (cloud) | Yes | Free / Teams $7/user/mo | Engineering teams |
+| Station | Behavior learning | Partial | No | Free | Workflow-heavy users |
+| Tab Wrangler | No (rule-based) | Yes | No | Free | Memory management |
+| OneTab | No | Yes | No | Free | Quick tab consolidation |
+
+
 ## Implementation Patterns
 
 
-For developers interested in building custom solutions, the Chrome Extensions API provides the foundation:
+For developers interested in building custom solutions, the Chrome Extensions API provides the foundation. Chrome's Manifest V3 (MV3) is now mandatory for new extensions, which changes how background processing works. The persistent background page from MV2 is replaced by a service worker that runs on demand, making it important to avoid long-running analysis that could be interrupted:
 
 
 ```javascript
@@ -122,27 +136,56 @@ For developers interested in building custom solutions, the Chrome Extensions AP
 
 
 ```javascript
-// background.js - Basic tab grouping logic
-chrome.tabs.query({}, (tabs) => {
+// service-worker.js (Manifest V3) - Tab grouping on command
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === 'organizeTabs') {
+    organizeTabs().then(sendResponse);
+    return true; // keep message channel open for async response
+  }
+});
+
+async function organizeTabs() {
+  const tabs = await chrome.tabs.query({ currentWindow: true });
   const groups = {};
 
-  tabs.forEach(tab => {
+  for (const tab of tabs) {
     const category = classifyTab(tab.url, tab.title);
-    if (!groups[category]) {
-      groups[category] = [];
-    }
-    groups[category].push(tab);
-  });
+    if (!groups[category]) groups[category] = [];
+    groups[category].push(tab.id);
+  }
 
-  // Create tab groups
-  Object.entries(groups).forEach(([category, tabList]) => {
-    if (tabList.length > 1) {
-      chrome.tabs.group({ tabIds: tabList.map(t => t.id) }, (groupId) => {
-        chrome.tabGroups.update(groupId, { title: category });
+  for (const [category, tabIds] of Object.entries(groups)) {
+    if (tabIds.length > 1) {
+      const groupId = await chrome.tabs.group({ tabIds });
+      await chrome.tabGroups.update(groupId, {
+        title: category,
+        collapsed: false
       });
     }
-  });
-});
+  }
+
+  return { grouped: Object.keys(groups).length };
+}
+```
+
+For AI-enhanced classification, you can call a local model using Chrome's experimental `window.ai` API (available in Chrome 127+ with the appropriate flag) or an external API endpoint:
+
+```javascript
+// Optional: AI-enhanced classification using window.ai (experimental)
+async function classifyWithAI(title, url) {
+  if (!window.ai?.languageModel) {
+    return classifyTab(url, title); // fallback to regex
+  }
+  const session = await window.ai.languageModel.create();
+  const result = await session.prompt(
+    `Classify this browser tab into one category (documentation, repository, qa, debugging, communication, other):
+    Title: ${title}
+    URL: ${url}
+    Respond with only the category name.`
+  );
+  session.destroy();
+  return result.trim().toLowerCase();
+}
 ```
 
 
@@ -157,17 +200,28 @@ AI tab organizers work best when aligned with your development process:
 
 When exploring new technologies, open many documentation tabs. AI organizers can group these by technology stack, automatically labeling groups like "React Hooks," "GraphQL Best Practices," or "PostgreSQL Configuration."
 
+A practical research workflow: open 15-20 tabs across MDN, GitHub repos, npm pages, and blog posts, then trigger the AI organizer. Within seconds, tabs cluster into logical groups — useful when evaluating competing libraries like Redux, Zustand, and Jotai, where related tabs end up in one group rather than scattered.
+
 
 ### Debugging Sessions
 
 
 During debugging, you might have browser dev tools, error logs, API documentation, and Stack Overflow threads open. AI grouping keeps these organized and quickly accessible.
 
+Debugging workflows benefit from tab state awareness. Extensions that track which tabs were opened in close succession tend to group debugging-related tabs more accurately than those relying solely on URL patterns.
+
 
 ### Multi-Project Management
 
 
 If you work on multiple projects simultaneously, AI organizers can create separate workspace contexts, keeping project-related tabs isolated and easily switchable.
+
+Workona's workspace model is particularly effective here. You create one workspace per project — "Mobile App v2", "Backend Refactor", "Client Site" — and each workspace saves its tab set. Switching workspaces suspends the previous set and restores the new one, effectively giving you separate browser sessions per project without opening multiple Chrome windows.
+
+
+### Code Review Workflows
+
+During code review, tabs accumulate quickly: the PR diff, JIRA ticket, CI logs, related docs, and previous PRs. AI organizers that detect GitHub PR URLs can group review-related tabs automatically, reducing navigation overhead.
 
 
 ## Limitations and Considerations
@@ -184,8 +238,15 @@ AI tab organizers have constraints worth understanding:
 
 - Sync limitations: Cloud sync features may not support all organization schemes
 
+- Manifest V3 service worker constraints: Extensions built on MV3 cannot run persistent background processes, which limits real-time tab monitoring compared to older MV2 extensions
 
-For security-sensitive work, consider extensions that process data locally or offer on-premise options.
+
+For security-sensitive work, consider extensions that process data locally or offer on-premise options. Extensions like Tab Wrangler and a custom MV3 extension with `window.ai` process all data client-side. Workona and Station send tab metadata to their servers for classification, which is acceptable for most developers but should be reviewed against corporate security policies.
+
+
+### Memory Impact
+
+Tab organizer extensions add resident memory overhead, typically between 10-80MB depending on whether they cache embeddings or maintain a background index. If you regularly open 100+ tabs, test your chosen extension's memory footprint by monitoring Chrome's task manager (Shift+Esc) before and after installing it.
 
 
 ## Choosing the Right Extension
@@ -204,6 +265,8 @@ Evaluate AI tab organizers based on:
 
 5. Learning curve: How quickly the AI adapts to your patterns
 
+6. MV3 compatibility: Newer extensions built on Manifest V3 are more likely to remain available as Chrome phases out MV2 support
+
 
 ## Future Developments
 
@@ -219,13 +282,32 @@ The tab organizer space continues evolving. Emerging trends include:
 
 - Voice and natural language commands: Finding and organizing tabs using conversational input
 
+- Chrome's built-in `window.ai` API maturing: Once stable, this eliminates the need for external API calls in extensions, enabling fully local AI classification with no privacy trade-offs
 
-## Related Articles
 
-- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
+## FAQ
+
+**Q: Will my AI tab organizer extension stop working when Chrome removes MV2 support?**
+
+Possibly. Chrome's MV2 phase-out timeline has shifted multiple times, but Google has confirmed that most MV2 extensions will eventually stop being distributed through the Chrome Web Store. Extensions not updated to MV3 will eventually be disabled. Check whether your preferred extension has published an MV3 roadmap. Workona and TabLab have both indicated MV3 migration plans.
+
+**Q: Can I build a tab organizer that uses a local LLM for classification?**
+
+Yes. You can use Chrome's experimental `window.ai` API (enable "Prompt API for Gemini Nano" in `chrome://flags`) to run Gemini Nano locally. Alternatively, run a local server (Ollama with Llama 3 or Mistral) and make fetch requests to `localhost` from your extension's service worker — this works today without experimental flags.
+
+**Q: Do AI tab organizers work with Firefox?**
+
+Partially. Firefox supports WebExtensions, so basic tab management extensions like OneTab have Firefox versions. However, Chrome's `chrome.tabGroups` API for native tab grouping does not exist in Firefox, making Chrome-specific AI grouping extensions Chrome-only. Firefox's Multi-Account Containers offers some equivalent functionality.
+
+**Q: How do I prevent an AI tab organizer from grouping tabs I want to keep separate?**
+
+Most extensions support exclusion rules based on URL patterns. In Workona, you can pin specific tabs to workspaces manually to prevent automatic re-grouping. Custom extensions can implement a whitelist — tabs matching certain patterns (localhost, internal tools) are excluded from AI classification and left in their current position.
+
+
+## Related Reading
+
 - [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
-- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
+- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
