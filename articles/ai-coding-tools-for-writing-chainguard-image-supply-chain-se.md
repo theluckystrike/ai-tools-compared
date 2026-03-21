@@ -13,6 +13,8 @@ score: 9
 intent-checked: true
 voice-checked: true
 ---
+{% raw %}
+
 
 
 Chainguard images provide hardened, minimal container images designed for security and supply chain integrity. Writing effective security policies for these images requires understanding SLSA provenance, SBOM generation, and image verification workflows. AI coding tools can accelerate policy creation by translating your security requirements into policy-as-code formats while ensuring you cover the essential supply chain security controls.
@@ -156,3 +158,4 @@ Maintain version control for your policies alongside your application code. This
 The combination of Chainguard's hardened images and well-designed AI-assisted policies creates a robust defense-in-depth strategy for container supply chain security.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
