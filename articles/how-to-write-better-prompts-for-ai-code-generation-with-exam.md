@@ -213,6 +213,312 @@ Common refinement triggers include:
 Document your successful prompt patterns for recurring tasks. This creates a personal library of optimized prompts that consistently produce quality results.
 
 
+## Advanced Prompt Engineering Techniques
+
+### Chain-of-Thought Prompting
+
+Force the AI to reason through the problem step-by-step:
+
+```
+Let's think about this step-by-step.
+
+First, I need to understand the problem:
+- Input: array of transactions
+- Output: summary by category
+
+Second, the algorithm should:
+1. Group transactions by category
+2. Sum amounts within each group
+3. Format results
+
+Third, here's the TypeScript implementation I'm imagining:
+...
+
+Can you refine this approach and provide production-ready code?
+```
+
+This technique improves accuracy on complex problems by 30-50%.
+
+### Negative Prompting
+
+Tell the AI what NOT to do:
+
+```
+Create a React component for user authentication. Do NOT:
+- Use inline styles (use CSS Modules instead)
+- Import all Material-UI icons (import only what's needed)
+- Create deeply nested state (use custom hooks for separation)
+- Include console.log statements (use proper logging)
+- Hardcode API endpoints (use environment variables)
+
+DO use:
+- TypeScript strict mode
+- Error boundaries for error handling
+- Accessibility attributes (aria-*)
+- Unit tests with React Testing Library
+```
+
+Negative constraints often prevent more problems than positive requirements alone.
+
+### Role-Based Prompting
+
+Assign the AI a specific expertise role:
+
+```
+You are a senior DevOps engineer with 15 years of experience.
+I'm a junior developer building a CI/CD pipeline with GitHub Actions.
+
+Explain how to implement caching for npm dependencies in GitHub Actions.
+Include:
+- Best practices for cache keys
+- Fallback strategies
+- Common pitfalls
+- Performance metrics
+
+Structure your response for someone with 2 years of experience.
+```
+
+This helps the AI calibrate its response complexity appropriately.
+
+### Multi-Modal Prompting
+
+Include code samples and architecture diagrams:
+
+```
+Here's my existing authentication module:
+[paste existing code]
+
+Here's my project structure:
+[show directory tree]
+
+I want to add rate limiting to the login endpoint.
+Modify the existing code to:
+- Apply rate limiting (5 attempts per 15 minutes)
+- Return appropriate HTTP status codes
+- Log failed attempts
+- Match the existing code style
+
+Only show the modified functions, not the entire file.
+```
+
+Including context dramatically improves output relevance.
+
+## Prompt Template Library
+
+### API Endpoint Template
+
+```
+Create a [METHOD] endpoint at [PATH] that:
+
+Input:
+- Request body: [schema]
+- Query params: [list]
+- Headers: [requirements]
+
+Processing:
+[Business logic description]
+
+Output:
+- Success (200): [response schema]
+- Error (400): [error schema]
+- Error (500): [error handling]
+
+Implementation framework: [Framework name]
+Validation library: [e.g., Zod, Yup]
+Error handling: [Custom errors vs standard HTTP]
+
+Include:
+- Full implementation
+- Input validation
+- Error cases
+- Unit tests with 3 scenarios
+```
+
+### Database Query Template
+
+```
+Create a [Language] function that:
+
+Database: [e.g., PostgreSQL, MongoDB]
+ORM: [e.g., Prisma, Sequelize]
+
+Query requirements:
+- Select: [fields]
+- Filter: [conditions]
+- Join: [related tables]
+- Order: [sorting]
+- Pagination: [size/offset]
+
+Expected performance:
+- < [X]ms execution time
+- Handle [N] million records
+
+Include:
+- Query implementation
+- Performance considerations
+- Index recommendations
+- Error handling
+- Example usage
+```
+
+### Component Template
+
+```
+Create a [Framework] component: [ComponentName]
+
+Props:
+- prop1: [type] - [description]
+- prop2: [type] - [description]
+
+Behavior:
+- [Behavior 1]
+- [Behavior 2]
+
+Styling:
+- Framework: [Tailwind/CSS Modules/styled-components]
+- Design system: [if applicable]
+- Responsive breakpoints: [if applicable]
+
+States:
+- Loading
+- Error
+- Empty
+- Populated
+
+Include:
+- Component with TypeScript types
+- Storybook stories for each state
+- Unit tests
+- Accessibility features (ARIA, keyboard nav)
+```
+
+## Measuring Prompt Effectiveness
+
+Track which prompts work best:
+
+```python
+class PromptEffectiveness:
+    def __init__(self):
+        self.results = []
+
+    def evaluate_output(self, prompt: str, output: str,
+                       criteria: dict) -> float:
+        """Score output on defined criteria (0-100)"""
+        score = 0
+        weights = criteria  # {'correctness': 0.4, 'style': 0.3, ...}
+
+        # Check correctness (runs without errors)
+        try:
+            compile_or_test(output)
+            score += weights.get('correctness', 0.4) * 100
+        except:
+            pass
+
+        # Check style (follows conventions)
+        if follows_style_guide(output):
+            score += weights.get('style', 0.3) * 100
+
+        # Check completeness (has tests, docs, error handling)
+        completeness = calculate_completeness(output)
+        score += weights.get('completeness', 0.3) * completeness
+
+        self.results.append({
+            'prompt': prompt[:100],
+            'score': score,
+            'criteria_scores': {
+                'correctness': self._check_correctness(output),
+                'style': self._check_style(output),
+                'completeness': completeness
+            }
+        })
+
+        return score
+
+    def best_prompts(self, top_n: int = 5) -> list:
+        """Return highest-scoring prompts"""
+        return sorted(self.results, key=lambda x: x['score'],
+                     reverse=True)[:top_n]
+
+    def pattern_analysis(self) -> dict:
+        """Find patterns in successful prompts"""
+        high_scoring = [r for r in self.results if r['score'] > 80]
+
+        common_terms = {}
+        for result in high_scoring:
+            words = result['prompt'].split()
+            for word in words:
+                common_terms[word] = common_terms.get(word, 0) + 1
+
+        return {
+            'avg_score': sum(r['score'] for r in self.results) / len(self.results),
+            'common_terms': sorted(common_terms.items(),
+                                  key=lambda x: x[1], reverse=True)[:10]
+        }
+```
+
+## Common Pitfalls in Prompt Writing
+
+### Too Vague
+❌ "Create a function"
+✅ "Create a TypeScript function that validates email addresses using regex, returning {valid: boolean, errors: string[]}"
+
+### Incomplete Context
+❌ "Fix this bug"
+✅ "Fix the bug in index.ts line 45 where getUserData returns undefined for users with no profile picture. Include error handling and unit tests."
+
+### Inconsistent Requirements
+❌ "Make it simple but comprehensive with all edge cases"
+✅ "Create a basic implementation (under 50 lines) that handles the happy path. Add error handling for these 3 specific edge cases."
+
+### Mixed Multiple Tasks
+❌ "Refactor this code, add tests, optimize performance, and add documentation"
+✅ "Refactor this function to use modern async/await patterns. That's task 1. Then [next task]..."
+
+### Missing Quality Criteria
+❌ "Generate a component"
+✅ "Generate a component that: passes strict TypeScript, includes accessibility attributes, works on mobile, has Storybook stories for 3 states"
+
+## Prompt Composition Best Practices
+
+### Structure for Maximum Clarity
+
+```
+[CONTEXT]
+I'm working on a [project type] using [tech stack].
+The existing approach [current state] has [problems].
+
+[OBJECTIVE]
+I need to [specific goal].
+
+[CONSTRAINTS]
+- Must work with [constraint 1]
+- Cannot use [constraint 2]
+- Performance requirement: [constraint 3]
+- Style/Convention: [constraint 4]
+
+[REQUIREMENTS]
+- Requirement 1
+- Requirement 2
+- Requirement 3
+
+[DELIVERABLES]
+Please provide:
+1. [Item 1]
+2. [Item 2]
+3. [Item 3]
+
+[EXAMPLE/REFERENCE]
+Here's similar code in my project:
+[code sample]
+
+[QUALITY CRITERIA]
+- Must pass [type checking/tests/linting]
+- Should follow [style guide]
+- Performance: [specific metric]
+```
+
+This structure makes it trivial for AI to understand and respond appropriately.
+
 ## Related Articles
 
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)

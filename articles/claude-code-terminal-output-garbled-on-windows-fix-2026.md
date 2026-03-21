@@ -189,6 +189,237 @@ claude -p "Print a Unicode test: ← → © ™ €"
 
 # Test JSON output
 claude -p "Return JSON with special chars: {'symbol': '✓', 'arrow': '→'}"
+
+# Comprehensive encoding test
+@"
+Testing encoding:
+- Arrows: ← → ↑ ↓ ↔ ↕
+- Math: ± × ÷ ≈ ≠ ≤ ≥
+- Currency: $ € ¥ £ ₹ ₽
+- Symbols: © ® ™ ° § ¶
+- Emoji: 🚀 ⚡ ✅ ❌
+"@ | claude -p $_
 ```
 
 If characters display correctly, your configuration is working. If issues persist, check for conflicting environment variables or terminal-specific settings.
+
+## Advanced Diagnostics
+
+### Encoding Detection Script
+
+Create a diagnostic script to identify encoding issues automatically:
+
+```powershell
+# detect-encoding-issues.ps1
+function Test-EncodingCompatibility {
+    param(
+        [string]$TestString = "← → © ™ € ✓ 🚀"
+    )
+
+    Write-Host "System Encoding Information:"
+    Write-Host "  Default console encoding: $([System.Console]::OutputEncoding)"
+    Write-Host "  PYTHONIOENCODING: $env:PYTHONIOENCODING"
+    Write-Host "  LANG: $env:LANG"
+    Write-Host "  LC_ALL: $env:LC_ALL"
+
+    Write-Host "`nTesting character output:"
+    Write-Host "  Input: $TestString"
+
+    # Create UTF-8 temp file
+    $utf8File = New-TemporaryFile -Suffix '.txt'
+    [System.Text.Encoding]::UTF8.GetBytes($TestString) |
+        Set-Content $utf8File -AsByteStream
+
+    Write-Host "  File encoding verified: UTF-8"
+
+    # Test terminal rendering
+    $rendered = Get-Content $utf8File
+    Write-Host "  Rendered: $rendered"
+
+    Remove-Item $utf8File
+
+    # Test Python interop
+    Write-Host "`nPython encoding test:"
+    python -c "import sys; print(f'Python encoding: {sys.getdefaultencoding()}')"
+}
+
+Test-EncodingCompatibility
+```
+
+### Batch Encoding Reset
+
+When multiple encoding issues arise, reset everything systematically:
+
+```batch
+@echo off
+REM reset-encoding.bat - Complete encoding reset for Windows
+
+echo Resetting encoding configuration...
+
+REM Clear environment variables
+set PYTHONIOENCODING=
+set LANG=
+set LC_ALL=
+
+REM Set UTF-8 as default
+chcp 65001 >nul
+
+REM Configure PowerShell permanently
+powershell -NoProfile -Command ^
+  "if (-not (Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE -Force } | Out-Null; " ^
+  "'[Console]::OutputEncoding = [System.Text.Encoding]::UTF8' | Add-Content $PROFILE"
+
+REM Configure Node.js
+set NODE_ENV_UTF8=1
+
+echo Configuration reset complete. Restart terminals for full effect.
+```
+
+## Platform-Specific Encoding Tables
+
+### Code Page Reference
+
+| Code Page | Name | Best For | Issue |
+|-----------|------|----------|-------|
+| 65001 | UTF-8 | Modern apps | May have compatibility issues |
+| 850 | DOS | Legacy systems | Can't display modern Unicode |
+| 1252 | Windows-1252 | English/Western Europe | Limited character set |
+| 10000 | Mac Roman | macOS Legacy | Rarely used now |
+
+For Claude Code: **Always use 65001 (UTF-8)**.
+
+## Integration with CI/CD Pipelines
+
+When running Claude Code in automated environments:
+
+```yaml
+# .github/workflows/claude-code.yml
+name: Claude Code with Proper Encoding
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      PYTHONIOENCODING: utf-8
+      LANG: en_US.UTF-8
+      LC_ALL: en_US.UTF-8
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set UTF-8 Code Page (Windows)
+        shell: cmd
+        run: chcp 65001
+
+      - name: Run Claude Code
+        shell: powershell
+        run: |
+          [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+          claude generate-report.prompt
+```
+
+## Troubleshooting Terminal Emulator Issues
+
+### ConEmu Configuration
+
+If using ConEmu, add to its settings:
+
+```ini
+[ConEmu]
+DefaultCP=65001
+UnicodeFont=1
+UnNestMonitorConEmu=1
+```
+
+### Git Bash Configuration
+
+```bash
+# ~/.bash_profile or ~/.bashrc in Git Bash
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export PYTHONIOENCODING=utf-8
+
+# Ensure Git uses UTF-8
+git config --global i18n.logoutputencoding utf-8
+git config --global i18n.commitencoding utf-8
+```
+
+### WSL (Windows Subsystem for Linux) Configuration
+
+```bash
+# In WSL ~/.zshrc or ~/.bashrc
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# Set Windows-side environment for interop
+export PYTHONIOENCODING=utf-8
+```
+
+Then from Windows, set:
+```powershell
+$env:LANG = "en_US.UTF-8"
+$env:LC_ALL = "en_US.UTF-8"
+```
+
+## Long-term Maintenance
+
+### Monthly Encoding Audit
+
+Create a scheduled task to verify encoding health:
+
+```powershell
+# encoding-audit.ps1 - Scheduled monthly check
+$auditDate = Get-Date -Format "yyyy-MM-dd HH:mm"
+
+$auditResults = @{
+    Timestamp = $auditDate
+    ConsoleEncoding = [System.Console]::OutputEncoding
+    EnvironmentVars = @{
+        PYTHONIOENCODING = $env:PYTHONIOENCODING
+        LANG = $env:LANG
+        LC_ALL = $env:LC_ALL
+    }
+    WindowsTerminalVersion = (Get-Command wt -ErrorAction SilentlyContinue).Version
+    ClaudeCodeVersion = (claude --version 2>$null)
+}
+
+$auditResults | ConvertTo-Json |
+    Out-File "encoding-audit-$($auditDate -replace ':','-').json"
+
+Write-Host "Encoding audit saved."
+```
+
+### Common Post-Update Issues
+
+After Windows or terminal updates, re-apply UTF-8 configuration:
+
+```powershell
+# Post-update encoding check
+Write-Host "Verifying encoding after system update..."
+
+# Check if UTF-8 was reset
+$currentCP = (chcp) -match '\d{5}' | ForEach-Object { [int]$_.Matches[0].Value }
+
+if ($currentCP -ne 65001) {
+    Write-Warning "Code page reset to $currentCP. Restoring UTF-8..."
+    chcp 65001 | Out-Null
+}
+
+# Verify environment variables
+if (-not $env:PYTHONIOENCODING -eq 'utf-8') {
+    Write-Warning "PYTHONIOENCODING not set. Configuring..."
+    [Environment]::SetEnvironmentVariable('PYTHONIOENCODING', 'utf-8', [EnvironmentVariableTarget]::User)
+}
+
+Write-Host "Encoding verification complete."
+```
+
+## Preventive Measures: Avoid Garbled Output
+
+1. **Use Windows Terminal** instead of Command Prompt - it handles UTF-8 natively
+2. **Keep fonts updated** - ensure your terminal font supports Unicode
+3. **Monitor system updates** - Windows updates sometimes reset code page settings
+4. **Use configuration management** - store encoding settings in version control
+5. **Test regularly** - use the test scripts above monthly

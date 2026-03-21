@@ -170,4 +170,267 @@ When Composer generates incorrect paths, you can correct them without regenerati
 
 This manual correction approach takes seconds and helps train your understanding of how Composer interprets project structures.
 
+## Automated Path Correction Script
+
+Implement a script to automatically detect and fix common path errors:
+
+```python
+import os
+import re
+from pathlib import Path
+from typing import List, Tuple
+
+class PathCorrectionEngine:
+    def __init__(self, project_root: str, config: dict = None):
+        self.project_root = Path(project_root)
+        self.config = config or self._load_default_config()
+
+    def _load_default_config(self) -> dict:
+        """Define project structure rules"""
+        return {
+            'utils': 'src/utils',
+            'helpers': 'src/utils',
+            'lib': 'src/lib',
+            'components': 'src/components',
+            'hooks': 'src/hooks',
+            'services': 'src/services',
+            'types': 'src/types',
+            'constants': 'src/constants',
+            'styles': 'src/styles'
+        }
+
+    def detect_incorrect_paths(self, file_content: str) -> List[Tuple[str, str]]:
+        """Find incorrect import paths in generated code"""
+        issues = []
+
+        # Pattern: import { ... } from '../../utils/...'
+        relative_imports = re.findall(r"from\s+['\"]([\.\/]+[^'\"]+)['\"]", file_content)
+
+        for import_path in relative_imports:
+            corrected = self._correct_path(import_path)
+            if import_path != corrected:
+                issues.append((import_path, corrected))
+
+        return issues
+
+    def _correct_path(self, path: str) -> str:
+        """Apply correction rules to individual paths"""
+        # Example: ../../utils/helper -> @/utils/helper
+        if path.count('../') > 2:
+            # Too many parent traversals usually indicates wrong base
+            return self._use_alias_path(path)
+
+        # Check if path exists, suggest correction if not
+        full_path = (self.project_root / path).resolve()
+        if not full_path.exists():
+            return self._suggest_correct_path(path)
+
+        return path
+
+    def _use_alias_path(self, path: str) -> str:
+        """Convert deep relative paths to alias paths"""
+        # Extract the meaningful part of the path
+        parts = path.split('/')
+        for i, part in enumerate(parts):
+            if part not in ('.', '..'):
+                return f"@/{'/'.join(parts[i:])}"
+        return path
+
+    def _suggest_correct_path(self, path: str) -> str:
+        """Find the correct path if possible"""
+        # Extract filename
+        filename = os.path.basename(path)
+
+        # Search project for file
+        matches = list(self.project_root.glob(f"**/{filename}"))
+        if matches:
+            relative = matches[0].relative_to(self.project_root)
+            return f"@/{relative}"
+
+        return path
+
+    def auto_fix_imports(self, file_path: str) -> bool:
+        """Automatically fix import paths in a file"""
+        with open(file_path, 'r') as f:
+            content = f.read()
+
+        issues = self.detect_incorrect_paths(content)
+        if not issues:
+            return False
+
+        corrected = content
+        for wrong, right in issues:
+            corrected = corrected.replace(wrong, right)
+
+        with open(file_path, 'w') as f:
+            f.write(corrected)
+
+        return True
+
+# Usage
+engine = PathCorrectionEngine('/path/to/project')
+fixed = engine.auto_fix_imports('generated_file.ts')
+if fixed:
+    print("Import paths corrected automatically")
+```
+
+## Path Validation Testing
+
+Create tests to catch path issues before they cause problems:
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { readdirSync } from 'fs';
+import { resolve } from 'path';
+
+describe('Generated File Paths', () => {
+  it('should have all imported files exist on disk', () => {
+    const imports = extractImportsFromFile('src/generated/component.ts');
+
+    for (const importPath of imports) {
+      const resolvedPath = resolve('src', importPath);
+      expect(() => readdirSync(resolvedPath)).not.toThrow();
+    }
+  });
+
+  it('should use consistent alias patterns', () => {
+    const content = readFileSync('src/generated/component.ts', 'utf-8');
+    const hasRelativeDeep = /@\/\.\.\/\.\.\//.test(content);
+    const hasAliases = /@\/[a-z]+\//.test(content);
+
+    expect(hasRelativeDeep).toBe(false);
+    expect(hasAliases).toBe(true);
+  });
+
+  it('should handle monorepo package references correctly', () => {
+    const content = readFileSync('src/generated/component.ts', 'utf-8');
+    // For monorepo: packages/shared-hooks/src/hooks should use workspace alias
+    const monorepoImports = content.match(/from\s+["']@shared\//g);
+    expect(monorepoImports).toBeTruthy();
+  });
+});
+```
+
+## Real-World Pattern: NextJS Project Configuration
+
+For Next.js projects, ensure Composer understands the structure:
+
+```json
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@types/*": ["./src/types/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@public/*": ["./public/*"]
+    }
+  }
+}
+```
+
+When instructing Cursor:
+
+```
+I'm working on a Next.js project with path aliases configured.
+When generating new files, always use these patterns:
+- Components go to src/components
+- Hooks go to src/hooks
+- Utils go to src/utils
+- Always use the @ alias (e.g., @/utils/helper, not ../utils/helper)
+- For types, use @/types/index for barrel exports
+
+Here's my tsconfig paths for reference: [paste above config]
+```
+
+## Debugging: Understanding Composer's Context Extraction
+
+When Composer makes mistakes, examine what context it received:
+
+```bash
+# Check what files are visible to Cursor
+find . -not -path '*/node_modules/*' -not -path '*/.git/*' \
+  -not -path '*/dist/*' -not -path '*/.next/*' | head -50
+
+# Verify your project structure matches expected format
+tree -L 3 -I 'node_modules|dist|.next' src/
+```
+
+If Composer doesn't understand your structure:
+1. Simplify the initial directory layout
+2. Create explicit README files in key directories explaining their purpose
+3. Use consistent naming conventions (no mixing `utils` and `helpers`)
+4. Avoid deeply nested folder hierarchies (max 3-4 levels)
+
+## Emergency Recovery: Batch Path Fix
+
+For multiple files with wrong paths:
+
+```bash
+#!/bin/bash
+# fix_paths.sh - Bulk fix incorrect relative imports
+
+PATTERN_FROM='from ['"'"'"][^'"'"'"]*\.\./\.\./[^'"'"'"]*'
+PATTERN_TO="from '@"
+
+find src -name "*.ts" -o -name "*.tsx" | while read file; do
+  # Count too-deep relative imports
+  DEEP_IMPORTS=$(grep -c '\.\./\.\./\.\.' "$file" || true)
+
+  if [ "$DEEP_IMPORTS" -gt 0 ]; then
+    echo "Fixing $file ($DEEP_IMPORTS deep imports)"
+    # Backup original
+    cp "$file" "${file}.bak"
+
+    # Replace with simpler pattern (requires manual review)
+    sed -i "s|from ['\"].*\.\./.*utils|from '@/utils|g" "$file"
+  fi
+done
+
+echo "Path fixes applied. Review files ending in .bak"
+```
+
+## Platform-Specific Path Handling
+
+Account for OS-specific path differences:
+
+```typescript
+// pathUtils.ts - Cross-platform path handling
+import { sep } from 'path';
+
+export const normalizePath = (path: string): string => {
+  // Convert Windows backslashes to forward slashes
+  return path.replace(/\\/g, '/');
+};
+
+export const aliasPath = (basePath: string, alias: string): string => {
+  // Ensure paths work across OS
+  if (process.platform === 'win32') {
+    return `${alias}${sep}${basePath}`;
+  }
+  return `${alias}/${basePath}`;
+};
+
+// Usage in generated files
+const utilPath = aliasPath('helper', '@/utils'); // Works on Windows and Unix
+```
+
+## Integration with Your IDE
+
+Configure Cursor to show path verification:
+
+In `.cursorrules`:
+```yaml
+rules:
+  - When generating files, always verify paths exist
+  - Use TypeScript path aliases defined in tsconfig
+  - Check relative path depth - warn if > 3 levels
+  - For monorepos, use workspace package names
+  - Format all paths consistently
+```
+
 {% endraw %}

@@ -217,4 +217,302 @@ When Copilot fails behind a corporate proxy, work through this checklist:
 5. **Check Copilot subscription status** — Ensure your license is active
 6. **Review extension logs** — VS Code: Help > Toggle Developer Tools > Console
 
+## Advanced Proxy Debugging
+
+### Detailed Network Trace
+
+```bash
+# Verbose curl test with all headers
+curl -v -x http://your-proxy:8080 \
+  -H "Authorization: token your-github-token" \
+  https://api.github.com/user
+
+# Monitor actual traffic
+tcpdump -i any -n "tcp port 443 or tcp port 8080" | head -50
+
+# Test with strace (Linux)
+strace -e trace=network curl api.github.com
+```
+
+### Proxy Authentication Testing
+
+If your proxy requires authentication:
+
+```bash
+# Test basic auth
+curl -v -x http://username:password@proxy:8080 https://api.github.com
+
+# Test NTLM auth (Windows)
+# Use cntlm to bridge NTLM -> HTTP
+curl -x http://localhost:3128 https://api.github.com
+```
+
+### TLS/SSL Certificate Issues
+
+When proxy performs SSL inspection:
+
+```bash
+# Check certificate chain
+openssl s_client -connect api.github.com:443 -showcerts
+
+# If corporate CA is involved, extract it
+openssl s_client -connect api.github.com:443 -showcerts | \
+  sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > corp-ca.crt
+
+# Add to system CA store (macOS)
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain corp-ca.crt
+```
+
+## Enterprise Environment Configurations
+
+### Example: Squid Proxy Setup
+
+If you manage your proxy:
+
+```squid
+# /etc/squid/squid.conf
+acl github dstdomain api.github.com copilot.github.com
+acl ssl_ports port 443
+acl safe_ports port 80 443 8080
+
+http_access allow github
+http_access deny !safe_ports
+http_access deny CONNECT !ssl_ports
+
+# Forward to upstream corporate proxy
+cache_peer upstream.corp.proxy parent 8080 0 name=upstream
+cache_peer_access upstream allow all
+
+# SSL bump for inspection (optional)
+https_port 3128 cert=/path/to/cert.pem key=/path/to/key.pem
+```
+
+### Windows Group Policy Configuration
+
+For enterprise Windows administrators:
+
+```powershell
+# Configure via Group Policy for multiple machines
+# Use Preferences > Windows Settings > Network > Proxy Settings
+
+# Or via PowerShell for individual machines
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" `
+  -Name ProxyServer -Value "proxy.corp:8080"
+
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" `
+  -Name ProxyEnable -Value 1
+
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" `
+  -Name ProxyOverride -Value "*.local;<local>"
+```
+
+## Performance Optimization Through Proxy
+
+Proxies add latency. Minimize impact:
+
+```json
+{
+  "http.proxy": "http://proxy.corp:8080",
+  "http.proxyAuthorization": "basic",
+  "http.proxyStrictSSL": false,
+  "http.timeout": 30000,
+  "http.keepAliveTimeout": 5000,
+  "github.copilot.requestTimeout": 15000
+}
+```
+
+These settings:
+- Increase timeout to handle proxy latency
+- Keep connections alive to reduce connection overhead
+- Disable proxy certificate validation if corporate CA present
+
+### Caching Strategy Behind Proxy
+
+Reduce API calls with smart caching:
+
+```javascript
+// VS Code extension caching
+const cache = new Map();
+const CACHE_TTL = 3600000; // 1 hour
+
+async function getCachedCompletion(prompt) {
+  const cacheKey = prompt.substring(0, 100);
+
+  if (cache.has(cacheKey)) {
+    const cached = cache.get(cacheKey);
+    if (Date.now() - cached.timestamp < CACHE_TTL) {
+      return cached.data;
+    }
+  }
+
+  const result = await getCompletionFromCopilot(prompt);
+  cache.set(cacheKey, {
+    data: result,
+    timestamp: Date.now()
+  });
+
+  return result;
+}
+```
+
+## Monitoring and Logging
+
+### Create Copilot Connection Monitor
+
+```python
+import requests
+import time
+from datetime import datetime
+import json
+
+class CopilotProxyMonitor:
+    def __init__(self, proxy_url: str, log_file: str = "copilot_connections.log"):
+        self.proxy_url = proxy_url
+        self.log_file = log_file
+        self.session = requests.Session()
+        self.session.proxies = {
+            'http': proxy_url,
+            'https': proxy_url
+        }
+
+    def test_connectivity(self) -> dict:
+        """Test Copilot connectivity through proxy"""
+        endpoints = [
+            'https://api.github.com/user',
+            'https://copilot.github.com/api/status',
+            'https://origin-authentication.webapi.visualstudio.com'
+        ]
+
+        results = {}
+        for endpoint in endpoints:
+            try:
+                start = time.time()
+                response = self.session.get(endpoint, timeout=5)
+                duration = time.time() - start
+
+                results[endpoint] = {
+                    'status': response.status_code,
+                    'latency_ms': duration * 1000,
+                    'success': response.status_code < 400
+                }
+            except Exception as e:
+                results[endpoint] = {
+                    'status': 'error',
+                    'error': str(e),
+                    'success': False
+                }
+
+        self._log_results(results)
+        return results
+
+    def _log_results(self, results: dict):
+        """Log test results to file"""
+        with open(self.log_file, 'a') as f:
+            entry = {
+                'timestamp': datetime.now().isoformat(),
+                'results': results
+            }
+            f.write(json.dumps(entry) + '\n')
+
+# Usage
+monitor = CopilotProxyMonitor('http://proxy.corp:8080')
+monitor.test_connectivity()
+```
+
+Run this periodically to track proxy-related issues:
+
+```bash
+# Check connectivity every hour
+while true; do
+  python monitor.py
+  sleep 3600
+done
+```
+
+## Emergency Workarounds
+
+When proxy issues can't be fixed immediately:
+
+### Option 1: Mobile Hotspot Bypass
+Use your phone's hotspot to bypass corporate proxy temporarily. Not recommended for sensitive code, but useful for troubleshooting.
+
+### Option 2: SSH Tunnel Through Jump Host
+
+```bash
+# If you have access to a machine outside the proxy:
+ssh -D 1080 user@external-server.com
+
+# Then use SOCKS5 in Copilot
+export SOCKS_PROXY="socks5://localhost:1080"
+```
+
+### Option 3: VPN (with IT approval)
+
+Work with your IT team to authorize a company VPN that doesn't restrict Copilot access. Some corporate VPNs have better Copilot compatibility than others.
+
+## Long-term Solutions
+
+### Request Copilot as Approved Tool
+
+Document the business value and work with IT to officially approve Copilot:
+
+1. **Show ROI**: Developer productivity gains (typically 20-40%)
+2. **Security**: GitHub Copilot doesn't store code
+3. **Precedent**: List other approved tools using similar endpoints
+4. **Workaround cost**: Show IT the cost of manual workarounds
+
+Provide IT with:
+- Domains to whitelist: `api.github.com`, `copilot.github.com`
+- Required IP ranges (from GitHub's public IP list)
+- Certificate requirements (if applicable)
+- Bandwidth estimate (<10KB per request)
+
+### Upgrade to GitHub Copilot Enterprise
+
+GitHub Copilot Business/Enterprise has better enterprise proxy support:
+
+```json
+{
+  "github.copilot.advanced": {
+    "authentication": "enterprise",
+    "enterpriseProxy": "http://proxy.corp:8080"
+  }
+}
+```
+
+Enterprise plans include:
+- Direct support for corporate proxies
+- Admin controls for network configuration
+- Custom endpoint options
+- Dedicated support
+
+## Post-Mortem: Preventing Future Proxy Issues
+
+After resolving proxy issues:
+
+1. **Document your configuration** - Save your working proxy settings in team wiki
+2. **Test during onboarding** - New team members test Copilot on day 1
+3. **Monitor continuously** - Use the monitoring script above
+4. **Plan for changes** - When IT updates proxy settings, test Copilot first
+
+Create a team runbook:
+
+```markdown
+# Copilot Behind Corporate Proxy - Team Runbook
+
+## If Copilot stops working:
+
+1. Run: `curl -x http://proxy.corp:8080 https://api.github.com`
+2. If that fails, it's a network issue - contact IT
+3. If it works, restart VS Code
+4. If still broken, check ~/.vscode/settings.json for proxy config
+
+## Network info:
+- Proxy: proxy.corp:8080
+- Auth: Use Windows credentials
+- Bypass: localhost,127.0.0.1,.local
+
+## Contact: IT Service Desk #2525
+```
+
 {% endraw %}
