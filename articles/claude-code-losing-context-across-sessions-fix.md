@@ -30,6 +30,9 @@ Claude Code maintains context within an active session through its conversation 
 The CLI stores conversation history locally, but the initialization process determines whether previous conversations load automatically. Most context loss issues stem from three root causes: session configuration, history file management, and terminal state handling.
 
 
+Context loss is one of the most disruptive problems in AI-assisted development workflows. Developers invest significant time explaining their codebase, naming conventions, and architectural decisions to Claude Code during a session. When that context disappears overnight, you repeat yourself and lose momentum. The good news is that every common cause of context loss has a reliable fix.
+
+
 ## Step-by-Step Fixes
 
 
@@ -233,6 +236,101 @@ chmod -R 755 .
 ```
 
 
+## Building a Persistent Context File That Actually Works
+
+
+The most reliable long-term fix for context loss is maintaining a well-structured `CLAUDE.md` or `.claude/context.md` file that Claude Code reads at the start of every session. The key is structuring this file so it covers everything Claude Code needs to be immediately useful without re-explanation.
+
+
+A high-quality context file contains these sections:
+
+
+**Project overview** — Two to three sentences describing what the project does, the primary technology stack, and who the intended users are.
+
+
+**Architectural decisions** — Bullet points covering the major decisions already made: "We use PostgreSQL not MongoDB because of our join-heavy reporting queries." These prevent Claude Code from suggesting solutions that contradict your existing choices.
+
+
+**Naming conventions** — Explicit rules: "Database tables use snake_case. API routes use kebab-case. Python functions use snake_case. React components use PascalCase."
+
+
+**Current work in progress** — A brief description of what you were working on at the end of the last session. This is the most perishable information and should be updated before closing each session.
+
+
+**Commands and shortcuts** — Project-specific commands that Claude Code should know: how to run tests, start the dev server, apply migrations.
+
+
+Here is a template:
+
+
+```markdown
+# Project Context
+
+## What this is
+A FastAPI backend for a SaaS billing platform. Users are B2B finance teams.
+Stack: Python 3.11, FastAPI, PostgreSQL 15, SQLAlchemy 2.0, Alembic, Redis.
+
+## Architecture decisions
+- Async SQLAlchemy sessions throughout (no sync ORM calls)
+- Pydantic v2 for all request/response models
+- JWT auth via python-jose (not authlib)
+- All background tasks use Celery + Redis (not FastAPI BackgroundTasks)
+
+## Naming conventions
+- DB tables: snake_case plural (invoices, payment_methods)
+- API routes: kebab-case (/payment-methods, /invoice-items)
+- Pydantic models: PascalCase with suffix (InvoiceCreate, InvoiceResponse)
+
+## Current WIP
+Implementing Stripe webhook handler in app/webhooks/stripe.py.
+Next: write tests for the invoice.paid event handler.
+
+## Key commands
+- Run tests: pytest tests/ -x -q
+- Start dev server: uvicorn app.main:app --reload
+- Apply migrations: alembic upgrade head
+```
+
+
+Load this file at session start:
+
+
+```bash
+claude --context .claude/context.md "Continue work on the Stripe webhook handler"
+```
+
+
+Within seconds Claude Code has the full context it needs.
+
+
+## Session Snapshot Workflow
+
+
+For teams or individuals running long multi-day projects, a snapshot workflow reduces the daily context-rebuilding overhead to near zero.
+
+
+**At session end**: Ask Claude Code to summarize the session before you close the terminal:
+
+
+```
+Summarize what we accomplished this session, what decisions we made, and what the next steps are. Format it as a context file update I can paste into .claude/context.md.
+```
+
+
+**Paste the output** into your context file, replacing the "Current WIP" section.
+
+
+**At session start**: Load the context file and confirm Claude Code understood it:
+
+
+```bash
+claude --context .claude/context.md "Read the context file and confirm you understand what we were working on."
+```
+
+
+This workflow takes under two minutes and eliminates virtually all context loss pain.
+
+
 ## Preventing Future Context Loss
 
 
@@ -246,6 +344,41 @@ Implement a consistent workflow to minimize context disruption:
 3. Version control configuration — track your Claude Code settings in git for reproducibility
 
 4. Export regularly — periodically export session summaries using built-in export functions if available
+
+
+## Comparison: Session Management Approaches
+
+
+| Approach | Setup effort | Reliability | Best for |
+|---|---|---|---|
+| `claude --resume` flag | None | Medium (depends on version) | Quick fix, short projects |
+| settings.json persistence | Low | Medium | Teams with standard installs |
+| Manual context.md file | Medium | High | Ongoing projects |
+| Session snapshot workflow | Medium | Very high | Multi-day complex projects |
+| Shell trap + auto-save | Low | Medium | Developers who forget to save |
+
+
+## Frequently Asked Questions
+
+
+**Q: Why does Claude Code lose context even when I use the same terminal window?**
+A: Context lives in the active conversation thread. If you start a new `claude` invocation without resuming the previous session, a fresh context loads even in the same terminal. Always use `claude --resume` or load your context file explicitly.
+
+
+**Q: Does Claude Code context persist across reboots?**
+A: History files persist across reboots as long as they are on a non-volatile disk path and permissions are intact. The context is stored locally, not in the cloud. After a reboot, verify your history path with `ls -la ~/.claude/history/` before launching Claude Code.
+
+
+**Q: Can I share context files across machines?**
+A: Yes. Store your `.claude/context.md` in your project's git repository. Because the file is plain text, it syncs naturally through normal git workflows. Sensitive information like API keys or passwords should never go in the context file.
+
+
+**Q: Is there a size limit on context files?**
+A: Practical limits depend on Claude Code's context window. Keep context files under 2,000 words to ensure they load completely without truncation. If your project notes exceed this, split into a brief startup context file and a detailed reference file you load only when needed.
+
+
+**Q: Does context loss affect Claude Code's ability to read my codebase?**
+A: Claude Code re-reads file contents each time you reference them, so file-level understanding is not affected by session context loss. What is lost is the conversational history: decisions made, errors debugged, and preferences expressed during the session.
 
 
 ## Related Articles
