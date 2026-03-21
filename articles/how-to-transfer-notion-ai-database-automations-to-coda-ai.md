@@ -9,7 +9,7 @@ permalink: /how-to-transfer-notion-ai-database-automations-to-coda-ai/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, automation]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

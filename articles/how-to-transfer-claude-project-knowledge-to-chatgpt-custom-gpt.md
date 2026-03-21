@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/
 categories: [tutorials, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, claude-ai, chatgpt]

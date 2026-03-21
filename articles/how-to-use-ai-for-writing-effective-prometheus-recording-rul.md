@@ -9,7 +9,7 @@ permalink: /how-to-use-ai-for-writing-effective-prometheus-recording-rul/
 categories: [guides]
 tags: [ai-tools-compared, prometheus, monitoring, ai, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
