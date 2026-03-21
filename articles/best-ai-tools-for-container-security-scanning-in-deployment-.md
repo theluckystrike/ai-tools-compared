@@ -298,6 +298,22 @@ One of the biggest challenges with container security is managing the volume of 
 
 - Pin base image digests: Use `FROM python:3.12@sha256:abc123` instead of `FROM python:3.12` to prevent silent base image changes introducing new vulnerabilities
 
+
+## FAQ
+
+**Q: Should I use Trivy or Snyk for a startup with limited budget?**
+Start with Trivy—it is fully open-source, has no per-image scan limits, and integrates into GitHub Actions with a single `uses:` line. When you need automated fix PRs and reachability analysis, add Snyk Container on its free tier, which covers up to 200 open-source tests per month. Run both tools in your pipeline: Trivy for fast blocking gates and Snyk for continuous registry monitoring.
+
+**Q: How do I handle vulnerabilities in base images that have no fix available?**
+Use `trivy image --ignore-unfixed` to suppress unfixed CVEs in reports, reducing noise without hiding actionable findings. Consider switching to a distroless base image—Google's distroless images eliminate entire categories of OS-level vulnerabilities by removing the package manager, shell, and other attack surface tools entirely.
+
+**Q: What is the difference between image scanning and runtime protection?**
+Image scanning (Trivy, Snyk, Docker Scout) catches known CVEs and misconfigurations before deployment. Runtime protection (Falcon, Sysdig) detects behavioral anomalies in running containers—privilege escalation, unexpected outbound connections, and binary execution that was not present in the original image. Both layers are needed for complete coverage; image scanning prevents known bad things from deploying, while runtime protection catches zero-day exploits and supply chain attacks in production.
+
+**Q: Can AI scanning tools detect secrets accidentally baked into images?**
+Yes. Trivy includes secret detection using entropy analysis and pattern matching. Run `trivy image --scanners vuln,secret myapp:latest` to check both CVEs and secrets in a single pass. For prevention at build time, use `docker buildx build --secret id=mysecret,src=./secret.txt` to mount secrets without persisting them in image layers.
+
+
 ## Related Articles
 
 - [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
