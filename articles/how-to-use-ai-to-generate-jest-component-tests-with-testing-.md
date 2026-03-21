@@ -26,7 +26,7 @@ AI tools can generate Jest test suites using Testing Library and user-event that
 Testing Library encourages tests that simulate real user interactions. Instead of testing internal component state or methods, you test what users see and do. The `user-event` library extends this by providing realistic user interaction simulations—typing, clicking, selecting—exactly how users interact with your app.
 
 
-This approach leads to more maintainable tests. When you refactor components, your tests remain valid as long as the user interface behavior stays consistent.
+This approach leads to more maintainable tests. When you refactor components, your tests remain valid as long as the user interface behavior stays consistent. Tests written against DOM queries and ARIA roles survive component rewrites far better than tests that reach into internal state or check specific CSS class names.
 
 
 ## Generating Tests with AI: Getting Started
@@ -55,6 +55,8 @@ function Button({ onClick, label, disabled = false }) {
 
 
 When prompting an AI to generate tests, include the component code and specify Testing Library with user events. A good prompt specifies the testing libraries and interaction patterns you need.
+
+An effective prompt structure looks like this: "Generate Jest tests for the following React component using `@testing-library/react` and `@testing-library/user-event` v14. Use `userEvent.setup()` pattern, prefer `getByRole` and `getByLabelText` queries, and test all interactive behaviors." Providing the version is important because the user-event API changed significantly between v13 and v14.
 
 
 ## Practical Example: Testing a Form Component
@@ -154,9 +156,7 @@ AI-generated tests provide a solid foundation, but you should review and enhance
 
 
 - Edge case testing: What happens with invalid input?
-
 - Accessibility verification: Use `getByRole`, `getByLabelText`, and `getByText` selectors
-
 - Error state testing: How does the component behave when operations fail?
 
 
@@ -176,6 +176,60 @@ it('displays error message for invalid email format', async () => {
   expect(screen.getByText(/invalid email/i)).toBeInTheDocument();
 });
 ```
+
+
+## Testing Async Components and API Calls
+
+
+Many real-world components fetch data or call APIs. AI tools handle these cases well when you provide the right context, but the generated tests require a mocking strategy. The most reliable approach uses `jest.mock` at the module level and `waitFor` or `findBy` queries to handle async rendering:
+
+
+```jsx
+// UserProfile.test.jsx
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { UserProfile } from './UserProfile';
+import { fetchUser } from './api';
+
+jest.mock('./api');
+
+describe('UserProfile', () => {
+  it('displays user name after successful fetch', async () => {
+    fetchUser.mockResolvedValue({ name: 'Alice', role: 'Admin' });
+
+    render(<UserProfile userId="123" />);
+
+    // findBy* queries automatically wait for the element to appear
+    const userName = await screen.findByText('Alice');
+    expect(userName).toBeInTheDocument();
+  });
+
+  it('shows error message when fetch fails', async () => {
+    fetchUser.mockRejectedValue(new Error('Network error'));
+
+    render(<UserProfile userId="123" />);
+
+    await screen.findByText(/failed to load user/i);
+  });
+});
+```
+
+
+When prompting AI for tests involving async data, explicitly state: "mock the API module with jest.mock, use findBy queries for async elements, and test both success and error states." This prevents AI from generating tests that assume synchronous rendering.
+
+
+## Prompt Patterns That Produce the Best Results
+
+
+The quality of AI-generated tests depends heavily on prompt structure. These patterns consistently produce well-structured output:
+
+**Pattern 1 — Role-based system context.** Open with: "You are an expert React test engineer who writes tests using @testing-library/react and @testing-library/user-event v14. Always use userEvent.setup(), prefer semantic queries, and avoid testing implementation details."
+
+**Pattern 2 — Include the test setup file.** Paste your `jest.setup.js` or `setupTests.ts` content alongside the component. This tells the AI which custom matchers and providers are already configured globally.
+
+**Pattern 3 — Specify what not to test.** Explicitly telling AI "do not test internal state, do not use container.querySelector, do not assert on className" eliminates the most common bad patterns before they appear.
+
+**Pattern 4 — Request test titles first.** Ask the AI to list all test case descriptions before writing any code. Review and edit the list, then ask it to implement each one. This prevents you from reviewing 200 lines of code only to realize the wrong scenarios were tested.
 
 
 ## Best Practices for AI-Assisted Test Generation
@@ -199,29 +253,38 @@ Review generated assertions: Verify that the assertions match your component's a
 Test user flows, not implementation: Focus on what users can do with your component, not internal state changes.
 
 
+## Common Pitfalls in AI-Generated Tests
+
+
+Even with good prompts, AI tools produce predictable failure patterns. Knowing these in advance saves debugging time.
+
+**Using `act()` unnecessarily.** Older AI training data includes the pattern of wrapping every interaction in `act()`. With user-event v14 and React Testing Library v14+, `act()` wrapping is handled internally. Redundant `act()` calls produce console warnings and occasionally mask real timing issues.
+
+**Querying by text that changes with i18n.** If your app supports multiple languages, AI-generated tests using `getByText('Submit')` will fail in non-English locales. Ask AI to use `getByRole('button', { name: /submit/i })` with a regex, or mock your i18n provider to return predictable strings.
+
+**Missing `cleanup` between tests.** Testing Library auto-runs cleanup after each test when using Jest with the proper setup, but AI sometimes generates explicit `afterEach(() => cleanup())` calls that are redundant. More problematically, AI occasionally generates tests that share component instances across cases, leading to flaky failures when test order changes. Each test should call `render()` independently.
+
+**Asserting on `toBeVisible()` when `toBeInTheDocument()` is intended.** These are different: a hidden element (`display: none`) is in the document but not visible. AI sometimes conflates the two. Review assertions carefully when testing conditional rendering to ensure the correct matcher is applied.
+
+
 ## Automating Test Generation Workflow
 
 
-You can integrate AI test generation into your workflow:
+You can integrate AI test generation into your development workflow with a consistent process:
 
 
 1. Write or update a component
-
 2. Copy the component code
-
 3. Prompt your AI assistant to generate tests using Testing Library and user events
-
 4. Run the generated tests to verify they pass
-
 5. Add missing edge cases and refine assertions
-
 6. Commit the tests alongside your component
 
 
-This workflow accelerates test coverage without sacrificing quality.
+This workflow accelerates test coverage without sacrificing quality. Teams that apply it consistently report reaching 80%+ coverage on new components within the same sprint they are written, compared to the common pattern of test coverage lagging weeks or months behind feature development.
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
 - [How to Use AI to Generate Jest Tests for](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
