@@ -218,6 +218,199 @@ Several mistakes reduce multi-stage build effectiveness. Installing all dependen
 Copilot sometimes suggests copying entire directories when specific files would suffice. Review each COPY instruction and restrict it to necessary files. The builder pattern works best when each stage contains precisely what it needs and nothing more.
 
 
+## Advanced Multi-Stage Patterns
+
+Beyond basic builder patterns, Copilot can generate sophisticated multi-stage configurations:
+
+**Three-Stage Builds**: Dependency stage, build stage, runtime stage. Useful for projects with lengthy build processes.
+
+```dockerfile
+FROM golang:1.21-alpine as dependencies
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
+
+FROM dependencies as builder
+COPY . .
+RUN CGO_ENABLED=0 go build -o app .
+
+FROM alpine:3.18
+COPY --from=builder /app/app .
+CMD ["./app"]
+```
+
+**Build Arguments for Flexibility**: Multi-stage builds benefit from build arguments to control which artifacts get included:
+
+```dockerfile
+ARG BUILD_ENV=production
+ARG VERSION=latest
+
+FROM builder as build
+RUN if [ "$BUILD_ENV" = "production" ]; then \
+      go build -ldflags="-s -w" -o app .; \
+    else \
+      go build -o app .; \
+    fi
+```
+
+When you ask Copilot: "Add build arguments to control whether we build with optimizations," it recognizes the pattern and generates appropriate configurations.
+
+**Cross-Platform Builds**: Modern applications need to run on multiple architectures (x86_64, ARM64). Copilot can suggest buildx configurations:
+
+```dockerfile
+# docker buildx build --platform linux/amd64,linux/arm64 .
+FROM --platform=$BUILDPLATFORM golang:1.21-alpine as builder
+ARG TARGETARCH
+RUN GOARCH=$TARGETARCH CGO_ENABLED=0 go build -o app .
+
+FROM alpine:3.18
+COPY --from=builder /app/app .
+```
+
+
+## Security Hardening
+
+Copilot can help with Docker security best practices when prompted correctly:
+
+**Non-Root Users**: Always create a dedicated user instead of running as root.
+
+**Read-Only Filesystem**: Containers with read-only roots (except /tmp) prevent many attack vectors.
+
+**Security Scanning**: Container scanning to identify vulnerable dependencies.
+
+Prompt Copilot: "Create a Dockerfile with non-root user, read-only filesystem, and minimal privileges."
+
+```dockerfile
+FROM alpine:3.18 as runtime
+
+RUN apk add --no-cache ca-certificates && \
+    addgroup -g 1000 appuser && \
+    adduser -D -u 1000 -G appuser appuser
+
+WORKDIR /app
+COPY --from=builder /app/app .
+RUN chown -R appuser:appuser /app
+
+USER appuser
+EXPOSE 8080
+CMD ["./app"]
+```
+
+This example demonstrates several hardening techniques Copilot can generate: minimal base image, package verification, non-root user creation, and explicit ownership assignment.
+
+
+## Caching Strategies
+
+Docker layer caching dramatically impacts build performance. Copilot understands proper layer ordering:
+
+**Immutable first**: Place commands that rarely change early in the Dockerfile.
+
+**Dependency caching**: Install dependencies before copying source code. Source changes won't invalidate the dependency layer.
+
+**Version pinning**: Pin base image and package versions to ensure reproducible builds.
+
+Copilot generates proper layer ordering when you specify: "Optimize this Dockerfile for rebuild speed—dependencies rarely change but source code changes frequently."
+
+
+## Integration with CI/CD
+
+Multi-stage Dockerfiles work best integrated into CI/CD pipelines. Copilot can generate CI/CD configurations alongside Dockerfiles:
+
+```yaml
+# GitHub Actions example
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v2
+      - uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: myapp:latest
+```
+
+When you ask: "Generate a GitHub Actions workflow that builds this multi-stage Dockerfile," Copilot produces complete CI/CD configurations.
+
+
+## Debugging Multi-Stage Builds
+
+When builds fail, debugging is harder because intermediate stages disappear. Copilot can suggest techniques:
+
+**Debug Stage**: A stage that outputs build artifacts for inspection.
+
+```dockerfile
+FROM builder as debug
+RUN ls -la /app
+RUN echo "Build complete" && cat version.txt
+```
+
+**Build Output Inspection**: Building specific stages to verify they work independently.
+
+```bash
+# Build only the builder stage to verify dependencies install
+docker build --target builder -t myapp:builder .
+
+# Inspect the builder stage
+docker run -it myapp:builder /bin/sh
+```
+
+Prompt Copilot: "Add a debug stage to this Dockerfile that helps troubleshoot build failures."
+
+
+## Real-World Example: Microservices
+
+Consider a microservices architecture with shared dependencies. Copilot handles complex scenarios:
+
+```dockerfile
+# Shared builder
+FROM golang:1.21-alpine as base
+RUN apk add --no-cache git
+WORKDIR /app
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Service-specific builders
+FROM base as service-api
+COPY api/ ./api/
+COPY internal/ ./internal/
+RUN go build -o api ./api
+
+FROM base as service-worker
+COPY worker/ ./worker/
+COPY internal/ ./internal/
+RUN go build -o worker ./worker
+
+# Runtime for API
+FROM alpine:3.18 as api-runtime
+COPY --from=service-api /app/api .
+CMD ["./api"]
+
+# Runtime for Worker
+FROM alpine:3.18 as worker-runtime
+COPY --from=service-worker /app/worker .
+CMD ["./worker"]
+```
+
+This pattern reuses the base stage for multiple services, reducing rebuild times and disk space.
+
+
+## Performance Metrics
+
+Multi-stage builds dramatically reduce final image sizes:
+
+- **Single-stage Go binary**: ~300MB with compiler and dependencies
+- **Multi-stage Go binary**: ~15MB with just the binary
+- **Single-stage Node.js app**: ~1GB with dev dependencies and build tools
+- **Multi-stage Node.js app**: ~50MB with just production assets
+
+When asking Copilot for suggestions, mention: "Target final image size of under 50MB while maintaining full functionality."
+
+This constraint helps Copilot make appropriate choices about base image selection and dependency inclusion.
+
 
 ## Related Reading
 

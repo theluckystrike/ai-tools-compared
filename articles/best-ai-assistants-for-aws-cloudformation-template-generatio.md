@@ -215,6 +215,130 @@ Include deployment context. Mention whether this is a new stack or an update to 
 Request validation. Always ask the AI to explain potential issues and provide remediation steps. This catches problems the model might not have flagged automatically.
 
 
+## Advanced Template Patterns
+
+Beyond basic resource generation, good AI assistants handle sophisticated CloudFormation patterns:
+
+**Nested Stacks**: Templates that reference other stacks for modularity. Claude handles these well when you describe your stack hierarchy and dependencies.
+
+**Condition-Based Deployments**: Resources that deploy conditionally based on parameters. Prompt the AI: "Create this infrastructure only in production environments, skip it in development."
+
+**Custom Resources**: Lambda-backed resources for logic that CloudFormation doesn't natively support. Provide the Lambda function code alongside the template request.
+
+**Stack Policies**: IAM-like rules that control who can modify what resources. Ask AI to generate stack policies that restrict updates to critical resources.
+
+**Cross-Stack References**: One stack exporting values that another stack imports. Ensure your AI assistant maintains consistent export names across templates.
+
+
+## Security-Focused Generation
+
+CloudFormation templates often control security-sensitive infrastructure. Best practices include:
+
+**Encryption by default**: All databases encrypted, all S3 buckets with encryption policies.
+
+**VPC isolation**: Resources deployed in private subnets with security groups limiting traffic.
+
+**IAM principle of least privilege**: Roles include only necessary permissions.
+
+**Audit logging**: CloudTrail and VPC Flow Logs enabled.
+
+**Secret management**: No hardcoded credentials; use Secrets Manager or Parameter Store.
+
+When prompting AI, explicitly state your security requirements:
+
+```
+Create a DynamoDB table with:
+- Encryption enabled (KMS key)
+- Point-in-time recovery enabled
+- Backup vaults with 30-day retention
+- IAM role that allows read-only access from application
+```
+
+This forces the AI to include security configurations in the generated template.
+
+
+## Common CloudFormation Anti-Patterns
+
+AI assistants sometimes suggest patterns that work technically but create operational problems:
+
+**Hard-coded values**: Database passwords, IP addresses, or instance IDs embedded in templates. Always parameterize these.
+
+**Missing rollback plans**: Updates without rollback strategies can lock deployments. Good AI assistants include rollback configurations and update policies.
+
+**Tight coupling**: Resources tightly dependent on specific availability zones or instance types. This reduces flexibility.
+
+**Incomplete outputs**: Templates that don't export important values (database endpoints, bucket names) for cross-stack references.
+
+When the AI generates a template, review it for these patterns and ask it to fix them:
+
+```
+This template has hard-coded values. Update it to:
+1. Use CloudFormation parameters for all environment-specific values
+2. Export all critical resource identifiers
+3. Include rollback policies for updates
+```
+
+
+## Testing and Validation Workflows
+
+Generated templates should never go directly to production. Establish a testing workflow:
+
+1. **Lint Check**: Tools like `cfn-lint` catch syntax errors and best practice violations.
+
+2. **Dry Run**: Deploy to a test AWS account and verify the template creates expected resources without errors.
+
+3. **Functional Testing**: Once deployed, test that the resources work together (e.g., verify Lambda can read S3 bucket).
+
+4. **Security Scanning**: Tools like `cfn-nag` identify security issues.
+
+5. **Cost Estimation**: CloudFormation can estimate deployment costs before you commit.
+
+AI can participate in this workflow. Feed it the linting errors and ask for fixes:
+
+```
+Linting found these issues:
+- Missing resource properties: Tags
+- Deprecated resource: AWS::Lambda::Environment
+
+Update the template to fix these issues.
+```
+
+
+## Managing Template Versions and Changes
+
+As infrastructure evolves, CloudFormation templates accumulate changes. Good practices:
+
+**Version Control**: Store templates in git with clear commit messages.
+
+**Change Sets**: CloudFormation's change set feature previews modifications before applying them.
+
+**Documentation**: Comments in templates explaining non-obvious choices.
+
+**Automation**: Automated testing of template changes via CI/CD.
+
+AI assistants help maintain this discipline by generating well-commented templates:
+
+```
+"Generate this template with comments explaining each resource and its role in the architecture. Include links to AWS documentation for non-obvious decisions."
+```
+
+
+## Cost Optimization Through AI
+
+CloudFormation templates heavily impact infrastructure costs. AI can suggest optimizations:
+
+**Right-sizing**: Analysis of resource sizing to find over-provisioned instances.
+
+**Reserved Instances**: Identification of resources suitable for cost-saving reserved instance commitments.
+
+**Spot Instances**: Non-critical workloads that benefit from spot pricing.
+
+**Auto-scaling**: Configuration of scaling policies to prevent peak-time over-provisioning.
+
+**Consolidation**: Combining multiple small resources into more efficient configurations.
+
+Ask AI: "Optimize this CloudFormation template for cost while maintaining the same functionality."
+
 
 ## Related Reading
 
