@@ -208,6 +208,88 @@ If you are working primarily with standard Spring Boot REST APIs and need a tool
 
 Start with the tool that matches your current IDE preference, as the productivity gains from workflow integration often outweigh minor code quality differences between top tools.
 
+## Handling Spring Boot 3.x Migration with AI
+
+The migration from Spring Boot 2.x to 3.x introduced breaking changes that AI tools must understand: `javax.*` packages moved to `jakarta.*`, Spring Security's configuration API changed significantly, and actuator endpoints require explicit exposure configuration.
+
+When using AI tools for migration tasks, Claude Code handles the namespace change comprehensively. A prompt like "Migrate this Spring Boot 2.7 security configuration to Spring Boot 3.x" produces correctly updated imports, configuration class structure, and the new `SecurityFilterChain` bean pattern:
+
+```java
+// Spring Boot 3.x Security Configuration
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(authz -> authz
+                .requestMatchers("/actuator/health").permitAll()
+                .requestMatchers("/api/public/**").permitAll()
+                .anyRequest().authenticated()
+            )
+            .oauth2ResourceServer(oauth2 -> oauth2
+                .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter()))
+            );
+        return http.build();
+    }
+
+    @Bean
+    public JwtAuthenticationConverter jwtAuthConverter() {
+        JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
+        grantedAuthoritiesConverter.setAuthorityPrefix("ROLE_");
+        JwtAuthenticationConverter converter = new JwtAuthenticationConverter();
+        converter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
+        return converter;
+    }
+}
+```
+
+Copilot generates the correct pattern when shown existing code context in the editor, but often requires multiple completions to produce the full configuration. For large-scale migrations touching dozens of security configuration files, Claude Code's ability to handle entire-file rewrites with consistent patterns is a significant time saver.
+
+## Testing Microservices with AI-Generated Test Suites
+
+Integration testing of Spring Cloud microservices involves Testcontainers for dependency services, WireMock for external API stubs, and Spring's test slicing annotations. AI tools that understand this full stack reduce the time to comprehensive test coverage.
+
+Claude Code produces complete Testcontainers integration tests with proper lifecycle management:
+
+```java
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Testcontainers
+class OrderServiceIntegrationTest {
+
+    @Container
+    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16")
+        .withDatabaseName("orders_test")
+        .withUsername("test")
+        .withPassword("test");
+
+    @Container
+    static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.5.0"));
+
+    @DynamicPropertySource
+    static void configureProperties(DynamicPropertyRegistry registry) {
+        registry.add("spring.datasource.url", postgres::getJdbcUrl);
+        registry.add("spring.datasource.username", postgres::getUsername);
+        registry.add("spring.datasource.password", postgres::getPassword);
+        registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
+    }
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test
+    void shouldCreateOrderAndPublishEvent() {
+        var orderRequest = new OrderRequest("product-123", 2, "customer-456");
+        var response = restTemplate.postForEntity("/api/orders", orderRequest, OrderResponse.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(response.getBody().orderId()).isNotNull();
+    }
+}
+```
+
+GitHub Copilot generates basic test structures but typically requires additional prompts to add Testcontainers configuration, WireMock stubs for downstream services, and proper transaction rollback handling between tests. For teams building comprehensive test suites from scratch, Claude Code's completeness reduces test setup time considerably.
 
 ---
 
