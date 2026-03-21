@@ -8,6 +8,7 @@ author: "AI Tools Compared"
 permalink: /ai-employee-onboarding-tools-comparison-2026/
 reviewed: true
 score: 8
+voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
 ---

@@ -7,6 +7,7 @@ author: "AI Tools Compared"
 permalink: /comparing-ai-tools-for-generating-retool-resource-queries-fr/
 reviewed: true
 score: 9
+voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, artificial-intelligence]
 ---
