@@ -210,6 +210,107 @@ Look for these response codes:
 - 500: Server error (Notion-side issue)
 
 
+## Diagnosing Notion AI via the Desktop App
+
+
+Many users assume Notion AI issues are browser-specific, but the desktop app has its own failure modes. If the web version works fine but the desktop app does not, focus your diagnostic here.
+
+
+**Desktop App Specific Fixes:**
+
+
+1. Quit Notion fully — on Mac, right-click the dock icon and choose Quit, not just close the window
+
+2. Delete the desktop app cache at `~/Library/Application Support/Notion` (Mac) or `%AppData%\Notion` (Windows)
+
+3. Reinstall the latest desktop client from notion.so/desktop
+
+4. Check if your system's proxy settings are intercepting Notion's HTTPS traffic — some corporate MDM configurations do this silently
+
+
+On Windows, also check Event Viewer under **Windows Logs → Application** for any Notion crash reports that identify the underlying error.
+
+
+## Step-by-Step Full Reset Workflow
+
+
+When standard fixes fail, a structured full reset resolves the majority of persistent Notion AI problems. Follow these steps in order before contacting support:
+
+
+1. **Log out everywhere** — Go to Settings → My Account → Sign out of all devices. This invalidates stale session tokens across all clients.
+
+2. **Revoke and regenerate API keys** — If you use integrations, go to Settings → Integrations and delete all existing keys. Create fresh ones.
+
+3. **Clear all Notion browser data** — In Chrome: Settings → Privacy → Clear browsing data → check Cookies and Cached images → filter by notion.so.
+
+4. **Disable all browser extensions** — Use a fresh browser profile or incognito mode to eliminate extension interference entirely.
+
+5. **Test on mobile** — Open the Notion mobile app on a different network (mobile data rather than Wi-Fi). If AI works there, the problem is network-side on your main machine.
+
+6. **Check workspace AI status** — Ask a colleague on the same workspace to test AI. If it fails for them too, the issue is workspace-level, not client-level.
+
+7. **Submit a detailed support ticket** — If none of the above resolves the issue, gather your browser console logs (F12 → Console → Export) and include your workspace ID from Settings → Workspace.
+
+
+## Notion AI Prompt Failures vs. Technical Failures
+
+
+Not all Notion AI problems are technical. Sometimes the AI responds but produces unexpected or unhelpful output. These are prompt failures, not infrastructure failures, and require a different approach.
+
+
+| Symptom | Likely Cause | Fix |
+|---------|-------------|-----|
+| AI button unresponsive | Session/auth issue | Clear cookies, re-login |
+| Spinner never resolves | Network block or quota | Check firewall, check quota |
+| Output is wrong language | Language detection issue | Explicitly specify language in prompt |
+| Output is too short | Ambiguous prompt | Add length and format instructions |
+| AI ignores database context | Page not shared with AI | Check page-level AI permissions |
+| AI repeats itself | Temperature/context issue | Start a fresh AI session on a new page |
+| Response cuts off mid-sentence | Token limit | Break request into smaller chunks |
+
+
+For prompt-related failures, the fix is to restructure your instructions. Notion AI works better with explicit constraints: specify the format, length, tone, and target audience directly in the prompt.
+
+
+## Notion AI for API Developers: Common Integration Pitfalls
+
+
+Developers using the Notion API to trigger or read AI-generated content face unique challenges beyond what standard users encounter.
+
+
+**Pitfall 1: Using outdated API versions**
+
+Notion's AI features require `Notion-Version: 2022-06-28` or newer. Older version headers return 400 errors on AI endpoints.
+
+```bash
+# Correct header
+curl -H "Notion-Version: 2022-06-28" https://api.notion.com/v1/pages
+```
+
+
+**Pitfall 2: Polling for AI results synchronously**
+
+Notion AI operations are asynchronous. Do not poll in a tight loop — use webhook callbacks or implement proper polling with delays:
+
+```python
+import time
+
+def wait_for_notion_ai(block_id, notion_client, max_attempts=20):
+    """Poll for AI-generated block content with backoff."""
+    for attempt in range(max_attempts):
+        block = notion_client.blocks.retrieve(block_id)
+        if block.get("has_children") or block.get("ai_complete"):
+            return block
+        time.sleep(2 + attempt * 0.5)  # increasing delay
+    raise TimeoutError(f"AI block {block_id} did not complete")
+```
+
+
+**Pitfall 3: Workspace integration scope mismatch**
+
+If your integration lacks the `read_content` or `update_content` capability, AI features return permission errors. Review your integration's capability settings at notion.so/my-integrations.
+
+
 ## Prevention Best Practices
 
 
@@ -223,6 +324,30 @@ Prevent future issues with these strategies:
 3. Use official clients — third-party apps may lack full AI feature support
 
 4. Maintain workspace health — regularly audit permissions and database integrity
+
+
+## Frequently Asked Questions
+
+
+**Q: Why does Notion AI work in the web app but not the desktop app?**
+
+The desktop app uses a different cache and network stack. Clear the desktop app's local cache directory and reinstall if problems persist. On Mac, the cache is at `~/Library/Application Support/Notion`.
+
+**Q: My Notion AI was working yesterday and stopped today. What changed?**
+
+The most common causes are: your monthly AI quota reset (counter went to zero), Notion deployed a backend update that requires a fresh session, or your browser auto-updated and changed extension or cookie behavior. Try signing out and back in first — this resolves roughly 70% of sudden-stop cases.
+
+**Q: Can I increase my Notion AI quota mid-month?**
+
+Upgrading your plan or adding AI credits from Settings → Plans & Billing takes effect immediately. You do not need to wait for a billing cycle reset.
+
+**Q: Does Notion AI work offline?**
+
+No. Notion AI requires an active internet connection to reach Notion's AI inference servers. There is no local model fallback.
+
+**Q: Why does Notion AI produce different results each time for the same prompt?**
+
+Notion AI uses temperature sampling, so outputs vary. Use specific, constrained prompts and treat the first result as a draft.
 
 
 ## Related Articles
