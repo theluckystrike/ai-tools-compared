@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Redis Caching Strategies 2026"
-description: "Compare AI tools for implementing Redis caching strategies. Covers cache invalidation, TTL optimization, write-through vs write-behind with real code examples."
+description: "Compare AI tools for implementing Redis caching strategies. Covers cache invalidation, TTL optimization, write-through vs write-behind with real code."
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-redis-caching-strategies-2026/
@@ -238,5 +238,10 @@ Counter these by explicitly specifying deployment context: "I'm running on AWS L
 Use Claude 3.5 Sonnet for green-field caching architecture design. The model explicitly reasons about consistency vs. performance tradeoffs and generates production-tested patterns immediately. Use ChatGPT-4 when you need Redis command syntax or data structure recommendations—it excels at reference material. Use Cursor when refactoring caching across an existing codebase—the file-aware suggestions save hours of manual updates.
 
 For complex cache invalidation workflows involving multiple tables and event sources, Claude's multi-turn reasoning produces more reliable solutions faster. Start with Claude, validate with ChatGPT, implement with Cursor.
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -284,4 +284,9 @@ Use Copilot for single-server applications or rapid prototyping when deployment 
 
 For production APIs, Claude provides safer implementations by default. Token bucket via Claude includes atomicity. Token bucket via Copilot creates race conditions.
 
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

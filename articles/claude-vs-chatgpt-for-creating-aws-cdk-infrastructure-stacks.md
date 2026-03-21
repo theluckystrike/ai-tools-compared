@@ -218,19 +218,127 @@ ChatGPT would generate similar code but might not include the `cidr_mask` parame
 
 
 
+## Side-by-Side Feature Comparison
+
+| Capability | Claude | ChatGPT |
+|---|---|---|
+| Context retention across conversation | Strong | Moderate |
+| CDK v2 accuracy | High | Moderate (sometimes suggests v1 patterns) |
+| Error diagnosis specificity | Specific to your stack | Generic advice |
+| Import management | Automatically includes | Sometimes omits |
+| Clarifying questions before code | Yes | Rarely |
+| Multi-stack cross-references | Handles well | May require restatement |
+| Response speed | Moderate | Fast |
+| Multiple code options per response | Occasionally | Frequently |
+
+
+
+## Advanced Scenario: Lambda with SQS Trigger and DLQ
+
+For teams building event-driven architectures, a common CDK pattern involves wiring a Lambda function to an SQS queue with a dead-letter queue. This tests how thoroughly each AI handles dependent resource relationships.
+
+A prompt like "Create a CDK stack with an SQS queue, a Lambda that processes messages, and a DLQ for failed messages" reveals meaningful differences.
+
+Claude produces code that correctly sets the `visibility_timeout` on the SQS queue to match the Lambda timeout — a subtle but important detail that prevents message duplication. It also wires the DLQ automatically using `aws_sqs.DeadLetterQueue` and sets `max_receive_count`:
+
+```python
+from aws_cdk import (
+    Stack,
+    aws_lambda as lambda_,
+    aws_sqs as sqs,
+    aws_lambda_event_sources as event_sources,
+    Duration
+)
+from constructs import Construct
+
+class EventDrivenStack(Stack):
+    def __init__(self, scope: Construct, id: str, **kwargs):
+        super().__init__(scope, id, **kwargs)
+
+        dlq = sqs.Queue(
+            self, "DeadLetterQueue",
+            queue_name="my-dlq",
+            retention_period=Duration.days(14)
+        )
+
+        queue = sqs.Queue(
+            self, "ProcessingQueue",
+            queue_name="my-queue",
+            visibility_timeout=Duration.seconds(300),
+            dead_letter_queue=sqs.DeadLetterQueue(
+                max_receive_count=3,
+                queue=dlq
+            )
+        )
+
+        processor = lambda_.Function(
+            self, "Processor",
+            runtime=lambda_.Runtime.PYTHON_3_12,
+            handler="handler.main",
+            code=lambda_.Code.from_asset("lambda"),
+            timeout=Duration.seconds(300)
+        )
+
+        processor.add_event_source(
+            event_sources.SqsEventSource(queue, batch_size=10)
+        )
+```
+
+ChatGPT generates functional code for this scenario but often omits the `visibility_timeout` alignment and may not set `max_receive_count` without explicit prompting.
+
+
+
+## Debugging Deployment Errors with Each Tool
+
+Real CDK projects encounter deployment failures. The quality of AI assistance during debugging matters as much as code generation.
+
+**Scenario:** Your CDK deploy fails with `CREATE_FAILED: Resource handler returned message: "Policy contains a statement with one or more invalid principal."`
+
+Claude, given the error message and the relevant stack code, correctly identifies that an IAM principal is referencing a resource that does not yet exist during stack synthesis. It suggests using `aws_iam.ServicePrincipal` correctly and checks whether cross-stack dependencies are resolved.
+
+ChatGPT typically responds with a list of common IAM principal mistakes. The advice is accurate but less targeted — you still need to map the general guidance to your specific code.
+
+For teams with infrequent CDK experience, Claude's targeted diagnostic approach reduces the time spent matching generic advice to specific failures.
+
+
+
+## Cost Considerations for Teams
+
+Both Claude and ChatGPT are available on paid subscription plans around $20/month for individual users. For teams, API access costs vary by token usage.
+
+CDK generation prompts tend to be moderately long because you are often pasting existing stack code for context. This makes token efficiency relevant. Claude's tendency to ask clarifying questions before generating code can save tokens overall — fewer revision cycles means fewer total API calls.
+
+For teams writing CDK full-time, the productivity gain from either tool far outweighs the subscription cost. The more useful question is which tool reduces your revision cycles per stack.
+
+
+
+## Frequently Asked Questions
+
+**Can Claude and ChatGPT handle CDK constructs from third-party libraries like `aws-cdk-lib/aws-solutions-constructs`?**
+
+Both tools have knowledge of commonly used CDK constructs libraries. Claude tends to flag when a construct comes from a third-party library and remind you to add the npm dependency. ChatGPT may suggest the construct without explicitly noting the additional installation step.
+
+**Which tool is better for refactoring existing CDK stacks?**
+
+Claude performs better for refactoring tasks. Providing your full stack file and asking Claude to refactor for reuse or extract a construct typically yields well-structured output that preserves your resource naming and cross-stack references.
+
+**Do these tools keep up with CDK version updates?**
+
+Both have knowledge cutoffs, so neither is guaranteed to reflect the very latest CDK API changes. Always verify generated code against the official AWS CDK Python API reference, particularly for recently released constructs.
+
+**Is it safe to paste my full CDK stack code into these tools?**
+
+Avoid pasting stacks that contain hardcoded account IDs, ARNs with sensitive resource names, or secrets. Sanitize real values before sharing with any AI assistant.
+
+
+
 ## Which Tool Should You Choose
-
-
 
 Choose Claude if you work on complex, interconnected CDK stacks where resource dependencies matter. Its contextual understanding reduces the back-and-forth needed to get working infrastructure code. Claude performs well when you need to refactor existing stacks or debug deployment issues.
 
-
-
 Choose ChatGPT for faster initial code generation when you have straightforward requirements. Its responses tend to be quicker, and it handles well-defined, isolated tasks efficiently. ChatGPT works well when you need multiple implementation options quickly.
 
-
-
-For CDK development specifically, both tools handle the basics well. The difference becomes noticeable as your infrastructure grows in complexity and as you need to maintain and modify stacks over time.
+For CDK development specifically, both tools handle the basics well. The difference becomes noticeable as your infrastructure grows in complexity and as you need to maintain and modify stacks over time. Teams managing production AWS environments with dozens of stacks will find Claude's contextual coherence particularly valuable during refactoring and debugging cycles.
 
 
 
