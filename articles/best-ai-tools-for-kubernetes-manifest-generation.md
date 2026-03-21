@@ -226,6 +226,36 @@ Common gaps in AI-generated manifests:
 - Missing `topologySpreadConstraints` for HA
 - `terminationGracePeriodSeconds` appropriate for the app
 
+## Multi-Resource Manifest Generation
+
+Real applications need more than a Deployment. Here's a prompt pattern that gets Claude to output a complete set:
+
+```
+Generate a full Kubernetes application stack for a Node.js REST API with PostgreSQL.
+Include: Deployment, Service (ClusterIP), Ingress (nginx), HorizontalPodAutoscaler,
+PodDisruptionBudget, NetworkPolicy (allow only from ingress), and a ConfigMap for
+non-secret environment variables. Namespace: staging.
+```
+
+Claude outputs all 7 resources in a single YAML file separated by `---`. The NetworkPolicy in particular is often omitted by other tools — it restricts ingress to only traffic from the nginx ingress controller, which is the correct production pattern.
+
+ChatGPT produces 5 of the 7 resources and typically skips the PodDisruptionBudget and NetworkPolicy unless you ask separately.
+
+## StatefulSet Generation for Databases
+
+StatefulSets require different logic than Deployments — volume claim templates, stable network identities, and ordered updates. Prompt pattern:
+
+```
+Generate a StatefulSet for Redis Sentinel with 3 replicas. Include:
+- Persistent volume claim template (10Gi SSD)
+- Headless service for stable DNS
+- A regular service for clients
+- ConfigMap for redis.conf
+- Pod anti-affinity to spread replicas across nodes
+```
+
+The generated headless service is critical: without `clusterIP: None`, StatefulSet pods don't get stable DNS entries. Claude includes this automatically; K8sGPT's generator omits it and requires the headless service to be specified separately.
+
 ## Comparison Summary
 
 | Tool | Manifest Quality | Security Defaults | Helm Support | Cluster Integration |
@@ -235,13 +265,23 @@ Common gaps in AI-generated manifests:
 | K8sGPT | Basic | Fair | No | Yes |
 | Cursor | Good | Fair | Good | Via plugins |
 
+## When to Use Each Tool
+
+**Claude with detailed prompts** — new manifest generation from scratch, Helm chart creation, multi-resource application stacks. Best results with explicit security requirements in the prompt.
+
+**K8sGPT** — diagnosing existing cluster problems. Connect it to a failing cluster and ask it to explain what's wrong. Not the right tool for greenfield generation.
+
+**Cursor/Copilot in IDE** — quick inline generation when you're already editing YAML. Fast for CronJobs, Services, and ConfigMaps. Falls short on complex StatefulSets without prompting for security context.
+
+**ChatGPT** — good fallback when Claude API is unavailable. Produces correct basic manifests but requires extra prompting for production-grade security defaults.
+
 For new manifest generation: Claude with a detailed prompt. For cluster diagnosis: K8sGPT. For IDE-native quick generation: Cursor.
 
 ## Related Reading
 
 - [Best AI Tools for Writing Kubernetes Manifests and Helm Charts 2026](/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
 - [AI Tools for Detecting Kubernetes Misconfiguration Before Deployment](/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
-- [AI Powered Tools for Container Orchestration Beyond Kubernetes](/ai-powered-tools-for-container-orchestration-beyond-kubernet/)
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 ---
 
