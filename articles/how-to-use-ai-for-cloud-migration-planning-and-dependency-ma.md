@@ -173,6 +173,20 @@ Given this dependency graph, suggest a migration order that:
 ```
 
 
+## AI-Assisted Migration Wave Planning Table
+
+Use a structured table to track each wave's status, risk level, and dependencies across teams. AI tools like Claude or ChatGPT can generate and maintain this table from your dependency graph output:
+
+| Wave | Services | Risk Level | Upstream Deps | Est. Duration | Rollback Strategy |
+|------|----------|------------|---------------|---------------|-------------------|
+| 1 | analytics-worker, batch-processor | Low | None | 1 day | Repoint DNS |
+| 2 | cache-redis, session-store | Medium | Wave 1 stable | 2 days | Dual-write fallback |
+| 3 | auth-service | High | Wave 2 stable | 3 days | Blue/green cutover |
+| 4 | user-db, web-api | Critical | All prior waves | 5 days | Snapshot + restore |
+
+Keep this table in a shared document and prompt your AI assistant to update it automatically as new dependencies are discovered during analysis. The AI can also flag when a proposed wave ordering creates a hidden dependency cycle—something spreadsheets alone cannot catch.
+
+
 ## Handling Configuration Drift
 
 
@@ -184,7 +198,7 @@ Create a migration checklist by asking AI to scan for cloud-incompatible pattern
 
 ```bash
 # Search for hardcoded IPs, internal hostnames, or on-premise references
-grep -rE "(10\.|192\.168\.|172\.(1[6-9]|2[3-9])\.)" --include="*.py" --include="*.js" --include="*.yaml" .
+grep -rE "(10\.|192\.168\.|172\.(1[6-9]|2[0-9])\.)" --include="*.py" --include="*.js" --include="*.yaml" .
 
 grep -rE "(localhost|internal\.company\.com|prod-db-01)" --include="*.env" --include="*.properties" .
 ```
@@ -203,6 +217,21 @@ that allow the same code to work in both environments.
 ```
 
 
+## Pro Tips for AI-Driven Dependency Analysis
+
+These practices consistently improve accuracy when using AI for migration planning:
+
+**Be explicit about runtime context.** Tell your AI tool whether the app runs as a monolith, microservices, or serverless functions. Each has different dependency surface areas and the AI will tailor its analysis accordingly.
+
+**Supply actual logs alongside code.** Application logs during peak traffic reveal ephemeral dependencies that code inspection misses—scheduled jobs, webhook consumers, or background polling intervals that only activate under load.
+
+**Iterate in sessions, not one-shot prompts.** Start by asking the AI to list service boundaries, then follow up asking it to identify shared databases, then ask it to flag services that write to shared queues. Layered questioning catches more than a single broad prompt.
+
+**Cross-validate with your infrastructure team.** AI analysis of code does not know about undocumented network ACLs, NAT gateway configurations, or firewall rules that silently block connections post-migration. Human review of the AI-generated dependency map against network diagrams prevents surprises during cutover.
+
+**Generate a dependency risk score.** Ask your AI assistant to assign a numeric risk score to each service based on how many other services depend on it, whether it holds shared state, and how frequently it changes. Services scoring above a threshold get dedicated runbooks before migration begins.
+
+
 ## Validating the Migration Plan
 
 
@@ -215,10 +244,23 @@ Before executing your migration, validate assumptions with canary deployments. R
 - DNS resolution times for newly created records
 
 
-Ask AI to generate observability dashboards that compare on-premise versus cloud performance for each dependency path.
+Ask AI to generate observability dashboards that compare on-premise versus cloud performance for each dependency path. Prometheus queries and Grafana panel configurations are well within what modern AI assistants can produce accurately, reducing dashboard setup from hours to minutes.
+
+After each canary phase, provide the AI with the actual metrics and ask it to compare them against the predicted behavior from the migration plan. Significant deviations—more than 20% latency increase or unexpected timeout spikes—indicate undiscovered dependencies that need investigation before the full cutover proceeds.
 
 
-## Related Articles
+## Common Pitfalls and How AI Helps Avoid Them
+
+Several recurring mistakes account for the majority of cloud migration failures. AI tools help surface these before they cause outages:
+
+- **Assuming cloud DNS behaves identically to on-premise.** TTL differences and split-horizon DNS configurations catch teams off guard. Ask AI to generate a DNS validation checklist specific to your cloud provider.
+
+- **Missing service account and IAM permission gaps.** When services move to cloud-native identity systems, hardcoded credentials or overly broad on-premise service accounts break. AI can scan your codebase for authentication patterns and flag those incompatible with cloud IAM.
+
+- **Ignoring data transfer costs.** Dependencies between services that cross availability zones or regions incur unexpected egress fees. AI can estimate data transfer volume from your dependency graph and help model cost scenarios before you commit to an architecture.
+
+
+## Related Reading
 
 - [How to Use AI for Capacity Planning and Resource Right Sizin](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
 - [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
