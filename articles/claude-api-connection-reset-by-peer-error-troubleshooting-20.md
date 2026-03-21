@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "Claude API Connection Reset by Peer Error: Troubleshooting Guide"
 description: "A practical guide to diagnosing and resolving the 'connection reset by peer' error when working with the Claude API in 2026."
 date: 2026-03-20
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /claude-api-connection-reset-by-peer-error-troubleshooting-20/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 # Claude API Connection Reset by Peer Error: Troubleshooting Guide
 
