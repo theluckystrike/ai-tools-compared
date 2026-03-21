@@ -9,7 +9,7 @@ permalink: /best-practices-for-claude-md-file-organization-in-polyglot-c/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

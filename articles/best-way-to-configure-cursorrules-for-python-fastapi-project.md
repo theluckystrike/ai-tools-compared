@@ -9,7 +9,7 @@ permalink: /best-way-to-configure-cursorrules-for-python-fastapi-project/
 categories: [guides]
 tags: [ai-tools-compared, tools, best-of, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
