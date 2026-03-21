@@ -1,0 +1,227 @@
+---
+layout: default
+title: "Prompt Engineering Patterns for Code Generation"
+description: "Practical prompt patterns that improve AI code generation quality: role priming, context injection, constraint framing, chain-of-thought, and self-review loops."
+date: 2026-03-21
+author: theluckystrike
+permalink: /prompt-engineering-patterns-for-code-generation/
+categories: [guides]
+reviewed: true
+score: 8
+intent-checked: true
+voice-checked: true
+tags: [ai-tools-compared]
+---
+
+{% raw %}
+
+The difference between a prompt that produces working code and one that produces plausible-looking garbage is usually structure, not length. These patterns work across Claude, GPT-4o, and Gemini. Each includes a before/after example showing the actual output difference.
+
+## Pattern 1: Role + Stack + Constraint Priming
+
+Most developers write: "Write a function that caches API responses."
+
+The AI produces generic code using whatever caching library it assumes you use. Better:
+
+```
+You are a senior Python engineer working on a FastAPI service.
+Stack: Python 3.12, FastAPI, Redis via aioredis, Pydantic v2.
+Constraint: async only, no threading. Cache key format: "{endpoint}:{sorted_param_hash}".
+TTL must be configurable per endpoint via a decorator argument.
+
+Write a cache decorator that wraps async FastAPI route handlers.
+```
+
+This produces code that uses `aioredis` instead of `redis-py` (async-compatible), hashes parameters in a stable way, and accepts `@cache(ttl=300)` syntax. The role + stack + constraint triple removes the three most common sources of useless AI code: wrong library choice, wrong async approach, and missing configurability.
+
+## Pattern 2: Show the Interface, Ask for the Implementation
+
+Don't describe what you want — show the exact signature and docstring, then ask for the body.
+
+```python
+async def get_user_recommendations(
+    user_id: int,
+    limit: int = 10,
+    exclude_seen: bool = True,
+) -> list[RecommendationItem]:
+    """
+    Fetch ranked recommendations for a user.
+
+    - Queries the recommendations table ordered by score DESC
+    - If exclude_seen=True, LEFT JOIN seen_items and filter WHERE seen.id IS NULL
+    - Returns at most `limit` items
+    - Raises UserNotFoundError if user_id doesn't exist
+
+    Use SQLAlchemy async session from context (self.session).
+    """
+    ...  # implement this
+```
+
+When the AI sees a complete signature with a precise docstring, it cannot diverge on interface design. You get implementation-only output. This pattern eliminates 80% of follow-up prompts asking to "change the return type" or "add error handling."
+
+## Pattern 3: Provide the Failing Test
+
+Give the AI a failing test and ask it to write code that makes it pass.
+
+```python
+# Prompt: Make this test pass. Do not modify the test.
+
+def test_rate_limiter():
+    limiter = RateLimiter(requests_per_second=2)
+
+    limiter.acquire()  # t=0, should succeed
+    limiter.acquire()  # t=0, should succeed (2 per second)
+
+    with pytest.raises(RateLimitExceeded):
+        limiter.acquire()  # t=0, over limit
+
+    time.sleep(1.0)
+    limiter.acquire()  # t=1, should succeed again
+
+    assert limiter.current_count() == 1
+```
+
+The test is the specification. The AI cannot misunderstand what `requests_per_second` means because the test shows exactly what it should do. This pattern also produces code that is trivially testable — because it was written to pass a test.
+
+## Pattern 4: Chain-of-Thought for Algorithmic Code
+
+For anything involving algorithms or non-trivial logic, ask the AI to reason before it codes.
+
+```
+Before writing any code, explain in plain language:
+1. What data structure best represents this problem and why
+2. What the time complexity of your approach will be
+3. What edge cases you'll handle
+
+Then write the implementation.
+
+Problem: Given a list of intervals [start, end], merge all overlapping intervals.
+Example: [[1,3],[2,6],[8,10],[15,18]] -> [[1,6],[8,10],[15,18]]
+```
+
+Forcing the reasoning step first catches O(n^2) solutions or missing sort steps before any code is written — and if the reasoning is wrong, you can correct it cheaply.
+
+```python
+# Reasoning output (abbreviated):
+# "Sort by start time first — O(n log n). Then iterate, merging when
+# current.start <= last_merged.end. Edge cases: empty list, single interval."
+
+def merge_intervals(intervals: list[list[int]]) -> list[list[int]]:
+    if not intervals:
+        return []
+
+    intervals.sort(key=lambda x: x[0])
+    merged = [intervals[0]]
+
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            last[1] = max(last[1], current[1])
+        else:
+            merged.append(current)
+
+    return merged
+```
+
+## Pattern 5: Negative Constraints
+
+Tell the AI what NOT to do.
+
+```
+Write a TypeScript function to parse CSV files.
+
+Do NOT:
+- Use any third-party libraries
+- Use regex for splitting (produces bugs with quoted fields)
+- Return `any` types
+- Throw generic Error objects
+
+DO:
+- Handle quoted fields with commas inside them
+- Return typed results using a generic
+- Use specific error classes: CsvParseError, CsvHeaderError
+```
+
+Negative constraints force the model out of its default patterns. Without "do not use regex for splitting," every model defaults to `line.split(",")` which breaks on `"Smith, John",30,NYC`. The negative constraint eliminates this before a token is generated.
+
+## Pattern 6: Incremental Build Pattern
+
+For complex features, build in stages:
+
+```
+Stage 1: Write just the types and interfaces. No implementation.
+[review + adjust types]
+
+Stage 2: Given these types, write just the database layer functions as stubs with docstrings.
+[review + adjust signatures]
+
+Stage 3: Implement the stubs. Use the exact signatures from Stage 2.
+
+Stage 4: Write tests for each function in Stage 3.
+```
+
+This prevents the AI from making architectural decisions you haven't reviewed. By the time implementation is written, the interface is locked and correct.
+
+## Pattern 7: Self-Review Loop
+
+After generating code, prompt the AI to critique it.
+
+```
+[paste generated code]
+
+Review this code for:
+1. Security vulnerabilities (injection, auth bypass, data exposure)
+2. Race conditions or async bugs
+3. Missing error handling
+4. Performance issues (N+1, unnecessary allocations)
+
+For each issue found, rate severity (critical/medium/low) and suggest the fix.
+```
+
+Models are better at spotting bugs in code than writing bug-free code from scratch. Sample output:
+
+```
+[CRITICAL] Line 12: SQL query uses string formatting — SQL injection risk.
+  Fix: Use parameterized queries via cursor.execute(query, (user_id,))
+
+[MEDIUM] Line 18: No connection pooling — creates new connection per call.
+
+[LOW] Line 24: Returns None on empty result instead of empty list.
+  Fix: Change `return result or None` to `return result or []`
+```
+
+## Combining Patterns
+
+The highest-quality code generation comes from stacking patterns:
+
+```
+[Role + Stack + Constraint]
+You are a senior Go engineer. Stack: Go 1.22, chi router, pgx/v5.
+No global state. All handlers must accept context.Context as first argument.
+
+[Interface first]
+Implement this handler signature:
+func (h *UserHandler) UpdateProfile(w http.ResponseWriter, r *http.Request)
+// Validates: name 1-50 chars, avatar must be https URL or empty string
+// Returns 200 on success, 400 with validation errors, 404 if user not found
+
+[Chain of thought]
+Before coding, explain how you'll handle partial updates (name only, avatar only, both).
+
+[Negative constraints]
+Do NOT: use encoding/json directly (use h.encoder helper), return 500 for validation errors.
+```
+
+This prompt reliably produces production-quality handler code on the first attempt.
+
+## Related Reading
+
+- [Writing Effective System Prompts for AI Coding Assistants](/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [AI Tool Customization Comparison Claude MD vs CursorRules](/ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/)
+- [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
+
+---
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
+
+{% endraw %}
