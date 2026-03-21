@@ -188,6 +188,23 @@ if __name__ == "__main__":
 Running locally eliminates per-image API costs and provides complete data privacy. However, you need GPU resources for acceptable processing speeds—the same image that takes 30 seconds via API might require 5 minutes on CPU-only infrastructure.
 
 
+## Tool Comparison Table
+
+
+| Feature | ReRoom | VirtualStagingAI | RoomGPT (self-hosted) |
+|---------|--------|-----------------|----------------------|
+| API access | Yes | Yes | Self-managed |
+| Webhook support | Limited | Full | Custom implementation |
+| Processing speed | ~45 seconds | ~30 seconds | 30s (GPU) / 5min (CPU) |
+| Styles available | 8+ | 12+ | Depends on model |
+| Batch processing | Yes (queued) | Yes (parallel) | Yes (custom) |
+| Per-image cost | ~$0.25–0.50 | ~$0.20–0.40 | Infrastructure cost only |
+| Privacy / data retention | Images deleted after 24h | Configurable | Full control |
+| MLS compliance tools | No | Yes | No (DIY) |
+| Room type auto-detection | Yes | Yes | Model-dependent |
+| Output resolution | Up to 4K | Up to 4K | Model-dependent |
+
+
 ## Evaluating Integration Approaches
 
 
@@ -203,6 +220,85 @@ When selecting a virtual staging solution, consider these practical factors:
 **Hybrid Approaches** combine API services for peak volumes with local processing for standard operations. This provides redundancy and cost optimization.
 
 
+## Input Image Requirements and Best Practices
+
+
+The quality of AI-generated staging depends heavily on the input photograph. Understanding the technical requirements helps you pre-process images before sending them to any staging API, which reduces failed jobs and improves output consistency.
+
+
+**Technical requirements common to all major tools:**
+
+- Minimum resolution: 1024 x 768 pixels (higher is better)
+- Format: JPEG or PNG (WebP support varies by provider)
+- File size: typically under 10 MB per image
+- Aspect ratio: standard wide ratios (16:9 or 4:3) produce better results than square crops
+
+
+**Photographic conditions that improve staging quality:**
+
+1. Shoot from doorway height (approximately 4-5 feet) to capture full room depth
+2. Use wide-angle lenses at 16-24mm equivalent to capture full room geometry
+3. Expose for the interior — blown-out windows confuse lighting models
+4. Ensure floors are fully visible; AI uses floor detection for furniture placement anchoring
+5. Remove all existing furniture and personal items before shooting empty rooms
+
+
+**Pre-processing pipeline for high volume:**
+
+```python
+from PIL import Image
+import os
+
+def prepare_for_staging(input_path: str, output_path: str,
+                         target_width: int = 2048) -> str:
+    """Resize and optimize image for virtual staging APIs."""
+    with Image.open(input_path) as img:
+        # Convert to RGB (handles PNG with alpha, CMYK, etc.)
+        img = img.convert("RGB")
+
+        # Resize maintaining aspect ratio
+        ratio = target_width / img.width
+        new_height = int(img.height * ratio)
+        img = img.resize((target_width, new_height), Image.LANCZOS)
+
+        # Save as JPEG with optimal quality
+        img.save(output_path, "JPEG", quality=90, optimize=True)
+
+    return output_path
+
+# Process a batch of listing photos
+input_dir = "./raw_photos"
+output_dir = "./staging_ready"
+os.makedirs(output_dir, exist_ok=True)
+
+for filename in os.listdir(input_dir):
+    if filename.lower().endswith((".jpg", ".jpeg", ".png")):
+        prepare_for_staging(
+            f"{input_dir}/{filename}",
+            f"{output_dir}/{filename.rsplit('.', 1)[0]}.jpg"
+        )
+```
+
+
+## Cost Modeling for High-Volume Operations
+
+
+For brokerages and platform developers, API costs scale directly with listing volume. Running accurate cost projections before committing to an integration prevents budget surprises.
+
+
+Assume a mid-size brokerage processes 200 new listings per month, with an average of 8 photos per listing that need staging. That is 1,600 API calls monthly.
+
+
+At ReRoom's pricing (~$0.35/image average across tiers): **$560/month**
+
+At VirtualStagingAI's pricing (~$0.28/image at volume tier): **$448/month**
+
+Self-hosted on a GPU cloud instance (AWS g4dn.xlarge, ~$0.526/hour, processing ~120 images/hour): **~$7/hour runtime, roughly $93/month** for the same 1,600 images
+
+
+The self-hosted break-even point is roughly 650-900 images per month depending on the provider you compare against. Below that volume, API services are more cost-effective. Above it, infrastructure investment delivers ongoing savings.
+
+
 ## Practical Implementation Recommendations
 
 
@@ -216,6 +312,26 @@ If privacy or cost control is paramount, invest in local infrastructure using Ro
 
 
 Virtual staging continues improving with advances in generative AI. The tools compared here represent the current state—evaluate them against your specific workflow requirements rather than assuming one solution fits all use cases.
+
+
+## Frequently Asked Questions
+
+
+**Q: Are AI-staged images legal to use on MLS listings?**
+
+Rules vary by MLS organization and jurisdiction. Most MLS systems require disclosure that images are virtually staged. Some require a watermark or a disclosure note on each staged photo. Check your specific MLS rules before publishing AI-staged images. VirtualStagingAI provides disclosure-compliant watermark options; ReRoom and RoomGPT require you to add disclosures manually.
+
+**Q: How does AI virtual staging compare to traditional virtual staging services?**
+
+Traditional virtual staging (using 3D artists) typically costs $50-150 per room and takes 24-72 hours. AI tools cost $0.20-$0.50 per image and complete in under a minute. Quality from top AI tools now matches traditional staging for standard rooms, though highly complex architectural spaces or luxury properties with unusual features still benefit from human 3D artists.
+
+**Q: Can these tools remove existing furniture from a furnished room and replace it?**
+
+Furniture removal is a separate AI capability called "inpainting" or "object removal." ReRoom and VirtualStagingAI offer this as an add-on or separate API endpoint. RoomGPT's open-source model supports inpainting with appropriate model configuration. For best results, shoot empty rooms — AI removal of existing furniture adds cost and reduces output quality.
+
+**Q: What image resolution should I target for MLS submission after staging?**
+
+Most MLS systems accept images up to 25MB with a minimum of 640x480 pixels. For print quality, target 3000x2000 pixels or higher. AI staging tools generally preserve or enhance your input resolution, so start with the highest quality photos your camera produces.
 
 
 ---
