@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /best-ai-powered-chatops-tools-for-slack-and-devops-integration/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]
