@@ -93,6 +93,51 @@ go/CLAUDE.md
 Each file contains language-specific instructions that activate when Claude operates within that directory.
 
 
+## What to Put in Each CLAUDE.md
+
+The content of each CLAUDE.md should be precise enough to eliminate ambiguity but concise enough that Claude doesn't skim past important instructions. A well-structured language-level CLAUDE.md contains five key sections:
+
+**1. Language version and toolchain**
+```markdown
+## Environment
+- Python 3.11 (pyenv managed)
+- Package manager: uv
+- Test runner: pytest with coverage plugin
+```
+
+**2. Architectural constraints**
+```markdown
+## Architecture Rules
+- All database queries go through the repository layer in `src/repositories/`
+- Never import directly from `src/models/` in route handlers
+- Use dependency injection via FastAPI's Depends()
+```
+
+**3. Active work context**
+```markdown
+## Current Focus
+Refactoring the payment module in `src/payments/`. Do not modify `src/auth/` without asking.
+```
+
+**4. Code style reminders**
+```markdown
+## Style
+- Type hints required on all public functions
+- Docstrings use Google style
+- Prefer dataclasses over plain dicts for structured data
+```
+
+**5. Common commands**
+```markdown
+## Commands
+- Run tests: `pytest tests/ -x --cov=src`
+- Lint: `ruff check . && mypy src/`
+- Start dev server: `uvicorn src.main:app --reload`
+```
+
+This structure lets Claude orient itself in under five seconds when switching from one language subdirectory to another.
+
+
 ## Documentation Naming Conventions That Help Claude
 
 
@@ -100,13 +145,9 @@ Consistent naming conventions reduce cognitive load and help Claude match docume
 
 
 | Instead of | Use |
-
 |------------|-----|
-
 | `readme.md` | `python/docs/setup-instructions.md` |
-
 | `notes.md` | `go/docs/api-endpoints.md` |
-
 | `guide.md` | `typescript/docs/react-components-patterns.md` |
 
 
@@ -265,6 +306,65 @@ See `docs-shared/architecture/upgrade-procedure.md`.
 
 
 This prevents Claude from suggesting incompatible dependency combinations.
+
+
+## Keeping CLAUDE.md Files Fresh
+
+A stale CLAUDE.md is worse than no CLAUDE.md. When Claude operates from outdated context—for example, a CLAUDE.md that still references the old `Flask` setup after you migrated to `FastAPI`—it produces subtly wrong suggestions that are harder to catch than outright errors.
+
+Maintain freshness with these practices:
+
+**Treat CLAUDE.md changes like API changes** — Any time a major dependency changes, a new service is added, or the team agrees on a new convention, update the relevant CLAUDE.md in the same pull request. Make it a required checklist item in your PR template.
+
+**Use a "last verified" date** — Add a line to each CLAUDE.md:
+```markdown
+<!-- Last verified: 2026-03-15 by @your-handle -->
+```
+This makes stale files visible during code review.
+
+**Review CLAUDE.md files quarterly** — Schedule a 15-minute team sync every quarter specifically to read through each language-level CLAUDE.md and remove outdated instructions. What felt important during initial setup often becomes noise six months later.
+
+
+## Handling Monorepo vs Multi-Repo Layouts
+
+Polyglot projects live in one of two configurations: a monorepo where all services share a single git repository, or a multi-repo setup where each service has its own repository. CLAUDE.md strategy differs between them.
+
+**Monorepo:** Use a root CLAUDE.md that describes the overall system, then per-service CLAUDE.md files at each service directory. Claude Code respects the hierarchy—when you open a file in `services/billing/`, the billing CLAUDE.md takes precedence over the root file for instructions that conflict.
+
+```
+monorepo-root/
+├── CLAUDE.md              # system overview, shared conventions
+├── services/
+│   ├── billing/
+│   │   ├── CLAUDE.md      # billing-specific: Go, Stripe SDK, tax rules
+│   │   └── ...
+│   ├── notifications/
+│   │   ├── CLAUDE.md      # notifications: Python, Celery, Redis
+│   │   └── ...
+│   └── frontend/
+│       ├── CLAUDE.md      # frontend: TypeScript, Next.js, Tailwind
+│       └── ...
+└── infra/
+    ├── CLAUDE.md          # infra: Terraform, AWS, naming conventions
+    └── ...
+```
+
+**Multi-repo:** Each repository has its own root CLAUDE.md. The cross-service integration documentation lives in a dedicated `docs` repository or a shared wiki. Reference that wiki URL from each service CLAUDE.md so Claude knows where to look for inter-service contracts.
+
+For teams transitioning from multi-repo to monorepo, copy all existing per-repo CLAUDE.md files into the appropriate service directories immediately. Do not merge them into a single root file yet—the per-service context is valuable and easy to lose during consolidation.
+
+
+## Testing Your CLAUDE.md Organization
+
+The best way to validate that your CLAUDE.md structure works is to ask Claude a question that requires understanding both the language context and the project architecture. For example, after setting up your polyglot structure:
+
+- "How do I add a new API endpoint in the Python backend that the TypeScript frontend can call?"
+- "What commands do I run to start the full local development environment?"
+- "Where should I put a new utility function that validates email addresses used in both Python and Go?"
+
+If Claude's answers reference the correct files, follow the right conventions, and suggest the expected patterns, your CLAUDE.md organization is working. If the answers are generic or reference wrong paths, refine the cross-reference documentation until the answers sharpen up.
+
+This feedback loop—question, answer, refine—takes about 30 minutes to complete and dramatically improves the quality of AI assistance across your entire polyglot project.
 
 
 ## Practical Tips for Daily Use
