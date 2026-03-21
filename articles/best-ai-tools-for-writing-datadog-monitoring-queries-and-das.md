@@ -219,6 +219,18 @@ Amazon Q Developer integrates with AWS environments and can help with Datadog mo
 **Pricing:** Free tier, $19/user/month for Pro.
 
 
+## Tool Comparison for Datadog Work
+
+
+| Tool | DQL Query Quality | Dashboard JSON | Terraform Support | Free Tier | IDE Integration |
+|------|------------------|----------------|-------------------|-----------|-----------------|
+| Claude | Excellent | Good | Excellent | Yes (limited) | Via API/chat |
+| GitHub Copilot | Good | Fair | Good | Yes | VS Code, JetBrains |
+| Cursor | Good | Good | Good | Yes (limited) | VS Code only |
+| Codeium | Fair | Fair | Fair | Yes | VS Code, JetBrains |
+| Amazon Q | Fair | Fair | Good | Yes | VS Code, JetBrains |
+
+
 ## Practical Examples
 
 
@@ -262,6 +274,104 @@ resource "datadog_monitor" "api_latency" {
 ```
 
 
+## Step-by-Step: Building a Complete Dashboard with AI
+
+
+Here is a repeatable workflow for using AI to build Datadog dashboards from scratch.
+
+
+**Step 1 — Describe your service topology to the AI.**
+Start with a prose description of what you are monitoring: service names, deployment environment tags, SLI/SLO definitions, and which metrics your instrumentation exposes. This context dramatically improves query accuracy.
+
+
+**Step 2 — Generate the core metric queries.**
+Ask for the key queries one section at a time—request rate, error rate, and latency (RED metrics) are the standard starting point:
+
+
+```
+Generate DQL queries for a RED dashboard for a service named
+"payments-api" in the env:production environment.
+The service emits:
+  - payments_api.requests.count (counter, tagged by status_code)
+  - payments_api.requests.duration (distribution, tagged by endpoint)
+Use 5-minute evaluation windows.
+```
+
+
+**Step 3 — Build the dashboard JSON.**
+Once you have verified queries, ask the AI to assemble a complete dashboard JSON. Provide the queries from step 2 as context so the JSON references them correctly:
+
+
+```json
+{
+  "title": "Payments API - RED Dashboard",
+  "layout_type": "ordered",
+  "widgets": [
+    {
+      "id": 1,
+      "definition": {
+        "type": "timeseries",
+        "title": "Request Rate",
+        "requests": [
+          {
+            "q": "sum:payments_api.requests.count{env:production}.as_rate()",
+            "display_type": "line"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "definition": {
+        "type": "timeseries",
+        "title": "Error Rate %",
+        "requests": [
+          {
+            "q": "sum:payments_api.requests.count{env:production,status_code:5*}.as_count() / sum:payments_api.requests.count{env:production}.as_count() * 100",
+            "display_type": "bars"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+
+**Step 4 — Apply via Terraform or the Datadog API.**
+Use the Datadog Terraform provider or the `POST /api/v1/dashboard` endpoint to push the generated JSON. Claude and Cursor both produce valid Terraform configurations when given the dashboard JSON directly.
+
+
+**Step 5 — Iterate on threshold tuning.**
+After deploying monitors, paste the alert history into the AI and ask for threshold recommendations. Models with strong statistical reasoning (Claude, GPT-4) can suggest warning and critical thresholds based on your described p95/p99 baseline.
+
+
+## Pro Tips for AI-Assisted Datadog Work
+
+
+**Prefix your metric names in prompts.** When asking for queries, always include the full metric namespace (e.g., `aws.elb.request_count` rather than just "ELB request count"). This prevents the AI from inventing metric names that do not exist in your account.
+
+**Ask for tag scoping explicitly.** Datadog queries without tag filters return data across all environments. Always specify which tags to scope by in your prompt—environment, service, region—and verify they appear correctly in the generated query.
+
+**Use formula widgets for derived metrics.** Claude handles formula expressions particularly well. For derived metrics like apdex scores or availability percentages, ask for a formula widget rather than a single query. The resulting JSON uses Datadog's `formulas` and `queries` structure:
+
+
+```json
+"requests": [
+  {
+    "formulas": [{"formula": "query1 / query2 * 100"}],
+    "queries": [
+      {"name": "query1", "query": "sum:errors{env:production}.as_count()"},
+      {"name": "query2", "query": "sum:requests{env:production}.as_count()"}
+    ]
+  }
+]
+```
+
+
+**Validate generated queries before deployment.** Paste generated DQL queries into the Datadog Metrics Explorer before embedding them in monitors or dashboards. AI tools occasionally produce syntactically valid but semantically wrong queries (for example, `.as_rate()` on a gauge metric).
+
+
 ## Choosing the Right Tool
 
 
@@ -274,7 +384,7 @@ The best approach is to evaluate these tools with your actual Datadog metrics an
 ---
 
 
-## Related Articles
+## Related Reading
 
 - [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
