@@ -64,11 +64,11 @@ For a JavaScript student learning asynchronous programming, Copilot demonstrates
 async function fetchUserData(userId) {
   try {
     const response = await fetch(`https://api.example.com/users/${userId}`);
-    
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    
+
     const userData = await response.json();
     return userData;
   } catch (error) {
@@ -122,7 +122,7 @@ function UserProfile({ userId }) {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
-  
+
   return (
     <div className="user-profile">
       <h2>{user.name}</h2>
@@ -163,10 +163,10 @@ def process_data(data: list[dict]) -> list[int]:
     """Process items with values greater than 10, doubling them."""
     if not data:
         return []
-    
+
     return [
-        item['value'] * 2 
-        for item in data 
+        item['value'] * 2
+        for item in data
         if isinstance(item, dict) and 'value' in item and item['value'] > 10
     ]
 ```
@@ -223,7 +223,7 @@ Students learning databases can ask specific questions:
 
 
 ```
-Query: "What's the difference between PostgreSQL row-level security 
+Query: "What's the difference between PostgreSQL row-level security
 and MySQL user privileges, with examples?"
 ```
 
@@ -253,9 +253,9 @@ For students learning Rust, Continue helps with ownership concepts:
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1;  // s1 is moved to s2
-    
+
     // println!("{}", s1);  // Error: value borrowed here after move
-    
+
     // Correct: borrow instead of moving
     let s3 = String::from("world");
     let len = calculate_length(&s3);  // borrow s3
@@ -272,6 +272,74 @@ Continue explains ownership rules in context, helping students grasp one of Rust
 
 
 
+## Tool Comparison at a Glance
+
+
+
+Not all tools serve every learning scenario equally well. This breakdown maps each tool to the situations where it provides the most value:
+
+
+
+| Tool | Best For | Editor Integration | Works Offline | No Credit Card |
+|------|----------|--------------------|---------------|----------------|
+| GitHub Copilot (Education) | Inline learning, syntax patterns | VS Code, JetBrains | No | Yes (via .edu email) |
+| Codeium | Multi-language completion, no friction signup | VS Code, JetBrains, Vim | No | Yes |
+| Cursor (free tier) | Whole-file refactoring, chat-driven edits | Built-in (VS Code fork) | No | Yes |
+| Tabnine (free) | Privacy-conscious, local model option | VS Code, JetBrains | Yes (local) | Yes |
+| Claude Code | Debugging, concept explanation, terminal workflows | Terminal/CLI | No | Requires API credits |
+| Continue | Customizable, open source, self-hosted model support | VS Code, JetBrains | Yes (local model) | Yes |
+| Perplexity | Documentation research, comparing technologies | Browser | No | Yes (limited daily) |
+
+
+
+For most students starting from zero, the practical recommendation is: install Codeium immediately (no friction, unlimited completions), apply for GitHub Copilot Education in parallel, and use Perplexity for documentation research while waiting for approval. Add Cursor when you start working on multi-file projects. That sequence costs nothing and covers the full spectrum from single-line completion to architecture-level reasoning.
+
+
+
+## How to Use AI Tools Without Stunting Your Learning
+
+
+
+The most common concern students raise about AI coding tools is dependency: will relying on AI suggestions prevent you from developing genuine problem-solving skills? The concern is legitimate, but the risk depends entirely on how you use the tools.
+
+
+
+The productive pattern is to treat AI completions as a verification layer rather than a starting point. Write your own attempt at a function first, then ask the AI to review it. Compare what you wrote against what the AI suggests and understand every difference before accepting it. This active comparison forces you to confront your own gaps without making you grind through syntax memorization for knowledge you can easily look up.
+
+
+
+The counterproductive pattern is accepting completions without reading them. If Copilot generates a 30-line function and you tab-accept it without understanding what it does, you have not learned anything and have introduced code you cannot maintain or debug later.
+
+
+
+A concrete practice that experienced developers recommend: after completing each project feature with AI assistance, delete all the AI-suggested code and rebuild it from memory. The reconstruction attempt reveals which concepts genuinely landed and which you were just accepting blindly.
+
+
+
+## Debugging With AI: A Structured Approach
+
+
+
+AI assistants are particularly valuable for debugging because they can explain error messages in context. But students often use them inefficiently—pasting an error into chat and waiting for a fix without engaging with the explanation.
+
+
+
+A more effective method structures the interaction as a guided diagnosis:
+
+
+
+```
+Step 1 — Paste the full error with stack trace, not just the message.
+Step 2 — Ask: "What does this error mean, and what are the three most common causes?"
+Step 3 — Before asking for the fix, attempt to identify which cause applies to your code.
+Step 4 — Ask: "Given that the problem is [your hypothesis], what should I change?"
+```
+
+
+This forces the student to engage with the diagnostic reasoning rather than receiving a solution passively. Over time, the patterns of common errors and their causes become internalized. Students who follow this approach report that they stop encountering entire categories of errors after a few months because the AI-guided debugging process accelerated the pattern recognition that normally takes years of trial and error.
+
+
+
 ## Combining Tools for Maximum Learning
 
 
@@ -285,7 +353,6 @@ Many students find that using two or three tools in combination provides coverag
 
 
 The tools listed above represent the strongest free options available in 2026 for students learning to code. Each brings unique strengths to different aspects of the coding journey, and all are accessible without financial investment.
-
 
 
 
