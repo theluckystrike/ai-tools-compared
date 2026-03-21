@@ -3,6 +3,7 @@ layout: default
 title: "How to Generate Mermaid Sequence Diagrams from API Endpoint"
 description: "A practical guide for developers to automatically create Mermaid sequence diagrams from API endpoint descriptions using AI tools, with code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/
 categories: [guides]
@@ -327,14 +328,15 @@ Several techniques improve diagram generation results:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
-- [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
+
+## Related Articles
+
+- [How to Use AI to Generate Activity Diagrams from User](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

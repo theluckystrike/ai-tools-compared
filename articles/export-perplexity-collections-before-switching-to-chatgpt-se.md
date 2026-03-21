@@ -3,6 +3,7 @@ layout: default
 title: "Export Perplexity Collections Before Switching to ChatGPT Se"
 description: "A practical developer guide for exporting Perplexity collections before switching to ChatGPT Search in 2026. Includes API methods, automation scripts"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /export-perplexity-collections-before-switching-to-chatgpt-se/
 categories: [guides]
@@ -288,11 +289,15 @@ Test your export scripts on a single collection first to verify the data structu
 Back up your exports to cloud storage (Google Drive, Dropbox, or AWS S3) in addition to local storage. This protects against data loss if your local machine fails during the transition period.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

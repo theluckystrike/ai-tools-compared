@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Custom Instructions for AI Tools to Match Your"
 description: "A practical guide for developers on configuring AI coding assistants with custom instructions that enforce your team's linting rules, code style, and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-custom-instructions-for-ai-tools-to-match-your/
 categories: [guides]
@@ -259,13 +260,14 @@ Set a calendar reminder to audit AI-generated code monthly. Track which linting 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Configure AI Coding Tools to Respect Your Team's Branch Naming Conventions](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+
+## Related Articles
+
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

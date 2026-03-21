@@ -3,6 +3,7 @@ layout: default
 title: "How to Structure Prompts for AI to Generate Idiomatic Code"
 description: "A practical guide for developers on writing effective prompts that produce idiomatic code in Python, JavaScript, Rust, Go, and other programming languages"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/
 categories: [guides]
@@ -265,13 +266,14 @@ If the code feels foreign to the language, refine your prompt with more specific
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [How to Write Better Prompts for AI Code Generation with.](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
-- [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+
+## Related Articles
+
+- [How to Write Better Prompts for AI Code Generation with](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

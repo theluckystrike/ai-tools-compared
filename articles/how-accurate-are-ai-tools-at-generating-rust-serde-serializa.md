@@ -3,6 +3,7 @@ layout: default
 title: "How Accurate Are AI Tools"
 description: "A practical analysis of how well AI coding assistants generate Rust serde serialization code, with real examples and accuracy assessments for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/
 categories: [guides]
@@ -296,13 +297,14 @@ The pattern that AI tools struggle with most is custom serialization logic. Alwa
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
-- [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+
+## Related Articles
+
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod Schem](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

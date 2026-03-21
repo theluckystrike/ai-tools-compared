@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Currency Decimal Precision Edge Ca"
 description: "A practical guide for developers on using AI tools to generate test cases for currency decimal precision edge cases, with code examples and best practices"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/
 categories: [guides]
@@ -346,11 +347,15 @@ Provide a reference calculation alongside your prompt. For example: "10.995 × 1
 **What about cryptocurrency decimal precision?**
 Cryptocurrencies like Bitcoin use up to 8 decimal places (satoshis). Ethereum's wei denomination requires 18 decimal places. Standard `BigDecimal` with sufficient precision handles these, but AI tools need explicit context — always specify the denomination in your prompt.
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [How to Use AI to Write pytest Parametrize Test Cases](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edge-conditions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

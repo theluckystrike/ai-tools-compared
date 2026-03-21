@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing Infrastructure as Code Pulumi 2026"
 description: "Compare AI tools for writing Pulumi infrastructure as code. Covers Claude, Copilot, Cursor for TypeScript and Python Pulumi programs with real examples"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-infrastructure-as-code-pulumi-2026/
 categories: [guides]
@@ -446,8 +447,14 @@ For a typical infrastructure project (5 stacks, ~1000 lines total):
 Most teams find combined approach optimal: Cursor for daily editing, Claude for complex designs, Copilot as fallback.
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Best Workflow for Using AI to Write Infrastructure as Code F](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

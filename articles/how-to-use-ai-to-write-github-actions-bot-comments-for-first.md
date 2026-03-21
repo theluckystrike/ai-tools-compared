@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Write GitHub Actions Bot Comments for First"
 description: "Learn how to use AI tools to create helpful, welcoming GitHub Actions bot comments that guide first-time contributors through the pull request"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-actions-bot-comments-for-first/
 categories: [guides]
@@ -252,14 +253,15 @@ Getting AI-generated bot comments working from scratch takes about 30 minutes. H
 
 **Not handling the workflow failure case.** If your AI API call fails, the workflow should still complete without error. Catch API failures and fall back to a static default message rather than leaving new contributors with no response at all.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Write GitHub Release Tag Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
-- [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
-- [Best AI Tools for Writing GitHub Actions Matrix Build.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+
+## Related Articles
+
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

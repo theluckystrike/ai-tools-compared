@@ -3,6 +3,7 @@ layout: default
 title: "How to Prevent AI Coding Tools from Generating Overly"
 description: "A practical guide for developers on how to keep AI-generated code simple, maintainable, and focused. Includes techniques and prompts that work"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/
 categories: [guides]
@@ -256,13 +257,14 @@ Tools that consistently generate 3-5 line solutions are better for simplicity-fi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Optimize AI Coding Prompts for Generating.](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
-- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
+
+## Related Articles
+
+- [AI Tools for Generating Jest Mock Implementations for Comple](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
+- [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-compared/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)
+- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

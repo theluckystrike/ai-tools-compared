@@ -3,6 +3,7 @@ layout: default
 title: "Fine Tune Open Source Code Models for Your Codebase"
 description: "Guide to adapting open source AI models to your specific codebase using LoRA, QLoRA, and supervised fine-tuning"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /fine-tune-open-source-code-models-for-your-codebase-2026/
 categories: [guides]
@@ -242,11 +243,14 @@ print(f"Improvement: {((baseline_loss - finetuned_loss) / baseline_loss) * 100:.
 3. **Training on test data**: Always split 90/10 training/validation to detect overfitting.
 4. **Ignoring context windows**: Code Llama supports 8K tokens; include multi-function context in prompts.
 
-## Related Reading
-- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Python FastAPI Endpoints](/ai-tools-compared/guides-hub/)
-- [Fine-tuning Strategies for Different Programming Languages](/ai-tools-compared/guides-hub/)
 
----
+
+## Related Articles
+
+- [How to Fine-Tune Llama 3 for Code Completion](/ai-tools-compared/how-to-fine-tune-llama-3-for-code-completion/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

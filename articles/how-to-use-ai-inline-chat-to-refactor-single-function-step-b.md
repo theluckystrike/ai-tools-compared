@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Inline Chat to Refactor Single Function Step"
 description: "A practical guide for developers on using VS Code AI inline chat to refactor individual functions with real code examples and step-by-step instructions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-inline-chat-to-refactor-single-function-step-by-step/
 categories: [guides]
@@ -485,13 +486,14 @@ AI inline chat understands framework patterns:
 - "Extract to a composable"
 - "Optimize template with v-memo"
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Inline Chat Features in VSCode Compared to.](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
-- [How to Use AI Inline Completion for Writing Function.](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
-- [How to Use Copilot Chat to Generate Code from Natural.](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+
+## Related Articles
+
+- [How to Use AI Inline Completion](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
+- [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Cursor Project-Wide Refactor Breaking Build Fix](/ai-tools-compared/cursor-project-wide-refactor-breaking-build-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

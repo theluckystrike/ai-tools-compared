@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Copilot to Codeium What Extensions to Install"
 description: "A practical guide for developers switching from GitHub Copilot to Codeium, covering essential VS Code extensions and configuration steps"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-copilot-to-codeium-what-extensions-to-install/
 categories: [guides]
@@ -245,13 +246,14 @@ The transition from Copilot to Codeium requires an adjustment period, but instal
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate From Copilot for Neovim to Claude Code.](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
-- [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+
+## Related Articles
+
+- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium Vs](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
+- [Codeium Pro vs Copilot Individual Features Per Dollar Compar](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Copilot vs Codeium for TypeScript Projects 2026](/ai-tools-compared/copilot-vs-codeium-for-typescript-projects-2026/)
+- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

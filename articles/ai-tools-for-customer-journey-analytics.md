@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Customer Journey Analytics"
 description: "A practical guide to AI tools for customer journey analytics, with code examples and implementation strategies for developers building data-driven"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-customer-journey-analytics/
 categories: [guides]
@@ -238,11 +239,15 @@ Build dashboards that surface these metrics to product and marketing teams. The 
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
+- [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
+- [Best AI for Analyzing Google Analytics Data Exports with Pan](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

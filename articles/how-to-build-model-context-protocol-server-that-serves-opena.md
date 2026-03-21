@@ -3,6 +3,7 @@ layout: default
 title: "How to Build a Model Context Protocol Server That Serves"
 description: "A practical guide to building an MCP server that serves OpenAPI specifications to AI tools, with code examples and implementation patterns for 2026"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-serves-opena/
 categories: [guides]
@@ -280,14 +281,15 @@ When building MCP servers for OpenAPI specs, consider these recommendations:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
-- [How to Build Model Context Protocol Server That Provides.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Build Model Context Protocol Server for Internal.](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+
+## Related Articles
+
+- [How to Create Model Context Protocol Server That Serves API](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
+- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

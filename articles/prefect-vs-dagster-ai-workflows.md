@@ -3,6 +3,7 @@ layout: default
 title: "Prefect vs Dagster for AI Workflows"
 description: "A practical comparison of Prefect and Dagster for orchestrating AI and machine learning pipelines, with code examples and recommendations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /prefect-vs-dagster-ai-workflows/
 reviewed: true
@@ -304,13 +305,14 @@ Choose **Dagster** if:
 Both teams benefit from starting simple and adding complexity only when you have real requirements.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Observable vs Jupyter for AI Data Exploration](/ai-tools-compared/observable-vs-jupyter-ai-data-exploration/)
-- [Snowflake vs Databricks for AI Analytics: A Developer.](/ai-tools-compared/snowflake-vs-databricks-ai-analytics/)
-- [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
+
+## Related Articles
+
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
+- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

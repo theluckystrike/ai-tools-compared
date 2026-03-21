@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Serverless Framework Configuration"
 description: "Learn how to use AI tools to automatically generate Serverless Framework configuration files, including practical examples and code snippets for 2026"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-serverless-framework-configuration/
 categories: [guides]
@@ -293,14 +294,15 @@ Test in staging first. Deploy to a non-production environment to verify the conf
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Pytest Tests for Django REST Framework Serializer Validation](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
-- [How to Use AI to Generate Pytest Tests for Celery Task.](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
-- [How to Use AI to Generate Terraform Import Blocks for.](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+
+## Related Articles
+
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
+- [Botpress vs Rasa AI Chatbot Framework Compared](/ai-tools-compared/botpress-vs-rasa-ai-chatbot-framework/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

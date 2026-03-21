@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer GitHub Copilot Organization Settings"
 description: "A practical guide for developers moving from GitHub Copilot to Cursor Business. Learn what settings you can migrate, what requires manual"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /transfer-github-copilot-org-settings-when-switching-to-curso/
 categories: [guides]
@@ -451,14 +452,15 @@ cursor org:disable --all-teams
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Transfer Copilot Code Review Settings to Cursor.](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
-- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [How to Move Copilot Suggested Code Patterns to Cursor.](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
+
+## Related Articles
+
+- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
+- [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

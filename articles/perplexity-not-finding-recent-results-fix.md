@@ -3,6 +3,7 @@ layout: default
 title: "Perplexity Not Finding Recent Results Fix"
 description: "A practical troubleshooting guide for developers and power users experiencing issues with Perplexity not returning recent search results. Learn"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /perplexity-not-finding-recent-results-fix/
 categories: [guides]
@@ -369,14 +370,15 @@ Most "not finding recent results" issues resolve through scope settings, query r
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
+- [ChatGPT vs Perplexity for Researching Competitor Pricing Str](/ai-tools-compared/chatgpt-vs-perplexity-for-researching-competitor-pricing-str/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [Perplexity API Pricing vs Using Pro Subscription Which Is Ch](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
+- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

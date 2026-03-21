@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Creating Automated Release Changelog from Conve"
 description: "Discover how AI tools transform conventional commit messages into polished release changelogs. Practical examples and implementation guide for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-automated-release-changelog-from-conve/
 categories: [guides]
@@ -308,14 +309,15 @@ Maintain a changelog category strategy. Decide whether you want detailed technic
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [AI Tools for DevRel Teams Creating Developer Onboarding Checklists from Internal Wikis](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
-- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+
+## Related Articles
+
+- [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
+- [How to Use AI to Create Changelog Entries Grouped by Breakin](/ai-tools-compared/how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/)
+- [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
+- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [How to Use AI to Write GitHub Release Tag Descriptions](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

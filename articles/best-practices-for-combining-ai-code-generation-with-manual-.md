@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Combining AI Code Generation"
 description: "A practical guide for developers on integrating AI code generation with manual code review. Learn workflows, patterns, and strategies to maximize code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-combining-ai-code-generation-with-manual-code-review/
 categories: [guides]
@@ -334,13 +335,14 @@ Some teams annotate AI-generated functions with a comment like `# generated: cla
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Code Generation Quality for JavaScript Async Await.](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
-- [Best Practices for Documenting AI-Generated Code for.](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
-- [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+
+## Related Articles
+
+- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
+- [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

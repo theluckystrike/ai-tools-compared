@@ -3,6 +3,7 @@ layout: default
 title: "Lightdash vs Preset AI Dashboards: A Practical"
 description: "Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /lightdash-vs-preset-ai-dashboards/
 categories: [guides]
@@ -307,13 +308,14 @@ Start by mapping your current data architecture. If dbt is central to your opera
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Domo vs Sisense AI Dashboards: A Practical Comparison.](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
-- [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
-- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+
+## Related Articles
+
+- [Domo vs Sisense AI Dashboards: A Practical Comparison](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
+- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-compared/ai-tools-for-cohort-analysis/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

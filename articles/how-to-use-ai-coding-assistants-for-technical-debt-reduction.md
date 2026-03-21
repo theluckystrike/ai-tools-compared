@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Coding Assistants for Technical Debt Reduction"
 description: "A practical guide for developers on using AI coding assistants to systematically reduce technical debt. Learn frameworks, code examples, and workflows"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-assistants-for-technical-debt-reduction/
 categories: [guides]
@@ -357,13 +358,14 @@ AI coding assistants transform technical debt from an overwhelming problem into 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
-- [AI Coding Assistants for TypeScript GraphQL Resolver and.](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
-- [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+
+## Related Articles
+
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

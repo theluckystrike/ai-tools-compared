@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code API Error Handling Standards"
 description: "A guide to implementing API error handling standards with Claude Code, covering HTTP status codes, error response formats, and best practices"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /claude-code-api-error-handling-standards/
 categories: [guides]
@@ -434,11 +435,15 @@ async def fetch_user_from_upstream(user_id: str) -> dict:
 
 The pattern — catch upstream errors, log the raw details server-side, raise a translated exception with a client-appropriate message — is the standard that Claude Code applies when you specify "translate upstream errors rather than propagating them."
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
+- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

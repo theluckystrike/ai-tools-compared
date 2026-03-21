@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Writing Effective Runbooks and Incident"
 description: "Learn practical techniques for using AI to create clear, actionable runbooks and incident response playbooks that accelerate incident resolution"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/
 categories: [guides]
@@ -322,13 +323,14 @@ Always have experienced engineers review and test AI-generated content before de
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [How to Use AI to Help SRE Teams Draft Root Cause.](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+
+## Related Articles
+
+- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
+- [How to Use AI for Writing Effective Terraform State Manageme](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

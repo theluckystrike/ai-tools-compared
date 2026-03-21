@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Model Context Protocol Server for Custom Proje"
 description: "A practical guide to building an MCP server that serves your project documentation to AI coding tools. Step-by-step implementation with code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-for-custom-proje/
 categories: [guides]
@@ -436,14 +437,15 @@ Some AI tools require a restart after adding MCP server configuration. Close and
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
-- [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [How to Set Up Model Context Protocol for Feeding Jira.](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
+
+## Related Articles
+
+- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
+- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
+- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
+- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

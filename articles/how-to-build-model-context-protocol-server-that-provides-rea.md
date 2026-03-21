@@ -3,6 +3,7 @@ layout: default
 title: "How to Build Model Context Protocol Server That Provides Rea"
 description: "A practical guide to building an MCP server that streams real-time test results. Includes Python implementation, code examples, and integration"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-model-context-protocol-server-that-provides-rea/
 categories: [guides]
@@ -375,14 +376,15 @@ def safe_test_path(user_path: str) -> pathlib.Path:
 
 These two controls — token authentication and path restriction — prevent the most common misuse scenarios when running an MCP server in a shared or CI environment.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Build Model Context Protocol Server That Provides.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Build a Model Context Protocol Server That.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Create Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
+
+## Related Articles
+
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
+- [How to Create Model Context Protocol Server That Serves API](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

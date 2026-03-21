@@ -3,6 +3,7 @@ layout: default
 title: "Perplexity Spaces Collaboration Feature Free vs Pro Limits"
 description: "A guide comparing Perplexity Spaces collaboration features across Free and Pro plans. Learn the limits, capabilities, and which plan best suits your team's"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/
 categories: [guides]
@@ -405,10 +406,14 @@ Workspace Structure:
 
 Avoid mixing unrelated research in single Space—maintain focus and search efficiency.
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
+- [Best Free AI Tool for Generating Regex Patterns Explained](/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

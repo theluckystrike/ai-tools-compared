@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create Milestone Planning Documents"
 description: "A practical guide for developers and power users on using AI to transform issue backlog priorities into structured milestone planning documents"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-milestone-planning-documents-from-is/
 categories: [guides]
@@ -271,13 +272,14 @@ Maintain effective milestone planning by following these practices:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Create GitHub Issue Triage Flowcharts.](/ai-tools-compared/how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/)
-- [How to Use AI to Help SRE Teams Create On-Call Handoff Documents](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
-- [How to Use AI to Create Data Quality Scorecards from dbt.](/ai-tools-compared/how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/)
+
+## Related Articles
+
+- [How to Use AI for Capacity Planning and Resource Right Sizin](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+- [How to Use AI for Cloud Migration Planning and Dependency](/ai-tools-compared/how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
+- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
+- [How to Use AI to Draft RFC Documents for Proposed Open](/ai-tools-compared/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

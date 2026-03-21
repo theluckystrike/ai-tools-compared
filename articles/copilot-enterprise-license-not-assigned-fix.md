@@ -3,6 +3,7 @@ layout: default
 title: "Copilot Enterprise License Not Assigned Fix"
 description: "When your organization has purchased GitHub Copilot Enterprise but you cannot access the features, the 'license not assigned' error blocks productivity. This"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /copilot-enterprise-license-not-assigned-fix/
 reviewed: true
@@ -279,14 +280,15 @@ $licensedUsers | Select-Object DisplayName, UserPrincipalName,
 Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 - [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Not Suggesting Imports Automatically Fix](/ai-tools-compared/copilot-not-suggesting-imports-automatically-fix/)
 - [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
+- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

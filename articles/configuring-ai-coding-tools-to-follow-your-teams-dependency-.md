@@ -3,6 +3,7 @@ layout: default
 title: "Configuring AI Coding Tools to Follow Your Teams Dependency"
 description: "Learn how to configure AI coding tools like GitHub Copilot, Codeium, and Tabnine to respect your team's dependency injection patterns. Practical setup guide"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /configuring-ai-coding-tools-to-follow-your-teams-dependency-/
 categories: [guides]
@@ -309,14 +310,15 @@ Another common issue involves stale context. AI tools cache previous suggestions
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Way to Configure AI Coding Tools to Follow Your.](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
-- [Configuring AI Coding Tools to Match Your Teams Specific.](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
-- [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+
+## Related Articles
+
+- [Configuring AI Coding Tools to Match Your Teams Specific Doc](/ai-tools-compared/configuring-ai-coding-tools-to-match-your-teams-specific-doc/)
+- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing CI CD Pipeline Configurations 2026"
 description: "Compare AI tools for generating CI/CD pipeline configurations. Covers GitHub Actions, GitLab CI, CircleCI YAML generation with Claude, Copilot, and Cursor"
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-ci-cd-pipeline-configurations-2026/
 categories: [guides]
@@ -540,8 +541,14 @@ AI tools make CI/CD configuration approachable for developers who haven't memori
 For new complex pipelines, start with Claude to establish the architecture and decisions. Then iterate in Cursor for real-time refinement. Use all three tools—each excels in its context.
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
+- [AI Tools for Creating Mutation Testing Configurations](/ai-tools-compared/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
+- [AI Powered Tools for Predicting CI/CD Pipeline Failures Befo](/ai-tools-compared/ai-powered-tools-for-predicting-ci-cd-pipeline-failures-befo/)
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

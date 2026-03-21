@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Pagination Edge Case Tests for API"
 description: "A practical guide for developers to use AI tools in generating pagination edge case tests for REST APIs, with code examples and testing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/
 categories: [guides]
@@ -284,14 +285,15 @@ AI accelerates the initial test generation, but maintaining and updating tests s
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Currency Decimal Precision Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/)
-- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+
+## Related Articles
+
 - [How to Use AI to Generate Unicode and Emoji Edge Case Tests](/ai-tools-compared/how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [How to Use AI to Generate Currency Decimal Precision Edge Ca](/ai-tools-compared/how-to-use-ai-to-generate-currency-decimal-precision-edge-ca/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

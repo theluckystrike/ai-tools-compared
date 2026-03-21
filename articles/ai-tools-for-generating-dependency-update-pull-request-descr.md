@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating Dependency Update Pull Request Descr"
 description: "A practical guide for developers using AI tools to automate dependency update PR descriptions with integrated security risk analysis and changelog"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-dependency-update-pull-request-descr/
 categories: [guides]
@@ -488,13 +489,14 @@ Adjust your prompts and tools based on these metrics.
 
 {% endraw %}
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [How to Use AI to Generate Pull Request Impact Analysis.](/ai-tools-compared/how-to-use-ai-to-generate-pull-request-impact-analysis-showi/)
+
+## Related Articles
+
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [How to Use AI to Generate Pull Request Impact Analysis](/ai-tools-compared/how-to-use-ai-to-generate-pull-request-impact-analysis-showi/)
+- [Best AI for Product Managers Creating Stakeholder Update Dec](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

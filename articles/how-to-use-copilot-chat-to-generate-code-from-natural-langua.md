@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Copilot Chat to Generate Code from Natural"
 description: "A practical guide for developers on using GitHub Copilot Chat to transform natural language descriptions into working code with real examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-chat-to-generate-code-from-natural-langua/
 categories: [guides]
@@ -324,14 +325,15 @@ Generated code may occasionally use outdated patterns or deprecated APIs. Check 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate From Copilot for Neovim to Claude Code.](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [How to Use AI to Generate Activity Diagrams from User.](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
+
+## Related Articles
+
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Use AI Chat History Effectively for Iterating on Code](/ai-tools-compared/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

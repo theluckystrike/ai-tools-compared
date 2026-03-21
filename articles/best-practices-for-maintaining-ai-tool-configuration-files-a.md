@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Maintaining AI Tool Configuration Files"
 description: "A practical guide to managing AI tool configuration files with your code documentation, including version control strategies, environment-specific"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-maintaining-ai-tool-configuration-files-a/
 categories: [guides]
@@ -312,14 +313,15 @@ Set quarterly reminders to:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
-- [Best Practices for Version Controlling AI Prompts and.](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)
+
+## Related Articles
+
+- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Writing AWS CDK Infrastructure Code"
 description: "A practical comparison of AI coding tools for writing AWS CDK infrastructure code in Python, featuring code examples and recommendations for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/
 categories: [guides]
@@ -273,14 +274,15 @@ The AI landscape evolves rapidly, and tool capabilities improve continuously. Te
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Python Celery Task Queue Code.](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)
-- [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
-- [Best AI Tools for Python NumPy and Scientific Computing.](/ai-tools-compared/best-ai-tools-for-python-numpy-and-scientific-computing-code/)
+
+## Related Articles
+
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating Grafana Dashboard JSON Templates Fro"
 description: "Discover how AI tools can automate the creation of Grafana dashboard JSON templates using YAML specifications, saving time and reducing errors"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-grafana-dashboard-json-templates-fro/
 categories: [guides]
@@ -283,14 +284,15 @@ providers:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating Grafana SLO Dashboard Panels with.](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
-- [Best AI Assistant for Building Grafana Dashboard Panels.](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
-- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+
+## Related Articles
+
+- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
+- [Best AI Assistant for Building Superset Dashboard Charts Fro](/ai-tools-compared/best-ai-assistant-for-building-superset-dashboard-charts-fro/)
+- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [ChatGPT vs Claude for Generating Pydantic Models from JSON](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

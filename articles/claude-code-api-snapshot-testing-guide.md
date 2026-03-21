@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code API Snapshot Testing Guide"
 description: "API snapshot testing captures the actual output of your API endpoints and stores them as reference files. Future test runs compare new responses against these"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-api-snapshot-testing-guide/
 categories: [guides]
@@ -422,11 +423,15 @@ def redact_sensitive_data(data):
 Solution: Ensure your normalization handles all dynamic data sources. Work with Claude Code to identify all potential sources of variation in your API responses.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
+- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
+- [AI-Assisted API Load Testing Tools Comparison 2026](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Runbook Documentation Guide"
 description: "A guide to creating and maintaining operational runbooks using Claude Code. Learn how to document procedures, automate runbook creation"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-runbook-documentation-guide/
 reviewed: true
@@ -332,13 +333,14 @@ Use Claude Code to generate review checklists and even help execute portions of 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
-- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+
+## Related Articles
+
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
+- [Gemini vs Claude for Generating Markdown Documentation](/ai-tools-compared/gemini-vs-claude-for-generating-markdown-documentation-from-/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

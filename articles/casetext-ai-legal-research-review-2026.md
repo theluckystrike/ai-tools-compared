@@ -3,6 +3,7 @@ layout: default
 title: "Casetext AI Legal Research Review: A Guide."
 description: "An in-depth review of Casetext's AI-powered legal research tools, featuring CoCounsel and the latest capabilities for attorneys and legal professionals in 2026"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "AI Tools Compared"
 permalink: /casetext-ai-legal-research-review-2026/
 categories: [guides]
@@ -389,7 +390,11 @@ When adopting Casetext firm-wide:
 4. **Billing and ethics:** Clarify how time using Casetext affects billing practices and client communications
 5. **Feedback loops:** Encourage attorneys to report cases where CoCounsel's analysis was particularly valuable or problematic
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+## Related Articles
 
+- [Legal Research AI Tools: Best Options for Attorneys in 2026](/ai-tools-compared/legal-research-ai-tools-best-options-for-attorneys-2026/)
+- [Clio AI Legal Practice Management Review 2026](/ai-tools-compared/clio-ai-legal-practice-management-review-2026/)
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [Best AI Tool for Journalists Article Research 2026](/ai-tools-compared/best-ai-tool-for-journalists-article-research-2026/)
+- [Best AI Tool for Traders: Market Research Summaries](/ai-tools-compared/best-ai-tool-for-traders-market-research-summaries/)

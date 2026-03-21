@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Debug Tailwind CSS Classes Not Applying"
 description: "A practical guide for developers on using AI tools to identify and fix Tailwind CSS classes that fail to apply in production environments"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/
 categories: [guides]
@@ -284,13 +285,14 @@ Here's a complete workflow that AI tools guide you through:
 
 AI tools should guide you through this systematically, asking clarifying questions at each step rather than making assumptions.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
-- [How to Use AI to Debug Segmentation Faults in C and C++.](/ai-tools-compared/how-to-use-ai-to-debug-segmentation-faults-in-c-and-cpp-prog/)
-- [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
+
+## Related Articles
+
+- [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

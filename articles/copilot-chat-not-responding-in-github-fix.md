@@ -3,6 +3,7 @@ layout: default
 title: "Copilot Chat Not Responding in GitHub Fix"
 description: "A practical troubleshooting guide for developers experiencing GitHub Copilot Chat not responding. Learn step-by-step fixes and diagnostic tips"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /copilot-chat-not-responding-in-github-fix/
 categories: [guides]
@@ -337,14 +338,15 @@ If none of these solutions resolve your Copilot Chat issues, follow this escalat
 
 Provide as much detail as possible—error logs, timing of when it started, whether Chat ever worked in this environment, and what you've already tried. This information helps support engineers diagnose issues quickly.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
-- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
-- [Best Practices for Writing GitHub Copilot Custom.](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
+
+## Related Articles
+
+- [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
+- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

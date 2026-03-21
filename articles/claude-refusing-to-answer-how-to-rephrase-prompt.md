@@ -3,6 +3,7 @@ layout: default
 title: "Claude Refusing to Answer: How to Rephrase Your Prompt"
 description: "A troubleshooting guide for developers and power users experiencing Claude refusing to answer. Learn how to rephrase prompts effectively and bypass"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-refusing-to-answer-how-to-rephrase-prompt/
 reviewed: true
@@ -411,14 +412,15 @@ def rephrase_prompt_for_compliance(original_prompt: str) -> str:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [Claude Code Troubleshooting Guides](/ai-tools-compared/guides-hub/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+
+## Related Articles
+
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

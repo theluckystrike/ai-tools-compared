@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Writing Effective Terraform State Manageme"
 description: "Learn practical approaches to using AI tools for creating Terraform state management strategies that scale with your infrastructure"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-terraform-state-manageme/
 categories: [guides]
@@ -261,13 +262,14 @@ Over time, you'll develop patterns for the types of queries that produce the mos
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+
+## Related Articles
+
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Tools for Writing Terraform Modules 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

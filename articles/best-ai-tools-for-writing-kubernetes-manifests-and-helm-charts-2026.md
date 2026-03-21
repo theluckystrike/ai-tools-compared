@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Writing Kubernetes Manifests and Helm"
 description: "Compare AI tools for Kubernetes: Copilot, Cursor, Claude, k8sgpt. Learn how each handles YAML generation, security scanning, and Helm chart templating"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/
 categories: [guides]
@@ -389,13 +390,15 @@ Start with whichever tool you already use (Copilot in VSCode, Cursor for better 
 
 The optimal AI-assisted Kubernetes workflow combines speed (Copilot/Cursor), context awareness (Cursor/Claude), and security rigor (Claude), with human review as the final gate.
 
-## Related Reading
 
-- [Kubernetes Best Practices for Production Deployments](/kubernetes-best-practices/)
-- [Helm Chart Development Guide](/helm-charts-guide/)
-- [Network Policies in Kubernetes](/kubernetes-network-policies/)
-- [RBAC and Service Account Configuration](/kubernetes-rbac-guide/)
-- [Container Security and Image Scanning](/container-security-guide/)
+
+## Related Articles
+
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+- [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-compared/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

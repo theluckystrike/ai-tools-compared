@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Podcast Show Notes"
 description: "A practical comparison of AI tools for creating podcast show notes, with code examples and workflows for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-podcast-show-notes/
 categories: [guides]
@@ -275,13 +276,14 @@ Whisper for transcription and Claude for generation is a reliable starting point
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [Best AI Tools for Demand Forecasting](/ai-tools-compared/best-ai-tools-for-demand-forecasting/)
-- [Best AI Tools for SaaS Customer Support](/ai-tools-compared/best-ai-tools-for-saas-customer-support/)
+
+## Related Articles
+
+- [Best AI Tool for Podcasters Show Notes Writing](/ai-tools-compared/best-ai-tool-for-podcasters-show-notes-writing/)
+- [Podcastle vs Riverside: AI Podcast Recording Tools Compared](/ai-tools-compared/podcastle-vs-riverside-ai-podcast-recording/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [Best AI Tool for Doctors Writing Clinical Notes](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Best Workflow for Using AI to Write Infrastructure as Code F"
 description: "A practical guide for developers on how to use AI tools to convert architecture diagrams into production-ready Terraform, CloudFormation, or Pulumi"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-workflow-for-using-ai-to-write-infrastructure-as-code-f/
 categories: [guides]
@@ -279,11 +280,15 @@ The combination of clear diagram preparation, detailed prompts, careful code rev
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

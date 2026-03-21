@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing Kubernetes Helm Charts 2026"
 description: "Compare top AI coding assistants for generating production-ready Kubernetes manifests and Helm charts. Includes real YAML examples, templating patterns, and tool accuracy benchmarks."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-kubernetes-helm-charts-2026/
 categories: [guides]
@@ -442,12 +443,14 @@ helm template my-app ./my-app -f values-prod.yaml > /tmp/rendered.yaml
 kubectl apply -f /tmp/rendered.yaml --dry-run=client
 ```
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Assistants for Multicloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
+- [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

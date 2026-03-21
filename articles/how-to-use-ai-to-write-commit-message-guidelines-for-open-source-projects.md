@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Write Commit Message Guidelines"
 description: "A practical guide for open source maintainers using AI to create clear, consistent commit message conventions that improve collaboration and project"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/
 categories: [guides]
@@ -411,12 +412,15 @@ When you need to update conventions:
 
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
-- [Best AI Assistant for Creating Open Source Project.](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+
+## Related Articles
+
+- [AI Git Commit Message Generators Compared 2026](/ai-tools-compared/ai-git-commit-message-generators-compared/)
+- [How to Write Git Commit Messages Using AI](/ai-tools-compared/how-to-write--git-commit-messages-using-ai-from-diffs/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

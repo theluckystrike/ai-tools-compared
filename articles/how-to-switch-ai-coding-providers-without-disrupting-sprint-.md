@@ -3,6 +3,7 @@ layout: default
 title: "How to Switch AI Coding Providers Without Disrupting."
 description: "A practical guide for developers on migrating between AI coding assistants while maintaining your team's sprint velocity and productivity"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/
 categories: [guides]
@@ -262,8 +263,14 @@ As you learn the new tool, document findings immediately:
 - Proxy/network requirements
 ```
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
+- [How to Reduce AI Coding Tool Costs Without Losing](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)
+- [How to Use AI Coding Tools Without Becoming Dependent on Aut](/ai-tools-compared/how-to-use-ai-coding-tools-without-becoming-dependent-on-aut/)
+- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

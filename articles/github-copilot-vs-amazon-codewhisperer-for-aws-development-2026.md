@@ -3,6 +3,7 @@ layout: default
 title: "GitHub Copilot vs Amazon Codewhisperer for AWS Development"
 description: "Head-to-head comparison of GitHub Copilot and CodeWhisperer for AWS work. Lambda, CDK, IAM policies, CloudFormation with real accuracy benchmarks"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/
 categories: [guides]
@@ -395,8 +396,14 @@ For AWS development specifically, neither tool is perfect. Budget 10-15% code re
 
 Copilot's accuracy edge on policies tips the scales for security-sensitive work. CodeWhisperer's infrastructure strength matters for DevOps-heavy teams. Pick based on your primary AWS activity pattern.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

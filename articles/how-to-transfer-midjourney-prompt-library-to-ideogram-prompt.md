@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer Midjourney Prompt Library to Ideogram Prompt"
 description: "A practical guide for developers and power users migrating their Midjourney prompt collections to Ideogram. Includes conversion scripts, syntax"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/
 categories: [guides]
@@ -333,14 +334,15 @@ After running your conversion, review prompts containing these elements manually
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
-- [How to Transfer Cursor Composer Prompt Library to Claude.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
-- [Switching from DALL-E to Midjourney: Prompt Format.](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
+
+## Related Articles
+
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)
+- [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
+- [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Claude Giving Outdated Information? How to Fix This"
 description: "A practical troubleshooting guide for developers experiencing Claude providing outdated information. Includes step-by-step fixes and diagnostic tips"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-giving-outdated-information-how-to-fix/
 reviewed: true
@@ -325,14 +326,15 @@ Most outdated-information issues resolve by starting a fresh conversation, addin
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
-- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
-- [Claude Pro Upgrade Not Reflecting? Here's the Fix (2026)](/ai-tools-compared/claude-pro-upgrade-not-reflecting-fix-2026/)
+
+## Related Articles
+
 - [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
+- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
+- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

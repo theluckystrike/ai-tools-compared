@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Activity Diagrams from User"
 description: "A practical guide for developers on using AI tools to automatically generate UML activity diagrams from user acceptance criteria, with code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/
 categories: [guides]
@@ -347,14 +348,15 @@ Solution: Use AI tools with code execution capabilities to validate syntax befor
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [Best Workflow for Using AI to Write Infrastructure as Code from Diagrams](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
+
+## Related Articles
+
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
+- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [Best AI for Product Managers Creating User Persona Documents](/ai-tools-compared/best-ai-for-product-managers-creating-user-persona-documents/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

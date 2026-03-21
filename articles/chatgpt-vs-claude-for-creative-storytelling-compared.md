@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT vs Claude for Creative Storytelling Compared"
 description: "A practical comparison of ChatGPT and Claude for creative storytelling, with code examples and real-world use cases for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-creative-storytelling-compared/
 reviewed: true
@@ -254,11 +255,15 @@ For developers building interactive fiction or content-generation tools, testing
 
 
 
-## Related Reading
 
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
-- [Wordtune vs Quillbot: A Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
+
+## Related Articles
+
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [ChatGPT vs Claude for Explaining TensorFlow Model](/ai-tools-compared/chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

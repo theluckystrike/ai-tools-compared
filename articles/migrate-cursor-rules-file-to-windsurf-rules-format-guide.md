@@ -3,6 +3,7 @@ layout: default
 title: "How to Migrate Cursor Rules File"
 description: "A practical guide for developers on migrating Cursor rules files to Windsurf's rules format, with code examples and step-by-step instructions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-cursor-rules-file-to-windsurf-rules-format-guide/
 categories: [guides]
@@ -327,13 +328,14 @@ Review Codeium's privacy policy for current details. Project-level rules in `.wi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [Switching from Windsurf to Cursor: How to Transfer.](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
-- [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+
+## Related Articles
+
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
+- [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

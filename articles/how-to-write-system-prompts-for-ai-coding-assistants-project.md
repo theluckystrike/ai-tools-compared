@@ -3,6 +3,7 @@ layout: default
 title: "How to Write System Prompts for AI Coding Assistants Project"
 description: "A practical guide for developers learning to write effective system prompts that make AI coding assistants understand your project's unique requirements"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-system-prompts-for-ai-coding-assistants-project/
 categories: [guides]
@@ -235,13 +236,14 @@ Remember that system prompts work best when they're specific without being overl
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
-- [AI Coding Assistants for TypeScript Deno Fresh Framework Compared 2026](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+
+## Related Articles
+
+- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

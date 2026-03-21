@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Tool Chaining for Automated Code Review"
 description: "A practical guide to building automated code review and fix pipelines using chained AI tools. Learn to connect linting, analysis, and correction workflows"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-tool-chaining-for-automated-code-review-and-fi/
 categories: [guides]
@@ -284,14 +285,15 @@ AI tool chaining transforms code review from a manual, time-consuming process in
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Free AI Tools for Code Refactoring That Actually Improve.](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
-- [AI Tools for Automated Load Testing Script Generation and Analysis 2026](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
-- [Best AI Tools for Language-Specific Code Style and.](/ai-tools-compared/best-ai-tools-for-language-specific-code-style-and-convention-enforcement/)
+
+## Related Articles
+
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Automated Code Review 2026](/ai-tools-compared/best-ai-tools-for-automated-code-review-2026/)
+- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
+- [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

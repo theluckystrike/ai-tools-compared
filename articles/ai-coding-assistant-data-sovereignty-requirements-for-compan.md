@@ -3,6 +3,7 @@ layout: default
 title: "AI Coding Assistant Data Sovereignty Requirements"
 description: "Understand GDPR, NIS2, and EU data sovereignty requirements when selecting AI coding assistants. Practical guidance for developers and technical teams"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/
 categories: [guides]
@@ -323,14 +324,15 @@ This approach balances AI productivity benefits against regulatory requirements,
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Coding Tool GDPR Compliance Checklist for European.](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
-- [How to Evaluate AI Coding Tool Model Training Data.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [How to Evaluate AI Coding Tool Data Processing.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+
+## Related Articles
+
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Enterprise AI Coding Tool Network Security Requirements.](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [Best AI Assistant for Creating Test Data Factories with Real](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

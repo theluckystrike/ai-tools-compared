@@ -3,6 +3,7 @@ layout: default
 title: "Sora vs Runway AI Video Generation: A Technical"
 description: "A practical comparison of OpenAI Sora and Runway AI video generation APIs for developers building video applications"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /sora-vs-runway-ai-video-generation/
 categories: [guides]
@@ -380,14 +381,15 @@ RUNWAY_API_KEY = os.environ.get("RUNWAY_API_KEY")
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
+
+## Related Articles
+
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [AI Tools for Video Thumbnail Generation](/ai-tools-compared/ai-tools-for-video-thumbnail-generation/)
+- [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)
+- [Claude vs ChatGPT for Technical Writing 2026](/ai-tools-compared/claude-vs-chatgpt-for-technical-writing-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

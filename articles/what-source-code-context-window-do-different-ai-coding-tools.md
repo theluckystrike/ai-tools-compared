@@ -3,6 +3,7 @@ layout: default
 title: "What Source Code Context Window Do Different AI Coding Tools"
 description: "A practical guide examining context window sizes across popular AI coding tools. Learn what code gets uploaded and how much context each tool processes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /what-source-code-context-window-do-different-ai-coding-tools/
 categories: [guides]
@@ -307,14 +308,15 @@ response = ac.messages.create(
 
 OpenAI's `response_format` with `json_schema` guarantees schema-valid output. Anthropic's tool_use achieves similar reliability. Both outperform prompt-only JSON requests in production.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Context Window Size Affects AI Code Suggestions in.](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
-- [How to Audit What Source Code AI Coding Tools Transmit.](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+
+## Related Articles
+
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
+- [How to Audit What Source Code AI Coding Tools Transmit](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How to Export ChatGPT API Fine-Tuned Model for Local Use"
 description: "A practical guide for developers on exporting fine-tuned models from OpenAI's API for local deployment and inference"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-chatgpt-api-fine-tuned-model-for-local-use/
 categories: [guides]
@@ -297,13 +298,14 @@ Test thoroughly to ensure the local model meets your quality requirements before
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [ChatGPT Enterprise vs Custom Support Bot: A Practical.](/ai-tools-compared/chatgpt-enterprise-vs-custom-support-bot/)
-- [ChatGPT API Fine Tuning Costs: Training Plus Inference Total Estimate](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+
+## Related Articles
+
+- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
+- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Export ChatGPT Shared Links Before Account Deletion](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

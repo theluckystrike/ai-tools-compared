@@ -3,6 +3,7 @@ layout: default
 title: "How to Manage AI Coding Context Window to Avoid Hallucinated"
 description: "Learn practical techniques to manage AI coding assistant context windows and prevent hallucinated imports from breaking your codebase"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-window-to-avoid-hallucinated/
 categories: [guides]
@@ -231,13 +232,14 @@ These habits reduce AI errors dramatically and make your coding assistant a reli
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Manage AI Coding Context Across Multiple Related.](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [What Source Code Context Window Do Different AI Coding.](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+
+## Related Articles
+
+- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

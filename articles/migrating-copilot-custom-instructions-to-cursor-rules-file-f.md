@@ -3,6 +3,7 @@ layout: default
 title: "Migrating Copilot Custom Instructions to Cursor Rules."
 description: "A practical guide for developers on migrating GitHub Copilot custom instructions to Cursor rules files. Learn the differences, conversion strategies"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /migrating-copilot-custom-instructions-to-cursor-rules-file-f/
 categories: [guides]
@@ -392,9 +393,15 @@ rules:
 
 When rolling out Cursor rules across a team, start with minimal rules focused on your most important conventions. Get team feedback after a week of use, then iterate based on what works in practice. Document the rationale for each rule—explain WHY each convention exists, not just WHAT. This helps developers understand and internalize the conventions.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Stable Diffusion vs Midjourney for Character Design"
 description: "A practical comparison of Stable Diffusion and Midjourney for character design. Includes prompt examples, workflow recommendations, and tool selection"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /stable-diffusion-vs-midjourney-for-character-design/
 reviewed: true
@@ -245,10 +246,14 @@ For most professional workflows, the two tools complement each other rather than
 
 
 
-## Related Reading
 
-- [Sudowrite vs NovelAI for Fiction Writing Compared](/ai-tools-compared/sudowrite-vs-novelai-for-fiction-writing-compared/)
-- [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
-- [Best AI Writing Tool for SaaS Marketing Teams: A.](/ai-tools-compared/best-ai-writing-tool-for-saas-marketing-teams/)
+
+## Related Articles
+
+- [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
+- [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
+- [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

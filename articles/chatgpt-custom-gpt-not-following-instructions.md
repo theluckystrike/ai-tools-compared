@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT Custom GPT Not Following Instructions"
 description: "A practical troubleshooting guide for developers and power users when Custom GPTs ignore their instructions. Step-by-step diagnostics and fixes"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-custom-gpt-not-following-instructions/
 categories: [troubleshooting, guides]
@@ -322,14 +323,15 @@ Choose targeted fixes when:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
-- [How to Write ChatGPT Custom Instructions for Consistent.](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom GPT](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+
+## Related Articles
+
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
+- [How to Set Up Custom Instructions for AI Tools to Match Your](/ai-tools-compared/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

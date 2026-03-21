@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Diagnose and Fix Golang Goroutine Deadlock"
 description: "AI tools can decode Go's cryptic deadlock panic messages—'fatal error: all goroutines are asleep - deadlock!'—by recognizing common patterns like unbuffered"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/
 categories: [guides]
@@ -340,13 +341,14 @@ func printAllGoroutines() {
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
-- [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+
+## Related Articles
+
+- [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
+- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
+- [How to Use AI to Diagnose Kubernetes Pod Crashloopbackoff Fr](/ai-tools-compared/how-to-use-ai-to-diagnose-kubernetes-pod-crashloopbackoff-fr/)
+- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
+- [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

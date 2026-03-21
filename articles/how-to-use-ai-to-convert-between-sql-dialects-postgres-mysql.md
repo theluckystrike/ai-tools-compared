@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Convert Between SQL Dialects Postgres Mysql"
 description: "AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snowflake by recognizing syntax differences and function-specific implementations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/
 categories: [guides]
@@ -447,13 +448,14 @@ AI will translate hints literally when it can find an equivalent, but often flag
 **Is AI reliable enough to use without human review on production migrations?**
 No. Use AI to handle the mechanical bulk of translation — it dramatically reduces time — but always run the translated queries against a staging environment and have a developer verify output correctness. For financial or compliance-sensitive queries, add explicit test cases before promoting to production.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tool for Converting MySQL Queries to.](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
-- [AI Autocomplete Behavior Differences Between VSCode.](/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
-- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+
+## Related Articles
+
+- [Best AI Tool for Converting MySQL Queries to Postgres Compat](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

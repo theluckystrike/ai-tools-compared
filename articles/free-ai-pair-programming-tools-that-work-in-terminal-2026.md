@@ -3,6 +3,7 @@ layout: default
 title: "Free AI Pair Programming Tools That Work in Terminal in 2026"
 description: "A practical guide to free AI pair programming tools that run directly in your terminal, with code examples and setup instructions for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-pair-programming-tools-that-work-in-terminal-2026/
 categories: [guides]
@@ -329,13 +330,14 @@ These tools evolve rapidly. Check official documentation for the latest features
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI IDE Features for Pair Programming with Remote.](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
-- [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)
-- [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
+
+## Related Articles
+
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

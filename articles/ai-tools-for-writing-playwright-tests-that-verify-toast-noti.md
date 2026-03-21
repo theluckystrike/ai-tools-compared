@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing Playwright Tests That Verify Toast Noti"
 description: "A practical guide to using AI coding assistants for creating Playwright tests that verify toast notification timing, auto-dismissal, and manual"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-playwright-tests-that-verify-toast-noti/
 categories: [guides]
@@ -436,14 +437,15 @@ jobs:
         run: npx playwright show-report
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
-- [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+
+## Related Articles
+
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
+- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Analyzing Which Open Source Issues Would Benefi"
 description: "A practical guide to using AI tools for analyzing which open source issues would benefit from contributions, with code examples and implementation tips"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: theluckystrike
 permalink: /ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/
 categories: [guides]
@@ -356,11 +357,15 @@ gh issue list --repo microsoft/vscode   --label "good first issue"   --state ope
 Before starting work, always check if there's an existing PR that addresses the issue — nothing wastes more time than duplicating effort on an issue that's already in review.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)
+- [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)
+- [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
+- [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

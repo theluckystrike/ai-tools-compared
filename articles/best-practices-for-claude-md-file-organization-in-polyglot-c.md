@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Claude Md File Organization in Polyglot C"
 description: "Practical strategies for organizing Markdown documentation in multi-language projects using Claude. Code examples and folder structures for Python, JS"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-claude-md-file-organization-in-polyglot-c/
 categories: [guides]
@@ -323,14 +324,15 @@ Add a documentation update checklist to your code review process:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [Claude Code Integration Guides](/ai-tools-compared/guides-hub/)
-- [How to Write Effective CLAUDE MD File for Monorepo With.](/ai-tools-compared/how-to-write-effective-claude-md-file-for-monorepo-with-mult/)
-- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [Writing CLAUDE.md Files That Define Your Project's API Versioning Strategy](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+
+## Related Articles
+
+- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [How to Write Effective CLAUDE MD File for monorepo With Mult](/ai-tools-compared/how-to-write-effective-claude-md-file-for-monorepo-with-mult/)
+- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

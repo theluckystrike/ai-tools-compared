@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing ArgoCD Application Manifests and Gitops"
 description: "Explore how AI coding assistants help developers write ArgoCD application manifests, manage GitOps workflows, and automate Kubernetes deployments"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-writing-argocd-application-manifests-and-gitops/
 reviewed: true
@@ -270,14 +271,15 @@ Start with Claude Code if you're building new ArgoCD deployments from scratch, t
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Writing Ansible Playbooks and Roles Automatically 2026](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
-- [AI Tools for Writing License Header Templates and.](/ai-tools-compared/ai-tools-for-writing-license-header-templates-and-checking-f/)
-- [AI Assistants for Writing Correct AWS IAM Policies with.](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Best Workflow for Using AI to Modernize Legacy Application A](/ai-tools-compared/best-workflow-for-using-ai-to-modernize-legacy-application-a/)
+- [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

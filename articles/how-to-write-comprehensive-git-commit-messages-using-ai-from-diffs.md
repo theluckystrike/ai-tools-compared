@@ -3,6 +3,7 @@ layout: default
 title: "How to Write Git Commit Messages Using AI"
 description: "Learn how to use AI tools to generate detailed, context-rich git commit messages directly from code diffs, improving team communication and code history"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-write--git-commit-messages-using-ai-from-diffs/
 categories: [guides]
@@ -260,14 +261,18 @@ This message immediately tells reviewers:
 
 Future developers debugging authentication issues can read this message and understand exactly where password logic lives and why it was restructured.
 
-## Related Reading
-
-- [Conventional Commits Specification](https://www.conventionalcommits.org/)
-- [GitHub Copilot CLI Documentation](https://github.com/features/copilot)
-- [Anthropic Claude API Guide](https://docs.anthropic.com/)
 
 ## Footer
 
 AI commit message generation works best as part of a broader development workflow that emphasizes code quality and team communication. Pair this with pre-commit linters and code review processes for maximum effectiveness. Consider your team's naming conventions and commit history before deploying automation—the goal is to amplify good practices, not enforce arbitrary standards.
+
+
+## Related Articles
+
+- [AI Git Commit Message Generators Compared 2026](/ai-tools-compared/ai-git-commit-message-generators-compared/)
+- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [How to Use AI to Write Commit Message Guidelines](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
+- [Effective Strategies for Using AI to Write API](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

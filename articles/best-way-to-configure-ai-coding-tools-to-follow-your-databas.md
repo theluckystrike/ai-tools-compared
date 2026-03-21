@@ -3,6 +3,7 @@ layout: default
 title: "Best Way to Configure AI Coding Tools to Follow Your Databas"
 description: "Learn how to configure AI coding assistants like GitHub Copilot, Cursor, and Zed to respect your database naming conventions. Practical configuration"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-ai-coding-tools-to-follow-your-databas/
 categories: [guides]
@@ -329,14 +330,15 @@ Store this alongside your configuration files so developers understand the conve
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Configuring AI Coding Tools to Follow Your Teams.](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
-- [How to Configure AI Coding Tools to Respect Your Team's Branch Naming Conventions](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
-- [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+
+## Related Articles
+
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

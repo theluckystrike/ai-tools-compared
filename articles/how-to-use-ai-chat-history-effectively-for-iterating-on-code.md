@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI Chat History Effectively for Iterating on Code"
 description: "Master the art of using AI chat history to improve your code iteration workflow. Practical techniques for developers who want to get more from"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-chat-history-effectively-for-iterating-on-code/
 categories: [guides]
@@ -454,14 +455,14 @@ Week 2-4 (With project context file):
 
 The investment in organizing history pays back quickly.
 
-## Related Reading
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
-- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
+- [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)
+- [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
+- [How to Use AI Coding Assistants Effectively with Trunk Based](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
+- [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

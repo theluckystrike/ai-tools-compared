@@ -3,6 +3,7 @@ layout: default
 title: "Copilot Code Referencing Feature: How It Handles Open Source"
 description: "This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /copilot-code-referencing-feature-how-it-handles-open-source-/
 categories: [guides]
@@ -344,14 +345,15 @@ Stay informed, check references when they appear, and build with confidence know
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
-- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Cursor AI Privacy Mode: How to Use AI Features Without.](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
+
+## Related Articles
+
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

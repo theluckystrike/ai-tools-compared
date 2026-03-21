@@ -3,6 +3,7 @@ layout: default
 title: "How Well Do AI Tools Generate Correct Go Interface Implement"
 description: "A practical evaluation of how accurately AI coding assistants generate Go interface implementations, with real code examples and testing results"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-correct-go-interface-implement/
 categories: [guides]
@@ -259,13 +260,14 @@ Review Error Handling: AI-generated error handling often needs enhancement. Add 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and.](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+
+## Related Articles
+
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

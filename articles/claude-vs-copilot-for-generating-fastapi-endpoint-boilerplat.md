@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs Copilot for Generating FastAPI Endpoint Boilerplat"
 description: "A practical comparison of Claude and Copilot when generating FastAPI endpoint boilerplate code. Which AI coding assistant wins for developer productivity?"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-copilot-for-generating-fastapi-endpoint-boilerplat/
 categories: [guides]
@@ -343,14 +344,15 @@ Claude. Asking Claude to "add a background task that sends a welcome email after
 **Is there a cost difference?**
 Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API usage is token-based — for code generation sessions, a typical day of FastAPI boilerplate generation runs $1-5 using Sonnet. For occasional use, Claude API is cheaper; for daily heavy use, Copilot's flat rate wins.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Claude Code for Scaffolding New Django REST.](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+
+## Related Articles
+
+- [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
+- [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
+- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

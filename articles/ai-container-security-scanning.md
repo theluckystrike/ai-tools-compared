@@ -3,6 +3,7 @@ layout: default
 title: "AI Container Security Scanning"
 description: "Learn how AI-powered container security scanning tools detect vulnerabilities, misconfigurations, and compliance issues in Docker and Kubernetes"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-container-security-scanning/
 reviewed: true
@@ -490,9 +491,15 @@ Track key metrics over time:
 | Detection Latency | < 1 hour | Time from image push to scan completion |
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Best AI Tools for Container Security Scanning in Deployment](/ai-tools-compared/best-ai-tools-for-container-security-scanning-in-deployment-/)
+- [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)
+- [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
+- [AI Powered Tools for Container Orchestration Beyond](/ai-tools-compared/ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/)
+- [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

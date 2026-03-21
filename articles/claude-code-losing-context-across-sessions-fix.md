@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Losing Context Across Sessions Fix"
 description: "Troubleshooting guide for Claude Code losing context between sessions. Step-by-step fixes for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-losing-context-across-sessions-fix/
 reviewed: true
@@ -291,13 +292,14 @@ Implement a consistent workflow to minimize context disruption:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+
+## Related Articles
+
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
 - [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
-- [Claude Max Context Window Exceeded: What To Do](/ai-tools-compared/claude-max-context-window-exceeded-what-to-do/)
+- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

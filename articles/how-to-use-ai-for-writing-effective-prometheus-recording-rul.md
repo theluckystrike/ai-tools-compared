@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Writing Effective Prometheus Recording Rul"
 description: "A practical guide for developers on using AI tools to create efficient Prometheus recording rules that improve query performance and monitoring"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-prometheus-recording-rul/
 categories: [guides]
@@ -231,14 +232,15 @@ Fifth, version control your rulesets. Recording rules evolve as your system chan
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI for Writing Prometheus Alerting Rules.](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
-- [How to Use AI for Writing Effective Terraform State.](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
+
+## Related Articles
+
+- [How to Use AI for Writing Prometheus Alerting Rules](/ai-tools-compared/how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
+- [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

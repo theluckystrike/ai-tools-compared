@@ -3,6 +3,7 @@ layout: default
 title: "How to Get AI Code Suggestions That Follow Your Project"
 description: "Learn practical methods to make AI code completion tools respect your project's naming conventions. Configuration tips, code examples, and strategies for"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/
 categories: [guides]
@@ -234,13 +235,14 @@ You can also time your coding sessions. With properly configured AI suggestions,
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Configure Claude Code to Follow Your Team's Feature Flag Naming Conventions](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [How Context Window Size Affects AI Code Suggestions in.](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+
+## Related Articles
+
+- [How to Get Better AI Autocomplete Suggestions by Structuring](/ai-tools-compared/how-to-get-better-ai-autocomplete-suggestions-by-structuring/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [What Code Snippets Get Logged in AI Coding Tool Provider Aud](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

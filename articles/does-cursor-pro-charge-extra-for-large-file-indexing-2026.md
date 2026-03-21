@@ -3,6 +3,7 @@ layout: default
 title: "Does Cursor Pro Charge Extra for Large File Indexing in 2026"
 description: "No, Cursor Pro does not charge extra for large file indexing. Indexing is included in the Pro subscription with no per-file or per-MB fees -- you get full"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /does-cursor-pro-charge-extra-for-large-file-indexing-2026/
 categories: [guides]
@@ -287,13 +288,14 @@ To get the best performance from Cursor on large codebases:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
-- [Cursor AI Codebase Indexing: How It Works and Why It.](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
-- [Cursor Pro Refund Policy: Can You Get Money Back After.](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)
+
+## Related Articles
+
+- [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
+- [Cursor AI Codebase Indexing: How It Works and Why It Matters](/ai-tools-compared/cursor-ai-codebase-indexing-how-it-works-and-why-it-matters-/)
+- [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

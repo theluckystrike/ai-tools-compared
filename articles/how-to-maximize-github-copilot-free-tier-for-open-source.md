@@ -3,6 +3,7 @@ layout: default
 title: "How to Maximize GitHub Copilot Free Tier for Open Source"
 description: "A guide to getting the most out of GitHub Copilot's free tier for open source maintainers and contributors"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-maximize-github-copilot-free-tier-for-open-source/
 categories: [guides]
@@ -334,13 +335,14 @@ Copilot enables maintainers to be more productive at no cost:
 
 Success story: Maintainer managing 3 projects with 50K combined stars using only free Copilot tier, handling 200+ issues monthly with 2-hour response time average.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [Continue Dev Free vs Cody Free: Open Source AI Comparison](/ai-tools-compared/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

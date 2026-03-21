@@ -3,6 +3,7 @@ layout: default
 title: "Create CursorRules That Enforce Your Team's Git Commit"
 description: "Learn how to create CursorRules that automatically enforce consistent git commit message formats across your entire development team"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-enforce-your-teams-git-commit/
 categories: [guides]
@@ -284,11 +285,15 @@ A well-maintained commit message convention, enforced through CursorRules, elimi
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+- [AI Git Commit Message Generators Compared 2026](/ai-tools-compared/ai-git-commit-message-generators-compared/)
+- [How to Write Git Commit Messages Using AI](/ai-tools-compared/how-to-write--git-commit-messages-using-ai-from-diffs/)
+- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

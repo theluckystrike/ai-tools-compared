@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure Claude Code Project Memory for Persistent"
 description: "Configure Claude Code project memory by creating a CLAUDE.md file in your project root that persists across sessions and documents coding conventions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-claude-code-project-memory-for-persistent-c/
 categories: [guides]
@@ -281,14 +282,15 @@ This approach ensures Claude Code maintains context awareness across different p
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [How to Configure Claude Code to Follow Your Team's Feature Flag Naming Conventions](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
-- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+
+## Related Articles
+
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+- [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [AI Tools for Writing SPI Flash External Memory Driver.](/ai-tools-compared/ai-tools-for-writing-spi-flash-external-memory-driver-code-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

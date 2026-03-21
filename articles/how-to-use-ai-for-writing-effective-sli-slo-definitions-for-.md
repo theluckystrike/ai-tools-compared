@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Writing Effective Sli Slo Definitions"
 description: "A practical guide for developers on using AI to create precise SLI and SLO definitions for services, with real-world examples and code samples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/
 categories: [guides]
@@ -315,13 +316,14 @@ Building reliable services requires clear, measurable objectives. AI accelerates
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)
-- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+
+## Related Articles
+
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
+- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [AI Tools for Creating Grafana SLO Dashboard Panels with Burn](/ai-tools-compared/ai-tools-for-creating-grafana-slo-dashboard-panels-with-burn/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

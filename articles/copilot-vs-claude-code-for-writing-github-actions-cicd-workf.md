@@ -3,6 +3,7 @@ layout: default
 title: "Copilot vs Claude Code for Writing GitHub Actions Cicd Workf"
 description: "A practical comparison of GitHub Copilot and Claude Code for writing GitHub Actions CI/CD workflows, with code examples and recommendations for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing-github-actions-cicd-workf/
 categories: [guides]
@@ -255,14 +256,15 @@ Many teams use both tools together. Let Copilot generate the initial scaffold, t
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Copilot vs Claude Code for Scaffolding New Django REST.](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+
+## Related Articles
+
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

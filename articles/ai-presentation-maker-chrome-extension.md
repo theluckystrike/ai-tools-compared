@@ -3,6 +3,7 @@ layout: default
 title: "AI Presentation Maker Chrome Extension"
 description: "A guide to AI-powered Chrome extensions for creating presentations automatically, with feature comparisons and recommendations"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /ai-presentation-maker-chrome-extension/
 categories: [guides, productivity]
@@ -245,11 +246,15 @@ To begin using an AI presentation maker Chrome extension, install your chosen to
 Experiment with different input types—some tools handle website URLs, documents, or bullet points better than others. Find the workflow that matches your thinking style and production needs.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
+- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Keeping AI Coding Suggestions Aligned"
 description: "A practical guide for developers on maintaining design pattern consistency when using AI coding assistants, with real-world examples and actionable"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/
 categories: [guides]
@@ -285,14 +286,15 @@ Regular measurement reveals which strategies work best for your team and helps i
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for Documenting AI-Generated Code for.](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
-- [Best Strategies for Providing Examples to AI Coding.](/ai-tools-compared/best-strategies-for-providing-examples-to-ai-coding-tools-fo/)
-- [How to Train Your AI Coding Assistant on Your Team.](/ai-tools-compared/how-to-train-your-ai-coding-assistant-on-your-team-coding-st/)
+
+## Related Articles
+
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

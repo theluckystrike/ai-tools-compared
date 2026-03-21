@@ -3,6 +3,7 @@ layout: default
 title: "How to Migrate VSCode Copilot Keybindings"
 description: "A practical guide for developers migrating their VSCode Copilot keybindings to Cursor AI editor, with code examples and troubleshooting tips"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/
 categories: [guides]
@@ -591,13 +592,14 @@ If your team shares keybinding preferences:
 This ensures consistency across your development team.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [How to Migrate Cursor AI Snippets and Templates](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
-- [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [How to Transfer Cursor Editor Theme and Layout to VSCode.](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

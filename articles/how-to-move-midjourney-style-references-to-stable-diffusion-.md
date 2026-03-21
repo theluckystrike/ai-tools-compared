@@ -3,6 +3,7 @@ layout: default
 title: "How to Move Midjourney Style References to Stable Diffusion"
 description: "A practical guide for developers and power users on transferring Midjourney style prompts to Stable Diffusion LoRA training pipelines"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-midjourney-style-references-to-stable-diffusion-/
 categories: [tutorials, guides]
@@ -248,10 +249,14 @@ Weak Style Transfer: If the style is not prominent enough, increase network_dim 
 Artifacting: This often indicates too-high learning rate. Reduce learning_rate to 5e-5 and restart training.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
+- [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
+- [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

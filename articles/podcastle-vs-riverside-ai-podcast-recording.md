@@ -3,6 +3,7 @@ layout: default
 title: "Podcastle vs Riverside: AI Podcast Recording Tools Compared"
 description: "A technical comparison of Castle and Riverside for AI-powered podcast recording, with API integrations, workflow examples, and implementation guidance"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /podcastle-vs-riverside-ai-podcast-recording/
 categories: [comparisons]
@@ -336,11 +337,13 @@ Both platforms continue evolving their AI features, so evaluate current capabili
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
+- [Best AI Tools for Screen Recording Editing](/ai-tools-compared/best-ai-tools-for-screen-recording-editing/)
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

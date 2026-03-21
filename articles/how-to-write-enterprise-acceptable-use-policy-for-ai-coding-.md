@@ -3,6 +3,7 @@ layout: default
 title: "How to Write an Enterprise Acceptable Use Policy for AI"
 description: "A practical guide for developers and IT leaders creating policies that govern AI coding assistant usage in enterprise environments"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/
 categories: [guides]
@@ -319,13 +320,14 @@ An effective acceptable use policy for AI coding assistants balances security re
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Enterprise Data Loss Prevention Rules for AI Coding.](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
-- [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
-- [Best Local LLM Alternatives to Cloud AI Coding.](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
+
+## Related Articles
+
+- [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
+- [Enterprise AI Coding Tool Network Security Requirements.](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
+- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [Best AI Tool for Compliance Officers Policy Review](/ai-tools-compared/best-ai-tool-for-compliance-officers-policy-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

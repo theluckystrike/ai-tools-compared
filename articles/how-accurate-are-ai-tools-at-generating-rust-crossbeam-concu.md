@@ -3,6 +3,7 @@ layout: default
 title: "How Accurate Are AI Tools at Generating Rust Crossbeam"
 description: "A practical evaluation of AI coding tools for generating Rust Crossbeam concurrent code. Test results, code quality, and recommendations for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/
 categories: [guides]
@@ -334,13 +335,14 @@ The accuracy of AI tools for Crossbeam code generation ranges from 56% to 88% de
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks.](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
-- [How Accurate Are AI Tools at Generating TypeScript Zod.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+
+## Related Articles
+
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How Accurate Are AI Tools at Generating TypeScript Zod Schem](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
+- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

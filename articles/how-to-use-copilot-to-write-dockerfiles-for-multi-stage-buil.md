@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Copilot to Write Dockerfiles for Multi-Stage Buil"
 description: "A practical guide to using GitHub Copilot for creating efficient multi-stage Dockerfiles. Learn prompt patterns, code examples, and optimization"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-copilot-to-write-dockerfiles-for-multi-stage-buil/
 categories: [guides]
@@ -412,13 +413,14 @@ When asking Copilot for suggestions, mention: "Target final image size of under 
 This constraint helps Copilot make appropriate choices about base image selection and dependency inclusion.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
-- [How to Use AI to Optimize Docker Images for Smaller Size](/ai-tools-compared/how-to-use-ai-to-optimize-docker-images-for-smaller-size/)
+
+## Related Articles
+
+- [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI for Writing Playwright Multi Browser Test Matrices](/ai-tools-compared/best-ai-for-writing-playwright-multi-browser-test-matrices-with-github-actions-2026/)
+- [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Screen Reader Testing Workflow"
 description: "Screen reader testing is a critical component of web accessibility validation. This guide covers how to use Claude Code to implement screen reader testing"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 author: theluckystrike
 permalink: /claude-code-screen-reader-testing-workflow/
 categories: [guides]
@@ -439,13 +440,14 @@ Screen reader testing requires manual validation alongside automated tools. Use 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

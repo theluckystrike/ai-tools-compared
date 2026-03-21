@@ -3,6 +3,7 @@ layout: default
 title: "Claude Sonnet vs GPT-4o for Code Generation: Practical"
 description: "A developer-focused comparison of Claude Sonnet and GPT-4o for code generation tasks. Includes benchmark results, code examples, and recommendations"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-sonnet-vs-gpt-4o-for-code-generation/
 reviewed: true
@@ -408,10 +409,14 @@ Both models are competitively priced at $3/input million tokens and $15/output m
 
 
 
-## Related Reading
 
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+
+## Related Articles
+
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [Switching from GPT-4o to Claude Sonnet for Code Review.](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)
+- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

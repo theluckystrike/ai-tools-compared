@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT vs Claude for Writing API Documentation"
 description: "A practical comparison of ChatGPT and Claude for writing API documentation. Includes code examples, prompt strategies, and recommendations for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-writing-api-documentation/
 reviewed: true
@@ -279,10 +280,14 @@ Validate code examples. Always test generated code snippets against your actual 
 
 
 
-## Related Reading
 
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [Cursor Tab vs Copilot Ghost Text: AI Code Completion.](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+
+## Related Articles
+
+- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

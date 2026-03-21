@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating Coloring Book Pages Compared"
 description: "A practical comparison of AI tools for generating coloring book pages, with code examples and recommendations for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-generating-coloring-book-pages-compared/
 reviewed: true
@@ -258,11 +259,15 @@ A local Stable Diffusion setup with specialized line art models provides the bes
 
 
 
-## Related Reading
 
-- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
-- [Best AI Coding Tool for Dockerfile Generation](/ai-tools-compared/best-ai-coding-tool-for-dockerfile-generation/)
-- [Best AI Tool for Academic Paper Editing 2026](/ai-tools-compared/best-ai-tool-for-academic-paper-editing-2026/)
+
+## Related Articles
+
+- [How to Use AI to Generate Contributor Hall of Fame Pages Fro](/ai-tools-compared/how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
+- [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-compared/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)
+- [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

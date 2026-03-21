@@ -3,6 +3,7 @@ layout: default
 title: "How to Fine-Tune Llama 3 for Code Completion"
 description: "Practical guide to fine-tuning Llama 3 on your codebase for code completion. Covers dataset prep, QLoRA training, evaluation, and serving the model locally."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /how-to-fine-tune-llama-3-for-code-completion/
 categories: [guides]
@@ -320,13 +321,15 @@ python convert_to_gguf.py --model ./models/$(date +%Y%m) --out ./ollama/$(date +
 
 Teams that do this find the model stays relevant as new modules and patterns are added. Skip re-training and the model increasingly suggests patterns from older code that may have been refactored away.
 
-## Related Reading
 
-- [Running Deepseek Coder Locally vs Cloud API for Private Repos](/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
-- [Best Local LLM Alternatives to Cloud AI Coding Assistants](/best-local-llm-alternatives-to-cloud-ai-coding-assistants-fo/)
-- [LLM Fine-Tuning Platforms Comparison 2026](/llm-fine-tuning-platforms-comparison-2026/)
 
----
+## Related Articles
+
+- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

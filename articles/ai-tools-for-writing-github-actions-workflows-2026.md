@@ -1,6 +1,7 @@
 ---
 layout: default
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 title: "AI Tools for Writing GitHub Actions Workflows (2026)"
 description: "Compare AI tools for generating CI/CD workflows with GitHub Actions. Includes matrix strategies, caching optimization, and real workflow examples."
@@ -575,13 +576,14 @@ For GitHub Actions workflows:
 
 Always validate workflows with `act` (local testing) before merging to main branch. The cost of a broken deployment far exceeds the time spent reviewing AI-generated workflows.
 
-## Related Reading
 
-- [GitHub Actions Best Practices Guide](https://guides-hub.dev/github-actions-best-practices/)
-- [CI/CD Pipeline Optimization with AI](https://guides-hub.dev/cicd-optimization/)
-- [Docker Image Caching Strategies](https://guides-hub.dev/docker-caching/)
-- [GitHub Secrets Management Guide](https://guides-hub.dev/github-secrets/)
 
----
+## Related Articles
+
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
+- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-github-actions-workflows/)
+- [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+- [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Writing Custom Instructions for AI Tools That Enforce Your"
 description: "A practical guide for developers to create custom instructions that force AI coding tools to implement security headers consistently across all projects"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/
 categories: [guides]
@@ -303,13 +304,14 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
-- [How to Create Custom Instructions for AI Tools to.](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
+
+## Related Articles
+
+- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
+- [How to Set Up Custom Instructions for AI Tools to Match Your](/ai-tools-compared/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

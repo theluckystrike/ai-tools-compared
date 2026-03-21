@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Designers Writing Handoff Notes That Include"
 description: "A practical guide to using AI tools for creating design handoff documentation with interaction state descriptions. Includes code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-designers-writing-handoff-notes-that-include-in/
 categories: [guides]
@@ -264,13 +265,14 @@ AI-assisted documentation should demonstrably reduce these friction points over 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Help Designers Write Micro Interaction.](/ai-tools-compared/how-to-use-ai-to-help-designers-write-micro-interaction-spec/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+
+## Related Articles
+
+- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
+- [Best AI Tool for Doctors Writing Clinical Notes](/ai-tools-compared/best-ai-tool-for-doctors-writing-clinical-notes/)
+- [Best AI Tool for Podcasters Show Notes Writing](/ai-tools-compared/best-ai-tool-for-podcasters-show-notes-writing/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

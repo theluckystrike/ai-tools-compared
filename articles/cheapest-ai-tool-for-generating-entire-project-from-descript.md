@@ -3,6 +3,7 @@ layout: default
 title: "Cheapest AI Tool for Generating an Entire Project"
 description: "A practical comparison of affordable AI tools that can generate complete projects from natural language descriptions, with code examples and cost"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-ai-tool-for-generating-entire-project-from-description/
 categories: [guides]
@@ -264,13 +265,14 @@ Startup MVPs: Lovable's $29 plan includes database setup and authentication, whi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cheapest AI Tool for Generating Entire Project from.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
-- [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)
-- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
+
+## Related Articles
+
+- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
+- [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Resolve Cmake Configuration Errors"
 description: "A practical guide for developers using AI assistants to diagnose and fix CMake configuration errors in cross-compilation projects"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/
 categories: [guides]
@@ -248,13 +249,14 @@ AI with full context solves 90%+ of your problems within minutes. Generic prompt
 
 One embedded systems team of 6 developers saves approximately 4-6 hours weekly through AI-assisted CMake debugging, equivalent to $25,000-$40,000 annually at typical engineering rates.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Resolve CMake Configuration Errors for.](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
-- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors.](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
-- [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+
+## Related Articles
+
+- [How to Use AI to Resolve CMake Configuration Errors for Cros](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cros/)
+- [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
+- [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
+- [How Accurate Are AI Tools at Rust WASM Compilation and Bindg](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

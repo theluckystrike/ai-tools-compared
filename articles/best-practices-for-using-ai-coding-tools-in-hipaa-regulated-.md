@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Using AI Coding Tools in HIPAA Regulated"
 description: "A practical guide for developers working with AI coding assistants in HIPAA-compliant healthcare software environments"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/
 categories: [guides]
@@ -347,13 +348,14 @@ Not if done correctly. Never use real patient data as test data. Use AI tools li
 **What logging format satisfies HIPAA audit requirements?**
 HIPAA requires audit logs to capture who accessed what and when, but does not specify a format. Use structured JSON logs with timestamp, user identity, resource accessed, and action taken. Send these to an append-only log store (CloudWatch Logs with object lock, Splunk, etc.) that prevents modification.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI Coding Tools in FedRAMP Authorized Cloud.](/ai-tools-compared/how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/)
-- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
-- [Best Practices for AI Coding Tool Project Configuration.](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+
+## Related Articles
+
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

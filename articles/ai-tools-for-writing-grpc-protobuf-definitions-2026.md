@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing gRPC Protobuf Definitions 2026"
 description: "Compare AI tools for generating .proto files and gRPC services. Claude Code, GitHub Copilot, and Cursor tested on proto syntax, service generation, and client"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-writing-grpc-protobuf-definitions-2026/
 categories: [guides]
@@ -328,12 +329,15 @@ All three tools occasionally made these mistakes:
 
 4. **Incomplete streaming directives** - Most common in Copilot, missing `stream` keywords on bidirectional or server-streaming methods.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [AI Code Completion for Java Record Classes](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [Claude Code vs GitHub Copilot](/ai-tools-compared/claude-code-vs-github-copilot-2026/)
+
+## Related Articles
+
+- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [Best AI Tools for Writing Go gRPC Service Definitions and](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+- [How to Use AI for Writing Effective Sli Slo Definitions](/ai-tools-compared/how-to-use-ai-for-writing-effective-sli-slo-definitions-for-services/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

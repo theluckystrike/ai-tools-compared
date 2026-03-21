@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code for Memory Profiling Workflow Tutorial"
 description: "Learn how to use Claude Code to improve your memory profiling workflow. This tutorial covers identifying memory leaks, analyzing heap snapshots"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: "theluckystrike"
 permalink: /claude-code-for-memory-profiling-workflow-tutorial/
 categories: [guides, tutorials]
@@ -452,11 +453,15 @@ Integrate memory profiling into your development workflow:
 5. Implement memory budgets: Define acceptable memory limits for different operations
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
+- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

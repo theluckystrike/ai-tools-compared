@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Kubernetes Network Policies Correc"
 description: "A practical guide for developers on using AI tools to generate Kubernetes network policies with code examples and best practices"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-kubernetes-network-policies-correc/
 categories: [guides]
@@ -325,13 +326,14 @@ AI tools can generate these advanced configurations, but you must provide detail
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Playwright Network.](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
-- [Best AI Tools for Writing Kubernetes Operator Code From.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
-- [How Well Do AI Tools Generate Correct Go Interface.](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
+
+## Related Articles
+
+- [How to Use AI to Generate Playwright Network Interception](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Best AI Tool for Network Engineers: Runbook Writing Guide](/ai-tools-compared/best-ai-tool-for-network-engineers-runbook-writing/)
+- [ChatGPT Network Error on Long Responses: How to Fix in 2026](/ai-tools-compared/chatgpt-network-error-on-long-responses-how-to-fix-2026/)
+- [Enterprise AI Coding Tool Network Security Requirements.](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

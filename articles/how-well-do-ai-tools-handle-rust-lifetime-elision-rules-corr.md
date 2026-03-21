@@ -3,6 +3,7 @@ layout: default
 title: "How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr"
 description: "AI tools understand Rust lifetime elision rules about 70% of the time but often miss edge cases in generic functions and trait definitions. This guide shows"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/
 categories: [guides]
@@ -306,13 +307,14 @@ The best defense against AI mistakes is building your own understanding. Practic
 
 This practice loop builds pattern recognition that helps you evaluate AI output critically.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Well Do AI Tools Generate Rust Macro Definitions and.](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
-- [How Well Do AI Tools Generate Correct Go Interface.](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
-- [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+
+## Related Articles
+
+- [How Well Do AI Tools Handle Go Generics Type Parameter Const](/ai-tools-compared/how-well-do-ai-tools-handle-go-generics-type-parameter-const/)
+- [How Well Do AI Tools Generate Rust Macro Definitions and Pro](/ai-tools-compared/how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/)
+- [Best AI for Writing Playwright Tests That Handle Dynamic Loa](/ai-tools-compared/best-ai-for-writing-playwright-tests-that-handle-dynamic-loa/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

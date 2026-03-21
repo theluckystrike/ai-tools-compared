@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Government Citizen Support"
 description: "A practical guide to AI tools for government citizen support, with implementation examples and code snippets for developers building public sector"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-government-citizen-support/
 categories: [guides]
@@ -280,14 +281,15 @@ Government AI implementation succeeds when it augments staff capabilities rather
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
 - [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
-- [AI Tools for Customer Escalation Management](/ai-tools-compared/ai-tools-for-customer-escalation-management/)
-- [Best AI Tools for Support Agent Assist](/ai-tools-compared/best-ai-tools-for-support-agent-assist/)
+- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
+- [AI Tools for Subscription Management Support](/ai-tools-compared/ai-tools-for-subscription-management-support/)
+- [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

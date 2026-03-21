@@ -3,6 +3,7 @@ layout: default
 title: "GitHub Copilot vs Cody Sourcegraph Comparison"
 description: "A detailed comparison of GitHub Copilot and Cody (by Sourcegraph) for developers. Learn the key differences in features, pricing, and use cases"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /github-copilot-vs-cody-sourcegraph-comparison/
 reviewed: true
@@ -234,11 +235,15 @@ Try both tools during their free trial periods. Pay attention to how often you n
 
 
 
-## Related Reading
 
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
+
+## Related Articles
+
+- [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
+- [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)
+- [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
+- [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

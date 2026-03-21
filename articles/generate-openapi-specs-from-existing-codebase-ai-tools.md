@@ -3,6 +3,7 @@ layout: default
 title: "Generate Openapi Specs from Existing Codebase AI Tools"
 description: "Step-by-step guide to using AI tools to extract and generate complete OpenAPI/Swagger specifications from your existing API code"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /generate-openapi-specs-from-existing-codebase-ai-tools/
 categories: [guides]
@@ -483,11 +484,14 @@ After Claude generates your spec, verify:
 - Required fields properly marked
 - Examples are realistic and valid
 
-## Related Reading
-- [Best AI Features for Generating API Client Code from OpenAPI](/ai-tools-compared/guides-hub/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing Code](/ai-tools-compared/guides-hub/)
-- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/guides-hub/)
 
----
+
+## Related Articles
+
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Move Tabnine AI Models When Switching to Supermaven"
 description: "A practical guide for developers transitioning from Tabnine to Supermaven, covering model migration, configuration, and best practices"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-tabnine-ai-models-when-switching-to-supermaven/
 categories: [guides]
@@ -290,13 +291,14 @@ Follow these recommendations for the smoothest transition:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor AI: Switching Between Claude and GPT Models —.](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
-- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
-- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+
+## Related Articles
+
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Is Tabnine Free Plan Still Worth Using in 2026?](/ai-tools-compared/is-tabnine-free-plan-still-worth-using-in-2026/)
+- [Tabnine Pro vs Free: What Autocomplete Features Are Locked](/ai-tools-compared/tabnine-pro-vs-free-what-autocomplete-features-are-locked/)
+- [Best AI Tools for Writing Python SQLAlchemy Models and](/ai-tools-compared/best-ai-tools-for-writing-python-sqlalchemy-models-and-queri/)
+- [ChatGPT vs Claude for Generating Pydantic Models from JSON](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT vs Claude for Creating OpenAPI Spec from Existing"
 description: "A practical comparison of ChatGPT and Claude for generating OpenAPI specifications from existing codebases. Includes code examples and developer insights"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/
 categories: [guides]
@@ -355,11 +356,15 @@ If your codebase uses TypeScript with explicit type definitions, Claude generall
 
 The most efficient approach for most teams: write a prompt template specific to your framework and response patterns, store it as a team artifact, and use whichever tool gives you the best acceptance rate on the first pass. Refine the template as you encounter edge cases.
 
-## Related Reading
 
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
-- [ChatGPT vs Claude for Writing Effective Celery Task Error Handling](/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to SaaS Founders](/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+
+## Related Articles
+
+- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [How to Use AI to Help Designers Write Micro Interaction Spec](/ai-tools-compared/how-to-use-ai-to-help-designers-write-micro-interaction-spec/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

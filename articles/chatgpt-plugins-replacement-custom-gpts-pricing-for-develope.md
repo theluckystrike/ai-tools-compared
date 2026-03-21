@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT Plugins Replacement Custom Gpts Pricing"
 description: "OpenAI's transition from plugins to Custom GPTs represents a significant shift in how developers extend ChatGPT's capabilities. If you built integrations using"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/
 categories: [guides]
@@ -239,13 +240,14 @@ Test your migrated Custom GPTs thoroughly before deploying to production. Pay sp
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate ChatGPT Plugins to Custom GPTs.](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
-- [Do ChatGPT Plus Memory and Custom GPTs Count Toward.](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
+
+## Related Articles
+
+- [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Writing Effective .cursorrules for Next.js App Router"
 description: "A practical guide for developers on creating effective CursorRules configurations for Next.js App Router projects, covering file structure conventions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/
 categories: [guides]
@@ -340,13 +341,14 @@ Add specific guidance for performance-critical Next.js patterns:
 These detailed patterns prevent AI from generating performance antipatterns.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
-- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [Cursor vs Windsurf for Building Next.js App from Design Mockup](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+
+## Related Articles
+
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

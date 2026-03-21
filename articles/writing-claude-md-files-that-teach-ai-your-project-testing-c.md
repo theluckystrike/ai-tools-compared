@@ -3,6 +3,7 @@ layout: default
 title: "Writing Claude Md Files That Teach AI Your Project Testing"
 description: "A practical guide to creating CLAUDE.md files that communicate your testing conventions, patterns, and best practices to AI coding assistants. Includes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/
 categories: [guides]
@@ -279,11 +280,15 @@ Testing conventions evolve. Schedule periodic reviews of your CLAUDE.md to keep 
 
 A CLAUDE.md that doesn't reflect reality wastes everyone's time. Keep it honest and current.
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

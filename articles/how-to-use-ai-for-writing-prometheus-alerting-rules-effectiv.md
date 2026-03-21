@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Writing Prometheus Alerting Rules"
 description: "A practical guide for developers on using AI tools to write Prometheus alerting rules. Real examples, code snippets, and techniques for 2026"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-writing-prometheus-alerting-rules-effectively/
 categories: [guides]
@@ -326,14 +327,15 @@ def alert_to_incident(alert):
 
 The AI-generated descriptions provide engineers with immediate context about the alert, reducing mean time to resolution.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI for Writing Effective Prometheus Recording.](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
-- [How to Use AI for Writing Effective Runbooks and.](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-pl/)
-- [AI Assistants for Writing Correct AWS IAM Policies with.](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+
+## Related Articles
+
+- [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)
+- [Best Practices for Version Controlling AI Prompts and Rules](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [Enterprise Data Loss Prevention Rules for AI Coding Assistan](/ai-tools-compared/enterprise-data-loss-prevention-rules-for-ai-coding-assistan/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

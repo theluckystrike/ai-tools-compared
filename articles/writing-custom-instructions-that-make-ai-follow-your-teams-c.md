@@ -3,6 +3,7 @@ layout: default
 title: "Writing Custom Instructions That Make AI Follow Your Team's"
 description: "A practical guide to creating custom AI instructions that enforce your team's changelog format. Code examples and implementation patterns for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/
 categories: [guides]
@@ -273,14 +274,15 @@ Keep your instructions in version control alongside your project code. This ensu
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
-- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+
+## Related Articles
+
+- [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
+- [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
+- [Writing Custom Instructions for AI Tools That Enforce Your](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "AI Code Generation Quality for Java Pattern Matching and Swi"
 description: "A practical evaluation of how well AI coding tools handle Java 17+ pattern matching and switch expressions, with real code examples and quality"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-pattern-matching-and-swi/
 categories: [guides]
@@ -295,13 +296,14 @@ All tools improve significantly when prompts explicitly mention the Java version
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
-- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+
+## Related Articles
+
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

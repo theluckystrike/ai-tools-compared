@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer Copilot Code Review Settings"
 description: "Transfer Copilot code review settings to Cursor by exporting rules, reconfiguring Cursor's AI review panel, and testing on sample code. This guide shows how to"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /transfer-copilot-code-review-settings-to-cursor-ai-review-co/
 categories: [guides]
@@ -316,13 +317,14 @@ Not formally. Cursor reads the file as plain text and interprets it using the AI
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Transfer Copilot Inline Chat Shortcuts to Cursor.](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
-- [How to Transfer GitHub Copilot Organization Settings.](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
-- [How to Switch from Cursor to Claude Code Without Losing.](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+
+## Related Articles
+
+- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
+- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

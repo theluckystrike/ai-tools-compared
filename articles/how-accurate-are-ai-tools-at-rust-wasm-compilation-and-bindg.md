@@ -3,6 +3,7 @@ layout: default
 title: "How Accurate Are AI Tools at Rust WASM Compilation and Bindg"
 description: "A practical analysis of how well AI coding assistants handle Rust WASM compilation and bindgen code generation, with real examples and accuracy"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/
 categories: [guides]
@@ -432,13 +433,14 @@ For developers working with Rust WASM and bindgen, these results suggest verifyi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
-- [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
-- [How Accurate Are AI Tools for Rust Unsafe Code Blocks.](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+
+## Related Articles
+
+- [How Accurate Are AI Tools at Generating Rust Crossbeam](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
+- [How Accurate Are AI Tools](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
+- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

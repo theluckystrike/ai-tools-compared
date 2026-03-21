@@ -3,6 +3,7 @@ layout: default
 title: "How to Create Reusable Prompt Templates for Common AI Coding"
 description: "Create reusable prompt templates that capture your coding standards, error handling patterns, and preferred libraries—this transforms sporadic AI sessions into"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-reusable-prompt-templates-for-common-ai-coding/
 categories: [guides]
@@ -241,14 +242,15 @@ Building a prompt template library takes initial investment but pays dividends t
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Writing GitHub Actions Reusable.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [How to Create Custom Instructions for AI Tools to.](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
+
+## Related Articles
+
+- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [AI Coding Tool Penetration Test Findings Common Vulnerabilit](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

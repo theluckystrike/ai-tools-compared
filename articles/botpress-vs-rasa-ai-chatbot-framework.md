@@ -3,6 +3,7 @@ layout: default
 title: "Botpress vs Rasa AI Chatbot Framework Compared"
 description: "Choosing between Botpress and Rasa requires understanding how each framework approaches chatbot development, customization, and deployment. Both are"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /botpress-vs-rasa-ai-chatbot-framework/
 categories: [comparisons]
@@ -333,10 +334,14 @@ class ActionEcho(Action):
 Both implementations accomplish the same task, but the development experience differs significantly—Botpress uses JavaScript in a visual environment, while Rasa uses Python with code-first definitions.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)
+- [ChatGPT vs Custom Chatbot for Business: A Developer Guide](/ai-tools-compared/chatgpt-vs-custom-chatbot-for-business/)
+- [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
+- [How to Use AI to Generate Serverless Framework Configuration](/ai-tools-compared/how-to-use-ai-to-generate-serverless-framework-configuration/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

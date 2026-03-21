@@ -3,6 +3,7 @@ layout: default
 title: "How to Write Better Prompts for AI Code Generation with"
 description: "AI coding assistants have become indispensable tools for developers, but their effectiveness depends heavily on how you communicate with them. The difference"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-better-prompts-for-ai-code-generation-with-examples/
 categories: [guides]
@@ -247,13 +248,14 @@ Document your successful prompt patterns for recurring tasks. This creates a per
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Structure Prompts for AI to Generate Idiomatic.](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
-- [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
-- [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
+
+## Related Articles
+
+- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Structure Prompts for AI to Generate Idiomatic Code](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [Best Workflow for Using AI to Write Infrastructure as Code F](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

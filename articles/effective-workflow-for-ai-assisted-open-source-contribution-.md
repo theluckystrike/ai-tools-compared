@@ -3,6 +3,7 @@ layout: default
 title: "Effective Workflow for AI-Assisted Open Source Contribution"
 description: "A practical guide to using AI tools for contributing to open source projects, from finding issues to preparing polished pull requests"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-ai-assisted-open-source-contribution-/
 categories: [guides]
@@ -327,13 +328,14 @@ With practice, this workflow becomes second nature. You will find yourself contr
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Write Commit Message Guidelines for Open Source Projects.](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
-- [Best Workflow for AI-Assisted Test Driven Development.](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
-- [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+
+## Related Articles
+
+- [Best Workflow for AI-Assisted Test Driven Development Step](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
+- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
+- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+- [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

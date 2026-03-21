@@ -3,6 +3,7 @@ layout: default
 title: "Best AI-Powered Platform Engineering Tools for Developer Sel"
 description: "Enable developer self-service by using AI to interpret infrastructure requests in plain language and generate Terraform or CloudFormation. Claude excels at"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /best-ai-powered-platform-engineering-tools-for-developer-sel/
 categories: [guides]
@@ -250,13 +251,14 @@ Finally, establish clear boundaries. AI excels at routine provisioning tasks but
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Kustomer vs Gladly AI Customer Platform: A Developer.](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
-- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
-- [AI Tools for Generating Contributor License Agreement.](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)
+
+## Related Articles
+
+- [Kustomer vs Gladly AI Customer Platform: A Developer](/ai-tools-compared/kustomer-vs-gladly-ai-customer-platform/)
+- [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
+- [Verloop vs Engati AI Chatbot Platform Compared](/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Prompt Engineering Patterns for Code Generation"
 description: "Practical prompt patterns that improve AI code generation quality: role priming, context injection, constraint framing, chain-of-thought, and self-review loops."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /prompt-engineering-patterns-for-code-generation/
 categories: [guides]
@@ -418,13 +419,15 @@ Usage:
 # Prompt Quality Score: 75 / 100
 ```
 
-## Related Reading
 
-- [Writing Effective System Prompts for AI Coding Assistants](/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [AI Tool Customization Comparison Claude MD vs CursorRules](/ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/)
-- [Writing Effective CursorRules for React TypeScript Projects](/writing-effective-cursorrules-for-react-typescript-projects-/)
 
----
+## Related Articles
+
+- [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
+- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [Best AI-Powered Platform Engineering Tools for Developer Sel](/ai-tools-compared/best-ai-powered-platform-engineering-tools-for-developer-sel/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

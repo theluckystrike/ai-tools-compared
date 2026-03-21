@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Help Devrel Create Comparison Tables"
 description: "A practical guide for developers and DevRel professionals on using AI to create accurate, detailed comparison tables for competing API features"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/
 categories: [comparisons]
@@ -272,14 +273,15 @@ Long cells can contain line breaks, but keep rows consistent for readability.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [How to Use AI to Help DevRel Create Interactive Coding Playgrounds](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
-- [How to Use AI to Help DevRel Teams Create Video Tutorial Scripts and Screen Recordings](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
-- [Best AI Tool for Software Engineers Code Review 2026](/ai-tools-compared/best-ai-tool-for-software-engineers-code-review-2026/)
+
+## Related Articles
+
+- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
+- [How to Use AI to Help Sre Teams Create on Call Handoff Docum](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/)
+- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Cursor AI Model Selection Guide Which Model for Which Coding"
 description: "A practical guide to selecting the right AI model in Cursor IDE for different coding tasks, with examples and recommendations for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cursor-ai-model-selection-guide-which-model-for-which-coding/
 categories: [guides]
@@ -316,14 +317,15 @@ If you're hitting limits with your current tier, prioritize using advanced model
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
-- [Cursor AI Privacy Mode: How to Use AI Features Without.](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
-- [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+
+## Related Articles
+
+- [Cursor AI Apply Model How It Merges Generated Code into Exis](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
+- [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)
+- [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

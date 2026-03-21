@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Coding Tools With Generous Free Tier for Hobbyists"
 description: "Discover the top AI-powered coding assistants that offer free plans perfect for hobbyists and side projects"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-tools-with-generous-free-tier-for-hobbyists/
 categories: [guides]
@@ -240,13 +241,14 @@ Start with one tool, integrate it into your daily workflow, and explore its capa
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
-- [Best Budget AI Coding Assistant for Freelance Developers.](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
-- [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
+
+## Related Articles
+
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
+- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
+- [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)
+- [Best AI Coding Tool Free Trial Longest No Credit Card](/ai-tools-compared/best-ai-coding-tool-free-trial-longest-no-credit-card/)
+- [Best Free AI Coding Extensions for Visual Studio Code 2026](/ai-tools-compared/best-free-ai-coding-extensions-for-visual-studio-code-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

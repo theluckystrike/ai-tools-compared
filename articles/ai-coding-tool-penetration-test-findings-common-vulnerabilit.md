@@ -3,6 +3,7 @@ layout: default
 title: "AI Coding Tool Penetration Test Findings Common Vulnerabilit"
 description: "Security researchers have increasingly focused on AI coding tools and their IDE integrations, discovering significant vulnerabilities that affect millions of"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-tool-penetration-test-findings-common-vulnerabilit/
 categories: [guides]
@@ -323,14 +324,15 @@ Stay informed about security advisories from your AI coding tool providers. Part
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Evaluate AI Coding Tool Model Training Data.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [How to Evaluate AI Coding Tool Encryption Standards for.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)
-- [Best AI Assistant for QA Engineers Writing Test Coverage.](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+
+## Related Articles
+
+- [How to Create Reusable Prompt Templates for Common AI Coding](/ai-tools-compared/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
+- [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Technical Writing 2026"
 description: "Compare Claude and ChatGPT for technical writing tasks: API docs, runbooks, architecture decisions, and README files. Real examples and quality differences."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-technical-writing-2026/
 categories: [guides]
@@ -392,13 +393,15 @@ For a 10-endpoint API:
 
 Hybrid approach saves 15 minutes per documentation sprint while keeping first-draft speed.
 
-## Related Reading
 
-- [ChatGPT vs Claude for Writing API Documentation](/chatgpt-vs-claude-for-writing-api-documentation/)
-- [AI Tools for Code Documentation Generation 2026](/ai-tools-for-code-documentation-generation-2026/)
-- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-for-automated-api-documentation-from-code-comments/)
 
----
+## Related Articles
+
+- [Drift vs ChatGPT for Customer Support: A Technical](/ai-tools-compared/drift-vs-chatgpt-for-customer-support/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

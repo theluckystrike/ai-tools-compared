@@ -3,6 +3,7 @@ layout: default
 title: "How to Write Custom Instructions for AI That Follow Your"
 description: "A practical guide for developers on creating AI custom instructions that align with team code review standards, with concrete examples and code snippets"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/
 categories: [guides]
@@ -468,13 +469,14 @@ git commit -m "Update custom instructions across all AI tools"
 ❌ Instructions reference old tech stack
 ✅ Review instructions quarterly as tools/standards evolve
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
-- [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
-- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+
+## Related Articles
+
+- [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

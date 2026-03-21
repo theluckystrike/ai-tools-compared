@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for AI Tool Project Config When Switching"
 description: "A practical guide for developers managing AI tool configurations across multiple client projects in 2026"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/
 categories: [guides]
@@ -319,13 +320,14 @@ Yes. Combine your switcher script with direnv and a post-switch hook that opens 
 {% endraw %}
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Developers in 2026](/ai-tools-compared/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
+
+## Related Articles
+
+- [Switching from Windsurf to Cursor How to Transfer Project](/ai-tools-compared/switching-from-windsurf-to-cursor-how-to-transfer-project-config/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [Which AI Tool Is Better for Writing CircleCI Config YAML Fil](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
+- [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
