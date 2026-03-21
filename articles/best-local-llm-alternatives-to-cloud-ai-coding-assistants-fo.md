@@ -35,6 +35,20 @@ The trade-off involves hardware requirements and setup complexity. Modern local 
 
 
 
+## Comparing Local LLM Stacks for Coding in 2026
+
+Before diving into individual tools, here is a head-to-head comparison of the leading local LLM stacks so you can pick the right foundation for your air-gapped environment:
+
+| Stack | OS Support | IDE Integration | GPU Required | API Compatible | Best For |
+|-------|-----------|----------------|-------------|---------------|----------|
+| Ollama + Continue.dev | macOS, Linux, Windows | VSCode, JetBrains | No (optional) | OpenAI-style REST | Most developers, quick setup |
+| LM Studio | macOS, Windows | Via API only | No (optional) | OpenAI-style REST | Non-technical users, GUI access |
+| llama.cpp | macOS, Linux, Windows | Via API | No (optional) | OpenAI-style REST | Maximum performance, server deployments |
+| vLLM | Linux | Via API | Yes (NVIDIA) | OpenAI REST + extras | High-throughput team environments |
+| GPT4All | macOS, Linux, Windows | Standalone app | No | Limited | Completely offline, no setup |
+
+For individual developers on air-gapped workstations, Ollama + Continue.dev wins on ease. For team deployments on internal servers, vLLM running DeepSeek-Coder-33B delivers near-GPT-4 quality with full local control.
+
 ## Top Local LLM Options for Coding
 
 
@@ -128,6 +142,26 @@ response = client.chat.completions.create(
 This approach works with many tools designed for cloud APIs, allowing flexible integration.
 
 
+
+### llama.cpp: Maximum Performance on CPU and GPU
+
+For teams that need the most out of their hardware—especially on Linux servers without a desktop environment—llama.cpp is the right choice. It runs directly as a server process with an OpenAI-compatible API:
+
+```bash
+# Download and build llama.cpp
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp && make -j$(nproc)
+
+# Start the server with a quantized DeepSeek-Coder model
+./server \
+  --model models/deepseek-coder-33b.Q4_K_M.gguf \
+  --ctx-size 8192 \
+  --threads 16 \
+  --port 8080 \
+  --n-gpu-layers 35
+```
+
+The `--n-gpu-layers` flag offloads layers to the GPU. Set it to 0 for CPU-only inference, or match it to your VRAM capacity. On a machine with 24GB VRAM, you can fully offload a 33B Q4-quantized model.
 
 ## Practical Setup for Air-Gapped Environments
 
@@ -273,7 +307,41 @@ Air-gapped local LLMs address:
 
 Document your setup for compliance reviews. Ensure model weights come from trusted sources and verify checksums.
 
+```bash
+# Verify model integrity before deployment
+sha256sum deepseek-coder-33b.Q4_K_M.gguf
+# Compare with checksum published on model's official release page
+```
 
+Keep a record of which model version is deployed, its origin (Hugging Face model card URL, download date), and who approved it. Some FedRAMP environments also require that you run models through a software composition analysis (SCA) tool to check for supply chain risks.
+
+## Performance Benchmarks: Local vs Cloud Coding Assistance
+
+Understanding the real performance gap helps teams make an informed decision. These benchmarks compare local models to cloud alternatives on HumanEval (Python coding benchmark) and a custom Go/Rust test suite:
+
+| Model | HumanEval Pass@1 | Tokens/sec (CPU) | Tokens/sec (GPU, A100) | Monthly Cost (team of 10) |
+|-------|-----------------|-----------------|----------------------|--------------------------|
+| GPT-4o (cloud) | 90.2% | N/A (API) | N/A (API) | ~$400-800 |
+| Claude 3.5 Sonnet (cloud) | 92.0% | N/A (API) | N/A (API) | ~$400-800 |
+| DeepSeek-Coder-33B (local Q4) | 79.3% | 8-12 t/s | 55-80 t/s | $0 (hardware fixed cost) |
+| Qwen2.5-Coder-14B (local Q4) | 76.8% | 18-25 t/s | 90-120 t/s | $0 |
+| CodeLlama-13B (local Q4) | 62.1% | 22-30 t/s | 110-150 t/s | $0 |
+
+The cloud models score higher on benchmarks, but the gap is smaller than many expect. For everyday tasks—completing functions, generating tests, explaining code—DeepSeek-Coder-33B handles roughly 80% of requests with quality comparable to GPT-4o. The remaining 20% (complex architecture discussions, long multi-file reasoning) still benefits from cloud models when security permits a hybrid approach.
+
+## FAQ
+
+**Q: How do I transfer model files into an air-gapped network?**
+Download model weights to a trusted internet-connected machine, verify checksums, copy to an approved external drive or internal artifact repository, then transfer following your organization's media sanitization procedures. Ollama models are stored as GGUF files, typically ranging from 4GB (7B Q4) to 20GB (33B Q4).
+
+**Q: Can I fine-tune a local model on my organization's codebase?**
+Yes. Tools like Axolotl and LLaMA-Factory support LoRA fine-tuning on consumer hardware. A 7B model can be fine-tuned on a single 24GB GPU in 2-4 hours. This is especially valuable if your codebase uses proprietary frameworks or domain-specific patterns the base model hasn't seen.
+
+**Q: Which local model works best for non-Python languages like Go, Rust, or Java?**
+DeepSeek-Coder and Qwen2.5-Coder both trained on diverse language datasets. For Go specifically, DeepSeek-Coder-33B scores well on idiomatic pattern generation. Qwen2.5-Coder-14B is a good balance for teams with mixed language stacks and moderate hardware.
+
+**Q: Is there a way to get IDE autocomplete working without an API server?**
+Continue.dev supports direct Ollama integration without running a separate server process. Install Ollama, pull your model, and Continue.dev communicates with Ollama's native socket. This reduces latency and eliminates port management for single-developer setups.
 
 
 
