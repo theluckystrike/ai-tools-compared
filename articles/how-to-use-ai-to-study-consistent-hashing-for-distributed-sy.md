@@ -376,5 +376,6 @@ The AI creates a focused summary you can review in 5 minutes before your intervi
 - [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
 - [How to Use AI Multi File Context to Generate Consistent API](/ai-tools-compared/how-to-use-ai-multi-file-context-to-generate-consistent-api-endpoints/)
 - [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [Post new team playlist additions to Slack every 4 hours](https://theluckystrike.github.io/remote-work-tools/distributed-team-music-playlist-collaboration-for-remote-work/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
