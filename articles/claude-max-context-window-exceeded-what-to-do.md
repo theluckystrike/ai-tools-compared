@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Max Context Window Exceeded: What To Do"
-description: "A practical troubleshooting guide for developers facing the Claude Max context window exceeded error. Learn step-by-step fixes and diagnostic tips."
+description: "A practical troubleshooting guide for developers facing the Claude Max context window exceeded error. Learn step-by-step fixes and diagnostic tips"
 date: 2026-03-15
 author: theluckystrike
 permalink: /claude-max-context-window-exceeded-what-to-do/

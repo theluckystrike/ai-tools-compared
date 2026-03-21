@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How Context Window Size Affects AI Code Suggestions"
-description: "Discover how AI context window size impacts code suggestions across VS Code, JetBrains, and other IDEs. Practical examples and guidance for developers."
+description: "Discover how AI context window size impacts code suggestions across VS Code, JetBrains, and other IDEs. Practical examples and guidance for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-context-window-size-affects-ai-code-suggestions-in-different-idess/

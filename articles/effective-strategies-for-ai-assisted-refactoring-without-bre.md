@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Strategies for AI-Assisted Refactoring Without Bre"
-description: "Learn practical strategies for using AI coding assistants to refactor code safely while keeping your test suite green. Real examples and code patterns."
+description: "Learn practical strategies for using AI coding assistants to refactor code safely while keeping your test suite green. Real examples and code patterns"
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-ai-assisted-refactoring-without-bre/

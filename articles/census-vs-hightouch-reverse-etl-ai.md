@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Census vs HighTouch Reverse ETL AI: A Practical"
-description: "A technical comparison of Census and HighTouch AI features for reverse ETL workflows, with code examples and recommendations for data engineers."
+description: "A technical comparison of Census and HighTouch AI features for reverse ETL workflows, with code examples and recommendations for data engineers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /census-vs-hightouch-reverse-etl-ai/

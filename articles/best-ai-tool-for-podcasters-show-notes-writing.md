@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Podcasters Show Notes Writing"
-description: "A practical comparison of AI-powered tools for creating professional podcast show notes efficiently."
+description: "A practical comparison of AI-powered tools for creating professional podcast show notes efficiently"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-podcasters-show-notes-writing/

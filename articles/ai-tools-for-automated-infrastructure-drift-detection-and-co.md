@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Infrastructure Drift Detection"
-description: "Explore how AI tools automate infrastructure drift detection and correction in 2026. Learn practical implementations for developers managing."
+description: "Explore how AI tools automate infrastructure drift detection and correction in 2026. Learn practical implementations for developers managing"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automated-infrastructure-drift-detection-and-co/

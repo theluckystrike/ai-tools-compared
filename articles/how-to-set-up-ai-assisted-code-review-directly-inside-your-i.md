@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Set Up AI Assisted Code Review Directly Inside Your"
-description: "Learn practical methods for setting up AI-powered code review directly in your IDE. This guide covers GitHub Copilot, Cursor, and other tools for."
+description: "Set up AI code review in your IDE by configuring extensions, creating review comment templates, and running AI analysis as a pre-commit hook. This guide shows"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-ai-assisted-code-review-directly-inside-your-ide/

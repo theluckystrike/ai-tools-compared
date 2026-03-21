@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Database Seed Scripts 2026"
-description: "Compare AI tools for generating database seed scripts and fixture data. Covers Prisma, Django, Rails ORM integration with Claude, Copilot, and Cursor."
+description: "Compare AI tools for generating database seed scripts and fixture data. Covers Prisma, Django, Rails ORM integration with Claude, Copilot, and Cursor"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-database-seed-scripts-2026/

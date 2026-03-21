@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windsurf AI Flows Feature How It Chains Multiple Editing Ste"
-description: "A practical guide to Windsurf AI Flows, explaining how to chain multiple editing steps for automated code workflows."
+description: "A practical guide to Windsurf AI Flows, explaining how to chain multiple editing steps for automated code workflows"
 date: 2026-03-16
 author: theluckystrike
 permalink: /windsurf-ai-flows-feature-how-it-chains-multiple-editing-ste/

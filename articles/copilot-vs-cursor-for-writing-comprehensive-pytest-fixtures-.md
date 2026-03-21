@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Cursor for Writing pytest Fixtures"
-description: "A practical comparison of GitHub Copilot and Cursor AI for generating pytest fixtures, mocks, and test infrastructure in Python projects."
+description: "A practical comparison of GitHub Copilot and Cursor AI for generating pytest fixtures, mocks, and test infrastructure in Python projects"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing--pytest-fixtures-/

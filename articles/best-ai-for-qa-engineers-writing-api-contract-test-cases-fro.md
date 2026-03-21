@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for QA Engineers Writing API Contract Testing Cases"
-description: "A practical comparison of AI tools for writing API contract tests. Learn which AI assistants excel at generating Pact, Dredd, and OpenAPI validation."
+description: "A practical comparison of AI tools for writing API contract tests. Learn which AI assistants excel at generating Pact, Dredd, and OpenAPI validation"
 date: 2026-03-18
 author: theluckystrike
 permalink: /best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Writing pandas Code"
-description: "Discover which AI coding tools excel at generating pandas code for handling paginated API responses with nested JSON structures. Practical examples and."
+description: "AI assistants can generate strong pandas code for handling paginated APIs with nested JSON by using pd.jsonnormalize() effectively and implementing proper"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/

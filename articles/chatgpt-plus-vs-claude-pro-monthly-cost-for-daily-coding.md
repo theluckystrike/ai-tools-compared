@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding"
-description: "A practical cost-benefit analysis of ChatGPT Plus and Claude Pro for developers who use AI assistants daily. Includes real coding examples and value."
+description: "A practical cost-benefit analysis of ChatGPT Plus and Claude Pro for developers who use AI assistants daily. Includes real coding examples and value"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/

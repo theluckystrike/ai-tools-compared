@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Go Project Structure and Module"
-description: "A practical guide to AI-powered tools that help Go developers structure projects, organize modules, and maintain clean codebases."
+description: "A practical guide to AI-powered tools that help Go developers structure projects, organize modules, and maintain clean codebases"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-go-project-structure-and-module-organization/

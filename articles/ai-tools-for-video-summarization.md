@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Video Summarization"
-description: "Explore practical AI tools for video summarization with code examples, API integrations, and implementation approaches for developers and power users."
+description: "Explore practical AI tools for video summarization with code examples, API integrations, and implementation approaches for developers and power users"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-summarization/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Write Commit Message Guidelines"
-description: "A practical guide for open source maintainers using AI to create clear, consistent commit message conventions that improve collaboration and project."
+description: "A practical guide for open source maintainers using AI to create clear, consistent commit message conventions that improve collaboration and project"
 date: 2026-03-19
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/

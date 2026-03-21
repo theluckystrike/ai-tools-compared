@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Coding Assistant for Under $5 Per Month"
-description: "A practical guide to affordable AI coding tools that cost $5 or less monthly. Compare features, code quality, and real-world usage for developers on a."
+description: "Finding a capable AI coding assistant on a tight budget is entirely possible. Several tools offer solid functionality at $5 per month or less, with some"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-assistant-for-under-5-dollars-per-month/

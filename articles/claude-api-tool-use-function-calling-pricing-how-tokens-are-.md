@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude API Tool Use Function Calling Pricing How Tokens Are"
-description: "A guide to understanding Claude API tool use, function calling mechanics, and how tokens are counted for pricing. Practical examples for."
+description: "Claude API tool use (function calling) is billed as standard API token usage with no separate pricing category -- tool definitions count as input tokens, tool"
 date: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-tool-use-function-calling-pricing-how-tokens-are-/

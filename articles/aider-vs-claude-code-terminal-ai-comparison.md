@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "aider vs Claude Code: Terminal AI Coding Assistants Compared"
-description: "A practical comparison of Aider and Claude Code for terminal-based AI-assisted coding. Includes code examples, use cases, and recommendations for."
+description: "Choose Aider if you want automatic git integration, multi-file refactoring with import updates, and the flexibility to switch between Claude, GPT, and local"
 date: 2026-03-15
 author: theluckystrike
 permalink: /aider-vs-claude-code-terminal-ai-comparison/

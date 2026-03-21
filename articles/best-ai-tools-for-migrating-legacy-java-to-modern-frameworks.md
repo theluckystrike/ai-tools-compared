@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Migrating Legacy Java to Modern Frameworks"
-description: "Compare Claude, ChatGPT, and Copilot for automated Java Spring 3, Quarkus, and Micronaut migrations. Learn strategies that preserve business logic."
+description: "Compare Claude, ChatGPT, and Copilot for automated Java Spring 3, Quarkus, and Micronaut migrations. Learn strategies that preserve business logic"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-migrating-legacy-java-to-modern-frameworks/

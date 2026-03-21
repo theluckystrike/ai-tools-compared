@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Video Object Tracking"
-description: "A practical guide to AI-powered video object tracking tools for developers, with code examples and implementation recommendations."
+description: "A practical guide to AI-powered video object tracking tools for developers, with code examples and implementation recommendations"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-object-tracking/

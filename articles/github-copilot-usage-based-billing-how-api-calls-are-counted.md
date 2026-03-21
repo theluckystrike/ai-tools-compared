@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GitHub Copilot Usage Based Billing How API Calls Are Counted"
-description: "GitHub Copilot Usage-Based Billing: How API Calls Are. — guide with practical tips, comparisons, and expert recommendations for."
+description: "GitHub Copilot's usage-based billing counts API calls by measuring prompt tokens (your code context) and completion tokens (generated suggestions) rather than"
 date: 2026-03-16
 author: theluckystrike
 permalink: /github-copilot-usage-based-billing-how-api-calls-are-counted/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Principals Administrative Reporting"
-description: "Discover how AI tools help school principals automate administrative reporting, improve compliance documentation, and save hours on routine paperwork."
+description: "Discover how AI tools help school principals automate administrative reporting, improve compliance documentation, and save hours on routine paperwork"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-principals-administrative-reporting/

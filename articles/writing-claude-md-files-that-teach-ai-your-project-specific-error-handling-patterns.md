@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing Claude Md Files That Teach AI Your Project Specific"
-description: "A practical guide to creating effective CLAUDE.md files that communicate your project's error handling conventions to AI assistants. Includes code examples and real-world patterns."
+description: "A practical guide to creating effective CLAUDE.md files that communicate your project's error handling conventions to AI assistants. Includes code examples and"
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/

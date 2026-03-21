@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI for Automated Regression Test Generation from Bug Reports"
-description: "Learn how Claude, ChatGPT, and Copilot generate regression tests directly from bug reports, saving weeks of manual test writing."
+description: "Learn how Claude, ChatGPT, and Copilot generate regression tests directly from bug reports, saving weeks of manual test writing"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-for-automated-regression-test-generation-from-bug-reports/

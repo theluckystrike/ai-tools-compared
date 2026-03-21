@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Mode Analytics vs Hex AI Notebooks: A Practical"
-description: "A practical comparison of Mode Analytics and Hex AI Notebooks for data analysis workflows. Includes code examples, feature breakdown, and."
+description: "Choose Mode Analytics if your team is SQL-centric with structured reporting needs and stakeholder-facing dashboards. Choose Hex AI Notebooks if you need"
 date: 2026-03-15
 author: theluckystrike
 permalink: /mode-analytics-vs-hex-ai-notebooks/

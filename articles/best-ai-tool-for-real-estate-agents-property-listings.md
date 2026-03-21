@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Real Estate Agents Property Listings"
-description: "A practical guide to AI-powered tools that help real estate professionals create, optimize, and manage property listings more efficiently."
+description: "A practical guide to AI-powered tools that help real estate professionals create, optimize, and manage property listings more efficiently"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-real-estate-agents-property-listings/

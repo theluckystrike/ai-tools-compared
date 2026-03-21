@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Fine Tune Open Source Code Models for Your Codebase"
-description: "Guide to adapting open source AI models to your specific codebase using LoRA, QLoRA, and supervised fine-tuning."
+description: "Guide to adapting open source AI models to your specific codebase using LoRA, QLoRA, and supervised fine-tuning"
 date: 2026-03-20
 author: theluckystrike
 permalink: /fine-tune-open-source-code-models-for-your-codebase-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Changelog Generation 2026"
-description: "Compare AI tools for generating changelogs from git history. Covers GitHub Copilot, Claude, GPT-4, semantic-release integration, and conventional commits."
+description: "Compare AI tools for generating changelogs from git history. Covers GitHub Copilot, Claude, GPT-4, semantic-release integration, and conventional commits"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-automated-changelog-generation-2026/

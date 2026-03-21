@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Coding Tools With Generous Free Tier for Hobbyists"
-description: "Discover the top AI-powered coding assistants that offer free plans perfect for hobbyists and side projects."
+description: "Discover the top AI-powered coding assistants that offer free plans perfect for hobbyists and side projects"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-coding-tools-with-generous-free-tier-for-hobbyists/

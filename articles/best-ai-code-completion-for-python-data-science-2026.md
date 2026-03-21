@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Code Completion for Python Data Science 2026"
-description: "Compare GitHub Copilot, Cursor, Claude, Amazon CodeWhisperer, and Codeium for data science workflows. Pandas, NumPy, scikit-learn patterns, notebook."
+description: "Compare GitHub Copilot, Cursor, Claude, Amazon CodeWhisperer, and Codeium for data science workflows. Pandas, NumPy, scikit-learn patterns, notebook"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-code-completion-python-data-science-2026/

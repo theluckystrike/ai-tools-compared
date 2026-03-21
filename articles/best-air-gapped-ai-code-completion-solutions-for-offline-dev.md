@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Air Gapped AI Code Completion Solutions for Offline Dev"
-description: "Discover the top AI code completion tools that work completely offline without internet connectivity. Perfect for developers in secure environments."
+description: "Discover the top AI code completion tools that work completely offline without internet connectivity. Perfect for developers in secure environments"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-air-gapped-ai-code-completion-solutions-for-offline-dev/

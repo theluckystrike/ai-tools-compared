@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Lightdash vs Preset AI Dashboards: A Practical"
-description: "Compare Lightdash and Preset for building AI-powered dashboards. Get code examples, architecture insights, and practical guidance for choosing the."
+description: "Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need"
 date: 2026-03-15
 author: theluckystrike
 permalink: /lightdash-vs-preset-ai-dashboards/

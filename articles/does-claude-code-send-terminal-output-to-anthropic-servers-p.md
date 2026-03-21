@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Does Claude Code Send Terminal Output to Anthropic Servers P"
-description: "A technical deep-dive into Claude Code's privacy architecture, examining what data is transmitted and how you can control it."
+description: "A technical deep-dive into Claude Code's privacy architecture, examining what data is transmitted and how you can control it"
 date: 2026-03-16
 author: theluckystrike
 permalink: /does-claude-code-send-terminal-output-to-anthropic-servers-p/

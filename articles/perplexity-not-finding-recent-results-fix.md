@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Perplexity Not Finding Recent Results Fix"
-description: "A practical troubleshooting guide for developers and power users experiencing issues with Perplexity not returning recent search results. Learn."
+description: "A practical troubleshooting guide for developers and power users experiencing issues with Perplexity not returning recent search results. Learn"
 date: 2026-03-15
 author: theluckystrike
 permalink: /perplexity-not-finding-recent-results-fix/

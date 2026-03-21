@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Jest Tests for Graphql Resolvers"
-description: "Discover how AI coding assistants can help you create Jest tests for GraphQL resolvers that properly handle dataloader batching patterns."
+description: "Discover how AI coding assistants can help you create Jest tests for GraphQL resolvers that properly handle dataloader batching patterns"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Writing Open Source Plugin Development"
-description: "A practical guide to the best AI assistants for writing open source plugin development documentation. Compare top tools with real code examples."
+description: "A practical guide to the best AI assistants for writing open source plugin development documentation. Compare top tools with real code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-open-source-plugin-development/

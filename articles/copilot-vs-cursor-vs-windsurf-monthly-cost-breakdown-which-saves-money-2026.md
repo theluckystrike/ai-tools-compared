@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Cursor vs Windsurf: Monthly Cost Breakdown"
-description: "Detailed cost comparison of GitHub Copilot, Cursor, and Windsurf. Compare all tiers, usage limits, team pricing, and true cost per developer."
+description: "Detailed cost comparison of GitHub Copilot, Cursor, and Windsurf. Compare all tiers, usage limits, team pricing, and true cost per developer"
 date: 2026-03-20
 author: theluckystrike
 permalink: /copilot-vs-cursor-vs-windsurf-monthly-cost-breakdown-which-saves-money-2026/

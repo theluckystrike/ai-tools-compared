@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Cursor Background Agent Timing Out Fix (2026)"
-description: "A practical troubleshooting guide for developers and power users facing Cursor background agent timing out issues. Learn step-by-step fixes and."
+description: "Open Cursor Settings, search for 'timeout,' and increase cursor.agent.timeout from the default to 300000 (five minutes). If timeouts persist, create a"
 date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-background-agent-timing-out-fix-2026/

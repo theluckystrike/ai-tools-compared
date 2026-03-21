@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Claude Code for Writing Complex SQL Stored Proced"
-description: "A practical comparison of GitHub Copilot and Claude Code for writing complex SQL stored procedures, with code examples and recommendations for database."
+description: "A practical comparison of GitHub Copilot and Claude Code for writing complex SQL stored procedures, with code examples and recommendations for database"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing-complex-sql-stored-proced/

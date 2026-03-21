@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistants for Pulumi Infrastructure Code"
-description: "Discover the top AI assistants that help developers write, debug, and optimize Pulumi infrastructure code in TypeScript for cloud deployments."
+description: "Discover the top AI assistants that help developers write, debug, and optimize Pulumi infrastructure code in TypeScript for cloud deployments"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/

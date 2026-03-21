@@ -1,8 +1,7 @@
 ---
-
 layout: default
 title: "Switching from GPT-4o to Claude Sonnet for Code Review."
-description: "A practical comparison of GPT-4o vs Claude Sonnet for code review workflows. Learn which AI model catches more bugs, provides clearer feedback, and."
+description: "If you have been using GPT-4o for code review and are considering switching to Claude Sonnet, you likely want to know whether the transition will actually"
 date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/

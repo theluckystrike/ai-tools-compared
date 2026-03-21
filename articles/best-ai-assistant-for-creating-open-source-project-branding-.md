@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Creating Open Source Project Branding"
-description: "A practical guide for developers and power users comparing AI tools that help create open source project branding, style guides, and design systems in."
+description: "Claude stands out as the best choice for generating open source project branding because it produces design systems with semantic color naming, accessible"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-open-source-project-branding-/

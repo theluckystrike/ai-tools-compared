@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Returns and Refund Automation"
-description: "A practical guide to AI-powered returns and refund automation tools for developers building e-commerce solutions."
+description: "A practical guide to AI-powered returns and refund automation tools for developers building e-commerce solutions"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-returns-and-refund-automation/

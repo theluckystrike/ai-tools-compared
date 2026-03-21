@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Go Module Development Guide"
-description: "A guide to developing Go modules with Claude Code. Learn how to scaffold projects, generate code, write tests, and automate your Go."
+description: "A guide to developing Go modules with Claude Code. Learn how to scaffold projects, generate code, write tests, and automate your Go"
 date: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-go-module-development-guide/

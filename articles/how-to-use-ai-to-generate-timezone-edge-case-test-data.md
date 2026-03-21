@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Timezone Edge Case Test Data"
-description: "A practical guide for developers on using AI tools to generate timezone edge case test data, with code examples and implementation."
+description: "A practical guide for developers on using AI tools to generate timezone edge case test data, with code examples and implementation"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-timezone-edge-case-test-data/

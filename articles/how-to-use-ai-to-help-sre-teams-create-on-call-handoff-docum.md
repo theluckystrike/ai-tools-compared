@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Help Sre Teams Create on Call Handoff Docum"
-description: "Learn practical approaches for using AI to improve on-call handoff documentation, reduce context switching, and improve incident response for SRE teams."
+description: "Learn practical approaches for using AI to improve on-call handoff documentation, reduce context switching, and improve incident response for SRE teams"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/

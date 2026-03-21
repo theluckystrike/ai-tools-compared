@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Unicode and Emoji Edge Case Tests"
-description: "Learn how to use AI tools to create Unicode and emoji edge case tests for your applications. Practical examples and code snippets included."
+description: "Learn how to use AI tools to create Unicode and emoji edge case tests for your applications. Practical examples and code snippets included"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-unicode-and-emoji-edge-case-tests/

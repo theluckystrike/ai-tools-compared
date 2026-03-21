@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Windsurf Pro vs Cursor Pro: Price and Features Compared 2026"
-description: "A practical comparison of WindSurf Pro and Cursor Pro for developers, covering pricing, features, code editing capabilities, and which AI coding."
+description: "A practical comparison of WindSurf Pro and Cursor Pro for developers, covering pricing, features, code editing capabilities, and which AI coding"
 date: 2026-03-16
 author: theluckystrike
 permalink: /windsurf-pro-vs-cursor-pro-price-and-features-compared-2026/

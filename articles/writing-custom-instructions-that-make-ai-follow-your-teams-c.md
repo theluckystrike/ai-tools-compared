@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing Custom Instructions That Make AI Follow Your Team's"
-description: "A practical guide to creating custom AI instructions that enforce your team's changelog format. Code examples and implementation patterns for developers."
+description: "A practical guide to creating custom AI instructions that enforce your team's changelog format. Code examples and implementation patterns for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/

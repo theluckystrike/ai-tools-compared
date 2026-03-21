@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI-Powered Platform Engineering Tools for Developer Sel"
-description: "Discover the top AI-powered platform engineering tools that enable developer self-service. Compare capabilities, practical use cases, and."
+description: "Enable developer self-service by using AI to interpret infrastructure requests in plain language and generate Terraform or CloudFormation. Claude excels at"
 date: 2026-03-16
 author: "theluckystrike"
 permalink: /best-ai-powered-platform-engineering-tools-for-developer-sel/

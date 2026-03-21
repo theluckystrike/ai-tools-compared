@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Clio AI Legal Practice Management Review 2026"
-description: "Clio AI Legal Practice Management Review 2026 — guide with practical tips, comparisons, and expert recommendations for developers and."
+description: "Legal technology continues evolving rapidly, and Clio remains a dominant player in cloud-based practice management. This review examines Clio's AI capabilities"
 date: 2026-03-20
 author: theluckystrike
 permalink: /clio-ai-legal-practice-management-review-2026/

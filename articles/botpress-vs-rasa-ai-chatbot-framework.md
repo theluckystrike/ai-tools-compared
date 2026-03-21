@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Botpress vs Rasa AI Chatbot Framework Compared"
-description: "A practical technical comparison of Botpress and Rasa for building AI chatbots, with code examples, architecture insights, and recommendations for."
+description: "Choosing between Botpress and Rasa requires understanding how each framework approaches chatbot development, customization, and deployment. Both are"
 date: 2026-03-15
 author: theluckystrike
 permalink: /botpress-vs-rasa-ai-chatbot-framework/

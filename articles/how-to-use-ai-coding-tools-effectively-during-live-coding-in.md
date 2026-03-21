@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI Coding Tools Effectively During Live Coding"
-description: "A practical guide for developers on using AI coding assistants during live coding interviews in 2026. Learn strategies, tools, and techniques to."
+description: "Use AI during live coding by having AI suggestions off by default, activating it for specific problems, and narrating decisions to avoid creating confusion"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/

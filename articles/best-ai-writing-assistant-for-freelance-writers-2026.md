@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Writing Assistant for Freelance Writers 2026"
-description: "A practical comparison of AI writing tools for freelance writers in 2026. Includes code examples, API integrations, and recommendations for developers."
+description: "A practical comparison of AI writing tools for freelance writers in 2026. Includes code examples, API integrations, and recommendations for developers"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-writing-assistant-for-freelance-writers-2026/

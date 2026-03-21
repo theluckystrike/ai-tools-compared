@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing Effective CursorRules for React TypeScript Projects"
-description: "A practical guide to creating CursorRules that handle React TypeScript component patterns, custom hooks, and state management effectively."
+description: "A practical guide to creating CursorRules that handle React TypeScript component patterns, custom hooks, and state management effectively"
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-cursorrules-for-react-typescript-projects-/

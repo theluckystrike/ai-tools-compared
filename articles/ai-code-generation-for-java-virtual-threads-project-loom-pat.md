@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Code Generation for Java Virtual Threads Project Loom Pat"
-description: "Learn how AI coding assistants help developers implement Java Virtual Threads and Project Loom patterns effectively, with practical examples and best."
+description: "Learn how AI coding assistants help developers implement Java Virtual Threads and Project Loom patterns effectively, with practical examples and best"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-for-java-virtual-threads-project-loom-pat/

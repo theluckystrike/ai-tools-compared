@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Move Stable Diffusion Workflows to Midjourney"
-description: "A practical guide for developers migrating AI image generation workflows from Stable Diffusion to Midjourney, including prompt conversion tools and."
+description: "Move Stable Diffusion to Midjourney by translating your custom models to Midjourney's style tokens, converting your prompts to their format, and adjusting"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Generate Component Diagrams from React"
-description: "A practical guide for developers on using AI tools to automatically generate component diagrams from React and Vue codebases, with examples and tool."
+description: "A practical guide for developers on using AI tools to automatically generate component diagrams from React and Vue codebases, with examples and tool"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-component-diagrams-from-react-or-v/

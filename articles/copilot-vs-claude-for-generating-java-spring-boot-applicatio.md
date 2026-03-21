@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Claude for Generating Java Spring Boot"
-description: "A practical comparison of GitHub Copilot and Claude for generating Java Spring Boot application code, with real examples and performance insights for."
+description: "When building Java Spring Boot applications in 2026, developers need AI assistants that understand the framework's conventions, annotations, and dependency"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-for-generating-java-spring-boot-applicatio/

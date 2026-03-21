@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Infrastructure as Code Pulumi 2026"
-description: "Compare AI tools for writing Pulumi infrastructure as code. Covers Claude, Copilot, Cursor for TypeScript and Python Pulumi programs with real examples."
+description: "Compare AI tools for writing Pulumi infrastructure as code. Covers Claude, Copilot, Cursor for TypeScript and Python Pulumi programs with real examples"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-infrastructure-as-code-pulumi-2026/

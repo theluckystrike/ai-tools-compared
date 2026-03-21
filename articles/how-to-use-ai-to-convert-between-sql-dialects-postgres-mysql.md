@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Convert Between SQL Dialects Postgres Mysql"
-description: "A practical guide for developers on using AI tools to translate SQL queries across PostgreSQL, MySQL, BigQuery, and Snowflake with real examples and."
+description: "AI tools can translate SQL queries between PostgreSQL, MySQL, BigQuery, and Snowflake by recognizing syntax differences and function-specific implementations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/

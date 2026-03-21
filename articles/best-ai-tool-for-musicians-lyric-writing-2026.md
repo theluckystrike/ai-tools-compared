@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Musicians Lyric Writing in 2026"
-description: "Discover the most effective AI writing tools for musicians creating lyrics in 2026. Compare features, pricing, and real-world performance for."
+description: "Sudowrite is the best purpose-built AI tool for lyric writing in 2026, with dedicated rhyme controls, genre presets for pop, rock, country, and hip-hop, and a"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-musicians-lyric-writing-2026/

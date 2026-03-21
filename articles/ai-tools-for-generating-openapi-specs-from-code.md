@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating OpenAPI Specs from Code"
-description: "Compare AI tools that auto-generate OpenAPI/Swagger specs from existing codebases. Coverage of Claude Code, Copilot, Cursor, Swagger Codegen, and."
+description: "Maintaining API documentation alongside code is friction. Specs drift. Endpoints get deprecated. Request/response shapes change. And manual OpenAPI YAML gets"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-openapi-spec-generation/

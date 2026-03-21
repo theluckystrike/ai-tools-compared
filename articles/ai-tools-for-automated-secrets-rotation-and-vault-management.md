@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated Secrets Rotation and Vault Management"
-description: "A practical guide for developers on using AI tools to automate secrets rotation and integrate with vault management systems, with code examples and."
+description: "Use AI tools to generate vault integration code and rotation logic for your chosen solution (HashiCorp Vault, AWS Secrets Manager, Azure Key Vault, or Google"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-automated-secrets-rotation-and-vault-management/

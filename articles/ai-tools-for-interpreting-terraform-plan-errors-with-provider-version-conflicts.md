@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Interpreting Terraform Plan Errors"
-description: "Practical guide to using AI tools for diagnosing and resolving Terraform provider version conflicts in your infrastructure code."
+description: "Practical guide to using AI tools for diagnosing and resolving Terraform provider version conflicts in your infrastructure code"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for Sharing AI Tool Configuration Files Acros"
-description: "A practical guide to sharing AI coding assistant configuration files across distributed engineering teams. Learn version control strategies."
+description: "A practical guide to sharing AI coding assistant configuration files across distributed engineering teams. Learn version control strategies"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-sharing-ai-tool-configuration-files-acros/

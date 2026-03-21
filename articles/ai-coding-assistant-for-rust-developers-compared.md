@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Assistant for Rust Developers Compared"
-description: "A practical comparison of AI coding assistants for Rust developers, with code examples and recommendations for different use cases."
+description: "A practical comparison of AI coding assistants for Rust developers, with code examples and recommendations for different use cases"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-coding-assistant-for-rust-developers-compared/

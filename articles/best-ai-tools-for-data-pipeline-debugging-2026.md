@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Data Pipeline Debugging 2026"
-description: "Compare AI tools for debugging data pipelines: Claude, GitHub Copilot, Databricks Assistant, dbt Cloud AI. Error diagnosis, lineage tracking, cost optimization."
+description: "Compare AI tools for debugging data pipelines: Claude, GitHub Copilot, Databricks Assistant, dbt Cloud AI. Error diagnosis, lineage tracking, cost optimization"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-data-pipeline-debugging-2026/

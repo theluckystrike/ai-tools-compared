@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Video Game Trailers"
-description: "Discover the top AI tools for creating professional video game trailers, from automated video editing to voice synthesis and visual effects generation."
+description: "Discover the top AI tools for creating professional video game trailers, from automated video editing to voice synthesis and visual effects generation"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-video-game-trailers/

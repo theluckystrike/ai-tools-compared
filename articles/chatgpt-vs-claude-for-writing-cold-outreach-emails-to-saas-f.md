@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT vs Claude for Writing Cold Outreach Emails to Saas"
-description: "A practical comparison of ChatGPT and Claude for writing cold outreach emails to SaaS founders, with prompt examples and recommendations for developers."
+description: "A practical comparison of ChatGPT and Claude for writing cold outreach emails to SaaS founders, with prompt examples and recommendations for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Idiomatic Rust Error Handling"
-description: "A practical comparison of AI coding assistants for writing idiomatic Rust error handling using Result types. Includes code examples and tool."
+description: "A practical comparison of AI coding assistants for writing idiomatic Rust error handling using Result types. Includes code examples and tool"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-idiomatic-rust-error-handling-with/
