@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /midjourney-basic-plan-image-limits-per-month-real-numbers-20/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared]
