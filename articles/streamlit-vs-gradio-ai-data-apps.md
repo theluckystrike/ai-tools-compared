@@ -124,7 +124,7 @@ demo = gr.Interface(
 ### Component Ecosystem
 
 
-**Streamlit** provides a broader set of data-focused components out of the box: dataframes, charts, metrics, and form builders. Its integration with Plotly, Altair, and other visualization libraries is.
+**Streamlit** provides a broader set of data-focused components out of the box: dataframes, charts, metrics, and form builders. Its integration with Plotly, Altair, and other visualization libraries is seamless — call `st.plotly_chart(fig)` or `st.altair_chart(chart)` and the library handles rendering automatically.
 
 
 **Gradio** excels at ML-specific components: audio input/output, image classification interfaces, OCR blocks, and natural language processing demos. The Hugging Face ecosystem provides easy deployment to Spaces.
@@ -164,7 +164,36 @@ def load_large_dataset():
 ```
 
 
-Gradio's function-calling model can be more efficient for simple ML inference since only the decorated function reruns. It also supports queueing and batching for production deployments.
+Gradio's function-calling model can be more efficient for simple ML inference since only the decorated function reruns. It also supports queueing and batching for production deployments:
+
+```python
+with gr.Blocks() as demo:
+    demo.queue(max_size=20)  # Queue up to 20 concurrent requests
+
+def predict(image):
+    return model(image)
+
+gr.Interface(fn=predict, inputs=gr.Image(), outputs=gr.Label()).launch()
+```
+
+
+## Framework Comparison Table
+
+
+| Dimension | Streamlit | Gradio |
+|---|---|---|
+| Primary audience | Data scientists, analysts | ML engineers, researchers |
+| Learning curve | Low | Very low for simple demos |
+| State management | Manual via session_state | Built-in State component |
+| Layout flexibility | Moderate | High (Blocks API) |
+| Data visualization | Excellent (Plotly, Altair, charts) | Basic |
+| ML component library | Limited | Rich (audio, image, video, NLP) |
+| Hugging Face integration | Indirect | Native (Spaces deployment) |
+| Built-in API endpoint | No | Yes (every Gradio app is an API) |
+| Authentication | Built-in support | Manual / paid Spaces feature |
+| Caching primitives | @st.cache_data, @st.cache_resource | Function-level (no reruns) |
+| Batching / queueing | Limited | Built-in queue() |
+| Managed hosting | Streamlit Community Cloud | Hugging Face Spaces |
 
 
 ## When to Choose Streamlit
@@ -173,7 +202,7 @@ Gradio's function-calling model can be more efficient for simple ML inference si
 Streamlit shines when you need:
 
 
-- **Business dashboards** with multiple data visualizations
+- **Business dashboards** with multiple data visualizations across multiple chart types
 
 - **Complex forms** with validation and multi-step workflows
 
@@ -181,8 +210,10 @@ Streamlit shines when you need:
 
 - **Data exploration apps** with interactive filtering and charts
 
+- **Analyst-facing tools** where pandas DataFrames are central to the experience
 
-The framework's strength is getting from idea to deployed app quickly, especially when working with pandas, NumPy, or scientific Python libraries.
+
+The framework's strength is getting from idea to deployed app quickly, especially when working with pandas, NumPy, or scientific Python libraries. Its Community Cloud hosting makes one-click sharing possible with zero infrastructure management.
 
 
 ## When to Choose Gradio
@@ -199,8 +230,59 @@ Gradio is the better choice when:
 
 - You want **built-in API generation** alongside your UI
 
+- You need **concurrent request handling** with its queue system
 
-Gradio's tight integration with the Hugging Face ecosystem makes it the default choice for sharing model demos on their platform.
+
+Gradio's tight integration with the Hugging Face ecosystem makes it the default choice for sharing model demos on their platform. Every Gradio app also automatically exposes a REST API, which means your demo and your production API endpoint can be the same code.
+
+
+## Building a Practical AI App: Two Implementations
+
+
+To illustrate the difference concretely, here is the same LLM-powered text summarizer built in both frameworks.
+
+**Streamlit version:**
+
+```python
+import streamlit as st
+from transformers import pipeline
+
+@st.cache_resource
+def load_model():
+    return pipeline("summarization", model="facebook/bart-large-cnn")
+
+summarizer = load_model()
+
+st.title("Text Summarizer")
+text = st.text_area("Enter text to summarize", height=200)
+
+if st.button("Summarize") and text:
+    with st.spinner("Summarizing..."):
+        result = summarizer(text, max_length=130, min_length=30)
+        st.success(result[0]["summary_text"])
+```
+
+**Gradio version:**
+
+```python
+import gradio as gr
+from transformers import pipeline
+
+summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+
+def summarize(text):
+    result = summarizer(text, max_length=130, min_length=30)
+    return result[0]["summary_text"]
+
+gr.Interface(
+    fn=summarize,
+    inputs=gr.Textbox(lines=8, label="Input Text"),
+    outputs=gr.Textbox(label="Summary"),
+    title="Text Summarizer"
+).launch()
+```
+
+The Streamlit version uses `@st.cache_resource` to avoid reloading the model on every rerun — an important optimization. The Gradio version is slightly shorter and automatically creates a `/predict` API endpoint alongside the web UI.
 
 
 ## Production Considerations
@@ -209,11 +291,33 @@ Gradio's tight integration with the Hugging Face ecosystem makes it the default 
 Both frameworks are suitable for prototypes and internal tools. For production AI applications, consider:
 
 
-- Authentication: Streamlit has built-in support for external auth; Gradio requires custom implementation
+- **Authentication**: Streamlit has built-in support for external auth providers via `st.secrets` and `st.experimental_user`; Gradio requires custom implementation or the paid Hugging Face Spaces Pro tier for auth
 
-- Scaling: Both can handle moderate traffic but need careful optimization for high-load scenarios
+- **Scaling**: Both can handle moderate traffic but need careful optimization for high-load scenarios. Streamlit runs one server process per user session by default; Gradio's queue system handles concurrent users more efficiently out of the box
 
-- Deployment: Streamlit offers managed hosting; Gradio integrates with Hugging Face Spaces and can be deployed anywhere
+- **Deployment**: Streamlit Community Cloud offers free managed hosting. Gradio integrates natively with Hugging Face Spaces (free tier available) and can be deployed anywhere as a standard Python ASGI application
+
+- **Monitoring**: Neither framework ships with built-in observability. Instrument with standard tools like Prometheus client libraries or Sentry for error tracking
+
+
+## Frequently Asked Questions
+
+
+**Can I use both Streamlit and Gradio in the same project?**
+
+Yes, though it is unusual. Some teams use Gradio to build a model inference API and Streamlit to build a data-rich dashboard that calls that API. This keeps concerns separated but adds operational complexity.
+
+**Which framework has better community support?**
+
+Both have active communities. Streamlit has the larger general data science community. Gradio has stronger ties to the ML research community via Hugging Face. Stack Overflow activity is higher for Streamlit; Hugging Face forums and Discord are better for Gradio-specific questions.
+
+**Is Gradio suitable for non-ML apps?**
+
+Gradio can build general web apps, but its component set is optimized for ML workflows. Using it for a CRUD app or business dashboard would require working around limitations rather than with the framework's strengths. Use Streamlit for those cases.
+
+**How do I handle secrets in production?**
+
+Streamlit uses a `secrets.toml` file locally and the Secrets management UI in Community Cloud. Gradio apps should use standard environment variables accessed via `os.environ`. Both approaches keep credentials out of your source code.
 
 
 ## Related Articles
