@@ -225,3 +225,365 @@ buf breaking --against 'proto/v1/*'
 
 4. **Enum field naming**: Using numbers instead of string constants for status fields
    - *Fix*: Request proto enums for status fields; avoid plain integers
+
+## Complete Proto3 Best Practices Guide
+
+### Package Versioning Strategy
+
+Always use API versioning in package names to enable rolling migrations:
+
+```protobuf
+syntax = "proto3";
+package myapi.v2;  // Enables v1 and v2 to coexist
+
+// Option 1: Keep v1 and v2 packages separate
+// Old clients use: myapi.v1.UserService
+// New clients use: myapi.v2.UserService
+
+// Option 2: Feature flags within single version
+service UserService {
+  option (api_version) = "v2";
+
+  rpc GetUser(GetUserRequest) returns (User) {
+    option deprecated = false;
+  }
+
+  // v1 users continue using deprecated endpoint
+  rpc GetUserLegacy(GetUserRequestV1) returns (UserV1) {
+    option deprecated = true;
+  }
+}
+```
+
+### Field Number Management for Long-Term Maintenance
+
+Carefully plan field numbers to avoid conflicts during evolution:
+
+```protobuf
+syntax = "proto3";
+package payment.v1;
+
+message Transaction {
+  // Reserved ranges for future expansion
+  reserved 10 to 19;  // Reserved for payment provider fields
+  reserved 20 to 29;  // Reserved for compliance/audit fields
+  reserved 30 to 39;  // Reserved for future payment methods
+
+  // Core fields (stable, won't change)
+  string transaction_id = 1;
+  string customer_id = 2;
+  Money amount = 3;
+  int64 timestamp = 4;
+
+  // Status and metadata (frequently used)
+  string status = 5;  // PENDING, SUCCESS, FAILED
+  map<string, string> metadata = 6;
+
+  // Payment details
+  PaymentMethod payment_method = 7;
+  string payment_provider = 8;
+  string provider_transaction_id = 9;
+
+  // Compliance (future use)
+  // Fields 10-19 reserved
+
+  // Extended fields for new features
+  string idempotency_key = 40;
+  repeated string webhook_event_ids = 41;
+}
+
+message Money {
+  string currency_code = 1;  // USD, EUR, etc.
+  int64 units = 2;           // Whole units
+  int32 nanos = 3;           // Nanosecond units for precision
+}
+
+enum PaymentMethod {
+  PAYMENT_METHOD_UNSPECIFIED = 0;
+  CREDIT_CARD = 1;
+  BANK_TRANSFER = 2;
+  WALLET = 3;
+  // Future methods: 4-10
+}
+```
+
+### Streaming Patterns and Implementation
+
+Understand when to use different streaming patterns:
+
+```protobuf
+service AnalyticsService {
+  // Pattern 1: Unary (request-response)
+  rpc GetMetrics(MetricsRequest) returns (MetricsResponse) {}
+
+  // Pattern 2: Server streaming (server sends multiple responses)
+  // Use for: pagination without client loops, real-time updates, large datasets
+  rpc StreamMetrics(MetricsRequest) returns (stream Metric) {}
+
+  // Pattern 3: Client streaming (client sends multiple requests)
+  // Use for: batch uploads, event logging, multiple operations
+  rpc LogEvents(stream LogEvent) returns (LogResponse) {}
+
+  // Pattern 4: Bidirectional streaming (both send multiple)
+  // Use for: real-time chat, collaborative editing, multiplayer games
+  rpc ChatWith(stream ChatMessage) returns (stream ChatMessage) {}
+}
+
+// Example: Streaming large paginated response
+message MetricsRequest {
+  string service_name = 1;
+  int32 limit = 2;        // Max metrics per stream message
+  string start_time = 3;  // RFC 3339 format
+  string end_time = 4;
+}
+
+message Metric {
+  string name = 1;
+  float value = 2;
+  int64 timestamp = 3;
+}
+
+// Example: Batch event logging
+message LogEvent {
+  string event_id = 1;
+  string event_type = 2;  // "error", "warning", "info"
+  map<string, string> fields = 3;
+  int64 timestamp = 4;
+}
+
+message LogResponse {
+  int32 accepted = 1;
+  int32 rejected = 2;
+  repeated string error_messages = 3;
+}
+```
+
+### Error Handling and Custom Status Codes
+
+Design error contracts clearly in proto definitions:
+
+```protobuf
+syntax = "proto3";
+package errors.v1;
+
+// Define error codes at proto level
+enum ErrorCode {
+  ERROR_CODE_UNSPECIFIED = 0;
+  VALIDATION_ERROR = 1;
+  NOT_FOUND = 2;
+  ALREADY_EXISTS = 3;
+  PERMISSION_DENIED = 4;
+  RESOURCE_EXHAUSTED = 5;
+  FAILED_PRECONDITION = 6;
+  ABORTED = 7;
+  UNAVAILABLE = 8;
+  INTERNAL_ERROR = 9;
+}
+
+// Structured error message
+message ErrorDetail {
+  ErrorCode code = 1;
+  string message = 2;
+  map<string, string> metadata = 3;
+
+  // Track error chain for debugging
+  ErrorDetail cause = 4;
+}
+
+// Include error detail in responses
+message UserServiceResponse {
+  oneof result {
+    User success = 1;
+    ErrorDetail error = 2;
+  }
+}
+
+// Or use standard gRPC status codes
+// In Go implementation:
+// return status.Error(codes.NotFound, "user not found")
+```
+
+### Complete Go Implementation Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "log"
+    pb "myapi/gen/go/payment/v1"
+    "google.golang.org/grpc"
+    "google.golang.org/grpc/codes"
+    "google.golang.org/grpc/status"
+)
+
+type PaymentServer struct {
+    pb.UnimplementedPaymentServiceServer
+}
+
+func (s *PaymentServer) ProcessPayment(
+    ctx context.Context,
+    req *pb.PaymentRequest,
+) (*pb.PaymentResponse, error) {
+    // Validate request using proto-generated code
+    if err := req.Validate(); err != nil {
+        return nil, status.Error(codes.InvalidArgument, err.Error())
+    }
+
+    // Process payment
+    txn := &pb.Transaction{
+        TransactionId: generateID(),
+        CustomerId:    req.CustomerId,
+        Amount: &pb.Money{
+            CurrencyCode: "USD",
+            Units:        100,
+            Nanos:        50,
+        },
+        Status:    "PENDING",
+        Timestamp: time.Now().Unix(),
+    }
+
+    // Return typed response
+    return &pb.PaymentResponse{
+        TransactionId: txn.TransactionId,
+        Status:        txn.Status,
+    }, nil
+}
+
+func (s *PaymentServer) StreamTransactions(
+    req *pb.TransactionQuery,
+    stream pb.PaymentService_StreamTransactionsServer,
+) error {
+    // Streaming example: send multiple transactions
+    txns := fetchTransactions(req)
+
+    for _, txn := range txns {
+        if err := stream.Send(&pb.Transaction{
+            TransactionId:      txn.ID,
+            CustomerId:         txn.CustomerID,
+            Status:             txn.Status,
+            Amount:             txn.Amount,
+            PaymentMethod:      pb.PaymentMethod_CREDIT_CARD,
+            ProviderTxnId:      txn.ProviderID,
+        }); err != nil {
+            return status.Error(codes.Internal, err.Error())
+        }
+    }
+
+    return nil
+}
+```
+
+### Python Implementation Example
+
+```python
+import grpc
+from myapi.payment.v1 import payment_pb2, payment_pb2_grpc
+from datetime import datetime
+
+class PaymentServicer(payment_pb2_grpc.PaymentServiceServicer):
+    def ProcessPayment(self, request, context):
+        # Validate request
+        if not request.customer_id:
+            context.abort(grpc.StatusCode.INVALID_ARGUMENT, "Missing customer_id")
+
+        # Process payment
+        transaction = payment_pb2.Transaction(
+            transaction_id="txn_12345",
+            customer_id=request.customer_id,
+            amount=payment_pb2.Money(
+                currency_code="USD",
+                units=100,
+                nanos=50
+            ),
+            status="SUCCESS",
+            timestamp=int(datetime.now().timestamp()),
+            payment_method=payment_pb2.CREDIT_CARD
+        )
+
+        return payment_pb2.PaymentResponse(
+            transaction_id=transaction.transaction_id,
+            status=transaction.status
+        )
+
+    def StreamTransactions(self, request, context):
+        """Stream transactions matching query."""
+        transactions = [
+            payment_pb2.Transaction(
+                transaction_id=f"txn_{i}",
+                customer_id=request.customer_id,
+                status="SUCCESS",
+                timestamp=int(datetime.now().timestamp()),
+            )
+            for i in range(request.limit)
+        ]
+
+        for txn in transactions:
+            yield txn
+```
+
+### TypeScript Implementation Example
+
+```typescript
+import * as grpc from '@grpc/grpc-js';
+import { PaymentServiceService } from './generated/PaymentService';
+import { PaymentRequest, PaymentResponse, Transaction, Money } from './generated/payment';
+
+class PaymentServer implements PaymentServiceService {
+    async ProcessPayment(
+        call: grpc.ServerUnaryCall<PaymentRequest, PaymentResponse>,
+        callback: grpc.sendUnaryData<PaymentResponse>
+    ): Promise<void> {
+        const request = call.request;
+
+        // Validation
+        if (!request.customer_id) {
+            callback({
+                code: grpc.status.INVALID_ARGUMENT,
+                details: "Missing customer_id"
+            });
+            return;
+        }
+
+        // Process
+        const response = new PaymentResponse({
+            transaction_id: `txn_${Date.now()}`,
+            status: "SUCCESS"
+        });
+
+        callback(null, response);
+    }
+
+    async *StreamTransactions(
+        call: grpc.ServerReadableStream<any, Transaction>
+    ): AsyncGenerator<Transaction> {
+        const request = call.request;
+
+        for (let i = 0; i < request.limit; i++) {
+            yield new Transaction({
+                transaction_id: `txn_${i}`,
+                customer_id: request.customer_id,
+                status: "SUCCESS",
+                timestamp: BigInt(Date.now() / 1000)
+            });
+        }
+    }
+}
+
+// Start server
+const server = new grpc.Server();
+server.addService(PaymentServiceService, new PaymentServer());
+server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
+    server.start();
+    console.log('Server started on port 50051');
+});
+```
+
+## AI-Assisted Proto Workflow Summary
+
+1. **Design phase (Claude)**: Describe your service in plain language, get proto structure
+2. **Development phase (Copilot/Codeium)**: Inline suggestions while editing .proto files
+3. **Validation phase (Manual)**: Use `protolint` and `buf` to catch errors AI might miss
+4. **Implementation phase (Claude or GitHub Copilot)**: Generate language-specific stubs
+5. **Testing phase (Claude)**: Generate comprehensive test cases for proto definitions

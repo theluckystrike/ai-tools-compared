@@ -215,6 +215,233 @@ Use this data to refine your AI prompts, scripting style, and tutorial topics fo
 The key to success is using AI where it provides the most value—mechanical tasks like editing, transcription, and formatting—while maintaining human oversight for technical accuracy, brand voice, and strategic decisions. With this approach, DevRel teams can produce tutorials that educate, inform, and drive developer adoption at significantly higher velocity than manual production methods would allow.
 
 
+## Advanced Prompt Engineering for Video Scripts
+
+Use these proven prompts with Claude or ChatGPT to generate high-quality tutorial scripts:
+
+```
+Write a 7-minute technical tutorial script for intermediate developers.
+
+Topic: Implementing OAuth2 with our REST API
+
+Structure:
+- Hook (15 seconds): "In this video, you'll learn..."
+- Prerequisites (30 seconds): Required knowledge, tools needed
+- Conceptual intro (90 seconds): What OAuth2 is, why it matters for security
+- Step 1 (2 min): Create application credentials in dashboard, show UI
+- Step 2 (2 min): Implement authorization code flow with code examples
+- Step 3 (90 sec): Exchange auth code for access token, handle responses
+- Common mistakes (60 sec): "Don't forget to...", "Avoid doing..."
+- Conclusion (30 sec): Next steps, link to full documentation
+
+Technical specs:
+- Use our API endpoint format: https://api.example.com/v2/oauth/authorize
+- Show real error responses and how to handle them
+- Include a working code example in Node.js
+- Mention rate limits and best practices
+- Reference our documentation pages
+
+Tone: Conversational but professional. Assume viewer has VS Code open.
+Avoid: "In conclusion", "As we've discussed". Use: "Next up", "Here's the thing"
+```
+
+This generates a detailed, structured script with timing per section that requires minimal editing.
+
+## Automated SRT Generation and Translation
+
+For global reach, automate caption generation and translation:
+
+```bash
+#!/bin/bash
+# script: generate-translated-subs.sh
+
+VIDEO_FILE=$1
+TARGET_LANGS=("es" "fr" "de" "ja")
+
+# Step 1: Extract audio from video
+ffmpeg -i "$VIDEO_FILE" audio.wav
+
+# Step 2: Transcribe to SRT using Descript API or similar
+descript_api transcribe audio.wav > transcript.srt
+
+# Step 3: Generate English subtitles first
+whisper audio.wav --output_format srt --language en
+
+# Step 4: Translate to target languages
+for lang in "${TARGET_LANGS[@]}"; do
+    echo "Translating to $lang..."
+    python translate_srt.py \
+      --input transcript.srt \
+      --output "transcript_$lang.srt" \
+      --target-lang "$lang" \
+      --preserve-timings
+done
+
+# Step 5: Upload to video platform
+for srt_file in transcript_*.srt; do
+    youtube-dl upload-captions "$VIDEO_FILE" --captions "$srt_file"
+done
+```
+
+## Building a DevRel Video Publishing Pipeline
+
+End-to-end workflow with cost breakdown:
+
+```yaml
+# devrel-video-pipeline.yml
+pipeline:
+  stages:
+    - planning:
+        cost: ~$50 (2-3 hours developer time)
+        tools:
+          - ChatGPT: Script outline generation
+          - Notion: Script collaboration and feedback
+        outputs:
+          - Approved script
+          - Shot list
+
+    - production:
+        cost: ~$0 (internal resources)
+        tools:
+          - ScreenFlow/OBS: Screen recording
+          - Riverside.fm: Multi-speaker remote recording
+          - ElevenLabs: Voiceover generation (if needed)
+        outputs:
+          - Raw footage
+          - Audio tracks
+
+    - editing:
+        cost: ~$30/video (Descript tier) or $0 (open-source)
+        tools:
+          - Descript: Auto-transcription, filler removal, captioning
+          - Opus Clip: Auto-editing for short-form clips
+          - FFmpeg: Advanced effects and stabilization
+        outputs:
+          - Edited video
+          - Subtitles (multiple languages)
+          - Short clips for social media
+
+    - optimization:
+        cost: ~$20/video (TubeBuddy Pro) or ~$0 (manual)
+        tools:
+          - TubeBuddy: Title, thumbnail, keyword optimization
+          - VidIQ: Competitor analysis
+          - Canva: Thumbnail design
+        outputs:
+          - SEO-optimized metadata
+          - Custom thumbnail
+
+    - publishing:
+        cost: ~$0 (YouTube free)
+        tools:
+          - YouTube API: Automated publishing
+          - Zapier: Social media cross-posting
+        outputs:
+          - Published video
+          - Social media posts
+
+total_cost_per_video: $100-150
+time_investment: 5-8 hours
+without_ai_tools: 16-20 hours, $400-600
+```
+
+## Performance Metrics Framework
+
+Track these KPIs to optimize your AI-assisted video workflow:
+
+```python
+import pandas as pd
+from datetime import datetime
+
+class VideoMetricsTracker:
+    def __init__(self):
+        self.metrics = []
+
+    def record_video(self, video_data):
+        """Log metrics for a completed video."""
+        entry = {
+            'date': datetime.now(),
+            'title': video_data['title'],
+            'production_time_hours': video_data['prod_time'],
+            'script_generation_ai': video_data['script_tool'],
+            'editing_ai': video_data['editing_tool'],
+            'post_publish_metrics': {
+                'views_30d': video_data.get('views_30d', 0),
+                'avg_watch_percent': video_data.get('watch_percent', 0),
+                'click_through_rate': video_data.get('ctr', 0),
+                'engagement_rate': video_data.get('engagement', 0)
+            }
+        }
+        self.metrics.append(entry)
+        return self._analyze_trends()
+
+    def _analyze_trends(self):
+        """Identify patterns in successful videos."""
+        df = pd.DataFrame(self.metrics)
+
+        # Which script tool produces videos with higher engagement?
+        script_tool_performance = df.groupby('script_generation_ai').agg({
+            'production_time_hours': 'mean',
+            'avg_watch_percent': 'mean',
+            'views_30d': 'mean'
+        })
+
+        # ROI per tool
+        print("Script generation tool effectiveness:")
+        print(script_tool_performance)
+
+        return {
+            'most_efficient_script_tool': script_tool_performance['production_time_hours'].idxmin(),
+            'highest_engagement_tool': script_tool_performance['avg_watch_percent'].idxmax(),
+            'avg_production_hours': df['production_time_hours'].mean()
+        }
+
+# Usage
+tracker = VideoMetricsTracker()
+tracker.record_video({
+    'title': 'OAuth2 Integration Guide',
+    'prod_time': 4.5,
+    'script_tool': 'Claude',
+    'editing_tool': 'Descript',
+    'views_30d': 2400,
+    'watch_percent': 68,
+    'ctr': 0.045,
+    'engagement': 0.12
+})
+```
+
+## Real-World Budget Allocation for DevRel Video Production
+
+**Startup (0-5 videos/month):**
+- Monthly spend: $30-50
+- Tools: Claude Pro ($20), Descript Free, Canva Free
+- Production model: Single person part-time
+- Workflow: AI script → manual recording → Descript editing → YouTube
+
+**Growth Stage (5-15 videos/month):**
+- Monthly spend: $200-350
+- Tools: Descript Pro ($25), TubeBuddy Pro ($60), ChatGPT Team ($30), Runway ML ($40)
+- Production model: 1 dedicated DevRel + freelance editor
+- Workflow: AI script → improved recording setup → AI-powered auto-editing → optimization
+
+**Scale (15+ videos/month):**
+- Monthly spend: $800-1500
+- Tools: Descript Premium ($100), TubeBuddy Team ($100), Claude API credits ($200), Runway ($150)
+- Production model: 2-3 person DevRel team, dedicated editor
+- Workflow: Multiple scripts in parallel → team recording → batch editing → social media automation
+
+## Measuring AI Impact on DevRel Efficiency
+
+Baseline (traditional process): 16 hours/video
+- Scripting (6h) → Recording (3h) → Editing (5h) → Publishing (2h)
+
+With AI tools (optimized):
+- Scripting (1.5h with Claude) → Recording (3h) → Editing (1h with Descript) → Publishing (0.5h with automation)
+- **Total: 6 hours (-62.5% time)**
+- **Cost savings: $400-600 per video** (at $100/hour developer rate)
+
+At 10 videos/month: **400 hours annually → 150 hours annually (-250 hours)**
+
 ## Related Articles
 
 - [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)

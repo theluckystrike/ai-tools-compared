@@ -211,6 +211,186 @@ Choose Windsurf if you need to scaffold quickly and are comfortable iterating. W
 
 Both tools integrate with Next.js and support Tailwind CSS out of the box. Your choice ultimately depends on whether you prefer controlled, prompt-driven generation (Cursor) or proactive, batch-oriented scaffolding (Windsurf).
 
+## Pricing and Feature Comparison
+
+| Feature | Cursor | Windsurf | Cost |
+|---------|--------|----------|------|
+| Code completion | Yes | Yes | $20/month each |
+| Chat interface | Yes | Yes | Included |
+| Flow mode (multi-file gen) | No | Yes | Windsurf only |
+| Codebase indexing | Excellent | Good | Cursor: $20/mo, Windsurf: $10/mo |
+| Cursor rules (.cursorrules) | Yes | No | Cursor advantage |
+| Composer (long context) | Yes | Yes | Cursor: $20/mo, Windsurf: included |
+| VSCode / JetBrains support | Yes / Yes | Yes / Limited | Both supported |
+
+For a solo developer building one Next.js app per month, Cursor costs $20/month. For a team of 3 developers, costs total $60/month plus any add-ons.
+
+## Performance and Speed Comparison
+
+### Cursor Generation Speed
+
+Cursor typically takes 15-45 seconds per component depending on complexity:
+
+```tsx
+// Prompt: "Create a data table with sorting, filtering, and pagination"
+// Generation time: ~30 seconds
+// Lines of code: 120-150 lines including types
+
+export interface DataTableProps<T> {
+  data: T[];
+  columns: ColumnDef<T>[];
+  onSort?: (field: keyof T) => void;
+  onFilter?: (field: keyof T, value: string) => void;
+  pageSize?: number;
+}
+
+export function DataTable<T>({ data, columns, onSort, onFilter, pageSize = 10 }: DataTableProps<T>) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [sortField, setSortField] = useState<keyof T | null>(null);
+  const [filters, setFilters] = useState<Record<string, string>>({});
+
+  // Sorting logic...
+  // Filtering logic...
+  // Pagination logic...
+}
+```
+
+### Windsurf Flow Mode Speed
+
+Windsurf's Flow mode generates multiple files simultaneously in 20-60 seconds:
+
+```bash
+# Input: "Create admin dashboard with sidebar, header, user profile widget"
+# Generation time: ~45 seconds
+# Generated files:
+#   - AdminLayout.tsx
+#   - Sidebar.tsx
+#   - Header.tsx
+#   - UserProfileWidget.tsx
+#   - types.ts
+# Total lines: 400-500 lines across all files
+```
+
+For a complete landing page with 5-7 sections, Cursor requires 5-7 prompts (2-3 minutes total), while Windsurf generates everything in one 60-second pass.
+
+## Real-World Workflow Example: SaaS Dashboard
+
+Imagine building a SaaS dashboard from a Figma mockup with 8 pages: login, dashboard overview, settings, billing, team management, integration marketplace, activity logs, and help center.
+
+**With Cursor:**
+- Page 1 (login): 1 prompt, 45 seconds
+- Dashboard overview: 3 prompts (header, main grid, widgets) = 2 minutes
+- Settings page: 2 prompts = 1.5 minutes
+- Billing: 2 prompts = 1.5 minutes
+- Team management: 3 prompts = 2 minutes
+- Integrations marketplace: 4 prompts = 3 minutes
+- Activity logs: 2 prompts = 1.5 minutes
+- Help center: 2 prompts = 1.5 minutes
+- **Total time: ~15 minutes**, **Total prompts: 19**
+- **Code review and corrections: 10-20 minutes**
+- **Full build time: 25-35 minutes**
+
+**With Windsurf:**
+- Entire dashboard: 1 Flow prompt = 2 minutes
+- Additional refinements: 3-4 follow-up prompts = 3 minutes
+- **Total time: ~5 minutes**, **Total prompts: 4-5**
+- **Code review and corrections: 5-10 minutes**
+- **Full build time: 10-15 minutes**
+
+Windsurf halves the time to a working prototype, though Cursor's output requires fewer post-generation fixes.
+
+## Configuration Best Practices
+
+### Cursor's .cursorrules File
+
+Create a `.cursorrules` file in your project root to guide Cursor's generation:
+
+```
+# .cursorrules
+## Stack: Next.js 15, React 19, TypeScript, Tailwind CSS, shadcn/ui
+
+### Component Structure
+- All components are functional components with TypeScript interfaces
+- Props interface: separate file for complex components
+- Export pattern: `export function ComponentName(props) { ... }`
+- Use optional chaining and nullish coalescing
+
+### Tailwind Configuration
+- Container max-width: max-w-6xl
+- Breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px)
+- Color palette: Slate (neutral), Blue (primary), Amber (accent)
+- Dark mode: class-based using data-theme attribute
+
+### API Integration
+- Base URL: process.env.NEXT_PUBLIC_API_URL
+- Auth header: Authorization: Bearer {token}
+- Error handling: Toast notifications via useToast hook
+- Loading states: Show skeleton components
+
+### Performance
+- Image optimization: use next/image with width/height
+- Code splitting: dynamic imports for heavy components
+- Data fetching: Server Components preferred, useTransition for mutations
+```
+
+### Windsurf Flow Mode Customization
+
+Configure Flow mode behavior in your workspace:
+
+```json
+// .windsurf/config.json
+{
+  "flow": {
+    "autoGenerateRelated": true,
+    "generateTests": true,
+    "targetFileCount": 5,
+    "includeTypeDefinitions": true
+  },
+  "styling": {
+    "framework": "tailwind",
+    "componentLibrary": "shadcn/ui"
+  },
+  "typescript": {
+    "strict": true,
+    "generateInterfaces": true
+  }
+}
+```
+
+## Incremental Development vs. Full Scaffold
+
+### Cursor Approach: Incremental
+
+Cursor's workflow naturally leads to incremental development:
+
+```
+Day 1: Generate core components (Login, Nav, Dashboard Grid)
+Day 2: Generate data layer (hooks, API client)
+Day 3: Integrate with backend, add error handling
+Day 4: Fine-tune styling, performance optimization
+```
+
+### Windsurf Approach: Rapid Prototype
+
+Windsurf encourages rapid prototyping:
+
+```
+Hour 1: Generate full feature scaffolds (all pages and components)
+Hour 2-3: Review and refactor generated code
+Hour 4: Integrate with backend services
+```
+
+For complex applications requiring tight integration with existing systems, Cursor's incremental approach may be safer. For greenfield projects where you want fast iteration, Windsurf's batch generation speeds up the process.
+
+## Hybrid Strategy
+
+The most effective teams use both tools:
+
+1. Use Windsurf to scaffold the full application structure quickly
+2. Use Cursor to refine individual components and integrate with APIs
+3. Use Cursor for bug fixes and feature additions in established projects
+
+This hybrid approach captures Windsurf's prototyping speed while leveraging Cursor's precision for production code.
 
 ---
 

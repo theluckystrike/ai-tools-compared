@@ -215,6 +215,300 @@ The final decision comes down to your specific use case. If you want simplicity 
 ---
 
 
+## Detailed Token Cost Examples
+
+Understanding token usage is crucial for API cost prediction. Here's how tokens map to real queries:
+
+```python
+# Example 1: Simple factual query
+query_1 = "What is the capital of France?"
+# Input tokens: ~8
+# Expected output tokens: ~15
+# Cost: (8 × $0.10/1M) + (15 × $0.80/1M) = ~$0.00001
+
+# Example 2: Complex research query
+query_2 = """
+Compare TypeScript vs Python for machine learning projects.
+Consider:
+- Type safety
+- Library ecosystem
+- Performance characteristics
+- Learning curve for data scientists
+- Real-world production usage
+Provide a detailed analysis with code examples.
+"""
+# Input tokens: ~65
+# Expected output tokens: ~500
+# Cost: (65 × $0.10/1M) + (500 × $0.80/1M) = ~$0.0004
+
+# Example 3: Document analysis with context
+query_3 = """
+[Large technical document pasted here - 8,000 tokens]
+Summarize the key security vulnerabilities and recommend fixes.
+"""
+# Input tokens: ~8,100
+# Expected output tokens: ~300
+# Cost: (8,100 × $0.10/1M) + (300 × $0.80/1M) = ~$0.001
+```
+
+For the Pro subscription, all three queries are included in your unlimited monthly allotment.
+
+## Advanced Caching Strategy for API Users
+
+Implement smart caching to dramatically reduce token costs:
+
+```python
+import hashlib
+import json
+import time
+from datetime import datetime, timedelta
+from typing import Optional
+import redis
+
+class PerplexityCache:
+    def __init__(self, redis_client: redis.Redis, ttl_days: int = 7):
+        self.redis = redis_client
+        self.ttl = ttl_days * 24 * 3600
+
+    def _hash_query(self, query: str, model: str) -> str:
+        """Create deterministic cache key."""
+        key_str = f"{model}:{query}"
+        return hashlib.sha256(key_str.encode()).hexdigest()
+
+    def get(self, query: str, model: str = "sonar") -> Optional[dict]:
+        """Retrieve cached response if available."""
+        cache_key = self._hash_query(query, model)
+        cached = self.redis.get(cache_key)
+
+        if cached:
+            return json.loads(cached)
+        return None
+
+    def set(self, query: str, response: dict, model: str = "sonar"):
+        """Store response with TTL."""
+        cache_key = self._hash_query(query, model)
+        self.redis.setex(
+            cache_key,
+            self.ttl,
+            json.dumps({
+                'response': response,
+                'cached_at': datetime.now().isoformat(),
+                'tokens_saved': response.get('usage', {}).get('total_tokens', 0)
+            })
+        )
+
+    def get_cache_stats(self) -> dict:
+        """Track cache effectiveness."""
+        all_keys = self.redis.keys('*')
+        total_tokens_saved = 0
+
+        for key in all_keys:
+            cached = json.loads(self.redis.get(key))
+            total_tokens_saved += cached.get('tokens_saved', 0)
+
+        return {
+            'cached_queries': len(all_keys),
+            'estimated_savings': f"${total_tokens_saved * 0.00008:.2f}",
+            'ttl_days': self.ttl // (24 * 3600)
+        }
+
+# Usage
+cache = PerplexityCache(redis.Redis())
+
+# Check cache before making API call
+cached_response = cache.get("What is machine learning?")
+if cached_response:
+    print("Cache hit! Saving tokens and money.")
+    response = cached_response
+else:
+    response = client.chat.completions.create(...)
+    cache.set("What is machine learning?", response)
+```
+
+## Batch Processing for Cost-Effective Scale
+
+If you have dozens of queries to process:
+
+```python
+import asyncio
+from datetime import datetime
+
+async def batch_search(queries: list[str], max_concurrent: int = 3) -> list[dict]:
+    """Process multiple queries with rate limiting and cost tracking."""
+
+    semaphore = asyncio.Semaphore(max_concurrent)
+
+    async def rate_limited_query(query: str) -> dict:
+        async with semaphore:
+            # Check cache first
+            cached = cache.get(query)
+            if cached:
+                return {**cached, 'from_cache': True}
+
+            # Rate limit: wait if necessary
+            await asyncio.sleep(0.5)  # 2 req/sec limit
+
+            response = await client.chat.completions.create(
+                model="sonar",
+                messages=[{"role": "user", "content": query}]
+            )
+
+            cache.set(query, response)
+            return {**response, 'from_cache': False}
+
+    results = await asyncio.gather(*[
+        rate_limited_query(q) for q in queries
+    ])
+
+    # Calculate costs
+    total_tokens = sum(r.get('usage', {}).get('total_tokens', 0) for r in results)
+    cache_hits = sum(1 for r in results if r.get('from_cache'))
+
+    print(f"Processed {len(queries)} queries")
+    print(f"Cache hits: {cache_hits}")
+    print(f"Total tokens: {total_tokens}")
+    print(f"Estimated cost: ${total_tokens * 0.00008:.2f}")
+
+    return results
+
+# Run batch
+queries = [
+    "What are the best practices for React hooks?",
+    "Explain Docker container networking",
+    "Compare PostgreSQL vs MongoDB",
+    # ... more queries
+]
+
+results = asyncio.run(batch_search(queries))
+```
+
+## Cost Comparison: Real-World Scenarios
+
+### Scenario 1: Small Company Using API for Customer Support Bot
+
+```
+Daily queries: 50
+Avg tokens per query: 1,500 (input: 300, output: 1,200)
+Model: Sonar (cheapest tier)
+
+Monthly calculation:
+- Queries: 50 × 30 = 1,500
+- Total input tokens: 1,500 × 300 = 450,000
+- Total output tokens: 1,500 × 1,200 = 1,800,000
+- Input cost: (450,000 / 1,000,000) × $0.10 = $0.045
+- Output cost: (1,800,000 / 1,000,000) × $0.80 = $1.44
+- Monthly total: $1.49
+
+Pro Subscription: $20/month
+
+Winner: API by $18.51/month
+```
+
+### Scenario 2: Individual Researcher with Heavy Ad-Hoc Usage
+
+```
+Monthly queries: 80 (irregular, some very long)
+Avg tokens per query: 3,000 (includes document analysis)
+Avg output: 1,500 tokens
+
+Monthly calculation:
+- Queries: 80
+- Total input: 80 × 3,000 = 240,000
+- Total output: 80 × 1,500 = 120,000
+- Cost: (240K / 1M) × $0.10 + (120K / 1M) × $0.80 = $0.024 + $0.096 = $0.12
+
+Pro Subscription: $20/month
+
+Winner: API by $19.88/month
+
+But Pro offers:
+- No token counting stress
+- Unlimited "fast" searches
+- Perfect for exploratory research
+- Better UI/UX for interactive searching
+```
+
+### Scenario 3: Enterprise Running Automated Research Pipeline
+
+```
+Daily automated searches: 500
+Average tokens: 2,000 per query (with context)
+Processing: 4am-11pm (19 hours/day)
+
+Monthly calculation:
+- Queries: 500 × 30 = 15,000
+- Input: 15,000 × 400 = 6,000,000
+- Output: 15,000 × 1,600 = 24,000,000
+- Input cost: (6,000,000 / 1,000,000) × $0.10 = $0.60
+- Output cost: (24,000,000 / 1,000,000) × $0.80 = $19.20
+- Monthly total: $19.80
+
+Pro Subscription: $20/month (only 1 user)
+For 10 users: $200/month
+
+Winner at scale: API by substantial margin
+```
+
+## Token Estimation Tools and Commands
+
+Estimate costs before committing:
+
+```bash
+#!/bin/bash
+# estimate-tokens.sh
+
+QUERY=$1
+MODEL=${2:-sonar}
+
+# Use Perplexity's token counter (if available via API)
+# Otherwise, estimate: roughly 0.75 tokens per word
+
+WORD_COUNT=$(echo "$QUERY" | wc -w)
+ESTIMATED_INPUT_TOKENS=$((WORD_COUNT * 4 / 5))  # Conservative estimate
+
+echo "Query: $QUERY"
+echo "Estimated input tokens: $ESTIMATED_INPUT_TOKENS"
+
+if [ "$MODEL" = "sonar" ]; then
+    INPUT_RATE=0.0001  # $0.10 per 1M
+    OUTPUT_RATE=0.0008 # $0.80 per 1M
+    ESTIMATED_OUTPUT=400  # Typical response
+fi
+
+INPUT_COST=$(echo "scale=6; $ESTIMATED_INPUT_TOKENS * $INPUT_RATE" | bc)
+OUTPUT_COST=$(echo "scale=6; $ESTIMATED_OUTPUT * $OUTPUT_RATE" | bc)
+TOTAL=$(echo "$INPUT_COST + $OUTPUT_COST" | bc)
+
+echo "Estimated input cost: \$$INPUT_COST"
+echo "Estimated output cost: \$$OUTPUT_COST"
+echo "Total: \$$TOTAL"
+```
+
+## Migration Path: From Subscription to API or Vice Versa
+
+**Pro → API Migration Strategy:**
+
+1. Identify your typical daily/monthly query volume
+2. Calculate costs using token estimator above
+3. If tokens suggest API is cheaper, set up API account
+4. Run parallel experiment: Process 10% of queries via API, 90% via Pro
+5. Track actual token usage vs. estimates
+6. Adjust model selection (Pro vs. Pro+ if needed)
+7. Scale API gradually, reduce Pro seat count as API scales
+
+**API → Pro Migration (when API gets expensive):**
+
+If your query volume unexpectedly increases or queries become more complex:
+
+```python
+# Monitor spending
+monthly_api_cost = total_tokens * average_cost_per_token
+if monthly_api_cost > 20:  # Exceeds Pro price
+    print("Consider switching to Pro or optimizing queries")
+    print(f"Current monthly: ${monthly_api_cost:.2f}")
+    print(f"Pro monthly: $20.00")
+```
+
 ## Related Articles
 
 - [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)

@@ -209,6 +209,242 @@ Use this checklist to ensure complete configuration:
 - [ ] ESLint extension enabled in VS Code settings
 - [ ] Cache cleared after configuration changes
 
+## Advanced Configuration: Workspace Settings Deep Dive
+
+For complex setups, create a `.vscode/settings.json` at your project root with granular ESLint configuration:
+
+```json
+{
+  "eslint.enable": true,
+  "eslint.run": "onSave",
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "json"
+  ],
+  "eslint.nodePath": "./node_modules",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
+}
+```
+
+For teams running multiple Node versions, ensure Windsurf uses the correct runtime:
+
+```json
+{
+  "eslint.nodeEnv": "production",
+  "eslint.nodeArgs": ["--max-old-space-size=4096"]
+}
+```
+
+## ESLint Configuration Examples
+
+### Modern ESLint (Flat Config) with Full Features
+
+```javascript
+// eslint.config.js - ESLint 9+
+import js from '@eslint/js';
+import react from 'eslint-plugin-react';
+import prettier from 'eslint-config-prettier';
+import importPlugin from 'eslint-plugin-import';
+
+export default [
+  {
+    ignores: ['dist/**', 'build/**', 'node_modules/**']
+  },
+  js.configs.recommended,
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    languageOptions: {
+      ecmaVersion: 2022,
+      sourceType: 'module',
+      globals: {
+        console: 'readonly',
+        process: 'readonly'
+      }
+    },
+    plugins: {
+      react,
+      import: importPlugin
+    },
+    rules: {
+      'no-unused-vars': ['error', {
+        argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_'
+      }],
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'react/react-in-jsx-scope': 'off',
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling'],
+          alphabeticalOrder: true
+        }
+      ]
+    }
+  },
+  prettier
+];
+```
+
+### Legacy JSON Config (.eslintrc.json)
+
+```json
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": "warn"
+      }
+    }
+  ]
+}
+```
+
+## Debugging ESLint Detection with CLI Commands
+
+Test your configuration directly before relying on Windsurf:
+
+```bash
+# Verify ESLint finds your config
+npx eslint --debug-config . 2>&1 | head -50
+
+# Print what ESLint sees
+npx eslint --print-config src/index.js | jq '.rules | keys' | head -20
+
+# Run ESLint on a single file to test rules
+npx eslint src/app.js --format=compact
+
+# Check which version is running
+npx eslint --version
+
+# Inspect what eslint-config-prettier does
+npx eslint --print-config . | jq '.rules | to_entries[] | select(.value == false)' | head
+```
+
+## Windsurf-Specific Troubleshooting
+
+Windsurf uses VS Code's ESLint extension internally. Access advanced debugging through the Command Palette:
+
+1. Press Cmd/Ctrl + Shift + P
+2. Type "ESLint: Debug the command line of the ESLint library"
+3. Check output for errors loading your config
+
+Common error patterns:
+
+- **"Cannot find module '@scope/config'"** — Your extended config package isn't installed. Run `npm install @scope/config`
+- **"Unexpected token"** — Your .eslintrc has syntax errors. Use `npx eslint --print-config` to identify the issue
+- **"Field number X has already been used"** — ESLint rules object has duplicate keys; check for typos in rule names
+
+## Performance Tuning for Windsurf ESLint Integration
+
+If ESLint linting is slow or blocking Windsurf, adjust these settings:
+
+```json
+{
+  "eslint.run": "onSave",
+  "eslint.quiet": true,
+  "eslint.lintTask.enable": false,
+  "eslint.workingDirectories": [
+    {
+      "directory": "./src",
+      "changeProcessCWD": true
+    }
+  ],
+  "files.exclude": {
+    "node_modules": true,
+    "dist": true,
+    ".next": true,
+    "build": true
+  }
+}
+```
+
+Setting `run: "onSave"` instead of `onChange` prevents constant checking as you type. For monorepos, limiting working directories reduces the scope ESLint must analyze.
+
+## Testing Your Config with Sample Files
+
+Create a test file to verify Windsurf will detect your rules:
+
+```javascript
+// test.js - Intentional violations
+const unused = 42; // Should trigger no-unused-vars
+console.log('test'); // Should trigger no-console if enabled
+var x=1; // Should trigger spacing rules
+
+function badly_named(){} // Should trigger naming-convention if enabled
+```
+
+In Windsurf, open this file. You should see red underlines matching your .eslintrc rules. If you don't see errors after 2-3 seconds, your config isn't loading.
+
+## Integration with CI/CD Pipelines
+
+Once Windsurf detects your ESLint config properly, ensure your CI/CD runs the same checks:
+
+```bash
+#!/bin/bash
+# lint.sh
+set -e
+
+echo "Running ESLint..."
+npx eslint . --format=junit --output-file=eslint-results.xml
+
+echo "Running type checks..."
+npx tsc --noEmit
+
+echo "All checks passed!"
+```
+
+## Quick Reference Checklist
+
+Use this checklist to ensure complete configuration:
+
+- [ ] ESLint config file exists in project root with recognized filename
+- [ ] Config filename matches accepted formats (.eslintrc.js, eslint.config.js, etc.)
+- [ ] Config passes validation (`npx eslint --print-config . | jq length`)
+- [ ] ESLint and all plugins installed in `node_modules`
+- [ ] Windsurf workspace points to correct directory (File → Open Folder)
+- [ ] ESLint extension enabled in Windsurf (Settings → Search "eslint" → Ensure "Enable" is checked)
+- [ ] Cache cleared after configuration changes (`Command Palette → Developer: Reload Window`)
+- [ ] Node.js version compatible with your ESLint version (`node --version`)
+- [ ] For extended configs, verify packages are installed (`npm list <config-name>`)
+
 Most developers resolve this issue by ensuring their ESLint config follows standard naming conventions and exists in the project root directory. For monorepos, explicit directory configuration in VS Code settings typically fixes detection problems.
 
 If you continue experiencing issues after trying these solutions, check the Windsurf documentation for your specific version, as configuration options may vary between releases.

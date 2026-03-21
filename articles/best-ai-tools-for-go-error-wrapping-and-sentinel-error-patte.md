@@ -214,6 +214,309 @@ GitHub Copilot handles basic error wrapping well but requires more oversight to 
 Regardless of which tool you choose, always verify that error wrapping preserves the information callers need—whether that's checking against sentinel errors with `errors.Is()` or extracting custom error types with `errors.As()`.
 
 
+## Comprehensive Error Handling Pattern Examples
+
+### HTTP Handler with Proper Error Wrapping
+
+```go
+package handlers
+
+import (
+    "errors"
+    "fmt"
+    "log"
+    "net/http"
+)
+
+// Define domain-specific errors
+var (
+    ErrInvalidRequest = errors.New("invalid request")
+    ErrNotFound       = errors.New("resource not found")
+    ErrUnauthorized   = errors.New("unauthorized")
+)
+
+// Custom error type for API errors
+type APIError struct {
+    StatusCode int
+    Message    string
+    Err        error
+}
+
+func (e *APIError) Error() string {
+    return fmt.Sprintf("API error %d: %s", e.StatusCode, e.Message)
+}
+
+func (e *APIError) Unwrap() error {
+    return e.Err
+}
+
+// Handler demonstrating proper error handling
+func GetUserHandler(w http.ResponseWriter, r *http.Request) {
+    userID := r.URL.Query().Get("id")
+    if userID == "" {
+        writeErrorResponse(w, &APIError{
+            StatusCode: http.StatusBadRequest,
+            Message:    "missing user ID",
+            Err:        ErrInvalidRequest,
+        })
+        return
+    }
+
+    user, err := fetchUser(userID)
+    if err != nil {
+        // Check for specific error type
+        var apiErr *APIError
+        if errors.As(err, &apiErr) {
+            writeErrorResponse(w, apiErr)
+            return
+        }
+
+        // Check for sentinel error
+        if errors.Is(err, ErrNotFound) {
+            writeErrorResponse(w, &APIError{
+                StatusCode: http.StatusNotFound,
+                Message:    "user not found",
+                Err:        err,
+            })
+            return
+        }
+
+        // Unknown error
+        log.Printf("unexpected error: %v", err)
+        writeErrorResponse(w, &APIError{
+            StatusCode: http.StatusInternalServerError,
+            Message:    "internal server error",
+            Err:        err,
+        })
+        return
+    }
+
+    writeJSONResponse(w, user)
+}
+
+// Helper to determine HTTP status from error
+func httpStatusFromError(err error) int {
+    var apiErr *APIError
+    if errors.As(err, &apiErr) {
+        return apiErr.StatusCode
+    }
+
+    if errors.Is(err, ErrNotFound) {
+        return http.StatusNotFound
+    }
+    if errors.Is(err, ErrInvalidRequest) {
+        return http.StatusBadRequest
+    }
+    if errors.Is(err, ErrUnauthorized) {
+        return http.StatusUnauthorized
+    }
+
+    return http.StatusInternalServerError
+}
+```
+
+### Database Operations with Error Context
+
+```go
+package database
+
+import (
+    "context"
+    "database/sql"
+    "errors"
+    "fmt"
+)
+
+// Database operation errors
+var (
+    ErrDuplicateKey    = errors.New("duplicate key violation")
+    ErrConstraintError = errors.New("constraint violation")
+    ErrDeadlock        = errors.New("transaction deadlock")
+)
+
+type Database struct {
+    conn *sql.DB
+}
+
+func (db *Database) CreateUser(ctx context.Context, user *User) (id string, err error) {
+    query := `INSERT INTO users (email, name) VALUES ($1, $2) RETURNING id`
+
+    row := db.conn.QueryRowContext(ctx, query, user.Email, user.Name)
+    err = row.Scan(&id)
+
+    if err != nil {
+        // Wrap the database error with context
+        if err == sql.ErrNoRows {
+            return "", fmt.Errorf("user creation returned no rows: %w", err)
+        }
+
+        // Check for specific database constraint violations
+        if isDuplicateKeyError(err) {
+            return "", fmt.Errorf("failed to create user (email already exists): %w", ErrDuplicateKey)
+        }
+
+        if isDeadlockError(err) {
+            return "", fmt.Errorf("user creation transaction deadlocked: %w", ErrDeadlock)
+        }
+
+        // Generic database error
+        return "", fmt.Errorf("failed to create user: %w", err)
+    }
+
+    return id, nil
+}
+
+// Type-specific error checker
+type ValidationError struct {
+    Field   string
+    Value   interface{}
+    Reason  string
+    Wrapped error
+}
+
+func (e *ValidationError) Error() string {
+    return fmt.Sprintf("validation failed on field %s: %s (value: %v)", e.Field, e.Reason, e.Value)
+}
+
+func (e *ValidationError) Unwrap() error {
+    return e.Wrapped
+}
+
+func (db *Database) UpdateUserEmail(ctx context.Context, userID, newEmail string) error {
+    // Validate input
+    if newEmail == "" {
+        return &ValidationError{
+            Field:   "email",
+            Value:   newEmail,
+            Reason:  "email cannot be empty",
+            Wrapped: ErrInvalidRequest,
+        }
+    }
+
+    if len(newEmail) > 255 {
+        return &ValidationError{
+            Field:   "email",
+            Value:   len(newEmail),
+            Reason:  "email too long",
+            Wrapped: ErrInvalidRequest,
+        }
+    }
+
+    // Execute update
+    result, err := db.conn.ExecContext(
+        ctx,
+        `UPDATE users SET email = $1 WHERE id = $2`,
+        newEmail, userID,
+    )
+
+    if err != nil {
+        return fmt.Errorf("updating email for user %s: %w", userID, err)
+    }
+
+    rows, err := result.RowsAffected()
+    if err != nil {
+        return fmt.Errorf("checking update result for user %s: %w", userID, err)
+    }
+
+    if rows == 0 {
+        return fmt.Errorf("user %s not found: %w", userID, ErrNotFound)
+    }
+
+    return nil
+}
+
+// Helper to identify database-specific errors
+func isDuplicateKeyError(err error) bool {
+    // PostgreSQL-specific (pq package)
+    return err.Error() == "pq: duplicate key value violates unique constraint"
+}
+
+func isDeadlockError(err error) bool {
+    return err.Error() == "pq: deadlock detected"
+}
+```
+
+### Testing Error Handling with Table-Driven Tests
+
+```go
+package handlers
+
+import (
+    "errors"
+    "testing"
+)
+
+func TestErrorHandling(t *testing.T) {
+    tests := []struct {
+        name        string
+        err         error
+        wantStatus  int
+        shouldUnwrap bool
+    }{
+        {
+            name:        "not found error",
+            err:         fmt.Errorf("resource lookup failed: %w", ErrNotFound),
+            wantStatus:  404,
+            shouldUnwrap: true,
+        },
+        {
+            name:        "invalid request",
+            err:         fmt.Errorf("validation failed: %w", ErrInvalidRequest),
+            wantStatus:  400,
+            shouldUnwrap: true,
+        },
+        {
+            name:        "custom API error",
+            err:         &APIError{StatusCode: 403, Message: "forbidden", Err: ErrUnauthorized},
+            wantStatus:  403,
+            shouldUnwrap: true,
+        },
+        {
+            name:        "wrapped error chain",
+            err:         fmt.Errorf("service call failed: %w", fmt.Errorf("inner: %w", ErrNotFound)),
+            wantStatus:  404,
+            shouldUnwrap: true,
+        },
+    }
+
+    for _, tt := range tests {
+        t.Run(tt.name, func(t *testing.T) {
+            status := httpStatusFromError(tt.err)
+            if status != tt.wantStatus {
+                t.Errorf("got status %d, want %d", status, tt.wantStatus)
+            }
+
+            if tt.shouldUnwrap {
+                var apiErr *APIError
+                if !errors.As(tt.err, &apiErr) && !errors.Is(tt.err, ErrNotFound) {
+                    t.Error("error should be unwrappable")
+                }
+            }
+        })
+    }
+}
+```
+
+## AI Tool Decision Matrix
+
+| Scenario | Best Tool | Why |
+|----------|-----------|-----|
+| Learning Go error semantics | Claude | Explains concepts clearly, shows good patterns |
+| Inline completion while coding | Copilot | Fast suggestions, no context switching |
+| Understanding error in large codebase | Cursor | Can see error propagation across files |
+| Generating test cases for errors | Claude | Understands error scenarios systematically |
+| Quick error pattern suggestion | Codeium | Free and fast for standard patterns |
+
+## Common Pitfalls AI Tools Make
+
+1. **Using %v instead of %w**: AI sometimes suggests `fmt.Errorf("error: %v", err)` instead of `%w`. Always review error formatting.
+
+2. **Forgetting Unwrap()**: Custom error types need `Unwrap()` for `errors.As()` to work. Claude usually gets this right; Copilot sometimes omits it.
+
+3. **Sentinel error definition**: AI might define sentinels as empty structs instead of errors.New(). Use `errors.New()` for true sentinels.
+
+4. **Error type assertions instead of As()**: Old pattern: `if err, ok := err.(MyError); ok {}`. Modern pattern: `if errors.As(err, &MyError) {}`. Claude uses modern patterns; older AI versions might suggest the deprecated approach.
+
 ## Related Articles
 
 - [AI Tools for Interpreting Rust Compiler Borrow Checker Error](/ai-tools-compared/ai-tools-for-interpreting-rust-compiler-borrow-checker-error/)

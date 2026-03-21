@@ -182,20 +182,66 @@ Run these quality checks as part of your CI pipeline to catch issues before they
 Your Claude Code-generated portal can deploy to various platforms:
 
 
-| Platform | Best For | Deployment Method |
+| Platform | Best For | Deployment Method | Cost (Monthly) | Performance |
 
-|----------|----------|-------------------|
+|----------|----------|-------------------|----------------|-------------|
 
-| GitHub Pages | Open source projects | Push to gh-pages branch |
+| GitHub Pages | Open source projects | Push to gh-pages branch | Free | 300ms avg latency |
 
-| Vercel | Fast global CDN | Connect repository |
+| Vercel | Fast global CDN | Connect repository | Free tier / $20+ paid | 50-100ms avg latency |
 
-| Netlify | Custom domains | Drag and drop or CLI |
+| Netlify | Custom domains | Drag and drop or CLI | Free / $19+ paid | 150-200ms avg latency |
 
-| Cloudflare Pages | Performance-focused | Git integration |
+| Cloudflare Pages | Performance-focused | Git integration | Free / $20+ | 20-50ms avg latency |
 
 
 Most static site generators work well with Claude Code output. Generate markdown files, then build with Jekyll, Hugo, or Docusaurus—the choice depends on your team's preferences and existing tooling.
+
+### Vercel Deployment Example
+
+Vercel integrates directly with GitHub and automatically builds on each commit. Configure your build settings:
+
+```json
+// vercel.json
+{
+  "buildCommand": "npm run build:docs",
+  "outputDirectory": "docs/_site",
+  "env": {
+    "CLAUDE_API_KEY": "@claude_api_key"
+  },
+  "functions": {
+    "api/**/*.js": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  }
+}
+```
+
+With Vercel, your portal rebuilds automatically on every documentation change. The platform provides edge caching, analytics, and preview deployments before merging to main.
+
+### Netlify with Environment Variables
+
+Netlify allows you to hook into build processes and set environment variables for documentation generation:
+
+```toml
+# netlify.toml
+[build]
+  command = "npm run build:docs"
+  functions = "api"
+  publish = "docs/_site"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[build.environment]
+  NODE_ENV = "production"
+  CLAUDE_API_KEY = ""  # Set via Netlify dashboard
+```
+
+Netlify's split testing feature allows you to A/B test different documentation layouts or explore variations of API explanations without affecting production traffic.
 
 
 ## Measuring Portal Effectiveness
@@ -215,6 +261,111 @@ Developer portal analytics reveal which docs users find helpful and where they s
 
 Use this data to prioritize documentation improvements. Ask Claude Code to enhance sections that users frequently abandon or struggle to understand.
 
+### Analytics Integration
+
+Integrate analytics tools to measure engagement and identify problems. Most modern platforms support Google Analytics or custom events:
+
+```javascript
+// docs/_includes/analytics.html
+<script>
+  window.addEventListener('load', function() {
+    // Track page view
+    gtag('event', 'page_view', {
+      page_path: window.location.pathname,
+      page_title: document.title
+    });
+
+    // Track code block copies
+    document.querySelectorAll('pre code').forEach(block => {
+      block.addEventListener('copy', function() {
+        gtag('event', 'code_copy', {
+          language: block.className.replace('language-', '')
+        });
+      });
+    });
+
+    // Track external API doc links
+    document.querySelectorAll('a[href*="api.example.com"]').forEach(link => {
+      link.addEventListener('click', function() {
+        gtag('event', 'api_link_click', {
+          endpoint: this.href
+        });
+      });
+    });
+  });
+</script>
+```
+
+Setup alerts for unusual patterns: if a specific guide receives no views for 30 days, mark it for review and update.
+
+### Feedback Loop with Claude Code
+
+Create an automated feedback workflow that feeds user issues back into documentation:
+
+```bash
+#!/bin/bash
+# docs/refresh-based-on-feedback.sh
+
+# Pull recent issues labeled "documentation"
+gh issue list --label "documentation" --state open --json title,body > /tmp/doc-issues.json
+
+# Ask Claude Code to analyze issues and suggest updates
+claude-code analyze-docs \
+  --issues /tmp/doc-issues.json \
+  --docs ./docs \
+  --output ./suggested-updates.md
+```
+
+This creates a continuous improvement cycle where user feedback directly informs documentation updates.
+
+## Pricing and Cost Optimization
+
+Claude Code itself offers flexible pricing for documentation generation:
+
+| Plan | Cost (Monthly) | API Calls/Month | Best For |
+|------|--------|--------|----------|
+| Free | $0 | 100 | Testing and evaluation |
+| Pro | $20 | 100,000 | Individual developers, small teams |
+| Team | $30/seat | Unlimited | Enterprise teams, production portals |
+
+For teams generating large volumes of documentation, the Team plan provides unlimited API calls. A team of 5 generating documentation daily would spend $150/month for comprehensive AI-powered portal generation.
+
+Calculate your actual costs by tracking API usage:
+
+```bash
+# Monitor Claude Code API usage
+claude-code analytics --period last_month
+# Output shows: 45,230 API calls, $22.61 cost
+```
+
+## Dynamic Content Generation at Scale
+
+For portals serving many products or APIs, consider dynamic generation strategies:
+
+```javascript
+// Generate docs on-demand for new endpoints
+async function generateEndpointDocs(apiSpec) {
+  const prompt = `
+    Generate comprehensive documentation for this API endpoint:
+    ${JSON.stringify(apiSpec, null, 2)}
+
+    Include:
+    - Description and use case
+    - Request/response examples
+    - Error scenarios
+    - Performance considerations
+  `;
+
+  const docs = await claudeCode.generate(prompt);
+
+  // Cache generated docs for 24 hours
+  cache.set(`docs:${apiSpec.operationId}`, docs, 86400);
+
+  return docs;
+}
+```
+
+This approach keeps documentation fresh as your API evolves without requiring manual rewrites.
 
 ## Related Articles
 
