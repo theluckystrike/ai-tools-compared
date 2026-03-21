@@ -8,7 +8,7 @@ permalink: /how-to-write--git-commit-messages-using-ai-from-diffs/
 categories: [guides]
 tags: [ai-tools-compared, tools, development, git, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 voice-checked: true
 intent-checked: true
 ---
