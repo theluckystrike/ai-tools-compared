@@ -10,7 +10,7 @@ categories: [guides, security]
 reviewed: true
 intent-checked: true
 voice-checked: true
-score: 8
+score: 9
 tags: [ai-tools-compared, best-of, artificial-intelligence, llm]
 ---
 

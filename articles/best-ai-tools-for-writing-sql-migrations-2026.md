@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Best AI Tools for Writing SQL Migrations in 2026
+title: "Best AI Tools for Writing SQL Migrations in 2026"
 description: Compare top AI tools and code assistants for generating, testing, and optimizing SQL migration scripts using Flyway, Alembic, and Prisma frameworks.
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
+tags: [ai-tools-compared, tools, artificial-intelligence, best-of]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /articles/best-ai-tools-for-writing-sql-migrations-2026/
