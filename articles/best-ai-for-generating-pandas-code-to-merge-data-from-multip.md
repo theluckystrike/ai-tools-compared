@@ -174,6 +174,20 @@ final_df = pd.merge(
 ```
 
 
+## Head-to-Head Capability Comparison
+
+
+| Capability | GitHub Copilot | Claude | Codeium | Tabnine |
+|---|---|---|---|---|
+| Multi-table join accuracy | Excellent | Excellent | Good | Good |
+| Schema mismatch handling | Good | Excellent | Moderate | Good |
+| Memory optimization suggestions | Good | Excellent | Moderate | Moderate |
+| Explains merge strategy | Sometimes | Always | Rarely | Rarely |
+| Handles many-to-many detection | Good | Excellent | Basic | Basic |
+| Speed of first suggestion | Fast | Moderate | Very Fast | Fast |
+| Custom project pattern learning | Moderate | Low | Moderate | Excellent |
+
+
 ## Performance Considerations
 
 
@@ -209,6 +223,51 @@ orders_df["user_id"] = orders_df["user_id"].astype(str)
 ```
 
 
+5. Chunked merges for very large datasets: When API pagination returns data in chunks, merging incrementally avoids loading the full dataset into memory at once.
+
+
+```python
+# Process paginated API responses without blowing memory
+results = []
+page = 1
+
+while True:
+    batch = requests.get(f"https://api.example.com/orders?page={page}").json()
+    if not batch:
+        break
+    batch_df = pd.DataFrame(batch)
+    merged_batch = pd.merge(users_df, batch_df, on="user_id", how="inner")
+    results.append(merged_batch)
+    page += 1
+
+# Concatenate all merged batches at the end
+final_df = pd.concat(results, ignore_index=True)
+```
+
+
+## Handling Schema Inconsistencies Across APIs
+
+
+One of the most common challenges when merging data from multiple APIs is schema drift—APIs change their response structure over time, and different services use different naming conventions for the same concept. AI tools vary significantly in how well they handle this.
+
+
+Claude and Copilot both excel when you provide schema examples in comments. A comment block like this before your merge code dramatically improves AI suggestion quality:
+
+
+```python
+# Users API response structure:
+# {"id": 1, "email": "user@example.com", "created_at": "2026-01-01T00:00:00Z"}
+#
+# Orders API response structure:
+# {"order_id": "ord_123", "user_id": 1, "amount": 49.99, "status": "shipped"}
+#
+# Goal: Left join users to orders on users.id = orders.user_id
+```
+
+
+With this context, both Claude and Copilot reliably generate merge code that handles the `id` vs `user_id` naming discrepancy, selects only the needed columns, and applies the correct join direction.
+
+
 ## Verifying Merge Results
 
 
@@ -233,6 +292,24 @@ print(f"Original users: {len(users_df)}")
 print(f"Merged result: {len(merge_result)}")
 print(f"Unique users in result: {merge_result['user_id'].nunique()}")
 ```
+
+
+If your merged DataFrame has more rows than the larger of the two source DataFrames, you likely have a many-to-many join that is producing cartesian product rows. This is rarely intentional and will inflate any aggregations downstream. All four AI tools will generate a merge that technically runs without error in this situation—only Claude reliably adds the assertion check to detect it.
+
+
+## Prompting Tips for Better AI-Generated Merge Code
+
+
+The quality of AI-generated pandas merge code correlates strongly with how much context you provide in your prompt. Use these patterns to get better results from any of the four tools:
+
+- Paste a sample JSON response from each API (even a truncated 2-3 row example) in a comment
+- Name your DataFrames descriptively (`users_df`, `orders_df`, not `df1`, `df2`)
+- State the join key explicitly in a comment: `# join on users.id = orders.user_id`
+- Specify the expected row count behavior: `# keep all users even without orders`
+- Mention any known schema issues: `# orders API uses string IDs, users API uses integers`
+
+
+These contextual hints reduce the number of iterations required to get correct merge code from roughly four to five cycles down to one or two.
 
 
 ## Recommendation
