@@ -9,7 +9,7 @@ permalink: /gemini-flash-vs-pro-api-pricing-when-to-use-which-model/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, api]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

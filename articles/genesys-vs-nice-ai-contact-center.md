@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /genesys-vs-nice-ai-contact-center/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, comparison, artificial-intelligence]

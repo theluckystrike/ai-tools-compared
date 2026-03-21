@@ -9,7 +9,7 @@ permalink: /gemini-vs-claude-for-summarizing-quarterly-earnings-call-tra/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
