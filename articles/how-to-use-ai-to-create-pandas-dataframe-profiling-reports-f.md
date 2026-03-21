@@ -28,7 +28,18 @@ DataFrame profiling generates reports that cover multiple dimensions of your dat
 
 The pandas library provides basic statistical methods through `describe()` and `info()`, but these produce limited output. Specialized profiling libraries extend this functionality dramatically, offering interactive HTML reports that you can share with stakeholders or embed in notebooks.
 
+## Profiling Library Comparison
 
+Three libraries dominate the Python profiling space, each with distinct strengths:
+
+| Library | Output Format | Best For | Large Dataset Support |
+|---|---|---|---|
+| ydata-profiling | Interactive HTML | Deep single-dataset analysis | Yes (minimal mode) |
+| sweetviz | Interactive HTML | Dataset comparison | Moderate |
+| autoviz | Notebook charts | Quick visual EDA | Moderate |
+| dataprep | Interactive HTML | Clean + profile combined | Yes |
+
+For most workflows, ydata-profiling is the right starting point. Switch to sweetviz when you need to compare datasets side by side. Use dataprep when you want to clean and profile in one pass.
 
 ## Setting Up Your Profiling Environment
 
@@ -123,7 +134,37 @@ findings = {
 
 AI models can identify patterns like skewed distributions that warrant transformation, columns with high missing percentages needing imputation strategies, or potential categorical variables incorrectly stored as text.
 
+### Generating AI Prompts from Profile Data
 
+A practical pattern is building a structured prompt from your profile findings and sending it to an AI coding assistant:
+
+```python
+def build_analysis_prompt(df, profile):
+    missing = df.isnull().sum()
+    high_missing = missing[missing > len(df) * 0.1].to_dict()
+
+    skewed = {}
+    for col in df.select_dtypes(include='number').columns:
+        skew = df[col].skew()
+        if abs(skew) > 1.0:
+            skewed[col] = round(skew, 2)
+
+    prompt = f"""
+    Dataset summary:
+    - Rows: {len(df)}, Columns: {len(df.columns)}
+    - Columns with >10% missing: {high_missing}
+    - Highly skewed columns (|skew|>1): {skewed}
+
+    Recommend preprocessing steps for a regression task.
+    """
+    return prompt
+
+prompt = build_analysis_prompt(df, profile)
+# Paste into Cursor, Copilot chat, or any LLM interface
+print(prompt)
+```
+
+This bridges profiling output and AI-assisted preprocessing decisions without manual copy-paste.
 
 ### Automated Anomaly Detection
 
@@ -227,7 +268,7 @@ def full_quality_profile(df, name):
 ```
 
 
-This configuration enables correlation analysis, missing value visualizations, and duplicate detection—critical checks before model training.
+This configuration enables correlation analysis, missing value visualizations, and duplicate detection — critical checks before model training.
 
 
 
@@ -245,13 +286,13 @@ from datetime import datetime
 
 def profile_and_log(df, pipeline_name):
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    
+
     # Generate profile
     profile = ProfileReport(df, minimal=True)
-    
+
     # Extract summary statistics as JSON
     summary = json.loads(profile.to_json())
-    
+
     # Log key metrics
     metrics = {
         "timestamp": timestamp,
@@ -261,10 +302,10 @@ def profile_and_log(df, pipeline_name):
         "missing_cells": summary["table"]["n_missing_cells"],
         "duplicate_rows": summary["table"]["n_duplicates"]
     }
-    
+
     # Save report
     profile.to_file(f"profiles/{pipeline_name}_{timestamp}.html")
-    
+
     return metrics
 ```
 
@@ -285,7 +326,19 @@ Keep your profiling efficient and actionable:
 
 4. **Focus on actionables** — use AI to filter noise from insights
 
+## Frequently Asked Questions
 
+**What is the difference between ydata-profiling and the old pandas-profiling?**
+They are the same package. pandas-profiling was renamed to ydata-profiling in 2023 after YData took over maintenance. The API is largely compatible; just update your import from `pandas_profiling` to `ydata_profiling`.
+
+**How do I profile a DataFrame that has over 10 million rows?**
+Use `minimal=True` and consider sampling first. A representative 5-10% sample usually gives the same distributional insights at a fraction of the compute cost. Profile the sample, then run targeted checks on the full dataset for specific columns of interest.
+
+**Can I use profiling reports in a CI/CD pipeline?**
+Yes. Generate the report as JSON using `profile.to_json()`, extract key metrics, and fail the pipeline if missing value percentages or duplicate rates exceed defined thresholds. This turns profiling into automated data quality gates.
+
+**Which AI tool works best for interpreting profiling output?**
+Any capable LLM works well. The key is structure: extract findings into a clean JSON or bullet-point summary before prompting. Cursor's chat, GitHub Copilot, or a direct API call to an LLM all produce useful preprocessing recommendations when given a clear dataset summary.
 
 ## Related Reading
 
