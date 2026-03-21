@@ -211,7 +211,7 @@ pipeline = AIDataPipelineOperator(
 
 ```sql
 -- AI-optimized distributed query across domains
-SELECT 
+SELECT
     c.domain,
     COUNT(DISTINCT o.customer_id) as unique_customers,
     SUM(o.revenue) as total_revenue
@@ -223,6 +223,79 @@ GROUP BY c.domain
 
 
 These tools automatically optimize join strategies and data placement.
+
+
+
+## Tool Comparison by Data Mesh Principle
+
+Choosing the right tools depends on which data mesh principle you are addressing first. Here is a practical reference:
+
+| Principle | Open Source Options | Commercial Options | Key Capability |
+|-----------|--------------------|--------------------|----------------|
+| Domain ownership | Amundsen, DataHub | Alation, Collibra | Metadata cataloging, lineage |
+| Data as a product | Great Expectations, dbt | Monte Carlo, Anomalo | Quality testing, SLA monitoring |
+| Federated governance | Apache Atlas, OpenMetadata | Microsoft Purview, Securiti | PII detection, policy enforcement |
+| Self-serve platform | Trino, dbt Core | Databricks Unity Catalog, Starburst Galaxy | NL query, discovery |
+
+Most teams start with cataloging (Amundsen or DataHub) and quality (Great Expectations), then layer governance tooling as domain count grows.
+
+
+
+## Implementing AI-Assisted Lineage Tracking
+
+Data lineage is critical for debugging data pipelines and proving compliance. **OpenLineage** provides an open standard that multiple tools support:
+
+```python
+# Emit lineage events with OpenLineage
+from openlineage.client import OpenLineageClient
+from openlineage.client.run import RunEvent, RunState, Run, Job
+import uuid
+
+client = OpenLineageClient.from_environment()
+
+run_id = str(uuid.uuid4())
+job = Job(namespace="orders-domain", name="daily_aggregation")
+run = Run(runId=run_id)
+
+# Emit start event
+client.emit(RunEvent(
+    eventType=RunState.START,
+    eventTime="2026-03-15T08:00:00Z",
+    run=run,
+    job=job,
+    producer="airflow"
+))
+```
+
+Tools like DataHub, Marquez, and Atlan ingest OpenLineage events and build visual lineage graphs automatically. This gives domain teams a clear picture of upstream dependencies without manual documentation.
+
+
+
+## AI-Powered Data Discovery for Self-Serve Consumers
+
+A data mesh is only as useful as its discoverability. AI tools can make data products findable without knowing exact table names:
+
+**Semantic search in DataHub:**
+- Users type "customer churn last quarter" and get matched to `analytics.customer_domain.churn_metrics_q4`
+- ML models match natural language queries to table metadata, description embeddings, and historical usage
+- Teams are surfaced as contacts alongside each data product
+
+**Collibra Data Marketplace** extends this with a shopping-cart metaphor: data consumers browse, request access, and receive provisioned credentials — all without involving the producing domain team directly.
+
+The combination of semantic search and self-serve access provisioning is where the data mesh self-serve principle becomes practical rather than theoretical.
+
+
+
+## Measuring AI Tool Effectiveness in a Data Mesh
+
+Before committing to a tool, define metrics that prove value:
+
+- **Catalog coverage rate** — Percentage of domain tables with AI-generated descriptions vs. manually authored ones
+- **Mean time to discover** — How long it takes a new analyst to find a relevant data product
+- **Policy violation detection rate** — How many PII fields are caught by automated scanning vs. manual review
+- **Self-serve access request volume** — Requests handled without human intervention in the producing domain
+
+Track these metrics per domain to identify where AI assistance delivers the most leverage.
 
 
 
