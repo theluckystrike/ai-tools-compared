@@ -3,6 +3,7 @@ layout: default
 title: "Claude API Extended Thinking: How Output Tokens Are Billed"
 description: "A practical guide to understanding Claude API extended thinking feature, how output tokens are billed, and cost optimization strategies for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-extended-thinking-cost-how-output-tokens-are-bill/
 categories: [guides]
@@ -258,14 +259,15 @@ response, cost = track_request("Explain the time complexity of merge sort")
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
-- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [Claude API Batch Processing: How Much Cheaper Than.](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)
+
+## Related Articles
+
+- [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
+- [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

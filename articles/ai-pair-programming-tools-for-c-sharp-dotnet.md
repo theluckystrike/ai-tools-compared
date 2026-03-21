@@ -3,6 +3,7 @@ layout: default
 title: "AI Pair Programming Tools for C# and .NET Development"
 description: "Discover the best AI pair programming tools specifically designed for C# and .NET developers. Learn about GitHub Copilot, Amazon CodeWhisperer, and more"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-pair-programming-tools-for-c-sharp-dotnet/
 reviewed: true
@@ -457,10 +458,14 @@ This test generation is where JetBrains AI Assistant stands out from Copilot.
 For teams shipping production .NET applications, investing in Claude Code or JetBrains AI pays dividends through higher-quality code and fewer production bugs. The tools catch architectural issues before they become expensive failures.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- More guides coming soon.
+
+## Related Articles
+
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
+- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Free AI Pair Programming Tools That Work in Terminal in 2026](/ai-tools-compared/free-ai-pair-programming-tools-that-work-in-terminal-2026/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

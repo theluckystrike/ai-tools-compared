@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Dall E to Midjourney Prompt Format Difference"
 description: "A practical guide covering the key differences between DALL-E and Midjourney prompt syntax, parameters, and best practices for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-dall-e-to-midjourney-prompt-format-difference/
 categories: [guides]
@@ -307,13 +308,14 @@ print(mj_prompt)
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
-- [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
-- [How to Move Stable Diffusion Workflows to Midjourney.](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+
+## Related Articles
+
+- [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
+- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [Claude Max vs Claude Pro Actual Difference](/ai-tools-compared/claude-max-vs-claude-pro-actual-difference-in-daily-message-limits/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

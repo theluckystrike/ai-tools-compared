@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Profiler Integration Guide"
 description: "Learn how to integrate performance profilers with Claude Code to identify bottlenecks, optimize code, and build faster applications"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-code-profiler-integration-guide/
 categories: [guides]
@@ -431,14 +432,15 @@ Always profile with debug symbols enabled. Release builds with optimizations can
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
-- [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)
-- [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
+
+## Related Articles
+
+- [Cursor Git Integration Broken How to Fix](/ai-tools-compared/cursor-git-integration-broken-how-to-fix/)
+- [How to Use AI to Debug Flaky Integration Tests in CI Pipelin](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)
+- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

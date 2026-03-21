@@ -3,6 +3,7 @@ title: "Migrate ChatGPT System Prompts"
 description: "Learn how to convert and migrate your existing ChatGPT system prompts to Claude's system prompt format for optimal AI assistant performance"
 author: theluckystrike
 date: 2026-03-16
+last_modified_at: 2026-03-16
 tags: 
   - ai assistants
   - chatgpt
@@ -384,11 +385,15 @@ Not every ChatGPT system prompt needs full migration. Prompts that work primaril
 
 For simple assistants with no complex rules, paste your ChatGPT system prompt directly into the Claude API, run a test set, and only invest in migration work if you observe specific quality regressions.
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

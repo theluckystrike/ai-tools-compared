@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Generating SQL Recursive Queries"
 description: "A practical comparison of AI assistants for writing recursive SQL queries that traverse organizational hierarchies, with real code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/
 categories: [guides]
@@ -407,9 +408,15 @@ These diagnostic queries help data quality teams fix issues before they break re
 - [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)
+- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

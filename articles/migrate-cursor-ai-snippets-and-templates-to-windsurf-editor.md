@@ -3,6 +3,7 @@ layout: default
 title: "How to Migrate Cursor AI Snippets and Templates"
 description: "A practical guide for developers moving their custom snippets and templates from Cursor AI to WindSurf. Includes code examples and step-by-step"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/
 reviewed: true
@@ -291,14 +292,15 @@ This approach keeps both editors in sync while you evaluate WindSurf's capabilit
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [How to Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Instructions](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
-- [Configuring Cursor AI to Work with Corporate VPN and.](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
+
+## Related Articles
+
+- [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [How to Transfer Cursor Editor Theme and Layout](/ai-tools-compared/transfer-cursor-editor-theme-and-layout-to-vscode-with-copil/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

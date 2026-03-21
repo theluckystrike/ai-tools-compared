@@ -3,6 +3,7 @@ layout: default
 title: "Switching from ChatGPT Search to Perplexity Pro Search"
 description: "A practical guide for developers and power users comparing ChatGPT Search and Perplexity Pro Search, with code examples and use case recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/
 categories: [guides]
@@ -248,13 +249,14 @@ Both approaches have value depending on your learning style and time constraints
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Plus to Perplexity Pro: Feature.](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
-- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+
+## Related Articles
+
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

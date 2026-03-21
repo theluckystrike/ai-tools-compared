@@ -3,6 +3,7 @@ layout: default
 title: "AI Code Generation Quality for Java JUnit 5 Parameterized"
 description: "A practical analysis of AI code generation quality for Java JUnit 5 parameterized tests, with code examples and quality assessment for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-junit-5-parameterized-te/
 categories: [guides, comparisons]
@@ -379,13 +380,14 @@ class IntegratedParameterizedTests {
 
 AI handles framework annotations well when you provide context about your test infrastructure.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [AI Coding Assistants for Go Testing: Table-Driven Tests.](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
-- [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+
+## Related Articles
+
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation Quality for Java Spring Security](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Evaluate AI Coding Tool Encryption Standards for Data"
 description: "When you paste code into an AI coding assistant, that code travels across network connections before reaching the service's servers. Understanding how to"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-evaluate-ai-coding-tool-encryption-standards-for-data/
 categories: [guides]
@@ -268,14 +269,15 @@ Document your findings. Security assessments become valuable references when eva
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Evaluate AI Coding Tool Model Training Data.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
-- [How to Evaluate AI Coding Tool Data Processing.](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
-- [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+
+## Related Articles
+
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [How to Evaluate AI Coding Tool Model Training Data Provenanc](/ai-tools-compared/how-to-evaluate-ai-coding-tool-model-training-data-provenanc/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [AI Coding Assistant Data Sovereignty Requirements](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

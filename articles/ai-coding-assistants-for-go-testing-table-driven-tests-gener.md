@@ -3,6 +3,7 @@ layout: default
 title: "AI Coding Assistants for Go Testing Table Driven Tests Gener"
 description: "A practical analysis of AI code generation quality for Go table-driven tests, with code examples and quality assessment for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistants-for-go-testing-table-driven-tests-gener/
 categories: [guides, comparisons]
@@ -306,13 +307,14 @@ Run tests immediately after generation to verify they pass. Check both positive 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
-- [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+
+## Related Articles
+
+- [Best AI Assistant for Creating Playwright Tests for Table](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
+- [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
+- [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
+- [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
+- [AI Coding Assistants for Typescript Graphql Resolver and](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

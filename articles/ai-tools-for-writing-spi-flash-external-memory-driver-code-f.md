@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing SPI Flash External Memory Driver."
 description: "Discover how AI coding assistants help developers write SPI flash external memory driver code for microcontrollers. Practical examples and code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-spi-flash-external-memory-driver-code-f/
 categories: [guides]
@@ -385,9 +386,15 @@ AI tools work well for generating boilerplate code, SPI configuration, and stand
 ---
 
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Best AI Tools for Reviewing Embedded C Code for Memory.](/ai-tools-compared/best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+- [Best AI Assistant for Debugging Memory Leaks Shown](/ai-tools-compared/best-ai-assistant-for-debugging-memory-leaks-shown-in-chrome-devtools-heap-snapshot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

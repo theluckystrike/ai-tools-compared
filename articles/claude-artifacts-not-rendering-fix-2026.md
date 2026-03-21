@@ -3,6 +3,7 @@ layout: default
 title: "Claude Artifacts Not Rendering Fix 2026"
 description: "A troubleshooting guide for developers and power users experiencing Claude artifacts not rendering. Step-by-step fixes and diagnostic tips"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-artifacts-not-rendering-fix-2026/
 categories: [guides]
@@ -326,14 +327,15 @@ console.log('Meta CSP:', metaCSP ? metaCSP.content : 'none set via meta tag');
 console.log('Check Network tab > Response Headers for server-sent CSP headers.');
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+
+## Related Articles
+
+- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
+- [How to Use Claude Artifacts](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
+- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

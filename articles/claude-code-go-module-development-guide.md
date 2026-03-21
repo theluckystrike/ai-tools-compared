@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Go Module Development Guide"
 description: "A guide to developing Go modules with Claude Code. Learn how to scaffold projects, generate code, write tests, and automate your Go"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: "theluckystrike"
 permalink: /claude-code-go-module-development-guide/
 reviewed: true
@@ -385,13 +386,14 @@ Finally, use Go's built-in tooling. Claude Code understands `go fmt`, `go vet`, 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [Best Workflow for AI-Assisted Test Driven Development.](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
-- [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT Canvas Feature Is It Included in Plus or Team Only"
 description: "A practical guide explaining whether ChatGPT Canvas is included in ChatGPT Plus or Team subscriptions, with feature availability details for each plan"
 date: 2026-03-19
+last_modified_at: 2026-03-19
 author: theluckystrike
 permalink: /chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/
 categories: [guides]
@@ -256,13 +257,15 @@ Break any paragraph longer than 4 sentences. Convert lists of 4+ items to bullet
 Flag any sentence over 25 words for simplification.
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT Plus vs Claude Pro Cost Comparison](/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
-- [ChatGPT Team Admin Billing Explained](/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
+
+## Related Articles
+
+- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
+- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
+- [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

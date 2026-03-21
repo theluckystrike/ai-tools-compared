@@ -3,6 +3,7 @@ layout: default
 title: "Best Free AI Tool for Generating Regex Patterns Explained"
 description: "A practical guide for developers on using free AI tools to generate, test, and refine regex patterns with real-world examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-free-ai-tool-for-generating-regex-patterns-explained/
 reviewed: true
@@ -231,14 +232,15 @@ For developers working with text processing, data validation, or log analysis, A
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [Best AI Tool for Generating Regex Patterns Compared](/ai-tools-compared/best-ai-tool-for-generating-regex-patterns-compared/)
-- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [Best AI Assistant for Generating SQL Recursive Queries.](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
+- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
+- [Best AI Tools for Regex Pattern Generation 2026](/ai-tools-compared/best-ai-tools-for-regex-pattern-generation-2026/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [Cursor AI Multi File Editing Feature How It Actually Works](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating OpenAPI Specs from Code"
 description: "Maintaining API documentation alongside code is friction. Specs drift. Endpoints get deprecated. Request/response shapes change. And manual OpenAPI YAML gets"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-openapi-spec-generation/
 categories: [guides]
@@ -432,7 +433,11 @@ security:
 
 For most teams, the ideal workflow is: Claude Code for brownfield work, Swagger Codegen in CI/CD for greenfield APIs.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+## Related Articles
 
+- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)

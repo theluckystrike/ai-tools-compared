@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Developer Portal Setup Guide"
 description: "A practical guide to setting up a developer portal using Claude Code. Learn how to structure your documentation, integrate APIs, and automate portal"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /claude-code-developer-portal-setup-guide/
 reviewed: true
@@ -251,13 +252,14 @@ Use this data to prioritize documentation improvements. Ask Claude Code to enhan
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
-- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
-- [Best AI for Writing Internal Developer Portal Content.](/ai-tools-compared/best-ai-for-writing-internal-developer-portal-content-from-s/)
+
+## Related Articles
+
+- [Best AI for Writing Internal Developer Portal Content](/ai-tools-compared/best-ai-for-writing-internal-developer-portal-content-from-s/)
+- [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)
+- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

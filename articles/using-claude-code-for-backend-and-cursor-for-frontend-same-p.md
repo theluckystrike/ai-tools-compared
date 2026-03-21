@@ -3,6 +3,7 @@ layout: default
 title: "Using Claude Code for Backend and Cursor for Frontend Same P"
 description: "A practical guide to running Claude Code for backend development while using Cursor for frontend work in a single codebase. Includes setup tips"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /using-claude-code-for-backend-and-cursor-for-frontend-same-p/
 categories: [guides]
@@ -341,14 +342,15 @@ Running Claude Code for backend and Cursor for frontend gives you specialized as
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Switch from Cursor to Claude Code Without Losing.](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
-- [Copilot vs Claude Code for Writing Jest.](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
-- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
+
+## Related Articles
+
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
+- [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

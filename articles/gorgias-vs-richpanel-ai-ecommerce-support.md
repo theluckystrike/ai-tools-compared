@@ -3,6 +3,7 @@ layout: default
 title: "Gorgias vs Richpanel: AI Ecommerce Support Comparison"
 description: "A technical comparison of Gorgias and Richpanel AI-powered customer support platforms for ecommerce, with API examples and implementation details"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /gorgias-vs-richpanel-ai-ecommerce-support/
 reviewed: true
@@ -308,14 +309,15 @@ Both platforms evolve rapidly—request current feature sets and pricing directl
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Podcastle vs Riverside: AI Podcast Recording Tools Compared](/ai-tools-compared/podcastle-vs-riverside-ai-podcast-recording/)
-- [Custify vs Gainsight AI Customer Success: A Developer Guide](/ai-tools-compared/custify-vs-gainsight-ai-customer-success/)
-- [Stable Diffusion ComfyUI vs Automatic1111: A Practical.](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
+
+## Related Articles
+
+- [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
+- [AI Tools for Government Citizen Support](/ai-tools-compared/ai-tools-for-government-citizen-support/)
+- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
+- [AI Tools for Self Service Support Portals: Practical Guide](/ai-tools-compared/ai-tools-for-self-service-support-portals/)
+- [AI Tools for Subscription Management Support](/ai-tools-compared/ai-tools-for-subscription-management-support/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

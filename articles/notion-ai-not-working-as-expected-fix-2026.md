@@ -3,6 +3,7 @@ layout: default
 title: "Notion AI Not Working as Expected Fix (2026)"
 description: "A troubleshooting guide for developers and power users experiencing Notion AI issues, with step-by-step fixes and diagnostic tips for 2026"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /notion-ai-not-working-as-expected-fix-2026/
 categories: [troubleshooting]
@@ -267,14 +268,15 @@ Prevent future issues with these strategies:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
+
+## Related Articles
+
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
 - [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [AI Code Suggestion Quality When Working With Environment Var](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
+- [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

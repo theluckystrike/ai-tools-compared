@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Writing Terraform Modules 2026"
 description: "Compare the best AI coding assistants for generating production-grade Terraform and OpenTofu modules. Features real HCL examples, provider comparisons, and accuracy benchmarks."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-terraform-modules-2026/
 categories: [guides]
@@ -448,12 +449,14 @@ resource "aws_db_instance" "read_replica" {
 | Inconsistent naming | Different patterns per resource | Use locals for naming convention |
 | Missing outputs | Forget downstream consumers | Always request explicit outputs |
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Assistants for Writing Correct AWS IAM Policies with Least Privilege](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+
+## Related Articles
+
+- [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
+- [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)
+- [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+- [How to Use AI for Writing Effective Terraform State Manageme](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

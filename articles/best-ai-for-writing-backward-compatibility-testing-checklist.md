@@ -4,6 +4,7 @@ layout: default
 title: "Best AI for Writing Backward Compatibility Testing Checklist"
 description: "A practical guide to using AI tools for creating backward compatibility testing checklists in library development workflows"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-backward-compatibility-testing-checklist/
 reviewed: true
@@ -365,13 +366,14 @@ Effective backward compatibility testing requires balancing thoroughness with pr
 
 Ask AI to help maintain this balance by generating test suites that cover real-world usage without becoming overwhelming.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Writing Kubernetes Custom Resource Definitions 2026](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [AI Tools for Writing Pytest Tests with Moto Library for AWS.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+
+## Related Articles
+
+- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
+- [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

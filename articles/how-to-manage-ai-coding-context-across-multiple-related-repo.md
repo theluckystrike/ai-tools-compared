@@ -3,6 +3,7 @@ layout: default
 title: "How to Manage AI Coding Context Across Multiple Related Repo"
 description: "Practical strategies and code examples for maintaining AI coding context when working across multiple related repositories in 2026"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-across-multiple-related-repo/
 categories: [guides]
@@ -416,13 +417,14 @@ Document the context management approach so teammates understand it:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [How to Manage AI Coding Context When Switching Between.](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
-- [How to Manage AI Coding Tool Rate Limits Across a Team.](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+
+## Related Articles
+
+- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+- [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Build Custom AI Coding Workflows with MCP Server"
 description: "Learn how to create powerful AI-powered coding workflows using MCP server integrations. Practical examples and code snippets for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/
 categories: [guides]
@@ -257,14 +258,15 @@ This modular approach lets you assemble sophisticated automation pipelines from 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Build a Model Context Protocol Server That.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [AI Coding Assistant Comparison for React Component.](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+
+## Related Articles
+
+- [Migrating from ChatGPT Plugins to Claude MCP Tools for.](/ai-tools-compared/migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/)
+- [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
+- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

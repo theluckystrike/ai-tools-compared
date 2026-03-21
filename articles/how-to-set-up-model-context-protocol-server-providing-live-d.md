@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Model Context Protocol Server Providing Live"
 description: "A practical guide for developers setting up a Model Context Protocol server to feed live database schema information to AI assistants for smarter code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-providing-live-d/
 categories: [guides]
@@ -267,14 +268,15 @@ The MCP architecture makes it easy to add new tools as your needs evolve.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Set Up Model Context Protocol with Local Database.](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-- [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
-- [How to Build Model Context Protocol Server for Internal.](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+
+## Related Articles
+
+- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
+- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
+- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
+- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

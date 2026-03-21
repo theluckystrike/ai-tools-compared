@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing Terraform Infrastructure-as-Code"
 description: "Compare AI tools for Terraform and IaC: Copilot, Cursor, Claude, Pulumi AI. Includes HCL examples, provider coverage, and security considerations"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/
 categories: [guides]
@@ -292,8 +293,14 @@ For multi-cloud infrastructure, Claude performs slightly better because it can u
 
 **For infrastructure architects:** Use Claude for design and refactoring work. The deep architectural understanding pays for itself in time saved.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
+- [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
+- [Best Workflow for Using AI to Write Infrastructure as Code F](/ai-tools-compared/best-workflow-for-using-ai-to-write-infrastructure-as-code-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

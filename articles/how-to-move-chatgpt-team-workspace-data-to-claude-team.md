@@ -3,6 +3,7 @@ layout: default
 title: "How to Move ChatGPT Team Workspace Data to Claude Team"
 description: "A practical guide for developers and power users on migrating your OpenAI ChatGPT Team workspace data to Anthropic Claude Team. Includes export methods"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-chatgpt-team-workspace-data-to-claude-team/
 categories: [guides]
@@ -441,13 +442,14 @@ fi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Export Gemini Workspace Data Before Switching to.](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
+
+## Related Articles
+
+- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
 - [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
+- [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+- [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
+- [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

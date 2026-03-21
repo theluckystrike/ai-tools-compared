@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tool for Converting MySQL Queries to Postgres Compat"
 description: "Migrating from MySQL to PostgreSQL is a common scenario for development teams seeking better features, JSON support, or stricter SQL compliance. However, the"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tool-for-converting-mysql-queries-to-postgres-compat/
 categories: [guides]
@@ -276,14 +277,15 @@ No AI tool is perfect. The most effective migration strategy uses AI as a time-s
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Convert Between SQL Dialects.](/ai-tools-compared/how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/)
-- [AI Tools for Converting Raw JSON API Responses Into.](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
-- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+
+## Related Articles
+
+- [How to Use AI to Convert Between SQL Dialects Postgres Mysql](/ai-tools-compared/how-to-use-ai-to-convert-between-sql-dialects-postgres-mysql/)
+- [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
+- [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
+- [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
+- [Best AI Assistant for Generating SQL Recursive Queries](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

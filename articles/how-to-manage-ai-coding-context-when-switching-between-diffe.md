@@ -3,6 +3,7 @@ layout: default
 title: "How to Manage AI Coding Context When Switching Between Diffe"
 description: "A practical guide for developers on managing AI coding context effectively when working across multiple features. Includes strategies, code examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-manage-ai-coding-context-when-switching-between-diffe/
 categories: [guides]
@@ -262,13 +263,14 @@ The key principle remains consistent: make context transitions explicit rather t
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [How to Manage AI Coding Context Across Multiple Related.](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
-- [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+
+## Related Articles
+
+- [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
+- [How to Manage AI Coding Context Window to Avoid Hallucinated](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
+- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: AI Tools for Writing OpenAPI Specifications in 2026
 description: Compare AI-powered tools for generating and documenting OpenAPI and Swagger specifications with real code examples and pricing comparisons.
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
@@ -837,14 +838,15 @@ Customer:
 
 **Use Claude API if:** You process hundreds of APIs or integrate spec generation into CI/CD pipelines.
 
-## Related Reading
 
-- [guides-hub: API Design Best Practices](https://zovo.one/guides-hub)
-- [guides-hub: REST API Security](https://zovo.one/guides-hub)
-- [guides-hub: API Documentation Tools](https://zovo.one/guides-hub)
-- [guides-hub: SDK Generation Frameworks](https://zovo.one/guides-hub)
 
----
+## Related Articles
+
+- [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
+- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

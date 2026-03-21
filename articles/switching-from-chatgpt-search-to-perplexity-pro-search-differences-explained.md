@@ -3,6 +3,7 @@ layout: default
 title: "Switching from ChatGPT Search to Perplexity Pro Search"
 description: "A guide for developers and power users switching between ChatGPT Search and Perplexity Pro Search. Key differences, migration tips, and feature"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/
 reviewed: true
@@ -361,11 +362,15 @@ Follow the "yes" path majority voting. If Perplexity wins most questions, start 
 
 {% endraw %}
 
-## Related Reading
 
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
-- [Best AI Research Assistants Compared](/ai-tools-compared/ai-research-assistant-chrome-extension/)
-- [ChatGPT vs Claude for Technical Research](/ai-tools-compared/chatgpt-vs-claude-for-technical-content/)
+
+## Related Articles
+
+- [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
+- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
+- [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

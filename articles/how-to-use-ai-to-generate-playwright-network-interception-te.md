@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Playwright Network Interception"
 description: "Learn how to use AI tools to automatically generate Playwright network interception tests that verify your application's behavior when network connectivity is"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-playwright-network-interception-te/
 categories: [guides]
@@ -301,14 +302,15 @@ Forgetting service workers is a common gap in offline test suites. If your app r
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Playwright Keyboard Navigation Tests 2026](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
-- [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
-- [How to Use AI to Generate Playwright Authentication Flow.](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
+
+## Related Articles
+
+- [How to Use AI to Generate Kubernetes Network Policies Correc](/ai-tools-compared/how-to-use-ai-to-generate-kubernetes-network-policies-correc/)
+- [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)
+- [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
+- [How to Use AI to Generate Playwright Tests for Iframe and](/ai-tools-compared/how-to-use-ai-to-generate-playwright-tests-for-iframe-and-cross-origin-content/)
+- [Best AI Tool for Network Engineers: Runbook Writing Guide](/ai-tools-compared/best-ai-tool-for-network-engineers-runbook-writing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

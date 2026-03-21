@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code API Backward Compatibility Guide"
 description: "A guide to maintaining API backward compatibility using Claude Code, covering version strategies, contract testing, and migration patterns"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /claude-code-api-backward-compatibility-guide/
 categories: [guides]
@@ -333,11 +334,15 @@ Maintain backward compatibility by following these principles:
 By implementing these strategies with Claude Code's assistance, you can evolve your API while protecting existing client integrations.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "AI Research Assistant Chrome Extension"
 description: "Learn how to build and use AI research assistant Chrome extensions for enhanced productivity. Practical examples, code snippets, and implementation"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-research-assistant-chrome-extension/
 categories: [guides]
@@ -439,14 +440,15 @@ The side panel shares the same content script messaging architecture, so your ex
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs.](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+
+## Related Articles
+
+- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
-- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
+- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

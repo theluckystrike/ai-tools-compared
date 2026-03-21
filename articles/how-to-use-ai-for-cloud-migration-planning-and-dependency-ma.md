@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Cloud Migration Planning and Dependency"
 description: "A practical guide for developers and power users on using AI to analyze application dependencies, map infrastructure relationships, and plan cloud"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-cloud-migration-planning-and-dependency-ma/
 categories: [guides]
@@ -242,13 +243,14 @@ Ask AI to generate observability dashboards that compare on-premise versus cloud
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Automating Cloud Security Compliance Scanning in CI CD](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
-- [Best AI Tools for Cloud Cost Optimization Across AWS, Azure, and GCP](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
-- [How to Use AI for Capacity Planning and Resource Right.](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+
+## Related Articles
+
+- [How to Use AI for Capacity Planning and Resource Right Sizin](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
+- [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
+- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

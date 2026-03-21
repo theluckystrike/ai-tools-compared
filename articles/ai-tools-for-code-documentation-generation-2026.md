@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Code Documentation Generation 2026."
 description: "Code documentation is the forgotten tax that grows exponentially as teams scale. Manual docstring maintenance kills velocity. This guide compares five AI"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-code-documentation-generation-2026/
 categories: [guides]
@@ -676,7 +677,13 @@ git push
 
 ---
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+## Related Articles
+
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Best Free AI Tool for Code Explanation and Documentation](/ai-tools-compared/best-free-ai-tool-for-code-explanation-and-documentation/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
+
 {% endraw %}

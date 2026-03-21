@@ -3,6 +3,7 @@ layout: default
 title: "AI Coding Assistant for Rust Developers Compared"
 description: "A practical comparison of AI coding assistants for Rust developers, with code examples and recommendations for different use cases"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-coding-assistant-for-rust-developers-compared/
 reviewed: true
@@ -472,10 +473,14 @@ When providing context to your AI assistant, include:
 - Style preferences from `.rustfmt.toml`
 - Performance requirements or constraints
 
-## Related Reading
 
-- [ChatGPT vs Claude for Creative Storytelling Compared](/ai-tools-compared/chatgpt-vs-claude-for-creative-storytelling-compared/)
-- [Aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
-- [Wordtune vs Quillbot: A Sentence Rewriting Comparison](/ai-tools-compared/wordtune-vs-quillbot-sentence-rewriting-comparison/)
+
+## Related Articles
+
+- [Best Budget AI Coding Assistant for Freelance Developers 202](/ai-tools-compared/best-budget-ai-coding-assistant-for-freelance-developers-202/)
+- [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)
+- [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Claude Haiku vs GPT-4o Mini for Quick Drafts"
 description: "A practical comparison of Claude Haiku and GPT-4o Mini for generating quick drafts. Learn which model excels at speed, quality, and developer integration"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-haiku-vs-gpt-4o-mini-for-quick-drafts/
 reviewed: true
@@ -251,10 +252,14 @@ This lets you optimize for both cost and quality without manual selection for ev
 
 
 
-## Related Reading
 
-- [Sudowrite vs NovelAI for Fiction Writing Compared](/ai-tools-compared/sudowrite-vs-novelai-for-fiction-writing-compared/)
-- [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
-- [Best AI Writing Tool for SaaS Marketing Teams: A.](/ai-tools-compared/best-ai-writing-tool-for-saas-marketing-teams/)
+
+## Related Articles
+
+- [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
+- [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Cursor AI with Claude vs GPT Models: Which Gives Better Code](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

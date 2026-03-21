@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Model Context Protocol Server for Internal Pac"
 description: "A practical guide to setting up a Model Context Protocol server for internal package registry documentation, with code examples and configuration tips"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-model-context-protocol-server-for-internal-pac/
 categories: [guides]
@@ -282,11 +283,15 @@ CMD ["node", "dist/server.js"]
 Build and run with `docker build -t mcp-registry-docs.` followed by `docker run mcp-registry-docs`.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
+- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [How to Set Up Model Context Protocol for Feeding Jira Ticket](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-jira-ticket/)
+- [How to Set Up Model Context Protocol for Feeding Monitoring](/ai-tools-compared/how-to-set-up-model-context-protocol-for-feeding-monitoring-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

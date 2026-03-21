@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Write Security Advisory Descriptions"
 description: "Use AI tools to generate CVE advisory descriptions by providing the vulnerability technical details (CWE classification, affected versions, attack vector"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-security-advisory-descriptions-for-cv/
 categories: [guides]
@@ -295,13 +296,14 @@ For teams with specific style guides or vendor templates, create custom prompt l
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Write GitHub Release Tag Descriptions.](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
-- [How to Use AI to Write Jest Snapshot Tests That Catch.](/ai-tools-compared/how-to-use-ai-to-write-jest-snapshot-tests-that-catch-meanin/)
-- [How to Use AI to Write Pytest Parametrize Test Cases for.](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
+
+## Related Articles
+
+- [How to Use AI to Write GitHub Release Tag Descriptions](/ai-tools-compared/how-to-use-ai-to-write-github-release-tag-descriptions-with-/)
+- [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "AI Assistants for Writing Correct AWS IAM Policies"
 description: "A practical guide for developers using AI assistants to write secure AWS IAM policies that follow the principle of least privilege"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/
 categories: [guides]
@@ -318,13 +319,14 @@ When using AI assistants for IAM policy generation, cost varies:
 
 For most teams, Copilot Individual or CodeGuru free tier provides sufficient capacity for regular policy reviews. For organizations doing extensive infrastructure work, CodeGuru Business or direct API access to Claude offers better economics at scale.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Pytest Tests with Moto Library for AWS.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
-- [Best AI Tools for Writing AWS CDK Infrastructure Code in.](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
-- [AI Tools for Writing License Header Templates and.](/ai-tools-compared/ai-tools-for-writing-license-header-templates-and-checking-f/)
+
+## Related Articles
+
+- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
+- [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
+- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

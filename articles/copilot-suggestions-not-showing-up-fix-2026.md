@@ -3,6 +3,7 @@ layout: default
 title: "Copilot Suggestions Not Showing Up Fix 2026"
 description: "A practical troubleshooting guide for developers and power users experiencing GitHub Copilot suggestion issues. Learn step-by-step fixes and diagnostic"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /copilot-suggestions-not-showing-up-fix-2026/
 categories: [guides]
@@ -368,13 +369,14 @@ Most Copilot issues stem from misconfiguration, network problems, or competing e
 
 {% endraw %}
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
 - [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
-- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

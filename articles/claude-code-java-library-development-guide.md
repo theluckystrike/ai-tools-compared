@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Java Library Development Guide"
 description: "Claude Code is an AI-powered CLI that assists with every phase of Java library development, from project setup and API design to testing and documentation"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-java-library-development-guide/
 categories: [guides]
@@ -439,14 +440,15 @@ This pattern lets users include Jackson if they want serialization support, but 
 Claude Code can generate the full conditional loading pattern for any dependency, including the necessary null checks and fallback implementations that keep your core API stable regardless of what users have on their classpath.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
 - [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
-- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
-- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

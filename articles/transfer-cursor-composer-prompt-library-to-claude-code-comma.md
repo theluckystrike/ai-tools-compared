@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer Cursor Composer Prompt Library"
 description: "A practical guide for developers moving their prompt libraries from Cursor to Claude Code, with code examples and migration strategies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /transfer-cursor-composer-prompt-library-to-claude-code-commands/
 categories: [guides]
@@ -235,13 +236,14 @@ Skills provide reusability, the command-line interface offers flexibility, and t
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Transfer Your Cursor Composer Prompt Library to.](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
-- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
-- [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+
+## Related Articles
+
+- [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
+- [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

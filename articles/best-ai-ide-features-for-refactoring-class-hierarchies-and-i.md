@@ -3,6 +3,7 @@ layout: default
 title: "Best AI IDE Features for Refactoring Class Hierarchies"
 description: "A practical guide to the most useful AI-powered IDE features for safely refactoring class hierarchies, inheritance patterns, and object-oriented code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-ide-features-for-refactoring-class-hierarchies-and-i/
 categories: [guides]
@@ -241,14 +242,15 @@ Throughout this process, the IDE maintains awareness of your entire codebase, pr
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI IDE Features for Understanding and Modifying.](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
-- [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
-- [Best AI IDE Features for Pair Programming with Remote.](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+
+## Related Articles
+
+- [Best AI IDE Features for Database Query Writing and](/ai-tools-compared/best-ai-ide-features-for-database-query-writing-and-optimization/)
+- [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
+- [Best AI IDE Features for Understanding and Modifying Legacy](/ai-tools-compared/best-ai-ide-features-for-understanding-and-modifying-legacy-/)
+- [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
+- [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

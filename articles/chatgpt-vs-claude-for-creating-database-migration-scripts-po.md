@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT vs Claude for Creating Database Migration Scripts"
 description: "A practical comparison of ChatGPT and Claude for generating PostgreSQL migration scripts, with code examples and recommendations for database developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /chatgpt-vs-claude-for-creating-database-migration-scripts-po/
 reviewed: true
@@ -255,14 +256,15 @@ The key factor is understanding your own requirements well enough to validate an
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks in Python](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
-- [Gemini vs ChatGPT for Writing BigQuery SQL Window.](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
-- [ChatGPT vs Claude for Creating OpenAPI Spec from.](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)
+- [AI-Powered Database Migration Tools Comparison 2026](/ai-tools-compared/ai-powered-database-migration-tools-comparison/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

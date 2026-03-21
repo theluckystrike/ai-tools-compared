@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Pull Request Impact Analysis"
 description: "Learn how to use AI tools to automatically analyze pull requests and identify which downstream projects and services will be affected by your changes"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pull-request-impact-analysis-showi/
 categories: [guides]
@@ -252,14 +253,15 @@ Configuration drift—where production differs from code—can cause AI to miss 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Generating Dependency Update Pull Request.](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
-- [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
-- [AI Tools for Writing Pytest Tests for FastAPI Endpoints.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+
+## Related Articles
+
+- [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
+- [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+- [AI Coding Assistant Session Data Lifecycle](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
+- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
+- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

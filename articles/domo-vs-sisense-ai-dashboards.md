@@ -3,6 +3,7 @@ layout: default
 title: "Domo vs Sisense AI Dashboards: A Practical Comparison"
 description: "A technical comparison of Domo and Sisense AI dashboard capabilities with code examples, API integration patterns, and recommendations for power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /domo-vs-sisense-ai-dashboards/
 categories: [guides]
@@ -333,13 +334,14 @@ action:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Lightdash vs Preset AI Dashboards: A Practical.](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
-- [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
-- [Mode Analytics vs Hex AI Notebooks: A Practical.](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
+
+## Related Articles
+
+- [Lightdash vs Preset AI Dashboards: A Practical](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
+- [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+- [AI Powered Data Cataloging Tools: A Practical Guide for](/ai-tools-compared/ai-powered-data-cataloging-tools/)
+- [AI Tools for Cohort Analysis: A Practical Guide for](/ai-tools-compared/ai-tools-for-cohort-analysis/)
+- [AI Tools for Data Mesh Architecture: A Practical Guide](/ai-tools-compared/ai-tools-for-data-mesh-architecture/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

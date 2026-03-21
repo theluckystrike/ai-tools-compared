@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Grammarly to ChatGPT for Editing Workflow Mig"
 description: "A practical guide for developers and power users migrating their writing editing workflow from Grammarly to ChatGPT, with code examples and automation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/
 categories: [guides, productivity]
@@ -346,13 +347,14 @@ print(json.dumps(metrics, indent=2))
 
 Track these metrics across 10–20 documents to determine if ChatGPT editing meets your quality bar and justifies the subscription cost.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-- [Switching from ChatGPT Search to Perplexity Pro Search: Differences Explained](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
-- [Switching from ChatGPT Search to Perplexity Pro Search.](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
+
+## Related Articles
+
+- [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
+- [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
+- [Grammarly vs ChatGPT for Non-Native English Writers](/ai-tools-compared/grammarly-vs-chatgpt-for-non-native-english-writers/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

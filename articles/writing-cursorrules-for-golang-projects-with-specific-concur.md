@@ -3,6 +3,7 @@ layout: default
 title: "Writing CursorRules for Golang Projects with Specific Concur"
 description: "Write CursorRules for Go projects by explicitly defining goroutine lifecycle management, channel usage patterns, and error propagation strategies. These rules"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-cursorrules-for-golang-projects-with-specific-concur/
 categories: [guides]
@@ -283,14 +284,15 @@ The goal is generating code that passes your CI/CD pipeline without modification
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
-- [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
-- [How to Use AI to Diagnose and Fix Golang Goroutine.](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
+
+## Related Articles
+
+- [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

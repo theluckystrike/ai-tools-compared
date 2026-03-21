@@ -3,6 +3,7 @@ layout: default
 title: "Move Stable Diffusion Workflows to Midjourney"
 description: "To move Stable Diffusion workflows to Midjourney, convert weighted prompt syntax to Midjourney's :: weight system, replace explicit sampler and CFG settings"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/
 categories: [guides]
@@ -313,13 +314,14 @@ For complex pipelines requiring inpainting, consider maintaining Stable Diffusio
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Move Stable Diffusion Workflows to Midjourney.](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
-- [Switching from Midjourney to DALL-E 3: Prompt Adaptation.](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
-- [How to Move Midjourney Style References to Stable Diffusion LoRA Training](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
+
+## Related Articles
+
+- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
+- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
+- [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
+- [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

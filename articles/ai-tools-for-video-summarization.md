@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Video Summarization"
 description: "Explore practical AI tools for video summarization with code examples, API integrations, and implementation approaches for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-summarization/
 voice-checked: true
@@ -267,10 +268,14 @@ Select your approach based on these factors:
 For most applications, a hybrid approach works best—cloud APIs for initial processing, open-source tools for customization, and local processing for privacy-critical content.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Color Grading](/ai-tools-compared/ai-tools-for-video-color-grading/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+- [AI Tools for Video Lip Sync 2026](/ai-tools-compared/ai-tools-for-video-lip-sync-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

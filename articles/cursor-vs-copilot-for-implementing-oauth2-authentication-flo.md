@@ -3,6 +3,7 @@ layout: default
 title: "Cursor vs Copilot for Implementing Oauth2 Authentication Flo"
 description: "Implementing OAuth2 authentication in an Express application involves multiple components: route setup, token handling, callback processing, and security"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cursor-vs-copilot-for-implementing-oauth2-authentication-flo/
 categories: [comparisons]
@@ -280,14 +281,15 @@ Test both with a simple OAuth2 flow to see which matches your development style.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Cursor vs Copilot for Implementing Stripe Payment.](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
-- [Best AI for Learning OAuth2 and OIDC Authentication.](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
-- [Copilot vs Cursor for Implementing Redis Caching.](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
+
+## Related Articles
+
+- [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
+- [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
+- [Copilot vs Cursor for Implementing Server-Sent Events in Spr](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)
+- [Cursor vs Copilot for Implementing Stripe Payment](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
+- [Cursor vs Windsurf for Implementing Drag and Drop Interfaces](/ai-tools-compared/cursor-vs-windsurf-for-implementing-drag-and-drop-interfaces/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

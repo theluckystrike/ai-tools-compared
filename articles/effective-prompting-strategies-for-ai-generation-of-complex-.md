@@ -3,6 +3,7 @@ layout: default
 title: "Effective Prompting Strategies for AI Generation of Complex"
 description: "Master the art of prompting AI tools to generate complex SQL queries. Learn proven strategies with practical examples for developers and power users"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-prompting-strategies-for-ai-generation-of-complex-/
 categories: [guides]
@@ -307,11 +308,15 @@ This produces a well-structured, validated query that you can confidently deploy
 
 
 
-## Related Reading
 
-- [Best AI Assistant for SQL Query Optimization](/ai-tools-compared/best-ai-assistant-for-sql-query-optimization/)
-- [Best AI Coding Tool for Writing Python SQLAlchemy Models and Queries](/ai-tools-compared/best-ai-tools-for-writing-python-sqlalchemy-models-and-queri/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+
+## Related Articles
+
+- [Effective Prompting for AI Generation of Accessible Frontend](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
+- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

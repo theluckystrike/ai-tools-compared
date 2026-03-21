@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Breaking Down Complex Coding Tasks"
 description: "Learn proven strategies for decomposing large coding tasks into manageable prompts that yield better results from AI coding assistants. Practical"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /best-practices-for-breaking-down-complex-coding-tasks-for-ai/
 categories: [guides]
@@ -337,13 +338,14 @@ def call_anthropic(client, messages, model="claude-haiku-3-5"):
 
 Implement a token bucket or leaky bucket in your application layer to avoid hitting rate limits in the first place, rather than relying solely on retry logic.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Strategies for Providing Examples to AI Coding.](/ai-tools-compared/best-strategies-for-providing-examples-to-ai-coding-tools-fo/)
-- [Best Practices for Using AI Coding Tools in HIPAA.](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
-- [Best Practices for Combining AI Code Generation with.](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)
+
+## Related Articles
+
+- [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
+- [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
+- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
+- [Best Practices for Keeping AI Coding Suggestions Aligned](/ai-tools-compared/best-practices-for-keeping-ai-coding-suggestions-aligned-with-design-patterns/)
+- [Best Practices for Using AI Coding Tools in HIPAA Regulated](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

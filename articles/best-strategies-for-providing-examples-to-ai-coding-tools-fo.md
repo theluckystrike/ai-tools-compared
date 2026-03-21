@@ -3,6 +3,7 @@ layout: default
 title: "Best Strategies for Providing Examples to AI Coding Tools"
 description: "Provide 2-3 concrete working examples showing your preferred style and patterns; include edge cases you want handled; show error handling patterns from your"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-strategies-for-providing-examples-to-ai-coding-tools-fo/
 categories: [guides]
@@ -391,14 +392,15 @@ This prompt provides everything the AI needs to generate consistent, production-
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Coding Assistant Comparison for React Component.](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
-- [Best Practices for Breaking Down Complex Coding Tasks.](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)
+
+## Related Articles
+
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
+- [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
+- [AI Tools for Writing Redis Caching Strategies 2026](/ai-tools-compared/ai-tools-for-writing-redis-caching-strategies-2026/)
+- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

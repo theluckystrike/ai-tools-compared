@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Creating Boundary Value Test Case"
 description: "A practical guide to using AI tools that generate boundary value test cases from input specifications. Real examples and code snippets"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating--boundary-value-test-case/
 categories: [guides]
@@ -345,13 +346,14 @@ Security testing requires separate attention. Boundary value testing checks func
 
 {% endraw %}
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI for Creating Negative Test Cases.](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
-- [Best AI for Creating Test Matrices That Cover All Input.](/ai-tools-compared/best-ai-for-creating-test-matrices-that-cover-all-input-comb/)
-- [AI Tools for Creating Test Data Snapshots for Database.](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
+
+## Related Articles
+
+- [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)
+- [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
+- [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
+- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
+- [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

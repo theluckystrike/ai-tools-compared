@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT vs Claude for Explaining TensorFlow Model"
 description: "A practical comparison of ChatGPT and Claude when helping beginners understand TensorFlow model architectures, with code examples and real-world scenarios"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-explaining-tensorflow-model-architectu/
 categories: [guides]
@@ -330,14 +331,15 @@ Both models integrate with development environments:
 # Copilot generates code, but doesn't explain concepts
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
-- [Claude vs ChatGPT for Building Custom ESLint Rules for.](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
-- [Claude vs ChatGPT for Writing Datadog Dashboard.](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
+
+## Related Articles
+
+- [How to Export ChatGPT API Fine-Tuned Model for Local Use](/ai-tools-compared/how-to-export-chatgpt-api-fine-tuned-model-for-local-use/)
+- [AI Tools for Explaining Sorting Algorithm Tradeoffs for Diff](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
+- [Best AI Tool for Explaining Java Stack Traces with Nested](/ai-tools-compared/best-ai-tool-for-explaining-java-stack-traces-with-nested-ex/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+- [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

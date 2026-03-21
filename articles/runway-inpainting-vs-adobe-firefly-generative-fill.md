@@ -3,6 +3,7 @@ layout: default
 title: "Runway Inpainting vs Adobe Firefly Generative Fill"
 description: "A technical comparison of Runway inpainting and Adobe Firefly Generative Fill for developers and power users working with AI-powered image editing"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /runway-inpainting-vs-adobe-firefly-generative-fill/
 categories: [comparisons]
@@ -443,13 +444,14 @@ benchmark.print_benchmark_report()
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+
+## Related Articles
+
 - [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
+- [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
+- [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

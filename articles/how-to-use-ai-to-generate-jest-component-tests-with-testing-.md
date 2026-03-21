@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Jest Component Tests with Testing"
 description: "Learn how to use AI tools to automatically generate Jest component tests using Testing Library and user events for React applications"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-jest-component-tests-with-testing-/
 categories: [guides]
@@ -246,14 +247,15 @@ This workflow accelerates test coverage without sacrificing quality.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Generate Jest Integration Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
-- [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
-- [How to Use AI to Generate Jest Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
+
+## Related Articles
+
+- [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
+- [How to Use AI to Generate Jest Tests for](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
+- [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
+- [How to Use AI to Generate Jest Tests for Redux Toolkit Slice](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-redux-toolkit-slice/)
+- [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

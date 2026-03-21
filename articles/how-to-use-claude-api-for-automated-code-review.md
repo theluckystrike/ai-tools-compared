@@ -3,6 +3,7 @@ layout: default
 title: "How to Use the Claude API for Automated Code Review"
 description: "Build automated code review with the Claude API. Python integration, GitHub PR webhooks, review prompt engineering, and structured output parsing"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-use-claude-api-for-automated-code-review/
 categories: [guides]
@@ -323,9 +324,15 @@ def truncate_diff(pr_data: dict, max_chars: int = MAX_DIFF_TOKENS * 4) -> dict:
     return {**pr_data, "files": truncated}
 ```
 
-## Related Reading
 
-- [AI Tools Compared Hub](/ai-tools-compared/)
+
+## Related Articles
+
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
+- [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

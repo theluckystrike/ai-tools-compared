@@ -3,6 +3,7 @@ layout: default
 title: "AI Code Completion for Java Jakarta EE Migration from Javax"
 description: "Migrating enterprise Java applications from the javax namespace to jakarta represents one of the most significant breaking changes in the Java ecosystem. This"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-completion-for-java-jakarta-ee-migration-from-javax-/
 categories: [guides, comparisons]
@@ -248,13 +249,14 @@ When using AI code completion for javax-to-jakarta migration, follow these pract
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Code Completion for Java Record Classes and Sealed.](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
-- [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
-- [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+
+## Related Articles
+
+- [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
+- [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
+- [Best AI Tools for Code Migration Between Languages 2026](/ai-tools-compared/best-ai-tools-for-code-migration-between-languages-2026/)
+- [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

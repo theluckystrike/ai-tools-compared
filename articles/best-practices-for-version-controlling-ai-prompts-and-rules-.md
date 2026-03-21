@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for Version Controlling AI Prompts and Rules"
 description: "A practical guide to version controlling AI prompts, system rules, and configuration files for developers and power users working with LLMs"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-version-controlling-ai-prompts-and-rules-/
 categories: [guides]
@@ -249,13 +250,14 @@ Version controlling AI prompts and rules files transforms them from ephemeral te
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Practices for AI-Assisted Code Review Response and Revision Workflow](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
-- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for Maintaining AI Tool Configuration.](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+
+## Related Articles
+
+- [AI Tools for Generating Semver Version Bump Recommendations](/ai-tools-compared/ai-tools-for-generating-semver-version-bump-recommendations-/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

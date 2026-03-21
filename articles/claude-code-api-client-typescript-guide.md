@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code API Client TypeScript Guide: Build Type-Safe"
 description: "Learn how to create a TypeScript API client for Claude Code with proper typing, error handling, and best practices for production applications"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 category: claude-code
 tags: [ai-tools-compared, claude-code, typescript, api-client, type-safety, sdk, claude-ai, api]
@@ -478,14 +479,15 @@ Building a type-safe TypeScript client for Claude Code ensures your integration 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
-- [Best Way to Configure Claude Code to Understand Your Internal Library APIs 2026](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
+
+## Related Articles
+
+- [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+- [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
+- [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
+- [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
+- [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

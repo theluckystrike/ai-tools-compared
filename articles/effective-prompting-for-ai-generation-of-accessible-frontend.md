@@ -3,6 +3,7 @@ layout: default
 title: "Effective Prompting for AI Generation of Accessible Frontend"
 description: "A practical guide to writing prompts that generate WCAG-compliant, accessible frontend components using AI coding assistants"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-prompting-for-ai-generation-of-accessible-frontend/
 categories: [guides]
@@ -291,13 +292,14 @@ Test every AI-generated component. Use automated tools, screen readers, and keyb
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
-- [How to Write System Prompts for AI Assistants That.](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+
+## Related Articles
+
+- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Using Claude Code for Backend and Cursor for Frontend Same P](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [Best Prompting Strategies for Getting Accurate Code from](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+- [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
+- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

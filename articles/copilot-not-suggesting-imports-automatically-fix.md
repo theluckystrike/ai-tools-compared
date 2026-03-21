@@ -3,6 +3,7 @@ layout: default
 title: "Copilot Not Suggesting Imports Automatically Fix"
 description: "Troubleshooting guide for GitHub Copilot not suggesting imports automatically. Step-by-step fixes for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /copilot-not-suggesting-imports-automatically-fix/
 reviewed: true
@@ -305,14 +306,15 @@ Most import suggestion issues resolve by updating your software or re-authentica
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
-- [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
-- [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
+
+## Related Articles
+
+- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
+- [Copilot Enterprise License Not Assigned Fix](/ai-tools-compared/copilot-enterprise-license-not-assigned-fix/)
+- [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
+- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Cheapest AI Coding Tool for Indie Game Developer 2026"
 description: "A practical guide to the most affordable AI coding assistants for indie game developers in 2026, with real code examples and cost comparisons"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /cheapest-ai-coding-tool-for-indie-game-developer-2026/
 score: 8
@@ -265,11 +266,15 @@ The cheapest option that fits your workflow ultimately depends on your specific 
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Cheapest AI Coding Subscription with Unlimited Requests 2026](/ai-tools-compared/cheapest-ai-coding-subscription-with-unlimited-requests-2026/)
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [Is Paying for AI Coding Tool Worth It for Junior Developer?](/ai-tools-compared/is-paying-for-ai-coding-tool-worth-it-for-junior-developer/)
+- [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
+- [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

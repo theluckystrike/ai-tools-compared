@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Customer Health Scoring"
 description: "A practical guide to AI tools for customer health scoring, with code examples and implementation strategies for developers building customer success"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-customer-health-scoring/
 categories: [guides]
@@ -388,11 +389,15 @@ Managed platforms like Gainsight or Totango reduce implementation effort signifi
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)
+- [Health Insurance Options for Freelancers 2026](/ai-tools-compared/health-insurance-options-for-freelancers-2026/)
+- [AI Tools for Customer Escalation Management](/ai-tools-compared/ai-tools-for-customer-escalation-management/)
+- [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
+- [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Help Designers Write Micro Interaction Spec"
 description: "A practical guide for developers and power users using AI to create precise micro interaction specifications that bridge design and development"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-designers-write-micro-interaction-spec/
 categories: [guides]
@@ -289,13 +290,14 @@ The goal is not to replace designer judgment but to accelerate the documentation
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Designers Writing Handoff Notes That.](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
-- [Best AI Assistant for Designers Writing User Journey.](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+
+## Related Articles
+
+- [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
+- [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
+- [AI Tools for Designers Creating Component Naming Conventions](/ai-tools-compared/ai-tools-for-designers-creating-component-naming-conventions/)
+- [AI Tools for Designers Writing Handoff Notes That Include](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
+- [Best AI Assistant for Designers Generating Accessibility Aud](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

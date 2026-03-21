@@ -3,6 +3,7 @@ layout: default
 title: "Stable Diffusion ComfyUI vs Automatic1111 Comparison"
 description: "A technical comparison of ComfyUI and Automatic1111 for Stable Diffusion, including workflow examples, API usage, and recommendations for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /stable-diffusion-comfyui-vs-automatic1111-comparison/
 reviewed: true
@@ -267,13 +268,14 @@ For hobbyists on local hardware, both are free once initial setup completes.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Gorgias vs Richpanel: AI Ecommerce Support Comparison](/ai-tools-compared/gorgias-vs-richpanel-ai-ecommerce-support/)
-- [Wondershare Filmora AI vs Final Cut Pro: A Technical Comparison for Power Users](/ai-tools-compared/wondershare-filmora-ai-vs-final-cut-pro/)
-- [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
+
+## Related Articles
+
+- [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
+- [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
+- [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
+- [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

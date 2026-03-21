@@ -3,6 +3,7 @@ layout: default
 title: "Migrating from ChatGPT Plugins to Claude MCP Tools for."
 description: "Migrating from ChatGPT Plugins to Claude MCP tools represents a significant shift in how you integrate AI capabilities into your development workflow. While"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "AI Tools Compared"
 permalink: /migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/
 reviewed: true
@@ -368,9 +369,15 @@ Tool descriptions should clearly explain the performance characteristics and app
 
 Verify your MCP migration with basic smoke tests for each tool. For organizations with both systems, migrate in phases: set up alongside plugins (Month 1), migrate half your team (Month 2), gather feedback (Month 3), then retire old plugins (Month 4). This approach reduces disruption and lets you learn from early adopters.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [How to Build Custom AI Coding Workflows with MCP Server](/ai-tools-compared/how-to-build-custom-ai-coding-workflows-with-mcp-server-inte/)
+- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
+- [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
+- [Claude MCP Server Connection Failed Fix (2026)](/ai-tools-compared/claude-mcp-server-connection-failed-fix-2026/)
+- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

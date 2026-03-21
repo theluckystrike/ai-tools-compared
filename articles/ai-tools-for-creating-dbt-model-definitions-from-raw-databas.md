@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Creating dbt Model Definitions from Raw Databas"
 description: "Learn how AI tools can automatically generate dbt model definitions from existing database table schemas, accelerating your data transformation pipeline"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-dbt-model-definitions-from-raw-databas/
 categories: [guides]
@@ -260,14 +261,15 @@ For simple staging models, AI generation works well. For complex business logic,
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating dbt Documentation Blocks from.](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing.](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
+
+## Related Articles
+
+- [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
+- [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)
+- [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [Steve AI vs Raw Shorts: AI Video Creation Comparison for](/ai-tools-compared/steve-ai-vs-raw-shorts-ai-video/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Which AI Generates Better Go Goroutine Patterns for Concurre"
 description: "A practical comparison of AI coding tools generating goroutine patterns for concurrent APIs. Test results, code quality analysis, and recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-generates-better-go-goroutine-patterns-for-concurre/
 categories: [guides]
@@ -270,13 +271,14 @@ When using AI-generated concurrency code, always verify: channel buffer sizes ar
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Which AI Writes Better PowerShell Scripts for Windows.](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)
-- [Best AI Tools for Go Error Wrapping and Sentinel Error.](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
-- [Best AI Tools for Writing Go gRPC Service Definitions.](/ai-tools-compared/best-ai-tools-for-writing-go-grpc-service-definitions-and-implementations/)
+
+## Related Articles
+
+- [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
+- [Which AI Tool Generates Better Vue 3 Composition API](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
+- [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)
+- [Best AI Tool for Generating Regex Patterns Compared](/ai-tools-compared/best-ai-tool-for-generating-regex-patterns-compared/)
+- [Best Free AI Tool for Generating Regex Patterns Explained](/ai-tools-compared/best-free-ai-tool-for-generating-regex-patterns-explained/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

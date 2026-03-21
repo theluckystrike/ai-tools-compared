@@ -3,6 +3,7 @@ layout: default
 title: "Transfer ChatGPT Custom GPTs to Claude Projects Step by Step"
 description: "A practical guide for developers and power users to migrate Custom GPTs from ChatGPT to Claude Projects, with code examples and migration strategies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/
 categories: [guides]
@@ -267,13 +268,14 @@ This script automates the folder creation and file copying, letting you focus on
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Transfer Claude Project Knowledge to ChatGPT.](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom GPT](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
-- [How to Move ChatGPT Team Workspace Data to Claude Team](/ai-tools-compared/how-to-move-chatgpt-team-workspace-data-to-claude-team/)
+
+## Related Articles
+
+- [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
+- [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

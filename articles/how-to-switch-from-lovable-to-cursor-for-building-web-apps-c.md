@@ -3,6 +3,7 @@ layout: default
 title: "How to Switch From Lovable to Cursor for Building Web Apps"
 description: "A practical guide for developers comparing Lovable and Cursor for web app development, with migration strategies and code examples"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: "AI Tools Compared"
 permalink: /how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/
 categories: [comparisons]
@@ -291,8 +292,14 @@ After migrating to Cursor, you will likely find that your development practices 
 
 These changes typically result in better long-term project health, even if initial development speed feels slower compared to Lovable's approach.
 
-## Related Reading
 
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+
+## Related Articles
+
+- [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
+- [Streamlit vs Gradio for AI Data Apps: A Practical Comparison](/ai-tools-compared/streamlit-vs-gradio-ai-data-apps/)
+- [How to Switch AI Coding Providers Without Disrupting.](/ai-tools-compared/how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

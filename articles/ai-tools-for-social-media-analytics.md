@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Social Media Analytics: A Practical Guide"
 description: "Discover how to use AI for social media analytics. This guide covers APIs, Python libraries, and code examples for developers building data-driven"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-social-media-analytics/
 reviewed: true
@@ -275,13 +276,14 @@ The ecosystem of AI tools for social media analytics is mature enough that you d
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
-- [Copy.ai vs ChatGPT for Social Media Content: A Practical Comparison](/ai-tools-compared/copy-ai-vs-chatgpt-for-social-media-content/)
-- [AI Tools for Support Quality Assurance](/ai-tools-compared/ai-tools-for-support-quality-assurance/)
+
+## Related Articles
+
+- [Copy AI vs ChatGPT for Social Media Content](/ai-tools-compared/copy-ai-vs-chatgpt-for-social-media-content/)
+- [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)
+- [AI Tools for Real-Time Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-real-time-analytics/)
+- [Mode Analytics vs Hex AI Notebooks: A Practical](/ai-tools-compared/mode-analytics-vs-hex-ai-notebooks/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

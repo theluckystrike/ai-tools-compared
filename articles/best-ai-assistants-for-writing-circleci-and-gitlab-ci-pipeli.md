@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistants for Writing CircleCI and GitLab CI"
 description: "Writing CI/CD pipeline configurations requires understanding orchestration syntax, dependency management, caching strategies, and deployment workflows. This"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/
 categories: [guides]
@@ -271,14 +272,15 @@ Claude Code understands parameterized executors and workflow matrix jobs, sugges
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
-- [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
-- [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
+
+## Related Articles
+
+- [Which AI Tool Is Better for Writing CircleCI Config YAML Fil](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
+- [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)
+- [AI Assistants for Multicloud Infrastructure Management](/ai-tools-compared/ai-assistants-for-multicloud-infrastructure-management-and-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

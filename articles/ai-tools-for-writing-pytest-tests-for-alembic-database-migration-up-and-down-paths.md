@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing pytest Tests for Alembic Database"
 description: "Discover how AI coding assistants can automate the creation of pytest tests for Alembic database migrations, covering both upgrade and rollback scenarios"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/
 categories: [guides]
@@ -261,13 +262,14 @@ To maximize the value of AI-generated tests:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
-- [Best AI for Writing Pytest Asyncio Tests for WebSocket.](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
+
+## Related Articles
+
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

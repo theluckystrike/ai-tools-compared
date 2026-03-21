@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Coverage Reporting Setup Guide"
 description: "A guide to setting up automated code coverage reporting with Claude Code. Learn how to integrate coverage tools, generate reports, and track metrics"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /claude-code-coverage-reporting-setup-guide/
 categories: [guides]
@@ -339,11 +340,15 @@ When you share your monorepo structure with Claude Code and ask for a coverage s
 7. Treat branch coverage as primary: Line coverage is easy to game; branch coverage catches missed conditional paths that line coverage misses
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
+- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tool for Environmental Scientists Reporting](/ai-tools-compared/best-ai-tool-for-environmental-scientists-reporting/)
+- [Best AI Tool for Principals Administrative Reporting](/ai-tools-compared/best-ai-tool-for-principals-administrative-reporting/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

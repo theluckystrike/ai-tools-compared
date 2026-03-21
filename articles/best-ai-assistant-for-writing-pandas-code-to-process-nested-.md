@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Writing pandas Code"
 description: "AI assistants can generate strong pandas code for handling paginated APIs with nested JSON by using pd.jsonnormalize() effectively and implementing proper"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/
 categories: [guides]
@@ -314,13 +315,14 @@ address and orders fields into separate columns. Use cursor-based pagination.
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI for Analyzing Google Analytics Data Exports with.](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
-- [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+
+## Related Articles
+
+- [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
+- [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)
+- [Best AI Tool for Explaining Java Stack Traces with Nested](/ai-tools-compared/best-ai-tool-for-explaining-java-stack-traces-with-nested-ex/)
+- [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
+- [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Configuring AI Coding Tools to Match Your Teams Specific Doc"
 description: "A practical guide to configuring AI coding assistants like GitHub Copilot, Codeium, and Cursor to understand your team's specific Dockerfile layer ordering"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /configuring-ai-coding-tools-to-match-your-teams-specific-doc/
 categories: [guides]
@@ -417,13 +418,14 @@ for dockerfile in $(git diff --cached --name-only | grep -i dockerfile); do
 done
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Optimize Your AI Coding Tool Configuration for Specific Project Types](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
-- [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
-- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+
+## Related Articles
+
+- [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)
+- [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
+- [Configure AI Coding Tools](/ai-tools-compared/how-to-configure-ai-coding-tools-to-respect-your-teams-branc/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Create Custom Instructions for AI Tools to Generate"
 description: "A practical guide for developers and power users on configuring AI coding assistants to produce consistent, structured log output that matches your project's"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-instructions-for-ai-tools-to-generate-y/
 categories: [guides]
@@ -239,14 +240,15 @@ Document the reasoning behind your format choices. This helps team members under
 Custom instructions transform AI assistants from generic code generators into domain-specific tools that understand your project's conventions. By investing time in proper configuration, you achieve consistent, structured logging without repetitive manual corrections.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Custom Instructions for AI Coding Tools That Enforce Naming Conventions](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
-- [Writing Custom Instructions for AI Tools That Enforce.](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
-- [Writing Custom Instructions That Make AI Follow Your Team's Changelog Entry Format](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+
+## Related Articles
+
+- [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Set Up Custom Instructions for AI Tools to Match Your](/ai-tools-compared/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Free AI Tools for Writing Bash Scripts and Automation"
 description: "A practical comparison of free AI tools that help with writing bash scripts and automating shell tasks, with examples and recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /free-ai-tools-for-writing-bash-scripts-and-automation/
 reviewed: true
@@ -407,13 +408,14 @@ For serious bash automation work, paying for one tool ($10-20/month) provides un
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
-- [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-- [Best AI Tools for Writing Ansible Playbooks and Roles Automatically 2026](/ai-tools-compared/best-ai-tools-for-writing-ansible-playbooks-and-roles-automatically/)
-- [Best AI Tools for Writing GitHub Actions Reusable.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
+
+## Related Articles
+
+- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+- [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)
+- [Best AI Tools for Writing Shell Scripts](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
+- [Best Free AI Tool for Writing Unit Tests Automatically](/ai-tools-compared/best-free-ai-tool-for-writing-unit-tests-automatically/)
+- [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

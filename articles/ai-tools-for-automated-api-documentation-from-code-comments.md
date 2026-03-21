@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Automated API Documentation from Code Comments"
 description: "Generate professional API docs from inline code comments using Claude, GPT-4, and specialized tools"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-automated-api-documentation-from-code-comments/
 categories: [guides]
@@ -541,13 +542,15 @@ The comparison table in this guide covers Claude and GPT-4 as AI backends, but t
 Start with OpenAPI generation even if you only plan to display Markdown docs initially. A valid OpenAPI spec is reusable: tools can generate client libraries, test suites, and mock servers from it at any time.
 
 
-## Related Reading
 
-- [How to use AI to generate component diagrams from React code](/ai-tools-compared/guides-hub/)
-- [Best AI tools for writing API documentation](/ai-tools-compared/guides-hub/)
-- [How to use AI for cloud migration planning](/ai-tools-compared/guides-hub/)
 
----
+## Related Articles
+
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
+- [AI Tools for Converting Code Comments into Developer Facing](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
+- [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

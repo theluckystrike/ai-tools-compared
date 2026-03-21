@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating dbt Project Structure from Existing"
 description: "Many data teams accumulate years of SQL queries across their analytics workflows. When it comes time to adopt dbt (data build tool) for better data"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-dbt-project-structure-from-existing-/
 categories: [guides]
@@ -387,14 +388,15 @@ AI-generated models may not include optimal indexing or partitioning. Review and
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
-- [Cheapest AI Tool for Generating Entire Project From.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+
+## Related Articles
+
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
+- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
+- [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
+- [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

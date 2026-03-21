@@ -3,6 +3,7 @@ layout: default
 title: "Best Practices for AI Coding Tool Project Configuration"
 description: "Learn how to configure AI coding tools for large enterprise codebases. Practical configuration strategies, .gitignore optimization, and context"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-ai-coding-tool-project-configuration-in-l/
 categories: [guides]
@@ -412,12 +413,15 @@ This won't catch all drift, but prevents the most common issue: a developer disa
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/best-ai-coding-assistants-compared/)
-- [Best Practices for AI Tool Project Config When Switching Between Multiple Client Projects](/best-practices-for-ai-tool-project-config-when-switching-bet/)
-- [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/best-practices-for-sharing-ai-tool-configuration-files-acros/)
-- [Best Practices for Using AI Coding Tools in HIPAA Regulated Environments](/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
+
+## Related Articles
+
+- [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
+- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [How to Optimize Your AI Coding Tool Configuration for Specif](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
+- [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

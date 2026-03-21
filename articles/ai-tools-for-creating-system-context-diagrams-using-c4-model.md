@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Creating System Context Diagrams Using C4 Model"
 description: "A practical guide to AI tools that generate C4 model system context diagrams, comparing output quality, PlantUML support, and automation capabilities"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-system-context-diagrams-using-c4-model/
 categories: [guides]
@@ -251,14 +252,15 @@ The more context you give, the more accurate the generated diagram becomes. Revi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Generate Mermaid Sequence Diagrams from API Endpoint Descriptions Using AI](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
-- [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
-- [AI Tools for Creating Test Data That Covers Timezone.](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
+
+## Related Articles
+
+- [How to Build Model Context Protocol Server for Internal Desi](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
+- [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build a Model Context Protocol Server That](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
+- [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)
+- [How to Build a Model Context Protocol Server That Serves](/ai-tools-compared/how-to-build-model-context-protocol-server-that-serves-opena/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

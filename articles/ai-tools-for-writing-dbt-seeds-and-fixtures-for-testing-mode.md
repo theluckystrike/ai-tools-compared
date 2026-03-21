@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing dbt Seeds and Fixtures for Testing Mode"
 description: "Discover how AI can help you generate dbt seeds and fixtures to test your model transformations efficiently"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/
 categories: [guides]
@@ -307,14 +308,15 @@ Maintain your generated seeds in version control alongside your models. Update s
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating dbt Documentation Blocks from.](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
-- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+
+## Related Articles
+
+- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)
+- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
+- [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)
+- [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

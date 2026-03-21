@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create pandas DataFrame Profiling Reports"
 description: "A practical guide to generating automated DataFrame profiling reports using Python and AI-assisted tools for faster exploratory data analysis"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-pandas-dataframe-profiling-reports-f/
 categories: [guides]
@@ -340,13 +341,14 @@ Yes. Generate the report as JSON using `profile.to_json()`, extract key metrics,
 **Which AI tool works best for interpreting profiling output?**
 Any capable LLM works well. The key is structure: extract findings into a clean JSON or bullet-point summary before prompting. Cursor's chat, GitHub Copilot, or a direct API call to an LLM all produce useful preprocessing recommendations when given a clear dataset summary.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Create Data Quality Scorecards from dbt.](/ai-tools-compared/how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/)
-- [Best AI for Analyzing Parquet Files and Generating.](/ai-tools-compared/best-ai-for-analyzing-parquet-files-and-generating-summary-s/)
-- [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
+
+## Related Articles
+
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
+- [Best AI Tool for Cybersecurity Analysts Incident Reports](/ai-tools-compared/best-ai-tool-for-cybersecurity-analysts-incident-reports/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

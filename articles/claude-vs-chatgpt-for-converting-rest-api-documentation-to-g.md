@@ -3,6 +3,7 @@ layout: default
 title: "Claude vs ChatGPT for Converting REST API Documentation"
 description: "When you need to migrate a REST API to GraphQL, the initial schema generation can feel tedious. Both Claude and ChatGPT can read your REST API documentation"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/
 reviewed: true
@@ -271,13 +272,14 @@ Iterate on type design. Generate an initial schema, test it against your actual 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
+
+## Related Articles
+
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
-- [Copilot vs Claude for Generating Java Spring Boot.](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
-- [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks in Python](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

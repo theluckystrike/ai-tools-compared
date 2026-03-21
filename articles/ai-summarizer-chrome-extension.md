@@ -3,6 +3,7 @@ layout: default
 title: "AI Summarizer Chrome Extension: A Developer Guide"
 description: "Learn how to build and use AI-powered summarizer Chrome extensions. Technical implementation details, API integration patterns, and practical examples"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-summarizer-chrome-extension/
 categories: [guides]
@@ -254,13 +255,14 @@ A content classifier might examine URL patterns, HTML structure, and text charac
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Building an AI Research Assistant Chrome Extension: A.](/ai-tools-compared/ai-research-assistant-chrome-extension/)
-- [AI Tab Organizer Chrome Extension: Managing Browser Tabs.](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
-- [Kommunicate vs Crisp AI Chat Widgets: A Developer Comparison](/ai-tools-compared/kommunicate-vs-crisp-ai-chat-widgets/)
+
+## Related Articles
+
+- [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
+- [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
+- [AI Tab Organizer Chrome Extension: Managing Browser Tabs](/ai-tools-compared/ai-tab-organizer-chrome-extension/)
+- [Chrome Extension Budget Tracker Shopping](/ai-tools-compared/chrome-extension-budget-tracker-shopping/)
+- [Screen Sharing Chrome Extension](/ai-tools-compared/screen-sharing-chrome-extension/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

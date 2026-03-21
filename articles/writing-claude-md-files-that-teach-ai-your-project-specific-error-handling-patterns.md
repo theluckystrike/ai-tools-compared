@@ -3,6 +3,7 @@ layout: default
 title: "Writing Claude Md Files That Teach AI Your Project Specific"
 description: "A practical guide to creating effective CLAUDE.md files that communicate your project's error handling conventions to AI assistants. Includes code examples and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/
 categories: [guides]
@@ -248,12 +249,15 @@ Keep the error handling section focused and actionable. Remove outdated patterns
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [CLAUDE.md Best Practices](/best-way-to-configure-claude-code-to-understand-your-interna/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Writing Claude Md Files That Teach AI Your Project Testing](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

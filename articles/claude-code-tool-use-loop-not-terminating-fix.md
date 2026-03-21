@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code Tool Use Loop Not Terminating Fix"
 description: "Troubleshoot and fix Claude Code tool use loops that fail to terminate. Step-by-step solutions for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /claude-code-tool-use-loop-not-terminating-fix/
 reviewed: true
@@ -343,11 +344,15 @@ Then start a new session with a fresh perspective and clearer task definition.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- More guides coming soon.
+
+## Related Articles
+
+- [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
+- [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)
+- [Claude Code Not Pushing to GitHub Fix: Troubleshooting Guide](/ai-tools-compared/claude-code-not-pushing-to-github-fix/)
+- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
+- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

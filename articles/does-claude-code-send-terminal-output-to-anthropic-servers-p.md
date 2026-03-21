@@ -3,6 +3,7 @@ layout: default
 title: "Does Claude Code Send Terminal Output to Anthropic Servers P"
 description: "A technical deep-dive into Claude Code's privacy architecture, examining what data is transmitted and how you can control it"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /does-claude-code-send-terminal-output-to-anthropic-servers-p/
 categories: [security, guides]
@@ -485,11 +486,15 @@ jobs:
 
 This pipeline check ensures that any changes to Claude Code configuration maintain the security posture your team agreed on, and prevents settings regressions from shipping silently.
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
+- [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)
+- [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)
+- [Claude API Extended Thinking: How Output Tokens Are Billed](/ai-tools-compared/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
+- [Does Cursor AI Store Your Code on Their Servers Data Privacy](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

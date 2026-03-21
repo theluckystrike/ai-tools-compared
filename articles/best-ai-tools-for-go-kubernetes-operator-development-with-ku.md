@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Go Kubernetes Operator Development"
 description: "Claude excels at Kubebuilder scaffolding and reconciliation loop logic with proper finalizers and status updates, while ChatGPT generates working code but"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-go-kubernetes-operator-development-with-kubebuilder-2026/
 categories: [guides]
@@ -398,14 +399,15 @@ Consider your team's Kubernetes expertise level:
 - **Advanced**: GitHub Copilot for pattern completion
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Writing Kubernetes Operator Code From.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
-- [Best AI Tools for Go Error Wrapping and Sentinel Error.](/ai-tools-compared/best-ai-tools-for-go-error-wrapping-and-sentinel-error-patte/)
-- [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
+- [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)
+- [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
+- [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)
+- [AI Tools for Kubernetes Troubleshooting 2026](/ai-tools-compared/ai-tools-for-kubernetes-troubleshooting-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

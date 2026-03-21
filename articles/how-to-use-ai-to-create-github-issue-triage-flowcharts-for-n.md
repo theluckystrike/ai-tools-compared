@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create GitHub Issue Triage Flowcharts"
 description: "A practical guide for open source maintainers on using AI tools to create efficient GitHub issue triage flowcharts that help new contributors navigate"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-github-issue-triage-flowcharts-for-n/
 categories: [guides]
@@ -267,14 +268,15 @@ Common evolution triggers include:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Create Milestone Planning Documents.](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)
-- [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
-- [Best AI for Writing Good First Issue Descriptions That.](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+
+## Related Articles
+
+- [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

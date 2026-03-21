@@ -3,6 +3,7 @@ layout: default
 title: "Effective Strategies for Using AI to Write API"
 description: "A practical guide for developers on using AI tools to create thorough, accurate, and maintainable API documentation with real-world examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-strategies-for-using-ai-to-write--api/
 categories: [guides]
@@ -309,13 +310,14 @@ Implementing AI for API documentation works best with established practices:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Prompting for AI Generation of Accessible.](/ai-tools-compared/effective-prompting-for-ai-generation-of-accessible-frontend/)
-- [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-- [Effective Strategies for AI-Assisted Refactoring Without.](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
+
+## Related Articles
+
+- [How to Write Git Commit Messages Using AI](/ai-tools-compared/how-to-write--git-commit-messages-using-ai-from-diffs/)
+- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

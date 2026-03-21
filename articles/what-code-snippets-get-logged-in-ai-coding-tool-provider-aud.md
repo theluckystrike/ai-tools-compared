@@ -3,6 +3,7 @@ layout: default
 title: "What Code Snippets Get Logged in AI Coding Tool Provider Aud"
 description: "AI coding tools log your input code, generated suggestions, conversation context, and metadata like timestamps and file paths—but logging policies vary"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/
 categories: [guides]
@@ -337,14 +338,15 @@ The convenience of AI assistance often comes with trade-offs around data privacy
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [What Source Code Context Window Do Different AI Coding.](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [How to Audit What Source Code AI Coding Tools Transmit.](/ai-tools-compared/how-to-audit-what-source-code-ai-coding-tools-transmit-externally/)
-- [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
+
+## Related Articles
+
+- [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
+- [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
+- [How to Get AI Code Suggestions That Follow Your Project](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
+- [Best AI Assistant for Designers Generating Accessibility Aud](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
+- [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

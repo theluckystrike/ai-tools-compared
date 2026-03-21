@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI for Database Backup Automation and Disaster"
 description: "A practical guide for developers and power users on using AI to automate database backups and build disaster recovery scripts. Includes code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-for-database-backup-automation-and-disaster-re/
 categories: [guides]
@@ -300,14 +301,15 @@ When using AI to generate backup and disaster recovery scripts, follow these gui
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [AI Assistants for Writing Correct AWS IAM Policies with.](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
-- [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
+
+## Related Articles
+
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [AI Tools for Returns and Refund Automation](/ai-tools-compared/ai-tools-for-returns-and-refund-automation/)
+- [Best AI Tool for DevOps Engineers Runbook Automation](/ai-tools-compared/best-ai-tool-for-devops-engineers-runbook-automation/)
+- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/)
+- [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

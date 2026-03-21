@@ -3,6 +3,7 @@ layout: default
 title: "AI Tool Customization Comparison: Claude.md vs .cursorrules"
 description: "A practical comparison of AI tool customization methods—Claude.md, CursorRules, and Copilot Instructions—to help developers choose the best approach"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tool-customization-comparison-claude-md-vs-cursorrules-vs/
 categories: [guides]
@@ -284,13 +285,14 @@ Share configurations with your team. Consistency matters more than perfection. A
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
-- [Writing CLAUDE MD Files That Define Your Project's API Versioning Strategy for AI](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
-- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+
+## Related Articles
+
+- [Best Practices for AI Tool Customization Files When Onboardi](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
+- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
+- [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

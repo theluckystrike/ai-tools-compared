@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing pytest Tests for FastAPI Endpoints"
 description: "A practical guide for developers comparing AI tools that help write pytest tests for FastAPI endpoints with dependency injection, including code"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/
 categories: [guides]
@@ -282,14 +283,15 @@ The best approach involves using AI to generate initial test patterns, then manu
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Assistant for Writing Pytest Tests for.](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
-- [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
-- [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
+
+## Related Articles
+
+- [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

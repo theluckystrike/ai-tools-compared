@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Writing Kubernetes Custom Resource"
 description: "A practical guide for developers exploring AI-powered tools that help write Kubernetes CRDs, with code examples and comparison of top solutions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/
 categories: [guides, comparisons]
@@ -530,10 +531,14 @@ kubectl get validatingwebhookconfigurations
 kubectl describe validatingwebhookconfigurations database-validator
 ```
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
+- [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Admission Webhook](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
+- [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
+- [Best AI Tools for Writing Kubernetes Operator Code](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-operator-code-from-scratch/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Gemini Advanced to Claude Pro: What You Lose"
 description: "A practical guide on what features and capabilities you might lose when switching from Gemini Advanced to Claude Pro for coding and development tasks"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-gemini-advanced-to-claude-pro-what-you-lose/
 categories: [guides]
@@ -302,13 +303,14 @@ The learning curve is manageable for most developers. Within a few weeks, you'll
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from ChatGPT Plus to Perplexity Pro: Feature.](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
-- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
-- [ChatGPT Plus vs Claude Pro Monthly Cost for Daily Coding](/ai-tools-compared/chatgpt-plus-vs-claude-pro-monthly-cost-for-daily-coding/)
+
+## Related Articles
+
+- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [Gemini Advanced Google One Storage: Does AI Use Your Storage](/ai-tools-compared/gemini-advanced-google-one-storage-does-ai-use-your-storage-/)
+- [Gemini Advanced Not Available in My Country Fix](/ai-tools-compared/gemini-advanced-not-available-in-my-country-fix/)
+- [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)
+- [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

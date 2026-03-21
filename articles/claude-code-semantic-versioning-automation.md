@@ -19,6 +19,7 @@ intent-checked: true
 voice-checked: true
 layout: default
 date: 2026-03-15
+last_modified_at: 2026-03-15
 ---
 {% raw %}
 
@@ -376,14 +377,15 @@ gh release create v${NEW_VERSION} --draft \
 
 Claude Code handles dry-run generation well — prompt it with "Add a dry-run mode that previews version changes without modifying files or making network calls" and it correctly adds `--dry-run` flags or conditional logic that skips write operations.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Configuring Claude Code to Understand Your Teams Pull.](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
-- [Claude Code Parallel Testing Configuration - Complete.](/ai-tools-compared/claude-code-parallel-testing-configuration/)
-- [Writing CLAUDE MD Files That Define Your Project's API Versioning Strategy for AI](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+
+## Related Articles
+
+- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
+- [AI Code Review Automation Tools Comparison 2026](/ai-tools-compared/ai-code-review-automation-tools-comparison/)
+- [Best AI Tools for Code Review Automation 2026](/ai-tools-compared/best-ai-tools-for-code-review-automation-2026/)
+- [AI Tools for Detecting Duplicate GitHub Issues Using](/ai-tools-compared/ai-tools-for-detecting-duplicate-github-issues-using-semantic-similarity-matching/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

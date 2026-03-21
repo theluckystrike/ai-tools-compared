@@ -3,6 +3,7 @@ layout: default
 title: "Switching from Windsurf to Cursor How to Transfer Project"
 description: "Migrating from Windsurf to Cursor involves more than just installing a new editor. Your project configurations, custom rules, snippets, and workflow settings"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /switching-from-windsurf-to-cursor-how-to-transfer-project-config/
 categories: [guides]
@@ -283,13 +284,14 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Switching from Windsurf Free to Cursor Free: What Is.](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
-- [How to Migrate Cursor Rules File to Windsurf Rules.](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
-- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+
+## Related Articles
+
+- [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
+- [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
+- [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

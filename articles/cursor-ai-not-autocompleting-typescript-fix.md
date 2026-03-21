@@ -3,6 +3,7 @@ layout: default
 title: "Cursor AI Not Autocompleting TypeScript Fix"
 description: "To fix Cursor AI not autocompleting TypeScript, open the Command Palette (Cmd+Shift+P or Ctrl+Shift+P), run 'TypeScript: Restart TS server,' and verify that AI"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /cursor-ai-not-autocompleting-typescript-fix/
 reviewed: true
@@ -297,14 +298,15 @@ Try creating a new TypeScript file in your project. If completions work in new f
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Troubleshooting Hub](/ai-tools-compared/troubleshooting-hub/)
-- [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting.](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
-- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
-- [Cursor Extensions Conflicting with AI Fix.](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
+
+## Related Articles
+
+- [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
+- [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)
+- [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
+- [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
+- [Cursor Extensions Conflicting with AI Fix](/ai-tools-compared/cursor-extensions-conflicting-with-ai-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

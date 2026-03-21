@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Writing Jest Tests for Graphql Resolvers"
 description: "Discover how AI coding assistants can help you create Jest tests for GraphQL resolvers that properly handle dataloader batching patterns"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/
 categories: [guides]
@@ -311,13 +312,14 @@ test('full GraphQL query with DataLoader batching', async () => {
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Pytest Tests for Click or Typer CLI.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
-- [Best AI for Writing Jest Tests for React Custom Hooks.](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
-- [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+
+## Related Articles
+
+- [Best AI Tools for Writing GraphQL Resolvers 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-resolvers-2026/)
+- [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
+- [Best AI for Writing Jest Tests for React Custom Hooks](/ai-tools-compared/best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI for Creating Jest Tests That Cover Race Conditions](/ai-tools-compared/best-ai-for-creating-jest-tests-that-cover-race-conditions-i/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

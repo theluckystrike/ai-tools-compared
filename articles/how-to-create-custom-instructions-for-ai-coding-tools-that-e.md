@@ -3,6 +3,7 @@ layout: default
 title: "How to Create Custom Instructions for AI Coding Tools That E"
 description: "A practical guide to creating custom instructions for AI coding tools that enforce consistent naming conventions across your projects"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-custom-instructions-for-ai-coding-tools-that-e/
 categories: [guides]
@@ -270,10 +271,14 @@ Share your instructions with team members so everyone benefits from consistent A
 
 
 
-## Related Reading
 
-- [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
-- [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
-- [AI Autocomplete Behavior Differences Between VSCode and JetBrains](/ai-tools-compared/ai-autocomplete-behavior-differences-between-vscode-jetbrain/)
+
+## Related Articles
+
+- [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
+- [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)
+- [How to Set Up Custom Instructions for AI Tools to Match Your](/ai-tools-compared/how-to-set-up-custom-instructions-for-ai-tools-to-match-your/)
+- [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
+- [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

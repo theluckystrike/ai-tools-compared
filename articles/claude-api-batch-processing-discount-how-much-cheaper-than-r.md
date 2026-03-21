@@ -3,6 +3,7 @@ layout: default
 title: "Claude API Batch Processing: How Much Cheaper Than Discount"
 description: "A practical guide to Claude API batch processing pricing. Learn how to save 50% on API costs and when to use batch vs real-time processing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-batch-processing-discount-how-much-cheaper-than-r/
 categories: [guides]
@@ -282,14 +283,15 @@ print(f"Estimated cost: ${batch_info.total_tokens * 0.0015:.2f}")
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
-- [Claude API Tool Use and Function Calling: Pricing and.](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
-- [Gemini Flash vs Pro API Pricing: When to Use Which Model](/ai-tools-compared/gemini-flash-vs-pro-api-pricing-when-to-use-which-model/)
+
+## Related Articles
+
+- [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
+- [Claude API Pay Per Token vs Pro Subscription Which Cheaper](/ai-tools-compared/claude-api-pay-per-token-vs-pro-subscription-which-cheaper/)
+- [How Much Does Cursor AI Actually Cost Per Month All Plans](/ai-tools-compared/how-much-does-cursor-ai-actually-cost-per-month-all-plans/)
+- [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
+- [pandas AI vs Polars AI Data Processing Compared](/ai-tools-compared/pandas-ai-vs-polars-ai-data-processing/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

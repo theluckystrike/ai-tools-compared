@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating pytest Fixtures from Database"
 description: "Discover how AI coding assistants can automatically generate pytest fixtures from your database schema definitions, saving hours of manual test setup work"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-pytest-fixtures-from-database-schema/
 categories: [guides]
@@ -286,13 +287,14 @@ def test_order_creation(db_session, sample_user):
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Writing Pytest Tests for Alembic Database.](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [ChatGPT vs Claude for Generating Pydantic Models from.](/ai-tools-compared/chatgpt-vs-claude-for-generating-pydantic-models-from-json-s/)
+
+## Related Articles
+
+- [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
+- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
+- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "Configuring Cursor AI to Work with Corporate VPN and Proxy"
 description: "A practical guide for developers and power users setting up Cursor AI behind corporate firewalls, VPNs, and authenticated proxy servers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/
 categories: [guides]
@@ -314,13 +315,14 @@ Before deploying Cursor to your organization:
 
 Running through this checklist prevents post-deployment surprises.
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate Cursor AI Snippets and Templates to.](/ai-tools-compared/migrate-cursor-ai-snippets-and-templates-to-windsurf-editor/)
-- [Configuring Cursor AI Notepads for Reusable Project Context.](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
-- [Cursor AI Model Selection Guide: Which Model for Which.](/ai-tools-compared/cursor-ai-model-selection-guide-which-model-for-which-coding/)
+
+## Related Articles
+
+- [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
+- [VPN Tunnel Interface vs Full Tunnel Routing Difference](/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

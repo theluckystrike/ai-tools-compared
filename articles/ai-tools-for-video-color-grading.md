@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Video Color Grading"
 description: "Explore AI-powered tools for video color grading with practical examples, code integrations, and recommendations for developers and power users"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-video-color-grading/
 categories: [guides]
@@ -402,11 +403,15 @@ When implementing AI color grading in production pipelines:
 
 The most successful pipelines combine automated grading for bulk footage with manual review for hero shots and marketing material.
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)
+- [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
+- [AI Tools for Video Frame Interpolation](/ai-tools-compared/ai-tools-for-video-frame-interpolation/)
+- [AI Tools for Video Lip Sync 2026](/ai-tools-compared/ai-tools-for-video-lip-sync-2026/)
+- [AI Tools for Video Object Tracking](/ai-tools-compared/ai-tools-for-video-object-tracking/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

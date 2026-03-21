@@ -3,6 +3,7 @@ layout: default
 title: "Gemini vs ChatGPT for Translating Python Data Pipelines"
 description: "A practical comparison of Gemini and ChatGPT for converting Python data pipelines to Rust, with code examples and real-world recommendations"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/
 categories: [guides]
@@ -444,13 +445,14 @@ After receiving translated code from either tool:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Gemini vs ChatGPT for Writing Google Cloud Function.](/ai-tools-compared/gemini-vs-chatgpt-for-writing-google-cloud-function-deployme/)
-- [Claude vs Gemini for Converting Jupyter Notebooks to.](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
-- [Switching from ChatGPT Voice to Gemini Live: Conversation Differences](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)
+
+## Related Articles
+
+- [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
+- [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
+- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
+- [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

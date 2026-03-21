@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Creating Playwright Tests for Table"
 description: "A practical guide comparing AI tools for generating Playwright tests for table components with sorting, filtering, and pagination features"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/
 categories: [guides]
@@ -374,16 +375,15 @@ The combination of AI-generated scaffolding and human review produces the most r
 
 {% endraw %}
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Assistant for Writing Playwright Tests for Drag and Drop Interactions 2026](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
-- [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 
-{% raw %}
+## Related Articles
+
+- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Assistant for Writing Playwright Tests](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

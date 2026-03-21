@@ -3,6 +3,7 @@ layout: default
 title: "How Well Do AI Tools Generate Rust Macro Definitions and Pro"
 description: "Proc macros remain one of Rust's most powerful features, enabling code generation at compile time, custom derive implementations, and DSL creation. But how"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-well-do-ai-tools-generate-rust-macro-definitions-and-pro/
 categories: [guides]
@@ -363,14 +364,15 @@ macro_rules! my_macro {
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
-- [How Well Do AI Tools Generate Correct Go Interface.](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
-- [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+
+## Related Articles
+
+- [How Well Do AI Tools Handle Rust Lifetime Elision Rules Corr](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
+- [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)
+- [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [AI Tools for Writing gRPC Protobuf Definitions 2026](/ai-tools-compared/ai-tools-for-writing-grpc-protobuf-definitions-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

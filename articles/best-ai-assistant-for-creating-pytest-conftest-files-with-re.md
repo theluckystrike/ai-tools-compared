@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Creating pytest conftest Files"
 description: "A practical guide to using AI tools for generating pytest conftest files with reusable shared fixtures. Compare top AI coding assistants and learn"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-creating-pytest-conftest-files-with-re/
 categories: [guides]
@@ -237,14 +238,15 @@ Test the generated fixtures in isolation before integrating them into your full 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
-- [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
-- [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+
+## Related Articles
+
+- [Best AI Assistant for Writing pytest Tests for Background](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-background-job-retry-failure-scenarios/)
+- [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
+- [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
+- [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
+- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

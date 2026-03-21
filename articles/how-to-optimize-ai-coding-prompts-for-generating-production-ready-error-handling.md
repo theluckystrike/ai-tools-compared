@@ -3,6 +3,7 @@ layout: default
 title: "How to Optimize AI Coding Prompts for Generating Production"
 description: "Generate production-ready error handling by explicitly requesting typed errors, specific exception cases, logging statements, and retry logic in prompts. This"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/
 categories: [guides]
@@ -293,13 +294,14 @@ Fix: Request an unified error response schema and global error handler
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Prevent AI Coding Tools from Generating Overly.](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
-- [How Accurate Are AI Tools at Generating Rust Serde.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-serde-serialization-code/)
+
+## Related Articles
+
+- [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
+- [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
+- [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+- [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+- [How to Optimize Your AI Coding Tool Configuration for Specif](/ai-tools-compared/how-to-optimize-your-ai-coding-tool-configuration-for-specif/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

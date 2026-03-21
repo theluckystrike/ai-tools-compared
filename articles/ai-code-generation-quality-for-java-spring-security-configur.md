@@ -3,6 +3,7 @@ layout: default
 title: "AI Code Generation Quality for Java Spring Security"
 description: "Java Spring Security remains a critical component for securing enterprise applications, and developers increasingly rely on AI coding assistants to generate"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-quality-for-java-spring-security-configur/
 categories: [guides, comparisons]
@@ -294,13 +295,14 @@ For teams implementing custom security components, consider creating detailed te
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Code Generation Quality for Java JUnit 5.](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
-- [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
-- [AI Code Generation for Java Reactive Programming with Project Reactor](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+
+## Related Articles
+
+- [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
+- [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
+- [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
+- [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+- [AI Code Generation for Java Virtual Threads Project Loom Pat](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

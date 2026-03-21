@@ -3,6 +3,7 @@ layout: default
 title: "How to Audit What Source Code AI Coding Tools Transmit"
 description: "When you use AI coding tools like GitHub Copilot, Cursor, or Claude Code, your source code often gets transmitted to external servers for processing"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-audit-what-source-code-ai-coding-tools-transmit-externally/
 categories: [guides]
@@ -315,14 +316,15 @@ After auditing, consider these mitigation strategies:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [What Source Code Context Window Do Different AI Coding.](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
-- [AI Coding Assistant Session Data Lifecycle: From Request.](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
-- [What Code Snippets Get Logged in AI Coding Tool Provider.](/ai-tools-compared/what-code-snippets-get-logged-in-ai-coding-tool-provider-aud/)
+
+## Related Articles
+
+- [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
+- [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+- [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)
+- [AI Audit Trail and Evidence Collection Tools](/ai-tools-compared/ai-audit-trail-and-evidence-collection-tools-2026/)
+- [Best AI Tool for Auditors: Audit Report Generation Compared](/ai-tools-compared/best-ai-tool-for-auditors-audit-report-generation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

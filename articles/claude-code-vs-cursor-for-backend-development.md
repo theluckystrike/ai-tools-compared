@@ -3,6 +3,7 @@ layout: default
 title: "Claude Code vs Cursor for Backend Development"
 description: "Compare Claude Code and Cursor for backend development in 2026. Multi-file refactors, database schema changes, API design, and terminal vs IDE workflow tradeoffs."
 date: 2026-03-21
+last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /claude-code-vs-cursor-for-backend-development/
 categories: [guides]
@@ -341,13 +342,15 @@ Claude Code billing is usage-based through the Max subscription. Heavy users can
 - You want flat-rate pricing
 - You rely on VS Code extensions
 
-## Related Reading
 
-- [AI Pair Programming Cursor vs Windsurf vs Claude Code 2026](/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
-- [Using Claude Code for Backend and Cursor for Frontend Same Project](/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
-- [Aider vs Claude Code Terminal AI Comparison](/aider-vs-claude-code-terminal-ai-comparison/)
 
----
+## Related Articles
+
+- [Using Claude Code for Backend and Cursor for Frontend Same P](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
+- [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Writing Playwright Tests"
 description: "A practical guide for developers comparing AI assistants that help write Playwright tests specifically for drag and drop interactions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/
 categories: [guides]
@@ -328,11 +329,15 @@ The most effective workflow involves using AI assistants as a starting point rat
 
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
+- [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
+- [Best AI Assistant for Creating Playwright Tests for Table](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
+- [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
+- [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

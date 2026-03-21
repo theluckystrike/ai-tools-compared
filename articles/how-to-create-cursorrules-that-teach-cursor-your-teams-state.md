@@ -3,6 +3,7 @@ layout: default
 title: "Create CursorRules That Teach Cursor Your Team's State"
 description: "A practical guide to writing CursorRules that teach Cursor your team's state management patterns. Code examples and real-world patterns for React, Vue, and"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-create-cursorrules-that-teach-cursor-your-teams-state/
 categories: [guides]
@@ -361,14 +362,15 @@ Include testing expectations in CursorRules:
 This ensures Cursor generates testable state code when you ask for it.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create CursorRules That Enforce Your Team's Git Commit Message Format](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
-- [How to Create Cursorules That Enforce Your Teams React Component Composition Patterns](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
-- [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
+
+## Related Articles
+
+- [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
+- [How to Create .cursorrules That Enforce Your Teams React](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-react-comp/)
+- [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)
+- [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

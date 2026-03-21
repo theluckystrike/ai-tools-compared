@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Automatic Subtitles and Captions"
 description: "A practical guide to AI-powered subtitle and caption generation tools for developers, with code examples and implementation strategies"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-automatic-subtitles-and-captions/
 categories: [comparisons]

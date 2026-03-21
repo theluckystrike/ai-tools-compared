@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Debugging Postgres Query Planner Choosing Wrong"
 description: "Discover how AI tools help debug PostgreSQL query planner choosing wrong index scan paths. Practical examples and techniques for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-debugging-postgres-query-planner-choosing-wrong/
 categories: [guides]
@@ -278,14 +279,15 @@ Rather than debugging after problems occur, consider proactive measures:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating Test Data Generators That Respect.](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
-- [Best AI for Fixing Android Gradle Sync Failed Errors in.](/ai-tools-compared/best-ai-for-fixing-android-gradle-sync-failed-errors-in-larg/)
+
+## Related Articles
+
+- [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)
+- [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)
+- [Best AI Tool for Converting MySQL Queries to Postgres Compat](/ai-tools-compared/best-ai-tool-for-converting-mysql-queries-to-postgres-compat/)
+- [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
+- [Cursor Tab Accepting Wrong Suggestion Fix](/ai-tools-compared/cursor-tab-accepting-wrong-suggestion-fix/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

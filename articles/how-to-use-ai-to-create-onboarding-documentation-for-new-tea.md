@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create Onboarding Documentation for New Tea"
 description: "A practical guide for developers and power users using AI to build onboarding documentation that accelerates new team member"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-onboarding-documentation-for-new-tea/
 categories: [guides]
@@ -305,13 +306,14 @@ Track documentation effectiveness by monitoring how quickly new team members bec
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Create Custom System Prompts for AI That Match.](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
-- [Best Practices for AI Tool Customization Files When Onboarding New Team Members](/ai-tools-compared/best-practices-for-ai-tool-customization-files-when-onboardi/)
-- [How to Use AI to Create Data Pipeline Orchestration.](/ai-tools-compared/how-to-use-ai-to-create-data-pipeline-orchestration-configs-/)
+
+## Related Articles
+
+- [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
+- [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [Effective Strategies for Using AI](/ai-tools-compared/effective-strategies-for-using-ai-to-learn-new-programming-languages-faster/)
+- [AI Employee Onboarding Tools Comparison 2026: A Developer's Guide](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

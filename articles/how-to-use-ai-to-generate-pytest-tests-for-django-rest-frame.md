@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate pytest Tests for Django REST Frame"
 description: "A practical guide for developers learning to use AI tools to automatically generate pytest tests for Django REST Framework serializer validation logic"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/
 categories: [guides]
@@ -284,10 +285,14 @@ Test framework: pytest with DRF's APITestCase
 This approach makes generating tests for new serializers repeatable and efficient.
 
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
+- [How to Use AI to Generate pytest Tests for Celery Task Chain](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)
+- [How to Use AI to Generate pytest Tests for Rate Limited](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-rate-limited-endpoint-throttling-behavior/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

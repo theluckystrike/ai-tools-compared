@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Resolving Yarn Berry PnP Module Resolution Erro"
 description: "Discover how AI coding assistants help developers troubleshoot and fix Yarn Berry PnP module resolution issues in large monorepos. Practical examples"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/
 categories: [guides]
@@ -258,14 +259,15 @@ For issues involving native modules or complex peer dependency chains, the Yarn 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Use AI to Debug CORS Errors in Cross-Origin API.](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
-- [Best AI for Resolving Git Merge Conflict Markers in.](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
-- [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
+
+## Related Articles
+
+- [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
+- [AI Tools for Resolving Docker Build Context Permission Denie](/ai-tools-compared/ai-tools-for-resolving-docker-build-context-permission-denie/)
+- [AI Tools for Resolving SSL Certificate Chain Verification](/ai-tools-compared/ai-tools-for-resolving-ssl-certificate-chain-verification-er/)
+- [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How to Configure Cursor AI Rules for Consistent CSS and Tail"
 description: "A practical guide to setting up Cursor AI rules that enforce consistent CSS and Tailwind class ordering across your codebase"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/
 categories: [guides]
@@ -357,13 +358,14 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
-- [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
-- [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
+
+## Related Articles
+
+- [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
+- [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
+- [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
+- [Migrating Copilot Custom Instructions to Cursor Rules.](/ai-tools-compared/migrating-copilot-custom-instructions-to-cursor-rules-file-f/)
+- [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

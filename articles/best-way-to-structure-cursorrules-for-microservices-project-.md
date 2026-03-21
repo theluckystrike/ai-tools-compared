@@ -3,6 +3,7 @@ layout: default
 title: "Best Way to Structure CursorRules for Microservices Project"
 description: "A practical guide to structuring CursorRules files for microservices projects with shared protobuf definitions. Includes code examples and folder"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /best-way-to-structure-cursorrules-for-microservices-project-/
 categories: [guides]
@@ -334,13 +335,14 @@ A well-maintained CursorRules setup ensures consistent, high-quality code genera
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tools for Go Project Structure and Module.](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
-- [Writing Effective CursorRules for Next.js App Router.](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
-- [How to Create CursorRules That Teach Cursor Your Team's State Management Patterns](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)
+
+## Related Articles
+
+- [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
+- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [How to Structure Project Files So AI Coding Tools Understand](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat"
 description: "A practical comparison of ChatGPT and Claude for writing Nginx reverse proxy configuration files, with code examples and real-world use cases"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/
 categories: [guides]
@@ -366,13 +367,14 @@ Run this before reloading in production. It prevents configuration errors from b
 ---
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
-- [ChatGPT vs Claude for Writing Effective Celery Task.](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
-- [Claude vs ChatGPT for Writing Kubernetes Helm Chart.](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)
+
+## Related Articles
+
+- [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
+- [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)
+- [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
+- [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
+- [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

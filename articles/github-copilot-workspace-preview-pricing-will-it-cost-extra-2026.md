@@ -3,6 +3,7 @@ layout: default
 title: "GitHub Copilot Workspace Preview Pricing Will It Cost Extra"
 description: "Everything you need to know about GitHub Copilot Workspace preview pricing, including whether it costs extra, feature availability, and what to expect"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /github-copilot-workspace-preview-pricing-will-it-cost-extra-2026/
 categories: [guides]
@@ -292,14 +293,15 @@ Workspace:
 - Use Cursor Free or Windsurf Free for larger tasks
 - Evaluate Workspace pricing when announced
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Migrate GitHub Copilot Workspace Setup to Cursor.](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
-- [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
-- [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
+
+## Related Articles
+
+- [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)
+- [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)
+- [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
+- [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
+- [Windsurf Premium Model Access Which Models Cost Extra](/ai-tools-compared/windsurf-premium-model-access-which-models-cost-extra-credits-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

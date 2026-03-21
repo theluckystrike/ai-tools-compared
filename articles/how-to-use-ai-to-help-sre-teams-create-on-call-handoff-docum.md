@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Help Sre Teams Create on Call Handoff Docum"
 description: "Learn practical approaches for using AI to improve on-call handoff documentation, reduce context switching, and improve incident response for SRE teams"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-sre-teams-create-on-call-handoff-docum/
 categories: [guides]
@@ -509,10 +510,14 @@ class HandoffQualityMetrics:
         return (completed / total * 100) if total > 0 else 0
 ```
 
-## Related Reading
 
-- [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)
-- [AI Tools Comparison Guide](/ai-tools-comparison-guide/)
-- [AI Tools Hub](/guides-hub/)
+
+## Related Articles
+
+- [How to Use AI to Help SRE Teams Draft Root Cause Analysis](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
+- [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
+- [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
+- [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)
+- [How to Use AI to Help QA Engineers Create Test Environment](/ai-tools-compared/how-to-use-ai-to-help-qa-engineers-create-test-environment-p/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

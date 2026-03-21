@@ -3,6 +3,7 @@ layout: default
 title: "Claude Projects Feature Which Plan Tier Includes It Explaine"
 description: "A guide to understanding which Claude AI subscription plan includes the Projects feature, with practical examples for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-projects-feature-which-plan-tier-includes-it-explaine/
 categories: [guides]
@@ -245,13 +246,14 @@ For teams, the Team plan adds collaborative features that make Projects even mor
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT Canvas Feature - Is It Included in Plus or Team Only?](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
+
+## Related Articles
+
+- [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [How to Use Claude API Cheaply for Small Coding Projects](/ai-tools-compared/how-to-use-claude-api-cheaply-for-small-coding-projects/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
-- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

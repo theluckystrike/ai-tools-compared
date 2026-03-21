@@ -3,6 +3,7 @@ layout: default
 title: "How to Set Up Ollama as Private AI Coding Assistant"
 description: "A practical guide for developers looking to run local AI models for code assistance while keeping sensitive code completely private and offline"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/
 categories: [guides]
@@ -340,13 +341,14 @@ The entire interaction happens offline. No code leaves your machine.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
-- [How to Use AI Coding Tools in FedRAMP Authorized Cloud.](/ai-tools-compared/how-to-use-ai-coding-tools-in-fedramp-authorized-cloud-envir/)
-- [AI Coding Assistant Data Sovereignty Requirements for.](/ai-tools-compared/ai-coding-assistant-data-sovereignty-requirements-for-companies-operating-in-eu-2026/)
+
+## Related Articles
+
+- [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
+- [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

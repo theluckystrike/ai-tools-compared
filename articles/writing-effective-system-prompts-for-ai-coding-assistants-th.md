@@ -3,6 +3,7 @@ layout: default
 title: "Writing Effective System Prompts for AI Coding Assistants"
 description: "A practical guide for developers and power users to craft system prompts that help AI coding assistants generate idiomatic code matching your project's"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /writing-effective-system-prompts-for-ai-coding-assistants-th/
 categories: [guides]
@@ -243,14 +244,15 @@ A system prompt is not a set-it-and-forget-it document. It should evolve alongsi
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
-- [How to Structure Prompts for AI to Generate Idiomatic.](/ai-tools-compared/how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/)
-- [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
+
+## Related Articles
+
+- [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
+- [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
+- [How to Create Custom System Prompts for AI That Match Your](/ai-tools-compared/how-to-create-custom-system-prompts-for-ai-that-match-your-d/)
+- [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
+- [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

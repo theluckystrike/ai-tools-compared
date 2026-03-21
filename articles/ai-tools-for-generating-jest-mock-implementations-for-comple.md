@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Generating Jest Mock Implementations for Comple"
 description: "Mocking complex third-party libraries in Jest remains one of the most time-consuming aspects of writing effective unit tests. Libraries like AWS SDK, Stripe"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-generating-jest-mock-implementations-for-comple/
 categories: [guides]
@@ -308,14 +309,15 @@ Maintain your mocks alongside your code. When you add new method calls to third-
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Tool for Generating Jest Test Cases from React.](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
-- [Best AI Assistant for Generating SQL Recursive Queries.](/ai-tools-compared/best-ai-assistant-for-generating-sql-recursive-queries-for-hierarchical-org-chart-data/)
-- [AI Tools for Generating Pull Request Merge Conflict.](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
+
+## Related Articles
+
+- [How to Prevent AI Coding Tools from Generating Overly](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+- [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)
+- [Best AI Tool for Generating Jest Test Cases from React](/ai-tools-compared/best-ai-tool-for-generating-jest-test-cases-from-react-compo/)
+- [Claude Code MSW Mock Service Worker Guide](/ai-tools-compared/claude-code-msw-mock-service-worker-guide/)
+- [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

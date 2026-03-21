@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Reviewing Embedded C Code for Memory."
 description: "A practical guide to AI-powered tools that help identify memory leaks and buffer overflows in embedded C code, with code examples and tool comparisons"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-reviewing-embedded-c-code-for-memory-leak-and-buffer-overflow/
 categories: [guides]
@@ -407,9 +408,15 @@ cache line size (32 bytes on Cortex-M7)?
 
 Claude correctly identifies cache coherency issues on cached architectures. ChatGPT and Copilot sometimes miss the distinction between cached and non-cached regions unless the prompt is explicit.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
+- [AI Tools for Writing SPI Flash External Memory Driver.](/ai-tools-compared/ai-tools-for-writing-spi-flash-external-memory-driver-code-f/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
+- [How to Configure Claude Code Project Memory for Persistent](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
+- [AI Tools for Reviewing Documentation Pull Requests for Accur](/ai-tools-compared/ai-tools-for-reviewing-documentation-pull-requests-for-accur/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

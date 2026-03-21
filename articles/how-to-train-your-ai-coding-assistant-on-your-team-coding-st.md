@@ -3,6 +3,7 @@ layout: default
 title: "How to Train Your AI Coding Assistant on Your Team Coding"
 description: "A practical guide to customizing AI coding assistants with your team's coding conventions, patterns, and best practices for more relevant code suggestions"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-train-your-ai-coding-assistant-on-your-team-coding-st/
 categories: [guides]
@@ -275,13 +276,14 @@ Training your AI coding assistant on team standards requires initial effort, but
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
-- [How to Manage AI Coding Context Window to Avoid.](/ai-tools-compared/how-to-manage-ai-coding-context-window-to-avoid-hallucinated/)
-- [How to Prevent AI Coding Tools from Generating Overly.](/ai-tools-compared/how-to-prevent-ai-coding-tools-from-generating-overly-complex-solutions/)
+
+## Related Articles
+
+- [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
+- [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
+- [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
+- [AI Coding Assistant Comparison for Typescript monorepo](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-monorepo-with-turborepo-setup/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

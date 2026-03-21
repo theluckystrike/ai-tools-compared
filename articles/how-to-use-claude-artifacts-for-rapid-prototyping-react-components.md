@@ -3,6 +3,7 @@ layout: default
 title: "How to Use Claude Artifacts"
 description: "Master Claude's artifact feature to prototype React components in minutes. Learn workflow, limitations, exports, and comparisons with ChatGPT Canvas"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /how-to-use-claude-artifacts-for-rapid-prototyping-react-components/
 categories: [guides]
@@ -279,8 +280,14 @@ Track whether artifacts are actually saving you time. Measure:
 
 - **Feature completeness:** Does the first artifact include 80%+ of required features? If you're always requesting "add this, fix that," your initial prompt needs more specificity.
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [Best AI for Converting Figma Designs to React Components](/ai-tools-compared/best-ai-for-converting-figma-designs-to-react-components-2026/)
+- [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
+- [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)
+- [Claude vs ChatGPT for Building Custom ESLint Rules for React](/ai-tools-compared/claude-vs-chatgpt-for-building-custom-eslint-rules-for-react/)
+- [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

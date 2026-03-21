@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Creating Dbt Documentation Blocks"
 description: "Discover how AI-powered tools can automatically generate dbt documentation blocks by analyzing column-level lineage and transform your data"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/
 categories: [guides]
@@ -273,14 +274,15 @@ The initial investment in setting up automated documentation pays dividends thro
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating dbt Model Definitions from Raw.](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
-- [AI Tools for Writing dbt Seeds and Fixtures for Testing.](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
-- [Best AI for Creating Open Source Project Architecture Documentation](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
+
+## Related Articles
+
+- [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
+- [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
+- [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
+- [How to Use AI to Generate Terraform Import Blocks for](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)
+- [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

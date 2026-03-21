@@ -3,6 +3,7 @@ layout: default
 title: "Best Free AI Tool for Code Explanation and Documentation"
 description: "A practical comparison of free AI tools for explaining code and generating documentation, with real examples and code snippets for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /best-free-ai-tool-for-code-explanation-and-documentation/
 reviewed: true
@@ -337,14 +338,15 @@ The key is to provide clear context and ask specific questions—the quality of 
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Generating Nginx and Caddy Reverse Proxy.](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
-- [AI Tools for Converting Code Comments into Developer-Facing Documentation Automatically](/ai-tools-compared/ai-tools-for-converting-code-comments-into-developer-facing-/)
-- [Best AI Features for Generating API Client Code from.](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
+
+## Related Articles
+
+- [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
+- [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
+- [AI Tools for Code Documentation Generation 2026.](/ai-tools-compared/ai-code-documentation-generation-2026/)
+- [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
+- [Claude Code Runbook Documentation Guide](/ai-tools-compared/claude-code-runbook-documentation-guide/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

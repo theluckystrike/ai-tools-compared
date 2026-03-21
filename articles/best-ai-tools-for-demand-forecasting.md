@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Tools for Demand Forecasting"
 description: "A practical comparison of AI tools for demand forecasting, with code examples and implementation guidance for developers"
 date: 2026-03-15
+last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-demand-forecasting/
 categories: [guides]

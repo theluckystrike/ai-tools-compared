@@ -3,6 +3,7 @@ layout: default
 title: "Best AI Assistant for Preparing for AWS Solutions Architect"
 description: "A practical comparison of AI coding tools to help you prepare for the AWS Solutions Architect Associate and Professional exams in 2026"
 date: 2026-03-18
+last_modified_at: 2026-03-18
 author: theluckystrike
 permalink: /best-ai-assistant-for-preparing-for-aws-solutions-architect/
 reviewed: true
@@ -288,13 +289,14 @@ For AWS Solutions Architect preparation, combining multiple AI tools works best:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI Assistant for Writing Pandas Code to Process.](/ai-tools-compared/best-ai-assistant-for-writing-pandas-code-to-process-nested-json-api-pagination/)
-- [Best AI Assistant for Debugging Swift Compiler Errors in.](/ai-tools-compared/best-ai-assistant-for-debugging-swift-compiler-errors-in-xco/)
-- [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
+
+## Related Articles
+
+- [Best Air Gapped AI Code Completion Solutions for Offline Dev](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [Best AI Tools for Cloud Cost Optimization Across AWS Azure G](/ai-tools-compared/best-ai-tools-for-cloud-cost-optimization-across-aws-azure-g/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

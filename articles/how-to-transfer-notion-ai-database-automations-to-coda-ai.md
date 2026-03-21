@@ -3,6 +3,7 @@ layout: default
 title: "How to Transfer Notion AI Database Automations to Coda AI"
 description: "A practical guide for developers and power users migrating Notion AI database automations to Coda AI, with code examples and migration strategies"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-transfer-notion-ai-database-automations-to-coda-ai/
 categories: [guides]
@@ -265,14 +266,15 @@ async function processWithCodaAI(tableId, rowId, content) {
 ```
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
-- [How to Use AI for Database Backup Automation and.](/ai-tools-compared/how-to-use-ai-for-database-backup-automation-and-disaster-re/)
-- [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
+
+## Related Articles
+
+- [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
+- [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
+- [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)
+- [Notion AI vs ClickUp AI: Task Writing Compared](/ai-tools-compared/notion-ai-vs-clickup-ai-task-writing-compared/)
+- [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "Effective Context Management Strategies for AI Coding"
 description: "Practical strategies and techniques for managing AI coding assistant context in large monorepo projects. Learn how to optimize prompts, reduce token"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/
 reviewed: true
@@ -499,24 +500,17 @@ claude code packages/shared/types/**/*.ts packages/your-service/src/**/*.ts \
 # 3. Third: Create API handlers
 ```
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Context Loading Strategies for AI Tools in.](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
+
+## Related Articles
+
+- [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
+- [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
+- [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
+- [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
+- [Effective Strategies for AI-Assisted Refactoring Without Bre](/ai-tools-compared/effective-strategies-for-ai-assisted-refactoring-without-bre/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
-## Related Reading
-
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Effective Context Loading Strategies for AI Tools in.](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)
-- [Writing Effective System Prompts for AI Coding.](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
-- [Best Prompting Strategies for Getting Accurate Code from.](/ai-tools-compared/best-prompting-strategies-for-getting-accurate-code-from-ai-/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Optimize Terraform Module Reusability Acros"
 description: "Learn practical strategies for using AI to improve Terraform module reusability, standardize patterns, and improve infrastructure workflows across"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-optimize-terraform-module-reusability-acros/
 categories: [guides]
@@ -292,13 +293,14 @@ Iterate on module design with AI assistance. Initial versions rarely achieve per
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Optimize AI Coding Prompts for Generating.](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
-- [How to Use AI for Writing Effective Terraform State.](/ai-tools-compared/how-to-use-ai-for-writing-effective-terraform-state-manageme/)
-- [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+
+## Related Articles
+
+- [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
+- [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
+- [Best AI Tools for Go Project Structure and Module](/ai-tools-compared/best-ai-tools-for-go-project-structure-and-module-organization/)
+- [Claude Code Go Module Development Guide](/ai-tools-compared/claude-code-go-module-development-guide/)
+- [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

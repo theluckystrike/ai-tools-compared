@@ -3,6 +3,7 @@ layout: default
 title: "AI Tools for Automated Changelog Generation 2026"
 description: "Compare AI tools for generating changelogs from git history. Covers GitHub Copilot, Claude, GPT-4, semantic-release integration, and conventional commits"
 date: 2026-03-20
+last_modified_at: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-automated-changelog-generation-2026/
 categories: [guides]
@@ -440,9 +441,15 @@ git push origin main --tags
 
 ---
 
-## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+
+## Related Articles
+
+- [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
+- [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)
+- [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
+- [How to Use AI to Create Changelog Entries Grouped by Breakin](/ai-tools-compared/how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

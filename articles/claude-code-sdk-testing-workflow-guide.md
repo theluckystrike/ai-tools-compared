@@ -3,6 +3,7 @@ title: "Claude Code SDK Testing Workflow Guide"
 description: "A guide to setting up and maintaining testing workflows for Claude Code SDK implementations"
 author: "theluckystrike"
 date: 2026-03-17
+last_modified_at: 2026-03-17
 permalink: /claude-code-sdk-testing-workflow-guide/
 categories: [guides]
 tags: [ai-tools-compared, tools, workflow, claude-ai, sdk]
@@ -405,14 +406,15 @@ describe('Token usage controls', () => {
 Pair these tests with alerting in production to catch unexpected cost spikes early. A well-tested token management layer prevents the kind of billing surprises that turn small experiments into expensive incidents.
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Cursor AI Apply Model: How It Merges Generated Code into.](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
-- [Copilot Code Referencing Feature: How It Handles Open.](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
+
+## Related Articles
+
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
+- [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
+- [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
+- [Claude Code Shift Left Testing Strategy Guide](/ai-tools-compared/claude-code-shift-left-testing-strategy-guide/)
+- [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

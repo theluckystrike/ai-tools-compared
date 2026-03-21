@@ -3,6 +3,7 @@ layout: default
 title: "Copilot vs Claude Code for Scaffolding New Django REST Frame"
 description: "A practical comparison of GitHub Copilot and Claude Code for scaffolding new Django REST Framework projects. Includes code examples, workflow"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/
 categories: [guides]
@@ -230,13 +231,14 @@ Many developers actually use both—Copilot for day-to-day coding in their edito
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
-- [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
-- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+
+## Related Articles
+
+- [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
+- [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
+- [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
+- [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
+- [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

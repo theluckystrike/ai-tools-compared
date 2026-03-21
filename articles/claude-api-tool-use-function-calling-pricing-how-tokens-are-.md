@@ -3,6 +3,7 @@ layout: default
 title: "Claude API Tool Use Function Calling Pricing How Tokens Are"
 description: "Claude API tool use (function calling) is billed as standard API token usage with no separate pricing category -- tool definitions count as input tokens, tool"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /claude-api-tool-use-function-calling-pricing-how-tokens-are-/
 categories: [guides]
@@ -263,14 +264,15 @@ Understanding these mechanics enables you to build applications that use Claude'
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [ChatGPT API Token Pricing Calculator: How to Estimate.](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
-- [ChatGPT API Assistants API Pricing: Threads and Runs.](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
-- [Claude Sonnet vs Opus API Pricing: Is the Difference.](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+
+## Related Articles
+
+- [Claude API Extended Thinking: How Output Tokens Are Billed](/ai-tools-compared/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
+- [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
+- [Claude Sonnet vs Opus API Pricing Difference Worth It](/ai-tools-compared/claude-sonnet-vs-opus-api-pricing-difference-worth-it-2026/)
+- [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)
+- [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

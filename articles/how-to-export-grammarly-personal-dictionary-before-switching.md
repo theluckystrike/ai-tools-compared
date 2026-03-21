@@ -3,6 +3,7 @@ layout: default
 title: "How to Export Grammarly Personal Dictionary Before Switching"
 description: "A practical guide for developers and power users on exporting your Grammarly personal dictionary before transitioning to AI assistants like Claude"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-grammarly-personal-dictionary-before-switching/
 categories: [guides]
@@ -360,13 +361,14 @@ Run this weekly or monthly to keep your dictionary safe.
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [How to Export Gemini Workspace Data Before Switching to.](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
-- [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
-- [How to Export ChatGPT Shared Links Before Account.](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
+
+## Related Articles
+
+- [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
+- [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
+- [How to Export Gemini Workspace Data Before Switching to](/ai-tools-compared/how-to-export-gemini-workspace-data-before-switching-to-claude-team/)
+- [Grammarly AI Not Working in Browser Fix (2026)](/ai-tools-compared/grammarly-ai-not-working-in-browser-fix-2026/)
+- [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

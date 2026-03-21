@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Create Data Pipeline Orchestration Configs"
 description: "A practical guide for developers using AI to generate Prefect and Dagster orchestration configurations, with code examples and best practices"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-data-pipeline-orchestration-configs-/
 categories: [guides]
@@ -284,13 +285,14 @@ Using generated configs in production without local testing. Both Prefect and Da
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Best AI for Analyzing Google Analytics Data Exports with.](/ai-tools-compared/best-ai-for-analyzing-google-analytics-data-exports-with-pan/)
-- [How to Use AI to Build Data Pipeline Retry and Dead.](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
-- [How to Use AI to Help Product Managers Write Data-Driven.](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)
+
+## Related Articles
+
+- [Best AI Tools for Data Pipeline Debugging 2026](/ai-tools-compared/best-ai-tools-for-data-pipeline-debugging-2026/)
+- [How to Use AI to Build Data Pipeline Retry and Dead Letter](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)
+- [How to Use AI to Create Data Quality Scorecards from dbt Tes](/ai-tools-compared/how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/)
+- [AI Powered Tools for Container Orchestration Beyond](/ai-tools-compared/ai-powered-tools-for-container-orchestration-beyond-kubernetes-compared/)
+- [AI CI/CD Pipeline Optimization: A Developer Guide](/ai-tools-compared/ai-ci-cd-pipeline-optimization/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -3,6 +3,7 @@ layout: default
 title: "How to Use AI to Generate Realistic Test Data for Postgres"
 description: "Learn how to use AI tools to create production-like test data for PostgreSQL database seeding, with practical examples and code snippets"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/
 categories: [guides]
@@ -298,13 +299,14 @@ Realistic test data transforms your development and testing process. AI makes ge
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [AI Tools for Creating Realistic Test Datasets That.](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
+
+## Related Articles
+
 - [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
-- [Best AI Assistant for Creating Test Data Factories with.](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
+- [AI Tools for Creating Realistic Test Datasets That Preserve](/ai-tools-compared/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
+- [AI Tools for Automated Test Data Generation 2026](/ai-tools-compared/ai-tools-for-automated-test-data-generation-2026/)
+- [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)
+- [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

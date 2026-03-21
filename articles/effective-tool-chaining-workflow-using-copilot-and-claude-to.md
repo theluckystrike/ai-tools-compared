@@ -3,6 +3,7 @@ layout: default
 title: "Effective Tool Chaining Workflow Using Copilot and Claude"
 description: "Learn how to combine GitHub Copilot and Claude for maximum coding productivity. Practical workflows, real examples, and strategies for developers"
 date: 2026-03-16
+last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/
 categories: [guides]
@@ -260,13 +261,14 @@ Use Claude for analysis and Copilot for implementation:
 
 
 
-## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-- [Copilot Edits Panel vs Cursor Composer Workflow.](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
-- [Effective Workflow for AI-Assisted Open Source.](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
-- [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
+
+## Related Articles
+
+- [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
+- [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-debug-production-issues-from-logs/)
+- [Effective Workflow for Using AI](/ai-tools-compared/effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/)
+- [Copilot Edits Panel vs Cursor Composer Workflow Comparison](/ai-tools-compared/copilot-edits-panel-vs-cursor-composer-workflow-comparison-f/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
