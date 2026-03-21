@@ -344,6 +344,81 @@ A practical workflow for bulk translation:
 
 This staged approach catches systematic errors — such as AI consistently missing the CAST requirement on a specific column type — before they reach production.
 
+## Migration Validation Framework
+
+After AI generates translated queries, validate them programmatically rather than by hand. The following approach runs the same logical operation against both the source and target databases and compares output:
+
+```python
+import psycopg2
+import mysql.connector
+import pandas as pd
+
+def validate_translation(pg_query: str, mysql_query: str,
+                          pg_conn_str: str, mysql_config: dict,
+                          sample_key: str, tolerance: float = 0.001):
+    """
+    Validate that a translated query produces equivalent results.
+    Compares row counts and a checksum of the result set.
+    """
+    pg_conn = psycopg2.connect(pg_conn_str)
+    mysql_conn = mysql.connector.connect(**mysql_config)
+
+    pg_df = pd.read_sql(pg_query, pg_conn)
+    mysql_df = pd.read_sql(mysql_query, mysql_conn)
+
+    pg_conn.close()
+    mysql_conn.close()
+
+    # Normalize column names to lowercase for comparison
+    pg_df.columns = [c.lower() for c in pg_df.columns]
+    mysql_df.columns = [c.lower() for c in mysql_df.columns]
+
+    row_match = len(pg_df) == len(mysql_df)
+    if not row_match:
+        return False, f"Row count mismatch: PG={len(pg_df)} MySQL={len(mysql_df)}"
+
+    # Sort both on the key column to align rows
+    pg_sorted = pg_df.sort_values(sample_key).reset_index(drop=True)
+    mysql_sorted = mysql_df.sort_values(sample_key).reset_index(drop=True)
+
+    numeric_cols = pg_sorted.select_dtypes(include='number').columns
+    for col in numeric_cols:
+        if col in mysql_sorted.columns:
+            diff = (pg_sorted[col] - mysql_sorted[col]).abs().max()
+            if diff > tolerance:
+                return False, f"Column {col} differs by {diff:.6f}"
+
+    return True, "Queries produce equivalent results"
+
+# Example usage
+ok, msg = validate_translation(
+    pg_query="SELECT region, SUM(revenue) as total FROM sales GROUP BY region",
+    mysql_query="SELECT region, SUM(revenue) as total FROM sales GROUP BY region",
+    pg_conn_str="postgresql://user:pass@localhost/analytics",
+    mysql_config={"host": "localhost", "user": "user", "password": "pass", "database": "analytics"},
+    sample_key="region"
+)
+print(msg)
+```
+
+This validation script catches numeric precision differences, row ordering edge cases, and silently dropped rows — all failure modes that AI-translated queries can introduce without obvious syntax errors.
+
+## Schema-Level Differences That Affect Query Translation
+
+Query translation rarely lives in isolation. Schema differences between databases create translation failures that are not obvious at the query level:
+
+**Data type mismatches to watch for:**
+
+| PostgreSQL Type | MySQL Equivalent | Snowflake Equivalent | Notes |
+|----------------|-----------------|---------------------|-------|
+| `SERIAL` | `INT AUTO_INCREMENT` | `AUTOINCREMENT` | Default generation differs |
+| `JSONB` | `JSON` | `VARIANT` | Query operators change significantly |
+| `TIMESTAMP WITH TIME ZONE` | `DATETIME` (no TZ) | `TIMESTAMP_TZ` | MySQL silently drops timezone |
+| `UUID` | `CHAR(36)` | `VARCHAR(36)` | Comparison operators differ |
+| `TEXT[]` | Not native | `ARRAY` | MySQL lacks native arrays |
+
+When providing schema context to AI, include `CREATE TABLE` statements alongside the queries being translated. This gives the model the column type information it needs to generate correct CAST expressions and avoid implicit type coercion errors.
+
 ## Limitations and Considerations
 
 
