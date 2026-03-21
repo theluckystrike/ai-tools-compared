@@ -9,7 +9,7 @@ permalink: /perplexity-pro-file-upload-limits-and-storage-costs-explaine/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
