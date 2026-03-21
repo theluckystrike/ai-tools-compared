@@ -9,7 +9,7 @@ permalink: /cursor-ai-switching-between-claude-and-gpt-models-extra-cost/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /cursor-project-wide-refactor-breaking-build-fix/
 reviewed: true
-score: 8
+score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
