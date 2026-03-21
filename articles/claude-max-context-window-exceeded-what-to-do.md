@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /claude-max-context-window-exceeded-what-to-do/
 reviewed: true
 score: 8
-categories: [guides]
+categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, claude-ai]
@@ -31,6 +31,30 @@ Claude Max has a maximum context window that determines how much conversation hi
 
 
 The context window isn't just about message count—it measures tokens, which are roughly chunks of words or code characters. A long conversation with detailed code reviews, multiple file explanations, and extensive debugging history can reach this limit faster than you expect.
+
+
+### How Many Tokens Is Too Many?
+
+
+Claude's context window sizes vary by model tier. As of early 2026:
+
+- **Claude Sonnet / Claude Max:** 200,000 token context window
+- **Claude Haiku:** 200,000 token context window
+- **Claude Opus:** 200,000 token context window
+
+200K tokens sounds enormous—roughly 150,000 words or 500 pages of dense code. But multi-file refactoring sessions, long debugging chains, and large file attachments can fill it faster than expected. A 10,000-line codebase pasted directly into chat consumes around 40,000–60,000 tokens before you've said a word.
+
+
+## Quick Reference: Fixes by Severity
+
+
+| Situation | Best Fix |
+|---|---|
+| Hitting limit mid-task | /clear command, then re-summarize |
+| Starting fresh but need context | CLAUDE.md project file |
+| Large codebase analysis | Use file references, not paste |
+| Recurring limit hits on same project | Restructure into multiple sessions |
+| Error on session start | Check for auto-loaded large files |
 
 
 ## Immediate Solutions When You Hit the Limit
@@ -64,6 +88,24 @@ In Claude Code, you can clear conversation history without starting entirely fre
 
 
 This removes the conversation history while keeping your current session active. You can then continue with a reduced context load.
+
+
+### Provide a Handoff Summary
+
+
+When you start the new session, open with a structured summary that gives Claude what it needs without wasting tokens on backstory:
+
+
+```
+Session handoff summary:
+- Project: Node.js REST API with Prisma and PostgreSQL
+- What's done: User model, auth middleware, login/logout endpoints
+- Current task: Implement refresh token rotation
+- Key constraint: Tokens stored in Redis, 15-min access / 7-day refresh
+- Files involved: src/auth/tokenService.ts, src/routes/auth.ts
+```
+
+This 60-token summary replaces a conversation that might have consumed 30,000 tokens.
 
 
 ## Preventing Context Window Issues
@@ -150,6 +192,19 @@ Some developers track approximate token usage:
 - Plan to start fresh before reaching estimated limits
 
 
+### Signs You're Approaching the Limit
+
+
+Watch for these early warning signs before the error occurs:
+
+- Claude's responses become shorter and less detailed than usual
+- Claude stops referencing earlier parts of the conversation accurately
+- Responses contain more hedging language ("I believe", "if I recall correctly")
+- Code suggestions stop fitting the conventions established earlier in the session
+
+If you notice these patterns, start a fresh session proactively rather than waiting for the hard error.
+
+
 ## Advanced Techniques for Power Users
 
 
@@ -194,7 +249,7 @@ For long projects, establish session conventions:
 This distributes context across multiple sessions and external resources.
 
 
-### use Claude's Built-in Tools
+### Use Claude's Built-in Tools
 
 
 Use Claude's tool capabilities to reduce context burden:
@@ -208,6 +263,36 @@ Use Claude's tool capabilities to reduce context burden:
 
 
 Tools handle information more efficiently than conversation context.
+
+
+### Compress Your Context Proactively
+
+
+Before you hit the limit, ask Claude to compress the conversation history:
+
+```
+Before we continue, please write a 200-word summary of everything we've
+decided and built so far in this session. I'll use this to start a fresh
+session if needed.
+```
+
+This creates a compact handoff document you can reuse across sessions.
+
+
+## Frequently Asked Questions
+
+
+**Does pasting code count more toward the context window than describing it?**
+Yes. Pasted code is processed token-by-token just like any other text. A 500-line TypeScript file pasted directly into chat might consume 3,000-5,000 tokens. Asking Claude to read that file through its file-reading tool is more efficient because Claude processes it internally without that content persisting in the conversation history the same way.
+
+**Can I see how many tokens my current conversation is using?**
+Claude's consumer interface does not expose a token counter. Developers using the API can track token usage through the response metadata (`usage.input_tokens`). For Claude Code users, the best proxy is keeping an eye on response quality—when it degrades, you're likely approaching the limit.
+
+**Does starting a new Project in Claude reset the context?**
+Yes. Claude Projects each have their own isolated conversation history. If you're consistently hitting the limit on a single project, consider splitting the work into multiple projects—one per major feature or module. Project files (uploaded context) count against the window, but they are efficient because they load once and Claude can reference them without repeating their content in the conversation.
+
+**What happens to in-progress code edits when I hit the limit?**
+In Claude Code, any file changes Claude has already written to disk persist—the context limit only affects what Claude "remembers." You won't lose file edits. What you lose is Claude's awareness of the conversation history and reasoning that led to those edits.
 
 
 ## Troubleshooting Persistent Problems
@@ -258,7 +343,15 @@ Some projects inherently create longer contexts:
 Plan around these by breaking work into shorter sessions.
 
 
-## Related Articles
+### Claude Max vs. Claude API: Different Behavior
+
+
+If you're using Claude through the API versus Claude Max (the subscription product), context management works differently. The API gives you explicit control over what's in the context window—you can trim history programmatically. Claude Max's web interface and Claude Code manage context automatically, which means you have less control but also less responsibility for managing the window manually.
+
+For API users hitting context limits, the standard solution is to implement a sliding window that drops the oldest messages while keeping the system prompt and most recent N turns.
+
+
+## Related Reading
 
 - [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
