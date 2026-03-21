@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI for Automated Code Migration"
-description: "Practical guide to AI-assisted code migration: framework upgrades, language ports, and API breaking changes. Includes batch migration scripts and validation patterns."
+description: "Practical guide to AI-assisted code migration: framework upgrades, language ports, and API breaking changes."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

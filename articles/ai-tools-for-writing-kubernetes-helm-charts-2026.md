@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Kubernetes Helm Charts 2026"
-description: "Compare top AI coding assistants for generating production-ready Kubernetes manifests and Helm charts. Includes real YAML examples, templating patterns, and tool accuracy benchmarks."
+description: "Compare top AI coding assistants for generating production-ready Kubernetes manifests and Helm charts."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

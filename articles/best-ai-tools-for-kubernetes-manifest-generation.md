@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Kubernetes Manifest Generation"
-description: "Compare AI tools for generating Kubernetes manifests in 2026: K8sGPT, Claude, Kopilot, and IDE plugins. YAML quality, security defaults, and Helm chart generation."
+description: "Compare AI tools for generating Kubernetes manifests in 2026: K8sGPT, Claude, Kopilot, and IDE plugins."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

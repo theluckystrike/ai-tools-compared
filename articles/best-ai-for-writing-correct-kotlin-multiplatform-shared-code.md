@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI for Writing Correct Kotlin Multiplatform Shared Code Modules 2026"
+title: "Best AI for Writing Correct Kotlin Multiplatform Shared"
 description: "A practical guide for developers comparing AI tools that help write correct Kotlin Multiplatform shared code modules, with code examples and recommendations."
 date: 2026-03-20
 author: theluckystrike

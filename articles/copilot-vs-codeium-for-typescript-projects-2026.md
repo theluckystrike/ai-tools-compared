@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Codeium for TypeScript Projects 2026"
-description: "Compare GitHub Copilot and Codeium for TypeScript development in 2026. Type inference, generic suggestions, decorator patterns, and cost-per-completion analysis."
+description: "Compare GitHub Copilot and Codeium for TypeScript development in 2026. Type inference, generic suggestions, decorator patterns, and cost-per-completion"
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

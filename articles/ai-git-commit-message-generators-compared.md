@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Git Commit Message Generators Compared 2026"
-description: "Compare AI commit message tools in 2026: Commitizen AI, Claude Code, aicommits, and IDE plugins. Message quality, conventional commits support, and workflow fit."
+description: "Compare AI commit message tools in 2026: Commitizen AI, Claude Code, aicommits, and IDE plugins."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

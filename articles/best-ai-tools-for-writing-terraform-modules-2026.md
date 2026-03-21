@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Terraform Modules 2026"
-description: "Compare the best AI coding assistants for generating production-grade Terraform and OpenTofu modules. Features real HCL examples, provider comparisons, and accuracy benchmarks."
+description: "Compare the best AI coding assistants for generating production-grade Terraform and OpenTofu modules."
 date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike

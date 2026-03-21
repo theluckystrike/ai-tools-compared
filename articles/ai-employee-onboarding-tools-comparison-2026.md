@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Employee Onboarding Tools Comparison 2026: A Developer's Guide"
+title: "AI Employee Onboarding Tools Comparison 2026"
 description: "Compare the best AI-powered employee onboarding tools in 2026. Practical examples, API integrations, and code snippets for developers building"
 date: 2026-03-20
 last_modified_at: 2026-03-20

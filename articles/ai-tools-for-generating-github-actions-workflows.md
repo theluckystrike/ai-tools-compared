@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Generating GitHub Actions Workflows"
+title: "AI Tools for Generating GitHub Actions Workflows (2)"
 description: "Compare Claude Code, GitHub Copilot, and Cursor for CI/CD workflow generation. Includes real workflow examples, debugging tips, and pricing comparison"
 date: 2026-03-20
 last_modified_at: 2026-03-20
