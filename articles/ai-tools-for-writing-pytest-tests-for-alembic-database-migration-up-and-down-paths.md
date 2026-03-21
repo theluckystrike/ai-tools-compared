@@ -125,19 +125,60 @@ AI-generated tests serve as a starting point. Review the output to add assertion
 - Data preservation during rollback
 
 
+## Setting Up a Robust Test Fixture
+
+
+One area where AI assistance adds significant value is generating the test infrastructure itself. A production-quality Alembic test setup requires careful fixture design to avoid test pollution:
+
+
+```python
+import pytest
+from sqlalchemy import create_engine, text
+from alembic.config import Config
+from alembic import command
+import os
+import tempfile
+
+@pytest.fixture(scope="session")
+def test_db_url():
+    """Create a temporary SQLite database for the test session."""
+    with tempfile.NamedTemporaryFile(suffix=".db", delete=False) as f:
+        db_path = f.name
+    yield f"sqlite:///{db_path}"
+    os.unlink(db_path)
+
+@pytest.fixture(scope="function")
+def alembic_cfg(test_db_url):
+    """Fresh Alembic config for each test, pointing to the test DB."""
+    cfg = Config("alembic.ini")
+    cfg.set_main_option("sqlalchemy.url", test_db_url)
+    return cfg
+
+@pytest.fixture(scope="function", autouse=True)
+def reset_schema(alembic_cfg):
+    """Roll back to base before each test to ensure clean state."""
+    command.downgrade(alembic_cfg, "base")
+    yield
+    command.downgrade(alembic_cfg, "base")
+```
+
+
+Claude generates this fixture pattern when prompted with your existing `alembic.ini` and a description of your testing goals. The `reset_schema` autouse fixture ensures each test starts from a clean schema state, preventing cross-test contamination.
+
+
 ## Comparing AI Tools for Migration Testing
 
 
 Different AI coding assistants offer varying levels of capability for generating migration tests:
 
 
-**Claude and Cursor** excel at understanding complex database schemas and generating context-aware tests. They can analyze your SQLAlchemy models alongside migration files to create more accurate test assertions.
+**Claude and Cursor** excel at understanding complex database schemas and generating context-aware tests. They can analyze your SQLAlchemy models alongside migration files to create more accurate test assertions. Claude is particularly strong at identifying edge cases—it will often suggest tests for NULL handling, unique constraint violations, and cascade delete behavior without being explicitly prompted.
 
 
-**GitHub Copilot** provides good baseline test generation but may require more manual refinement for complex migration scenarios involving data transformations.
+**GitHub Copilot** provides good baseline test generation but may require more manual refinement for complex migration scenarios involving data transformations. Its suggestions are driven heavily by surrounding code context, so keeping your existing test patterns open in the editor improves output quality significantly.
 
 
-**Local LLMs** using tools like Ollama can generate tests without sending your database schema to external servers, which matters for projects with strict data privacy requirements.
+**Local LLMs** using tools like Ollama can generate tests without sending your database schema to external servers, which matters for projects with strict data privacy requirements. Models like CodeLlama and DeepSeek Coder handle Alembic patterns reasonably well, though they lag behind Claude on complex multi-table migration scenarios.
 
 
 When evaluating tools, consider:
@@ -194,6 +235,84 @@ def test_upgrade_is_idempotent(alembic_config, test_engine):
 ```
 
 
+**Column Constraint Verification:**
+
+
+```python
+def test_column_constraints_after_upgrade(alembic_cfg, test_db_url):
+    """Verify NOT NULL constraints and defaults are applied correctly."""
+    command.upgrade(alembic_cfg, "+1")
+
+    engine = create_engine(test_db_url)
+    inspector = inspect(engine)
+    columns = {col["name"]: col for col in inspector.get_columns("orders")}
+
+    # Verify amount column is NOT NULL with a default
+    assert not columns["amount"]["nullable"]
+    assert columns["amount"]["default"] is not None
+
+    # Verify foreign key to customers
+    fks = inspector.get_foreign_keys("orders")
+    fk_targets = [fk["referred_table"] for fk in fks]
+    assert "customers" in fk_targets
+```
+
+
+Prompt Claude with your migration file and ask it to "generate column constraint verification tests." It will read the `op.add_column()` calls and produce assertions matching each constraint defined in the migration.
+
+
+## Testing PostgreSQL-Specific Migrations
+
+
+SQLite works for basic schema tests, but PostgreSQL-specific operations—enum types, JSONB columns, array types, partial indexes—require a real PostgreSQL instance. AI tools can generate the necessary test infrastructure:
+
+
+```python
+import pytest
+from sqlalchemy import create_engine
+from alembic.config import Config
+from alembic import command
+
+@pytest.fixture(scope="session")
+def pg_engine():
+    """Connect to a test PostgreSQL database."""
+    url = "postgresql://testuser:testpass@localhost/test_migrations"
+    engine = create_engine(url)
+    yield engine
+    engine.dispose()
+
+@pytest.fixture(scope="function")
+def pg_alembic_cfg(pg_engine):
+    cfg = Config("alembic.ini")
+    cfg.set_main_option("sqlalchemy.url", str(pg_engine.url))
+    return cfg
+
+def test_enum_type_created_on_upgrade(pg_alembic_cfg, pg_engine):
+    """Verify PostgreSQL enum type is created by upgrade."""
+    command.upgrade(pg_alembic_cfg, "+1")
+
+    with pg_engine.connect() as conn:
+        result = conn.execute(
+            text("SELECT typname FROM pg_type WHERE typname = 'order_status'")
+        )
+        assert result.fetchone() is not None
+
+def test_enum_type_dropped_on_downgrade(pg_alembic_cfg, pg_engine):
+    """Verify PostgreSQL enum type is removed on downgrade."""
+    command.upgrade(pg_alembic_cfg, "+1")
+    command.downgrade(pg_alembic_cfg, "-1")
+
+    with pg_engine.connect() as conn:
+        result = conn.execute(
+            text("SELECT typname FROM pg_type WHERE typname = 'order_status'")
+        )
+        assert result.fetchone() is None
+```
+
+
+Claude generates PostgreSQL-specific assertions when you include the database backend in your prompt context.
+
+
 ## Common Pitfalls and How AI Helps Avoid Them
 
 
@@ -207,6 +326,9 @@ Inconsistent test patterns: By generating tests from templates, AI ensures consi
 
 
 Outdated tests: When migrations change, AI can help update existing tests to match new schema requirements, reducing technical debt.
+
+
+Missing downgrade verification: Developers often test upgrades thoroughly but skip downgrade testing entirely, assuming it won't be needed. AI tools consistently include downgrade tests when prompted for "complete migration coverage."
 
 
 ## Best Practices for AI-Generated Migration Tests
@@ -224,6 +346,10 @@ To maximize the value of AI-generated tests:
 4. **Include rollback verification** as a mandatory test step
 
 5. **Use transaction fixtures** to ensure tests don't leave lasting database changes
+
+6. **Test on the same database backend as production**—SQLite behavior differs from PostgreSQL for type handling and constraint enforcement
+
+7. **Pin Alembic and SQLAlchemy versions** in your test requirements—migration behavior can change between minor versions
 
 
 ## Related Articles
