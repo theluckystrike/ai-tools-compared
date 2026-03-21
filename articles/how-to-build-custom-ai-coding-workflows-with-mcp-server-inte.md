@@ -24,7 +24,24 @@ Build custom AI coding workflows by creating MCP servers that expose your propri
 MCP servers act as bridges between your AI assistant and external systems. Each server exposes specific capabilities through a well-defined interface, allowing AI models to interact with databases, file systems, APIs, and development tools. The protocol handles authentication, request formatting, and response parsing, letting you focus on workflow logic rather than plumbing.
 
 
-The architecture follows a client-server model where your AI assistant (the client) connects to one or more MCP servers. These servers can run locally, on your network, or in the cloud, depending on your security and latency requirements.
+The architecture follows a client-server model where your AI assistant (the client) connects to one or more MCP servers. These servers can run locally, on your network, or in the cloud, depending on your security and latency requirements. Communication happens over stdio (for local servers) or HTTP/SSE (for remote servers), both using JSON-RPC 2.0 as the message format.
+
+MCP differs from traditional API integrations in a critical way: the AI model itself decides when and how to invoke your tools based on the user's intent. You define the tool schema (name, description, input parameters), and the model handles orchestration. This inverts the traditional programming model — instead of writing `if user_asks_about_db then query_db`, you describe what your tool does and let the model figure out when to use it.
+
+
+## Comparing MCP Server Approaches
+
+Before writing your own MCP server, evaluate whether an existing server meets your needs:
+
+| Approach | Setup Time | Customization | Performance | Best For |
+|---|---|---|---|---|
+| **Official MCP servers** (filesystem, git, postgres) | 5 min | Low | High | Standard dev tasks |
+| **Community servers** (GitHub, Jira, Slack) | 15-30 min | Medium | High | Third-party integrations |
+| **Wrapper around existing CLI** | 1-2 hrs | High | Medium | Internal tools |
+| **Custom Python/TypeScript server** | 4-8 hrs | Full | High | Proprietary systems |
+| **Serverless MCP via HTTP/SSE** | 2-4 hrs | Full | Variable | Cloud-native teams |
+
+For most teams, the fastest ROI comes from wrapping existing internal tools (bash scripts, internal CLIs, REST APIs) as MCP tools rather than building greenfield servers.
 
 
 ## Setting Up Your First MCP Server Connection
@@ -55,6 +72,110 @@ client = Client(config)
 
 
 This configuration defines two servers: one for filesystem operations and another for database interactions. Replace the connection string with your actual database credentials.
+
+
+## Step-by-Step: Building a Custom MCP Server in Python
+
+This walkthrough creates a custom MCP server that wraps your internal deployment API, making it accessible to Claude Code or any MCP-compatible client.
+
+**Step 1 — Install the SDK**
+
+```bash
+pip install mcp anthropic
+# or for TypeScript
+npm install @modelcontextprotocol/sdk
+```
+
+**Step 2 — Define your tools**
+
+```python
+from mcp.server import Server
+from mcp.server.models import InitializationOptions
+from mcp.types import Tool, TextContent
+import mcp.server.stdio
+
+app = Server("deploy-tools")
+
+@app.list_tools()
+async def list_tools():
+    return [
+        Tool(
+            name="deploy_service",
+            description="Deploy a service to staging or production. Returns deployment ID and status URL.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "service": {"type": "string", "description": "Service name, e.g. api-gateway"},
+                    "environment": {"type": "string", "enum": ["staging", "production"]},
+                    "version": {"type": "string", "description": "Docker image tag or git SHA"}
+                },
+                "required": ["service", "environment", "version"]
+            }
+        ),
+        Tool(
+            name="get_deploy_status",
+            description="Check the status of a deployment by ID.",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "deployment_id": {"type": "string"}
+                },
+                "required": ["deployment_id"]
+            }
+        )
+    ]
+```
+
+**Step 3 — Implement tool handlers**
+
+```python
+@app.call_tool()
+async def call_tool(name: str, arguments: dict):
+    if name == "deploy_service":
+        result = await internal_deploy_api.trigger(
+            service=arguments["service"],
+            env=arguments["environment"],
+            version=arguments["version"]
+        )
+        return [TextContent(type="text", text=f"Deployment {result.id} started. Track at {result.status_url}")]
+
+    elif name == "get_deploy_status":
+        status = await internal_deploy_api.get_status(arguments["deployment_id"])
+        return [TextContent(type="text", text=f"Status: {status.state}. Progress: {status.progress}%")]
+```
+
+**Step 4 — Run the server**
+
+```python
+async def main():
+    async with mcp.server.stdio.stdio_server() as (read_stream, write_stream):
+        await app.run(
+            read_stream,
+            write_stream,
+            InitializationOptions(server_name="deploy-tools", server_version="1.0.0")
+        )
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+```
+
+**Step 5 — Register in Claude Code**
+
+Add to your `~/.claude/config.json`:
+
+```json
+{
+  "mcpServers": {
+    "deploy-tools": {
+      "command": "python",
+      "args": ["/path/to/your/deploy_server.py"]
+    }
+  }
+}
+```
+
+Claude Code will automatically discover the tools on next startup.
 
 
 ## Building a Code Review Workflow
@@ -135,53 +256,6 @@ class MigrationAssistant:
 The assistant abstracts away the complexity of schema comparisons and SQL generation, letting you focus on defining the desired state of your database.
 
 
-## Implementing a Documentation Generator
-
-
-Documentation often falls out of sync with code. A documentation workflow using MCP servers can maintain accuracy automatically:
-
-
-```python
-async def generate_api_docs(api_spec_path: str):
-    """Generate API documentation from OpenAPI spec using MCP."""
-
-    # Parse the API specification
-    spec = await client.call_tool(
-        "filesystem",
-        "read_file",
-        {"path": api_spec_path}
-    )
-
-    # Extract endpoint information
-    endpoints = await client.call_tool(
-        "parser",
-        "extract_endpoints",
-        {"spec": spec}
-    )
-
-    # Generate markdown documentation
-    docs = await client.call_tool(
-        "llm",
-        "generate",
-        {
-            "prompt": f"Generate clear documentation for these API endpoints: {endpoints}",
-            "style": "technical",
-            "format": "markdown"
-        }
-    )
-
-    # Write documentation files
-    await client.call_tool(
-        "filesystem",
-        "write_files",
-        {"base_path": "/docs/api", "files": docs}
-    )
-```
-
-
-This workflow parses your API specification, extracts endpoint details, generates human-readable descriptions using an LLM, and outputs properly structured documentation files.
-
-
 ## Best Practices for MCP Workflow Design
 
 
@@ -192,7 +266,7 @@ When designing MCP-based workflows, keep these considerations in mind:
 
 
 ```python
-async def call_with_retry(tool_name: str, params: dict, max_retries:3):
+async def call_with_retry(tool_name: str, params: dict, max_retries=3):
     for attempt in range(max_retries):
         try:
             return await client.call_tool(tool_name, params)
@@ -206,7 +280,9 @@ async def call_with_retry(tool_name: str, params: dict, max_retries:3):
 **State management** matters for long-running workflows. Track progress in a persistent store rather than relying on memory, enabling recovery from interruptions.
 
 
-**Security** requires careful handling of credentials. Never store sensitive values in configuration files. Use environment variables or secrets management systems, and rotate credentials regularly.
+**Security** requires careful handling of credentials. Never store sensitive values in configuration files. Use environment variables or secrets management systems, and rotate credentials regularly. When exposing internal tools via MCP, scope permissions narrowly — a code review tool should not have write access to production databases.
+
+**Tool descriptions drive quality.** The model selects tools based on your description strings. Vague descriptions ("do stuff with files") produce unreliable invocations. Precise descriptions ("read a file from the workspace directory, returns file contents as UTF-8 string") produce reliable behavior. Treat tool descriptions as a type of prompt engineering.
 
 
 ## Scaling Your Workflows
@@ -227,6 +303,25 @@ class WorkflowLibrary:
 
 
 This modular approach lets you assemble sophisticated automation pipelines from proven building blocks, reducing maintenance overhead as your AI coding workflows evolve.
+
+
+## FAQ
+
+**Q: What's the difference between MCP tools and function calling?**
+
+Function calling (OpenAI) and tool use (Anthropic) are LLM-level primitives where you define functions in the API request. MCP is a standardized protocol layer on top of this: it defines how tool servers are discovered, connected, and invoked independently of any specific LLM API. MCP tools are portable across Claude, GPT-4o, and any other MCP-compatible client without code changes.
+
+**Q: Can I run MCP servers in production, or are they only for local dev?**
+
+Both. Local stdio servers are simplest for individual developer workflows. For team-shared tools (e.g., a deployment MCP server the whole team uses), deploy as an HTTP/SSE server behind your VPN or internal network. The `@modelcontextprotocol/server-http` package handles this; add mTLS or API key auth before exposing internally.
+
+**Q: How many tools should a single MCP server expose?**
+
+Keep servers focused. A server with 3-7 related tools performs better than a monolithic server with 30 tools. The model has to reason about all available tools when selecting one; too many options degrades selection accuracy. Group tools by domain: one server for git operations, one for database, one for CI/CD.
+
+**Q: My MCP server works in Claude Code but not in the Claude API directly. Why?**
+
+The Claude API (`anthropic.messages.create`) does not automatically connect to MCP servers — that integration lives in Claude Code (the CLI) and Claude Desktop. To use MCP tools in the API, you either use the Claude Code SDK's `query()` method (which handles MCP), or manually convert your MCP tool schemas into Anthropic tool definitions and call your tool logic yourself.
 
 
 ## Related Articles
