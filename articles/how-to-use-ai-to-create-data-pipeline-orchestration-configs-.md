@@ -205,6 +205,7 @@ from prefect.flow_runs import FlowRun
 @flow
 def scheduled_etl():
     # ETL logic
+    pass
 
 # Schedule the flow
 scheduled_etl.serve(
@@ -212,6 +213,40 @@ scheduled_etl.serve(
     timezone="America/New_York"
 )
 ```
+
+
+## Prefect vs Dagster: Which Config Style Works Better with AI
+
+
+
+When using AI to generate configs, the choice of framework affects how productive the generation step is.
+
+| Factor | Prefect | Dagster |
+|--------|---------|---------|
+| AI generation ease | High — decorator pattern maps cleanly to prompts | Medium — asset graph requires more explanation |
+| Prompt verbosity needed | Low — describe tasks and flow | High — describe asset lineage and partitioning |
+| Generated code correctness | High on simple ETL | High on data-centric pipelines |
+| Secrets handling in generated code | Needs manual replacement | Needs manual replacement |
+| Observability setup | Minimal extra config | Rich lineage out of the box |
+| Best AI prompt pattern | "Generate a flow that..." | "Create assets where X depends on Y..." |
+
+For simple ETL pipelines, Prefect's decorator model produces more immediately usable AI output. For data-centric workflows where lineage and recomputation matter, Dagster's asset model pays off even with the slightly more complex prompt patterns required.
+
+
+
+## Iterating with AI on Pipeline Failures
+
+
+
+AI tools are also useful after the initial generation step. When a pipeline fails, paste the error traceback and the relevant task code into your AI assistant along with a description of the pipeline's expected behavior. The AI can diagnose common issues like:
+
+- Missing retry logic on transient network errors
+- Incorrect Pandas dataframe operations that fail on empty inputs
+- S3 permission errors caused by missing IAM policy statements
+- Timezone-naive datetime comparisons in time-series pipelines
+
+For Dagster specifically, you can ask the AI to generate a corrected asset definition after describing what the materialization failure message says. This is faster than reading through Dagster's full error context manually when the issue is a straightforward type mismatch or missing dependency.
+
 
 
 ## Best Practices for AI-Assisted Configuration
@@ -230,7 +265,22 @@ Test incrementally. Start with small subsets of your pipeline, validate the conf
 
 
 
-Document your modifications. When AI generates initial configurations, add comments explaining custom logic, specific parameter choices, and integration points with your existing infrastructure.
+Document your modifications. When AI generates initial configurations, add comments explaining custom logic, specific parameter choices, and integration points with your existing infrastructure. This context is valuable when the pipeline needs updating months later and neither you nor an AI assistant will have the original prompt that produced the code.
+
+
+
+## Frequently Asked Questions
+
+
+
+**Can AI generate Airflow DAGs as well as Prefect and Dagster configs?**
+Yes. Airflow DAGs are Python files with a well-documented structure, making them straightforward for AI to generate. Provide your task dependencies, schedule interval, and operator types in the prompt. Airflow's operator ecosystem is large, so specify which operators you need (BashOperator, PythonOperator, PostgresOperator, etc.) to get usable output.
+
+**How do I get the AI to generate correct dependency ordering?**
+Describe your pipeline as a sequence of steps with explicit inputs and outputs. For example: "Step 1 reads from S3 and produces a DataFrame. Step 2 takes that DataFrame and filters rows where status is active. Step 3 takes the filtered DataFrame and writes it to BigQuery." This linear or branching description maps reliably to both Prefect task dependencies and Dagster asset chains.
+
+**What is the biggest mistake teams make when using AI for orchestration configs?**
+Using generated configs in production without local testing. Both Prefect and Dagster support local execution with minimal setup. Always run a local test with a small data sample before deploying to your orchestration environment. AI-generated code is plausible-looking but often contains subtle issues — wrong column names, mismatched data types, or missing error branches — that only surface during execution.
 
 
 
