@@ -30,6 +30,8 @@ Tokio runtime requires specific knowledge that general-purpose code generators o
 
 The tool should generate proper error handling patterns for async contexts, understand tokio's runtime configuration options, and avoid common deadlock scenarios. It needs familiarity with crates like tokio::net, tokio::io, tokio::sync, and tokio::time.
 
+Beyond pattern recognition, a great AI assistant for Tokio work must understand *why* certain patterns exist. For example, it should know that holding a std::sync::MutexGuard across an `.await` point is a compile error (because MutexGuard is not Send), and proactively suggest tokio::sync::Mutex instead. It should recognize that `tokio::task::spawn_blocking` is the right tool when calling a synchronous library function that would block the thread, rather than blindly wrapping everything in `async`.
+
 
 
 ## Top AI Coding Tools for Rust Async with Tokio
@@ -40,7 +42,7 @@ The tool should generate proper error handling patterns for async contexts, unde
 
 
 
-Claude Code stands out forTokio development because it understands Rust's ownership model and async lifetimes deeply. It consistently produces code that compiles without fighting the borrow checker.
+Claude Code stands out for Tokio development because it understands Rust's ownership model and async lifetimes deeply. It consistently produces code that compiles without fighting the borrow checker.
 
 
 
@@ -82,6 +84,38 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 
 Claude Code excels at generating proper shutdown handling, graceful connection teardown, and backpressure mechanisms. It suggests using Arc for shared state correctly and understands when to avoid async in favor of blocking operations.
+
+Where Claude Code particularly shines is in generating graceful shutdown patterns using `tokio::signal` and cancellation tokens—patterns that require understanding the interplay between the runtime, spawned tasks, and OS signal handling:
+
+```rust
+use tokio::signal;
+use tokio_util::sync::CancellationToken;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let token = CancellationToken::new();
+    let child_token = token.clone();
+
+    tokio::spawn(async move {
+        tokio::select! {
+            _ = child_token.cancelled() => {
+                println!("Worker received shutdown signal");
+            }
+            _ = do_work() => {}
+        }
+    });
+
+    signal::ctrl_c().await?;
+    token.cancel();
+    Ok(())
+}
+
+async fn do_work() {
+    loop {
+        tokio::time::sleep(std::time::Duration::from_secs(1)).await;
+    }
+}
+```
 
 
 
@@ -216,6 +250,22 @@ Codeium correctly distinguishes between tokio::sync::Mutex and std::sync::Mutex,
 
 
 
+## Common Tokio Pitfalls and How AI Tools Handle Them
+
+
+
+Understanding how each tool handles typical Tokio pitfalls reveals their true competence level. These are the mistakes that waste hours in production:
+
+**Blocking the async runtime.** Calling a synchronous blocking function (like `std::fs::read` or a synchronous database driver) directly inside an async task starves the Tokio thread pool. Claude Code and Cursor reliably wrap these in `tokio::task::spawn_blocking`. Copilot sometimes generates the blocking call directly.
+
+**Holding a lock across await.** `std::sync::MutexGuard` is not `Send`, so holding it across an `.await` point is a compile error in spawned tasks. Claude Code consistently uses `tokio::sync::Mutex` in async contexts and `std::sync::Mutex` only in sync-compatible scopes. Copilot occasionally generates the wrong mutex type.
+
+**Forgetting to drive futures.** In Tokio, futures do not run unless polled. A common mistake is creating a `JoinHandle` and never awaiting it, effectively discarding the task's result. Claude Code flags this pattern and suggests proper join handling.
+
+**Unbounded channels causing memory pressure.** Using `tokio::sync::mpsc::unbounded_channel` in a high-throughput system without backpressure can exhaust memory. Claude Code defaults to bounded `mpsc::channel` and explains the tradeoff; Copilot more often generates unbounded channels without comment.
+
+
+
 ## Performance Comparison
 
 
@@ -262,15 +312,50 @@ Your AI tool should reliably generate these patterns:
 
 - Channel-based communication with mpsc
 
-- Concurrent task management with join_all
+- Concurrent task management with join_all and JoinSet
 
 - Timeout and retry logic with tokio::time
 
-- Graceful shutdown with shutdown signals
+- Graceful shutdown with CancellationToken
 
 - Connection pooling for databases
 
 - Backpressure with bounded channels
+
+- Correct mutex selection (tokio vs std) based on context
+
+
+
+## Testing Async Code: What AI Tools Help With
+
+
+
+Testing is where many Rust async projects stumble, and it is a strong differentiator between AI tools. The `#[tokio::test]` macro is straightforward, but testing concurrent behavior, timeouts, and shutdown sequences requires more sophisticated patterns.
+
+Claude Code generates test fixtures that use `tokio::time::pause()` to control virtual time—meaning you can test a 30-second timeout behavior without a 30-second test run:
+
+```rust
+use tokio::time::Duration;
+
+#[tokio::test]
+async fn test_timeout_behavior() {
+    tokio::time::pause();
+
+    let handle = tokio::spawn(async {
+        tokio::time::sleep(Duration::from_secs(30)).await;
+        "done"
+    });
+
+    // Advance virtual time by 31 seconds instantly
+    tokio::time::advance(Duration::from_secs(31)).await;
+
+    assert_eq!(handle.await.unwrap(), "done");
+}
+```
+
+Copilot and Codeium rarely suggest `tokio::time::pause()` unprompted. Cursor surfaces it when you ask about time-dependent test patterns but does not always generate it proactively.
+
+For integration-style tests that spin up a real Tokio runtime, Claude Code correctly uses `#[tokio::test(flavor = "multi_thread")]` when testing code that requires multiple OS threads, rather than defaulting to the single-threaded current-thread flavor that can mask concurrency bugs.
 
 
 
