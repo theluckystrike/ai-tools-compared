@@ -12,6 +12,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
 
 # AI Tools for Converting Figma Designs to Code in 2026
 
@@ -246,7 +247,6 @@ export const LoginForm = () => {
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-{% endraw %}
 .forgot-password {
   display: block;
   text-align: center;
@@ -680,3 +680,4 @@ Check:
 ---
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
