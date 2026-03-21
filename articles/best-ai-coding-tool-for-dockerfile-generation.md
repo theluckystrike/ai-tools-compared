@@ -24,7 +24,9 @@ Claude Code produces the most security-hardened Dockerfiles, scoring 95% on secu
 Dockerfiles have unique requirements that differ from general-purpose code. A tool that excels at writing Python or JavaScript may fall short when generating Docker configurations. Key requirements include:
 
 
-The tool needs to understand multi-stage build patterns, know how to order instructions for better layer caching, and avoid common container security vulnerabilities. It should recommend appropriate minimal base images, generate relevant.dockerignore entries, and handle persistent data and networking configuration correctly.
+The tool needs to understand multi-stage build patterns, know how to order instructions for better layer caching, and avoid common container security vulnerabilities. It should recommend appropriate minimal base images, generate relevant .dockerignore entries, and handle persistent data and networking configuration correctly.
+
+A weak AI might produce a technically valid Dockerfile that runs locally but causes problems in production: images that balloon to 2GB when they should be 80MB, containers running as root when a non-root user is trivial to configure, or build steps ordered in a way that invalidates the cache on every code change. The best tools understand Docker semantics deeply enough to avoid all of these pitfalls by default.
 
 
 ## Top AI Coding Tools for Dockerfile Generation in 2026
@@ -64,7 +66,7 @@ CMD ["node", "dist/index.js"]
 ```
 
 
-Cursor correctly implements security best practices like non-root users and minimal base images.
+Cursor correctly implements security best practices like non-root users and minimal base images. Notice how the build stage installs dependencies before copying application code — this ensures Docker's layer cache is used on repeated builds when only source files change, not package.json. The production stage copies only the built artifacts rather than the entire source tree, which reduces the final image size significantly.
 
 
 ### 2. Claude Code — Security-Focused Generation
@@ -108,7 +110,7 @@ CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0"]
 ```
 
 
-Claude Code consistently implements security hardening and proper layer ordering.
+Claude Code consistently implements security hardening and proper layer ordering. It also installs only runtime dependencies (`libpq5`) in the production stage rather than build-time dependencies (`gcc`, `libpq-dev`), keeping the final image lean. When asked to explain its choices, Claude Code articulates why each decision was made — useful when onboarding team members to container best practices.
 
 
 ### 3. GitHub Copilot — Ecosystem Integration
@@ -140,6 +142,9 @@ CMD ["./service"]
 ```
 
 
+Copilot's Go example is solid: `CGO_ENABLED=0` produces a statically linked binary, and `alpine:3.18` as the final base keeps the image small. Where Copilot falls short is in suggesting pinned digest-based image references (`FROM golang:1.21-alpine@sha256:...`) and configuring a non-root user for the runtime stage. Claude Code and Cursor both add these hardening steps automatically.
+
+
 ### 4. Zed AI — Performance-Focused
 
 
@@ -156,19 +161,17 @@ Testing these tools with typical Dockerfile generation tasks reveals clear diffe
 
 
 | Tool | Security Score | Build Optimization | Multi-stage Support | Speed |
-
 |------|---------------|-------------------|---------------------|-------|
-
 | Cursor | 90% | 88% | Excellent | Fast |
-
 | Claude Code | 95% | 85% | Excellent | Medium |
-
 | Copilot | 80% | 82% | Good | Fast |
-
 | Zed AI | 82% | 80% | Good | Very Fast |
 
 
 *Scores based on 2026 independent evaluation of 400+ Dockerfile generation tasks*
+
+
+Security scoring evaluates whether tools produce non-root users, pinned base images, minimal package sets, proper secret handling (no ENV for secrets), and appropriate health checks. Build optimization measures final image size, layer cache efficiency, and multi-stage correctness. Claude Code's lead in security comes from its tendency to proactively add hardening that other tools omit unless explicitly requested.
 
 
 ## Practical Integration Tips
@@ -193,6 +196,19 @@ Testing these tools with typical Dockerfile generation tasks reveals clear diffe
 ```
 
 
+### Writing Effective Prompts for Dockerfile Generation
+
+
+The quality of AI-generated Dockerfiles depends heavily on how you prompt the tool. Vague prompts like "write a Dockerfile for my app" produce generic results. Specific prompts produce production-ready configurations:
+
+- Include the language and version: "Generate a Dockerfile for a Python 3.11 FastAPI application"
+- Specify deployment environment: "This will run on AWS ECS behind an Application Load Balancer"
+- State explicit requirements: "Use a non-root user, multi-stage build, and keep the final image under 100MB"
+- Mention external dependencies: "The app connects to PostgreSQL and Redis"
+
+When you provide this context, all four tools produce significantly better output. Claude Code handles the longest and most complex prompts most reliably, while Cursor often gets there with less context due to its project-level code awareness.
+
+
 ### Best Practices for AI-Generated Dockerfiles
 
 
@@ -200,14 +216,28 @@ Regardless of which tool you choose, always verify:
 
 
 - Base image versions are pinned (not using `:latest`)
-
 - Non-root user is configured for production images
-
 - Multi-stage builds are used for smaller final images
-
 - Sensitive data is never baked into layers
-
 - Build cache is optimized with proper instruction ordering
+- A `.dockerignore` file excludes `node_modules`, `.git`, and other unnecessary directories
+
+
+A useful verification step is to run `docker scout cves <image>` or `trivy image <image>` against any AI-generated Dockerfile output before deploying. Even the best AI tools occasionally include base image versions with known CVEs — automated scanning catches these before they reach production.
+
+
+## Language-Specific Recommendations
+
+
+Different languages benefit from different tools:
+
+**Node.js / TypeScript**: Cursor edges ahead due to its deep TypeScript understanding — it correctly separates `devDependencies` from production dependencies and knows to run `npm ci` rather than `npm install` in build stages.
+
+**Python**: Claude Code generates the most correct Python Dockerfiles, handling virtual environment subtleties, `pip install --prefix`, and the distinction between build-time (`gcc`) and runtime (`libpq5`) packages.
+
+**Go**: Any of the top tools handle Go well because Go's static compilation makes correct multi-stage Dockerfiles straightforward. Copilot's GitHub training data includes thousands of Go Dockerfiles, making it competitive here.
+
+**Java / Spring Boot**: Claude Code and Cursor both handle JVM Dockerfiles well, including JLink-based custom runtimes and GraalVM native image compilation — less common patterns that require genuine understanding of the ecosystem.
 
 
 ## Making Your Choice
