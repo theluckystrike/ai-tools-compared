@@ -47,8 +47,8 @@ When prompting AI for code, provide sufficient context. Include relevant file pa
 # "Write a function to process user data"
 
 # Use:
-"Write a Python function to validate user registration data. 
-Follow our existing patterns in models/user.py. Use Pydantic v2 
+"Write a Python function to validate user registration data.
+Follow our existing patterns in models/user.py. Use Pydantic v2
 for validation. Return 422 on validation failure with error details."
 ```
 
@@ -130,7 +130,7 @@ def create_user(
     existing = db.query(User).filter(User.email == user_data.email).first()
     if existing:
         raise HTTPException(status_code=409, detail="Email already registered")
-    
+
     user = user_service.create(db, user_data)
     return user
 ```
@@ -204,6 +204,25 @@ The goal is maintaining velocity while ensuring correctness. Consider these thre
 
 
 
+## Review Effort by Code Category
+
+
+
+Not all AI-generated code carries equal risk. Calibrating review depth to code category saves time without sacrificing safety.
+
+| Code Category | Review Depth | Key Focus |
+|---------------|-------------|-----------|
+| Test scaffolding | Light — syntax + logic spot-check | Correct assertions, coverage |
+| Data models / schemas | Medium — field types, constraints | Missing validations, nullability |
+| API endpoints | Deep — auth, validation, error codes | Security, HTTP semantics |
+| Database queries | Deep — SQL injection, N+1, indexes | Performance, correctness |
+| Authentication / auth | Expert review required | Token handling, permission escalation |
+| Background workers | Medium — retry logic, idempotency | Failure modes, duplicate execution |
+
+Applying this table consistently prevents both over-reviewing trivial code and under-reviewing high-stakes paths.
+
+
+
 ## Common Pitfalls to Avoid
 
 
@@ -240,6 +259,14 @@ AI struggles with:
 
 
 
+### Letting Generated Code Accumulate Without Tests
+
+
+
+AI-generated boilerplate is easy to write and easy to forget about. Require that every generated module includes at least a smoke test before it merges. This creates a baseline for future reviewers to understand the expected behavior.
+
+
+
 ## Measuring Success
 
 
@@ -270,7 +297,7 @@ Measure the total time from code generation to deployment:
 # Track different stages
 task_timeline = {
     "ai_generation": "2 minutes",
-    "automated_checks": "30 seconds", 
+    "automated_checks": "30 seconds",
     "manual_review": "15 minutes",
     "revisions": "5 minutes",
     "total": "23 minutes"
@@ -279,7 +306,31 @@ task_timeline = {
 ```
 
 
-Compare these metrics against purely manual development times to quantify AI's value.
+Compare these metrics against purely manual development times to quantify AI's value. Teams that track this data consistently find that AI generation provides the largest time savings on boilerplate-heavy tasks like CRUD endpoints and test fixture setup, while providing minimal speedup on complex business logic that requires deep domain understanding.
+
+
+
+## Frequently Asked Questions
+
+
+
+**Should AI-generated code go through the same PR process as manual code?**
+Yes, without exception. Removing AI-generated code from normal review gates is the fastest way to introduce subtle bugs and security issues into your codebase. The PR process exists to catch mistakes regardless of their origin.
+
+**How do you handle IP concerns with AI-generated code?**
+This varies by tool. GitHub Copilot, Cursor, and Claude each have different training data policies and output licensing terms. Review your organization's approved tool list before adopting any AI assistant for production codebases. Many enterprises restrict AI tools to certain categories of code (tests, tooling) while requiring manual authorship for core business logic.
+
+**What is the right ratio of AI generation to manual coding?**
+There is no universal answer. The 30% generation / 70% review guideline in this article is a starting point for teams new to the workflow. As familiarity with AI output patterns grows — and as you accumulate project-specific configuration that improves output quality — the review burden decreases. Measure your own issue density ratio and adjust accordingly.
+
+**How do you onboard new team members to an AI-assisted workflow?**
+Start new developers with AI disabled for their first two weeks. Understanding the codebase manually before relying on AI suggestions prevents them from blindly accepting output that conflicts with established patterns. Once they have context, introduce AI tools with paired review sessions where a senior developer explains what they are looking for in generated code.
+
+**Can AI generation work well for compiled languages like Go or Rust?**
+Yes, with caveats. The compiler provides a much stronger first-pass filter — AI-generated code that does not compile is immediately obvious. This means more of the review burden shifts toward logic correctness and idiomatic style rather than syntax. Rust's ownership model is particularly effective at catching AI-generated memory management errors at compile time, making AI generation safer in Rust than in dynamically typed languages where incorrect code can silently pass until runtime.
+
+**What tooling helps track AI-generated code over time?**
+Some teams annotate AI-generated functions with a comment like `# generated: claude-2026-03` to identify them in future reviews. This annotation pattern lets you grep for generated code when updating dependencies or auditing for security issues, giving reviewers context about how much scrutiny the code received at authorship time.
 
 
 
