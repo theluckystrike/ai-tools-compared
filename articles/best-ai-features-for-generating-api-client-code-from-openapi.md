@@ -256,6 +256,82 @@ The most useful AI features allow customization of generated code through:
 This flexibility ensures the generated code integrates smoothly into existing codebases without requiring post-generation refactoring.
 
 
+## AI Tool Comparison for OpenAPI Client Generation
+
+
+| Feature | Claude | ChatGPT | Gemini |
+|---|---|---|---|
+| Type inference from `$ref` | Excellent | Good | Good |
+| `oneOf`/`anyOf` handling | Excellent | Moderate | Moderate |
+| OAuth2 flow generation | Good | Excellent | Moderate |
+| Retry/backoff logic | Moderate | Excellent | Basic |
+| Multi-language output | Good | Good | Good |
+| Mock server scaffolding | Basic | Good | Basic |
+| Pagination handling | Good | Good | Moderate |
+| Error type hierarchy | Excellent | Good | Basic |
+| Naming convention control | Excellent | Moderate | Moderate |
+| Test fixture generation | Good | Good | Basic |
+
+
+Claude tends to outperform on type accuracy and code cleanliness. ChatGPT produces more feature-complete SDK skeletons with authentication and retry infrastructure baked in from the start. Gemini is a reasonable choice for quick single-endpoint clients but falls behind on complex spec handling.
+
+
+## Prompt Engineering for Better Results
+
+
+The quality of AI-generated client code depends heavily on the prompt. Vague prompts produce generic output; structured prompts produce production-ready code.
+
+**Weak prompt:**
+```
+Generate a Python client from this OpenAPI spec.
+```
+
+**Strong prompt:**
+```
+Generate a Python API client from this OpenAPI spec with the following requirements:
+- Use httpx for async HTTP requests
+- Implement OAuth2 client credentials flow with automatic token refresh
+- Generate typed dataclasses for all request/response models
+- Add retry logic with exponential backoff for 429 and 5xx responses
+- Include a custom ApiError exception hierarchy matching the error schemas
+- Add type hints on all public methods
+```
+
+The structured prompt eliminates ambiguity and gives the AI the constraints it needs to produce deployable code on the first pass.
+
+
+## Handling Complex OpenAPI Features
+
+
+Several OpenAPI features routinely trip up AI code generators.
+
+**Polymorphic schemas (`oneOf`/`anyOf`):** Claude handles these best, generating discriminated union types in TypeScript and using type guards correctly. ChatGPT sometimes collapses the union into `any`. Gemini often treats the first option as canonical and ignores the rest.
+
+**Recursive schemas:** Objects that reference themselves (e.g., tree structures, nested comments) require careful handling. Claude correctly generates Optional type wrappers to break the recursion. Other tools sometimes generate infinite type loops.
+
+**Deprecated endpoints:** OpenAPI marks deprecated operations with `deprecated: true`. Claude respects this flag and adds `@deprecated` annotations to the generated methods. Most other tools ignore the flag entirely.
+
+**Pagination patterns:** Link-header pagination, cursor-based pagination, and page/offset patterns each require different client logic. Claude recognizes common pagination patterns from the schema structure and generates appropriate iterator abstractions. ChatGPT requires explicit prompting to handle non-obvious pagination schemes.
+
+
+## Regeneration Without Losing Customizations
+
+
+One practical challenge with AI-generated clients is that regenerating after an API update overwrites custom modifications. The best approach is to separate generated code from custom code at the file level:
+
+```
+/src
+  /generated          ← AI-generated, never edit manually
+    users_client.py
+    products_client.py
+  /extensions         ← Custom code that wraps generated clients
+    users_service.py
+    products_service.py
+```
+
+The extension layer imports from generated code and adds business logic. When the API updates, regenerate the `/generated` directory and the extension layer remains untouched.
+
+
 ## Choosing the Right AI Approach
 
 
