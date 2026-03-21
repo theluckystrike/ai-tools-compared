@@ -267,6 +267,101 @@ describe('REGRESSION-1247: Order total overflows at qty 999', () => {
 
 **5. Batch generate when possible** — Instead of generating one test per bug, give Claude your entire backlog of unreproduced bugs and ask for a test suite. This gives the AI more context for related edge cases.
 
+## Structuring Bug Reports for Maximum AI Accuracy
+
+The quality of AI-generated tests scales directly with the quality of the bug report you provide. Vague bug reports produce vague tests; structured bug reports produce precise regression coverage.
+
+**High-signal bug report template:**
+
+```
+## Bug ID: REGRESSION-XXXX
+## Component: [OrderService / CheckoutPage / PaymentProcessor]
+## Severity: [Critical / High / Medium / Low]
+
+### Observed Behavior
+[One sentence: what actually happened]
+
+### Expected Behavior
+[One sentence: what should have happened]
+
+### Reproduction Steps
+1. [Exact step with specific values, e.g. "Set quantity field to 1000, not just 'a large number'"]
+2. [Next step]
+3. [Observable result]
+
+### Environment
+- Node version: 20.10
+- Database: PostgreSQL 15.2
+- Browser: Chrome 125 (if applicable)
+
+### Root Cause (if known)
+[e.g. "Integer overflow in calculateTotal() when quantity * unitPrice exceeds INT32_MAX"]
+
+### Affected Code Path
+- src/services/OrderService.ts:calculateTotal()
+- src/models/Order.ts:LineItem.quantity (type: number)
+
+### Related Issues
+- Similar to REGRESSION-1100 (discount overflow, fixed in v2.3.1)
+```
+
+When you paste a bug report in this format alongside the relevant source files, Claude generates tests that cover the exact boundary condition, the adjacent values, and related code paths that share the same vulnerability.
+
+## Expanding Coverage: From Single Bug to Test Cluster
+
+A well-structured regression test does more than prevent one specific bug — it maps the vulnerable code surface and adds tests for the entire class of defect. Prompt AI to think in terms of defect classes:
+
+```
+This bug is an integer overflow in quantity calculation. Generate tests for:
+1. The specific reported case (qty 1000 overflow)
+2. All other numeric fields in OrderItem that could overflow (price, discount, tax)
+3. Combination overflow: high qty + high price + high discount simultaneously
+4. The same overflow pattern in any other calculation functions in OrderService.ts
+```
+
+This cluster approach routinely uncovers latent bugs adjacent to the reported one. Teams using this technique report 2-3x higher catch rates for related defects compared to single-bug test generation.
+
+## Cross-Service Bug Testing with AI Context Windows
+
+Distributed systems produce bugs at service boundaries — a mismatch between the payload shape one service sends and what the receiving service expects. These bugs are the hardest to reproduce manually because they require coordinating multiple services simultaneously.
+
+AI tools with large context windows handle this scenario well when you provide multiple service contracts in a single prompt. Instead of generating a unit test for one function, you get an integration test that stubs the upstream service and validates the contract downstream:
+
+```typescript
+// Prompt Claude with both service definitions:
+// - OrderService API contract (OpenAPI spec)
+// - PaymentService expected input shape
+
+// Claude generates a contract test:
+describe('OrderService -> PaymentService contract (REGRESSION-1309)', () => {
+  it('sends payment payload with correct amount precision', async () => {
+    const mockPaymentService = jest.fn();
+    const order = buildOrder({ items: [{ qty: 3, unitPrice: 33.33 }] });
+
+    await OrderService.checkout(order, mockPaymentService);
+
+    expect(mockPaymentService).toHaveBeenCalledWith(
+      expect.objectContaining({
+        amountCents: 9999,        // 3 * 33.33 = 99.99 -> 9999 cents, not 9998
+        currency: 'USD',
+        precision: 2,
+      })
+    );
+  });
+});
+```
+
+This contract-testing approach is one area where Claude's ability to reason across multiple files simultaneously gives it a clear advantage over GitHub Copilot, which operates on single-file context.
+
+## Measuring Impact
+
+Track these metrics to understand the value AI-generated tests bring to your team:
+
+- **Test coverage increase** — New regression tests typically add 5-15% coverage per release
+- **Time saved** — Average 2-4 hours per complex bug feature saved on manual test writing
+- **Regression catch rate** — Bugs caught in future releases by regression tests (target: 70%+ of previous bugs prevented)
+- **Test maintenance cost** — Monitor whether AI-generated tests require more refactoring than hand-written ones
+
 ## Limitations and When to Be Careful
 
 AI-generated tests excel at unit and integration testing, but struggle with:
@@ -277,15 +372,6 @@ AI-generated tests excel at unit and integration testing, but struggle with:
 - **Legacy code** — If your codebase lacks type hints or clear structure, AI struggles to understand context
 
 For these cases, manually write tests or use AI to generate scaffolding that you then refine.
-
-## Measuring Impact
-
-Track these metrics to understand the value AI-generated tests bring to your team:
-
-- **Test coverage increase** — New regression tests typically add 5-15% coverage per release
-- **Time saved** — Average 2-4 hours per complex bug feature saved on manual test writing
-- **Regression catch rate** — Bugs caught in future releases by regression tests (target: 70%+ of previous bugs prevented)
-- **Test maintenance cost** — Monitor whether AI-generated tests require more refactoring than hand-written ones
 
 ## Tools and Resources
 
@@ -301,12 +387,9 @@ Track these metrics to understand the value AI-generated tests bring to your tea
 
 ---
 
-{% raw %}
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 ## Related Reading
 
 Explore more AI testing workflows at [AI Tools Compared Guides Hub](/ai-tools-compared/guides-hub/)
-{% endraw %}
 {% endraw %}
