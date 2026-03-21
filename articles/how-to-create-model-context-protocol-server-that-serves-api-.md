@@ -519,7 +519,5 @@ Load both versions at startup and AI assistants can generate code targeting eith
 - [How to Build Model Context Protocol Server That Provides.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 - [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

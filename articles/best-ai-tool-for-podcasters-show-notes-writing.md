@@ -197,9 +197,6 @@ A well-structured template ensures consistent output across episodes:
 **Duration:** [Length]
 **Published:** [Date]
 
-## Summary
-[2-3 sentence overview of what listeners will learn]
-
 ## Topics Covered
 [00:00] - Introduction
 [02:30] - [Topic 1]
@@ -207,11 +204,6 @@ A well-structured template ensures consistent output across episodes:
 [15:20] - [Topic 3]
 [22:10] - [Topic 4]
 [28:00] - Conclusion
-
-## Key Takeaways
-- Takeaway 1: [Context and why it matters]
-- Takeaway 2: [Context and why it matters]
-- Takeaway 3: [Context and why it matters]
 
 ## Resources Mentioned
 - [Resource Name](URL)
@@ -297,8 +289,6 @@ The compound effect: spending 15 minutes on show notes instead of 60 minutes sav
 - [AI Tools for Designers Writing Handoff Notes That.](/ai-tools-compared/ai-tools-for-designers-writing-handoff-notes-that-include-in/)
 - [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
 - [Best AI Tool for Startup Founders: Pitch Deck Writing Compared](/ai-tools-compared/best-ai-tool-for-startup-founders-pitch-deck-writing/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

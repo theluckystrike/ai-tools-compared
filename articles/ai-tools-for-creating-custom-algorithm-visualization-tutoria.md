@@ -437,6 +437,4 @@ Measuring effectiveness of AI-generated visualizations in educational contexts:
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 - [AI Tools for Creating dbt Documentation Blocks from.](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

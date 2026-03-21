@@ -317,7 +317,5 @@ Maintain a changelog category strategy. Decide whether you want detailed technic
 - [AI Tools for DevRel Teams Creating Developer Onboarding Checklists from Internal Wikis](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 - [AI Tools for Generating Grafana Dashboards from Metrics.](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

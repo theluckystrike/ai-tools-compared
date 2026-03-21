@@ -193,7 +193,7 @@ Testing both tools on identical infrastructure scenarios reveals measurable diff
 
 For playbooks involving Jinja2 loops over inventory groups, Claude Code generated correct syntax 95% of the time. Copilot's suggestions required manual adjustment approximately 40% of the time due to incorrect filter usage and missing variable indexing. This matters in production because incorrect Jinja2 often silently produces empty variables rather than throwing obvious errors.
 
-Regarding response time, Copilot provides instant inline suggestions, typically under 500ms. Claude Code requires 2-5 seconds to generate full playbook suggestions through CLI interaction, but the extra time investment produces more robust results that require fewer edits.
+Regarding response time, Copilot provides instant inline suggestions, typically under 500ms. Claude Code requires 2-5 seconds to generate full playbook suggestions through CLI interaction, but the extra time investment produces more strong results that require fewer edits.
 
 ## Tool Integration: Workflow Differences
 
@@ -255,7 +255,7 @@ Copilot sometimes suggests procedural patterns that lack idempotency. For exampl
     creates: /var/lib/myapp/initialized
 ```
 
-While technically the `creates` parameter prevents re-execution, it's less robust than:
+While technically the `creates` parameter prevents re-execution, it's less strong than:
 
 ```yaml
 # Better idempotent pattern

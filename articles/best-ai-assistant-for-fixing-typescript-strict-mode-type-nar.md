@@ -237,7 +237,5 @@ For team environments: Copilot's integration with GitHub and enterprise features
 - [Best AI Tools for TypeScript Type Inference and Generic.](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 - [AI Coding Assistant Accuracy for TypeScript Svelte.](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

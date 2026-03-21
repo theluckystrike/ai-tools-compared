@@ -469,7 +469,7 @@ m3 = DataModel(optional_field='value', required_field='test')  # kept as string
 
 1. Always specify Pydantic V2 in your prompts to AI tools
 2. Use `Field` for any validation beyond basic typing
-3. Leverage `@field_validator` for single-field logic
+3. use `@field_validator` for single-field logic
 4. Use `@model_validator` with `mode='after'` for multi-field validation
 5. Prefer computed fields over methods for derived values
 6. Test validation edge cases with AI-generated test suites
@@ -484,7 +484,5 @@ m3 = DataModel(optional_field='value', required_field='test')  # kept as string
 - [Best AI Coding Tools for Python Data Science and Pandas.](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 - [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 - [Best AI Coding Tools for Java Microservices with Spring.](/ai-tools-compared/best-ai-coding-tools-for-java-microservices-with-spring-cloud/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

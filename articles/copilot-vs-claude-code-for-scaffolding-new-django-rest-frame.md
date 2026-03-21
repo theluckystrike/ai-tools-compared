@@ -239,6 +239,4 @@ Many developers actually use both—Copilot for day-to-day coding in their edito
 - [Copilot vs Claude Code for Writing GitHub Actions CI/CD.](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

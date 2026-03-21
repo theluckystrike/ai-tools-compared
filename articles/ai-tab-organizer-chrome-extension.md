@@ -267,6 +267,4 @@ The tab organizer space continues evolving. Emerging trends include:
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)
 - [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

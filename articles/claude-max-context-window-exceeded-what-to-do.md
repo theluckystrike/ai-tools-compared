@@ -326,7 +326,5 @@ Plan around these by breaking work into shorter sessions.
 - [Claude Giving Outdated Information? How to Fix This.](/ai-tools-compared/claude-giving-outdated-information-how-to-fix/)
 - [What Source Code Context Window Do Different AI Coding.](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -28,7 +28,7 @@ The Claude API uses a token-based pricing model. You're charged for both input t
 
 - Claude 3.5 Sonnet: $3 per million input tokens, $15 per million output tokens
 
-- Claude 3 Opus: $15 per million input tokens, $75 per million output tokens 
+- Claude 3 Opus: $15 per million input tokens, $75 per million output tokens
 
 - Claude 3 Haiku: $0.25 per million input tokens, $1.25 per million output tokens
 
@@ -260,7 +260,5 @@ For teams, the calculus changes further—you might qualify for team plans that 
 - [Codeium Pro vs Copilot Individual: Features Per Dollar.](/ai-tools-compared/codeium-pro-vs-copilot-individual-features-per-dollar-compar/)
 - [Perplexity API Pricing vs Pro Subscription: Which Is.](/ai-tools-compared/perplexity-api-pricing-vs-using-pro-subscription-which-is-ch/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

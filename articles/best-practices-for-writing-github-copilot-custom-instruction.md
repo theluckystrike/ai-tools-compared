@@ -256,7 +256,5 @@ Use version control for your instruction files. Track changes and review modific
 - [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
 - [Best Practices for Writing Cursorrules File That.](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

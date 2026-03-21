@@ -335,7 +335,5 @@ console.log('Check Network tab > Response Headers for server-sent CSP headers.')
 - [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 - [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

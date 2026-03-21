@@ -368,6 +368,4 @@ Clear information dramatically speeds up support resolution.
 - [Cursor Background Agent Timing Out Fix (2026)](/ai-tools-compared/cursor-background-agent-timing-out-fix-2026/)
 - [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

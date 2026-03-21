@@ -450,16 +450,7 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 - **Incremental refinement**: Ask AI to add one step at a time, run, then iterate.
 - **Version pins**: Always specify action versions (`@v4`, not `@latest`).
 
-## Conclusion
-
-For GitHub Actions workflow generation, **Claude Code and Cursor lead in accuracy and reasoning**. They generate production-ready workflows with fewer iteration rounds, especially for complex multi-step pipelines and AWS integrations.
-
-**GitHub Copilot** is fastest for simple workflows and offers excellent value at $10/month if you're already using it for code completion.
-
-Choose based on your team's workflow complexity and AI tool budget. For teams deploying to AWS/Kubernetes with monorepos, Claude Code's $20/month investment saves hours per quarter in debugging and refinement.
-{% endraw %}
-
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
-
+{% endraw %}

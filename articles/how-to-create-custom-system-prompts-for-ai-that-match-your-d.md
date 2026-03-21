@@ -252,6 +252,4 @@ Good prompts typically reach 85-90% of optimal quality at 250-400 words. Beyond 
 - [How to Create Custom System Prompt for ChatGPT API That.](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 - [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

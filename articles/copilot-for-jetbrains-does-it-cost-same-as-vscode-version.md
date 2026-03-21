@@ -455,8 +455,6 @@ Partially true. Business tier adds policies and visibility but not dedicated sup
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -465,7 +463,5 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 - [Midjourney Describe Feature Cost: Does It Count as Image.](/ai-tools-compared/midjourney-describe-feature-cost-does-it-count-as-image-gene/)
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

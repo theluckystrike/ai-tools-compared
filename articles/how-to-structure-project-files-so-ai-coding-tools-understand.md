@@ -375,6 +375,4 @@ By implementing these file organization strategies, you'll notice improved accur
 - [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 - [Writing Claude.md Files That Teach AI Your Project Testing Conventions and Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-testing-conventions-and-patterns/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -348,7 +348,7 @@ Diff shows 5 function updates. Accept the first 3, reject the last 2.
 Refactor the last 2 manually after reviewing Cursor's approach.
 ```
 
-### Tip 3: Leverage IDE Integration
+### Tip 3: use IDE Integration
 
 Since Cursor runs in your IDE, you can:
 - See compilation errors immediately after applying changes
@@ -364,28 +364,6 @@ Since Cursor runs in your IDE, you can:
 - The codebase has unusual patterns or custom frameworks unknown to AI
 
 **Instead, do manual review + code walkthrough with your team.**
-
-## Conclusion: Choosing Your Tool
-
-Use **Claude Code** when:
-- Refactoring spans 20+ files
-- You need comprehensive analysis before execution
-- You have clear test coverage to validate output
-- Cross-cutting concerns affect the entire codebase
-
-Use **Cursor** when:
-- Refactoring 5–15 files
-- You want human review of each change
-- You're working within your IDE
-- Iterative refinement and feedback are important
-
-Combine both when:
-- Large refactors require extensive planning
-- Use Claude Code for analysis phase
-- Use Cursor for execution and validation phase
-- This hybrid approach minimizes risk while maximizing coverage
-
-For most teams, Cursor alone is sufficient for day-to-day refactoring. Claude Code becomes valuable at organizational scale when refactoring complexity justifies the API costs and setup overhead.
 
 ## Related Reading
 

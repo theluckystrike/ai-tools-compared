@@ -341,6 +341,4 @@ Consider running the server as a local service that multiple team members can co
 - [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 - [How to Build a Model Context Protocol Server That.](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

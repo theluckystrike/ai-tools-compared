@@ -312,6 +312,4 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 - [How to Write Custom Instructions That Make AI Follow.](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
 - [How to Create Custom Instructions for AI Tools to.](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

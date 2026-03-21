@@ -276,6 +276,4 @@ For hobbyists on local hardware, both are free once initial setup completes.
 - [Wondershare Filmora AI vs Final Cut Pro: A Technical Comparison for Power Users](/ai-tools-compared/wondershare-filmora-ai-vs-final-cut-pro/)
 - [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

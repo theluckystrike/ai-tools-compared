@@ -480,6 +480,4 @@ The break-even point is typically 500-1000 API requests per month for cloud serv
 - [Running Starcoder2 Locally for Code Completion Without.](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)
 - [How to Set Up Ollama as Private AI Coding Assistant for.](/ai-tools-compared/how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-codebases/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

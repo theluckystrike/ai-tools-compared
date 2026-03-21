@@ -241,6 +241,4 @@ For most Node.js applications implementing Redis caching, testing both tools wit
 - [Copilot vs Cursor for Writing Pytest.](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

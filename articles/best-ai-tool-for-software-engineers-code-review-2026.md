@@ -394,7 +394,5 @@ class CodeReviewMetrics:
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)
 - [Gemini Code Assist Enterprise Pricing: Per-Developer.](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

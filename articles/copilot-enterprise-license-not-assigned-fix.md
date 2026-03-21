@@ -288,7 +288,5 @@ Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 - [Copilot Suggestions Not Showing Up Fix 2026](/ai-tools-compared/copilot-suggestions-not-showing-up-fix-2026/)
 - [Switching from Copilot Enterprise to Cursor Business: A Practical Migration Checklist](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -414,7 +414,5 @@ Add the keyboard test suite to your pull request checks with a required status c
 - [How to Use AI to Generate Jest Component Tests with.](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 - [Best AI Assistant for Writing Playwright Tests for Drag and Drop Interactions 2026](/ai-tools-compared/best-ai-assistant-for-writing-playwright-tests-for-drag-and-drop-interactions-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

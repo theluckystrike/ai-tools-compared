@@ -348,6 +348,4 @@ Adjust configurations based on what you learn. The best setup evolves with your 
 - [AI Code Suggestion Quality When Working With Environment.](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)
 - [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

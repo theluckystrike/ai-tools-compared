@@ -234,6 +234,4 @@ For optimal results, keep your CursorRules focused and specific. Include example
 - [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [Cursor vs Windsurf for Building Next.js App from Design Mockup](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

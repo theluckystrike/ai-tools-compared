@@ -306,7 +306,7 @@ This tells you exactly what patterns to expect in your migration.
 - **100K+ lines**: Combination approach—Claude for unique patterns, Copilot for mechanical conversions
 - **Regulatory/financial code**: Expect 20-30% manual review rate regardless of tool
 
-Migration with AI tools is no longer optional for large legacy systems. The bottleneck shifts from raw conversion effort to testing and validation. Invest in comprehensive test suites before migration starts.
+Migration with AI tools is no longer optional for large legacy systems. The bottleneck shifts from raw conversion effort to testing and validation. Invest in test suites before migration starts.
 
 ## Related Reading
 

@@ -428,6 +428,4 @@ Resubscribing immediately restores Plus access—no waiting period or re-verific
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three.](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API.](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

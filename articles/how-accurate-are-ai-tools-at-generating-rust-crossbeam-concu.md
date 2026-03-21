@@ -343,6 +343,4 @@ The accuracy of AI tools for Crossbeam code generation ranges from 56% to 88% de
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks.](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
 - [How Accurate Are AI Tools at Generating TypeScript Zod.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-typescript-zod-schem/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

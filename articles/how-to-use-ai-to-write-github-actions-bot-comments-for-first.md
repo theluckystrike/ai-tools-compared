@@ -261,7 +261,5 @@ Getting AI-generated bot comments working from scratch takes about 30 minutes. H
 - [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [Best AI Tools for Writing GitHub Actions Matrix Build.](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

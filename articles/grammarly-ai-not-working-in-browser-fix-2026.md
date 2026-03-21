@@ -251,7 +251,7 @@ When Grammarly isn't working and you need AI writing assistance immediately:
 
 **Notion AI:** If writing in Notion, built-in AI features provide basic writing assistance without extension requirements.
 
-**Claude/ChatGPT Web:** For critical writing, paste content directly into ChatGPT for comprehensive review.
+**Claude/ChatGPT Web:** For critical writing, paste content directly into ChatGPT for review.
 
 ## Contact Grammarly Support Effectively
 
@@ -280,7 +280,5 @@ Most issues resolve within 24-48 hours of support response if you provide the ab
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
 - [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

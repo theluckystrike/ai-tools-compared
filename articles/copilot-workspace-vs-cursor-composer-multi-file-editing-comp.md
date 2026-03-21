@@ -370,7 +370,7 @@ Use **Cursor Composer** when:
 **Cursor tips:**
 - Use @file references explicitly: "@app/page.tsx make this responsive"
 - Create custom instructions in .cursorrules for your project
-- Leverage Tab completions for pattern recognition across files
+- use Tab completions for pattern recognition across files
 
 ## Related Reading
 
@@ -380,8 +380,6 @@ Use **Cursor Composer** when:
 - [Cursor AI Multi-File Editing Feature: How It Actually.](/ai-tools-compared/cursor-ai-multi-file-editing-feature-how-it-actually-works-explained/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which.](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [Copilot vs Cursor vs Windsurf: Inline Diff Preview.](/ai-tools-compared/copilot-vs-cursor-vs-windsurf-inline-diff-preview-comparison/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -445,8 +445,6 @@ jobs:
 - [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 - [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
@@ -455,8 +453,6 @@ Built by theluckystrike — More at [zovo.one](https://zovo.one)
 - [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 - [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

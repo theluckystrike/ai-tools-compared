@@ -325,7 +325,5 @@ Always review generated tests against your actual provider implementation and ad
 - [Best AI Assistant for Creating Jest Tests That Verify.](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)
 - [AI Tools for Writing Playwright Tests That Verify Toast.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

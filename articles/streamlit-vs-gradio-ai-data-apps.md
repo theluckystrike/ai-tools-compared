@@ -258,6 +258,4 @@ Both frameworks are suitable for prototypes and internal tools. For production A
 - [AI Powered Data Cataloging Tools: A Practical Guide for.](/ai-tools-compared/ai-powered-data-cataloging-tools/)
 - [Best AI Assistant for Creating Test Data Factories with.](/ai-tools-compared/best-ai-assistant-for-creating-test-data-factories-with-real/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

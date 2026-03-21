@@ -403,26 +403,6 @@ Switching benefit: Potentially 15-35% productivity gain
 
 The low switching cost makes it worthwhile to experiment if multi-file refactoring is a significant part of your work.
 
-## Conclusion and Recommendation Matrix
-
-```
-Choose Cursor Pro if you:
-✓ Work mostly on single files
-✓ Rely on specific VS Code extensions
-✓ Want maximum compatibility
-✓ Prefer autocomplete over conversation
-✓ Work on diverse tech stacks
-
-Choose WindSurf Pro if you:
-✓ Do frequent cross-file refactoring
-✓ Manage large codebases
-✓ Team size is 3+
-✓ Prefer conversational workflow
-✓ Can work with slightly limited extensions
-
-The "best" choice depends entirely on your actual workflows.
-```
-
 ## Related Reading
 
 - [Best AI Tools for Developers in 2026](/best-ai-tools-for-developers-2026/)

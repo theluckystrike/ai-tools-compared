@@ -319,7 +319,5 @@ Finally, validate generated code before deploying. Copilot Vision produces worki
 - [Cursor AI Background Agent Feature for Autonomous.](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
 - [Copilot Workspace vs Cursor Composer: Multi-File Editing.](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

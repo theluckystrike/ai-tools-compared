@@ -251,6 +251,4 @@ The most effective approach combines AI assistance with Go community conventions
 - [Does WindSurf AI Send Entire Project Context or Just.](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 - [AI Tools for Resolving Yarn Berry PnP Module Resolution.](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

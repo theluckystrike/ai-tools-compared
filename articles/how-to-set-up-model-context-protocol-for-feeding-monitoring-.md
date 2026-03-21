@@ -299,7 +299,5 @@ Setting up MCP for monitoring integration transforms how you respond to incident
 - [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
 - [How to Set Up Model Context Protocol Server for Internal Package Registry Documentation](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

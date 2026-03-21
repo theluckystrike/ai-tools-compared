@@ -417,7 +417,7 @@ When generating code for multiple packages, Claude and Cursor correctly use `@my
 
 ## Real-World Feature Implementation Test
 
-Here's a comprehensive test case for evaluating monorepo understanding:
+Here's a test case for evaluating monorepo understanding:
 
 **Requirement:** Add request deduplication to prevent duplicate API calls when the same endpoint is requested multiple times in quick succession.
 

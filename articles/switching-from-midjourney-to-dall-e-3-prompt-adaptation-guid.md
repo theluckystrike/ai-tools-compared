@@ -300,6 +300,4 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
 - [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
 - [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

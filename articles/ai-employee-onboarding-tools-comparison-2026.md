@@ -22,7 +22,7 @@ This comparison examines tools based on their API capabilities, customization op
 
 AI employee onboarding tools fall into three main categories: standalone onboarding platforms with AI features, HRIS systems with built-in AI capabilities, and custom solutions built using AI APIs. Each approach offers different trade-offs for organizations with technical teams capable of building integrations.
 
-**Standalone platforms** like Workday Intelligentia, Oracle AI Onboarding, and SAP SuccessFactors AI provide comprehensive out-of-the-box functionality. These systems include document processing, policy training, and compliance tracking with minimal configuration. However, customization requires working within their framework rather than building custom flows.
+**Standalone platforms** like Workday Intelligentia, Oracle AI Onboarding, and SAP SuccessFactors AI provide out-of-the-box functionality. These systems include document processing, policy training, and compliance tracking with minimal configuration. However, customization requires working within their framework rather than building custom flows.
 
 **HRIS-integrated AI** solutions from platforms like BambooHR, Gusto, and Rippling bundle onboarding with broader HR functionality. The trade-off is often less sophisticated AI features compared to dedicated solutions, but tighter integration with payroll, benefits, and employee data management.
 
@@ -54,7 +54,7 @@ async function createOnboardingTask(employeeData, platform) {
 }
 ```
 
-The best platforms provide webhook support for real-time notifications, RESTful APIs with comprehensive documentation, and SDKs for common languages. Avoid platforms that only offer iframe embeds or proprietary integration protocols—they create technical debt and limit customization.
+The best platforms provide webhook support for real-time notifications, RESTful APIs with documentation, and SDKs for common languages. Avoid platforms that only offer iframe embeds or proprietary integration protocols—they create technical debt and limit customization.
 
 ## Document Processing and Policy Automation
 
@@ -138,7 +138,7 @@ Here's a practical breakdown of major platforms available in 2026:
 
 | Platform | Pricing Model | AI Capabilities | API Availability | Customization |
 |----------|---------------|-----------------|-------------------|---------------|
-| Workday | Per employee/year (~$50-120) | Document processing, policy recommendations | Comprehensive REST API | Moderate |
+| Workday | Per employee/year (~$50-120) | Document processing, policy recommendations | REST API | Moderate |
 | BambooHR | $99-399/month + setup | Basic AI recommendations | Strong API + webhooks | High |
 | Rippling | Custom pricing | Document processing, task automation | Full API suite | High |
 | Gusto | $39+ per employee/month | Limited AI integration | REST API available | Moderate |

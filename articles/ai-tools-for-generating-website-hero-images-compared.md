@@ -486,6 +486,4 @@ convert input.png -resize 1920x1080 hero-desktop.png
 - [DALL-E 3 vs Gemini Imagen: Quality Compared 2026](/ai-tools-compared/dall-e-3-vs-gemini-imagen-quality-compared-2026/)
 - [AI Tools for Generating UI Mockups Compared in 2026](/ai-tools-compared/ai-tools-for-generating-ui-mockups-compared-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

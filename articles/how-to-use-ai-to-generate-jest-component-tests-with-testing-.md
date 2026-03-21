@@ -255,7 +255,5 @@ This workflow accelerates test coverage without sacrificing quality.
 - [Best AI for Creating Jest Tests That Verify Correct Suspense and Lazy Loading Behavior](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 - [How to Use AI to Generate Jest Tests for.](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

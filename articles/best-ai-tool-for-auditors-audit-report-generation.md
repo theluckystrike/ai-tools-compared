@@ -253,6 +253,4 @@ These areas offset the quality loss, resulting in net positive audit report qual
 - [Best AI Tool for Compliance Officers Policy Review](/ai-tools-compared/best-ai-tool-for-compliance-officers-policy-review/)
 - [AI Tools for Writing Grant Proposals Compared 2026](/ai-tools-compared/ai-tools-for-writing-grant-proposals-compared-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

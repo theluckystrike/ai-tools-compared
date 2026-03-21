@@ -296,7 +296,5 @@ Consider trialing both platforms with your actual workflow for one week each. Tr
 - [Best AI Tools for Writing Kubernetes Admission Webhook.](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-admission-webhook-confi/)
 - [Best AI IDE Features for Writing Configuration Files.](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

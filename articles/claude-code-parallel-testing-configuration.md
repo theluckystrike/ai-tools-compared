@@ -488,7 +488,5 @@ export default defineConfig({
 - [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

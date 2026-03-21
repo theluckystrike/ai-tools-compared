@@ -366,6 +366,4 @@ AI coding assistants transform technical debt from an overwhelming problem into 
 - [AI Coding Assistants for TypeScript GraphQL Resolver and.](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 - [AI Coding Assistants for TypeScript Express Middleware.](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

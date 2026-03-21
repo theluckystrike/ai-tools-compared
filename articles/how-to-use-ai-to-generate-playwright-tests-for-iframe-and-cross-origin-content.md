@@ -238,6 +238,4 @@ Building reliable iframe tests requires understanding the loading patterns of em
 - [Best AI Assistant for Creating Playwright Tests for.](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
 - [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

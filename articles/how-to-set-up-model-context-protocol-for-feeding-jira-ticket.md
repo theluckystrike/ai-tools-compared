@@ -387,7 +387,5 @@ This lets your AI assistant understand the full development context—code chang
 - [How to Set Up Model Context Protocol Server Providing.](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
 - [How to Set Up Model Context Protocol with Local Database.](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -433,6 +433,4 @@ Configure Claude to reduce false positives in its review:
 - [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
 - [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

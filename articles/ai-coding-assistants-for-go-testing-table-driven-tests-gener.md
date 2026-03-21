@@ -315,6 +315,4 @@ Run tests immediately after generation to verify they pass. Check both positive 
 - [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 - [How to Write System Prompts for AI Coding Assistants.](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -303,7 +303,5 @@ Alternatively, submit feedback directly to Google through Help → Help Docs imp
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 - [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

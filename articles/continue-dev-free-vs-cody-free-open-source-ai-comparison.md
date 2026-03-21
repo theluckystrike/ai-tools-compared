@@ -259,6 +259,4 @@ For pure open source enthusiasts, Continue Dev's commitment to open source (the 
 - [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)
 - [Cheapest AI Tool for Generating Entire Project From.](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

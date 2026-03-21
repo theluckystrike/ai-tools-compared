@@ -375,7 +375,7 @@ describe('ErrorBoundary with Suspense', () => {
 
 **GitHub Copilot** excels at generating boilerplate error boundary tests quickly. When you type `describe('ErrorBoundary'`, Copilot suggests standard test structures, mock setups, and assertions. It handles the basic cases well but sometimes misses edge cases like max retry logic or async error propagation.
 
-**Claude** provides the most complete error boundary test suites. When you describe your component's error handling strategy, Claude generates comprehensive test sets covering happy paths, error scenarios, recovery mechanisms, and edge cases. It understands complex patterns like useAsyncError hooks and Suspense integration without explicit prompting.
+**Claude** provides the most complete error boundary test suites. When you describe your component's error handling strategy, Claude generates test sets covering happy paths, error scenarios, recovery mechanisms, and edge cases. It understands complex patterns like useAsyncError hooks and Suspense integration without explicit prompting.
 
 **Cursor** offers good real-time completions for error boundary tests. Its Ctrl+K compose feature can generate entire test files from natural language descriptions. It maintains context across your project, understanding your existing error handling patterns and generating tests that match your codebase style.
 
@@ -398,7 +398,7 @@ In testing 10 different error boundary scenarios across tools:
 
 ## Best Practice for Generating Error Boundary Tests
 
-Provide AI tools with your actual component code, not just a description. Paste the ErrorBoundary component directly and ask for comprehensive tests. The more context the AI has, the better it tailors tests to your specific implementation.
+Provide AI tools with your actual component code, not just a description. Paste the ErrorBoundary component directly and ask for tests. The more context the AI has, the better it tailors tests to your specific implementation.
 
 Specify what you want tested: Does the component need to handle retry logic? Do you use custom hooks? Do you have special formatting for error messages? Each detail helps AI generate appropriate assertions.
 

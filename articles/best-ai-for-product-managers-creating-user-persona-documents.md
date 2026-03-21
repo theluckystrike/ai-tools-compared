@@ -240,7 +240,5 @@ The goal isn't to eliminate human judgment from persona creation. It's to handle
 - [AI Tools for Product Managers: Drafting Release.](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)
 - [Best AI for Product Managers Creating Stakeholder Update.](/ai-tools-compared/best-ai-for-product-managers-creating-stakeholder-update-dec/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

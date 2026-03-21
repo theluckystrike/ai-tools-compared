@@ -169,26 +169,6 @@ Prompt: "Write a PowerShell script that monitors specific Windows services and s
 
 
 
-### Summary Comparison
-
-
-
-| Criteria | ChatGPT-4 | Claude 3.5 | Copilot | Claude Code |
-
-|----------|-----------|------------|---------|-------------|
-
-| Security best practices | 6/10 | 9/10 | 5/10 | 9/10 |
-
-| Error handling | 7/10 | 9/10 | 6/10 | 9/10 |
-
-| Production readiness | 6/10 | 9/10 | 5/10 | 8/10 |
-
-| Speed of initial output | 8/10 | 7/10 | 9/10 | 7/10 |
-
-| Enterprise features | 7/10 | 9/10 | 6/10 | 8/10 |
-
-
-
 ## Recommendations
 
 
@@ -225,7 +205,7 @@ Prompt: "Create a script that provisions 5 new Hyper-V VMs from a template, conf
 **Claude 3.5 Sonnet** output included:
 - Parameter validation and error handling
 - Support for `-WhatIf` and `-Verbose` flags
-- Comprehensive logging to Event Log
+- logging to Event Log
 - Rollback logic if any VM fails
 - Domain joining with credential handling
 
@@ -388,7 +368,5 @@ Before deploying AI-generated scripts:
 - [Which AI Generates Better Go Goroutine Patterns for.](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 - [Which AI Tool Is Better for Writing CircleCI Config YAML.](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 - [Best AI Tools for Writing Shell Scripts for Server.](/ai-tools-compared/best-ai-tools-for-writing-shell-scripts-for-server-automation/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

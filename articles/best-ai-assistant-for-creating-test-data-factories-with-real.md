@@ -529,6 +529,4 @@ Claude Code excels at all five. Cursor is strong on 1-4. Copilot handles 2-3 rel
 - [Best AI Coding Tools for Python Data Science and Pandas.](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 - [AI Tools for Creating Test Data That Covers Timezone.](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

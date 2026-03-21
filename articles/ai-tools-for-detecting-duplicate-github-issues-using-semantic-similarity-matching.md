@@ -236,7 +236,7 @@ For code-focused projects, consider `code-search-distilspell-multilingual-v1` wh
 
 ## Advanced Detection: Multi-Field Matching
 
-Simple title-and-body matching misses some duplicates. A comprehensive system compares multiple fields:
+Simple title-and-body matching misses some duplicates. A system compares multiple fields:
 
 ```python
 def get_issue_vector(issue, model):
@@ -383,8 +383,6 @@ Most projects see 30-40% reduction in duplicate issues within the first month, w
 - [Best AI Tool for Triaging GitHub Issues by Severity and.](/ai-tools-compared/best-ai-tool-for-triaging-github-issues-by-severity-and-cate/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefit From Contributions](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)
 - [How to Use AI to Write GitHub Actions Bot Comments for.](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

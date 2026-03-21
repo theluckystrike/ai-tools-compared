@@ -236,7 +236,5 @@ Maintain your voice. Use AI to structure and draft, but add your own analysis an
 - [Best AI Assistant for Writing Open Source Roadmap.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 - [How to Use AI to Help SRE Teams Draft Root Cause.](/ai-tools-compared/how-to-use-ai-to-help-sre-teams-draft-root-cause-analysis-do/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

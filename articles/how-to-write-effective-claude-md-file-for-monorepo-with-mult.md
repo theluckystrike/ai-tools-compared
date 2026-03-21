@@ -299,7 +299,5 @@ The investment in maintaining a CLAUDE.md pays dividends in reduced AI hallucina
 - [Writing CLAUDE.md Files That Teach AI Your Project-Specific Error Handling Patterns](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 - [Best Way to Structure Claude MD File for Python Django.](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

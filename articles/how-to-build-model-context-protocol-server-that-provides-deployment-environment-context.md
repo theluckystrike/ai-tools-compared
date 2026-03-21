@@ -371,6 +371,4 @@ You should receive a list of available tools. Then test each tool individually t
 - [How to Build Model Context Protocol Server for Internal.](/ai-tools-compared/how-to-build-model-context-protocol-server-for-internal-desi/)
 - [How to Create Model Context Protocol Server That Serves.](/ai-tools-compared/how-to-create-model-context-protocol-server-that-serves-api-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

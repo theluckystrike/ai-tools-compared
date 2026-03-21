@@ -269,6 +269,4 @@ ChatGPT serves as a solid secondary option for common exception patterns, while 
 - [AI Code Generation for Java Virtual Threads: Project.](/ai-tools-compared/ai-code-generation-for-java-virtual-threads-project-loom-pat/)
 - [AI Code Generation Quality for Java Pattern Matching and.](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

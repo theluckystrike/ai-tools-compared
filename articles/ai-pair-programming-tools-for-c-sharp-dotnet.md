@@ -384,7 +384,7 @@ Claude Code generated this naturally. GitHub Copilot would produce a basic versi
 
 ## Testing Support
 
-For unit testing, JetBrains AI Assistant excels at generating comprehensive test cases:
+For unit testing, JetBrains AI Assistant excels at generating test cases:
 
 ```csharp
 [TestClass]
@@ -441,7 +441,7 @@ public class UserServiceTests
 }
 ```
 
-This comprehensive test generation is where JetBrains AI Assistant stands out from Copilot.
+This test generation is where JetBrains AI Assistant stands out from Copilot.
 
 ## Choosing Based on Your .NET Focus
 

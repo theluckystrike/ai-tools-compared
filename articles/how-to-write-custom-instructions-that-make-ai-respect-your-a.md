@@ -288,7 +288,5 @@ The more context you provide about your specific environment and constraints, th
 - [Writing Custom Instructions for AI Tools That Enforce.](/ai-tools-compared/writing-custom-instructions-for-ai-tools-that-enforce-your-security-header-standards/)
 - [How to Write Custom Instructions for AI That Follow Your.](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

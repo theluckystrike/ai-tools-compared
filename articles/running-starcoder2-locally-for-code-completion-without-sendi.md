@@ -281,7 +281,5 @@ However, cloud-based solutions may still be preferable when you need the most ad
 - [Running DeepSeek Coder Locally vs Cloud API for Private.](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
 - [Running CodeLlama Locally vs Using Cloud Copilot for.](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

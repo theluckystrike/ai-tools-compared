@@ -290,7 +290,5 @@ vm_stat | awk '/Pages free/ || /Pages active/ || /Pages wired/'
 - [ChatGPT Slow Response Fix 2026: Complete Troubleshooting.](/ai-tools-compared/chatgpt-slow-response-fix-2026/)
 - [Cursor AI Not Autocompleting TypeScript Fix.](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

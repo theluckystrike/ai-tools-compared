@@ -274,7 +274,5 @@ async function processWithCodaAI(tableId, rowId, content) {
 - [How to Use AI for Database Backup Automation and.](/ai-tools-compared/how-to-use-ai-for-database-backup-automation-and-disaster-re/)
 - [AI Tools for Generating Pytest Fixtures from Database.](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

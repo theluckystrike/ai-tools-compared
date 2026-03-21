@@ -245,7 +245,5 @@ Intermittent failures will always exist in complex distributed systems. AI-assis
 - [Effective Context Management Strategies for AI Coding in.](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)
 - [Effective Strategies for Reviewing AI-Generated Code.](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

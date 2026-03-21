@@ -277,6 +277,4 @@ The specific choice matters less than consistently using AI assistance in your w
 - [AI Autocomplete for Writing Tests: Comparison of.](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
 - [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

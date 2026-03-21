@@ -248,7 +248,5 @@ Start with baseline measurements before implementing AI predictions, then compar
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [Best AI Tools for Cloud Resource Tagging Compliance.](/ai-tools-compared/best-ai-tools-for-cloud-resource-tagging-compliance-automati/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -304,6 +304,4 @@ Choose based on your existing setup: Copilot for VS Code users, Cursor for AI-na
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
 - [Best AI Coding Tool with Pay As You Go No Subscription](/ai-tools-compared/best-ai-coding-tool-with-pay-as-you-go-no-subscription/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

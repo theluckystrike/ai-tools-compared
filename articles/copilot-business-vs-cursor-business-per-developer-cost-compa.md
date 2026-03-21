@@ -307,7 +307,5 @@ Evaluate based on your team's actual needs, not just sticker price. The cheapest
 - [Copilot Individual vs Cursor Pro Annual Cost Breakdown 2026](/ai-tools-compared/copilot-individual-vs-cursor-pro-annual-cost-breakdown-2026/)
 - [Cursor Pro Privacy Mode: Does It Cost Extra for Zero.](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

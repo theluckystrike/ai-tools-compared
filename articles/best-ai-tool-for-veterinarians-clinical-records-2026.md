@@ -304,6 +304,4 @@ print(generate_soap_note("Max", "Canine, 4yr, M/N Labrador", notes))
 - [Best AI Tool for Financial Analysts Modeling in 2026](/ai-tools-compared/best-ai-tool-for-financial-analysts-modeling-2026/)
 - [Best AI Tool for Customer Success Managers 2026](/ai-tools-compared/best-ai-tool-for-customer-success-managers-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

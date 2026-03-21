@@ -345,32 +345,6 @@ response = client.chat.completions.create(
 ```
 
 
-## Summary Checklist
-
-
-
-- [ ] Verify search scope is set to "Recent" or broader
-
-- [ ] Try different Perplexity models
-
-- [ ] Clear browser cache and cookies
-
-- [ ] Check account tier and upgrade if needed
-
-- [ ] Disable VPN temporarily
-
-- [ ] Optimize your search query with time indicators
-
-- [ ] Verify no service outages
-
-- [ ] Test in incognito mode with extensions disabled
-
-- [ ] Check API configuration if using developer access
-
-- [ ] Review source citations for recency
-
-
-
 ## When Results Are Still Outdated
 
 
@@ -403,8 +377,6 @@ Most "not finding recent results" issues resolve through scope settings, query r
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)
 - [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 - [Claude Artifacts Not Rendering Fix 2026](/ai-tools-compared/claude-artifacts-not-rendering-fix-2026/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

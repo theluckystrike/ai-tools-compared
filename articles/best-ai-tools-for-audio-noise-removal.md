@@ -299,7 +299,5 @@ Developers building communication apps should explore Krisp or Mozilla RRSDK. Th
 - [Best AI Tools for Concert Audio Mixing](/ai-tools-compared/best-ai-tools-for-concert-audio-mixing/)
 - [AI Tools for Government Citizen Support](/ai-tools-compared/ai-tools-for-government-citizen-support/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -465,18 +465,6 @@ Claude Code is best for debugging—paste error + context, get detailed explanat
 4. **Verify index**: Data scientists often forget `.reset_index()` after groupby
 5. **Test edge cases**: AI completions might not handle NaN or category order correctly
 
-## Conclusion
-
-For Python data science workflows:
-
-- **GitHub Copilot**: Best value. Quick completions. $10/month. Use if budget is tight.
-- **Cursor**: Best for IDE-native notebook development. $20/month. Worth it if you live in Jupyter.
-- **Claude Code**: Best for complex analysis, reasoning, and debugging. $20/month. Use for senior analysts.
-- **Amazon CodeWhisperer**: Best for AWS-heavy workflows (SageMaker). Free to $120/year.
-- **Codeium**: Free but limited. Use only for cost-constrained teams.
-
-**Top recommendation for serious data science teams**: Cursor ($20/month) for every analyst. The Pandas accuracy (8/10), notebook integration, and scikit-learn expertise justify the cost over Copilot. Pair with Claude Code ($20/month) for 1-2 senior analysts on exploratory analysis and statistical reasoning.
-
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)

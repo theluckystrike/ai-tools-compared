@@ -260,7 +260,5 @@ The more context you give, the more accurate the generated diagram becomes. Revi
 - [How to Use AI to Generate Component Diagrams from React.](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)
 - [AI Tools for Creating Test Data That Covers Timezone.](/ai-tools-compared/ai-tools-for-creating-test-data-that-covers-timezone-dayligh/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

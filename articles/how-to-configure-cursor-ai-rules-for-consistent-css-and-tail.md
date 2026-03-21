@@ -366,6 +366,4 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 - [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
 - [Writing Effective CursorRules for React TypeScript.](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -321,7 +321,5 @@ Set quarterly reminders to:
 - [Best Practices for AI Tool Project Config When Switching.](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 - [Best Practices for Version Controlling AI Prompts and.](/ai-tools-compared/best-practices-for-version-controlling-ai-prompts-and-rules-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

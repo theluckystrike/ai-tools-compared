@@ -294,7 +294,5 @@ When practicing OOD with AI, watch out for these pitfalls:
 - [How to Use AI Coding Tools Effectively During Live.](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
 - [Cursor AI with Claude vs GPT Models: Which Gives Better.](/ai-tools-compared/cursor-ai-with-claude-vs-gpt-models-which-gives-better-code-/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

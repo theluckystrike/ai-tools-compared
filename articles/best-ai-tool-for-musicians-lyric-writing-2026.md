@@ -279,7 +279,5 @@ Avoid cliches like "heart on fire" or "tears in rain."
 - [Best AI Writing Assistant for Freelance Writers 2026](/ai-tools-compared/best-ai-writing-assistant-for-freelance-writers-2026/)
 - [Best AI Writing Tool for Blog Posts 2026](/ai-tools-compared/best-ai-writing-tool-for-blog-posts-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

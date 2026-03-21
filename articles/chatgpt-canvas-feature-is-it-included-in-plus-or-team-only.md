@@ -266,6 +266,4 @@ Flag any sentence over 25 words for simplification.
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
-
 {% endraw %}

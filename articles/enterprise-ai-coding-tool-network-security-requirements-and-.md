@@ -249,7 +249,7 @@ This configuration limits each developer to 10 requests per second with bursting
 
 ## Logging and Compliance Audit Trails
 
-Comprehensive logging enables compliance teams to verify that your security controls function correctly. Log all connection attempts, denials, and policy violations:
+ logging enables compliance teams to verify that your security controls function correctly. Log all connection attempts, denials, and policy violations:
 
 ```bash
 # rsyslog configuration for AI tool access logging
@@ -314,13 +314,6 @@ Integrate this detection into your IDE or pre-submission hooks to warn developer
 Several mistakes frequently cause problems in enterprise AI coding tool deployments. Avoid allowing all outbound HTTPS traffic, as this defeats the purpose of targeted firewall rules. Do not rely solely on IP-based filtering, since cloud providers frequently change underlying infrastructure. Never forget to allow license validation connections, or tools will stop working unexpectedly.
 
 Document all firewall rule changes with timestamps and justifications. This documentation aids troubleshooting and satisfies compliance auditors who need to verify that security controls exist.
-
-## Conclusion
-
-Securing AI coding tools in enterprise environments requires understanding their specific network requirements and implementing appropriate firewall controls. Start with explicit deny rules, whitelist known good destinations, and validate configurations regularly. With proper network security measures in place, developers can use AI assistance while organizations maintain control over their data and systems.
-
-The key is implementing layered defenses: firewall rules at the host and network level, DNS filtering, and proxy inspection where appropriate. Regular monitoring ensures configurations remain effective as AI tools evolve and add new capabilities.
-
 
 ## Related Reading
 

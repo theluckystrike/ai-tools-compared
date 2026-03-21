@@ -426,7 +426,5 @@ Using AI to accelerate this progression typically reduces learning time from mon
 - [How Accurate Are AI Tools at Rust WASM Compilation and.](/ai-tools-compared/how-accurate-are-ai-tools-at-rust-wasm-compilation-and-bindg/)
 - [How Well Do AI Tools Handle Rust Lifetime Elision Rules.](/ai-tools-compared/how-well-do-ai-tools-handle-rust-lifetime-elision-rules-corr/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

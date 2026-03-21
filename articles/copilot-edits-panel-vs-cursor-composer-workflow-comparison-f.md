@@ -260,6 +260,4 @@ Both tools continue to evolve, and the gap in capabilities may narrow over time.
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI.](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)
 - [Cursor vs Copilot for Implementing Stripe Payment.](/ai-tools-compared/cursor-vs-copilot-for-implementing-stripe-payment-integratio/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

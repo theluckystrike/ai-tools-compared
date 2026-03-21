@@ -259,6 +259,4 @@ This layered approach provides Claude Code with context while maintaining organi
 - [How to Configure Claude Code Project Memory for.](/ai-tools-compared/how-to-configure-claude-code-project-memory-for-persistent-c/)
 - [ChatGPT Team vs Claude Team Cost Per Seat Comparison 2026](/ai-tools-compared/chatgpt-team-vs-claude-team-cost-per-seat-comparison-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

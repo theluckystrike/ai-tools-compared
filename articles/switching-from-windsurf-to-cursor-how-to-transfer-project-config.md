@@ -292,6 +292,4 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 - [How to Migrate Cursor Rules File to Windsurf Rules.](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
 - [How to Migrate WindSurf AI Rules to Cursor.cursorrules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

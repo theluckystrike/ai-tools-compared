@@ -321,7 +321,5 @@ Evaluate based on your specific use case—not marketing claims—and you'll mak
 - [Domo vs Sisense AI Dashboards: A Practical Comparison.](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
 - [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

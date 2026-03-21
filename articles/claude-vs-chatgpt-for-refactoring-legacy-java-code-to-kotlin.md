@@ -282,7 +282,5 @@ For large-scale migrations, I recommend starting with Claude and establishing co
 - [Copilot vs Claude Code for Scaffolding New Django REST.](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Procedures](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

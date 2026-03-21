@@ -230,6 +230,4 @@ When you encounter a new pattern through Copilot that you want to save, add it t
 - [How to Migrate Copilot Chat History and Context to Cursor AI](/ai-tools-compared/migrate-copilot-chat-history-and-context-to-cursor-ai-guide/)
 - [Copilot vs Cursor for Writing Rust Error Handling with.](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

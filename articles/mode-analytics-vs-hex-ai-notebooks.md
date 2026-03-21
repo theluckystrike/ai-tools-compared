@@ -292,6 +292,4 @@ Many organizations use both—Mode for formal reporting and Hex for ad-hoc analy
 - [Lakehouse vs Data Warehouse for AI Workloads: A.](/ai-tools-compared/lakehouse-vs-data-warehouse-ai-comparison/)
 - [Domo vs Sisense AI Dashboards: A Practical Comparison.](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

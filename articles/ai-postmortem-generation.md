@@ -196,12 +196,6 @@ class PostmortemGenerator:
 
 AI postmortem generation faces several challenges. Context windows limit how much historical data models can process, requiring careful selection of relevant logs and events. Root cause inference remains probabilistic—AI can suggest probable causes but cannot replace human investigation for complex issues. Additionally, certain root causes like race conditions or distributed system timing issues are inherently difficult for AI to identify without deep system knowledge.
 
-## Conclusion
-
-AI postmortem generation represents a significant productivity improvement for development teams managing incidents. By automating the collection and initial analysis of incident data, these tools free engineers to focus on resolution and prevention rather than documentation. Whether using specialized platforms or building custom pipelines, integrating AI into your incident response workflow can reduce postmortem writing time by 50-70% while improving consistency across your organization's incident documentation.
-
-The key is treating AI as an accelerant rather than a replacement for human judgment. Use it to generate first drafts, suggest root causes, and structure information—but always ensure experienced team members review and refine the final output.
-
 ## Tool Comparison: Cost and Features
 
 Several dedicated platforms handle AI postmortem generation. Here's a practical comparison:
@@ -317,11 +311,6 @@ Here's what AI-generated postmortems typically look like (this example was creat
 
 ```markdown
 # Postmortem: Database Connection Pool Exhaustion
-
-## Summary
-A deployment of the authentication service increased connection pool utilization from 40% to 95%,
-causing 2,847 users to experience authentication failures for 38 minutes. Root cause was a
-misconfigured connection timeout in the new release.
 
 ## Impact
 - 2,847 users unable to log in

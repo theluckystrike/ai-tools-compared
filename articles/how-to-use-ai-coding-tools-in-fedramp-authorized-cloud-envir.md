@@ -230,6 +230,4 @@ Regular audits verify that AI tool configurations haven't drifted from compliant
 - [Best Practices for Using AI Coding Tools in HIPAA.](/ai-tools-compared/best-practices-for-using-ai-coding-tools-in-hipaa-regulated-/)
 - [Best Air Gapped AI Code Completion Solutions for Offline.](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

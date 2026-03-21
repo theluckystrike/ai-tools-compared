@@ -269,7 +269,5 @@ Regardless of which tool you choose, these practices improve accuracy:
 - [Switching from Copilot to Codeium: What Extensions to Install First](/ai-tools-compared/switching-from-copilot-to-codeium-what-extensions-to-install/)
 - [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

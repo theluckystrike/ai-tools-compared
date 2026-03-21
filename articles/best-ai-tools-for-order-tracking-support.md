@@ -279,6 +279,4 @@ Consider your team's development expertise, expected query volume, and integrati
 - [Which AI Tool Generates Better Vue 3 Composition API Components](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)
 - [Verloop vs Engati AI Chatbot Platform Compared](/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

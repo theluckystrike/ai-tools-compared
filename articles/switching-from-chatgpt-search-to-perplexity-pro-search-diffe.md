@@ -257,6 +257,4 @@ Both approaches have value depending on your learning style and time constraints
 - [Switching from ChatGPT Plus to Perplexity Pro: Feature.](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 - [How to Export Perplexity Collections Before Switching to ChatGPT Search](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

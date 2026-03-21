@@ -293,7 +293,5 @@ This approach gives you version control over your GPT configurations and enables
 - [ChatGPT Plugins Replacement: Custom GPTs Pricing for.](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
 - [How to Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Instructions](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

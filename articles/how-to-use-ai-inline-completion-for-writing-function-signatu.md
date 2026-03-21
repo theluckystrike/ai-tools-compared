@@ -262,6 +262,4 @@ The real productivity gain comes from staying in your flow state. Instead of pau
 - [AI Code Completion for Writing Shell Commands Inside.](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 - [AI Autocomplete for Writing Tests: Comparison of.](/ai-tools-compared/ai-autocomplete-for-writing-tests-comparison-of-suggestion-q/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

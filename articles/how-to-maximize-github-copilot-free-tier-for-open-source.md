@@ -343,6 +343,4 @@ Success story: Maintainer managing 3 projects with 50K combined stars using only
 - [How to Use Copilot for Writing CI CD Pipelines in GitHub.](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

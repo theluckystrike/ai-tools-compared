@@ -290,7 +290,5 @@ All four tools handle hydration mismatch debugging effectively. The choice often
 - [AI Tools for Debugging iOS AutoLayout Constraint Conflict Warnings in Storyboards](/ai-tools-compared/ai-tools-for-debugging-ios-autolayout-constraint-conflict-wa/)
 - [AI Tools for Debugging PostgreSQL Query Planner: Fixing.](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -316,6 +316,4 @@ Start by mapping your current data architecture. If dbt is central to your opera
 - [Databricks vs BigQuery AI ML Features: A Practical.](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
 - [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

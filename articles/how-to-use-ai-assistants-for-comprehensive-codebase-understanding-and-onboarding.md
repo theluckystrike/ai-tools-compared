@@ -1,10 +1,10 @@
 ---
 layout: default
-title: "How to Use AI Assistants for Comprehensive Codebase"
+title: "How to Use AI Assistants for Codebase"
 description: "A practical guide for developers on using AI assistants to understand large codebases quickly, with real examples and proven techniques for effective."
 date: 2026-03-16
 author: theluckystrike
-permalink: /how-to-use-ai-assistants-for-comprehensive-codebase-understanding-and-onboarding/
+permalink: /how-to-use-ai-assistants-for--codebase-understanding-and-onboarding/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
@@ -310,7 +310,5 @@ Consider these approaches for team adoption:
 - [Effective Strategies for Using AI to Write.](/ai-tools-compared/effective-strategies-for-using-ai-to-write--api/)
 - [AI Assistants for Writing Correct AWS IAM Policies with.](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 - [How to Structure Project Files So AI Coding Tools.](/ai-tools-compared/how-to-structure-project-files-so-ai-coding-tools-understand/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

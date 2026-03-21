@@ -230,6 +230,4 @@ The key insight is that AI tools dramatically reduce the time from wireframe to 
 - [ChatGPT vs Claude for Writing Cold Outreach Emails to.](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

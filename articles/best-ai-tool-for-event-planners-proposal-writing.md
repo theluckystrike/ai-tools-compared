@@ -275,7 +275,5 @@ Use AI to handle repetitive elements, accelerate research, and polish your writi
 - [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling.](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

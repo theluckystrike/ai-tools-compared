@@ -111,7 +111,7 @@ Claude explained the pattern section by section: protocol, optional www, domain 
 
 ### ChatGPT
 
-ChatGPT generated a verbose pattern attempting to be comprehensive:
+ChatGPT generated a verbose pattern attempting to be :
 
 ```regex
 (https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)

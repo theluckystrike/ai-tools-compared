@@ -361,7 +361,5 @@ chrome.runtime.onMessage.addListener(async ({ action, streamId }) => {
 - [AI Policy Management Tools for Enterprise Compliance 2026: A Developer Guide](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 - [Best Practices for Sharing AI Tool Configuration Files Across Distributed Engineering Teams](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

@@ -244,6 +244,4 @@ Skills provide reusability, the command-line interface offers flexibility, and t
 - [How to Transfer Notion AI Workflows to Claude Projects.](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 - [How to Transfer Midjourney Prompt Library to Ideogram.](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

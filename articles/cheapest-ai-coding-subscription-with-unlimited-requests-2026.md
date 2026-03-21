@@ -229,6 +229,4 @@ To understand what "unlimited" means in practice:
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 - [Best Free AI Coding Tool With No Message Limits in 2026](/ai-tools-compared/best-free-ai-coding-tool-with-no-message-limits-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

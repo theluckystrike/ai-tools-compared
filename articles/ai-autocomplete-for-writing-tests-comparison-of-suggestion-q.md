@@ -264,7 +264,5 @@ For teams writing extensive test suites, the time saved from better suggestions 
 - [AI Tools for Writing Jest Tests for GraphQL Resolvers.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [AI Tools for Writing Jest Tests for Web Worker and.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

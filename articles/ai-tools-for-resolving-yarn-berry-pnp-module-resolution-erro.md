@@ -267,7 +267,5 @@ For issues involving native modules or complex peer dependency chains, the Yarn 
 - [Best AI for Resolving Git Merge Conflict Markers in.](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

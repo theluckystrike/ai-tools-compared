@@ -272,7 +272,5 @@ The combination of AI-generated configurations with automated validation creates
 - [AI Tools for Generating Docker Compose Files for Complex.](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 - [AI Tools for Generating GitHub Actions Workflows from.](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

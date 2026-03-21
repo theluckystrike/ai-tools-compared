@@ -478,7 +478,5 @@ Most developers find success combining tools: use Copilot for daily coding, Clau
 - [Best AI Assistant for Debugging CSS Grid Layout Overflow.](/ai-tools-compared/best-ai-assistant-for-debugging-css-grid-layout-overflow-iss/)
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing Issues](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

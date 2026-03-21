@@ -441,6 +441,4 @@ For developers working with Rust WASM and bindgen, these results suggest verifyi
 - [How Accurate Are AI Tools at Generating Rust Crossbeam.](/ai-tools-compared/how-accurate-are-ai-tools-at-generating-rust-crossbeam-concu/)
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks.](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

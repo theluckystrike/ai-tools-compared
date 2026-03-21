@@ -246,6 +246,4 @@ Start with the tool that matches your current IDE preference, as the productivit
 - [AI Code Generation Quality for Java Spring Security.](/ai-tools-compared/ai-code-generation-quality-for-java-spring-security-configur/)
 - [AI Coding Assistant Comparison for React Component.](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -194,7 +194,7 @@ Understanding how these platforms handle actual queries reveals their strengths:
 
 Query: "How do I implement OAuth 2.0 in a Node.js Express application with TypeScript?"
 
-ChatGPT Search would provide a comprehensive answer explaining OAuth concepts, then suggest code patterns. It might reference official OAuth documentation, Stack Overflow discussions, and contemporary best practices. The response emphasizes conversational clarity.
+ChatGPT Search would provide an answer explaining OAuth concepts, then suggest code patterns. It might reference official OAuth documentation, Stack Overflow discussions, and contemporary best practices. The response emphasizes conversational clarity.
 
 Perplexity Pro Search would immediately provide working code examples, link to specific npm packages (passport.js, jsonwebtoken), and cite current GitHub repositories using these patterns. It emphasizes immediate actionability.
 

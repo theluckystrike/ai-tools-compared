@@ -232,7 +232,7 @@ AI struggles with:
 
 - Domain-specific business logic
 
-- Security-sensitive operations 
+- Security-sensitive operations
 
 - Performance optimization for specific workloads
 
@@ -291,7 +291,5 @@ Compare these metrics against purely manual development times to quantify AI's v
 - [AI Code Generation Quality for JavaScript Async Await.](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
 - [Best Practices for Documenting AI-Generated Code for.](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)
 - [AI Code Generation for Python FastAPI Endpoints with.](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
-
-Built by
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

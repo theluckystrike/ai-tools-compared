@@ -325,7 +325,5 @@ Both platforms offer free trials that let you test these aspects before committi
 - [Runway ML vs Pika AI: Video Generation Tools Compared](/ai-tools-compared/runway-ml-vs-pika-ai-video-generation/)
 - [Verloop vs Engati AI Chatbot Platform Compared](/ai-tools-compared/verloop-vs-engati-ai-chatbot-platform/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

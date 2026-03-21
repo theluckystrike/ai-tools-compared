@@ -264,7 +264,5 @@ The key takeaway: Cursor AI stores your code on their servers for processing, bu
 - [Does WindSurf AI Send Entire Project Context or Just.](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)
 - [AI Coding Assistant Session Data Lifecycle: From Request.](/ai-tools-compared/ai-coding-assistant-session-data-lifecycle-from-request-to-deletion-explained-2026/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

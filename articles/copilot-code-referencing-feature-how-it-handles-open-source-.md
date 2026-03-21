@@ -353,7 +353,5 @@ Stay informed, check references when they appear, and build with confidence know
 - [Claude Code SDK Testing Workflow Guide](/ai-tools-compared/claude-code-sdk-testing-workflow-guide/)
 - [Cursor AI Privacy Mode: How to Use AI Features Without.](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

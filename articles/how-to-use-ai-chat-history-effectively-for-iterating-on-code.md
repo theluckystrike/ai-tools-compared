@@ -464,6 +464,4 @@ The investment in organizing history pays back quickly.
 - [How to Use AI Coding Assistants Effectively with Trunk.](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
 - [How to Get AI Code Suggestions That Follow Your Project Naming Conventions](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

@@ -280,7 +280,5 @@ These conversations build your expertise with OTP supervision trees and GenServe
 - [AI Tools for Interpreting Terraform Plan Errors with.](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 - [How to Use AI to Interpret and Fix Java OutOfMemory Heap.](/ai-tools-compared/how-to-use-ai-to-interpret-and-fix-java-outofmemory-heap-spa/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

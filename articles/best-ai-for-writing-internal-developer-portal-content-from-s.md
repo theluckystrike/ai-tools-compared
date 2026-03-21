@@ -317,6 +317,4 @@ AI assists with initial content creation, but human review remains essential. Es
 - [Best AI Assistant for Writing Open Source Plugin.](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
 - [AI Tools for Writing Jest Tests for GraphQL Resolvers.](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 
-Built by
-
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
