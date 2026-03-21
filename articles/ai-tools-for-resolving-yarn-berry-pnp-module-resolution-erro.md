@@ -38,6 +38,8 @@ Yarn Berry replaces the traditional node_modules directory with a single `.pnp.c
 
 When these errors occur, developers typically see messages like "Cannot find module" or "ERR_PACKAGE_PATH_NOT_EXPORTED". Understanding the root cause requires examining multiple configuration files simultaneously.
 
+One particularly confusing variant is the `YN0041` error, which Yarn Berry emits when a package declares a peer dependency that is not satisfied in the consuming workspace. Unlike classic Yarn, Berry does not silently install the closest matching version—it surfaces the mismatch as a hard error or warning depending on your `logFilters` configuration. AI tools that have seen enough Yarn Berry error output recognize the YN code prefix and can map it directly to the relevant configuration knob.
+
 
 ## How AI Tools Approach PnP Debugging
 
@@ -83,6 +85,9 @@ packageExtensions:
 ```
 
 
+Claude Code's file-reading capabilities are particularly useful here because it can inspect the generated `.pnp.cjs` file and cross-reference the package map against your import statements. This is something you cannot do efficiently in a web-based chatbot—pasting a 50,000-line PnP file into a chat window is impractical, but Claude Code can scan it in place and extract the relevant mapping entries.
+
+
 ### GitHub Copilot and ChatGPT for Resolution Strategies
 
 
@@ -105,6 +110,9 @@ nohoist:
   - "**/native-module"
   - "**/optional-dependency"
 ```
+
+
+The most effective prompting strategy with ChatGPT is to provide the error message, your Yarn version output, and the relevant sections of your `package.json` and `.yarnrc.yml` in a single message. Sending them piecemeal across multiple turns causes the model to lose context about which workspace is failing and which configuration file is in scope.
 
 
 ## Practical Examples of AI-Assisted PnP Resolution
@@ -138,6 +146,9 @@ The problem: using a specific version instead of the workspace protocol. The AI 
 ```
 
 
+After making this change, run `yarn install` to regenerate the `.pnp.cjs` file. The AI will also remind you to delete any stale `.yarn/cache` entries for the affected package if the error persists after reinstallation.
+
+
 ### Example 2: TypeScript Path Mapping in PnP
 
 
@@ -168,6 +179,9 @@ yarn add -D @yarnpkg/typescript-pnp
 ```
 
 
+The TypeScript PnP loader intercepts module resolution at the compiler level so `tsc` and language server instances read from the `.pnp.cjs` map rather than scanning `node_modules`. Without it, TypeScript will report errors on imports that work fine at runtime through the PnP runtime loader.
+
+
 ### Example 3: ESLint Plugin Resolution
 
 
@@ -192,21 +206,46 @@ yarn add -D eslint-import-resolver-yarn-pnp
 ```
 
 
+ESLint's import resolution and plugin loading are separate code paths, so you often need to fix both. The plugin loader uses Node's `require()` system and is patched automatically when PnP is active. The import resolver, however, is a separate package that ESLint calls explicitly and must be configured through `settings.import/resolver` in your ESLint config.
+
+
+### Example 4: Debugging with yarn dlx
+
+
+When a package fails to resolve at build time rather than install time, `yarn dlx` is a useful isolation tool that AI assistants frequently recommend:
+
+
+```bash
+# Run a one-off check with the PnP runtime active
+yarn dlx node -e "require('@packages/common')"
+
+# Check what PnP resolves a specific package to
+yarn node -e "const pnp = require('./.pnp.cjs'); console.log(pnp.resolveToUnqualified('@packages/common', null, {}))"
+```
+
+
+These commands confirm whether the issue is in the `.pnp.cjs` mapping itself or in the consuming application's import statement.
+
+
 ## Best Practices for AI-Assisted PnP Debugging
 
 
 To get the most from AI tools when troubleshooting Yarn Berry PnP issues, provide them with:
 
 
-1. **The exact error message** - Copy the full error output including the stack trace
+1. **The exact error message** — Copy the full error output including the stack trace
 
-2. **Your `.yarnrc.yml`** - Show the current PnP configuration
+2. **Your `.yarnrc.yml`** — Show the current PnP configuration
 
-3. **Relevant `package.json` files** - Include workspace root and the failing package
+3. **Relevant `package.json` files** — Include workspace root and the failing package
 
-4. **Yarn version** - Run `yarn --version` to confirm the Berry version
+4. **Yarn version** — Run `yarn --version` to confirm the Berry version
 
-5. **Node version** - Some PnP issues relate to Node.js version incompatibilities
+5. **Node version** — Some PnP issues relate to Node.js version incompatibilities
+
+6. **Output of `yarn workspaces list`** — Gives the AI a full picture of your monorepo structure
+
+7. **The YN error code** — Yarn Berry prefixes errors with codes like `YN0041` or `YN0002`; include these explicitly
 
 
 ## Limitations and When to Manual Fix
@@ -223,6 +262,21 @@ AI tools work best for common PnP patterns but may struggle with highly custom c
 
 
 For issues involving native modules or complex peer dependency chains, the Yarn Berry Discord and GitHub issues often contain solutions that AI tools may not yet recognize.
+
+A rule of thumb: if you have pasted the error, your configuration files, and your workspace structure to an AI three times without a working fix, you are likely dealing with a platform-specific edge case that requires reading the Yarn Berry source code or filing a GitHub issue. AI tools are trained on publicly available examples and cannot reason about bugs that have not been documented yet. In those cases, the Yarn Berry Discord `#help` channel and the GitHub issue tracker are more reliable than any AI assistant.
+
+## Comparing AI Tools for PnP Debugging
+
+
+| Tool | Filesystem Access | Best For | PnP Knowledge Depth |
+|------|------------------|----------|---------------------|
+| Cursor | Yes (project files) | Full monorepo analysis | High |
+| Claude Code | Yes (full filesystem) | Cross-file PnP tracing | High |
+| GitHub Copilot | Yes (open files) | Inline config generation | Medium |
+| ChatGPT | No | Error explanation, config templates | Medium |
+| Gemini Advanced | No | Alternative approaches | Medium |
+
+For teams running CI pipelines, Claude Code and Cursor provide the most value because they can analyze the entire workspace graph in one pass. Web-based chatbots require you to manually curate the context, which introduces the risk of omitting the package.json or tsconfig that contains the root cause.
 
 
 ## Related Articles
