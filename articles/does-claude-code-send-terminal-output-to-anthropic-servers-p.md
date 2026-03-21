@@ -333,7 +333,7 @@ if findings:
     for filename, line_num, issue in findings:
         print(f"  {filename}:{line_num} - {issue}")
 else:
-    print("✓ No obvious sensitive data found")
+    print("No obvious sensitive data found")
 ```
 
 ## Comparison: Claude Code vs. Other AI Tools
@@ -402,6 +402,88 @@ def handle_user_data_request(user_id: str, request_type: str):
         anthropic_client.delete_user_data(user_id)
         return {"status": "deletion_scheduled", "completion_date": "+30 days"}
 ```
+
+## Team Workflows and Security Policies
+
+Adopting Claude Code across a team introduces shared privacy surface area. Individual settings work for solo developers, but teams need a standardized configuration to enforce consistent behavior.
+
+**Recommended team policy document structure:**
+
+```markdown
+## AI Coding Assistant Security Policy
+
+### Permitted Data
+- Internal business logic and algorithms
+- Test data using synthetic values only
+- Schema definitions with column names (no sample rows)
+- Dependency configuration files (package.json, requirements.txt)
+
+### Prohibited Data
+- Any file under secrets/, credentials/, or .env*
+- Database dumps or query results containing PII
+- Authentication tokens, API keys, or signing certificates
+- Customer data, even when anonymized
+```
+
+Enforcing this policy at the tool level is more reliable than relying on individual discipline. The `.claudeignore` approach combined with directory allow-listing creates a technical enforcement layer that does not depend on every team member remembering the policy in every session.
+
+**Incident response when data is accidentally transmitted:**
+
+1. Immediately rotate any credentials that appeared in the conversation
+2. File a deletion request with Anthropic via your account settings
+3. Review git history to ensure no secrets were committed alongside AI-generated code
+4. Update `.claudeignore` to prevent recurrence for that file type
+
+Anthropic's 30-day retention window means there is a practical urgency to credential rotation. Treat an accidental paste of API keys into Claude Code the same way you would treat a push to a public GitHub repository.
+
+## Verifying Privacy Posture with Automated Testing
+
+Integrate privacy checks into your CI pipeline to catch misconfigurations before they reach developer machines:
+
+```yaml
+# .github/workflows/privacy-audit.yml
+name: Privacy Configuration Audit
+
+on:
+  pull_request:
+    paths:
+      - '.claude/**'
+      - '.claudeignore'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify .claudeignore exists
+        run: test -f .claudeignore || (echo ".claudeignore missing" && exit 1)
+
+      - name: Check sensitive path coverage
+        run: |
+          required_patterns=("*.key" "*.pem" ".env*" "secrets/" "credentials/")
+          for pattern in "${required_patterns[@]}"; do
+            grep -qF "$pattern" .claudeignore || \
+              (echo "Missing pattern in .claudeignore: $pattern" && exit 1)
+          done
+          echo "All required patterns present"
+
+      - name: Validate settings.json schema
+        run: |
+          python3 -c "
+          import json, sys
+          with open('.claude/settings.json') as f:
+              cfg = json.load(f)
+          required = ['allowedDirectories', 'blockedPatterns']
+          missing = [k for k in required if k not in cfg]
+          if missing:
+              print(f'Missing keys in settings.json: {missing}')
+              sys.exit(1)
+          print('settings.json valid')
+          "
+```
+
+This pipeline check ensures that any changes to Claude Code configuration maintain the security posture your team agreed on, and prevents settings regressions from shipping silently.
 
 ## Related Reading
 
