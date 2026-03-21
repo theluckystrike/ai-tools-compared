@@ -30,6 +30,19 @@ Developers choose Claude Code for several compelling reasons. Claude Code offers
 Cursor excels at IDE-style editing with its visual interface and inline autocomplete. If you've built your workflow around Cursor's specific features, switching requires planning to avoid productivity drops.
 
 
+The key differences that affect your workflow come down to interaction model, context handling, and where configuration lives:
+
+
+| Feature | Cursor | Claude Code |
+|---|---|---|
+| Interface | Visual IDE (VS Code-based) | Terminal CLI |
+| Autocomplete | Inline, real-time suggestions | On-demand generation |
+| Context | Project-aware automatically | Explicit loading required |
+| Config location | GUI settings + `.cursor/` dirs | `CLAUDE.md` + `~/.claude/` |
+| Custom rules | Cursor Rules UI | Markdown instruction files |
+| Chat history | Stored locally in SQLite | Per-session by default |
+
+
 ## Exporting Cursor Snippets and Templates
 
 
@@ -56,6 +69,21 @@ done > claude-snippets.txt
 ```
 
 
+A better long-term approach is to convert your most-used Cursor snippets into Claude Code slash commands stored in your `CLAUDE.md` file. This gives Claude Code the context it needs to reproduce the snippet behavior consistently:
+
+
+```markdown
+# CLAUDE.md
+## Common Code Patterns
+
+### React Component
+When I say "new component", generate a React functional component with TypeScript props interface, default export, and a basic test file.
+
+### Express Route
+When I say "new route", generate an Express router with GET, POST, PUT, DELETE handlers, input validation middleware, and JSDoc comments.
+```
+
+
 ## Preserving Keyboard Shortcuts
 
 
@@ -72,6 +100,36 @@ cat ~/Library/Application\ Support/Cursor/User/keybindings.json | jq '.[] | sele
 
 
 Claude Code uses a different keybinding system based on your terminal emulator. Most developers remap common actions in their terminal configuration. For iTerm2 users, export your profile settings. For VS Code Terminal users, check the Terminal Integrated settings.
+
+
+For shell-level shortcuts, add keybindings to your `~/.zshrc` or `~/.bashrc`:
+
+
+```bash
+# Quick Claude Code invocations
+bindkey -s '^[c' 'claude "explain the selected code"\n'
+```
+
+
+You can also create shell functions that replicate the feel of Cursor's most-used commands:
+
+
+```bash
+# ~/.zshrc additions for Claude Code workflow
+cc() {
+  claude "$@"
+}
+
+# Open Claude with current file as context
+ccf() {
+  claude "$(cat "$1")" "${@:2}"
+}
+
+# Review the last git diff
+ccreview() {
+  git diff HEAD | claude "Review these changes and point out issues"
+}
+```
 
 
 ## Transferring Workspace Settings
@@ -96,6 +154,28 @@ export CLAUDE_CONTEXT_WINDOW=200000
 ```
 
 
+The most effective way to preserve project-specific behavior is to create a `CLAUDE.md` at the root of each project. This file loads automatically whenever you run Claude Code from within the project directory, providing the same persistent context that Cursor's workspace rules gave you:
+
+
+```markdown
+# Project: payments-service CLAUDE.md
+
+## Tech Stack
+- Node.js 20, TypeScript 5.4
+- PostgreSQL 16 via Prisma ORM
+- Express 4 with Zod validation
+
+## Conventions
+- All database queries go through the repository layer in `src/repositories/`
+- Use `Result<T, E>` from neverthrow for error handling — never throw
+- Tests use Vitest with in-memory SQLite for DB tests
+
+## Sensitive Areas
+- Never modify `src/billing/stripe-webhook.ts` without reading STRIPE.md first
+- Payment amounts are always stored in cents (integer)
+```
+
+
 ## Exporting Chat History and Context
 
 
@@ -116,6 +196,9 @@ Export relevant conversations to markdown for later reference:
 sqlite3 ~/Library/Application\ Support/Cursor/ExtensionHost/*/chat-history.db \
   "SELECT content FROM messages;" > cursor-chat-backup.md
 ```
+
+
+Important architectural decisions recorded in Cursor chat threads are worth extracting and placing into your project's `CLAUDE.md` or a `docs/decisions/` directory. This preserves institutional knowledge that would otherwise disappear when you stop using Cursor.
 
 
 ## Setting Up Claude Code with Your Workflow
@@ -219,8 +302,12 @@ Before deleting Cursor, verify you've transferred everything:
 
 - [ ] Built instruction files for active projects
 
+- [ ] Converted Cursor Rules to CLAUDE.md entries
 
-The transition requires an adjustment period. Expect reduced autocomplete suggestions initially, but the trade-off comes with more powerful reasoning and explicit control over code changes. Start with smaller projects while building your Claude Code muscle memory.
+- [ ] Verified sensitive project notes are preserved in docs
+
+
+The transition requires an adjustment period. Expect reduced autocomplete suggestions initially, but the trade-off comes with more powerful reasoning and explicit control over code changes. Start with smaller projects while building your Claude Code muscle memory. Most developers find they reach parity productivity within two weeks and exceed it by the end of the first month, particularly on tasks involving complex reasoning across multiple files.
 
 
 ## Related Articles
