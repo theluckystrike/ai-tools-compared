@@ -117,7 +117,7 @@ Opus handles 200K context windows more effectively for tasks like:
 # Document analysis workload
 def analyze_codebase(repository_path):
     """Read multiple files and generate comprehensive review"""
-    
+
     # For codebase analysis, Opus provides better reasoning
     response = client.messages.create(
         model="claude-opus-4-20250514",
@@ -166,7 +166,7 @@ def classify_emails(emails):
             model="claude-sonnet-4-20250514",
             max_tokens=50,
             messages=[{
-                "role": "user", 
+                "role": "user",
                 "content": f"Classify this email: {email[:1000]}"
             }]
         )
@@ -240,6 +240,38 @@ For this workload, Opus only makes sense if the improved quality reduces develop
 
 
 
+## Extended Cost Scenarios
+
+The cost calculation shifts considerably based on token utilization patterns. Here are three common workload profiles with their cost projections:
+
+| Workload | Daily Requests | Avg Tokens (in/out) | Sonnet/day | Opus/day | Annual Delta |
+|----------|---------------|---------------------|------------|----------|--------------|
+| Small SaaS | 1,000 | 300 / 500 | $8.40 | $42.00 | $12,264 |
+| Mid-Market App | 10,000 | 500 / 800 | $135 | $675 | $197,100 |
+| Enterprise Pipeline | 100,000 | 800 / 1,200 | $2,280 | $11,400 | $3,328,200 |
+| Internal Tool | 200 | 2,000 / 3,000 | $13.50 | $67.50 | $19,710 |
+
+The annual delta on an enterprise pipeline is significant enough that even a 10% improvement in output quality from Opus rarely justifies the cost unless that quality directly prevents costly errors — such as incorrect legal document summaries or security audit misses.
+
+## Quality Differences in Practice
+
+The price difference only matters if there is a measurable quality gap. Testing both models on representative tasks reveals where the gap is large and where it is negligible.
+
+**Tasks where Opus noticeably outperforms Sonnet:**
+- Multi-step mathematical reasoning with intermediate steps
+- Ambiguous instruction interpretation requiring inference about intent
+- Code generation for algorithms involving complex data structure manipulation
+- Long-form writing tasks requiring consistent argumentation across 2,000+ words
+
+**Tasks where Sonnet matches Opus quality:**
+- Standard CRUD code generation
+- FAQ answering from provided context
+- Classification with clear categories
+- Structured data extraction from well-formatted text
+- Translation between common programming languages
+
+A practical way to decide: run your 20 hardest representative prompts through both models and count how often Sonnet's output requires manual correction. If the correction rate is under 15%, Sonnet is sufficient for that task category.
+
 ## Hybrid Strategy: The Smart Approach
 
 
@@ -253,13 +285,13 @@ import anthropic
 
 def route_request(user_input, complexity="auto"):
     """Route to appropriate model based on task complexity"""
-    
+
     if complexity == "auto":
         # Simple heuristic for routing
         complexity = "high" if len(user_input) > 2000 else "low"
-    
+
     model = "claude-opus-4-20250514" if complexity == "high" else "claude-sonnet-4-20250514"
-    
+
     response = client.messages.create(
         model=model,
         max_tokens=2000,
@@ -272,6 +304,33 @@ simple_response = route_request("What is 2+2?", complexity="low")
 complex_response = route_request("Analyze the security implications...", complexity="high")
 ```
 
+A more sophisticated router can use Sonnet itself to classify request complexity before routing — the classification call costs a fraction of a cent and prevents unnecessary Opus usage:
+
+```python
+def classify_complexity(user_input: str) -> str:
+    """Use Sonnet to classify whether the task needs Opus."""
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=10,
+        messages=[{
+            "role": "user",
+            "content": f"Reply 'high' or 'low' only. Does this require complex multi-step reasoning? '{user_input[:200]}'"
+        }]
+    )
+    return response.content[0].text.strip().lower()
+
+def smart_route(user_input: str) -> str:
+    complexity = classify_complexity(user_input)
+    model = "claude-opus-4-20250514" if complexity == "high" else "claude-sonnet-4-20250514"
+    response = client.messages.create(
+        model=model,
+        max_tokens=2000,
+        messages=[{"role": "user", "content": user_input}]
+    )
+    return response.content[0].text
+```
+
+This two-call pattern adds about $0.001 per request but routes correctly for the bulk of tasks, reducing Opus invocations by 60-80% on mixed workloads.
 
 ## Decision Framework
 
@@ -287,6 +346,8 @@ Choose **Opus** when:
 
 - Debugging costs exceed API savings
 
+- Regulatory or compliance accuracy is non-negotiable
+
 
 
 Choose **Sonnet** when:
@@ -299,13 +360,25 @@ Choose **Sonnet** when:
 
 - Processing high volumes of simple tasks
 
+- Running A/B tests or experiments where volume matters more than per-call quality
+
 
 
 The 2026 reality is that most applications should start with Sonnet and selectively upgrade to Opus for complex requests. This hybrid approach captures 80% of Sonnet's cost savings while reserving premium capabilities for where they genuinely improve outcomes.
 
+## Frequently Asked Questions
 
+**Can I switch models mid-conversation?**
+Yes. Each API call specifies a model independently. You can start a conversation with Sonnet for context gathering and switch to Opus for the final generation step. The models share the same message format, so no code changes are needed beyond the model parameter.
 
+**Does Opus have a higher rate limit?**
+No — rate limits are based on your Anthropic account tier, not the model. Both Sonnet and Opus share the same token-per-minute limits at each tier. Opus requests use more of that budget per call if you increase max_tokens to match its higher capability ceiling.
 
+**Is Haiku worth considering as a third tier?**
+Yes. Claude Haiku at roughly $0.25/$1.25 per million tokens handles simple classification, extraction, and single-sentence tasks at 12x less cost than Sonnet. A three-tier routing strategy — Haiku for simple, Sonnet for medium, Opus for complex — captures further savings without sacrificing quality where it matters.
+
+**How do I measure whether Opus quality justifies the cost?**
+Run an A/B test across 500 representative requests. Score outputs on your domain-specific quality rubric (correctness, completeness, format compliance). Calculate the cost of manual corrections on Sonnet failures versus the API cost premium for Opus. If correction cost exceeds 15% of the Opus premium, upgrade the routing threshold.
 
 ## Related Reading
 
