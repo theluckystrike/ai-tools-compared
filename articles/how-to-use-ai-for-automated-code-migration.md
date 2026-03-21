@@ -237,11 +237,52 @@ const { push, replace } = useHistory();
 
 Flag these categories for manual review rather than trusting automated migration.
 
+## Diff Review Workflow
+
+The biggest risk with AI migration is silent correctness issues — code that passes the type checker but behaves differently. Build a diff review step into every migration:
+
+```python
+import difflib
+
+def generate_migration_diff(original: str, migrated: str, filepath: str) -> str:
+    diff = difflib.unified_diff(
+        original.splitlines(keepends=True),
+        migrated.splitlines(keepends=True),
+        fromfile=f"a/{filepath}",
+        tofile=f"b/{filepath}",
+        n=3
+    )
+    return "".join(diff)
+
+# Write all diffs to a single review file
+with open("migration-review.diff", "w") as review:
+    for filepath in results["changed"]:
+        original = open(filepath).read()
+        migrated = open(f"migration-staging/{filepath}").read()
+        review.write(generate_migration_diff(original, migrated, filepath))
+        review.write("\n")
+```
+
+Run `git diff --stat migration-review.diff` or open it in a tool like `delta` to review all changes before applying. High-confidence mechanical changes (print statements, import renames) need less scrutiny. Low-confidence changes (async addition, parameter reordering) need a human read.
+
+## Sizing the Migration
+
+Rule of thumb for estimating AI migration effort:
+
+| Files | Manual Estimate | AI-Assisted Estimate | Notes |
+|---|---|---|---|
+| < 20 files | 1-2 days | 2-4 hours | Manual review still faster to set up |
+| 20-100 files | 1-2 weeks | 4-8 hours | Clear ROI for AI assistance |
+| 100-500 files | 4-8 weeks | 1-2 days | Batch API essential |
+| 500+ files | Quarter-long project | 3-5 days | Requires phased rollout |
+
+The time savings grow with scale. For fewer than 20 files, writing a migration prompt and validation script may take longer than just doing it manually.
+
 ## Related Reading
 
 - [Best AI Tools for Code Migration Between Languages 2026](/best-ai-tools-for-code-migration-between-languages-2026/)
 - [Best AI Tools for Code Migration Python 2 to 3 Java 8 to 21](/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
-- [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
+- [AI Tools Comparisons Hub](/ai-tools-compared/comparisons-hub/)
 
 ---
 
