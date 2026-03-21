@@ -8,10 +8,10 @@ author: theluckystrike
 permalink: /ai-tools-for-automated-changelog-generation-2026/
 categories: [comparisons]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared, changelog, release-management, git]
+tags: [ai-tools-compared, changelog, release-management, git, artificial-intelligence]
 ---
 {% raw %}
 
