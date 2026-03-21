@@ -8,7 +8,7 @@ permalink: /claude-code-coverage-reporting-setup-guide/
 categories: [guides]
 tags: [ai-tools-compared, tools, claude-ai]
 reviewed: true
-score: 7
+score: 8
 intent-checked: true
 voice-checked: true
 ---
