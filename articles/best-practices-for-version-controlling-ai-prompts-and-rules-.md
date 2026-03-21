@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /best-practices-for-version-controlling-ai-prompts-and-rules-/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, best-of, artificial-intelligence]
