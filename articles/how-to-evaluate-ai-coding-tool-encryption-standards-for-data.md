@@ -9,7 +9,7 @@ permalink: /how-to-evaluate-ai-coding-tool-encryption-standards-for-data/
 categories: [guides]
 tags: [ai-tools-compared, security, encryption, ai-tools, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

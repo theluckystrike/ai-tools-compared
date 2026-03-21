@@ -7,7 +7,7 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/
 categories: [guides]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
