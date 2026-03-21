@@ -138,25 +138,21 @@ The tool recognizes environment variables like `$CI_REGISTRY` and `$CI_COMMIT_SH
 ## Comparing AI Tools for CI/CD Configs
 
 
-| Feature | Claude Code | Cursor | GitHub Copilot |
-
-|---------|-------------|--------|----------------|
-
-| Orb/Include suggestions | Excellent | Good | Basic |
-
-| Cache configuration | Contextual | Basic | Limited |
-
-| Security best practices | Yes | Partial | Minimal |
-
-| Multi-job workflows | Accurate | Good | Generic |
-
-| Docker/Cloud integration | Strong | Good | Limited |
+| Feature | Claude Code | Cursor | GitHub Copilot | ChatGPT |
+|---------|-------------|--------|----------------|---------|
+| Orb/Include suggestions | Excellent | Good | Basic | Good |
+| Cache configuration | Contextual | Basic | Limited | Basic |
+| Security best practices | Yes | Partial | Minimal | Partial |
+| Multi-job workflows | Accurate | Good | Generic | Good |
+| Docker/Cloud integration | Strong | Good | Limited | Good |
+| DAG pipeline support | Yes | Yes | No | Partial |
+| Environment variable awareness | Yes | Partial | No | Partial |
 
 
 Claude Code consistently provides the most relevant suggestions for CI/CD configurations. It understands the CircleCI orb ecosystem and knows which orbs are well-maintained. For GitLab CI, it recognizes patterns like using `extends` for job reuse and `rules` for conditional execution.
 
 
-Cursor offers solid completion but sometimes suggests outdated orb versions or missing required parameters. GitHub Copilot works best as a general-purpose tool but lacks deep knowledge of CI/CD-specific patterns.
+Cursor offers solid completion but sometimes suggests outdated orb versions or missing required parameters. GitHub Copilot works best as a general-purpose tool but lacks deep knowledge of CI/CD-specific patterns. ChatGPT performs well when given the full config file as context—its suggestions improve significantly when you paste your existing YAML and ask for targeted additions.
 
 
 ## Practical Examples
@@ -221,6 +217,112 @@ workflows:
 
 
 Claude Code understands parameterized executors and workflow matrix jobs, suggesting appropriate configurations for matrix builds.
+
+
+### Deployment to Kubernetes with GitLab CI
+
+
+For teams deploying to Kubernetes via GitLab, a well-structured deploy stage looks like this:
+
+
+```yaml
+deploy-staging:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  environment:
+    name: staging
+    url: https://staging.example.com
+  script:
+    - kubectl config set-cluster k8s --server="$KUBE_URL" --insecure-skip-tls-verify=true
+    - kubectl config set-credentials admin --token="$KUBE_TOKEN"
+    - kubectl config set-context default --cluster=k8s --user=admin
+    - kubectl config use-context default
+    - sed -i "s|IMAGE_TAG|$CI_COMMIT_SHA|g" k8s/deployment.yaml
+    - kubectl apply -f k8s/deployment.yaml
+    - kubectl rollout status deployment/myapp -n staging
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  needs:
+    - docker-build
+```
+
+When you describe this deployment pattern to Claude Code, it suggests the `needs` keyword automatically to enforce that the deploy job waits for the build job rather than relying on stage ordering alone. GitHub Copilot often omits the `needs` field, relying on implicit stage sequencing—which works but loses the DAG optimization benefits.
+
+
+### Security Scanning in GitLab CI
+
+
+GitLab provides built-in security scanner templates. AI assistants differ in whether they know these templates exist:
+
+```yaml
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/Dependency-Scanning.gitlab-ci.yml
+  - template: Security/Container-Scanning.gitlab-ci.yml
+
+variables:
+  SAST_EXCLUDED_PATHS: "spec, test, tests, tmp"
+  CS_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+```
+
+Claude Code recommends the `include:` directive with GitLab's security templates immediately when you ask about pipeline security scanning. Copilot typically suggests writing custom scanning scripts from scratch, missing the native template system entirely.
+
+
+## Parallelism and Test Splitting
+
+
+One of the most impactful optimizations for slow CI pipelines is parallel test execution. AI assistants differ significantly in how well they understand CircleCI's native parallelism and GitLab CI's parallel keyword.
+
+
+For CircleCI, Claude Code correctly generates the full parallelism configuration including the `circleci tests split` command:
+
+```yaml
+test-parallel:
+  executor: node-builder
+  parallelism: 4
+  steps:
+    - checkout
+    - node/install-packages
+    - run:
+        name: Split and run tests
+        command: |
+          TESTFILES=$(circleci tests glob "src/**/*.test.js" | circleci tests split --split-by=timings)
+          npx jest $TESTFILES --ci --reporters=default --reporters=jest-junit
+    - store_test_results:
+        path: test-results
+```
+
+The `--split-by=timings` flag uses historical test timing data to balance parallel containers evenly. Claude Code includes this automatically; Copilot and ChatGPT typically omit the timing-based split, generating less efficient fixed file splits instead.
+
+
+For GitLab CI, the equivalent parallel matrix approach looks like this:
+
+```yaml
+test:
+  stage: test
+  image: node:18
+  parallel: 4
+  script:
+    - npm install
+    - npx jest --shard=$CI_NODE_INDEX/$CI_NODE_TOTAL --ci
+  artifacts:
+    reports:
+      junit: junit.xml
+```
+
+GitLab's `$CI_NODE_INDEX` and `$CI_NODE_TOTAL` environment variables enable the Jest sharding approach. Claude Code and Cursor both suggest this pattern. GitHub Copilot rarely suggests parallel sharding unprompted.
+
+
+## Workflow: Prompting AI for Pipeline Generation
+
+
+Follow this systematic approach when using AI to generate CI/CD configs:
+
+1. **Paste your full stack context** — Share your package.json, Dockerfile, and current config (if any) so the AI has complete context.
+2. **Specify your cloud target** — Tell the AI whether you're deploying to AWS ECS, GKE, Heroku, or another platform. This determines which orbs or deployment scripts are appropriate.
+3. **Request incremental additions** — Start with a basic test job, verify it works, then ask the AI to add caching, parallelization, and deployment steps one at a time.
+4. **Ask for security review** — After the config is functional, prompt the AI to audit for secret exposure and suggest masking patterns.
+5. **Validate orb versions** — Always verify suggested orb versions against the CircleCI orb registry or GitLab's documentation. AI training data may include deprecated versions.
 
 
 ## Tips for Better AI Assistance
