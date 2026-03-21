@@ -6,9 +6,9 @@ date: 2026-03-21
 last_modified_at: 2026-03-21
 author: theluckystrike
 categories: [guides]
-tags: [ai-tools-compared, tools, artificial-intelligence]
+tags: [ai-tools-compared, tools, artificial-intelligence, api, sdk]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 permalink: /ai-tools-for-generating-api-client-sdks-2026/

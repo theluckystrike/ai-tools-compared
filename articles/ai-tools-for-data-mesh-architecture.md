@@ -7,7 +7,7 @@ last_modified_at: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-data-mesh-architecture/
 reviewed: true
-score: 7
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
