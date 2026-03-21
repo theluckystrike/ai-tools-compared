@@ -9,7 +9,7 @@ permalink: /best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/
 categories: [guides]
 tags: [ai-tools-compared, ci-cd, tools, best-of, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
