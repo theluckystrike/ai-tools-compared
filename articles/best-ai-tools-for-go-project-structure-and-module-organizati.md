@@ -206,6 +206,103 @@ All three tools improve with explicit context about your project's structure. Pr
 The most effective approach combines AI assistance with Go community conventions. Use AI tools to accelerate learning and maintain consistency, but verify suggestions against established patterns from resources like the Go standard library and well-maintained open-source projects.
 
 
+## Practical Tool Comparison
+
+| Feature | Claude Code | Cursor | GitHub Copilot |
+|---------|-------------|--------|-----------------|
+| Go-specific knowledge | Excellent | Very good | Good |
+| Real-time inline suggestions | No | Yes | Yes |
+| Module analysis capabilities | Very strong | Strong | Moderate |
+| Cost for individuals | Free tier available | $20/month free tier | Free for students/maintainers |
+| Best use case | Architecture review, module guidance | IDE-integrated coding | Boilerplate generation |
+| Context awareness depth | Very deep (full project) | Deep (indexed codebase) | Good (file-level) |
+
+## Common Go Project Structure Anti-Patterns
+
+When asking AI tools for structure feedback, understanding common mistakes helps you evaluate suggestions critically:
+
+**The "Everything in Root" Anti-Pattern**: Placing all code in the root package directory sacrifices organization and violates Go conventions. A properly structured project separates concerns into dedicated packages.
+
+**Circular Dependencies**: When package A imports package B and package B imports package A (directly or transitively), Go compilation fails. AI tools can identify these patterns by analyzing import statements across your codebase.
+
+**Underscore Imports Without Documentation**: Using `import _ "package/name"` for side effects requires explanatory comments. Developers new to the codebase get confused about why an imported package isn't directly used.
+
+**Ignoring Internal Packages**: Go treats `internal/` directories specially—packages within cannot be imported by external projects. Teams sometimes place exportable code in internal packages, limiting library usability.
+
+AI tools help catch these patterns and suggest corrections. When you provide your entire codebase structure, they can run through systematic checks and identify problematic patterns.
+
+## Advanced Module Organization Techniques
+
+For larger teams, consider these advanced patterns:
+
+**Workspace Mode for Coordinated Development**: Go workspaces allow editing multiple modules simultaneously while maintaining independent version management. This pattern works well for monorepos where components evolve together:
+
+```bash
+go work init
+go work use ./core ./api ./cli
+```
+
+When using workspace mode, AI tools help ensure that circular dependencies don't emerge across module boundaries. Provide your `go.work` file and ask for dependency graph analysis.
+
+**Semantic Versioning and Module Stability**: As your modules mature, semantic versioning helps external users understand compatibility. AI assistants can review your version numbers and suggest when major version bumps are warranted based on API changes.
+
+**Migration Strategies**: When refactoring a large project from a poor structure to a better one, AI can guide the migration path. Describe your current structure and desired future state, then let the tool suggest staged migration steps that minimize disruption.
+
+## Integration with Development Workflows
+
+The best tool choice depends on your existing development workflow:
+
+For developers using CLI tools primarily, Claude Code provides deep Go knowledge through terminal-based interactions. You can feed entire `go.mod` files, directory structures, and existing code, then ask targeted questions about organization.
+
+For teams using VS Code or JetBrains IDEs, Cursor provides real-time guidance as you create and modify files. The inline suggestions help establish good patterns from the beginning rather than requiring retrospective analysis.
+
+For GitHub-heavy workflows, Copilot's tight integration means organization suggestions appear as you commit. This approach provides ongoing reinforcement of best practices.
+
+## Testing Organization Best Practices
+
+Go testing conventions deserve special attention in project organization. The placement of `*_test.go` files, package-level test organization, and integration test structure all impact code quality.
+
+AI tools can help you establish testing patterns:
+
+```go
+// Package-level tests in the same package
+// my-app/cmd/api/handler_test.go
+package main
+
+func TestGetUser(t *testing.T) {
+    // Unit tests for exported functions
+}
+
+// Integration tests in a separate package
+// my-app/tests/integration/api_test.go
+package integration_test
+
+func TestUserWorkflow(t *testing.T) {
+    // End-to-end workflow testing
+}
+```
+
+When you ask AI for testing structure guidance, specify whether you need unit tests, integration tests, or both. Provide examples from your codebase so the tool understands your conventions.
+
+## Monitoring and Maintenance
+
+Well-organized Go projects require periodic review. Ask AI tools to:
+
+- Identify packages with excessive responsibilities (high cohesion violations)
+- Find unused internal packages or modules
+- Detect import cycles using go mod graph analysis
+- Suggest refactoring opportunities based on package size
+
+You can run Go's built-in analysis tools and share the output with AI:
+
+```bash
+go mod graph | grep cycles  # Show circular dependencies
+go list -f '{{.Name}} {{len .GoFiles}}' ./...  # List package sizes
+```
+
+These commands provide concrete data for AI analysis, leading to more accurate suggestions.
+
+
 ## Related Articles
 
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
