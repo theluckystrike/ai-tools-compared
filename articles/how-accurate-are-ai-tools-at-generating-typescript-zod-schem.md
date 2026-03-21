@@ -160,10 +160,58 @@ This schema correctly marks `bio` and `theme` as optional while enforcing the un
 Cursor showed inconsistency here—it sometimes used the `?:` syntax from TypeScript instead of Zod's `.optional()`, which does not work in runtime validation. GitHub Copilot consistently missed optional field handling, generating schemas where optional fields were required.
 
 
+### Test Case 4: Discriminated Unions
+
+
+The most challenging test involved a discriminated union type, which is common in event-driven systems and API responses:
+
+
+```typescript
+type ApiResponse =
+  | { status: "success"; data: { id: string; value: number } }
+  | { status: "error"; code: number; message: string };
+```
+
+
+Claude Code generated a correct discriminated union schema:
+
+
+```typescript
+const ApiResponseSchema = z.discriminatedUnion("status", [
+  z.object({
+    status: z.literal("success"),
+    data: z.object({
+      id: z.string(),
+      value: z.number(),
+    }),
+  }),
+  z.object({
+    status: z.literal("error"),
+    code: z.number().int(),
+    message: z.string(),
+  }),
+]);
+```
+
+
+Cursor fell back to `z.union()` without the discriminated variant, which works but is slower at runtime because Zod must try each schema in sequence instead of keying directly on the discriminant. GitHub Copilot failed this test entirely, generating a flat object schema that combined all fields without union handling.
+
+
 ## Accuracy Comparison
 
 
 The testing revealed clear patterns in each tool's strengths and weaknesses:
+
+
+| Feature | Claude Code | Cursor | GitHub Copilot |
+|---------|------------|--------|---------------|
+| Basic types | Excellent | Excellent | Good |
+| Email/URL validators | Auto-inferred | Sometimes | Rarely |
+| Nested objects | Excellent | Good | Poor |
+| Optional fields | Excellent | Inconsistent | Poor |
+| Discriminated unions | Excellent | Partial | Fails |
+| `.refine()` custom validators | Good with prompt | Good with prompt | Requires manual |
+| z.infer type export | Always included | Usually included | Rarely included |
 
 
 **Claude Code** demonstrated the highest accuracy across all test cases. It correctly applied Zod methods like `.email()`, `.datetime()`, `.positive()`, and union types. It handled nested schemas well and made sensible assumptions about validation rules based on field names and types.
@@ -181,13 +229,13 @@ The testing revealed clear patterns in each tool's strengths and weaknesses:
 Based on these tests, here are recommendations for getting better results from AI tools when generating Zod schemas:
 
 
-Provide context explicitly. Tell the AI tool what validations you need, such as "generate a Zod schema with email validation and positive number constraints." The more specific your instructions, the better the output.
+**Provide context explicitly.** Tell the AI tool what validations you need, such as "generate a Zod schema with email validation and positive number constraints." The more specific your instructions, the better the output.
 
 
-Review generated schemas carefully. AI tools make assumptions about data formats that may not match your requirements. Check field validations, optional modifiers, and type constraints.
+**Review generated schemas carefully.** AI tools make assumptions about data formats that may not match your requirements. Check field validations, optional modifiers, and type constraints.
 
 
-Use refinement for complex rules. When your validation logic goes beyond basic type checking, add Zod refinements after the AI generates the base schema:
+**Use refinement for complex rules.** When your validation logic goes beyond basic type checking, add Zod refinements after the AI generates the base schema:
 
 
 ```typescript
@@ -202,7 +250,7 @@ const PasswordSchema = z.string()
 ```
 
 
-Validate the output. Always test your generated schemas with sample data to ensure they handle edge cases correctly:
+**Validate the output.** Always test your generated schemas with sample data to ensure they handle edge cases correctly:
 
 
 ```typescript
@@ -219,6 +267,30 @@ if (!result.success) {
   console.log(result.error.format());
 }
 ```
+
+
+**Prompt for error messages.** By default, AI tools generate schemas with Zod's built-in error messages. For production applications, add a follow-up prompt: "Now add custom error messages to each validation rule so users see clear feedback." This produces schemas like:
+
+
+```typescript
+export const UserSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
+  age: z.number().int().min(0, { message: "Age cannot be negative" }).max(120, { message: "Age must be realistic" }),
+});
+```
+
+
+## When to Trust AI-Generated Schemas vs. Write Manually
+
+
+AI-generated schemas are reliable for standard CRUD entity validation (users, products, orders), form input validation with common field types, and converting existing TypeScript interfaces to runtime validators. These represent the 80% accuracy case.
+
+
+Manual schema writing is still necessary for custom business rules that require domain knowledge (checking that a discount percentage does not exceed a product's margin), multi-field cross-validation using `.superRefine()`, schemas that interact with external API quirks or legacy formats, and async validation that calls a database or external service.
+
+
+A practical workflow: use AI to generate the base schema structure, then manually add refinements for business logic, then write a test suite covering valid and invalid inputs before shipping to production.
 
 
 ## Related Articles
