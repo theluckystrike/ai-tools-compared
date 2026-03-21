@@ -9,7 +9,7 @@ permalink: /how-to-set-up-ollama-as-private-ai-coding-assistant-for-sensitive-co
 categories: [guides]
 tags: [ai-tools-compared, tools, security, ollama, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

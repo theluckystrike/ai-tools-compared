@@ -8,7 +8,7 @@ permalink: /how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/
 categories: [guides]
 intent-checked: true
 voice-checked: true
-score: 7
+score: 8
 reviewed: true
 tags: [ai-tools-compared]
 ---

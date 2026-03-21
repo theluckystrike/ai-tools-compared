@@ -7,7 +7,7 @@ last_modified_at: 2026-03-16
 author: theluckystrike
 permalink: /how-to-move-midjourney-style-references-to-stable-diffusion-/
 categories: [tutorials, guides]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

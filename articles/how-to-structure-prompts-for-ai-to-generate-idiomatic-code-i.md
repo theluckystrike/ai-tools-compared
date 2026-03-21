@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-structure-prompts-for-ai-to-generate-idiomatic-code-i/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
