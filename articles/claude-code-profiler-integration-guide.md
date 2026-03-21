@@ -16,8 +16,6 @@ tags: [ai-tools-compared, integration, claude-ai]
 
 
 
-
-
 {% raw %}
 
 Profiling is essential for understanding your application's performance characteristics and identifying bottlenecks. Integrating profilers with Claude Code creates a powerful workflow for analyzing performance data and implementing optimizations. This guide covers how to set up and use various profiling tools alongside Claude Code for performance analysis.
@@ -33,11 +31,8 @@ Before integrating profilers, understand the different types of profiling availa
 
 
 - CPU Profiling: Identifies functions consuming the most execution time
-
 - Memory Profiling: Detects memory leaks and excessive memory allocation
-
 - Line-by-line Profiling: Pinpoints exact lines causing performance issues
-
 - Allocation Profiling: Tracks object creation patterns and memory churn
 
 
@@ -164,14 +159,14 @@ import sys
 def analyze_profile(stats_file, top_n=20):
     p = pstats.Stats(stats_file)
     p.sort_stats('cumulative')
-    
+
     print("=== Top Functions by Cumulative Time ===")
     p.print_stats(top_n)
-    
+
     print("\n=== Functions with Most Primitive Calls ===")
     p.sort_stats('ncalls')
     p.print_stats(top_n)
-    
+
     print("\n=== Slowest Individual Functions ===")
     p.sort_stats('time')
     p.print_stats(top_n)
@@ -204,18 +199,18 @@ def profile_function(func):
     def wrapper(*args, **kwargs):
         profiler = cProfile.Profile()
         profiler.enable()
-        
+
         result = func(*args, **kwargs)
-        
+
         profiler.disable()
-        
+
         s = io.StringIO()
         ps = pstats.Stats(profiler, stream=s)
         ps.sort_stats('cumulative')
         ps.print_stats(15)
-        
+
         print(s.getvalue())
-        
+
         return result
     return wrapper
 
@@ -307,14 +302,82 @@ Upload flame graph SVGs and ask Claude Code to identify the hottest code paths.
 
 
 1. Run profiler on your code
-
 2. Identify top bottleneck
-
 3. Ask Claude Code to optimize that specific function
-
 4. Re-profile to verify improvement
-
 5. Repeat until performance goals are met
+
+
+
+## How to Frame Profiler Output for Claude Code
+
+The quality of Claude Code's optimization suggestions depends heavily on how you present your profiling data. Vague prompts produce vague advice.
+
+**Less effective prompt:**
+"My app is slow. Here is the profiler output."
+
+**More effective prompt:**
+"Here is my cProfile output for a Django view that handles file uploads. The function `process_image` appears at the top with 4.2 seconds cumulative time out of 5 seconds total. It is called 1 time. The function calls `PIL.Image.open` 847 times. Help me understand why and suggest optimizations."
+
+This level of specificity lets Claude Code zero in on the actual bottleneck — in this case, opening the same image file repeatedly in a loop — rather than offering general Python optimization advice.
+
+### Providing Context Alongside Profile Data
+
+For the best results, share three things with Claude Code:
+
+1. The relevant profile output (top 20-30 lines by cumulative time)
+2. The source code of the hot functions
+3. A brief description of what the code is supposed to do
+
+Claude Code can then reason about the relationship between the profile data and the code structure rather than guessing from statistics alone.
+
+
+
+## Working with Go and Rust Profilers
+
+Claude Code handles profiling data from multiple languages, not just Python and JavaScript.
+
+### Go pprof Integration
+
+Go's built-in `pprof` package generates profiling data that Claude Code can interpret:
+
+```go
+import (
+    "net/http"
+    _ "net/http/pprof"
+    "log"
+)
+
+func main() {
+    go func() {
+        log.Println(http.ListenAndServe("localhost:6060", nil))
+    }()
+    // rest of your application
+}
+```
+
+Capture a 30-second CPU profile:
+
+```bash
+go tool pprof http://localhost:6060/debug/pprof/profile?seconds=30
+```
+
+Export the profile as text and share with Claude Code:
+
+```bash
+go tool pprof -text profile.pb.gz > profile_output.txt
+```
+
+### Rust Flamegraph
+
+For Rust, `cargo-flamegraph` produces visual profiling data:
+
+```bash
+cargo install flamegraph
+cargo flamegraph --bin your_binary
+```
+
+Share the generated `flamegraph.svg` with Claude Code by describing the visible hot paths.
 
 
 
@@ -323,15 +386,10 @@ Upload flame graph SVGs and ask Claude Code to identify the hottest code paths.
 
 
 - **Profile in production-like environments** to get realistic results
-
 - **Collect multiple samples** to account for variance
-
-- **Focus on the biggest wins first** - optimize the hottest code paths
-
+- **Focus on the biggest wins first** — optimize the hottest code paths
 - **Measure after each change** to verify improvements
-
 - **Use line-level profiling** for critical functions
-
 - **Profile memory separately** from CPU to get clear signals
 
 
@@ -342,19 +400,34 @@ Upload flame graph SVGs and ask Claude Code to identify the hottest code paths.
 
 Claude Code can help interpret common profiling patterns:
 
-
-
 | Pattern | Likely Cause | Solution |
-
 |---------|--------------|----------|
-
 | High cumulative time in small function | I/O or system call | Batch operations or use async |
-
 | Many function calls | Loop inefficiency | Vectorize or reduce call overhead |
-
 | Growing memory usage | Memory leak | Review object lifecycle |
-
 | High CPU in GC | Too many allocations | Reduce object creation |
+| Long tail latency | Lock contention | Profile concurrency separately |
+| Repeated DB calls in hot path | N+1 query problem | Add caching or batch queries |
+
+
+
+## Frequently Asked Questions
+
+**Can Claude Code read raw `.stats` files directly?**
+
+Claude Code cannot open binary files directly. Convert your `.stats` file to readable text first using the `pstats` module's `print_stats()` method, then paste the output into the conversation.
+
+**How much profiler output should I share?**
+
+The top 20-30 functions by cumulative time is usually enough. Sharing hundreds of lines makes it harder for Claude Code to focus on the actual bottlenecks. If a specific function deep in the list is causing concern, include just that function's section with context.
+
+**Does Claude Code understand flamegraph SVG files?**
+
+Claude Code can analyze flamegraph SVGs when you describe the visible stack patterns. Describe which bars are widest and which function names appear most prominently — Claude Code can reason from that description even without directly reading the SVG structure.
+
+**Should I profile with or without debug symbols?**
+
+Always profile with debug symbols enabled. Release builds with optimizations can obscure which source code corresponds to which profiled function, making Claude Code's suggestions harder to apply.
 
 
 
