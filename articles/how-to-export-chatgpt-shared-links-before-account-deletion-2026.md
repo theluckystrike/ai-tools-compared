@@ -269,6 +269,8 @@ If you want to keep using AI tools but reduce your ChatGPT footprint:
 
 
 
+
+
 ## Related Articles
 
 - [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)

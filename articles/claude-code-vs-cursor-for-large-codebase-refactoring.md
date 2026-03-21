@@ -368,6 +368,8 @@ Since Cursor runs in your IDE, you can:
 
 
 
+
+
 ## Related Articles
 
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)

@@ -339,6 +339,8 @@ Permission denied errors in Claude Code usually stem from executable permissions
 
 
 
+
+
 ## Related Articles
 
 - [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)

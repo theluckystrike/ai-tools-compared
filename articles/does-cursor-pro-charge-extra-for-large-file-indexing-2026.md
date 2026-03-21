@@ -290,6 +290,8 @@ To get the best performance from Cursor on large codebases:
 
 
 
+
+
 ## Related Articles
 
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)

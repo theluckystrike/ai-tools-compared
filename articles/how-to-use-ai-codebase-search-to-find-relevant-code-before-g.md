@@ -303,6 +303,8 @@ When the answer to these questions is yes, your search-and-generate workflow is 
 
 
 
+
+
 ## Related Articles
 
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)

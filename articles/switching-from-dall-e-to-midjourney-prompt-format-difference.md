@@ -310,6 +310,8 @@ print(mj_prompt)
 
 
 
+
+
 ## Related Articles
 
 - [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)

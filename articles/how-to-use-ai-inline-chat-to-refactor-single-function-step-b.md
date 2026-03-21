@@ -488,6 +488,8 @@ AI inline chat understands framework patterns:
 
 
 
+
+
 ## Related Articles
 
 - [How to Use AI Inline Completion](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)

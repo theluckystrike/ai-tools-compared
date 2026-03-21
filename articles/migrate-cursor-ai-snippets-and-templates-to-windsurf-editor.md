@@ -294,6 +294,8 @@ This approach keeps both editors in sync while you evaluate WindSurf's capabilit
 
 
 
+
+
 ## Related Articles
 
 - [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)

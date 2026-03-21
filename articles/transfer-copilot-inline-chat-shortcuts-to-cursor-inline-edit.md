@@ -287,6 +287,8 @@ This approach keeps your keybindings synchronized across all machines where you 
 
 
 
+
+
 ## Related Articles
 
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)

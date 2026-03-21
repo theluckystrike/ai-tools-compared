@@ -329,6 +329,8 @@ console.log('Check Network tab > Response Headers for server-sent CSP headers.')
 
 
 
+
+
 ## Related Articles
 
 - [Claude Artifacts vs ChatGPT Canvas Collaborative Coding](/ai-tools-compared/claude-artifacts-vs-chatgpt-canvas-collaborative-coding/)

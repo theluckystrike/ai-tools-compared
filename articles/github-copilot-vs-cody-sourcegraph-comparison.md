@@ -237,6 +237,8 @@ Try both tools during their free trial periods. Pay attention to how often you n
 
 
 
+
+
 ## Related Articles
 
 - [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)

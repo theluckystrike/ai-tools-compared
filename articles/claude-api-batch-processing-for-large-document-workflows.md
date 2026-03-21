@@ -385,6 +385,8 @@ The batch API is ideal for engineers building scalable document processing syste
 
 
 
+
+
 ## Related Articles
 
 - [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)

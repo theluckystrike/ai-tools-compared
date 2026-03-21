@@ -239,6 +239,8 @@ Start by using Claude Code for one task per day, then gradually expand as you di
 
 
 
+
+
 ## Related Articles
 
 - [Migrate GitHub Copilot Workspace Setup to Cursor Background](/ai-tools-compared/migrate-github-copilot-workspace-setup-to-cursor-background-/)

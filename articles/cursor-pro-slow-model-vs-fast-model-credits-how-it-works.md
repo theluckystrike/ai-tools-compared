@@ -254,6 +254,8 @@ Experiment with both models in your daily workflow. Pay attention to when the fa
 
 
 
+
+
 ## Related Articles
 
 - [Windsurf Premium Model Access Which Models Cost Extra](/ai-tools-compared/windsurf-premium-model-access-which-models-cost-extra-credits-2026/)

@@ -282,6 +282,8 @@ Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 
 
 
+
+
 ## Related Articles
 
 - [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)

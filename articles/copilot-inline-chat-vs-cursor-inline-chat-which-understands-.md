@@ -254,6 +254,8 @@ Both tools continue to evolve, and the gap between them narrows as each platform
 
 
 
+
+
 ## Related Articles
 
 - [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)

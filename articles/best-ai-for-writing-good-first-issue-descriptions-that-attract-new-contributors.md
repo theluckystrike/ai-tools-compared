@@ -290,6 +290,8 @@ Good first issues attract contributors. Bad ones waste everyone's time. AI tools
 
 
 
+
+
 ## Related Articles
 
 - [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)

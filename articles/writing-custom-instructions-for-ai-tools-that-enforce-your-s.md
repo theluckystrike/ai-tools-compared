@@ -306,6 +306,8 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 
 
 
+
+
 ## Related Articles
 
 - [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)

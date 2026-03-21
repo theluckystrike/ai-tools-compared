@@ -428,6 +428,8 @@ Treat your Claude.md file as a living document that evolves with your project.
 
 
 
+
+
 ## Related Articles
 
 - [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)

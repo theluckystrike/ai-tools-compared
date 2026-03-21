@@ -286,6 +286,8 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 
 
 
+
+
 ## Related Articles
 
 - [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)

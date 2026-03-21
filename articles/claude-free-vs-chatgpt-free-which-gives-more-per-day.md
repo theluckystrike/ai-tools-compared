@@ -441,6 +441,8 @@ OpenAI's `response_format` with `json_schema` guarantees schema-valid output. An
 
 
 
+
+
 ## Related Articles
 
 - [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)

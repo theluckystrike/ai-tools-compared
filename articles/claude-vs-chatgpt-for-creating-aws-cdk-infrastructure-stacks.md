@@ -350,6 +350,8 @@ For CDK development specifically, both tools handle the basics well. The differe
 
 
 
+
+
 ## Related Articles
 
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)

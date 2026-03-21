@@ -295,6 +295,8 @@ Finally, remember that.cursorrules is project-specific. If you work on multiple 
 
 
 
+
+
 ## Related Articles
 
 - [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)

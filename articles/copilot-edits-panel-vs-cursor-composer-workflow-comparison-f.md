@@ -254,6 +254,8 @@ Both tools continue to evolve, and the gap in capabilities may narrow over time.
 
 
 
+
+
 ## Related Articles
 
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)

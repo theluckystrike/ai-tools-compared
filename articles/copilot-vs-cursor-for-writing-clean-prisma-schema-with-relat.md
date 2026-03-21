@@ -244,6 +244,8 @@ Both tools require review—AI suggestions occasionally include outdated Prisma 
 
 
 
+
+
 ## Related Articles
 
 - [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
