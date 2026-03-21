@@ -7,10 +7,10 @@ author: theluckystrike
 permalink: /ai-tools-for-graphql-schema-generation/
 categories: [guides]
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}

@@ -7,7 +7,7 @@ last_modified_at: 2026-03-16
 author: "theluckystrike"
 permalink: /ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true
