@@ -7,7 +7,7 @@ last_modified_at: 2026-03-17
 author: "theluckystrike"
 permalink: /claude-code-database-test-fixtures-guide/
 reviewed: true
-score: 8
+score: 9
 categories: [guides]
 intent-checked: true
 voice-checked: true

@@ -8,7 +8,7 @@ author: "theluckystrike"
 permalink: /claude-code-for-taint-analysis-workflow-tutorial-guide/
 categories: [guides, tutorials]
 tags: [ai-tools-compared, claude-code, security, static-analysis, tutorial, workflow, claude-ai]
-score: 8
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true

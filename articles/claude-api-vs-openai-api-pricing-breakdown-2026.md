@@ -8,10 +8,10 @@ author: theluckystrike
 permalink: /claude-api-vs-openai-api-pricing-breakdown-2026/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
-tags: [ai-tools-compared]
+tags: [ai-tools-compared, comparison, artificial-intelligence, claude-ai, api]
 ---
 
 {% raw %}
