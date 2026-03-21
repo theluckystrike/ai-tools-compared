@@ -6,7 +6,7 @@ date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /migrating-from-chatgpt-plugins-to-claude-mcp-tools-for-coding-workflows/
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, workflow, claude-ai, chatgpt]

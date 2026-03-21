@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /migrating-copilot-custom-instructions-to-cursor-rules-file-f/
 categories: [guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, guides]
