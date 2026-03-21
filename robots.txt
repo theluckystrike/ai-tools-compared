@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://theluckystrike.github.io/ai-tools-compared/sitemap.xml
+Sitemap: https://theluckystrike.github.io/ai-tools-compared/sitemap-topics.xml
 
 # Crawl-delay (be polite)
 Crawl-delay: 1
