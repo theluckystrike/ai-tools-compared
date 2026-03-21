@@ -1,6 +1,6 @@
 ---
-title: AI Tools for Automated API Documentation Generation in 2026
-description: Compare Mintlify, ReadMe, Swagger/OpenAPI generators, and AI-powered doc tools. Real config examples, CI/CD integration, versioning strategies, and template
+title: "AI Tools for Automated API Documentation Generation in 2026"
+description: "Compare Mintlify, ReadMe, Swagger/OpenAPI generators, and AI-powered doc tools. Real config examples, CI/CD integration, versioning strategies, and template"
 author: theluckystrike
 date: 2026-03-21
 permalink: /ai-tools-for-automated-api-documentation-generation-2026/
@@ -9,6 +9,8 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
+
 
 ## The API Documentation Problem
 
@@ -672,3 +674,4 @@ This approach keeps docs and code in sync automatically. API changes trigger new
 ## Final Recommendation
 
 For new projects in 2026, start with **Mintlify** (free, fast). As you scale to enterprise, migrate to **ReadMe** or **Stoplight** based on your needs. Never write API docs manually—let your OpenAPI spec generate them.
+{% endraw %}
