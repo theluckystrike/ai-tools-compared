@@ -143,49 +143,6 @@ These tools sacrifice some flexibility for convenience. Choose them when you wan
 | Grammarly | Yes | N/A | Limited | Real-time editing |
 
 
-## Managing Multiple Client Voices Without Losing Your Mind
-
-The hardest part of AI-assisted freelancing is context switching. Each client has distinct requirements: one wants punchy, opinionated takes; another wants cautious, citation-heavy prose. Without a system, you'll spend as much time correcting AI output as you would writing from scratch.
-
-The practical solution is a voice library — a folder of short system-prompt files, one per client:
-
-```
-voices/
-├── client_techstartup.txt
-├── client_legalfirm.txt
-├── client_ecommerce.txt
-└── client_healthblog.txt
-```
-
-Each file contains 5–8 sentences covering tone, vocabulary preferences, forbidden phrases, and a target reading level. When starting a new article, paste the relevant file into the system prompt slot before anything else.
-
-With the Claude API, you can load these automatically:
-
-```python
-import anthropic
-import os
-
-def draft_article(topic, client_name, word_count):
-    voice_path = f"voices/client_{client_name}.txt"
-    with open(voice_path) as f:
-        voice = f.read()
-
-    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    message = client.messages.create(
-        model="claude-opus-4-6",
-        max_tokens=4096,
-        system=voice,
-        messages=[{
-            "role": "user",
-            "content": f"Write a {word_count}-word article on: {topic}"
-        }]
-    )
-    return message.content[0].text
-```
-
-This pattern scales to any number of clients without manual copy-pasting. Commit voice files to a private git repo so you never lose them.
-
-
 ## Building a Custom Writing Workflow
 
 
@@ -209,18 +166,6 @@ def freelance_writer_pipeline(topic, client_voice):
 
 
 This approach uses each tool's strengths. Replace the placeholder functions with actual API calls. Store client voice prompts in a configuration file for reuse.
-
-### Estimating ROI Before Committing
-
-It is worth calculating your break-even point before paying for any tool:
-
-| Scenario | Hours saved per week | Tool cost | Break-even rate |
-|---|---|---|---|
-| 1 draft/day freelancer | 2–3 h | $20/mo Claude Pro | $7–10/hr |
-| API-automated pipeline | 5–8 h | ~$30/mo API usage | $4–6/hr |
-| Google Docs user (Gemini) | 1–2 h | Free tier | Immediate |
-
-Most freelancers billing above $30/hour see positive ROI within the first month on any paid tier. Writers billing below that rate should start with free tiers and upgrade only after confirming actual time savings.
 
 
 ## Cost Considerations
@@ -256,40 +201,6 @@ Freelance writers handle sensitive client information. Consider these privacy pr
 
 Anthropic and OpenAI offer business tiers with stronger confidentiality commitments. Review their data policies before processing client work.
 
-
-## Handling Revisions Efficiently with AI
-
-Client revisions are where many freelancers lose time. AI tools can accelerate revision rounds if you structure the request precisely. Instead of pasting a vague note like "make it better," translate feedback into concrete instructions:
-
-```
-Client feedback: "Too academic, feels stiff"
-AI prompt: "Rewrite the following paragraphs in a conversational tone.
-Replace passive voice with active. Shorten sentences to 15 words max.
-Keep all factual claims unchanged."
-```
-
-Claude handles multi-pass revisions particularly well because it maintains document context across a long conversation. You can say "now apply the same tone changes to section 3" without re-pasting the original, because it already holds the full document in context.
-
-For structural revisions — reordering sections, splitting an article into two, or adding a new angle — ChatGPT's ability to quickly generate alternative outlines makes it a better fit. Run both tools in parallel for different revision types: Claude for prose polish, ChatGPT for structural exploration.
-
-### Building a Revision Prompt Template
-
-Save time by keeping a revision prompt template for each common feedback category:
-
-```python
-REVISION_TEMPLATES = {
-    "simplify": "Rewrite at a 7th-grade reading level. Short sentences. Active voice.",
-    "expand": "Expand each section by 20%. Add one concrete example per section.",
-    "shorten": "Cut this to 60% of its current length. Remove filler phrases first.",
-    "seo": "Naturally incorporate the keyword '{keyword}' 3-4 times without keyword stuffing.",
-}
-
-def apply_revision(text, revision_type, **kwargs):
-    template = REVISION_TEMPLATES[revision_type].format(**kwargs)
-    return call_ai(f"{template}\n\nArticle:\n{text}")
-```
-
-This small library eliminates the mental overhead of rewording the same instructions every time a client sends feedback.
 
 ## Recommendation for Developers and Power Users
 
