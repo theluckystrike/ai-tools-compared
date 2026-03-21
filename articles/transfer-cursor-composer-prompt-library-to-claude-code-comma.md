@@ -200,6 +200,146 @@ Iterate on your skill definitions based on test results. Claude Code's skill sys
 Skills provide reusability, the command-line interface offers flexibility, and the `.claude.md` file handles project-specific rules. Start with your most-used prompts, convert them to skills, and expand your library as you discover new patterns.
 
 
+## Advanced Migration Patterns
+
+### Handling Complex Context Dependencies
+
+Cursor prompts often depend on conversation history and implicit context. Claude Code requires explicit context. When migrating such prompts, structure your skill to accept context parameters:
+
+```markdown
+# Skill: code-review-with-standards
+
+## Description
+Reviews code against team coding standards with deep context awareness.
+
+## Parameters
+- `file_path`: Path to file being reviewed
+- `team_standards`: Your coding standard documentation
+- `language`: Programming language (typescript, python, go, etc)
+
+## Instructions
+Review the provided code against the team standards. Include:
+1. Compliance with naming conventions
+2. Error handling patterns
+3. Test coverage assessment
+4. Documentation quality
+5. Specific improvement suggestions with code examples
+```
+
+Then invoke it with full context:
+
+```bash
+claude -p "Review this file for our team standards" @path/to/file.ts
+```
+
+### Converting Cursor's Multi-Turn Conversations
+
+Cursor Composer often involves iterative refinement across multiple messages. For complex workflows, create a series of related skills that work together:
+
+```bash
+# Step 1: Generate base code
+claude -p @skills/generate-component.txt
+
+# Step 2: Refine based on requirements
+claude -p "Update the component to handle loading states"
+
+# Step 3: Add tests
+claude -p @skills/generate-tests.txt
+```
+
+Document the workflow in your project's `.claude.md`:
+
+```markdown
+## Code Generation Workflow
+
+To generate a new React component:
+
+1. Use the `generate-component` skill with the component name
+2. Review the output and request adjustments
+3. Invoke `generate-tests` skill with the component code
+4. Update component styling using `apply-styles` skill
+
+Each skill builds on the previous output, maintaining consistency.
+```
+
+## Skill Performance Comparison
+
+Use this decision matrix to determine whether a prompt should become a skill or remain a command-line invocation:
+
+| Factor | As Skill | As Command-Line |
+|--------|----------|-----------------|
+| Frequency of use | Weekly+ | Monthly or less |
+| Reusability across projects | Yes | No |
+| Parameter complexity | More than 2 params | 0-1 parameters |
+| Team sharing | Essential | Nice to have |
+| Customization needs | Occasional | Frequent |
+| Learning time investment | Justified | Not worth it |
+
+Skills in `~/.claude/skills/` are globally available. Project-specific skills live in `.claude/skills/` within your repository.
+
+## Execution Environment Variables
+
+Claude Code skills can access environment variables for dynamic behavior:
+
+```markdown
+# Skill: deploy-service
+
+## Description
+Deploys a service with environment-specific configuration.
+
+## Instructions
+Deployment requires these environment variables to be set:
+- $DEPLOY_ENV: staging or production
+- $API_KEY: Service API key for deployment
+- $LOG_LEVEL: verbose, info, or error
+
+Suggest deployment steps based on the current environment.
+```
+
+Invoke with environment context:
+
+```bash
+export DEPLOY_ENV=staging
+export API_KEY="your-key"
+export LOG_LEVEL=verbose
+
+claude @skills/deploy-service.md
+```
+
+## Migration Checklist
+
+Ensure your migration is complete and functional:
+
+- [ ] Identify all reusable Cursor prompts in your project
+- [ ] Categorize prompts by type (coding, documentation, review, etc)
+- [ ] Create corresponding Claude Code skills with proper structure
+- [ ] Test each skill independently and verify output matches expectations
+- [ ] Document any special parameters or environment variables
+- [ ] Update team documentation with new skill locations and usage examples
+- [ ] Archive old Cursor rules in a git commit for reference
+- [ ] Create a `.claude.md` file at project root with project-level instructions
+- [ ] Train team members on using the new skill system
+- [ ] Monitor which skills get used most; deprecate unused ones monthly
+
+## Performance Considerations
+
+Claude Code executes skills faster than Cursor when the skill is well-structured and self-contained. However, complex skills requiring iterative back-and-forth perform better as command-line sequences where you can adjust based on intermediate results.
+
+Profile your most-used prompts. If a skill consistently produces output requiring immediate revision, it may work better as an interactive command-line session where you refine the prompt after seeing initial results.
+
+## Integration with CI/CD
+
+Skills can integrate with your deployment pipeline. Create a skill that your CI system invokes:
+
+```bash
+# In your GitHub Actions workflow
+- name: Code Quality Check
+  run: claude @skills/quality-check.md --file=${{ github.workspace }}/src
+```
+
+This enables automated code review against your exact standards without maintaining a separate linting configuration.
+
+
 ## Related Articles
 
 - [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
