@@ -21,7 +21,14 @@ Tabnine AI models cannot be directly imported into Supermaven because the two pl
 ## Why Developers Switch from Tabnine to Supermaven
 
 
-Supermaven has gained popularity among developers for its faster inference speeds and competitive pricing model. Some developers find that Supermaven's contextual understanding better matches their coding style, while others appreciate its more straightforward subscription tiers. Regardless of your reason for switching, understanding how to handle your existing Tabnine data ensures a smooth transition.
+Supermaven has gained popularity among developers for its faster inference speeds and competitive pricing model. Some developers find that Supermaven's contextual understanding better matches their coding style, while others appreciate its more straightforward subscription tiers. The primary reasons developers cite when making this switch include:
+
+- **Inference speed**: Supermaven's model delivers suggestions with noticeably lower latency, particularly for longer file completions
+- **Pricing clarity**: Supermaven's tier structure is simpler than Tabnine's multi-tier approach, which helps teams budget predictably
+- **Context window**: Supermaven processes a larger context window, which improves suggestion quality in files with complex interdependencies
+- **VS Code and Neovim parity**: Both editors receive equivalent feature coverage, whereas Tabnine historically prioritized VS Code
+
+Regardless of your reason for switching, understanding how to handle your existing Tabnine data ensures a smooth transition with minimal disruption to your workflow.
 
 
 ## Understanding Tabnine Model Storage
@@ -58,10 +65,19 @@ Within these directories, you will encounter several key folders and files:
 
 
 - **`model-index.json`** — Contains information about downloaded and trained models
-
 - **`user.config.json`** — Stores your custom settings and preferences
-
 - **`models/`** — Directory containing the actual AI model files
+
+
+To get a quick picture of what Tabnine has stored on your machine, run:
+
+```bash
+# macOS / Linux
+ls -lah ~/.tabnine/
+du -sh ~/.tabnine/models/
+```
+
+This helps you understand the total size of model files before you decide whether to archive or discard them.
 
 
 ## Exporting Your Tabnine Configuration
@@ -74,11 +90,8 @@ Navigate to your Tabnine configuration directory and locate the `user.config.jso
 
 
 - Language-specific model preferences
-
 - Auto-completion trigger settings
-
 - Maximum suggestion length
-
 - Context window size
 
 
@@ -86,6 +99,9 @@ Create a backup by copying this file to a secure location:
 
 
 ```bash
+# Create backup directory
+mkdir -p ~/tabnine-backup
+
 # Backup Tabnine configuration
 cp ~/.tabnine/user.config.json ~/tabnine-backup/config.json
 ```
@@ -99,14 +115,17 @@ If you have custom-trained models (available in Tabnine Pro), the model files th
 cp -r ~/.tabnine/models ~/tabnine-backup/
 ```
 
+Once you have a backup, open `user.config.json` in a text editor and note the key values. Write these down in a simple reference file, because you will translate them manually into Supermaven's configuration format.
+
 
 ## Can Supermaven Import Tabnine Models?
 
 
 Supermaven does not natively import Tabnine model files directly. The two platforms use different model architectures and training approaches, making direct model transfer impossible. However, this does not mean your Tabnine experience is wasted.
 
-
 Supermaven uses its own proprietary models that are pre-trained on extensive codebases. The good news is that Supermaven quickly learns from your coding patterns through its own adaptation process, so you will not need to wait long for personalized suggestions.
+
+If you were using Tabnine's custom model training feature—available in Tabnine Enterprise—to train on your private codebase, Supermaven does not have a direct equivalent. In that case, evaluate whether Supermaven's base model quality meets your needs before committing to the switch. Running both tools in different editors for a week is a low-risk way to compare output quality on your actual codebase.
 
 
 ## Setting Up Supermaven After Tabnine
@@ -147,6 +166,30 @@ Create or edit the configuration file to match your preferences:
 
 These settings control suggestion length, single-line completion behavior, fuzzy matching sensitivity, and notification style.
 
+### Editor-Specific Setup
+
+
+**VS Code**: After installing the Supermaven extension, open the Command Palette (Cmd+Shift+P) and run "Supermaven: Sign In" to authenticate. The extension activates automatically for supported file types.
+
+**Neovim with lazy.nvim**:
+
+```lua
+{
+  "supermaven-inc/supermaven-nvim",
+  config = function()
+    require("supermaven-nvim").setup({
+      keymaps = {
+        accept_suggestion = "<Tab>",
+        clear_suggestion = "<C-]>",
+        accept_word = "<C-j>",
+      },
+    })
+  end,
+}
+```
+
+**JetBrains IDEs**: Install the Supermaven plugin from the JetBrains Marketplace. Configuration is handled through the plugin settings panel rather than a standalone config file.
+
 
 ## Preserving Your Coding Context
 
@@ -167,18 +210,20 @@ Write down your Tabnine settings before uninstalling. Key preferences to note in
 
 
 - Preferred suggestion length
-
 - Auto-completion trigger characters
-
 - Context window behavior
-
 - Language-specific configurations
 
 
 ### 3. Replicate Import Patterns
 
 
-If you worked with specific libraries or frameworks, ensure Supermaven has access to the same project context. Open your projects in your editor so Supermaven can analyze your codebase.
+If you worked with specific libraries or frameworks, ensure Supermaven has access to the same project context. Open your projects in your editor so Supermaven can analyze your codebase and begin building an understanding of your patterns.
+
+### 4. Work in Representative Files First
+
+
+Supermaven's adaptation is usage-driven. On day one, work in your most frequently edited files rather than one-off scripts or configuration files. This gives Supermaven the most useful signal about your actual coding style and the libraries you use regularly.
 
 
 ## Troubleshooting Common Issues
@@ -190,7 +235,7 @@ After switching from Tabnine to Supermaven, you might encounter some initial iss
 ### Suggestions Feel Generic
 
 
-If Supermaven suggestions feel less personalized initially, give it time. The model adapts to your coding style within a few hours of active use. Ensure you are working on your actual projects rather than generic code samples.
+If Supermaven suggestions feel less personalized initially, give it time. The model adapts to your coding style within a few hours of active use. Ensure you are working on your actual projects rather than generic code samples. Suggestion quality typically reaches a comfortable level after two full working days on your normal projects.
 
 
 ### Conflicting Keybindings
@@ -203,15 +248,23 @@ If both extensions remain installed, keybindings may conflict. Completely remove
 # Remove Tabnine extension (VS Code)
 code --uninstall-extension=Tabnine.tabnine-vscode
 
-# Or for Neovim, remove from plugins
-# Edit your plugin manager configuration
+# Verify removal
+code --list-extensions | grep -i tabnine
 ```
+
+For Neovim, remove the Tabnine plugin from your plugin manager configuration and run the appropriate cleanup command (`:Lazy clean` for lazy.nvim, `:PlugClean` for vim-plug).
 
 
 ### Performance Concerns
 
 
-Supermaven is designed for speed, but ensure your system meets minimum requirements. Close resource-heavy applications if you experience lag.
+Supermaven is designed for speed, but ensure your system meets minimum requirements. Close resource-heavy applications if you experience lag. If you notice higher CPU usage than expected, check that Tabnine's background processes are fully terminated—stale Tabnine processes occasionally continue running after extension removal.
+
+
+### Suggestions Not Triggering
+
+
+If Supermaven installs but does not produce completions, check that the extension is active for your file type. Open the Supermaven output panel in VS Code (View > Output, then select Supermaven from the dropdown) to see if the extension is connected to the inference service.
 
 
 ## When to Start Fresh
@@ -224,10 +277,9 @@ Consider starting fresh if:
 
 
 - Your Tabnine settings were causing issues
-
 - You want to explore different completion behaviors
-
 - You are switching to a new programming language or framework
+- Your previous configuration had accumulated experimental settings whose effects you no longer remember
 
 
 ## Best Practices for Transition
@@ -236,13 +288,27 @@ Consider starting fresh if:
 Follow these recommendations for the smoothest transition:
 
 
-1. **Backup before uninstalling** — Always create backups of your configuration
+1. **Backup before uninstalling** — Always create backups of your configuration before making any changes
+2. **Gradual transition** — Use both tools briefly in parallel (different projects) to compare suggestion quality
+3. **Give it time** — Allow Supermaven two to three days to adapt to your patterns before making a final judgment
+4. **Adjust gradually** — Tweak settings one at a time to understand their impact on suggestion behavior
+5. **Update your team** — If others share your editor configuration through a dotfiles repo, communicate the change so teammates can update their setups
 
-2. **Gradual transition** — Use both tools briefly to compare suggestions
 
-3. **Give it time** — Allow Supermaven two to three days to adapt to your patterns
+## Frequently Asked Questions
 
-4. **Adjust gradually** — Tweak settings one at a time to understand their impact
+
+**Can I keep Tabnine installed while I evaluate Supermaven?**
+
+Yes, but only run one at a time. Having both active creates keybinding conflicts and may affect editor performance. Disable Tabnine at the extension level rather than uninstalling it if you want the option to switch back quickly.
+
+**Will Supermaven learn from my private code?**
+
+Supermaven does offer a privacy mode where your code is not used to improve their base models. Check their privacy settings during onboarding to configure this according to your organization's requirements.
+
+**How long does the adaptation period really take?**
+
+In practice, Supermaven suggestions become noticeably more relevant after roughly four to six hours of active coding on your real projects. The improvement is gradual rather than a sudden step change.
 
 
 ## Related Articles
