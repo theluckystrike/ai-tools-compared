@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /cursor-composer-stuck-in-loop-how-to-fix/
 reviewed: true
-score: 8
+score: 9
 categories: [troubleshooting]
 intent-checked: true
 voice-checked: true
