@@ -174,6 +174,68 @@ Across all tools tested, several recurring issues emerged:
 4. Generic Type Inference: For Go 1.18+ interfaces with type parameters, tools often failed to correctly infer constraints.
 
 
+## Embedded Interface Implementations
+
+Embedded interfaces pose additional complexity for AI tools. When an interface embeds another, the implementing struct must satisfy all methods from both:
+
+```go
+type Reader interface {
+    Read(p []byte) (n int, err error)
+}
+
+type Writer interface {
+    Write(p []byte) (n int, err error)
+}
+
+type ReadWriter interface {
+    Reader
+    Writer
+}
+```
+
+Claude handles embedded interfaces correctly, recognizing that `ReadWriter` requires both `Read` and `Write` method implementations. Copilot and Gemini both showed gaps here—sometimes generating only the methods explicitly listed in the embedded interface definition rather than tracing the full method set.
+
+For deeply nested embedded interfaces, prompt the AI explicitly: "This interface embeds X and Y—implement all methods from all embedded interfaces." This instruction resolves ambiguity across all tools tested.
+
+
+## Context-Aware Interfaces
+
+Interfaces designed for production Go services typically thread `context.Context` through every method for cancellation and timeout support:
+
+```go
+type UserRepository interface {
+    FindByID(ctx context.Context, id string) (*User, error)
+    Create(ctx context.Context, user *User) error
+    Update(ctx context.Context, id string, update UserUpdate) (*User, error)
+    Delete(ctx context.Context, id string) error
+    List(ctx context.Context, filter UserFilter) ([]*User, error)
+}
+```
+
+Testing all five tools against this pattern revealed a clear split. Claude and Cursor correctly placed `context.Context` as the first parameter in every method, respected the pointer receiver convention, and generated stub bodies that at minimum called `ctx.Done()` checks. Copilot, Gemini, and Codeium showed varying rates of context parameter misplacement—putting it after other parameters in 15-25% of cases.
+
+Correct context implementation for a single method:
+
+```go
+func (r *postgresUserRepository) FindByID(ctx context.Context, id string) (*User, error) {
+    var user User
+    err := r.db.QueryRowContext(ctx,
+        "SELECT id, email, created_at FROM users WHERE id = $1",
+        id,
+    ).Scan(&user.ID, &user.Email, &user.CreatedAt)
+    if err == sql.ErrNoRows {
+        return nil, ErrUserNotFound
+    }
+    if err != nil {
+        return nil, fmt.Errorf("finding user %s: %w", id, err)
+    }
+    return &user, nil
+}
+```
+
+This pattern—using `%w` for error wrapping, returning typed sentinel errors, and passing context to the underlying driver—is something only Claude and Cursor generated consistently without prompting.
+
+
 ## Best Practices for Working with AI-Generated Go Interfaces
 
 
@@ -205,21 +267,50 @@ This line fails compilation if `memoryStorage` doesn't implement all `Storage` m
 Review Error Handling: AI-generated error handling often needs enhancement. Add context to errors and ensure proper error propagation.
 
 
+## Prompting Strategies that Improve AI Output
+
+These prompt additions measurably improve the accuracy of AI-generated Go interface implementations:
+
+- **"Use pointer receivers for all methods"** — Eliminates the most common receiver type error.
+- **"Wrap errors with fmt.Errorf and %w"** — Ensures error chain compatibility with `errors.Is` and `errors.As`.
+- **"context.Context must be the first parameter in all methods"** — Enforces the canonical Go convention.
+- **"Add a compile-time interface satisfaction check"** — Prompts the AI to include `var _ InterfaceName = (*StructName)(nil)`.
+- **"Include concurrency safety using sync.RWMutex where the struct has shared state"** — Triggers mutex inclusion automatically.
+
+Using all five of these in a single prompt brought every tool tested up to at least 90% correctness on the simple and context-aware interface patterns.
+
+
+## When to Trust AI Output vs When to Verify Manually
+
+Not all interface patterns carry equal risk when AI gets them wrong. Here is a practical triage guide:
+
+**Trust without extensive review:**
+- Interfaces with 2-4 methods, no embedded interfaces, no generics
+- Purely functional interfaces where methods take value types and return value types plus error
+- Interfaces you will immediately compile-check with `go build`
+
+**Review carefully before using:**
+- Interfaces embedded within other interfaces
+- Methods that accept or return channels or function types
+- Interfaces designed for use with `sync.Pool` or other concurrency primitives
+
+**Write manually or verify line by line:**
+- Generic interfaces with type constraints (`interface{ comparable }` etc.)
+- Interfaces that interact with `unsafe.Pointer` or CGo
+- Any interface where the method set is determined at runtime via reflection
+
+Following this triage approach means you spend AI-review time only where bugs are likely to surface, rather than auditing every method of every generated struct.
+
+
 ## Accuracy Comparison Summary
 
 
 | Tool | Simple Interfaces | Complex Interfaces | Error Handling |
-
-|------|-------------------|-------------------|----------------|
-
+|---|---|---|---|
 | Claude | 100% | 95% | Excellent |
-
 | Cursor | 98% | 93% | Good |
-
 | Copilot | 90% | 75% | Moderate |
-
 | Gemini | 85% | 70% | Needs Work |
-
 | Codeium | 80% | 65% | Moderate |
 
 
