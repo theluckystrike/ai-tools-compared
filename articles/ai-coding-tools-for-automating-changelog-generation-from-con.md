@@ -7,9 +7,9 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /ai-coding-tools-for-automating-changelog-generation-from-con/
 categories: [guides]
-tags: [ai-tools-compared, tools, git, automation, changelog]
+tags: [ai-tools-compared, tools, git, automation, changelog, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---

@@ -6,9 +6,9 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /ai-code-generation-for-knative-serving-autoscaler-configurat/
 categories: [guides]
-tags: [ai-tools-compared, knative, serverless, kubernetes, autoscaling]
+tags: [ai-tools-compared, knative, serverless, kubernetes, autoscaling, artificial-intelligence]
 reviewed: true
-score: 9
+score: 8
 intent-checked: true
 voice-checked: true
 ---
