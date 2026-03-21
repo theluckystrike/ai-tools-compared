@@ -182,7 +182,7 @@ user logout"
 | Offline support | No | No |
 | Learns your style | Premium only | Within session only |
 
-This table summarizes the most common decision points. If you primarily write inside a browser or office application, Grammarly's extension integrates seamlessly. If you write long-form documentation or need to produce multiple versions of the same text, ChatGPT's generative approach has a clear advantage.
+This table summarizes the most common decision points. If you primarily write inside a browser or office application, Grammarly's extension integrates . If you write long-form documentation or need to produce multiple versions of the same text, ChatGPT's generative approach has a clear advantage.
 
 
 ## Common Writing Problems Non-Native Writers Face

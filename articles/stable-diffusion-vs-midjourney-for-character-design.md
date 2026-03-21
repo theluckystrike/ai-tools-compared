@@ -310,7 +310,7 @@ Both tools have real hardware costs:
 - AND: Team can share GPU hardware, making per-person cost negligible
 
 *Game development team (100+ hours/month):*
-- Stable Diffusion: Buy 2 GPUs ($1200), share cost = $600/person for hardware, $50/month shared = essentially free after amortization
+- Stable Diffusion: Buy 2 GPUs ($1200), share cost = $600/person for hardware, $50/month shared = free after amortization
 - Midjourney: $60 × team size = $60-600+/month depending on team size
 - Winner: Stable Diffusion by far
 

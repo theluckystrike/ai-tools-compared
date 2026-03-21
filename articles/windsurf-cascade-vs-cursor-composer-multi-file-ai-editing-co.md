@@ -289,7 +289,7 @@ For teams using commit hooks or requiring semantic commits, Cursor's granularity
 
 Testing both tools on a medium TypeScript project (42 files, ~8,000 lines):
 
-**Task: Add comprehensive logging to all API handlers**
+**Task: Add logging to all API handlers**
 
 Cursor Composer:
 - Manual file selection: 3 minutes

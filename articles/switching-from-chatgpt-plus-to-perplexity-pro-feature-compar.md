@@ -199,7 +199,7 @@ Test both with a single real project. Ask each tool to help you implement a feat
 | Feature | ChatGPT Plus | Perplexity Pro | Winner |
 |---------|--------------|----------------|--------|
 | Real-time web search | No (requires toggle) | Yes (default) | Perplexity |
-| Source citations | Limited | Comprehensive | Perplexity |
+| Source citations | Limited | | Perplexity |
 | Context window | 128K | ~200K | Perplexity |
 | Code generation | Excellent | Good | ChatGPT |
 | File uploads | Yes (PDFs, code) | Limited | ChatGPT |

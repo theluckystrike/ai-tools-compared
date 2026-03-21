@@ -319,7 +319,7 @@ For Claude Desktop, this configuration goes in `~/Library/Application Support/Cl
 ## Adding Error Handling and Structured Responses
 
 
-Production MCP servers need robust error handling. When an orchestrator query fails, return a structured error response rather than throwing an unhandled exception:
+Production MCP servers need strong error handling. When an orchestrator query fails, return a structured error response rather than throwing an unhandled exception:
 
 
 ```typescript

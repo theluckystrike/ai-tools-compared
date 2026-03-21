@@ -131,7 +131,7 @@ class WebsiteStack(Stack):
 
 The IDE integration means Copilot sees your current file and project structure, making suggestions that align with existing patterns. However, it sometimes suggests CDK v1 patterns that require adaptation for CDK v2. Watch particularly for old-style `core.Duration` references and the deprecated `@aws-cdk/aws-*` import paths—Copilot occasionally generates these even in v2 projects.
 
-**When Copilot works best for CDK:** It excels at filling in construct properties you are mid-way through writing. Start the construct definition yourself, then let Copilot complete the property list. This approach leverages its completion strengths while avoiding the v1/v2 confusion that appears when generating from scratch.
+**When Copilot works best for CDK:** It excels at filling in construct properties you are mid-way through writing. Start the construct definition yourself, then let Copilot complete the property list. This approach uses its completion strengths while avoiding the v1/v2 confusion that appears when generating from scratch.
 
 
 ## Amazon CodeWhisperer

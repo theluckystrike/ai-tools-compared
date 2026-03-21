@@ -288,7 +288,7 @@ The quality of AI-generated vault integration code depends heavily on how you fr
 
 Include the vault version in your prompt. HashiCorp Vault's API changed substantially between v1.9 and v1.14. A prompt that specifies "HashiCorp Vault 1.14 using the KV v2 secrets engine with AppRole authentication" produces correctly versioned code rather than code that silently uses deprecated endpoints.
 
-Describe the application's secret consumption pattern. Whether your application reads secrets once at startup or fetches them dynamically on each request changes the correct rotation approach. An application that caches database credentials in memory needs a notification mechanism or polling loop to detect rotation events. An application that reads from the vault on every request tolerates rotation seamlessly but introduces latency and rate limit concerns.
+Describe the application's secret consumption pattern. Whether your application reads secrets once at startup or fetches them dynamically on each request changes the correct rotation approach. An application that caches database credentials in memory needs a notification mechanism or polling loop to detect rotation events. An application that reads from the vault on every request tolerates rotation but introduces latency and rate limit concerns.
 
 Specify the failure behavior you require. When vault is unavailable during a rotation window, what should happen? Prompting explicitly for "graceful degradation with a 30-second retry loop and alerting via PagerDuty when retries are exhausted" produces substantially more production-ready code than leaving this unstated.
 

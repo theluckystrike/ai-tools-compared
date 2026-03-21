@@ -291,7 +291,7 @@ index=prod sourcetype=error
 
 Recommended setup: **BigPanda + Splunk + Datadog + PagerDuty**
 
-**Why comprehensive platform:**
+**Why platform:**
 - BigPanda sits between monitoring tools and incident response
 - Reduces alert noise by 95%
 - Correlates incidents across 50+ monitoring sources

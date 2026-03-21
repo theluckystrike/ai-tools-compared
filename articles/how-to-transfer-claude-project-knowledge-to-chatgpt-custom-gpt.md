@@ -335,7 +335,7 @@ Knowledge Base Structure (for Custom GPT):
 
 **Upload strategy:** ChatGPT Custom GPTs accept up to 20 files (at time of writing). For larger knowledge bases:
 
-1. Combine related documents into single comprehensive files
+1. Combine related documents into single files
 2. Prioritize high-value documents (architecture, API reference)
 3. Keep testing and development docs in code repo instead of GPT
 4. Update GPT knowledge files quarterly

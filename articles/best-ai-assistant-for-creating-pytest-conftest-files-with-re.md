@@ -350,7 +350,7 @@ Here is a repeatable workflow for getting a production-quality conftest file fro
 
 **Step 1: Describe your stack completely.**
 
-Start with a comprehensive project description. Do not assume the AI knows your ORM, async framework, or database engine. Paste in your `requirements.txt` or `pyproject.toml` dependencies if the context window allows.
+Start with a project description. Do not assume the AI knows your ORM, async framework, or database engine. Paste in your `requirements.txt` or `pyproject.toml` dependencies if the context window allows.
 
 
 **Step 2: Share your current test directory structure.**

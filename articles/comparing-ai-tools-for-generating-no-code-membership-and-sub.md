@@ -321,7 +321,7 @@ A typical small membership site (1,000 active users) costs $200–400/month in i
 
 ## Testing Membership Logic with AI Assistance
 
-AI tools can generate comprehensive test suites for membership systems. A practical example:
+AI tools can generate test suites for membership systems. A practical example:
 
 ```typescript
 describe('Subscription Access Control', () => {

@@ -414,9 +414,9 @@ For teams evaluating managed vs self-hosted:
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
+- [AI Tools Guides Hub](/ai-tools-compared/)
 - [AI Tools for Inventory Analytics: A Practical Guide for.](/ai-tools-compared/ai-tools-for-inventory-analytics/)
 - [Best AI Tools for Podcast Show Notes](/ai-tools-compared/best-ai-tools-for-podcast-show-notes/)
 - [AI Tools for Pricing Optimization: A Practical Guide for.](/ai-tools-compared/ai-tools-for-pricing-optimization/)

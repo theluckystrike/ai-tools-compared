@@ -294,7 +294,7 @@ deploy_production:
 
 ## CircleCI Pipeline Generation
 
-CircleCI uses "orbs"—reusable configuration packages. AI tools understand how to leverage popular orbs (Node.js, AWS, Docker) to reduce boilerplate.
+CircleCI uses "orbs"—reusable configuration packages. AI tools understand how to use popular orbs (Node.js, AWS, Docker) to reduce boilerplate.
 
 ```
 I need a CircleCI pipeline for a Go 1.21 application:

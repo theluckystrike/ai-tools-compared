@@ -190,7 +190,7 @@ For teams with specific requirements, building a custom solution often works bet
 
 ### Combining Multiple Triage Signals
 
-Create a comprehensive triage system that combines multiple AI analyses:
+Create a triage system that combines multiple AI analyses:
 
 ```python
 import anthropic

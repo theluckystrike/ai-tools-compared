@@ -281,8 +281,8 @@ Failing to close the loop: Prediction without action wastes resources. Build cle
 
 ## Related Reading
 
-- [AI Tools for Customer Analytics Compared](/ai-tools-compared/ai-tools-for-customer-analytics-compared/)
-- [Machine Learning Model Deployment Best Practices](/ai-tools-compared/ml-model-deployment-best-practices/)
-- [XGBoost vs LightGBM: Performance Comparison](/ai-tools-compared/xgboost-vs-lightgbm-comparison/)
+- [AI Tools for Customer Analytics Compared](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)
+- [Machine Learning Model Deployment Best Practices](/ai-tools-compared/)
+- [XGBoost vs LightGBM: Performance Comparison](/ai-tools-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

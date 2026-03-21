@@ -232,7 +232,7 @@ Claude has an edge on TypeScript-to-GraphQL due to better type inference. GPT-4o
 
 ## Related Reading
 
-- [AI Coding Assistants for TypeScript GraphQL Resolver and Schema](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-sch/)
+- [AI Coding Assistants for TypeScript GraphQL Resolver and Schema](/ai-tools-compared/ai-coding-assistants-for-typescript-graphql-resolver-and-schema-generation-2026/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)
 - [Prompt Engineering Patterns for Code Generation](/ai-tools-compared/prompt-engineering-patterns-for-code-generation/)
 

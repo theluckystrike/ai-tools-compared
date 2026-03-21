@@ -340,7 +340,7 @@ Break the schema into logical sections and generate models for each section sepa
 
 **Q: Which model is better for generating pytest tests alongside the Pydantic model?**
 
-Claude generally produces more comprehensive test coverage without prompting. If you ask either model to "generate the Pydantic model and a pytest test suite for it," Claude typically includes edge cases and error cases in the tests whereas ChatGPT focuses on happy-path tests.
+Claude generally produces more test coverage without prompting. If you ask either model to "generate the Pydantic model and a pytest test suite for it," Claude typically includes edge cases and error cases in the tests whereas ChatGPT focuses on happy-path tests.
 
 
 ## Related Articles

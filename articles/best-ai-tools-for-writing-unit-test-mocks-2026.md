@@ -390,7 +390,7 @@ Codeium limitations:
 |------|------------------|-----------|-------|------|----------|
 | Claude Code | All languages | High | Slow | $20/month | Complex hierarchies, multi-framework projects |
 | Copilot | All languages | Medium | Very Fast | $10/month | Incremental mock additions, quick prototyping |
-| Cursor | JavaScript/TypeScript focus | High | Medium | $20/month | Comprehensive test suites, multi-file mocking |
+| Cursor | JavaScript/TypeScript focus | High | Medium | $20/month | test suites, multi-file mocking |
 | Codeium | All languages | Medium | Very Fast | Free/Freemium | Budget projects, personal development |
 
 ## Practical Mock Generation Scenarios
@@ -507,9 +507,9 @@ public class UserServiceTest {
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [AI Tools for Creating Comprehensive Boundary Value Test Cases](/ai-tools-compared/ai-tools-for-creating-comprehensive-boundary-value-test-case/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/)
+- [AI Tools for Creating Boundary Value Test Cases](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)
 - [AI Code Generation Quality for Java JUnit 5 Parameterized Tests](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools Guides Hub](/ai-tools-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

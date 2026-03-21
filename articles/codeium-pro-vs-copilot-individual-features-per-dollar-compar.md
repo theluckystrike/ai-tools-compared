@@ -229,7 +229,7 @@ def test_calculate_metrics():
   assert result['sum'] == 15
 ```
 
-**GitHub Copilot**: Similar capability but sometimes suggests less comprehensive test coverage.
+**GitHub Copilot**: Similar capability but sometimes suggests less test coverage.
 
 Both tools understand testing frameworks (pytest, Jest, Go testing) and can generate complete test implementations.
 

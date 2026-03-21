@@ -325,7 +325,7 @@ Include Tailwind states:
 - Active states: active:scale-95 for buttons
 ```
 
-ChatGPT sometimes includes basic transitions; Gemini typically includes more comprehensive interaction states without prompting.
+ChatGPT sometimes includes basic transitions; Gemini typically includes more interaction states without prompting.
 
 
 ## Dark Mode Support

@@ -285,7 +285,7 @@ Kustomer suits teams that need fine-grained API control over conversation workfl
 
 Gladly suits teams where continuous conversation threads match their service model, voice channel integration is a priority, and the team prefers configuration over custom code.
 
-Both platforms have sandbox environments and reasonable documentation, but Kustomer's developer docs are more comprehensive for API edge cases. Gladly's documentation improved significantly in 2025 but still has gaps around webhook retry behavior and error codes that sometimes require opening a support ticket.
+Both platforms have sandbox environments and reasonable documentation, but Kustomer's developer docs are more for API edge cases. Gladly's documentation improved significantly in 2025 but still has gaps around webhook retry behavior and error codes that sometimes require opening a support ticket.
 
 One area where Gladly clearly wins is voice. Kustomer's telephony support requires a third-party integration through partners like Five9 or Talkdesk. Gladly ships with native PSTN voice support, meaning agents handle phone calls directly inside the same workspace they use for chat and email. For teams where voice is a primary channel, this eliminates the dual-screen problem entirely.
 

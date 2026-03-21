@@ -264,7 +264,7 @@ This prevents state becoming inconsistent when errors occur.
 ## Real Example: Complete State Management Rule Set
 
 
-Here's a comprehensive CursorRule combining multiple patterns:
+Here's a CursorRule combining multiple patterns:
 
 
 ```markdown
@@ -312,7 +312,7 @@ function MyComponent() {
 ```
 
 
-With this comprehensive rule set, Cursor generates code that feels consistent with established patterns.
+With this rule set, Cursor generates code that feels consistent with established patterns.
 
 
 ## Testing State-Generated Code

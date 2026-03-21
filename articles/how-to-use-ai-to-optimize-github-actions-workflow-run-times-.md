@@ -308,7 +308,7 @@ Compare these metrics before and after AI-driven optimizations. Most teams see 3
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/best-ai-tools-for-github-actions-workflows/)
 - [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

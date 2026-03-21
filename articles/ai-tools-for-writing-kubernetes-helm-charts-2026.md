@@ -244,7 +244,7 @@ spec:
 Claude's Helm strength:
 - Generates complete chart structure with all required files
 - Proper Go template syntax with correct indentation
-- Comprehensive security defaults in manifests
+- security defaults in manifests
 - Includes ConfigMap/Secret templates with checksums
 
 Pricing: Free tier (limited), Claude API at $3/1M input tokens, $15/1M output tokens.

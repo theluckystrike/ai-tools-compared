@@ -245,7 +245,6 @@ export const LoginForm = () => {
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
-Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 .forgot-password {
   display: block;

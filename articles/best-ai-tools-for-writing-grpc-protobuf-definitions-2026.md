@@ -106,7 +106,7 @@ This works because Copilot learns from millions of public proto files on GitHub 
 **Strengths:**
 - Instant suggestions without leaving your editor
 - Learns team-specific naming conventions over time
-- Works seamlessly in VS Code, JetBrains IDEs, Vim
+- Works in VS Code, JetBrains IDEs, Vim
 - No additional tool context switching
 
 **Weaknesses:**
@@ -225,7 +225,3 @@ buf breaking --against 'proto/v1/*'
 
 4. **Enum field naming**: Using numbers instead of string constants for status fields
    - *Fix*: Request proto enums for status fields; avoid plain integers
-
-## Conclusion
-
-For **definitive service contracts**, use Claude 3.5 Sonnet. For **integrated development**, use GitHub Copilot or Codeium. For teams building gRPC infrastructure, combining Claude for design decisions with either Copilot or Codeium for implementation gives you semantic understanding upfront and fast development in practice. Always validate generated proto files with buf or protolint before merging to production.

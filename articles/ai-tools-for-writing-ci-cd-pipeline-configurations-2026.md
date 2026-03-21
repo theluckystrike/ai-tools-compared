@@ -74,7 +74,7 @@ Copilot generates this reliably when you type `# GitHub Actions workflow`. Claud
 Here's where AI tools diverge meaningfully. Request: "GitHub Actions workflow that runs tests on all branches, but only deploys to staging on develop branch and production on main branch. Production deploys need approval."
 
 **Claude's approach:**
-Asks clarifying questions about deployment environment secrets, approval requirements, and post-deployment verification. Generates comprehensive config with proper secret handling and status checks.
+Asks clarifying questions about deployment environment secrets, approval requirements, and post-deployment verification. Generates config with proper secret handling and status checks.
 
 **Copilot's approach:**
 Generates a working baseline quickly but sometimes oversimplifies the approval mechanism or misses environment-specific variable handling.
@@ -449,7 +449,7 @@ For sophisticated multi-stage deployments, the effective workflow combines tools
 
 1. **Start with Claude**: Describe your complete workflow. "Deploy to staging on develop branch with automated tests, deploy to production on main with manual approval, roll back capability."
 
-2. **Get the structure**: Claude produces comprehensive config with detailed comments explaining each section.
+2. **Get the structure**: Claude produces config with detailed comments explaining each section.
 
 3. **Refine with Cursor**: Copy the config into your project's `.github/workflows/` file. Cursor catches indentation errors and schema violations in real-time.
 
@@ -520,7 +520,7 @@ This creates 9 jobs automatically. Claude explains this clearly. Copilot sometim
 **Use Claude for:**
 - Complex multi-stage deployments with conditional logic
 - Explaining pipeline architecture decisions
-- One-time, comprehensive configs you'll iterate on slowly
+- One-time, configs you'll iterate on slowly
 - Cross-platform pipeline translation (GitHub Actions → GitLab CI)
 
 **Use Copilot for:**
@@ -534,13 +534,6 @@ This creates 9 jobs automatically. Claude explains this clearly. Copilot sometim
 - Rapid iteration without context-switching
 - Catching YAML syntax errors immediately
 - Seamless workflow when writing configs locally
-
-## Conclusion
-
-AI tools make CI/CD configuration approachable for developers who haven't memorized YAML syntax. Claude excels at capturing complex logic and explaining tradeoffs. Copilot is fastest for standard patterns. Cursor provides the most ergonomic development experience.
-
-For new complex pipelines, start with Claude to establish the architecture and decisions. Then iterate in Cursor for real-time refinement. Use all three tools—each excels in its context.
-
 
 ## Related Articles
 

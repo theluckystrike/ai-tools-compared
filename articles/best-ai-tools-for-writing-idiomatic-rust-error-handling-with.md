@@ -342,7 +342,7 @@ mod tests {
 }
 ```
 
-When you ask for "tests for error handling," Claude Code and Cursor both generate comprehensive test coverage, while Copilot may skip this entirely.
+When you ask for "tests for error handling," Claude Code and Cursor both generate test coverage, while Copilot may skip this entirely.
 
 
 ## Related Articles

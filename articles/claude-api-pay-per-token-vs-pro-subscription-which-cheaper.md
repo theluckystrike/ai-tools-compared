@@ -120,7 +120,7 @@ Many professionals use Claude to analyze lengthy documents—legal contracts, te
 
 At Sonnet rates: (40,000 × $3 / 1,000,000) + (2,000 × $15 / 1,000,000) = $0.12 + $0.03 = **$0.15 per document**
 
-If you process 5 such documents per day: $0.15 × 5 × 30 = **$22.50/month via API**, versus $20 for Pro. Essentially at parity—but Pro gives you the comfortable chat interface, Projects support, and no per-use anxiety about costs.
+If you process 5 such documents per day: $0.15 × 5 × 30 = **$22.50/month via API**, versus $20 for Pro. at parity—but Pro gives you the comfortable chat interface, Projects support, and no per-use anxiety about costs.
 
 For document-heavy workflows, Pro is the better user experience at equivalent cost. The API only wins here if you are automating the processing pipeline without human-in-the-loop interaction.
 

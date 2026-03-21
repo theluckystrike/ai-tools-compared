@@ -165,7 +165,7 @@ def process_order(order_id):
 ```
 
 
-This code fails if `order` is None, if `order.items` is empty, or if any step in the process fails midway. A more robust version would include proper null checks and error handling:
+This code fails if `order` is None, if `order.items` is empty, or if any step in the process fails midway. A more strong version would include proper null checks and error handling:
 
 
 ```python

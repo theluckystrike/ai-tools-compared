@@ -296,7 +296,7 @@ For common failure patterns (Node version mismatches, missing permissions, stale
 
 ## Related Articles
 
-- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
+- [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/best-ai-tools-for-github-actions-workflows/)
 - [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 - [Copilot vs Claude Code for Writing Complex SQL Stored Proced](/ai-tools-compared/copilot-vs-claude-code-for-writing-complex-sql-stored-proced/)

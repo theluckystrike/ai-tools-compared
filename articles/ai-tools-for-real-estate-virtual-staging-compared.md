@@ -319,7 +319,7 @@ Virtual staging continues improving with advances in generative AI. The tools co
 
 **Q: Are AI-staged images legal to use on MLS listings?**
 
-Rules vary by MLS organization and jurisdiction. Most MLS systems require disclosure that images are virtually staged. Some require a watermark or a disclosure note on each staged photo. Check your specific MLS rules before publishing AI-staged images. VirtualStagingAI provides disclosure-compliant watermark options; ReRoom and RoomGPT require you to add disclosures manually.
+Rules vary by MLS organization and jurisdiction. Most MLS systems require disclosure that images are nearly staged. Some require a watermark or a disclosure note on each staged photo. Check your specific MLS rules before publishing AI-staged images. VirtualStagingAI provides disclosure-compliant watermark options; ReRoom and RoomGPT require you to add disclosures manually.
 
 **Q: How does AI virtual staging compare to traditional virtual staging services?**
 

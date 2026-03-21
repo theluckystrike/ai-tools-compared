@@ -254,7 +254,7 @@ Based on running this framework on a Python/Django codebase:
 
 ## Related Reading
 
-- [AI Coding Productivity Measurement: How to Track If Tools Save Time](/ai-tools-compared/ai-coding-productivity-measurement-how-to-track-if-tools-sav/)
+- [AI Coding Productivity Measurement: How to Track If Tools Save Time](/ai-tools-compared/ai-coding-productivity-measurement-how-to-track-if-tools-save-time/)
 - [Devin vs SWE-Agent for Autonomous Coding](/ai-tools-compared/devin-vs-swe-agent-autonomous-coding/)
 - [AI Autocomplete Accuracy Comparison: Copilot vs Codeium vs Tabnine](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)
 

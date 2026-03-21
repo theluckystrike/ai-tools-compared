@@ -13,7 +13,7 @@ intent-checked: true
 voice-checked: true
 ---
 
-Generating Zod validation schemas requires understanding TypeScript types, Zod's API, and your application's validation requirements. Claude Code generates comprehensive schemas with custom refinements and error messages. Cursor excels at schema generation that aligns with your existing type definitions across multiple files. GitHub Copilot provides quick incremental schema definitions. This guide compares leading AI tools for Zod schema generation—evaluating API knowledge, refinement support, and type inference quality.
+Generating Zod validation schemas requires understanding TypeScript types, Zod's API, and your application's validation requirements. Claude Code generates schemas with custom refinements and error messages. Cursor excels at schema generation that aligns with your existing type definitions across multiple files. GitHub Copilot provides quick incremental schema definitions. This guide compares leading AI tools for Zod schema generation—evaluating API knowledge, refinement support, and type inference quality.
 
 ## Why Zod Schema Generation Matters
 
@@ -131,7 +131,7 @@ type WebhookPayload = z.infer<typeof WebhookPayload>;
 ```
 
 Claude Code strengths:
-- Comprehensive refinement chains with clear error messages
+- refinement chains with clear error messages
 - Correct discriminated union generation
 - Nested schema composition with proper typing
 - Custom transformation functions
@@ -531,9 +531,9 @@ const UpdateUserResponse = z.object({
 
 ## Related Reading
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/)
 - [AI Coding Assistant Comparison for React Component Generation](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
-- [AI Tools for Converting Raw JSON API Responses](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pa/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools for Converting Raw JSON API Responses](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)
+- [AI Tools Guides Hub](/ai-tools-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

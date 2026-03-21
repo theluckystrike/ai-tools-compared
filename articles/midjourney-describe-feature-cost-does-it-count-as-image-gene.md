@@ -193,7 +193,7 @@ This workflow uses describe's free operation to inform generation decisions, the
 
 For developers building Midjourney workflows, consider these optimization patterns:
 
-**Batch describe operations:** If you're analyzing multiple reference images, run all describe operations first. This costs nothing but provides comprehensive style data for informed generation decisions.
+**Batch describe operations:** If you're analyzing multiple reference images, run all describe operations first. This costs nothing but provides style data for informed generation decisions.
 
 **Describe feedback loop:** Use describe results to guide iterative refinement. Describe your generated image, compare the extracted prompts to your intent, then re-generate with adjusted parameters. This reduces wasted generation quota.
 

@@ -104,7 +104,7 @@ This approach allows you to verify each component before moving to the next, cat
 ## Request Edge Case Handling
 
 
-AI-generated code often fails to handle edge cases that would cause bugs in production. Explicitly asking for error handling and boundary condition checks produces more robust code.
+AI-generated code often fails to handle edge cases that would cause bugs in production. Explicitly asking for error handling and boundary condition checks produces more strong code.
 
 
 ```javascript

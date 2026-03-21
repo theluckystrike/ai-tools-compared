@@ -244,7 +244,7 @@ DataGrip's built-in AI assistant (via JetBrains AI Gateway) suggests schema chan
 Claude excels at complex SQL reasoning. For teams processing hundreds of migrations, Claude API can:
 - Validate migration syntax before execution
 - Suggest index strategies based on table size
-- Generate comprehensive test cases
+- Generate test cases
 - Create documentation from schema changes
 
 **Example: Migration Batch Processing**

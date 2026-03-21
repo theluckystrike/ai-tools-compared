@@ -106,7 +106,7 @@ Claude.md works with Claude Code across any editor or terminal environment. Your
 CursorRules ties directly to Cursor IDE, offering deep integration but limiting flexibility if you switch development environments. Cursor's AI capabilities are tightly coupled to its editor, so CursorRules unlock the most value for teams committed to Cursor long-term.
 
 
-Copilot Instructions remain scoped to GitHub's ecosystem, functioning primarily within GitHub's web interface and supported editors. They work best as a lightweight layer on top of Copilot's general training rather than as a comprehensive project configuration.
+Copilot Instructions remain scoped to GitHub's ecosystem, functioning primarily within GitHub's web interface and supported editors. They work best as a lightweight layer on top of Copilot's general training rather than as a project configuration.
 
 
 ### Configuration Flexibility

@@ -133,7 +133,7 @@ output "private_subnet_ids" {
 
 Claude excels at generating modules with:
 - Proper variable validation using `validation` blocks
-- Comprehensive tagging strategies
+- tagging strategies
 - State management considerations in comments
 - Documentation explaining terraform-specific behavior
 

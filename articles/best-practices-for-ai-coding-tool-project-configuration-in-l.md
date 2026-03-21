@@ -350,7 +350,7 @@ AI coding tools have finite context windows. On large files (over 1,000 lines), 
 
 Strategies to work within context limits:
 
-**Keep files focused.** Files under 300 lines provide complete context to virtually every tool. Long files (1,000+ lines) regularly exceed context budgets. This is good software design advice regardless of AI tools, but the AI-productivity angle provides a concrete team-level motivation.
+**Keep files focused.** Files under 300 lines provide complete context to nearly every tool. Long files (1,000+ lines) regularly exceed context budgets. This is good software design advice regardless of AI tools, but the AI-productivity angle provides a concrete team-level motivation.
 
 **Use explicit context hints in prompts.** When asking for completions in a large file, reference the relevant functions by name: "Continue the `processPayment` function, which calls `validateCard` (line 45) and `chargeGateway` (line 120)." This directs the tool to include those functions in its context window.
 

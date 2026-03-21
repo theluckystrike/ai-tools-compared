@@ -322,7 +322,7 @@ Generate a backward compatibility testing checklist covering:
 */
 ```
 
-Claude or ChatGPT generates a comprehensive, specific checklist tailored to your actual library changes.
+Claude or ChatGPT generates a , specific checklist tailored to your actual library changes.
 
 ## Monitoring and Documentation
 

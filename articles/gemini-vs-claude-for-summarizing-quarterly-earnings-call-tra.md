@@ -281,7 +281,7 @@ def hybrid_summarize(transcript: str, budget_mode: bool = False):
 
 This lets you route high-stakes analysis to Claude while using Gemini for preliminary screening or high-volume processing.
 
-A more sophisticated routing strategy uses Gemini for initial extraction of structured metrics (revenue, EPS, guidance numbers) and Claude for the qualitative interpretation layer—tone analysis, risk identification, and narrative summary. This hybrid approach captures the cost efficiency of Gemini for structured extraction while leveraging Claude's stronger natural language capabilities for the high-value analysis that investors actually read.
+A more sophisticated routing strategy uses Gemini for initial extraction of structured metrics (revenue, EPS, guidance numbers) and Claude for the qualitative interpretation layer—tone analysis, risk identification, and narrative summary. This hybrid approach captures the cost efficiency of Gemini for structured extraction while using Claude's stronger natural language capabilities for the high-value analysis that investors actually read.
 
 Both models handle earnings call transcripts effectively. Your choice ultimately depends on your existing infrastructure, volume requirements, and whether you prioritize output consistency or cost efficiency.
 

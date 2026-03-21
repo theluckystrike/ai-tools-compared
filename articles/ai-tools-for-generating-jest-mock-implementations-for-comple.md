@@ -27,7 +27,7 @@ When you work with third-party SDKs in your application code, writing tests requ
 
 Consider mocking the AWS SDK v3 for DynamoDB operations. You need to handle different command types, mock successful responses, simulate errors, and ensure the correct parameters were passed to the client. Writing these mocks manually means understanding the entire API surface and often results in incomplete or incorrect implementations.
 
-The challenge compounds in TypeScript projects. Incorrect mock shapes cause type errors, but TypeScript's type system can also guide you toward correct implementations—if you know how to leverage it. AI tools that understand TypeScript generics can produce mocks that satisfy the compiler without requiring manual type annotation surgery.
+The challenge compounds in TypeScript projects. Incorrect mock shapes cause type errors, but TypeScript's type system can also guide you toward correct implementations—if you know how to use it. AI tools that understand TypeScript generics can produce mocks that satisfy the compiler without requiring manual type annotation surgery.
 
 
 ## AI Tool Comparison for Jest Mock Generation

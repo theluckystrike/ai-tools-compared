@@ -229,7 +229,7 @@ This approach extracts content automatically without you needing to inspect page
 
 **Use ScrapingBee when:**
 - Websites heavily rely on JavaScript rendering
-- You need robust proxy rotation
+- You need strong proxy rotation
 - CAPTCHA handling is required
 - You're comfortable with HTTP APIs
 
@@ -320,7 +320,7 @@ data = response.json()
 
 ## Error Handling and Resilience
 
-Production scrapers require robust error handling:
+Production scrapers require strong error handling:
 
 ```python
 from firecrawl import FirecrawlApp
