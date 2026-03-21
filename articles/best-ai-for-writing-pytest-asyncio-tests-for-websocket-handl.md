@@ -130,6 +130,17 @@ Codeium offers a free tier that makes it accessible for developers testing WebSo
 **Pricing:** Free for individual developers, Team plans at $12/user/month.
 
 
+## AI Tool Comparison for Async WebSocket Testing
+
+
+| Tool | Async Pattern Accuracy | Fixture Handling | Error Case Coverage | Free Tier | Price |
+|------|----------------------|-----------------|--------------------:|-----------|-------|
+| Claude Code | Excellent | Excellent | Strong | Yes | $20/month |
+| GitHub Copilot | Good | Fair | Moderate | Yes (limited) | $10/month |
+| Cursor AI | Good | Good | Good | Yes (limited) | $20/month |
+| Codeium | Fair | Fair | Basic | Yes | $12/user/month |
+
+
 ## Practical Example: Generating a WebSocket Handler Test
 
 
@@ -188,6 +199,110 @@ async def test_handler_error_on_disconnect(handler):
 A good AI assistant should generate code similar to this, including proper async/await usage, appropriate fixtures, and meaningful test names.
 
 
+## Advanced Patterns: FastAPI WebSocket Testing
+
+
+For teams using FastAPI, the testing setup involves the `TestClient` in async mode or httpx's `AsyncClient`. Here is a more complete example covering the full lifecycle:
+
+
+```python
+import pytest
+import asyncio
+from fastapi.testclient import TestClient
+from httpx import AsyncClient, ASGITransport
+from myapp.main import app
+
+@pytest.fixture
+def anyio_backend():
+    return "asyncio"
+
+@pytest.mark.asyncio
+async def test_websocket_echo_handler():
+    """Test a FastAPI WebSocket echo endpoint end-to-end."""
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as client:
+        async with client.websocket_connect("/ws/echo") as websocket:
+            await websocket.send_text("hello")
+            data = await websocket.receive_text()
+            assert data == "hello"
+
+@pytest.mark.asyncio
+async def test_websocket_broadcast_to_multiple_clients():
+    """Test that a message sent by one client reaches all connected clients."""
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as client:
+        async with client.websocket_connect("/ws/room/test") as ws1, \
+                   client.websocket_connect("/ws/room/test") as ws2:
+
+            await ws1.send_text("broadcast message")
+
+            # Both clients should receive the message
+            msg1 = await ws1.receive_text()
+            msg2 = await ws2.receive_text()
+
+            assert msg1 == "broadcast message"
+            assert msg2 == "broadcast message"
+
+@pytest.mark.asyncio
+async def test_websocket_disconnect_cleanup():
+    """Test that server cleans up state after a client disconnects."""
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as client:
+        async with client.websocket_connect("/ws/room/cleanup") as ws:
+            await ws.send_text("join")
+            data = await ws.receive_text()
+            assert "joined" in data
+
+        # After context manager exits, connection is closed
+        # Verify cleanup via a separate check endpoint
+        response = await client.get("/ws/room/cleanup/count")
+        assert response.json()["connections"] == 0
+```
+
+
+When prompted with the FastAPI app structure and handler code, Claude Code generates tests at this quality level without requiring manual correction of async patterns.
+
+
+## Step-by-Step: Getting the Best WebSocket Tests from AI
+
+
+**Step 1 — Provide the handler code as context.** Paste your WebSocket handler function and any dependencies into the chat or editor context before asking for tests. AI tools generate significantly more accurate tests when they can see the actual implementation.
+
+
+**Step 2 — Specify the testing framework explicitly.** State which version of pytest-asyncio you are using and whether you use `asyncio_mode = "auto"` in your `pytest.ini`. This prevents the common mistake of mixing decorator styles:
+
+
+```ini
+# pytest.ini
+[pytest]
+asyncio_mode = auto
+```
+
+
+**Step 3 — Ask for error cases separately.** First request the happy path tests, verify they are correct, then ask specifically for disconnection, timeout, and malformed message scenarios. Separating these keeps each generated block focused and easier to review.
+
+
+**Step 4 — Request fixture cleanup explicitly.** Ask the AI to add `yield`-based fixtures so that connections are always closed even when assertions fail:
+
+
+```python
+@pytest.fixture
+async def ws_client(handler):
+    """Fixture that guarantees cleanup on test failure."""
+    client = await handler.connect()
+    yield client
+    # Cleanup runs even if the test raises
+    if client.connected:
+        await handler.disconnect(client)
+```
+
+
+**Step 5 — Run and iterate.** Generated tests rarely pass on the first run without any adjustment. Feed the error output back to the AI and ask it to fix the specific failure. Two or three iterations typically produces a passing, maintainable test suite.
+
+
 ## Choosing the Right Tool for Your Needs
 
 
@@ -223,12 +338,12 @@ Regardless of which tool you choose, follow these practices:
 5. **Check fixture cleanup** - Verify that async resources are properly released
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
 - [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
 - [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
 - [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
+- [Best AI for Writing pytest Asyncio Tests for WebSocket Handl](/ai-tools-compared/best-ai-for-writing-pytest-asyncio-tests-for-websocket-handl/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
