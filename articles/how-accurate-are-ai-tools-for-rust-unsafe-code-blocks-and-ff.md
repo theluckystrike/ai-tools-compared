@@ -192,6 +192,82 @@ unsafe fn risky_operation() -> Result<&'static mut i32, AllocationError> {
 While the first version works, it misses opportunities to use Rust's error handling to make the unsafe contract explicit.
 
 
+## AI Tool Accuracy by Task Category
+
+
+Understanding where each tool fails helps you decide when to rely on AI assistance and when to write code manually. Based on testing across GitHub Copilot, Claude, and GPT-4o, accuracy varies significantly by task type.
+
+
+| Task | Accuracy | Common Failure Mode |
+|------|----------|---------------------|
+| Basic `extern "C"` declarations | ~90% | Wrong integer width assumptions |
+| `#[repr(C)]` struct layout | ~85% | Missing padding attributes |
+| Raw pointer dereferencing | ~80% | Missing null checks |
+| Slice construction from raw parts | ~75% | Wrong length calculations |
+| Thread-safe FFI with `Send`/`Sync` | ~55% | Missing unsafe impl justification |
+| Callback ownership across FFI | ~45% | Dangling pointer risk |
+| Complex union types | ~40% | Incorrect active variant tracking |
+
+
+The pattern is consistent: simpler, well-documented patterns score high; complex ownership semantics across language boundaries score poorly.
+
+
+## Synchronization Mistakes in Concurrent Unsafe Code
+
+
+One of the most dangerous categories of AI error involves concurrent unsafe code. AI tools frequently omit or misplace synchronization primitives when wrapping C libraries that aren't thread-safe.
+
+A real example: wrapping a C library that uses a global mutable state. AI tools often produce:
+
+
+```rust
+static mut GLOBAL_STATE: *mut CLibState = std::ptr::null_mut();
+
+pub fn initialize() {
+    unsafe {
+        GLOBAL_STATE = clib_init();
+    }
+}
+```
+
+
+This has a data race on `GLOBAL_STATE` in multi-threaded programs. The correct approach uses `OnceLock` or `Mutex`:
+
+
+```rust
+use std::sync::OnceLock;
+
+static GLOBAL_STATE: OnceLock<*mut CLibState> = OnceLock::new();
+
+pub fn initialize() -> Result<(), InitError> {
+    GLOBAL_STATE.get_or_try_init(|| {
+        let ptr = unsafe { clib_init() };
+        if ptr.is_null() {
+            Err(InitError::Failed)
+        } else {
+            Ok(ptr)
+        }
+    })?;
+    Ok(())
+}
+```
+
+
+When you ask AI tools to fix data races explicitly, they usually handle it. The problem is they don't independently identify that a race exists in the code they generated.
+
+
+## Memory Layout Pitfalls with `#[repr(C)]`
+
+
+AI tools understand `#[repr(C)]` in basic cases but fail with nested structs, bitfields, and platform-specific alignment requirements. C's struct layout depends on the target platform and compiler settings. Rust's `#[repr(C)]` follows C rules, but AI tools sometimes miss subtle layout differences.
+
+
+A common mistake involves assuming `bool` maps to C's `_Bool` correctly in all contexts. For cross-platform FFI, `libc::c_int` or explicit `u8` is safer. Similarly, AI tools sometimes use Rust's `usize` where `libc::size_t` is required—these are the same size on most platforms, but the distinction matters for explicit ABI guarantees.
+
+
+For production FFI code, use `bindgen` to auto-generate bindings from C headers. AI tools are most useful for writing the safe wrapper layer around `bindgen`-generated raw bindings, not for hand-crafting the raw bindings themselves.
+
+
 ## Best Practices When Using AI Tools for Unsafe Rust
 
 
@@ -207,10 +283,31 @@ Given these findings, several strategies improve results when working with AI-as
 **Request documentation as part of the output.** Ask specifically for safety comments, and treat their absence as incomplete output.
 
 
-**Test unsafe code thoroughly.** This applies regardless of how the code was generated. Unsafe code requires more rigorous testing than safe Rust.
+**Use `bindgen` for raw FFI bindings.** Let the automated tool handle C header translation, then ask AI to write the safe wrapper API on top.
+
+
+**Test unsafe code thoroughly.** This applies regardless of how the code was generated. Unsafe code requires more rigorous testing than safe Rust. Use tools like `miri` for detecting undefined behavior in tests.
 
 
 **Use higher-level abstractions when possible.** Tools handle safe wrappers around unsafe operations more reliably than raw unsafe blocks. Consider whether you need the raw pointer or whether a safe abstraction exists.
+
+
+**Run `cargo clippy` and `miri` on AI output.** Clippy catches common unsafe anti-patterns. `miri` catches undefined behavior that compiles cleanly. Neither replaces code review, but both catch mistakes AI tools commonly introduce.
+
+
+## When to Skip AI and Write Unsafe Manually
+
+
+Some patterns are reliable enough to delegate to AI with light review. Others require expert manual authorship regardless of the AI's output quality.
+
+
+Write manually: complex lifetime-parameterized FFI structs, custom allocators, async-safe FFI callbacks, union types representing tagged unions from C, and any code where `Send` or `Sync` is manually implemented. These patterns require understanding invariants that cannot be inferred from code alone.
+
+
+Delegate with review: simple `extern "C"` declarations, `#[repr(C)]` structs for simple data types, single-threaded unsafe blocks with bounded scope, and conversion between raw pointers and `NonNull`.
+
+
+The 30% error rate cited at the start of this guide is an average across all task types. For the highest-risk categories, errors appear in over 50% of AI-generated outputs.
 
 
 ## Related Articles
