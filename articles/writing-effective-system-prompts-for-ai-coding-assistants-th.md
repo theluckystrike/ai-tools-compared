@@ -210,6 +210,166 @@ As projects evolve, so should your system prompts. Review and update them when:
 A system prompt is not a set-it-and-forget-it document. It should evolve alongside your project.
 
 
+## Building Your Project-Specific Prompt Template
+
+Rather than relying on generic system prompts, create a template that captures your project's specific characteristics. Store this in your project documentation:
+
+```yaml
+# PROJECT_AI_PROMPT.md
+## Project Overview
+- Name: Payment Processing Service
+- Primary Language: Python 3.11+ with FastAPI
+- Repository: github.com/company/payment-service
+
+## Technology Stack
+- Framework: FastAPI 0.100+
+- Database: PostgreSQL 14+
+- ORM: SQLAlchemy 2.0
+- Async Runtime: asyncio with uvicorn
+- Testing: pytest with pytest-asyncio
+- API Docs: OpenAPI 3.0 via Starlette
+
+## Code Style Requirements
+- Use type hints on all functions (no Any except justified cases)
+- Maximum line length: 100 characters
+- Docstrings: NumPy style for modules and complex functions
+- Error handling: Always raise custom exceptions from errors.py
+
+## Architecture Patterns
+- Use dependency injection via FastAPI depends()
+- Implement repository pattern for data access
+- Service layer handles business logic
+- Controllers (route handlers) orchestrate only
+- No direct database queries in endpoints
+```
+
+Your team can reference this single document rather than repeating expectations in every conversation with the AI.
+
+## Real-World Prompt Comparison
+
+Here's how a system prompt changes output quality across the same request:
+
+**Scenario:** Build a user authentication endpoint.
+
+**Without system prompt:**
+```python
+@app.post("/login")
+def login(email: str, password: str):
+    user = db.query("SELECT * FROM users WHERE email=?", email)
+    if user and user.password == password:
+        return {"token": "fake-token"}
+    return {"error": "Invalid credentials"}
+```
+
+**With effective system prompt:**
+```python
+async def authenticate_user(
+    email: str,
+    password: str,
+    session: AsyncSession = Depends(get_session)
+) -> AuthToken:
+    """Authenticate a user by email and password.
+
+    Args:
+        email: User's email address
+        password: User's password
+        session: Database session
+
+    Returns:
+        AuthToken object containing JWT token
+
+    Raises:
+        InvalidCredentialsError: If credentials are invalid
+    """
+    user = await UserRepository(session).get_by_email(email)
+
+    if not user or not verify_password(password, user.password_hash):
+        raise InvalidCredentialsError("Invalid email or password")
+
+    token = generate_jwt_token(user.id)
+    return AuthToken(token=token, expires_in=3600)
+
+
+@router.post("/login", response_model=AuthToken)
+async def login_endpoint(
+    credentials: LoginRequest,
+    service: AuthService = Depends()
+) -> AuthToken:
+    """Login endpoint that accepts credentials and returns JWT token."""
+    return await service.authenticate_user(
+        credentials.email,
+        credentials.password
+    )
+```
+
+The second version includes type hints, async operations, proper error handling, separation of concerns, and documentation—all specified in the system prompt.
+
+
+## Versioning Your System Prompt
+
+As your project evolves, maintain version history for your system prompt:
+
+```
+PROJECT_AI_PROMPTS/
+├── v1_initial.md      # Original setup
+├── v2_async_migration.md    # Added async patterns
+├── v3_ddd_refactor.md       # Implemented domain-driven design
+└── current.md               # Latest (symlink to active version)
+```
+
+Document what changed between versions and why. This helps new team members understand your architectural decisions and provides context for AI tools to generate appropriately sophisticated code.
+
+
+## Testing Your System Prompt Effectiveness
+
+Create a validation script that checks whether AI output matches your expectations:
+
+```python
+# test_system_prompt.py
+import json
+import subprocess
+from pathlib import Path
+
+def extract_python_code(response: str) -> str:
+    """Extract code blocks from AI response"""
+    import re
+    code_blocks = re.findall(r'```python\n(.*?)\n```', response, re.DOTALL)
+    return '\n'.join(code_blocks)
+
+def validate_code(code: str, rules: dict) -> list[str]:
+    """Check if code follows project rules"""
+    errors = []
+
+    if rules.get('require_type_hints'):
+        if '->  ' not in code and 'def ' in code:
+            errors.append("Missing return type hints")
+
+    if rules.get('max_line_length') == 100:
+        for i, line in enumerate(code.split('\n'), 1):
+            if len(line) > 100:
+                errors.append(f"Line {i} exceeds 100 chars: {len(line)} chars")
+
+    if rules.get('require_docstrings'):
+        if 'def ' in code and '"""' not in code:
+            errors.append("Missing docstrings")
+
+    return errors
+
+# Usage
+rules = {
+    'require_type_hints': True,
+    'max_line_length': 100,
+    'require_docstrings': True
+}
+
+# After getting AI response
+generated_code = extract_python_code(ai_response)
+errors = validate_code(generated_code, rules)
+```
+
+Run this validator after significant prompt updates to ensure your system prompt is effective.
+
+
 ## Related Articles
 
 - [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
