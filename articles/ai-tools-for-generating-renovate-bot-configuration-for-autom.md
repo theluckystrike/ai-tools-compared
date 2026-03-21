@@ -6,9 +6,9 @@ date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-generating-renovate-bot-configuration-for-autom/
 categories: [guides]
-tags: [ai-tools-compared, renovate, dependency-updates, automation, devops]
+tags: [ai-tools-compared, renovate, dependency-updates, automation, devops, artificial-intelligence]
 reviewed: true
-score: 9
+score: 7
 intent-checked: true
 voice-checked: true
 ---
