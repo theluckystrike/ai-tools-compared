@@ -9,7 +9,7 @@ permalink: /how-to-chain-multiple-ai-tools-together-for-full-stack-devel/
 categories: [guides]
 tags: [ai-tools-compared, workflow, automation, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---

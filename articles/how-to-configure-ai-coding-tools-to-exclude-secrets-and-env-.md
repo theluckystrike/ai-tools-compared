@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /how-to-configure-ai-coding-tools-to-exclude-secrets-and-env-/
 categories: [guides, security]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, artificial-intelligence]
