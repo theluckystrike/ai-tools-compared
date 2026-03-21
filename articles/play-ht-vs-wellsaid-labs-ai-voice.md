@@ -145,7 +145,7 @@ async function streamAudio(text, voice = 'en-US-Neural2-A') {
     quality: 'high',
     format: 'mp3'
   });
-  
+
   // Stream directly to response
   const { createReadStream } = await stream;
   return createReadStream();
@@ -164,7 +164,7 @@ async function generateAudio(text, voiceId = 'voice_1') {
     voice_id: voiceId,
     format: 'mp3'
   });
-  
+
   // Poll for completion
   const audioUrl = await client.waitForTTS(result.id);
   return audioUrl;
@@ -208,6 +208,24 @@ For high-volume applications, PlayHT generally offers better cost efficiency, es
 
 
 
+## Feature Comparison at a Glance
+
+| Feature | PlayHT | WellSaid Labs |
+|---------|--------|---------------|
+| Voice count | 900+ | 9+ |
+| Languages | 140+ | English-focused |
+| Voice cloning | Yes (paid plans) | No |
+| SSML support | Full | Limited |
+| Streaming | Yes | Yes |
+| Free tier | Yes (500 words/mo) | No |
+| Enterprise SLA | Yes | Yes |
+| API versioning | v2 | v1 |
+| Audio formats | MP3, WAV, OGG | MP3, WAV |
+
+This table highlights the fundamental trade-off: PlayHT optimizes for breadth and developer flexibility, while WellSaid Labs optimizes for consistent studio quality with a curated voice roster.
+
+
+
 ## Use Case Recommendations
 
 
@@ -238,6 +256,76 @@ Choose **WellSaid Labs** when you need:
 
 
 
+## Integrating with a React Frontend
+
+Both APIs can be consumed from a React component through a server-side proxy (never expose API keys in the browser). Here is a pattern that works with either service:
+
+```javascript
+// React component: plays TTS on button click
+import { useState } from 'react';
+
+export function TTSButton({ text }) {
+  const [loading, setLoading] = useState(false);
+
+  async function handleSpeak() {
+    setLoading(true);
+    const res = await fetch('/api/tts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text })
+    });
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    new Audio(url).play();
+    setLoading(false);
+  }
+
+  return (
+    <button onClick={handleSpeak} disabled={loading}>
+      {loading ? 'Generating...' : 'Speak'}
+    </button>
+  );
+}
+```
+
+The server-side `/api/tts` route calls your chosen TTS service and pipes the audio back. This pattern works identically for PlayHT and WellSaid Labs—only the server-side implementation changes.
+
+
+
+## Handling Long-Form Content
+
+Both services impose character limits per request (typically 2,000–5,000 characters). For podcast scripts, e-learning modules, or long-form narration, you need to chunk the input:
+
+```javascript
+function chunkText(text, maxLength = 2000) {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const chunks = [];
+  let current = '';
+
+  for (const sentence of sentences) {
+    if ((current + sentence).length > maxLength) {
+      chunks.push(current.trim());
+      current = sentence;
+    } else {
+      current += sentence;
+    }
+  }
+  if (current) chunks.push(current.trim());
+  return chunks;
+}
+
+async function generateLongFormAudio(script) {
+  const chunks = chunkText(script);
+  const audioBuffers = await Promise.all(chunks.map(chunk => generateAudio(chunk)));
+  // Concatenate buffers with your preferred audio library
+  return concatenateAudioBuffers(audioBuffers);
+}
+```
+
+WellSaid Labs handles chunking more gracefully for narration because its voices maintain consistent prosody across separate requests. PlayHT's expressiveness settings may vary slightly between chunks.
+
+
+
 ## Error Handling Patterns
 
 
@@ -262,6 +350,22 @@ async function ttsWithRetry(text, maxRetries = 3) {
   }
 }
 ```
+
+
+## Frequently Asked Questions
+
+**Can I clone my own voice with these services?**
+PlayHT supports custom voice cloning on Professional and Enterprise plans. You upload audio samples and receive a cloned voice ID usable via the API. WellSaid Labs does not currently offer self-serve voice cloning.
+
+**Which service has better SSML support?**
+PlayHT provides full SSML compliance including prosody, emphasis, breaks, and say-as tags. WellSaid Labs offers limited SSML support—primarily pauses and basic rate control.
+
+**Are there GDPR or data residency options?**
+WellSaid Labs targets enterprise buyers and offers data processing agreements. PlayHT also provides data handling documentation, but enterprises with strict compliance requirements should review each provider's DPA before committing.
+
+**Which API is easier to get started with?**
+PlayHT has a free tier and extensive SDKs, making it faster to prototype. WellSaid Labs requires a paid plan from day one, which makes initial evaluation slightly slower.
+
 
 
 ## Related Reading
