@@ -6,7 +6,7 @@ date: 2026-03-15
 author: theluckystrike
 permalink: /copy-ai-vs-chatgpt-for-social-media-content/
 reviewed: true
-score: 7
+score: 8
 categories: [comparisons]
 intent-checked: true
 voice-checked: true
