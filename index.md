@@ -112,11 +112,11 @@ Browse articles by topic for focused comparisons:
 
 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0;">
 
-## All Articles A–Z
+## Recently Added A–Z
 
 {% assign sorted_alpha = all_articles | sort: "title" %}
 {% assign current_letter = "" %}
-{% for p in sorted_alpha %}
+{% for p in sorted_alpha limit:50 %}
   {% assign first = p.title | slice: 0 | upcase %}
   {% if first != current_letter %}
     {% assign current_letter = first %}
@@ -125,3 +125,5 @@ Browse articles by topic for focused comparisons:
   {% endif %}
 - [{{ p.title }}]({{ p.url | relative_url }})
 {% endfor %}
+
+Browse the [topic guides](#topic-guides) above for the full catalog of {{ all_articles.size }}+ articles.
