@@ -251,7 +251,122 @@ Regardless of which tool you choose, provide context for better error handling c
 
 The right AI tool accelerates idiomatic Rust error handling, but understanding `Result<T, E>` fundamentals remains essential for reviewing and improving generated code.
 
+## Advanced Error Composition Patterns
 
+AI tools should understand sophisticated error patterns beyond basic Result types. Here's a real-world pattern for composing errors in async Rust code:
+
+```rust
+use thiserror::Error;
+use anyhow::{Context, Result};
+
+#[derive(Error, Debug)]
+pub enum FetchError {
+    #[error("HTTP error: {status}")]
+    Http { status: u16 },
+
+    #[error("Timeout after {seconds}s")]
+    Timeout { seconds: u64 },
+
+    #[error("Deserialization failed: {0}")]
+    Json(#[from] serde_json::Error),
+
+    #[error("IO error: {0}")]
+    Io(#[from] std::io::Error),
+}
+
+async fn fetch_with_retry(url: &str, max_retries: u32) -> Result<String> {
+    let mut attempts = 0;
+
+    loop {
+        match fetch_data(url).await {
+            Ok(data) => return Ok(data),
+            Err(e) if attempts < max_retries => {
+                eprintln!("Attempt {} failed: {}. Retrying...", attempts + 1, e);
+                attempts += 1;
+                tokio::time::sleep(std::time::Duration::from_secs(2_u64.pow(attempts))).await;
+            }
+            Err(e) => return Err(e).context(format!("Failed after {} retries", max_retries)),
+        }
+    }
+}
+
+async fn fetch_data(url: &str) -> Result<String, FetchError> {
+    let response = reqwest::get(url)
+        .await
+        .map_err(|e| FetchError::Timeout { seconds: 30 })?;
+
+    if !response.status().is_success() {
+        return Err(FetchError::Http {
+            status: response.status().as_u16(),
+        });
+    }
+
+    response.text().await.map_err(FetchError::Io)
+}
+```
+
+This pattern combines `thiserror` for structured error types and `anyhow` for context-rich error propagation—something good AI tools should recognize and generate without prompting.
+
+## Error Handling in Library vs Application Code
+
+AI tools should distinguish between library error types and application error types:
+
+```rust
+// Library crate (lib.rs) — specific, composable errors
+#[derive(Error, Debug)]
+pub enum ParseError {
+    #[error("Invalid format")]
+    InvalidFormat,
+
+    #[error("EOF reached")]
+    Eof,
+}
+
+// Application crate (main.rs) — wraps library errors into application context
+#[derive(Error, Debug)]
+pub enum AppError {
+    #[error("Parse error: {0}")]
+    Parse(#[from] mylib::ParseError),
+
+    #[error("Configuration missing: {0}")]
+    Config(String),
+
+    #[error("Database connection failed: {0}")]
+    Database(String),
+}
+```
+
+Claude Code typically generates this distinction correctly when asked to "design error types for a library," whereas Copilot may conflate the two levels.
+
+## Testing Error Handling Code
+
+Quality AI tools generate tests alongside error handling code:
+
+```rust
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_invalid_config_returns_error() {
+        let result = read_and_parse("/nonexistent/path");
+        assert!(result.is_err());
+
+        match result {
+            Err(AppError::Io(_)) => (),
+            other => panic!("Expected Io error, got {:?}", other),
+        }
+    }
+
+    #[test]
+    fn test_parse_error_message_is_helpful() {
+        let error = ParseError::InvalidFormat;
+        assert_eq!(error.to_string(), "Invalid format");
+    }
+}
+```
+
+When you ask for "tests for error handling," Claude Code and Cursor both generate comprehensive test coverage, while Copilot may skip this entirely.
 
 ## Related Reading
 

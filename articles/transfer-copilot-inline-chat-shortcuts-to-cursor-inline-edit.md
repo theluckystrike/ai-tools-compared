@@ -221,7 +221,68 @@ If your keybindings are not working as expected, verify these settings:
 
 - Restart Cursor: Some keybinding changes require a restart to take effect.
 
+## Advanced Keybinding Patterns
 
+For developers wanting even more customization, here's how to set up context-aware shortcuts:
+
+```json
+[
+  {
+    "key": "cmd+i",
+    "command": "cursor.inlineChat.start",
+    "when": "editorTextFocus && !editorReadonly && editorLangId != 'markdown'"
+  },
+  {
+    "key": "cmd+shift+enter",
+    "command": "cursor.inlineChat.accept",
+    "when": "cursor.inlineChatVisible"
+  },
+  {
+    "key": "escape",
+    "command": "cursor.inlineChat.dismiss",
+    "when": "cursor.inlineChatVisible"
+  }
+]
+```
+
+This setup disables inline chat in markdown files (where you might want different behavior) and adds shortcuts to accept/dismiss inline suggestions from anywhere.
+
+## Performance Impact of Multiple Keybindings
+
+Having overlapping keybindings can slow down key processing. If you notice latency when pressing mapped shortcuts:
+
+1. Open Cursor's Keybindings list and search for duplicate commands
+2. Remove conflicting bindings from extensions you don't need
+3. Use the `when` clause liberally to limit binding scope
+
+A minimal keybinding file (10–20 entries) processes instantly. Hundreds of bindings can introduce 100–200ms latency.
+
+## Migrating Other Shortcuts Beyond Inline Chat
+
+The same pattern applies to migrating other Copilot shortcuts:
+
+| Copilot | Cursor | Mapping |
+|---------|--------|---------|
+| Cmd+. (Quick fix) | Cmd+. (Same) | No change needed |
+| Cmd+K (View symbols) | Cmd+Shift+O | Override with Copilot binding |
+| Cmd+\ (Comment toggle) | Cmd+/ (Usually) | Adjust based on language |
+
+Many shortcuts naturally transfer, but a few require customization depending on your preferred coding style.
+
+## Syncing Keybindings Across Machines
+
+Store your keybindings file in a git repository for easy sync:
+
+```bash
+# Create a dotfiles repo
+git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+
+# Link Cursor keybindings
+ln -s ~/.dotfiles/cursor-keybindings.json \
+  ~/Library/Application\ Support/Cursor/User/keybindings.json
+```
+
+This approach keeps your keybindings synchronized across all machines where you work.
 
 ## Related Reading
 

@@ -215,6 +215,168 @@ For developers building membership systems in 2026, the best approach combines m
 
 The generated code serves as a starting point. Always review authentication logic, implement proper rate limiting, and test payment flows with Stripe test mode before production deployment.
 
+## Common Implementation Patterns
+
+When using AI to generate membership systems, certain patterns consistently emerge across tools. The most battle-tested approach uses JWT tokens stored in secure httpOnly cookies, combined with a subscription status field cached in the user object. Here's the typical flow:
+
+```javascript
+// Common pattern: Subscription check with caching
+const checkSubscription = async (userId, requiredTier) => {
+  // Try cache first (Redis or in-memory for single-server)
+  const cachedUser = await cache.get(`user:${userId}`);
+  if (cachedUser && cachedUser.subscription) {
+    return validateTierAccess(cachedUser.subscription.tier, requiredTier);
+  }
+
+  // Fall back to database
+  const user = await db.users.findById(userId);
+  const subscription = await db.subscriptions.findOne({
+    userId, status: 'active'
+  });
+
+  // Cache for 5 minutes
+  await cache.set(`user:${userId}`, { ...user, subscription }, 300);
+  return validateTierAccess(subscription?.tier || 'free', requiredTier);
+};
+```
+
+This pattern reduces database calls and improves performance significantly. Most AI tools suggest variations of this when asked for a "production-ready subscription check."
+
+## Database Schema Considerations
+
+AI-generated code often requires schema adjustments that tools don't always anticipate. A minimal but complete schema looks like:
+
+```sql
+CREATE TABLE users (
+  id UUID PRIMARY KEY,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  passwordHash VARCHAR(255) NOT NULL,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE subscriptions (
+  id UUID PRIMARY KEY,
+  userId UUID NOT NULL REFERENCES users(id),
+  tier ENUM('free', 'pro', 'enterprise') DEFAULT 'free',
+  status ENUM('active', 'paused', 'cancelled') DEFAULT 'active',
+  currentPeriodStart DATE NOT NULL,
+  currentPeriodEnd DATE NOT NULL,
+  stripeCustomerId VARCHAR(255) UNIQUE,
+  stripeSubscriptionId VARCHAR(255) UNIQUE,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE features (
+  id UUID PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) UNIQUE NOT NULL,
+  minTierRequired ENUM('free', 'pro', 'enterprise') DEFAULT 'pro'
+);
+
+CREATE TABLE tierFeatures (
+  tierId ENUM('free', 'pro', 'enterprise'),
+  featureId UUID REFERENCES features(id),
+  PRIMARY KEY (tierId, featureId)
+);
+```
+
+AI tools typically suggest this schema or variations, but the key insight is maintaining the relationship between users, subscriptions, and features. This allows you to check feature access with a single query: `SELECT * FROM tierFeatures WHERE tierId = ? AND featureId IN (...)`.
+
+## Webhook Handling and Event Processing
+
+The most complex part of membership systems is handling Stripe webhooks reliably. AI-generated code often requires refinement here. A production-ready webhook handler looks like:
+
+```javascript
+// Production webhook handler with idempotency
+const handleStripeWebhook = async (event) => {
+  const idempotencyKey = event.id;
+
+  // Check if we've already processed this event
+  const processed = await db.processedEvents.findOne({ idempotencyKey });
+  if (processed) {
+    return { success: true, cached: true };
+  }
+
+  try {
+    switch (event.type) {
+      case 'customer.subscription.created':
+      case 'customer.subscription.updated':
+        await updateSubscriptionFromStripe(event.data.object);
+        break;
+      case 'customer.subscription.deleted':
+        await handleSubscriptionCancellation(event.data.object);
+        break;
+      case 'invoice.payment_succeeded':
+        await recordPaymentSuccess(event.data.object);
+        break;
+      case 'invoice.payment_failed':
+        await handlePaymentFailure(event.data.object);
+        break;
+    }
+
+    // Mark event as processed
+    await db.processedEvents.create({ idempotencyKey, processedAt: new Date() });
+    return { success: true };
+  } catch (error) {
+    console.error('Webhook processing failed:', error);
+    // Don't mark as processed — Stripe will retry
+    throw error;
+  }
+};
+```
+
+The idempotency key pattern prevents duplicate charges if Stripe retries webhook delivery, a critical safety measure that AI tools sometimes overlook.
+
+## Cost Estimation for AI-Generated Systems
+
+When evaluating AI-generated membership architectures, consider the operational costs:
+
+| Component | Tool | Estimated Monthly Cost |
+|-----------|------|----------------------|
+| Authentication | Auth0, Firebase Auth | $0–500 (depending on MAU) |
+| Database | PostgreSQL (self-hosted) | $30–200 |
+| Vector search (for personalization) | Pinecone | $0–100 |
+| Payment processing | Stripe | 2.9% + $0.30 per transaction |
+| Hosting (compute) | Vercel, AWS | $20–500+ |
+| Cache layer | Redis | $5–100 |
+
+A typical small membership site (1,000 active users) costs $200–400/month in infrastructure, plus payment processing fees. Claude Code and Cursor usually suggest this cost breakdown when asked to evaluate architecture trade-offs.
+
+## Testing Membership Logic with AI Assistance
+
+AI tools can generate comprehensive test suites for membership systems. A practical example:
+
+```typescript
+describe('Subscription Access Control', () => {
+  it('free tier users cannot access pro features', async () => {
+    const user = { id: '123', tier: 'free' };
+    const result = await checkAccess(user, 'pro-feature');
+    expect(result).toBe(false);
+  });
+
+  it('pro users can access pro features', async () => {
+    const user = { id: '123', tier: 'pro' };
+    const result = await checkAccess(user, 'pro-feature');
+    expect(result).toBe(true);
+  });
+
+  it('expired subscriptions deny access', async () => {
+    const user = { id: '123', tier: 'pro', expiresAt: new Date(Date.now() - 1000) };
+    const result = await checkAccess(user, 'pro-feature');
+    expect(result).toBe(false);
+  });
+
+  it('webhook updates expire subscriptions correctly', async () => {
+    await simulateStripeEvent('customer.subscription.deleted', { customerId: '123' });
+    const subscription = await db.subscriptions.findOne({ customerId: '123' });
+    expect(subscription.status).toBe('cancelled');
+  });
+});
+```
+
+When you ask AI tools to "generate tests for a subscription system," they typically produce this pattern, which covers the critical paths.
+
 ## Related Reading
 
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)

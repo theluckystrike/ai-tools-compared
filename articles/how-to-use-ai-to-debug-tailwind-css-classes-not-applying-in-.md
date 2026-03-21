@@ -123,7 +123,7 @@ export function Button({ children, variant = 'primary' }) {
     secondary: 'bg-gray-500',
     danger: 'bg-red-500'
   };
-  
+
   return (
     <button className={`px-4 py-2 rounded ${variantClasses[variant]} text-white`}>
       {children}
@@ -221,7 +221,68 @@ module.exports = {
 
 Regularly audit your Tailwind configuration as your project grows. New directories, file types, or component libraries may require updates to your content patterns.
 
+## Advanced Debugging: CSS Generation Analysis
 
+When basic debugging doesn't reveal the issue, AI can help analyze the generated CSS:
+
+```bash
+# Extract and inspect generated CSS in Vite
+npx vite build --debug tailwind
+
+# Search for your class in the output
+grep -r "bg-blue-500" dist/
+```
+
+If the class exists in dist but doesn't apply in the browser, the issue is specificity-related. AI tools can compare your component's computed styles with the generated CSS to pinpoint conflicts.
+
+## Using Browser DevTools with AI
+
+Share browser DevTools output with AI to accelerate debugging:
+
+```javascript
+// Console snippet to extract computed styles and all matching CSS rules
+const element = document.querySelector('.button');
+const styles = window.getComputedStyle(element);
+const rules = Array.from(document.styleSheets)
+  .flatMap(sheet => Array.from(sheet.cssRules || []))
+  .filter(rule => rule.selectorText && rule.selectorText.includes('bg-blue-500'));
+
+console.log('Computed styles:', {
+  backgroundColor: styles.backgroundColor,
+  color: styles.color
+});
+console.log('Matching CSS rules:', rules.map(r => r.cssText));
+```
+
+Paste this output into your AI tool along with your Tailwind config. The AI can immediately spot whether the rule exists and whether specificity is the issue.
+
+## Performance Testing for Tailwind in Production
+
+AI can generate performance checks to ensure Tailwind is properly tree-shaken in production:
+
+```bash
+# Check CSS file size
+ls -lh dist/styles.css
+# Expected: < 50KB for typical projects, < 200KB for large apps
+
+# Verify unused classes are removed
+npm run build -- --analyze
+```
+
+If your CSS bundle is larger than expected, AI can help identify which configuration patterns caused the bloat (e.g., safelisting too many patterns).
+
+## Real-World Troubleshooting Workflow
+
+Here's a complete workflow that AI tools guide you through:
+
+1. **Identify the symptom**: "Button isn't blue in production"
+2. **Check config**: "Is the file type in content array?"
+3. **Verify build**: "Does the class appear in compiled CSS?"
+4. **Inspect computed**: "Is the class overridden by another rule?"
+5. **Implement fix**: "Add safelist, adjust content pattern, or refactor dynamic class"
+6. **Validate**: "Rebuild and verify in browser"
+
+AI tools should guide you through this systematically, asking clarifying questions at each step rather than making assumptions.
 
 ## Related Reading
 

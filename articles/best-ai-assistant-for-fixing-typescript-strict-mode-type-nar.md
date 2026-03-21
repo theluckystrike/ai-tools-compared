@@ -111,7 +111,7 @@ function processUser(user: User | null): string {
   if (!user) {
     return "Guest";
   }
-  
+
   // TypeScript narrows to User here
   // Safe to access .name and .email
   return user.email ? `${user.name} (${user.email})` : user.name;
@@ -136,7 +136,7 @@ For discriminated union scenarios, Cursor often suggests creating proper type gu
 
 
 ```typescript
-type ApiResponse<T> = 
+type ApiResponse<T> =
   | { status: 'success'; data: T }
   | { status: 'error'; error: Error };
 
@@ -185,15 +185,15 @@ function handleState(state: State): string {
   if (state.status === 'loading') {
     return `Loading: ${state.progress}%`;
   }
-  
+
   if (state.status === 'success') {
     return `Data: ${state.data.join(', ')}`;
   }
-  
+
   if (state.status === 'failed') {
     return `Error: ${state.error.message}`;
   }
-  
+
   return 'Waiting...';
 }
 ```
@@ -221,7 +221,93 @@ For large refactoring projects: Cursor's project-wide context proves valuable wh
 
 For team environments: Copilot's integration with GitHub and enterprise features makes it a natural choice for organizations already in the Microsoft ecosystem.
 
+## Advanced Type Narrowing Patterns
 
+AI tools should recognize sophisticated narrowing patterns beyond basic conditionals:
+
+```typescript
+// Custom type guards
+function isError(value: unknown): value is Error {
+  return value instanceof Error;
+}
+
+function handleResult(result: string | Error) {
+  if (isError(result)) {
+    console.error(result.message);
+  } else {
+    console.log(result.toUpperCase());
+  }
+}
+
+// Exhaustiveness checking
+type Result = { type: 'success'; value: number } | { type: 'failure'; error: string };
+
+function processResult(result: Result): void {
+  switch (result.type) {
+    case 'success':
+      console.log(result.value);
+      break;
+    case 'failure':
+      console.error(result.error);
+      break;
+    default:
+      const exhaustive: never = result;
+      throw new Error(`Unhandled case: ${exhaustive}`);
+  }
+}
+```
+
+Good AI tools generate these patterns when you ask for "production-ready type narrowing," while basic tools might miss the exhaustiveness check.
+
+## Measuring Type Safety Improvements
+
+AI tools should help you measure progress toward strict mode compliance:
+
+```typescript
+// tsconfig.json - enable progressively
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}
+```
+
+Ask AI tools to "identify which strict flags are currently failing" and it should generate a prioritized remediation plan based on your codebase's patterns.
+
+## Real-World Performance Impact
+
+Type narrowing done well improves both safety and performance. A comparison:
+
+```typescript
+// Without proper narrowing - runtime checks required
+function processValue(val: string | number | null) {
+  if (val !== null && typeof val === 'string') {
+    // Still might be null at runtime despite checks
+    return val.toUpperCase();
+  }
+}
+
+// With proper narrowing - compiler enforces safety
+function processValue(val: string | number | null) {
+  if (val === null) return '';
+  if (typeof val === 'number') return val.toString();
+  // TypeScript knows val is definitely string here
+  return val.toUpperCase();
+}
+```
+
+AI tools should explain this safety guarantee when suggesting narrowing patterns.
 
 ## Related Reading
 
