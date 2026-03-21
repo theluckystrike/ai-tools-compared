@@ -29,6 +29,9 @@ React's composition model gives developers flexibility in how they structure com
 Cursorules solve this problem by providing AI assistants with explicit instructions about your team's preferred patterns. When an AI understands your composition conventions, it generates code that fits into your existing architecture.
 
 
+The problem compounds as teams grow. A five-person team might handle inconsistency informally through code reviews. A twenty-person team cannot. When developers on different squads build features in parallel, diverging patterns create merge conflicts, confuse new hires, and slow down refactoring efforts. Cursorules act as a standing policy document that every AI-assisted session respects automatically, without requiring reviewers to catch every deviation.
+
+
 ## Defining Your Component Composition Rules
 
 
@@ -45,6 +48,9 @@ Before writing Cursorules, document your team's composition patterns. Consider t
 
 
 Once you have clear answers, translate them into Cursorules that AI assistants can follow.
+
+
+A practical exercise: audit five recent components your team wrote and identify the patterns they share. If three out of five use compound components with Context for internal state, that is your preferred pattern. If naming conventions drift across those five, that inconsistency is exactly what Cursorules can lock down.
 
 
 ## Creating Effective Cursorules
@@ -139,6 +145,9 @@ function UserListPresenter({ users }) {
 ```
 
 
+This pattern pairs well with testing strategies. Presenters are trivial to unit test because they are pure functions of their props. Containers can be tested separately using mocked data fetching. When Cursor generates code following this rule, your test coverage naturally improves alongside consistency.
+
+
 ## Handling Component Composition in Custom Hooks
 
 
@@ -156,6 +165,38 @@ Custom hooks have become the preferred way to share logic in React applications.
 Example return pattern:
 const { data, loading, error, refetch } = useUserData(userId);
 ```
+
+
+An important nuance: hooks that manage a single value with a setter should return a tuple, like `useState` itself. Hooks that return multiple named properties should return an object. This distinction prevents destructuring confusion and makes call sites readable at a glance. Include this distinction explicitly in your Cursorules so the AI applies the right return shape automatically.
+
+
+## Structuring TypeScript Interfaces for Consistency
+
+
+Teams using TypeScript benefit from encoding interface conventions in Cursorules. Without explicit guidance, AI assistants may generate redundant interfaces, misplace type definitions, or use inconsistent naming patterns across components.
+
+
+Add a section like this to your Cursorules:
+
+
+```
+## TypeScript Interface Conventions
+
+- Define component prop interfaces immediately above the component they describe
+- Name prop interfaces as {ComponentName}Props (e.g., ButtonProps, ModalProps)
+- Separate complex types into a dedicated Types.ts file if they are shared
+- Prefer `interface` over `type` for object shapes
+- Use `type` for unions, intersections, and primitive aliases
+
+## Generic Component Patterns
+
+When writing generic components, constrain type parameters:
+- Prefer <T extends object> over unconstrained <T>
+- Document generic parameters in JSDoc when the constraint is non-obvious
+```
+
+
+This prevents a common AI antipattern where Cursor generates a `type Props = {}` at the bottom of a file, inconsistent with where other interfaces live.
 
 
 ## Testing Your Cursorules
@@ -176,6 +217,9 @@ After writing your Cursorules, test them by generating sample components. Ask yo
 Iterate on your Cursorules based on what the AI generates versus what you expect.
 
 
+A systematic testing approach: create a checklist with one item per rule in your Cursorules file. After generating a test component, walk through the checklist item by item. Rules that the AI violates need either more specific wording or concrete examples. Rules the AI follows consistently can be marked stable. Treat Cursorules like code: they need testing and revision.
+
+
 ## Sharing Cursorules Across Your Team
 
 
@@ -190,6 +234,9 @@ Place your Cursorules file in your project root as `.cursorrules` or `.cursor/ru
 
 
 Regular updates to your Cursorules should follow your standard code review process.
+
+
+Consider treating Cursorules changes the same way you treat changes to your ESLint configuration. Both define coding standards; both warrant a PR, a short discussion, and explicit team sign-off. When a new pattern emerges organically in your codebase, a Cursorules update formalizes it and propagates it to every subsequent AI-assisted session automatically.
 
 
 ## Example: Complete Cursorules File
@@ -255,6 +302,16 @@ interface ButtonProps {
 - Utilities: camelCase (formatDate.ts)
 - Types: PascalCase (UserTypes.ts)
 ```
+
+
+## Keeping Cursorules Lean and Effective
+
+
+One pitfall is writing Cursorules that are too long. If your rules file exceeds 200 lines, the AI assistant may weight early rules more heavily than later ones, or fail to apply all rules simultaneously. Keep each rule concise and actionable.
+
+Prefer concrete examples over abstract descriptions. Instead of writing "use appropriate naming conventions," write "name boolean props with `is` or `has` prefix: `isDisabled`, `hasError`, `isLoading`." The more specific the instruction, the more reliably Cursor applies it.
+
+Review your Cursorules quarterly. As React itself evolves — new hooks, new patterns, new best practices — your rules should evolve alongside it. A Cursorules file that references patterns from two years ago may actively guide the AI toward outdated approaches.
 
 
 ## Related Articles
