@@ -246,7 +246,51 @@ Codeium offers the best free tier if budget matters. Zed provides the fastest lo
 
 The gap between tools continues to narrow, but Go developers will find Cursor's language-specific optimizations most valuable for daily development work.
 
+## Real-World Workflow: Building a Go gRPC Service with AI Assistance
+
+Here is how the top tools perform on a realistic task: scaffolding a gRPC server with proper error handling, context propagation, and unit tests.
+
+The prompt given to each tool: "Generate a Go gRPC server implementation for a UserService with GetUser and CreateUser RPCs. Include proper context handling, gRPC error status codes, and a table-driven test."
+
+Cursor generated idiomatic code in one pass, including `status.Error(codes.NotFound, "user not found")` for gRPC error codes and proper `context.Context` propagation:
+
+```go
+func (s *UserServer) GetUser(ctx context.Context, req *pb.GetUserRequest) (*pb.User, error) {
+    if req.Id == "" {
+        return nil, status.Error(codes.InvalidArgument, "user id is required")
+    }
+
+    user, err := s.store.GetUser(ctx, req.Id)
+    if err != nil {
+        if errors.Is(err, store.ErrNotFound) {
+            return nil, status.Errorf(codes.NotFound, "user %s not found", req.Id)
+        }
+        return nil, status.Error(codes.Internal, "failed to retrieve user")
+    }
+
+    return &pb.User{
+        Id:    user.ID,
+        Email: user.Email,
+        Name:  user.Name,
+    }, nil
+}
+```
+
+Copilot required one correction: it initially used a generic `error` return instead of `status.Error`, which breaks gRPC clients expecting proper status codes. After seeing an example, it corrected the pattern consistently. Zed produced correct code but needed the proto file included in context to generate accurate field names. Codeium generated the server skeleton correctly but omitted proper status code handling on first attempt, defaulting to `fmt.Errorf` wrapping instead of gRPC status errors.
+
 ## FAQ
+
+**Q: Does Cursor understand Go modules and workspace mode?**
+Yes. Cursor reads `go.mod` and `go.work` files and uses them for import path completions and dependency awareness. When you add a new dependency with `go get`, Cursor picks up the updated module on the next file open or after a short sync delay.
+
+**Q: Which tool is best for GoLand rather than VS Code?**
+If you use JetBrains GoLand, GitHub Copilot and Tabnine both offer official plugins. Codeium also supports GoLand. Cursor is VS Code-only. Zed is a standalone editor. For GoLand users, Copilot's deep integration with the IntelliJ platform makes it the strongest choice.
+
+**Q: How do AI tools handle Go generics introduced in Go 1.18+?**
+Cursor handles generics well as of 2026—it correctly infers type constraints and generates valid generic function signatures. Copilot has improved but occasionally produces constraint syntax errors with complex union types. Test any generated generic code with `go build` before committing.
+
+**Q: Can I use AI tools to help write Go benchmarks?**
+Yes, all four main tools support generating `Benchmark*` functions in Go's `testing` package. Cursor and Copilot both understand the `b.N` loop pattern and will generate realistic benchmark scaffolding. For profiling-focused work, asking the tool to "add a `pprof` HTTP endpoint" alongside the benchmark produces useful boilerplate.
 
 ---
 
