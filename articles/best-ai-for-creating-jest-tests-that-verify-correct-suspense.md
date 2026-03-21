@@ -371,7 +371,7 @@ For CI/CD integration: Aider generates tests efficiently in terminal workflows
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)

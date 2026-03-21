@@ -483,7 +483,7 @@ Building a type-safe TypeScript client for Claude Code ensures your integration 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)

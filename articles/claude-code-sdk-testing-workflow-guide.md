@@ -410,7 +410,7 @@ Pair these tests with alerting in production to catch unexpected cost spikes ear
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)

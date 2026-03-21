@@ -313,7 +313,7 @@ AI assists with initial content creation, but human review remains essential. Es
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
 - [AI Writing Tools for Healthcare Content Compared 2026](/ai-tools-compared/ai-writing-tools-for-healthcare-content-compared-2026/)

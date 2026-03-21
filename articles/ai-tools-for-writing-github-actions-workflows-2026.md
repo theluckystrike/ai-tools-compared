@@ -581,7 +581,7 @@ Always validate workflows with `act` (local testing) before merging to main bran
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-github-actions-workflows/)

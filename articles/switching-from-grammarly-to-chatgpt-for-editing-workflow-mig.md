@@ -351,7 +351,7 @@ Track these metrics across 10–20 documents to determine if ChatGPT editing mee
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Export Grammarly Personal Dictionary Before Switching](/ai-tools-compared/how-to-export-grammarly-personal-dictionary-before-switching/)
 - [Grammarly Business vs ChatGPT Team for Enterprises](/ai-tools-compared/grammarly-business-vs-chatgpt-team-for-enterprises/)

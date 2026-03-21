@@ -416,7 +416,7 @@ def rephrase_prompt_for_compliance(original_prompt: str) -> str:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-forma/)
 - [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)

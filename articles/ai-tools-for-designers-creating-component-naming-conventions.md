@@ -288,7 +288,7 @@ Iterate on prompts based on initial results. Adjust context, provide more exampl
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 - [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)

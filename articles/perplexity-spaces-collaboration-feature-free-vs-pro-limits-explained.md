@@ -410,7 +410,7 @@ Avoid mixing unrelated research in single Space—maintain focus and search effi
 
 
 
-## Related Articles
+## Related Reading
 
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)
 - [Perplexity Pro File Upload Limits and Storage Costs Explaine](/ai-tools-compared/perplexity-pro-file-upload-limits-and-storage-costs-explaine/)

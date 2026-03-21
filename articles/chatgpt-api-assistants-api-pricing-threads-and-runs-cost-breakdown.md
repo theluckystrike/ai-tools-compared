@@ -244,7 +244,7 @@ Switching to gpt-4o for all runs would increase costs to approximately $9,000 pe
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
 - [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)

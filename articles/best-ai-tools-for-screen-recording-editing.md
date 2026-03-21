@@ -264,7 +264,7 @@ The screen recording and editing landscape in 2026 offers powerful AI capabiliti
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)
 - [How to Use AI for Writing Effective Prometheus Recording Rul](/ai-tools-compared/how-to-use-ai-for-writing-effective-prometheus-recording-rul/)

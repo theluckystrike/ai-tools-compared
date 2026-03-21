@@ -278,7 +278,7 @@ The initial investment in setting up automated documentation pays dividends thro
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Creating dbt Model Definitions from Raw Databas](/ai-tools-compared/ai-tools-for-creating-dbt-model-definitions-from-raw-databas/)
 - [Cheapest AI Tool With GPT-4 Level Code Generation 2026](/ai-tools-compared/cheapest-ai-tool-with-gpt-4-level-code-generation-2026/)

@@ -246,7 +246,7 @@ Both tools require review—AI suggestions occasionally include outdated Prisma 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)

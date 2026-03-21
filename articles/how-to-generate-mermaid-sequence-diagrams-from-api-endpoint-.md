@@ -332,7 +332,7 @@ Several techniques improve diagram generation results:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Generate Activity Diagrams from User](/ai-tools-compared/how-to-use-ai-to-generate-activity-diagrams-from-user-acceptance-criteria/)
 - [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)

@@ -236,7 +236,7 @@ Regenerate diagrams regularly, especially after significant refactoring. AI make
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)

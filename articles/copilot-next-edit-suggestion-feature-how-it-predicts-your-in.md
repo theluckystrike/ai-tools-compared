@@ -347,7 +347,7 @@ Files with high consistency see 70%+ accurate NES predictions.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)
 - [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)

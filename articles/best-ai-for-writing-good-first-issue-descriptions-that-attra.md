@@ -260,7 +260,7 @@ Getting the best results requires some refinement:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)
 - [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)

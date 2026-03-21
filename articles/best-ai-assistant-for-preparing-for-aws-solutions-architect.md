@@ -293,7 +293,7 @@ For AWS Solutions Architect preparation, combining multiple AI tools works best:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Air Gapped AI Code Completion Solutions for Offline Dev](/ai-tools-compared/best-air-gapped-ai-code-completion-solutions-for-offline-dev/)
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)

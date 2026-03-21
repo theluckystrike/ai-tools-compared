@@ -271,7 +271,7 @@ Iterate on the AI recommendations by providing execution plan output and asking 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for SQL Query Optimization and Database](/ai-tools-compared/best-ai-tools-for-sql-query-optimization-and-database-performance/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)

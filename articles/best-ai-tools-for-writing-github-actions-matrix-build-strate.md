@@ -290,7 +290,7 @@ All three tools reduce the time spent writing matrix configurations while improv
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)

@@ -439,7 +439,7 @@ The pattern — catch upstream errors, log the raw details server-side, raise a 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)

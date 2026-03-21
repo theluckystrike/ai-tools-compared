@@ -441,7 +441,7 @@ test('debug storage state', async ({ page, context }) => {
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Generate Playwright Keyboard Navigation Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-keyboard-navigation-tes/)
 - [How to Use AI to Generate Playwright Network Interception](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)

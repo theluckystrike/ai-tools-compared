@@ -289,7 +289,7 @@ This catches misnamed branches before they're pushed, complementing your AI conf
 
 
 
-## Related Articles
+## Related Reading
 
 - [Configure Claude Code](/ai-tools-compared/how-to-configure-claude-code-to-follow-your-teams-feature-fl/)
 - [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)

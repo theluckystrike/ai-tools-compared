@@ -344,7 +344,7 @@ Start with CodeWhisperer or Tabnine for basic needs, then add Cursor or GitHub C
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Tools Under $10 Per Month Ranked](/ai-tools-compared/ai-coding-tools-under-10-dollars-per-month-ranked/)
 - [Best AI Coding Tool Under $20 Per Month (2026)](/ai-tools-compared/best-ai-coding-tool-under-20-dollars-per-month-2026/)

@@ -352,7 +352,7 @@ For CDK development specifically, both tools handle the basics well. The differe
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 - [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)

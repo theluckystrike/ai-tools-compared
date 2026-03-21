@@ -247,7 +247,7 @@ The most effective approach combines AI assistance with Go community conventions
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating dbt Project Structure from Existing](/ai-tools-compared/ai-tools-for-generating-dbt-project-structure-from-existing-/)
 - [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)

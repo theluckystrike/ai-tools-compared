@@ -344,7 +344,7 @@ Do you already subscribe to Creative Cloud?
 
 
 
-## Related Articles
+## Related Reading
 
 - [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
 - [Canva AI Video Editor vs CapCut AI Compared 2026](/ai-tools-compared/canva-ai-video-editor-vs-capcut-ai-compared-2026/)

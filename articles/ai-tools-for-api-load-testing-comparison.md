@@ -455,7 +455,7 @@ Start with Artillery (YAML simplicity) or k6 (JavaScript familiarity). Use Locus
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
 - [Best AI for QA Engineers Writing API Contract Testing Cases](/ai-tools-compared/best-ai-for-qa-engineers-writing-api-contract-test-cases-fro/)

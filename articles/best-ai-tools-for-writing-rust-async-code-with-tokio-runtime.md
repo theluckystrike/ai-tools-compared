@@ -364,7 +364,7 @@ For integration-style tests that spin up a real Tokio runtime, Claude Code corre
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)

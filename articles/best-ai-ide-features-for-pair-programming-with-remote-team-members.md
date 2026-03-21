@@ -308,7 +308,7 @@ Putting these features together, here's a practical workflow for remote pair pro
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 - [AI Pair Programming Tools Comparison 2026: Claude Code.](/ai-tools-compared/ai-pair-programming-tools-comparison-2026/)

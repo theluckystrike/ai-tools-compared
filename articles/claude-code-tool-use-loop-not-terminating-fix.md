@@ -348,7 +348,7 @@ Then start a new session with a fresh perspective and clearer task definition.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor Composer Stuck in Loop: How to Fix](/ai-tools-compared/cursor-composer-stuck-in-loop-how-to-fix/)
 - [Claude Code Losing Context Across Sessions Fix](/ai-tools-compared/claude-code-losing-context-across-sessions-fix/)

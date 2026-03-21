@@ -297,7 +297,7 @@ The key difference between manual debugging and AI-assisted debugging: AI can qu
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating Pull Request Merge Conflict](/ai-tools-compared/ai-tools-for-generating-pull-request-merge-conflict-resoluti/)
 - [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)

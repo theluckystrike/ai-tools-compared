@@ -258,7 +258,7 @@ Fourth, consider redundant storage. Save exports to multiple locations—local d
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)
 - [Ideogram vs Midjourney for Text in Images Compared](/ai-tools-compared/ideogram-vs-midjourney-for-text-in-images-compared/)

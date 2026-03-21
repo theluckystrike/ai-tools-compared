@@ -321,7 +321,7 @@ Always review generated tests against your actual provider implementation and ad
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
 - [Best AI Assistant for Creating Jest Tests That Verify Error](/ai-tools-compared/best-ai-assistant-for-creating-jest-tests-that-verify-error-/)

@@ -290,7 +290,7 @@ For production APIs, Claude provides safer implementations by default. Token buc
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for Automated API Rate Limiting and Abuse](/ai-tools-compared/best-ai-tools-for-automated-api-rate-limiting-and-abuse-dete/)
 - [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)

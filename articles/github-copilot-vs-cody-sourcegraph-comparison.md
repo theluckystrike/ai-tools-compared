@@ -239,7 +239,7 @@ Try both tools during their free trial periods. Pay attention to how often you n
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Completion Latency Comparison](/ai-tools-compared/ai-code-completion-latency-comparison-copilot-vs-cursor-vs-cody-2026/)
 - [Best Practices for Writing GitHub Copilot Custom Instruction](/ai-tools-compared/best-practices-for-writing-github-copilot-custom-instruction/)

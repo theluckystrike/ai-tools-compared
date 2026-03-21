@@ -458,7 +458,7 @@ Total time: ~35 minutes from sketch to production-ready code. Manual Tailwind fr
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 - [How to Use AI to Debug Tailwind CSS Classes Not Applying](/ai-tools-compared/how-to-use-ai-to-debug-tailwind-css-classes-not-applying-in-/)

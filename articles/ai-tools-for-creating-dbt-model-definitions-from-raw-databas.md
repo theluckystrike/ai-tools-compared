@@ -265,7 +265,7 @@ For simple staging models, AI generation works well. For complex business logic,
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)
 - [AI Tools for Creating System Context Diagrams Using C4 Model](/ai-tools-compared/ai-tools-for-creating-system-context-diagrams-using-c4-model/)

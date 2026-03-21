@@ -343,7 +343,7 @@ npm install -g myapp
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Write Security Advisory Descriptions](/ai-tools-compared/how-to-use-ai-to-write-security-advisory-descriptions-for-cv/)
 - [How to Use AI to Write GitHub Actions Bot Comments for First](/ai-tools-compared/how-to-use-ai-to-write-github-actions-bot-comments-for-first/)

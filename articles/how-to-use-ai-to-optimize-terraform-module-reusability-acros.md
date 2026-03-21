@@ -297,7 +297,7 @@ Iterate on module design with AI assistance. Initial versions rarely achieve per
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [AI Tools for Resolving Yarn Berry PnP Module Resolution Erro](/ai-tools-compared/ai-tools-for-resolving-yarn-berry-pnp-module-resolution-erro/)

@@ -303,7 +303,7 @@ Plus subscription issues rarely recur once your account establishes payment hist
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)

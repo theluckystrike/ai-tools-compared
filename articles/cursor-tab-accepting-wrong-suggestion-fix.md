@@ -528,7 +528,7 @@ Share in #ai-tools-discussion Slack channel.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot Suggestions Wrong How to Fix](/ai-tools-compared/copilot-suggestions-wrong-how-to-fix/)
 - [Cursor Tab vs Copilot Ghost Text Comparison](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)

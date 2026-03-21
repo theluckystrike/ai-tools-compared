@@ -270,7 +270,7 @@ async function processWithCodaAI(tableId, rowId, content) {
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)
 - [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)

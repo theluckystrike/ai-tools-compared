@@ -385,7 +385,7 @@ avg by (priority) (resolution_time_hours)
 
 
 
-## Related Articles
+## Related Reading
 
 - [Comparing AI Tools for Generating No-Code Membership and.](/ai-tools-compared/comparing-ai-tools-for-generating-no-code-membership-and-sub/)
 - [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)

@@ -396,7 +396,7 @@ One practical constraint: token cost scales with file size. For large files, ext
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Codeium for JavaScript Framework-Specific Code](/ai-tools-compared/copilot-vs-codeium-for-javascript-framework-specific-code-ge/)
 - [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)

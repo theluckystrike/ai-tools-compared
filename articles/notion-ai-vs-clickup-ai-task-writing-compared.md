@@ -255,7 +255,7 @@ For teams already using either platform, the AI add-on cost is marginal compared
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 - [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)

@@ -340,7 +340,7 @@ In practice, student users never hit limits under normal circumstances.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Free AI Tools for Students Learning to Code 2026 List](/ai-tools-compared/free-ai-tools-for-students-learning-to-code-2026-list/)
 - [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)

@@ -330,7 +330,7 @@ Monitor your fine-tuning job and test the results before deploying to production
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT API Token Pricing Calculator How to Estimate Monthly](/ai-tools-compared/chatgpt-api-token-pricing-calculator-how-to-estimate-monthly/)
 - [LLM Fine-Tuning Platforms Comparison 2026](/ai-tools-compared/llm-fine-tuning-platforms-comparison-2026/)

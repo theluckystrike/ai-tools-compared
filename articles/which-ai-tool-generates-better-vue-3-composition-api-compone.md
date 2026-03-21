@@ -343,7 +343,7 @@ The best AI tools for Vue 3 development consistently produce code that follows t
 
 
 
-## Related Articles
+## Related Reading
 
 - [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 - [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)

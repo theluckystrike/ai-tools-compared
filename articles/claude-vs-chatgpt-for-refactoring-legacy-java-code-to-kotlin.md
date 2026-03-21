@@ -278,7 +278,7 @@ For large-scale migrations, I recommend starting with Claude and establishing co
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [Best AI Tools for Migrating Legacy Java to Modern Frameworks](/ai-tools-compared/best-ai-tools-for-migrating-legacy-java-to-modern-frameworks/)

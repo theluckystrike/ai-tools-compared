@@ -313,7 +313,7 @@ Maintain a changelog category strategy. Decide whether you want detailed technic
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Automated Changelog Generation 2026](/ai-tools-compared/ai-tools-for-automated-changelog-generation-2026/)
 - [How to Use AI to Create Changelog Entries Grouped by Breakin](/ai-tools-compared/how-to-use-ai-to-create-changelog-entries-grouped-by-breakin/)

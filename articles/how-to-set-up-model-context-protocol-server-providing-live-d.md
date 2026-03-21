@@ -272,7 +272,7 @@ The MCP architecture makes it easy to add new tools as your needs evolve.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Model Context Protocol Server for Custom Proje](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-custom-proje/)
 - [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)

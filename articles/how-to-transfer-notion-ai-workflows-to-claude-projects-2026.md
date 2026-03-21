@@ -291,7 +291,7 @@ Most teams find that after migration, they build additional automation they coul
 
 
 
-## Related Articles
+## Related Reading
 
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)
 - [How to Transfer Notion AI Database Automations to Coda AI](/ai-tools-compared/how-to-transfer-notion-ai-database-automations-to-coda-ai/)

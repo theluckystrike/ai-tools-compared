@@ -248,7 +248,7 @@ A system prompt is not a set-it-and-forget-it document. It should evolve alongsi
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)

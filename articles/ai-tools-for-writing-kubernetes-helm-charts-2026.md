@@ -448,7 +448,7 @@ kubectl apply -f /tmp/rendered.yaml --dry-run=client
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for Writing Kubernetes Manifests and Helm](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/)
 - [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)

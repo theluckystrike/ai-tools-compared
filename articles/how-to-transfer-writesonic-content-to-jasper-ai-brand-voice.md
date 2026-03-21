@@ -375,7 +375,7 @@ WriteSonic and Jasper AI use different underlying models and training approaches
 
 
 
-## Related Articles
+## Related Reading
 
 - [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)
 - [Migrate Jasper AI Brand Voice Settings to ChatGPT Custom Ins](/ai-tools-compared/migrate-jasper-ai-brand-voice-settings-to-chatgpt-custom-ins/)

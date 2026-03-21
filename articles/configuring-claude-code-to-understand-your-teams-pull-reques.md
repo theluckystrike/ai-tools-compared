@@ -429,7 +429,7 @@ Configure Claude to reduce false positives in its review:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)
 - [Configuring AI Coding Tools to Follow Your Teams Dependency](/ai-tools-compared/configuring-ai-coding-tools-to-follow-your-teams-dependency-/)

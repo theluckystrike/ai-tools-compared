@@ -345,7 +345,7 @@ Enterprise plans include stronger data isolation guarantees — code is processe
 
 
 
-## Related Articles
+## Related Reading
 
 - [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 - [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)

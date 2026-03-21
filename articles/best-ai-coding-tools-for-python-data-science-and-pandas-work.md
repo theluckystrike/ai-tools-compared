@@ -258,7 +258,7 @@ df['new_col'] = df['a'] * df['b']
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)
 - [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)

@@ -297,7 +297,7 @@ The most valuable use of AI for journey mapping is rapid hypothesis generation f
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tool for UX Designers User Research Synthesis](/ai-tools-compared/best-ai-tool-for-ux-designers-user-research-synthesis/)
 - [Best AI Assistant for Designers Generating Accessibility Aud](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)

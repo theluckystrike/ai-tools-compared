@@ -236,7 +236,7 @@ For developers working with text processing, data validation, or log analysis, A
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tool for Generating Regex Patterns Compared](/ai-tools-compared/best-ai-tool-for-generating-regex-patterns-compared/)
 - [Perplexity Spaces Collaboration Feature Free vs Pro Limits](/ai-tools-compared/perplexity-spaces-collaboration-feature-free-vs-pro-limits-explained/)

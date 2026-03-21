@@ -261,7 +261,7 @@ AI-powered Kubernetes monitoring has matured significantly. These tools now prov
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)
 - [AI Tools for Customer Health Scoring](/ai-tools-compared/ai-tools-for-customer-health-scoring/)

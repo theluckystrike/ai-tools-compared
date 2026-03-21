@@ -307,7 +307,7 @@ Start with one or two tools that address your biggest pain points. Audio improve
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)
 - [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)

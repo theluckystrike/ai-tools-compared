@@ -311,7 +311,7 @@ Track these metrics to ensure your AI-assisted trunk workflow is working:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI Coding Tools Effectively During Live Coding](/ai-tools-compared/how-to-use-ai-coding-tools-effectively-during-live-coding-interviews-2026/)
 - [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)

@@ -333,7 +333,7 @@ The "cheapest" option ultimately depends on your specific use case, but these to
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
 - [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)

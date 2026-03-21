@@ -504,7 +504,7 @@ claude code packages/shared/types/**/*.ts packages/your-service/src/**/*.ts \
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
 - [Effective Context Loading Strategies for AI Tools in](/ai-tools-compared/effective-context-loading-strategies-for-ai-tools-in-polyglo/)

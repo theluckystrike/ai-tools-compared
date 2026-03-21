@@ -314,7 +314,7 @@ AI tools should explain this safety guarantee when suggesting narrowing patterns
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for TypeScript Type Inference and Generic Type](/ai-tools-compared/best-ai-tools-for-typescript-type-inference-and-generic-type/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)

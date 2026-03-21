@@ -407,7 +407,7 @@ Document the optimizations you implement. This helps future maintainers understa
 
 
 
-## Related Articles
+## Related Reading
 
 - [How Context Window Size Affects AI Code Suggestions](/ai-tools-compared/how-context-window-size-affects-ai-code-suggestions-in-different-idess/)
 - [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)

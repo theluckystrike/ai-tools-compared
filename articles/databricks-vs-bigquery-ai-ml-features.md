@@ -317,7 +317,7 @@ Evaluate based on your specific use case—not marketing claims—and you'll mak
 
 
 
-## Related Articles
+## Related Reading
 
 - [Gemini vs ChatGPT for Writing BigQuery SQL Window Functions](/ai-tools-compared/gemini-vs-chatgpt-for-writing-bigquery-sql-window-functions-/)
 - [Snowflake vs Databricks AI Analytics](/ai-tools-compared/snowflake-vs-databricks-ai-analytics/)

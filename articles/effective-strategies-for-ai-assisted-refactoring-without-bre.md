@@ -241,7 +241,7 @@ This incremental approach keeps tests green throughout.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)

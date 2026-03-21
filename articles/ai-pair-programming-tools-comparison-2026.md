@@ -351,7 +351,7 @@ wc -l src/**/*.ts | tail -1    # total lines fed to context
 ```
 
 
-## Related Articles
+## Related Reading
 
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
 - [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)

@@ -332,7 +332,7 @@ With practice, this workflow becomes second nature. You will find yourself contr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Workflow for AI-Assisted Test Driven Development Step](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
 - [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)

@@ -328,7 +328,7 @@ Stay informed about security advisories from your AI coding tool providers. Part
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Create Reusable Prompt Templates for Common AI Coding](/ai-tools-compared/how-to-create-reusable-prompt-templates-for-common-ai-coding/)
 - [AI Autocomplete for Test Files How Well Different Tools Pred](/ai-tools-compared/ai-autocomplete-for-test-files-how-well-different-tools-pred/)

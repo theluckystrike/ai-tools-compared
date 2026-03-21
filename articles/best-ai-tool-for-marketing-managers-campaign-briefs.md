@@ -250,7 +250,7 @@ Output:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Writing Tool for SaaS Marketing Teams](/ai-tools-compared/best-ai-writing-tool-for-saas-marketing-teams/)
 - [Jasper AI vs Anyword: Performance Marketing Copy Compared](/ai-tools-compared/jasper-ai-vs-anyword-performance-marketing-copy/)

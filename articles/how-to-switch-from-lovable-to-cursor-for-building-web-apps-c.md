@@ -296,7 +296,7 @@ These changes typically result in better long-term project health, even if initi
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 - [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)

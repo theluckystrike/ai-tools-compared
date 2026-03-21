@@ -246,7 +246,7 @@ Give yourself permission to struggle initially. The workflow difference is real,
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor Tab vs Copilot Ghost Text Comparison](/ai-tools-compared/cursor-tab-vs-copilot-ghost-text-comparison/)
 - [How to Reduce AI Autocomplete Ghost Text Distractions While](/ai-tools-compared/how-to-reduce-ai-autocomplete-ghost-text-distractions-while-coding/)

@@ -294,7 +294,7 @@ When using AI to generate hall of fame content, keep these considerations in min
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating Coloring Book Pages Compared](/ai-tools-compared/ai-tools-for-generating-coloring-book-pages-compared/)
 - [AI Tools for Generating Contributor License Agreement Explan](/ai-tools-compared/ai-tools-for-generating-contributor-license-agreement-explan/)

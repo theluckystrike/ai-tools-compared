@@ -453,7 +453,7 @@ resource "aws_db_instance" "read_replica" {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)
 - [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)

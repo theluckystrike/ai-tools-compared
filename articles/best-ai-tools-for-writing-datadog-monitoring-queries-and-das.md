@@ -320,7 +320,7 @@ The best approach is to evaluate these tools with your actual Datadog metrics an
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude vs ChatGPT for Writing Datadog Dashboard Terraform](/ai-tools-compared/claude-vs-chatgpt-for-writing-datadog-dashboard-terraform-de/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)

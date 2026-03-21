@@ -323,7 +323,7 @@ For most teams, Copilot Individual or CodeGuru free tier provides sufficient cap
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
 - [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)

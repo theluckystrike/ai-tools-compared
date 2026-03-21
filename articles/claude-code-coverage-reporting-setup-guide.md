@@ -344,7 +344,7 @@ When you share your monorepo structure with Claude Code and ask for a coverage s
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Developer Portal Setup Guide](/ai-tools-compared/claude-code-developer-portal-setup-guide/)
 - [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)

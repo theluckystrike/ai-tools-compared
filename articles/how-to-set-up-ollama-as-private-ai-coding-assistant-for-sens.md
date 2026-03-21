@@ -345,7 +345,7 @@ The entire interaction happens offline. No code leaves your machine.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot Suggestions in Private Repos Do They Cost More Than](/ai-tools-compared/copilot-suggestions-in-private-repos-do-they-cost-more-than-public/)
 - [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)

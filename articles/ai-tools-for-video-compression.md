@@ -318,7 +318,7 @@ Preprocess with AI filters, select the codec for your delivery requirements, and
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for Video Transcription: A Developer's Guide](/ai-tools-compared/best-ai-tools-for-video-transcription/)
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)

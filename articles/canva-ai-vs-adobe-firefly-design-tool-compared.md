@@ -280,7 +280,7 @@ For developers and power users evaluating canva ai vs adobe firefly design tool 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Runway Inpainting vs Adobe Firefly Generative Fill](/ai-tools-compared/runway-inpainting-vs-adobe-firefly-generative-fill/)
 - [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)

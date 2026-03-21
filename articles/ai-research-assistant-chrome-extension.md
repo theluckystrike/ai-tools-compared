@@ -444,7 +444,7 @@ The side panel shares the same content script messaging architecture, so your ex
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)

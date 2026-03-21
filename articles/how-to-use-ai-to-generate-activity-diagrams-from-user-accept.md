@@ -352,7 +352,7 @@ Solution: Use AI tools with code execution capabilities to validate syntax befor
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)
 - [How to Use AI to Generate Component Diagrams from React](/ai-tools-compared/how-to-use-ai-to-generate-component-diagrams-from-react-or-v/)

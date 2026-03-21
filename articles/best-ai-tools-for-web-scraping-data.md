@@ -248,7 +248,7 @@ This approach extracts content automatically without you needing to inspect page
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 - [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)

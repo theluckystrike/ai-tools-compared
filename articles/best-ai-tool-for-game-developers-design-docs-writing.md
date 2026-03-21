@@ -286,7 +286,7 @@ interface CraftingRecipe {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 - [Best AI Tools for Video Game Trailers](/ai-tools-compared/best-ai-tools-for-video-game-trailers/)

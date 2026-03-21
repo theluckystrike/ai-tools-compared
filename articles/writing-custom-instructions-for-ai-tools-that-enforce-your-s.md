@@ -308,7 +308,7 @@ Several mistakes reduce the effectiveness of security header instructions. Avoid
 
 
 
-## Related Articles
+## Related Reading
 
 - [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)

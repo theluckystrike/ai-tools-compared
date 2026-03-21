@@ -263,7 +263,7 @@ For complex brand requirements, consider storing brand configurations in a datab
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/ai-tools-compared/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
 - [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)

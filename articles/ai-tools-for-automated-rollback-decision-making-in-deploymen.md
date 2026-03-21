@@ -273,7 +273,7 @@ Transparency and Logging: Every AI decision should log the underlying data and r
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
 - [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)

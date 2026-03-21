@@ -263,7 +263,7 @@ A local Stable Diffusion setup with specialized line art models provides the bes
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Generate Contributor Hall of Fame Pages Fro](/ai-tools-compared/how-to-use-ai-to-generate-contributor-hall-of-fame-pages-fro/)
 - [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)

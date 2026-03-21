@@ -253,7 +253,7 @@ When using AI code completion for javax-to-jakarta migration, follow these pract
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for Code Migration Python 2](/ai-tools-compared/best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/)
 - [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)

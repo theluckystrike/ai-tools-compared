@@ -269,7 +269,7 @@ AI commit message generation works best as part of a broader development workflo
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Git Commit Message Generators Compared 2026](/ai-tools-compared/ai-git-commit-message-generators-compared/)
 - [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)

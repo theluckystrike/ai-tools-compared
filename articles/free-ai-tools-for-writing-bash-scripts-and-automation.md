@@ -412,7 +412,7 @@ For serious bash automation work, paying for one tool ($10-20/month) provides un
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 - [Best AI Tools for Writing Database Seed Scripts 2026](/ai-tools-compared/best-ai-tools-for-writing-database-seed-scripts-2026/)

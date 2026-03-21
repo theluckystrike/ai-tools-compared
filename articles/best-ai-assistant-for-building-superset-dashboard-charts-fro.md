@@ -280,7 +280,7 @@ Combine AI assistance with Superset's native features for optimal results:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Building Grafana Dashboard Panels](/ai-tools-compared/best-ai-assistant-for-building-grafana-dashboard-panels-from-prometheus-queries/)
 - [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)

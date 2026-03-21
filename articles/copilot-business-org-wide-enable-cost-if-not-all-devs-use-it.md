@@ -319,7 +319,7 @@ Calculate your specific scenario using the formula above. If the effective cost 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot Business vs Cursor Business Per Developer Cost](/ai-tools-compared/copilot-business-vs-cursor-business-per-developer-cost-comparison/)
 - [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)

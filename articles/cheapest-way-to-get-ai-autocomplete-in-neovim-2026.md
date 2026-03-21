@@ -300,7 +300,7 @@ The cheapest solution overall is free in every sense—no subscription, no usage
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cheapest Way to Get AI Code Completion in Vim 2026](/ai-tools-compared/cheapest-way-to-get-ai-code-completion-in-vim-2026/)
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)

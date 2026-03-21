@@ -417,7 +417,7 @@ This won't catch all drift, but prevents the most common issue: a developer disa
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Practices for Maintaining AI Tool Configuration Files](/ai-tools-compared/best-practices-for-maintaining-ai-tool-configuration-files-a/)
 - [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)

@@ -296,7 +296,7 @@ Onboarding happens on specific dates; async processing requires careful queuing:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)
 - [Best AI Tools for Customer Onboarding: A Developer Guide](/ai-tools-compared/best-ai-tools-for-customer-onboarding/)

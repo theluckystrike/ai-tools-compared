@@ -242,7 +242,7 @@ Choose **GitHub Copilot** if you:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Continue Dev Free vs Cody Free: Open Source AI Comparison](/ai-tools-compared/continue-dev-free-vs-cody-free-open-source-ai-comparison/)
 - [How to Maximize GitHub Copilot Free Tier for Open Source](/ai-tools-compared/how-to-maximize-github-copilot-free-tier-for-open-source/)

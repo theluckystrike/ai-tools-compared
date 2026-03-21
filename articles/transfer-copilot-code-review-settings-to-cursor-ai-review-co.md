@@ -321,7 +321,7 @@ Not formally. Cursor reads the file as plain text and interprets it using the AI
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
 - [How to Transfer Copilot Inline Chat Shortcuts](/ai-tools-compared/transfer-copilot-inline-chat-shortcuts-to-cursor-inline-edit/)

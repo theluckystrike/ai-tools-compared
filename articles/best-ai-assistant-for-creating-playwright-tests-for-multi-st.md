@@ -469,7 +469,7 @@ test('wizard announcements for screen readers', async ({ page }) => {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Creating Playwright Tests for File Upl](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-file-upl/)
 - [Best AI Assistant for Creating Playwright Tests for Table](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)

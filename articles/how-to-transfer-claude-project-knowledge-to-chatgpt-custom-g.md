@@ -383,7 +383,7 @@ However, Custom GPTs lack Claude Projects' ability to execute code, run tests, o
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)

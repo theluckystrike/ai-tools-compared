@@ -412,7 +412,7 @@ These diagnostic queries help data quality teams fix issues before they break re
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [Comparing AI Tools for Generating Retool Resource.](/ai-tools-compared/comparing-ai-tools-for-generating-retool-resource-queries-fr/)

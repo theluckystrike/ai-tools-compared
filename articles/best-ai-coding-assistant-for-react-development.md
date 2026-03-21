@@ -510,7 +510,7 @@ function Timer() {
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)
 - [Cursor vs Windsurf for React Development 2026](/ai-tools-compared/cursor-vs-windsurf-for-react-development-2026/)

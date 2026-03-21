@@ -247,7 +247,7 @@ Ask AI to generate observability dashboards that compare on-premise versus cloud
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI for Capacity Planning and Resource Right Sizin](/ai-tools-compared/how-to-use-ai-for-capacity-planning-and-resource-right-sizin/)
 - [How to Use AI to Create Milestone Planning Documents](/ai-tools-compared/how-to-use-ai-to-create-milestone-planning-documents-from-is/)

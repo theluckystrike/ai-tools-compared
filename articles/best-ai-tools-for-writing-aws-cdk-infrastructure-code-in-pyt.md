@@ -278,7 +278,7 @@ The AI landscape evolves rapidly, and tool capabilities improve continuously. Te
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude vs ChatGPT for Creating AWS CDK Infrastructure Stacks](/ai-tools-compared/claude-vs-chatgpt-for-creating-aws-cdk-infrastructure-stacks/)
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)

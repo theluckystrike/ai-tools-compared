@@ -338,7 +338,7 @@ action:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Lightdash vs Preset AI Dashboards: A Practical](/ai-tools-compared/lightdash-vs-preset-ai-dashboards/)
 - [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)

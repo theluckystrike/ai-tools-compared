@@ -296,7 +296,7 @@ def migrate_mj_prompt(mj_prompt, ar="1:1", quality="standard"):
 
 
 
-## Related Articles
+## Related Reading
 
 - [Switching from Dall E to Midjourney Prompt Format Difference](/ai-tools-compared/switching-from-dall-e-to-midjourney-prompt-format-difference/)
 - [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)

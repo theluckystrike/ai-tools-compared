@@ -362,7 +362,7 @@ AI coding assistants transform technical debt from an overwhelming problem into 
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistants for Go Testing Table Driven Tests Gener](/ai-tools-compared/ai-coding-assistants-for-go-testing-table-driven-tests-gener/)
 - [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)

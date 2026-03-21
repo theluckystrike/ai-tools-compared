@@ -445,7 +445,7 @@ git push origin main --tags
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Creating Automated Release Changelog from Conve](/ai-tools-compared/ai-tools-for-creating-automated-release-changelog-from-conve/)
 - [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)

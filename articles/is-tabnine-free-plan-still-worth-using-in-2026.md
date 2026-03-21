@@ -359,7 +359,7 @@ Use claude-haiku-3-5 for intermediate chunked processing and claude-opus-4-6 for
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)
 - [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)

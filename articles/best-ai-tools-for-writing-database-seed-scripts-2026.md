@@ -598,7 +598,7 @@ const users = await Promise.all([
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT vs Claude for Creating Database Migration Scripts](/ai-tools-compared/chatgpt-vs-claude-for-creating-database-migration-scripts-po/)
 - [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)

@@ -246,7 +246,7 @@ Building a prompt template library takes initial investment but pays dividends t
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Create Custom System Prompt for ChatGPT API That Enfo](/ai-tools-compared/how-to-create-custom-system-prompt-for-chatgpt-api-that-enfo/)
 - [AI Coding Tool Penetration Test Findings Common Vulnerabilit](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)

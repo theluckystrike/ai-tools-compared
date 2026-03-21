@@ -587,7 +587,7 @@ The best tests are readable, maintainable, and fail meaningfully. All three tool
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)

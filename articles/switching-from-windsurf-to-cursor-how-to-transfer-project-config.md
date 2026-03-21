@@ -288,7 +288,7 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 - [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)

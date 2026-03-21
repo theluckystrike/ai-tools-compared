@@ -424,7 +424,7 @@ Neither tool imports the other's conversation format directly — you'll need to
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)
 - [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)

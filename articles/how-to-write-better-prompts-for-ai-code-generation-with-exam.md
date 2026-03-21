@@ -252,7 +252,7 @@ Document your successful prompt patterns for recurring tasks. This creates a per
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Write System Prompts for AI Assistants That Produce](/ai-tools-compared/how-to-write-system-prompts-for-ai-assistants-that-produce-a/)
 - [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)

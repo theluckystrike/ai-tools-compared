@@ -290,7 +290,7 @@ def validate_form_data(data):
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Resolve NPM Peer Dependency Conflict Errors](/ai-tools-compared/how-to-use-ai-to-resolve-npm-peer-dependency-conflict-errors/)
 - [How to Use AI to Generate Terraform Import Blocks for](/ai-tools-compared/how-to-use-ai-to-generate-terraform-import-blocks-for-existi/)

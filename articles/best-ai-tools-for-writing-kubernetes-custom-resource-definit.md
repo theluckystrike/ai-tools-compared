@@ -535,7 +535,7 @@ kubectl describe validatingwebhookconfigurations database-validator
 
 
 
-## Related Articles
+## Related Reading
 
 - [Which AI Is Better for Writing gRPC Protobuf Service](/ai-tools-compared/which-ai-is-better-for-writing-grpc-protobuf-service-definitions/)
 - [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)

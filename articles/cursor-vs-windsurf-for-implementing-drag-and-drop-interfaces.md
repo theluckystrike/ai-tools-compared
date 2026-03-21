@@ -507,7 +507,7 @@ Both Cursor and Windsurf can help debug these, but Cursor's project-wide context
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)
 - [Copilot vs Cursor for Implementing Server-Sent Events in Spr](/ai-tools-compared/copilot-vs-cursor-for-implementing-server-sent-events-in-spr/)

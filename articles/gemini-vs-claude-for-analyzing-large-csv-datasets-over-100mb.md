@@ -292,7 +292,7 @@ The best approach often uses both: start with Claude for initial exploration and
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude API Batch Processing for Large Document Workflows](/ai-tools-compared/claude-api-batch-processing-for-large-document-workflows/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)

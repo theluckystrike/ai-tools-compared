@@ -277,7 +277,7 @@ Track concrete metrics before and after modernization:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing ArgoCD Application Manifests and Gitops](/ai-tools-compared/ai-tools-for-writing-argocd-application-manifests-and-gitops/)
 - [How to Use AI to Diagnose Spring Boot Application Context](/ai-tools-compared/how-to-use-ai-to-diagnose-spring-boot-application-context-st/)

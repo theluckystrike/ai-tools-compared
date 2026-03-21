@@ -341,7 +341,7 @@ Start small — extract invoice data from one vendor, then layer in discount opt
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Pricing Optimization: A Practical Guide for](/ai-tools-compared/ai-tools-for-pricing-optimization/)
 - [Best AI Tool for Procurement Managers Vendor Analysis](/ai-tools-compared/best-ai-tool-for-procurement-managers-vendor-analysis/)

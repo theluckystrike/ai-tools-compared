@@ -276,7 +276,7 @@ Claude Code understands parameterized executors and workflow matrix jobs, sugges
 
 
 
-## Related Articles
+## Related Reading
 
 - [Which AI Tool Is Better for Writing CircleCI Config YAML Fil](/ai-tools-compared/which-ai-tool-is-better-for-writing-circleci-config-yaml-fil/)
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)

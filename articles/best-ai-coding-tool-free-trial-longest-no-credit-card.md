@@ -267,7 +267,7 @@ These tools represent the most accessible options for developers who want to exp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor Free Tier Limitations: What Stops Working After Trial](/ai-tools-compared/cursor-free-tier-limitations-what-stops-working-after-trial/)
 - [Best AI Coding Tools With Generous Free Tier for Hobbyists](/ai-tools-compared/best-ai-coding-tools-with-generous-free-tier-for-hobbyists/)

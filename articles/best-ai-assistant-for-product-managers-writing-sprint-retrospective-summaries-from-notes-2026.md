@@ -244,7 +244,7 @@ Writing effective sprint retrospective summaries doesn't require sacrificing hou
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tool for Product Managers Writing User Stories](/ai-tools-compared/best-ai-tool-for-product-managers-writing-user-stories-from-customer-feedback-2026/)
 - [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)

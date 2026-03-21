@@ -298,7 +298,7 @@ Fix: Request an unified error response schema and global error handler
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)
 - [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)

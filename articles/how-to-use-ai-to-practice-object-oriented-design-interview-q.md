@@ -290,7 +290,7 @@ When practicing OOD with AI, watch out for these pitfalls:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
 - [AI Tools for Video Object Tracking](/ai-tools-compared/ai-tools-for-video-object-tracking/)

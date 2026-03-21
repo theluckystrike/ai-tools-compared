@@ -342,7 +342,7 @@ Start with v0 for component-level work, then add other tools to your workflow as
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/ai-tools-for-converting-figma-designs-to-code-2026/)
 - [How to Use Claude Artifacts](/ai-tools-compared/how-to-use-claude-artifacts-for-rapid-prototyping-react-components/)

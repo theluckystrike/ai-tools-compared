@@ -362,7 +362,7 @@ Split long videos into chunks before submission. Use ffmpeg to cut at silence bo
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Video Compression: A Developer Guide](/ai-tools-compared/ai-tools-for-video-compression/)
 - [Kling AI vs Gen 3 Video Generation: Developer Comparison](/ai-tools-compared/kling-ai-vs-gen-3-video-generation/)

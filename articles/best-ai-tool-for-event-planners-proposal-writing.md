@@ -271,7 +271,7 @@ Use AI to handle repetitive elements, accelerate research, and polish your writi
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)

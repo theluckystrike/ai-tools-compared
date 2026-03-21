@@ -345,7 +345,7 @@ Ask AI: "Optimize this CloudFormation template for cost while maintaining the sa
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
 - [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)

@@ -352,7 +352,7 @@ HIPAA requires audit logs to capture who accessed what and when, but does not sp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)
 - [Best Practices for AI Coding Tools](/ai-tools-compared/best-practices-for-ai-coding-tools-in-sox-compliant-financial-environments/)

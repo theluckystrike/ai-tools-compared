@@ -364,7 +364,7 @@ Avoid future build breaks with these practices:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor Multi-File Edit Breaking Code Fix (2026)](/ai-tools-compared/cursor-multi-file-edit-breaking-code-fix-2026/)
 - [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)

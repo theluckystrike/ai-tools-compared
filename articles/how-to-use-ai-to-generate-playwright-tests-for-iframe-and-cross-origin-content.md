@@ -400,7 +400,7 @@ await page.frameLocator('iframe').getByRole('button').click();
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Debug CORS Errors in Cross-Origin API Reque](/ai-tools-compared/how-to-use-ai-to-debug-cors-errors-in-cross-origin-api-reque/)
 - [How to Use AI to Generate Playwright Authentication Flow Tes](/ai-tools-compared/how-to-use-ai-to-generate-playwright-authentication-flow-tes/)

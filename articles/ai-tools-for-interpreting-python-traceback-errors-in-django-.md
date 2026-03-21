@@ -360,7 +360,7 @@ Then use AI to interpret the debug output and identify which middleware is causi
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)

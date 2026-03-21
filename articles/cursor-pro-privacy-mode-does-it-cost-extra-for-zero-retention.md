@@ -340,7 +340,7 @@ sudo lsof -r 2 -i TCP -n -P | grep -i cursor
 
 
 
-## Related Articles
+## Related Reading
 
 - [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
 - [Cursor AI Privacy Mode How to Use AI Features Without Sendin](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)

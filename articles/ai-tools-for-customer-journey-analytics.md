@@ -243,7 +243,7 @@ Build dashboards that surface these metrics to product and marketing teams. The 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Designers Writing User Journey Maps](/ai-tools-compared/best-ai-assistant-for-designers-writing-user-journey-maps-fr/)
 - [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)

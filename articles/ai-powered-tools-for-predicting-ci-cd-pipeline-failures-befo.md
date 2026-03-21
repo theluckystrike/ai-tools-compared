@@ -303,7 +303,7 @@ Aim for high recall (catch most failures) even if it means some false positives.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Effective Strategies for AI Assisted Debugging of](/ai-tools-compared/effective-strategies-for-ai-assisted-debugging-of-intermittent-failures/)
 - [How to Use AI for Predicting Infrastructure Scaling Needs](/ai-tools-compared/how-to-use-ai-for-predicting-infrastructure-scaling-needs-au/)

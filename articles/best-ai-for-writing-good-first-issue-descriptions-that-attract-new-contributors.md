@@ -292,7 +292,7 @@ Good first issues attract contributors. Bad ones waste everyone's time. AI tools
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)
 - [AI Tools for Writing App Store Descriptions 2026](/ai-tools-compared/ai-tools-for-writing-app-store-descriptions-2026/)

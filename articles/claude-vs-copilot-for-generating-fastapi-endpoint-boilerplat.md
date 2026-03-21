@@ -348,7 +348,7 @@ Copilot runs $10-19/month as a flat subscription regardless of usage. Claude API
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Claude for Generating Java Spring Boot](/ai-tools-compared/copilot-vs-claude-for-generating-java-spring-boot-applicatio/)
 - [How to Generate Mermaid Sequence Diagrams from API Endpoint](/ai-tools-compared/how-to-generate-mermaid-sequence-diagrams-from-api-endpoint-descriptions-using-ai/)

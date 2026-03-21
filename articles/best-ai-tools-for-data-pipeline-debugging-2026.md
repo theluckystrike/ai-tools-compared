@@ -351,7 +351,7 @@ dbt Cloud AI is included in dbt Cloud Pro ($100/month) and higher plans.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use Claude for Debugging Failed CI/CD Pipeline Logs](/ai-tools-compared/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)
 - [How to Use AI to Build Data Pipeline Retry and Dead Letter](/ai-tools-compared/how-to-use-ai-to-build-data-pipeline-retry-and-dead-letter-2/)

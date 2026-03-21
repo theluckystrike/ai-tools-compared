@@ -397,7 +397,7 @@ Choose your AI tool based on configuration complexity:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
 - [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)

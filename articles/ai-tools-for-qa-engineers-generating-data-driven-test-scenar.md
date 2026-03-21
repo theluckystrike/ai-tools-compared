@@ -378,7 +378,7 @@ Iterate on the generated tests by running them against your codebase. Identify g
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Workflow for AI-Assisted Test Driven Development Step](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
 - [How to Use AI to Help Product Managers Write Data-Driven Fea](/ai-tools-compared/how-to-use-ai-to-help-product-managers-write-data-driven-fea/)

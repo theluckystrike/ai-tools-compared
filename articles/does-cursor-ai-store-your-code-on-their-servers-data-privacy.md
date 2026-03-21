@@ -255,7 +255,7 @@ The key takeaway: Cursor AI stores your code on their servers for processing, bu
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Privacy Mode How to Use AI Features Without Sendin](/ai-tools-compared/cursor-ai-privacy-mode-how-to-use-ai-features-without-sendin/)
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)

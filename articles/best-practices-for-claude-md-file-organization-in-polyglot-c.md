@@ -328,7 +328,7 @@ Add a documentation update checklist to your code review process:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Practices for Writing .cursorrules File That Improves](/ai-tools-compared/best-practices-for-writing-cursorrules-file-that-improves-co/)
 - [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)

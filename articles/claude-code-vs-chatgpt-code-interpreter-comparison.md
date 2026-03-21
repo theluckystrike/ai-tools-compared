@@ -317,7 +317,7 @@ The practical ceiling for Code Interpreter is roughly what fits in a single cont
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT Code Interpreter Not Running Python: Fixes and Fix](/ai-tools-compared/chatgpt-code-interpreter-not-running-python-fix/)
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)

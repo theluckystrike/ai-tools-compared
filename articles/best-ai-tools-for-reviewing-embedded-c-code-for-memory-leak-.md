@@ -412,7 +412,7 @@ Claude correctly identifies cache coherency issues on cached architectures. Chat
 
 
 
-## Related Articles
+## Related Reading
 
 - [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)
 - [AI Tools for Writing SPI Flash External Memory Driver.](/ai-tools-compared/ai-tools-for-writing-spi-flash-external-memory-driver-code-f/)

@@ -310,7 +310,7 @@ midjourney_savings("Standard", 12)
 
 
 
-## Related Articles
+## Related Reading
 
 - [Windsurf Pro Annual vs Monthly Pricing Actual Savings](/ai-tools-compared/windsurf-pro-annual-vs-monthly-pricing-actual-savings-calculated/)
 - [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)

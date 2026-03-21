@@ -364,7 +364,7 @@ This ensures new code matches your project's conventions perfectly.
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 - [AI Coding Assistants for TypeScript Express Middleware Chain](/ai-tools-compared/ai-coding-assistants-for-typescript-express-middleware-chain/)

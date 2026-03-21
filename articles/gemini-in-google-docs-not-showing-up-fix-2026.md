@@ -299,7 +299,7 @@ Alternatively, submit feedback directly to Google through Help → Help Docs imp
 
 
 
-## Related Articles
+## Related Reading
 
 - [Notion AI vs Google Docs AI: Complete Writing Features](/ai-tools-compared/notion-ai-writing-features-vs-google-docs-ai-compared/)
 - [Gemini AI Giving Wrong Answers: Debugging Tips and Fixes](/ai-tools-compared/gemini-ai-giving-wrong-answers-debugging-tips/)

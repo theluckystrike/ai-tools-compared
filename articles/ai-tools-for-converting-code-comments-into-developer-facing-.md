@@ -236,7 +236,7 @@ Many tools integrate directly with documentation hosting platforms, automaticall
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [AI Tools for Converting Figma Designs to Code 2026](/ai-tools-compared/ai-tools-for-converting-figma-designs-to-code-2026/)

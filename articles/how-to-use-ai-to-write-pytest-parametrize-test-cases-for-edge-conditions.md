@@ -284,7 +284,7 @@ This workflow reduces the manual effort of identifying edge cases while ensuring
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Write pytest Parametrize Test Cases for Edg](/ai-tools-compared/how-to-use-ai-to-write-pytest-parametrize-test-cases-for-edg/)
 - [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)

@@ -397,7 +397,7 @@ When rolling out Cursor rules across a team, start with minimal rules focused on
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)

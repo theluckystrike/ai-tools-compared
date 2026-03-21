@@ -509,7 +509,7 @@ bash -x script.sh  # Trace mode to see every command
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
 - [Which AI Writes Better PowerShell Scripts for Windows Server](/ai-tools-compared/which-ai-writes-better-powershell-scripts-for-windows-server/)

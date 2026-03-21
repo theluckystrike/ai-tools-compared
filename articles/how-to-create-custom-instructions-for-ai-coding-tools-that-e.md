@@ -275,7 +275,7 @@ Share your instructions with team members so everyone benefits from consistent A
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)
 - [ChatGPT Custom GPT Not Following Instructions](/ai-tools-compared/chatgpt-custom-gpt-not-following-instructions/)

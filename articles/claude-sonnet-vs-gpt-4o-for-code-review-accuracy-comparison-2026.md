@@ -505,7 +505,7 @@ The combination of Claude and GPT-4o provides coverage that exceeds what either 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Sonnet vs GPT-4o for Code Generation: Practical](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-generation/)
 - [Switching from GPT-4o to Claude Sonnet for Code Review.](/ai-tools-compared/switching-from-gpt-4o-to-claude-sonnet-for-code-review-which/)

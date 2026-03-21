@@ -264,7 +264,7 @@ Always review generated tests and adjust timeouts based on your actual applicati
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Playwright Tests That Verify Accessibil](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)

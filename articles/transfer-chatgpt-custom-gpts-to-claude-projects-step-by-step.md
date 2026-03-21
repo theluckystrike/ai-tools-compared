@@ -272,7 +272,7 @@ This script automates the folder creation and file copying, letting you focus on
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Migrate ChatGPT Plugins](/ai-tools-compared/migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/)
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)

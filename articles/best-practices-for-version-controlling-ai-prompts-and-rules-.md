@@ -254,7 +254,7 @@ Version controlling AI prompts and rules files transforms them from ephemeral te
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating Semver Version Bump Recommendations](/ai-tools-compared/ai-tools-for-generating-semver-version-bump-recommendations-/)
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)

@@ -476,7 +476,7 @@ This level of specificity typically cuts the time spent editing AI-generated tes
 
 
 
-## Related Articles
+## Related Reading
 
 - [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
 - [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)

@@ -441,7 +441,7 @@ Some AI tools require a restart after adding MCP server configuration. Close and
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up Model Context Protocol Server for Internal Pac](/ai-tools-compared/how-to-set-up-model-context-protocol-server-for-internal-pac/)
 - [How to Set Up Model Context Protocol Server Providing Live](/ai-tools-compared/how-to-set-up-model-context-protocol-server-providing-live-d/)

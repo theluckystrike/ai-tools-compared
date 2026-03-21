@@ -309,7 +309,7 @@ Both teams benefit from starting simple and adding complexity only when you have
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-github-actions-workflows/)

@@ -265,7 +265,7 @@ Understanding your consumption patterns helps you schedule long-output tasks dur
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT vs Claude for Writing Effective Celery Task Error](/ai-tools-compared/chatgpt-vs-claude-for-writing-effective-celery-task-error-ha/)
 - [AI Tools for Converting Raw JSON API Responses into Clean](/ai-tools-compared/ai-tools-for-converting-raw-json-api-responses-into-clean-pandas-dataframes/)

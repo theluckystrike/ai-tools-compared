@@ -345,7 +345,7 @@ These require manual knowledge and experience. AI can generate the skeleton, but
 This hybrid approach gives you Claude's accuracy on initial setup with IDE-based speed for iterations.
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 - [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)

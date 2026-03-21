@@ -302,7 +302,7 @@ Try creating a new TypeScript file in your project. If completions work in new f
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
 - [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)

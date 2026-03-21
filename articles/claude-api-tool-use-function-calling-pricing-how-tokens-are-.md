@@ -268,7 +268,7 @@ Understanding these mechanics enables you to build applications that use Claude'
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude API Extended Thinking: How Output Tokens Are Billed](/ai-tools-compared/claude-api-extended-thinking-cost-how-output-tokens-are-bill/)
 - [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)

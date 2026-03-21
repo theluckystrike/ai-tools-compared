@@ -346,7 +346,7 @@ Claude Code billing is usage-based through the Max subscription. Heavy users can
 
 
 
-## Related Articles
+## Related Reading
 
 - [Using Claude Code for Backend and Cursor for Frontend Same P](/ai-tools-compared/using-claude-code-for-backend-and-cursor-for-frontend-same-p/)
 - [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)

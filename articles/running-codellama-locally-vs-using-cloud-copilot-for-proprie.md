@@ -240,7 +240,7 @@ The good news is these options aren't mutually exclusive. Some developers use Co
 
 
 
-## Related Articles
+## Related Reading
 
 - [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
 - [Running Starcoder2 Locally for Code Completion Without](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)

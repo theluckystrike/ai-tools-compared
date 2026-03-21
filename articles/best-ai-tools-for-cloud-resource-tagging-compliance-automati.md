@@ -470,7 +470,7 @@ variable "cost_center" {
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)
 - [Best AI Tools for Automated Compliance Reporting for Cloud](/ai-tools-compared/best-ai-tools-for-automated-compliance-reporting-for-cloud-i/)

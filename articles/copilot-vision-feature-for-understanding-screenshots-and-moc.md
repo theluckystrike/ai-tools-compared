@@ -315,7 +315,7 @@ Finally, validate generated code before deploying. Copilot Vision produces worki
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)
 - [Copilot Next Edit Suggestion Feature How It Predicts Your In](/ai-tools-compared/copilot-next-edit-suggestion-feature-how-it-predicts-your-in/)

@@ -235,7 +235,7 @@ Many developers actually use both—Copilot for day-to-day coding in their edito
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)
 - [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)

@@ -364,7 +364,7 @@ Clear information dramatically speeds up support resolution.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Tool Use Loop Not Terminating Fix](/ai-tools-compared/claude-code-tool-use-loop-not-terminating-fix/)
 - [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)

@@ -488,7 +488,7 @@ After Claude generates your spec, verify:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
 - [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)

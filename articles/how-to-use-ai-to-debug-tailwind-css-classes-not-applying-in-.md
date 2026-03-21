@@ -289,7 +289,7 @@ AI tools should guide you through this systematically, asking clarifying questio
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistant Comparison for TypeScript Tailwind CSS](/ai-tools-compared/ai-coding-assistant-comparison-for-typescript-tailwind-css-c/)
 - [ChatGPT vs Gemini for Generating Tailwind CSS from Hand Draw](/ai-tools-compared/chatgpt-vs-gemini-for-generating-tailwind-css-from-hand-draw/)

@@ -338,7 +338,7 @@ By implementing these strategies with Claude Code's assistance, you can evolve y
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)

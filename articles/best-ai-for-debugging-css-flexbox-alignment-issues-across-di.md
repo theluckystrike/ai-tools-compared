@@ -474,7 +474,7 @@ Most developers find success combining tools: use Copilot for daily coding, Clau
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Debugging Flaky Cypress Tests Caused by Timing](/ai-tools-compared/ai-tools-for-debugging-flaky-cypress-tests-caused-by-timing-issues/)
 - [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)

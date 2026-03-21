@@ -297,7 +297,7 @@ For multi-cloud infrastructure, Claude performs slightly better because it can u
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude vs Gpt4 Terraform Pulumi Infrastructure Code](/ai-tools-compared/claude-vs-gpt4-terraform-pulumi-infrastructure-code-2026/)
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)

@@ -283,7 +283,7 @@ Ignoring language differences: Error handling patterns differ between languages.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)
 - [How to Write Custom Instructions That Make AI Respect Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-respect-your-api-rate-limit-patterns/)

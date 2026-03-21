@@ -317,7 +317,7 @@ The best results come from combining AI generation with manual review. AI handle
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating API Client SDKs 2026](/ai-tools-compared/ai-tools-for-generating-api-client-sdks-2026/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)

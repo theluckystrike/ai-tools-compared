@@ -421,7 +421,7 @@ These comprehensive tests ensure background jobs are robust, observable, and han
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Writing pytest Tests for Pydantic Mode](/ai-tools-compared/best-ai-assistant-for-writing-pytest-tests-for-pydantic-mode/)
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)

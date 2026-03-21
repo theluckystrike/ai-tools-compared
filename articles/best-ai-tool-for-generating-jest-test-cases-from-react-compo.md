@@ -312,7 +312,7 @@ For teams maintaining large component libraries, the time invested in generating
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Creating Property-Based Test Cases](/ai-tools-compared/ai-tools-for-creating-property-based-test-cases-using-hypoth/)
 - [Best AI for Creating Negative Test Cases](/ai-tools-compared/best-ai-for-creating--negative-test-cases-from-/)

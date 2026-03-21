@@ -331,7 +331,7 @@ Regularly assess AI systems for bias, accuracy, and effectiveness. Student needs
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT Edu Pricing Per Student: How Schools Get Volume](/ai-tools-compared/chatgpt-edu-pricing-per-student-how-schools-get-volume-disco/)
 - [AI Tools for Government Citizen Support](/ai-tools-compared/ai-tools-for-government-citizen-support/)

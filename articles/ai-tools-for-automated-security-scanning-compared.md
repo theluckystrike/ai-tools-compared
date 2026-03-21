@@ -367,7 +367,7 @@ Semgrep + CodeQL is the cheapest combo for teams under GitHub Advanced Security.
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
 - [AI Tools for Automating Cloud Security Compliance Scanning I](/ai-tools-compared/ai-tools-for-automating-cloud-security-compliance-scanning-i/)

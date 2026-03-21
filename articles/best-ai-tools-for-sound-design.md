@@ -239,7 +239,7 @@ The AI sound design landscape evolves rapidly. New models and services appear mo
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)
 - [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)

@@ -319,7 +319,7 @@ When AI tools can see exactly what you're importing, they suggest those specific
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Get AI Code Suggestions That Follow Your Project](/ai-tools-compared/how-to-get-ai-code-suggestions-that-follow-your-project-naming-conventions/)
 - [Cheapest Way to Get AI Autocomplete in Neovim 2026](/ai-tools-compared/cheapest-way-to-get-ai-autocomplete-in-neovim-2026/)

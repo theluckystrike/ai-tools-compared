@@ -339,7 +339,7 @@ Success story: Maintainer managing 3 projects with 50K combined stars using only
 
 
 
-## Related Articles
+## Related Reading
 
 - [GitHub Copilot Free Tier Hidden Limits You Should Know 2026](/ai-tools-compared/github-copilot-free-tier-hidden-limits-you-should-know-2026/)
 - [Continue Dev vs GitHub Copilot: Open Source Comparison](/ai-tools-compared/continue-dev-vs-github-copilot-open-source-comparison/)

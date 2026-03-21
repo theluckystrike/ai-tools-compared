@@ -295,7 +295,7 @@ Refresh whenever your schema changes through migrations. Stale fixtures are one 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Generate Realistic Test Data for Postgres](/ai-tools-compared/how-to-use-ai-to-generate-realistic-test-data-for-postgres-d/)
 - [AI Tools for Creating Boundary Value Test Case](/ai-tools-compared/ai-tools-for-creating--boundary-value-test-case/)

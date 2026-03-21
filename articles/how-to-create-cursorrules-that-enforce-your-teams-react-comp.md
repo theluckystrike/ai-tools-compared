@@ -285,7 +285,7 @@ interface ButtonProps {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)
 - [Create CursorRules That Teach Cursor Your Team's State](/ai-tools-compared/how-to-create-cursorrules-that-teach-cursor-your-teams-state/)

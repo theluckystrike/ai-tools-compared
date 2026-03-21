@@ -243,7 +243,7 @@ if (price !== null) {
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 - [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)

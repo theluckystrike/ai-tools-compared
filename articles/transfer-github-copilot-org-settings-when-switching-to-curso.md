@@ -456,7 +456,7 @@ cursor org:disable --all-teams
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)
 - [Copilot Business Org-Wide Enable: Cost If Not All Devs Use](/ai-tools-compared/copilot-business-org-wide-enable-cost-if-not-all-devs-use-it/)

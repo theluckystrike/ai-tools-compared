@@ -281,7 +281,7 @@ For ESLint rule development, Claude handles complex AST manipulation, maintains 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)

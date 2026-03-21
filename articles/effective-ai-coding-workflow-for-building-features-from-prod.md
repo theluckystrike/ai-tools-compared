@@ -268,7 +268,7 @@ Building features from product requirements documents doesn't have to be a painf
 
 
 
-## Related Articles
+## Related Reading
 
 - [Effective Tool Chaining Workflow Using Copilot and Claude](/ai-tools-compared/effective-tool-chaining-workflow-using-copilot-and-claude-together-for-coding/)
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)

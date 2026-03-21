@@ -324,7 +324,7 @@ Track these metrics to evaluate your AI onboarding tools:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Employee Onboarding Tools Comparison 2026: A Developer's Guide](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)
 - [AI Tools for Devrel Teams Creating Developer Onboarding Chec](/ai-tools-compared/ai-tools-for-devrel-teams-creating-developer-onboarding-chec/)

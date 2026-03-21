@@ -311,7 +311,7 @@ Run tests immediately after generation to verify they pass. Check both positive 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Creating Playwright Tests for Table](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)
 - [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)

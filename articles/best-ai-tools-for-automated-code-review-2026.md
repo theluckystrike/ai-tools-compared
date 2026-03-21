@@ -397,7 +397,7 @@ Automated code review works best as one layer in a quality strategy. Pair with h
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [How to Use AI for Automated Code Migration](/ai-tools-compared/how-to-use-ai-for-automated-code-migration/)

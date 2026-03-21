@@ -330,7 +330,7 @@ Copilot uses GitHub's repository context to understand patterns from similar pro
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Generation Quality for JavaScript Async Await Patter](/ai-tools-compared/ai-code-generation-quality-for-javascript-async-await-patter/)
 - [AI Autocomplete Accuracy Comparison: Copilot vs Codeium Vs](/ai-tools-compared/ai-autocomplete-accuracy-comparison-copilot-vs-codeium-vs-ta/)

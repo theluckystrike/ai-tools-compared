@@ -285,7 +285,7 @@ Government AI implementation succeeds when it augments staff capabilities rather
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)
 - [AI Tools for Multilingual Customer Support](/ai-tools-compared/ai-tools-for-multilingual-customer-support/)

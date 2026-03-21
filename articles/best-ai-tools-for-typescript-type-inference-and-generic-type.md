@@ -331,7 +331,7 @@ The best approach when learning TypeScript generics is to use AI tools not just 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)

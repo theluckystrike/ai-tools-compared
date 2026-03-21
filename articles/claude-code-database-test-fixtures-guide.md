@@ -318,7 +318,7 @@ Finally, document edge cases. When fixtures require special handling, add commen
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating pytest Fixtures from Database](/ai-tools-compared/ai-tools-for-generating-pytest-fixtures-from-database-schema/)
 - [AI Tools for Creating Test Data Snapshots for Database](/ai-tools-compared/ai-tools-for-creating-test-data-snapshots-for-database-rollback-between-test-runs/)

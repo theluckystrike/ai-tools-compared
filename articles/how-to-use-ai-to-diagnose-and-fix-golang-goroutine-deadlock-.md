@@ -345,7 +345,7 @@ func printAllGoroutines() {
 
 
 
-## Related Articles
+## Related Reading
 
 - [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 - [Best AI Coding Tool for Golang Developers 2026](/ai-tools-compared/best-ai-coding-tool-for-golang-developers-2026/)

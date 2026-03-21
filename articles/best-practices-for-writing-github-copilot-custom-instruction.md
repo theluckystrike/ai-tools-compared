@@ -252,7 +252,7 @@ Use version control for your instruction files. Track changes and review modific
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 - [How to Use Copilot for Writing CI CD Pipelines in GitHub Act](/ai-tools-compared/how-to-use-copilot-for-writing-ci-cd-pipelines-in-github-act/)

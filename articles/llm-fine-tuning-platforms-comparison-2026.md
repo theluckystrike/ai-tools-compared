@@ -402,7 +402,7 @@ Fine-tuning becomes cost-effective when you hit 10,000+ monthly inferences on a 
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)
 - [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)

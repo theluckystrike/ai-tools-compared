@@ -245,7 +245,7 @@ Finally, use MSW's request matching capabilities to create dynamic responses bas
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)
 - [AI Tools for Generating API Mock Servers 2026](/ai-tools-compared/ai-tools-for-generating-api-mock-servers-2026/)

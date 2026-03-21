@@ -439,7 +439,7 @@ custom_checks =
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Set Up AI Assisted Code Review Directly Inside Your](/ai-tools-compared/how-to-set-up-ai-assisted-code-review-directly-inside-your-ide/)
 - [Best Practices for Combining AI Code Generation](/ai-tools-compared/best-practices-for-combining-ai-code-generation-with-manual-code-review/)

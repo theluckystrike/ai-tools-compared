@@ -297,7 +297,7 @@ Document solutions. Build an internal knowledge base of CrashLoopBackOff resolut
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Troubleshoot Kubernetes Pod Crashloopbackof](/ai-tools-compared/how-to-use-ai-to-troubleshoot-kubernetes-pod-crashloopbackof/)
 - [How to Use AI to Diagnose and Fix Golang Goroutine Deadlock](/ai-tools-compared/how-to-use-ai-to-diagnose-and-fix-golang-goroutine-deadlock-/)

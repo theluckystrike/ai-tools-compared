@@ -345,7 +345,7 @@ Any capable LLM works well. The key is structure: extract findings into a clean 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
 - [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)

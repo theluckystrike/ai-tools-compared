@@ -238,7 +238,7 @@ Regular assessment helps you maintain balance and identify when dependency is in
 
 
 
-## Related Articles
+## Related Reading
 
 - [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)
 - [How to Reduce AI Coding Tool Costs Without Losing](/ai-tools-compared/how-to-reduce-ai-coding-tool-costs-without-losing-productivi/)

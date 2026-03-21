@@ -305,7 +305,7 @@ This approach scales with your release frequency and team size, making it practi
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Product Managers Converting Customer](/ai-tools-compared/ai-tools-for-product-managers-converting-customer-interview-/)
 - [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)

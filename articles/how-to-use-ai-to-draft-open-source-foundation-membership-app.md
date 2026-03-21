@@ -449,7 +449,7 @@ Before submitting AI-drafted applications:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Draft RFC Documents for Proposed Open](/ai-tools-compared/how-to-use-ai-to-draft-rfc-documents-for-proposed-open-source-feature-changes/)
 - [AI Tools for Analyzing Which Open Source Issues Would Benefi](/ai-tools-compared/ai-tools-for-analyzing-which-open-source-issues-would-benefi-from-contributions/)

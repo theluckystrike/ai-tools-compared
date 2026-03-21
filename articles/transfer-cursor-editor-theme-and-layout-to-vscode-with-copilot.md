@@ -383,7 +383,7 @@ Copilot generates complete, context-aware code that follows best practices.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Migrate VSCode Copilot Keybindings](/ai-tools-compared/migrate-vscode-copilot-keybindings-to-cursor-ai-editor-2026/)
 - [How to Transfer Copilot Code Review Settings](/ai-tools-compared/transfer-copilot-code-review-settings-to-cursor-ai-review-co/)

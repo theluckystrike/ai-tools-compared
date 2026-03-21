@@ -339,7 +339,7 @@ Some teams annotate AI-generated functions with a comment like `# generated: cla
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
 - [Best Practices for Documenting AI-Generated Code for Future](/ai-tools-compared/best-practices-for-documenting-ai-generated-code-for-future-/)

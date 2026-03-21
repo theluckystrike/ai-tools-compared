@@ -370,7 +370,7 @@ Ask AI to help maintain this balance by generating test suites that cover real-w
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)
 - [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)

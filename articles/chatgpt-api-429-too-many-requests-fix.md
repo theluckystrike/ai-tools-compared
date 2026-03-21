@@ -348,7 +348,7 @@ Track these metrics to identify patterns in when rate limits occur and adjust ac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
 - [Cursor Pro Usage Cap: How Many Requests Per Day in 2026](/ai-tools-compared/cursor-pro-usage-cap-how-many-requests-per-day-2026/)

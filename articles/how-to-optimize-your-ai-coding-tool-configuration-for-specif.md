@@ -275,7 +275,7 @@ Avoid these frequent mistakes when optimizing AI coding tool settings:
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Optimize AI Coding Prompts for Generating Production](/ai-tools-compared/how-to-optimize-ai-coding-prompts-for-generating-production-ready-error-handling/)
 - [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)

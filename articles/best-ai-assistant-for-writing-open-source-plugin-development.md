@@ -524,7 +524,7 @@ Claude typically scores 9-10/10 on this checklist. ChatGPT Plus scores 7-8/10. G
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)
 - [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)

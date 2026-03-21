@@ -286,7 +286,7 @@ This approach ensures Claude Code maintains context awareness across different p
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code for Memory Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-memory-profiling-workflow-tutorial/)
 - [Best Way to Configure Claude Code to Understand Your Interna](/ai-tools-compared/best-way-to-configure-claude-code-to-understand-your-interna/)

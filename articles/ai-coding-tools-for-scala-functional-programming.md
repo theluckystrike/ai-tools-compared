@@ -387,7 +387,7 @@ AI tools can produce code that compiles but violates Scala style conventions or 
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)

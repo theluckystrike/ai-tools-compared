@@ -361,7 +361,7 @@ The key factor is choosing a tool that understands Go's ecosystem and the specif
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing pytest Tests for Click or Typer CLI Com](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-click-or-typer-cli-com/)
 - [AI Pair Programming Tools for C# and .NET Development](/ai-tools-compared/ai-pair-programming-tools-for-c-sharp-dotnet/)

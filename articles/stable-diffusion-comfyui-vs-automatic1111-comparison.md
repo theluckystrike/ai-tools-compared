@@ -272,7 +272,7 @@ For hobbyists on local hardware, both are free once initial setup completes.
 
 
 
-## Related Articles
+## Related Reading
 
 - [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
 - [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)

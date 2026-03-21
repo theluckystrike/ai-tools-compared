@@ -284,7 +284,7 @@ The combination of clear diagram preparation, detailed prompts, careful code rev
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Infrastructure as Code Pulumi 2026](/ai-tools-compared/ai-tools-for-writing-infrastructure-as-code-pulumi-2026/)
 - [AI Tools for Writing Terraform Infrastructure-as-Code](/ai-tools-compared/ai-tools-for-writing-terraform-infrastructure-as-code-comparison-2026/)

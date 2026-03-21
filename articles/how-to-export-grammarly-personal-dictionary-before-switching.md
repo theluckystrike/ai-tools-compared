@@ -365,7 +365,7 @@ Run this weekly or monthly to keep your dictionary safe.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Switching from Grammarly to ChatGPT for Editing Workflow Mig](/ai-tools-compared/switching-from-grammarly-to-chatgpt-for-editing-workflow-mig/)
 - [Export Perplexity Collections Before Switching to ChatGPT Se](/ai-tools-compared/export-perplexity-collections-before-switching-to-chatgpt-se/)

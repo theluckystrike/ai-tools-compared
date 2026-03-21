@@ -394,7 +394,7 @@ The optimal AI-assisted Kubernetes workflow combines speed (Copilot/Cursor), con
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
 - [Claude vs ChatGPT for Writing Kubernetes Helm Chart Values](/ai-tools-compared/claude-vs-chatgpt-for-writing-kubernetes-helm-chart-values-f/)

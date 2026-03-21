@@ -339,7 +339,7 @@ If memory and Custom GPTs are consuming your entire quota:
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT Team Admin Seat Does Admin Count Toward Billing Seat](/ai-tools-compared/chatgpt-team-admin-seat-does-admin-count-toward-billing-seat/)
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)

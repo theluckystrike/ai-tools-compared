@@ -305,7 +305,7 @@ When the answer to these questions is yes, your search-and-generate workflow is 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)

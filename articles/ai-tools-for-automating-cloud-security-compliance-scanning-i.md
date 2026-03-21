@@ -400,7 +400,7 @@ Track these metrics to understand your compliance program's effectiveness:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Container Security Scanning](/ai-tools-compared/ai-container-security-scanning/)
 - [AI Tools for Automated Security Scanning Compared](/ai-tools-compared/ai-tools-for-automated-security-scanning-compared/)

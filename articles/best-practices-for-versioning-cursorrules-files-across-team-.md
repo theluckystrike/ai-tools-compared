@@ -366,7 +366,7 @@ Yes, and it is worth doing. Rules like "never suggest storing secrets in environ
 
 
 
-## Related Articles
+## Related Reading
 
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 - [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)

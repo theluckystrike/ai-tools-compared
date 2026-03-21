@@ -490,7 +490,7 @@ This pipeline check ensures that any changes to Claude Code configuration mainta
 
 
 
-## Related Articles
+## Related Reading
 
 - [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)
 - [Claude Code Terminal Permission Denied Fix](/ai-tools-compared/claude-code-terminal-permission-denied-fix/)

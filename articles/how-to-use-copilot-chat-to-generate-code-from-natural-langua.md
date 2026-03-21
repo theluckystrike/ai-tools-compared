@@ -329,7 +329,7 @@ Generated code may occasionally use outdated patterns or deprecated APIs. Check 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)

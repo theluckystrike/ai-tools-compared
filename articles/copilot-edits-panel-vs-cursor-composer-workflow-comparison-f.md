@@ -256,7 +256,7 @@ Both tools continue to evolve, and the gap in capabilities may narrow over time.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)

@@ -274,7 +274,7 @@ AI tools for Ansible development have specific limitations:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Which AI Writes Better Ansible Playbooks Copilot or Claude C](/ai-tools-compared/which-ai-writes-better-ansible-playbooks-copilot-or-claude-c/)
 - [How to Use AI for Writing Effective Runbooks and Incident](/ai-tools-compared/how-to-use-ai-for-writing-effective-runbooks-and-incident-playbooks/)

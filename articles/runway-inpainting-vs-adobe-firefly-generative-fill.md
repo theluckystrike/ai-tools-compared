@@ -448,7 +448,7 @@ benchmark.print_benchmark_report()
 
 
 
-## Related Articles
+## Related Reading
 
 - [Canva AI vs Adobe Firefly: Design Tool Compared](/ai-tools-compared/canva-ai-vs-adobe-firefly-design-tool-compared/)
 - [Adobe Photoshop AI vs Canva Magic Eraser Compared](/ai-tools-compared/adobe-photoshop-ai-vs-canva-magic-eraser-compared/)

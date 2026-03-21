@@ -391,7 +391,7 @@ When adopting Casetext firm-wide:
 5. **Feedback loops:** Encourage attorneys to report cases where CoCounsel's analysis was particularly valuable or problematic
 
 
-## Related Articles
+## Related Reading
 
 - [Legal Research AI Tools: Best Options for Attorneys in 2026](/ai-tools-compared/legal-research-ai-tools-best-options-for-attorneys-2026/)
 - [Clio AI Legal Practice Management Review 2026](/ai-tools-compared/clio-ai-legal-practice-management-review-2026/)

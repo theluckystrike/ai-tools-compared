@@ -280,7 +280,7 @@ Training your AI coding assistant on team standards requires initial effort, but
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Manage AI Coding Tool Rate Limits Across Team of](/ai-tools-compared/how-to-manage-ai-coding-tool-rate-limits-across-team-of-developers/)
 - [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)

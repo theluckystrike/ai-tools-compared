@@ -321,7 +321,7 @@ If you're hitting limits with your current tier, prioritize using advanced model
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Apply Model How It Merges Generated Code into Exis](/ai-tools-compared/cursor-ai-apply-model-how-it-merges-generated-code-into-exis/)
 - [Cursor Pro Slow Model vs Fast Model Credits How It Works](/ai-tools-compared/cursor-pro-slow-model-vs-fast-model-credits-how-it-works/)

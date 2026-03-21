@@ -260,7 +260,7 @@ Output only the HTML markup without additional explanation.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Write System Prompts for AI Coding Assistants Project](/ai-tools-compared/how-to-write-system-prompts-for-ai-coding-assistants-project/)
 - [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)

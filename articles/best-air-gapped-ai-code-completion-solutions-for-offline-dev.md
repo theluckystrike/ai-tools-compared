@@ -257,7 +257,7 @@ Consider hybrid approaches: Some tools offer partial offline mode where basic co
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)

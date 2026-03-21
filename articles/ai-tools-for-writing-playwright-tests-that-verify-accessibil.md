@@ -319,7 +319,7 @@ Maintain Test Suites: Accessibility standards evolve. Use AI to help update exis
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Playwright Tests That Verify Responsive](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 - [AI Tools for Writing Playwright Tests That Verify Toast Noti](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-toast-noti/)

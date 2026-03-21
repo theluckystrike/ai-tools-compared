@@ -427,7 +427,7 @@ Solution: Ensure your normalization handles all dynamic data sources. Work with 
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)
 - [Claude Code Screen Reader Testing Workflow](/ai-tools-compared/claude-code-screen-reader-testing-workflow/)

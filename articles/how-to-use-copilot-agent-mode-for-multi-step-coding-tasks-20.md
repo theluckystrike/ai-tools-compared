@@ -237,7 +237,7 @@ Agent mode represents a significant evolution in AI-assisted development. By und
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Background Agent Feature for Autonomous Multi Step](/ai-tools-compared/cursor-ai-background-agent-feature-for-autonomous-multi-step/)
 - [Best Practices for Breaking Down Complex Coding Tasks](/ai-tools-compared/best-practices-for-breaking-down-complex-coding-tasks-for-ai/)

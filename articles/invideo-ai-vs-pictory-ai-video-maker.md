@@ -312,7 +312,7 @@ For developers building video automation systems, InVideo's template API offers 
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Presentation Maker Chrome Extension](/ai-tools-compared/ai-presentation-maker-chrome-extension/)
 - [AI Tools for Video Accessibility Features](/ai-tools-compared/ai-tools-for-video-accessibility-features/)

@@ -430,7 +430,7 @@ Treat your Claude.md file as a living document that evolves with your project.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best Way to Structure CursorRules for Microservices Project](/ai-tools-compared/best-way-to-structure-cursorrules-for-microservices-project-/)
 - [AI Tools for Interpreting Python Traceback Errors](/ai-tools-compared/ai-tools-for-interpreting-python-traceback-errors-in-django-middleware-chains/)

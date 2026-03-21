@@ -372,7 +372,7 @@ Most developers benefit from VSCode for web development and JetBrains for backen
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)

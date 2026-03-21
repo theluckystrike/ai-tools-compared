@@ -338,7 +338,7 @@ Both implementations accomplish the same task, but the development experience di
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Coding Assistants for Typescript Deno Fresh Framework Com](/ai-tools-compared/ai-coding-assistants-for-typescript-deno-fresh-framework-com/)
 - [Best AI Tools for Rust Web Development with Axum Framework](/ai-tools-compared/best-ai-tools-for-rust-web-development-with-axum-framework-2/)

@@ -484,7 +484,7 @@ export default defineConfig({
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code Semantic Versioning Automation: A Complete Guide](/ai-tools-compared/claude-code-semantic-versioning-automation/)
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)

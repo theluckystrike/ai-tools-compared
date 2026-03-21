@@ -546,7 +546,7 @@ For new complex pipelines, start with Claude to establish the architecture and d
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Writing Nginx Configurations 2026](/ai-tools-compared/ai-tools-for-writing-nginx-configurations-2026/)
 - [AI Tools for Creating Mutation Testing Configurations](/ai-tools-compared/ai-tools-for-creating-mutation-testing-configurations-to-find-weak-test-assertions/)

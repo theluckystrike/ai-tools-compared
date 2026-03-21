@@ -314,7 +314,7 @@ Be precise. Cite regulatory article numbers. Do not summarize -- give actionable
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Policy Management Tools Enterprise Compliance](/ai-tools-compared/ai-policy-management-tools-enterprise-compliance-2026/)
 - [Cursor Pro Refund Policy Can You Get Money Back After Subscr](/ai-tools-compared/cursor-pro-refund-policy-can-you-get-money-back-after-subscr/)

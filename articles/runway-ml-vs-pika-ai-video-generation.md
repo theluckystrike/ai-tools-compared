@@ -308,7 +308,7 @@ Both platforms continue advancing rapidly—staying current with their release n
 
 
 
-## Related Articles
+## Related Reading
 
 - [Runway ML vs Pika Labs: AI Video Generation Comparison 2026](/ai-tools-compared/runway-ml-vs-pika-labs-ai-video-comparison-2026/)
 - [Sora vs Runway AI Video Generation: A Technical](/ai-tools-compared/sora-vs-runway-ai-video-generation/)

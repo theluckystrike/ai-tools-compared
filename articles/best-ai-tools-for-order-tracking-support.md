@@ -275,7 +275,7 @@ Consider your team's development expertise, expected query volume, and integrati
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Video Object Tracking](/ai-tools-compared/ai-tools-for-video-object-tracking/)
 - [AI Tools for Education Student Support](/ai-tools-compared/ai-tools-for-education-student-support/)

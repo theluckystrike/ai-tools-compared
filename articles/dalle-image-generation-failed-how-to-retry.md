@@ -263,7 +263,7 @@ DALL-E failures don't have to break your workflow. With proper error handling, r
 
 
 
-## Related Articles
+## Related Reading
 
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)

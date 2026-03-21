@@ -310,7 +310,7 @@ Test before abandoning: Keep Copilot accessible for a week while you adjust to C
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI Chat History Effectively for Iterating on Code](/ai-tools-compared/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)

@@ -275,7 +275,7 @@ When using AI-generated concurrency code, always verify: channel buffer sizes ar
 
 
 
-## Related Articles
+## Related Reading
 
 - [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
 - [Which AI Tool Generates Better Vue 3 Composition API](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)

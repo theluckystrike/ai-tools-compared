@@ -312,7 +312,7 @@ Maintain your generated seeds in version control alongside your models. Update s
 
 
 
-## Related Articles
+## Related Reading
 
 - [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
 - [Best AI for Writing dbt Macros That Generate Dynamic SQL Bas](/ai-tools-compared/best-ai-for-writing-dbt-macros-that-generate-dynamic-sql-bas/)

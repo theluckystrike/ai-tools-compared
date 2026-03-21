@@ -457,7 +457,7 @@ Integrate memory profiling into your development workflow:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code for Node.js Profiling Workflow Tutorial](/ai-tools-compared/claude-code-for-nodejs-profiling-workflow-tutorial/)
 - [Claude Code for Taint Analysis Workflow Tutorial Guide](/ai-tools-compared/claude-code-for-taint-analysis-workflow-tutorial-guide/)

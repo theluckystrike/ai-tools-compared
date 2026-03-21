@@ -389,7 +389,7 @@ Periodically review your snippet collection. Delete snippets you never use. Upda
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Move Copilot Suggested Code Patterns to Cursor](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippets/)
 - [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)

@@ -265,7 +265,7 @@ Use Claude for analysis and Copilot for implementation:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Effective AI Coding Workflow for Building Features from Prod](/ai-tools-compared/effective-ai-coding-workflow-for-building-features-from-prod/)
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)

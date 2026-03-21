@@ -313,7 +313,7 @@ Tools like Claude Code excel in this iterative loop because you can ask follow-u
 
 
 
-## Related Articles
+## Related Reading
 
 - [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 - [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)

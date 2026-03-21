@@ -248,7 +248,7 @@ Run tests after each atomic refactoring step. If tests pass, commit and proceed.
 
 
 
-## Related Articles
+## Related Reading
 
 - [Best AI Context Window Management Strategies for Large Codeb](/ai-tools-compared/best-ai-context-window-management-strategies-for-large-codeb/)
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)

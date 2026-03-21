@@ -310,7 +310,7 @@ Track documentation effectiveness by monitoring how quickly new team members bec
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 - [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attract-new-contributors/)

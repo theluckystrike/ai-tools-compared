@@ -369,7 +369,7 @@ Use this to improve our onboarding checklist.
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Help Devrel Teams Create Video Tutorial Scr](/ai-tools-compared/how-to-use-ai-to-help-devrel-teams-create-video-tutorial-scr/)
 - [AI Employee Onboarding Tools Comparison 2026: A Developer's Guide](/ai-tools-compared/ai-employee-onboarding-tools-comparison-2026/)

@@ -294,7 +294,7 @@ The AI recognized that the incoming changes moved discount logic to the model wh
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating Dependency Update Pull Request Descr](/ai-tools-compared/ai-tools-for-generating-dependency-update-pull-request-descr/)
 - [Best AI for Resolving Git Merge Conflict Markers in Complex](/ai-tools-compared/best-ai-for-resolving-git-merge-conflict-markers-in-complex-/)

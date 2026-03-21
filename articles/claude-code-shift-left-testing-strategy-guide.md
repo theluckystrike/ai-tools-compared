@@ -424,7 +424,7 @@ Track these metrics to evaluate your shift left testing implementation:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 - [Claude Code Parallel Testing Configuration - Complete](/ai-tools-compared/claude-code-parallel-testing-configuration/)

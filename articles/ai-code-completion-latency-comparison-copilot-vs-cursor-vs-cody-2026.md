@@ -290,7 +290,7 @@ Try this across 10-20 files in your codebase. Your results will vary from these 
 
 
 
-## Related Articles
+## Related Reading
 
 - [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)
 - [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)

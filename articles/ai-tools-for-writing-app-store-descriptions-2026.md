@@ -349,7 +349,7 @@ The most effective approach combines both: use general AI for creative generatio
 
 
 
-## Related Articles
+## Related Reading
 
 - [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
 - [Best AI for Writing Good First Issue Descriptions That](/ai-tools-compared/best-ai-for-writing-good-first-issue-descriptions-that-attra/)

@@ -307,7 +307,7 @@ When evaluating AI tools for GitHub Actions reusable workflows, prioritize these
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Use AI to Optimize GitHub Actions Workflow Run Times](/ai-tools-compared/how-to-use-ai-to-optimize-github-actions-workflow-run-times-/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)

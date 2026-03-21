@@ -426,7 +426,7 @@ Cursor applies all rules, letting the developer choose context through comments 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Configure Cursor AI Rules for Consistent CSS and Tail](/ai-tools-compared/how-to-configure-cursor-ai-rules-for-consistent-css-and-tail/)
 - [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)

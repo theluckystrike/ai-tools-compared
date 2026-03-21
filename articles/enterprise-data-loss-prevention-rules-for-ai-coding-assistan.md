@@ -377,7 +377,7 @@ Run tests against your actual codebase. False positives frustrate developers and
 
 
 
-## Related Articles
+## Related Reading
 
 - [Enterprise AI Coding Tool Network Security Requirements.](/ai-tools-compared/enterprise-ai-coding-tool-network-security-requirements-and-/)
 - [How to Write an Enterprise Acceptable Use Policy for AI](/ai-tools-compared/how-to-write-enterprise-acceptable-use-policy-for-ai-coding-assistants/)

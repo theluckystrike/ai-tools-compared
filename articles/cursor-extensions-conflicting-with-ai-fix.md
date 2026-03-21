@@ -387,7 +387,7 @@ If conflicts persist after trying all diagnostic steps:
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor AI Making Too Many API Calls Fix: Troubleshooting](/ai-tools-compared/cursor-ai-making-too-many-api-calls-fix/)
 - [Cursor AI Not Autocompleting TypeScript Fix](/ai-tools-compared/cursor-ai-not-autocompleting-typescript-fix/)

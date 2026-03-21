@@ -303,7 +303,7 @@ Run this script whenever you update your prompt library to keep both systems in 
 
 
 
-## Related Articles
+## Related Reading
 
 - [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 - [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)

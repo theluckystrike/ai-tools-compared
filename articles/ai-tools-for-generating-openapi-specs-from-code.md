@@ -434,7 +434,7 @@ security:
 For most teams, the ideal workflow is: Claude Code for brownfield work, Swagger Codegen in CI/CD for greenfield APIs.
 
 
-## Related Articles
+## Related Reading
 
 - [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)

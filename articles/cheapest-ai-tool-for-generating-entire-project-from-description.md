@@ -275,7 +275,7 @@ result = generate_project("flask", "SQLAlchemy, REST API, authentication")
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cheapest AI Tool for Generating an Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 - [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)

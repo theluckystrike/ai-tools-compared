@@ -346,7 +346,7 @@ Running Claude Code for backend and Cursor for frontend gives you specialized as
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude Code vs Cursor for Backend Development](/ai-tools-compared/claude-code-vs-cursor-for-backend-development/)
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)

@@ -842,7 +842,7 @@ Customer:
 
 
 
-## Related Articles
+## Related Reading
 
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)

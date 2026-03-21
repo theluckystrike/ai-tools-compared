@@ -257,7 +257,7 @@ If stealth mode is your primary concern but speed isn't, consider whether you ac
 
 
 
-## Related Articles
+## Related Reading
 
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Cursor Hobby Plan Limitations vs Paying for Pro Worth It](/ai-tools-compared/cursor-hobby-plan-limitations-vs-paying-for-pro-worth-it/)

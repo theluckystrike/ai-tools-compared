@@ -385,7 +385,7 @@ Run an A/B test across 500 representative requests. Score outputs on your domain
 
 
 
-## Related Articles
+## Related Reading
 
 - [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
 - [Claude API vs OpenAI API Pricing Breakdown 2026](/ai-tools-compared/claude-api-vs-openai-api-pricing-breakdown-2026/)
