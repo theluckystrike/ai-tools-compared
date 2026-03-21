@@ -296,6 +296,8 @@ Flag any instances where we use different terms for the same concept.
 
 
 
+
+
 ## Related Articles
 
 - [AI Tools for Reviewing Terraform Plans Before Applying](/ai-tools-compared/ai-tools-for-reviewing-terraform-plans-before-applying-to-pr/)

@@ -336,6 +336,8 @@ Start with the simplest architecture that meets your latency requirements, then 
 
 
 
+
+
 ## Related Articles
 
 - [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)

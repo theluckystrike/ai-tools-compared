@@ -339,6 +339,8 @@ Start small — extract invoice data from one vendor, then layer in discount opt
 
 
 
+
+
 ## Related Articles
 
 - [AI Tools for Pricing Optimization: A Practical Guide for](/ai-tools-compared/ai-tools-for-pricing-optimization/)
