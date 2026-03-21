@@ -29,6 +29,9 @@ Inconsistent feature flag names create technical debt and increase the risk of c
 Beyond avoiding conflicts, well-structured feature flag names improve code review processes, make monitoring more effective, and help new team members understand the codebase faster. Teaching Claude Code your conventions ensures that every interaction with your codebase maintains these standards automatically.
 
 
+The compounding effect matters. A single inconsistently named flag is easy to fix. Fifty inconsistently named flags across three services require a coordinated migration, updated monitoring dashboards, and a communication campaign to every team that reads those flags in their own code. Claude Code working without convention guidance will naturally produce whatever naming feels locally reasonable to the model — which often conflicts with your established patterns in subtle ways.
+
+
 ## Creating a Feature Flag Reference in CLAUDE.md
 
 
@@ -67,6 +70,9 @@ Our team uses the following naming pattern for feature flags:
 
 
 Place this file in your project root to ensure Claude Code always has access to these conventions.
+
+
+The `CLAUDE.md` file persists across sessions. Unlike prompts you type inline, it is read at the start of every Claude Code session in that project directory. This makes it the right place for stable conventions that should always apply, regardless of what you are working on in a given session. Think of it as your team's standing order to the AI.
 
 
 ## Defining Feature Flag Patterns in Custom Instructions
@@ -124,6 +130,9 @@ We use LaunchDarkly for feature management.
 - Use the `ld` CLI for local evaluation
 - All flags must have descriptive names in the dashboard
 ```
+
+
+LaunchDarkly flag keys are immutable once created. This makes naming discipline particularly important — you cannot rename a flag without creating a new one and migrating all client code. Including this constraint in your `CLAUDE.md` helps Claude Code understand why naming precision matters and produces more cautious suggestions when creating new flags.
 
 
 ### Unleash Configuration
@@ -192,6 +201,9 @@ Expected: `exp_ml_recommendation_engine`
 When you provide clear context about your conventions, Claude Code follows them consistently. If the configuration is missing, Claude Code defaults to generic patterns that may not match your team's standards.
 
 
+A useful practice is to include three or four existing flags as examples in your `CLAUDE.md`, not just the pattern description. Claude Code reasons by analogy: seeing `feat_auth_sso_login` and `feat_billing_invoice_export` alongside your pattern description helps it generate `feat_notifications_digest_email` correctly on the first try, rather than producing `notifications_email_digest_enabled` or `feature_notification_digest`.
+
+
 ## Validating Flag Names During Code Reviews
 
 
@@ -221,6 +233,25 @@ for (const line of commitMessage) {
 This validation catches inconsistencies before they reach your main branch, complementing Claude Code's configured conventions.
 
 
+For stronger enforcement, extend the pre-commit hook to scan your source files for newly added flag strings. Any flag string that does not match the pattern should block the commit with a descriptive error message pointing the developer to the `CLAUDE.md` convention reference. This creates a tight feedback loop: Claude Code generates convention-compliant flags, and the hook catches any manual exceptions before they merge.
+
+
+## Auditing Existing Flags with Claude Code
+
+
+If your codebase already contains inconsistently named flags, Claude Code can help audit and propose migrations. Start a session with a prompt like:
+
+
+```
+Review the feature flags in config/feature_flags.json and identify any that do not follow
+our naming convention (feat_|exp_|fix_|perf_|ui_ prefix, snake_case, include component name).
+For each non-compliant flag, suggest a compliant replacement name.
+```
+
+
+Claude Code will scan the file, apply your documented convention, and produce a list of migrations. You can then prioritize the migrations by flag usage frequency — high-traffic flags warrant careful migration plans, while flags only used in one place can be renamed in a single PR.
+
+
 ## Maintaining Conventions Over Time
 
 
@@ -228,6 +259,9 @@ As your project evolves, so should your feature flag configuration. Schedule per
 
 
 Claude Code works best when it has complete context. If you notice generated flags deviating from your standards, add explicit examples to your configuration. The more specific your guidance, the more consistently Claude Code will follow your conventions.
+
+
+Treat the `CLAUDE.md` feature flag section as a living document with an owner. Assign a team member to review it quarterly, check whether new flag types have emerged organically, and update the allowed prefixes list accordingly. When the document stays current, Claude Code's output stays consistent — and the pre-commit hook catches the rare exceptions automatically.
 
 
 ## Related Articles
