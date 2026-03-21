@@ -219,6 +219,147 @@ Your state management approach will evolve. Set up a process to keep CursorRules
 - Test new developers' code generation against rules
 
 
+## Advanced State Patterns: Persistence and Sync
+
+
+Beyond basic state management, include patterns for persistence and client-server sync. These are frequent sources of inconsistency:
+
+
+```markdown
+## Persistence Patterns
+
+### LocalStorage and SessionStorage
+- Critical data (auth tokens, user preferences) uses localStorage with encryption
+- Session state uses sessionStorage only—cleared on tab close
+- Implement debounced writes to avoid excessive re-renders
+- Validate localStorage data on app load; reset if schema mismatches
+
+### IndexedDB for Complex Data
+- Large datasets (>1MB) use IndexedDB with proper indexes
+- Maintain a version number for schema migrations
+- Use promises or async/await consistently
+```
+
+
+This prevents developers from accidentally storing sensitive data in plain localStorage or querying unindexed databases.
+
+
+## State Boundaries and Lifting Rules
+
+
+Help Cursor understand when to lift state up the component tree:
+
+
+```markdown
+## When to Lift State
+
+State should be lifted to a common ancestor when:
+- Multiple components need the same data
+- A sibling component depends on another sibling's state changes
+- Parent components need to coordinate multiple children
+
+Example: If both Header and SidebarMenu need current user data,
+lift the user state to a shared context or Redux store rather than
+fetching separately in each component.
+```
+
+
+This guidance prevents the common mistake of duplicating data in separate useState hooks.
+
+
+## Error Handling Within State
+
+
+Add specific guidance on managing error states:
+
+
+```markdown
+## Error State Patterns
+
+- Error states live alongside data states (loading, error, success)
+- Use discriminated unions: {status: 'error', error: {...}} vs {status: 'success', data: {...}}
+- Never throw errors in reducers—catch and log in thunks
+- Clear errors when retrying—don't persist old errors
+- Distinguish network errors from validation errors in state structure
+```
+
+
+This prevents state becoming inconsistent when errors occur.
+
+
+## Real Example: Complete State Management Rule Set
+
+
+Here's a comprehensive CursorRule combining multiple patterns:
+
+
+```markdown
+# State Management Architecture
+
+## Redux Toolkit with RTK Query
+
+### Directory Structure
+- /src/store/slices/ - Redux Toolkit slices
+- /src/store/selectors/ - Memoized selectors using createSelector
+- /src/hooks/useAppDispatch.ts - Typed dispatch hook
+- /src/hooks/useAppSelector.ts - Typed selector hook
+- /src/api/ - RTK Query definitions
+
+### RTK Query Rules
+- All server state uses RTK Query, not manual Redux
+- Invalidate tags on mutations to auto-refetch related queries
+- Use skip: true for conditional queries instead of calling hooks conditionally
+- Define tags carefully: "Posts List" for collections, "Post" with ID for individual items
+
+### Reducer and Action Rules
+- Reducers handle state shape changes only
+- Reducers do NOT contain side effects or external calls
+- Complex logic lives in createAsyncThunk, not reducers
+- Use Immer syntax: state.items[0].completed = true (mutate-like syntax)
+
+### Selector Rules
+- Always use createSelector for computed state
+- Selectors prevent unnecessary re-renders via memoization
+- Create separate selectors for each piece of state
+- Selectors receive entire state, return specific subset
+
+### Example Pattern
+function MyComponent() {
+  const dispatch = useAppDispatch();
+  const items = useAppSelector(selectAllItems);
+  const loading = useAppSelector(selectItemsLoading);
+
+  useEffect(() => {
+    if (items.length === 0 && !loading) {
+      dispatch(fetchItems());
+    }
+  }, [dispatch, items, loading]);
+}
+```
+
+
+With this comprehensive rule set, Cursor generates code that feels consistent with established patterns.
+
+
+## Testing State-Generated Code
+
+
+Include testing expectations in CursorRules:
+
+
+```markdown
+## Testing State Code
+
+- Redux slices: Unit test reducers with specific state transitions
+- Selectors: Verify they return expected values and filter correctly
+- Async thunks: Mock APIs and test pending/fulfilled/rejected states
+- Connected components: Use Redux MockStore to verify dispatched actions
+- RTK Query: Use setupServer (MSW) to mock API responses
+```
+
+
+This ensures Cursor generates testable state code when you ask for it.
+
 
 ## Related Reading
 

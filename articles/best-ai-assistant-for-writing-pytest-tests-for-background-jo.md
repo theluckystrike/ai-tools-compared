@@ -218,6 +218,201 @@ The most effective approach combines clear requirements with project context. Sp
 Remember that AI-generated tests require review. Verify that retry counts, timing assertions, and failure routing match your actual implementation. The generated tests provide a strong foundation, but your domain knowledge ensures complete coverage of edge cases specific to your system.
 
 
+## Testing Celery-Specific Scenarios
+
+
+If you're using Celery for background jobs, ask Claude or Cursor for Celery-specific tests:
+
+
+```python
+import pytest
+from celery import current_app
+from celery.exceptions import MaxRetriesExceededError
+from your_app.tasks import process_payment
+
+class TestCeleryBackgroundJobs:
+    @pytest.fixture
+    def celery_config(self):
+        """Configure Celery for testing."""
+        return {
+            'broker_url': 'memory://',
+            'result_backend': 'cache+memory://',
+            'task_always_eager': True,  # Execute immediately in tests
+        }
+
+    def test_task_retry_on_network_error(self):
+        """Task retries on network timeout."""
+        with patch('requests.get') as mock_get:
+            mock_get.side_effect = [
+                requests.Timeout("Connection timeout"),
+                requests.Timeout("Connection timeout"),
+                {"status": "success", "transaction_id": "txn_123"}
+            ]
+
+            result = process_payment.apply_async(
+                kwargs={"amount": 100, "card_id": "card_456"}
+            )
+
+            # Verify task succeeded after retries
+            assert result.status == "SUCCESS"
+            assert mock_get.call_count == 3
+
+    def test_task_exceeds_max_retries(self):
+        """Task moves to failed queue after max retries."""
+        with patch('requests.get') as mock_get:
+            mock_get.side_effect = requests.ConnectionError("Service down")
+
+            with pytest.raises(MaxRetriesExceededError):
+                process_payment.apply_async(
+                    kwargs={"amount": 100, "card_id": "card_456"},
+                    retry=True,
+                    retry_policy={'max_retries': 2}
+                )
+
+    def test_task_publishes_completion_event(self):
+        """Task publishes event when complete."""
+        with patch('your_app.events.publish') as mock_publish:
+            result = process_payment.apply_async(
+                kwargs={"amount": 100, "card_id": "card_456"}
+            )
+
+            mock_publish.assert_called_with(
+                'payment.completed',
+                {'amount': 100, 'transaction_id': 'txn_123'}
+            )
+```
+
+These tests verify Celery-specific behavior like task status tracking, retry limits, and event publishing.
+
+
+## Testing with RQ (Redis Queue)
+
+
+For RQ-based background jobs:
+
+
+```python
+def test_rq_job_enqueue_and_failure(self):
+    """Job gets enqueued and tracks failure."""
+    queue = Queue(connection=redis_conn)
+
+    with patch('payment_processor.process') as mock_process:
+        mock_process.side_effect = PaymentError("Card declined")
+
+        job = queue.enqueue(
+            'your_app.jobs.process_payment',
+            123,  # payment_id
+            retry=Retry(max=3, interval=60)
+        )
+
+        # Verify job is in queue
+        assert job.id in queue.job_ids
+
+        # Process the job
+        worker = Worker([queue], connection=redis_conn)
+        worker.work(burst=True)  # Process one job
+
+        # Verify retry was scheduled
+        assert job.get_status() == JobStatus.FAILED
+        retry_jobs = queue.failed_job_registry.get_job_ids()
+        assert len(retry_jobs) > 0
+```
+
+
+## Testing Distributed Background Jobs
+
+
+Modern applications often distribute jobs across multiple workers. Test this distribution:
+
+
+```python
+def test_job_distribution_across_workers(self):
+    """Jobs are distributed across available workers."""
+    job_ids = []
+
+    # Enqueue multiple jobs
+    for i in range(10):
+        job = background_queue.enqueue(
+            'process_data',
+            {'batch_id': i}
+        )
+        job_ids.append(job.id)
+
+    # Simulate multiple workers processing
+    workers = [Worker([background_queue]), Worker([background_queue])]
+
+    # Distribute work
+    for worker in workers:
+        worker.work(burst=False, max_jobs=5)  # Each worker processes 5 jobs
+
+    # Verify all jobs completed
+    for job_id in job_ids:
+        job = Job.fetch(job_id)
+        assert job.get_status() == 'finished'
+```
+
+
+## Monitoring and Observability Testing
+
+
+Test that background jobs emit proper metrics and logs:
+
+
+```python
+def test_job_metrics_on_success(self, mock_metrics):
+    """Successful job increments success counter and records duration."""
+    start_time = time.time()
+
+    result = background_job.execute({"id": 123})
+
+    duration = time.time() - start_time
+
+    # Verify metrics
+    mock_metrics.increment.assert_any_call(
+        'background_job.success',
+        tags={'job_type': 'process_payment'}
+    )
+    mock_metrics.histogram.assert_any_call(
+        'background_job.duration_ms',
+        duration * 1000,
+        tags={'job_type': 'process_payment'}
+    )
+
+def test_job_logging_includes_context(self, caplog):
+    """Job logs include all relevant context for debugging."""
+    background_job.execute({'user_id': 456, 'action': 'send_email'})
+
+    assert 'user_id=456' in caplog.text
+    assert 'action=send_email' in caplog.text
+    assert 'job_duration' in caplog.text
+```
+
+
+## Integration Tests with External Services
+
+
+When background jobs call external APIs, test with mocked responses:
+
+
+```python
+def test_job_handles_api_rate_limiting(self):
+    """Job respects rate limit headers and backs off."""
+    with patch('external_api.post') as mock_post:
+        # First attempt: rate limited
+        mock_post.side_effect = [
+            RateLimitError(retry_after=60),
+            {"status": "success"}
+        ]
+
+        job = background_job.execute({'request': 'data'})
+
+        # Verify exponential backoff respected the retry_after header
+        assert job['retry_after'] == 60
+        assert mock_post.call_count == 2
+```
+
+
+These comprehensive tests ensure background jobs are robust, observable, and handle real-world failure modes correctly.
 
 
 
