@@ -172,6 +172,20 @@ Cursor combines IDE features with AI assistance, making it effective for generat
 Cursor handles complex state scenarios well, including hooks with multiple useEffect dependencies or those managing subscription cleanup.
 
 
+## Tool Comparison for Hook Testing
+
+| Capability | Claude | GitHub Copilot | Cursor | ChatGPT |
+|---|---|---|---|---|
+| Async state handling | Excellent | Good | Excellent | Good |
+| Cleanup test generation | Excellent | Moderate | Good | Moderate |
+| Multi-file context | Good | Limited | Excellent | Good |
+| Error path coverage | Excellent | Moderate | Good | Moderate |
+| useEffect dependency arrays | Excellent | Good | Good | Moderate |
+| Initial state assertions | Excellent | Excellent | Excellent | Good |
+
+Claude wins on edge-case coverage—hooks that reset state on prop changes, hooks that debounce, and hooks managing abort controllers all require nuanced test patterns that Claude gets right out of the box.
+
+
 ## What Makes AI-Generated Tests High Quality
 
 
@@ -214,6 +228,93 @@ describe('useWebSocket', () => {
   });
 });
 ```
+
+
+## Testing Hooks with Timers and Debounce
+
+Hooks that debounce input or poll on an interval require Jest's fake timer controls. AI tools handle this pattern with varying accuracy—Claude and Cursor tend to get it right, while Copilot sometimes forgets to advance timers inside `act`.
+
+```javascript
+import { renderHook, act } from '@testing-library/react';
+import { useDebounce } from './useDebounce';
+
+describe('useDebounce', () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  it('delays value update by specified ms', () => {
+    const { result, rerender } = renderHook(
+      ({ value, delay }) => useDebounce(value, delay),
+      { initialProps: { value: 'initial', delay: 500 } }
+    );
+
+    expect(result.current).toBe('initial');
+
+    rerender({ value: 'updated', delay: 500 });
+    expect(result.current).toBe('initial'); // not yet updated
+
+    act(() => {
+      jest.advanceTimersByTime(500);
+    });
+
+    expect(result.current).toBe('updated');
+  });
+});
+```
+
+When prompting any AI tool to generate timer-based hook tests, explicitly mention that fake timers are required and that timer advancement must happen inside `act`. This single instruction dramatically improves output quality.
+
+
+## Testing Hooks that Manage AbortControllers
+
+Modern fetch hooks cancel in-flight requests on cleanup or re-render. This is one of the patterns where AI tools most commonly produce incomplete tests:
+
+```javascript
+// Testing abort behavior
+it('aborts request on unmount', async () => {
+  const abortSpy = jest.spyOn(AbortController.prototype, 'abort');
+  global.fetch = jest.fn().mockImplementation(() =>
+    new Promise(resolve => setTimeout(resolve, 1000))
+  );
+
+  const { unmount } = renderHook(() =>
+    useFetchWithAbort('/api/data')
+  );
+
+  unmount();
+
+  expect(abortSpy).toHaveBeenCalled();
+  abortSpy.mockRestore();
+});
+```
+
+Claude generates this pattern reliably when you paste in the hook implementation. ChatGPT generates the test but often omits `abortSpy.mockRestore()`, which causes test pollution in subsequent specs.
+
+
+## Step-by-Step Workflow: Getting the Best AI Output
+
+Follow this process to maximize test quality from any AI tool:
+
+1. **Paste the full hook file** — Don't summarize. AI tools need the actual implementation to trace dependencies, state variables, and effect cleanup functions.
+2. **Specify the testing library version** — `@testing-library/react` v13+ uses `renderHook` directly. Older versions require `@testing-library/react-hooks`. Mention which you use.
+3. **Request coverage explicitly** — Ask for tests covering: initial state, success path, error path, loading state, cleanup on unmount, and any debounce or timer behavior.
+4. **Iterate on edge cases** — After the initial generation, ask "what edge cases are missing?" Claude and ChatGPT both surface scenarios like concurrent calls, stale closures, and prop changes mid-fetch.
+5. **Verify with coverage** — Run `jest --coverage` after accepting generated tests. Aim for 90%+ branch coverage on custom hooks before marking them production-ready.
+
+
+## Pro Tips for Prompt Engineering
+
+When asking AI tools to generate hook tests, these prompt patterns yield better results:
+
+- **"Generate tests that cover all error boundaries"** — Forces the AI to think about rejected promises, HTTP error status codes, and thrown exceptions separately.
+- **"Use `waitFor` for all async assertions"** — Prevents the AI from generating synchronous assertions on async state that will flake in CI.
+- **"Add a `beforeEach` that resets all mocks"** — Ensures generated tests don't share mock state between cases.
+- **"Generate a test that verifies `loading` is `true` during fetch and `false` after"** — This catches the common bug where the loading flag isn't reset in error paths.
 
 
 ## Practical Recommendations
