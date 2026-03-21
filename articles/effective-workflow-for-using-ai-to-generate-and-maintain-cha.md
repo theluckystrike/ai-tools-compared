@@ -7,7 +7,7 @@ author: theluckystrike
 permalink: /effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/
 categories: [guides, workflows]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, workflow, artificial-intelligence]
