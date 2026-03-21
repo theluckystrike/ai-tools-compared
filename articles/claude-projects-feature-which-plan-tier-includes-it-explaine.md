@@ -48,30 +48,41 @@ This capability makes Projects particularly valuable for developers working on c
 As of early 2026, Claude Projects is available on the following subscription tiers:
 
 
-- **Claude Pro** (Individual plan)
+- **Claude Pro** (Individual plan, ~$20/month)
 
-- **Claude Team** (Team plan)
+- **Claude Team** (Team plan, ~$25/user/month)
 
-- **Claude Enterprise** (Enterprise plan)
+- **Claude Enterprise** (Enterprise plan, custom pricing)
 
 
 The feature is not available on the free tier. If you are using the free version of Claude, you will need to upgrade to Pro or higher to access Projects functionality.
 
 
-### Quick Comparison Table
+### Full Plan Comparison Table
 
 
 | Feature | Free | Pro | Team | Enterprise |
-
 |---------|------|-----|------|------------|
+| Projects | No | Yes | Yes | Yes |
+| File uploads | Limited | Yes | Yes | Yes |
+| Custom instructions | No | Yes | Yes | Yes |
+| Priority support | No | No | Yes | Yes |
+| Shared team workspaces | No | No | Yes | Yes |
+| SSO / SAML | No | No | No | Yes |
+| Advanced admin controls | No | No | No | Yes |
+| Usage analytics | No | No | Limited | Full |
+| Context window (tokens) | 200K | 200K | 200K | 200K+ |
+| Message priority queue | No | Yes | Yes | Yes |
 
-| Projects | ✗ | ✓ | ✓ | ✓ |
 
-| File uploads | Limited | ✓ | ✓ | ✓ |
+## How Projects Differ from Standard Conversations
 
-| Custom instructions | ✗ | ✓ | ✓ | ✓ |
 
-| Priority support | ✗ | ✗ | ✓ | ✓ |
+In a standard Claude conversation, each session starts fresh. You paste in code, explain background, describe the task, and the model responds. Close that tab or start a new chat and all of that context disappears.
+
+Projects change this dynamic fundamentally. When you create a Project and upload files to it, Claude has access to that material in every subsequent conversation within the project. You can upload a 50-page API spec once and reference it across a dozen debugging sessions without re-uploading anything.
+
+The custom instructions field adds another layer. For a Python backend project, you might write: "Always use type hints. Prefer async/await patterns. Reference our internal logging module at `app.utils.logger`. Return diffs rather than full file rewrites." Claude applies these constraints automatically throughout every conversation in that project.
 
 
 ## Practical Examples for Developers
@@ -96,7 +107,7 @@ Project: legacy-api-refactor
 ```
 
 
-Claude maintains context across all these files, enabling you to ask questions that span multiple files without repeatedly pasting code.
+Claude maintains context across all these files, enabling you to ask questions that span multiple files without repeatedly pasting code. Ask "what authentication pattern does this codebase use and where are its weak points?" and Claude can answer by referencing specific lines across all uploaded files simultaneously.
 
 
 ### Example 2: Documentation Generation
@@ -113,7 +124,7 @@ Project: feature-api-documentation
 ```
 
 
-You can iteratively refine your documentation by referencing the spec and asking Claude to generate sections based on your API definitions.
+You can iteratively refine your documentation by referencing the spec and asking Claude to generate sections based on your API definitions. The model remembers what it generated in session three when you come back in session seven to ask for consistency fixes.
 
 
 ### Example 3: Debugging Sessions
@@ -131,30 +142,74 @@ Project: payment-bug-investigation
 ```
 
 
-This approach allows you to trace issues across the full stack without losing context between questions.
+This approach allows you to trace issues across the full stack without losing context between questions. You can ask Claude to cross-reference error patterns in the logs against the processor code across multiple conversations spread over days.
 
 
-## Setting Up Your First Project
+## Setting Up Your First Project: Step-by-Step
 
 
-Getting started with Projects requires an active Pro subscription or higher. Here is the basic workflow:
+Getting started with Projects requires an active Pro subscription or higher. Here is the detailed workflow:
 
 
-1. Create a Project: In the Claude interface, click "New Project" and give it a descriptive name
+**Step 1: Create the Project**
 
-2. Add files: Drag and drop or upload relevant files to the project
+In the Claude web interface, click "New Project" in the left sidebar. Give it a descriptive name that reflects the scope, such as `payments-service-v2` or `q2-marketing-copy`. Avoid generic names like "project1" that will be confusing later.
 
-3. Set instructions: Optionally add custom instructions for project-specific behavior
+**Step 2: Write Custom Instructions**
 
-4. Start chatting: Claude now has full context of your project files
+Before uploading files, write your project instructions. These tell Claude how to behave in every conversation. For a developer project this might look like:
+
+```
+You are assisting with a Django REST Framework API project.
+- The codebase uses Python 3.12 and Django 5.0
+- All responses should use the project's logging pattern: logger.info("action", extra={"user_id": ...})
+- Prefer functional approaches; avoid unnecessary class-based views
+- When showing code changes, output only the changed functions, not the full file
+- The test suite uses pytest with the pytest-django plugin
+```
+
+**Step 3: Upload Reference Files**
+
+Drag and drop your key reference documents. Good candidates for upload include your `README.md`, schema files, environment variable documentation, and any architecture decision records (ADRs). Avoid uploading build artifacts, `node_modules`, or generated files.
+
+**Step 4: Organize by Scope**
+
+Create separate projects for separate concerns. A monorepo might have a project per service. An agency might have a project per client. This prevents context contamination where details from client A bleed into work for client B.
+
+**Step 5: Verify Context Loading**
+
+Start your first conversation with "summarize the key files in this project" to confirm Claude has loaded your uploads correctly before diving into complex work.
 
 
 ```bash
-# Example: Organizing your project structure
-mkdir my-claude-project
-cd my-claude-project
-# Add your files here before uploading to Claude
+# Before uploading, organize your reference files locally
+mkdir ~/claude-projects/my-api-project
+cd ~/claude-projects/my-api-project
+cp ~/repos/my-api/README.md .
+cp ~/repos/my-api/docs/architecture.md .
+cp ~/repos/my-api/openapi.yaml .
+# Then drag these into the Claude Projects interface
 ```
+
+
+## Projects vs Claude API: Which to Use for Development?
+
+
+Teams often wonder whether to use Projects through the web UI or build against the Claude API directly. The answer depends on your use case:
+
+**Use Projects (web UI) when:**
+- The consumers are humans interacting conversationally
+- You want persistent file context without engineering overhead
+- Collaboration between team members matters
+- You need to prototype quickly before committing to an API integration
+
+**Use the Claude API when:**
+- You need to integrate Claude into an existing application or pipeline
+- You require programmatic control over context injection
+- You are building automated workflows without human-in-the-loop
+- You need to call Claude at scale or from backend services
+
+The API does not have a "Projects" concept natively — context management is your responsibility via the `system` prompt and `messages` array. Projects are a UI-layer abstraction on top of the same underlying model.
 
 
 ## Frequently Asked Questions
@@ -162,26 +217,27 @@ cd my-claude-project
 
 **Can I share Projects with team members?**
 
-
-Yes, if you are on the Team or Enterprise plan. Team plans allow collaborative Project access, while Enterprise plans offer advanced sharing controls and permissions management.
+Yes, if you are on the Team or Enterprise plan. Team plans allow collaborative Project access, while Enterprise plans offer advanced sharing controls and permissions management. On the Pro plan, Projects are personal and cannot be shared.
 
 
 **Is there a file size limit for Project attachments?**
 
-
-Limits vary by plan. Pro users typically have lower limits compared to Team and Enterprise users. Check your plan details for specific constraints.
+Individual file size limits and total project storage limits vary by plan and are subject to change. As of early 2026, Pro users can upload files up to 10MB each with a combined project limit around 200MB. Team and Enterprise plans have higher limits. Always verify current limits in your account settings.
 
 
 **Can I export my Project data?**
 
-
-Currently, Project exports are limited. You can copy conversations and download individual files, but bulk export functionality varies by subscription tier.
+Currently, Project exports are limited. You can copy conversations and download individual files, but bulk export functionality is not available. For this reason, always keep source files in your own version control system and treat Claude Projects as a working environment rather than an archive.
 
 
 **Do Projects work with Claude Code (CLI)?**
 
+Claude Code manages its own project context through local files (particularly `CLAUDE.md`) and the directory structure it can read on your machine. Projects in the web/desktop interface and Claude Code's context system are separate. However, you can reference a `CLAUDE.md` file structure to inform what you upload into a web Project for consistency.
 
-Claude Code has its own project context management through local files and directories. Projects feature is primarily available in the web and desktop interfaces.
+
+**What happens to my Projects if I downgrade my plan?**
+
+If you downgrade from Pro to free, your Projects become inaccessible but are not immediately deleted. Anthropic typically provides a grace period to export your data before deletion. Check the current terms of service for the specific retention policy.
 
 
 ## Decision Framework: Is Pro Worth It for Projects?
@@ -201,8 +257,9 @@ If you find yourself frequently:
 
 Then the Pro plan's Projects feature likely provides significant value. The time saved from not re-explaining context repeatedly can quickly justify the subscription cost for active developers.
 
+A rough calculation: if you spend 15 minutes per day re-establishing context across multiple Claude conversations, that is over 90 hours per year. At even a modest hourly rate, the annual Pro cost pays for itself within days of recouped time.
 
-For teams, the Team plan adds collaborative features that make Projects even more powerful, enabling shared context and coordinated work on complex problems.
+For teams, the Team plan adds collaborative features that make Projects even more powerful, enabling shared context and coordinated work on complex problems. When multiple engineers are working against the same service, shared project context means everyone gets answers grounded in the same reference material.
 
 
 ## Related Articles
