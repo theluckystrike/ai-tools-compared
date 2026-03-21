@@ -8,7 +8,7 @@ permalink: /transfer-copilot-code-review-settings-to-cursor-ai-review-co/
 categories: [guides]
 tags: [ai-tools-compared, tools, artificial-intelligence]
 reviewed: true
-score: 7
+score: 9
 intent-checked: true
 voice-checked: true
 ---
