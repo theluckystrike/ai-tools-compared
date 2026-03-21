@@ -9,7 +9,7 @@ permalink: /claude-vs-gemini-for-converting-jupyter-notebooks-to-product/
 categories: [guides]
 tags: [ai-tools-compared, tools, comparison, claude-ai]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
