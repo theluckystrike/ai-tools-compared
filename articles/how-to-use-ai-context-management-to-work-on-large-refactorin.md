@@ -18,29 +18,22 @@ tags: [ai-tools-compared, artificial-intelligence]
 Refactoring large codebases presents unique challenges for AI coding assistants. The context window limits that constrain all AI tools mean you cannot simply dump an entire legacy codebase into a single prompt and expect coherent results. Understanding how to manage context effectively determines whether your AI-assisted refactoring succeeds or becomes a debugging nightmare.
 
 
-
 This guide covers practical strategies for working with AI context during substantial refactoring projects, helping you break down large changes into manageable pieces while maintaining code quality throughout the process.
-
 
 
 ## The Context Window Challenge
 
 
-
 Every AI model processes a limited number of tokens in a single request. When refactoring a substantial feature, you might need to show the AI several related files, explain the current implementation, specify your target architecture, and request specific changes—all within a token budget that varies by tool. Exceeding this limit results in truncated responses or degraded quality.
-
 
 
 The solution involves systematic context management: breaking your refactoring into atomic units that each fit within the model's context window while preserving the critical information needed for accurate code generation.
 
 
-
 ## Strategy One: File-by-File Contextualization
 
 
-
 Rather than dumping entire modules, provide targeted context for each file you want the AI to modify. This approach works well when refactoring involves changing implementation details without altering the public interface.
-
 
 
 ```python
@@ -55,17 +48,13 @@ Rather than dumping entire modules, provide targeted context for each file you w
 This framing tells the AI exactly what you're doing and why, without requiring it to infer intent from unrelated code. The constraint specification prevents the AI from making breaking changes that affect dependent code you haven't shown it yet.
 
 
-
 ## Strategy Two: Dependency-Aware Chunking
-
 
 
 Large refactorings often span multiple files with dependencies. Group files by their relationship to each other, then process each group sequentially. Start with files that have no dependencies on the code you're changing, then work toward the most dependent files.
 
 
-
 For a service-layer refactoring, you might structure your approach as:
-
 
 
 1. **Domain models and entities** — These rarely depend on other application code and should be refactored first
@@ -77,25 +66,19 @@ For a service-layer refactoring, you might structure your approach as:
 4. **API or controller layer** — The outermost layer that depends on services
 
 
-
 This sequencing means each subsequent prompt can reference changes made in previous steps without carrying forward all the implementation details.
-
 
 
 ## Preserving Context Across Multiple Sessions
 
 
-
 When refactoring spans hours or days, you need mechanisms to maintain continuity. Several approaches work effectively:
-
 
 
 ### Commit-Based Progress Tracking
 
 
-
 After each successful AI-assisted change, commit with descriptive messages that reference the original task. This creates a searchable history that helps you reconstruct what changed and why.
-
 
 
 ```bash
@@ -110,9 +93,7 @@ Related to: large-refactoring-order-system"
 ### Context Documents
 
 
-
 Maintain a separate document that tracks the current state of your refactoring. This serves as a running summary for the AI and for yourself:
-
 
 
 ```
@@ -140,9 +121,7 @@ Maintain a separate document that tracks the current state of your refactoring. 
 ### Token-Efficient Prompting
 
 
-
 As your refactoring progresses, summarize rather than repeat full file contents. When asking the AI to modify a file you've already changed, reference the previous transformation rather than re-explaining the entire context:
-
 
 
 ```
@@ -158,13 +137,10 @@ Please modify billing/client.py to accept PaymentGateway via constructor injecti
 ## Handling Cross-Cutting Changes
 
 
-
 Some refactorings affect concerns that span multiple files in different directories—error handling patterns, logging conventions, or authentication logic. These require a different approach than file-by-file changes.
 
 
-
 For cross-cutting concerns, create a specification document that defines the pattern, show it to the AI once, then reference the specification in subsequent prompts:
-
 
 
 ```
@@ -180,21 +156,16 @@ Apply this pattern to: user/profile.py, admin/dashboard.py, billing/invoices.py
 This prevents the AI from inventing inconsistent error handling across different parts of your codebase.
 
 
-
 ## Practical Example: Migrating a Legacy Service
-
 
 
 Consider refactoring a monolithic order processing service into separate domain services. A naive approach would dump the entire original file and ask for a complete rewrite—this rarely produces usable results.
 
 
-
 Instead, break the work into discrete phases:
 
 
-
 **Phase 1: Identify boundaries**
-
 
 
 ```python
@@ -205,7 +176,6 @@ Instead, break the work into discrete phases:
 
 
 **Phase 2: Extract first domain**
-
 
 
 ```python
@@ -221,7 +191,6 @@ Instead, break the work into discrete phases:
 **Phase 3: Migrate dependencies**
 
 
-
 ```python
 # Prompt: Update order_service.py to use the new OrderValidator class
 # Remove duplicated validation code. Keep the service interface unchanged.
@@ -231,22 +200,13 @@ Instead, break the work into discrete phases:
 Each phase produces working code you can test before proceeding. If something breaks, you know exactly which AI-assisted change caused the problem.
 
 
-
 ## Testing AI-Assisted Refactoring
-
 
 
 Automated tests become essential when AI generates significant portions of your refactored code. Before introducing AI changes, ensure you have test coverage that validates the contract between your refactored code and its consumers.
 
 
-
 Run tests after each atomic refactoring step. If tests pass, commit and proceed. If tests fail, the AI can often diagnose the issue when you share the error messages, because it understands the intent behind the code it generated.
-
-
-
-
-
-
 
 
 ## Related Articles

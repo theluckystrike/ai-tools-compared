@@ -322,10 +322,6 @@ python convert_to_gguf.py --model ./models/$(date +%Y%m) --out ./ollama/$(date +
 Teams that do this find the model stays relevant as new modules and patterns are added. Skip re-training and the model increasingly suggests patterns from older code that may have been refactored away.
 
 
-
-
-
-
 ## Related Articles
 
 - [Fine Tune Open Source Code Models for Your Codebase](/ai-tools-compared/fine-tune-open-source-code-models-for-your-codebase-2026/)

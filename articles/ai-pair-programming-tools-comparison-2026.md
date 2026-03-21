@@ -358,3 +358,5 @@ wc -l src/**/*.ts | tail -1    # total lines fed to context
 - [Best AI IDE Features for Pair Programming](/ai-tools-compared/best-ai-ide-features-for-pair-programming-with-remote-team-members/)
 - [Free AI Pair Programming Tools That Work in Terminal in 2026](/ai-tools-compared/free-ai-pair-programming-tools-that-work-in-terminal-2026/)
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

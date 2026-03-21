@@ -348,10 +348,6 @@ dbt Cloud AI is included in dbt Cloud Pro ($100/month) and higher plans.
 **Complex multi-tool pipelines** (Airflow, data lake, multiple sources): Use Claude as primary debugging tool, supplemented by platform-specific AI tools.
 
 
-
-
-
-
 ## Related Articles
 
 - [How to Use Claude for Debugging Failed CI/CD Pipeline Logs](/ai-tools-compared/how-to-use-claude-for-debugging-failed-ci-cd-pipeline-logs/)

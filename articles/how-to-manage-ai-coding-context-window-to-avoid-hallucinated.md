@@ -18,33 +18,25 @@ voice-checked: true
 Prevent hallucinated imports by including only the files your feature needs in context, explicitly showing available imports in prompts, and asking AI to verify imports exist. This guide shows the context management technique that eliminates the frustration of AI suggesting non-existent modules.
 
 
-
 ## What Is the Context Window Problem
-
 
 
 AI coding assistants like Claude, Cursor, and GitHub Copilot maintain a conversation context that includes your recent messages, generated code, and file contents they've read. This context has limits—both hard limits on total tokens and practical limits on what the model can effectively track.
 
 
-
 When you work on a large codebase, the AI eventually "forgets" which libraries you've installed, which modules exist, and which third-party packages are actually available. The model then generates import statements based on common patterns or guessed module names rather than your actual dependencies.
-
 
 
 Consider this scenario: you ask an AI to add a feature requiring date handling. The assistant imports `from datetime import timezone`—a valid Python import. But your project uses Arrow or Pendulum instead. The code looks correct but fails immediately.
 
 
-
 ## Techniques That Actually Work
-
 
 
 ### 1. Provide Explicit Dependency Lists
 
 
-
 Before asking AI to write code requiring external libraries, give it your actual dependencies. Create a quick reference file or paste your requirements.txt, package.json, or Cargo.toml directly into the conversation.
-
 
 
 ```python
@@ -61,17 +53,13 @@ Before asking AI to write code requiring external libraries, give it your actual
 This approach works because you're anchoring the AI to verifiable ground truth before it generates code.
 
 
-
 ### 2. Use File-Specific Context Windows
-
 
 
 Most modern AI coding tools let you specify which files are currently in context. When working on a specific module, explicitly include the relevant files and exclude unrelated ones.
 
 
-
 In Cursor, use `@Files` to reference specific files. In Claude Code, use the include/exclude patterns for file searches. This keeps the context focused and relevant.
-
 
 
 ```bash
@@ -84,9 +72,7 @@ In Cursor, use `@Files` to reference specific files. In Claude Code, use the inc
 ### 3. Chunk Large Files for Reference
 
 
-
 Instead of dumping entire large files into context, extract just the relevant sections. When you need the AI to work with a specific function, include only that function plus its immediate dependencies.
-
 
 
 ```python
@@ -97,7 +83,7 @@ class User(BaseModel):
     id: int
     email: str
     created_at: datetime
-    
+
     def get_active_sessions(self) -> list[Session]:
         # ... 50 lines of method
         pass
@@ -107,13 +93,10 @@ class User(BaseModel):
 ### 4. Use System Prompts Effectively
 
 
-
 Many AI coding assistants respect system-level instructions about your project constraints. Add a persistent instruction that guides the AI's import decisions.
 
 
-
 For Cursor, add to your workspace rules:
-
 
 
 ```
@@ -126,17 +109,13 @@ Never import from packages not listed in dependencies.
 ### 5. Reset Context Strategically
 
 
-
 When conversations become long and the AI starts making obvious errors, starting fresh often works better than continuing to pile on context. Save the useful parts of previous discussions, then begin with a clean slate that includes only your current task and necessary dependencies.
-
 
 
 ## Practical Workflow Example
 
 
-
 Here's a workflow that minimizes hallucinated imports:
-
 
 
 1. Before starting: List your key dependencies in the conversation
@@ -146,7 +125,6 @@ Here's a workflow that minimizes hallucinated imports:
 3. When generating: Ask the AI to verify imports against your dependency list
 
 4. After generation: Run a linter or type checker to catch invalid imports immediately
-
 
 
 ```python
@@ -165,9 +143,7 @@ Project constraints:
 ## Detecting Hallucinated Imports Early
 
 
-
 Add these checks to your development workflow:
-
 
 
 ```bash
@@ -187,13 +163,10 @@ go vet ./...
 Running these tools immediately after AI-generated code catches hallucinated imports before they reach your main codebase.
 
 
-
 ## When Hallucinations Still Happen
 
 
-
 Sometimes despite your best efforts, the AI still generates invalid imports. Common causes include:
-
 
 
 - Model confusion: The conversation drifted far from your original context
@@ -203,17 +176,13 @@ Sometimes despite your best efforts, the AI still generates invalid imports. Com
 - Stale dependency information: Your requirements changed but the AI wasn't told
 
 
-
 The fix is simple: tell the AI what went wrong and provide the correct dependency information. Most models recover quickly when given explicit correction.
-
 
 
 ## Building Long-Term Context Habits
 
 
-
 The best defense against hallucinated imports is consistent communication discipline. Always:
-
 
 
 - Introduce projects with their dependency files
@@ -225,11 +194,7 @@ The best defense against hallucinated imports is consistent communication discip
 - Reset conversations when context becomes unwieldy
 
 
-
 These habits reduce AI errors dramatically and make your coding assistant a reliable partner rather than a source of subtle bugs.
-
-
-
 
 
 ## Comparing Context Windows Across AI Tools
@@ -445,9 +410,6 @@ When each AI tool starts hallucinating (based on testing):
 Stay in the "safe limit" column to maintain quality.
 
 ## Related Reading
-
-
-
 
 
 ## Related Articles

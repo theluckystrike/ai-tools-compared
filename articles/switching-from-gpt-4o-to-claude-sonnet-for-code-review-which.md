@@ -61,15 +61,15 @@ Here is the same function reviewed by Claude Sonnet:
 ```javascript
 // Claude Sonnet response:
 // Critical: SQL injection vulnerability (CWE-89)
-// 
+//
 // Recommendation: Use parameterized queries
 function getUserData(userId) {
   return database.query(
-    'SELECT * FROM users WHERE id = $1', 
+    'SELECT * FROM users WHERE id = $1',
     [userId]
   );
 }
-// 
+//
 // Additional observations:
 // - Consider adding error handling for database connection failures
 // - This function lacks input validation for userId type
@@ -121,12 +121,12 @@ def process_payment(order_id: str, amount: float):
 ```jsx
 function UserProfile({ userId }) {
   const [user, setUser] = useState(null);
-  
+
   useEffect(() => {
     fetch(`/api/users/${userId}`).then(res => res.json())
       .then(setUser);
   }, []);
-  
+
   return <div>{user.name}</div>;
 }
 ```
@@ -347,10 +347,6 @@ When switching a team from GPT-4o to Claude Sonnet for code reviews:
 2. **Create team guidelines** - Should code reviews be more thorough? Adjust expectations when switching to Claude Sonnet's longer, more detailed feedback.
 3. **Pilot with volunteers** - Let interested developers try Claude Sonnet and report back before mandating the change.
 4. **Maintain dual review** - For critical code, keep both models in your workflow to catch issues from different angles.
-
-
-
-
 
 
 ## Related Articles

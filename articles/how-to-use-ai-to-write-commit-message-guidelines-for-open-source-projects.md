@@ -15,39 +15,30 @@ voice-checked: true
 ---
 
 
-
 {% raw %}
 
 AI can help you create commit message guidelines for your open source project that ensure consistency, improve code review efficiency, and make your project's history more meaningful. By using AI tools, you can develop detailed conventions tailored to your project's specific needs without spending hours researching best practices.
 
 
-
 ## Why Commit Message Guidelines Matter
-
 
 
 Well-crafted commit message guidelines serve multiple critical purposes for open source projects. They create a consistent history that makes it easy to understand when and why changes were made, which is invaluable for debugging, code reviews, and onboarding new contributors.
 
 
-
 When your project has clear commit message conventions, contributors know exactly what's expected of them. This reduces the back-and-forth during pull requests and helps maintainers quickly assess whether changes align with project standards. Additionally, tools like `git log`, `git blame`, and automated changelog generators work much better when commits follow consistent formatting.
-
 
 
 ## Analyzing Your Project's Needs
 
 
-
 Before creating commit message guidelines, understand your project's specific requirements. AI can help you analyze your project type and determine what conventions will be most valuable.
-
 
 
 ### Project Type Considerations
 
 
-
 Different types of projects benefit from different commit message approaches:
-
 
 
 - Libraries and APIs: Focus on describing what changed from an user perspective, emphasizing API changes, new features, and breaking changes
@@ -59,13 +50,10 @@ Different types of projects benefit from different commit message approaches:
 - Documentation projects: Highlight which files or sections changed and why
 
 
-
 ### Team Size and Contributor Profile
 
 
-
 Consider your project's contributor ecosystem when designing guidelines:
-
 
 
 - Large open source projects: May need detailed conventions with type prefixes, issue references, and scope specifications
@@ -75,21 +63,16 @@ Consider your project's contributor ecosystem when designing guidelines:
 - Projects with diverse contributors: Need explicit examples and clear explanations of each convention
 
 
-
 ## Creating Your Commit Message Framework
-
 
 
 AI can help you design a commit message structure that balances comprehensiveness with ease of use. Here's a proven framework that works well for most open source projects:
 
 
-
 ### The Conventional Commits Format
 
 
-
 The Conventional Commits specification provides an excellent foundation:
-
 
 
 ```
@@ -102,7 +85,6 @@ The Conventional Commits specification provides an excellent foundation:
 
 
 Common commit types include:
-
 
 
 - feat: A new feature
@@ -124,13 +106,10 @@ Common commit types include:
 - ci: CI/CD configuration changes
 
 
-
 ### Example Prompt for AI
 
 
-
 Use this prompt to generate tailored commit message guidelines:
-
 
 
 ```
@@ -155,17 +134,13 @@ Include:
 ## Developing Detailed Conventions
 
 
-
 Once you have a basic framework, use AI to elaborate on specific aspects of your conventions.
-
 
 
 ### Writing Effective Subject Lines
 
 
-
 The subject line is the most important part of a commit message. It should be:
-
 
 
 - Concise: Under 50 characters when possible
@@ -175,9 +150,7 @@ The subject line is the most important part of a commit message. It should be:
 - Consistent: Use the same tense and format as other commits
 
 
-
 AI can help you generate examples that demonstrate these principles:
-
 
 
 ```
@@ -198,15 +171,13 @@ asdfgh
 ### Handling Breaking Changes
 
 
-
 Clearly communicating breaking changes is crucial for library maintainers. Your guidelines should specify how to denote and document them:
-
 
 
 ```
 feat(api)!: change response format for /users endpoint
 
-BREAKING CHANGE: The /users endpoint now returns an array instead of 
+BREAKING CHANGE: The /users endpoint now returns an array instead of
 an object with a 'data' key. Users must update their code:
 
 // Old format
@@ -220,9 +191,7 @@ an object with a 'data' key. Users must update their code:
 ### Issue and Pull Request References
 
 
-
 Your guidelines should specify how to reference issues and PRs:
-
 
 
 ```
@@ -242,17 +211,13 @@ Closes #100
 ## Creating Documentation
 
 
-
 Once you've developed your commit message conventions, use AI to create documentation.
-
 
 
 ### Including Examples
 
 
-
 Provide multiple examples for each commit type to make the guidelines accessible:
-
 
 
 ```
@@ -276,9 +241,7 @@ Fix commits should include:
 ### Adding Quick Reference Cards
 
 
-
 Create a concise reference that contributors can keep handy:
-
 
 
 ```
@@ -303,17 +266,13 @@ Rules:
 ## Enforcing Conventions
 
 
-
 Document how your project enforces commit message standards.
-
 
 
 ### Pre-commit Hooks
 
 
-
 Set up automated validation:
-
 
 
 ```bash
@@ -336,9 +295,7 @@ fi
 ### CI/CD Validation
 
 
-
 Add GitHub Actions to validate commits in pull requests:
-
 
 
 ```yaml
@@ -360,7 +317,7 @@ jobs:
         run: |
           # Get all commit messages in the PR
           COMMITS=$(git log --pretty=format:"%s" origin/main..HEAD)
-          
+
           for commit in $COMMITS; do
             if ! echo "$commit" | grep -qE '^(feat|fix|docs|style|refactor|test|chore|perf|ci)(\(.+\))?: .+'; then
               echo "Invalid commit message: $commit"
@@ -373,17 +330,13 @@ jobs:
 ## Adapting Conventions Over Time
 
 
-
 Your commit message guidelines should evolve with your project.
-
 
 
 ### Reviewing Effectiveness
 
 
-
 Periodically evaluate whether your conventions are working:
-
 
 
 - Are contributors following the guidelines?
@@ -393,13 +346,10 @@ Periodically evaluate whether your conventions are working:
 - Do the conventions catch the types of changes that matter most?
 
 
-
 ### Updating Guidelines
 
 
-
 When you need to update conventions:
-
 
 
 1. Propose changes in a GitHub issue
@@ -409,12 +359,6 @@ When you need to update conventions:
 3. Update documentation with clear migration guidance
 
 4. Announce changes in your project's communication channels
-
-
-
-
-
-
 
 
 ## Related Articles

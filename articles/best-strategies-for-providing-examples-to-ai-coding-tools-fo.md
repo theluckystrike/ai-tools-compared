@@ -18,21 +18,16 @@ voice-checked: true
 {% raw %}
 
 
-
 Provide 2-3 concrete working examples showing your preferred style and patterns; include edge cases you want handled; show error handling patterns from your codebase. Use real code snippets rather than descriptions. Highlight the specific parts you want the AI to emulate. Examples significantly improve code quality and alignment with your project standards. This guide covers effective example strategies for AI coding tools.
-
 
 
 ## Why Examples Matter for AI Code Generation
 
 
-
 AI coding tools work by recognizing patterns in your input and generating code that matches the style, structure, and conventions of your project. Without clear examples, these tools default to general-purpose patterns that may not fit your specific requirements.
 
 
-
 When you provide well-crafted examples, you establish a reference point that the AI uses to understand:
-
 
 
 - Your coding style and conventions
@@ -46,21 +41,16 @@ When you provide well-crafted examples, you establish a reference point that the
 - Documentation standards
 
 
-
 The more relevant context you provide, the more accurate the generated code becomes on the first try.
-
 
 
 ## Strategy 1: Include Real Code from Your Project
 
 
-
 One of the most effective approaches is including actual code from your existing codebase. This teaches the AI your specific patterns and conventions.
 
 
-
 Instead of:
-
 
 
 ```
@@ -69,7 +59,6 @@ Write a function to validate user input
 
 
 Try:
-
 
 
 ```
@@ -91,13 +80,10 @@ Write a similar validator for phone numbers that follows the same style and erro
 This approach works because the AI sees your actual implementation patterns—how you handle edge cases, what libraries you use, and what return types you prefer.
 
 
-
 ## Strategy 2: Provide Input-Output Examples
 
 
-
 For tasks involving data transformation or API responses, showing concrete examples of expected input and output often produces better results than describing the transformation verbally.
-
 
 
 ```
@@ -154,17 +140,13 @@ Write a Python function that performs this transformation using dataclasses.
 The AI can see exactly how field names map, what data types to expect, and how to restructure nested objects. This reduces back-and-forth iterations significantly.
 
 
-
 ## Strategy 3: Show Error Handling Patterns
-
 
 
 AI-generated code often lacks proper error handling because the AI doesn't know what exceptions your project handles or how you prefer to manage failures.
 
 
-
 Include examples that show your error handling approach:
-
 
 
 ```
@@ -208,13 +190,10 @@ Apply this same pattern to fetch user preferences.
 This ensures the generated code fits your existing error handling infrastructure rather than using generic try-except blocks.
 
 
-
 ## Strategy 4: Specify Testing Requirements
 
 
-
 If you need tests alongside your generated code, show examples of your testing patterns:
-
 
 
 ```
@@ -224,7 +203,6 @@ Generate a dataclass for user preferences and write pytest tests following this 
 import pytest
 
 from datetime import datetime
-
 
 
 class TestUser:
@@ -237,7 +215,6 @@ class TestUser:
 
  assert user.name == "Test User"
 
- 
 
  def test_user_repr_includes_id_and_name(self):
 
@@ -254,13 +231,10 @@ class TestUser:
 This approach produces tests that match your existing test structure, naming conventions, and assertion styles.
 
 
-
 ## Strategy 5: Use File References and Context
 
 
-
 Most AI coding tools can read files from your project. Use this capability to provide rich context:
-
 
 
 ```
@@ -275,13 +249,10 @@ Looking at our existing models in models/user.py, generate a new Order model tha
 The AI examines your existing code and generates consistent additions rather than starting from scratch with different conventions.
 
 
-
 ## Strategy 6: Chain Examples for Complex Tasks
 
 
-
 For complex requirements, build up context incrementally rather than providing everything at once:
-
 
 
 Step 1: Establish base patterns
@@ -297,7 +268,6 @@ class BaseRepository:
 
  self.model = model
 
- 
 
  def get_by_id(self, id: int) -> Optional[Base]:
 
@@ -320,33 +290,25 @@ Using the BaseRepository above, create a UserRepository that adds:
 This incremental approach helps the AI maintain consistency across complex, multi-file generation tasks.
 
 
-
 ## Common Mistakes to Avoid
-
 
 
 Providing too few examples: A single line of code rarely provides enough context. Three to five relevant examples usually work better.
 
 
-
 Using outdated examples: Make sure your reference code reflects current library versions and best practices. AI tools may reproduce old patterns if that's what you show them.
-
 
 
 Mixing different coding styles: If your examples come from different parts of your codebase with different conventions, the AI may produce inconsistent output. Stick to examples from the same module or files with consistent patterns.
 
 
-
 Forgetting to specify the scope: Examples should clarify not just what to do, but what NOT to do. If you don't want certain features, mention that explicitly.
-
 
 
 ## Practical Example: Complete Prompt
 
 
-
 Here's a complete example combining several strategies:
-
 
 
 ```
@@ -369,7 +331,6 @@ def login(credentials: LoginRequest, db: Session = Depends(get_db)) -> TokenResp
 
  raise InvalidCredentialsError()
 
- 
 
  token = create_access_token({"sub": user.email})
 
@@ -389,12 +350,6 @@ Also write a unit test file following our testing conventions.
 
 
 This prompt provides everything the AI needs to generate consistent, production-ready code.
-
-
-
-
-
-
 
 
 ## Related Articles

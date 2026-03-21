@@ -409,10 +409,6 @@ cache line size (32 bytes on Cortex-M7)?
 Claude correctly identifies cache coherency issues on cached architectures. ChatGPT and Copilot sometimes miss the distinction between cached and non-cached regions unless the prompt is explicit.
 
 
-
-
-
-
 ## Related Articles
 
 - [Effective Strategies for Reviewing AI Generated Code Before](/ai-tools-compared/effective-strategies-for-reviewing-ai-generated-code-before-committing-to-repo/)

@@ -450,10 +450,6 @@ resource "aws_db_instance" "read_replica" {
 | Missing outputs | Forget downstream consumers | Always request explicit outputs |
 
 
-
-
-
-
 ## Related Articles
 
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)

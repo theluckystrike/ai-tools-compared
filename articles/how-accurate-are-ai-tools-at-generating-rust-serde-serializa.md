@@ -18,37 +18,28 @@ voice-checked: true
 AI tools generate correct Serde schemas about 75% of the time for simple types but require substantial fixes for custom implementations, derive macros, and edge cases. This guide shows exactly which serialization patterns work reliably, which generate broken code, and how to verify correctness.
 
 
-
 Serde remains the de facto standard for serialization in Rust, yet writing manual serialization implementations can be tedious. Developers increasingly turn to AI coding assistants to generate this boilerplate code automatically. But how accurate are these tools really? This article puts popular AI assistants to the test with practical Rust serde serialization scenarios.
-
 
 
 ## The Test Methodology
 
 
-
 I evaluated three leading AI coding assistants—Claude Code, GitHub Copilot, and Cursor—across several common serialization patterns. Each tool received identical prompts describing the required serde code. I then assessed the output for correctness, adherence to best practices, and compilation success.
-
 
 
 The test cases covered basic struct serialization, nested data structures, custom serialization logic, and handling of common edge cases like optional fields and enums.
 
 
-
 ## Test Case 1: Basic Struct with Common Derives
-
 
 
 The first test asked for a simple struct with common serde attributes:
 
 
-
 > "Generate a Rust struct for an user profile with fields: id (u64), username (String), email (String), created_at (DateTime<Utc>). Include proper serde derive macros and JSON serialization."
 
 
-
 **Claude Code** produced:
-
 
 
 ```rust
@@ -69,9 +60,7 @@ pub struct UserProfile {
 This code compiles correctly. The use of `ts_seconds` for datetime serialization is a thoughtful touch that ensures Unix timestamp representation in JSON—practical for APIs. **Accuracy: 100%**
 
 
-
 **GitHub Copilot** suggested:
-
 
 
 ```rust
@@ -91,21 +80,16 @@ pub struct UserProfile {
 This fails to compile because `DateTime<Utc>` requires the chrono serialization crate to be explicitly listed as a dependency, and the type needs explicit serialization formatting. Copilot omitted both. **Accuracy: 70%** (correct structure, missing critical configuration)
 
 
-
 ## Test Case 2: Nested Structs with Renamed Fields
-
 
 
 The second test introduced complexity with renamed fields and nested structures:
 
 
-
 > "Create a Rust struct for an order with: order_id (String), customer (nested Customer struct with name and email), items (Vec of Item structs with product_id, quantity, price), total (f64). Use serde rename attributes to convert to snake_case in JSON."
 
 
-
 **Claude Code** generated:
-
 
 
 ```rust
@@ -141,25 +125,19 @@ pub struct Order {
 This compiles and correctly applies rename attributes. One minor improvement would be adding `#[serde(rename_all = "snake_case")]` at the struct level to avoid repetitive attribute declarations. **Accuracy: 95%**
 
 
-
 **Cursor** produced similar output but added `skip_serializing_if = "Option::is_none"` on optional fields, which is unnecessary here. The core functionality remains correct. **Accuracy: 90%**
-
 
 
 ## Test Case 3: Custom Serialization Logic
 
 
-
 This test pushed beyond derive macros into custom serialization:
-
 
 
 > "Write a Rust struct for a password hash that serializes to a JSON object with only the algorithm field visible, never the actual hash value. Use a wrapper type for security."
 
 
-
 **Claude Code** delivered:
-
 
 
 ```rust
@@ -179,7 +157,7 @@ impl Serialize for PasswordHash {
         struct SerializedPassword<'a> {
             algorithm: &'a str,
         }
-        
+
         SerializedPassword {
             algorithm: &self.algorithm,
         }.serialize(serializer)
@@ -198,25 +176,19 @@ pub struct UserWithPassword {
 This demonstrates understanding of the serialization trait bounds. However, the helper function `serialize_password` is referenced but not defined. Adding that would make it fully functional. **Accuracy: 85%**
 
 
-
 **GitHub Copilot** completely skipped custom serialization and simply used `#[serde(skip)]`, missing the entire point of the request. **Accuracy: 20%**
-
 
 
 ## Test Case 4: Enum with Data
 
 
-
 Handling Rust enums with associated data is where AI tools often struggle:
-
 
 
 > "Create a Rust enum for API responses with variants: Success(data: String), Error(code: u16, message: String), Pending. Use serde serialization."
 
 
-
 **Claude Code** produced:
-
 
 
 ```rust
@@ -238,25 +210,19 @@ pub enum ApiResponse {
 This correctly uses the `#[serde(tag)]` attribute to serialize the enum discriminant as a field, which is the idiomatic approach. **Accuracy: 100%**
 
 
-
 **Cursor** generated nearly identical code with proper attribute handling. **Accuracy: 100%**
-
 
 
 ## Test Case 5: Real-World API Integration
 
 
-
 The final test combined multiple patterns typical of real applications:
-
 
 
 > "Generate a Rust struct for a webhook event with: event_type (String), timestamp (i64), payload (generic JSON value), retry_count (Option<u8>). Include flatten attribute for payload and rename everything to snake_case."
 
 
-
 This is where tools showed their limits. **Claude Code** correctly used `serde_json::Value` for the generic payload and applied the flatten attribute:
-
 
 
 ```rust
@@ -278,28 +244,16 @@ pub struct WebhookEvent {
 **Accuracy: 100%**—this is production-ready code.
 
 
-
 ## Practical Recommendations
-
 
 
 When using AI assistants for serde code, always verify three things: the code compiles, all required dependencies are present in your Cargo.toml, and the serialization format matches your downstream consumer's expectations.
 
 
-
 For complex serialization scenarios—particularly custom serializers, flattened structures, or enum tagging—review the generated code carefully. AI tools handle straightforward derive macros well but can miss nuanced requirements in advanced use cases.
 
 
-
 The pattern that AI tools struggle with most is custom serialization logic. Always review and test custom `Serialize` and `Deserialize` implementations thoroughly before deploying to production.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

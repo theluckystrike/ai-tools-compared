@@ -18,28 +18,23 @@ voice-checked: true
 Switch between features without losing AI context by explicitly naming features in prompts, maintaining separate chat threads per feature, and periodically summarizing context. This guide shows the workflow that keeps AI focused on the right problem as you jump between different tasks.
 
 
-
 This guide covers practical methods for maintaining context continuity with AI coding tools, regardless of which assistant you use.
-
 
 
 ## The Context Switching Problem
 
 
-
 AI coding assistants operate within a context window—the amount of code, conversation history, and instructions they can reference at once. When you switch features, the previous context remains in the conversation but becomes irrelevant or even counterproductive. The AI might continue suggesting code related to your previous task, mix imports from different modules, or reference variable names that no longer apply.
 
 
-
 For example, you might be working on an user authentication feature:
-
 
 
 ```python
 class AuthService:
     def __init__(self, db_connection):
         self.db = db_connection
-    
+
     def authenticate(self, username, password):
         user = self.db.find_user(username)
         if user and user.verify_password(password):
@@ -51,21 +46,17 @@ class AuthService:
 Then you switch to a payment processing feature. Without proper context management, your AI assistant might continue suggesting authentication-related code, import database utilities into your payment module, or reference `AuthService` when you need `PaymentProcessor`.
 
 
-
 ## Strategy 1: Explicit Context Reset Commands
-
 
 
 The most direct approach involves explicitly signaling context changes to your AI assistant. This means starting new conversations or using clear demarcation commands that signal a complete context switch.
 
 
-
 When starting work on a new feature, begin with a clear statement:
 
 
-
 ```
-Starting new feature: payment processing module. 
+Starting new feature: payment processing module.
 Previous context: user authentication (complete).
 Focus: Stripe integration, webhook handling, transaction logging.
 ```
@@ -74,13 +65,10 @@ Focus: Stripe integration, webhook handling, transaction logging.
 This approach works because it accomplishes three things: acknowledges the transition, provides relevant context scope, and establishes boundaries for the new work.
 
 
-
 ## Strategy 2: Feature-Specific Context Files
 
 
-
 Create dedicated context files within your project that document the current feature state. These files serve as reference points that you can share with your AI assistant:
-
 
 
 ```markdown
@@ -109,13 +97,10 @@ Create dedicated context files within your project that document the current fea
 Reference this file when switching contexts. Your AI assistant can quickly understand the current state without wading through irrelevant conversation history.
 
 
-
 ## Strategy 3: Modular File Organization
 
 
-
 The physical organization of your code affects how well an AI assistant maintains context. When your codebase has clear module boundaries, switching context becomes easier because each module contains related functionality.
-
 
 
 ```
@@ -139,13 +124,10 @@ src/
 The `context.py` files in each module serve as mini-briefs that you can paste into your AI conversation when starting work on that feature.
 
 
-
 ## Strategy 4: Conversation Branching
 
 
-
 If your AI tool supports it, maintain separate conversation threads for major feature areas. This creates a clean separation that prevents context bleeding:
-
 
 
 - Conversation 1: Authentication feature development
@@ -155,17 +137,13 @@ If your AI tool supports it, maintain separate conversation threads for major fe
 - Conversation 3: General debugging and improvements
 
 
-
 When you need to reference code from another feature, explicitly mention the relevant context rather than relying on the AI to recall it from a mixed conversation history.
-
 
 
 ## Strategy 5: Context Snippets for Feature Transitions
 
 
-
 When switching features, provide a concise snippet that establishes the new context. This works particularly well with AI assistants that maintain conversation history:
-
 
 
 ```python
@@ -180,13 +158,10 @@ When switching features, provide a concise snippet that establishes the new cont
 This pattern gives the AI the essential information without overwhelming it with unnecessary details.
 
 
-
 ## Strategy 6: State Documentation Before Switching
 
 
-
 Before switching to a different feature, document the current state briefly:
-
 
 
 ```
@@ -200,13 +175,10 @@ Finishing auth feature session:
 This documentation serves two purposes: it helps you resume work later, and it gives the AI assistant accurate information if you continue the session.
 
 
-
 ## Measuring Context Management Success
 
 
-
 Effective context management shows up in practical ways:
-
 
 
 - Fewer clarification requests: Your AI assistant needs less prompting to generate relevant code
@@ -218,17 +190,13 @@ Effective context management shows up in practical ways:
 - Accurate suggestions: AI recommendations match your current feature requirements
 
 
-
 When you notice these improvements, your context management approach is working.
-
 
 
 ## Common Mistakes to Avoid
 
 
-
 A few practices undermine context management efforts:
-
 
 
 1. Over-reliance on conversation history: Assuming the AI remembers everything from hours ago
@@ -240,13 +208,10 @@ A few practices undermine context management efforts:
 4. Ignoring module boundaries: Asking AI to work across unrelated modules without explicit context
 
 
-
 ## Practical Application
 
 
-
 Apply these strategies based on your workflow complexity:
-
 
 
 - For simple projects with one or two features: Strategy 1 (explicit reset) and Strategy 5 (context snippets) suffice
@@ -256,16 +221,7 @@ Apply these strategies based on your workflow complexity:
 - For large projects with many concurrent features: Use all strategies in combination, with particular emphasis on modular organization and dedicated context files
 
 
-
 The key principle remains consistent: make context transitions explicit rather than assumed. Your AI coding assistant performs best when you clearly define what context matters for the current task.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

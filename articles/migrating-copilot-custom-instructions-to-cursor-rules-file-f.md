@@ -80,7 +80,7 @@ When creating React components, use functional components with hooks. Always use
 project:
   name: "My React Application"
   type: "webapp"
-  
+
 fileRules:
   - pattern: "**/*.tsx"
     rules:
@@ -111,7 +111,7 @@ codeStyle:
   indentation: 2
   quoteStyle: "single"
   trailingCommas: true
-  
+
 linting:
   preferESLint: true
   autoFixOnSave: true
@@ -128,7 +128,7 @@ rules:
   - description: "API response format"
     rule: |
       All API endpoints must return responses in this format:
-      
+
       ```typescript
       interface ApiResponse<T> {
         data: T;
@@ -137,7 +137,7 @@ rules:
         errors?: string[];
       }
       ```
-      
+
       Use this interface for every controller response.
 ```
 
@@ -392,10 +392,6 @@ rules:
 ## Integrating Rules Across Your Team
 
 When rolling out Cursor rules across a team, start with minimal rules focused on your most important conventions. Get team feedback after a week of use, then iterate based on what works in practice. Document the rationale for each rule—explain WHY each convention exists, not just WHAT. This helps developers understand and internalize the conventions.
-
-
-
-
 
 
 ## Related Articles

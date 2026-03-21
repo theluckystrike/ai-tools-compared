@@ -20,29 +20,22 @@ voice-checked: true
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 
-
 ## Understanding the Task
-
 
 
 When you have an existing API codebase—whether Express, FastAPI, Django, or another framework—creating an OpenAPI specification manually is time-consuming. The AI must analyze your route handlers, function signatures, and data models to generate accurate OpenAPI JSON or YAML.
 
 
-
 The quality of the output depends heavily on how well you prompt the AI and how much context you provide about your codebase.
-
 
 
 ## ChatGPT Approach
 
 
-
 ChatGPT excels at generating straightforward OpenAPI specifications when given clear code examples. Its strength lies in pattern recognition for common frameworks.
 
 
-
 ### Example Prompt for ChatGPT
-
 
 
 ```markdown
@@ -60,7 +53,6 @@ app.get('/users/:id', async (req, res) => {
 
 
 ChatGPT typically produces a basic OpenAPI spec:
-
 
 
 ```yaml
@@ -86,29 +78,22 @@ paths:
 ### Where ChatGPT Excels
 
 
-
 ChatGPT handles single-endpoint generation efficiently. If you need a quick spec for one or two routes, ChatGPT provides usable output with minimal iteration. Its training data includes extensive examples of popular frameworks, so Express, Flask, and FastAPI routes are well-recognized.
-
 
 
 ### ChatGPT Limitations
 
 
-
 The main challenge with ChatGPT is context window limitations. For larger codebases with many routes, you must feed endpoints one at a time or in small batches. This fragmentation sometimes leads to inconsistent formatting across endpoints. Additionally, ChatGPT occasionally invents response schemas when your code lacks explicit return types.
-
 
 
 ## Claude Approach
 
 
-
 Claude takes a more thorough approach, often asking clarifying questions before generating specifications. Its extended context window allows processing larger code sections simultaneously.
 
 
-
 ### Example Prompt for Claude
-
 
 
 ```markdown
@@ -135,7 +120,6 @@ router.post('/users', async (req, res) => {
 
 
 Claude produces more output, including proper query parameter handling and request body schemas:
-
 
 
 ```yaml
@@ -198,25 +182,19 @@ paths:
 ### Where Claude Excels
 
 
-
 Claude handles complex request body schemas with validation rules more accurately. It better understands TypeScript interfaces and can map them to OpenAPI schemas. When you provide multiple related files—controllers, models, and middleware—Claude maintains consistency across the entire specification.
-
 
 
 For large codebases, Claude's ability to process more code at once reduces the iteration cycles needed to complete a full specification.
 
 
-
 ### Claude Limitations
-
 
 
 Claude's thoroughness can be a drawback when you need quick, simple specs. Its responses tend to be longer, which means more tokens consumed. Some users find its formatting less predictable than ChatGPT's for simple, repetitive tasks.
 
 
-
 ## Side-by-Side Comparison
-
 
 
 | Aspect | ChatGPT | Claude |
@@ -337,13 +315,10 @@ After validation, use `redocly bundle` to resolve all `$ref` references into a s
 ## Practical Recommendations
 
 
-
 For small projects with a handful of endpoints, either tool works well. Feed the code, review the output, and make minor adjustments.
 
 
-
 For larger codebases, consider this workflow:
-
 
 
 1. **Use Claude** for the initial spec generation—its context handling reduces fragmentation
@@ -351,14 +326,9 @@ For larger codebases, consider this workflow:
 3. **Always validate** the output using tools like `swagger-cli` or `redocly` before integrating
 
 
-
 If your codebase uses TypeScript with explicit type definitions, Claude generally produces more accurate schema mappings. For plain JavaScript with JSDoc comments, ChatGPT's pattern recognition works well.
 
 The most efficient approach for most teams: write a prompt template specific to your framework and response patterns, store it as a team artifact, and use whichever tool gives you the best acceptance rate on the first pass. Refine the template as you encounter edge cases.
-
-
-
-
 
 
 ## Related Articles

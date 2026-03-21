@@ -17,17 +17,13 @@ voice-checked: true
 {% raw %}
 
 
-
 Build a production-ready TypeScript API client for Claude Code by using compile-time type checking, IntelliSense support, and strong typing patterns. TypeScript ensures your integration catches errors at compile-time rather than runtime, enables confident refactoring, provides self-documenting code structure, and improves developer productivity through IDE support.
-
 
 
 ## Why TypeScript for Claude Code Integration
 
 
-
 TypeScript provides several advantages when working with Claude Code's API:
-
 
 
 - **Compile-time type checking** catches errors before deployment
@@ -39,13 +35,10 @@ TypeScript provides several advantages when working with Claude Code's API:
 - **Refactoring confidence** when making changes to your integration
 
 
-
 ## Setting Up Your TypeScript Project
 
 
-
 Begin by initializing a new TypeScript project with the necessary dependencies:
-
 
 
 ```bash
@@ -56,7 +49,6 @@ npm install typescript @types/node tsx -D
 
 
 Create a `tsconfig.json` file with strict type checking enabled:
-
 
 
 ```json
@@ -81,9 +73,7 @@ Create a `tsconfig.json` file with strict type checking enabled:
 ## Defining Type-Safe API Types
 
 
-
 Create a types file that defines all the request and response types for the Claude Code API:
-
 
 
 ```typescript
@@ -132,9 +122,7 @@ export interface Usage {
 ## Building the API Client Class
 
 
-
 Create a reusable client class that handles authentication, request formatting, and error handling:
-
 
 
 ```typescript
@@ -229,9 +217,7 @@ export class ClaudeCodeError extends Error {
 ## Using the Client in Your Application
 
 
-
 Here's how to integrate the client into your TypeScript application:
-
 
 
 ```typescript
@@ -273,13 +259,10 @@ main();
 ## Best Practices for Production Use
 
 
-
 When deploying your TypeScript API client in production, consider these patterns:
 
 
-
 **1. Use dependency injection for testability**
-
 
 
 ```typescript
@@ -299,7 +282,6 @@ class ProductionHttpClient implements HttpClient {
 **2. Implement request caching for repeated queries**
 
 
-
 ```typescript
 const cache = new Map<string, { data: unknown; timestamp: number }>();
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
@@ -317,7 +299,6 @@ async function getCachedCompletion(key: string): Promise<unknown | null> {
 **3. Add structured logging**
 
 
-
 ```typescript
 function logRequest(params: CompletionRequest): void {
   console.log(JSON.stringify({
@@ -332,9 +313,7 @@ function logRequest(params: CompletionRequest): void {
 ## Publishing Your Client Library
 
 
-
 When you're ready to share your client with other developers, configure your `package.json` for npm publishing:
-
 
 
 ```json
@@ -475,13 +454,6 @@ This small addition means every error in your logs links back to the exact model
 
 
 Building a type-safe TypeScript client for Claude Code ensures your integration handles edge cases gracefully while providing excellent developer experience through autocomplete and type hints.
-
-
-
-
-
-
-
 
 
 ## Related Articles

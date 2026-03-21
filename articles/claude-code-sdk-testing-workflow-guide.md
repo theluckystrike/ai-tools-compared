@@ -18,25 +18,19 @@ layout: default
 {% raw %}
 
 
-
 This guide provides practical steps and best practices to help you accomplish this task effectively. Follow the recommendations to get the best results from your AI tools.
-
 
 
 ## Introduction
 
 
-
 Testing is a critical aspect of SDK development, ensuring reliability, stability, and correct behavior across different use cases. This guide covers establishing testing workflows for Claude Code SDK implementations.
-
 
 
 ## Setting Up Your Test Environment
 
 
-
 Before writing tests, ensure your development environment is properly configured:
-
 
 
 ```bash
@@ -51,9 +45,7 @@ npm install @anthropic-ai/claude-code-sdk
 ## Unit Testing Fundamentals
 
 
-
 Unit tests form the foundation of your testing strategy. Focus on testing individual functions and methods in isolation:
-
 
 
 ```typescript
@@ -84,9 +76,7 @@ describe('ClaudeCodeClient', () => {
 ## Integration Testing
 
 
-
 Integration tests verify that your SDK works correctly with external services:
-
 
 
 ```typescript
@@ -115,9 +105,7 @@ describe('Claude Code SDK Integration', () => {
 ## Mock Testing Strategies
 
 
-
 When testing without API access or to control responses, use mocking:
-
 
 
 ```typescript
@@ -158,9 +146,7 @@ describe('Mocked SDK Tests', () => {
 ## End-to-End Testing
 
 
-
 E2E tests validate complete user workflows:
-
 
 
 ```typescript
@@ -196,9 +182,7 @@ describe('Complete SDK Workflow', () => {
 ## Continuous Integration Setup
 
 
-
 Automate your tests in CI/CD pipelines:
-
 
 
 ```yaml
@@ -235,9 +219,7 @@ jobs:
 ## Test Coverage Best Practices
 
 
-
 Maintain high test coverage across your SDK:
-
 
 
 - Core functionality: 90%+ coverage for critical paths
@@ -249,13 +231,10 @@ Maintain high test coverage across your SDK:
 - Configuration: Test all configuration options
 
 
-
 ## Performance Testing
 
 
-
 Ensure your SDK meets performance requirements:
-
 
 
 ```typescript
@@ -404,11 +383,6 @@ describe('Token usage controls', () => {
 ```
 
 Pair these tests with alerting in production to catch unexpected cost spikes early. A well-tested token management layer prevents the kind of billing surprises that turn small experiments into expensive incidents.
-
-
-
-
-
 
 
 ## Related Articles

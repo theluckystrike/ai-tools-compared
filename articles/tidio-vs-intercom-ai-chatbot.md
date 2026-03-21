@@ -18,37 +18,28 @@ voice-checked: true
 {% raw %}
 
 
-
 Choose Tidio if you need a functional AI chatbot deployed within hours, have limited developer resources, or want budget-friendly plans starting at $25 per month with AI features included. Choose Intercom if you require sophisticated automation workflows, deep API integration for custom solutions, or enterprise-level analytics and customer journey tracking. Tidio offers faster time-to-launch with its plug-and-play approach, while Intercom provides the infrastructure for building complex, deeply integrated support systems.
-
 
 
 ## Platform Architecture Overview
 
 
-
 Tidio positions itself as a customer service platform with AI-powered features. Its chat widget integrates through a straightforward JavaScript snippet, with the AI capabilities built on their proprietary Lyro engine. The platform emphasizes ease of deployment for teams without deep technical resources.
-
 
 
 Intercom offers a broader customer platform with AI features woven throughout. Their AI chatbot, built on OpenAI integration, targets businesses seeking sophisticated automation workflows. Intercom provides extensive API access and webhook support for custom implementations.
 
 
-
 ## API and Integration Capabilities
-
 
 
 Both platforms offer REST APIs, but their capabilities differ significantly.
 
 
-
 ### Tidio API
 
 
-
 Tidio provides a REST API for managing conversations, contacts, and basic bot triggers. Here's a typical authentication and conversation fetch:
-
 
 
 ```javascript
@@ -62,7 +53,7 @@ async function getTidioConversations(publicKey, visitorId) {
       'Content-Type': 'application/json'
     }
   });
-  
+
   return response.json();
 }
 ```
@@ -79,17 +70,13 @@ The Tidio API allows you to:
 - Trigger basic automation rules
 
 
-
 However, direct access to the AI model for custom training or fine-tuning is limited. You primarily work with the pre-built Lyro AI assistant.
-
 
 
 ### Intercom API
 
 
-
 Intercom provides a more extensive API with dedicated endpoints for bots and automation:
-
 
 
 ```javascript
@@ -112,7 +99,7 @@ async function createIntercomBot(accessToken, botConfig) {
       priority: botConfig.priority || 500
     })
   });
-  
+
   return response.json();
 }
 ```
@@ -129,21 +116,16 @@ Intercom's API enables:
 - Integration with custom LLM backends via their platform
 
 
-
 ## Customization and Control
-
 
 
 For developers seeking fine-grained control, the difference becomes clear.
 
 
-
 ### Tidio Customization
 
 
-
 Tidio offers customization through pre-built chat widget themes, custom CSS injection, basic trigger rules based on URL, time, or visitor behavior, and limited JavaScript hooks for custom behavior.
-
 
 
 ```javascript
@@ -164,9 +146,7 @@ tidioSettings = {
 The platform excels at getting started quickly but provides less control over the AI behavior itself.
 
 
-
 ### Intercom Customization
-
 
 
 Intercom offers deeper customization:
@@ -178,7 +158,6 @@ Intercom offers deeper customization:
 - Integration with external services via workflows
 
 - Custom content and dynamic content blocks
-
 
 
 ```javascript
@@ -213,9 +192,7 @@ const intercomBotRule = {
 ## Pricing for Developers
 
 
-
 Pricing significantly impacts which platform suits your project:
-
 
 
 | Feature | Tidio | Intercom |
@@ -231,21 +208,16 @@ Pricing significantly impacts which platform suits your project:
 | API access | Basic (public key) | Full API with limits |
 
 
-
 Tidio's pricing scales more gently for smaller teams. Intercom's pricing reflects its enterprise focus, with costs escalating based on seat count and conversation volume.
-
 
 
 ## Implementation Complexity
 
 
-
 ### Tidio Implementation
 
 
-
 Tidio wins on speed of deployment:
-
 
 
 ```html
@@ -257,11 +229,10 @@ Tidio wins on speed of deployment:
 The entire widget loads and configures automatically. Developers can add custom behavior through callbacks:
 
 
-
 ```javascript
 tidioChatApi.on('message', function(message) {
   console.log('New message:', message);
-  
+
   if (message.author === 'visitor') {
     // Custom analytics or routing logic
     trackConversation(message.content, message.visitor_id);
@@ -273,9 +244,7 @@ tidioChatApi.on('message', function(message) {
 ### Intercom Implementation
 
 
-
 Intercom requires more setup but offers greater control:
-
 
 
 ```javascript
@@ -301,7 +270,6 @@ window.Intercom('boot', {
 
 
 You can also build custom interfaces using the Intercom API rather than their widget:
-
 
 
 ```javascript
@@ -330,7 +298,6 @@ async function sendCustomMessage(accessToken, conversationId, messageBody) {
 ## When to Choose Each Platform
 
 
-
 Choose **Tidio** when:
 
 - You need to deploy a functional chatbot within hours
@@ -340,7 +307,6 @@ Choose **Tidio** when:
 - Basic FAQ automation meets your requirements
 
 - Budget constraints are significant
-
 
 
 Choose **Intercom** when:
@@ -356,32 +322,19 @@ Choose **Intercom** when:
 - Enterprise-level support and SLA guarantees matter
 
 
-
 ## Developer Experience Summary
-
 
 
 From a developer perspective, Tidio offers a faster path to a working chatbot with reasonable customization. Intercom provides the infrastructure for building complex customer support systems but demands more development time and budget.
 
 
-
 For developers building MVP customer support features, Tidio's plug-and-play approach reduces time-to-launch. For teams building sophisticated support automation that needs to integrate deeply with custom systems, Intercom's API-first architecture delivers the flexibility required.
-
 
 
 Your choice ultimately depends on the complexity of your support workflow and the resources available for implementation and ongoing maintenance.
 
 
-
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

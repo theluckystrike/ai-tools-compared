@@ -32,8 +32,8 @@ Large language models from Anthropic and OpenAI provide the underlying technolog
 For example, given a description like "Get all users who signed up in the last 30 days and have made at least one purchase," a well-prompted LLM can generate SQL like:
 
 ```sql
-SELECT * FROM users 
-WHERE signup_date >= NOW() - INTERVAL '30 days' 
+SELECT * FROM users
+WHERE signup_date >= NOW() - INTERVAL '30 days'
 AND user_id IN (SELECT DISTINCT user_id FROM orders);
 ```
 
@@ -356,10 +356,6 @@ Show the query structure and button click handler code.
 ```
 
 This generates an end-to-end workflow rather than isolated queries.
-
-
-
-
 
 
 ## Related Articles

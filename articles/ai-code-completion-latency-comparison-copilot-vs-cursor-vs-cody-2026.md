@@ -287,10 +287,6 @@ function getUserProfile(userId: string): Promise<User> {
 Try this across 10-20 files in your codebase. Your results will vary from these benchmarks because of network, hardware, and file-specific factors. Use your actual numbers to make the choice that fits your workflow.
 
 
-
-
-
-
 ## Related Articles
 
 - [GitHub Copilot vs Cody Sourcegraph Comparison](/ai-tools-compared/github-copilot-vs-cody-sourcegraph-comparison/)

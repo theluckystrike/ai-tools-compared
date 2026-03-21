@@ -18,17 +18,13 @@ intent-checked: true
 {% raw %}
 
 
-
 Documentation pull requests often slip through review cycles without thorough scrutiny. Developers focus on code correctness, while technical writers may miss implementation details. This gap leads to outdated guides, missing edge cases, and frustrated users. AI tools offer a practical solution for catching these gaps before they reach production.
-
 
 
 ## How AI Tools Assist Documentation Review
 
 
-
 AI coding assistants and chat interfaces can analyze documentation PRs in several ways:
-
 
 
 1. **Cross-referencing code with docs** - Verifying that described behavior matches actual implementation
@@ -42,27 +38,22 @@ AI coding assistants and chat interfaces can analyze documentation PRs in severa
 5. **Spotting outdated content** - Detecting deprecated APIs or changed interfaces
 
 
-
 The key is knowing how to prompt these tools effectively and integrating them into your review workflow.
-
 
 
 ## Practical Approaches for Documentation Review
 
 
-
 ### Using Claude Code or Cursor for Inline Review
-
 
 
 When reviewing a documentation PR, you can paste content directly into an AI chat and ask specific questions:
 
 
-
 ```
-Review this API documentation for the /users endpoint. 
-Check if the request parameters, response format, 
-and error codes match the actual implementation in 
+Review this API documentation for the /users endpoint.
+Check if the request parameters, response format,
+and error codes match the actual implementation in
 our OpenAPI spec.
 ```
 
@@ -70,13 +61,10 @@ our OpenAPI spec.
 The AI can then compare the documentation against your codebase and identify discrepancies.
 
 
-
 ### Verifying Code Examples Automatically
 
 
-
 Documentation often includes code snippets that become stale. You can use AI tools to validate these:
-
 
 
 ```python
@@ -87,7 +75,7 @@ import re
 def extract_and_test_code_snippets(docs_content):
     """Extract code blocks from markdown and validate syntax."""
     code_blocks = re.findall(r'```(\w+)\n(.*?)```', docs_content, re.DOTALL)
-    
+
     results = []
     for language, code in code_blocks:
         if language == 'python':
@@ -102,7 +90,7 @@ def extract_and_test_code_snippets(docs_content):
                 'valid': result.returncode == 0,
                 'error': result.stderr if result.returncode != 0 else None
             })
-    
+
     return results
 ```
 
@@ -110,13 +98,10 @@ def extract_and_test_code_snippets(docs_content):
 This script extracts code blocks from your documentation and validates Python syntax. For other languages, you can extend the logic to run appropriate linters or compilers.
 
 
-
 ### AI-Assisted Consistency Checking
 
 
-
 When documentation spans multiple files, consistency becomes critical. Here's a practical workflow:
-
 
 
 ```bash
@@ -125,7 +110,7 @@ find docs/ -name "*.md" -type f > /tmp/doc_files.txt
 
 # Use AI to analyze terminology consistency
 cat /tmp/doc_files.txt | xargs -I {} sh -c '
-  echo "=== {} ===" 
+  echo "=== {} ==="
   grep -n "API\|api\|endpoint" {} | head -5
 '
 ```
@@ -134,10 +119,9 @@ cat /tmp/doc_files.txt | xargs -I {} sh -c '
 Then feed the output to an AI tool with a prompt like:
 
 
-
 ```
-Analyze these file excerpts for API terminology consistency. 
-Identify where we use "API" vs "api" vs "endpoint" and 
+Analyze these file excerpts for API terminology consistency.
+Identify where we use "API" vs "api" vs "endpoint" and
 suggest a standardized approach.
 ```
 
@@ -145,9 +129,7 @@ suggest a standardized approach.
 ## Integrating AI Review into Your CI Pipeline
 
 
-
 Automating documentation checks prevents bad merges. Here's a GitHub Actions workflow:
-
 
 
 ```yaml
@@ -166,14 +148,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
-          
+
       - name: Run AI Documentation Check
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           # Extract documentation changes
           git diff main...HEAD -- docs/ > /tmp/doc_diff.md
-          
+
           # Use Claude API to review the changes
           curl -s https://api.anthropic.com/v1/messages \
             -H "x-api-key: $ANTHROPIC_API_KEY" \
@@ -196,13 +178,10 @@ jobs:
 This workflow runs AI analysis on every documentation change, providing automated feedback before human review.
 
 
-
 ## What AI Tools Do Well
 
 
-
 AI excels at catching several common documentation problems:
-
 
 
 - **Typos and grammar errors** - Though not a replacement for human editing
@@ -216,13 +195,10 @@ AI excels at catching several common documentation problems:
 - **Code drift** - Compares documented APIs against current implementation
 
 
-
 ## Limitations to Consider
 
 
-
 AI tools have boundaries you should recognize:
-
 
 
 - **Context windows** - Very large documentation changes may exceed what fits in a single prompt
@@ -234,17 +210,13 @@ AI tools have boundaries you should recognize:
 - **Tone consistency** - AI may not perfectly match your organization's voice
 
 
-
 Always treat AI feedback as a first pass, not final judgment.
-
 
 
 ## Recommended Workflow
 
 
-
 A practical documentation review process combines AI assistance with human oversight:
-
 
 
 1. **Author self-review** - Use AI to check your own changes before creating the PR
@@ -256,24 +228,20 @@ A practical documentation review process combines AI assistance with human overs
 4. **Final AI scan** - Quick pass to catch anything missed
 
 
-
 This layered approach catches more issues than any single method alone.
-
 
 
 ## Example Prompts for Documentation Review
 
 
-
 Here are effective prompts you can adapt:
-
 
 
 **For accuracy checking:**
 
 ```
 This documentation describes a function called process_user_data.
-Verify that the parameters, return values, and exceptions 
+Verify that the parameters, return values, and exceptions
 listed match the actual function signature in our codebase.
 ```
 
@@ -281,7 +249,7 @@ listed match the actual function signature in our codebase.
 **For completeness:**
 
 ```
-Review this API documentation and list any missing information 
+Review this API documentation and list any missing information
 a developer would need to successfully use this endpoint.
 ```
 
@@ -289,14 +257,9 @@ a developer would need to successfully use this endpoint.
 **For consistency:**
 
 ```
-Check this documentation for terminology consistency. 
+Check this documentation for terminology consistency.
 Flag any instances where we use different terms for the same concept.
 ```
-
-
-
-
-
 
 
 ## Related Articles

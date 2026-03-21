@@ -18,33 +18,25 @@ voice-checked: true
 Choose Lightdash if your team already uses dbt and wants AI-powered natural language queries with minimal infrastructure overhead. Choose Preset if you need custom ML model integration, Python-native visualizations, or work with data sources outside dbt. This comparison covers architecture, AI features, and code examples for both platforms.
 
 
-
 ## Architecture Overview
-
 
 
 **Lightdash** transforms your dbt project into a full BI platform. It reads your dbt models directly and generates explorable dashboards without separate configuration. The architecture relies heavily on dbt for data transformation, meaning your semantic layer lives in your dbt project.
 
 
-
 **Preset** provides a more flexible, standalone BI platform built on Apache Superset. It offers native support for Python-based components, extensive plugin capabilities, and a chart-builder-first approach that doesn't require code-defined metrics.
-
 
 
 Both platforms have introduced AI features, but their implementations reflect their underlying architectural choices.
 
 
-
 ## AI Features Comparison
-
 
 
 ### Lightdash AI
 
 
-
 Lightdash AI focuses on natural language queries and automated insights. The system analyzes your dbt metrics and dimensions to generate query suggestions and explain results in plain language.
-
 
 
 ```yaml
@@ -63,7 +55,6 @@ ai:
 
 
 To enable AI features in Lightdash, your dbt models need proper documentation with descriptions and meta tags:
-
 
 
 ```yaml
@@ -86,13 +77,10 @@ models:
 Lightdash AI works best when your dbt project follows best practices with well-documented metrics. The AI generates SQL behind the scenes, which means you need to understand the generated queries to validate results.
 
 
-
 ### Preset AI
 
 
-
 Preset uses its Python foundation to offer more flexible AI integration. You can embed Jupyter-style notebooks directly in your dashboards, run custom ML models, and create interactive AI-powered components.
-
 
 
 ```python
@@ -107,12 +95,12 @@ def render_anomaly_dashboard(df):
     """
     # Pre-process data
     features = df[['metric_value', 'velocity', 'recency']].fillna(0)
-    
+
     # Run anomaly detection
     model = IsolationForest(contamination=0.1, random_state=42)
     df['anomaly_score'] = model.fit_predict(features)
     df['anomaly_prob'] = model.score_samples(features)
-    
+
     # Return visualization data
     return {
         'scatter': df.to_dict(orient='records'),
@@ -125,17 +113,13 @@ def render_anomaly_dashboard(df):
 Preset also offers native AI assistants that can help build queries and generate visualizations through natural language.
 
 
-
 ## Data Integration Patterns
-
 
 
 ### Connecting to Your Data Warehouse
 
 
-
 Both platforms connect to similar data sources, but the setup process differs:
-
 
 
 ```sql
@@ -148,21 +132,16 @@ Both platforms connect to similar data sources, but the setup process differs:
 **Lightdash** requires dbt to manage transformations. Your data flow looks like: Source DB → dbt → Lightdash. This means Lightdash works only with dbt-managed projects.
 
 
-
 **Preset** connects directly to your warehouse without dbt dependency. You can use dbt if you want, but it's not required. This makes Preset more flexible for varied data architectures.
-
 
 
 ## Building AI Dashboards: Code Examples
 
 
-
 ### Lightdash Approach
 
 
-
 Lightdash uses YML-based configurations for dashboards:
-
 
 
 ```yaml
@@ -201,9 +180,7 @@ dashboards:
 ### Preset Approach
 
 
-
 Preset allows programmatic dashboard creation through its API:
-
 
 
 ```python
@@ -248,7 +225,7 @@ def create_ai_dashboard(preset_token, workspace_id):
             ]
         }
     }
-    
+
     response = requests.post(
         f"https://api.preset.io/v1/workspaces/{workspace_id}/dashboards",
         headers={"Authorization": f"Bearer {preset_token}"},
@@ -261,9 +238,7 @@ def create_ai_dashboard(preset_token, workspace_id):
 ## Performance Considerations
 
 
-
 For AI workloads, query performance matters significantly:
-
 
 
 | Aspect | Lightdash | Preset |
@@ -279,38 +254,22 @@ For AI workloads, query performance matters significantly:
 | Custom Python | Not supported | Native execution |
 
 
-
 ## When to Choose Each Platform
-
 
 
 Choose **Lightdash** if your team already uses dbt for data transformation, you want minimal infrastructure overhead, natural language queries are a priority, or you prefer configuration over code.
 
 
-
 Choose **Preset** if you need custom ML model integration, your data doesn't use dbt, you want full programmatic control, or Python-based visualizations are essential.
-
 
 
 ## Recommendation
 
 
-
 For developers building AI dashboards, the choice depends on your existing infrastructure. Teams with established dbt workflows will find Lightdash's integrated approach improved. Organizations needing custom ML pipelines or working without dbt will benefit from Preset's flexibility.
 
 
-
 Start by mapping your current data architecture. If dbt is central to your operations, Lightdash AI integration requires minimal additional setup. If you need custom model serving or diverse data sources, Preset's Python-native approach provides more flexibility.
-
-
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

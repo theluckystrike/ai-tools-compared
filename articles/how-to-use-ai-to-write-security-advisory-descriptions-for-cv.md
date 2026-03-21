@@ -18,17 +18,13 @@ intent-checked: true
 Use AI tools to generate CVE advisory descriptions by providing the vulnerability technical details (CWE classification, affected versions, attack vector, impact) and requesting output that aligns with NVD formatting standards. AI accelerates the writing of sections covering technical impact, attack vectors, CVSS severity, and remediation steps while ensuring descriptions remain accurate and accessible to both technical and non-technical audiences.
 
 
-
 This guide covers practical approaches for using AI to draft CVE advisory descriptions, including prompt engineering techniques, validation strategies, and workflow integration.
-
 
 
 ## Understanding CVE Advisory Description Requirements
 
 
-
 Before using AI, you need to understand what makes a good CVE advisory description. The description must include several key elements:
-
 
 
 - **Vulnerability type** (CWE classification)
@@ -44,21 +40,16 @@ Before using AI, you need to understand what makes a good CVE advisory descripti
 - **Mitigation or remediation steps**
 
 
-
 The National Vulnerability Database (NVD) and MITRE provide guidelines for CVE description formatting. Your AI-generated content must align with these standards while remaining readable.
-
 
 
 ## Prompt Engineering for CVE Descriptions
 
 
-
 The quality of AI-generated CVE descriptions depends heavily on your prompts. A well-structured prompt provides the necessary context, constraints, and examples.
 
 
-
 ### Basic Prompt Template
-
 
 
 ```markdown
@@ -82,7 +73,6 @@ Requirements:
 ### Enhanced Prompt with Style Guidance
 
 
-
 ```markdown
 Draft a CVE advisory description for:
 - CWE-89: SQL Injection in example-app v1.0-v2.3
@@ -102,9 +92,7 @@ Write in formal security advisory tone. Include:
 ## Practical Examples
 
 
-
 ### Example 1: Authentication Bypass
-
 
 
 **Input to AI:**
@@ -132,7 +120,6 @@ This issue has been fixed in version 3.6.
 ### Example 2: Remote Code Execution
 
 
-
 **Input to AI:**
 
 ```
@@ -157,15 +144,12 @@ Note: This issue affects both the 1.x and 2.x branches. Users of versions 2.0-2.
 ## AI Configuration for Security Writing
 
 
-
 When using AI for security content, configure your tool appropriately:
-
 
 
 ### Temperature Setting
 
 Use lower temperature values (0.1-0.3) for factual security content. Higher creativity can introduce inaccuracies or overly dramatic language.
-
 
 
 ### Context Window
@@ -181,7 +165,6 @@ Provide as much relevant context as possible, including:
 - CVSS calculation details
 
 
-
 ### Output Validation
 
 Always validate AI output against:
@@ -195,13 +178,10 @@ Always validate AI output against:
 - Technical feasibility of described attacks
 
 
-
 ## Workflow Integration
 
 
-
 For teams processing multiple CVEs, integrate AI into your workflow:
-
 
 
 ### 1. Triage Phase
@@ -209,13 +189,12 @@ For teams processing multiple CVEs, integrate AI into your workflow:
 Use AI to generate initial drafts from raw vulnerability scan output:
 
 
-
 ```python
 def generate_cve_draft(vuln_data):
     prompt = f"""
     Based on this Nmap/Nessus output, generate a CVE description draft:
     {vuln_data}
-    
+
     Extract: CWE candidate, affected service, potential impact
     """
     return call_ai_api(prompt)
@@ -227,13 +206,12 @@ def generate_cve_draft(vuln_data):
 AI can help cross-reference descriptions with known patterns:
 
 
-
 ```python
 def validate_description(description, cwe_id):
     prompt = f"""
     Review this CVE description for consistency with CWE-{cwe_id}:
     {description}
-    
+
     Check for:
     - Accuracy vs CWE definition
     - Completeness of required elements
@@ -248,7 +226,6 @@ def validate_description(description, cwe_id):
 Generate multiple formats from a single source:
 
 
-
 ```markdown
 Generate these from the core description:
 - Short summary (50 words)
@@ -261,44 +238,28 @@ Generate these from the core description:
 ## Common Pitfalls to Avoid
 
 
-
 Over-reliance on AI without validation: Always have security experts review technical accuracy. AI can generate plausible but incorrect technical details.
-
 
 
 Missing version ranges: AI sometimes omits specific version boundaries. Explicitly require version ranges in your prompts.
 
 
-
 Inconsistent severity: CVSS scores should come from official sources, not AI generation. Use AI to describe the technical basis for scoring rather than the score itself.
-
 
 
 Generic language: Security advisories need specificity. Train your prompts to avoid vague terms like "potential security issue" in favor of concrete descriptions.
 
 
-
 ## Tools and Approaches
-
 
 
 General-purpose LLMs with strong instruction-following capabilities work well for CVE description generation. Claude, GPT-4, and similar models can produce accurate descriptions when given proper context and constraints. The key is providing detailed input data and clear formatting requirements.
 
 
-
 For teams with specific style guides or vendor templates, create custom prompt libraries that enforce your organization's standards. Store effective prompts and iterate based on review feedback.
 
 
-
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

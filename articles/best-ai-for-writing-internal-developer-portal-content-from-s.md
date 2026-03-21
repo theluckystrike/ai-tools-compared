@@ -54,13 +54,10 @@ Successful internal developer portal consolidation requires both AI efficiency a
 Many AI writing tools can generate content matching specific structures. This ensures all your portal pages follow a consistent format, improving discoverability and user experience.
 
 
-
 ### 3. Code Example Transformation
 
 
-
 Scattered wiki pages often contain outdated code snippets. AI tools excel at modernizing code examples:
-
 
 
 - Converting callback-based code to async/await patterns
@@ -72,9 +69,7 @@ Scattered wiki pages often contain outdated code snippets. AI tools excel at mod
 - Translating between programming languages
 
 
-
 For instance, transforming a legacy Node.js callback pattern:
-
 
 
 ```javascript
@@ -99,9 +94,7 @@ async function getUsers() {
 ## Choosing the Right AI Tool
 
 
-
 Several AI tools work well for technical documentation tasks:
-
 
 
 | Tool Type | Best For | Consideration |
@@ -115,17 +108,13 @@ Several AI tools work well for technical documentation tasks:
 | Code-Focused AI | Code example generation | Limited prose capabilities |
 
 
-
 For consolidating scattered wiki pages, a general-purpose LLM typically provides the most flexibility. You can feed it raw content from multiple sources and instruct it to produce clean, unified documentation.
-
 
 
 ## Effective Prompting Strategies
 
 
-
 The quality of your AI-generated documentation depends heavily on your prompts. Here are strategies that work well:
-
 
 
 **Consolidation prompts with context:**
@@ -216,9 +205,7 @@ Organizations consolidating scattered wiki documentation report:
 ## Implementation Workflow
 
 
-
 A practical workflow for consolidating wiki content:
-
 
 
 1. **Inventory your sources** – List all relevant wiki pages, docs, and files. Note creation dates and last-modified dates.
@@ -232,7 +219,6 @@ A practical workflow for consolidating wiki content:
 5. **Review and edit** – Have subject matter experts verify technical accuracy. Create a review checklist for consistency.
 
 6. **Publish and track** – Monitor usage to identify needed updates. Set up redirects from old wiki URLs to new portal locations. Track which pages get the most traffic.
-
 
 
 ## AI Tools Comparison for Portal Content
@@ -292,9 +278,7 @@ Requirements:
 ## Maintaining Quality
 
 
-
 AI assists with initial content creation, but human review remains essential. Establish a review process that includes:
-
 
 
 - Technical accuracy verification by domain experts
@@ -306,12 +290,6 @@ AI assists with initial content creation, but human review remains essential. Es
 - Style enforcement matching your organization's standards
 
 - Ownership assignment so one person is accountable for each page
-
-
-
-
-
-
 
 
 ## Related Articles

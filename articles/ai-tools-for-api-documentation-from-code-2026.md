@@ -347,10 +347,6 @@ For a 50-endpoint API:
 - **Swimm:** Setup takes time, pays off when docs change frequently
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)

@@ -81,18 +81,18 @@ from datetime import datetime
 
 class CasetextClient:
     """Client for Casetext API integration"""
-    
+
     def __init__(self, api_key: str):
         self.api_key = api_key
         self.base_url = "https://api.casetext.com/v2"
-    
+
     def research_query(self, query: str, jurisdictions: list = None):
         """Submit a natural language research query"""
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json"
         }
-        
+
         payload = {
             "query": query,
             "jurisdictions": jurisdictions or ["US-Federal"],
@@ -103,26 +103,26 @@ class CasetextClient:
             "ai_enhanced": True,
             "max_results": 20
         }
-        
+
         response = requests.post(
             f"{self.base_url}/research",
             json=payload,
             headers=headers
         )
         return response.json()
-    
+
     def analyze_document(self, document_text: str):
         """Analyze a document for relevant legal authorities"""
         headers = {
             "Authorization": f"Bearer {self.api_key}",
             "Content-Type": "application/json"
         }
-        
+
         payload = {
             "document": document_text,
             "analysis_type": "comprehensive"
         }
-        
+
         response = requests.post(
             f"{self.base_url}/analyze",
             json=payload,
@@ -398,3 +398,5 @@ When adopting Casetext firm-wide:
 - [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 - [Best AI Tool for Journalists Article Research 2026](/ai-tools-compared/best-ai-tool-for-journalists-article-research-2026/)
 - [Best AI Tool for Traders: Market Research Summaries](/ai-tools-compared/best-ai-tool-for-traders-market-research-summaries/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

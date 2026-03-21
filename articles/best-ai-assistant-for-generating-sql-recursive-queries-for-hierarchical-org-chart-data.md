@@ -19,13 +19,10 @@ intent-checked: true
 AI assistants can generate correct recursive SQL queries for organizational hierarchies by understanding CTE syntax, proper termination conditions, and path building logic. The best AI tools produce anchor and recursive query parts separately, include safeguards against infinite loops, and explain why each component matters. They also recognize when recursion is unnecessary and offer variations for different use cases like finding descendants, entire subtrees, or reporting chains.
 
 
-
 ## The Hierarchical Query Problem
 
 
-
 Organizational data typically uses an **adjacency list model** where each employee record contains a `manager_id` pointing to their supervisor:
-
 
 
 ```sql
@@ -41,54 +38,45 @@ CREATE TABLE employees (
 Querying this structure requires recursive CTEs. The challenge lies in correctly structuring the anchor query, recursive member, termination condition, and ensuring proper depth tracking. Many developers struggle with the syntax, particularly when adding requirements like path accumulation or depth limits.
 
 
-
 ## What Makes an AI Assistant Effective for Recursive Queries
-
 
 
 A capable AI assistant for this task must understand several interconnected concepts. First, it needs to correctly implement the **recursive CTE structure** with separate anchor and recursive parts. Second, it should handle **infinite loop prevention** using visited sets or depth limits. Third, it must support **path building** for scenarios requiring the full hierarchy chain. Finally, it should optimize for common variations like finding all direct reports, entire subtrees, or the reporting chain up to the CEO.
 
 
-
 The best AI assistants also recognize when recursive queries are unnecessary—for instance, when only a single level of reporting needs to be retrieved.
-
 
 
 ## Practical Examples: AI-Generated Recursive Queries
 
 
-
 Here is how different AI assistants respond to a common hierarchical query requirement.
-
 
 
 ### Finding All Descendants of a Manager
 
 
-
 Prompt: "Write a recursive SQL query to find all employees who report to manager_id 5, including their direct and indirect reports, with their level in the hierarchy."
-
 
 
 A high-quality response generates a CTE-based solution similar to this:
 
 
-
 ```sql
 WITH RECURSIVE reporting_chain AS (
     -- Anchor: direct reports of the manager
-    SELECT 
+    SELECT
         id,
         name,
         manager_id,
         1 AS level
     FROM employees
     WHERE manager_id = 5
-    
+
     UNION ALL
-    
+
     -- Recursive: employees whose manager is in the result set
-    SELECT 
+    SELECT
         e.id,
         e.name,
         e.manager_id,
@@ -104,23 +92,19 @@ ORDER BY level, name;
 The AI should explain each part: the anchor query selects direct reports, the recursive member joins the employees table to already-found records, and the query naturally terminates when no more descendants exist.
 
 
-
 ### Building Full Path Chains
-
 
 
 Prompt: "Write a query that returns the complete reporting path from each employee up to the CEO, showing the chain as a concatenated string."
 
 
-
 This requires accumulating the path during recursion:
-
 
 
 ```sql
 WITH RECURSIVE reporting_path AS (
     -- Anchor: employees with no manager (CEO level)
-    SELECT 
+    SELECT
         id,
         name,
         manager_id,
@@ -128,11 +112,11 @@ WITH RECURSIVE reporting_path AS (
         0 AS depth
     FROM employees
     WHERE manager_id IS NULL
-    
+
     UNION ALL
-    
+
     -- Recursive: prepend current employee to existing path
-    SELECT 
+    SELECT
         e.id,
         e.name,
         e.manager_id,
@@ -142,7 +126,7 @@ WITH RECURSIVE reporting_path AS (
     INNER JOIN reporting_path rp ON e.manager_id = rp.id
     WHERE rp.depth < 20  -- Prevent infinite loops
 )
-SELECT 
+SELECT
     id,
     name,
     path AS reporting_chain,
@@ -155,29 +139,26 @@ ORDER BY depth DESC, name;
 The key technique here is path accumulation using string concatenation in the recursive member. The depth limit provides insurance against corrupted data causing infinite recursion.
 
 
-
 ### Identifying Root Nodes and Tree Depth
-
 
 
 Prompt: "Write a query that calculates how many levels deep each employee's reporting chain goes, and identify the top-level manager for each employee."
 
 
-
 ```sql
 WITH RECURSIVE hierarchy AS (
     -- Start with all employees as potential roots
-    SELECT 
+    SELECT
         id,
         name,
         manager_id,
         id AS root_id,
         1 AS depth
     FROM employees
-    
+
     UNION ALL
-    
-    SELECT 
+
+    SELECT
         e.id,
         e.name,
         e.manager_id,
@@ -187,7 +168,7 @@ WITH RECURSIVE hierarchy AS (
     INNER JOIN hierarchy h ON e.manager_id = h.id
     WHERE h.depth < 50
 )
-SELECT 
+SELECT
     root_id,
     (SELECT name FROM employees WHERE id = root_id) AS top_manager,
     MAX(depth) AS max_depth,
@@ -201,21 +182,16 @@ ORDER BY max_depth DESC;
 This query handles multiple disconnected trees (such as different companies within a dataset) by treating each employee without a manager as a potential root.
 
 
-
 ## Common Pitfalls AI Assistants Should Avoid
-
 
 
 Several recurring issues appear in AI-generated recursive queries. **Missing termination conditions** leads to infinite loops—good AI assistants include depth limits or visited-set checks. **Incorrect recursion direction** happens when developers confuse finding descendants (joining on `manager_id`) from ancestors (joining on employee `id`). **Performance issues** arise from missing indexes on the `manager_id` column, which the AI should mention. **Union vs Union All confusion** typically requires Union All for recursive CTEs to avoid unnecessary deduplication overhead.
 
 
-
 ## Evaluating AI Assistant Performance
 
 
-
 When testing AI assistants with hierarchical queries, verify they handle the basic recursive structure correctly, provide explanations of the anchor and recursive parts, include appropriate termination safeguards, suggest indexes for the `manager_id` column, offer variations for different use cases, and recognize when recursion is or is not needed.
-
 
 
 The most effective assistants also explain the query in plain language, highlight potential performance concerns with large hierarchies, and provide test data or examples showing expected results.
@@ -398,18 +374,12 @@ WHERE manager_id = id;  -- Circular reference found
 These diagnostic queries help data quality teams fix issues before they break recursive queries.
 
 
-
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
 - [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
 - [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 - [AI Autocomplete Comparison for Writing SQL Queries.](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [Best AI Assistant for Designers Generating Accessibility.](/ai-tools-compared/best-ai-assistant-for-designers-generating-accessibility-aud/)
 - [Effective Prompting Strategies for AI Generation of Complex SQL Queries 2026](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
-
-
-
-
-
 
 
 ## Related Articles

@@ -16,25 +16,19 @@ voice-checked: true
 Build an MCP server that exposes your deployment environment details to AI coding assistants by creating a Node.js server using the Model Context Protocol that returns structured information about cloud provider, regions, container orchestration, and infrastructure configuration. This context enables your AI assistant to generate Terraform, Kubernetes manifests, and deployment workflows that match your actual infrastructure setup.
 
 
-
 ## Understanding MCP Servers and Deployment Context
-
 
 
 MCP servers act as bridges between AI models and external systems. A deployment environment context server provides information about your infrastructure—cloud provider, region, container orchestration platform, environment variables, secrets management, and networking configuration. With this context, your AI assistant can generate Terraform configurations that match your AWS setup, Kubernetes manifests that respect your existing namespace conventions, or GitHub Actions workflows that deploy to your specific infrastructure.
 
 
-
 The protocol follows a request-response pattern where the AI sends a request to your server, and your server returns structured data. Building this server gives you control over exactly what environment information your AI can access.
-
 
 
 ## Setting Up Your MCP Server Project
 
 
-
 Start by creating a new Node.js project for your MCP server:
-
 
 
 ```bash
@@ -45,7 +39,6 @@ npm install @modelcontextprotocol/server std
 
 
 Create the main server file:
-
 
 
 ```typescript
@@ -149,17 +142,13 @@ await server.connect(transport);
 ## Connecting to Your Actual Infrastructure
 
 
-
 For production use, replace the hardcoded values with real infrastructure queries. The following examples show how to fetch actual deployment context from different sources.
-
 
 
 ### AWS Integration
 
 
-
 Query your AWS environment directly:
-
 
 
 ```typescript
@@ -167,13 +156,13 @@ import { ECSClient, DescribeClustersCommand } from "@aws-sdk/client-ecs";
 
 async function getAWSContext() {
   const ecs = new ECSClient({ region: process.env.AWS_REGION || "us-west-2" });
-  
+
   const clusterResponse = await ecs.send(new DescribeClustersCommand({
     clusters: [process.env.ECS_CLUSTER_NAME]
   }));
-  
+
   const cluster = clusterResponse.clusters[0];
-  
+
   return {
     cloudProvider: "aws",
     region: process.env.AWS_REGION || "us-west-2",
@@ -191,9 +180,7 @@ async function getAWSContext() {
 ### Kubernetes Integration
 
 
-
 Query your current Kubernetes context using the official client:
-
 
 
 ```typescript
@@ -202,10 +189,10 @@ import * as k8s from "@kubernetes/client-node";
 async function getKubernetesContext() {
   const kc = new k8s.Config.fromDefault();
   const k8sApi = kc.makeApiClient(k8s.CoreV1Api);
-  
+
   const namespaceResponse = await k8sApi.listNamespace();
   const namespaces = namespaceResponse.body.items.map(ns => ns.metadata.name);
-  
+
   return {
     currentContext: kc.getCurrentContext(),
     namespace: kc.getCurrentNamespace() || "default",
@@ -225,9 +212,7 @@ async function getStorageClass(api: k8s.CoreV1Api) {
 ## Registering Your Server with Claude Code
 
 
-
 After building your server, register it with your AI assistant. For Claude Code, add it to your configuration:
-
 
 
 ```bash
@@ -239,21 +224,16 @@ claude mcp add deployment-context ./server.py
 For Cursor, add it through the settings interface under "MCP Servers" with the path to your server executable.
 
 
-
 ## Practical Example: Generating Environment-Aware Code
-
 
 
 With your deployment context server running, your AI assistant can now generate infrastructure-aware code. Consider this prompt:
 
 
-
 > "Create a Kubernetes deployment manifest for a Node.js API service"
 
 
-
 Without deployment context, the AI might generate a generic manifest. With your MCP server providing context, it can generate:
-
 
 
 ```yaml
@@ -312,13 +292,10 @@ spec:
 The manifest now includes your production namespace, appropriate resource limits, and secret references matching your actual Kubernetes configuration.
 
 
-
 ## Extending Your Server
 
 
-
 Beyond basic context, consider adding these capabilities:
-
 
 
 - Secrets retrieval: Safely expose non-sensitive metadata about secrets without exposing actual values
@@ -330,25 +307,19 @@ Beyond basic context, consider adding these capabilities:
 - Dependency mapping: Show which services communicate with each other to help the AI understand integration points
 
 
-
 ## Security Considerations
-
 
 
 When building your deployment context server, follow these practices:
 
 
-
 Never expose actual secrets or credentials through your MCP server. Return only metadata and configuration patterns. Implement authentication if your server will be used by multiple team members. Consider rate limiting to prevent abuse, and audit logging to track which tools accessed what information.
-
 
 
 ## Testing Your Implementation
 
 
-
 Verify your server works correctly before using it with your AI assistant:
-
 
 
 ```bash
@@ -358,14 +329,6 @@ echo '{"jsonrpc": "2.0", "id": 1, "method": "tools/list"}' | node server.js
 
 
 You should receive a list of available tools. Then test each tool individually to confirm it returns the expected data structure.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

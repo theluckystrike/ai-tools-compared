@@ -452,8 +452,6 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 - **Version pins**: Always specify action versions (`@v4`, not `@latest`).
 
 
-
-
 ## Related Articles
 
 - [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-for-generating-github-actions-workflows-from-plain-english-descriptions/)
@@ -461,5 +459,7 @@ All three support `schedule:` trigger. Claude Code properly explains cron syntax
 - [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

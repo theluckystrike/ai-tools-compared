@@ -18,37 +18,28 @@ voice-checked: true
 Monorepos require explicit context configuration to prevent AI from hallucinating about unrelated packages. This guide shows how to set up AI tools to include only relevant workspace paths, package dependencies, and type definitions while excluding irrelevant codebases.
 
 
-
 When working with large monorepo projects, AI coding assistants often struggle to provide relevant suggestions because they attempt to process the entire repository. Configuring context includes and excludes allows you to direct the AI's attention to the specific packages and directories that matter for your current task. This results in more accurate completions, better-informed responses, and faster interactions.
-
 
 
 ## Why Monorepos Challenge AI Context
 
 
-
 Monorepos contain multiple projects, packages, or services within a single repository. A typical monorepo might include a frontend application, backend API, shared utilities, design system components, and documentation. When you ask an AI coding assistant for help, it attempts to build context from files across the entire repository, which introduces several problems.
-
 
 
 First, irrelevant files dilute the context. If you're working on a React component but the AI is processing Python backend code, the relevant signals get buried in noise. Second, token limits mean that processing everything leaves less room for the actual code you care about. Third, the AI may suggest solutions using the wrong package or framework because it doesn't know which part of the monorepo you're actually working in.
 
 
-
 Configuring includes and excludes solves these issues by telling the AI exactly which parts of the repository to consider.
-
 
 
 ## Configuring Cursor for Monorepo Context
 
 
-
 Cursor, an AI-powered code editor based on VS Code, provides several ways to control context scope. The most direct method uses the `.cursorrules` file in your project root.
 
 
-
 Create a `.cursorrules` file with explicit include and exclude patterns:
-
 
 
 ```
@@ -68,21 +59,16 @@ Create a `.cursorrules` file with explicit include and exclude patterns:
 The `@` symbol tells Cursor to include these paths in context. The `!` prefix excludes specific patterns. This approach works well when you have clearly separated package directories.
 
 
-
 For more granular control, Cursor supports workspace-specific settings. Create a `.cursor` folder with context configuration files for different parts of your monorepo. Each file can specify which directories to include when working within that workspace context.
-
 
 
 ## Configuring Claude Code (Claude CLI) Context
 
 
-
 Claude Code, Anthropic's CLI tool for AI-assisted development, uses `.claude` directory for project settings. Create a `settings.local.yml` file to configure context behavior.
 
 
-
 For a Turborepo-style monorepo with Next.js frontend and Node.js backend:
-
 
 
 ```yaml
@@ -106,9 +92,7 @@ context:
 This configuration tells Claude Code to focus on your Next.js application and shared packages while ignoring dependencies, build outputs, and test files that would consume context tokens without adding value.
 
 
-
 You can also use the `--context` flag when starting a Claude Code session to temporarily override these settings:
-
 
 
 ```bash
@@ -119,13 +103,10 @@ claude --context "packages/api/**" "Review the auth middleware"
 ## Configuring GitHub Copilot Context
 
 
-
 GitHub Copilot integrates directly into GitHub's ecosystem and offers context configuration through `.github/copilot-includes.md` and `.github/copilot-excludes.md` files in your repository root.
 
 
-
 Create `copilot-includes.md` to specify priority files:
-
 
 
 ```markdown
@@ -138,7 +119,6 @@ packages/config/**/*.js
 
 
 Create `copilot-excludes.md` for files to ignore:
-
 
 
 ```markdown
@@ -156,13 +136,10 @@ Create `copilot-excludes.md` for files to ignore:
 Copilot processes files listed in the includes file first, then considers other relevant files while respecting the excludes list. This ranking system ensures your primary focus areas get priority in context building.
 
 
-
 ## Configuring Windshow's Windsurf
 
 
-
 Windsurf, another AI code editor, uses a `.windsurfrules` file for context configuration. The syntax combines includes and excludes in a single file:
-
 
 
 ```
@@ -185,17 +162,13 @@ Windsurf, another AI code editor, uses a `.windsurfrules` file for context confi
 Windsurf also supports workspace-specific rules. Create a `.windsurf` directory with separate rule files for different projects within your monorepo. This allows context switching based on which workspace you're currently editing.
 
 
-
 ## Pattern Matching for Monorepo Structures
-
 
 
 Understanding glob patterns helps you create precise configurations. Here are practical patterns for common monorepo structures.
 
 
-
 For npm workspaces with packages in `packages/` and apps in `apps/`:
-
 
 
 ```
@@ -214,7 +187,6 @@ For npm workspaces with packages in `packages/` and apps in `apps/`:
 For Turborepo with multiple apps and packages:
 
 
-
 ```
 # Target specific app
 @apps/nextjs/**
@@ -228,7 +200,6 @@ For Turborepo with multiple apps and packages:
 
 
 For pnpm workspaces with scattered packages:
-
 
 
 ```
@@ -246,48 +217,31 @@ For pnpm workspaces with scattered packages:
 ## Optimizing Context for Better Results
 
 
-
 After configuring includes and excludes, verify that your settings produce the desired behavior. Test by asking your AI assistant to explain or modify code in different parts of your monorepo. The responses should focus on the relevant directories without pulling in unrelated code.
-
 
 
 Monitor token usage when working with large files. Even with includes configured, very large files can consume your entire context window. Consider splitting oversized files or using additional excludes for files over a certain size threshold.
 
 
-
 Keep your configuration files in version control so team members benefit from optimized context settings. Document the rationale behind include/exclude choices, especially for monorepos with unconventional structures.
-
 
 
 ## Common Mistakes to Avoid
 
 
-
 A frequent error is being too broad with includes. Including `@**` or entire root directories defeats the purpose of context configuration. Be specific about which packages or apps matter for your workflow.
-
 
 
 Another mistake is excluding test files entirely. While tests consume context tokens, they provide valuable context for understanding how code should behave. Consider including focused test files rather than excluding all tests.
 
 
-
 Forgetting to exclude generated files is another common oversight. Files in `dist/`, `build/`, `.next/`, and similar directories should always be excluded since they contain compiled output, not source code.
-
 
 
 Finally, configuration files left at the root may not apply to nested projects. If your monorepo has independent sub-projects, consider adding localized configuration files to those directories for more precise control.
 
 
-
 Properly configured context includes and excludes transform AI assistance from a generic tool into a focused collaborator that understands exactly which part of your monorepo you're working in and provides relevant, accurate guidance accordingly.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

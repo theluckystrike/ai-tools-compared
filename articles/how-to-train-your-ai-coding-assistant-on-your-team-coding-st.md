@@ -18,41 +18,31 @@ voice-checked: true
 Train your AI assistant on team standards by including your coding guidelines in context, showing pattern examples in prompts, and providing feedback on non-compliant suggestions. This guide shows the training workflow that makes AI output match your team's style without manual rework.
 
 
-
 This guide covers practical methods for teaching AI coding assistants understand and respect your team's unique conventions.
-
 
 
 ## Understanding What Your Assistant Can Learn
 
 
-
 AI coding assistants learn from multiple sources: your codebase, documentation, and explicit instructions. Each learning method serves different purposes and produces different results.
-
 
 
 Your codebase itself provides the strongest signals. When assistants analyze thousands of files in your repository, they identify patterns in how your team names variables, structures functions, organizes imports, and handles errors. This organic learning happens naturally as you work, but you can accelerate it by being intentional about what the assistant sees first.
 
 
-
 Documentation and configuration files offer explicit guidance. Adding a README, coding conventions document, or style guide gives assistants concrete references they can cite when generating code. Many assistants actively read these files when they exist in your project root.
-
 
 
 Custom instructions and preferences let you define behavior explicitly. Most modern assistants support project-level or global configuration that shapes their responses. These settings persist across sessions and apply to all interactions within your project.
 
 
-
 ## Setting Up Context Files
-
 
 
 Creating a dedicated coding standards file in your project gives assistants a reference they can rely on. This file should contain your team's essential conventions in a format the assistant can parse easily.
 
 
-
 A practical approach uses Markdown with clear sections. Here's an example structure:
-
 
 
 ```markdown
@@ -85,17 +75,13 @@ A practical approach uses Markdown with clear sections. Here's an example struct
 Save this file as `CODING_STANDARDS.md` in your project root. Most assistants check for this file automatically or can be configured to reference it.
 
 
-
 ## Using Assistant Configuration Files
-
 
 
 Many AI coding assistants respect configuration files that define project-specific behavior. For Cursor, create a `.cursorrules` file. For GitHub Copilot, use a `copilot-inputs.txt` or similar configuration. These files accept natural language descriptions of your preferences.
 
 
-
 Example `.cursorrules` configuration:
-
 
 
 ```
@@ -118,17 +104,13 @@ When generating code:
 This configuration shapes every response the assistant generates within your project context.
 
 
-
 ## Teaching Through Code Examples
-
 
 
 Beyond documentation, showing the assistant examples of code you consider good produces more accurate results. Create reference files that demonstrate your patterns explicitly.
 
 
-
 For a React project, you might include a reference component:
-
 
 
 ```tsx
@@ -181,13 +163,10 @@ export function Button({
 Place these reference files in a `references/` or `examples/` directory. The assistant learns from their structure, typing patterns, and style.
 
 
-
 ## Providing Feedback on Suggestions
 
 
-
 When the assistant generates code that doesn't match your standards, providing corrective feedback helps it learn. Most assistants respond well to explicit corrections.
-
 
 
 Instead of:
@@ -207,13 +186,10 @@ Our team uses async/await instead of .then() chains. Please refactor to use asyn
 The more specific your feedback, the better the assistant adjusts. Over time, the assistant develops a mental model of your preferences and anticipates your needs.
 
 
-
 ## Automating Standards Enforcement
 
 
-
 Consider integrating linting and formatting tools that automatically enforce your standards. When the assistant generates code that violates these rules, your tools flag issues immediately. This creates a feedback loop: the assistant learns from the lint errors and gradually produces cleaner code.
-
 
 
 Popular tools include:
@@ -227,29 +203,22 @@ Popular tools include:
 - gofmt for Go
 
 
-
 Configure your editor to run these tools on save, providing immediate feedback when code deviates from standards.
-
 
 
 ## Measuring Improvement
 
 
-
 Track how often you override or rewrite AI suggestions. A decrease in overrides typically indicates the assistant is learning your patterns. Conversely, if you constantly correct the same issues, adjust your configuration or documentation.
-
 
 
 Also note response relevance. After implementing training methods, assess whether suggestions now match your file organization, naming conventions, and architectural patterns. Quality improvements are often more valuable than quantity metrics.
 
 
-
 ## Building Long-Term Knowledge
 
 
-
 Most assistants maintain conversation context and learn within a session. However, project-level knowledge often resets between sessions or when opening new workspaces. To build persistent knowledge:
-
 
 
 1. Keep configuration files in version control
@@ -261,24 +230,13 @@ Most assistants maintain conversation context and learn within a session. Howeve
 4. Commit configuration changes with clear descriptions
 
 
-
 When team standards change, update your documentation and reference files immediately. The assistant adapts faster when it has clear, current references.
-
 
 
 ---
 
 
-
 Training your AI coding assistant on team standards requires initial effort, but produces significant long-term benefits. More relevant suggestions mean less time rewriting code, fewer style debates in code reviews, and faster onboarding for new team members. Start with documentation, add configuration, provide consistent feedback, and watch your assistant become a genuinely useful team member.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

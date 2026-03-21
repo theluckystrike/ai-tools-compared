@@ -137,33 +137,33 @@ class PolicyRule:
 class AIPolicyEngine:
     def __init__(self, rules: list[PolicyRule]):
         self.rules = rules
-    
+
     def evaluate(self, request: AIRequest) -> tuple[PolicyAction, str]:
         for rule in self.rules:
             if self._rule_applies(rule, request):
                 if not self._check_time_window(rule, request.timestamp):
                     return PolicyAction.DENY, "Request outside allowed hours"
-                
+
                 if request.estimated_cost > rule.max_cost:
                     return PolicyAction.DENY, f"Cost exceeds limit: {rule.max_cost}"
-                
+
                 if request.contains_pii and not rule.allow_pii:
                     return PolicyAction.DENY, "PII processing not allowed"
-                
+
                 if request.contains_code and not rule.allow_code:
                     return PolicyAction.DENY, "Code generation not permitted"
-                
+
                 return rule.action, rule.message
-        
+
         return PolicyAction.ALLOW, "No policy rules matched"
-    
+
     def _rule_applies(self, rule: PolicyRule, request: AIRequest) -> bool:
         if rule.departments and request.department not in rule.departments:
             return False
         if rule.model_restrictions and request.model not in rule.model_restrictions:
             return False
         return True
-    
+
     def _check_time_window(self, rule: PolicyRule, timestamp: datetime) -> bool:
         if not rule.allowed_hours_start or not rule.allowed_hours_end:
             return True
@@ -246,7 +246,7 @@ async def policy_enforcement(request: Request, call_next):
         # Extract request details
         user_id = request.headers.get("X-User-ID", "anonymous")
         department = request.headers.get("X-Department", "general")
-        
+
         # Build request object (simplified)
         ai_request = AIRequest(
             user_id=user_id,
@@ -258,19 +258,19 @@ async def policy_enforcement(request: Request, call_next):
             estimated_cost=0.01,
             timestamp=datetime.now()
         )
-        
+
         action, message = engine.evaluate(ai_request)
-        
+
         if action == PolicyAction.DENY:
             return JSONResponse(
                 status_code=403,
                 content={"error": message}
             )
-        
+
         if action == PolicyAction.REQUIRE_APPROVAL:
             # Queue for approval workflow
             pass
-    
+
     return await call_next(request)
 ```
 
@@ -287,10 +287,6 @@ When evaluating AI policy management solutions, prioritize these factors:
 **Compliance Reporting:** Automated compliance reporting significantly reduces audit preparation time. Verify the tool supports your specific regulatory requirements.
 
 **Cost Structure:** Some tools charge per-policy or per-evaluation. Calculate costs at your expected scale, considering both AI usage and policy evaluation volumes.
-
-
-
-
 
 
 ## Related Articles

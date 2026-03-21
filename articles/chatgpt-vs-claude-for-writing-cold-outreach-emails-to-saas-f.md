@@ -18,35 +18,28 @@ voice-checked: true
 This guide compares the strengths and weaknesses of each tool for this specific task. Choose the tool that best matches your workflow, budget, and technical requirements.
 
 
-
 ## How Each Model Approaches Cold Email Writing
-
 
 
 ChatGPT and Claude share similar foundations but differ in their default writing tendencies. ChatGPT often produces more verbose, friendly-sounding output with transitional phrases. Claude tends toward directness and brevity, which often works better for cold outreach where you have seconds to capture attention.
 
 
-
 When you ask ChatGPT to write a cold email, it frequently includes phrases like "I hope this email finds you well" and "I wanted to reach out." These warm-up sentences consume valuable character space and dilute your core message. Claude typically gets to the point faster, leading with the specific value proposition or problem statement.
-
 
 
 This difference stems from training emphasis. ChatGPT was tuned to be helpful and conversational across many contexts. Claude was optimized for precision and clarity, making it naturally suited for business communication where every word must earn its place.
 
 
-
 ## Prompt Engineering for Cold Outreach
-
 
 
 Getting good results from either model requires understanding how to prompt them effectively. Here is a prompt structure that works well for both:
 
 
-
 ```python
 def generate_cold_email(founder_name, company_name, pain_point, your_solution):
     prompt = f"""Write a cold outreach email to {founder_name}, founder of {company_name}.
-    
+
 Their company struggles with: {pain_point}
 Your product solves: {your_solution}
 
@@ -64,21 +57,16 @@ Requirements:
 The key is specificity. Both models perform poorly with vague prompts like "write a cold email." Providing concrete details about the recipient and your value proposition dramatically improves output quality.
 
 
-
 ## Comparing Actual Output
-
 
 
 Given the same input, the models produce noticeably different results. Consider this scenario:
 
 
-
 **Input:** Founder of a B2B analytics startup, struggles with data silos, your tool provides unified dashboards.
 
 
-
 ChatGPT might produce:
-
 
 
 > Subject: Helping {Company} Break Down Data Silos
@@ -100,9 +88,7 @@ ChatGPT might produce:
 > Best regards
 
 
-
 Claude would likely produce something more direct:
-
 
 
 > Subject: Single dashboard for {Company}'s fragmented analytics
@@ -128,17 +114,13 @@ Claude would likely produce something more direct:
 > {Your Name}
 
 
-
 Notice the difference. ChatGPT uses more soft language and hedging. Claude makes a specific claim and asks an engaging question. Neither is objectively wrong, but the direct approach typically performs better in cold outreach benchmarks.
-
 
 
 ## Temperature and Creativity Settings
 
 
-
 Both models allow you to adjust creativity through temperature settings. For cold outreach, lower temperatures generally produce better results:
-
 
 
 | Setting | Best For | Risk |
@@ -152,17 +134,13 @@ Both models allow you to adjust creativity through temperature settings. For col
 | 0.7-1.0 | A/B testing variants | Irrelevant tangents |
 
 
-
 Start with 0.2-0.3 when building your outreach templates. This keeps output consistent while allowing enough variation for personalization. You can increase temperature when generating multiple variants for A/B testing.
-
 
 
 ## Practical Workflow for Developers
 
 
-
 If you want to integrate either model into your outreach pipeline, here is a minimal Python implementation using OpenAI's API:
-
 
 
 ```python
@@ -171,11 +149,11 @@ import openai
 def generate_outreach_email(founder_data: dict, model: str = "gpt-4") -> dict:
     system_prompt = """You write concise, direct cold outreach emails.
     Lead with a specific observation. One call to action. Under 130 words."""
-    
+
     user_prompt = f"""Write to {founder_data['name']} at {founder_data['company']}.
     Their problem: {founder_data['pain_point']}
     Your solution: {founder_data['your_solution']}"""
-    
+
     response = openai.chat.completions.create(
         model=model,
         messages=[
@@ -184,7 +162,7 @@ def generate_outreach_email(founder_data: dict, model: str = "gpt-4") -> dict:
         ],
         temperature=0.3
     )
-    
+
     return {"email": response.choices[0].message.content}
 ```
 
@@ -192,15 +170,14 @@ def generate_outreach_email(founder_data: dict, model: str = "gpt-4") -> dict:
 For Claude, the equivalent using Anthropic's API:
 
 
-
 ```python
 import anthropic
 
 def generate_outreach_email_claude(founder_data: dict) -> dict:
     client = anthropic.Anthropic()
-    
+
     prompt = f"""Write a cold outreach email. Lead with a specific observation about {founder_data['company']}. Their problem: {founder_data['pain_point']}. Your solution: {founder_data['your_solution']}. Under 130 words. Include subject line."""
-    
+
     message = client.messages.create(
         model="claude-3-5-sonnet-20241022",
         max_tokens=300,
@@ -208,7 +185,7 @@ def generate_outreach_email_claude(founder_data: dict) -> dict:
         system="You write concise, direct cold outreach emails.",
         messages=[{"role": "user", "content": prompt}]
     )
-    
+
     return {"email": message.content[0].text}
 ```
 
@@ -216,9 +193,7 @@ def generate_outreach_email_claude(founder_data: dict) -> dict:
 Both integrations follow similar patterns. The real difference appears in the output quality without heavy prompt engineering.
 
 
-
 ## When to Choose Each Model
-
 
 
 **Choose ChatGPT when:**
@@ -230,7 +205,6 @@ Both integrations follow similar patterns. The real difference appears in the ou
 - You want to generate many A/B test variants
 
 
-
 **Choose Claude when:**
 
 - Brevity matters for your audience
@@ -240,17 +214,13 @@ Both integrations follow similar patterns. The real difference appears in the ou
 - Your prompts are shorter and less detailed
 
 
-
 For SaaS founders specifically, who typically receive dozens of cold emails daily, Claude's directness provides a slight edge. Founders appreciate efficiency and respect emails that do not waste their time.
-
 
 
 ## Measuring Results
 
 
-
 Track these metrics to understand which model works better for your audience:
-
 
 
 - Open rate: Should exceed 40% for cold outreach
@@ -260,20 +230,10 @@ Track these metrics to understand which model works better for your audience:
 - Meeting booked: The ultimate measure of outreach success
 
 
-
 Run a test with 50 emails from each model to determine your winner. Results vary by industry and email list quality, so test empirically rather than assuming one model fits all situations.
 
 
-
 Both tools eliminate the blank-page problem and accelerate your outreach workflow. The choice between them comes down to editing tolerance and preferred communication style. Start with the model that matches your natural voice, then switch if your metrics do not improve within a few hundred sends.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

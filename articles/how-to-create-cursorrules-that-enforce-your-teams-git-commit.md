@@ -19,25 +19,19 @@ intent-checked: true
 Consistent commit messages are the backbone of a maintainable codebase. When every developer follows the same format, reading history becomes trivial, generating changelogs is automated, and code reviews flow smoother. Yet enforcing this consistency across a team often falls apart in practice. This guide shows you how to use CursorRules to automatically validate and enforce your team's git commit message format, catching violations before they reach your repository's history.
 
 
-
 ## What Are CursorRules?
-
 
 
 CursorRules are configuration files that define how Cursor (an AI-powered code editor) behaves when working with specific projects. These rules can validate code, suggest improvements, and enforce coding standards. What makes CursorRules powerful is their ability to intercept actions and provide feedback in real-time. You can extend this capability to validate git commit messages before they're finalized.
 
 
-
 ## Setting Up Your Commit Message Convention
-
 
 
 Before creating the CursorRule, establish your commit message convention. Most teams adopt either Conventional Commits or a custom format that suits their workflow.
 
 
-
 A typical Conventional Commits format looks like this:
-
 
 
 ```
@@ -52,9 +46,7 @@ A typical Conventional Commits format looks like this:
 The type field captures the intent: `feat` for new features, `fix` for bug patches, `docs` for documentation changes, `refactor` for code restructuring, `test` for adding tests, and `chore` for maintenance tasks. The scope is optional but identifies the affected component, and the description must be concise and lowercase.
 
 
-
 For example, a valid Conventional Commit message looks like:
-
 
 
 ```
@@ -67,9 +59,7 @@ docs(readme): update installation instructions
 ## Creating the CursorRule for Commit Validation
 
 
-
 Create a `.cursorrules` file in your project root. This file will contain the validation logic that Cursor applies when you attempt to commit. Here's a practical implementation:
-
 
 
 ```yaml
@@ -97,13 +87,10 @@ commit_validation:
 This configuration establishes the baseline rules. The `enabled` flag turns validation on, `convention` identifies your chosen format, and the remaining fields specify exact requirements.
 
 
-
 ## Implementing Validation Logic
 
 
-
 The `.cursorrules` file above provides configuration, but you need actual validation behavior. Create a validation script that Cursor can reference:
-
 
 
 ```javascript
@@ -118,38 +105,38 @@ const config = {
 
 function validateCommit(message) {
   const error = [];
-  
+
   // Check format: type(scope): description
   const pattern = /^(\w+)(?:\(([^)]+)\))?: (.+)$/;
   const match = message.match(pattern);
-  
+
   if (!match) {
     error.push(`Commit message must follow format: type(scope): description`);
     return error;
   }
-  
+
   const [_, type, scope, description] = match;
-  
+
   // Validate type
   if (!config.types.includes(type)) {
     error.push(`Invalid type "${type}". Allowed: ${config.types.join(', ')}`);
   }
-  
+
   // Validate subject length
   if (description.length > config.maxSubjectLength) {
     error.push(`Subject exceeds ${config.maxSubjectLength} characters`);
   }
-  
+
   // Check lowercase
   if (description !== description.toLowerCase()) {
     error.push('Subject must be lowercase');
   }
-  
+
   // No period at end
   if (description.endsWith('.')) {
     error.push('Subject should not end with a period');
   }
-  
+
   return error;
 }
 
@@ -167,7 +154,6 @@ console.log('Commit message is valid');
 Hook this validation into your git workflow using a commit-msg hook:
 
 
-
 ```bash
 #!/bin/bash
 # .git/hooks/commit-msg
@@ -182,7 +168,6 @@ node scripts/validate-commit.js "$COMMIT_MSG"
 Make the hook executable:
 
 
-
 ```bash
 chmod +x .git/hooks/commit-msg
 ```
@@ -191,16 +176,14 @@ chmod +x .git/hooks/commit-msg
 ## Advanced CursorRule Configuration
 
 
-
 For teams wanting stricter enforcement, extend your CursorRule with additional constraints:
-
 
 
 ```yaml
 # .cursorrules - Advanced configuration
 commit_validation:
   enabled: true
-  
+
   # Require specific types only
   allowed_types:
     - feat
@@ -208,7 +191,7 @@ commit_validation:
     - docs
     - refactor
     - test
-  
+
   # Enforce scope for certain types
   scope_rules:
     feat: required
@@ -216,13 +199,13 @@ commit_validation:
     docs: optional
     refactor: optional
     test: optional
-  
+
   # Body and footer rules
   body_required_for_types:
     - feat
     - fix
   footer_pattern: "^((BREAKING CHANGE|Closes|Refs|Resolved): .+)"
-  
+
   # Auto-fix suggestions
   auto_fix:
     lowercase_subject: true
@@ -234,25 +217,19 @@ commit_validation:
 This configuration requires scopes for features and fixes, mandates body text for significant changes, and enforces a footer pattern for linking issues or PRs.
 
 
-
 ## Distributing Rules Across Your Team
-
 
 
 Once you've created and tested your CursorRules, distribute them consistently. The simplest approach is committing the `.cursorrules` file to your repository. Team members clone the repo and Cursor automatically picks up the rules.
 
 
-
 For organization-wide rules, consider a shared configuration repository that teams can include as a git submodule. This approach ensures every project uses the same baseline rules while allowing project-specific overrides.
-
 
 
 ## Testing Your Implementation
 
 
-
 Before rolling out to your team, validate the rules work correctly. Create test commit messages covering various scenarios:
-
 
 
 ```bash
@@ -271,23 +248,13 @@ git commit -m "update stuff"
 Run each test and confirm the validation behaves as expected. Adjust your rules based on feedback from team members—strictness must balance with practicality.
 
 
-
 ## Maintaining Your Rules Over Time
-
 
 
 As your project evolves, your commit conventions will too. Review your CursorRules during quarterly planning or when taking on new project types. Keep the documentation current so new team members understand the reasoning behind each rule.
 
 
-
 A well-maintained commit message convention, enforced through CursorRules, eliminates guesswork and keeps your git history clean. Your future self—and your teammates—will thank you when browsing through months of commits to find that specific change.
-
-
-
-
-
-
-
 
 
 ## Related Articles
@@ -301,4 +268,3 @@ A well-maintained commit message convention, enforced through CursorRules, elimi
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}
-

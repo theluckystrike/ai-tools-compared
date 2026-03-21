@@ -350,10 +350,6 @@ Closes #456
 Share this with your AI tool (as system prompt or in hook comment) so generated messages match your standard.
 
 
-
-
-
-
 ## Related Articles
 
 - [How to Use AI to Write Commit Message Guidelines](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)

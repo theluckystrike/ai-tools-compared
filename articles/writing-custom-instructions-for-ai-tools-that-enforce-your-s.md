@@ -16,29 +16,22 @@ voice-checked: true
 Write custom instructions for AI tools by specifying all required security headers (Strict-Transport-Security, Content-Security-Policy, X-Content-Type-Options, X-Frame-Options, X-XSS-Protection, Referrer-Policy, Permissions-Policy) with exact values and explaining when to apply them in middleware or server configuration. These instructions ensure every piece of AI-generated web server code includes your complete security header requirements automatically.
 
 
-
 This guide shows you how to create effective custom instructions for AI coding tools that enforce your security header standards across all projects.
-
 
 
 ## Why Security Headers Need Explicit Instructions
 
 
-
 Modern web frameworks rarely enable security headers out of the box. An AI tool generating an Express.js middleware might include basic CORS configuration, but it won't automatically add Strict-Transport-Security, Content-Security-Policy, or X-Content-Type-Options headers unless specifically instructed. This creates inconsistent security posture across your codebase.
-
 
 
 Custom instructions solve this problem by establishing a permanent context that AI tools reference for every code generation request. Rather than repeating security header requirements in every prompt, you define them once and the AI applies them automatically.
 
 
-
 ## Creating Effective Security Header Instructions
 
 
-
 Effective security header instructions must be specific, actionable, and. Here's a practical template you can adapt for your organization:
-
 
 
 ```
@@ -59,21 +52,16 @@ When generating any web server code, include a security middleware module that a
 This instruction works across different AI tools, whether you use Claude Code, Cursor, GitHub Copilot, or other assistants. The key is placing these instructions where the AI will consistently reference them.
 
 
-
 ## Implementing Instructions in Different AI Tools
-
 
 
 Each AI coding tool handles custom instructions differently. Understanding these mechanisms ensures your security header requirements get applied consistently.
 
 
-
 ### Claude Code and Projects
 
 
-
 Create a `.claude/settings.json` file or use project-specific instructions in the project directory. You can also include instructions in a dedicated `CLAUDE.md` file at your project root:
-
 
 
 ```markdown
@@ -84,7 +72,6 @@ All generated server code must include security headers. See SECURITY.md for req
 
 
 Create a separate `SECURITY.md` with detailed header specifications:
-
 
 
 ```markdown
@@ -110,13 +97,10 @@ Use framework-specific middleware. For Express.js:
 This separation keeps instructions organized while remaining accessible to AI tools.
 
 
-
 ### Cursor Rules
 
 
-
 Cursor uses `.cursorrules` file in your project root. Add security header enforcement:
-
 
 
 ```markdown
@@ -135,9 +119,7 @@ Security Requirements:
 ### GitHub Copilot
 
 
-
 Copilot respects instructions in `.github/copilot-instructions.md` or inline comments. Use a combination approach:
-
 
 
 ```javascript
@@ -151,17 +133,13 @@ app.use(securityMiddleware);
 ## Framework-Specific Implementation Examples
 
 
-
 Your instructions should include framework-specific guidance since security header implementation varies significantly between frameworks.
-
 
 
 ### Express.js with Helmet
 
 
-
 When generating Express.js code, your instructions should specify using the helmet middleware:
-
 
 
 ```javascript
@@ -186,9 +164,7 @@ app.use(helmet({
 ### Next.js Configuration
 
 
-
 For Next.js applications, security headers belong in `next.config.js`:
-
 
 
 ```javascript
@@ -213,9 +189,7 @@ module.exports = {
 ### Nginx Configuration
 
 
-
 For reverse proxy setups, include header directives in your server block:
-
 
 
 ```nginx
@@ -229,9 +203,7 @@ add_header Content-Security-Policy "default-src 'self'" always;
 ## Testing Your Implementation
 
 
-
 After implementing custom instructions, verify they work by generating sample code and checking the output. Create a test prompt:
-
 
 
 ```bash
@@ -242,9 +214,7 @@ Generate a basic Express.js API with two endpoints: /users and /users/:id
 Review the generated code to confirm security headers appear in the middleware. If they are missing, refine your instructions with more specific language.
 
 
-
 You can also use automated tools to verify headers in deployed applications:
-
 
 
 ```bash
@@ -261,52 +231,34 @@ curl -I https://yourdomain.com
 ## Maintaining Security Header Instructions
 
 
-
 Security standards evolve, and your instructions should too. Schedule quarterly reviews of your security header requirements to account for new threats, browser changes, or regulatory updates.
-
 
 
 Track changes to your instruction files in version control. When updating header requirements, generate new code for existing applications to maintain consistency across your infrastructure.
 
 
-
 Document any exceptions or project-specific variations. Some applications might require relaxed CSP policies or custom CORS configurations. Rather than weakening your base instructions, create supplementary rules for specific use cases.
-
 
 
 ## Common Pitfalls to Avoid
 
 
-
 Several mistakes reduce the effectiveness of security header instructions. Avoid these common issues:
-
 
 
 **Overly broad instructions** that generate vague code don't help. Instead of "add security headers," specify exactly which headers and their values.
 
 
-
 **Inconsistent placement** of instructions across projects creates gaps. Use a centralized location that applies to all repositories, or explicitly document where instructions live in each project.
-
 
 
 **Missing framework-specific guidance** leads to generic code that doesn't work in your stack. Include implementation examples for each framework your team uses.
 
 
-
 **Failing to test** means you won't discover issues until a security audit catches them. Regularly generate sample code to verify instructions remain effective.
 
 
-
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

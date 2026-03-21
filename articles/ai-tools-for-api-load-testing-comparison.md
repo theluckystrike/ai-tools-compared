@@ -454,8 +454,6 @@ AI script generation is now a standard feature. Artillery and k6 excel at rapid 
 Start with Artillery (YAML simplicity) or k6 (JavaScript familiarity). Use Locust if you need Python-based customization. Graduate to Gatling only if you need enterprise features or complex JVM integration.
 
 
-
-
 ## Related Articles
 
 - [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
@@ -463,5 +461,7 @@ Start with Artillery (YAML simplicity) or k6 (JavaScript familiarity). Use Locus
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
 - [Best Practices for AI Assisted Code Review Response and Revi](/ai-tools-compared/best-practices-for-ai-assisted-code-review-response-and-revi/)
 - [Best Workflow for AI-Assisted Test Driven Development Step](/ai-tools-compared/best-workflow-for-ai-assisted-test-driven-development-step-b/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)
 
 {% endraw %}

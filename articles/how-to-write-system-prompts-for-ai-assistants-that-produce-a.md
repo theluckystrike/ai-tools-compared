@@ -18,29 +18,22 @@ voice-checked: true
 AI assistants can generate HTML output, but without proper system prompts, the markup often lacks semantic structure, proper ARIA attributes, or keyboard accessibility. This guide shows you how to write system prompts that consistently produce accessible, standards-compliant HTML.
 
 
-
 ## Why Accessible HTML Matters for AI Output
-
 
 
 When an AI assistant generates HTML fragments for your application, that code becomes part of your user interface. If the output lacks proper heading hierarchy, missing alt text on images, or no keyboard navigation support, you inherit accessibility violations that affect real users. Rather than fixing generated code manually, you can embed accessibility requirements directly into your system prompts.
 
 
-
 ## Core Principles for System Prompts
-
 
 
 Effective system prompts for accessible HTML follow three principles: specificity, constraint specification, and example inclusion.
 
 
-
 ### Be Specific About Standards
 
 
-
 Your system prompt should explicitly reference accessibility standards. Vague instructions like "make it accessible" produce inconsistent results. Instead, name specific standards and provide concrete rules.
-
 
 
 A weak prompt:
@@ -60,9 +53,7 @@ Generate HTML for a product card component. All markup must be semantic HTML5. U
 ### Specify Constraints Explicitly
 
 
-
 HTML generation often fails on constraints that seem obvious to developers but are ambiguous to AI models. List your requirements as explicit rules.
-
 
 
 ```
@@ -78,13 +69,10 @@ Your output must follow these rules:
 ## Practical System Prompt Examples
 
 
-
 Here are three system prompts you can adapt for different use cases.
 
 
-
 ### Example 1: Form Components
-
 
 
 ```
@@ -104,7 +92,6 @@ Return only the HTML markup with inline comments explaining accessibility decisi
 ### Example 2: Data Tables
 
 
-
 ```
 Generate HTML tables with proper accessibility structure:
 
@@ -120,7 +107,6 @@ Output semantic markup only, no CSS classes.
 
 
 ### Example 3: Modal Dialogs
-
 
 
 ```
@@ -141,35 +127,32 @@ Return clean, semantic HTML5 markup.
 ## Combining Prompts with Output Validation
 
 
-
 System prompts guide generation, but you should validate output automatically. Consider adding a post-processing step that checks for common accessibility issues.
-
 
 
 A simple validation approach checks for these patterns:
 
 
-
 ```javascript
 function validateAccessibleHTML(html) {
   const issues = [];
-  
+
   // Check for missing alt text
   if (html.includes('<img') && !html.includes('alt=')) {
     issues.push('Images missing alt attributes');
   }
-  
+
   // Check for missing labels
   if (html.includes('<input') && !html.includes('<label')) {
     issues.push('Form inputs missing label elements');
   }
-  
+
   // Check for empty links
   const emptyLinks = html.match(/<a[^>]*>\s*<\/a>/g);
   if (emptyLinks) {
     issues.push('Found empty links with no accessible text');
   }
-  
+
   return issues;
 }
 ```
@@ -178,9 +161,7 @@ function validateAccessibleHTML(html) {
 ## Testing Generated Output
 
 
-
 After implementing your system prompt, verify the output with accessibility tools:
-
 
 
 1. Use the WAVE evaluator or axe DevTools to scan generated pages
@@ -192,13 +173,10 @@ After implementing your system prompt, verify the output with accessibility tool
 4. Check color contrast ratios meet WCAG AA standards (4.5:1 for normal text)
 
 
-
 ## Common Pitfalls to Avoid
 
 
-
 Several patterns consistently produce inaccessible HTML:
-
 
 
 - Using <div> and <span> for interactive elements instead of <button> or <a>
@@ -212,9 +190,7 @@ Several patterns consistently produce inaccessible HTML:
 - Using generic link text like "here" or "read more"
 
 
-
 Add these as explicit exclusions in your system prompts:
-
 
 
 ```
@@ -230,13 +206,11 @@ Never do the following:
 ## Putting It All Together
 
 
-
 A complete system prompt for accessible HTML might look like:
 
 
-
 ```
-You generate HTML components that meet WCAG 2.1 AA accessibility standards. 
+You generate HTML components that meet WCAG 2.1 AA accessibility standards.
 
 Requirements:
 1. Use semantic HTML5 elements appropriately (header, nav, main, article, section, footer)
@@ -254,11 +228,6 @@ Exclusions:
 
 Output only the HTML markup without additional explanation.
 ```
-
-
-
-
-
 
 
 ## Related Articles

@@ -19,17 +19,13 @@ voice-checked: true
 Setting up a Model Context Protocol server for your custom project documentation transforms how AI coding assistants understand and interact with your codebase. When your AI tool can access your internal docs, architecture decisions, and API specifications directly through MCP, you get more accurate suggestions that align with your project's conventions.
 
 
-
 This guide walks you through building an MCP server that serves your documentation to Claude, Cursor, and other compatible AI tools.
-
 
 
 ## Prerequisites
 
 
-
 Before you begin, ensure you have:
-
 
 
 - Node.js 18 or higher installed
@@ -41,13 +37,10 @@ Before you begin, ensure you have:
 - Basic familiarity with TypeScript or JavaScript
 
 
-
 ## Step 1: Initialize Your MCP Server Project
 
 
-
 Create a new directory for your MCP server and initialize it with the necessary dependencies:
-
 
 
 ```bash
@@ -59,7 +52,6 @@ npm install @modelcontextprotocol/server-sdk @types/node typescript
 
 
 Create a TypeScript configuration file:
-
 
 
 ```json
@@ -80,9 +72,7 @@ Create a TypeScript configuration file:
 ## Step 2: Structure Your Documentation
 
 
-
 Organize your project documentation in a way that MCP can easily parse. A clean structure helps your server deliver relevant information to AI tools:
-
 
 
 ```
@@ -102,13 +92,10 @@ myproject/
 Each document should have clear headings and practical content that an AI assistant can reference when generating code or answering questions.
 
 
-
 ## Step 3: Build the MCP Server
 
 
-
 Create your server implementation in `src/index.ts`. This server will read your documentation files and expose them through MCP tools:
-
 
 
 ```typescript
@@ -125,14 +112,14 @@ interface DocFile {
 
 function loadDocumentation(docsDir: string): DocFile[] {
   const docs: DocFile[] = [];
-  
+
   function walkDir(dir: string, category: string) {
     const files = fs.readdirSync(dir);
-    
+
     for (const file of files) {
       const fullPath = path.join(dir, file);
       const stat = fs.statSync(fullPath);
-      
+
       if (stat.isDirectory()) {
         walkDir(fullPath, file);
       } else if (file.endsWith('.md')) {
@@ -145,7 +132,7 @@ function loadDocumentation(docsDir: string): DocFile[] {
       }
     }
   }
-  
+
   walkDir(docsDir, 'general');
   return docs;
 }
@@ -215,14 +202,14 @@ server.setRequestHandler('tools/list', async () => {
 
 server.setRequestHandler('tools/call', async (request) => {
   const { name, arguments: args } = request.params;
-  
+
   if (name === 'search_docs') {
     const query = args.query.toLowerCase();
-    const results = documentation.filter(doc => 
+    const results = documentation.filter(doc =>
       doc.content.toLowerCase().includes(query) ||
       doc.path.toLowerCase().includes(query)
     );
-    
+
     if (args.category) {
       return {
         content: [{
@@ -239,7 +226,7 @@ server.setRequestHandler('tools/call', async (request) => {
         }]
       };
     }
-    
+
     return {
       content: [{
         type: 'text',
@@ -255,10 +242,10 @@ server.setRequestHandler('tools/call', async (request) => {
       }]
     };
   }
-  
+
   if (name === 'get_doc') {
     const doc = documentation.find(d => d.path === args.path);
-    
+
     if (!doc) {
       return {
         content: [{
@@ -267,7 +254,7 @@ server.setRequestHandler('tools/call', async (request) => {
         }]
       };
     }
-    
+
     return {
       content: [{
         type: 'text',
@@ -275,7 +262,7 @@ server.setRequestHandler('tools/call', async (request) => {
       }]
     };
   }
-  
+
   if (name === 'list_docs') {
     return {
       content: [{
@@ -292,7 +279,7 @@ server.setRequestHandler('tools/call', async (request) => {
       }]
     };
   }
-  
+
   throw new Error(`Unknown tool: ${name}`);
 });
 
@@ -309,9 +296,7 @@ main().catch(console.error);
 ## Step 4: Configure Your AI Tool
 
 
-
 Each AI tool has its own method for adding MCP servers. For Claude Desktop, create or edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
 
 
 ```json
@@ -332,7 +317,6 @@ Each AI tool has its own method for adding MCP servers. For Claude Desktop, crea
 For Cursor, add the server configuration in Settings → MCP Servers:
 
 
-
 ```json
 {
   "mcpServers": {
@@ -348,9 +332,7 @@ For Cursor, add the server configuration in Settings → MCP Servers:
 ## Step 5: Test Your Implementation
 
 
-
 Build and test your server:
-
 
 
 ```bash
@@ -362,13 +344,10 @@ node dist/index.js
 Verify the server is working by checking if your AI tool can access the documentation tools. In Claude, you should see three new tools available: `search_docs`, `get_doc`, and `list_docs`.
 
 
-
 ## Using Your Documentation Server
 
 
-
 Once configured, your AI coding assistant can now reference your project documentation. Here are practical examples:
-
 
 
 **Asking about architecture:**
@@ -376,9 +355,7 @@ Once configured, your AI coding assistant can now reference your project documen
 > "How is authentication handled in this project?"
 
 
-
 The AI will search your docs for authentication-related content and provide accurate guidance based on your actual implementation.
-
 
 
 **Getting setup instructions:**
@@ -386,9 +363,7 @@ The AI will search your docs for authentication-related content and provide accu
 > "What are the steps to set up local development?"
 
 
-
 The AI retrieves your setup documentation and provides precise instructions.
-
 
 
 **Finding API conventions:**
@@ -396,50 +371,34 @@ The AI retrieves your setup documentation and provides precise instructions.
 > "What format should I use for API response errors?"
 
 
-
 Your conventions document gets searched and relevant details are extracted.
-
 
 
 ## Best Practices
 
 
-
 Keep your documentation server effective by following these practices:
-
 
 
 **Update documentation regularly.** Your MCP server serves static content, so rebuild and restart when docs change.
 
 
-
 **Use clear, scannable headings.** AI tools parse markdown headings to understand document structure quickly.
-
 
 
 **Include code examples.** Practical examples help AI tools generate more accurate code that matches your patterns.
 
 
-
 **Add troubleshooting sections.** Common issues and solutions in your docs help AI assistants diagnose problems faster.
-
 
 
 ## Troubleshooting
 
 
-
 If your server isn't connecting, verify the path to your compiled JavaScript is correct. Check that your documentation directory exists and contains markdown files. For permission issues, ensure Node has read access to your docs directory.
 
 
-
 Some AI tools require a restart after adding MCP server configuration. Close and reopen the application to load the new server.
-
-
-
-
-
-
 
 
 ## Related Articles

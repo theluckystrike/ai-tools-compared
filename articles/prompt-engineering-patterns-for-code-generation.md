@@ -420,10 +420,6 @@ Usage:
 ```
 
 
-
-
-
-
 ## Related Articles
 
 - [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)

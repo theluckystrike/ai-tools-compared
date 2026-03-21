@@ -18,41 +18,31 @@ voice-checked: true
 {% raw %}
 
 
-
 GitHub Copilot pricing is the same for both public and private repositories: $10/month for individuals, $19/user/month for Business, and $39/user/month for Enterprise. The subscription is all-you-can-eat access regardless of repository visibility, so you cannot save money by working primarily in public repositories. Copilot features and quality remain identical across all repository types.
-
 
 
 ## Understanding GitHub Copilot Pricing Model
 
 
-
 GitHub Copilot operates on a subscription-based model rather than a per-repository or per-usage basis. Whether you're working in a public open-source project or a private enterprise repository, the monthly or annual fee remains the same.
-
 
 
 ### Individual Plans
 
 
-
 For individual developers, Copilot costs **$10/month** or **$100/year**. This gives you unlimited access to Copilot suggestions across all your repositories—both public and private. The pricing doesn't change based on repository visibility.
-
 
 
 ### Business Plans
 
 
-
 For organizations, Copilot Business is **$19 per user per month**. Again, this covers unlimited usage across all repositories, including private ones. There are no additional charges based on repository visibility or usage volume.
-
 
 
 ## What About the "Free" Public Repository Access?
 
 
-
 GitHub previously offered Copilot access for open-source maintainers at no cost. However, this was a limited program, not a reflection of "cheaper" public repo usage. The free tier has been discontinued for most users.
-
 
 
 **Key takeaway:** You cannot "save money" by working primarily in public repositories. The Copilot subscription is all-you-can-eat across all your workspaces.
@@ -69,13 +59,10 @@ GitHub previously offered Copilot access for open-source maintainers at no cost.
 All plans work identically for public and private repositories. Repository visibility creates no price differentiation.
 
 
-
 ## Are There Any Differences in Features?
 
 
-
 The Copilot features themselves are identical regardless of repository visibility:
-
 
 
 - **Code completions** work the same way in public and private repos
@@ -87,17 +74,13 @@ The Copilot features themselves are identical regardless of repository visibilit
 - **Knowledge base access** is the same—Copilot doesn't pull from your private code to train public models
 
 
-
 The only potential difference is **context window availability**. Very large private codebases might take longer to index, but this doesn't affect the price.
-
 
 
 ## What About GitHub Copilot Enterprise?
 
 
-
 GitHub Copilot Enterprise, priced at **$39 per user per month**, includes additional features like:
-
 
 
 - Organization-wide code understanding
@@ -107,9 +90,7 @@ GitHub Copilot Enterprise, priced at **$39 per user per month**, includes additi
 - Enhanced security compliance
 
 
-
 These features apply equally to private repositories and don't change based on repo visibility.
-
 
 
 ## Cost Calculation Examples
@@ -145,9 +126,7 @@ While visibility doesn't matter, other factors legitimately affect your Copilot 
 ## The Bottom Line
 
 
-
 **Copilot suggestions do not cost more for private repositories.** The pricing is flat-rate based on user count, not repository type. Your team pays the same subscription whether you're working on:
-
 
 
 - A public open-source project
@@ -157,9 +136,7 @@ While visibility doesn't matter, other factors legitimately affect your Copilot 
 - Enterprise proprietary software
 
 
-
 If you're considering Copilot for your team, the repository visibility shouldn't factor into your cost calculations. Focus instead on:
-
 
 
 1. **How many developers need access** (Individual vs Business vs Enterprise)
@@ -332,10 +309,6 @@ The calculation is identical for public and private repositories—the value com
 The value proposition is straightforward: unlimited Copilot access across all your work, regardless of whether the code is visible to the world or locked behind organization permissions. Repository visibility is irrelevant to pricing.
 
 {% endraw %}
-
-
-
-
 
 
 ## Related Articles

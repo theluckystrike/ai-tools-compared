@@ -399,10 +399,6 @@ Payoff: Month 1 ($100 > $23), Break-even month 1, ongoing savings $80/month
 Fine-tuning becomes cost-effective when you hit 10,000+ monthly inferences on a specific task.
 
 
-
-
-
-
 ## Related Articles
 
 - [ChatGPT API Fine Tuning Costs Training Plus Inference Total](/ai-tools-compared/chatgpt-api-fine-tuning-costs-training-plus-inference-total-estimate/)

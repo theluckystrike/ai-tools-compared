@@ -325,10 +325,6 @@ Regardless of which tool you use, always test regex patterns with this checklist
 Use [regex101.com](https://regex101.com) with the tool's explanation feature to understand the generated pattern before deploying. Set the engine to match your target language (PCRE, Python, ECMAScript, or Golang RE2) to catch compatibility issues before they reach production.
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)

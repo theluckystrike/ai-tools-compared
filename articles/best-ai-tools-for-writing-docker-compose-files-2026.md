@@ -352,3 +352,5 @@ This hybrid approach gives you Claude's accuracy on initial setup with IDE-based
 - [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

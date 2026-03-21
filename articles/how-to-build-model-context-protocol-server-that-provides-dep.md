@@ -20,25 +20,19 @@ voice-checked: true
 The Model Context Protocol (MCP) enables AI systems to connect with external tools and data sources through a standardized interface. When building AI-powered development workflows, providing accurate deployment environment context becomes essential for generating relevant code, configuration, and infrastructure suggestions. This guide walks you through creating an MCP server that exposes deployment environment information to AI agents.
 
 
-
 ## Understanding MCP Server Architecture
-
 
 
 An MCP server operates as a bridge between AI models and external systems. It exposes resources, tools, and prompts that AI clients can discover and invoke. For deployment environment context, you'll want to expose information about your infrastructure, environment variables, container configurations, and deployment status.
 
 
-
 The server communicates with clients using JSON-RPC 2.0 messages over stdio or HTTP transport. Your implementation needs to handle three core request types: `initialize` for handshake, `tools/list` for discovering available tools, and `tools/call` for executing specific operations.
-
 
 
 ## Setting Up Your Project
 
 
-
 Create a new Node.js project for your MCP server:
-
 
 
 ```bash
@@ -52,13 +46,10 @@ npm install @modelcontextprotocol/sdk zod
 The SDK provides the foundation for building compliant MCP servers. Zod handles runtime type validation for configuration and environment data.
 
 
-
 ## Implementing the MCP Server
 
 
-
 Create a server entry point that handles deployment environment discovery:
-
 
 
 ```typescript
@@ -72,10 +63,10 @@ class DeploymentContextServer {
       { name: 'deployment-context-server', version: '1.0.0' },
       { capabilities: { tools: {} } }
     );
-    
+
     this.setupHandlers();
   }
-  
+
   setupHandlers() {
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
       return {
@@ -129,10 +120,10 @@ class DeploymentContextServer {
         ]
       };
     });
-    
+
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const { name, arguments: args } = request.params;
-      
+
       switch (name) {
         case 'get_deployment_environment':
           return this.getDeploymentEnvironment(args.environment);
@@ -145,7 +136,7 @@ class DeploymentContextServer {
       }
     });
   }
-  
+
   async getDeploymentEnvironment(environment) {
     const configs = {
       development: {
@@ -170,7 +161,7 @@ class DeploymentContextServer {
         features: { debug_mode: false, cache_enabled: true }
       }
     };
-    
+
     return {
       content: [{
         type: 'text',
@@ -178,7 +169,7 @@ class DeploymentContextServer {
       }]
     };
   }
-  
+
   async getContainerStatus(serviceName) {
     // Integration point: query your container orchestrator
     // This could connect to Kubernetes, ECS, Docker, or Nomad
@@ -190,12 +181,12 @@ class DeploymentContextServer {
       memory_usage: '2.1GB',
       last_deployed: '2026-03-15T10:30:00Z'
     };
-    
+
     return {
       content: [{ type: 'text', text: JSON.stringify(status, null, 2) }]
     };
   }
-  
+
   async getEnvironmentVariables(environment, service) {
     // Return only non-sensitive configuration
     const vars = {
@@ -205,12 +196,12 @@ class DeploymentContextServer {
       API_TIMEOUT: '30000',
       MAX_CONNECTIONS: '100'
     };
-    
+
     return {
       content: [{ type: 'text', text: JSON.stringify(vars, null, 2) }]
     };
   }
-  
+
   async start() {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
@@ -226,9 +217,7 @@ server.start().catch(console.error);
 ## Connecting to Container Orchestrators
 
 
-
 For production use, replace the mock data with actual orchestrator queries. The Kubernetes implementation connects to your cluster:
-
 
 
 ```typescript
@@ -238,12 +227,12 @@ class KubernetesIntegration {
   constructor() {
     this.k8sApi = k8s.Config.fromCluster();
   }
-  
+
   async getServiceStatus(namespace, serviceName) {
     const deployment = await this.k8sApi.readNamespacedDeployment(
       serviceName, namespace
     );
-    
+
     return {
       replicas: deployment.body.spec.replicas,
       available: deployment.body.status.availableReplicas || 0,
@@ -257,13 +246,10 @@ class KubernetesIntegration {
 This integration enables the MCP server to query real-time deployment status from your Kubernetes clusters.
 
 
-
 ## Registering the Server with Your AI Client
 
 
-
 After implementing your server, register it with your MCP-compatible AI client. Configuration typically lives in your client's configuration file:
-
 
 
 ```json
@@ -284,26 +270,16 @@ After implementing your server, register it with your MCP-compatible AI client. 
 ## Practical Use Cases
 
 
-
 Once registered, your AI assistant can query deployment context during conversations. When debugging production issues, you can ask your AI assistant to check environment configuration without manually SSH-ing into servers or navigating cloud consoles. The AI gains access to consistent, structured information about your deployment state.
-
 
 
 For infrastructure-as-code generation, the AI can reference actual environment names, regions, and configuration values when writing Terraform or CloudFormation templates. This produces more accurate initial output and reduces manual correction cycles.
 
 
-
 ## Security Considerations
 
 
-
 Never expose sensitive values through your MCP server. Filter out API keys, secrets, passwords, and tokens from environment variable responses. Implement authentication if your server connects to sensitive infrastructure APIs. Consider adding audit logging for tool invocations to track what information AI assistants access.
-
-
-
-
-
-
 
 
 ## Related Articles

@@ -839,10 +839,6 @@ Customer:
 **Use Claude API if:** You process hundreds of APIs or integrate spec generation into CI/CD pipelines.
 
 
-
-
-
-
 ## Related Articles
 
 - [AI Tools for Generating OpenAPI Specs from Code](/ai-tools-compared/ai-tools-openapi-spec-generation/)

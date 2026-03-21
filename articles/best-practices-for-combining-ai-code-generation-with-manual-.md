@@ -18,29 +18,22 @@ voice-checked: true
 Use AI to generate boilerplate (models, API stubs, test scaffolding) quickly; focus manual review on business logic, security, and error handling. Review AI code for unhandled edge cases, SQL injection risks, and architectural consistency. Allocate 30% of effort to generation, 70% to review and refinement. This guide covers effective workflows for combining AI generation with manual code review.
 
 
-
 ## The Role Division: What AI Does Well
-
 
 
 AI excels at generating repetitive boilerplate, scaffolding project structures, and creating test cases. It can rapidly produce code based on specifications, saving hours of manual typing. However, AI lacks understanding of your specific business context, security requirements, and architectural decisions.
 
 
-
 The most effective approach assigns clear responsibilities: let AI handle the mechanical work while you focus on logic validation, security review, and architectural consistency.
-
 
 
 ## Practical Workflow for AI + Manual Review
 
 
-
 ### Step 1: Generate with Clear Context
 
 
-
 When prompting AI for code, provide sufficient context. Include relevant file paths, existing patterns in your codebase, and specific requirements:
-
 
 
 ```python
@@ -57,9 +50,7 @@ for validation. Return 422 on validation failure with error details."
 ### Step 2: Automated Pre-Check Before Human Review
 
 
-
 Run basic checks before requesting manual review:
-
 
 
 ```bash
@@ -78,13 +69,10 @@ pytest generated_code_test.py
 This catches syntax errors, style violations, and basic type issues automatically.
 
 
-
 ### Step 3: Structured Manual Review Checklist
 
 
-
 When reviewing AI-generated code, use a systematic approach:
-
 
 
 1. Logic verification: Does the code actually solve the stated problem?
@@ -98,13 +86,10 @@ When reviewing AI-generated code, use a systematic approach:
 5. Dependencies: Are imported libraries necessary? Any version conflicts?
 
 
-
 ### Example: Reviewing AI-Generated API Endpoint
 
 
-
 Consider this AI-generated FastAPI endpoint:
-
 
 
 ```python
@@ -116,7 +101,6 @@ def create_user(user_data: UserCreate):
 
 
 Manual review should catch several issues:
-
 
 
 ```python
@@ -140,17 +124,13 @@ def create_user(
 The review added authentication, duplicate checking, proper HTTP status codes, and response modeling.
 
 
-
 ## Configuring AI Tools for Better Output
-
 
 
 Most AI coding tools support configuration that improves output quality:
 
 
-
 ### Cursor Rules Example
-
 
 
 ```json
@@ -168,9 +148,7 @@ Most AI coding tools support configuration that improves output quality:
 ### Claude Code Project Context
 
 
-
 Set up project-specific context to guide AI:
-
 
 
 ```
@@ -186,13 +164,10 @@ Set up project-specific context to guide AI:
 This prevents AI from generating code that conflicts with existing architecture.
 
 
-
 ## Balancing Speed and Quality
 
 
-
 The goal is maintaining velocity while ensuring correctness. Consider these thresholds:
-
 
 
 - Quick prototypes: Generate + syntax check only
@@ -204,9 +179,7 @@ The goal is maintaining velocity while ensuring correctness. Consider these thre
 - Legacy modifications: Manual-only to preserve system stability
 
 
-
 ## Review Effort by Code Category
-
 
 
 Not all AI-generated code carries equal risk. Calibrating review depth to code category saves time without sacrificing safety.
@@ -223,29 +196,22 @@ Not all AI-generated code carries equal risk. Calibrating review depth to code c
 Applying this table consistently prevents both over-reviewing trivial code and under-reviewing high-stakes paths.
 
 
-
 ## Common Pitfalls to Avoid
-
 
 
 ### Trusting AI Without Verification
 
 
-
 Never deploy AI-generated code directly to production without review. Even experienced developers miss issues; AI can confidently produce incorrect code.
-
 
 
 ### Over-Reviewing Simple Code
 
 
-
 Spending 30 minutes reviewing a generated test file wastes time. Apply proportional review effort based on code complexity and impact.
 
 
-
 ### Ignoring AI Limitations
-
 
 
 AI struggles with:
@@ -259,21 +225,16 @@ AI struggles with:
 - Understanding your team's existing patterns
 
 
-
 ### Letting Generated Code Accumulate Without Tests
-
 
 
 AI-generated boilerplate is easy to write and easy to forget about. Require that every generated module includes at least a smoke test before it merges. This creates a baseline for future reviewers to understand the expected behavior.
 
 
-
 ## Measuring Success
 
 
-
 Track these metrics to evaluate your workflow:
-
 
 
 ```python
@@ -289,9 +250,7 @@ review_stats = {
 ### Time-to-Deployment Tracking
 
 
-
 Measure the total time from code generation to deployment:
-
 
 
 ```python
@@ -310,9 +269,7 @@ task_timeline = {
 Compare these metrics against purely manual development times to quantify AI's value. Teams that track this data consistently find that AI generation provides the largest time savings on boilerplate-heavy tasks like CRUD endpoints and test fixture setup, while providing minimal speedup on complex business logic that requires deep domain understanding.
 
 
-
 ## Frequently Asked Questions
-
 
 
 **Should AI-generated code go through the same PR process as manual code?**
@@ -332,12 +289,6 @@ Yes, with caveats. The compiler provides a much stronger first-pass filter — A
 
 **What tooling helps track AI-generated code over time?**
 Some teams annotate AI-generated functions with a comment like `# generated: claude-2026-03` to identify them in future reviews. This annotation pattern lets you grep for generated code when updating dependencies or auditing for security issues, giving reviewers context about how much scrutiny the code received at authorship time.
-
-
-
-
-
-
 
 
 ## Related Articles

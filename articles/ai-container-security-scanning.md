@@ -108,10 +108,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Build container image
         run: docker build -t myapp:${{ github.sha }} .
-      
+
       - name: Run AI security scan
         uses: a15-container-scanner/action@v1
         with:
@@ -489,11 +489,6 @@ Track key metrics over time:
 | False Positive Rate | < 5% | Invalid alerts vs. total alerts |
 | Critical Vulnerabilities | 0 | Unpatched CVSS >= 9.0 in production |
 | Detection Latency | < 1 hour | Time from image push to scan completion |
-
-
-
-
-
 
 
 ## Related Articles

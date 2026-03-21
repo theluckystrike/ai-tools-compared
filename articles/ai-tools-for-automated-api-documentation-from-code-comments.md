@@ -542,11 +542,6 @@ The comparison table in this guide covers Claude and GPT-4 as AI backends, but t
 Start with OpenAPI generation even if you only plan to display Markdown docs initially. A valid OpenAPI spec is reusable: tools can generate client libraries, test suites, and mock servers from it at any time.
 
 
-
-
-
-
-
 ## Related Articles
 
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)

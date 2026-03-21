@@ -15,24 +15,18 @@ voice-checked: true
 ---
 
 
-
-
 {% raw %}
 
 Yes—admin seats in ChatGPT Team count toward your billing seat count exactly the same as member seats. Every user you invite to your ChatGPT Team workspace, regardless of their role (admin or member), consumes one seat from your subscription. There is no distinction between role types when it comes to billing.
 
 
-
 ## How ChatGPT Team Billing Works
-
 
 
 ChatGPT Team pricing is straightforward: you pay a monthly subscription per active seat in your workspace. As of 2026, the cost is approximately $25 per user per month when billed annually, or $30 when billed monthly. Each seat represents one user who can access the team's GPT-4 and Claude models, shared conversation history, and custom GPTs.
 
 
-
 ### Key Billing Facts
-
 
 
 - Every seat counts: Both admins and regular members are billed equally
@@ -44,13 +38,10 @@ ChatGPT Team pricing is straightforward: you pay a monthly subscription per acti
 - Prorated billing: New seats added mid-cycle are prorated
 
 
-
 ## Admin vs Member: What's the Difference?
 
 
-
 While admin and member seats cost the same, they have different capabilities within the workspace:
-
 
 
 | Feature | Admin | Member |
@@ -70,17 +61,13 @@ While admin and member seats cost the same, they have different capabilities wit
 | Access shared conversations | ✅ | ✅ |
 
 
-
 ## Cost Calculation Examples
-
 
 
 ### Small Team (5 users, 1 admin)
 
 
-
 If you have 4 members and 1 admin, your billing shows 5 seats:
-
 
 
 ```
@@ -94,9 +81,7 @@ Yearly total: $1,500
 ### Growing Team Adding an Admin
 
 
-
 When you promote an existing member to admin, there is no additional cost:
-
 
 
 ```
@@ -108,13 +93,10 @@ After:  3 members + 1 admin = 4 seats = $100/month (no change)
 The admin role is a permission level, not an extra seat.
 
 
-
 ## Setting Up Admin Seats via API
 
 
-
 For organizations managing ChatGPT Team programmatically, you can use the OpenAI API to manage roles:
-
 
 
 ```python
@@ -133,9 +115,7 @@ for member in team.data:
 Note that the API returns member information but role changes must be done through the ChatGPT Team admin dashboard.
 
 
-
 ## Common Misconceptions
-
 
 
 ### "Admin seats are free"
@@ -143,11 +123,9 @@ Note that the API returns member information but role changes must be done throu
 False. Admins consume exactly one billing seat just like any other user.
 
 
-
 ### "We can have unlimited admins"
 
 False. Each admin is a billable seat. If you need 3 admins, that's 3 seats.
-
 
 
 ### "Only members count toward billing"
@@ -155,9 +133,7 @@ False. Each admin is a billable seat. If you need 3 admins, that's 3 seats.
 False. All user seats in your workspace count toward billing, regardless of role.
 
 
-
 ## Best Practices
-
 
 
 1. Limit admins: Only appoint team members who genuinely need admin privileges
@@ -246,12 +222,6 @@ If ChatGPT Team's pricing doesn't fit your budget:
 **Local Alternatives:** Running open-source models like Llama 3 on your infrastructure costs nothing in per-seat licensing but requires engineering effort.
 
 Most teams find ChatGPT Team cost-effective compared to maintaining individual Plus subscriptions ($20/month), which quickly exceed team pricing at 3+ users.
-
-
-
-
-
-
 
 
 ## Related Articles

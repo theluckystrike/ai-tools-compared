@@ -47,7 +47,7 @@ void spi_flash_init(void) {
     hspi1.Init.NSS = SPI_NSS_SOFT;
     hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_4;
     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
-    
+
     if (HAL_SPI_Init(&hspi1) != HAL_OK) {
         Error_Handler();
     }
@@ -110,14 +110,14 @@ void flash_page_program(uint32_t addr, uint8_t *data, uint16_t len) {
     cmd[1] = (addr >> 16) & 0xFF;
     cmd[2] = (addr >> 8) & 0xFF;
     cmd[3] = addr & 0xFF;
-    
+
     flash_write_enable();
-    
+
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
     HAL_SPI_Transmit(&hspi1, cmd, 4, HAL_MAX_DELAY);
     HAL_SPI_Transmit(&hspi1, data, len, HAL_MAX_DELAY);
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
-    
+
     flash_wait_busy();
 }
 
@@ -127,7 +127,7 @@ void flash_read_data(uint32_t addr, uint8_t *buf, uint32_t len) {
     cmd[1] = (addr >> 16) & 0xFF;
     cmd[2] = (addr >> 8) & 0xFF;
     cmd[3] = addr & 0xFF;
-    
+
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
     HAL_SPI_Transmit(&hspi1, cmd, 4, HAL_MAX_DELAY);
     HAL_SPI_Receive(&hspi1, buf, len, HAL_MAX_DELAY);
@@ -384,11 +384,6 @@ For production drivers, always:
 AI tools work well for generating boilerplate code, SPI configuration, and standard read/write operations. For specialized requirements like quad-SPI, DMA chains, or power management, provide explicit specifications to ensure quality output.
 
 ---
-
-
-
-
-
 
 
 ## Related Articles

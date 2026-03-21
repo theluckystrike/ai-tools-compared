@@ -15,20 +15,15 @@ voice-checked: true
 ---
 
 
-
-
 {% raw %}
 
 Yes—ChatGPT Canvas is available to both ChatGPT Plus and ChatGPT Team subscribers. It is not included in the free tier. If you have an active ChatGPT Plus subscription ($20/month) or a ChatGPT Team workspace ($25/user/month), you can access Canvas alongside other premium features like GPT-4, advanced voice mode, and custom GPTs.
 
 
-
 ## What Is ChatGPT Canvas?
 
 
-
 Canvas is OpenAI's interactive writing and coding interface that lets you work on documents alongside ChatGPT. Unlike the standard chat interface where responses appear in a single message, Canvas opens a split-view environment where you can:
-
 
 
 - Edit text directly in the document
@@ -42,29 +37,22 @@ Canvas is OpenAI's interactive writing and coding interface that lets you work o
 - Maintain context across longer documents
 
 
-
 Canvas replaces the older "Work with GitHub" integration and provides a more visual, document-centric experience for tasks like writing articles, drafting emails, debugging code, or creating tutorials.
-
 
 
 ## Subscription Tiers and Canvas Access
 
 
-
 ### Free Tier
-
 
 
 Canvas is not available on the free tier. Free users access GPT-4o mini through the standard chat interface but cannot open documents in Canvas view. This is a deliberate limitation to drive Plus/Team subscriptions.
 
 
-
 ### ChatGPT Plus ($20/month)
 
 
-
 Plus subscribers get full access to Canvas. You can:
-
 
 
 - Create new Canvas documents
@@ -76,13 +64,10 @@ Plus subscribers get full access to Canvas. You can:
 - Access all Canvas features without restrictions
 
 
-
 ### ChatGPT Team ($25/user/month)
 
 
-
 Team workspaces include Canvas for all seat holders. Additional Team-specific features include:
-
 
 
 - Shared Canvas documents within the workspace
@@ -94,17 +79,13 @@ Team workspaces include Canvas for all seat holders. Additional Team-specific fe
 - Higher message limits when using Canvas
 
 
-
 Team admins can enable or disable Canvas access for specific members through the workspace settings, though it's enabled by default.
-
 
 
 ## How to Access Canvas
 
 
-
 ### From the Chat Interface
-
 
 
 1. Start a new conversation or select an existing one
@@ -114,9 +95,7 @@ Team admins can enable or disable Canvas access for specific members through the
 3. The interface switches to split-view mode
 
 
-
 ### Creating a New Canvas Document
-
 
 
 1. Click "New Chat" and select "Canvas" from the dropdown
@@ -126,13 +105,10 @@ Team admins can enable or disable Canvas access for specific members through the
 3. Start typing or paste existing content
 
 
-
 ### Converting a Chat to Canvas
 
 
-
 During a conversation, you can convert any exchange to Canvas:
-
 
 
 1. Click the menu icon (three dots) on any message
@@ -142,13 +118,10 @@ During a conversation, you can convert any exchange to Canvas:
 3. The conversation thread becomes a collaborative document
 
 
-
 ## What You Can Do in Canvas
 
 
-
 ### Text Editing Features
-
 
 
 - Live editing: Type directly in the Canvas document
@@ -160,9 +133,7 @@ During a conversation, you can convert any exchange to Canvas:
 - Export options: Download as Markdown, HTML, or plain text
 
 
-
 ### Code Features
-
 
 
 - Syntax highlighting: Support for 20+ programming languages
@@ -174,49 +145,37 @@ During a conversation, you can convert any exchange to Canvas:
 - Code review: Get inline suggestions for improvements
 
 
-
 ## Common Questions
-
 
 
 ### "Is Canvas included in ChatGPT Pro?"
 
 
-
 Yes. ChatGPT Pro ($200/month) includes Canvas along with all Plus and Team features, plus extended limits and early access to new features.
-
 
 
 ### "Can I use Canvas offline?"
 
 
-
 No. Canvas requires an active internet connection and authentication. There is no offline mode.
-
 
 
 ### "Does Canvas count toward message limits?"
 
 
-
 Yes. Using Canvas consumes message tokens from your plan's allocation. In Canvas, both your inputs and ChatGPT's suggestions count toward your daily limit.
-
 
 
 ### "Can I share Canvas documents with non-subscribers?"
 
 
-
 You can generate shareable links that allow others to view (but not edit) Canvas documents. They don't need a ChatGPT account to view shared content.
-
 
 
 ## Practical Example: Writing a Blog Post in Canvas
 
 
-
 Here's how a content creator might use Canvas:
-
 
 
 1. Start Canvas and paste an outline
@@ -230,9 +189,7 @@ Here's how a content creator might use Canvas:
 5. Export directly to WordPress or Markdown
 
 
-
 The split-view makes it easy to iterate quickly without losing context.
-
 
 
 ## Canvas SEO Optimization Workflow
@@ -256,10 +213,6 @@ Step 4 -- Readability pass:
 Break any paragraph longer than 4 sentences. Convert lists of 4+ items to bullet points.
 Flag any sentence over 25 words for simplification.
 ```
-
-
-
-
 
 
 ## Related Articles

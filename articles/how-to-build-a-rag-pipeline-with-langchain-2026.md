@@ -39,7 +39,7 @@ For a local embedding model instead of OpenAI, use `sentence-transformers`. For 
 
 ## Step 1: Load and Split Documents
 
-Chunking strategy is the highest-leverage decision in RAG. Chunks too large dilute signal; chunks too small lose context.
+Chunking strategy is the highest-use decision in RAG. Chunks too large dilute signal; chunks too small lose context.
 
 ```python
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
@@ -375,10 +375,6 @@ async def refresh_index(source_dir: str):
 
     return {"indexed": len(docs), "files": len(new_files)}
 ```
-
-
-
-
 
 
 ## Related Articles

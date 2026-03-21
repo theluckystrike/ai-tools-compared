@@ -51,10 +51,10 @@ function calculateSLA(priority, createdAt) {
     medium: 72,
     low: 168
   };
-  
+
   const deadline = new Date(createdAt);
   deadline.setHours(deadline.getHours() + slaHours[priority]);
-  
+
   return {
     deadline: deadline,
     remaining: Math.max(0, (deadline - new Date()) / 3600000)
@@ -77,13 +77,13 @@ Glide offers a different approach, using AI to suggest workflow optimizations an
 # Glide computed column for SLA status
 def sla_status(created_at, priority, resolved_at):
     sla_hours = {"urgent": 4, "high": 24, "normal": 72, "low": 168}
-    
+
     if resolved_at:
         return "resolved"
-    
+
     deadline = created_at + timedelta(hours=sla_hours[priority])
     hours_remaining = (deadline - now()).total_seconds() / 3600
-    
+
     if hours_remaining < 0:
         return "breached"
     elif hours_remaining < 4:
@@ -380,10 +380,6 @@ avg by (priority) (resolution_time_hours)
 **Week 7–8**: Monitor, refine, iterate based on team feedback
 
 **Month 3+**: Consider adding knowledge base, automations for common issues
-
-
-
-
 
 
 ## Related Articles

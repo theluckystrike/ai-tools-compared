@@ -15,62 +15,46 @@ tags: [ai-tools-compared, troubleshooting]
 ---
 
 
-
-
 To fix Perplexity Pro search not working, first verify your subscription is active at Settings then Subscription, then sign out completely, clear browser cookies for perplexity.ai, and sign back in to refresh your authentication tokens. If you use the API, regenerate your API key from the dashboard. The most common causes are expired authentication tokens, rate limiting (HTTP 429 errors), and browser extension conflicts with ad blockers or privacy tools.
-
 
 
 ## Common Causes of Perplexity Pro Search Failures
 
 
-
 Search issues in Perplexity Pro typically stem from several root causes. Understanding these helps you apply the right fix faster.
-
 
 
 **Authentication and Subscription Problems**
 
 
-
 The most frequent cause of search failures is authentication issues or subscription status problems. Perplexity Pro requires an active subscription, and session tokens can expire unexpectedly. If your account shows as expired or your session has invalidated, search requests will fail silently or return authentication errors.
-
 
 
 **API Connectivity Issues**
 
 
-
 Network problems between your client and Perplexity's servers can prevent search from functioning. This includes DNS resolution failures, TLS handshake issues, or rate limiting responses. Corporate firewalls and VPN configurations frequently cause connectivity problems for users behind restricted networks.
-
 
 
 **Browser and Extension Conflicts**
 
 
-
 Certain browser extensions, particularly ad blockers and privacy tools, can interfere with Perplexity's API calls. Similarly, outdated browser versions may lack support for required security protocols.
-
 
 
 **Account and Billing Verification**
 
 
-
 Sometimes Perplexity's systems flag accounts for manual verification, which restricts search functionality until resolved. Payment failures or suspicious activity triggers these security measures.
-
 
 
 ## Step-by-Step Fixes
 
 
-
 ### Fix 1: Verify Subscription Status
 
 
-
 Before attempting technical fixes, confirm your Perplexity Pro subscription is active:
-
 
 
 1. Log into your Perplexity account at perplexity.ai
@@ -82,17 +66,13 @@ Before attempting technical fixes, confirm your Perplexity Pro subscription is a
 4. If you see "Past Due," update your payment method and restore service
 
 
-
 If you recently changed payment methods or billing information, wait 24 hours for the system to fully process the update.
-
 
 
 ### Fix 2: Clear Authentication Tokens
 
 
-
 Expired or corrupted authentication tokens frequently cause search failures. Here's how to refresh them:
-
 
 
 **For Web Users:**
@@ -106,11 +86,9 @@ Expired or corrupted authentication tokens frequently cause search failures. Her
 4. Reopen the browser and log back in
 
 
-
 **For API Users:**
 
 If you're using the Perplexity API directly, regenerate your API key:
-
 
 
 ```bash
@@ -126,9 +104,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 ### Fix 3: Diagnose Network Connectivity
 
 
-
 Network issues require systematic diagnosis. Run these checks:
-
 
 
 **Test Basic Connectivity:**
@@ -148,17 +124,14 @@ openssl s_client -connect api.perplexity.ai:443
 If ping fails, your network cannot reach Perplexity's servers. Check your firewall rules and DNS configuration.
 
 
-
 **Test from Different Network:**
 
 Try accessing Perplexity from a mobile hotspot or VPN. If it works on alternate networks, your primary network has blocking or rate limiting.
 
 
-
 **Check for Rate Limiting:**
 
 Perplexity enforces rate limits on API requests. If you've exceeded your quota, you'll receive 429 status codes. Monitor your request volume and implement exponential backoff in your applications:
-
 
 
 ```python
@@ -172,7 +145,7 @@ def perplexity_search_with_retry(query, max_retries=3):
             json={"query": query},
             headers={"Authorization": f"Bearer {API_KEY}"}
         )
-        
+
         if response.status_code == 200:
             return response.json()
         elif response.status_code == 429:
@@ -181,7 +154,7 @@ def perplexity_search_with_retry(query, max_retries=3):
             time.sleep(wait_time)
         else:
             raise Exception(f"Search failed: {response.status_code}")
-    
+
     raise Exception("Max retries exceeded")
 ```
 
@@ -189,9 +162,7 @@ def perplexity_search_with_retry(query, max_retries=3):
 ### Fix 4: Browser and Extension Troubleshooting
 
 
-
 If you access Perplexity through a browser:
-
 
 
 1. Test in an incognito/private window with all extensions disabled
@@ -205,13 +176,10 @@ If you access Perplexity through a browser:
 5. Disable uBlock Origin, Privacy Badger, or similar tools for the Perplexity domain
 
 
-
 ### Fix 5: API Configuration Review
 
 
-
 For developers integrating Perplexity programmatically:
-
 
 
 ```bash
@@ -232,13 +200,10 @@ Common configuration mistakes include:
 - Copying whitespace characters with the key
 
 
-
 ### Fix 6: Check Account Status for Verification Holds
 
 
-
 If your account is flagged for verification:
-
 
 
 1. Check your registered email for messages from Perplexity
@@ -250,13 +215,10 @@ If your account is flagged for verification:
 4. Provide documentation if requested to restore access
 
 
-
 ## Diagnostic Tips for Persistent Issues
 
 
-
 When standard fixes don't resolve the problem, gather additional information:
-
 
 
 **Collect Error Messages**
@@ -264,17 +226,14 @@ When standard fixes don't resolve the problem, gather additional information:
 Note the exact error text and any error codes. Take screenshots of the interface when search fails.
 
 
-
 **Check System Time**
 
 Ensure your computer's time and timezone are correct. SSL certificates validate time, and significant discrepancies cause connection failures.
 
 
-
 **Review Application Logs**
 
 If using the API, examine your application logs for request/response details:
-
 
 
 ```python
@@ -293,21 +252,16 @@ response = perplexity_client.search("your query")
 Check your Perplexity dashboard for usage statistics. Unexpected drops in usage can indicate account-level restrictions.
 
 
-
 ## Prevention Strategies
-
 
 
 Reduce future search failures with these practices:
 
 
-
 Enable two-factor authentication to prevent account lockouts. Maintain multiple payment methods on file and use API key rotation for production applications. Implement proper error handling with retry logic and keep your integration code updated with Perplexity's latest API changes.
 
 
-
 ## When to Contact Support
-
 
 
 If you've exhausted all troubleshooting steps, reach out to Perplexity support with:
@@ -323,20 +277,10 @@ If you've exhausted all troubleshooting steps, reach out to Perplexity support w
 - Screenshots or log excerpts
 
 
-
 Perplexity's support team can access backend account information that reveals issues invisible from the client side.
 
 
-
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

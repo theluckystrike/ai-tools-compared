@@ -384,10 +384,6 @@ Skip batch processing for:
 The batch API is ideal for engineers building scalable document processing systems that can tolerate latency in exchange for cost efficiency and reliability.
 
 
-
-
-
-
 ## Related Articles
 
 - [Claude API Batch Processing: How Much Cheaper Than Discount](/ai-tools-compared/claude-api-batch-processing-discount-how-much-cheaper-than-r/)

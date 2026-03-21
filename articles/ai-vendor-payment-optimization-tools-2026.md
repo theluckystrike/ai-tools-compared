@@ -42,11 +42,11 @@ def extract_invoice_data(invoice_pdf_url, api_key):
     """Extract structured data from vendor invoices using Mindee API."""
     url = "https://api.mindee.net/v1/products/mindee/invoices/v4/predict"
     headers = {"Authorization": f"Token {api_key}"}
-    
+
     # Upload and predict
     with open(invoice_pdf_url, 'rb') as f:
         response = requests.post(url, files={"file": f}, headers=headers)
-    
+
     data = response.json()
     return {
         "vendor": data["prediction"]["supplier"]["name"],
@@ -68,14 +68,14 @@ function calculateOptimalPayment(invoice, cashPosition) {
   const netTerms = invoice.paymentTerms.netDays; // e.g., 30
   const discountPercent = invoice.paymentTerms.discountPercent; // e.g., 2
   const discountDays = invoice.paymentTerms.discountDays; // e.g., 10
-  
+
   const discountAmount = invoice.amount * (discountPercent / 100);
   const dailyCostOfCapital = 0.0003; // ~10% annual rate
-  
+
   // Calculate cost of early payment vs. discount savings
   const earlyDays = netTerms - discountDays;
   const costOfEarlyPayment = invoice.amount * dailyCostOfCapital * earlyDays;
-  
+
   if (discountAmount > costOfEarlyPayment && cashPosition >= invoice.amount) {
     return {
       payOn: discountDays, // Pay early, capture discount
@@ -83,7 +83,7 @@ function calculateOptimalPayment(invoice, cashPosition) {
       recommendation: "PAY_EARLY"
     };
   }
-  
+
   return {
     payOn: netTerms, // Pay on due date
     savings: 0,
@@ -106,10 +106,10 @@ def score_payment_risk(payment_data, model_endpoint):
         "geo_mismatch": payment_data["vendor_country"] != payment_data["bank_country"],
         "invoice_sequence_gap": payment_data["gap_from_previous_invoice"]
     }
-    
+
     response = requests.post(model_endpoint, json={"features": features})
     risk_score = response.json()["risk_score"]
-    
+
     return {
         "approved": risk_score < 0.15,
         "review_required": risk_score >= 0.15 and risk_score < 0.6,
@@ -128,17 +128,17 @@ def reconcile_payment(payments, invoices, tolerance=0.01):
     matches = []
     unmatched_payments = []
     unmatched_invoices = list(invoices)
-    
+
     for payment in payments:
         best_match = None
         best_score = 0
-        
+
         for invoice in unmatched_invoices:
             score = fuzzy_match_score(payment, invoice)
             if score > best_score and score > 0.85:
                 best_match = invoice
                 best_score = score
-        
+
         if best_match:
             matches.append({
                 "payment": payment,
@@ -149,7 +149,7 @@ def reconcile_payment(payments, invoices, tolerance=0.01):
             unmatched_invoices.remove(best_match)
         else:
             unmatched_payments.append(payment)
-    
+
     return {
         "matched": matches,
         "unmatched_payments": unmatched_payments,
@@ -335,11 +335,6 @@ Start small — extract invoice data from one vendor, then layer in discount opt
 - [ ] Scale to all vendors
 - [ ] Add reconciliation layer
 - [ ] Measure and optimize
-
-
-
-
-
 
 
 ## Related Articles

@@ -474,3 +474,5 @@ Claude Code is best for debugging—paste error + context, get detailed explanat
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [AI Code Completion for Java Record Classes and Sealed Interf](/ai-tools-compared/ai-code-completion-for-java-record-classes-and-sealed-interf/)
 - [AI Code Completion for Writing Shell Commands Inside Scripts](/ai-tools-compared/ai-code-completion-for-writing-shell-commands-inside-scripts/)
+
+Built by theluckystrike — More at [zovo.one](https://zovo.one)

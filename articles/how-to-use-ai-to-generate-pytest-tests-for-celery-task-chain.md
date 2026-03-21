@@ -20,17 +20,13 @@ intent-checked: true
 Testing Celery task chains requires understanding how tasks execute in sequence, handle failures, and pass data between stages. AI tools can accelerate test generation by analyzing your task definitions and producing test coverage. This guide shows practical methods for using AI to generate pytest tests for Celery task chains.
 
 
-
 ## Understanding Celery Task Chain Testing Requirements
-
 
 
 Celery task chains (`celery.chain`) execute tasks sequentially, where output from one task becomes input for the next. Testing these chains involves verifying correct execution order, data transformation through each stage, error handling, and retry behavior.
 
 
-
 Consider a typical processing pipeline:
-
 
 
 ```python
@@ -77,13 +73,10 @@ workflow = chain(
 ## Effective AI Prompting for Test Generation
 
 
-
 The quality of AI-generated tests depends heavily on your prompt. Include task definitions, expected behaviors, edge cases, and your testing preferences.
 
 
-
 Provide the AI with complete context:
-
 
 
 ```python
@@ -97,13 +90,10 @@ Provide the AI with complete context:
 A strong prompt includes your Celery app configuration, task signatures, and specific test scenarios you want covered.
 
 
-
 ## Generating Unit Tests for Individual Tasks
 
 
-
 Start by testing individual tasks in isolation. This approach uses mocks to control dependencies and verify task logic.
-
 
 
 ```python
@@ -126,30 +116,30 @@ def sample_user():
     }
 
 class TestProcessUserData:
-    
+
     def test_process_user_returns_correct_structure(self, mock_db, sample_user):
         mock_db.return_value = sample_user
-        
+
         result = process_user_data(123)
-        
+
         assert result['step'] == 'fetched'
         assert result['user']['id'] == 123
         mock_db.assert_called_once_with(123)
-    
+
     def test_process_user_handles_missing_user(self, mock_db):
         mock_db.return_value = None
-        
+
         with pytest.raises(AttributeError):
             process_user_data(999)
-    
+
     def test_process_user_retry_on_connection_error(self, mock_db):
         from requests import ConnectionError
         mock_db.side_effect = [ConnectionError("Network"), sample_user]
-        
+
         task = process_user_data
         # Task will retry and eventually succeed
         result = process_user_data(123)
-        
+
         assert mock_db.call_count == 2
 ```
 
@@ -157,9 +147,7 @@ class TestProcessUserData:
 ## Testing Task Chain Integration
 
 
-
 Testing the full chain requires the Celery test runner or synchronous execution mode:
-
 
 
 ```python
@@ -180,7 +168,7 @@ def setup_celery_eager():
     app.conf.task_always_eager = False
 
 class TestUserProcessingChain:
-    
+
     def test_full_chain_execution_order(self, sample_user_data):
         """Verify tasks execute in correct order with data passing"""
         workflow = chain(
@@ -189,31 +177,31 @@ class TestUserProcessingChain:
             enrich_user_profile.s(),
             notify_user.s()
         )
-        
+
         result = workflow.apply_async()
         final = result.get(timeout=10)
-        
+
         assert final['step'] == 'fetched'
         assert 'validated' in final
         assert 'enriched' in final
         assert 'notified' in final
-    
+
     def test_chain_stops_on_validation_failure(self, sample_user_data):
         """Chain should stop and not proceed to enrichment if validation fails"""
         with patch('tasks.fetch_user') as mock_fetch:
             mock_fetch.return_value = {'id': 123, 'name': 'Test'}  # No email
-            
+
             workflow = chain(
                 process_user_data.s(user_id=123),
                 validate_user_data.s(),
                 enrich_user_profile.s()
             )
-            
+
             result = workflow.apply_async()
-            
+
             with pytest.raises(ValueError, match="Missing email"):
                 result.get(timeout=10)
-    
+
     def test_chain_data_accumulation(self, sample_user_data):
         """Verify data from each task flows to the next"""
         workflow = chain(
@@ -221,10 +209,10 @@ class TestUserProcessingChain:
             validate_user_data.s(),
             enrich_user_profile.s()
         )
-        
+
         result = workflow.apply_async()
         final = result.get(timeout=10)
-        
+
         # Data from all stages should be present
         assert 'user' in final
         assert final['validated'] is True
@@ -235,9 +223,7 @@ class TestUserProcessingChain:
 ## Mocking External Services
 
 
-
 External dependencies like databases and APIs require thorough mocking:
-
 
 
 ```python
@@ -274,9 +260,7 @@ def sample_user_data():
 ## Testing Retry and Error Handling
 
 
-
 Celery's retry mechanism is critical for production reliability. Test it explicitly:
-
 
 
 ```python
@@ -288,11 +272,11 @@ from celery.exceptions import MaxRetriesExceededError
 from tasks import process_user_data
 
 class TestTaskRetryBehavior:
-    
+
     def test_task_retries_on_failure(self):
         """Task should retry on transient errors"""
         call_count = 0
-        
+
         @app.task(bind=True, max_retries=3)
         def flaky_task(self):
             nonlocal call_count
@@ -300,32 +284,32 @@ class TestTaskRetryBehavior:
             if call_count < 3:
                 raise ConnectionError("Temporary failure")
             return "success"
-        
+
         result = flaky_task.apply_async()
         assert result.get(timeout=10) == "success"
         assert call_count == 3
-    
+
     def test_max_retries_exceeded_raises_error(self):
         """Task should raise error after exhausting retries"""
         @app.task(bind=True, max_retries=2)
         def failing_task(self):
             raise ConnectionError("Permanent failure")
-        
+
         result = failing_task.apply_async()
-        
+
         with pytest.raises(MaxRetriesExceededError):
             result.get(timeout=10)
-    
+
     def test_retry_with_exponential_backoff(self):
         """Verify exponential backoff timing"""
         from celery_app import app
-        
+
         @app.task(bind=True, max_retries=3, default_retry_delay=1)
         def backoff_task(self):
             if self.request.retries < 2:
                 raise ConnectionError("Retry me")
             return "done"
-        
+
         # Calculate expected delay: 1, 2, 4 seconds
         result = backoff_task.apply_async()
         assert result.get(timeout=15) == "done"
@@ -335,13 +319,10 @@ class TestTaskRetryBehavior:
 ## Best Practices for AI-Generated Tests
 
 
-
 AI tools produce better tests when you provide complete context. Include your Celery configuration, task dependencies, and specific failure scenarios you need to handle.
 
 
-
 Review generated tests carefully—AI may miss edge cases specific to your business logic. Add tests for:
-
 
 
 - Data transformation accuracy: Verify data changes at each chain stage
@@ -353,7 +334,6 @@ Review generated tests carefully—AI may miss edge cases specific to your busin
 - Timeout handling: Tasks that take longer than expected
 
 - Resource cleanup: Proper handling of database connections and file handles
-
 
 
 Consider adding integration tests with a real Redis/Rabbitmq broker for production-like testing, while keeping unit tests fast and isolated.
@@ -486,11 +466,6 @@ Use task_always_eager=True for testing. Mock fetch_user and send_notification.
 ```
 
 This level of context consistently produces tests that need minimal editing before they can be run.
-
-
-
-
-
 
 
 ## Related Articles

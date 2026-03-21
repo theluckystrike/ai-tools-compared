@@ -18,28 +18,23 @@ voice-checked: true
 {% raw %}
 
 
-
 Provide pattern examples in your prompts: "Follow the service-repository pattern in [example file]" or "Use dependency injection like in UserController.ts". Include architecture decision records (ADRs) in context. Review AI suggestions against your design patterns before accepting them. Create team guidelines documenting approved patterns. This guide covers strategies for keeping AI coding suggestions aligned with your project's design patterns.
-
 
 
 ## Understanding the Challenge
 
 
-
 Design patterns represent battle-tested solutions to recurring architectural problems. They provide shared vocabulary, enforce consistency, and guide maintainability. When AI coding assistants suggest implementations, they often prioritize immediate correctness over long-term architectural coherence.
 
 
-
 Consider a scenario where you request a singleton pattern implementation:
-
 
 
 ```python
 # AI-generated suggestion (potentially problematic)
 class DatabaseConnection:
     _instance = None
-    
+
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
@@ -50,23 +45,19 @@ class DatabaseConnection:
 This implementation lacks thread safety, a critical consideration for production systems. The AI fulfilled the basic requirement but missed a crucial design consideration—concurrency safety.
 
 
-
 ## Strategy 1: Provide Explicit Context About Your Architecture
-
 
 
 One of the most effective approaches involves feeding the AI assistant clear information about your project's architectural decisions. Rather than requesting code in isolation, establish context that guides the assistant toward pattern-compliant solutions.
 
 
-
 Before requesting implementations, share your architectural decisions:
 
 
-
 ```markdown
-Our project uses the repository pattern with dependency injection. 
-All database access goes through repository interfaces. We use 
-SQLAlchemy 2.0 with async sessions. Please generate code that 
+Our project uses the repository pattern with dependency injection.
+All database access goes through repository interfaces. We use
+SQLAlchemy 2.0 with async sessions. Please generate code that
 follows these patterns.
 ```
 
@@ -74,17 +65,13 @@ follows these patterns.
 This context helps the AI understand constraints and expectations, reducing the likelihood of generating pattern-violating code.
 
 
-
 ## Strategy 2: Define Pattern-Specific Prompts
-
 
 
 Creating reusable prompts for common pattern implementations trains your AI assistant to produce consistent, pattern-compliant code. Develop a prompt library that codifies your team's architectural standards.
 
 
-
 Example pattern prompt for factory method:
-
 
 
 ```markdown
@@ -100,7 +87,6 @@ Generate a factory method implementation that:
 Store these prompts in a project-specific file that you reference or include in your AI assistant's context:
 
 
-
 ```python
 # prompts/pattern-guidelines.md
 ## Factory Pattern Requirements
@@ -114,9 +100,7 @@ Store these prompts in a project-specific file that you reference or include in 
 ## Strategy 3: Implement Code Review Checklists for AI-Generated Code
 
 
-
 Establishing systematic review processes catches pattern violations before they enter your codebase. Create checklist items specifically targeting common AI-generated issues:
-
 
 
 - Single Responsibility: Does this class have one reason to change?
@@ -126,7 +110,6 @@ Establishing systematic review processes catches pattern violations before they 
 - Open/Closed Principle: Can behavior extend without modifying existing code?
 
 - Interface Segregation: Are interfaces focused on specific client needs?
-
 
 
 ```python
@@ -146,13 +129,10 @@ def review_factory_implementation(code: str) -> list[str]:
 ## Strategy 4: Use Type Hints as Pattern Enforcement
 
 
-
 Type hints serve dual purposes—they improve code reliability and guide AI assistants toward correct implementations. When AI tools see explicit type annotations, they generate more precise, pattern-compliant code.
 
 
-
 Compare these two requests:
-
 
 
 ```python
@@ -163,7 +143,7 @@ Compare these two requests:
 class UserRepository:
     def __init__(self, session: AsyncSession) -> None:
         self._session = session
-    
+
     async def find_by_id(self, user_id: int) -> User | None:
         """Find user by ID using repository pattern."""
         result = await self._session.execute(
@@ -176,13 +156,10 @@ class UserRepository:
 The second version specifies the pattern (repository), the dependencies (AsyncSession), return types, and includes documentation—all signals that improve AI output quality.
 
 
-
 ## Strategy 5: Validate Generated Code Against Architectural Tests
 
 
-
 Automated testing validates that generated code adheres to design patterns. Implement architectural tests using tools like `pytest-architect` or custom checks:
-
 
 
 ```python
@@ -196,7 +173,7 @@ class PatternValidator:
         has_new = "__new__" in cls_code
         has_instance_check = re.search(r"if.*_instance.*is.*None", cls_code)
         return has_new and has_instance_check is not None
-    
+
     @staticmethod
     def validate_repository(cls_code: str) -> bool:
         """Check repository pattern requirements."""
@@ -207,7 +184,6 @@ class PatternValidator:
 
 
 Run these validators as part of your continuous integration pipeline:
-
 
 
 ```yaml
@@ -221,9 +197,7 @@ Run these validators as part of your continuous integration pipeline:
 ## Strategy 6: Establish Pattern Documentation in Your Codebase
 
 
-
 Maintain living documentation that explains how patterns manifest in your project. AI assistants can reference this documentation when generating code:
-
 
 
 ```markdown
@@ -245,9 +219,7 @@ from abc import ABC, abstractmethod
 from typing import TypeVar, Generic
 
 
-
 T = TypeVar('T')
-
 
 
 class Repository(ABC, Generic[T]):
@@ -265,13 +237,10 @@ class Repository(ABC, Generic[T]):
 Reference this documentation when working with AI assistants to ensure consistent pattern application.
 
 
-
 ## Measuring Success
 
 
-
 Track pattern adherence over time using metrics:
-
 
 
 - Pattern violation frequency: Count how often AI-generated code requires refactoring
@@ -281,14 +250,7 @@ Track pattern adherence over time using metrics:
 - Consistency scores: Use static analysis tools to score codebases on pattern compliance
 
 
-
 Regular measurement reveals which strategies work best for your team and helps identify areas for improvement.
-
-
-
-
-
-
 
 
 ## Related Articles

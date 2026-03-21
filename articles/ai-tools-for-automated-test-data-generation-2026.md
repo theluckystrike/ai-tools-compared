@@ -283,10 +283,6 @@ Generate parent records first and extract their IDs, then pass those IDs to the 
 Mimesis is 2-5x faster and better for generating millions of rows for load tests. Faker has more locale coverage and more data types (SSNs, license plates, etc.). For most projects, Faker is the default choice unless performance is a constraint.
 
 
-
-
-
-
 ## Related Articles
 
 - [AI for Automated Regression Test Generation from Bug Reports](/ai-tools-compared/ai-for-automated-regression-test-generation-from-bug-reports/)

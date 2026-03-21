@@ -12,7 +12,7 @@ reviewed: true
 score: 8
 robots: "index, follow"
 last_updated: "2026-03-18"
-structured_data: 
+structured_data:
   "@type": "HowTo"
   name: "Claude Code Semantic Versioning Automation"
 intent-checked: true
@@ -26,17 +26,13 @@ last_modified_at: 2026-03-15
 Automate semantic versioning with Claude Code by configuring version detection rules that identify version bumps from commit messages and code changes. Claude Code analyzes commits and pull request labels to determine whether changes warrant MAJOR, MINOR, or PATCH version increments according to semantic versioning standards, eliminating manual version bumps and ensuring consistent releases.
 
 
-
 Semantic versioning (SemVer) has become the standard for version numbering in modern software development. When combined with Claude Code's powerful automation capabilities, you can create a version management system that eliminates manual version bumps and ensures consistent releases.
-
 
 
 ## Understanding Semantic Versioning Basics
 
 
-
 Semantic versioning follows the format `MAJOR.MINOR.PATCH`:
-
 
 
 - **MAJOR** version when you make incompatible API changes
@@ -46,17 +42,13 @@ Semantic versioning follows the format `MAJOR.MINOR.PATCH`:
 - **PATCH** version when you make backward-compatible bug fixes
 
 
-
 Claude Code can help automate the detection of which version component should be bumped based on your commit messages, pull request labels, and code changes.
-
 
 
 ## Setting Up Claude Code for Version Management
 
 
-
 The first step in automating semantic versioning with Claude Code is to create a `CLAUDE.md` file that defines your versioning rules and expectations.
-
 
 
 ```markdown
@@ -80,9 +72,7 @@ The first step in automating semantic versioning with Claude Code is to create a
 ## Automated Version Detection Patterns
 
 
-
 Claude Code can analyze your codebase to automatically determine the appropriate version bump. Here's a pattern for version detection:
-
 
 
 ```python
@@ -92,24 +82,24 @@ from pathlib import Path
 
 def detect_version_bump(commit_messages: list[str]) -> str:
     """Determine version bump type from commit messages."""
-    
+
     has_breaking = any(
         "BREAKING CHANGE" in msg or "BREAKING CHANGES" in msg
         for msg in commit_messages
     )
-    
+
     has_feature = any(
         msg.startswith("feat:") or msg.startswith("feat(")
         for msg in commit_messages
     )
-    
+
     has_fix = any(
-        msg.startswith("fix:") or 
+        msg.startswith("fix:") or
         msg.startswith("perf:") or
         msg.startswith("refactor:")
         for msg in commit_messages
     )
-    
+
     if has_breaking:
         return "major"
     elif has_feature:
@@ -123,9 +113,7 @@ def detect_version_bump(commit_messages: list[str]) -> str:
 ## Creating a Claude Code Command for Version Bumps
 
 
-
 You can create custom Claude Code commands that handle the entire version bump process:
-
 
 
 ```bash
@@ -155,13 +143,10 @@ fi
 ## Integrating with Release Workflows
 
 
-
 Here's how to integrate semantic versioning automation with your release workflow:
 
 
-
 ### GitHub Actions Integration
-
 
 
 ```yaml
@@ -180,13 +165,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Determine Version
         id: version
         run: |
           # Use CLAUDE.md rules to determine version
           echo "new_version=$(node scripts/detect-version.js)" >> $GITHUB_OUTPUT
-      
+
       - name: Create Release
         if: steps.version.outputs.new_version != ''
         uses: actions/create-release@v1
@@ -201,7 +186,6 @@ jobs:
 ### Automated Changelog Generation
 
 
-
 ```javascript
 // scripts/generate-changelog.js
 function generateChangelog(commits, version) {
@@ -211,7 +195,7 @@ function generateChangelog(commits, version) {
     breaking: [],
     other: []
   };
-  
+
   for (const commit of commits) {
     if (commit.message.includes('BREAKING CHANGE')) {
       changes.breaking.push(commit);
@@ -223,7 +207,7 @@ function generateChangelog(commits, version) {
       changes.other.push(commit);
     }
   }
-  
+
   return formatChangelog(changes, version);
 }
 ```
@@ -232,37 +216,28 @@ function generateChangelog(commits, version) {
 ## Best Practices for Version Automation
 
 
-
 When implementing semantic versioning automation with Claude Code, follow these best practices:
-
 
 
 1. Define Clear Commit Conventions: Use Conventional Commits format to make automatic version detection reliable.
 
 
-
 2. Maintain a Single Source of Truth: Store version in one place (package.json, pyproject.toml) and reference it consistently.
-
 
 
 3. Validate Before Bumping: Always verify that the proposed version bump matches your actual changes.
 
 
-
 4. Include Rollback Procedures: Have a plan for reverting version bumps if issues are discovered.
-
 
 
 5. Test Automation Thoroughly: Run your version detection logic against historical commits to ensure accuracy.
 
 
-
 ## Using Claude Code to Enforce Versioning Rules
 
 
-
 Claude Code can actively enforce versioning rules during development:
-
 
 
 ```markdown
@@ -376,10 +351,6 @@ gh release create v${NEW_VERSION} --draft \
 ```
 
 Claude Code handles dry-run generation well — prompt it with "Add a dry-run mode that previews version changes without modifying files or making network calls" and it correctly adds `--dry-run` flags or conditional logic that skips write operations.
-
-
-
-
 
 
 ## Related Articles

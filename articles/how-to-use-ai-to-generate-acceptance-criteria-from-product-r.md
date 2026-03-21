@@ -20,21 +20,16 @@ tags: [ai-tools-compared, artificial-intelligence]
 Generating acceptance criteria from product requirement documents is a repetitive but critical task in software development. When you're working with vague requirements, turning them into testable conditions requires careful analysis. AI tools can accelerate this process significantly, helping you extract measurable criteria from natural language documents.
 
 
-
 This guide shows you practical approaches to generate acceptance criteria using AI, with concrete examples you can apply immediately.
-
 
 
 ## Understanding the Input: Product Requirement Documents
 
 
-
 Product requirement documents (PRDs) come in various formats—Google Docs, Confluence pages, Notion files, or plain text. Most contain a mix of user stories, feature descriptions, business rules, and technical constraints. The challenge is extracting unambiguous, testable conditions from these documents.
 
 
-
 A typical PRD entry might look like this:
-
 
 
 ```
@@ -50,17 +45,14 @@ User Authentication Feature
 From this brief description, you need to generate specific acceptance criteria that QA can test and developers can implement.
 
 
-
 ## Prompting AI to Extract Acceptance Criteria
-
 
 
 The key to getting useful output is providing clear context. Here's a structured approach:
 
 
-
 ```markdown
-Extract acceptance criteria from the following product requirement. 
+Extract acceptance criteria from the following product requirement.
 For each criterion, use the format:
 - Condition: [what must be true]
 - Verification: [how to test it]
@@ -73,20 +65,18 @@ Requirements:
 ### Example: Authentication Feature
 
 
-
 Input PRD:
 
 ```
 Registration System
 New users create accounts using email address. Password requirements:
-minimum 8 characters, at least one uppercase letter, one number, and one 
-special character. System sends verification email with link. User must 
+minimum 8 characters, at least one uppercase letter, one number, and one
+special character. System sends verification email with link. User must
 click link within 24 hours to activate account.
 ```
 
 
 AI-generated acceptance criteria:
-
 
 
 | ID | Condition | Verification |
@@ -112,13 +102,10 @@ AI-generated acceptance criteria:
 | AC-9 | Account inactive until verified | Attempt login before verification |
 
 
-
 ## Automating with CLI Tools
 
 
-
 For teams processing multiple requirements, you can build a simple CLI tool using the OpenAI API or Claude API:
-
 
 
 ```python
@@ -130,25 +117,25 @@ def generate_acceptance_criteria(prd_text, api_key):
     """Send PRD to AI and parse response into structured criteria."""
     from openai import OpenAI
     client = OpenAI(api_key=api_key)
-    
-    prompt = f"""Analyze this product requirement and generate 
+
+    prompt = f"""Analyze this product requirement and generate
     acceptance criteria in JSON format.
-    
+
     Requirements:
     {prd_text}
-    
+
     Output format:
     {{
         "criteria": [
             {{"id": "AC-1", "condition": "...", "verification": "..."}}
         ]
     }}"""
-    
+
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[{"role": "user", "content": prompt}]
     )
-    
+
     return json.loads(response.choices[0].message.content)
 
 if __name__ == "__main__":
@@ -161,7 +148,6 @@ if __name__ == "__main__":
 Run it with:
 
 
-
 ```bash
 python ac_generator.py "Your PRD text here" "your-api-key"
 ```
@@ -170,15 +156,13 @@ python ac_generator.py "Your PRD text here" "your-api-key"
 ## Handling Complex Business Rules
 
 
-
 Real-world requirements often contain nested logic. Here's how to handle them:
-
 
 
 ```
 E-commerce Discount Rules:
 - Orders over $100 get 10% discount
-- Orders over $200 get 15% discount  
+- Orders over $200 get 15% discount
 - Members get additional 5% off
 - Discounts stack but max 20%
 - Free shipping on orders over $50
@@ -186,7 +170,6 @@ E-commerce Discount Rules:
 
 
 A good prompt for this scenario:
-
 
 
 ```
@@ -199,7 +182,6 @@ Rules:
 
 
 This produces testable scenarios like:
-
 
 
 | Input | Expected | Notes |
@@ -217,13 +199,10 @@ This produces testable scenarios like:
 | $100 order, member | 15% discount | 10%+5%, capped |
 
 
-
 ## Integration with Test Management
 
 
-
 For automated test generation, output criteria in a format your framework understands:
-
 
 
 ```python
@@ -252,7 +231,6 @@ ACCEPTANCE_CRITERIA = {
 You can then generate pytest tests programmatically:
 
 
-
 ```python
 import pytest
 from your_acceptance_module import ACCEPTANCE_CRITERIA
@@ -272,29 +250,22 @@ def generate_tests():
 ## Best Practices for Better Results
 
 
-
 **Provide context in your prompts.** Include information about your tech stack, testing framework, and any existing conventions. This helps AI generate criteria that fit your workflow.
-
 
 
 **Review and refine.** AI output is a starting point. Always have a developer or QA engineer review generated criteria for completeness and accuracy.
 
 
-
 **Iterate on prompts.** If output quality is poor, adjust your prompt with more specific instructions. Include examples of good acceptance criteria in your prompt.
-
 
 
 **Maintain a criteria library.** Store successful AI-generated criteria as reference material. This improves future outputs and creates documentation.
 
 
-
 ## Common Pitfalls to Avoid
 
 
-
 Generated criteria sometimes miss implicit requirements. Always verify:
-
 
 
 - Error handling scenarios
@@ -308,14 +279,7 @@ Generated criteria sometimes miss implicit requirements. Always verify:
 - Accessibility requirements
 
 
-
 AI excels at extracting explicit requirements but may miss unstated assumptions. Manual review remains essential.
-
-
-
-
-
-
 
 
 ## Related Articles

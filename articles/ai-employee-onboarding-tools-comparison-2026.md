@@ -49,7 +49,7 @@ async function createOnboardingTask(employeeData, platform) {
       tasks: ['setup_workstation', 'provision_accounts', 'assign_training']
     })
   });
-  
+
   return response.json();
 }
 ```
@@ -67,7 +67,7 @@ from anthropic import Anthropic
 
 def extract_employee_info_from_document(document_bytes):
     client = Anthropic(api_key="your-api-key")
-    
+
     response = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=1024,
@@ -89,7 +89,7 @@ def extract_employee_info_from_document(document_bytes):
             ]
         }]
     )
-    
+
     return response.content[0].text
 ```
 
@@ -124,7 +124,7 @@ function verifyWebhookSignature(payload, signature, secret) {
     .createHmac('sha256', secret)
     .update(payload)
     .digest('hex');
-  
+
   return crypto.timingSafeEqual(
     Buffer.from(signature),
     Buffer.from(expectedSignature)
@@ -290,11 +290,6 @@ Onboarding happens on specific dates; async processing requires careful queuing:
 - Setup/configuration: $5,000-$25,000 (one-time)
 - Training: $2,000-$5,000
 - **Total Year 1: $12k-$42k** (highly scalable)
-
-
-
-
-
 
 
 ## Related Articles

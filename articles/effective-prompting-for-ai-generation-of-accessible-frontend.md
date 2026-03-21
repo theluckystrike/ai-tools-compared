@@ -18,29 +18,22 @@ voice-checked: true
 To generate truly accessible frontend components with AI, you need specific prompting strategies that explicitly require semantic HTML, ARIA attributes, and keyboard navigation. Generic prompts produce visually functional but inaccessible code—this guide shows you exactly which phrases, constraints, and examples to include in your prompts to consistently get WCAG-compliant output.
 
 
-
 ## Why Standard Prompts Fall Short
-
 
 
 When you ask an AI to "create a button component" or "build a modal dialog," the resulting code often lacks accessibility fundamentals. The AI generates visually functional code without considering screen reader compatibility, keyboard users, or color contrast requirements. This happens because the base training data includes countless inaccessible examples, and the AI optimizes for common patterns rather than best practices.
 
 
-
 Effective prompting bridges this gap by explicitly stating accessibility requirements within your instructions. The more precisely you define accessibility constraints, the more reliable the output becomes.
-
 
 
 ## Core Prompting Strategies
 
 
-
 ### Specify Semantic HTML Elements
 
 
-
 Generic prompts produce generic markup. Instead of asking for a "div that acts like a button," explicitly request semantic elements:
-
 
 
 ```
@@ -52,13 +45,10 @@ Include proper disabled state handling with the disabled attribute.
 This simple change ensures the AI uses native button behavior, which automatically provides keyboard activation and screen reader announcements.
 
 
-
 ### Include ARIA Requirements Explicitly
 
 
-
 Modern components often require ARIA attributes, but the AI needs specific guidance about when and how to apply them:
-
 
 
 ```
@@ -71,13 +61,10 @@ id matching aria-controls. Use aria-level for heading hierarchy.
 Without explicit ARIA instructions, the AI might generate incomplete or incorrect accessibility attributes.
 
 
-
 ### Mandate Keyboard Navigation
 
 
-
 Interactive components must be keyboard-accessible. Your prompts should require specific keyboard behaviors:
-
 
 
 ```
@@ -93,9 +80,7 @@ Create a dropdown select component. It must support:
 ### Define Focus Management Rules
 
 
-
 Focus handling determines whether keyboard users can effectively navigate your interface. Include explicit instructions:
-
 
 
 ```
@@ -110,9 +95,7 @@ Build a modal dialog component. When the modal opens:
 ## Practical Prompt Templates
 
 
-
 ### Form Input Component
-
 
 
 ```
@@ -129,7 +112,6 @@ Requirements:
 ### Tabs Component
 
 
-
 ```
 Build a tabbed interface with three tabs and corresponding panels.
 Requirements:
@@ -142,7 +124,6 @@ Requirements:
 
 
 ### Data Table with Sort
-
 
 
 ```
@@ -159,13 +140,10 @@ Requirements:
 ## Testing Your AI-Generated Code
 
 
-
 Prompting correctly produces accessible code, but verification remains essential. Use these methods to validate the output:
 
 
-
 Automated Testing: Run axe-core or Accessibility Insights to catch common issues:
-
 
 
 ```javascript
@@ -182,7 +160,6 @@ test('button component should have no accessibility violations', async () => {
 Screen Reader Testing: Navigate your component using VoiceOver (Cmd+F5) or NVDA. Verify that:
 
 
-
 - All interactive elements are announced
 
 - State changes (expanded, selected, disabled) are communicated
@@ -190,21 +167,16 @@ Screen Reader Testing: Navigate your component using VoiceOver (Cmd+F5) or NVDA.
 - Form errors are clearly described
 
 
-
 Keyboard Testing: Complete all interactions using only the keyboard. Tab through the interface, activate all controls, and confirm no focus is lost or trapped unexpectedly.
-
 
 
 ## Advanced Prompting Techniques
 
 
-
 ### Chain-of-Thought Accessibility
 
 
-
 Ask the AI to explain its accessibility decisions:
-
 
 
 ```
@@ -216,13 +188,10 @@ explain why it's necessary and what screen reader behavior it enables.
 This produces more thoughtful code and helps you learn accessibility principles.
 
 
-
 ### Constraint-Based Prompts
 
 
-
 Combine multiple accessibility requirements into constraints:
-
 
 
 ```
@@ -239,9 +208,7 @@ excerpt, and "Read more" link. Requirements:
 ### Iterative Refinement
 
 
-
 Start with basic accessible components, then extend functionality:
-
 
 
 1. Request a simple accessible button
@@ -253,17 +220,13 @@ Start with basic accessible components, then extend functionality:
 4. Add tooltip with aria-describedby
 
 
-
 Each iteration reinforces accessibility patterns while building complex functionality.
-
 
 
 ## Common Prompt Mistakes
 
 
-
 Avoid these patterns that produce inaccessible code:
-
 
 
 - Vague requirements: "Make it accessible" provides no specific guidance
@@ -277,24 +240,13 @@ Avoid these patterns that produce inaccessible code:
 - Generic styling requests: Color changes alone don't address contrast requirements
 
 
-
 ## The Path Forward
-
 
 
 Accessible AI-generated code requires intentional prompting. By specifying semantic HTML, ARIA attributes, keyboard navigation, and focus management in your prompts, you produce components that work for all users. The investment in crafting detailed prompts pays dividends in code quality and user experience.
 
 
-
 Test every AI-generated component. Use automated tools, screen readers, and keyboard-only navigation. Accessibility isn't optional—it's essential for creating inclusive web experiences.
-
-
-
-
-
-
-
-
 
 
 ## Related Articles

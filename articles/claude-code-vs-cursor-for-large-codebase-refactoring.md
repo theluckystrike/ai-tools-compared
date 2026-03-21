@@ -367,10 +367,6 @@ Since Cursor runs in your IDE, you can:
 **Instead, do manual review + code walkthrough with your team.**
 
 
-
-
-
-
 ## Related Articles
 
 - [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)

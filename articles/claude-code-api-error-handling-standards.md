@@ -15,37 +15,27 @@ tags: [ai-tools-compared, troubleshooting, claude-ai, api]
 ---
 
 
-
-
-
 {% raw %}
 
 Claude Code helps developers implement consistent, user-friendly error handling across APIs. This guide covers the essential standards for designing error responses that improve debugging, enhance client experience, and maintain API reliability.
 
 
-
 ## Why API Error Handling Matters
-
 
 
 Effective error handling serves three critical purposes. First, it helps clients understand what went wrong and how to recover, reducing support burden. Second, it provides debugging information for developers during development and production. Third, it maintains API reliability by preventing cascading failures and providing clear status signals.
 
 
-
 Poor error handling leads to frustrated users, difficult debugging sessions, and fragile integrations. By implementing standards from the start, you create APIs that are easier to maintain and consume.
-
 
 
 ## HTTP Status Code Standards
 
 
-
 Use HTTP status codes consistently to indicate the general category of the response.
 
 
-
 ### Success Codes (2xx)
-
 
 
 - **200 OK** - Request succeeded for GET, PUT, or DELETE
@@ -55,9 +45,7 @@ Use HTTP status codes consistently to indicate the general category of the respo
 - **204 No Content** - Successful deletion or empty response for PUT
 
 
-
 ### Client Error Codes (4xx)
-
 
 
 - **400 Bad Request** - Invalid request syntax or parameters
@@ -75,9 +63,7 @@ Use HTTP status codes consistently to indicate the general category of the respo
 - **429 Too Many Requests** - Rate limit exceeded
 
 
-
 ### Server Error Codes (5xx)
-
 
 
 - **500 Internal Server Error** - Unexpected server failure
@@ -89,13 +75,10 @@ Use HTTP status codes consistently to indicate the general category of the respo
 - **504 Gateway Timeout** - Upstream timeout
 
 
-
 ## Error Response Format
 
 
-
 Structure all error responses consistently. Use JSON for error bodies.
-
 
 
 ```json
@@ -117,7 +100,6 @@ Structure all error responses consistently. Use JSON for error bodies.
 Define standard error codes that your API uses:
 
 
-
 ```python
 # Example error code enum
 class ErrorCode:
@@ -125,20 +107,20 @@ class ErrorCode:
     AUTH_INVALID_TOKEN = "AUTH_INVALID_TOKEN"
     AUTH_EXPIRED_TOKEN = "AUTH_EXPIRED_TOKEN"
     AUTH_MISSING_TOKEN = "AUTH_MISSING_TOKEN"
-    
+
     # Validation errors (VALIDATION_*)
     VALIDATION_INVALID_FORMAT = "VALIDATION_INVALID_FORMAT"
     VALIDATION_MISSING_FIELD = "VALIDATION_MISSING_FIELD"
     VALIDATION_OUT_OF_RANGE = "VALIDATION_OUT_OF_RANGE"
-    
+
     # Resource errors (RESOURCE_*)
     RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND"
     RESOURCE_CONFLICT = "RESOURCE_CONFLICT"
     RESOURCE_DELETED = "RESOURCE_DELETED"
-    
+
     # Rate limiting (RATE_*)
     RATE_LIMIT_EXCEEDED = "RATE_LIMIT_EXCEEDED"
-    
+
     # Server errors (INTERNAL_*)
     INTERNAL_ERROR = "INTERNAL_ERROR"
     SERVICE_UNAVAILABLE = "SERVICE_UNAVAILABLE"
@@ -148,9 +130,7 @@ class ErrorCode:
 ## Implementing Error Handling with Claude Code
 
 
-
 Claude Code can help you implement strong error handling in multiple languages. Here is a Python FastAPI example:
-
 
 
 ```python
@@ -208,13 +188,10 @@ async def add_request_id(request: Request, call_next):
 ## Error Handling Best Practices
 
 
-
 ### Always Include Request IDs
 
 
-
 Every error response should include a request ID that correlates to server logs. This enables debugging without requiring users to share sensitive information.
-
 
 
 ```python
@@ -223,7 +200,7 @@ Every error response should include a request ID that correlates to server logs.
 async def add_request_id(request: Request, call_next):
     request_id = request.headers.get("X-Request-ID") or str(uuid.uuid4())
     request.state.request_id = request_id
-    
+
     response = await call_next(request)
     response.headers["X-Request-ID"] = request_id
     return response
@@ -233,9 +210,7 @@ async def add_request_id(request: Request, call_next):
 ### Sanitize Error Messages
 
 
-
 Never expose internal implementation details in error messages to clients. Instead, log detailed information server-side and return generic messages to clients.
-
 
 
 ```python
@@ -257,9 +232,7 @@ raise APIException(
 ### Provide Actionable Messages
 
 
-
 Error messages should tell users what they can do to resolve the issue.
-
 
 
 ```python
@@ -274,9 +247,7 @@ Error messages should tell users what they can do to resolve the issue.
 ### Use Rate Limiting Headers
 
 
-
 When returning 429 responses, include headers that inform clients about rate limits.
-
 
 
 ```python
@@ -296,9 +267,7 @@ response = JSONResponse(
 ## Testing Error Handling
 
 
-
 Write tests that verify your error responses match the expected format:
-
 
 
 ```python
@@ -434,10 +403,6 @@ async def fetch_user_from_upstream(user_id: str) -> dict:
 ```
 
 The pattern — catch upstream errors, log the raw details server-side, raise a translated exception with a client-appropriate message — is the standard that Claude Code applies when you specify "translate upstream errors rather than propagating them."
-
-
-
-
 
 
 ## Related Articles

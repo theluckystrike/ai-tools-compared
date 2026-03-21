@@ -19,29 +19,22 @@ voice-checked: true
 AI coding assistants can dramatically accelerate your development workflow, but they often generate code that conflicts with your established database naming conventions. When your team uses snake_case for table columns but the AI outputs camelCase, you spend more time correcting suggestions than you save. This guide shows you how to configure major AI coding tools to respect your specific naming patterns.
 
 
-
 ## Why Naming Convention Configuration Matters
-
 
 
 Database naming conventions vary widely across organizations. Some teams prefer snake_case (`user_id`, `created_at`), others use PascalCase (`UserId`, `CreatedAt`), and some adopt prefixed conventions (`tbl_users`, `col_user_id`). When AI tools ignore these patterns, you receive code suggestions that violate your database schema, leading to runtime errors, inconsistent codebases, and frustrated developers.
 
 
-
 Configuring your AI tools to understand your conventions eliminates friction. The best approach involves a combination of prompt engineering, configuration files, and custom instructions that your AI assistant can reference across sessions.
-
 
 
 ## Configuring GitHub Copilot
 
 
-
 GitHub Copilot supports several methods for enforcing naming conventions. The most effective approach uses `.github/copilot-instructions.md` at the repository root.
 
 
-
 Create a file called `.github/copilot-instructions.md` in your project root:
-
 
 
 ```markdown
@@ -63,7 +56,6 @@ Create a file called `.github/copilot-instructions.md` in your project root:
 Copilot reads this file automatically and incorporates these rules into its suggestions. For more granular control, you can add inline annotations in your code files:
 
 
-
 ```python
 # copilot: infer database_naming_style="snake_case"
 class User:
@@ -76,13 +68,10 @@ class User:
 ## Configuring Cursor
 
 
-
 Cursor offers a dedicated `.cursorrules` file that provides project-specific instructions. This file supports more sophisticated configuration than Copilot's approach.
 
 
-
 Create `.cursorrules` in your project root:
-
 
 
 ```
@@ -108,17 +97,13 @@ For ORM models:
 Cursor applies these rules more consistently than other tools because it treats the `.cursorrules` file as a primary context source. You can verify the configuration is working by typing a comment like `# Create a query to fetch all active users` and observing whether the generated SQL uses `is_active` (snake_case) instead of `isActive`.
 
 
-
 ## Configuring Zed
-
 
 
 Zed uses a similar approach with `.zed/rules.md` or inline configuration. The tool reads rules from this file and applies them across all AI interactions.
 
 
-
 Create `.zed/rules.md`:
-
 
 
 ```markdown
@@ -140,7 +125,6 @@ Create `.zed/rules.md`:
 Zed also supports workspace-level configuration for team-wide enforcement. Edit `settings.json` in your Zed workspace:
 
 
-
 ```json
 {
   "ai": {
@@ -157,9 +141,7 @@ Zed also supports workspace-level configuration for team-wide enforcement. Edit 
 ## Using EditorConfig for Additional Enforcement
 
 
-
 Beyond AI-specific configuration, EditorConfig helps maintain consistency across all generated code. Add an `.editorconfig` file to your project root:
-
 
 
 ```ini
@@ -184,13 +166,10 @@ max_line_length = 100
 While EditorConfig doesn't directly control AI output, it establishes formatting expectations that AI tools increasingly recognize and respect.
 
 
-
 ## Verification and Testing
 
 
-
 After configuring your AI tools, verify the settings work correctly. Create a test file and ask your AI assistant to generate a simple database interaction:
-
 
 
 ```sql
@@ -208,21 +187,16 @@ If the AI still generates incorrect naming, refine your configuration files. Com
 - Missing explicit mention of both tables and columns
 
 
-
 ## Best Practices for Team Adoption
-
 
 
 Share your configuration files through version control so all team members benefit from consistent AI behavior. Include the configuration files in your project's README or contributing guide. Review the AI-generated code during pull request reviews to catch any convention violations early.
 
 
-
 Updating conventions requires coordination. When your team changes naming standards, update all configuration files simultaneously and communicate the change to every developer on the team.
 
 
-
 ## Comparing AI Tool Configuration Capabilities
-
 
 
 Different AI tools support different configuration mechanisms. Understanding these differences helps you choose the right approach for your workflow:
@@ -243,13 +217,13 @@ Different database systems benefit from specialized configuration. Document thes
 ```
 ## PostgreSQL Conventions
 - Use SERIAL or BIGSERIAL for auto-incrementing IDs
-- Leverage JSONB for semi-structured data (json_data JSONB)
+- Use JSONB for semi-structured data (json_data JSONB)
 - Use ENUM types for fixed sets: CREATE TYPE status AS ENUM ('active', 'inactive')
 - Always include CHECK constraints for business rules
 
 ## MySQL Conventions
 - Use UNSIGNED INT for non-negative IDs
-- Leverage CHAR(36) for UUID storage
+- Use CHAR(36) for UUID storage
 - Use ENUM columns for fixed sets: status ENUM('active','inactive')
 - Always include ON DELETE CASCADE/RESTRICT for referential integrity
 
@@ -325,14 +299,6 @@ orm_mappings:
 Store this alongside your configuration files so developers understand the conventions and AI tools can reference it.
 
 ---
-
-
-
-
-
-
-
-
 
 
 ## Related Articles
