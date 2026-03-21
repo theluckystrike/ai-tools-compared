@@ -60,7 +60,7 @@ import { javascript } from '@codemirror/lang-javascript';
 
 function Playground() {
   const [code, setCode] = useState('// Write your code here\nconsole.log("Hello!");');
-  
+
   return (
     <CodeMirror
       value={code}
@@ -271,7 +271,6 @@ Ignoring accessibility: Ensure your playground works for developers using screen
 
 Skipping mobile testing: Many developers browse documentation on mobile devices. Verify your playground functions on smaller screens.
 
-
 ## Generating Examples with Claude Code
 
 Batch-generate examples for your SDK by giving Claude the full API surface:
@@ -332,6 +331,117 @@ document.getElementById('output').textContent = output || error;
 ```
 
 This avoids building sandbox infrastructure — Piston handles execution isolation and rate limiting.
+
+## Structuring Multi-Step Tutorial Flows
+
+The most effective DevRel playgrounds guide developers through a progression of concepts, not just a single code block. AI can accelerate the design of these flows, but the sequencing requires product expertise.
+
+A proven structure: establish context, demonstrate the minimal case, add one complexity at a time, then present a realistic integration. Use AI to generate content for each step and to verify that each example builds naturally on the previous one.
+
+```javascript
+// Step progression manager — AI generates the content, you define the flow
+const tutorialSteps = [
+  {
+    title: "Connect to the API",
+    description: "Initialize the client with your credentials",
+    code: `const client = new YourSDK({ apiKey: process.env.API_KEY });`,
+    expectedOutput: "Client initialized",
+    hints: ["Make sure API_KEY is set in your environment"]
+  },
+  {
+    title: "Make your first request",
+    description: "Fetch a list of resources",
+    code: `const resources = await client.list();
+console.log(resources.length + " resources found");`,
+    expectedOutput: "3 resources found",
+    hints: ["The sandbox has 3 pre-populated resources"]
+  },
+  {
+    title: "Filter and transform",
+    description: "Use query parameters to narrow results",
+    code: `const active = await client.list({ status: 'active' });
+const names = active.map(r => r.name);
+console.log(names.join(', '));`,
+    expectedOutput: "widget-a, widget-b",
+    hints: ["Only active resources are returned by default"]
+  }
+];
+
+function renderStep(step, index) {
+  return `
+    <div class="step" data-step="${index}">
+      <h3>${index + 1}. ${step.title}</h3>
+      <p>${step.description}</p>
+      <div class="editor" data-initial="${step.code}"></div>
+      <div class="expected">Expected: <code>${step.expectedOutput}</code></div>
+    </div>
+  `;
+}
+```
+
+When generating step content with AI, include "what should break" alongside "what should succeed." Developers learn faster when they understand error states, not just the happy path.
+
+## Keeping Playground Examples Current with API Changes
+
+A playground that uses a deprecated method erodes trust faster than having no playground at all. DevRel teams using AI can build a lightweight maintenance pipeline:
+
+```bash
+#!/bin/bash
+# playground-audit.sh — run monthly against your SDK changelog
+
+SDK_VERSION=$(cat package.json | jq -r '.dependencies["your-sdk"]')
+PLAYGROUND_DIR="./playgrounds"
+
+for example_file in $PLAYGROUND_DIR/**/*.js; do
+  echo "Auditing: $example_file"
+
+  # Extract SDK method calls from the example
+  methods=$(grep -oP 'client\.\K[a-zA-Z]+' "$example_file" | sort -u)
+
+  # Ask AI to verify against current SDK docs
+  echo "Methods used: $methods
+SDK version: $SDK_VERSION
+Review these method names against the current SDK changelog.
+Flag any that were deprecated or renamed in the last 3 versions." | claude -p
+done
+```
+
+This approach catches regressions before developers encounter them. Set it as a monthly scheduled job triggered by SDK release webhooks, and route the output to a Slack channel your DevRel team monitors.
+
+## Tracking Which Examples Drive Conversion
+
+Not all playground content contributes equally to signup or trial conversion. Instrumenting your playground helps prioritize which examples AI should help you maintain and expand first.
+
+```javascript
+// Minimal analytics integration for playground conversion tracking
+function trackPlaygroundEvent(eventType, stepIndex, executionSuccess) {
+  // Replace with your analytics provider
+  analytics.track('playground_interaction', {
+    event: eventType,           // 'code_run', 'step_complete', 'example_copied'
+    step: stepIndex,
+    success: executionSuccess,
+    session_id: getSessionId(),
+    time_in_playground: getElapsedSeconds()
+  });
+}
+
+// Hook into your execution flow
+async function handleRunCode(code, stepIndex) {
+  const result = await runCode(code);
+  const success = result.exitCode === 0;
+
+  trackPlaygroundEvent('code_run', stepIndex, success);
+
+  if (success && isLastStep(stepIndex)) {
+    trackPlaygroundEvent('tutorial_complete', stepIndex, true);
+    showSignupPrompt();  // Trigger CTA at the moment of success
+  }
+
+  return result;
+}
+```
+
+Once you have two to three months of data, use AI to analyze completion rates by step. A step with 40% drop-off usually has an example that's too abstract, too complex, or assumes knowledge the previous steps didn't cover. Rewrite that step and measure again.
 
 ## Related Reading
 
