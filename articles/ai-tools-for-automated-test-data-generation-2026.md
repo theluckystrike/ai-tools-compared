@@ -223,7 +223,42 @@ def anonymize_for_testing(real_record: dict) -> dict:
     }
 ```
 
-## Tool Selection Guide
+## Generating Business-Rule-Compliant Data
+
+Standard fake data libraries have no concept of your application's constraints. If your system requires that orders can't exceed a user's credit limit, or that subscription end dates must be after start dates, Faker will silently violate those rules.
+
+Use Claude to encode business rules directly in the generation prompt:
+
+```python
+def generate_order_data(user_credit_limits: dict, count: int) -> list[dict]:
+    rules = """
+    Business rules for order data:
+    - order_amount must not exceed the user's credit_limit
+    - order_date must be within the last 12 months
+    - status must be 'pending' if order_date is within 3 days, else 'completed' or 'cancelled'
+    - cancelled orders must have a cancellation_reason
+    - discount_pct can only be 0, 10, 15, or 25
+    - total = order_amount * (1 - discount_pct/100), rounded to 2 decimal places
+    """
+
+    prompt = f"""Generate {count} order records following these business rules:
+{rules}
+
+User credit limits: {json.dumps(user_credit_limits)}
+
+Return as JSON array."""
+
+    response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=8192,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    return json.loads(response.content[0].text)
+```
+
+This approach works for any business constraint that can be expressed in plain language. The tradeoff is generation speed and API cost — use it for complex edge-case data, not for high-volume load test fixtures.
+
+## Comparison Table
 
 | Scenario | Recommended Tool |
 |---|---|
@@ -233,12 +268,24 @@ def anonymize_for_testing(real_record: dict) -> dict:
 | Schema-defined data for non-engineers | Mockaroo |
 | Production data anonymization | Faker + custom mapping |
 | Complex business constraint data | Claude with constraint prompt |
+| Edge case generation for bugs | Claude with boundary conditions in prompt |
+
+## FAQ
+
+**Can AI-generated test data be used in CI/CD pipelines?**
+Yes. The pattern is to generate data once, commit the JSON fixtures to the repo, and load them in tests. Only regenerate when the schema changes. Real-time LLM calls in CI are too slow and costly for routine test runs.
+
+**How do you handle foreign key constraints?**
+Generate parent records first and extract their IDs, then pass those IDs to the child record generation prompt as constraints. For example: "user_ids must be one of [1, 2, 3, 4, 5]" ensures referential integrity without DB lookups.
+
+**Is Faker or Mimesis better?**
+Mimesis is 2-5x faster and better for generating millions of rows for load tests. Faker has more locale coverage and more data types (SSNs, license plates, etc.). For most projects, Faker is the default choice unless performance is a constraint.
 
 ## Related Reading
 
 - [AI Tools for Creating Realistic Test Datasets](/ai-tools-for-creating-realistic-test-datasets-that-preserve-/)
 - [AI Tools for Creating Test Data Generators that Respect Business Rules](/ai-tools-for-creating-test-data-generators-that-respect-busi/)
-- [Best AI Tools for Generating Unit Tests 2026](/ai-tools-for-generating-unit-tests-2026/)
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 ---
 
