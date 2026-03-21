@@ -8,7 +8,7 @@ permalink: /midjourney-describe-feature-cost-does-it-count-as-image-gene/
 categories: [guides]
 tags: [ai-tools-compared, tools]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
