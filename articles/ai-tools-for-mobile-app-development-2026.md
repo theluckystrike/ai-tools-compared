@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Mobile App Development 2026"
-description: "Compare AI coding assistants for iOS and Android development: Copilot, Cursor, and Claude for Swift, Kotlin, React Native, and Flutter with real workflow examples"
+description: "Compare AI coding assistants for iOS and Android development: Copilot, Cursor, and Claude for Swift, Kotlin, React Native, and Flutter with real workflow"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-mobile-app-development-2026/

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Tools for Data Cleaning: A Practical Guide for"
+title: "Best AI Tools for Data Cleaning"
 description: "A hands-on comparison of AI-powered data cleaning tools for developers and power users, with code examples and recommendations"
 date: 2026-03-15
 last_modified_at: 2026-03-15

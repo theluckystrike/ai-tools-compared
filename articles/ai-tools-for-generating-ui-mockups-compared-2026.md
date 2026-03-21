@@ -32,6 +32,18 @@ Text-to-mockup tools interpret natural language prompts and produce visual layou
 The key differentiator in 2026 is not just visual output but whether the tool produces usable code that developers can actually implement.
 
 
+
+## Quick Comparison
+
+| Feature | Tool A | Tool B |
+|---|---|---|
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $20/month | $20/month |
+| Language Support | Multi-language | Multi-language |
+| Terminal Integration | Available | Available |
+
 ## Comparing Leading Tools
 
 

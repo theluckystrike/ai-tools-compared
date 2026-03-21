@@ -36,6 +36,18 @@ Both ChatGPT Plus and Claude Pro cost $20 per month at the time of writing. This
 For developers focused specifically on coding assistance, the practical differences lie in how each model approaches code generation, debugging, and explanation.
 
 
+
+## Quick Comparison
+
+| Feature | Chatgpt Plus | Claude Pro |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | $20/month | $20/month |
+| Language Support | Multi-language | Multi-language |
+
 ## Code Generation: Side-by-Side Comparison
 
 

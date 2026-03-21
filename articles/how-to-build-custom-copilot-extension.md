@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Build a Custom GitHub Copilot Extension"
-description: "Step-by-step guide to building a GitHub Copilot Extension using the Copilot Extensions API, with authentication, streaming responses, and real deployment examples"
+description: "Step-by-step guide to building a GitHub Copilot Extension using the Copilot Extensions API, with authentication, streaming responses, and real deployment"
 date: 2026-03-21
 author: theluckystrike
 permalink: /how-to-build-custom-copilot-extension/

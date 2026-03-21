@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "AI Tools for Writing Database Migration Rollback Scripts 2026"
+title: "AI Tools for Writing Database Migration Rollback Scripts"
 description: "How AI coding assistants handle database migration rollbacks across Flyway, Liquibase, Prisma, and raw SQL with safety checks"
 date: 2026-03-21
 last_modified_at: 2026-03-21

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Best AI Assistant for Drafting Open Source Partnership and"
+title: "Best AI Assistant for Drafting Open Source Partnership"
 description: "Drafting open source partnership proposals and integration documentation requires an unique blend of technical accuracy, legal awareness, and clear"
 date: 2026-03-16
 last_modified_at: 2026-03-16

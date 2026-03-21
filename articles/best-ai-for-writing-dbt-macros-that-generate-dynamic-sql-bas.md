@@ -403,7 +403,7 @@ The right choice depends on your project complexity, team setup, and workflow pr
 - [AI Tools for Writing dbt Seeds and Fixtures for Testing Mode](/ai-tools-compared/ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/)
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [Best AI for Writing SQL Performance Tuning Recommendations](/ai-tools-compared/best-ai-for-writing-sql-performance-tuning-recommendations-f/)
-- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/best-ai-tools-for-writing-sql-migrations-2026/)
+- [Best AI Tools for Writing SQL Migrations in 2026](/ai-tools-compared/articles/best-ai-tools-for-writing-sql-migrations-2026/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

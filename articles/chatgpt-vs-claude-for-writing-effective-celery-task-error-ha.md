@@ -30,6 +30,18 @@ Before comparing AI outputs, it helps to understand what separates good Celery e
 The core components include the `@app.task` decorator with retry parameters, custom exception classes, `self.retry()` calls within tasks, and callback handlers for post-retry or post-failure scenarios. Writing this code manually requires understanding Celery's configuration system and Python's exception handling patterns. The question is: which AI assistant produces cleaner, more production-ready implementations?
 
 
+
+## Quick Comparison
+
+| Feature | Chatgpt | Claude |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Language Support | Multi-language | Multi-language |
+| Inline Chat | Available | Available |
+
 ## ChatGPT Approach to Celery Error Handling
 
 

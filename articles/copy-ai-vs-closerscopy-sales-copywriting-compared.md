@@ -33,6 +33,18 @@ Choose Copy.ai if you need a versatile GPT-4-powered tool that handles sales cop
 **ClosersCopy** takes a fundamentally different approach. The platform was purpose-built for sales and marketing copy, using a proprietary AI model rather than relying on GPT. It offers specialized features like Super Briefs (detailed input forms that guide the AI toward specific copy angles) and Workflows (pre-built automation sequences for sales funnels). ClosersCopy focuses specifically on conversion-focused copy—landing pages, sales emails, ad copy, and product launch sequences.
 
 
+
+## Quick Comparison
+
+| Feature | Copy Ai | Closerscopy |
+|---|---|---|
+| AI Model | See specs | See specs |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+| Plugin Ecosystem | Growing | Growing |
+| Privacy | Privacy-focused | Privacy-focused |
+
 ## API Integration for Developers
 
 

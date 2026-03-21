@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for API Security Testing"
-description: "Compare AI-assisted API security testing tools: automated vulnerability scanning, prompt injection detection, and generating security test cases with code examples"
+description: "Compare AI-assisted API security testing tools: automated vulnerability scanning, prompt injection detection, and generating security test cases with code"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-api-security-testing/

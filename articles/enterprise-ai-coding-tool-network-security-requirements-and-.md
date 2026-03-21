@@ -12,6 +12,7 @@ voice-checked: true
 categories: [guides]
 tags: [ai-tools-compared, security, artificial-intelligence]
 
+intent-checked: true
 ---
 
 

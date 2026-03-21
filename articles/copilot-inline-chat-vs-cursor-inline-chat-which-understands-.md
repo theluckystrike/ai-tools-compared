@@ -30,6 +30,18 @@ GitHub Copilot's inline chat activates through the `Ctrl+I` (Windows/Linux) or `
 Cursor's inline chat operates similarly but uses a different underlying model architecture. Accessed via `Ctrl+L` or the dedicated inline chat button, Cursor's implementation emphasizes conversation continuity and project-wide awareness. The distinction in how these tools gather and apply context creates measurable differences in their effectiveness.
 
 
+
+## Quick Comparison
+
+| Feature | Copilot Inline Chat | Cursor |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Multi-File Editing | Supported | Supported |
+| Language Support | Multi-language | Multi-language |
+
 ## Context Gathering and Code Understanding
 
 

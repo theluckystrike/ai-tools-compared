@@ -30,6 +30,18 @@ React projects often develop their own patterns that standard ESLint rules canno
 Creating ESLint rules requires understanding the AST (Abstract Syntax Tree) structure, the ESLint rule API, and React-specific patterns. Both Claude and ChatGPT can help with this, but their approaches differ in ways that affect your productivity.
 
 
+
+## Quick Comparison
+
+| Feature | Claude | Chatgpt |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Pricing | See current pricing | See current pricing |
+| Language Support | Multi-language | Multi-language |
+
 ## Claude's Approach to Custom ESLint Rules
 
 

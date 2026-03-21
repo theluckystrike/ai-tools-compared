@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Microservice Architecture Design"
-description: "How to use Claude, GPT-4, and Copilot for designing microservice boundaries, API contracts, event schemas, and service mesh configuration with practical examples"
+description: "How to use Claude, GPT-4, and Copilot for designing microservice boundaries, API contracts, event schemas, and service mesh configuration with practical"
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-microservice-architecture-design/

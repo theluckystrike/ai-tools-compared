@@ -27,6 +27,18 @@ GitHub Copilot operates as an inline autocomplete tool integrated directly into 
 For pytest fixture generation specifically, these different interaction models create distinct workflows. Copilot excels at predicting what comes next based on patterns it recognizes, while Cursor allows you to describe what you want explicitly and iterate on the results.
 
 
+
+## Quick Comparison
+
+| Feature | Copilot | Cursor |
+|---|---|---|
+| AI Model | See specs | See specs |
+| Code Completion | Supported | Supported |
+| Context Window | See documentation | See documentation |
+| IDE Support | Multiple IDEs | Multiple IDEs |
+| Language Support | Multi-language | Multi-language |
+| Inline Chat | Available | Available |
+
 ## Generating Basic Fixtures
 
 
