@@ -57,12 +57,12 @@ Browse articles by topic for focused comparisons:
 
 ## Browse by Topic
 
-{% assign code_assistants = all_articles | where_exp: "p", "p.path contains 'copilot' or p.path contains 'cursor' or p.path contains 'codeium' or p.path contains 'tabnine' or p.path contains 'autocomplete' or p.path contains 'code-completion' or p.path contains 'code-suggestion'" %}
-{% assign llm_comparisons = all_articles | where_exp: "p", "p.path contains 'chatgpt' or p.path contains 'claude' or p.path contains 'gemini' or p.path contains 'gpt-4' or p.path contains 'llm'" %}
-{% assign code_generation = all_articles | where_exp: "p", "p.path contains 'code-generation' or p.path contains 'code-gen'" %}
-{% assign code_review = all_articles | where_exp: "p", "p.path contains 'code-review' or p.path contains 'review-tool'" %}
-{% assign devops_tools = all_articles | where_exp: "p", "p.path contains 'ci-cd' or p.path contains 'devops' or p.path contains 'pipeline' or p.path contains 'deploy' or p.path contains 'infrastructure'" %}
-{% assign testing_tools = all_articles | where_exp: "p", "p.path contains 'test' or p.path contains 'junit' or p.path contains 'pytest'" %}
+{% assign code_assistants = all_articles | where_exp: "p", "p.path contains 'copilot'" %}
+{% assign llm_comparisons = all_articles | where_exp: "p", "p.path contains 'chatgpt'" %}
+{% assign code_generation = all_articles | where_exp: "p", "p.path contains 'code-generation'" %}
+{% assign code_review = all_articles | where_exp: "p", "p.path contains 'code-review'" %}
+{% assign devops_tools = all_articles | where_exp: "p", "p.path contains 'devops'" %}
+{% assign testing_tools = all_articles | where_exp: "p", "p.path contains 'test'" %}
 {% assign best_of = all_articles | where_exp: "p", "p.path contains 'best-ai'" %}
 
 {% if code_assistants.size > 0 %}
