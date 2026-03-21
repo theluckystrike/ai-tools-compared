@@ -232,6 +232,219 @@ These habits reduce AI errors dramatically and make your coding assistant a reli
 
 
 
+## Comparing Context Windows Across AI Tools
+
+Different AI tools maintain different context window sizes, affecting how much information they can consider:
+
+| Tool | Context Window | Input Cost | Specialty |
+|------|---|---|---|
+| Claude 3.5 Sonnet (API) | 200K tokens | $3/M input | Large codebases |
+| Claude 3 Opus (API) | 200K tokens | $15/M input | Deep reasoning |
+| GPT-4o | 128K tokens | $5/M input | Balanced |
+| GPT-4 Turbo | 128K tokens | $10/M input | Complex code |
+| Cursor | 50K tokens (default) | Variable | IDE-integrated |
+| GitHub Copilot | 8K-16K | Subscription | Inline suggestions |
+
+Practical implication: If your repository is 500K tokens, Claude 3.5 Sonnet can ingest 40% of it. GPT-4o can handle only 25%. Cursor and Copilot can see essentially nothing at full codebase scale.
+
+## Tokenization Awareness
+
+Before dumping files into an AI tool, understand how many tokens you're consuming:
+
+```python
+# Estimate tokens before sending to Claude
+def estimate_tokens(text: str) -> int:
+    # Rough approximation: 1 token ≈ 4 characters (English text)
+    # More precise: 1 token ≈ 0.33 words
+
+    words = len(text.split())
+    tokens = int(words / 0.75)  # Conservative estimate
+    return tokens
+
+# Example: Your requirements.txt
+requirements = open("requirements.txt").read()
+tokens = estimate_tokens(requirements)
+print(f"Requirements.txt: ~{tokens} tokens")
+
+# If you paste entire project into Claude at once:
+project_files = [
+    "src/main.py",
+    "src/utils.py",
+    "src/models.py",
+    "src/config.py",
+    "tests/test_main.py"
+]
+
+total_tokens = 0
+for file in project_files:
+    with open(file) as f:
+        total_tokens += estimate_tokens(f.read())
+
+print(f"Total project context: {total_tokens} tokens")
+# If >100K, you're using 50% of Claude's context window
+```
+
+## Smart Context Management Patterns
+
+**Pattern 1: File Priority List**
+
+```python
+# Define which files are most relevant to current task
+priority_context = {
+    "priority": 1,  # Always include
+    "files": ["config.py", "requirements.txt", "README.md"]
+}
+
+supporting_context = {
+    "priority": 2,  # Include if space permits
+    "files": ["utils.py", "constants.py", "logging.py"]
+}
+
+optional_context = {
+    "priority": 3,  # Only include if working on specific feature
+    "files": ["tests/test_main.py", "docs/architecture.md"]
+}
+
+# Before asking AI for help:
+# Include all Priority 1 files
+# Add Priority 2 if under 100K tokens
+# Add Priority 3 only if working on that specific area
+```
+
+**Pattern 2: Conversation Reset Strategy**
+
+```python
+# If conversation becomes long and AI starts hallucinating:
+# 1. Save current useful context to a file
+# 2. Create new conversation
+# 3. Paste only the essentials + current task
+
+def prepare_fresh_context(original_conversation_length: int):
+    if original_conversation_length > 15000:  # tokens
+        print("Time to reset context window")
+        # Extract key findings from original conversation
+        # Save to .ai_context file
+        # Start fresh conversation with that file + current task
+```
+
+## Real-World Scenario: Large Django Project
+
+Suppose you're working on a 2MB Django project with 15 Python files, 100+ database models, and 200 views.
+
+**Naive approach (causes hallucinations):**
+
+```bash
+# DON'T: Paste everything
+cat src/**/*.py | xargs cat | xargs -I {} curl... # to Claude
+# Result: Hallucinated imports, forgotten constraints
+```
+
+**Smart approach:**
+
+```python
+# Step 1: Identify scope
+scope = "Add Stripe payment integration to Order model"
+
+# Step 2: Include only related files
+files_needed = [
+    "apps/orders/models.py",        # Order model definition
+    "apps/orders/serializers.py",   # Order serializer
+    "apps/payments/models.py",      # Payment model stub
+    "requirements.txt",              # Verify stripe package exists
+    "config/settings.py",            # Database/payment config
+    ".env.example"                   # Environment variable template
+]
+
+# Step 3: Check token count
+total_tokens = sum(estimate_tokens(open(f).read()) for f in files_needed)
+# Result: 8,500 tokens - well under limits
+
+# Step 4: Include explicit constraints
+context_message = f"""
+Task: {scope}
+
+Key constraints:
+- We use Django 4.2 with DRF
+- Stripe dependency already in requirements.txt
+- Use existing Payment model from apps/payments/models.py
+- Do NOT import from unauthorized apps
+- DO use Django signals for order status updates
+
+Files for reference:
+{[include each file contents]}
+"""
+
+# Send context_message to Claude
+```
+
+This focused approach dramatically reduces hallucinations.
+
+## Incremental Conversation Strategy
+
+Instead of large context dumps, use smaller iterative conversations:
+
+```python
+# Conversation 1: Verify dependencies exist
+"""
+Show me the exact version of 'stripe' in requirements.txt
+and what packages depend on it.
+"""
+
+# Conversation 2: Understand current models
+"""
+Here's my Payment model [paste model code].
+I need to add a payment_intent_id field.
+What migration should I create?
+"""
+
+# Conversation 3: Generate integration code
+"""
+Given the Payment model and Stripe API docs,
+generate a function that creates a payment intent.
+Only use dependencies already in requirements.txt.
+"""
+
+# Each conversation is small and focused
+# Less hallucination because less context confusion
+```
+
+## Tools for Context Management
+
+**CLI tools to help organize context:**
+
+```bash
+# Count tokens in files
+pip install tiktoken
+python -c "
+import tiktoken
+enc = tiktoken.get_encoding('cl100k_base')
+with open('myfile.py') as f:
+    tokens = len(enc.encode(f.read()))
+    print(f'Tokens: {tokens}')
+"
+
+# Find largest files in project
+find . -name '*.py' -type f -exec wc -c {} + | sort -n | tail -20
+
+# Create context summary for AI
+grep -r "^class\|^def\|^import" src/ > /tmp/project_summary.txt
+# Result: ~2-5K tokens capturing project structure without implementation
+```
+
+## Context Window Limits by Tool
+
+When each AI tool starts hallucinating (based on testing):
+
+| Tool | Safe Limit | Warning Point | Danger Zone |
+|------|-----------|---------------|-----------|
+| Claude 3.5 Sonnet | 100K tokens | 140K tokens | >160K tokens |
+| GPT-4o | 60K tokens | 90K tokens | >110K tokens |
+| Cursor | 30K tokens | 40K tokens | >45K tokens |
+| Copilot | 8K tokens | 12K tokens | >14K tokens |
+
+Stay in the "safe limit" column to maintain quality.
+
+## Related Reading
 
 
 
