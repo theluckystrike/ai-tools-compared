@@ -220,6 +220,155 @@ Maintain documentation demonstrating your AI tooling complies with organizationa
 Regular audits verify that AI tool configurations haven't drifted from compliant settings. Automated policy enforcement through infrastructure-as-code helps maintain consistent compliance.
 
 
+## Practical Implementation: Setting Up a Compliant Workflow
+
+
+Walk through a concrete example of integrating Continue.dev with Ollama in a FedRAMP environment:
+
+
+**Step 1: Deploy Ollama on an Authorized Instance**
+
+
+```bash
+# On your FedRAMP-authorized VM
+sudo apt-get install -y ollama
+
+# Pull a code-optimized model
+ollama pull codeqwen:7b  # Lighter than codellama, better for memory-constrained VMs
+
+# Verify it's running on localhost only
+netstat -ln | grep 11434
+# Output should show 127.0.0.1:11434 (local only), not 0.0.0.0
+```
+
+
+**Step 2: Install Continue.dev IDE Extension**
+
+
+```bash
+# In VS Code, install the Continue.dev extension from the marketplace
+# Then configure ~/.continue/config.json
+
+{
+  "models": [
+    {
+      "title": "Codeqwen Local",
+      "provider": "ollama",
+      "model": "codeqwen:7b",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "slashCommands": [
+    {
+      "name": "edit",
+      "description": "Edit code block"
+    }
+  ]
+}
+```
+
+
+This configuration ensures all code processing happens locally, with zero external network calls.
+
+
+## Monitoring Compliance Over Time
+
+
+Use infrastructure-as-code to enforce compliant AI tooling:
+
+
+```yaml
+# Example: Kubernetes NetworkPolicy for FedRAMP-compliant AI development
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: ai-tools-compliance
+spec:
+  podSelector:
+    matchLabels:
+      app: dev-environment
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: ollama-service
+    ports:
+    - protocol: TCP
+      port: 11434
+  - to:
+    - namespaceSelector: {}
+      podSelector: {}
+    ports:
+    - protocol: TCP
+      port: 443  # HTTPS to authorized services only
+```
+
+
+This policy ensures development containers can only communicate with local AI services and authorized external endpoints. Attempting to connect to OpenAI, Anthropic, or other cloud AI services triggers network policy violations—visible in audit logs.
+
+
+## Common Pitfalls and How to Avoid Them
+
+
+**Pitfall 1: Running Ollama with Public API**
+
+```bash
+# Wrong: Creates internet-accessible endpoint
+ollama serve --host 0.0.0.0:11434
+
+# Right: Localhost only
+ollama serve --host 127.0.0.1:11434
+```
+
+Verify with: `curl http://0.0.0.0:11434/api/tags` - should fail if properly restricted.
+
+
+**Pitfall 2: Forgetting Logs Contains Code**
+
+Even with local AI processing, logs might capture code snippets for debugging. Ensure logs are:
+- Stored on encrypted volumes
+- Included in your FedRAMP audit scope
+- Rotated and archived appropriately
+- Not exported to external logging services
+
+
+**Pitfall 3: Model Updates During Compliance Review**
+
+Ollama can auto-pull model updates, potentially introducing untested code completion models during audits. Disable auto-updates:
+
+
+```bash
+# Environment variable to prevent auto-download
+export OLLAMA_NOHISTORY=1
+
+# Explicitly version your models in documentation
+# codeqwen:7b-instruct-q4_K_M (specific digest, not latest tag)
+```
+
+
+## Integration with Development Workflows
+
+
+Make compliant AI tooling the path of least resistance:
+
+
+**For team onboarding:**
+1. Provide a Docker image with Continue.dev + Ollama pre-configured
+2. Include FedRAMP-compliant settings in git repo configuration
+3. Document approved models and their capabilities
+4. Show examples of using AI tools within approved boundaries
+
+**For code review:**
+Include AI-usage information in PR reviews:
+- Did the author use approved local AI tools?
+- Are there comments indicating generative AI assistance (good practice)?
+- Did the code review double-check AI-generated logic?
+
+**For knowledge sharing:**
+When you find effective prompts for local AI tools, document them in your team's wiki. "How to ask Continue.dev for boilerplate Redux reducer code" becomes a shared resource, eliminating the learning curve for new team members.
+
 
 ## Related Reading
 
