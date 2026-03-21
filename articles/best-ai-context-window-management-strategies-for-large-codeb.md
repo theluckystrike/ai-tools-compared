@@ -345,7 +345,7 @@ claude chat --include "src/services/*.ts" \
 
 ### Cursor AI
 
-Leverage project indexing:
+use project indexing:
 
 ```
 # Use @symbols for smart context

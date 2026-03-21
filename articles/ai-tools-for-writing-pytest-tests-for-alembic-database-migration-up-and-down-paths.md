@@ -125,7 +125,7 @@ AI-generated tests serve as a starting point. Review the output to add assertion
 - Data preservation during rollback
 
 
-## Setting Up a Robust Test Fixture
+## Setting Up a strong Test Fixture
 
 
 One area where AI assistance adds significant value is generating the test infrastructure itself. A production-quality Alembic test setup requires careful fixture design to avoid test pollution:

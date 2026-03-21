@@ -297,7 +297,7 @@ ffmpeg -i "$TEMP_DIR/descript_export.mp4" \
 echo "Processing complete: $OUTPUT_DIR/final_video.mp4"
 ```
 
-This pipeline leverages each tool's strength:
+This pipeline uses each tool's strength:
 - FFmpeg for format conversion
 - Descript for transcription and dialogue cleanup
 - DaVinci for color grading

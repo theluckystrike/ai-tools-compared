@@ -204,7 +204,7 @@ This pattern improves code maintainability and reduces duplication—benefits th
 
 ### Testing Your Migrated Application
 
-Cursor can help you write comprehensive tests for your migrated code. When you paste a component or function, you can ask Cursor to generate test cases covering edge cases, error scenarios, and integration points.
+Cursor can help you write tests for your migrated code. When you paste a component or function, you can ask Cursor to generate test cases covering edge cases, error scenarios, and integration points.
 
 ```typescript
 // Ask Cursor to generate test suite

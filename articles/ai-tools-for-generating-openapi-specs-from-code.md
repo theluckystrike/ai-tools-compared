@@ -439,7 +439,7 @@ For most teams, the ideal workflow is: Claude Code for brownfield work, Swagger 
 - [Generate Openapi Specs from Existing Codebase AI Tools](/ai-tools-compared/generate-openapi-specs-from-existing-codebase-ai-tools/)
 - [Best AI Features for Generating API Client Code from](/ai-tools-compared/best-ai-features-for-generating-api-client-code-from-openapi/)
 - [Which AI Generates Better SwiftUI Views From Design Swift UI](/ai-tools-compared/which-ai-generates-better-swift-ui-views-from-design-specs-2/)
-- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/articles/ai-tools-for-writing-openapi-specifications-2026/)
+- [AI Tools for Writing OpenAPI Specifications in 2026](/ai-tools-compared/ai-tools-for-writing-openapi-specifications-2026/)
 - [ChatGPT vs Claude for Creating OpenAPI Spec from Existing](/ai-tools-compared/chatgpt-vs-claude-for-creating-openapi-spec-from-existing-co/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

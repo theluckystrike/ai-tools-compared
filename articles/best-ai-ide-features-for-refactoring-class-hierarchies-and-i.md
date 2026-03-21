@@ -228,7 +228,7 @@ The hierarchy view shows not just what methods exist but how they're used, overr
 
 ### VS Code with AI Extensions
 
-VS Code requires more manual refactoring but can leverage GitHub Copilot and other AI assistants for guidance:
+VS Code requires more manual refactoring but can use GitHub Copilot and other AI assistants for guidance:
 
 ```bash
 # With Copilot in VS Code

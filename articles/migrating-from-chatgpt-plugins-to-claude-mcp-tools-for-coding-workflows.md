@@ -184,12 +184,6 @@ Several issues commonly arise during migration:
 - **Response parsing**: Plugin responses were HTTP payloads. MCP tool responses are structured data—adjust your parsing logic.
 - **Error handling**: MCP has standard error response formats. Map your plugin's error codes to MCP-compliant responses.
 
-## Conclusion
-
-Migrating from ChatGPT Plugins to Claude MCP tools requires rewriting your integrations, but the result is a more capable, standardized system. The bidirectional communication, standardized authentication, and tool chaining capabilities of MCP make the migration worthwhile for serious development workflows.
-
-The key is treating this as more than a direct port—rethink your tool organization and use MCP's strengths to build more powerful automation chains.
-
 ## Advanced MCP Patterns for Development Workflows
 
 Beyond basic tool migration, MCP enables sophisticated patterns that weren't practical with plugins.

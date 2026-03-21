@@ -305,7 +305,7 @@ Week 3:
 - Day 17-18: System design problems using consistent hashing
 - Day 19-20: Mock interviews with whiteboarding
 
-This structure ensures comprehensive preparation without overwhelming yourself.
+This structure ensures preparation without overwhelming yourself.
 
 
 ## Post-Interview Learning

@@ -250,7 +250,7 @@ class BookViewSetTestCase(TestCase):
 
 **Claude Code for complete test suite generation:**
 
-Claude can generate comprehensive test files with fixtures, edge cases, and integration tests in one interaction, then create the necessary settings overrides and test runner configuration.
+Claude can generate test files with fixtures, edge cases, and integration tests in one interaction, then create the necessary settings overrides and test runner configuration.
 
 ## Database Configuration Examples
 

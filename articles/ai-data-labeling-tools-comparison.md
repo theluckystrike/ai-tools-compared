@@ -217,7 +217,7 @@ Use this table as a starting point, not a final decision. Your annotation type, 
 
 ## Active Learning Integration
 
-Active learning is where AI labeling tools deliver their highest leverage. Rather than labeling data randomly, active learning selects the samples your model is most uncertain about, directing human effort where it has the greatest impact on model accuracy.
+Active learning is where AI labeling tools deliver their highest use. Rather than labeling data randomly, active learning selects the samples your model is most uncertain about, directing human effort where it has the greatest impact on model accuracy.
 
 To plug active learning into Label Studio using a custom ML backend:
 

@@ -340,7 +340,7 @@ Drag-and-drop isn't accessible to keyboard users. Provide alternatives:
 
 Ask both tools: "Make this drag-and-drop interface keyboard accessible with arrow keys and Enter."
 
-Both understand accessibility requirements, but Cursor generates more comprehensive keyboard event handling.
+Both understand accessibility requirements, but Cursor generates more keyboard event handling.
 
 
 ## Persistence and Undo/Redo

@@ -316,7 +316,7 @@ Most providers reach production-ready status in 2-3 complete iterations per reso
 
 For AI-assisted development:
 
-- **Claude**: Best for comprehensive implementations; $0.05-0.15 per resource
+- **Claude**: Best for implementations; $0.05-0.15 per resource
 - **GPT-4**: Fast for quick scaffolding; $0.10-0.20 per resource
 - **Copilot**: Continuous assistance; $20/month flat rate (best for multiple providers)
 - **Cursor**: Full-project awareness; $20/month (best when building 3+ providers)

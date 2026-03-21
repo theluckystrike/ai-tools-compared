@@ -34,7 +34,7 @@ Manual test writing is slow. AI assistants excel at boilerplate generation but d
 ### Claude (claude-opus-4-6)
 
 **Strengths:**
-- Generates robust selectors with fallback chains
+- Generates strong selectors with fallback chains
 - Writes explicit wait conditions instead of generic `waitForTimeout`
 - Creates well-structured Page Object Models
 - Understands context-aware assertions
@@ -321,7 +321,7 @@ const emailField = page.locator(
 
 ### GitHub Actions Configuration
 
-Claude generates robust CI config:
+Claude generates strong CI config:
 
 ```yaml
 name: Playwright Tests
@@ -372,7 +372,7 @@ npx playwright test login.spec.ts --debug
 ## Recommendation Matrix
 
 **Choose Claude if you:**
-- Need robust architecture for large test suites (100+ tests)
+- Need strong architecture for large test suites (100+ tests)
 - Require multi-page, complex flow testing
 - Want maintainable Page Object Models
 - Budget is $20-30/month
@@ -416,9 +416,3 @@ Production test quality depends on:
 | Maintainability Score | 9/10 | 6/10 | 7/10 | 5/10 |
 
 Flakiness primarily stems from weak selectors and missing wait conditions—areas where Claude excels.
-
-## Conclusion
-
-Claude generates the most production-ready Playwright tests with superior selector reliability and wait strategies. GitHub Copilot offers best IDE integration for incremental test writing. Cursor balances architecture and speed. Codeium serves budget-conscious teams.
-
-For new test suites, start with Claude for architecture, then use Copilot/Cursor for velocity. This hybrid approach minimizes flaky tests and maintenance overhead while maximizing development speed.

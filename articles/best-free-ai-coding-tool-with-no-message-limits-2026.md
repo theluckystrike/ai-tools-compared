@@ -108,7 +108,6 @@ The ability to run local models makes Continue excellent for developers who prio
 ### 3. Zed AI (Built-in)
 
 
-Zed, the high-performance code editor, includes AI assistance without message limits on its free tier. Built by the creators of Atom, Zed emphasizes speed and collaboration.
 
 
 **Key Features:**

@@ -426,9 +426,9 @@ jobs:
 - [Best AI Tools for Writing Playwright E2E Tests 2026](/ai-tools-compared/best-ai-tools-for-writing-playwright-e2e-tests-2026/)
 
 
-- [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
-- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/best-ai-coding-assistant-tools-compared-2026/)
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [Best AI Coding Assistants Compared](/ai-tools-compared/)
+- [Best AI Coding Assistant Tools Compared 2026](/ai-tools-compared/)
+- [AI Tools Guides Hub](/ai-tools-compared/)
 - [AI Tools for Writing Playwright Tests That Verify Accessibility WCAG Compliance Automatically](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-accessibil/)
 - [AI Tools for Writing Playwright Tests That Verify.](/ai-tools-compared/ai-tools-for-writing-playwright-tests-that-verify-responsive/)
 - [Best AI for Creating Jest Tests That Verify Correct.](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)

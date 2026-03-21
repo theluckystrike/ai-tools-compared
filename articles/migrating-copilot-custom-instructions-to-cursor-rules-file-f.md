@@ -202,12 +202,6 @@ When migrating, watch for these common issues:
 
 **Solution:** In YAML, special characters like `:`, `{`, `}`, and `[` need proper escaping or quoting.
 
-## Summary
-
-Converting Copilot custom instructions to Cursor rules files requires restructuring your guidelines into YAML format with distinct sections. The process involves locating your current Copilot settings, converting plain text instructions into structured rules, adding Cursor-specific features like file ignore patterns and example code, and testing the new configuration thoroughly.
-
-Cursor's rule system offers more organizational options than Copilot's simple string-based instructions. Take advantage of multiple rule files, file type specificity, and example embedding to get the most out of your migration.
-
 ## Advanced Cursor Rules Configuration
 
 Once you understand basic migration patterns, you can use Cursor's more sophisticated capabilities.

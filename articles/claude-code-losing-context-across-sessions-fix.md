@@ -328,7 +328,7 @@ claude --context .claude/context.md "Read the context file and confirm you under
 ```
 
 
-This workflow takes under two minutes and eliminates virtually all context loss pain.
+This workflow takes under two minutes and eliminates nearly all context loss pain.
 
 
 ## Preventing Future Context Loss

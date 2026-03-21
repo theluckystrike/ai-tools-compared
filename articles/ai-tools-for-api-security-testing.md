@@ -298,7 +298,7 @@ for result in fuzz_results:
 ## Related Reading
 
 - [AI Coding Tool Penetration Test Findings](/ai-tools-compared/ai-coding-tool-penetration-test-findings-common-vulnerabilit/)
-- [AI Tools for API Load Testing Comparison](/ai-tools-compared/ai-tools-for-api-load-testing-comparison/)
+- [AI Tools for API Load Testing Comparison](/ai-tools-compared/ai-assisted-api-load-testing-tools-comparison/)
 - [How to Build an AI Code Review Bot](/ai-tools-compared/how-to-build-ai-code-review-bot/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

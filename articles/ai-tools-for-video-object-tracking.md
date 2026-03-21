@@ -213,7 +213,7 @@ results = model.track(
 ## Specialized Tracking Frameworks
 
 
-The MMTracking framework from OpenMMLab provides a comprehensive ecosystem with support for multiple tracking paradigms:
+The MMTracking framework from OpenMMLab provides an ecosystem with support for multiple tracking paradigms:
 
 
 ```python
@@ -336,7 +336,7 @@ Different requirements call for different solutions:
 
 - **Rapid prototyping, single object:** OpenCV CSRT or KCF. Zero additional dependencies, works on CPU.
 - **Production multi-object tracking:** ByteTrack via Ultralytics. Best accuracy-to-complexity ratio, GPU-accelerated, well-maintained.
-- **Research or algorithm comparison:** MMTracking. Comprehensive framework with unified API across tracking paradigms.
+- **Research or algorithm comparison:** MMTracking. framework with unified API across tracking paradigms.
 - **Edge deployment:** Quantized YOLO with TensorRT or ONNX runtime. Reduces memory footprint and inference latency substantially.
 
 The ecosystem continues evolving rapidly. OC-SORT improves robustness on non-linear motion, while MOTR and TrackFormer explore end-to-end transformer-based tracking without separate detection and association stages. Developers should evaluate against their specific requirements: real-time constraints, object types, occlusion frequency, and deployment platform all influence the optimal choice.

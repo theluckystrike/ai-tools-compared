@@ -248,7 +248,7 @@ This ensures all developers use consistent, readable rule names that communicate
 
 ## Testing Recording Rules in Staging
 
-Before deploying to production, test recording rules in a staging Prometheus instance. AI can help you construct comprehensive test cases:
+Before deploying to production, test recording rules in a staging Prometheus instance. AI can help you construct test cases:
 
 > "Help me create a test plan for these recording rules. Suggest test queries that verify:
 > 1. Results match the source metric calculations

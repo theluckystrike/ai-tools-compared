@@ -221,7 +221,7 @@ To minimize unexpected charges while maximizing AI assistance:
 **Use the appropriate model for the task.** Don't use premium models for simple autocomplete suggestions when faster, cheaper alternatives suffice.
 
 
-**Leverage GPT-4o-mini for context building.** When you need to establish context at the start of a long conversation—pasting in files, explaining the codebase structure—use a cheaper model for the initial context-loading messages before switching to a more capable model for the actual reasoning task.
+**use GPT-4o-mini for context building.** When you need to establish context at the start of a long conversation—pasting in files, explaining the codebase structure—use a cheaper model for the initial context-loading messages before switching to a more capable model for the actual reasoning task.
 
 
 **Set a session budget.** Before starting a major coding session, decide how many credits you're willing to spend and track usage against that budget. Premium model requests add up quickly during extended debugging sessions.

@@ -218,7 +218,7 @@ func (r *PGBackupReconciler) reconcileBackup(ctx context.Context, backup *dbv1.P
 
 ## Testing: The Biggest Gap
 
-AI never generates comprehensive controller tests. Example:
+AI never generates controller tests. Example:
 
 ```go
 // AI generates basic test (30% coverage)
@@ -317,6 +317,6 @@ func TestReconcile_CreatesJobWithCorrectSpec(t *testing.T) {
 
 AI tools excel at CRD design and can scaffold reconcilers. They struggle with production-ready error handling, testing, and Kubernetes-specific patterns. Use them to accelerate scaffolding and design, then build production hardening yourself.
 
-For most teams: Use Operator SDK to scaffold, ask Claude to explain Kubernetes patterns you don't understand, write reconciliation logic with Copilot suggestions, and manually build comprehensive tests. This cuts development time by 40% compared to writing from scratch while maintaining code quality.
+For most teams: Use Operator SDK to scaffold, ask Claude to explain Kubernetes patterns you don't understand, write reconciliation logic with Copilot suggestions, and manually build tests. This cuts development time by 40% compared to writing from scratch while maintaining code quality.
 
 Estimated time: 2-3 weeks for simple operator (backup, scaling). Without AI: 4-5 weeks. The gap narrows for complex operators because AI can't handle architectural decisions—you're making those anyway.

@@ -210,7 +210,7 @@ One area where Copilot's GitHub integration has no direct Cursor equivalent is a
 
 **Option 1: Manual review with Cursor chat.** Paste the git diff into a Cursor chat window with your review rules as context. This is less automated but gives you more nuanced control over what gets flagged.
 
-**Option 2: Use a GitHub Action with the Claude API.** For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs. This separates the review automation from the IDE entirely. See [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/) for more context on when this makes sense.
+**Option 2: Use a GitHub Action with the Claude API.** For teams that want automated PR review, the Claude API can be wired into a GitHub Actions workflow to comment on PRs. This separates the review automation from the IDE entirely. See [Best AI Coding Assistants Compared](/ai-tools-compared/) for more context on when this makes sense.
 
 
 ## Verifying Your Migration

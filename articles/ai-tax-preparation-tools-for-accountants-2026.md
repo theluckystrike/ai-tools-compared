@@ -449,6 +449,6 @@ For a typical accounting practice processing 100 client returns per year:
 
 ## Related Reading
 
-- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
+- [AI Tools Guides Hub](/ai-tools-compared/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
