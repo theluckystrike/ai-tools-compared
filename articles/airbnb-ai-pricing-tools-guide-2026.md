@@ -11,9 +11,10 @@ categories:
 - Revenue Management
 permalink: /airbnb-ai-pricing-tools-guide-2026/
 reviewed: true
-score: 8
+score: 7
 intent-checked: true
 voice-checked: true
+tags: [ai-tools-compared, artificial-intelligence]
 ---
 
 {% raw %}
