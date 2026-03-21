@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Nginx Configurations 2026"
-description: "Compare AI tools for generating nginx configurations. Covers reverse proxy, load balancing, SSL termination, and rate limiting with Claude, Copilot, and Cursor"
+description: "Compare AI tools for generating nginx configurations. Covers reverse proxy, load balancing, SSL termination, and rate limiting with Claude, Copilot."
 date: 2026-03-21
 author: theluckystrike
 permalink: /ai-tools-for-writing-nginx-configurations-2026/
@@ -219,5 +219,10 @@ At scale (20+ configs/month), Claude's accuracy advantage saves more time than C
 The tooling landscape here is mature. Claude is fastest to production-ready config; Copilot saves money if you're patient with iteration. Cursor is the middle ground if you spend most of your time in an editor.
 
 ---
+
+
+## Related Reading
+
+- [AI Tools Guides Hub](/ai-tools-compared/guides-hub/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
