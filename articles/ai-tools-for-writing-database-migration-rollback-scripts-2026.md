@@ -9,7 +9,7 @@ permalink: /ai-tools-for-writing-database-migration-rollback-scripts-2026/
 categories: [guides]
 tags: [ai-tools-compared, tools, databases, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 voice-checked: true
 intent-checked: true
 ---
