@@ -41,11 +41,30 @@ For a medium-sized application with 15-20 tables, this can easily require severa
 
 
 
+## Which AI Tools Perform Best for Fixture Generation
+
+Not all AI coding assistants handle database schema context equally well. Here is how the main tools compare on this specific task:
+
+| Tool | Schema Input | Relationship Handling | Factory Pattern | Async Support |
+|------|-------------|----------------------|-----------------|---------------|
+| Claude (Sonnet) | Excellent — reads full model files | Correctly resolves FK chains | Generates factory_boy compatible code | Yes, with pytest-asyncio |
+| ChatGPT GPT-4o | Good — handles SQLAlchemy and raw SQL | Usually correct, misses multi-hop FKs | Basic factory functions | Yes |
+| GitHub Copilot | Good — autocomplete in conftest.py | Infers from surrounding fixtures | Limited | Yes |
+| Cursor | Excellent — full file context via @-mentions | Correct with @models context | Good | Yes |
+
+**Claude** is the strongest choice when your schema is large or has complex polymorphic relationships. Feed it your entire `models/` directory and ask for a complete `conftest.py`—it reads full context and correctly sequences fixtures by dependency order.
+
+**Cursor** matches Claude for fixture quality when you use `@models.py` to provide context. The in-editor workflow is faster because you see generated code immediately, making corrections easy.
+
+**GitHub Copilot** is the fastest option if your project already has some fixtures—it extends existing patterns without requiring a separate prompt, keeping style consistent.
+
+
+
 ## How AI Tools Approach Fixture Generation
 
 
 
-Modern AI coding assistants can process your database schema definitions—Whether written as SQLAlchemy models, Pydantic schemas, raw SQL DDL statements, or ORM class definitions—and produce working fixture code. The key is providing clear context about your tech stack and testing patterns.
+Modern AI coding assistants can process your database schema definitions—whether written as SQLAlchemy models, Pydantic schemas, raw SQL DDL statements, or ORM class definitions—and produce working fixture code. The key is providing clear context about your tech stack and testing patterns.
 
 
 
@@ -67,23 +86,23 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'users'
-    
+
     id = Column(Integer, primary_key=True)
     email = Column(String(255), unique=True, nullable=False)
     username = Column(String(100), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
-    
+
     orders = relationship("Order", back_populates="customer")
 
 class Order(Base):
     __tablename__ = 'orders'
-    
+
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     total_amount = Column(Integer, nullable=False)
     status = Column(String(50), default='pending')
     created_at = Column(DateTime, default=datetime.utcnow)
-    
+
     customer = relationship("User", back_populates="orders")
 ```
 
@@ -164,7 +183,20 @@ CREATE TABLE categories (
 ```
 
 
-The AI produces equivalent pytest fixtures that create the necessary tables and insert sample data matching your constraints.
+The AI produces equivalent pytest fixtures that create the necessary tables and insert sample data matching your constraints. For PostgreSQL-backed tests, AI tools also know to swap `SERIAL` for SQLAlchemy's `Sequence` and to configure the engine string appropriately:
+
+```python
+@pytest.fixture(scope="session")
+def engine():
+    """Session-scoped engine for PostgreSQL integration tests."""
+    engine = create_engine(
+        "postgresql://testuser:testpass@localhost:5432/testdb",
+        echo=False
+    )
+    Base.metadata.create_all(engine)
+    yield engine
+    Base.metadata.drop_all(engine)
+```
 
 
 
@@ -218,6 +250,48 @@ def users_with_different_states(db_session):
 ```
 
 
+**factory_boy integration** is a pattern AI tools handle well when you ask explicitly. Providing a schema and requesting `factory_boy` output yields factories that compose cleanly and support `SubFactory` for FK relationships:
+
+```python
+import factory
+from factory.alchemy import SQLAlchemyModelFactory
+
+class UserFactory(SQLAlchemyModelFactory):
+    class Meta:
+        model = User
+        sqlalchemy_session_persistence = "commit"
+
+    email = factory.Sequence(lambda n: f"user{n}@example.com")
+    username = factory.Sequence(lambda n: f"user{n}")
+
+class OrderFactory(SQLAlchemyModelFactory):
+    class Meta:
+        model = Order
+        sqlalchemy_session_persistence = "commit"
+
+    customer = factory.SubFactory(UserFactory)
+    total_amount = factory.Faker("pyint", min_value=100, max_value=100000)
+    status = "pending"
+```
+
+
+
+## Step-by-Step Workflow for Generating Fixtures with AI
+
+**Step 1 — Gather your schema files.** Collect all model files, migration scripts, or DDL statements into a single context. If using SQLAlchemy, introspect an existing database with `MetaData().reflect(engine)` to dump the current table list.
+
+**Step 2 — Write a fixture brief.** Note which fixtures your test suite needs and group them by dependency: leaf tables first, then tables that reference them. AI tools generate cleaner output when you specify dependency order explicitly.
+
+**Step 3 — Prompt with schema plus testing framework context.** Always specify: pytest version, database backend, whether you use `pytest-asyncio`, and whether you prefer `scope="function"` or `scope="module"` sessions.
+
+**Step 4 — Review FK sequencing.** The most common AI mistake is generating a fixture that creates an `Order` before the `User` it references. Read through the generated `conftest.py` and verify fixture arguments are wired correctly.
+
+**Step 5 — Run the fixtures against a test database.** Use `pytest -x --tb=short` to catch errors early. SQLAlchemy constraint violations surface immediately and tell you which fixture needs correction.
+
+**Step 6 — Add parametrize fixtures for edge cases.** Ask AI to extend fixtures with `@pytest.mark.parametrize` for boundary values—empty strings, max-length strings, zero and negative amounts—based on your column constraints.
+
+
+
 ## Best Practices for Optimal Results
 
 
@@ -226,13 +300,15 @@ Providing the right context to AI tools dramatically improves fixture quality:
 
 
 
-1. **Include your ORM or model definitions** - SQLAlchemy, SQLModel, or Pydantic models help AI understand relationships
+1. **Include your ORM or model definitions** — SQLAlchemy, SQLModel, or Pydantic models help AI understand relationships
 
-2. **Specify your testing database** - Whether you use SQLite in-memory, PostgreSQL test containers, or mock objects
+2. **Specify your testing database** — Whether you use SQLite in-memory, PostgreSQL test containers, or mock objects
 
-3. **Share existing fixture patterns** - If your project follows specific conventions, show examples
+3. **Share existing fixture patterns** — If your project follows specific conventions, show examples
 
-4. **Mention constraint requirements** - Unique constraints, foreign key relationships, and validation rules
+4. **Mention constraint requirements** — Unique constraints, foreign key relationships, and validation rules
+
+5. **State your pytest-asyncio mode** — If using `asyncio_mode = "auto"` in `pytest.ini`, tell the AI so it generates `async def` fixtures without explicit `@pytest.mark.asyncio` decorators
 
 
 
@@ -251,6 +327,8 @@ AI-generated fixtures require review before use. Watch for:
 - Incorrect relationship handling between fixtures
 
 - Missing index or constraint considerations
+
+- Scope mismatches: session-scoped fixtures that depend on function-scoped ones will cause pytest errors
 
 
 
@@ -280,24 +358,47 @@ def test_order_creation(db_session, sample_user):
     )
     db_session.add(order)
     db_session.commit()
-    
+
     assert order.id is not None
     assert order.status == "pending"
     assert order.customer.email == "test@example.com"
 ```
 
+For CI environments, pair AI-generated fixtures with `testcontainers-python` to spin up a real PostgreSQL instance:
+
+```python
+from testcontainers.postgres import PostgresContainer
+
+@pytest.fixture(scope="session")
+def postgres_container():
+    with PostgresContainer("postgres:16") as pg:
+        yield pg.get_connection_url()
+```
+
+This pattern gives you a fully automated test database setup that mirrors production schema without manual configuration.
 
 
 
+## FAQ
+
+**Q: Can AI tools handle Alembic migration files as input instead of model definitions?**
+Yes, but with caveats. Paste your latest migration file alongside your model file. The AI reconciles the two and generates fixtures matching the current schema state. For fixtures that test migration paths, ask specifically for fixtures with `alembic upgrade` and `alembic downgrade` calls integrated.
+
+**Q: What is the best way to handle many-to-many relationships in fixtures?**
+Provide the association table definition alongside both model definitions. Claude and ChatGPT correctly identify M2M relationships and generate intermediate table fixtures. Specify whether you want the relationship handled via SQLAlchemy's `append()` on the relationship attribute or via direct inserts to the association table.
+
+**Q: How do I prevent unique constraint violations when running fixtures in parallel with pytest-xdist?**
+Ask the AI to use `factory.Sequence` or `uuid4()` for all unique fields. Include "this suite runs with pytest-xdist" in your prompt and AI tools apply this pattern automatically.
+
+**Q: Can AI generate async fixtures for FastAPI tests?**
+Yes. Specify `pytest-asyncio` and `httpx.AsyncClient` in your prompt. Claude generates fixtures using `async def` and `async with` syntax correctly, including the `anyio` backend configuration needed for FastAPI's async test client.
 
 
 
-## Related Articles
+## Related Reading
 
-- [Claude Code Database Test Fixtures Guide](/ai-tools-compared/claude-code-database-test-fixtures-guide/)
-- [How to Set Up Model Context Protocol with Local Database](/ai-tools-compared/how-to-set-up-model-context-protocol-with-local-database-schema-information-2026/)
-- [Copilot vs Cursor for Writing pytest Fixtures](/ai-tools-compared/copilot-vs-cursor-for-writing--pytest-fixtures-/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
-- [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migration-up-and-down-paths/)
+- [AI Tools for Writing pytest Tests for Alembic Database Migrations](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)
+- [AI Tools for Writing pytest Tests for FastAPI Endpoints](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-fastapi-endpoints-with/)
+- [Best AI Assistant for Creating pytest Conftest Files with Re](/ai-tools-compared/best-ai-assistant-for-creating-pytest-conftest-files-with-re/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
