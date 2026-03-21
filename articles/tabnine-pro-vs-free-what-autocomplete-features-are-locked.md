@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Tabnine Pro vs Free: What Autocomplete Features Are Locked"
-description: "A detailed comparison of Tabnine Pro vs Free versions. Discover which autocomplete features are locked behind the paywall and if upgrading is worth it."
+description: "A detailed comparison of Tabnine Pro vs Free versions. Discover which autocomplete features are locked behind the paywall and if upgrading is worth it"
 date: 2026-03-16
 author: theluckystrike
 permalink: /tabnine-pro-vs-free-what-autocomplete-features-are-locked/

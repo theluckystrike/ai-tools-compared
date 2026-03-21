@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT vs Claude for Generating Cypress Component Test Boil"
-description: "A practical comparison of ChatGPT and Claude for generating Cypress component test boilerplate in React applications, with code examples and."
+description: "Choose ChatGPT if you have simple React components and want quick, minimal test boilerplate you can extend yourself. Choose Claude if you need coverage out of"
 date: 2026-03-16
 author: theluckystrike
 permalink: /chatgpt-vs-claude-for-generating-cypress-component-test-boil/

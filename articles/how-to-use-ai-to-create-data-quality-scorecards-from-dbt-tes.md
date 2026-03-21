@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Create Data Quality Scorecards from dbt Tes"
-description: "Learn how to use AI to transform dbt test results into actionable data quality scorecards. Practical examples and code snippets for developers."
+description: "Learn how to use AI to transform dbt test results into actionable data quality scorecards. Practical examples and code snippets for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-data-quality-scorecards-from-dbt-tes/

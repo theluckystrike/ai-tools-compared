@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "GitHub Copilot vs Amazon Codewhisperer for AWS Development"
-description: "Head-to-head comparison of GitHub Copilot and CodeWhisperer for AWS work. Lambda, CDK, IAM policies, CloudFormation with real accuracy benchmarks."
+description: "Head-to-head comparison of GitHub Copilot and CodeWhisperer for AWS work. Lambda, CDK, IAM policies, CloudFormation with real accuracy benchmarks"
 date: 2026-03-20
 author: theluckystrike
 permalink: /github-copilot-vs-amazon-codewhisperer-for-aws-development-2026/

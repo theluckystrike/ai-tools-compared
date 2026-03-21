@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Ideogram vs Midjourney for Text in Images Compared"
-description: "A practical comparison of Ideogram and Midjourney text rendering capabilities, with API examples and recommendations for developers building AI-powered."
+description: "A practical comparison of Ideogram and Midjourney text rendering capabilities, with API examples and recommendations for developers building AI-powered"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ideogram-vs-midjourney-for-text-in-images-compared/

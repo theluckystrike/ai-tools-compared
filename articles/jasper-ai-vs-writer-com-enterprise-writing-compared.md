@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Jasper AI vs Writer.com for Enterprise Writing"
-description: "Compare Jasper AI and Writer.com for enterprise writing workflows. API access, integration methods, SDK support, pricing, and practical implementation."
+description: "Compare Jasper AI and Writer.com for enterprise writing workflows. API access, integration methods, SDK support, pricing, and practical implementation"
 date: 2026-03-15
 author: theluckystrike
 permalink: /jasper-ai-vs-writer-com-enterprise-writing-compared/

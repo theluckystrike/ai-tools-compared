@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Code Migration Python 2"
-description: "Compare AI tools for code migration projects. Real examples for Python 2→3, Java 8→21, JavaScript CJS→ESM with success rates and limitations."
+description: "Compare AI tools for code migration projects. Real examples for Python 2→3, Java 8→21, JavaScript CJS→ESM with success rates and limitations"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-code-migration-python-2-to-3-java-8-to-21-guide/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Configure AI Coding Tools"
-description: "A practical guide for developers on configuring AI coding assistants to follow your team's branch naming conventions. Code examples and configuration tips included."
+description: "A practical guide for developers on configuring AI coding assistants to follow your team's branch naming conventions. Code examples and configuration tips"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-configure-ai-coding-tools-to-respect-your-teams-branc/

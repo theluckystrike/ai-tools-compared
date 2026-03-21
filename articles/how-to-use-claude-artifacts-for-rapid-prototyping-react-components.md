@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use Claude Artifacts"
-description: "Master Claude's artifact feature to prototype React components in minutes. Learn workflow, limitations, exports, and comparisons with ChatGPT Canvas."
+description: "Master Claude's artifact feature to prototype React components in minutes. Learn workflow, limitations, exports, and comparisons with ChatGPT Canvas"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-use-claude-artifacts-for-rapid-prototyping-react-components/

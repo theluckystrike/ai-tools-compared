@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Analyzing Issue Comment Sentiment to Identify F"
-description: "A practical guide to using AI tools for analyzing issue comment sentiment to identify frustrated users quickly, with code examples and implementation tips."
+description: "A practical guide to using AI tools for analyzing issue comment sentiment to identify frustrated users quickly, with code examples and implementation tips"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/

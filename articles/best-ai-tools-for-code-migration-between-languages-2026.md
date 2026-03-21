@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Code Migration Between Languages 2026"
-description: "Compare AI tools for migrating code between programming languages. Covers Python to Rust, Java to Kotlin, JS to TypeScript with Claude, GPT-4, and Gemini."
+description: "Compare AI tools for migrating code between programming languages. Covers Python to Rust, Java to Kotlin, JS to TypeScript with Claude, GPT-4, and Gemini"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-code-migration-between-languages-2026/

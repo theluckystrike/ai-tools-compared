@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Terraform Modules 2026"
-description: "Compare Copilot, Claude, and Cursor for writing reusable Terraform modules. Real module examples, variable handling, output patterns, and testing workflows."
+description: "Compare Copilot, Claude, and Cursor for writing reusable Terraform modules. Real module examples, variable handling, output patterns, and testing workflows"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-terraform-modules-2026/

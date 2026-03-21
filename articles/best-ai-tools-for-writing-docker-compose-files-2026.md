@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Docker Compose Files 2026"
-description: "Compare AI tools for Docker Compose generation (Claude Code, GitHub Copilot, Cursor). Multi-service setup, networking, volumes, debugging, compose."
+description: "Compare AI tools for Docker Compose generation (Claude Code, GitHub Copilot, Cursor). Multi-service setup, networking, volumes, debugging, compose"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-docker-compose-files-2026/

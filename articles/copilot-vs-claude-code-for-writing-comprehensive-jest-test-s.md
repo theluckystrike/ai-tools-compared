@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Claude Code for Writing Jest Test"
-description: "A practical comparison of GitHub Copilot and Claude Code for writing Jest test suites in React applications, with code examples and."
+description: "Choose GitHub Copilot if you need fast inline test scaffolding for straightforward React components and prefer IDE-integrated suggestions. Choose Claude Code"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-claude-code-for-writing--jest-test-s/

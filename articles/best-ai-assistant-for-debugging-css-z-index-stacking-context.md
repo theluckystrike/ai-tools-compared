@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Assistant for Debugging CSS Z Index Stacking Context"
-description: "A practical guide to using AI tools for debugging CSS z-index and stacking context problems. Learn how AI assistants help identify and fix layering."
+description: "A practical guide to using AI tools for debugging CSS z-index and stacking context problems. Learn how AI assistants help identify and fix layering"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-assistant-for-debugging-css-z-index-stacking-context/

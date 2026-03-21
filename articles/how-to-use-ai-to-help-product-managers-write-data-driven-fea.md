@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Help Product Managers Write Data-Driven Fea"
-description: "Learn practical techniques and code examples for using AI to create compelling, data-driven feature proposals that resonate with stakeholders and."
+description: "AI tools transform feature proposals by generating structured outlines from raw metrics, converting numbers into audience-specific narratives that resonate"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-help-product-managers-write-data-driven-fea/

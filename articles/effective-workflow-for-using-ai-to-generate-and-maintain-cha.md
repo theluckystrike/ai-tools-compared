@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Effective Workflow for Using AI"
-description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation."
+description: "A practical workflow for developers to use AI tools for generating and maintaining changelog documentation. Learn how to automate changelog creation"
 date: 2026-03-16
 author: theluckystrike
 permalink: /effective-workflow-for-using-ai-to-generate-and-maintain-changelog-documentation/

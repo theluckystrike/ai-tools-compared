@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Midjourney Describe Feature Cost Does It Count as Image Gene"
-description: "Midjourney Describe Feature Cost: Does It Count as Image. — guide with practical tips, comparisons, and expert recommendations for."
+description: "No, Midjourney's /describe command does not count toward your image generation quota. It performs image-to-text analysis rather than image generation, so it"
 date: 2026-03-16
 author: theluckystrike
 permalink: /midjourney-describe-feature-cost-does-it-count-as-image-gene/

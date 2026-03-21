@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for SaaS Customer Support"
-description: "A practical guide to AI tools that enhance SaaS customer support operations, with code examples and implementation tips for developers building support."
+description: "A practical guide to AI tools that enhance SaaS customer support operations, with code examples and implementation tips for developers building support"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tools-for-saas-customer-support/

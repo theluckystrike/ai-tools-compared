@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Interpret Elixir GenServer Crash Reports"
-description: "Learn how AI tools can help you decode and understand Elixir GenServer crash reports and supervisor restart strategies. Practical examples and."
+description: "Elixir applications running on the BEAM VM are designed to be fault-tolerant, but when things go wrong, the crash reports can be cryptic. GenServer crash"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/

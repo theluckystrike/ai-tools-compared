@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code vs Cursor for Large Codebase Refactoring"
-description: "Real workflow comparison of Claude Code vs Cursor for large-scale refactoring. Context window strategies, multi-file edits, prompt techniques, and trade-offs."
+description: "Real workflow comparison of Claude Code vs Cursor for large-scale refactoring. Context window strategies, multi-file edits, prompt techniques, and trade-offs"
 date: 2026-03-20
 author: theluckystrike
 permalink: /claude-code-vs-cursor-for-large-codebase-refactoring/

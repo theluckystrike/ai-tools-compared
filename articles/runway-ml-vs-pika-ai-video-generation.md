@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Runway ML vs Pika AI: Video Generation Tools Compared"
-description: "A practical comparison of Runway ML and Pika AI for developers and power users, with API integration examples and technical recommendations."
+description: "A practical comparison of Runway ML and Pika AI for developers and power users, with API integration examples and technical recommendations"
 date: 2026-03-15
 author: theluckystrike
 permalink: /runway-ml-vs-pika-ai-video-generation/

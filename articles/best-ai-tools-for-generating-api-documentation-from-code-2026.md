@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Generating API Documentation From Code"
-description: "Compare AI tools for auto-generating API documentation: Mintlify, Cursor, Copilot, readme.com. Real examples, output quality, setup costs."
+description: "Compare AI tools for auto-generating API documentation: Mintlify, Cursor, Copilot, readme.com. Real examples, output quality, setup costs"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-generating-api-documentation-from-code-2026/

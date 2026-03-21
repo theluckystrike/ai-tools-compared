@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Free AI Tool for Writing Unit Tests Automatically"
-description: "A practical guide to free AI tools that automatically generate unit tests, with code examples and workflow tips for developers."
+description: "A practical guide to free AI tools that automatically generate unit tests, with code examples and workflow tips for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-free-ai-tool-for-writing-unit-tests-automatically/

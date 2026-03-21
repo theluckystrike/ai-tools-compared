@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Writing Jest Tests for React Custom Hooks"
-description: "A practical guide to AI tools that help developers write Jest tests for React custom hooks with complex state management."
+description: "A practical guide to AI tools that help developers write Jest tests for React custom hooks with complex state management"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-jest-tests-for-react-custom-hooks-with-c/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Coding Assistant for React Development"
-description: "A practical comparison of AI coding tools for React developers, with code examples and recommendations for 2026."
+description: "A practical comparison of AI coding tools for React developers, with code examples and recommendations for 2026"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-coding-assistant-for-react-development/

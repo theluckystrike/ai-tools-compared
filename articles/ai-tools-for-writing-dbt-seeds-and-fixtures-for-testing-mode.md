@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing dbt Seeds and Fixtures for Testing Mode"
-description: "Discover how AI can help you generate dbt seeds and fixtures to test your model transformations efficiently."
+description: "Discover how AI can help you generate dbt seeds and fixtures to test your model transformations efficiently"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-dbt-seeds-and-fixtures-for-testing-mode/

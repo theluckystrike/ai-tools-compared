@@ -1,8 +1,7 @@
 ---
-
 layout: default
 title: "How to Switch From Lovable to Cursor for Building Web Apps"
-description: "A practical guide for developers comparing Lovable and Cursor for web app development, with migration strategies and code examples."
+description: "A practical guide for developers comparing Lovable and Cursor for web app development, with migration strategies and code examples"
 date: 2026-03-20
 author: "AI Tools Compared"
 permalink: /how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/

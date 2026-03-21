@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Assistant Accuracy for TypeScript Svelte Component"
-description: "A practical analysis of AI coding assistant accuracy when generating TypeScript Svelte components, with code examples and quality benchmarks for."
+description: "Claude Code demonstrates superior accuracy for Svelte 5 components by correctly applying $state runes, $derived for computed values, and proper TypeScript prop"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-coding-assistant-accuracy-for-typescript-svelte-component/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot vs Cursor for Writing Terraform Modules from Scratch"
-description: "A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations."
+description: "A practical comparison of GitHub Copilot and Cursor for building Terraform modules from scratch, with real code examples and recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-vs-cursor-for-writing-terraform-modules-from-scratch/

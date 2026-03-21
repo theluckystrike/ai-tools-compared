@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Snowflake vs Databricks AI Analytics"
-description: "A practical comparison of Snowflake and Databricks for AI and analytics workloads, with code examples, pricing insights, and implementation guidance."
+description: "A practical comparison of Snowflake and Databricks for AI and analytics workloads, with code examples, pricing insights, and implementation guidance"
 date: 2026-03-15
 author: theluckystrike
 permalink: /snowflake-vs-databricks-ai-analytics/

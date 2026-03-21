@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Code Screen Reader Testing Workflow"
-description: "A guide to implementing screen reader testing workflows using Claude Code, covering NVDA, JAWS, VoiceOver testing, ARIA validation, and."
+description: "Screen reader testing is a critical component of web accessibility validation. This guide covers how to use Claude Code to implement screen reader testing"
 date: 2026-03-17
 author: theluckystrike
 permalink: /claude-code-screen-reader-testing-workflow/

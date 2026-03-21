@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Education Student Support"
-description: "A practical guide to AI-powered student support tools for developers building educational platforms, with implementation examples and technical."
+description: "A practical guide to AI-powered student support tools for developers building educational platforms, with implementation examples and technical"
 date: 2026-03-15
 author: "theluckystrike"
 permalink: /ai-tools-for-education-student-support/

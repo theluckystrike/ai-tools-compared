@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Create Milestone Planning Documents"
-description: "A practical guide for developers and power users on using AI to transform issue backlog priorities into structured milestone planning documents."
+description: "A practical guide for developers and power users on using AI to transform issue backlog priorities into structured milestone planning documents"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-create-milestone-planning-documents-from-is/

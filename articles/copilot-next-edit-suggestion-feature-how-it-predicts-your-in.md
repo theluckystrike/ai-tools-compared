@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Copilot Next Edit Suggestion Feature How It Predicts Your In"
-description: "A technical deep dive into GitHub Copilot's Next Edit Suggestion feature, explaining how it predicts developer intent and accelerates code editing workflows."
+description: "A technical deep dive into GitHub Copilot's Next Edit Suggestion feature, explaining how it predicts developer intent and accelerates code editing workflows"
 date: 2026-03-16
 author: theluckystrike
 permalink: /copilot-next-edit-suggestion-feature-how-it-predicts-your-in/

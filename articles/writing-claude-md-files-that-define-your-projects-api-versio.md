@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Writing CLAUDE.md Files That Define Your Project's API"
-description: "A practical guide to creating CLAUDE.md files that communicate API versioning strategy to AI coding assistants. Includes real code examples and."
+description: "When working with AI coding assistants on API-driven projects, consistent versioning behavior becomes critical. A well-crafted CLAUDE.md file ensures your AI"
 date: 2026-03-16
 author: theluckystrike
 permalink: /writing-claude-md-files-that-define-your-projects-api-versioning-strategy/

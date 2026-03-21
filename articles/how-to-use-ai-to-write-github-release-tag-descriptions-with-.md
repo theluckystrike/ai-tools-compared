@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Use AI to Write GitHub Release Tag Descriptions"
-description: "A practical guide for developers using AI to create clear, informative GitHub release notes that include download instructions and asset links."
+description: "A practical guide for developers using AI to create clear, informative GitHub release notes that include download instructions and asset links"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-use-ai-to-write-github-release-tag-descriptions-with-/

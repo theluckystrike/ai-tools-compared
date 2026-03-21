@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Practices for AI Tool Customization Files When Onboardi"
-description: "A practical guide to structuring and managing AI tool configuration files for team onboarding in 2026. Includes code examples and expert recommendations."
+description: "A practical guide to structuring and managing AI tool configuration files for team onboarding in 2026. Includes code examples and expert recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-practices-for-ai-tool-customization-files-when-onboardi/

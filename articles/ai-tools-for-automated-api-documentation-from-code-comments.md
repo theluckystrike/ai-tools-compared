@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Automated API Documentation from Code Comments"
-description: "Generate professional API docs from inline code comments using Claude, GPT-4, and specialized tools."
+description: "Generate professional API docs from inline code comments using Claude, GPT-4, and specialized tools"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-automated-api-documentation-from-code-comments/

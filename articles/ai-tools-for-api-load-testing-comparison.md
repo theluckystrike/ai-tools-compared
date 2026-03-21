@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI-Assisted API Load Testing Tools Comparison 2026"
-description: "Compare AI-powered load testing tools: k6+AI, Locust+AI, Gatling, Artillery, Grafana k6 Cloud. Includes pricing, script generation, results interpretation."
+description: "Compare AI-powered load testing tools: k6+AI, Locust+AI, Gatling, Artillery, Grafana k6 Cloud. Includes pricing, script generation, results interpretation"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-assisted-api-load-testing-tools-comparison/

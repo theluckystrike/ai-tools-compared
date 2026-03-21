@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Code Generation for Python FastAPI Endpoints"
-description: "A practical comparison of AI coding tools for generating Python FastAPI endpoints with Pydantic models, featuring code examples and recommendations for."
+description: "Choose Claude Code for endpoint generation that includes CRUD patterns and dependency injection. Choose Cursor for superior multi-file context awareness. AI"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/

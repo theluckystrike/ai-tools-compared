@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Converting Figma Designs to Code 2026"
-description: "Compare Figma-to-code tools (Locofy, Anima, Builder.io, TeleportHQ, Claude vision) for converting design mockups to React, Vue, and HTML. Pricing."
+description: "Compare Figma-to-code tools (Locofy, Anima, Builder.io, TeleportHQ, Claude vision) for converting design mockups to React, Vue, and HTML. Pricing"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-converting-figma-designs-to-code-2026/

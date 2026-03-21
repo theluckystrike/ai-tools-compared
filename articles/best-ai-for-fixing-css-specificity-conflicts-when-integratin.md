@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Fixing CSS Specificity Conflicts When Integratin"
-description: "A practical guide to using AI tools for resolving CSS specificity conflicts when integrating third-party component libraries into your projects."
+description: "A practical guide to using AI tools for resolving CSS specificity conflicts when integrating third-party component libraries into your projects"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-fixing-css-specificity-conflicts-when-integratin/

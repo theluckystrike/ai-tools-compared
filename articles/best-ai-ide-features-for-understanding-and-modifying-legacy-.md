@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI IDE Features for Understanding and Modifying Legacy"
-description: "A practical guide to the most useful AI-powered IDE features for navigating, understanding, and safely modifying legacy codebases in 2026."
+description: "A practical guide to the most useful AI-powered IDE features for navigating, understanding, and safely modifying legacy codebases in 2026"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-ide-features-for-understanding-and-modifying-legacy-/

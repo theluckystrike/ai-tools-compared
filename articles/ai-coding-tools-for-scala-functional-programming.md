@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Coding Tools for Scala Functional Programming"
-description: "A developer-focused guide to AI coding tools that work well with Scala's functional programming paradigm. Includes code examples, practical tips, and."
+description: "Claude models produce the most functionally pure Scala code by default, generating solutions using map, flatMap, and fold operations rather than mutable"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-coding-tools-for-scala-functional-programming/

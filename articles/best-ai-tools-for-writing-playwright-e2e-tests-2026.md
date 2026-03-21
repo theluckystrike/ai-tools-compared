@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Playwright E2E Tests 2026"
-description: "Compare AI tools for generating Playwright end-to-end tests. Covers page object patterns, fixtures, visual regression testing with Claude, Copilot, and."
+description: "Writing Playwright end-to-end tests requires understanding both test semantics (what should the test verify) and Playwright mechanics (selectors, waits"
 date: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-playwright-e2e-tests-2026/

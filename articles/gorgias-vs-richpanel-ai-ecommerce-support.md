@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gorgias vs Richpanel: AI Ecommerce Support Comparison"
-description: "A technical comparison of Gorgias and Richpanel AI-powered customer support platforms for ecommerce, with API examples and implementation details."
+description: "A technical comparison of Gorgias and Richpanel AI-powered customer support platforms for ecommerce, with API examples and implementation details"
 date: 2026-03-15
 author: theluckystrike
 permalink: /gorgias-vs-richpanel-ai-ecommerce-support/

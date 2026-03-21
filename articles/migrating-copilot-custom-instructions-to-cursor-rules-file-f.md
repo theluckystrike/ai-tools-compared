@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Migrating Copilot Custom Instructions to Cursor Rules."
-description: "A practical guide for developers on migrating GitHub Copilot custom instructions to Cursor rules files. Learn the differences, conversion strategies."
+description: "A practical guide for developers on migrating GitHub Copilot custom instructions to Cursor rules files. Learn the differences, conversion strategies"
 date: 2026-03-20
 author: theluckystrike
 permalink: /migrating-copilot-custom-instructions-to-cursor-rules-file-f/

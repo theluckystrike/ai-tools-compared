@@ -2,7 +2,7 @@
 categories: [guides]
 layout: default
 title: "Best AI for Writing Backward Compatibility Testing Checklist"
-description: "A practical guide to using AI tools for creating backward compatibility testing checklists in library development workflows."
+description: "A practical guide to using AI tools for creating backward compatibility testing checklists in library development workflows"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-writing-backward-compatibility-testing-checklist/

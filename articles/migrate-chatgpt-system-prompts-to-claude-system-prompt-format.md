@@ -1,6 +1,6 @@
 ---
 title: "Migrate ChatGPT System Prompts"
-description: "Learn how to convert and migrate your existing ChatGPT system prompts to Claude's system prompt format for optimal AI assistant performance."
+description: "Learn how to convert and migrate your existing ChatGPT system prompts to Claude's system prompt format for optimal AI assistant performance"
 author: theluckystrike
 date: 2026-03-16
 tags: 

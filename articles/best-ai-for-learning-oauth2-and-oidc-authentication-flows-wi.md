@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Learning OAuth2 and OIDC Authentication Flows"
-description: "A practical guide for developers to learn OAuth2 and OIDC authentication flows using AI tools with sequence diagrams and code examples."
+description: "A practical guide for developers to learn OAuth2 and OIDC authentication flows using AI tools with sequence diagrams and code examples"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/

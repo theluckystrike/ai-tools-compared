@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Writing Playwright Tests That Verify Accessibil"
-description: "A practical guide to using AI tools for creating Playwright tests that automatically verify WCAG accessibility compliance. Code examples and."
+description: "Automated accessibility testing has become essential for building inclusive web applications. Playwright's testing framework combined with AI-assisted code"
 date: 2026-03-16
 author: theluckystrike
 permalink: /ai-tools-for-writing-playwright-tests-that-verify-accessibil/

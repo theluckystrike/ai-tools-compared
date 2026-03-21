@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Switch AI Coding Providers Without Disrupting."
-description: "A practical guide for developers on migrating between AI coding assistants while maintaining your team's sprint velocity and productivity."
+description: "A practical guide for developers on migrating between AI coding assistants while maintaining your team's sprint velocity and productivity"
 date: 2026-03-20
 author: theluckystrike
 permalink: /how-to-switch-ai-coding-providers-without-disrupting-sprint-velocity-2026/

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Way to Configure CursorRules for Python FastAPI Project"
-description: "A practical guide to configuring CursorRules for Python FastAPI projects with Pydantic models, featuring code examples and recommendations for developers."
+description: "A practical guide to configuring CursorRules for Python FastAPI projects with Pydantic models, featuring code examples and recommendations for developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-way-to-configure-cursorrules-for-python-fastapi-project/

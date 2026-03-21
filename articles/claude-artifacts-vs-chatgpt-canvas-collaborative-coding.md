@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Claude Artifacts vs ChatGPT Canvas Collaborative Coding"
-description: "Detailed comparison of Claude Artifacts and ChatGPT Canvas for pair programming, code review, and live collaborative sessions. Includes performance."
+description: "Detailed comparison of Claude Artifacts and ChatGPT Canvas for pair programming, code review, and live collaborative sessions. Includes performance"
 date: 2026-03-20
 author: theluckystrike
 permalink: /claude-artifacts-vs-chatgpt-canvas-collaborative-coding/

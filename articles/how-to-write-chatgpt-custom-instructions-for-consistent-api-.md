@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Write ChatGPT Custom Instructions"
-description: "A practical guide for developers on crafting effective ChatGPT custom instructions that produce consistent, high-quality API design recommendations."
+description: "A practical guide for developers on crafting effective ChatGPT custom instructions that produce consistent, high-quality API design recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/

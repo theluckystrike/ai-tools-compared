@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Export Dall E Generated Images at Full Resolution"
-description: "A practical developer guide for exporting Dall-E images at full resolution before losing access. Includes API methods, batch export scripts, and."
+description: "Dall-E, OpenAI's image generation model, produces high-quality images that you can use commercially. However, when you decide to leave ChatGPT Plus or your"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/

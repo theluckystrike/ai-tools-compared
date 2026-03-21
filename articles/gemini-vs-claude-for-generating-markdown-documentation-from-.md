@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gemini vs Claude for Generating Markdown Documentation"
-description: "Gemini vs Claude for Generating Markdown Documentation. — guide with practical tips, comparisons, and expert recommendations for."
+description: "Automated documentation generation has become essential for maintaining healthy codebases. When choosing between Gemini and Claude for this task, developers"
 date: 2026-03-16
 author: theluckystrike
 permalink: /gemini-vs-claude-for-generating-markdown-documentation-from-/

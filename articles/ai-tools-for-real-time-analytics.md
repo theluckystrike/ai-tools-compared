@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Real-Time Analytics: A Practical Guide"
-description: "Explore AI tools that enable real-time analytics for developers. Learn about streaming pipelines, processing frameworks, and practical implementations."
+description: "Explore AI tools that enable real-time analytics for developers. Learn about streaming pipelines, processing frameworks, and practical implementations"
 date: 2026-03-15
 author: theluckystrike
 permalink: /ai-tools-for-real-time-analytics/

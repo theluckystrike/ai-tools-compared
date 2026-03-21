@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Casetext AI Legal Research Review: A Guide."
-description: "An in-depth review of Casetext's AI-powered legal research tools, featuring CoCounsel and the latest capabilities for attorneys and legal professionals in 2026."
+description: "An in-depth review of Casetext's AI-powered legal research tools, featuring CoCounsel and the latest capabilities for attorneys and legal professionals in 2026"
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /casetext-ai-legal-research-review-2026/

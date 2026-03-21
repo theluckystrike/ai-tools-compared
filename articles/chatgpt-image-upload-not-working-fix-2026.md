@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "ChatGPT Image Upload Not Working Fix (2026)"
-description: "Troubleshooting guide for ChatGPT image upload issues. Step-by-step fixes for developers and power users experiencing problems uploading images to."
+description: "To fix ChatGPT image uploads not working, first confirm your file is under 20MB and in a supported format (PNG, JPEG, GIF, WEBP). Then clear your browser's"
 date: 2026-03-15
 author: theluckystrike
 permalink: /chatgpt-image-upload-not-working-fix-2026/

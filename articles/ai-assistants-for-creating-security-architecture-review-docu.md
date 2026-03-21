@@ -1,8 +1,7 @@
 ---
-
 layout: default
 title: "AI Assistants for Creating Security Architecture Review."
-description: "Learn how AI assistants can help automate security architecture reviews by analyzing your codebase and generating documentation."
+description: "Learn how AI assistants can help automate security architecture reviews by analyzing your codebase and generating documentation"
 date: 2026-03-16
 author: "AI Tools Compared"
 permalink: /ai-assistants-for-creating-security-architecture-review-docu/

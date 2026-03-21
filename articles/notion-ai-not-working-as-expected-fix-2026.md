@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Notion AI Not Working as Expected Fix (2026)"
-description: "A troubleshooting guide for developers and power users experiencing Notion AI issues, with step-by-step fixes and diagnostic tips for 2026."
+description: "A troubleshooting guide for developers and power users experiencing Notion AI issues, with step-by-step fixes and diagnostic tips for 2026"
 date: 2026-03-15
 author: theluckystrike
 permalink: /notion-ai-not-working-as-expected-fix-2026/

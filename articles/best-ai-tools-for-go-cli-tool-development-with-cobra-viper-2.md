@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Go CLI Tool Development with Cobra Viper 2"
-description: "A practical guide to the best AI coding assistants for building Go CLI tools using Cobra and Viper, with code examples and tool recommendations."
+description: "A practical guide to the best AI coding assistants for building Go CLI tools using Cobra and Viper, with code examples and tool recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-tools-for-go-cli-tool-development-with-cobra-viper-2/

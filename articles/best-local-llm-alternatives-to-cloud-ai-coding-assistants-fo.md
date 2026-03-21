@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best Local LLM Alternatives to Cloud AI Coding Assistants"
-description: "Discover powerful offline AI coding tools that work without internet connectivity. Compare leading local LLM options for secure, air-gapped development."
+description: "Discover powerful offline AI coding tools that work without internet connectivity. Compare leading local LLM options for secure, air-gapped development"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/

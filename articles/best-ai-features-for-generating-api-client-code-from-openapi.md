@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Features for Generating API Client Code from"
-description: "A practical guide to the best AI features for generating API client code from OpenAPI specifications, with code examples and developer recommendations."
+description: "A practical guide to the best AI features for generating API client code from OpenAPI specifications, with code examples and developer recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-features-for-generating-api-client-code-from-openapi/

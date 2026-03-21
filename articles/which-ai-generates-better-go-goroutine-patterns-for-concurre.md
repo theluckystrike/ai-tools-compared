@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Which AI Generates Better Go Goroutine Patterns for Concurre"
-description: "A practical comparison of AI coding tools generating goroutine patterns for concurrent APIs. Test results, code quality analysis, and recommendations."
+description: "A practical comparison of AI coding tools generating goroutine patterns for concurrent APIs. Test results, code quality analysis, and recommendations"
 date: 2026-03-16
 author: theluckystrike
 permalink: /which-ai-generates-better-go-goroutine-patterns-for-concurre/

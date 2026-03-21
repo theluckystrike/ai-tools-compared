@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for UX Designers User Research Synthesis"
-description: "A practical guide to AI tools that help UX designers synthesize user research faster, with real-world use cases and recommendations."
+description: "A practical guide to AI tools that help UX designers synthesize user research faster, with real-world use cases and recommendations"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-ux-designers-user-research-synthesis/

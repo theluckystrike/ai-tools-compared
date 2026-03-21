@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tool for Economists Report Writing 2026"
-description: "A practical guide to AI writing tools for economists creating reports, research papers, and policy documents in 2026."
+description: "A practical guide to AI writing tools for economists creating reports, research papers, and policy documents in 2026"
 date: 2026-03-15
 author: theluckystrike
 permalink: /best-ai-tool-for-economists-report-writing-2026/

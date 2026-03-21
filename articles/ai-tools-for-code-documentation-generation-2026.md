@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Code Documentation Generation 2026."
-description: "Compare AI documentation generators with pricing, output quality, integration setup, and CI/CD automation. Includes docstring generation, API docs, and."
+description: "Code documentation is the forgotten tax that grows exponentially as teams scale. Manual docstring maintenance kills velocity. This guide compares five AI"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-code-documentation-generation-2026/

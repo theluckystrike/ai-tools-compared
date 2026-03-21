@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Sudowrite vs NovelAI for Fiction Writing Compared"
-description: "A practical comparison of Sudowrite and NovelAI for fiction writers. Includes API access, customization options, and recommendations for developers and."
+description: "Fiction writers seeking AI assistance face a crowded market, but two platforms consistently appear in conversations about serious storytelling: Sudowrite and"
 date: 2026-03-15
 author: theluckystrike
 permalink: /sudowrite-vs-novelai-for-fiction-writing-compared/

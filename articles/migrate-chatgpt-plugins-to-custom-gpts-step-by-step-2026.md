@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Migrate ChatGPT Plugins"
-description: "A practical guide for developers and power users to migrate ChatGPT plugins to Custom GPTs. Includes code examples and best practices."
+description: "A practical guide for developers and power users to migrate ChatGPT plugins to Custom GPTs. Includes code examples and best practices"
 date: 2026-03-16
 author: theluckystrike
 permalink: /migrate-chatgpt-plugins-to-custom-gpts-step-by-step-2026/

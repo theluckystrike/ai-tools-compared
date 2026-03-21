@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI Tools for Writing Kubernetes Manifests and Helm"
-description: "Compare AI tools for Kubernetes: Copilot, Cursor, Claude, k8sgpt. Learn how each handles YAML generation, security scanning, and Helm chart templating."
+description: "Compare AI tools for Kubernetes: Copilot, Cursor, Claude, k8sgpt. Learn how each handles YAML generation, security scanning, and Helm chart templating"
 date: 2026-03-20
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-kubernetes-manifests-and-helm-charts-2026/

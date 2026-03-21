@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "AI Tools for Generating API Mock Servers 2026"
-description: "Compare AI tools for auto-generating mock API servers from OpenAPI specs. Covers Prism, WireMock, Mockoon with AI-assisted generation and Docker configs."
+description: "Compare AI tools for auto-generating mock API servers from OpenAPI specs. Covers Prism, WireMock, Mockoon with AI-assisted generation and Docker configs"
 date: 2026-03-20
 author: theluckystrike
 permalink: /ai-tools-for-generating-api-mock-servers-2026/

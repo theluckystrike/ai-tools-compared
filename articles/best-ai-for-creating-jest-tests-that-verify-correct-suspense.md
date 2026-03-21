@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Best AI for Creating Jest Tests That Verify Correct Suspense"
-description: "A practical comparison of AI coding tools for generating Jest tests that validate React Suspense boundaries and lazy loading components, with working."
+description: "A practical comparison of AI coding tools for generating Jest tests that validate React Suspense boundaries and lazy loading components, with working"
 date: 2026-03-16
 author: theluckystrike
 permalink: /best-ai-for-creating-jest-tests-that-verify-correct-suspense/

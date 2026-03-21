@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "How to Write Custom Instructions That Make AI Follow Your"
-description: "Learn how to write effective custom instructions for AI coding assistants to generate consistent, structured error responses that match your project's API schema."
+description: "Learn how to write effective custom instructions for AI coding assistants to generate consistent, structured error responses that match your project's API"
 date: 2026-03-16
 author: theluckystrike
 permalink: /how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/
