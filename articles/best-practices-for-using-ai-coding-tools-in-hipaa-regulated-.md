@@ -217,23 +217,135 @@ This ensures that code leaving your local environment has been screened.
 
 ## Security Patterns for Healthcare AI Usage
 
-
-
 When designing your healthcare codebase architecture, consider these patterns:
 
+The **Air Gap Pattern**: Keep PHI-processing code in a separate module that never interfaces with AI tools directly. AI assists only the non-PHI surrounding infrastructure.
 
+The **Gateway Pattern**: Route all AI requests through a sanitization service that strips potential PHI before reaching external services.
 
-The Air Gap Pattern: Keep PHI-processing code in a separate module that never interfaces with AI tools directly. AI assists only the non-PHI surrounding infrastructure.
+The **Validation Pattern**: Implement automated checks that verify AI-generated code doesn't contain hardcoded credentials, improper logging, or missing encryption.
 
+## Tools with HIPAA BAA Availability
 
+Not all AI coding tools offer Business Associate Agreements. Before deploying any tool in a healthcare setting, confirm BAA status with the vendor:
 
-The Gateway Pattern: Route all AI requests through a sanitization service that strips potential PHI before reaching external services.
+| Tool | BAA Available | Notes |
+|---|---|---|
+| GitHub Copilot | Yes (Enterprise) | Requires GitHub Enterprise Cloud |
+| Cursor | No (as of 2026) | Self-hosted only for HIPAA use |
+| Claude API (Anthropic) | Yes | Enterprise tier |
+| OpenAI API (ChatGPT) | Yes | Business/Enterprise tier |
+| Amazon CodeWhisperer | Yes | AWS HIPAA eligible services |
+| Ollama (local) | N/A | No data leaves your infrastructure |
 
+A BAA does not make a tool automatically compliant — it establishes legal accountability. You still need input sanitization, access controls, and audit logging in place regardless of BAA status.
 
+## Implementing HIPAA-Compliant Audit Logs
 
-The Validation Pattern: Implement automated checks that verify AI-generated code doesn't contain hardcoded credentials, improper logging, or missing encryption.
+HIPAA's Security Rule requires audit controls (45 CFR § 164.312(b)). Any AI-assisted code that accesses PHI must be auditable. This is the pattern that AI tools most often generate incorrectly — they produce functional code without the audit trail:
 
+```python
+import logging
+import json
+from datetime import datetime, timezone
+from functools import wraps
+from typing import Callable
 
+# Structured audit logger — write to immutable log storage in production
+audit_logger = logging.getLogger("hipaa.audit")
+
+def audit_phi_access(action: str):
+    """Decorator for functions that read or modify PHI."""
+    def decorator(func: Callable):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            # Extract user context from request context (adjust for your framework)
+            from flask import g  # or request.user for Django, etc.
+            user_id = getattr(g, 'user_id', 'unknown')
+
+            audit_event = {
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "user_id": user_id,
+                "action": action,
+                "function": func.__name__,
+                "status": "initiated"
+            }
+
+            try:
+                result = func(*args, **kwargs)
+                audit_event["status"] = "success"
+                return result
+            except Exception as e:
+                audit_event["status"] = "error"
+                audit_event["error"] = str(e)
+                raise
+            finally:
+                audit_logger.info(json.dumps(audit_event))
+        return wrapper
+    return decorator
+
+# Usage — add this to any AI-generated data access function
+@audit_phi_access("read_patient_record")
+def get_patient(patient_id: str) -> dict:
+    return db.query("SELECT * FROM patients WHERE id = %s", patient_id)
+```
+
+When reviewing AI-generated code, check every data access function for this pattern. AI tools consistently generate working queries without audit decorators unless you explicitly prompt for them.
+
+## Encryption at Rest: What AI Gets Right and Wrong
+
+AI tools handle encryption at the application layer inconsistently. For HIPAA, encryption at rest is an addressable implementation specification (§ 164.312(a)(2)(iv)).
+
+What Claude and ChatGPT get right: they know to use AES-256 and will generate key management scaffolding when prompted.
+
+What they miss: they rarely implement field-level encryption for specific PHI columns, defaulting to full-disk encryption assumptions. For databases storing a mix of PHI and non-PHI, field-level encryption is more appropriate:
+
+```python
+from cryptography.fernet import Fernet
+import os
+
+# Load encryption key from secrets manager — never hardcode
+KEY = os.environ['PHI_ENCRYPTION_KEY'].encode()
+cipher = Fernet(KEY)
+
+def encrypt_phi_field(plaintext: str) -> str:
+    """Encrypt a PHI field before writing to database."""
+    return cipher.encrypt(plaintext.encode()).decode()
+
+def decrypt_phi_field(ciphertext: str) -> str:
+    """Decrypt a PHI field after reading from database."""
+    return cipher.decrypt(ciphertext.encode()).decode()
+
+# Use in your model — AI-generated code rarely includes this pattern
+class Patient(Base):
+    __tablename__ = "patients"
+    id = Column(Integer, primary_key=True)
+    _ssn_encrypted = Column("ssn", String)
+
+    @property
+    def ssn(self) -> str:
+        return decrypt_phi_field(self._ssn_encrypted)
+
+    @ssn.setter
+    def ssn(self, value: str):
+        self._ssn_encrypted = encrypt_phi_field(value)
+```
+
+Prompt AI tools explicitly: "Add field-level encryption for SSN, DOB, and email columns using a key loaded from environment variables."
+
+## FAQ
+
+**Can I use GitHub Copilot for healthcare software?**
+Yes, with GitHub Enterprise Cloud (which includes a BAA). Disable Copilot for files in directories containing PHI data models — configure this in `.github/copilot` settings. Use Copilot freely for infrastructure, test scaffolding, and non-PHI business logic.
+
+**Is Cursor HIPAA compliant?**
+As of early 2026, Cursor does not offer a BAA. For strict HIPAA compliance, use Cursor in "local mode" with Ollama as the backend, or use it only for non-PHI code sections with the awareness that code context is sent to Cursor's servers.
+
+**Does using AI to generate test data violate HIPAA?**
+Not if done correctly. Never use real patient data as test data. Use AI tools like Claude to generate synthetic patient datasets that are statistically realistic but entirely fictional — this is actually a HIPAA-safe use case for cloud AI tools, since no real PHI is involved.
+
+**What logging format satisfies HIPAA audit requirements?**
+HIPAA requires audit logs to capture who accessed what and when, but does not specify a format. Use structured JSON logs with timestamp, user identity, resource accessed, and action taken. Send these to an append-only log store (CloudWatch Logs with object lock, Splunk, etc.) that prevents modification.
 
 ## Related Reading
 
