@@ -150,6 +150,23 @@ print(f"Output tokens: {response.usage.output_tokens}")
 The `output_tokens` field includes both the visible response tokens and the reasoning tokens. You can estimate the reasoning token count by comparing output counts between requests with and without extended thinking for similar queries.
 
 
+## How Much Do Reasoning Tokens Add?
+
+The number of reasoning tokens varies significantly based on task complexity. Simple questions generate few or no reasoning tokens. Complex multi-step problems can generate hundreds or thousands of reasoning tokens before the model delivers its answer.
+
+Here are approximate ranges based on task type, using Claude 3.5 Sonnet pricing at $15.00 per million output tokens:
+
+| Task Type | Approx Reasoning Tokens | Extra Cost per Request |
+|-----------|------------------------|----------------------|
+| Simple factual lookup | 0–50 | ~$0.0008 |
+| Basic code generation | 100–300 | ~$0.003 |
+| Algorithm design | 500–1,500 | ~$0.015 |
+| Complex debugging | 1,000–3,000 | ~$0.03 |
+| System architecture | 2,000–6,000 | ~$0.075 |
+
+These are estimates — actual token counts depend on the model version, your specific prompt, and how deep the reasoning chain runs. Monitor your actual usage with the tracking pattern described in the next section to build an accurate picture for your workload.
+
+
 ## Cost Optimization Strategies
 
 
@@ -229,6 +246,93 @@ def track_request(prompt, enable_extended_thinking=True):
 # Test with extended thinking
 response, cost = track_request("Explain the time complexity of merge sort")
 ```
+
+
+## Building a Cost-Aware Routing Layer
+
+For applications that serve a mix of simple and complex queries, routing requests dynamically between models with and without extended thinking can significantly reduce costs without degrading quality on the queries that need it.
+
+```python
+import anthropic
+
+client = anthropic.Anthropic(api_key="your-api-key")
+
+COMPLEX_KEYWORDS = [
+    "implement", "design", "architecture", "debug", "optimize",
+    "algorithm", "refactor", "explain how", "compare"
+]
+
+def classify_complexity(prompt: str) -> str:
+    """Return 'complex' if the prompt warrants extended thinking."""
+    prompt_lower = prompt.lower()
+    if any(kw in prompt_lower for kw in COMPLEX_KEYWORDS):
+        return "complex"
+    if len(prompt.split()) > 50:
+        return "complex"
+    return "simple"
+
+def smart_completion(prompt: str) -> dict:
+    complexity = classify_complexity(prompt)
+    use_extended = complexity == "complex"
+
+    headers = {}
+    if use_extended:
+        headers["anthropic-beta"] = "extended-thinking-2025-05-01"
+
+    response = client.messages.create(
+        model="claude-sonnet-4-20250514",
+        max_tokens=2048,
+        extra_headers=headers,
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return {
+        "content": response.content[0].text,
+        "extended_thinking_used": use_extended,
+        "input_tokens": response.usage.input_tokens,
+        "output_tokens": response.usage.output_tokens,
+    }
+```
+
+This pattern works well for internal tooling and developer assistants where you have some control over the query distribution. For customer-facing products, consider a fallback approach: start without extended thinking and retry with it only when the initial response fails a quality check.
+
+
+## Step-by-Step Workflow: Benchmarking Extended Thinking for Your Use Case
+
+Before committing to extended thinking across your application, run a structured benchmark to measure whether the quality improvement justifies the cost increase for your specific workload.
+
+**Step 1: Select representative prompts.** Pick 20–30 prompts from your actual production logs that span the range of complexity in your workload. Include both simple and complex cases.
+
+**Step 2: Run each prompt twice.** Send each prompt once with extended thinking enabled and once without. Use the same `max_tokens` value for both runs. Record the input tokens, output tokens, and response content for each.
+
+**Step 3: Score the responses.** Use a simple rubric: correctness (0–3), completeness (0–3), and clarity (0–2). Have at least two reviewers score each response independently and average the scores.
+
+**Step 4: Calculate the cost delta.** For each prompt pair, compute the extra cost from extended thinking: `(extended_output_tokens - standard_output_tokens) / 1_000_000 * output_rate`.
+
+**Step 5: Compute quality-per-dollar.** Divide the quality improvement score by the extra cost for each prompt pair. This ratio tells you where extended thinking delivers the best return. Prompts with high ratios belong in the "always use extended thinking" bucket; prompts with ratios near zero or negative belong in the "never use" bucket.
+
+**Step 6: Implement tiered routing.** Use the prompt characteristics you identified in step 5 to build a classifier (as shown in the routing example above) that assigns each incoming request to the appropriate tier.
+
+
+## Frequently Asked Questions
+
+**Are reasoning tokens visible in the API response?**
+No. Reasoning tokens are internal to the model's processing and do not appear in the response content. You can infer their approximate count by comparing `output_tokens` between requests with and without extended thinking on similar prompts.
+
+**Does extended thinking always improve response quality?**
+Not always. For simple questions, extended thinking adds tokens without meaningfully improving the answer. The feature provides the most benefit for tasks that genuinely require multi-step reasoning, such as algorithm design, complex debugging, or mathematical proofs.
+
+**Can I set a maximum budget for reasoning tokens?**
+Not directly. You control the overall `max_tokens` budget, which includes both reasoning and response tokens. Setting a lower `max_tokens` limit constrains the total output but does not separately cap reasoning tokens.
+
+**How does extended thinking affect response latency?**
+Extended thinking increases latency because the model must complete its reasoning process before generating the visible response. Expect latency to increase roughly in proportion to the number of reasoning tokens generated.
+
+**Is extended thinking available on all Claude models?**
+Extended thinking availability varies by model version. Check the Anthropic API documentation for the current list of supported models and the required beta header values.
+
+**Should I use extended thinking in production by default?**
+No. The recommended pattern is to enable it selectively based on query complexity. Using it by default will increase costs substantially for the majority of requests that do not benefit from extended reasoning.
 
 
 ## Related Articles
