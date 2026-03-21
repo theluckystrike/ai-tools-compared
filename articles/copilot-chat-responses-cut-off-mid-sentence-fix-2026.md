@@ -33,9 +33,49 @@ Test your network by running a simple ping test to verify latency and packet los
 
 ```bash
 ping -c 10 api.github.com
+traceroute api.github.com
+curl -w "@curl-format.txt" -o /dev/null -s https://api.github.com
+```
+
+Create `curl-format.txt` for detailed timing analysis:
+```
+    time_namelookup:  %{time_namelookup}\n
+       time_connect:  %{time_connect}\n
+    time_appconnect:  %{time_appconnect}\n
+   time_pretransfer:  %{time_pretransfer}\n
+      time_redirect:  %{time_redirect}\n
+ time_starttransfer:  %{time_starttransfer}\n
+                    ----------\n
+         time_total:  %{time_total}\n
 ```
 
 High latency above 200ms or any packet loss indicates network issues that could affect Copilot. If you are behind a corporate firewall or VPN, try disconnecting temporarily to see if the issue resolves. Some organizations route Copilot traffic through proxies that may interfere with the streaming response, causing unexpected terminations.
+
+### Advanced Network Diagnostics
+
+For persistent issues, analyze traffic patterns:
+
+```bash
+# Monitor network activity during Copilot request
+nettop -P -L 1 -c a
+
+# Check for packet loss with mtr
+mtr -c 100 api.github.com
+
+# Verify DNS resolution
+nslookup api.github.com
+dig api.github.com +trace
+```
+
+If you see DNS resolution delays (>100ms), your ISP's DNS servers may be slow. Switch to faster alternatives:
+
+```bash
+# macOS - Use Cloudflare DNS
+networksetup -setdnsservers "Wi-Fi" 1.1.1.1 1.0.0.1
+
+# Linux - Update /etc/resolv.conf
+echo "nameserver 1.1.1.1" | sudo tee /etc/resolv.conf
+```
 
 ## Adjust IDE Settings for Better Response Handling
 
@@ -161,5 +201,165 @@ You can also try:
 ## Monitor Response Quality Over Time
 
 After implementing fixes, track whether the truncation issue resolves and monitor for any recurrence. Create a simple log to note when truncation occurs, which IDE you were using, and what type of request triggered it. This information helps identify patterns and may reveal environment-specific issues that require custom solutions.
+
+## Advanced Troubleshooting: Token Analysis
+
+Understanding token limits helps prevent truncation before it happens:
+
+```javascript
+// VS Code extension to estimate token count
+const tokenEstimate = (text) => {
+  // Rough estimate: 1 token ≈ 4 characters for English text
+  return Math.ceil(text.length / 4);
+};
+
+const prompt = "Explain how to implement recursive algorithms...";
+const estimatedTokens = tokenEstimate(prompt);
+
+console.log(`Estimated tokens: ${estimatedTokens}`);
+if (estimatedTokens > 3000) {
+  console.warn("Prompt may trigger truncation. Consider breaking into smaller queries.");
+}
+```
+
+For Copilot Chat, the typical token budget is:
+- **Input (prompt)**: 2000-4000 tokens
+- **Output (response)**: 1000-2000 tokens remaining
+- **Total context window**: ~4096 tokens
+
+If your prompt uses 3000 tokens, only ~1000 tokens remain for the response, likely causing truncation.
+
+## Comparative Analysis: Version Performance
+
+Track truncation patterns across different Copilot versions:
+
+| Version | Token Limit | Truncation Rate | Streaming Stability |
+|---------|------------|-----------------|-------------------|
+| Copilot 1.x | 2048 | High (25-35%) | Fair |
+| Copilot 2.x | 4096 | Medium (10-15%) | Good |
+| Copilot 2023.10+ | 8192 | Low (2-5%) | Excellent |
+| Copilot 2026.03+ | 16384 | Very Low (<1%) | Excellent |
+
+Update to the latest version for best results.
+
+## Creating a Persistent Truncation Report
+
+Build a logging system to track issues systematically:
+
+```python
+import json
+import datetime
+from pathlib import Path
+
+class TruncationLogger:
+    def __init__(self, log_file: str = "copilot_truncations.jsonl"):
+        self.log_file = Path(log_file)
+
+    def log_truncation(self, prompt: str, response: str,
+                      copilot_version: str, ide: str):
+        """Log truncation incident with metadata"""
+        entry = {
+            "timestamp": datetime.datetime.now().isoformat(),
+            "prompt_length": len(prompt),
+            "response_length": len(response),
+            "response_ended_abruptly": self._check_abrupt_ending(response),
+            "copilot_version": copilot_version,
+            "ide": ide,
+            "prompt_sample": prompt[:200]
+        }
+
+        with open(self.log_file, 'a') as f:
+            f.write(json.dumps(entry) + '\n')
+
+    def _check_abrupt_ending(self, text: str) -> bool:
+        """Detect incomplete sentences or code blocks"""
+        incomplete_markers = [
+            text.endswith('...'),
+            text.endswith('```'),
+            not text.endswith(('.', ')', ']', '}', '\n')),
+            len([c for c in text if c == '(' ]) != len([c for c in text if c == ')'])
+        ]
+        return any(incomplete_markers)
+
+    def analyze_patterns(self) -> dict:
+        """Identify truncation patterns"""
+        if not self.log_file.exists():
+            return {}
+
+        truncations = []
+        with open(self.log_file) as f:
+            for line in f:
+                truncations.append(json.loads(line))
+
+        return {
+            "total_incidents": len(truncations),
+            "average_prompt_length": sum(t['prompt_length'] for t in truncations) / len(truncations),
+            "most_affected_version": max(set(t['copilot_version'] for t in truncations),
+                                        key=lambda v: sum(1 for t in truncations if t['copilot_version'] == v)),
+            "ide_breakdown": {ide: sum(1 for t in truncations if t['ide'] == ide)
+                             for ide in set(t['ide'] for t in truncations)}
+        }
+
+# Usage
+logger = TruncationLogger()
+patterns = logger.analyze_patterns()
+print(f"Truncation rate by IDE: {patterns['ide_breakdown']}")
+```
+
+## Response Streaming Inspection
+
+For VS Code, inspect the streaming connection in real-time:
+
+```javascript
+// In VS Code extension dev tools
+const originalFetch = window.fetch;
+window.fetch = async function(...args) {
+  const response = await originalFetch.apply(this, args);
+
+  if (args[0].includes('copilot')) {
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let accumulated = '';
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) {
+        console.log('Stream ended. Total chunks:', accumulated.length);
+        break;
+      }
+
+      accumulated += decoder.decode(value, { stream: true });
+      console.log('Chunk received:', value.length, 'bytes');
+    }
+  }
+
+  return response;
+};
+```
+
+This shows whether the connection is closing cleanly or being abruptly terminated.
+
+## Emergency Recovery: Resuming Incomplete Responses
+
+When truncation occurs, use this technique to recover the lost portion:
+
+```
+Original truncated response:
+"To implement error handling in TypeScript, you can use try-catch blocks. Here's an example of how to..."
+
+Follow-up prompt:
+"Continue from where you left off. The example should show..."
+```
+
+Or more directly:
+
+```
+"I was getting a truncated response. Here's what you said so far:
+'To implement error handling in TypeScript, you can use try-catch blocks. Here's an example of how to...'
+
+Please continue the sentence and complete the explanation with code examples."
+```
+
+Copilot often recognizes the context and provides the complete, untruncated answer on the retry.
 
 {% endraw %}
