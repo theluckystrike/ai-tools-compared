@@ -7,7 +7,7 @@ last_modified_at: 2026-03-21
 author: theluckystrike
 permalink: /best-ai-tools-for-writing-redis-lua-scripts-2026/
 categories: [guides]
-tags: [ai-tools-compared, tools, redis, artificial-intelligence]
+tags: [ai-tools-compared, tools, redis, artificial-intelligence, best-of]
 reviewed: true
 score: 8
 voice-checked: true
