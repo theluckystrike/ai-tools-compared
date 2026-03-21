@@ -155,6 +155,76 @@ Beyond basic TLS, evaluate these protective measures:
 **Data retention policies** describe how long transmitted code gets stored. Some tools retain code for model training; others process and immediately discard.
 
 
+## Encryption Standards Comparison Across Popular AI Coding Tools
+
+
+Different AI coding assistants take different approaches to encryption. Here is how the major tools compare across key security dimensions:
+
+
+| Tool | TLS Version | Certificate Pinning | Data Retention Option | SOC 2 Certified |
+|---|---|---|---|---|
+| GitHub Copilot | TLS 1.2+ | Yes (enterprise) | 28-day default | Yes |
+| Cursor | TLS 1.3 | Limited | No persistent storage | In progress |
+| Tabnine | TLS 1.3 | Yes (self-hosted) | Self-hosted = zero | Yes |
+| Amazon Q | TLS 1.3 | Yes | Configurable | Yes (AWS) |
+| Codeium | TLS 1.2+ | No | Opt-out available | In progress |
+
+
+For teams handling HIPAA-covered data, PCI-DSS environments, or government contracts, the certificate pinning and SOC 2 columns matter most. Self-hosted options like Tabnine eliminate data-in-transit risk entirely since code never leaves your network perimeter.
+
+
+## Using testssl.sh for Automated Evaluation
+
+
+The open-source `testssl.sh` tool automates comprehensive TLS evaluation across all protocol versions and cipher suites:
+
+
+```bash
+# Install testssl.sh
+git clone https://github.com/drwetter/testssl.sh.git
+cd testssl.sh
+
+# Run a full evaluation against an AI tool endpoint
+./testssl.sh api.example-ai-tool.com:443
+
+# Generate a JSON report for documentation
+./testssl.sh --jsonfile results.json api.example-ai-tool.com:443
+```
+
+
+The output grades the endpoint across dozens of security dimensions including protocol support, cipher strength, HSTS headers, and certificate transparency. A grade of A or A+ indicates production-ready encryption. Grades below B warrant investigation before trusting the tool with sensitive code.
+
+
+## What to Look for in API Client Libraries
+
+
+When AI tools provide official client libraries, inspect how they configure TLS:
+
+
+```python
+# A well-implemented client library sets minimum TLS version
+import ssl
+import httpx
+
+context = ssl.create_default_context()
+context.minimum_version = ssl.TLSVersion.TLSv1_3
+
+client = httpx.Client(verify=context)
+response = client.post("https://api.example-ai-tool.com/completions", json=payload)
+```
+
+
+Red flags in client code include:
+
+- `verify=False` disabling certificate validation entirely
+- Explicit `ssl.PROTOCOL_TLSv1` or `ssl.PROTOCOL_TLSv1_1` usage
+- Custom hostname verification that always returns `True`
+- No minimum TLS version enforcement
+
+
+Open-source client libraries allow direct inspection. For proprietary clients, network traffic analysis reveals the actual behavior even when source is unavailable.
+
+
 ## Red Flags to Watch For
 
 
@@ -204,6 +274,27 @@ Suppose you're evaluating "CodeAI," a fictional AI coding assistant. Here's your
 
 
 This systematic approach reveals whether the tool meets your security requirements.
+
+
+## Building an Internal Evaluation Scorecard
+
+
+For teams regularly evaluating AI tools, a standardized scorecard accelerates decisions and creates an audit trail:
+
+
+| Criterion | Weight | Pass Threshold | Notes |
+|---|---|---|---|
+| TLS 1.3 support | High | Required | Verify with openssl |
+| No deprecated protocols | High | Required | SSLv3, TLS 1.0/1.1 must be disabled |
+| Valid certificate chain | High | Required | No self-signed in production |
+| PFS cipher suites | Medium | Required | ECDHE or DHE key exchange |
+| Data retention <= 30 days | Medium | Configurable | Check DPA or privacy policy |
+| SOC 2 Type II | Medium | Preferred | Request report from vendor |
+| Certificate pinning | Low | Nice-to-have | Enterprise tier often includes |
+| Bug bounty program | Low | Nice-to-have | Signals security culture |
+
+
+Score each tool and set a minimum threshold before approving for team use. Document the evaluation date since tools change their security posture when they update infrastructure or respond to vulnerability disclosures.
 
 
 ## Making Informed Decisions
