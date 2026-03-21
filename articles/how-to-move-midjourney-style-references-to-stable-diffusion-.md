@@ -27,6 +27,22 @@ Midjourney and Stable Diffusion use fundamentally different approaches to image 
 The core challenge involves reverse-engineering your Midjourney prompts into a training dataset that a LoRA pipeline can process. This requires collecting reference images, analyzing the prompt patterns, and preparing the data for training.
 
 
+## Choosing Your Base Model
+
+
+Before collecting training data, decide which Stable Diffusion base model to train your LoRA against. This choice matters because your LoRA will be anchored to the model's existing style space.
+
+| Base Model | Best For | Notes |
+|---|---|---|
+| SDXL 1.0 | Photorealistic and artistic styles | Highest quality, requires more VRAM (12GB+) |
+| SD 1.5 | Stylized, anime, illustration | Most compatible, wide LoRA ecosystem |
+| Pony Diffusion V6 | Character art, stylized | Strong for character-focused styles |
+| Flux.1-dev | Photorealism, complex scenes | Newest architecture, LoRA support growing |
+| Realistic Vision v6 | Photographic realism | Fine-tuned SD 1.5, excellent for portraits |
+
+If your Midjourney style is cinematic and photorealistic, train against SDXL or Realistic Vision. For painterly or stylized aesthetics, SD 1.5 offers more community tooling and faster training.
+
+
 ## Step 1: Collect Reference Images
 
 
@@ -42,6 +58,8 @@ Use consistent prompting patterns:
 
 
 Save these images in a dedicated folder. For LoRA training, you need both the images and their corresponding captions. Midjourney does not export captions automatically, so you will need to create them manually or generate them using a vision model.
+
+For best results, vary your subjects while keeping the style constant. If your target style is "moody cinematic portrait photography with deep shadows and warm highlights," generate that style applied to different people, different environments, and different compositions. Style-consistent dataset diversity is the single most important factor in producing a generalizable LoRA.
 
 
 ## Step 2: Generate Captions for Training
@@ -89,6 +107,24 @@ print(caption)
 
 
 This generates descriptive captions that the LoRA training process will use to associate visual features with text tokens.
+
+A better alternative for 2025-2026 is using Florence-2 or LLaVA for captioning, as they produce more detailed and accurate descriptions than BLIP:
+
+```python
+from transformers import AutoProcessor, AutoModelForCausalLM
+import torch
+from PIL import Image
+
+model_id = "microsoft/Florence-2-large"
+processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True, torch_dtype=torch.float16).cuda()
+
+def caption_detailed(image_path):
+    image = Image.open(image_path).convert("RGB")
+    inputs = processor(text="<MORE_DETAILED_CAPTION>", images=image, return_tensors="pt").to("cuda", torch.float16)
+    generated_ids = model.generate(**inputs, max_new_tokens=1024)
+    return processor.batch_decode(generated_ids, skip_special_tokens=False)[0]
+```
 
 
 ## Step 3: Configure the Training Pipeline
@@ -177,6 +213,24 @@ python sd-scripts/train_network.py \
 
 Monitor the training loss. A successful style LoRA typically shows convergence within 500-1000 steps depending on dataset size and complexity.
 
+For SDXL training, the command differs slightly. Use `train_network.py` with `--sdxl` flag and a higher resolution:
+
+```bash
+python sd-scripts/train_network.py \
+  --sdxl \
+  --pretrained_model_name_or_path=stabilityai/stable-diffusion-xl-base-1.0 \
+  --train_data_dir=./dataset \
+  --output_dir=./lora_output_xl \
+  --output_name=midjourney-style-sdxl \
+  --network_dim=64 \
+  --network_alpha=32 \
+  --learning_rate=4e-4 \
+  --resolution=1024,1024 \
+  --max_train_steps=1500
+```
+
+SDXL LoRAs typically use lower `network_dim` values (32-64) to avoid overfitting on smaller datasets.
+
 
 ## Step 6: Test Your LoRA
 
@@ -206,23 +260,46 @@ image.save("output.png")
 
 The trigger word in your prompt activates the style learned during training.
 
+For ComfyUI users, load the LoRA via the `Load LoRA` node and connect it between your checkpoint loader and the KSampler. Set the LoRA strength between 0.6-1.0 and adjust until you find the right balance between style adherence and prompt flexibility.
+
 
 ## Common Issues and Solutions
 
 
-Overfitting: If your LoRA produces images too similar to training data, reduce network_dim or increase dataset diversity.
+**Overfitting**: If your LoRA produces images too similar to training data, reduce `network_dim` or increase dataset diversity. Signs of overfitting include the same facial features or backgrounds appearing regardless of the prompt.
 
 
-Weak Style Transfer: If the style is not prominent enough, increase network_dim to 256 and extend training steps.
+**Weak Style Transfer**: If the style is not prominent enough, increase `network_dim` to 256 and extend training steps. Also check that your captions consistently describe the stylistic elements rather than just the subjects.
 
 
-Artifacting: This often indicates too-high learning rate. Reduce learning_rate to 5e-5 and restart training.
+**Artifacting**: This often indicates too-high learning rate. Reduce `learning_rate` to `5e-5` and restart training. Artifacts typically appear as warped textures or incoherent areas in generated images.
+
+**Style Bleeding**: If the LoRA applies your style even at low strength values and overrides the base model's capabilities, reduce `network_alpha`. The ratio of `network_dim` to `network_alpha` controls how strongly the LoRA modifies the base model's attention layers.
+
+
+## Frequently Asked Questions
+
+
+**How many images do I actually need for a style LoRA?**
+
+20-30 high-quality, style-consistent images often outperform 100 inconsistent ones. Quality and stylistic coherence matter more than raw count. If you cannot collect at least 15 images that all clearly demonstrate the same style, your LoRA will likely produce inconsistent results.
+
+**Can I train on Midjourney upscaled images?**
+
+Yes, upscaled images (U1-U4 in Midjourney) work well for training. Avoid using grid images (the 2x2 output before upscaling) because the lower resolution hurts caption quality and training effectiveness. Always use the highest resolution Midjourney outputs available.
+
+**Does the trigger word matter?**
+
+The trigger word is a token that the LoRA associates with your style during training. Use a rare or nonsense token like `sks` or `xyz123style` that does not appear in normal prompts. This ensures the LoRA activates predictably without accidentally firing on common vocabulary. Add it consistently to all your training captions.
+
+**Can I merge my style LoRA with other LoRAs?**
+
+Yes. Tools like `kohya-ss` and `sd-scripts` include a `merge_lora.py` script for combining multiple LoRAs at different weights. This lets you combine a style LoRA with a character or object LoRA. Keep total LoRA weight below 1.5 combined to avoid artifacts.
 
 
 ## Related Articles
 
 - [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
-- [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
 - [Stable Diffusion vs Midjourney for Character Design](/ai-tools-compared/stable-diffusion-vs-midjourney-for-character-design/)
 - [DALL-E 3 vs Stable Diffusion for Illustrations](/ai-tools-compared/dall-e-3-vs-stable-diffusion-for-illustrations/)
 - [Stable Diffusion ComfyUI vs Automatic1111 Comparison](/ai-tools-compared/stable-diffusion-comfyui-vs-automatic1111-comparison/)
