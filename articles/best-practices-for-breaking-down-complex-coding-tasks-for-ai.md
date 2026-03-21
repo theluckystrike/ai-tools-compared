@@ -236,6 +236,107 @@ Use your judgment: if you can clearly articulate the interface between two compo
 
 
 
+
+## Benchmark Methodology for AI Tool Comparisons
+
+Meaningful AI tool comparisons require reproducible tests on standardized tasks, not marketing benchmarks.
+
+```python
+import time
+import json
+from dataclasses import dataclass, asdict
+from typing import List
+
+@dataclass
+class BenchmarkResult:
+    model: str
+    task: str
+    latency_ms: float
+    tokens_used: int
+    cost_usd: float
+    quality_score: float  # 1-5, manual rating
+    passed: bool
+
+def run_benchmark(client, model, tasks, cost_per_1m_input, cost_per_1m_output):
+    results = []
+    for task in tasks:
+        start = time.perf_counter()
+        response = client.chat.completions.create(
+            model=model,
+            messages=[{"role": "user", "content": task["prompt"]}],
+            max_tokens=task.get("max_tokens", 500),
+        )
+        latency = (time.perf_counter() - start) * 1000
+        usage = response.usage
+        cost = (usage.prompt_tokens / 1e6 * cost_per_1m_input +
+                usage.completion_tokens / 1e6 * cost_per_1m_output)
+        results.append(BenchmarkResult(
+            model=model,
+            task=task["name"],
+            latency_ms=round(latency),
+            tokens_used=usage.total_tokens,
+            cost_usd=round(cost, 6),
+            quality_score=0.0,  # Fill in manually
+            passed=task["validator"](response.choices[0].message.content),
+        ))
+    return results
+
+# Save results for reproducible comparison:
+with open(f"benchmark_{model}_{int(time.time())}.json", "w") as f:
+    json.dump([asdict(r) for r in results], f, indent=2)
+```
+
+Run benchmarks 5 times and use median values — model outputs vary due to temperature and server-side load. Use temperature=0 for reproducible factual tasks.
+
+## Rate Limit Handling Across AI Providers
+
+All AI APIs enforce rate limits; robust applications handle them gracefully rather than failing.
+
+```python
+import time
+import openai
+import anthropic
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential,
+    retry_if_exception_type,
+)
+
+# OpenAI rate limit handling with exponential backoff:
+@retry(
+    retry=retry_if_exception_type(openai.RateLimitError),
+    wait=wait_exponential(multiplier=1, min=4, max=60),
+    stop=stop_after_attempt(6),
+)
+def call_openai(client, messages, model="gpt-4o-mini"):
+    return client.chat.completions.create(
+        model=model,
+        messages=messages,
+        max_tokens=500,
+    )
+
+# Anthropic rate limit handling:
+@retry(
+    retry=retry_if_exception_type(anthropic.RateLimitError),
+    wait=wait_exponential(multiplier=1, min=4, max=60),
+    stop=stop_after_attempt(6),
+)
+def call_anthropic(client, messages, model="claude-haiku-3-5"):
+    return client.messages.create(
+        model=model,
+        messages=messages,
+        max_tokens=500,
+    )
+
+# Rate limit tiers (approximate, verify in provider docs):
+# OpenAI Tier 1:  500 RPM, 10K TPM (gpt-4o)
+# Anthropic Tier 1: 50 RPM, 40K TPM (claude-3-5-sonnet)
+# After Tier 1: increase by spending $50+ and 7+ days since first charge
+```
+
+Implement a token bucket or leaky bucket in your application layer to avoid hitting rate limits in the first place, rather than relying solely on retry logic.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)

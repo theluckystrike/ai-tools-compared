@@ -228,6 +228,132 @@ The question isn't really whether Tabnine Free works; it's whether the alternati
 
 
 
+
+## Claude API Tool Use Patterns
+
+Tool use (function calling) is Claude's primary mechanism for taking actions and retrieving structured data.
+
+```python
+import anthropic
+
+client = anthropic.Anthropic()
+
+tools = [
+    {
+        "name": "search_database",
+        "description": "Search a product database by query string",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {"type": "string", "description": "Search terms"},
+                "limit": {"type": "integer", "description": "Max results", "default": 5},
+            },
+            "required": ["query"],
+        },
+    }
+]
+
+response = client.messages.create(
+    model="claude-opus-4-6",
+    max_tokens=1024,
+    tools=tools,
+    messages=[{"role": "user", "content": "Find me noise-canceling headphones under $200"}],
+)
+
+# Handle tool call:
+if response.stop_reason == "tool_use":
+    tool_use = next(b for b in response.content if b.type == "tool_use")
+    print(f"Tool: {tool_use.name}")
+    print(f"Input: {tool_use.input}")
+    # Execute your function here, then send result back
+```
+
+Claude returns `stop_reason: "tool_use"` when it wants to call a function. Feed results back in a subsequent message with `role: "user"` and `type: "tool_result"`.
+
+## Context Window Management for Long Documents
+
+Claude's 200K token context window enables processing entire codebases and long documents, but cost scales with context size.
+
+```python
+import anthropic
+import tiktoken  # for token counting approximation
+
+def count_tokens_approx(text):
+    # Rough approximation: 1 token ≈ 4 characters
+    return len(text) // 4
+
+def chunk_document(text, max_chunk_tokens=50000):
+    # Split document into chunks that fit within context
+    paragraphs = text.split("
+
+")
+    chunks = []
+    current_chunk = []
+    current_tokens = 0
+
+    for para in paragraphs:
+        para_tokens = count_tokens_approx(para)
+        if current_tokens + para_tokens > max_chunk_tokens:
+            chunks.append("
+
+".join(current_chunk))
+            current_chunk = [para]
+            current_tokens = para_tokens
+        else:
+            current_chunk.append(para)
+            current_tokens += para_tokens
+
+    if current_chunk:
+        chunks.append("
+
+".join(current_chunk))
+    return chunks
+
+client = anthropic.Anthropic()
+
+# Process a large document:
+with open("large_report.txt") as f:
+    document = f.read()
+
+doc_tokens = count_tokens_approx(document)
+print(f"Document: ~{doc_tokens:,} tokens")
+
+if doc_tokens < 180000:
+    # Fits in single context window
+    response = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=4096,
+        messages=[{"role": "user", "content": f"Summarize:
+
+{document}"}],
+    )
+else:
+    # Chunk and summarize-of-summaries
+    chunks = chunk_document(document)
+    summaries = []
+    for i, chunk in enumerate(chunks):
+        r = client.messages.create(
+            model="claude-haiku-3-5",  # cheaper for intermediate steps
+            max_tokens=1024,
+            messages=[{"role": "user", "content": f"Summarize this section:
+
+{chunk}"}],
+        )
+        summaries.append(r.content[0].text)
+    # Final synthesis with summaries
+    final = client.messages.create(
+        model="claude-opus-4-6",
+        max_tokens=4096,
+        messages=[{"role": "user", "content": "Synthesize these summaries:
+
+" + "
+---
+".join(summaries)}],
+    )
+```
+
+Use claude-haiku-3-5 for intermediate chunked processing and claude-opus-4-6 for final synthesis to balance cost and quality.
+
 ## Related Reading
 
 - [Best AI Coding Assistants Compared](/ai-tools-compared/best-ai-coding-assistants-compared/)
