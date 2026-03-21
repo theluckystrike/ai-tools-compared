@@ -199,6 +199,184 @@ Track your naming convention compliance over time using linter reports. If your 
 
 You can also time your coding sessions. With properly configured AI suggestions, you should spend less time refactoring variable names and more time writing functional code.
 
+## Language-Specific Naming Configuration
+
+Different languages have different conventions. Set up AI tools correctly for each:
+
+```
+Python (.cursorrules):
+- Variable names: snake_case (max 30 chars)
+- Functions: snake_case with action verb prefix
+- Classes: PascalCase
+- Constants: UPPER_SNAKE_CASE
+- Private methods: _leading_underscore
+- Example: get_user_orders(), UserAccount, MAX_RETRIES
+
+JavaScript (.cursorrules):
+- Variable/function: camelCase
+- Classes: PascalCase
+- Constants: UPPER_SNAKE_CASE
+- React components: PascalCase
+- Boolean variables: is_*, has_*, should_* prefix
+- Example: fetchUserOrders(), UserAccount, MAX_RETRIES
+
+Go (.cursorrules):
+- Exported: PascalCase
+- Unexported: camelCase
+- Package names: lowercase single word
+- Interfaces: Reader, Writer pattern
+- Example: GetUserOrders(), userRepository, Reader
+
+Rust (.cursorrules):
+- Variables: snake_case
+- Functions: snake_case
+- Structs/Enums: PascalCase
+- Constants: UPPER_SNAKE_CASE
+- Module names: snake_case
+- Example: get_user_orders(), UserAccount, MAX_RETRIES
+```
+
+Store language-specific rules files in your repository and reference them in team documentation.
+
+## Progressive Enforcement: Feedback Loop Training
+
+AI tools improve through positive feedback loops:
+
+```
+Week 1: AI learns your conventions
+- Accept 90% of correctly named suggestions
+- Reject/refactor incorrectly named ones
+- Keep track of which suggestions you fix
+
+Week 2: Improvement phase
+- AI adjusts based on feedback
+- Acceptance rate should increase to 95%
+- Continue documenting non-compliant suggestions
+
+Week 3: Optimization
+- Configure tool settings based on Week 1-2 patterns
+- Create convention documentation from collected fixes
+- Share with team
+```
+
+This approach trains AI tools through practice, similar to human learning.
+
+## Team Standardization with Shared Configuration
+
+Multi-developer teams benefit from centralized convention enforcement:
+
+```
+Repository structure:
+.cursorrules              # Cursor-specific rules
+.github/
+  copilot-instructions.md # GitHub Copilot instructions
+vscode-settings.json      # VS Code extension settings
+naming-conventions.md     # Human-readable reference
+
+.cursorrules content:
+Your project uses: camelCase for JavaScript, snake_case for Python
+Function prefixes: get*, set*, is*, has*, should*
+Class names: PascalCase with business domain prefix
+Examples:
+  getUserOrders() - correct
+  GetUserOrders() - wrong
+  user_orders = [] - wrong for JavaScript
+```
+
+Distributing these configurations ensures all developers receive consistent suggestions.
+
+## Measuring Naming Convention Compliance
+
+Track actual compliance using linting tools and AI feedback:
+
+```bash
+# Python - check snake_case compliance
+flake8 --select=N801,N802,N803 src/
+
+# JavaScript - ESLint naming
+eslint --rule '{camelcase: error}' src/
+
+# Measure monthly compliance
+eslint src/ --format json | jq '.[] | select(.messages[].rule == "camelcase")' | wc -l
+```
+
+Generate compliance reports monthly showing improvement from AI suggestion refinement.
+
+## Handling Edge Cases and Exceptions
+
+Some names require exceptions to standard conventions. Document these:
+
+```
+Naming Exceptions:
+
+1. Acronyms: HTTP, REST, API (all caps, even in camelCase)
+   - validateHTTPRequest() ✓
+   - validateHttpRequest() ✗
+
+2. Project/Product names: specific external names preserved
+   - connectToSlackAPI() ✓
+   - connectToSlackApi() ✗
+
+3. Single-letter variables: acceptable in specific contexts
+   - for (let i = 0; i < items.length; i++) ✓
+   - let i = getUserById(...) ✗
+
+4. Database/API field names: preserve exact names from external systems
+   - const { user_id } = response // API returns snake_case
+   - const userId = response.user_id // Map to camelCase locally
+```
+
+Communicate these exceptions clearly so AI tools (and humans) understand the boundaries.
+
+## Onboarding New Team Members with AI Configuration
+
+New developers should receive pre-configured AI tools matching the team's conventions:
+
+```
+Developer onboarding checklist:
+
+1. Clone repository
+2. Install AI tool (Cursor, Copilot, etc.)
+3. Copy .cursorrules from repo to home directory
+4. Verify AI suggestions match conventions
+5. Run linter to establish baseline compliance
+6. Review naming-conventions.md
+7. Ask AI: "What naming conventions should I follow in this project?"
+
+Expected result: AI immediately suggests code following established conventions
+```
+
+This reduces onboarding friction and ensures consistency from day one.
+
+## Customizing AI Behavior Per File Type
+
+Advanced configuration targets specific file patterns:
+
+```toml
+# tabnine.toml example
+[file_patterns."*.py"]
+naming_convention = "snake_case"
+max_identifier_length = 40
+
+[file_patterns."*.ts"]
+naming_convention = "camelCase"
+max_identifier_length = 35
+
+[file_patterns."*.rs"]
+naming_convention = "snake_case"
+max_identifier_length = 50
+
+[file_patterns."*.test.ts"]
+naming_convention = "camelCase"
+# Test functions often longer, allow more descriptive names
+max_identifier_length = 60
+```
+
+File-based configuration adapts AI suggestions to context-specific requirements.
+
+
+
+
 
 ## Related Articles
 

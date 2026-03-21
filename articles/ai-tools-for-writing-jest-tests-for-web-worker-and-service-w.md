@@ -218,6 +218,134 @@ This helper standardizes async communication testing across your test suite.
 AI tools consistently make several mistakes when generating Web Worker tests:
 
 **Missing `terminate()` calls**: Generated tests often forget to call `worker.terminate()` in cleanup, leading to memory leaks across test runs. Always add cleanup in `afterEach`:
+## Handling Worker Lifecycle in Tests
+
+Testing workers requires careful management of setup and teardown to prevent test pollution. AI can help generate complete test harnesses:
+
+```javascript
+// Complete test suite with proper lifecycle management
+describe('ImageProcessingWorker', () => {
+  let worker;
+  const WORKER_TIMEOUT = 5000;
+
+  beforeAll(() => {
+    // Set up shared resources if needed
+  });
+
+  beforeEach(() => {
+    worker = new Worker('imageProcessor.worker.js');
+    worker.onerror = (error) => {
+      fail(`Worker error: ${error.message}`);
+    };
+  });
+
+  afterEach(() => {
+    if (worker) {
+      worker.terminate();
+    }
+  });
+
+  afterAll(() => {
+    // Clean up resources
+  });
+
+  test('processes image buffer with timeout protection', (done) => {
+    const timeout = setTimeout(() => {
+      done(new Error('Worker timeout'));
+    }, WORKER_TIMEOUT);
+
+    worker.onmessage = (event) => {
+      clearTimeout(timeout);
+      expect(event.data.processed).toBe(true);
+      done();
+    };
+
+    const imageData = new Uint8Array(1000);
+    worker.postMessage({ type: 'PROCESS_IMAGE', data: imageData });
+  });
+});
+```
+
+This pattern prevents hanging tests and ensures proper resource cleanup.
+
+## Testing Worker Error Handling
+
+Most test suites only cover happy paths. Ask AI to generate comprehensive error scenarios:
+
+> "Generate Jest tests for a worker that handles these error cases:
+> 1. Invalid input data
+> 2. Worker initialization failure
+> 3. Network timeout during fetch
+> 4. Message malformation
+> Include proper error assertions and cleanup."
+
+AI produces thorough test coverage that catches edge cases developers often overlook.
+
+## Mocking External Dependencies in Workers
+
+Workers frequently call fetch or access browser APIs. Setting up proper mocks requires specific patterns:
+
+```javascript
+describe('FetchWorker with Mocks', () => {
+  beforeEach(() => {
+    global.fetch = jest.fn();
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test('worker handles fetch failures gracefully', (done) => {
+    global.fetch.mockRejectedValueOnce(new Error('Network error'));
+
+    worker.onmessage = (event) => {
+      expect(event.data.error).toBeDefined();
+      expect(event.data.error).toContain('Network error');
+      done();
+    };
+
+    worker.postMessage({ type: 'FETCH_DATA', url: '/api/data' });
+  });
+});
+```
+
+AI can generate these mock patterns systematically across your test suite.
+
+## Performance Testing with Workers
+
+Beyond functional correctness, test worker performance using AI-suggested patterns:
+
+```javascript
+test('worker processes 10000 items in under 2 seconds', (done) => {
+  const startTime = performance.now();
+
+  worker.onmessage = (event) => {
+    const endTime = performance.now();
+    const duration = endTime - startTime;
+
+    expect(duration).toBeLessThan(2000);
+    expect(event.data.processedCount).toBe(10000);
+    done();
+  };
+
+  const largeDataset = Array.from({ length: 10000 }, (_, i) => i);
+  worker.postMessage({ type: 'BULK_PROCESS', data: largeDataset });
+});
+```
+
+This ensures your worker optimization efforts actually improve measurable performance.
+
+## Integration Testing with Service Workers
+
+Service workers interact with caches, network requests, and offline scenarios. AI helps construct these integration tests:
+
+> "Create Jest tests for a service worker that:
+> 1. Caches successful API responses
+> 2. Serves from cache when offline
+> 3. Updates cache on next online request
+> Use jest-mock-fetch and Cache API mocks."
+
+The result is production-ready tests that validate actual service worker behavior.
 
 ```javascript
 afterEach(() => {

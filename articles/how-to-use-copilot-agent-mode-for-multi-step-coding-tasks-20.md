@@ -191,6 +191,99 @@ Pay attention to how agent mode interprets your requests and adjust your communi
 
 Agent mode represents a significant evolution in AI-assisted development. By understanding when and how to use it effectively, you can accelerate complex development tasks while maintaining code quality.
 
+## Structuring Agent Mode Requests for Maximum Effectiveness
+
+The way you phrase requests dramatically impacts agent mode results. Effective requests include:
+
+1. **Clear objective** - what you want to accomplish in one sentence
+2. **Scope boundaries** - which files or areas the agent can modify
+3. **Technical constraints** - compatibility requirements, frameworks, libraries
+4. **Success criteria** - how you'll know the task is complete
+
+Example structured request:
+
+```
+Objective: Add real-time user notification system to our application
+
+Scope:
+- Create new notification service in src/services/
+- Update React components in src/components/ that need notifications
+- Add backend endpoint in api/notifications.ts
+- Do not modify database schema or migration files
+
+Constraints:
+- Use React hooks and Socket.io for real-time updates
+- Integrate with existing Redux store for notification state
+- Maintain TypeScript strict mode
+
+Success criteria:
+- User receives notifications in real-time when actions occur
+- Notification UI component displays in main app layout
+- Tests pass in CI/CD pipeline
+```
+
+This level of detail prevents agent mode from making incorrect assumptions.
+
+## Handling Agent Mode Failures and Iterations
+
+When agent mode produces incomplete or incorrect results, provide specific feedback rather than starting over:
+
+Instead of: "That didn't work, try again"
+
+Use: "The notification service connected to the wrong database. Update the connection string in src/services/notificationService.ts to use the secondary database cluster we discussed."
+
+This targeted feedback trains the agent to refine its approach rather than restarting from scratch.
+
+## Cost Considerations for Agent Mode
+
+Agent mode typically costs more per interaction than traditional completions because the agent explores multiple code paths. For a $20 Copilot monthly subscription, agent mode requests count against your usage quota. Consider using agent mode strategically:
+
+- Large refactoring tasks (worth the cost)
+- Simple single-file changes (use inline editing instead)
+- Code review and analysis (worth the cost)
+- Auto-completion for obvious patterns (use inline instead)
+
+## Comparing Agent Mode Across Tools
+
+**GitHub Copilot Agent Mode** - Best for VS Code users, integrates with GitHub repositories, strong for multi-file changes
+
+**Cursor Composer** - Similar functionality with additional file manipulation capabilities, better for large-scale refactoring
+
+**Claude with Code** - Requires file uploads/context but handles very complex reasoning about codebases
+
+Test a small refactoring task with your primary tool, then benchmark against alternatives if cost is a concern.
+
+## Security and Code Review with Agent Mode
+
+Never accept agent mode changes without reviewing them. Even well-structured requests can produce security issues or performance problems. Establish a review process:
+
+1. Agent mode proposes changes
+2. Developer reviews all file modifications
+3. Developer runs existing tests locally
+4. Developer runs security linter before commit
+5. Changes go through normal PR review
+
+This process is faster than manual implementation but maintains code safety standards.
+
+## Exporting and Sharing Agent Mode Results
+
+After agent mode completes a complex task, export the results for team reference:
+
+```bash
+# Generate a detailed change summary
+git diff HEAD~1..HEAD > task_completion.patch
+
+# Create a summary document
+cat > task_summary.md << EOF
+## Task: [Your task description]
+## Files modified: $(git diff HEAD~1..HEAD --name-only | wc -l)
+## Lines changed: $(git diff HEAD~1..HEAD --stat | tail -1)
+## Approach: [How agent mode solved the problem]
+EOF
+```
+
+This documentation helps team members understand architectural decisions and ensures knowledge transfer beyond the original developer.
+
 
 ## Related Articles
 
