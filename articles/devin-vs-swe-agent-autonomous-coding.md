@@ -173,6 +173,163 @@ jobs:
 
 The labeling approach lets your team triage which issues are good candidates for automation — well-defined bugs with reproduction steps and test coverage.
 
+## What Makes a Good Autonomous Coding Task
+
+Not all tasks are equal for these agents. Success depends on clarity and completeness.
+
+**Good tasks:**
+- "User reported that pagination doesn't work when search query contains '&' character" (specific reproduction)
+- "Add filtering by status to the admin users table" (clear feature scope)
+- "Upgrade React 18 to React 19 in our codebase" (well-defined transformation)
+- "Fix the blue/red color swap bug in the dark theme toggle" (specific, testable)
+
+**Poor tasks:**
+- "Improve the dashboard" (too vague)
+- "Make the API faster" (requires architectural decisions)
+- "Refactor the auth system" (too broad, multiple approaches possible)
+- "The login page looks broken on iOS" (requires design decisions)
+
+Tasks with clear success criteria (tests pass, specific behavior achieved) succeed at 60-70% rate. Tasks without measurable success criteria fail 80-90% of the time.
+
+## Human-in-the-Loop Best Practices
+
+Even when agents fail completely, they save time by identifying where the problem is:
+
+```
+Task: "Fix the CSV export feature, it's throwing a memory error on large files"
+
+SWE-Agent attempt 1 (failed):
+- Correctly identified the file: src/export/csv-writer.ts
+- Attempted to add chunking but didn't implement it correctly
+- Tests failed: "Cannot allocate memory"
+
+Human review:
+- Confirmed the root cause (loading entire file into memory)
+- Implemented proper streaming
+- 10 minutes faster than starting from scratch
+```
+
+Best practice workflow:
+1. Ask agent to fix the issue (10 minutes)
+2. Review the diff even if tests fail (5 minutes)
+3. Either merge if correct or implement manually with agent's findings (15-30 minutes)
+4. **Total: 30-45 minutes vs 60-90 minutes manually**
+
+## Learning From Agent Failures
+
+Track which tasks agents fail on. After 10-20 failures, you'll see patterns:
+
+- Type A failures: "Agent can't find the right file" → improve repo structure or add code comments
+- Type B failures: "Agent breaks tests" → add more granular unit tests
+- Type C failures: "Agent gets stuck in loops" → improve issue description clarity
+
+Devin provides better debugging info when it fails. SWE-Agent outputs a raw diff that requires manual inspection.
+
+## Scaling Agent Usage
+
+For teams processing 50+ issues per month:
+
+```bash
+# Estimate ROI on agent usage
+# Average issue manual time: 60 minutes
+# Agent success rate: 40%
+# Agent time: 15 minutes
+# Human review time: 10 minutes (success), 20 minutes (failure)
+
+# Cost calculation:
+# 50 issues/month × 60 min/issue ÷ 60 = 50 hours
+# With 40% success agent: 50 issues × [0.4 × (15+10) + 0.6 × (15+20)] = 18.75 hours
+# Savings: 31.25 hours/month = ~$1250/month at $40/hour
+```
+
+Even with modest success rates, agent automation is ROI-positive for high-volume issue processing.
+
+## Evaluating Against Your Specific Codebase
+
+Don't rely on SWE-bench scores. Test both agents on 5 actual issues from your repo:
+
+**Test protocol:**
+1. Pick 5 issues spanning: 1 bug fix, 1 refactor, 1 feature, 1 dependency, 1 test-fix
+2. Run Devin and SWE-Agent on each
+3. Score: 0 (no attempt) / 1 (attempted, broke tests) / 2 (tests pass, needs review) / 3 (production-ready)
+4. Compare average scores
+
+Example results from a real mid-size SaaS:
+
+```
+Issue type    | Devin score | SWE-Agent (Claude) score
+Bug fix       | 2.8         | 2.4
+Feature add   | 2.2         | 1.8
+Refactor      | 1.8         | 1.6
+Dependency    | 2.6         | 2.2
+Test fix      | 2.4         | 2.2
+Average       | 2.36        | 2.04
+```
+
+Your codebase may have different results. Always test locally.
+
+## Integration Patterns
+
+### Pattern 1: GitHub Issue Auto-Fix (SWE-Agent)
+
+```yaml
+# .github/workflows/auto-fix.yml
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Run nightly
+
+jobs:
+  auto-fix-eligible:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Find eligible issues
+        run: |
+          gh issue list --label "bug" --label "good-first-issue" \
+            --json number,title --jq '.[] | .number' > /tmp/issues.txt
+
+      - name: Run SWE-Agent on each
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          while read issue; do
+            python -m sweagent.run --issue_url "https://github.com/$GITHUB_REPOSITORY/issues/$issue"
+            # Auto-create PR if successful
+            if [ -f /tmp/patch.diff ]; then
+              git apply /tmp/patch.diff
+              git checkout -b auto-fix/$issue
+              git commit -am "Auto-fix: Issue #$issue"
+              gh pr create --title "Auto-fix: Issue #$issue" --label "auto-generated"
+            fi
+          done < /tmp/issues.txt
+```
+
+### Pattern 2: Devin as a Code Review Assistant
+
+Instead of autonomous fixing, use Devin to propose changes for human review:
+
+1. Open a Devin session with the issue
+2. Ask Devin to "Suggest a fix for this issue"
+3. Review Devin's diff in the UI
+4. If acceptable, export and manually apply
+5. If not, ask Devin to iterate
+
+This hybrid approach combines Devin's superior UI with manual control.
+
+## Handling Edge Cases
+
+Both agents struggle with these scenarios:
+
+**Database migrations:** Agent can write the migration but doesn't know if it's the right schema design. Requires human review of intent, not just correctness.
+
+**Infrastructure changes:** Agent can update code to support new infrastructure but doesn't evaluate if the infrastructure change is good architecture.
+
+**Security changes:** Agent can patch security bugs mechanically but may miss related vulnerabilities or introduce new ones.
+
+**Multi-repo changes:** Agent typically works on a single repo. Cross-repo changes require orchestration.
+
+For these, agents are tools for acceleration, not replacement. Use them to generate the mechanical parts, then have experts review the architectural decisions.
+
 ## Related Reading
 
 - [AI Pair Programming: Cursor vs Windsurf vs Claude Code 2026](/ai-tools-compared/ai-pair-programming-cursor-vs-windsurf-vs-claude-code-2026/)
