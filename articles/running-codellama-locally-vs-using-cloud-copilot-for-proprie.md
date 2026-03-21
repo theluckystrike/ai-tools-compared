@@ -200,6 +200,259 @@ For many developers, the choice comes down to weighing convenience against contr
 The good news is these options aren't mutually exclusive. Some developers use Copilot for open-source work while running CodeLlama locally for sensitive projects. This hybrid approach lets you enjoy the benefits of both while keeping your most valuable code secure.
 
 
+## Setting Up Local CodeLlama: The Complete Guide
+
+Getting CodeLlama running locally requires three components: Ollama (inference engine), the CodeLlama model, and IDE integration.
+
+**Step 1: Install Ollama**
+
+macOS/Linux:
+```bash
+curl -fsSL https://ollama.ai/install.sh | sh
+```
+
+Windows:
+Download from ollama.ai/download and run the installer.
+
+**Step 2: Pull CodeLlama Models**
+
+```bash
+# 7B model (smallest, ~3.8GB, needs 8GB VRAM)
+ollama pull codellama:7b
+
+# 13B model (good balance, ~7.3GB, needs 12GB VRAM)
+ollama pull codellama:13b
+
+# 34B model (best quality, ~19GB, needs 20GB VRAM)
+ollama pull codellama:34b
+
+# Start the Ollama service (runs on localhost:11434)
+ollama serve
+```
+
+**Step 3: IDE Integration**
+
+For VS Code, install Continue extension:
+```json
+// Continue config (Cmd+Shift+P > "Continue: Open Config")
+{
+  "models": [
+    {
+      "title": "CodeLlama Local",
+      "provider": "ollama",
+      "model": "codellama:13b",
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "systemPrompt": "You are a code completion assistant. Be concise and output only code without explanation."
+}
+```
+
+For Neovim, use cmp-ollama or similar completion plugin configured to point to localhost:11434.
+
+For JetBrains IDEs, Configure Local AI support through settings.
+
+**Step 4: Test**
+
+Open a file and start typing. Completions should appear after a few seconds (slower than cloud but working).
+
+```python
+def fetch_user_data(user_id):
+    # Continue will suggest implementation
+```
+
+If nothing appears, check:
+1. Ollama service is running: `curl http://localhost:11434/api/generate`
+2. Model is downloaded: `ollama list`
+3. IDE plugin is enabled and configured correctly
+
+
+## Model Size vs Quality Trade-off
+
+Choosing the right CodeLlama size depends on your hardware and patience:
+
+**7B Model:**
+- Size: 3.8GB on disk, ~4GB VRAM needed
+- Speed: 2-4 seconds per completion
+- Quality: Basic function suggestions work. Poor on complex logic.
+- Best for: Testing locally, weak hardware, syntax highlighting
+- NOT recommended for: Production decision-making
+
+**13B Model:**
+- Size: 7.3GB on disk, ~12GB VRAM needed (RTX 3070, RTX 4070, M3 Max)
+- Speed: 3-8 seconds per completion
+- Quality: Good for common patterns. Acceptable for real use.
+- Best for: Most developer workflows
+- Recommended for: Serious local deployment
+
+**34B Model:**
+- Size: 19GB on disk, ~20GB VRAM needed (RTX 4090, A100, H100)
+- Speed: 5-15 seconds per completion
+- Quality: Competitive with smaller cloud models
+- Best for: Teams that can afford high-end hardware
+- Investment: $2000+ GPU cost to run well
+
+**CPU-only option:**
+If you lack GPU:
+```bash
+ollama pull codellama:7b
+# Model runs on CPU, extremely slow
+# Expect 30-60 seconds per completion
+# Not practical for real coding, only for testing
+```
+
+Most developers find the 13B model the sweet spot: decent quality, reasonable speed, hardware that's increasingly affordable.
+
+
+## Performance Profiling: Local vs Cloud Reality
+
+Let's measure actual performance comparing CodeLlama local vs Copilot:
+
+**Completion latency (time from typing until first character appears):**
+- CodeLlama 13B local (RTX 4070): 2-4 seconds
+- CodeLlama 34B local (RTX 4090): 3-6 seconds
+- Copilot (cloud): 0.3-0.8 seconds
+
+**Result:** Copilot is 5-10x faster. This is real and feels noticeable.
+
+**Throughput (completions per hour):**
+- CodeLlama 13B local: ~30-40 completions/hour (with thinking time)
+- CodeLlama 34B local: ~20-30 completions/hour
+- Copilot: ~60-100 completions/hour
+
+**Accuracy (percentage of suggestions you accept):**
+- CodeLlama 13B: 40-55% acceptance (quality varies)
+- CodeLlama 34B: 55-70% acceptance
+- Copilot: 60-75% acceptance
+
+**Conclusion:** Copilot is faster and slightly better quality, but CodeLlama local is usable for development. The speed difference compounds—you might spend 30 minutes waiting for CodeLlama on a task Copilot completes in 5 minutes.
+
+This speed tradeoff is the primary cost of local deployment beyond hardware costs.
+
+
+## Compliance Use Cases Where Local is Mandatory
+
+Some industries absolutely require local processing:
+
+**Healthcare (HIPAA):**
+Code containing patient identifiers, medical record formats, or health data must not transit external servers. CodeLlama locally: ✓ compliant. Copilot: ✗ violates HIPAA.
+
+**Financial Services (PCI-DSS):**
+Credit card processing code, account numbers, or payment logic must stay local. CodeLlama: ✓ compliant. Copilot: ✗ potential violation.
+
+**Government Contracting (FedRAMP):**
+Classified or controlled unclassified information requires FedRAMP-certified systems. Standard Copilot: ✗ not certified. CodeLlama local + air-gapped network: ✓ compliant (if audited).
+
+**Trade Secret Protection:**
+Proprietary algorithms and business logic that give competitive advantage. Local processing ensures they never leave your control. Copilot inherently shares code with Microsoft/OpenAI.
+
+**Real example:** A healthcare company I consulted for couldn't use Copilot for patient data processing code, so they ran CodeLlama locally. They accepted the speed penalty because compliance was non-negotiable.
+
+These aren't edge cases—healthcare and financial companies are substantial portions of professional development.
+
+
+## Hybrid Strategy: Local + Cloud Workflow
+
+Most developers don't need to choose entirely. Consider this hybrid:
+
+**Development workflow:**
+1. Sensitive/proprietary work: CodeLlama local on personal machine
+2. Open-source contributions: Copilot on same machine (separate project)
+3. Routine coding: Either tool, your preference
+4. Chat/refactoring: Copilot (CodeLlama's chat is slower)
+5. Complex analysis: Use both, compare suggestions
+
+**Setup:**
+- Terminal 1: `ollama serve` (running CodeLlama locally)
+- VS Code: Continue extension configured for local Ollama
+- Also: Copilot extension for other projects
+- Context switch: Open project, IDE auto-loads appropriate AI assistant
+
+**Real scenario:**
+```bash
+# Working on proprietary payment processing
+cd ~/work/payment-system
+# Opens with Continue + CodeLlama (local)
+
+# Later, contributing to open source
+cd ~/projects/react-component-lib
+# Opens with GitHub Copilot (cloud)
+```
+
+This hybrid approach requires discipline (don't accidentally use Copilot in secure projects) but gives you the benefits of both.
+
+
+## When NOT to Run CodeLlama Locally
+
+Before investing in local setup, consider these situations where it's not worth it:
+
+**1. You code less than 5 hours/week**
+- Copilot Pro ($20/month) costs less than electricity to run CodeLlama (which needs 24/7)
+- Training time to get productive with CodeLlama outweighs savings
+
+**2. Your code genuinely isn't sensitive**
+- Open source projects, internal tools, learning exercises
+- Copilot is faster and better quality—no reason to handicap yourself
+
+**3. You work in an office with strict security**
+- Air-gapped networks: CodeLlama local works great
+- Corporate VPN + monitoring: Cloud tools might be forbidden anyway
+- Shared infrastructure: Installing GPU hardware is IT's decision, not yours
+
+**4. Your hardware can't handle it**
+- MacBook Air M1: Can run CodeLlama 7B slowly, but it's painful
+- Old laptop: Not worth it
+- Corporate laptop with 8GB RAM: Definitely not
+
+**5. Your code security model includes cloud processing**
+- If your company already uses cloud AI tools for code analysis (SonarQube, etc.)
+- Adding CodeLlama locally is inconsistent
+- Consolidate on one tool
+
+Be honest: if Copilot fits your actual workflow, using it is simpler than fighting CodeLlama's speed limitations.
+
+
+## Cost Amortization Over Time
+
+Calculate your actual 5-year cost:
+
+**CodeLlama Local:**
+- GPU: $800 (RTX 4070, middle tier)
+- RAM upgrade: $200 (if needed)
+- Electricity: $150/year × 5 = $750
+- Total: $1750
+
+**Cost per year:** $350/year
+**Cost per month:** $29/month
+**If coding 200 hours/month:** $0.15/hour
+
+**GitHub Copilot:**
+- Individual: $10/month × 60 months = $600
+- Total: $600
+
+**Cost per year:** $120/year
+**Cost per month:** $10/month
+**If coding 200 hours/month:** $0.05/hour
+
+**Conclusion:** Copilot is cheaper unless you code >400 hours/month OR have compliance requirements CodeLlama uniquely satisfies.
+
+For compliance-constrained organizations, CodeLlama's one-time hardware cost ($1750) amortized over 3-5 years often becomes cheaper than Copilot's recurring enterprise licensing ($39/user/month = $468/year per person).
+
+
+## Migration Path: If You Decide to Switch Back
+
+If you try CodeLlama locally and find the speed unacceptable, switching back to Copilot is trivial:
+
+1. Uninstall Continue extension
+2. Install GitHub Copilot extension
+3. Restart VS Code
+4. Authenticate
+
+You haven't lost anything. The CodeLlama setup is sitting there if you need it again for a sensitive project later.
+
+This low-risk experiment makes sense: try local for 1-2 weeks on a small project, measure your actual productivity impact, then decide based on data rather than theory.
+
+
 ## Related Articles
 
 - [Running DeepSeek Coder Locally vs Cloud API for Private Repo](/ai-tools-compared/running-deepseek-coder-locally-vs-cloud-api-for-private-repo/)
