@@ -245,6 +245,8 @@ With proper configuration, AI autocomplete becomes a helpful colleague who knows
 
 
 
+
+
 ## Related Articles
 
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)

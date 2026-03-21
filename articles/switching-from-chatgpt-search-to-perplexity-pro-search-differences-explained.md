@@ -364,6 +364,8 @@ Follow the "yes" path majority voting. If Perplexity wins most questions, start 
 
 
 
+
+
 ## Related Articles
 
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)

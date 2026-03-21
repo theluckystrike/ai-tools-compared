@@ -480,6 +480,8 @@ convert input.png -resize 1920x1080 hero-desktop.png
 
 
 
+
+
 ## Related Articles
 
 - [How to Export Dall E Generated Images at Full Resolution](/ai-tools-compared/how-to-export-dall-e-generated-images-at-full-resolution-before-leaving/)

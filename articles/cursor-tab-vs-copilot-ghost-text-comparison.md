@@ -445,6 +445,8 @@ Cursor's higher cost is offset by learning your codebase over time. Copilot is m
 
 
 
+
+
 ## Related Articles
 
 - [Switching from Copilot Ghost Text to Cursor Tab Autocomplete](/ai-tools-compared/switching-from-copilot-ghost-text-to-cursor-tab-autocomplete/)

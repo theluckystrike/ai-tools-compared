@@ -288,6 +288,8 @@ For a team already invested in Canva's design ecosystem, the video capabilities 
 
 
 
+
+
 ## Related Articles
 
 - [Best AI Video Editor 2026 to Intelligent Video Production](/ai-tools-compared/best-ai-video-editor-2026/)

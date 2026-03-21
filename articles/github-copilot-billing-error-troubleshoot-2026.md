@@ -272,6 +272,8 @@ Use GitHub's **Support** → **Billing support** category for specialized help. 
 
 
 
+
+
 ## Related Articles
 
 - [GitHub Copilot Usage Based Billing How API Calls Are Counted](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)

@@ -269,6 +269,8 @@ Both GitHub Copilot and Claude Code serve database developers well, but their st
 
 
 
+
+
 ## Related Articles
 
 - [Copilot vs Claude Code for Writing Jest Test](/ai-tools-compared/copilot-vs-claude-code-for-writing--jest-test-s/)

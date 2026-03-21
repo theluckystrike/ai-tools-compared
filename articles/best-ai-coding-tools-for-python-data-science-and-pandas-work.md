@@ -256,6 +256,8 @@ df['new_col'] = df['a'] * df['b']
 
 
 
+
+
 ## Related Articles
 
 - [Best AI Code Completion for Python Data Science 2026](/ai-tools-compared/ai-code-completion-python-data-science-2026/)

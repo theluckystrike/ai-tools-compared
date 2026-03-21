@@ -330,6 +330,8 @@ Review Codeium's privacy policy for current details. Project-level rules in `.wi
 
 
 
+
+
 ## Related Articles
 
 - [Migrate Windsurf AI Rules to Cursor Dot Cursor Rules Format](/ai-tools-compared/migrate-windsurf-ai-rules-to-cursor-dot-cursor-rules-format/)

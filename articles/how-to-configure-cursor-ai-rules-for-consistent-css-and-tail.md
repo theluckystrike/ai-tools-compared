@@ -360,6 +360,8 @@ Group responsive prefixes together and keep them in ascending order (sm before m
 
 
 
+
+
 ## Related Articles
 
 - [Cursor AI Rules Files How to Customize AI Behavior](/ai-tools-compared/cursor-ai-rules-files-how-to-customize-ai-behavior-for-your-project/)

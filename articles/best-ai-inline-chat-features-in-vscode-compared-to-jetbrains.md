@@ -271,6 +271,8 @@ From JetBrains to VSCode:
 
 
 
+
+
 ## Related Articles
 
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)

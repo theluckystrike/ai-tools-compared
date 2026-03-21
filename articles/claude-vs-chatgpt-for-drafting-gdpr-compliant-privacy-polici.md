@@ -279,6 +279,8 @@ Create a GDPR-compliant privacy policy for a [tech stack] application. For each 
 
 
 
+
+
 ## Related Articles
 
 - [AI Coding Tool GDPR Compliance Checklist for European Engine](/ai-tools-compared/ai-coding-tool-gdpr-compliance-checklist-for-european-engine/)

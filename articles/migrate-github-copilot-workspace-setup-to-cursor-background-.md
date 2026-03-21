@@ -237,6 +237,8 @@ Excluding folders like `node_modules` reduces the agent's workload without losin
 
 
 
+
+
 ## Related Articles
 
 - [How to Migrate From Copilot for Neovim](/ai-tools-compared/migrate-copilot-for-neovim-setup-to-claude-code-terminal-wor/)

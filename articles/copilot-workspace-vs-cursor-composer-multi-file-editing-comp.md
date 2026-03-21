@@ -375,6 +375,8 @@ Use **Cursor Composer** when:
 
 
 
+
+
 ## Related Articles
 
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)

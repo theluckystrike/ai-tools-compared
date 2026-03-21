@@ -488,6 +488,8 @@ This pipeline check ensures that any changes to Claude Code configuration mainta
 
 
 
+
+
 ## Related Articles
 
 - [aider vs Claude Code: Terminal AI Coding Assistants Compared](/ai-tools-compared/aider-vs-claude-code-terminal-ai-comparison/)

@@ -248,6 +248,8 @@ Experiment with different input types—some tools handle website URLs, document
 
 
 
+
+
 ## Related Articles
 
 - [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)

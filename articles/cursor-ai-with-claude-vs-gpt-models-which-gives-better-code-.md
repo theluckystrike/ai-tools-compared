@@ -376,6 +376,8 @@ cursor.setModel("gpt-4o")              // Switches to GPT-4o
 
 
 
+
+
 ## Related Articles
 
 - [Cursor AI Switching Between Claude and GPT Models Extra Cost](/ai-tools-compared/cursor-ai-switching-between-claude-and-gpt-models-extra-cost/)

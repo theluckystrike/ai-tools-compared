@@ -318,6 +318,8 @@ OpenAI's `response_format` with `json_schema` guarantees schema-valid output. An
 
 
 
+
+
 ## Related Articles
 
 - [Best AI Assistant for Product Managers Writing Sprint](/ai-tools-compared/best-ai-assistant-for-product-managers-writing-sprint-retrospective-summaries-from-notes-2026/)

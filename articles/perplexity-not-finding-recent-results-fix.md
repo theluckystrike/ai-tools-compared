@@ -372,6 +372,8 @@ Most "not finding recent results" issues resolve through scope settings, query r
 
 
 
+
+
 ## Related Articles
 
 - [Perplexity Pro Search Not Working Fix (2026)](/ai-tools-compared/perplexity-pro-search-not-working-fix-2026/)

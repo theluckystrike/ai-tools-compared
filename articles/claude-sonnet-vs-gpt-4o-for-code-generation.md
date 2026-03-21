@@ -411,6 +411,8 @@ Both models are competitively priced at $3/input million tokens and $15/output m
 
 
 
+
+
 ## Related Articles
 
 - [Claude Sonnet vs GPT-4o for Code Review Accuracy Comparison](/ai-tools-compared/claude-sonnet-vs-gpt-4o-for-code-review-accuracy-comparison-2026/)
