@@ -6,7 +6,7 @@ date: 2026-03-16
 author: theluckystrike
 permalink: /ai-code-generation-for-java-reactive-programming-with-projec/
 categories: [guides, comparisons]
-score: 7
+score: 9
 voice-checked: true
 reviewed: true
 intent-checked: true
