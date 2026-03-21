@@ -13,6 +13,7 @@ score: 8
 voice-checked: true
 intent-checked: true
 ---
+{% raw %}
 
 ## AI Tools for Writing GitHub Actions Workflows (2026)
 
@@ -587,3 +588,4 @@ Always validate workflows with `act` (local testing) before merging to main bran
 - [Copilot vs Claude Code for Writing GitHub Actions Cicd Workf](/ai-tools-compared/copilot-vs-claude-code-for-writing-github-actions-cicd-workf/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}

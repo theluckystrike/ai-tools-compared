@@ -13,6 +13,7 @@ voice-checked: true
 intent-checked: true
 permalink: /best-ai-tools-for-code-review-automation-2026/
 ---
+{% raw %}
 
 # Best AI Tools for Code Review Automation 2026
 
@@ -270,3 +271,4 @@ Start with a 2-week pilot on one repository, measure the impact on review time a
 - [Free AI Tools for Writing Bash Scripts and Automation](/ai-tools-compared/free-ai-tools-for-writing-bash-scripts-and-automation/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
+{% endraw %}
