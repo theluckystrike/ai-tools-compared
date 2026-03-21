@@ -2,9 +2,12 @@
 layout: default
 title: "Open Source AI Code Completion for Neovim Without Cloud API Keys Compared"
 description: "A practical comparison of self-hosted AI code completion solutions for Neovim that work entirely offline without requiring cloud API keys."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "AI Tools Compared"
 permalink: /open-source-ai-code-completion-for-neovim-without-cloud-api-/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 {% raw %}

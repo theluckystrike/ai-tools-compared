@@ -2,9 +2,12 @@
 layout: default
 title: "Self-Hosted AI Tool for Generating OpenAPI Specs from Existing Code 2026"
 description: "Learn how to run AI-powered OpenAPI spec generation entirely on your infrastructure. This guide covers local LLMs, self-hosted solutions, and practical implementation for developers who need data privacy and full control."
-date: 2026-03-21
-author: theluckystrike
+date: 2026-03-16
+author: "AI Tools Compared"
 permalink: /self-hosted-ai-tool-for-generating-openapi-specs-from-existi/
+reviewed: true
+score: 8
+categories: [guides]
 ---
 
 ## Why Self-Hosted OpenAPI Generation Matters
@@ -13,7 +16,7 @@ When you're building APIs in regulated industries, handling proprietary code, or
 
 Self-hosted AI tools for generating OpenAPI specs solve this problem by running inference locally or on your own infrastructure. You get the productivity benefits of AI-assisted spec generation without the data exposure risk.
 
-## The Self-Hosted Landscape in 2026
+## The Self-Hosted ecosystem in 2026
 
 Running capable language models locally has become surprisingly accessible. The key options for self-hosted OpenAPI spec generation fall into three categories.
 
