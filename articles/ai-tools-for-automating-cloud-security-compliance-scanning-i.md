@@ -8,7 +8,7 @@ author: theluckystrike
 permalink: /ai-tools-for-automating-cloud-security-compliance-scanning-i/
 categories: [security, guides]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 tags: [ai-tools-compared, security, artificial-intelligence]
