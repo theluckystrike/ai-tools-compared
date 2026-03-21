@@ -8,7 +8,7 @@ permalink: /how-to-use-ai-to-generate-timezone-edge-case-test-data/
 categories: [guides]
 tags: [ai-tools-compared, testing, artificial-intelligence]
 reviewed: true
-score: 8
+score: 9
 intent-checked: true
 voice-checked: true
 ---
