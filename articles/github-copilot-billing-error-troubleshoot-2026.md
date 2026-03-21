@@ -274,7 +274,8 @@ Use GitHub's **Support** → **Billing support** category for specialized help. 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [GitHub Copilot Usage Based Billing How API Calls Are Counted](/ai-tools-compared/github-copilot-usage-based-billing-how-api-calls-are-counted/)
 - [Copilot vs Cursor for Writing Rust Error Handling with](/ai-tools-compared/copilot-vs-cursor-for-writing-rust-error-handling-with-custo/)

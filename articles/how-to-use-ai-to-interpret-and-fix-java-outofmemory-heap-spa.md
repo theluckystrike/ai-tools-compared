@@ -251,7 +251,8 @@ If the application now operates within stable memory bounds during extended oper
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Debugging Memory Leaks Shown](/ai-tools-compared/best-ai-assistant-for-debugging-memory-leaks-shown-in-chrome-devtools-heap-snapshot/)
 - [How to Use AI to Interpret Elixir GenServer Crash Reports](/ai-tools-compared/how-to-use-ai-to-interpret-elixir-genserver-crash-reports-an/)

@@ -260,7 +260,8 @@ For teams writing extensive test suites, the time saved from better suggestions 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Autocomplete Comparison for Writing SQL Queries Inside](/ai-tools-compared/ai-autocomplete-comparison-for-writing-sql-queries-inside-id/)
 - [AI Code Suggestion Quality When Working With Environment Var](/ai-tools-compared/ai-code-suggestion-quality-when-working-with-environment-var/)

@@ -327,9 +327,10 @@ Choose targeted fixes when:
 
 
 
-## Related Reading
 
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+## Related Articles
+
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 - [How to Write ChatGPT Custom Instructions](/ai-tools-compared/how-to-write-chatgpt-custom-instructions-for-consistent-api-design-suggestions/)
 - [How to Create Custom Instructions for AI Coding Tools That E](/ai-tools-compared/how-to-create-custom-instructions-for-ai-coding-tools-that-e/)
 - [How to Create Custom Instructions for AI Tools to Generate](/ai-tools-compared/how-to-create-custom-instructions-for-ai-tools-to-generate-y/)

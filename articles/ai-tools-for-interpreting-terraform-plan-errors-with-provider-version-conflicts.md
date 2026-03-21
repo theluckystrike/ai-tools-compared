@@ -393,7 +393,8 @@ AI Response: "No. Version conflicts may cause runtime issues that don't show in 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Interpreting Terraform Plan Errors with Provide](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provide/)
 - [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)

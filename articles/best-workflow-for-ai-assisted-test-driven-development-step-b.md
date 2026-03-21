@@ -263,7 +263,8 @@ As you mature with AI TDD, use advanced prompt techniques:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Effective Workflow for AI-Assisted Open Source Contribution](/ai-tools-compared/effective-workflow-for-ai-assisted-open-source-contribution-/)
 - [AI Tools for Qa Engineers Generating Data Driven Test Scenar](/ai-tools-compared/ai-tools-for-qa-engineers-generating-data-driven-test-scenar/)

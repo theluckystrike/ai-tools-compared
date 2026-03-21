@@ -285,7 +285,8 @@ Test both with a simple OAuth2 flow to see which matches your development style.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
 - [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)

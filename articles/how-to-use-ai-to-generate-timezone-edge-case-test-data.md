@@ -367,7 +367,8 @@ This documentation prevents future developers from accidentally removing "unnece
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Create Edge Case Test Scenarios from API Er](/ai-tools-compared/how-to-use-ai-to-create-edge-case-test-scenarios-from-api-er/)
 - [How to Use AI to Generate Pagination Edge Case Tests for API](/ai-tools-compared/how-to-use-ai-to-generate-pagination-edge-case-tests-for-api/)

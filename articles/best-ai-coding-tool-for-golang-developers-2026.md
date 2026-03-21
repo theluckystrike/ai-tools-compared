@@ -249,7 +249,8 @@ The gap between tools continues to narrow, but Go developers will find Cursor's 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Coding Assistant for Rust Developers Compared](/ai-tools-compared/ai-coding-assistant-for-rust-developers-compared/)
 - [AI Coding Productivity Tips for Senior Developers Switching](/ai-tools-compared/ai-coding-productivity-tips-for-senior-developers-switching-/)

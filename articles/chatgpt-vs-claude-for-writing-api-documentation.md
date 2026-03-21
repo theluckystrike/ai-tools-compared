@@ -284,7 +284,8 @@ Validate code examples. Always test generated code snippets against your actual 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)

@@ -294,7 +294,8 @@ Both tools beat a standard Copilot + VS Code setup for React development.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
 - [Claude Code vs Cursor Composer](/ai-tools-compared/claude-code-vs-cursor-composer-for-full-stack-development-comparison/)

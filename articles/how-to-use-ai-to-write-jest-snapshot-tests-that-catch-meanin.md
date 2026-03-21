@@ -266,7 +266,8 @@ When upgrading a component library or switching UI frameworks, use AI to map old
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Writing Jest Tests for Graphql Resolvers](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-graphql-resolvers-with-dataloader-batching/)
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)

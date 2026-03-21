@@ -256,7 +256,8 @@ Use this data to prioritize documentation improvements. Ask Claude Code to enhan
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Writing Internal Developer Portal Content](/ai-tools-compared/best-ai-for-writing-internal-developer-portal-content-from-s/)
 - [Claude Code Coverage Reporting Setup Guide](/ai-tools-compared/claude-code-coverage-reporting-setup-guide/)

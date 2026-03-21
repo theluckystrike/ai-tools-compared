@@ -289,7 +289,8 @@ Properly configured context includes and excludes transform AI assistance from a
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Projects Feature Which Plan Tier Includes It Explaine](/ai-tools-compared/claude-projects-feature-which-plan-tier-includes-it-explaine/)
 - [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)

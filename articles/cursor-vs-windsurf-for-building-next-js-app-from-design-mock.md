@@ -252,7 +252,8 @@ Both tools integrate with Next.js and support Tailwind CSS out of the box. Your 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)
 - [How to Switch From Lovable to Cursor for Building Web Apps](/ai-tools-compared/how-to-switch-from-lovable-to-cursor-for-building-web-apps-c/)

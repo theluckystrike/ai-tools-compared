@@ -345,7 +345,8 @@ None of these tools replace understanding SwiftUI yourself. You will still need 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Which AI Generates Better Go Goroutine Patterns for Concurre](/ai-tools-compared/which-ai-generates-better-go-goroutine-patterns-for-concurre/)
 - [Which AI Tool Generates Better Vue 3 Composition API](/ai-tools-compared/which-ai-tool-generates-better-vue-3-composition-api-components/)

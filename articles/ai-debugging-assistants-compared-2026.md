@@ -298,7 +298,8 @@ Then reuse these templates across the team with file-specific code substituted.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Powered Log Analysis Tools for Production Debugging](/ai-tools-compared/ai-powered-log-analysis-tools-for-production-debugging-compa/)
 - [AI Tools for Debugging CSS Media Query Breakpoints Not Match](/ai-tools-compared/ai-tools-for-debugging-css-media-query-breakpoints-not-match/)

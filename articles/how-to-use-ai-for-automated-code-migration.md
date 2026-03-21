@@ -283,7 +283,8 @@ The time savings grow with scale. For fewer than 20 files, writing a migration p
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [Best AI Tools for Code Migration Between Languages 2026](/ai-tools-compared/best-ai-tools-for-code-migration-between-languages-2026/)

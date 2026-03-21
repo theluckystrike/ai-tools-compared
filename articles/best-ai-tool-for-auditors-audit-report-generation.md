@@ -249,7 +249,8 @@ These areas offset the quality loss, resulting in net positive audit report qual
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Economists Report Writing 2026](/ai-tools-compared/best-ai-tool-for-economists-report-writing-2026/)
 - [AI Audit Trail and Evidence Collection Tools](/ai-tools-compared/ai-audit-trail-and-evidence-collection-tools-2026/)

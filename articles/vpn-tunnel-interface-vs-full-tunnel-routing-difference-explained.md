@@ -345,7 +345,8 @@ Many power users find that a hybrid approach works best: full tunnel for sensiti
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Configuring Cursor AI to Work with Corporate VPN and Proxy](/ai-tools-compared/configuring-cursor-ai-to-work-with-corporate-vpn-and-proxy-a/)
 - [How Well Do AI Tools Generate Correct Go Interface Implement](/ai-tools-compared/how-well-do-ai-tools-generate-correct-go-interface-implement/)

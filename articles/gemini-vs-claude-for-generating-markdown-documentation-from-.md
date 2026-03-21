@@ -282,7 +282,8 @@ Remember that AI-generated documentation requires human review. These tools prov
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Generating API Reference Documentation from Jsdo](/ai-tools-compared/best-ai-for-generating-api-reference-documentation-from-jsdo/)
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)

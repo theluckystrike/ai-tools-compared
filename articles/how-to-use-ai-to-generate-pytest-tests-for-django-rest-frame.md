@@ -289,7 +289,8 @@ This approach makes generating tests for new serializers repeatable and efficien
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 - [How to Use AI to Generate pytest Tests for Celery Task Chain](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-celery-task-chain/)

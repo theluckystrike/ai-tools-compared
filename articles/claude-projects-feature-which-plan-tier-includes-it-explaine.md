@@ -250,7 +250,8 @@ For teams, the Team plan adds collaborative features that make Projects even mor
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cheapest Way to Use Claude for Coding Projects 2026](/ai-tools-compared/cheapest-way-to-use-claude-for-coding-projects-2026/)
 - [How to Transfer Notion AI Workflows to Claude Projects 2026](/ai-tools-compared/how-to-transfer-notion-ai-workflows-to-claude-projects-2026/)

@@ -284,7 +284,8 @@ Write-Host "Total Copilot-licensed users: $($licensedUsers.Count)"
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from Copilot Enterprise to Cursor Business Migrati](/ai-tools-compared/switching-from-copilot-enterprise-to-cursor-business-migrati/)
 - [Copilot Chat Not Responding in GitHub Fix](/ai-tools-compared/copilot-chat-not-responding-in-github-fix/)

@@ -342,7 +342,8 @@ Provide as much detail as possible—error logs, timing of when it started, whet
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)
 - [How to Use Copilot Chat to Generate Code from Natural](/ai-tools-compared/how-to-use-copilot-chat-to-generate-code-from-natural-langua/)

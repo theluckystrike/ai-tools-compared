@@ -345,7 +345,8 @@ These detailed patterns prevent AI from generating performance antipatterns.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Jest Tests for Next.js API Routes](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-nextjs-api-routes/)
 - [Cursor vs Windsurf for Building Next Js App from Design Mock](/ai-tools-compared/cursor-vs-windsurf-for-building-next-js-app-from-design-mock/)

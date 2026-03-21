@@ -344,7 +344,8 @@ Privacy mode in Cursor AI provides a practical solution for developers who need 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Pro Privacy Mode Does It Cost Extra](/ai-tools-compared/cursor-pro-privacy-mode-does-it-cost-extra-for-zero-retention/)
 - [Does Cursor AI Store Your Code on Their Servers Data Privacy](/ai-tools-compared/does-cursor-ai-store-your-code-on-their-servers-data-privacy/)

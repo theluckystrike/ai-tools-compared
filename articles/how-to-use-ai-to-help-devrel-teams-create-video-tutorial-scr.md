@@ -244,7 +244,8 @@ The key to success is using AI where it provides the most value—mechanical tas
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
 - [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)

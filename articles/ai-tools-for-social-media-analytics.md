@@ -280,7 +280,8 @@ The ecosystem of AI tools for social media analytics is mature enough that you d
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copy AI vs ChatGPT for Social Media Content](/ai-tools-compared/copy-ai-vs-chatgpt-for-social-media-content/)
 - [AI Tools for Inventory Analytics: A Practical Guide for](/ai-tools-compared/ai-tools-for-inventory-analytics/)

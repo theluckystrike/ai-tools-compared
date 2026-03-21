@@ -283,7 +283,8 @@ A systematic approach—working through prompt structure, context management, an
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Gemini in Google Docs Not Showing Up? Fixes for 2026](/ai-tools-compared/gemini-in-google-docs-not-showing-up-fix-2026/)
 - [AI Tools for Debugging Postgres Query Planner Choosing Wrong](/ai-tools-compared/ai-tools-for-debugging-postgres-query-planner-choosing-wrong/)

@@ -253,7 +253,8 @@ Artifacting: This often indicates too-high learning rate. Reduce learning_rate t
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)
 - [How to Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)

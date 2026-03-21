@@ -353,7 +353,8 @@ Share this with your AI tool (as system prompt or in hook comment) so generated 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Write Commit Message Guidelines](/ai-tools-compared/how-to-use-ai-to-write-commit-message-guidelines-for-open-source-projects/)
 - [Create CursorRules That Enforce Your Team's Git Commit](/ai-tools-compared/how-to-create-cursorrules-that-enforce-your-teams-git-commit/)

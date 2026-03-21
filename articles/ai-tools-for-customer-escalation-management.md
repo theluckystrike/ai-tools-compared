@@ -295,7 +295,8 @@ Consider multi-channel handling. Modern customers escalate through chat, email, 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Customer Health Scoring](/ai-tools-compared/ai-tools-for-customer-health-scoring/)
 - [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)

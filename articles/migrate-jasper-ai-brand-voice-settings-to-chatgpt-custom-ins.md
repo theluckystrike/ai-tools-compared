@@ -102,9 +102,9 @@ For vocabulary preferences, use the second Custom Instructions field:
 ```
 In the "What would you like ChatGPT to know about you?" field:
 
-Our brand uses these terms: "optimize" (not "optimise"), "leverage" 
+Our brand uses these terms: "optimize" (not "optimise"), "use" 
 (only as a verb), "seamless" (for integration topics). Avoid: "cutting 
-edge" (overused), "revolutionary" (too hyperbolic). Preferred phrases: 
+edge" (overused), "notable" (too hyperbolic). Preferred phrases: 
 "our platform enables," "customers achieve," "built for."
 ```
 
@@ -263,7 +263,8 @@ For complex brand requirements, consider storing brand configurations in a datab
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer WriteSonic Content to Jasper AI Brand Voice](/ai-tools-compared/how-to-transfer-writesonic-content-to-jasper-ai-brand-voice/)
 - [Jasper AI Brand Voice vs Claude Style Matching](/ai-tools-compared/jasper-ai-brand-voice-vs-claude-style-matching/)

@@ -505,7 +505,8 @@ app/build.gradle:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Video Lip Sync 2026](/ai-tools-compared/ai-tools-for-video-lip-sync-2026/)
 - [Best AI Assistant for Fixing TypeScript Strict Mode Type Nar](/ai-tools-compared/best-ai-assistant-for-fixing-typescript-strict-mode-type-nar/)

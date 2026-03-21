@@ -246,7 +246,8 @@ Each refinement produces a more accurate result than starting over.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Effective Prompting Strategies for AI Generation of Complex](/ai-tools-compared/effective-prompting-strategies-for-ai-generation-of-complex-/)
 - [How Accurate Are AI Tools for Rust Unsafe Code Blocks](/ai-tools-compared/how-accurate-are-ai-tools-for-rust-unsafe-code-blocks-and-ff/)

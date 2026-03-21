@@ -330,7 +330,8 @@ AI tools can generate these advanced configurations, but you must provide detail
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Playwright Network Interception](/ai-tools-compared/how-to-use-ai-to-generate-playwright-network-interception-te/)
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)

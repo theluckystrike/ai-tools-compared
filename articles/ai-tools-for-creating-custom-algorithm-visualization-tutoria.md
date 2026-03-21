@@ -433,7 +433,8 @@ Measuring effectiveness of AI-generated visualizations in educational contexts:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Explaining Sorting Algorithm Tradeoffs for Diff](/ai-tools-compared/ai-tools-for-explaining-sorting-algorithm-tradeoffs-for-diff/)
 - [AI Tools for Interior Design Visualization Compared](/ai-tools-compared/ai-tools-for-interior-design-visualization-compared/)

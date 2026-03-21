@@ -261,7 +261,8 @@ Tools that consistently generate 3-5 line solutions are better for simplicity-fi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating Jest Mock Implementations for Comple](/ai-tools-compared/ai-tools-for-generating-jest-mock-implementations-for-comple/)
 - [AI Tools for Generating Coding Kata Exercises Tailored to Yo](/ai-tools-compared/ai-tools-for-generating-coding-kata-exercises-tailored-to-yo/)

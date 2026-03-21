@@ -288,7 +288,8 @@ AI tools have boundaries you should recognize:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Resolve Python Import Circular Dependency E](/ai-tools-compared/how-to-use-ai-to-resolve-python-import-circular-dependency-e/)
 - [AI Tools for Creating Dbt Documentation Blocks](/ai-tools-compared/ai-tools-for-creating-dbt-documentation-blocks-from-column-level-lineage-analysis/)

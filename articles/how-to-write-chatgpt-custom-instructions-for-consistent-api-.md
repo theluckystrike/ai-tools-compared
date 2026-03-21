@@ -264,7 +264,8 @@ Consider keeping a backup of your custom instructions in a document. This lets y
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Write Custom Instructions for AI That Follow Your](/ai-tools-compared/how-to-write-custom-instructions-for-ai-that-follow-your-teams-code-review-standards/)
 - [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)

@@ -338,13 +338,14 @@ By implementing these strategies with Claude Code's assistance, you can evolve y
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
+- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
 - [Claude Code API Client TypeScript Guide: Build Type-Safe](/ai-tools-compared/claude-code-api-client-typescript-guide/)
 - [Claude Code API Error Handling Standards](/ai-tools-compared/claude-code-api-error-handling-standards/)
 - [Claude Code API Snapshot Testing Guide](/ai-tools-compared/claude-code-api-snapshot-testing-guide/)
-- [How to Use the Claude API for Automated Code Review](/ai-tools-compared/how-to-use-claude-api-for-automated-code-review/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 

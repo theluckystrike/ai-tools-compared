@@ -342,7 +342,8 @@ Implement a token bucket or leaky bucket in your application layer to avoid hitt
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use Copilot Agent Mode for Multi-Step Coding Tasks](/ai-tools-compared/how-to-use-copilot-agent-mode-for-multi-step-coding-tasks-20/)
 - [Best Practices for AI Coding Tool Project Configuration](/ai-tools-compared/best-practices-for-ai-coding-tool-project-configuration-in-l/)

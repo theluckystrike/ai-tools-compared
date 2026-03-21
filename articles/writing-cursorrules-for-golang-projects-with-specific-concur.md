@@ -288,7 +288,8 @@ The goal is generating code that passes your CI/CD pipeline without modification
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Writing Effective CursorRules for React TypeScript Projects](/ai-tools-compared/writing-effective-cursorrules-for-react-typescript-projects-/)
 - [Writing Claude Md Files That Teach AI Your Project Specific](/ai-tools-compared/writing-claude-md-files-that-teach-ai-your-project-specific-error-handling-patterns/)

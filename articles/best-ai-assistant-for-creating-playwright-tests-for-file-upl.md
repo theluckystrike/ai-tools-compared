@@ -488,7 +488,8 @@ test.describe('File upload tests (CI-compatible)', () => {
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Creating Playwright Tests for Multi](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-multi-st/)
 - [Best AI Assistant for Creating Playwright Tests for Table](/ai-tools-compared/best-ai-assistant-for-creating-playwright-tests-for-table-sorting-filtering-and-pagination/)

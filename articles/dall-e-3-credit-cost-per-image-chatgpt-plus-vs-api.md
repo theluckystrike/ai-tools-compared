@@ -291,7 +291,8 @@ For developers building image generation into products, the API provides the nec
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT Plus Browsing and DALL-E Usage Limits Per Three](/ai-tools-compared/chatgpt-plus-browsing-and-dalle-usage-limits-per-three-hours/)
 - [Gemini Advanced vs ChatGPT Plus Price Per Feature Comparison](/ai-tools-compared/gemini-advanced-vs-chatgpt-plus-price-per-feature-comparison-2026/)

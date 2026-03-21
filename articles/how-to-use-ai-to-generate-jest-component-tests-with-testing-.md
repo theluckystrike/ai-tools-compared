@@ -251,7 +251,8 @@ This workflow accelerates test coverage without sacrificing quality.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)
 - [How to Use AI to Generate Jest Tests for](/ai-tools-compared/how-to-use-ai-to-generate-jest-tests-for-internationalizatio/)

@@ -250,7 +250,8 @@ Different projects suit different strategies. A monolithic repository benefits f
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI Context Management to Work on Large Refactorin](/ai-tools-compared/how-to-use-ai-context-management-to-work-on-large-refactorin/)
 - [Effective Context Management Strategies for AI Coding](/ai-tools-compared/effective-context-management-strategies-for-ai-coding-in-monorepo-projects-2026/)

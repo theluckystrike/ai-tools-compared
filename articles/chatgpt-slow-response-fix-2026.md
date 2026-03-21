@@ -311,7 +311,8 @@ Review your logs weekly to identify recurring slowdowns. Correlate these with Op
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Keeps Crashing Fix 2026: Complete Troubleshooting](/ai-tools-compared/cursor-keeps-crashing-fix-2026/)
 - [Cursor AI Slow on Large monorepo Fix (2026)](/ai-tools-compared/cursor-ai-slow-on-large-monorepo-fix-2026/)

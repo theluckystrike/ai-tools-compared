@@ -427,7 +427,8 @@ The choice between Census and HighTouch ultimately depends on your existing data
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating Nginx and Caddy Reverse Proxy Config](/ai-tools-compared/ai-tools-for-generating-nginx-and-caddy-reverse-proxy-config/)
 - [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)

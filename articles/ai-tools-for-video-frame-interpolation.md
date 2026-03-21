@@ -254,7 +254,8 @@ Newer models handle edge cases better and run faster on consumer hardware than t
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)
 - [How to Use AI to Generate pytest Tests for Django REST Frame](/ai-tools-compared/how-to-use-ai-to-generate-pytest-tests-for-django-rest-frame/)

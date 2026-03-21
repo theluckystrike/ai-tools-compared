@@ -250,7 +250,8 @@ Experiment with different input types—some tools handle website URLs, document
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Research Assistant Chrome Extension](/ai-tools-compared/ai-research-assistant-chrome-extension/)
 - [AI Summarizer Chrome Extension: A Developer Guide](/ai-tools-compared/ai-summarizer-chrome-extension/)

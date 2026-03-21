@@ -341,7 +341,8 @@ The platforms converge on features over time. But the underlying architectural p
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Databricks vs BigQuery AI ML Features: A Practical](/ai-tools-compared/databricks-vs-bigquery-ai-ml-features/)
 - [AI Tools for Customer Journey Analytics](/ai-tools-compared/ai-tools-for-customer-journey-analytics/)

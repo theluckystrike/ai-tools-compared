@@ -358,7 +358,8 @@ Are you building something visual/interactive?
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT Canvas Feature Is It Included in Plus or Team Only](/ai-tools-compared/chatgpt-canvas-feature-is-it-included-in-plus-or-team-only/)
 - [ChatGPT Canvas Not Saving Changes Fix (2026)](/ai-tools-compared/chatgpt-canvas-not-saving-changes-fix-2026/)

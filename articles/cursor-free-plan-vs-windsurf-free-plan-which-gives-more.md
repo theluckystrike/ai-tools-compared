@@ -260,7 +260,8 @@ For developers who code daily and rely on AI assistance, Windsurf's free tier of
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 - [Claude Free vs ChatGPT Free Which Gives More Per Day](/ai-tools-compared/claude-free-vs-chatgpt-free-which-gives-more-per-day/)

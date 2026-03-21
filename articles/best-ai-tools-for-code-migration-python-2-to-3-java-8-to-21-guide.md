@@ -313,7 +313,8 @@ Migration with AI tools is no longer optional for large legacy systems. The bott
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Completion for Java Jakarta EE Migration from Javax](/ai-tools-compared/ai-code-completion-for-java-jakarta-ee-migration-from-javax-/)
 - [Best AI Tools for Code Migration Between Languages 2026](/ai-tools-compared/best-ai-tools-for-code-migration-between-languages-2026/)

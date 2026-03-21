@@ -277,7 +277,8 @@ Most issues resolve within 24-48 hours of support response if you provide the ab
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT Image Upload Not Working Fix (2026)](/ai-tools-compared/chatgpt-image-upload-not-working-fix-2026/)
 - [Notion AI Not Working as Expected Fix (2026)](/ai-tools-compared/notion-ai-not-working-as-expected-fix-2026/)

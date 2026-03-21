@@ -338,7 +338,8 @@ Consider your workflow: if you spend hours manually creating brand assets, AI as
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Creating Open Source Project Architecture Docume](/ai-tools-compared/best-ai-for-creating-open-source-project-architecture-docume/)
 - [Best AI Assistant for Drafting Open Source Partnership and](/ai-tools-compared/best-ai-assistant-for-drafting-open-source-partnership-and-integration-proposals-2026/)

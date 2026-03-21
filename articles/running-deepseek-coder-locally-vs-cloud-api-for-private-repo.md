@@ -476,7 +476,8 @@ The break-even point is typically 500-1000 API requests per month for cloud serv
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Running CodeLlama Locally vs Using Cloud Copilot for Proprie](/ai-tools-compared/running-codellama-locally-vs-using-cloud-copilot-for-proprie/)
 - [Running Starcoder2 Locally for Code Completion Without](/ai-tools-compared/running-starcoder2-locally-for-code-completion-without-sendi/)

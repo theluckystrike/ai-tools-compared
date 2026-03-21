@@ -356,7 +356,8 @@ This enables alerting on latency percentiles, error rates, and service health—
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Writing CI CD Pipeline Configurations 2026](/ai-tools-compared/ai-tools-for-writing-ci-cd-pipeline-configurations-2026/)
 - [ChatGPT vs Claude for Writing Nginx Reverse Proxy Configurat](/ai-tools-compared/chatgpt-vs-claude-for-writing-nginx-reverse-proxy-configurat/)

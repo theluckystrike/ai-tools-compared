@@ -312,7 +312,8 @@ Start by mapping your current data architecture. If dbt is central to your opera
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Domo vs Sisense AI Dashboards: A Practical Comparison](/ai-tools-compared/domo-vs-sisense-ai-dashboards/)
 - [AI Tools for Generating Grafana Dashboards from Metrics Auto](/ai-tools-compared/ai-tools-for-generating-grafana-dashboards-from-metrics-auto/)

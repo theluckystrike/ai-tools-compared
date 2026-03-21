@@ -264,7 +264,8 @@ def generate_provisioning_script(checklist_items):
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Help Devrel Create Comparison Tables](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-comparison-tables-for-competing-api-features/)
 - [How to Use AI to Help Devrel Create Interactive Coding](/ai-tools-compared/how-to-use-ai-to-help-devrel-create-interactive-coding-playgrounds/)

@@ -317,7 +317,8 @@ Set quarterly reminders to:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Practices for Sharing AI Tool Configuration Files Acros](/ai-tools-compared/best-practices-for-sharing-ai-tool-configuration-files-acros/)
 - [Best AI IDE Features for Writing Configuration Files YAML](/ai-tools-compared/best-ai-ide-features-for-writing-configuration-files-yaml-json-toml/)

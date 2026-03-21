@@ -312,7 +312,8 @@ print(mj_prompt)
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from Midjourney to Dall E 3 Prompt Adaptation Guid](/ai-tools-compared/switching-from-midjourney-to-dall-e-3-prompt-adaptation-guid/)
 - [Migrate ChatGPT System Prompts](/ai-tools-compared/migrate-chatgpt-system-prompts-to-claude-system-prompt-format/)

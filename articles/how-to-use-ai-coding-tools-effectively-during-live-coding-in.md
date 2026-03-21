@@ -272,7 +272,8 @@ AI coding tools are powerful allies in technical interviews when used thoughtful
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI Coding Assistants Effectively with Trunk Based](/ai-tools-compared/how-to-use-ai-coding-assistants-effectively-with-trunk-based/)
 - [How to Use AI Chat History Effectively for Iterating on Code](/ai-tools-compared/how-to-use-ai-chat-history-effectively-for-iterating-on-code/)

@@ -103,4 +103,13 @@ For teams working with multiple targets, tools that understand the full Kotlin M
 
 Choosing the best AI for writing correct Kotlin Multiplatform shared code modules depends on your specific needs. Look for tools that understand expect/actual patterns, recognize platform-specific API limitations, and can generate appropriate implementations across multiple targets. The most effective assistants in 2026 combine strong Kotlin language understanding with awareness of the Kotlin Multiplatform ecosystem, helping developers avoid common pitfalls while accelerating the creation of correct cross-platform code.
 
+
+## Related Articles
+
+- [Claude vs ChatGPT for Refactoring Legacy Java Code to Kotlin](/ai-tools-compared/claude-vs-chatgpt-for-refactoring-legacy-java-code-to-kotlin/)
+- [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)
+- [How to Export ChatGPT Shared Links Before Account Deletion](/ai-tools-compared/how-to-export-chatgpt-shared-links-before-account-deletion-2026/)
+- [Best AI for Creating Jest Tests That Verify Correct React](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-react-co/)
+- [Best AI for Creating Jest Tests That Verify Correct Suspense](/ai-tools-compared/best-ai-for-creating-jest-tests-that-verify-correct-suspense/)
+
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

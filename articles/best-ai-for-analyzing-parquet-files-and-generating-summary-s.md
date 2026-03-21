@@ -258,7 +258,8 @@ All four tools can generate accurate pandas code for reading Parquet files and p
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating Docker Compose Files for Complex Mic](/ai-tools-compared/ai-tools-for-generating-docker-compose-files-for-complex-mic/)
 - [AI Tools for Analyzing Issue Comment Sentiment to Identify F](/ai-tools-compared/ai-tools-for-analyzing-issue-comment-sentiment-to-identify-f/)

@@ -287,7 +287,8 @@ The best approach involves using AI to generate initial test patterns, then manu
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Generation for Python FastAPI Endpoints](/ai-tools-compared/ai-code-generation-for-python-fastapi-endpoints-with-pydantic-models-compared/)
 - [AI Tools for Writing pytest Tests for Alembic Database](/ai-tools-compared/ai-tools-for-writing-pytest-tests-for-alembic-database-migra/)

@@ -270,7 +270,8 @@ If the code feels foreign to the language, refine your prompt with more specific
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Write Better Prompts for AI Code Generation with](/ai-tools-compared/how-to-write-better-prompts-for-ai-code-generation-with-examples/)
 - [Best AI Tools for Writing Idiomatic Rust Error Handling](/ai-tools-compared/best-ai-tools-for-writing-idiomatic-rust-error-handling-with/)

@@ -473,7 +473,8 @@ git commit -m "Update custom instructions across all AI tools"
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Write Custom Instructions That Make AI Follow Your](/ai-tools-compared/how-to-write-custom-instructions-that-make-ai-follow-your-error-response-schema/)
 - [Writing Custom Instructions That Make AI Follow Your Team's](/ai-tools-compared/writing-custom-instructions-that-make-ai-follow-your-teams-changelog-entry-format/)

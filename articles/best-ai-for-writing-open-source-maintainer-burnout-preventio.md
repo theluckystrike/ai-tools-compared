@@ -287,7 +287,8 @@ AI can help maintainers craft these guidelines in a way that is firm but welcomi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
 - [Best AI Assistant for Writing Open Source Roadmap Documents](/ai-tools-compared/best-ai-assistant-for-writing-open-source-roadmap-documents-from-issue-milestone-data/)

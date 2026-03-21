@@ -360,7 +360,8 @@ For projects with hundreds of issues, Claude's larger context window provides ad
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Writing Open Source Plugin Development](/ai-tools-compared/best-ai-assistant-for-writing-open-source-plugin-development/)
 - [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)

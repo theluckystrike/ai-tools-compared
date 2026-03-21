@@ -278,13 +278,14 @@ For large-scale migrations, I recommend starting with Claude and establishing co
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)
 - [Best AI Tools for Migrating Legacy Java to Modern Frameworks](/ai-tools-compared/best-ai-tools-for-migrating-legacy-java-to-modern-frameworks/)
 - [Claude Code Java Library Development Guide](/ai-tools-compared/claude-code-java-library-development-guide/)
+- [Best AI for Writing Correct Kotlin Multiplatform Shared](/ai-tools-compared/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
 - [Free AI Tools for Code Refactoring That Actually Improve Qua](/ai-tools-compared/free-ai-tools-for-code-refactoring-that-actually-improve-qua/)
-- [Best AI Tools for Generating Unit Tests](/ai-tools-compared/best-ai-tools-for-generating-unit-tests-from-legacy-code-comparison/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)
 {% endraw %}

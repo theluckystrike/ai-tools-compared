@@ -236,7 +236,8 @@ These habits reduce AI errors dramatically and make your coding assistant a reli
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 - [How to Manage AI Coding Context When Switching Between Diffe](/ai-tools-compared/how-to-manage-ai-coding-context-when-switching-between-diffe/)

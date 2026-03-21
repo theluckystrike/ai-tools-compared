@@ -356,7 +356,8 @@ Yes. Anthropic's console lets you set monthly spend limits per API key. Set a li
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Writing CLAUDE.md Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy/)
 - [Writing CLAUDE MD Files That Define Your Project's API](/ai-tools-compared/writing-claude-md-files-that-define-your-projects-api-versioning-strategy-for-ai/)

@@ -240,7 +240,8 @@ Skills provide reusability, the command-line interface offers flexibility, and t
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)
 - [How to Transfer Midjourney Prompt Library to Ideogram Prompt](/ai-tools-compared/how-to-transfer-midjourney-prompt-library-to-ideogram-prompt/)

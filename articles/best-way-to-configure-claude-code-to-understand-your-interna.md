@@ -255,7 +255,8 @@ This layered approach provides Claude Code with context while maintaining organi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Configuring Claude Code to Understand Your Teams Pull Reques](/ai-tools-compared/configuring-claude-code-to-understand-your-teams-pull-reques/)
 - [Best Way to Configure AI Coding Tools to Follow Your Databas](/ai-tools-compared/best-way-to-configure-ai-coding-tools-to-follow-your-databas/)

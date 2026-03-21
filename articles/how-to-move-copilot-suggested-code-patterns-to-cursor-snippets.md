@@ -419,7 +419,8 @@ Practically, the limit is your memory. Aim for fewer than 30 actively used snipp
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Move Copilot Suggested Code Patterns to Cursor Snippe](/ai-tools-compared/how-to-move-copilot-suggested-code-patterns-to-cursor-snippe/)
 - [Copilot vs Cursor for Implementing Redis Caching Patterns](/ai-tools-compared/copilot-vs-cursor-for-implementing-redis-caching-patterns-in/)

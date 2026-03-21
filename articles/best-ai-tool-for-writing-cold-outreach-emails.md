@@ -490,7 +490,8 @@ This beats most other prospecting channels significantly.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT vs Claude for Writing Cold Outreach Emails to Saas](/ai-tools-compared/chatgpt-vs-claude-for-writing-cold-outreach-emails-to-saas-f/)
 - [AI Tools for Product Managers Drafting Release](/ai-tools-compared/ai-tools-for-product-managers-drafting-release-communication-emails-from-feature-lists/)

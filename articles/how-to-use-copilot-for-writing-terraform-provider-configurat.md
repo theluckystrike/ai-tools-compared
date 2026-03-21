@@ -316,7 +316,8 @@ Not always. Copilot optimizes for common patterns, which sometimes means suggest
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Interpreting Terraform Plan Errors](/ai-tools-compared/ai-tools-for-interpreting-terraform-plan-errors-with-provider-version-conflicts/)
 - [Copilot vs Cursor for Writing Terraform Modules from Scratch](/ai-tools-compared/copilot-vs-cursor-for-writing-terraform-modules-from-scratch/)

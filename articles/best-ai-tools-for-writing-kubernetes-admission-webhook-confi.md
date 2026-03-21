@@ -278,7 +278,8 @@ Start with a single webhook use case, test thoroughly in a non-production enviro
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Writing Kubernetes Helm Charts 2026](/ai-tools-compared/ai-tools-for-writing-kubernetes-helm-charts-2026/)
 - [Best AI Tools for Writing Kubernetes Custom Resource](/ai-tools-compared/best-ai-tools-for-writing-kubernetes-custom-resource-definitions-2026/)

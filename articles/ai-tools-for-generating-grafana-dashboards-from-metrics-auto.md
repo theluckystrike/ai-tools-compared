@@ -258,7 +258,8 @@ Maintain dashboard templates separately from generated configurations. Template 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating Grafana Dashboard JSON Templates Fro](/ai-tools-compared/ai-tools-for-generating-grafana-dashboard-json-templates-fro/)
 - [AI Tools for Monitoring Kubernetes Cluster Health and Auto](/ai-tools-compared/ai-tools-for-monitoring-kubernetes-cluster-health-and-auto-remediation/)

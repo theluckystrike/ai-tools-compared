@@ -248,7 +248,8 @@ print(estimate_queue_pressure())
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Midjourney Standard vs Pro Plan: Is Stealth Mode Worth](/ai-tools-compared/midjourney-standard-vs-pro-plan-stealth-mode-worth-extra-cost/)
 - [Best AI Tools for Python Celery Task Queue Code Generation](/ai-tools-compared/best-ai-tools-for-python-celery-task-queue-code-generation-2/)

@@ -269,7 +269,8 @@ Cursor's multi-file editing represents a significant advancement in AI-assisted 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)
 - [Windsurf Cascade vs Cursor Composer: Multi-File AI Editing](/ai-tools-compared/windsurf-cascade-vs-cursor-composer-multi-file-ai-editing-co/)

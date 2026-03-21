@@ -293,7 +293,8 @@ Back up your exports to cloud storage (Google Drive, Dropbox, or AWS S3) in addi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Switching from ChatGPT Plus to Perplexity Pro Feature Compar](/ai-tools-compared/switching-from-chatgpt-plus-to-perplexity-pro-feature-compar/)
 - [Switching from ChatGPT Search to Perplexity Pro Search](/ai-tools-compared/switching-from-chatgpt-search-to-perplexity-pro-search-differences-explained/)

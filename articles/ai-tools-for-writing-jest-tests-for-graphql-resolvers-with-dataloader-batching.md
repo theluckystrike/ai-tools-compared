@@ -316,7 +316,8 @@ test('full GraphQL query with DataLoader batching', async () => {
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Writing GraphQL Resolvers 2026](/ai-tools-compared/best-ai-tools-for-writing-graphql-resolvers-2026/)
 - [AI Tools for Writing Jest Tests for Web Worker and Service](/ai-tools-compared/ai-tools-for-writing-jest-tests-for-web-worker-and-service-w/)

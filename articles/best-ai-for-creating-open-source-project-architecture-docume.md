@@ -476,7 +476,8 @@ Consider your workflow: if you spend hours manually creating architecture diagra
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 - [AI Assistants for Creating Security Architecture Review.](/ai-tools-compared/ai-assistants-for-creating-security-architecture-review-docu/)

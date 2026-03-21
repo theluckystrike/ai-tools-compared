@@ -288,12 +288,13 @@ You will likely need to fine-tune some settings. Cursor's AI behavior differs fr
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Practices for AI Tool Project Config When Switching](/ai-tools-compared/best-practices-for-ai-tool-project-config-when-switching-between-multiple-client-projects/)
 - [Switching from Windsurf Free to Cursor Free What Is](/ai-tools-compared/switching-from-windsurf-free-to-cursor-free-what-is-different/)
 - [How to Transfer GitHub Copilot Organization Settings](/ai-tools-compared/transfer-github-copilot-org-settings-when-switching-to-curso/)
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
-- [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
+- [How to Transfer Claude Project Knowledge to ChatGPT Custom (2)](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-gpt/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

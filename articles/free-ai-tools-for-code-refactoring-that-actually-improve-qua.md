@@ -246,7 +246,8 @@ The quality improvements compound over time. Small, consistent refactoring with 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Completely Free Alternatives to GitHub Copilot That Actually](/ai-tools-compared/completely-free-alternatives-to-github-copilot-that-actually/)
 - [Claude Code vs Cursor for Large Codebase Refactoring](/ai-tools-compared/claude-code-vs-cursor-for-large-codebase-refactoring/)

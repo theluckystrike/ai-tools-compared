@@ -308,7 +308,8 @@ For developers implementing either solution:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Move Midjourney Style References to Stable Diffusion](/ai-tools-compared/how-to-move-midjourney-style-references-to-stable-diffusion-/)
 - [Move Stable Diffusion Workflows to Midjourney](/ai-tools-compared/how-to-move-stable-diffusion-workflows-to-midjourney-equivalent-setup/)

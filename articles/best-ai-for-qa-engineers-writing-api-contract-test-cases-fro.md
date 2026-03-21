@@ -387,7 +387,8 @@ components:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for QA Engineers Writing Test Coverage Gap](/ai-tools-compared/best-ai-assistant-for-qa-engineers-writing-test-coverage-gap/)
 - [AI Tools for Qa Engineers Creating Accessibility Testing Che](/ai-tools-compared/ai-tools-for-qa-engineers-creating-accessibility-testing-che/)

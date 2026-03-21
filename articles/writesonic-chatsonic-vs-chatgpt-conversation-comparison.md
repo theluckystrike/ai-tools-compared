@@ -302,7 +302,8 @@ def smart_chat(prompt, prefer="chatgpt"):
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT Conversation History Disappeared Fix](/ai-tools-compared/chatgpt-conversation-history-disappeared-fix/)
 - [Switching from ChatGPT Voice to Gemini Live Conversation](/ai-tools-compared/switching-from-chatgpt-voice-to-gemini-live-conversation-differences/)

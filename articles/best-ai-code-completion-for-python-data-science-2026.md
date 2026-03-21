@@ -467,7 +467,7 @@ Claude Code is best for debugging—paste error + context, get detailed explanat
 5. **Test edge cases**: AI completions might not handle NaN or category order correctly
 
 
-## Related Reading
+## Related Articles
 
 - [Best AI Coding Tools for Python Data Science and pandas Work](/ai-tools-compared/best-ai-coding-tools-for-python-data-science-and-pandas-work/)
 - [Gemini vs ChatGPT for Translating Python Data Pipelines](/ai-tools-compared/gemini-vs-chatgpt-for-translating-python-data-pipelines-to-rust/)

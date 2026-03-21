@@ -470,7 +470,8 @@ For teams migrating large codebases to Virtual Threads, Claude Code's understand
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Generation for Java Reactive Programming with Projec](/ai-tools-compared/ai-code-generation-for-java-reactive-programming-with-projec/)
 - [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)

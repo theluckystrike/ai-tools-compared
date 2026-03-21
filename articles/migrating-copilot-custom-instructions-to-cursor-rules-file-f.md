@@ -210,7 +210,7 @@ Cursor's rule system offers more organizational options than Copilot's simple st
 
 ## Advanced Cursor Rules Configuration
 
-Once you understand basic migration patterns, you can leverage Cursor's more sophisticated capabilities.
+Once you understand basic migration patterns, you can use Cursor's more sophisticated capabilities.
 
 ### Dynamic Rules Based on File Context
 
@@ -397,7 +397,8 @@ When rolling out Cursor rules across a team, start with minimal rules focused on
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Migrate Cursor Rules File](/ai-tools-compared/migrate-cursor-rules-file-to-windsurf-rules-format-guide/)
 - [Copilot Workspace vs Cursor Composer Multi File Editing Comp](/ai-tools-compared/copilot-workspace-vs-cursor-composer-multi-file-editing-comp/)

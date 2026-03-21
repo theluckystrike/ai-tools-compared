@@ -366,7 +366,8 @@ Specify testing library preferences, mock patterns, and what should be tested ve
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Writing CursorRules for Golang Projects with Specific Concur](/ai-tools-compared/writing-cursorrules-for-golang-projects-with-specific-concur/)
 - [Writing Effective .cursorrules for Next.js App Router](/ai-tools-compared/writing-effective-cursorrules-for-nextjs-app-router-project-with-specific-file-conventions/)

@@ -338,7 +338,8 @@ After running your conversion, review prompts containing these elements manually
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code-commands/)
 - [How to Transfer Your Cursor Composer Prompt Library](/ai-tools-compared/transfer-cursor-composer-prompt-library-to-claude-code/)

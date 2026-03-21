@@ -306,7 +306,8 @@ The implementations above provide starting points for developers building custom
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Code Generation Quality for Java JUnit 5 Parameterized](/ai-tools-compared/ai-code-generation-quality-for-java-junit-5-parameterized-te/)
 - [AI Code Generation Quality for Java Pattern Matching and Swi](/ai-tools-compared/ai-code-generation-quality-for-java-pattern-matching-and-swi/)

@@ -282,9 +282,10 @@ AI tools have genuinely improved the workflow creation experience. What once req
 
 
 
-## Related Reading
 
-- [AI Tools for Generating GitHub Actions Workflows](/ai-tools-compared/ai-tools-github-actions-workflows/)
+## Related Articles
+
+- [AI Tools for Generating GitHub Actions Workflows (2)](/ai-tools-compared/ai-tools-github-actions-workflows/)
 - [AI Tools for Writing GitHub Actions Workflows (2026)](/ai-tools-compared/ai-tools/best-ai-tools-for-github-actions-workflows/)
 - [Best AI Tools for Writing GitHub Actions Matrix Build Strate](/ai-tools-compared/best-ai-tools-for-writing-github-actions-matrix-build-strate/)
 - [Best AI Tools for Writing GitHub Actions Reusable Workflow](/ai-tools-compared/best-ai-tools-for-writing-github-actions-reusable-workflow-t/)

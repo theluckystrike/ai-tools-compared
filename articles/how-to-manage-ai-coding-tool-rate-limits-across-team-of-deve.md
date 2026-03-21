@@ -307,7 +307,8 @@ Regular communication about quota availability helps the team self-regulate. Con
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Manage AI Coding Context Across Multiple Related Repo](/ai-tools-compared/how-to-manage-ai-coding-context-across-multiple-related-repo/)
 - [Best Practices for Versioning CursorRules Files Across Team](/ai-tools-compared/best-practices-for-versioning-cursorrules-files-across-team-/)

@@ -19,7 +19,7 @@ tags: [ai-tools-compared, artificial-intelligence]
 
 # Migrating from JetBrains AI to Copilot in IntelliJ - Step by Step Guide
 
-Making the switch from JetBrains AI to GitHub Copilot in IntelliJ IDEA doesn't have to be disruptive. This guide walks you through every step of the migration process, from installation to configuration, ensuring you maintain your productivity while leveraging Copilot's strengths.
+Making the switch from JetBrains AI to GitHub Copilot in IntelliJ IDEA doesn't have to be disruptive. This guide walks you through every step of the migration process, from installation to configuration, ensuring you maintain your productivity while using Copilot's strengths.
 
 ## Why Consider Switching to Copilot?
 
@@ -308,7 +308,8 @@ If migrating a team:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 - [Free AI Alternatives to Copilot for JetBrains IDE Users 2026](/ai-tools-compared/free-ai-alternatives-to-copilot-for-jetbrains-ide-users-2026/)

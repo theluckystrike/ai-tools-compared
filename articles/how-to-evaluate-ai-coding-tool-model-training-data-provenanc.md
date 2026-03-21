@@ -276,7 +276,8 @@ As AI coding tools become more prevalent, this evaluation process will likely be
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Evaluate AI Coding Tool Data Processing Agreements](/ai-tools-compared/how-to-evaluate-ai-coding-tool-data-processing-agreements-be/)
 - [How to Evaluate AI Coding Tool Encryption Standards for Data](/ai-tools-compared/how-to-evaluate-ai-coding-tool-encryption-standards-for-data/)

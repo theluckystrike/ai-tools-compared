@@ -342,7 +342,8 @@ ollama create qwen-code-custom -f ~/.ollama/Modelfile_qwen
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Local LLM Alternatives to Cloud AI Coding Assistants](/ai-tools-compared/best-local-llm-alternatives-to-cloud-ai-coding-assistants-for-air-gapped/)
 - [Health Insurance Options for Freelancers 2026](/ai-tools-compared/health-insurance-options-for-freelancers-2026/)

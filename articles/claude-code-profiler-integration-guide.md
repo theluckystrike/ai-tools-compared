@@ -436,7 +436,8 @@ Always profile with debug symbols enabled. Release builds with optimizations can
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cursor Git Integration Broken How to Fix](/ai-tools-compared/cursor-git-integration-broken-how-to-fix/)
 - [How to Use AI to Debug Flaky Integration Tests in CI Pipelin](/ai-tools-compared/how-to-use-ai-to-debug-flaky-integration-tests-in-ci-pipelin/)

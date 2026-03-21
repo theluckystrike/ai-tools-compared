@@ -276,7 +276,8 @@ Iterate on type design. Generate an initial schema, test it against your actual 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 - [Copilot vs Claude Code for Scaffolding New Django REST Frame](/ai-tools-compared/copilot-vs-claude-code-for-scaffolding-new-django-rest-frame/)

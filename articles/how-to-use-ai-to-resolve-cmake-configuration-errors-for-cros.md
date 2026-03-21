@@ -247,7 +247,8 @@ This proactive approach catches misconfigurations before they produce cascading 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Resolve Cmake Configuration Errors](/ai-tools-compared/how-to-use-ai-to-resolve-cmake-configuration-errors-for-cross-compilation/)
 - [How to Use AI to Resolve Nginx 502 Bad Gateway Errors](/ai-tools-compared/how-to-use-ai-to-resolve-nginx-502-bad-gateway-errors-from-u/)

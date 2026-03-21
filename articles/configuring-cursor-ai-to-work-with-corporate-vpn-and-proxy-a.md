@@ -319,7 +319,8 @@ Running through this checklist prevents post-deployment surprises.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Configuring Cursor AI Notepads for Reusable Project Context](/ai-tools-compared/configuring-cursor-ai-notepads-for-reusable-project-context-/)
 - [VPN Tunnel Interface vs Full Tunnel Routing Difference](/ai-tools-compared/vpn-tunnel-interface-vs-full-tunnel-routing-difference-explained/)

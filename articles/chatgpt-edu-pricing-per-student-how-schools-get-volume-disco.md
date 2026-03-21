@@ -293,7 +293,8 @@ The per-student pricing model scales predictably, making it easier to build into
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Gemini Code Assist Enterprise Pricing Per Developer](/ai-tools-compared/gemini-code-assist-enterprise-pricing-per-developer-breakdown-2026/)
 - [ChatGPT API Assistants API Pricing Threads and Runs Cost](/ai-tools-compared/chatgpt-api-assistants-api-pricing-threads-and-runs-cost-breakdown/)

@@ -339,7 +339,8 @@ A well-maintained CursorRules setup ensures consistent, high-quality code genera
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best Way to Configure CursorRules for Python FastAPI Project](/ai-tools-compared/best-way-to-configure-cursorrules-for-python-fastapi-project/)
 - [Best Way to Structure Claude MD File for Python Django Proje](/ai-tools-compared/best-way-to-structure-claude-md-file-for-python-django-proje/)

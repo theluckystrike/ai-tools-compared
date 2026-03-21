@@ -290,7 +290,8 @@ The most effective approach combines AI for initial generation with human review
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Generating API Documentation From Code](/ai-tools-compared/best-ai-tools-for-generating-api-documentation-from-code-2026/)
 - [AI Tools for API Documentation from Code 2026](/ai-tools-compared/ai-tools-for-api-documentation-from-code-2026/)

@@ -323,12 +323,13 @@ For most teams, Copilot Individual or CodeGuru free tier provides sufficient cap
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistants for AWS CloudFormation Template](/ai-tools-compared/best-ai-assistants-for-aws-cloudformation-template-generatio/)
+- [Best AI for Writing Correct Kotlin Multiplatform Shared](/ai-tools-compared/best-ai-for-writing-correct-kotlin-multiplatform-shared-code/)
 - [AI Tools for Writing pytest Tests with Moto Library for AWS](/ai-tools-compared/ai-tools-for-writing-pytest-tests-with-moto-library-for-aws-/)
 - [Best AI Tools for Writing AWS CDK Infrastructure Code](/ai-tools-compared/best-ai-tools-for-writing-aws-cdk-infrastructure-code-in-python/)
 - [Best AI Assistants for Writing CircleCI and GitLab CI](/ai-tools-compared/best-ai-assistants-for-writing-circleci-and-gitlab-ci-pipeli/)
-- [Writing Effective System Prompts for AI Coding Assistants](/ai-tools-compared/writing-effective-system-prompts-for-ai-coding-assistants-th/)
 
 Built by theluckystrike — More at [zovo.one](https://zovo.one)

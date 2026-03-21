@@ -272,7 +272,8 @@ When using AI to generate timezone test data, avoid these mistakes:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Timezone Edge Case Test Data](/ai-tools-compared/how-to-use-ai-to-generate-timezone-edge-case-test-data/)
 - [AI Tools for Creating Test Data Generators That Respect Busi](/ai-tools-compared/ai-tools-for-creating-test-data-generators-that-respect-busi/)

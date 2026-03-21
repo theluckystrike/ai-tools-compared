@@ -328,7 +328,8 @@ def truncate_diff(pr_data: dict, max_chars: int = MAX_DIFF_TOKENS * 4) -> dict:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)
 - [Claude Code API Backward Compatibility Guide](/ai-tools-compared/claude-code-api-backward-compatibility-guide/)

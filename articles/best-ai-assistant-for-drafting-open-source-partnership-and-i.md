@@ -250,7 +250,8 @@ To maximize efficiency when drafting partnership proposals:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistant for Creating Open Source Project Branding](/ai-tools-compared/best-ai-assistant-for-creating-open-source-project-branding-/)
 - [Best AI Assistant for Generating Open Source Release](/ai-tools-compared/best-ai-assistant-for-generating-open-source-release-announcements/)

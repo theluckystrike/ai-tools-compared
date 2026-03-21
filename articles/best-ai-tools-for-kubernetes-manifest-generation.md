@@ -282,7 +282,8 @@ For new manifest generation: Claude with a detailed prompt. For cluster diagnosi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Detecting Kubernetes Misconfiguration Before](/ai-tools-compared/ai-tools-for-detecting-kubernetes-misconfiguration-before-de/)
 - [AI Tools for Generating Kubernetes Service Mesh](/ai-tools-compared/ai-tools-for-generating-kubernetes-service-mesh-configuratio/)

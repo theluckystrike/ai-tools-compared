@@ -319,7 +319,8 @@ address and orders fields into separate columns. Use cursor-based pagination.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Generating pandas GroupBy Aggregation Code](/ai-tools-compared/ai-tools-for-generating-pandas-groupby-aggregation-code-from/)
 - [Best AI for Generating pandas Code to Merge Data from Multip](/ai-tools-compared/best-ai-for-generating-pandas-code-to-merge-data-from-multip/)

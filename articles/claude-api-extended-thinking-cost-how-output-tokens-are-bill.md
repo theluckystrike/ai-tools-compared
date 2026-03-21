@@ -263,7 +263,8 @@ response, cost = track_request("Explain the time complexity of merge sort")
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude API Tool Use Function Calling Pricing How Tokens Are](/ai-tools-compared/claude-api-tool-use-function-calling-pricing-how-tokens-are-/)
 - [Does Claude Code Send Terminal Output to Anthropic Servers P](/ai-tools-compared/does-claude-code-send-terminal-output-to-anthropic-servers-p/)

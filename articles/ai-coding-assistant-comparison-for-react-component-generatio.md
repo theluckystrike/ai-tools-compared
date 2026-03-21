@@ -258,7 +258,8 @@ The assistant handles complex component compositions reasonably well but may req
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Coding Assistant Accuracy for TypeScript Svelte Component](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-svelte-component/)
 - [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)

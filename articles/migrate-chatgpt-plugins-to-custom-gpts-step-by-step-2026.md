@@ -289,7 +289,8 @@ This approach gives you version control over your GPT configurations and enables
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT Plugins Replacement Custom Gpts Pricing](/ai-tools-compared/chatgpt-plugins-replacement-custom-gpts-pricing-for-developers/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)

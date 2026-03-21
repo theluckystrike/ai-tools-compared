@@ -340,7 +340,8 @@ Several mistakes frequently lead to GDPR violations with AI coding tools:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Writing Backward Compatibility Testing Checklist](/ai-tools-compared/best-ai-for-writing-backward-compatibility-testing-checklist/)
 - [Claude vs ChatGPT for Drafting Gdpr Compliant Privacy Polici](/ai-tools-compared/claude-vs-chatgpt-for-drafting-gdpr-compliant-privacy-polici/)

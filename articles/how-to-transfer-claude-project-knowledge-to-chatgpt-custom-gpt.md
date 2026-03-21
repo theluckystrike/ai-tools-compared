@@ -238,7 +238,8 @@ This flexibility makes Custom GPTs valuable for team workflows, though it requir
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Transfer Claude Project Knowledge to ChatGPT Custom](/ai-tools-compared/how-to-transfer-claude-project-knowledge-to-chatgpt-custom-g/)
 - [Transfer ChatGPT Custom GPTs to Claude Projects Step by Step](/ai-tools-compared/transfer-chatgpt-custom-gpts-to-claude-projects-step-by-step/)

@@ -375,7 +375,8 @@ Result: Compliance becomes code, automatically enforced across clouds.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Assistants for Pulumi Infrastructure Code](/ai-tools-compared/best-ai-assistants-for-pulumi-infrastructure-code-in-typescript-2026/)
 - [AI Tools for Automated Infrastructure Drift Detection](/ai-tools-compared/ai-tools-for-automated-infrastructure-drift-detection-and-co/)

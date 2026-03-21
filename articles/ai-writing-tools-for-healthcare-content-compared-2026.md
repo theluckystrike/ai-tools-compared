@@ -339,7 +339,8 @@ When evaluating AI writing tools for healthcare content, prioritize these practi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI for Writing Internal Developer Portal Content](/ai-tools-compared/best-ai-for-writing-internal-developer-portal-content-from-s/)
 - [Best AI Tool for Repurposing Blog Content 2026](/ai-tools-compared/best-ai-tool-for-repurposing-blog-content-2026/)

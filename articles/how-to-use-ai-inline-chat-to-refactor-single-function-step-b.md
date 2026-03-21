@@ -490,7 +490,8 @@ AI inline chat understands framework patterns:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI Inline Completion](/ai-tools-compared/how-to-use-ai-inline-completion-for-writing-function-signatures-quickly/)
 - [Best AI Inline Chat Features in VSCode Compared to Jetbrains](/ai-tools-compared/best-ai-inline-chat-features-in-vscode-compared-to-jetbrains/)

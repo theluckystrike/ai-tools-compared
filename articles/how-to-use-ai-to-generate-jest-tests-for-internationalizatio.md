@@ -367,7 +367,8 @@ export const changeLocaleAndWait = async (locale) => {
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Use AI to Generate Jest Component Tests with Testing](/ai-tools-compared/how-to-use-ai-to-generate-jest-component-tests-with-testing-/)
 - [How to Use AI to Generate Jest Integration Tests for Express](/ai-tools-compared/how-to-use-ai-to-generate-jest-integration-tests-for-express/)

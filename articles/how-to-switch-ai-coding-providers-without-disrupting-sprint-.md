@@ -267,7 +267,8 @@ As you learn the new tool, document findings immediately:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Switch from Cursor to Claude Code Without Losing](/ai-tools-compared/how-to-switch-from-cursor-to-claude-code-without-losing-settings/)
 - [Free AI Coding Tools That Work Offline Without Internet](/ai-tools-compared/free-ai-coding-tools-that-work-offline-without-internet/)

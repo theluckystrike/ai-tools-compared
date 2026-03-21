@@ -266,7 +266,8 @@ Understanding these limits prevents workflow disruptions during critical develop
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [DALL-E 3 Credit Cost Per Image: ChatGPT Plus vs API](/ai-tools-compared/dall-e-3-credit-cost-per-image-chatgpt-plus-vs-api/)
 - [Do ChatGPT Plus Memory and Custom GPTs Count Toward](/ai-tools-compared/chatgpt-plus-memory-and-custom-gpts-count-toward-usage-limit/)

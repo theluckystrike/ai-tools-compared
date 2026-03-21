@@ -269,7 +269,8 @@ Startup MVPs: Lovable's $29 plan includes database setup and authentication, whi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Cheapest AI Tool for Generating Entire Project](/ai-tools-compared/cheapest-ai-tool-for-generating-entire-project-from-description/)
 - [Does WindSurf AI Send Entire Project Context or Just Open](/ai-tools-compared/does-windsurf-ai-send-entire-project-context-or-just-open-fi/)

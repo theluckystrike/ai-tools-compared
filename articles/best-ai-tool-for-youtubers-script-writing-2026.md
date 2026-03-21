@@ -290,7 +290,8 @@ Use conversational language. Avoid passive voice.
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Automated Load Testing Script Generation and An](/ai-tools-compared/ai-tools-for-automated-load-testing-script-generation-and-an/)
 - [AI Assistants for Writing Correct AWS IAM Policies](/ai-tools-compared/ai-assistants-for-writing-correct-aws-iam-policies-with-least-privilege/)

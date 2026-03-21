@@ -271,7 +271,8 @@ Start with your core footage—AI tools enhance good source material rather than
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tool for Game Developers Design Docs Writing](/ai-tools-compared/best-ai-tool-for-game-developers-design-docs-writing/)
 - [Cheapest AI Coding Tool for Indie Game Developer 2026](/ai-tools-compared/cheapest-ai-coding-tool-for-indie-game-developer-2026/)

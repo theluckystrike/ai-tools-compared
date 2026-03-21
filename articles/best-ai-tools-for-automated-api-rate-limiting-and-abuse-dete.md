@@ -310,7 +310,8 @@ The `prefix` parameter is important in shared Redis instances — without it, yo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Writing API Rate Limiting Code 2026](/ai-tools-compared/best-ai-tools-for-writing-api-rate-limiting-code-2026/)
 - [AI Tools for Automated API Documentation from Code Comments](/ai-tools-compared/ai-tools-for-automated-api-documentation-from-code-comments/)

@@ -320,7 +320,8 @@ After auditing, consider these mitigation strategies:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [What Source Code Context Window Do Different AI Coding Tools](/ai-tools-compared/what-source-code-context-window-do-different-ai-coding-tools/)
 - [Copilot Code Referencing Feature: How It Handles Open Source](/ai-tools-compared/copilot-code-referencing-feature-how-it-handles-open-source-/)

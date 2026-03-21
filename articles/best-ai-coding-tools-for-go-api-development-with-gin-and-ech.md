@@ -321,7 +321,8 @@ The frameworks themselves have different performance characteristics (Gin is gen
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Coding Assistant for React Development](/ai-tools-compared/best-ai-coding-assistant-for-react-development/)
 - [How to Use AI Coding Tools to Enforce Consistent API](/ai-tools-compared/how-to-use-ai-coding-tools-to-enforce-consistent-api-response-formats/)

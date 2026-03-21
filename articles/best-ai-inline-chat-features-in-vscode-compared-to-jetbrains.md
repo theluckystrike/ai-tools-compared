@@ -273,7 +273,8 @@ From JetBrains to VSCode:
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Copilot for JetBrains: Does It Cost Same as VSCode Version](/ai-tools-compared/copilot-for-jetbrains-does-it-cost-same-as-vscode-version/)
 - [Copilot Inline Chat vs Cursor Inline Chat: Which Understands](/ai-tools-compared/copilot-inline-chat-vs-cursor-inline-chat-which-understands-/)

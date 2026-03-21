@@ -337,7 +337,8 @@ Use Claude Code to generate review checklists and even help execute portions of 
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [ChatGPT vs Claude for Writing API Documentation](/ai-tools-compared/chatgpt-vs-claude-for-writing-api-documentation/)
 - [Claude vs ChatGPT for Converting REST API Documentation](/ai-tools-compared/claude-vs-chatgpt-for-converting-rest-api-documentation-to-g/)

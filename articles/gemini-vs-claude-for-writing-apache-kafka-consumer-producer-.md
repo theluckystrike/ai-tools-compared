@@ -345,7 +345,8 @@ The table summarizes the pattern: Gemini generates defaults that work in develop
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Claude vs Gemini for Converting Jupyter Notebooks to Product](/ai-tools-compared/claude-vs-gemini-for-converting-jupyter-notebooks-to-product/)
 - [Gemini vs Claude for Analyzing Large CSV Datasets Over 100MB](/ai-tools-compared/gemini-vs-claude-for-analyzing-large-csv-datasets-over-100mb/)

@@ -291,7 +291,8 @@ Both tools improve dramatically with clear, descriptive comments in your Terrafo
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Best AI Tools for Writing Terraform Modules 2026](/ai-tools-compared/best-ai-tools-for-writing-terraform-modules-2026/)
 - [How to Use Copilot for Writing Terraform Provider Configurat](/ai-tools-compared/how-to-use-copilot-for-writing-terraform-provider-configurat/)

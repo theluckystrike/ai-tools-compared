@@ -332,7 +332,8 @@ Yes. This is the main barrier for non-technical teams. If your marketing team wi
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Tools for Social Media Analytics: A Practical Guide](/ai-tools-compared/ai-tools-for-social-media-analytics/)
 - [Notion AI vs ChatGPT for Content Creation Compared](/ai-tools-compared/notion-ai-vs-chatgpt-for-content-creation-compared/)

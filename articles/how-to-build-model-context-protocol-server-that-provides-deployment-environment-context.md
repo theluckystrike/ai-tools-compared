@@ -367,7 +367,8 @@ You should receive a list of available tools. Then test each tool individually t
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [How to Build Model Context Protocol Server That Provides](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-deployment-environment-context/)
 - [How to Build Model Context Protocol Server That Provides Rea](/ai-tools-compared/how-to-build-model-context-protocol-server-that-provides-rea/)

@@ -269,7 +269,8 @@ When evaluating AI assistants for TypeScript Svelte component generation, consid
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [AI Coding Assistant Accuracy for Typescript Next Js Server C](/ai-tools-compared/ai-coding-assistant-accuracy-for-typescript-next-js-server-c/)
 - [AI Coding Assistant Comparison for React Component](/ai-tools-compared/ai-coding-assistant-comparison-for-react-component-generatio/)

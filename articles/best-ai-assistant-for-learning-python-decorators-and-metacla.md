@@ -296,7 +296,8 @@ Most Python code never needs metaclasses. If you're unsure, decorators usually s
 
 
 
-## Related Reading
+
+## Related Articles
 
 - [Free AI Tools for Learning Python with Code Examples 2026](/ai-tools-compared/free-ai-tools-for-learning-python-with-code-examples-2026/)
 - [Best AI for Learning OAuth2 and OIDC Authentication Flows](/ai-tools-compared/best-ai-for-learning-oauth2-and-oidc-authentication-flows-wi/)
