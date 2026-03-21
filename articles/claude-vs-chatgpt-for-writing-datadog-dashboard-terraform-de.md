@@ -269,6 +269,89 @@ terraform {
 
 
 
+## Generating Complex Widget Types
+
+The test scenarios above focused on timeseries widgets, which are the most common. Real dashboards mix multiple widget types, and the quality of AI-generated code degrades with widget complexity. Understanding where each tool struggles helps you invest your review time efficiently.
+
+**Query value widgets** display single numeric metrics prominently. Both Claude and ChatGPT handle these reliably. The main difference appears in conditional formatting — Claude correctly nests the `conditional_formats` block, while ChatGPT occasionally places it at the wrong level of the resource hierarchy.
+
+**Toplist widgets** show ranked lists of tag values. Claude generates correct toplist queries with appropriate `style` blocks. ChatGPT sometimes confuses toplist syntax with `query_table` syntax, producing code that fails `terraform validate`.
+
+**Log stream widgets** require specific `indexes` and `message_display` fields that are easy to miss. For log-related widgets, Claude's more cautious approach — asking for clarification on log indexes — produces better first-pass output than ChatGPT's confident but sometimes incorrect generation.
+
+When you need widgets that display infrastructure topology or use newer Datadog visualization types, both tools benefit from seeing the relevant provider documentation. Paste the relevant schema documentation as context in your prompt, and accuracy improves significantly for both models.
+
+## Using Terraform Modules for Dashboard Reuse
+
+For teams managing multiple similar dashboards — service-level dashboards that follow the same template across different services — Terraform modules provide an efficient structure.
+
+A module for a standard service dashboard:
+
+```hcl
+# modules/service-dashboard/variables.tf
+variable "service_name" {
+  type        = string
+  description = "The name of the service to monitor"
+}
+
+variable "environment" {
+  type        = string
+  description = "The deployment environment (production, staging)"
+}
+
+# modules/service-dashboard/main.tf
+resource "datadog_dashboard" "service" {
+  title       = "${var.service_name} - ${var.environment}"
+  description = "Standard service dashboard for ${var.service_name}"
+  layout_type = "ordered"
+
+  widget {
+    timeseries_definition {
+      title = "Request Rate"
+      request {
+        q = "sum:trace.${var.service_name}.request.hits{env:${var.environment}}.as_rate()"
+        style {
+          palette = "dog_classic"
+        }
+      }
+    }
+  }
+}
+```
+
+After generating the module, instantiate it across services:
+
+```hcl
+module "api_gateway_dashboard" {
+  source       = "./modules/service-dashboard"
+  service_name = "api-gateway"
+  environment  = "production"
+}
+
+module "payment_service_dashboard" {
+  source       = "./modules/service-dashboard"
+  service_name = "payment-service"
+  environment  = "production"
+}
+```
+
+Claude produces clean module interfaces with appropriate variable descriptions. When asked to design a dashboard module, it tends to ask useful clarifying questions about which metrics to include. ChatGPT jumps straight to implementation, which is faster but sometimes misses important variables.
+
+## Migrating Existing Dashboards to Terraform
+
+Many teams start with manually created Datadog dashboards and later want to bring them under Terraform management. The most practical approach: export your dashboard JSON from the Datadog API and ask Claude or ChatGPT to convert it to HCL format.
+
+```bash
+# Export existing dashboard via API
+curl -X GET "https://api.datadoghq.com/api/v1/dashboard/DASHBOARD_ID" \
+  -H "DD-API-KEY: ${DD_API_KEY}" \
+  -H "DD-APPLICATION-KEY: ${DD_APP_KEY}"
+```
+
+Paste the JSON output into your AI prompt with the instruction "Convert this Datadog dashboard JSON to Terraform HCL using the datadog provider version 3.x." Claude handles this conversion more reliably than ChatGPT, maintaining the widget hierarchy correctly and generating properly formatted Terraform. ChatGPT tends to flatten nested structures, requiring manual correction of widget groupings.
+
+After generating the HCL, run `terraform import` to associate the existing dashboard with the new Terraform resource, then run `terraform plan` to verify that no unintended changes are detected. If the plan shows drift, the AI conversion missed some attributes — common with custom time ranges or template variable configurations that require iterative correction.
+
 
 
 
