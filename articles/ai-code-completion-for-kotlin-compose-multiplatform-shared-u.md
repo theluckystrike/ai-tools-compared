@@ -1,11 +1,16 @@
 ---
+
 layout: default
 title: "AI Code Completion for Kotlin Compose Multiplatform Shared UI Components"
 description: "A practical guide to using AI-powered code completion tools when building shared UI components with Kotlin Compose Multiplatform in 2026."
 date: 2026-03-21
-author: theluckystrike
+author: "AI Tools Compared"
 permalink: /ai-code-completion-for-kotlin-compose-multiplatform-shared-u/
+reviewed: true
+score: 8
+categories: [guides]
 ---
+
 
 Building shared UI components with Kotlin Compose Multiplatform (KMP) allows teams to maintain a single codebase for Android, iOS, and web interfaces. However, this approach introduces unique challenges for AI code completion tools, which often struggle with the platform-specific nuances and shared code patterns specific to KMP projects.
 
@@ -145,7 +150,7 @@ This reference becomes part of your project context, enabling AI tools to provid
 
 ## Conclusion
 
-AI code completion for Kotlin Compose Multiplatform shared UI components requires additional configuration and awareness compared to single-platform development. By understanding your KMP architecture, providing explicit context to AI tools, and verifying suggestions across platforms, you can effectively leverage AI assistance while maintaining working cross-platform UI code.
+AI code completion for Kotlin Compose Multiplatform shared UI components requires additional configuration and awareness compared to single-platform development. By understanding your KMP architecture, providing explicit context to AI tools, and verifying suggestions across platforms, you can effectively use AI assistance while maintaining working cross-platform UI code.
 
 The key is treating AI tools as collaborative partners that need clear guidance about your multiplatform constraints. With proper setup, these tools can significantly accelerate your KMP development workflow while reducing boilerplate code in your shared modules.
 
